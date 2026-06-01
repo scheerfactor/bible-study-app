@@ -1,0 +1,32 @@
+[
+  {
+    "headword": "believe",
+    "normalized_headword": "believe",
+    "definition": "To credit upon the authority or testimony of another; to be persuaded of the truth of something upon the declaration of another, or upon evidence furnished by reasons, arguments, deductions of the mind, or other circumstances than personal knowledge. In Scripture use, to believe in or on is to trust in and rest upon with faith.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 71663,
+    "source_line_end": 71718,
+    "review_status": "verified sample"
+  },
+  {
+    "headword": "faith",
+    "normalized_headword": "faith",
+    "definition": "Belief; the assent of the mind to the truth of what is declared by another, resting on his authority and veracity. In theology, evangelical or saving faith is trust in God's testimony and reliance on Christ for salvation.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 225501,
+    "source_line_end": 225590,
+    "review_status": "verified sample"
+  },
+  {
+    "headword": "grace",
+    "normalized_headword": "grace",
+    "definition": "Favor; good will; kindness; disposition to oblige another. Appropriately, the free unmerited love and favor of God, the spring and source of all the benefits men receive from him.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 265934,
+    "source_line_end": 265990,
+    "review_status": "verified sample"
+  }
+]

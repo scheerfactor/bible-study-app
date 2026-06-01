@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Treasury of Scripture Knowledge",
+    "author": "Various / R. A. Torrey edition tradition",
+    "year": 1836,
+    "category": "Bible study helps",
+    "status": "needs review",
+    "rights_notes": "Public-domain source tradition; verify selected digital source terms before import."
+  },
+  {
+    "title": "American Dictionary of the English Language",
+    "author": "Noah Webster",
+    "year": 1828,
+    "category": "Bible study helps",
+    "status": "needs review",
+    "rights_notes": "Original work is public domain; verify transcription/database source terms."
+  },
+  {
+    "title": "History of the Baptists",
+    "author": "Thomas Armitage",
+    "year": 1887,
+    "category": "Baptist history",
+    "status": "needs review",
+    "rights_notes": "Likely public domain by age; verify source scan/transcription terms."
+  },
+  {
+    "title": "The Soul Winner",
+    "author": "C. H. Spurgeon",
+    "year": 1895,
+    "category": "Evangelism",
+    "status": "needs review",
+    "rights_notes": "Likely public domain by age; verify selected edition and source terms."
+  },
+  {
+    "title": "Power Through Prayer",
+    "author": "E. M. Bounds",
+    "year": 1910,
+    "category": "Prayer",
+    "status": "needs review",
+    "rights_notes": "Likely public domain in the United States by publication date; verify source terms."
+  },
+  {
+    "title": "Holiness",
+    "author": "J. C. Ryle",
+    "year": 1877,
+    "category": "Christian life",
+    "status": "needs review",
+    "rights_notes": "Likely public domain by age; verify edition and source terms."
+  },
+  {
+    "title": "Lectures to My Students",
+    "author": "C. H. Spurgeon",
+    "year": 1875,
+    "category": "Preaching/teaching",
+    "status": "needs review",
+    "rights_notes": "Likely public domain by age; verify source scan/transcription terms."
+  },
+  {
+    "title": "The Life of Adoniram Judson",
+    "author": "Edward Judson",
+    "year": 1883,
+    "category": "Missions",
+    "status": "needs review",
+    "rights_notes": "Likely public domain by age; verify source terms."
+  },
+  {
+    "title": "The Pilgrim's Progress",
+    "author": "John Bunyan",
+    "year": 1678,
+    "category": "Fiction/classics",
+    "status": "verified",
+    "rights_notes": "Public-domain work; verify selected digital transcription terms before bundling."
+  },
+  {
+    "title": "Modern copyrighted commentary set",
+    "author": "Various",
+    "year": 2000,
+    "category": "Bible study helps",
+    "status": "do not import yet",
+    "rights_notes": "Requires written permission or a license before import."
+  }
+]
