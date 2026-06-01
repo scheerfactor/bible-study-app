@@ -1,0 +1,15 @@
+{
+  "title": "Treasury of Scripture Knowledge",
+  "original_compiler": "R. A. Torrey",
+  "original_publication_year": 1894,
+  "public_domain_status": "The original Treasury of Scripture Knowledge is public domain.",
+  "candidate_download_source": {
+    "title": "KJV Bible Database with Metadata / MetaV CrossRefIndex",
+    "url": "https://github.com/theonize/KJV-bible-database-with-metadata-MetaV-",
+    "cross_reference_file": "CSV/CrossRefIndex.csv",
+    "verse_mapping_file": "CSV/Verses.csv",
+    "candidate_license": "Creative Commons Attribution-ShareAlike 3.0 according to the repository readme.",
+    "rights_notes": "The repository readme says CrossRefIndex is compiled from R. A. Torrey's public-domain Treasury of Scripture Knowledge, but the repository files themselves are published under CC BY-SA 3.0. Treat this as a source candidate, not unrestricted public-domain app data, until the share-alike implications are accepted or a purely public-domain source file is chosen."
+  },
+  "import_notes": "Use scripts/prepare-tsk-metav-cross-references.mjs to convert MetaV Verses.csv and CrossRefIndex.csv into the app's JSON import shape. Then run scripts/import-tsk-cross-references.mjs after rights approval."
+}

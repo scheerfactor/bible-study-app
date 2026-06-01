@@ -18,20 +18,24 @@ import {
   Link,
   LogOut,
   MessageSquareText,
+  Minus,
   NotebookPen,
+  Plus,
   Search,
   Settings,
   Share2,
+  Star,
   Volume2,
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
-type Tab = "today" | "bible" | "search" | "notes" | "settings" | "fullStudy";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "crossReferences" | "notes" | "audio" | "commentary";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
+type LibraryView = "home" | "detail" | "reader";
 
 type BibleVerse = {
   ref: string;
@@ -96,7 +100,38 @@ type CommentaryEntry = {
   source_url: string;
 };
 
+type LibraryResource = {
+  slug: string;
+  title: string;
+  author: string;
+  year: number;
+  category: string;
+  description: string;
+  rights_status: string;
+  commercial_use_status: string;
+  source_url: string;
+  source_license_url: string;
+  rights_basis: string;
+  word_count: number | null;
+  file_size_bytes: number | null;
+  checksum_sha256: string | null;
+  added_at: string;
+};
+
+type LibraryProgress = {
+  slug: string;
+  title: string;
+  author: string;
+  progress: number;
+  fontSize: number;
+  bookmarks: number[];
+  updatedAt: string;
+};
+
+type LibraryProgressState = Record<string, LibraryProgress>;
+
 const STORAGE_KEY = "fathers-business-bible-study-state";
+const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -412,10 +447,12 @@ const starterKeyWords: Record<string, string[]> = {
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const hasSupabaseConfig = Boolean(supabaseUrl && supabaseAnonKey);
+let browserSupabaseClient: SupabaseClient | null | undefined;
 
 function makeSupabaseClient(): SupabaseClient | null {
   if (!supabaseUrl || !supabaseAnonKey) return null;
-  return createClient(supabaseUrl, supabaseAnonKey);
+  browserSupabaseClient ??= createClient(supabaseUrl, supabaseAnonKey);
+  return browserSupabaseClient;
 }
 
 function parseVerses(): BibleVerse[] {
@@ -520,6 +557,28 @@ function saveLocalState(state: SavedState) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function loadLibraryProgress(): LibraryProgressState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(LIBRARY_PROGRESS_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as LibraryProgressState;
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveLibraryProgress(state: LibraryProgressState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LIBRARY_PROGRESS_KEY, JSON.stringify(state));
+}
+
+function formatPercent(value: number) {
+  return `${Math.max(0, Math.min(100, Math.round(value)))}%`;
+}
+
 function testamentForBook(book: string): Exclude<TestamentFilter, "all"> {
   const index = bookOrder.indexOf(book);
   return index >= NEW_TESTAMENT_START_INDEX ? "new" : "old";
@@ -592,6 +651,16 @@ export default function Home() {
   const [flashRef, setFlashRef] = useState<string | null>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authMessage, setAuthMessage] = useState("");
+  const [libraryResources, setLibraryResources] = useState<LibraryResource[]>([]);
+  const [libraryView, setLibraryView] = useState<LibraryView>("home");
+  const [librarySearchTerm, setLibrarySearchTerm] = useState("");
+  const [libraryCategory, setLibraryCategory] = useState("All");
+  const [activeLibrarySlug, setActiveLibrarySlug] = useState<string | null>(null);
+  const [activeLibraryText, setActiveLibraryText] = useState("");
+  const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
+  const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
+  const [libraryFontSize, setLibraryFontSize] = useState(18);
+  const libraryReaderRef = useRef<HTMLDivElement | null>(null);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -651,6 +720,51 @@ export default function Home() {
       .slice(0, 80);
   }, [allVerses, searchFilter, searchTerm]);
 
+  const libraryCategories = useMemo(
+    () => [
+      "All",
+      "Prayer",
+      "Christian life",
+      "Evangelism",
+      "Baptist history",
+      "Preaching/teaching",
+      "Fiction/classics",
+    ],
+    [],
+  );
+
+  const activeLibraryResource = useMemo(
+    () => libraryResources.find((resource) => resource.slug === activeLibrarySlug) ?? null,
+    [activeLibrarySlug, libraryResources],
+  );
+
+  const filteredLibraryResources = useMemo(() => {
+    const term = librarySearchTerm.trim().toLowerCase();
+    return libraryResources.filter((resource) => {
+      const categoryMatch = libraryCategory === "All" || resource.category === libraryCategory;
+      const searchMatch =
+        !term ||
+        resource.title.toLowerCase().includes(term) ||
+        resource.author.toLowerCase().includes(term) ||
+        resource.category.toLowerCase().includes(term);
+      return categoryMatch && searchMatch;
+    });
+  }, [libraryCategory, libraryResources, librarySearchTerm]);
+
+  const continueReadingResources = useMemo(
+    () =>
+      Object.values(libraryProgress)
+        .filter((progress) => progress.progress > 0)
+        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+        .slice(0, 4),
+    [libraryProgress],
+  );
+
+  const featuredLibraryResources = useMemo(() => {
+    const preferred = new Set(["Power Through Prayer", "How to Bring Men to Christ", "The Pilgrim's Progress", "A Retrospect"]);
+    return libraryResources.filter((resource) => preferred.has(resource.title)).slice(0, 4);
+  }, [libraryResources]);
+
   const highlightsByRef = useMemo(
     () => new Map(saved.highlights.map((highlight) => [highlight.verse_ref, highlight])),
     [saved.highlights],
@@ -686,6 +800,28 @@ export default function Home() {
       setSaved(loadLocalState());
       setSavedLoaded(true);
     });
+  }, []);
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setLibraryProgress(loadLibraryProgress());
+    });
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/library")
+      .then((response) => response.json())
+      .then((data: { resources?: LibraryResource[] }) => {
+        if (!cancelled) setLibraryResources(data.resources ?? []);
+      })
+      .catch(() => {
+        if (!cancelled) setLibraryResources([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   useEffect(() => {
@@ -812,6 +948,93 @@ export default function Home() {
 
     goToVerse(targetVerse.book, targetVerse.chapter, targetVerse.verse);
     setSyncMessage(`Opened ${targetRef}. Study drawer remains on ${studyRef ?? selectedRef}.`);
+  }
+
+  function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
+    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    if (!resource) return;
+
+    setLibraryProgress((state) => {
+      const current =
+        state[slug] ??
+        {
+          slug,
+          title: resource.title,
+          author: resource.author,
+          progress: 0,
+          fontSize: libraryFontSize,
+          bookmarks: [],
+          updatedAt: new Date().toISOString(),
+        };
+      const nextState = {
+        ...state,
+        [slug]: updater(current),
+      };
+      saveLibraryProgress(nextState);
+      return nextState;
+    });
+  }
+
+  async function openLibraryResource(slug: string, view: LibraryView = "detail") {
+    setActiveLibrarySlug(slug);
+    setLibraryView(view);
+    setTab("library");
+
+    if (view !== "reader") return;
+
+    setActiveLibraryLoading(true);
+    try {
+      const response = await fetch(`/api/library/${slug}`);
+      const data = (await response.json()) as { resource?: LibraryResource; text?: string };
+      setActiveLibraryText(data.text ?? "");
+      const savedProgress = libraryProgress[slug];
+      setLibraryFontSize(savedProgress?.fontSize ?? 18);
+      window.requestAnimationFrame(() => {
+        const node = libraryReaderRef.current;
+        if (!node || !savedProgress) return;
+        node.scrollTop = (node.scrollHeight - node.clientHeight) * (savedProgress.progress / 100);
+      });
+    } catch {
+      setActiveLibraryText("Could not load this resource yet.");
+    } finally {
+      setActiveLibraryLoading(false);
+    }
+  }
+
+  function handleLibraryScroll() {
+    const node = libraryReaderRef.current;
+    const resource = activeLibraryResource;
+    if (!node || !resource) return;
+    const scrollable = Math.max(1, node.scrollHeight - node.clientHeight);
+    const progress = Math.min(100, Math.max(0, (node.scrollTop / scrollable) * 100));
+
+    saveLibraryProgressUpdate(resource.slug, (current) => ({
+      ...current,
+      title: resource.title,
+      author: resource.author,
+      progress,
+      fontSize: libraryFontSize,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  function bookmarkLibraryLocation() {
+    const resource = activeLibraryResource;
+    if (!resource) return;
+    const progress = libraryProgress[resource.slug]?.progress ?? 0;
+    saveLibraryProgressUpdate(resource.slug, (current) => ({
+      ...current,
+      bookmarks: Array.from(new Set([...current.bookmarks, Math.round(progress)]))
+        .sort((a, b) => a - b)
+        .slice(-12),
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  function jumpLibraryBookmark(progress: number) {
+    const node = libraryReaderRef.current;
+    if (!node) return;
+    node.scrollTop = (node.scrollHeight - node.clientHeight) * (progress / 100);
   }
 
   function jumpToVerse() {
@@ -1185,6 +1408,7 @@ export default function Home() {
               <NavButton icon={<HomeIcon size={18} />} label="Today" active={tab === "today"} onClick={() => setTab("today")} />
               <NavButton icon={<BookOpen size={18} />} label="Bible" active={tab === "bible"} onClick={() => setTab("bible")} />
               <NavButton icon={<Search size={18} />} label="Search" active={tab === "search"} onClick={() => setTab("search")} />
+              <NavButton icon={<Library size={18} />} label="Library" active={tab === "library"} onClick={() => setTab("library")} />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
@@ -1269,6 +1493,47 @@ export default function Home() {
                   goToVerse(verse.book, verse.chapter, verse.verse);
                   openStudyDrawer(verse.ref);
                 }}
+              />
+            )}
+
+            {tab === "library" && (
+              <LibraryScreen
+                view={libraryView}
+                resources={libraryResources}
+                filteredResources={filteredLibraryResources}
+                categories={libraryCategories}
+                activeCategory={libraryCategory}
+                searchTerm={librarySearchTerm}
+                activeResource={activeLibraryResource}
+                activeText={activeLibraryText}
+                loading={activeLibraryLoading}
+                progressState={libraryProgress}
+                continueReadingResources={continueReadingResources}
+                featuredResources={featuredLibraryResources}
+                fontSize={libraryFontSize}
+                readerRef={libraryReaderRef}
+                onCategoryChange={setLibraryCategory}
+                onSearchTermChange={setLibrarySearchTerm}
+                onOpenHome={() => setLibraryView("home")}
+                onOpenDetail={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
+                onOpenReader={(slug) => {
+                  void openLibraryResource(slug, "reader");
+                }}
+                onScrollReader={handleLibraryScroll}
+                onFontSizeChange={(size) => {
+                  setLibraryFontSize(size);
+                  if (activeLibraryResource) {
+                    saveLibraryProgressUpdate(activeLibraryResource.slug, (current) => ({
+                      ...current,
+                      fontSize: size,
+                      updatedAt: new Date().toISOString(),
+                    }));
+                  }
+                }}
+                onBookmarkLocation={bookmarkLibraryLocation}
+                onJumpBookmark={jumpLibraryBookmark}
               />
             )}
 
@@ -1813,6 +2078,417 @@ function NotesScreen({
       )}
     </div>
   );
+}
+
+function LibraryScreen({
+  view,
+  resources,
+  filteredResources,
+  categories,
+  activeCategory,
+  searchTerm,
+  activeResource,
+  activeText,
+  loading,
+  progressState,
+  continueReadingResources,
+  featuredResources,
+  fontSize,
+  readerRef,
+  onCategoryChange,
+  onSearchTermChange,
+  onOpenHome,
+  onOpenDetail,
+  onOpenReader,
+  onScrollReader,
+  onFontSizeChange,
+  onBookmarkLocation,
+  onJumpBookmark,
+}: {
+  view: LibraryView;
+  resources: LibraryResource[];
+  filteredResources: LibraryResource[];
+  categories: string[];
+  activeCategory: string;
+  searchTerm: string;
+  activeResource: LibraryResource | null;
+  activeText: string;
+  loading: boolean;
+  progressState: LibraryProgressState;
+  continueReadingResources: LibraryProgress[];
+  featuredResources: LibraryResource[];
+  fontSize: number;
+  readerRef: React.RefObject<HTMLDivElement | null>;
+  onCategoryChange: (category: string) => void;
+  onSearchTermChange: (value: string) => void;
+  onOpenHome: () => void;
+  onOpenDetail: (slug: string) => void;
+  onOpenReader: (slug: string) => void;
+  onScrollReader: () => void;
+  onFontSizeChange: (size: number) => void;
+  onBookmarkLocation: () => void;
+  onJumpBookmark: (progress: number) => void;
+}) {
+  if (view === "reader" && activeResource) {
+    const progress = progressState[activeResource.slug];
+    return (
+      <LibraryReader
+        resource={activeResource}
+        text={activeText}
+        loading={loading}
+        progress={progress}
+        fontSize={fontSize}
+        readerRef={readerRef}
+        onBack={() => onOpenDetail(activeResource.slug)}
+        onHome={onOpenHome}
+        onScroll={onScrollReader}
+        onFontSizeChange={onFontSizeChange}
+        onBookmarkLocation={onBookmarkLocation}
+        onJumpBookmark={onJumpBookmark}
+      />
+    );
+  }
+
+  if (view === "detail" && activeResource) {
+    return (
+      <LibraryDetail
+        resource={activeResource}
+        progress={progressState[activeResource.slug]}
+        onBack={onOpenHome}
+        onOpenReader={() => onOpenReader(activeResource.slug)}
+      />
+    );
+  }
+
+  const recentlyAdded = resources.slice(-4).reverse();
+
+  return (
+    <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
+              Curated study resources
+            </h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
+              Browse the first verified public-domain resources prepared for Bible study, prayer, evangelism, Baptist history, missions, and preaching.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+            <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Search Library
+          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+            <Search size={18} className="text-[var(--green)]" />
+            <input
+              className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+              placeholder="title, author, category..."
+              value={searchTerm}
+              onChange={(event) => onSearchTermChange(event.target.value)}
+            />
+          </div>
+        </label>
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${
+                activeCategory === category
+                  ? "bg-[var(--ink)] text-white"
+                  : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+              }`}
+              onClick={() => onCategoryChange(category)}
+              type="button"
+            >
+              {libraryCategoryLabel(category)}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {continueReadingResources.length > 0 && (
+        <LibraryShelf title="Continue Reading">
+          {continueReadingResources.map((progress) => (
+            <button
+              key={`continue-${progress.slug}`}
+              className="w-full rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
+              onClick={() => onOpenReader(progress.slug)}
+              type="button"
+            >
+              <p className="text-sm font-semibold text-[var(--green)]">{progress.title}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{progress.author}</p>
+              <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
+                <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
+              </div>
+              <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{formatPercent(progress.progress)} read</p>
+            </button>
+          ))}
+        </LibraryShelf>
+      )}
+
+      <LibraryShelf title="Categories">
+        {categories.filter((category) => category !== "All").map((category) => {
+          const count = resources.filter((resource) => resource.category === category).length;
+          return (
+            <button
+              key={`category-${category}`}
+              className="rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
+              onClick={() => onCategoryChange(category)}
+              type="button"
+            >
+              <p className="text-base font-semibold text-[var(--ink)]">{libraryCategoryLabel(category)}</p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{count} resource{count === 1 ? "" : "s"}</p>
+            </button>
+          );
+        })}
+      </LibraryShelf>
+
+      <LibraryShelf title="Featured Resources">
+        {featuredResources.map((resource) => (
+          <LibraryResourceCard key={`featured-${resource.slug}`} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
+        ))}
+      </LibraryShelf>
+
+      <LibraryShelf title="Recently Added">
+        {recentlyAdded.map((resource) => (
+          <LibraryResourceCard key={`recent-${resource.slug}`} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
+        ))}
+      </LibraryShelf>
+
+      <LibraryShelf title={searchTerm || activeCategory !== "All" ? "Search Results" : "All Resources"}>
+        {(searchTerm || activeCategory !== "All" ? filteredResources : resources).map((resource) => (
+          <LibraryResourceCard key={resource.slug} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
+        ))}
+      </LibraryShelf>
+    </div>
+  );
+}
+
+function LibraryDetail({
+  resource,
+  progress,
+  onBack,
+  onOpenReader,
+}: {
+  resource: LibraryResource;
+  progress?: LibraryProgress;
+  onBack: () => void;
+  onOpenReader: () => void;
+}) {
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <button
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm"
+        onClick={onBack}
+        type="button"
+      >
+        <ChevronLeft size={17} />
+        Back to Library
+      </button>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{resource.title}</h1>
+            <p className="mt-3 text-base leading-7 text-[var(--muted)]">
+              {resource.author} {resource.year ? `(${resource.year})` : ""}
+            </p>
+          </div>
+          <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenReader} type="button">
+            Open Resource
+          </button>
+        </div>
+
+        <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{resource.description}</p>
+
+        {progress && (
+          <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+            <div className="flex items-center justify-between gap-3 text-sm font-semibold text-[var(--muted)]">
+              <span>Reading progress</span>
+              <span>{formatPercent(progress.progress)}</span>
+            </div>
+            <div className="mt-3 h-2 rounded-full bg-white">
+              <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
+            </div>
+          </div>
+        )}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Rights Status</h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <StatusCard label="Public domain" status={resource.rights_status} good={resource.rights_status === "verified"} />
+          <StatusCard label="Commercial use" status={resource.commercial_use_status.replaceAll("_", " ")} good={resource.commercial_use_status.startsWith("verified")} />
+          <StatusCard label="Words" status={resource.word_count ? resource.word_count.toLocaleString() : "Unknown"} good={Boolean(resource.word_count)} />
+        </div>
+        <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{resource.rights_basis}</p>
+      </section>
+    </div>
+  );
+}
+
+function LibraryReader({
+  resource,
+  text,
+  loading,
+  progress,
+  fontSize,
+  readerRef,
+  onBack,
+  onHome,
+  onScroll,
+  onFontSizeChange,
+  onBookmarkLocation,
+  onJumpBookmark,
+}: {
+  resource: LibraryResource;
+  text: string;
+  loading: boolean;
+  progress?: LibraryProgress;
+  fontSize: number;
+  readerRef: React.RefObject<HTMLDivElement | null>;
+  onBack: () => void;
+  onHome: () => void;
+  onScroll: () => void;
+  onFontSizeChange: (size: number) => void;
+  onBookmarkLocation: () => void;
+  onJumpBookmark: (progress: number) => void;
+}) {
+  return (
+    <div className="flex h-[calc(100vh-96px)] flex-col bg-[var(--scripture)] md:h-[calc(100vh-48px)]">
+      <header className="shrink-0 border-b border-[var(--line)] bg-[var(--paper)]/95 p-3 backdrop-blur md:p-4">
+        <div className="flex items-center justify-between gap-2">
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
+            <ChevronLeft size={17} />
+            Detail
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)] shadow-sm" onClick={onHome} type="button">
+            Library
+          </button>
+        </div>
+
+        <div className="mt-3 min-w-0">
+          <h1 className="truncate text-lg font-semibold text-[var(--ink)]">{resource.title}</h1>
+          <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.author}</p>
+        </div>
+
+        <div className="mt-3 grid grid-cols-[auto_1fr_auto] items-center gap-3">
+          <button
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--green)]"
+            onClick={() => onFontSizeChange(Math.max(15, fontSize - 1))}
+            title="Decrease font size"
+            type="button"
+          >
+            <Minus size={17} />
+          </button>
+          <div>
+            <div className="h-2 rounded-full bg-white">
+              <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress?.progress ?? 0) }} />
+            </div>
+            <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">{formatPercent(progress?.progress ?? 0)} read</p>
+          </div>
+          <button
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--green)]"
+            onClick={() => onFontSizeChange(Math.min(24, fontSize + 1))}
+            title="Increase font size"
+            type="button"
+          >
+            <Plus size={17} />
+          </button>
+        </div>
+
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <button
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+            onClick={onBookmarkLocation}
+            type="button"
+          >
+            <Bookmark size={16} />
+            Bookmark
+          </button>
+          {(progress?.bookmarks ?? []).map((bookmark) => (
+            <button
+              key={`reader-bookmark-${bookmark}`}
+              className="shrink-0 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]"
+              onClick={() => onJumpBookmark(bookmark)}
+              type="button"
+            >
+              {bookmark}%
+            </button>
+          ))}
+        </div>
+      </header>
+
+      <article
+        ref={readerRef}
+        className="min-h-0 flex-1 overflow-y-auto px-4 py-5 pb-32 md:px-10 md:py-8"
+        onScroll={onScroll}
+      >
+        {loading ? (
+          <EmptyState title="Loading resource" body="Preparing the reader." />
+        ) : (
+          <div className="mx-auto max-w-3xl whitespace-pre-wrap font-serif leading-8 text-[var(--scripture-ink)]" style={{ fontSize }}>
+            {text}
+          </div>
+        )}
+      </article>
+    </div>
+  );
+}
+
+function LibraryShelf({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section>
+      <h2 className="px-1 text-lg font-semibold text-[var(--ink)]">{title}</h2>
+      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">{children}</div>
+    </section>
+  );
+}
+
+function LibraryResourceCard({
+  resource,
+  progress,
+  onOpen,
+}: {
+  resource: LibraryResource;
+  progress?: LibraryProgress;
+  onOpen: () => void;
+}) {
+  return (
+    <button className="w-full rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm" onClick={onOpen} type="button">
+      <div className="flex items-start justify-between gap-3">
+        <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
+        {progress && <Star size={16} className="shrink-0 text-[var(--gold)]" />}
+      </div>
+      <h3 className="mt-3 line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
+      <p className="mt-2 text-sm text-[var(--muted)]">{resource.author}</p>
+      <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+      {progress && (
+        <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
+          <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
+        </div>
+      )}
+    </button>
+  );
+}
+
+function libraryCategoryLabel(category: string) {
+  const labels: Record<string, string> = {
+    "Preaching/teaching": "Preaching & Teaching",
+    "Fiction/classics": "Classics",
+    "Christian life": "Christian Life",
+    "Baptist history": "Baptist History",
+  };
+
+  return labels[category] ?? category;
 }
 
 function FullStudyScreen({
@@ -2793,13 +3469,14 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "today", label: "Today", icon: <HomeIcon size={20} /> },
     { id: "bible", label: "Bible", icon: <BookOpen size={20} /> },
     { id: "search", label: "Search", icon: <Search size={20} /> },
-    { id: "notes", label: "Notes", icon: <Library size={20} /> },
+    { id: "library", label: "Library", icon: <Library size={20} /> },
+    { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-5 gap-1">
+      <div className="mx-auto grid max-w-md grid-cols-6 gap-1">
         {items.map((item) => (
           <button
             key={item.id}

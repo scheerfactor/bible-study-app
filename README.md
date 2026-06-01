@@ -294,6 +294,28 @@ npm run import:tsk -- data/import-formats/tsk-cross-references.sample.csv
 
 Cross references remain tied to the selected verse through `cross_references.verse_ref`.
 
+### Prepare a TSK file from MetaV
+
+A downloadable TSK source candidate is documented at:
+
+```text
+data/sources/tsk/source-manifest.json
+```
+
+The candidate uses the MetaV `CrossRefIndex.csv` and `Verses.csv` files. The original Treasury of Scripture Knowledge is public domain, but the MetaV repository files are published under Creative Commons Attribution-ShareAlike 3.0. Do not treat that CSV dataset as unrestricted public-domain app data until that license tradeoff is accepted.
+
+If approved, convert the files into this app's import shape:
+
+```bash
+npm run prepare:tsk-metav -- \
+  data/sources/tsk/Verses.csv \
+  data/sources/tsk/CrossRefIndex.csv \
+  data/imports/tsk-cross-references.json
+
+npm run import:tsk -- data/imports/tsk-cross-references.json --dry-run
+npm run import:tsk -- data/imports/tsk-cross-references.json
+```
+
 ## Import Readiness Checklist
 
 Use this before importing anything beyond the current verified samples.
@@ -338,3 +360,121 @@ data/resource-library-plan.json
 ```
 
 This is planning metadata only. It is not a library importer.
+
+## Public-Domain Book Import Staging
+
+Future public-domain books are staged under `data/library/`. This structure is for review and import preparation only; books are not imported into the app UI yet.
+
+Use these folders:
+
+```text
+data/library/verified
+data/library/needs-review
+data/library/do-not-import
+data/library/manifests
+```
+
+Folder rules:
+
+- `verified`: only use after the exact title, author, edition/source, public-domain status, and commercial-use status are reviewed.
+- `needs-review`: use for candidate books that look promising but still need rights/source verification.
+- `do-not-import`: use for placeholders, unclear rights, modern compilations, or anything that should be blocked from import.
+- `manifests`: store JSON manifests and schema files. Do not put full book text here.
+
+The manifest schema lives at:
+
+```text
+data/library/manifests/book-manifest.schema.json
+```
+
+The current sample manifest lives at:
+
+```text
+data/library/manifests/sample-public-domain-books.json
+```
+
+The first curated 25-resource import manifest lives at:
+
+```text
+data/library/manifests/curated-public-domain-resources.json
+```
+
+Each manifest entry must include:
+
+```text
+title
+author
+year
+category
+source_url
+file_path
+public_domain_status
+commercial_use_status
+attribution_required
+notes
+import_status
+```
+
+Current sample manifest entries are metadata only:
+
+- `The Pilgrim's Progress` by John Bunyan: verified public-domain candidate, no text imported.
+- `E. M. Bounds on Prayer`: needs review because the exact work/source must be selected and modern compilations may have separate rights.
+- `H. A. Ironside placeholder`: do not import until exact work/source/rights are verified.
+- `Baptist history placeholder`: needs review until a specific public-domain title is chosen.
+
+Do not add copyrighted, unclear, or modern compiled texts to `verified`. Do not expose these staged books in the app UI until a separate importer and rights review workflow is built.
+
+### Curated library import workflow
+
+The curated library system is data-first. It downloads and verifies source text files, records rights metadata, and prepares Supabase metadata rows without adding a book reader UI yet.
+
+Run manifest validation:
+
+```bash
+npm run library:validate
+```
+
+Download verified public-domain text files:
+
+```bash
+npm run library:download
+```
+
+The downloader writes each text file under:
+
+```text
+data/library/verified/
+```
+
+It also updates the curated manifest with:
+
+```text
+word_count
+file_size_bytes
+checksum_sha256
+```
+
+Dry-run the Supabase metadata import:
+
+```bash
+npm run library:import -- --dry-run
+```
+
+Import library metadata to Supabase after `supabase/schema.sql` has been run and `SUPABASE_SERVICE_ROLE_KEY` is available in your shell:
+
+```bash
+npm run library:import
+```
+
+The first 25 verified resources currently cover:
+
+- Bible study helps
+- Baptist history
+- Prayer
+- Evangelism
+- Christian life
+- Preaching/teaching
+- Missions
+- Fiction/classics
+
+Source texts are from Project Gutenberg. Project Gutenberg catalog pages report these selected works as public domain in the USA. The downloaded files retain Project Gutenberg license/header material, so redistribution should follow the Project Gutenberg license and trademark terms unless the text is cleaned and reviewed separately as a non-Project-Gutenberg derivative.

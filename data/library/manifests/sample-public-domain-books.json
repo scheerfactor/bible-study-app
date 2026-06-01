@@ -1,0 +1,54 @@
+[
+  {
+    "title": "The Pilgrim's Progress",
+    "author": "John Bunyan",
+    "year": 1678,
+    "category": "Fiction/classics",
+    "source_url": "https://www.gutenberg.org/ebooks/131",
+    "file_path": "data/library/verified/pilgrims-progress.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed",
+    "attribution_required": false,
+    "notes": "Manifest only. Do not add book text until a reviewed Project Gutenberg or equivalent public-domain text file is placed at file_path.",
+    "import_status": "manifest_only"
+  },
+  {
+    "title": "E. M. Bounds on Prayer",
+    "author": "E. M. Bounds",
+    "year": null,
+    "category": "Prayer",
+    "source_url": "",
+    "file_path": "data/library/needs-review/em-bounds-on-prayer.txt",
+    "public_domain_status": "needs_review",
+    "commercial_use_status": "needs_review",
+    "attribution_required": false,
+    "notes": "Placeholder for a verified public-domain Bounds prayer work. Avoid modern compilations unless their compilation rights are reviewed.",
+    "import_status": "needs_review"
+  },
+  {
+    "title": "H. A. Ironside placeholder",
+    "author": "H. A. Ironside",
+    "year": null,
+    "category": "Bible study helps",
+    "source_url": "",
+    "file_path": "data/library/do-not-import/ha-ironside-placeholder.txt",
+    "public_domain_status": "unclear",
+    "commercial_use_status": "unclear",
+    "attribution_required": false,
+    "notes": "Placeholder only. Do not import Ironside content until the exact work, edition, source, and rights are verified.",
+    "import_status": "do_not_import"
+  },
+  {
+    "title": "Baptist history placeholder",
+    "author": "Unknown",
+    "year": null,
+    "category": "Baptist history",
+    "source_url": "",
+    "file_path": "data/library/needs-review/baptist-history-placeholder.txt",
+    "public_domain_status": "needs_review",
+    "commercial_use_status": "needs_review",
+    "attribution_required": false,
+    "notes": "Placeholder only. Choose a specific Baptist history title and verify source rights before adding text.",
+    "import_status": "needs_review"
+  }
+]

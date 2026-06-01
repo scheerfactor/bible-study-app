@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fathersbusiness.local/schemas/book-manifest.schema.json",
+  "title": "Father's Business Bible Study Book Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "author",
+    "year",
+    "category",
+    "source_url",
+    "download_url",
+    "source_license_url",
+    "file_path",
+    "public_domain_status",
+    "commercial_use_status",
+    "attribution_required",
+    "rights_basis",
+    "notes",
+    "import_status"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "year": {
+      "type": ["integer", "string", "null"]
+    },
+    "category": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "download_url": {
+      "type": "string"
+    },
+    "source_license_url": {
+      "type": "string"
+    },
+    "file_path": {
+      "type": "string"
+    },
+    "public_domain_status": {
+      "type": "string",
+      "description": "Use verified, needs_review, public_domain_likely, unclear, or do_not_import_yet."
+    },
+    "commercial_use_status": {
+      "type": "string",
+      "description": "Use verified_allowed, verified_allowed_with_project_gutenberg_terms, needs_review, unclear, or do_not_use."
+    },
+    "attribution_required": {
+      "type": "boolean"
+    },
+    "rights_basis": {
+      "type": "string",
+      "description": "Human-readable evidence for public-domain and commercial-use status."
+    },
+    "notes": {
+      "type": "string"
+    },
+    "import_status": {
+      "type": "string",
+      "description": "Use manifest_only, ready_for_import, imported_file, imported_metadata, needs_review, or do_not_import."
+    },
+    "word_count": {
+      "type": "integer"
+    },
+    "file_size_bytes": {
+      "type": "integer"
+    },
+    "checksum_sha256": {
+      "type": "string"
+    }
+  }
+}

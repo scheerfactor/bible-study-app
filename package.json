@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "import:webster": "node scripts/import-websters-1828.mjs",
-    "import:tsk": "node scripts/import-tsk-cross-references.mjs"
+    "import:tsk": "node scripts/import-tsk-cross-references.mjs",
+    "prepare:tsk-metav": "node scripts/prepare-tsk-metav-cross-references.mjs",
+    "library:validate": "node scripts/validate-library-manifests.mjs",
+    "library:download": "node scripts/download-library-resources.mjs",
+    "library:import": "node scripts/import-library-resources.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

@@ -12,6 +12,31 @@ create table if not exists public.resource_sources (
   created_at timestamptz not null default now()
 );
 
+create table if not exists public.library_resources (
+  id uuid primary key default gen_random_uuid(),
+  source_id uuid references public.resource_sources(id),
+  title text not null,
+  author text not null,
+  year integer,
+  category text not null,
+  source_url text not null,
+  download_url text,
+  source_license_url text,
+  file_path text not null unique,
+  public_domain_status text not null,
+  commercial_use_status text not null,
+  attribution_required boolean not null default true,
+  rights_basis text not null,
+  notes text,
+  import_status text not null,
+  word_count integer,
+  file_size_bytes integer,
+  checksum_sha256 text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (title, author, source_url)
+);
+
 create table if not exists public.bible_books (
   id smallint primary key,
   name text not null unique,
@@ -41,6 +66,9 @@ create table if not exists public.bible_verses (
 );
 
 create index if not exists bible_verses_ref_idx on public.bible_verses (verse_ref);
+create index if not exists library_resources_category_idx on public.library_resources (category);
+create index if not exists library_resources_source_id_idx on public.library_resources (source_id);
+create index if not exists library_resources_import_status_idx on public.library_resources (import_status);
 create index if not exists bible_verses_book_chapter_idx on public.bible_verses (book_id, chapter_number, verse_number);
 create index if not exists bible_verses_search_idx on public.bible_verses using gin (search_vector);
 create index if not exists bible_books_source_id_idx on public.bible_books (source_id);
@@ -128,6 +156,7 @@ create table if not exists public.user_bookmarks (
 create index if not exists user_bookmarks_user_ref_idx on public.user_bookmarks (user_id, verse_ref);
 
 alter table public.resource_sources enable row level security;
+alter table public.library_resources enable row level security;
 alter table public.bible_books enable row level security;
 alter table public.bible_chapters enable row level security;
 alter table public.bible_verses enable row level security;
@@ -139,6 +168,7 @@ alter table public.user_highlights enable row level security;
 alter table public.user_bookmarks enable row level security;
 
 drop policy if exists "Public sources are readable" on public.resource_sources;
+drop policy if exists "Library resources are readable" on public.library_resources;
 drop policy if exists "Bible books are readable" on public.bible_books;
 drop policy if exists "Bible chapters are readable" on public.bible_chapters;
 drop policy if exists "Bible verses are readable" on public.bible_verses;
@@ -160,6 +190,10 @@ drop policy if exists "Users can delete their bookmarks" on public.user_bookmark
 
 create policy "Public sources are readable"
   on public.resource_sources for select
+  using (true);
+
+create policy "Library resources are readable"
+  on public.library_resources for select
   using (true);
 
 create policy "Bible books are readable"
@@ -238,6 +272,7 @@ create policy "Users can delete their bookmarks"
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
 grant select on public.resource_sources to anon, authenticated;
+grant select on public.library_resources to anon, authenticated;
 grant select on public.bible_books to anon, authenticated;
 grant select on public.bible_chapters to anon, authenticated;
 grant select on public.bible_verses to anon, authenticated;
