@@ -754,7 +754,6 @@ export default function Home() {
   const continueReadingResources = useMemo(
     () =>
       Object.values(libraryProgress)
-        .filter((progress) => progress.progress > 0)
         .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
         .slice(0, 4),
     [libraryProgress],
@@ -981,6 +980,12 @@ export default function Home() {
     setTab("library");
 
     if (view !== "reader") return;
+
+    saveLibraryProgressUpdate(slug, (current) => ({
+      ...current,
+      fontSize: current.fontSize || libraryFontSize,
+      updatedAt: new Date().toISOString(),
+    }));
 
     setActiveLibraryLoading(true);
     try {
