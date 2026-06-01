@@ -79,6 +79,16 @@ type DictionaryEntry = {
   found: boolean;
 };
 
+type DictionarySearchResult = {
+  headword: string;
+  normalized_headword: string;
+  definition: string;
+  source_title: string;
+  source_line_start: number;
+  source_line_end: number;
+  review_status: string;
+};
+
 type CrossReference = {
   id: string;
   verse_ref: string;
@@ -130,6 +140,15 @@ type LibraryProgress = {
 
 type LibraryProgressState = Record<string, LibraryProgress>;
 
+type SpeechState = {
+  targetId: string | null;
+  label: string;
+  playing: boolean;
+  paused: boolean;
+  progress: number;
+  rate: number;
+};
+
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
@@ -148,6 +167,11 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
     word: "beloved",
     definition:
       "Greatly loved; dear to the heart.",
+  },
+  love: {
+    word: "love",
+    definition:
+      "To regard with affection; to delight in; benevolence, good will, and kindness.",
   },
   loved: {
     word: "loved",
@@ -234,8 +258,9 @@ const dictionaryAliases: Record<string, string> = {
   repentance: "repentance",
   repent: "repentance",
   charity: "charity",
-  loveth: "loved",
-  lovedst: "loved",
+  loveth: "love",
+  loved: "love",
+  lovedst: "love",
   worlds: "world",
 };
 
@@ -356,19 +381,58 @@ const localCrossReferences: CrossReference[] = [
 
 const localCommentaryEntries: CommentaryEntry[] = [
   {
-    id: "sample-ironside-john-3-16",
+    id: "dods-john-3-14-15",
+    book: "John",
+    chapter: 3,
+    verse_start: 14,
+    verse_end: 15,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "Dods connects the lifting up of the Son of man with the brazen serpent, emphasizing that Christ becomes conspicuous through self-sacrifice and is looked to for healing.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3225-3265.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-3-16-17",
     book: "John",
     chapter: 3,
     verse_start: 16,
-    verse_end: 16,
-    author: "H. A. Ironside",
-    resource_title: "John Commentary Placeholder",
+    verse_end: 17,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
     entry_text:
-      "Placeholder only. This row reserves the commentary structure for a future verified public-domain import.",
-    public_domain_status: "Placeholder; verify source before importing full text.",
-    source_url: "",
+      "The passage is treated as the heart of the remedy: God's love is shown in giving His Son, and the Son is sent for saving rather than condemning the world.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3194-3197.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-3-18-21",
+    book: "John",
+    chapter: 3,
+    verse_start: 18,
+    verse_end: 21,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "Dods frames faith as the simple but decisive response to God's appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
   },
 ];
+
+function mergeCommentaryEntries(...entryGroups: CommentaryEntry[][]) {
+  const seen = new Set<string>();
+
+  return entryGroups.flatMap((entries) =>
+    entries.filter((entry) => {
+      const key = entry.id || `${entry.book}-${entry.chapter}-${entry.verse_start}-${entry.verse_end}-${entry.author}-${entry.resource_title}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }),
+  );
+}
 
 const bookOrder = [
   "Genesis",
@@ -575,6 +639,28 @@ function saveLibraryProgress(state: LibraryProgressState) {
   window.localStorage.setItem(LIBRARY_PROGRESS_KEY, JSON.stringify(state));
 }
 
+function chunkSpeechText(text: string) {
+  const paragraphs = text
+    .replace(/\s+/g, " ")
+    .split(/(?<=[.!?])\s+/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const chunks: string[] = [];
+  let current = "";
+
+  for (const paragraph of paragraphs) {
+    if ((current + " " + paragraph).trim().length > 900 && current) {
+      chunks.push(current);
+      current = paragraph;
+    } else {
+      current = `${current} ${paragraph}`.trim();
+    }
+  }
+
+  if (current) chunks.push(current);
+  return chunks;
+}
+
 function formatPercent(value: number) {
   return `${Math.max(0, Math.min(100, Math.round(value)))}%`;
 }
@@ -640,7 +726,6 @@ export default function Home() {
   const [fullStudyRef, setFullStudyRef] = useState<string | null>(null);
   const [studyTab, setStudyTab] = useState<StudyDrawerTab>("study");
   const [noteDraft, setNoteDraft] = useState("");
-  const [audioPlaying, setAudioPlaying] = useState(false);
   const [saved, setSaved] = useState<SavedState>({ notes: [], highlights: [], bookmarks: [] });
   const [savedLoaded, setSavedLoaded] = useState(false);
   const [syncMessage, setSyncMessage] = useState("");
@@ -648,6 +733,9 @@ export default function Home() {
   const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>(localCommentaryEntries);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchFilter, setSearchFilter] = useState<TestamentFilter>("all");
+  const [dictionarySearchTerm, setDictionarySearchTerm] = useState("");
+  const [dictionarySearchResults, setDictionarySearchResults] = useState<DictionarySearchResult[]>([]);
+  const [dictionarySearchStatus, setDictionarySearchStatus] = useState("");
   const [flashRef, setFlashRef] = useState<string | null>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authMessage, setAuthMessage] = useState("");
@@ -660,7 +748,20 @@ export default function Home() {
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [libraryFontSize, setLibraryFontSize] = useState(18);
+  const [speechState, setSpeechState] = useState<SpeechState>({
+    targetId: null,
+    label: "",
+    playing: false,
+    paused: false,
+    progress: 0,
+    rate: 1,
+  });
   const libraryReaderRef = useRef<HTMLDivElement | null>(null);
+  const speechChunksRef = useRef<string[]>([]);
+  const speechIndexRef = useRef(0);
+  const speechRateRef = useRef(1);
+  const speechProgressRef = useRef<((progress: number) => void) | null>(null);
+  const speechCancelledRef = useRef(false);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -824,6 +925,48 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    speechRateRef.current = speechState.rate;
+  }, [speechState.rate]);
+
+  useEffect(() => {
+    return () => {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const query = dictionarySearchTerm.trim();
+    if (query.length < 2) {
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setDictionarySearchStatus("Searching Webster's 1828...");
+      fetch(`/api/dictionary?query=${encodeURIComponent(query)}&limit=20`, {
+        signal: controller.signal,
+      })
+        .then((response) => response.json())
+        .then((data: { entries?: DictionarySearchResult[] }) => {
+          setDictionarySearchResults(data.entries ?? []);
+          setDictionarySearchStatus((data.entries ?? []).length ? "" : "No dictionary entries found yet.");
+        })
+        .catch((error: Error) => {
+          if (error.name === "AbortError") return;
+          setDictionarySearchResults([]);
+          setDictionarySearchStatus("Dictionary search is not available yet.");
+        });
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [dictionarySearchTerm]);
+
+  useEffect(() => {
     if (!savedLoaded || user) return;
     saveLocalState(saved);
   }, [saved, savedLoaded, user]);
@@ -906,7 +1049,7 @@ export default function Home() {
           setCommentaryEntries(localCommentaryEntries);
           return;
         }
-        setCommentaryEntries(data);
+        setCommentaryEntries(mergeCommentaryEntries(localCommentaryEntries, data));
       });
   }, [supabase]);
 
@@ -1040,6 +1183,96 @@ export default function Home() {
     const node = libraryReaderRef.current;
     if (!node) return;
     node.scrollTop = (node.scrollHeight - node.clientHeight) * (progress / 100);
+  }
+
+  function speakCurrentChunk() {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    const chunks = speechChunksRef.current;
+    const index = speechIndexRef.current;
+
+    if (index >= chunks.length) {
+      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100 }));
+      speechProgressRef.current?.(100);
+      return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(chunks[index]);
+    utterance.rate = speechRateRef.current;
+    utterance.onend = () => {
+      if (speechCancelledRef.current) return;
+      speechIndexRef.current += 1;
+      const progress = Math.min(100, (speechIndexRef.current / Math.max(1, chunks.length)) * 100);
+      speechProgressRef.current?.(progress);
+      setSpeechState((state) => ({ ...state, progress }));
+      speakCurrentChunk();
+    };
+    utterance.onerror = () => {
+      setSpeechState((state) => ({ ...state, playing: false, paused: false }));
+      setSyncMessage("Could not play audio on this device yet.");
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startSpeech(targetId: string, label: string, text: string, startProgress = 0, onProgress?: (progress: number) => void) {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      setSyncMessage("Text-to-speech is not available in this browser.");
+      return;
+    }
+
+    const chunks = chunkSpeechText(text);
+    if (!chunks.length) {
+      setSyncMessage("No readable text is available for audio yet.");
+      return;
+    }
+
+    speechCancelledRef.current = true;
+    window.speechSynthesis.cancel();
+    speechCancelledRef.current = false;
+    speechChunksRef.current = chunks;
+    speechIndexRef.current = Math.min(chunks.length - 1, Math.max(0, Math.floor((startProgress / 100) * chunks.length)));
+    speechProgressRef.current = onProgress ?? null;
+    setSpeechState((state) => ({
+      ...state,
+      targetId,
+      label,
+      playing: true,
+      paused: false,
+      progress: startProgress,
+    }));
+    speakCurrentChunk();
+  }
+
+  function pauseSpeech() {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    window.speechSynthesis.pause();
+    setSpeechState((state) => ({ ...state, paused: true }));
+  }
+
+  function resumeSpeech() {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    window.speechSynthesis.resume();
+    setSpeechState((state) => ({ ...state, paused: false, playing: true }));
+  }
+
+  function toggleSpeech(targetId: string, label: string, text: string, startProgress = 0, onProgress?: (progress: number) => void) {
+    if (speechState.targetId === targetId && speechState.playing) {
+      if (speechState.paused) {
+        resumeSpeech();
+      } else {
+        pauseSpeech();
+      }
+      return;
+    }
+
+    startSpeech(targetId, label, text, startProgress, onProgress);
+  }
+
+  function updateSpeechRate(rate: number) {
+    setSpeechState((state) => ({ ...state, rate }));
+  }
+
+  function bibleSpeechText(verses: BibleVerse[]) {
+    return verses.map((verse) => `${verse.ref}. ${verse.plainText}`).join(" ");
   }
 
   function jumpToVerse() {
@@ -1331,6 +1564,33 @@ export default function Home() {
     setActiveDictionaryEntry(fallbackEntry);
     setStudyTab("dictionary");
 
+    try {
+      const response = await fetch(`/api/dictionary/${encodeURIComponent(word)}`);
+      if (response.ok) {
+        const data = (await response.json()) as {
+          word: string;
+          lookupWord: string;
+          found: boolean;
+          entries?: DictionarySearchResult[];
+        };
+        const definitions = data.entries ?? [];
+        if (data.found && definitions.length) {
+          setActiveDictionaryEntry({
+            word: data.word,
+            lookupWord: data.lookupWord,
+            definition: definitions
+              .slice(0, 3)
+              .map((entry) => entry.definition)
+              .join("\n\n"),
+            found: true,
+          });
+          return;
+        }
+      }
+    } catch {
+      // Keep the local starter definition visible and try Supabase next.
+    }
+
     if (!supabase) return;
 
     const { data, error } = await supabase
@@ -1395,11 +1655,23 @@ export default function Home() {
             </button>
             <button
               className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
+              onClick={() =>
+                toggleSpeech(
+                  `bible-${book}-${chapter}`,
+                  `${book} ${chapter}`,
+                  bibleSpeechText(chapterVerses),
+                  0,
+                )
+              }
               type="button"
-              title="Audio placeholder"
+              title="Listen to current chapter"
             >
-              <Headphones size={17} />
-              Listen
+              {speechState.targetId === `bible-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
+                <Pause size={17} />
+              ) : (
+                <Headphones size={17} />
+              )}
+              {speechState.targetId === `bible-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
             </button>
           </div>
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
@@ -1482,9 +1754,30 @@ export default function Home() {
                 searchTerm={searchTerm}
                 searchFilter={searchFilter}
                 results={searchResults}
+                dictionarySearchTerm={dictionarySearchTerm}
+                dictionarySearchResults={dictionarySearchResults}
+                dictionarySearchStatus={dictionarySearchStatus}
                 onSearchTermChange={setSearchTerm}
                 onSearchFilterChange={setSearchFilter}
+                onDictionarySearchTermChange={(value) => {
+                  setDictionarySearchTerm(value);
+                  if (value.trim().length < 2) {
+                    setDictionarySearchResults([]);
+                    setDictionarySearchStatus("");
+                  }
+                }}
                 onOpenVerse={openSearchResult}
+                onOpenDictionaryEntry={(entry) => {
+                  setActiveDictionaryEntry({
+                    word: entry.headword.toLowerCase(),
+                    lookupWord: entry.normalized_headword,
+                    definition: entry.definition,
+                    found: true,
+                  });
+                  setStudyTab("dictionary");
+                  if (selectedRef) setStudyRef(selectedRef);
+                  setTab("bible");
+                }}
               />
             )}
 
@@ -1516,6 +1809,7 @@ export default function Home() {
                 continueReadingResources={continueReadingResources}
                 featuredResources={featuredLibraryResources}
                 fontSize={libraryFontSize}
+                speechState={speechState}
                 readerRef={libraryReaderRef}
                 onCategoryChange={setLibraryCategory}
                 onSearchTermChange={setLibrarySearchTerm}
@@ -1539,6 +1833,25 @@ export default function Home() {
                 }}
                 onBookmarkLocation={bookmarkLibraryLocation}
                 onJumpBookmark={jumpLibraryBookmark}
+                onListenResource={(resource, text, progress) => {
+                  toggleSpeech(
+                    `resource-${resource.slug}`,
+                    resource.title,
+                    text,
+                    progress,
+                    (nextProgress) => {
+                      saveLibraryProgressUpdate(resource.slug, (current) => ({
+                        ...current,
+                        title: resource.title,
+                        author: resource.author,
+                        progress: nextProgress,
+                        fontSize: libraryFontSize,
+                        updatedAt: new Date().toISOString(),
+                      }));
+                    },
+                  );
+                }}
+                onSpeechRateChange={updateSpeechRate}
               />
             )}
 
@@ -1599,7 +1912,8 @@ export default function Home() {
           highlighted={highlightsByRef.has(studyRef)}
           bookmarked={bookmarksByRef.has(studyRef)}
           noteDraft={noteDraft}
-          audioPlaying={audioPlaying}
+          audioPlaying={speechState.targetId === `verse-${studyRef}` && speechState.playing && !speechState.paused}
+          speechRate={speechState.rate}
           syncMessage={syncMessage}
           storageMode={user ? "Supabase account" : "Local fallback"}
           onActiveTabChange={setStudyTab}
@@ -1621,7 +1935,8 @@ export default function Home() {
             setStudyRef(null);
             setTab("fullStudy");
           }}
-          onToggleAudio={() => setAudioPlaying((value) => !value)}
+          onToggleAudio={() => toggleSpeech(`verse-${studyRef}`, studyRef, `${studyRef}. ${activeVerse.plainText}`)}
+          onSpeechRateChange={updateSpeechRate}
         />
       )}
     </main>
@@ -1904,16 +2219,26 @@ function SearchScreen({
   searchTerm,
   searchFilter,
   results,
+  dictionarySearchTerm,
+  dictionarySearchResults,
+  dictionarySearchStatus,
   onSearchTermChange,
   onSearchFilterChange,
+  onDictionarySearchTermChange,
   onOpenVerse,
+  onOpenDictionaryEntry,
 }: {
   searchTerm: string;
   searchFilter: TestamentFilter;
   results: BibleVerse[];
+  dictionarySearchTerm: string;
+  dictionarySearchResults: DictionarySearchResult[];
+  dictionarySearchStatus: string;
   onSearchTermChange: (value: string) => void;
   onSearchFilterChange: (value: TestamentFilter) => void;
+  onDictionarySearchTermChange: (value: string) => void;
   onOpenVerse: (verse: BibleVerse) => void;
+  onOpenDictionaryEntry: (entry: DictionarySearchResult) => void;
 }) {
   const filters: { id: TestamentFilter; label: string }[] = [
     { id: "all", label: "All" },
@@ -1999,6 +2324,44 @@ function SearchScreen({
             ))}
           </>
         )}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Search Webster&apos;s 1828
+          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+            <BookOpen size={18} className="text-[var(--green)]" />
+            <input
+              className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+              placeholder="believe, love, death..."
+              value={dictionarySearchTerm}
+              onChange={(event) => onDictionarySearchTermChange(event.target.value)}
+            />
+          </div>
+        </label>
+
+        <div className="mt-3 space-y-3">
+          {dictionarySearchTerm.trim().length < 2 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">Search the imported Webster&apos;s 1828 headwords.</p>
+          ) : dictionarySearchResults.length === 0 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">{dictionarySearchStatus || "No dictionary entries found yet."}</p>
+          ) : (
+            dictionarySearchResults.map((entry) => (
+              <button
+                key={`${entry.normalized_headword}-${entry.source_line_start}-${entry.source_line_end}`}
+                className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left"
+                onClick={() => onOpenDictionaryEntry(entry)}
+                type="button"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-base font-semibold text-[var(--ink)]">{entry.headword}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Webster&apos;s 1828</span>
+                </div>
+                <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{entry.definition}</p>
+              </button>
+            ))
+          )}
+        </div>
       </section>
     </div>
   );
@@ -2099,6 +2462,7 @@ function LibraryScreen({
   continueReadingResources,
   featuredResources,
   fontSize,
+  speechState,
   readerRef,
   onCategoryChange,
   onSearchTermChange,
@@ -2109,6 +2473,8 @@ function LibraryScreen({
   onFontSizeChange,
   onBookmarkLocation,
   onJumpBookmark,
+  onListenResource,
+  onSpeechRateChange,
 }: {
   view: LibraryView;
   resources: LibraryResource[];
@@ -2123,6 +2489,7 @@ function LibraryScreen({
   continueReadingResources: LibraryProgress[];
   featuredResources: LibraryResource[];
   fontSize: number;
+  speechState: SpeechState;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onCategoryChange: (category: string) => void;
   onSearchTermChange: (value: string) => void;
@@ -2133,6 +2500,8 @@ function LibraryScreen({
   onFontSizeChange: (size: number) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
+  onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
+  onSpeechRateChange: (rate: number) => void;
 }) {
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
@@ -2150,6 +2519,9 @@ function LibraryScreen({
         onFontSizeChange={onFontSizeChange}
         onBookmarkLocation={onBookmarkLocation}
         onJumpBookmark={onJumpBookmark}
+        speechState={speechState}
+        onListen={() => onListenResource(activeResource, activeText, progress?.progress ?? 0)}
+        onSpeechRateChange={onSpeechRateChange}
       />
     );
   }
@@ -2353,6 +2725,9 @@ function LibraryReader({
   onFontSizeChange,
   onBookmarkLocation,
   onJumpBookmark,
+  speechState,
+  onListen,
+  onSpeechRateChange,
 }: {
   resource: LibraryResource;
   text: string;
@@ -2366,7 +2741,11 @@ function LibraryReader({
   onFontSizeChange: (size: number) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
+  speechState: SpeechState;
+  onListen: () => void;
+  onSpeechRateChange: (rate: number) => void;
 }) {
+  const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
   return (
     <div className="flex h-[calc(100vh-96px)] flex-col bg-[var(--scripture)] md:h-[calc(100vh-48px)]">
       <header className="shrink-0 border-b border-[var(--line)] bg-[var(--paper)]/95 p-3 backdrop-blur md:p-4">
@@ -2411,6 +2790,27 @@ function LibraryReader({
         </div>
 
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <button
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white"
+            onClick={onListen}
+            type="button"
+          >
+            {speechActive && !speechState.paused ? <Pause size={16} /> : <Play size={16} />}
+            {speechActive && !speechState.paused ? "Pause" : "Listen"}
+          </button>
+          <label className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+            Speed
+            <select
+              className="bg-transparent text-[var(--ink)] outline-none"
+              value={speechState.rate}
+              onChange={(event) => onSpeechRateChange(Number(event.target.value))}
+            >
+              <option value={0.8}>0.8x</option>
+              <option value={1}>1x</option>
+              <option value={1.2}>1.2x</option>
+              <option value={1.5}>1.5x</option>
+            </select>
+          </label>
           <button
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
             onClick={onBookmarkLocation}
@@ -2892,6 +3292,7 @@ function StudyDrawer({
   bookmarked,
   noteDraft,
   audioPlaying,
+  speechRate,
   syncMessage,
   storageMode,
   onActiveTabChange,
@@ -2907,6 +3308,7 @@ function StudyDrawer({
   onOpenReference,
   onOpenFullStudy,
   onToggleAudio,
+  onSpeechRateChange,
 }: {
   verse: BibleVerse;
   activeTab: StudyDrawerTab;
@@ -2919,6 +3321,7 @@ function StudyDrawer({
   bookmarked: boolean;
   noteDraft: string;
   audioPlaying: boolean;
+  speechRate: number;
   syncMessage: string;
   storageMode: string;
   onActiveTabChange: (tab: StudyDrawerTab) => void;
@@ -2934,6 +3337,7 @@ function StudyDrawer({
   onOpenReference: (targetRef: string) => void;
   onOpenFullStudy: () => void;
   onToggleAudio: () => void;
+  onSpeechRateChange: (rate: number) => void;
 }) {
   const [drawerSize, setDrawerSize] = useState<StudyDrawerSize>("half");
   const dragStartYRef = useRef<number | null>(null);
@@ -3307,22 +3711,34 @@ function StudyDrawer({
             <div className="rounded-2xl border border-[var(--line)] bg-white p-5">
               <div className="flex items-center gap-3 text-[var(--green)]">
                 <Headphones size={22} />
-                <h3 className="text-lg font-semibold">Listen placeholder</h3>
+                <h3 className="text-lg font-semibold">Listen</h3>
               </div>
               <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-                Audio is intentionally not connected yet. This control is prepared for future verse audio files, device text-to-speech, or licensed KJV audio.
+                Uses this device&apos;s built-in speech. No AI narration, paid API, or licensed audio is connected.
               </p>
-              <button
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white"
-                onClick={onToggleAudio}
-                type="button"
-              >
-                {audioPlaying ? <Pause size={16} /> : <Play size={16} />}
-                {audioPlaying ? "Pause" : "Play"}
-              </button>
-              <p className="mt-3 text-sm font-semibold text-[var(--muted)]">
-                {audioPlaying ? "Playback UI active. No audio source is connected yet." : "Ready for a future audio source."}
-              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white"
+                  onClick={onToggleAudio}
+                  type="button"
+                >
+                  {audioPlaying ? <Pause size={16} /> : <Play size={16} />}
+                  {audioPlaying ? "Pause" : "Play"}
+                </button>
+                <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+                  Speed
+                  <select
+                    className="bg-transparent text-[var(--ink)] outline-none"
+                    value={speechRate}
+                    onChange={(event) => onSpeechRateChange(Number(event.target.value))}
+                  >
+                    <option value={0.8}>0.8x</option>
+                    <option value={1}>1x</option>
+                    <option value={1.2}>1.2x</option>
+                    <option value={1.5}>1.5x</option>
+                  </select>
+                </label>
+              </div>
             </div>
           )}
 

@@ -122,6 +122,8 @@ create table if not exists public.commentary_entries (
 create index if not exists commentary_entries_lookup_idx
   on public.commentary_entries (book, chapter, verse_start, verse_end);
 create index if not exists commentary_entries_source_id_idx on public.commentary_entries (source_id);
+create unique index if not exists commentary_entries_unique_source_idx
+  on public.commentary_entries (book, chapter, verse_start, verse_end, author, resource_title);
 
 create table if not exists public.user_notes (
   id uuid primary key default gen_random_uuid(),
@@ -330,6 +332,15 @@ values
     'Reserved for future commentary/resource import planning.'
   ),
   (
+    'The Expositor''s Bible: The Gospel of St. John, Volume I',
+    'Marcus Dods',
+    1892,
+    'https://www.gutenberg.org/ebooks/33151',
+    'Project Gutenberg public-domain ebook in the United States',
+    'Commercial use must follow Project Gutenberg trademark/license terms when retaining Project Gutenberg material.',
+    'First commentary collection path for John. Source downloaded from Project Gutenberg.'
+  ),
+  (
     'E. M. Bounds placeholder',
     'E. M. Bounds',
     null,
@@ -433,15 +444,36 @@ select
   resource_sources.id,
   'John',
   3,
-  16,
-  16,
-  'H. A. Ironside',
-  'John Commentary Placeholder',
-  'Placeholder only. This row reserves the commentary structure for a future verified public-domain import.',
-  'Placeholder; verify source before importing full text.',
-  null
+  sample.verse_start,
+  sample.verse_end,
+  'Marcus Dods',
+  'The Expositor''s Bible: The Gospel of St. John, Volume I',
+  sample.entry_text,
+  sample.public_domain_status,
+  'https://www.gutenberg.org/ebooks/33151'
 from public.resource_sources
-where resource_sources.title = 'H. A. Ironside placeholder'
+cross join (
+  values
+    (
+      14,
+      15,
+      'Dods connects the lifting up of the Son of man with the brazen serpent, emphasizing that Christ becomes conspicuous through self-sacrifice and is looked to for healing.',
+      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3225-3265.'
+    ),
+    (
+      16,
+      17,
+      'The passage is treated as the heart of the remedy: God''s love is shown in giving His Son, and the Son is sent for saving rather than condemning the world.',
+      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3194-3197.'
+    ),
+    (
+      18,
+      21,
+      'Dods frames faith as the simple but decisive response to God''s appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.',
+      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.'
+    )
+) as sample(verse_start, verse_end, entry_text, public_domain_status)
+where resource_sources.title = 'The Expositor''s Bible: The Gospel of St. John, Volume I'
 on conflict (book, chapter, verse_start, verse_end, author, resource_title) do update
 set entry_text = excluded.entry_text,
     public_domain_status = excluded.public_domain_status,

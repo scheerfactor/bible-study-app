@@ -8,12 +8,14 @@ A first working prototype for a mobile-first KJV Bible study app.
 - Book, chapter, and verse jump
 - John 3:16 quick path from the Today screen
 - Full KJV text search in the browser
-- Study Drawer with Actions, Dictionary, Cross References, Notes, and Audio placeholder tabs
+- Webster's 1828 dictionary search
+- Study Drawer with Actions, Dictionary, Cross References, Notes, device Text-to-Speech, and Commentary tabs
 - Verse actions for highlight, note, bookmark, copy, and share
 - Webster's 1828 lookup with word normalization for forms such as `believeth` -> `believe`
 - John 3:14-18 sample cross references using the future TSK table structure
-- Commentary tab and `commentary_entries` table placeholder
-- Import scripts for Webster's 1828 entries and TSK cross references
+- Commentary tab with the first public-domain commentary collection path
+- Import scripts for Webster's 1828 entries, TSK cross references, and commentary entries
+- Browser/device Text-to-Speech for Bible chapters, selected verses, and library resources
 - Search results highlight matched words/phrases
 - Signed-out notes, highlights, and bookmarks persist in local storage
 - Signed-in notes, highlights, and bookmarks sync to Supabase when env vars and schema are configured
@@ -212,6 +214,20 @@ data/sources/websters-1828/source-manifest.json
 
 The source is the 1828 Noah Webster work from Internet Archive/Open Library. The original work is public domain; OCR should still be reviewed before a full production import. Large OCR source files should be downloaded locally into `data/sources/websters-1828/` when needed; they are intentionally ignored by git so the beta repo stays lightweight.
 
+The app also includes a generated, server-side Webster lookup file:
+
+```text
+data/generated/websters-1828.entries.json
+```
+
+Rebuild it from the local OCR source files:
+
+```bash
+npm run prepare:webster
+```
+
+The generator currently parses both documented OCR volumes and writes a substantially complete Webster dataset for API lookup/search. The raw OCR files remain ignored by Git; the generated app-ready file is committed.
+
 Accepted formats: `.json` or `.csv`.
 
 Required fields:
@@ -233,6 +249,13 @@ Run:
 
 ```bash
 npm run import:webster -- data/imports/websters-1828.json
+```
+
+Or import the generated full dataset:
+
+```bash
+npm run import:webster -- data/generated/websters-1828.entries.json --dry-run
+npm run import:webster -- data/generated/websters-1828.entries.json
 ```
 
 Use the sample format as a template:
@@ -332,6 +355,7 @@ Use this before importing anything beyond the current verified samples.
 ### TSK import
 
 - Confirm the TSK source rights and transcription terms before import.
+- Review `TSK_RIGHTS_REVIEW.md` before choosing a full source.
 - Record source rights in `resource_sources`.
 - Validate each row has `verse_ref`, `target_ref`, `label`, `source`, and `source_title`.
 - Run the JSON and CSV sample imports before the full file.
@@ -339,10 +363,18 @@ Use this before importing anything beyond the current verified samples.
 
 ### First commentary import
 
-- Import only a small verified public-domain sample first.
+- Current first commentary collection path: `data/commentary/expositors-bible-john/`.
+- Source: Marcus Dods, `The Expositor's Bible: The Gospel of St. John, Volume I`, Project Gutenberg ebook 33151.
+- Import only this one commentary collection until the workflow is proven.
 - Confirm each entry has author, resource title, verse range, public-domain status, and source URL.
 - Keep commentary brief in the drawer; use the Full Study view for deeper reading.
 - Do not import unclear, modern, or copyrighted commentary content.
+
+Dry-run the first sample:
+
+```bash
+npm run import:commentary -- data/commentary/expositors-bible-john/john-3-sample.json --dry-run
+```
 
 ### Source rights verification
 

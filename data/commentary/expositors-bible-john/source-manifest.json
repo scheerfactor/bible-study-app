@@ -1,0 +1,15 @@
+{
+  "title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+  "author": "Marcus Dods",
+  "year": 1892,
+  "category": "Commentary",
+  "source_url": "https://www.gutenberg.org/ebooks/33151",
+  "download_url": "https://www.gutenberg.org/cache/epub/33151/pg33151.txt",
+  "file_path": "data/commentary/expositors-bible-john/expositors-bible-gospel-of-st-john-vol-1.txt",
+  "public_domain_status": "Project Gutenberg public-domain ebook in the United States",
+  "commercial_use_status": "allowed with Project Gutenberg trademark/license terms when retaining Project Gutenberg material",
+  "attribution_required": true,
+  "notes": "First commentary collection path for the prototype. Keep only this one commentary collection until the import workflow is proven.",
+  "import_status": "sample_import_ready",
+  "sample_file": "data/commentary/expositors-bible-john/john-3-sample.json"
+}

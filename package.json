@@ -12,7 +12,9 @@
     "prepare:tsk-metav": "node scripts/prepare-tsk-metav-cross-references.mjs",
     "library:validate": "node scripts/validate-library-manifests.mjs",
     "library:download": "node scripts/download-library-resources.mjs",
-    "library:import": "node scripts/import-library-resources.mjs"
+    "library:import": "node scripts/import-library-resources.mjs",
+    "prepare:webster": "node scripts/prepare-websters-1828-data.mjs",
+    "import:commentary": "node scripts/import-commentary-entries.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
