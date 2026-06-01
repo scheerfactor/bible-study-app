@@ -1582,7 +1582,7 @@ export default function Home() {
         <MobileNav tab={tab} onTab={setTab} />
       </div>
 
-      {studyRef && activeVerse && (
+      {tab === "bible" && studyRef && activeVerse && (
         <StudyDrawer
           verse={activeVerse}
           activeTab={studyTab}
