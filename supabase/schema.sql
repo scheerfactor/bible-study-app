@@ -157,6 +157,51 @@ create table if not exists public.user_bookmarks (
 
 create index if not exists user_bookmarks_user_ref_idx on public.user_bookmarks (user_id, verse_ref);
 
+create table if not exists public.user_library_progress (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  resource_slug text not null,
+  title text not null,
+  author text not null,
+  progress numeric not null default 0 check (progress >= 0 and progress <= 100),
+  font_size integer not null default 18 check (font_size between 12 and 32),
+  line_spacing numeric not null default 1.65 check (line_spacing between 1 and 3),
+  reading_width text not null default 'comfortable',
+  theme text not null default 'sepia',
+  bookmarks jsonb not null default '[]'::jsonb,
+  started_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (user_id, resource_slug)
+);
+
+create index if not exists user_library_progress_user_slug_idx on public.user_library_progress (user_id, resource_slug);
+
+create table if not exists public.user_completed_resources (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  resource_slug text not null,
+  title text not null,
+  author text not null,
+  completed_at timestamptz not null default now(),
+  unique (user_id, resource_slug)
+);
+
+create index if not exists user_completed_resources_user_slug_idx on public.user_completed_resources (user_id, resource_slug);
+
+create table if not exists public.user_listening_progress (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  resource_slug text not null,
+  title text not null,
+  author text not null,
+  progress numeric not null default 0 check (progress >= 0 and progress <= 100),
+  rate numeric not null default 1 check (rate >= 0.5 and rate <= 3),
+  updated_at timestamptz not null default now(),
+  unique (user_id, resource_slug)
+);
+
+create index if not exists user_listening_progress_user_slug_idx on public.user_listening_progress (user_id, resource_slug);
+
 alter table public.resource_sources enable row level security;
 alter table public.library_resources enable row level security;
 alter table public.bible_books enable row level security;
@@ -168,6 +213,9 @@ alter table public.commentary_entries enable row level security;
 alter table public.user_notes enable row level security;
 alter table public.user_highlights enable row level security;
 alter table public.user_bookmarks enable row level security;
+alter table public.user_library_progress enable row level security;
+alter table public.user_completed_resources enable row level security;
+alter table public.user_listening_progress enable row level security;
 
 drop policy if exists "Public sources are readable" on public.resource_sources;
 drop policy if exists "Library resources are readable" on public.library_resources;
@@ -189,6 +237,18 @@ drop policy if exists "Users can read their bookmarks" on public.user_bookmarks;
 drop policy if exists "Users can create their bookmarks" on public.user_bookmarks;
 drop policy if exists "Users can update their bookmarks" on public.user_bookmarks;
 drop policy if exists "Users can delete their bookmarks" on public.user_bookmarks;
+drop policy if exists "Users can read their library progress" on public.user_library_progress;
+drop policy if exists "Users can create their library progress" on public.user_library_progress;
+drop policy if exists "Users can update their library progress" on public.user_library_progress;
+drop policy if exists "Users can delete their library progress" on public.user_library_progress;
+drop policy if exists "Users can read their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can create their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can update their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can delete their completed resources" on public.user_completed_resources;
+drop policy if exists "Users can read their listening progress" on public.user_listening_progress;
+drop policy if exists "Users can create their listening progress" on public.user_listening_progress;
+drop policy if exists "Users can update their listening progress" on public.user_listening_progress;
+drop policy if exists "Users can delete their listening progress" on public.user_listening_progress;
 
 create policy "Public sources are readable"
   on public.resource_sources for select
@@ -273,6 +333,57 @@ create policy "Users can delete their bookmarks"
   on public.user_bookmarks for delete
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
+create policy "Users can read their library progress"
+  on public.user_library_progress for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their library progress"
+  on public.user_library_progress for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their library progress"
+  on public.user_library_progress for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their library progress"
+  on public.user_library_progress for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their completed resources"
+  on public.user_completed_resources for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their completed resources"
+  on public.user_completed_resources for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their completed resources"
+  on public.user_completed_resources for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their completed resources"
+  on public.user_completed_resources for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their listening progress"
+  on public.user_listening_progress for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their listening progress"
+  on public.user_listening_progress for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their listening progress"
+  on public.user_listening_progress for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their listening progress"
+  on public.user_listening_progress for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
 grant select on public.resource_sources to anon, authenticated;
 grant select on public.library_resources to anon, authenticated;
 grant select on public.bible_books to anon, authenticated;
@@ -284,6 +395,9 @@ grant select on public.commentary_entries to anon, authenticated;
 grant select, insert, update, delete on public.user_notes to authenticated;
 grant select, insert, update, delete on public.user_highlights to authenticated;
 grant select, insert, update, delete on public.user_bookmarks to authenticated;
+grant select, insert, update, delete on public.user_library_progress to authenticated;
+grant select, insert, update, delete on public.user_completed_resources to authenticated;
+grant select, insert, update, delete on public.user_listening_progress to authenticated;
 
 insert into public.resource_sources (
   title,

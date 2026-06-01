@@ -7,9 +7,12 @@ import {
   ChevronLeft,
   ChevronRight,
   Clipboard,
+  CheckCircle2,
   Download,
   Pause,
   Play,
+  RotateCcw,
+  Square,
   Trash2,
   Headphones,
   Highlighter,
@@ -25,6 +28,7 @@ import {
   Settings,
   Share2,
   Star,
+  Timer,
   Volume2,
   X,
 } from "lucide-react";
@@ -36,6 +40,8 @@ type StudyDrawerTab = "study" | "actions" | "dictionary" | "crossReferences" | "
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader";
+type LibraryReaderTheme = "light" | "sepia" | "dark";
+type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 
 type BibleVerse = {
   ref: string;
@@ -134,11 +140,35 @@ type LibraryProgress = {
   author: string;
   progress: number;
   fontSize: number;
+  lineSpacing: number;
+  readingWidth: LibraryReadingWidth;
+  theme: LibraryReaderTheme;
   bookmarks: number[];
+  startedAt: string;
   updatedAt: string;
 };
 
 type LibraryProgressState = Record<string, LibraryProgress>;
+
+type CompletedResource = {
+  slug: string;
+  title: string;
+  author: string;
+  completedAt: string;
+};
+
+type CompletedResourceState = Record<string, CompletedResource>;
+
+type ListeningProgress = {
+  slug: string;
+  title: string;
+  author: string;
+  progress: number;
+  rate: number;
+  updatedAt: string;
+};
+
+type ListeningProgressState = Record<string, ListeningProgress>;
 
 type SpeechState = {
   targetId: string | null;
@@ -147,10 +177,14 @@ type SpeechState = {
   paused: boolean;
   progress: number;
   rate: number;
+  sleepTimerMinutes: number | null;
+  sleepTimerEndsAt: string | null;
 };
 
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
+const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
+const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -621,14 +655,52 @@ function saveLocalState(state: SavedState) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
+  const now = new Date().toISOString();
+  return {
+    slug: resource.slug,
+    title: resource.title,
+    author: resource.author,
+    progress: 0,
+    fontSize,
+    lineSpacing: 1.65,
+    readingWidth: "comfortable",
+    theme: "sepia",
+    bookmarks: [],
+    startedAt: now,
+    updatedAt: now,
+  };
+}
+
+function normalizeLibraryProgress(progress: Partial<LibraryProgress> & Pick<LibraryProgress, "slug" | "title" | "author">): LibraryProgress {
+  const fallback = defaultLibraryProgress(progress);
+  return {
+    ...fallback,
+    ...progress,
+    progress: Math.min(100, Math.max(0, Number(progress.progress ?? fallback.progress))),
+    fontSize: Math.min(26, Math.max(15, Number(progress.fontSize ?? fallback.fontSize))),
+    lineSpacing: Math.min(2.2, Math.max(1.35, Number(progress.lineSpacing ?? fallback.lineSpacing))),
+    readingWidth: progress.readingWidth ?? fallback.readingWidth,
+    theme: progress.theme ?? fallback.theme,
+    bookmarks: Array.isArray(progress.bookmarks) ? progress.bookmarks : [],
+    startedAt: progress.startedAt ?? fallback.startedAt,
+    updatedAt: progress.updatedAt ?? fallback.updatedAt,
+  };
+}
+
 function loadLibraryProgress(): LibraryProgressState {
   if (typeof window === "undefined") return {};
 
   try {
     const raw = window.localStorage.getItem(LIBRARY_PROGRESS_KEY);
     if (!raw) return {};
-    const parsed = JSON.parse(raw) as LibraryProgressState;
-    return parsed && typeof parsed === "object" ? parsed : {};
+    const parsed = JSON.parse(raw) as Record<string, LibraryProgress>;
+    if (!parsed || typeof parsed !== "object") return {};
+    return Object.fromEntries(
+      Object.entries(parsed)
+        .filter(([, progress]) => progress?.slug && progress?.title && progress?.author)
+        .map(([slug, progress]) => [slug, normalizeLibraryProgress(progress)]),
+    );
   } catch {
     return {};
   }
@@ -637,6 +709,42 @@ function loadLibraryProgress(): LibraryProgressState {
 function saveLibraryProgress(state: LibraryProgressState) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(LIBRARY_PROGRESS_KEY, JSON.stringify(state));
+}
+
+function loadCompletedResources(): CompletedResourceState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(LIBRARY_COMPLETED_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as CompletedResourceState;
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveCompletedResources(state: CompletedResourceState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LIBRARY_COMPLETED_KEY, JSON.stringify(state));
+}
+
+function loadListeningProgress(): ListeningProgressState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(LIBRARY_LISTENING_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as ListeningProgressState;
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveListeningProgress(state: ListeningProgressState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LIBRARY_LISTENING_KEY, JSON.stringify(state));
 }
 
 function chunkSpeechText(text: string) {
@@ -747,6 +855,8 @@ export default function Home() {
   const [activeLibraryText, setActiveLibraryText] = useState("");
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
+  const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
+  const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
   const [libraryFontSize, setLibraryFontSize] = useState(18);
   const [speechState, setSpeechState] = useState<SpeechState>({
     targetId: null,
@@ -755,6 +865,8 @@ export default function Home() {
     paused: false,
     progress: 0,
     rate: 1,
+    sleepTimerMinutes: null,
+    sleepTimerEndsAt: null,
   });
   const libraryReaderRef = useRef<HTMLDivElement | null>(null);
   const speechChunksRef = useRef<string[]>([]);
@@ -762,6 +874,7 @@ export default function Home() {
   const speechRateRef = useRef(1);
   const speechProgressRef = useRef<((progress: number) => void) | null>(null);
   const speechCancelledRef = useRef(false);
+  const sleepTimerRef = useRef<number | null>(null);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -855,9 +968,25 @@ export default function Home() {
   const continueReadingResources = useMemo(
     () =>
       Object.values(libraryProgress)
+        .filter((progress) => progress.progress > 0 && progress.progress < 100 && !completedResources[progress.slug])
         .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
         .slice(0, 4),
-    [libraryProgress],
+    [completedResources, libraryProgress],
+  );
+
+  const completedLibraryResources = useMemo(
+    () => Object.values(completedResources).sort((a, b) => b.completedAt.localeCompare(a.completedAt)),
+    [completedResources],
+  );
+
+  const libraryStats = useMemo(
+    () => ({
+      booksStarted: Object.values(libraryProgress).filter((progress) => progress.progress > 0 || progress.bookmarks.length > 0).length,
+      booksCompleted: completedLibraryResources.length,
+      readingStreak: "Soon",
+      totalResources: libraryResources.length,
+    }),
+    [completedLibraryResources.length, libraryProgress, libraryResources.length],
   );
 
   const featuredLibraryResources = useMemo(() => {
@@ -905,6 +1034,8 @@ export default function Home() {
   useEffect(() => {
     queueMicrotask(() => {
       setLibraryProgress(loadLibraryProgress());
+      setCompletedResources(loadCompletedResources());
+      setListeningProgress(loadListeningProgress());
     });
   }, []);
 
@@ -933,6 +1064,7 @@ export default function Home() {
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         window.speechSynthesis.cancel();
       }
+      if (sleepTimerRef.current) window.clearTimeout(sleepTimerRef.current);
     };
   }, []);
 
@@ -1097,24 +1229,89 @@ export default function Home() {
     if (!resource) return;
 
     setLibraryProgress((state) => {
-      const current =
-        state[slug] ??
-        {
-          slug,
-          title: resource.title,
-          author: resource.author,
-          progress: 0,
-          fontSize: libraryFontSize,
-          bookmarks: [],
-          updatedAt: new Date().toISOString(),
-        };
+      const current = state[slug] ?? defaultLibraryProgress(resource, libraryFontSize);
+      const updated = normalizeLibraryProgress(updater(current));
       const nextState = {
         ...state,
-        [slug]: updater(current),
+        [slug]: updated,
       };
       saveLibraryProgress(nextState);
       return nextState;
     });
+  }
+
+  function saveListeningProgressUpdate(resource: LibraryResource, progress: number, rate = speechRateRef.current) {
+    setListeningProgress((state) => {
+      const nextState = {
+        ...state,
+        [resource.slug]: {
+          slug: resource.slug,
+          title: resource.title,
+          author: resource.author,
+          progress: Math.min(100, Math.max(0, progress)),
+          rate,
+          updatedAt: new Date().toISOString(),
+        },
+      };
+      saveListeningProgress(nextState);
+      return nextState;
+    });
+  }
+
+  function saveCompletedResource(resource: LibraryResource) {
+    setCompletedResources((state) => {
+      const nextState = {
+        ...state,
+        [resource.slug]: {
+          slug: resource.slug,
+          title: resource.title,
+          author: resource.author,
+          completedAt: new Date().toISOString(),
+        },
+      };
+      saveCompletedResources(nextState);
+      return nextState;
+    });
+  }
+
+  function removeCompletedResource(slug: string) {
+    setCompletedResources((state) => {
+      const nextState = { ...state };
+      delete nextState[slug];
+      saveCompletedResources(nextState);
+      return nextState;
+    });
+  }
+
+  function markLibraryFinished(resource: LibraryResource) {
+    saveLibraryProgressUpdate(resource.slug, (current) => ({
+      ...current,
+      title: resource.title,
+      author: resource.author,
+      progress: 100,
+      updatedAt: new Date().toISOString(),
+    }));
+    saveCompletedResource(resource);
+    saveListeningProgressUpdate(resource, 100);
+    setSyncMessage(`${resource.title} marked finished.`);
+  }
+
+  function restartLibraryResource(resource: LibraryResource) {
+    stopSpeech();
+    saveLibraryProgressUpdate(resource.slug, (current) => ({
+      ...current,
+      title: resource.title,
+      author: resource.author,
+      progress: 0,
+      bookmarks: [],
+      startedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }));
+    removeCompletedResource(resource.slug);
+    saveListeningProgressUpdate(resource, 0);
+    const node = libraryReaderRef.current;
+    if (node) node.scrollTop = 0;
+    setSyncMessage(`${resource.title} restarted.`);
   }
 
   async function openLibraryResource(slug: string, view: LibraryView = "detail") {
@@ -1127,6 +1324,9 @@ export default function Home() {
     saveLibraryProgressUpdate(slug, (current) => ({
       ...current,
       fontSize: current.fontSize || libraryFontSize,
+      title: current.title,
+      author: current.author,
+      startedAt: current.startedAt || new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }));
 
@@ -1164,6 +1364,10 @@ export default function Home() {
       fontSize: libraryFontSize,
       updatedAt: new Date().toISOString(),
     }));
+
+    if (progress >= 99.5 && !completedResources[resource.slug]) {
+      saveCompletedResource(resource);
+    }
   }
 
   function bookmarkLibraryLocation() {
@@ -1185,13 +1389,23 @@ export default function Home() {
     node.scrollTop = (node.scrollHeight - node.clientHeight) * (progress / 100);
   }
 
+  function updateLibraryReaderSettings(settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) {
+    const resource = activeLibraryResource;
+    if (!resource) return;
+    saveLibraryProgressUpdate(resource.slug, (current) => ({
+      ...current,
+      ...settings,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
   function speakCurrentChunk() {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     const chunks = speechChunksRef.current;
     const index = speechIndexRef.current;
 
     if (index >= chunks.length) {
-      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100 }));
+      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
       speechProgressRef.current?.(100);
       return;
     }
@@ -1228,6 +1442,10 @@ export default function Home() {
     speechCancelledRef.current = true;
     window.speechSynthesis.cancel();
     speechCancelledRef.current = false;
+    if (sleepTimerRef.current) {
+      window.clearTimeout(sleepTimerRef.current);
+      sleepTimerRef.current = null;
+    }
     speechChunksRef.current = chunks;
     speechIndexRef.current = Math.min(chunks.length - 1, Math.max(0, Math.floor((startProgress / 100) * chunks.length)));
     speechProgressRef.current = onProgress ?? null;
@@ -1238,8 +1456,30 @@ export default function Home() {
       playing: true,
       paused: false,
       progress: startProgress,
+      sleepTimerMinutes: null,
+      sleepTimerEndsAt: null,
     }));
     speakCurrentChunk();
+  }
+
+  function stopSpeech(message = "Audio stopped.") {
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      speechCancelledRef.current = true;
+      window.speechSynthesis.cancel();
+      speechCancelledRef.current = false;
+    }
+    if (sleepTimerRef.current) {
+      window.clearTimeout(sleepTimerRef.current);
+      sleepTimerRef.current = null;
+    }
+    setSpeechState((state) => ({
+      ...state,
+      playing: false,
+      paused: false,
+      sleepTimerMinutes: null,
+      sleepTimerEndsAt: null,
+    }));
+    setSyncMessage(message);
   }
 
   function pauseSpeech() {
@@ -1268,7 +1508,29 @@ export default function Home() {
   }
 
   function updateSpeechRate(rate: number) {
+    speechRateRef.current = rate;
     setSpeechState((state) => ({ ...state, rate }));
+  }
+
+  function setSleepTimer(minutes: number | null) {
+    if (typeof window === "undefined") return;
+    if (sleepTimerRef.current) {
+      window.clearTimeout(sleepTimerRef.current);
+      sleepTimerRef.current = null;
+    }
+
+    if (!minutes) {
+      setSpeechState((state) => ({ ...state, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
+      setSyncMessage("Sleep timer cleared.");
+      return;
+    }
+
+    const endsAt = new Date(Date.now() + minutes * 60 * 1000).toISOString();
+    sleepTimerRef.current = window.setTimeout(() => {
+      stopSpeech("Sleep timer stopped audio.");
+    }, minutes * 60 * 1000);
+    setSpeechState((state) => ({ ...state, sleepTimerMinutes: minutes, sleepTimerEndsAt: endsAt }));
+    setSyncMessage(`Sleep timer set for ${minutes} minutes.`);
   }
 
   function bibleSpeechText(verses: BibleVerse[]) {
@@ -1685,7 +1947,15 @@ export default function Home() {
               <NavButton icon={<HomeIcon size={18} />} label="Today" active={tab === "today"} onClick={() => setTab("today")} />
               <NavButton icon={<BookOpen size={18} />} label="Bible" active={tab === "bible"} onClick={() => setTab("bible")} />
               <NavButton icon={<Search size={18} />} label="Search" active={tab === "search"} onClick={() => setTab("search")} />
-              <NavButton icon={<Library size={18} />} label="Library" active={tab === "library"} onClick={() => setTab("library")} />
+              <NavButton
+                icon={<Library size={18} />}
+                label="Library"
+                active={tab === "library"}
+                onClick={() => {
+                  setLibraryView("home");
+                  setTab("library");
+                }}
+              />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
@@ -1806,8 +2076,12 @@ export default function Home() {
                 activeText={activeLibraryText}
                 loading={activeLibraryLoading}
                 progressState={libraryProgress}
+                completedResources={completedLibraryResources}
+                completedState={completedResources}
+                listeningProgress={listeningProgress}
                 continueReadingResources={continueReadingResources}
                 featuredResources={featuredLibraryResources}
+                stats={libraryStats}
                 fontSize={libraryFontSize}
                 speechState={speechState}
                 readerRef={libraryReaderRef}
@@ -1831,15 +2105,18 @@ export default function Home() {
                     }));
                   }
                 }}
+                onReaderSettingsChange={updateLibraryReaderSettings}
                 onBookmarkLocation={bookmarkLibraryLocation}
                 onJumpBookmark={jumpLibraryBookmark}
                 onListenResource={(resource, text, progress) => {
+                  const listeningStart = listeningProgress[resource.slug]?.progress ?? progress;
                   toggleSpeech(
                     `resource-${resource.slug}`,
                     resource.title,
                     text,
-                    progress,
+                    listeningStart,
                     (nextProgress) => {
+                      saveListeningProgressUpdate(resource, nextProgress, speechRateRef.current);
                       saveLibraryProgressUpdate(resource.slug, (current) => ({
                         ...current,
                         title: resource.title,
@@ -1848,10 +2125,33 @@ export default function Home() {
                         fontSize: libraryFontSize,
                         updatedAt: new Date().toISOString(),
                       }));
+                      if (nextProgress >= 99.5) {
+                        saveCompletedResource(resource);
+                      }
                     },
                   );
                 }}
-                onSpeechRateChange={updateSpeechRate}
+                onSpeechRateChange={(rate) => {
+                  updateSpeechRate(rate);
+                  if (activeLibraryResource) {
+                    saveListeningProgressUpdate(
+                      activeLibraryResource,
+                      listeningProgress[activeLibraryResource.slug]?.progress ?? libraryProgress[activeLibraryResource.slug]?.progress ?? 0,
+                      rate,
+                    );
+                  }
+                }}
+                onStopSpeech={() => stopSpeech()}
+                onSleepTimerChange={setSleepTimer}
+                onMarkFinished={markLibraryFinished}
+                onRestartResource={restartLibraryResource}
+                onRemoveCompleted={removeCompletedResource}
+                onReadAgain={(slug) => {
+                  const resource = libraryResources.find((candidate) => candidate.slug === slug);
+                  if (!resource) return;
+                  restartLibraryResource(resource);
+                  void openLibraryResource(slug, "reader");
+                }}
               />
             )}
 
@@ -2459,8 +2759,12 @@ function LibraryScreen({
   activeText,
   loading,
   progressState,
+  completedResources,
+  completedState,
+  listeningProgress,
   continueReadingResources,
   featuredResources,
+  stats,
   fontSize,
   speechState,
   readerRef,
@@ -2471,10 +2775,17 @@ function LibraryScreen({
   onOpenReader,
   onScrollReader,
   onFontSizeChange,
+  onReaderSettingsChange,
   onBookmarkLocation,
   onJumpBookmark,
   onListenResource,
   onSpeechRateChange,
+  onStopSpeech,
+  onSleepTimerChange,
+  onMarkFinished,
+  onRestartResource,
+  onRemoveCompleted,
+  onReadAgain,
 }: {
   view: LibraryView;
   resources: LibraryResource[];
@@ -2486,8 +2797,17 @@ function LibraryScreen({
   activeText: string;
   loading: boolean;
   progressState: LibraryProgressState;
+  completedResources: CompletedResource[];
+  completedState: CompletedResourceState;
+  listeningProgress: ListeningProgressState;
   continueReadingResources: LibraryProgress[];
   featuredResources: LibraryResource[];
+  stats: {
+    booksStarted: number;
+    booksCompleted: number;
+    readingStreak: string;
+    totalResources: number;
+  };
   fontSize: number;
   speechState: SpeechState;
   readerRef: React.RefObject<HTMLDivElement | null>;
@@ -2498,30 +2818,45 @@ function LibraryScreen({
   onOpenReader: (slug: string) => void;
   onScrollReader: () => void;
   onFontSizeChange: (size: number) => void;
+  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
+  onStopSpeech: () => void;
+  onSleepTimerChange: (minutes: number | null) => void;
+  onMarkFinished: (resource: LibraryResource) => void;
+  onRestartResource: (resource: LibraryResource) => void;
+  onRemoveCompleted: (slug: string) => void;
+  onReadAgain: (slug: string) => void;
 }) {
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
+    const listening = listeningProgress[activeResource.slug];
     return (
       <LibraryReader
         resource={activeResource}
         text={activeText}
         loading={loading}
         progress={progress}
+        completed={Boolean(completedState[activeResource.slug])}
+        listeningProgress={listening}
         fontSize={fontSize}
         readerRef={readerRef}
         onBack={() => onOpenDetail(activeResource.slug)}
         onHome={onOpenHome}
         onScroll={onScrollReader}
         onFontSizeChange={onFontSizeChange}
+        onReaderSettingsChange={onReaderSettingsChange}
         onBookmarkLocation={onBookmarkLocation}
         onJumpBookmark={onJumpBookmark}
         speechState={speechState}
-        onListen={() => onListenResource(activeResource, activeText, progress?.progress ?? 0)}
+        onListen={() => onListenResource(activeResource, activeText, listening?.progress ?? progress?.progress ?? 0)}
         onSpeechRateChange={onSpeechRateChange}
+        onStopSpeech={onStopSpeech}
+        onSleepTimerChange={onSleepTimerChange}
+        onMarkFinished={() => onMarkFinished(activeResource)}
+        onRestart={() => onRestartResource(activeResource)}
       />
     );
   }
@@ -2531,8 +2866,10 @@ function LibraryScreen({
       <LibraryDetail
         resource={activeResource}
         progress={progressState[activeResource.slug]}
+        completed={completedState[activeResource.slug]}
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
+        onReadAgain={() => onReadAgain(activeResource.slug)}
       />
     );
   }
@@ -2557,6 +2894,13 @@ function LibraryScreen({
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
           </div>
         </div>
+      </section>
+
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <LibraryStat label="Books started" value={String(stats.booksStarted)} />
+        <LibraryStat label="Books completed" value={String(stats.booksCompleted)} />
+        <LibraryStat label="Reading streak" value={stats.readingStreak} />
+        <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
@@ -2610,6 +2954,33 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
+      {completedResources.length > 0 && (
+        <LibraryShelf title="Completed Books">
+          {completedResources.map((completed) => (
+            <article key={`completed-${completed.slug}`} className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="mt-0.5 shrink-0 text-[var(--green)]" size={20} />
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{completed.title}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{completed.author}</p>
+                  <p className="mt-2 text-xs text-[var(--muted)]">Completed {new Date(completed.completedAt).toLocaleDateString()}</p>
+                </div>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-sm font-semibold text-white" onClick={() => onReadAgain(completed.slug)} type="button">
+                  <RotateCcw size={15} />
+                  Read Again
+                </button>
+                <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => onRemoveCompleted(completed.slug)} type="button">
+                  <Trash2 size={15} />
+                  Remove
+                </button>
+              </div>
+            </article>
+          ))}
+        </LibraryShelf>
+      )}
+
       <LibraryShelf title="Categories">
         {categories.filter((category) => category !== "All").map((category) => {
           const count = resources.filter((resource) => resource.category === category).length;
@@ -2651,13 +3022,17 @@ function LibraryScreen({
 function LibraryDetail({
   resource,
   progress,
+  completed,
   onBack,
   onOpenReader,
+  onReadAgain,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
+  completed?: CompletedResource;
   onBack: () => void;
   onOpenReader: () => void;
+  onReadAgain: () => void;
 }) {
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -2679,9 +3054,17 @@ function LibraryDetail({
               {resource.author} {resource.year ? `(${resource.year})` : ""}
             </p>
           </div>
-          <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenReader} type="button">
-            Open Resource
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
+              {completed ? "Read Again" : progress?.progress ? "Continue Reading" : "Open Resource"}
+            </button>
+            {completed && (
+              <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
+                <RotateCcw size={16} />
+                Restart
+              </button>
+            )}
+          </div>
         </div>
 
         <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{resource.description}</p>
@@ -2689,8 +3072,8 @@ function LibraryDetail({
         {progress && (
           <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
             <div className="flex items-center justify-between gap-3 text-sm font-semibold text-[var(--muted)]">
-              <span>Reading progress</span>
-              <span>{formatPercent(progress.progress)}</span>
+              <span>{completed ? "Completed" : "Reading progress"}</span>
+              <span>{completed ? new Date(completed.completedAt).toLocaleDateString() : formatPercent(progress.progress)}</span>
             </div>
             <div className="mt-3 h-2 rounded-full bg-white">
               <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
@@ -2717,37 +3100,65 @@ function LibraryReader({
   text,
   loading,
   progress,
+  completed,
+  listeningProgress,
   fontSize,
   readerRef,
   onBack,
   onHome,
   onScroll,
   onFontSizeChange,
+  onReaderSettingsChange,
   onBookmarkLocation,
   onJumpBookmark,
   speechState,
   onListen,
   onSpeechRateChange,
+  onStopSpeech,
+  onSleepTimerChange,
+  onMarkFinished,
+  onRestart,
 }: {
   resource: LibraryResource;
   text: string;
   loading: boolean;
   progress?: LibraryProgress;
+  completed: boolean;
+  listeningProgress?: ListeningProgress;
   fontSize: number;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onBack: () => void;
   onHome: () => void;
   onScroll: () => void;
   onFontSizeChange: (size: number) => void;
+  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   speechState: SpeechState;
   onListen: () => void;
   onSpeechRateChange: (rate: number) => void;
+  onStopSpeech: () => void;
+  onSleepTimerChange: (minutes: number | null) => void;
+  onMarkFinished: () => void;
+  onRestart: () => void;
 }) {
   const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
+  const activeProgress = progress ?? defaultLibraryProgress(resource, fontSize);
+  const readerThemeClass =
+    activeProgress.theme === "dark"
+      ? "bg-[#171712] text-[#eee8d8]"
+      : activeProgress.theme === "light"
+        ? "bg-[#fffdf8] text-[#292721]"
+        : "bg-[var(--scripture)] text-[var(--scripture-ink)]";
+  const readerWidthClass =
+    activeProgress.readingWidth === "narrow"
+      ? "max-w-2xl"
+      : activeProgress.readingWidth === "wide"
+        ? "max-w-5xl"
+        : "max-w-3xl";
+
   return (
-    <div className="flex h-[calc(100vh-96px)] flex-col bg-[var(--scripture)] md:h-[calc(100vh-48px)]">
+    <div className={`flex h-[calc(100vh-96px)] flex-col md:h-[calc(100vh-48px)] ${readerThemeClass}`}>
       <header className="shrink-0 border-b border-[var(--line)] bg-[var(--paper)]/95 p-3 backdrop-blur md:p-4">
         <div className="flex items-center justify-between gap-2">
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
@@ -2773,11 +3184,14 @@ function LibraryReader({
           >
             <Minus size={17} />
           </button>
-          <div>
+            <div>
             <div className="h-2 rounded-full bg-white">
-              <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress?.progress ?? 0) }} />
+              <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(activeProgress.progress) }} />
             </div>
-            <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">{formatPercent(progress?.progress ?? 0)} read</p>
+            <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">
+              {completed ? "Completed" : `${formatPercent(activeProgress.progress)} read`}
+              {listeningProgress && listeningProgress.progress > 0 && listeningProgress.progress < 100 ? ` · ${formatPercent(listeningProgress.progress)} listened` : ""}
+            </p>
           </div>
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--green)]"
@@ -2789,6 +3203,45 @@ function LibraryReader({
           </button>
         </div>
 
+        <div className="mt-3 grid gap-2 md:grid-cols-3">
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Line spacing
+            <select
+              className="mt-1 h-10 w-full rounded-full border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)] outline-none"
+              value={activeProgress.lineSpacing}
+              onChange={(event) => onReaderSettingsChange({ lineSpacing: Number(event.target.value) })}
+            >
+              <option value={1.45}>Tight</option>
+              <option value={1.65}>Normal</option>
+              <option value={1.9}>Roomy</option>
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Width
+            <select
+              className="mt-1 h-10 w-full rounded-full border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)] outline-none"
+              value={activeProgress.readingWidth}
+              onChange={(event) => onReaderSettingsChange({ readingWidth: event.target.value as LibraryReadingWidth })}
+            >
+              <option value="narrow">Narrow</option>
+              <option value="comfortable">Comfort</option>
+              <option value="wide">Wide</option>
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Theme
+            <select
+              className="mt-1 h-10 w-full rounded-full border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)] outline-none"
+              value={activeProgress.theme}
+              onChange={(event) => onReaderSettingsChange({ theme: event.target.value as LibraryReaderTheme })}
+            >
+              <option value="light">Light</option>
+              <option value="sepia">Sepia</option>
+              <option value="dark">Dark</option>
+            </select>
+          </label>
+        </div>
+
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <button
             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white"
@@ -2796,7 +3249,15 @@ function LibraryReader({
             type="button"
           >
             {speechActive && !speechState.paused ? <Pause size={16} /> : <Play size={16} />}
-            {speechActive && !speechState.paused ? "Pause" : "Listen"}
+            {speechActive ? (speechState.paused ? "Resume" : "Pause") : "Listen"}
+          </button>
+          <button
+            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+            onClick={onStopSpeech}
+            type="button"
+          >
+            <Square size={15} />
+            Stop
           </button>
           <label className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
             Speed
@@ -2805,10 +3266,27 @@ function LibraryReader({
               value={speechState.rate}
               onChange={(event) => onSpeechRateChange(Number(event.target.value))}
             >
-              <option value={0.8}>0.8x</option>
+              <option value={0.75}>0.75x</option>
               <option value={1}>1x</option>
-              <option value={1.2}>1.2x</option>
+              <option value={1.25}>1.25x</option>
               <option value={1.5}>1.5x</option>
+              <option value={2}>2x</option>
+            </select>
+          </label>
+          <label className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+            <Timer size={15} />
+            Sleep
+            <select
+              className="bg-transparent text-[var(--ink)] outline-none"
+              value={speechState.sleepTimerMinutes ?? ""}
+              onChange={(event) => onSleepTimerChange(event.target.value ? Number(event.target.value) : null)}
+            >
+              <option value="">Off</option>
+              <option value={5}>5m</option>
+              <option value={10}>10m</option>
+              <option value={15}>15m</option>
+              <option value={30}>30m</option>
+              <option value={60}>60m</option>
             </select>
           </label>
           <button
@@ -2818,6 +3296,22 @@ function LibraryReader({
           >
             <Bookmark size={16} />
             Bookmark
+          </button>
+          <button
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-white"
+            onClick={onMarkFinished}
+            type="button"
+          >
+            <CheckCircle2 size={16} />
+            Mark Finished
+          </button>
+          <button
+            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+            onClick={onRestart}
+            type="button"
+          >
+            <RotateCcw size={16} />
+            Restart
           </button>
           {(progress?.bookmarks ?? []).map((bookmark) => (
             <button
@@ -2840,7 +3334,7 @@ function LibraryReader({
         {loading ? (
           <EmptyState title="Loading resource" body="Preparing the reader." />
         ) : (
-          <div className="mx-auto max-w-3xl whitespace-pre-wrap font-serif leading-8 text-[var(--scripture-ink)]" style={{ fontSize }}>
+          <div className={`mx-auto whitespace-pre-wrap font-serif ${readerWidthClass}`} style={{ fontSize, lineHeight: activeProgress.lineSpacing }}>
             {text}
           </div>
         )}
@@ -2855,6 +3349,15 @@ function LibraryShelf({ title, children }: { title: string; children: React.Reac
       <h2 className="px-1 text-lg font-semibold text-[var(--ink)]">{title}</h2>
       <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">{children}</div>
     </section>
+  );
+}
+
+function LibraryStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+      <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
+      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+    </div>
   );
 }
 

@@ -16,6 +16,7 @@ A first working prototype for a mobile-first KJV Bible study app.
 - Commentary tab with the first public-domain commentary collection path
 - Import scripts for Webster's 1828 entries, TSK cross references, and commentary entries
 - Browser/device Text-to-Speech for Bible chapters, selected verses, and library resources
+- Local Library Reader controls for progress, completed books, reading settings, and listening position
 - Search results highlight matched words/phrases
 - Signed-out notes, highlights, and bookmarks persist in local storage
 - Signed-in notes, highlights, and bookmarks sync to Supabase when env vars and schema are configured
@@ -80,6 +81,9 @@ commentary_entries
 user_notes
 user_highlights
 user_bookmarks
+user_library_progress
+user_completed_resources
+user_listening_progress
 ```
 
 The schema is written to be rerunnable: it creates tables/indexes if missing, drops and recreates policies, grants Data API access, and upserts the sample source/cross-reference records.
@@ -105,7 +109,10 @@ where schemaname = 'public'
     'commentary_entries',
     'user_notes',
     'user_highlights',
-    'user_bookmarks'
+    'user_bookmarks',
+    'user_library_progress',
+    'user_completed_resources',
+    'user_listening_progress'
   )
 order by tablename;
 ```
@@ -167,6 +174,12 @@ To verify local fallback:
 ## Content Rights
 
 The prototype includes a `resource_sources` table so every Bible text, dictionary, commentary, or future book can carry source and rights notes before import.
+
+Library reader data is local-storage first for beta testing. The schema now reserves Supabase sync tables for later:
+
+- `user_library_progress`
+- `user_completed_resources`
+- `user_listening_progress`
 
 The app currently uses:
 
