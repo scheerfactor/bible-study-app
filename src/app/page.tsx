@@ -262,6 +262,22 @@ type WordExplorerResult = {
   bibleOccurrences: BibleVerse[];
 };
 
+type TeachingNotesExportData = {
+  book: string;
+  chapter: number;
+  bookIntroduction: BookIntroduction | null;
+  keyVerses: string[];
+  analysis: ChapterStudyAnalysis;
+  connections: ActiveChapterConnections;
+  crossReferences: CrossReference[];
+  commentaryEntries: CommentaryEntry[];
+  notes: Array<[string, UserNote[]]>;
+  memoryVerse: ScriptureMemoryItem | null;
+  fallbackMemoryVerse: BibleVerse;
+  recommendedResources: ChapterResourceRecommendation[];
+  versesByRef: Map<string, BibleVerse>;
+};
+
 type StudyPerson = {
   id: string;
   name: string;
@@ -1498,7 +1514,7 @@ const studyPlaces: StudyPlace[] = [
     id: "jerusalem",
     name: "Jerusalem",
     description:
-      "The chief city of the Jews. John 3 follows the Passover setting in Jerusalem where many saw the Lord's miracles.",
+      "The chief city of the Jews, central to the temple, the feasts, the Lord's final week, the resurrection witness, and early gospel preaching.",
     relatedPassages: ["John 2:23", "John 3:1", "John 7:50"],
     mapNote: "Map placeholder: future Bible map layer for Jerusalem and Judea.",
   },
@@ -4151,6 +4167,7 @@ export default function Home() {
                 bookmarksByRef={bookmarksByRef}
                 selectedVerseRef={selectedVerseRef}
                 allVerses={allVerses}
+                versesByRef={versesByRef}
                 chapterAnalysis={chapterAnalysis}
                 chapterConnectionsData={activeChapterConnections}
                 chapterCrossReferences={chapterCrossReferences}
@@ -5199,6 +5216,7 @@ function BibleReader({
   bookmarksByRef,
   selectedVerseRef,
   allVerses,
+  versesByRef,
   chapterAnalysis,
   chapterConnectionsData,
   chapterCrossReferences,
@@ -5271,6 +5289,7 @@ function BibleReader({
   bookmarksByRef: Map<string, UserBookmark>;
   selectedVerseRef: React.MutableRefObject<HTMLDivElement | null>;
   allVerses: BibleVerse[];
+  versesByRef: Map<string, BibleVerse>;
   chapterAnalysis: ChapterStudyAnalysis;
   chapterConnectionsData: ActiveChapterConnections;
   chapterCrossReferences: CrossReference[];
@@ -5639,6 +5658,7 @@ function BibleReader({
         explorerWord={explorerWord}
         memoryForChapter={memoryForChapter}
         selectedVerse={selectedVerse}
+        versesByRef={versesByRef}
         onAddMemoryVerse={onAddMemoryVerse}
         onExplorerWordChange={setExplorerWord}
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
@@ -5712,6 +5732,123 @@ function BibleReader({
   );
 }
 
+function teachingNotesFileBase(book: string, chapter: number) {
+  return `${book.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}-${chapter}-teaching-notes`;
+}
+
+function downloadTextFile(filename: string, content: string, type: string) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function sectionOrEmpty(lines: string[]) {
+  const filtered = lines.filter(Boolean);
+  return filtered.length ? filtered : ["No reviewed entries yet."];
+}
+
+function verseLine(ref: string, versesByRef: Map<string, BibleVerse>) {
+  const verse = versesByRef.get(ref);
+  return verse ? `${ref} - ${verse.plainText}` : ref;
+}
+
+function teachingDictionaryEntries(data: TeachingNotesExportData) {
+  const words = new Set([
+    ...keyWordsForVerse(data.fallbackMemoryVerse),
+    ...data.analysis.repeatedWords.slice(0, 12).map((item) => item.word),
+  ]);
+
+  return Array.from(words)
+    .map((word) => findDictionaryEntry(word))
+    .filter((entry) => entry.found)
+    .filter((entry, index, entries) => entries.findIndex((candidate) => candidate.lookupWord === entry.lookupWord) === index)
+    .slice(0, 12);
+}
+
+function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
+  const intro = data.bookIntroduction;
+  const definitions = teachingDictionaryEntries(data);
+  const memoryVerseRef = data.memoryVerse?.verse_ref ?? data.fallbackMemoryVerse.ref;
+  const memoryVerseText = data.memoryVerse?.verse_text || data.fallbackMemoryVerse.plainText;
+  const lines: string[] = [
+    `# ${data.book} ${data.chapter} Teaching Notes`,
+    "",
+    "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
+    "",
+    "## Book Introduction Summary",
+    ...sectionOrEmpty(intro ? [
+      `- Author: ${intro.overview.author}`,
+      `- Date: ${intro.overview.date}`,
+      `- Audience: ${intro.overview.audience}`,
+      `- Theme: ${intro.overview.theme}`,
+      `- Key verse: ${intro.overview.keyVerse}`,
+      `- Purpose: ${intro.overview.purpose}`,
+      `- Christ in the book: ${intro.christInTheBook}`,
+    ] : []),
+    "",
+    "## Key Verses",
+    ...sectionOrEmpty(data.keyVerses.map((ref) => `- ${verseLine(ref, data.versesByRef)}`)),
+    "",
+    "## Repeated Words",
+    ...sectionOrEmpty(data.analysis.repeatedWords.slice(0, 15).map((item) => `- ${item.word}: ${item.count}`)),
+    "",
+    "## Repeated Phrases",
+    ...sectionOrEmpty(data.analysis.repeatedPhrases.slice(0, 8).map((item) => `- ${item.phrase}: ${item.count}`)),
+    "",
+    "## Webster Word Definitions",
+    ...sectionOrEmpty(definitions.map((entry) => `- ${entry.lookupWord}: ${entry.definition}`)),
+    "",
+    "## TSK Cross References",
+    ...sectionOrEmpty(data.crossReferences.map((reference) => {
+      const preview = data.versesByRef.get(reference.target_ref)?.plainText;
+      return `- ${reference.verse_ref} -> ${reference.target_ref}${reference.label ? ` (${reference.label})` : ""}${preview ? ` - ${preview}` : ""} [${reference.source_title ?? reference.source}]`;
+    })),
+    "",
+    "## People Mentioned",
+    ...sectionOrEmpty(data.connections.people.map((person) => `- ${person.name}: ${person.summary} First appearance: ${person.firstAppearance}`)),
+    "",
+    "## Places Mentioned",
+    ...sectionOrEmpty(data.connections.places.map((place) => `- ${place.name}: ${place.description}`)),
+    "",
+    "## Types of Christ",
+    ...sectionOrEmpty(data.connections.types.map((type) => `- ${type.title}: ${type.description} ${type.pointsToChrist}`)),
+    "",
+    "## Prophecy Connections",
+    ...sectionOrEmpty(data.connections.prophecies.map((prophecy) => `- ${prophecy.prophecy} -> ${prophecy.fulfillment}: ${prophecy.description}`)),
+    "",
+    "## Commentary References",
+    ...sectionOrEmpty(data.commentaryEntries.map((entry) => `- ${entry.resource_title}, ${entry.author}, ${data.book} ${data.chapter}:${entry.verse_start}-${entry.verse_end}. ${entry.public_domain_status}`)),
+    "",
+    "## Personal Notes",
+    ...sectionOrEmpty(data.notes.flatMap(([ref, notes]) => notes.map((note) => `- ${ref}: ${note.body}`))),
+    "",
+    "## Memory Verse",
+    `- ${memoryVerseRef}: ${memoryVerseText}`,
+    "",
+    "## Recommended Resources",
+    ...sectionOrEmpty(data.recommendedResources.map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
+    "",
+  ];
+
+  return lines.join("\n");
+}
+
+function buildTeachingNotesPlainText(data: TeachingNotesExportData) {
+  return buildTeachingNotesMarkdown(data)
+    .replace(/^# /gm, "")
+    .replace(/^## /gm, "\n")
+    .replace(/^- /gm, "- ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim()
+    .concat("\n");
+}
+
 function ChapterStudyWorkflow({
   allVerses,
   analysis,
@@ -5726,6 +5863,7 @@ function ChapterStudyWorkflow({
   explorerWord,
   memoryForChapter,
   selectedVerse,
+  versesByRef,
   onAddMemoryVerse,
   onExplorerWordChange,
   onLookupWord,
@@ -5749,6 +5887,7 @@ function ChapterStudyWorkflow({
   explorerWord: string;
   memoryForChapter: ScriptureMemoryItem[];
   selectedVerse: BibleVerse;
+  versesByRef: Map<string, BibleVerse>;
   onAddMemoryVerse: (ref: string) => void;
   onExplorerWordChange: (word: string) => void;
   onLookupWord: (word: string) => void;
@@ -5761,6 +5900,56 @@ function ChapterStudyWorkflow({
 }) {
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
+  const [exportMessage, setExportMessage] = useState("");
+  const exportData = useMemo<TeachingNotesExportData>(() => ({
+    book: selectedVerse.book,
+    chapter: selectedVerse.chapter,
+    bookIntroduction,
+    keyVerses: chapterKeyVerses.length ? chapterKeyVerses : [selectedVerse.ref],
+    analysis,
+    connections,
+    crossReferences: chapterCrossReferences,
+    commentaryEntries: chapterCommentaryEntries,
+    notes: chapterNotes,
+    memoryVerse: memoryPreview,
+    fallbackMemoryVerse: selectedVerse,
+    recommendedResources: chapterResourceRecommendations,
+    versesByRef,
+  }), [
+    analysis,
+    bookIntroduction,
+    chapterCommentaryEntries,
+    chapterCrossReferences,
+    chapterKeyVerses,
+    chapterNotes,
+    chapterResourceRecommendations,
+    connections,
+    memoryPreview,
+    selectedVerse,
+    versesByRef,
+  ]);
+  const markdownExport = useMemo(() => buildTeachingNotesMarkdown(exportData), [exportData]);
+  const plainTextExport = useMemo(() => buildTeachingNotesPlainText(exportData), [exportData]);
+  const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
+
+  async function copyTeachingNotes() {
+    try {
+      await navigator.clipboard.writeText(markdownExport);
+      setExportMessage("Teaching notes copied.");
+    } catch {
+      setExportMessage("Copy was not available here. Use one of the download buttons.");
+    }
+  }
+
+  function downloadMarkdown() {
+    downloadTextFile(`${exportFileBase}.md`, markdownExport, "text/markdown;charset=utf-8");
+    setExportMessage("Markdown teaching notes downloaded.");
+  }
+
+  function downloadPlainText() {
+    downloadTextFile(`${exportFileBase}.txt`, plainTextExport, "text/plain;charset=utf-8");
+    setExportMessage("Plain text teaching notes downloaded.");
+  }
 
   return (
     <section id="chapter-analysis-workflow" className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
@@ -6087,17 +6276,56 @@ function ChapterStudyWorkflow({
               <NotebookPen size={18} />
               <h3 className="text-sm font-semibold">Teaching Mode</h3>
             </div>
-            {bookIntroduction && (
+            <div className="flex flex-wrap gap-2">
+              {bookIntroduction && (
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={onOpenBookIntroduction}
+                  type="button"
+                >
+                  <BookOpen size={14} />
+                  Book Introduction
+                </button>
+              )}
               <button
-                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                onClick={onOpenBookIntroduction}
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                onClick={copyTeachingNotes}
                 type="button"
               >
-                <BookOpen size={14} />
-                Book Introduction
+                <Download size={14} />
+                Export Teaching Notes
               </button>
-            )}
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={copyTeachingNotes}
+                type="button"
+              >
+                <Clipboard size={14} />
+                Copy Teaching Notes
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={downloadMarkdown}
+                type="button"
+              >
+                <Download size={14} />
+                Download Markdown
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={downloadPlainText}
+                type="button"
+              >
+                <Download size={14} />
+                Download Plain Text
+              </button>
+            </div>
           </div>
+          {exportMessage && (
+            <p className="mt-3 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-sm leading-6 text-[var(--muted)]">
+              {exportMessage}
+            </p>
+          )}
           <div className="mt-3 grid grid-cols-2 gap-2">
             <MiniStat label="Chapter notes" value={String(chapterNotes.length)} />
             <MiniStat label="Cross refs" value={String(chapterCrossReferences.length)} />
