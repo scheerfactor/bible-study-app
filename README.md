@@ -451,6 +451,14 @@ The first curated 25-resource import manifest lives at:
 data/library/manifests/curated-public-domain-resources.json
 ```
 
+Trusted Study Collection Phase 1 planning lives at:
+
+```text
+data/library/manifests/trusted-study-collection-phase-1.json
+```
+
+This Phase 1 file is metadata and recommendation planning only. It represents foundational resources such as Webster's 1828, Easton's, Smith's, Nave's, TSK, handbook candidates, survey candidates, trusted classics, Baptist history, missions, evangelism, and teaching resources. Do not import entries marked rights-review, metadata-only, do-not-import, or needs-review until the exact title, edition, source file, rights status, and doctrinal review are complete.
+
 Each manifest entry must include:
 
 ```text

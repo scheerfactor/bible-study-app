@@ -1,6 +1,42 @@
 [
   {
     "book": "John",
+    "chapter": 1,
+    "verse_start": 1,
+    "verse_end": 5,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "Dods presents John's opening as the foundation of the Gospel: Christ is the eternal Word, the source of life and light, and not merely a teacher appearing in time.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 1,
+    "verse_start": 14,
+    "verse_end": 14,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "The incarnation is treated as the Word truly becoming flesh and dwelling among men, making divine grace and truth visible in Christ.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 1,
+    "verse_start": 29,
+    "verse_end": 29,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "John the Baptist's witness is framed around Christ as the Lamb of God, directing attention away from the servant and toward the sacrifice appointed for sin.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from early John 1 exposition.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
     "chapter": 3,
     "verse_start": 14,
     "verse_end": 15,
@@ -32,6 +68,54 @@
     "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
     "entry_text": "Dods frames faith as the simple but decisive response to God's appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.",
     "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 4,
+    "verse_start": 13,
+    "verse_end": 14,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "The living water discourse is summarized as Christ offering satisfaction deeper than outward religion or earthly supply, meeting the soul's lasting need.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from John 4 exposition.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 6,
+    "verse_start": 35,
+    "verse_end": 35,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "Christ as the bread of life is presented as the true answer to spiritual hunger, calling men beyond signs to personal faith in Himself.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from John 6 exposition.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 10,
+    "verse_start": 11,
+    "verse_end": 11,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "The good Shepherd passage is summarized around Christ's care, ownership, and voluntary laying down of His life for the sheep.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from John 10 exposition.",
+    "source_url": "https://www.gutenberg.org/ebooks/33151",
+    "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
+  },
+  {
+    "book": "John",
+    "chapter": 11,
+    "verse_start": 25,
+    "verse_end": 26,
+    "author": "Marcus Dods",
+    "resource_title": "The Expositor's Bible: The Gospel of St. John, Volume I",
+    "entry_text": "Christ's words to Martha are treated as a declaration that resurrection and life are not merely future events but are found personally in Him.",
+    "public_domain_status": "Project Gutenberg public-domain ebook in the United States; summarized sample from John 11 exposition.",
     "source_url": "https://www.gutenberg.org/ebooks/33151",
     "source_title": "The Expositor's Bible: The Gospel of St. John, Volume I"
   }

@@ -40,6 +40,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
+import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -128,9 +129,16 @@ type LibraryResource = {
   author: string;
   year: number;
   category: string;
+  original_category?: string;
   description: string;
+  public_domain_status: string;
   rights_status: string;
   commercial_use_status: string;
+  doctrinal_review_status: string;
+  perspective_notes: string;
+  recommended_use: string;
+  resource_labels: string[];
+  resource_warnings: string[];
   source_url: string;
   source_license_url: string;
   rights_basis: string;
@@ -240,10 +248,12 @@ type WordExplorerResult = {
 type StudyPerson = {
   id: string;
   name: string;
+  summary: string;
   description: string;
   firstAppearance: string;
   majorPassages: string[];
   keyEvents: string[];
+  lessonsLearned: string[];
   relatedVerses: string[];
 };
 
@@ -299,6 +309,17 @@ type BiblePassage = {
   updatedAt: string;
 };
 
+type ChapterResourceRecommendation = {
+  id: string;
+  kind: "Dictionary" | "Cross References" | "Commentary" | "Library Resource" | "Bible Handbook";
+  title: string;
+  author?: string;
+  status: "available" | "sample" | "planned" | "rights review";
+  note: string;
+  resourceSlug?: string;
+  warning?: string;
+};
+
 type SpeechState = {
   targetId: string | null;
   label: string;
@@ -329,6 +350,310 @@ const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
   createBiblePassage("Luke", 24),
   createBiblePassage("Romans", 8),
+];
+
+const LIBRARY_CATEGORY_FILTERS = ["All", ...LIBRARY_CATEGORIES];
+
+function chapterEssentials({
+  book,
+  chapter,
+  commentary,
+  libraryResources,
+}: {
+  book: string;
+  chapter: number;
+  commentary: ChapterResourceRecommendation;
+  libraryResources: ChapterResourceRecommendation[];
+}): ChapterResourceRecommendation[] {
+  const key = `${book.toLowerCase().replaceAll(" ", "-")}-${chapter}`;
+  return [
+    {
+      id: `${key}-webster-1828`,
+      kind: "Dictionary",
+      title: "Webster's 1828 Dictionary",
+      status: "available",
+      note: "First stop for KJV word meanings and older English usage.",
+    },
+    {
+      id: `${key}-easton`,
+      kind: "Dictionary",
+      title: "Easton's Bible Dictionary",
+      author: "M. G. Easton",
+      status: "planned",
+      note: "Public-domain dictionary candidate for Bible names, places, and themes after import review.",
+    },
+    {
+      id: `${key}-smith`,
+      kind: "Dictionary",
+      title: "Smith's Bible Dictionary",
+      author: "William Smith",
+      status: "planned",
+      note: "Public-domain dictionary candidate for historical and geographical background after import review.",
+    },
+    {
+      id: `${key}-nave`,
+      kind: "Dictionary",
+      title: "Nave's Topical Bible",
+      author: "Orville J. Nave",
+      status: "planned",
+      note: "Topical Bible candidate for tracing related subjects after source and edition review.",
+    },
+    {
+      id: `${key}-tsk`,
+      kind: "Cross References",
+      title: "Treasury of Scripture Knowledge",
+      status: "sample",
+      note: "Cross-reference structure is ready; reviewed samples display before full TSK import.",
+    },
+    {
+      id: `${key}-halley`,
+      kind: "Bible Handbook",
+      title: "Halley's Bible Handbook",
+      author: "Henry H. Halley",
+      status: "rights review",
+      note: "Useful handbook candidate, but do not import until edition, copyright, and commercial-use rights are verified.",
+      warning: "Use with discernment",
+    },
+    {
+      id: `${key}-unger`,
+      kind: "Bible Handbook",
+      title: "Unger's Bible Handbook",
+      author: "Merrill F. Unger",
+      status: "rights review",
+      note: "Modern handbook candidate for comparison only; do not import unless rights permit.",
+      warning: "Use with discernment",
+    },
+    commentary,
+    ...libraryResources,
+  ];
+}
+
+function chapterRecommendations(
+  book: string,
+  chapters: number[],
+  options: {
+    commentaryForChapter: (chapter: number) => ChapterResourceRecommendation;
+    libraryForChapter: (chapter: number) => ChapterResourceRecommendation[];
+  },
+) {
+  return chapters.map((chapter) => ({
+    book,
+    chapter,
+    recommendations: chapterEssentials({
+      book,
+      chapter,
+      commentary: options.commentaryForChapter(chapter),
+      libraryResources: options.libraryForChapter(chapter),
+    }),
+  }));
+}
+
+const DEFAULT_CHAPTER_RESOURCE_RECOMMENDATIONS: ChapterResourceRecommendation[] = [
+  {
+    id: "default-webster-1828",
+    kind: "Dictionary",
+    title: "Webster's 1828 Dictionary",
+    status: "available",
+    note: "Best first stop for KJV word meanings and older English usage.",
+  },
+  {
+    id: "default-tsk",
+    kind: "Cross References",
+    title: "Treasury of Scripture Knowledge",
+    status: "sample",
+    note: "Cross-reference structure is ready; reviewed samples are shown before full import.",
+  },
+  {
+    id: "default-handbook",
+    kind: "Bible Handbook",
+    title: "Bible Handbook",
+    status: "planned",
+    note: "Reserved for a verified public-domain handbook after rights review.",
+  },
+];
+
+const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
+  book: string;
+  chapter: number;
+  recommendations: ChapterResourceRecommendation[];
+}> = [
+  ...chapterRecommendations("Genesis", [1, 2, 3, 4, 5], {
+    commentaryForChapter: (chapter) => ({
+      id: `genesis-${chapter}-commentary`,
+      kind: "Commentary",
+      title: "Matthew Henry Commentary",
+      author: "Matthew Henry",
+      status: "planned",
+      note: "Public-domain commentary candidate for creation, fall, promise, and early history after source review.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `genesis-${chapter}-pink-gleanings`,
+        kind: "Library Resource",
+        title: "Gleanings in Genesis",
+        author: "A. W. Pink",
+        status: "rights review",
+        note: "Genesis study candidate; do not import until exact edition and rights are verified.",
+        warning: "Not all doctrine endorsed",
+      },
+      {
+        id: `genesis-${chapter}-bunyan-classics`,
+        kind: "Library Resource",
+        title: "The Pilgrim's Progress",
+        author: "John Bunyan",
+        status: "available",
+        note: "Devotional classic for illustrating sin, conviction, and pilgrimage themes.",
+        resourceSlug: "pilgrims-progress",
+      },
+    ],
+  }),
+  ...chapterRecommendations("Exodus", [1, 2, 3, 4, 5], {
+    commentaryForChapter: (chapter) => ({
+      id: `exodus-${chapter}-commentary`,
+      kind: "Commentary",
+      title: "Matthew Henry Commentary",
+      author: "Matthew Henry",
+      status: "planned",
+      note: "Public-domain commentary candidate for bondage, deliverance, calling, and the Exodus story after source review.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `exodus-${chapter}-bounds-prayer`,
+        kind: "Library Resource",
+        title: "Power Through Prayer",
+        author: "E. M. Bounds",
+        status: "available",
+        note: "Helpful devotional reading for Moses' burden, ministry calling, and dependence on God.",
+        resourceSlug: "power-through-prayer",
+      },
+      {
+        id: `exodus-${chapter}-missions`,
+        kind: "Library Resource",
+        title: "A Retrospect",
+        author: "James Hudson Taylor",
+        status: "available",
+        note: "Missionary biography for lessons on calling, obedience, and faith under pressure.",
+        resourceSlug: "a-retrospect",
+      },
+    ],
+  }),
+  ...chapterRecommendations("John", [1, 2, 3, 4, 5], {
+    commentaryForChapter: (chapter) => ({
+      id: `john-${chapter}-dods-commentary`,
+      kind: "Commentary",
+      title: "The Expositor's Bible: The Gospel of St. John",
+      author: "Marcus Dods",
+      status: chapter <= 5 ? "sample" : "planned",
+      note: "Verified public-domain John commentary sample is staged for the first John passages.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `john-${chapter}-spurgeon-gospel`,
+        kind: "Library Resource",
+        title: "Around the Wicket Gate",
+        author: "C. H. Spurgeon",
+        status: "available",
+        note: "Helpful gospel-focused reading alongside John’s witness to Christ.",
+        resourceSlug: "around-the-wicket-gate",
+        warning: "Use with discernment",
+      },
+      {
+        id: `john-${chapter}-torrey-holy-spirit`,
+        kind: "Library Resource",
+        title: "The Person and Work of The Holy Spirit",
+        author: "R. A. Torrey",
+        status: "available",
+        note: "Supplemental study for John’s emphasis on witness, new birth, and spiritual life.",
+        resourceSlug: "the-person-and-work-of-the-holy-spirit",
+      },
+      ...(chapter === 3
+        ? [
+            {
+              id: "john-3-ironside",
+              kind: "Commentary" as const,
+              title: "H. A. Ironside",
+              author: "H. A. Ironside",
+              status: "rights review" as const,
+              note: "Commentary candidate for John studies after source and rights verification.",
+            },
+          ]
+        : []),
+    ],
+  }),
+  {
+    book: "Luke",
+    chapter: 24,
+    recommendations: chapterEssentials({
+      book: "Luke",
+      chapter: 24,
+      commentary: {
+        id: "luke-24-ryle-commentary",
+        kind: "Commentary",
+        title: "Expository Thoughts on Luke",
+        author: "J. C. Ryle",
+        status: "planned",
+        note: "Public-domain Gospel exposition candidate for resurrection and Great Commission teaching.",
+        warning: "Use with discernment",
+      },
+      libraryResources: [
+        {
+          id: "luke-24-moody-evangelism",
+          kind: "Library Resource",
+          title: "To the Work! To the Work!",
+          author: "D. L. Moody",
+          status: "planned",
+          note: "Evangelism and service classic candidate for Luke 24 witness and gospel work.",
+        },
+        {
+          id: "luke-24-torrey-evangelism",
+          kind: "Library Resource",
+          title: "How to Bring Men to Christ",
+          author: "R. A. Torrey",
+          status: "available",
+          note: "Practical evangelism help for teaching repentance, witness, and gospel response.",
+          resourceSlug: "how-to-bring-men-to-christ",
+        },
+      ],
+    }),
+  },
+  ...chapterRecommendations("Romans", [1, 2, 3, 4, 5, 6, 7, 8], {
+    commentaryForChapter: (chapter) => ({
+      id: `romans-${chapter}-ironside-commentary`,
+      kind: "Commentary",
+      title: "Lectures on Romans",
+      author: "H. A. Ironside",
+      status: "rights review",
+      note: "Romans commentary candidate; import only after exact edition and rights verification.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `romans-${chapter}-torrey-doctrines`,
+        kind: "Library Resource",
+        title: "The Fundamental Doctrines of the Christian Faith",
+        author: "R. A. Torrey",
+        status: "available",
+        note: "Doctrinal survey help for Romans themes after reading the Bible text first.",
+        resourceSlug: "the-fundamental-doctrines-of-the-christian-faith",
+      },
+      ...(chapter === 8
+        ? [
+            {
+              id: "romans-8-torrey-holy-spirit",
+              kind: "Library Resource" as const,
+              title: "The Person and Work of The Holy Spirit",
+              author: "R. A. Torrey",
+              status: "available" as const,
+              note: "Supplemental study help for the Spirit-focused language in Romans 8.",
+              resourceSlug: "the-person-and-work-of-the-holy-spirit",
+            },
+          ]
+        : []),
+    ],
+  }),
 ];
 
 const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "found">> = {
@@ -616,6 +941,45 @@ const localCrossReferences: CrossReference[] = [
 
 const localCommentaryEntries: CommentaryEntry[] = [
   {
+    id: "dods-john-1-1-5",
+    book: "John",
+    chapter: 1,
+    verse_start: 1,
+    verse_end: 5,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "Dods presents John's opening as the foundation of the Gospel: Christ is the eternal Word, the source of life and light, and not merely a teacher appearing in time.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-1-14",
+    book: "John",
+    chapter: 1,
+    verse_start: 14,
+    verse_end: 14,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "The incarnation is treated as the Word truly becoming flesh and dwelling among men, making divine grace and truth visible in Christ.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-1-29",
+    book: "John",
+    chapter: 1,
+    verse_start: 29,
+    verse_end: 29,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "John the Baptist's witness is framed around Christ as the Lamb of God, directing attention away from the servant and toward the sacrifice appointed for sin.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from early John 1 exposition.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
     id: "dods-john-3-14-15",
     book: "John",
     chapter: 3,
@@ -654,48 +1018,192 @@ const localCommentaryEntries: CommentaryEntry[] = [
     public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.",
     source_url: "https://www.gutenberg.org/ebooks/33151",
   },
+  {
+    id: "dods-john-4-13-14",
+    book: "John",
+    chapter: 4,
+    verse_start: 13,
+    verse_end: 14,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "The living water discourse is summarized as Christ offering satisfaction deeper than outward religion or earthly supply, meeting the soul's lasting need.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 4 exposition.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-6-35",
+    book: "John",
+    chapter: 6,
+    verse_start: 35,
+    verse_end: 35,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "Christ as the bread of life is presented as the true answer to spiritual hunger, calling men beyond signs to personal faith in Himself.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 6 exposition.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-10-11",
+    book: "John",
+    chapter: 10,
+    verse_start: 11,
+    verse_end: 11,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "The good Shepherd passage is summarized around Christ's care, ownership, and voluntary laying down of His life for the sheep.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 10 exposition.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+  {
+    id: "dods-john-11-25-26",
+    book: "John",
+    chapter: 11,
+    verse_start: 25,
+    verse_end: 26,
+    author: "Marcus Dods",
+    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
+    entry_text:
+      "Christ's words to Martha are treated as a declaration that resurrection and life are not merely future events but are found personally in Him.",
+    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 11 exposition.",
+    source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
 ];
 
 const studyPeople: StudyPerson[] = [
   {
     id: "jesus",
     name: "Jesus",
+    summary: "The Son of God and Saviour, central to all Scripture.",
     description:
       "The Son of God and Saviour. In John 3 He teaches Nicodemus about the new birth, faith, and everlasting life.",
     firstAppearance: "Matthew 1:1",
     majorPassages: ["John 1", "John 3", "John 19", "John 20"],
     keyEvents: ["Teaches Nicodemus", "Speaks of being lifted up", "Reveals God's love in giving His only begotten Son"],
+    lessonsLearned: ["Salvation is of God", "The new birth is necessary", "Christ is the true object of faith"],
     relatedVerses: ["John 3:3", "John 3:14", "John 3:16", "John 3:17"],
   },
   {
     id: "nicodemus",
     name: "Nicodemus",
+    summary: "A ruler of the Jews who came to Jesus and heard the Lord's teaching on the new birth.",
     description:
       "A ruler of the Jews who came to Jesus by night and heard the Lord's teaching on being born again.",
     firstAppearance: "John 3:1",
     majorPassages: ["John 3", "John 7", "John 19"],
     keyEvents: ["Comes to Jesus by night", "Asks about the new birth", "Later speaks cautiously for just judgment", "Helps with the burial of Jesus"],
+    lessonsLearned: ["Religious standing does not replace the new birth", "Honest questions should be brought to Christ", "Faith may grow from private inquiry to public identification"],
     relatedVerses: ["John 3:1", "John 3:4", "John 7:50", "John 19:39"],
   },
   {
     id: "john-baptist",
     name: "John the Baptist",
+    summary: "The forerunner of Christ who bore witness that Jesus is the Lamb of God.",
     description:
       "The forerunner who bore witness to Christ. John 3 records his joy that Christ must increase.",
     firstAppearance: "Matthew 3:1",
     majorPassages: ["Matthew 3", "John 1", "John 3"],
     keyEvents: ["Preaches repentance", "Baptizes in Jordan", "Bears witness that Jesus is the Christ", "Says Christ must increase"],
+    lessonsLearned: ["A faithful servant points away from himself to Christ", "Repentance prepares the heart to receive truth", "Christ must increase"],
     relatedVerses: ["John 1:6", "John 1:29", "John 3:27", "John 3:30"],
   },
   {
     id: "moses",
     name: "Moses",
+    summary: "The prophet and leader used of God to deliver Israel and give the law.",
     description:
       "The prophet and leader of Israel. John 3 refers to Moses lifting up the serpent in the wilderness.",
     firstAppearance: "Exodus 2:1",
     majorPassages: ["Exodus 2", "Exodus 12", "Numbers 21", "Deuteronomy 18"],
     keyEvents: ["Delivered Israel from Egypt", "Received the law", "Lifted up the brazen serpent in the wilderness"],
+    lessonsLearned: ["God can prepare a servant over many years", "Faith obeys even when the task is heavy", "The law points forward to the need for Christ"],
     relatedVerses: ["Numbers 21:8", "Numbers 21:9", "Deuteronomy 18:15", "John 3:14"],
+  },
+  {
+    id: "abraham",
+    name: "Abraham",
+    summary: "The father of the faithful, called out by God and given covenant promises.",
+    description:
+      "Abraham believed God and was called to walk by faith. His offering of Isaac is a major passage for promise, obedience, and sacrifice.",
+    firstAppearance: "Genesis 11:26",
+    majorPassages: ["Genesis 12", "Genesis 15", "Genesis 17", "Genesis 22"],
+    keyEvents: ["Called from Ur", "Receives covenant promises", "Believes God", "Offers Isaac in obedience"],
+    lessonsLearned: ["Faith obeys God's call", "God keeps His promises", "True worship trusts God with what is most precious"],
+    relatedVerses: ["Genesis 12:1", "Genesis 15:6", "Genesis 22:2", "Romans 4:3"],
+  },
+  {
+    id: "joseph",
+    name: "Joseph",
+    summary: "The son of Jacob whom God used through suffering to preserve life.",
+    description:
+      "Joseph was rejected by his brethren, humbled, exalted, and used of God to save many alive during famine.",
+    firstAppearance: "Genesis 30:24",
+    majorPassages: ["Genesis 37", "Genesis 39", "Genesis 41", "Genesis 45"],
+    keyEvents: ["Sold by his brethren", "Remains faithful in temptation", "Interprets Pharaoh's dreams", "Forgives his brethren"],
+    lessonsLearned: ["God can rule over evil circumstances", "Faithfulness matters in obscurity", "Forgiveness rests in God's providence"],
+    relatedVerses: ["Genesis 37:28", "Genesis 39:9", "Genesis 45:5", "Genesis 50:20"],
+  },
+  {
+    id: "david",
+    name: "David",
+    summary: "The shepherd king of Israel and writer of many psalms.",
+    description:
+      "David was chosen by God, faced Goliath by faith, ruled Israel, sinned grievously, and received mercy after repentance.",
+    firstAppearance: "1 Samuel 16:12",
+    majorPassages: ["1 Samuel 16", "1 Samuel 17", "2 Samuel 7", "Psalm 51"],
+    keyEvents: ["Anointed by Samuel", "Defeats Goliath", "Receives the Davidic covenant", "Repents after sin"],
+    lessonsLearned: ["God looks on the heart", "Faith sees the battle as the Lord's", "Sin must be confessed and forsaken"],
+    relatedVerses: ["1 Samuel 16:7", "1 Samuel 17:45", "2 Samuel 7:16", "Psalm 51:10"],
+  },
+  {
+    id: "paul",
+    name: "Paul",
+    summary: "The apostle to the Gentiles, converted from persecutor to preacher of Christ.",
+    description:
+      "Paul was saved by Christ, called to preach the gospel, and used of God to write much of the New Testament.",
+    firstAppearance: "Acts 7:58",
+    majorPassages: ["Acts 9", "Acts 13", "Romans 8", "2 Timothy 4"],
+    keyEvents: ["Consents to Stephen's death", "Meets Christ on the Damascus road", "Preaches to the Gentiles", "Finishes his course"],
+    lessonsLearned: ["Grace can save the chief of sinners", "The gospel is worth suffering for", "Sound doctrine should lead to faithful service"],
+    relatedVerses: ["Acts 9:5", "Acts 13:2", "Romans 8:1", "2 Timothy 4:7"],
+  },
+  {
+    id: "peter",
+    name: "Peter",
+    summary: "An apostle of Christ known for bold confession, failure, restoration, and preaching.",
+    description:
+      "Peter followed Christ, confessed Him as the Christ, denied Him, was restored, and preached boldly after Pentecost.",
+    firstAppearance: "Matthew 4:18",
+    majorPassages: ["Matthew 16", "Luke 22", "John 21", "Acts 2"],
+    keyEvents: ["Called from fishing", "Confesses Christ", "Denies the Lord", "Is restored and preaches at Pentecost"],
+    lessonsLearned: ["Confidence in self is dangerous", "Christ restores repentant servants", "Boldness comes from the Spirit of God"],
+    relatedVerses: ["Matthew 16:16", "Luke 22:61", "John 21:17", "Acts 2:14"],
+  },
+  {
+    id: "joshua",
+    name: "Joshua",
+    summary: "Moses' successor who led Israel into Canaan.",
+    description:
+      "Joshua served under Moses, trusted God's promise, and led Israel into the land with courage and obedience.",
+    firstAppearance: "Exodus 17:9",
+    majorPassages: ["Exodus 17", "Numbers 14", "Joshua 1", "Joshua 24"],
+    keyEvents: ["Leads Israel in battle against Amalek", "Gives a faithful report of Canaan", "Leads Israel across Jordan", "Calls Israel to serve the LORD"],
+    lessonsLearned: ["Courage rests on God's word", "Faith may stand against the majority", "Leadership must call people to serve the LORD"],
+    relatedVerses: ["Exodus 17:9", "Numbers 14:6", "Joshua 1:9", "Joshua 24:15"],
+  },
+  {
+    id: "elijah",
+    name: "Elijah",
+    summary: "A prophet who confronted idolatry and called Israel back to the LORD.",
+    description:
+      "Elijah ministered in dark days, prayed earnestly, confronted Baal worship, and learned God's care in weakness.",
+    firstAppearance: "1 Kings 17:1",
+    majorPassages: ["1 Kings 17", "1 Kings 18", "1 Kings 19", "2 Kings 2"],
+    keyEvents: ["Announces drought", "Prays at Carmel", "Flees to Horeb", "Is taken up by a whirlwind"],
+    lessonsLearned: ["God is able to preserve His servant", "True worship rejects idols", "Discouraged servants still need God's care"],
+    relatedVerses: ["1 Kings 17:1", "1 Kings 18:21", "1 Kings 19:12", "James 5:17"],
   },
 ];
 
@@ -740,6 +1248,30 @@ const studyPlaces: StudyPlace[] = [
     relatedPassages: ["Micah 5:2", "Matthew 2:1", "Luke 2:4"],
     mapNote: "Map placeholder: future Bible map layer for Bethlehem.",
   },
+  {
+    id: "galilee",
+    name: "Galilee",
+    description:
+      "The northern region closely connected with the Lord's earthly ministry, His disciples, and many miracles.",
+    relatedPassages: ["Matthew 4:12", "Matthew 4:23", "Luke 24:6", "John 21:1"],
+    mapNote: "Map placeholder: future Bible map layer for Galilee and the Sea of Galilee.",
+  },
+  {
+    id: "egypt",
+    name: "Egypt",
+    description:
+      "A place of refuge and bondage in Scripture, central to Israel's deliverance and the Passover setting.",
+    relatedPassages: ["Genesis 12:10", "Exodus 12:1", "Hosea 11:1", "Matthew 2:13"],
+    mapNote: "Map placeholder: future Bible map layer for Egypt, Goshen, and the Exodus route.",
+  },
+  {
+    id: "babylon",
+    name: "Babylon",
+    description:
+      "A kingdom and city connected with exile, pride, judgment, and prophetic Scripture.",
+    relatedPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
+    mapNote: "Map placeholder: future Bible map layer for Babylon and the exile route.",
+  },
 ];
 
 const christTypes: ChristTypeConnection[] = [
@@ -753,7 +1285,7 @@ const christTypes: ChristTypeConnection[] = [
   },
   {
     id: "noahs-ark",
-    title: "Noah's Ark",
+    title: "Ark",
     description: "The ark was the place of safety from judgment in Noah's day.",
     pointsToChrist: "It pictures safety provided by God from coming judgment.",
     keyReferences: ["Genesis 6:14", "Genesis 7:1"],
@@ -823,9 +1355,122 @@ const prophecyConnections: ProphecyConnection[] = [
     description: "A reviewed connection for the suffering of Christ at the cross.",
     relatedVerses: ["Psalm 22:1", "Psalm 22:18", "John 19:24"],
   },
+  {
+    id: "daniel-9",
+    prophecy: "Daniel 9",
+    fulfillment: "Messiah cut off",
+    description: "A reviewed connection for Messiah, timing, covenant language, and the prophetic expectation surrounding Christ.",
+    relatedVerses: ["Daniel 9:24", "Daniel 9:26", "Luke 24:26"],
+  },
+  {
+    id: "zechariah-12",
+    prophecy: "Zechariah 12",
+    fulfillment: "Looking upon the pierced One",
+    description: "A reviewed connection between the pierced One and the mourning connected with Israel and Christ.",
+    relatedVerses: ["Zechariah 12:10", "John 19:37", "Revelation 1:7"],
+  },
 ];
 
 const chapterConnections: ChapterConnections[] = [
+  {
+    book: "Genesis",
+    chapter: 12,
+    peopleIds: ["abraham"],
+    placeIds: ["egypt"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Calling", "Faith", "Promise", "Pilgrimage"],
+  },
+  {
+    book: "Genesis",
+    chapter: 22,
+    peopleIds: ["abraham"],
+    placeIds: [],
+    typeIds: ["isaac"],
+    prophecyIds: [],
+    themes: ["Faith", "Obedience", "Sacrifice", "Provision"],
+  },
+  {
+    book: "Genesis",
+    chapter: 37,
+    peopleIds: ["joseph"],
+    placeIds: ["egypt"],
+    typeIds: ["joseph"],
+    prophecyIds: [],
+    themes: ["Providence", "Suffering", "Rejection", "God's purpose"],
+  },
+  {
+    book: "Exodus",
+    chapter: 12,
+    peopleIds: ["moses"],
+    placeIds: ["egypt"],
+    typeIds: ["passover-lamb"],
+    prophecyIds: [],
+    themes: ["Deliverance", "Blood", "Judgment", "Redemption"],
+  },
+  {
+    book: "Joshua",
+    chapter: 1,
+    peopleIds: ["joshua", "moses"],
+    placeIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Courage", "Leadership", "Meditation", "Obedience"],
+  },
+  {
+    book: "1 Samuel",
+    chapter: 17,
+    peopleIds: ["david"],
+    placeIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Faith", "Courage", "The battle is the LORD's"],
+  },
+  {
+    book: "1 Kings",
+    chapter: 18,
+    peopleIds: ["elijah"],
+    placeIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["True worship", "Prayer", "Idolatry exposed", "Decision"],
+  },
+  {
+    book: "Psalms",
+    chapter: 22,
+    peopleIds: ["david", "jesus"],
+    placeIds: ["jerusalem"],
+    typeIds: [],
+    prophecyIds: ["psalm-22"],
+    themes: ["Suffering", "Crucifixion", "Praise", "Deliverance"],
+  },
+  {
+    book: "Isaiah",
+    chapter: 53,
+    peopleIds: ["jesus"],
+    placeIds: [],
+    typeIds: [],
+    prophecyIds: ["isaiah-53"],
+    themes: ["Substitution", "Suffering servant", "Atonement", "Exaltation"],
+  },
+  {
+    book: "Daniel",
+    chapter: 9,
+    peopleIds: [],
+    placeIds: ["babylon", "jerusalem"],
+    typeIds: [],
+    prophecyIds: ["daniel-9"],
+    themes: ["Prayer", "Confession", "Prophecy", "Messiah"],
+  },
+  {
+    book: "Zechariah",
+    chapter: 12,
+    peopleIds: ["jesus"],
+    placeIds: ["jerusalem"],
+    typeIds: [],
+    prophecyIds: ["zechariah-12"],
+    themes: ["Jerusalem", "The pierced One", "Mourning", "Deliverance"],
+  },
   {
     book: "John",
     chapter: 3,
@@ -834,6 +1479,33 @@ const chapterConnections: ChapterConnections[] = [
     typeIds: ["brazen-serpent"],
     prophecyIds: ["isaiah-53", "micah-5-2", "psalm-22"],
     themes: ["New birth", "Faith", "God's love", "Everlasting life", "Witness", "Light and darkness"],
+  },
+  {
+    book: "Luke",
+    chapter: 24,
+    peopleIds: ["jesus", "peter"],
+    placeIds: ["jerusalem", "galilee"],
+    typeIds: [],
+    prophecyIds: ["isaiah-53", "psalm-22", "daniel-9"],
+    themes: ["Resurrection", "Scripture fulfilled", "Witness", "Opened understanding"],
+  },
+  {
+    book: "Acts",
+    chapter: 9,
+    peopleIds: ["paul", "peter"],
+    placeIds: ["jerusalem"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Conversion", "Grace", "Calling", "Bold witness"],
+  },
+  {
+    book: "Romans",
+    chapter: 8,
+    peopleIds: ["paul"],
+    placeIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["No condemnation", "Spirit", "Adoption", "Assurance", "God's love"],
   },
 ];
 
@@ -1631,15 +2303,7 @@ export default function Home() {
   }, [allVerses, searchFilter, searchTerm]);
 
   const libraryCategories = useMemo(
-    () => [
-      "All",
-      "Prayer",
-      "Christian life",
-      "Evangelism",
-      "Baptist history",
-      "Preaching/teaching",
-      "Fiction/classics",
-    ],
+    () => LIBRARY_CATEGORY_FILTERS,
     [],
   );
 
@@ -1656,7 +2320,11 @@ export default function Home() {
         !term ||
         resource.title.toLowerCase().includes(term) ||
         resource.author.toLowerCase().includes(term) ||
-        resource.category.toLowerCase().includes(term);
+        resource.category.toLowerCase().includes(term) ||
+        resource.resource_labels.some((label) => label.toLowerCase().includes(term)) ||
+        resource.resource_warnings.some((warning) => warning.toLowerCase().includes(term)) ||
+        resource.perspective_notes.toLowerCase().includes(term) ||
+        resource.recommended_use.toLowerCase().includes(term);
       return categoryMatch && searchMatch;
     });
   }, [libraryCategory, libraryResources, librarySearchTerm]);
@@ -1739,6 +2407,11 @@ export default function Home() {
       themes: connection?.themes ?? [],
     };
   }, [book, chapter, peopleById, placesById, propheciesById, typesById]);
+
+  const activeChapterResourceRecommendations = useMemo(() => {
+    const reviewed = CHAPTER_RESOURCE_RECOMMENDATIONS.find((item) => item.book === book && item.chapter === chapter);
+    return reviewed?.recommendations ?? DEFAULT_CHAPTER_RESOURCE_RECOMMENDATIONS;
+  }, [book, chapter]);
 
   const activePerson = activePersonId ? peopleById.get(activePersonId) ?? null : null;
 
@@ -3097,6 +3770,7 @@ export default function Home() {
                 chapterCrossReferences={chapterCrossReferences}
                 chapterCommentaryEntries={chapterCommentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
+                chapterResourceRecommendations={activeChapterResourceRecommendations}
                 scriptureMemory={scriptureMemory}
                 recentPassages={recentPassages}
                 favoritePassages={favoritePassages}
@@ -3137,6 +3811,9 @@ export default function Home() {
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
                 onOpenReference={openReference}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
                 onOpenPersonStudy={openPersonStudy}
                 onVerseClick={(ref) => {
                   setSelectedRef(ref);
@@ -3690,7 +4367,7 @@ function PersonStudyScreen({
         </button>
         <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">People Study</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{person.name}</h1>
-        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{person.description}</p>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{person.summary}</p>
       </section>
 
       <section className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
@@ -3707,7 +4384,7 @@ function PersonStudyScreen({
               </button>
             </div>
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Major passages</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key passages</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {person.majorPassages.map((passage) => (
                   <button
@@ -3727,14 +4404,24 @@ function PersonStudyScreen({
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <Clipboard size={18} />
-            <h2 className="text-base font-semibold text-[var(--ink)]">Key Events</h2>
+            <h2 className="text-base font-semibold text-[var(--ink)]">Lessons Learned</h2>
           </div>
           <div className="mt-4 grid gap-2">
-            {person.keyEvents.map((event) => (
-              <div key={`event-${person.id}-${event}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
-                {event}
+            {person.lessonsLearned.map((lesson) => (
+              <div key={`lesson-${person.id}-${lesson}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+                {lesson}
               </div>
             ))}
+          </div>
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key events</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {person.keyEvents.map((event) => (
+                <span key={`event-${person.id}-${event}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {event}
+                </span>
+              ))}
+            </div>
           </div>
         </article>
       </section>
@@ -3829,6 +4516,7 @@ function BibleReader({
   chapterCrossReferences,
   chapterCommentaryEntries,
   chapterKeyVerses,
+  chapterResourceRecommendations,
   scriptureMemory,
   recentPassages,
   favoritePassages,
@@ -3869,6 +4557,7 @@ function BibleReader({
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
   onOpenReference,
+  onOpenLibraryResource,
   onOpenPersonStudy,
   onVerseClick,
   onWordClick,
@@ -3893,6 +4582,7 @@ function BibleReader({
   chapterCrossReferences: CrossReference[];
   chapterCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
+  chapterResourceRecommendations: ChapterResourceRecommendation[];
   scriptureMemory: ScriptureMemoryItem[];
   recentPassages: BiblePassage[];
   favoritePassages: BiblePassage[];
@@ -3933,6 +4623,7 @@ function BibleReader({
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
@@ -4234,6 +4925,7 @@ function BibleReader({
         chapterCommentaryEntries={chapterCommentaryEntries}
         chapterCrossReferences={chapterCrossReferences}
         chapterKeyVerses={chapterKeyVerses}
+        chapterResourceRecommendations={chapterResourceRecommendations}
         chapterNotes={chapterNotes}
         explorer={explorer}
         explorerWord={explorerWord}
@@ -4242,6 +4934,7 @@ function BibleReader({
         onAddMemoryVerse={onAddMemoryVerse}
         onExplorerWordChange={setExplorerWord}
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
+        onOpenLibraryResource={onOpenLibraryResource}
         onOpenReference={onOpenReference}
         onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
@@ -4317,6 +5010,7 @@ function ChapterStudyWorkflow({
   chapterCommentaryEntries,
   chapterCrossReferences,
   chapterKeyVerses,
+  chapterResourceRecommendations,
   chapterNotes,
   explorer,
   explorerWord,
@@ -4325,6 +5019,7 @@ function ChapterStudyWorkflow({
   onAddMemoryVerse,
   onExplorerWordChange,
   onLookupWord,
+  onOpenLibraryResource,
   onOpenReference,
   onOpenPersonStudy,
   onRemoveMemoryVerse,
@@ -4336,6 +5031,7 @@ function ChapterStudyWorkflow({
   chapterCommentaryEntries: CommentaryEntry[];
   chapterCrossReferences: CrossReference[];
   chapterKeyVerses: string[];
+  chapterResourceRecommendations: ChapterResourceRecommendation[];
   chapterNotes: Array<[string, UserNote[]]>;
   explorer: WordExplorerResult;
   explorerWord: string;
@@ -4344,6 +5040,7 @@ function ChapterStudyWorkflow({
   onAddMemoryVerse: (ref: string) => void;
   onExplorerWordChange: (word: string) => void;
   onLookupWord: (word: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -4456,6 +5153,42 @@ function ChapterStudyWorkflow({
                 </button>
               ))}
               {!chapterCrossReferences.length && <span className="text-sm leading-6 text-[var(--muted)]">Cross references will grow as TSK data is reviewed.</span>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Library size={17} />} title="Recommended Resources">
+            <div className="space-y-2">
+              {chapterResourceRecommendations.map((resource) => (
+                <article key={`chapter-resource-${resource.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.kind}</p>
+                      <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                      {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
+                    </div>
+                    <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">
+                      {resource.status}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {resource.resourceSlug && (
+                      <button
+                        className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                        onClick={() => onOpenLibraryResource(resource.resourceSlug!)}
+                        type="button"
+                      >
+                        Open Resource
+                      </button>
+                    )}
+                    {resource.warning && (
+                      <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                        {resource.warning}
+                      </span>
+                    )}
+                  </div>
+                </article>
+              ))}
             </div>
           </StudyInsightSection>
 
@@ -5245,7 +5978,7 @@ function LibraryScreen({
               Curated study resources
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-              Browse the first verified public-domain resources prepared for Bible study, prayer, evangelism, Baptist history, missions, and preaching.
+              Browse verified public-domain resources with category, rights, doctrinal review, and recommended-use labels visible before you read.
             </p>
           </div>
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
@@ -5269,7 +6002,7 @@ function LibraryScreen({
             <Search size={18} className="text-[var(--green)]" />
             <input
               className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
-              placeholder="title, author, category..."
+              placeholder="title, author, category, label..."
               value={searchTerm}
               onChange={(event) => onSearchTermChange(event.target.value)}
             />
@@ -5427,6 +6160,7 @@ function LibraryDetail({
         </div>
 
         <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{resource.description}</p>
+        <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
 
         {progress && (
           <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
@@ -5442,9 +6176,32 @@ function LibraryDetail({
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-        <h2 className="text-lg font-semibold">Rights Status</h2>
+        <h2 className="text-lg font-semibold">Resource Labels</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
-          <StatusCard label="Public domain" status={resource.rights_status} good={resource.rights_status === "verified"} />
+          <StatusCard label="Category" status={libraryCategoryLabel(resource.category)} good />
+          <StatusCard label="Author" status={resource.author} good />
+          <StatusCard label="Year" status={resource.year ? String(resource.year) : "Unknown"} good={Boolean(resource.year)} />
+          <StatusCard label="Public domain status" status={resource.public_domain_status} good={resource.public_domain_status === "verified"} />
+          <StatusCard label="Rights status" status={resource.rights_status.replaceAll("_", " ")} good={resource.rights_status.startsWith("verified")} />
+          <StatusCard label="Doctrinal review" status={resource.doctrinal_review_status} good={!resource.doctrinal_review_status.toLowerCase().includes("rejected")} />
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Perspective notes</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.perspective_notes}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended use</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.recommended_use}</p>
+          </div>
+        </div>
+        <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Rights Details</h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <StatusCard label="Public domain" status={resource.public_domain_status} good={resource.public_domain_status === "verified"} />
           <StatusCard label="Commercial use" status={resource.commercial_use_status.replaceAll("_", " ")} good={resource.commercial_use_status.startsWith("verified")} />
           <StatusCard label="Words" status={resource.word_count ? resource.word_count.toLocaleString() : "Unknown"} good={Boolean(resource.word_count)} />
         </div>
@@ -5738,6 +6495,7 @@ function LibraryResourceCard({
       <h3 className="mt-3 line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
       <p className="mt-2 text-sm text-[var(--muted)]">{resource.author}</p>
       <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+      <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
       {progress && (
         <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
           <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
@@ -5747,12 +6505,48 @@ function LibraryResourceCard({
   );
 }
 
+function ResourceBadgeRow({
+  labels,
+  warnings,
+  compact = false,
+}: {
+  labels: string[];
+  warnings: string[];
+  compact?: boolean;
+}) {
+  const visibleLabels = labels.filter(Boolean);
+  const visibleWarnings = warnings.filter(Boolean);
+  if (!visibleLabels.length && !visibleWarnings.length) return null;
+
+  return (
+    <div className={`${compact ? "mt-3" : "mt-4"} flex flex-wrap gap-2`}>
+      {visibleLabels.map((label) => (
+        <span
+          key={`resource-label-${label}`}
+          className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--green)]"
+        >
+          {label}
+        </span>
+      ))}
+      {visibleWarnings.map((warning) => (
+        <span
+          key={`resource-warning-${warning}`}
+          className="rounded-full bg-[var(--highlight)] px-3 py-1 text-xs font-semibold text-[var(--ink)]"
+        >
+          {warning}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function libraryCategoryLabel(category: string) {
   const labels: Record<string, string> = {
     "Preaching/teaching": "Preaching & Teaching",
     "Fiction/classics": "Classics",
-    "Christian life": "Christian Life",
+    "Christian life": "Christian Living",
     "Baptist history": "Baptist History",
+    "Bible study helps": "Bible Handbooks",
   };
 
   return labels[category] ?? category;

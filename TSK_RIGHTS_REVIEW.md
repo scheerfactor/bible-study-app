@@ -1,17 +1,45 @@
 # Treasury of Scripture Knowledge Rights Review
 
-Last reviewed: 2026-06-01
+Last reviewed: 2026-06-02
 
 ## Summary
 
 The original Treasury of Scripture Knowledge tradition is public domain, but not every modern digital TSK dataset is automatically unrestricted. Treat the printed/source work and the downloadable dataset as two separate rights questions.
 
-Recommended path for this app:
+Final recommendation for this app:
 
 1. Prefer a public-domain scan/OCR source from Internet Archive, Wikimedia Commons, or Sacred Texts for long-term unrestricted import.
 2. Use the current John 3:14-18 hand-reviewed sample while the full source is being prepared.
 3. Do not import Bible Hub, Bible Study Tools, or other website-rendered TSK pages by scraping.
 4. If using OpenBible.info, crossreferences.org, MetaV, or another prepared dataset, accept and document that dataset's Creative Commons obligations before import.
+
+## Final Recommendation
+
+Use a public-domain archive source as the primary TSK completion path. This best fits the app's public-domain library policy and avoids silently introducing Creative Commons share-alike obligations into the core cross-reference database.
+
+Recommended sequence:
+
+1. Keep the current John 3:14-18 sample live in the app.
+2. Select a public-domain archive source and record its manifest under `data/sources/tsk/<source-name>/source-manifest.json`.
+3. Build a parser that extracts verse owner references and target references without importing any website-rendered page content.
+4. Import a reviewed sample of 25-50 references first.
+5. Compare the sample against the printed/source structure for quality.
+6. Import the full public-domain source only after the sample passes rights and quality review.
+7. Use OpenBible.info, MetaV, or crossreferences.org only as alternate paths if attribution/share-alike obligations are explicitly accepted and recorded.
+
+Do not import full TSK from Bible Hub, Bible Study Tools, or any rendered website pages.
+
+## Quality Review Requirements
+
+Before full import, verify:
+
+- Verse ownership is correct.
+- Target references resolve in the local KJV data.
+- Duplicate references are merged safely.
+- Labels are short and do not become commentary.
+- Imported source metadata is stored with every row or source record.
+- A sample can be opened from the Study Drawer and Full Study view.
+- References do not overwhelm the reader; prioritize display order for the most useful references first.
 
 ## Source Options
 
@@ -120,4 +148,4 @@ npm run import:tsk -- data/imports/tsk-cross-references.sample-reviewed.json --d
 
 ## Current Decision
 
-Do not import full TSK yet. The app should keep the John 3:14-18 sample and prepare for a public-domain archive source or an explicitly accepted CC BY-SA source.
+Do not import full TSK yet. The app should keep the John 3:14-18 sample and prepare a public-domain archive source as the preferred completion path. Creative Commons datasets remain alternate paths only if attribution/share-alike obligations are accepted and documented.
