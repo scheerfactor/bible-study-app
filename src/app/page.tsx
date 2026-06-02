@@ -4,6 +4,8 @@ import { createClient, type SupabaseClient, type User } from "@supabase/supabase
 import {
   Bookmark,
   BookOpen,
+  Brain,
+  BarChart3,
   ChevronLeft,
   ChevronRight,
   Clipboard,
@@ -38,7 +40,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy";
-type StudyDrawerTab = "study" | "actions" | "dictionary" | "crossReferences" | "notes" | "audio" | "commentary";
+type StudyDrawerTab = "study" | "actions" | "dictionary" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader";
@@ -202,6 +204,37 @@ type BibleAudioPlaylist = {
   createdAt: string;
 };
 
+type ScriptureMemoryItem = {
+  id: string;
+  verse_ref: string;
+  verse_text: string;
+  progress: number;
+  repetitions: number;
+  last_reviewed_at: string | null;
+  created_at: string;
+};
+
+type ChapterStudyAnalysis = {
+  repeatedWords: Array<{ word: string; count: number }>;
+  repeatedPhrases: Array<{ phrase: string; count: number }>;
+  stats: {
+    verses: number;
+    words: number;
+    uniqueWords: number;
+    averageWordsPerVerse: number;
+  };
+  mostReferencedVerses: Array<{ ref: string; count: number }>;
+};
+
+type WordExplorerResult = {
+  word: string;
+  lookupWord: string;
+  definition: DictionaryEntry;
+  chapterOccurrences: BibleVerse[];
+  bookOccurrences: BibleVerse[];
+  bibleOccurrences: BibleVerse[];
+};
+
 type SpeechState = {
   targetId: string | null;
   label: string;
@@ -219,6 +252,7 @@ const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
 const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
+const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -331,6 +365,57 @@ const dictionaryAliases: Record<string, string> = {
   lovedst: "love",
   worlds: "world",
 };
+
+const studyStopWords = new Set([
+  "about",
+  "after",
+  "again",
+  "also",
+  "and",
+  "are",
+  "because",
+  "been",
+  "before",
+  "being",
+  "but",
+  "came",
+  "come",
+  "did",
+  "for",
+  "from",
+  "had",
+  "hath",
+  "have",
+  "her",
+  "him",
+  "his",
+  "into",
+  "not",
+  "now",
+  "said",
+  "shall",
+  "that",
+  "the",
+  "their",
+  "them",
+  "then",
+  "there",
+  "these",
+  "they",
+  "this",
+  "thou",
+  "thy",
+  "unto",
+  "upon",
+  "was",
+  "were",
+  "when",
+  "which",
+  "will",
+  "with",
+  "you",
+  "your",
+]);
 
 const localCrossReferences: CrossReference[] = [
   {
@@ -857,6 +942,24 @@ function saveBiblePlaylists(playlists: BibleAudioPlaylist[]) {
   window.localStorage.setItem(BIBLE_PLAYLISTS_KEY, JSON.stringify(playlists));
 }
 
+function loadScriptureMemory(): ScriptureMemoryItem[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(SCRIPTURE_MEMORY_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as ScriptureMemoryItem[];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveScriptureMemory(items: ScriptureMemoryItem[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(SCRIPTURE_MEMORY_KEY, JSON.stringify(items));
+}
+
 function chunkSpeechText(text: string) {
   const paragraphs = text
     .replace(/\s+/g, " ")
@@ -885,6 +988,124 @@ function formatPercent(value: number) {
 
 function versesMax(verses: BibleVerse[]) {
   return Math.max(1, verses.at(-1)?.verse ?? verses.length);
+}
+
+function wordsFromText(text: string) {
+  return text
+    .split(/\s+/)
+    .map(cleanWord)
+    .filter(Boolean);
+}
+
+function studyWordsFromVerses(verses: BibleVerse[]) {
+  return verses.flatMap((verse) =>
+    wordsFromText(verse.plainText).filter((word) => word.length > 3 && !studyStopWords.has(word)),
+  );
+}
+
+function countWords(words: string[]) {
+  const counts = new Map<string, number>();
+  words.forEach((word) => counts.set(word, (counts.get(word) ?? 0) + 1));
+  return Array.from(counts.entries())
+    .map(([word, count]) => ({ word, count }))
+    .sort((a, b) => b.count - a.count || a.word.localeCompare(b.word));
+}
+
+function repeatedPhrasesForVerses(verses: BibleVerse[]) {
+  const phraseCounts = new Map<string, number>();
+  verses.forEach((verse) => {
+    const words = wordsFromText(verse.plainText).filter((word) => word.length > 2 && !studyStopWords.has(word));
+    for (let index = 0; index < words.length - 1; index += 1) {
+      const phrase = `${words[index]} ${words[index + 1]}`;
+      phraseCounts.set(phrase, (phraseCounts.get(phrase) ?? 0) + 1);
+    }
+    for (let index = 0; index < words.length - 2; index += 1) {
+      const phrase = `${words[index]} ${words[index + 1]} ${words[index + 2]}`;
+      phraseCounts.set(phrase, (phraseCounts.get(phrase) ?? 0) + 1);
+    }
+  });
+
+  return Array.from(phraseCounts.entries())
+    .filter(([, count]) => count > 1)
+    .map(([phrase, count]) => ({ phrase, count }))
+    .sort((a, b) => b.count - a.count || a.phrase.localeCompare(b.phrase))
+    .slice(0, 8);
+}
+
+function chapterAnalysisForVerses(verses: BibleVerse[], crossReferences: CrossReference[]): ChapterStudyAnalysis {
+  const words = verses.flatMap((verse) => wordsFromText(verse.plainText));
+  const studyWords = studyWordsFromVerses(verses);
+  const chapterRefPrefix = verses[0] ? `${verses[0].book} ${verses[0].chapter}:` : "";
+  const referenceCounts = new Map<string, number>();
+
+  crossReferences.forEach((reference) => {
+    if (reference.verse_ref.startsWith(chapterRefPrefix)) {
+      referenceCounts.set(reference.verse_ref, (referenceCounts.get(reference.verse_ref) ?? 0) + 1);
+    }
+    if (reference.target_ref.startsWith(chapterRefPrefix)) {
+      referenceCounts.set(reference.target_ref, (referenceCounts.get(reference.target_ref) ?? 0) + 1);
+    }
+  });
+
+  return {
+    repeatedWords: countWords(studyWords).filter((item) => item.count > 1).slice(0, 12),
+    repeatedPhrases: repeatedPhrasesForVerses(verses),
+    stats: {
+      verses: verses.length,
+      words: words.length,
+      uniqueWords: new Set(studyWords).size,
+      averageWordsPerVerse: verses.length ? Math.round(words.length / verses.length) : 0,
+    },
+    mostReferencedVerses: Array.from(referenceCounts.entries())
+      .map(([ref, count]) => ({ ref, count }))
+      .sort((a, b) => b.count - a.count || a.ref.localeCompare(b.ref))
+      .slice(0, 5),
+  };
+}
+
+function wordMatchesVerse(verse: BibleVerse, lookupWord: string) {
+  return wordsFromText(verse.plainText).some((word) => normalizeLookupWord(word) === lookupWord || word === lookupWord);
+}
+
+function buildWordExplorer(word: string, currentBook: string, currentChapter: number, allVerses: BibleVerse[]): WordExplorerResult {
+  const lookupWord = normalizeLookupWord(word);
+  const definition = findDictionaryEntry(word);
+  const matches = allVerses.filter((verse) => wordMatchesVerse(verse, lookupWord));
+
+  return {
+    word: cleanWord(word) || word,
+    lookupWord,
+    definition,
+    chapterOccurrences: matches.filter((verse) => verse.book === currentBook && verse.chapter === currentChapter),
+    bookOccurrences: matches.filter((verse) => verse.book === currentBook),
+    bibleOccurrences: matches,
+  };
+}
+
+function firstLetterPrompt(text: string) {
+  return text
+    .split(/\s+/)
+    .map((word) => {
+      const prefix = word.match(/^[^A-Za-z]*/)?.[0] ?? "";
+      const letter = word.replace(/[^A-Za-z]/g, "").charAt(0);
+      const suffix = word.match(/[^A-Za-z]*$/)?.[0] ?? "";
+      return letter ? `${prefix}${letter}${suffix}` : word;
+    })
+    .join(" ");
+}
+
+function hideEveryOtherWord(text: string) {
+  let wordIndex = 0;
+  return text
+    .split(/(\s+)/)
+    .map((part) => {
+      if (/^\s+$/.test(part)) return part;
+      wordIndex += 1;
+      if (wordIndex % 2 === 1) return part;
+      const letters = part.replace(/[^A-Za-z]/g, "");
+      return letters ? part.replace(/[A-Za-z]+/, "_".repeat(Math.min(10, Math.max(3, letters.length)))) : part;
+    })
+    .join("");
 }
 
 function testamentForBook(book: string): Exclude<TestamentFilter, "all"> {
@@ -973,6 +1194,7 @@ export default function Home() {
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
+  const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
   const [playlistName, setPlaylistName] = useState("Morning Bible Listening");
   const [listenRangeStart, setListenRangeStart] = useState(1);
   const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
@@ -1137,6 +1359,44 @@ export default function Home() {
     [saved.bookmarks],
   );
 
+  const chapterCrossReferences = useMemo(
+    () => crossReferences.filter((reference) => reference.verse_ref.startsWith(`${book} ${chapter}:`)),
+    [book, chapter, crossReferences],
+  );
+
+  const chapterCommentaryEntries = useMemo(
+    () => commentaryEntries.filter((entry) => entry.book === book && entry.chapter === chapter),
+    [book, chapter, commentaryEntries],
+  );
+
+  const chapterAnalysis = useMemo(
+    () => chapterAnalysisForVerses(chapterVerses, crossReferences),
+    [chapterVerses, crossReferences],
+  );
+
+  const chapterKeyVerses = useMemo(() => {
+    const scoreByRef = new Map<string, number>();
+    chapterVerses.forEach((verse) => scoreByRef.set(verse.ref, verse.ref === selectedRef ? 3 : 0));
+    chapterCrossReferences.forEach((reference) => {
+      scoreByRef.set(reference.verse_ref, (scoreByRef.get(reference.verse_ref) ?? 0) + 2);
+    });
+    saved.bookmarks.forEach((bookmark) => {
+      if (bookmark.verse_ref.startsWith(`${book} ${chapter}:`)) {
+        scoreByRef.set(bookmark.verse_ref, (scoreByRef.get(bookmark.verse_ref) ?? 0) + 3);
+      }
+    });
+    saved.highlights.forEach((highlight) => {
+      if (highlight.verse_ref.startsWith(`${book} ${chapter}:`)) {
+        scoreByRef.set(highlight.verse_ref, (scoreByRef.get(highlight.verse_ref) ?? 0) + 2);
+      }
+    });
+    return Array.from(scoreByRef.entries())
+      .filter(([, score]) => score > 0)
+      .sort((a, b) => b[1] - a[1])
+      .map(([ref]) => ref)
+      .slice(0, 5);
+  }, [book, chapter, chapterCrossReferences, chapterVerses, saved.bookmarks, saved.highlights, selectedRef]);
+
   const accountStatus = user
     ? "Signed in — syncing to Supabase"
     : "Signed out — saving locally";
@@ -1163,6 +1423,7 @@ export default function Home() {
       setListeningProgress(loadListeningProgress());
       setBibleListeningProgress(loadBibleListeningProgress());
       setBiblePlaylists(loadBiblePlaylists());
+      setScriptureMemory(loadScriptureMemory());
     });
   }, []);
 
@@ -1811,6 +2072,76 @@ export default function Home() {
     setSyncMessage(`Playlist "${trimmed}" saved locally.`);
   }
 
+  function addMemoryVerse(ref: string) {
+    const verse = allVerses.find((candidate) => candidate.ref === ref);
+    if (!verse) return;
+
+    setScriptureMemory((current) => {
+      const existing = current.find((item) => item.verse_ref === ref);
+      if (existing) return current;
+      const next = [
+        {
+          id: makeId("memory"),
+          verse_ref: verse.ref,
+          verse_text: verse.text,
+          progress: 0,
+          repetitions: 0,
+          last_reviewed_at: null,
+          created_at: new Date().toISOString(),
+        },
+        ...current,
+      ].slice(0, 50);
+      saveScriptureMemory(next);
+      return next;
+    });
+    setSyncMessage(`${ref} added to memory list.`);
+  }
+
+  function updateMemoryProgress(ref: string, progress: number) {
+    setScriptureMemory((current) => {
+      const existing = current.find((item) => item.verse_ref === ref);
+      const verse = allVerses.find((candidate) => candidate.ref === ref);
+      if (!existing && !verse) return current;
+      const safeProgress = Math.min(100, Math.max(0, progress));
+      const now = new Date().toISOString();
+      const next = existing
+        ? current.map((item) =>
+            item.verse_ref === ref
+              ? {
+                  ...item,
+                  progress: safeProgress,
+                  repetitions: item.repetitions + 1,
+                  last_reviewed_at: now,
+                }
+              : item,
+          )
+        : [
+            {
+              id: makeId("memory"),
+              verse_ref: ref,
+              verse_text: verse?.text ?? "",
+              progress: safeProgress,
+              repetitions: 1,
+              last_reviewed_at: now,
+              created_at: now,
+            },
+            ...current,
+          ];
+      saveScriptureMemory(next);
+      return next;
+    });
+    setSyncMessage(`${ref} memory progress updated.`);
+  }
+
+  function removeMemoryVerse(ref: string) {
+    setScriptureMemory((current) => {
+      const next = current.filter((item) => item.verse_ref !== ref);
+      saveScriptureMemory(next);
+      return next;
+    });
+    setSyncMessage(`${ref} removed from memory list.`);
+  }
+
   function jumpToVerse() {
     const safeVerse = Math.max(1, Math.min(verseJump, chapterVerses.length || 1));
     setSelectedRef(`${book} ${chapter}:${safeVerse}`);
@@ -2268,6 +2599,12 @@ export default function Home() {
                 notesByRef={notesByRef}
                 bookmarksByRef={bookmarksByRef}
                 selectedVerseRef={selectedVerseRef}
+                allVerses={allVerses}
+                chapterAnalysis={chapterAnalysis}
+                chapterCrossReferences={chapterCrossReferences}
+                chapterCommentaryEntries={chapterCommentaryEntries}
+                chapterKeyVerses={chapterKeyVerses}
+                scriptureMemory={scriptureMemory}
                 speechState={speechState}
                 bibleListeningProgress={bibleListeningProgress}
                 listenRangeStart={listenRangeStart}
@@ -2297,6 +2634,10 @@ export default function Home() {
                 onStopAfterSelectionChange={setStopAfterSelection}
                 onPlaylistNameChange={setPlaylistName}
                 onCreatePlaylist={createBiblePlaylist}
+                onAddMemoryVerse={addMemoryVerse}
+                onUpdateMemoryProgress={updateMemoryProgress}
+                onRemoveMemoryVerse={removeMemoryVerse}
+                onOpenReference={openReference}
                 onVerseClick={(ref) => {
                   setSelectedRef(ref);
                   openStudyDrawer(ref);
@@ -2457,12 +2798,16 @@ export default function Home() {
                 bookmarked={bookmarksByRef.has(fullStudyVerse.ref)}
                 noteDraft={noteDraft}
                 syncMessage={syncMessage}
+                memoryItem={scriptureMemory.find((item) => item.verse_ref === fullStudyVerse.ref) ?? null}
                 onBack={() => setTab("bible")}
                 onNoteDraftChange={setNoteDraft}
                 onSaveNote={() => saveNote(fullStudyVerse.ref)}
                 onHighlight={() => toggleHighlight(fullStudyVerse.ref)}
                 onBookmark={() => toggleBookmark(fullStudyVerse.ref)}
                 onOpenReference={openReference}
+                onAddMemory={() => addMemoryVerse(fullStudyVerse.ref)}
+                onUpdateMemoryProgress={(progress) => updateMemoryProgress(fullStudyVerse.ref, progress)}
+                onRemoveMemory={() => removeMemoryVerse(fullStudyVerse.ref)}
               />
             )}
 
@@ -2498,9 +2843,11 @@ export default function Home() {
           crossReferences={activeCrossReferences}
           commentaryEntries={activeCommentaryEntries}
           versesByRef={versesByRef}
+          allVerses={allVerses}
           existingNote={notesByRef.get(studyRef)?.[0] ?? null}
           highlighted={highlightsByRef.has(studyRef)}
           bookmarked={bookmarksByRef.has(studyRef)}
+          memoryItem={scriptureMemory.find((item) => item.verse_ref === studyRef) ?? null}
           noteDraft={noteDraft}
           audioPlaying={speechState.targetId === `verse-${studyRef}` && speechState.playing && !speechState.paused}
           speechRate={speechState.rate}
@@ -2519,6 +2866,9 @@ export default function Home() {
             void lookupWord(word);
           }}
           onOpenReference={openReference}
+          onAddMemory={() => addMemoryVerse(studyRef)}
+          onUpdateMemoryProgress={(progress) => updateMemoryProgress(studyRef, progress)}
+          onRemoveMemory={() => removeMemoryVerse(studyRef)}
           onOpenFullStudy={() => {
             setFullStudyRef(studyRef);
             setNoteDraft(notesByRef.get(studyRef)?.[0]?.body ?? "");
@@ -2637,6 +2987,12 @@ function BibleReader({
   notesByRef,
   bookmarksByRef,
   selectedVerseRef,
+  allVerses,
+  chapterAnalysis,
+  chapterCrossReferences,
+  chapterCommentaryEntries,
+  chapterKeyVerses,
+  scriptureMemory,
   speechState,
   bibleListeningProgress,
   listenRangeStart,
@@ -2666,6 +3022,10 @@ function BibleReader({
   onStopAfterSelectionChange,
   onPlaylistNameChange,
   onCreatePlaylist,
+  onAddMemoryVerse,
+  onUpdateMemoryProgress,
+  onRemoveMemoryVerse,
+  onOpenReference,
   onVerseClick,
   onWordClick,
 }: {
@@ -2683,6 +3043,12 @@ function BibleReader({
   notesByRef: Map<string, UserNote[]>;
   bookmarksByRef: Map<string, UserBookmark>;
   selectedVerseRef: React.MutableRefObject<HTMLDivElement | null>;
+  allVerses: BibleVerse[];
+  chapterAnalysis: ChapterStudyAnalysis;
+  chapterCrossReferences: CrossReference[];
+  chapterCommentaryEntries: CommentaryEntry[];
+  chapterKeyVerses: string[];
+  scriptureMemory: ScriptureMemoryItem[];
   speechState: SpeechState;
   bibleListeningProgress: BibleListeningProgress | null;
   listenRangeStart: number;
@@ -2712,11 +3078,23 @@ function BibleReader({
   onStopAfterSelectionChange: (stop: boolean) => void;
   onPlaylistNameChange: (name: string) => void;
   onCreatePlaylist: () => void;
+  onAddMemoryVerse: (ref: string) => void;
+  onUpdateMemoryProgress: (ref: string, progress: number) => void;
+  onRemoveMemoryVerse: (ref: string) => void;
+  onOpenReference: (targetRef: string) => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
   const bibleSpeechActive = speechState.targetId?.startsWith("bible-") && speechState.playing;
   const selectedVerseNumber = Number(selectedRef.split(":")[1] ?? verseJump);
+  const [explorerWord, setExplorerWord] = useState("believe");
+  const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
+  const explorer = useMemo(
+    () => buildWordExplorer(explorerWord, book, chapter, allVerses),
+    [allVerses, book, chapter, explorerWord],
+  );
+  const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
+  const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
   return (
     <div className="space-y-4 p-4 md:p-8">
       <section className="rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm md:rounded-3xl md:p-4">
@@ -2921,6 +3299,25 @@ function BibleReader({
         </div>
       </section>
 
+      <ChapterStudyWorkflow
+        allVerses={allVerses}
+        analysis={chapterAnalysis}
+        chapterCommentaryEntries={chapterCommentaryEntries}
+        chapterCrossReferences={chapterCrossReferences}
+        chapterKeyVerses={chapterKeyVerses}
+        chapterNotes={chapterNotes}
+        explorer={explorer}
+        explorerWord={explorerWord}
+        memoryForChapter={memoryForChapter}
+        selectedVerse={selectedVerse}
+        onAddMemoryVerse={onAddMemoryVerse}
+        onExplorerWordChange={setExplorerWord}
+        onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
+        onOpenReference={onOpenReference}
+        onRemoveMemoryVerse={onRemoveMemoryVerse}
+        onUpdateMemoryProgress={onUpdateMemoryProgress}
+      />
+
       <article className="rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-8 md:py-7">
         <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-stone-300/70 pb-4">
           <div>
@@ -2979,6 +3376,331 @@ function BibleReader({
           })}
         </div>
       </article>
+    </div>
+  );
+}
+
+function ChapterStudyWorkflow({
+  allVerses,
+  analysis,
+  chapterCommentaryEntries,
+  chapterCrossReferences,
+  chapterKeyVerses,
+  chapterNotes,
+  explorer,
+  explorerWord,
+  memoryForChapter,
+  selectedVerse,
+  onAddMemoryVerse,
+  onExplorerWordChange,
+  onLookupWord,
+  onOpenReference,
+  onRemoveMemoryVerse,
+  onUpdateMemoryProgress,
+}: {
+  allVerses: BibleVerse[];
+  analysis: ChapterStudyAnalysis;
+  chapterCommentaryEntries: CommentaryEntry[];
+  chapterCrossReferences: CrossReference[];
+  chapterKeyVerses: string[];
+  chapterNotes: Array<[string, UserNote[]]>;
+  explorer: WordExplorerResult;
+  explorerWord: string;
+  memoryForChapter: ScriptureMemoryItem[];
+  selectedVerse: BibleVerse;
+  onAddMemoryVerse: (ref: string) => void;
+  onExplorerWordChange: (word: string) => void;
+  onLookupWord: (word: string) => void;
+  onOpenReference: (targetRef: string) => void;
+  onRemoveMemoryVerse: (ref: string) => void;
+  onUpdateMemoryProgress: (ref: string, progress: number) => void;
+}) {
+  const suggestedWords = analysis.repeatedWords.slice(0, 8);
+  const memoryPreview = memoryForChapter[0] ?? null;
+
+  return (
+    <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Workflow</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Chapter study and teaching tools</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+            A local-first passage guide for repeated words, word study, teaching prep, and Scripture memory.
+          </p>
+        </div>
+        <button
+          className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+          onClick={() => onAddMemoryVerse(selectedVerse.ref)}
+          type="button"
+        >
+          <Brain size={16} />
+          Add {selectedVerse.ref}
+        </button>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BarChart3 size={18} />
+            <h3 className="text-sm font-semibold">Chapter Analysis</h3>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <MiniStat label="Verses" value={String(analysis.stats.verses)} />
+            <MiniStat label="Words" value={String(analysis.stats.words)} />
+            <MiniStat label="Key words" value={String(analysis.stats.uniqueWords)} />
+            <MiniStat label="Avg / verse" value={String(analysis.stats.averageWordsPerVerse)} />
+          </div>
+          <div className="mt-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Repeated words</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {analysis.repeatedWords.length ? analysis.repeatedWords.slice(0, 10).map((item) => (
+                <button
+                  key={item.word}
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
+                  onClick={() => onExplorerWordChange(item.word)}
+                  type="button"
+                >
+                  {item.word} <span className="text-[var(--green)]">{item.count}</span>
+                </button>
+              )) : <span className="text-sm text-[var(--muted)]">No repeated study words found.</span>}
+            </div>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Repeated phrases</p>
+              <div className="mt-2 space-y-1">
+                {analysis.repeatedPhrases.length ? analysis.repeatedPhrases.slice(0, 4).map((item) => (
+                  <p key={item.phrase} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                    {item.phrase} <span className="text-[var(--green)]">x{item.count}</span>
+                  </p>
+                )) : <p className="text-sm text-[var(--muted)]">No repeated phrases found yet.</p>}
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Most referenced</p>
+              <div className="mt-2 space-y-1">
+                {analysis.mostReferencedVerses.length ? analysis.mostReferencedVerses.map((item) => (
+                  <button
+                    key={item.ref}
+                    className="w-full rounded-xl bg-white px-3 py-2 text-left text-xs font-semibold text-[var(--green)]"
+                    onClick={() => onOpenReference(item.ref)}
+                    type="button"
+                  >
+                    {item.ref} <span className="text-[var(--muted)]">{item.count} links</span>
+                  </button>
+                )) : <p className="text-sm text-[var(--muted)]">More references will appear as TSK grows.</p>}
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Search size={18} />
+            <h3 className="text-sm font-semibold">Word Explorer</h3>
+          </div>
+          <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Study word
+            <input
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base text-[var(--ink)] outline-none"
+              value={explorerWord}
+              onChange={(event) => onExplorerWordChange(event.target.value)}
+            />
+          </label>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <MiniStat label="Chapter" value={String(explorer.chapterOccurrences.length)} />
+            <MiniStat label="Book" value={String(explorer.bookOccurrences.length)} />
+            <MiniStat label="Bible" value={String(explorer.bibleOccurrences.length)} />
+          </div>
+          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold capitalize text-[var(--ink)]">{explorer.word || "word"}</p>
+              <button className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onLookupWord(explorer.word)} type="button">
+                Webster&apos;s 1828
+              </button>
+            </div>
+            <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {suggestedWords.map((item) => (
+              <button
+                key={`suggested-${item.word}`}
+                className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                onClick={() => onExplorerWordChange(item.word)}
+                type="button"
+              >
+                {item.word}
+              </button>
+            ))}
+          </div>
+          <div className="mt-3 space-y-2">
+            {explorer.chapterOccurrences.slice(0, 3).map((verse) => (
+              <button
+                key={`word-occurrence-${verse.ref}`}
+                className="w-full rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenReference(verse.ref)}
+                type="button"
+              >
+                <p className="text-xs font-semibold text-[var(--green)]">{verse.ref}</p>
+                <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{verse.text}</p>
+              </button>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-3 grid gap-3 lg:grid-cols-2">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <NotebookPen size={18} />
+            <h3 className="text-sm font-semibold">Teaching Mode</h3>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <MiniStat label="Chapter notes" value={String(chapterNotes.length)} />
+            <MiniStat label="Cross refs" value={String(chapterCrossReferences.length)} />
+            <MiniStat label="Commentary links" value={String(chapterCommentaryEntries.length)} />
+            <MiniStat label="Memory verses" value={String(memoryForChapter.length)} />
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key verses</p>
+              <div className="mt-2 space-y-1">
+                {(chapterKeyVerses.length ? chapterKeyVerses : [selectedVerse.ref]).map((ref) => (
+                  <button
+                    key={`teaching-${ref}`}
+                    className="w-full rounded-xl bg-white px-3 py-2 text-left text-xs font-semibold text-[var(--green)]"
+                    onClick={() => onOpenReference(ref)}
+                    type="button"
+                  >
+                    {ref}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching notes</p>
+              <div className="mt-2 space-y-1">
+                {chapterNotes.slice(0, 3).map(([ref, notes]) => (
+                  <button
+                    key={`chapter-note-${ref}`}
+                    className="w-full rounded-xl bg-white px-3 py-2 text-left text-xs font-semibold text-[var(--muted)]"
+                    onClick={() => onOpenReference(ref)}
+                    type="button"
+                  >
+                    {ref}: {notes[0]?.body.slice(0, 72)}
+                  </button>
+                ))}
+                {!chapterNotes.length && <p className="text-sm leading-6 text-[var(--muted)]">Add verse notes and they will collect here for teaching prep.</p>}
+              </div>
+            </div>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {chapterCrossReferences.slice(0, 4).map((reference) => (
+              <button
+                key={`teaching-cross-${reference.id}`}
+                className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                onClick={() => onOpenReference(reference.target_ref)}
+                type="button"
+              >
+                {reference.target_ref}
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Brain size={18} />
+            <h3 className="text-sm font-semibold">Scripture Memory</h3>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            Build a local memory list, review with hidden words, and track progress.
+          </p>
+          <MemoryReviewCard
+            item={memoryPreview}
+            fallbackVerse={selectedVerse}
+            onAddMemoryVerse={onAddMemoryVerse}
+            onRemoveMemoryVerse={onRemoveMemoryVerse}
+            onUpdateMemoryProgress={onUpdateMemoryProgress}
+          />
+          <div className="mt-3 grid gap-2">
+            {memoryForChapter.slice(0, 4).map((item) => (
+              <div key={item.id} className="flex items-center justify-between gap-3 rounded-xl bg-white px-3 py-2">
+                <button className="text-left text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(item.verse_ref)} type="button">
+                  {item.verse_ref}
+                </button>
+                <span className="text-xs font-semibold text-[var(--muted)]">{formatPercent(item.progress)}</span>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+      <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+        Occurrence counts use the current local KJV text: {allVerses.length.toLocaleString()} verses available.
+      </p>
+    </section>
+  );
+}
+
+function MiniStat({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">
+      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{label}</p>
+      <p className="mt-1 text-lg font-semibold text-[var(--ink)]">{value}</p>
+    </div>
+  );
+}
+
+function MemoryReviewCard({
+  item,
+  fallbackVerse,
+  onAddMemoryVerse,
+  onRemoveMemoryVerse,
+  onUpdateMemoryProgress,
+}: {
+  item: ScriptureMemoryItem | null;
+  fallbackVerse: BibleVerse;
+  onAddMemoryVerse: (ref: string) => void;
+  onRemoveMemoryVerse: (ref: string) => void;
+  onUpdateMemoryProgress: (ref: string, progress: number) => void;
+}) {
+  const verseRef = item?.verse_ref ?? fallbackVerse.ref;
+  const verseText = item?.verse_text ?? fallbackVerse.text;
+
+  return (
+    <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm font-semibold text-[var(--green)]">{verseRef}</p>
+        <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+          {item ? `${formatPercent(item.progress)} learned` : "Not added"}
+        </span>
+      </div>
+      <p className="mt-2 font-serif text-base leading-7 text-[var(--scripture-ink)]">{verseText}</p>
+      <div className="mt-3 rounded-xl bg-[var(--paper)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Hide words</p>
+        <p className="mt-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{hideEveryOtherWord(verseText)}</p>
+      </div>
+      <div className="mt-3 rounded-xl bg-[var(--paper)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First-letter prompt</p>
+        <p className="mt-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{firstLetterPrompt(verseText)}</p>
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <button
+          className="rounded-full bg-[var(--green)] px-4 py-2.5 text-xs font-semibold text-white"
+          onClick={() => (item ? onUpdateMemoryProgress(verseRef, Math.min(100, item.progress + 25)) : onAddMemoryVerse(verseRef))}
+          type="button"
+        >
+          {item ? "Repeat verse" : "Add to memory"}
+        </button>
+        <button
+          className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-xs font-semibold text-[var(--muted)] disabled:opacity-40"
+          disabled={!item}
+          onClick={() => onRemoveMemoryVerse(verseRef)}
+          type="button"
+        >
+          Remove
+        </button>
+      </div>
     </div>
   );
 }
@@ -3876,6 +4598,7 @@ function FullStudyScreen({
   existingNote,
   highlighted,
   bookmarked,
+  memoryItem,
   noteDraft,
   syncMessage,
   onBack,
@@ -3884,6 +4607,9 @@ function FullStudyScreen({
   onHighlight,
   onBookmark,
   onOpenReference,
+  onAddMemory,
+  onUpdateMemoryProgress,
+  onRemoveMemory,
 }: {
   verse: BibleVerse;
   keyWords: string[];
@@ -3895,16 +4621,21 @@ function FullStudyScreen({
   bookmarked: boolean;
   noteDraft: string;
   syncMessage: string;
+  memoryItem: ScriptureMemoryItem | null;
   onBack: () => void;
   onNoteDraftChange: (value: string) => void;
   onSaveNote: () => void;
   onHighlight: () => void;
   onBookmark: () => void;
   onOpenReference: (targetRef: string) => void;
+  onAddMemory: () => void;
+  onUpdateMemoryProgress: (progress: number) => void;
+  onRemoveMemory: () => void;
 }) {
   const definitions = keyWords
     .map((word) => findDictionaryEntry(word))
     .filter((entry) => entry.found);
+  const firstDefinition = definitions[0] ?? null;
   const sections = [
     { id: "full-study-verse", label: "Verse" },
     { id: "full-study-key-words", label: "Key Words" },
@@ -3978,6 +4709,13 @@ function FullStudyScreen({
         ) : (
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">No Webster&apos;s definitions are loaded for these words yet.</p>
         )}
+        {firstDefinition && (
+          <div className="mt-4 grid grid-cols-3 gap-2">
+            <MiniStat label="Lookup" value={firstDefinition.lookupWord} />
+            <MiniStat label="Source" value="1828" />
+            <MiniStat label="Ready" value={firstDefinition.found ? "Yes" : "Soon"} />
+          </div>
+        )}
       </StudySection>
 
       <StudySection id="full-study-cross-references" title="Cross References">
@@ -4046,7 +4784,13 @@ function FullStudyScreen({
       </StudySection>
 
       <StudySection id="full-study-memory" title="Memory">
-        <p className="text-sm leading-6 text-[var(--muted)]">Memorize is reserved for a future verse review workflow. The verse stays centered here for now.</p>
+        <MemoryReviewCard
+          item={memoryItem}
+          fallbackVerse={verse}
+          onAddMemoryVerse={() => onAddMemory()}
+          onRemoveMemoryVerse={() => onRemoveMemory()}
+          onUpdateMemoryProgress={(_ref, progress) => onUpdateMemoryProgress(progress)}
+        />
       </StudySection>
     </div>
   );
@@ -4258,9 +5002,11 @@ function StudyDrawer({
   crossReferences,
   commentaryEntries,
   versesByRef,
+  allVerses,
   existingNote,
   highlighted,
   bookmarked,
+  memoryItem,
   noteDraft,
   audioPlaying,
   speechRate,
@@ -4277,6 +5023,9 @@ function StudyDrawer({
   onDeleteNote,
   onLookupWord,
   onOpenReference,
+  onAddMemory,
+  onUpdateMemoryProgress,
+  onRemoveMemory,
   onOpenFullStudy,
   onToggleAudio,
   onSpeechRateChange,
@@ -4287,9 +5036,11 @@ function StudyDrawer({
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
   versesByRef: Map<string, BibleVerse>;
+  allVerses: BibleVerse[];
   existingNote: UserNote | null;
   highlighted: boolean;
   bookmarked: boolean;
+  memoryItem: ScriptureMemoryItem | null;
   noteDraft: string;
   audioPlaying: boolean;
   speechRate: number;
@@ -4306,6 +5057,9 @@ function StudyDrawer({
   onDeleteNote: () => void;
   onLookupWord: (word: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onAddMemory: () => void;
+  onUpdateMemoryProgress: (progress: number) => void;
+  onRemoveMemory: () => void;
   onOpenFullStudy: () => void;
   onToggleAudio: () => void;
   onSpeechRateChange: (rate: number) => void;
@@ -4322,6 +5076,7 @@ function StudyDrawer({
     { id: "notes", label: "Notes" },
     { id: "audio", label: "Audio" },
     { id: "commentary", label: "Commentary" },
+    { id: "memory", label: "Memory" },
   ];
   const commentarySources = useMemo(
     () => Array.from(new Set(commentaryEntries.map((entry) => entry.resource_title))).sort(),
@@ -4341,6 +5096,10 @@ function StudyDrawer({
   );
   const keyWords = useMemo(() => keyWordsForVerse(verse), [verse]);
   const topCrossReferences = crossReferences.slice(0, 3);
+  const drawerWordExplorer = useMemo(
+    () => buildWordExplorer(dictionaryEntry?.lookupWord || keyWords[0] || "", verse.book, verse.chapter, allVerses),
+    [allVerses, dictionaryEntry?.lookupWord, keyWords, verse.book, verse.chapter],
+  );
   const sizeOrder: StudyDrawerSize[] = ["collapsed", "half", "full"];
   const sizeButtons: { id: StudyDrawerSize; label: string }[] = [
     { id: "collapsed", label: "Low" },
@@ -4532,9 +5291,12 @@ function StudyDrawer({
                   <CompactActionButton icon={<NotebookPen size={17} />} label={existingNote ? "Edit note" : "Add note"} onClick={() => onActiveTabChange("notes")} />
                   <CompactActionButton active={highlighted} icon={<Highlighter size={17} />} label={highlighted ? "Unhighlight" : "Highlight"} onClick={onHighlight} />
                   <CompactActionButton active={bookmarked} icon={<Bookmark size={17} />} label={bookmarked ? "Saved" : "Bookmark"} onClick={onBookmark} />
-                  <CompactActionButton icon={<BookOpen size={17} />} label="Memorize" onClick={() => onActiveTabChange("study")} />
+                  <CompactActionButton active={Boolean(memoryItem)} icon={<Brain size={17} />} label={memoryItem ? "Memory" : "Memorize"} onClick={() => {
+                    if (!memoryItem) onAddMemory();
+                    onActiveTabChange("memory");
+                  }} />
                 </div>
-                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Memorize is a placeholder for a future review workflow.</p>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Memory review is local-first for beta testing.</p>
               </StudySection>
 
               <StudySection title="Commentary">
@@ -4593,6 +5355,26 @@ function StudyDrawer({
                     <p className="mt-1 text-sm text-[var(--muted)]">Normalized to: {dictionaryEntry.lookupWord}</p>
                   )}
                   <p className="mt-4 text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
+                  <div className="mt-4 grid grid-cols-3 gap-2">
+                    <MiniStat label="Chapter" value={String(drawerWordExplorer.chapterOccurrences.length)} />
+                    <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />
+                    <MiniStat label="Bible" value={String(drawerWordExplorer.bibleOccurrences.length)} />
+                  </div>
+                  {drawerWordExplorer.chapterOccurrences.length > 0 && (
+                    <div className="mt-3 space-y-2">
+                      {drawerWordExplorer.chapterOccurrences.slice(0, 3).map((occurrence) => (
+                        <button
+                          key={`drawer-word-${occurrence.ref}`}
+                          className="w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
+                          onClick={() => onOpenReference(occurrence.ref)}
+                          type="button"
+                        >
+                          <p className="text-xs font-semibold text-[var(--green)]">{occurrence.ref}</p>
+                          <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{occurrence.text}</p>
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </section>
               ) : (
                 <EmptyState title="Tap a word" body="Tap any word in the verse above or the Bible text to look up a Webster's 1828 definition." />
@@ -4762,6 +5544,45 @@ function StudyDrawer({
                 ))
               ) : (
                 <EmptyState title="No commentary entry yet" body="This verse is ready for a future public-domain commentary import." />
+              )}
+            </div>
+          )}
+
+          {activeTab === "memory" && (
+            <div className="space-y-3">
+              <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <div className="flex items-center gap-2 text-[var(--green)]">
+                  <Brain size={18} />
+                  <h3 className="text-sm font-semibold">Scripture Memory</h3>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                  Repeat the verse, hide words, use first-letter prompts, and save local progress.
+                </p>
+              </div>
+              <MemoryReviewCard
+                item={memoryItem}
+                fallbackVerse={verse}
+                onAddMemoryVerse={() => onAddMemory()}
+                onRemoveMemoryVerse={() => onRemoveMemory()}
+                onUpdateMemoryProgress={(_ref, progress) => onUpdateMemoryProgress(progress)}
+              />
+              {memoryItem && (
+                <div className="grid grid-cols-4 gap-2">
+                  {[25, 50, 75, 100].map((progress) => (
+                    <button
+                      key={`memory-progress-${progress}`}
+                      className={`rounded-full px-3 py-2 text-xs font-semibold ${
+                        memoryItem.progress >= progress
+                          ? "bg-[var(--green)] text-white"
+                          : "border border-[var(--line)] bg-white text-[var(--muted)]"
+                      }`}
+                      onClick={() => onUpdateMemoryProgress(progress)}
+                      type="button"
+                    >
+                      {progress}%
+                    </button>
+                  ))}
+                </div>
               )}
             </div>
           )}

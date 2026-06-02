@@ -186,6 +186,7 @@ Bible audio playlists are also local-storage first. Current local keys:
 
 - `fathers-business-bible-listening-progress`
 - `fathers-business-bible-audio-playlists`
+- `fathers-business-scripture-memory`
 
 The app currently uses:
 
