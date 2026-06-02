@@ -322,8 +322,20 @@ type StudyPlace = {
   id: string;
   name: string;
   description: string;
+  significance: string;
+  keyPassages: string[];
+  timelineLinks: string[];
   relatedPassages: string[];
   mapNote: string;
+};
+
+type StudyTimelineEntry = {
+  id: string;
+  era: "Patriarchs" | "Exodus" | "Kings" | "Christ" | "Church";
+  title: string;
+  timeframe: string;
+  description: string;
+  keyPassages: string[];
 };
 
 type ChristTypeConnection = {
@@ -348,6 +360,7 @@ type ChapterConnections = {
   chapter: number;
   peopleIds: string[];
   placeIds: string[];
+  timelineIds?: string[];
   typeIds: string[];
   prophecyIds: string[];
   themes: string[];
@@ -356,6 +369,7 @@ type ChapterConnections = {
 type ActiveChapterConnections = {
   people: StudyPerson[];
   places: StudyPlace[];
+  timeline: StudyTimelineEntry[];
   types: ChristTypeConnection[];
   prophecies: ProphecyConnection[];
   themes: string[];
@@ -1546,55 +1560,74 @@ const studyPlaces: StudyPlace[] = [
     name: "Jerusalem",
     description:
       "The chief city of the Jews, central to the temple, the feasts, the Lord's final week, the resurrection witness, and early gospel preaching.",
-    relatedPassages: ["John 2:23", "John 3:1", "John 7:50"],
+    significance: "Jerusalem gathers together temple worship, Christ's death and resurrection, and the first public preaching of the risen Lord.",
+    keyPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
+    timelineLinks: ["david", "christ-crucifixion", "christ-resurrection", "church-pentecost"],
+    relatedPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
     mapNote: "Map placeholder: future Bible map layer for Jerusalem and Judea.",
-  },
-  {
-    id: "judea",
-    name: "Judea",
-    description:
-      "The region where Jesus and His disciples came after His conversation with Nicodemus.",
-    relatedPassages: ["John 3:22"],
-    mapNote: "Map placeholder: future Bible map layer for Judea.",
-  },
-  {
-    id: "aenon-salim",
-    name: "Aenon near Salim",
-    description:
-      "A place where John was baptizing because there was much water there.",
-    relatedPassages: ["John 3:23"],
-    mapNote: "Map placeholder: future map marker for Aenon near Salim.",
-  },
-  {
-    id: "jordan-river",
-    name: "Jordan River",
-    description:
-      "A river connected with John's baptism ministry and the public witness to Christ.",
-    relatedPassages: ["Matthew 3:13", "John 1:28", "John 3:26"],
-    mapNote: "Map placeholder: future Bible map layer for Jordan River baptism sites.",
   },
   {
     id: "bethlehem",
     name: "Bethlehem",
     description:
       "The prophesied birthplace of Christ, included here as a reviewed prophecy-place connection.",
-    relatedPassages: ["Micah 5:2", "Matthew 2:1", "Luke 2:4"],
+    significance: "Bethlehem connects David's line, Micah's prophecy, and the birth of the Lord Jesus Christ.",
+    keyPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
+    timelineLinks: ["david", "christ-birth"],
+    relatedPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
     mapNote: "Map placeholder: future Bible map layer for Bethlehem.",
+  },
+  {
+    id: "nazareth",
+    name: "Nazareth",
+    description: "The Galilean town where Jesus was brought up and from which He was known as Jesus of Nazareth.",
+    significance: "Nazareth helps readers connect the Lord's humble earthly upbringing with His public identification in the Gospels.",
+    keyPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
+    timelineLinks: ["christ-birth", "christ-ministry"],
+    relatedPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
+    mapNote: "Map placeholder: future Bible map marker for Nazareth in Galilee.",
   },
   {
     id: "galilee",
     name: "Galilee",
     description:
       "The northern region closely connected with the Lord's earthly ministry, His disciples, and many miracles.",
+    significance: "Galilee anchors much of Christ's ministry, the calling of disciples, and post-resurrection reminders.",
+    keyPassages: ["Matthew 4:12", "Matthew 4:23", "Luke 24:6", "John 21:1"],
+    timelineLinks: ["christ-ministry", "christ-resurrection"],
     relatedPassages: ["Matthew 4:12", "Matthew 4:23", "Luke 24:6", "John 21:1"],
     mapNote: "Map placeholder: future Bible map layer for Galilee and the Sea of Galilee.",
+  },
+  {
+    id: "jordan-river",
+    name: "Jordan River",
+    description:
+      "A river connected with Israel's entrance into Canaan, John's baptism ministry, and the public witness to Christ.",
+    significance: "The Jordan River helps connect Old Testament crossing, prophetic ministry, and New Testament witness.",
+    keyPassages: ["Joshua 3:17", "Matthew 3:13", "John 1:28", "John 3:26"],
+    timelineLinks: ["exodus-wilderness", "christ-ministry"],
+    relatedPassages: ["Joshua 3:17", "Matthew 3:13", "John 1:28", "John 3:26"],
+    mapNote: "Map placeholder: future Bible map layer for Jordan River crossings and baptism sites.",
+  },
+  {
+    id: "emmaus",
+    name: "Emmaus",
+    description: "A village connected with the risen Christ opening the Scriptures to two disciples.",
+    significance: "Emmaus is a key place for teaching how the resurrection and the Old Testament Scriptures belong together.",
+    keyPassages: ["Luke 24:13", "Luke 24:27", "Luke 24:31", "Luke 24:32"],
+    timelineLinks: ["christ-resurrection"],
+    relatedPassages: ["Luke 24:13", "Luke 24:27", "Luke 24:31", "Luke 24:32"],
+    mapNote: "Map placeholder: future simple route from Jerusalem toward Emmaus.",
   },
   {
     id: "egypt",
     name: "Egypt",
     description:
       "A place of refuge and bondage in Scripture, central to Israel's deliverance and the Passover setting.",
-    relatedPassages: ["Genesis 12:10", "Exodus 12:1", "Hosea 11:1", "Matthew 2:13"],
+    significance: "Egypt ties together the patriarchs, Joseph's preservation, Israel's bondage, the Exodus, and Christ's childhood refuge.",
+    keyPassages: ["Genesis 12:10", "Genesis 45:5", "Exodus 12:1", "Matthew 2:13"],
+    timelineLinks: ["abraham", "joseph", "moses", "christ-birth"],
+    relatedPassages: ["Genesis 12:10", "Genesis 45:5", "Exodus 12:1", "Matthew 2:13"],
     mapNote: "Map placeholder: future Bible map layer for Egypt, Goshen, and the Exodus route.",
   },
   {
@@ -1602,8 +1635,206 @@ const studyPlaces: StudyPlace[] = [
     name: "Babylon",
     description:
       "A kingdom and city connected with exile, pride, judgment, and prophetic Scripture.",
+    significance: "Babylon helps students place Judah's exile, Daniel's setting, and later prophetic judgment language.",
+    keyPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
+    timelineLinks: ["solomon"],
     relatedPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
     mapNote: "Map placeholder: future Bible map layer for Babylon and the exile route.",
+  },
+  {
+    id: "antioch",
+    name: "Antioch",
+    description: "A major early church center where disciples were first called Christians and from which missionary work was sent.",
+    significance: "Antioch is important for understanding the spread of the gospel beyond Jerusalem and the missionary movement in Acts.",
+    keyPassages: ["Acts 11:26", "Acts 13:1", "Acts 14:26", "Acts 15:35"],
+    timelineLinks: ["church-pentecost", "pauls-journeys"],
+    relatedPassages: ["Acts 11:26", "Acts 13:1", "Acts 14:26", "Acts 15:35"],
+    mapNote: "Map placeholder: future simple marker for Syrian Antioch and Paul's mission departures.",
+  },
+  {
+    id: "corinth",
+    name: "Corinth",
+    description: "A city in Achaia where Paul preached and where a church later received inspired correction and instruction.",
+    significance: "Corinth helps locate Paul's missionary work and the background for 1 and 2 Corinthians.",
+    keyPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
+    timelineLinks: ["pauls-journeys"],
+    relatedPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
+    mapNote: "Map placeholder: future simple marker for Corinth in Achaia.",
+  },
+  {
+    id: "rome",
+    name: "Rome",
+    description: "The capital city connected with Paul's epistle to the Romans and his later witness as a prisoner.",
+    significance: "Rome helps readers place the Roman church, Paul's gospel burden, and the later spread of Christian witness in Acts.",
+    keyPassages: ["Romans 1:7", "Romans 1:15", "Acts 28:16", "Acts 28:31"],
+    timelineLinks: ["pauls-journeys"],
+    relatedPassages: ["Romans 1:7", "Romans 1:15", "Acts 28:16", "Acts 28:31"],
+    mapNote: "Map placeholder: future simple marker for Rome.",
+  },
+  {
+    id: "cenchrea",
+    name: "Cenchrea",
+    description: "A port near Corinth connected with Phoebe and Paul's missionary travel.",
+    significance: "Cenchrea helps locate the close of Romans and the practical network of early church service.",
+    keyPassages: ["Romans 16:1", "Acts 18:18"],
+    timelineLinks: ["pauls-journeys"],
+    relatedPassages: ["Romans 16:1", "Acts 18:18"],
+    mapNote: "Map placeholder: future simple marker for Cenchrea near Corinth.",
+  },
+  {
+    id: "ephesus",
+    name: "Ephesus",
+    description: "A city in Asia where Paul ministered and where the gospel confronted idolatry and public opposition.",
+    significance: "Ephesus helps readers understand Acts 19, the Ephesian church, and later instruction about Christ and the church.",
+    keyPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
+    timelineLinks: ["pauls-journeys"],
+    relatedPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
+    mapNote: "Map placeholder: future simple marker for Ephesus in Asia.",
+  },
+  {
+    id: "judea",
+    name: "Judea",
+    description:
+      "The region where Jesus and His disciples came after His conversation with Nicodemus.",
+    significance: "Judea connects the Lord's ministry around Jerusalem with John's continuing witness.",
+    keyPassages: ["Matthew 3:1", "John 3:22", "Acts 1:8"],
+    timelineLinks: ["christ-ministry", "church-pentecost"],
+    relatedPassages: ["Matthew 3:1", "John 3:22", "Acts 1:8"],
+    mapNote: "Map placeholder: future Bible map layer for Judea.",
+  },
+  {
+    id: "aenon-salim",
+    name: "Aenon near Salim",
+    description:
+      "A place where John was baptizing because there was much water there.",
+    significance: "Aenon near Salim keeps John 3 connected to John the Baptist's final witness that Christ must increase.",
+    keyPassages: ["John 3:23", "John 3:30"],
+    timelineLinks: ["christ-ministry"],
+    relatedPassages: ["John 3:23", "John 3:30"],
+    mapNote: "Map placeholder: future map marker for Aenon near Salim.",
+  },
+];
+
+const timelineEntries: StudyTimelineEntry[] = [
+  {
+    id: "abraham",
+    era: "Patriarchs",
+    title: "Abraham",
+    timeframe: "Patriarchal era",
+    description: "God calls Abraham and gives covenant promises concerning seed, land, and blessing.",
+    keyPassages: ["Genesis 12:1", "Genesis 15:6", "Genesis 22:2"],
+  },
+  {
+    id: "isaac",
+    era: "Patriarchs",
+    title: "Isaac",
+    timeframe: "Patriarchal era",
+    description: "The promised son through whom God's covenant line continues.",
+    keyPassages: ["Genesis 21:3", "Genesis 22:2", "Genesis 26:3"],
+  },
+  {
+    id: "jacob",
+    era: "Patriarchs",
+    title: "Jacob",
+    timeframe: "Patriarchal era",
+    description: "Jacob is renamed Israel, and his sons become the tribes of Israel.",
+    keyPassages: ["Genesis 28:13", "Genesis 32:28", "Genesis 49:28"],
+  },
+  {
+    id: "joseph",
+    era: "Patriarchs",
+    title: "Joseph",
+    timeframe: "Patriarchal era",
+    description: "God uses Joseph's suffering and exaltation in Egypt to preserve many alive.",
+    keyPassages: ["Genesis 37:28", "Genesis 45:5", "Genesis 50:20"],
+  },
+  {
+    id: "moses",
+    era: "Exodus",
+    title: "Moses",
+    timeframe: "Exodus era",
+    description: "God calls Moses to lead Israel out of Egypt and receive the law.",
+    keyPassages: ["Exodus 3:10", "Exodus 12:31", "Deuteronomy 34:10"],
+  },
+  {
+    id: "exodus-wilderness",
+    era: "Exodus",
+    title: "Wilderness",
+    timeframe: "Exodus and wilderness years",
+    description: "Israel is delivered from Egypt and tested in the wilderness before entering the land.",
+    keyPassages: ["Exodus 14:21", "Numbers 21:8", "Deuteronomy 8:2"],
+  },
+  {
+    id: "saul",
+    era: "Kings",
+    title: "Saul",
+    timeframe: "United kingdom",
+    description: "Israel's first king, whose reign warns about disobedience and self-will.",
+    keyPassages: ["1 Samuel 9:2", "1 Samuel 15:22", "1 Samuel 31:4"],
+  },
+  {
+    id: "david",
+    era: "Kings",
+    title: "David",
+    timeframe: "United kingdom",
+    description: "The shepherd king receives covenant promises and becomes central to Messianic expectation.",
+    keyPassages: ["1 Samuel 16:13", "2 Samuel 7:16", "Psalm 22:1"],
+  },
+  {
+    id: "solomon",
+    era: "Kings",
+    title: "Solomon",
+    timeframe: "United kingdom",
+    description: "Solomon builds the temple, receives wisdom, and later shows the danger of a divided heart.",
+    keyPassages: ["1 Kings 3:9", "1 Kings 8:20", "1 Kings 11:4"],
+  },
+  {
+    id: "christ-birth",
+    era: "Christ",
+    title: "Birth of Christ",
+    timeframe: "Gospel era",
+    description: "Christ is born in Bethlehem according to prophecy and announced as Saviour.",
+    keyPassages: ["Micah 5:2", "Luke 2:7", "Luke 2:11"],
+  },
+  {
+    id: "christ-ministry",
+    era: "Christ",
+    title: "Ministry of Christ",
+    timeframe: "Gospel era",
+    description: "The Lord Jesus preaches, teaches, works miracles, calls disciples, and reveals the Father.",
+    keyPassages: ["Matthew 4:23", "Luke 4:18", "John 3:16"],
+  },
+  {
+    id: "christ-crucifixion",
+    era: "Christ",
+    title: "Crucifixion",
+    timeframe: "Gospel era",
+    description: "Christ suffers and dies at Jerusalem according to the Scriptures.",
+    keyPassages: ["Psalm 22:16", "Luke 23:33", "John 19:30"],
+  },
+  {
+    id: "christ-resurrection",
+    era: "Christ",
+    title: "Resurrection",
+    timeframe: "Gospel era",
+    description: "Christ rises again and opens the Scriptures to His disciples.",
+    keyPassages: ["Luke 24:6", "Luke 24:27", "Luke 24:46"],
+  },
+  {
+    id: "church-pentecost",
+    era: "Church",
+    title: "Pentecost",
+    timeframe: "Early church",
+    description: "The Spirit is given and the risen Christ is preached openly at Jerusalem.",
+    keyPassages: ["Acts 2:1", "Acts 2:36", "Acts 2:41"],
+  },
+  {
+    id: "pauls-journeys",
+    era: "Church",
+    title: "Paul's Journeys",
+    timeframe: "Early church",
+    description: "Paul carries the gospel through missionary journeys, strengthening churches and preaching Christ.",
+    keyPassages: ["Acts 13:2", "Acts 16:9", "Acts 19:10", "Acts 20:24"],
   },
 ];
 
@@ -1710,6 +1941,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 12,
     peopleIds: ["abraham"],
     placeIds: ["egypt"],
+    timelineIds: ["abraham"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Calling", "Faith", "Promise", "Pilgrimage"],
@@ -1719,6 +1951,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 22,
     peopleIds: ["abraham"],
     placeIds: [],
+    timelineIds: ["abraham", "isaac"],
     typeIds: ["isaac"],
     prophecyIds: [],
     themes: ["Faith", "Obedience", "Sacrifice", "Provision"],
@@ -1728,6 +1961,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 37,
     peopleIds: ["joseph"],
     placeIds: ["egypt"],
+    timelineIds: ["jacob", "joseph"],
     typeIds: ["joseph"],
     prophecyIds: [],
     themes: ["Providence", "Suffering", "Rejection", "God's purpose"],
@@ -1737,6 +1971,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 12,
     peopleIds: ["moses"],
     placeIds: ["egypt"],
+    timelineIds: ["moses", "exodus-wilderness"],
     typeIds: ["passover-lamb"],
     prophecyIds: [],
     themes: ["Deliverance", "Blood", "Judgment", "Redemption"],
@@ -1755,6 +1990,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 17,
     peopleIds: ["david"],
     placeIds: [],
+    timelineIds: ["david"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Faith", "Courage", "The battle is the LORD's"],
@@ -1773,6 +2009,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 22,
     peopleIds: ["david", "jesus"],
     placeIds: ["jerusalem"],
+    timelineIds: ["david", "christ-crucifixion"],
     typeIds: [],
     prophecyIds: ["psalm-22"],
     themes: ["Suffering", "Crucifixion", "Praise", "Deliverance"],
@@ -1791,6 +2028,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 9,
     peopleIds: [],
     placeIds: ["babylon", "jerusalem"],
+    timelineIds: ["solomon"],
     typeIds: [],
     prophecyIds: ["daniel-9"],
     themes: ["Prayer", "Confession", "Prophecy", "Messiah"],
@@ -1809,6 +2047,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 3,
     peopleIds: ["jesus", "nicodemus", "john-baptist", "moses"],
     placeIds: ["jerusalem", "judea", "aenon-salim", "jordan-river", "bethlehem"],
+    timelineIds: ["moses", "christ-ministry"],
     typeIds: ["brazen-serpent"],
     prophecyIds: ["isaiah-53", "micah-5-2", "psalm-22"],
     themes: ["New birth", "Faith", "God's love", "Everlasting life", "Witness", "Light and darkness"],
@@ -1817,7 +2056,8 @@ const chapterConnections: ChapterConnections[] = [
     book: "Luke",
     chapter: 24,
     peopleIds: ["jesus", "peter"],
-    placeIds: ["jerusalem", "galilee"],
+    placeIds: ["jerusalem", "galilee", "emmaus"],
+    timelineIds: ["christ-crucifixion", "christ-resurrection"],
     typeIds: [],
     prophecyIds: ["isaiah-53", "psalm-22", "daniel-9"],
     themes: ["Resurrection", "Scripture fulfilled", "Witness", "Opened understanding"],
@@ -1827,15 +2067,37 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 9,
     peopleIds: ["paul", "peter"],
     placeIds: ["jerusalem"],
+    timelineIds: ["church-pentecost", "pauls-journeys"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Conversion", "Grace", "Calling", "Bold witness"],
+  },
+  {
+    book: "Acts",
+    chapter: 19,
+    peopleIds: ["paul"],
+    placeIds: ["ephesus"],
+    timelineIds: ["pauls-journeys"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Gospel witness", "Disciples taught", "Idolatry confronted", "The word of God prevailed"],
+  },
+  {
+    book: "Romans",
+    chapter: 5,
+    peopleIds: ["paul"],
+    placeIds: ["corinth"],
+    timelineIds: ["christ-crucifixion", "christ-resurrection", "pauls-journeys"],
+    typeIds: ["adam"],
+    prophecyIds: [],
+    themes: ["Justification", "Peace with God", "Grace", "Adam and Christ"],
   },
   {
     book: "Romans",
     chapter: 8,
     peopleIds: ["paul"],
     placeIds: [],
+    timelineIds: ["christ-resurrection", "pauls-journeys"],
     typeIds: [],
     prophecyIds: [],
     themes: ["No condemnation", "Spirit", "Adoption", "Assurance", "God's love"],
@@ -2771,6 +3033,7 @@ export default function Home() {
 
   const peopleById = useMemo(() => new Map(studyPeople.map((person) => [person.id, person])), []);
   const placesById = useMemo(() => new Map(studyPlaces.map((place) => [place.id, place])), []);
+  const timelineById = useMemo(() => new Map(timelineEntries.map((entry) => [entry.id, entry])), []);
   const typesById = useMemo(() => new Map(christTypes.map((type) => [type.id, type])), []);
   const propheciesById = useMemo(() => new Map(prophecyConnections.map((prophecy) => [prophecy.id, prophecy])), []);
   const bookIntroductionsByBook = useMemo(() => new Map(bookIntroductions.map((intro) => [intro.book, intro])), []);
@@ -2786,11 +3049,12 @@ export default function Home() {
     return {
       people: resolve(connection?.peopleIds ?? [], peopleById),
       places: resolve(connection?.placeIds ?? [], placesById),
+      timeline: resolve(connection?.timelineIds ?? [], timelineById),
       types: resolve(connection?.typeIds ?? [], typesById),
       prophecies: resolve(connection?.prophecyIds ?? [], propheciesById),
       themes: connection?.themes ?? [],
     };
-  }, [book, chapter, peopleById, placesById, propheciesById, typesById]);
+  }, [book, chapter, peopleById, placesById, propheciesById, timelineById, typesById]);
 
   const activeChapterResourceRecommendations = useMemo(() => {
     const reviewed = CHAPTER_RESOURCE_RECOMMENDATIONS.find((item) => item.book === book && item.chapter === chapter);
@@ -4088,6 +4352,25 @@ export default function Home() {
           fullStudyVerse.verse <= entry.verse_end,
       )
     : [];
+  const fullStudyConnections = useMemo<ActiveChapterConnections>(() => {
+    const connection = fullStudyVerse
+      ? chapterConnections.find((item) => item.book === fullStudyVerse.book && item.chapter === fullStudyVerse.chapter)
+      : null;
+    const resolve = <T,>(ids: string[], source: Map<string, T>) =>
+      ids.flatMap((id) => {
+        const item = source.get(id);
+        return item ? [item] : [];
+      });
+
+    return {
+      people: resolve(connection?.peopleIds ?? [], peopleById),
+      places: resolve(connection?.placeIds ?? [], placesById),
+      timeline: resolve(connection?.timelineIds ?? [], timelineById),
+      types: resolve(connection?.typeIds ?? [], typesById),
+      prophecies: resolve(connection?.prophecyIds ?? [], propheciesById),
+      themes: connection?.themes ?? [],
+    };
+  }, [fullStudyVerse, peopleById, placesById, propheciesById, timelineById, typesById]);
 
   return (
     <main className="min-h-screen bg-[var(--page)] text-[var(--ink)]">
@@ -4413,6 +4696,7 @@ export default function Home() {
                 keyWords={keyWordsForVerse(fullStudyVerse)}
                 crossReferences={fullStudyCrossReferences}
                 commentaryEntries={fullStudyCommentaryEntries}
+                connections={fullStudyConnections}
                 versesByRef={versesByRef}
                 existingNote={notesByRef.get(fullStudyVerse.ref)?.[0] ?? null}
                 highlighted={highlightsByRef.has(fullStudyVerse.ref)}
@@ -4931,6 +5215,50 @@ function referenceStart(reference: string) {
   return `${match[1]} ${match[2]}:${match[3] ?? "1"}`;
 }
 
+function uniqueById<T extends { id: string }>(items: T[]) {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    if (seen.has(item.id)) return false;
+    seen.add(item.id);
+    return true;
+  });
+}
+
+function placeEntriesForNames(names: string[]) {
+  return uniqueById(
+    names.flatMap((name) => {
+      const normalized = name.toLowerCase();
+      return studyPlaces.filter((place) => place.name.toLowerCase() === normalized || place.name.toLowerCase().includes(normalized));
+    }),
+  );
+}
+
+function timelineEntriesForIds(ids: string[]) {
+  const byId = new Map(timelineEntries.map((entry) => [entry.id, entry]));
+  return uniqueById(ids.flatMap((id) => {
+    const entry = byId.get(id);
+    return entry ? [entry] : [];
+  }));
+}
+
+function timelineEntriesForPlaces(places: StudyPlace[]) {
+  return timelineEntriesForIds(places.flatMap((place) => place.timelineLinks));
+}
+
+function bookIntroTimelineEntries(intro: BookIntroduction, places: StudyPlace[]) {
+  const byBook: Record<string, string[]> = {
+    Genesis: ["abraham", "isaac", "jacob", "joseph"],
+    Exodus: ["moses", "exodus-wilderness"],
+    Luke: ["christ-birth", "christ-ministry", "christ-crucifixion", "christ-resurrection"],
+    John: ["christ-ministry", "christ-crucifixion", "christ-resurrection"],
+    Romans: ["christ-crucifixion", "christ-resurrection", "pauls-journeys"],
+  };
+  return uniqueById([
+    ...timelineEntriesForIds(byBook[intro.book] ?? []),
+    ...timelineEntriesForPlaces(places),
+  ]);
+}
+
 function BookIntroScreen({
   intro,
   versesByRef,
@@ -4945,6 +5273,8 @@ function BookIntroScreen({
   onOpenLibraryResource: (slug: string) => void;
 }) {
   const keyVerse = versesByRef.get(intro.overview.keyVerse);
+  const introPlaces = placeEntriesForNames(intro.keyPlaces);
+  const introTimeline = bookIntroTimelineEntries(intro, introPlaces);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -5041,6 +5371,37 @@ function BookIntroScreen({
                 {place}
               </span>
             ))}
+          </div>
+        </StudySection>
+
+        <StudySection title="Atlas & Timeline">
+          <div className="grid gap-3">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex items-center gap-2 text-[var(--green)]">
+                <MapPin size={17} />
+                <h3 className="text-sm font-semibold">Reviewed Places</h3>
+              </div>
+              <div className="mt-3 grid gap-2">
+                {introPlaces.length ? introPlaces.map((place) => (
+                  <PlaceContextCard key={`intro-place-${intro.book}-${place.id}`} place={place} onOpenReference={onOpenReference} />
+                )) : (
+                  <p className="text-sm leading-6 text-[var(--muted)]">Reviewed atlas entries will appear here as this book is expanded.</p>
+                )}
+              </div>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex items-center gap-2 text-[var(--green)]">
+                <Timer size={17} />
+                <h3 className="text-sm font-semibold">Simple Timeline</h3>
+              </div>
+              <div className="mt-3 grid gap-2">
+                {introTimeline.length ? introTimeline.map((entry) => (
+                  <TimelineContextCard key={`intro-timeline-${intro.book}-${entry.id}`} entry={entry} onOpenReference={onOpenReference} />
+                )) : (
+                  <p className="text-sm leading-6 text-[var(--muted)]">Timeline entries will appear here as this book is expanded.</p>
+                )}
+              </div>
+            </div>
           </div>
         </StudySection>
 
@@ -5874,6 +6235,7 @@ function buildLessonOutline(data: TeachingNotesExportData, teacherNotes: Teacher
         ...keyVerseLines.map((line) => `Key verse: ${line}`),
         ...data.connections.themes.slice(0, 5).map((theme) => `Reviewed theme: ${theme}`),
         ...data.connections.people.slice(0, 4).map((person) => `Person: ${person.name} - ${person.summary}`),
+        ...data.connections.timeline.slice(0, 4).map((entry) => `Timeline: ${entry.era} - ${entry.title}. ${entry.description}`),
         ...data.connections.types.slice(0, 3).map((type) => `Type of Christ: ${type.title} - ${type.pointsToChrist}`),
         ...teacherMainPoints.map((line) => `Teacher main point: ${line}`),
       ]),
@@ -5973,7 +6335,10 @@ function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
     ...sectionOrEmpty(data.connections.people.map((person) => `- ${person.name}: ${person.summary} First appearance: ${person.firstAppearance}`)),
     "",
     "## Places Mentioned",
-    ...sectionOrEmpty(data.connections.places.map((place) => `- ${place.name}: ${place.description}`)),
+    ...sectionOrEmpty(data.connections.places.map((place) => `- ${place.name}: ${place.description} Significance: ${place.significance}`)),
+    "",
+    "## Timeline Context",
+    ...sectionOrEmpty(data.connections.timeline.map((entry) => `- ${entry.era}: ${entry.title} (${entry.timeframe}). ${entry.description}`)),
     "",
     "## Types of Christ",
     ...sectionOrEmpty(data.connections.types.map((type) => `- ${type.title}: ${type.description} ${type.pointsToChrist}`)),
@@ -6234,11 +6599,7 @@ function ChapterStudyWorkflow({
           <StudyInsightSection icon={<MapPin size={17} />} title="Places">
             <div className="grid gap-2 sm:grid-cols-2">
               {connections.places.length ? connections.places.map((place) => (
-                <div key={place.id} className="rounded-2xl border border-[var(--line)] bg-white p-3">
-                  <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
-                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{place.description}</p>
-                  <p className="mt-2 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{place.mapNote}</p>
-                </div>
+                <PlaceContextCard key={place.id} place={place} onOpenReference={onOpenReference} />
               )) : <p className="text-sm leading-6 text-[var(--muted)]">Place entries will appear here as chapters are reviewed.</p>}
             </div>
           </StudyInsightSection>
@@ -6265,6 +6626,14 @@ function ChapterStudyWorkflow({
                   {theme}
                 </span>
               )) : <span className="text-sm leading-6 text-[var(--muted)]">Themes will appear here as chapters are reviewed.</span>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Timer size={17} />} title="Timeline">
+            <div className="grid gap-2">
+              {connections.timeline.length ? connections.timeline.map((entry) => (
+                <TimelineContextCard key={`insight-timeline-${entry.id}`} entry={entry} onOpenReference={onOpenReference} />
+              )) : <span className="text-sm leading-6 text-[var(--muted)]">Timeline entries will appear here as chapters are reviewed.</span>}
             </div>
           </StudyInsightSection>
 
@@ -6727,6 +7096,14 @@ function ChapterStudyWorkflow({
               )) : <span className="text-sm text-[var(--muted)]">No reviewed places yet.</span>}
             </TeachingConnectionBlock>
 
+            <TeachingConnectionBlock title="Timeline">
+              {connections.timeline.length ? connections.timeline.map((entry) => (
+                <span key={`teaching-timeline-${entry.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {entry.era}: {entry.title}
+                </span>
+              )) : <span className="text-sm text-[var(--muted)]">No reviewed timeline yet.</span>}
+            </TeachingConnectionBlock>
+
             <TeachingConnectionBlock title="Types">
               {connections.types.length ? connections.types.map((type) => (
                 <span key={`teaching-type-${type.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
@@ -6852,6 +7229,57 @@ function StudyInsightSection({
       </div>
       <div className="mt-3">{children}</div>
     </section>
+  );
+}
+
+function PlaceContextCard({
+  place,
+  onOpenReference,
+}: {
+  place: StudyPlace;
+  onOpenReference: (targetRef: string) => void;
+}) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{place.description}</p>
+        </div>
+        <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+          Map later
+        </span>
+      </div>
+      <p className="mt-2 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--ink)]">
+        {place.significance}
+      </p>
+      <ReferenceRow references={place.keyPassages.slice(0, 4)} onOpenReference={onOpenReference} />
+      <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{place.mapNote}</p>
+    </article>
+  );
+}
+
+function TimelineContextCard({
+  entry,
+  onOpenReference,
+}: {
+  entry: StudyTimelineEntry;
+  onOpenReference: (targetRef: string) => void;
+}) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">{entry.title}</p>
+          <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.era} · {entry.timeframe}</p>
+        </div>
+        <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+          Timeline
+        </span>
+      </div>
+      <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.description}</p>
+      <ReferenceRow references={entry.keyPassages.slice(0, 4)} onOpenReference={onOpenReference} />
+    </article>
   );
 }
 
@@ -7930,6 +8358,7 @@ function FullStudyScreen({
   keyWords,
   crossReferences,
   commentaryEntries,
+  connections,
   versesByRef,
   existingNote,
   highlighted,
@@ -7951,6 +8380,7 @@ function FullStudyScreen({
   keyWords: string[];
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
+  connections: ActiveChapterConnections;
   versesByRef: Map<string, BibleVerse>;
   existingNote: UserNote | null;
   highlighted: boolean;
@@ -7976,6 +8406,7 @@ function FullStudyScreen({
     { id: "full-study-verse", label: "Verse" },
     { id: "full-study-key-words", label: "Key Words" },
     { id: "full-study-cross-references", label: "Cross References" },
+    { id: "full-study-atlas-timeline", label: "Atlas & Timeline" },
     { id: "full-study-my-study", label: "My Study" },
     { id: "full-study-commentary", label: "Commentary" },
     { id: "full-study-memory", label: "Memory" },
@@ -8083,6 +8514,37 @@ function FullStudyScreen({
         ) : (
           <p className="text-sm leading-6 text-[var(--muted)]">No cross references are loaded for this verse yet.</p>
         )}
+      </StudySection>
+
+      <StudySection id="full-study-atlas-timeline" title="Atlas & Timeline">
+        <div className="grid gap-3 lg:grid-cols-2">
+          <div>
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <MapPin size={17} />
+              <h4 className="text-sm font-semibold">Places</h4>
+            </div>
+            <div className="mt-3 space-y-2">
+              {connections.places.length ? connections.places.map((place) => (
+                <PlaceContextCard key={`full-study-place-${place.id}`} place={place} onOpenReference={onOpenReference} />
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No reviewed atlas entries are attached to this chapter yet.</p>
+              )}
+            </div>
+          </div>
+          <div>
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <Timer size={17} />
+              <h4 className="text-sm font-semibold">Timeline</h4>
+            </div>
+            <div className="mt-3 space-y-2">
+              {connections.timeline.length ? connections.timeline.map((entry) => (
+                <TimelineContextCard key={`full-study-timeline-${entry.id}`} entry={entry} onOpenReference={onOpenReference} />
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No reviewed timeline entries are attached to this chapter yet.</p>
+              )}
+            </div>
+          </div>
+        </div>
       </StudySection>
 
       <StudySection id="full-study-my-study" title="My Study">
