@@ -284,6 +284,28 @@ type TeachingNotesExportData = {
   versesByRef: Map<string, BibleVerse>;
 };
 
+type TeacherNotesDraft = {
+  hook: string;
+  mainPoints: string;
+  illustrations: string;
+  applications: string;
+  closingThought: string;
+};
+
+type TeachingWorkspaceSummary = {
+  passage: string;
+  mainTheme: string;
+  keyVerse: string;
+  keyWords: string[];
+  teachingAim: string;
+  suggestedTitle: string;
+};
+
+type LessonOutlineSection = {
+  title: string;
+  lines: string[];
+};
+
 type StudyPerson = {
   id: string;
   name: string;
@@ -406,6 +428,7 @@ const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
 const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
+const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -417,6 +440,35 @@ const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
 const ACTIVE_COMMENTARY_COLLECTIONS = [MATTHEW_HENRY_COMMENTARY_COLLECTION, H_A_IRONSIDE_COMMENTARY_COLLECTION];
+
+const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
+  hook: "",
+  mainPoints: "",
+  illustrations: "",
+  applications: "",
+  closingThought: "",
+};
+
+const REVIEWED_TEACHING_SUMMARIES: Record<string, Omit<TeachingWorkspaceSummary, "passage" | "keyWords">> = {
+  "John 3": {
+    mainTheme: "The New Birth",
+    keyVerse: "John 3:16",
+    teachingAim: "Show that eternal life comes through believing on the Son of God.",
+    suggestedTitle: "Ye Must Be Born Again",
+  },
+  "Romans 5": {
+    mainTheme: "Peace With God Through Our Lord Jesus Christ",
+    keyVerse: "Romans 5:8",
+    teachingAim: "Show the fruit of justification and the grace of Christ that abounds over Adam's ruin.",
+    suggestedTitle: "Peace, Grace, and the Gift by Christ",
+  },
+  "Luke 24": {
+    mainTheme: "The Risen Christ Opens the Scriptures",
+    keyVerse: "Luke 24:46",
+    teachingAim: "Show that Christ's resurrection fulfills Scripture and sends His witnesses to preach repentance and remission of sins.",
+    suggestedTitle: "The Scriptures Opened by the Risen Lord",
+  },
+};
 
 const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
@@ -5754,6 +5806,130 @@ function teachingDictionaryEntries(data: TeachingNotesExportData) {
     .slice(0, 12);
 }
 
+function teacherNotesChapterKey(book: string, chapter: number) {
+  return `${book} ${chapter}`;
+}
+
+function linesFromTeacherNote(value: string) {
+  return value
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+}
+
+function commentaryStudyLabel(entry: CommentaryEntry) {
+  if (entry.author === "Matthew Henry") return "Devotional / practical";
+  if (entry.author === "H. A. Ironside") return "Expository";
+  return "Reviewed commentary";
+}
+
+function teachingWorkspaceSummary(data: TeachingNotesExportData): TeachingWorkspaceSummary {
+  const passage = `${data.book} ${data.chapter}`;
+  const reviewed = REVIEWED_TEACHING_SUMMARIES[passage];
+  const fallbackKeyVerse = data.keyVerses[0] ?? data.fallbackMemoryVerse.ref;
+  const keyWords = Array.from(
+    new Set([
+      ...keyWordsForVerse(data.fallbackMemoryVerse),
+      ...data.analysis.repeatedWords.slice(0, 6).map((item) => item.word),
+    ]),
+  ).slice(0, 8);
+
+  return {
+    passage,
+    mainTheme: reviewed?.mainTheme ?? data.connections.themes[0] ?? data.bookIntroduction?.overview.theme ?? "Reviewed chapter study",
+    keyVerse: reviewed?.keyVerse ?? fallbackKeyVerse,
+    keyWords,
+    teachingAim:
+      reviewed?.teachingAim ??
+      data.bookIntroduction?.overview.purpose ??
+      "Use the reviewed chapter data to teach the passage clearly from the KJV text.",
+    suggestedTitle: reviewed?.suggestedTitle ?? `${passage} Lesson`,
+  };
+}
+
+function buildLessonOutline(data: TeachingNotesExportData, teacherNotes: TeacherNotesDraft): LessonOutlineSection[] {
+  const summary = teachingWorkspaceSummary(data);
+  const definitions = teachingDictionaryEntries(data).slice(0, 6);
+  const teacherMainPoints = linesFromTeacherNote(teacherNotes.mainPoints);
+  const teacherApplications = linesFromTeacherNote(teacherNotes.applications);
+  const hookLines = linesFromTeacherNote(teacherNotes.hook);
+  const illustrationLines = linesFromTeacherNote(teacherNotes.illustrations);
+  const closingLines = linesFromTeacherNote(teacherNotes.closingThought);
+  const keyVerseLines = data.keyVerses.length ? data.keyVerses.map((ref) => verseLine(ref, data.versesByRef)) : [verseLine(summary.keyVerse, data.versesByRef)];
+
+  return [
+    {
+      title: "Introduction",
+      lines: sectionOrEmpty([
+        `Passage: ${summary.passage}`,
+        `Suggested lesson title: ${summary.suggestedTitle}`,
+        `Main theme: ${summary.mainTheme}`,
+        ...hookLines.map((line) => `Teacher hook: ${line}`),
+      ]),
+    },
+    {
+      title: "Main Points",
+      lines: sectionOrEmpty([
+        `Teaching aim: ${summary.teachingAim}`,
+        ...keyVerseLines.map((line) => `Key verse: ${line}`),
+        ...data.connections.themes.slice(0, 5).map((theme) => `Reviewed theme: ${theme}`),
+        ...data.connections.people.slice(0, 4).map((person) => `Person: ${person.name} - ${person.summary}`),
+        ...data.connections.types.slice(0, 3).map((type) => `Type of Christ: ${type.title} - ${type.pointsToChrist}`),
+        ...teacherMainPoints.map((line) => `Teacher main point: ${line}`),
+      ]),
+    },
+    {
+      title: "Key Cross References",
+      lines: sectionOrEmpty(data.crossReferences.slice(0, 8).map((reference) => {
+        const preview = data.versesByRef.get(reference.target_ref)?.plainText;
+        return `${reference.verse_ref} -> ${reference.target_ref}${reference.label ? ` (${reference.label})` : ""}${preview ? ` - ${preview}` : ""}`;
+      })),
+    },
+    {
+      title: "Word Studies",
+      lines: sectionOrEmpty([
+        ...summary.keyWords.map((word) => `Key word: ${word}`),
+        ...definitions.map((entry) => `${entry.lookupWord}: ${entry.definition}`),
+      ]),
+    },
+    {
+      title: "Applications",
+      lines: sectionOrEmpty([
+        ...teacherApplications.map((line) => `Teacher application: ${line}`),
+        ...illustrationLines.map((line) => `Illustration idea: ${line}`),
+      ]),
+    },
+    {
+      title: "Conclusion",
+      lines: sectionOrEmpty([
+        `Memory verse: ${data.memoryVerse?.verse_ref ?? data.fallbackMemoryVerse.ref}`,
+        ...closingLines.map((line) => `Closing thought: ${line}`),
+      ]),
+    },
+  ];
+}
+
+function buildLessonOutlineMarkdown(data: TeachingNotesExportData, teacherNotes: TeacherNotesDraft) {
+  const summary = teachingWorkspaceSummary(data);
+  const sections = buildLessonOutline(data, teacherNotes);
+  return [
+    `# ${summary.passage} Lesson Outline`,
+    "",
+    "Drafted from existing reviewed/stored study data and local teacher notes. No doctrine was generated automatically.",
+    "",
+    `- Main theme: ${summary.mainTheme}`,
+    `- Key verse: ${summary.keyVerse}`,
+    `- Teaching aim: ${summary.teachingAim}`,
+    `- Suggested lesson title: ${summary.suggestedTitle}`,
+    "",
+    ...sections.flatMap((section) => [
+      `## ${section.title}`,
+      ...sectionOrEmpty(section.lines).map((line) => `- ${line}`),
+      "",
+    ]),
+  ].join("\n");
+}
+
 function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
   const intro = data.bookIntroduction;
   const definitions = teachingDictionaryEntries(data);
@@ -5888,6 +6064,17 @@ function ChapterStudyWorkflow({
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
   const [exportMessage, setExportMessage] = useState("");
+  const [teacherNotesByChapter, setTeacherNotesByChapter] = useState<Record<string, TeacherNotesDraft>>(() => {
+    if (typeof window === "undefined") return {};
+    try {
+      const saved = window.localStorage.getItem(TEACHER_NOTES_KEY);
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+  const teacherNotesKey = teacherNotesChapterKey(selectedVerse.book, selectedVerse.chapter);
+  const teacherNotesDraft = teacherNotesByChapter[teacherNotesKey] ?? EMPTY_TEACHER_NOTES;
   const exportData = useMemo<TeachingNotesExportData>(() => ({
     book: selectedVerse.book,
     chapter: selectedVerse.chapter,
@@ -5917,7 +6104,28 @@ function ChapterStudyWorkflow({
   ]);
   const markdownExport = useMemo(() => buildTeachingNotesMarkdown(exportData), [exportData]);
   const plainTextExport = useMemo(() => buildTeachingNotesPlainText(exportData), [exportData]);
+  const teachingSummary = useMemo(() => teachingWorkspaceSummary(exportData), [exportData]);
+  const lessonOutlineSections = useMemo(() => buildLessonOutline(exportData, teacherNotesDraft), [exportData, teacherNotesDraft]);
+  const lessonOutlineMarkdown = useMemo(() => buildLessonOutlineMarkdown(exportData, teacherNotesDraft), [exportData, teacherNotesDraft]);
   const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
+
+  function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
+    setTeacherNotesByChapter((current) => {
+      const next = {
+        ...current,
+        [teacherNotesKey]: {
+          ...(current[teacherNotesKey] ?? EMPTY_TEACHER_NOTES),
+          [field]: value,
+        },
+      };
+      try {
+        localStorage.setItem(TEACHER_NOTES_KEY, JSON.stringify(next));
+      } catch {
+        setExportMessage("Teacher notes are saved locally when browser storage is available.");
+      }
+      return next;
+    });
+  }
 
   async function copyTeachingNotes() {
     try {
@@ -5931,6 +6139,25 @@ function ChapterStudyWorkflow({
   function downloadMarkdown() {
     downloadTextFile(`${exportFileBase}.md`, markdownExport, "text/markdown;charset=utf-8");
     setExportMessage("Markdown teaching notes downloaded.");
+  }
+
+  async function copyLessonOutline() {
+    try {
+      await navigator.clipboard.writeText(lessonOutlineMarkdown);
+      setExportMessage("Lesson outline copied.");
+    } catch {
+      setExportMessage("Copy was not available here. Use the lesson outline download.");
+    }
+  }
+
+  function downloadLessonOutlineMarkdown() {
+    downloadTextFile(`${exportFileBase.replace("-teaching-notes", "-lesson-outline")}.md`, lessonOutlineMarkdown, "text/markdown;charset=utf-8");
+    setExportMessage("Lesson outline Markdown downloaded.");
+  }
+
+  function downloadFullTeachingNotesMarkdown() {
+    downloadTextFile(`${exportFileBase}.md`, markdownExport, "text/markdown;charset=utf-8");
+    setExportMessage("Full teaching notes Markdown downloaded.");
   }
 
   function downloadPlainText() {
@@ -6313,12 +6540,138 @@ function ChapterStudyWorkflow({
               {exportMessage}
             </p>
           )}
+
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching Workspace Summary</p>
+                <h4 className="mt-2 text-lg font-semibold text-[var(--ink)]">{teachingSummary.passage}</h4>
+              </div>
+              <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {teachingSummary.suggestedTitle}
+              </span>
+            </div>
+            <dl className="mt-4 grid gap-3 md:grid-cols-2">
+              <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Main theme</dt>
+                <dd className="mt-1 text-sm font-semibold text-[var(--ink)]">{teachingSummary.mainTheme}</dd>
+              </div>
+              <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Key verse</dt>
+                <dd className="mt-1 text-sm font-semibold text-[var(--green)]">{teachingSummary.keyVerse}</dd>
+              </div>
+              <div className="rounded-xl bg-[var(--paper)] px-3 py-2 md:col-span-2">
+                <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Main teaching aim</dt>
+                <dd className="mt-1 text-sm leading-6 text-[var(--ink)]">{teachingSummary.teachingAim}</dd>
+              </div>
+            </dl>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {teachingSummary.keyWords.map((word) => (
+                <button
+                  key={`teaching-summary-word-${word}`}
+                  className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                  onClick={() => onExplorerWordChange(word)}
+                  type="button"
+                >
+                  {word}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-3 grid grid-cols-2 gap-2">
             <MiniStat label="Chapter notes" value={String(chapterNotes.length)} />
             <MiniStat label="Cross refs" value={String(chapterCrossReferences.length)} />
             <MiniStat label="Commentary links" value={String(chapterCommentaryEntries.length)} />
             <MiniStat label="Memory verses" value={String(memoryForChapter.length)} />
           </div>
+
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Lesson Outline Draft</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                  Built from reviewed chapter data, KJV references, commentary references, and your local teacher notes.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                  onClick={copyLessonOutline}
+                  type="button"
+                >
+                  <Clipboard size={14} />
+                  Copy Lesson Outline
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={downloadLessonOutlineMarkdown}
+                  type="button"
+                >
+                  <Download size={14} />
+                  Download Lesson Outline Markdown
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={downloadFullTeachingNotesMarkdown}
+                  type="button"
+                >
+                  <Download size={14} />
+                  Download Full Teaching Notes Markdown
+                </button>
+              </div>
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {lessonOutlineSections.map((section) => (
+                <section key={`lesson-outline-${section.title}`} className="rounded-xl bg-[var(--paper)] px-3 py-3">
+                  <h5 className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">{section.title}</h5>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">
+                    {sectionOrEmpty(section.lines).slice(0, 4).map((line) => (
+                      <li key={`${section.title}-${line}`}>{line}</li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teacher Notes Area</p>
+            <div className="mt-3 grid gap-3">
+              <TeacherNoteField
+                label="Hook / introduction"
+                placeholder="Opening question, object lesson, or entry point..."
+                value={teacherNotesDraft.hook}
+                onChange={(value) => updateTeacherNote("hook", value)}
+              />
+              <TeacherNoteField
+                label="Main points"
+                placeholder="One point per line..."
+                value={teacherNotesDraft.mainPoints}
+                onChange={(value) => updateTeacherNote("mainPoints", value)}
+              />
+              <TeacherNoteField
+                label="Illustration ideas"
+                placeholder="Story, example, or visual idea..."
+                value={teacherNotesDraft.illustrations}
+                onChange={(value) => updateTeacherNote("illustrations", value)}
+              />
+              <TeacherNoteField
+                label="Applications"
+                placeholder="How should hearers respond to the passage?"
+                value={teacherNotesDraft.applications}
+                onChange={(value) => updateTeacherNote("applications", value)}
+              />
+              <TeacherNoteField
+                label="Closing thought"
+                placeholder="Closing sentence, invitation, or final emphasis..."
+                value={teacherNotesDraft.closingThought}
+                onChange={(value) => updateTeacherNote("closingThought", value)}
+              />
+            </div>
+            <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Saved locally for this browser during beta testing.</p>
+          </div>
+
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key verses</p>
@@ -6403,15 +6756,44 @@ function ChapterStudyWorkflow({
             ))}
           </div>
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
             <div className="mt-2 space-y-2">
-              {chapterCommentaryEntries.length ? chapterCommentaryEntries.slice(0, 3).map((entry) => (
-                <article key={`teaching-commentary-${entry.id}`} className="rounded-xl bg-[var(--paper)] px-3 py-2">
-                  <p className="text-xs font-semibold text-[var(--green)]">
-                    {entry.resource_title} · {entry.reference ?? `${entry.book} ${entry.chapter}`}
-                  </p>
-                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{entry.entry_text}</p>
-                </article>
+              {chapterCommentaryEntries.length ? chapterCommentaryEntries.map((entry) => (
+                <details key={`teaching-commentary-${entry.id}`} className="group rounded-xl bg-[var(--paper)] px-3 py-2">
+                  <summary className="cursor-pointer list-none">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <div>
+                        <p className="text-xs font-semibold text-[var(--green)]">
+                          {entry.author} · {entry.resource_title}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold text-[var(--muted)]">
+                          {entry.reference ?? `${entry.book} ${entry.chapter}`} · {commentaryStudyLabel(entry)}
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-1">
+                        <span className="rounded-full bg-white px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                          Use with discernment
+                        </span>
+                        <span className="rounded-full bg-white px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:hidden">
+                          Open
+                        </span>
+                        <span className="hidden rounded-full bg-white px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:inline">
+                          Close
+                        </span>
+                      </div>
+                    </div>
+                    <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{entry.entry_text}</p>
+                  </summary>
+                  <div className="mt-3 border-t border-[var(--line)] pt-3">
+                    <p className="text-xs leading-5 text-[var(--ink)]">{entry.entry_text}</p>
+                    {entry.recommended_use && (
+                      <p className="mt-2 rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                        Recommended use: {entry.recommended_use}
+                      </p>
+                    )}
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Rights status: {entry.public_domain_status}</p>
+                  </div>
+                </details>
               )) : (
                 <p className="text-sm leading-6 text-[var(--muted)]">No reviewed commentary entries yet.</p>
               )}
@@ -6508,6 +6890,30 @@ function TeachingConnectionBlock({
       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</p>
       <div className="mt-2 flex flex-wrap gap-2">{children}</div>
     </div>
+  );
+}
+
+function TeacherNoteField({
+  label,
+  value,
+  placeholder,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  placeholder: string;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+      {label}
+      <textarea
+        className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm normal-case leading-6 tracking-normal text-[var(--ink)] outline-none"
+        placeholder={placeholder}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    </label>
   );
 }
 
