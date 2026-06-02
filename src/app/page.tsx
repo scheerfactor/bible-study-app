@@ -290,6 +290,15 @@ type ActiveChapterConnections = {
   themes: string[];
 };
 
+type BiblePassage = {
+  id: string;
+  book: string;
+  chapter: number;
+  verse?: number;
+  label: string;
+  updatedAt: string;
+};
+
 type SpeechState = {
   targetId: string | null;
   label: string;
@@ -308,11 +317,19 @@ const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
 const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
 const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
+const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
+const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
 const DEFAULT_CHAPTER = 3;
 const DEFAULT_VERSE = 16;
+
+const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
+  createBiblePassage("John", 3),
+  createBiblePassage("Luke", 24),
+  createBiblePassage("Romans", 8),
+];
 
 const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "found">> = {
   believe: {
@@ -998,6 +1015,89 @@ function makeId(prefix: string) {
   return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2)}`;
 }
 
+function createBiblePassage(book: string, chapter: number, verse?: number): BiblePassage {
+  const safeChapter = Math.max(1, Math.floor(chapter || 1));
+  const safeVerse = verse ? Math.max(1, Math.floor(verse)) : undefined;
+  const label = safeVerse ? `${book} ${safeChapter}:${safeVerse}` : `${book} ${safeChapter}`;
+
+  return {
+    id: `${book.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${safeChapter}-${safeVerse ?? "chapter"}`,
+    book,
+    chapter: safeChapter,
+    verse: safeVerse,
+    label,
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+function normalizeBiblePassages(value: unknown): BiblePassage[] {
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const passage = item as Partial<BiblePassage>;
+    if (!passage.book || typeof passage.book !== "string" || !passage.chapter) return [];
+    return [
+      {
+        ...createBiblePassage(passage.book, Number(passage.chapter), passage.verse ? Number(passage.verse) : undefined),
+        updatedAt: passage.updatedAt || new Date().toISOString(),
+      },
+    ];
+  });
+}
+
+function loadRecentPassages() {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(RECENT_PASSAGES_KEY);
+    return normalizeBiblePassages(raw ? JSON.parse(raw) : []).slice(0, 10);
+  } catch {
+    return [];
+  }
+}
+
+function saveRecentPassages(passages: BiblePassage[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(RECENT_PASSAGES_KEY, JSON.stringify(passages.slice(0, 10)));
+}
+
+function loadFavoritePassages() {
+  if (typeof window === "undefined") return DEFAULT_FAVORITE_PASSAGES;
+
+  try {
+    const raw = window.localStorage.getItem(FAVORITE_PASSAGES_KEY);
+    const passages = normalizeBiblePassages(raw ? JSON.parse(raw) : []);
+    return passages.length ? passages : DEFAULT_FAVORITE_PASSAGES;
+  } catch {
+    return DEFAULT_FAVORITE_PASSAGES;
+  }
+}
+
+function saveFavoritePassages(passages: BiblePassage[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(FAVORITE_PASSAGES_KEY, JSON.stringify(passages));
+}
+
+function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string[]) {
+  const query = input.trim().replace(/\s+/g, " ");
+  const match = query.match(/^(.+?)\s+(\d+)(?::(\d+))?$/);
+  if (!match) return null;
+
+  const [, rawBook, rawChapter, rawVerse] = match;
+  const normalizedBook = rawBook.toLowerCase().replace(/\./g, "");
+  const targetBook = books.find((candidate) => candidate.toLowerCase().replace(/\./g, "") === normalizedBook);
+  if (!targetBook) return null;
+
+  const targetChapter = Number(rawChapter);
+  const targetVerse = rawVerse ? Number(rawVerse) : undefined;
+  const chapterVerses = allVerses.filter((verse) => verse.book === targetBook && verse.chapter === targetChapter);
+  if (!chapterVerses.length) return null;
+  if (targetVerse && !chapterVerses.some((verse) => verse.verse === targetVerse)) return null;
+
+  return createBiblePassage(targetBook, targetChapter, targetVerse);
+}
+
 function loadLocalState(): SavedState {
   if (typeof window === "undefined") return { notes: [], highlights: [], bookmarks: [] };
 
@@ -1442,6 +1542,8 @@ export default function Home() {
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
+  const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
+  const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [playlistName, setPlaylistName] = useState("Morning Bible Listening");
   const [listenRangeStart, setListenRangeStart] = useState(1);
   const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
@@ -1678,6 +1780,11 @@ export default function Home() {
       .slice(0, 5);
   }, [book, chapter, chapterCrossReferences, chapterVerses, saved.bookmarks, saved.highlights, selectedRef]);
 
+  const currentChapterPinned = useMemo(
+    () => favoritePassages.some((passage) => passage.id === createBiblePassage(book, chapter).id),
+    [book, chapter, favoritePassages],
+  );
+
   const accountStatus = user
     ? "Signed in — syncing to Supabase"
     : "Signed out — saving locally";
@@ -1705,6 +1812,8 @@ export default function Home() {
       setBibleListeningProgress(loadBibleListeningProgress());
       setBiblePlaylists(loadBiblePlaylists());
       setScriptureMemory(loadScriptureMemory());
+      setRecentPassages(loadRecentPassages());
+      setFavoritePassages(loadFavoritePassages());
     });
   }, []);
 
@@ -1873,12 +1982,22 @@ export default function Home() {
     };
   }, []);
 
-  function goToVerse(targetBook: string, targetChapter: number, targetVerse = 1) {
+  function recordRecentPassage(targetBook: string, targetChapter: number, targetVerse?: number) {
+    const passage = createBiblePassage(targetBook, targetChapter, targetVerse);
+    setRecentPassages((current) => {
+      const next = [passage, ...current.filter((item) => item.id !== passage.id)].slice(0, 10);
+      saveRecentPassages(next);
+      return next;
+    });
+  }
+
+  function goToVerse(targetBook: string, targetChapter: number, targetVerse = 1, recentVerse: number | undefined = targetVerse) {
     setBook(targetBook);
     setChapter(targetChapter);
     setVerseJump(targetVerse);
     setSelectedRef(`${targetBook} ${targetChapter}:${targetVerse}`);
     setTab("bible");
+    recordRecentPassage(targetBook, targetChapter, recentVerse);
   }
 
   function openSearchResult(verse: BibleVerse) {
@@ -1904,6 +2023,32 @@ export default function Home() {
 
     goToVerse(targetVerse.book, targetVerse.chapter, targetVerse.verse);
     setSyncMessage(`Opened ${targetRef}. Study drawer remains on ${studyRef ?? selectedRef}.`);
+  }
+
+  function openPassage(passage: BiblePassage) {
+    goToVerse(passage.book, passage.chapter, passage.verse ?? 1, passage.verse);
+    setSyncMessage(`Opened ${passage.label}.`);
+  }
+
+  function quickJumpToPassage(query: string) {
+    const passage = parseQuickPassage(query, allVerses, books);
+    if (!passage) {
+      setSyncMessage("Enter a passage like John 3:16, Luke 24, or Romans 8.");
+      return;
+    }
+
+    openPassage(passage);
+  }
+
+  function toggleCurrentChapterFavorite() {
+    const passage = createBiblePassage(book, chapter);
+    setFavoritePassages((current) => {
+      const exists = current.some((item) => item.id === passage.id);
+      const next = exists ? current.filter((item) => item.id !== passage.id) : [passage, ...current].slice(0, 18);
+      saveFavoritePassages(next);
+      setSyncMessage(exists ? `${passage.label} removed from favorites.` : `${passage.label} pinned to favorites.`);
+      return next;
+    });
   }
 
   function openPersonStudy(personId: string) {
@@ -2477,18 +2622,10 @@ export default function Home() {
     setSyncMessage(`${ref} removed from memory list.`);
   }
 
-  function jumpToVerse() {
-    const safeVerse = Math.max(1, Math.min(verseJump, chapterVerses.length || 1));
-    setSelectedRef(`${book} ${chapter}:${safeVerse}`);
-    setFlashRef(`${book} ${chapter}:${safeVerse}`);
-    if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
-    flashTimerRef.current = setTimeout(() => setFlashRef(null), 1800);
-  }
-
   function goChapter(direction: -1 | 1) {
     const next = chapterRefs[currentIndex + direction];
     if (!next) return;
-    goToVerse(next.bookName, next.chapterNumber, 1);
+    goToVerse(next.bookName, next.chapterNumber, 1, undefined);
   }
 
   function selectBook(nextBook: string) {
@@ -2497,12 +2634,14 @@ export default function Home() {
     setChapter(firstChapter);
     setVerseJump(1);
     setSelectedRef(`${nextBook} ${firstChapter}:1`);
+    recordRecentPassage(nextBook, firstChapter);
   }
 
   function selectChapter(nextChapter: number) {
     setChapter(nextChapter);
     setVerseJump(1);
     setSelectedRef(`${book} ${nextChapter}:1`);
+    recordRecentPassage(book, nextChapter);
   }
 
   function openStudyDrawer(ref: string, nextTab: StudyDrawerTab = "study") {
@@ -2959,6 +3098,9 @@ export default function Home() {
                 chapterCommentaryEntries={chapterCommentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
                 scriptureMemory={scriptureMemory}
+                recentPassages={recentPassages}
+                favoritePassages={favoritePassages}
+                currentChapterPinned={currentChapterPinned}
                 speechState={speechState}
                 bibleListeningProgress={bibleListeningProgress}
                 listenRangeStart={listenRangeStart}
@@ -2973,9 +3115,12 @@ export default function Home() {
                 onBookChange={selectBook}
                 onChapterChange={selectChapter}
                 onVerseJumpChange={setVerseJump}
-                onJump={jumpToVerse}
+                onVerseSelect={(verse) => goToVerse(book, chapter, verse, verse)}
                 onPrevious={() => goChapter(-1)}
                 onNext={() => goChapter(1)}
+                onQuickJump={quickJumpToPassage}
+                onOpenPassage={openPassage}
+                onToggleCurrentFavorite={toggleCurrentChapterFavorite}
                 onListenCurrentChapter={listenCurrentChapter}
                 onListenFromCurrentVerse={listenFromCurrentVerse}
                 onListenRange={listenSelectedRange}
@@ -3627,6 +3772,42 @@ function PersonStudyScreen({
   );
 }
 
+function PassageShortcutRow({
+  label,
+  emptyText,
+  passages,
+  onOpenPassage,
+}: {
+  label: string;
+  emptyText: string;
+  passages: BiblePassage[];
+  onOpenPassage: (passage: BiblePassage) => void;
+}) {
+  return (
+    <div className="mt-3">
+      <div className="flex items-center gap-2">
+        <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+        <div className="min-w-0 flex-1 overflow-x-auto">
+          <div className="flex w-max gap-2 pr-2">
+            {passages.length ? passages.map((passage) => (
+              <button
+                key={`${label}-${passage.id}`}
+                className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onOpenPassage(passage)}
+                type="button"
+              >
+                {passage.label}
+              </button>
+            )) : (
+              <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{emptyText}</span>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BibleReader({
   book,
   books,
@@ -3649,6 +3830,9 @@ function BibleReader({
   chapterCommentaryEntries,
   chapterKeyVerses,
   scriptureMemory,
+  recentPassages,
+  favoritePassages,
+  currentChapterPinned,
   speechState,
   bibleListeningProgress,
   listenRangeStart,
@@ -3663,9 +3847,12 @@ function BibleReader({
   onBookChange,
   onChapterChange,
   onVerseJumpChange,
-  onJump,
+  onVerseSelect,
   onPrevious,
   onNext,
+  onQuickJump,
+  onOpenPassage,
+  onToggleCurrentFavorite,
   onListenCurrentChapter,
   onListenFromCurrentVerse,
   onListenRange,
@@ -3707,6 +3894,9 @@ function BibleReader({
   chapterCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
   scriptureMemory: ScriptureMemoryItem[];
+  recentPassages: BiblePassage[];
+  favoritePassages: BiblePassage[];
+  currentChapterPinned: boolean;
   speechState: SpeechState;
   bibleListeningProgress: BibleListeningProgress | null;
   listenRangeStart: number;
@@ -3721,9 +3911,12 @@ function BibleReader({
   onBookChange: (book: string) => void;
   onChapterChange: (chapter: number) => void;
   onVerseJumpChange: (verse: number) => void;
-  onJump: () => void;
+  onVerseSelect: (verse: number) => void;
   onPrevious: () => void;
   onNext: () => void;
+  onQuickJump: (query: string) => void;
+  onOpenPassage: (passage: BiblePassage) => void;
+  onToggleCurrentFavorite: () => void;
   onListenCurrentChapter: () => void;
   onListenFromCurrentVerse: () => void;
   onListenRange: () => void;
@@ -3746,6 +3939,7 @@ function BibleReader({
 }) {
   const bibleSpeechActive = speechState.targetId?.startsWith("bible-") && speechState.playing;
   const selectedVerseNumber = Number(selectedRef.split(":")[1] ?? verseJump);
+  const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const explorer = useMemo(
@@ -3756,56 +3950,97 @@ function BibleReader({
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
   return (
     <div className="space-y-4 p-4 md:p-8">
-      <section className="rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm md:rounded-3xl md:p-4">
-        <div className="grid grid-cols-[1fr_92px] gap-2 md:grid-cols-[1fr_120px_120px_auto] md:gap-3">
-          <label className="text-xs font-semibold text-[var(--muted)] md:text-sm">
-            Book
-            <select
-              className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] md:mt-2 md:h-11 md:text-base"
-              value={book}
-              onChange={(event) => onBookChange(event.target.value)}
-            >
-              {books.map((bookName) => (
-                <option key={bookName} value={bookName}>
-                  {bookName}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="text-xs font-semibold text-[var(--muted)] md:text-sm">
-            Chapter
-            <select
-              className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] md:mt-2 md:h-11 md:text-base"
-              value={chapter}
-              onChange={(event) => onChapterChange(Number(event.target.value))}
-            >
-              {chapters.map((chapterNumber) => (
-                <option key={chapterNumber} value={chapterNumber}>
-                  {chapterNumber}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="text-xs font-semibold text-[var(--muted)] md:text-sm">
-            Verse
-            <input
-              className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] md:mt-2 md:h-11 md:text-base"
-              min={1}
-              max={verses.length}
-              type="number"
-              value={verseJump}
-              onChange={(event) => onVerseJumpChange(Number(event.target.value))}
-            />
-          </label>
-
-          <button className="mt-5 h-10 rounded-xl bg-[var(--green)] px-4 text-sm font-semibold text-white md:mt-auto md:h-11" onClick={onJump} type="button">
-            Jump
+      <section className="sticky top-[5.75rem] z-10 rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:top-4 md:rounded-3xl md:p-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
+            <p className="mt-1 text-lg font-semibold text-[var(--ink)]">{selectedRef}</p>
+          </div>
+          <button
+            className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-xs font-semibold ${
+              currentChapterPinned
+                ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--ink)]"
+                : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+            }`}
+            onClick={onToggleCurrentFavorite}
+            type="button"
+          >
+            <Star size={15} />
+            {currentChapterPinned ? "Pinned" : "Pin chapter"}
           </button>
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-2 md:flex md:items-center md:justify-between">
+        <div className="mt-3 grid grid-cols-[minmax(0,1fr)_78px_78px] gap-2 md:grid-cols-[minmax(0,1fr)_110px_110px_auto_auto]">
+          <label className="sr-only" htmlFor="reader-book-select">Book</label>
+          <select
+            id="reader-book-select"
+            aria-label="Book"
+            className="h-11 min-w-0 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] md:text-base"
+            value={book}
+            onChange={(event) => onBookChange(event.target.value)}
+          >
+            {books.map((bookName) => (
+              <option key={bookName} value={bookName}>
+                {bookName}
+              </option>
+            ))}
+          </select>
+
+          <label className="sr-only" htmlFor="reader-chapter-select">Chapter</label>
+          <select
+            id="reader-chapter-select"
+            aria-label="Chapter"
+            className="h-11 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] md:text-base"
+            value={chapter}
+            onChange={(event) => onChapterChange(Number(event.target.value))}
+          >
+            {chapters.map((chapterNumber) => (
+              <option key={chapterNumber} value={chapterNumber}>
+                {chapterNumber}
+              </option>
+            ))}
+          </select>
+
+          <label className="sr-only" htmlFor="reader-verse-select">Verse</label>
+          <select
+            id="reader-verse-select"
+            aria-label="Verse"
+            className="h-11 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] md:text-base"
+            value={Number.isFinite(selectedVerseNumber) ? selectedVerseNumber : verseJump}
+            onChange={(event) => {
+              const nextVerse = Number(event.target.value);
+              onVerseJumpChange(nextVerse);
+              onVerseSelect(nextVerse);
+            }}
+          >
+            {verses.map((verse) => (
+              <option key={`verse-select-${verse.ref}`} value={verse.verse}>
+                {verse.verse}
+              </option>
+            ))}
+          </select>
+
+          <button
+            className="hidden h-11 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-40 md:inline-flex"
+            disabled={!hasPrevious}
+            onClick={onPrevious}
+            type="button"
+          >
+            <ChevronLeft size={16} />
+            Previous
+          </button>
+          <button
+            className="hidden h-11 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-40 md:inline-flex"
+            disabled={!hasNext}
+            onClick={onNext}
+            type="button"
+          >
+            Next
+            <ChevronRight size={16} />
+          </button>
+        </div>
+
+        <div className="mt-2 grid grid-cols-2 gap-2 md:hidden">
           <button
             className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-3 text-sm font-semibold disabled:opacity-40"
             disabled={!hasPrevious}
@@ -3813,7 +4048,7 @@ function BibleReader({
             type="button"
           >
             <ChevronLeft size={16} />
-            Previous chapter
+            Previous
           </button>
           <button
             className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-3 text-sm font-semibold disabled:opacity-40"
@@ -3824,8 +4059,42 @@ function BibleReader({
             Next
             <ChevronRight size={16} />
           </button>
-          <p className="hidden text-sm font-semibold text-[var(--muted)] md:block">{book} {chapter}</p>
         </div>
+
+        <form
+          className="mt-3 flex gap-2"
+          onSubmit={(event) => {
+            event.preventDefault();
+            onQuickJump(quickJumpText);
+            setQuickJumpText("");
+          }}
+        >
+          <label className="sr-only" htmlFor="quick-jump-input">Quick Jump</label>
+          <input
+            id="quick-jump-input"
+            className="h-11 min-w-0 flex-1 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base text-[var(--ink)] outline-none placeholder:text-stone-400"
+            placeholder="John 3:16, Luke 24, Romans 8"
+            value={quickJumpText}
+            onChange={(event) => setQuickJumpText(event.target.value)}
+          />
+          <button className="inline-flex h-11 items-center gap-2 rounded-full bg-[var(--green)] px-4 text-sm font-semibold text-white" type="submit">
+            <Search size={16} />
+            Search
+          </button>
+        </form>
+
+        <PassageShortcutRow
+          label="Favorites"
+          emptyText="Pin a chapter for one-tap access."
+          passages={favoritePassages}
+          onOpenPassage={onOpenPassage}
+        />
+        <PassageShortcutRow
+          label="Recent"
+          emptyText="Recent passages will appear as you move through the Bible."
+          passages={recentPassages}
+          onOpenPassage={onOpenPassage}
+        />
       </section>
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
