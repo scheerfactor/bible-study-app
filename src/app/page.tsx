@@ -42,7 +42,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -318,6 +318,29 @@ type ChapterResourceRecommendation = {
   note: string;
   resourceSlug?: string;
   warning?: string;
+};
+
+type BookIntroduction = {
+  book: string;
+  overview: {
+    author: string;
+    date: string;
+    audience: string;
+    theme: string;
+    keyVerse: string;
+    purpose: string;
+  };
+  outline: Array<{
+    title: string;
+    reference: string;
+    summary: string;
+  }>;
+  keyPeople: string[];
+  keyPlaces: string[];
+  christInTheBook: string;
+  memoryVerses: string[];
+  recommendedResources: ChapterResourceRecommendation[];
+  sourceNotes: string[];
 };
 
 type SpeechState = {
@@ -654,6 +677,341 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
         : []),
     ],
   }),
+];
+
+const bookIntroductions: BookIntroduction[] = [
+  {
+    book: "Genesis",
+    overview: {
+      author: "Moses",
+      date: "Traditionally placed during the wilderness years after the Exodus.",
+      audience: "Israel, learning the beginnings of creation, sin, judgment, nations, and covenant promise.",
+      theme: "Beginnings: creation, the fall, judgment, promise, and God's covenant dealings.",
+      keyVerse: "Genesis 1:1",
+      purpose:
+        "To show God as Creator, explain sin's entrance into the world, and trace the covenant promises that lead toward Israel and Christ.",
+    },
+    outline: [
+      { title: "Creation and the first home", reference: "Genesis 1-2", summary: "God creates all things and places man in Eden." },
+      { title: "Fall and early judgment", reference: "Genesis 3-5", summary: "Sin enters, judgment follows, and the need for redemption is shown." },
+      { title: "Flood and nations", reference: "Genesis 6-11", summary: "God judges the old world, preserves Noah, and scatters the nations." },
+      { title: "Abraham and covenant promise", reference: "Genesis 12-25", summary: "God calls Abraham and gives promises of seed, land, and blessing." },
+      { title: "Isaac, Jacob, and Joseph", reference: "Genesis 26-50", summary: "God preserves the chosen family and moves them into Egypt." },
+    ],
+    keyPeople: ["Adam", "Eve", "Noah", "Abraham", "Isaac", "Jacob", "Joseph"],
+    keyPlaces: ["Eden", "Babel", "Canaan", "Egypt"],
+    christInTheBook:
+      "Genesis points to Christ through the promised seed in Genesis 3:15, the ark as safety from judgment, Isaac as the beloved son offered, and Joseph as the rejected and exalted deliverer.",
+    memoryVerses: ["Genesis 1:1", "Genesis 3:15", "Genesis 12:3", "Genesis 50:20"],
+    recommendedResources: [
+      {
+        id: "genesis-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Good quick lookup for people, places, and themes in Genesis.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "genesis-intro-smith",
+        kind: "Dictionary",
+        title: "Smith's Comprehensive Dictionary of the Bible",
+        author: "William Smith",
+        status: "available",
+        note: "Helpful background entries for Old Testament names and places.",
+        resourceSlug: "smiths-comprehensive-dictionary-of-the-bible",
+      },
+      {
+        id: "genesis-intro-nave",
+        kind: "Library Resource",
+        title: "Nave's Topical Bible",
+        author: "Orville J. Nave",
+        status: "available",
+        note: "Useful for tracing creation, covenant, faith, and promise themes.",
+        resourceSlug: "naves-topical-bible",
+      },
+      {
+        id: "genesis-intro-bunyan",
+        kind: "Library Resource",
+        title: "The Pilgrim's Progress",
+        author: "John Bunyan",
+        status: "available",
+        note: "Devotional classic for illustrating sin, conviction, pilgrimage, and perseverance.",
+        resourceSlug: "pilgrims-progress",
+        warning: "Devotional classic",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "Future direct handbook quotations should be imported only after source and rights verification.",
+    ],
+  },
+  {
+    book: "Exodus",
+    overview: {
+      author: "Moses",
+      date: "Traditionally placed during the wilderness years after Israel's deliverance from Egypt.",
+      audience: "Israel, learning the record of deliverance, covenant, worship, and God's presence among His people.",
+      theme: "Redemption, deliverance, law, worship, and the dwelling place of God.",
+      keyVerse: "Exodus 12:13",
+      purpose:
+        "To show the LORD redeeming Israel from bondage, making covenant with them, and giving the tabernacle pattern for worship and approach.",
+    },
+    outline: [
+      { title: "Israel in bondage", reference: "Exodus 1-2", summary: "Israel suffers in Egypt while God preserves Moses." },
+      { title: "The call of Moses", reference: "Exodus 3-4", summary: "God calls Moses at the burning bush and sends him to Pharaoh." },
+      { title: "Plagues and Passover", reference: "Exodus 5-13", summary: "God judges Egypt and redeems Israel by blood and power." },
+      { title: "Red Sea and wilderness", reference: "Exodus 14-18", summary: "God delivers, guides, feeds, and protects His people." },
+      { title: "Law, covenant, and tabernacle", reference: "Exodus 19-40", summary: "God gives His law and the pattern for dwelling among Israel." },
+    ],
+    keyPeople: ["Moses", "Aaron", "Pharaoh", "Miriam", "Joshua"],
+    keyPlaces: ["Egypt", "Goshen", "Red Sea", "Sinai"],
+    christInTheBook:
+      "Exodus points to Christ through the Passover lamb, manna, the smitten rock, the mediator work of Moses, and the tabernacle as God's way of approach.",
+    memoryVerses: ["Exodus 3:14", "Exodus 12:13", "Exodus 14:13", "Exodus 20:2"],
+    recommendedResources: [
+      {
+        id: "exodus-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Quick help for Moses, Aaron, Pharaoh, Egypt, and wilderness places.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "exodus-intro-smith",
+        kind: "Dictionary",
+        title: "Smith's Comprehensive Dictionary of the Bible",
+        author: "William Smith",
+        status: "available",
+        note: "Helpful entries for tabernacle, priesthood, and Exodus geography.",
+        resourceSlug: "smiths-comprehensive-dictionary-of-the-bible",
+      },
+      {
+        id: "exodus-intro-bounds",
+        kind: "Library Resource",
+        title: "Power Through Prayer",
+        author: "E. M. Bounds",
+        status: "available",
+        note: "Devotional support for ministry burden, dependence on God, and spiritual leadership.",
+        resourceSlug: "power-through-prayer",
+      },
+      {
+        id: "exodus-intro-taylor",
+        kind: "Library Resource",
+        title: "A Retrospect",
+        author: "James Hudson Taylor",
+        status: "available",
+        note: "Missionary biography for faith, calling, obedience, and trust under pressure.",
+        resourceSlug: "a-retrospect",
+        warning: "Historical value",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "Future direct handbook quotations should be imported only after source and rights verification.",
+    ],
+  },
+  {
+    book: "John",
+    overview: {
+      author: "John the apostle",
+      date: "Commonly placed late in the first century.",
+      audience: "Believers and unbelievers considering who Jesus Christ is.",
+      theme: "Jesus Christ, the Son of God, and life through believing on Him.",
+      keyVerse: "John 20:31",
+      purpose:
+        "To present the signs, words, death, and resurrection of Christ so readers might believe and have life through His name.",
+    },
+    outline: [
+      { title: "The Word made flesh", reference: "John 1:1-18", summary: "John opens with Christ's deity, incarnation, and glory." },
+      { title: "Witness and public ministry", reference: "John 1:19-12:50", summary: "John records signs, conversations, and public testimony concerning Christ." },
+      { title: "Upper room and prayer", reference: "John 13-17", summary: "Christ teaches His own before the cross and prays for them." },
+      { title: "Passion and resurrection", reference: "John 18-21", summary: "Christ is crucified, risen, and revealed to His disciples." },
+    ],
+    keyPeople: ["Jesus", "John the Baptist", "Nicodemus", "The Samaritan woman", "Mary", "Martha", "Lazarus", "Thomas"],
+    keyPlaces: ["Jerusalem", "Galilee", "Jordan River", "Bethany", "Samaria"],
+    christInTheBook:
+      "John presents Christ as the Word, the Lamb of God, the only begotten Son, the bread of life, the light of the world, the good shepherd, the resurrection and the life, the way, the truth, and the life, and the true vine.",
+    memoryVerses: ["John 1:1", "John 1:14", "John 3:16", "John 14:6", "John 20:31"],
+    recommendedResources: [
+      {
+        id: "john-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Quick lookup for John, Nicodemus, places, and Gospel terms.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "john-intro-nave",
+        kind: "Library Resource",
+        title: "Nave's Topical Bible",
+        author: "Orville J. Nave",
+        status: "available",
+        note: "Trace topics like believe, life, light, witness, love, and truth.",
+        resourceSlug: "naves-topical-bible",
+      },
+      {
+        id: "john-intro-spurgeon",
+        kind: "Library Resource",
+        title: "Around the Wicket Gate",
+        author: "C. H. Spurgeon",
+        status: "available",
+        note: "Gospel-focused help for John passages on believing and coming to Christ.",
+        resourceSlug: "around-the-wicket-gate",
+        warning: "Use with discernment",
+      },
+      {
+        id: "john-intro-moody",
+        kind: "Library Resource",
+        title: "The Way to God",
+        author: "D. L. Moody",
+        status: "available",
+        note: "Evangelistic companion reading for John's emphasis on life through Christ.",
+        resourceSlug: "the-way-to-god",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "John 20:31 gives the stated purpose of the book.",
+    ],
+  },
+  {
+    book: "Romans",
+    overview: {
+      author: "Paul",
+      date: "Commonly placed around AD 57, before Paul's arrival at Rome.",
+      audience: "The saints at Rome and all who need the ordered doctrine of the gospel.",
+      theme: "The gospel of God, righteousness by faith, and life in Christ.",
+      keyVerse: "Romans 1:16",
+      purpose:
+        "To unfold man's guilt, God's righteousness, justification by faith, life in the Spirit, God's purposes, and practical Christian living.",
+    },
+    outline: [
+      { title: "Need of righteousness", reference: "Romans 1-3", summary: "All are shown guilty before God." },
+      { title: "Justification by faith", reference: "Romans 3-5", summary: "God justifies through faith apart from works of the law." },
+      { title: "Life in Christ and the Spirit", reference: "Romans 6-8", summary: "Believers are taught union with Christ, deliverance, and no condemnation." },
+      { title: "Israel and God's purposes", reference: "Romans 9-11", summary: "Paul explains Israel, promise, mercy, and God's wisdom." },
+      { title: "Practical Christian living", reference: "Romans 12-16", summary: "Doctrine turns into service, love, submission, and fellowship." },
+    ],
+    keyPeople: ["Paul", "Phoebe", "Abraham", "Adam", "Christ", "Israel"],
+    keyPlaces: ["Rome", "Cenchrea"],
+    christInTheBook:
+      "Romans presents Christ as the propitiation, the risen Lord, the last Adam's answer to man's ruin, the One in whom there is no condemnation, and the interceding Lord from whom nothing can separate believers.",
+    memoryVerses: ["Romans 1:16", "Romans 3:23", "Romans 5:8", "Romans 8:1", "Romans 12:1"],
+    recommendedResources: [
+      {
+        id: "romans-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Quick help for people, places, and doctrinal terms.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "romans-intro-torrey-doctrines",
+        kind: "Library Resource",
+        title: "The Fundamental Doctrines of the Christian Faith",
+        author: "R. A. Torrey",
+        status: "available",
+        note: "Doctrinal survey help after reading Romans in the KJV.",
+        resourceSlug: "the-fundamental-doctrines-of-the-christian-faith",
+      },
+      {
+        id: "romans-intro-torrey-spirit",
+        kind: "Library Resource",
+        title: "The Person and Work of The Holy Spirit",
+        author: "R. A. Torrey",
+        status: "available",
+        note: "Companion resource for Romans 8 and the work of the Spirit.",
+        resourceSlug: "the-person-and-work-of-the-holy-spirit",
+      },
+      {
+        id: "romans-intro-moody",
+        kind: "Library Resource",
+        title: "Secret Power",
+        author: "D. L. Moody",
+        status: "available",
+        note: "Practical devotional help for Christian life and service.",
+        resourceSlug: "secret-power",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "Future Romans commentary imports should remain marked rights review until the exact edition is verified.",
+    ],
+  },
+  {
+    book: "Luke",
+    overview: {
+      author: "Luke",
+      date: "Commonly placed in the AD 60s.",
+      audience: "Theophilus and wider readers needing an orderly account of Christ.",
+      theme: "The Son of man came to seek and to save that which was lost.",
+      keyVerse: "Luke 19:10",
+      purpose:
+        "To give an orderly account of Christ's birth, ministry, compassion, death, resurrection, and commission to preach repentance and remission of sins.",
+    },
+    outline: [
+      { title: "Birth and preparation", reference: "Luke 1-3", summary: "Luke records the births, early witness, and preparation for ministry." },
+      { title: "Galilean ministry", reference: "Luke 4-9", summary: "Christ preaches, heals, calls disciples, and reveals His authority." },
+      { title: "Journey toward Jerusalem", reference: "Luke 9-19", summary: "Christ teaches discipleship, mercy, repentance, and kingdom truth." },
+      { title: "Passion and resurrection", reference: "Luke 19-24", summary: "Christ enters Jerusalem, dies, rises, opens Scripture, and sends witnesses." },
+    ],
+    keyPeople: ["Jesus", "Mary", "Zacharias", "Elisabeth", "John the Baptist", "Peter", "Herod", "Pilate", "Theophilus"],
+    keyPlaces: ["Jerusalem", "Bethlehem", "Nazareth", "Galilee", "Jericho", "Emmaus"],
+    christInTheBook:
+      "Luke presents Christ as the Saviour, the Son of man, the compassionate seeker of sinners, the suffering Lord, and the risen Christ who opens the Scriptures.",
+    memoryVerses: ["Luke 2:11", "Luke 9:23", "Luke 19:10", "Luke 24:46", "Luke 24:47"],
+    recommendedResources: [
+      {
+        id: "luke-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Quick lookup for Luke's people, places, and Gospel terms.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "luke-intro-way-to-god",
+        kind: "Library Resource",
+        title: "The Way to God",
+        author: "D. L. Moody",
+        status: "available",
+        note: "Evangelistic companion reading for salvation and gospel invitation.",
+        resourceSlug: "the-way-to-god",
+      },
+      {
+        id: "luke-intro-evangelism",
+        kind: "Library Resource",
+        title: "How to Bring Men to Christ",
+        author: "R. A. Torrey",
+        status: "available",
+        note: "Practical help for Luke 24 witness and teaching the gospel clearly.",
+        resourceSlug: "how-to-bring-men-to-christ",
+      },
+      {
+        id: "luke-intro-ryle",
+        kind: "Library Resource",
+        title: "Practical Religion",
+        author: "J. C. Ryle",
+        status: "available",
+        note: "Christian life reading that pairs well with Luke's discipleship emphasis.",
+        resourceSlug: "practical-religion",
+        warning: "Use with discernment",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "Luke 1:1-4 explains the orderly-account purpose of the book.",
+    ],
+  },
 ];
 
 const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "found">> = {
@@ -2186,6 +2544,7 @@ export default function Home() {
   const [studyRef, setStudyRef] = useState<string | null>(null);
   const [fullStudyRef, setFullStudyRef] = useState<string | null>(null);
   const [activePersonId, setActivePersonId] = useState<string | null>(null);
+  const [bookIntroBook, setBookIntroBook] = useState<string | null>(null);
   const [studyTab, setStudyTab] = useState<StudyDrawerTab>("study");
   const [noteDraft, setNoteDraft] = useState("");
   const [saved, setSaved] = useState<SavedState>({ notes: [], highlights: [], bookmarks: [] });
@@ -2390,6 +2749,7 @@ export default function Home() {
   const placesById = useMemo(() => new Map(studyPlaces.map((place) => [place.id, place])), []);
   const typesById = useMemo(() => new Map(christTypes.map((type) => [type.id, type])), []);
   const propheciesById = useMemo(() => new Map(prophecyConnections.map((prophecy) => [prophecy.id, prophecy])), []);
+  const bookIntroductionsByBook = useMemo(() => new Map(bookIntroductions.map((intro) => [intro.book, intro])), []);
 
   const activeChapterConnections = useMemo<ActiveChapterConnections>(() => {
     const connection = chapterConnections.find((item) => item.book === book && item.chapter === chapter);
@@ -2414,6 +2774,8 @@ export default function Home() {
   }, [book, chapter]);
 
   const activePerson = activePersonId ? peopleById.get(activePersonId) ?? null : null;
+  const activeBookIntroduction = bookIntroductionsByBook.get(book) ?? null;
+  const activeBookIntro = bookIntroBook ? bookIntroductionsByBook.get(bookIntroBook) ?? null : null;
 
   const chapterCrossReferences = useMemo(
     () => crossReferences.filter((reference) => reference.verse_ref.startsWith(`${book} ${chapter}:`)),
@@ -2728,6 +3090,17 @@ export default function Home() {
     setActivePersonId(personId);
     setStudyRef(null);
     setTab("personStudy");
+  }
+
+  function openBookIntroduction(targetBook = book) {
+    if (!bookIntroductionsByBook.has(targetBook)) {
+      setSyncMessage(`${targetBook} book introduction is not ready yet.`);
+      return;
+    }
+
+    setBookIntroBook(targetBook);
+    setStudyRef(null);
+    setTab("bookIntro");
   }
 
   function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
@@ -3771,6 +4144,7 @@ export default function Home() {
                 chapterCommentaryEntries={chapterCommentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
                 chapterResourceRecommendations={activeChapterResourceRecommendations}
+                bookIntroduction={activeBookIntroduction}
                 scriptureMemory={scriptureMemory}
                 recentPassages={recentPassages}
                 favoritePassages={favoritePassages}
@@ -3811,6 +4185,7 @@ export default function Home() {
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
                 onOpenReference={openReference}
+                onOpenBookIntroduction={() => openBookIntroduction(book)}
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
@@ -3997,6 +4372,24 @@ export default function Home() {
               />
             )}
 
+            {tab === "bookIntro" && activeBookIntro && (
+              <BookIntroScreen
+                intro={activeBookIntro}
+                versesByRef={versesByRef}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
+              />
+            )}
+
+            {tab === "bookIntro" && !activeBookIntro && (
+              <div className="p-4 md:p-8">
+                <EmptyState title="Book introduction not ready" body="Reviewed book introductions are being added one book at a time." />
+              </div>
+            )}
+
             {tab === "settings" && (
               <SettingsScreen
                 hasSupabaseConfig={hasSupabaseConfig}
@@ -4028,6 +4421,7 @@ export default function Home() {
           dictionaryEntry={activeDictionaryEntry}
           crossReferences={activeCrossReferences}
           commentaryEntries={activeCommentaryEntries}
+          bookIntroduction={activeVerse ? bookIntroductionsByBook.get(activeVerse.book) ?? null : null}
           versesByRef={versesByRef}
           allVerses={allVerses}
           existingNote={notesByRef.get(studyRef)?.[0] ?? null}
@@ -4052,6 +4446,9 @@ export default function Home() {
             void lookupWord(word);
           }}
           onOpenReference={openReference}
+          onOpenBookIntroduction={() => {
+            if (activeVerse) openBookIntroduction(activeVerse.book);
+          }}
           onAddMemory={() => addMemoryVerse(studyRef)}
           onUpdateMemoryProgress={(progress) => updateMemoryProgress(studyRef, progress)}
           onRemoveMemory={() => removeMemoryVerse(studyRef)}
@@ -4459,6 +4856,227 @@ function PersonStudyScreen({
   );
 }
 
+function referenceStart(reference: string) {
+  const match = reference.match(/^(.+?)\s+(\d+)(?::(\d+))?/);
+  if (!match) return reference;
+  return `${match[1]} ${match[2]}:${match[3] ?? "1"}`;
+}
+
+function BookIntroScreen({
+  intro,
+  versesByRef,
+  onBack,
+  onOpenReference,
+  onOpenLibraryResource,
+}: {
+  intro: BookIntroduction;
+  versesByRef: Map<string, BibleVerse>;
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
+}) {
+  const keyVerse = versesByRef.get(intro.overview.keyVerse);
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="sticky top-[92px] z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:bg-white md:p-5 md:shadow-sm">
+        <button
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+          onClick={onBack}
+          type="button"
+        >
+          <ChevronLeft size={16} />
+          Back to Bible
+        </button>
+        <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Book Introduction</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{intro.book}</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{intro.overview.theme}</p>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BookOpen size={18} />
+            <h2 className="text-base font-semibold text-[var(--ink)]">Overview</h2>
+          </div>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <OverviewItem label="Author" value={intro.overview.author} />
+            <OverviewItem label="Date" value={intro.overview.date} />
+            <OverviewItem label="Audience" value={intro.overview.audience} />
+            <OverviewItem label="Key verse" value={intro.overview.keyVerse} onClick={() => onOpenReference(intro.overview.keyVerse)} />
+          </div>
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Purpose</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{intro.overview.purpose}</p>
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-[var(--scripture)] p-5 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <Star size={18} />
+              <h2 className="text-base font-semibold text-[var(--ink)]">Key Verse</h2>
+            </div>
+            <button
+              className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+              onClick={() => onOpenReference(intro.overview.keyVerse)}
+              type="button"
+            >
+              Open {intro.overview.keyVerse}
+            </button>
+          </div>
+          <p className="mt-4 font-serif text-xl leading-9 text-[var(--scripture-ink)]">
+            {keyVerse?.text ?? "Verse text is not available in the local KJV data yet."}
+          </p>
+        </article>
+      </section>
+
+      <section className="grid gap-3 xl:grid-cols-2">
+        <StudySection title="Outline">
+          <div className="space-y-2">
+            {intro.outline.map((item) => (
+              <button
+                key={`${intro.book}-outline-${item.reference}`}
+                className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                onClick={() => onOpenReference(referenceStart(item.reference))}
+                type="button"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{item.reference}</span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{item.summary}</p>
+              </button>
+            ))}
+          </div>
+        </StudySection>
+
+        <StudySection title="Christ in the Book">
+          <p className="text-sm leading-6 text-[var(--muted)]">{intro.christInTheBook}</p>
+        </StudySection>
+
+        <StudySection title="Key People">
+          <div className="flex flex-wrap gap-2">
+            {intro.keyPeople.map((person) => (
+              <span key={`${intro.book}-person-${person}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                {person}
+              </span>
+            ))}
+          </div>
+        </StudySection>
+
+        <StudySection title="Key Places">
+          <div className="flex flex-wrap gap-2">
+            {intro.keyPlaces.map((place) => (
+              <span key={`${intro.book}-place-${place}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                {place}
+              </span>
+            ))}
+          </div>
+        </StudySection>
+
+        <StudySection title="Memory Verses">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {intro.memoryVerses.map((reference) => {
+              const verse = versesByRef.get(reference);
+              return (
+                <button
+                  key={`${intro.book}-memory-${reference}`}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                  onClick={() => onOpenReference(reference)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--green)]">{reference}</p>
+                  <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">
+                    {verse?.text ?? "Verse text is not available in the local KJV data yet."}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+        </StudySection>
+
+        <StudySection title="Recommended Resources">
+          <div className="space-y-2">
+            {intro.recommendedResources.map((resource) => (
+              <article key={`${intro.book}-resource-${resource.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.kind}</p>
+                    <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                    {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
+                  </div>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">
+                    {resource.status}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {resource.resourceSlug && (
+                    <button
+                      className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                      onClick={() => onOpenLibraryResource(resource.resourceSlug!)}
+                      type="button"
+                    >
+                      Open Resource
+                    </button>
+                  )}
+                  {resource.warning && (
+                    <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                      {resource.warning}
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </StudySection>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex items-center gap-2 text-[var(--green)]">
+          <Clipboard size={18} />
+          <h2 className="text-base font-semibold text-[var(--ink)]">Source Notes</h2>
+        </div>
+        <div className="mt-4 grid gap-2">
+          {intro.sourceNotes.map((note) => (
+            <p key={`${intro.book}-source-${note}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+              {note}
+            </p>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function OverviewItem({
+  label,
+  value,
+  onClick,
+}: {
+  label: string;
+  value: string;
+  onClick?: () => void;
+}) {
+  const content = (
+    <>
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      <p className="mt-1 text-sm font-semibold text-[var(--ink)]">{value}</p>
+    </>
+  );
+
+  if (onClick) {
+    return (
+      <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={onClick} type="button">
+        {content}
+      </button>
+    );
+  }
+
+  return <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">{content}</div>;
+}
+
 function PassageShortcutRow({
   label,
   emptyText,
@@ -4517,6 +5135,7 @@ function BibleReader({
   chapterCommentaryEntries,
   chapterKeyVerses,
   chapterResourceRecommendations,
+  bookIntroduction,
   scriptureMemory,
   recentPassages,
   favoritePassages,
@@ -4557,6 +5176,7 @@ function BibleReader({
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
   onOpenReference,
+  onOpenBookIntroduction,
   onOpenLibraryResource,
   onOpenPersonStudy,
   onVerseClick,
@@ -4583,6 +5203,7 @@ function BibleReader({
   chapterCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
+  bookIntroduction: BookIntroduction | null;
   scriptureMemory: ScriptureMemoryItem[];
   recentPassages: BiblePassage[];
   favoritePassages: BiblePassage[];
@@ -4623,6 +5244,7 @@ function BibleReader({
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onVerseClick: (ref: string) => void;
@@ -4659,6 +5281,16 @@ function BibleReader({
             <Star size={15} />
             {currentChapterPinned ? "Pinned" : "Pin chapter"}
           </button>
+          {bookIntroduction && (
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={onOpenBookIntroduction}
+              type="button"
+            >
+              <BookOpen size={15} />
+              Book Introduction
+            </button>
+          )}
         </div>
 
         <div className="mt-3 grid grid-cols-[minmax(0,1fr)_78px_78px] gap-2 md:grid-cols-[minmax(0,1fr)_110px_110px_auto_auto]">
@@ -4926,6 +5558,7 @@ function BibleReader({
         chapterCrossReferences={chapterCrossReferences}
         chapterKeyVerses={chapterKeyVerses}
         chapterResourceRecommendations={chapterResourceRecommendations}
+        bookIntroduction={bookIntroduction}
         chapterNotes={chapterNotes}
         explorer={explorer}
         explorerWord={explorerWord}
@@ -4934,6 +5567,7 @@ function BibleReader({
         onAddMemoryVerse={onAddMemoryVerse}
         onExplorerWordChange={setExplorerWord}
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
+        onOpenBookIntroduction={onOpenBookIntroduction}
         onOpenLibraryResource={onOpenLibraryResource}
         onOpenReference={onOpenReference}
         onOpenPersonStudy={onOpenPersonStudy}
@@ -5011,6 +5645,7 @@ function ChapterStudyWorkflow({
   chapterCrossReferences,
   chapterKeyVerses,
   chapterResourceRecommendations,
+  bookIntroduction,
   chapterNotes,
   explorer,
   explorerWord,
@@ -5019,6 +5654,7 @@ function ChapterStudyWorkflow({
   onAddMemoryVerse,
   onExplorerWordChange,
   onLookupWord,
+  onOpenBookIntroduction,
   onOpenLibraryResource,
   onOpenReference,
   onOpenPersonStudy,
@@ -5032,6 +5668,7 @@ function ChapterStudyWorkflow({
   chapterCrossReferences: CrossReference[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
+  bookIntroduction: BookIntroduction | null;
   chapterNotes: Array<[string, UserNote[]]>;
   explorer: WordExplorerResult;
   explorerWord: string;
@@ -5040,6 +5677,7 @@ function ChapterStudyWorkflow({
   onAddMemoryVerse: (ref: string) => void;
   onExplorerWordChange: (word: string) => void;
   onLookupWord: (word: string) => void;
+  onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenPersonStudy: (personId: string) => void;
@@ -5059,14 +5697,26 @@ function ChapterStudyWorkflow({
             A local-first passage guide for repeated words, word study, teaching prep, and Scripture memory.
           </p>
         </div>
-        <button
-          className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
-          onClick={() => onAddMemoryVerse(selectedVerse.ref)}
-          type="button"
-        >
-          <Brain size={16} />
-          Add {selectedVerse.ref}
-        </button>
+        <div className="flex flex-wrap gap-2">
+          {bookIntroduction && (
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+              onClick={onOpenBookIntroduction}
+              type="button"
+            >
+              <BookOpen size={16} />
+              Book Introduction
+            </button>
+          )}
+          <button
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+            onClick={() => onAddMemoryVerse(selectedVerse.ref)}
+            type="button"
+          >
+            <Brain size={16} />
+            Add {selectedVerse.ref}
+          </button>
+        </div>
       </div>
 
       <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -5357,9 +6007,21 @@ function ChapterStudyWorkflow({
 
       <div className="mt-3 grid gap-3 lg:grid-cols-2">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
-          <div className="flex items-center gap-2 text-[var(--green)]">
-            <NotebookPen size={18} />
-            <h3 className="text-sm font-semibold">Teaching Mode</h3>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <NotebookPen size={18} />
+              <h3 className="text-sm font-semibold">Teaching Mode</h3>
+            </div>
+            {bookIntroduction && (
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={onOpenBookIntroduction}
+                type="button"
+              >
+                <BookOpen size={14} />
+                Book Introduction
+              </button>
+            )}
           </div>
           <div className="mt-3 grid grid-cols-2 gap-2">
             <MiniStat label="Chapter notes" value={String(chapterNotes.length)} />
@@ -6964,6 +7626,7 @@ function StudyDrawer({
   dictionaryEntry,
   crossReferences,
   commentaryEntries,
+  bookIntroduction,
   versesByRef,
   allVerses,
   existingNote,
@@ -6986,6 +7649,7 @@ function StudyDrawer({
   onDeleteNote,
   onLookupWord,
   onOpenReference,
+  onOpenBookIntroduction,
   onAddMemory,
   onUpdateMemoryProgress,
   onRemoveMemory,
@@ -6998,6 +7662,7 @@ function StudyDrawer({
   dictionaryEntry: DictionaryEntry | null;
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
+  bookIntroduction: BookIntroduction | null;
   versesByRef: Map<string, BibleVerse>;
   allVerses: BibleVerse[];
   existingNote: UserNote | null;
@@ -7020,6 +7685,7 @@ function StudyDrawer({
   onDeleteNote: () => void;
   onLookupWord: (word: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenBookIntroduction: () => void;
   onAddMemory: () => void;
   onUpdateMemoryProgress: (progress: number) => void;
   onRemoveMemory: () => void;
@@ -7193,14 +7859,26 @@ function StudyDrawer({
               <StudySection
                 title="Verse"
                 action={
-                  <button
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
-                    onClick={onOpenFullStudy}
-                    type="button"
-                  >
-                    <BookOpen size={14} />
-                    Open Full Study
-                  </button>
+                  <div className="flex flex-wrap justify-end gap-2">
+                    {bookIntroduction && (
+                      <button
+                        className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                        onClick={onOpenBookIntroduction}
+                        type="button"
+                      >
+                        <BookOpen size={14} />
+                        Book Intro
+                      </button>
+                    )}
+                    <button
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
+                      onClick={onOpenFullStudy}
+                      type="button"
+                    >
+                      <BookOpen size={14} />
+                      Full Study
+                    </button>
+                  </div>
                 }
               >
                 <p className="text-sm font-semibold text-[var(--green)]">{verse.ref}</p>
