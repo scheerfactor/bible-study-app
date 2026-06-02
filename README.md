@@ -459,6 +459,14 @@ data/library/manifests/trusted-study-collection-phase-1.json
 
 This Phase 1 file is metadata and recommendation planning only. It represents foundational resources such as Webster's 1828, Easton's, Smith's, Nave's, TSK, handbook candidates, survey candidates, trusted classics, Baptist history, missions, evangelism, and teaching resources. Do not import entries marked rights-review, metadata-only, do-not-import, or needs-review until the exact title, edition, source file, rights status, and doctrinal review are complete.
 
+Trusted Resource Import Phase 1 lives at:
+
+```text
+data/library/manifests/trusted-resource-import-phase-1.json
+```
+
+This import batch adds verified public-domain reader files only. It includes Easton's Bible Dictionary, Smith's Comprehensive Dictionary of the Bible, Nave's Topical Bible, selected Spurgeon, J. C. Ryle, and D. L. Moody resources. It intentionally excludes Halley's, Unger's, modern copyrighted works, unclear editions, cult materials, and anything marked do-not-import or needs-review.
+
 Each manifest entry must include:
 
 ```text

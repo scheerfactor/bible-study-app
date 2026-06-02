@@ -32,6 +32,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 export const LIBRARY_CATEGORIES = [
   "Dictionaries",
+  "Topical Bible",
   "Encyclopedias",
   "Cross References",
   "Bible Handbooks",
@@ -76,6 +77,7 @@ function resourceLabels(entry: LibraryManifestEntry, category: string) {
   const labels = [category, ...(entry.resource_labels ?? [])];
 
   if (category === "Prayer") labels.push("Prayer");
+  if (category === "Topical Bible") labels.push("Bible study helps");
   if (category === "Evangelism") labels.push("Evangelism");
   if (category === "Missions") labels.push("Missions");
   if (category === "Preaching & Teaching") labels.push("Preaching");
@@ -97,6 +99,7 @@ function perspectiveNotes(entry: LibraryManifestEntry, category: string) {
   if (author.includes("murray")) return "Devotional classic from a non-Baptist author; useful with discernment and Scripture-first review.";
   if (author.includes("spurgeon")) return "Baptist preacher and devotional classic; review quotes in context for teaching use.";
   if (category === "Prayer") return "Prayer-focused devotional resource for personal devotion, teaching, and ministry encouragement.";
+  if (category === "Topical Bible") return "Topical Scripture index; use it to find related KJV passages while keeping the Bible text central.";
   if (category === "Evangelism") return "Evangelism resource for outreach preparation and personal witness.";
   if (category === "Missions") return "Missionary biography or missions resource for examples, burden, and testimony.";
   if (category === "Classics") return "Classic Christian literature; helpful for illustration and devotional reading with Bible-centered discernment.";
@@ -109,6 +112,7 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
   if (entry.recommended_use) return entry.recommended_use;
 
   if (category === "Prayer") return "Prayer meetings, personal devotion, and sermon or Sunday school application.";
+  if (category === "Topical Bible") return "Topic tracing, verse chains, and teaching preparation.";
   if (category === "Evangelism") return "Witnessing preparation, gospel invitations, and outreach lesson support.";
   if (category === "Missions") return "Missionary focus, biography reading, and ministry encouragement.";
   if (category === "Baptist History") return "Historical background, Baptist heritage, and source-context study.";

@@ -473,5 +473,385 @@
     "checksum_sha256": "0cb96a35945a354964b00151275c301acb7d0e198003dee5e00ace7ddba0f269",
     "file_size_bytes": 160294,
     "word_count": 26763
+  },
+  {
+    "title": "Easton's Bible Dictionary",
+    "author": "M. G. Easton",
+    "year": 1897,
+    "category": "Dictionaries",
+    "source_url": "https://www.ccel.org/ccel/easton/ebd2.html",
+    "download_url": "https://www.ccel.org/ccel/e/easton/ebd2/cache/ebd2.txt",
+    "source_license_url": "https://www.crosswire.org/sword/copyright/ModInfoCopyright.jsp?modName=Easton",
+    "file_path": "data/library/verified/eastons-bible-dictionary.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain_crosswire",
+    "attribution_required": true,
+    "rights_basis": "CrossWire lists Easton's Bible Dictionary with Distribution License Public Domain and text source CCEL; CCEL work page identifies the 1897 Easton work.",
+    "notes": "Foundational Bible dictionary for names, places, and background. Use with Protestant 19th-century perspective notes.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Classic Protestant Bible dictionary; useful background, not final doctrinal authority.",
+    "recommended_use": "Bible names, places, customs, and concise background lookup.",
+    "resource_labels": [
+      "Dictionaries",
+      "Bible study helps"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "291260d29a0ddef706aa9dc8457e601b66dab755597ca090b72e63a394062310",
+    "file_size_bytes": 5463775,
+    "word_count": 513951
+  },
+  {
+    "title": "Smith's Comprehensive Dictionary of the Bible",
+    "author": "William Smith; Samuel W. Barnum, editor",
+    "year": 1901,
+    "category": "Dictionaries",
+    "source_url": "https://www.loc.gov/item/02000664/",
+    "download_url": "https://archive.org/download/SmithWMAComprehensiveDictionaryOfTheBible1868/Smith%20W%20M%20-%20A%20Comprehensive%20Dictionary%20of%20the%20Bible%201868_djvu.txt",
+    "source_license_url": "https://www.loc.gov/item/02000664/",
+    "file_path": "data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain_loc",
+    "attribution_required": true,
+    "rights_basis": "Library of Congress rights statement says books in this collection are in the public domain and free to use and reuse; OCR text is from the public-domain Internet Archive scan of the same Smith dictionary family.",
+    "notes": "Large Bible dictionary useful for historical, geographical, and biographical background.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "19th-century Protestant dictionary; use for background and verify doctrine by Scripture.",
+    "recommended_use": "Bible people, places, customs, and historical dictionary lookup.",
+    "resource_labels": [
+      "Dictionaries",
+      "Bible study helps"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "f32cf732986f0e2e195e506f7ec410935f2970bb25cd72759757fa3abbce8512",
+    "file_size_bytes": 8201649,
+    "word_count": 1420155
+  },
+  {
+    "title": "Nave's Topical Bible",
+    "author": "Orville J. Nave",
+    "year": 1903,
+    "category": "Topical Bible",
+    "source_url": "https://openlibrary.org/books/OL7245590M/Nave%E2%80%99s_Topical_Bible_A_Digest_Of_The_Holy_Scriptures",
+    "download_url": "https://archive.org/download/topicalbibledige00naveuoft/topicalbibledige00naveuoft_djvu.txt",
+    "source_license_url": "https://openlibrary.org/books/OL7245590M/Nave%E2%80%99s_Topical_Bible_A_Digest_Of_The_Holy_Scriptures",
+    "file_path": "data/library/verified/naves-topical-bible.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain_pre_1931",
+    "attribution_required": true,
+    "rights_basis": "Open Library/Internet Archive record identifies a 1903 edition with plain text; the edition is public-domain by publication date in the United States.",
+    "notes": "Topical Scripture index for tracing subjects and verse chains.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Topical arrangement should support, not replace, direct Bible reading.",
+    "recommended_use": "Topic study, verse chains, and teaching preparation.",
+    "resource_labels": [
+      "Topical Bible",
+      "Bible study helps"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "8d52a61196d713df19e8832e4a2e1dc1ca71b3ec99d0ef703dc034f5b9c10925",
+    "file_size_bytes": 10483511,
+    "word_count": 1659391
+  },
+  {
+    "title": "Talks to Farmers",
+    "author": "C. H. Spurgeon",
+    "year": 1889,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/42518",
+    "download_url": "https://www.gutenberg.org/ebooks/42518.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/talks-to-farmers.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Spurgeon sermons with practical illustrations and devotional teaching.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist preaching resource; review illustrations and applications in context.",
+    "recommended_use": "Preaching illustrations, devotional reading, and teaching application.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "2031c2d9f054cf569228fa70ad18f81eb0f17c7d5a44f88857a1d64c5c106760",
+    "file_size_bytes": 542746,
+    "word_count": 99822
+  },
+  {
+    "title": "Practical Religion",
+    "author": "J. C. Ryle",
+    "year": 1878,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/38162",
+    "download_url": "https://www.gutenberg.org/ebooks/38162.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/practical-religion.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Plain papers on Christian duty, experience, dangers, and privileges.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Anglican evangelical author; useful with Scripture-first doctrinal review.",
+    "recommended_use": "Christian life reading, discipleship, and adult teaching preparation.",
+    "resource_labels": [
+      "Christian Living",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "fb27929782288e46579d2b58b56591b0d2eefd5d0203eba83a17939e9b68b7de",
+    "file_size_bytes": 966564,
+    "word_count": 173084
+  },
+  {
+    "title": "The Cross: A Tract for the Times",
+    "author": "J. C. Ryle",
+    "year": 1851,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/62001",
+    "download_url": "https://www.gutenberg.org/ebooks/62001.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-cross-ryle.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Short Ryle tract centered on Christ and the cross.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Anglican evangelical tract; useful with Scripture-first doctrinal review.",
+    "recommended_use": "Gospel teaching, devotional reading, and cross-centered study.",
+    "resource_labels": [
+      "Christian Living",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "a0fa1ca1e23c3ce3e29e600196e11b1acb2ffb44a13d79f9c71246abd805f034",
+    "file_size_bytes": 72776,
+    "word_count": 12287
+  },
+  {
+    "title": "A Sketch of the Life and Labors of George Whitefield",
+    "author": "J. C. Ryle",
+    "year": 1854,
+    "category": "Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/34727",
+    "download_url": "https://www.gutenberg.org/ebooks/34727.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sketch-life-labors-george-whitefield.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Short biography useful for revival history and preaching burden.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Historical biography; note author perspective and historical context.",
+    "recommended_use": "Biography, church history, revival study, and preaching encouragement.",
+    "resource_labels": [
+      "Biographies",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "checksum_sha256": "92f60ac0650cb5044480f8e9bbd28096880a7bb231ba1f27b8ee0b820abfbd1b",
+    "file_size_bytes": 92277,
+    "word_count": 15335
+  },
+  {
+    "title": "Moody's Stories",
+    "author": "D. L. Moody",
+    "year": 1888,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/33024",
+    "download_url": "https://www.gutenberg.org/ebooks/33024.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/moodys-stories.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Anecdotes, incidents, and illustrations from Moody.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Useful illustration source; verify doctrine and application before teaching.",
+    "recommended_use": "Sermon illustrations, devotional reading, and evangelism stories.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "28ba9cdfe7e0707b2764145c599218a6bb8e5abd93c8931c3b0b7abcd2e1630a",
+    "file_size_bytes": 223370,
+    "word_count": 40697
+  },
+  {
+    "title": "The Overcoming Life, and Other Sermons",
+    "author": "D. L. Moody",
+    "year": 1896,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/33015",
+    "download_url": "https://www.gutenberg.org/ebooks/33015.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-overcoming-life.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody sermons on victorious Christian living.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Evangelistic devotional sermons; keep Scripture as the final authority.",
+    "recommended_use": "Christian life, encouragement, and lesson application.",
+    "resource_labels": [
+      "Christian Living",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "a15763d030eb6fe17706f45a956c6a52e418a32296a78a6a711bbe421a14c70f",
+    "file_size_bytes": 206025,
+    "word_count": 38200
+  },
+  {
+    "title": "Moody's Anecdotes and Illustrations",
+    "author": "D. L. Moody",
+    "year": 1895,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/19830",
+    "download_url": "https://www.gutenberg.org/ebooks/19830.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/moodys-anecdotes-and-illustrations.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Illustrations related in Moody revival work.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Illustration collection; verify stories and applications before use.",
+    "recommended_use": "Sermon illustrations, gospel invitations, and teaching support.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "b90acf884d4b4373aa34a050369d1ee536a9eeabe7270ee00c8bc01a111c5509",
+    "file_size_bytes": 416780,
+    "word_count": 78260
+  },
+  {
+    "title": "The Way to God and How to Find It",
+    "author": "D. L. Moody",
+    "year": 1884,
+    "category": "Evangelism",
+    "source_url": "https://www.gutenberg.org/ebooks/30449",
+    "download_url": "https://www.gutenberg.org/ebooks/30449.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-way-to-god.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Evangelistic sermons and counsel by Moody.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Evangelistic classic; use with Bible-centered gospel presentation.",
+    "recommended_use": "Evangelism, gospel lessons, and invitations.",
+    "resource_labels": [
+      "Evangelism",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "f60f535aa80a162a1edbb23d28082b3f7cf1f450562669097d3fc07f07971b69",
+    "file_size_bytes": 238547,
+    "word_count": 44621
+  },
+  {
+    "title": "Secret Power; or, The Secret of Success in Christian Life and Work",
+    "author": "D. L. Moody",
+    "year": 1881,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/33341",
+    "download_url": "https://www.gutenberg.org/ebooks/33341.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/secret-power.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody on Christian life and work.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Evangelistic holiness and service emphasis; review doctrinal wording in context.",
+    "recommended_use": "Christian service, devotional reading, and ministry encouragement.",
+    "resource_labels": [
+      "Christian Living",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "626b285e199d15703652f29bd9de8b0c08a7329b28281029de67f30ab39f53be",
+    "file_size_bytes": 190708,
+    "word_count": 34837
+  },
+  {
+    "title": "That Gospel Sermon on the Blessed Hope",
+    "author": "D. L. Moody",
+    "year": 1877,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/27316",
+    "download_url": "https://www.gutenberg.org/ebooks/27316.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/that-gospel-sermon-on-the-blessed-hope.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Short Moody sermon on the blessed hope.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Sermon resource; review eschatology and application with discernment.",
+    "recommended_use": "Preaching reference, devotional reading, and sermon illustration.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "4d3b7872a5f5537f367877964f05d18494634c7aed74da8fcbc94e6875405380",
+    "file_size_bytes": 45843,
+    "word_count": 7800
   }
 ]

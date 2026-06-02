@@ -4,14 +4,31 @@ import { dirname, resolve } from "node:path";
 
 export const defaultLibraryManifest = "data/library/manifests/curated-public-domain-resources.json";
 export const allowedCategories = new Set([
+  "Dictionaries",
+  "Topical Bible",
+  "Cross References",
+  "Bible Handbooks",
+  "Surveys",
+  "Commentaries",
+  "Biographies",
+  "Classics",
+  "Christian Living",
+  "Preaching & Teaching",
   "Bible study helps",
   "Baptist history",
+  "Baptist History",
   "Evangelism",
   "Prayer",
   "Christian life",
   "Preaching/teaching",
   "Missions",
   "Fiction/classics",
+]);
+
+const trustedDownloadHosts = new Set([
+  "www.gutenberg.org",
+  "archive.org",
+  "www.ccel.org",
 ]);
 
 export async function readLibraryManifest(filePath = defaultLibraryManifest) {
@@ -64,8 +81,15 @@ export function validateLibraryEntry(entry, index) {
     errors.push(`entry ${index + 1}: file_path must be under data/library/verified`);
   }
 
-  if (entry.download_url && !String(entry.download_url).startsWith("https://www.gutenberg.org/")) {
-    errors.push(`entry ${index + 1}: download_url must be an official Project Gutenberg URL`);
+  if (entry.download_url) {
+    try {
+      const host = new URL(entry.download_url).host;
+      if (!trustedDownloadHosts.has(host)) {
+        errors.push(`entry ${index + 1}: download_url must use a trusted source host`);
+      }
+    } catch {
+      errors.push(`entry ${index + 1}: download_url must be a valid URL`);
+    }
   }
 
   return errors;
@@ -94,8 +118,12 @@ export async function downloadTextFile(url, filePath) {
   }
 
   const text = await response.text();
-  if (!text.includes("PROJECT GUTENBERG")) {
+  const host = new URL(url).host;
+  if (host === "www.gutenberg.org" && !text.includes("PROJECT GUTENBERG")) {
     throw new Error(`Downloaded file did not look like a Project Gutenberg text: ${url}`);
+  }
+  if (!trustedDownloadHosts.has(host)) {
+    throw new Error(`Downloaded file host is not trusted for library imports: ${url}`);
   }
 
   await mkdir(dirname(filePath), { recursive: true });
