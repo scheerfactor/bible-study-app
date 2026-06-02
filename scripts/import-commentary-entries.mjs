@@ -48,8 +48,11 @@ for (const row of rows) {
     verse_end: verseEnd,
     author,
     resource_title: resourceTitle,
+    source_title: sourceTitle,
     entry_text: entryText,
     public_domain_status: String(row.public_domain_status ?? "needs review").trim(),
+    rights_basis: String(row.rights_basis ?? "").trim() || null,
+    recommended_use: String(row.recommended_use ?? "").trim() || null,
     source_url: String(row.source_url ?? "").trim() || null,
   });
 }

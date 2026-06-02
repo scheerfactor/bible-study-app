@@ -15,7 +15,8 @@
     "library:download": "node scripts/download-library-resources.mjs",
     "library:import": "node scripts/import-library-resources.mjs",
     "prepare:webster": "node scripts/prepare-websters-1828-data.mjs",
-    "import:commentary": "node scripts/import-commentary-entries.mjs"
+    "import:commentary": "node scripts/import-commentary-entries.mjs",
+    "validate:commentary": "node scripts/validate-commentary-entries.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

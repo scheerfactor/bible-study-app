@@ -112,8 +112,11 @@ create table if not exists public.commentary_entries (
   verse_end integer not null check (verse_end >= verse_start),
   author text not null,
   resource_title text not null,
+  source_title text,
   entry_text text not null,
   public_domain_status text not null,
+  rights_basis text,
+  recommended_use text,
   source_url text,
   created_at timestamptz not null default now(),
   unique (book, chapter, verse_start, verse_end, author, resource_title)
@@ -446,6 +449,15 @@ values
     'Reserved for future commentary/resource import planning.'
   ),
   (
+    'Matthew Henry''s Commentary on the Whole Bible',
+    'Matthew Henry',
+    1706,
+    'https://www.ccel.org/ccel/henry/mhc.html',
+    'Public domain original work; published 1706-1721 and author died in 1714.',
+    'Underlying work is public domain; verify terms for any specific digital transcription, site formatting, or modern edited edition before commercial redistribution.',
+    'Phase 1 commentary collection. Use after Bible text, Webster''s 1828, TSK, and curated connections.'
+  ),
+  (
     'The Expositor''s Bible: The Gospel of St. John, Volume I',
     'Marcus Dods',
     1892,
@@ -550,45 +562,59 @@ insert into public.commentary_entries (
   verse_end,
   author,
   resource_title,
+  source_title,
   entry_text,
   public_domain_status,
+  rights_basis,
+  recommended_use,
   source_url
 )
 select
   resource_sources.id,
-  'John',
-  3,
+  sample.book,
+  sample.chapter,
   sample.verse_start,
   sample.verse_end,
-  'Marcus Dods',
-  'The Expositor''s Bible: The Gospel of St. John, Volume I',
+  'Matthew Henry',
+  'Matthew Henry''s Commentary on the Whole Bible',
+  'Matthew Henry''s Commentary on the Whole Bible',
   sample.entry_text,
   sample.public_domain_status,
-  'https://www.gutenberg.org/ebooks/33151'
+  'Public-domain original work verified through Wikisource and CCEL source listings; avoid modern edited editions until reviewed.',
+  'Use after reading the KJV passage, checking Webster''s 1828, TSK, and curated people/place/type connections.',
+  'https://www.ccel.org/ccel/henry/mhc.html'
 from public.resource_sources
 cross join (
   values
     (
-      14,
-      15,
-      'Dods connects the lifting up of the Son of man with the brazen serpent, emphasizing that Christ becomes conspicuous through self-sacrifice and is looked to for healing.',
-      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3225-3265.'
+      'John',
+      3,
+      1,
+      36,
+      'Henry treats John 3 as a plain declaration of the new birth, the lifting up of the Son of man, God''s love in giving His only begotten Son, and the difference between believing and rejecting.',
+      'Public domain. Original work published 1706-1721; Matthew Henry died in 1714.'
     ),
     (
-      16,
-      17,
-      'The passage is treated as the heart of the remedy: God''s love is shown in giving His Son, and the Son is sent for saving rather than condemning the world.',
-      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3194-3197.'
-    ),
-    (
-      18,
+      'Romans',
+      5,
+      1,
       21,
-      'Dods frames faith as the simple but decisive response to God''s appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.',
-      'Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.'
+      'Henry treats Romans 5 as the fruit of justification: peace, hope, joy in tribulation, assurance grounded in Christ''s death for sinners, and the contrast between Adam and Christ.',
+      'Public domain. Original work published 1706-1721; Matthew Henry died in 1714.'
+    ),
+    (
+      'Luke',
+      24,
+      1,
+      53,
+      'Henry follows Luke 24 from the empty sepulchre to the Emmaus road, the opened Scriptures, repentance and remission of sins, witness, worship, and Christ''s ascension.',
+      'Public domain. Original work published 1706-1721; Matthew Henry died in 1714.'
     )
-) as sample(verse_start, verse_end, entry_text, public_domain_status)
-where resource_sources.title = 'The Expositor''s Bible: The Gospel of St. John, Volume I'
+) as sample(book, chapter, verse_start, verse_end, entry_text, public_domain_status)
+where resource_sources.title = 'Matthew Henry''s Commentary on the Whole Bible'
 on conflict (book, chapter, verse_start, verse_end, author, resource_title) do update
 set entry_text = excluded.entry_text,
     public_domain_status = excluded.public_domain_status,
+    rights_basis = excluded.rights_basis,
+    recommended_use = excluded.recommended_use,
     source_id = excluded.source_id;

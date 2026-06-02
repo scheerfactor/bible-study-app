@@ -42,6 +42,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
+import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -129,14 +130,18 @@ type TskCrossReferenceImportRow = {
 
 type CommentaryEntry = {
   id: string;
+  reference?: string;
   book: string;
   chapter: number;
   verse_start: number;
   verse_end: number;
   author: string;
   resource_title: string;
+  source_title?: string;
   entry_text: string;
   public_domain_status: string;
+  rights_basis?: string;
+  recommended_use?: string;
   source_url: string;
 };
 
@@ -408,6 +413,7 @@ const DEFAULT_VERSE = 16;
 const RECENT_PASSAGE_LIMIT = 20;
 const FAVORITE_PASSAGE_LIMIT = 24;
 const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
+const ACTIVE_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 
 const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
@@ -544,10 +550,10 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `genesis-${chapter}-commentary`,
       kind: "Commentary",
-      title: "Matthew Henry Commentary",
+      title: ACTIVE_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
-      status: "planned",
-      note: "Public-domain commentary candidate for creation, fall, promise, and early history after source review.",
+      status: "available",
+      note: "Reviewed Phase 1 public-domain commentary entry for creation, fall, promise, and early history.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
@@ -575,10 +581,10 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `exodus-${chapter}-commentary`,
       kind: "Commentary",
-      title: "Matthew Henry Commentary",
+      title: ACTIVE_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
-      status: "planned",
-      note: "Public-domain commentary candidate for bondage, deliverance, calling, and the Exodus story after source review.",
+      status: "available",
+      note: "Reviewed Phase 1 public-domain commentary entry for bondage, deliverance, calling, and the Exodus story.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
@@ -604,12 +610,12 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
   }),
   ...chapterRecommendations("John", [1, 2, 3, 4, 5], {
     commentaryForChapter: (chapter) => ({
-      id: `john-${chapter}-dods-commentary`,
+      id: `john-${chapter}-matthew-henry-commentary`,
       kind: "Commentary",
-      title: "The Expositor's Bible: The Gospel of St. John",
-      author: "Marcus Dods",
-      status: chapter <= 5 ? "sample" : "planned",
-      note: "Verified public-domain John commentary sample is staged for the first John passages.",
+      title: ACTIVE_COMMENTARY_COLLECTION,
+      author: "Matthew Henry",
+      status: "available",
+      note: "Reviewed Phase 1 public-domain commentary entry for John's Gospel.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
@@ -632,18 +638,6 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
         note: "Supplemental study for John’s emphasis on witness, new birth, and spiritual life.",
         resourceSlug: "the-person-and-work-of-the-holy-spirit",
       },
-      ...(chapter === 3
-        ? [
-            {
-              id: "john-3-ironside",
-              kind: "Commentary" as const,
-              title: "H. A. Ironside",
-              author: "H. A. Ironside",
-              status: "rights review" as const,
-              note: "Commentary candidate for John studies after source and rights verification.",
-            },
-          ]
-        : []),
     ],
   }),
   {
@@ -653,12 +647,12 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
       book: "Luke",
       chapter: 24,
       commentary: {
-        id: "luke-24-ryle-commentary",
+        id: "luke-24-matthew-henry-commentary",
         kind: "Commentary",
-        title: "Expository Thoughts on Luke",
-        author: "J. C. Ryle",
-        status: "planned",
-        note: "Public-domain Gospel exposition candidate for resurrection and Great Commission teaching.",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 public-domain commentary entry for resurrection and Great Commission teaching.",
         warning: "Use with discernment",
       },
       libraryResources: [
@@ -684,12 +678,12 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
   },
   ...chapterRecommendations("Romans", [1, 2, 3, 4, 5, 6, 7, 8], {
     commentaryForChapter: (chapter) => ({
-      id: `romans-${chapter}-ironside-commentary`,
+      id: `romans-${chapter}-matthew-henry-commentary`,
       kind: "Commentary",
-      title: "Lectures on Romans",
-      author: "H. A. Ironside",
-      status: "rights review",
-      note: "Romans commentary candidate; import only after exact edition and rights verification.",
+      title: ACTIVE_COMMENTARY_COLLECTION,
+      author: "Matthew Henry",
+      status: "available",
+      note: "Reviewed Phase 1 public-domain commentary entry for Romans doctrine and Christian life.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
@@ -744,6 +738,15 @@ const bookIntroductions: BookIntroduction[] = [
       "Genesis points to Christ through the promised seed in Genesis 3:15, the ark as safety from judgment, Isaac as the beloved son offered, and Joseph as the rejected and exalted deliverer.",
     memoryVerses: ["Genesis 1:1", "Genesis 3:15", "Genesis 12:3", "Genesis 50:20"],
     recommendedResources: [
+      {
+        id: "genesis-intro-matthew-henry",
+        kind: "Commentary",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 commentary entries for Genesis 1-5.",
+        warning: "Use with discernment",
+      },
       {
         id: "genesis-intro-easton",
         kind: "Dictionary",
@@ -812,6 +815,15 @@ const bookIntroductions: BookIntroduction[] = [
     memoryVerses: ["Exodus 3:14", "Exodus 12:13", "Exodus 14:13", "Exodus 20:2"],
     recommendedResources: [
       {
+        id: "exodus-intro-matthew-henry",
+        kind: "Commentary",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 commentary entries for Exodus 1-5.",
+        warning: "Use with discernment",
+      },
+      {
         id: "exodus-intro-easton",
         kind: "Dictionary",
         title: "Easton's Bible Dictionary",
@@ -877,6 +889,15 @@ const bookIntroductions: BookIntroduction[] = [
       "John presents Christ as the Word, the Lamb of God, the only begotten Son, the bread of life, the light of the world, the good shepherd, the resurrection and the life, the way, the truth, and the life, and the true vine.",
     memoryVerses: ["John 1:1", "John 1:14", "John 3:16", "John 14:6", "John 20:31"],
     recommendedResources: [
+      {
+        id: "john-intro-matthew-henry",
+        kind: "Commentary",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 commentary entries for John 1-5.",
+        warning: "Use with discernment",
+      },
       {
         id: "john-intro-easton",
         kind: "Dictionary",
@@ -945,6 +966,15 @@ const bookIntroductions: BookIntroduction[] = [
     memoryVerses: ["Romans 1:16", "Romans 3:23", "Romans 5:8", "Romans 8:1", "Romans 12:1"],
     recommendedResources: [
       {
+        id: "romans-intro-matthew-henry",
+        kind: "Commentary",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 commentary entries for Romans 1-8.",
+        warning: "Use with discernment",
+      },
+      {
         id: "romans-intro-easton",
         kind: "Dictionary",
         title: "Easton's Bible Dictionary",
@@ -1009,6 +1039,15 @@ const bookIntroductions: BookIntroduction[] = [
       "Luke presents Christ as the Saviour, the Son of man, the compassionate seeker of sinners, the suffering Lord, and the risen Christ who opens the Scriptures.",
     memoryVerses: ["Luke 2:11", "Luke 9:23", "Luke 19:10", "Luke 24:46", "Luke 24:47"],
     recommendedResources: [
+      {
+        id: "luke-intro-matthew-henry",
+        kind: "Commentary",
+        title: ACTIVE_COMMENTARY_COLLECTION,
+        author: "Matthew Henry",
+        status: "available",
+        note: "Reviewed Phase 1 commentary entry for Luke 24.",
+        warning: "Use with discernment",
+      },
       {
         id: "luke-intro-easton",
         kind: "Dictionary",
@@ -1241,138 +1280,10 @@ const localCrossReferences: CrossReference[] = (tskPhase1Sample as TskCrossRefer
   rights_basis: row.rights_basis,
 }));
 
-const localCommentaryEntries: CommentaryEntry[] = [
-  {
-    id: "dods-john-1-1-5",
-    book: "John",
-    chapter: 1,
-    verse_start: 1,
-    verse_end: 5,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "Dods presents John's opening as the foundation of the Gospel: Christ is the eternal Word, the source of life and light, and not merely a teacher appearing in time.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-1-14",
-    book: "John",
-    chapter: 1,
-    verse_start: 14,
-    verse_end: 14,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "The incarnation is treated as the Word truly becoming flesh and dwelling among men, making divine grace and truth visible in Christ.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from The Prologue section.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-1-29",
-    book: "John",
-    chapter: 1,
-    verse_start: 29,
-    verse_end: 29,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "John the Baptist's witness is framed around Christ as the Lamb of God, directing attention away from the servant and toward the sacrifice appointed for sin.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from early John 1 exposition.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-3-14-15",
-    book: "John",
-    chapter: 3,
-    verse_start: 14,
-    verse_end: 15,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "Dods connects the lifting up of the Son of man with the brazen serpent, emphasizing that Christ becomes conspicuous through self-sacrifice and is looked to for healing.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3225-3265.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-3-16-17",
-    book: "John",
-    chapter: 3,
-    verse_start: 16,
-    verse_end: 17,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "The passage is treated as the heart of the remedy: God's love is shown in giving His Son, and the Son is sent for saving rather than condemning the world.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3194-3197.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-3-18-21",
-    book: "John",
-    chapter: 3,
-    verse_start: 18,
-    verse_end: 21,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "Dods frames faith as the simple but decisive response to God's appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-4-13-14",
-    book: "John",
-    chapter: 4,
-    verse_start: 13,
-    verse_end: 14,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "The living water discourse is summarized as Christ offering satisfaction deeper than outward religion or earthly supply, meeting the soul's lasting need.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 4 exposition.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-6-35",
-    book: "John",
-    chapter: 6,
-    verse_start: 35,
-    verse_end: 35,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "Christ as the bread of life is presented as the true answer to spiritual hunger, calling men beyond signs to personal faith in Himself.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 6 exposition.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-10-11",
-    book: "John",
-    chapter: 10,
-    verse_start: 11,
-    verse_end: 11,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "The good Shepherd passage is summarized around Christ's care, ownership, and voluntary laying down of His life for the sheep.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 10 exposition.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-  {
-    id: "dods-john-11-25-26",
-    book: "John",
-    chapter: 11,
-    verse_start: 25,
-    verse_end: 26,
-    author: "Marcus Dods",
-    resource_title: "The Expositor's Bible: The Gospel of St. John, Volume I",
-    entry_text:
-      "Christ's words to Martha are treated as a declaration that resurrection and life are not merely future events but are found personally in Him.",
-    public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from John 11 exposition.",
-    source_url: "https://www.gutenberg.org/ebooks/33151",
-  },
-];
+const localCommentaryEntries: CommentaryEntry[] = (matthewHenryPhase1Commentary as CommentaryEntry[]).map((entry) => ({
+  ...entry,
+  source_title: entry.source_title ?? entry.resource_title,
+}));
 
 const studyPeople: StudyPerson[] = [
   {
@@ -1816,12 +1727,16 @@ function mergeCommentaryEntries(...entryGroups: CommentaryEntry[][]) {
 
   return entryGroups.flatMap((entries) =>
     entries.filter((entry) => {
-      const key = entry.id || `${entry.book}-${entry.chapter}-${entry.verse_start}-${entry.verse_end}-${entry.author}-${entry.resource_title}`;
+      const key = `${entry.book}-${entry.chapter}-${entry.verse_start}-${entry.verse_end}-${entry.author}-${entry.resource_title}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
     }),
   );
+}
+
+function activeCommentaryEntriesOnly(entries: CommentaryEntry[]) {
+  return entries.filter((entry) => entry.resource_title === ACTIVE_COMMENTARY_COLLECTION);
 }
 
 function mergeCrossReferences(...referenceGroups: CrossReference[][]) {
@@ -3005,7 +2920,7 @@ export default function Home() {
           setCommentaryEntries(localCommentaryEntries);
           return;
         }
-        setCommentaryEntries(mergeCommentaryEntries(localCommentaryEntries, data));
+        setCommentaryEntries(activeCommentaryEntriesOnly(mergeCommentaryEntries(localCommentaryEntries, data)));
       });
   }, [supabase]);
 
@@ -5823,7 +5738,11 @@ function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
     ...sectionOrEmpty(data.connections.prophecies.map((prophecy) => `- ${prophecy.prophecy} -> ${prophecy.fulfillment}: ${prophecy.description}`)),
     "",
     "## Commentary References",
-    ...sectionOrEmpty(data.commentaryEntries.map((entry) => `- ${entry.resource_title}, ${entry.author}, ${data.book} ${data.chapter}:${entry.verse_start}-${entry.verse_end}. ${entry.public_domain_status}`)),
+    ...sectionOrEmpty(data.commentaryEntries.map((entry) => [
+      `- ${entry.resource_title}, ${entry.author}, ${entry.reference ?? `${data.book} ${data.chapter}:${entry.verse_start}-${entry.verse_end}`}. ${entry.public_domain_status}`,
+      `  - Commentary text: ${entry.entry_text}`,
+      entry.recommended_use ? `  - Recommended use: ${entry.recommended_use}` : "",
+    ].filter(Boolean).join("\n"))),
     "",
     "## Personal Notes",
     ...sectionOrEmpty(data.notes.flatMap(([ref, notes]) => notes.map((note) => `- ${ref}: ${note.body}`))),
@@ -6414,6 +6333,21 @@ function ChapterStudyWorkflow({
                 {reference.target_ref}
               </button>
             ))}
+          </div>
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary</p>
+            <div className="mt-2 space-y-2">
+              {chapterCommentaryEntries.length ? chapterCommentaryEntries.slice(0, 3).map((entry) => (
+                <article key={`teaching-commentary-${entry.id}`} className="rounded-xl bg-[var(--paper)] px-3 py-2">
+                  <p className="text-xs font-semibold text-[var(--green)]">
+                    {entry.resource_title} · {entry.reference ?? `${entry.book} ${entry.chapter}`}
+                  </p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{entry.entry_text}</p>
+                </article>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No reviewed commentary entries yet.</p>
+              )}
+            </div>
           </div>
         </article>
 
@@ -7704,7 +7638,15 @@ function FullStudyScreen({
               <article key={`full-commentary-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                 <p className="text-sm font-semibold text-[var(--green)]">{entry.resource_title}</p>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.author}</p>
+                <p className="mt-2 text-xs font-semibold text-[var(--muted)]">
+                  {entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}`}
+                </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
+                {entry.recommended_use && (
+                  <p className="mt-3 rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    Recommended use: {entry.recommended_use}
+                  </p>
+                )}
                 <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{entry.public_domain_status || "Public-domain status pending review."}</p>
               </article>
             ))}
@@ -8470,9 +8412,9 @@ function StudyDrawer({
           {activeTab === "commentary" && (
             <div className="space-y-3">
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
-                <h3 className="text-sm font-semibold text-[var(--green)]">Commentary placeholder</h3>
+                <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                  The table and drawer tab are ready for verified public-domain commentary imports. Full commentary content is intentionally not imported yet.
+                  Verified Phase 1 entries appear here after Scripture, Webster, TSK, and curated connections. Commentary stays secondary to the Bible text.
                 </p>
                 <label className="mt-4 block text-sm font-semibold text-[var(--muted)]">
                   Resource
@@ -8502,11 +8444,22 @@ function StudyDrawer({
                       {entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}
                     </p>
                     <p className="mt-3 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
+                    {entry.recommended_use && (
+                      <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                        Recommended use: {entry.recommended_use}
+                      </p>
+                    )}
                     <dl className="mt-3 space-y-2 text-xs leading-5 text-[var(--muted)]">
                       <div>
                         <dt className="font-semibold text-[var(--ink)]">Public-domain status</dt>
                         <dd>{entry.public_domain_status}</dd>
                       </div>
+                      {entry.rights_basis && (
+                        <div>
+                          <dt className="font-semibold text-[var(--ink)]">Rights basis</dt>
+                          <dd>{entry.rights_basis}</dd>
+                        </div>
+                      )}
                       <div>
                         <dt className="font-semibold text-[var(--ink)]">Source</dt>
                         <dd>{entry.source_url || "Source URL not added yet."}</dd>

@@ -1,14 +1,18 @@
 [
   {
+    "id": "matthew-henry-john-3",
+    "reference": "John 3",
     "book": "John",
     "chapter": 3,
-    "verse_start": 16,
-    "verse_end": 16,
-    "author": "H. A. Ironside",
-    "resource_title": "John Commentary Placeholder",
-    "entry_text": "Placeholder only. Verify public-domain status and source terms before importing full text.",
-    "public_domain_status": "Placeholder; verify source before importing full text.",
-    "source_url": "",
-    "source_title": "H. A. Ironside placeholder"
+    "verse_start": 1,
+    "verse_end": 36,
+    "author": "Matthew Henry",
+    "resource_title": "Matthew Henry's Commentary on the Whole Bible",
+    "source_title": "Matthew Henry's Commentary on the Whole Bible",
+    "entry_text": "Curated commentary text or summary tied to this Bible passage.",
+    "public_domain_status": "Public domain. Original work published 1706-1721; Matthew Henry died in 1714.",
+    "rights_basis": "Document the exact public-domain source and avoid modern edited editions until reviewed.",
+    "recommended_use": "Use after reading the KJV passage and reviewed study helps.",
+    "source_url": "https://www.ccel.org/ccel/henry/mhc.html"
   }
 ]

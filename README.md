@@ -383,17 +383,19 @@ Use this before importing anything beyond the current verified samples.
 
 ### First commentary import
 
-- Current first commentary collection path: `data/commentary/expositors-bible-john/`.
-- Source: Marcus Dods, `The Expositor's Bible: The Gospel of St. John, Volume I`, Project Gutenberg ebook 33151.
-- Import only this one commentary collection until the workflow is proven.
-- Confirm each entry has author, resource title, verse range, public-domain status, and source URL.
+- Current first commentary collection path: `data/commentary/matthew-henry/`.
+- Source: Matthew Henry, `Matthew Henry's Commentary on the Whole Bible`, CCEL source index with Wikisource public-domain rights verification.
+- Rights review: `COMMENTARY_RIGHTS_REVIEW.md`.
+- Import only this one active commentary collection until the workflow is proven.
+- Confirm each entry has reference, author, resource title, verse range, public-domain status, source URL, rights basis, and recommended use.
 - Keep commentary brief in the drawer; use the Full Study view for deeper reading.
 - Do not import unclear, modern, or copyrighted commentary content.
 
-Dry-run the first sample:
+Validate and dry-run the Phase 1 sample:
 
 ```bash
-npm run import:commentary -- data/commentary/expositors-bible-john/john-3-sample.json --dry-run
+npm run validate:commentary -- data/imports/matthew-henry-phase-1-commentary.json
+npm run import:commentary -- data/imports/matthew-henry-phase-1-commentary.json --dry-run
 ```
 
 ### Source rights verification
