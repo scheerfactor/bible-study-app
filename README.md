@@ -16,6 +16,7 @@ A first working prototype for a mobile-first KJV Bible study app.
 - Commentary tab with the first public-domain commentary collection path
 - Import scripts for Webster's 1828 entries, TSK cross references, and commentary entries
 - Browser/device Text-to-Speech for Bible chapters, selected verses, and library resources
+- Local Bible Listen Mode with chapter/range/book listening and simple playlist planning
 - Local Library Reader controls for progress, completed books, reading settings, and listening position
 - Search results highlight matched words/phrases
 - Signed-out notes, highlights, and bookmarks persist in local storage
@@ -180,6 +181,11 @@ Library reader data is local-storage first for beta testing. The schema now rese
 - `user_library_progress`
 - `user_completed_resources`
 - `user_listening_progress`
+
+Bible audio playlists are also local-storage first. Current local keys:
+
+- `fathers-business-bible-listening-progress`
+- `fathers-business-bible-audio-playlists`
 
 The app currently uses:
 

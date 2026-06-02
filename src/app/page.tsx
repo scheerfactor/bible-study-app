@@ -18,6 +18,7 @@ import {
   Highlighter,
   Home as HomeIcon,
   Library,
+  ListMusic,
   Link,
   LogOut,
   MessageSquareText,
@@ -27,6 +28,7 @@ import {
   Search,
   Settings,
   Share2,
+  Save,
   Star,
   Timer,
   Volume2,
@@ -170,6 +172,36 @@ type ListeningProgress = {
 
 type ListeningProgressState = Record<string, ListeningProgress>;
 
+type BibleListeningProgress = {
+  targetId: string;
+  label: string;
+  book: string;
+  chapter: number;
+  verseRef: string | null;
+  progress: number;
+  updatedAt: string;
+};
+
+type BiblePlaylistItemType = "bible_chapter" | "bible_verse_range" | "commentary_placeholder" | "library_placeholder" | "notes_placeholder";
+
+type BiblePlaylistItem = {
+  id: string;
+  type: BiblePlaylistItemType;
+  label: string;
+  book?: string;
+  chapter?: number;
+  verseStart?: number;
+  verseEnd?: number;
+  resourceTitle?: string;
+};
+
+type BibleAudioPlaylist = {
+  id: string;
+  name: string;
+  items: BiblePlaylistItem[];
+  createdAt: string;
+};
+
 type SpeechState = {
   targetId: string | null;
   label: string;
@@ -185,6 +217,8 @@ const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
+const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
+const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -747,6 +781,82 @@ function saveListeningProgress(state: ListeningProgressState) {
   window.localStorage.setItem(LIBRARY_LISTENING_KEY, JSON.stringify(state));
 }
 
+function defaultBiblePlaylist(): BibleAudioPlaylist {
+  return {
+    id: "playlist_john_3_study",
+    name: "John 3 Study Flow",
+    createdAt: new Date().toISOString(),
+    items: [
+      {
+        id: "john-3-chapter",
+        type: "bible_chapter",
+        label: "John 3 Bible chapter",
+        book: "John",
+        chapter: 3,
+      },
+      {
+        id: "john-3-commentary-placeholder",
+        type: "commentary_placeholder",
+        label: "John 3 commentary placeholder",
+        book: "John",
+        chapter: 3,
+      },
+      {
+        id: "john-3-library-placeholder",
+        type: "library_placeholder",
+        label: "Related library reading placeholder",
+        resourceTitle: "Future related reading",
+      },
+      {
+        id: "john-3-notes-placeholder",
+        type: "notes_placeholder",
+        label: "Personal notes",
+        book: "John",
+        chapter: 3,
+      },
+    ],
+  };
+}
+
+function loadBibleListeningProgress(): BibleListeningProgress | null {
+  if (typeof window === "undefined") return null;
+
+  try {
+    const raw = window.localStorage.getItem(BIBLE_LISTENING_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as BibleListeningProgress;
+  } catch {
+    return null;
+  }
+}
+
+function saveBibleListeningProgress(progress: BibleListeningProgress | null) {
+  if (typeof window === "undefined") return;
+  if (!progress) {
+    window.localStorage.removeItem(BIBLE_LISTENING_KEY);
+    return;
+  }
+  window.localStorage.setItem(BIBLE_LISTENING_KEY, JSON.stringify(progress));
+}
+
+function loadBiblePlaylists(): BibleAudioPlaylist[] {
+  if (typeof window === "undefined") return [defaultBiblePlaylist()];
+
+  try {
+    const raw = window.localStorage.getItem(BIBLE_PLAYLISTS_KEY);
+    if (!raw) return [defaultBiblePlaylist()];
+    const parsed = JSON.parse(raw) as BibleAudioPlaylist[];
+    return Array.isArray(parsed) && parsed.length ? parsed : [defaultBiblePlaylist()];
+  } catch {
+    return [defaultBiblePlaylist()];
+  }
+}
+
+function saveBiblePlaylists(playlists: BibleAudioPlaylist[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(BIBLE_PLAYLISTS_KEY, JSON.stringify(playlists));
+}
+
 function chunkSpeechText(text: string) {
   const paragraphs = text
     .replace(/\s+/g, " ")
@@ -771,6 +881,10 @@ function chunkSpeechText(text: string) {
 
 function formatPercent(value: number) {
   return `${Math.max(0, Math.min(100, Math.round(value)))}%`;
+}
+
+function versesMax(verses: BibleVerse[]) {
+  return Math.max(1, verses.at(-1)?.verse ?? verses.length);
 }
 
 function testamentForBook(book: string): Exclude<TestamentFilter, "all"> {
@@ -857,6 +971,15 @@ export default function Home() {
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
+  const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
+  const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
+  const [playlistName, setPlaylistName] = useState("Morning Bible Listening");
+  const [listenRangeStart, setListenRangeStart] = useState(1);
+  const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
+  const [repeatChapter, setRepeatChapter] = useState(false);
+  const [repeatBook, setRepeatBook] = useState(false);
+  const [stopAfterSelection, setStopAfterSelection] = useState(true);
+  const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false);
   const [libraryFontSize, setLibraryFontSize] = useState(18);
   const [speechState, setSpeechState] = useState<SpeechState>({
     targetId: null,
@@ -870,9 +993,11 @@ export default function Home() {
   });
   const libraryReaderRef = useRef<HTMLDivElement | null>(null);
   const speechChunksRef = useRef<string[]>([]);
+  const speechVerseRefsRef = useRef<Array<string | null>>([]);
   const speechIndexRef = useRef(0);
   const speechRateRef = useRef(1);
   const speechProgressRef = useRef<((progress: number) => void) | null>(null);
+  const speechCompleteRef = useRef<(() => void) | null>(null);
   const speechCancelledRef = useRef(false);
   const sleepTimerRef = useRef<number | null>(null);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
@@ -1036,6 +1161,14 @@ export default function Home() {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
       setListeningProgress(loadListeningProgress());
+      setBibleListeningProgress(loadBibleListeningProgress());
+      setBiblePlaylists(loadBiblePlaylists());
+    });
+  }, []);
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setHasSpeechSynthesis(typeof window !== "undefined" && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window);
     });
   }, []);
 
@@ -1407,11 +1540,23 @@ export default function Home() {
     if (index >= chunks.length) {
       setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
       speechProgressRef.current?.(100);
+      speechCompleteRef.current?.();
       return;
     }
 
     const utterance = new SpeechSynthesisUtterance(chunks[index]);
     utterance.rate = speechRateRef.current;
+    utterance.onstart = () => {
+      const verseRef = speechVerseRefsRef.current[index];
+      if (!verseRef) return;
+      setSelectedRef(verseRef);
+      setFlashRef(verseRef);
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+      flashTimerRef.current = setTimeout(() => setFlashRef(null), 1400);
+      window.requestAnimationFrame(() => {
+        selectedVerseRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
+    };
     utterance.onend = () => {
       if (speechCancelledRef.current) return;
       speechIndexRef.current += 1;
@@ -1427,13 +1572,24 @@ export default function Home() {
     window.speechSynthesis.speak(utterance);
   }
 
-  function startSpeech(targetId: string, label: string, text: string, startProgress = 0, onProgress?: (progress: number) => void) {
+  function startSpeech(
+    targetId: string,
+    label: string,
+    text: string,
+    startProgress = 0,
+    onProgress?: (progress: number) => void,
+    options?: {
+      chunks?: string[];
+      verseRefs?: Array<string | null>;
+      onComplete?: () => void;
+    },
+  ) {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
       setSyncMessage("Text-to-speech is not available in this browser.");
       return;
     }
 
-    const chunks = chunkSpeechText(text);
+    const chunks = options?.chunks ?? chunkSpeechText(text);
     if (!chunks.length) {
       setSyncMessage("No readable text is available for audio yet.");
       return;
@@ -1447,8 +1603,10 @@ export default function Home() {
       sleepTimerRef.current = null;
     }
     speechChunksRef.current = chunks;
+    speechVerseRefsRef.current = options?.verseRefs ?? [];
     speechIndexRef.current = Math.min(chunks.length - 1, Math.max(0, Math.floor((startProgress / 100) * chunks.length)));
     speechProgressRef.current = onProgress ?? null;
+    speechCompleteRef.current = options?.onComplete ?? null;
     setSpeechState((state) => ({
       ...state,
       targetId,
@@ -1472,6 +1630,7 @@ export default function Home() {
       window.clearTimeout(sleepTimerRef.current);
       sleepTimerRef.current = null;
     }
+    speechCompleteRef.current = null;
     setSpeechState((state) => ({
       ...state,
       playing: false,
@@ -1535,6 +1694,121 @@ export default function Home() {
 
   function bibleSpeechText(verses: BibleVerse[]) {
     return verses.map((verse) => `${verse.ref}. ${verse.plainText}`).join(" ");
+  }
+
+  function saveBibleProgress(targetId: string, label: string, verses: BibleVerse[], progress: number) {
+    const safeProgress = Math.min(100, Math.max(0, progress));
+    const currentIndex = Math.min(verses.length - 1, Math.max(0, Math.floor((safeProgress / 100) * verses.length)));
+    const currentVerse = verses[currentIndex] ?? verses.at(-1) ?? null;
+    const nextProgress: BibleListeningProgress = {
+      targetId,
+      label,
+      book: currentVerse?.book ?? book,
+      chapter: currentVerse?.chapter ?? chapter,
+      verseRef: currentVerse?.ref ?? null,
+      progress: safeProgress,
+      updatedAt: new Date().toISOString(),
+    };
+    setBibleListeningProgress(nextProgress);
+    saveBibleListeningProgress(nextProgress);
+  }
+
+  function startBibleListening(verses: BibleVerse[], label: string, targetId: string, repeat = false, startProgress?: number) {
+    if (!verses.length) {
+      setSyncMessage("No Bible text is available for that listening selection.");
+      return;
+    }
+
+    const chunks = verses.map((verse) => `${verse.ref}. ${verse.plainText}`);
+    const verseRefs = verses.map((verse) => verse.ref);
+    const savedStart = startProgress ?? (bibleListeningProgress?.targetId === targetId ? bibleListeningProgress.progress : 0);
+
+    startSpeech(
+      targetId,
+      label,
+      bibleSpeechText(verses),
+      savedStart,
+      (nextProgress) => saveBibleProgress(targetId, label, verses, nextProgress),
+      {
+        chunks,
+        verseRefs,
+        onComplete: repeat ? () => startBibleListening(verses, label, targetId, true, 0) : undefined,
+      },
+    );
+  }
+
+  function listenCurrentChapter() {
+    startBibleListening(chapterVerses, `${book} ${chapter}`, `bible-chapter-${book}-${chapter}`, repeatChapter);
+  }
+
+  function listenFromCurrentVerse() {
+    const selectedVerse = allVerses.find((verse) => verse.ref === selectedRef);
+    const startVerse = selectedVerse?.book === book && selectedVerse.chapter === chapter ? selectedVerse.verse : verseJump;
+    const verses = chapterVerses.filter((verse) => verse.verse >= startVerse);
+    startBibleListening(verses, `${book} ${chapter}:${startVerse} onward`, `bible-from-${book}-${chapter}-${startVerse}`);
+  }
+
+  function listenSelectedRange() {
+    const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
+    const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
+    const start = Math.min(safeStart, safeEnd);
+    const end = Math.max(safeStart, safeEnd);
+    const verses = chapterVerses.filter((verse) => verse.verse >= start && verse.verse <= end);
+    startBibleListening(verses, `${book} ${chapter}:${start}-${end}`, `bible-range-${book}-${chapter}-${start}-${end}`);
+  }
+
+  function listenWholeBook() {
+    const verses = allVerses.filter((verse) => verse.book === book);
+    startBibleListening(verses, `${book}`, `bible-book-${book}`, repeatBook);
+  }
+
+  function createBiblePlaylist() {
+    const trimmed = playlistName.trim() || `${book} ${chapter} Listening`;
+    const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
+    const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
+    const start = Math.min(safeStart, safeEnd);
+    const end = Math.max(safeStart, safeEnd);
+    const nextPlaylist: BibleAudioPlaylist = {
+      id: makeId("playlist"),
+      name: trimmed,
+      createdAt: new Date().toISOString(),
+      items: [
+        {
+          id: makeId("playlist_item"),
+          type: "bible_chapter",
+          label: `${book} ${chapter}`,
+          book,
+          chapter,
+        },
+        {
+          id: makeId("playlist_item"),
+          type: "bible_verse_range",
+          label: `${book} ${chapter}:${start}-${end}`,
+          book,
+          chapter,
+          verseStart: start,
+          verseEnd: end,
+        },
+        {
+          id: makeId("playlist_item"),
+          type: "commentary_placeholder",
+          label: `${book} ${chapter} commentary placeholder`,
+          book,
+          chapter,
+        },
+        {
+          id: makeId("playlist_item"),
+          type: "library_placeholder",
+          label: "Related library reading placeholder",
+        },
+      ],
+    };
+    setBiblePlaylists((current) => {
+      const next = [nextPlaylist, ...current].slice(0, 12);
+      saveBiblePlaylists(next);
+      return next;
+    });
+    setSyncMessage(`Playlist "${trimmed}" saved locally.`);
   }
 
   function jumpToVerse() {
@@ -1917,23 +2191,16 @@ export default function Home() {
             </button>
             <button
               className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
-              onClick={() =>
-                toggleSpeech(
-                  `bible-${book}-${chapter}`,
-                  `${book} ${chapter}`,
-                  bibleSpeechText(chapterVerses),
-                  0,
-                )
-              }
+              onClick={listenCurrentChapter}
               type="button"
               title="Listen to current chapter"
             >
-              {speechState.targetId === `bible-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
+              {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
                 <Pause size={17} />
               ) : (
                 <Headphones size={17} />
               )}
-              {speechState.targetId === `bible-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
+              {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
             </button>
           </div>
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
@@ -2001,12 +2268,35 @@ export default function Home() {
                 notesByRef={notesByRef}
                 bookmarksByRef={bookmarksByRef}
                 selectedVerseRef={selectedVerseRef}
+                speechState={speechState}
+                bibleListeningProgress={bibleListeningProgress}
+                listenRangeStart={listenRangeStart}
+                listenRangeEnd={listenRangeEnd}
+                repeatChapter={repeatChapter}
+                repeatBook={repeatBook}
+                stopAfterSelection={stopAfterSelection}
+                hasSpeechSynthesis={hasSpeechSynthesis}
+                playlists={biblePlaylists}
+                playlistName={playlistName}
+                listenStatusMessage={syncMessage}
                 onBookChange={selectBook}
                 onChapterChange={selectChapter}
                 onVerseJumpChange={setVerseJump}
                 onJump={jumpToVerse}
                 onPrevious={() => goChapter(-1)}
                 onNext={() => goChapter(1)}
+                onListenCurrentChapter={listenCurrentChapter}
+                onListenFromCurrentVerse={listenFromCurrentVerse}
+                onListenRange={listenSelectedRange}
+                onListenWholeBook={listenWholeBook}
+                onStopListening={() => stopSpeech()}
+                onListenRangeStartChange={setListenRangeStart}
+                onListenRangeEndChange={setListenRangeEnd}
+                onRepeatChapterChange={setRepeatChapter}
+                onRepeatBookChange={setRepeatBook}
+                onStopAfterSelectionChange={setStopAfterSelection}
+                onPlaylistNameChange={setPlaylistName}
+                onCreatePlaylist={createBiblePlaylist}
                 onVerseClick={(ref) => {
                   setSelectedRef(ref);
                   openStudyDrawer(ref);
@@ -2347,12 +2637,35 @@ function BibleReader({
   notesByRef,
   bookmarksByRef,
   selectedVerseRef,
+  speechState,
+  bibleListeningProgress,
+  listenRangeStart,
+  listenRangeEnd,
+  repeatChapter,
+  repeatBook,
+  stopAfterSelection,
+  hasSpeechSynthesis,
+  playlists,
+  playlistName,
+  listenStatusMessage,
   onBookChange,
   onChapterChange,
   onVerseJumpChange,
   onJump,
   onPrevious,
   onNext,
+  onListenCurrentChapter,
+  onListenFromCurrentVerse,
+  onListenRange,
+  onListenWholeBook,
+  onStopListening,
+  onListenRangeStartChange,
+  onListenRangeEndChange,
+  onRepeatChapterChange,
+  onRepeatBookChange,
+  onStopAfterSelectionChange,
+  onPlaylistNameChange,
+  onCreatePlaylist,
   onVerseClick,
   onWordClick,
 }: {
@@ -2370,15 +2683,40 @@ function BibleReader({
   notesByRef: Map<string, UserNote[]>;
   bookmarksByRef: Map<string, UserBookmark>;
   selectedVerseRef: React.MutableRefObject<HTMLDivElement | null>;
+  speechState: SpeechState;
+  bibleListeningProgress: BibleListeningProgress | null;
+  listenRangeStart: number;
+  listenRangeEnd: number;
+  repeatChapter: boolean;
+  repeatBook: boolean;
+  stopAfterSelection: boolean;
+  hasSpeechSynthesis: boolean;
+  playlists: BibleAudioPlaylist[];
+  playlistName: string;
+  listenStatusMessage: string;
   onBookChange: (book: string) => void;
   onChapterChange: (chapter: number) => void;
   onVerseJumpChange: (verse: number) => void;
   onJump: () => void;
   onPrevious: () => void;
   onNext: () => void;
+  onListenCurrentChapter: () => void;
+  onListenFromCurrentVerse: () => void;
+  onListenRange: () => void;
+  onListenWholeBook: () => void;
+  onStopListening: () => void;
+  onListenRangeStartChange: (verse: number) => void;
+  onListenRangeEndChange: (verse: number) => void;
+  onRepeatChapterChange: (repeat: boolean) => void;
+  onRepeatBookChange: (repeat: boolean) => void;
+  onStopAfterSelectionChange: (stop: boolean) => void;
+  onPlaylistNameChange: (name: string) => void;
+  onCreatePlaylist: () => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
+  const bibleSpeechActive = speechState.targetId?.startsWith("bible-") && speechState.playing;
+  const selectedVerseNumber = Number(selectedRef.split(":")[1] ?? verseJump);
   return (
     <div className="space-y-4 p-4 md:p-8">
       <section className="rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm md:rounded-3xl md:p-4">
@@ -2450,6 +2788,136 @@ function BibleReader({
             <ChevronRight size={16} />
           </button>
           <p className="hidden text-sm font-semibold text-[var(--muted)] md:block">{book} {chapter}</p>
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Listen Mode</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Bible audio playlist planning</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Uses this device&apos;s built-in speech for now. The playlist structure leaves room for future licensed KJV audio files.
+            </p>
+          </div>
+          {bibleListeningProgress && (
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--muted)]">
+              <p className="text-[var(--green)]">{bibleListeningProgress.label}</p>
+              <p>{formatPercent(bibleListeningProgress.progress)} listened</p>
+            </div>
+          )}
+        </div>
+
+        {!hasSpeechSynthesis && (
+          <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+            Text-to-speech is not available in this browser. Bible audio will use device speech when the browser supports it.
+          </p>
+        )}
+
+        <div className="mt-4 grid gap-2 md:grid-cols-4">
+          <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white" onClick={onListenCurrentChapter} type="button">
+            {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? <Pause size={16} /> : <Play size={16} />}
+            Current Chapter
+          </button>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onListenFromCurrentVerse} type="button">
+            <Headphones size={16} />
+            From Verse {Number.isFinite(selectedVerseNumber) ? selectedVerseNumber : verseJump}
+          </button>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onListenRange} type="button">
+            <ListMusic size={16} />
+            Selected Range
+          </button>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onListenWholeBook} type="button">
+            <BookOpen size={16} />
+            Whole Book
+          </button>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
+          <div className="grid grid-cols-2 gap-2">
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Range start
+              <input
+                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]"
+                max={verses.length}
+                min={1}
+                onChange={(event) => onListenRangeStartChange(Number(event.target.value))}
+                type="number"
+                value={listenRangeStart}
+              />
+            </label>
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Range end
+              <input
+                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]"
+                max={verses.length}
+                min={1}
+                onChange={(event) => onListenRangeEndChange(Number(event.target.value))}
+                type="number"
+                value={listenRangeEnd}
+              />
+            </label>
+          </div>
+
+          <div className="grid gap-2 text-sm font-semibold text-[var(--muted)]">
+            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+              <input checked={repeatChapter} onChange={(event) => onRepeatChapterChange(event.target.checked)} type="checkbox" />
+              Repeat chapter
+            </label>
+            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+              <input checked={repeatBook} onChange={(event) => onRepeatBookChange(event.target.checked)} type="checkbox" />
+              Repeat book
+            </label>
+            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+              <input checked={stopAfterSelection} onChange={(event) => onStopAfterSelectionChange(event.target.checked)} type="checkbox" />
+              Stop after chapter/range
+            </label>
+          </div>
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Playlist name
+              <input
+                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
+                onChange={(event) => onPlaylistNameChange(event.target.value)}
+                value={playlistName}
+              />
+            </label>
+            <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white" onClick={onCreatePlaylist} type="button">
+              <Save size={16} />
+              Create Playlist
+            </button>
+          </div>
+        </div>
+
+        {bibleSpeechActive && (
+          <button className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+            <Square size={15} />
+            Stop Bible Audio
+          </button>
+        )}
+        {listenStatusMessage && (
+          <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+            {listenStatusMessage}
+          </p>
+        )}
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {playlists.slice(0, 4).map((playlist) => (
+            <article key={playlist.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex items-center gap-2 text-[var(--green)]">
+                <ListMusic size={17} />
+                <h3 className="text-sm font-semibold">{playlist.name}</h3>
+              </div>
+              <div className="mt-3 space-y-2">
+                {playlist.items.map((item) => (
+                  <p key={item.id} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                    {item.label}
+                  </p>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
