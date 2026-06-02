@@ -33,13 +33,15 @@ import {
   Save,
   Star,
   Timer,
+  Users,
   Volume2,
   X,
+  MapPin,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -233,6 +235,59 @@ type WordExplorerResult = {
   chapterOccurrences: BibleVerse[];
   bookOccurrences: BibleVerse[];
   bibleOccurrences: BibleVerse[];
+};
+
+type StudyPerson = {
+  id: string;
+  name: string;
+  description: string;
+  firstAppearance: string;
+  majorPassages: string[];
+  keyEvents: string[];
+  relatedVerses: string[];
+};
+
+type StudyPlace = {
+  id: string;
+  name: string;
+  description: string;
+  relatedPassages: string[];
+  mapNote: string;
+};
+
+type ChristTypeConnection = {
+  id: string;
+  title: string;
+  description: string;
+  pointsToChrist: string;
+  keyReferences: string[];
+  fulfillmentReferences: string[];
+};
+
+type ProphecyConnection = {
+  id: string;
+  prophecy: string;
+  fulfillment: string;
+  description: string;
+  relatedVerses: string[];
+};
+
+type ChapterConnections = {
+  book: string;
+  chapter: number;
+  peopleIds: string[];
+  placeIds: string[];
+  typeIds: string[];
+  prophecyIds: string[];
+  themes: string[];
+};
+
+type ActiveChapterConnections = {
+  people: StudyPerson[];
+  places: StudyPlace[];
+  types: ChristTypeConnection[];
+  prophecies: ProphecyConnection[];
+  themes: string[];
 };
 
 type SpeechState = {
@@ -581,6 +636,187 @@ const localCommentaryEntries: CommentaryEntry[] = [
       "Dods frames faith as the simple but decisive response to God's appointed remedy, comparing it to looking at the serpent in the wilderness as an act of trust.",
     public_domain_status: "Project Gutenberg public-domain ebook in the United States; summarized sample from lines 3383-3417.",
     source_url: "https://www.gutenberg.org/ebooks/33151",
+  },
+];
+
+const studyPeople: StudyPerson[] = [
+  {
+    id: "jesus",
+    name: "Jesus",
+    description:
+      "The Son of God and Saviour. In John 3 He teaches Nicodemus about the new birth, faith, and everlasting life.",
+    firstAppearance: "Matthew 1:1",
+    majorPassages: ["John 1", "John 3", "John 19", "John 20"],
+    keyEvents: ["Teaches Nicodemus", "Speaks of being lifted up", "Reveals God's love in giving His only begotten Son"],
+    relatedVerses: ["John 3:3", "John 3:14", "John 3:16", "John 3:17"],
+  },
+  {
+    id: "nicodemus",
+    name: "Nicodemus",
+    description:
+      "A ruler of the Jews who came to Jesus by night and heard the Lord's teaching on being born again.",
+    firstAppearance: "John 3:1",
+    majorPassages: ["John 3", "John 7", "John 19"],
+    keyEvents: ["Comes to Jesus by night", "Asks about the new birth", "Later speaks cautiously for just judgment", "Helps with the burial of Jesus"],
+    relatedVerses: ["John 3:1", "John 3:4", "John 7:50", "John 19:39"],
+  },
+  {
+    id: "john-baptist",
+    name: "John the Baptist",
+    description:
+      "The forerunner who bore witness to Christ. John 3 records his joy that Christ must increase.",
+    firstAppearance: "Matthew 3:1",
+    majorPassages: ["Matthew 3", "John 1", "John 3"],
+    keyEvents: ["Preaches repentance", "Baptizes in Jordan", "Bears witness that Jesus is the Christ", "Says Christ must increase"],
+    relatedVerses: ["John 1:6", "John 1:29", "John 3:27", "John 3:30"],
+  },
+  {
+    id: "moses",
+    name: "Moses",
+    description:
+      "The prophet and leader of Israel. John 3 refers to Moses lifting up the serpent in the wilderness.",
+    firstAppearance: "Exodus 2:1",
+    majorPassages: ["Exodus 2", "Exodus 12", "Numbers 21", "Deuteronomy 18"],
+    keyEvents: ["Delivered Israel from Egypt", "Received the law", "Lifted up the brazen serpent in the wilderness"],
+    relatedVerses: ["Numbers 21:8", "Numbers 21:9", "Deuteronomy 18:15", "John 3:14"],
+  },
+];
+
+const studyPlaces: StudyPlace[] = [
+  {
+    id: "jerusalem",
+    name: "Jerusalem",
+    description:
+      "The chief city of the Jews. John 3 follows the Passover setting in Jerusalem where many saw the Lord's miracles.",
+    relatedPassages: ["John 2:23", "John 3:1", "John 7:50"],
+    mapNote: "Map placeholder: future Bible map layer for Jerusalem and Judea.",
+  },
+  {
+    id: "judea",
+    name: "Judea",
+    description:
+      "The region where Jesus and His disciples came after His conversation with Nicodemus.",
+    relatedPassages: ["John 3:22"],
+    mapNote: "Map placeholder: future Bible map layer for Judea.",
+  },
+  {
+    id: "aenon-salim",
+    name: "Aenon near Salim",
+    description:
+      "A place where John was baptizing because there was much water there.",
+    relatedPassages: ["John 3:23"],
+    mapNote: "Map placeholder: future map marker for Aenon near Salim.",
+  },
+  {
+    id: "jordan-river",
+    name: "Jordan River",
+    description:
+      "A river connected with John's baptism ministry and the public witness to Christ.",
+    relatedPassages: ["Matthew 3:13", "John 1:28", "John 3:26"],
+    mapNote: "Map placeholder: future Bible map layer for Jordan River baptism sites.",
+  },
+  {
+    id: "bethlehem",
+    name: "Bethlehem",
+    description:
+      "The prophesied birthplace of Christ, included here as a reviewed prophecy-place connection.",
+    relatedPassages: ["Micah 5:2", "Matthew 2:1", "Luke 2:4"],
+    mapNote: "Map placeholder: future Bible map layer for Bethlehem.",
+  },
+];
+
+const christTypes: ChristTypeConnection[] = [
+  {
+    id: "adam",
+    title: "Adam",
+    description: "The first man, whose history sets the background for mankind's need.",
+    pointsToChrist: "The New Testament contrasts Adam with Christ as the last Adam.",
+    keyReferences: ["Genesis 2:7", "Genesis 3:6"],
+    fulfillmentReferences: ["Romans 5:14", "1 Corinthians 15:45"],
+  },
+  {
+    id: "noahs-ark",
+    title: "Noah's Ark",
+    description: "The ark was the place of safety from judgment in Noah's day.",
+    pointsToChrist: "It pictures safety provided by God from coming judgment.",
+    keyReferences: ["Genesis 6:14", "Genesis 7:1"],
+    fulfillmentReferences: ["1 Peter 3:20", "Hebrews 11:7"],
+  },
+  {
+    id: "isaac",
+    title: "Isaac",
+    description: "Abraham's son, offered in obedience and received back in figure.",
+    pointsToChrist: "The beloved son language and sacrifice pattern point forward to the giving of God's Son.",
+    keyReferences: ["Genesis 22:2", "Genesis 22:13"],
+    fulfillmentReferences: ["John 3:16", "Hebrews 11:17"],
+  },
+  {
+    id: "joseph",
+    title: "Joseph",
+    description: "Rejected by his brethren, yet used of God to preserve life.",
+    pointsToChrist: "His humiliation and later exaltation have long been studied as a type pointing to Christ.",
+    keyReferences: ["Genesis 37:28", "Genesis 45:5"],
+    fulfillmentReferences: ["Acts 7:9", "Acts 7:13"],
+  },
+  {
+    id: "passover-lamb",
+    title: "Passover Lamb",
+    description: "The lamb slain at Passover when Israel was delivered from Egypt.",
+    pointsToChrist: "The New Testament identifies Christ as our passover.",
+    keyReferences: ["Exodus 12:5", "Exodus 12:13"],
+    fulfillmentReferences: ["John 1:29", "1 Corinthians 5:7"],
+  },
+  {
+    id: "brazen-serpent",
+    title: "Brazen Serpent",
+    description: "A serpent of brass lifted up by Moses in the wilderness.",
+    pointsToChrist: "John 3 directly connects Moses lifting up the serpent with the Son of man being lifted up.",
+    keyReferences: ["Numbers 21:8", "Numbers 21:9"],
+    fulfillmentReferences: ["John 3:14", "John 3:15", "John 12:32"],
+  },
+  {
+    id: "tabernacle",
+    title: "Tabernacle",
+    description: "The dwelling place and worship system God gave Israel in the wilderness.",
+    pointsToChrist: "The New Testament connects Christ with God's dwelling among men and the way of access to God.",
+    keyReferences: ["Exodus 25:8", "Exodus 26:33"],
+    fulfillmentReferences: ["John 1:14", "Hebrews 9:11"],
+  },
+];
+
+const prophecyConnections: ProphecyConnection[] = [
+  {
+    id: "isaiah-53",
+    prophecy: "Isaiah 53",
+    fulfillment: "Fulfilled in Christ",
+    description: "A reviewed connection for the suffering, substitution, and exaltation of Christ.",
+    relatedVerses: ["Isaiah 53:5", "John 3:14", "1 Peter 2:24"],
+  },
+  {
+    id: "micah-5-2",
+    prophecy: "Micah 5:2",
+    fulfillment: "Bethlehem",
+    description: "The ruler in Israel would come from Bethlehem.",
+    relatedVerses: ["Micah 5:2", "Matthew 2:1", "Matthew 2:6"],
+  },
+  {
+    id: "psalm-22",
+    prophecy: "Psalm 22",
+    fulfillment: "Crucifixion",
+    description: "A reviewed connection for the suffering of Christ at the cross.",
+    relatedVerses: ["Psalm 22:1", "Psalm 22:18", "John 19:24"],
+  },
+];
+
+const chapterConnections: ChapterConnections[] = [
+  {
+    book: "John",
+    chapter: 3,
+    peopleIds: ["jesus", "nicodemus", "john-baptist", "moses"],
+    placeIds: ["jerusalem", "judea", "aenon-salim", "jordan-river", "bethlehem"],
+    typeIds: ["brazen-serpent"],
+    prophecyIds: ["isaiah-53", "micah-5-2", "psalm-22"],
+    themes: ["New birth", "Faith", "God's love", "Everlasting life", "Witness", "Light and darkness"],
   },
 ];
 
@@ -1177,6 +1413,7 @@ export default function Home() {
   const [activeDictionaryEntry, setActiveDictionaryEntry] = useState<DictionaryEntry | null>(null);
   const [studyRef, setStudyRef] = useState<string | null>(null);
   const [fullStudyRef, setFullStudyRef] = useState<string | null>(null);
+  const [activePersonId, setActivePersonId] = useState<string | null>(null);
   const [studyTab, setStudyTab] = useState<StudyDrawerTab>("study");
   const [noteDraft, setNoteDraft] = useState("");
   const [saved, setSaved] = useState<SavedState>({ notes: [], highlights: [], bookmarks: [] });
@@ -1378,6 +1615,30 @@ export default function Home() {
     () => new Map(saved.bookmarks.map((bookmark) => [bookmark.verse_ref, bookmark])),
     [saved.bookmarks],
   );
+
+  const peopleById = useMemo(() => new Map(studyPeople.map((person) => [person.id, person])), []);
+  const placesById = useMemo(() => new Map(studyPlaces.map((place) => [place.id, place])), []);
+  const typesById = useMemo(() => new Map(christTypes.map((type) => [type.id, type])), []);
+  const propheciesById = useMemo(() => new Map(prophecyConnections.map((prophecy) => [prophecy.id, prophecy])), []);
+
+  const activeChapterConnections = useMemo<ActiveChapterConnections>(() => {
+    const connection = chapterConnections.find((item) => item.book === book && item.chapter === chapter);
+    const resolve = <T,>(ids: string[], source: Map<string, T>) =>
+      ids.flatMap((id) => {
+        const item = source.get(id);
+        return item ? [item] : [];
+      });
+
+    return {
+      people: resolve(connection?.peopleIds ?? [], peopleById),
+      places: resolve(connection?.placeIds ?? [], placesById),
+      types: resolve(connection?.typeIds ?? [], typesById),
+      prophecies: resolve(connection?.prophecyIds ?? [], propheciesById),
+      themes: connection?.themes ?? [],
+    };
+  }, [book, chapter, peopleById, placesById, propheciesById, typesById]);
+
+  const activePerson = activePersonId ? peopleById.get(activePersonId) ?? null : null;
 
   const chapterCrossReferences = useMemo(
     () => crossReferences.filter((reference) => reference.verse_ref.startsWith(`${book} ${chapter}:`)),
@@ -1643,6 +1904,12 @@ export default function Home() {
 
     goToVerse(targetVerse.book, targetVerse.chapter, targetVerse.verse);
     setSyncMessage(`Opened ${targetRef}. Study drawer remains on ${studyRef ?? selectedRef}.`);
+  }
+
+  function openPersonStudy(personId: string) {
+    setActivePersonId(personId);
+    setStudyRef(null);
+    setTab("personStudy");
   }
 
   function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
@@ -2687,6 +2954,7 @@ export default function Home() {
                 selectedVerseRef={selectedVerseRef}
                 allVerses={allVerses}
                 chapterAnalysis={chapterAnalysis}
+                chapterConnectionsData={activeChapterConnections}
                 chapterCrossReferences={chapterCrossReferences}
                 chapterCommentaryEntries={chapterCommentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
@@ -2724,6 +2992,7 @@ export default function Home() {
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
                 onOpenReference={openReference}
+                onOpenPersonStudy={openPersonStudy}
                 onVerseClick={(ref) => {
                   setSelectedRef(ref);
                   openStudyDrawer(ref);
@@ -2894,6 +3163,15 @@ export default function Home() {
                 onAddMemory={() => addMemoryVerse(fullStudyVerse.ref)}
                 onUpdateMemoryProgress={(progress) => updateMemoryProgress(fullStudyVerse.ref, progress)}
                 onRemoveMemory={() => removeMemoryVerse(fullStudyVerse.ref)}
+              />
+            )}
+
+            {tab === "personStudy" && activePerson && (
+              <PersonStudyScreen
+                person={activePerson}
+                versesByRef={versesByRef}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
               />
             )}
 
@@ -3243,6 +3521,112 @@ function Stat({ label, value }: { label: string; value: number }) {
   );
 }
 
+function PersonStudyScreen({
+  person,
+  versesByRef,
+  onBack,
+  onOpenReference,
+}: {
+  person: StudyPerson;
+  versesByRef: Map<string, BibleVerse>;
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+}) {
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="sticky top-[92px] z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:bg-white md:p-5 md:shadow-sm">
+        <button
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+          onClick={onBack}
+          type="button"
+        >
+          <ChevronLeft size={16} />
+          Back to Bible
+        </button>
+        <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">People Study</p>
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{person.name}</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{person.description}</p>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Users size={18} />
+            <h2 className="text-base font-semibold text-[var(--ink)]">Profile</h2>
+          </div>
+          <div className="mt-4 space-y-3">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First appearance</p>
+              <button className="mt-1 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenReference(person.firstAppearance)} type="button">
+                {person.firstAppearance}
+              </button>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Major passages</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {person.majorPassages.map((passage) => (
+                  <button
+                    key={`person-passage-${person.id}-${passage}`}
+                    className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => onOpenReference(passage.includes(":") ? passage : `${passage}:1`)}
+                    type="button"
+                  >
+                    {passage}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Clipboard size={18} />
+            <h2 className="text-base font-semibold text-[var(--ink)]">Key Events</h2>
+          </div>
+          <div className="mt-4 grid gap-2">
+            {person.keyEvents.map((event) => (
+              <div key={`event-${person.id}-${event}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+                {event}
+              </div>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BookOpen size={18} />
+            <h2 className="text-base font-semibold text-[var(--ink)]">Related Verses</h2>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+            Reviewed entries
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {person.relatedVerses.map((reference) => {
+            const verse = versesByRef.get(reference);
+            return (
+              <button
+                key={`person-related-${person.id}-${reference}`}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                onClick={() => onOpenReference(reference)}
+                type="button"
+              >
+                <p className="text-sm font-semibold text-[var(--green)]">{reference}</p>
+                <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">
+                  {verse?.text ?? "Verse text is not available in the local KJV data yet."}
+                </p>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function BibleReader({
   book,
   books,
@@ -3260,6 +3644,7 @@ function BibleReader({
   selectedVerseRef,
   allVerses,
   chapterAnalysis,
+  chapterConnectionsData,
   chapterCrossReferences,
   chapterCommentaryEntries,
   chapterKeyVerses,
@@ -3297,6 +3682,7 @@ function BibleReader({
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
   onOpenReference,
+  onOpenPersonStudy,
   onVerseClick,
   onWordClick,
 }: {
@@ -3316,6 +3702,7 @@ function BibleReader({
   selectedVerseRef: React.MutableRefObject<HTMLDivElement | null>;
   allVerses: BibleVerse[];
   chapterAnalysis: ChapterStudyAnalysis;
+  chapterConnectionsData: ActiveChapterConnections;
   chapterCrossReferences: CrossReference[];
   chapterCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
@@ -3353,6 +3740,7 @@ function BibleReader({
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenPersonStudy: (personId: string) => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
@@ -3573,6 +3961,7 @@ function BibleReader({
       <ChapterStudyWorkflow
         allVerses={allVerses}
         analysis={chapterAnalysis}
+        connections={chapterConnectionsData}
         chapterCommentaryEntries={chapterCommentaryEntries}
         chapterCrossReferences={chapterCrossReferences}
         chapterKeyVerses={chapterKeyVerses}
@@ -3585,6 +3974,7 @@ function BibleReader({
         onExplorerWordChange={setExplorerWord}
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
         onOpenReference={onOpenReference}
+        onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
         onUpdateMemoryProgress={onUpdateMemoryProgress}
       />
@@ -3654,6 +4044,7 @@ function BibleReader({
 function ChapterStudyWorkflow({
   allVerses,
   analysis,
+  connections,
   chapterCommentaryEntries,
   chapterCrossReferences,
   chapterKeyVerses,
@@ -3666,11 +4057,13 @@ function ChapterStudyWorkflow({
   onExplorerWordChange,
   onLookupWord,
   onOpenReference,
+  onOpenPersonStudy,
   onRemoveMemoryVerse,
   onUpdateMemoryProgress,
 }: {
   allVerses: BibleVerse[];
   analysis: ChapterStudyAnalysis;
+  connections: ActiveChapterConnections;
   chapterCommentaryEntries: CommentaryEntry[];
   chapterCrossReferences: CrossReference[];
   chapterKeyVerses: string[];
@@ -3683,6 +4076,7 @@ function ChapterStudyWorkflow({
   onExplorerWordChange: (word: string) => void;
   onLookupWord: (word: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
 }) {
@@ -3690,7 +4084,7 @@ function ChapterStudyWorkflow({
   const memoryPreview = memoryForChapter[0] ?? null;
 
   return (
-    <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+    <section id="chapter-analysis-workflow" className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Workflow</p>
@@ -3708,6 +4102,120 @@ function ChapterStudyWorkflow({
           Add {selectedVerse.ref}
         </button>
       </div>
+
+      <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <Star size={18} />
+              <h3 className="text-sm font-semibold">Chapter Insights</h3>
+            </div>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Reviewed connections for this chapter. These are curated study helps, not automatic doctrine.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+            Bible centered
+          </span>
+        </div>
+
+        <div className="mt-4 grid gap-3 xl:grid-cols-2">
+          <StudyInsightSection icon={<Users size={17} />} title="People">
+            <div className="grid gap-2 sm:grid-cols-2">
+              {connections.people.length ? connections.people.map((person) => (
+                <button
+                  key={person.id}
+                  className="rounded-2xl border border-[var(--line)] bg-white p-3 text-left"
+                  onClick={() => onOpenPersonStudy(person.id)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--green)]">{person.name}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{person.description}</p>
+                  <p className="mt-2 text-xs font-semibold text-[var(--ink)]">First appearance: {person.firstAppearance}</p>
+                </button>
+              )) : <p className="text-sm leading-6 text-[var(--muted)]">People entries will appear here as chapters are reviewed.</p>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<MapPin size={17} />} title="Places">
+            <div className="grid gap-2 sm:grid-cols-2">
+              {connections.places.length ? connections.places.map((place) => (
+                <div key={place.id} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{place.description}</p>
+                  <p className="mt-2 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{place.mapNote}</p>
+                </div>
+              )) : <p className="text-sm leading-6 text-[var(--muted)]">Place entries will appear here as chapters are reviewed.</p>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Search size={17} />} title="Key Words">
+            <div className="flex flex-wrap gap-2">
+              {suggestedWords.length ? suggestedWords.map((item) => (
+                <button
+                  key={`insight-word-${item.word}`}
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
+                  onClick={() => onExplorerWordChange(item.word)}
+                  type="button"
+                >
+                  {item.word} <span className="text-[var(--green)]">{item.count}</span>
+                </button>
+              )) : <span className="text-sm leading-6 text-[var(--muted)]">Key words will appear after chapter analysis runs.</span>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<BookOpen size={17} />} title="Themes">
+            <div className="flex flex-wrap gap-2">
+              {connections.themes.length ? connections.themes.map((theme) => (
+                <span key={`theme-${theme}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {theme}
+                </span>
+              )) : <span className="text-sm leading-6 text-[var(--muted)]">Themes will appear here as chapters are reviewed.</span>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Link size={17} />} title="Cross References">
+            <div className="flex flex-wrap gap-2">
+              {chapterCrossReferences.slice(0, 6).map((reference) => (
+                <button
+                  key={`insight-cross-${reference.id}`}
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenReference(reference.target_ref)}
+                  type="button"
+                >
+                  {reference.target_ref}
+                </button>
+              ))}
+              {!chapterCrossReferences.length && <span className="text-sm leading-6 text-[var(--muted)]">Cross references will grow as TSK data is reviewed.</span>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Star size={17} />} title="Types of Christ">
+            <div className="space-y-2">
+              {connections.types.length ? connections.types.map((type) => (
+                <div key={type.id} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{type.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{type.description}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--ink)]">{type.pointsToChrist}</p>
+                  <ReferenceRow references={[...type.keyReferences, ...type.fulfillmentReferences]} onOpenReference={onOpenReference} />
+                </div>
+              )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed type connection has been attached to this chapter yet.</p>}
+            </div>
+          </StudyInsightSection>
+
+          <StudyInsightSection icon={<Clipboard size={17} />} title="Prophecy Connections">
+            <div className="space-y-2">
+              {connections.prophecies.length ? connections.prophecies.map((prophecy) => (
+                <div key={prophecy.id} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{prophecy.prophecy} <span className="text-[var(--muted)]">→</span> {prophecy.fulfillment}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{prophecy.description}</p>
+                  <ReferenceRow references={prophecy.relatedVerses} onOpenReference={onOpenReference} />
+                </div>
+              )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed prophecy connection has been attached to this chapter yet.</p>}
+            </div>
+          </StudyInsightSection>
+        </div>
+      </article>
 
       <div className="mt-4 grid gap-3 lg:grid-cols-2">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -3890,6 +4398,44 @@ function ChapterStudyWorkflow({
               </div>
             </div>
           </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <TeachingConnectionBlock title="People">
+              {connections.people.length ? connections.people.map((person) => (
+                <button
+                  key={`teaching-person-${person.id}`}
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenPersonStudy(person.id)}
+                  type="button"
+                >
+                  {person.name}
+                </button>
+              )) : <span className="text-sm text-[var(--muted)]">No reviewed people yet.</span>}
+            </TeachingConnectionBlock>
+
+            <TeachingConnectionBlock title="Places">
+              {connections.places.length ? connections.places.map((place) => (
+                <span key={`teaching-place-${place.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {place.name}
+                </span>
+              )) : <span className="text-sm text-[var(--muted)]">No reviewed places yet.</span>}
+            </TeachingConnectionBlock>
+
+            <TeachingConnectionBlock title="Types">
+              {connections.types.length ? connections.types.map((type) => (
+                <span key={`teaching-type-${type.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {type.title}
+                </span>
+              )) : <span className="text-sm text-[var(--muted)]">No reviewed types yet.</span>}
+            </TeachingConnectionBlock>
+
+            <TeachingConnectionBlock title="Prophecies">
+              {connections.prophecies.length ? connections.prophecies.map((prophecy) => (
+                <span key={`teaching-prophecy-${prophecy.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {prophecy.prophecy}
+                </span>
+              )) : <span className="text-sm text-[var(--muted)]">No reviewed prophecies yet.</span>}
+            </TeachingConnectionBlock>
+          </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {chapterCrossReferences.slice(0, 4).map((reference) => (
               <button
@@ -3935,6 +4481,64 @@ function ChapterStudyWorkflow({
         Occurrence counts use the current local KJV text: {allVerses.length.toLocaleString()} verses available.
       </p>
     </section>
+  );
+}
+
+function StudyInsightSection({
+  icon,
+  title,
+  children,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+      <div className="flex items-center gap-2 text-[var(--green)]">
+        {icon}
+        <h4 className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</h4>
+      </div>
+      <div className="mt-3">{children}</div>
+    </section>
+  );
+}
+
+function ReferenceRow({
+  references,
+  onOpenReference,
+}: {
+  references: string[];
+  onOpenReference: (targetRef: string) => void;
+}) {
+  return (
+    <div className="mt-3 flex flex-wrap gap-2">
+      {references.map((reference) => (
+        <button
+          key={`reference-row-${reference}`}
+          className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => onOpenReference(reference)}
+          type="button"
+        >
+          {reference}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function TeachingConnectionBlock({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</p>
+      <div className="mt-2 flex flex-wrap gap-2">{children}</div>
+    </div>
   );
 }
 
