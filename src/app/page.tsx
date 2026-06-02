@@ -309,6 +309,9 @@ type BiblePassage = {
   updatedAt: string;
 };
 
+type BibleMarkerId = "A" | "B" | "C" | "D";
+type BibleMarkers = Record<BibleMarkerId, BiblePassage | null>;
+
 type ChapterResourceRecommendation = {
   id: string;
   kind: "Dictionary" | "Cross References" | "Commentary" | "Library Resource" | "Bible Handbook";
@@ -363,11 +366,15 @@ const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
 const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
 const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
+const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
 const DEFAULT_CHAPTER = 3;
 const DEFAULT_VERSE = 16;
+const RECENT_PASSAGE_LIMIT = 20;
+const FAVORITE_PASSAGE_LIMIT = 24;
+const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 
 const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
@@ -2081,7 +2088,7 @@ function loadRecentPassages() {
 
   try {
     const raw = window.localStorage.getItem(RECENT_PASSAGES_KEY);
-    return normalizeBiblePassages(raw ? JSON.parse(raw) : []).slice(0, 10);
+    return normalizeBiblePassages(raw ? JSON.parse(raw) : []).slice(0, RECENT_PASSAGE_LIMIT);
   } catch {
     return [];
   }
@@ -2089,7 +2096,7 @@ function loadRecentPassages() {
 
 function saveRecentPassages(passages: BiblePassage[]) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(RECENT_PASSAGES_KEY, JSON.stringify(passages.slice(0, 10)));
+  window.localStorage.setItem(RECENT_PASSAGES_KEY, JSON.stringify(passages.slice(0, RECENT_PASSAGE_LIMIT)));
 }
 
 function loadFavoritePassages() {
@@ -2106,7 +2113,38 @@ function loadFavoritePassages() {
 
 function saveFavoritePassages(passages: BiblePassage[]) {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(FAVORITE_PASSAGES_KEY, JSON.stringify(passages));
+  window.localStorage.setItem(FAVORITE_PASSAGES_KEY, JSON.stringify(passages.slice(0, FAVORITE_PASSAGE_LIMIT)));
+}
+
+function emptyBibleMarkers(): BibleMarkers {
+  return {
+    A: null,
+    B: null,
+    C: null,
+    D: null,
+  };
+}
+
+function loadBibleMarkers(): BibleMarkers {
+  if (typeof window === "undefined") return emptyBibleMarkers();
+
+  try {
+    const raw = window.localStorage.getItem(BIBLE_MARKERS_KEY);
+    if (!raw) return emptyBibleMarkers();
+    const parsed = JSON.parse(raw) as Partial<Record<BibleMarkerId, unknown>>;
+    return BIBLE_MARKER_IDS.reduce<BibleMarkers>((markers, markerId) => {
+      const normalized = normalizeBiblePassages(parsed[markerId] ? [parsed[markerId]] : []);
+      markers[markerId] = normalized[0] ?? null;
+      return markers;
+    }, emptyBibleMarkers());
+  } catch {
+    return emptyBibleMarkers();
+  }
+}
+
+function saveBibleMarkers(markers: BibleMarkers) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(BIBLE_MARKERS_KEY, JSON.stringify(markers));
 }
 
 function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string[]) {
@@ -2575,6 +2613,7 @@ export default function Home() {
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
+  const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
   const [playlistName, setPlaylistName] = useState("Morning Bible Listening");
   const [listenRangeStart, setListenRangeStart] = useState(1);
   const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
@@ -2816,9 +2855,24 @@ export default function Home() {
   }, [book, chapter, chapterCrossReferences, chapterVerses, saved.bookmarks, saved.highlights, selectedRef]);
 
   const currentChapterPinned = useMemo(
-    () => favoritePassages.some((passage) => passage.id === createBiblePassage(book, chapter).id),
-    [book, chapter, favoritePassages],
+    () => favoritePassages.some((passage) => passage.id === createBiblePassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump).id),
+    [book, chapter, favoritePassages, selectedRef, verseJump, versesByRef],
   );
+
+  const currentBookProgress = useMemo(() => {
+    const bookChapters = Array.from(new Set(allVerses.filter((verse) => verse.book === book).map((verse) => verse.chapter))).sort((a, b) => a - b);
+    const chapterIndex = Math.max(0, bookChapters.indexOf(chapter));
+    const selectedVerseNumber = versesByRef.get(selectedRef)?.verse ?? verseJump;
+    const verseIndex = Math.max(0, chapterVerses.findIndex((verse) => verse.verse === selectedVerseNumber));
+    const verseProgress = chapterVerses.length ? (verseIndex + 1) / chapterVerses.length : 0;
+    const rawPercent = bookChapters.length ? ((chapterIndex + verseProgress) / bookChapters.length) * 100 : 0;
+
+    return {
+      book,
+      chapter,
+      percent: Math.min(100, Math.max(0, rawPercent)),
+    };
+  }, [allVerses, book, chapter, chapterVerses, selectedRef, verseJump, versesByRef]);
 
   const accountStatus = user
     ? "Signed in — syncing to Supabase"
@@ -2849,6 +2903,7 @@ export default function Home() {
       setScriptureMemory(loadScriptureMemory());
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
+      setBibleMarkers(loadBibleMarkers());
     });
   }, []);
 
@@ -3020,7 +3075,7 @@ export default function Home() {
   function recordRecentPassage(targetBook: string, targetChapter: number, targetVerse?: number) {
     const passage = createBiblePassage(targetBook, targetChapter, targetVerse);
     setRecentPassages((current) => {
-      const next = [passage, ...current.filter((item) => item.id !== passage.id)].slice(0, 10);
+      const next = [passage, ...current.filter((item) => item.id !== passage.id)].slice(0, RECENT_PASSAGE_LIMIT);
       saveRecentPassages(next);
       return next;
     });
@@ -3076,14 +3131,38 @@ export default function Home() {
   }
 
   function toggleCurrentChapterFavorite() {
-    const passage = createBiblePassage(book, chapter);
+    const passage = createBiblePassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump);
     setFavoritePassages((current) => {
       const exists = current.some((item) => item.id === passage.id);
-      const next = exists ? current.filter((item) => item.id !== passage.id) : [passage, ...current].slice(0, 18);
+      const next = exists ? current.filter((item) => item.id !== passage.id) : [passage, ...current].slice(0, FAVORITE_PASSAGE_LIMIT);
       saveFavoritePassages(next);
       setSyncMessage(exists ? `${passage.label} removed from favorites.` : `${passage.label} pinned to favorites.`);
       return next;
     });
+  }
+
+  function saveCurrentBibleMarker(markerId: BibleMarkerId) {
+    const passage = createBiblePassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump);
+    setBibleMarkers((current) => {
+      const next = {
+        ...current,
+        [markerId]: passage,
+      };
+      saveBibleMarkers(next);
+      return next;
+    });
+    setSyncMessage(`Marker ${markerId} saved to ${passage.label}.`);
+  }
+
+  function openBibleMarker(markerId: BibleMarkerId) {
+    const marker = bibleMarkers[markerId];
+    if (!marker) {
+      saveCurrentBibleMarker(markerId);
+      return;
+    }
+
+    openPassage(marker);
+    setSyncMessage(`Opened Marker ${markerId}: ${marker.label}.`);
   }
 
   function openPersonStudy(personId: string) {
@@ -4148,7 +4227,9 @@ export default function Home() {
                 scriptureMemory={scriptureMemory}
                 recentPassages={recentPassages}
                 favoritePassages={favoritePassages}
+                bibleMarkers={bibleMarkers}
                 currentChapterPinned={currentChapterPinned}
+                readingProgress={currentBookProgress}
                 speechState={speechState}
                 bibleListeningProgress={bibleListeningProgress}
                 listenRangeStart={listenRangeStart}
@@ -4169,6 +4250,8 @@ export default function Home() {
                 onQuickJump={quickJumpToPassage}
                 onOpenPassage={openPassage}
                 onToggleCurrentFavorite={toggleCurrentChapterFavorite}
+                onOpenMarker={openBibleMarker}
+                onSaveMarker={saveCurrentBibleMarker}
                 onListenCurrentChapter={listenCurrentChapter}
                 onListenFromCurrentVerse={listenFromCurrentVerse}
                 onListenRange={listenSelectedRange}
@@ -5113,6 +5196,59 @@ function PassageShortcutRow({
   );
 }
 
+function BibleMarkerRow({
+  markers,
+  onOpenMarker,
+  onSaveMarker,
+}: {
+  markers: BibleMarkers;
+  onOpenMarker: (markerId: BibleMarkerId) => void;
+  onSaveMarker: (markerId: BibleMarkerId) => void;
+}) {
+  return (
+    <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Bible Markers</p>
+        <p className="text-xs font-semibold text-[var(--muted)]">Tap to jump · Save current</p>
+      </div>
+      <div className="mt-2 grid grid-cols-2 gap-2 md:grid-cols-4">
+        {BIBLE_MARKER_IDS.map((markerId) => {
+          const marker = markers[markerId];
+          return (
+            <div key={`marker-${markerId}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-2">
+              <button
+                className="flex min-h-12 w-full items-center justify-between gap-2 rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenMarker(markerId)}
+                type="button"
+              >
+                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--green)] text-sm font-bold text-white">
+                  {markerId}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block truncate text-sm font-semibold text-[var(--ink)]">
+                    {marker?.label ?? `Set Marker ${markerId}`}
+                  </span>
+                  <span className="block text-xs font-semibold text-[var(--muted)]">
+                    {marker ? "Jump now" : "Empty"}
+                  </span>
+                </span>
+              </button>
+              <button
+                className="mt-2 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onSaveMarker(markerId)}
+                type="button"
+              >
+                <Save size={13} />
+                Save current
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function BibleReader({
   book,
   books,
@@ -5139,7 +5275,9 @@ function BibleReader({
   scriptureMemory,
   recentPassages,
   favoritePassages,
+  bibleMarkers,
   currentChapterPinned,
+  readingProgress,
   speechState,
   bibleListeningProgress,
   listenRangeStart,
@@ -5160,6 +5298,8 @@ function BibleReader({
   onQuickJump,
   onOpenPassage,
   onToggleCurrentFavorite,
+  onOpenMarker,
+  onSaveMarker,
   onListenCurrentChapter,
   onListenFromCurrentVerse,
   onListenRange,
@@ -5207,7 +5347,9 @@ function BibleReader({
   scriptureMemory: ScriptureMemoryItem[];
   recentPassages: BiblePassage[];
   favoritePassages: BiblePassage[];
+  bibleMarkers: BibleMarkers;
   currentChapterPinned: boolean;
+  readingProgress: { book: string; chapter: number; percent: number };
   speechState: SpeechState;
   bibleListeningProgress: BibleListeningProgress | null;
   listenRangeStart: number;
@@ -5228,6 +5370,8 @@ function BibleReader({
   onQuickJump: (query: string) => void;
   onOpenPassage: (passage: BiblePassage) => void;
   onToggleCurrentFavorite: () => void;
+  onOpenMarker: (markerId: BibleMarkerId) => void;
+  onSaveMarker: (markerId: BibleMarkerId) => void;
   onListenCurrentChapter: () => void;
   onListenFromCurrentVerse: () => void;
   onListenRange: () => void;
@@ -5255,6 +5399,7 @@ function BibleReader({
   const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
+  const progressPercent = Math.round(readingProgress.percent);
   const explorer = useMemo(
     () => buildWordExplorer(explorerWord, book, chapter, allVerses),
     [allVerses, book, chapter, explorerWord],
@@ -5279,7 +5424,7 @@ function BibleReader({
             type="button"
           >
             <Star size={15} />
-            {currentChapterPinned ? "Pinned" : "Pin chapter"}
+            {currentChapterPinned ? "Pinned" : "Pin passage"}
           </button>
           {bookIntroduction && (
             <button
@@ -5293,7 +5438,30 @@ function BibleReader({
           )}
         </div>
 
-        <div className="mt-3 grid grid-cols-[minmax(0,1fr)_78px_78px] gap-2 md:grid-cols-[minmax(0,1fr)_110px_110px_auto_auto]">
+        <form
+          className="mt-3 flex gap-2"
+          onSubmit={(event) => {
+            event.preventDefault();
+            onQuickJump(quickJumpText);
+            setQuickJumpText("");
+          }}
+        >
+          <label className="sr-only" htmlFor="quick-jump-input">Quick Jump</label>
+          <input
+            id="quick-jump-input"
+            className="h-12 min-w-0 flex-1 rounded-2xl border border-[var(--line)] bg-white px-4 text-base font-semibold text-[var(--ink)] outline-none placeholder:text-stone-400"
+            inputMode="text"
+            placeholder="John 3, John 3:16, Romans 8:28"
+            value={quickJumpText}
+            onChange={(event) => setQuickJumpText(event.target.value)}
+          />
+          <button className="inline-flex h-12 items-center gap-2 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white" type="submit">
+            <Search size={16} />
+            Go
+          </button>
+        </form>
+
+        <div className="mt-3 grid grid-cols-[minmax(0,1fr)_78px_78px] gap-2 md:grid-cols-[minmax(0,1fr)_110px_110px]">
           <label className="sr-only" htmlFor="reader-book-select">Book</label>
           <select
             id="reader-book-select"
@@ -5342,73 +5510,46 @@ function BibleReader({
               </option>
             ))}
           </select>
+        </div>
 
+        <div className="mt-3 grid grid-cols-2 gap-2">
           <button
-            className="hidden h-11 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-40 md:inline-flex"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-3 text-base font-semibold disabled:opacity-40"
             disabled={!hasPrevious}
             onClick={onPrevious}
             type="button"
           >
-            <ChevronLeft size={16} />
-            Previous
+            <ChevronLeft size={18} />
+            Previous chapter
           </button>
           <button
-            className="hidden h-11 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 text-sm font-semibold text-[var(--ink)] disabled:opacity-40 md:inline-flex"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-3 text-base font-semibold disabled:opacity-40"
             disabled={!hasNext}
             onClick={onNext}
             type="button"
           >
-            Next
-            <ChevronRight size={16} />
+            Next chapter
+            <ChevronRight size={18} />
           </button>
         </div>
 
-        <div className="mt-2 grid grid-cols-2 gap-2 md:hidden">
-          <button
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-3 text-sm font-semibold disabled:opacity-40"
-            disabled={!hasPrevious}
-            onClick={onPrevious}
-            type="button"
-          >
-            <ChevronLeft size={16} />
-            Previous
-          </button>
-          <button
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--warm)] px-3 text-sm font-semibold disabled:opacity-40"
-            disabled={!hasNext}
-            onClick={onNext}
-            type="button"
-          >
-            Next
-            <ChevronRight size={16} />
-          </button>
+        <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reading Progress</p>
+            <p className="text-sm font-semibold text-[var(--green)]">
+              {readingProgress.book} {readingProgress.chapter} · {progressPercent}%
+            </p>
+          </div>
+          <div className="mt-2 h-2 overflow-hidden rounded-full bg-white">
+            <div className="h-full rounded-full bg-[var(--green)] transition-[width]" style={{ width: `${progressPercent}%` }} />
+          </div>
         </div>
 
-        <form
-          className="mt-3 flex gap-2"
-          onSubmit={(event) => {
-            event.preventDefault();
-            onQuickJump(quickJumpText);
-            setQuickJumpText("");
-          }}
-        >
-          <label className="sr-only" htmlFor="quick-jump-input">Quick Jump</label>
-          <input
-            id="quick-jump-input"
-            className="h-11 min-w-0 flex-1 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base text-[var(--ink)] outline-none placeholder:text-stone-400"
-            placeholder="John 3:16, Luke 24, Romans 8"
-            value={quickJumpText}
-            onChange={(event) => setQuickJumpText(event.target.value)}
-          />
-          <button className="inline-flex h-11 items-center gap-2 rounded-full bg-[var(--green)] px-4 text-sm font-semibold text-white" type="submit">
-            <Search size={16} />
-            Search
-          </button>
-        </form>
+        <BibleMarkerRow markers={bibleMarkers} onOpenMarker={onOpenMarker} onSaveMarker={onSaveMarker} />
 
         <PassageShortcutRow
           label="Favorites"
-          emptyText="Pin a chapter for one-tap access."
+          emptyText="Pin a passage for one-tap access."
           passages={favoritePassages}
           onOpenPassage={onOpenPassage}
         />
