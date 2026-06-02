@@ -9,9 +9,32 @@ The original Treasury of Scripture Knowledge tradition is public domain, but not
 Final recommendation for this app:
 
 1. Prefer a public-domain scan/OCR source from Internet Archive, Wikimedia Commons, or Sacred Texts for long-term unrestricted import.
-2. Use the current John 3:14-18 hand-reviewed sample while the full source is being prepared.
+2. Use the Phase 1 reviewed sample in `data/imports/tsk-phase-1-reviewed-sample.json` while the full source is being prepared.
 3. Do not import Bible Hub, Bible Study Tools, or other website-rendered TSK pages by scraping.
 4. If using OpenBible.info, crossreferences.org, MetaV, or another prepared dataset, accept and document that dataset's Creative Commons obligations before import.
+
+## Phase 1 Implementation Decision
+
+Current decision: import and display only a reviewed sample for Genesis 1-5, Exodus 1-5, John 1-5, Romans 1-8, and Luke 24.
+
+The Phase 1 file is:
+
+```text
+data/imports/tsk-phase-1-reviewed-sample.json
+```
+
+Each row includes:
+
+- source verse
+- target verse
+- short label
+- source name
+- source title
+- source URL
+- public-domain/source status
+- rights notes
+
+The app should not import the whole TSK dataset until a public-domain archive/OCR source has been selected, parsed, and quality reviewed. The current sample is intentionally small so cross references can become useful across important chapters without creating rights or quality problems.
 
 ## Final Recommendation
 
@@ -19,7 +42,7 @@ Use a public-domain archive source as the primary TSK completion path. This best
 
 Recommended sequence:
 
-1. Keep the current John 3:14-18 sample live in the app.
+1. Keep the current Phase 1 reviewed sample live in the app.
 2. Select a public-domain archive source and record its manifest under `data/sources/tsk/<source-name>/source-manifest.json`.
 3. Build a parser that extracts verse owner references and target references without importing any website-rendered page content.
 4. Import a reviewed sample of 25-50 references first.
@@ -137,15 +160,21 @@ Notes:
    - attribution notes
    - commercial-use notes
 5. Convert a reviewed sample into `data/imports/tsk-cross-references.sample-reviewed.json`.
-6. Run:
+6. Validate the sample:
 
 ```bash
-npm run import:tsk -- data/imports/tsk-cross-references.sample-reviewed.json --dry-run
+npm run validate:tsk -- data/imports/tsk-phase-1-reviewed-sample.json
 ```
 
-7. After review, run the actual sample import.
-8. Only after the sample works and rights are accepted, import the full dataset.
+7. Run a dry import:
+
+```bash
+npm run import:tsk -- data/imports/tsk-phase-1-reviewed-sample.json --dry-run
+```
+
+8. After review, run the actual sample import.
+9. Only after the sample works and rights are accepted, import the full dataset.
 
 ## Current Decision
 
-Do not import full TSK yet. The app should keep the John 3:14-18 sample and prepare a public-domain archive source as the preferred completion path. Creative Commons datasets remain alternate paths only if attribution/share-alike obligations are accepted and documented.
+Do not import full TSK yet. The app should keep the Phase 1 reviewed sample and prepare a public-domain archive source as the preferred completion path. Creative Commons datasets remain alternate paths only if attribution/share-alike obligations are accepted and documented.

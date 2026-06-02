@@ -41,6 +41,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
+import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -108,6 +109,22 @@ type CrossReference = {
   target_ref: string;
   label: string;
   source: string;
+  source_id?: string | null;
+  source_title?: string;
+  source_url?: string;
+  public_domain_status?: string;
+  rights_basis?: string;
+};
+
+type TskCrossReferenceImportRow = {
+  verse_ref: string;
+  target_ref: string;
+  label?: string;
+  source: string;
+  source_title: string;
+  source_url: string;
+  public_domain_status: string;
+  rights_basis: string;
 };
 
 type CommentaryEntry = {
@@ -1189,120 +1206,24 @@ const studyStopWords = new Set([
   "your",
 ]);
 
-const localCrossReferences: CrossReference[] = [
-  {
-    id: "john-3-14-numbers-21-8",
-    verse_ref: "John 3:14",
-    target_ref: "Numbers 21:8",
-    label: "The serpent lifted up in the wilderness.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-14-numbers-21-9",
-    verse_ref: "John 3:14",
-    target_ref: "Numbers 21:9",
-    label: "Looking to the lifted serpent and living.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-14-john-8-28",
-    verse_ref: "John 3:14",
-    target_ref: "John 8:28",
-    label: "The Son of man lifted up.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-15-john-3-16",
-    verse_ref: "John 3:15",
-    target_ref: "John 3:16",
-    label: "Believing in Him and everlasting life.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-15-john-6-40",
-    verse_ref: "John 3:15",
-    target_ref: "John 6:40",
-    label: "Believing on the Son and having everlasting life.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-16-genesis-22-2",
-    verse_ref: "John 3:16",
-    target_ref: "Genesis 22:2",
-    label: "Only son language and sacrifice pattern.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-16-romans-5-8",
-    verse_ref: "John 3:16",
-    target_ref: "Romans 5:8",
-    label: "God's love commended toward sinners.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-16-1john-4-9",
-    verse_ref: "John 3:16",
-    target_ref: "1 John 4:9",
-    label: "The love of God manifested by sending His only begotten Son.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-16-john-3-36",
-    verse_ref: "John 3:16",
-    target_ref: "John 3:36",
-    label: "Believing on the Son and everlasting life.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-16-romans-8-32",
-    verse_ref: "John 3:16",
-    target_ref: "Romans 8:32",
-    label: "God spared not His own Son.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-17-luke-9-56",
-    verse_ref: "John 3:17",
-    target_ref: "Luke 9:56",
-    label: "The Son of man came not to destroy, but to save.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-17-john-12-47",
-    verse_ref: "John 3:17",
-    target_ref: "John 12:47",
-    label: "Christ came not to judge the world, but to save.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-17-1john-4-14",
-    verse_ref: "John 3:17",
-    target_ref: "1 John 4:14",
-    label: "The Father sent the Son to be the Saviour of the world.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-18-john-5-24",
-    verse_ref: "John 3:18",
-    target_ref: "John 5:24",
-    label: "The believer is passed from death unto life.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-18-romans-8-1",
-    verse_ref: "John 3:18",
-    target_ref: "Romans 8:1",
-    label: "No condemnation to them which are in Christ Jesus.",
-    source: "TSK",
-  },
-  {
-    id: "john-3-18-mark-16-16",
-    verse_ref: "John 3:18",
-    target_ref: "Mark 16:16",
-    label: "Belief and unbelief set in sharp contrast.",
-    source: "TSK",
-  },
-];
+function referenceImportId(row: TskCrossReferenceImportRow) {
+  return `tsk-${row.verse_ref}-${row.target_ref}-${row.source}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+const localCrossReferences: CrossReference[] = (tskPhase1Sample as TskCrossReferenceImportRow[]).map((row) => ({
+  id: referenceImportId(row),
+  verse_ref: row.verse_ref,
+  target_ref: row.target_ref,
+  label: row.label ?? "",
+  source: row.source,
+  source_title: row.source_title,
+  source_url: row.source_url,
+  public_domain_status: row.public_domain_status,
+  rights_basis: row.rights_basis,
+}));
 
 const localCommentaryEntries: CommentaryEntry[] = [
   {
@@ -1880,6 +1801,19 @@ function mergeCommentaryEntries(...entryGroups: CommentaryEntry[][]) {
   return entryGroups.flatMap((entries) =>
     entries.filter((entry) => {
       const key = entry.id || `${entry.book}-${entry.chapter}-${entry.verse_start}-${entry.verse_end}-${entry.author}-${entry.resource_title}`;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }),
+  );
+}
+
+function mergeCrossReferences(...referenceGroups: CrossReference[][]) {
+  const seen = new Set<string>();
+
+  return referenceGroups.flatMap((references) =>
+    references.filter((reference) => {
+      const key = `${reference.verse_ref}|${reference.target_ref}|${reference.source}`;
       if (seen.has(key)) return false;
       seen.add(key);
       return true;
@@ -3029,13 +2963,13 @@ export default function Home() {
 
     supabase
       .from("cross_references")
-      .select("id, verse_ref, target_ref, label, source")
+      .select("id, verse_ref, target_ref, label, source, source_id")
       .then(({ data, error }) => {
         if (error || !data?.length) {
           setCrossReferences(localCrossReferences);
           return;
         }
-        setCrossReferences(data);
+        setCrossReferences(mergeCrossReferences(localCrossReferences, data));
       });
   }, [supabase]);
 
@@ -7503,6 +7437,9 @@ function FullStudyScreen({
                   <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">
                     {preview ?? reference.label}
                   </p>
+                  {reference.source_title && (
+                    <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{reference.source_title}</p>
+                  )}
                 </button>
               );
             })}
@@ -8060,6 +7997,9 @@ function StudyDrawer({
                           <p className="mt-2 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">
                             {preview ?? reference.label}
                           </p>
+                          {reference.source_title && (
+                            <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{reference.source_title}</p>
+                          )}
                         </button>
                       );
                     })}
@@ -8211,6 +8151,11 @@ function StudyDrawer({
                       <p className="mt-3 line-clamp-3 font-serif text-base leading-7 text-[var(--scripture-ink)]">
                         {preview ?? "Verse preview not available yet."}
                       </p>
+                      {(reference.source_title || reference.public_domain_status) && (
+                        <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                          {[reference.source_title, reference.public_domain_status].filter(Boolean).join(" - ")}
+                        </p>
+                      )}
                     </button>
                   );
                 })

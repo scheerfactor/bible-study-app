@@ -3,6 +3,13 @@
   "original_compiler": "R. A. Torrey",
   "original_publication_year": 1894,
   "public_domain_status": "The original Treasury of Scripture Knowledge is public domain.",
+  "phase_1_selected_path": {
+    "title": "Treasury of Scripture Knowledge Phase 1 reviewed sample",
+    "sample_file": "data/imports/tsk-phase-1-reviewed-sample.json",
+    "source_url": "https://sacred-texts.com/bib/cmt/tsk/index.htm",
+    "public_domain_status": "Public-domain source tradition; Phase 1 reviewed sample from archive/source comparison.",
+    "rights_notes": "Use this small reviewed sample for Genesis 1-5, Exodus 1-5, John 1-5, Romans 1-8, and Luke 24. Do not treat it as a full TSK import."
+  },
   "candidate_download_source": {
     "title": "KJV Bible Database with Metadata / MetaV CrossRefIndex",
     "url": "https://github.com/theonize/KJV-bible-database-with-metadata-MetaV-",
