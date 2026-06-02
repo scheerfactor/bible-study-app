@@ -13,7 +13,7 @@ A first working prototype for a mobile-first KJV Bible study app.
 - Verse actions for highlight, note, bookmark, copy, and share
 - Webster's 1828 lookup with word normalization for forms such as `believeth` -> `believe`
 - John 3:14-18 sample cross references using the future TSK table structure
-- Commentary tab with the first public-domain commentary collection path
+- Commentary tab with Matthew Henry Phase 1 and H. A. Ironside Phase 2 sample paths
 - Import scripts for Webster's 1828 entries, TSK cross references, and commentary entries
 - Browser/device Text-to-Speech for Bible chapters, selected verses, and library resources
 - Local Bible Listen Mode with chapter/range/book listening and simple playlist planning
@@ -193,7 +193,7 @@ The app currently uses:
 - KJV text from `es-kjv`, which identifies its KJV JSON as public domain.
 - Starter Webster-style definitions written into the prototype for UI testing.
 - Sample TSK-style cross references for John 3:14-18.
-- Placeholder commentary rows only. Full commentary imports must wait until source rights are verified.
+- Curated commentary sample rows for Matthew Henry and H. A. Ironside. Full commentary imports must wait until source rights are verified.
 
 A full Webster's 1828 import should be done from a documented public-domain source with source and commercial-use notes recorded in `resource_sources`.
 
@@ -386,7 +386,6 @@ Use this before importing anything beyond the current verified samples.
 - Current first commentary collection path: `data/commentary/matthew-henry/`.
 - Source: Matthew Henry, `Matthew Henry's Commentary on the Whole Bible`, CCEL source index with Wikisource public-domain rights verification.
 - Rights review: `COMMENTARY_RIGHTS_REVIEW.md`.
-- Import only this one active commentary collection until the workflow is proven.
 - Confirm each entry has reference, author, resource title, verse range, public-domain status, source URL, rights basis, and recommended use.
 - Keep commentary brief in the drawer; use the Full Study view for deeper reading.
 - Do not import unclear, modern, or copyrighted commentary content.
@@ -396,6 +395,23 @@ Validate and dry-run the Phase 1 sample:
 ```bash
 npm run validate:commentary -- data/imports/matthew-henry-phase-1-commentary.json
 npm run import:commentary -- data/imports/matthew-henry-phase-1-commentary.json --dry-run
+```
+
+### Second commentary sample
+
+- Current second commentary sample path: `data/commentary/h-a-ironside/`.
+- Source manifest: `data/commentary/h-a-ironside/source-manifest.json`.
+- Import file: `data/imports/h-a-ironside-phase-2-commentary.json`.
+- Included sample chapters: John 3, Romans 5, and Luke 24.
+- Requested but not imported yet: Genesis 1 and Exodus 3, because no verified Ironside source was found for those chapters during Phase 2 review.
+- John and Luke entries are curated summaries only until renewal and edition review is complete.
+- Romans 5 is tied to `Lectures on the Epistle to the Romans`, first edition 1928.
+
+Validate and dry-run the Phase 2 sample:
+
+```bash
+npm run validate:commentary -- data/imports/h-a-ironside-phase-2-commentary.json
+npm run import:commentary -- data/imports/h-a-ironside-phase-2-commentary.json --dry-run
 ```
 
 ### Source rights verification

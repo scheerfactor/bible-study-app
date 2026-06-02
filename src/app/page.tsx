@@ -43,6 +43,7 @@ import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
+import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -413,7 +414,9 @@ const DEFAULT_VERSE = 16;
 const RECENT_PASSAGE_LIMIT = 20;
 const FAVORITE_PASSAGE_LIMIT = 24;
 const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
-const ACTIVE_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
+const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
+const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
+const ACTIVE_COMMENTARY_COLLECTIONS = [MATTHEW_HENRY_COMMENTARY_COLLECTION, H_A_IRONSIDE_COMMENTARY_COLLECTION];
 
 const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
@@ -550,7 +553,7 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `genesis-${chapter}-commentary`,
       kind: "Commentary",
-      title: ACTIVE_COMMENTARY_COLLECTION,
+      title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
       status: "available",
       note: "Reviewed Phase 1 public-domain commentary entry for creation, fall, promise, and early history.",
@@ -581,7 +584,7 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `exodus-${chapter}-commentary`,
       kind: "Commentary",
-      title: ACTIVE_COMMENTARY_COLLECTION,
+      title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
       status: "available",
       note: "Reviewed Phase 1 public-domain commentary entry for bondage, deliverance, calling, and the Exodus story.",
@@ -612,13 +615,26 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `john-${chapter}-matthew-henry-commentary`,
       kind: "Commentary",
-      title: ACTIVE_COMMENTARY_COLLECTION,
+      title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
       status: "available",
       note: "Reviewed Phase 1 public-domain commentary entry for John's Gospel.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
+      ...(chapter === 3
+        ? [
+            {
+              id: "john-3-h-a-ironside-commentary",
+              kind: "Commentary" as const,
+              title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+              author: "H. A. Ironside",
+              status: "sample" as const,
+              note: "Reviewed Phase 2 sample summary from Addresses on the Gospel of John. Full-text import waits for renewal and edition audit.",
+              warning: "Use with discernment",
+            },
+          ]
+        : []),
       {
         id: `john-${chapter}-spurgeon-gospel`,
         kind: "Library Resource",
@@ -649,13 +665,22 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
       commentary: {
         id: "luke-24-matthew-henry-commentary",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 public-domain commentary entry for resurrection and Great Commission teaching.",
         warning: "Use with discernment",
       },
       libraryResources: [
+        {
+          id: "luke-24-h-a-ironside-commentary",
+          kind: "Commentary",
+          title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+          author: "H. A. Ironside",
+          status: "sample",
+          note: "Reviewed Phase 2 sample summary from Addresses on the Gospel of Luke. Full-text import waits for renewal and edition audit.",
+          warning: "Use with discernment",
+        },
         {
           id: "luke-24-moody-evangelism",
           kind: "Library Resource",
@@ -680,13 +705,26 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
     commentaryForChapter: (chapter) => ({
       id: `romans-${chapter}-matthew-henry-commentary`,
       kind: "Commentary",
-      title: ACTIVE_COMMENTARY_COLLECTION,
+      title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
       author: "Matthew Henry",
       status: "available",
       note: "Reviewed Phase 1 public-domain commentary entry for Romans doctrine and Christian life.",
       warning: "Use with discernment",
     }),
     libraryForChapter: (chapter) => [
+      ...(chapter === 5
+        ? [
+            {
+              id: "romans-5-h-a-ironside-commentary",
+              kind: "Commentary" as const,
+              title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+              author: "H. A. Ironside",
+              status: "sample" as const,
+              note: "Reviewed Phase 2 sample summary from Lectures on the Epistle to the Romans, first edition 1928.",
+              warning: "Use with discernment",
+            },
+          ]
+        : []),
       {
         id: `romans-${chapter}-torrey-doctrines`,
         kind: "Library Resource",
@@ -741,7 +779,7 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "genesis-intro-matthew-henry",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 commentary entries for Genesis 1-5.",
@@ -817,7 +855,7 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "exodus-intro-matthew-henry",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 commentary entries for Exodus 1-5.",
@@ -892,10 +930,19 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "john-intro-matthew-henry",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 commentary entries for John 1-5.",
+        warning: "Use with discernment",
+      },
+      {
+        id: "john-intro-h-a-ironside",
+        kind: "Commentary",
+        title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+        author: "H. A. Ironside",
+        status: "sample",
+        note: "Phase 2 reviewed sample for John 3; full-text John import waits for renewal and edition audit.",
         warning: "Use with discernment",
       },
       {
@@ -968,10 +1015,19 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "romans-intro-matthew-henry",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 commentary entries for Romans 1-8.",
+        warning: "Use with discernment",
+      },
+      {
+        id: "romans-intro-h-a-ironside",
+        kind: "Commentary",
+        title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+        author: "H. A. Ironside",
+        status: "sample",
+        note: "Phase 2 reviewed sample for Romans 5 from a 1928 first edition source.",
         warning: "Use with discernment",
       },
       {
@@ -1042,10 +1098,19 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "luke-intro-matthew-henry",
         kind: "Commentary",
-        title: ACTIVE_COMMENTARY_COLLECTION,
+        title: MATTHEW_HENRY_COMMENTARY_COLLECTION,
         author: "Matthew Henry",
         status: "available",
         note: "Reviewed Phase 1 commentary entry for Luke 24.",
+        warning: "Use with discernment",
+      },
+      {
+        id: "luke-intro-h-a-ironside",
+        kind: "Commentary",
+        title: H_A_IRONSIDE_COMMENTARY_COLLECTION,
+        author: "H. A. Ironside",
+        status: "sample",
+        note: "Phase 2 reviewed sample for Luke 24; full-text Luke import waits for renewal and edition audit.",
         warning: "Use with discernment",
       },
       {
@@ -1280,7 +1345,10 @@ const localCrossReferences: CrossReference[] = (tskPhase1Sample as TskCrossRefer
   rights_basis: row.rights_basis,
 }));
 
-const localCommentaryEntries: CommentaryEntry[] = (matthewHenryPhase1Commentary as CommentaryEntry[]).map((entry) => ({
+const localCommentaryEntries: CommentaryEntry[] = [
+  ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
+  ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
+].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
 }));
@@ -1736,7 +1804,7 @@ function mergeCommentaryEntries(...entryGroups: CommentaryEntry[][]) {
 }
 
 function activeCommentaryEntriesOnly(entries: CommentaryEntry[]) {
-  return entries.filter((entry) => entry.resource_title === ACTIVE_COMMENTARY_COLLECTION);
+  return entries.filter((entry) => ACTIVE_COMMENTARY_COLLECTIONS.includes(entry.resource_title));
 }
 
 function mergeCrossReferences(...referenceGroups: CrossReference[][]) {
@@ -7635,20 +7703,7 @@ function FullStudyScreen({
         {commentaryEntries.length ? (
           <div className="space-y-3">
             {commentaryEntries.map((entry) => (
-              <article key={`full-commentary-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-                <p className="text-sm font-semibold text-[var(--green)]">{entry.resource_title}</p>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.author}</p>
-                <p className="mt-2 text-xs font-semibold text-[var(--muted)]">
-                  {entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}`}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
-                {entry.recommended_use && (
-                  <p className="mt-3 rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
-                    Recommended use: {entry.recommended_use}
-                  </p>
-                )}
-                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{entry.public_domain_status || "Public-domain status pending review."}</p>
-              </article>
+              <CommentaryDetails key={`full-commentary-${entry.id}`} entry={entry} />
             ))}
           </div>
         ) : (
@@ -7843,6 +7898,58 @@ function EmptyState({ title, body }: { title: string; body: string }) {
       <p className="text-lg font-semibold text-[var(--ink)]">{title}</p>
       <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{body}</p>
     </div>
+  );
+}
+
+function CommentaryDetails({ entry, compact = false }: { entry: CommentaryEntry; compact?: boolean }) {
+  const reference =
+    entry.reference ??
+    `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}`;
+
+  return (
+    <details className="group rounded-2xl border border-[var(--line)] bg-white p-4">
+      <summary className="cursor-pointer list-none">
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">{entry.resource_title}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.author}</p>
+          </div>
+          <span className="shrink-0 rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)] group-open:hidden">
+            Open
+          </span>
+          <span className="hidden shrink-0 rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)] group-open:inline">
+            Close
+          </span>
+        </div>
+        <p className="mt-2 text-xs font-semibold text-[var(--muted)]">{reference}</p>
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
+      </summary>
+
+      <div className="mt-3 border-t border-[var(--line)] pt-3">
+        <p className={`${compact ? "text-sm" : "text-base"} leading-7 text-[var(--ink)]`}>{entry.entry_text}</p>
+        {entry.recommended_use && (
+          <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+            Recommended use: {entry.recommended_use}
+          </p>
+        )}
+        <dl className="mt-3 space-y-2 text-xs leading-5 text-[var(--muted)]">
+          <div>
+            <dt className="font-semibold text-[var(--ink)]">Source</dt>
+            <dd>{entry.source_title ?? entry.resource_title}</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-[var(--ink)]">Rights status</dt>
+            <dd>{entry.public_domain_status || "Public-domain status pending review."}</dd>
+          </div>
+          {entry.source_url && (
+            <div>
+              <dt className="font-semibold text-[var(--ink)]">Source URL</dt>
+              <dd className="break-words">{entry.source_url}</dd>
+            </div>
+          )}
+        </dl>
+      </div>
+    </details>
   );
 }
 
@@ -8414,7 +8521,7 @@ function StudyDrawer({
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
                 <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                  Verified Phase 1 entries appear here after Scripture, Webster, TSK, and curated connections. Commentary stays secondary to the Bible text.
+                  Verified entries appear here after Scripture, Webster, TSK, and curated connections. Commentary stays secondary to the Bible text.
                 </p>
                 <label className="mt-4 block text-sm font-semibold text-[var(--muted)]">
                   Resource
@@ -8435,37 +8542,7 @@ function StudyDrawer({
 
               {filteredCommentaryEntries.length ? (
                 filteredCommentaryEntries.map((entry) => (
-                  <article key={entry.id} className="rounded-2xl border border-[var(--line)] bg-white p-4">
-                    <p className="text-sm font-semibold text-[var(--green)]">
-                      {entry.author} — {entry.resource_title}
-                    </p>
-                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-                      {entry.book} {entry.chapter}:{entry.verse_start}
-                      {entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
-                    {entry.recommended_use && (
-                      <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
-                        Recommended use: {entry.recommended_use}
-                      </p>
-                    )}
-                    <dl className="mt-3 space-y-2 text-xs leading-5 text-[var(--muted)]">
-                      <div>
-                        <dt className="font-semibold text-[var(--ink)]">Public-domain status</dt>
-                        <dd>{entry.public_domain_status}</dd>
-                      </div>
-                      {entry.rights_basis && (
-                        <div>
-                          <dt className="font-semibold text-[var(--ink)]">Rights basis</dt>
-                          <dd>{entry.rights_basis}</dd>
-                        </div>
-                      )}
-                      <div>
-                        <dt className="font-semibold text-[var(--ink)]">Source</dt>
-                        <dd>{entry.source_url || "Source URL not added yet."}</dd>
-                      </div>
-                    </dl>
-                  </article>
+                  <CommentaryDetails key={entry.id} entry={entry} compact />
                 ))
               ) : (
                 <EmptyState title="No commentary entry yet" body="This verse is ready for a future public-domain commentary import." />

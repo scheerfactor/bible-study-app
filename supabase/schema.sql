@@ -449,6 +449,15 @@ values
     'Reserved for future commentary/resource import planning.'
   ),
   (
+    'H. A. Ironside Commentary Samples',
+    'H. A. Ironside',
+    1928,
+    'https://www.wholesomewords.org/etexts/ironside/writings.html',
+    'Mixed source status. Romans first edition is 1928 and public domain in the United States; John and Luke are curated summaries pending full-text renewal and edition review.',
+    'Use Phase 2 curated summaries only until every selected full-text source has a complete rights audit.',
+    'Second commentary voice for John 3, Romans 5, and Luke 24. Keep collapsed and secondary to Scripture.'
+  ),
+  (
     'Matthew Henry''s Commentary on the Whole Bible',
     'Matthew Henry',
     1706,
@@ -617,4 +626,83 @@ set entry_text = excluded.entry_text,
     public_domain_status = excluded.public_domain_status,
     rights_basis = excluded.rights_basis,
     recommended_use = excluded.recommended_use,
+    source_id = excluded.source_id;
+
+insert into public.commentary_entries (
+  source_id,
+  book,
+  chapter,
+  verse_start,
+  verse_end,
+  author,
+  resource_title,
+  source_title,
+  entry_text,
+  public_domain_status,
+  rights_basis,
+  recommended_use,
+  source_url
+)
+select
+  resource_sources.id,
+  sample.book,
+  sample.chapter,
+  sample.verse_start,
+  sample.verse_end,
+  'H. A. Ironside',
+  'H. A. Ironside Commentary Samples',
+  sample.source_title,
+  sample.entry_text,
+  sample.public_domain_status,
+  sample.rights_basis,
+  sample.recommended_use,
+  sample.source_url
+from public.resource_sources
+cross join (
+  values
+    (
+      'John',
+      3,
+      1,
+      36,
+      'Addresses on the Gospel of John',
+      'Ironside''s John 3 emphasis is especially useful for a clear gospel lesson: Nicodemus had religion and standing, yet still needed the new birth. The chapter should be taught around Christ''s own words, the brazen serpent connection, the necessity of believing, and the open contrast between receiving light and remaining under condemnation.',
+      'Source page verified. Phase 2 uses curated summary only; full-text import requires renewal and edition audit before commercial use.',
+      'Plymouth Brethren Archive source page verifies title, author, and availability. Do not import full text until copyright-renewal and source terms are fully documented.',
+      'Use as a second teacher-friendly voice after the KJV text, Webster''s 1828, TSK, and Matthew Henry. Helpful for emphasizing the new birth, faith, and Christ lifted up.',
+      'https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/'
+    ),
+    (
+      'Romans',
+      5,
+      1,
+      21,
+      'Lectures on the Epistle to the Romans',
+      'Ironside frames Romans 5 as the transition from sins to indwelling sin and from guilt to standing in grace. For teaching, the chapter can be organized around peace with God, joy under trial, God''s love shown in Christ''s death for sinners, and the contrast between Adam''s ruin and Christ''s abounding grace.',
+      'Public domain in the United States for the 1928 first edition. Avoid modern edition additions and scan formatting unless separately reviewed.',
+      'Verified source PDF identifies H. A. Ironside as author and Loizeaux Brothers first edition, 1928.',
+      'Use after Scripture to help teachers explain justification''s fruit, assurance, and the Adam/Christ contrast without letting commentary replace the Bible text.',
+      'https://www.brethrenarchive.org/media/364659/ironside-h-a-_-epistles-to-the-romans.pdf'
+    ),
+    (
+      'Luke',
+      24,
+      1,
+      53,
+      'Addresses on the Gospel of Luke',
+      'Ironside''s Luke 24 sample helps keep the resurrection, the opened Scriptures, and gospel witness together. The chapter is valuable for showing that Christ''s sufferings and resurrection were not a surprise to Scripture, that understanding is opened by the Lord, and that repentance and remission of sins are to be preached in His name.',
+      'Source page verified. Phase 2 uses curated summary only; full-text import requires renewal and edition audit before commercial use.',
+      'Plymouth Brethren Archive source page verifies title, author, and 1947 source year. Do not import full text until copyright-renewal and source terms are fully documented.',
+      'Use for Sunday school and preaching preparation after the KJV text and reviewed cross references, especially for resurrection, opened Scriptures, and witness.',
+      'https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-luke/'
+    )
+) as sample(book, chapter, verse_start, verse_end, source_title, entry_text, public_domain_status, rights_basis, recommended_use, source_url)
+where resource_sources.title = 'H. A. Ironside Commentary Samples'
+on conflict (book, chapter, verse_start, verse_end, author, resource_title) do update
+set source_title = excluded.source_title,
+    entry_text = excluded.entry_text,
+    public_domain_status = excluded.public_domain_status,
+    rights_basis = excluded.rights_basis,
+    recommended_use = excluded.recommended_use,
+    source_url = excluded.source_url,
     source_id = excluded.source_id;

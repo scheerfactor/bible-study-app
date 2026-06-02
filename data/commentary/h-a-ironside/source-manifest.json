@@ -1,0 +1,47 @@
+{
+  "title": "H. A. Ironside Commentary Samples",
+  "author": "H. A. Ironside",
+  "category": "Commentaries",
+  "source_url": "https://www.wholesomewords.org/etexts/ironside/writings.html",
+  "public_domain_status": "Mixed source status. Romans first edition is 1928 and public domain in the United States. John and Luke source pages are verified, but full-text bulk import requires a copyright-renewal and edition audit.",
+  "commercial_use_status": "Phase 2 includes curated summary entries only. Do not commercially redistribute full John or Luke source text until renewal, edition, and source terms are fully reviewed.",
+  "attribution_required": true,
+  "rights_basis": "Use source-level metadata for each entry. Avoid modern edited editions and site-specific formatting. Treat this collection as sample-only until every selected source file has a complete rights review.",
+  "doctrinal_review_status": "reviewed for Phase 2 sample use with discernment",
+  "recommended_use": "Use as a second commentary voice after Scripture, Webster's 1828, TSK, people/place/type connections, and Matthew Henry. Keep collapsed by default so Scripture remains primary.",
+  "notes": "Genesis 1 and Exodus 3 are intentionally not imported because a verified Ironside commentary source for those chapters was not found during Phase 2 source review.",
+  "import_status": "phase-2-sample",
+  "sources": [
+    {
+      "work_title": "Addresses on the Gospel of John",
+      "year": 1942,
+      "source_url": "https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/",
+      "source_status": "Source page verified at Plymouth Brethren Archive.",
+      "rights_status": "Full-text import requires renewal and edition audit before commercial use. Phase 2 uses curated summary only."
+    },
+    {
+      "work_title": "Lectures on the Epistle to the Romans",
+      "year": 1928,
+      "source_url": "https://www.brethrenarchive.org/media/364659/ironside-h-a-_-epistles-to-the-romans.pdf",
+      "source_status": "Source PDF verified; scan identifies H. A. Ironside and first edition 1928.",
+      "rights_status": "1928 first edition is public domain in the United States as of 2026. Avoid modern formatting or later edition changes unless separately reviewed."
+    },
+    {
+      "work_title": "Addresses on the Gospel of Luke",
+      "year": 1947,
+      "source_url": "https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-luke/",
+      "source_status": "Source page verified at Plymouth Brethren Archive.",
+      "rights_status": "Full-text import requires renewal and edition audit before commercial use. Phase 2 uses curated summary only."
+    }
+  ],
+  "blocked_requested_samples": [
+    {
+      "reference": "Genesis 1",
+      "reason": "No verified H. A. Ironside Genesis commentary source was found during Phase 2 review."
+    },
+    {
+      "reference": "Exodus 3",
+      "reason": "No verified H. A. Ironside Exodus commentary source was found during Phase 2 review."
+    }
+  ]
+}

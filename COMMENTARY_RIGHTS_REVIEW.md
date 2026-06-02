@@ -51,3 +51,60 @@ Before a full Matthew Henry import:
 - Chunk long entries so the Bible reader is not overwhelmed.
 - Keep commentary collapsed or secondary in the reader.
 - Review summaries and excerpts for doctrinal clarity and readability.
+
+## Phase 2 Selection
+
+Second commentary voice: **H. A. Ironside Commentary Samples**.
+
+Ironside is a better fit for the target audience as a teacher-friendly, KJV-friendly, dispensational/Bible-conference style voice. Matthew Henry remains the first commentary collection and is not removed.
+
+## Phase 2 Source Review
+
+Verified source paths found:
+
+- `Addresses on the Gospel of John` by H. A. Ironside: https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/
+- `Lectures on the Epistle to the Romans` by H. A. Ironside: https://www.brethrenarchive.org/media/364659/ironside-h-a-_-epistles-to-the-romans.pdf
+- `Addresses on the Gospel of Luke` by H. A. Ironside: https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-luke/
+- Ironside writings index for future source tracing: https://www.wholesomewords.org/etexts/ironside/writings.html
+
+Requested but not imported:
+
+- Genesis 1
+- Exodus 3
+
+Reason: no verified H. A. Ironside commentary source for Genesis 1 or Exodus 3 was found during Phase 2 review. Do not import modern "Ironside Bible" notes, unsourced excerpts, or secondary site snippets until the exact source and rights are verified.
+
+## Phase 2 Rights Basis
+
+- Romans sample: the source PDF identifies `Lectures on the Epistle to the Romans` by H. A. Ironside, Loizeaux Brothers, first edition 1928. The 1928 first edition is public domain in the United States as of 2026. Avoid later edition additions and scan formatting unless separately reviewed.
+- John and Luke samples: source pages are verified at Plymouth Brethren Archive, but full-text import needs a copyright renewal, edition, and source-terms audit before commercial redistribution.
+- Phase 2 app entries for John 3 and Luke 24 are curated summaries, not full-text transcriptions.
+
+## Phase 2 Import Scope
+
+Curated Phase 2 entries are included for:
+
+- John 3
+- Romans 5
+- Luke 24
+
+The import file is `data/imports/h-a-ironside-phase-2-commentary.json`.
+
+The source manifest is `data/commentary/h-a-ironside/source-manifest.json`.
+
+## Phase 2 Display Rules
+
+- Show multiple commentary entries where available.
+- Keep commentary collapsed by default in the Study Drawer and Full Study view.
+- Display author, source, rights status, recommended use, and commentary text.
+- Keep Scripture first, then Webster, TSK, people/places/types, and commentary.
+
+## Full Ironside Import Recommendation
+
+Before any larger Ironside import:
+
+- Verify each exact source file and publication year.
+- Check copyright renewal status for works first published after 1928.
+- Avoid importing modern edited editions.
+- Import a small sample first and validate references.
+- Keep all entries tied to source-level rights metadata.
