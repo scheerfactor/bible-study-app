@@ -40,7 +40,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy";
-type StudyDrawerTab = "study" | "actions" | "dictionary" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
+type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader";
@@ -345,6 +345,11 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
     definition:
       "Love; benevolence; good will. In Scripture, supreme love to God and good will to men.",
   },
+  do: {
+    word: "do",
+    definition:
+      "To perform; to execute; to act; to bring to pass. In Scripture, often used of obedience, practice, or continued action.",
+  },
 };
 
 const dictionaryAliases: Record<string, string> = {
@@ -360,6 +365,11 @@ const dictionaryAliases: Record<string, string> = {
   repentance: "repentance",
   repent: "repentance",
   charity: "charity",
+  did: "do",
+  doeth: "do",
+  doth: "do",
+  done: "do",
+  doing: "do",
   loveth: "love",
   loved: "love",
   lovedst: "love",
@@ -1321,6 +1331,16 @@ export default function Home() {
     [completedResources, libraryProgress],
   );
 
+  const todayLibraryProgress = useMemo(
+    () =>
+      continueReadingResources[0] ??
+      Object.values(libraryProgress)
+        .filter((progress) => !completedResources[progress.slug])
+        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0] ??
+      null,
+    [completedResources, continueReadingResources, libraryProgress],
+  );
+
   const completedLibraryResources = useMemo(
     () => Object.values(completedResources).sort((a, b) => b.completedAt.localeCompare(a.completedAt)),
     [completedResources],
@@ -1607,6 +1627,13 @@ export default function Home() {
     flashTimerRef.current = setTimeout(() => setFlashRef(null), 2200);
   }
 
+  function openChapterAnalysis() {
+    setTab("bible");
+    window.requestAnimationFrame(() => {
+      document.getElementById("chapter-analysis-workflow")?.scrollIntoView({ block: "start", behavior: "smooth" });
+    });
+  }
+
   function openReference(targetRef: string) {
     const targetVerse = allVerses.find((candidate) => candidate.ref === targetRef);
     if (!targetVerse) {
@@ -1740,6 +1767,47 @@ export default function Home() {
       setActiveLibraryText("Could not load this resource yet.");
     } finally {
       setActiveLibraryLoading(false);
+    }
+  }
+
+  async function listenToLibraryProgress(progress: LibraryProgress | null) {
+    if (!progress) {
+      setTab("library");
+      return;
+    }
+
+    const resource = libraryResources.find((candidate) => candidate.slug === progress.slug);
+    if (!resource) {
+      setTab("library");
+      return;
+    }
+
+    try {
+      const response = await fetch(`/api/library/${resource.slug}`);
+      const data = (await response.json()) as { text?: string };
+      const text = data.text ?? "";
+      if (!text.trim()) {
+        setSyncMessage("Could not load that library resource for listening yet.");
+        return;
+      }
+      toggleSpeech(
+        `resource-${resource.slug}`,
+        resource.title,
+        text,
+        listeningProgress[resource.slug]?.progress ?? progress.progress,
+        (nextProgress) => {
+          saveListeningProgressUpdate(resource, nextProgress, speechRateRef.current);
+          saveLibraryProgressUpdate(resource.slug, (current) => ({
+            ...current,
+            title: resource.title,
+            author: resource.author,
+            progress: nextProgress,
+            updatedAt: new Date().toISOString(),
+          }));
+        },
+      );
+    } catch {
+      setSyncMessage("Could not load that library resource for listening yet.");
     }
   }
 
@@ -2574,12 +2642,30 @@ export default function Home() {
               <TodayScreen
                 book={book}
                 chapter={chapter}
+                chapterAnalysis={chapterAnalysis}
+                currentLibraryProgress={todayLibraryProgress}
+                keyWords={keyWordsForVerse(versesByRef.get(selectedRef) ?? versesByRef.get("John 3:16") ?? chapterVerses[0] ?? allVerses[0]!)}
+                memoryItem={scriptureMemory.find((item) => item.verse_ref === selectedRef) ?? null}
+                selectedVerse={versesByRef.get(selectedRef) ?? versesByRef.get("John 3:16") ?? chapterVerses[0] ?? allVerses[0]!}
                 selectedRef={selectedRef}
                 noteCount={saved.notes.length}
                 highlightCount={saved.highlights.length}
                 bookmarkCount={saved.bookmarks.length}
                 onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
+                onListen={listenCurrentChapter}
+                onOpenChapterAnalysis={openChapterAnalysis}
+                onOpenLibrary={() => {
+                  if (todayLibraryProgress) {
+                    void openLibraryResource(todayLibraryProgress.slug, "reader");
+                    return;
+                  }
+                  setTab("library");
+                }}
+                onListenLibrary={() => {
+                  void listenToLibraryProgress(todayLibraryProgress);
+                }}
+                onRepeatMemory={(ref, nextProgress) => updateMemoryProgress(ref, nextProgress)}
               />
             )}
 
@@ -2913,40 +2999,196 @@ function NavButton({
 function TodayScreen({
   book,
   chapter,
+  chapterAnalysis,
+  currentLibraryProgress,
+  keyWords,
+  memoryItem,
+  selectedVerse,
   selectedRef,
   noteCount,
   highlightCount,
   bookmarkCount,
   onContinue,
   onJohn316,
+  onListen,
+  onOpenChapterAnalysis,
+  onOpenLibrary,
+  onListenLibrary,
+  onRepeatMemory,
 }: {
   book: string;
   chapter: number;
+  chapterAnalysis: ChapterStudyAnalysis;
+  currentLibraryProgress: LibraryProgress | null;
+  keyWords: string[];
+  memoryItem: ScriptureMemoryItem | null;
+  selectedVerse: BibleVerse;
   selectedRef: string;
   noteCount: number;
   highlightCount: number;
   bookmarkCount: number;
   onContinue: () => void;
   onJohn316: () => void;
+  onListen: () => void;
+  onOpenChapterAnalysis: () => void;
+  onOpenLibrary: () => void;
+  onListenLibrary: () => void;
+  onRepeatMemory: (ref: string, nextProgress: number) => void;
 }) {
+  const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
+  const memoryProgress = memoryItem?.progress ?? 0;
+  const repeatedWords = chapterAnalysis.repeatedWords.slice(0, 6);
+
   return (
-    <div className="space-y-5 p-4 md:p-8">
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Today</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
-          Continue in {book} {chapter}
+          Walk with the Lord today
         </h1>
         <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-          Open the reader, jump to a verse, search the KJV, and keep your notes, highlights, and bookmarks together.
+          Start simple: read, listen, study one chapter, memorize one verse, pray, and write down what the Lord is teaching you.
         </p>
-        <div className="mt-5 flex flex-wrap gap-3">
-          <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onContinue} type="button">
-            Continue reading
-          </button>
-          <button className="rounded-full border border-[var(--line)] bg-[var(--warm)] px-5 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onJohn316} type="button">
-            Jump to John 3:16
-          </button>
-        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <TodayCard
+          icon={<BookOpen size={18} />}
+          title="Continue Bible Reading"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onContinue} type="button">
+              Continue
+            </button>
+          }
+        >
+          <p className="text-2xl font-semibold text-[var(--ink)]">{book} {chapter}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Pick up where you left off in the KJV reader.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--ink)]" onClick={onListen} type="button">
+              <Headphones size={15} />
+              Listen
+            </button>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 py-2.5 text-sm font-semibold text-[var(--ink)]" onClick={onJohn316} type="button">
+              John 3:16
+            </button>
+          </div>
+        </TodayCard>
+
+        <TodayCard
+          icon={<BarChart3 size={18} />}
+          title="Study This Chapter"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onOpenChapterAnalysis} type="button">
+              Chapter Analysis
+            </button>
+          }
+        >
+          <p className="text-2xl font-semibold text-[var(--ink)]">{book} {chapter}</p>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <MiniStat label="Words" value={String(chapterAnalysis.stats.words)} />
+            <MiniStat label="Verses" value={String(chapterAnalysis.stats.verses)} />
+            <MiniStat label="Selected" value={String(wordsFromText(selectedVerse.plainText).length)} />
+          </div>
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key words</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {keyWords.slice(0, 6).map((word) => (
+              <span key={`today-key-${word}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                {word}
+              </span>
+            ))}
+          </div>
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Repeated words</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {repeatedWords.map((item) => (
+              <span key={`today-repeat-${item.word}`} className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                {item.word} {item.count}
+              </span>
+            ))}
+          </div>
+        </TodayCard>
+
+        <TodayCard
+          icon={<Brain size={18} />}
+          title="Memory Verse"
+          action={<span className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{formatPercent(memoryProgress)}</span>}
+        >
+          <p className="text-sm font-semibold text-[var(--green)]">{selectedVerse.ref}</p>
+          <p className="mt-2 font-serif text-lg leading-8 text-[var(--scripture-ink)]">
+            {memoryMode === "hide" ? hideEveryOtherWord(selectedVerse.text) : memoryMode === "letters" ? firstLetterPrompt(selectedVerse.text) : selectedVerse.text}
+          </p>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <button
+              className={`rounded-full px-3 py-2 text-xs font-semibold ${memoryMode === "repeat" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
+              onClick={() => {
+                setMemoryMode("repeat");
+                onRepeatMemory(selectedVerse.ref, Math.min(100, memoryProgress + 25));
+              }}
+              type="button"
+            >
+              Repeat
+            </button>
+            <button
+              className={`rounded-full px-3 py-2 text-xs font-semibold ${memoryMode === "hide" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
+              onClick={() => setMemoryMode("hide")}
+              type="button"
+            >
+              Hide Words
+            </button>
+            <button
+              className={`rounded-full px-3 py-2 text-xs font-semibold ${memoryMode === "letters" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
+              onClick={() => setMemoryMode("letters")}
+              type="button"
+            >
+              First Letters
+            </button>
+          </div>
+        </TodayCard>
+
+        <TodayCard
+          icon={<Library size={18} />}
+          title="Continue Library Reading"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onOpenLibrary} type="button">
+              Open
+            </button>
+          }
+        >
+          {currentLibraryProgress ? (
+            <>
+              <p className="text-lg font-semibold text-[var(--ink)]">{currentLibraryProgress.title}</p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{currentLibraryProgress.author}</p>
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-white">
+                <div className="h-full rounded-full bg-[var(--green)]" style={{ width: formatPercent(currentLibraryProgress.progress) }} />
+              </div>
+              <p className="mt-2 text-sm font-semibold text-[var(--muted)]">{formatPercent(currentLibraryProgress.progress)} complete</p>
+              <button className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--ink)]" onClick={onListenLibrary} type="button">
+                <Headphones size={15} />
+                Listen
+              </button>
+            </>
+          ) : (
+            <p className="text-sm leading-6 text-[var(--muted)]">Open the Library and start a public-domain resource. Continue Reading will appear here.</p>
+          )}
+        </TodayCard>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <TodayCard icon={<MessageSquareText size={18} />} title="Prayer Focus Placeholder">
+          <div className="grid gap-2 sm:grid-cols-3">
+            <PlaceholderPill label="Missionary" value="Coming soon" />
+            <PlaceholderPill label="Church member" value="Coming soon" />
+            <PlaceholderPill label="Ministry" value="Coming soon" />
+          </div>
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Prayer module coming soon.</p>
+        </TodayCard>
+
+        <TodayCard icon={<NotebookPen size={18} />} title="Journal Placeholder">
+          <p className="text-sm font-semibold text-[var(--green)]">{selectedRef}</p>
+          <p className="mt-2 rounded-2xl border border-dashed border-stone-300 bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+            Write what the Lord is teaching you.
+          </p>
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Journal module coming soon.</p>
+        </TodayCard>
       </section>
 
       <section className="grid grid-cols-3 gap-3">
@@ -2954,11 +3196,40 @@ function TodayScreen({
         <Stat label="Highlights" value={highlightCount} />
         <Stat label="Bookmarks" value={bookmarkCount} />
       </section>
+    </div>
+  );
+}
 
-      <section className="rounded-3xl border border-[var(--line)] bg-[var(--warm)] p-5">
-        <p className="text-sm font-semibold text-[var(--muted)]">Last selected verse</p>
-        <p className="mt-2 text-2xl font-semibold text-[var(--green)]">{selectedRef}</p>
-      </section>
+function TodayCard({
+  icon,
+  title,
+  action,
+  children,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  action?: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-2 text-[var(--green)]">
+          {icon}
+          <h2 className="text-base font-semibold text-[var(--ink)]">{title}</h2>
+        </div>
+        {action}
+      </div>
+      <div className="mt-4">{children}</div>
+    </article>
+  );
+}
+
+function PlaceholderPill({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{label}</p>
+      <p className="mt-1 text-sm font-semibold text-[var(--ink)]">{value}</p>
     </div>
   );
 }
@@ -3448,8 +3719,11 @@ function ChapterStudyWorkflow({
             <MiniStat label="Verses" value={String(analysis.stats.verses)} />
             <MiniStat label="Words" value={String(analysis.stats.words)} />
             <MiniStat label="Key words" value={String(analysis.stats.uniqueWords)} />
-            <MiniStat label="Avg / verse" value={String(analysis.stats.averageWordsPerVerse)} />
+            <MiniStat label="Selected" value={String(wordsFromText(selectedVerse.plainText).length)} />
           </div>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            Average words per verse: {analysis.stats.averageWordsPerVerse}
+          </p>
           <div className="mt-4">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Repeated words</p>
             <div className="mt-2 flex flex-wrap gap-2">
@@ -3497,7 +3771,7 @@ function ChapterStudyWorkflow({
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <Search size={18} />
-            <h3 className="text-sm font-semibold">Word Explorer</h3>
+            <h3 className="text-sm font-semibold">Occurrence Explorer</h3>
           </div>
           <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Study word
@@ -3534,6 +3808,16 @@ function ChapterStudyWorkflow({
             ))}
           </div>
           <div className="mt-3 space-y-2">
+            {explorer.bibleOccurrences[0] && (
+              <button
+                className="w-full rounded-xl border border-[var(--line)] bg-white px-3 py-2 text-left"
+                onClick={() => onOpenReference(explorer.bibleOccurrences[0].ref)}
+                type="button"
+              >
+                <p className="text-xs font-semibold text-[var(--green)]">First occurrence: {explorer.bibleOccurrences[0].ref}</p>
+                <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{explorer.bibleOccurrences[0].text}</p>
+              </button>
+            )}
             {explorer.chapterOccurrences.slice(0, 3).map((verse) => (
               <button
                 key={`word-occurrence-${verse.ref}`}
@@ -3543,6 +3827,18 @@ function ChapterStudyWorkflow({
               >
                 <p className="text-xs font-semibold text-[var(--green)]">{verse.ref}</p>
                 <p className="mt-1 line-clamp-2 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{verse.text}</p>
+              </button>
+            ))}
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {explorer.bibleOccurrences.slice(0, 12).map((verse) => (
+              <button
+                key={`chapter-explorer-ref-${explorer.lookupWord}-${verse.ref}`}
+                className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onOpenReference(verse.ref)}
+                type="button"
+              >
+                {verse.ref}
               </button>
             ))}
           </div>
@@ -5072,6 +5368,7 @@ function StudyDrawer({
     { id: "study", label: "Study" },
     { id: "actions", label: "Actions" },
     { id: "dictionary", label: "Dictionary" },
+    { id: "occurrences", label: "Occurrences" },
     { id: "crossReferences", label: "Cross References" },
     { id: "notes", label: "Notes" },
     { id: "audio", label: "Audio" },
@@ -5331,6 +5628,7 @@ function StudyDrawer({
                 <ActionButton icon={<Share2 size={18} />} label="Share" onClick={onShare} />
                 <ActionButton icon={<NotebookPen size={18} />} label="Note" onClick={() => onActiveTabChange("notes")} />
                 <ActionButton icon={<Volume2 size={18} />} label="Audio" onClick={() => onActiveTabChange("audio")} />
+                <ActionButton icon={<Search size={18} />} label="Occurrences" onClick={() => onActiveTabChange("occurrences")} />
               </div>
 
               <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
@@ -5360,6 +5658,13 @@ function StudyDrawer({
                     <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />
                     <MiniStat label="Bible" value={String(drawerWordExplorer.bibleOccurrences.length)} />
                   </div>
+                  <button
+                    className="mt-3 w-full rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+                    onClick={() => onActiveTabChange("occurrences")}
+                    type="button"
+                  >
+                    Open Occurrence Explorer
+                  </button>
                   {drawerWordExplorer.chapterOccurrences.length > 0 && (
                     <div className="mt-3 space-y-2">
                       {drawerWordExplorer.chapterOccurrences.slice(0, 3).map((occurrence) => (
@@ -5380,6 +5685,14 @@ function StudyDrawer({
                 <EmptyState title="Tap a word" body="Tap any word in the verse above or the Bible text to look up a Webster's 1828 definition." />
               )}
             </div>
+          )}
+
+          {activeTab === "occurrences" && (
+            <OccurrenceExplorerPanel
+              explorer={drawerWordExplorer}
+              onLookupWord={onLookupWord}
+              onOpenReference={onOpenReference}
+            />
           )}
 
           {activeTab === "crossReferences" && (
@@ -5620,6 +5933,92 @@ function WordLookupStrip({
         ))}
       </div>
     </section>
+  );
+}
+
+function OccurrenceExplorerPanel({
+  explorer,
+  onLookupWord,
+  onOpenReference,
+}: {
+  explorer: WordExplorerResult;
+  onLookupWord: (word: string) => void;
+  onOpenReference: (targetRef: string) => void;
+}) {
+  const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
+  const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
+
+  return (
+    <div className="space-y-3">
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">Occurrence Explorer</p>
+            <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{explorer.word || "word"}</h3>
+          </div>
+          <button
+            className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+            onClick={() => onLookupWord(explorer.word)}
+            type="button"
+          >
+            Webster&apos;s 1828
+          </button>
+        </div>
+        <p className="mt-2 text-sm text-[var(--muted)]">
+          {explorer.lookupWord && explorer.lookupWord !== explorer.word
+            ? `Normalized to: ${explorer.lookupWord}`
+            : `Lookup root: ${explorer.lookupWord || explorer.word}`}
+        </p>
+        <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          <MiniStat label="Chapter" value={String(explorer.chapterOccurrences.length)} />
+          <MiniStat label="Book" value={String(explorer.bookOccurrences.length)} />
+          <MiniStat label="Bible" value={String(explorer.bibleOccurrences.length)} />
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <p className="text-sm font-semibold text-[var(--green)]">First occurrence</p>
+        {firstOccurrence ? (
+          <button
+            className="mt-2 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+            onClick={() => onOpenReference(firstOccurrence.ref)}
+            type="button"
+          >
+            <p className="text-sm font-semibold text-[var(--green)]">{firstOccurrence.ref}</p>
+            <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{firstOccurrence.text}</p>
+          </button>
+        ) : (
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">No matching verse found in the local KJV text.</p>
+        )}
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm font-semibold text-[var(--green)]">Matching references</p>
+          <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+            {visibleMatches.length} shown
+          </span>
+        </div>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {visibleMatches.map((verse) => (
+            <button
+              key={`occurrence-${explorer.lookupWord}-${verse.ref}`}
+              className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left text-xs font-semibold text-[var(--green)]"
+              onClick={() => onOpenReference(verse.ref)}
+              type="button"
+            >
+              {verse.ref}
+            </button>
+          ))}
+        </div>
+        {explorer.bibleOccurrences.length > visibleMatches.length && (
+          <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+            Showing the first {visibleMatches.length} references to keep mobile study quick.
+          </p>
+        )}
+      </section>
+    </div>
   );
 }
 
