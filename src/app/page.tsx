@@ -488,12 +488,34 @@ type BookIntroduction = {
     reference: string;
     summary: string;
   }>;
+  historicalSetting?: string;
+  mainBurden?: string;
+  keyThemes?: string[];
   keyPeople: string[];
   keyPlaces: string[];
   christInTheBook: string;
+  teachingCautions?: string[];
   memoryVerses: string[];
   recommendedResources: ChapterResourceRecommendation[];
   sourceNotes: string[];
+};
+
+type AmosChapterStudy = {
+  chapter: number;
+  title: string;
+  summary: string;
+  keyVerses: string[];
+  repeatedFocus: string[];
+  peopleMentioned: string[];
+  placesAndNations: string[];
+  mainSinsJudged: string[];
+  teachingAim: string;
+  practicalApplications: string[];
+  crossReferences: Array<{
+    sourceRef: string;
+    targetRef: string;
+    label: string;
+  }>;
 };
 
 type SpeechState = {
@@ -1039,6 +1061,123 @@ const REVIEWED_TEACHING_SUMMARIES: Record<string, Omit<TeachingWorkspaceSummary,
     suggestedTitle: "Prepare to Meet Thy God",
   },
 };
+
+const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
+  {
+    chapter: 1,
+    title: "Judgment on the Nations",
+    summary:
+      "The LORD begins the burden of Amos by announcing judgment on surrounding nations. The repeated announcements show that God sees cruelty, covenant-breaking, and violence even outside Israel.",
+    keyVerses: ["Amos 1:2", "Amos 1:3", "Amos 1:6", "Amos 1:9", "Amos 1:11"],
+    repeatedFocus: ["for three transgressions, and for four", "I will not turn away the punishment", "I will send a fire"],
+    peopleMentioned: ["Amos", "Uzziah", "Jeroboam II", "Hazael", "Ben-hadad"],
+    placesAndNations: ["Tekoa", "Zion", "Jerusalem", "Damascus", "Gaza", "Tyrus", "Edom", "Ammon"],
+    mainSinsJudged: [
+      "Cruel treatment of conquered people",
+      "Slave traffic",
+      "Breaking a brotherly covenant",
+      "Vengeful anger",
+      "Violence against the vulnerable",
+    ],
+    teachingAim: "Help the class see that the LORD rules over all nations and judges public sin righteously.",
+    practicalApplications: [
+      "Begin with the fear of God before discussing any nation or culture.",
+      "Do not treat injustice as hidden because men do not answer for it immediately.",
+      "Let Amos search our own hearts before we apply judgment to others.",
+    ],
+    crossReferences: [
+      { sourceRef: "Amos 1:2", targetRef: "Joel 3:16", label: "The LORD roars from Zion" },
+      { sourceRef: "Amos 1:3", targetRef: "Isaiah 17:1", label: "Damascus judged" },
+      { sourceRef: "Amos 1:6", targetRef: "Joel 3:6", label: "Captivity and slave traffic" },
+      { sourceRef: "Amos 1:11", targetRef: "Obadiah 1:10", label: "Edom's violence against Jacob" },
+    ],
+  },
+  {
+    chapter: 2,
+    title: "Judgment Reaches Judah and Israel",
+    summary:
+      "The judgments move from the nations to Moab, Judah, and Israel. Amos shows that covenant privilege increases responsibility, and Israel's sins include oppression, corruption, and silencing God's witnesses.",
+    keyVerses: ["Amos 2:4", "Amos 2:6", "Amos 2:11", "Amos 2:12"],
+    repeatedFocus: ["for three transgressions, and for four", "they have despised the law", "ye commanded"],
+    peopleMentioned: ["Judah", "Israel", "Prophets", "Nazirites", "Amorite"],
+    placesAndNations: ["Moab", "Judah", "Israel", "Egypt", "Amorite land"],
+    mainSinsJudged: [
+      "Despising the law of the LORD",
+      "Selling the righteous for silver",
+      "Oppressing the poor",
+      "Religious and moral corruption",
+      "Forbidding prophetic witness and Nazarite separation",
+    ],
+    teachingAim: "Show that nearness to the truth does not excuse sin; it makes obedience more serious.",
+    practicalApplications: [
+      "Measure privilege by responsibility, not by pride.",
+      "Teach the class to notice sins against the poor and powerless.",
+      "Warn against silencing voices that call God's people back to holiness.",
+    ],
+    crossReferences: [
+      { sourceRef: "Amos 2:4", targetRef: "Deuteronomy 31:20", label: "Despising the LORD's law" },
+      { sourceRef: "Amos 2:6", targetRef: "Proverbs 14:31", label: "Oppressing the poor" },
+      { sourceRef: "Amos 2:11", targetRef: "Numbers 6:2", label: "Nazarite separation" },
+      { sourceRef: "Amos 2:12", targetRef: "2 Chronicles 36:16", label: "Rejecting God's messengers" },
+    ],
+  },
+  {
+    chapter: 3,
+    title: "Chosen and Accountable",
+    summary:
+      "The LORD reminds Israel that they alone were known of all families of the earth, therefore He will punish their iniquities. Amos presses the certainty of God's word and the seriousness of refusing warning.",
+    keyVerses: ["Amos 3:2", "Amos 3:3", "Amos 3:7", "Amos 3:8"],
+    repeatedFocus: ["Hear this word", "can two walk together", "the Lord GOD hath spoken"],
+    peopleMentioned: ["Children of Israel", "Prophets", "Amos"],
+    placesAndNations: ["Egypt", "Ashdod", "Samaria", "Bethel"],
+    mainSinsJudged: [
+      "Covenant privilege abused",
+      "Violence and robbery in palaces",
+      "False security in worship places",
+      "Refusal to hear the prophet's warning",
+    ],
+    teachingAim: "Show that God's people cannot claim His favor while refusing to walk in agreement with His word.",
+    practicalApplications: [
+      "Use Amos 3:3 to teach agreement with God before fellowship with the world.",
+      "Let the warning passages build urgency, not harshness.",
+      "Connect privilege, revelation, and accountability clearly.",
+    ],
+    crossReferences: [
+      { sourceRef: "Amos 3:2", targetRef: "Deuteronomy 7:6", label: "Chosen people accountability" },
+      { sourceRef: "Amos 3:3", targetRef: "2 Corinthians 6:14", label: "Walking together and separation" },
+      { sourceRef: "Amos 3:7", targetRef: "Genesis 18:17", label: "God revealing His counsel" },
+      { sourceRef: "Amos 3:8", targetRef: "Jeremiah 20:9", label: "Compelled to speak" },
+    ],
+  },
+  {
+    chapter: 4,
+    title: "Prepare to Meet Thy God",
+    summary:
+      "The LORD exposes oppression and religious hypocrisy, then recounts repeated chastisements that did not bring Israel back. The chapter closes with the solemn call to prepare to meet God.",
+    keyVerses: ["Amos 4:1", "Amos 4:6", "Amos 4:11", "Amos 4:12"],
+    repeatedFocus: ["yet have ye not returned unto me", "come to Bethel", "prepare to meet thy God"],
+    peopleMentioned: ["Kine of Bashan", "Israel", "The Lord GOD"],
+    placesAndNations: ["Samaria", "Bethel", "Gilgal", "Egypt", "Sodom", "Gomorrah"],
+    mainSinsJudged: [
+      "Oppression of the poor",
+      "Religious hypocrisy",
+      "Pride in multiplied offerings",
+      "Refusing correction after repeated warnings",
+    ],
+    teachingAim: "Call the class to take God's repeated warnings seriously and respond before Him.",
+    practicalApplications: [
+      "Show that religious activity cannot substitute for repentance.",
+      "Trace each warning with the repeated phrase 'yet have ye not returned unto me.'",
+      "End with reverent urgency from Amos 4:12.",
+    ],
+    crossReferences: [
+      { sourceRef: "Amos 4:1", targetRef: "Proverbs 22:16", label: "Oppressing the poor" },
+      { sourceRef: "Amos 4:6", targetRef: "Haggai 2:17", label: "Warnings not heeded" },
+      { sourceRef: "Amos 4:11", targetRef: "Genesis 19:24", label: "Sodom and Gomorrah" },
+      { sourceRef: "Amos 4:12", targetRef: "Hebrews 10:31", label: "Meeting God in judgment" },
+    ],
+  },
+];
 
 const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
   createBiblePassage("John", 3),
@@ -1589,10 +1728,27 @@ const bookIntroductions: BookIntroduction[] = [
       { title: "Visions of judgment", reference: "Amos 7-9:10", summary: "Amos sees judgment coming and faces opposition at Bethel." },
       { title: "Restoration promised", reference: "Amos 9:11-15", summary: "The fallen tabernacle of David is raised up and blessing is promised." },
     ],
+    historicalSetting:
+      "Amos ministered during outward prosperity in Judah and Israel, before the Assyrian judgment on the northern kingdom. The book addresses nations, Judah, and especially Israel during a time when wealth, false worship, and oppression hid serious spiritual decay.",
+    mainBurden:
+      "The LORD exposes national and religious sin, warns Israel that privilege brings accountability, and calls His people to prepare to meet God.",
+    keyThemes: [
+      "The LORD judges all nations righteously",
+      "Privilege before God brings accountability",
+      "Religious activity cannot cover injustice or rebellion",
+      "Repeated warnings are mercy before judgment",
+      "The promised restoration of David's house points forward to God's kingdom purpose",
+    ],
     keyPeople: ["Amos", "Uzziah", "Jeroboam II", "Israel"],
     keyPlaces: ["Tekoa", "Bethel", "Samaria", "Damascus", "Gaza", "Tyre", "Edom", "Ammon", "Moab"],
     christInTheBook:
       "Amos points to Christ as the righteous Judge and the One connected with the promised raising up of the tabernacle of David, which is later cited in Acts 15.",
+    teachingCautions: [
+      "Do not turn Amos into politics detached from repentance before God.",
+      "Do not soften the judgment language; explain it reverently from the text.",
+      "Do not preach judgment on others without letting Amos 2-4 search God's people.",
+      "Keep applications Scripture-led, not commentary-led.",
+    ],
     memoryVerses: ["Amos 3:3", "Amos 4:12", "Amos 5:14", "Amos 9:11"],
     recommendedResources: [
       {
@@ -2064,17 +2220,37 @@ function referenceImportId(row: TskCrossReferenceImportRow) {
     .replace(/^-|-$/g, "");
 }
 
-const localCrossReferences: CrossReference[] = (tskPhase1Sample as TskCrossReferenceImportRow[]).map((row) => ({
-  id: referenceImportId(row),
-  verse_ref: row.verse_ref,
-  target_ref: row.target_ref,
-  label: row.label ?? "",
-  source: row.source,
-  source_title: row.source_title,
-  source_url: row.source_url,
-  public_domain_status: row.public_domain_status,
-  rights_basis: row.rights_basis,
-}));
+const amosTeachingCrossReferences: CrossReference[] = AMOS_CHAPTER_STUDIES.flatMap((chapterStudy) =>
+  chapterStudy.crossReferences.map((reference) => ({
+    id: `amos-teaching-${reference.sourceRef}-${reference.targetRef}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, ""),
+    verse_ref: reference.sourceRef,
+    target_ref: reference.targetRef,
+    label: reference.label,
+    source: "Reviewed Amos teaching sample",
+    source_title: "Father's Business reviewed Amos teaching prep",
+    source_url: "",
+    public_domain_status: "Reference metadata only",
+    rights_basis: "Verse references and labels are reviewed metadata; no commentary text imported.",
+  })),
+);
+
+const localCrossReferences: CrossReference[] = [
+  ...(tskPhase1Sample as TskCrossReferenceImportRow[]).map((row) => ({
+    id: referenceImportId(row),
+    verse_ref: row.verse_ref,
+    target_ref: row.target_ref,
+    label: row.label ?? "",
+    source: row.source,
+    source_title: row.source_title,
+    source_url: row.source_url,
+    public_domain_status: row.public_domain_status,
+    rights_basis: row.rights_basis,
+  })),
+  ...amosTeachingCrossReferences,
+];
 
 const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
@@ -4880,6 +5056,13 @@ export default function Home() {
     startBibleListening(verses, `${book}`, `bible-book-${book}`, repeatBook);
   }
 
+  function listenChapterRange(targetBook: string, startChapter: number, endChapter: number) {
+    const start = Math.min(startChapter, endChapter);
+    const end = Math.max(startChapter, endChapter);
+    const verses = allVerses.filter((verse) => verse.book === targetBook && verse.chapter >= start && verse.chapter <= end);
+    startBibleListening(verses, `${targetBook} ${start}-${end}`, `bible-range-${targetBook}-${start}-${end}`);
+  }
+
   function listenCurrentChapterCommentary() {
     if (!chapterCommentaryEntries.length) {
       setSyncMessage(`${book} ${chapter} has no reviewed commentary entries ready yet.`);
@@ -5712,6 +5895,7 @@ export default function Home() {
                 onListenFromCurrentVerse={listenFromCurrentVerse}
                 onListenRange={listenSelectedRange}
                 onListenWholeBook={listenWholeBook}
+                onListenChapterRange={listenChapterRange}
                 onListenCommentary={listenCurrentChapterCommentary}
                 onStopListening={() => stopSpeech()}
                 onListenRangeStartChange={setListenRangeStart}
@@ -6505,6 +6689,18 @@ function BookIntroScreen({
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Purpose</p>
             <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{intro.overview.purpose}</p>
           </div>
+          {intro.historicalSetting && (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Historical Setting</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{intro.historicalSetting}</p>
+            </div>
+          )}
+          {intro.mainBurden && (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Main Burden / Message</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--ink)]">{intro.mainBurden}</p>
+            </div>
+          )}
         </article>
 
         <article className="rounded-3xl border border-[var(--line)] bg-[var(--scripture)] p-5 shadow-sm">
@@ -6550,6 +6746,18 @@ function BookIntroScreen({
         <StudySection title="Christ in the Book">
           <p className="text-sm leading-6 text-[var(--muted)]">{intro.christInTheBook}</p>
         </StudySection>
+
+        {intro.keyThemes?.length ? (
+          <StudySection title="Key Themes">
+            <div className="flex flex-wrap gap-2">
+              {intro.keyThemes.map((theme) => (
+                <span key={`${intro.book}-theme-${theme}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {theme}
+                </span>
+              ))}
+            </div>
+          </StudySection>
+        ) : null}
 
         <StudySection title="Key People">
           <div className="flex flex-wrap gap-2">
@@ -6658,6 +6866,18 @@ function BookIntroScreen({
             ))}
           </div>
         </StudySection>
+
+        {intro.teachingCautions?.length ? (
+          <StudySection title="Teaching Cautions">
+            <div className="space-y-2">
+              {intro.teachingCautions.map((caution) => (
+                <p key={`${intro.book}-caution-${caution}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+                  {caution}
+                </p>
+              ))}
+            </div>
+          </StudySection>
+        ) : null}
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -6854,6 +7074,7 @@ function BibleReader({
   onListenFromCurrentVerse,
   onListenRange,
   onListenWholeBook,
+  onListenChapterRange,
   onListenCommentary,
   onStopListening,
   onListenRangeStartChange,
@@ -6943,6 +7164,7 @@ function BibleReader({
   onListenFromCurrentVerse: () => void;
   onListenRange: () => void;
   onListenWholeBook: () => void;
+  onListenChapterRange: (book: string, startChapter: number, endChapter: number) => void;
   onListenCommentary: () => void;
   onStopListening: () => void;
   onListenRangeStartChange: (verse: number) => void;
@@ -7361,6 +7583,7 @@ function BibleReader({
         onOpenBookIntroduction={onOpenBookIntroduction}
         onOpenLibraryResource={onOpenLibraryResource}
         onListenCommentary={onListenCommentary}
+        onListenChapterRange={onListenChapterRange}
         onOpenReference={onOpenReference}
         onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
@@ -7477,6 +7700,120 @@ function linesFromTeacherNote(value: string) {
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter(Boolean);
+}
+
+function formatTeacherNotesForExport(notes: TeacherNotesDraft) {
+  return sectionOrEmpty([
+    ...linesFromTeacherNote(notes.hook).map((line) => `- Hook / introduction: ${line}`),
+    ...linesFromTeacherNote(notes.mainPoints).map((line) => `- Main point: ${line}`),
+    ...linesFromTeacherNote(notes.illustrations).map((line) => `- Illustration idea: ${line}`),
+    ...linesFromTeacherNote(notes.applications).map((line) => `- Application: ${line}`),
+    ...linesFromTeacherNote(notes.closingThought).map((line) => `- Closing thought: ${line}`),
+  ]);
+}
+
+function buildAmosTeachingNotesMarkdown({
+  bookIntroduction,
+  commentaryEntries,
+  teacherNotesByChapter,
+  versesByRef,
+}: {
+  bookIntroduction: BookIntroduction | null;
+  commentaryEntries: CommentaryEntry[];
+  teacherNotesByChapter: Record<string, TeacherNotesDraft>;
+  versesByRef: Map<string, BibleVerse>;
+}) {
+  const amosIntro = bookIntroduction?.book === "Amos" ? bookIntroduction : bookIntroductions.find((intro) => intro.book === "Amos") ?? null;
+  const lines: string[] = [
+    "# Amos 1-4 Teaching Notes",
+    "",
+    "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
+    "",
+    "## Amos Book Introduction",
+    ...sectionOrEmpty(amosIntro ? [
+      `- Author: ${amosIntro.overview.author}`,
+      `- Date: ${amosIntro.overview.date}`,
+      `- Audience: ${amosIntro.overview.audience}`,
+      `- Theme: ${amosIntro.overview.theme}`,
+      `- Key verse: ${amosIntro.overview.keyVerse}`,
+      `- Purpose: ${amosIntro.overview.purpose}`,
+      amosIntro.historicalSetting ? `- Historical setting: ${amosIntro.historicalSetting}` : "",
+      amosIntro.mainBurden ? `- Main burden/message: ${amosIntro.mainBurden}` : "",
+      `- Christ in Amos: ${amosIntro.christInTheBook}`,
+    ] : []),
+    "",
+    "## Key Themes",
+    ...sectionOrEmpty((amosIntro?.keyThemes ?? []).map((theme) => `- ${theme}`)),
+    "",
+    "## Outline",
+    ...sectionOrEmpty((amosIntro?.outline ?? []).map((item) => `- ${item.reference}: ${item.title}. ${item.summary}`)),
+    "",
+    "## Teaching Cautions",
+    ...sectionOrEmpty((amosIntro?.teachingCautions ?? []).map((caution) => `- ${caution}`)),
+    "",
+  ];
+
+  AMOS_CHAPTER_STUDIES.forEach((chapterStudy) => {
+    const chapterVerses = Array.from(versesByRef.values()).filter((verse) => verse.book === "Amos" && verse.chapter === chapterStudy.chapter);
+    const chapterAnalysis = chapterAnalysisForVerses(chapterVerses, amosTeachingCrossReferences);
+    const notes = teacherNotesByChapter[teacherNotesChapterKey("Amos", chapterStudy.chapter)] ?? EMPTY_TEACHER_NOTES;
+    const recommendations = CHAPTER_RESOURCE_RECOMMENDATIONS.find((item) => item.book === "Amos" && item.chapter === chapterStudy.chapter)?.recommendations ?? [];
+
+    lines.push(
+      `## Amos ${chapterStudy.chapter}: ${chapterStudy.title}`,
+      "",
+      `- Chapter summary: ${chapterStudy.summary}`,
+      `- Main teaching aim: ${chapterStudy.teachingAim}`,
+      "",
+      "### Key Verses",
+      ...sectionOrEmpty(chapterStudy.keyVerses.map((ref) => `- ${verseLine(ref, versesByRef)}`)),
+      "",
+      "### Repeated Words And Phrases",
+      ...sectionOrEmpty([
+        ...chapterStudy.repeatedFocus.map((phrase) => `- Reviewed focus: ${phrase}`),
+        ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => `- Repeated word: ${item.word} (${item.count})`),
+        ...chapterAnalysis.repeatedPhrases.slice(0, 4).map((item) => `- Repeated phrase: ${item.phrase} (${item.count})`),
+      ]),
+      "",
+      "### People Mentioned",
+      ...sectionOrEmpty(chapterStudy.peopleMentioned.map((person) => `- ${person}`)),
+      "",
+      "### Places And Nations",
+      ...sectionOrEmpty(chapterStudy.placesAndNations.map((place) => `- ${place}`)),
+      "",
+      "### Main Sins Judged",
+      ...sectionOrEmpty(chapterStudy.mainSinsJudged.map((sin) => `- ${sin}`)),
+      "",
+      "### Practical Applications",
+      ...sectionOrEmpty(chapterStudy.practicalApplications.map((application) => `- ${application}`)),
+      "",
+      "### Reviewed Cross References",
+      ...sectionOrEmpty(chapterStudy.crossReferences.map((reference) => {
+        const preview = versesByRef.get(reference.targetRef)?.plainText;
+        return `- ${reference.sourceRef} -> ${reference.targetRef} (${reference.label})${preview ? ` - ${preview}` : ""}`;
+      })),
+      "",
+      "### Teacher Notes",
+      ...formatTeacherNotesForExport(notes),
+      "",
+      "### Recommended Resources",
+      ...sectionOrEmpty(recommendations.map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
+      "",
+    );
+  });
+
+  lines.push(
+    "## Commentary References",
+    ...(commentaryEntries.length ? commentaryEntries.map((entry) => (
+      `- ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`}: ${entry.author}, ${entry.resource_title}. ${entry.public_domain_status}. ${entry.recommended_use ?? "Use as secondary support after the KJV text."}`
+    )) : ["- No reviewed Amos 1-4 commentary entries have been imported yet."]),
+    "",
+    "## Recommended Amos Resources",
+    ...sectionOrEmpty((amosIntro?.recommendedResources ?? []).map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
+    "",
+  );
+
+  return lines.join("\n");
 }
 
 function commentaryStudyLabel(entry: CommentaryEntry) {
@@ -7699,6 +8036,7 @@ function ChapterStudyWorkflow({
   onOpenBookIntroduction,
   onOpenLibraryResource,
   onListenCommentary,
+  onListenChapterRange,
   onOpenReference,
   onOpenPersonStudy,
   onRemoveMemoryVerse,
@@ -7724,6 +8062,7 @@ function ChapterStudyWorkflow({
   onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onListenCommentary: () => void;
+  onListenChapterRange: (book: string, startChapter: number, endChapter: number) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -7786,6 +8125,21 @@ function ChapterStudyWorkflow({
     ? chapterCommentaryEntries
     : chapterCommentaryEntries.filter((entry) => entry.author === effectiveCommentaryAuthorFilter);
   const isAmosTeachingPrep = selectedVerse.book === "Amos" && selectedVerse.chapter >= 1 && selectedVerse.chapter <= 4;
+  const amosChapterStudy = isAmosTeachingPrep
+    ? AMOS_CHAPTER_STUDIES.find((item) => item.chapter === selectedVerse.chapter) ?? null
+    : null;
+  const amosRangeCommentaryEntries = useMemo(
+    () => isAmosTeachingPrep
+      ? chapterCommentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)
+      : [],
+    [chapterCommentaryEntries, isAmosTeachingPrep],
+  );
+  const amosRangeMarkdownExport = useMemo(() => buildAmosTeachingNotesMarkdown({
+    bookIntroduction,
+    commentaryEntries: amosRangeCommentaryEntries,
+    teacherNotesByChapter,
+    versesByRef,
+  }), [amosRangeCommentaryEntries, bookIntroduction, teacherNotesByChapter, versesByRef]);
   const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
 
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
@@ -7851,6 +8205,20 @@ function ChapterStudyWorkflow({
     setExportMessage("Full teaching notes Markdown downloaded.");
   }
 
+  async function copyAmosRangeTeachingNotes() {
+    try {
+      await navigator.clipboard.writeText(amosRangeMarkdownExport);
+      setExportMessage("Amos 1-4 teaching notes copied.");
+    } catch {
+      setExportMessage("Copy was not available here. Use the Amos download button.");
+    }
+  }
+
+  function downloadAmosRangeTeachingNotes() {
+    downloadTextFile("amos-1-4-teaching-notes.md", amosRangeMarkdownExport, "text/markdown;charset=utf-8");
+    setExportMessage("Amos 1-4 teaching notes downloaded.");
+  }
+
   function downloadPlainText() {
     downloadTextFile(`${exportFileBase}.txt`, plainTextExport, "text/plain;charset=utf-8");
     setExportMessage("Plain text teaching notes downloaded.");
@@ -7892,13 +8260,29 @@ function ChapterStudyWorkflow({
         <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Amos 1-4 Teaching Prep</p>
-              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Bible reading, listening, and reviewed resources first</h3>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prepare Amos 1-4</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Sunday school teaching prep from reviewed data</h3>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-                This test workflow keeps Amos centered on the KJV text while commentary and handbook content wait for verified source imports.
+                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Commentary remains a placeholder until a verified public-domain Amos source is imported.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                onClick={() => onOpenReference("Amos 1:1")}
+                type="button"
+              >
+                <BookOpen size={16} />
+                Read Amos 1-4
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                onClick={() => onListenChapterRange("Amos", 1, 4)}
+                type="button"
+              >
+                <Headphones size={16} />
+                Listen Amos 1-4
+              </button>
               <button
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
                 onClick={onOpenBookIntroduction}
@@ -7906,6 +8290,22 @@ function ChapterStudyWorkflow({
               >
                 <BookOpen size={16} />
                 Amos Intro
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                onClick={copyAmosRangeTeachingNotes}
+                type="button"
+              >
+                <Clipboard size={16} />
+                Copy Amos Notes
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                onClick={downloadAmosRangeTeachingNotes}
+                type="button"
+              >
+                <Download size={16} />
+                Export Amos 1-4
               </button>
               <button
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50"
@@ -7918,13 +8318,108 @@ function ChapterStudyWorkflow({
               </button>
             </div>
           </div>
-          <div className="mt-4 grid gap-2 md:grid-cols-4">
-            {["Read/listen Amos 1-4", "Commentary playlist placeholder", "Book intro ready", "Teaching export ready"].map((item) => (
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+            {["KJV text first", "Book intro ready", "Amos 1-4 export ready", chapterCommentaryEntries.length ? "Commentary available" : "Commentary not imported yet"].map((item) => (
               <div key={`amos-prep-${item}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
                 {item}
               </div>
             ))}
           </div>
+          {amosChapterStudy && (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Current Chapter Prep</p>
+                  <h4 className="mt-1 text-base font-semibold text-[var(--green)]">
+                    Amos {amosChapterStudy.chapter}: {amosChapterStudy.title}
+                  </h4>
+                </div>
+                <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  Teacher notes save below
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{amosChapterStudy.summary}</p>
+              <div className="mt-4 grid gap-3 lg:grid-cols-2">
+                <StudyInsightSection icon={<Star size={17} />} title="Key Verses">
+                  <div className="flex flex-wrap gap-2">
+                    {amosChapterStudy.keyVerses.map((ref) => (
+                      <button
+                        key={`amos-key-${ref}`}
+                        className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                        onClick={() => onOpenReference(ref)}
+                        type="button"
+                      >
+                        {ref}
+                      </button>
+                    ))}
+                  </div>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<Search size={17} />} title="Repeated Focus">
+                  <div className="flex flex-wrap gap-2">
+                    {amosChapterStudy.repeatedFocus.map((item) => (
+                      <span key={`amos-focus-${item}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<Users size={17} />} title="People Mentioned">
+                  <div className="flex flex-wrap gap-2">
+                    {amosChapterStudy.peopleMentioned.map((person) => (
+                      <span key={`amos-person-${person}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                        {person}
+                      </span>
+                    ))}
+                  </div>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<MapPin size={17} />} title="Places / Nations">
+                  <div className="flex flex-wrap gap-2">
+                    {amosChapterStudy.placesAndNations.map((place) => (
+                      <span key={`amos-place-${place}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                        {place}
+                      </span>
+                    ))}
+                  </div>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<Clipboard size={17} />} title="Main Sins Judged">
+                  <ul className="space-y-1 text-xs leading-5 text-[var(--muted)]">
+                    {amosChapterStudy.mainSinsJudged.map((sin) => (
+                      <li key={`amos-sin-${sin}`}>{sin}</li>
+                    ))}
+                  </ul>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<NotebookPen size={17} />} title="Teaching Aim">
+                  <p className="text-sm leading-6 text-[var(--muted)]">{amosChapterStudy.teachingAim}</p>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<Brain size={17} />} title="Applications">
+                  <ul className="space-y-1 text-xs leading-5 text-[var(--muted)]">
+                    {amosChapterStudy.practicalApplications.map((application) => (
+                      <li key={`amos-application-${application}`}>{application}</li>
+                    ))}
+                  </ul>
+                </StudyInsightSection>
+                <StudyInsightSection icon={<Link size={17} />} title="Reviewed Cross References">
+                  <div className="flex flex-wrap gap-2">
+                    {amosChapterStudy.crossReferences.map((reference) => (
+                      <button
+                        key={`amos-reviewed-cross-${reference.sourceRef}-${reference.targetRef}`}
+                        className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                        onClick={() => onOpenReference(reference.targetRef)}
+                        type="button"
+                      >
+                        {reference.sourceRef} {"->"} {reference.targetRef}
+                      </button>
+                    ))}
+                  </div>
+                </StudyInsightSection>
+              </div>
+              {!chapterCommentaryEntries.length && (
+                <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+                  Commentary prep: no reviewed Amos commentary text is imported yet. The listen-to-commentary button will activate only after verified entries are available.
+                </p>
+              )}
+            </div>
+          )}
         </article>
       )}
 
