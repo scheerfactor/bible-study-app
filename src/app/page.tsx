@@ -207,6 +207,25 @@ type ListeningProgress = {
 
 type ListeningProgressState = Record<string, ListeningProgress>;
 
+type LibraryAnnotationType = "highlight" | "note" | "bookmark";
+
+type LibraryAnnotation = {
+  id: string;
+  resourceSlug: string;
+  resourceTitle: string;
+  type: LibraryAnnotationType;
+  text: string;
+  note?: string;
+  location: number;
+  createdAt: string;
+};
+
+type LibraryAnnotationState = Record<string, LibraryAnnotation[]>;
+
+type TeachingWorkspaceSectionId = "summary" | "commentary" | "crossReferences" | "wordStudies" | "notes" | "lessonOutline";
+
+type TeachingWorkspaceVisibility = Record<TeachingWorkspaceSectionId, boolean>;
+
 type BibleListeningProgress = {
   targetId: string;
   label: string;
@@ -436,6 +455,7 @@ const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
+const LIBRARY_ANNOTATIONS_KEY = "fathers-business-library-annotations";
 const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
 const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
 const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
@@ -443,6 +463,7 @@ const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
+const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -454,6 +475,15 @@ const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
 const ACTIVE_COMMENTARY_COLLECTIONS = [MATTHEW_HENRY_COMMENTARY_COLLECTION, H_A_IRONSIDE_COMMENTARY_COLLECTION];
+
+const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
+  summary: true,
+  commentary: true,
+  crossReferences: true,
+  wordStudies: true,
+  notes: true,
+  lessonOutline: true,
+};
 
 const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
   hook: "",
@@ -2527,6 +2557,58 @@ function saveListeningProgress(state: ListeningProgressState) {
   window.localStorage.setItem(LIBRARY_LISTENING_KEY, JSON.stringify(state));
 }
 
+function normalizeLibraryAnnotations(raw: unknown): LibraryAnnotationState {
+  if (!raw || typeof raw !== "object") return {};
+  return Object.fromEntries(
+    Object.entries(raw as Record<string, unknown>).map(([slug, entries]) => [
+      slug,
+      Array.isArray(entries)
+        ? entries
+            .filter((entry): entry is LibraryAnnotation => {
+              const candidate = entry as Partial<LibraryAnnotation>;
+              return Boolean(candidate.id && candidate.resourceSlug && candidate.resourceTitle && candidate.type && candidate.createdAt);
+            })
+            .map((entry) => ({
+              ...entry,
+              location: Math.min(100, Math.max(0, Number(entry.location ?? 0))),
+              text: entry.text || "Saved reader location",
+            }))
+        : [],
+    ]),
+  );
+}
+
+function loadLibraryAnnotations(): LibraryAnnotationState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(LIBRARY_ANNOTATIONS_KEY);
+    return raw ? normalizeLibraryAnnotations(JSON.parse(raw)) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveLibraryAnnotations(state: LibraryAnnotationState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LIBRARY_ANNOTATIONS_KEY, JSON.stringify(state));
+}
+
+function loadTeachingWorkspaceVisibility(): TeachingWorkspaceVisibility {
+  if (typeof window === "undefined") return DEFAULT_TEACHING_WORKSPACE_VISIBILITY;
+
+  try {
+    const raw = window.localStorage.getItem(TEACHING_WORKSPACE_VISIBILITY_KEY);
+    if (!raw) return DEFAULT_TEACHING_WORKSPACE_VISIBILITY;
+    return {
+      ...DEFAULT_TEACHING_WORKSPACE_VISIBILITY,
+      ...(JSON.parse(raw) as Partial<TeachingWorkspaceVisibility>),
+    };
+  } catch {
+    return DEFAULT_TEACHING_WORKSPACE_VISIBILITY;
+  }
+}
+
 function defaultBiblePlaylist(): BibleAudioPlaylist {
   return {
     id: "playlist_john_3_study",
@@ -2855,6 +2937,8 @@ export default function Home() {
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
+  const [libraryAnnotations, setLibraryAnnotations] = useState<LibraryAnnotationState>({});
+  const [libraryNoteDraft, setLibraryNoteDraft] = useState("");
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
@@ -2868,6 +2952,8 @@ export default function Home() {
   const [repeatBook, setRepeatBook] = useState(false);
   const [stopAfterSelection, setStopAfterSelection] = useState(true);
   const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false);
+  const [speechVoices, setSpeechVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [selectedSpeechVoiceURI, setSelectedSpeechVoiceURI] = useState("");
   const [libraryFontSize, setLibraryFontSize] = useState(18);
   const [speechState, setSpeechState] = useState<SpeechState>({
     targetId: null,
@@ -3147,6 +3233,7 @@ export default function Home() {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
       setListeningProgress(loadListeningProgress());
+      setLibraryAnnotations(loadLibraryAnnotations());
       setBibleListeningProgress(loadBibleListeningProgress());
       setBiblePlaylists(loadBiblePlaylists());
       setScriptureMemory(loadScriptureMemory());
@@ -3160,6 +3247,22 @@ export default function Home() {
     queueMicrotask(() => {
       setHasSpeechSynthesis(typeof window !== "undefined" && "speechSynthesis" in window && "SpeechSynthesisUtterance" in window);
     });
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+
+    const updateVoices = () => {
+      const voices = window.speechSynthesis.getVoices();
+      setSpeechVoices(voices);
+      setSelectedSpeechVoiceURI((current) => current || voices[0]?.voiceURI || "");
+    };
+
+    updateVoices();
+    window.speechSynthesis.addEventListener("voiceschanged", updateVoices);
+    return () => {
+      window.speechSynthesis.removeEventListener("voiceschanged", updateVoices);
+    };
   }, []);
 
   useEffect(() => {
@@ -3631,6 +3734,67 @@ export default function Home() {
     }));
   }
 
+  function selectedLibraryText() {
+    if (typeof window === "undefined") return "";
+    return window.getSelection()?.toString().trim().replace(/\s+/g, " ") ?? "";
+  }
+
+  function saveLibraryAnnotation(type: LibraryAnnotationType) {
+    const resource = activeLibraryResource;
+    if (!resource) return;
+
+    const progress = Math.round(libraryProgress[resource.slug]?.progress ?? 0);
+    const selectedText = selectedLibraryText();
+    const note = libraryNoteDraft.trim();
+    const text =
+      selectedText ||
+      (type === "bookmark" ? `Reader location at ${progress}%` : resource.title);
+
+    if (type === "note" && !note) {
+      setSyncMessage("Write a reader note first, then save it.");
+      return;
+    }
+
+    const annotation: LibraryAnnotation = {
+      id: `library-${type}-${Date.now()}`,
+      resourceSlug: resource.slug,
+      resourceTitle: resource.title,
+      type,
+      text,
+      note: type === "note" ? note : undefined,
+      location: progress,
+      createdAt: new Date().toISOString(),
+    };
+
+    setLibraryAnnotations((state) => {
+      const nextState = {
+        ...state,
+        [resource.slug]: [annotation, ...(state[resource.slug] ?? [])].slice(0, 80),
+      };
+      saveLibraryAnnotations(nextState);
+      return nextState;
+    });
+
+    if (type === "bookmark") bookmarkLibraryLocation();
+    if (type === "note") setLibraryNoteDraft("");
+    setSyncMessage(`${type === "bookmark" ? "Bookmark" : type === "note" ? "Note" : "Highlight"} saved for ${resource.title}.`);
+  }
+
+  async function copyLibrarySelection() {
+    const selectedText = selectedLibraryText();
+    if (!selectedText) {
+      setSyncMessage("Select text in the reader first, then copy.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(selectedText);
+      setSyncMessage("Selected text copied.");
+    } catch {
+      setSyncMessage("Copy is not available in this browser, but the text is still selected.");
+    }
+  }
+
   function jumpLibraryBookmark(progress: number) {
     const node = libraryReaderRef.current;
     if (!node) return;
@@ -3661,6 +3825,8 @@ export default function Home() {
 
     const utterance = new SpeechSynthesisUtterance(chunks[index]);
     utterance.rate = speechRateRef.current;
+    const selectedVoice = speechVoices.find((voice) => voice.voiceURI === selectedSpeechVoiceURI);
+    if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
       const verseRef = speechVerseRefsRef.current[index];
       if (!verseRef) return;
@@ -4614,11 +4780,15 @@ export default function Home() {
                 completedResources={completedLibraryResources}
                 completedState={completedResources}
                 listeningProgress={listeningProgress}
+                annotations={libraryAnnotations}
+                noteDraft={libraryNoteDraft}
                 continueReadingResources={continueReadingResources}
                 featuredResources={featuredLibraryResources}
                 stats={libraryStats}
                 fontSize={libraryFontSize}
                 speechState={speechState}
+                speechVoices={speechVoices}
+                selectedSpeechVoiceURI={selectedSpeechVoiceURI}
                 readerRef={libraryReaderRef}
                 onCategoryChange={setLibraryCategory}
                 onSearchTermChange={setLibrarySearchTerm}
@@ -4643,6 +4813,9 @@ export default function Home() {
                 onReaderSettingsChange={updateLibraryReaderSettings}
                 onBookmarkLocation={bookmarkLibraryLocation}
                 onJumpBookmark={jumpLibraryBookmark}
+                onNoteDraftChange={setLibraryNoteDraft}
+                onSaveAnnotation={saveLibraryAnnotation}
+                onCopySelection={copyLibrarySelection}
                 onListenResource={(resource, text, progress) => {
                   const listeningStart = listeningProgress[resource.slug]?.progress ?? progress;
                   toggleSpeech(
@@ -4676,6 +4849,7 @@ export default function Home() {
                     );
                   }
                 }}
+                onSpeechVoiceChange={setSelectedSpeechVoiceURI}
                 onStopSpeech={() => stopSpeech()}
                 onSleepTimerChange={setSleepTimer}
                 onMarkFinished={markLibraryFinished}
@@ -5757,7 +5931,7 @@ function BibleReader({
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
   return (
     <div className="space-y-4 p-4 md:p-8">
-      <section className="sticky top-[5.75rem] z-10 rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:top-4 md:rounded-3xl md:p-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-4 md:z-10 md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
@@ -6438,6 +6612,7 @@ function ChapterStudyWorkflow({
       return {};
     }
   });
+  const [teachingVisibility, setTeachingVisibility] = useState<TeachingWorkspaceVisibility>(() => loadTeachingWorkspaceVisibility());
   const teacherNotesKey = teacherNotesChapterKey(selectedVerse.book, selectedVerse.chapter);
   const teacherNotesDraft = teacherNotesByChapter[teacherNotesKey] ?? EMPTY_TEACHER_NOTES;
   const exportData = useMemo<TeachingNotesExportData>(() => ({
@@ -6492,6 +6667,18 @@ function ChapterStudyWorkflow({
     });
   }
 
+  function toggleTeachingSection(sectionId: TeachingWorkspaceSectionId) {
+    setTeachingVisibility((current) => {
+      const next = { ...current, [sectionId]: !current[sectionId] };
+      try {
+        localStorage.setItem(TEACHING_WORKSPACE_VISIBILITY_KEY, JSON.stringify(next));
+      } catch {
+        setExportMessage("Teaching workspace display preferences could not be saved here.");
+      }
+      return next;
+    });
+  }
+
   async function copyTeachingNotes() {
     try {
       await navigator.clipboard.writeText(markdownExport);
@@ -6531,7 +6718,7 @@ function ChapterStudyWorkflow({
   }
 
   return (
-    <section id="chapter-analysis-workflow" className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+    <section id="chapter-analysis-workflow" className="scroll-mt-40 rounded-2xl border border-[var(--line)] bg-white p-4 pb-28 shadow-sm md:scroll-mt-8 md:rounded-3xl md:pb-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Workflow</p>
@@ -6910,6 +7097,34 @@ function ChapterStudyWorkflow({
             </p>
           )}
 
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Show sections</p>
+            <div className="mt-2 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {[
+                ["summary", "Summary"],
+                ["commentary", "Commentary"],
+                ["crossReferences", "Cross References"],
+                ["wordStudies", "Word Studies"],
+                ["notes", "Notes"],
+                ["lessonOutline", "Lesson Outline"],
+              ].map(([id, label]) => (
+                <button
+                  key={`teaching-toggle-${id}`}
+                  className={`scroll-mb-40 scroll-mt-40 shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                    teachingVisibility[id as TeachingWorkspaceSectionId]
+                      ? "bg-[var(--green)] text-white"
+                      : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+                  }`}
+                  onClick={() => toggleTeachingSection(id as TeachingWorkspaceSectionId)}
+                  type="button"
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {teachingVisibility.summary && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -6947,6 +7162,7 @@ function ChapterStudyWorkflow({
               ))}
             </div>
           </div>
+          )}
 
           <div className="mt-3 grid grid-cols-2 gap-2">
             <MiniStat label="Chapter notes" value={String(chapterNotes.length)} />
@@ -6955,6 +7171,25 @@ function ChapterStudyWorkflow({
             <MiniStat label="Memory verses" value={String(memoryForChapter.length)} />
           </div>
 
+          {teachingVisibility.wordStudies && (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Word Studies</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {suggestedWords.length ? suggestedWords.map((item) => (
+                  <button
+                    key={`teaching-word-study-${item.word}`}
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]"
+                    onClick={() => onExplorerWordChange(item.word)}
+                    type="button"
+                  >
+                    {item.word} <span className="text-[var(--green)]">{item.count}</span>
+                  </button>
+                )) : <span className="text-sm text-[var(--muted)]">No repeated study words found.</span>}
+              </div>
+            </div>
+          )}
+
+          {teachingVisibility.lessonOutline && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
@@ -7003,7 +7238,9 @@ function ChapterStudyWorkflow({
               ))}
             </div>
           </div>
+          )}
 
+          {teachingVisibility.notes && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teacher Notes Area</p>
             <div className="mt-3 grid gap-3">
@@ -7040,6 +7277,7 @@ function ChapterStudyWorkflow({
             </div>
             <p className="mt-3 text-xs leading-5 text-[var(--muted)]">Saved locally for this browser during beta testing.</p>
           </div>
+          )}
 
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             <div>
@@ -7057,6 +7295,7 @@ function ChapterStudyWorkflow({
                 ))}
               </div>
             </div>
+            {teachingVisibility.notes && (
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching notes</p>
               <div className="mt-2 space-y-1">
@@ -7073,6 +7312,7 @@ function ChapterStudyWorkflow({
                 {!chapterNotes.length && <p className="text-sm leading-6 text-[var(--muted)]">Add verse notes and they will collect here for teaching prep.</p>}
               </div>
             </div>
+            )}
           </div>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             <TeachingConnectionBlock title="People">
@@ -7120,6 +7360,7 @@ function ChapterStudyWorkflow({
               )) : <span className="text-sm text-[var(--muted)]">No reviewed prophecies yet.</span>}
             </TeachingConnectionBlock>
           </div>
+          {teachingVisibility.crossReferences && (
           <div className="mt-3 flex flex-wrap gap-2">
             {chapterCrossReferences.slice(0, 4).map((reference) => (
               <button
@@ -7132,6 +7373,8 @@ function ChapterStudyWorkflow({
               </button>
             ))}
           </div>
+          )}
+          {teachingVisibility.commentary && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
             <div className="mt-2 space-y-2">
@@ -7176,6 +7419,7 @@ function ChapterStudyWorkflow({
               )}
             </div>
           </div>
+          )}
         </article>
 
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
@@ -7474,7 +7718,7 @@ function SearchScreen({
             Clear search
           </button>
         </div>
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mt-3 flex flex-wrap gap-2">
           {filters.map((filter) => (
             <button
               key={filter.id}
@@ -7641,6 +7885,45 @@ function NotesScreen({
   );
 }
 
+function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
+  const haystack = [
+    resource.title,
+    resource.author,
+    resource.category,
+    resource.original_category ?? "",
+    resource.description,
+    ...resource.resource_labels,
+    ...resource.resource_warnings,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return terms.some((term) => haystack.includes(term.toLowerCase()));
+}
+
+function libraryReadingMinutes(resource: LibraryResource) {
+  if (!resource.word_count) return "Time unknown";
+  return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
+}
+
+function voiceDisplayName(voice: SpeechSynthesisVoice) {
+  const lower = voice.name.toLowerCase();
+  const label = lower.includes("female")
+    ? "Female"
+    : lower.includes("male")
+      ? "Male"
+      : voice.localService
+        ? "Device voice"
+        : "Browser voice";
+  return `${voice.name} · ${label}`;
+}
+
+function annotationLabel(type: LibraryAnnotationType) {
+  if (type === "highlight") return "Highlight";
+  if (type === "note") return "Note";
+  return "Bookmark";
+}
+
 function LibraryScreen({
   view,
   resources,
@@ -7655,11 +7938,15 @@ function LibraryScreen({
   completedResources,
   completedState,
   listeningProgress,
+  annotations,
+  noteDraft,
   continueReadingResources,
   featuredResources,
   stats,
   fontSize,
   speechState,
+  speechVoices,
+  selectedSpeechVoiceURI,
   readerRef,
   onCategoryChange,
   onSearchTermChange,
@@ -7671,8 +7958,12 @@ function LibraryScreen({
   onReaderSettingsChange,
   onBookmarkLocation,
   onJumpBookmark,
+  onNoteDraftChange,
+  onSaveAnnotation,
+  onCopySelection,
   onListenResource,
   onSpeechRateChange,
+  onSpeechVoiceChange,
   onStopSpeech,
   onSleepTimerChange,
   onMarkFinished,
@@ -7693,6 +7984,8 @@ function LibraryScreen({
   completedResources: CompletedResource[];
   completedState: CompletedResourceState;
   listeningProgress: ListeningProgressState;
+  annotations: LibraryAnnotationState;
+  noteDraft: string;
   continueReadingResources: LibraryProgress[];
   featuredResources: LibraryResource[];
   stats: {
@@ -7703,6 +7996,8 @@ function LibraryScreen({
   };
   fontSize: number;
   speechState: SpeechState;
+  speechVoices: SpeechSynthesisVoice[];
+  selectedSpeechVoiceURI: string;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onCategoryChange: (category: string) => void;
   onSearchTermChange: (value: string) => void;
@@ -7714,8 +8009,12 @@ function LibraryScreen({
   onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
+  onNoteDraftChange: (value: string) => void;
+  onSaveAnnotation: (type: LibraryAnnotationType) => void;
+  onCopySelection: () => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
+  onSpeechVoiceChange: (voiceURI: string) => void;
   onStopSpeech: () => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onMarkFinished: (resource: LibraryResource) => void;
@@ -7734,6 +8033,8 @@ function LibraryScreen({
         progress={progress}
         completed={Boolean(completedState[activeResource.slug])}
         listeningProgress={listening}
+        annotations={annotations[activeResource.slug] ?? []}
+        noteDraft={noteDraft}
         fontSize={fontSize}
         readerRef={readerRef}
         onBack={() => onOpenDetail(activeResource.slug)}
@@ -7743,9 +8044,15 @@ function LibraryScreen({
         onReaderSettingsChange={onReaderSettingsChange}
         onBookmarkLocation={onBookmarkLocation}
         onJumpBookmark={onJumpBookmark}
+        onNoteDraftChange={onNoteDraftChange}
+        onSaveAnnotation={onSaveAnnotation}
+        onCopySelection={onCopySelection}
         speechState={speechState}
+        speechVoices={speechVoices}
+        selectedSpeechVoiceURI={selectedSpeechVoiceURI}
         onListen={() => onListenResource(activeResource, activeText, listening?.progress ?? progress?.progress ?? 0)}
         onSpeechRateChange={onSpeechRateChange}
+        onSpeechVoiceChange={onSpeechVoiceChange}
         onStopSpeech={onStopSpeech}
         onSleepTimerChange={onSleepTimerChange}
         onMarkFinished={() => onMarkFinished(activeResource)}
@@ -7767,7 +8074,32 @@ function LibraryScreen({
     );
   }
 
-  const recentlyAdded = resources.slice(-4).reverse();
+  const recentlyAdded = resources.slice(-8).reverse();
+  const resourcesByAuthor = Object.entries(
+    resources.reduce<Record<string, LibraryResource[]>>((groups, resource) => {
+      groups[resource.author] = [...(groups[resource.author] ?? []), resource];
+      return groups;
+    }, {}),
+  )
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .slice(0, 8);
+  const categoryCards = categories
+    .filter((category) => category !== "All")
+    .map((category) => ({
+      category,
+      resources: resources.filter((resource) => resource.category === category),
+    }))
+    .filter((item) => item.resources.length)
+    .slice(0, 12);
+  const subjectShelves = [
+    { title: "Commentary", resources: resources.filter((resource) => libraryResourceMatches(resource, ["commentary", "commentaries"])) },
+    { title: "Prayer", resources: resources.filter((resource) => libraryResourceMatches(resource, ["prayer", "pray"])) },
+    { title: "Bible Study", resources: resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "topical", "cross references", "bible study", "handbook", "survey"])) },
+    { title: "KJV Defense / Textual Issues", resources: resources.filter((resource) => libraryResourceMatches(resource, ["kjv", "king james", "textual", "scripture", "authorized"])) },
+    { title: "Baptist History", resources: resources.filter((resource) => libraryResourceMatches(resource, ["baptist history", "baptist"])) },
+    { title: "Missions", resources: resources.filter((resource) => libraryResourceMatches(resource, ["missions", "missionary", "mission"])) },
+    { title: "Preaching & Teaching", resources: resources.filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "devotional"])) },
+  ].filter((shelf) => shelf.resources.length);
 
   return (
     <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
@@ -7809,7 +8141,7 @@ function LibraryScreen({
             />
           </div>
         </label>
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mt-3 flex flex-wrap gap-2">
           {categories.map((category) => (
             <button
               key={category}
@@ -7827,12 +8159,27 @@ function LibraryScreen({
         </div>
       </section>
 
+      {featuredResources.length > 0 && (
+        <LibraryShelf title="Featured">
+          {featuredResources.map((resource) => (
+            <LibraryResourceCard
+              key={`featured-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
       {continueReadingResources.length > 0 && (
-        <LibraryShelf title="Continue Reading">
+        <LibraryShelf title="Continue Reading" horizontal>
           {continueReadingResources.map((progress) => (
             <button
               key={`continue-${progress.slug}`}
-              className="w-full rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
+              className="min-w-[260px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm md:min-w-0"
               onClick={() => onOpenReader(progress.slug)}
               type="button"
             >
@@ -7847,10 +8194,25 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
+      {recentlyAdded.length > 0 && (
+        <LibraryShelf title="Recently Added">
+          {recentlyAdded.map((resource) => (
+            <LibraryResourceCard
+              key={`recent-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
       {completedResources.length > 0 && (
-        <LibraryShelf title="Completed Books">
+        <LibraryShelf title="Completed" horizontal>
           {completedResources.map((completed) => (
-            <article key={`completed-${completed.slug}`} className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+            <article key={`completed-${completed.slug}`} className="min-w-[260px] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:min-w-0">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="mt-0.5 shrink-0 text-[var(--green)]" size={20} />
                 <div className="min-w-0">
@@ -7874,38 +8236,63 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
-      <LibraryShelf title="Categories">
-        {categories.filter((category) => category !== "All").map((category) => {
-          const count = resources.filter((resource) => resource.category === category).length;
-          return (
+      {resourcesByAuthor.length > 0 && (
+        <LibraryShelf title="By Author" horizontal>
+          {resourcesByAuthor.map(([author, authorResources]) => (
             <button
-              key={`category-${category}`}
-              className="rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
-              onClick={() => onCategoryChange(category)}
+              key={`author-${author}`}
+              className="min-w-[220px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
+              onClick={() => onSearchTermChange(author)}
               type="button"
             >
-              <p className="text-base font-semibold text-[var(--ink)]">{libraryCategoryLabel(category)}</p>
-              <p className="mt-1 text-sm text-[var(--muted)]">{count} resource{count === 1 ? "" : "s"}</p>
+              <p className="text-base font-semibold text-[var(--ink)]">{author}</p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{authorResources.length} resource{authorResources.length === 1 ? "" : "s"}</p>
+              <p className="mt-3 line-clamp-2 text-xs leading-5 text-[var(--scripture-ink)]">{authorResources.slice(0, 3).map((resource) => resource.title).join(", ")}</p>
             </button>
-          );
-        })}
-      </LibraryShelf>
+          ))}
+        </LibraryShelf>
+      )}
 
-      <LibraryShelf title="Featured Resources">
-        {featuredResources.map((resource) => (
-          <LibraryResourceCard key={`featured-${resource.slug}`} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
+      <LibraryShelf title="By Category" horizontal>
+        {categoryCards.map(({ category, resources: categoryResources }) => (
+          <button
+            key={`category-${category}`}
+            className="min-w-[220px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
+            onClick={() => onCategoryChange(category)}
+            type="button"
+          >
+            <p className="text-base font-semibold text-[var(--ink)]">{libraryCategoryLabel(category)}</p>
+            <p className="mt-1 text-sm text-[var(--muted)]">{categoryResources.length} resource{categoryResources.length === 1 ? "" : "s"}</p>
+            <p className="mt-3 line-clamp-2 text-xs leading-5 text-[var(--scripture-ink)]">{categoryResources.slice(0, 2).map((resource) => resource.title).join(", ")}</p>
+          </button>
         ))}
       </LibraryShelf>
 
-      <LibraryShelf title="Recently Added">
-        {recentlyAdded.map((resource) => (
-          <LibraryResourceCard key={`recent-${resource.slug}`} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
-        ))}
-      </LibraryShelf>
+      {subjectShelves.map((shelf) => (
+        <LibraryShelf key={`subject-${shelf.title}`} title={shelf.title}>
+          {shelf.resources.slice(0, 8).map((resource) => (
+            <LibraryResourceCard
+              key={`${shelf.title}-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      ))}
 
       <LibraryShelf title={searchTerm || activeCategory !== "All" ? "Search Results" : "All Resources"}>
         {(searchTerm || activeCategory !== "All" ? filteredResources : resources).map((resource) => (
-          <LibraryResourceCard key={resource.slug} resource={resource} progress={progressState[resource.slug]} onOpen={() => onOpenDetail(resource.slug)} />
+          <LibraryResourceCard
+            key={resource.slug}
+            resource={resource}
+            progress={progressState[resource.slug]}
+            listeningProgress={listeningProgress[resource.slug]}
+            completed={Boolean(completedState[resource.slug])}
+            onOpen={() => onOpenDetail(resource.slug)}
+          />
         ))}
       </LibraryShelf>
     </div>
@@ -8019,6 +8406,8 @@ function LibraryReader({
   progress,
   completed,
   listeningProgress,
+  annotations,
+  noteDraft,
   fontSize,
   readerRef,
   onBack,
@@ -8028,9 +8417,15 @@ function LibraryReader({
   onReaderSettingsChange,
   onBookmarkLocation,
   onJumpBookmark,
+  onNoteDraftChange,
+  onSaveAnnotation,
+  onCopySelection,
   speechState,
+  speechVoices,
+  selectedSpeechVoiceURI,
   onListen,
   onSpeechRateChange,
+  onSpeechVoiceChange,
   onStopSpeech,
   onSleepTimerChange,
   onMarkFinished,
@@ -8042,6 +8437,8 @@ function LibraryReader({
   progress?: LibraryProgress;
   completed: boolean;
   listeningProgress?: ListeningProgress;
+  annotations: LibraryAnnotation[];
+  noteDraft: string;
   fontSize: number;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onBack: () => void;
@@ -8051,9 +8448,15 @@ function LibraryReader({
   onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
+  onNoteDraftChange: (value: string) => void;
+  onSaveAnnotation: (type: LibraryAnnotationType) => void;
+  onCopySelection: () => void;
   speechState: SpeechState;
+  speechVoices: SpeechSynthesisVoice[];
+  selectedSpeechVoiceURI: string;
   onListen: () => void;
   onSpeechRateChange: (rate: number) => void;
+  onSpeechVoiceChange: (voiceURI: string) => void;
   onStopSpeech: () => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onMarkFinished: () => void;
@@ -8073,10 +8476,12 @@ function LibraryReader({
       : activeProgress.readingWidth === "wide"
         ? "max-w-5xl"
         : "max-w-3xl";
+  const estimatedMinutes = resource.word_count ? Math.max(1, Math.round(resource.word_count / 225)) : null;
+  const listeningValue = listeningProgress?.progress ?? speechState.progress;
 
   return (
-    <div className={`flex h-[calc(100vh-96px)] flex-col md:h-[calc(100vh-48px)] ${readerThemeClass}`}>
-      <header className="shrink-0 border-b border-[var(--line)] bg-[var(--paper)]/95 p-3 backdrop-blur md:p-4">
+    <div className={`flex h-[calc(100vh-96px)] flex-col overflow-x-hidden md:h-[calc(100vh-48px)] ${readerThemeClass}`}>
+      <header className="shrink-0 overflow-x-hidden border-b border-[var(--line)] bg-[var(--paper)]/95 p-3 backdrop-blur md:p-4">
         <div className="flex items-center justify-between gap-2">
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
             <ChevronLeft size={17} />
@@ -8107,7 +8512,8 @@ function LibraryReader({
             </div>
             <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">
               {completed ? "Completed" : `${formatPercent(activeProgress.progress)} read`}
-              {listeningProgress && listeningProgress.progress > 0 && listeningProgress.progress < 100 ? ` · ${formatPercent(listeningProgress.progress)} listened` : ""}
+              {estimatedMinutes ? ` · about ${estimatedMinutes} min` : ""}
+              {listeningValue > 0 && listeningValue < 100 ? ` · ${formatPercent(listeningValue)} listened` : ""}
             </p>
           </div>
           <button
@@ -8159,9 +8565,9 @@ function LibraryReader({
           </label>
         </div>
 
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <div className="mt-3 flex flex-wrap gap-2">
           <button
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white"
             onClick={onListen}
             type="button"
           >
@@ -8169,14 +8575,14 @@ function LibraryReader({
             {speechActive ? (speechState.paused ? "Resume" : "Pause") : "Listen"}
           </button>
           <button
-            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
             onClick={onStopSpeech}
             type="button"
           >
             <Square size={15} />
             Stop
           </button>
-          <label className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+          <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
             Speed
             <select
               className="bg-transparent text-[var(--ink)] outline-none"
@@ -8190,7 +8596,24 @@ function LibraryReader({
               <option value={2}>2x</option>
             </select>
           </label>
-          <label className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+          <label className="inline-flex min-w-0 max-w-full items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)] sm:min-w-[220px]">
+            <Volume2 size={15} />
+            Voice
+            <select
+              className="min-w-0 flex-1 bg-transparent text-[var(--ink)] outline-none"
+              value={selectedSpeechVoiceURI}
+              onChange={(event) => onSpeechVoiceChange(event.target.value)}
+            >
+              {speechVoices.length ? speechVoices.map((voice) => (
+                <option key={voice.voiceURI} value={voice.voiceURI}>
+                  {voiceDisplayName(voice)}
+                </option>
+              )) : (
+                <option value="">Default device voice</option>
+              )}
+            </select>
+          </label>
+          <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
             <Timer size={15} />
             Sleep
             <select
@@ -8207,7 +8630,7 @@ function LibraryReader({
             </select>
           </label>
           <button
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
             onClick={onBookmarkLocation}
             type="button"
           >
@@ -8215,7 +8638,31 @@ function LibraryReader({
             Bookmark
           </button>
           <button
-            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={() => onSaveAnnotation("highlight")}
+            type="button"
+          >
+            <Highlighter size={16} />
+            Highlight Selection
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onCopySelection}
+            type="button"
+          >
+            <Clipboard size={16} />
+            Copy Selection
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={() => onSaveAnnotation("bookmark")}
+            type="button"
+          >
+            <Bookmark size={16} />
+            Bookmark Place
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-white"
             onClick={onMarkFinished}
             type="button"
           >
@@ -8223,7 +8670,7 @@ function LibraryReader({
             Mark Finished
           </button>
           <button
-            className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
             onClick={onRestart}
             type="button"
           >
@@ -8240,6 +8687,59 @@ function LibraryReader({
               {bookmark}%
             </button>
           ))}
+        </div>
+        <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="grid gap-2 md:grid-cols-[1fr_auto]">
+            <input
+              className="h-10 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 text-sm text-[var(--ink)] outline-none placeholder:text-stone-400"
+              placeholder="Reader note for selected text or this location..."
+              value={noteDraft}
+              onChange={(event) => onNoteDraftChange(event.target.value)}
+            />
+            <button
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+              onClick={() => onSaveAnnotation("note")}
+              type="button"
+            >
+              <NotebookPen size={16} />
+              Save Note
+            </button>
+          </div>
+          {speechActive && (
+            <div className="mt-3">
+              <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+                <span>Listening progress</span>
+                <span>{formatPercent(speechState.progress)}</span>
+              </div>
+              <div className="mt-1 h-2 rounded-full bg-[var(--warm)]">
+                <div className="h-2 rounded-full bg-[var(--gold)]" style={{ width: formatPercent(speechState.progress) }} />
+              </div>
+              {speechState.sleepTimerMinutes && speechState.sleepTimerEndsAt && (
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">
+                  Sleep timer: {speechState.sleepTimerMinutes} minutes, stops around {new Date(speechState.sleepTimerEndsAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}
+                </p>
+              )}
+            </div>
+          )}
+          {annotations.length > 0 && (
+            <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {annotations.slice(0, 8).map((annotation) => (
+                <button
+                  key={annotation.id}
+                  className="min-w-[210px] rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
+                  onClick={() => onJumpBookmark(annotation.location)}
+                  type="button"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--green)]">
+                    {annotationLabel(annotation.type)} · {annotation.location}%
+                  </p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">
+                    {annotation.note || annotation.text}
+                  </p>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </header>
 
@@ -8260,11 +8760,19 @@ function LibraryReader({
   );
 }
 
-function LibraryShelf({ title, children }: { title: string; children: React.ReactNode }) {
+function LibraryShelf({ title, children, horizontal = false }: { title: string; children: React.ReactNode; horizontal?: boolean }) {
   return (
     <section>
       <h2 className="px-1 text-lg font-semibold text-[var(--ink)]">{title}</h2>
-      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">{children}</div>
+      <div
+        className={
+          horizontal
+            ? "mt-3 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 xl:grid-cols-4"
+            : "mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4"
+        }
+      >
+        {children}
+      </div>
     </section>
   );
 }
@@ -8281,27 +8789,64 @@ function LibraryStat({ label, value }: { label: string; value: string }) {
 function LibraryResourceCard({
   resource,
   progress,
+  listeningProgress,
+  completed,
   onOpen,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
+  listeningProgress?: ListeningProgress;
+  completed: boolean;
   onOpen: () => void;
 }) {
+  const progressValue = completed ? 100 : progress?.progress ?? 0;
+  const listeningValue = listeningProgress?.progress ?? 0;
+  const coverSeed = resource.category.length + resource.title.length;
+  const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
+
   return (
-    <button className="w-full rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm" onClick={onOpen} type="button">
-      <div className="flex items-start justify-between gap-3">
-        <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
-        {progress && <Star size={16} className="shrink-0 text-[var(--gold)]" />}
+    <button className="w-full overflow-hidden rounded-2xl border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" onClick={onOpen} type="button">
+      <div className={`relative min-h-[148px] bg-gradient-to-br ${coverClass} p-4 text-white`}>
+        <div className="absolute inset-x-5 top-4 h-px bg-white/30" />
+        <p className="max-w-[10rem] text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{libraryCategoryLabel(resource.category)}</p>
+        <h3 className="mt-5 line-clamp-3 text-xl font-semibold leading-6">{resource.title}</h3>
+        <p className="mt-3 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
+        {completed && (
+          <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            Finished
+          </span>
+        )}
       </div>
-      <h3 className="mt-3 line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
-      <p className="mt-2 text-sm text-[var(--muted)]">{resource.author}</p>
-      <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
-      <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
-      {progress && (
-        <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
-          <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
+      <div className="p-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
+          <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
         </div>
-      )}
+        <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+        <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
+        <div className="mt-4 space-y-2">
+          <div>
+            <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+              <span>Reading</span>
+              <span>{formatPercent(progressValue)}</span>
+            </div>
+            <div className="mt-1 h-2 rounded-full bg-[var(--warm)]">
+              <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progressValue) }} />
+            </div>
+          </div>
+          {listeningValue > 0 && (
+            <div>
+              <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+                <span>Listening</span>
+                <span>{formatPercent(listeningValue)}</span>
+              </div>
+              <div className="mt-1 h-2 rounded-full bg-[var(--warm)]">
+                <div className="h-2 rounded-full bg-[var(--gold)]" style={{ width: formatPercent(listeningValue) }} />
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </button>
   );
 }
