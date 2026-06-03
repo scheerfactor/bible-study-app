@@ -1,0 +1,21 @@
+{
+  "batch_title": "Sample Resource Import Batch",
+  "review_status": "needs review",
+  "notes": "Placeholder format for future ZIP batch import. Do not publish automatically.",
+  "resources": [
+    {
+      "resource_type": "Library Book",
+      "file_path": "files/sample-book.txt",
+      "cover_path": "covers/sample-book.png",
+      "title": "Sample Book Title",
+      "author": "Sample Author",
+      "year": 1890,
+      "category": "Christian Living",
+      "source_url": "https://example.com/source",
+      "rights_status": "needs review",
+      "doctrinal_review_status": "needs review",
+      "warning_labels": ["Use with discernment"],
+      "recommended_use": "Review-only sample. Do not publish."
+    }
+  ]
+}

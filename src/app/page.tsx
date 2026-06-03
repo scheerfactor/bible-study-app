@@ -11,6 +11,7 @@ import {
   Clipboard,
   CheckCircle2,
   Download,
+  FileText,
   Pause,
   Play,
   RotateCcw,
@@ -33,6 +34,7 @@ import {
   Save,
   Star,
   Timer,
+  Upload,
   Users,
   Volume2,
   X,
@@ -293,6 +295,42 @@ type LibraryImportCandidate = {
   doctrinalNotes: string;
   warningLabels: string[];
   recommendedUse: string;
+};
+
+type AdminResourceType =
+  | "Library Book"
+  | "Commentary"
+  | "Dictionary"
+  | "Bible Handbook / Survey"
+  | "Devotional"
+  | "Sermon / Teaching Resource";
+
+type AdminImportMetadata = {
+  title: string;
+  author: string;
+  year: string;
+  category: string;
+  sourceUrl: string;
+  rightsStatus: string;
+  doctrinalReviewStatus: string;
+  warningLabels: string;
+  recommendedUse: string;
+  bibleBookCovered: string;
+};
+
+type AdminImportQueueItem = {
+  id: string;
+  fileName: string;
+  fileType: string;
+  resourceType: AdminResourceType;
+  status: ResourceImportStatus;
+  metadata: AdminImportMetadata;
+  previewText: string;
+  extractedCharacters: number;
+  detectedSections: string[];
+  validationErrors: string[];
+  validationWarnings: string[];
+  createdAt: string;
 };
 
 type PermissionRequest = {
@@ -580,6 +618,7 @@ const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
+const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const DEFAULT_BOOK = "John";
@@ -1201,6 +1240,28 @@ const COMING_SOON_COLLECTION_IDS = new Set([
 ]);
 
 const PERSONAL_IMPORT_FORMATS = ["TXT", "EPUB", "PDF", "DOCX"];
+const ADMIN_RESOURCE_TYPES: AdminResourceType[] = [
+  "Library Book",
+  "Commentary",
+  "Dictionary",
+  "Bible Handbook / Survey",
+  "Devotional",
+  "Sermon / Teaching Resource",
+];
+const ADMIN_UPLOAD_FORMATS = ["TXT", "Markdown", "DOCX placeholder", "PDF placeholder", "ZIP placeholder"];
+const ADMIN_REVIEW_STATUSES: ResourceImportStatus[] = ["Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"];
+const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
+  title: "",
+  author: "",
+  year: "",
+  category: "Christian Living",
+  sourceUrl: "",
+  rightsStatus: "needs review",
+  doctrinalReviewStatus: "needs review",
+  warningLabels: "",
+  recommendedUse: "",
+  bibleBookCovered: "",
+};
 
 const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
   {
@@ -10432,6 +10493,133 @@ function libraryCollectionById(id: string) {
   return LIBRARY_COLLECTIONS.find((collection) => collection.id === id)!;
 }
 
+function fileExtension(fileName: string) {
+  const parts = fileName.toLowerCase().split(".");
+  return parts.length > 1 ? parts.pop() ?? "" : "";
+}
+
+function adminFileSupportLabel(fileName: string) {
+  const extension = fileExtension(fileName);
+  if (extension === "txt") return "TXT extraction ready";
+  if (extension === "md" || extension === "markdown") return "Markdown extraction ready";
+  if (extension === "docx") return "DOCX metadata placeholder";
+  if (extension === "pdf") return "PDF placeholder - text extraction not enabled yet";
+  if (extension === "zip") return "ZIP batch placeholder";
+  return "Unsupported file type";
+}
+
+function adminFileCanExtractText(fileName: string) {
+  const extension = fileExtension(fileName);
+  return extension === "txt" || extension === "md" || extension === "markdown";
+}
+
+function detectCommentarySections(text: string, selectedBook: string) {
+  const escapedBook = selectedBook.trim() ? escapeRegExp(selectedBook.trim()) : "[1-3]?\\s?[A-Z][a-z]+";
+  const chapterPattern = new RegExp(`(?:^|\\n)\\s*(?:#{1,4}\\s*)?(?:chapter\\s+)?(${escapedBook})\\s+(\\d{1,3})(?::\\d{1,3})?\\b`, "gi");
+  const matches = Array.from(text.matchAll(chapterPattern)).map((match) => `${match[1].replace(/\s+/g, " ").trim()} ${match[2]}`);
+  const romanMatches = Array.from(text.matchAll(/(?:^|\n)\s*(?:#{1,4}\s*)?chapter\s+([ivxlcdm]+)\b/gi)).map((match) => `Chapter ${match[1].toUpperCase()}`);
+  return Array.from(new Set([...matches, ...romanMatches])).slice(0, 24);
+}
+
+function detectDictionaryHeadwords(text: string) {
+  const lines = text.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+  const headwords = lines
+    .filter((line) => /^[A-Z][A-Z' -]{1,32}(?:,|\.)?\s/.test(line) || /^[A-Z][A-Z' -]{1,32}$/.test(line))
+    .map((line) => line.replace(/[,.].*$/, "").trim())
+    .filter((word) => word.length > 1 && word.length < 34);
+  return Array.from(new Set(headwords)).slice(0, 24);
+}
+
+function detectAdminImportSections(resourceType: AdminResourceType, text: string, metadata: AdminImportMetadata) {
+  if (!text.trim()) return [];
+  if (resourceType === "Commentary") return detectCommentarySections(text, metadata.bibleBookCovered);
+  if (resourceType === "Dictionary") return detectDictionaryHeadwords(text);
+  const headings = Array.from(text.matchAll(/(?:^|\n)\s*(?:#{1,4}\s+|chapter\s+)([^\n]{3,80})/gi))
+    .map((match) => match[1].trim())
+    .filter(Boolean);
+  return Array.from(new Set(headings)).slice(0, 12);
+}
+
+function adminImportRouteSummary(resourceType: AdminResourceType, sections: string[]) {
+  if (resourceType === "Commentary") {
+    return sections.length
+      ? `Prepare ${sections.length} chapter commentary sections for review, then optionally add the full work to Library.`
+      : "Commentary selected: add the Bible book covered and use clear chapter headings before review.";
+  }
+  if (resourceType === "Dictionary") {
+    return sections.length
+      ? `Prepare ${sections.length} detected headwords for dictionary review and keep source metadata attached.`
+      : "Dictionary selected: headword detection will run after text is available.";
+  }
+  if (resourceType === "Library Book") return "Prepare for Library reader, author page, shelves, and search after review approval.";
+  if (resourceType === "Bible Handbook / Survey") return "Prepare for Book Introduction recommendations and Library reader after review.";
+  if (resourceType === "Devotional") return "Prepare for devotional Library shelves only after rights and doctrinal review.";
+  return "Prepare for preaching/teaching shelves and lesson-prep recommendations after review.";
+}
+
+function validateAdminImport({
+  fileName,
+  resourceType,
+  metadata,
+  previewText,
+  status,
+  detectedSections,
+}: {
+  fileName: string;
+  resourceType: AdminResourceType;
+  metadata: AdminImportMetadata;
+  previewText: string;
+  status: ResourceImportStatus;
+  detectedSections: string[];
+}) {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const extension = fileExtension(fileName);
+
+  if (!fileName) errors.push("Upload a file first.");
+  if (!["txt", "md", "markdown", "docx", "pdf", "zip"].includes(extension)) errors.push("Supported upload types are TXT, Markdown, DOCX, PDF placeholder, and ZIP placeholder.");
+  if (!metadata.title.trim()) errors.push("Title is required.");
+  if (!metadata.author.trim()) errors.push("Author is required.");
+  if (!metadata.category.trim()) errors.push("Category is required.");
+  if (!metadata.rightsStatus.trim()) errors.push("Rights status is required.");
+  if (!metadata.doctrinalReviewStatus.trim()) errors.push("Doctrinal review status is required.");
+  if (!metadata.recommendedUse.trim()) errors.push("Recommended use is required.");
+  if ((extension === "pdf" || extension === "docx" || extension === "zip") && status === "Verified") {
+    errors.push("DOCX, PDF, and ZIP uploads cannot be marked verified until extraction and review are implemented.");
+  }
+  if (!adminFileCanExtractText(fileName) && !previewText.trim()) warnings.push(`${extension.toUpperCase()} import is a placeholder. Store metadata now; extract text later.`);
+  if (adminFileCanExtractText(fileName) && previewText.trim().length < 40) warnings.push("Extracted text is very short. Confirm the file imported correctly.");
+  if (status === "Verified" && !/public|permission|allowed|verified/i.test(metadata.rightsStatus)) {
+    errors.push("Verified imports require clear public-domain, permission, or allowed-use rights notes.");
+  }
+  if (status === "Verified" && /needs review|unknown|unclear/i.test(metadata.rightsStatus)) {
+    errors.push("Rights cannot still be unclear when status is verified.");
+  }
+  if (resourceType === "Commentary") {
+    if (!metadata.bibleBookCovered.trim()) errors.push("Commentary imports require the Bible book covered.");
+    if (!detectedSections.length && previewText.trim()) warnings.push("No chapter headings detected yet. Add headings like John 3 or Chapter 3 before splitting.");
+  }
+  if (resourceType === "Dictionary" && previewText.trim() && !detectedSections.length) {
+    warnings.push("No dictionary headwords detected yet. Use one headword per line or clear entry headings.");
+  }
+  if (status === "Personal Use Only") warnings.push("Personal uploads must remain private to the signed-in user.");
+  if (status === "Do Not Import") warnings.push("This item should remain blocked and must not appear in public Library search.");
+
+  return { errors, warnings };
+}
+
+function initialAdminMetadataForFile(fileName: string): AdminImportMetadata {
+  const title = fileName
+    .replace(/\.[^.]+$/, "")
+    .replace(/[-_]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return {
+    ...EMPTY_ADMIN_IMPORT_METADATA,
+    title: title ? title.replace(/\b\w/g, (letter) => letter.toUpperCase()) : "",
+  };
+}
+
 function LibraryScreen({
   view,
   resources,
@@ -11182,11 +11370,107 @@ function LibraryScreen({
 }
 
 function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
+  const [resourceType, setResourceType] = useState<AdminResourceType>("Library Book");
+  const [reviewStatus, setReviewStatus] = useState<ResourceImportStatus>("Needs Review");
+  const [metadata, setMetadata] = useState<AdminImportMetadata>(EMPTY_ADMIN_IMPORT_METADATA);
+  const [uploadFileName, setUploadFileName] = useState("");
+  const [uploadFileType, setUploadFileType] = useState("");
+  const [previewText, setPreviewText] = useState("");
+  const [importMessage, setImportMessage] = useState("");
+  const [adminQueue, setAdminQueue] = useState<AdminImportQueueItem[]>(() => {
+    if (typeof window === "undefined") return [];
+    try {
+      const saved = window.localStorage.getItem(ADMIN_IMPORT_QUEUE_KEY);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+  const detectedSections = useMemo(
+    () => detectAdminImportSections(resourceType, previewText, metadata),
+    [metadata, previewText, resourceType],
+  );
+  const validation = useMemo(
+    () => validateAdminImport({
+      fileName: uploadFileName,
+      resourceType,
+      metadata,
+      previewText,
+      status: reviewStatus,
+      detectedSections,
+    }),
+    [detectedSections, metadata, previewText, resourceType, reviewStatus, uploadFileName],
+  );
   const statusOrder: ResourceImportStatus[] = ["Verified", "Needs Review", "Permission Needed", "Personal Use Only", "Do Not Import"];
   const statusCounts = statusOrder.map((status) => ({
     status,
-    count: LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.status === status).length,
+    count:
+      LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.status === status).length +
+      adminQueue.filter((item) => item.status === status).length,
   }));
+
+  function persistAdminQueue(next: AdminImportQueueItem[]) {
+    setAdminQueue(next);
+    try {
+      window.localStorage.setItem(ADMIN_IMPORT_QUEUE_KEY, JSON.stringify(next));
+    } catch {
+      setImportMessage("Import queue could not be saved in this browser, but this item is still visible for this session.");
+    }
+  }
+
+  async function handleAdminFileUpload(file: File | null) {
+    if (!file) return;
+    setUploadFileName(file.name);
+    setUploadFileType(file.type || adminFileSupportLabel(file.name));
+    setMetadata((current) => ({
+      ...initialAdminMetadataForFile(file.name),
+      ...current,
+      title: current.title.trim() || initialAdminMetadataForFile(file.name).title,
+    }));
+    setImportMessage(adminFileSupportLabel(file.name));
+
+    if (adminFileCanExtractText(file.name)) {
+      const text = await file.text();
+      setPreviewText(text);
+      setImportMessage(`Extracted ${text.length.toLocaleString()} characters. Review before queueing.`);
+      return;
+    }
+
+    setPreviewText("");
+  }
+
+  function updateAdminMetadata(field: keyof AdminImportMetadata, value: string) {
+    setMetadata((current) => ({ ...current, [field]: value }));
+  }
+
+  function queueAdminImport() {
+    if (validation.errors.length) {
+      setImportMessage("Fix the validation errors before adding this resource to review.");
+      return;
+    }
+
+    const item: AdminImportQueueItem = {
+      id: `admin-import-${Date.now()}`,
+      fileName: uploadFileName,
+      fileType: uploadFileType || adminFileSupportLabel(uploadFileName),
+      resourceType,
+      status: reviewStatus,
+      metadata,
+      previewText: previewText.slice(0, 2000),
+      extractedCharacters: previewText.length,
+      detectedSections,
+      validationErrors: validation.errors,
+      validationWarnings: validation.warnings,
+      createdAt: new Date().toISOString(),
+    };
+    persistAdminQueue([item, ...adminQueue].slice(0, 20));
+    setImportMessage("Resource added to the admin review queue. Nothing was published.");
+  }
+
+  function removeAdminQueueItem(id: string) {
+    persistAdminQueue(adminQueue.filter((item) => item.id !== id));
+    setImportMessage("Queued item removed.");
+  }
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -11210,6 +11494,216 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
             <p className="mt-1 text-xs font-semibold">{status}</p>
           </div>
         ))}
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[1.2fr_1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Admin Import Engine</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Upload resource files into a review queue. TXT and Markdown preview now; DOCX, PDF, and ZIP are metadata placeholders until reliable extraction is added.
+              </p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              Review first
+            </span>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <label className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-4 text-sm font-semibold text-[var(--muted)]">
+              <span className="inline-flex items-center gap-2 text-[var(--green)]">
+                <Upload size={16} />
+                Upload resource
+              </span>
+              <input
+                accept=".txt,.md,.markdown,.docx,.pdf,.zip"
+                className="mt-3 block w-full text-xs text-[var(--muted)] file:mr-3 file:rounded-full file:border-0 file:bg-[var(--green)] file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white"
+                onChange={(event) => {
+                  void handleAdminFileUpload(event.target.files?.[0] ?? null);
+                }}
+                type="file"
+              />
+              <span className="mt-2 block text-xs leading-5 text-[var(--muted)]">{uploadFileName || "No file selected yet."}</span>
+            </label>
+
+            <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Upload types</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {ADMIN_UPLOAD_FORMATS.map((format) => (
+                  <span key={`admin-format-${format}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                    {format}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                ZIP batch format: `manifest.json`, `files/`, and `covers/`. ZIP unpacking is planned, not active.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+              Resource type
+              <select
+                className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                value={resourceType}
+                onChange={(event) => setResourceType(event.target.value as AdminResourceType)}
+              >
+                {ADMIN_RESOURCE_TYPES.map((type) => (
+                  <option key={`admin-resource-type-${type}`} value={type}>{type}</option>
+                ))}
+              </select>
+            </label>
+            <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+              Review status
+              <select
+                className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                value={reviewStatus}
+                onChange={(event) => setReviewStatus(event.target.value as ResourceImportStatus)}
+              >
+                {ADMIN_REVIEW_STATUSES.map((status) => (
+                  <option key={`admin-review-status-${status}`} value={status}>{status}</option>
+                ))}
+              </select>
+            </label>
+            <div className="rounded-2xl border border-[var(--line)] bg-white px-3 py-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Route</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--ink)]">{adminImportRouteSummary(resourceType, detectedSections)}</p>
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <AdminImportField label="Title" value={metadata.title} onChange={(value) => updateAdminMetadata("title", value)} />
+            <AdminImportField label="Author" value={metadata.author} onChange={(value) => updateAdminMetadata("author", value)} />
+            <AdminImportField label="Year" value={metadata.year} onChange={(value) => updateAdminMetadata("year", value)} />
+            <AdminImportField label="Category" value={metadata.category} onChange={(value) => updateAdminMetadata("category", value)} />
+            <AdminImportField label="Source URL" value={metadata.sourceUrl} onChange={(value) => updateAdminMetadata("sourceUrl", value)} />
+            <AdminImportField label="Warning labels" value={metadata.warningLabels} onChange={(value) => updateAdminMetadata("warningLabels", value)} />
+            {resourceType === "Commentary" && (
+              <AdminImportField label="Bible book covered" value={metadata.bibleBookCovered} onChange={(value) => updateAdminMetadata("bibleBookCovered", value)} />
+            )}
+          </div>
+
+          <div className="mt-3 grid gap-3 md:grid-cols-3">
+            <AdminImportTextArea label="Rights status" value={metadata.rightsStatus} onChange={(value) => updateAdminMetadata("rightsStatus", value)} />
+            <AdminImportTextArea label="Doctrinal review status" value={metadata.doctrinalReviewStatus} onChange={(value) => updateAdminMetadata("doctrinalReviewStatus", value)} />
+            <AdminImportTextArea label="Recommended use" value={metadata.recommendedUse} onChange={(value) => updateAdminMetadata("recommendedUse", value)} />
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <div className="flex items-center gap-2 text-[var(--green)]">
+                <FileText size={16} />
+                <p className="text-sm font-semibold">Preview extracted text</p>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                {uploadFileName ? `${adminFileSupportLabel(uploadFileName)} · ${previewText.length.toLocaleString()} characters` : "Choose a file to preview text."}
+              </p>
+              <pre className="mt-3 max-h-64 overflow-auto whitespace-pre-wrap rounded-xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--ink)]">
+                {previewText.trim() ? previewText.slice(0, 1600) : "No extracted text yet."}
+              </pre>
+            </div>
+
+            <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Validate</p>
+              <div className="mt-3 space-y-2">
+                {validation.errors.length ? validation.errors.map((error) => (
+                  <p key={`admin-error-${error}`} className="rounded-xl bg-red-50 px-3 py-2 text-xs leading-5 text-red-800">{error}</p>
+                )) : (
+                  <p className="rounded-xl bg-emerald-50 px-3 py-2 text-xs leading-5 text-emerald-800">No blocking validation errors.</p>
+                )}
+                {validation.warnings.map((warning) => (
+                  <p key={`admin-warning-${warning}`} className="rounded-xl bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-800">{warning}</p>
+                ))}
+              </div>
+              {detectedSections.length > 0 && (
+                <div className="mt-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                    {resourceType === "Dictionary" ? "Detected headwords" : "Detected sections"}
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {detectedSections.slice(0, 12).map((section) => (
+                      <span key={`detected-section-${section}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                        {section}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <button
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white disabled:opacity-40"
+                disabled={validation.errors.length > 0}
+                onClick={queueAdminImport}
+                type="button"
+              >
+                <Plus size={16} />
+                Add to Review Queue
+              </button>
+              {importMessage && <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{importMessage}</p>}
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Import queue</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Local review queue for admin testing. Approve/import is a placeholder and does not publish public resources.
+              </p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+              {adminQueue.length} queued
+            </span>
+          </div>
+          <div className="mt-3 space-y-3">
+            {adminQueue.length ? adminQueue.map((item) => (
+              <div key={item.id} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{item.metadata.title}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                      {item.resourceType} · {item.fileName}
+                    </p>
+                  </div>
+                  <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(item.status)}`}>
+                    {item.status}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{adminImportRouteSummary(item.resourceType, item.detectedSections)}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  Text: {item.extractedCharacters.toLocaleString()} chars · Detected: {item.detectedSections.length}
+                </p>
+                {item.validationWarnings.length > 0 && (
+                  <p className="mt-2 rounded-xl bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-800">
+                    {item.validationWarnings[0]}
+                  </p>
+                )}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => setImportMessage("Approve/import is intentionally a placeholder. Nothing public was published.")}
+                    type="button"
+                  >
+                    Approve/import placeholder
+                  </button>
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+                    onClick={() => removeAdminQueueItem(item.id)}
+                    type="button"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            )) : (
+              <p className="rounded-2xl bg-white px-3 py-4 text-sm leading-6 text-[var(--muted)]">
+                No uploaded resources in review yet. Add a small TXT or Markdown sample to test the workflow.
+              </p>
+            )}
+          </div>
+        </article>
       </div>
 
       <details className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4" open>
@@ -11297,6 +11791,48 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
         </article>
       </div>
     </section>
+  );
+}
+
+function AdminImportField({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+      {label}
+      <input
+        className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    </label>
+  );
+}
+
+function AdminImportTextArea({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  return (
+    <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+      {label}
+      <textarea
+        className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    </label>
   );
 }
 

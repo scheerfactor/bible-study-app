@@ -1,0 +1,11 @@
+Sample Admin Import
+
+This is a small test file for the admin import workflow.
+
+Chapter 1
+
+The reviewer should be able to upload this TXT file, enter metadata, preview the extracted text, validate it, and add it to the review queue.
+
+Chapter 2
+
+This sample is not a public library resource. It is only for testing the import workflow.
