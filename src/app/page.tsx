@@ -469,6 +469,7 @@ type SpeechState = {
   playing: boolean;
   paused: boolean;
   progress: number;
+  currentChunkIndex: number | null;
   rate: number;
   sleepTimerMinutes: number | null;
   sleepTimerEndsAt: string | null;
@@ -3155,6 +3156,7 @@ export default function Home() {
     playing: false,
     paused: false,
     progress: 0,
+    currentChunkIndex: null,
     rate: 1,
     sleepTimerMinutes: null,
     sleepTimerEndsAt: null,
@@ -3457,9 +3459,9 @@ export default function Home() {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     const updateVoices = () => {
-      const voices = window.speechSynthesis.getVoices();
+      const voices = window.speechSynthesis.getVoices().filter(isPreferredSpeechVoice);
       setSpeechVoices(voices);
-      setSelectedSpeechVoiceURI((current) => current || voices[0]?.voiceURI || "");
+      setSelectedSpeechVoiceURI((current) => voices.some((voice) => voice.voiceURI === current) ? current : voices[0]?.voiceURI || "");
     };
 
     updateVoices();
@@ -4044,7 +4046,7 @@ export default function Home() {
     const index = speechIndexRef.current;
 
     if (index >= chunks.length) {
-      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
+      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100, currentChunkIndex: null, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
       speechProgressRef.current?.(100);
       speechCompleteRef.current?.();
       return;
@@ -4055,6 +4057,7 @@ export default function Home() {
     const selectedVoice = speechVoices.find((voice) => voice.voiceURI === selectedSpeechVoiceURI);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
+      setSpeechState((state) => ({ ...state, currentChunkIndex: index }));
       const verseRef = speechVerseRefsRef.current[index];
       if (!verseRef) return;
       setSelectedRef(verseRef);
@@ -4070,11 +4073,11 @@ export default function Home() {
       speechIndexRef.current += 1;
       const progress = Math.min(100, (speechIndexRef.current / Math.max(1, chunks.length)) * 100);
       speechProgressRef.current?.(progress);
-      setSpeechState((state) => ({ ...state, progress }));
+      setSpeechState((state) => ({ ...state, progress, currentChunkIndex: speechIndexRef.current }));
       speakCurrentChunk();
     };
     utterance.onerror = () => {
-      setSpeechState((state) => ({ ...state, playing: false, paused: false }));
+      setSpeechState((state) => ({ ...state, playing: false, paused: false, currentChunkIndex: null }));
       setSyncMessage("Could not play audio on this device yet.");
     };
     window.speechSynthesis.speak(utterance);
@@ -4122,6 +4125,7 @@ export default function Home() {
       playing: true,
       paused: false,
       progress: startProgress,
+      currentChunkIndex: speechIndexRef.current,
       sleepTimerMinutes: null,
       sleepTimerEndsAt: null,
     }));
@@ -4143,6 +4147,7 @@ export default function Home() {
       ...state,
       playing: false,
       paused: false,
+      currentChunkIndex: null,
       sleepTimerMinutes: null,
       sleepTimerEndsAt: null,
     }));
@@ -8137,16 +8142,52 @@ function libraryReadingMinutes(resource: LibraryResource) {
   return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
 }
 
-function voiceDisplayName(voice: SpeechSynthesisVoice) {
+function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
+  const name = voice.name.toLowerCase();
+  const noveltyNames = [
+    "albert",
+    "bad news",
+    "bahh",
+    "bells",
+    "boing",
+    "bubbles",
+    "cellos",
+    "deranged",
+    "good news",
+    "hysterical",
+    "junior",
+    "organ",
+    "princess",
+    "ralph",
+    "superstar",
+    "trinoids",
+    "whisper",
+    "zarvox",
+  ];
+  return !noveltyNames.some((novelty) => name.includes(novelty));
+}
+
+function speechVoiceCategory(voice: SpeechSynthesisVoice) {
   const lower = voice.name.toLowerCase();
-  const label = lower.includes("female")
-    ? "Female"
-    : lower.includes("male")
-      ? "Male"
-      : voice.localService
-        ? "Device voice"
-        : "Browser voice";
+  if (lower.includes("female") || ["samantha", "susan", "victoria", "karen", "moira", "tessa", "veena", "zoe"].some((name) => lower.includes(name))) return "Female";
+  if (lower.includes("male") || ["alex", "daniel", "fred", "oliver", "thomas", "aaron", "arthur"].some((name) => lower.includes(name))) return "Male";
+  return "Other";
+}
+
+function voiceDisplayName(voice: SpeechSynthesisVoice) {
+  const label = speechVoiceCategory(voice) !== "Other"
+    ? speechVoiceCategory(voice)
+    : voice.localService
+      ? "Device voice"
+      : "Browser voice";
   return `${voice.name} · ${label}`;
+}
+
+function groupedSpeechVoices(voices: SpeechSynthesisVoice[]) {
+  return (["Male", "Female", "Other"] as const).map((category) => ({
+    category,
+    voices: voices.filter((voice) => speechVoiceCategory(voice) === category),
+  })).filter((group) => group.voices.length);
 }
 
 function annotationLabel(type: LibraryAnnotationType) {
@@ -8183,6 +8224,10 @@ function primaryCollectionForResource(resource: LibraryResource) {
     LIBRARY_COLLECTIONS.find((collection) => libraryResourceMatches(resource, collection.terms)) ??
     LIBRARY_COLLECTIONS.find((collection) => collection.id === "study-helps")!
   );
+}
+
+function libraryCollectionById(id: string) {
+  return LIBRARY_COLLECTIONS.find((collection) => collection.id === id)!;
 }
 
 function LibraryScreen({
@@ -8502,6 +8547,60 @@ function LibraryScreen({
         <DiscoveryCard title="Browse by Commentary" body="Review commentary paths while keeping Scripture first." onOpen={() => onOpenCollection("commentary")} />
       </section>
 
+      <LibraryShelf title="Featured Commentaries" horizontal>
+        <LibraryCollectionCard
+          collection={libraryCollectionById("commentary")}
+          count={resourcesForCollection(resources, libraryCollectionById("commentary")).length}
+          onOpen={() => onOpenCollection("commentary")}
+        />
+        <LibraryAuthorCard
+          profile={LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === "ironside")!}
+          count={resourcesForAuthor(resources, LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === "ironside")!).length}
+          onOpen={() => onOpenAuthor("ironside")}
+        />
+      </LibraryShelf>
+
+      <LibraryShelf title="Featured Dictionaries">
+        {resources
+          .filter((resource) => libraryResourceMatches(resource, ["dictionary", "topical"]))
+          .slice(0, 4)
+          .map((resource) => (
+            <LibraryResourceCard
+              key={`featured-dictionary-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+      </LibraryShelf>
+
+      {["new-believer", "baptist-history", "prayer", "kjv-defense"].map((collectionId) => {
+        const collection = libraryCollectionById(collectionId);
+        const collectionResources = resourcesForCollection(resources, collection).slice(0, 4);
+        return (
+          <LibraryShelf key={`collection-preview-${collection.id}`} title={collection.title}>
+            {collectionResources.length ? collectionResources.map((resource) => (
+              <LibraryResourceCard
+                key={`${collection.id}-${resource.slug}`}
+                resource={resource}
+                progress={progressState[resource.slug]}
+                listeningProgress={listeningProgress[resource.slug]}
+                completed={Boolean(completedState[resource.slug])}
+                onOpen={() => onOpenDetail(resource.slug)}
+              />
+            )) : (
+              <LibraryCollectionCard
+                collection={collection}
+                count={0}
+                onOpen={() => onOpenCollection(collection.id)}
+              />
+            )}
+          </LibraryShelf>
+        );
+      })}
+
       {featuredResources.length > 0 && (
         <LibraryShelf title="Featured">
           {featuredResources.map((resource) => (
@@ -8755,7 +8854,7 @@ function LibraryAuthorScreen({
 
       <section className="grid gap-3 lg:grid-cols-2">
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold">Commentary</h2>
+          <h2 className="text-lg font-semibold">Commentaries</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{profile.commentary}</p>
           {commentaryEntries.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-2">
@@ -9085,7 +9184,18 @@ function LibraryReader({
         ? "max-w-5xl"
         : "max-w-3xl";
   const estimatedMinutes = resource.word_count ? Math.max(1, Math.round(resource.word_count / 225)) : null;
+  const remainingMinutes = estimatedMinutes ? Math.max(1, Math.round(estimatedMinutes * (1 - Math.min(100, activeProgress.progress) / 100))) : null;
   const listeningValue = listeningProgress?.progress ?? speechState.progress;
+  const readerChunks = useMemo(() => chunkSpeechText(text), [text]);
+  const activeChunkIndex = speechActive && readerChunks.length
+    ? Math.min(readerChunks.length - 1, Math.max(0, speechState.currentChunkIndex ?? Math.floor((listeningValue / 100) * readerChunks.length)))
+    : null;
+  const readerChunkRefs = useRef<Array<HTMLParagraphElement | null>>([]);
+
+  useEffect(() => {
+    if (activeChunkIndex === null) return;
+    readerChunkRefs.current[activeChunkIndex]?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [activeChunkIndex]);
 
   return (
     <div className={`flex h-[calc(100vh-96px)] flex-col overflow-x-hidden md:h-[calc(100vh-48px)] ${readerThemeClass}`}>
@@ -9136,6 +9246,7 @@ function LibraryReader({
             <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">
               {completed ? "Completed" : `${formatPercent(activeProgress.progress)} read`}
               {estimatedMinutes ? ` · about ${estimatedMinutes} min` : ""}
+              {remainingMinutes && activeProgress.progress > 0 && activeProgress.progress < 100 ? ` · ${remainingMinutes} min left` : ""}
               {listeningValue > 0 && listeningValue < 100 ? ` · ${formatPercent(listeningValue)} listened` : ""}
             </p>
           </div>
@@ -9227,10 +9338,14 @@ function LibraryReader({
               value={selectedSpeechVoiceURI}
               onChange={(event) => onSpeechVoiceChange(event.target.value)}
             >
-              {speechVoices.length ? speechVoices.map((voice) => (
-                <option key={voice.voiceURI} value={voice.voiceURI}>
-                  {voiceDisplayName(voice)}
-                </option>
+              {speechVoices.length ? groupedSpeechVoices(speechVoices).map((group) => (
+                <optgroup key={`voice-group-${group.category}`} label={group.category}>
+                  {group.voices.map((voice) => (
+                    <option key={voice.voiceURI} value={voice.voiceURI}>
+                      {voiceDisplayName(voice)}
+                    </option>
+                  ))}
+                </optgroup>
               )) : (
                 <option value="">Default device voice</option>
               )}
@@ -9374,8 +9489,22 @@ function LibraryReader({
         {loading ? (
           <EmptyState title="Loading resource" body="Preparing the reader." />
         ) : (
-          <div className={`mx-auto whitespace-pre-wrap font-serif ${readerWidthClass}`} style={{ fontSize, lineHeight: activeProgress.lineSpacing }}>
-            {text}
+          <div className={`mx-auto font-serif ${readerWidthClass}`} style={{ fontSize, lineHeight: activeProgress.lineSpacing }}>
+            {readerChunks.map((chunk, index) => (
+              <p
+                key={`reader-chunk-${resource.slug}-${index}`}
+                ref={(node) => {
+                  readerChunkRefs.current[index] = node;
+                }}
+                className={`mb-5 rounded-2xl px-3 py-2 transition-colors ${
+                  activeChunkIndex === index
+                    ? "bg-[var(--highlight)] text-[var(--ink)] shadow-sm"
+                    : "bg-transparent"
+                }`}
+              >
+                {chunk}
+              </p>
+            ))}
           </div>
         )}
       </article>
@@ -9511,11 +9640,13 @@ function LibraryResourceCard({
 
   return (
     <button className="w-full overflow-hidden rounded-2xl border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" onClick={onOpen} type="button">
-      <div className={`relative min-h-[148px] bg-gradient-to-br ${coverClass} p-4 text-white`}>
-        <div className="absolute inset-x-5 top-4 h-px bg-white/30" />
-        <p className="max-w-[10rem] text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{libraryCategoryLabel(resource.category)}</p>
-        <h3 className="mt-5 line-clamp-3 text-xl font-semibold leading-6">{resource.title}</h3>
-        <p className="mt-3 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
+      <div className={`relative aspect-[3/4] min-h-[220px] bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
+        <div className="absolute inset-x-6 top-5 h-px bg-white/30" />
+        <div className="absolute inset-x-5 bottom-5">
+          <p className="max-w-[10rem] text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{libraryCategoryLabel(resource.category)}</p>
+          <h3 className="mt-4 line-clamp-4 text-2xl font-semibold leading-7">{resource.title}</h3>
+          <p className="mt-4 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
+        </div>
         {completed && (
           <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
             Finished
@@ -9527,7 +9658,7 @@ function LibraryResourceCard({
           <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
         </div>
-        <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+        <p className="mt-3 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
         <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
         <div className="mt-4 space-y-2">
           <div>
