@@ -20,7 +20,28 @@ export type LibraryManifestEntry = {
   word_count?: number;
   file_size_bytes?: number;
   checksum_sha256?: string;
+  cover_image_url?: string;
+  cover_source_url?: string;
+  cover_rights_status?: string;
+  reading_time_minutes?: number;
+  cover_metadata?: {
+    type: string;
+    title: string;
+    author: string;
+    category: string;
+    collection: string;
+    badge: string;
+    palette: {
+      from: string;
+      to: string;
+    };
+  };
 };
+
+function projectGutenbergCoverUrl(sourceUrl: string) {
+  const match = sourceUrl.match(/^https:\/\/www\.gutenberg\.org\/ebooks\/(\d+)/);
+  return match ? `https://www.gutenberg.org/cache/epub/${match[1]}/pg${match[1]}.cover.medium.jpg` : null;
+}
 
 const CATEGORY_LABELS: Record<string, string> = {
   "Bible study helps": "Bible Handbooks",
@@ -164,6 +185,11 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     word_count: entry.word_count ?? null,
     file_size_bytes: entry.file_size_bytes ?? null,
     checksum_sha256: entry.checksum_sha256 ?? null,
+    cover_image_url: entry.cover_image_url ?? projectGutenbergCoverUrl(entry.source_url),
+    cover_source_url: entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
+    cover_rights_status: entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
+    reading_time_minutes: entry.reading_time_minutes ?? (entry.word_count ? Math.max(1, Math.round(entry.word_count / 225)) : null),
+    cover_metadata: entry.cover_metadata ?? null,
     added_at: entry.import_status,
   };
 }

@@ -31,11 +31,119 @@ const trustedDownloadHosts = new Set([
   "www.ccel.org",
 ]);
 
+export const trustedLibrarySourceHosts = trustedDownloadHosts;
+
+export const verifiedRightsStatuses = new Set([
+  "verified",
+  "public domain",
+  "public-domain",
+  "public_domain",
+  "verified public domain",
+]);
+
+export const reviewedDoctrinalStatuses = new Set([
+  "reviewed",
+  "beta reviewed",
+  "verified",
+  "approved",
+]);
+
 export async function readLibraryManifest(filePath = defaultLibraryManifest) {
   const raw = await readFile(filePath, "utf8");
   const parsed = JSON.parse(raw);
   if (!Array.isArray(parsed)) throw new Error("Library manifest must be a JSON array.");
   return parsed;
+}
+
+export function normalizeTextValue(value) {
+  return String(value ?? "").trim().replace(/\s+/g, " ");
+}
+
+export function normalizeComparisonValue(value) {
+  return normalizeTextValue(value).toLowerCase();
+}
+
+export function slugify(value) {
+  return normalizeComparisonValue(value)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 110);
+}
+
+export function readingTimeMinutes(wordCount, wordsPerMinute = 225) {
+  return Math.max(1, Math.round(Number(wordCount || 0) / wordsPerMinute));
+}
+
+export function checksumText(text) {
+  return createHash("sha256").update(text).digest("hex");
+}
+
+export function wordCount(text) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
+export function inferDownloadUrl(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    const gutenbergMatch = url.hostname === "www.gutenberg.org" && url.pathname.match(/^\/ebooks\/(\d+)/);
+    if (gutenbergMatch) return `https://www.gutenberg.org/ebooks/${gutenbergMatch[1]}.txt.utf-8`;
+  } catch {
+    return "";
+  }
+
+  return "";
+}
+
+export function stripProjectGutenbergBoilerplate(text) {
+  const startPattern = /\*\*\*\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK[^*]*\*\*\*/i;
+  const endPattern = /\*\*\*\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK[^*]*\*\*\*/i;
+  const start = text.search(startPattern);
+  const end = text.search(endPattern);
+
+  if (start === -1 || end === -1 || end <= start) {
+    return { text, cleaned: false };
+  }
+
+  const startMatch = text.slice(start).match(startPattern);
+  if (!startMatch) return { text, cleaned: false };
+
+  return {
+    text: text.slice(start + startMatch[0].length, end).trimStart().trimEnd() + "\n",
+    cleaned: true,
+  };
+}
+
+export function inferYearFromText(text) {
+  const releaseMatch = text.match(/Release date:\s*.*?\b(1[5-9]\d{2}|20\d{2})\b/i);
+  if (releaseMatch) return Number(releaseMatch[1]);
+
+  const firstPublicationMatch = text.match(/(?:first published|published|copyright)\D{0,40}\b(1[5-9]\d{2}|20\d{2})\b/i);
+  if (firstPublicationMatch) return Number(firstPublicationMatch[1]);
+
+  return new Date().getFullYear();
+}
+
+export function fallbackCoverMetadata({ title, author, category, collection }) {
+  const seed = title.length + author.length + category.length;
+  const palettes = [
+    { from: "#314c43", to: "#a67d3d" },
+    { from: "#583f32", to: "#55705f" },
+    { from: "#29435f", to: "#8a7241" },
+    { from: "#3f4a34", to: "#7b5641" },
+  ];
+
+  return {
+    type: "generated-fallback",
+    title,
+    author,
+    category,
+    collection: collection || category,
+    badge: collection || category,
+    palette: palettes[seed % palettes.length],
+  };
 }
 
 export function validateLibraryEntry(entry, index) {
@@ -100,9 +208,9 @@ export async function fileMetadata(filePath) {
   const text = await readFile(absolutePath, "utf8");
   const stats = await stat(absolutePath);
   return {
-    checksum_sha256: createHash("sha256").update(text).digest("hex"),
+    checksum_sha256: checksumText(text),
     file_size_bytes: stats.size,
-    word_count: text.trim().split(/\s+/).filter(Boolean).length,
+    word_count: wordCount(text),
   };
 }
 

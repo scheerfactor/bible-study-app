@@ -14,6 +14,8 @@
     "library:validate": "node scripts/validate-library-manifests.mjs",
     "library:download": "node scripts/download-library-resources.mjs",
     "library:import": "node scripts/import-library-resources.mjs",
+    "library:bulk-import": "node scripts/bulk-import-library-resources.mjs",
+    "library:qa": "node scripts/qa-library.mjs",
     "prepare:webster": "node scripts/prepare-websters-1828-data.mjs",
     "import:commentary": "node scripts/import-commentary-entries.mjs",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs"
