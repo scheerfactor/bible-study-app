@@ -22,12 +22,20 @@ const requiredFields = [
 ];
 
 async function defaultCommentaryFiles() {
-  const importDir = "data/imports";
-  const files = await readdir(importDir);
-  return files
-    .filter((file) => file.endsWith(".json") && file.includes("commentary"))
-    .map((file) => path.join(importDir, file))
-    .sort();
+  const files = [];
+  for (const directory of ["data/imports", "data/commentary/staging"]) {
+    try {
+      const directoryFiles = await readdir(directory);
+      files.push(
+        ...directoryFiles
+          .filter((file) => file.endsWith(".json") && file.includes("commentary"))
+          .map((file) => path.join(directory, file)),
+      );
+    } catch {
+      // Optional staging directories may not exist until a full source has been prepared.
+    }
+  }
+  return files.sort();
 }
 
 function validateRows(filePath, rows) {

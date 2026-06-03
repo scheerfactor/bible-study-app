@@ -24,6 +24,8 @@
 .DS_Store
 *.pem
 data/sources/websters-1828/*_djvu.txt
+data/commentary/**/source/*.ZIP
+data/commentary/**/source/*.zip
 
 # debug
 npm-debug.log*

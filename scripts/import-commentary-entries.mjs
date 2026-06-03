@@ -26,6 +26,12 @@ async function sourceIdFor(title) {
 const entries = [];
 
 for (const row of rows) {
+  const reviewStatus = String(row.review_status ?? "").trim();
+  if (reviewStatus && reviewStatus !== "Verified") {
+    skipped += 1;
+    continue;
+  }
+
   const book = String(row.book ?? "").trim();
   const chapter = Number(row.chapter);
   const verseStart = Number(row.verse_start);

@@ -166,8 +166,10 @@ type CommentaryExpansionCandidate = {
 type CommentaryCoverageAuthor = {
   author: string;
   resourceTitles: string[];
+  bookNames: string[];
   booksCovered: number;
   chaptersCovered: number;
+  missingChaptersInCoveredBooks: number;
   entries: number;
   status: ResourceImportStatus;
 };
@@ -186,6 +188,7 @@ type CommentaryCoverage = {
   booksCovered: number;
   chaptersCovered: number;
   missingChapters: number;
+  duplicateEntries: number;
   missingBooks: string[];
   bookCoverage: CommentaryCoverageBook[];
   authorCoverage: CommentaryCoverageAuthor[];
@@ -9374,9 +9377,21 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
 
   const coveredByBook = new Map<string, Set<number>>();
   const authorsByBook = new Map<string, Set<string>>();
-  const authorStats = new Map<string, { resourceTitles: Set<string>; books: Set<string>; chapters: Set<string>; entries: number }>();
+  const authorStats = new Map<string, {
+    resourceTitles: Set<string>;
+    books: Set<string>;
+    chapters: Set<string>;
+    chaptersByBook: Map<string, Set<number>>;
+    entries: number;
+  }>();
+  const duplicateKeys = new Set<string>();
+  const seenEntryKeys = new Set<string>();
 
   entries.forEach((entry) => {
+    const entryKey = `${entry.book}|${entry.chapter}|${entry.verse_start}|${entry.verse_end}|${entry.author}|${entry.resource_title}`;
+    if (seenEntryKeys.has(entryKey)) duplicateKeys.add(entryKey);
+    seenEntryKeys.add(entryKey);
+
     const chapters = coveredByBook.get(entry.book) ?? new Set<number>();
     chapters.add(entry.chapter);
     coveredByBook.set(entry.book, chapters);
@@ -9389,8 +9404,12 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       resourceTitles: new Set<string>(),
       books: new Set<string>(),
       chapters: new Set<string>(),
+      chaptersByBook: new Map<string, Set<number>>(),
       entries: 0,
     };
+    const authorBookChapters = stats.chaptersByBook.get(entry.book) ?? new Set<number>();
+    authorBookChapters.add(entry.chapter);
+    stats.chaptersByBook.set(entry.book, authorBookChapters);
     stats.resourceTitles.add(entry.resource_title);
     stats.books.add(entry.book);
     stats.chapters.add(`${entry.book} ${entry.chapter}`);
@@ -9418,21 +9437,34 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
     .sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b));
   const chaptersCovered = new Set(entries.map((entry) => `${entry.book} ${entry.chapter}`)).size;
   const totalChapters = Array.from(chaptersByBook.values()).reduce((total, chapters) => total + chapters.size, 0);
-  const activeAuthorCoverage = Array.from(authorStats.entries()).map(([author, stats]) => ({
-    author,
-    resourceTitles: Array.from(stats.resourceTitles).sort(),
-    booksCovered: stats.books.size,
-    chaptersCovered: stats.chapters.size,
-    entries: stats.entries,
-    status: "Verified" as ResourceImportStatus,
-  }));
+  const activeAuthorCoverage = Array.from(authorStats.entries()).map(([author, stats]) => {
+    const bookNames = Array.from(stats.books).sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b));
+    const missingChaptersInCoveredBooks = bookNames.reduce((total, bookName) => {
+      const allChapterCount = chaptersByBook.get(bookName)?.size ?? 0;
+      const authorChapterCount = stats.chaptersByBook.get(bookName)?.size ?? 0;
+      return total + Math.max(0, allChapterCount - authorChapterCount);
+    }, 0);
+
+    return {
+      author,
+      resourceTitles: Array.from(stats.resourceTitles).sort(),
+      bookNames,
+      booksCovered: stats.books.size,
+      chaptersCovered: stats.chapters.size,
+      missingChaptersInCoveredBooks,
+      entries: stats.entries,
+      status: "Verified" as ResourceImportStatus,
+    };
+  });
   const plannedOnlyCoverage = COMMENTARY_EXPANSION_CANDIDATES
     .filter((candidate) => !authorStats.has(candidate.author))
     .map((candidate) => ({
       author: candidate.author,
       resourceTitles: [candidate.resourceTitle],
+      bookNames: [],
       booksCovered: 0,
       chaptersCovered: 0,
+      missingChaptersInCoveredBooks: 0,
       entries: 0,
       status: candidate.status,
     }));
@@ -9444,6 +9476,7 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
     booksCovered: bookCoverage.length,
     chaptersCovered,
     missingChapters: Math.max(0, totalChapters - chaptersCovered),
+    duplicateEntries: duplicateKeys.size,
     missingBooks,
     bookCoverage,
     authorCoverage: [...activeAuthorCoverage, ...plannedOnlyCoverage].sort((a, b) => {
@@ -13415,11 +13448,12 @@ function CommentaryCoverageDashboard({
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <LibraryStat label="Entries" value={String(coverage.totalEntries)} />
         <LibraryStat label="Books covered" value={`${coverage.booksCovered}/${coverage.totalBooks}`} />
         <LibraryStat label="Chapters covered" value={String(coverage.chaptersCovered)} />
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
+        <LibraryStat label="Duplicates" value={String(coverage.duplicateEntries)} />
         <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
       </div>
 
@@ -13469,6 +13503,17 @@ function CommentaryCoverageDashboard({
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
                   {author.chaptersCovered} chapters · {author.booksCovered} books · {author.entries} entries
                 </p>
+                {author.bookNames.length ? (
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                    Books: {author.bookNames.slice(0, 8).join(", ")}
+                    {author.bookNames.length > 8 ? ` +${author.bookNames.length - 8} more` : ""}
+                  </p>
+                ) : null}
+                {author.missingChaptersInCoveredBooks ? (
+                  <p className="mt-1 text-xs font-semibold leading-5 text-amber-700">
+                    {author.missingChaptersInCoveredBooks} chapters still missing inside covered books
+                  </p>
+                ) : null}
               </button>
             ))}
           </div>

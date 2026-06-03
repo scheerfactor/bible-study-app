@@ -1,0 +1,16 @@
+{
+  "id": "jfb-complete-ccel-html-archive",
+  "author": "Jamieson-Fausset-Brown",
+  "resource_title": "Commentary Critical and Explanatory on the Whole Bible",
+  "source_title": "Commentary Critical and Explanatory on the Whole Bible",
+  "source_url": "https://www.ccel.org/j/jfb/jfb/old/JFB00.htm",
+  "download_url": "https://www.ccel.org/j/jfb/jfb/JFB-UPD3.ZIP",
+  "archive_path": "data/commentary/jfb/source/JFB-UPD3.ZIP",
+  "parser": "jfb-html-archive",
+  "public_domain_status": "The CCEL table of contents states this expanded electronic edition is public domain. The electronic-edition page states it may be freely used and distributed.",
+  "rights_basis": "Original commentary published 1871. CCEL J-F-B electronic edition states public-domain status and free use/distribution. Preserve source URL and do not mix in modern edited editions.",
+  "recommended_use": "Use as a compact whole-Bible comparison voice after the KJV text, Webster, cross references, and reviewed study data.",
+  "review_status": "Needs Review",
+  "import_scope": "Complete JFB archive staged by Bible book and chapter. Entries must be reviewed before public promotion.",
+  "notes": "This manifest starts the full commentary pipeline. Staged entries are not imported into the public app until reviewed and promoted."
+}
