@@ -10211,6 +10211,15 @@ function LibraryScreen({
     : resources
         .filter((resource) => ["The Pilgrim's Progress", "Power Through Prayer", "Practical Religion", "The Way to God and How to Find It"].includes(resource.title))
         .slice(0, 4);
+  const startHereResources = resources
+    .filter((resource) => ["Pleasure & Profit in Bible Study", "The Way to God and How to Find It", "Practical Religion", "The Pilgrim's Progress"].includes(resource.title))
+    .slice(0, 8);
+  const preachersTeachersResources = resources
+    .filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "illustration", "bible characters", "ten commandments"]))
+    .slice(0, 8);
+  const prayerClassicResources = resources
+    .filter((resource) => libraryResourceMatches(resource, ["prayer", "pray", "intercession", "müller", "muller"]))
+    .slice(0, 8);
   const categoryCards = categories
     .filter((category) => category !== "All")
     .map((category) => ({
@@ -10354,6 +10363,51 @@ function LibraryScreen({
           />
         ))}
       </LibraryShelf>
+
+      {startHereResources.length > 0 && (
+        <LibraryShelf title="Start Here">
+          {startHereResources.map((resource) => (
+            <LibraryResourceCard
+              key={`start-here-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
+      {preachersTeachersResources.length > 0 && (
+        <LibraryShelf title="For Preachers & Teachers">
+          {preachersTeachersResources.map((resource) => (
+            <LibraryResourceCard
+              key={`preachers-teachers-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
+      {prayerClassicResources.length > 0 && (
+        <LibraryShelf title="Prayer Classics">
+          {prayerClassicResources.map((resource) => (
+            <LibraryResourceCard
+              key={`prayer-classics-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <label className="text-sm font-semibold text-[var(--muted)]">
@@ -11202,6 +11256,7 @@ function LibraryReader({
         : "max-w-3xl";
   const estimatedMinutes = resource.word_count ? Math.max(1, Math.round(resource.word_count / 225)) : null;
   const remainingMinutes = estimatedMinutes ? Math.max(1, Math.round(estimatedMinutes * (1 - Math.min(100, activeProgress.progress) / 100))) : null;
+  const readingFinished = completed || activeProgress.progress >= 100;
   const listeningValue = listeningProgress?.progress ?? speechState.progress;
   const readerChunks = useMemo(() => chunkSpeechText(text), [text]);
   const activeChunkIndex = speechActive && readerChunks.length
@@ -11261,9 +11316,8 @@ function LibraryReader({
               <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(activeProgress.progress) }} />
             </div>
             <p className="mt-1 text-center text-xs font-semibold text-[var(--muted)]">
-              {completed ? "Completed" : `${formatPercent(activeProgress.progress)} read`}
-              {estimatedMinutes ? ` · about ${estimatedMinutes} min` : ""}
-              {remainingMinutes && activeProgress.progress > 0 && activeProgress.progress < 100 ? ` · ${remainingMinutes} min left` : ""}
+              {readingFinished ? "Completed" : `${formatPercent(activeProgress.progress)} read`}
+              {estimatedMinutes ? ` · ${readingFinished ? `about ${estimatedMinutes} min` : `${remainingMinutes} min remaining`}` : ""}
               {listeningValue > 0 && listeningValue < 100 ? ` · ${formatPercent(listeningValue)} listened` : ""}
             </p>
           </div>

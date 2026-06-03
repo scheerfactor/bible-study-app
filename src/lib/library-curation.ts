@@ -66,6 +66,10 @@ function warningLabels(entry: LibraryManifestEntry, category: string) {
   if (author.includes("ironside")) warnings.push("Use with discernment");
   if (author.includes("murray")) warnings.push("Use with discernment", "Not all doctrine endorsed");
   if (author.includes("meyer")) warnings.push("Use with discernment", "Not all doctrine endorsed");
+  if (author.includes("müller") || author.includes("muller")) warnings.push("Historical value", "Use with discernment");
+  if (author.includes("judson")) warnings.push("Historical value", "Use with discernment");
+  if (author.includes("gordon")) warnings.push("Use with discernment", "Not all doctrine endorsed");
+  if (author.includes("bonar")) warnings.push("Historical value", "Use with discernment");
   if (author.includes("pink")) warnings.push("Use with discernment", "Not all doctrine endorsed");
   if (author.includes("ryle")) warnings.push("Devotional classic", "Use with discernment");
   if (author.includes("spurgeon")) warnings.push("Devotional classic", "Use with discernment");
@@ -87,6 +91,8 @@ function resourceLabels(entry: LibraryManifestEntry, category: string) {
   if (author.includes("bounds")) labels.push("Devotional classic");
   if (author.includes("foxe")) labels.push("Historical value");
   if (author.includes("moody")) labels.push("Evangelism");
+  if (author.includes("müller") || author.includes("muller")) labels.push("Prayer", "Missions");
+  if (author.includes("judson")) labels.push("Missions", "Biography");
   if (author.includes("meyer")) labels.push("Bible study helps");
   if (author.includes("ryle")) labels.push("Devotional classic");
   if (author.includes("taylor")) labels.push("Missions");
@@ -102,6 +108,10 @@ function perspectiveNotes(entry: LibraryManifestEntry, category: string) {
   if (category === "Baptist History") return "Historical Baptist resource; useful for context, heritage, and careful source review.";
   if (author.includes("murray")) return "Devotional classic from a non-Baptist author; useful with discernment and Scripture-first review.";
   if (author.includes("meyer")) return "Devotional Bible study and biography from a Baptist author; useful with discernment and Scripture-first review.";
+  if (author.includes("müller") || author.includes("muller")) return "Prayer and faith testimony resource; useful for encouragement with Scripture-first discernment.";
+  if (author.includes("judson")) return "Missionary biography or Baptist missions resource; useful for burden, history, and teaching context.";
+  if (author.includes("gordon")) return "Baptist devotional and doctrinal resource; review carefully and keep Scripture primary.";
+  if (author.includes("bonar")) return "Historical devotional biography; useful with denominational context and Scripture-first review.";
   if (author.includes("spurgeon")) return "Baptist preacher and devotional classic; review quotes in context for teaching use.";
   if (author.includes("taylor")) return "Missionary devotional resource; useful for missions burden, Christian life, and Bible study with discernment.";
   if (category === "Prayer") return "Prayer-focused devotional resource for personal devotion, teaching, and ministry encouragement.";

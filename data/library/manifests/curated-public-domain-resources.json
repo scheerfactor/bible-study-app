@@ -1036,5 +1036,807 @@
     "checksum_sha256": "70ed8e29678cb5042ec5be00e64f379f8ed017f4de5721f2f435026f444c7d1d",
     "file_size_bytes": 34332,
     "word_count": 5616
+  },
+  {
+    "title": "Wondrous Love, and Other Gospel Addresses",
+    "author": "D. L. Moody",
+    "year": 1885,
+    "category": "Evangelism",
+    "source_url": "https://www.gutenberg.org/ebooks/33520",
+    "download_url": "https://www.gutenberg.org/ebooks/33520.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/wondrous-love-and-other-gospel-addresses.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody Gospel addresses useful for evangelistic warmth and invitations.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Evangelistic Moody addresses; useful for Gospel application and illustrations with Scripture-first review.",
+    "recommended_use": "Evangelism, invitation preparation, and devotional Gospel reading.",
+    "resource_labels": [
+      "Evangelism",
+      "Preaching"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "b65489285bf360be3f87786012a06c80aed7f31f01f5795e16fb1a832352f72c",
+    "file_size_bytes": 294268,
+    "word_count": 55692
+  },
+  {
+    "title": "Sovereign Grace: Its Source, Its Nature and Its Effects",
+    "author": "D. L. Moody",
+    "year": 1891,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/30657",
+    "download_url": "https://www.gutenberg.org/ebooks/30657.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sovereign-grace-its-source-its-nature-and-its-effects.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Short Moody treatment of grace for personal study and Gospel teaching.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Moody devotional doctrine; keep teaching tied directly to the KJV text.",
+    "recommended_use": "Grace-focused study, Gospel application, and new believer encouragement.",
+    "resource_labels": [
+      "Christian Living",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "f400f780be2b763088190129c53e286501d5d1229b3f1a03031399a4280bf63c",
+    "file_size_bytes": 199526,
+    "word_count": 36835
+  },
+  {
+    "title": "Weighed and Wanting: Addresses on the Ten Commandments",
+    "author": "D. L. Moody",
+    "year": 1890,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/33340",
+    "download_url": "https://www.gutenberg.org/ebooks/33340.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/weighed-and-wanting-addresses-on-the-ten-commandments.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody addresses on the Ten Commandments for preaching and teaching preparation.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Evangelistic teaching addresses; useful with careful Scripture context.",
+    "recommended_use": "Teaching moral law, conviction, and Gospel application.",
+    "resource_labels": [
+      "Preaching",
+      "Teaching",
+      "Evangelism"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "6209df4fa11806c15b8fdfc9c61dc5d8908559d018233d125ad6b4b404a26ed8",
+    "file_size_bytes": 197436,
+    "word_count": 35473
+  },
+  {
+    "title": "Pleasure & Profit in Bible Study",
+    "author": "D. L. Moody",
+    "year": 1895,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/36655",
+    "download_url": "https://www.gutenberg.org/ebooks/36655.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/pleasure-profit-in-bible-study.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody encouragement and practical counsel for Bible study.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Simple Bible-study encouragement from an evangelistic perspective.",
+    "recommended_use": "Start-here resource for new believers learning to read Scripture.",
+    "resource_labels": [
+      "Bible study helps",
+      "New Believer"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "c45e75fc0a8f47f9f3edcd4acd7229e3369491d1d04638991615c9d0a0244f20",
+    "file_size_bytes": 191393,
+    "word_count": 34552
+  },
+  {
+    "title": "Prevailing Prayer: What Hinders It?",
+    "author": "D. L. Moody",
+    "year": 1884,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/61883",
+    "download_url": "https://www.gutenberg.org/ebooks/61883.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/prevailing-prayer-what-hinders-it.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Moody prayer classic on prayer and hindrances.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Prayer classic; use devotionally with Bible-centered discernment.",
+    "recommended_use": "Prayer meetings, personal devotion, and teacher application.",
+    "resource_labels": [
+      "Prayer",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "152c5d7d5bab9e1551629e7fc18d4ac0e20a86c4e2ac7a9a1265a0ad69619619",
+    "file_size_bytes": 228817,
+    "word_count": 40340
+  },
+  {
+    "title": "Bible Characters",
+    "author": "T. De Witt Talmage; D. L. Moody; Joseph Parker",
+    "year": 1896,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/54736",
+    "download_url": "https://www.gutenberg.org/ebooks/54736.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/bible-characters.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Public-domain Bible character studies with Moody as one contributor.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Multi-author Bible character studies; use as secondary illustration and check each section against Scripture.",
+    "recommended_use": "Teacher background for Bible people and character lessons.",
+    "resource_labels": [
+      "Bible study helps",
+      "Biography",
+      "Teaching"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "bec269a3af05d536965c0a271713ebc9f74275fde20f9888038a33b582d5a3ae",
+    "file_size_bytes": 738649,
+    "word_count": 130931
+  },
+  {
+    "title": "Life and Death of Mr. Badman",
+    "author": "John Bunyan",
+    "year": 1680,
+    "category": "Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/1986",
+    "download_url": "https://www.gutenberg.org/ebooks/1986.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-and-death-of-mr-badman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Bunyan moral allegory showing the ruin of ungodly living.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist allegorical classic; helpful for illustration, not a substitute for doctrine.",
+    "recommended_use": "Illustrations, devotional reading, and Christian life warnings.",
+    "resource_labels": [
+      "Classics",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "633c8f9f27d889eef6515f3677f38e2a99858e8f31f497b7e77e5b1ab0134a75",
+    "file_size_bytes": 437607,
+    "word_count": 80818
+  },
+  {
+    "title": "The Riches of Bunyan",
+    "author": "John Bunyan",
+    "year": 1850,
+    "category": "Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/5831",
+    "download_url": "https://www.gutenberg.org/ebooks/5831.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-riches-of-bunyan.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Selected extracts from Bunyan works for devotional reading.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Selections from Bunyan; verify exact context before quoting in teaching.",
+    "recommended_use": "Devotional reading and illustration mining.",
+    "resource_labels": [
+      "Classics",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "75490de7af5e1c6055058b8bc1fc25d2e4a58dfdc8ab1472af03b4bd022f0f3b",
+    "file_size_bytes": 915397,
+    "word_count": 167683
+  },
+  {
+    "title": "An Exhortation to Peace and Unity",
+    "author": "John Bunyan",
+    "year": 1688,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/3614",
+    "download_url": "https://www.gutenberg.org/ebooks/3614.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/an-exhortation-to-peace-and-unity.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Short Bunyan work on Christian peace and unity.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist classic; useful for church-life applications with Scripture-first review.",
+    "recommended_use": "Church unity, Christian conduct, and pastoral application.",
+    "resource_labels": [
+      "Christian Living",
+      "Classics"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "c8c7b11244a302261bb8b87c3fb170a49c727ee9a60b98f7691537b89ca1f48c",
+    "file_size_bytes": 87004,
+    "word_count": 15074
+  },
+  {
+    "title": "The Jerusalem Sinner Saved",
+    "author": "John Bunyan",
+    "year": 1688,
+    "category": "Evangelism",
+    "source_url": "https://www.gutenberg.org/ebooks/3270",
+    "download_url": "https://www.gutenberg.org/ebooks/3270.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-jerusalem-sinner-saved.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Bunyan Gospel work emphasizing mercy to great sinners.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist Gospel classic; excellent for mercy and evangelistic application.",
+    "recommended_use": "Evangelism, Gospel invitations, and encouragement for seekers.",
+    "resource_labels": [
+      "Evangelism",
+      "Classics"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "c9ad181848cbdefaf1df5b5b05eb1ab4c6418e09353883e03030e8783c106399",
+    "file_size_bytes": 213315,
+    "word_count": 38498
+  },
+  {
+    "title": "The Heavenly Footman",
+    "author": "John Bunyan",
+    "year": 1698,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/13750",
+    "download_url": "https://www.gutenberg.org/ebooks/13750.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-heavenly-footman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Bunyan exhortation to run the Christian race.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist exhortation; use devotionally and in discipleship.",
+    "recommended_use": "Discipleship, perseverance, and Christian life lessons.",
+    "resource_labels": [
+      "Christian Living",
+      "Classics"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "acca2d7669d2562fd0dfbc967f3f53f0f95be9cd8c623df0bee7285faefdb5a7",
+    "file_size_bytes": 98352,
+    "word_count": 17750
+  },
+  {
+    "title": "The Pharisee and the Publican",
+    "author": "John Bunyan",
+    "year": 1685,
+    "category": "Evangelism",
+    "source_url": "https://www.gutenberg.org/ebooks/3548",
+    "download_url": "https://www.gutenberg.org/ebooks/3548.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-pharisee-and-the-publican.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Bunyan exposition and application of the Pharisee and publican.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist Gospel classic; useful for teaching repentance and self-righteousness.",
+    "recommended_use": "Gospel teaching, repentance lessons, and devotional reading.",
+    "resource_labels": [
+      "Evangelism",
+      "Classics"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "2bb1677b147e12a1f5f9659275704bfaa66bf7b4a32f488b211ea0c24a640150",
+    "file_size_bytes": 335782,
+    "word_count": 60179
+  },
+  {
+    "title": "Miscellaneous Pieces",
+    "author": "John Bunyan",
+    "year": 1680,
+    "category": "Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/3613",
+    "download_url": "https://www.gutenberg.org/ebooks/3613.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/miscellaneous-pieces.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Collection of shorter Bunyan writings.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Collected Bunyan pieces; use with context checks before quotation.",
+    "recommended_use": "Supplemental devotional reading and illustration research.",
+    "resource_labels": [
+      "Classics",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "a43e516d4820b017021c7e19768d7b5a1fd651df3e81d526092c257961b07bca",
+    "file_size_bytes": 59809,
+    "word_count": 10313
+  },
+  {
+    "title": "The Life of John Bunyan",
+    "author": "Edmund Venables",
+    "year": 1888,
+    "category": "Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/1037",
+    "download_url": "https://www.gutenberg.org/ebooks/1037.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-john-bunyan.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Public-domain biography of John Bunyan.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Historical biography; useful for background on Bunyan and Baptist-era context.",
+    "recommended_use": "Author background, Baptist history shelf, and teacher context.",
+    "resource_labels": [
+      "Biographies",
+      "Baptist history",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "checksum_sha256": "89ef1e5e13f43e25334f0c7be6e4bd56dd20d459bcd56cd0ca4ac54b6f8d012a",
+    "file_size_bytes": 313716,
+    "word_count": 53318
+  },
+  {
+    "title": "Absolute Surrender and Other Addresses",
+    "author": "Andrew Murray",
+    "year": 1895,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/19572",
+    "download_url": "https://www.gutenberg.org/files/19572/19572.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/absolute-surrender-and-other-addresses.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Andrew Murray addresses on surrender, service, and Christian life.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Devotional classic from a non-Baptist author; useful with discernment and Scripture-first review.",
+    "recommended_use": "Christian life, surrender, and devotional reading.",
+    "resource_labels": [
+      "Christian Living",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "9f3549609e51cfba93920f5150ae47f463c0150a0a427afb0c5f507ede32d727",
+    "file_size_bytes": 22983,
+    "word_count": 3453
+  },
+  {
+    "title": "The Life of Trust",
+    "author": "George Müller",
+    "year": 1861,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/27288",
+    "download_url": "https://www.gutenberg.org/ebooks/27288.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-trust.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Narrative of the Lord's dealings with George Müller, focused on faith and prayer.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Faith and prayer narrative; useful for encouragement and prayer teaching.",
+    "recommended_use": "Prayer meetings, missions emphasis, and devotional faith-building.",
+    "resource_labels": [
+      "Prayer",
+      "Missions",
+      "Biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "10ab79ceff0b27857912108697287d4b84ecf18ef14c1a34a8fadc981b912099",
+    "file_size_bytes": 912871,
+    "word_count": 162443
+  },
+  {
+    "title": "Answers to Prayer, from George Müller's Narratives",
+    "author": "George Müller",
+    "year": 1887,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/25891",
+    "download_url": "https://www.gutenberg.org/ebooks/25891.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/answers-to-prayer-from-george-m-ller-s-narratives.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Selected answers to prayer from George Müller's narratives.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Prayer testimony collection; use devotionally and avoid overpromising beyond Scripture.",
+    "recommended_use": "Prayer encouragement, testimonies, and family/church devotion.",
+    "resource_labels": [
+      "Prayer",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "22b85284e63abcd441e26b270806acd38108728e744e7b213e7601f9d89138a0",
+    "file_size_bytes": 197883,
+    "word_count": 35127
+  },
+  {
+    "title": "George Müller of Bristol, and His Witness to a Prayer-Hearing God",
+    "author": "A. T. Pierson",
+    "year": 1899,
+    "category": "Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/26522",
+    "download_url": "https://www.gutenberg.org/ebooks/26522.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/george-m-ller-of-bristol-and-his-witness-to-a-prayer-hearing-god.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "A. T. Pierson biography of George Müller and his prayer ministry.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Historical biography with devotional emphasis on prayer; use with discernment.",
+    "recommended_use": "Prayer teaching, missionary biography, and ministry encouragement.",
+    "resource_labels": [
+      "Biographies",
+      "Prayer",
+      "Missions"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "f98869e077dd79b711c9cfb30f508199303dc455771aed3594e9496a78413cd5",
+    "file_size_bytes": 807107,
+    "word_count": 139924
+  },
+  {
+    "title": "The Preaching Tours and Missionary Labours of George Müller",
+    "author": "Susannah Grace Sanger Müller",
+    "year": 1886,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/34377",
+    "download_url": "https://www.gutenberg.org/ebooks/34377.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-preaching-tours-and-missionary-labours-of-george-m-ller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Record of George Müller's preaching tours and missionary labours.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Missionary and preaching-travel record; historical value with prayer emphasis.",
+    "recommended_use": "Missions shelf, prayer encouragement, and teacher background.",
+    "resource_labels": [
+      "Missions",
+      "Prayer",
+      "Biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "614e4776b617434721d6b7b5ddf7dda6a0b2a7fac9125ce845ea20ba4abd396a",
+    "file_size_bytes": 369297,
+    "word_count": 61749
+  },
+  {
+    "title": "A Narrative of Some of the Lord's Dealings with George Müller. Part 1",
+    "author": "George Müller",
+    "year": 1837,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/20379",
+    "download_url": "https://www.gutenberg.org/ebooks/20379.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-m-ller-part-1.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "First part of George Müller's public narrative of faith, prayer, and ministry.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Primary narrative source; useful but long, so read selectively for prayer testimony.",
+    "recommended_use": "Prayer research, ministry encouragement, and historical source reading.",
+    "resource_labels": [
+      "Prayer",
+      "Missions",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "28760244c890630f356e202977c58fd78c8889efbc3b8da5634e22296d35bf43",
+    "file_size_bytes": 476954,
+    "word_count": 86639
+  },
+  {
+    "title": "A Narrative of Some of the Lord's Dealings with George Müller. Part 2",
+    "author": "George Müller",
+    "year": 1839,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/22034",
+    "download_url": "https://www.gutenberg.org/ebooks/22034.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-m-ller-part-2.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Second part of George Müller's public narrative.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Primary narrative source; useful but long, so read selectively for prayer testimony.",
+    "recommended_use": "Prayer research, ministry encouragement, and historical source reading.",
+    "resource_labels": [
+      "Prayer",
+      "Missions",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "d03475c7fe3294be07e31d4830f1b4a153a5d673571d253f5707b580a61c36ae",
+    "file_size_bytes": 426402,
+    "word_count": 77502
+  },
+  {
+    "title": "A Narrative of Some of the Lord's Dealings with George Müller. Part 3",
+    "author": "George Müller",
+    "year": 1845,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/22148",
+    "download_url": "https://www.gutenberg.org/ebooks/22148.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-m-ller-part-3.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Third part of George Müller's public narrative.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Primary narrative source; useful but long, so read selectively for prayer testimony.",
+    "recommended_use": "Prayer research, ministry encouragement, and historical source reading.",
+    "resource_labels": [
+      "Prayer",
+      "Missions",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "ca5a680a757beb242bc10a21f555f13ac007a16b288d1e372766a3fa5197bc06",
+    "file_size_bytes": 554552,
+    "word_count": 101200
+  },
+  {
+    "title": "A Narrative of Some of the Lord's Dealings with George Müller. Part 4",
+    "author": "George Müller",
+    "year": 1856,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/20245",
+    "download_url": "https://www.gutenberg.org/ebooks/20245.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-m-ller-part-4.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Fourth part of George Müller's public narrative.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Primary narrative source; useful but long, so read selectively for prayer testimony.",
+    "recommended_use": "Prayer research, ministry encouragement, and historical source reading.",
+    "resource_labels": [
+      "Prayer",
+      "Missions",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "de16738b33a395fc56c3719281988f0660148971e804327edd7ce4497138c57a",
+    "file_size_bytes": 909597,
+    "word_count": 164716
+  },
+  {
+    "title": "The Life of Adoniram Judson",
+    "author": "Edward Judson",
+    "year": 1883,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/70894",
+    "download_url": "https://www.gutenberg.org/ebooks/70894.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-adoniram-judson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Biography of missionary Adoniram Judson by Edward Judson.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Missionary biography with Baptist history value; useful for missions burden and historical context.",
+    "recommended_use": "Missions lessons, Baptist history, and biography reading.",
+    "resource_labels": [
+      "Missions",
+      "Biographies",
+      "Baptist history"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "checksum_sha256": "a8df9fa58dbc929e435abbddbc9b70bd89dbb5c2653601709c23534076f1f027",
+    "file_size_bytes": 1380740,
+    "word_count": 225809
+  },
+  {
+    "title": "The Ministry of the Spirit",
+    "author": "A. J. Gordon",
+    "year": 1894,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/25395",
+    "download_url": "https://www.gutenberg.org/ebooks/25395.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-ministry-of-the-spirit.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "A. J. Gordon work on the ministry of the Holy Spirit.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Baptist pastor and missionary leader; review pneumatology carefully with Scripture.",
+    "recommended_use": "Teacher background on the Holy Spirit after direct Bible study.",
+    "resource_labels": [
+      "Christian Living",
+      "Bible study helps"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "08b24edc2777aafee10dddaa0831452591e75a5e994304bd4fd5539be6f011df",
+    "file_size_bytes": 354626,
+    "word_count": 70304
+  },
+  {
+    "title": "The Biography of Robert Murray M'Cheyne",
+    "author": "Andrew A. Bonar",
+    "year": 1844,
+    "category": "Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/15251",
+    "download_url": "https://www.gutenberg.org/ebooks/15251.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-biography-of-robert-murray-m-cheyne.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Andrew Bonar biography of Robert Murray M'Cheyne.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Presbyterian minister biography; valuable devotional and prayer example with denominational context noted.",
+    "recommended_use": "Devotional biography, prayer emphasis, and pastoral encouragement.",
+    "resource_labels": [
+      "Biographies",
+      "Prayer",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "checksum_sha256": "277bc27691f993fbcb5af9e60bafbf35b821ac7f49d47ff6d34228c4c79179a3",
+    "file_size_bytes": 439091,
+    "word_count": 76178
+  },
+  {
+    "title": "The Wonders of Prayer",
+    "author": "Various",
+    "year": 1885,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/11553",
+    "download_url": "https://www.gutenberg.org/ebooks/11553.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-wonders-of-prayer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
+    "notes": "Collection of authenticated answers to prayer, including accounts connected with George Müller and D. L. Moody.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Testimony collection; use to encourage prayer while keeping doctrine and expectations governed by Scripture.",
+    "recommended_use": "Prayer meeting illustrations and devotional encouragement.",
+    "resource_labels": [
+      "Prayer",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical value"
+    ],
+    "checksum_sha256": "39e9b696860ffad0b88f653ce96fd629b7f61ea23dbe48c7510099b67b9f9854",
+    "file_size_bytes": 705206,
+    "word_count": 126488
   }
 ]
