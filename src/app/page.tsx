@@ -47,7 +47,7 @@ import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -453,6 +453,9 @@ type BibleAudioPlaylist = {
   name: string;
   items: BiblePlaylistItem[];
   createdAt: string;
+  completedItemIds?: string[];
+  completedAt?: string | null;
+  lastItemIndex?: number;
 };
 
 type ScriptureMemoryItem = {
@@ -4289,7 +4292,10 @@ function defaultStudyPlaylists(): BibleAudioPlaylist[] {
         { id: "amos-2", type: "bible_chapter", label: "Amos 2", book: "Amos", chapter: 2 },
         { id: "amos-3", type: "bible_chapter", label: "Amos 3", book: "Amos", chapter: 3 },
         { id: "amos-4", type: "bible_chapter", label: "Amos 4", book: "Amos", chapter: 4 },
-        { id: "amos-mh-1-4", type: "commentary_chapter", label: "Matthew Henry Amos 1-4", book: "Amos", chapter: 1, chapterEnd: 4 },
+        { id: "amos-mh-1", type: "commentary_chapter", label: "Matthew Henry Amos 1", book: "Amos", chapter: 1 },
+        { id: "amos-mh-2", type: "commentary_chapter", label: "Matthew Henry Amos 2", book: "Amos", chapter: 2 },
+        { id: "amos-mh-3", type: "commentary_chapter", label: "Matthew Henry Amos 3", book: "Amos", chapter: 3 },
+        { id: "amos-mh-4", type: "commentary_chapter", label: "Matthew Henry Amos 4", book: "Amos", chapter: 4 },
         { id: "amos-teaching-notes", type: "teaching_notes", label: "Amos teaching notes", book: "Amos", chapter: 1, chapterEnd: 4 },
       ],
     },
@@ -4372,9 +4378,17 @@ function loadBiblePlaylists(): BibleAudioPlaylist[] {
     if (!raw) return starters;
     const parsed = JSON.parse(raw) as BibleAudioPlaylist[];
     if (!Array.isArray(parsed) || !parsed.length) return starters;
-    const starterIds = new Set(starters.map((playlist) => playlist.id));
-    const existingIds = new Set(parsed.map((playlist) => playlist.id));
-    return [...parsed, ...starters.filter((playlist) => starterIds.has(playlist.id) && !existingIds.has(playlist.id))];
+    const merged = parsed.map((playlist) => {
+      const starter = starters.find((candidate) => candidate.id === playlist.id);
+      if (!starter) return playlist;
+      const existingItemIds = new Set(playlist.items.map((item) => item.id));
+      return {
+        ...playlist,
+        items: [...playlist.items, ...starter.items.filter((item) => !existingItemIds.has(item.id))],
+      };
+    });
+    const existingIds = new Set(merged.map((playlist) => playlist.id));
+    return [...merged, ...starters.filter((playlist) => !existingIds.has(playlist.id))];
   } catch {
     return starters;
   }
@@ -4383,6 +4397,19 @@ function loadBiblePlaylists(): BibleAudioPlaylist[] {
 function saveBiblePlaylists(playlists: BibleAudioPlaylist[]) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(BIBLE_PLAYLISTS_KEY, JSON.stringify(playlists));
+}
+
+function playlistItemsMatch(a: BiblePlaylistItem, b: BiblePlaylistItem) {
+  return (
+    a.type === b.type &&
+    (a.book ?? "") === (b.book ?? "") &&
+    (a.chapter ?? 0) === (b.chapter ?? 0) &&
+    (a.chapterEnd ?? 0) === (b.chapterEnd ?? 0) &&
+    (a.verseStart ?? 0) === (b.verseStart ?? 0) &&
+    (a.verseEnd ?? 0) === (b.verseEnd ?? 0) &&
+    (a.resourceSlug ?? "") === (b.resourceSlug ?? "") &&
+    a.label === b.label
+  );
 }
 
 function loadScriptureMemory(): ScriptureMemoryItem[] {
@@ -6010,6 +6037,12 @@ export default function Home() {
     setBiblePlaylists((current) => {
       const source = current.length ? current : defaultStudyPlaylists();
       const index = activePlaylistIndex(source);
+      const active = source[index];
+      const duplicate = active?.items.some((existing) => playlistItemsMatch(existing, item));
+      if (duplicate) {
+        setSyncMessage(`${item.label} is already in this study playlist.`);
+        return source;
+      }
       const next = source.map((playlist, playlistIndex) =>
         playlistIndex === index ? { ...playlist, items: [...playlist.items, item] } : playlist,
       );
@@ -6121,7 +6154,15 @@ export default function Home() {
   function removeBiblePlaylistItem(playlistId: string, itemId: string) {
     setBiblePlaylists((current) => {
       const next = current.map((playlist) =>
-        playlist.id === playlistId ? { ...playlist, items: playlist.items.filter((item) => item.id !== itemId) } : playlist,
+        playlist.id === playlistId
+          ? {
+              ...playlist,
+              items: playlist.items.filter((item) => item.id !== itemId),
+              completedItemIds: (playlist.completedItemIds ?? []).filter((id) => id !== itemId),
+              completedAt: null,
+              lastItemIndex: Math.min(playlist.lastItemIndex ?? 0, Math.max(0, playlist.items.length - 2)),
+            }
+          : playlist,
       );
       saveBiblePlaylists(next);
       return next;
@@ -6138,6 +6179,49 @@ export default function Home() {
         const items = [...playlist.items];
         [items[index], items[nextIndex]] = [items[nextIndex], items[index]];
         return { ...playlist, items };
+      });
+      saveBiblePlaylists(next);
+      return next;
+    });
+  }
+
+  function markBiblePlaylistItemComplete(playlistId: string, itemId: string) {
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) => {
+        if (playlist.id !== playlistId) return playlist;
+        const completedItemIds = Array.from(new Set([...(playlist.completedItemIds ?? []), itemId]));
+        const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : null;
+        return { ...playlist, completedItemIds, completedAt };
+      });
+      saveBiblePlaylists(next);
+      return next;
+    });
+    setSyncMessage("Study playlist item marked complete.");
+  }
+
+  function clearBiblePlaylist(playlistId: string) {
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) =>
+        playlist.id === playlistId
+          ? { ...playlist, items: [], completedItemIds: [], completedAt: null, lastItemIndex: 0 }
+          : playlist,
+      );
+      saveBiblePlaylists(next);
+      return next;
+    });
+    setStudyPlaylistCurrentIndex(0);
+    setSyncMessage("Study playlist cleared.");
+  }
+
+  function updateStudyPlaylistProgress(playlistId: string, itemIndex: number, completedItemId?: string) {
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) => {
+        if (playlist.id !== playlistId) return playlist;
+        const completedItemIds = completedItemId
+          ? Array.from(new Set([...(playlist.completedItemIds ?? []), completedItemId]))
+          : playlist.completedItemIds ?? [];
+        const completedAt = playlist.items.length && completedItemIds.length >= playlist.items.length ? new Date().toISOString() : playlist.completedAt ?? null;
+        return { ...playlist, lastItemIndex: itemIndex, completedItemIds, completedAt };
       });
       saveBiblePlaylists(next);
       return next;
@@ -6225,6 +6309,7 @@ export default function Home() {
 
       setActiveStudyPlaylistId(playlist.id);
       setStudyPlaylistCurrentIndex(safeIndex);
+      updateStudyPlaylistProgress(playlist.id, safeIndex);
       startSpeech(
         `playlist-${playlist.id}`,
         playSingleItem ? `${playlist.name}: ${playlist.items[safeIndex]?.label ?? "item"}` : playlist.name,
@@ -6235,6 +6320,8 @@ export default function Home() {
           chunks,
           verseRefs,
           onComplete: () => {
+            const completedItem = playlist.items[safeIndex];
+            if (completedItem) updateStudyPlaylistProgress(playlist.id, safeIndex, completedItem.id);
             if (playSingleItem && repeatStudyPlaylistItem) {
               playBiblePlaylist(playlist, safeIndex, true);
               return;
@@ -6254,6 +6341,24 @@ export default function Home() {
     const nextIndex = Math.min(playlist.items.length - 1, Math.max(0, studyPlaylistCurrentIndex + direction));
     setStudyPlaylistCurrentIndex(nextIndex);
     playBiblePlaylist(playlist, nextIndex, true);
+  }
+
+  function playCommentaryChapter(bookName: string, chapterNumber: number) {
+    const playlist: BibleAudioPlaylist = {
+      id: `commentary-${bookName}-${chapterNumber}-${Date.now()}`,
+      name: `${bookName} ${chapterNumber} commentary`,
+      createdAt: new Date().toISOString(),
+      items: [
+        {
+          id: `commentary-${bookName}-${chapterNumber}`,
+          type: "commentary_chapter",
+          label: `${bookName} ${chapterNumber} commentary`,
+          book: bookName,
+          chapter: chapterNumber,
+        },
+      ],
+    };
+    playBiblePlaylist(playlist, 0, true);
   }
 
   function addLibraryToListeningQueue(slug: string) {
@@ -6931,11 +7036,14 @@ export default function Home() {
                 onAddLibraryPlaylistItem={addBiblePlaylistLibraryItem}
                 onRemovePlaylistItem={removeBiblePlaylistItem}
                 onMovePlaylistItem={moveBiblePlaylistItem}
+                onMarkPlaylistItemComplete={markBiblePlaylistItemComplete}
+                onClearPlaylist={clearBiblePlaylist}
                 onPlayPlaylist={playBiblePlaylist}
                 onPlayPlaylistItem={(playlist, itemIndex) => playBiblePlaylist(playlist, itemIndex, true)}
                 onSkipPlaylistItem={skipStudyPlaylistItem}
                 onRepeatPlaylistChange={setRepeatStudyPlaylist}
                 onRepeatPlaylistItemChange={setRepeatStudyPlaylistItem}
+                onOpenAmosStudyPath={() => setTab("amosStudyPath")}
                 onAddMemoryVerse={addMemoryVerse}
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
@@ -7154,6 +7262,20 @@ export default function Home() {
               <div className="p-4 md:p-8">
                 <EmptyState title="Book introduction not ready" body="Reviewed book introductions are being added one book at a time." />
               </div>
+            )}
+
+            {tab === "amosStudyPath" && (
+              <AmosStudyPathScreen
+                versesByRef={versesByRef}
+                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)}
+                bookIntroduction={bookIntroductionsByBook.get("Amos") ?? null}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onListenAmos={() => listenChapterRange("Amos", 1, 4)}
+                onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Amos", chapterNumber)}
+                onStopListening={() => stopSpeech()}
+                onOpenPlaylistBuilder={() => setTab("bible")}
+              />
             )}
 
             {tab === "settings" && (
@@ -8133,11 +8255,14 @@ function BibleReader({
   onAddLibraryPlaylistItem,
   onRemovePlaylistItem,
   onMovePlaylistItem,
+  onMarkPlaylistItemComplete,
+  onClearPlaylist,
   onPlayPlaylist,
   onPlayPlaylistItem,
   onSkipPlaylistItem,
   onRepeatPlaylistChange,
   onRepeatPlaylistItemChange,
+  onOpenAmosStudyPath,
   onAddMemoryVerse,
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
@@ -8235,11 +8360,14 @@ function BibleReader({
   onAddLibraryPlaylistItem: (slug: string) => void;
   onRemovePlaylistItem: (playlistId: string, itemId: string) => void;
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
+  onMarkPlaylistItemComplete: (playlistId: string, itemId: string) => void;
+  onClearPlaylist: (playlistId: string) => void;
   onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean) => void;
   onPlayPlaylistItem: (playlist: BibleAudioPlaylist, itemIndex: number) => void;
   onSkipPlaylistItem: (direction: -1 | 1) => void;
   onRepeatPlaylistChange: (repeat: boolean) => void;
   onRepeatPlaylistItemChange: (repeat: boolean) => void;
+  onOpenAmosStudyPath: () => void;
   onAddMemoryVerse: (ref: string) => void;
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -8297,6 +8425,11 @@ function BibleReader({
   const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
   const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
+  const activePlaylistRemainingSeconds = activePlaylist?.items
+    .slice(Math.min(activePlaylistItemIndex, Math.max(0, activePlaylist.items.length - 1)))
+    .reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
+  const activeCompletedItemIds = new Set(activePlaylist?.completedItemIds ?? []);
+  const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
   return (
     <div className="space-y-4 p-4 md:p-8">
       <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-4 md:z-10 md:rounded-3xl md:p-4">
@@ -8647,7 +8780,7 @@ function BibleReader({
                 <div>
                   <p className="text-sm font-semibold text-[var(--ink)]">{activePlaylist.name}</p>
                   <p className="text-xs font-semibold text-[var(--muted)]">
-                    {formatListeningDuration(activePlaylistSeconds)} at {speechState.rate}x · finishes around {listeningFinishLabel(activePlaylistSeconds)}
+                    {formatListeningDuration(activePlaylistSeconds)} total · {formatListeningDuration(activePlaylistRemainingSeconds)} remaining at {speechState.rate}x · finishes around {listeningFinishLabel(activePlaylistRemainingSeconds)}
                     {currentPlaylistItem ? ` · current: ${currentPlaylistItem.label}` : ""}
                   </p>
                 </div>
@@ -8655,6 +8788,10 @@ function BibleReader({
                   <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => onPlayPlaylist(activePlaylist, 0, false)} type="button">
                     <Play size={15} />
                     Play All
+                  </button>
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? activePlaylistItemIndex, false)} type="button">
+                    <Headphones size={15} />
+                    Resume
                   </button>
                   <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
                     <Square size={15} />
@@ -8667,6 +8804,10 @@ function BibleReader({
                   <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={activePlaylistItemIndex >= activePlaylist.items.length - 1} onClick={() => onSkipPlaylistItem(1)} type="button">
                     Next
                     <ChevronRight size={15} />
+                  </button>
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => onClearPlaylist(activePlaylist.id)} type="button">
+                    <Trash2 size={15} />
+                    Clear
                   </button>
                 </div>
               </div>
@@ -8682,23 +8823,57 @@ function BibleReader({
                 <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">
                   Saved locally
                 </span>
+                <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  {activeCompletedItemIds.size}/{activePlaylist.items.length} complete
+                </span>
+                {activePlaylist.name === "Amos 1-4 Teaching Prep" && (
+                  <button
+                    className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                    onClick={onOpenAmosStudyPath}
+                    type="button"
+                  >
+                    Open Amos Study Path
+                  </button>
+                )}
               </div>
               <div className="mt-3 space-y-2">
                 {activePlaylist.items.map((item, index) => (
                   <div key={item.id} className={`grid grid-cols-[1fr_auto] gap-2 rounded-xl px-3 py-2 ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
                     <div>
-                      <p className="text-xs font-semibold text-[var(--muted)]">{item.label}</p>
+                      <p className="text-xs font-semibold text-[var(--muted)]">
+                        {item.label}
+                        {index === activePlaylistItemIndex && <> <span className="ml-2 rounded-full bg-white px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-[var(--green)]">Current</span></>}
+                        {activeCompletedItemIds.has(item.id) && <> <span className="ml-2 rounded-full bg-[var(--green)] px-2 py-0.5 text-[10px] uppercase tracking-[0.1em] text-white">Complete</span></>}
+                      </p>
                       <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
                     </div>
                     <div className="flex items-center gap-1">
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onMarkPlaylistItemComplete(activePlaylist.id, item.id)} type="button">Done</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
                     </div>
                   </div>
                 ))}
+                {!activePlaylist.items.length && (
+                  <p className="rounded-xl bg-white px-3 py-3 text-sm leading-6 text-[var(--muted)]">
+                    This playlist is empty. Add Bible chapters, commentary, books, reader notes, or teaching notes above.
+                  </p>
+                )}
               </div>
+              {completedPlaylists.length > 0 && (
+                <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Completed Playlist History</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {completedPlaylists.slice(0, 5).map((playlist) => (
+                      <span key={`completed-playlist-${playlist.id}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                        {playlist.name} · {playlist.completedAt ? new Date(playlist.completedAt).toLocaleDateString() : "complete"}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </details>
@@ -8971,6 +9146,178 @@ function buildAmosTeachingNotesMarkdown({
   );
 
   return lines.join("\n");
+}
+
+function AmosStudyPathScreen({
+  versesByRef,
+  commentaryEntries,
+  bookIntroduction,
+  onBack,
+  onOpenReference,
+  onListenAmos,
+  onPlayCommentaryChapter,
+  onStopListening,
+  onOpenPlaylistBuilder,
+}: {
+  versesByRef: Map<string, BibleVerse>;
+  commentaryEntries: CommentaryEntry[];
+  bookIntroduction: BookIntroduction | null;
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onListenAmos: () => void;
+  onPlayCommentaryChapter: (chapter: number) => void;
+  onStopListening: () => void;
+  onOpenPlaylistBuilder: () => void;
+}) {
+  const nationsJudged = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.placesAndNations))).slice(0, 18);
+  const keyWords = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.repeatedFocus))).slice(0, 18);
+  const keyCrossReferences = AMOS_CHAPTER_STUDIES.flatMap((study) => study.crossReferences).slice(0, 12);
+  const commentaryByChapter = new Map<number, CommentaryEntry[]>();
+  commentaryEntries.forEach((entry) => {
+    commentaryByChapter.set(entry.chapter, [...(commentaryByChapter.get(entry.chapter) ?? []), entry]);
+  });
+
+  function exportAmosLessonNotes() {
+    let teacherNotesByChapter: Record<string, TeacherNotesDraft> = {};
+    try {
+      const saved = window.localStorage.getItem(TEACHER_NOTES_KEY);
+      teacherNotesByChapter = saved ? JSON.parse(saved) : {};
+    } catch {
+      teacherNotesByChapter = {};
+    }
+    const markdown = buildAmosTeachingNotesMarkdown({ bookIntroduction, commentaryEntries, teacherNotesByChapter, versesByRef });
+    downloadTextFile("amos-1-4-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
+  }
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <div className="sticky top-0 z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5">
+        <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
+          <ChevronLeft size={17} />
+          Back to Bible
+        </button>
+      </div>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Amos 1-4 Study Path</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare Amos 1-4</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">
+          A focused Sunday school prep path with KJV reading, chapter listening, Matthew Henry commentary, reviewed study data, and lesson export.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference("Amos 1:1")} type="button">
+            <BookOpen size={16} />
+            Read Amos 1-4
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onListenAmos} type="button">
+            <Headphones size={16} />
+            Listen to Amos 1-4
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+            <Square size={15} />
+            Stop
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenPlaylistBuilder} type="button">
+            <ListMusic size={16} />
+            Open Playlist Builder
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={exportAmosLessonNotes} type="button">
+            <Download size={16} />
+            Export Amos Lesson Notes
+          </button>
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Matthew Henry Amos 1-4</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Commentary is separated by chapter so it stops after the selected chapter unless repeat is turned on.</p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {[1, 2, 3, 4].map((chapterNumber) => {
+              const entries = commentaryByChapter.get(chapterNumber) ?? [];
+              return (
+                <div key={`amos-commentary-path-${chapterNumber}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">Amos {chapterNumber} commentary</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed Matthew Henry entry${entries.length === 1 ? "" : "ies"}` : "No reviewed commentary entry yet"}</p>
+                  <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!entries.length} onClick={() => onPlayCommentaryChapter(chapterNumber)} type="button">
+                    <Play size={14} />
+                    Play Amos {chapterNumber} Commentary
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Teaching Outline</h2>
+          <div className="mt-4 space-y-2">
+            {AMOS_CHAPTER_STUDIES.map((study) => (
+              <div key={`amos-outline-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">Amos {study.chapter}: {study.title}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{study.teachingAim}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-3 xl:grid-cols-3">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Key Words</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {keyWords.map((word) => <span key={`amos-key-word-${word}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{word}</span>)}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Nations Judged</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {nationsJudged.map((nation) => <span key={`amos-nation-${nation}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{nation}</span>)}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Key Cross References</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {keyCrossReferences.map((reference) => (
+              <button key={`amos-path-cross-${reference.sourceRef}-${reference.targetRef}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference.targetRef)} type="button">
+                {reference.sourceRef} {"->"} {reference.targetRef}
+              </button>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Chapter Prep</h2>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          {AMOS_CHAPTER_STUDIES.map((study) => (
+            <article key={`amos-study-path-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Amos {study.chapter}</p>
+                  <h3 className="mt-1 text-base font-semibold text-[var(--green)]">{study.title}</h3>
+                </div>
+                <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(`Amos ${study.chapter}:1`)} type="button">Read chapter</button>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{study.summary}</p>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Main sins judged</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{study.mainSinsJudged.map((sin) => <li key={`amos-path-sin-${study.chapter}-${sin}`}>{sin}</li>)}</ul>
+                </div>
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Applications</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{study.practicalApplications.map((application) => <li key={`amos-path-app-${study.chapter}-${application}`}>{application}</li>)}</ul>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
 }
 
 function commentaryStudyLabel(entry: CommentaryEntry) {
@@ -11451,6 +11798,7 @@ function LibraryScreen({
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
         onOpenAuthor={onOpenAuthor}
+        onAddToStudyPlaylist={onAddToStudyPlaylist}
       />
     );
   }
@@ -11464,6 +11812,7 @@ function LibraryScreen({
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
         onOpenAuthor={onOpenAuthor}
+        onAddToStudyPlaylist={onAddToStudyPlaylist}
       />
     );
   }
@@ -11480,6 +11829,7 @@ function LibraryScreen({
         onOpenCollection={onOpenCollection}
         onOpenAuthor={onOpenAuthor}
         onOpenBible={onOpenBible}
+        onAddToStudyPlaylist={onAddToStudyPlaylist}
       />
     );
   }
@@ -11746,6 +12096,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -11761,6 +12112,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -11776,6 +12128,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -11844,6 +12197,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
       </LibraryShelf>
@@ -11859,6 +12213,7 @@ function LibraryScreen({
                 listeningProgress={listeningProgress[resource.slug]}
                 completed={Boolean(completedState[resource.slug])}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             )) : (
               <LibraryCollectionCard
@@ -11913,6 +12268,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -11928,6 +12284,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -11963,6 +12320,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -12037,6 +12395,7 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
         </LibraryShelf>
@@ -13143,6 +13502,7 @@ function LibraryAuthorScreen({
   onBack,
   onOpenDetail,
   onOpenAuthor,
+  onAddToStudyPlaylist,
 }: {
   profile: LibraryAuthorProfile;
   resources: LibraryResource[];
@@ -13151,6 +13511,7 @@ function LibraryAuthorScreen({
   onBack: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
+  onAddToStudyPlaylist: (slug: string) => void;
 }) {
   const relatedAuthors = profile.relatedAuthorIds
     .map((id) => LIBRARY_AUTHOR_PROFILES.find((candidate) => candidate.id === id))
@@ -13227,6 +13588,7 @@ function LibraryAuthorScreen({
                 resource={resource}
                 completed={false}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             ))}
           </div>
@@ -13296,6 +13658,7 @@ function LibraryCollectionScreen({
   onBack,
   onOpenDetail,
   onOpenAuthor,
+  onAddToStudyPlaylist,
 }: {
   collection: LibraryCollection;
   resources: LibraryResource[];
@@ -13303,6 +13666,7 @@ function LibraryCollectionScreen({
   onBack: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
+  onAddToStudyPlaylist: (slug: string) => void;
 }) {
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -13351,6 +13715,7 @@ function LibraryCollectionScreen({
                 resource={resource}
                 completed={false}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             ))}
           </div>
@@ -13372,6 +13737,7 @@ function ReadingPathScreen({
   onOpenCollection,
   onOpenAuthor,
   onOpenBible,
+  onAddToStudyPlaylist,
 }: {
   path: ReadingPath;
   resources: LibraryResource[];
@@ -13382,6 +13748,7 @@ function ReadingPathScreen({
   onOpenCollection: (collectionId: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
   onOpenBible: () => void;
+  onAddToStudyPlaylist: (slug: string) => void;
 }) {
   const totalMinutes = resources.slice(0, 8).reduce((total, resource) => total + Math.max(1, Math.round((resource.word_count ?? 1200) / 225)), 0);
 
@@ -13439,6 +13806,7 @@ function ReadingPathScreen({
             resource={resource}
             completed={false}
             onOpen={() => onOpenDetail(resource.slug)}
+            onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
           />
         )) : (
           <EmptyState title="No reviewed resources matched yet" body="This path is ready for more verified public-domain imports." />
@@ -14308,12 +14676,14 @@ function LibraryResourceCard({
   listeningProgress,
   completed,
   onOpen,
+  onAddToPlaylist,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
   listeningProgress?: ListeningProgress;
   completed: boolean;
   onOpen: () => void;
+  onAddToPlaylist?: () => void;
 }) {
   const [coverFailed, setCoverFailed] = useState(false);
   const progressValue = completed ? 100 : progress?.progress ?? 0;
@@ -14323,8 +14693,9 @@ function LibraryResourceCard({
   const showCoverImage = Boolean(resource.cover_image_url && !coverFailed);
 
   return (
-    <button className="w-full overflow-hidden rounded-2xl border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md" onClick={onOpen} type="button">
-      <div className={`relative aspect-[3/4] min-h-[220px] bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
+    <article className="w-full overflow-hidden rounded-2xl border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+      <button className="block w-full text-left" onClick={onOpen} type="button">
+        <div className={`relative aspect-[3/4] min-h-[220px] bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
         {showCoverImage && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -14347,8 +14718,8 @@ function LibraryResourceCard({
             Finished
           </span>
         )}
-      </div>
-      <div className="p-4">
+        </div>
+        <div className="p-4">
         <div className="flex flex-wrap items-center gap-2">
           <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
@@ -14377,8 +14748,21 @@ function LibraryResourceCard({
             </div>
           )}
         </div>
-      </div>
-    </button>
+        </div>
+      </button>
+      {onAddToPlaylist && (
+        <div className="border-t border-[var(--line)] bg-[var(--paper)] p-3">
+          <button
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+            onClick={onAddToPlaylist}
+            type="button"
+          >
+            <ListMusic size={14} />
+            Add to Playlist
+          </button>
+        </div>
+      )}
+    </article>
   );
 }
 
