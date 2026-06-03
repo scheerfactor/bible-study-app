@@ -208,7 +208,7 @@ type ListeningProgress = {
 
 type ListeningProgressState = Record<string, ListeningProgress>;
 
-type LibraryAnnotationType = "highlight" | "note" | "bookmark";
+type LibraryAnnotationType = "highlight" | "underline" | "note" | "bookmark";
 
 type LibraryAnnotation = {
   id: string;
@@ -3605,6 +3605,32 @@ function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title"
   };
 }
 
+function dateKey(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toISOString().slice(0, 10);
+}
+
+function computeLibraryReadingStreak(progressValues: LibraryProgress[], completedValues: CompletedResource[]) {
+  const activeDays = new Set([
+    ...progressValues.map((progress) => dateKey(progress.updatedAt)),
+    ...completedValues.map((completed) => dateKey(completed.completedAt)),
+  ].filter(Boolean));
+  if (!activeDays.size) return "0 days";
+
+  let streak = 0;
+  const cursor = new Date();
+  for (;;) {
+    const key = cursor.toISOString().slice(0, 10);
+    if (!activeDays.has(key)) break;
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+
+  if (streak === 0) return "0 days";
+  return `${streak} day${streak === 1 ? "" : "s"}`;
+}
+
 function normalizeLibraryProgress(progress: Partial<LibraryProgress> & Pick<LibraryProgress, "slug" | "title" | "author">): LibraryProgress {
   const fallback = defaultLibraryProgress(progress);
   return {
@@ -4125,6 +4151,7 @@ export default function Home() {
   const [libraryListeningQueue, setLibraryListeningQueue] = useState<string[]>([]);
   const [libraryAnnotations, setLibraryAnnotations] = useState<LibraryAnnotationState>({});
   const [libraryNoteDraft, setLibraryNoteDraft] = useState("");
+  const [libraryBookmarkNameDraft, setLibraryBookmarkNameDraft] = useState("");
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
@@ -4285,13 +4312,41 @@ export default function Home() {
   );
 
   const libraryStats = useMemo(
-    () => ({
-      booksStarted: Object.values(libraryProgress).filter((progress) => progress.progress > 0 || progress.bookmarks.length > 0).length,
-      booksCompleted: completedLibraryResources.length,
-      readingStreak: "Soon",
-      totalResources: libraryResources.length,
-    }),
-    [completedLibraryResources.length, libraryProgress, libraryResources.length],
+    () => {
+      const progressValues = Object.values(libraryProgress);
+      const listeningHours = Object.values(listeningProgress).reduce((total, progress) => {
+        const resource = libraryResources.find((candidate) => candidate.slug === progress.slug);
+        const seconds = listeningSecondsFromWordCount(resource?.word_count ?? 1200, progress.rate || speechState.rate || 1);
+        return total + seconds * (Math.min(100, Math.max(0, progress.progress)) / 100) / 3600;
+      }, 0);
+      const authorActivity = new Map<string, number>();
+      for (const progress of progressValues) {
+        authorActivity.set(progress.author, (authorActivity.get(progress.author) ?? 0) + Math.max(1, progress.progress));
+      }
+      for (const completed of completedLibraryResources) {
+        authorActivity.set(completed.author, (authorActivity.get(completed.author) ?? 0) + 125);
+      }
+      for (const entries of Object.values(libraryAnnotations)) {
+        for (const annotation of entries) {
+          const resource = libraryResources.find((candidate) => candidate.slug === annotation.resourceSlug);
+          if (resource) authorActivity.set(resource.author, (authorActivity.get(resource.author) ?? 0) + 12);
+        }
+      }
+      const favoriteAuthors = Array.from(authorActivity.entries())
+        .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        .slice(0, 3)
+        .map(([author]) => author);
+
+      return {
+        booksStarted: progressValues.filter((progress) => progress.progress > 0 || progress.bookmarks.length > 0).length,
+        booksCompleted: completedLibraryResources.length,
+        hoursListened: listeningHours >= 10 ? String(Math.round(listeningHours)) : listeningHours > 0 ? listeningHours.toFixed(1) : "0",
+        readingStreak: computeLibraryReadingStreak(progressValues, completedLibraryResources),
+        favoriteAuthors,
+        totalResources: libraryResources.length,
+      };
+    },
+    [completedLibraryResources, libraryAnnotations, libraryProgress, libraryResources, listeningProgress, speechState.rate],
   );
 
   const libraryListeningQueueResources = useMemo(
@@ -4972,9 +5027,10 @@ export default function Home() {
     const progress = Math.round(libraryProgress[resource.slug]?.progress ?? 0);
     const selectedText = selectedLibraryText();
     const note = libraryNoteDraft.trim();
+    const bookmarkName = libraryBookmarkNameDraft.trim();
     const text =
       selectedText ||
-      (type === "bookmark" ? `Reader location at ${progress}%` : resource.title);
+      (type === "bookmark" ? bookmarkName || `Reader location at ${progress}%` : resource.title);
 
     if (type === "note" && !note) {
       setSyncMessage("Write a reader note first, then save it.");
@@ -4987,7 +5043,7 @@ export default function Home() {
       resourceTitle: resource.title,
       type,
       text,
-      note: type === "note" ? note : undefined,
+      note: type === "note" ? note : type === "bookmark" ? bookmarkName || `Bookmark ${progress}%` : undefined,
       location: progress,
       createdAt: new Date().toISOString(),
     };
@@ -5003,7 +5059,8 @@ export default function Home() {
 
     if (type === "bookmark") bookmarkLibraryLocation();
     if (type === "note") setLibraryNoteDraft("");
-    setSyncMessage(`${type === "bookmark" ? "Bookmark" : type === "note" ? "Note" : "Highlight"} saved for ${resource.title}.`);
+    if (type === "bookmark") setLibraryBookmarkNameDraft("");
+    setSyncMessage(`${annotationLabel(type)} saved for ${resource.title}.`);
   }
 
   async function copyLibrarySelection() {
@@ -5019,6 +5076,31 @@ export default function Home() {
     } catch {
       setSyncMessage("Copy is not available in this browser, but the text is still selected.");
     }
+  }
+
+  async function copyLibraryQuote() {
+    const resource = activeLibraryResource;
+    const selectedText = selectedLibraryText();
+    if (!resource || !selectedText) {
+      setSyncMessage("Select text in the reader first, then copy a quote.");
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(`"${selectedText}"\n\n${resource.title} — ${resource.author}`);
+      setSyncMessage("Quote copied with source.");
+    } catch {
+      setSyncMessage("Copy is not available in this browser, but the text is still selected.");
+    }
+  }
+
+  function exportLibraryAnnotations() {
+    const resource = activeLibraryResource;
+    if (!resource) return;
+    const annotations = libraryAnnotations[resource.slug] ?? [];
+    const markdown = buildLibraryAnnotationsMarkdown(resource, annotations, libraryProgress[resource.slug]);
+    downloadTextFile(`${resource.slug}-reader-notes.md`, markdown, "text/markdown;charset=utf-8");
+    setSyncMessage(`Reader notes exported for ${resource.title}.`);
   }
 
   function jumpLibraryBookmark(progress: number) {
@@ -6276,6 +6358,7 @@ export default function Home() {
                 libraryListeningQueueSeconds={libraryListeningQueueSeconds}
                 annotations={libraryAnnotations}
                 noteDraft={libraryNoteDraft}
+                bookmarkNameDraft={libraryBookmarkNameDraft}
                 continueReadingResources={continueReadingResources}
                 featuredResources={featuredLibraryResources}
                 stats={libraryStats}
@@ -6313,8 +6396,11 @@ export default function Home() {
                 onBookmarkLocation={bookmarkLibraryLocation}
                 onJumpBookmark={jumpLibraryBookmark}
                 onNoteDraftChange={setLibraryNoteDraft}
+                onBookmarkNameDraftChange={setLibraryBookmarkNameDraft}
                 onSaveAnnotation={saveLibraryAnnotation}
                 onCopySelection={copyLibrarySelection}
+                onCopyQuote={copyLibraryQuote}
+                onExportAnnotations={exportLibraryAnnotations}
                 onListenResource={(resource, text, progress) => {
                   startLibraryResourceListening(resource, text, progress);
                 }}
@@ -9943,8 +10029,42 @@ function groupedSpeechVoices(voices: SpeechSynthesisVoice[]) {
 
 function annotationLabel(type: LibraryAnnotationType) {
   if (type === "highlight") return "Highlight";
+  if (type === "underline") return "Underline";
   if (type === "note") return "Note";
   return "Bookmark";
+}
+
+function annotationTone(type: LibraryAnnotationType) {
+  if (type === "highlight") return "border-amber-200 bg-amber-50 text-amber-900";
+  if (type === "underline") return "border-sky-200 bg-sky-50 text-sky-900";
+  if (type === "note") return "border-emerald-200 bg-emerald-50 text-emerald-900";
+  return "border-stone-200 bg-white text-[var(--ink)]";
+}
+
+function buildLibraryAnnotationsMarkdown(resource: LibraryResource, annotations: LibraryAnnotation[], progress?: LibraryProgress) {
+  const sorted = [...annotations].sort((a, b) => a.location - b.location || a.createdAt.localeCompare(b.createdAt));
+  return [
+    `# ${resource.title} Reader Notes`,
+    "",
+    `Author: ${resource.author}`,
+    `Category: ${libraryCategoryLabel(resource.category)}`,
+    `Reading progress: ${formatPercent(progress?.progress ?? 0)}`,
+    `Source: ${resource.source_url}`,
+    "",
+    "## Notes and Marks",
+    "",
+    ...(sorted.length
+      ? sorted.flatMap((annotation) => [
+          `### ${annotationLabel(annotation.type)} at ${annotation.location}%`,
+          "",
+          annotation.note ? `Name / note: ${annotation.note}` : "",
+          annotation.text ? `> ${annotation.text}` : "",
+          "",
+          `Saved: ${new Date(annotation.createdAt).toLocaleString()}`,
+          "",
+        ])
+      : ["No reader notes, highlights, underlines, or bookmarks saved yet.", ""]),
+  ].filter((line) => line !== "").join("\n");
 }
 
 function libraryAuthorIdFromName(author: string) {
@@ -10007,6 +10127,7 @@ function LibraryScreen({
   libraryListeningQueueSeconds,
   annotations,
   noteDraft,
+  bookmarkNameDraft,
   continueReadingResources,
   featuredResources,
   stats,
@@ -10031,8 +10152,11 @@ function LibraryScreen({
   onBookmarkLocation,
   onJumpBookmark,
   onNoteDraftChange,
+  onBookmarkNameDraftChange,
   onSaveAnnotation,
   onCopySelection,
+  onCopyQuote,
+  onExportAnnotations,
   onListenResource,
   onSpeechRateChange,
   onSpeechVoiceChange,
@@ -10063,12 +10187,15 @@ function LibraryScreen({
   libraryListeningQueueSeconds: number;
   annotations: LibraryAnnotationState;
   noteDraft: string;
+  bookmarkNameDraft: string;
   continueReadingResources: LibraryProgress[];
   featuredResources: LibraryResource[];
   stats: {
     booksStarted: number;
     booksCompleted: number;
+    hoursListened: string;
     readingStreak: string;
+    favoriteAuthors: string[];
     totalResources: number;
   };
   fontSize: number;
@@ -10092,8 +10219,11 @@ function LibraryScreen({
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   onNoteDraftChange: (value: string) => void;
+  onBookmarkNameDraftChange: (value: string) => void;
   onSaveAnnotation: (type: LibraryAnnotationType) => void;
   onCopySelection: () => void;
+  onCopyQuote: () => void;
+  onExportAnnotations: () => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
   onSpeechVoiceChange: (voiceURI: string) => void;
@@ -10117,6 +10247,7 @@ function LibraryScreen({
         listeningProgress={listening}
         annotations={annotations[activeResource.slug] ?? []}
         noteDraft={noteDraft}
+        bookmarkNameDraft={bookmarkNameDraft}
         fontSize={fontSize}
         readerRef={readerRef}
         onBack={() => onOpenDetail(activeResource.slug)}
@@ -10127,8 +10258,11 @@ function LibraryScreen({
         onBookmarkLocation={onBookmarkLocation}
         onJumpBookmark={onJumpBookmark}
         onNoteDraftChange={onNoteDraftChange}
+        onBookmarkNameDraftChange={onBookmarkNameDraftChange}
         onSaveAnnotation={onSaveAnnotation}
         onCopySelection={onCopySelection}
+        onCopyQuote={onCopyQuote}
+        onExportAnnotations={onExportAnnotations}
         speechState={speechState}
         speechVoices={speechVoices}
         selectedSpeechVoiceURI={selectedSpeechVoiceURI}
@@ -10171,6 +10305,7 @@ function LibraryScreen({
       <LibraryAuthorScreen
         profile={activeAuthor}
         resources={resourcesForAuthor(resources, activeAuthor)}
+        allResources={resources}
         commentaryEntries={activeAuthor.id === "ironside" ? ACTIVE_COMMENTARY_COLLECTIONS.filter((title) => title.includes("Ironside")) : []}
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
@@ -10299,12 +10434,37 @@ function LibraryScreen({
         </div>
       </section>
 
-      <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <LibraryStat label="Books started" value={String(stats.booksStarted)} />
         <LibraryStat label="Books completed" value={String(stats.booksCompleted)} />
+        <LibraryStat label="Hours listened" value={stats.hoursListened} />
         <LibraryStat label="Reading streak" value={stats.readingStreak} />
+        <LibraryStat label="Favorite authors" value={stats.favoriteAuthors.length ? String(stats.favoriteAuthors.length) : "Soon"} />
         <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
+
+      {stats.favoriteAuthors.length > 0 && (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Favorite Authors</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Based on reading, listening, and saved notes</h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {stats.favoriteAuthors.map((author) => (
+                <button
+                  key={`favorite-author-${author}`}
+                  className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                  onClick={() => onOpenAuthor(author)}
+                  type="button"
+                >
+                  {author}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <LibraryImportDashboard signedIn={signedIn} />
 
@@ -10824,6 +10984,7 @@ function importStatusPill(status: ResourceImportStatus) {
 function LibraryAuthorScreen({
   profile,
   resources,
+  allResources,
   commentaryEntries,
   onBack,
   onOpenDetail,
@@ -10831,6 +10992,7 @@ function LibraryAuthorScreen({
 }: {
   profile: LibraryAuthorProfile;
   resources: LibraryResource[];
+  allResources: LibraryResource[];
   commentaryEntries: string[];
   onBack: () => void;
   onOpenDetail: (slug: string) => void;
@@ -10949,7 +11111,7 @@ function LibraryAuthorScreen({
           <LibraryAuthorCard
             key={`related-author-${author.id}`}
             profile={author}
-            count={0}
+            count={resourcesForAuthor(allResources, author).length}
             onOpen={() => onOpenAuthor(author.id)}
           />
         ))}
@@ -11182,6 +11344,7 @@ function LibraryReader({
   listeningProgress,
   annotations,
   noteDraft,
+  bookmarkNameDraft,
   fontSize,
   readerRef,
   onBack,
@@ -11192,8 +11355,11 @@ function LibraryReader({
   onBookmarkLocation,
   onJumpBookmark,
   onNoteDraftChange,
+  onBookmarkNameDraftChange,
   onSaveAnnotation,
   onCopySelection,
+  onCopyQuote,
+  onExportAnnotations,
   speechState,
   speechVoices,
   selectedSpeechVoiceURI,
@@ -11215,6 +11381,7 @@ function LibraryReader({
   listeningProgress?: ListeningProgress;
   annotations: LibraryAnnotation[];
   noteDraft: string;
+  bookmarkNameDraft: string;
   fontSize: number;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onBack: () => void;
@@ -11225,8 +11392,11 @@ function LibraryReader({
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   onNoteDraftChange: (value: string) => void;
+  onBookmarkNameDraftChange: (value: string) => void;
   onSaveAnnotation: (type: LibraryAnnotationType) => void;
   onCopySelection: () => void;
+  onCopyQuote: () => void;
+  onExportAnnotations: () => void;
   speechState: SpeechState;
   speechVoices: SpeechSynthesisVoice[];
   selectedSpeechVoiceURI: string;
@@ -11454,7 +11624,15 @@ function LibraryReader({
             type="button"
           >
             <Highlighter size={16} />
-            Highlight Selection
+            Highlight
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={() => onSaveAnnotation("underline")}
+            type="button"
+          >
+            <Highlighter size={16} />
+            Underline
           </button>
           <button
             className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
@@ -11466,11 +11644,19 @@ function LibraryReader({
           </button>
           <button
             className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onCopyQuote}
+            type="button"
+          >
+            <Share2 size={16} />
+            Copy Quote
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
             onClick={() => onSaveAnnotation("bookmark")}
             type="button"
           >
             <Bookmark size={16} />
-            Bookmark Place
+            Save Bookmark
           </button>
           <button
             className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-4 py-2 text-sm font-semibold text-white"
@@ -11500,12 +11686,18 @@ function LibraryReader({
           ))}
         </div>
         <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-          <div className="grid gap-2 md:grid-cols-[1fr_auto]">
+          <div className="grid gap-2 md:grid-cols-[1fr_1fr_auto_auto]">
             <input
               className="h-10 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 text-sm text-[var(--ink)] outline-none placeholder:text-stone-400"
               placeholder="Reader note for selected text or this location..."
               value={noteDraft}
               onChange={(event) => onNoteDraftChange(event.target.value)}
+            />
+            <input
+              className="h-10 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 text-sm text-[var(--ink)] outline-none placeholder:text-stone-400"
+              placeholder="Bookmark name, like Illustration or Review later"
+              value={bookmarkNameDraft}
+              onChange={(event) => onBookmarkNameDraftChange(event.target.value)}
             />
             <button
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
@@ -11514,6 +11706,14 @@ function LibraryReader({
             >
               <NotebookPen size={16} />
               Save Note
+            </button>
+            <button
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+              onClick={onExportAnnotations}
+              type="button"
+            >
+              <Download size={16} />
+              Export Notes
             </button>
           </div>
           {speechActive && (
@@ -11532,25 +11732,35 @@ function LibraryReader({
               )}
             </div>
           )}
-          {annotations.length > 0 && (
-            <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {annotations.slice(0, 8).map((annotation) => (
-                <button
-                  key={annotation.id}
-                  className="min-w-[210px] rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
-                  onClick={() => onJumpBookmark(annotation.location)}
-                  type="button"
-                >
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--green)]">
-                    {annotationLabel(annotation.type)} · {annotation.location}%
-                  </p>
-                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">
-                    {annotation.note || annotation.text}
-                  </p>
-                </button>
-              ))}
-            </div>
-          )}
+          <details className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--green)]">
+              Reading Notes & Bookmarks ({annotations.length})
+            </summary>
+            {annotations.length > 0 ? (
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                {annotations.map((annotation) => (
+                  <button
+                    key={annotation.id}
+                    className={`rounded-2xl border px-3 py-2 text-left ${annotationTone(annotation.type)}`}
+                    onClick={() => onJumpBookmark(annotation.location)}
+                    type="button"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-[0.1em]">
+                      {annotationLabel(annotation.type)} · {annotation.location}%
+                    </p>
+                    {annotation.note && <p className="mt-1 text-sm font-semibold">{annotation.note}</p>}
+                    <p className={`mt-1 line-clamp-3 text-xs leading-5 ${annotation.type === "underline" ? "underline decoration-2 underline-offset-4" : ""}`}>
+                      {annotation.text}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Select text to highlight, underline, add a note, copy a quote, or save a named bookmark.
+              </p>
+            )}
+          </details>
         </div>
       </header>
 
