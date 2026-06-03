@@ -56,6 +56,8 @@ type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
+type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
+type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
 
 type BibleVerse = {
   ref: string;
@@ -300,12 +302,17 @@ type LibraryImportCandidate = {
 
 type AdminResourceType =
   | "Library Book"
+  | "Audiobook"
   | "Commentary"
   | "Dictionary"
   | "Bible Handbook"
   | "Bible Survey"
   | "Devotional"
   | "Sermon / Teaching Resource"
+  | "Sermon Audio"
+  | "Sermon Video placeholder"
+  | "Sermon Transcript"
+  | "Sermon Series"
   | "KJV/Textual Issue Resource"
   | "Baptist History"
   | "Missions / Biography";
@@ -323,6 +330,17 @@ type AdminImportMetadata = {
   bibleBookCovered: string;
   visibility: ResourceVisibility;
   notes: string;
+  preacher: string;
+  sermonDate: string;
+  scripturePassage: string;
+  topic: string;
+  series: string;
+  audioFilePath: string;
+  transcriptFilePath: string;
+  coverImagePath: string;
+  narratorVoice: string;
+  duration: string;
+  textVersionLink: string;
 };
 
 type AdminImportQueueItem = {
@@ -1249,17 +1267,22 @@ const COMING_SOON_COLLECTION_IDS = new Set([
 const PERSONAL_IMPORT_FORMATS = ["TXT", "EPUB", "PDF", "DOCX"];
 const ADMIN_RESOURCE_TYPES: AdminResourceType[] = [
   "Library Book",
+  "Audiobook",
   "Commentary",
   "Dictionary",
   "Bible Handbook",
   "Bible Survey",
   "Devotional",
   "Sermon / Teaching Resource",
+  "Sermon Audio",
+  "Sermon Video placeholder",
+  "Sermon Transcript",
+  "Sermon Series",
   "KJV/Textual Issue Resource",
   "Baptist History",
   "Missions / Biography",
 ];
-const ADMIN_UPLOAD_FORMATS = ["TXT", "Markdown", "DOCX later", "EPUB later", "PDF later", "ZIP batch later"];
+const ADMIN_UPLOAD_FORMATS = ["TXT", "Markdown", "DOCX later", "EPUB later", "PDF later", "Audio placeholder", "Video placeholder", "Cover placeholder", "ZIP batch later"];
 const ADMIN_REVIEW_STATUSES: ResourceImportStatus[] = ["Draft", "Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"];
 const ADMIN_VISIBILITY_OPTIONS: ResourceVisibility[] = ["Public after review", "Private admin draft", "Personal use only"];
 const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
@@ -1275,7 +1298,51 @@ const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
   bibleBookCovered: "",
   visibility: "Private admin draft",
   notes: "",
+  preacher: "",
+  sermonDate: "",
+  scripturePassage: "",
+  topic: "",
+  series: "",
+  audioFilePath: "",
+  transcriptFilePath: "",
+  coverImagePath: "",
+  narratorVoice: "",
+  duration: "",
+  textVersionLink: "",
 };
+
+const SERMON_PLACEHOLDER_ITEMS = [
+  {
+    id: "sermon-placeholder-amos-1-4",
+    title: "Prepare Amos 1-4",
+    preacher: "Stephen / reviewed preacher",
+    date: "Draft",
+    scripturePassage: "Amos 1-4",
+    topic: "Judgment, repentance, and hearing the word of the Lord",
+    series: "Amos Teaching Prep",
+    sourceUrl: "Admin import placeholder",
+    rightsStatus: "Needs Review",
+    audioFilePath: "audio/sermons/placeholder/amos-1-4.mp3",
+    transcriptFilePath: "transcripts/sermons/placeholder/amos-1-4.md",
+    coverImagePath: "covers/sermons/placeholder/amos-1-4.png",
+    notes: "Placeholder only. Do not publish sermon audio until rights or ownership are documented.",
+  },
+  {
+    id: "sermon-placeholder-john-3",
+    title: "The New Birth",
+    preacher: "Reviewed preacher",
+    date: "Permission needed",
+    scripturePassage: "John 3",
+    topic: "New birth and believing on the Son of God",
+    series: "Gospel Lessons",
+    sourceUrl: "Admin import placeholder",
+    rightsStatus: "Permission Needed",
+    audioFilePath: "audio/sermons/placeholder/john-3.mp3",
+    transcriptFilePath: "transcripts/sermons/placeholder/john-3.md",
+    coverImagePath: "covers/sermons/placeholder/john-3.png",
+    notes: "Modern sermon audio requires permission unless clearly allowed.",
+  },
+];
 
 const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
   {
@@ -10519,6 +10586,9 @@ function adminFileSupportLabel(fileName: string) {
   if (extension === "docx") return "DOCX placeholder - text extraction not enabled yet";
   if (extension === "epub") return "EPUB placeholder - text extraction not enabled yet";
   if (extension === "pdf") return "PDF placeholder - text extraction not enabled yet";
+  if (["mp3", "m4a", "wav"].includes(extension)) return "Audio file placeholder - upload/storage not enabled yet";
+  if (["mp4", "mov", "webm"].includes(extension)) return "Video file placeholder - upload/storage not enabled yet";
+  if (["png", "jpg", "jpeg", "webp"].includes(extension)) return "Cover image placeholder";
   if (extension === "zip") return "ZIP batch placeholder";
   return "Unsupported file type";
 }
@@ -10567,9 +10637,14 @@ function adminImportRouteSummary(resourceType: AdminResourceType, sections: stri
       : "Dictionary selected: headword detection will run after text is available.";
   }
   if (resourceType === "Library Book") return "Prepare for Library reader, author page, shelves, search, continue reading, and listening queue after review approval.";
+  if (resourceType === "Audiobook") return "Prepare audiobook metadata, cover, narrator, duration, listening queue, and text-version link after rights review.";
   if (resourceType === "Bible Handbook") return "Prepare for Library reader and optional Book Introduction recommendations after review.";
   if (resourceType === "Bible Survey") return "Prepare for Library reader and book-level survey recommendations after review.";
   if (resourceType === "Devotional") return "Prepare for devotional Library shelves only after rights and doctrinal review.";
+  if (resourceType === "Sermon Audio") return "Prepare sermon player metadata, preacher page, series, transcript link, and listening queue after permission review.";
+  if (resourceType === "Sermon Video placeholder") return "Store video metadata only until hosting and permission are reviewed.";
+  if (resourceType === "Sermon Transcript") return "Prepare transcript for sermon search, preacher pages, and teaching resources after review.";
+  if (resourceType === "Sermon Series") return "Prepare a series shelf with ordered sermons, Scripture passages, and next-sermon flow after review.";
   if (resourceType === "KJV/Textual Issue Resource") return "Prepare for KJV/Textual Issues shelf with clear warnings and documented rights after review.";
   if (resourceType === "Baptist History") return "Prepare for Baptist History shelves and author pages after review.";
   if (resourceType === "Missions / Biography") return "Prepare for Missions, Biography, author pages, and listening queue after review.";
@@ -10596,7 +10671,9 @@ function validateAdminImport({
   const extension = fileExtension(fileName);
 
   if (!fileName) errors.push("Upload a file first.");
-  if (!["txt", "md", "markdown", "docx", "epub", "pdf", "zip"].includes(extension)) errors.push("Supported upload types are TXT, Markdown, DOCX, EPUB, PDF, and ZIP placeholders.");
+  if (!["txt", "md", "markdown", "docx", "epub", "pdf", "zip", "mp3", "m4a", "wav", "mp4", "mov", "webm", "png", "jpg", "jpeg", "webp"].includes(extension)) {
+    errors.push("Supported upload types are TXT, Markdown, DOCX, EPUB, PDF, audio/video/cover placeholders, and ZIP placeholders.");
+  }
   if (!metadata.title.trim()) errors.push("Title is required.");
   if (!metadata.author.trim()) errors.push("Author is required.");
   if (!metadata.category.trim()) errors.push("Category is required.");
@@ -10604,8 +10681,8 @@ function validateAdminImport({
   if (!metadata.rightsStatus.trim()) errors.push("Rights status is required.");
   if (!metadata.doctrinalReviewStatus.trim()) errors.push("Doctrinal review status is required.");
   if (!metadata.recommendedUse.trim()) errors.push("Recommended use is required.");
-  if ((extension === "pdf" || extension === "docx" || extension === "epub" || extension === "zip") && status === "Verified") {
-    errors.push("DOCX, EPUB, PDF, and ZIP uploads cannot be marked verified until extraction and review are implemented.");
+  if ((extension === "pdf" || extension === "docx" || extension === "epub" || extension === "zip" || ["mp3", "m4a", "wav", "mp4", "mov", "webm"].includes(extension)) && status === "Verified") {
+    errors.push("DOCX, EPUB, PDF, ZIP, audio, and video uploads cannot be marked verified until extraction/storage and review are implemented.");
   }
   if (!adminFileCanExtractText(fileName) && !previewText.trim()) warnings.push(`${extension.toUpperCase()} import is a placeholder. Store metadata now; extract text later.`);
   if (adminFileCanExtractText(fileName) && previewText.trim().length < 40) warnings.push("Extracted text is very short. Confirm the file imported correctly.");
@@ -10629,6 +10706,20 @@ function validateAdminImport({
   if (resourceType === "Dictionary" && previewText.trim() && !detectedSections.length) {
     warnings.push("No dictionary headwords detected yet. Use one headword per line or clear entry headings.");
   }
+  if (resourceType.startsWith("Sermon")) {
+    if (!metadata.preacher.trim()) errors.push("Sermon imports require a preacher.");
+    if (!metadata.scripturePassage.trim()) errors.push("Sermon imports require a Scripture passage.");
+    if (!metadata.topic.trim()) errors.push("Sermon imports require a topic.");
+    if (status === "Verified" && !/permission|owned|public|allowed|licensed/i.test(metadata.rightsStatus)) {
+      errors.push("Sermon media requires clear permission, ownership, license, or public-use rights before verification.");
+    }
+    warnings.push("Modern sermon audio/video must stay permission-needed unless publication rights are documented.");
+  }
+  if (resourceType === "Audiobook") {
+    if (!metadata.narratorVoice.trim()) warnings.push("Audiobook metadata should include narrator or voice when available.");
+    if (!metadata.duration.trim()) warnings.push("Audiobook metadata should include duration when available.");
+    if (status === "Verified" && !metadata.audioFilePath.trim()) warnings.push("Verified audiobooks should point to a reviewed audio file or generated-device narration strategy.");
+  }
   if (status === "Personal Use Only") warnings.push("Personal uploads must remain private to the signed-in user.");
   if (status === "Do Not Import") warnings.push("This item should remain blocked and must not appear in public Library search.");
 
@@ -10645,6 +10736,14 @@ function initialAdminMetadataForFile(fileName: string): AdminImportMetadata {
     ...EMPTY_ADMIN_IMPORT_METADATA,
     title: title ? title.replace(/\b\w/g, (letter) => letter.toUpperCase()) : "",
   };
+}
+
+function isSermonImportType(resourceType: AdminResourceType) {
+  return resourceType.startsWith("Sermon");
+}
+
+function isMediaImportType(resourceType: AdminResourceType) {
+  return resourceType === "Audiobook" || isSermonImportType(resourceType);
 }
 
 function LibraryScreen({
@@ -10970,6 +11069,15 @@ function LibraryScreen({
     ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
     ...PERMISSION_REQUESTS.filter((request) => request.title.toLowerCase().includes("way of life")),
   ];
+  const devotionalResources = resources
+    .filter((resource) => libraryResourceMatches(resource, ["devotional", "devotion", "christian living", "prayer"]))
+    .slice(0, 8);
+  const commentaryResources = resources
+    .filter((resource) => libraryResourceMatches(resource, ["commentary", "exposition", "ironside", "matthew henry"]))
+    .slice(0, 8);
+  const audiobookReadyResources = resources
+    .filter((resource) => resource.word_count && resource.word_count > 0)
+    .slice(0, 8);
 
   return (
     <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
@@ -10999,6 +11107,19 @@ function LibraryScreen({
         <LibraryStat label="Favorite authors" value={stats.favoriteAuthors.length ? String(stats.favoriteAuthors.length) : "Soon"} />
         <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
+
+      <LibraryMediaCenter
+        books={resources.slice(0, 8)}
+        audiobooks={audiobookReadyResources}
+        devotionals={devotionalResources}
+        commentaries={commentaryResources}
+        progressState={progressState}
+        listeningProgress={listeningProgress}
+        completedState={completedState}
+        onOpenDetail={onOpenDetail}
+        onOpenReader={onOpenReader}
+        onAddToListeningQueue={onAddToListeningQueue}
+      />
 
       {stats.favoriteAuthors.length > 0 && (
         <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -11411,6 +11532,355 @@ function LibraryScreen({
   );
 }
 
+function LibraryMediaCenter({
+  books,
+  audiobooks,
+  devotionals,
+  commentaries,
+  progressState,
+  listeningProgress,
+  completedState,
+  onOpenDetail,
+  onOpenReader,
+  onAddToListeningQueue,
+}: {
+  books: LibraryResource[];
+  audiobooks: LibraryResource[];
+  devotionals: LibraryResource[];
+  commentaries: LibraryResource[];
+  progressState: LibraryProgressState;
+  listeningProgress: ListeningProgressState;
+  completedState: CompletedResourceState;
+  onOpenDetail: (slug: string) => void;
+  onOpenReader: (slug: string) => void;
+  onAddToListeningQueue: (slug: string) => void;
+}) {
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Media Library</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Books, listening, sermons, and teaching series</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Books are available now. Audiobooks use device text-to-speech for reviewed texts. Sermon audio and video stay permission-gated until rights are documented.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          Media rights first
+        </span>
+      </div>
+
+      <div className="mt-5 grid gap-5">
+        <MediaResourceShelf
+          title="Books"
+          kind="Book"
+          resources={books}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+        />
+        <MediaResourceShelf
+          title="Audiobooks"
+          kind="Audiobook"
+          resources={audiobooks}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+          onOpenReader={onOpenReader}
+          onAddToListeningQueue={onAddToListeningQueue}
+        />
+        <MediaPlaceholderShelf
+          title="Sermons"
+          kind="Sermon"
+          items={SERMON_PLACEHOLDER_ITEMS}
+        />
+        <MediaPlaceholderShelf
+          title="Teaching Series"
+          kind="Teaching Series"
+          items={SERMON_PLACEHOLDER_ITEMS.filter((item) => item.series)}
+        />
+        <MediaPlaceholderShelf
+          title="Bible Audio"
+          kind="Bible Audio"
+          items={[
+            {
+              id: "bible-audio-kjv-browser-tts",
+              title: "KJV Chapter Listening",
+              preacher: "Browser/device voice",
+              date: "Available",
+              scripturePassage: "Current Bible chapter",
+              topic: "Bible audio workflow",
+              series: "KJV Bible Audio",
+              sourceUrl: "Device text-to-speech",
+              rightsStatus: "KJV text only; licensed audio files planned later",
+              audioFilePath: "future-storage/bible-audio/kjv/chapter.mp3",
+              transcriptFilePath: "KJV Bible reader",
+              coverImagePath: "covers/bible-audio/kjv.png",
+              notes: "Uses browser/device speech synthesis now. Future licensed KJV audio files remain a separate rights project.",
+            },
+          ]}
+        />
+        <MediaResourceShelf
+          title="Devotionals"
+          kind="Devotional"
+          resources={devotionals}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+        />
+        <MediaResourceShelf
+          title="Commentaries"
+          kind="Commentary"
+          resources={commentaries}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+        />
+      </div>
+
+      <SermonPlayerPreview />
+    </section>
+  );
+}
+
+function MediaResourceShelf({
+  title,
+  kind,
+  resources,
+  progressState,
+  listeningProgress,
+  completedState,
+  onOpenDetail,
+  onOpenReader,
+  onAddToListeningQueue,
+}: {
+  title: string;
+  kind: MediaItemKind;
+  resources: LibraryResource[];
+  progressState: LibraryProgressState;
+  listeningProgress: ListeningProgressState;
+  completedState: CompletedResourceState;
+  onOpenDetail: (slug: string) => void;
+  onOpenReader?: (slug: string) => void;
+  onAddToListeningQueue?: (slug: string) => void;
+}) {
+  if (!resources.length) return null;
+
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="text-base font-semibold text-[var(--ink)]">{title}</h3>
+        <span className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+          {resources.length} available
+        </span>
+      </div>
+      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        {resources.slice(0, 4).map((resource) => (
+          <MediaResourceCard
+            key={`${kind}-${resource.slug}`}
+            kind={kind}
+            resource={resource}
+            progress={progressState[resource.slug]}
+            listeningProgress={listeningProgress[resource.slug]}
+            completed={Boolean(completedState[resource.slug])}
+            onOpen={() => onOpenDetail(resource.slug)}
+            onListen={onOpenReader ? () => onOpenReader(resource.slug) : undefined}
+            onQueue={onAddToListeningQueue ? () => onAddToListeningQueue(resource.slug) : undefined}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function MediaResourceCard({
+  kind,
+  resource,
+  progress,
+  listeningProgress,
+  completed,
+  onOpen,
+  onListen,
+  onQueue,
+}: {
+  kind: MediaItemKind;
+  resource: LibraryResource;
+  progress?: LibraryProgress;
+  listeningProgress?: ListeningProgress;
+  completed: boolean;
+  onOpen: () => void;
+  onListen?: () => void;
+  onQueue?: () => void;
+}) {
+  const progressValue = completed ? 100 : progress?.progress ?? 0;
+  const listeningValue = listeningProgress?.progress ?? 0;
+  const coverClass = coverGradientFor(resource.title, resource.author, resource.category);
+
+  return (
+    <article className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] shadow-sm">
+      <button className={`block aspect-[5/3] w-full bg-gradient-to-br ${coverClass} p-4 text-left text-white`} onClick={onOpen} type="button">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{kind}</p>
+        <h4 className="mt-3 line-clamp-2 text-xl font-semibold leading-6">{resource.title}</h4>
+        <p className="mt-2 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
+      </button>
+      <div className="p-4">
+        <p className="line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+        <div className="mt-3 grid gap-2">
+          <MediaProgress label="Read" value={progressValue} />
+          {listeningValue > 0 && <MediaProgress label="Listened" value={listeningValue} />}
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white" onClick={onOpen} type="button">
+            Read
+          </button>
+          {onListen && (
+            <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={onListen} type="button">
+              Listen
+            </button>
+          )}
+          {onQueue && (
+            <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={onQueue} type="button">
+              Queue
+            </button>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function MediaPlaceholderShelf({
+  title,
+  kind,
+  items,
+}: {
+  title: string;
+  kind: MediaItemKind;
+  items: typeof SERMON_PLACEHOLDER_ITEMS;
+}) {
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="text-base font-semibold text-[var(--ink)]">{title}</h3>
+        <span className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+          review placeholders
+        </span>
+      </div>
+      <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        {items.map((item) => (
+          <article key={`${kind}-${item.id}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] shadow-sm">
+            <div className={`aspect-[5/3] bg-gradient-to-br ${coverGradientFor(item.title, item.preacher, kind)} p-4 text-white`}>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{kind}</p>
+              <h4 className="mt-3 line-clamp-2 text-xl font-semibold leading-6">{item.title}</h4>
+              <p className="mt-2 line-clamp-1 text-sm font-semibold text-white/80">{item.preacher}</p>
+            </div>
+            <div className="p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.scripturePassage}</p>
+              <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{item.topic}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800">{item.rightsStatus}</span>
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--muted)]">{item.series}</span>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SermonPlayerPreview() {
+  const [status, setStatus] = useState<MediaPlayerStatus>("idle");
+  const [speed, setSpeed] = useState("1");
+  const [sleepTimer, setSleepTimer] = useState("off");
+  const progress = status === "playing" ? 38 : status === "paused" ? 38 : 0;
+  const active = SERMON_PLACEHOLDER_ITEMS[0];
+
+  return (
+    <article className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <div className="grid gap-4 lg:grid-cols-[1fr_auto]">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Player</p>
+          <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">{active.title}</h3>
+          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{active.scripturePassage} · {active.series}</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            Placeholder player for reviewed sermon audio. No public audio file is shipped until permission and source metadata are complete.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-start gap-2">
+          <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => setStatus(status === "playing" ? "paused" : "playing")} type="button">
+            {status === "playing" ? "Pause" : "Play"}
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => setStatus("stopped")} type="button">
+            Stop
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => setStatus("idle")} type="button">
+            Add to Queue
+          </button>
+        </div>
+      </div>
+      <div className="mt-4 grid gap-3 md:grid-cols-[1fr_auto_auto] md:items-center">
+        <div>
+          <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+            <span>{status === "idle" ? "Ready" : status}</span>
+            <span>{progress}%</span>
+          </div>
+          <div className="mt-2 h-2 rounded-full bg-white">
+            <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: `${progress}%` }} />
+          </div>
+        </div>
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Speed
+          <select className="mt-1 h-10 rounded-full border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={speed} onChange={(event) => setSpeed(event.target.value)}>
+            {["0.75", "1", "1.25", "1.5", "2"].map((value) => (
+              <option key={`sermon-speed-${value}`} value={value}>{value}x</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+          Sleep
+          <select className="mt-1 h-10 rounded-full border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={sleepTimer} onChange={(event) => setSleepTimer(event.target.value)}>
+            {["off", "15 min", "30 min", "60 min"].map((value) => (
+              <option key={`sermon-sleep-${value}`} value={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[var(--muted)]">
+        <span className="rounded-full bg-white px-3 py-1.5">Continue listening ready</span>
+        <span className="rounded-full bg-white px-3 py-1.5">Next sermon in series ready</span>
+        <span className="rounded-full bg-white px-3 py-1.5">Audio path placeholder</span>
+      </div>
+    </article>
+  );
+}
+
+function MediaProgress({ label, value }: { label: string; value: number }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
+        <span>{label}</span>
+        <span>{formatPercent(value)}</span>
+      </div>
+      <div className="mt-1 h-1.5 rounded-full bg-white">
+        <div className="h-1.5 rounded-full bg-[var(--green)]" style={{ width: formatPercent(value) }} />
+      </div>
+    </div>
+  );
+}
+
+function coverGradientFor(title: string, author: string, category: string) {
+  const seed = title.length + author.length + category.length;
+  if (seed % 4 === 0) return "from-[#314c43] to-[#a67d3d]";
+  if (seed % 4 === 1) return "from-[#583f32] to-[#55705f]";
+  if (seed % 4 === 2) return "from-[#29435f] to-[#8a7241]";
+  return "from-[#3f4a34] to-[#7b5641]";
+}
+
 function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onClose: () => void }) {
   const [resourceType, setResourceType] = useState<AdminResourceType>("Library Book");
   const [reviewStatus, setReviewStatus] = useState<ResourceImportStatus>("Draft");
@@ -11668,6 +12138,55 @@ function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onCl
               <AdminImportField label="Bible book covered" value={metadata.bibleBookCovered} onChange={(value) => updateAdminMetadata("bibleBookCovered", value)} />
             )}
           </div>
+
+          {isSermonImportType(resourceType) && (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Sermon metadata</p>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                <AdminImportField label="Preacher" value={metadata.preacher} onChange={(value) => updateAdminMetadata("preacher", value)} />
+                <AdminImportField label="Date" value={metadata.sermonDate} onChange={(value) => updateAdminMetadata("sermonDate", value)} />
+                <AdminImportField label="Scripture passage" value={metadata.scripturePassage} onChange={(value) => updateAdminMetadata("scripturePassage", value)} />
+                <AdminImportField label="Topic" value={metadata.topic} onChange={(value) => updateAdminMetadata("topic", value)} />
+                <AdminImportField label="Series" value={metadata.series} onChange={(value) => updateAdminMetadata("series", value)} />
+                <AdminImportField label="Audio file path placeholder" value={metadata.audioFilePath} onChange={(value) => updateAdminMetadata("audioFilePath", value)} />
+                <AdminImportField label="Transcript file path placeholder" value={metadata.transcriptFilePath} onChange={(value) => updateAdminMetadata("transcriptFilePath", value)} />
+                <AdminImportField label="Cover image placeholder" value={metadata.coverImagePath} onChange={(value) => updateAdminMetadata("coverImagePath", value)} />
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Sermon audio and video from modern preachers stay Permission Needed unless permission, ownership, or a clear license is documented.
+              </p>
+            </div>
+          )}
+
+          {resourceType === "Audiobook" && (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Audiobook metadata</p>
+              <div className="mt-3 grid gap-3 md:grid-cols-2">
+                <AdminImportField label="Narrator / voice" value={metadata.narratorVoice} onChange={(value) => updateAdminMetadata("narratorVoice", value)} />
+                <AdminImportField label="Duration" value={metadata.duration} onChange={(value) => updateAdminMetadata("duration", value)} />
+                <AdminImportField label="Audio file path placeholder" value={metadata.audioFilePath} onChange={(value) => updateAdminMetadata("audioFilePath", value)} />
+                <AdminImportField label="Cover image placeholder" value={metadata.coverImagePath} onChange={(value) => updateAdminMetadata("coverImagePath", value)} />
+                <AdminImportField label="Text version link" value={metadata.textVersionLink} onChange={(value) => updateAdminMetadata("textVersionLink", value)} />
+              </div>
+            </div>
+          )}
+
+          {isMediaImportType(resourceType) && (
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <p className="text-sm font-semibold text-[var(--green)]">Cover upload</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Placeholder only. Cover files are not uploaded to public storage yet.</p>
+              </div>
+              <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <p className="text-sm font-semibold text-[var(--green)]">Transcript upload</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Use TXT or Markdown transcript preview now; DOCX/PDF extraction comes later.</p>
+              </div>
+              <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <p className="text-sm font-semibold text-[var(--green)]">Audio upload</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Audio file storage is a future Supabase Storage or R2 step after rights review.</p>
+              </div>
+            </div>
+          )}
 
           <div className="mt-3 grid gap-3 md:grid-cols-3">
             <AdminImportTextArea label="Rights status" value={metadata.rightsStatus} onChange={(value) => updateAdminMetadata("rightsStatus", value)} />

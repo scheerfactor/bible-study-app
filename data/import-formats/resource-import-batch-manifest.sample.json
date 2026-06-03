@@ -17,7 +17,20 @@
       "warning_labels": ["Use with discernment"],
       "visibility": "Private admin draft",
       "notes": "Admin-only review notes go here.",
-      "recommended_use": "Review-only sample. Do not publish."
+      "recommended_use": "Review-only sample. Do not publish.",
+      "media": {
+        "preacher": "",
+        "sermon_date": "",
+        "scripture_passage": "",
+        "topic": "",
+        "series": "",
+        "narrator_voice": "",
+        "duration": "",
+        "audio_file_path": "",
+        "transcript_file_path": "",
+        "cover_image_path": "",
+        "text_version_link": ""
+      }
     }
   ]
 }

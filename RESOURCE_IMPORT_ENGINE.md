@@ -11,12 +11,17 @@ Open the admin dashboard by visiting:
 ## Supported Intake Types
 
 - Library Book
+- Audiobook
 - Commentary
 - Dictionary
 - Bible Handbook
 - Bible Survey
 - Devotional
 - Sermon / Teaching Resource
+- Sermon Audio
+- Sermon Video placeholder
+- Sermon Transcript
+- Sermon Series
 - KJV/Textual Issue Resource
 - Baptist History
 - Missions / Biography
@@ -28,9 +33,12 @@ Open the admin dashboard by visiting:
 - DOCX: later, metadata placeholder only
 - EPUB: later, metadata placeholder only
 - PDF: later, metadata placeholder only
+- audio files: later, storage placeholder only
+- video files: later, storage placeholder only
+- cover images: later, storage placeholder only
 - ZIP: later, batch placeholder only
 
-Do not rely on DOCX, EPUB, PDF, or ZIP parsing until reliable extraction and review tools are added.
+Do not rely on DOCX, EPUB, PDF, audio, video, cover, or ZIP handling until reliable extraction/storage and review tools are added.
 
 ## Required Metadata
 
@@ -51,6 +59,25 @@ Each upload must include:
 
 Commentaries also require the Bible book covered.
 
+Sermon resources also require:
+
+- preacher
+- date
+- Scripture passage
+- topic
+- series
+- audio file path placeholder
+- transcript file path placeholder
+- cover image placeholder
+
+Audiobooks also support:
+
+- narrator/voice
+- duration
+- audio file path placeholder
+- cover image placeholder
+- text version link
+
 ## Review Statuses
 
 - Draft
@@ -70,6 +97,20 @@ Only Verified resources with `Public after review` visibility can become public 
 - Approved Resources
 - Permission Needed
 - Personal Use Only
+
+## Media Library Routing
+
+Verified resources may later feed:
+
+- app Library shelves
+- public website resource pages
+- author pages
+- preacher pages
+- sermon series pages
+- listening queue
+- sermon/audiobook player
+
+The current media center displays reviewed book resources and safe placeholders for sermons, teaching series, Bible audio, audiobooks, devotionals, and commentaries. Placeholder media entries are not public uploads.
 
 ## Commentary Import Rules
 
@@ -129,6 +170,8 @@ covers/
 
 - Do not publish imported content automatically.
 - Do not import copyrighted books publicly unless rights are clear.
+- Do not publicly upload copyrighted sermon audio or video without permission.
+- Modern preacher sermons require permission unless clearly allowed by the owner/source.
 - David Cloud / Way of Life resources stay Permission Needed unless written permission exists.
 - User-purchased books are future personal-use uploads only.
 - Do not publish personal uploads to all users.
