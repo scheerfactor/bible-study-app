@@ -147,6 +147,42 @@ type CommentaryEntry = {
   source_url: string;
 };
 
+type CommentaryExpansionCandidate = {
+  author: string;
+  resourceTitle: string;
+  status: ResourceImportStatus;
+  sourcePlan: string;
+  rightsNotes: string;
+  recommendedUse: string;
+};
+
+type CommentaryCoverageAuthor = {
+  author: string;
+  resourceTitles: string[];
+  booksCovered: number;
+  chaptersCovered: number;
+  entries: number;
+  status: ResourceImportStatus;
+};
+
+type CommentaryCoverageBook = {
+  book: string;
+  coveredChapters: number[];
+  missingChapters: number[];
+  authors: string[];
+};
+
+type CommentaryCoverage = {
+  totalBooks: number;
+  totalChapters: number;
+  booksCovered: number;
+  chaptersCovered: number;
+  missingChapters: number;
+  bookCoverage: CommentaryCoverageBook[];
+  authorCoverage: CommentaryCoverageAuthor[];
+  candidateAuthors: CommentaryExpansionCandidate[];
+};
+
 type LibraryResource = {
   slug: string;
   title: string;
@@ -555,6 +591,56 @@ const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
 const ACTIVE_COMMENTARY_COLLECTIONS = [MATTHEW_HENRY_COMMENTARY_COLLECTION, H_A_IRONSIDE_COMMENTARY_COLLECTION];
+const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
+  {
+    author: "Matthew Henry",
+    resourceTitle: MATTHEW_HENRY_COMMENTARY_COLLECTION,
+    status: "Verified",
+    sourcePlan: "Use existing verified CCEL/public-domain import path chapter by chapter.",
+    rightsNotes: "Public-domain original work. Keep exact source URL and rights basis with every imported chapter.",
+    recommendedUse: "Primary devotional/practical comparison voice after Scripture, Webster, and cross references.",
+  },
+  {
+    author: "Albert Barnes",
+    resourceTitle: "Barnes' Notes on the Bible",
+    status: "Needs Review",
+    sourcePlan: "Verify exact public-domain edition before any import.",
+    rightsNotes: "Do not import until source URL, edition, and public-domain status are documented.",
+    recommendedUse: "Future concise comparative notes with visible perspective labels.",
+  },
+  {
+    author: "Jamieson-Fausset-Brown",
+    resourceTitle: "Commentary Critical and Explanatory on the Whole Bible",
+    status: "Needs Review",
+    sourcePlan: "Verify a reusable public-domain source and text quality before import.",
+    rightsNotes: "Do not import modern edited copies or unclear web editions.",
+    recommendedUse: "Future compact chapter-level comparison where rights and quality are clear.",
+  },
+  {
+    author: "John Wesley",
+    resourceTitle: "Wesley's Explanatory Notes",
+    status: "Needs Review",
+    sourcePlan: "Verify public-domain source and edition-specific text before import.",
+    rightsNotes: "Do not import until exact source metadata is attached.",
+    recommendedUse: "Future historical notes with Methodist perspective clearly labeled.",
+  },
+  {
+    author: "John Gill",
+    resourceTitle: "Gill's Exposition of the Entire Bible",
+    status: "Needs Review",
+    sourcePlan: "Verify a public-domain source and chapter segmentation before import.",
+    rightsNotes: "Do not import until exact source and edition metadata are documented.",
+    recommendedUse: "Future Baptist historical/expository comparison with discernment labels.",
+  },
+  {
+    author: "Adam Clarke",
+    resourceTitle: "Adam Clarke's Commentary on the Bible",
+    status: "Needs Review",
+    sourcePlan: "Verify public-domain edition and text quality before import.",
+    rightsNotes: "Do not import until source and rights metadata are documented.",
+    recommendedUse: "Future comparative commentary only with clear perspective notes.",
+  },
+];
 
 const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
   summary: true,
@@ -609,6 +695,114 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
     recommendedReadingOrder: ["John commentary samples", "Romans commentary samples", "Luke commentary samples"],
     subjects: ["Commentary", "Exposition", "Bible Study"],
+  },
+  {
+    id: "matthew-henry",
+    name: "Matthew Henry",
+    years: "1662-1714",
+    shortLabel: "Devotional and practical commentary",
+    biography: "Matthew Henry was an English Nonconformist minister whose commentary has been widely used for devotional, practical, and pastoral Bible study. In this app, Henry is the first substantial public-domain commentary collection because the source and rights path are clear.",
+    timeline: [
+      { year: "1662", event: "Born in Wales." },
+      { year: "1687", event: "Began pastoral ministry at Chester." },
+      { year: "1706-1710", event: "Published volumes of his exposition during his lifetime." },
+      { year: "1714", event: "Died before the entire commentary was completed." },
+    ],
+    commentary: "Use as a devotional and practical comparison voice. Keep Scripture primary and treat commentary as secondary help for understanding and application.",
+    quotes: [
+      "Commentary in this app is meant to serve the Bible text, not replace it.",
+      "Matthew Henry is useful for practical observations, but every point should be checked against Scripture.",
+    ],
+    relatedAuthorIds: ["john-gill", "spurgeon", "ryle"],
+    recommendedReadingOrder: ["John 1-5 commentary", "Romans 1-8 commentary", "Luke 24 commentary", "Amos 1-9 commentary"],
+    subjects: ["Commentary", "Devotional", "Teaching"],
+  },
+  {
+    id: "albert-barnes",
+    name: "Albert Barnes",
+    years: "1798-1870",
+    shortLabel: "Concise Bible notes candidate",
+    biography: "Albert Barnes was an American Presbyterian minister known for concise Bible notes. His work is a Phase 3 candidate only; exact source, edition, rights, and text quality must be verified before import.",
+    timeline: [
+      { year: "1798", event: "Born in Rome, New York." },
+      { year: "1820s", event: "Entered pastoral ministry." },
+      { year: "1830s-1860s", event: "Published widely used Bible notes." },
+      { year: "1870", event: "Died in Philadelphia." },
+    ],
+    commentary: "Candidate for short comparative notes after rights/source review. Mark perspective notes visibly before user-facing import.",
+    quotes: ["Needs review before import.", "Use only verified public-domain editions."],
+    relatedAuthorIds: ["matthew-henry", "john-wesley", "adam-clarke"],
+    recommendedReadingOrder: ["Rights review", "Sample chapter import", "Quality review", "Chapter coverage expansion"],
+    subjects: ["Commentary", "Needs Review"],
+  },
+  {
+    id: "jfb",
+    name: "Jamieson-Fausset-Brown",
+    years: "19th century",
+    shortLabel: "Critical and explanatory commentary candidate",
+    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB. It remains a Phase 3 candidate until exact public-domain source and text quality review are complete.",
+    timeline: [
+      { year: "19th c.", event: "Prepared the Commentary Critical and Explanatory on the Whole Bible." },
+      { year: "Future", event: "Import only after rights and source verification." },
+    ],
+    commentary: "Candidate for compact author comparison. Keep it collapsed by default and secondary to Scripture.",
+    quotes: ["Needs source verification before import.", "Useful only when metadata and rights are clear."],
+    relatedAuthorIds: ["matthew-henry", "albert-barnes", "adam-clarke"],
+    recommendedReadingOrder: ["Rights review", "Sample chapter import", "Quality review", "Coverage expansion"],
+    subjects: ["Commentary", "Needs Review"],
+  },
+  {
+    id: "john-wesley",
+    name: "John Wesley",
+    years: "1703-1791",
+    shortLabel: "Historical notes candidate",
+    biography: "John Wesley was an English preacher and Methodist leader. His explanatory notes may be useful as historical comparison, but require clear perspective labeling and source verification before import.",
+    timeline: [
+      { year: "1703", event: "Born in Epworth, England." },
+      { year: "1730s", event: "Became central to the Methodist revival." },
+      { year: "1750s", event: "Published explanatory notes on Scripture." },
+      { year: "1791", event: "Died after decades of preaching and writing." },
+    ],
+    commentary: "Candidate only. If imported, show Methodist perspective notes and use with discernment labels.",
+    quotes: ["Not all doctrine endorsed.", "Import only verified public-domain editions."],
+    relatedAuthorIds: ["matthew-henry", "adam-clarke", "albert-barnes"],
+    recommendedReadingOrder: ["Rights review", "Perspective notes", "Sample import", "Quality review"],
+    subjects: ["Commentary", "Needs Review", "Use with discernment"],
+  },
+  {
+    id: "john-gill",
+    name: "John Gill",
+    years: "1697-1771",
+    shortLabel: "Baptist commentary candidate",
+    biography: "John Gill was an English Baptist pastor, theologian, and commentator. His work has Baptist historical value, but import still requires exact source, edition, rights, and quality review.",
+    timeline: [
+      { year: "1697", event: "Born in Kettering, England." },
+      { year: "1720", event: "Began pastoral ministry in London." },
+      { year: "1740s-1760s", event: "Published extensive theological and expository works." },
+      { year: "1771", event: "Died after long Baptist pastoral ministry." },
+    ],
+    commentary: "Strong Baptist history/commentary candidate after source verification. Use with careful doctrinal labels and Scripture-first ordering.",
+    quotes: ["Baptist historical value.", "Needs exact source review before import."],
+    relatedAuthorIds: ["matthew-henry", "spurgeon", "bunyan"],
+    recommendedReadingOrder: ["Rights review", "John sample", "Romans sample", "Coverage expansion"],
+    subjects: ["Commentary", "Baptist History", "Needs Review"],
+  },
+  {
+    id: "adam-clarke",
+    name: "Adam Clarke",
+    years: "1762-1832",
+    shortLabel: "Comparative commentary candidate",
+    biography: "Adam Clarke was a Methodist theologian and commentator. His commentary may be useful for comparison, but must be imported only from verified public-domain sources and clearly labeled for perspective.",
+    timeline: [
+      { year: "1762", event: "Born in Ireland." },
+      { year: "1790s-1830s", event: "Served as Methodist preacher and scholar." },
+      { year: "1832", event: "Died after extensive writing and ministry." },
+    ],
+    commentary: "Candidate for comparative commentary only. Mark not all doctrine endorsed and keep commentary secondary.",
+    quotes: ["Use with discernment.", "Source and perspective notes required before import."],
+    relatedAuthorIds: ["john-wesley", "albert-barnes", "matthew-henry"],
+    recommendedReadingOrder: ["Rights review", "Perspective notes", "Sample chapter", "Quality review"],
+    subjects: ["Commentary", "Needs Review", "Use with discernment"],
   },
   {
     id: "ryle",
@@ -854,7 +1048,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     description: "Verified commentary and exposition paths, kept secondary to Scripture.",
     terms: ["commentary", "ironside", "expositor", "expository"],
     labels: ["Commentary", "Use with discernment"],
-    featuredAuthorIds: ["ironside"],
+    featuredAuthorIds: ["matthew-henry", "ironside", "albert-barnes", "jfb", "john-wesley", "john-gill", "adam-clarke"],
   },
   {
     id: "kjv-defense",
@@ -4433,6 +4627,11 @@ export default function Home() {
     [book, chapter, commentaryEntries],
   );
 
+  const commentaryCoverage = useMemo(
+    () => buildCommentaryCoverage(commentaryEntries, allVerses),
+    [allVerses, commentaryEntries],
+  );
+
   const chapterAnalysis = useMemo(
     () => chapterAnalysisForVerses(chapterVerses, crossReferences),
     [chapterVerses, crossReferences],
@@ -6350,6 +6549,8 @@ export default function Home() {
                 activeCollection={activeLibraryCollection}
                 activeText={activeLibraryText}
                 loading={activeLibraryLoading}
+                commentaryCoverage={commentaryCoverage}
+                commentaryEntries={commentaryEntries}
                 progressState={libraryProgress}
                 completedResources={completedLibraryResources}
                 completedState={completedResources}
@@ -8192,6 +8393,112 @@ function commentaryStudyLabel(entry: CommentaryEntry) {
   return "Reviewed commentary";
 }
 
+function commentaryReferenceLabel(entry: CommentaryEntry) {
+  return entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`;
+}
+
+function commentaryChapterSummary(entries: CommentaryEntry[]) {
+  if (!entries.length) return "No reviewed commentary entries are available for this chapter yet.";
+  const authors = Array.from(new Set(entries.map((entry) => entry.author))).join(", ");
+  const sources = Array.from(new Set(entries.map((entry) => entry.resource_title))).join("; ");
+  return `${entries.length} reviewed commentary ${entries.length === 1 ? "entry" : "entries"} available from ${authors}. Sources: ${sources}.`;
+}
+
+function commentaryAgreementSummary(entries: CommentaryEntry[]) {
+  if (entries.length < 2) return "Author comparison will become more useful when at least two reviewed commentary voices are available for this chapter.";
+  const labels = Array.from(new Set(entries.map(commentaryStudyLabel)));
+  return `Available voices emphasize ${labels.join(" and ").toLowerCase()}. Compare them after reading the KJV text; do not let commentary replace the passage.`;
+}
+
+function commentaryVolumeLabels(entries: CommentaryEntry[]) {
+  return Array.from(new Set(entries.map((entry) => `${entry.resource_title}: ${entry.reference ?? `${entry.book} ${entry.chapter}`}`))).sort();
+}
+
+function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[]): CommentaryCoverage {
+  const chaptersByBook = new Map<string, Set<number>>();
+  verses.forEach((verse) => {
+    const chapters = chaptersByBook.get(verse.book) ?? new Set<number>();
+    chapters.add(verse.chapter);
+    chaptersByBook.set(verse.book, chapters);
+  });
+
+  const coveredByBook = new Map<string, Set<number>>();
+  const authorsByBook = new Map<string, Set<string>>();
+  const authorStats = new Map<string, { resourceTitles: Set<string>; books: Set<string>; chapters: Set<string>; entries: number }>();
+
+  entries.forEach((entry) => {
+    const chapters = coveredByBook.get(entry.book) ?? new Set<number>();
+    chapters.add(entry.chapter);
+    coveredByBook.set(entry.book, chapters);
+
+    const authors = authorsByBook.get(entry.book) ?? new Set<string>();
+    authors.add(entry.author);
+    authorsByBook.set(entry.book, authors);
+
+    const stats = authorStats.get(entry.author) ?? {
+      resourceTitles: new Set<string>(),
+      books: new Set<string>(),
+      chapters: new Set<string>(),
+      entries: 0,
+    };
+    stats.resourceTitles.add(entry.resource_title);
+    stats.books.add(entry.book);
+    stats.chapters.add(`${entry.book} ${entry.chapter}`);
+    stats.entries += 1;
+    authorStats.set(entry.author, stats);
+  });
+
+  const bookCoverage = Array.from(chaptersByBook.entries())
+    .map(([bookName, chapterSet]) => {
+      const allChapters = Array.from(chapterSet).sort((a, b) => a - b);
+      const coveredChapters = Array.from(coveredByBook.get(bookName) ?? []).sort((a, b) => a - b);
+      const covered = new Set(coveredChapters);
+      return {
+        book: bookName,
+        coveredChapters,
+        missingChapters: allChapters.filter((chapterNumber) => !covered.has(chapterNumber)),
+        authors: Array.from(authorsByBook.get(bookName) ?? []).sort(),
+      };
+    })
+    .filter((item) => item.coveredChapters.length > 0)
+    .sort((a, b) => bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book));
+
+  const chaptersCovered = new Set(entries.map((entry) => `${entry.book} ${entry.chapter}`)).size;
+  const totalChapters = Array.from(chaptersByBook.values()).reduce((total, chapters) => total + chapters.size, 0);
+  const activeAuthorCoverage = Array.from(authorStats.entries()).map(([author, stats]) => ({
+    author,
+    resourceTitles: Array.from(stats.resourceTitles).sort(),
+    booksCovered: stats.books.size,
+    chaptersCovered: stats.chapters.size,
+    entries: stats.entries,
+    status: "Verified" as ResourceImportStatus,
+  }));
+  const plannedOnlyCoverage = COMMENTARY_EXPANSION_CANDIDATES
+    .filter((candidate) => !authorStats.has(candidate.author))
+    .map((candidate) => ({
+      author: candidate.author,
+      resourceTitles: [candidate.resourceTitle],
+      booksCovered: 0,
+      chaptersCovered: 0,
+      entries: 0,
+      status: candidate.status,
+    }));
+
+  return {
+    totalBooks: chaptersByBook.size,
+    totalChapters,
+    booksCovered: bookCoverage.length,
+    chaptersCovered,
+    missingChapters: Math.max(0, totalChapters - chaptersCovered),
+    bookCoverage,
+    authorCoverage: [...activeAuthorCoverage, ...plannedOnlyCoverage].sort((a, b) => {
+      if (b.chaptersCovered !== a.chaptersCovered) return b.chaptersCovered - a.chaptersCovered;
+      return a.author.localeCompare(b.author);
+    }),
+    candidateAuthors: COMMENTARY_EXPANSION_CANDIDATES,
+  };
+}
+
 function teachingWorkspaceSummary(data: TeachingNotesExportData): TeachingWorkspaceSummary {
   const passage = `${data.book} ${data.chapter}`;
   const reviewed = REVIEWED_TEACHING_SUMMARIES[passage];
@@ -8305,6 +8612,8 @@ function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
   const definitions = teachingDictionaryEntries(data);
   const memoryVerseRef = data.memoryVerse?.verse_ref ?? data.fallbackMemoryVerse.ref;
   const memoryVerseText = data.memoryVerse?.verse_text || data.fallbackMemoryVerse.plainText;
+  const commentaryAuthors = Array.from(new Set(data.commentaryEntries.map((entry) => entry.author))).sort();
+  const commentaryResources = Array.from(new Set(data.commentaryEntries.map((entry) => entry.resource_title))).sort();
   const lines: string[] = [
     `# ${data.book} ${data.chapter} Teaching Notes`,
     "",
@@ -8355,6 +8664,11 @@ function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
     ...sectionOrEmpty(data.connections.prophecies.map((prophecy) => `- ${prophecy.prophecy} -> ${prophecy.fulfillment}: ${prophecy.description}`)),
     "",
     "## Commentary References",
+    `- Commentary summary: ${commentaryChapterSummary(data.commentaryEntries)}`,
+    `- Author comparison: ${commentaryAuthors.length ? commentaryAuthors.join(", ") : "No reviewed entries yet."}`,
+    `- Areas of agreement: ${commentaryAgreementSummary(data.commentaryEntries)}`,
+    `- Resources available: ${commentaryResources.length ? commentaryResources.join("; ") : "No reviewed entries yet."}`,
+    "",
     ...sectionOrEmpty(data.commentaryEntries.map((entry) => [
       `- ${entry.resource_title}, ${entry.author}, ${entry.reference ?? `${data.book} ${data.chapter}:${entry.verse_start}-${entry.verse_end}`}. ${entry.public_domain_status}`,
       `  - Commentary text: ${entry.entry_text}`,
@@ -9422,10 +9736,11 @@ function ChapterStudyWorkflow({
           )}
           {teachingVisibility.commentary && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+            <CommentaryChapterSummaryCard entries={chapterCommentaryEntries} compact onListen={onListenCommentary} />
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Collapsed by default so Scripture and your outline stay primary.</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{commentaryAgreementSummary(chapterCommentaryEntries)}</p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 {commentaryAuthorOptions.length > 2 && (
@@ -10076,6 +10391,12 @@ function libraryAuthorIdFromName(author: string) {
   const normalized = author.toLowerCase();
   if (normalized.includes("spurgeon")) return "spurgeon";
   if (normalized.includes("ironside")) return "ironside";
+  if (normalized.includes("matthew henry")) return "matthew-henry";
+  if (normalized.includes("barnes")) return "albert-barnes";
+  if (normalized.includes("jamieson") || normalized.includes("fausset") || normalized.includes("brown")) return "jfb";
+  if (normalized.includes("wesley")) return "john-wesley";
+  if (normalized.includes("john gill") || normalized.includes("gill")) return "john-gill";
+  if (normalized.includes("adam clarke") || normalized.includes("clarke")) return "adam-clarke";
   if (normalized.includes("ryle")) return "ryle";
   if (normalized.includes("moody")) return "moody";
   if (normalized.includes("bounds")) return "bounds";
@@ -10124,6 +10445,8 @@ function LibraryScreen({
   activeCollection,
   activeText,
   loading,
+  commentaryCoverage,
+  commentaryEntries,
   progressState,
   completedResources,
   completedState,
@@ -10184,6 +10507,8 @@ function LibraryScreen({
   activeCollection: LibraryCollection | null;
   activeText: string;
   loading: boolean;
+  commentaryCoverage: CommentaryCoverage;
+  commentaryEntries: CommentaryEntry[];
   progressState: LibraryProgressState;
   completedResources: CompletedResource[];
   completedState: CompletedResourceState;
@@ -10311,7 +10636,7 @@ function LibraryScreen({
         profile={activeAuthor}
         resources={resourcesForAuthor(resources, activeAuthor)}
         allResources={resources}
-        commentaryEntries={activeAuthor.id === "ironside" ? ACTIVE_COMMENTARY_COLLECTIONS.filter((title) => title.includes("Ironside")) : []}
+        commentaryEntries={commentaryEntries.filter((entry) => libraryAuthorIdFromName(entry.author) === activeAuthor.id)}
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
         onOpenAuthor={onOpenAuthor}
@@ -10472,6 +10797,11 @@ function LibraryScreen({
       )}
 
       <LibraryImportDashboard signedIn={signedIn} />
+
+      <CommentaryCoverageDashboard
+        coverage={commentaryCoverage}
+        onOpenAuthor={onOpenAuthor}
+      />
 
       {libraryListeningQueue.length > 0 && (
         <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -10986,6 +11316,135 @@ function importStatusPill(status: ResourceImportStatus) {
   return "bg-red-50 text-red-800";
 }
 
+function CommentaryCoverageDashboard({
+  coverage,
+  onOpenAuthor,
+}: {
+  coverage: CommentaryCoverage;
+  onOpenAuthor: (authorOrId: string) => void;
+}) {
+  const coveredBooks = coverage.bookCoverage.slice(0, 8);
+  const topMissing = coverage.bookCoverage
+    .filter((book) => book.missingChapters.length)
+    .slice(0, 6);
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary Dashboard</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Coverage without clutter</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Verified commentary is tracked by book, chapter, author, source, and rights status. Planned authors stay in the review queue until public-domain source quality is confirmed.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          Scripture first
+        </span>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+        <LibraryStat label="Books covered" value={`${coverage.booksCovered}/${coverage.totalBooks}`} />
+        <LibraryStat label="Chapters covered" value={String(coverage.chaptersCovered)} />
+        <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
+        <LibraryStat label="Authors tracked" value={String(coverage.authorCoverage.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[1.2fr_1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BarChart3 size={18} />
+            <h3 className="text-sm font-semibold">Books and chapters covered</h3>
+          </div>
+          <div className="mt-3 grid gap-2 md:grid-cols-2">
+            {coveredBooks.map((book) => (
+              <div key={`commentary-book-${book.book}`} className="rounded-xl bg-white px-3 py-2">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.coveredChapters.length} chapters</p>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  Covered: {book.coveredChapters.join(", ")}
+                </p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  Authors: {book.authors.join(", ")}
+                </p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Users size={18} />
+            <h3 className="text-sm font-semibold">Author coverage statistics</h3>
+          </div>
+          <div className="mt-3 space-y-2">
+            {coverage.authorCoverage.map((author) => (
+              <button
+                key={`commentary-author-stat-${author.author}`}
+                className="w-full rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenAuthor(author.author)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{author.author}</p>
+                  <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(author.status)}`}>
+                    {author.status}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {author.chaptersCovered} chapters · {author.booksCovered} books · {author.entries} entries
+                </p>
+              </button>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <h3 className="text-sm font-semibold text-[var(--ink)]">Missing chapters in covered books</h3>
+          <div className="mt-3 space-y-2">
+            {topMissing.length ? topMissing.map((book) => (
+              <p key={`missing-commentary-${book.book}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                <span className="font-semibold text-[var(--green)]">{book.book}:</span> {book.missingChapters.slice(0, 14).join(", ")}
+                {book.missingChapters.length > 14 ? "..." : ""}
+              </p>
+            )) : (
+              <p className="text-sm leading-6 text-[var(--muted)]">No missing chapters inside currently covered books.</p>
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <h3 className="text-sm font-semibold text-[var(--ink)]">Commentary expansion queue</h3>
+          <div className="mt-3 space-y-2">
+            {coverage.candidateAuthors.map((candidate) => (
+              <div key={`commentary-candidate-${candidate.author}`} className="rounded-xl bg-white px-3 py-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <button
+                    className="text-left text-sm font-semibold text-[var(--green)]"
+                    onClick={() => onOpenAuthor(candidate.author)}
+                    type="button"
+                  >
+                    {candidate.author}
+                  </button>
+                  <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(candidate.status)}`}>
+                    {candidate.status}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.resourceTitle}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.rightsNotes}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
 function LibraryAuthorScreen({
   profile,
   resources,
@@ -10998,7 +11457,7 @@ function LibraryAuthorScreen({
   profile: LibraryAuthorProfile;
   resources: LibraryResource[];
   allResources: LibraryResource[];
-  commentaryEntries: string[];
+  commentaryEntries: CommentaryEntry[];
   onBack: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
@@ -11006,6 +11465,8 @@ function LibraryAuthorScreen({
   const relatedAuthors = profile.relatedAuthorIds
     .map((id) => LIBRARY_AUTHOR_PROFILES.find((candidate) => candidate.id === id))
     .filter(Boolean) as LibraryAuthorProfile[];
+  const commentaryVolumes = commentaryVolumeLabels(commentaryEntries);
+  const candidate = COMMENTARY_EXPANSION_CANDIDATES.find((item) => libraryAuthorIdFromName(item.author) === profile.id);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -11086,16 +11547,29 @@ function LibraryAuthorScreen({
 
       <section className="grid gap-3 lg:grid-cols-2">
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold">Commentaries</h2>
+          <h2 className="text-lg font-semibold">Commentary Volumes</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{profile.commentary}</p>
-          {commentaryEntries.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {commentaryEntries.map((entry) => (
-                <span key={`author-commentary-${entry}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          {commentaryVolumes.length > 0 ? (
+            <div className="mt-3 grid gap-2">
+              {commentaryVolumes.map((entry) => (
+                <span key={`author-commentary-${entry}`} className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs font-semibold leading-5 text-[var(--green)]">
                   {entry}
                 </span>
               ))}
             </div>
+          ) : candidate ? (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-semibold text-[var(--green)]">{candidate.resourceTitle}</p>
+                <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(candidate.status)}`}>
+                  {candidate.status}
+                </span>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{candidate.sourcePlan}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Rights: {candidate.rightsNotes}</p>
+            </div>
+          ) : (
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">No commentary volumes are linked to this author yet.</p>
           )}
         </article>
 
@@ -12249,10 +12723,11 @@ function FullStudyScreen({
       <StudySection id="full-study-commentary" title="Commentary">
         {commentaryEntries.length ? (
           <div className="space-y-3">
+            <CommentaryChapterSummaryCard entries={commentaryEntries} onListen={onListenCommentary} />
             <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--green)]">Commentary comparison</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Collapsed entries keep the verse study readable.</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{commentaryAgreementSummary(commentaryEntries)}</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {commentaryAuthorOptions.length > 2 && (
@@ -12476,9 +12951,7 @@ function EmptyState({ title, body }: { title: string; body: string }) {
 }
 
 function CommentaryDetails({ entry, compact = false }: { entry: CommentaryEntry; compact?: boolean }) {
-  const reference =
-    entry.reference ??
-    `${entry.book} ${entry.chapter}:${entry.verse_start}${entry.verse_end !== entry.verse_start ? `-${entry.verse_end}` : ""}`;
+  const reference = commentaryReferenceLabel(entry);
 
   return (
     <details className="group rounded-2xl border border-[var(--line)] bg-white p-4">
@@ -12524,6 +12997,57 @@ function CommentaryDetails({ entry, compact = false }: { entry: CommentaryEntry;
         </dl>
       </div>
     </details>
+  );
+}
+
+function CommentaryChapterSummaryCard({
+  entries,
+  compact = false,
+  onListen,
+}: {
+  entries: CommentaryEntry[];
+  compact?: boolean;
+  onListen?: () => void;
+}) {
+  const authors = Array.from(new Set(entries.map((entry) => entry.author))).sort();
+  const resources = Array.from(new Set(entries.map((entry) => entry.resource_title))).sort();
+  const reference = entries[0]?.reference ?? (entries[0] ? `${entries[0].book} ${entries[0].chapter}` : "Current chapter");
+
+  return (
+    <div className={`rounded-2xl border border-[var(--line)] bg-[var(--paper)] ${compact ? "p-3" : "p-4"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter Commentary View</p>
+          <h3 className="mt-1 text-sm font-semibold text-[var(--ink)]">{reference}</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{commentaryChapterSummary(entries)}</p>
+        </div>
+        {onListen && (
+          <button
+            className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50"
+            disabled={!entries.length}
+            onClick={onListen}
+            type="button"
+          >
+            <Headphones size={14} />
+            Listen
+          </button>
+        )}
+      </div>
+      <div className="mt-3 grid gap-2 md:grid-cols-3">
+        <MiniStat label="Authors" value={String(authors.length)} />
+        <MiniStat label="Entries" value={String(entries.length)} />
+        <MiniStat label="Resources" value={String(resources.length)} />
+      </div>
+      {authors.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {authors.map((author) => (
+            <span key={`chapter-commentary-author-${author}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              {author}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -13092,6 +13616,7 @@ function StudyDrawer({
 
           {activeTab === "commentary" && (
             <div className="space-y-3">
+              <CommentaryChapterSummaryCard entries={commentaryEntries} compact />
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
                 <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
