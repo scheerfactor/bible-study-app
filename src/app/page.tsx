@@ -47,6 +47,7 @@ import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
+import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -3046,6 +3047,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
+  ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
