@@ -427,9 +427,12 @@ type BiblePlaylistItemType =
   | "bible_book"
   | "bible_verse"
   | "bible_verse_range"
+  | "commentary_chapter"
   | "commentary_placeholder"
   | "cross_reference_placeholder"
   | "library_placeholder"
+  | "reader_notes"
+  | "teaching_notes"
   | "notes_placeholder";
 
 type BiblePlaylistItem = {
@@ -438,6 +441,7 @@ type BiblePlaylistItem = {
   label: string;
   book?: string;
   chapter?: number;
+  chapterEnd?: number;
   verseStart?: number;
   verseEnd?: number;
   resourceTitle?: string;
@@ -4273,41 +4277,69 @@ function loadTeachingWorkspaceVisibility(): TeachingWorkspaceVisibility {
   }
 }
 
-function defaultBiblePlaylist(): BibleAudioPlaylist {
-  return {
-    id: "playlist_john_3_study",
-    name: "John 3 Study Flow",
-    createdAt: new Date().toISOString(),
-    items: [
-      {
-        id: "john-3-chapter",
-        type: "bible_chapter",
-        label: "John 3 Bible chapter",
-        book: "John",
-        chapter: 3,
-      },
-      {
-        id: "john-3-commentary-placeholder",
-        type: "commentary_placeholder",
-        label: "John 3 commentary placeholder",
-        book: "John",
-        chapter: 3,
-      },
-      {
-        id: "john-3-library-placeholder",
-        type: "library_placeholder",
-        label: "Related library reading placeholder",
-        resourceTitle: "Future related reading",
-      },
-      {
-        id: "john-3-notes-placeholder",
-        type: "notes_placeholder",
-        label: "Personal notes",
-        book: "John",
-        chapter: 3,
-      },
-    ],
-  };
+function defaultStudyPlaylists(): BibleAudioPlaylist[] {
+  const createdAt = "2026-06-03T00:00:00.000Z";
+  return [
+    {
+      id: "playlist_amos_1_4_teaching_prep",
+      name: "Amos 1-4 Teaching Prep",
+      createdAt,
+      items: [
+        { id: "amos-1", type: "bible_chapter", label: "Amos 1", book: "Amos", chapter: 1 },
+        { id: "amos-2", type: "bible_chapter", label: "Amos 2", book: "Amos", chapter: 2 },
+        { id: "amos-3", type: "bible_chapter", label: "Amos 3", book: "Amos", chapter: 3 },
+        { id: "amos-4", type: "bible_chapter", label: "Amos 4", book: "Amos", chapter: 4 },
+        { id: "amos-mh-1-4", type: "commentary_chapter", label: "Matthew Henry Amos 1-4", book: "Amos", chapter: 1, chapterEnd: 4 },
+        { id: "amos-teaching-notes", type: "teaching_notes", label: "Amos teaching notes", book: "Amos", chapter: 1, chapterEnd: 4 },
+      ],
+    },
+    {
+      id: "playlist_romans_8_deep_study",
+      name: "Romans 8 Deep Study",
+      createdAt,
+      items: [
+        { id: "romans-8", type: "bible_chapter", label: "Romans 8", book: "Romans", chapter: 8 },
+        { id: "romans-8-28-39", type: "bible_verse_range", label: "Romans 8:28-39", book: "Romans", chapter: 8, verseStart: 28, verseEnd: 39 },
+        { id: "romans-8-commentary", type: "commentary_chapter", label: "Romans 8 commentary", book: "Romans", chapter: 8 },
+        { id: "romans-8-notes", type: "reader_notes", label: "Reader notes", book: "Romans", chapter: 8 },
+      ],
+    },
+    {
+      id: "playlist_new_believer_starter",
+      name: "New Believer Starter",
+      createdAt,
+      items: [
+        { id: "new-believer-john-3", type: "bible_chapter", label: "John 3", book: "John", chapter: 3 },
+        { id: "new-believer-romans-5", type: "bible_chapter", label: "Romans 5", book: "Romans", chapter: 5 },
+        { id: "new-believer-1-john-5", type: "bible_chapter", label: "1 John 5", book: "1 John", chapter: 5 },
+        { id: "new-believer-book", type: "library_placeholder", label: "The Way to God and How to Find It", resourceTitle: "The Way to God and How to Find It", resourceSlug: "the-way-to-god-and-how-to-find-it" },
+        { id: "new-believer-notes", type: "reader_notes", label: "New believer notes", book: "John", chapter: 3 },
+      ],
+    },
+    {
+      id: "playlist_prayer_classics",
+      name: "Prayer Classics",
+      createdAt,
+      items: [
+        { id: "prayer-luke-11", type: "bible_chapter", label: "Luke 11", book: "Luke", chapter: 11 },
+        { id: "prayer-john-17", type: "bible_chapter", label: "John 17", book: "John", chapter: 17 },
+        { id: "prayer-power-through-prayer", type: "library_placeholder", label: "Power Through Prayer", resourceTitle: "Power Through Prayer", resourceSlug: "power-through-prayer" },
+        { id: "prayer-teaching-notes", type: "teaching_notes", label: "Prayer meeting notes", book: "Luke", chapter: 11 },
+      ],
+    },
+    {
+      id: "playlist_preacher_prep_flow",
+      name: "Preacher Prep Flow",
+      createdAt,
+      items: [
+        { id: "preacher-2-timothy-4", type: "bible_chapter", label: "2 Timothy 4", book: "2 Timothy", chapter: 4 },
+        { id: "preacher-john-3", type: "bible_chapter", label: "John 3", book: "John", chapter: 3 },
+        { id: "preacher-commentary", type: "commentary_chapter", label: "John 3 commentary", book: "John", chapter: 3 },
+        { id: "preacher-pleasure-profit", type: "library_placeholder", label: "Pleasure & Profit in Bible Study", resourceTitle: "Pleasure & Profit in Bible Study", resourceSlug: "pleasure-and-profit-in-bible-study" },
+        { id: "preacher-teaching-notes", type: "teaching_notes", label: "Teaching notes", book: "John", chapter: 3 },
+      ],
+    },
+  ];
 }
 
 function loadBibleListeningProgress(): BibleListeningProgress | null {
@@ -4332,15 +4364,19 @@ function saveBibleListeningProgress(progress: BibleListeningProgress | null) {
 }
 
 function loadBiblePlaylists(): BibleAudioPlaylist[] {
-  if (typeof window === "undefined") return [defaultBiblePlaylist()];
+  const starters = defaultStudyPlaylists();
+  if (typeof window === "undefined") return starters;
 
   try {
     const raw = window.localStorage.getItem(BIBLE_PLAYLISTS_KEY);
-    if (!raw) return [defaultBiblePlaylist()];
+    if (!raw) return starters;
     const parsed = JSON.parse(raw) as BibleAudioPlaylist[];
-    return Array.isArray(parsed) && parsed.length ? parsed : [defaultBiblePlaylist()];
+    if (!Array.isArray(parsed) || !parsed.length) return starters;
+    const starterIds = new Set(starters.map((playlist) => playlist.id));
+    const existingIds = new Set(parsed.map((playlist) => playlist.id));
+    return [...parsed, ...starters.filter((playlist) => starterIds.has(playlist.id) && !existingIds.has(playlist.id))];
   } catch {
-    return [defaultBiblePlaylist()];
+    return starters;
   }
 }
 
@@ -4652,6 +4688,10 @@ export default function Home() {
   const [libraryBookmarkNameDraft, setLibraryBookmarkNameDraft] = useState("");
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
+  const [activeStudyPlaylistId, setActiveStudyPlaylistId] = useState<string | null>(null);
+  const [studyPlaylistCurrentIndex, setStudyPlaylistCurrentIndex] = useState(0);
+  const [repeatStudyPlaylist, setRepeatStudyPlaylist] = useState(false);
+  const [repeatStudyPlaylistItem, setRepeatStudyPlaylistItem] = useState(false);
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
@@ -5015,7 +5055,9 @@ export default function Home() {
       setLibraryListeningQueue(loadLibraryListeningQueue());
       setLibraryAnnotations(loadLibraryAnnotations());
       setBibleListeningProgress(loadBibleListeningProgress());
-      setBiblePlaylists(loadBiblePlaylists());
+      const loadedPlaylists = loadBiblePlaylists();
+      setBiblePlaylists(loadedPlaylists);
+      setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
       setScriptureMemory(loadScriptureMemory());
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
@@ -5954,6 +5996,34 @@ export default function Home() {
     );
   }
 
+  function saveNextBiblePlaylists(next: BibleAudioPlaylist[]) {
+    saveBiblePlaylists(next);
+    return next;
+  }
+
+  function activePlaylistIndex(playlists: BibleAudioPlaylist[]) {
+    const index = activeStudyPlaylistId ? playlists.findIndex((playlist) => playlist.id === activeStudyPlaylistId) : 0;
+    return index >= 0 ? index : 0;
+  }
+
+  function appendItemToActiveStudyPlaylist(item: BiblePlaylistItem) {
+    setBiblePlaylists((current) => {
+      const source = current.length ? current : defaultStudyPlaylists();
+      const index = activePlaylistIndex(source);
+      const next = source.map((playlist, playlistIndex) =>
+        playlistIndex === index ? { ...playlist, items: [...playlist.items, item] } : playlist,
+      );
+      setActiveStudyPlaylistId(next[index]?.id ?? null);
+      return saveNextBiblePlaylists(next);
+    });
+    setSyncMessage(`${item.label} added to the study playlist.`);
+  }
+
+  function selectStudyPlaylist(playlistId: string) {
+    setActiveStudyPlaylistId(playlistId);
+    setStudyPlaylistCurrentIndex(0);
+  }
+
   function createBiblePlaylist() {
     const trimmed = playlistName.trim() || `${book} ${chapter} Listening`;
     const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
@@ -5997,8 +6067,9 @@ export default function Home() {
     };
     setBiblePlaylists((current) => {
       const next = [nextPlaylist, ...current].slice(0, 12);
-      saveBiblePlaylists(next);
-      return next;
+      setActiveStudyPlaylistId(nextPlaylist.id);
+      setStudyPlaylistCurrentIndex(0);
+      return saveNextBiblePlaylists(next);
     });
     setSyncMessage(`Playlist "${trimmed}" saved locally.`);
   }
@@ -6016,21 +6087,17 @@ export default function Home() {
       bible_book: { ...itemBase, type, label: `${book}`, chapter: undefined },
       bible_verse: { ...itemBase, type, label: `${book} ${chapter}:${currentVerse}`, verseStart: currentVerse, verseEnd: currentVerse },
       bible_verse_range: { ...itemBase, type, label: `${book} ${chapter}:${start}-${end}`, verseStart: start, verseEnd: end },
+      commentary_chapter: { ...itemBase, type, label: `${book} ${chapter} commentary` },
       commentary_placeholder: { ...itemBase, type, label: `${book} ${chapter} commentary` },
       cross_reference_placeholder: { ...itemBase, type, label: `${book} ${chapter} cross references` },
       library_placeholder: { id: makeId("playlist_item"), type, label: "Related library resource" },
+      reader_notes: { ...itemBase, type, label: `${book} ${chapter} reader notes` },
+      teaching_notes: { ...itemBase, type, label: `${book} ${chapter} teaching notes` },
       notes_placeholder: { ...itemBase, type, label: `${book} ${chapter} personal notes` },
     };
 
     const item = itemByType[type];
-    setBiblePlaylists((current) => {
-      const [active = defaultBiblePlaylist(), ...rest] = current.length ? current : [defaultBiblePlaylist()];
-      const nextActive = { ...active, items: [...active.items, item] };
-      const next = [nextActive, ...rest].slice(0, 12);
-      saveBiblePlaylists(next);
-      return next;
-    });
-    setSyncMessage(`${item.label} added to listening playlist.`);
+    appendItemToActiveStudyPlaylist(item);
   }
 
   function addBiblePlaylistLibraryItem(slug: string) {
@@ -6044,14 +6111,11 @@ export default function Home() {
       resourceSlug: resource.slug,
     };
 
-    setBiblePlaylists((current) => {
-      const [active = defaultBiblePlaylist(), ...rest] = current.length ? current : [defaultBiblePlaylist()];
-      const nextActive = { ...active, items: [...active.items, item] };
-      const next = [nextActive, ...rest].slice(0, 12);
-      saveBiblePlaylists(next);
-      return next;
-    });
-    setSyncMessage(`${resource.title} added to the study playlist.`);
+    appendItemToActiveStudyPlaylist(item);
+  }
+
+  function addCurrentResourceToStudyPlaylist(slug: string) {
+    addBiblePlaylistLibraryItem(slug);
   }
 
   function removeBiblePlaylistItem(playlistId: string, itemId: string) {
@@ -6095,63 +6159,101 @@ export default function Home() {
     return [];
   }
 
-  function playBiblePlaylist(playlist: BibleAudioPlaylist) {
+  function commentaryEntriesForPlaylistItem(item: BiblePlaylistItem) {
+    if (!item.book || !item.chapter) return [];
+    const endChapter = item.chapterEnd ?? item.chapter;
+    return commentaryEntries.filter((entry) =>
+      entry.book === item.book && entry.chapter >= item.chapter! && entry.chapter <= endChapter,
+    );
+  }
+
+  async function chunksForBiblePlaylistItem(item: BiblePlaylistItem) {
+    const verses = versesForBiblePlaylistItem(item);
+    if (verses.length) {
+      return bibleSpeechParts(verses, { includeVerseReferences, includeChapterHeadings });
+    }
+
+    if ((item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.book && item.chapter) {
+      const entries = commentaryEntriesForPlaylistItem(item);
+      if (entries.length) {
+        return {
+          chunks: entries.map((entry) => `${entry.author}. ${entry.resource_title}. ${entry.reference ?? `${entry.book} ${entry.chapter}`}. ${entry.entry_text}`),
+          verseRefs: entries.map(() => null),
+        };
+      }
+    }
+
+    if (item.type === "library_placeholder" && item.resourceSlug) {
+      try {
+        const response = await fetch(`/api/library/${item.resourceSlug}`);
+        const data = (await response.json()) as { text?: string };
+        const resourceChunks = chunkSpeechText(data.text ?? "").slice(0, 80);
+        if (resourceChunks.length) {
+          return {
+            chunks: [`${item.resourceTitle ?? item.label}.`, ...resourceChunks],
+            verseRefs: Array(resourceChunks.length + 1).fill(null),
+          };
+        }
+      } catch {
+        // Fall through to the placeholder line so the queue remains playable.
+      }
+    }
+
+    const noteLabel = item.type === "teaching_notes"
+      ? "Teaching notes are saved locally and ready for review in the Teaching Workspace."
+      : item.type === "reader_notes"
+        ? "Reader notes are saved locally and ready for review in the Library Reader."
+        : "This item is prepared for future listening content.";
+    return {
+      chunks: [`${item.label}. ${noteLabel}`],
+      verseRefs: [null],
+    };
+  }
+
+  function playBiblePlaylist(playlist: BibleAudioPlaylist, startIndex = 0, playSingleItem = false) {
     void (async () => {
       const chunks: string[] = [];
       const verseRefs: Array<string | null> = [];
+      const safeIndex = Math.min(Math.max(0, startIndex), Math.max(0, playlist.items.length - 1));
+      const itemsToPlay = playSingleItem ? playlist.items.slice(safeIndex, safeIndex + 1) : playlist.items.slice(safeIndex);
 
-      for (const item of playlist.items) {
-        const verses = versesForBiblePlaylistItem(item);
-        if (verses.length) {
-          const speechParts = bibleSpeechParts(verses, { includeVerseReferences, includeChapterHeadings });
-          chunks.push(...speechParts.chunks);
-          verseRefs.push(...speechParts.verseRefs);
-          continue;
-        }
-
-        if (item.type === "commentary_placeholder" && item.book && item.chapter) {
-          const entries = commentaryEntries.filter((entry) => entry.book === item.book && entry.chapter === item.chapter);
-          if (entries.length) {
-            entries.forEach((entry) => {
-              chunks.push(`${entry.author}. ${entry.resource_title}. ${entry.entry_text}`);
-              verseRefs.push(null);
-            });
-            continue;
-          }
-        }
-
-        if (item.type === "library_placeholder" && item.resourceSlug) {
-          try {
-            const response = await fetch(`/api/library/${item.resourceSlug}`);
-            const data = (await response.json()) as { text?: string };
-            const resourceChunks = chunkSpeechText(data.text ?? "").slice(0, 80);
-            if (resourceChunks.length) {
-              chunks.push(`${item.resourceTitle ?? item.label}.`, ...resourceChunks);
-              verseRefs.push(...Array(resourceChunks.length + 1).fill(null));
-              continue;
-            }
-          } catch {
-            // Fall through to the placeholder line so the queue remains playable.
-          }
-        }
-
-        chunks.push(`${item.label}. This item is prepared for future listening content.`);
-        verseRefs.push(null);
+      for (const item of itemsToPlay) {
+        const speechParts = await chunksForBiblePlaylistItem(item);
+        chunks.push(...speechParts.chunks);
+        verseRefs.push(...speechParts.verseRefs);
       }
 
+      setActiveStudyPlaylistId(playlist.id);
+      setStudyPlaylistCurrentIndex(safeIndex);
       startSpeech(
         `playlist-${playlist.id}`,
-        playlist.name,
+        playSingleItem ? `${playlist.name}: ${playlist.items[safeIndex]?.label ?? "item"}` : playlist.name,
         chunks.join(" "),
         0,
         undefined,
         {
           chunks,
           verseRefs,
-          onComplete: repeatSelectedRange ? () => playBiblePlaylist(playlist) : undefined,
+          onComplete: () => {
+            if (playSingleItem && repeatStudyPlaylistItem) {
+              playBiblePlaylist(playlist, safeIndex, true);
+              return;
+            }
+            if (!playSingleItem && repeatStudyPlaylist) {
+              playBiblePlaylist(playlist, 0, false);
+            }
+          },
         },
       );
     })();
+  }
+
+  function skipStudyPlaylistItem(direction: -1 | 1) {
+    const playlist = biblePlaylists.find((candidate) => candidate.id === activeStudyPlaylistId) ?? biblePlaylists[0];
+    if (!playlist?.items.length) return;
+    const nextIndex = Math.min(playlist.items.length - 1, Math.max(0, studyPlaylistCurrentIndex + direction));
+    setStudyPlaylistCurrentIndex(nextIndex);
+    playBiblePlaylist(playlist, nextIndex, true);
   }
 
   function addLibraryToListeningQueue(slug: string) {
@@ -6787,6 +6889,10 @@ export default function Home() {
                 speechVoices={speechVoices}
                 selectedSpeechVoiceURI={selectedSpeechVoiceURI}
                 playlists={biblePlaylists}
+                activePlaylistId={activeStudyPlaylistId}
+                activePlaylistItemIndex={studyPlaylistCurrentIndex}
+                repeatPlaylist={repeatStudyPlaylist}
+                repeatPlaylistItem={repeatStudyPlaylistItem}
                 playlistName={playlistName}
                 listenStatusMessage={syncMessage}
                 onBookChange={selectBook}
@@ -6819,12 +6925,17 @@ export default function Home() {
                 onSpeechVoiceChange={setSelectedSpeechVoiceURI}
                 onSleepTimerChange={setSleepTimer}
                 onPlaylistNameChange={setPlaylistName}
+                onSelectPlaylist={selectStudyPlaylist}
                 onCreatePlaylist={createBiblePlaylist}
                 onAddPlaylistItem={addBiblePlaylistItem}
                 onAddLibraryPlaylistItem={addBiblePlaylistLibraryItem}
                 onRemovePlaylistItem={removeBiblePlaylistItem}
                 onMovePlaylistItem={moveBiblePlaylistItem}
                 onPlayPlaylist={playBiblePlaylist}
+                onPlayPlaylistItem={(playlist, itemIndex) => playBiblePlaylist(playlist, itemIndex, true)}
+                onSkipPlaylistItem={skipStudyPlaylistItem}
+                onRepeatPlaylistChange={setRepeatStudyPlaylist}
+                onRepeatPlaylistItemChange={setRepeatStudyPlaylistItem}
                 onAddMemoryVerse={addMemoryVerse}
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
@@ -6939,6 +7050,7 @@ export default function Home() {
                 onOpenReadingPath={openReadingPath}
                 onOpenBible={() => setTab("bible")}
                 onAddToListeningQueue={addLibraryToListeningQueue}
+                onAddToStudyPlaylist={addCurrentResourceToStudyPlaylist}
                 onRemoveFromListeningQueue={removeLibraryFromListeningQueue}
                 onMoveListeningQueueItem={moveLibraryListeningQueueItem}
                 onScrollReader={handleLibraryScroll}
@@ -7010,6 +7122,7 @@ export default function Home() {
                 onBookmark={() => toggleBookmark(fullStudyVerse.ref)}
                 onOpenReference={openReference}
                 onListenCommentary={listenCurrentChapterCommentary}
+                onAddCommentaryToPlaylist={() => addBiblePlaylistItem("commentary_chapter")}
                 onAddMemory={() => addMemoryVerse(fullStudyVerse.ref)}
                 onUpdateMemoryProgress={(progress) => updateMemoryProgress(fullStudyVerse.ref, progress)}
                 onRemoveMemory={() => removeMemoryVerse(fullStudyVerse.ref)}
@@ -7978,6 +8091,10 @@ function BibleReader({
   speechVoices,
   selectedSpeechVoiceURI,
   playlists,
+  activePlaylistId,
+  activePlaylistItemIndex,
+  repeatPlaylist,
+  repeatPlaylistItem,
   playlistName,
   listenStatusMessage,
   onBookChange,
@@ -8010,12 +8127,17 @@ function BibleReader({
   onSpeechVoiceChange,
   onSleepTimerChange,
   onPlaylistNameChange,
+  onSelectPlaylist,
   onCreatePlaylist,
   onAddPlaylistItem,
   onAddLibraryPlaylistItem,
   onRemovePlaylistItem,
   onMovePlaylistItem,
   onPlayPlaylist,
+  onPlayPlaylistItem,
+  onSkipPlaylistItem,
+  onRepeatPlaylistChange,
+  onRepeatPlaylistItemChange,
   onAddMemoryVerse,
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
@@ -8071,6 +8193,10 @@ function BibleReader({
   speechVoices: SpeechSynthesisVoice[];
   selectedSpeechVoiceURI: string;
   playlists: BibleAudioPlaylist[];
+  activePlaylistId: string | null;
+  activePlaylistItemIndex: number;
+  repeatPlaylist: boolean;
+  repeatPlaylistItem: boolean;
   playlistName: string;
   listenStatusMessage: string;
   onBookChange: (book: string) => void;
@@ -8103,12 +8229,17 @@ function BibleReader({
   onSpeechVoiceChange: (voiceURI: string) => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onPlaylistNameChange: (name: string) => void;
+  onSelectPlaylist: (playlistId: string) => void;
   onCreatePlaylist: () => void;
   onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
   onAddLibraryPlaylistItem: (slug: string) => void;
   onRemovePlaylistItem: (playlistId: string, itemId: string) => void;
   onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
-  onPlayPlaylist: (playlist: BibleAudioPlaylist) => void;
+  onPlayPlaylist: (playlist: BibleAudioPlaylist, startIndex?: number, playSingleItem?: boolean) => void;
+  onPlayPlaylistItem: (playlist: BibleAudioPlaylist, itemIndex: number) => void;
+  onSkipPlaylistItem: (direction: -1 | 1) => void;
+  onRepeatPlaylistChange: (repeat: boolean) => void;
+  onRepeatPlaylistItemChange: (repeat: boolean) => void;
   onAddMemoryVerse: (ref: string) => void;
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -8151,9 +8282,20 @@ function BibleReader({
       const resource = libraryResources.find((candidate) => candidate.slug === item.resourceSlug);
       return listeningSecondsFromWordCount(resource?.word_count ?? 1200, speechState.rate);
     }
+    if ((item.type === "commentary_chapter" || item.type === "commentary_placeholder") && item.book && item.chapter) {
+      const endChapter = item.chapterEnd ?? item.chapter;
+      const words = allCommentaryEntries
+        .filter((entry) => entry.book === item.book && entry.chapter >= item.chapter! && entry.chapter <= endChapter)
+        .reduce((total, entry) => total + wordsFromText(entry.entry_text).length, 0);
+      return listeningSecondsFromWordCount(words || 650, speechState.rate);
+    }
+    if (item.type === "reader_notes" || item.type === "teaching_notes" || item.type === "notes_placeholder") {
+      return listeningSecondsFromWordCount(120, speechState.rate);
+    }
     return listeningSecondsFromWordCount(220, speechState.rate);
   };
-  const activePlaylist = playlists[0] ?? null;
+  const activePlaylist = playlists.find((playlist) => playlist.id === activePlaylistId) ?? playlists[0] ?? null;
+  const currentPlaylistItem = activePlaylist?.items[activePlaylistItemIndex] ?? activePlaylist?.items[0] ?? null;
   const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   return (
     <div className="space-y-4 p-4 md:p-8">
@@ -8313,10 +8455,10 @@ function BibleReader({
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Listen Mode</p>
-            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Bible audio playlist planning</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Playlist Builder</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Mix Bible, commentary, books, and notes</h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-              Uses this device&apos;s built-in speech for now. The playlist structure leaves room for future licensed KJV audio files.
+              Build a guided reading and listening session with KJV chapters, verse ranges, reviewed commentary, library books, reader notes, and teaching notes.
             </p>
           </div>
           {bibleListeningProgress && (
@@ -8439,6 +8581,20 @@ function BibleReader({
 
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
               <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Active study playlist
+                <select
+                  className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
+                  value={activePlaylist?.id ?? ""}
+                  onChange={(event) => onSelectPlaylist(event.target.value)}
+                >
+                  {playlists.map((playlist) => (
+                    <option key={`study-playlist-select-${playlist.id}`} value={playlist.id}>
+                      {playlist.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
                 Playlist name
                 <input className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]" onChange={(event) => onPlaylistNameChange(event.target.value)} value={playlistName} />
               </label>
@@ -8451,8 +8607,10 @@ function BibleReader({
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_book")} type="button">Add book</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_verse_range")} type="button">Add range</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_verse")} type="button">Add verse</button>
-                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("commentary_placeholder")} type="button">Add commentary</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("commentary_chapter")} type="button">Add commentary</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("cross_reference_placeholder")} type="button">Add cross refs</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("reader_notes")} type="button">Add reader notes</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("teaching_notes")} type="button">Add teaching notes</button>
               </div>
               {playlistLibraryOptions.length > 0 && (
                 <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
@@ -8487,24 +8645,53 @@ function BibleReader({
             <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <div>
-                  <p className="text-sm font-semibold text-[var(--ink)]">Teaching Listening Queue</p>
+                  <p className="text-sm font-semibold text-[var(--ink)]">{activePlaylist.name}</p>
                   <p className="text-xs font-semibold text-[var(--muted)]">
                     {formatListeningDuration(activePlaylistSeconds)} at {speechState.rate}x · finishes around {listeningFinishLabel(activePlaylistSeconds)}
+                    {currentPlaylistItem ? ` · current: ${currentPlaylistItem.label}` : ""}
                   </p>
                 </div>
-                <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => onPlayPlaylist(activePlaylist)} type="button">
-                  <Play size={15} />
-                  Play Queue
-                </button>
+                <div className="flex flex-wrap gap-2">
+                  <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => onPlayPlaylist(activePlaylist, 0, false)} type="button">
+                    <Play size={15} />
+                    Play All
+                  </button>
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+                    <Square size={15} />
+                    Stop
+                  </button>
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={activePlaylistItemIndex <= 0} onClick={() => onSkipPlaylistItem(-1)} type="button">
+                    <ChevronLeft size={15} />
+                    Previous
+                  </button>
+                  <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={activePlaylistItemIndex >= activePlaylist.items.length - 1} onClick={() => onSkipPlaylistItem(1)} type="button">
+                    Next
+                    <ChevronRight size={15} />
+                  </button>
+                </div>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  <input checked={repeatPlaylist} onChange={(event) => onRepeatPlaylistChange(event.target.checked)} type="checkbox" />
+                  Repeat playlist
+                </label>
+                <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  <input checked={repeatPlaylistItem} onChange={(event) => onRepeatPlaylistItemChange(event.target.checked)} type="checkbox" />
+                  Repeat item
+                </label>
+                <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">
+                  Saved locally
+                </span>
               </div>
               <div className="mt-3 space-y-2">
                 {activePlaylist.items.map((item, index) => (
-                  <div key={item.id} className="grid grid-cols-[1fr_auto] gap-2 rounded-xl bg-white px-3 py-2">
+                  <div key={item.id} className={`grid grid-cols-[1fr_auto] gap-2 rounded-xl px-3 py-2 ${index === activePlaylistItemIndex ? "bg-[var(--highlight)]" : "bg-white"}`}>
                     <div>
                       <p className="text-xs font-semibold text-[var(--muted)]">{item.label}</p>
                       <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
                     </div>
                     <div className="flex items-center gap-1">
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onPlayPlaylistItem(activePlaylist, index)} type="button">Play</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
                       <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
@@ -8545,6 +8732,7 @@ function BibleReader({
         onOpenLibraryResource={onOpenLibraryResource}
         onListenCommentary={onListenCommentary}
         onListenChapterRange={onListenChapterRange}
+        onAddPlaylistItem={onAddPlaylistItem}
         onOpenReference={onOpenReference}
         onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
@@ -9120,6 +9308,7 @@ function ChapterStudyWorkflow({
   onOpenLibraryResource,
   onListenCommentary,
   onListenChapterRange,
+  onAddPlaylistItem,
   onOpenReference,
   onOpenPersonStudy,
   onRemoveMemoryVerse,
@@ -9147,6 +9336,7 @@ function ChapterStudyWorkflow({
   onOpenLibraryResource: (slug: string) => void;
   onListenCommentary: () => void;
   onListenChapterRange: (book: string, startChapter: number, endChapter: number) => void;
+  onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -9399,6 +9589,14 @@ function ChapterStudyWorkflow({
               >
                 <Headphones size={16} />
                 Listen Commentary
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                onClick={() => onAddPlaylistItem("teaching_notes")}
+                type="button"
+              >
+                <NotebookPen size={16} />
+                Add Amos Notes
               </button>
             </div>
           </div>
@@ -10160,6 +10358,14 @@ function ChapterStudyWorkflow({
                 >
                   <Headphones size={14} />
                   Listen
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onAddPlaylistItem("commentary_chapter")}
+                  type="button"
+                >
+                  <ListMusic size={14} />
+                  Add to Study Playlist
                 </button>
               </div>
             </div>
@@ -11058,6 +11264,7 @@ function LibraryScreen({
   onOpenReadingPath,
   onOpenBible,
   onAddToListeningQueue,
+  onAddToStudyPlaylist,
   onRemoveFromListeningQueue,
   onMoveListeningQueueItem,
   onScrollReader,
@@ -11130,6 +11337,7 @@ function LibraryScreen({
   onOpenReadingPath: (pathId: string) => void;
   onOpenBible: () => void;
   onAddToListeningQueue: (slug: string) => void;
+  onAddToStudyPlaylist: (slug: string) => void;
   onRemoveFromListeningQueue: (slug: string) => void;
   onMoveListeningQueueItem: (slug: string, direction: -1 | 1) => void;
   onScrollReader: () => void;
@@ -11206,6 +11414,7 @@ function LibraryScreen({
         onRestart={() => onRestartResource(activeResource)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
+        onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
       />
     );
   }
@@ -11219,6 +11428,7 @@ function LibraryScreen({
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
         onAddToListeningQueue={() => onAddToListeningQueue(activeResource.slug)}
+        onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
@@ -13282,6 +13492,7 @@ function LibraryDetail({
   onBack,
   onOpenReader,
   onAddToListeningQueue,
+  onAddToStudyPlaylist,
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
@@ -13294,6 +13505,7 @@ function LibraryDetail({
   onBack: () => void;
   onOpenReader: () => void;
   onAddToListeningQueue: () => void;
+  onAddToStudyPlaylist: () => void;
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
@@ -13335,6 +13547,10 @@ function LibraryDetail({
             <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
               <ListMusic size={16} />
               Add to Listen Queue
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
+              <NotebookPen size={16} />
+              Add to Study Playlist
             </button>
             {completed && (
               <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
@@ -13454,6 +13670,7 @@ function LibraryReader({
   onRestart,
   onOpenAuthor,
   onOpenCollection,
+  onAddToStudyPlaylist,
 }: {
   resource: LibraryResource;
   text: string;
@@ -13491,6 +13708,7 @@ function LibraryReader({
   onRestart: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
+  onAddToStudyPlaylist: () => void;
 }) {
   const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
   const activeProgress = progress ?? defaultLibraryProgress(resource, fontSize);
@@ -13755,6 +13973,14 @@ function LibraryReader({
           >
             <RotateCcw size={16} />
             Restart
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onAddToStudyPlaylist}
+            type="button"
+          >
+            <NotebookPen size={16} />
+            Add to Study Playlist
           </button>
           {(progress?.bookmarks ?? []).map((bookmark) => (
             <button
@@ -14223,6 +14449,7 @@ function FullStudyScreen({
   onBookmark,
   onOpenReference,
   onListenCommentary,
+  onAddCommentaryToPlaylist,
   onAddMemory,
   onUpdateMemoryProgress,
   onRemoveMemory,
@@ -14246,6 +14473,7 @@ function FullStudyScreen({
   onBookmark: () => void;
   onOpenReference: (targetRef: string) => void;
   onListenCommentary: () => void;
+  onAddCommentaryToPlaylist: () => void;
   onAddMemory: () => void;
   onUpdateMemoryProgress: (progress: number) => void;
   onRemoveMemory: () => void;
@@ -14453,6 +14681,14 @@ function FullStudyScreen({
                 >
                   <Headphones size={14} />
                   Listen
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={onAddCommentaryToPlaylist}
+                  type="button"
+                >
+                  <ListMusic size={14} />
+                  Add to Study Playlist
                 </button>
               </div>
             </div>

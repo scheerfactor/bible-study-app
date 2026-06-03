@@ -188,6 +188,13 @@ Bible audio playlists are also local-storage first. Current local keys:
 - `fathers-business-bible-audio-playlists`
 - `fathers-business-scripture-memory`
 
+Study Playlist Builder Phase 1 also saves locally under `fathers-business-bible-audio-playlists`. Future signed-in sync should add two Supabase tables after the local workflow settles:
+
+- `user_study_playlists`: `id`, `user_id`, `name`, `created_at`, `updated_at`, `repeat_playlist`, `repeat_item`, `last_item_index`
+- `user_study_playlist_items`: `id`, `playlist_id`, `position`, `item_type`, `label`, `book`, `chapter`, `chapter_end`, `verse_start`, `verse_end`, `resource_slug`, `resource_title`
+
+Keep the future RLS pattern the same as notes/highlights/bookmarks: users can only read, create, update, and delete their own playlist rows.
+
 The app currently uses:
 
 - KJV text from `es-kjv`, which identifies its KJV JSON as public domain.
