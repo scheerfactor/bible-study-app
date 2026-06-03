@@ -52,6 +52,7 @@ type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
+type ResourceImportStatus = "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 
 type BibleVerse = {
   ref: string;
@@ -243,6 +244,29 @@ type LibraryCollection = {
   terms: string[];
   labels: string[];
   featuredAuthorIds: string[];
+};
+
+type LibraryImportCandidate = {
+  id: string;
+  title: string;
+  author: string;
+  category: string;
+  source: string;
+  status: ResourceImportStatus;
+  rightsNotes: string;
+  doctrinalNotes: string;
+  warningLabels: string[];
+  recommendedUse: string;
+};
+
+type PermissionRequest = {
+  id: string;
+  title: string;
+  author: string;
+  owner: string;
+  status: ResourceImportStatus;
+  requestedUse: string;
+  notes: string;
 };
 
 type TeachingWorkspaceSectionId = "summary" | "commentary" | "crossReferences" | "wordStudies" | "notes" | "lessonOutline";
@@ -639,6 +663,38 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     featuredAuthorIds: ["moody", "spurgeon", "ryle"],
   },
   {
+    id: "bible-dictionaries",
+    title: "Bible Dictionaries",
+    description: "Webster, Easton, Smith, and other verified reference works for quick word and background lookup.",
+    terms: ["dictionary", "webster", "easton", "smith"],
+    labels: ["Reference", "Fast lookup"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "bible-encyclopedias",
+    title: "Bible Encyclopedias",
+    description: "A planned shelf for reviewed Bible encyclopedias and background resources.",
+    terms: ["encyclopedia", "cyclopedia", "background"],
+    labels: ["Needs review", "Future growth"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "bible-handbooks",
+    title: "Bible Handbooks",
+    description: "Book introductions, outlines, and survey helps after rights and source verification.",
+    terms: ["handbook", "outline", "introduction"],
+    labels: ["Book background", "Rights first"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "bible-surveys",
+    title: "Bible Surveys",
+    description: "Old and New Testament survey resources for seeing the whole Bible in order.",
+    terms: ["survey", "old testament", "new testament"],
+    labels: ["Overview", "Teaching prep"],
+    featuredAuthorIds: [],
+  },
+  {
     id: "baptist-history",
     title: "Baptist History Collection",
     description: "Reviewed Baptist history resources and related historical works for perspective and teaching.",
@@ -653,6 +709,22 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     terms: ["prayer", "pray", "intercession"],
     labels: ["Prayer", "Listen friendly"],
     featuredAuthorIds: ["bounds"],
+  },
+  {
+    id: "evangelism",
+    title: "Evangelism Collection",
+    description: "Gospel, witness, and soul-winning resources with rights and doctrinal review.",
+    terms: ["evangelism", "gospel", "witness", "christ"],
+    labels: ["Gospel work", "Practical"],
+    featuredAuthorIds: ["moody", "spurgeon", "ryle"],
+  },
+  {
+    id: "missions",
+    title: "Missions Collection",
+    description: "Missionary biographies and missions resources for burden, faith, and church missions work.",
+    terms: ["missions", "missionary", "retrospect", "taylor"],
+    labels: ["Missions", "Biography"],
+    featuredAuthorIds: [],
   },
   {
     id: "commentary",
@@ -686,6 +758,233 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     labels: ["Teaching", "Sermon prep"],
     featuredAuthorIds: ["spurgeon", "moody", "bounds"],
   },
+  {
+    id: "spurgeon",
+    title: "Spurgeon Shelf",
+    description: "Verified Spurgeon sermons and books for devotional, Gospel, and preaching support.",
+    terms: ["spurgeon"],
+    labels: ["Devotional", "Preaching"],
+    featuredAuthorIds: ["spurgeon"],
+  },
+  {
+    id: "ironside",
+    title: "Ironside Shelf",
+    description: "Carefully reviewed H. A. Ironside samples and future imports after edition and rights review.",
+    terms: ["ironside"],
+    labels: ["Expository", "Rights first"],
+    featuredAuthorIds: ["ironside"],
+  },
+  {
+    id: "moody",
+    title: "Moody Shelf",
+    description: "D. L. Moody resources for evangelism, Christian living, and practical service.",
+    terms: ["moody"],
+    labels: ["Evangelism", "Practical"],
+    featuredAuthorIds: ["moody"],
+  },
+  {
+    id: "ryle",
+    title: "Ryle Shelf",
+    description: "J. C. Ryle resources for plain Christian living, Gospel clarity, and practical application.",
+    terms: ["ryle"],
+    labels: ["Christian living", "Use with discernment"],
+    featuredAuthorIds: ["ryle"],
+  },
+  {
+    id: "larkin",
+    title: "Larkin Shelf",
+    description: "A planned shelf for Clarence Larkin material after exact edition, chart, and rights review.",
+    terms: ["larkin"],
+    labels: ["Permission review", "Not all doctrine endorsed"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "william-kelly",
+    title: "William Kelly Shelf",
+    description: "A planned shelf for William Kelly works after source, rights, and doctrinal review.",
+    terms: ["william kelly", "kelly"],
+    labels: ["Needs review", "Use with discernment"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "darby",
+    title: "Darby Shelf",
+    description: "A planned shelf for J. N. Darby works after careful doctrinal labeling and rights review.",
+    terms: ["darby"],
+    labels: ["Use with discernment", "Historical value"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "gaebelein",
+    title: "Gaebelein Shelf",
+    description: "A planned shelf for A. C. Gaebelein resources after source and rights verification.",
+    terms: ["gaebelein"],
+    labels: ["Prophecy", "Needs review"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "fw-grant",
+    title: "F. W. Grant Shelf",
+    description: "A planned shelf for F. W. Grant works after exact edition and rights review.",
+    terms: ["f. w. grant", "f w grant", "grant"],
+    labels: ["Needs review", "Use with discernment"],
+    featuredAuthorIds: [],
+  },
+];
+
+const PERSONAL_IMPORT_FORMATS = ["TXT", "EPUB", "PDF", "DOCX"];
+
+const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
+  {
+    id: "import-webster-1828",
+    title: "Webster's 1828 Dictionary",
+    author: "Noah Webster",
+    category: "Dictionaries",
+    source: "Verified import manifest and sample/full dictionary path",
+    status: "Verified",
+    rightsNotes: "Public-domain dictionary source is documented before import.",
+    doctrinalNotes: "Language reference; review definitions in context.",
+    warningLabels: ["Reference"],
+    recommendedUse: "Best first stop for KJV word meanings and older English usage.",
+  },
+  {
+    id: "import-easton",
+    title: "Easton's Bible Dictionary",
+    author: "M. G. Easton",
+    category: "Dictionaries",
+    source: "Project Gutenberg / verified public-domain source",
+    status: "Verified",
+    rightsNotes: "Public-domain source and license notice retained in the resource metadata.",
+    doctrinalNotes: "Reference work; use for quick background, not final doctrine.",
+    warningLabels: ["Historical value"],
+    recommendedUse: "Fast people, place, and topic lookup.",
+  },
+  {
+    id: "import-smith",
+    title: "Smith's Comprehensive Dictionary of the Bible",
+    author: "William Smith",
+    category: "Dictionaries",
+    source: "Verified public-domain source",
+    status: "Verified",
+    rightsNotes: "Only verified public-domain editions are allowed.",
+    doctrinalNotes: "Reference work; compare against Scripture.",
+    warningLabels: ["Historical value"],
+    recommendedUse: "Background entries for people, places, customs, and Bible terms.",
+  },
+  {
+    id: "import-nave",
+    title: "Nave's Topical Bible",
+    author: "Orville J. Nave",
+    category: "Topical Bible",
+    source: "Verified public-domain source",
+    status: "Verified",
+    rightsNotes: "Public-domain metadata must travel with imported text.",
+    doctrinalNotes: "Topical arrangement should not replace contextual Bible reading.",
+    warningLabels: ["Reference"],
+    recommendedUse: "Trace Bible themes and topics after reading the passage.",
+  },
+  {
+    id: "import-tsk",
+    title: "Treasury of Scripture Knowledge",
+    author: "Reference editors",
+    category: "Cross References",
+    source: "Reviewed sample import path",
+    status: "Needs Review",
+    rightsNotes: "Phase 1 uses verified samples only until full source and quality review are complete.",
+    doctrinalNotes: "Cross references must resolve to valid KJV verses.",
+    warningLabels: ["Sample only"],
+    recommendedUse: "Verse-centered cross-reference guide kept secondary to the Bible text.",
+  },
+  {
+    id: "import-matthew-henry",
+    title: "Matthew Henry Commentary",
+    author: "Matthew Henry",
+    category: "Commentaries",
+    source: "Verified public-domain commentary samples",
+    status: "Verified",
+    rightsNotes: "Use only verified public-domain text with source metadata.",
+    doctrinalNotes: "Useful devotional and practical voice; secondary to Scripture.",
+    warningLabels: ["Use with discernment"],
+    recommendedUse: "Devotional comparison in Teaching Mode and Full Study.",
+  },
+  {
+    id: "import-ironside",
+    title: "H. A. Ironside Works",
+    author: "H. A. Ironside",
+    category: "Commentaries",
+    source: "Edition-specific rights review required",
+    status: "Needs Review",
+    rightsNotes: "Do not bulk import until exact editions, publication dates, renewals, and source URLs are documented.",
+    doctrinalNotes: "Strong expository value; mark perspective notes where needed.",
+    warningLabels: ["Rights first", "Use with discernment"],
+    recommendedUse: "Add carefully reviewed commentary samples before full collections.",
+  },
+  {
+    id: "import-way-of-life",
+    title: "Way of Life / David Cloud resources",
+    author: "David Cloud",
+    category: "KJV Defense",
+    source: "Publisher permission required",
+    status: "Permission Needed",
+    rightsNotes: "Do not import or publish globally without written permission.",
+    doctrinalNotes: "Review for recommended use and audience before any user-facing import.",
+    warningLabels: ["Permission needed"],
+    recommendedUse: "Permission-request placeholder only; personal-use upload path may support a user's private copy later.",
+  },
+  {
+    id: "personal-user-book",
+    title: "Personal imported book",
+    author: "Signed-in user",
+    category: "Personal Library",
+    source: "Private user upload placeholder",
+    status: "Personal Use Only",
+    rightsNotes: "Private to the signed-in user; never published globally by default.",
+    doctrinalNotes: "User-owned/private material stays separate from reviewed public resources.",
+    warningLabels: ["Private", "Personal use only"],
+    recommendedUse: "Future TXT, EPUB, PDF, or DOCX import for private study.",
+  },
+  {
+    id: "do-not-import-false-religion",
+    title: "False religion or cult literature",
+    author: "Not applicable",
+    category: "Blocked",
+    source: "Doctrinal review gate",
+    status: "Do Not Import",
+    rightsNotes: "Do not publish globally even if a file is technically available.",
+    doctrinalNotes: "Rejected by doctrinal review; not suitable for the trusted study library.",
+    warningLabels: ["Do not import"],
+    recommendedUse: "Blocked from shared Library import.",
+  },
+];
+
+const PERMISSION_REQUESTS: PermissionRequest[] = [
+  {
+    id: "permission-way-of-life",
+    title: "Way of Life / David Cloud resources",
+    author: "David Cloud",
+    owner: "Way of Life Literature",
+    status: "Permission Needed",
+    requestedUse: "Global app library import, searchable metadata, and reading/listening access.",
+    notes: "Must remain a permission-needed placeholder unless written permission exists.",
+  },
+  {
+    id: "permission-halley",
+    title: "Halley's Bible Handbook",
+    author: "Henry H. Halley",
+    owner: "Rights holder to be verified",
+    status: "Permission Needed",
+    requestedUse: "Bible handbook shelf and book introduction support.",
+    notes: "Do not import modern copyrighted editions.",
+  },
+  {
+    id: "permission-unger",
+    title: "Unger Bible Handbook",
+    author: "Merrill F. Unger",
+    owner: "Rights holder to be verified",
+    status: "Permission Needed",
+    requestedUse: "Bible handbook shelf and book introduction support.",
+    notes: "Rights review required before any user-facing import.",
+  },
 ];
 
 const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
@@ -714,6 +1013,30 @@ const REVIEWED_TEACHING_SUMMARIES: Record<string, Omit<TeachingWorkspaceSummary,
     keyVerse: "Luke 24:46",
     teachingAim: "Show that Christ's resurrection fulfills Scripture and sends His witnesses to preach repentance and remission of sins.",
     suggestedTitle: "The Scriptures Opened by the Risen Lord",
+  },
+  "Amos 1": {
+    mainTheme: "The LORD Judges the Nations",
+    keyVerse: "Amos 1:2",
+    teachingAim: "Show that God rules over all nations and holds sin accountable.",
+    suggestedTitle: "The LORD Will Roar from Zion",
+  },
+  "Amos 2": {
+    mainTheme: "Israel Accountable Before God",
+    keyVerse: "Amos 2:4",
+    teachingAim: "Show that privilege before God increases responsibility to obey His word.",
+    suggestedTitle: "When Privilege Is Despised",
+  },
+  "Amos 3": {
+    mainTheme: "Chosen and Accountable",
+    keyVerse: "Amos 3:3",
+    teachingAim: "Show that God's people must hear His word and walk with Him.",
+    suggestedTitle: "Can Two Walk Together?",
+  },
+  "Amos 4": {
+    mainTheme: "Prepare to Meet Thy God",
+    keyVerse: "Amos 4:12",
+    teachingAim: "Show the mercy of God's warnings and the seriousness of refusing correction.",
+    suggestedTitle: "Prepare to Meet Thy God",
   },
 };
 
@@ -907,6 +1230,52 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
         status: "available",
         note: "Missionary biography for lessons on calling, obedience, and faith under pressure.",
         resourceSlug: "a-retrospect",
+      },
+    ],
+  }),
+  ...chapterRecommendations("Amos", [1, 2, 3, 4], {
+    commentaryForChapter: (chapter) => ({
+      id: `amos-${chapter}-commentary-foundation`,
+      kind: "Commentary",
+      title: "Amos commentary import path",
+      author: "Reviewed public-domain commentary",
+      status: "planned",
+      note: "Commentary structure is ready for Amos 1-4; import only after rights and source review.",
+      warning: "Rights first",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `amos-${chapter}-tsk-teaching-path`,
+        kind: "Cross References",
+        title: "Treasury of Scripture Knowledge",
+        status: "sample",
+        note: "Recommended cross-reference path for Amos teaching prep. Full TSK remains limited to reviewed imports.",
+      },
+      {
+        id: `amos-${chapter}-easton-available-resource`,
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Use for Amos, Tekoa, Bethel, Israel, Judah, and related place/background lookups.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: `amos-${chapter}-nave-available-resource`,
+        kind: "Library Resource",
+        title: "Nave's Topical Bible",
+        author: "Orville J. Nave",
+        status: "available",
+        note: "Trace topics such as judgment, justice, repentance, and the prophets.",
+        resourceSlug: "naves-topical-bible",
+      },
+      {
+        id: `amos-${chapter}-handbook`,
+        kind: "Bible Handbook",
+        title: "Public-domain Bible handbook for Amos",
+        status: "rights review",
+        note: "Reserved for a verified handbook/survey source before import.",
+        warning: "Do not import unclear editions",
       },
     ],
   }),
@@ -1201,6 +1570,69 @@ const bookIntroductions: BookIntroduction[] = [
     sourceNotes: [
       "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
       "Future direct handbook quotations should be imported only after source and rights verification.",
+    ],
+  },
+  {
+    book: "Amos",
+    overview: {
+      author: "Amos of Tekoa",
+      date: "During the days of Uzziah king of Judah and Jeroboam the son of Joash king of Israel.",
+      audience: "Israel, Judah, and surrounding nations called to hear the LORD's judgment and warnings.",
+      theme: "God's righteous judgment, Israel's accountability, and the call to seek the LORD.",
+      keyVerse: "Amos 4:12",
+      purpose:
+        "To show that outward prosperity cannot cover sin, that God judges nations and His people righteously, and that His warnings call men to repentance.",
+    },
+    outline: [
+      { title: "Judgment on the nations", reference: "Amos 1-2", summary: "The LORD announces judgment on surrounding nations and then on Judah and Israel." },
+      { title: "Messages against Israel", reference: "Amos 3-6", summary: "Israel's privilege, oppression, false worship, and refusal to return are exposed." },
+      { title: "Visions of judgment", reference: "Amos 7-9:10", summary: "Amos sees judgment coming and faces opposition at Bethel." },
+      { title: "Restoration promised", reference: "Amos 9:11-15", summary: "The fallen tabernacle of David is raised up and blessing is promised." },
+    ],
+    keyPeople: ["Amos", "Uzziah", "Jeroboam II", "Israel"],
+    keyPlaces: ["Tekoa", "Bethel", "Samaria", "Damascus", "Gaza", "Tyre", "Edom", "Ammon", "Moab"],
+    christInTheBook:
+      "Amos points to Christ as the righteous Judge and the One connected with the promised raising up of the tabernacle of David, which is later cited in Acts 15.",
+    memoryVerses: ["Amos 3:3", "Amos 4:12", "Amos 5:14", "Amos 9:11"],
+    recommendedResources: [
+      {
+        id: "amos-intro-tsk",
+        kind: "Cross References",
+        title: "Treasury of Scripture Knowledge",
+        status: "sample",
+        note: "Recommended cross-reference path for Amos teaching prep. Full import waits for rights and quality review.",
+      },
+      {
+        id: "amos-intro-easton",
+        kind: "Dictionary",
+        title: "Easton's Bible Dictionary",
+        author: "M. G. Easton",
+        status: "available",
+        note: "Good quick lookup for Amos, Tekoa, Bethel, Israel, and surrounding nations.",
+        resourceSlug: "eastons-bible-dictionary",
+      },
+      {
+        id: "amos-intro-nave",
+        kind: "Library Resource",
+        title: "Nave's Topical Bible",
+        author: "Orville J. Nave",
+        status: "available",
+        note: "Use for tracing judgment, righteousness, repentance, and prophetic themes.",
+        resourceSlug: "naves-topical-bible",
+      },
+      {
+        id: "amos-intro-commentary",
+        kind: "Commentary",
+        title: "Amos commentary import path",
+        author: "Reviewed public-domain commentary",
+        status: "planned",
+        note: "Commentary entries for Amos 1-4 are prepared structurally but not imported until rights review is complete.",
+        warning: "Rights first",
+      },
+    ],
+    sourceNotes: [
+      "Reviewed summary based on the KJV book content and public-domain handbook/survey style.",
+      "Future handbook or commentary imports for Amos must carry exact source and rights metadata.",
     ],
   },
   {
@@ -2274,6 +2706,46 @@ const chapterConnections: ChapterConnections[] = [
     typeIds: [],
     prophecyIds: ["zechariah-12"],
     themes: ["Jerusalem", "The pierced One", "Mourning", "Deliverance"],
+  },
+  {
+    book: "Amos",
+    chapter: 1,
+    peopleIds: [],
+    placeIds: ["jerusalem"],
+    timelineIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Judgment", "Nations", "Accountability", "The LORD speaks"],
+  },
+  {
+    book: "Amos",
+    chapter: 2,
+    peopleIds: [],
+    placeIds: [],
+    timelineIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Judah", "Israel", "Privilege", "Judgment"],
+  },
+  {
+    book: "Amos",
+    chapter: 3,
+    peopleIds: [],
+    placeIds: [],
+    timelineIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Chosen people", "Accountability", "Hearing God", "Walking with God"],
+  },
+  {
+    book: "Amos",
+    chapter: 4,
+    peopleIds: [],
+    placeIds: [],
+    timelineIds: [],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Warnings", "Refusal to return", "Correction", "Prepare to meet God"],
   },
   {
     book: "John",
@@ -4408,6 +4880,28 @@ export default function Home() {
     startBibleListening(verses, `${book}`, `bible-book-${book}`, repeatBook);
   }
 
+  function listenCurrentChapterCommentary() {
+    if (!chapterCommentaryEntries.length) {
+      setSyncMessage(`${book} ${chapter} has no reviewed commentary entries ready yet.`);
+      return;
+    }
+
+    const chunks = chapterCommentaryEntries.map((entry) => (
+      `${entry.author}. ${entry.resource_title}. ${entry.reference ?? `${entry.book} ${entry.chapter}`}. ${entry.entry_text}`
+    ));
+    startSpeech(
+      `commentary-${book}-${chapter}`,
+      `${book} ${chapter} commentary`,
+      chunks.join(" "),
+      0,
+      undefined,
+      {
+        chunks,
+        verseRefs: chunks.map(() => null),
+      },
+    );
+  }
+
   function createBiblePlaylist() {
     const trimmed = playlistName.trim() || `${book} ${chapter} Listening`;
     const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
@@ -5218,6 +5712,7 @@ export default function Home() {
                 onListenFromCurrentVerse={listenFromCurrentVerse}
                 onListenRange={listenSelectedRange}
                 onListenWholeBook={listenWholeBook}
+                onListenCommentary={listenCurrentChapterCommentary}
                 onStopListening={() => stopSpeech()}
                 onListenRangeStartChange={setListenRangeStart}
                 onListenRangeEndChange={setListenRangeEnd}
@@ -5306,6 +5801,7 @@ export default function Home() {
               <LibraryScreen
                 view={libraryView}
                 resources={libraryResources}
+                signedIn={Boolean(user)}
                 filteredResources={filteredLibraryResources}
                 categories={libraryCategories}
                 activeCategory={libraryCategory}
@@ -5410,6 +5906,7 @@ export default function Home() {
                 onHighlight={() => toggleHighlight(fullStudyVerse.ref)}
                 onBookmark={() => toggleBookmark(fullStudyVerse.ref)}
                 onOpenReference={openReference}
+                onListenCommentary={listenCurrentChapterCommentary}
                 onAddMemory={() => addMemoryVerse(fullStudyVerse.ref)}
                 onUpdateMemoryProgress={(progress) => updateMemoryProgress(fullStudyVerse.ref, progress)}
                 onRemoveMemory={() => removeMemoryVerse(fullStudyVerse.ref)}
@@ -6357,6 +6854,7 @@ function BibleReader({
   onListenFromCurrentVerse,
   onListenRange,
   onListenWholeBook,
+  onListenCommentary,
   onStopListening,
   onListenRangeStartChange,
   onListenRangeEndChange,
@@ -6445,6 +6943,7 @@ function BibleReader({
   onListenFromCurrentVerse: () => void;
   onListenRange: () => void;
   onListenWholeBook: () => void;
+  onListenCommentary: () => void;
   onStopListening: () => void;
   onListenRangeStartChange: (verse: number) => void;
   onListenRangeEndChange: (verse: number) => void;
@@ -6861,6 +7360,7 @@ function BibleReader({
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
         onOpenBookIntroduction={onOpenBookIntroduction}
         onOpenLibraryResource={onOpenLibraryResource}
+        onListenCommentary={onListenCommentary}
         onOpenReference={onOpenReference}
         onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
@@ -7198,6 +7698,7 @@ function ChapterStudyWorkflow({
   onLookupWord,
   onOpenBookIntroduction,
   onOpenLibraryResource,
+  onListenCommentary,
   onOpenReference,
   onOpenPersonStudy,
   onRemoveMemoryVerse,
@@ -7222,6 +7723,7 @@ function ChapterStudyWorkflow({
   onLookupWord: (word: string) => void;
   onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
+  onListenCommentary: () => void;
   onOpenReference: (targetRef: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -7230,6 +7732,7 @@ function ChapterStudyWorkflow({
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
   const [exportMessage, setExportMessage] = useState("");
+  const [commentaryAuthorFilter, setCommentaryAuthorFilter] = useState("All");
   const [teacherNotesByChapter, setTeacherNotesByChapter] = useState<Record<string, TeacherNotesDraft>>(() => {
     if (typeof window === "undefined") return {};
     try {
@@ -7274,6 +7777,15 @@ function ChapterStudyWorkflow({
   const teachingSummary = useMemo(() => teachingWorkspaceSummary(exportData), [exportData]);
   const lessonOutlineSections = useMemo(() => buildLessonOutline(exportData, teacherNotesDraft), [exportData, teacherNotesDraft]);
   const lessonOutlineMarkdown = useMemo(() => buildLessonOutlineMarkdown(exportData, teacherNotesDraft), [exportData, teacherNotesDraft]);
+  const commentaryAuthorOptions = useMemo(
+    () => ["All", ...Array.from(new Set(chapterCommentaryEntries.map((entry) => entry.author))).sort()],
+    [chapterCommentaryEntries],
+  );
+  const effectiveCommentaryAuthorFilter = commentaryAuthorOptions.includes(commentaryAuthorFilter) ? commentaryAuthorFilter : "All";
+  const displayedCommentaryEntries = effectiveCommentaryAuthorFilter === "All"
+    ? chapterCommentaryEntries
+    : chapterCommentaryEntries.filter((entry) => entry.author === effectiveCommentaryAuthorFilter);
+  const isAmosTeachingPrep = selectedVerse.book === "Amos" && selectedVerse.chapter >= 1 && selectedVerse.chapter <= 4;
   const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
 
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
@@ -7375,6 +7887,46 @@ function ChapterStudyWorkflow({
           </button>
         </div>
       </div>
+
+      {isAmosTeachingPrep && (
+        <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Amos 1-4 Teaching Prep</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Bible reading, listening, and reviewed resources first</h3>
+              <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+                This test workflow keeps Amos centered on the KJV text while commentary and handbook content wait for verified source imports.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+                onClick={onOpenBookIntroduction}
+                type="button"
+              >
+                <BookOpen size={16} />
+                Amos Intro
+              </button>
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50"
+                disabled={!chapterCommentaryEntries.length}
+                onClick={onListenCommentary}
+                type="button"
+              >
+                <Headphones size={16} />
+                Listen Commentary
+              </button>
+            </div>
+          </div>
+          <div className="mt-4 grid gap-2 md:grid-cols-4">
+            {["Read/listen Amos 1-4", "Commentary playlist placeholder", "Book intro ready", "Teaching export ready"].map((item) => (
+              <div key={`amos-prep-${item}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </article>
+      )}
 
       <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -8003,9 +8555,36 @@ function ChapterStudyWorkflow({
           )}
           {teachingVisibility.commentary && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Collapsed by default so Scripture and your outline stay primary.</p>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                {commentaryAuthorOptions.length > 2 && (
+                  <select
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)] outline-none"
+                    value={effectiveCommentaryAuthorFilter}
+                    onChange={(event) => setCommentaryAuthorFilter(event.target.value)}
+                  >
+                    {commentaryAuthorOptions.map((author) => (
+                      <option key={`commentary-author-${author}`} value={author}>{author}</option>
+                    ))}
+                  </select>
+                )}
+                <button
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50"
+                  disabled={!chapterCommentaryEntries.length}
+                  onClick={onListenCommentary}
+                  type="button"
+                >
+                  <Headphones size={14} />
+                  Listen
+                </button>
+              </div>
+            </div>
             <div className="mt-2 space-y-2">
-              {chapterCommentaryEntries.length ? chapterCommentaryEntries.map((entry) => (
+              {displayedCommentaryEntries.length ? displayedCommentaryEntries.map((entry) => (
                 <details key={`teaching-commentary-${entry.id}`} className="group rounded-xl bg-[var(--paper)] px-3 py-2">
                   <summary className="cursor-pointer list-none">
                     <div className="flex flex-wrap items-start justify-between gap-2">
@@ -8624,6 +9203,7 @@ function libraryCollectionById(id: string) {
 function LibraryScreen({
   view,
   resources,
+  signedIn,
   filteredResources,
   categories,
   activeCategory,
@@ -8679,6 +9259,7 @@ function LibraryScreen({
 }: {
   view: LibraryView;
   resources: LibraryResource[];
+  signedIn: boolean;
   filteredResources: LibraryResource[];
   categories: string[];
   activeCategory: string;
@@ -8861,6 +9442,28 @@ function LibraryScreen({
     { title: "Missions", resources: resources.filter((resource) => libraryResourceMatches(resource, ["missions", "missionary", "mission"])) },
     { title: "Preaching & Teaching", resources: resources.filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "devotional"])) },
   ].filter((shelf) => shelf.resources.length);
+  const storefrontCollectionIds = [
+    "commentary",
+    "kjv-defense",
+    "baptist-history",
+    "prayer",
+    "evangelism",
+    "missions",
+    "bible-dictionaries",
+    "bible-encyclopedias",
+    "bible-handbooks",
+    "bible-surveys",
+    "spurgeon",
+    "ironside",
+    "moody",
+    "ryle",
+    "larkin",
+    "william-kelly",
+    "darby",
+    "gaebelein",
+    "fw-grant",
+    "preaching-teaching",
+  ];
 
   return (
     <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
@@ -8888,6 +9491,8 @@ function LibraryScreen({
         <LibraryStat label="Reading streak" value={stats.readingStreak} />
         <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
+
+      <LibraryImportDashboard signedIn={signedIn} />
 
       {libraryListeningQueue.length > 0 && (
         <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -8935,7 +9540,7 @@ function LibraryScreen({
       </LibraryShelf>
 
       <LibraryShelf title="Featured Collections" horizontal>
-        {LIBRARY_COLLECTIONS.slice(0, 6).map((collection) => (
+        {LIBRARY_COLLECTIONS.slice(0, 10).map((collection) => (
           <LibraryCollectionCard
             key={`featured-collection-${collection.id}`}
             collection={collection}
@@ -9012,7 +9617,7 @@ function LibraryScreen({
           ))}
       </LibraryShelf>
 
-      {["new-believer", "baptist-history", "prayer", "kjv-defense"].map((collectionId) => {
+      {storefrontCollectionIds.map((collectionId) => {
         const collection = libraryCollectionById(collectionId);
         const collectionResources = resourcesForCollection(resources, collection).slice(0, 4);
         return (
@@ -9190,6 +9795,141 @@ function LibraryScreen({
       </LibraryShelf>
     </div>
   );
+}
+
+function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
+  const statusOrder: ResourceImportStatus[] = ["Verified", "Needs Review", "Permission Needed", "Personal Use Only", "Do Not Import"];
+  const statusCounts = statusOrder.map((status) => ({
+    status,
+    count: LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.status === status).length,
+  }));
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library Import Dashboard</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Grow the library without losing trust</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Public resources must carry rights notes, doctrinal notes, warnings, and recommended use before they become part of the shared Library.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+          No unreviewed books are published
+        </span>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-5">
+        {statusCounts.map(({ status, count }) => (
+          <div key={`import-status-${status}`} className={`rounded-2xl border px-3 py-3 ${importStatusTone(status)}`}>
+            <p className="text-xl font-semibold">{count}</p>
+            <p className="mt-1 text-xs font-semibold">{status}</p>
+          </div>
+        ))}
+      </div>
+
+      <details className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4" open>
+        <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--green)]">Resource review queue</summary>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          {LIBRARY_IMPORT_CANDIDATES.map((candidate) => (
+            <article key={candidate.id} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">{candidate.title}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                    {candidate.author} · {candidate.category}
+                  </p>
+                </div>
+                <span className={`rounded-full px-3 py-1 text-xs font-semibold ${importStatusPill(candidate.status)}`}>
+                  {candidate.status}
+                </span>
+              </div>
+              <div className="mt-3 grid gap-2 text-xs leading-5 text-[var(--muted)]">
+                <p><span className="font-semibold text-[var(--ink)]">Source:</span> {candidate.source}</p>
+                <p><span className="font-semibold text-[var(--ink)]">Rights:</span> {candidate.rightsNotes}</p>
+                <p><span className="font-semibold text-[var(--ink)]">Doctrinal notes:</span> {candidate.doctrinalNotes}</p>
+                <p><span className="font-semibold text-[var(--ink)]">Recommended use:</span> {candidate.recommendedUse}</p>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {candidate.warningLabels.map((label) => (
+                  <span key={`${candidate.id}-${label}`} className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </details>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Personal Book Import</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Placeholder only. Future uploads stay private, personal-use only, and visible only to the signed-in user.
+              </p>
+            </div>
+            <span className={`rounded-full px-3 py-1 text-xs font-semibold ${signedIn ? "bg-[var(--green)] text-white" : "bg-white text-[var(--muted)]"}`}>
+              {signedIn ? "Account ready" : "Sign in required"}
+            </span>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {PERSONAL_IMPORT_FORMATS.map((format) => (
+              <span key={`personal-format-${format}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {format}
+              </span>
+            ))}
+          </div>
+          <button
+            className="mt-4 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+            disabled
+            type="button"
+          >
+            Upload placeholder
+          </button>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Permission Request Tracker</p>
+          <div className="mt-3 space-y-2">
+            {PERMISSION_REQUESTS.map((request) => (
+              <div key={request.id} className="rounded-xl bg-white px-3 py-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{request.title}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{request.owner}</p>
+                  </div>
+                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${importStatusPill(request.status)}`}>
+                    {request.status}
+                  </span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{request.requestedUse}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{request.notes}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function importStatusTone(status: ResourceImportStatus) {
+  if (status === "Verified") return "border-emerald-200 bg-emerald-50 text-emerald-800";
+  if (status === "Needs Review") return "border-amber-200 bg-amber-50 text-amber-800";
+  if (status === "Permission Needed") return "border-sky-200 bg-sky-50 text-sky-800";
+  if (status === "Personal Use Only") return "border-violet-200 bg-violet-50 text-violet-800";
+  return "border-red-200 bg-red-50 text-red-800";
+}
+
+function importStatusPill(status: ResourceImportStatus) {
+  if (status === "Verified") return "bg-emerald-50 text-emerald-800";
+  if (status === "Needs Review") return "bg-amber-50 text-amber-800";
+  if (status === "Permission Needed") return "bg-sky-50 text-sky-800";
+  if (status === "Personal Use Only") return "bg-violet-50 text-violet-800";
+  return "bg-red-50 text-red-800";
 }
 
 function LibraryAuthorScreen({
@@ -10197,6 +10937,7 @@ function FullStudyScreen({
   onHighlight,
   onBookmark,
   onOpenReference,
+  onListenCommentary,
   onAddMemory,
   onUpdateMemoryProgress,
   onRemoveMemory,
@@ -10219,13 +10960,20 @@ function FullStudyScreen({
   onHighlight: () => void;
   onBookmark: () => void;
   onOpenReference: (targetRef: string) => void;
+  onListenCommentary: () => void;
   onAddMemory: () => void;
   onUpdateMemoryProgress: (progress: number) => void;
   onRemoveMemory: () => void;
 }) {
+  const [commentaryAuthorFilter, setCommentaryAuthorFilter] = useState("All");
   const definitions = keyWords
     .map((word) => findDictionaryEntry(word))
     .filter((entry) => entry.found);
+  const commentaryAuthorOptions = ["All", ...Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort()];
+  const effectiveCommentaryAuthorFilter = commentaryAuthorOptions.includes(commentaryAuthorFilter) ? commentaryAuthorFilter : "All";
+  const displayedCommentaryEntries = effectiveCommentaryAuthorFilter === "All"
+    ? commentaryEntries
+    : commentaryEntries.filter((entry) => entry.author === effectiveCommentaryAuthorFilter);
   const firstDefinition = definitions[0] ?? null;
   const sections = [
     { id: "full-study-verse", label: "Verse" },
@@ -10395,7 +11143,34 @@ function FullStudyScreen({
       <StudySection id="full-study-commentary" title="Commentary">
         {commentaryEntries.length ? (
           <div className="space-y-3">
-            {commentaryEntries.map((entry) => (
+            <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--green)]">Commentary comparison</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Collapsed entries keep the verse study readable.</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {commentaryAuthorOptions.length > 2 && (
+                  <select
+                    className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] outline-none"
+                    value={effectiveCommentaryAuthorFilter}
+                    onChange={(event) => setCommentaryAuthorFilter(event.target.value)}
+                  >
+                    {commentaryAuthorOptions.map((author) => (
+                      <option key={`full-commentary-author-${author}`} value={author}>{author}</option>
+                    ))}
+                  </select>
+                )}
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={onListenCommentary}
+                  type="button"
+                >
+                  <Headphones size={14} />
+                  Listen
+                </button>
+              </div>
+            </div>
+            {displayedCommentaryEntries.map((entry) => (
               <CommentaryDetails key={`full-commentary-${entry.id}`} entry={entry} />
             ))}
           </div>
