@@ -9981,6 +9981,7 @@ function libraryReadingMinutes(resource: LibraryResource) {
 
 function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
   const name = voice.name.toLowerCase();
+  const lang = voice.lang.toLowerCase();
   const noveltyNames = [
     "albert",
     "bad news",
@@ -9991,7 +9992,10 @@ function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
     "cellos",
     "deranged",
     "good news",
+    "grandma",
+    "grandpa",
     "hysterical",
+    "jester",
     "junior",
     "organ",
     "princess",
@@ -10001,7 +10005,8 @@ function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
     "whisper",
     "zarvox",
   ];
-  return !noveltyNames.some((novelty) => name.includes(novelty));
+  const isEnglish = !lang || lang.startsWith("en");
+  return isEnglish && speechVoiceCategory(voice) !== "Other" && !noveltyNames.some((novelty) => name.includes(novelty));
 }
 
 function speechVoiceCategory(voice: SpeechSynthesisVoice) {
@@ -10021,7 +10026,7 @@ function voiceDisplayName(voice: SpeechSynthesisVoice) {
 }
 
 function groupedSpeechVoices(voices: SpeechSynthesisVoice[]) {
-  return (["Male", "Female", "Other"] as const).map((category) => ({
+  return (["Male", "Female"] as const).map((category) => ({
     category,
     voices: voices.filter((voice) => speechVoiceCategory(voice) === category),
   })).filter((group) => group.voices.length);
