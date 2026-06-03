@@ -74,6 +74,23 @@ npm run commentary:promote -- data/commentary/staging/jamieson-fausset-brown-com
 
 Rows still marked `Needs Review`, `Permission Needed`, or `Do Not Import` remain private to the review queue.
 
+## Create A Reviewed Batch
+
+Use reviewed batches for 25-50 chapters at a time:
+
+```bash
+npm run commentary:review-batch -- --refs="John 1-5,Romans 1-8,Amos 1-9,Luke 24,Psalms 1-5,Revelation 1-3" --prune-public-conflicts
+```
+
+The batch tool:
+
+- Selects chapters from a staged commentary file.
+- Requires the batch to stay in the configured chapter range.
+- Marks only the reviewed output rows `Verified`.
+- Preserves source URL, author, title, rights notes, and checksums.
+- Removes older conflicting public sample entries when `--prune-public-conflicts` is used.
+- Writes a public import file only for the reviewed batch.
+
 ## Validation
 
 Run:
@@ -99,6 +116,34 @@ Prepared output:
 - `data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json`
 
 Current JFB staging result:
+
+- 1,189 entries
+- 66 Bible books
+- 1,189 Bible chapters
+- 0 missing chapters
+- 0 duplicate entries
+- Review status: `Needs Review`
+
+Current JFB public promotion:
+
+- `data/imports/jfb-reviewed-batch-1-commentary.json`
+- 31 verified public chapters
+- John 1-5
+- Romans 1-8
+- Amos 1-9
+- Luke 24
+- Psalms 1-5
+- Revelation 1-3
+
+## Matthew Henry Full Parser
+
+Matthew Henry now has a full CCEL volume-archive parser:
+
+- Manifest: `data/commentary/matthew-henry/source-manifest.json`
+- Staging file: `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json`
+- Coverage report: `data/commentary/reports/matthew-henry-complete-commentary-coverage.json`
+
+Current Matthew Henry staging result:
 
 - 1,189 entries
 - 66 Bible books

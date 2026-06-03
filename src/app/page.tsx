@@ -48,6 +48,9 @@ import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
+import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
+import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
+import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -174,6 +177,15 @@ type CommentaryCoverageAuthor = {
   status: ResourceImportStatus;
 };
 
+type CommentaryStagingSummary = {
+  author: string;
+  resourceTitle: string;
+  totalStaged: number;
+  verifiedPublic: number;
+  pendingReview: number;
+  booksCovered: number;
+};
+
 type CommentaryCoverageBook = {
   book: string;
   coveredChapters: number[];
@@ -192,6 +204,7 @@ type CommentaryCoverage = {
   missingBooks: string[];
   bookCoverage: CommentaryCoverageBook[];
   authorCoverage: CommentaryCoverageAuthor[];
+  stagingSummaries: CommentaryStagingSummary[];
   candidateAuthors: CommentaryExpansionCandidate[];
 };
 
@@ -868,17 +881,17 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     id: "jfb",
     name: "Jamieson-Fausset-Brown",
     years: "19th century",
-    shortLabel: "Critical and explanatory commentary candidate",
-    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB. It remains a Phase 3 candidate until exact public-domain source and text quality review are complete.",
+    shortLabel: "Critical and explanatory commentary",
+    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB. A first reviewed public batch is available, while the complete staged set remains hidden until chapter review is finished.",
     timeline: [
       { year: "19th c.", event: "Prepared the Commentary Critical and Explanatory on the Whole Bible." },
-      { year: "Future", event: "Import only after rights and source verification." },
+      { year: "2026", event: "First reviewed batch promoted for John, Romans, Amos, Luke 24, Psalms 1-5, and Revelation 1-3." },
     ],
-    commentary: "Candidate for compact author comparison. Keep it collapsed by default and secondary to Scripture.",
-    quotes: ["Needs source verification before import.", "Useful only when metadata and rights are clear."],
+    commentary: "Compact author comparison. Keep it collapsed by default and secondary to Scripture.",
+    quotes: ["Reviewed batches only.", "Use after the KJV text and primary study helps."],
     relatedAuthorIds: ["matthew-henry", "albert-barnes", "adam-clarke"],
-    recommendedReadingOrder: ["Rights review", "Sample chapter import", "Quality review", "Coverage expansion"],
-    subjects: ["Commentary", "Needs Review"],
+    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "JFB reviewed batch"],
+    subjects: ["Commentary", "Reviewed Batch"],
   },
   {
     id: "john-wesley",
@@ -3051,6 +3064,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
+  ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
@@ -9483,8 +9497,36 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       if (b.chaptersCovered !== a.chaptersCovered) return b.chaptersCovered - a.chaptersCovered;
       return a.author.localeCompare(b.author);
     }),
+    stagingSummaries: buildCommentaryStagingSummaries(entries),
     candidateAuthors: COMMENTARY_EXPANSION_CANDIDATES,
   };
+}
+
+function buildCommentaryStagingSummaries(entries: CommentaryEntry[]): CommentaryStagingSummary[] {
+  const reports = [
+    jfbCompleteCoverageReport,
+    matthewHenryCompleteCoverageReport,
+  ] as Array<{
+    author: string;
+    resource_title: string;
+    total_entries: number;
+    books_covered: number;
+  }>;
+
+  return reports.map((report) => {
+    const verifiedPublic = entries.filter((entry) => (
+      entry.author === report.author && entry.resource_title === report.resource_title
+    )).length;
+
+    return {
+      author: report.author,
+      resourceTitle: report.resource_title,
+      totalStaged: report.total_entries,
+      verifiedPublic,
+      pendingReview: Math.max(0, report.total_entries - verifiedPublic),
+      booksCovered: report.books_covered,
+    };
+  });
 }
 
 function teachingWorkspaceSummary(data: TeachingNotesExportData): TeachingWorkspaceSummary {
@@ -13455,6 +13497,34 @@ function CommentaryCoverageDashboard({
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
         <LibraryStat label="Duplicates" value={String(coverage.duplicateEntries)} />
         <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-3">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Public commentary</p>
+          <p className="mt-2 text-3xl font-semibold text-[var(--green)]">{coverage.totalEntries}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Verified entries visible in Study, Full Study, Teaching Mode, and exports.</p>
+        </article>
+        {coverage.stagingSummaries.map((summary) => (
+          <article key={`commentary-staging-${summary.author}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{summary.author}</p>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              <div>
+                <p className="text-xl font-semibold text-[var(--green)]">{summary.totalStaged}</p>
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Staged</p>
+              </div>
+              <div>
+                <p className="text-xl font-semibold text-[var(--green)]">{summary.verifiedPublic}</p>
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Verified</p>
+              </div>
+              <div>
+                <p className="text-xl font-semibold text-amber-700">{summary.pendingReview}</p>
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Review</p>
+              </div>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{summary.booksCovered} books staged. Unverified rows stay hidden.</p>
+          </article>
+        ))}
       </div>
 
       <div className="mt-4 grid gap-3 xl:grid-cols-[1.2fr_1fr]">

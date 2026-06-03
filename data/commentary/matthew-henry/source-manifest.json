@@ -1,16 +1,54 @@
 {
+  "id": "matthew-henry-complete-ccel-volume-archives",
   "title": "Matthew Henry's Commentary on the Whole Bible",
   "author": "Matthew Henry",
   "year": "1706-1721",
   "category": "Commentaries",
-  "source_url": "https://www.ccel.org/ccel/henry/mhc.html",
-  "secondary_source_url": "https://en.wikisource.org/wiki/Matthew_Henry%27s_Commentary_on_the_Whole_Bible",
-  "public_domain_status": "Public domain. The work was published in the 1700s, and Matthew Henry died in 1714.",
-  "commercial_use_status": "The underlying work is public domain; verify terms for any specific digital transcription or site formatting before commercial redistribution.",
+  "resource_title": "Matthew Henry's Commentary on the Whole Bible",
+  "source_title": "Matthew Henry's Commentary on the Whole Bible",
+  "source_url": "https://www.ccel.org/h/henry/mhc2/MHC00000.HTM",
+  "secondary_source_url": "https://www.ccel.org/ccel/henry/mhc.html",
+  "parser": "matthew-henry-volume-archives",
+  "volume_archives": [
+    {
+      "volume": 1,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V1.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V1.ZIP"
+    },
+    {
+      "volume": 2,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V2.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V2.ZIP"
+    },
+    {
+      "volume": 3,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V3.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V3.ZIP"
+    },
+    {
+      "volume": 4,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V4.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V4.ZIP"
+    },
+    {
+      "volume": 5,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V5.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V5.ZIP"
+    },
+    {
+      "volume": 6,
+      "archive_path": "data/commentary/matthew-henry/source/MHC-V6.ZIP",
+      "download_url": "https://www.ccel.org/h/henry/mhc2/MHC-V6.ZIP"
+    }
+  ],
+  "public_domain_status": "Public domain. The old CCEL archive table of contents states: Public domain text. No rights reserved. May be distributed freely. The original work was published 1706-1721, and Matthew Henry died in 1714.",
+  "commercial_use_status": "The underlying work and old CCEL public-domain archive text are rights-safe for this staged parser; avoid modern edited editions until separately reviewed.",
   "attribution_required": false,
-  "rights_basis": "Wikisource marks the work public domain because it was published before January 1, 1931 and the author died at least 100 years ago. CCEL hosts the six-volume work index and downloadable formats.",
-  "doctrinal_review_status": "reviewed for Phase 1 use with discernment",
-  "recommended_use": "Use after reading the KJV text, checking Webster's 1828, TSK cross references, and curated people/place/type connections.",
-  "notes": "Phase 1 uses curated summary entries for selected books and verified CCEL chapter text for Amos 1-9. Do not import modern edited editions without a separate rights review.",
-  "import_status": "phase-1-amos-expanded"
+  "rights_basis": "Source uses the old CCEL Matthew Henry HTML archives, which identify the text as public domain with no rights reserved. Preserve CCEL source URL and do not mix with modern edited editions.",
+  "doctrinal_review_status": "Needs Review for full-set staging; selected Phase 1 entries are already public verified.",
+  "recommended_use": "Use after the KJV text, Webster's 1828, TSK cross references, and curated people/place/type connections. Keep collapsed by default so commentary remains secondary.",
+  "review_status": "Needs Review",
+  "import_scope": "Complete Matthew Henry archive staged by Bible book and chapter. Entries must be reviewed before public promotion.",
+  "notes": "This manifest starts the full Matthew Henry parser. Staged entries are not imported into the public app until reviewed and promoted.",
+  "import_status": "full-parser-staging"
 }

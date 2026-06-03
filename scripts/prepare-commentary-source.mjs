@@ -38,6 +38,8 @@ let entries;
 
 if (manifest.parser === "jfb-html-archive") {
   entries = await prepareJfbHtmlArchive(manifest);
+} else if (manifest.parser === "matthew-henry-volume-archives") {
+  entries = await prepareMatthewHenryVolumeArchives(manifest);
 } else if (manifest.parser === "chapter-heading-txt" || manifest.parser === "chapter-heading-html") {
   entries = await prepareChapterHeadingFiles(manifest);
 } else {
@@ -112,6 +114,49 @@ async function prepareJfbHtmlArchive(sourceManifest) {
   }
 }
 
+async function prepareMatthewHenryVolumeArchives(sourceManifest) {
+  const archives = sourceManifest.volume_archives ?? [];
+  if (!archives.length) throw new Error("Matthew Henry parser requires volume_archives in the source manifest.");
+
+  for (const archive of archives) {
+    await ensureArchive(archive.download_url, archive.archive_path);
+  }
+
+  const tempDir = await mkdtemp(path.join(os.tmpdir(), "commentary-mhc-"));
+  try {
+    for (const archive of archives) {
+      await execFileAsync("unzip", ["-oq", archive.archive_path, "-d", tempDir]);
+    }
+
+    const stagedEntries = [];
+    for (const book of bookOrder) {
+      const fileNumber = bookFileNumbers[book];
+      const expectedChapters = chapterCounts.get(book) ?? 0;
+
+      for (let chapter = 1; chapter <= expectedChapters; chapter += 1) {
+        const chapterFile = `MHC${fileNumber}${String(chapter).padStart(3, "0")}.HTM`;
+        const chapterPath = path.join(tempDir, chapterFile);
+        const html = await readFile(chapterPath, "utf8");
+        const entryText = normalizeText(htmlToText(chapterBody(html)).replace(new RegExp(`^${book}\\.?\\s+CHAP\\.?\\s+`, "i"), ""));
+        if (!entryText) continue;
+
+        stagedEntries.push(buildEntry({
+          sourceManifest,
+          book,
+          chapter,
+          sourceFile: chapterFile,
+          sourceUrl: `https://www.ccel.org/h/henry/mhc2/${chapterFile}`,
+          entryText,
+        }));
+      }
+    }
+
+    return stagedEntries;
+  } finally {
+    await rm(tempDir, { recursive: true, force: true });
+  }
+}
+
 async function prepareChapterHeadingFiles(sourceManifest) {
   const files = sourceManifest.source_files ?? [];
   const stagedEntries = [];
@@ -160,6 +205,14 @@ function singleChapterBody(html) {
   const start = contentStart >= 0 ? contentStart : 0;
   const end = footerStart > start ? footerStart : html.length;
   return html.slice(start, end);
+}
+
+function chapterBody(html) {
+  const beginBody = html.search(/<!--\s*\(Begin Body\)\s*-->/i);
+  const endBody = html.search(/<!--\s*\(End Body\)\s*-->/i);
+  const start = beginBody >= 0 ? beginBody : html.search(/<BODY\b[^>]*>/i);
+  const end = endBody > start ? endBody : html.length;
+  return html.slice(start >= 0 ? start : 0, end);
 }
 
 function splitByBookChapterHeading(text) {

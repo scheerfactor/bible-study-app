@@ -104,12 +104,36 @@ function validateRows(filePath, rows) {
 const filePaths = process.argv[2] ? [process.argv[2]] : await defaultCommentaryFiles();
 let failed = false;
 let totalRows = 0;
+const publicImportKeys = new Map();
 
 for (const filePath of filePaths) {
   const rows = await readJsonOrCsv(filePath);
   const result = validateRows(filePath, rows);
   totalRows += result.rowCount;
   if (!result.ok) failed = true;
+
+  if (filePath.startsWith("data/imports/")) {
+    rows.forEach((row, index) => {
+      const key = [
+        row.book,
+        row.chapter,
+        row.verse_start,
+        row.verse_end,
+        row.author,
+        row.resource_title,
+      ].join("|");
+      const existing = publicImportKeys.get(key);
+      const location = `${filePath} row ${index + 1}`;
+      if (existing) {
+        console.error(`Duplicate public commentary entry across import files: ${key}`);
+        console.error(`- ${existing}`);
+        console.error(`- ${location}`);
+        failed = true;
+      } else {
+        publicImportKeys.set(key, location);
+      }
+    });
+  }
 }
 
 if (filePaths.length > 1) {

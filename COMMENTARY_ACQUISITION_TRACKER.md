@@ -14,10 +14,10 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 
 | Author | Source | Rights status | Chapters imported | Chapters remaining | Review status |
 | --- | --- | --- | --- | --- | --- |
-| Matthew Henry | https://www.ccel.org/ccel/henry/mhc.html | Public-domain original work. Existing source path reviewed. | 33 chapters: Genesis 1-5; Exodus 1-5; Amos 1-9; John 1-5; Romans 1-8; Luke 24 | Whole-Bible completion remains future work. | Verified Phase 1 |
+| Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 33 public verified chapters: Genesis 1-5; Exodus 1-5; Amos 1-9; John 1-5; Romans 1-8; Luke 24. Full 1,189-chapter set is staged in Needs Review. | Review staged entries by book/chapter before promotion. | Full parser staged; public entries remain verified Phase 1 |
 | H. A. Ironside | https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/ and related source paths | Mixed. Romans 1928 source is public domain in the U.S.; John/Luke samples are curated summaries until renewal and edition audit are complete. | 3 chapters: John 3; Romans 5; Luke 24 | Genesis 1 and Exodus 3 remain blocked until exact source and rights verification. | Verified samples only |
 | Albert Barnes | https://sacred-texts.com/bib/cmt/barnes/ | Public-domain original work by publication date and author death; source file/terms need full import review. | 7 reviewed entries: John 1; John 5; Romans 1; Romans 5; Romans 8; Luke 24; Amos 9 | Whole-Bible source acquisition, segmentation, and quality review remain. | Verified samples; full import needs review |
-| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 7 reviewed public entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9. Full 1,189-chapter set is staged in Needs Review. | Review staged entries by book/chapter before promotion. | Full pipeline staged; public entries remain verified samples |
+| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 31 public verified chapters: John 1-5; Romans 1-8; Amos 1-9; Luke 24; Psalms 1-5; Revelation 1-3. Full 1,189-chapter set is staged in Needs Review. | Continue reviewed batches of 25-50 chapters. | Full pipeline staged; reviewed batch 1 promoted |
 | John Wesley | https://www.ccel.org/w/wesley/notes/index.html | CCEL work record lists Wesley's Notes on the Bible as Public Domain. | 7 reviewed entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Full source handling and Methodist perspective notes remain. | Verified samples; full import needs review |
 | John Gill | https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ | Source page states the exposition is public domain and may be freely used and distributed. | 7 reviewed entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Need stable source file, segmentation plan, and quality review. | Verified samples; full import needs review |
 | Adam Clarke | https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=ha102300285 | Public-domain by publication date; Online Books Page lists an 1843 edition. | 7 reviewed entries: John 1; John 5; Romans 1; Romans 5; Romans 8; Luke 24; Amos 9 | Need clean text source, edition review, and warning labels. | Verified samples; full import needs review |
@@ -34,8 +34,8 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 ## Recommended Next Acquisition Order
 
 1. Validate the Phase 1 and Phase 2 reviewed sample files plus staged JFB data.
-2. Review JFB staged entries in small batches and promote only verified rows.
-3. Build the Matthew Henry full-source parser or source manifest next so remaining books can be staged.
+2. Continue JFB reviewed batches of 25-50 chapters and promote only verified rows.
+3. Review Matthew Henry staged entries by book/chapter and promote only verified rows.
 4. Evaluate Wesley Notes as the next complete parser target because the source structure appears simpler than several older multi-volume sets.
 5. Keep Barnes, Gill, and Clarke in reviewed sample mode until stable full-text sources and import parsers are selected.
 6. Add author perspective notes before larger comparative commentary display.
@@ -46,8 +46,12 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 - JFB source manifest: `data/commentary/jfb/source-manifest.json`
 - JFB staging file: `data/commentary/staging/jamieson-fausset-brown-complete-commentary-needs-review.json`
 - JFB coverage report: `data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json`
+- JFB public reviewed batch 1: `data/imports/jfb-reviewed-batch-1-commentary.json`
+- Matthew Henry source manifest: `data/commentary/matthew-henry/source-manifest.json`
+- Matthew Henry staging file: `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json`
+- Matthew Henry coverage report: `data/commentary/reports/matthew-henry-complete-commentary-coverage.json`
 
-The JFB staging file is not imported into the public app. It is a review queue. Public display still comes only from reviewed imports in `data/imports/`.
+The JFB and Matthew Henry staging files are not imported into the public app. They are review queues. Public display still comes only from reviewed imports in `data/imports/`.
 
 ## Phase 2 Batch
 
