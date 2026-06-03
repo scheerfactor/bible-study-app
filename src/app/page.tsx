@@ -46,6 +46,7 @@ import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
+import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -178,11 +179,13 @@ type CommentaryCoverageBook = {
 };
 
 type CommentaryCoverage = {
+  totalEntries: number;
   totalBooks: number;
   totalChapters: number;
   booksCovered: number;
   chaptersCovered: number;
   missingChapters: number;
+  missingBooks: string[];
   bookCoverage: CommentaryCoverageBook[];
   authorCoverage: CommentaryCoverageAuthor[];
   candidateAuthors: CommentaryExpansionCandidate[];
@@ -701,7 +704,18 @@ const FAVORITE_PASSAGE_LIMIT = 24;
 const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
-const ACTIVE_COMMENTARY_COLLECTIONS = [MATTHEW_HENRY_COMMENTARY_COLLECTION, H_A_IRONSIDE_COMMENTARY_COLLECTION];
+const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
+  "Barnes' Notes on the Bible",
+  "Commentary Critical and Explanatory on the Whole Bible",
+  "Wesley's Notes on the Bible",
+  "Gill's Exposition of the Bible",
+  "Adam Clarke's Commentary on the Bible",
+];
+const ACTIVE_COMMENTARY_COLLECTIONS = [
+  MATTHEW_HENRY_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_COMMENTARY_COLLECTION,
+  ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
+];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
   {
     author: "Matthew Henry",
@@ -714,41 +728,41 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
   {
     author: "Albert Barnes",
     resourceTitle: "Barnes' Notes on the Bible",
-    status: "Needs Review",
-    sourcePlan: "Verify exact public-domain edition before any import.",
-    rightsNotes: "Do not import until source URL, edition, and public-domain status are documented.",
+    status: "Verified",
+    sourcePlan: "Romans 5 sample imported. Full import still needs stable source file, source terms review, and chapter parser.",
+    rightsNotes: "Verified sample only. Do not bulk import until source URL, edition, and public-domain status are documented for the full text.",
     recommendedUse: "Future concise comparative notes with visible perspective labels.",
   },
   {
     author: "Jamieson-Fausset-Brown",
     resourceTitle: "Commentary Critical and Explanatory on the Whole Bible",
-    status: "Needs Review",
-    sourcePlan: "Verify a reusable public-domain source and text quality before import.",
-    rightsNotes: "Do not import modern edited copies or unclear web editions.",
+    status: "Verified",
+    sourcePlan: "John 3 sample imported from reviewed source metadata. CCEL source looks promising for the next 10-25 chapter batch.",
+    rightsNotes: "Verified sample only. Do not import modern edited copies or unclear web editions.",
     recommendedUse: "Future compact chapter-level comparison where rights and quality are clear.",
   },
   {
     author: "John Wesley",
     resourceTitle: "Wesley's Explanatory Notes",
-    status: "Needs Review",
-    sourcePlan: "Verify public-domain source and edition-specific text before import.",
-    rightsNotes: "Do not import until exact source metadata is attached.",
+    status: "Verified",
+    sourcePlan: "John 3 sample imported. CCEL work record lists public-domain status; full source handling still needs parser review.",
+    rightsNotes: "Verified sample only. Mark Methodist perspective notes before any larger import.",
     recommendedUse: "Future historical notes with Methodist perspective clearly labeled.",
   },
   {
     author: "John Gill",
     resourceTitle: "Gill's Exposition of the Entire Bible",
-    status: "Needs Review",
-    sourcePlan: "Verify a public-domain source and chapter segmentation before import.",
-    rightsNotes: "Do not import until exact source and edition metadata are documented.",
+    status: "Verified",
+    sourcePlan: "John 3 sample imported. Full import needs stable source file and chapter segmentation review.",
+    rightsNotes: "Verified sample only. Keep Baptist historical perspective labels and source metadata visible.",
     recommendedUse: "Future Baptist historical/expository comparison with discernment labels.",
   },
   {
     author: "Adam Clarke",
     resourceTitle: "Adam Clarke's Commentary on the Bible",
-    status: "Needs Review",
-    sourcePlan: "Verify public-domain edition and text quality before import.",
-    rightsNotes: "Do not import until source and rights metadata are documented.",
+    status: "Verified",
+    sourcePlan: "Romans 5 sample imported. Full import needs clean text source, edition review, and warning labels.",
+    rightsNotes: "Verified sample only. Do not bulk import until source and rights metadata are documented.",
     recommendedUse: "Future comparative commentary only with clear perspective notes.",
   },
 ];
@@ -3031,6 +3045,7 @@ const localCrossReferences: CrossReference[] = [
 const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
+  ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
@@ -9396,6 +9411,9 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
     .filter((item) => item.coveredChapters.length > 0)
     .sort((a, b) => bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book));
 
+  const missingBooks = Array.from(chaptersByBook.keys())
+    .filter((bookName) => !coveredByBook.has(bookName))
+    .sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b));
   const chaptersCovered = new Set(entries.map((entry) => `${entry.book} ${entry.chapter}`)).size;
   const totalChapters = Array.from(chaptersByBook.values()).reduce((total, chapters) => total + chapters.size, 0);
   const activeAuthorCoverage = Array.from(authorStats.entries()).map(([author, stats]) => ({
@@ -9418,11 +9436,13 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
     }));
 
   return {
+    totalEntries: entries.length,
     totalBooks: chaptersByBook.size,
     totalChapters,
     booksCovered: bookCoverage.length,
     chaptersCovered,
     missingChapters: Math.max(0, totalChapters - chaptersCovered),
+    missingBooks,
     bookCoverage,
     authorCoverage: [...activeAuthorCoverage, ...plannedOnlyCoverage].sort((a, b) => {
       if (b.chaptersCovered !== a.chaptersCovered) return b.chaptersCovered - a.chaptersCovered;
@@ -13376,6 +13396,7 @@ function CommentaryCoverageDashboard({
   const topMissing = coverage.bookCoverage
     .filter((book) => book.missingChapters.length)
     .slice(0, 6);
+  const missingBooksPreview = coverage.missingBooks.slice(0, 18);
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -13392,11 +13413,12 @@ function CommentaryCoverageDashboard({
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
+        <LibraryStat label="Entries" value={String(coverage.totalEntries)} />
         <LibraryStat label="Books covered" value={`${coverage.booksCovered}/${coverage.totalBooks}`} />
         <LibraryStat label="Chapters covered" value={String(coverage.chaptersCovered)} />
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
-        <LibraryStat label="Authors tracked" value={String(coverage.authorCoverage.length)} />
+        <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
       </div>
 
       <div className="mt-4 grid gap-3 xl:grid-cols-[1.2fr_1fr]">
@@ -13464,6 +13486,27 @@ function CommentaryCoverageDashboard({
               <p className="text-sm leading-6 text-[var(--muted)]">No missing chapters inside currently covered books.</p>
             )}
           </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <h3 className="text-sm font-semibold text-[var(--ink)]">Missing Bible books</h3>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            Books with no reviewed commentary entries yet. This keeps the import sprint honest about real coverage.
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {missingBooksPreview.length ? missingBooksPreview.map((bookName) => (
+              <span key={`missing-commentary-book-${bookName}`} className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+                {bookName}
+              </span>
+            )) : (
+              <p className="text-sm leading-6 text-[var(--muted)]">Every Bible book has at least one reviewed commentary entry.</p>
+            )}
+          </div>
+          {coverage.missingBooks.length > missingBooksPreview.length ? (
+            <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+              +{coverage.missingBooks.length - missingBooksPreview.length} more books still need first entries.
+            </p>
+          ) : null}
         </article>
 
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
