@@ -49,7 +49,7 @@ type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fu
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
-type LibraryView = "home" | "detail" | "reader";
+type LibraryView = "home" | "detail" | "reader" | "author" | "collection";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 
@@ -221,6 +221,29 @@ type LibraryAnnotation = {
 };
 
 type LibraryAnnotationState = Record<string, LibraryAnnotation[]>;
+
+type LibraryAuthorProfile = {
+  id: string;
+  name: string;
+  years: string;
+  shortLabel: string;
+  biography: string;
+  timeline: Array<{ year: string; event: string }>;
+  commentary: string;
+  quotes: string[];
+  relatedAuthorIds: string[];
+  recommendedReadingOrder: string[];
+  subjects: string[];
+};
+
+type LibraryCollection = {
+  id: string;
+  title: string;
+  description: string;
+  terms: string[];
+  labels: string[];
+  featuredAuthorIds: string[];
+};
 
 type TeachingWorkspaceSectionId = "summary" | "commentary" | "crossReferences" | "wordStudies" | "notes" | "lessonOutline";
 
@@ -484,6 +507,175 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
   notes: true,
   lessonOutline: true,
 };
+
+const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ironside", "ryle", "moody", "bounds"];
+
+const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
+  {
+    id: "spurgeon",
+    name: "C. H. Spurgeon",
+    years: "1834-1892",
+    shortLabel: "Preaching and devotional helps",
+    biography: "Charles Haddon Spurgeon pastored the Metropolitan Tabernacle in London and became one of the most widely read Baptist preachers of the nineteenth century. His works are especially useful for devotional warmth, sermon illustration, evangelistic clarity, and pastoral application.",
+    timeline: [
+      { year: "1834", event: "Born in Kelvedon, Essex." },
+      { year: "1854", event: "Began pastoral ministry in London." },
+      { year: "1861", event: "Metropolitan Tabernacle opened." },
+      { year: "1892", event: "Died in Menton, France." },
+    ],
+    commentary: "Best used as a preaching and devotional companion. Keep Scripture first, then use Spurgeon for illustration, application, and Gospel warmth.",
+    quotes: [
+      "Visit many good books, but live in the Bible.",
+      "The Word of God is always most precious to the man who most lives upon it.",
+    ],
+    relatedAuthorIds: ["ryle", "moody", "bounds"],
+    recommendedReadingOrder: ["Around the Wicket Gate", "Gleanings among the Sheaves", "The Art of Illustration", "Talks to Farmers"],
+    subjects: ["Preaching", "Evangelism", "Christian Living"],
+  },
+  {
+    id: "ironside",
+    name: "H. A. Ironside",
+    years: "1876-1951",
+    shortLabel: "Expository Bible study",
+    biography: "Harry A. Ironside was a Bible teacher and pastor known for clear expository teaching. In this beta app, Ironside remains a careful sample/commentary path where exact source and rights verification control what can be imported.",
+    timeline: [
+      { year: "1876", event: "Born in Toronto, Canada." },
+      { year: "1929", event: "Began pastoral ministry at Moody Church in Chicago." },
+      { year: "1930s", event: "Published and taught widely through Bible conferences and written exposition." },
+      { year: "1951", event: "Died after decades of Bible teaching ministry." },
+    ],
+    commentary: "Use as an expository voice where rights/source review has been completed. Do not bulk import unverified editions.",
+    quotes: [
+      "Careful Bible teaching should explain the passage without moving Scripture out of the center.",
+      "Ironside material in this app is curated only where rights and source notes are documented.",
+    ],
+    relatedAuthorIds: ["spurgeon", "ryle", "moody"],
+    recommendedReadingOrder: ["John commentary samples", "Romans commentary samples", "Luke commentary samples"],
+    subjects: ["Commentary", "Exposition", "Bible Study"],
+  },
+  {
+    id: "ryle",
+    name: "J. C. Ryle",
+    years: "1816-1900",
+    shortLabel: "Plain practical Christianity",
+    biography: "John Charles Ryle was an evangelical Anglican bishop whose plain, direct writing has helped generations with practical Christian living, Gospel clarity, and warnings against formal religion without life.",
+    timeline: [
+      { year: "1816", event: "Born in Macclesfield, England." },
+      { year: "1841", event: "Entered ordained ministry." },
+      { year: "1880", event: "Appointed first Bishop of Liverpool." },
+      { year: "1900", event: "Died in Lowestoft, England." },
+    ],
+    commentary: "Best used for practical application, Christian living, and direct Gospel appeal. Mark secondary perspective notes where appropriate.",
+    quotes: [
+      "Let us read the Bible reverently and diligently, with an honest determination to believe and practice all we find in it.",
+      "A Bible-reading Christian is a growing Christian.",
+    ],
+    relatedAuthorIds: ["spurgeon", "moody", "bounds"],
+    recommendedReadingOrder: ["The Cross: A Tract for the Times", "Practical Religion", "A Sketch of the Life and Labors of George Whitefield"],
+    subjects: ["Christian Living", "Biography", "Evangelism"],
+  },
+  {
+    id: "moody",
+    name: "D. L. Moody",
+    years: "1837-1899",
+    shortLabel: "Evangelism and Christian life",
+    biography: "Dwight L. Moody was an American evangelist whose preaching and writing emphasized conversion, practical Christian living, and active service. His works fit well for new believers, evangelism, and sermon illustrations.",
+    timeline: [
+      { year: "1837", event: "Born in Northfield, Massachusetts." },
+      { year: "1856", event: "Professed faith in Christ while working in Boston." },
+      { year: "1870s", event: "Held major evangelistic campaigns in Britain and America." },
+      { year: "1899", event: "Died in Northfield, Massachusetts." },
+    ],
+    commentary: "Best used for evangelistic clarity, short illustrations, and practical encouragement for active Christian service.",
+    quotes: [
+      "The Bible was not given for our information but for our transformation.",
+      "A man ought to live so that everybody knows he is a Christian.",
+    ],
+    relatedAuthorIds: ["spurgeon", "ryle", "bounds"],
+    recommendedReadingOrder: ["The Way to God and How to Find It", "The Overcoming Life, and Other Sermons", "Moody's Stories", "Secret Power; or, The Secret of Success in Christian Life and Work"],
+    subjects: ["Evangelism", "Christian Living", "Preaching"],
+  },
+  {
+    id: "bounds",
+    name: "Edward M. Bounds",
+    years: "1835-1913",
+    shortLabel: "Prayer and ministry burden",
+    biography: "Edward McKendree Bounds wrote deeply on prayer, preaching, and spiritual burden. His works belong near the front of the Prayer shelf and are strong candidates for listening and short devotional reading.",
+    timeline: [
+      { year: "1835", event: "Born in Shelby County, Missouri." },
+      { year: "1859", event: "Entered Methodist ministry." },
+      { year: "1900s", event: "Wrote extensively on prayer and preaching." },
+      { year: "1913", event: "Died in Washington, Georgia." },
+    ],
+    commentary: "Best used for prayer life, pastoral burden, and ministry preparation. Read slowly and devotionally.",
+    quotes: [
+      "Prayer is the great essential of spiritual work.",
+      "Talking to men for God is a great thing, but talking to God for men is greater still.",
+    ],
+    relatedAuthorIds: ["spurgeon", "moody", "ryle"],
+    recommendedReadingOrder: ["Power Through Prayer", "Preacher and Prayer", "Purpose in Prayer", "The Reality of Prayer", "Essentials of Prayer"],
+    subjects: ["Prayer", "Preaching", "Christian Living"],
+  },
+];
+
+const LIBRARY_COLLECTIONS: LibraryCollection[] = [
+  {
+    id: "new-believer",
+    title: "New Believer Collection",
+    description: "Simple first reads for assurance, Gospel clarity, growth, prayer, and Christian living.",
+    terms: ["way to god", "wicket gate", "overcoming life", "succeed in the christian life", "cross"],
+    labels: ["Start here", "Practical", "Short reads"],
+    featuredAuthorIds: ["moody", "spurgeon", "ryle"],
+  },
+  {
+    id: "baptist-history",
+    title: "Baptist History Collection",
+    description: "Reviewed Baptist history resources and related historical works for perspective and teaching.",
+    terms: ["baptist", "germain street", "history"],
+    labels: ["Baptist history", "Historical value"],
+    featuredAuthorIds: ["spurgeon"],
+  },
+  {
+    id: "prayer",
+    title: "Prayer Collection",
+    description: "Prayer books and ministry-burden resources for devotional reading and listening.",
+    terms: ["prayer", "pray", "intercession"],
+    labels: ["Prayer", "Listen friendly"],
+    featuredAuthorIds: ["bounds"],
+  },
+  {
+    id: "commentary",
+    title: "Commentary Collection",
+    description: "Verified commentary and exposition paths, kept secondary to Scripture.",
+    terms: ["commentary", "ironside", "expositor", "expository"],
+    labels: ["Commentary", "Use with discernment"],
+    featuredAuthorIds: ["ironside"],
+  },
+  {
+    id: "kjv-defense",
+    title: "KJV Defense Collection",
+    description: "A planned shelf for reviewed KJV-related and textual-issue resources. Add only after rights and doctrinal review.",
+    terms: ["kjv", "king james", "authorized", "textual"],
+    labels: ["Needs careful review", "Future growth"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "study-helps",
+    title: "Bible Study Collection",
+    description: "Dictionaries, topical helps, handbooks, and survey resources for quick study.",
+    terms: ["dictionary", "topical", "bible study", "handbook", "survey"],
+    labels: ["Study helps", "Reference"],
+    featuredAuthorIds: ["ironside"],
+  },
+  {
+    id: "preaching-teaching",
+    title: "Preaching & Teaching Collection",
+    description: "Resources useful for lesson preparation, preaching, illustrations, and teaching support.",
+    terms: ["preaching", "teaching", "sermon", "illustration", "farmers"],
+    labels: ["Teaching", "Sermon prep"],
+    featuredAuthorIds: ["spurgeon", "moody", "bounds"],
+  },
+];
 
 const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
   hook: "",
@@ -2932,6 +3124,8 @@ export default function Home() {
   const [librarySearchTerm, setLibrarySearchTerm] = useState("");
   const [libraryCategory, setLibraryCategory] = useState("All");
   const [activeLibrarySlug, setActiveLibrarySlug] = useState<string | null>(null);
+  const [activeLibraryAuthorId, setActiveLibraryAuthorId] = useState<string | null>(null);
+  const [activeLibraryCollectionId, setActiveLibraryCollectionId] = useState<string | null>(null);
   const [activeLibraryText, setActiveLibraryText] = useState("");
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
@@ -3041,6 +3235,16 @@ export default function Home() {
   const activeLibraryResource = useMemo(
     () => libraryResources.find((resource) => resource.slug === activeLibrarySlug) ?? null,
     [activeLibrarySlug, libraryResources],
+  );
+
+  const activeLibraryAuthor = useMemo(
+    () => LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === activeLibraryAuthorId) ?? null,
+    [activeLibraryAuthorId],
+  );
+
+  const activeLibraryCollection = useMemo(
+    () => LIBRARY_COLLECTIONS.find((collection) => collection.id === activeLibraryCollectionId) ?? null,
+    [activeLibraryCollectionId],
   );
 
   const filteredLibraryResources = useMemo(() => {
@@ -3657,6 +3861,29 @@ export default function Home() {
     } finally {
       setActiveLibraryLoading(false);
     }
+  }
+
+  function openLibraryAuthor(authorOrId: string) {
+    const directProfile = LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === authorOrId);
+    const authorProfile = directProfile ?? libraryAuthorProfileForName(authorOrId);
+    if (!authorProfile) {
+      setLibrarySearchTerm(authorOrId);
+      setLibraryView("home");
+      setTab("library");
+      return;
+    }
+
+    setActiveLibraryAuthorId(authorProfile.id);
+    setLibraryView("author");
+    setTab("library");
+  }
+
+  function openLibraryCollection(collectionId: string) {
+    const collection = LIBRARY_COLLECTIONS.find((candidate) => candidate.id === collectionId);
+    if (!collection) return;
+    setActiveLibraryCollectionId(collection.id);
+    setLibraryView("collection");
+    setTab("library");
   }
 
   async function listenToLibraryProgress(progress: LibraryProgress | null) {
@@ -4774,6 +5001,8 @@ export default function Home() {
                 activeCategory={libraryCategory}
                 searchTerm={librarySearchTerm}
                 activeResource={activeLibraryResource}
+                activeAuthor={activeLibraryAuthor}
+                activeCollection={activeLibraryCollection}
                 activeText={activeLibraryText}
                 loading={activeLibraryLoading}
                 progressState={libraryProgress}
@@ -4799,6 +5028,8 @@ export default function Home() {
                 onOpenReader={(slug) => {
                   void openLibraryResource(slug, "reader");
                 }}
+                onOpenAuthor={openLibraryAuthor}
+                onOpenCollection={openLibraryCollection}
                 onScrollReader={handleLibraryScroll}
                 onFontSizeChange={(size) => {
                   setLibraryFontSize(size);
@@ -7924,6 +8155,36 @@ function annotationLabel(type: LibraryAnnotationType) {
   return "Bookmark";
 }
 
+function libraryAuthorIdFromName(author: string) {
+  const normalized = author.toLowerCase();
+  if (normalized.includes("spurgeon")) return "spurgeon";
+  if (normalized.includes("ironside")) return "ironside";
+  if (normalized.includes("ryle")) return "ryle";
+  if (normalized.includes("moody")) return "moody";
+  if (normalized.includes("bounds")) return "bounds";
+  return normalized.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function libraryAuthorProfileForName(author: string) {
+  const id = libraryAuthorIdFromName(author);
+  return LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === id) ?? null;
+}
+
+function resourcesForAuthor(resources: LibraryResource[], profile: LibraryAuthorProfile) {
+  return resources.filter((resource) => libraryAuthorIdFromName(resource.author) === profile.id);
+}
+
+function resourcesForCollection(resources: LibraryResource[], collection: LibraryCollection) {
+  return resources.filter((resource) => libraryResourceMatches(resource, collection.terms));
+}
+
+function primaryCollectionForResource(resource: LibraryResource) {
+  return (
+    LIBRARY_COLLECTIONS.find((collection) => libraryResourceMatches(resource, collection.terms)) ??
+    LIBRARY_COLLECTIONS.find((collection) => collection.id === "study-helps")!
+  );
+}
+
 function LibraryScreen({
   view,
   resources,
@@ -7932,6 +8193,8 @@ function LibraryScreen({
   activeCategory,
   searchTerm,
   activeResource,
+  activeAuthor,
+  activeCollection,
   activeText,
   loading,
   progressState,
@@ -7953,6 +8216,8 @@ function LibraryScreen({
   onOpenHome,
   onOpenDetail,
   onOpenReader,
+  onOpenAuthor,
+  onOpenCollection,
   onScrollReader,
   onFontSizeChange,
   onReaderSettingsChange,
@@ -7978,6 +8243,8 @@ function LibraryScreen({
   activeCategory: string;
   searchTerm: string;
   activeResource: LibraryResource | null;
+  activeAuthor: LibraryAuthorProfile | null;
+  activeCollection: LibraryCollection | null;
   activeText: string;
   loading: boolean;
   progressState: LibraryProgressState;
@@ -8004,6 +8271,8 @@ function LibraryScreen({
   onOpenHome: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenReader: (slug: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+  onOpenCollection: (collectionId: string) => void;
   onScrollReader: () => void;
   onFontSizeChange: (size: number) => void;
   onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
@@ -8057,6 +8326,8 @@ function LibraryScreen({
         onSleepTimerChange={onSleepTimerChange}
         onMarkFinished={() => onMarkFinished(activeResource)}
         onRestart={() => onRestartResource(activeResource)}
+        onOpenAuthor={() => onOpenAuthor(activeResource.author)}
+        onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
       />
     );
   }
@@ -8070,6 +8341,39 @@ function LibraryScreen({
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
+        onOpenAuthor={() => onOpenAuthor(activeResource.author)}
+        onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
+        relatedResources={resources
+          .filter((resource) => resource.slug !== activeResource.slug)
+          .filter((resource) => resource.author === activeResource.author || resource.category === activeResource.category)
+          .slice(0, 4)}
+        onOpenDetail={onOpenDetail}
+      />
+    );
+  }
+
+  if (view === "author" && activeAuthor) {
+    return (
+      <LibraryAuthorScreen
+        profile={activeAuthor}
+        resources={resourcesForAuthor(resources, activeAuthor)}
+        commentaryEntries={activeAuthor.id === "ironside" ? ACTIVE_COMMENTARY_COLLECTIONS.filter((title) => title.includes("Ironside")) : []}
+        onBack={onOpenHome}
+        onOpenDetail={onOpenDetail}
+        onOpenAuthor={onOpenAuthor}
+      />
+    );
+  }
+
+  if (view === "collection" && activeCollection) {
+    return (
+      <LibraryCollectionScreen
+        collection={activeCollection}
+        resources={resourcesForCollection(resources, activeCollection)}
+        authors={LIBRARY_AUTHOR_PROFILES.filter((profile) => activeCollection.featuredAuthorIds.includes(profile.id))}
+        onBack={onOpenHome}
+        onOpenDetail={onOpenDetail}
+        onOpenAuthor={onOpenAuthor}
       />
     );
   }
@@ -8083,6 +8387,16 @@ function LibraryScreen({
   )
     .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
     .slice(0, 8);
+  const featuredAuthors = FEATURED_LIBRARY_AUTHOR_IDS.map((id) => LIBRARY_AUTHOR_PROFILES.find((profile) => profile.id === id)).filter(Boolean) as LibraryAuthorProfile[];
+  const mostReadResources = Object.values(progressState)
+    .sort((a, b) => b.progress - a.progress || b.updatedAt.localeCompare(a.updatedAt))
+    .flatMap((progress) => resources.find((resource) => resource.slug === progress.slug) ?? [])
+    .slice(0, 4);
+  const mostReadDisplayResources = mostReadResources.length
+    ? mostReadResources
+    : resources
+        .filter((resource) => ["The Pilgrim's Progress", "Power Through Prayer", "Practical Religion", "The Way to God and How to Find It"].includes(resource.title))
+        .slice(0, 4);
   const categoryCards = categories
     .filter((category) => category !== "All")
     .map((category) => ({
@@ -8128,6 +8442,28 @@ function LibraryScreen({
         <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
 
+      <LibraryShelf title="Featured Authors" horizontal>
+        {featuredAuthors.map((profile) => (
+          <LibraryAuthorCard
+            key={`featured-author-${profile.id}`}
+            profile={profile}
+            count={resourcesForAuthor(resources, profile).length}
+            onOpen={() => onOpenAuthor(profile.id)}
+          />
+        ))}
+      </LibraryShelf>
+
+      <LibraryShelf title="Featured Collections" horizontal>
+        {LIBRARY_COLLECTIONS.slice(0, 6).map((collection) => (
+          <LibraryCollectionCard
+            key={`featured-collection-${collection.id}`}
+            collection={collection}
+            count={resourcesForCollection(resources, collection).length}
+            onOpen={() => onOpenCollection(collection.id)}
+          />
+        ))}
+      </LibraryShelf>
+
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <label className="text-sm font-semibold text-[var(--muted)]">
           Search Library
@@ -8159,11 +8495,33 @@ function LibraryScreen({
         </div>
       </section>
 
+      <section className="grid gap-3 md:grid-cols-4">
+        <DiscoveryCard title="Browse by Author" body="Open curated author pages with biography, books, and reading order." onOpen={() => onOpenAuthor("spurgeon")} />
+        <DiscoveryCard title="Browse by Subject" body="Use clean subject shelves without losing the rights labels." onOpen={() => onCategoryChange("Christian Living")} />
+        <DiscoveryCard title="Browse by Collection" body="Start with prayer, new believer, commentary, or history collections." onOpen={() => onOpenCollection("new-believer")} />
+        <DiscoveryCard title="Browse by Commentary" body="Review commentary paths while keeping Scripture first." onOpen={() => onOpenCollection("commentary")} />
+      </section>
+
       {featuredResources.length > 0 && (
         <LibraryShelf title="Featured">
           {featuredResources.map((resource) => (
             <LibraryResourceCard
               key={`featured-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
+      {mostReadDisplayResources.length > 0 && (
+        <LibraryShelf title="Most Read">
+          {mostReadDisplayResources.map((resource) => (
+            <LibraryResourceCard
+              key={`most-read-${resource.slug}`}
               resource={resource}
               progress={progressState[resource.slug]}
               listeningProgress={listeningProgress[resource.slug]}
@@ -8299,6 +8657,216 @@ function LibraryScreen({
   );
 }
 
+function LibraryAuthorScreen({
+  profile,
+  resources,
+  commentaryEntries,
+  onBack,
+  onOpenDetail,
+  onOpenAuthor,
+}: {
+  profile: LibraryAuthorProfile;
+  resources: LibraryResource[];
+  commentaryEntries: string[];
+  onBack: () => void;
+  onOpenDetail: (slug: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+}) {
+  const relatedAuthors = profile.relatedAuthorIds
+    .map((id) => LIBRARY_AUTHOR_PROFILES.find((candidate) => candidate.id === id))
+    .filter(Boolean) as LibraryAuthorProfile[];
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <button
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm"
+        onClick={onBack}
+        type="button"
+      >
+        <ChevronLeft size={17} />
+        Back to Library
+      </button>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Author Study</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{profile.name}</h1>
+            <p className="mt-2 text-sm font-semibold text-[var(--green)]">{profile.years} · {profile.shortLabel}</p>
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Biography</p>
+            <p className="mt-4 text-base leading-7 text-[var(--scripture-ink)]">{profile.biography}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+            <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Library Books</p>
+          </div>
+        </div>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {profile.subjects.map((subject) => (
+            <span key={`${profile.id}-${subject}`} className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--green)]">
+              {subject}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Timeline</h2>
+          <div className="mt-4 space-y-3">
+            {profile.timeline.map((item) => (
+              <div key={`${profile.id}-${item.year}-${item.event}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{item.year}</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{item.event}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Recommended Reading Order</h2>
+          <ol className="mt-4 space-y-2">
+            {profile.recommendedReadingOrder.map((title, index) => (
+              <li key={`${profile.id}-order-${title}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">
+                <span className="font-semibold text-[var(--green)]">{index + 1}. </span>{title}
+              </li>
+            ))}
+          </ol>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Books</h2>
+        {resources.length ? (
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {resources.map((resource) => (
+              <LibraryResourceCard
+                key={`author-resource-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+              />
+            ))}
+          </div>
+        ) : (
+          <EmptyState title="No library books imported yet" body="This author page is ready for verified public-domain books after rights review." />
+        )}
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Commentary</h2>
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{profile.commentary}</p>
+          {commentaryEntries.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {commentaryEntries.map((entry) => (
+                <span key={`author-commentary-${entry}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {entry}
+                </span>
+              ))}
+            </div>
+          )}
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Quotes</h2>
+          <div className="mt-3 space-y-2">
+            {profile.quotes.map((quote) => (
+              <p key={`${profile.id}-quote-${quote}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--scripture-ink)]">
+                {quote}
+              </p>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <LibraryShelf title="Related Authors" horizontal>
+        {relatedAuthors.map((author) => (
+          <LibraryAuthorCard
+            key={`related-author-${author.id}`}
+            profile={author}
+            count={0}
+            onOpen={() => onOpenAuthor(author.id)}
+          />
+        ))}
+      </LibraryShelf>
+    </div>
+  );
+}
+
+function LibraryCollectionScreen({
+  collection,
+  resources,
+  authors,
+  onBack,
+  onOpenDetail,
+  onOpenAuthor,
+}: {
+  collection: LibraryCollection;
+  resources: LibraryResource[];
+  authors: LibraryAuthorProfile[];
+  onBack: () => void;
+  onOpenDetail: (slug: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+}) {
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <button
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm"
+        onClick={onBack}
+        type="button"
+      >
+        <ChevronLeft size={17} />
+        Back to Library
+      </button>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Collection</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{collection.title}</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{collection.description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {collection.labels.map((label) => (
+            <span key={`${collection.id}-${label}`} className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--green)]">
+              {label}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {authors.length > 0 && (
+        <LibraryShelf title="Featured Authors" horizontal>
+          {authors.map((profile) => (
+            <LibraryAuthorCard
+              key={`collection-author-${profile.id}`}
+              profile={profile}
+              count={0}
+              onOpen={() => onOpenAuthor(profile.id)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Resources</h2>
+        {resources.length ? (
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {resources.map((resource) => (
+              <LibraryResourceCard
+                key={`collection-resource-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+              />
+            ))}
+          </div>
+        ) : (
+          <EmptyState title="Collection ready for future imports" body="No verified resource is attached yet. Add books only after rights and doctrinal review." />
+        )}
+      </section>
+    </div>
+  );
+}
+
 function LibraryDetail({
   resource,
   progress,
@@ -8306,6 +8874,10 @@ function LibraryDetail({
   onBack,
   onOpenReader,
   onReadAgain,
+  onOpenAuthor,
+  onOpenCollection,
+  relatedResources,
+  onOpenDetail,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
@@ -8313,6 +8885,10 @@ function LibraryDetail({
   onBack: () => void;
   onOpenReader: () => void;
   onReadAgain: () => void;
+  onOpenAuthor: () => void;
+  onOpenCollection: () => void;
+  relatedResources: LibraryResource[];
+  onOpenDetail: (slug: string) => void;
 }) {
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -8333,6 +8909,14 @@ function LibraryDetail({
             <p className="mt-3 text-base leading-7 text-[var(--muted)]">
               {resource.author} {resource.year ? `(${resource.year})` : ""}
             </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onOpenAuthor} type="button">
+                Open Author
+              </button>
+              <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onOpenCollection} type="button">
+                Open Collection
+              </button>
+            </div>
           </div>
           <div className="flex flex-wrap gap-2">
             <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
@@ -8395,6 +8979,26 @@ function LibraryDetail({
         </div>
         <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{resource.rights_basis}</p>
       </section>
+
+      {relatedResources.length > 0 && (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Related Resources</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {relatedResources.map((related) => (
+              <button
+                key={`related-${related.slug}`}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left"
+                onClick={() => onOpenDetail(related.slug)}
+                type="button"
+              >
+                <p className="text-sm font-semibold text-[var(--green)]">{related.title}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{related.author}</p>
+                <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--scripture-ink)]">{related.description}</p>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
@@ -8430,6 +9034,8 @@ function LibraryReader({
   onSleepTimerChange,
   onMarkFinished,
   onRestart,
+  onOpenAuthor,
+  onOpenCollection,
 }: {
   resource: LibraryResource;
   text: string;
@@ -8461,6 +9067,8 @@ function LibraryReader({
   onSleepTimerChange: (minutes: number | null) => void;
   onMarkFinished: () => void;
   onRestart: () => void;
+  onOpenAuthor: () => void;
+  onOpenCollection: () => void;
 }) {
   const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
   const activeProgress = progress ?? defaultLibraryProgress(resource, fontSize);
@@ -8494,7 +9102,22 @@ function LibraryReader({
 
         <div className="mt-3 min-w-0">
           <h1 className="truncate text-lg font-semibold text-[var(--ink)]">{resource.title}</h1>
-          <p className="mt-1 truncate text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.author}</p>
+          <div className="mt-1 flex flex-wrap gap-2">
+            <button
+              className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--green)]"
+              onClick={onOpenAuthor}
+              type="button"
+            >
+              {resource.author}
+            </button>
+            <button
+              className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]"
+              onClick={onOpenCollection}
+              type="button"
+            >
+              {primaryCollectionForResource(resource).title}
+            </button>
+          </div>
         </div>
 
         <div className="mt-3 grid grid-cols-[auto_1fr_auto] items-center gap-3">
@@ -8783,6 +9406,88 @@ function LibraryStat({ label, value }: { label: string; value: string }) {
       <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
     </div>
+  );
+}
+
+function LibraryAuthorCard({
+  profile,
+  count,
+  onOpen,
+}: {
+  profile: LibraryAuthorProfile;
+  count: number;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      className="min-w-[240px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:min-w-0"
+      onClick={onOpen}
+      type="button"
+    >
+      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--green)] text-lg font-semibold text-white">
+        {profile.name.split(" ").slice(-1)[0]?.slice(0, 1)}
+      </div>
+      <h3 className="mt-3 text-lg font-semibold text-[var(--ink)]">{profile.name}</h3>
+      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{profile.years}</p>
+      <p className="mt-2 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{profile.shortLabel}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {profile.subjects.slice(0, 2).map((subject) => (
+          <span key={`${profile.id}-card-${subject}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            {subject}
+          </span>
+        ))}
+        {count > 0 && (
+          <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+            {count} book{count === 1 ? "" : "s"}
+          </span>
+        )}
+      </div>
+    </button>
+  );
+}
+
+function LibraryCollectionCard({
+  collection,
+  count,
+  onOpen,
+}: {
+  collection: LibraryCollection;
+  count: number;
+  onOpen: () => void;
+}) {
+  return (
+    <button
+      className="min-w-[260px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:min-w-0"
+      onClick={onOpen}
+      type="button"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Collection</p>
+      <h3 className="mt-2 text-lg font-semibold text-[var(--ink)]">{collection.title}</h3>
+      <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{collection.description}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {collection.labels.slice(0, 2).map((label) => (
+          <span key={`${collection.id}-label-${label}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            {label}
+          </span>
+        ))}
+        <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+          {count} resource{count === 1 ? "" : "s"}
+        </span>
+      </div>
+    </button>
+  );
+}
+
+function DiscoveryCard({ title, body, onOpen }: { title: string; body: string; onOpen: () => void }) {
+  return (
+    <button
+      className="rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+      onClick={onOpen}
+      type="button"
+    >
+      <p className="text-base font-semibold text-[var(--ink)]">{title}</p>
+      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{body}</p>
+    </button>
   );
 }
 
