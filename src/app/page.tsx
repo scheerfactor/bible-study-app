@@ -8219,7 +8219,7 @@ function ChapterStudyWorkflow({
       </div>
 
       <div className="mt-3 grid gap-3 lg:grid-cols-2">
-        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+        <article className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-[var(--green)]">
               <NotebookPen size={18} />
@@ -8628,7 +8628,7 @@ function ChapterStudyWorkflow({
           )}
         </article>
 
-        <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+        <article className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <Brain size={18} />
             <h3 className="text-sm font-semibold">Scripture Memory</h3>
@@ -10698,12 +10698,12 @@ function LibraryReader({
 
 function LibraryShelf({ title, children, horizontal = false }: { title: string; children: React.ReactNode; horizontal?: boolean }) {
   return (
-    <section>
+    <section className="min-w-0 max-w-full overflow-hidden">
       <h2 className="px-1 text-lg font-semibold text-[var(--ink)]">{title}</h2>
       <div
         className={
           horizontal
-            ? "mt-3 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 xl:grid-cols-4"
+            ? "mt-3 flex max-w-full gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 xl:grid-cols-4"
             : "mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4"
         }
       >
