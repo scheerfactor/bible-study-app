@@ -565,7 +565,7 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
   lessonOutline: true,
 };
 
-const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ironside", "ryle", "moody", "bounds"];
+const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside"];
 
 const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
   {
@@ -672,6 +672,106 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["spurgeon", "moody", "ryle"],
     recommendedReadingOrder: ["Power Through Prayer", "Preacher and Prayer", "Purpose in Prayer", "The Reality of Prayer", "Essentials of Prayer"],
     subjects: ["Prayer", "Preaching", "Christian Living"],
+  },
+  {
+    id: "murray",
+    name: "Andrew Murray",
+    years: "1828-1917",
+    shortLabel: "Prayer and devotional Christian living",
+    biography: "Andrew Murray was a South African pastor and devotional writer whose books are widely read for prayer, humility, holiness, and abiding in Christ. His works are helpful when clearly labeled as devotional resources and kept under Scripture-first review.",
+    timeline: [
+      { year: "1828", event: "Born in Graaff-Reinet, South Africa." },
+      { year: "1848", event: "Entered ministry in the Dutch Reformed Church." },
+      { year: "1880s-1890s", event: "Published many devotional works on prayer, holiness, and Christian life." },
+      { year: "1917", event: "Died after decades of pastoral and devotional writing ministry." },
+    ],
+    commentary: "Best used for devotional reading, prayer, humility, and Christian life application. Mark secondary differences plainly.",
+    quotes: [
+      "Quote review pending: add exact public-domain excerpts only after source review.",
+    ],
+    relatedAuthorIds: ["bounds", "ryle", "moody"],
+    recommendedReadingOrder: ["Lord, Teach Us To Pray", "Humility: The Beauty of Holiness", "Holy in Christ", "The Ministry of Intercession", "The Master's Indwelling"],
+    subjects: ["Prayer", "Christian Living", "Devotional"],
+  },
+  {
+    id: "torrey",
+    name: "R. A. Torrey",
+    years: "1856-1928",
+    shortLabel: "Bible doctrine and evangelism",
+    biography: "Reuben Archer Torrey was an evangelist, Bible teacher, and writer connected with practical Bible training and Gospel work. His books fit the Library as Bible study, doctrine, evangelism, and Christian life resources with discernment labels.",
+    timeline: [
+      { year: "1856", event: "Born in Hoboken, New Jersey." },
+      { year: "1880s", event: "Served in pastoral ministry and became active in Bible teaching." },
+      { year: "1889", event: "Joined D. L. Moody's work in Chicago." },
+      { year: "1928", event: "Died after extensive evangelistic and Bible teaching ministry." },
+    ],
+    commentary: "Best used for doctrinal outlines, evangelism, and practical Christian life. Keep doctrine checked directly against Scripture.",
+    quotes: [
+      "Quote review pending: add exact public-domain excerpts only after source review.",
+    ],
+    relatedAuthorIds: ["moody", "spurgeon", "bounds"],
+    recommendedReadingOrder: ["How to Succeed in the Christian Life", "How to Bring Men to Christ", "The Person and Work of The Holy Spirit", "The Fundamental Doctrines of the Christian Faith"],
+    subjects: ["Bible Study", "Evangelism", "Doctrine"],
+  },
+  {
+    id: "bunyan",
+    name: "John Bunyan",
+    years: "1628-1688",
+    shortLabel: "Baptist classics and allegory",
+    biography: "John Bunyan was an English Baptist preacher and author best known for The Pilgrim's Progress. His works are valuable for Christian life, conviction, perseverance, and rich illustration when used as devotional classics under the Bible.",
+    timeline: [
+      { year: "1628", event: "Born near Bedford, England." },
+      { year: "1660s", event: "Imprisoned for preaching without license." },
+      { year: "1678", event: "Published The Pilgrim's Progress." },
+      { year: "1688", event: "Died in London." },
+    ],
+    commentary: "Best used as Baptist devotional classics, illustrations, and Christian life reading. Do not treat allegory as doctrine by itself.",
+    quotes: [
+      "Quote review pending: add exact public-domain excerpts only after source review.",
+    ],
+    relatedAuthorIds: ["spurgeon", "ryle", "moody"],
+    recommendedReadingOrder: ["The Pilgrim's Progress", "Grace Abounding to the Chief of Sinners", "The Holy War"],
+    subjects: ["Classics", "Baptist", "Christian Living"],
+  },
+  {
+    id: "taylor",
+    name: "J. Hudson Taylor",
+    years: "1832-1905",
+    shortLabel: "Missions and devotional Bible studies",
+    biography: "James Hudson Taylor founded the China Inland Mission and wrote devotional Bible studies shaped by missionary burden, dependence on God, and practical obedience. His works strengthen the Missions and Bible Study shelves.",
+    timeline: [
+      { year: "1832", event: "Born in Barnsley, England." },
+      { year: "1853", event: "First sailed to China as a missionary." },
+      { year: "1865", event: "Founded the China Inland Mission." },
+      { year: "1905", event: "Died in Changsha, China." },
+    ],
+    commentary: "Best used for missionary burden, consecration, and devotional Bible study. Keep typological readings labeled and reviewed.",
+    quotes: [
+      "Quote review pending: add exact public-domain excerpts only after source review.",
+    ],
+    relatedAuthorIds: ["bounds", "murray", "moody"],
+    recommendedReadingOrder: ["A Retrospect", "Separation and Service; or, Thoughts on Numbers VI, VII.", "A Ribband of Blue, and Other Bible Studies", "Union and Communion; or, Thoughts on the Song of Solomon", "Unfailing Springs"],
+    subjects: ["Missions", "Bible Study", "Christian Living"],
+  },
+  {
+    id: "meyer",
+    name: "F. B. Meyer",
+    years: "1847-1929",
+    shortLabel: "Bible biography and devotional exposition",
+    biography: "Frederick Brotherton Meyer was a Baptist pastor and devotional writer known for Bible biographies and expositions. His works are useful for Bible-centered devotional study, especially when applications are checked carefully against the KJV text.",
+    timeline: [
+      { year: "1847", event: "Born in London, England." },
+      { year: "1870s", event: "Began a long pastoral and preaching ministry." },
+      { year: "1890s-1910s", event: "Published many Bible biographies and devotional expositions." },
+      { year: "1929", event: "Died after a wide writing and preaching ministry." },
+    ],
+    commentary: "Best used for devotional exposition, Bible biography, and teaching application. Use with discernment and keep Scripture primary.",
+    quotes: [
+      "Quote review pending: add exact public-domain excerpts only after source review.",
+    ],
+    relatedAuthorIds: ["spurgeon", "ryle", "taylor"],
+    recommendedReadingOrder: ["John the Baptist", "Love to the Uttermost"],
+    subjects: ["Bible Study", "Biography", "Christian Living"],
   },
 ];
 
@@ -813,6 +913,46 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     featuredAuthorIds: ["ryle"],
   },
   {
+    id: "murray",
+    title: "Andrew Murray Shelf",
+    description: "Andrew Murray resources for prayer, humility, intercession, and devotional Christian living.",
+    terms: ["andrew murray", "murray"],
+    labels: ["Prayer", "Devotional"],
+    featuredAuthorIds: ["murray"],
+  },
+  {
+    id: "torrey",
+    title: "Torrey Shelf",
+    description: "R. A. Torrey resources for Bible doctrine, evangelism, and practical Christian life.",
+    terms: ["torrey"],
+    labels: ["Bible study", "Evangelism"],
+    featuredAuthorIds: ["torrey"],
+  },
+  {
+    id: "bunyan",
+    title: "Bunyan Shelf",
+    description: "John Bunyan Baptist classics and allegories for devotional reading and illustration.",
+    terms: ["bunyan"],
+    labels: ["Baptist", "Classics"],
+    featuredAuthorIds: ["bunyan"],
+  },
+  {
+    id: "taylor",
+    title: "Hudson Taylor Shelf",
+    description: "J. Hudson Taylor missionary biography and devotional Bible studies.",
+    terms: ["hudson taylor", "james hudson taylor"],
+    labels: ["Missions", "Bible study"],
+    featuredAuthorIds: ["taylor"],
+  },
+  {
+    id: "meyer",
+    title: "F. B. Meyer Shelf",
+    description: "F. B. Meyer Bible biography and devotional exposition resources.",
+    terms: ["f. b. meyer", "meyer"],
+    labels: ["Bible study", "Biography"],
+    featuredAuthorIds: ["meyer"],
+  },
+  {
     id: "larkin",
     title: "Larkin Shelf",
     description: "A planned shelf for Clarence Larkin material after exact edition, chart, and rights review.",
@@ -853,6 +993,18 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     featuredAuthorIds: [],
   },
 ];
+
+const COMING_SOON_COLLECTION_IDS = new Set([
+  "bible-encyclopedias",
+  "bible-handbooks",
+  "bible-surveys",
+  "kjv-defense",
+  "larkin",
+  "william-kelly",
+  "darby",
+  "gaebelein",
+  "fw-grant",
+]);
 
 const PERSONAL_IMPORT_FORMATS = ["TXT", "EPUB", "PDF", "DOCX"];
 
@@ -952,6 +1104,126 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
     doctrinalNotes: "Review for recommended use and audience before any user-facing import.",
     warningLabels: ["Permission needed"],
     recommendedUse: "Permission-request placeholder only; personal-use upload path may support a user's private copy later.",
+  },
+  {
+    id: "review-william-kelly",
+    title: "William Kelly works",
+    author: "William Kelly",
+    category: "Commentaries",
+    source: "Brethren Archive / public-domain scans to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact edition, publication date, source URL, and reuse status are documented.",
+    doctrinalNotes: "Useful historical/expository value; mark perspective notes and use with discernment.",
+    warningLabels: ["Needs review", "Use with discernment"],
+    recommendedUse: "Candidate for later commentary and Bible study shelves after review.",
+  },
+  {
+    id: "review-fw-grant",
+    title: "F. W. Grant works",
+    author: "F. W. Grant",
+    category: "Commentaries",
+    source: "Brethren Archive / public-domain scans to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact edition, source URL, and public-domain status are documented.",
+    doctrinalNotes: "Historical/expository value; add perspective notes before user-facing import.",
+    warningLabels: ["Needs review", "Use with discernment"],
+    recommendedUse: "Candidate for later commentary and study shelves after review.",
+  },
+  {
+    id: "review-gaebelein",
+    title: "A. C. Gaebelein works",
+    author: "Arno C. Gaebelein",
+    category: "Commentaries",
+    source: "Public-domain scans to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact editions and renewal/public-domain status are documented.",
+    doctrinalNotes: "Prophecy and Bible study perspective requires careful labels.",
+    warningLabels: ["Needs review", "Not all doctrine endorsed"],
+    recommendedUse: "Candidate for prophecy/commentary support after review.",
+  },
+  {
+    id: "review-darby",
+    title: "J. N. Darby works",
+    author: "J. N. Darby",
+    category: "Bible study helps",
+    source: "Public-domain or archive sources to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until source and edition metadata are documented.",
+    doctrinalNotes: "Historical value; use with discernment and visible perspective notes.",
+    warningLabels: ["Needs review", "Use with discernment"],
+    recommendedUse: "Candidate for later historical/expository study after review.",
+  },
+  {
+    id: "review-larkin",
+    title: "Clarence Larkin works",
+    author: "Clarence Larkin",
+    category: "KJV Defense",
+    source: "Public-domain scans to verify; charts require special review",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact edition, chart rights, and source status are documented.",
+    doctrinalNotes: "Prophecy and chart material must be labeled carefully; not all doctrine endorsed.",
+    warningLabels: ["Needs review", "Not all doctrine endorsed"],
+    recommendedUse: "Candidate for later KJV/textual/prophecy shelf after careful review.",
+  },
+  {
+    id: "review-john-gill",
+    title: "John Gill works",
+    author: "John Gill",
+    category: "Commentaries",
+    source: "Public-domain editions to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact source and edition metadata are documented.",
+    doctrinalNotes: "Baptist historical value; doctrinal notes required before import.",
+    warningLabels: ["Needs review", "Baptist history"],
+    recommendedUse: "Candidate for Baptist commentary/history shelf after review.",
+  },
+  {
+    id: "review-adam-clarke",
+    title: "Adam Clarke commentary",
+    author: "Adam Clarke",
+    category: "Commentaries",
+    source: "Public-domain editions to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until source, edition, and text quality are documented.",
+    doctrinalNotes: "Methodist/Arminian perspective; use with clear discernment labels.",
+    warningLabels: ["Needs review", "Not all doctrine endorsed"],
+    recommendedUse: "Candidate for comparative commentary only after review.",
+  },
+  {
+    id: "review-albert-barnes",
+    title: "Albert Barnes notes",
+    author: "Albert Barnes",
+    category: "Commentaries",
+    source: "Public-domain editions to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact source and edition metadata are documented.",
+    doctrinalNotes: "Presbyterian perspective; use with discernment and visible labels.",
+    warningLabels: ["Needs review", "Not all doctrine endorsed"],
+    recommendedUse: "Candidate for comparative commentary only after review.",
+  },
+  {
+    id: "review-john-wesley",
+    title: "John Wesley notes",
+    author: "John Wesley",
+    category: "Commentaries",
+    source: "Public-domain editions to verify",
+    status: "Needs Review",
+    rightsNotes: "Do not import until exact source and edition metadata are documented.",
+    doctrinalNotes: "Methodist perspective; not all doctrine endorsed.",
+    warningLabels: ["Needs review", "Not all doctrine endorsed"],
+    recommendedUse: "Candidate for comparative historical notes after review.",
+  },
+  {
+    id: "review-biblical-illustrator",
+    title: "The Biblical Illustrator",
+    author: "Joseph S. Exell, editor",
+    category: "Preaching & Teaching",
+    source: "Public-domain volumes to verify individually",
+    status: "Needs Review",
+    rightsNotes: "Do not import until each volume/source is verified and text quality is reviewed.",
+    doctrinalNotes: "Illustration/reference compilation; requires careful source and doctrine labeling.",
+    warningLabels: ["Needs review", "Use with discernment"],
+    recommendedUse: "Candidate for sermon illustration support after review.",
   },
   {
     id: "personal-user-book",
@@ -5855,6 +6127,7 @@ export default function Home() {
                 chapterConnectionsData={activeChapterConnections}
                 chapterCrossReferences={chapterCrossReferences}
                 chapterCommentaryEntries={chapterCommentaryEntries}
+                allCommentaryEntries={commentaryEntries}
                 chapterKeyVerses={chapterKeyVerses}
                 chapterResourceRecommendations={activeChapterResourceRecommendations}
                 bookIntroduction={activeBookIntroduction}
@@ -7034,6 +7307,7 @@ function BibleReader({
   chapterConnectionsData,
   chapterCrossReferences,
   chapterCommentaryEntries,
+  allCommentaryEntries,
   chapterKeyVerses,
   chapterResourceRecommendations,
   bookIntroduction,
@@ -7124,6 +7398,7 @@ function BibleReader({
   chapterConnectionsData: ActiveChapterConnections;
   chapterCrossReferences: CrossReference[];
   chapterCommentaryEntries: CommentaryEntry[];
+  allCommentaryEntries: CommentaryEntry[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
   bookIntroduction: BookIntroduction | null;
@@ -7567,6 +7842,7 @@ function BibleReader({
         analysis={chapterAnalysis}
         connections={chapterConnectionsData}
         chapterCommentaryEntries={chapterCommentaryEntries}
+        allCommentaryEntries={allCommentaryEntries}
         chapterCrossReferences={chapterCrossReferences}
         chapterKeyVerses={chapterKeyVerses}
         chapterResourceRecommendations={chapterResourceRecommendations}
@@ -7804,9 +8080,17 @@ function buildAmosTeachingNotesMarkdown({
 
   lines.push(
     "## Commentary References",
-    ...(commentaryEntries.length ? commentaryEntries.map((entry) => (
-      `- ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`}: ${entry.author}, ${entry.resource_title}. ${entry.public_domain_status}. ${entry.recommended_use ?? "Use as secondary support after the KJV text."}`
-    )) : ["- No reviewed Amos 1-4 commentary entries have been imported yet."]),
+    ...(commentaryEntries.length ? commentaryEntries.flatMap((entry) => [
+      `### ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`} - ${entry.author}`,
+      "",
+      `- Source: ${entry.resource_title}`,
+      `- Source URL: ${entry.source_url}`,
+      `- Rights: ${entry.public_domain_status}`,
+      `- Recommended use: ${entry.recommended_use ?? "Use as secondary support after the KJV text."}`,
+      "",
+      entry.entry_text,
+      "",
+    ]) : ["- No reviewed Amos 1-4 commentary entries have been imported yet."]),
     "",
     "## Recommended Amos Resources",
     ...sectionOrEmpty((amosIntro?.recommendedResources ?? []).map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
@@ -8020,6 +8304,7 @@ function ChapterStudyWorkflow({
   analysis,
   connections,
   chapterCommentaryEntries,
+  allCommentaryEntries,
   chapterCrossReferences,
   chapterKeyVerses,
   chapterResourceRecommendations,
@@ -8046,6 +8331,7 @@ function ChapterStudyWorkflow({
   analysis: ChapterStudyAnalysis;
   connections: ActiveChapterConnections;
   chapterCommentaryEntries: CommentaryEntry[];
+  allCommentaryEntries: CommentaryEntry[];
   chapterCrossReferences: CrossReference[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
@@ -8130,9 +8416,9 @@ function ChapterStudyWorkflow({
     : null;
   const amosRangeCommentaryEntries = useMemo(
     () => isAmosTeachingPrep
-      ? chapterCommentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)
+      ? allCommentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)
       : [],
-    [chapterCommentaryEntries, isAmosTeachingPrep],
+    [allCommentaryEntries, isAmosTeachingPrep],
   );
   const amosRangeMarkdownExport = useMemo(() => buildAmosTeachingNotesMarkdown({
     bookIntroduction,
@@ -9668,6 +9954,11 @@ function libraryAuthorIdFromName(author: string) {
   if (normalized.includes("ryle")) return "ryle";
   if (normalized.includes("moody")) return "moody";
   if (normalized.includes("bounds")) return "bounds";
+  if (normalized.includes("murray")) return "murray";
+  if (normalized.includes("torrey")) return "torrey";
+  if (normalized.includes("bunyan")) return "bunyan";
+  if (normalized.includes("hudson taylor") || normalized.includes("james hudson taylor")) return "taylor";
+  if (normalized.includes("meyer")) return "meyer";
   return normalized.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
@@ -9952,12 +10243,31 @@ function LibraryScreen({
     "ironside",
     "moody",
     "ryle",
+    "murray",
+    "torrey",
+    "bunyan",
+    "taylor",
+    "meyer",
     "larkin",
     "william-kelly",
     "darby",
     "gaebelein",
     "fw-grant",
     "preaching-teaching",
+  ];
+  const storefrontCollectionPreviews = storefrontCollectionIds
+    .map((collectionId) => {
+      const collection = libraryCollectionById(collectionId);
+      return {
+        collection,
+        resources: resourcesForCollection(resources, collection).slice(0, 4),
+        comingSoon: COMING_SOON_COLLECTION_IDS.has(collection.id),
+      };
+    })
+    .filter((preview) => preview.resources.length || preview.comingSoon);
+  const plannedKjvItems = [
+    ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
+    ...PERMISSION_REQUESTS.filter((request) => request.title.toLowerCase().includes("way of life")),
   ];
 
   return (
@@ -10112,9 +10422,7 @@ function LibraryScreen({
           ))}
       </LibraryShelf>
 
-      {storefrontCollectionIds.map((collectionId) => {
-        const collection = libraryCollectionById(collectionId);
-        const collectionResources = resourcesForCollection(resources, collection).slice(0, 4);
+      {storefrontCollectionPreviews.map(({ collection, resources: collectionResources, comingSoon }) => {
         return (
           <LibraryShelf key={`collection-preview-${collection.id}`} title={collection.title}>
             {collectionResources.length ? collectionResources.map((resource) => (
@@ -10130,12 +10438,44 @@ function LibraryScreen({
               <LibraryCollectionCard
                 collection={collection}
                 count={0}
+                comingSoon={comingSoon}
                 onOpen={() => onOpenCollection(collection.id)}
               />
             )}
           </LibraryShelf>
         );
       })}
+
+      {plannedKjvItems.length > 0 && (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">KJV Defense / Textual Issues</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Planned and permission-needed resources</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                These are not imported books. They stay separate until rights, source quality, and doctrinal review are complete.
+              </p>
+            </div>
+            <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              Rights first
+            </span>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {plannedKjvItems.map((item) => (
+              <article key={`planned-kjv-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {item.status}
+                </p>
+                <h3 className="mt-2 text-sm font-semibold text-[var(--ink)]">{item.title}</h3>
+                <p className="mt-1 text-xs font-semibold text-[var(--green)]">{item.author}</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                  {"rightsNotes" in item ? item.rightsNotes : item.notes}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
 
       {featuredResources.length > 0 && (
         <LibraryShelf title="Featured">
@@ -11257,10 +11597,12 @@ function LibraryAuthorCard({
 function LibraryCollectionCard({
   collection,
   count,
+  comingSoon = false,
   onOpen,
 }: {
   collection: LibraryCollection;
   count: number;
+  comingSoon?: boolean;
   onOpen: () => void;
 }) {
   return (
@@ -11279,7 +11621,7 @@ function LibraryCollectionCard({
           </span>
         ))}
         <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
-          {count} resource{count === 1 ? "" : "s"}
+          {comingSoon && count === 0 ? "Coming Soon" : `${count} resource${count === 1 ? "" : "s"}`}
         </span>
       </div>
     </button>

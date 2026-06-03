@@ -853,5 +853,188 @@
     "checksum_sha256": "4d3b7872a5f5537f367877964f05d18494634c7aed74da8fcbc94e6875405380",
     "file_size_bytes": 45843,
     "word_count": 7800
+  },
+  {
+    "title": "Love to the Uttermost",
+    "author": "F. B. Meyer",
+    "year": 1898,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/22376",
+    "download_url": "https://www.gutenberg.org/ebooks/22376.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/love-to-the-uttermost.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Title page states Copyright 1898-1899 by Fleming H. Revell Company.",
+    "notes": "F. B. Meyer exposition of John 13-21, useful for Christ-centered study and teaching prep.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Devotional exposition from a non-Baptist author; use Scripture-first and note secondary differences where needed.",
+    "recommended_use": "John study support, devotional reading, and teaching preparation after reading the KJV text.",
+    "resource_labels": [
+      "Bible study helps",
+      "Commentary",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "c022d5aaebc8a9c560681854148ce3e86f056a1f651427ad545613f4ff4dfc1e",
+    "file_size_bytes": 520246,
+    "word_count": 91389
+  },
+  {
+    "title": "John the Baptist",
+    "author": "F. B. Meyer",
+    "year": 1911,
+    "category": "Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/25904",
+    "download_url": "https://www.gutenberg.org/ebooks/25904.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/john-the-baptist-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Plain-text title page identifies the 1911 Morgan and Scott edition.",
+    "notes": "Biographical Bible study on John the Baptist and his ministry as forerunner of Christ.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Devotional biography from a non-Baptist author; helpful for biblical biography with Scripture-first review.",
+    "recommended_use": "Bible biography, John/Luke teaching prep, and lessons on humility, witness, and repentance.",
+    "resource_labels": [
+      "Biographies",
+      "Bible study helps",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "e11f427117f61f469bd0740deac8474e314c9061d61c76eaf28c95a02c2fff64",
+    "file_size_bytes": 373570,
+    "word_count": 64578
+  },
+  {
+    "title": "Separation and Service; or, Thoughts on Numbers VI, VII.",
+    "author": "James Hudson Taylor",
+    "year": 1900,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/26384",
+    "download_url": "https://www.gutenberg.org/ebooks/26384.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/separation-and-service.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Source text is an undated public-domain Morgan and Scott / China Inland Mission edition.",
+    "notes": "Hudson Taylor study on Numbers 6-7, separation unto God, and service.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Missionary devotional exposition; useful with Scripture-first review and discernment on applications.",
+    "recommended_use": "Teaching prep on consecration, ministry service, and missionary devotion.",
+    "resource_labels": [
+      "Bible study helps",
+      "Missions",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "22863c2f546da11c49ebe83d47fafd72f890e1132b070eaef2b561775bd24ce6",
+    "file_size_bytes": 113813,
+    "word_count": 19175
+  },
+  {
+    "title": "Union and Communion; or, Thoughts on the Song of Solomon",
+    "author": "James Hudson Taylor",
+    "year": 1900,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/26172",
+    "download_url": "https://www.gutenberg.org/ebooks/26172.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/union-and-communion.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Source text is an undated public-domain Morgan and Scott / China Inland Mission edition.",
+    "notes": "Hudson Taylor devotional thoughts on the Song of Solomon, focused on communion with Christ.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Devotional and typological treatment; label clearly and use with careful doctrinal discernment.",
+    "recommended_use": "Devotional reading, Christ-centered application, and teacher background with discernment.",
+    "resource_labels": [
+      "Bible study helps",
+      "Missions",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "checksum_sha256": "c872bd721b0dbf4e2f6b1166f06e0658cec6fe6182d9f1df27fa149799f5c1f3",
+    "file_size_bytes": 123325,
+    "word_count": 20574
+  },
+  {
+    "title": "A Ribband of Blue, and Other Bible Studies",
+    "author": "James Hudson Taylor",
+    "year": 1900,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/23438",
+    "download_url": "https://www.gutenberg.org/ebooks/23438.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-ribband-of-blue.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Source text is an undated public-domain China Inland Mission / Morgan and Scott edition.",
+    "notes": "Hudson Taylor collection of Bible studies for practical Christian living and obedience.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Missionary devotional Bible studies; helpful with Scripture-first review.",
+    "recommended_use": "Bible study, missions-minded discipleship, and practical applications.",
+    "resource_labels": [
+      "Bible study helps",
+      "Missions",
+      "Christian Living"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "8f0b97e64c45a3a26b309bcad8adeb7bd27403608bf6aebaf013a17f374ad8fa",
+    "file_size_bytes": 109261,
+    "word_count": 19104
+  },
+  {
+    "title": "Unfailing Springs",
+    "author": "James Hudson Taylor",
+    "year": 1900,
+    "category": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/57109",
+    "download_url": "https://www.gutenberg.org/ebooks/57109.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/unfailing-springs.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files. Source text is an undated public-domain tract-style edition.",
+    "notes": "Short Hudson Taylor devotional work on Christ as living water and unfailing supply.",
+    "import_status": "imported_file",
+    "doctrinal_review_status": "approved with discernment",
+    "perspective_notes": "Missionary devotional resource; useful for encouragement and Gospel application.",
+    "recommended_use": "Short devotional reading, new believer encouragement, and lesson application.",
+    "resource_labels": [
+      "Christian Living",
+      "Missions",
+      "Devotional classic"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "checksum_sha256": "70ed8e29678cb5042ec5be00e64f379f8ed017f4de5721f2f435026f444c7d1d",
+    "file_size_bytes": 34332,
+    "word_count": 5616
   }
 ]
