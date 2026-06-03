@@ -15,6 +15,8 @@
       "rights_status": "needs review",
       "doctrinal_review_status": "needs review",
       "warning_labels": ["Use with discernment"],
+      "visibility": "Private admin draft",
+      "notes": "Admin-only review notes go here.",
       "recommended_use": "Review-only sample. Do not publish."
     }
   ]

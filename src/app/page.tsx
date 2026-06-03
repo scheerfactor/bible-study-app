@@ -54,7 +54,8 @@ type TestamentFilter = "all" | "old" | "new";
 type LibraryView = "home" | "detail" | "reader" | "author" | "collection";
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
-type ResourceImportStatus = "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
+type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
+type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
 
 type BibleVerse = {
   ref: string;
@@ -301,9 +302,13 @@ type AdminResourceType =
   | "Library Book"
   | "Commentary"
   | "Dictionary"
-  | "Bible Handbook / Survey"
+  | "Bible Handbook"
+  | "Bible Survey"
   | "Devotional"
-  | "Sermon / Teaching Resource";
+  | "Sermon / Teaching Resource"
+  | "KJV/Textual Issue Resource"
+  | "Baptist History"
+  | "Missions / Biography";
 
 type AdminImportMetadata = {
   title: string;
@@ -316,6 +321,8 @@ type AdminImportMetadata = {
   warningLabels: string;
   recommendedUse: string;
   bibleBookCovered: string;
+  visibility: ResourceVisibility;
+  notes: string;
 };
 
 type AdminImportQueueItem = {
@@ -1244,12 +1251,17 @@ const ADMIN_RESOURCE_TYPES: AdminResourceType[] = [
   "Library Book",
   "Commentary",
   "Dictionary",
-  "Bible Handbook / Survey",
+  "Bible Handbook",
+  "Bible Survey",
   "Devotional",
   "Sermon / Teaching Resource",
+  "KJV/Textual Issue Resource",
+  "Baptist History",
+  "Missions / Biography",
 ];
-const ADMIN_UPLOAD_FORMATS = ["TXT", "Markdown", "DOCX placeholder", "PDF placeholder", "ZIP placeholder"];
-const ADMIN_REVIEW_STATUSES: ResourceImportStatus[] = ["Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"];
+const ADMIN_UPLOAD_FORMATS = ["TXT", "Markdown", "DOCX later", "EPUB later", "PDF later", "ZIP batch later"];
+const ADMIN_REVIEW_STATUSES: ResourceImportStatus[] = ["Draft", "Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"];
+const ADMIN_VISIBILITY_OPTIONS: ResourceVisibility[] = ["Public after review", "Private admin draft", "Personal use only"];
 const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
   title: "",
   author: "",
@@ -1261,6 +1273,8 @@ const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
   warningLabels: "",
   recommendedUse: "",
   bibleBookCovered: "",
+  visibility: "Private admin draft",
+  notes: "",
 };
 
 const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
@@ -10502,7 +10516,8 @@ function adminFileSupportLabel(fileName: string) {
   const extension = fileExtension(fileName);
   if (extension === "txt") return "TXT extraction ready";
   if (extension === "md" || extension === "markdown") return "Markdown extraction ready";
-  if (extension === "docx") return "DOCX metadata placeholder";
+  if (extension === "docx") return "DOCX placeholder - text extraction not enabled yet";
+  if (extension === "epub") return "EPUB placeholder - text extraction not enabled yet";
   if (extension === "pdf") return "PDF placeholder - text extraction not enabled yet";
   if (extension === "zip") return "ZIP batch placeholder";
   return "Unsupported file type";
@@ -10551,9 +10566,13 @@ function adminImportRouteSummary(resourceType: AdminResourceType, sections: stri
       ? `Prepare ${sections.length} detected headwords for dictionary review and keep source metadata attached.`
       : "Dictionary selected: headword detection will run after text is available.";
   }
-  if (resourceType === "Library Book") return "Prepare for Library reader, author page, shelves, and search after review approval.";
-  if (resourceType === "Bible Handbook / Survey") return "Prepare for Book Introduction recommendations and Library reader after review.";
+  if (resourceType === "Library Book") return "Prepare for Library reader, author page, shelves, search, continue reading, and listening queue after review approval.";
+  if (resourceType === "Bible Handbook") return "Prepare for Library reader and optional Book Introduction recommendations after review.";
+  if (resourceType === "Bible Survey") return "Prepare for Library reader and book-level survey recommendations after review.";
   if (resourceType === "Devotional") return "Prepare for devotional Library shelves only after rights and doctrinal review.";
+  if (resourceType === "KJV/Textual Issue Resource") return "Prepare for KJV/Textual Issues shelf with clear warnings and documented rights after review.";
+  if (resourceType === "Baptist History") return "Prepare for Baptist History shelves and author pages after review.";
+  if (resourceType === "Missions / Biography") return "Prepare for Missions, Biography, author pages, and listening queue after review.";
   return "Prepare for preaching/teaching shelves and lesson-prep recommendations after review.";
 }
 
@@ -10577,23 +10596,31 @@ function validateAdminImport({
   const extension = fileExtension(fileName);
 
   if (!fileName) errors.push("Upload a file first.");
-  if (!["txt", "md", "markdown", "docx", "pdf", "zip"].includes(extension)) errors.push("Supported upload types are TXT, Markdown, DOCX, PDF placeholder, and ZIP placeholder.");
+  if (!["txt", "md", "markdown", "docx", "epub", "pdf", "zip"].includes(extension)) errors.push("Supported upload types are TXT, Markdown, DOCX, EPUB, PDF, and ZIP placeholders.");
   if (!metadata.title.trim()) errors.push("Title is required.");
   if (!metadata.author.trim()) errors.push("Author is required.");
   if (!metadata.category.trim()) errors.push("Category is required.");
+  if (!metadata.sourceUrl.trim()) errors.push("Source URL or local source note is required.");
   if (!metadata.rightsStatus.trim()) errors.push("Rights status is required.");
   if (!metadata.doctrinalReviewStatus.trim()) errors.push("Doctrinal review status is required.");
   if (!metadata.recommendedUse.trim()) errors.push("Recommended use is required.");
-  if ((extension === "pdf" || extension === "docx" || extension === "zip") && status === "Verified") {
-    errors.push("DOCX, PDF, and ZIP uploads cannot be marked verified until extraction and review are implemented.");
+  if ((extension === "pdf" || extension === "docx" || extension === "epub" || extension === "zip") && status === "Verified") {
+    errors.push("DOCX, EPUB, PDF, and ZIP uploads cannot be marked verified until extraction and review are implemented.");
   }
   if (!adminFileCanExtractText(fileName) && !previewText.trim()) warnings.push(`${extension.toUpperCase()} import is a placeholder. Store metadata now; extract text later.`);
   if (adminFileCanExtractText(fileName) && previewText.trim().length < 40) warnings.push("Extracted text is very short. Confirm the file imported correctly.");
+  if (status === "Draft") warnings.push("Draft items stay in the admin queue and are hidden from the public Library.");
   if (status === "Verified" && !/public|permission|allowed|verified/i.test(metadata.rightsStatus)) {
     errors.push("Verified imports require clear public-domain, permission, or allowed-use rights notes.");
   }
   if (status === "Verified" && /needs review|unknown|unclear/i.test(metadata.rightsStatus)) {
     errors.push("Rights cannot still be unclear when status is verified.");
+  }
+  if (status === "Verified" && metadata.visibility !== "Public after review") {
+    errors.push("Only public-after-review resources can be marked verified for public import.");
+  }
+  if (metadata.visibility === "Personal use only" && status !== "Personal Use Only") {
+    errors.push("Personal-use uploads must use the Personal Use Only review status.");
   }
   if (resourceType === "Commentary") {
     if (!metadata.bibleBookCovered.trim()) errors.push("Commentary imports require the Bible book covered.");
@@ -10752,6 +10779,18 @@ function LibraryScreen({
   onRemoveCompleted: (slug: string) => void;
   onReadAgain: (slug: string) => void;
 }) {
+  const [showAdminImport, setShowAdminImport] = useState(false);
+
+  useEffect(() => {
+    function updateAdminVisibility() {
+      setShowAdminImport(window.location.hash === "#admin-import");
+    }
+
+    updateAdminVisibility();
+    window.addEventListener("hashchange", updateAdminVisibility);
+    return () => window.removeEventListener("hashchange", updateAdminVisibility);
+  }, []);
+
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
     const listening = listeningProgress[activeResource.slug];
@@ -10984,7 +11023,10 @@ function LibraryScreen({
         </section>
       )}
 
-      <LibraryImportDashboard signedIn={signedIn} />
+      {showAdminImport && <LibraryImportDashboard signedIn={signedIn} onClose={() => {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        setShowAdminImport(false);
+      }} />}
 
       <CommentaryCoverageDashboard
         coverage={commentaryCoverage}
@@ -11369,9 +11411,9 @@ function LibraryScreen({
   );
 }
 
-function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
+function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onClose: () => void }) {
   const [resourceType, setResourceType] = useState<AdminResourceType>("Library Book");
-  const [reviewStatus, setReviewStatus] = useState<ResourceImportStatus>("Needs Review");
+  const [reviewStatus, setReviewStatus] = useState<ResourceImportStatus>("Draft");
   const [metadata, setMetadata] = useState<AdminImportMetadata>(EMPTY_ADMIN_IMPORT_METADATA);
   const [uploadFileName, setUploadFileName] = useState("");
   const [uploadFileType, setUploadFileType] = useState("");
@@ -11401,13 +11443,20 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
     }),
     [detectedSections, metadata, previewText, resourceType, reviewStatus, uploadFileName],
   );
-  const statusOrder: ResourceImportStatus[] = ["Verified", "Needs Review", "Permission Needed", "Personal Use Only", "Do Not Import"];
+  const statusOrder: ResourceImportStatus[] = ["Draft", "Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"];
   const statusCounts = statusOrder.map((status) => ({
     status,
     count:
       LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.status === status).length +
       adminQueue.filter((item) => item.status === status).length,
   }));
+  const queueSections: Array<{ title: string; statuses: ResourceImportStatus[]; note: string }> = [
+    { title: "Import Queue", statuses: ["Draft", "Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"], note: "Everything uploaded stays here first. Nothing is published automatically." },
+    { title: "Review Needed", statuses: ["Draft", "Needs Review"], note: "Draft and review items need rights, doctrine, metadata, and routing checks." },
+    { title: "Approved Resources", statuses: ["Verified"], note: "Verified items are publish-ready only when visibility is public and rights are documented." },
+    { title: "Permission Needed", statuses: ["Permission Needed"], note: "Keep David Cloud / Way of Life and unclear modern works here unless written permission exists." },
+    { title: "Personal Use Only", statuses: ["Personal Use Only"], note: "Future member uploads stay private and never become public resources." },
+  ];
 
   function persistAdminQueue(next: AdminImportQueueItem[]) {
     setAdminQueue(next);
@@ -11464,7 +11513,7 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
       createdAt: new Date().toISOString(),
     };
     persistAdminQueue([item, ...adminQueue].slice(0, 20));
-    setImportMessage("Resource added to the admin review queue. Nothing was published.");
+    setImportMessage("Resource added to the admin review queue. Non-verified uploads stay hidden from the public Library.");
   }
 
   function removeAdminQueueItem(id: string) {
@@ -11473,18 +11522,27 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
   }
 
   return (
-    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+    <section id="admin-import" className="rounded-3xl border-2 border-[var(--green)] bg-white p-5 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library Import Dashboard</p>
-          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Grow the library without losing trust</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Admin Resource Import</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Review resources before they reach the public Library</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Public resources must carry rights notes, doctrinal notes, warnings, and recommended use before they become part of the shared Library.
+            This admin area is hidden from normal Library navigation. TXT and Markdown can be previewed now; every item stays private until it passes rights and doctrinal review.
           </p>
         </div>
-        <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-          No unreviewed books are published
-        </span>
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            Admin-only
+          </span>
+          <button
+            className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+            onClick={onClose}
+            type="button"
+          >
+            Hide admin area
+          </button>
+        </div>
       </div>
 
       <div className="mt-4 grid grid-cols-2 gap-2 md:grid-cols-5">
@@ -11496,13 +11554,27 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
         ))}
       </div>
 
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+        {queueSections.map((section) => {
+          const queueCount = adminQueue.filter((item) => section.statuses.includes(item.status)).length;
+          const candidateCount = LIBRARY_IMPORT_CANDIDATES.filter((candidate) => section.statuses.includes(candidate.status)).length;
+          return (
+            <article key={`admin-import-section-${section.title}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-sm font-semibold text-[var(--ink)]">{section.title}</p>
+              <p className="mt-2 text-2xl font-semibold text-[var(--green)]">{queueCount + candidateCount}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{section.note}</p>
+            </article>
+          );
+        })}
+      </div>
+
       <div className="mt-4 grid gap-3 xl:grid-cols-[1.2fr_1fr]">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-sm font-semibold text-[var(--green)]">Admin Import Engine</p>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                Upload resource files into a review queue. TXT and Markdown preview now; DOCX, PDF, and ZIP are metadata placeholders until reliable extraction is added.
+                Upload resource files into a review queue. TXT and Markdown preview now; DOCX, EPUB, PDF, and ZIP stay as metadata placeholders until reliable extraction is added.
               </p>
             </div>
             <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
@@ -11517,7 +11589,7 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
                 Upload resource
               </span>
               <input
-                accept=".txt,.md,.markdown,.docx,.pdf,.zip"
+                accept=".txt,.md,.markdown,.docx,.epub,.pdf,.zip"
                 className="mt-3 block w-full text-xs text-[var(--muted)] file:mr-3 file:rounded-full file:border-0 file:bg-[var(--green)] file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white"
                 onChange={(event) => {
                   void handleAdminFileUpload(event.target.files?.[0] ?? null);
@@ -11537,12 +11609,12 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
                 ))}
               </div>
               <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
-                ZIP batch format: `manifest.json`, `files/`, and `covers/`. ZIP unpacking is planned, not active.
+                Start with TXT and Markdown. ZIP batch format is planned as `manifest.json`, `files/`, and `covers/`; unpacking is not active.
               </p>
             </div>
           </div>
 
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
             <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
               Resource type
               <select
@@ -11552,6 +11624,18 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
               >
                 {ADMIN_RESOURCE_TYPES.map((type) => (
                   <option key={`admin-resource-type-${type}`} value={type}>{type}</option>
+                ))}
+              </select>
+            </label>
+            <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+              Public / private
+              <select
+                className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                value={metadata.visibility}
+                onChange={(event) => updateAdminMetadata("visibility", event.target.value as ResourceVisibility)}
+              >
+                {ADMIN_VISIBILITY_OPTIONS.map((option) => (
+                  <option key={`admin-visibility-${option}`} value={option}>{option}</option>
                 ))}
               </select>
             </label>
@@ -11589,6 +11673,9 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
             <AdminImportTextArea label="Rights status" value={metadata.rightsStatus} onChange={(value) => updateAdminMetadata("rightsStatus", value)} />
             <AdminImportTextArea label="Doctrinal review status" value={metadata.doctrinalReviewStatus} onChange={(value) => updateAdminMetadata("doctrinalReviewStatus", value)} />
             <AdminImportTextArea label="Recommended use" value={metadata.recommendedUse} onChange={(value) => updateAdminMetadata("recommendedUse", value)} />
+          </div>
+          <div className="mt-3">
+            <AdminImportTextArea label="Admin notes" value={metadata.notes} onChange={(value) => updateAdminMetadata("notes", value)} />
           </div>
 
           <div className="mt-4 grid gap-3 md:grid-cols-2">
@@ -11673,7 +11760,10 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
                 </div>
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{adminImportRouteSummary(item.resourceType, item.detectedSections)}</p>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  Text: {item.extractedCharacters.toLocaleString()} chars · Detected: {item.detectedSections.length}
+                  {item.metadata.visibility} · Text: {item.extractedCharacters.toLocaleString()} chars · Detected: {item.detectedSections.length}
+                </p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  Rights: {item.metadata.rightsStatus}
                 </p>
                 {item.validationWarnings.length > 0 && (
                   <p className="mt-2 rounded-xl bg-amber-50 px-3 py-2 text-xs leading-5 text-amber-800">
@@ -11683,7 +11773,9 @@ function LibraryImportDashboard({ signedIn }: { signedIn: boolean }) {
                 <div className="mt-3 flex flex-wrap gap-2">
                   <button
                     className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
-                    onClick={() => setImportMessage("Approve/import is intentionally a placeholder. Nothing public was published.")}
+                    onClick={() => setImportMessage(item.status === "Verified" && item.metadata.visibility === "Public after review"
+                      ? "Public import is still a placeholder. This verified item was not published yet."
+                      : "Review is still required. Non-verified or private items cannot appear in the public Library.")}
                     type="button"
                   >
                     Approve/import placeholder
@@ -11837,6 +11929,7 @@ function AdminImportTextArea({
 }
 
 function importStatusTone(status: ResourceImportStatus) {
+  if (status === "Draft") return "border-stone-200 bg-stone-50 text-stone-800";
   if (status === "Verified") return "border-emerald-200 bg-emerald-50 text-emerald-800";
   if (status === "Needs Review") return "border-amber-200 bg-amber-50 text-amber-800";
   if (status === "Permission Needed") return "border-sky-200 bg-sky-50 text-sky-800";
@@ -11845,6 +11938,7 @@ function importStatusTone(status: ResourceImportStatus) {
 }
 
 function importStatusPill(status: ResourceImportStatus) {
+  if (status === "Draft") return "bg-stone-50 text-stone-800";
   if (status === "Verified") return "bg-emerald-50 text-emerald-800";
   if (status === "Needs Review") return "bg-amber-50 text-amber-800";
   if (status === "Permission Needed") return "bg-sky-50 text-sky-800";
