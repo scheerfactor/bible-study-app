@@ -259,7 +259,15 @@ type BibleListeningProgress = {
   updatedAt: string;
 };
 
-type BiblePlaylistItemType = "bible_chapter" | "bible_verse_range" | "commentary_placeholder" | "library_placeholder" | "notes_placeholder";
+type BiblePlaylistItemType =
+  | "bible_chapter"
+  | "bible_book"
+  | "bible_verse"
+  | "bible_verse_range"
+  | "commentary_placeholder"
+  | "cross_reference_placeholder"
+  | "library_placeholder"
+  | "notes_placeholder";
 
 type BiblePlaylistItem = {
   id: string;
@@ -270,6 +278,7 @@ type BiblePlaylistItem = {
   verseStart?: number;
   verseEnd?: number;
   resourceTitle?: string;
+  resourceSlug?: string;
 };
 
 type BibleAudioPlaylist = {
@@ -479,6 +488,7 @@ const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
+const LIBRARY_LISTENING_QUEUE_KEY = "fathers-business-library-listening-queue";
 const LIBRARY_ANNOTATIONS_KEY = "fathers-business-library-annotations";
 const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
 const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
@@ -2750,6 +2760,24 @@ function saveListeningProgress(state: ListeningProgressState) {
   window.localStorage.setItem(LIBRARY_LISTENING_KEY, JSON.stringify(state));
 }
 
+function loadLibraryListeningQueue(): string[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(LIBRARY_LISTENING_QUEUE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as string[];
+    return Array.isArray(parsed) ? parsed.filter((slug) => typeof slug === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveLibraryListeningQueue(slugs: string[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(LIBRARY_LISTENING_QUEUE_KEY, JSON.stringify(slugs));
+}
+
 function normalizeLibraryAnnotations(raw: unknown): LibraryAnnotationState {
   if (!raw || typeof raw !== "object") return {};
   return Object.fromEntries(
@@ -2916,6 +2944,48 @@ function chunkSpeechText(text: string) {
 
   if (current) chunks.push(current);
   return chunks;
+}
+
+function bibleSpeechParts(
+  verses: BibleVerse[],
+  options: { includeVerseReferences: boolean; includeChapterHeadings: boolean },
+) {
+  const chunks = verses.map((verse, index) => {
+    const previous = verses[index - 1];
+    const parts: string[] = [];
+    if (options.includeChapterHeadings && (!previous || previous.book !== verse.book || previous.chapter !== verse.chapter)) {
+      parts.push(`${verse.book} chapter ${verse.chapter}.`);
+    }
+    if (options.includeVerseReferences) {
+      parts.push(`${verse.ref}.`);
+    }
+    parts.push(verse.plainText);
+    return parts.join(" ");
+  });
+
+  return {
+    chunks,
+    verseRefs: verses.map((verse) => verse.ref),
+    text: chunks.join(" "),
+  };
+}
+
+function listeningSecondsFromWordCount(wordCount: number, rate: number) {
+  const wordsPerMinute = 155 * Math.max(0.25, rate);
+  return Math.max(30, Math.round((wordCount / wordsPerMinute) * 60));
+}
+
+function formatListeningDuration(totalSeconds: number) {
+  const safeSeconds = Math.max(0, Math.round(totalSeconds));
+  const hours = Math.floor(safeSeconds / 3600);
+  const minutes = Math.max(1, Math.round((safeSeconds % 3600) / 60));
+  if (hours <= 0) return `${minutes} min`;
+  return `${hours} hr ${minutes} min`;
+}
+
+function listeningFinishLabel(totalSeconds: number) {
+  if (totalSeconds <= 0) return "Finish time unknown";
+  return new Date(Date.now() + totalSeconds * 1000).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 }
 
 function formatPercent(value: number) {
@@ -3132,6 +3202,7 @@ export default function Home() {
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
+  const [libraryListeningQueue, setLibraryListeningQueue] = useState<string[]>([]);
   const [libraryAnnotations, setLibraryAnnotations] = useState<LibraryAnnotationState>({});
   const [libraryNoteDraft, setLibraryNoteDraft] = useState("");
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
@@ -3145,7 +3216,10 @@ export default function Home() {
   const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
   const [repeatChapter, setRepeatChapter] = useState(false);
   const [repeatBook, setRepeatBook] = useState(false);
+  const [repeatSelectedRange, setRepeatSelectedRange] = useState(false);
   const [stopAfterSelection, setStopAfterSelection] = useState(true);
+  const [includeVerseReferences, setIncludeVerseReferences] = useState(false);
+  const [includeChapterHeadings, setIncludeChapterHeadings] = useState(true);
   const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false);
   const [speechVoices, setSpeechVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedSpeechVoiceURI, setSelectedSpeechVoiceURI] = useState("");
@@ -3300,6 +3374,23 @@ export default function Home() {
     [completedLibraryResources.length, libraryProgress, libraryResources.length],
   );
 
+  const libraryListeningQueueResources = useMemo(
+    () => libraryListeningQueue.flatMap((slug) => {
+      const resource = libraryResources.find((candidate) => candidate.slug === slug);
+      return resource ? [resource] : [];
+    }),
+    [libraryListeningQueue, libraryResources],
+  );
+
+  const libraryListeningQueueSeconds = useMemo(
+    () =>
+      libraryListeningQueueResources.reduce(
+        (total, resource) => total + listeningSecondsFromWordCount(resource.word_count ?? 1200, speechState.rate),
+        0,
+      ),
+    [libraryListeningQueueResources, speechState.rate],
+  );
+
   const featuredLibraryResources = useMemo(() => {
     const preferred = new Set(["Power Through Prayer", "How to Bring Men to Christ", "The Pilgrim's Progress", "A Retrospect"]);
     return libraryResources.filter((resource) => preferred.has(resource.title)).slice(0, 4);
@@ -3439,6 +3530,7 @@ export default function Home() {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
       setListeningProgress(loadListeningProgress());
+      setLibraryListeningQueue(loadLibraryListeningQueue());
       setLibraryAnnotations(loadLibraryAnnotations());
       setBibleListeningProgress(loadBibleListeningProgress());
       setBiblePlaylists(loadBiblePlaylists());
@@ -3908,22 +4000,7 @@ export default function Home() {
         setSyncMessage("Could not load that library resource for listening yet.");
         return;
       }
-      toggleSpeech(
-        `resource-${resource.slug}`,
-        resource.title,
-        text,
-        listeningProgress[resource.slug]?.progress ?? progress.progress,
-        (nextProgress) => {
-          saveListeningProgressUpdate(resource, nextProgress, speechRateRef.current);
-          saveLibraryProgressUpdate(resource.slug, (current) => ({
-            ...current,
-            title: resource.title,
-            author: resource.author,
-            progress: nextProgress,
-            updatedAt: new Date().toISOString(),
-          }));
-        },
-      );
+      startLibraryResourceListening(resource, text, listeningProgress[resource.slug]?.progress ?? progress.progress);
     } catch {
       setSyncMessage("Could not load that library resource for listening yet.");
     }
@@ -4179,6 +4256,64 @@ export default function Home() {
     startSpeech(targetId, label, text, startProgress, onProgress);
   }
 
+  async function playNextLibraryQueueItem(currentSlug: string) {
+    const index = libraryListeningQueue.indexOf(currentSlug);
+    const nextSlug = index >= 0 ? libraryListeningQueue[index + 1] : null;
+    if (!nextSlug) return;
+    const nextResource = libraryResources.find((candidate) => candidate.slug === nextSlug);
+    if (!nextResource) return;
+
+    try {
+      const response = await fetch(`/api/library/${nextResource.slug}`);
+      const data = (await response.json()) as { text?: string };
+      const text = data.text ?? "";
+      if (!text.trim()) return;
+      startLibraryResourceListening(nextResource, text, listeningProgress[nextResource.slug]?.progress ?? 0);
+    } catch {
+      setSyncMessage("Could not auto-play the next library item yet.");
+    }
+  }
+
+  function startLibraryResourceListening(resource: LibraryResource, text: string, progress: number) {
+    const targetId = `resource-${resource.slug}`;
+    if (speechState.targetId === targetId && speechState.playing) {
+      if (speechState.paused) {
+        resumeSpeech();
+      } else {
+        pauseSpeech();
+      }
+      return;
+    }
+
+    const listeningStart = listeningProgress[resource.slug]?.progress ?? progress;
+    startSpeech(
+      targetId,
+      resource.title,
+      text,
+      listeningStart,
+      (nextProgress) => {
+        saveListeningProgressUpdate(resource, nextProgress, speechRateRef.current);
+        saveLibraryProgressUpdate(resource.slug, (current) => ({
+          ...current,
+          title: resource.title,
+          author: resource.author,
+          progress: nextProgress,
+          fontSize: libraryFontSize,
+          updatedAt: new Date().toISOString(),
+        }));
+        if (nextProgress >= 99.5) {
+          saveCompletedResource(resource);
+        }
+      },
+      {
+        onComplete: () => {
+          saveCompletedResource(resource);
+          void playNextLibraryQueueItem(resource.slug);
+        },
+      },
+    );
+  }
+
   function updateSpeechRate(rate: number) {
     speechRateRef.current = rate;
     setSpeechState((state) => ({ ...state, rate }));
@@ -4205,10 +4340,6 @@ export default function Home() {
     setSyncMessage(`Sleep timer set for ${minutes} minutes.`);
   }
 
-  function bibleSpeechText(verses: BibleVerse[]) {
-    return verses.map((verse) => `${verse.ref}. ${verse.plainText}`).join(" ");
-  }
-
   function saveBibleProgress(targetId: string, label: string, verses: BibleVerse[], progress: number) {
     const safeProgress = Math.min(100, Math.max(0, progress));
     const currentIndex = Math.min(verses.length - 1, Math.max(0, Math.floor((safeProgress / 100) * verses.length)));
@@ -4232,19 +4363,21 @@ export default function Home() {
       return;
     }
 
-    const chunks = verses.map((verse) => `${verse.ref}. ${verse.plainText}`);
-    const verseRefs = verses.map((verse) => verse.ref);
+    const speechParts = bibleSpeechParts(verses, {
+      includeVerseReferences,
+      includeChapterHeadings,
+    });
     const savedStart = startProgress ?? (bibleListeningProgress?.targetId === targetId ? bibleListeningProgress.progress : 0);
 
     startSpeech(
       targetId,
       label,
-      bibleSpeechText(verses),
+      speechParts.text,
       savedStart,
       (nextProgress) => saveBibleProgress(targetId, label, verses, nextProgress),
       {
-        chunks,
-        verseRefs,
+        chunks: speechParts.chunks,
+        verseRefs: speechParts.verseRefs,
         onComplete: repeat ? () => startBibleListening(verses, label, targetId, true, 0) : undefined,
       },
     );
@@ -4267,7 +4400,7 @@ export default function Home() {
     const start = Math.min(safeStart, safeEnd);
     const end = Math.max(safeStart, safeEnd);
     const verses = chapterVerses.filter((verse) => verse.verse >= start && verse.verse <= end);
-    startBibleListening(verses, `${book} ${chapter}:${start}-${end}`, `bible-range-${book}-${chapter}-${start}-${end}`);
+    startBibleListening(verses, `${book} ${chapter}:${start}-${end}`, `bible-range-${book}-${chapter}-${start}-${end}`, repeatSelectedRange);
   }
 
   function listenWholeBook() {
@@ -4322,6 +4455,150 @@ export default function Home() {
       return next;
     });
     setSyncMessage(`Playlist "${trimmed}" saved locally.`);
+  }
+
+  function addBiblePlaylistItem(type: BiblePlaylistItemType) {
+    const safeStart = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeStart));
+    const safeEnd = Math.max(1, Math.min(versesMax(chapterVerses), listenRangeEnd));
+    const start = Math.min(safeStart, safeEnd);
+    const end = Math.max(safeStart, safeEnd);
+    const selectedVerse = allVerses.find((candidate) => candidate.ref === selectedRef);
+    const currentVerse = selectedVerse?.book === book && selectedVerse.chapter === chapter ? selectedVerse.verse : verseJump;
+    const itemBase = { id: makeId("playlist_item"), book, chapter };
+    const itemByType: Record<BiblePlaylistItemType, BiblePlaylistItem> = {
+      bible_chapter: { ...itemBase, type, label: `${book} ${chapter}` },
+      bible_book: { ...itemBase, type, label: `${book}`, chapter: undefined },
+      bible_verse: { ...itemBase, type, label: `${book} ${chapter}:${currentVerse}`, verseStart: currentVerse, verseEnd: currentVerse },
+      bible_verse_range: { ...itemBase, type, label: `${book} ${chapter}:${start}-${end}`, verseStart: start, verseEnd: end },
+      commentary_placeholder: { ...itemBase, type, label: `${book} ${chapter} commentary` },
+      cross_reference_placeholder: { ...itemBase, type, label: `${book} ${chapter} cross references` },
+      library_placeholder: { id: makeId("playlist_item"), type, label: "Related library resource" },
+      notes_placeholder: { ...itemBase, type, label: `${book} ${chapter} personal notes` },
+    };
+
+    const item = itemByType[type];
+    setBiblePlaylists((current) => {
+      const [active = defaultBiblePlaylist(), ...rest] = current.length ? current : [defaultBiblePlaylist()];
+      const nextActive = { ...active, items: [...active.items, item] };
+      const next = [nextActive, ...rest].slice(0, 12);
+      saveBiblePlaylists(next);
+      return next;
+    });
+    setSyncMessage(`${item.label} added to listening playlist.`);
+  }
+
+  function removeBiblePlaylistItem(playlistId: string, itemId: string) {
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) =>
+        playlist.id === playlistId ? { ...playlist, items: playlist.items.filter((item) => item.id !== itemId) } : playlist,
+      );
+      saveBiblePlaylists(next);
+      return next;
+    });
+  }
+
+  function moveBiblePlaylistItem(playlistId: string, itemId: string, direction: -1 | 1) {
+    setBiblePlaylists((current) => {
+      const next = current.map((playlist) => {
+        if (playlist.id !== playlistId) return playlist;
+        const index = playlist.items.findIndex((item) => item.id === itemId);
+        const nextIndex = index + direction;
+        if (index < 0 || nextIndex < 0 || nextIndex >= playlist.items.length) return playlist;
+        const items = [...playlist.items];
+        [items[index], items[nextIndex]] = [items[nextIndex], items[index]];
+        return { ...playlist, items };
+      });
+      saveBiblePlaylists(next);
+      return next;
+    });
+  }
+
+  function versesForBiblePlaylistItem(item: BiblePlaylistItem) {
+    if (item.type === "bible_book" && item.book) {
+      return allVerses.filter((verse) => verse.book === item.book);
+    }
+    if (item.type === "bible_chapter" && item.book && item.chapter) {
+      return allVerses.filter((verse) => verse.book === item.book && verse.chapter === item.chapter);
+    }
+    if ((item.type === "bible_verse" || item.type === "bible_verse_range") && item.book && item.chapter) {
+      const start = item.verseStart ?? 1;
+      const end = item.verseEnd ?? start;
+      return allVerses.filter((verse) => verse.book === item.book && verse.chapter === item.chapter && verse.verse >= start && verse.verse <= end);
+    }
+    return [];
+  }
+
+  function playBiblePlaylist(playlist: BibleAudioPlaylist) {
+    const chunks: string[] = [];
+    const verseRefs: Array<string | null> = [];
+
+    playlist.items.forEach((item) => {
+      const verses = versesForBiblePlaylistItem(item);
+      if (verses.length) {
+        const speechParts = bibleSpeechParts(verses, { includeVerseReferences, includeChapterHeadings });
+        chunks.push(...speechParts.chunks);
+        verseRefs.push(...speechParts.verseRefs);
+        return;
+      }
+
+      if (item.type === "commentary_placeholder" && item.book && item.chapter) {
+        const entries = commentaryEntries.filter((entry) => entry.book === item.book && entry.chapter === item.chapter);
+        if (entries.length) {
+          entries.forEach((entry) => {
+            chunks.push(`${entry.author}. ${entry.resource_title}. ${entry.entry_text}`);
+            verseRefs.push(null);
+          });
+          return;
+        }
+      }
+
+      chunks.push(`${item.label}. This item is prepared for future listening content.`);
+      verseRefs.push(null);
+    });
+
+    startSpeech(
+      `playlist-${playlist.id}`,
+      playlist.name,
+      chunks.join(" "),
+      0,
+      undefined,
+      {
+        chunks,
+        verseRefs,
+        onComplete: repeatSelectedRange ? () => playBiblePlaylist(playlist) : undefined,
+      },
+    );
+  }
+
+  function addLibraryToListeningQueue(slug: string) {
+    const resource = libraryResources.find((candidate) => candidate.slug === slug);
+    if (!resource) return;
+    setLibraryListeningQueue((current) => {
+      const next = Array.from(new Set([...current, slug])).slice(0, 30);
+      saveLibraryListeningQueue(next);
+      return next;
+    });
+    setSyncMessage(`${resource.title} added to the library listening playlist.`);
+  }
+
+  function removeLibraryFromListeningQueue(slug: string) {
+    setLibraryListeningQueue((current) => {
+      const next = current.filter((candidate) => candidate !== slug);
+      saveLibraryListeningQueue(next);
+      return next;
+    });
+  }
+
+  function moveLibraryListeningQueueItem(slug: string, direction: -1 | 1) {
+    setLibraryListeningQueue((current) => {
+      const index = current.indexOf(slug);
+      const nextIndex = index + direction;
+      if (index < 0 || nextIndex < 0 || nextIndex >= current.length) return current;
+      const next = [...current];
+      [next[index], next[nextIndex]] = [next[nextIndex], next[index]];
+      saveLibraryListeningQueue(next);
+      return next;
+    });
   }
 
   function addMemoryVerse(ref: string) {
@@ -4785,19 +5062,32 @@ export default function Home() {
               </span>
               <span className="truncate text-lg font-semibold text-[var(--ink)]">Bible Study</span>
             </button>
-            <button
-              className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
-              onClick={listenCurrentChapter}
-              type="button"
-              title="Listen to current chapter"
-            >
-              {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
-                <Pause size={17} />
-              ) : (
-                <Headphones size={17} />
+            <div className="flex shrink-0 items-center gap-2">
+              <button
+                className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
+                onClick={listenCurrentChapter}
+                type="button"
+                title="Listen to current chapter"
+              >
+                {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
+                  <Pause size={17} />
+                ) : (
+                  <Headphones size={17} />
+                )}
+                {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
+              </button>
+              {(speechState.playing || speechState.paused) && (
+                <button
+                  className="inline-flex h-10 items-center gap-2 rounded-full bg-[var(--ink)] px-4 text-sm font-semibold text-white shadow-sm"
+                  onClick={() => stopSpeech("All listening stopped.")}
+                  type="button"
+                  title="Stop all listening"
+                >
+                  <Square size={16} />
+                  Stop
+                </button>
               )}
-              {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
-            </button>
+            </div>
           </div>
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
             {accountStatus}
@@ -4903,8 +5193,13 @@ export default function Home() {
                 listenRangeEnd={listenRangeEnd}
                 repeatChapter={repeatChapter}
                 repeatBook={repeatBook}
+                repeatSelectedRange={repeatSelectedRange}
                 stopAfterSelection={stopAfterSelection}
+                includeVerseReferences={includeVerseReferences}
+                includeChapterHeadings={includeChapterHeadings}
                 hasSpeechSynthesis={hasSpeechSynthesis}
+                speechVoices={speechVoices}
+                selectedSpeechVoiceURI={selectedSpeechVoiceURI}
                 playlists={biblePlaylists}
                 playlistName={playlistName}
                 listenStatusMessage={syncMessage}
@@ -4928,9 +5223,19 @@ export default function Home() {
                 onListenRangeEndChange={setListenRangeEnd}
                 onRepeatChapterChange={setRepeatChapter}
                 onRepeatBookChange={setRepeatBook}
+                onRepeatSelectedRangeChange={setRepeatSelectedRange}
                 onStopAfterSelectionChange={setStopAfterSelection}
+                onIncludeVerseReferencesChange={setIncludeVerseReferences}
+                onIncludeChapterHeadingsChange={setIncludeChapterHeadings}
+                onSpeechRateChange={updateSpeechRate}
+                onSpeechVoiceChange={setSelectedSpeechVoiceURI}
+                onSleepTimerChange={setSleepTimer}
                 onPlaylistNameChange={setPlaylistName}
                 onCreatePlaylist={createBiblePlaylist}
+                onAddPlaylistItem={addBiblePlaylistItem}
+                onRemovePlaylistItem={removeBiblePlaylistItem}
+                onMovePlaylistItem={moveBiblePlaylistItem}
+                onPlayPlaylist={playBiblePlaylist}
                 onAddMemoryVerse={addMemoryVerse}
                 onUpdateMemoryProgress={updateMemoryProgress}
                 onRemoveMemoryVerse={removeMemoryVerse}
@@ -5014,6 +5319,8 @@ export default function Home() {
                 completedResources={completedLibraryResources}
                 completedState={completedResources}
                 listeningProgress={listeningProgress}
+                libraryListeningQueue={libraryListeningQueueResources}
+                libraryListeningQueueSeconds={libraryListeningQueueSeconds}
                 annotations={libraryAnnotations}
                 noteDraft={libraryNoteDraft}
                 continueReadingResources={continueReadingResources}
@@ -5035,6 +5342,9 @@ export default function Home() {
                 }}
                 onOpenAuthor={openLibraryAuthor}
                 onOpenCollection={openLibraryCollection}
+                onAddToListeningQueue={addLibraryToListeningQueue}
+                onRemoveFromListeningQueue={removeLibraryFromListeningQueue}
+                onMoveListeningQueueItem={moveLibraryListeningQueueItem}
                 onScrollReader={handleLibraryScroll}
                 onFontSizeChange={(size) => {
                   setLibraryFontSize(size);
@@ -5053,27 +5363,7 @@ export default function Home() {
                 onSaveAnnotation={saveLibraryAnnotation}
                 onCopySelection={copyLibrarySelection}
                 onListenResource={(resource, text, progress) => {
-                  const listeningStart = listeningProgress[resource.slug]?.progress ?? progress;
-                  toggleSpeech(
-                    `resource-${resource.slug}`,
-                    resource.title,
-                    text,
-                    listeningStart,
-                    (nextProgress) => {
-                      saveListeningProgressUpdate(resource, nextProgress, speechRateRef.current);
-                      saveLibraryProgressUpdate(resource.slug, (current) => ({
-                        ...current,
-                        title: resource.title,
-                        author: resource.author,
-                        progress: nextProgress,
-                        fontSize: libraryFontSize,
-                        updatedAt: new Date().toISOString(),
-                      }));
-                      if (nextProgress >= 99.5) {
-                        saveCompletedResource(resource);
-                      }
-                    },
-                  );
+                  startLibraryResourceListening(resource, text, progress);
                 }}
                 onSpeechRateChange={(rate) => {
                   updateSpeechRate(rate);
@@ -5221,7 +5511,7 @@ export default function Home() {
             setStudyRef(null);
             setTab("fullStudy");
           }}
-          onToggleAudio={() => toggleSpeech(`verse-${studyRef}`, studyRef, `${studyRef}. ${activeVerse.plainText}`)}
+          onToggleAudio={() => toggleSpeech(`verse-${studyRef}`, studyRef, `${includeVerseReferences ? `${studyRef}. ` : ""}${activeVerse.plainText}`)}
           onSpeechRateChange={updateSpeechRate}
         />
       )}
@@ -6042,8 +6332,13 @@ function BibleReader({
   listenRangeEnd,
   repeatChapter,
   repeatBook,
+  repeatSelectedRange,
   stopAfterSelection,
+  includeVerseReferences,
+  includeChapterHeadings,
   hasSpeechSynthesis,
+  speechVoices,
+  selectedSpeechVoiceURI,
   playlists,
   playlistName,
   listenStatusMessage,
@@ -6067,9 +6362,19 @@ function BibleReader({
   onListenRangeEndChange,
   onRepeatChapterChange,
   onRepeatBookChange,
+  onRepeatSelectedRangeChange,
   onStopAfterSelectionChange,
+  onIncludeVerseReferencesChange,
+  onIncludeChapterHeadingsChange,
+  onSpeechRateChange,
+  onSpeechVoiceChange,
+  onSleepTimerChange,
   onPlaylistNameChange,
   onCreatePlaylist,
+  onAddPlaylistItem,
+  onRemovePlaylistItem,
+  onMovePlaylistItem,
+  onPlayPlaylist,
   onAddMemoryVerse,
   onUpdateMemoryProgress,
   onRemoveMemoryVerse,
@@ -6115,8 +6420,13 @@ function BibleReader({
   listenRangeEnd: number;
   repeatChapter: boolean;
   repeatBook: boolean;
+  repeatSelectedRange: boolean;
   stopAfterSelection: boolean;
+  includeVerseReferences: boolean;
+  includeChapterHeadings: boolean;
   hasSpeechSynthesis: boolean;
+  speechVoices: SpeechSynthesisVoice[];
+  selectedSpeechVoiceURI: string;
   playlists: BibleAudioPlaylist[];
   playlistName: string;
   listenStatusMessage: string;
@@ -6140,9 +6450,19 @@ function BibleReader({
   onListenRangeEndChange: (verse: number) => void;
   onRepeatChapterChange: (repeat: boolean) => void;
   onRepeatBookChange: (repeat: boolean) => void;
+  onRepeatSelectedRangeChange: (repeat: boolean) => void;
   onStopAfterSelectionChange: (stop: boolean) => void;
+  onIncludeVerseReferencesChange: (include: boolean) => void;
+  onIncludeChapterHeadingsChange: (include: boolean) => void;
+  onSpeechRateChange: (rate: number) => void;
+  onSpeechVoiceChange: (voiceURI: string) => void;
+  onSleepTimerChange: (minutes: number | null) => void;
   onPlaylistNameChange: (name: string) => void;
   onCreatePlaylist: () => void;
+  onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
+  onRemovePlaylistItem: (playlistId: string, itemId: string) => void;
+  onMovePlaylistItem: (playlistId: string, itemId: string, direction: -1 | 1) => void;
+  onPlayPlaylist: (playlist: BibleAudioPlaylist) => void;
   onAddMemoryVerse: (ref: string) => void;
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
   onRemoveMemoryVerse: (ref: string) => void;
@@ -6153,7 +6473,6 @@ function BibleReader({
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
-  const bibleSpeechActive = speechState.targetId?.startsWith("bible-") && speechState.playing;
   const selectedVerseNumber = Number(selectedRef.split(":")[1] ?? verseJump);
   const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
@@ -6165,6 +6484,22 @@ function BibleReader({
   );
   const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
+  const estimatePlaylistItemSeconds = (item: BiblePlaylistItem) => {
+    const versesForItem =
+      item.type === "bible_book" && item.book
+        ? allVerses.filter((verse) => verse.book === item.book)
+        : item.type === "bible_chapter" && item.book && item.chapter
+          ? allVerses.filter((verse) => verse.book === item.book && verse.chapter === item.chapter)
+          : (item.type === "bible_verse" || item.type === "bible_verse_range") && item.book && item.chapter
+            ? allVerses.filter((verse) => verse.book === item.book && verse.chapter === item.chapter && verse.verse >= (item.verseStart ?? 1) && verse.verse <= (item.verseEnd ?? item.verseStart ?? 1))
+            : [];
+    if (versesForItem.length) {
+      return listeningSecondsFromWordCount(versesForItem.reduce((total, verse) => total + wordsFromText(verse.plainText).length, 0), speechState.rate);
+    }
+    return listeningSecondsFromWordCount(220, speechState.rate);
+  };
+  const activePlaylist = playlists[0] ?? null;
+  const activePlaylistSeconds = activePlaylist?.items.reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   return (
     <div className="space-y-4 p-4 md:p-8">
       <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-4 md:z-10 md:rounded-3xl md:p-4">
@@ -6343,11 +6678,55 @@ function BibleReader({
           </p>
         )}
 
-        <div className="mt-4 grid gap-2 md:grid-cols-4">
+        <div className="mt-4 flex flex-wrap gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white" onClick={onListenCurrentChapter} type="button">
             {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? <Pause size={16} /> : <Play size={16} />}
-            Current Chapter
+            {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing ? (speechState.paused ? "Resume" : "Pause") : "Play Chapter"}
           </button>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-3 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+            <Square size={15} />
+            Stop
+          </button>
+          <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-3 text-sm font-semibold text-[var(--muted)]">
+            Speed
+            <select className="bg-transparent text-[var(--ink)] outline-none" value={speechState.rate} onChange={(event) => onSpeechRateChange(Number(event.target.value))}>
+              <option value={0.75}>0.75x</option>
+              <option value={1}>1x</option>
+              <option value={1.25}>1.25x</option>
+              <option value={1.5}>1.5x</option>
+              <option value={2}>2x</option>
+            </select>
+          </label>
+          <label className="inline-flex min-w-0 max-w-full items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-3 text-sm font-semibold text-[var(--muted)] sm:min-w-[230px]">
+            <Volume2 size={15} />
+            Voice
+            <select className="min-w-0 flex-1 bg-transparent text-[var(--ink)] outline-none" value={selectedSpeechVoiceURI} onChange={(event) => onSpeechVoiceChange(event.target.value)}>
+              {speechVoices.length ? groupedSpeechVoices(speechVoices).map((group) => (
+                <optgroup key={`bible-voice-group-${group.category}`} label={group.category}>
+                  {group.voices.map((voice) => (
+                    <option key={voice.voiceURI} value={voice.voiceURI}>{voiceDisplayName(voice)}</option>
+                  ))}
+                </optgroup>
+              )) : <option value="">Default device voice</option>}
+            </select>
+          </label>
+          <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-3 text-sm font-semibold text-[var(--muted)]">
+            <Timer size={15} />
+            Sleep
+            <select className="bg-transparent text-[var(--ink)] outline-none" value={speechState.sleepTimerMinutes ?? ""} onChange={(event) => onSleepTimerChange(event.target.value ? Number(event.target.value) : null)}>
+              <option value="">Off</option>
+              <option value={5}>5m</option>
+              <option value={10}>10m</option>
+              <option value={15}>15m</option>
+              <option value={30}>30m</option>
+              <option value={60}>1 hr</option>
+              <option value={120}>2 hr</option>
+              <option value={180}>3 hr</option>
+            </select>
+          </label>
+        </div>
+
+        <div className="mt-3 grid gap-2 md:grid-cols-3">
           <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onListenFromCurrentVerse} type="button">
             <Headphones size={16} />
             From Verse {Number.isFinite(selectedVerseNumber) ? selectedVerseNumber : verseJump}
@@ -6362,92 +6741,104 @@ function BibleReader({
           </button>
         </div>
 
-        <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
-          <div className="grid grid-cols-2 gap-2">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-              Range start
-              <input
-                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]"
-                max={verses.length}
-                min={1}
-                onChange={(event) => onListenRangeStartChange(Number(event.target.value))}
-                type="number"
-                value={listenRangeStart}
-              />
-            </label>
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-              Range end
-              <input
-                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]"
-                max={verses.length}
-                min={1}
-                onChange={(event) => onListenRangeEndChange(Number(event.target.value))}
-                type="number"
-                value={listenRangeEnd}
-              />
-            </label>
+        <details className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">More listening options</summary>
+          <div className="mt-4 grid gap-3 md:grid-cols-[1fr_1fr_1.2fr]">
+            <div className="grid grid-cols-2 gap-2">
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Range start
+                <input className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]" max={verses.length} min={1} onChange={(event) => onListenRangeStartChange(Number(event.target.value))} type="number" value={listenRangeStart} />
+              </label>
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Range end
+                <input className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]" max={verses.length} min={1} onChange={(event) => onListenRangeEndChange(Number(event.target.value))} type="number" value={listenRangeEnd} />
+              </label>
+            </div>
+
+            <div className="grid gap-2 text-sm font-semibold text-[var(--muted)]">
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={repeatChapter} onChange={(event) => onRepeatChapterChange(event.target.checked)} type="checkbox" />
+                Repeat chapter
+              </label>
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={repeatBook} onChange={(event) => onRepeatBookChange(event.target.checked)} type="checkbox" />
+                Repeat book
+              </label>
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={repeatSelectedRange} onChange={(event) => onRepeatSelectedRangeChange(event.target.checked)} type="checkbox" />
+                Repeat selected range
+              </label>
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={stopAfterSelection} onChange={(event) => onStopAfterSelectionChange(event.target.checked)} type="checkbox" />
+                Stop at end of chapter/range/book
+              </label>
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={includeVerseReferences} onChange={(event) => onIncludeVerseReferencesChange(event.target.checked)} type="checkbox" />
+                Include reference before each verse
+              </label>
+              <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <input checked={includeChapterHeadings} onChange={(event) => onIncludeChapterHeadingsChange(event.target.checked)} type="checkbox" />
+                Include chapter heading
+              </label>
+            </div>
+
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Playlist name
+                <input className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]" onChange={(event) => onPlaylistNameChange(event.target.value)} value={playlistName} />
+              </label>
+              <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white" onClick={onCreatePlaylist} type="button">
+                <Save size={16} />
+                Create Playlist
+              </button>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_chapter")} type="button">Add chapter</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_book")} type="button">Add book</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_verse_range")} type="button">Add range</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddPlaylistItem("bible_verse")} type="button">Add verse</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("commentary_placeholder")} type="button">Add commentary</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onAddPlaylistItem("cross_reference_placeholder")} type="button">Add cross refs</button>
+              </div>
+            </div>
           </div>
 
-          <div className="grid gap-2 text-sm font-semibold text-[var(--muted)]">
-            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-              <input checked={repeatChapter} onChange={(event) => onRepeatChapterChange(event.target.checked)} type="checkbox" />
-              Repeat chapter
-            </label>
-            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-              <input checked={repeatBook} onChange={(event) => onRepeatBookChange(event.target.checked)} type="checkbox" />
-              Repeat book
-            </label>
-            <label className="inline-flex items-center gap-2 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-              <input checked={stopAfterSelection} onChange={(event) => onStopAfterSelectionChange(event.target.checked)} type="checkbox" />
-              Stop after chapter/range
-            </label>
-          </div>
-
-          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
-            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
-              Playlist name
-              <input
-                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)]"
-                onChange={(event) => onPlaylistNameChange(event.target.value)}
-                value={playlistName}
-              />
-            </label>
-            <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white" onClick={onCreatePlaylist} type="button">
-              <Save size={16} />
-              Create Playlist
-            </button>
-          </div>
-        </div>
-
-        {bibleSpeechActive && (
-          <button className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
-            <Square size={15} />
-            Stop Bible Audio
-          </button>
-        )}
+          {activePlaylist && (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Teaching Listening Queue</p>
+                  <p className="text-xs font-semibold text-[var(--muted)]">
+                    {formatListeningDuration(activePlaylistSeconds)} at {speechState.rate}x · finishes around {listeningFinishLabel(activePlaylistSeconds)}
+                  </p>
+                </div>
+                <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => onPlayPlaylist(activePlaylist)} type="button">
+                  <Play size={15} />
+                  Play Queue
+                </button>
+              </div>
+              <div className="mt-3 space-y-2">
+                {activePlaylist.items.map((item, index) => (
+                  <div key={item.id} className="grid grid-cols-[1fr_auto] gap-2 rounded-xl bg-white px-3 py-2">
+                    <div>
+                      <p className="text-xs font-semibold text-[var(--muted)]">{item.label}</p>
+                      <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--green)]">{formatListeningDuration(estimatePlaylistItemSeconds(item))}</p>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, -1)} type="button">Up</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === activePlaylist.items.length - 1} onClick={() => onMovePlaylistItem(activePlaylist.id, item.id, 1)} type="button">Down</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemovePlaylistItem(activePlaylist.id, item.id)} type="button">Remove</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </details>
         {listenStatusMessage && (
           <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm leading-6 text-[var(--muted)]">
             {listenStatusMessage}
           </p>
         )}
-
-        <div className="mt-4 grid gap-3 md:grid-cols-2">
-          {playlists.slice(0, 4).map((playlist) => (
-            <article key={playlist.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-              <div className="flex items-center gap-2 text-[var(--green)]">
-                <ListMusic size={17} />
-                <h3 className="text-sm font-semibold">{playlist.name}</h3>
-              </div>
-              <div className="mt-3 space-y-2">
-                {playlist.items.map((item) => (
-                  <p key={item.id} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
-                    {item.label}
-                  </p>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
       </section>
 
       <ChapterStudyWorkflow
@@ -8246,6 +8637,8 @@ function LibraryScreen({
   completedResources,
   completedState,
   listeningProgress,
+  libraryListeningQueue,
+  libraryListeningQueueSeconds,
   annotations,
   noteDraft,
   continueReadingResources,
@@ -8263,6 +8656,9 @@ function LibraryScreen({
   onOpenReader,
   onOpenAuthor,
   onOpenCollection,
+  onAddToListeningQueue,
+  onRemoveFromListeningQueue,
+  onMoveListeningQueueItem,
   onScrollReader,
   onFontSizeChange,
   onReaderSettingsChange,
@@ -8296,6 +8692,8 @@ function LibraryScreen({
   completedResources: CompletedResource[];
   completedState: CompletedResourceState;
   listeningProgress: ListeningProgressState;
+  libraryListeningQueue: LibraryResource[];
+  libraryListeningQueueSeconds: number;
   annotations: LibraryAnnotationState;
   noteDraft: string;
   continueReadingResources: LibraryProgress[];
@@ -8318,6 +8716,9 @@ function LibraryScreen({
   onOpenReader: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
   onOpenCollection: (collectionId: string) => void;
+  onAddToListeningQueue: (slug: string) => void;
+  onRemoveFromListeningQueue: (slug: string) => void;
+  onMoveListeningQueueItem: (slug: string, direction: -1 | 1) => void;
   onScrollReader: () => void;
   onFontSizeChange: (size: number) => void;
   onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
@@ -8385,6 +8786,7 @@ function LibraryScreen({
         completed={completedState[activeResource.slug]}
         onBack={onOpenHome}
         onOpenReader={() => onOpenReader(activeResource.slug)}
+        onAddToListeningQueue={() => onAddToListeningQueue(activeResource.slug)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
@@ -8486,6 +8888,40 @@ function LibraryScreen({
         <LibraryStat label="Reading streak" value={stats.readingStreak} />
         <LibraryStat label="Available" value={String(stats.totalResources)} />
       </section>
+
+      {libraryListeningQueue.length > 0 && (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library Listening Playlist</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Work listening queue</h2>
+              <p className="mt-1 text-sm font-semibold text-[var(--muted)]">
+                {formatListeningDuration(libraryListeningQueueSeconds)} at {speechState.rate}x · finishes around {listeningFinishLabel(libraryListeningQueueSeconds)}
+              </p>
+            </div>
+            <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-sm font-semibold text-[var(--green)]">
+              Auto-plays next book
+            </p>
+          </div>
+          <div className="mt-4 space-y-2">
+            {libraryListeningQueue.map((resource, index) => (
+              <div key={`library-queue-${resource.slug}`} className="grid gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 md:grid-cols-[1fr_auto]">
+                <button className="text-left" onClick={() => onOpenReader(resource.slug)} type="button">
+                  <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                    {resource.author} · {formatListeningDuration(listeningSecondsFromWordCount(resource.word_count ?? 1200, speechState.rate))}
+                  </p>
+                </button>
+                <div className="flex flex-wrap items-center gap-1">
+                  <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => onMoveListeningQueueItem(resource.slug, -1)} type="button">Up</button>
+                  <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold disabled:opacity-40" disabled={index === libraryListeningQueue.length - 1} onClick={() => onMoveListeningQueueItem(resource.slug, 1)} type="button">Down</button>
+                  <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onRemoveFromListeningQueue(resource.slug)} type="button">Remove</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <LibraryShelf title="Featured Authors" horizontal>
         {featuredAuthors.map((profile) => (
@@ -8972,6 +9408,7 @@ function LibraryDetail({
   completed,
   onBack,
   onOpenReader,
+  onAddToListeningQueue,
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
@@ -8983,6 +9420,7 @@ function LibraryDetail({
   completed?: CompletedResource;
   onBack: () => void;
   onOpenReader: () => void;
+  onAddToListeningQueue: () => void;
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
@@ -9020,6 +9458,10 @@ function LibraryDetail({
           <div className="flex flex-wrap gap-2">
             <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
               {completed ? "Read Again" : progress?.progress ? "Continue Reading" : "Open Resource"}
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
+              <ListMusic size={16} />
+              Add to Listen Queue
             </button>
             {completed && (
               <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
@@ -9365,6 +9807,8 @@ function LibraryReader({
               <option value={15}>15m</option>
               <option value={30}>30m</option>
               <option value={60}>60m</option>
+              <option value={120}>2 hr</option>
+              <option value={180}>3 hr</option>
             </select>
           </label>
           <button
