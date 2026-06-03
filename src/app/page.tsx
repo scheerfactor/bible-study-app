@@ -8549,7 +8549,7 @@ function ChapterStudyWorkflow({
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prepare Amos 1-4</p>
               <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Sunday school teaching prep from reviewed data</h3>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Commentary remains a placeholder until a verified public-domain Amos source is imported.
+                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Verified Matthew Henry commentary appears when available, with placeholders kept for future reviewed sources.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
