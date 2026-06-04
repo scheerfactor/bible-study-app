@@ -10094,7 +10094,7 @@ function BibleReader({
   const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
   return (
     <div className="space-y-4 p-4 md:p-8">
-      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-4 md:z-10 md:rounded-3xl md:p-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-[104px] md:z-10 md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
