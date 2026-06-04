@@ -186,6 +186,7 @@ type CommentaryCoverageAuthor = {
   bookNames: string[];
   booksCovered: number;
   chaptersCovered: number;
+  coveragePercentage: number;
   missingChaptersInCoveredBooks: number;
   entries: number;
   status: ResourceImportStatus;
@@ -205,6 +206,7 @@ type CommentaryCoverageBook = {
   coveredChapters: number[];
   missingChapters: number[];
   authors: string[];
+  coveragePercentage: number;
 };
 
 type CommentaryCoverage = {
@@ -241,11 +243,30 @@ type StrongMvpEntry = {
   strongsNumber: string;
   originalWord: string;
   displayWord: string;
+  root?: string;
+  relatedWords?: string[];
   plainMeaning: string;
   websterWord: string;
   firstOccurrence: string;
   keyVerses: string[];
   note: string;
+};
+
+type BibleBookMasteryRecord = {
+  readChapters: number[];
+  listenedChapters: number[];
+  updatedAt: string;
+};
+
+type BibleBookMasteryState = Record<string, BibleBookMasteryRecord>;
+
+type BibleBookMasteryStats = {
+  book: string;
+  totalChapters: number;
+  readChapters: number[];
+  listenedChapters: number[];
+  notesCount: number;
+  memoryVerses: ScriptureMemoryItem[];
 };
 
 type CommentaryRecommendation = {
@@ -793,6 +814,7 @@ const LIBRARY_LISTENING_QUEUE_KEY = "fathers-business-library-listening-queue";
 const LIBRARY_ANNOTATIONS_KEY = "fathers-business-library-annotations";
 const BIBLE_LISTENING_KEY = "fathers-business-bible-listening-progress";
 const BIBLE_PLAYLISTS_KEY = "fathers-business-bible-audio-playlists";
+const BIBLE_MASTERY_KEY = "fathers-business-bible-book-mastery";
 const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
 const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
@@ -870,6 +892,62 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
     sourcePlan: "Romans 5 sample imported. Full import needs clean text source, edition review, and warning labels.",
     rightsNotes: "Verified sample only. Do not bulk import until source and rights metadata are documented.",
     recommendedUse: "Future comparative commentary only with clear perspective notes.",
+  },
+  {
+    author: "H. A. Ironside",
+    resourceTitle: "H. A. Ironside Bible Expositions",
+    status: "Needs Review",
+    sourcePlan: "Continue exact-edition review before expanding beyond verified samples.",
+    rightsNotes: "Mixed by title and edition. Import only when publication date, renewal status, and source URL are documented.",
+    recommendedUse: "Expository preaching help after Scripture, Webster, TSK, and verified commentary voices.",
+  },
+  {
+    author: "William Kelly",
+    resourceTitle: "William Kelly Bible Expositions",
+    status: "Needs Review",
+    sourcePlan: "Verify original editions and source files before staging any chapter samples.",
+    rightsNotes: "Likely public-domain original works need exact source and edition review.",
+    recommendedUse: "Potential expository comparison with perspective notes and Scripture-first ordering.",
+  },
+  {
+    author: "F. W. Grant",
+    resourceTitle: "F. W. Grant Numerical Bible / Expository Works",
+    status: "Needs Review",
+    sourcePlan: "Identify a clean source and test chapter parsing with one small reviewed sample.",
+    rightsNotes: "Do not import until source, edition, and reuse status are documented.",
+    recommendedUse: "Potential historical/expository comparison after review.",
+  },
+  {
+    author: "Arno C. Gaebelein",
+    resourceTitle: "Gaebelein Annotated Bible / Expository Works",
+    status: "Needs Review",
+    sourcePlan: "Review exact editions and renewal status before staging samples.",
+    rightsNotes: "Some works may be public-domain by date, but edition-specific verification is required.",
+    recommendedUse: "Potential prophetic and expository comparison with clear doctrinal labels.",
+  },
+  {
+    author: "J. N. Darby",
+    resourceTitle: "J. N. Darby Synopsis / Notes",
+    status: "Needs Review",
+    sourcePlan: "Verify source and decide whether entries belong in commentary, library, or both.",
+    rightsNotes: "Original works need exact public-domain source documentation before public import.",
+    recommendedUse: "Historical comparison only, with visible perspective notes.",
+  },
+  {
+    author: "The Pulpit Commentary",
+    resourceTitle: "The Pulpit Commentary",
+    status: "Needs Review",
+    sourcePlan: "Choose one original public-domain volume, validate chapter splits, then stage a small sample.",
+    rightsNotes: "Older volumes are likely public-domain, but exact scanned/source edition and reuse terms must be documented.",
+    recommendedUse: "Future preaching and teaching comparison, collapsed by default.",
+  },
+  {
+    author: "The Biblical Illustrator",
+    resourceTitle: "The Biblical Illustrator",
+    status: "Needs Review",
+    sourcePlan: "Choose one verified older volume and stage sample entries only after source review.",
+    rightsNotes: "Likely public-domain in older volumes; exact volume/source verification required.",
+    recommendedUse: "Future illustration and preaching help with strong discernment labels.",
   },
 ];
 
@@ -4398,6 +4476,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G4100",
     originalWord: "pisteuo",
     displayWord: "believe",
+    root: "pisteuo / pistis",
+    relatedWords: ["faith", "believe"],
     plainMeaning: "To believe, trust, rely on, or commit unto.",
     websterWord: "believe",
     firstOccurrence: "Matthew 8:13",
@@ -4408,6 +4488,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G25",
     originalWord: "agapao",
     displayWord: "love",
+    root: "agapao / agape",
+    relatedWords: ["love", "charity"],
     plainMeaning: "To love, value, or show benevolent affection.",
     websterWord: "love",
     firstOccurrence: "Matthew 5:43",
@@ -4418,6 +4500,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2222",
     originalWord: "zoe",
     displayWord: "life",
+    root: "zoe",
+    relatedWords: ["life", "everlasting"],
     plainMeaning: "Life; especially spiritual and eternal life in the New Testament.",
     websterWord: "life",
     firstOccurrence: "Matthew 7:14",
@@ -4428,6 +4512,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G5485",
     originalWord: "charis",
     displayWord: "grace",
+    root: "charis",
+    relatedWords: ["grace", "saved"],
     plainMeaning: "Favor, kindness, or gracious help; often God's unmerited favor.",
     websterWord: "grace",
     firstOccurrence: "Luke 2:40",
@@ -4438,6 +4524,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G4102",
     originalWord: "pistis",
     displayWord: "faith",
+    root: "pisteuo / pistis",
+    relatedWords: ["believe", "faith"],
     plainMeaning: "Faith, belief, trust, or confidence.",
     websterWord: "faith",
     firstOccurrence: "Matthew 8:10",
@@ -4448,6 +4536,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2288",
     originalWord: "thanatos",
     displayWord: "death",
+    root: "thanatos",
+    relatedWords: ["death", "perish", "life"],
     plainMeaning: "Death; separation from life, and in Scripture often the consequence of sin.",
     websterWord: "death",
     firstOccurrence: "Matthew 4:16",
@@ -4458,6 +4548,8 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2889",
     originalWord: "kosmos",
     displayWord: "world",
+    root: "kosmos",
+    relatedWords: ["world", "light", "truth"],
     plainMeaning: "The world, its order, or mankind depending on context.",
     websterWord: "world",
     firstOccurrence: "Matthew 4:8",
@@ -6103,6 +6195,54 @@ function saveBibleListeningProgress(progress: BibleListeningProgress | null) {
   window.localStorage.setItem(BIBLE_LISTENING_KEY, JSON.stringify(progress));
 }
 
+function normalizeBibleBookMasteryRecord(record?: Partial<BibleBookMasteryRecord>): BibleBookMasteryRecord {
+  return {
+    readChapters: Array.from(new Set((record?.readChapters ?? []).map(Number).filter((chapterNumber) => Number.isFinite(chapterNumber) && chapterNumber > 0))).sort((a, b) => a - b),
+    listenedChapters: Array.from(new Set((record?.listenedChapters ?? []).map(Number).filter((chapterNumber) => Number.isFinite(chapterNumber) && chapterNumber > 0))).sort((a, b) => a - b),
+    updatedAt: record?.updatedAt ?? new Date().toISOString(),
+  };
+}
+
+function loadBibleBookMastery(): BibleBookMasteryState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(BIBLE_MASTERY_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as Record<string, Partial<BibleBookMasteryRecord>>;
+    if (!parsed || typeof parsed !== "object") return {};
+    return Object.fromEntries(
+      Object.entries(parsed).map(([bookName, record]) => [bookName, normalizeBibleBookMasteryRecord(record)]),
+    );
+  } catch {
+    return {};
+  }
+}
+
+function saveBibleBookMastery(state: BibleBookMasteryState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(BIBLE_MASTERY_KEY, JSON.stringify(state));
+}
+
+function markBibleBookMasteryChapter(
+  state: BibleBookMasteryState,
+  bookName: string,
+  chapterNumber: number,
+  field: "readChapters" | "listenedChapters",
+) {
+  const current = normalizeBibleBookMasteryRecord(state[bookName]);
+  const nextRecord = {
+    ...current,
+    [field]: Array.from(new Set([...current[field], chapterNumber])).sort((a, b) => a - b),
+    updatedAt: new Date().toISOString(),
+  };
+
+  return {
+    ...state,
+    [bookName]: nextRecord,
+  };
+}
+
 function loadBiblePlaylists(): BibleAudioPlaylist[] {
   const starters = defaultStudyPlaylists();
   if (typeof window === "undefined") return starters;
@@ -6448,6 +6588,7 @@ export default function Home() {
   const [libraryNoteDraft, setLibraryNoteDraft] = useState("");
   const [libraryBookmarkNameDraft, setLibraryBookmarkNameDraft] = useState("");
   const [bibleListeningProgress, setBibleListeningProgress] = useState<BibleListeningProgress | null>(null);
+  const [bibleBookMastery, setBibleBookMastery] = useState<BibleBookMasteryState>({});
   const [biblePlaylists, setBiblePlaylists] = useState<BibleAudioPlaylist[]>([]);
   const [activeStudyPlaylistId, setActiveStudyPlaylistId] = useState<string | null>(null);
   const [studyPlaylistCurrentIndex, setStudyPlaylistCurrentIndex] = useState(0);
@@ -6789,6 +6930,19 @@ export default function Home() {
     };
   }, [allVerses, book, chapter, chapterVerses, selectedRef, verseJump, versesByRef]);
 
+  const currentBookMasteryStats = useMemo<BibleBookMasteryStats>(() => {
+    const totalChapters = new Set(allVerses.filter((verse) => verse.book === book).map((verse) => verse.chapter)).size;
+    const record = normalizeBibleBookMasteryRecord(bibleBookMastery[book]);
+    return {
+      book,
+      totalChapters,
+      readChapters: record.readChapters.filter((chapterNumber) => chapterNumber <= totalChapters),
+      listenedChapters: record.listenedChapters.filter((chapterNumber) => chapterNumber <= totalChapters),
+      notesCount: saved.notes.filter((note) => note.verse_ref.startsWith(`${book} `)).length,
+      memoryVerses: scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} `)),
+    };
+  }, [allVerses, bibleBookMastery, book, saved.notes, scriptureMemory]);
+
   const accountStatus = user
     ? "Signed in — syncing to Supabase"
     : "Signed out — saving locally";
@@ -6816,6 +6970,7 @@ export default function Home() {
       setLibraryListeningQueue(loadLibraryListeningQueue());
       setLibraryAnnotations(loadLibraryAnnotations());
       setBibleListeningProgress(loadBibleListeningProgress());
+      setBibleBookMastery(loadBibleBookMastery());
       const loadedPlaylists = loadBiblePlaylists();
       setBiblePlaylists(loadedPlaylists);
       setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
@@ -7121,6 +7276,23 @@ export default function Home() {
     setBookIntroBook(targetBook);
     setStudyRef(null);
     setTab("bookIntro");
+  }
+
+  function markCurrentChapterMastery(field: "readChapters" | "listenedChapters") {
+    setBibleBookMastery((state) => {
+      const next = markBibleBookMasteryChapter(state, book, chapter, field);
+      saveBibleBookMastery(next);
+      return next;
+    });
+    setSyncMessage(`${book} ${chapter} marked ${field === "readChapters" ? "read" : "listened"}.`);
+  }
+
+  function markListenedChapter(targetBook: string, targetChapter: number) {
+    setBibleBookMastery((state) => {
+      const next = markBibleBookMasteryChapter(state, targetBook, targetChapter, "listenedChapters");
+      saveBibleBookMastery(next);
+      return next;
+    });
   }
 
   function saveLibraryProgressUpdate(slug: string, updater: (progress: LibraryProgress) => LibraryProgress) {
@@ -7694,6 +7866,12 @@ export default function Home() {
       includeChapterHeadings,
     });
     const savedStart = startProgress ?? (bibleListeningProgress?.targetId === targetId ? bibleListeningProgress.progress : 0);
+    const singleChapterBook = verses[0]?.book;
+    const singleChapterNumber = verses[0]?.chapter;
+    const isSingleFullChapter =
+      Boolean(singleChapterBook && singleChapterNumber) &&
+      verses.every((verse) => verse.book === singleChapterBook && verse.chapter === singleChapterNumber) &&
+      verses.length === allVerses.filter((verse) => verse.book === singleChapterBook && verse.chapter === singleChapterNumber).length;
 
     startSpeech(
       targetId,
@@ -7704,7 +7882,12 @@ export default function Home() {
       {
         chunks: speechParts.chunks,
         verseRefs: speechParts.verseRefs,
-        onComplete: repeat ? () => startBibleListening(verses, label, targetId, true, 0) : undefined,
+        onComplete: () => {
+          if (isSingleFullChapter && singleChapterBook && singleChapterNumber) {
+            markListenedChapter(singleChapterBook, singleChapterNumber);
+          }
+          if (repeat) startBibleListening(verses, label, targetId, true, 0);
+        },
       },
     );
   }
@@ -7867,6 +8050,46 @@ export default function Home() {
       return saveNextBiblePlaylists(next);
     });
     setSyncMessage(`Playlist "${trimmed}" saved locally.`);
+  }
+
+  function createCommentaryCompanionPlaylist(targetBook: string, targetChapters: number[]) {
+    const chaptersToUse = Array.from(new Set(targetChapters)).sort((a, b) => a - b).slice(0, 25);
+    if (!chaptersToUse.length) {
+      setSyncMessage(`${targetBook} has no reviewed commentary chapters ready for a companion plan yet.`);
+      return;
+    }
+
+    const firstChapter = chaptersToUse[0];
+    const lastChapter = chaptersToUse.at(-1) ?? firstChapter;
+    const playlist: BibleAudioPlaylist = {
+      id: makeId("playlist"),
+      name: `${targetBook} ${firstChapter}${lastChapter !== firstChapter ? `-${lastChapter}` : ""} Commentary Companion`,
+      createdAt: new Date().toISOString(),
+      items: chaptersToUse.flatMap((chapterNumber) => [
+        {
+          id: makeId("playlist_item"),
+          type: "bible_chapter" as BiblePlaylistItemType,
+          label: `${targetBook} ${chapterNumber}`,
+          book: targetBook,
+          chapter: chapterNumber,
+        },
+        {
+          id: makeId("playlist_item"),
+          type: "commentary_chapter" as BiblePlaylistItemType,
+          label: `${targetBook} ${chapterNumber} reviewed commentary`,
+          book: targetBook,
+          chapter: chapterNumber,
+        },
+      ]),
+    };
+
+    setBiblePlaylists((current) => {
+      const next = [playlist, ...current].slice(0, 12);
+      setActiveStudyPlaylistId(playlist.id);
+      setStudyPlaylistCurrentIndex(0);
+      return saveNextBiblePlaylists(next);
+    });
+    setSyncMessage(`${playlist.name} created. Open Bible playlist builder to play continuously.`);
   }
 
   function addBiblePlaylistItem(type: BiblePlaylistItemType) {
@@ -8744,6 +8967,7 @@ export default function Home() {
                 bibleMarkers={bibleMarkers}
                 currentChapterPinned={currentChapterPinned}
                 readingProgress={currentBookProgress}
+                bookMastery={currentBookMasteryStats}
                 speechState={speechState}
                 bibleListeningProgress={bibleListeningProgress}
                 listenRangeStart={listenRangeStart}
@@ -8775,6 +8999,8 @@ export default function Home() {
                 onToggleCurrentFavorite={toggleCurrentChapterFavorite}
                 onOpenMarker={openBibleMarker}
                 onSaveMarker={saveCurrentBibleMarker}
+                onMarkChapterRead={() => markCurrentChapterMastery("readChapters")}
+                onMarkChapterListened={() => markCurrentChapterMastery("listenedChapters")}
                 onListenCurrentChapter={listenCurrentChapter}
                 onListenFromCurrentVerse={listenFromCurrentVerse}
                 onListenRange={listenSelectedRange}
@@ -8926,6 +9152,7 @@ export default function Home() {
                 onAddToListeningQueue={addLibraryToListeningQueue}
                 onAddToStudyPlaylist={addCurrentResourceToStudyPlaylist}
                 onListenCommentaryChapter={listenCommentaryChapterEntries}
+                onCreateCommentaryCompanionPlaylist={createCommentaryCompanionPlaylist}
                 onRemoveFromListeningQueue={removeLibraryFromListeningQueue}
                 onMoveListeningQueueItem={moveLibraryListeningQueueItem}
                 onScrollReader={handleLibraryScroll}
@@ -9998,6 +10225,82 @@ function PassageShortcutRow({
   );
 }
 
+function BibleBookMasteryCard({
+  chapter,
+  stats,
+  onMarkRead,
+  onMarkListened,
+}: {
+  chapter: number;
+  stats: BibleBookMasteryStats;
+  onMarkRead: () => void;
+  onMarkListened: () => void;
+}) {
+  const readPercent = stats.totalChapters ? Math.round((stats.readChapters.length / stats.totalChapters) * 100) : 0;
+  const listenedPercent = stats.totalChapters ? Math.round((stats.listenedChapters.length / stats.totalChapters) * 100) : 0;
+  const chapterRead = stats.readChapters.includes(chapter);
+  const chapterListened = stats.listenedChapters.includes(chapter);
+
+  return (
+    <section className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Bible Book Mastery</p>
+          <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">{stats.book}</h3>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+            Track reading, listening, notes, and memory for this Bible book. Saved locally for beta.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <button
+            className={`rounded-full px-3 py-2 text-xs font-semibold ${
+              chapterRead ? "bg-[var(--highlight)] text-[var(--ink)]" : "bg-[var(--green)] text-white"
+            }`}
+            onClick={onMarkRead}
+            type="button"
+          >
+            {chapterRead ? "Read marked" : "Mark read"}
+          </button>
+          <button
+            className={`rounded-full px-3 py-2 text-xs font-semibold ${
+              chapterListened ? "bg-[var(--highlight)] text-[var(--ink)]" : "bg-[var(--paper)] text-[var(--green)]"
+            }`}
+            onClick={onMarkListened}
+            type="button"
+          >
+            {chapterListened ? "Listened marked" : "Mark listened"}
+          </button>
+        </div>
+      </div>
+      <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4">
+        <MiniStat label="Reads" value={`${stats.readChapters.length}/${stats.totalChapters}`} />
+        <MiniStat label="Listens" value={`${stats.listenedChapters.length}/${stats.totalChapters}`} />
+        <MiniStat label="Notes" value={String(stats.notesCount)} />
+        <MiniStat label="Memory" value={String(stats.memoryVerses.length)} />
+      </div>
+      <div className="mt-3 grid gap-2 md:grid-cols-2">
+        <ProgressLine label={`Read ${readPercent}%`} value={readPercent} />
+        <ProgressLine label={`Listened ${listenedPercent}%`} value={listenedPercent} />
+      </div>
+    </section>
+  );
+}
+
+function ProgressLine({ label, value }: { label: string; value: number }) {
+  const safeValue = Math.min(100, Math.max(0, value));
+  return (
+    <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-xs font-semibold text-[var(--muted)]">{label}</p>
+        <p className="text-xs font-semibold text-[var(--green)]">{safeValue}%</p>
+      </div>
+      <div className="mt-2 h-2 overflow-hidden rounded-full bg-white">
+        <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${safeValue}%` }} />
+      </div>
+    </div>
+  );
+}
+
 function BibleMarkerRow({
   markers,
   onOpenMarker,
@@ -10083,6 +10386,7 @@ function BibleReader({
   bibleMarkers,
   currentChapterPinned,
   readingProgress,
+  bookMastery,
   speechState,
   bibleListeningProgress,
   listenRangeStart,
@@ -10114,6 +10418,8 @@ function BibleReader({
   onToggleCurrentFavorite,
   onOpenMarker,
   onSaveMarker,
+  onMarkChapterRead,
+  onMarkChapterListened,
   onListenCurrentChapter,
   onListenFromCurrentVerse,
   onListenRange,
@@ -10189,6 +10495,7 @@ function BibleReader({
   bibleMarkers: BibleMarkers;
   currentChapterPinned: boolean;
   readingProgress: { book: string; chapter: number; percent: number };
+  bookMastery: BibleBookMasteryStats;
   speechState: SpeechState;
   bibleListeningProgress: BibleListeningProgress | null;
   listenRangeStart: number;
@@ -10220,6 +10527,8 @@ function BibleReader({
   onToggleCurrentFavorite: () => void;
   onOpenMarker: (markerId: BibleMarkerId) => void;
   onSaveMarker: (markerId: BibleMarkerId) => void;
+  onMarkChapterRead: () => void;
+  onMarkChapterListened: () => void;
   onListenCurrentChapter: () => void;
   onListenFromCurrentVerse: () => void;
   onListenRange: () => void;
@@ -10462,6 +10771,13 @@ function BibleReader({
             <div className="h-full rounded-full bg-[var(--green)] transition-[width]" style={{ width: `${progressPercent}%` }} />
           </div>
         </div>
+
+        <BibleBookMasteryCard
+          chapter={chapter}
+          stats={bookMastery}
+          onMarkRead={onMarkChapterRead}
+          onMarkListened={onMarkChapterListened}
+        />
 
         <BibleMarkerRow markers={bibleMarkers} onOpenMarker={onOpenMarker} onSaveMarker={onSaveMarker} />
 
@@ -11397,6 +11713,7 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
         coveredChapters,
         missingChapters: allChapters.filter((chapterNumber) => !covered.has(chapterNumber)),
         authors: Array.from(authorsByBook.get(bookName) ?? []).sort(),
+        coveragePercentage: allChapters.length ? Math.round((coveredChapters.length / allChapters.length) * 1000) / 10 : 0,
       };
     })
     .filter((item) => item.coveredChapters.length > 0)
@@ -11421,6 +11738,7 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       bookNames,
       booksCovered: stats.books.size,
       chaptersCovered: stats.chapters.size,
+      coveragePercentage: totalChapters ? Math.round((stats.chapters.size / totalChapters) * 1000) / 10 : 0,
       missingChaptersInCoveredBooks,
       entries: stats.entries,
       status: "Verified" as ResourceImportStatus,
@@ -11434,6 +11752,7 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       bookNames: [],
       booksCovered: 0,
       chaptersCovered: 0,
+      coveragePercentage: 0,
       missingChaptersInCoveredBooks: 0,
       entries: 0,
       status: candidate.status,
@@ -11811,6 +12130,12 @@ function ChapterStudyWorkflow({
 }) {
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
+  const chapterStrongEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
+  const chapterRelatedStrongWords = chapterStrongEntry?.relatedWords
+    ? chapterStrongEntry.relatedWords
+        .map((word) => ({ word, entry: strongsMvpEntries[normalizeLookupWord(word)] }))
+        .filter((item) => item.entry)
+    : [];
   const [exportMessage, setExportMessage] = useState("");
   const [commentaryAuthorFilter, setCommentaryAuthorFilter] = useState("All");
   const [teacherNotesByChapter, setTeacherNotesByChapter] = useState<Record<string, TeacherNotesDraft>>(() => {
@@ -12438,6 +12763,59 @@ function ChapterStudyWorkflow({
               </button>
             </div>
             <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
+          </div>
+          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+            <div className="flex flex-wrap items-start justify-between gap-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Strong&apos;s Phase 2</p>
+                <h4 className="mt-1 text-sm font-semibold text-[var(--ink)]">
+                  {chapterStrongEntry ? `${chapterStrongEntry.strongsNumber} · ${chapterStrongEntry.originalWord}` : "Starter data not ready"}
+                </h4>
+              </div>
+              {chapterStrongEntry && (
+                <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  Root explorer
+                </span>
+              )}
+            </div>
+            {chapterStrongEntry ? (
+              <>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                  Root: <span className="font-semibold text-[var(--green)]">{chapterStrongEntry.root ?? chapterStrongEntry.originalWord}</span>
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{chapterStrongEntry.plainMeaning}</p>
+                {chapterRelatedStrongWords.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {chapterRelatedStrongWords.map(({ word, entry }) => (
+                      <button
+                        key={`chapter-strong-related-${chapterStrongEntry.strongsNumber}-${word}`}
+                        className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                        onClick={() => onExplorerWordChange(entry.websterWord)}
+                        type="button"
+                      >
+                        {entry.displayWord} · {entry.strongsNumber}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {chapterStrongEntry.keyVerses.slice(0, 4).map((ref) => (
+                    <button
+                      key={`chapter-strong-key-${chapterStrongEntry.strongsNumber}-${ref}`}
+                      className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => onOpenReference(ref)}
+                      type="button"
+                    >
+                      {ref}
+                    </button>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                Strong&apos;s starter data is available for words such as believe, faith, love, life, grace, death, and world.
+              </p>
+            )}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
             {suggestedWords.map((item) => (
@@ -13797,6 +14175,7 @@ function LibraryScreen({
   onAddToListeningQueue,
   onAddToStudyPlaylist,
   onListenCommentaryChapter,
+  onCreateCommentaryCompanionPlaylist,
   onRemoveFromListeningQueue,
   onMoveListeningQueueItem,
   onScrollReader,
@@ -13872,6 +14251,7 @@ function LibraryScreen({
   onAddToListeningQueue: (slug: string) => void;
   onAddToStudyPlaylist: (slug: string) => void;
   onListenCommentaryChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
+  onCreateCommentaryCompanionPlaylist: (book: string, chapters: number[]) => void;
   onRemoveFromListeningQueue: (slug: string) => void;
   onMoveListeningQueueItem: (slug: string, direction: -1 | 1) => void;
   onScrollReader: () => void;
@@ -14271,6 +14651,12 @@ function LibraryScreen({
         }}
         onOpenAuthor={onOpenAuthor}
         onListenChapter={onListenCommentaryChapter}
+      />
+
+      <CommentaryReadingPlans
+        coverage={commentaryCoverage}
+        onCreateCompanionPlaylist={onCreateCommentaryCompanionPlaylist}
+        onOpenBookIntroduction={onOpenBookIntroduction}
       />
 
       {libraryListeningQueue.length > 0 && (
@@ -15850,6 +16236,93 @@ function CommentaryLibraryBrowser({
   );
 }
 
+function CommentaryReadingPlans({
+  coverage,
+  onCreateCompanionPlaylist,
+  onOpenBookIntroduction,
+}: {
+  coverage: CommentaryCoverage;
+  onCreateCompanionPlaylist: (book: string, chapters: number[]) => void;
+  onOpenBookIntroduction: (book: string) => void;
+}) {
+  const priorityBooks = ["John", "Romans", "Amos", "Genesis", "Exodus", "Luke", "Psalms", "Revelation"];
+  const plans = priorityBooks
+    .map((bookName) => coverage.bookCoverage.find((book) => book.book === bookName))
+    .filter(Boolean) as CommentaryCoverageBook[];
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary Reading Plans</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Read chapter by chapter with Scripture first</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Create a local companion playlist that alternates KJV Bible chapters with reviewed commentary chapters. Use it for reading, listening, and teaching prep.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          Bible + commentary + notes
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        {plans.map((plan) => {
+          const planChapters = plan.coveredChapters.slice(0, 12);
+          const first = planChapters[0];
+          const last = planChapters.at(-1) ?? first;
+          return (
+            <article key={`commentary-reading-plan-${plan.book}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Companion plan</p>
+                  <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{plan.book}</h3>
+                </div>
+                <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  {plan.coveragePercentage}%
+                </span>
+              </div>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                {plan.coveredChapters.length} chapters ready · {plan.authors.length} author{plan.authors.length === 1 ? "" : "s"} available
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {planChapters.map((chapterNumber) => (
+                  <span key={`commentary-plan-${plan.book}-${chapterNumber}`} className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                    {chapterNumber}
+                  </span>
+                ))}
+                {plan.coveredChapters.length > planChapters.length && (
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+                    +{plan.coveredChapters.length - planChapters.length}
+                  </span>
+                )}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Plan range: {plan.book} {first}{last !== first ? `-${last}` : ""}. Missing chapters stay out of the plan until reviewed.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button
+                  className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                  onClick={() => onCreateCompanionPlaylist(plan.book, plan.coveredChapters)}
+                  type="button"
+                >
+                  Create playlist
+                </button>
+                <button
+                  className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenBookIntroduction(plan.book)}
+                  type="button"
+                >
+                  Book intro
+                </button>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function CommentaryCoverageDashboard({
   coverage,
   onOpenAuthor,
@@ -15862,6 +16335,8 @@ function CommentaryCoverageDashboard({
     .filter((book) => book.missingChapters.length)
     .slice(0, 6);
   const missingBooksPreview = coverage.missingBooks.slice(0, 18);
+  const matrixBooks = coverage.bookCoverage.slice(0, 18);
+  const matrixAuthors = coverage.authorCoverage.slice(0, 10);
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -15885,6 +16360,62 @@ function CommentaryCoverageDashboard({
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
         <LibraryStat label="Coverage" value={`${coverage.coveragePercentage}%`} />
         <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[1.15fr_0.85fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Commentary Coverage Matrix</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Percentage by Bible book</h3>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              {coverage.coveragePercentage}% whole Bible
+            </span>
+          </div>
+          <div className="mt-3 grid gap-2 md:grid-cols-2">
+            {matrixBooks.map((book) => (
+              <div key={`commentary-coverage-matrix-book-${book.book}`} className="rounded-xl bg-white px-3 py-2">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.coveragePercentage}%</p>
+                </div>
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                  <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${book.coveragePercentage}%` }} />
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {book.coveredChapters.length} covered · {book.missingChapters.length} missing
+                </p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Percentage by author</p>
+          <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Author coverage</h3>
+          <div className="mt-3 space-y-2">
+            {matrixAuthors.map((author) => (
+              <button
+                key={`commentary-coverage-matrix-author-${author.author}`}
+                className="w-full rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenAuthor(author.author)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{author.author}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{author.coveragePercentage}%</p>
+                </div>
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                  <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: `${author.coveragePercentage}%` }} />
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {author.chaptersCovered} chapters · {author.booksCovered} books · {author.status}
+                </p>
+              </button>
+            ))}
+          </div>
+        </article>
       </div>
 
       <div className="mt-4 grid gap-3 md:grid-cols-3">
@@ -15933,7 +16464,7 @@ function CommentaryCoverageDashboard({
               <div key={`commentary-book-${book.book}`} className="rounded-xl bg-white px-3 py-2">
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
-                  <p className="text-xs font-semibold text-[var(--green)]">{book.coveredChapters.length} chapters</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.coveragePercentage}% · {book.coveredChapters.length} chapters</p>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
                   Covered: {book.coveredChapters.join(", ")}
@@ -15966,7 +16497,7 @@ function CommentaryCoverageDashboard({
                   </span>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  {author.chaptersCovered} chapters · {author.booksCovered} books · {author.entries} entries
+                  {author.coveragePercentage}% Bible coverage · {author.chaptersCovered} chapters · {author.booksCovered} books · {author.entries} entries
                 </p>
                 {author.bookNames.length ? (
                   <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
@@ -19630,6 +20161,11 @@ function OccurrenceExplorerPanel({
   const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
   const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
   const strongsEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
+  const relatedStrongWords = strongsEntry?.relatedWords
+    ? strongsEntry.relatedWords
+        .map((word) => ({ word, entry: strongsMvpEntries[normalizeLookupWord(word)] }))
+        .filter((item) => item.entry)
+    : [];
 
   return (
     <div className="space-y-3">
@@ -19682,6 +20218,11 @@ function OccurrenceExplorerPanel({
           <>
             <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{strongsEntry.plainMeaning}</p>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
+              <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root explorer</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{strongsEntry.root ?? strongsEntry.originalWord}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Starter root grouping for related KJV words. Full morphology is planned later.</p>
+              </div>
               <button
                 className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
                 onClick={() => onOpenReference(strongsEntry.firstOccurrence)}
@@ -19695,6 +20236,23 @@ function OccurrenceExplorerPanel({
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Plain-English meaning first; no advanced grammar in this MVP.</p>
               </div>
             </div>
+            {relatedStrongWords.length > 0 && (
+              <div className="mt-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related words</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {relatedStrongWords.map(({ word, entry }) => (
+                    <button
+                      key={`strongs-related-${strongsEntry.strongsNumber}-${word}`}
+                      className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => onLookupWord(entry.websterWord)}
+                      type="button"
+                    >
+                      {entry.displayWord} · {entry.strongsNumber}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="mt-3 flex flex-wrap gap-2">
               {strongsEntry.keyVerses.map((ref) => (
                 <button
