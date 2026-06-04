@@ -8306,6 +8306,8 @@ export default function Home() {
           </div>
         </header>
 
+        <BetaNotice />
+
         <div className="grid flex-1 md:grid-cols-[260px_1fr]">
           <aside className="hidden border-r border-stone-200 bg-white/45 p-4 md:block">
             <nav className="space-y-2">
@@ -8802,6 +8804,21 @@ function NavButton({
       {icon}
       {label}
     </button>
+  );
+}
+
+function BetaNotice() {
+  return (
+    <div className="border-b border-[var(--line)] bg-[var(--warm)] px-4 py-2">
+      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 text-xs leading-5 text-[var(--muted)]">
+        <span>
+          <span className="font-semibold text-[var(--green)]">Active beta:</span> This Bible Study App is in active beta. Please report issues or suggestions.
+        </span>
+        <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href="/feedback">
+          Give feedback
+        </a>
+      </div>
+    </div>
   );
 }
 
@@ -11470,6 +11487,13 @@ function ChapterStudyWorkflow({
             <Brain size={16} />
             Add {selectedVerse.ref}
           </button>
+          <a
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+            href="/feedback"
+          >
+            <MessageSquareText size={16} />
+            Teaching Feedback
+          </a>
         </div>
       </div>
 
@@ -13598,6 +13622,13 @@ function LibraryScreen({
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
               Browse verified public-domain resources with category, rights, doctrinal review, and recommended-use labels visible before you read.
             </p>
+            <a
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+              href="/feedback"
+            >
+              <MessageSquareText size={16} />
+              Library Feedback
+            </a>
           </div>
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
             <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
