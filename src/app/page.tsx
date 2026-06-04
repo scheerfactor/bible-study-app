@@ -52,12 +52,16 @@ import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acqu
 import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
 import jfbReviewedPhase4Batch2Commentary from "../../data/imports/jfb-reviewed-phase-4-batch-2-commentary.json";
 import jfbReviewedCoverageSprintBatch3Commentary from "../../data/imports/jfb-reviewed-coverage-sprint-batch-3-commentary.json";
+import jfbReviewedLibraryExpansionBatch4Commentary from "../../data/imports/jfb-reviewed-library-expansion-batch-4-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
+import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
+import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
 import adamClarkeReviewedCoverageSprintGenesisCommentary from "../../data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json";
+import adamClarkeReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/adam-clarke-reviewed-library-expansion-gospels-acts-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
@@ -4935,12 +4939,16 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
   ...(jfbReviewedPhase4Batch2Commentary as CommentaryEntry[]),
   ...(jfbReviewedCoverageSprintBatch3Commentary as CommentaryEntry[]),
+  ...(jfbReviewedLibraryExpansionBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
+  ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
 ].map((entry) => ({

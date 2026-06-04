@@ -1,1754 +1,3215 @@
 {
-  "source_csv": "data/library/bulk-import-phase-4.csv",
+  "source_csv": "data/library/bulk-import-sources.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 116,
-  "total_attempted": 116,
-  "imported": 115,
+  "batch_size": 240,
+  "total_attempted": 213,
+  "imported": 213,
   "would_import": 0,
-  "skipped": 1,
+  "skipped": 0,
   "failed": 0,
   "missing_metadata": 0,
   "possible_rights_issues": 0,
-  "duplicate_titles": 1,
+  "duplicate_titles": 0,
   "duplicate_sources": 0,
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "The Great Doctrines of the Bible",
-      "file": "the-great-doctrines-of-the-bible-william-evans.txt",
-      "bytes": 466203,
-      "words": 80688,
-      "reading_time_minutes": 359
+      "title": "Philippian Studies: Lessons in Faith and Love from St. Paul's Epistle to the Philippians",
+      "file": "philippian-studies-lessons-in-faith-and-love-from-st-paul-s-epistle-to-the-philippians-moule-h-c-g-handley-car.txt",
+      "bytes": 292660,
+      "words": 50110,
+      "reading_time_minutes": 223
     },
     {
-      "title": "The Chosen People: A Compendium of Sacred and Church History for School-Children",
-      "file": "the-chosen-people-a-compendium-of-sacred-and-church-history-for-school-children-charlotte-m-yonge.txt",
-      "bytes": 367396,
-      "words": 64412,
-      "reading_time_minutes": 286
+      "title": "The Expositor's Bible: The Epistle to the Hebrews",
+      "file": "the-expositor-s-bible-the-epistle-to-the-hebrews-edwards-thomas-charles-and-nicoll-w-robertson-william-roberts.txt",
+      "bytes": 460453,
+      "words": 77888,
+      "reading_time_minutes": 346
     },
     {
-      "title": "Female Scripture Biography, Volume II Including an Essay on What Christianity Has Done for Women",
-      "file": "female-scripture-biography-volume-ii-including-an-essay-on-what-christianity-has-done-for-women-f-a-cox.txt",
-      "bytes": 697307,
-      "words": 115030,
-      "reading_time_minutes": 511
+      "title": "The Expositor's Bible: The Gospel of St. John, Vol. I",
+      "file": "the-expositor-s-bible-the-gospel-of-st-john-vol-i-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 602881,
+      "words": 106873,
+      "reading_time_minutes": 475
     },
     {
-      "title": "The Gospel of the Pentateuch: A Set of Parish Sermons",
-      "file": "the-gospel-of-the-pentateuch-a-set-of-parish-sermons-charles-kingsley.txt",
-      "bytes": 305081,
-      "words": 56206,
-      "reading_time_minutes": 250
+      "title": "The Expositor's Bible: The Gospel of St. John, Vol. II",
+      "file": "the-expositor-s-bible-the-gospel-of-st-john-vol-ii-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 668588,
+      "words": 118354,
+      "reading_time_minutes": 526
     },
     {
-      "title": "The Gospels in the Second Century An Examination of the Critical Part of a Work Entitled 'Supernatural Religion'",
-      "file": "the-gospels-in-the-second-century-an-examination-of-the-critical-part-of-a-work-entitled-supernatural-religion.txt",
-      "bytes": 727124,
-      "words": 114265,
-      "reading_time_minutes": 508
+      "title": "The Expositor's Bible: The Book of Exodus",
+      "file": "the-expositor-s-bible-the-book-of-exodus-chadwick-g-a-george-alexander-and-nicoll-w-robertson-william-robertso.txt",
+      "bytes": 774855,
+      "words": 132463,
+      "reading_time_minutes": 589
     },
     {
-      "title": "Christ: The Way, the Truth, and the Life",
-      "file": "christ-the-way-the-truth-and-the-life-john-brown.txt",
-      "bytes": 688454,
-      "words": 125100,
-      "reading_time_minutes": 556
+      "title": "Studies in Zechariah",
+      "file": "studies-in-zechariah-gaebelein-arno-clemens.txt",
+      "bytes": 295335,
+      "words": 52673,
+      "reading_time_minutes": 234
     },
     {
-      "title": "Creation and Its Records A Brief Statement of Christian Belief with Reference to Modern Facts and Ancient Scripture",
-      "file": "creation-and-its-records-a-brief-statement-of-christian-belief-with-reference-to-modern-facts-and-ancient-scri.txt",
-      "bytes": 351799,
-      "words": 59050,
+      "title": "The Prophet Ezekiel: An Analytical Exposition",
+      "file": "the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt",
+      "bytes": 694606,
+      "words": 121057,
+      "reading_time_minutes": 538
+    },
+    {
+      "title": "Notes on the Book of Genesis",
+      "file": "notes-on-the-book-of-genesis-mackintosh-charles-henry.txt",
+      "bytes": 530156,
+      "words": 94534,
+      "reading_time_minutes": 420
+    },
+    {
+      "title": "The Expositor's Bible: The First Book of Samuel",
+      "file": "the-expositor-s-bible-the-first-book-of-samuel-blaikie-william-garden-and-nicoll-w-robertson-william-robertson.txt",
+      "bytes": 746469,
+      "words": 132889,
+      "reading_time_minutes": 591
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Genesis",
+      "file": "the-expositor-s-bible-the-book-of-genesis-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 764760,
+      "words": 134800,
+      "reading_time_minutes": 599
+    },
+    {
+      "title": "The Expositor's Bible: The Pastoral Epistles",
+      "file": "the-expositor-s-bible-the-pastoral-epistles-plummer-alfred-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 733716,
+      "words": 125499,
+      "reading_time_minutes": 558
+    },
+    {
+      "title": "Expositor's Bible: The Book of Ecclesiastes",
+      "file": "expositor-s-bible-the-book-of-ecclesiastes-cox-samuel-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 469472,
+      "words": 82017,
+      "reading_time_minutes": 365
+    },
+    {
+      "title": "The Expositor's Bible: The Song of Solomon and the Lamentations of Jeremiah",
+      "file": "the-expositor-s-bible-the-song-of-solomon-and-the-lamentations-of-jeremiah-adeney-walter-f-walter-frederic-and.txt",
+      "bytes": 585599,
+      "words": 100649,
+      "reading_time_minutes": 447
+    },
+    {
+      "title": "The Expositor's Bible: Ezra, Nehemiah, and Esther",
+      "file": "the-expositor-s-bible-ezra-nehemiah-and-esther-adeney-walter-f-walter-frederic-and-nicoll-w-robertson-william-.txt",
+      "bytes": 679469,
+      "words": 115966,
+      "reading_time_minutes": 515
+    },
+    {
+      "title": "Notes on the book of Exodus",
+      "file": "notes-on-the-book-of-exodus-mackintosh-charles-henry.txt",
+      "bytes": 589561,
+      "words": 104344,
+      "reading_time_minutes": 464
+    },
+    {
+      "title": "Notes on the Book of Leviticus",
+      "file": "notes-on-the-book-of-leviticus-mackintosh-charles-henry.txt",
+      "bytes": 619001,
+      "words": 108419,
+      "reading_time_minutes": 482
+    },
+    {
+      "title": "Notes on the Book of Deuteronomy, Volume I",
+      "file": "notes-on-the-book-of-deuteronomy-volume-i-mackintosh-charles-henry.txt",
+      "bytes": 681404,
+      "words": 120960,
+      "reading_time_minutes": 538
+    },
+    {
+      "title": "Notes on the Book of Deuteronomy, Volume II",
+      "file": "notes-on-the-book-of-deuteronomy-volume-ii-mackintosh-charles-henry.txt",
+      "bytes": 734848,
+      "words": 130300,
+      "reading_time_minutes": 579
+    },
+    {
+      "title": "The Expositor's Bible: The Second Epistle to the Corinthians",
+      "file": "the-expositor-s-bible-the-second-epistle-to-the-corinthians-denney-james-and-nicoll-w-robertson-william-robert.txt",
+      "bytes": 704062,
+      "words": 121452,
+      "reading_time_minutes": 540
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Revelation",
+      "file": "the-expositor-s-bible-the-book-of-revelation-milligan-william-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 703469,
+      "words": 124208,
+      "reading_time_minutes": 552
+    },
+    {
+      "title": "The Expositor's Bible: The Epistles of St. Peter",
+      "file": "the-expositor-s-bible-the-epistles-of-st-peter-lumby-j-rawson-joseph-rawson-and-nicoll-w-robertson-william-rob.txt",
+      "bytes": 553836,
+      "words": 97462,
+      "reading_time_minutes": 433
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Joshua",
+      "file": "the-expositor-s-bible-the-book-of-joshua-blaikie-william-garden-and-nicoll-w-robertson-william-robertson-sir.txt",
+      "bytes": 719067,
+      "words": 126141,
+      "reading_time_minutes": 561
+    },
+    {
+      "title": "The Expositor's Bible: The First Epistle to the Corinthians",
+      "file": "the-expositor-s-bible-the-first-epistle-to-the-corinthians-dods-marcus-and-nicoll-w-robertson-william-robertso.txt",
+      "bytes": 632911,
+      "words": 110534,
+      "reading_time_minutes": 491
+    },
+    {
+      "title": "The Expositor's Bible: The Epistles to the Thessalonians",
+      "file": "the-expositor-s-bible-the-epistles-to-the-thessalonians-denney-james-and-nicoll-w-robertson-william-robertson-.txt",
+      "bytes": 490868,
+      "words": 87003,
+      "reading_time_minutes": 387
+    },
+    {
+      "title": "The Expositor's Bible: The Second Book of Samuel",
+      "file": "the-expositor-s-bible-the-second-book-of-samuel-blaikie-william-garden-and-nicoll-w-robertson-william-robertso.txt",
+      "bytes": 684307,
+      "words": 120078,
+      "reading_time_minutes": 534
+    },
+    {
+      "title": "The Expositor's Bible: The General Epistles of St. James and St. Jude",
+      "file": "the-expositor-s-bible-the-general-epistles-of-st-james-and-st-jude-plummer-alfred-and-nicoll-w-robertson-willi.txt",
+      "bytes": 853585,
+      "words": 145250,
+      "reading_time_minutes": 646
+    },
+    {
+      "title": "Studies in the Epistle of James",
+      "file": "studies-in-the-epistle-of-james-robertson-a-t.txt",
+      "bytes": 382610,
+      "words": 66338,
+      "reading_time_minutes": 295
+    },
+    {
+      "title": "The Expositor's Bible: The Epistle of St Paul to the Romans",
+      "file": "the-expositor-s-bible-the-epistle-of-st-paul-to-the-romans-moule-h-c-g-handley-carr-glyn-and-nicoll-w-robertso.txt",
+      "bytes": 783186,
+      "words": 134838,
+      "reading_time_minutes": 599
+    },
+    {
+      "title": "Notes on the book of Numbers",
+      "file": "notes-on-the-book-of-numbers-mackintosh-charles-henry.txt",
+      "bytes": 740948,
+      "words": 131102,
+      "reading_time_minutes": 583
+    },
+    {
+      "title": "The prophete Ionas with an introduccion: before teachinge to vnderstonde him and the right vse also of all the scripture/ and why it was written/ and",
+      "file": "the-prophete-ionas-with-an-introduccion-before-teachinge-to-vnderstonde-him-and-the-right-vse-also-of-all-the-.txt",
+      "bytes": 52561,
+      "words": 9603,
+      "reading_time_minutes": 43
+    },
+    {
+      "title": "The Life of Duty, v. 2: A year's plain sermons on the Gospels or Epistles",
+      "file": "the-life-of-duty-v-2-a-year-s-plain-sermons-on-the-gospels-or-epistles-wilmot-buxton-h-j-harry-john.txt",
+      "bytes": 302211,
+      "words": 54863,
+      "reading_time_minutes": 244
+    },
+    {
+      "title": "The Gospel of St. John: A Series of Discourses.: New Edition",
+      "file": "the-gospel-of-st-john-a-series-of-discourses-new-edition-maurice-frederick-denison.txt",
+      "bytes": 917584,
+      "words": 164427,
+      "reading_time_minutes": 731
+    },
+    {
+      "title": "Professor W. G. Elmslie, D.D.: Memoir and Sermons",
+      "file": "professor-w-g-elmslie-d-d-memoir-and-sermons-elmslie-william-gray-and-macnicoll-a-n.txt",
+      "bytes": 572024,
+      "words": 101370,
+      "reading_time_minutes": 451
+    },
+    {
+      "title": "A Handful of Stars: Texts That Have Moved Great Minds",
+      "file": "a-handful-of-stars-texts-that-have-moved-great-minds-boreham-frank.txt",
+      "bytes": 336497,
+      "words": 58910,
       "reading_time_minutes": 262
     },
     {
-      "title": "Missionary Survey As An Aid To Intelligent Co-Operation In Foreign Missions",
-      "file": "missionary-survey-as-an-aid-to-intelligent-co-operation-in-foreign-missions-roland-allen-and-thomas-cochrane.txt",
-      "bytes": 266449,
-      "words": 39242,
-      "reading_time_minutes": 174
+      "title": "Studies in Prophecy",
+      "file": "studies-in-prophecy-gaebelein-arno-clemens.txt",
+      "bytes": 258362,
+      "words": 45755,
+      "reading_time_minutes": 203
     },
     {
-      "title": "The Hope of the Gospel",
-      "file": "the-hope-of-the-gospel-george-macdonald.txt",
-      "bytes": 285551,
-      "words": 52053,
-      "reading_time_minutes": 231
+      "title": "A Harmony of the Gospels for Students of the Life of Christ: Based on the Broadus Harmony in the Revised Version",
+      "file": "a-harmony-of-the-gospels-for-students-of-the-life-of-christ-based-on-the-broadus-harmony-in-the-revised-versio.txt",
+      "bytes": 991679,
+      "words": 153398,
+      "reading_time_minutes": 682
     },
     {
-      "title": "Sermons on Various Important Subjects Written Partly on Sundry of the More Difficult Passages in the Sacred Volume",
-      "file": "sermons-on-various-important-subjects-written-partly-on-sundry-of-the-more-difficult-passages-in-the-sacred-vo.txt",
-      "bytes": 569827,
-      "words": 97795,
-      "reading_time_minutes": 435
+      "title": "To My Younger Brethren: Chapters on Pastoral Life and Work",
+      "file": "to-my-younger-brethren-chapters-on-pastoral-life-and-work-moule-h-c-g-handley-carr-glyn.txt",
+      "bytes": 326278,
+      "words": 55905,
+      "reading_time_minutes": 248
     },
     {
-      "title": "Quiet Talks on John's Gospel",
-      "file": "quiet-talks-on-john-s-gospel-s-d-gordon.txt",
-      "bytes": 347093,
-      "words": 61130,
-      "reading_time_minutes": 272
+      "title": "The Assembly of God. Miscellaneous Writings of C. H. Mackintosh, vol. III",
+      "file": "the-assembly-of-god-miscellaneous-writings-of-c-h-mackintosh-vol-iii-mackintosh-charles-henry.txt",
+      "bytes": 705896,
+      "words": 125542,
+      "reading_time_minutes": 558
     },
     {
-      "title": "The Bible Period by Period A Manual for the Study of the Bible by Periods",
-      "file": "the-bible-period-by-period-a-manual-for-the-study-of-the-bible-by-periods-josiah-blake-tidwell.txt",
-      "bytes": 262929,
-      "words": 45220,
-      "reading_time_minutes": 201
+      "title": "Elijah the Tishbite. Miscellaneous Writings of C. H. Mackintosh, vol. V",
+      "file": "elijah-the-tishbite-miscellaneous-writings-of-c-h-mackintosh-vol-v-mackintosh-charles-henry.txt",
+      "bytes": 598407,
+      "words": 105946,
+      "reading_time_minutes": 471
     },
     {
-      "title": "Sermons Preached at Brighton Third Series",
-      "file": "sermons-preached-at-brighton-third-series-frederick-william-robertson.txt",
-      "bytes": 541512,
-      "words": 91955,
-      "reading_time_minutes": 409
+      "title": "The Lord's Coming. Miscellaneous Writings of C. H. Mackintosh, vol. II",
+      "file": "the-lord-s-coming-miscellaneous-writings-of-c-h-mackintosh-vol-ii-mackintosh-charles-henry.txt",
+      "bytes": 663813,
+      "words": 117438,
+      "reading_time_minutes": 522
     },
     {
-      "title": "An Exposition of the Last Psalme",
-      "file": "an-exposition-of-the-last-psalme-john-boys.txt",
-      "bytes": 61206,
-      "words": 10007,
-      "reading_time_minutes": 44
+      "title": "The Great Commission. Miscellaneous Writings of C. H. Mackintosh, vol. IV",
+      "file": "the-great-commission-miscellaneous-writings-of-c-h-mackintosh-vol-iv-mackintosh-charles-henry.txt",
+      "bytes": 654074,
+      "words": 116446,
+      "reading_time_minutes": 518
     },
     {
-      "title": "Little Gidding and its inmates in the Time of King Charles I. with an account of the Harmonies",
-      "file": "little-gidding-and-its-inmates-in-the-time-of-king-charles-i-with-an-account-of-the-harmonies-john-edward-acla.txt",
-      "bytes": 74985,
-      "words": 12566,
-      "reading_time_minutes": 56
+      "title": "The All-Sufficiency of Christ. Miscellaneous Writings of C. H. Mackintosh, vol. I",
+      "file": "the-all-sufficiency-of-christ-miscellaneous-writings-of-c-h-mackintosh-vol-i-mackintosh-charles-henry.txt",
+      "bytes": 569685,
+      "words": 101435,
+      "reading_time_minutes": 451
     },
     {
-      "title": "Select Masterpieces of Biblical Literature",
-      "file": "select-masterpieces-of-biblical-literature-richard-g-moulton.txt",
-      "bytes": 339868,
-      "words": 59351,
-      "reading_time_minutes": 264
+      "title": "Life and Times of David. Miscellaneous Writings of C. H. Mackintosh, vol. VI",
+      "file": "life-and-times-of-david-miscellaneous-writings-of-c-h-mackintosh-vol-vi-mackintosh-charles-henry.txt",
+      "bytes": 600664,
+      "words": 107392,
+      "reading_time_minutes": 477
     },
     {
-      "title": "Epistle Sermons, Vol. 2: Epiphany, Easter and Pentecost",
-      "file": "epistle-sermons-vol-2-epiphany-easter-and-pentecost-martin-luther-and-john-nicholas-lenker.txt",
-      "bytes": 685110,
-      "words": 118556,
-      "reading_time_minutes": 527
-    },
-    {
-      "title": "Evangelists of Art: Picture-Sermons for Children",
-      "file": "evangelists-of-art-picture-sermons-for-children-james-patrick.txt",
-      "bytes": 63410,
-      "words": 11509,
-      "reading_time_minutes": 51
-    },
-    {
-      "title": "Christology of the Old Testament: And a Commentary on the Messianic Predictions. Vol. 2",
-      "file": "christology-of-the-old-testament-and-a-commentary-on-the-messianic-predictions-vol-2-ernst-wilhelm-hengstenber.txt",
-      "bytes": 1178439,
-      "words": 200869,
-      "reading_time_minutes": 893
-    },
-    {
-      "title": "Epistle Sermons, Vol. 3: Trinity Sunday to Advent",
-      "file": "epistle-sermons-vol-3-trinity-sunday-to-advent-martin-luther-and-john-nicholas-lenker.txt",
-      "bytes": 777543,
-      "words": 136017,
-      "reading_time_minutes": 605
-    },
-    {
-      "title": "The American Church Dictionary and Cyclopedia",
-      "file": "the-american-church-dictionary-and-cyclopedia-william-james-1850-miller.txt",
-      "bytes": 466494,
-      "words": 77129,
-      "reading_time_minutes": 343
-    },
-    {
-      "title": "The Church Handy Dictionary",
-      "file": "the-church-handy-dictionary-anonymous.txt",
-      "bytes": 311850,
-      "words": 50738,
-      "reading_time_minutes": 226
-    },
-    {
-      "title": "Medica Sacra Or, A Commentary on the Most Remarkable Diseases Mentioned in the Holy Scriptures",
-      "file": "medica-sacra-or-a-commentary-on-the-most-remarkable-diseases-mentioned-in-the-holy-scriptures-richard-mead-and.txt",
-      "bytes": 151540,
-      "words": 24928,
-      "reading_time_minutes": 111
-    },
-    {
-      "title": "The Christian View of the Old Testament",
-      "file": "the-christian-view-of-the-old-testament-frederick-carl-eiselen.txt",
-      "bytes": 363956,
-      "words": 59905,
-      "reading_time_minutes": 266
-    },
-    {
-      "title": "Misread Passages of Scriptures",
-      "file": "misread-passages-of-scriptures-james-baldwin-brown.txt",
-      "bytes": 269228,
-      "words": 47628,
-      "reading_time_minutes": 212
-    },
-    {
-      "title": "The Messiah in Moses and the Prophets",
-      "file": "the-messiah-in-moses-and-the-prophets-eleazar-lord.txt",
-      "bytes": 569410,
-      "words": 95139,
-      "reading_time_minutes": 423
-    },
-    {
-      "title": "Walks and Words of Jesus: A Paragraph Harmony of the Four Evangelists",
-      "file": "walks-and-words-of-jesus-a-paragraph-harmony-of-the-four-evangelists-m-n-olmsted-and-randolph-s-foster.txt",
-      "bytes": 428885,
-      "words": 73589,
-      "reading_time_minutes": 327
-    },
-    {
-      "title": "Studies in Old Testament History",
-      "file": "studies-in-old-testament-history-jesse-lyman-hurlbut.txt",
-      "bytes": 166255,
-      "words": 26992,
-      "reading_time_minutes": 120
-    },
-    {
-      "title": "A Plain Introduction to the Criticism of the New Testament, Vol. I.",
-      "file": "a-plain-introduction-to-the-criticism-of-the-new-testament-vol-i-frederick-henry-ambrose-scrivener.txt",
-      "bytes": 1214889,
-      "words": 190524,
-      "reading_time_minutes": 847
-    },
-    {
-      "title": "A Greek Primer: For Beginners in New Testament Greek",
-      "file": "a-greek-primer-for-beginners-in-new-testament-greek-wallace-n-1866-stearns.txt",
-      "bytes": 26853,
-      "words": 3782,
-      "reading_time_minutes": 17
-    },
-    {
-      "title": "The Expositor's Bible: Index",
-      "file": "the-expositor-s-bible-index-s-g-ayres-and-walter-f-adeney.txt",
-      "bytes": 673210,
-      "words": 96700,
-      "reading_time_minutes": 430
-    },
-    {
-      "title": "Bible Atlas: A Manual of Biblical Geography and History",
-      "file": "bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut-and-john-heyl-vincent.txt",
-      "bytes": 623412,
-      "words": 90772,
-      "reading_time_minutes": 403
-    },
-    {
-      "title": "A Brief Bible History: A Survey of the Old and New Testaments",
-      "file": "a-brief-bible-history-a-survey-of-the-old-and-new-testaments-james-oscar-boyd-and-j-gresham-machen.txt",
-      "bytes": 283030,
-      "words": 48080,
-      "reading_time_minutes": 214
-    },
-    {
-      "title": "Systematic Theology (Volume 1 of 3)",
-      "file": "systematic-theology-volume-1-of-3-augustus-hopkins-strong.txt",
-      "bytes": 1842376,
-      "words": 282824,
-      "reading_time_minutes": 1257
-    },
-    {
-      "title": "Systematic Theology (Volume 2 of 3)",
-      "file": "systematic-theology-volume-2-of-3-augustus-hopkins-strong.txt",
-      "bytes": 2059640,
-      "words": 319077,
-      "reading_time_minutes": 1418
-    },
-    {
-      "title": "Systematic Theology (Volume 3 of 3)",
-      "file": "systematic-theology-volume-3-of-3-augustus-hopkins-strong.txt",
-      "bytes": 1848674,
-      "words": 285829,
-      "reading_time_minutes": 1270
-    },
-    {
-      "title": "Jesus, The Messiah; or, the Old Testament Prophecies Fulfilled in the New Testament Scriptures, by a Lady",
-      "file": "jesus-the-messiah-or-the-old-testament-prophecies-fulfilled-in-the-new-testament-scriptures-by-a-lady-anonymou.txt",
-      "bytes": 354195,
-      "words": 60844,
-      "reading_time_minutes": 270
-    },
-    {
-      "title": "Story of the Bible Animals A Description of the Habits and Uses of every living Creature mentioned in the Scriptures, with Explanation of Passages in the Old and New Testament in which Reference is made to them",
-      "file": "story-of-the-bible-animals-a-description-of-the-habits-and-uses-of-every-living-creature-mentioned-in-the-scri.txt",
-      "bytes": 1085031,
-      "words": 184318,
-      "reading_time_minutes": 819
-    },
-    {
-      "title": "Institutes of the Christian Religion (Vol. 1 of 2)",
-      "file": "institutes-of-the-christian-religion-vol-1-of-2-jean-calvin-and-john-allen.txt",
-      "bytes": 1905406,
-      "words": 325072,
-      "reading_time_minutes": 1445
-    },
-    {
-      "title": "The Supernatural in the New Testament, Possible, Credible, and Historical Or, An Examination of the Validity of Some Recent Objections Against Christianity as a Divine Revelation",
-      "file": "the-supernatural-in-the-new-testament-possible-credible-and-historical-or-an-examination-of-the-validity-of-so.txt",
-      "bytes": 944609,
-      "words": 158820,
-      "reading_time_minutes": 706
-    },
-    {
-      "title": "Evening Incense",
-      "file": "evening-incense-john-r-macduff.txt",
-      "bytes": 108428,
-      "words": 19034,
-      "reading_time_minutes": 85
-    },
-    {
-      "title": "The Little Child's Book of Divinity or Grandmamma's Stories about Bible Doctrines",
-      "file": "the-little-child-s-book-of-divinity-or-grandmamma-s-stories-about-bible-doctrines-john-r-macduff.txt",
-      "bytes": 88825,
-      "words": 15030,
-      "reading_time_minutes": 67
-    },
-    {
-      "title": "Notes on the New Testament, Explanatory and Practical: Revelation",
-      "file": "notes-on-the-new-testament-explanatory-and-practical-revelation-albert-barnes-and-robert-frew.txt",
-      "bytes": 2310967,
-      "words": 392089,
-      "reading_time_minutes": 1743
-    },
-    {
-      "title": "Twenty-four Discourses On Some of the Important and Interesting Truths, Duties, and Institutions, of the Gospel, and the General Excellency of the Christian Religion; Calculated for the People of God of Every Communion, Particularly for the Benefit of Pious Families, and the Instruction of All in the Things Which Concern Their Salvation",
-      "file": "twenty-four-discourses-on-some-of-the-important-and-interesting-truths-duties-and-institutions-of-the-gospel-a.txt",
-      "bytes": 833367,
-      "words": 141806,
-      "reading_time_minutes": 630
-    },
-    {
-      "title": "The Nature of a Gospel Church A Confession of Evangelical Principles; and the Members' Covenant. Intended for the Use of the Church of Christ.",
-      "file": "the-nature-of-a-gospel-church-a-confession-of-evangelical-principles-and-the-members-covenant-intended-for-the.txt",
-      "bytes": 37406,
-      "words": 6159,
-      "reading_time_minutes": 27
-    },
-    {
-      "title": "A Few Remarks on the Scripture History of Saul and the Witch of Endor",
-      "file": "a-few-remarks-on-the-scripture-history-of-saul-and-the-witch-of-endor-j-church.txt",
-      "bytes": 32543,
-      "words": 5662,
-      "reading_time_minutes": 25
-    },
-    {
-      "title": "A Body of Divinity, Vol. 1 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "file": "a-body-of-divinity-vol-1-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt",
-      "bytes": 1730111,
-      "words": 298938,
-      "reading_time_minutes": 1329
-    },
-    {
-      "title": "A Body of Divinity, Vol. 2 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "file": "a-body-of-divinity-vol-2-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt",
-      "bytes": 1785160,
-      "words": 306566,
-      "reading_time_minutes": 1363
-    },
-    {
-      "title": "A Body of Divinity, Vol. 4 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "file": "a-body-of-divinity-vol-4-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt",
-      "bytes": 1413365,
-      "words": 244019,
-      "reading_time_minutes": 1085
-    },
-    {
-      "title": "The Standard Manual for Baptist Churches",
-      "file": "the-standard-manual-for-baptist-churches-edward-t-hiscox.txt",
-      "bytes": 205921,
-      "words": 33723,
-      "reading_time_minutes": 150
-    },
-    {
-      "title": "A Class-Book of Old Testament History",
-      "file": "a-class-book-of-old-testament-history-g-f-maclear.txt",
-      "bytes": 1073085,
-      "words": 172047,
-      "reading_time_minutes": 765
-    },
-    {
-      "title": "A Class-Book of New Testament History",
-      "file": "a-class-book-of-new-testament-history-g-f-maclear.txt",
-      "bytes": 1165233,
-      "words": 183866,
-      "reading_time_minutes": 817
-    },
-    {
-      "title": "The Song of Songs Translated from the Original Hebrew, with a Commentary, Historical and Critical",
-      "file": "the-song-of-songs-translated-from-the-original-hebrew-with-a-commentary-historical-and-critical-christian-d-gi.txt",
-      "bytes": 568686,
-      "words": 88558,
-      "reading_time_minutes": 394
-    },
-    {
-      "title": "Bible history and brief outline of church history",
-      "file": "bible-history-and-brief-outline-of-church-history-volrath-vogt-and-nils-christian-nilsen-brun.txt",
-      "bytes": 202351,
-      "words": 35980,
-      "reading_time_minutes": 160
-    },
-    {
-      "title": "Names and places in the Old and New Testament and Apocrypha, with their modern identifications",
-      "file": "names-and-places-in-the-old-and-new-testament-and-apocrypha-with-their-modern-identifications-george-armstrong.txt",
-      "bytes": 773155,
-      "words": 88808,
-      "reading_time_minutes": 395
-    },
-    {
-      "title": "An illustrated commentary on the Gospel according to St. John",
-      "file": "an-illustrated-commentary-on-the-gospel-according-to-st-john-lyman-abbott.txt",
-      "bytes": 1333022,
-      "words": 222405,
-      "reading_time_minutes": 988
-    },
-    {
-      "title": "Introduction to the textual criticism of the Greek New Testament",
-      "file": "introduction-to-the-textual-criticism-of-the-greek-new-testament-eberhard-nestle-and-allan-menzies.txt",
-      "bytes": 847719,
-      "words": 129650,
-      "reading_time_minutes": 576
-    },
-    {
-      "title": "New Forces in Old China: An Inevitable Awakening",
-      "file": "new-forces-in-old-china-an-inevitable-awakening-arthur-judson-brown.txt",
-      "bytes": 736863,
-      "words": 122234,
-      "reading_time_minutes": 543
-    },
-    {
-      "title": "God's Answers A Record of Miss Annie Macpherson's Work at the Home of Industry, Spitalfields, London, and in Canada",
-      "file": "god-s-answers-a-record-of-miss-annie-macpherson-s-work-at-the-home-of-industry-spitalfields-london-and-in-cana.txt",
-      "bytes": 293365,
-      "words": 50926,
-      "reading_time_minutes": 226
-    },
-    {
-      "title": "Home Missions in Action",
-      "file": "home-missions-in-action-edith-h-allen.txt",
-      "bytes": 204745,
-      "words": 32976,
-      "reading_time_minutes": 147
-    },
-    {
-      "title": "Daughters of the Cross: or Woman's Mission",
-      "file": "daughters-of-the-cross-or-woman-s-mission-daniel-c-eddy.txt",
-      "bytes": 325636,
-      "words": 56303,
-      "reading_time_minutes": 250
-    },
-    {
-      "title": "Woman and Her Saviour in Persia By a Returned Missionary",
-      "file": "woman-and-her-saviour-in-persia-by-a-returned-missionary-thomas-laurie.txt",
-      "bytes": 488014,
-      "words": 86956,
+      "title": "The works of the Rev. John Wesley, Vol. 01 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-01-of-32-wesley-john.txt",
+      "bytes": 494696,
+      "words": 86907,
       "reading_time_minutes": 386
     },
     {
-      "title": "White Queen of the Cannibals: the Story of Mary Slessor of Calabar",
-      "file": "white-queen-of-the-cannibals-the-story-of-mary-slessor-of-calabar-a-j-bueltmann.txt",
-      "bytes": 206350,
-      "words": 38407,
-      "reading_time_minutes": 171
+      "title": "The works of the Rev. John Wesley, Vol. 02 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-02-of-32-wesley-john.txt",
+      "bytes": 504573,
+      "words": 88321,
+      "reading_time_minutes": 393
     },
     {
-      "title": "Forty Years in South China: The Life of Rev. John Van Nest Talmage, D.D.",
-      "file": "forty-years-in-south-china-the-life-of-rev-john-van-nest-talmage-d-d-john-gerardus-fagg.txt",
-      "bytes": 327520,
-      "words": 56518,
-      "reading_time_minutes": 251
+      "title": "The works of the Rev. John Wesley, Vol. 03 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-03-of-32-wesley-john.txt",
+      "bytes": 502681,
+      "words": 88268,
+      "reading_time_minutes": 392
     },
     {
-      "title": "Clara A. Swain, M.D.",
-      "file": "clara-a-swain-m-d-robert-mrs-1837-hoskins.txt",
-      "bytes": 34884,
-      "words": 6034,
-      "reading_time_minutes": 27
+      "title": "The works of the Rev. John Wesley, Vol. 04 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-04-of-32-wesley-john.txt",
+      "bytes": 496339,
+      "words": 87047,
+      "reading_time_minutes": 387
     },
     {
-      "title": "With the Harmony to Labrador Notes of a visit to the Moravian mission stations on the north-east coast of Labrador",
-      "file": "with-the-harmony-to-labrador-notes-of-a-visit-to-the-moravian-mission-stations-on-the-north-east-coast-of-labr.txt",
-      "bytes": 153904,
-      "words": 26185,
-      "reading_time_minutes": 116
+      "title": "The works of the Rev. John Wesley, Vol. 05 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-05-of-32-wesley-john.txt",
+      "bytes": 512590,
+      "words": 90721,
+      "reading_time_minutes": 403
     },
     {
-      "title": "Journal of a Voyage from Okkak, on the Coast of Labrador, to Ungava Bay, Westward of Cape Chudleigh Undertaken to Explore the Coast, and Visit the Esquimaux in That Unknown Region",
-      "file": "journal-of-a-voyage-from-okkak-on-the-coast-of-labrador-to-ungava-bay-westward-of-cape-chudleigh-undertaken-to.txt",
-      "bytes": 157552,
-      "words": 26664,
-      "reading_time_minutes": 119
+      "title": "The works of the Rev. John Wesley, Vol. 06 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-06-of-32-wesley-john.txt",
+      "bytes": 493531,
+      "words": 86319,
+      "reading_time_minutes": 384
     },
     {
-      "title": "Old Daniel",
-      "file": "old-daniel-thomas-hodson.txt",
-      "bytes": 97046,
-      "words": 17007,
-      "reading_time_minutes": 76
+      "title": "The works of the Rev. John Wesley, Vol. 07 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-07-of-32-wesley-john.txt",
+      "bytes": 495941,
+      "words": 87484,
+      "reading_time_minutes": 389
     },
     {
-      "title": "The Choctaw Freedmen and the Story of Oak Hill Industrial Academy",
-      "file": "the-choctaw-freedmen-and-the-story-of-oak-hill-industrial-academy-robert-elliott-1846-flickinger.txt",
-      "bytes": 727131,
-      "words": 118918,
-      "reading_time_minutes": 529
+      "title": "The works of the Rev. John Wesley, Vol. 08 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-08-of-32-wesley-john.txt",
+      "bytes": 475170,
+      "words": 82557,
+      "reading_time_minutes": 367
     },
     {
-      "title": "Have We No Rights? A frank discussion of the \"rights\" of missionaries",
-      "file": "have-we-no-rights-a-frank-discussion-of-the-rights-of-missionaries-mabel-williamson.txt",
-      "bytes": 146834,
-      "words": 26068,
-      "reading_time_minutes": 116
+      "title": "The works of the Rev. John Wesley, Vol. 09 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-09-of-32-wesley-john.txt",
+      "bytes": 464261,
+      "words": 82239,
+      "reading_time_minutes": 366
     },
     {
-      "title": "Thoughts on Missions",
-      "file": "thoughts-on-missions-sheldon-dibble.txt",
-      "bytes": 260308,
-      "words": 44627,
-      "reading_time_minutes": 198
-    },
-    {
-      "title": "Letters on the Nicobar islands, their natural productions, and the manners, customs, and superstitions of the natives with an account of an attempt made by the Church of the United Brethren, to convert them to Christianity",
-      "file": "letters-on-the-nicobar-islands-their-natural-productions-and-the-manners-customs-and-superstitions-of-the-nati.txt",
-      "bytes": 92491,
-      "words": 15933,
-      "reading_time_minutes": 71
-    },
-    {
-      "title": "The Fulfilment of a Dream of Pastor Hsi's The Story of the Work in Hwochow",
-      "file": "the-fulfilment-of-a-dream-of-pastor-hsi-s-the-story-of-the-work-in-hwochow-mildred-cable.txt",
-      "bytes": 324517,
-      "words": 54504,
-      "reading_time_minutes": 242
-    },
-    {
-      "title": "India's Problem, Krishna or Christ",
-      "file": "india-s-problem-krishna-or-christ-john-p-jones.txt",
-      "bytes": 583361,
-      "words": 96322,
-      "reading_time_minutes": 428
-    },
-    {
-      "title": "A Tour of the Missions: Observations and Conclusions",
-      "file": "a-tour-of-the-missions-observations-and-conclusions-augustus-hopkins-strong.txt",
-      "bytes": 327245,
-      "words": 52459,
-      "reading_time_minutes": 233
-    },
-    {
-      "title": "India, Its Life and Thought",
-      "file": "india-its-life-and-thought-john-p-jones.txt",
-      "bytes": 527283,
-      "words": 87950,
-      "reading_time_minutes": 391
-    },
-    {
-      "title": "The Minute Man on the Frontier",
-      "file": "the-minute-man-on-the-frontier-william-george-puddefoot.txt",
-      "bytes": 311732,
-      "words": 55197,
-      "reading_time_minutes": 245
-    },
-    {
-      "title": "Memoirs of the Life and Labours of the Rev. Samuel Marsden, of Paramatta, Senior Chaplain of New South Wales; and of His Early Connexion with the Missions to New Zealand and Tahiti",
-      "file": "memoirs-of-the-life-and-labours-of-the-rev-samuel-marsden-of-paramatta-senior-chaplain-of-new-south-wales-and-.txt",
-      "bytes": 571418,
-      "words": 95648,
-      "reading_time_minutes": 425
-    },
-    {
-      "title": "Changing China",
-      "file": "changing-china-william-gascoyne-cecil-and-florence-mary-bootle-wilbraham-lady-cecil.txt",
-      "bytes": 506960,
-      "words": 86059,
+      "title": "The works of the Rev. John Wesley, Vol. 10 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-10-of-32-wesley-john.txt",
+      "bytes": 483727,
+      "words": 86006,
       "reading_time_minutes": 382
     },
     {
-      "title": "The Gist of Japan: The Islands, Their People, and Missions",
-      "file": "the-gist-of-japan-the-islands-their-people-and-missions-r-b-1868-peery.txt",
-      "bytes": 421790,
-      "words": 69790,
-      "reading_time_minutes": 310
+      "title": "The works of the Rev. John Wesley, Vol. 11 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-11-of-32-wesley-john.txt",
+      "bytes": 502516,
+      "words": 87809,
+      "reading_time_minutes": 390
     },
     {
-      "title": "Mary and I: Forty Years with the Sioux",
-      "file": "mary-and-i-forty-years-with-the-sioux-stephen-return-riggs.txt",
-      "bytes": 739592,
-      "words": 125266,
-      "reading_time_minutes": 557
+      "title": "The works of the Rev. John Wesley, Vol. 12 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-12-of-32-wesley-john.txt",
+      "bytes": 512957,
+      "words": 88539,
+      "reading_time_minutes": 394
     },
     {
-      "title": "Chinese Diamonds for the King of Kings",
-      "file": "chinese-diamonds-for-the-king-of-kings-rosalind-goforth.txt",
-      "bytes": 170015,
-      "words": 29386,
-      "reading_time_minutes": 131
+      "title": "The works of the Rev. John Wesley, Vol. 13 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-13-of-32-wesley-john.txt",
+      "bytes": 491481,
+      "words": 87238,
+      "reading_time_minutes": 388
     },
     {
-      "title": "Silver Chimes in Syria: Glimpses of a Missionary's Experiences",
-      "file": "silver-chimes-in-syria-glimpses-of-a-missionary-s-experiences-william-s-nelson.txt",
-      "bytes": 161121,
-      "words": 28274,
-      "reading_time_minutes": 126
+      "title": "The works of the Rev. John Wesley, Vol. 14 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-14-of-32-wesley-john.txt",
+      "bytes": 463601,
+      "words": 79797,
+      "reading_time_minutes": 355
     },
     {
-      "title": "A plain and faithful narrative of the original design, rise, progress and present state of the Indian charity-school at Lebanon, in Connecticut",
-      "file": "a-plain-and-faithful-narrative-of-the-original-design-rise-progress-and-present-state-of-the-indian-charity-sc.txt",
-      "bytes": 69734,
-      "words": 11712,
-      "reading_time_minutes": 52
+      "title": "The works of the Rev. John Wesley, Vol. 15 (of 32)",
+      "file": "the-works-of-the-rev-john-wesley-vol-15-of-32-wesley-john.txt",
+      "bytes": 535568,
+      "words": 92987,
+      "reading_time_minutes": 413
     },
     {
-      "title": "Fifteen Years Among the Top-Knots; Or, Life in Korea",
-      "file": "fifteen-years-among-the-top-knots-or-life-in-korea-lillias-h-1851-underwood.txt",
-      "bytes": 658869,
-      "words": 111987,
-      "reading_time_minutes": 498
+      "title": "Works of John Bunyan — Volume 01",
+      "file": "works-of-john-bunyan-volume-01-bunyan-john-and-offor-george.txt",
+      "bytes": 4858875,
+      "words": 880528,
+      "reading_time_minutes": 3913
     },
     {
-      "title": "Report of Mr. Wood's Visit to the Choctaw and Cherokee Missions. 1855",
-      "file": "report-of-mr-wood-s-visit-to-the-choctaw-and-cherokee-missions-1855-george-w-wood.txt",
-      "bytes": 51900,
-      "words": 8447,
-      "reading_time_minutes": 38
+      "title": "Works of John Bunyan — Volume 02",
+      "file": "works-of-john-bunyan-volume-02-bunyan-john-and-offor-george.txt",
+      "bytes": 4109176,
+      "words": 745533,
+      "reading_time_minutes": 3313
     },
     {
-      "title": "Five Years in the Alleghanies",
-      "file": "five-years-in-the-alleghanies-jonathan-cross.txt",
-      "bytes": 217560,
-      "words": 39664,
-      "reading_time_minutes": 176
+      "title": "Works of John Bunyan — Complete",
+      "file": "works-of-john-bunyan-complete-bunyan-john-and-offor-george.txt",
+      "bytes": 12246355,
+      "words": 2229400,
+      "reading_time_minutes": 9908
     },
     {
-      "title": "Twice-born Men in America or, The Psychology of Conversion as Seen by a Christian Psychologist in Rescue Mission Work",
-      "file": "twice-born-men-in-america-or-the-psychology-of-conversion-as-seen-by-a-christian-psychologist-in-rescue-missio.txt",
-      "bytes": 188384,
-      "words": 33153,
-      "reading_time_minutes": 147
+      "title": "Religious Life of Virginia in the Seventeenth Century: The Faith of Our Fathers",
+      "file": "religious-life-of-virginia-in-the-seventeenth-century-the-faith-of-our-fathers-brydon-g-maclaren-george-maclar.txt",
+      "bytes": 107884,
+      "words": 17553,
+      "reading_time_minutes": 78
     },
     {
-      "title": "John Black, the Apostle of the Red River Or, How the Blue Banner Was Unfurled on Manitoba Prairies",
-      "file": "john-black-the-apostle-of-the-red-river-or-how-the-blue-banner-was-unfurled-on-manitoba-prairies-george-bryce.txt",
-      "bytes": 245266,
-      "words": 41306,
-      "reading_time_minutes": 184
+      "title": "Religion and Theology: A Sermon for the Times: Preached in the Parish Church of Crathie, fifth September and in the College Church, St Andrews",
+      "file": "religion-and-theology-a-sermon-for-the-times-preached-in-the-parish-church-of-crathie-fifth-september-and-in-t.txt",
+      "bytes": 32983,
+      "words": 5651,
+      "reading_time_minutes": 25
     },
     {
-      "title": "The Baptist Magazine, Vol. 27, January, 1835",
-      "file": "the-baptist-magazine-vol-27-january-1835-various-and-george-wightman.txt",
-      "bytes": 179079,
-      "words": 28676,
-      "reading_time_minutes": 127
+      "title": "The Sermon on the Mount: A Practical Exposition",
+      "file": "the-sermon-on-the-mount-a-practical-exposition-gore-charles.txt",
+      "bytes": 376211,
+      "words": 61079,
+      "reading_time_minutes": 271
     },
     {
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "file": "the-baptist-magazine-vol-27-1835-various-and-george-wightman.txt",
-      "bytes": 185930,
-      "words": 30059,
-      "reading_time_minutes": 134
+      "title": "Christianity and Greek Philosophy: or, the relation between spontaneous and reflective thought in Greece and the positive teaching of Christ and His A",
+      "file": "christianity-and-greek-philosophy-or-the-relation-between-spontaneous-and-reflective-thought-in-greece-and-the.txt",
+      "bytes": 1186798,
+      "words": 187970,
+      "reading_time_minutes": 835
     },
     {
-      "title": "The Baptist Magazine, Vol. 27, June 1835",
-      "file": "the-baptist-magazine-vol-27-june-1835-various-and-george-wightman.txt",
-      "bytes": 200509,
-      "words": 31090,
-      "reading_time_minutes": 138
-    },
-    {
-      "title": "A History of the Reformation (Vol. 1 of 2)",
-      "file": "a-history-of-the-reformation-vol-1-of-2-thomas-m-lindsay.txt",
-      "bytes": 1123867,
-      "words": 180340,
-      "reading_time_minutes": 802
-    },
-    {
-      "title": "A History of the Reformation (Vol. 2 of 2)",
-      "file": "a-history-of-the-reformation-vol-2-of-2-thomas-m-lindsay.txt",
-      "bytes": 1407152,
-      "words": 225220,
-      "reading_time_minutes": 1001
-    },
-    {
-      "title": "A Baptist Abroad: Travels and Adventures of Europe and all Bible Lands",
-      "file": "a-baptist-abroad-travels-and-adventures-of-europe-and-all-bible-lands-walter-andrew-whittle.txt",
-      "bytes": 713349,
-      "words": 118574,
-      "reading_time_minutes": 527
-    },
-    {
-      "title": "Rubble and Roseleaves, and Things of That Kind",
-      "file": "rubble-and-roseleaves-and-things-of-that-kind-frank-boreham.txt",
-      "bytes": 316383,
-      "words": 55584,
-      "reading_time_minutes": 247
-    },
-    {
-      "title": "Life of Charles T. Walker, D.D. (\"The Black Spurgeon\") Pastor Mt. Olivet Baptist Church, New York City",
-      "file": "life-of-charles-t-walker-d-d-the-black-spurgeon-pastor-mt-olivet-baptist-church-new-york-city-silas-xavier-flo.txt",
-      "bytes": 275545,
-      "words": 46034,
-      "reading_time_minutes": 205
-    },
-    {
-      "title": "A Sketch of Charles T. Walker, D.D., Pastor of Tabernacle Baptist Church, Augusta, Ga.",
-      "file": "a-sketch-of-charles-t-walker-d-d-pastor-of-tabernacle-baptist-church-augusta-ga-silas-xavier-floyd.txt",
-      "bytes": 16622,
-      "words": 2715,
-      "reading_time_minutes": 12
-    },
-    {
-      "title": "The Bloody Theatre, or Martyrs Mirror of the Defenseless Christians who baptized only upon confession of faith, and who suffered and died for the testimony of Jesus, their savior, from the time of Christ to the year A.D. 1660",
-      "file": "the-bloody-theatre-or-martyrs-mirror-of-the-defenseless-christians-who-baptized-only-upon-confession-of-faith-.txt",
-      "bytes": 6515917,
-      "words": 1139910,
-      "reading_time_minutes": 5066
-    },
-    {
-      "title": "An historical sketch of the First Hillsboro Baptist Church",
-      "file": "an-historical-sketch-of-the-first-hillsboro-baptist-church-w-camp.txt",
-      "bytes": 18072,
-      "words": 3057,
-      "reading_time_minutes": 14
-    },
-    {
-      "title": "One hundred years with the Baptists of Amherst, N.S., 1810 to 1910",
-      "file": "one-hundred-years-with-the-baptists-of-amherst-n-s-1810-to-1910-d-a-steele-and-grace-mcleod-rogers.txt",
-      "bytes": 105184,
-      "words": 17206,
-      "reading_time_minutes": 76
-    },
-    {
-      "title": "Children's Edition of Touching Incidents and Remarkable Answers to Prayer",
-      "file": "children-s-edition-of-touching-incidents-and-remarkable-answers-to-prayer-s-b-1854-shaw.txt",
-      "bytes": 142130,
-      "words": 25915,
-      "reading_time_minutes": 115
-    },
-    {
-      "title": "The value of a praying mother",
-      "file": "the-value-of-a-praying-mother-isabel-c-byrum.txt",
-      "bytes": 150535,
-      "words": 26882,
-      "reading_time_minutes": 119
-    },
-    {
-      "title": "A Short Method of Prayer",
-      "file": "a-short-method-of-prayer-jeanne-marie-bouvier-de-la-motte-guyon.txt",
-      "bytes": 93282,
-      "words": 16506,
-      "reading_time_minutes": 73
-    },
-    {
-      "title": "How I Know God Answers Prayer: The Personal Testimony of One Life-Time",
-      "file": "how-i-know-god-answers-prayer-the-personal-testimony-of-one-life-time-rosalind-goforth.txt",
-      "bytes": 182407,
-      "words": 32218,
+      "title": "The Pulpit Of The Reformation, Nos. 1, 2, 3 and 4.",
+      "file": "the-pulpit-of-the-reformation-nos-1-2-3-and-4-welch-john-and-knox-john.txt",
+      "bytes": 178028,
+      "words": 32065,
       "reading_time_minutes": 143
     },
     {
-      "title": "The Prayers of St. Paul",
-      "file": "the-prayers-of-st-paul-w-h-griffith-thomas.txt",
-      "bytes": 126857,
-      "words": 21481,
-      "reading_time_minutes": 95
+      "title": "A voice from the fire",
+      "file": "a-voice-from-the-fire-wallace-robert.txt",
+      "bytes": 20812,
+      "words": 3550,
+      "reading_time_minutes": 16
     },
     {
-      "title": "Morning and Evening Prayers for All Days of the Week Together With Confessional, Communion, and Other Prayers and Hymns for Mornings and Evenings, and Other Occasions",
-      "file": "morning-and-evening-prayers-for-all-days-of-the-week-together-with-confessional-communion-and-other-prayers-an.txt",
-      "bytes": 153338,
-      "words": 24669,
+      "title": "The Revelation Explained: An Exposition, Text by Text, of the Apocalypse of St. John",
+      "file": "the-revelation-explained-an-exposition-text-by-text-of-the-apocalypse-of-st-john-smith-f-g-frederick-george.txt",
+      "bytes": 739029,
+      "words": 124677,
+      "reading_time_minutes": 554
+    },
+    {
+      "title": "Exposition of the Apostles' Creed",
+      "file": "exposition-of-the-apostles-creed-dodds-james.txt",
+      "bytes": 212773,
+      "words": 36191,
+      "reading_time_minutes": 161
+    },
+    {
+      "title": "Notes on the Apocalypse",
+      "file": "notes-on-the-apocalypse-steele-david.txt",
+      "bytes": 601078,
+      "words": 101206,
+      "reading_time_minutes": 450
+    },
+    {
+      "title": "Commentary on Genesis, Vol. 2: Luther on Sin and the Flood",
+      "file": "commentary-on-genesis-vol-2-luther-on-sin-and-the-flood-luther-martin-and-lenker-john-nicholas.txt",
+      "bytes": 743734,
+      "words": 129343,
+      "reading_time_minutes": 575
+    },
+    {
+      "title": "The Shepherd Of My Soul",
+      "file": "the-shepherd-of-my-soul-callan-charles-j-charles-jerome.txt",
+      "bytes": 193459,
+      "words": 34629,
+      "reading_time_minutes": 154
+    },
+    {
+      "title": "St. Paul's Epistle to the Ephesians: A Practical Exposition",
+      "file": "st-paul-s-epistle-to-the-ephesians-a-practical-exposition-gore-charles.txt",
+      "bytes": 367140,
+      "words": 62573,
+      "reading_time_minutes": 278
+    },
+    {
+      "title": "St. Paul's Epistle to the Romans: A Practical Exposition. Vol. I",
+      "file": "st-paul-s-epistle-to-the-romans-a-practical-exposition-vol-i-gore-charles.txt",
+      "bytes": 410033,
+      "words": 71473,
+      "reading_time_minutes": 318
+    },
+    {
+      "title": "St. Paul's Epistle to the Romans: A Practical Exposition. Vol. II",
+      "file": "st-paul-s-epistle-to-the-romans-a-practical-exposition-vol-ii-gore-charles.txt",
+      "bytes": 329280,
+      "words": 56664,
+      "reading_time_minutes": 252
+    },
+    {
+      "title": "An Amicable Controversy with a Jewish Rabbi, on The Messiah's Coming: With an Entirely New Exposition of Zechariah, on the Messiah's Kingdom",
+      "file": "an-amicable-controversy-with-a-jewish-rabbi-on-the-messiah-s-coming-with-an-entirely-new-exposition-of-zechari.txt",
+      "bytes": 232055,
+      "words": 38688,
+      "reading_time_minutes": 172
+    },
+    {
+      "title": "The Expositor's Bible: Judges and Ruth",
+      "file": "the-expositor-s-bible-judges-and-ruth-watson-robert-a-robert-alexander.txt",
+      "bytes": 720361,
+      "words": 126178,
+      "reading_time_minutes": 561
+    },
+    {
+      "title": "The Expositor's Bible: The Epistle to the Philippians",
+      "file": "the-expositor-s-bible-the-epistle-to-the-philippians-rainy-robert.txt",
+      "bytes": 500041,
+      "words": 87803,
+      "reading_time_minutes": 390
+    },
+    {
+      "title": "The Hart and the Water-Brooks: a practical exposition of the forty-second Psalm.",
+      "file": "the-hart-and-the-water-brooks-a-practical-exposition-of-the-forty-second-psalm-macduff-john-r-john-ross.txt",
+      "bytes": 261408,
+      "words": 44214,
+      "reading_time_minutes": 197
+    },
+    {
+      "title": "The Expositor's Bible: The Epistle to the Galatians",
+      "file": "the-expositor-s-bible-the-epistle-to-the-galatians-findlay-george-g-george-gillanders.txt",
+      "bytes": 780747,
+      "words": 132296,
+      "reading_time_minutes": 588
+    },
+    {
+      "title": "The Morning of Spiritual Youth Improved, in the Prospect of Old Age and Its Infirmities: Being a Literal and Spiritual Paraphrase on the Twelfth Chapt",
+      "file": "the-morning-of-spiritual-youth-improved-in-the-prospect-of-old-age-and-its-infirmities-being-a-literal-and-spi.txt",
+      "bytes": 185411,
+      "words": 32375,
+      "reading_time_minutes": 144
+    },
+    {
+      "title": "The Elder Son Explained, and the Romish Church Exposed",
+      "file": "the-elder-son-explained-and-the-romish-church-exposed-church-j-john.txt",
+      "bytes": 21871,
+      "words": 3716,
+      "reading_time_minutes": 17
+    },
+    {
+      "title": "Scripture texts illustrated by general literature",
+      "file": "scripture-texts-illustrated-by-general-literature-jacox-francis.txt",
+      "bytes": 880955,
+      "words": 144250,
+      "reading_time_minutes": 641
+    },
+    {
+      "title": "The books of Chronicles",
+      "file": "the-books-of-chronicles-elmslie-w-a-l-william-alexander-leslie-and-kirkpatrick-a-f-alexander-francis.txt",
+      "bytes": 1138192,
+      "words": 182396,
+      "reading_time_minutes": 811
+    },
+    {
+      "title": "An analyticall exposition of both the Epistles of the Apostle Peter",
+      "file": "an-analyticall-exposition-of-both-the-epistles-of-the-apostle-peter-ames-william.txt",
+      "bytes": 548697,
+      "words": 93124,
+      "reading_time_minutes": 414
+    },
+    {
+      "title": "A commentary on Ecclesiastes",
+      "file": "a-commentary-on-ecclesiastes-dale-thomas-pelham.txt",
+      "bytes": 532594,
+      "words": 82908,
+      "reading_time_minutes": 368
+    },
+    {
+      "title": "A manual of the book of Psalms",
+      "file": "a-manual-of-the-book-of-psalms-luther-martin-and-cole-henry.txt",
+      "bytes": 599111,
+      "words": 103652,
+      "reading_time_minutes": 461
+    },
+    {
+      "title": "A critical and exegetical commentary on Genesis",
+      "file": "a-critical-and-exegetical-commentary-on-genesis-skinner-john.txt",
+      "bytes": 2233354,
+      "words": 315315,
+      "reading_time_minutes": 1401
+    },
+    {
+      "title": "Church work among the Negroes in the South: The Hale Memorial Sermon No. 2",
+      "file": "church-work-among-the-negroes-in-the-south-the-hale-memorial-sermon-no-2-strange-robert.txt",
+      "bytes": 36619,
+      "words": 6127,
+      "reading_time_minutes": 27
+    },
+    {
+      "title": "The Unity of the Church Essential to the Conversion of the World: A Sermon, Preached Before the Directors and Friends of the London Missionary Society",
+      "file": "the-unity-of-the-church-essential-to-the-conversion-of-the-world-a-sermon-preached-before-the-directors-and-fr.txt",
+      "bytes": 48206,
+      "words": 7792,
+      "reading_time_minutes": 35
+    },
+    {
+      "title": "Intercession: A Sermon Preached by the Rev. B. N. Michelson, B.A.",
+      "file": "intercession-a-sermon-preached-by-the-rev-b-n-michelson-b-a-michelson-b-n.txt",
+      "bytes": 13673,
+      "words": 2316,
+      "reading_time_minutes": 10
+    },
+    {
+      "title": "The Work Of Christ: Past, Present and Future",
+      "file": "the-work-of-christ-past-present-and-future-gaebelein-arno-clemens.txt",
+      "bytes": 100113,
+      "words": 18079,
+      "reading_time_minutes": 80
+    },
+    {
+      "title": "The Lord of Glory: Meditations on the person, the work and glory of our Lord Jesus Christ",
+      "file": "the-lord-of-glory-meditations-on-the-person-the-work-and-glory-of-our-lord-jesus-christ-gaebelein-arno-clemens.txt",
+      "bytes": 239287,
+      "words": 43767,
+      "reading_time_minutes": 195
+    },
+    {
+      "title": "Stories of Boys and Girls Who Loved the Saviour: A Token for Children",
+      "file": "stories-of-boys-and-girls-who-loved-the-saviour-a-token-for-children-janeway-james-and-wesley-john.txt",
+      "bytes": 77217,
+      "words": 14345,
+      "reading_time_minutes": 64
+    },
+    {
+      "title": "The Story of John Wesley, Told to Boys and Girls",
+      "file": "the-story-of-john-wesley-told-to-boys-and-girls-kirlew-marianne.txt",
+      "bytes": 226656,
+      "words": 37889,
+      "reading_time_minutes": 168
+    },
+    {
+      "title": "Hurlbut's Life of Christ For Young and Old: A Complete Life of Christ Written in Simple Language, Based on the Gospel Narrative",
+      "file": "hurlbut-s-life-of-christ-for-young-and-old-a-complete-life-of-christ-written-in-simple-language-based-on-the-g.txt",
+      "bytes": 600836,
+      "words": 112327,
+      "reading_time_minutes": 499
+    },
+    {
+      "title": "John Bunyan and the Gipsies",
+      "file": "john-bunyan-and-the-gipsies-simson-james.txt",
+      "bytes": 97775,
+      "words": 15950,
+      "reading_time_minutes": 71
+    },
+    {
+      "title": "Was John Bunyan a Gipsy?",
+      "file": "was-john-bunyan-a-gipsy-simson-james.txt",
+      "bytes": 94697,
+      "words": 15439,
+      "reading_time_minutes": 69
+    },
+    {
+      "title": "Thoughts upon slavery",
+      "file": "thoughts-upon-slavery-wesley-john.txt",
+      "bytes": 51824,
+      "words": 8946,
+      "reading_time_minutes": 40
+    },
+    {
+      "title": "The life and times of the Rev. John Wesley, M.A., founder of the Methodists. Vol. 3 (of 3)",
+      "file": "the-life-and-times-of-the-rev-john-wesley-m-a-founder-of-the-methodists-vol-3-of-3-tyerman-l-luke.txt",
+      "bytes": 1844241,
+      "words": 294584,
+      "reading_time_minutes": 1309
+    },
+    {
+      "title": "Understanding the Scriptures",
+      "file": "understanding-the-scriptures-mcconnell-francis-john.txt",
+      "bytes": 150725,
+      "words": 25960,
+      "reading_time_minutes": 115
+    },
+    {
+      "title": "Aunt Harding's Keepsakes: Or, The Two Bibles",
+      "file": "aunt-harding-s-keepsakes-or-the-two-bibles-anonymous.txt",
+      "bytes": 42676,
+      "words": 7922,
+      "reading_time_minutes": 35
+    },
+    {
+      "title": "The Right and Wrong Uses of the Bible",
+      "file": "the-right-and-wrong-uses-of-the-bible-newton-richard-heber.txt",
+      "bytes": 351992,
+      "words": 59105,
+      "reading_time_minutes": 263
+    },
+    {
+      "title": "A Coal From The Altar, To Kindle The Holy Fire of Zeale: In a Sermon Preached at a Generall Visitation at Ipswich",
+      "file": "a-coal-from-the-altar-to-kindle-the-holy-fire-of-zeale-in-a-sermon-preached-at-a-generall-visitation-at-ipswic.txt",
+      "bytes": 83425,
+      "words": 14372,
+      "reading_time_minutes": 64
+    },
+    {
+      "title": "Companion to the Bible",
+      "file": "companion-to-the-bible-barrows-e-p-elijah-porter.txt",
+      "bytes": 1521799,
+      "words": 244446,
+      "reading_time_minutes": 1086
+    },
+    {
+      "title": "The Angels' Song",
+      "file": "the-angels-song-guthrie-thomas.txt",
+      "bytes": 115349,
+      "words": 20129,
+      "reading_time_minutes": 89
+    },
+    {
+      "title": "The Epistles of St. Peter and St. Jude Preached and Explained",
+      "file": "the-epistles-of-st-peter-and-st-jude-preached-and-explained-luther-martin-and-gillett-e-h-ezra-hall.txt",
+      "bytes": 482914,
+      "words": 87850,
+      "reading_time_minutes": 390
+    },
+    {
+      "title": "Chapters of Bible Study: A Popular Introduction to the Study of the Sacred Scriptures",
+      "file": "chapters-of-bible-study-a-popular-introduction-to-the-study-of-the-sacred-scriptures-heuser-herman-j-herman-jo.txt",
+      "bytes": 273679,
+      "words": 45768,
+      "reading_time_minutes": 203
+    },
+    {
+      "title": "The Lay-Man's Sermon upon the Late Storm: Held forth at an Honest Coffee-House-Conventicle",
+      "file": "the-lay-man-s-sermon-upon-the-late-storm-held-forth-at-an-honest-coffee-house-conventicle-defoe-daniel.txt",
+      "bytes": 35807,
+      "words": 6337,
+      "reading_time_minutes": 28
+    },
+    {
+      "title": "A sermon preach'd before the Right Honourable the Lord-Mayor : the aldermen and citizens of London: at the Cathedral-Church of St. Paul on Monday the",
+      "file": "a-sermon-preach-d-before-the-right-honourable-the-lord-mayor-the-aldermen-and-citizens-of-london-at-the-cathed.txt",
+      "bytes": 41786,
+      "words": 6872,
+      "reading_time_minutes": 31
+    },
+    {
+      "title": "Consecrated Womanhood: A Sermon Preached in the First Congregational Church, Portland, Oregon",
+      "file": "consecrated-womanhood-a-sermon-preached-in-the-first-congregational-church-portland-oregon-marvin-frederic-row.txt",
+      "bytes": 32990,
+      "words": 5530,
+      "reading_time_minutes": 25
+    },
+    {
+      "title": "A Sermon Preached in York Minister, on St. Bartholomew's Day, Friday, August 24, 1877: on the Occasion of the Consecration of the Right Rev. Rowley Hi",
+      "file": "a-sermon-preached-in-york-minister-on-st-bartholomew-s-day-friday-august-24-1877-on-the-occasion-of-the-consec.txt",
+      "bytes": 21152,
+      "words": 3557,
+      "reading_time_minutes": 16
+    },
+    {
+      "title": "Substance of a Sermon on the Bible Society: preached at Beccles, October 29th, and at St. Mary's Church Bungay, on Friday, Dec. 1st, 1815",
+      "file": "substance-of-a-sermon-on-the-bible-society-preached-at-beccles-october-29th-and-at-st-mary-s-church-bungay-on-.txt",
+      "bytes": 33620,
+      "words": 5622,
+      "reading_time_minutes": 25
+    },
+    {
+      "title": "Baptism According to Scripture",
+      "file": "baptism-according-to-scripture-hoare-e-h-edward-hatch.txt",
+      "bytes": 146692,
+      "words": 24805,
       "reading_time_minutes": 110
     },
     {
-      "title": "Health, Healing, and Faith",
-      "file": "health-healing-and-faith-russell-h-conwell.txt",
-      "bytes": 69869,
-      "words": 11868,
-      "reading_time_minutes": 53
+      "title": "Episcopal Fidelity",
+      "file": "episcopal-fidelity-bayley-emilius-sir.txt",
+      "bytes": 30340,
+      "words": 4875,
+      "reading_time_minutes": 22
     },
     {
-      "title": "Praying for Money",
-      "file": "praying-for-money-russell-h-conwell.txt",
-      "bytes": 81469,
-      "words": 14034,
-      "reading_time_minutes": 62
+      "title": "The Believer Not Ashamed of the Gospel",
+      "file": "the-believer-not-ashamed-of-the-gospel-hoare-edward.txt",
+      "bytes": 25913,
+      "words": 4556,
+      "reading_time_minutes": 20
     },
     {
-      "title": "In Answer to Prayer",
-      "file": "in-answer-to-prayer-william-boyd-carpenter-and-theodore-l-cuyler.txt",
-      "bytes": 110557,
-      "words": 19839,
-      "reading_time_minutes": 88
+      "title": "A Bible History of Baptism",
+      "file": "a-bible-history-of-baptism-baird-samuel-j-samuel-john.txt",
+      "bytes": 995954,
+      "words": 165003,
+      "reading_time_minutes": 733
     },
     {
-      "title": "Prisons and Prayer; Or, a Labor of Love",
-      "file": "prisons-and-prayer-or-a-labor-of-love-elizabeth-ryder-1844-wheaton.txt",
-      "bytes": 1130354,
-      "words": 189061,
-      "reading_time_minutes": 840
+      "title": "The True Ministers of Christ Accredited by the Holy Spirit: A Sermon",
+      "file": "the-true-ministers-of-christ-accredited-by-the-holy-spirit-a-sermon-gell-philip.txt",
+      "bytes": 73780,
+      "words": 12175,
+      "reading_time_minutes": 54
     },
     {
-      "title": "Prayers of the Middle Ages: Light from a Thousand Years",
-      "file": "prayers-of-the-middle-ages-light-from-a-thousand-years-j-manning-1895-potts.txt",
-      "bytes": 103825,
-      "words": 15282,
+      "title": "Welsh Nationality, and How Alone It is to Be Saved: A Sermon",
+      "file": "welsh-nationality-and-how-alone-it-is-to-be-saved-a-sermon-davies-william-gabriel.txt",
+      "bytes": 56872,
+      "words": 9456,
+      "reading_time_minutes": 42
+    },
+    {
+      "title": "The Baptism of the Prince: A Sermon: Preached ... on Sunday morning, Jan. 23, 1842, in anticipation of the baptism of His Royal Highness, the Prince o",
+      "file": "the-baptism-of-the-prince-a-sermon-preached-on-sunday-morning-jan-23-1842-in-anticipation-of-the-baptism-of-hi.txt",
+      "bytes": 48493,
+      "words": 8110,
+      "reading_time_minutes": 36
+    },
+    {
+      "title": "\"He was buried.\" A Sermon for Easter Even",
+      "file": "he-was-buried-a-sermon-for-easter-even-macgill-thomas-curate-of-clapham.txt",
+      "bytes": 18671,
+      "words": 3121,
+      "reading_time_minutes": 14
+    },
+    {
+      "title": "Prospects of the Church of England: A sermon preached in the Parish Church of Doncaster, on Sunday evening, August 30, 1868, on the occasion of the fi",
+      "file": "prospects-of-the-church-of-england-a-sermon-preached-in-the-parish-church-of-doncaster-on-sunday-evening-augus.txt",
+      "bytes": 27475,
+      "words": 4532,
+      "reading_time_minutes": 20
+    },
+    {
+      "title": "Biblical Revision, its duties and conditions: A sermon preached in St. Paul's Cathedral at the special evening service, on Sunday, March 13, 1870",
+      "file": "biblical-revision-its-duties-and-conditions-a-sermon-preached-in-st-paul-s-cathedral-at-the-special-evening-se.txt",
+      "bytes": 34675,
+      "words": 5824,
+      "reading_time_minutes": 26
+    },
+    {
+      "title": "The Book of Light in the Hand of Love: A plea for the British and Foreign Bible Society: A sermon preached in St. Paul's Cathedral, on Tuesday, April",
+      "file": "the-book-of-light-in-the-hand-of-love-a-plea-for-the-british-and-foreign-bible-society-a-sermon-preached-in-st.txt",
+      "bytes": 25017,
+      "words": 4152,
+      "reading_time_minutes": 18
+    },
+    {
+      "title": "Christian Literature: a sermon delivered May 8th, 1870, in Kensington Chapel, at the seventy-first anniversary of the Religious Tract Society",
+      "file": "christian-literature-a-sermon-delivered-may-8th-1870-in-kensington-chapel-at-the-seventy-first-anniversary-of-.txt",
+      "bytes": 51150,
+      "words": 8044,
+      "reading_time_minutes": 36
+    },
+    {
+      "title": "A Farewell Sermon: delivered on Sunday, October 23, A.D. 1842, at the Parish Church of St. Mary Abbotts, Kensington",
+      "file": "a-farewell-sermon-delivered-on-sunday-october-23-a-d-1842-at-the-parish-church-of-st-mary-abbotts-kensington-p.txt",
+      "bytes": 37868,
+      "words": 6438,
+      "reading_time_minutes": 29
+    },
+    {
+      "title": "A Sermon preached at Christ Church, Kensington, on May 1, 1859: being the day appointed for a general thanksgiving to Almighty God, for the success gr",
+      "file": "a-sermon-preached-at-christ-church-kensington-on-may-1-1859-being-the-day-appointed-for-a-general-thanksgiving.txt",
+      "bytes": 22853,
+      "words": 3710,
+      "reading_time_minutes": 16
+    },
+    {
+      "title": "Bible-Burning: the substance of a sermon preached in St. Martin's Church, Birmingham, on Sunday evening, Dec. 10, 1848",
+      "file": "bible-burning-the-substance-of-a-sermon-preached-in-st-martin-s-church-birmingham-on-sunday-evening-dec-10-184.txt",
+      "bytes": 59993,
+      "words": 10004,
+      "reading_time_minutes": 44
+    },
+    {
+      "title": "The Cause and Cure of the Cattle Plague: A Plain Sermon",
+      "file": "the-cause-and-cure-of-the-cattle-plague-a-plain-sermon-cowan-james-galloway.txt",
+      "bytes": 16791,
+      "words": 2745,
+      "reading_time_minutes": 12
+    },
+    {
+      "title": "\"Bear ye one another's burdens.\" A Plain Sermon on the Lancashire Distress",
+      "file": "bear-ye-one-another-s-burdens-a-plain-sermon-on-the-lancashire-distress-cowan-james-galloway.txt",
+      "bytes": 14028,
+      "words": 2309,
+      "reading_time_minutes": 10
+    },
+    {
+      "title": "The Ritual Movement: Three plain sermons preached at St. John the Evangelist's, Hammersmith",
+      "file": "the-ritual-movement-three-plain-sermons-preached-at-st-john-the-evangelist-s-hammersmith-cowan-james-galloway.txt",
+      "bytes": 59127,
+      "words": 9627,
+      "reading_time_minutes": 43
+    },
+    {
+      "title": "\"Hear Ye the Rod, and Who Hath Appointed It\": A Sermon for the Fast Day, October 7, 1857",
+      "file": "hear-ye-the-rod-and-who-hath-appointed-it-a-sermon-for-the-fast-day-october-7-1857-cowan-james-galloway.txt",
+      "bytes": 28502,
+      "words": 4725,
+      "reading_time_minutes": 21
+    },
+    {
+      "title": "\"The Numbering of the People\": A Sermon in conjunction with the census of 1861 preached in St. Thomas' Church, Islington, on Sunday Evening, April 7",
+      "file": "the-numbering-of-the-people-a-sermon-in-conjunction-with-the-census-of-1861-preached-in-st-thomas-church-islin.txt",
+      "bytes": 31633,
+      "words": 5299,
+      "reading_time_minutes": 24
+    },
+    {
+      "title": "Welcome to the ransomed; or, Duties of the colored inhabitants of the District of Columbia",
+      "file": "welcome-to-the-ransomed-or-duties-of-the-colored-inhabitants-of-the-district-of-columbia-payne-daniel-alexande.txt",
+      "bytes": 27173,
+      "words": 4419,
+      "reading_time_minutes": 20
+    },
+    {
+      "title": "Addresses by Henry Drummond",
+      "file": "addresses-by-henry-drummond-drummond-henry.txt",
+      "bytes": 185663,
+      "words": 33120,
+      "reading_time_minutes": 147
+    },
+    {
+      "title": "Preaching and Paganism",
+      "file": "preaching-and-paganism-fitch-albert-parker.txt",
+      "bytes": 379328,
+      "words": 62917,
+      "reading_time_minutes": 280
+    },
+    {
+      "title": "Herein is Love: A Study of the Biblical Doctrine of Love in Its Bearing on Personality, Parenthood, Teaching, and All Other Human Relationships.",
+      "file": "herein-is-love-a-study-of-the-biblical-doctrine-of-love-in-its-bearing-on-personality-parenthood-teaching-and-.txt",
+      "bytes": 229960,
+      "words": 39336,
+      "reading_time_minutes": 175
+    },
+    {
+      "title": "The Works of the Rev. Hugh Binning",
+      "file": "the-works-of-the-rev-hugh-binning-binning-hugh.txt",
+      "bytes": 3324952,
+      "words": 588268,
+      "reading_time_minutes": 2615
+    },
+    {
+      "title": "Calvinistic Controversy: Embracing a Sermon on Predestination and Election and Several Numbers, Formally Published in the Christian Advocate and Journ",
+      "file": "calvinistic-controversy-embracing-a-sermon-on-predestination-and-election-and-several-numbers-formally-publish.txt",
+      "bytes": 475405,
+      "words": 80803,
+      "reading_time_minutes": 359
+    },
+    {
+      "title": "Church Ministry in Kensington: A Recent Case of Hieratical Teaching Scripturally Considered",
+      "file": "church-ministry-in-kensington-a-recent-case-of-hieratical-teaching-scripturally-considered-gell-john-philip.txt",
+      "bytes": 31086,
+      "words": 5056,
+      "reading_time_minutes": 22
+    },
+    {
+      "title": "The works of the Rev. Isaac Watts, D. D. in nine volumes (volume 1 of 9)",
+      "file": "the-works-of-the-rev-isaac-watts-d-d-in-nine-volumes-volume-1-of-9-watts-isaac.txt",
+      "bytes": 1817066,
+      "words": 321041,
+      "reading_time_minutes": 1427
+    },
+    {
+      "title": "Confessions of an Inquiring Spirit and Some Miscellaneous Pieces",
+      "file": "confessions-of-an-inquiring-spirit-and-some-miscellaneous-pieces-coleridge-samuel-taylor-and-morley-henry.txt",
+      "bytes": 264423,
+      "words": 43465,
+      "reading_time_minutes": 193
+    },
+    {
+      "title": "The Man with the Book; or, The Bible Among the People.",
+      "file": "the-man-with-the-book-or-the-bible-among-the-people-weylland-john-matthias.txt",
+      "bytes": 463155,
+      "words": 81148,
+      "reading_time_minutes": 361
+    },
+    {
+      "title": "Aids to Reflection; and, The Confessions of an Inquiring Spirit",
+      "file": "aids-to-reflection-and-the-confessions-of-an-inquiring-spirit-coleridge-samuel-taylor-and-marsh-james.txt",
+      "bytes": 977961,
+      "words": 160895,
+      "reading_time_minutes": 715
+    },
+    {
+      "title": "The Historical Evidence for the Virgin Birth",
+      "file": "the-historical-evidence-for-the-virgin-birth-taylor-vincent.txt",
+      "bytes": 341165,
+      "words": 57147,
+      "reading_time_minutes": 254
+    },
+    {
+      "title": "Baptism as taught in the Bible and the Prayer Book",
+      "file": "baptism-as-taught-in-the-bible-and-the-prayer-book-hoare-edward.txt",
+      "bytes": 45085,
+      "words": 7555,
+      "reading_time_minutes": 34
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 01, January, 1888",
+      "file": "the-american-missionary-volume-42-no-01-january-1888-various.txt",
+      "bytes": 94974,
+      "words": 15529,
+      "reading_time_minutes": 69
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 02, February, 1888",
+      "file": "the-american-missionary-volume-42-no-02-february-1888-various.txt",
+      "bytes": 110218,
+      "words": 14458,
+      "reading_time_minutes": 64
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 03, March, 1888",
+      "file": "the-american-missionary-volume-42-no-03-march-1888-various.txt",
+      "bytes": 116810,
+      "words": 18186,
+      "reading_time_minutes": 81
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 04, April, 1888",
+      "file": "the-american-missionary-volume-42-no-04-april-1888-various.txt",
+      "bytes": 102340,
+      "words": 16754,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 05, May, 1888",
+      "file": "the-american-missionary-volume-42-no-05-may-1888-various.txt",
+      "bytes": 105913,
+      "words": 16965,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 06, June, 1888",
+      "file": "the-american-missionary-volume-42-no-06-june-1888-various.txt",
+      "bytes": 105240,
+      "words": 16571,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 11, November, 1888",
+      "file": "the-american-missionary-volume-42-no-11-november-1888-various.txt",
+      "bytes": 138126,
+      "words": 16710,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 10, October, 1888",
+      "file": "the-american-missionary-volume-42-no-10-october-1888-various.txt",
+      "bytes": 106662,
+      "words": 16508,
+      "reading_time_minutes": 73
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 07, July, 1888",
+      "file": "the-american-missionary-volume-42-no-07-july-1888-various.txt",
+      "bytes": 115591,
+      "words": 16812,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 08, August, 1888",
+      "file": "the-american-missionary-volume-42-no-08-august-1888-various.txt",
+      "bytes": 118459,
+      "words": 16744,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 42, No. 12, December, 1888",
+      "file": "the-american-missionary-volume-42-no-12-december-1888-various.txt",
+      "bytes": 229827,
+      "words": 36146,
+      "reading_time_minutes": 161
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 10, October, 1890",
+      "file": "the-american-missionary-volume-44-no-10-october-1890-various.txt",
+      "bytes": 97308,
+      "words": 15020,
+      "reading_time_minutes": 67
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 02, February, 1890",
+      "file": "the-american-missionary-volume-44-no-02-february-1890-various.txt",
+      "bytes": 115045,
+      "words": 16885,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 03, March, 1890",
+      "file": "the-american-missionary-volume-44-no-03-march-1890-various.txt",
+      "bytes": 114596,
+      "words": 17736,
+      "reading_time_minutes": 79
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 04, April, 1890",
+      "file": "the-american-missionary-volume-44-no-04-april-1890-various.txt",
+      "bytes": 111529,
+      "words": 17582,
+      "reading_time_minutes": 78
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 05, May, 1890",
+      "file": "the-american-missionary-volume-44-no-05-may-1890-various.txt",
+      "bytes": 107152,
+      "words": 15938,
+      "reading_time_minutes": 71
+    },
+    {
+      "title": "The American Missionary — Volume 48, No. 10, October, 1894",
+      "file": "the-american-missionary-volume-48-no-10-october-1894-various.txt",
+      "bytes": 106505,
+      "words": 16825,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 49, No. 03, March, 1895",
+      "file": "the-american-missionary-volume-49-no-03-march-1895-various.txt",
+      "bytes": 138239,
+      "words": 17053,
+      "reading_time_minutes": 76
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 01, January, 1890",
+      "file": "the-american-missionary-volume-44-no-01-january-1890-various.txt",
+      "bytes": 116360,
+      "words": 16509,
+      "reading_time_minutes": 73
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 11, November, 1889",
+      "file": "the-american-missionary-volume-43-no-11-november-1889-various.txt",
+      "bytes": 121185,
+      "words": 15529,
+      "reading_time_minutes": 69
+    },
+    {
+      "title": "The American Missionary — Volume 44, No. 06, June, 1890",
+      "file": "the-american-missionary-volume-44-no-06-june-1890-various.txt",
+      "bytes": 124673,
+      "words": 17257,
+      "reading_time_minutes": 77
+    },
+    {
+      "title": "The American Missionary — Volume 45, No. 02, February, 1891",
+      "file": "the-american-missionary-volume-45-no-02-february-1891-various.txt",
+      "bytes": 135741,
+      "words": 16680,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 01, January, 1889",
+      "file": "the-american-missionary-volume-43-no-01-january-1889-various.txt",
+      "bytes": 116388,
+      "words": 16935,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 02, February, 1889",
+      "file": "the-american-missionary-volume-43-no-02-february-1889-various.txt",
+      "bytes": 122365,
+      "words": 15341,
       "reading_time_minutes": 68
     },
     {
-      "title": "The Double Search: Studies in Atonement and Prayer",
-      "file": "the-double-search-studies-in-atonement-and-prayer-rufus-m-jones.txt",
-      "bytes": 89960,
-      "words": 15642,
+      "title": "The American Missionary — Volume 43, No. 03, March, 1889",
+      "file": "the-american-missionary-volume-43-no-03-march-1889-various.txt",
+      "bytes": 127555,
+      "words": 17650,
+      "reading_time_minutes": 78
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 04, April, 1889",
+      "file": "the-american-missionary-volume-43-no-04-april-1889-various.txt",
+      "bytes": 118099,
+      "words": 16688,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 05, May, 1889",
+      "file": "the-american-missionary-volume-43-no-05-may-1889-various.txt",
+      "bytes": 117790,
+      "words": 16794,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 06, June, 1889",
+      "file": "the-american-missionary-volume-43-no-06-june-1889-various.txt",
+      "bytes": 121907,
+      "words": 17037,
+      "reading_time_minutes": 76
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 07, July, 1889",
+      "file": "the-american-missionary-volume-43-no-07-july-1889-various.txt",
+      "bytes": 121007,
+      "words": 17391,
+      "reading_time_minutes": 77
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 08, August, 1889",
+      "file": "the-american-missionary-volume-43-no-08-august-1889-various.txt",
+      "bytes": 107054,
+      "words": 15347,
+      "reading_time_minutes": 68
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 09, September, 1889",
+      "file": "the-american-missionary-volume-43-no-09-september-1889-various.txt",
+      "bytes": 114794,
+      "words": 16692,
+      "reading_time_minutes": 74
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 10, October, 1889",
+      "file": "the-american-missionary-volume-43-no-10-october-1889-various.txt",
+      "bytes": 103007,
+      "words": 15504,
+      "reading_time_minutes": 69
+    },
+    {
+      "title": "The American Missionary — Volume 43, No. 12, December, 1889",
+      "file": "the-american-missionary-volume-43-no-12-december-1889-various.txt",
+      "bytes": 272022,
+      "words": 43454,
+      "reading_time_minutes": 193
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 08, August, 1896",
+      "file": "the-american-missionary-volume-50-no-08-august-1896-various.txt",
+      "bytes": 109103,
+      "words": 15879,
+      "reading_time_minutes": 71
+    },
+    {
+      "title": "The American Missionary — Volume 49, No. 04, April, 1895",
+      "file": "the-american-missionary-volume-49-no-04-april-1895-various.txt",
+      "bytes": 129097,
+      "words": 16344,
+      "reading_time_minutes": 73
+    },
+    {
+      "title": "The Covenants And The Covenanters: Covenants, Sermons, and Documents of the Covenanted Reformation",
+      "file": "the-covenants-and-the-covenanters-covenants-sermons-and-documents-of-the-covenanted-reformation-kerr-james.txt",
+      "bytes": 832016,
+      "words": 147018,
+      "reading_time_minutes": 653
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 06, June, 1896",
+      "file": "the-american-missionary-volume-50-no-06-june-1896-various.txt",
+      "bytes": 119580,
+      "words": 17099,
+      "reading_time_minutes": 76
+    },
+    {
+      "title": "The American Missionary — Volume 49, No. 05, May, 1895",
+      "file": "the-american-missionary-volume-49-no-05-may-1895-various.txt",
+      "bytes": 110024,
+      "words": 16019,
+      "reading_time_minutes": 71
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 04, April, 1896",
+      "file": "the-american-missionary-volume-50-no-04-april-1896-various.txt",
+      "bytes": 118610,
+      "words": 17507,
+      "reading_time_minutes": 78
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 02, February, 1896",
+      "file": "the-american-missionary-volume-50-no-02-february-1896-various.txt",
+      "bytes": 161429,
+      "words": 17754,
+      "reading_time_minutes": 79
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 03, March, 1896",
+      "file": "the-american-missionary-volume-50-no-03-march-1896-various.txt",
+      "bytes": 152487,
+      "words": 19085,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 52, No. 01, March, 1898",
+      "file": "the-american-missionary-volume-52-no-01-march-1898-various.txt",
+      "bytes": 208257,
+      "words": 31234,
+      "reading_time_minutes": 139
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 09, September, 1896",
+      "file": "the-american-missionary-volume-50-no-09-september-1896-various.txt",
+      "bytes": 116991,
+      "words": 15847,
       "reading_time_minutes": 70
     },
     {
-      "title": "Prayer for the oppressed",
-      "file": "prayer-for-the-oppressed-james-a-thome-and-albert-barnes.txt",
-      "bytes": 54504,
-      "words": 9183,
-      "reading_time_minutes": 41
+      "title": "The American Missionary — Volume 52, No. 02, June, 1898",
+      "file": "the-american-missionary-volume-52-no-02-june-1898-various.txt",
+      "bytes": 189653,
+      "words": 29632,
+      "reading_time_minutes": 132
     },
     {
-      "title": "The model prayer",
-      "file": "the-model-prayer-j-d-jones.txt",
-      "bytes": 274722,
-      "words": 46731,
+      "title": "The American Missionary — Volume 50, No. 01, January, 1896",
+      "file": "the-american-missionary-volume-50-no-01-january-1896-various.txt",
+      "bytes": 138476,
+      "words": 17816,
+      "reading_time_minutes": 79
+    },
+    {
+      "title": "The American Missionary — Volume 52, No. 03, September, 1898",
+      "file": "the-american-missionary-volume-52-no-03-september-1898-various.txt",
+      "bytes": 182048,
+      "words": 28230,
+      "reading_time_minutes": 125
+    },
+    {
+      "title": "The American Missionary — Vol. 33, No. 3, March, 1879",
+      "file": "the-american-missionary-vol-33-no-3-march-1879-various.txt",
+      "bytes": 166197,
+      "words": 23248,
+      "reading_time_minutes": 103
+    },
+    {
+      "title": "The American Missionary, Volume 34, No. 11, November 1880",
+      "file": "the-american-missionary-volume-34-no-11-november-1880-various.txt",
+      "bytes": 272937,
+      "words": 42353,
+      "reading_time_minutes": 188
+    },
+    {
+      "title": "The American Missionary, Volume 34, No. 12, December 1880",
+      "file": "the-american-missionary-volume-34-no-12-december-1880-various.txt",
+      "bytes": 149975,
+      "words": 22198,
+      "reading_time_minutes": 99
+    },
+    {
+      "title": "Forty-two years amongst the Indians and Eskimo",
+      "file": "forty-two-years-amongst-the-indians-and-eskimo-batty-beatrice.txt",
+      "bytes": 269817,
+      "words": 46697,
       "reading_time_minutes": 208
+    },
+    {
+      "title": "The Story of Creation as Told By Theology and By Science",
+      "file": "the-story-of-creation-as-told-by-theology-and-by-science-ackland-t-s-thomas-suter.txt",
+      "bytes": 285536,
+      "words": 48399,
+      "reading_time_minutes": 215
+    },
+    {
+      "title": "Christ, Christianity and the Bible",
+      "file": "christ-christianity-and-the-bible-haldeman-isaac-massey.txt",
+      "bytes": 212605,
+      "words": 37251,
+      "reading_time_minutes": 166
+    },
+    {
+      "title": "The Literature and History of New Testament Times",
+      "file": "the-literature-and-history-of-new-testament-times-machen-j-gresham-john-gresham.txt",
+      "bytes": 672160,
+      "words": 111562,
+      "reading_time_minutes": 496
+    },
+    {
+      "title": "The American Missionary — Volume 48, No. 07, July, 1894",
+      "file": "the-american-missionary-volume-48-no-07-july-1894-various.txt",
+      "bytes": 143062,
+      "words": 18339,
+      "reading_time_minutes": 82
+    },
+    {
+      "title": "The American Missionary — Volume 49, No. 02, February, 1895",
+      "file": "the-american-missionary-volume-49-no-02-february-1895-various.txt",
+      "bytes": 181668,
+      "words": 21411,
+      "reading_time_minutes": 95
+    },
+    {
+      "title": "The American Missionary — Volume 50, No. 05, May, 1896",
+      "file": "the-american-missionary-volume-50-no-05-may-1896-various.txt",
+      "bytes": 131945,
+      "words": 16942,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The American Missionary — Volume 54, No. 01, January, 1900",
+      "file": "the-american-missionary-volume-54-no-01-january-1900-various.txt",
+      "bytes": 152558,
+      "words": 23339,
+      "reading_time_minutes": 104
+    },
+    {
+      "title": "The American Missionary — Volume 54, No. 02, April, 1900",
+      "file": "the-american-missionary-volume-54-no-02-april-1900-various.txt",
+      "bytes": 173414,
+      "words": 26459,
+      "reading_time_minutes": 118
+    },
+    {
+      "title": "The American Missionary — Volume 54, No. 03, July, 1900",
+      "file": "the-american-missionary-volume-54-no-03-july-1900-various.txt",
+      "bytes": 165864,
+      "words": 25252,
+      "reading_time_minutes": 112
+    },
+    {
+      "title": "The American Missionary — Volume 54, No. 04, October, 1900",
+      "file": "the-american-missionary-volume-54-no-04-october-1900-various.txt",
+      "bytes": 154601,
+      "words": 23555,
+      "reading_time_minutes": 105
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 02, February, 1885",
+      "file": "the-american-missionary-volume-39-no-02-february-1885-various.txt",
+      "bytes": 148909,
+      "words": 18681,
+      "reading_time_minutes": 83
+    },
+    {
+      "title": "The American Missionary — Volume 38, No. 01, January, 1884",
+      "file": "the-american-missionary-volume-38-no-01-january-1884-various.txt",
+      "bytes": 125523,
+      "words": 18807,
+      "reading_time_minutes": 84
+    },
+    {
+      "title": "The American Missionary — Volume 38, No. 06, June, 1884",
+      "file": "the-american-missionary-volume-38-no-06-june-1884-various.txt",
+      "bytes": 109626,
+      "words": 15464,
+      "reading_time_minutes": 69
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 07, July, 1885",
+      "file": "the-american-missionary-volume-39-no-07-july-1885-various.txt",
+      "bytes": 112195,
+      "words": 16098,
+      "reading_time_minutes": 72
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 03, March, 1885",
+      "file": "the-american-missionary-volume-39-no-03-march-1885-various.txt",
+      "bytes": 132209,
+      "words": 19049,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 08, August, 1885",
+      "file": "the-american-missionary-volume-39-no-08-august-1885-various.txt",
+      "bytes": 110444,
+      "words": 16073,
+      "reading_time_minutes": 71
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 10, October, 1885",
+      "file": "the-american-missionary-volume-39-no-10-october-1885-various.txt",
+      "bytes": 118512,
+      "words": 17501,
+      "reading_time_minutes": 78
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "The Great Doctrines of the Bible",
-      "author": "William Evans",
+      "title": "Philippian Studies: Lessons in Faith and Love from St. Paul's Epistle to the Philippians",
+      "author": "Moule, H. C. G. (Handley Carr Glyn)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-great-doctrines-of-the-bible-william-evans.txt"
+      "file_path": "data/library/verified/philippian-studies-lessons-in-faith-and-love-from-st-paul-s-epistle-to-the-philippians-moule-h-c-g-handley-car.txt"
     },
     {
       "row": 3,
-      "title": "The Chosen People: A Compendium of Sacred and Church History for School-Children",
-      "author": "Charlotte M. Yonge",
+      "title": "The Expositor's Bible: The Epistle to the Hebrews",
+      "author": "Edwards, Thomas Charles and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-chosen-people-a-compendium-of-sacred-and-church-history-for-school-children-charlotte-m-yonge.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-hebrews-edwards-thomas-charles-and-nicoll-w-robertson-william-roberts.txt"
     },
     {
       "row": 4,
-      "title": "Female Scripture Biography, Volume II Including an Essay on What Christianity Has Done for Women",
-      "author": "F. A. Cox",
+      "title": "The Expositor's Bible: The Gospel of St. John, Vol. I",
+      "author": "Dods, Marcus and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/female-scripture-biography-volume-ii-including-an-essay-on-what-christianity-has-done-for-women-f-a-cox.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-of-st-john-vol-i-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 5,
-      "title": "The Gospel of the Pentateuch: A Set of Parish Sermons",
-      "author": "Charles Kingsley",
+      "title": "The Expositor's Bible: The Gospel of St. John, Vol. II",
+      "author": "Dods, Marcus and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-gospel-of-the-pentateuch-a-set-of-parish-sermons-charles-kingsley.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-of-st-john-vol-ii-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 6,
-      "title": "The Gospels in the Second Century An Examination of the Critical Part of a Work Entitled 'Supernatural Religion'",
-      "author": "W. Sanday",
+      "title": "The Expositor's Bible: The Book of Exodus",
+      "author": "Chadwick, G. A. (George Alexander) and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-gospels-in-the-second-century-an-examination-of-the-critical-part-of-a-work-entitled-supernatural-religion.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-exodus-chadwick-g-a-george-alexander-and-nicoll-w-robertson-william-robertso.txt"
     },
     {
       "row": 7,
-      "title": "Christ: The Way, the Truth, and the Life",
-      "author": "John Brown",
+      "title": "Studies in Zechariah",
+      "author": "Gaebelein, Arno Clemens",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/christ-the-way-the-truth-and-the-life-john-brown.txt"
+      "file_path": "data/library/verified/studies-in-zechariah-gaebelein-arno-clemens.txt"
     },
     {
       "row": 8,
-      "title": "Creation and Its Records A Brief Statement of Christian Belief with Reference to Modern Facts and Ancient Scripture",
-      "author": "B. H. Baden-Powell",
+      "title": "The Prophet Ezekiel: An Analytical Exposition",
+      "author": "Gaebelein, Arno Clemens",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/creation-and-its-records-a-brief-statement-of-christian-belief-with-reference-to-modern-facts-and-ancient-scri.txt"
+      "file_path": "data/library/verified/the-prophet-ezekiel-an-analytical-exposition-gaebelein-arno-clemens.txt"
     },
     {
       "row": 9,
-      "title": "Missionary Survey As An Aid To Intelligent Co-Operation In Foreign Missions",
-      "author": "Roland Allen and Thomas Cochrane",
+      "title": "Notes on the Book of Genesis",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/missionary-survey-as-an-aid-to-intelligent-co-operation-in-foreign-missions-roland-allen-and-thomas-cochrane.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-genesis-mackintosh-charles-henry.txt"
     },
     {
       "row": 10,
-      "title": "The Hope of the Gospel",
-      "author": "George MacDonald",
+      "title": "The Expositor's Bible: The First Book of Samuel",
+      "author": "Blaikie, William Garden and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-hope-of-the-gospel-george-macdonald.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-first-book-of-samuel-blaikie-william-garden-and-nicoll-w-robertson-william-robertson.txt"
     },
     {
       "row": 11,
-      "title": "Sermons on Various Important Subjects Written Partly on Sundry of the More Difficult Passages in the Sacred Volume",
-      "author": "Andrew Lee",
+      "title": "The Expositor's Bible: The Book of Genesis",
+      "author": "Dods, Marcus and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/sermons-on-various-important-subjects-written-partly-on-sundry-of-the-more-difficult-passages-in-the-sacred-vo.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-genesis-dods-marcus-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 12,
-      "title": "Quiet Talks on John's Gospel",
-      "author": "S. D. Gordon",
+      "title": "The Expositor's Bible: The Pastoral Epistles",
+      "author": "Plummer, Alfred and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/quiet-talks-on-john-s-gospel-s-d-gordon.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-pastoral-epistles-plummer-alfred-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 13,
-      "title": "The Bible Period by Period A Manual for the Study of the Bible by Periods",
-      "author": "Josiah Blake Tidwell",
+      "title": "Expositor's Bible: The Book of Ecclesiastes",
+      "author": "Cox, Samuel and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-bible-period-by-period-a-manual-for-the-study-of-the-bible-by-periods-josiah-blake-tidwell.txt"
+      "file_path": "data/library/verified/expositor-s-bible-the-book-of-ecclesiastes-cox-samuel-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 14,
-      "title": "Sermons Preached at Brighton Third Series",
-      "author": "Frederick William Robertson",
+      "title": "The Expositor's Bible: The Song of Solomon and the Lamentations of Jeremiah",
+      "author": "Adeney, Walter F. (Walter Frederic) and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/sermons-preached-at-brighton-third-series-frederick-william-robertson.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-song-of-solomon-and-the-lamentations-of-jeremiah-adeney-walter-f-walter-frederic-and.txt"
     },
     {
       "row": 15,
-      "title": "An Exposition of the Last Psalme",
-      "author": "John Boys",
+      "title": "The Expositor's Bible: Ezra, Nehemiah, and Esther",
+      "author": "Adeney, Walter F. (Walter Frederic) and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/an-exposition-of-the-last-psalme-john-boys.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-ezra-nehemiah-and-esther-adeney-walter-f-walter-frederic-and-nicoll-w-robertson-william-.txt"
     },
     {
       "row": 16,
-      "title": "Little Gidding and its inmates in the Time of King Charles I. with an account of the Harmonies",
-      "author": "John Edward Acland",
+      "title": "Notes on the book of Exodus",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/little-gidding-and-its-inmates-in-the-time-of-king-charles-i-with-an-account-of-the-harmonies-john-edward-acla.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-exodus-mackintosh-charles-henry.txt"
     },
     {
       "row": 17,
-      "title": "Select Masterpieces of Biblical Literature",
-      "author": "Richard G. Moulton",
+      "title": "Notes on the Book of Leviticus",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/select-masterpieces-of-biblical-literature-richard-g-moulton.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-leviticus-mackintosh-charles-henry.txt"
     },
     {
       "row": 18,
-      "title": "Epistle Sermons, Vol. 2: Epiphany, Easter and Pentecost",
-      "author": "Martin Luther and John Nicholas Lenker",
+      "title": "Notes on the Book of Deuteronomy, Volume I",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/epistle-sermons-vol-2-epiphany-easter-and-pentecost-martin-luther-and-john-nicholas-lenker.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-deuteronomy-volume-i-mackintosh-charles-henry.txt"
     },
     {
       "row": 19,
-      "title": "Evangelists of Art: Picture-Sermons for Children",
-      "author": "James Patrick",
+      "title": "Notes on the Book of Deuteronomy, Volume II",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/evangelists-of-art-picture-sermons-for-children-james-patrick.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-deuteronomy-volume-ii-mackintosh-charles-henry.txt"
     },
     {
       "row": 20,
-      "title": "Christology of the Old Testament: And a Commentary on the Messianic Predictions. Vol. 2",
-      "author": "Ernst Wilhelm Hengstenberg and Theodore Meyer",
+      "title": "The Expositor's Bible: The Second Epistle to the Corinthians",
+      "author": "Denney, James and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/christology-of-the-old-testament-and-a-commentary-on-the-messianic-predictions-vol-2-ernst-wilhelm-hengstenber.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-second-epistle-to-the-corinthians-denney-james-and-nicoll-w-robertson-william-robert.txt"
     },
     {
       "row": 21,
-      "title": "Epistle Sermons, Vol. 3: Trinity Sunday to Advent",
-      "author": "Martin Luther and John Nicholas Lenker",
+      "title": "The Expositor's Bible: The Book of Revelation",
+      "author": "Milligan, William and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/epistle-sermons-vol-3-trinity-sunday-to-advent-martin-luther-and-john-nicholas-lenker.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-revelation-milligan-william-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 22,
-      "title": "The American Church Dictionary and Cyclopedia",
-      "author": "William James 1850- Miller",
+      "title": "The Expositor's Bible: The Epistles of St. Peter",
+      "author": "Lumby, J. Rawson (Joseph Rawson) and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-american-church-dictionary-and-cyclopedia-william-james-1850-miller.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistles-of-st-peter-lumby-j-rawson-joseph-rawson-and-nicoll-w-robertson-william-rob.txt"
     },
     {
       "row": 23,
-      "title": "The Church Handy Dictionary",
-      "author": "Anonymous",
+      "title": "The Expositor's Bible: The Book of Joshua",
+      "author": "Blaikie, William Garden and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-church-handy-dictionary-anonymous.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-joshua-blaikie-william-garden-and-nicoll-w-robertson-william-robertson-sir.txt"
     },
     {
       "row": 24,
-      "title": "Medica Sacra Or, A Commentary on the Most Remarkable Diseases Mentioned in the Holy Scriptures",
-      "author": "Richard Mead and Thomas Stack",
+      "title": "The Expositor's Bible: The First Epistle to the Corinthians",
+      "author": "Dods, Marcus and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/medica-sacra-or-a-commentary-on-the-most-remarkable-diseases-mentioned-in-the-holy-scriptures-richard-mead-and.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-first-epistle-to-the-corinthians-dods-marcus-and-nicoll-w-robertson-william-robertso.txt"
     },
     {
       "row": 25,
-      "title": "The Christian View of the Old Testament",
-      "author": "Frederick Carl Eiselen",
+      "title": "The Expositor's Bible: The Epistles to the Thessalonians",
+      "author": "Denney, James and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-christian-view-of-the-old-testament-frederick-carl-eiselen.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistles-to-the-thessalonians-denney-james-and-nicoll-w-robertson-william-robertson-.txt"
     },
     {
       "row": 26,
-      "title": "Misread Passages of Scriptures",
-      "author": "James Baldwin Brown",
+      "title": "The Expositor's Bible: The Second Book of Samuel",
+      "author": "Blaikie, William Garden and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/misread-passages-of-scriptures-james-baldwin-brown.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-second-book-of-samuel-blaikie-william-garden-and-nicoll-w-robertson-william-robertso.txt"
     },
     {
       "row": 27,
-      "title": "The Messiah in Moses and the Prophets",
-      "author": "Eleazar Lord",
+      "title": "The Expositor's Bible: The General Epistles of St. James and St. Jude",
+      "author": "Plummer, Alfred and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-messiah-in-moses-and-the-prophets-eleazar-lord.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-general-epistles-of-st-james-and-st-jude-plummer-alfred-and-nicoll-w-robertson-willi.txt"
     },
     {
       "row": 28,
-      "title": "Walks and Words of Jesus: A Paragraph Harmony of the Four Evangelists",
-      "author": "M. N. Olmsted and Randolph S. Foster",
+      "title": "Studies in the Epistle of James",
+      "author": "Robertson, A. T.",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/walks-and-words-of-jesus-a-paragraph-harmony-of-the-four-evangelists-m-n-olmsted-and-randolph-s-foster.txt"
+      "file_path": "data/library/verified/studies-in-the-epistle-of-james-robertson-a-t.txt"
     },
     {
       "row": 29,
-      "title": "Studies in Old Testament History",
-      "author": "Jesse Lyman Hurlbut",
+      "title": "The Expositor's Bible: The Epistle of St Paul to the Romans",
+      "author": "Moule, H. C. G. (Handley Carr Glyn) and Nicoll, W. Robertson (William Robertson), Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/studies-in-old-testament-history-jesse-lyman-hurlbut.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-of-st-paul-to-the-romans-moule-h-c-g-handley-carr-glyn-and-nicoll-w-robertso.txt"
     },
     {
       "row": 30,
-      "title": "A Plain Introduction to the Criticism of the New Testament, Vol. I.",
-      "author": "Frederick Henry Ambrose Scrivener",
+      "title": "Notes on the book of Numbers",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-plain-introduction-to-the-criticism-of-the-new-testament-vol-i-frederick-henry-ambrose-scrivener.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-numbers-mackintosh-charles-henry.txt"
     },
     {
       "row": 31,
-      "title": "A Greek Primer: For Beginners in New Testament Greek",
-      "author": "Wallace N. 1866- Stearns",
+      "title": "The prophete Ionas with an introduccion: before teachinge to vnderstonde him and the right vse also of all the scripture/ and why it was written/ and",
+      "author": "Tyndale, William",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-greek-primer-for-beginners-in-new-testament-greek-wallace-n-1866-stearns.txt"
+      "file_path": "data/library/verified/the-prophete-ionas-with-an-introduccion-before-teachinge-to-vnderstonde-him-and-the-right-vse-also-of-all-the-.txt"
     },
     {
       "row": 32,
-      "title": "The Expositor's Bible: Index",
-      "author": "S. G. Ayres and Walter F. Adeney",
+      "title": "The Life of Duty, v. 2: A year's plain sermons on the Gospels or Epistles",
+      "author": "Wilmot-Buxton, H. J. (Harry John)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-expositor-s-bible-index-s-g-ayres-and-walter-f-adeney.txt"
+      "file_path": "data/library/verified/the-life-of-duty-v-2-a-year-s-plain-sermons-on-the-gospels-or-epistles-wilmot-buxton-h-j-harry-john.txt"
     },
     {
       "row": 33,
-      "title": "Bible Atlas: A Manual of Biblical Geography and History",
-      "author": "Jesse Lyman Hurlbut and John Heyl Vincent",
+      "title": "The Gospel of St. John: A Series of Discourses.: New Edition",
+      "author": "Maurice, Frederick Denison",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut-and-john-heyl-vincent.txt"
+      "file_path": "data/library/verified/the-gospel-of-st-john-a-series-of-discourses-new-edition-maurice-frederick-denison.txt"
     },
     {
       "row": 34,
-      "title": "A Brief Bible History: A Survey of the Old and New Testaments",
-      "author": "James Oscar Boyd and J. Gresham Machen",
+      "title": "Professor W. G. Elmslie, D.D.: Memoir and Sermons",
+      "author": "Elmslie, William Gray and MacNicoll, A. N.",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-brief-bible-history-a-survey-of-the-old-and-new-testaments-james-oscar-boyd-and-j-gresham-machen.txt"
+      "file_path": "data/library/verified/professor-w-g-elmslie-d-d-memoir-and-sermons-elmslie-william-gray-and-macnicoll-a-n.txt"
     },
     {
       "row": 35,
-      "title": "Systematic Theology (Volume 1 of 3)",
-      "author": "Augustus Hopkins Strong",
+      "title": "A Handful of Stars: Texts That Have Moved Great Minds",
+      "author": "Boreham, Frank",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/systematic-theology-volume-1-of-3-augustus-hopkins-strong.txt"
+      "file_path": "data/library/verified/a-handful-of-stars-texts-that-have-moved-great-minds-boreham-frank.txt"
     },
     {
       "row": 36,
-      "title": "Systematic Theology (Volume 2 of 3)",
-      "author": "Augustus Hopkins Strong",
+      "title": "Studies in Prophecy",
+      "author": "Gaebelein, Arno Clemens",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/systematic-theology-volume-2-of-3-augustus-hopkins-strong.txt"
+      "file_path": "data/library/verified/studies-in-prophecy-gaebelein-arno-clemens.txt"
     },
     {
       "row": 37,
-      "title": "Systematic Theology (Volume 3 of 3)",
-      "author": "Augustus Hopkins Strong",
+      "title": "A Harmony of the Gospels for Students of the Life of Christ: Based on the Broadus Harmony in the Revised Version",
+      "author": "Robertson, A. T. and Broadus, John Albert",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/systematic-theology-volume-3-of-3-augustus-hopkins-strong.txt"
+      "file_path": "data/library/verified/a-harmony-of-the-gospels-for-students-of-the-life-of-christ-based-on-the-broadus-harmony-in-the-revised-versio.txt"
     },
     {
       "row": 38,
-      "title": "Jesus, The Messiah; or, the Old Testament Prophecies Fulfilled in the New Testament Scriptures, by a Lady",
-      "author": "Anonymous",
+      "title": "To My Younger Brethren: Chapters on Pastoral Life and Work",
+      "author": "Moule, H. C. G. (Handley Carr Glyn)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/jesus-the-messiah-or-the-old-testament-prophecies-fulfilled-in-the-new-testament-scriptures-by-a-lady-anonymou.txt"
+      "file_path": "data/library/verified/to-my-younger-brethren-chapters-on-pastoral-life-and-work-moule-h-c-g-handley-carr-glyn.txt"
     },
     {
       "row": 39,
-      "title": "Story of the Bible Animals A Description of the Habits and Uses of every living Creature mentioned in the Scriptures, with Explanation of Passages in the Old and New Testament in which Reference is made to them",
-      "author": "J. G. Wood",
+      "title": "The Assembly of God. Miscellaneous Writings of C. H. Mackintosh, vol. III",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/story-of-the-bible-animals-a-description-of-the-habits-and-uses-of-every-living-creature-mentioned-in-the-scri.txt"
+      "file_path": "data/library/verified/the-assembly-of-god-miscellaneous-writings-of-c-h-mackintosh-vol-iii-mackintosh-charles-henry.txt"
     },
     {
       "row": 40,
-      "title": "Institutes of the Christian Religion (Vol. 1 of 2)",
-      "author": "Jean Calvin and John Allen",
+      "title": "Elijah the Tishbite. Miscellaneous Writings of C. H. Mackintosh, vol. V",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/institutes-of-the-christian-religion-vol-1-of-2-jean-calvin-and-john-allen.txt"
+      "file_path": "data/library/verified/elijah-the-tishbite-miscellaneous-writings-of-c-h-mackintosh-vol-v-mackintosh-charles-henry.txt"
     },
     {
       "row": 41,
-      "title": "The Supernatural in the New Testament, Possible, Credible, and Historical Or, An Examination of the Validity of Some Recent Objections Against Christianity as a Divine Revelation",
-      "author": "C. A. Row",
+      "title": "The Lord's Coming. Miscellaneous Writings of C. H. Mackintosh, vol. II",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-supernatural-in-the-new-testament-possible-credible-and-historical-or-an-examination-of-the-validity-of-so.txt"
+      "file_path": "data/library/verified/the-lord-s-coming-miscellaneous-writings-of-c-h-mackintosh-vol-ii-mackintosh-charles-henry.txt"
     },
     {
       "row": 42,
-      "title": "Evening Incense",
-      "author": "John R. Macduff",
+      "title": "The Great Commission. Miscellaneous Writings of C. H. Mackintosh, vol. IV",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/evening-incense-john-r-macduff.txt"
+      "file_path": "data/library/verified/the-great-commission-miscellaneous-writings-of-c-h-mackintosh-vol-iv-mackintosh-charles-henry.txt"
     },
     {
       "row": 43,
-      "title": "The Little Child's Book of Divinity or Grandmamma's Stories about Bible Doctrines",
-      "author": "John R. Macduff",
+      "title": "The All-Sufficiency of Christ. Miscellaneous Writings of C. H. Mackintosh, vol. I",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-little-child-s-book-of-divinity-or-grandmamma-s-stories-about-bible-doctrines-john-r-macduff.txt"
+      "file_path": "data/library/verified/the-all-sufficiency-of-christ-miscellaneous-writings-of-c-h-mackintosh-vol-i-mackintosh-charles-henry.txt"
     },
     {
       "row": 44,
-      "title": "Notes on the New Testament, Explanatory and Practical: Revelation",
-      "author": "Albert Barnes and Robert Frew",
+      "title": "Life and Times of David. Miscellaneous Writings of C. H. Mackintosh, vol. VI",
+      "author": "Mackintosh, Charles Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/notes-on-the-new-testament-explanatory-and-practical-revelation-albert-barnes-and-robert-frew.txt"
+      "file_path": "data/library/verified/life-and-times-of-david-miscellaneous-writings-of-c-h-mackintosh-vol-vi-mackintosh-charles-henry.txt"
     },
     {
       "row": 45,
-      "title": "Twenty-four Discourses On Some of the Important and Interesting Truths, Duties, and Institutions, of the Gospel, and the General Excellency of the Christian Religion; Calculated for the People of God of Every Communion, Particularly for the Benefit of Pious Families, and the Instruction of All in the Things Which Concern Their Salvation",
-      "author": "Nathan Perkins",
+      "title": "The works of the Rev. John Wesley, Vol. 01 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/twenty-four-discourses-on-some-of-the-important-and-interesting-truths-duties-and-institutions-of-the-gospel-a.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-01-of-32-wesley-john.txt"
     },
     {
       "row": 46,
-      "title": "The Nature of a Gospel Church A Confession of Evangelical Principles; and the Members' Covenant. Intended for the Use of the Church of Christ.",
-      "author": "J. ? Church",
+      "title": "The works of the Rev. John Wesley, Vol. 02 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-nature-of-a-gospel-church-a-confession-of-evangelical-principles-and-the-members-covenant-intended-for-the.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-02-of-32-wesley-john.txt"
     },
     {
       "row": 47,
-      "title": "A Few Remarks on the Scripture History of Saul and the Witch of Endor",
-      "author": "J. ? Church",
+      "title": "The works of the Rev. John Wesley, Vol. 03 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-few-remarks-on-the-scripture-history-of-saul-and-the-witch-of-endor-j-church.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-03-of-32-wesley-john.txt"
     },
     {
       "row": 48,
-      "title": "A Body of Divinity, Vol. 1 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "author": "Thomas Ridgley and James P. Wilson",
+      "title": "The works of the Rev. John Wesley, Vol. 04 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-body-of-divinity-vol-1-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-04-of-32-wesley-john.txt"
     },
     {
       "row": 49,
-      "title": "A Body of Divinity, Vol. 2 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "author": "Thomas Ridgley and James P. Wilson",
+      "title": "The works of the Rev. John Wesley, Vol. 05 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-body-of-divinity-vol-2-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-05-of-32-wesley-john.txt"
     },
     {
       "row": 50,
-      "title": "A Body of Divinity, Vol. 4 (of 4) Wherein the doctrines of the Christian religion are explained and defended, being the substance of several lectures on the Assembly's Larger Catechism",
-      "author": "Thomas Ridgley and James P. Wilson",
+      "title": "The works of the Rev. John Wesley, Vol. 06 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-body-of-divinity-vol-4-of-4-wherein-the-doctrines-of-the-christian-religion-are-explained-and-defended-being.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-06-of-32-wesley-john.txt"
     },
     {
       "row": 51,
-      "title": "The Standard Manual for Baptist Churches",
-      "author": "Edward T. Hiscox",
+      "title": "The works of the Rev. John Wesley, Vol. 07 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-standard-manual-for-baptist-churches-edward-t-hiscox.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-07-of-32-wesley-john.txt"
     },
     {
       "row": 52,
-      "title": "A Class-Book of Old Testament History",
-      "author": "G. F. Maclear",
+      "title": "The works of the Rev. John Wesley, Vol. 08 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-class-book-of-old-testament-history-g-f-maclear.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-08-of-32-wesley-john.txt"
     },
     {
       "row": 53,
-      "title": "A Class-Book of New Testament History",
-      "author": "G. F. Maclear",
+      "title": "The works of the Rev. John Wesley, Vol. 09 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-class-book-of-new-testament-history-g-f-maclear.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-09-of-32-wesley-john.txt"
     },
     {
       "row": 54,
-      "title": "The Song of Songs Translated from the Original Hebrew, with a Commentary, Historical and Critical",
-      "author": "Christian D. Ginsburg",
+      "title": "The works of the Rev. John Wesley, Vol. 10 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-song-of-songs-translated-from-the-original-hebrew-with-a-commentary-historical-and-critical-christian-d-gi.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-10-of-32-wesley-john.txt"
     },
     {
       "row": 55,
-      "title": "Bible history and brief outline of church history",
-      "author": "Volrath Vogt and Nils Christian Nilsen Brun",
+      "title": "The works of the Rev. John Wesley, Vol. 11 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/bible-history-and-brief-outline-of-church-history-volrath-vogt-and-nils-christian-nilsen-brun.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-11-of-32-wesley-john.txt"
     },
     {
       "row": 56,
-      "title": "Names and places in the Old and New Testament and Apocrypha, with their modern identifications",
-      "author": "George Armstrong and C. R. Conder",
+      "title": "The works of the Rev. John Wesley, Vol. 12 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/names-and-places-in-the-old-and-new-testament-and-apocrypha-with-their-modern-identifications-george-armstrong.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-12-of-32-wesley-john.txt"
     },
     {
       "row": 57,
-      "title": "An illustrated commentary on the Gospel according to St. John",
-      "author": "Lyman Abbott",
+      "title": "The works of the Rev. John Wesley, Vol. 13 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/an-illustrated-commentary-on-the-gospel-according-to-st-john-lyman-abbott.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-13-of-32-wesley-john.txt"
     },
     {
       "row": 58,
-      "title": "Introduction to the textual criticism of the Greek New Testament",
-      "author": "Eberhard Nestle and Allan Menzies",
+      "title": "The works of the Rev. John Wesley, Vol. 14 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/introduction-to-the-textual-criticism-of-the-greek-new-testament-eberhard-nestle-and-allan-menzies.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-14-of-32-wesley-john.txt"
     },
     {
       "row": 59,
-      "title": "New Forces in Old China: An Inevitable Awakening",
-      "author": "Arthur Judson Brown",
+      "title": "The works of the Rev. John Wesley, Vol. 15 (of 32)",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/new-forces-in-old-china-an-inevitable-awakening-arthur-judson-brown.txt"
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-vol-15-of-32-wesley-john.txt"
     },
     {
       "row": 60,
-      "title": "God's Answers A Record of Miss Annie Macpherson's Work at the Home of Industry, Spitalfields, London, and in Canada",
-      "author": "Clara M. S. Lowe",
+      "title": "Works of John Bunyan — Volume 01",
+      "author": "Bunyan, John and Offor, George",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/god-s-answers-a-record-of-miss-annie-macpherson-s-work-at-the-home-of-industry-spitalfields-london-and-in-cana.txt"
+      "file_path": "data/library/verified/works-of-john-bunyan-volume-01-bunyan-john-and-offor-george.txt"
     },
     {
       "row": 61,
-      "title": "Home Missions in Action",
-      "author": "Edith H. Allen",
+      "title": "Works of John Bunyan — Volume 02",
+      "author": "Bunyan, John and Offor, George",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/home-missions-in-action-edith-h-allen.txt"
+      "file_path": "data/library/verified/works-of-john-bunyan-volume-02-bunyan-john-and-offor-george.txt"
     },
     {
       "row": 62,
-      "title": "Daughters of the Cross: or Woman's Mission",
-      "author": "Daniel C. Eddy",
+      "title": "Works of John Bunyan — Complete",
+      "author": "Bunyan, John and Offor, George",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/daughters-of-the-cross-or-woman-s-mission-daniel-c-eddy.txt"
+      "file_path": "data/library/verified/works-of-john-bunyan-complete-bunyan-john-and-offor-george.txt"
     },
     {
       "row": 63,
-      "title": "Woman and Her Saviour in Persia By a Returned Missionary",
-      "author": "Thomas Laurie",
+      "title": "Religious Life of Virginia in the Seventeenth Century: The Faith of Our Fathers",
+      "author": "Brydon, G. MacLaren (George MacLaren)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/woman-and-her-saviour-in-persia-by-a-returned-missionary-thomas-laurie.txt"
+      "file_path": "data/library/verified/religious-life-of-virginia-in-the-seventeenth-century-the-faith-of-our-fathers-brydon-g-maclaren-george-maclar.txt"
     },
     {
       "row": 64,
-      "title": "White Queen of the Cannibals: the Story of Mary Slessor of Calabar",
-      "author": "A. J. Bueltmann",
+      "title": "Religion and Theology: A Sermon for the Times: Preached in the Parish Church of Crathie, fifth September and in the College Church, St Andrews",
+      "author": "Tulloch, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/white-queen-of-the-cannibals-the-story-of-mary-slessor-of-calabar-a-j-bueltmann.txt"
+      "file_path": "data/library/verified/religion-and-theology-a-sermon-for-the-times-preached-in-the-parish-church-of-crathie-fifth-september-and-in-t.txt"
     },
     {
       "row": 65,
-      "title": "Forty Years in South China: The Life of Rev. John Van Nest Talmage, D.D.",
-      "author": "John Gerardus Fagg",
+      "title": "The Sermon on the Mount: A Practical Exposition",
+      "author": "Gore, Charles",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/forty-years-in-south-china-the-life-of-rev-john-van-nest-talmage-d-d-john-gerardus-fagg.txt"
+      "file_path": "data/library/verified/the-sermon-on-the-mount-a-practical-exposition-gore-charles.txt"
     },
     {
       "row": 66,
-      "title": "Clara A. Swain, M.D.",
-      "author": "Robert Mrs. 1837- Hoskins",
+      "title": "Christianity and Greek Philosophy: or, the relation between spontaneous and reflective thought in Greece and the positive teaching of Christ and His A",
+      "author": "Cocker, B. F. (Benjamin Franklin)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/clara-a-swain-m-d-robert-mrs-1837-hoskins.txt"
+      "file_path": "data/library/verified/christianity-and-greek-philosophy-or-the-relation-between-spontaneous-and-reflective-thought-in-greece-and-the.txt"
     },
     {
       "row": 67,
-      "title": "With the Harmony to Labrador Notes of a visit to the Moravian mission stations on the north-east coast of Labrador",
-      "author": "Benjamin La Trobe",
+      "title": "The Pulpit Of The Reformation, Nos. 1, 2, 3 and 4.",
+      "author": "Welch, John and Knox, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/with-the-harmony-to-labrador-notes-of-a-visit-to-the-moravian-mission-stations-on-the-north-east-coast-of-labr.txt"
+      "file_path": "data/library/verified/the-pulpit-of-the-reformation-nos-1-2-3-and-4-welch-john-and-knox-john.txt"
     },
     {
       "row": 68,
-      "title": "Journal of a Voyage from Okkak, on the Coast of Labrador, to Ungava Bay, Westward of Cape Chudleigh Undertaken to Explore the Coast, and Visit the Esquimaux in That Unknown Region",
-      "author": "B. G. Kohlmeister and Georg Kmoch",
+      "title": "A voice from the fire",
+      "author": "Wallace, Robert",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/journal-of-a-voyage-from-okkak-on-the-coast-of-labrador-to-ungava-bay-westward-of-cape-chudleigh-undertaken-to.txt"
+      "file_path": "data/library/verified/a-voice-from-the-fire-wallace-robert.txt"
     },
     {
       "row": 69,
-      "title": "Old Daniel",
-      "author": "Thomas Hodson",
+      "title": "The Revelation Explained: An Exposition, Text by Text, of the Apocalypse of St. John",
+      "author": "Smith, F. G. (Frederick George)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/old-daniel-thomas-hodson.txt"
+      "file_path": "data/library/verified/the-revelation-explained-an-exposition-text-by-text-of-the-apocalypse-of-st-john-smith-f-g-frederick-george.txt"
     },
     {
       "row": 70,
-      "title": "The Choctaw Freedmen and the Story of Oak Hill Industrial Academy",
-      "author": "Robert Elliott 1846- Flickinger",
+      "title": "Exposition of the Apostles' Creed",
+      "author": "Dodds, James",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-choctaw-freedmen-and-the-story-of-oak-hill-industrial-academy-robert-elliott-1846-flickinger.txt"
+      "file_path": "data/library/verified/exposition-of-the-apostles-creed-dodds-james.txt"
     },
     {
       "row": 71,
-      "title": "Have We No Rights? A frank discussion of the \"rights\" of missionaries",
-      "author": "Mabel Williamson",
+      "title": "Notes on the Apocalypse",
+      "author": "Steele, David",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/have-we-no-rights-a-frank-discussion-of-the-rights-of-missionaries-mabel-williamson.txt"
+      "file_path": "data/library/verified/notes-on-the-apocalypse-steele-david.txt"
     },
     {
       "row": 72,
-      "title": "Thoughts on Missions",
-      "author": "Sheldon Dibble",
+      "title": "Commentary on Genesis, Vol. 2: Luther on Sin and the Flood",
+      "author": "Luther, Martin and Lenker, John Nicholas",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/thoughts-on-missions-sheldon-dibble.txt"
+      "file_path": "data/library/verified/commentary-on-genesis-vol-2-luther-on-sin-and-the-flood-luther-martin-and-lenker-john-nicholas.txt"
     },
     {
       "row": 73,
-      "title": "Letters on the Nicobar islands, their natural productions, and the manners, customs, and superstitions of the natives with an account of an attempt made by the Church of the United Brethren, to convert them to Christianity",
-      "author": "Johann Gottfried Haensel and Christian Ignatius Latrobe",
+      "title": "The Shepherd Of My Soul",
+      "author": "Callan, Charles J. (Charles Jerome)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/letters-on-the-nicobar-islands-their-natural-productions-and-the-manners-customs-and-superstitions-of-the-nati.txt"
+      "file_path": "data/library/verified/the-shepherd-of-my-soul-callan-charles-j-charles-jerome.txt"
     },
     {
       "row": 74,
-      "title": "The Fulfilment of a Dream of Pastor Hsi's The Story of the Work in Hwochow",
-      "author": "Mildred Cable",
+      "title": "St. Paul's Epistle to the Ephesians: A Practical Exposition",
+      "author": "Gore, Charles",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-fulfilment-of-a-dream-of-pastor-hsi-s-the-story-of-the-work-in-hwochow-mildred-cable.txt"
+      "file_path": "data/library/verified/st-paul-s-epistle-to-the-ephesians-a-practical-exposition-gore-charles.txt"
     },
     {
       "row": 75,
-      "title": "India's Problem, Krishna or Christ",
-      "author": "John P. Jones",
+      "title": "St. Paul's Epistle to the Romans: A Practical Exposition. Vol. I",
+      "author": "Gore, Charles",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/india-s-problem-krishna-or-christ-john-p-jones.txt"
+      "file_path": "data/library/verified/st-paul-s-epistle-to-the-romans-a-practical-exposition-vol-i-gore-charles.txt"
     },
     {
       "row": 76,
-      "title": "A Tour of the Missions: Observations and Conclusions",
-      "author": "Augustus Hopkins Strong",
+      "title": "St. Paul's Epistle to the Romans: A Practical Exposition. Vol. II",
+      "author": "Gore, Charles",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-tour-of-the-missions-observations-and-conclusions-augustus-hopkins-strong.txt"
+      "file_path": "data/library/verified/st-paul-s-epistle-to-the-romans-a-practical-exposition-vol-ii-gore-charles.txt"
     },
     {
       "row": 77,
-      "title": "India, Its Life and Thought",
-      "author": "John P. Jones",
+      "title": "An Amicable Controversy with a Jewish Rabbi, on The Messiah's Coming: With an Entirely New Exposition of Zechariah, on the Messiah's Kingdom",
+      "author": "Park, John Ranicar",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/india-its-life-and-thought-john-p-jones.txt"
+      "file_path": "data/library/verified/an-amicable-controversy-with-a-jewish-rabbi-on-the-messiah-s-coming-with-an-entirely-new-exposition-of-zechari.txt"
     },
     {
       "row": 78,
-      "title": "The Minute Man on the Frontier",
-      "author": "William George Puddefoot",
+      "title": "The Expositor's Bible: Judges and Ruth",
+      "author": "Watson, Robert A. (Robert Alexander)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-minute-man-on-the-frontier-william-george-puddefoot.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-judges-and-ruth-watson-robert-a-robert-alexander.txt"
     },
     {
       "row": 79,
-      "title": "Memoirs of the Life and Labours of the Rev. Samuel Marsden, of Paramatta, Senior Chaplain of New South Wales; and of His Early Connexion with the Missions to New Zealand and Tahiti",
-      "author": "Samuel Marsden and J. B. Marsden",
+      "title": "The Expositor's Bible: The Epistle to the Philippians",
+      "author": "Rainy, Robert",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/memoirs-of-the-life-and-labours-of-the-rev-samuel-marsden-of-paramatta-senior-chaplain-of-new-south-wales-and-.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-philippians-rainy-robert.txt"
     },
     {
       "row": 80,
-      "title": "Changing China",
-      "author": "William Gascoyne-Cecil and Florence Mary Bootle-Wilbraham Lady Cecil",
+      "title": "The Hart and the Water-Brooks: a practical exposition of the forty-second Psalm.",
+      "author": "Macduff, John R. (John Ross)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/changing-china-william-gascoyne-cecil-and-florence-mary-bootle-wilbraham-lady-cecil.txt"
+      "file_path": "data/library/verified/the-hart-and-the-water-brooks-a-practical-exposition-of-the-forty-second-psalm-macduff-john-r-john-ross.txt"
     },
     {
       "row": 81,
-      "title": "The Gist of Japan: The Islands, Their People, and Missions",
-      "author": "R. B. 1868- Peery",
+      "title": "The Expositor's Bible: The Epistle to the Galatians",
+      "author": "Findlay, George G. (George Gillanders)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-gist-of-japan-the-islands-their-people-and-missions-r-b-1868-peery.txt"
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-galatians-findlay-george-g-george-gillanders.txt"
     },
     {
       "row": 82,
-      "title": "Mary and I: Forty Years with the Sioux",
-      "author": "Stephen Return Riggs",
+      "title": "The Morning of Spiritual Youth Improved, in the Prospect of Old Age and Its Infirmities: Being a Literal and Spiritual Paraphrase on the Twelfth Chapt",
+      "author": "Church, J. (John)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/mary-and-i-forty-years-with-the-sioux-stephen-return-riggs.txt"
+      "file_path": "data/library/verified/the-morning-of-spiritual-youth-improved-in-the-prospect-of-old-age-and-its-infirmities-being-a-literal-and-spi.txt"
     },
     {
       "row": 83,
-      "title": "Chinese Diamonds for the King of Kings",
-      "author": "Rosalind Goforth",
+      "title": "The Elder Son Explained, and the Romish Church Exposed",
+      "author": "Church, J. (John)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/chinese-diamonds-for-the-king-of-kings-rosalind-goforth.txt"
+      "file_path": "data/library/verified/the-elder-son-explained-and-the-romish-church-exposed-church-j-john.txt"
     },
     {
       "row": 84,
-      "title": "Silver Chimes in Syria: Glimpses of a Missionary's Experiences",
-      "author": "William S. Nelson",
+      "title": "Scripture texts illustrated by general literature",
+      "author": "Jacox, Francis",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/silver-chimes-in-syria-glimpses-of-a-missionary-s-experiences-william-s-nelson.txt"
+      "file_path": "data/library/verified/scripture-texts-illustrated-by-general-literature-jacox-francis.txt"
     },
     {
       "row": 85,
-      "title": "A plain and faithful narrative of the original design, rise, progress and present state of the Indian charity-school at Lebanon, in Connecticut",
-      "author": "Eleazar Wheelock",
+      "title": "The books of Chronicles",
+      "author": "Elmslie, W. A. L. (William Alexander Leslie) and Kirkpatrick, A. F. (Alexander Francis)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-plain-and-faithful-narrative-of-the-original-design-rise-progress-and-present-state-of-the-indian-charity-sc.txt"
+      "file_path": "data/library/verified/the-books-of-chronicles-elmslie-w-a-l-william-alexander-leslie-and-kirkpatrick-a-f-alexander-francis.txt"
     },
     {
       "row": 86,
-      "title": "Fifteen Years Among the Top-Knots; Or, Life in Korea",
-      "author": "Lillias H. 1851- Underwood",
+      "title": "An analyticall exposition of both the Epistles of the Apostle Peter",
+      "author": "Ames, William",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/fifteen-years-among-the-top-knots-or-life-in-korea-lillias-h-1851-underwood.txt"
+      "file_path": "data/library/verified/an-analyticall-exposition-of-both-the-epistles-of-the-apostle-peter-ames-william.txt"
     },
     {
       "row": 87,
-      "title": "Report of Mr. Wood's Visit to the Choctaw and Cherokee Missions. 1855",
-      "author": "George W. Wood",
+      "title": "A commentary on Ecclesiastes",
+      "author": "Dale, Thomas Pelham",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/report-of-mr-wood-s-visit-to-the-choctaw-and-cherokee-missions-1855-george-w-wood.txt"
+      "file_path": "data/library/verified/a-commentary-on-ecclesiastes-dale-thomas-pelham.txt"
     },
     {
       "row": 88,
-      "title": "Five Years in the Alleghanies",
-      "author": "Jonathan Cross",
+      "title": "A manual of the book of Psalms",
+      "author": "Luther, Martin and Cole, Henry",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/five-years-in-the-alleghanies-jonathan-cross.txt"
+      "file_path": "data/library/verified/a-manual-of-the-book-of-psalms-luther-martin-and-cole-henry.txt"
     },
     {
       "row": 89,
-      "title": "Twice-born Men in America or, The Psychology of Conversion as Seen by a Christian Psychologist in Rescue Mission Work",
-      "author": "Harriet Earhart Monroe",
+      "title": "A critical and exegetical commentary on Genesis",
+      "author": "Skinner, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/twice-born-men-in-america-or-the-psychology-of-conversion-as-seen-by-a-christian-psychologist-in-rescue-missio.txt"
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-genesis-skinner-john.txt"
     },
     {
       "row": 90,
-      "title": "John Black, the Apostle of the Red River Or, How the Blue Banner Was Unfurled on Manitoba Prairies",
-      "author": "George Bryce",
+      "title": "Church work among the Negroes in the South: The Hale Memorial Sermon No. 2",
+      "author": "Strange, Robert",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/john-black-the-apostle-of-the-red-river-or-how-the-blue-banner-was-unfurled-on-manitoba-prairies-george-bryce.txt"
+      "file_path": "data/library/verified/church-work-among-the-negroes-in-the-south-the-hale-memorial-sermon-no-2-strange-robert.txt"
     },
     {
       "row": 91,
-      "title": "The Baptist Magazine, Vol. 27, January, 1835",
-      "author": "Various and George Wightman",
+      "title": "The Unity of the Church Essential to the Conversion of the World: A Sermon, Preached Before the Directors and Friends of the London Missionary Society",
+      "author": "Gwyther, James Henry Alexander, -1875",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-baptist-magazine-vol-27-january-1835-various-and-george-wightman.txt"
+      "file_path": "data/library/verified/the-unity-of-the-church-essential-to-the-conversion-of-the-world-a-sermon-preached-before-the-directors-and-fr.txt"
     },
     {
       "row": 92,
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "author": "Various and George Wightman",
+      "title": "Intercession: A Sermon Preached by the Rev. B. N. Michelson, B.A.",
+      "author": "Michelson, B. N.",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-baptist-magazine-vol-27-1835-various-and-george-wightman.txt"
+      "file_path": "data/library/verified/intercession-a-sermon-preached-by-the-rev-b-n-michelson-b-a-michelson-b-n.txt"
     },
     {
       "row": 93,
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "author": "Various and George Wightman",
-      "status": "duplicate_title_author",
-      "issues": [
-        "Duplicate title + author"
-      ]
+      "title": "The Work Of Christ: Past, Present and Future",
+      "author": "Gaebelein, Arno Clemens",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-work-of-christ-past-present-and-future-gaebelein-arno-clemens.txt"
     },
     {
       "row": 94,
-      "title": "The Baptist Magazine, Vol. 27, June 1835",
-      "author": "Various and George Wightman",
+      "title": "The Lord of Glory: Meditations on the person, the work and glory of our Lord Jesus Christ",
+      "author": "Gaebelein, Arno Clemens",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-baptist-magazine-vol-27-june-1835-various-and-george-wightman.txt"
+      "file_path": "data/library/verified/the-lord-of-glory-meditations-on-the-person-the-work-and-glory-of-our-lord-jesus-christ-gaebelein-arno-clemens.txt"
     },
     {
       "row": 95,
-      "title": "A History of the Reformation (Vol. 1 of 2)",
-      "author": "Thomas M. Lindsay",
+      "title": "Stories of Boys and Girls Who Loved the Saviour: A Token for Children",
+      "author": "Janeway, James and Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-history-of-the-reformation-vol-1-of-2-thomas-m-lindsay.txt"
+      "file_path": "data/library/verified/stories-of-boys-and-girls-who-loved-the-saviour-a-token-for-children-janeway-james-and-wesley-john.txt"
     },
     {
       "row": 96,
-      "title": "A History of the Reformation (Vol. 2 of 2)",
-      "author": "Thomas M. Lindsay",
+      "title": "The Story of John Wesley, Told to Boys and Girls",
+      "author": "Kirlew, Marianne",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-history-of-the-reformation-vol-2-of-2-thomas-m-lindsay.txt"
+      "file_path": "data/library/verified/the-story-of-john-wesley-told-to-boys-and-girls-kirlew-marianne.txt"
     },
     {
       "row": 97,
-      "title": "A Baptist Abroad: Travels and Adventures of Europe and all Bible Lands",
-      "author": "Walter Andrew Whittle",
+      "title": "Hurlbut's Life of Christ For Young and Old: A Complete Life of Christ Written in Simple Language, Based on the Gospel Narrative",
+      "author": "Hurlbut, Jesse Lyman and Hole, William",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-baptist-abroad-travels-and-adventures-of-europe-and-all-bible-lands-walter-andrew-whittle.txt"
+      "file_path": "data/library/verified/hurlbut-s-life-of-christ-for-young-and-old-a-complete-life-of-christ-written-in-simple-language-based-on-the-g.txt"
     },
     {
       "row": 98,
-      "title": "Rubble and Roseleaves, and Things of That Kind",
-      "author": "Frank Boreham",
+      "title": "John Bunyan and the Gipsies",
+      "author": "Simson, James",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/rubble-and-roseleaves-and-things-of-that-kind-frank-boreham.txt"
+      "file_path": "data/library/verified/john-bunyan-and-the-gipsies-simson-james.txt"
     },
     {
       "row": 99,
-      "title": "Life of Charles T. Walker, D.D. (\"The Black Spurgeon\") Pastor Mt. Olivet Baptist Church, New York City",
-      "author": "Silas Xavier Floyd and Robert Stuart MacArthur",
+      "title": "Was John Bunyan a Gipsy?",
+      "author": "Simson, James",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/life-of-charles-t-walker-d-d-the-black-spurgeon-pastor-mt-olivet-baptist-church-new-york-city-silas-xavier-flo.txt"
+      "file_path": "data/library/verified/was-john-bunyan-a-gipsy-simson-james.txt"
     },
     {
       "row": 100,
-      "title": "A Sketch of Charles T. Walker, D.D., Pastor of Tabernacle Baptist Church, Augusta, Ga.",
-      "author": "Silas Xavier Floyd",
+      "title": "Thoughts upon slavery",
+      "author": "Wesley, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-sketch-of-charles-t-walker-d-d-pastor-of-tabernacle-baptist-church-augusta-ga-silas-xavier-floyd.txt"
+      "file_path": "data/library/verified/thoughts-upon-slavery-wesley-john.txt"
     },
     {
       "row": 101,
-      "title": "The Bloody Theatre, or Martyrs Mirror of the Defenseless Christians who baptized only upon confession of faith, and who suffered and died for the testimony of Jesus, their savior, from the time of Christ to the year A.D. 1660",
-      "author": "Thieleman J. van Braght and Joseph F. Sohm",
+      "title": "The life and times of the Rev. John Wesley, M.A., founder of the Methodists. Vol. 3 (of 3)",
+      "author": "Tyerman, L. (Luke)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-bloody-theatre-or-martyrs-mirror-of-the-defenseless-christians-who-baptized-only-upon-confession-of-faith-.txt"
+      "file_path": "data/library/verified/the-life-and-times-of-the-rev-john-wesley-m-a-founder-of-the-methodists-vol-3-of-3-tyerman-l-luke.txt"
     },
     {
       "row": 102,
-      "title": "An historical sketch of the First Hillsboro Baptist Church",
-      "author": "W. Camp",
+      "title": "Understanding the Scriptures",
+      "author": "McConnell, Francis John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/an-historical-sketch-of-the-first-hillsboro-baptist-church-w-camp.txt"
+      "file_path": "data/library/verified/understanding-the-scriptures-mcconnell-francis-john.txt"
     },
     {
       "row": 103,
-      "title": "One hundred years with the Baptists of Amherst, N.S., 1810 to 1910",
-      "author": "D. A. Steele and Grace McLeod Rogers",
+      "title": "Aunt Harding's Keepsakes: Or, The Two Bibles",
+      "author": "Anonymous",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/one-hundred-years-with-the-baptists-of-amherst-n-s-1810-to-1910-d-a-steele-and-grace-mcleod-rogers.txt"
+      "file_path": "data/library/verified/aunt-harding-s-keepsakes-or-the-two-bibles-anonymous.txt"
     },
     {
       "row": 104,
-      "title": "Children's Edition of Touching Incidents and Remarkable Answers to Prayer",
-      "author": "S. B. 1854- Shaw",
+      "title": "The Right and Wrong Uses of the Bible",
+      "author": "Newton, Richard Heber",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/children-s-edition-of-touching-incidents-and-remarkable-answers-to-prayer-s-b-1854-shaw.txt"
+      "file_path": "data/library/verified/the-right-and-wrong-uses-of-the-bible-newton-richard-heber.txt"
     },
     {
       "row": 105,
-      "title": "The value of a praying mother",
-      "author": "Isabel C. Byrum",
+      "title": "A Coal From The Altar, To Kindle The Holy Fire of Zeale: In a Sermon Preached at a Generall Visitation at Ipswich",
+      "author": "Ward, Samuel",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-value-of-a-praying-mother-isabel-c-byrum.txt"
+      "file_path": "data/library/verified/a-coal-from-the-altar-to-kindle-the-holy-fire-of-zeale-in-a-sermon-preached-at-a-generall-visitation-at-ipswic.txt"
     },
     {
       "row": 106,
-      "title": "A Short Method of Prayer",
-      "author": "Jeanne Marie Bouvier de la Motte Guyon",
+      "title": "Companion to the Bible",
+      "author": "Barrows, E. P. (Elijah Porter)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/a-short-method-of-prayer-jeanne-marie-bouvier-de-la-motte-guyon.txt"
+      "file_path": "data/library/verified/companion-to-the-bible-barrows-e-p-elijah-porter.txt"
     },
     {
       "row": 107,
-      "title": "How I Know God Answers Prayer: The Personal Testimony of One Life-Time",
-      "author": "Rosalind Goforth",
+      "title": "The Angels' Song",
+      "author": "Guthrie, Thomas",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/how-i-know-god-answers-prayer-the-personal-testimony-of-one-life-time-rosalind-goforth.txt"
+      "file_path": "data/library/verified/the-angels-song-guthrie-thomas.txt"
     },
     {
       "row": 108,
-      "title": "The Prayers of St. Paul",
-      "author": "W. H. Griffith Thomas",
+      "title": "The Epistles of St. Peter and St. Jude Preached and Explained",
+      "author": "Luther, Martin and Gillett, E. H. (Ezra Hall)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-prayers-of-st-paul-w-h-griffith-thomas.txt"
+      "file_path": "data/library/verified/the-epistles-of-st-peter-and-st-jude-preached-and-explained-luther-martin-and-gillett-e-h-ezra-hall.txt"
     },
     {
       "row": 109,
-      "title": "Morning and Evening Prayers for All Days of the Week Together With Confessional, Communion, and Other Prayers and Hymns for Mornings and Evenings, and Other Occasions",
-      "author": "Johann Habermann and Emil H. Rausch",
+      "title": "Chapters of Bible Study: A Popular Introduction to the Study of the Sacred Scriptures",
+      "author": "Heuser, Herman J. (Herman Joseph)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/morning-and-evening-prayers-for-all-days-of-the-week-together-with-confessional-communion-and-other-prayers-an.txt"
+      "file_path": "data/library/verified/chapters-of-bible-study-a-popular-introduction-to-the-study-of-the-sacred-scriptures-heuser-herman-j-herman-jo.txt"
     },
     {
       "row": 110,
-      "title": "Health, Healing, and Faith",
-      "author": "Russell H. Conwell",
+      "title": "The Lay-Man's Sermon upon the Late Storm: Held forth at an Honest Coffee-House-Conventicle",
+      "author": "Defoe, Daniel",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/health-healing-and-faith-russell-h-conwell.txt"
+      "file_path": "data/library/verified/the-lay-man-s-sermon-upon-the-late-storm-held-forth-at-an-honest-coffee-house-conventicle-defoe-daniel.txt"
     },
     {
       "row": 111,
-      "title": "Praying for Money",
-      "author": "Russell H. Conwell",
+      "title": "A sermon preach'd before the Right Honourable the Lord-Mayor : the aldermen and citizens of London: at the Cathedral-Church of St. Paul on Monday the",
+      "author": "Snape, Andrew",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/praying-for-money-russell-h-conwell.txt"
+      "file_path": "data/library/verified/a-sermon-preach-d-before-the-right-honourable-the-lord-mayor-the-aldermen-and-citizens-of-london-at-the-cathed.txt"
     },
     {
       "row": 112,
-      "title": "In Answer to Prayer",
-      "author": "William Boyd Carpenter and Theodore L. Cuyler",
+      "title": "Consecrated Womanhood: A Sermon Preached in the First Congregational Church, Portland, Oregon",
+      "author": "Marvin, Frederic Rowland and Cobbe, Frances Power",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/in-answer-to-prayer-william-boyd-carpenter-and-theodore-l-cuyler.txt"
+      "file_path": "data/library/verified/consecrated-womanhood-a-sermon-preached-in-the-first-congregational-church-portland-oregon-marvin-frederic-row.txt"
     },
     {
       "row": 113,
-      "title": "Prisons and Prayer; Or, a Labor of Love",
-      "author": "Elizabeth Ryder 1844- Wheaton",
+      "title": "A Sermon Preached in York Minister, on St. Bartholomew's Day, Friday, August 24, 1877: on the Occasion of the Consecration of the Right Rev. Rowley Hi",
+      "author": "Hoare, Edward",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/prisons-and-prayer-or-a-labor-of-love-elizabeth-ryder-1844-wheaton.txt"
+      "file_path": "data/library/verified/a-sermon-preached-in-york-minister-on-st-bartholomew-s-day-friday-august-24-1877-on-the-occasion-of-the-consec.txt"
     },
     {
       "row": 114,
-      "title": "Prayers of the Middle Ages: Light from a Thousand Years",
-      "author": "J. Manning 1895- Potts",
+      "title": "Substance of a Sermon on the Bible Society: preached at Beccles, October 29th, and at St. Mary's Church Bungay, on Friday, Dec. 1st, 1815",
+      "author": "Cunningham, Francis",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/prayers-of-the-middle-ages-light-from-a-thousand-years-j-manning-1895-potts.txt"
+      "file_path": "data/library/verified/substance-of-a-sermon-on-the-bible-society-preached-at-beccles-october-29th-and-at-st-mary-s-church-bungay-on-.txt"
     },
     {
       "row": 115,
-      "title": "The Double Search: Studies in Atonement and Prayer",
-      "author": "Rufus M. Jones",
+      "title": "Baptism According to Scripture",
+      "author": "Hoare, E. H. (Edward Hatch)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-double-search-studies-in-atonement-and-prayer-rufus-m-jones.txt"
+      "file_path": "data/library/verified/baptism-according-to-scripture-hoare-e-h-edward-hatch.txt"
     },
     {
       "row": 116,
-      "title": "Prayer for the oppressed",
-      "author": "James A. Thome and Albert Barnes",
+      "title": "Episcopal Fidelity",
+      "author": "Bayley, Emilius, Sir",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/prayer-for-the-oppressed-james-a-thome-and-albert-barnes.txt"
+      "file_path": "data/library/verified/episcopal-fidelity-bayley-emilius-sir.txt"
     },
     {
       "row": 117,
-      "title": "The model prayer",
-      "author": "J. D. Jones",
+      "title": "The Believer Not Ashamed of the Gospel",
+      "author": "Hoare, Edward",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-model-prayer-j-d-jones.txt"
+      "file_path": "data/library/verified/the-believer-not-ashamed-of-the-gospel-hoare-edward.txt"
+    },
+    {
+      "row": 118,
+      "title": "A Bible History of Baptism",
+      "author": "Baird, Samuel J. (Samuel John)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-bible-history-of-baptism-baird-samuel-j-samuel-john.txt"
+    },
+    {
+      "row": 119,
+      "title": "The True Ministers of Christ Accredited by the Holy Spirit: A Sermon",
+      "author": "Gell, Philip",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-true-ministers-of-christ-accredited-by-the-holy-spirit-a-sermon-gell-philip.txt"
+    },
+    {
+      "row": 120,
+      "title": "Welsh Nationality, and How Alone It is to Be Saved: A Sermon",
+      "author": "Davies, William Gabriel",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/welsh-nationality-and-how-alone-it-is-to-be-saved-a-sermon-davies-william-gabriel.txt"
+    },
+    {
+      "row": 121,
+      "title": "The Baptism of the Prince: A Sermon: Preached ... on Sunday morning, Jan. 23, 1842, in anticipation of the baptism of His Royal Highness, the Prince o",
+      "author": "Alexander, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-baptism-of-the-prince-a-sermon-preached-on-sunday-morning-jan-23-1842-in-anticipation-of-the-baptism-of-hi.txt"
+    },
+    {
+      "row": 122,
+      "title": "\"He was buried.\" A Sermon for Easter Even",
+      "author": "Macgill, Thomas (Curate of Clapham)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/he-was-buried-a-sermon-for-easter-even-macgill-thomas-curate-of-clapham.txt"
+    },
+    {
+      "row": 123,
+      "title": "Prospects of the Church of England: A sermon preached in the Parish Church of Doncaster, on Sunday evening, August 30, 1868, on the occasion of the fi",
+      "author": "Vaughan, C. J. (Charles John)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/prospects-of-the-church-of-england-a-sermon-preached-in-the-parish-church-of-doncaster-on-sunday-evening-augus.txt"
+    },
+    {
+      "row": 124,
+      "title": "Biblical Revision, its duties and conditions: A sermon preached in St. Paul's Cathedral at the special evening service, on Sunday, March 13, 1870",
+      "author": "Alford, Henry",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biblical-revision-its-duties-and-conditions-a-sermon-preached-in-st-paul-s-cathedral-at-the-special-evening-se.txt"
+    },
+    {
+      "row": 125,
+      "title": "The Book of Light in the Hand of Love: A plea for the British and Foreign Bible Society: A sermon preached in St. Paul's Cathedral, on Tuesday, April",
+      "author": "Vaughan, C. J. (Charles John)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-light-in-the-hand-of-love-a-plea-for-the-british-and-foreign-bible-society-a-sermon-preached-in-st.txt"
+    },
+    {
+      "row": 126,
+      "title": "Christian Literature: a sermon delivered May 8th, 1870, in Kensington Chapel, at the seventy-first anniversary of the Religious Tract Society",
+      "author": "Stoughton, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christian-literature-a-sermon-delivered-may-8th-1870-in-kensington-chapel-at-the-seventy-first-anniversary-of-.txt"
+    },
+    {
+      "row": 127,
+      "title": "A Farewell Sermon: delivered on Sunday, October 23, A.D. 1842, at the Parish Church of St. Mary Abbotts, Kensington",
+      "author": "Pott, Joseph Holden",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-farewell-sermon-delivered-on-sunday-october-23-a-d-1842-at-the-parish-church-of-st-mary-abbotts-kensington-p.txt"
+    },
+    {
+      "row": 128,
+      "title": "A Sermon preached at Christ Church, Kensington, on May 1, 1859: being the day appointed for a general thanksgiving to Almighty God, for the success gr",
+      "author": "Wright, William",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-sermon-preached-at-christ-church-kensington-on-may-1-1859-being-the-day-appointed-for-a-general-thanksgiving.txt"
+    },
+    {
+      "row": 129,
+      "title": "Bible-Burning: the substance of a sermon preached in St. Martin's Church, Birmingham, on Sunday evening, Dec. 10, 1848",
+      "author": "Miller, John C. (John Cale)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bible-burning-the-substance-of-a-sermon-preached-in-st-martin-s-church-birmingham-on-sunday-evening-dec-10-184.txt"
+    },
+    {
+      "row": 130,
+      "title": "The Cause and Cure of the Cattle Plague: A Plain Sermon",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-cause-and-cure-of-the-cattle-plague-a-plain-sermon-cowan-james-galloway.txt"
+    },
+    {
+      "row": 131,
+      "title": "\"Bear ye one another's burdens.\" A Plain Sermon on the Lancashire Distress",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bear-ye-one-another-s-burdens-a-plain-sermon-on-the-lancashire-distress-cowan-james-galloway.txt"
+    },
+    {
+      "row": 132,
+      "title": "The Ritual Movement: Three plain sermons preached at St. John the Evangelist's, Hammersmith",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-ritual-movement-three-plain-sermons-preached-at-st-john-the-evangelist-s-hammersmith-cowan-james-galloway.txt"
+    },
+    {
+      "row": 133,
+      "title": "\"Hear Ye the Rod, and Who Hath Appointed It\": A Sermon for the Fast Day, October 7, 1857",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hear-ye-the-rod-and-who-hath-appointed-it-a-sermon-for-the-fast-day-october-7-1857-cowan-james-galloway.txt"
+    },
+    {
+      "row": 134,
+      "title": "\"The Numbering of the People\": A Sermon in conjunction with the census of 1861 preached in St. Thomas' Church, Islington, on Sunday Evening, April 7",
+      "author": "Allen, George (Vicar of St. Thomas's, Islington)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-numbering-of-the-people-a-sermon-in-conjunction-with-the-census-of-1861-preached-in-st-thomas-church-islin.txt"
+    },
+    {
+      "row": 135,
+      "title": "Welcome to the ransomed; or, Duties of the colored inhabitants of the District of Columbia",
+      "author": "Payne, Daniel Alexander",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/welcome-to-the-ransomed-or-duties-of-the-colored-inhabitants-of-the-district-of-columbia-payne-daniel-alexande.txt"
+    },
+    {
+      "row": 136,
+      "title": "Addresses by Henry Drummond",
+      "author": "Drummond, Henry",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/addresses-by-henry-drummond-drummond-henry.txt"
+    },
+    {
+      "row": 137,
+      "title": "Preaching and Paganism",
+      "author": "Fitch, Albert Parker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/preaching-and-paganism-fitch-albert-parker.txt"
+    },
+    {
+      "row": 138,
+      "title": "Herein is Love: A Study of the Biblical Doctrine of Love in Its Bearing on Personality, Parenthood, Teaching, and All Other Human Relationships.",
+      "author": "Howe, Reuel L.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/herein-is-love-a-study-of-the-biblical-doctrine-of-love-in-its-bearing-on-personality-parenthood-teaching-and-.txt"
+    },
+    {
+      "row": 139,
+      "title": "The Works of the Rev. Hugh Binning",
+      "author": "Binning, Hugh",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-hugh-binning-binning-hugh.txt"
+    },
+    {
+      "row": 140,
+      "title": "Calvinistic Controversy: Embracing a Sermon on Predestination and Election and Several Numbers, Formally Published in the Christian Advocate and Journ",
+      "author": "Fisk, Wilbur",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/calvinistic-controversy-embracing-a-sermon-on-predestination-and-election-and-several-numbers-formally-publish.txt"
+    },
+    {
+      "row": 141,
+      "title": "Church Ministry in Kensington: A Recent Case of Hieratical Teaching Scripturally Considered",
+      "author": "Gell, John Philip",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/church-ministry-in-kensington-a-recent-case-of-hieratical-teaching-scripturally-considered-gell-john-philip.txt"
+    },
+    {
+      "row": 142,
+      "title": "The works of the Rev. Isaac Watts, D. D. in nine volumes (volume 1 of 9)",
+      "author": "Watts, Isaac",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-isaac-watts-d-d-in-nine-volumes-volume-1-of-9-watts-isaac.txt"
+    },
+    {
+      "row": 143,
+      "title": "Confessions of an Inquiring Spirit and Some Miscellaneous Pieces",
+      "author": "Coleridge, Samuel Taylor and Morley, Henry",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/confessions-of-an-inquiring-spirit-and-some-miscellaneous-pieces-coleridge-samuel-taylor-and-morley-henry.txt"
+    },
+    {
+      "row": 144,
+      "title": "The Man with the Book; or, The Bible Among the People.",
+      "author": "Weylland, John Matthias",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-man-with-the-book-or-the-bible-among-the-people-weylland-john-matthias.txt"
+    },
+    {
+      "row": 145,
+      "title": "Aids to Reflection; and, The Confessions of an Inquiring Spirit",
+      "author": "Coleridge, Samuel Taylor and Marsh, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/aids-to-reflection-and-the-confessions-of-an-inquiring-spirit-coleridge-samuel-taylor-and-marsh-james.txt"
+    },
+    {
+      "row": 146,
+      "title": "The Historical Evidence for the Virgin Birth",
+      "author": "Taylor, Vincent",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-historical-evidence-for-the-virgin-birth-taylor-vincent.txt"
+    },
+    {
+      "row": 147,
+      "title": "Baptism as taught in the Bible and the Prayer Book",
+      "author": "Hoare, Edward",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/baptism-as-taught-in-the-bible-and-the-prayer-book-hoare-edward.txt"
+    },
+    {
+      "row": 148,
+      "title": "The American Missionary — Volume 42, No. 01, January, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-01-january-1888-various.txt"
+    },
+    {
+      "row": 149,
+      "title": "The American Missionary — Volume 42, No. 02, February, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-02-february-1888-various.txt"
+    },
+    {
+      "row": 150,
+      "title": "The American Missionary — Volume 42, No. 03, March, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-03-march-1888-various.txt"
+    },
+    {
+      "row": 151,
+      "title": "The American Missionary — Volume 42, No. 04, April, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-04-april-1888-various.txt"
+    },
+    {
+      "row": 152,
+      "title": "The American Missionary — Volume 42, No. 05, May, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-05-may-1888-various.txt"
+    },
+    {
+      "row": 153,
+      "title": "The American Missionary — Volume 42, No. 06, June, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-06-june-1888-various.txt"
+    },
+    {
+      "row": 154,
+      "title": "The American Missionary — Volume 42, No. 11, November, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-11-november-1888-various.txt"
+    },
+    {
+      "row": 155,
+      "title": "The American Missionary — Volume 42, No. 10, October, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-10-october-1888-various.txt"
+    },
+    {
+      "row": 156,
+      "title": "The American Missionary — Volume 42, No. 07, July, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-07-july-1888-various.txt"
+    },
+    {
+      "row": 157,
+      "title": "The American Missionary — Volume 42, No. 08, August, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-08-august-1888-various.txt"
+    },
+    {
+      "row": 158,
+      "title": "The American Missionary — Volume 42, No. 12, December, 1888",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-42-no-12-december-1888-various.txt"
+    },
+    {
+      "row": 159,
+      "title": "The American Missionary — Volume 44, No. 10, October, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-10-october-1890-various.txt"
+    },
+    {
+      "row": 160,
+      "title": "The American Missionary — Volume 44, No. 02, February, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-02-february-1890-various.txt"
+    },
+    {
+      "row": 161,
+      "title": "The American Missionary — Volume 44, No. 03, March, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-03-march-1890-various.txt"
+    },
+    {
+      "row": 162,
+      "title": "The American Missionary — Volume 44, No. 04, April, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-04-april-1890-various.txt"
+    },
+    {
+      "row": 163,
+      "title": "The American Missionary — Volume 44, No. 05, May, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-05-may-1890-various.txt"
+    },
+    {
+      "row": 164,
+      "title": "The American Missionary — Volume 48, No. 10, October, 1894",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-48-no-10-october-1894-various.txt"
+    },
+    {
+      "row": 165,
+      "title": "The American Missionary — Volume 49, No. 03, March, 1895",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-49-no-03-march-1895-various.txt"
+    },
+    {
+      "row": 166,
+      "title": "The American Missionary — Volume 44, No. 01, January, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-01-january-1890-various.txt"
+    },
+    {
+      "row": 167,
+      "title": "The American Missionary — Volume 43, No. 11, November, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-11-november-1889-various.txt"
+    },
+    {
+      "row": 168,
+      "title": "The American Missionary — Volume 44, No. 06, June, 1890",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-44-no-06-june-1890-various.txt"
+    },
+    {
+      "row": 169,
+      "title": "The American Missionary — Volume 45, No. 02, February, 1891",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-45-no-02-february-1891-various.txt"
+    },
+    {
+      "row": 170,
+      "title": "The American Missionary — Volume 43, No. 01, January, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-01-january-1889-various.txt"
+    },
+    {
+      "row": 171,
+      "title": "The American Missionary — Volume 43, No. 02, February, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-02-february-1889-various.txt"
+    },
+    {
+      "row": 172,
+      "title": "The American Missionary — Volume 43, No. 03, March, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-03-march-1889-various.txt"
+    },
+    {
+      "row": 173,
+      "title": "The American Missionary — Volume 43, No. 04, April, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-04-april-1889-various.txt"
+    },
+    {
+      "row": 174,
+      "title": "The American Missionary — Volume 43, No. 05, May, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-05-may-1889-various.txt"
+    },
+    {
+      "row": 175,
+      "title": "The American Missionary — Volume 43, No. 06, June, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-06-june-1889-various.txt"
+    },
+    {
+      "row": 176,
+      "title": "The American Missionary — Volume 43, No. 07, July, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-07-july-1889-various.txt"
+    },
+    {
+      "row": 177,
+      "title": "The American Missionary — Volume 43, No. 08, August, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-08-august-1889-various.txt"
+    },
+    {
+      "row": 178,
+      "title": "The American Missionary — Volume 43, No. 09, September, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-09-september-1889-various.txt"
+    },
+    {
+      "row": 179,
+      "title": "The American Missionary — Volume 43, No. 10, October, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-10-october-1889-various.txt"
+    },
+    {
+      "row": 180,
+      "title": "The American Missionary — Volume 43, No. 12, December, 1889",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-43-no-12-december-1889-various.txt"
+    },
+    {
+      "row": 181,
+      "title": "The American Missionary — Volume 50, No. 08, August, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-08-august-1896-various.txt"
+    },
+    {
+      "row": 182,
+      "title": "The American Missionary — Volume 49, No. 04, April, 1895",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-49-no-04-april-1895-various.txt"
+    },
+    {
+      "row": 183,
+      "title": "The Covenants And The Covenanters: Covenants, Sermons, and Documents of the Covenanted Reformation",
+      "author": "Kerr, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-covenants-and-the-covenanters-covenants-sermons-and-documents-of-the-covenanted-reformation-kerr-james.txt"
+    },
+    {
+      "row": 184,
+      "title": "The American Missionary — Volume 50, No. 06, June, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-06-june-1896-various.txt"
+    },
+    {
+      "row": 185,
+      "title": "The American Missionary — Volume 49, No. 05, May, 1895",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-49-no-05-may-1895-various.txt"
+    },
+    {
+      "row": 186,
+      "title": "The American Missionary — Volume 50, No. 04, April, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-04-april-1896-various.txt"
+    },
+    {
+      "row": 187,
+      "title": "The American Missionary — Volume 50, No. 02, February, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-02-february-1896-various.txt"
+    },
+    {
+      "row": 188,
+      "title": "The American Missionary — Volume 50, No. 03, March, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-03-march-1896-various.txt"
+    },
+    {
+      "row": 189,
+      "title": "The American Missionary — Volume 52, No. 01, March, 1898",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-52-no-01-march-1898-various.txt"
+    },
+    {
+      "row": 190,
+      "title": "The American Missionary — Volume 50, No. 09, September, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-09-september-1896-various.txt"
+    },
+    {
+      "row": 191,
+      "title": "The American Missionary — Volume 52, No. 02, June, 1898",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-52-no-02-june-1898-various.txt"
+    },
+    {
+      "row": 192,
+      "title": "The American Missionary — Volume 50, No. 01, January, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-01-january-1896-various.txt"
+    },
+    {
+      "row": 193,
+      "title": "The American Missionary — Volume 52, No. 03, September, 1898",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-52-no-03-september-1898-various.txt"
+    },
+    {
+      "row": 194,
+      "title": "The American Missionary — Vol. 33, No. 3, March, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-vol-33-no-3-march-1879-various.txt"
+    },
+    {
+      "row": 195,
+      "title": "The American Missionary, Volume 34, No. 11, November 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-11-november-1880-various.txt"
+    },
+    {
+      "row": 196,
+      "title": "The American Missionary, Volume 34, No. 12, December 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-12-december-1880-various.txt"
+    },
+    {
+      "row": 197,
+      "title": "Forty-two years amongst the Indians and Eskimo",
+      "author": "Batty, Beatrice",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/forty-two-years-amongst-the-indians-and-eskimo-batty-beatrice.txt"
+    },
+    {
+      "row": 198,
+      "title": "The Story of Creation as Told By Theology and By Science",
+      "author": "Ackland, T. S. (Thomas Suter)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-story-of-creation-as-told-by-theology-and-by-science-ackland-t-s-thomas-suter.txt"
+    },
+    {
+      "row": 199,
+      "title": "Christ, Christianity and the Bible",
+      "author": "Haldeman, Isaac Massey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christ-christianity-and-the-bible-haldeman-isaac-massey.txt"
+    },
+    {
+      "row": 200,
+      "title": "The Literature and History of New Testament Times",
+      "author": "Machen, J. Gresham (John Gresham)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-literature-and-history-of-new-testament-times-machen-j-gresham-john-gresham.txt"
+    },
+    {
+      "row": 201,
+      "title": "The American Missionary — Volume 48, No. 07, July, 1894",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-48-no-07-july-1894-various.txt"
+    },
+    {
+      "row": 202,
+      "title": "The American Missionary — Volume 49, No. 02, February, 1895",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-49-no-02-february-1895-various.txt"
+    },
+    {
+      "row": 203,
+      "title": "The American Missionary — Volume 50, No. 05, May, 1896",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-50-no-05-may-1896-various.txt"
+    },
+    {
+      "row": 204,
+      "title": "The American Missionary — Volume 54, No. 01, January, 1900",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-54-no-01-january-1900-various.txt"
+    },
+    {
+      "row": 205,
+      "title": "The American Missionary — Volume 54, No. 02, April, 1900",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-54-no-02-april-1900-various.txt"
+    },
+    {
+      "row": 206,
+      "title": "The American Missionary — Volume 54, No. 03, July, 1900",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-54-no-03-july-1900-various.txt"
+    },
+    {
+      "row": 207,
+      "title": "The American Missionary — Volume 54, No. 04, October, 1900",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-54-no-04-october-1900-various.txt"
+    },
+    {
+      "row": 208,
+      "title": "The American Missionary — Volume 39, No. 02, February, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-02-february-1885-various.txt"
+    },
+    {
+      "row": 209,
+      "title": "The American Missionary — Volume 38, No. 01, January, 1884",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-38-no-01-january-1884-various.txt"
+    },
+    {
+      "row": 210,
+      "title": "The American Missionary — Volume 38, No. 06, June, 1884",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-38-no-06-june-1884-various.txt"
+    },
+    {
+      "row": 211,
+      "title": "The American Missionary — Volume 39, No. 07, July, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-07-july-1885-various.txt"
+    },
+    {
+      "row": 212,
+      "title": "The American Missionary — Volume 39, No. 03, March, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-03-march-1885-various.txt"
+    },
+    {
+      "row": 213,
+      "title": "The American Missionary — Volume 39, No. 08, August, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-08-august-1885-various.txt"
+    },
+    {
+      "row": 214,
+      "title": "The American Missionary — Volume 39, No. 10, October, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-10-october-1885-various.txt"
     }
   ],
   "review_queues": {
