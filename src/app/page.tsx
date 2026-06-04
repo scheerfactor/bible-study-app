@@ -55,6 +55,8 @@ import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-r
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
+import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
+import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -64,6 +66,7 @@ type LibraryView = "home" | "detail" | "reader" | "author" | "collection" | "pat
 type LibraryReaderTheme = "light" | "sepia" | "dark";
 type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
+type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
@@ -454,11 +457,24 @@ type AdminImportQueueItem = {
 
 type PermissionRequest = {
   id: string;
-  title: string;
   author: string;
-  owner: string;
-  status: ResourceImportStatus;
-  requestedUse: string;
+  publisherMinistry: string;
+  contactInfo: string;
+  resourceTitle: string;
+  requestedRights: string;
+  status: PermissionTrackerStatus;
+  notes: string;
+};
+
+type PremiumResourcePlaceholder = {
+  id: string;
+  author: string;
+  publisherMinistry: string;
+  resourceTitle: string;
+  category: string;
+  plannedUse: string;
+  rightsGate: string;
+  visibility: string;
   notes: string;
 };
 
@@ -1953,35 +1969,8 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
   },
 ];
 
-const PERMISSION_REQUESTS: PermissionRequest[] = [
-  {
-    id: "permission-way-of-life",
-    title: "Way of Life / David Cloud resources",
-    author: "David Cloud",
-    owner: "Way of Life Literature",
-    status: "Permission Needed",
-    requestedUse: "Global app library import, searchable metadata, and reading/listening access.",
-    notes: "Must remain a permission-needed placeholder unless written permission exists.",
-  },
-  {
-    id: "permission-halley",
-    title: "Halley's Bible Handbook",
-    author: "Henry H. Halley",
-    owner: "Rights holder to be verified",
-    status: "Permission Needed",
-    requestedUse: "Bible handbook shelf and book introduction support.",
-    notes: "Do not import modern copyrighted editions.",
-  },
-  {
-    id: "permission-unger",
-    title: "Unger Bible Handbook",
-    author: "Merrill F. Unger",
-    owner: "Rights holder to be verified",
-    status: "Permission Needed",
-    requestedUse: "Bible handbook shelf and book introduction support.",
-    notes: "Rights review required before any user-facing import.",
-  },
-];
+const PERMISSION_REQUESTS = permissionTrackerData as PermissionRequest[];
+const PREMIUM_RESOURCE_PLACEHOLDERS = premiumResourcePlaceholdersData as PremiumResourcePlaceholder[];
 
 const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
   hook: "",
@@ -13596,7 +13585,6 @@ function LibraryScreen({
     .filter((preview) => preview.resources.length || preview.comingSoon);
   const plannedKjvItems = [
     ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
-    ...PERMISSION_REQUESTS.filter((request) => request.title.toLowerCase().includes("way of life")),
   ];
   const devotionalResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["devotional", "devotion", "christian living", "prayer"]))
@@ -13959,7 +13947,7 @@ function LibraryScreen({
                 <h3 className="mt-2 text-sm font-semibold text-[var(--ink)]">{item.title}</h3>
                 <p className="mt-1 text-xs font-semibold text-[var(--green)]">{item.author}</p>
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                  {"rightsNotes" in item ? item.rightsNotes : item.notes}
+                  {item.rightsNotes}
                 </p>
               </article>
             ))}
@@ -14536,6 +14524,10 @@ function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onCl
     { title: "Permission Needed", statuses: ["Permission Needed"], note: "Keep David Cloud / Way of Life and unclear modern works here unless written permission exists." },
     { title: "Personal Use Only", statuses: ["Personal Use Only"], note: "Future member uploads stay private and never become public resources." },
   ];
+  const permissionStatusCounts = (["Not contacted", "Contacted", "Permission granted", "Denied", "Needs follow-up"] as PermissionTrackerStatus[]).map((status) => ({
+    status,
+    count: PERMISSION_REQUESTS.filter((request) => request.status === status).length,
+  }));
 
   function persistAdminQueue(next: AdminImportQueueItem[]) {
     setAdminQueue(next);
@@ -14990,26 +14982,83 @@ function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onCl
         </article>
 
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-sm font-semibold text-[var(--green)]">Permission Request Tracker</p>
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Permission Request Tracker</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Track author, publisher/ministry, contact, requested rights, status, and notes before any modern resource can become public.
+              </p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+              {PERMISSION_REQUESTS.length} requests
+            </span>
+          </div>
+          <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-5">
+            {permissionStatusCounts.map(({ status, count }) => (
+              <div key={`permission-status-${status}`} className={`rounded-xl px-3 py-2 ${permissionStatusPill(status)}`}>
+                <p className="text-lg font-semibold">{count}</p>
+                <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em]">{status}</p>
+              </div>
+            ))}
+          </div>
           <div className="mt-3 space-y-2">
             {PERMISSION_REQUESTS.map((request) => (
               <div key={request.id} className="rounded-xl bg-white px-3 py-3">
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <p className="text-sm font-semibold text-[var(--ink)]">{request.title}</p>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{request.owner}</p>
+                    <p className="text-sm font-semibold text-[var(--ink)]">{request.resourceTitle}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                      {request.author} · {request.publisherMinistry}
+                    </p>
                   </div>
-                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${importStatusPill(request.status)}`}>
+                  <span className={`rounded-full px-3 py-1 text-xs font-semibold ${permissionStatusPill(request.status)}`}>
                     {request.status}
                   </span>
                 </div>
-                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{request.requestedUse}</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                  <span className="font-semibold text-[var(--ink)]">Contact:</span> {request.contactInfo}
+                </p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  <span className="font-semibold text-[var(--ink)]">Requested rights:</span> {request.requestedRights}
+                </p>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{request.notes}</p>
               </div>
             ))}
           </div>
         </article>
       </div>
+
+      <details className="mt-4 rounded-2xl border border-sky-200 bg-sky-50 p-4">
+        <summary className="cursor-pointer list-none text-sm font-semibold text-sky-900">
+          Premium resource placeholders
+        </summary>
+        <p className="mt-2 text-sm leading-6 text-sky-900/80">
+          Admin-only planning for licensed books, commentaries, sermon media, and modern resources. These are not public Library books and do not include copyrighted text.
+        </p>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          {PREMIUM_RESOURCE_PLACEHOLDERS.map((resource) => (
+            <article key={resource.id} className="rounded-2xl border border-sky-200 bg-white p-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">{resource.resourceTitle}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                    {resource.author} · {resource.category}
+                  </p>
+                </div>
+                <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-800">
+                  {resource.visibility}
+                </span>
+              </div>
+              <div className="mt-3 grid gap-2 text-xs leading-5 text-[var(--muted)]">
+                <p><span className="font-semibold text-[var(--ink)]">Publisher/ministry:</span> {resource.publisherMinistry}</p>
+                <p><span className="font-semibold text-[var(--ink)]">Planned use:</span> {resource.plannedUse}</p>
+                <p><span className="font-semibold text-[var(--ink)]">Rights gate:</span> {resource.rightsGate}</p>
+                <p>{resource.notes}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </details>
     </section>
   );
 }
@@ -15071,6 +15120,14 @@ function importStatusPill(status: ResourceImportStatus) {
   if (status === "Needs Review") return "bg-amber-50 text-amber-800";
   if (status === "Permission Needed") return "bg-sky-50 text-sky-800";
   if (status === "Personal Use Only") return "bg-violet-50 text-violet-800";
+  return "bg-red-50 text-red-800";
+}
+
+function permissionStatusPill(status: PermissionTrackerStatus) {
+  if (status === "Not contacted") return "bg-stone-50 text-stone-800";
+  if (status === "Contacted") return "bg-blue-50 text-blue-800";
+  if (status === "Permission granted") return "bg-emerald-50 text-emerald-800";
+  if (status === "Needs follow-up") return "bg-amber-50 text-amber-800";
   return "bg-red-50 text-red-800";
 }
 

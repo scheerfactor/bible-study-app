@@ -1,0 +1,82 @@
+[
+  {
+    "id": "permission-john-phillips",
+    "author": "John Phillips",
+    "publisherMinistry": "Kregel Publications / rights holder to verify",
+    "contactInfo": "Rights and permissions contact to research before outreach.",
+    "resourceTitle": "John Phillips commentary and preaching resources",
+    "requestedRights": "Digital library listing, searchable metadata, in-app reading, optional device text-to-speech, and future premium/license access.",
+    "status": "Not contacted",
+    "notes": "Modern copyrighted works. Do not import or expose text without written permission or a license agreement."
+  },
+  {
+    "id": "permission-j-vernon-mcgee",
+    "author": "J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible / rights holder to verify",
+    "contactInfo": "Permissions contact to research from official ministry/publisher channels.",
+    "resourceTitle": "Thru the Bible commentary and study resources",
+    "requestedRights": "Licensed/premium access for reading, search, study recommendations, and possible listening workflow.",
+    "status": "Not contacted",
+    "notes": "Treat as premium/licensed only. Do not import transcripts, audio, or commentary text without permission."
+  },
+  {
+    "id": "permission-mark-cahill",
+    "author": "Mark Cahill",
+    "publisherMinistry": "Mark Cahill Ministries / rights holder to verify",
+    "contactInfo": "Official ministry contact to verify before request.",
+    "resourceTitle": "Evangelism books and training resources",
+    "requestedRights": "Digital library listing, searchable metadata, in-app reading, and possible premium access for evangelism resources.",
+    "status": "Not contacted",
+    "notes": "Modern copyrighted evangelism resources. Permission required before public import."
+  },
+  {
+    "id": "permission-way-of-life",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "contactInfo": "Use official Way of Life Literature permission/contact channel.",
+    "resourceTitle": "Way of Life / David Cloud resources",
+    "requestedRights": "Global app library import, searchable metadata, in-app reading, study recommendations, and device text-to-speech.",
+    "status": "Not contacted",
+    "notes": "Keep as Permission Needed only unless written permission exists. Personal-use uploads may be private later."
+  },
+  {
+    "id": "permission-sm-davis",
+    "author": "S. M. Davis",
+    "publisherMinistry": "Solve Family Problems / rights holder to verify",
+    "contactInfo": "Official ministry/publisher contact to research before outreach.",
+    "resourceTitle": "Family, preaching, and teaching resources",
+    "requestedRights": "Licensed/premium access for reading, listening, and teaching-prep recommendations.",
+    "status": "Not contacted",
+    "notes": "Modern ministry content. Do not publish audio, video, transcripts, or book text without permission."
+  },
+  {
+    "id": "permission-halley",
+    "author": "Henry H. Halley",
+    "publisherMinistry": "Zondervan / rights holder to verify",
+    "contactInfo": "Publisher permissions contact to verify before request.",
+    "resourceTitle": "Halley's Bible Handbook",
+    "requestedRights": "Bible handbook shelf, book introduction support, searchable metadata, and in-app reading if licensed.",
+    "status": "Not contacted",
+    "notes": "Do not import modern copyrighted editions. Public-domain alternatives should remain the growth path for now."
+  },
+  {
+    "id": "permission-unger",
+    "author": "Merrill F. Unger",
+    "publisherMinistry": "Moody Publishers / rights holder to verify",
+    "contactInfo": "Publisher permissions contact to verify before request.",
+    "resourceTitle": "Unger Bible Handbook / Unger Bible Dictionary",
+    "requestedRights": "Bible handbook/dictionary shelf, searchable metadata, and in-app reading if licensed.",
+    "status": "Not contacted",
+    "notes": "Rights review required before any user-facing import."
+  },
+  {
+    "id": "permission-modern-commentaries",
+    "author": "Multiple modern authors",
+    "publisherMinistry": "Publisher-specific rights holders",
+    "contactInfo": "Track each author/publisher separately before outreach.",
+    "resourceTitle": "Modern commentaries and Bible study books",
+    "requestedRights": "Premium/licensed digital reading, search, study recommendations, and optional listening when allowed.",
+    "status": "Not contacted",
+    "notes": "Use this as a planning bucket only. Split into individual permission requests before contacting rights holders."
+  }
+]

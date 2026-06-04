@@ -30,6 +30,29 @@ Phase 3 added meaningful growth in:
 - Dictionaries and reference works, including Richard Watson's Biblical and Theological Dictionary and Greenfield's Greek-English Lexicon to the New Testament.
 - Prayer and preaching resources, including Quiet Talks on Prayer, Prayers of the Early Church, and selected sermon collections.
 
+## Public-Domain Growth Targets
+
+The next Library growth should stay public-domain first, with rights metadata, doctrinal review metadata, and file-backed resources checked before deploy.
+
+### 300 Resources
+
+- Add another 75-100 verified Project Gutenberg, CCEL, Internet Archive, or similarly clear public-domain resources.
+- Prioritize Bible dictionaries/reference, public-domain commentary volumes, prayer, missions, Baptist history, evangelism, and preaching/teaching.
+- Keep batches small enough to validate quickly: 25, then 50, then 100 only after QA stays clean.
+
+### 500 Resources
+
+- Expand author shelves and reading paths after the 300-resource foundation remains fast.
+- Add more public-domain commentary, Bible survey, Bible handbook, missionary biography, and Baptist history works.
+- Move any unusually large text files toward the storage strategy if the Git/Vercel bundle becomes too heavy.
+
+### 1,000 Resources
+
+- Use Supabase Storage or Cloudflare R2 for large books and future media.
+- Keep searchable metadata in Supabase Postgres or a dedicated search index.
+- Add stronger admin review reports for duplicates, rights warnings, doctrinal notes, shelf counts, and missing files.
+- Keep premium/licensed content separate from public-domain imports until written rights are documented.
+
 ## Needs-Review Candidates
 
 Do not import these globally until exact source, edition, rights, quality, and doctrinal labels are documented.
@@ -47,6 +70,8 @@ Do not import these globally until exact source, edition, rights, quality, and d
 
 ## Permission-Needed Resources
 
+- Premium and permission tracking lives in `data/library/manifests/permission-tracker.json` and `data/library/manifests/premium-resource-placeholders.json`.
+- John Phillips, J. Vernon McGee, Mark Cahill, David Cloud / Way of Life, S. M. Davis, and modern commentaries/books are admin-only planning placeholders until written permission or license terms are documented.
 - David Cloud / Way of Life: permission needed for global app import. Keep as permission-request or personal-use-only placeholder unless written permission exists.
 - Halley's Bible Handbook: permission or licensed edition required.
 - Unger's Bible Handbook: permission or licensed edition required.

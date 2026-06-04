@@ -1,0 +1,68 @@
+[
+  {
+    "id": "premium-john-phillips",
+    "author": "John Phillips",
+    "publisherMinistry": "Kregel Publications / rights holder to verify",
+    "resourceTitle": "John Phillips commentary and preaching resources",
+    "category": "Commentaries",
+    "plannedUse": "Premium expository commentary and preaching-prep support if licensed.",
+    "rightsGate": "Written permission or license required before any public import.",
+    "visibility": "Admin-only planning",
+    "notes": "High priority for future preaching and teaching users."
+  },
+  {
+    "id": "premium-j-vernon-mcgee",
+    "author": "J. Vernon McGee",
+    "publisherMinistry": "Thru the Bible / rights holder to verify",
+    "resourceTitle": "Thru the Bible commentary and study resources",
+    "category": "Commentaries",
+    "plannedUse": "Accessible book-by-book teaching voice if licensed.",
+    "rightsGate": "Written permission or license required before text, transcript, or audio import.",
+    "visibility": "Admin-only planning",
+    "notes": "Potential premium/commentary and listening workflow candidate."
+  },
+  {
+    "id": "premium-mark-cahill",
+    "author": "Mark Cahill",
+    "publisherMinistry": "Mark Cahill Ministries / rights holder to verify",
+    "resourceTitle": "Evangelism books and training resources",
+    "category": "Evangelism",
+    "plannedUse": "Evangelism training and Gospel witness collection if licensed.",
+    "rightsGate": "Written permission required before any public import.",
+    "visibility": "Admin-only planning",
+    "notes": "Good fit for evangelism reading paths after permission."
+  },
+  {
+    "id": "premium-david-cloud",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "resourceTitle": "Way of Life / David Cloud resources",
+    "category": "KJV/Textual Issue Resource",
+    "plannedUse": "KJV defense, Baptist history, and discernment resources if permission is granted.",
+    "rightsGate": "Permission needed; keep out of public Library unless written permission exists.",
+    "visibility": "Admin-only planning",
+    "notes": "May also support future private personal-use uploads for user-owned files."
+  },
+  {
+    "id": "premium-sm-davis",
+    "author": "S. M. Davis",
+    "publisherMinistry": "Solve Family Problems / rights holder to verify",
+    "resourceTitle": "Family, preaching, and teaching resources",
+    "category": "Preaching & Teaching",
+    "plannedUse": "Family, preaching, and practical teaching collection if licensed.",
+    "rightsGate": "Written permission required before public audio, video, transcript, or book import.",
+    "visibility": "Admin-only planning",
+    "notes": "Keep all media permission-gated."
+  },
+  {
+    "id": "premium-modern-commentaries",
+    "author": "Modern commentary authors",
+    "publisherMinistry": "Publisher-specific rights holders",
+    "resourceTitle": "Modern commentaries/books",
+    "category": "Commentaries",
+    "plannedUse": "Future premium library layer after public-domain core is strong.",
+    "rightsGate": "Individual written permission or licensing agreement required.",
+    "visibility": "Admin-only planning",
+    "notes": "Do not create marketplace or paid access until rights, pricing, and storage are planned."
+  }
+]
