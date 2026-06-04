@@ -91,6 +91,22 @@ The batch tool:
 - Removes older conflicting public sample entries when `--prune-public-conflicts` is used.
 - Writes a public import file only for the reviewed batch.
 
+## Create A Rights-Checked Source Batch
+
+Some public-domain sources expose one chapter per page or a clean XML file. Use the source-batch tool only after checking the source rights language and edition notes:
+
+```bash
+npm run commentary:source-batch -- --author="Albert Barnes" --source=studylight-bnb --refs="John 1-21,Romans 1-16,Amos 1-9,Luke 24,Psalms 1-150,Revelation 1-22" --output=data/imports/barnes-reviewed-phase-3-commentary.json --prune-public-conflicts
+```
+
+Supported Phase 3 sources:
+
+- `studylight-bnb`: Albert Barnes chapter pages with public-domain page notices.
+- `studylight-acc`: Adam Clarke chapter pages with public-domain page notices.
+- `ccel-wesley-xml`: Wesley's New Testament notes from CCEL XML public-domain metadata.
+
+Do not use the StudyLight Gill path for expansion. It points to a modernized Larry Pierce edition with rights reserved language. Gill remains sample-only until a stable original public-domain source is selected.
+
 ## Validation
 
 Run:
@@ -128,6 +144,13 @@ Current JFB public promotion:
 
 - `data/imports/jfb-reviewed-batch-1-commentary.json`
 - 31 verified public chapters
+
+Current Phase 3 public promotions:
+
+- `data/imports/matthew-henry-reviewed-batch-2-commentary.json`: 332 verified public chapters.
+- `data/imports/barnes-reviewed-phase-3-commentary.json`: 219 verified public chapters.
+- `data/imports/adam-clarke-reviewed-phase-3-commentary.json`: 219 verified public chapters.
+- `data/imports/wesley-reviewed-phase-3-commentary.json`: 60 verified public chapters.
 - John 1-5
 - Romans 1-8
 - Amos 1-9

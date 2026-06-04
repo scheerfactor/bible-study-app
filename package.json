@@ -21,6 +21,7 @@
     "commentary:prepare": "node scripts/prepare-commentary-source.mjs",
     "commentary:promote": "node scripts/promote-commentary-staging.mjs",
     "commentary:review-batch": "node scripts/create-commentary-review-batch.mjs",
+    "commentary:source-batch": "node scripts/create-commentary-source-batch.mjs",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs"
   },
   "dependencies": {

@@ -1,37 +1,5 @@
 [
   {
-    "id": "barnes-romans-5-acquisition-sample",
-    "reference": "Romans 5",
-    "book": "Romans",
-    "chapter": 5,
-    "verse_start": 1,
-    "verse_end": 21,
-    "author": "Albert Barnes",
-    "resource_title": "Barnes' Notes on the Bible",
-    "source_title": "Notes on the Bible by Albert Barnes",
-    "source_url": "https://sacred-texts.com/bib/cmt/barnes/rom005.htm",
-    "public_domain_status": "Public-domain source text. Barnes died in 1870 and the cited source identifies the work as Notes on the Bible, 1834.",
-    "rights_basis": "Small reviewed acquisition sample only. Do not bulk import until the exact full source file, source terms, and chapter segmentation are approved.",
-    "recommended_use": "Use as a concise Presbyterian comparative voice for Romans 5 after reading the KJV text and reviewed cross references.",
-    "entry_text": "Barnes treats Romans 5 as the practical result of justification by faith: peace with God, access into grace, joy in hope, strength under tribulation, and the larger contrast between Adam's ruin and Christ's abounding remedy. Use this sample to compare how the chapter moves from personal assurance to the whole race in Adam and Christ."
-  },
-  {
-    "id": "wesley-john-3-acquisition-sample",
-    "reference": "John 3",
-    "book": "John",
-    "chapter": 3,
-    "verse_start": 1,
-    "verse_end": 36,
-    "author": "John Wesley",
-    "resource_title": "Wesley's Notes on the Bible",
-    "source_title": "Wesley's Notes on the Bible",
-    "source_url": "https://www.ccel.org/w/wesley/notes/index.html",
-    "public_domain_status": "CCEL work record lists Wesley's Notes on the Bible as Public Domain.",
-    "rights_basis": "Small reviewed acquisition sample only. Mark Methodist perspective notes before any wider import.",
-    "recommended_use": "Use as a short historical comparison voice with visible perspective notes and Scripture-first ordering.",
-    "entry_text": "Wesley's notes are best used as a compact prompt for close reading in John 3: the necessity of being born again, the work of the Spirit, believing on the Son, and the danger of refusing light. This sample is included for comparison, not as the controlling explanation of the passage."
-  },
-  {
     "id": "gill-john-3-acquisition-sample",
     "reference": "John 3",
     "book": "John",
@@ -46,21 +14,5 @@
     "rights_basis": "Small reviewed acquisition sample only. Bulk import must use a source file with stable metadata and avoid site-specific formatting unless allowed.",
     "recommended_use": "Use as a Baptist historical/expository comparison voice with discernment labels and Scripture-first ordering.",
     "entry_text": "Gill is useful in John 3 for fuller doctrinal comparison around the new birth, Christ's lifting up, believing on the Son, and the witness that eternal life is in Christ. Because Gill can be dense, keep his entries collapsed and use them for deeper study after the Bible text."
-  },
-  {
-    "id": "clarke-romans-5-acquisition-sample",
-    "reference": "Romans 5",
-    "book": "Romans",
-    "chapter": 5,
-    "verse_start": 1,
-    "verse_end": 21,
-    "author": "Adam Clarke",
-    "resource_title": "Adam Clarke's Commentary on the Bible",
-    "source_title": "Clarke's Commentary",
-    "source_url": "https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=ha102300285",
-    "public_domain_status": "Public-domain source path by publication date; Online Books Page lists an 1843 edition of Clarke's commentary.",
-    "rights_basis": "Small reviewed acquisition sample only. Do not bulk import until source text quality, edition, and doctrinal warning labels are reviewed.",
-    "recommended_use": "Use as a Methodist comparative voice with clear perspective notes and not-all-doctrine-endorsed labeling.",
-    "entry_text": "Clarke's Romans 5 sample is included for comparison around justification, peace with God, tribulation producing tested character, Christ dying for sinners, and the Adam-Christ contrast. It should help teachers see historical Methodist commentary perspective while keeping the KJV text primary."
   }
 ]

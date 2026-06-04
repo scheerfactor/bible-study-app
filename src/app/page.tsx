@@ -45,10 +45,14 @@ import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
+import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
 import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
+import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
+import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
+import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 
@@ -863,19 +867,19 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     id: "albert-barnes",
     name: "Albert Barnes",
     years: "1798-1870",
-    shortLabel: "Concise Bible notes candidate",
-    biography: "Albert Barnes was an American Presbyterian minister known for concise Bible notes. His work is a Phase 3 candidate only; exact source, edition, rights, and text quality must be verified before import.",
+    shortLabel: "Concise Bible notes",
+    biography: "Albert Barnes was an American Presbyterian minister known for concise Bible notes. A reviewed Phase 3 batch is available for John, Romans, Amos, Luke 24, Psalms, and Revelation from public-domain StudyLight chapter pages.",
     timeline: [
       { year: "1798", event: "Born in Rome, New York." },
       { year: "1820s", event: "Entered pastoral ministry." },
       { year: "1830s-1860s", event: "Published widely used Bible notes." },
       { year: "1870", event: "Died in Philadelphia." },
     ],
-    commentary: "Candidate for short comparative notes after rights/source review. Mark perspective notes visibly before user-facing import.",
-    quotes: ["Needs review before import.", "Use only verified public-domain editions."],
+    commentary: "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
+    quotes: ["Reviewed Phase 3 chapters only.", "Use only verified public-domain editions."],
     relatedAuthorIds: ["matthew-henry", "john-wesley", "adam-clarke"],
-    recommendedReadingOrder: ["Rights review", "Sample chapter import", "Quality review", "Chapter coverage expansion"],
-    subjects: ["Commentary", "Needs Review"],
+    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "Barnes reviewed chapters"],
+    subjects: ["Commentary", "Reviewed Batch"],
   },
   {
     id: "jfb",
@@ -897,19 +901,19 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     id: "john-wesley",
     name: "John Wesley",
     years: "1703-1791",
-    shortLabel: "Historical notes candidate",
-    biography: "John Wesley was an English preacher and Methodist leader. His explanatory notes may be useful as historical comparison, but require clear perspective labeling and source verification before import.",
+    shortLabel: "Historical New Testament notes",
+    biography: "John Wesley was an English preacher and Methodist leader. His public-domain New Testament notes are available as a reviewed Phase 3 batch for John, Romans, Luke 24, and Revelation with perspective labels.",
     timeline: [
       { year: "1703", event: "Born in Epworth, England." },
       { year: "1730s", event: "Became central to the Methodist revival." },
       { year: "1750s", event: "Published explanatory notes on Scripture." },
       { year: "1791", event: "Died after decades of preaching and writing." },
     ],
-    commentary: "Candidate only. If imported, show Methodist perspective notes and use with discernment labels.",
-    quotes: ["Not all doctrine endorsed.", "Import only verified public-domain editions."],
+    commentary: "Use as compact Methodist historical notes after the KJV text, with doctrinal discernment labels visible.",
+    quotes: ["Reviewed New Testament chapters only.", "Not all doctrine endorsed."],
     relatedAuthorIds: ["matthew-henry", "adam-clarke", "albert-barnes"],
-    recommendedReadingOrder: ["Rights review", "Perspective notes", "Sample import", "Quality review"],
-    subjects: ["Commentary", "Needs Review", "Use with discernment"],
+    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "JFB", "Wesley reviewed chapters"],
+    subjects: ["Commentary", "Reviewed Batch", "Use with discernment"],
   },
   {
     id: "john-gill",
@@ -933,18 +937,18 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     id: "adam-clarke",
     name: "Adam Clarke",
     years: "1762-1832",
-    shortLabel: "Comparative commentary candidate",
-    biography: "Adam Clarke was a Methodist theologian and commentator. His commentary may be useful for comparison, but must be imported only from verified public-domain sources and clearly labeled for perspective.",
+    shortLabel: "Comparative commentary",
+    biography: "Adam Clarke was a Methodist theologian and commentator. A reviewed Phase 3 batch is available for John, Romans, Amos, Luke 24, Psalms, and Revelation from public-domain StudyLight chapter pages.",
     timeline: [
       { year: "1762", event: "Born in Ireland." },
       { year: "1790s-1830s", event: "Served as Methodist preacher and scholar." },
       { year: "1832", event: "Died after extensive writing and ministry." },
     ],
-    commentary: "Candidate for comparative commentary only. Mark not all doctrine endorsed and keep commentary secondary.",
-    quotes: ["Use with discernment.", "Source and perspective notes required before import."],
+    commentary: "Use as a historical comparison with visible discernment labels; keep Scripture primary.",
+    quotes: ["Reviewed Phase 3 chapters only.", "Use with discernment."],
     relatedAuthorIds: ["john-wesley", "albert-barnes", "matthew-henry"],
-    recommendedReadingOrder: ["Rights review", "Perspective notes", "Sample chapter", "Quality review"],
-    subjects: ["Commentary", "Needs Review", "Use with discernment"],
+    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "Barnes", "Clarke reviewed chapters"],
+    subjects: ["Commentary", "Reviewed Batch", "Use with discernment"],
   },
   {
     id: "ryle",
@@ -3061,10 +3065,14 @@ const localCrossReferences: CrossReference[] = [
 
 const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedBatch2Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
   ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
+  ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
+  ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,

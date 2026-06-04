@@ -8,6 +8,8 @@ const outputArg = valueFor("--output") ?? "data/imports/jfb-reviewed-batch-1-com
 const refsArg = valueFor("--refs");
 const batchSize = Number(valueFor("--batch-size") ?? 50);
 const minBatchSize = Number(valueFor("--min-batch-size") ?? 25);
+const batchName = valueFor("--batch-name") ?? "reviewed batch";
+const idSuffix = slugify(batchName);
 const prunePublicConflicts = process.argv.includes("--prune-public-conflicts");
 const dryRun = process.argv.includes("--dry-run");
 
@@ -44,12 +46,12 @@ const reviewedRows = targetRefs.map((reference, index) => {
   const verseEnd = verseEndByChapter.get(reference) ?? sourceRow.verse_end;
   return {
     ...sourceRow,
-    id: `${sourceRow.id}-reviewed-batch-1`,
+    id: `${sourceRow.id}-${idSuffix}`,
     verse_end: verseEnd,
     review_status: "Verified",
     import_status: "Public Verified",
-    review_batch: "JFB reviewed batch 1",
-    review_notes: "Chapter-level source, rights, and reference review completed for the first public JFB promotion batch.",
+    review_batch: batchName,
+    review_notes: "Chapter-level source, rights, and reference review completed for public commentary promotion.",
     sort_order: index + 1,
   };
 });
@@ -123,6 +125,14 @@ function normalizeBookName(value) {
   const book = books.find((candidate) => candidate.toLowerCase() === compact);
   if (!book) throw new Error(`Unknown Bible book: ${value}`);
   return book;
+}
+
+function slugify(value) {
+  return String(value)
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 async function findPublicCommentaryImportFiles() {
