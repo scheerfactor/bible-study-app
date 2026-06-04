@@ -65,7 +65,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -6838,6 +6838,12 @@ export default function Home() {
     });
   }
 
+  function openPassageGuide() {
+    recordRecentPassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump);
+    setStudyRef(null);
+    setTab("passageGuide");
+  }
+
   function openReference(targetRef: string) {
     const targetVerse = allVerses.find((candidate) => candidate.ref === targetRef);
     if (!targetVerse) {
@@ -8584,6 +8590,7 @@ export default function Home() {
                 onRemoveMemoryVerse={removeMemoryVerse}
                 onOpenReference={openReference}
                 onOpenBookIntroduction={() => openBookIntroduction(book)}
+                onOpenPassageGuide={openPassageGuide}
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
@@ -8770,6 +8777,34 @@ export default function Home() {
                 onAddMemory={() => addMemoryVerse(fullStudyVerse.ref)}
                 onUpdateMemoryProgress={(progress) => updateMemoryProgress(fullStudyVerse.ref, progress)}
                 onRemoveMemory={() => removeMemoryVerse(fullStudyVerse.ref)}
+              />
+            )}
+
+            {tab === "passageGuide" && (
+              <PassageGuideScreen
+                book={book}
+                chapter={chapter}
+                verses={chapterVerses}
+                analysis={chapterAnalysis}
+                connections={activeChapterConnections}
+                crossReferences={chapterCrossReferences}
+                commentaryEntries={chapterCommentaryEntries}
+                keyVerses={chapterKeyVerses}
+                recommendedResources={activeChapterResourceRecommendations}
+                libraryResources={libraryResources}
+                bookIntroduction={activeBookIntroduction}
+                notes={Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`))}
+                memoryVerse={scriptureMemory.find((item) => item.verse_ref.startsWith(`${book} ${chapter}:`)) ?? null}
+                versesByRef={versesByRef}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onOpenBookIntroduction={() => openBookIntroduction(book)}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
+                onOpenPersonStudy={openPersonStudy}
+                onListenCommentary={listenCurrentChapterCommentary}
+                onAddCommentaryToPlaylist={() => addBiblePlaylistItem("commentary_chapter")}
               />
             )}
 
@@ -9893,6 +9928,7 @@ function BibleReader({
   onRemoveMemoryVerse,
   onOpenReference,
   onOpenBookIntroduction,
+  onOpenPassageGuide,
   onOpenLibraryResource,
   onOpenPersonStudy,
   onVerseClick,
@@ -9998,6 +10034,7 @@ function BibleReader({
   onRemoveMemoryVerse: (ref: string) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenBookIntroduction: () => void;
+  onOpenPassageGuide: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onVerseClick: (ref: string) => void;
@@ -10085,6 +10122,14 @@ function BibleReader({
               Book Introduction
             </button>
           )}
+          <button
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+            onClick={onOpenPassageGuide}
+            type="button"
+          >
+            <FileText size={15} />
+            Passage Guide
+          </button>
         </div>
 
         <form
@@ -17090,6 +17135,424 @@ function libraryCategoryLabel(category: string) {
   };
 
   return labels[category] ?? category;
+}
+
+function PassageGuideScreen({
+  book,
+  chapter,
+  verses,
+  analysis,
+  connections,
+  crossReferences,
+  commentaryEntries,
+  keyVerses,
+  recommendedResources,
+  libraryResources,
+  bookIntroduction,
+  notes,
+  memoryVerse,
+  versesByRef,
+  onBack,
+  onOpenReference,
+  onOpenBookIntroduction,
+  onOpenLibraryResource,
+  onOpenPersonStudy,
+  onListenCommentary,
+  onAddCommentaryToPlaylist,
+}: {
+  book: string;
+  chapter: number;
+  verses: BibleVerse[];
+  analysis: ChapterStudyAnalysis;
+  connections: ActiveChapterConnections;
+  crossReferences: CrossReference[];
+  commentaryEntries: CommentaryEntry[];
+  keyVerses: string[];
+  recommendedResources: ChapterResourceRecommendation[];
+  libraryResources: LibraryResource[];
+  bookIntroduction: BookIntroduction | null;
+  notes: Array<[string, UserNote[]]>;
+  memoryVerse: ScriptureMemoryItem | null;
+  versesByRef: Map<string, BibleVerse>;
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onOpenBookIntroduction: () => void;
+  onOpenLibraryResource: (slug: string) => void;
+  onOpenPersonStudy: (personId: string) => void;
+  onListenCommentary: () => void;
+  onAddCommentaryToPlaylist: () => void;
+}) {
+  const firstVerse = verses[0];
+  const passage = `${book} ${chapter}`;
+  const displayKeyVerses = useMemo(
+    () => keyVerses.length ? keyVerses : firstVerse ? [firstVerse.ref] : [],
+    [firstVerse, keyVerses],
+  );
+  const exportData = useMemo<TeachingNotesExportData | null>(() => {
+    if (!firstVerse) return null;
+    return {
+      book,
+      chapter,
+      bookIntroduction,
+      keyVerses: displayKeyVerses,
+      analysis,
+      connections,
+      crossReferences,
+      commentaryEntries,
+      notes,
+      memoryVerse,
+      fallbackMemoryVerse: firstVerse,
+      recommendedResources,
+      versesByRef,
+    };
+  }, [
+    analysis,
+    book,
+    bookIntroduction,
+    chapter,
+    commentaryEntries,
+    connections,
+    crossReferences,
+    displayKeyVerses,
+    firstVerse,
+    memoryVerse,
+    notes,
+    recommendedResources,
+    versesByRef,
+  ]);
+  const teachingSummary = exportData ? teachingWorkspaceSummary(exportData) : null;
+  const lessonOutlineSections = exportData ? buildLessonOutline(exportData, EMPTY_TEACHER_NOTES) : [];
+  const visibleCrossReferences = crossReferences.slice(0, 12);
+  const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
+  const summaryBody = bookIntroduction
+    ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
+    : connections.themes.length
+      ? `Reviewed themes for ${passage}: ${connections.themes.slice(0, 4).join(", ")}.`
+      : `A one-scroll guide for ${passage} using reviewed study data already loaded in the app.`;
+  const sections = [
+    ["passage-summary", "Summary"],
+    ["passage-key-verses", "Key Verses"],
+    ["passage-repeated-words", "Repeated Words"],
+    ["passage-commentary", "Commentary"],
+    ["passage-cross-references", "Cross References"],
+    ["passage-people", "People"],
+    ["passage-places", "Places"],
+    ["passage-timeline", "Timeline"],
+    ["passage-types", "Types"],
+    ["passage-prophecies", "Prophecy"],
+    ["passage-resources", "Resources"],
+    ["passage-outline", "Teaching Outline"],
+  ];
+
+  if (!firstVerse) {
+    return (
+      <div className="p-4 md:p-8">
+        <EmptyState title="Passage Guide not ready" body="This chapter is not available in the local KJV data yet." />
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <div className="sticky top-[104px] z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 pb-3 pt-2 backdrop-blur md:top-0 md:mx-0 md:rounded-2xl md:border md:px-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm"
+            onClick={onBack}
+            type="button"
+          >
+            <ChevronLeft size={17} />
+            Back to Bible
+          </button>
+          <div className="text-right">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Passage Guide</p>
+            <h1 className="text-lg font-semibold text-[var(--ink)]">{passage}</h1>
+          </div>
+        </div>
+        <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Passage guide sections">
+          {sections.map(([id, label]) => (
+            <a
+              key={id}
+              className="shrink-0 rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+              href={`#${id}`}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">One-scroll chapter study</p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{passage}</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">{summaryBody}</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {bookIntroduction && (
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+                onClick={onOpenBookIntroduction}
+                type="button"
+              >
+                <BookOpen size={16} />
+                Book Introduction
+              </button>
+            )}
+            <button
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+              disabled={!commentaryEntries.length}
+              onClick={onListenCommentary}
+              type="button"
+            >
+              <Headphones size={16} />
+              Listen Commentary
+            </button>
+          </div>
+        </div>
+        <div className="mt-5 grid grid-cols-2 gap-2 md:grid-cols-4">
+          <MiniStat label="Verses" value={String(analysis.stats.verses)} />
+          <MiniStat label="Words" value={String(analysis.stats.words)} />
+          <MiniStat label="Cross refs" value={String(crossReferences.length)} />
+          <MiniStat label="Commentaries" value={String(commentaryAuthors.length)} />
+        </div>
+      </section>
+
+      <StudySection id="passage-summary" title="Chapter Summary">
+        <div className="space-y-3">
+          <p className="text-sm leading-6 text-[var(--scripture-ink)]">{summaryBody}</p>
+          {teachingSummary && (
+            <div className="grid gap-2 md:grid-cols-3">
+              <MiniStat label="Main theme" value={teachingSummary.mainTheme} />
+              <MiniStat label="Key verse" value={teachingSummary.keyVerse} />
+              <MiniStat label="Aim" value={teachingSummary.teachingAim} />
+            </div>
+          )}
+          {bookIntroduction?.outline.length ? (
+            <div className="grid gap-2 md:grid-cols-2">
+              {bookIntroduction.outline.slice(0, 4).map((section) => (
+                <article key={`passage-outline-preview-${section.reference}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{section.title}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{section.reference}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{section.summary}</p>
+                </article>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-key-verses" title="Key Verses">
+        <div className="space-y-2">
+          {displayKeyVerses.map((ref) => {
+            const verse = versesByRef.get(ref);
+            return (
+              <button
+                key={`passage-key-${ref}`}
+                className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                onClick={() => onOpenReference(ref)}
+                type="button"
+              >
+                <p className="text-sm font-semibold text-[var(--green)]">{ref}</p>
+                <p className="mt-2 font-serif text-base leading-7 text-[var(--scripture-ink)]">{verse?.text ?? "KJV verse text not loaded yet."}</p>
+              </button>
+            );
+          })}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-repeated-words" title="Repeated Words">
+        <div className="grid gap-3 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Words</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {analysis.repeatedWords.length ? analysis.repeatedWords.slice(0, 18).map((item) => (
+                <span key={`passage-word-${item.word}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                  {item.word} <span className="text-[var(--green)]">{item.count}</span>
+                </span>
+              )) : <span className="text-sm leading-6 text-[var(--muted)]">No repeated study words found.</span>}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Phrases</p>
+            <div className="mt-2 space-y-2">
+              {analysis.repeatedPhrases.length ? analysis.repeatedPhrases.slice(0, 8).map((item) => (
+                <p key={`passage-phrase-${item.phrase}`} className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  {item.phrase} <span className="text-[var(--green)]">{item.count}</span>
+                </p>
+              )) : <p className="text-sm leading-6 text-[var(--muted)]">No repeated phrases found yet.</p>}
+            </div>
+          </div>
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-commentary" title="Commentary Comparison">
+        {commentaryEntries.length ? (
+          <div className="space-y-3">
+            <CommentaryChapterSummaryCard entries={commentaryEntries} compact onListen={onListenCommentary} />
+            <CommentaryGuideCard entries={commentaryEntries} compact />
+            <CommentaryComparisonCard entries={commentaryEntries} compact />
+            <div className="flex flex-wrap gap-2">
+              <button
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                onClick={onAddCommentaryToPlaylist}
+                type="button"
+              >
+                <ListMusic size={14} />
+                Add Commentary to Playlist
+              </button>
+            </div>
+            <div className="space-y-2">
+              {commentaryEntries.slice(0, 6).map((entry) => (
+                <CommentaryDetails key={`passage-commentary-${entry.id}`} entry={entry} compact />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <p className="text-sm leading-6 text-[var(--muted)]">No reviewed commentary entries yet.</p>
+        )}
+      </StudySection>
+
+      <StudySection id="passage-cross-references" title="Cross References">
+        <div className="grid gap-2 md:grid-cols-2">
+          {visibleCrossReferences.length ? visibleCrossReferences.map((reference) => {
+            const preview = versesByRef.get(reference.target_ref)?.text;
+            return (
+              <button
+                key={`passage-cross-${reference.id}`}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                onClick={() => onOpenReference(reference.target_ref)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{reference.target_ref}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{reference.source}</span>
+                </div>
+                <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{preview ?? reference.label}</p>
+              </button>
+            );
+          }) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed cross references yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-people" title="People">
+        <div className="grid gap-2 md:grid-cols-2">
+          {connections.people.length ? connections.people.map((person) => (
+            <button
+              key={`passage-person-${person.id}`}
+              className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+              onClick={() => onOpenPersonStudy(person.id)}
+              type="button"
+            >
+              <p className="text-sm font-semibold text-[var(--green)]">{person.name}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{person.summary}</p>
+              <p className="mt-2 text-xs font-semibold text-[var(--ink)]">First appearance: {person.firstAppearance}</p>
+            </button>
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed people entries yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-places" title="Places">
+        <div className="grid gap-2 md:grid-cols-2">
+          {connections.places.length ? connections.places.map((place) => (
+            <PlaceContextCard key={`passage-place-${place.id}`} place={place} onOpenReference={onOpenReference} />
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed place entries yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-timeline" title="Timeline">
+        <div className="grid gap-2 md:grid-cols-2">
+          {connections.timeline.length ? connections.timeline.map((entry) => (
+            <TimelineContextCard key={`passage-timeline-${entry.id}`} entry={entry} onOpenReference={onOpenReference} />
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed timeline entries yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-types" title="Types of Christ">
+        <div className="space-y-2">
+          {connections.types.length ? connections.types.map((type) => (
+            <article key={`passage-type-${type.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-sm font-semibold text-[var(--green)]">{type.title}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{type.description}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--ink)]">{type.pointsToChrist}</p>
+              <ReferenceRow references={[...type.keyReferences, ...type.fulfillmentReferences]} onOpenReference={onOpenReference} />
+            </article>
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed type of Christ entry yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-prophecies" title="Prophecy Connections">
+        <div className="space-y-2">
+          {connections.prophecies.length ? connections.prophecies.map((prophecy) => (
+            <article key={`passage-prophecy-${prophecy.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-sm font-semibold text-[var(--green)]">{prophecy.prophecy} <span className="text-[var(--muted)]">to</span> {prophecy.fulfillment}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{prophecy.description}</p>
+              <ReferenceRow references={prophecy.relatedVerses} onOpenReference={onOpenReference} />
+            </article>
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed prophecy connection yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-resources" title="Recommended Resources">
+        <div className="grid gap-2 md:grid-cols-2">
+          {recommendedResources.length ? recommendedResources.map((resource) => {
+            const libraryResource = resource.resourceSlug ? libraryResources.find((candidate) => candidate.slug === resource.resourceSlug) : null;
+            return (
+              <article key={`passage-resource-${resource.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.kind}</p>
+                    <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                    {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
+                  </div>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">{resource.status}</span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
+                {libraryResource?.word_count ? (
+                  <p className="mt-2 text-xs font-semibold text-[var(--green)]">{Math.max(1, Math.round(libraryResource.word_count / 220))} min read</p>
+                ) : null}
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {resource.resourceSlug && (
+                    <button
+                      className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                      onClick={() => onOpenLibraryResource(resource.resourceSlug!)}
+                      type="button"
+                    >
+                      Open Resource
+                    </button>
+                  )}
+                  {resource.warning && (
+                    <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                      {resource.warning}
+                    </span>
+                  )}
+                </div>
+              </article>
+            );
+          }) : <p className="text-sm leading-6 text-[var(--muted)]">No recommended resources yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-outline" title="Teaching Outline">
+        <p className="text-sm leading-6 text-[var(--muted)]">
+          Built from reviewed/stored study data already in the app. No doctrine is generated automatically.
+        </p>
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
+          {lessonOutlineSections.length ? lessonOutlineSections.map((section) => (
+            <section key={`passage-lesson-${section.title}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <h4 className="text-sm font-semibold text-[var(--green)]">{section.title}</h4>
+              <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">
+                {sectionOrEmpty(section.lines).slice(0, 5).map((line) => (
+                  <li key={`passage-lesson-${section.title}-${line}`}>{line}</li>
+                ))}
+              </ul>
+            </section>
+          )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed outline data yet.</p>}
+        </div>
+      </StudySection>
+    </div>
+  );
 }
 
 function FullStudyScreen({
