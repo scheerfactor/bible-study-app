@@ -7673,6 +7673,21 @@ export default function Home() {
     };
   }, [journalEntries]);
 
+  const todayProgress = useMemo(() => {
+    const today = todayIsoDate();
+    return {
+      bibleRead: currentBookMasteryStats.readChapters.includes(chapter),
+      prayerCompleted: prayerEntries.some((entry) => entry.prayedDates?.includes(today) || entry.lastPrayedAt?.slice(0, 10) === today),
+      journalCompleted: journalEntries.some((entry) => entry.date === today),
+      memoryReviewed: scriptureMemory.some((item) => item.last_reviewed_at?.slice(0, 10) === today),
+    };
+  }, [chapter, currentBookMasteryStats.readChapters, journalEntries, prayerEntries, scriptureMemory]);
+
+  const todayStudyPlaylist = useMemo(
+    () => biblePlaylists.find((playlist) => playlist.id === activeStudyPlaylistId) ?? biblePlaylists[0] ?? null,
+    [activeStudyPlaylistId, biblePlaylists],
+  );
+
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
       const nextState = updater(state);
@@ -10316,9 +10331,14 @@ export default function Home() {
                 prayerFocusEntries={todaysPrayerFocus}
                 prayerStats={prayerStats}
                 journalStats={journalStats}
+                proverbOfTheDay={proverbOfTheDay}
+                dailyProgress={todayProgress}
+                studyPlaylist={todayStudyPlaylist}
                 onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
+                onOpenProverb={() => goToVerse("Proverbs", Math.min(31, Math.max(1, new Date().getDate())), 1)}
                 onListen={listenCurrentChapter}
+                onMarkBibleRead={() => markCurrentChapterMastery("readChapters")}
                 onOpenChapterAnalysis={openChapterAnalysis}
                 onOpenLibrary={() => {
                   if (todayLibraryProgress) {
@@ -10334,6 +10354,7 @@ export default function Home() {
                 onOpenPrayer={() => setTab("prayer")}
                 onOpenJournal={() => setTab("journal")}
                 onCreateJournal={() => startJournalDraft("Today", { sourceLabel: "Daily Growth Flow" })}
+                onOpenStudyPlaylist={() => setTab("bible")}
               />
             )}
 
@@ -10897,9 +10918,14 @@ function TodayScreen({
   prayerFocusEntries,
   prayerStats,
   journalStats,
+  proverbOfTheDay,
+  dailyProgress,
+  studyPlaylist,
   onContinue,
   onJohn316,
+  onOpenProverb,
   onListen,
+  onMarkBibleRead,
   onOpenChapterAnalysis,
   onOpenLibrary,
   onListenLibrary,
@@ -10907,6 +10933,7 @@ function TodayScreen({
   onOpenPrayer,
   onOpenJournal,
   onCreateJournal,
+  onOpenStudyPlaylist,
 }: {
   book: string;
   chapter: number;
@@ -10922,9 +10949,14 @@ function TodayScreen({
   prayerFocusEntries: PrayerEntry[];
   prayerStats: { active: number; answered: number; focus: number; missionaries: number };
   journalStats: { total: number; today: number; devotional: number; plans: number };
+  proverbOfTheDay: string;
+  dailyProgress: { bibleRead: boolean; prayerCompleted: boolean; journalCompleted: boolean; memoryReviewed: boolean };
+  studyPlaylist: BibleAudioPlaylist | null;
   onContinue: () => void;
   onJohn316: () => void;
+  onOpenProverb: () => void;
   onListen: () => void;
+  onMarkBibleRead: () => void;
   onOpenChapterAnalysis: () => void;
   onOpenLibrary: () => void;
   onListenLibrary: () => void;
@@ -10932,21 +10964,100 @@ function TodayScreen({
   onOpenPrayer: () => void;
   onOpenJournal: () => void;
   onCreateJournal: () => void;
+  onOpenStudyPlaylist: () => void;
 }) {
   const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
   const memoryProgress = memoryItem?.progress ?? 0;
   const repeatedWords = chapterAnalysis.repeatedWords.slice(0, 6);
+  const prayerFocus = prayerFocusEntries[0] ?? null;
+  const playlistCompleted = studyPlaylist?.completedItemIds?.length ?? 0;
+  const playlistTotal = studyPlaylist?.items.length ?? 0;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Today</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
-          Walk with the Lord today
-        </h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-          Start simple: read, listen, study one chapter, memorize one verse, pray, and write down what the Lord is teaching you.
-        </p>
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Today</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
+              Daily Growth Dashboard
+            </h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
+              One clean flow for Bible reading, prayer, journaling, memory, reading plans, and library study.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
+            <DailyAction label="Read" icon={<BookOpen size={15} />} onClick={onContinue} primary />
+            <DailyAction label="Listen" icon={<Headphones size={15} />} onClick={onListen} />
+            <DailyAction label="Journal" icon={<NotebookPen size={15} />} onClick={onCreateJournal} />
+            <DailyAction label="Pray" icon={<MessageSquareText size={15} />} onClick={onOpenPrayer} />
+            <DailyAction label="Memorize" icon={<Brain size={15} />} onClick={() => onRepeatMemory(selectedVerse.ref, Math.min(100, memoryProgress + 25))} />
+            <DailyAction label="Continue" icon={<Library size={15} />} onClick={onOpenLibrary} />
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <DailyFlowTile
+          label="Today's Bible Reading"
+          title={`${book} ${chapter}`}
+          detail={`${chapterAnalysis.stats.verses} verses · ${chapterAnalysis.stats.words} words`}
+          actionLabel={dailyProgress.bibleRead ? "Read" : "Mark read"}
+          complete={dailyProgress.bibleRead}
+          onClick={dailyProgress.bibleRead ? onContinue : onMarkBibleRead}
+        />
+        <DailyFlowTile
+          label="Proverb of the Day"
+          title={proverbOfTheDay.split(" - ")[0] || "Proverbs"}
+          detail={proverbOfTheDay.includes(" - ") ? proverbOfTheDay.split(" - ").slice(1).join(" - ") : "Read the Proverb that matches today."}
+          actionLabel="Read"
+          onClick={onOpenProverb}
+        />
+        <DailyFlowTile
+          label="Prayer Focus"
+          title={prayerFocus?.name ?? "Prayer"}
+          detail={prayerFocus?.request ?? "Add a prayer request to build today's focus."}
+          actionLabel={dailyProgress.prayerCompleted ? "Prayed" : "Pray"}
+          complete={dailyProgress.prayerCompleted}
+          onClick={onOpenPrayer}
+        />
+        <DailyFlowTile
+          label="Journal Entry"
+          title={dailyProgress.journalCompleted ? "Saved today" : selectedVerse.ref}
+          detail="Write Scripture, prayer, application, and obedience."
+          actionLabel={dailyProgress.journalCompleted ? "Open" : "Journal"}
+          complete={dailyProgress.journalCompleted}
+          onClick={dailyProgress.journalCompleted ? onOpenJournal : onCreateJournal}
+        />
+        <DailyFlowTile
+          label="Memory Verse"
+          title={selectedVerse.ref}
+          detail={`${formatPercent(memoryProgress)} reviewed · ${dailyProgress.memoryReviewed ? "today" : "ready"}`}
+          actionLabel={dailyProgress.memoryReviewed ? "Reviewed" : "Review"}
+          complete={dailyProgress.memoryReviewed}
+          onClick={() => onRepeatMemory(selectedVerse.ref, Math.min(100, memoryProgress + 25))}
+        />
+        <DailyFlowTile
+          label="Library Reading"
+          title={currentLibraryProgress?.title ?? "Library"}
+          detail={currentLibraryProgress ? `${formatPercent(currentLibraryProgress.progress)} complete` : "Start a trusted resource."}
+          actionLabel="Continue"
+          onClick={onOpenLibrary}
+        />
+        <DailyFlowTile
+          label="Study Playlist"
+          title={studyPlaylist?.name ?? "Build a playlist"}
+          detail={studyPlaylist ? `${playlistCompleted}/${playlistTotal} items complete` : "Mix Bible, commentary, books, and notes."}
+          actionLabel="Open"
+          onClick={onOpenStudyPlaylist}
+        />
+      </section>
+
+      <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <DailyProgressCard label="Bible reading completed today" complete={dailyProgress.bibleRead} />
+        <DailyProgressCard label="Prayer completed today" complete={dailyProgress.prayerCompleted} />
+        <DailyProgressCard label="Journal completed today" complete={dailyProgress.journalCompleted} />
+        <DailyProgressCard label="Memory reviewed today" complete={dailyProgress.memoryReviewed} />
       </section>
 
       <section className="grid gap-3 lg:grid-cols-2">
@@ -11138,6 +11249,87 @@ function TodayScreen({
         <Stat label="Bookmarks" value={bookmarkCount} />
       </section>
     </div>
+  );
+}
+
+function DailyAction({
+  label,
+  icon,
+  primary,
+  onClick,
+}: {
+  label: string;
+  icon: React.ReactNode;
+  primary?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-3 text-xs font-semibold sm:px-4 ${
+        primary
+          ? "bg-[var(--green)] text-white shadow-sm"
+          : "border border-[var(--line)] bg-[var(--paper)] text-[var(--ink)]"
+      }`}
+      onClick={onClick}
+      type="button"
+    >
+      {icon}
+      {label}
+    </button>
+  );
+}
+
+function DailyFlowTile({
+  label,
+  title,
+  detail,
+  actionLabel,
+  complete,
+  onClick,
+}: {
+  label: string;
+  title: string;
+  detail: string;
+  actionLabel: string;
+  complete?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <article className="flex min-h-44 flex-col justify-between rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+      <div>
+        <div className="flex items-start justify-between gap-2">
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</p>
+          {complete && <CheckCircle2 className="shrink-0 text-[var(--green)]" size={17} />}
+        </div>
+        <h2 className="mt-3 line-clamp-2 text-lg font-semibold leading-6 text-[var(--ink)]">{title}</h2>
+        <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--muted)]">{detail}</p>
+      </div>
+      <button
+        className={`mt-4 inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-semibold ${
+          complete ? "bg-[var(--highlight)] text-[var(--ink)]" : "bg-[var(--green)] text-white"
+        }`}
+        onClick={onClick}
+        type="button"
+      >
+        {actionLabel}
+      </button>
+    </article>
+  );
+}
+
+function DailyProgressCard({ label, complete }: { label: string; complete: boolean }) {
+  return (
+    <article className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+      <div className="flex items-center gap-3">
+        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ${complete ? "bg-[var(--green)] text-white" : "bg-[var(--paper)] text-[var(--muted)]"}`}>
+          <CheckCircle2 size={18} />
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-[var(--ink)]">{label}</p>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{complete ? "Complete" : "Ready"}</p>
+        </div>
+      </div>
+    </article>
   );
 }
 
