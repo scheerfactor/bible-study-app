@@ -20,7 +20,9 @@ A first working prototype for a mobile-first KJV Bible study app.
 - Local Library Reader controls for progress, completed books, reading settings, and listening position
 - Search results highlight matched words/phrases
 - Signed-out notes, highlights, and bookmarks persist in local storage
-- Signed-in notes, highlights, and bookmarks sync to Supabase when env vars and schema are configured
+- Signed-in notes, highlights, bookmarks, study playlists, mastery tracking, memory verses, and reading/listening progress sync to Supabase when env vars and schema are configured
+- Strong's import foundation with reviewed sample lookup, validation, and import scripts
+- Beta feedback form with passage/resource, category, message, and optional email fields
 - Supabase schema includes future-ready tables for resources, dictionary entries, cross references, and content rights tracking
 
 ## Run Locally
@@ -85,6 +87,14 @@ user_bookmarks
 user_library_progress
 user_completed_resources
 user_listening_progress
+user_bible_listening_progress
+user_bible_mastery
+user_scripture_memory
+user_study_playlists
+user_study_playlist_items
+beta_feedback
+strongs_sources
+strongs_entries
 ```
 
 The schema is written to be rerunnable: it creates tables/indexes if missing, drops and recreates policies, grants Data API access, and upserts the sample source/cross-reference records.
@@ -113,7 +123,15 @@ where schemaname = 'public'
     'user_bookmarks',
     'user_library_progress',
     'user_completed_resources',
-    'user_listening_progress'
+    'user_listening_progress',
+    'user_bible_listening_progress',
+    'user_bible_mastery',
+    'user_scripture_memory',
+    'user_study_playlists',
+    'user_study_playlist_items',
+    'beta_feedback',
+    'strongs_sources',
+    'strongs_entries'
   )
 order by tablename;
 ```
@@ -133,11 +151,11 @@ where schemaname = 'public'
 order by tablename, policyname;
 ```
 
-You should see public read policies for Bible/reference tables and user-owned policies for notes, highlights, and bookmarks.
+You should see public read policies for Bible/reference/verified Strong's tables, an insert-only feedback policy, and user-owned policies for notes, highlights, bookmarks, playlists, mastery, memory, and progress.
 
 Also run Supabase Database Advisors in the dashboard when possible. Supabase docs recommend RLS on exposed `public` tables and explicit policies for browser access.
 
-### Test signed-in notes, highlights, and bookmarks
+### Test signed-in study sync
 
 1. Start the app:
 
@@ -148,17 +166,24 @@ npm run dev
 2. Open the local URL shown in the terminal.
 3. Go to Settings.
 4. Enter your email and use the magic link to sign in.
-5. Confirm the app shows `Signed in — syncing to Supabase`.
+5. Confirm the app shows `Signed in — synced to Supabase`.
 6. Go to John 3:16.
 7. Add a highlight, bookmark, and note.
-8. Refresh the page.
-9. Confirm the data remains visible.
+8. Add John 3 to a study playlist, mark the chapter read, add John 3:16 to memory, and open a library resource long enough to create progress.
+9. Refresh the page.
+10. Confirm the data remains visible.
 10. In Supabase Table Editor, check:
 
 ```text
 user_notes
 user_highlights
 user_bookmarks
+user_study_playlists
+user_study_playlist_items
+user_bible_mastery
+user_scripture_memory
+user_library_progress
+user_listening_progress
 ```
 
 Each new row should have your authenticated `user_id`.
@@ -176,24 +201,22 @@ To verify local fallback:
 
 The prototype includes a `resource_sources` table so every Bible text, dictionary, commentary, or future book can carry source and rights notes before import.
 
-Library reader data is local-storage first for beta testing. The schema now reserves Supabase sync tables for later:
+Library reader data and Bible study workflow data now use local storage first, then sync to Supabase when the user is signed in:
 
 - `user_library_progress`
 - `user_completed_resources`
 - `user_listening_progress`
+- `user_bible_listening_progress`
+- `user_bible_mastery`
+- `user_scripture_memory`
+- `user_study_playlists`
+- `user_study_playlist_items`
 
-Bible audio playlists are also local-storage first. Current local keys:
+Signed-out fallback keys:
 
 - `fathers-business-bible-listening-progress`
 - `fathers-business-bible-audio-playlists`
 - `fathers-business-scripture-memory`
-
-Study Playlist Builder Phase 1 also saves locally under `fathers-business-bible-audio-playlists`. Future signed-in sync should add two Supabase tables after the local workflow settles:
-
-- `user_study_playlists`: `id`, `user_id`, `name`, `created_at`, `updated_at`, `repeat_playlist`, `repeat_item`, `last_item_index`
-- `user_study_playlist_items`: `id`, `playlist_id`, `position`, `item_type`, `label`, `book`, `chapter`, `chapter_end`, `verse_start`, `verse_end`, `resource_slug`, `resource_title`
-
-Keep the future RLS pattern the same as notes/highlights/bookmarks: users can only read, create, update, and delete their own playlist rows.
 
 The app currently uses:
 
@@ -205,6 +228,17 @@ The app currently uses:
 A full Webster's 1828 import should be done from a documented public-domain source with source and commercial-use notes recorded in `resource_sources`.
 
 A full Treasury of Scripture Knowledge import should use the existing `cross_references` table and a documented source record in `resource_sources`.
+
+## Strong's Foundation
+
+Strong's is staged as a reviewed import pipeline, not a full public import yet:
+
+```bash
+npm run validate:strongs
+npm run import:strongs -- --dry-run
+```
+
+The sample lives in `data/strongs/sample-verified-strongs.json`. Rights and source rules live in `STRONGS_FULL_IMPORT_PLAN.md` and `data/strongs/source-manifest.json`.
 
 ## Import-ready sample formats
 

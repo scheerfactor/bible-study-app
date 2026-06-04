@@ -1,0 +1,43 @@
+{
+  "title": "Strong's Exhaustive Concordance Foundation",
+  "purpose": "Prepare a reviewed import path for Greek and Hebrew Strong's lookup data without publishing unclear digital datasets.",
+  "status": "sample_verified_only",
+  "rights_policy": "The original Strong's Exhaustive Concordance is public domain in the United States, but each modern digital transcription, mapping file, lexicon enhancement, or morphology dataset must be separately reviewed before public import.",
+  "approved_sample_source": {
+    "title": "Manual verified Strong's sample entries",
+    "author": "Father's Business Bible Study review",
+    "year": 2026,
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed sample metadata. Do not treat as a full lexical dataset.",
+    "commercial_use_notes": "Safe for prototype testing because entries are short manually reviewed summaries. Replace or expand only from documented rights-safe sources.",
+    "attribution_notes": "Derived for internal prototype lookup from public-domain Strong's numbering tradition with KJV-centered plain-English summaries.",
+    "review_status": "Verified"
+  },
+  "candidate_sources_needing_review": [
+    {
+      "title": "Original Strong's Exhaustive Concordance scan",
+      "author": "James Strong",
+      "year": 1890,
+      "review_status": "Needs Review",
+      "notes": "Use to verify original public-domain definitions and numbering. OCR quality must be reviewed before import."
+    },
+    {
+      "title": "Open digital Strong's datasets",
+      "review_status": "Needs Review",
+      "notes": "License terms, attribution requirements, data quality, and derivative work status must be documented before import."
+    }
+  ],
+  "required_fields": [
+    "strongs_number",
+    "language",
+    "original_word",
+    "transliteration",
+    "english_words",
+    "plain_definition",
+    "first_occurrence",
+    "key_verses",
+    "source_url",
+    "rights_status",
+    "review_status"
+  ]
+}

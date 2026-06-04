@@ -40,7 +40,7 @@ import {
   X,
   MapPin,
 } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -250,6 +250,24 @@ type StrongMvpEntry = {
   firstOccurrence: string;
   keyVerses: string[];
   note: string;
+};
+
+type StrongSearchResult = {
+  strongs_number: string;
+  language: "Greek" | "Hebrew" | "Aramaic";
+  original_word: string;
+  transliteration?: string;
+  pronunciation?: string;
+  english_words: string[];
+  root?: string;
+  related_numbers: string[];
+  plain_definition: string;
+  first_occurrence?: string;
+  key_verses: string[];
+  source_title?: string;
+  source_url?: string;
+  rights_status?: string;
+  review_status?: string;
 };
 
 type BibleBookMasteryRecord = {
@@ -6304,6 +6322,66 @@ function saveScriptureMemory(items: ScriptureMemoryItem[]) {
   window.localStorage.setItem(SCRIPTURE_MEMORY_KEY, JSON.stringify(items));
 }
 
+function newestTimestamp(...values: Array<string | null | undefined>) {
+  return values
+    .filter((value): value is string => Boolean(value))
+    .sort((a, b) => b.localeCompare(a))[0] ?? new Date().toISOString();
+}
+
+function isUuid(value: string) {
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value);
+}
+
+function mergeByTimestamp<T extends Record<string, unknown>>(
+  localItems: T[],
+  remoteItems: T[],
+  keyForItem: (item: T) => string,
+  timestampForItem: (item: T) => string | undefined,
+) {
+  const items = new Map<string, T>();
+  for (const item of localItems) items.set(keyForItem(item), item);
+  for (const item of remoteItems) {
+    const key = keyForItem(item);
+    const current = items.get(key);
+    if (!current || (timestampForItem(item) ?? "") >= (timestampForItem(current) ?? "")) {
+      items.set(key, item);
+    }
+  }
+  return Array.from(items.values());
+}
+
+function mergeObjectStateByTimestamp<T extends Record<string, unknown>>(
+  localState: Record<string, T>,
+  remoteState: Record<string, T>,
+  timestampForItem: (item: T) => string | undefined,
+) {
+  const next = { ...localState };
+  for (const [key, remoteItem] of Object.entries(remoteState)) {
+    const localItem = next[key];
+    if (!localItem || (timestampForItem(remoteItem) ?? "") >= (timestampForItem(localItem) ?? "")) {
+      next[key] = remoteItem;
+    }
+  }
+  return next;
+}
+
+function normalizeBiblePlaylist(playlist: BibleAudioPlaylist): BibleAudioPlaylist {
+  return {
+    ...playlist,
+    items: Array.isArray(playlist.items) ? playlist.items : [],
+    completedItemIds: Array.isArray(playlist.completedItemIds) ? playlist.completedItemIds : [],
+    completedAt: playlist.completedAt ?? null,
+    lastItemIndex: Math.max(0, Number(playlist.lastItemIndex ?? 0)),
+  };
+}
+
+function mergeBiblePlaylists(localPlaylists: BibleAudioPlaylist[], remotePlaylists: BibleAudioPlaylist[]) {
+  const next = new Map<string, BibleAudioPlaylist>();
+  for (const playlist of localPlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
+  for (const playlist of remotePlaylists.map(normalizeBiblePlaylist)) next.set(playlist.id, playlist);
+  return Array.from(next.values());
+}
+
 function chunkSpeechText(text: string) {
   const paragraphs = text
     .replace(/\s+/g, " ")
@@ -6567,6 +6645,9 @@ export default function Home() {
   const [dictionarySearchTerm, setDictionarySearchTerm] = useState("");
   const [dictionarySearchResults, setDictionarySearchResults] = useState<DictionarySearchResult[]>([]);
   const [dictionarySearchStatus, setDictionarySearchStatus] = useState("");
+  const [strongSearchTerm, setStrongSearchTerm] = useState("");
+  const [strongSearchResults, setStrongSearchResults] = useState<StrongSearchResult[]>([]);
+  const [strongSearchStatus, setStrongSearchStatus] = useState("");
   const [flashRef, setFlashRef] = useState<string | null>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authMessage, setAuthMessage] = useState("");
@@ -6583,6 +6664,8 @@ export default function Home() {
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
+  const [localStudyDataLoaded, setLocalStudyDataLoaded] = useState(false);
+  const [accountDataLoaded, setAccountDataLoaded] = useState(false);
   const [libraryListeningQueue, setLibraryListeningQueue] = useState<string[]>([]);
   const [libraryAnnotations, setLibraryAnnotations] = useState<LibraryAnnotationState>({});
   const [libraryNoteDraft, setLibraryNoteDraft] = useState("");
@@ -6633,6 +6716,8 @@ export default function Home() {
   const sleepTimerRef = useRef<number | null>(null);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const accountSyncHydratingRef = useRef(false);
 
   const books = useMemo(
     () => bookOrder.filter((candidate) => allVerses.some((verse) => verse.book === candidate)),
@@ -6944,7 +7029,9 @@ export default function Home() {
   }, [allVerses, bibleBookMastery, book, saved.notes, scriptureMemory]);
 
   const accountStatus = user
-    ? "Signed in — syncing to Supabase"
+    ? syncMessage === SYNC_ERROR_MESSAGE
+      ? "Sync error — saved on this device"
+      : "Signed in — synced to Supabase"
     : "Signed out — saving locally";
 
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
@@ -6978,6 +7065,7 @@ export default function Home() {
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
+      setLocalStudyDataLoaded(true);
     });
   }, []);
 
@@ -7063,6 +7151,36 @@ export default function Home() {
   }, [dictionarySearchTerm]);
 
   useEffect(() => {
+    const query = strongSearchTerm.trim();
+    if (query.length < 2) {
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setStrongSearchStatus("Searching Strong's sample index...");
+      fetch(`/api/strongs?query=${encodeURIComponent(query)}&limit=20`, {
+        signal: controller.signal,
+      })
+        .then((response) => response.json())
+        .then((data: { entries?: StrongSearchResult[] }) => {
+          setStrongSearchResults(data.entries ?? []);
+          setStrongSearchStatus((data.entries ?? []).length ? "" : "No Strong's entries found in the verified sample yet.");
+        })
+        .catch((error: Error) => {
+          if (error.name === "AbortError") return;
+          setStrongSearchResults([]);
+          setStrongSearchStatus("Strong's search is not available yet.");
+        });
+    }, 250);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [strongSearchTerm]);
+
+  useEffect(() => {
     if (!savedLoaded || user) return;
     saveLocalState(saved);
   }, [saved, savedLoaded, user]);
@@ -7071,10 +7189,12 @@ export default function Home() {
     if (!supabase) return;
 
     supabase.auth.getUser().then(({ data }) => {
+      setAccountDataLoaded(false);
       setUser(data.user);
     });
 
     const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAccountDataLoaded(false);
       setUser(session?.user ?? null);
     });
 
@@ -7084,30 +7204,470 @@ export default function Home() {
   }, [supabase]);
 
   useEffect(() => {
-    if (!supabase || !user) return;
+    if (!supabase || !user || !localStudyDataLoaded || !savedLoaded) return;
+
+    let cancelled = false;
+    accountSyncHydratingRef.current = true;
 
     Promise.all([
       supabase.from("user_notes").select("id, verse_ref, body, created_at").order("created_at", { ascending: false }),
       supabase.from("user_highlights").select("id, verse_ref, color, created_at"),
       supabase.from("user_bookmarks").select("id, verse_ref, created_at"),
-    ]).then(([notesResult, highlightsResult, bookmarksResult]) => {
-      if (notesResult.error || highlightsResult.error || bookmarksResult.error) return;
-      setSaved({
-        notes: notesResult.data ?? [],
-        highlights: highlightsResult.data ?? [],
-        bookmarks: bookmarksResult.data ?? [],
-      });
-      setSyncMessage("Synced with your account.");
+      supabase.from("user_library_progress").select("resource_slug, title, author, progress, font_size, line_spacing, reading_width, theme, bookmarks, started_at, updated_at"),
+      supabase.from("user_completed_resources").select("resource_slug, title, author, completed_at"),
+      supabase.from("user_listening_progress").select("resource_slug, title, author, progress, rate, updated_at"),
+      supabase.from("user_bible_listening_progress").select("target_id, label, book, chapter, verse_ref, progress, updated_at").order("updated_at", { ascending: false }).limit(1).maybeSingle(),
+      supabase.from("user_bible_mastery").select("book, read_chapters, listened_chapters, updated_at"),
+      supabase.from("user_scripture_memory").select("id, verse_ref, verse_text, progress, repetitions, last_reviewed_at, created_at, updated_at"),
+      supabase.from("user_study_playlists").select("id, name, completed_item_ids, completed_at, last_item_index, created_at, updated_at"),
+      supabase.from("user_study_playlist_items").select("id, playlist_id, item_type, label, book, chapter, chapter_end, verse_start, verse_end, resource_title, resource_slug, position").order("position", { ascending: true }),
+    ]).then(([
+      notesResult,
+      highlightsResult,
+      bookmarksResult,
+      libraryProgressResult,
+      completedResult,
+      listeningResult,
+      bibleListeningResult,
+      masteryResult,
+      memoryResult,
+      playlistResult,
+      playlistItemsResult,
+    ]) => {
+      if (cancelled) return;
+      const error = [
+        notesResult.error,
+        highlightsResult.error,
+        bookmarksResult.error,
+        libraryProgressResult.error,
+        completedResult.error,
+        listeningResult.error,
+        bibleListeningResult.error,
+        masteryResult.error,
+        memoryResult.error,
+        playlistResult.error,
+        playlistItemsResult.error,
+      ].find(Boolean);
+
+      if (error) {
+        setSyncMessage(SYNC_ERROR_MESSAGE);
+        setAccountDataLoaded(true);
+        accountSyncHydratingRef.current = false;
+        return;
+      }
+
+      const localSaved = loadLocalState();
+      const mergedSaved: SavedState = {
+        notes: mergeByTimestamp(localSaved.notes, notesResult.data ?? [], (note) => note.id, (note) => note.created_at)
+          .sort((a, b) => b.created_at.localeCompare(a.created_at)),
+        highlights: mergeByTimestamp(localSaved.highlights, highlightsResult.data ?? [], (highlight) => highlight.verse_ref, (highlight) => highlight.created_at),
+        bookmarks: mergeByTimestamp(localSaved.bookmarks, bookmarksResult.data ?? [], (bookmark) => bookmark.verse_ref, (bookmark) => bookmark.created_at),
+      };
+      setSaved(mergedSaved);
+      saveLocalState(mergedSaved);
+
+      const remoteLibraryProgress = Object.fromEntries((libraryProgressResult.data ?? []).map((row) => [
+        row.resource_slug,
+        normalizeLibraryProgress({
+          slug: row.resource_slug,
+          title: row.title,
+          author: row.author,
+          progress: Number(row.progress ?? 0),
+          fontSize: Number(row.font_size ?? 18),
+          lineSpacing: Number(row.line_spacing ?? 1.65),
+          readingWidth: (row.reading_width as LibraryReadingWidth) ?? "comfortable",
+          theme: (row.theme as LibraryReaderTheme) ?? "sepia",
+          bookmarks: Array.isArray(row.bookmarks) ? row.bookmarks.map(Number) : [],
+          startedAt: row.started_at,
+          updatedAt: row.updated_at,
+        }),
+      ]));
+      const mergedLibraryProgress = mergeObjectStateByTimestamp(loadLibraryProgress(), remoteLibraryProgress, (progress) => progress.updatedAt);
+      setLibraryProgress(mergedLibraryProgress);
+      saveLibraryProgress(mergedLibraryProgress);
+
+      const remoteCompleted = Object.fromEntries((completedResult.data ?? []).map((row) => [
+        row.resource_slug,
+        {
+          slug: row.resource_slug,
+          title: row.title,
+          author: row.author,
+          completedAt: row.completed_at,
+        },
+      ]));
+      const mergedCompleted = mergeObjectStateByTimestamp(loadCompletedResources(), remoteCompleted, (completed) => completed.completedAt);
+      setCompletedResources(mergedCompleted);
+      saveCompletedResources(mergedCompleted);
+
+      const remoteListening = Object.fromEntries((listeningResult.data ?? []).map((row) => [
+        row.resource_slug,
+        {
+          slug: row.resource_slug,
+          title: row.title,
+          author: row.author,
+          progress: Number(row.progress ?? 0),
+          rate: Number(row.rate ?? 1),
+          updatedAt: row.updated_at,
+        },
+      ]));
+      const mergedListening = mergeObjectStateByTimestamp(loadListeningProgress(), remoteListening, (progress) => progress.updatedAt);
+      setListeningProgress(mergedListening);
+      saveListeningProgress(mergedListening);
+
+      const remoteBibleListening = bibleListeningResult.data
+        ? {
+            targetId: bibleListeningResult.data.target_id,
+            label: bibleListeningResult.data.label,
+            book: bibleListeningResult.data.book,
+            chapter: Number(bibleListeningResult.data.chapter),
+            verseRef: bibleListeningResult.data.verse_ref,
+            progress: Number(bibleListeningResult.data.progress ?? 0),
+            updatedAt: bibleListeningResult.data.updated_at,
+          }
+        : null;
+      const localBibleListening = loadBibleListeningProgress();
+      const mergedBibleListening =
+        remoteBibleListening && (!localBibleListening || remoteBibleListening.updatedAt >= localBibleListening.updatedAt)
+          ? remoteBibleListening
+          : localBibleListening;
+      setBibleListeningProgress(mergedBibleListening);
+      saveBibleListeningProgress(mergedBibleListening);
+
+      const remoteMastery = Object.fromEntries((masteryResult.data ?? []).map((row) => [
+        row.book,
+        normalizeBibleBookMasteryRecord({
+          readChapters: row.read_chapters ?? [],
+          listenedChapters: row.listened_chapters ?? [],
+          updatedAt: row.updated_at,
+        }),
+      ]));
+      const mergedMastery = mergeObjectStateByTimestamp(loadBibleBookMastery(), remoteMastery, (record) => record.updatedAt);
+      setBibleBookMastery(mergedMastery);
+      saveBibleBookMastery(mergedMastery);
+
+      const remoteMemory = (memoryResult.data ?? []).map((row) => ({
+        id: row.id,
+        verse_ref: row.verse_ref,
+        verse_text: row.verse_text,
+        progress: Number(row.progress ?? 0),
+        repetitions: Number(row.repetitions ?? 0),
+        last_reviewed_at: row.last_reviewed_at,
+        created_at: row.created_at,
+      }));
+      const mergedMemory = mergeByTimestamp(loadScriptureMemory(), remoteMemory, (item) => item.verse_ref, (item) => item.last_reviewed_at ?? item.created_at)
+        .sort((a, b) => newestTimestamp(b.last_reviewed_at, b.created_at).localeCompare(newestTimestamp(a.last_reviewed_at, a.created_at)))
+        .slice(0, 80);
+      setScriptureMemory(mergedMemory);
+      saveScriptureMemory(mergedMemory);
+
+      const itemsByPlaylist = new Map<string, BiblePlaylistItem[]>();
+      for (const row of playlistItemsResult.data ?? []) {
+        const item: BiblePlaylistItem = {
+          id: row.id,
+          type: row.item_type as BiblePlaylistItemType,
+          label: row.label,
+          book: row.book ?? undefined,
+          chapter: row.chapter ?? undefined,
+          chapterEnd: row.chapter_end ?? undefined,
+          verseStart: row.verse_start ?? undefined,
+          verseEnd: row.verse_end ?? undefined,
+          resourceTitle: row.resource_title ?? undefined,
+          resourceSlug: row.resource_slug ?? undefined,
+        };
+        itemsByPlaylist.set(row.playlist_id, [...(itemsByPlaylist.get(row.playlist_id) ?? []), item]);
+      }
+      const remotePlaylists = (playlistResult.data ?? []).map((row) => ({
+        id: row.id,
+        name: row.name,
+        createdAt: row.created_at,
+        items: itemsByPlaylist.get(row.id) ?? [],
+        completedItemIds: row.completed_item_ids ?? [],
+        completedAt: row.completed_at,
+        lastItemIndex: Number(row.last_item_index ?? 0),
+      }));
+      const mergedPlaylists = mergeBiblePlaylists(loadBiblePlaylists(), remotePlaylists);
+      setBiblePlaylists(mergedPlaylists);
+      saveBiblePlaylists(mergedPlaylists);
+      setActiveStudyPlaylistId((current) => current ?? mergedPlaylists[0]?.id ?? null);
+
+      setSyncMessage("Signed in and synced.");
+      setAccountDataLoaded(true);
+      accountSyncHydratingRef.current = false;
     });
-  }, [supabase, user]);
+
+    return () => {
+      cancelled = true;
+      accountSyncHydratingRef.current = false;
+    };
+  }, [localStudyDataLoaded, savedLoaded, supabase, user]);
 
   useEffect(() => {
     if (user) return;
     queueMicrotask(() => {
       setSaved(loadLocalState());
       setSyncMessage(LOCAL_SYNC_MESSAGE);
+      setAccountDataLoaded(true);
     });
   }, [user]);
+
+  const syncUserStudyData = useCallback(async () => {
+    if (!supabase || !user || accountSyncHydratingRef.current) return;
+
+    const userId = user.id;
+    const errors: string[] = [];
+    const collectError = (label: string, error: { message?: string } | null | undefined) => {
+      if (error) errors.push(`${label}: ${error.message ?? "unknown error"}`);
+    };
+
+    const localOnlyNotes = saved.notes.filter((note) => !isUuid(note.id));
+    if (localOnlyNotes.length) {
+      const { data, error } = await supabase
+        .from("user_notes")
+        .insert(localOnlyNotes.map((note) => ({
+          user_id: userId,
+          verse_ref: note.verse_ref,
+          body: note.body,
+          created_at: note.created_at,
+          updated_at: note.created_at,
+        })))
+        .select("id, verse_ref, body, created_at");
+      collectError("notes", error);
+      if (!error && data?.length) {
+        const localNoteIds = new Set(localOnlyNotes.map((note) => note.id));
+        setSaved((state) => {
+          const nextState = {
+            ...state,
+            notes: [...data, ...state.notes.filter((note) => !localNoteIds.has(note.id))]
+              .sort((a, b) => b.created_at.localeCompare(a.created_at)),
+          };
+          saveLocalState(nextState);
+          return nextState;
+        });
+      }
+    }
+
+    if (saved.highlights.length) {
+      const { error } = await supabase
+        .from("user_highlights")
+        .upsert(saved.highlights.map((highlight) => ({
+          user_id: userId,
+          verse_ref: highlight.verse_ref,
+          color: highlight.color,
+          created_at: highlight.created_at,
+        })), { onConflict: "user_id,verse_ref" });
+      collectError("highlights", error);
+    }
+
+    if (saved.bookmarks.length) {
+      const { error } = await supabase
+        .from("user_bookmarks")
+        .upsert(saved.bookmarks.map((bookmark) => ({
+          user_id: userId,
+          verse_ref: bookmark.verse_ref,
+          created_at: bookmark.created_at,
+        })), { onConflict: "user_id,verse_ref" });
+      collectError("bookmarks", error);
+    }
+
+    const libraryProgressRows = Object.values(libraryProgress).map((progress) => ({
+      user_id: userId,
+      resource_slug: progress.slug,
+      title: progress.title,
+      author: progress.author,
+      progress: progress.progress,
+      font_size: progress.fontSize,
+      line_spacing: progress.lineSpacing,
+      reading_width: progress.readingWidth,
+      theme: progress.theme,
+      bookmarks: progress.bookmarks,
+      started_at: progress.startedAt,
+      updated_at: progress.updatedAt,
+    }));
+    if (libraryProgressRows.length) {
+      const { error } = await supabase
+        .from("user_library_progress")
+        .upsert(libraryProgressRows, { onConflict: "user_id,resource_slug" });
+      collectError("library progress", error);
+    }
+
+    const completedRows = Object.values(completedResources).map((resource) => ({
+      user_id: userId,
+      resource_slug: resource.slug,
+      title: resource.title,
+      author: resource.author,
+      completed_at: resource.completedAt,
+    }));
+    if (completedRows.length) {
+      const { error } = await supabase
+        .from("user_completed_resources")
+        .upsert(completedRows, { onConflict: "user_id,resource_slug" });
+      collectError("completed resources", error);
+    }
+
+    const listeningRows = Object.values(listeningProgress).map((progress) => ({
+      user_id: userId,
+      resource_slug: progress.slug,
+      title: progress.title,
+      author: progress.author,
+      progress: progress.progress,
+      rate: progress.rate,
+      updated_at: progress.updatedAt,
+    }));
+    if (listeningRows.length) {
+      const { error } = await supabase
+        .from("user_listening_progress")
+        .upsert(listeningRows, { onConflict: "user_id,resource_slug" });
+      collectError("listening progress", error);
+    }
+
+    if (bibleListeningProgress) {
+      const { error } = await supabase
+        .from("user_bible_listening_progress")
+        .upsert({
+          user_id: userId,
+          target_id: bibleListeningProgress.targetId,
+          label: bibleListeningProgress.label,
+          book: bibleListeningProgress.book,
+          chapter: bibleListeningProgress.chapter,
+          verse_ref: bibleListeningProgress.verseRef,
+          progress: bibleListeningProgress.progress,
+          updated_at: bibleListeningProgress.updatedAt,
+        }, { onConflict: "user_id,target_id" });
+      collectError("Bible listening progress", error);
+    }
+
+    const masteryRows = Object.entries(bibleBookMastery).map(([bookName, record]) => ({
+      user_id: userId,
+      book: bookName,
+      read_chapters: record.readChapters,
+      listened_chapters: record.listenedChapters,
+      updated_at: record.updatedAt,
+    }));
+    if (masteryRows.length) {
+      const { error } = await supabase
+        .from("user_bible_mastery")
+        .upsert(masteryRows, { onConflict: "user_id,book" });
+      collectError("Bible mastery", error);
+    }
+
+    if (scriptureMemory.length) {
+      const { error } = await supabase
+        .from("user_scripture_memory")
+        .upsert(scriptureMemory.map((item) => ({
+          user_id: userId,
+          id: item.id,
+          verse_ref: item.verse_ref,
+          verse_text: item.verse_text,
+          progress: item.progress,
+          repetitions: item.repetitions,
+          last_reviewed_at: item.last_reviewed_at,
+          created_at: item.created_at,
+          updated_at: item.last_reviewed_at ?? item.created_at,
+        })), { onConflict: "user_id,verse_ref" });
+      collectError("scripture memory", error);
+    }
+
+    if (biblePlaylists.length) {
+      const playlistRows = biblePlaylists.map((playlist) => ({
+        user_id: userId,
+        id: playlist.id,
+        name: playlist.name,
+        completed_item_ids: playlist.completedItemIds ?? [],
+        completed_at: playlist.completedAt ?? null,
+        last_item_index: playlist.lastItemIndex ?? 0,
+        repeat_playlist: repeatStudyPlaylist,
+        repeat_item: repeatStudyPlaylistItem,
+        created_at: playlist.createdAt,
+        updated_at: newestTimestamp(playlist.completedAt, playlist.createdAt),
+      }));
+      const { error: playlistError } = await supabase
+        .from("user_study_playlists")
+        .upsert(playlistRows, { onConflict: "user_id,id" });
+      collectError("study playlists", playlistError);
+
+      const playlistItems = biblePlaylists.flatMap((playlist) =>
+        playlist.items.map((item, index) => ({
+          user_id: userId,
+          id: item.id,
+          playlist_id: playlist.id,
+          item_type: item.type,
+          label: item.label,
+          book: item.book ?? null,
+          chapter: item.chapter ?? null,
+          chapter_end: item.chapterEnd ?? null,
+          verse_start: item.verseStart ?? null,
+          verse_end: item.verseEnd ?? null,
+          resource_title: item.resourceTitle ?? null,
+          resource_slug: item.resourceSlug ?? null,
+          position: index,
+        })),
+      );
+
+      const { error: deleteItemsError } = await supabase
+        .from("user_study_playlist_items")
+        .delete()
+        .eq("user_id", userId);
+      collectError("playlist item cleanup", deleteItemsError);
+
+      if (playlistItems.length) {
+        const { error: itemError } = await supabase
+          .from("user_study_playlist_items")
+          .insert(playlistItems);
+        collectError("playlist items", itemError);
+      }
+    }
+
+    if (errors.length) {
+      setSyncMessage(SYNC_ERROR_MESSAGE);
+      return;
+    }
+
+    setSyncMessage("Signed in and synced.");
+  }, [
+    bibleBookMastery,
+    bibleListeningProgress,
+    biblePlaylists,
+    completedResources,
+    libraryProgress,
+    listeningProgress,
+    repeatStudyPlaylist,
+    repeatStudyPlaylistItem,
+    saved,
+    scriptureMemory,
+    supabase,
+    user,
+  ]);
+
+  useEffect(() => {
+    if (!supabase || !user || !accountDataLoaded || !localStudyDataLoaded || !savedLoaded) return;
+    if (accountSyncHydratingRef.current) return;
+
+    if (accountSyncTimerRef.current) clearTimeout(accountSyncTimerRef.current);
+    accountSyncTimerRef.current = setTimeout(() => {
+      void syncUserStudyData();
+    }, 1200);
+
+    return () => {
+      if (accountSyncTimerRef.current) clearTimeout(accountSyncTimerRef.current);
+    };
+  }, [
+    accountDataLoaded,
+    bibleBookMastery,
+    bibleListeningProgress,
+    biblePlaylists,
+    completedResources,
+    libraryProgress,
+    listeningProgress,
+    localStudyDataLoaded,
+    repeatStudyPlaylist,
+    repeatStudyPlaylistItem,
+    saved,
+    savedLoaded,
+    scriptureMemory,
+    supabase,
+    syncUserStudyData,
+    user,
+  ]);
 
   useEffect(() => {
     if (!supabase) {
@@ -9064,6 +9624,9 @@ export default function Home() {
                 dictionarySearchTerm={dictionarySearchTerm}
                 dictionarySearchResults={dictionarySearchResults}
                 dictionarySearchStatus={dictionarySearchStatus}
+                strongSearchTerm={strongSearchTerm}
+                strongSearchResults={strongSearchResults}
+                strongSearchStatus={strongSearchStatus}
                 onSearchTermChange={setSearchTerm}
                 onSearchFilterChange={setSearchFilter}
                 onDictionarySearchTermChange={(value) => {
@@ -9071,6 +9634,13 @@ export default function Home() {
                   if (value.trim().length < 2) {
                     setDictionarySearchResults([]);
                     setDictionarySearchStatus("");
+                  }
+                }}
+                onStrongSearchTermChange={(value) => {
+                  setStrongSearchTerm(value);
+                  if (value.trim().length < 2) {
+                    setStrongSearchResults([]);
+                    setStrongSearchStatus("");
                   }
                 }}
                 onOpenVerse={openSearchResult}
@@ -13525,9 +14095,13 @@ function SearchScreen({
   dictionarySearchTerm,
   dictionarySearchResults,
   dictionarySearchStatus,
+  strongSearchTerm,
+  strongSearchResults,
+  strongSearchStatus,
   onSearchTermChange,
   onSearchFilterChange,
   onDictionarySearchTermChange,
+  onStrongSearchTermChange,
   onOpenVerse,
   onOpenDictionaryEntry,
 }: {
@@ -13537,9 +14111,13 @@ function SearchScreen({
   dictionarySearchTerm: string;
   dictionarySearchResults: DictionarySearchResult[];
   dictionarySearchStatus: string;
+  strongSearchTerm: string;
+  strongSearchResults: StrongSearchResult[];
+  strongSearchStatus: string;
   onSearchTermChange: (value: string) => void;
   onSearchFilterChange: (value: TestamentFilter) => void;
   onDictionarySearchTermChange: (value: string) => void;
+  onStrongSearchTermChange: (value: string) => void;
   onOpenVerse: (verse: BibleVerse) => void;
   onOpenDictionaryEntry: (entry: DictionarySearchResult) => void;
 }) {
@@ -13662,6 +14240,60 @@ function SearchScreen({
                 </div>
                 <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{entry.definition}</p>
               </button>
+            ))
+          )}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Search Strong&apos;s sample index
+          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+            <Search size={18} className="text-[var(--green)]" />
+            <input
+              className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+              placeholder="G4100, believe, pistis..."
+              value={strongSearchTerm}
+              onChange={(event) => onStrongSearchTermChange(event.target.value)}
+            />
+          </div>
+        </label>
+
+        <div className="mt-3 space-y-3">
+          {strongSearchTerm.trim().length < 2 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">
+              The full Strong&apos;s import path is staged for review. This searches verified sample entries first.
+            </p>
+          ) : strongSearchResults.length === 0 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">{strongSearchStatus || "No Strong's entries found in the verified sample yet."}</p>
+          ) : (
+            strongSearchResults.map((entry) => (
+              <article
+                key={entry.strongs_number}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
+              >
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-base font-semibold text-[var(--ink)]">{entry.strongs_number}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.language}</span>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Reviewed sample</span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[var(--ink)]">
+                  <span className="font-semibold">{entry.original_word}</span>
+                  {entry.transliteration ? ` · ${entry.transliteration}` : ""}
+                  {entry.pronunciation ? ` · ${entry.pronunciation}` : ""}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{entry.plain_definition}</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {entry.english_words.slice(0, 6).map((word) => (
+                    <span key={word} className="rounded-full border border-[var(--line)] bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+                      {word}
+                    </span>
+                  ))}
+                </div>
+                {entry.first_occurrence && (
+                  <p className="mt-3 text-xs font-semibold text-[var(--muted)]">First occurrence: {entry.first_occurrence}</p>
+                )}
+              </article>
             ))
           )}
         </div>

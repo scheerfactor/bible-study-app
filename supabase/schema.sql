@@ -227,6 +227,155 @@ create table if not exists public.user_listening_progress (
 
 create index if not exists user_listening_progress_user_slug_idx on public.user_listening_progress (user_id, resource_slug);
 
+create table if not exists public.user_bible_listening_progress (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  target_id text not null,
+  label text not null,
+  book text not null,
+  chapter integer not null check (chapter > 0),
+  verse_ref text,
+  progress numeric not null default 0 check (progress >= 0 and progress <= 100),
+  updated_at timestamptz not null default now(),
+  unique (user_id, target_id)
+);
+
+create index if not exists user_bible_listening_progress_user_target_idx
+  on public.user_bible_listening_progress (user_id, target_id);
+
+create table if not exists public.user_bible_mastery (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  book text not null,
+  read_chapters integer[] not null default '{}'::integer[],
+  listened_chapters integer[] not null default '{}'::integer[],
+  updated_at timestamptz not null default now(),
+  unique (user_id, book)
+);
+
+create index if not exists user_bible_mastery_user_book_idx on public.user_bible_mastery (user_id, book);
+
+create table if not exists public.user_scripture_memory (
+  id text not null,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  verse_ref text not null,
+  verse_text text not null,
+  progress numeric not null default 0 check (progress >= 0 and progress <= 100),
+  repetitions integer not null default 0 check (repetitions >= 0),
+  last_reviewed_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, id),
+  unique (user_id, verse_ref)
+);
+
+create index if not exists user_scripture_memory_user_ref_idx on public.user_scripture_memory (user_id, verse_ref);
+
+create table if not exists public.user_study_playlists (
+  id text not null,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  name text not null,
+  completed_item_ids text[] not null default '{}'::text[],
+  completed_at timestamptz,
+  last_item_index integer not null default 0 check (last_item_index >= 0),
+  repeat_playlist boolean not null default false,
+  repeat_item boolean not null default false,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, id)
+);
+
+create index if not exists user_study_playlists_user_updated_idx
+  on public.user_study_playlists (user_id, updated_at desc);
+
+create table if not exists public.user_study_playlist_items (
+  id text not null,
+  user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
+  playlist_id text not null,
+  item_type text not null,
+  label text not null,
+  book text,
+  chapter integer,
+  chapter_end integer,
+  verse_start integer,
+  verse_end integer,
+  resource_title text,
+  resource_slug text,
+  position integer not null default 0 check (position >= 0),
+  created_at timestamptz not null default now(),
+  primary key (user_id, id),
+  foreign key (user_id, playlist_id) references public.user_study_playlists(user_id, id) on delete cascade
+);
+
+create index if not exists user_study_playlist_items_user_playlist_idx
+  on public.user_study_playlist_items (user_id, playlist_id, position);
+
+create table if not exists public.beta_feedback (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid default auth.uid() references auth.users(id) on delete set null,
+  passage_or_resource text,
+  category text not null default 'General',
+  message text not null check (length(trim(message)) > 0),
+  optional_email text,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists beta_feedback_created_idx on public.beta_feedback (created_at desc);
+create index if not exists beta_feedback_user_idx on public.beta_feedback (user_id, created_at desc);
+
+create table if not exists public.strongs_sources (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  author text,
+  year integer,
+  source_url text not null,
+  rights_status text not null,
+  commercial_use_notes text not null,
+  attribution_notes text,
+  review_status text not null default 'Needs Review'
+    check (review_status in ('Verified', 'Needs Review', 'Permission Needed', 'Do Not Import')),
+  created_at timestamptz not null default now(),
+  unique (title, source_url)
+);
+
+create table if not exists public.strongs_entries (
+  id uuid primary key default gen_random_uuid(),
+  source_id uuid references public.strongs_sources(id),
+  strongs_number text not null,
+  language text not null check (language in ('Greek', 'Hebrew', 'Aramaic')),
+  original_word text not null,
+  transliteration text,
+  pronunciation text,
+  english_words text[] not null default '{}'::text[],
+  root text,
+  related_numbers text[] not null default '{}'::text[],
+  plain_definition text not null,
+  first_occurrence text,
+  key_verses text[] not null default '{}'::text[],
+  source_url text,
+  rights_status text not null,
+  review_status text not null default 'Needs Review'
+    check (review_status in ('Verified', 'Needs Review', 'Permission Needed', 'Do Not Import')),
+  search_vector tsvector generated always as (
+    to_tsvector(
+      'simple',
+      strongs_number || ' ' || original_word || ' ' || coalesce(transliteration, '') || ' ' ||
+      array_to_string(english_words, ' ') || ' ' || plain_definition
+    )
+  ) stored,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create unique index if not exists strongs_entries_unique_source_idx
+  on public.strongs_entries (strongs_number, coalesce(source_id, '00000000-0000-0000-0000-000000000000'::uuid));
+create unique index if not exists strongs_entries_unique_source_id_idx
+  on public.strongs_entries (strongs_number, source_id);
+create index if not exists strongs_entries_number_idx on public.strongs_entries (strongs_number);
+create index if not exists strongs_entries_language_idx on public.strongs_entries (language);
+create index if not exists strongs_entries_english_words_idx on public.strongs_entries using gin (english_words);
+create index if not exists strongs_entries_search_idx on public.strongs_entries using gin (search_vector);
+
 create table if not exists public.user_personal_library_resources (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null default auth.uid() references auth.users(id) on delete cascade,
@@ -282,6 +431,14 @@ alter table public.user_bookmarks enable row level security;
 alter table public.user_library_progress enable row level security;
 alter table public.user_completed_resources enable row level security;
 alter table public.user_listening_progress enable row level security;
+alter table public.user_bible_listening_progress enable row level security;
+alter table public.user_bible_mastery enable row level security;
+alter table public.user_scripture_memory enable row level security;
+alter table public.user_study_playlists enable row level security;
+alter table public.user_study_playlist_items enable row level security;
+alter table public.beta_feedback enable row level security;
+alter table public.strongs_sources enable row level security;
+alter table public.strongs_entries enable row level security;
 alter table public.user_personal_library_resources enable row level security;
 alter table public.user_resource_permission_requests enable row level security;
 
@@ -317,6 +474,29 @@ drop policy if exists "Users can read their listening progress" on public.user_l
 drop policy if exists "Users can create their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can update their listening progress" on public.user_listening_progress;
 drop policy if exists "Users can delete their listening progress" on public.user_listening_progress;
+drop policy if exists "Users can read their Bible listening progress" on public.user_bible_listening_progress;
+drop policy if exists "Users can create their Bible listening progress" on public.user_bible_listening_progress;
+drop policy if exists "Users can update their Bible listening progress" on public.user_bible_listening_progress;
+drop policy if exists "Users can delete their Bible listening progress" on public.user_bible_listening_progress;
+drop policy if exists "Users can read their Bible mastery" on public.user_bible_mastery;
+drop policy if exists "Users can create their Bible mastery" on public.user_bible_mastery;
+drop policy if exists "Users can update their Bible mastery" on public.user_bible_mastery;
+drop policy if exists "Users can delete their Bible mastery" on public.user_bible_mastery;
+drop policy if exists "Users can read their scripture memory" on public.user_scripture_memory;
+drop policy if exists "Users can create their scripture memory" on public.user_scripture_memory;
+drop policy if exists "Users can update their scripture memory" on public.user_scripture_memory;
+drop policy if exists "Users can delete their scripture memory" on public.user_scripture_memory;
+drop policy if exists "Users can read their study playlists" on public.user_study_playlists;
+drop policy if exists "Users can create their study playlists" on public.user_study_playlists;
+drop policy if exists "Users can update their study playlists" on public.user_study_playlists;
+drop policy if exists "Users can delete their study playlists" on public.user_study_playlists;
+drop policy if exists "Users can read their study playlist items" on public.user_study_playlist_items;
+drop policy if exists "Users can create their study playlist items" on public.user_study_playlist_items;
+drop policy if exists "Users can update their study playlist items" on public.user_study_playlist_items;
+drop policy if exists "Users can delete their study playlist items" on public.user_study_playlist_items;
+drop policy if exists "Anyone can create beta feedback" on public.beta_feedback;
+drop policy if exists "Strong sources are readable" on public.strongs_sources;
+drop policy if exists "Strong entries are readable" on public.strongs_entries;
 drop policy if exists "Users can read their personal library resources" on public.user_personal_library_resources;
 drop policy if exists "Users can create their personal library resources" on public.user_personal_library_resources;
 drop policy if exists "Users can update their personal library resources" on public.user_personal_library_resources;
@@ -460,6 +640,103 @@ create policy "Users can delete their listening progress"
   on public.user_listening_progress for delete
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
+create policy "Users can read their Bible listening progress"
+  on public.user_bible_listening_progress for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their Bible listening progress"
+  on public.user_bible_listening_progress for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their Bible listening progress"
+  on public.user_bible_listening_progress for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their Bible listening progress"
+  on public.user_bible_listening_progress for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their Bible mastery"
+  on public.user_bible_mastery for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their Bible mastery"
+  on public.user_bible_mastery for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their Bible mastery"
+  on public.user_bible_mastery for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their Bible mastery"
+  on public.user_bible_mastery for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their scripture memory"
+  on public.user_scripture_memory for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their scripture memory"
+  on public.user_scripture_memory for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their scripture memory"
+  on public.user_scripture_memory for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their scripture memory"
+  on public.user_scripture_memory for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their study playlists"
+  on public.user_study_playlists for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their study playlists"
+  on public.user_study_playlists for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their study playlists"
+  on public.user_study_playlists for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their study playlists"
+  on public.user_study_playlists for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can read their study playlist items"
+  on public.user_study_playlist_items for select
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can create their study playlist items"
+  on public.user_study_playlist_items for insert
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can update their study playlist items"
+  on public.user_study_playlist_items for update
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id)
+  with check ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Users can delete their study playlist items"
+  on public.user_study_playlist_items for delete
+  using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
+
+create policy "Anyone can create beta feedback"
+  on public.beta_feedback for insert
+  with check (true);
+
+create policy "Strong sources are readable"
+  on public.strongs_sources for select
+  using (true);
+
+create policy "Strong entries are readable"
+  on public.strongs_entries for select
+  using (review_status = 'Verified');
+
 create policy "Users can read their personal library resources"
   on public.user_personal_library_resources for select
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
@@ -508,6 +785,14 @@ grant select, insert, update, delete on public.user_bookmarks to authenticated;
 grant select, insert, update, delete on public.user_library_progress to authenticated;
 grant select, insert, update, delete on public.user_completed_resources to authenticated;
 grant select, insert, update, delete on public.user_listening_progress to authenticated;
+grant select, insert, update, delete on public.user_bible_listening_progress to authenticated;
+grant select, insert, update, delete on public.user_bible_mastery to authenticated;
+grant select, insert, update, delete on public.user_scripture_memory to authenticated;
+grant select, insert, update, delete on public.user_study_playlists to authenticated;
+grant select, insert, update, delete on public.user_study_playlist_items to authenticated;
+grant insert on public.beta_feedback to anon, authenticated;
+grant select on public.strongs_sources to anon, authenticated;
+grant select on public.strongs_entries to anon, authenticated;
 grant select, insert, update, delete on public.user_personal_library_resources to authenticated;
 grant select, insert, update, delete on public.user_resource_permission_requests to authenticated;
 
