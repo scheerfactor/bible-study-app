@@ -7763,6 +7763,28 @@ export default function Home() {
     );
   }
 
+  function listenCommentaryChapterEntries(targetBook: string, targetChapter: number, entries: CommentaryEntry[]) {
+    if (!entries.length) {
+      setSyncMessage(`${targetBook} ${targetChapter} has no reviewed commentary entries ready yet.`);
+      return;
+    }
+
+    const chunks = entries.map((entry) => (
+      `${entry.author}. ${entry.resource_title}. ${entry.reference ?? `${entry.book} ${entry.chapter}`}. ${entry.entry_text}`
+    ));
+    startSpeech(
+      `commentary-library-${targetBook}-${targetChapter}`,
+      `${targetBook} ${targetChapter} commentary`,
+      chunks.join(" "),
+      0,
+      undefined,
+      {
+        chunks,
+        verseRefs: chunks.map(() => null),
+      },
+    );
+  }
+
   function saveNextBiblePlaylists(next: BibleAudioPlaylist[]) {
     saveBiblePlaylists(next);
     return next;
@@ -8903,6 +8925,7 @@ export default function Home() {
                 onOpenBookIntroduction={openBookIntroduction}
                 onAddToListeningQueue={addLibraryToListeningQueue}
                 onAddToStudyPlaylist={addCurrentResourceToStudyPlaylist}
+                onListenCommentaryChapter={listenCommentaryChapterEntries}
                 onRemoveFromListeningQueue={removeLibraryFromListeningQueue}
                 onMoveListeningQueueItem={moveLibraryListeningQueueItem}
                 onScrollReader={handleLibraryScroll}
@@ -10864,6 +10887,40 @@ function downloadTextFile(filename: string, content: string, type: string) {
   URL.revokeObjectURL(url);
 }
 
+function escapeWordHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function markdownToWordHtml(markdown: string) {
+  const lines = markdown.split("\n");
+  return [
+    "<!doctype html>",
+    "<html><head><meta charset=\"utf-8\"><title>Chapter Study Pack</title>",
+    "<style>body{font-family:Georgia,serif;line-height:1.55;color:#1f2a24;}h1,h2{font-family:Arial,sans-serif;color:#1f5f45;}li{margin-bottom:4px;}</style>",
+    "</head><body>",
+    ...lines.map((line) => {
+      if (line.startsWith("# ")) return `<h1>${escapeWordHtml(line.slice(2))}</h1>`;
+      if (line.startsWith("## ")) return `<h2>${escapeWordHtml(line.slice(3))}</h2>`;
+      if (line.startsWith("- ")) return `<p>&bull; ${escapeWordHtml(line.slice(2))}</p>`;
+      if (!line.trim()) return "<br />";
+      return `<p>${escapeWordHtml(line)}</p>`;
+    }),
+    "</body></html>",
+  ].join("\n");
+}
+
+function downloadWordCompatibleFile(filename: string, markdown: string) {
+  downloadTextFile(
+    filename,
+    markdownToWordHtml(markdown),
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document;charset=utf-8",
+  );
+}
+
 function sectionOrEmpty(lines: string[]) {
   const filtered = lines.filter(Boolean);
   return filtered.length ? filtered : ["No reviewed entries yet."];
@@ -11627,6 +11684,70 @@ function buildTeachingNotesPlainText(data: TeachingNotesExportData) {
     .replace(/\n{3,}/g, "\n\n")
     .trim()
     .concat("\n");
+}
+
+function buildChapterStudyPackMarkdown(data: TeachingNotesExportData) {
+  const summary = teachingWorkspaceSummary(data);
+  const intro = data.bookIntroduction;
+  const commentaryHighlights = data.commentaryEntries.slice(0, 5);
+  const discussionQuestions = [
+    summary.keyVerse ? `What does ${summary.keyVerse} emphasize in the flow of ${summary.passage}?` : "",
+    summary.keyWords[0] ? `How does the word "${summary.keyWords[0]}" help explain the chapter?` : "",
+    data.crossReferences[0] ? `How does ${data.crossReferences[0].target_ref} help interpret ${data.crossReferences[0].verse_ref}?` : "",
+    data.connections.people[0] ? `What can be learned from ${data.connections.people[0].name} in this chapter?` : "",
+    data.connections.themes[0] ? `Where do you see the theme of ${data.connections.themes[0]} in the passage?` : "",
+  ].filter(Boolean);
+  const applicationLines = [
+    summary.teachingAim,
+    ...data.connections.themes.slice(0, 4).map((theme) => `Consider how the reviewed theme "${theme}" should shape teaching and application.`),
+  ];
+  const memoryVerseRef = data.memoryVerse?.verse_ref ?? data.fallbackMemoryVerse.ref;
+  const memoryVerseText = data.memoryVerse?.verse_text || data.fallbackMemoryVerse.plainText;
+
+  return [
+    `# ${summary.passage} Chapter Study Pack`,
+    "",
+    "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
+    "",
+    "## Theme",
+    ...sectionOrEmpty([summary.mainTheme]),
+    "",
+    "## Outline",
+    ...sectionOrEmpty(intro?.outline.map((section) => `- ${section.reference}: ${section.title}. ${section.summary}`) ?? []),
+    "",
+    "## Commentary Highlights",
+    `- Summary: ${commentaryChapterSummary(data.commentaryEntries)}`,
+    `- Consensus: ${commentaryAgreementSummary(data.commentaryEntries)}`,
+    ...sectionOrEmpty(commentaryHighlights.map((entry) => `- ${entry.author}, ${entry.resource_title}: ${entry.entry_text.slice(0, 360)}${entry.entry_text.length > 360 ? "..." : ""}`)),
+    "",
+    "## Cross References",
+    ...sectionOrEmpty(data.crossReferences.slice(0, 12).map((reference) => {
+      const preview = data.versesByRef.get(reference.target_ref)?.plainText;
+      return `- ${reference.verse_ref} -> ${reference.target_ref}${reference.label ? ` (${reference.label})` : ""}${preview ? ` - ${preview}` : ""}`;
+    })),
+    "",
+    "## People",
+    ...sectionOrEmpty(data.connections.people.map((person) => `- ${person.name}: ${person.summary}`)),
+    "",
+    "## Places",
+    ...sectionOrEmpty(data.connections.places.map((place) => `- ${place.name}: ${place.description}`)),
+    "",
+    "## Timeline",
+    ...sectionOrEmpty(data.connections.timeline.map((entry) => `- ${entry.era}: ${entry.title} (${entry.timeframe}). ${entry.description}`)),
+    "",
+    "## Applications",
+    ...sectionOrEmpty(applicationLines.map((line) => `- ${line}`)),
+    "",
+    "## Discussion Questions",
+    ...sectionOrEmpty(discussionQuestions.map((question) => `- ${question}`)),
+    "",
+    "## Memory Verse",
+    `- ${memoryVerseRef}: ${memoryVerseText}`,
+    "",
+    "## Recommended Reading",
+    ...sectionOrEmpty(data.recommendedResources.map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}): ${resource.note}`)),
+    "",
+  ].join("\n");
 }
 
 function ChapterStudyWorkflow({
@@ -13675,6 +13796,7 @@ function LibraryScreen({
   onOpenBookIntroduction,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
+  onListenCommentaryChapter,
   onRemoveFromListeningQueue,
   onMoveListeningQueueItem,
   onScrollReader,
@@ -13749,6 +13871,7 @@ function LibraryScreen({
   onOpenBookIntroduction: (book: string) => void;
   onAddToListeningQueue: (slug: string) => void;
   onAddToStudyPlaylist: (slug: string) => void;
+  onListenCommentaryChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
   onRemoveFromListeningQueue: (slug: string) => void;
   onMoveListeningQueueItem: (slug: string, direction: -1 | 1) => void;
   onScrollReader: () => void;
@@ -14138,6 +14261,16 @@ function LibraryScreen({
       <CommentaryCoverageDashboard
         coverage={commentaryCoverage}
         onOpenAuthor={onOpenAuthor}
+      />
+
+      <CommentaryLibraryBrowser
+        entries={commentaryEntries}
+        onOpenReference={(reference) => {
+          const [targetBook] = reference.split(/\s+\d/);
+          if (targetBook) onOpenBookIntroduction(targetBook.trim());
+        }}
+        onOpenAuthor={onOpenAuthor}
+        onListenChapter={onListenCommentaryChapter}
       />
 
       {libraryListeningQueue.length > 0 && (
@@ -15542,6 +15675,179 @@ function permissionStatusPill(status: PermissionTrackerStatus) {
   if (status === "Permission granted") return "bg-emerald-50 text-emerald-800";
   if (status === "Needs follow-up") return "bg-amber-50 text-amber-800";
   return "bg-red-50 text-red-800";
+}
+
+function CommentaryLibraryBrowser({
+  entries,
+  onOpenReference,
+  onOpenAuthor,
+  onListenChapter,
+}: {
+  entries: CommentaryEntry[];
+  onOpenReference: (reference: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+  onListenChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
+}) {
+  const authors = useMemo(() => Array.from(new Set(entries.map((entry) => entry.author))).sort(), [entries]);
+  const books = useMemo(
+    () => Array.from(new Set(entries.map((entry) => entry.book))).sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b)),
+    [entries],
+  );
+  const [selectedAuthor, setSelectedAuthor] = useState("All");
+  const [selectedBook, setSelectedBook] = useState(books[0] ?? "John");
+  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? "John";
+  const filteredByBookAndAuthor = useMemo(
+    () => entries.filter((entry) => entry.book === safeBook && (selectedAuthor === "All" || entry.author === selectedAuthor)),
+    [entries, safeBook, selectedAuthor],
+  );
+  const chapters = useMemo(
+    () => Array.from(new Set(filteredByBookAndAuthor.map((entry) => entry.chapter))).sort((a, b) => a - b),
+    [filteredByBookAndAuthor],
+  );
+  const [selectedChapter, setSelectedChapter] = useState(chapters[0] ?? 1);
+  const safeChapter = chapters.includes(selectedChapter) ? selectedChapter : chapters[0] ?? 1;
+  const selectedEntries = filteredByBookAndAuthor.filter((entry) => entry.chapter === safeChapter);
+  const chapterOptionsByBook = useMemo(
+    () => entries
+      .filter((entry) => entry.book === safeBook)
+      .reduce<Record<number, Set<string>>>((groups, entry) => {
+        groups[entry.chapter] = groups[entry.chapter] ?? new Set<string>();
+        groups[entry.chapter].add(entry.author);
+        return groups;
+      }, {}),
+    [entries, safeBook],
+  );
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary Library</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Browse verified commentary chapters</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Browse by author, Bible book, and chapter. Staged or unverified commentary remains hidden until source and rights review are complete.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          {entries.length} public entries
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-3">
+        <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          Browse by author
+          <select
+            className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            value={selectedAuthor}
+            onChange={(event) => setSelectedAuthor(event.target.value)}
+          >
+            <option value="All">All authors</option>
+            {authors.map((author) => (
+              <option key={`commentary-library-author-${author}`} value={author}>{author}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          Browse by Bible book
+          <select
+            className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            value={safeBook}
+            onChange={(event) => setSelectedBook(event.target.value)}
+          >
+            {books.map((bookName) => (
+              <option key={`commentary-library-book-${bookName}`} value={bookName}>{bookName}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          Browse by chapter
+          <select
+            className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+            value={safeChapter}
+            onChange={(event) => setSelectedChapter(Number(event.target.value))}
+          >
+            {chapters.map((chapterNumber) => (
+              <option key={`commentary-library-chapter-${chapterNumber}`} value={chapterNumber}>
+                {safeBook} {chapterNumber}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter index</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">{safeBook}</h3>
+            </div>
+            <button
+              className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => onOpenReference(`${safeBook} ${safeChapter}`)}
+              type="button"
+            >
+              Open book intro
+            </button>
+          </div>
+          <div className="mt-3 grid grid-cols-4 gap-2 sm:grid-cols-6">
+            {Object.entries(chapterOptionsByBook).map(([chapterNumber, authorSet]) => (
+              <button
+                key={`commentary-library-index-${chapterNumber}`}
+                className={`rounded-xl px-2 py-2 text-xs font-semibold ${
+                  Number(chapterNumber) === safeChapter ? "bg-[var(--green)] text-white" : "bg-white text-[var(--green)]"
+                }`}
+                onClick={() => setSelectedChapter(Number(chapterNumber))}
+                type="button"
+              >
+                {chapterNumber}
+                <span className="mt-0.5 block text-[0.65rem] opacity-80">{authorSet.size}</span>
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Full commentary chapter</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">{safeBook} {safeChapter}</h3>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                {selectedEntries.length} entries from {Array.from(new Set(selectedEntries.map((entry) => entry.author))).join(", ") || "no authors"}
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {selectedAuthor !== "All" && (
+                <button
+                  className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenAuthor(selectedAuthor)}
+                  type="button"
+                >
+                  Open author
+                </button>
+              )}
+              <button
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white disabled:opacity-50"
+                disabled={!selectedEntries.length}
+                onClick={() => onListenChapter(safeBook, safeChapter, selectedEntries)}
+                type="button"
+              >
+                <Headphones size={14} />
+                Listen chapter
+              </button>
+            </div>
+          </div>
+          <div className="mt-3 space-y-2">
+            {selectedEntries.length ? selectedEntries.map((entry) => (
+              <CommentaryDetails key={`commentary-library-entry-${entry.id}`} entry={entry} compact />
+            )) : (
+              <p className="rounded-xl bg-white px-3 py-3 text-sm leading-6 text-[var(--muted)]">No verified entries for this selection yet.</p>
+            )}
+          </div>
+        </article>
+      </div>
+    </section>
+  );
 }
 
 function CommentaryCoverageDashboard({
@@ -17385,6 +17691,7 @@ function PassageGuideScreen({
 }) {
   const firstVerse = verses[0];
   const passage = `${book} ${chapter}`;
+  const [packExportMessage, setPackExportMessage] = useState("");
   const displayKeyVerses = useMemo(
     () => keyVerses.length ? keyVerses : firstVerse ? [firstVerse.ref] : [],
     [firstVerse, keyVerses],
@@ -17423,6 +17730,7 @@ function PassageGuideScreen({
   ]);
   const teachingSummary = exportData ? teachingWorkspaceSummary(exportData) : null;
   const lessonOutlineSections = exportData ? buildLessonOutline(exportData, EMPTY_TEACHER_NOTES) : [];
+  const chapterStudyPackMarkdown = exportData ? buildChapterStudyPackMarkdown(exportData) : "";
   const visibleCrossReferences = crossReferences.slice(0, 12);
   const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
   const commentaryRecommendation = buildCommentaryRecommendation(commentaryEntries);
@@ -17439,6 +17747,7 @@ function PassageGuideScreen({
   const sections = [
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
+    ["passage-study-pack", "Study Pack"],
     ["passage-summary", "Summary"],
     ["passage-key-verses", "Key Verses"],
     ["passage-repeated-words", "Repeated Words"],
@@ -17600,6 +17909,59 @@ function PassageGuideScreen({
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
           </a>
         </div>
+      </StudySection>
+
+      <StudySection id="passage-study-pack" title="Chapter Study Pack">
+        <div className="grid gap-3 lg:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-sm leading-6 text-[var(--muted)]">
+              A teacher-ready pack for {passage}: theme, outline, commentary highlights, cross references, people, places, timeline, applications, discussion questions, memory verse, and recommended reading.
+            </p>
+            <div className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-4">
+              <MiniStat label="Outline" value={String(bookIntroduction?.outline.length ?? 0)} />
+              <MiniStat label="Highlights" value={String(Math.min(5, commentaryEntries.length))} />
+              <MiniStat label="Questions" value={String(Math.min(5, 2 + connections.people.length + connections.themes.length))} />
+              <MiniStat label="Reading" value={String(recommendedResources.length)} />
+            </div>
+          </div>
+          <div className="flex flex-wrap items-start gap-2 lg:max-w-64">
+            <button
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-50"
+              disabled={!chapterStudyPackMarkdown}
+              onClick={() => {
+                downloadTextFile(`${book.toLowerCase()}-${chapter}-chapter-study-pack.md`, chapterStudyPackMarkdown, "text/markdown;charset=utf-8");
+                setPackExportMessage("Chapter Study Pack Markdown downloaded.");
+              }}
+              type="button"
+            >
+              <Download size={15} />
+              Markdown
+            </button>
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)] disabled:opacity-50"
+              disabled={!chapterStudyPackMarkdown}
+              onClick={() => {
+                downloadWordCompatibleFile(`${book.toLowerCase()}-${chapter}-chapter-study-pack.docx`, chapterStudyPackMarkdown);
+                setPackExportMessage("Word-compatible study pack downloaded.");
+              }}
+              type="button"
+            >
+              <FileText size={15} />
+              DOCX
+            </button>
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]"
+              onClick={() => setPackExportMessage("PDF export placeholder is ready for a future print/PDF engine. Use Markdown or DOCX for this beta.")}
+              type="button"
+            >
+              <FileText size={15} />
+              PDF soon
+            </button>
+          </div>
+        </div>
+        {packExportMessage && (
+          <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{packExportMessage}</p>
+        )}
       </StudySection>
 
       <StudySection id="passage-summary" title="Chapter Summary">
