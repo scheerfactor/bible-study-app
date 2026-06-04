@@ -69,7 +69,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "sermons" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -86,6 +86,9 @@ type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
 type PrayerRotation = "Daily" | "Weekly" | "Twice Weekly" | "Every Day";
 type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Drawer" | "Prayer Entry" | "Reading Plan" | "Library Book" | "Commentary Note";
 type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
+type SermonKind = "Sermon" | "Lesson";
+type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
+type SermonWorkspaceView = "manager" | "builder" | "preaching";
 
 type BibleVerse = {
   ref: string;
@@ -217,6 +220,49 @@ type JournalDraft = {
   teachingThought: string;
   sourceType: JournalSourceType;
   sourceLabel: string;
+};
+
+type SermonSeries = {
+  id: string;
+  title: string;
+  description: string;
+  passageRange: string;
+  createdAt: string;
+  updatedAt: string;
+  archived: boolean;
+};
+
+type SermonEntry = {
+  id: string;
+  kind: SermonKind;
+  title: string;
+  passage: string;
+  theme: string;
+  seriesId: string;
+  status: SermonStatus;
+  outline: string;
+  introduction: string;
+  points: string;
+  illustrations: string;
+  applications: string;
+  conclusion: string;
+  invitation: string;
+  importedStudyNotes: string;
+  quotes: string;
+  bulletManuscript: string;
+  createdAt: string;
+  updatedAt: string;
+  preachedAt: string;
+  archived: boolean;
+};
+
+type SermonLibraryItem = {
+  id: string;
+  title: string;
+  body: string;
+  passage: string;
+  source: string;
+  tags: string[];
 };
 
 type ReadingPlanFoundation = {
@@ -966,6 +1012,97 @@ const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-v
 const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
 const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
+const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
+const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
+
+const EMPTY_SERMON_ENTRY: SermonEntry = {
+  id: "",
+  kind: "Sermon",
+  title: "",
+  passage: "",
+  theme: "",
+  seriesId: "",
+  status: "Draft",
+  outline: "",
+  introduction: "",
+  points: "",
+  illustrations: "",
+  applications: "",
+  conclusion: "",
+  invitation: "",
+  importedStudyNotes: "",
+  quotes: "",
+  bulletManuscript: "",
+  createdAt: "",
+  updatedAt: "",
+  preachedAt: "",
+  archived: false,
+};
+
+const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
+  {
+    id: "illustration-lost-place",
+    title: "Do not lose your place",
+    body: "Use a simple physical Bible marker or road sign illustration to show why clear structure helps hearers follow the truth.",
+    passage: "Nehemiah 8:8",
+    source: "Starter illustration prompt",
+    tags: ["clarity", "teaching", "preaching"],
+  },
+  {
+    id: "illustration-light",
+    title: "Light makes the path plain",
+    body: "Use the ordinary picture of a lamp in a dark place to explain Scripture giving direction one step at a time.",
+    passage: "Psalm 119:105",
+    source: "KJV Scripture prompt",
+    tags: ["Scripture", "guidance"],
+  },
+  {
+    id: "illustration-sowing",
+    title: "Sowing and reaping",
+    body: "Use seed, soil, and harvest carefully where the passage itself supports the application.",
+    passage: "Galatians 6:7",
+    source: "KJV Scripture prompt",
+    tags: ["application", "evangelism"],
+  },
+];
+
+const SERMON_QUOTE_STARTERS: SermonLibraryItem[] = [
+  {
+    id: "quote-scripture-first",
+    title: "Scripture first",
+    body: "Let the Bible text govern the lesson. Commentary and illustration should serve the passage, not replace it.",
+    passage: "2 Timothy 3:16",
+    source: "Father's Business review principle",
+    tags: ["Scripture", "teaching"],
+  },
+  {
+    id: "quote-plainly",
+    title: "Give the sense plainly",
+    body: "Read the text, explain the sense, and help the hearer understand what God has said.",
+    passage: "Nehemiah 8:8",
+    source: "KJV teaching principle",
+    tags: ["exposition", "clarity"],
+  },
+];
+
+const SERMON_APPLICATION_STARTERS: SermonLibraryItem[] = [
+  {
+    id: "application-believe",
+    title: "Believe what God has said",
+    body: "Call the hearer to respond to the passage with faith, obedience, repentance, prayer, or witness according to the text.",
+    passage: "John 3:16",
+    source: "Starter application prompt",
+    tags: ["Gospel", "response"],
+  },
+  {
+    id: "application-pray",
+    title: "Turn truth into prayer",
+    body: "Ask what this passage should cause the believer to confess, thank God for, ask God for, or obey.",
+    passage: "Psalm 139:23-24",
+    source: "Scripture journal prompt",
+    tags: ["prayer", "journal"],
+  },
+];
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const PRAYER_CATEGORIES: PrayerCategory[] = ["Church Members", "Missionaries", "Ministries", "Family", "Friends", "Special Requests"];
@@ -6521,6 +6658,146 @@ function journalRangeMarkdown(entries: JournalEntry[], title = "Scripture Journa
   ].join("\n");
 }
 
+function createEmptySermon(kind: SermonKind, passage: string): SermonEntry {
+  const now = new Date().toISOString();
+  return {
+    ...EMPTY_SERMON_ENTRY,
+    id: makeId(kind === "Sermon" ? "sermon" : "lesson"),
+    kind,
+    title: kind === "Sermon" ? `${passage} Sermon` : `${passage} Lesson`,
+    passage,
+    status: "Draft",
+    createdAt: now,
+    updatedAt: now,
+  };
+}
+
+function normalizeSermonEntry(entry: Partial<SermonEntry>): SermonEntry | null {
+  if (!entry.id) return null;
+  const now = new Date().toISOString();
+  const status = ["Draft", "Ready", "Preached", "Taught", "Archived"].includes(entry.status ?? "Draft") ? entry.status ?? "Draft" : "Draft";
+  return {
+    ...EMPTY_SERMON_ENTRY,
+    ...entry,
+    kind: entry.kind === "Lesson" ? "Lesson" : "Sermon",
+    status,
+    createdAt: entry.createdAt ?? now,
+    updatedAt: entry.updatedAt ?? now,
+    archived: Boolean(entry.archived || status === "Archived"),
+  };
+}
+
+function loadSermonEntries(): SermonEntry[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(SERMON_ENTRIES_KEY);
+    const parsed = raw ? JSON.parse(raw) as Partial<SermonEntry>[] : [];
+    return parsed.map(normalizeSermonEntry).filter((entry): entry is SermonEntry => Boolean(entry));
+  } catch {
+    return [];
+  }
+}
+
+function saveSermonEntries(entries: SermonEntry[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(SERMON_ENTRIES_KEY, JSON.stringify(entries));
+}
+
+function normalizeSermonSeries(series: Partial<SermonSeries>): SermonSeries | null {
+  if (!series.id || !series.title) return null;
+  const now = new Date().toISOString();
+  return {
+    id: series.id,
+    title: series.title,
+    description: series.description ?? "",
+    passageRange: series.passageRange ?? "",
+    createdAt: series.createdAt ?? now,
+    updatedAt: series.updatedAt ?? now,
+    archived: Boolean(series.archived),
+  };
+}
+
+function loadSermonSeries(): SermonSeries[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(SERMON_SERIES_KEY);
+    const parsed = raw ? JSON.parse(raw) as Partial<SermonSeries>[] : [];
+    return parsed.map(normalizeSermonSeries).filter((series): series is SermonSeries => Boolean(series));
+  } catch {
+    return [];
+  }
+}
+
+function saveSermonSeries(series: SermonSeries[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(SERMON_SERIES_KEY, JSON.stringify(series));
+}
+
+function bulletEachSentence(text: string) {
+  return text
+    .replace(/\s+/g, " ")
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean)
+    .map((sentence) => `- ${sentence}`)
+    .join("\n");
+}
+
+function buildSermonManuscript(entry: SermonEntry) {
+  return [
+    entry.introduction,
+    entry.points,
+    entry.applications,
+    entry.conclusion,
+    entry.invitation,
+  ].filter((section) => section.trim()).join("\n\n");
+}
+
+function sermonExportMarkdown(entry: SermonEntry, series: SermonSeries | null) {
+  return [
+    `# ${entry.title || `${entry.kind} Draft`}`,
+    "",
+    `- Type: ${entry.kind}`,
+    `- Passage: ${entry.passage || "Not set"}`,
+    `- Theme: ${entry.theme || "Not set"}`,
+    `- Series: ${series?.title ?? "None"}`,
+    `- Status: ${entry.status}`,
+    "",
+    "## Outline",
+    entry.outline || "No outline yet.",
+    "",
+    "## Introduction",
+    entry.introduction || "No introduction yet.",
+    "",
+    "## Main Points",
+    entry.points || "No main points yet.",
+    "",
+    "## Illustrations",
+    entry.illustrations || "No illustrations yet.",
+    "",
+    "## Applications",
+    entry.applications || "No applications yet.",
+    "",
+    "## Conclusion",
+    entry.conclusion || "No conclusion yet.",
+    "",
+    "## Invitation",
+    entry.invitation || "No invitation yet.",
+    "",
+    "## Imported Study Notes",
+    entry.importedStudyNotes || "No imported study notes yet.",
+    "",
+    "## Quotes",
+    entry.quotes || "No quotes yet.",
+    "",
+    "## Bulleted Manuscript",
+    entry.bulletManuscript || bulletEachSentence(buildSermonManuscript(entry)) || "No manuscript yet.",
+    "",
+  ].join("\n");
+}
+
 function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
   const now = new Date().toISOString();
   return {
@@ -7269,6 +7546,14 @@ export default function Home() {
   const [journalDraft, setJournalDraft] = useState<JournalDraft>(() => ({ ...EMPTY_JOURNAL_DRAFT, date: todayIsoDate() }));
   const [journalExportStart, setJournalExportStart] = useState("");
   const [journalExportEnd, setJournalExportEnd] = useState("");
+  const [sermonEntries, setSermonEntries] = useState<SermonEntry[]>([]);
+  const [sermonSeries, setSermonSeries] = useState<SermonSeries[]>([]);
+  const [sermonDraft, setSermonDraft] = useState<SermonEntry>(() => createEmptySermon("Sermon", "John 3"));
+  const [sermonWorkspaceView, setSermonWorkspaceView] = useState<SermonWorkspaceView>("manager");
+  const [sermonSeriesTitleDraft, setSermonSeriesTitleDraft] = useState("");
+  const [sermonSeriesPassageDraft, setSermonSeriesPassageDraft] = useState("");
+  const [sermonPreachingStartedAt, setSermonPreachingStartedAt] = useState<number | null>(null);
+  const [sermonTimerNow, setSermonTimerNow] = useState(() => Date.now());
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
@@ -7586,6 +7871,81 @@ export default function Home() {
       .slice(0, 5);
   }, [book, chapter, chapterCrossReferences, chapterVerses, saved.bookmarks, saved.highlights, selectedRef]);
 
+  const sermonImportPackage = useMemo(() => {
+    const fallbackVerse = versesByRef.get(selectedRef) ?? chapterVerses[0] ?? allVerses[0]!;
+    const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
+    const exportData: TeachingNotesExportData = {
+      book,
+      chapter,
+      bookIntroduction: activeBookIntroduction,
+      keyVerses: chapterKeyVerses.length ? chapterKeyVerses : [fallbackVerse.ref],
+      analysis: chapterAnalysis,
+      connections: activeChapterConnections,
+      crossReferences: chapterCrossReferences,
+      commentaryEntries: chapterCommentaryEntries,
+      notes: chapterNotes,
+      memoryVerse: scriptureMemory.find((item) => item.verse_ref.startsWith(`${book} ${chapter}:`)) ?? null,
+      fallbackMemoryVerse: fallbackVerse,
+      recommendedResources: activeChapterResourceRecommendations,
+      versesByRef,
+    };
+    const keyWords = Array.from(new Set([
+      ...keyWordsForVerse(fallbackVerse),
+      ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => item.word),
+    ])).slice(0, 10);
+    const websterLines = keyWords.map((word) => {
+      const entry = findDictionaryEntry(word);
+      return `${entry.lookupWord || word}: ${entry.definition}`;
+    });
+    const strongLines = keyWords.flatMap((word) => {
+      const entry = strongsMvpEntries[normalizeLookupWord(word)];
+      return entry ? [`${entry.strongsNumber} ${entry.originalWord}: ${entry.plainMeaning}. First occurrence: ${entry.firstOccurrence}.`] : [];
+    });
+    const journalLines = journalEntries
+      .filter((entry) => entry.selectedVerseRefs.includes(book) || entry.bibleReadingPassage.includes(`${book} ${chapter}`) || entry.sourceLabel.includes(`${book} ${chapter}`))
+      .slice(0, 4)
+      .map((entry) => `${entry.date}: ${entry.teachingThought || entry.verseApplies || entry.prayerResponse || entry.verseSays}`);
+
+    return {
+      passageGuide: [
+        `Passage: ${book} ${chapter}`,
+        `Theme: ${teachingWorkspaceSummary(exportData).mainTheme}`,
+        `Teaching aim: ${teachingWorkspaceSummary(exportData).teachingAim}`,
+        `Key verses: ${(chapterKeyVerses.length ? chapterKeyVerses : [fallbackVerse.ref]).join(", ")}`,
+        `Repeated words: ${chapterAnalysis.repeatedWords.slice(0, 10).map((item) => `${item.word} (${item.count})`).join(", ") || "No repeated words loaded."}`,
+        `People: ${activeChapterConnections.people.map((person) => person.name).join(", ") || "No reviewed people entries yet."}`,
+        `Places: ${activeChapterConnections.places.map((place) => place.name).join(", ") || "No reviewed places entries yet."}`,
+      ].join("\n"),
+      studyPack: buildChapterStudyPackMarkdown(exportData),
+      commentary: chapterCommentaryEntries.length
+        ? chapterCommentaryEntries.slice(0, 8).map((entry) => `${entry.author}, ${entry.resource_title}, ${entry.reference ?? `${entry.book} ${entry.chapter}`}: ${entry.entry_text.slice(0, 700)}${entry.entry_text.length > 700 ? "..." : ""}`).join("\n\n")
+        : "No reviewed commentary entries are available for this chapter yet.",
+      webster: websterLines.join("\n"),
+      strongs: strongLines.length ? strongLines.join("\n") : "No Strong's sample entries matched this chapter's key words yet.",
+      notes: chapterNotes.length
+        ? chapterNotes.flatMap(([ref, notes]) => notes.map((note) => `${ref}: ${note.body}`)).join("\n")
+        : "No personal Bible notes are saved for this chapter yet.",
+      journal: journalLines.length ? journalLines.join("\n") : "No journal teaching thoughts are connected to this passage yet.",
+    };
+  }, [
+    activeBookIntroduction,
+    activeChapterConnections,
+    activeChapterResourceRecommendations,
+    allVerses,
+    book,
+    chapter,
+    chapterAnalysis,
+    chapterCommentaryEntries,
+    chapterCrossReferences,
+    chapterKeyVerses,
+    chapterVerses,
+    journalEntries,
+    notesByRef,
+    scriptureMemory,
+    selectedRef,
+    versesByRef,
+  ]);
+
   const currentChapterPinned = useMemo(
     () => favoritePassages.some((passage) => passage.id === createBiblePassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump).id),
     [book, chapter, favoritePassages, selectedRef, verseJump, versesByRef],
@@ -7895,6 +8255,144 @@ export default function Home() {
     setSyncMessage(entries.length ? "Devotional notes exported." : "No devotional notes saved yet.");
   }
 
+  function saveSermonEntryList(updater: (entries: SermonEntry[]) => SermonEntry[]) {
+    setSermonEntries((entries) => {
+      const nextEntries = updater(entries).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+      saveSermonEntries(nextEntries);
+      return nextEntries;
+    });
+  }
+
+  function openSermonWorkspace(view: SermonWorkspaceView = "manager") {
+    setSermonWorkspaceView(view);
+    setTab("sermons");
+  }
+
+  function createSermonDraft(kind: SermonKind) {
+    const entry = createEmptySermon(kind, `${book} ${chapter}`);
+    setSermonDraft(entry);
+    setSermonWorkspaceView("builder");
+    setTab("sermons");
+    setSyncMessage(`${kind} draft started.`);
+  }
+
+  function openSermonEntry(entry: SermonEntry) {
+    setSermonDraft(entry);
+    setSermonWorkspaceView("builder");
+    setTab("sermons");
+  }
+
+  function updateSermonDraft(patch: Partial<SermonEntry>) {
+    setSermonDraft((draft) => ({
+      ...draft,
+      ...patch,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  function saveSermonDraft() {
+    const title = sermonDraft.title.trim();
+    if (!title) {
+      setSyncMessage("Add a sermon or lesson title first.");
+      return;
+    }
+    const now = new Date().toISOString();
+    const entry: SermonEntry = {
+      ...sermonDraft,
+      title,
+      passage: sermonDraft.passage.trim() || `${book} ${chapter}`,
+      updatedAt: now,
+      createdAt: sermonDraft.createdAt || now,
+    };
+    saveSermonEntryList((entries) => [entry, ...entries.filter((item) => item.id !== entry.id)]);
+    setSermonDraft(entry);
+    setSyncMessage(`${entry.kind} saved locally.`);
+  }
+
+  function updateSermonStatus(id: string, status: SermonStatus) {
+    const now = new Date().toISOString();
+    saveSermonEntryList((entries) =>
+      entries.map((entry) => entry.id === id ? {
+        ...entry,
+        status,
+        archived: status === "Archived" || entry.archived,
+        preachedAt: status === "Preached" || status === "Taught" ? (entry.preachedAt || now) : entry.preachedAt,
+        updatedAt: now,
+      } : entry),
+    );
+    if (sermonDraft.id === id) {
+      updateSermonDraft({
+        status,
+        archived: status === "Archived" || sermonDraft.archived,
+        preachedAt: status === "Preached" || status === "Taught" ? (sermonDraft.preachedAt || now) : sermonDraft.preachedAt,
+      });
+    }
+    setSyncMessage(`Marked ${status.toLowerCase()}.`);
+  }
+
+  function archiveSermonEntry(id: string) {
+    updateSermonStatus(id, "Archived");
+  }
+
+  function createSermonSeries() {
+    const title = sermonSeriesTitleDraft.trim();
+    if (!title) {
+      setSyncMessage("Add a series title first.");
+      return;
+    }
+    const now = new Date().toISOString();
+    const series: SermonSeries = {
+      id: makeId("series"),
+      title,
+      description: "",
+      passageRange: sermonSeriesPassageDraft.trim(),
+      createdAt: now,
+      updatedAt: now,
+      archived: false,
+    };
+    setSermonSeries((items) => {
+      const next = [series, ...items];
+      saveSermonSeries(next);
+      return next;
+    });
+    setSermonSeriesTitleDraft("");
+    setSermonSeriesPassageDraft("");
+    setSermonDraft((draft) => ({ ...draft, seriesId: series.id, updatedAt: now }));
+    setSyncMessage("Series created locally.");
+  }
+
+  function appendSermonImport(label: string, body: string) {
+    const cleanBody = body.trim();
+    if (!cleanBody) {
+      setSyncMessage(`${label} has no available reviewed content yet.`);
+      return;
+    }
+    updateSermonDraft({
+      importedStudyNotes: [sermonDraft.importedStudyNotes, `## ${label}`, cleanBody].filter(Boolean).join("\n\n"),
+    });
+    setSyncMessage(`${label} added to sermon prep notes.`);
+  }
+
+  function bulletSermonDraft() {
+    const bulleted = bulletEachSentence(buildSermonManuscript(sermonDraft));
+    updateSermonDraft({ bulletManuscript: bulleted });
+    setSyncMessage(bulleted ? "Each sentence has been bulleted for preaching mode." : "Add sermon manuscript text first.");
+  }
+
+  function exportSermonDraft() {
+    const series = sermonSeries.find((item) => item.id === sermonDraft.seriesId) ?? null;
+    const fileName = `${(sermonDraft.title || sermonDraft.passage || "sermon-draft").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "sermon-draft"}.md`;
+    downloadTextFile(fileName, sermonExportMarkdown(sermonDraft, series), "text/markdown;charset=utf-8");
+    setSyncMessage("Sermon draft exported.");
+  }
+
+  function startPreachingMode() {
+    setSermonPreachingStartedAt(Date.now());
+    setSermonTimerNow(Date.now());
+    setSermonWorkspaceView("preaching");
+    setTab("sermons");
+  }
+
   useEffect(() => {
     queueMicrotask(() => {
       setSaved(loadLocalState());
@@ -7917,12 +8415,22 @@ export default function Home() {
       setScriptureMemory(loadScriptureMemory());
       setPrayerEntries(loadPrayerEntries());
       setJournalEntries(loadJournalEntries());
+      const loadedSermons = loadSermonEntries();
+      setSermonEntries(loadedSermons);
+      setSermonSeries(loadSermonSeries());
+      if (loadedSermons[0]) setSermonDraft(loadedSermons[0]);
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
       setLocalStudyDataLoaded(true);
     });
   }, []);
+
+  useEffect(() => {
+    if (sermonWorkspaceView !== "preaching" || !sermonPreachingStartedAt) return;
+    const timer = window.setInterval(() => setSermonTimerNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [sermonPreachingStartedAt, sermonWorkspaceView]);
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -10308,6 +10816,7 @@ export default function Home() {
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
               <NavButton icon={<FileText size={18} />} label="Journal" active={tab === "journal"} onClick={() => setTab("journal")} />
+              <NavButton icon={<Clipboard size={18} />} label="Sermons" active={tab === "sermons"} onClick={() => openSermonWorkspace("manager")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
 
@@ -10786,6 +11295,43 @@ export default function Home() {
                 onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Amos", chapterNumber)}
                 onStopListening={() => stopSpeech()}
                 onOpenPlaylistBuilder={() => setTab("bible")}
+              />
+            )}
+
+            {tab === "sermons" && (
+              <SermonWorkspaceScreen
+                view={sermonWorkspaceView}
+                sermons={sermonEntries}
+                series={sermonSeries}
+                draft={sermonDraft}
+                seriesTitleDraft={sermonSeriesTitleDraft}
+                seriesPassageDraft={sermonSeriesPassageDraft}
+                importPackage={sermonImportPackage}
+                illustrationLibrary={SERMON_ILLUSTRATION_STARTERS}
+                quoteLibrary={SERMON_QUOTE_STARTERS}
+                applicationLibrary={SERMON_APPLICATION_STARTERS}
+                timerStartedAt={sermonPreachingStartedAt}
+                timerNow={sermonTimerNow}
+                syncMessage={syncMessage}
+                onViewChange={setSermonWorkspaceView}
+                onCreateDraft={createSermonDraft}
+                onOpenEntry={openSermonEntry}
+                onDraftChange={updateSermonDraft}
+                onSaveDraft={saveSermonDraft}
+                onArchiveEntry={archiveSermonEntry}
+                onUpdateStatus={updateSermonStatus}
+                onSeriesTitleChange={setSermonSeriesTitleDraft}
+                onSeriesPassageChange={setSermonSeriesPassageDraft}
+                onCreateSeries={createSermonSeries}
+                onAppendImport={appendSermonImport}
+                onBulletDraft={bulletSermonDraft}
+                onExportDraft={exportSermonDraft}
+                onStartPreaching={startPreachingMode}
+                onResetTimer={() => {
+                  setSermonPreachingStartedAt(Date.now());
+                  setSermonTimerNow(Date.now());
+                }}
+                onBackToBible={() => setTab("bible")}
               />
             )}
 
@@ -23421,6 +23967,368 @@ function CompactActionButton({
   );
 }
 
+function SermonWorkspaceScreen({
+  view,
+  sermons,
+  series,
+  draft,
+  seriesTitleDraft,
+  seriesPassageDraft,
+  importPackage,
+  illustrationLibrary,
+  quoteLibrary,
+  applicationLibrary,
+  timerStartedAt,
+  timerNow,
+  syncMessage,
+  onViewChange,
+  onCreateDraft,
+  onOpenEntry,
+  onDraftChange,
+  onSaveDraft,
+  onArchiveEntry,
+  onUpdateStatus,
+  onSeriesTitleChange,
+  onSeriesPassageChange,
+  onCreateSeries,
+  onAppendImport,
+  onBulletDraft,
+  onExportDraft,
+  onStartPreaching,
+  onResetTimer,
+  onBackToBible,
+}: {
+  view: SermonWorkspaceView;
+  sermons: SermonEntry[];
+  series: SermonSeries[];
+  draft: SermonEntry;
+  seriesTitleDraft: string;
+  seriesPassageDraft: string;
+  importPackage: Record<"passageGuide" | "studyPack" | "commentary" | "webster" | "strongs" | "notes" | "journal", string>;
+  illustrationLibrary: SermonLibraryItem[];
+  quoteLibrary: SermonLibraryItem[];
+  applicationLibrary: SermonLibraryItem[];
+  timerStartedAt: number | null;
+  timerNow: number;
+  syncMessage: string;
+  onViewChange: (view: SermonWorkspaceView) => void;
+  onCreateDraft: (kind: SermonKind) => void;
+  onOpenEntry: (entry: SermonEntry) => void;
+  onDraftChange: (patch: Partial<SermonEntry>) => void;
+  onSaveDraft: () => void;
+  onArchiveEntry: (id: string) => void;
+  onUpdateStatus: (id: string, status: SermonStatus) => void;
+  onSeriesTitleChange: (value: string) => void;
+  onSeriesPassageChange: (value: string) => void;
+  onCreateSeries: () => void;
+  onAppendImport: (label: string, body: string) => void;
+  onBulletDraft: () => void;
+  onExportDraft: () => void;
+  onStartPreaching: () => void;
+  onResetTimer: () => void;
+  onBackToBible: () => void;
+}) {
+  const activeSermons = sermons.filter((entry) => !entry.archived && entry.status !== "Archived");
+  const archivedSermons = sermons.filter((entry) => entry.archived || entry.status === "Archived");
+  const preachedCount = sermons.filter((entry) => entry.status === "Preached" || entry.status === "Taught").length;
+  const currentSeries = series.find((item) => item.id === draft.seriesId) ?? null;
+  const manuscript = draft.bulletManuscript || bulletEachSentence(buildSermonManuscript(draft));
+  const preachingLines = manuscript.split("\n").filter(Boolean);
+  const elapsedSeconds = timerStartedAt ? Math.max(0, Math.floor((timerNow - timerStartedAt) / 1000)) : 0;
+
+  if (view === "preaching") {
+    return (
+      <div className="min-h-screen bg-[var(--ink)] p-4 pb-36 text-white md:p-8 md:pb-10">
+        <div className="sticky top-0 z-10 -mx-4 border-b border-white/10 bg-[var(--ink)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <button className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onViewChange("builder")} type="button">
+              <ChevronLeft size={17} />
+              Back to Builder
+            </button>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">Timer {formatSermonTimer(elapsedSeconds)}</span>
+              <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[var(--ink)]" onClick={onResetTimer} type="button">Reset Timer</button>
+            </div>
+          </div>
+        </div>
+
+        <section className="mx-auto mt-6 max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/55">{draft.kind} Preaching Mode</p>
+          <h1 className="mt-3 text-4xl font-semibold leading-tight md:text-6xl">{draft.title || "Untitled sermon"}</h1>
+          <p className="mt-3 text-xl font-semibold text-white/70">{draft.passage} {draft.theme ? `- ${draft.theme}` : ""}</p>
+          <div className="mt-8 space-y-5">
+            {preachingLines.length ? preachingLines.map((line, index) => (
+              <p key={`preaching-line-${index}`} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-2xl leading-10 md:text-3xl md:leading-[3.2rem]">
+                {line.replace(/^- /, "")}
+              </p>
+            )) : (
+              <p className="rounded-2xl border border-white/10 bg-white/5 p-5 text-2xl leading-10">Add sermon text in the builder, then use Bullet Each Sentence.</p>
+            )}
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Workspace</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare sermons and lessons from Scripture</h1>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">
+              Build a sermon, Sunday school lesson, or series from reviewed study data. Presentation software comes later; this workspace focuses on preparation and preaching.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-2 gap-3 md:grid-cols-5">
+        <LibraryStat label="Active" value={String(activeSermons.length)} />
+        <LibraryStat label="Archived" value={String(archivedSermons.length)} />
+        <LibraryStat label="Preached/taught" value={String(preachedCount)} />
+        <LibraryStat label="Series" value={String(series.filter((item) => !item.archived).length)} />
+        <LibraryStat label="Current status" value={draft.status} />
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="flex flex-wrap gap-2">
+          {(["manager", "builder"] as SermonWorkspaceView[]).map((item) => (
+            <button
+              key={`sermon-view-${item}`}
+              className={`rounded-full px-4 py-2 text-sm font-semibold ${view === item ? "bg-[var(--ink)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
+              onClick={() => onViewChange(item)}
+              type="button"
+            >
+              {item === "manager" ? "Manager" : "Builder"}
+            </button>
+          ))}
+          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
+        </div>
+        {syncMessage && <p className="mt-3 text-sm font-semibold text-[var(--muted)]">{syncMessage}</p>}
+      </section>
+
+      {view === "manager" ? (
+        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
+          <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Manager</p>
+                <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Drafts, lessons, and preached status</h2>
+              </div>
+              <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => onViewChange("builder")} type="button">Open Builder</button>
+            </div>
+            <div className="mt-4 space-y-3">
+              {activeSermons.length ? activeSermons.map((entry) => (
+                <SermonManagerCard
+                  key={entry.id}
+                  entry={entry}
+                  series={series.find((item) => item.id === entry.seriesId) ?? null}
+                  onOpen={() => onOpenEntry(entry)}
+                  onArchive={() => onArchiveEntry(entry.id)}
+                  onStatus={(status) => onUpdateStatus(entry.id, status)}
+                />
+              )) : <EmptyState title="No sermons yet" body="Create a sermon or lesson to begin the workflow." />}
+            </div>
+          </section>
+
+          <section className="space-y-4">
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Series Manager</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Create a series</h2>
+              <div className="mt-4 grid gap-3">
+                <SermonField label="Series title" value={seriesTitleDraft} onChange={onSeriesTitleChange} placeholder="Romans: The Gospel of God" />
+                <SermonField label="Passage range" value={seriesPassageDraft} onChange={onSeriesPassageChange} placeholder="Romans 1-8" />
+                <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onCreateSeries} type="button">Create Series</button>
+              </div>
+            </article>
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Archived</p>
+              <div className="mt-3 space-y-2">
+                {archivedSermons.slice(0, 6).map((entry) => (
+                  <button key={`archived-sermon-${entry.id}`} className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenEntry(entry)} type="button">
+                    <p className="text-sm font-semibold text-[var(--green)]">{entry.title}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.passage} - {entry.status}</p>
+                  </button>
+                ))}
+                {!archivedSermons.length && <p className="text-sm leading-6 text-[var(--muted)]">Archived sermons will appear here.</p>}
+              </div>
+            </article>
+          </section>
+        </div>
+      ) : (
+        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
+          <section className="space-y-4">
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Builder</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">{draft.title || "Untitled draft"}</h2>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onSaveDraft} type="button">Save</button>
+                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportDraft} type="button">Export</button>
+                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Preaching Mode</button>
+                </div>
+              </div>
+
+              <div className="mt-5 grid gap-3 md:grid-cols-2">
+                <SermonField label="Title" value={draft.title} onChange={(value) => onDraftChange({ title: value })} />
+                <SermonField label="Passage" value={draft.passage} onChange={(value) => onDraftChange({ passage: value })} placeholder="John 3:16" />
+                <SermonField label="Theme" value={draft.theme} onChange={(value) => onDraftChange({ theme: value })} placeholder="The New Birth" />
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Type
+                  <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={draft.kind} onChange={(event) => onDraftChange({ kind: event.target.value as SermonKind })}>
+                    <option value="Sermon">Sermon</option>
+                    <option value="Lesson">Lesson</option>
+                  </select>
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Series
+                  <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={draft.seriesId} onChange={(event) => onDraftChange({ seriesId: event.target.value })}>
+                    <option value="">No series</option>
+                    {series.filter((item) => !item.archived).map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}
+                  </select>
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Status
+                  <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={draft.status} onChange={(event) => onDraftChange({ status: event.target.value as SermonStatus })}>
+                    {["Draft", "Ready", "Preached", "Taught", "Archived"].map((status) => <option key={status} value={status}>{status}</option>)}
+                  </select>
+                </label>
+              </div>
+              {currentSeries && <p className="mt-3 rounded-2xl bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]">Series: {currentSeries.title} {currentSeries.passageRange ? `- ${currentSeries.passageRange}` : ""}</p>}
+            </article>
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Build the message</p>
+              <div className="mt-4 grid gap-3">
+                <SermonTextArea label="Outline" value={draft.outline} onChange={(value) => onDraftChange({ outline: value })} placeholder="I. The need of the new birth..." />
+                <SermonTextArea label="Introduction" value={draft.introduction} onChange={(value) => onDraftChange({ introduction: value })} />
+                <SermonTextArea label="Points" value={draft.points} onChange={(value) => onDraftChange({ points: value })} />
+                <SermonTextArea label="Illustrations" value={draft.illustrations} onChange={(value) => onDraftChange({ illustrations: value })} />
+                <SermonTextArea label="Applications" value={draft.applications} onChange={(value) => onDraftChange({ applications: value })} />
+                <SermonTextArea label="Conclusion" value={draft.conclusion} onChange={(value) => onDraftChange({ conclusion: value })} />
+                <SermonTextArea label="Invitation" value={draft.invitation} onChange={(value) => onDraftChange({ invitation: value })} />
+              </div>
+            </article>
+          </section>
+
+          <section className="space-y-4">
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Import from study</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Bring in reviewed material</h2>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                {[
+                  ["Passage Guide", importPackage.passageGuide],
+                  ["Study Pack", importPackage.studyPack],
+                  ["Commentary", importPackage.commentary],
+                  ["Webster's 1828", importPackage.webster],
+                  ["Strong's", importPackage.strongs],
+                  ["Notes", importPackage.notes],
+                  ["Journal", importPackage.journal],
+                ].map(([label, body]) => (
+                  <button key={`sermon-import-${label}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-3 text-left text-sm font-semibold text-[var(--green)]" onClick={() => onAppendImport(label, body)} type="button">
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <SermonTextArea label="Imported study notes" value={draft.importedStudyNotes} onChange={(value) => onDraftChange({ importedStudyNotes: value })} />
+            </article>
+
+            <SermonLibraryPanel title="Illustration Library" items={illustrationLibrary} buttonLabel="Add illustration" onAdd={(item) => onDraftChange({ illustrations: [draft.illustrations, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })} />
+            <SermonLibraryPanel title="Quote Library" items={quoteLibrary} buttonLabel="Add quote" onAdd={(item) => onDraftChange({ quotes: [draft.quotes, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })} />
+            <SermonLibraryPanel title="Application Library" items={applicationLibrary} buttonLabel="Add application" onAdd={(item) => onDraftChange({ applications: [draft.applications, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })} />
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Bullet Each Sentence</p>
+                  <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Preachers should not lose their place</h2>
+                </div>
+                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onBulletDraft} type="button">Bullet Manuscript</button>
+              </div>
+              <SermonTextArea label="Bulleted manuscript" value={draft.bulletManuscript} onChange={(value) => onDraftChange({ bulletManuscript: value })} />
+            </article>
+          </section>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function SermonManagerCard({ entry, series, onOpen, onArchive, onStatus }: { entry: SermonEntry; series: SermonSeries | null; onOpen: () => void; onArchive: () => void; onStatus: (status: SermonStatus) => void }) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <button className="min-w-0 text-left" onClick={onOpen} type="button">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.kind} - {entry.status}</p>
+          <h3 className="mt-1 text-lg font-semibold text-[var(--green)]">{entry.title}</h3>
+          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{entry.passage} {series ? `- ${series.title}` : ""}</p>
+        </button>
+        <div className="flex flex-wrap gap-2">
+          <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={onOpen} type="button">Open</button>
+          <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={onArchive} type="button">Archive</button>
+        </div>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {(["Ready", entry.kind === "Lesson" ? "Taught" : "Preached"] as SermonStatus[]).map((status) => (
+          <button key={`status-${entry.id}-${status}`} className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]" onClick={() => onStatus(status)} type="button">
+            Mark {status}
+          </button>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function SermonLibraryPanel({ title, items, buttonLabel, onAdd }: { title: string; items: SermonLibraryItem[]; buttonLabel: string; onAdd: (item: SermonLibraryItem) => void }) {
+  return (
+    <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{title}</p>
+      <div className="mt-4 space-y-2">
+        {items.map((item) => (
+          <div key={item.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.passage} - {item.source}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{item.body}</p>
+            <button className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAdd(item)} type="button">{buttonLabel}</button>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function SermonField({ label, value, onChange, placeholder = "" }: { label: string; value: string; onChange: (value: string) => void; placeholder?: string }) {
+  return (
+    <label className="text-sm font-semibold text-[var(--muted)]">
+      {label}
+      <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] outline-none placeholder:text-stone-400" value={value} onChange={(event) => onChange(event.target.value)} placeholder={placeholder} />
+    </label>
+  );
+}
+
+function SermonTextArea({ label, value, onChange, placeholder = "" }: { label: string; value: string; onChange: (value: string) => void; placeholder?: string }) {
+  return (
+    <label className="block text-sm font-semibold text-[var(--muted)]">
+      {label}
+      <textarea className="mt-2 min-h-28 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--ink)] outline-none placeholder:text-stone-400" value={value} onChange={(event) => onChange(event.target.value)} placeholder={placeholder} />
+    </label>
+  );
+}
+
+function formatSermonTimer(seconds: number) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(remainingSeconds).padStart(2, "0")}`;
+}
+
 function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
   const items: { id: Tab; label: string; icon: React.ReactNode }[] = [
     { id: "today", label: "Today", icon: <HomeIcon size={20} /> },
@@ -23430,16 +24338,17 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
     { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
     { id: "journal", label: "Journal", icon: <FileText size={20} /> },
+    { id: "sermons", label: "Sermons", icon: <Clipboard size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-8 gap-0.5">
+      <div className="mx-auto grid max-w-lg grid-cols-9 gap-0.5">
         {items.map((item) => (
           <button
             key={item.id}
-            className={`flex h-14 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[0.62rem] font-semibold ${
+            className={`flex h-14 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[0.56rem] font-semibold ${
               tab === item.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
             }`}
             onClick={() => onTab(item.id)}
