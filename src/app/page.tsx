@@ -50,6 +50,8 @@ import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
 import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
+import jfbReviewedPhase4Batch2Commentary from "../../data/imports/jfb-reviewed-phase-4-batch-2-commentary.json";
+import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
@@ -1498,6 +1500,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Repeat monthly", "Listen before prayer meeting", "Save notes for requests"],
   },
   {
+    id: "teacher",
+    title: "Teacher",
+    shortLabel: "Class prep",
+    description: "A simple path for Sunday school teachers who need a chapter, key words, cross references, commentary, and notes without leaving the Bible.",
+    biblePassages: ["John 3", "Luke 24", "Romans 8"],
+    resourceTerms: ["teaching", "lesson", "bible characters", "bible period", "bible atlas", "commentary"],
+    collectionIds: ["preaching-teaching", "study-helps", "commentary"],
+    authorIds: ["matthew-henry", "spurgeon", "moody"],
+    repeatOptions: ["Repeat for weekly lesson prep", "Add notes after each section", "Export teaching notes"],
+  },
+  {
     id: "preacher",
     title: "Preacher",
     shortLabel: "Lesson prep",
@@ -1531,6 +1544,17 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Repeat before outreach", "Listen one resource at a time", "Copy useful quotes with source"],
   },
   {
+    id: "bible-doctrine",
+    title: "Bible Doctrine",
+    shortLabel: "Know truth",
+    description: "Foundational doctrine and survey resources for careful Bible study, with Scripture kept first and secondary helps clearly labeled.",
+    biblePassages: ["John 1", "Romans 5", "2 Timothy 3"],
+    resourceTerms: ["doctrine", "systematic theology", "great doctrines", "messiah", "christology", "christian belief"],
+    collectionIds: ["study-helps", "bible-handbooks", "commentary"],
+    authorIds: ["moody", "torrey", "spurgeon"],
+    repeatOptions: ["Read one doctrine at a time", "Compare with KJV passages", "Use with doctrinal review notes"],
+  },
+  {
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
@@ -1553,6 +1577,8 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Repeat chapter", "Stop after Romans 8", "Add notes between chapters"],
   },
 ];
+
+const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "evangelism", "bible-doctrine", "baptist-history"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds"];
 
@@ -4427,6 +4453,8 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
   ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase4Batch2Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
@@ -13523,6 +13551,9 @@ function LibraryScreen({
   const startHereResources = resources
     .filter((resource) => ["Pleasure & Profit in Bible Study", "The Way to God and How to Find It", "Practical Religion", "The Pilgrim's Progress"].includes(resource.title))
     .slice(0, 8);
+  const startHerePaths = START_HERE_READING_PATH_IDS
+    .map((pathId) => READING_PATHS.find((path) => path.id === pathId))
+    .filter(Boolean) as ReadingPath[];
   const preachersTeachersResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "illustration", "bible characters", "ten commandments"]))
     .slice(0, 8);
@@ -13646,6 +13677,17 @@ function LibraryScreen({
         onOpenReader={onOpenReader}
         onAddToListeningQueue={onAddToListeningQueue}
       />
+
+      <LibraryShelf title="Start Here" horizontal>
+        {startHerePaths.map((path) => (
+          <ReadingPathCard
+            key={`start-here-path-${path.id}`}
+            path={path}
+            count={resourcesForReadingPath(resources, path).length}
+            onOpen={() => onOpenReadingPath(path.id)}
+          />
+        ))}
+      </LibraryShelf>
 
       <LibraryShelf title="Reading Paths" horizontal>
         {READING_PATHS.map((path) => (
@@ -13784,7 +13826,7 @@ function LibraryScreen({
       </LibraryShelf>
 
       {startHereResources.length > 0 && (
-        <LibraryShelf title="Start Here">
+        <LibraryShelf title="First Books">
           {startHereResources.map((resource) => (
             <LibraryResourceCard
               key={`start-here-${resource.slug}`}

@@ -30,6 +30,16 @@ Phase 3 added meaningful growth in:
 - Dictionaries and reference works, including Richard Watson's Biblical and Theological Dictionary and Greenfield's Greek-English Lexicon to the New Testament.
 - Prayer and preaching resources, including Quiet Talks on Prayer, Prayers of the Early Church, and selected sermon collections.
 
+Phase 4 brings the verified shared Library to 316 resources by adding 115 additional Project Gutenberg-backed texts through `data/library/bulk-import-phase-4.csv`. This batch focuses on Bible reference, dictionaries, handbooks, surveys, Baptist history, missions biographies, prayer, preaching/teaching, Bible doctrine, and KJV/textual-issues background. One duplicate Baptist Magazine row was skipped by duplicate-title protection and was not imported again.
+
+Phase 4 added meaningful growth in:
+
+- Bible dictionaries/reference and Bible study helps, including Bible atlas, names and places, church dictionaries, Bible history, and Old/New Testament survey material.
+- Baptist history and doctrine, including Baptist periodical material, Baptist church manual/history resources, and Baptist author works.
+- Missions and missionary biographies, including China, Korea, Japan, India, Syria, Native American missions, Labrador, and missionary school/history resources.
+- Prayer classics and prayer testimony, including answered-prayer, model-prayer, and prayer-history resources with discernment labels where needed.
+- KJV/textual-issues background, including public-domain New Testament textual criticism and Scripture study works marked for careful historical use.
+
 ## Public-Domain Growth Targets
 
 The next Library growth should stay public-domain first, with rights metadata, doctrinal review metadata, and file-backed resources checked before deploy.
@@ -88,11 +98,11 @@ Future personal imports may allow a signed-in user to upload TXT, EPUB, PDF, or 
 
 ## Commentary Priority List
 
-1. Matthew Henry: continue verified public-domain chapter imports from CCEL/Wikisource, with source URLs and rights notes.
-2. Amos 1-9: verified CCEL chapter text is now available for the full book of Amos.
-3. John 1-5, Romans 1-8, Luke 24, Genesis 1-5, Exodus 1-5: keep current Matthew Henry entries and improve source traceability where entries are summaries rather than full chapter text.
+1. Matthew Henry: continue verified public-domain chapter imports from CCEL/Wikisource, with source URLs and rights notes. Phase 4 adds Acts 1-25 as a reviewed public batch.
+2. JFB: continue verified public-domain chapter imports from the staged CCEL source. Phase 4 adds Genesis 1-25 as a reviewed public batch.
+3. Barnes, Clarke, Wesley: expand only where exact source pages and public-domain statements remain clear.
 4. H. A. Ironside: import only exact editions with verified rights/source status.
-5. John Gill, Albert Barnes, Adam Clarke, John Wesley: needs-review comparative commentary candidates only.
+5. John Gill: keep blocked for expansion until a cleaner original public-domain source is verified.
 
 ## Amos Prep Priority
 
