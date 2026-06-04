@@ -17364,6 +17364,50 @@ function LibraryScreen({
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
+  const verifiedResourceCount = resources.filter((resource) => resource.public_domain_status === "verified").length;
+  const totalLibraryWords = resources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
+  const totalLibraryReadingMinutes = totalResourceReadingMinutes(resources);
+  const topCategoryTotals = categoryCards
+    .map(({ category, resources: categoryResources }) => ({
+      category,
+      count: categoryResources.length,
+      minutes: totalResourceReadingMinutes(categoryResources),
+    }))
+    .sort((a, b) => b.count - a.count || a.category.localeCompare(b.category))
+    .slice(0, 8);
+  const topAuthorTotals = resourcesByAuthor.slice(0, 6).map(([author, authorResources]) => ({
+    author,
+    count: authorResources.length,
+    minutes: totalResourceReadingMinutes(authorResources),
+  }));
+  const quickFindCards = [
+    {
+      title: "New to the library",
+      body: "Start with guided reading paths and short proven books.",
+      meta: `${startHereResources.length || resourcesForReadingPath(resources, READING_PATHS[0]).length} ready`,
+      action: () => onOpenReadingPath("new-believer"),
+    },
+    {
+      title: "Prayer",
+      body: "Bounds, Murray, answered prayer, missionary burden, and devotion.",
+      meta: `${subjectShelves.find((shelf) => shelf.title === "Prayer")?.resources.length ?? 0} resources`,
+      action: () => onCategoryChange("Prayer"),
+    },
+    {
+      title: "Preaching & Teaching",
+      body: "Lesson prep, sermons, illustrations, exposition, and ministry helps.",
+      meta: `${subjectShelves.find((shelf) => shelf.title === "Preaching & Teaching")?.resources.length ?? 0} resources`,
+      action: () => onCategoryChange("Preaching & Teaching"),
+    },
+    {
+      title: "Baptist History",
+      body: "Baptist history and church history resources with review labels.",
+      meta: `${subjectShelves.find((shelf) => shelf.title === "Baptist History")?.resources.length ?? 0} resources`,
+      action: () => onCategoryChange("Baptist History"),
+    },
+  ];
+  const browsingAllResources = !searchTerm && activeCategory === "All";
+  const displayedLibraryResources = browsingAllResources ? resources.slice(0, 60) : filteredResources;
 
   return (
     <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
@@ -17399,6 +17443,92 @@ function LibraryScreen({
         <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
         <LibraryStat label="Total resources" value={String(stats.totalResources)} />
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library at a glance</p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Running total of what is on the site</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                  Public resources are verified before they appear. Permission-needed and needs-review items stay out of the public reader.
+                </p>
+              </div>
+              <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {verifiedResourceCount} verified public-domain
+              </span>
+            </div>
+
+            <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <LibraryMetricCard label="Books and resources" value={resources.length.toLocaleString()} detail={`${libraryAuthorCount.toLocaleString()} authors`} />
+              <LibraryMetricCard label="Words in reader" value={totalLibraryWords.toLocaleString()} detail={readingMinutesLabel(totalLibraryReadingMinutes)} />
+              <LibraryMetricCard label="Commentary entries" value={commentaryCoverage.totalEntries.toLocaleString()} detail={`${commentaryCoverage.chaptersCovered.toLocaleString()} chapters`} />
+              <LibraryMetricCard label="Dictionaries/help" value={dictionaryCount.toLocaleString()} detail="Lookup and study tools" />
+            </div>
+
+            <div className="mt-5 grid gap-3 md:grid-cols-2">
+              {quickFindCards.map((card) => (
+                <button
+                  key={`quick-find-${card.title}`}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
+                  onClick={card.action}
+                  type="button"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-base font-semibold text-[var(--ink)]">{card.title}</p>
+                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{card.body}</p>
+                    </div>
+                    <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{card.meta}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Strongest shelves</p>
+                <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">Browse by count</h3>
+              </div>
+              <BookOpen className="text-[var(--green)]" size={22} />
+            </div>
+            <div className="mt-4 space-y-2">
+              {topCategoryTotals.map((item) => (
+                <button
+                  key={`category-total-${item.category}`}
+                  className="grid w-full grid-cols-[1fr_auto] items-center gap-3 rounded-xl bg-white px-3 py-2 text-left shadow-sm"
+                  onClick={() => onCategoryChange(item.category)}
+                  type="button"
+                >
+                  <span>
+                    <span className="block text-sm font-semibold text-[var(--ink)]">{libraryCategoryLabel(item.category)}</span>
+                    <span className="block text-xs font-semibold text-[var(--muted)]">{readingMinutesLabel(item.minutes)} reading</span>
+                  </span>
+                  <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{item.count}</span>
+                </button>
+              ))}
+            </div>
+            <div className="mt-4 border-t border-[var(--line)] pt-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Largest author shelves</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {topAuthorTotals.map((item) => (
+                  <button
+                    key={`author-total-${item.author}`}
+                    className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)] shadow-sm"
+                    onClick={() => onSearchTermChange(item.author)}
+                    type="button"
+                  >
+                    {item.author} · {item.count}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <LibraryMediaCenter
@@ -17893,7 +18023,7 @@ function LibraryScreen({
       ))}
 
       <LibraryShelf title={searchTerm || activeCategory !== "All" ? "Search Results" : "All Resources"}>
-        {(searchTerm || activeCategory !== "All" ? filteredResources : resources).map((resource) => (
+        {displayedLibraryResources.map((resource) => (
           <LibraryResourceCard
             key={resource.slug}
             resource={resource}
@@ -17904,6 +18034,13 @@ function LibraryScreen({
           />
         ))}
       </LibraryShelf>
+      {browsingAllResources && resources.length > displayedLibraryResources.length && (
+        <div className="-mt-2 rounded-2xl border border-[var(--line)] bg-white p-4 text-center shadow-sm">
+          <p className="text-sm font-semibold text-[var(--muted)]">
+            Showing the first {displayedLibraryResources.length} resources. Use search or a category above to narrow all {resources.length.toLocaleString()} resources quickly.
+          </p>
+        </div>
+      )}
     </div>
   );
 }
@@ -20547,6 +20684,16 @@ function LibraryStat({ label, value }: { label: string; value: string }) {
     <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+    </div>
+  );
+}
+
+function LibraryMetricCard({ label, value, detail }: { label: string; value: string; detail: string }) {
+  return (
+    <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      <p className="mt-2 text-2xl font-semibold tracking-tight text-[var(--green)]">{value}</p>
+      <p className="mt-1 text-sm font-semibold text-[var(--muted)]">{detail}</p>
     </div>
   );
 }
