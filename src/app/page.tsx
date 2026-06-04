@@ -9750,19 +9750,21 @@ export default function Home() {
               <span className="truncate text-lg font-semibold text-[var(--ink)]">Bible Study</span>
             </button>
             <div className="flex shrink-0 items-center gap-2">
-              <button
-                className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
-                onClick={listenCurrentChapter}
-                type="button"
-                title="Listen to current chapter"
-              >
-                {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
-                  <Pause size={17} />
-                ) : (
-                  <Headphones size={17} />
-                )}
-                {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
-              </button>
+              {tab !== "prayer" && (
+                <button
+                  className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
+                  onClick={listenCurrentChapter}
+                  type="button"
+                  title="Listen to current chapter"
+                >
+                  {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
+                    <Pause size={17} />
+                  ) : (
+                    <Headphones size={17} />
+                  )}
+                  {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
+                </button>
+              )}
               {(speechState.playing || speechState.paused) && (
                 <button
                   className="inline-flex h-10 items-center gap-2 rounded-full bg-[var(--ink)] px-4 text-sm font-semibold text-white shadow-sm"
