@@ -212,6 +212,26 @@ type CommentaryCoverage = {
   candidateAuthors: CommentaryExpansionCandidate[];
 };
 
+type CommentaryGuideProfile = {
+  author: string;
+  timePeriod: string;
+  biography: string;
+  writingStyle: string;
+  strengths: string[];
+  weaknesses: string[];
+  bestUse: string;
+  doctrinalNotes: string;
+  sampleQuote: string;
+  bestFor: string[];
+  priority: number;
+};
+
+type CommentaryRecommendation = {
+  primary?: CommentaryGuideProfile;
+  secondary?: CommentaryGuideProfile;
+  additional: CommentaryGuideProfile[];
+};
+
 type LibraryResource = {
   slug: string;
   title: string;
@@ -785,6 +805,100 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
     sourcePlan: "Romans 5 sample imported. Full import needs clean text source, edition review, and warning labels.",
     rightsNotes: "Verified sample only. Do not bulk import until source and rights metadata are documented.",
     recommendedUse: "Future comparative commentary only with clear perspective notes.",
+  },
+];
+
+const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
+  {
+    author: "Matthew Henry",
+    timePeriod: "1662-1714",
+    biography: "English Nonconformist pastor whose commentary is widely loved for devotional, practical, and pastoral Bible study.",
+    writingStyle: "Devotional, practical, warm, and application-heavy.",
+    strengths: ["Devotions", "Practical application", "Pastoral observations", "Family Bible study"],
+    weaknesses: ["Can be longer than needed for quick lookup", "Not mainly a technical word-study resource"],
+    bestUse: "Start here for devotional reading, Sunday school application, and practical help after reading the KJV passage.",
+    doctrinalNotes: "Useful historical Protestant commentary. Keep Scripture primary and check every application by the Bible text.",
+    sampleQuote: "Best used for practical observations, but every point should be checked against Scripture.",
+    bestFor: ["Devotions", "Teaching", "Preaching"],
+    priority: 1,
+  },
+  {
+    author: "Albert Barnes",
+    timePeriod: "1798-1870",
+    biography: "American Presbyterian minister known for concise explanatory Bible notes.",
+    writingStyle: "Clear, explanatory, orderly, and teacher-friendly.",
+    strengths: ["Clear teaching", "Chapter explanation", "Teacher preparation", "Concise notes"],
+    weaknesses: ["Less devotional warmth than Henry", "Presbyterian perspective should be labeled where relevant"],
+    bestUse: "Use after Matthew Henry when you need a clearer explanation or a teacher-ready summary of the passage.",
+    doctrinalNotes: "Helpful public-domain explanatory voice. Not all doctrinal conclusions are endorsed.",
+    sampleQuote: "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
+    bestFor: ["Teaching", "Historical background"],
+    priority: 2,
+  },
+  {
+    author: "H. A. Ironside",
+    timePeriod: "1876-1951",
+    biography: "Bible teacher and pastor known for clear expository preaching and accessible Bible teaching.",
+    writingStyle: "Expository, preaching-oriented, direct, and Gospel-focused.",
+    strengths: ["Preaching", "Expository flow", "Gospel emphasis", "Lesson preparation"],
+    weaknesses: ["Only reviewed samples are public in this beta", "Rights and edition review control future expansion"],
+    bestUse: "Use as an additional preaching voice where reviewed entries exist, especially for Gospel-centered presentation.",
+    doctrinalNotes: "Use only reviewed source paths. Keep imported Ironside material secondary to Scripture.",
+    sampleQuote: "Careful Bible teaching should explain the passage without moving Scripture out of the center.",
+    bestFor: ["Preaching", "Teaching"],
+    priority: 3,
+  },
+  {
+    author: "Jamieson-Fausset-Brown",
+    timePeriod: "19th century",
+    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB.",
+    writingStyle: "Concise, comparative, and explanatory.",
+    strengths: ["Concise overview", "Cross-checking", "Historical background", "Chapter survey"],
+    weaknesses: ["Can be compressed", "Less devotional than Henry"],
+    bestUse: "Use when you want a quick second or third voice without leaving the Bible-centered workflow.",
+    doctrinalNotes: "Reviewed public batches only. Commentary remains secondary and collapsed by default.",
+    sampleQuote: "Use after the KJV text and primary study helps.",
+    bestFor: ["Historical background", "Teaching"],
+    priority: 4,
+  },
+  {
+    author: "Adam Clarke",
+    timePeriod: "1762-1832",
+    biography: "Methodist theologian and commentator known for historical notes and frequent language observations.",
+    writingStyle: "Detailed, historical, and often word-study oriented.",
+    strengths: ["Word studies", "Historical notes", "Comparative study", "Background details"],
+    weaknesses: ["Use with discernment", "Some doctrinal conclusions differ from the target Baptist perspective"],
+    bestUse: "Use as an additional comparison voice, especially when word or historical details may help.",
+    doctrinalNotes: "Methodist historical resource. Not all doctrine endorsed; use with discernment labels visible.",
+    sampleQuote: "Use as a historical comparison with visible discernment labels; keep Scripture primary.",
+    bestFor: ["Word studies", "Historical background"],
+    priority: 5,
+  },
+  {
+    author: "John Wesley",
+    timePeriod: "1703-1791",
+    biography: "English preacher and Methodist leader whose New Testament notes are compact and practical.",
+    writingStyle: "Brief, practical, and holiness-oriented.",
+    strengths: ["Practical holiness emphasis", "Short notes", "New Testament comparison"],
+    weaknesses: ["New Testament only in the current source", "Methodist perspective should be labeled plainly"],
+    bestUse: "Use as a short additional New Testament voice after primary commentary and cross references.",
+    doctrinalNotes: "Not all doctrine endorsed. Keep perspective labels visible and Scripture first.",
+    sampleQuote: "Use as compact Methodist historical notes after the KJV text.",
+    bestFor: ["Devotions", "Teaching"],
+    priority: 6,
+  },
+  {
+    author: "John Gill",
+    timePeriod: "1697-1771",
+    biography: "English Baptist pastor, theologian, and commentator with Baptist historical value.",
+    writingStyle: "Detailed, theological, and historical.",
+    strengths: ["Baptist history", "Theological detail", "Historical comparison"],
+    weaknesses: ["Only small reviewed samples are public", "Full expansion waits for a safe original source"],
+    bestUse: "Use as an additional Baptist historical voice where reviewed entries are available.",
+    doctrinalNotes: "Sample-only until a stable original public-domain source is verified.",
+    sampleQuote: "Baptist historical value; needs exact source review before wider import.",
+    bestFor: ["Historical background", "Teaching"],
+    priority: 7,
   },
 ];
 
@@ -9364,8 +9478,41 @@ function AmosStudyPathScreen({
 
 function commentaryStudyLabel(entry: CommentaryEntry) {
   if (entry.author === "Matthew Henry") return "Devotional / practical";
+  if (entry.author === "Albert Barnes") return "Explanatory / teaching";
   if (entry.author === "H. A. Ironside") return "Expository";
+  if (entry.author === "Adam Clarke") return "Word studies / historical";
+  if (entry.author === "John Wesley") return "Practical holiness";
+  if (entry.author === "Jamieson-Fausset-Brown") return "Concise overview";
+  if (entry.author === "John Gill") return "Baptist historical";
   return "Reviewed commentary";
+}
+
+function commentaryGuideProfileFor(author: string) {
+  return COMMENTARY_GUIDE_PROFILES.find((profile) => profile.author === author);
+}
+
+function commentaryProfilesForEntries(entries: CommentaryEntry[]) {
+  const availableAuthors = Array.from(new Set(entries.map((entry) => entry.author)));
+  return availableAuthors
+    .map(commentaryGuideProfileFor)
+    .filter((profile): profile is CommentaryGuideProfile => Boolean(profile))
+    .sort((a, b) => a.priority - b.priority);
+}
+
+function buildCommentaryRecommendation(entries: CommentaryEntry[]): CommentaryRecommendation {
+  const profiles = commentaryProfilesForEntries(entries);
+  return {
+    primary: profiles[0],
+    secondary: profiles[1],
+    additional: profiles.slice(2, 5),
+  };
+}
+
+function commentaryGuideBestForGroups(profiles: CommentaryGuideProfile[] = COMMENTARY_GUIDE_PROFILES) {
+  return ["Devotions", "Teaching", "Preaching", "Historical background", "Word studies"].map((category) => ({
+    category,
+    authors: profiles.filter((profile) => profile.bestFor.includes(category)).map((profile) => profile.author),
+  }));
 }
 
 function commentaryReferenceLabel(entry: CommentaryEntry) {
@@ -10785,6 +10932,7 @@ function ChapterStudyWorkflow({
           {teachingVisibility.commentary && (
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
             <CommentaryChapterSummaryCard entries={chapterCommentaryEntries} compact onListen={onListenCommentary} />
+            <CommentaryGuideCard entries={chapterCommentaryEntries} compact />
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
@@ -13658,6 +13806,58 @@ function CommentaryCoverageDashboard({
           </div>
         </article>
       </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[0.9fr_1.3fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BookOpen size={18} />
+            <h3 className="text-sm font-semibold">Best commentary for the job</h3>
+          </div>
+          <div className="mt-3 space-y-2">
+            {commentaryGuideBestForGroups().map((group) => (
+              <div key={`commentary-best-for-${group.category}`} className="rounded-xl bg-white px-3 py-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{group.category}</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{group.authors.join(", ")}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Users size={18} />
+            <h3 className="text-sm font-semibold">Commentary profiles</h3>
+          </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {COMMENTARY_GUIDE_PROFILES.map((profile) => (
+              <details key={`commentary-guide-profile-${profile.author}`} className="group rounded-xl bg-white px-3 py-2">
+                <summary className="cursor-pointer list-none">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-semibold text-[var(--ink)]">{profile.author}</p>
+                      <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{profile.timePeriod} · {profile.writingStyle}</p>
+                    </div>
+                    <span className="rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:hidden">Guide</span>
+                    <span className="hidden rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:inline">Close</span>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{profile.bestUse}</p>
+                </summary>
+                <div className="mt-3 space-y-2 border-t border-[var(--line)] pt-3">
+                  <p className="text-xs leading-5 text-[var(--muted)]">{profile.biography}</p>
+                  <GuideList label="Strengths" values={profile.strengths} />
+                  <GuideList label="Watch" values={profile.weaknesses} />
+                  <p className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--green)]">Doctrinal notes:</span> {profile.doctrinalNotes}
+                  </p>
+                  <p className="rounded-xl bg-[var(--warm)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    {profile.sampleQuote}
+                  </p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </article>
+      </div>
     </section>
   );
 }
@@ -15209,6 +15409,7 @@ function FullStudyScreen({
         {commentaryEntries.length ? (
           <div className="space-y-3">
             <CommentaryChapterSummaryCard entries={commentaryEntries} onListen={onListenCommentary} />
+            <CommentaryGuideCard entries={commentaryEntries} />
             <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--green)]">Commentary comparison</p>
@@ -15439,6 +15640,85 @@ function EmptyState({ title, body }: { title: string; body: string }) {
     <div className="rounded-3xl border border-dashed border-stone-300 bg-white/60 p-8 text-center">
       <p className="text-lg font-semibold text-[var(--ink)]">{title}</p>
       <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{body}</p>
+    </div>
+  );
+}
+
+function CommentaryGuideCard({ entries, compact = false }: { entries: CommentaryEntry[]; compact?: boolean }) {
+  const recommendation = buildCommentaryRecommendation(entries);
+  const profiles = commentaryProfilesForEntries(entries);
+  if (!entries.length || !profiles.length) return null;
+
+  return (
+    <article className={`rounded-2xl border border-[var(--line)] bg-[var(--paper)] ${compact ? "p-3" : "p-4"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Guide</p>
+          <h3 className={`${compact ? "mt-1 text-sm" : "mt-2 text-base"} font-semibold text-[var(--ink)]`}>Which commentary should I use?</h3>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+            Recommendations only use reviewed entries available for this chapter.
+          </p>
+        </div>
+        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">Scripture first</span>
+      </div>
+
+      <div className="mt-3 grid gap-2 md:grid-cols-3">
+        <CommentaryRecommendationSlot label="Primary" profile={recommendation.primary} />
+        <CommentaryRecommendationSlot label="Secondary" profile={recommendation.secondary} />
+        <div className="rounded-xl bg-white px-3 py-2">
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Additional study</p>
+          {recommendation.additional.length ? (
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{recommendation.additional.map((profile) => profile.author).join(", ")}</p>
+          ) : (
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">No additional reviewed voices yet.</p>
+          )}
+        </div>
+      </div>
+
+      {!compact && (
+        <div className="mt-3 grid gap-2 md:grid-cols-2">
+          {profiles.slice(0, 4).map((profile) => (
+            <div key={`chapter-guide-${profile.author}`} className="rounded-xl bg-white px-3 py-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <p className="text-sm font-semibold text-[var(--ink)]">{profile.author}</p>
+                <span className="rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--green)]">{profile.bestFor[0]}</span>
+              </div>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{profile.bestUse}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
+
+function CommentaryRecommendationSlot({ label, profile }: { label: string; profile?: CommentaryGuideProfile }) {
+  return (
+    <div className="rounded-xl bg-white px-3 py-2">
+      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      {profile ? (
+        <>
+          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{profile.author}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{profile.writingStyle}</p>
+        </>
+      ) : (
+        <p className="mt-1 text-xs leading-5 text-[var(--muted)]">No reviewed entry yet.</p>
+      )}
+    </div>
+  );
+}
+
+function GuideList({ label, values }: { label: string; values: string[] }) {
+  return (
+    <div>
+      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      <div className="mt-1 flex flex-wrap gap-1.5">
+        {values.map((value) => (
+          <span key={`${label}-${value}`} className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+            {value}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }
@@ -16110,6 +16390,7 @@ function StudyDrawer({
           {activeTab === "commentary" && (
             <div className="space-y-3">
               <CommentaryChapterSummaryCard entries={commentaryEntries} compact />
+              <CommentaryGuideCard entries={commentaryEntries} compact />
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
                 <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
