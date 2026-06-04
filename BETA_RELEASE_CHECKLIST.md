@@ -1,127 +1,107 @@
-# Father’s Business Bible Study Beta Release Checklist
+# Father's Business Bible Study Beta Release Checklist
 
-Use this file before inviting real private beta testers. The goal is not to claim the app is finished; the goal is to make clear what is ready, what is limited, and what testers should report.
+Use this checklist before inviting private beta testers. The purpose is to confirm the app is stable, honest about limitations, and useful in the first five minutes.
 
-## Release Status
+## Release Snapshot
 
 - Production URL: https://bible-study-app-eight.vercel.app/
-- Current beta focus: Bible reader, study drawer, book introductions, teaching workflow, library reader, listening controls, and feedback.
-- Library status: 128 verified, file-backed public resources.
-- Bible survey status: 66 of 66 books covered.
-- Commentary status: reviewed public entries are visible; full JFB and Matthew Henry source batches remain staged for review.
-- Account status: Supabase sync is supported when environment variables and schema are configured; signed-out local storage remains available.
+- Current focus: Bible-centered daily growth, KJV reading, passage study, prayer, journal, memory, library, commentary, teaching prep, and feedback.
+- Storage mode: signed-out users save locally; signed-in Supabase sync is available when the project, schema, RLS, and environment variables are configured.
+- Content posture: public-domain or reviewed resources only; staged, permission-needed, and unclear resources stay labeled and hidden from normal public use.
 
-## What Works
+## Core Screens To Audit
 
-- KJV Bible reader with book, chapter, verse navigation.
-- Quick Jump for references such as `John 3`, `John 3:16`, `Romans 8:28`, and `Luke 24`.
-- Recent passages, pinned favorites, and four Bible markers.
-- Study Drawer with Study, Actions, Dictionary, Occurrences, Cross References, Notes, Audio, Commentary, and Memory.
-- Webster lookup starter data plus imported dictionary lookup path.
-- Notes, highlights, bookmarks, local fallback, and export JSON.
-- 66-book Bible surveys in Book Introduction, Study Collection, and Teaching Workspace.
-- Teaching Workspace with chapter analysis, export, commentary comparison, teacher notes, and section toggles.
-- Library with 128 verified resources, author pages, shelves, collections, reader, progress, bookmarks, notes, and listening.
-- Study playlists and listening controls using browser/device speech synthesis.
-- Commentary Dashboard and reviewed commentary entries.
-- Feedback page with copyable beta questions.
+- Daily Growth Dashboard
+- Bible Reader
+- Study Drawer
+- Passage Guide
+- Book Introduction / Bible Survey
+- Prayer
+- Journal
+- Scripture Memory
+- Library Home
+- Library Reader and listening controls
+- Commentary Library and Dashboard
+- Teaching Workspace
+- Study Playlists
+- Settings and sync status
+- Feedback form
 
-## Known Limitations
+## Daily Growth Dashboard
 
-- Speech synthesis uses the browser/device voice. It is not licensed Bible audio and not AI narration.
-- Supabase testing depends on a correctly configured project, schema, and RLS policies.
-- Full JFB and Matthew Henry commentary source batches are staged and hidden until reviewed.
-- Some author quotes remain marked for future exact-source review.
-- Prayer and journal areas are placeholders on the Today screen.
-- Admin Import Dashboard is hidden from normal navigation and should only be tested by admins.
-- Personal book upload is a placeholder; public user uploads are not enabled.
-- Strong’s numbers, paid content, sermon slides, AI tools, and marketplace features are not part of this beta.
+- Today's Bible reading appears and opens the Bible Reader.
+- Proverb of the day appears and opens the correct Proverbs chapter.
+- Prayer focus appears and opens Prayer.
+- Journal entry action opens or creates today's Scripture Journal entry.
+- Memory verse action reviews the selected verse and marks memory activity today.
+- Continue Library Reading opens the current resource or Library.
+- Study Playlist opens the Bible playlist/study workflow.
+- Progress cards show Bible reading, Prayer, Journal, and Memory status for today.
+- Dashboard remains clean on phone and desktop.
 
-## Quality Audit Notes
+## Data Safety
 
-- Bible Reader: loads quickly in live QA; Quick Jump worked on mobile and desktop.
-- Markers and favorites: local-storage based; testers should verify persistence after refresh.
-- Study Drawer: dense but usable; testers should check drawer height controls and tab scrolling on phones.
-- Book Introductions and Bible Surveys: all 66 books are present; content is concise survey-level material and can be expanded later.
-- Teaching Workspace: powerful but information-rich; testers should report confusing labels or sections they would hide by default.
-- Library: verified resources load and shelves have counts; long books should be tested for reading progress and listening comfort.
-- Reader and Listening: stop controls should cancel active speech without a refresh; testers should try sleep timer and speed changes.
-- Study Playlists: local-only for beta; testers should verify resume, stop, and duplicate prevention.
-- Commentary Dashboard: validation passes; testers should report sluggishness if author/coverage panels feel heavy on older phones.
-- Author Pages: strong enough for beta; some quotes and reading-order notes still need exact-source review.
-- Import Dashboard: admin-only test path; no uploaded content should become public automatically.
+- Signed-out local storage fallback is clear.
+- Signed-in sync status is clear.
+- Bible notes, highlights, bookmarks, markers, favorites, recent passages, prayer entries, journal entries, memory, library progress, and playlists persist after refresh.
+- Export JSON works from Settings.
+- Prayer exports work.
+- Journal exports work.
+- Library notes export works.
+- Teaching notes exports work.
+- Feedback falls back to copy if Supabase feedback table is unavailable.
 
-## Content Audit Notes
+## Quality Checks
 
-- 66 book surveys: complete, concise, and KJV-oriented.
-- Commentary recommendations: some resources are planned or staged; do not treat staged commentary as public reviewed content.
-- Author pages: biographies and reading paths are useful; exact quotations should remain conservative until source verified.
-- Library shelves: 128 verified resources; KJV/Textual Issues includes historical public-domain works and should keep discernment labels.
-- Reading paths and study collections: useful for beta; expand only after workflow feedback.
-- Amos workflow: ready as a teaching-prep test case; commentary text must remain verified only.
-- Rights review: no David Cloud / Way of Life resources should be public without written permission.
-- Doctrinal caution: keep “Use with discernment” and “Not all doctrine endorsed” labels where secondary differences may exist.
+- Quick Jump works for `John 3`, `John 3:16`, `Romans 8:28`, `Luke 24`, and `Amos 1`.
+- Bible markers A-D save and restore after refresh.
+- Study Drawer tabs are usable on mobile.
+- Passage Guide loads for John 3, Romans 8, Luke 24, Amos 1, and Genesis 1.
+- Journal creates, saves, opens, and exports an entry.
+- Prayer creates, marks prayed, marks answered, and exports.
+- Library search and shelves load without sluggishness.
+- A library resource opens in the reader and saves progress.
+- Listen controls start, stop, and do not require refresh.
+- Commentary Dashboard loads and does not expose staged unreviewed content as public.
+- Teaching Workspace exports John 3, Romans 8, Luke 24, and Amos 1 notes.
+- Settings accurately reports local or Supabase mode.
+- Feedback form opens from beta notice, Settings, Library, and Teaching Workspace.
 
-## What Testers Should Test
+## Performance Checks
 
-- Open the app on phone and desktop.
-- Use Quick Jump for `John 3`, `John 3:16`, `Romans 8:28`, `Luke 24`, `Mark 1`, and `Amos 1`.
-- Save and switch Marker A, Marker B, Marker C, and Marker D.
-- Select John 3:16 and use each Study Drawer tab.
-- Look up `believeth`, `loved`, and `death`.
-- Add, edit, delete, and export notes.
-- Highlight and bookmark verses, refresh, and confirm persistence.
-- Open Book Introduction for Mark, Hebrews, Amos, and Revelation.
-- Use Teaching Workspace export for John 3, Romans 8, Luke 24, and Amos 1.
-- Open Library, search by author/title/category, read a book, listen, bookmark, and resume.
-- Open Author Pages for Spurgeon, Ryle, Moody, Bounds, Bunyan, and Hudson Taylor.
-- Try Study Playlists and confirm Stop works.
-- Submit feedback using Settings, Library, or Teaching Workspace.
+- Mobile initial load is acceptable.
+- Daily screen feels smooth.
+- Bible Reader loads quickly.
+- Library with the current verified resource set loads and searches acceptably.
+- Commentary Dashboard does not feel sluggish.
+- Passage Guide opens without long waits.
+- No console errors on major screens.
+- No failed static assets on production.
 
-## What Not To Test Yet
+## Required Commands
 
-- Strong’s numbers.
-- Paid audio, AI narration, or licensed Bible audio.
-- Payments, subscriptions, or marketplace behavior.
-- Public personal uploads.
-- Sermon slide builder, Proclaim export, PowerPoint, Keynote, or PDF exports.
-- Full prayer management or full journal workflow.
-- Automatic doctrinal generation.
-
-## Feedback Questions
-
-- What worked smoothly?
-- What confused you?
-- Was the Bible reader easy to use on your phone?
-- Did the Study tab help you understand the selected verse?
-- Did Book Introduction help you understand the book?
-- Did the Teaching Workspace help you prepare a lesson?
-- Was Library reading/listening comfortable?
-- What felt unfinished or distracting?
-- What should be the next most important feature?
-- Did anything feel doctrinally unclear or poorly labeled?
-
-## Browser And Device Test Matrix
-
-- iPhone Safari, 390x844 or similar.
-- iPhone Chrome, 390x844 or similar.
-- Android Chrome, mid-size phone.
-- iPad Safari, portrait and landscape.
-- Desktop Chrome, 1440x900 or larger.
-- Desktop Safari.
-- Desktop Firefox.
-- Signed-out local mode.
-- Signed-in Supabase mode.
-- Slow network or throttled mobile connection.
-
-## Required Pre-Release Checks
-
-- `npm run library:qa`
+- `npm run validate:strongs`
 - `npm run validate:commentary`
+- `npm run library:qa`
 - `npm run lint`
 - `npm run build`
-- Live mobile QA.
-- Live desktop QA.
-- No console errors on major screens.
-- Confirm `.env.local` and secrets are not tracked.
 
+## Required Browser QA
+
+- Mobile viewport around 390x844.
+- Desktop viewport around 1280x900 or larger.
+- Signed-out local mode.
+- Refresh persistence test.
+- Export/download test.
+- Production URL test after deploy.
+
+## Release Decision
+
+Ready for private beta when:
+
+- Required commands pass.
+- Mobile and desktop QA pass.
+- Production deployment succeeds.
+- No secrets or `.env.local` files are tracked.
+- Known limitations are documented.
+- Testers have clear instructions.
