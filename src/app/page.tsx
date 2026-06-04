@@ -11621,6 +11621,26 @@ function resourcesForAuthor(resources: LibraryResource[], profile: LibraryAuthor
   return resources.filter((resource) => libraryAuthorIdFromName(resource.author) === profile.id);
 }
 
+function totalResourceReadingMinutes(resources: LibraryResource[]) {
+  return resources.reduce((total, resource) => total + Math.max(1, Math.round((resource.word_count ?? 1200) / 225)), 0);
+}
+
+function readingMinutesLabel(minutes: number) {
+  if (minutes >= 60) {
+    const hours = Math.round(minutes / 60);
+    return `${hours} hr${hours === 1 ? "" : "s"}`;
+  }
+  return `${minutes} min`;
+}
+
+function featuredTitlesForAuthor(resources: LibraryResource[], profile: LibraryAuthorProfile, limit = 4) {
+  const authorResources = resourcesForAuthor(resources, profile);
+  const preferred = profile.recommendedReadingOrder
+    .map((title) => authorResources.find((resource) => resource.title.toLowerCase().includes(title.toLowerCase()) || title.toLowerCase().includes(resource.title.toLowerCase())))
+    .filter(Boolean) as LibraryResource[];
+  return Array.from(new Map([...preferred, ...authorResources].map((resource) => [resource.slug, resource])).values()).slice(0, limit);
+}
+
 function resourcesForCollection(resources: LibraryResource[], collection: LibraryCollection) {
   return resources.filter((resource) => libraryResourceMatches(resource, collection.terms));
 }
@@ -12051,6 +12071,7 @@ function LibraryScreen({
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
         onOpenAuthor={onOpenAuthor}
+        onOpenReadingPath={onOpenReadingPath}
         onAddToStudyPlaylist={onAddToStudyPlaylist}
       />
     );
@@ -12183,6 +12204,8 @@ function LibraryScreen({
   const audiobookReadyResources = resources
     .filter((resource) => resource.word_count && resource.word_count > 0)
     .slice(0, 8);
+  const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
+  const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
 
   return (
     <div className="space-y-5 p-4 pb-36 md:p-8 md:pb-10">
@@ -12205,12 +12228,12 @@ function LibraryScreen({
       </section>
 
       <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
-        <LibraryStat label="Books started" value={String(stats.booksStarted)} />
-        <LibraryStat label="Books completed" value={String(stats.booksCompleted)} />
-        <LibraryStat label="Hours listened" value={stats.hoursListened} />
-        <LibraryStat label="Reading streak" value={stats.readingStreak} />
-        <LibraryStat label="Favorite authors" value={stats.favoriteAuthors.length ? String(stats.favoriteAuthors.length) : "Soon"} />
-        <LibraryStat label="Available" value={String(stats.totalResources)} />
+        <LibraryStat label="Total authors" value={String(libraryAuthorCount)} />
+        <LibraryStat label="Total books" value={String(resources.length)} />
+        <LibraryStat label="Total commentaries" value={String(commentaryCoverage.totalEntries)} />
+        <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
+        <LibraryStat label="Total resources" value={String(stats.totalResources)} />
+        <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
       </section>
 
       <LibraryMediaCenter
@@ -12238,14 +12261,17 @@ function LibraryScreen({
       </LibraryShelf>
 
       <LibraryShelf title="Author Collections" horizontal>
-        {authorCollectionProfiles.map((profile) => (
-          <LibraryAuthorCard
+        {authorCollectionProfiles.map((profile) => {
+          const authorResources = resourcesForAuthor(resources, profile);
+          return (
+          <LibraryAuthorCollectionCard
             key={`author-collection-${profile.id}`}
             profile={profile}
-            count={resourcesForAuthor(resources, profile).length}
+            resources={authorResources}
             onOpen={() => onOpenAuthor(profile.id)}
           />
-        ))}
+          );
+        })}
       </LibraryShelf>
 
       <StudyPlaylistPlanner onOpenBible={onOpenBible} />
@@ -13870,6 +13896,7 @@ function LibraryAuthorScreen({
   onBack,
   onOpenDetail,
   onOpenAuthor,
+  onOpenReadingPath,
   onAddToStudyPlaylist,
 }: {
   profile: LibraryAuthorProfile;
@@ -13879,6 +13906,7 @@ function LibraryAuthorScreen({
   onBack: () => void;
   onOpenDetail: (slug: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
+  onOpenReadingPath: (pathId: string) => void;
   onAddToStudyPlaylist: (slug: string) => void;
 }) {
   const relatedAuthors = profile.relatedAuthorIds
@@ -13886,6 +13914,9 @@ function LibraryAuthorScreen({
     .filter(Boolean) as LibraryAuthorProfile[];
   const commentaryVolumes = commentaryVolumeLabels(commentaryEntries);
   const candidate = COMMENTARY_EXPANSION_CANDIDATES.find((item) => libraryAuthorIdFromName(item.author) === profile.id);
+  const startHereResources = featuredTitlesForAuthor(resources, profile, 4);
+  const readingPaths = READING_PATHS.filter((path) => path.authorIds.includes(profile.id));
+  const totalMinutes = totalResourceReadingMinutes(resources);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -13910,6 +13941,10 @@ function LibraryAuthorScreen({
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
             <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Library Books</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+            <p className="text-2xl font-semibold text-[var(--green)]">{resources.length ? readingMinutesLabel(totalMinutes) : "Soon"}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reading Time</p>
           </div>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -13946,8 +13981,33 @@ function LibraryAuthorScreen({
         </article>
       </section>
 
+      {startHereResources.length > 0 && (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">New to {profile.name}?</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Start Here</h2>
+            </div>
+            <p className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              {startHereResources.length} featured title{startHereResources.length === 1 ? "" : "s"}
+            </p>
+          </div>
+          <ol className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {startHereResources.map((resource, index) => (
+              <li key={`author-start-${profile.id}-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{index + 1}. Start here</p>
+                <button className="mt-2 text-left text-sm font-semibold leading-6 text-[var(--green)]" onClick={() => onOpenDetail(resource.slug)} type="button">
+                  {resource.title}
+                </button>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-        <h2 className="text-lg font-semibold">Books</h2>
+        <h2 className="text-lg font-semibold">Main Books</h2>
         {resources.length ? (
           <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {resources.map((resource) => (
@@ -14005,7 +14065,27 @@ function LibraryAuthorScreen({
         </article>
       </section>
 
+      {readingPaths.length > 0 && (
+        <LibraryShelf title="Reading Paths" horizontal>
+          {readingPaths.map((path) => (
+            <ReadingPathCard
+              key={`author-path-${profile.id}-${path.id}`}
+              path={path}
+              count={resourcesForReadingPath(allResources, path).length}
+              onOpen={() => onOpenReadingPath(path.id)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
       <LibraryShelf title="Related Authors" horizontal>
+        <div className="min-w-[260px] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:min-w-0">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Reading {profile.name}?</p>
+          <h3 className="mt-2 text-lg font-semibold text-[var(--ink)]">You may also like</h3>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            These authors share nearby themes, teaching use, or historical value.
+          </p>
+        </div>
         {relatedAuthors.map((author) => (
           <LibraryAuthorCard
             key={`related-author-${author.id}`}
@@ -14896,6 +14976,50 @@ function LibraryAuthorCard({
           <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
             {count} book{count === 1 ? "" : "s"}
           </span>
+        )}
+      </div>
+    </button>
+  );
+}
+
+function LibraryAuthorCollectionCard({
+  profile,
+  resources,
+  onOpen,
+}: {
+  profile: LibraryAuthorProfile;
+  resources: LibraryResource[];
+  onOpen: () => void;
+}) {
+  const featuredTitles = featuredTitlesForAuthor(resources, profile, 3);
+  const totalMinutes = totalResourceReadingMinutes(resources);
+
+  return (
+    <button
+      className="min-w-[280px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md md:min-w-0"
+      onClick={onOpen}
+      type="button"
+    >
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Author Collection</p>
+      <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">{profile.name}</h3>
+      <p className="mt-1 text-sm font-semibold text-[var(--green)]">{profile.shortLabel}</p>
+      <div className="mt-3 grid grid-cols-2 gap-2">
+        <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+          <p className="text-lg font-semibold text-[var(--green)]">{resources.length}</p>
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Books</p>
+        </div>
+        <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+          <p className="text-lg font-semibold text-[var(--green)]">{resources.length ? readingMinutesLabel(totalMinutes) : "Soon"}</p>
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Reading</p>
+        </div>
+      </div>
+      <div className="mt-3 space-y-1.5">
+        {featuredTitles.length ? featuredTitles.map((resource) => (
+          <p key={`collection-feature-${profile.id}-${resource.slug}`} className="line-clamp-1 rounded-lg bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+            {resource.title}
+          </p>
+        )) : (
+          <p className="rounded-lg bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Ready for verified imports</p>
         )}
       </div>
     </button>
