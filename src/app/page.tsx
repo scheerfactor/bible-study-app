@@ -65,7 +65,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -80,6 +80,8 @@ type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
 type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family" | "Friends" | "Special Requests";
 type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
 type PrayerRotation = "Daily" | "Weekly" | "Twice Weekly" | "Every Day";
+type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Drawer" | "Prayer Entry" | "Reading Plan" | "Library Book" | "Commentary Note";
+type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
 
 type BibleVerse = {
   ref: string;
@@ -159,6 +161,67 @@ type PrayerDraft = {
   promiseVerse: string;
   rotation: PrayerRotation;
   praiseReport: string;
+};
+
+type JournalDefinition = {
+  word: string;
+  definition: string;
+};
+
+type JournalEntry = {
+  id: string;
+  date: string;
+  bibleReadingPassage: string;
+  proverbOfTheDay: string;
+  selectedVerseRefs: string;
+  prayerFocus: string;
+  readingPlanStatus: string;
+  versePassage: string;
+  wordsToDefine: string;
+  websterDefinitions: JournalDefinition[];
+  strongsConnection: string;
+  verseSays: string;
+  verseMeans: string;
+  verseApplies: string;
+  prayerResponse: string;
+  obedienceStep: string;
+  memoryVerse: string;
+  teachingThought: string;
+  sourceType: JournalSourceType;
+  sourceLabel: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+type JournalDraft = {
+  id?: string;
+  date: string;
+  bibleReadingPassage: string;
+  proverbOfTheDay: string;
+  selectedVerseRefs: string;
+  prayerFocus: string;
+  readingPlanStatus: string;
+  versePassage: string;
+  wordsToDefine: string;
+  strongsConnection: string;
+  verseSays: string;
+  verseMeans: string;
+  verseApplies: string;
+  prayerResponse: string;
+  obedienceStep: string;
+  memoryVerse: string;
+  teachingThought: string;
+  sourceType: JournalSourceType;
+  sourceLabel: string;
+};
+
+type ReadingPlanFoundation = {
+  id: string;
+  category: ReadingPlanCategory;
+  title: string;
+  description: string;
+  startHere: string;
+  status: "Ready" | "Planned";
 };
 
 type SavedState = {
@@ -898,6 +961,7 @@ const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
 const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
+const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const PRAYER_CATEGORIES: PrayerCategory[] = ["Church Members", "Missionaries", "Ministries", "Family", "Friends", "Special Requests"];
@@ -930,6 +994,93 @@ const EMPTY_PRAYER_DRAFT: PrayerDraft = {
   rotation: "Weekly",
   praiseReport: "",
 };
+const JOURNAL_SOURCE_TYPES: JournalSourceType[] = ["Today", "Bible Verse", "Passage Guide", "Study Drawer", "Prayer Entry", "Reading Plan", "Library Book", "Commentary Note"];
+const EMPTY_JOURNAL_DRAFT: JournalDraft = {
+  date: "",
+  bibleReadingPassage: "",
+  proverbOfTheDay: "",
+  selectedVerseRefs: "",
+  prayerFocus: "",
+  readingPlanStatus: "",
+  versePassage: "",
+  wordsToDefine: "",
+  strongsConnection: "",
+  verseSays: "",
+  verseMeans: "",
+  verseApplies: "",
+  prayerResponse: "",
+  obedienceStep: "",
+  memoryVerse: "",
+  teachingThought: "",
+  sourceType: "Today",
+  sourceLabel: "Daily journal",
+};
+const READING_PLAN_FOUNDATION: ReadingPlanFoundation[] = [
+  {
+    id: "bible-in-a-year",
+    category: "Bible in a Year",
+    title: "Bible in a Year",
+    description: "A full-year KJV reading plan placeholder for future daily assignments.",
+    startHere: "Start with Genesis 1 and Matthew 1 when the full plan is wired.",
+    status: "Planned",
+  },
+  {
+    id: "proverbs-of-the-day",
+    category: "Proverbs of the Day",
+    title: "Proverbs of the Day",
+    description: "Read the Proverb that matches the day of the month.",
+    startHere: "Today uses the current calendar day as the Proverbs chapter.",
+    status: "Ready",
+  },
+  {
+    id: "new-testament-90",
+    category: "New Testament in 90 Days",
+    title: "New Testament in 90 Days",
+    description: "A focused New Testament plan prepared for future daily assignments.",
+    startHere: "Start in Matthew 1 after plan assignments are added.",
+    status: "Planned",
+  },
+  {
+    id: "romans-study",
+    category: "Romans Study",
+    title: "Romans Study",
+    description: "A doctrinal reading path for Romans with study notes and memory verses.",
+    startHere: "Begin with Romans 1 and continue through Romans 8 for the first phase.",
+    status: "Ready",
+  },
+  {
+    id: "amos-study",
+    category: "Amos Study",
+    title: "Amos Study",
+    description: "A teacher-friendly plan built around Amos 1-4 and future Amos coverage.",
+    startHere: "Begin with Amos 1-4 and the Amos Teaching Prep path.",
+    status: "Ready",
+  },
+  {
+    id: "prayer-study",
+    category: "Prayer Study",
+    title: "Prayer Study",
+    description: "Scripture journal prompts connected to prayer requests and answered prayer.",
+    startHere: "Start with a prayer focus and write what should be prayed and obeyed.",
+    status: "Ready",
+  },
+  {
+    id: "evangelism-study",
+    category: "Evangelism Study",
+    title: "Evangelism Study",
+    description: "A future study path for gospel clarity, witness, and helpful verses.",
+    startHere: "Start with John 3 and Romans 3-5.",
+    status: "Planned",
+  },
+  {
+    id: "fear-of-the-lord-study",
+    category: "Fear of the Lord Study",
+    title: "Fear of the Lord Study",
+    description: "A future topical path through Proverbs and related passages.",
+    startHere: "Start with Proverbs 1:7 and Proverbs 9:10.",
+    status: "Planned",
+  },
+];
 const DEFAULT_BOOK = "John";
 const DEFAULT_CHAPTER = 3;
 const DEFAULT_VERSE = 16;
@@ -6187,6 +6338,181 @@ function missionaryPrayerMarkdown(entries: PrayerEntry[]) {
   ].join("\n");
 }
 
+function todayIsoDate() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function normalizeJournalEntry(entry: Partial<JournalEntry>): JournalEntry | null {
+  if (!entry.id || !entry.date) return null;
+  const now = new Date().toISOString();
+  return {
+    id: entry.id,
+    date: entry.date,
+    bibleReadingPassage: entry.bibleReadingPassage ?? "",
+    proverbOfTheDay: entry.proverbOfTheDay ?? "",
+    selectedVerseRefs: entry.selectedVerseRefs ?? "",
+    prayerFocus: entry.prayerFocus ?? "",
+    readingPlanStatus: entry.readingPlanStatus ?? "",
+    versePassage: entry.versePassage ?? "",
+    wordsToDefine: entry.wordsToDefine ?? "",
+    websterDefinitions: Array.isArray(entry.websterDefinitions) ? entry.websterDefinitions : [],
+    strongsConnection: entry.strongsConnection ?? "",
+    verseSays: entry.verseSays ?? "",
+    verseMeans: entry.verseMeans ?? "",
+    verseApplies: entry.verseApplies ?? "",
+    prayerResponse: entry.prayerResponse ?? "",
+    obedienceStep: entry.obedienceStep ?? "",
+    memoryVerse: entry.memoryVerse ?? "",
+    teachingThought: entry.teachingThought ?? "",
+    sourceType: JOURNAL_SOURCE_TYPES.includes(entry.sourceType ?? "Today") ? entry.sourceType ?? "Today" : "Today",
+    sourceLabel: entry.sourceLabel ?? "",
+    createdAt: entry.createdAt ?? now,
+    updatedAt: entry.updatedAt ?? now,
+  };
+}
+
+function loadJournalEntries(): JournalEntry[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(JOURNAL_ENTRIES_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as Partial<JournalEntry>[];
+    return parsed
+      .map(normalizeJournalEntry)
+      .filter((entry): entry is JournalEntry => Boolean(entry))
+      .sort((a, b) => b.date.localeCompare(a.date) || b.updatedAt.localeCompare(a.updatedAt));
+  } catch {
+    return [];
+  }
+}
+
+function saveJournalEntries(entries: JournalEntry[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(JOURNAL_ENTRIES_KEY, JSON.stringify(entries));
+}
+
+function wordsToDefinitionList(words: string) {
+  return Array.from(new Set(words.split(/[,;\n]/).map((word) => cleanWord(word)).filter(Boolean)))
+    .slice(0, 10)
+    .map((word) => {
+      const entry = findDictionaryEntry(word);
+      return {
+        word: entry.lookupWord || word,
+        definition: entry.definition,
+      };
+    });
+}
+
+function journalDraftToEntry(draft: JournalDraft, existing?: JournalEntry): JournalEntry {
+  const now = new Date().toISOString();
+  return {
+    id: existing?.id ?? draft.id ?? makeId("journal"),
+    date: draft.date || todayIsoDate(),
+    bibleReadingPassage: draft.bibleReadingPassage.trim(),
+    proverbOfTheDay: draft.proverbOfTheDay.trim(),
+    selectedVerseRefs: draft.selectedVerseRefs.trim(),
+    prayerFocus: draft.prayerFocus.trim(),
+    readingPlanStatus: draft.readingPlanStatus.trim(),
+    versePassage: draft.versePassage.trim(),
+    wordsToDefine: draft.wordsToDefine.trim(),
+    websterDefinitions: wordsToDefinitionList(draft.wordsToDefine),
+    strongsConnection: draft.strongsConnection.trim(),
+    verseSays: draft.verseSays.trim(),
+    verseMeans: draft.verseMeans.trim(),
+    verseApplies: draft.verseApplies.trim(),
+    prayerResponse: draft.prayerResponse.trim(),
+    obedienceStep: draft.obedienceStep.trim(),
+    memoryVerse: draft.memoryVerse.trim(),
+    teachingThought: draft.teachingThought.trim(),
+    sourceType: draft.sourceType,
+    sourceLabel: draft.sourceLabel.trim(),
+    createdAt: existing?.createdAt ?? now,
+    updatedAt: now,
+  };
+}
+
+function journalEntryToDraft(entry: JournalEntry): JournalDraft {
+  return {
+    id: entry.id,
+    date: entry.date,
+    bibleReadingPassage: entry.bibleReadingPassage,
+    proverbOfTheDay: entry.proverbOfTheDay,
+    selectedVerseRefs: entry.selectedVerseRefs,
+    prayerFocus: entry.prayerFocus,
+    readingPlanStatus: entry.readingPlanStatus,
+    versePassage: entry.versePassage,
+    wordsToDefine: entry.wordsToDefine,
+    strongsConnection: entry.strongsConnection,
+    verseSays: entry.verseSays,
+    verseMeans: entry.verseMeans,
+    verseApplies: entry.verseApplies,
+    prayerResponse: entry.prayerResponse,
+    obedienceStep: entry.obedienceStep,
+    memoryVerse: entry.memoryVerse,
+    teachingThought: entry.teachingThought,
+    sourceType: entry.sourceType,
+    sourceLabel: entry.sourceLabel,
+  };
+}
+
+function journalMarkdown(entry: JournalEntry) {
+  return [
+    `# Scripture Journal - ${entry.date}`,
+    "",
+    `Source: ${entry.sourceType}${entry.sourceLabel ? ` - ${entry.sourceLabel}` : ""}`,
+    `Bible reading: ${entry.bibleReadingPassage || "Not set"}`,
+    `Proverb of the day: ${entry.proverbOfTheDay || "Not set"}`,
+    `Selected verse(s): ${entry.selectedVerseRefs || "Not set"}`,
+    `Prayer focus: ${entry.prayerFocus || "Not set"}`,
+    `Reading plan: ${entry.readingPlanStatus || "Not set"}`,
+    "",
+    "## Verse / Passage",
+    entry.versePassage || "Not written yet.",
+    "",
+    "## Words to Define",
+    entry.wordsToDefine || "No words added yet.",
+    "",
+    "## Webster's 1828 Definitions",
+    ...(entry.websterDefinitions.length ? entry.websterDefinitions.map((item) => `- ${item.word}: ${item.definition}`) : ["No Webster definitions saved yet."]),
+    "",
+    "## Strong's Connection",
+    entry.strongsConnection || "No Strong's connection saved yet.",
+    "",
+    "## What Does the Verse Say?",
+    entry.verseSays || "Not written yet.",
+    "",
+    "## What Does It Mean?",
+    entry.verseMeans || "Not written yet.",
+    "",
+    "## How Does It Apply?",
+    entry.verseApplies || "Not written yet.",
+    "",
+    "## What Should I Pray?",
+    entry.prayerResponse || "Not written yet.",
+    "",
+    "## What Should I Obey?",
+    entry.obedienceStep || "Not written yet.",
+    "",
+    "## Memory Verse",
+    entry.memoryVerse || "Not set.",
+    "",
+    "## Teaching / Preaching Thought",
+    entry.teachingThought || "Not written yet.",
+    "",
+  ].join("\n");
+}
+
+function journalRangeMarkdown(entries: JournalEntry[], title = "Scripture Journal Export") {
+  return [
+    `# ${title}`,
+    "",
+    `Exported: ${new Date().toLocaleDateString()}`,
+    "",
+    ...entries.flatMap((entry) => [journalMarkdown(entry), "\n---\n"]),
+  ].join("\n");
+}
+
 function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
   const now = new Date().toISOString();
   return {
@@ -6931,6 +7257,10 @@ export default function Home() {
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
   const [prayerEntries, setPrayerEntries] = useState<PrayerEntry[]>([]);
   const [prayerDraft, setPrayerDraft] = useState<PrayerDraft>(EMPTY_PRAYER_DRAFT);
+  const [journalEntries, setJournalEntries] = useState<JournalEntry[]>([]);
+  const [journalDraft, setJournalDraft] = useState<JournalDraft>(() => ({ ...EMPTY_JOURNAL_DRAFT, date: todayIsoDate() }));
+  const [journalExportStart, setJournalExportStart] = useState("");
+  const [journalExportEnd, setJournalExportEnd] = useState("");
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
@@ -7302,6 +7632,47 @@ export default function Home() {
     missionaries: prayerEntries.filter((entry) => entry.category === "Missionaries").length,
   }), [activePrayerEntries.length, answeredPrayerEntries.length, prayerEntries, todaysPrayerFocus.length]);
 
+  const proverbOfTheDay = useMemo(() => {
+    const day = Math.min(31, Math.max(1, new Date().getDate()));
+    const firstVerse = versesByRef.get(`Proverbs ${day}:1`);
+    return firstVerse ? `${firstVerse.ref} - ${firstVerse.plainText}` : `Proverbs ${day}`;
+  }, [versesByRef]);
+
+  const dailyJournalDefaults = useMemo<JournalDraft>(() => {
+    const verse = versesByRef.get(selectedRef) ?? versesByRef.get("John 3:16") ?? chapterVerses[0] ?? allVerses[0];
+    const prayerFocus = todaysPrayerFocus[0]
+      ? `${todaysPrayerFocus[0].name}: ${todaysPrayerFocus[0].request}`
+      : "No prayer focus selected yet.";
+    const memoryVerse = scriptureMemory.find((item) => item.verse_ref === verse?.ref)?.verse_ref ?? verse?.ref ?? "";
+    const planStatus = `Proverbs of the Day - ${proverbOfTheDay.split(" - ")[0]}; current Bible reading - ${book} ${chapter}`;
+
+    return {
+      ...EMPTY_JOURNAL_DRAFT,
+      date: todayIsoDate(),
+      bibleReadingPassage: `${book} ${chapter}`,
+      proverbOfTheDay,
+      selectedVerseRefs: verse?.ref ?? selectedRef,
+      prayerFocus,
+      readingPlanStatus: planStatus,
+      versePassage: verse ? `${verse.ref} ${verse.text}` : "",
+      wordsToDefine: verse ? keyWordsForVerse(verse).slice(0, 5).join(", ") : "",
+      memoryVerse,
+      sourceType: "Today",
+      sourceLabel: "Daily Growth Flow",
+    };
+  }, [allVerses, book, chapter, chapterVerses, proverbOfTheDay, scriptureMemory, selectedRef, todaysPrayerFocus, versesByRef]);
+
+  const journalStats = useMemo(() => {
+    const today = todayIsoDate();
+    const devotionalCount = journalEntries.filter((entry) => entry.prayerResponse || entry.verseApplies || entry.obedienceStep).length;
+    return {
+      total: journalEntries.length,
+      today: journalEntries.filter((entry) => entry.date === today).length,
+      devotional: devotionalCount,
+      plans: READING_PLAN_FOUNDATION.length,
+    };
+  }, [journalEntries]);
+
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
       const nextState = updater(state);
@@ -7391,6 +7762,116 @@ export default function Home() {
     setSyncMessage("Marked prayed today.");
   }
 
+  function saveJournalEntryList(updater: (entries: JournalEntry[]) => JournalEntry[]) {
+    setJournalEntries((entries) => {
+      const nextEntries = updater(entries).sort((a, b) => b.date.localeCompare(a.date) || b.updatedAt.localeCompare(a.updatedAt));
+      saveJournalEntries(nextEntries);
+      return nextEntries;
+    });
+  }
+
+  function saveJournalDraft() {
+    const existing = journalDraft.id ? journalEntries.find((entry) => entry.id === journalDraft.id) : undefined;
+    const entry = journalDraftToEntry(journalDraft, existing);
+    saveJournalEntryList((entries) => {
+      const withoutExisting = entries.filter((item) => item.id !== entry.id);
+      return [entry, ...withoutExisting];
+    });
+    setJournalDraft(journalEntryToDraft(entry));
+    setSyncMessage("Journal entry saved locally.");
+  }
+
+  function deleteJournalEntry(id: string) {
+    saveJournalEntryList((entries) => entries.filter((entry) => entry.id !== id));
+    if (journalDraft.id === id) setJournalDraft(dailyJournalDefaults);
+    setSyncMessage("Journal entry removed from this device.");
+  }
+
+  function startJournalDraft(sourceType: JournalSourceType, overrides: Partial<JournalDraft> = {}) {
+    setJournalDraft({
+      ...dailyJournalDefaults,
+      sourceType,
+      sourceLabel: overrides.sourceLabel ?? sourceType,
+      ...overrides,
+      id: undefined,
+      date: overrides.date ?? todayIsoDate(),
+    });
+    setTab("journal");
+    setSyncMessage("Journal draft prepared.");
+  }
+
+  function startJournalFromEntry(entry: JournalEntry) {
+    setJournalDraft(journalEntryToDraft(entry));
+    setSyncMessage("Journal entry opened for editing.");
+  }
+
+  function startJournalFromCurrentVerse() {
+    const verse = versesByRef.get(selectedRef) ?? chapterVerses[0];
+    startJournalDraft("Bible Verse", {
+      selectedVerseRefs: verse?.ref ?? selectedRef,
+      versePassage: verse ? `${verse.ref} ${verse.text}` : selectedRef,
+      wordsToDefine: verse ? keyWordsForVerse(verse).slice(0, 6).join(", ") : "",
+      memoryVerse: verse?.ref ?? selectedRef,
+      sourceLabel: verse?.ref ?? selectedRef,
+    });
+  }
+
+  function startJournalFromPrayer(entry?: PrayerEntry) {
+    const focus = entry ?? todaysPrayerFocus[0] ?? activePrayerEntries[0];
+    startJournalDraft("Prayer Entry", {
+      prayerFocus: focus ? `${focus.name}: ${focus.request}` : dailyJournalDefaults.prayerFocus,
+      selectedVerseRefs: focus?.bibleVerse || focus?.promiseVerse || focus?.missionaryVerse || dailyJournalDefaults.selectedVerseRefs,
+      versePassage: focus?.studyNote || dailyJournalDefaults.versePassage,
+      prayerResponse: focus ? `Pray for ${focus.name}: ${focus.request}` : "",
+      sourceLabel: focus?.name ?? "Prayer focus",
+    });
+  }
+
+  function startJournalFromLibrary() {
+    const progress = todayLibraryProgress;
+    startJournalDraft("Library Book", {
+      sourceLabel: progress ? progress.title : "Library reading",
+      readingPlanStatus: progress ? `Continue reading ${progress.title} - ${formatPercent(progress.progress)} complete` : dailyJournalDefaults.readingPlanStatus,
+      verseSays: progress ? `Reading note from ${progress.title}` : "",
+    });
+  }
+
+  function startJournalFromCommentary() {
+    const entry = chapterCommentaryEntries[0];
+    startJournalDraft("Commentary Note", {
+      sourceLabel: entry ? `${entry.author} on ${book} ${chapter}` : `${book} ${chapter} commentary`,
+      versePassage: `${book} ${chapter}`,
+      teachingThought: entry ? `${entry.author} commentary note available for review.` : "No reviewed commentary note selected yet.",
+    });
+  }
+
+  function startJournalFromReadingPlan(plan: ReadingPlanFoundation) {
+    startJournalDraft("Reading Plan", {
+      readingPlanStatus: `${plan.title} - ${plan.status}. ${plan.startHere}`,
+      sourceLabel: plan.title,
+    });
+  }
+
+  function exportActiveJournalEntry() {
+    const entry = journalDraftToEntry(journalDraft, journalDraft.id ? journalEntries.find((item) => item.id === journalDraft.id) : undefined);
+    downloadTextFile(`journal-${entry.date}.md`, journalMarkdown(entry), "text/markdown;charset=utf-8");
+    setSyncMessage("Journal entry exported.");
+  }
+
+  function exportJournalRange() {
+    const start = journalExportStart || "0000-01-01";
+    const end = journalExportEnd || "9999-12-31";
+    const entries = journalEntries.filter((entry) => entry.date >= start && entry.date <= end);
+    downloadTextFile("scripture-journal-export.md", journalRangeMarkdown(entries, "Scripture Journal Date Range"), "text/markdown;charset=utf-8");
+    setSyncMessage(entries.length ? "Journal date range exported." : "No journal entries matched that date range.");
+  }
+
+  function exportDevotionalNotes() {
+    const entries = journalEntries.filter((entry) => entry.prayerResponse || entry.verseApplies || entry.obedienceStep || entry.teachingThought);
+    downloadTextFile("devotional-notes.md", journalRangeMarkdown(entries, "Devotional Notes"), "text/markdown;charset=utf-8");
+    setSyncMessage(entries.length ? "Devotional notes exported." : "No devotional notes saved yet.");
+  }
+
   useEffect(() => {
     queueMicrotask(() => {
       setSaved(loadLocalState());
@@ -7412,6 +7893,7 @@ export default function Home() {
       setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
       setScriptureMemory(loadScriptureMemory());
       setPrayerEntries(loadPrayerEntries());
+      setJournalEntries(loadJournalEntries());
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
@@ -9750,7 +10232,7 @@ export default function Home() {
               <span className="truncate text-lg font-semibold text-[var(--ink)]">Bible Study</span>
             </button>
             <div className="flex shrink-0 items-center gap-2">
-              {tab !== "prayer" && (
+              {tab !== "prayer" && tab !== "journal" && (
                 <button
                   className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 text-sm font-semibold text-[var(--green)] shadow-sm"
                   onClick={listenCurrentChapter}
@@ -9802,6 +10284,7 @@ export default function Home() {
               />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
               <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
+              <NavButton icon={<FileText size={18} />} label="Journal" active={tab === "journal"} onClick={() => setTab("journal")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
 
@@ -9832,6 +10315,7 @@ export default function Home() {
                 bookmarkCount={saved.bookmarks.length}
                 prayerFocusEntries={todaysPrayerFocus}
                 prayerStats={prayerStats}
+                journalStats={journalStats}
                 onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
                 onListen={listenCurrentChapter}
@@ -9848,6 +10332,8 @@ export default function Home() {
                 }}
                 onRepeatMemory={(ref, nextProgress) => updateMemoryProgress(ref, nextProgress)}
                 onOpenPrayer={() => setTab("prayer")}
+                onOpenJournal={() => setTab("journal")}
+                onCreateJournal={() => startJournalDraft("Today", { sourceLabel: "Daily Growth Flow" })}
               />
             )}
 
@@ -10042,6 +10528,34 @@ export default function Home() {
                 onUpdateEntry={updatePrayerEntry}
                 onMarkPrayed={markPrayerPrayedToday}
                 onDeleteEntry={deletePrayerEntry}
+              />
+            )}
+
+            {tab === "journal" && (
+              <JournalScreen
+                entries={journalEntries}
+                draft={journalDraft}
+                stats={journalStats}
+                readingPlans={READING_PLAN_FOUNDATION}
+                exportStart={journalExportStart}
+                exportEnd={journalExportEnd}
+                onDraftChange={setJournalDraft}
+                onSave={saveJournalDraft}
+                onDeleteEntry={deleteJournalEntry}
+                onOpenEntry={startJournalFromEntry}
+                onStartToday={() => startJournalDraft("Today", { sourceLabel: "Daily Growth Flow" })}
+                onStartFromBible={startJournalFromCurrentVerse}
+                onStartFromPassageGuide={() => startJournalDraft("Passage Guide", { sourceLabel: `${book} ${chapter} Passage Guide` })}
+                onStartFromStudyDrawer={() => startJournalDraft("Study Drawer", { sourceLabel: studyRef ?? selectedRef })}
+                onStartFromPrayer={() => startJournalFromPrayer()}
+                onStartFromLibrary={startJournalFromLibrary}
+                onStartFromCommentary={startJournalFromCommentary}
+                onStartFromReadingPlan={startJournalFromReadingPlan}
+                onExportEntry={exportActiveJournalEntry}
+                onExportRange={exportJournalRange}
+                onExportDevotional={exportDevotionalNotes}
+                onExportStartChange={setJournalExportStart}
+                onExportEndChange={setJournalExportEnd}
               />
             )}
 
@@ -10382,6 +10896,7 @@ function TodayScreen({
   bookmarkCount,
   prayerFocusEntries,
   prayerStats,
+  journalStats,
   onContinue,
   onJohn316,
   onListen,
@@ -10390,6 +10905,8 @@ function TodayScreen({
   onListenLibrary,
   onRepeatMemory,
   onOpenPrayer,
+  onOpenJournal,
+  onCreateJournal,
 }: {
   book: string;
   chapter: number;
@@ -10404,6 +10921,7 @@ function TodayScreen({
   bookmarkCount: number;
   prayerFocusEntries: PrayerEntry[];
   prayerStats: { active: number; answered: number; focus: number; missionaries: number };
+  journalStats: { total: number; today: number; devotional: number; plans: number };
   onContinue: () => void;
   onJohn316: () => void;
   onListen: () => void;
@@ -10412,6 +10930,8 @@ function TodayScreen({
   onListenLibrary: () => void;
   onRepeatMemory: (ref: string, nextProgress: number) => void;
   onOpenPrayer: () => void;
+  onOpenJournal: () => void;
+  onCreateJournal: () => void;
 }) {
   const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
   const memoryProgress = memoryItem?.progress ?? 0;
@@ -10587,12 +11107,28 @@ function TodayScreen({
           </div>
         </TodayCard>
 
-        <TodayCard icon={<NotebookPen size={18} />} title="Journal Placeholder">
+        <TodayCard
+          icon={<NotebookPen size={18} />}
+          title="Scripture Journal"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onOpenJournal} type="button">
+              Open Journal
+            </button>
+          }
+        >
           <p className="text-sm font-semibold text-[var(--green)]">{selectedRef}</p>
-          <p className="mt-2 rounded-2xl border border-dashed border-stone-300 bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
-            Write what the Lord is teaching you.
+          <p className="mt-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+            Write what the Lord is teaching you, what you should pray, and what you should obey.
           </p>
-          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Journal module coming soon.</p>
+          <div className="mt-3 grid grid-cols-3 gap-2">
+            <PlaceholderPill label="Today" value={String(journalStats.today)} />
+            <PlaceholderPill label="Entries" value={String(journalStats.total)} />
+            <PlaceholderPill label="Plans" value={String(journalStats.plans)} />
+          </div>
+          <button className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onCreateJournal} type="button">
+            <Plus size={15} />
+            Start today&apos;s entry
+          </button>
         </TodayCard>
       </section>
 
@@ -10627,6 +11163,352 @@ function TodayCard({
       </div>
       <div className="mt-4">{children}</div>
     </article>
+  );
+}
+
+function JournalScreen({
+  entries,
+  draft,
+  stats,
+  readingPlans,
+  exportStart,
+  exportEnd,
+  onDraftChange,
+  onSave,
+  onDeleteEntry,
+  onOpenEntry,
+  onStartToday,
+  onStartFromBible,
+  onStartFromPassageGuide,
+  onStartFromStudyDrawer,
+  onStartFromPrayer,
+  onStartFromLibrary,
+  onStartFromCommentary,
+  onStartFromReadingPlan,
+  onExportEntry,
+  onExportRange,
+  onExportDevotional,
+  onExportStartChange,
+  onExportEndChange,
+}: {
+  entries: JournalEntry[];
+  draft: JournalDraft;
+  stats: { total: number; today: number; devotional: number; plans: number };
+  readingPlans: ReadingPlanFoundation[];
+  exportStart: string;
+  exportEnd: string;
+  onDraftChange: (draft: JournalDraft) => void;
+  onSave: () => void;
+  onDeleteEntry: (id: string) => void;
+  onOpenEntry: (entry: JournalEntry) => void;
+  onStartToday: () => void;
+  onStartFromBible: () => void;
+  onStartFromPassageGuide: () => void;
+  onStartFromStudyDrawer: () => void;
+  onStartFromPrayer: () => void;
+  onStartFromLibrary: () => void;
+  onStartFromCommentary: () => void;
+  onStartFromReadingPlan: (plan: ReadingPlanFoundation) => void;
+  onExportEntry: () => void;
+  onExportRange: () => void;
+  onExportDevotional: () => void;
+  onExportStartChange: (value: string) => void;
+  onExportEndChange: (value: string) => void;
+}) {
+  const definitionPreview = wordsToDefinitionList(draft.wordsToDefine);
+  const recentEntries = entries.slice(0, 6);
+  const readyPlans = readingPlans.filter((plan) => plan.status === "Ready");
+  const plannedPlans = readingPlans.filter((plan) => plan.status === "Planned");
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Journal</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">
+              Scripture Journal
+            </h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
+              A premium daily growth flow for reading, study, prayer, application, memory, and teaching thoughts.
+            </p>
+          </div>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onStartToday} type="button">
+            <Plus size={16} />
+            Start Today
+          </button>
+        </div>
+        <div className="mt-5 grid gap-2 sm:grid-cols-4">
+          <MiniStat label="Today" value={String(stats.today)} />
+          <MiniStat label="Entries" value={String(stats.total)} />
+          <MiniStat label="Devotional" value={String(stats.devotional)} />
+          <MiniStat label="Plans" value={String(stats.plans)} />
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-6">
+        {[
+          ["Read", "Open the KJV passage for today."],
+          ["Study", "Define words and collect the passage thought."],
+          ["Journal", "Write what the Lord is teaching you."],
+          ["Pray", "Turn the passage into prayer."],
+          ["Memorize", "Save the verse for review."],
+          ["Continue", "Return to Bible or Library reading."],
+        ].map(([label, text]) => (
+          <article key={`growth-flow-${label}`} className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+            <p className="text-sm font-semibold text-[var(--green)]">{label}</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Create From</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Connect the journal to the study workflow</h2>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+          <JournalSourceButton label="Today" detail="Daily reading, prayer, and plan status" onClick={onStartToday} />
+          <JournalSourceButton label="Bible Verse" detail="Current selected verse" onClick={onStartFromBible} />
+          <JournalSourceButton label="Passage Guide" detail="Current chapter study" onClick={onStartFromPassageGuide} />
+          <JournalSourceButton label="Study Drawer" detail="Selected verse workflow" onClick={onStartFromStudyDrawer} />
+          <JournalSourceButton label="Prayer Entry" detail="Today's prayer focus" onClick={onStartFromPrayer} />
+          <JournalSourceButton label="Reading Plan" detail="Choose a plan below" onClick={() => readyPlans[0] && onStartFromReadingPlan(readyPlans[0])} />
+          <JournalSourceButton label="Library Book" detail="Continue Reading context" onClick={onStartFromLibrary} />
+          <JournalSourceButton label="Commentary Note" detail="Reviewed commentary context" onClick={onStartFromCommentary} />
+        </div>
+      </section>
+
+      <section className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Daily Entry</p>
+              <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Scripture Journal Template</h2>
+            </div>
+            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onSave} type="button">
+              <Save size={16} />
+              Save Entry
+            </button>
+          </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <JournalField label="Date" value={draft.date} onChange={(value) => onDraftChange({ ...draft, date: value })} type="date" />
+            <label className="text-sm font-semibold text-[var(--muted)]">
+              Source
+              <select
+                className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                value={draft.sourceType}
+                onChange={(event) => onDraftChange({ ...draft, sourceType: event.target.value as JournalSourceType })}
+              >
+                {JOURNAL_SOURCE_TYPES.map((source) => <option key={`journal-source-${source}`} value={source}>{source}</option>)}
+              </select>
+            </label>
+            <JournalField label="Bible reading passage" value={draft.bibleReadingPassage} onChange={(value) => onDraftChange({ ...draft, bibleReadingPassage: value })} />
+            <JournalField label="Proverb of the day" value={draft.proverbOfTheDay} onChange={(value) => onDraftChange({ ...draft, proverbOfTheDay: value })} />
+            <JournalField label="Selected verse or verses" value={draft.selectedVerseRefs} onChange={(value) => onDraftChange({ ...draft, selectedVerseRefs: value })} />
+            <JournalField label="Reading plan status" value={draft.readingPlanStatus} onChange={(value) => onDraftChange({ ...draft, readingPlanStatus: value })} />
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Prayer + Growth Context</p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <JournalTextArea label="Prayer focus" value={draft.prayerFocus} onChange={(value) => onDraftChange({ ...draft, prayerFocus: value })} />
+              <JournalTextArea label="Verse / Passage" value={draft.versePassage} onChange={(value) => onDraftChange({ ...draft, versePassage: value })} />
+            </div>
+          </div>
+
+          <div className="mt-5 grid gap-3">
+            <JournalField label="Words to define" value={draft.wordsToDefine} onChange={(value) => onDraftChange({ ...draft, wordsToDefine: value })} placeholder="believe, grace, faith" />
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Webster&apos;s 1828 Definitions</p>
+              <div className="mt-3 space-y-2">
+                {definitionPreview.length ? definitionPreview.map((item) => (
+                  <div key={`journal-definition-${item.word}`} className="rounded-xl bg-white p-3">
+                    <p className="text-sm font-semibold text-[var(--ink)]">{item.word}</p>
+                    <p className="mt-1 line-clamp-4 text-sm leading-6 text-[var(--muted)]">{item.definition}</p>
+                  </div>
+                )) : (
+                  <p className="text-sm leading-6 text-[var(--muted)]">Add words above to preview Webster definitions.</p>
+                )}
+              </div>
+            </div>
+            <JournalField label="Strong's connection if available" value={draft.strongsConnection} onChange={(value) => onDraftChange({ ...draft, strongsConnection: value })} placeholder="G4100 pisteuo, H2580 grace..." />
+          </div>
+
+          <div className="mt-5 grid gap-3">
+            <JournalTextArea label="What does the verse say?" value={draft.verseSays} onChange={(value) => onDraftChange({ ...draft, verseSays: value })} />
+            <JournalTextArea label="What does it mean?" value={draft.verseMeans} onChange={(value) => onDraftChange({ ...draft, verseMeans: value })} />
+            <JournalTextArea label="How does it apply?" value={draft.verseApplies} onChange={(value) => onDraftChange({ ...draft, verseApplies: value })} />
+            <JournalTextArea label="What should I pray?" value={draft.prayerResponse} onChange={(value) => onDraftChange({ ...draft, prayerResponse: value })} />
+            <JournalTextArea label="What should I obey?" value={draft.obedienceStep} onChange={(value) => onDraftChange({ ...draft, obedienceStep: value })} />
+            <div className="grid gap-3 sm:grid-cols-2">
+              <JournalField label="Memory verse" value={draft.memoryVerse} onChange={(value) => onDraftChange({ ...draft, memoryVerse: value })} />
+              <JournalField label="Teaching / preaching thought" value={draft.teachingThought} onChange={(value) => onDraftChange({ ...draft, teachingThought: value })} />
+            </div>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportEntry} type="button">
+              <Download size={15} />
+              Export journal entry
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportDevotional} type="button">
+              <Download size={15} />
+              Export devotional notes
+            </button>
+          </div>
+        </article>
+
+        <aside className="space-y-4">
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Reading Plans</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Foundation</h2>
+            <div className="mt-4 space-y-2">
+              {readingPlans.map((plan) => (
+                <button
+                  key={plan.id}
+                  className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                  onClick={() => onStartFromReadingPlan(plan)}
+                  type="button"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-sm font-semibold text-[var(--green)]">{plan.title}</p>
+                    <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${plan.status === "Ready" ? "bg-[var(--highlight)] text-[var(--ink)]" : "bg-white text-[var(--muted)]"}`}>
+                      {plan.status}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{plan.description}</p>
+                </button>
+              ))}
+            </div>
+            {plannedPlans.length > 0 && (
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Planned reading plans are visible for beta structure, but daily assignment logic is not expanded yet.
+              </p>
+            )}
+          </article>
+
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Export</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Journal by Date Range</h2>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-1">
+              <JournalField label="Start date" value={exportStart} onChange={onExportStartChange} type="date" />
+              <JournalField label="End date" value={exportEnd} onChange={onExportEndChange} type="date" />
+            </div>
+            <button className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white" onClick={onExportRange} type="button">
+              <Download size={15} />
+              Export journal by date range
+            </button>
+          </article>
+
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Future Sync Notes</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Supabase tables planned</h2>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {["user_journal_entries", "user_reading_plan_progress", "user_devotional_exports"].map((table) => (
+                <span key={`journal-table-${table}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{table}</span>
+              ))}
+            </div>
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+              Beta storage is local-first. Signed-in sync can be added after the daily workflow is stable.
+            </p>
+          </article>
+        </aside>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Saved Entries</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Recent Scripture Journal</h2>
+          </div>
+          <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{entries.length} saved</span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {recentEntries.length ? recentEntries.map((entry) => (
+            <article key={entry.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--green)]">{entry.date}</p>
+                  <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{entry.selectedVerseRefs || entry.bibleReadingPassage || "Scripture Journal Entry"}</h3>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.sourceType}</p>
+                </div>
+                <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenEntry(entry)} type="button">
+                  Open
+                </button>
+              </div>
+              <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--muted)]">
+                {entry.verseApplies || entry.verseSays || entry.prayerResponse || entry.versePassage || "No journal body written yet."}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {entry.memoryVerse && <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Memory: {entry.memoryVerse}</span>}
+                {entry.wordsToDefine && <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Words: {entry.wordsToDefine}</span>}
+              </div>
+              <button className="mt-3 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-3 py-2 text-xs font-semibold text-red-600" onClick={() => onDeleteEntry(entry.id)} type="button">
+                <Trash2 size={14} />
+                Delete
+              </button>
+            </article>
+          )) : (
+            <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-6 text-center text-sm leading-6 text-[var(--muted)] md:col-span-2">
+              No journal entries yet. Start today&apos;s entry to connect Bible reading, prayer, study, and application.
+            </p>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function JournalSourceButton({ label, detail, onClick }: { label: string; detail: string; onClick: () => void }) {
+  return (
+    <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left transition hover:border-[var(--gold)] hover:bg-white" onClick={onClick} type="button">
+      <p className="text-sm font-semibold text-[var(--green)]">{label}</p>
+      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{detail}</p>
+    </button>
+  );
+}
+
+function JournalField({
+  label,
+  value,
+  onChange,
+  placeholder,
+  type = "text",
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  type?: string;
+}) {
+  return (
+    <label className="text-sm font-semibold text-[var(--muted)]">
+      {label}
+      <input
+        className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-base text-[var(--ink)] outline-none"
+        placeholder={placeholder}
+        type={type}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    </label>
+  );
+}
+
+function JournalTextArea({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
+  return (
+    <label className="text-sm font-semibold text-[var(--muted)]">
+      {label}
+      <textarea
+        className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-base leading-7 text-[var(--ink)] outline-none"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+      />
+    </label>
   );
 }
 
@@ -22200,12 +23082,13 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "library", label: "Library", icon: <Library size={20} /> },
     { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
     { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
+    { id: "journal", label: "Journal", icon: <FileText size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-7 gap-0.5">
+      <div className="mx-auto grid max-w-md grid-cols-8 gap-0.5">
         {items.map((item) => (
           <button
             key={item.id}
