@@ -243,11 +243,14 @@ type StrongMvpEntry = {
   strongsNumber: string;
   originalWord: string;
   displayWord: string;
+  pronunciation: string;
   root?: string;
+  rootChain: string[];
   relatedWords?: string[];
   plainMeaning: string;
   websterWord: string;
   firstOccurrence: string;
+  keyOccurrences: string[];
   keyVerses: string[];
   note: string;
 };
@@ -4494,11 +4497,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G4100",
     originalWord: "pisteuo",
     displayWord: "believe",
+    pronunciation: "pist-yoo'-o",
     root: "pisteuo / pistis",
+    rootChain: ["G3982 persuade", "G4102 faith", "G4100 believe"],
     relatedWords: ["faith", "believe"],
     plainMeaning: "To believe, trust, rely on, or commit unto.",
     websterWord: "believe",
     firstOccurrence: "Matthew 8:13",
+    keyOccurrences: ["Matthew 8:13", "John 3:16", "John 20:31", "Acts 16:31", "Romans 10:9"],
     keyVerses: ["John 3:16", "John 20:31", "Romans 10:9", "1 John 5:13"],
     note: "Prototype mapping for common KJV forms such as believe, believed, believeth, and believing.",
   },
@@ -4506,11 +4512,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G25",
     originalWord: "agapao",
     displayWord: "love",
+    pronunciation: "ag-ap-ah'-o",
     root: "agapao / agape",
+    rootChain: ["G25 love", "G26 charity/love"],
     relatedWords: ["love", "charity"],
     plainMeaning: "To love, value, or show benevolent affection.",
     websterWord: "love",
     firstOccurrence: "Matthew 5:43",
+    keyOccurrences: ["Matthew 5:43", "John 3:16", "Romans 5:8", "1 John 4:9", "1 John 4:19"],
     keyVerses: ["John 3:16", "Romans 5:8", "1 John 4:9", "1 John 4:19"],
     note: "Prototype mapping for love, loved, and loveth in key New Testament study passages.",
   },
@@ -4518,11 +4527,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2222",
     originalWord: "zoe",
     displayWord: "life",
+    pronunciation: "dzo-ay'",
     root: "zoe",
+    rootChain: ["G2198 live", "G2222 life"],
     relatedWords: ["life", "everlasting"],
     plainMeaning: "Life; especially spiritual and eternal life in the New Testament.",
     websterWord: "life",
     firstOccurrence: "Matthew 7:14",
+    keyOccurrences: ["Matthew 7:14", "John 1:4", "John 3:16", "John 10:10", "Romans 6:23"],
     keyVerses: ["John 1:4", "John 3:16", "John 10:10", "Romans 6:23"],
     note: "Prototype entry focused on everlasting life passages.",
   },
@@ -4530,11 +4542,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G5485",
     originalWord: "charis",
     displayWord: "grace",
+    pronunciation: "khar'-ece",
     root: "charis",
+    rootChain: ["G5463 rejoice", "G5485 grace"],
     relatedWords: ["grace", "saved"],
     plainMeaning: "Favor, kindness, or gracious help; often God's unmerited favor.",
     websterWord: "grace",
     firstOccurrence: "Luke 2:40",
+    keyOccurrences: ["Luke 2:40", "John 1:17", "Romans 3:24", "Ephesians 2:8", "Titus 2:11"],
     keyVerses: ["John 1:17", "Romans 3:24", "Ephesians 2:8", "Titus 2:11"],
     note: "Prototype entry for Gospel and Christian-life study.",
   },
@@ -4542,11 +4557,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G4102",
     originalWord: "pistis",
     displayWord: "faith",
+    pronunciation: "pis'-tis",
     root: "pisteuo / pistis",
+    rootChain: ["G3982 persuade", "G4102 faith"],
     relatedWords: ["believe", "faith"],
     plainMeaning: "Faith, belief, trust, or confidence.",
     websterWord: "faith",
     firstOccurrence: "Matthew 8:10",
+    keyOccurrences: ["Matthew 8:10", "Romans 1:17", "Romans 5:1", "Ephesians 2:8", "Hebrews 11:1"],
     keyVerses: ["Romans 1:17", "Romans 5:1", "Ephesians 2:8", "Hebrews 11:1"],
     note: "Prototype entry connected to Webster lookup and occurrence study.",
   },
@@ -4554,11 +4572,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2288",
     originalWord: "thanatos",
     displayWord: "death",
+    pronunciation: "than'-at-os",
     root: "thanatos",
+    rootChain: ["G2348 die", "G2288 death"],
     relatedWords: ["death", "perish", "life"],
     plainMeaning: "Death; separation from life, and in Scripture often the consequence of sin.",
     websterWord: "death",
     firstOccurrence: "Matthew 4:16",
+    keyOccurrences: ["Matthew 4:16", "Romans 5:12", "Romans 6:23", "1 Corinthians 15:26", "Revelation 21:4"],
     keyVerses: ["Romans 5:12", "Romans 6:23", "1 Corinthians 15:26", "Revelation 21:4"],
     note: "Prototype entry for Romans and Gospel contrast studies.",
   },
@@ -4566,11 +4587,14 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     strongsNumber: "G2889",
     originalWord: "kosmos",
     displayWord: "world",
+    pronunciation: "kos'-mos",
     root: "kosmos",
+    rootChain: ["G2865 order/arrange", "G2889 world"],
     relatedWords: ["world", "light", "truth"],
     plainMeaning: "The world, its order, or mankind depending on context.",
     websterWord: "world",
     firstOccurrence: "Matthew 4:8",
+    keyOccurrences: ["Matthew 4:8", "John 1:10", "John 3:16", "John 17:9", "1 John 2:15"],
     keyVerses: ["John 1:10", "John 3:16", "John 17:9", "1 John 2:15"],
     note: "Prototype entry; final import must handle context carefully.",
   },
@@ -9644,6 +9668,7 @@ export default function Home() {
                   }
                 }}
                 onOpenVerse={openSearchResult}
+                onOpenReference={openReference}
                 onOpenDictionaryEntry={(entry) => {
                   setActiveDictionaryEntry({
                     word: entry.headword.toLowerCase(),
@@ -9883,6 +9908,10 @@ export default function Home() {
                 noteCount={saved.notes.length}
                 highlightCount={saved.highlights.length}
                 bookmarkCount={saved.bookmarks.length}
+                readingProgressCount={Object.keys(libraryProgress).length + Object.keys(listeningProgress).length + (bibleListeningProgress ? 1 : 0)}
+                masteryCount={Object.keys(bibleBookMastery).length}
+                playlistCount={biblePlaylists.length}
+                memoryVerseCount={scriptureMemory.length}
                 exportMessage={syncMessage}
                 onAuthEmailChange={setAuthEmail}
                 onSendMagicLink={sendMagicLink}
@@ -12167,6 +12196,64 @@ function buildCommentaryRecommendation(entries: CommentaryEntry[]): CommentaryRe
   };
 }
 
+function passageStudyQuestions({
+  passage,
+  keyVerses,
+  topWords,
+  connections,
+  commentaryAuthors,
+}: {
+  passage: string;
+  keyVerses: string[];
+  topWords: Array<{ word: string; count: number }>;
+  connections: ActiveChapterConnections;
+  commentaryAuthors: string[];
+}) {
+  const questions = [
+    `What does ${passage} say plainly before opening any study helps?`,
+    keyVerses[0] ? `Why is ${keyVerses[0]} important to the flow of the chapter?` : `Which verse seems to carry the main thought of ${passage}?`,
+    topWords[0] ? `What does the repeated word "${topWords[0].word}" show about the emphasis of the chapter?` : "What repeated words or ideas should the class notice?",
+    connections.people[0] ? `What can be learned from ${connections.people[0].name} in this passage?` : "Who is speaking, who is being addressed, and why does that matter?",
+    connections.places[0] ? `How does the setting of ${connections.places[0].name} help the reader understand the passage?` : "Does the place or setting affect the meaning of the passage?",
+    commentaryAuthors.length ? `After reading the KJV text, what do ${commentaryAuthors.slice(0, 3).join(", ")} help clarify?` : "What question should be held for later commentary review?",
+    "What one truth should a new believer understand from this chapter?",
+    "What one application should be carried into prayer, witness, or obedience?",
+  ];
+
+  return Array.from(new Set(questions)).slice(0, 8);
+}
+
+function passageTeachingIllustrationPrompts({
+  passage,
+  topWords,
+  connections,
+}: {
+  passage: string;
+  topWords: Array<{ word: string; count: number }>;
+  connections: ActiveChapterConnections;
+}) {
+  const prompts = [
+    `Use a simple illustration that helps the class see the chapter flow of ${passage}; keep the KJV text central.`,
+    topWords[0] ? `Consider an illustration around the repeated word "${topWords[0].word}" without forcing the text beyond what it says.` : "Choose one repeated phrase or contrast from the chapter and explain it plainly.",
+    connections.people[0] ? `Use ${connections.people[0].name} only where the reviewed people entry directly supports the lesson.` : "If no reviewed person entry is attached, use a personal illustration instead of inventing background details.",
+    connections.places[0] ? `Use the setting of ${connections.places[0].name} only as much as the reviewed place data supports it.` : "Keep map or setting comments brief unless reviewed data is available.",
+    "Add your own pastoral illustration here; no sermon illustration database is imported yet.",
+  ];
+
+  return Array.from(new Set(prompts)).slice(0, 5);
+}
+
+function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecommendation[], libraryResources: LibraryResource[]) {
+  return recommendations
+    .map((recommendation) => {
+      const resource = recommendation.resourceSlug
+        ? libraryResources.find((candidate) => candidate.slug === recommendation.resourceSlug)
+        : null;
+      return resource ? { recommendation, resource } : null;
+    })
+    .filter((item): item is { recommendation: ChapterResourceRecommendation; resource: LibraryResource } => Boolean(item));
+}
+
 function commentaryGuideBestForGroups(profiles: CommentaryGuideProfile[] = COMMENTARY_GUIDE_PROFILES) {
   return ["Devotions", "Teaching", "Preaching", "Historical background", "Word studies"].map((category) => ({
     category,
@@ -12701,11 +12788,6 @@ function ChapterStudyWorkflow({
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
   const chapterStrongEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
-  const chapterRelatedStrongWords = chapterStrongEntry?.relatedWords
-    ? chapterStrongEntry.relatedWords
-        .map((word) => ({ word, entry: strongsMvpEntries[normalizeLookupWord(word)] }))
-        .filter((item) => item.entry)
-    : [];
   const [exportMessage, setExportMessage] = useState("");
   const [commentaryAuthorFilter, setCommentaryAuthorFilter] = useState("All");
   const [teacherNotesByChapter, setTeacherNotesByChapter] = useState<Record<string, TeacherNotesDraft>>(() => {
@@ -13334,59 +13416,13 @@ function ChapterStudyWorkflow({
             </div>
             <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
           </div>
-          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-            <div className="flex flex-wrap items-start justify-between gap-2">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Strong&apos;s Phase 2</p>
-                <h4 className="mt-1 text-sm font-semibold text-[var(--ink)]">
-                  {chapterStrongEntry ? `${chapterStrongEntry.strongsNumber} · ${chapterStrongEntry.originalWord}` : "Starter data not ready"}
-                </h4>
-              </div>
-              {chapterStrongEntry && (
-                <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
-                  Root explorer
-                </span>
-              )}
-            </div>
-            {chapterStrongEntry ? (
-              <>
-                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                  Root: <span className="font-semibold text-[var(--green)]">{chapterStrongEntry.root ?? chapterStrongEntry.originalWord}</span>
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{chapterStrongEntry.plainMeaning}</p>
-                {chapterRelatedStrongWords.length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {chapterRelatedStrongWords.map(({ word, entry }) => (
-                      <button
-                        key={`chapter-strong-related-${chapterStrongEntry.strongsNumber}-${word}`}
-                        className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                        onClick={() => onExplorerWordChange(entry.websterWord)}
-                        type="button"
-                      >
-                        {entry.displayWord} · {entry.strongsNumber}
-                      </button>
-                    ))}
-                  </div>
-                )}
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {chapterStrongEntry.keyVerses.slice(0, 4).map((ref) => (
-                    <button
-                      key={`chapter-strong-key-${chapterStrongEntry.strongsNumber}-${ref}`}
-                      className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                      onClick={() => onOpenReference(ref)}
-                      type="button"
-                    >
-                      {ref}
-                    </button>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
-                Strong&apos;s starter data is available for words such as believe, faith, love, life, grace, death, and world.
-              </p>
-            )}
-          </div>
+          <StrongStudyPanel
+            entry={chapterStrongEntry}
+            dictionaryEntry={chapterStrongEntry ? findDictionaryEntry(chapterStrongEntry.websterWord) : null}
+            onOpenReference={onOpenReference}
+            onLookupWord={onLookupWord}
+            onSelectWord={onExplorerWordChange}
+          />
           <div className="mt-3 flex flex-wrap gap-2">
             {suggestedWords.map((item) => (
               <button
@@ -14034,6 +14070,124 @@ function MiniStat({ label, value }: { label: string; value: string }) {
   );
 }
 
+function StrongStudyPanel({
+  entry,
+  dictionaryEntry,
+  onOpenReference,
+  onLookupWord,
+  onSelectWord,
+}: {
+  entry: StrongMvpEntry | null;
+  dictionaryEntry: DictionaryEntry | null;
+  onOpenReference: (targetRef: string) => void;
+  onLookupWord: (word: string) => void;
+  onSelectWord?: (word: string) => void;
+}) {
+  const relatedEntries = entry?.relatedWords
+    ? entry.relatedWords
+        .map((word) => ({ word, relatedEntry: strongsMvpEntries[normalizeLookupWord(word)] }))
+        .filter((item) => item.relatedEntry)
+    : [];
+
+  return (
+    <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Strong&apos;s Study Panel</p>
+          <h4 className="mt-1 text-sm font-semibold text-[var(--ink)]">
+            {entry ? `${entry.strongsNumber} · ${entry.originalWord}` : "Starter data not ready"}
+          </h4>
+        </div>
+        {entry && (
+          <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            Phase 2 sample
+          </span>
+        )}
+      </div>
+
+      {entry ? (
+        <div className="mt-3 space-y-3">
+          <div className="grid gap-2 md:grid-cols-3">
+            <MiniStat label="Pronounce" value={entry.pronunciation} />
+            <MiniStat label="First" value={entry.firstOccurrence} />
+            <MiniStat label="Webster" value={entry.websterWord} />
+          </div>
+          <p className="text-sm leading-6 text-[var(--scripture-ink)]">{entry.plainMeaning}</p>
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {entry.rootChain.map((item) => (
+                <span key={`strong-root-${entry.strongsNumber}-${item}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {relatedEntries.length > 0 && (
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related Words</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {relatedEntries.map(({ word, relatedEntry }) => (
+                  <button
+                    key={`strong-related-${entry.strongsNumber}-${word}`}
+                    className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => onSelectWord ? onSelectWord(relatedEntry.websterWord) : onLookupWord(relatedEntry.websterWord)}
+                    type="button"
+                  >
+                    {relatedEntry.displayWord} · {relatedEntry.strongsNumber}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key Occurrences</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {entry.keyOccurrences.map((ref) => (
+                <button
+                  key={`strong-occurrence-${entry.strongsNumber}-${ref}`}
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenReference(ref)}
+                  type="button"
+                >
+                  {ref}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Webster&apos;s 1828</p>
+              <button
+                className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onLookupWord(entry.websterWord)}
+                type="button"
+              >
+                Open definition
+              </button>
+            </div>
+            {dictionaryEntry?.found ? (
+              <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
+            ) : (
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">No Webster&apos;s definition found yet for this word.</p>
+            )}
+          </div>
+
+          <p className="text-xs leading-5 text-[var(--muted)]">{entry.note}</p>
+        </div>
+      ) : (
+        <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+          Strong&apos;s starter data is available for words such as believe, faith, love, life, grace, death, and world. Full import remains staged for review.
+        </p>
+      )}
+    </div>
+  );
+}
+
 function MemoryReviewCard({
   item,
   fallbackVerse,
@@ -14103,6 +14257,7 @@ function SearchScreen({
   onDictionarySearchTermChange,
   onStrongSearchTermChange,
   onOpenVerse,
+  onOpenReference,
   onOpenDictionaryEntry,
 }: {
   searchTerm: string;
@@ -14119,6 +14274,7 @@ function SearchScreen({
   onDictionarySearchTermChange: (value: string) => void;
   onStrongSearchTermChange: (value: string) => void;
   onOpenVerse: (verse: BibleVerse) => void;
+  onOpenReference: (targetRef: string) => void;
   onOpenDictionaryEntry: (entry: DictionarySearchResult) => void;
 }) {
   const filters: { id: TestamentFilter; label: string }[] = [
@@ -14290,8 +14446,41 @@ function SearchScreen({
                     </span>
                   ))}
                 </div>
-                {entry.first_occurrence && (
-                  <p className="mt-3 text-xs font-semibold text-[var(--muted)]">First occurrence: {entry.first_occurrence}</p>
+                <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {[entry.root, ...entry.related_numbers].filter(Boolean).map((item) => (
+                      <span key={`search-strong-root-${entry.strongs_number}-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {(entry.first_occurrence || entry.key_verses.length > 0) && (
+                  <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key Occurrences</p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {entry.first_occurrence && (
+                        <button
+                          className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                          onClick={() => onOpenReference(entry.first_occurrence!)}
+                          type="button"
+                        >
+                          First: {entry.first_occurrence}
+                        </button>
+                      )}
+                      {entry.key_verses.slice(0, 5).map((ref) => (
+                        <button
+                          key={`search-strong-key-${entry.strongs_number}-${ref}`}
+                          className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                          onClick={() => onOpenReference(ref)}
+                          type="button"
+                        >
+                          {ref}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </article>
             ))
@@ -18902,6 +19091,10 @@ function PassageGuideScreen({
   const topWords = analysis.repeatedWords.slice(0, 6);
   const startHereCommentary = commentaryRecommendation.primary?.author ?? commentaryAuthors[0] ?? "No reviewed commentary yet";
   const startHereResources = recommendedResources.filter((resource) => resource.status === "available" || resource.resourceSlug).slice(0, 3);
+  const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
+  const teachingIllustrations = passageTeachingIllustrationPrompts({ passage, topWords, connections });
+  const commentaryOrder = commentaryProfilesForEntries(commentaryEntries);
+  const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources);
   const summaryBody = bookIntroduction
     ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
     : connections.themes.length
@@ -18911,9 +19104,12 @@ function PassageGuideScreen({
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
     ["passage-study-pack", "Study Pack"],
+    ["passage-questions", "Questions"],
+    ["passage-illustrations", "Illustrations"],
     ["passage-summary", "Summary"],
     ["passage-key-verses", "Key Verses"],
     ["passage-repeated-words", "Repeated Words"],
+    ["passage-commentary-order", "Commentary Order"],
     ["passage-commentary", "Commentary"],
     ["passage-parallels", "Parallels"],
     ["passage-cross-references", "Cross References"],
@@ -18922,6 +19118,8 @@ function PassageGuideScreen({
     ["passage-timeline", "Timeline"],
     ["passage-types", "Types"],
     ["passage-prophecies", "Prophecy"],
+    ["passage-related-books", "Related Books"],
+    ["passage-sermons", "Sermons"],
     ["passage-resources", "Resources"],
     ["passage-outline", "Teaching Outline"],
   ];
@@ -19124,6 +19322,46 @@ function PassageGuideScreen({
         </div>
         {packExportMessage && (
           <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{packExportMessage}</p>
+        )}
+      </StudySection>
+
+      <StudySection id="passage-questions" title="Study Questions">
+        <div className="grid gap-2 md:grid-cols-2">
+          {studyQuestions.map((question, index) => (
+            <article key={`passage-question-${question}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Question {index + 1}</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--ink)]">{question}</p>
+            </article>
+          ))}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-illustrations" title="Teaching Illustrations">
+        <div className="space-y-2">
+          {teachingIllustrations.map((prompt) => (
+            <p key={`passage-illustration-${prompt}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+              {prompt}
+            </p>
+          ))}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-commentary-order" title="Recommended Commentary Order">
+        {commentaryOrder.length ? (
+          <div className="grid gap-2 md:grid-cols-3">
+            {commentaryOrder.map((profile, index) => (
+              <article key={`passage-commentary-order-${profile.author}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--green)]">{index + 1}. {profile.author}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{profile.bestFor[0]}</span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{profile.bestUse}</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--ink)]">{profile.doctrinalNotes}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm leading-6 text-[var(--muted)]">No reviewed commentary order is available for this chapter yet.</p>
         )}
       </StudySection>
 
@@ -19361,6 +19599,46 @@ function PassageGuideScreen({
               <ReferenceRow references={prophecy.relatedVerses} onOpenReference={onOpenReference} />
             </article>
           )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed prophecy connection yet.</p>}
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-related-books" title="Related Books">
+        {relatedBooks.length ? (
+          <div className="grid gap-2 md:grid-cols-2">
+            {relatedBooks.map(({ recommendation, resource }) => (
+              <article key={`passage-related-book-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                    <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>
+                  </div>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</span>
+                </div>
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{recommendation.note || resource.description}</p>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <button
+                    className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                    onClick={() => onOpenLibraryResource(resource.slug)}
+                    type="button"
+                  >
+                    Open Book
+                  </button>
+                  <span className="text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</span>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm leading-6 text-[var(--muted)]">No related library books are linked to this chapter yet.</p>
+        )}
+      </StudySection>
+
+      <StudySection id="passage-sermons" title="Related Sermons">
+        <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Sermon resources placeholder</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            Reviewed sermon audio, transcripts, and teaching series can be attached here later. Nothing is publicly imported until rights and doctrinal review are complete.
+          </p>
         </div>
       </StudySection>
 
@@ -19722,6 +20000,10 @@ function SettingsScreen({
   noteCount,
   highlightCount,
   bookmarkCount,
+  readingProgressCount,
+  masteryCount,
+  playlistCount,
+  memoryVerseCount,
   exportMessage,
   onAuthEmailChange,
   onSendMagicLink,
@@ -19737,6 +20019,10 @@ function SettingsScreen({
   noteCount: number;
   highlightCount: number;
   bookmarkCount: number;
+  readingProgressCount: number;
+  masteryCount: number;
+  playlistCount: number;
+  memoryVerseCount: number;
   exportMessage: string;
   onAuthEmailChange: (value: string) => void;
   onSendMagicLink: () => void;
@@ -19806,6 +20092,24 @@ function SettingsScreen({
             {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
           </div>
         )}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Sync Coverage</h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+          Signed-in beta data syncs to Supabase. Signed-out data keeps working locally on this device.
+        </p>
+        <div className="mt-4 grid gap-2 md:grid-cols-3">
+          <StatusCard label="Notes" status={`${noteCount} saved`} good />
+          <StatusCard label="Highlights" status={`${highlightCount} saved`} good />
+          <StatusCard label="Bookmarks" status={`${bookmarkCount} saved`} good />
+          <StatusCard label="Reading progress" status={`${readingProgressCount} tracked`} good />
+          <StatusCard label="Mastery tracking" status={`${masteryCount} books`} good />
+          <StatusCard label="Playlists" status={`${playlistCount} saved`} good />
+          <StatusCard label="Memory verses" status={`${memoryVerseCount} saved`} good />
+          <StatusCard label="Storage mode" status={user ? "Supabase sync" : "Local fallback"} good />
+          <StatusCard label="Sync state" status={exportMessage || (user ? "Ready" : "Saving locally")} good={!exportMessage.toLowerCase().includes("could not")} />
+        </div>
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -20793,11 +21097,6 @@ function OccurrenceExplorerPanel({
   const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
   const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
   const strongsEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
-  const relatedStrongWords = strongsEntry?.relatedWords
-    ? strongsEntry.relatedWords
-        .map((word) => ({ word, entry: strongsMvpEntries[normalizeLookupWord(word)] }))
-        .filter((item) => item.entry)
-    : [];
 
   return (
     <div className="space-y-3">
@@ -20828,83 +21127,12 @@ function OccurrenceExplorerPanel({
         </div>
       </section>
 
-      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Strong&apos;s MVP Prototype</p>
-            <h4 className="mt-2 text-lg font-semibold text-[var(--ink)]">
-              {strongsEntry ? `${strongsEntry.strongsNumber} · ${strongsEntry.originalWord}` : "No Strong's starter card yet"}
-            </h4>
-          </div>
-          {strongsEntry && (
-            <button
-              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
-              onClick={() => onLookupWord(strongsEntry.websterWord)}
-              type="button"
-            >
-              Webster: {strongsEntry.websterWord}
-            </button>
-          )}
-        </div>
-        {strongsEntry ? (
-          <>
-            <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{strongsEntry.plainMeaning}</p>
-            <div className="mt-3 grid gap-2 md:grid-cols-2">
-              <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root explorer</p>
-                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{strongsEntry.root ?? strongsEntry.originalWord}</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Starter root grouping for related KJV words. Full morphology is planned later.</p>
-              </div>
-              <button
-                className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
-                onClick={() => onOpenReference(strongsEntry.firstOccurrence)}
-                type="button"
-              >
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First occurrence</p>
-                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{strongsEntry.firstOccurrence}</p>
-              </button>
-              <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Display rule</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Plain-English meaning first; no advanced grammar in this MVP.</p>
-              </div>
-            </div>
-            {relatedStrongWords.length > 0 && (
-              <div className="mt-3 rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related words</p>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {relatedStrongWords.map(({ word, entry }) => (
-                    <button
-                      key={`strongs-related-${strongsEntry.strongsNumber}-${word}`}
-                      className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                      onClick={() => onLookupWord(entry.websterWord)}
-                      type="button"
-                    >
-                      {entry.displayWord} · {entry.strongsNumber}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-            <div className="mt-3 flex flex-wrap gap-2">
-              {strongsEntry.keyVerses.map((ref) => (
-                <button
-                  key={`strongs-key-${strongsEntry.strongsNumber}-${ref}`}
-                  className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                  onClick={() => onOpenReference(ref)}
-                  type="button"
-                >
-                  {ref}
-                </button>
-              ))}
-            </div>
-            <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{strongsEntry.note}</p>
-          </>
-        ) : (
-          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
-            Strong&apos;s planning is ready, but this word is not in the starter prototype yet. Webster and occurrence study still work here.
-          </p>
-        )}
-      </section>
+      <StrongStudyPanel
+        entry={strongsEntry}
+        dictionaryEntry={explorer.definition}
+        onOpenReference={onOpenReference}
+        onLookupWord={onLookupWord}
+      />
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
         <p className="text-sm font-semibold text-[var(--green)]">First occurrence</p>
