@@ -685,6 +685,26 @@ type ActiveChapterConnections = {
   themes: string[];
 };
 
+type PassageGuideConnectionKind = "Gospel Parallel" | "Acts Connection" | "Prophecy Fulfillment";
+
+type PassageGuideConnection = {
+  book: string;
+  chapter: number;
+  kind: PassageGuideConnectionKind;
+  title: string;
+  references: string[];
+  note: string;
+  reviewStatus: "Reviewed" | "Needs Review";
+};
+
+type CommentaryGrowthPriority = {
+  author: string;
+  focus: string;
+  status: "Verified samples" | "Needs Review" | "Rights Review";
+  nextStep: string;
+  caution: string;
+};
+
 type BiblePassage = {
   id: string;
   book: string;
@@ -5280,6 +5300,187 @@ const chapterConnections: ChapterConnections[] = [
     typeIds: [],
     prophecyIds: [],
     themes: ["No condemnation", "Spirit", "Adoption", "Assurance", "God's love"],
+  },
+];
+
+const PASSAGE_GUIDE_CONNECTIONS: PassageGuideConnection[] = [
+  {
+    book: "John",
+    chapter: 3,
+    kind: "Gospel Parallel",
+    title: "The Son given and received",
+    references: ["John 1:12", "John 5:24", "John 20:31"],
+    note: "John's Gospel repeatedly connects believing on Christ with life.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "John",
+    chapter: 3,
+    kind: "Acts Connection",
+    title: "Believe on the Lord Jesus Christ",
+    references: ["Acts 13:38", "Acts 16:31", "Acts 20:21"],
+    note: "Acts shows the Gospel preached as repentance toward God and faith toward Christ.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "John",
+    chapter: 3,
+    kind: "Prophecy Fulfillment",
+    title: "The lifted up Son of man",
+    references: ["Numbers 21:8", "John 3:14", "John 12:32"],
+    note: "Jesus applies the brazen serpent account to His own lifting up.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Luke",
+    chapter: 24,
+    kind: "Gospel Parallel",
+    title: "Resurrection witnesses",
+    references: ["Matthew 28:6", "Mark 16:6", "John 20:19"],
+    note: "The Gospel accounts together emphasize the bodily resurrection of Christ.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Luke",
+    chapter: 24,
+    kind: "Acts Connection",
+    title: "Witness begins at Jerusalem",
+    references: ["Luke 24:47", "Acts 1:8", "Acts 2:32"],
+    note: "Luke 24 prepares the reader for the witness of Acts.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Luke",
+    chapter: 24,
+    kind: "Prophecy Fulfillment",
+    title: "All things fulfilled",
+    references: ["Luke 24:44", "Psalm 22:1", "Isaiah 53:5"],
+    note: "The risen Lord points His disciples back to the Scriptures concerning Himself.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Romans",
+    chapter: 5,
+    kind: "Gospel Parallel",
+    title: "Christ died for sinners",
+    references: ["Luke 24:46", "John 3:16", "Romans 5:8"],
+    note: "Romans explains the Gospel benefit of the death and resurrection preached in the Gospels.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Romans",
+    chapter: 5,
+    kind: "Acts Connection",
+    title: "Forgiveness preached through Christ",
+    references: ["Acts 13:38", "Acts 13:39", "Romans 5:1"],
+    note: "Acts preaching and Romans doctrine meet in justification through Christ.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Romans",
+    chapter: 5,
+    kind: "Prophecy Fulfillment",
+    title: "Wounded for transgressions",
+    references: ["Isaiah 53:5", "Romans 4:25", "Romans 5:6"],
+    note: "Romans connects Christ's death and resurrection to the believer's standing before God.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Romans",
+    chapter: 8,
+    kind: "Gospel Parallel",
+    title: "No condemnation in Christ",
+    references: ["John 3:18", "John 5:24", "Romans 8:1"],
+    note: "John's Gospel and Romans both connect faith in Christ with deliverance from condemnation.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Romans",
+    chapter: 8,
+    kind: "Acts Connection",
+    title: "Spirit-led witness",
+    references: ["Acts 1:8", "Acts 13:52", "Romans 8:14"],
+    note: "Acts shows the Spirit empowering witness; Romans teaches the Spirit's work in believers.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Acts",
+    chapter: 9,
+    kind: "Gospel Parallel",
+    title: "Christ calls and saves",
+    references: ["John 10:27", "Acts 9:5", "1 Timothy 1:15"],
+    note: "Saul's conversion shows Christ saving and commissioning a sinner by grace.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Acts",
+    chapter: 19,
+    kind: "Acts Connection",
+    title: "The word prevailed",
+    references: ["Acts 18:24", "Acts 19:10", "Acts 19:20"],
+    note: "Acts 19 connects discipleship, public opposition, and the triumph of God's word.",
+    reviewStatus: "Reviewed",
+  },
+  {
+    book: "Amos",
+    chapter: 4,
+    kind: "Prophecy Fulfillment",
+    title: "Prepare to meet thy God",
+    references: ["Amos 4:12", "Hebrews 9:27", "Acts 17:30"],
+    note: "Use this sober connection carefully for application; do not force details beyond the reviewed text.",
+    reviewStatus: "Reviewed",
+  },
+];
+
+const PASSAGE_GUIDE_COMMENTARY_GROWTH: CommentaryGrowthPriority[] = [
+  {
+    author: "H. A. Ironside",
+    focus: "Expository preaching and teacher-friendly Bible explanation.",
+    status: "Verified samples",
+    nextStep: "Expand only from verified source paths with documented rights.",
+    caution: "Keep edition/source notes visible before any wider import.",
+  },
+  {
+    author: "William Kelly",
+    focus: "Detailed exposition and dispensational historical value.",
+    status: "Needs Review",
+    nextStep: "Verify exact public-domain editions and prepare doctrinal perspective labels.",
+    caution: "Use with discernment; do not import globally until reviewed.",
+  },
+  {
+    author: "A. C. Gaebelein",
+    focus: "Prophetic and Bible book exposition.",
+    status: "Needs Review",
+    nextStep: "Verify source files, rights status, and prophecy labels before import.",
+    caution: "Prophecy material needs careful review and visible perspective notes.",
+  },
+  {
+    author: "F. W. Grant",
+    focus: "Bible exposition and study helps.",
+    status: "Needs Review",
+    nextStep: "Verify exact editions and clean source text.",
+    caution: "Do not import until rights and doctrinal review are complete.",
+  },
+  {
+    author: "J. N. Darby",
+    focus: "Historical Brethren commentary and Bible study notes.",
+    status: "Needs Review",
+    nextStep: "Treat as candidate material with careful labels and source review.",
+    caution: "Use with discernment; keep Scripture and KJV reader primary.",
+  },
+  {
+    author: "The Biblical Illustrator",
+    focus: "Illustrations and sermon preparation support.",
+    status: "Rights Review",
+    nextStep: "Verify volume-by-volume public-domain status before any import.",
+    caution: "Compilation material needs source, doctrine, and quality review.",
+  },
+  {
+    author: "Pulpit Commentary",
+    focus: "Preaching and teaching reference.",
+    status: "Rights Review",
+    nextStep: "Verify source edition and split by book/chapter in staging first.",
+    caution: "Do not expose unreviewed text publicly.",
   },
 ];
 
@@ -17224,16 +17425,25 @@ function PassageGuideScreen({
   const lessonOutlineSections = exportData ? buildLessonOutline(exportData, EMPTY_TEACHER_NOTES) : [];
   const visibleCrossReferences = crossReferences.slice(0, 12);
   const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
+  const commentaryRecommendation = buildCommentaryRecommendation(commentaryEntries);
+  const commentaryConsensus = commentaryComparisonInsights(commentaryEntries);
+  const passageConnections = PASSAGE_GUIDE_CONNECTIONS.filter((connection) => connection.book === book && connection.chapter === chapter);
+  const topWords = analysis.repeatedWords.slice(0, 6);
+  const startHereCommentary = commentaryRecommendation.primary?.author ?? commentaryAuthors[0] ?? "No reviewed commentary yet";
+  const startHereResources = recommendedResources.filter((resource) => resource.status === "available" || resource.resourceSlug).slice(0, 3);
   const summaryBody = bookIntroduction
     ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
     : connections.themes.length
       ? `Reviewed themes for ${passage}: ${connections.themes.slice(0, 4).join(", ")}.`
       : `A one-scroll guide for ${passage} using reviewed study data already loaded in the app.`;
   const sections = [
+    ["passage-scorecard", "Scorecard"],
+    ["passage-start-here", "Start Here"],
     ["passage-summary", "Summary"],
     ["passage-key-verses", "Key Verses"],
     ["passage-repeated-words", "Repeated Words"],
     ["passage-commentary", "Commentary"],
+    ["passage-parallels", "Parallels"],
     ["passage-cross-references", "Cross References"],
     ["passage-people", "People"],
     ["passage-places", "Places"],
@@ -17319,6 +17529,79 @@ function PassageGuideScreen({
         </div>
       </section>
 
+      <StudySection id="passage-scorecard" title="Passage Guide Scorecard">
+        <div className="grid gap-2 md:grid-cols-3">
+          <MiniStat label="Commentary voices" value={String(commentaryAuthors.length)} />
+          <MiniStat label="Cross references" value={String(crossReferences.length)} />
+          <MiniStat label="Key words" value={String(topWords.length)} />
+          <MiniStat label="People" value={String(connections.people.length)} />
+          <MiniStat label="Places" value={String(connections.places.length)} />
+          <MiniStat label="Resources" value={String(recommendedResources.length)} />
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key words</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {topWords.length ? topWords.map((item) => (
+                <span key={`scorecard-word-${item.word}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">
+                  {item.word} <span className="text-[var(--green)]">{item.count}</span>
+                </span>
+              )) : <span className="text-sm leading-6 text-[var(--muted)]">No key words found yet.</span>}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reviewed coverage</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {[
+                commentaryEntries.length ? "Commentary ready" : "Commentary pending",
+                crossReferences.length ? "Cross references ready" : "Cross references pending",
+                connections.people.length ? "People reviewed" : "People pending",
+                connections.places.length ? "Places reviewed" : "Places pending",
+                passageConnections.length ? "Parallel links ready" : "Parallel links pending",
+              ].map((label) => (
+                <span key={`scorecard-coverage-${label}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-start-here" title="Start Here">
+        <div className="grid gap-3 lg:grid-cols-5">
+          <button
+            className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+            onClick={onBack}
+            type="button"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">1. Read</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">Read {passage}</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Start with the KJV chapter before opening helps.</p>
+          </button>
+          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-key-verses">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">2. Key verses</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{displayKeyVerses[0] ?? passage}</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Notice the main verse anchors.</p>
+          </a>
+          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-commentary">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">3. Commentary</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereCommentary}</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Use commentary after Scripture and references.</p>
+          </a>
+          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-cross-references">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">4. References</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{crossReferences.length} reviewed</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Let Scripture interpret Scripture.</p>
+          </a>
+          <a className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" href="#passage-resources">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">5. Resources</p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereResources.length || recommendedResources.length} ready</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
+          </a>
+        </div>
+      </StudySection>
+
       <StudySection id="passage-summary" title="Chapter Summary">
         <div className="space-y-3">
           <p className="text-sm leading-6 text-[var(--scripture-ink)]">{summaryBody}</p>
@@ -17393,6 +17676,25 @@ function PassageGuideScreen({
             <CommentaryChapterSummaryCard entries={commentaryEntries} compact onListen={onListenCommentary} />
             <CommentaryGuideCard entries={commentaryEntries} compact />
             <CommentaryComparisonCard entries={commentaryEntries} compact />
+            <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Consensus</p>
+                  <h4 className="mt-1 text-sm font-semibold text-[var(--ink)]">Compare after reading the KJV text</h4>
+                </div>
+                <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  {commentaryAuthors.length} voices
+                </span>
+              </div>
+              <div className="mt-3 grid gap-2 md:grid-cols-3">
+                <ComparisonInsight label="Agreement points" body={commentaryConsensus.agreement} />
+                <ComparisonInsight label="Distinct insights" body={commentaryConsensus.distinct} />
+                <ComparisonInsight label="Teaching observations" body={commentaryConsensus.teaching} />
+              </div>
+              {commentaryConsensus.study && (
+                <p className="mt-3 rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{commentaryConsensus.study}</p>
+              )}
+            </article>
             <div className="flex flex-wrap gap-2">
               <button
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
@@ -17408,10 +17710,53 @@ function PassageGuideScreen({
                 <CommentaryDetails key={`passage-commentary-${entry.id}`} entry={entry} compact />
               ))}
             </div>
+            <details className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">Content growth priority</summary>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                {PASSAGE_GUIDE_COMMENTARY_GROWTH.map((item) => (
+                  <article key={`commentary-growth-${item.author}`} className="rounded-xl bg-white p-3">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <p className="text-sm font-semibold text-[var(--ink)]">{item.author}</p>
+                      <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{item.status}</span>
+                    </div>
+                    <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{item.focus}</p>
+                    <p className="mt-2 text-xs leading-5 text-[var(--ink)]">Next: {item.nextStep}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{item.caution}</p>
+                  </article>
+                ))}
+              </div>
+            </details>
           </div>
         ) : (
           <p className="text-sm leading-6 text-[var(--muted)]">No reviewed commentary entries yet.</p>
         )}
+      </StudySection>
+
+      <StudySection id="passage-parallels" title="Parallel Passage Guide">
+        <div className="grid gap-2 md:grid-cols-3">
+          {(["Gospel Parallel", "Acts Connection", "Prophecy Fulfillment"] as PassageGuideConnectionKind[]).map((kind) => {
+            const matches = passageConnections.filter((connection) => connection.kind === kind);
+            return (
+              <article key={`parallel-kind-${kind}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{kind}</p>
+                  <span className="rounded-full bg-white px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{matches.length}</span>
+                </div>
+                <div className="mt-3 space-y-2">
+                  {matches.length ? matches.map((connection) => (
+                    <div key={`parallel-${connection.kind}-${connection.title}`} className="rounded-xl bg-white p-3">
+                      <p className="text-sm font-semibold text-[var(--green)]">{connection.title}</p>
+                      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{connection.note}</p>
+                      <ReferenceRow references={connection.references} onOpenReference={onOpenReference} />
+                    </div>
+                  )) : (
+                    <p className="text-sm leading-6 text-[var(--muted)]">No reviewed {kind.toLowerCase()} links yet.</p>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
       </StudySection>
 
       <StudySection id="passage-cross-references" title="Cross References">
