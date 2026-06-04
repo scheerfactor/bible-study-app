@@ -356,13 +356,6 @@ create table if not exists public.strongs_entries (
   rights_status text not null,
   review_status text not null default 'Needs Review'
     check (review_status in ('Verified', 'Needs Review', 'Permission Needed', 'Do Not Import')),
-  search_vector tsvector generated always as (
-    to_tsvector(
-      'simple',
-      strongs_number || ' ' || original_word || ' ' || coalesce(transliteration, '') || ' ' ||
-      array_to_string(english_words, ' ') || ' ' || plain_definition
-    )
-  ) stored,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -374,7 +367,7 @@ create unique index if not exists strongs_entries_unique_source_id_idx
 create index if not exists strongs_entries_number_idx on public.strongs_entries (strongs_number);
 create index if not exists strongs_entries_language_idx on public.strongs_entries (language);
 create index if not exists strongs_entries_english_words_idx on public.strongs_entries using gin (english_words);
-create index if not exists strongs_entries_search_idx on public.strongs_entries using gin (search_vector);
+create index if not exists strongs_entries_source_id_idx on public.strongs_entries (source_id);
 
 create table if not exists public.user_personal_library_resources (
   id uuid primary key default gen_random_uuid(),
@@ -727,7 +720,22 @@ create policy "Users can delete their study playlist items"
 
 create policy "Anyone can create beta feedback"
   on public.beta_feedback for insert
-  with check (true);
+  with check (
+    length(trim(message)) > 0
+    and length(message) <= 5000
+    and category in (
+      'General',
+      'Bible Reader',
+      'Study Drawer',
+      'Library',
+      'Listening',
+      'Commentary',
+      'Search',
+      'Mobile Layout',
+      'Bug',
+      'Feature Request'
+    )
+  );
 
 create policy "Strong sources are readable"
   on public.strongs_sources for select
