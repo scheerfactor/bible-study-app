@@ -77,6 +77,7 @@ Do not import these globally until exact source, edition, rights, quality, and d
 - Albert Barnes.
 - John Wesley.
 - The Biblical Illustrator.
+- The Pulpit Commentary.
 
 ## Permission-Needed Resources
 
@@ -103,6 +104,7 @@ Future personal imports may allow a signed-in user to upload TXT, EPUB, PDF, or 
 3. Barnes, Clarke, Wesley: expand only where exact source pages and public-domain statements remain clear.
 4. H. A. Ironside: import only exact editions with verified rights/source status.
 5. John Gill: keep blocked for expansion until a cleaner original public-domain source is verified.
+6. Kelly, Gaebelein, Grant, Darby, The Biblical Illustrator, and The Pulpit Commentary: keep as next-batch candidates until exact editions, source URLs, rights status, and doctrinal labels are verified.
 
 ## Amos Prep Priority
 
