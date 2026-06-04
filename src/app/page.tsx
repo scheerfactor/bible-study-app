@@ -79,6 +79,9 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager";
+type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
+type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
 type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family" | "Friends" | "Special Requests";
@@ -706,6 +709,65 @@ type PremiumResourcePlaceholder = {
   notes: string;
 };
 
+type AcquisitionAuthorRecord = {
+  id: string;
+  name: string;
+  birthYear: number | null;
+  deathYear: number | null;
+  tradition: string;
+  biography: string;
+  website: string;
+  notes: string;
+  publicDomainStatus: AcquisitionCopyrightStatus | "Mixed";
+  copyrightNotes: string;
+};
+
+type AcquisitionBookRecord = {
+  id: string;
+  title: string;
+  subtitle: string;
+  author: string;
+  publicationYear: number | null;
+  publisher: string;
+  isbn: string;
+  edition: string;
+  sourceUrl: string;
+  fileType: string;
+  copyrightStatus: AcquisitionCopyrightStatus;
+  confidenceScore: number;
+  reviewStatus: AcquisitionReviewStatus;
+  notes: string;
+  dateAdded: string;
+  topic: string;
+};
+
+type AcquisitionRightsHolderRecord = {
+  id: string;
+  organizationName: string;
+  contactName: string;
+  email: string;
+  website: string;
+  licensingNotes: string;
+  lastContactDate: string;
+};
+
+type CopyrightCheckerInput = {
+  title: string;
+  author: string;
+  publicationYear: string;
+  authorDeathYear: string;
+  publisher: string;
+  isbn: string;
+  sourceUrl: string;
+};
+
+type CopyrightCheckerResult = {
+  decision: "Likely Public Domain" | "Likely Copyrighted" | "Needs Review";
+  confidence: number;
+  reasoning: string[];
+  concerns: string[];
+};
+
 type TeachingWorkspaceSectionId = "summary" | "commentary" | "crossReferences" | "wordStudies" | "notes" | "lessonOutline";
 
 type TeachingWorkspaceVisibility = Record<TeachingWorkspaceSectionId, boolean>;
@@ -1010,10 +1072,221 @@ const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
+const LIBRARY_ACQUISITION_AUTHORS_KEY = "fathers-business-acquisition-authors";
+const LIBRARY_ACQUISITION_BOOKS_KEY = "fathers-business-acquisition-books";
+const LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY = "fathers-business-acquisition-rights-holders";
 const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
 const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
+
+const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
+  {
+    id: "harry-a-ironside",
+    name: "Harry A. Ironside",
+    birthYear: 1876,
+    deathYear: 1951,
+    tradition: "Brethren / Bible teacher",
+    biography: "American Bible teacher and preacher known for clear expository teaching and many published addresses.",
+    website: "https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22",
+    notes: "Useful for Bible exposition, but editions and later reprints need careful review.",
+    publicDomainStatus: "Mixed",
+    copyrightNotes: "Early works may be public domain by publication date. Later editions, revised works, and modern publisher editions require review.",
+  },
+  {
+    id: "charles-spurgeon",
+    name: "Charles Spurgeon",
+    birthYear: 1834,
+    deathYear: 1892,
+    tradition: "Baptist",
+    biography: "English Baptist preacher whose sermons, devotional works, and pastoral writings remain widely used.",
+    website: "https://www.gutenberg.org/ebooks/author/45",
+    notes: "Strong priority author for preaching, devotion, evangelism, and Christian living.",
+    publicDomainStatus: "Public Domain",
+    copyrightNotes: "Original nineteenth-century works are public domain. Verify source text and edition notes before import.",
+  },
+  {
+    id: "j-c-ryle",
+    name: "J. C. Ryle",
+    birthYear: 1816,
+    deathYear: 1900,
+    tradition: "Anglican evangelical",
+    biography: "Evangelical bishop known for practical, plain-spoken works on holiness, the Gospels, and Christian living.",
+    website: "https://archive.org/search?query=creator%3A%22Ryle%2C+J.+C.%22",
+    notes: "Helpful devotional and teaching resource. Mark secondary doctrinal differences where appropriate.",
+    publicDomainStatus: "Public Domain",
+    copyrightNotes: "Original works are generally public domain. Confirm edition/source before import.",
+  },
+  {
+    id: "d-l-moody",
+    name: "D. L. Moody",
+    birthYear: 1837,
+    deathYear: 1899,
+    tradition: "Evangelist",
+    biography: "American evangelist associated with revival work, evangelism, and practical Christian instruction.",
+    website: "https://www.gutenberg.org/ebooks/author/402",
+    notes: "Useful for evangelism, Christian living, and simple teaching.",
+    publicDomainStatus: "Public Domain",
+    copyrightNotes: "Original works are generally public domain. Confirm Project Gutenberg or comparable source notices.",
+  },
+  {
+    id: "e-m-bounds",
+    name: "E. M. Bounds",
+    birthYear: 1835,
+    deathYear: 1913,
+    tradition: "Methodist / prayer writer",
+    biography: "Prayer-focused writer whose works have been widely used for devotional and ministry preparation.",
+    website: "https://www.gutenberg.org/ebooks/author/2832",
+    notes: "Important prayer collection candidate. Add discernment labels where needed.",
+    publicDomainStatus: "Public Domain",
+    copyrightNotes: "Original works are generally public domain; verify modern compiled editions separately.",
+  },
+  {
+    id: "andrew-murray",
+    name: "Andrew Murray",
+    birthYear: 1828,
+    deathYear: 1917,
+    tradition: "Dutch Reformed",
+    biography: "Pastor and devotional writer known for works on prayer, abiding in Christ, humility, and Christian growth.",
+    website: "https://www.gutenberg.org/ebooks/author/1231",
+    notes: "Useful devotional classic author. Mark perspective notes where helpful.",
+    publicDomainStatus: "Public Domain",
+    copyrightNotes: "Original works are generally public domain. Verify edition and source terms.",
+  },
+];
+
+const DEFAULT_ACQUISITION_BOOKS: AcquisitionBookRecord[] = [
+  {
+    id: "all-of-grace",
+    title: "All of Grace",
+    subtitle: "",
+    author: "Charles Spurgeon",
+    publicationYear: 1886,
+    publisher: "Original nineteenth-century edition",
+    isbn: "",
+    edition: "Public-domain source edition",
+    sourceUrl: "https://www.gutenberg.org/ebooks/58181",
+    fileType: "TXT",
+    copyrightStatus: "Public Domain",
+    confidenceScore: 96,
+    reviewStatus: "Approved",
+    notes: "Project Gutenberg source. Keep source notice and verify text before public import.",
+    dateAdded: "2026-06-04",
+    topic: "Evangelism",
+  },
+  {
+    id: "power-through-prayer",
+    title: "Power Through Prayer",
+    subtitle: "",
+    author: "E. M. Bounds",
+    publicationYear: 1910,
+    publisher: "Original edition",
+    isbn: "",
+    edition: "Public-domain source edition",
+    sourceUrl: "https://www.gutenberg.org/ebooks/33441",
+    fileType: "TXT",
+    copyrightStatus: "Public Domain",
+    confidenceScore: 95,
+    reviewStatus: "Approved",
+    notes: "Useful prayer classic candidate. Verify source notice before import.",
+    dateAdded: "2026-06-04",
+    topic: "Prayer",
+  },
+  {
+    id: "lectures-on-romans-ironside",
+    title: "Lectures on Romans",
+    subtitle: "",
+    author: "Harry A. Ironside",
+    publicationYear: null,
+    publisher: "Needs source verification",
+    isbn: "",
+    edition: "Unknown",
+    sourceUrl: "https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22+Romans",
+    fileType: "Unknown",
+    copyrightStatus: "Unknown",
+    confidenceScore: 42,
+    reviewStatus: "Needs Review",
+    notes: "Do not import until publication year, edition, publisher, and rights basis are documented.",
+    dateAdded: "2026-06-04",
+    topic: "Commentary",
+  },
+  {
+    id: "modern-way-of-life-placeholder",
+    title: "Way of Life resource placeholder",
+    subtitle: "Permission needed only",
+    author: "David Cloud / Way of Life Literature",
+    publicationYear: null,
+    publisher: "Way of Life Literature",
+    isbn: "",
+    edition: "Modern",
+    sourceUrl: "https://www.wayoflife.org/",
+    fileType: "Permission tracker",
+    copyrightStatus: "Copyrighted",
+    confidenceScore: 98,
+    reviewStatus: "Rejected",
+    notes: "Do not publicly import without written permission. Keep as permission-needed or personal-use-only planning.",
+    dateAdded: "2026-06-04",
+    topic: "KJV / Textual Issues",
+  },
+];
+
+const DEFAULT_RIGHTS_HOLDERS: AcquisitionRightsHolderRecord[] = [
+  {
+    id: "moody-publishers",
+    organizationName: "Moody Publishers",
+    contactName: "",
+    email: "",
+    website: "https://www.moodypublishers.com/",
+    licensingNotes: "Modern editions and Moody-controlled works require permission or a licensing agreement.",
+    lastContactDate: "",
+  },
+  {
+    id: "kregel",
+    organizationName: "Kregel",
+    contactName: "",
+    email: "",
+    website: "https://www.kregel.com/",
+    licensingNotes: "Track commentary, Bible study, and reprint rights separately.",
+    lastContactDate: "",
+  },
+  {
+    id: "baker",
+    organizationName: "Baker",
+    contactName: "",
+    email: "",
+    website: "https://www.bakerpublishinggroup.com/",
+    licensingNotes: "Publisher partnership candidate for future premium/authorized resources.",
+    lastContactDate: "",
+  },
+  {
+    id: "crossway",
+    organizationName: "Crossway",
+    contactName: "",
+    email: "",
+    website: "https://www.crossway.org/",
+    licensingNotes: "Modern copyrighted works and Bible/licensing questions require written permission.",
+    lastContactDate: "",
+  },
+  {
+    id: "christian-focus",
+    organizationName: "Christian Focus",
+    contactName: "",
+    email: "",
+    website: "https://www.christianfocus.com/",
+    licensingNotes: "Track ebook, audiobook, and app display permissions separately.",
+    lastContactDate: "",
+  },
+];
+
+const EMPTY_COPYRIGHT_CHECKER_INPUT: CopyrightCheckerInput = {
+  title: "",
+  author: "",
+  publicationYear: "",
+  authorDeathYear: "",
+  publisher: "",
+  isbn: "",
+  sourceUrl: "",
+};
 
 const EMPTY_SERMON_ENTRY: SermonEntry = {
   id: "",
@@ -7594,6 +7867,19 @@ export default function Home() {
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
+
+  useEffect(() => {
+    function openHiddenAdminAreas() {
+      if (["#admin-import", "#library-acquisition"].includes(window.location.hash)) {
+        setLibraryView("home");
+        setTab("library");
+      }
+    }
+
+    openHiddenAdminAreas();
+    window.addEventListener("hashchange", openHiddenAdminAreas);
+    return () => window.removeEventListener("hashchange", openHiddenAdminAreas);
+  }, []);
 
   const books = useMemo(
     () => bookOrder.filter((candidate) => allVerses.some((verse) => verse.book === candidate)),
@@ -17517,6 +17803,100 @@ function validateAdminImport({
   return { errors, warnings };
 }
 
+function loadAcquisitionStorage<T>(key: string, fallback: T[]): T[] {
+  if (typeof window === "undefined") return fallback;
+  try {
+    const saved = window.localStorage.getItem(key);
+    return saved ? JSON.parse(saved) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function analyzeCopyrightCandidate(input: CopyrightCheckerInput): CopyrightCheckerResult {
+  const publicationYear = Number.parseInt(input.publicationYear, 10);
+  const authorDeathYear = Number.parseInt(input.authorDeathYear, 10);
+  const sourceUrl = input.sourceUrl.trim().toLowerCase();
+  const publisher = input.publisher.trim().toLowerCase();
+  const hasModernPublisher = /(baker|crossway|kregel|moody|christian focus|zondervan|nelson|way of life|copyright)/i.test(input.publisher);
+  const hasIsbn = input.isbn.trim().length > 0;
+  const reasoning: string[] = [];
+  const concerns: string[] = [];
+
+  if (Number.isFinite(publicationYear)) {
+    reasoning.push(`Publication year entered: ${publicationYear}.`);
+  } else {
+    concerns.push("Publication year is missing, so the checker cannot make a strong date-based decision.");
+  }
+
+  if (Number.isFinite(authorDeathYear)) {
+    reasoning.push(`Author death year entered: ${authorDeathYear}.`);
+  } else {
+    concerns.push("Author death year is missing. Add it when possible for stronger review.");
+  }
+
+  if (sourceUrl.includes("gutenberg.org")) {
+    reasoning.push("Project Gutenberg source detected. This is strong public-domain evidence, but keep the source/license notice.");
+    return {
+      decision: "Likely Public Domain",
+      confidence: publicationYear && publicationYear <= 1930 ? 97 : 92,
+      reasoning,
+      concerns: hasIsbn ? [...concerns, "ISBN entered. Verify this is not a modern copyrighted edition."] : concerns,
+    };
+  }
+
+  if (sourceUrl.includes("archive.org") || sourceUrl.includes("ccel.org")) {
+    reasoning.push("Recognized archive/library source detected. Verify the specific edition, scan notes, and rights statement before approval.");
+  } else if (sourceUrl) {
+    reasoning.push("Source URL entered. Review the site rights statement and source reliability before approval.");
+  } else {
+    concerns.push("No source URL entered. Approval should wait for a documented source.");
+  }
+
+  if (Number.isFinite(publicationYear) && publicationYear <= 1930 && !hasIsbn && !hasModernPublisher) {
+    return {
+      decision: "Likely Public Domain",
+      confidence: sourceUrl ? 88 : 78,
+      reasoning: [...reasoning, "Publication year is old enough to be a strong public-domain signal in the United States."],
+      concerns: [...concerns, "Confirm the edition is not a modern revised or newly copyrighted edition."],
+    };
+  }
+
+  if (Number.isFinite(publicationYear) && publicationYear >= 1964) {
+    return {
+      decision: "Likely Copyrighted",
+      confidence: hasIsbn || hasModernPublisher ? 94 : 84,
+      reasoning: [...reasoning, "Publication year is in the modern copyright period."],
+      concerns: [...concerns, "Do not import publicly without written permission or a clear license."],
+    };
+  }
+
+  if (hasIsbn || hasModernPublisher || publisher.includes("publishers")) {
+    return {
+      decision: "Likely Copyrighted",
+      confidence: 86,
+      reasoning: [...reasoning, "ISBN or modern publisher information suggests this may be a modern copyrighted edition."],
+      concerns: [...concerns, "Track publisher permission before any public import."],
+    };
+  }
+
+  if (Number.isFinite(authorDeathYear) && authorDeathYear <= 1955 && Number.isFinite(publicationYear) && publicationYear <= 1955) {
+    return {
+      decision: "Needs Review",
+      confidence: 68,
+      reasoning: [...reasoning, "Author and publication dates may support public-domain review, but edition and renewal status still matter."],
+      concerns: [...concerns, "Have a reviewer verify edition, source location, and any copyright renewal or reprint notes."],
+    };
+  }
+
+  return {
+    decision: "Needs Review",
+    confidence: 48,
+    reasoning,
+    concerns: [...concerns, "Not enough evidence for approval. Keep this out of the public Library until rights are documented."],
+  };
+}
+
 function initialAdminMetadataForFile(fileName: string): AdminImportMetadata {
   const title = fileName
     .replace(/\.[^.]+$/, "")
@@ -17687,7 +18067,7 @@ function LibraryScreen({
 
   useEffect(() => {
     function updateAdminVisibility() {
-      setShowAdminImport(window.location.hash === "#admin-import");
+      setShowAdminImport(["#admin-import", "#library-acquisition"].includes(window.location.hash));
     }
 
     updateAdminVisibility();
@@ -18171,7 +18551,7 @@ function LibraryScreen({
         </section>
       )}
 
-      {showAdminImport && <LibraryImportDashboard signedIn={signedIn} onClose={() => {
+      {showAdminImport && <LibraryAcquisitionCenter signedIn={signedIn} resources={resources} onClose={() => {
         window.history.replaceState(null, "", window.location.pathname + window.location.search);
         setShowAdminImport(false);
       }} />}
@@ -18955,6 +19335,523 @@ function coverGradientFor(title: string, author: string, category: string) {
   return "from-[#3f4a34] to-[#7b5641]";
 }
 
+function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: boolean; resources: LibraryResource[]; onClose: () => void }) {
+  const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
+  const [checkerInput, setCheckerInput] = useState<CopyrightCheckerInput>(EMPTY_COPYRIGHT_CHECKER_INPUT);
+  const [checkerResult, setCheckerResult] = useState<CopyrightCheckerResult | null>(null);
+  const [managerSearch, setManagerSearch] = useState("");
+  const [managerStatus, setManagerStatus] = useState("All");
+  const [queueMessage, setQueueMessage] = useState("");
+  const [queueFileName, setQueueFileName] = useState("");
+  const [queueSourceUrl, setQueueSourceUrl] = useState("");
+  const [queueTitle, setQueueTitle] = useState("");
+  const [queueAuthor, setQueueAuthor] = useState("");
+  const [queueFileType, setQueueFileType] = useState("Manual entry");
+  const [authors, setAuthors] = useState<AcquisitionAuthorRecord[]>(() =>
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_AUTHORS_KEY, DEFAULT_ACQUISITION_AUTHORS),
+  );
+  const [books, setBooks] = useState<AcquisitionBookRecord[]>(() =>
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_BOOKS_KEY, DEFAULT_ACQUISITION_BOOKS),
+  );
+  const [rightsHolders, setRightsHolders] = useState<AcquisitionRightsHolderRecord[]>(() =>
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, DEFAULT_RIGHTS_HOLDERS),
+  );
+
+  const libraryStats = useMemo(() => {
+    const publicDomainBooks = books.filter((book) => book.copyrightStatus === "Public Domain" || book.copyrightStatus === "Likely Public Domain").length;
+    const copyrightedBooks = books.filter((book) => book.copyrightStatus === "Copyrighted").length;
+    const pendingReviews = books.filter((book) => book.reviewStatus === "Pending" || book.reviewStatus === "Needs Review").length;
+    return {
+      totalAuthors: authors.length,
+      totalBooks: books.length,
+      publicDomainBooks,
+      copyrightedBooks,
+      pendingReviews,
+      liveLibraryResources: resources.length,
+    };
+  }, [authors.length, books, resources.length]);
+
+  const filteredBooks = useMemo(() => {
+    const term = managerSearch.trim().toLowerCase();
+    return books.filter((book) => {
+      const matchesTerm =
+        !term ||
+        `${book.title} ${book.subtitle} ${book.author} ${book.topic} ${book.publicationYear ?? ""}`.toLowerCase().includes(term);
+      const matchesStatus = managerStatus === "All" || book.copyrightStatus === managerStatus || book.reviewStatus === managerStatus;
+      return matchesTerm && matchesStatus;
+    });
+  }, [books, managerSearch, managerStatus]);
+
+  const liveStatusTotals = useMemo(() => {
+    const publicDomain = resources.filter((resource) => /public domain/i.test(`${resource.public_domain_status} ${resource.rights_status}`)).length;
+    const needsReview = resources.filter((resource) => /needs review|unknown|permission/i.test(`${resource.public_domain_status} ${resource.rights_status} ${resource.doctrinal_review_status}`)).length;
+    return { publicDomain, needsReview };
+  }, [resources]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(LIBRARY_ACQUISITION_AUTHORS_KEY, JSON.stringify(authors));
+      window.localStorage.setItem(LIBRARY_ACQUISITION_BOOKS_KEY, JSON.stringify(books));
+      window.localStorage.setItem(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, JSON.stringify(rightsHolders));
+    } catch {
+      // Local acquisition records are advisory admin data; keep the UI usable if storage is unavailable.
+    }
+  }, [authors, books, rightsHolders]);
+
+  const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
+    { id: "dashboard", label: "Dashboard" },
+    { id: "authors", label: "Authors" },
+    { id: "books", label: "Books" },
+    { id: "copyright", label: "Copyright Checker" },
+    { id: "rightsHolders", label: "Rights Holders" },
+    { id: "importQueue", label: "Import Queue" },
+    { id: "libraryManager", label: "Library Manager" },
+  ];
+
+  function updateCheckerInput(field: keyof CopyrightCheckerInput, value: string) {
+    setCheckerInput((current) => ({ ...current, [field]: value }));
+  }
+
+  function addQueueBook() {
+    const title = queueTitle.trim() || queueFileName.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim();
+    if (!title) {
+      setQueueMessage("Add a title or upload/select a file before adding this to review.");
+      return;
+    }
+    const nextBook: AcquisitionBookRecord = {
+      id: `acquisition-${Date.now()}`,
+      title,
+      subtitle: "",
+      author: queueAuthor.trim() || "Unknown author",
+      publicationYear: null,
+      publisher: "",
+      isbn: "",
+      edition: "",
+      sourceUrl: queueSourceUrl.trim(),
+      fileType: queueFileType,
+      copyrightStatus: "Unknown",
+      confidenceScore: 0,
+      reviewStatus: "Pending",
+      notes: "Upload -> Analyze -> Review -> Approve -> Import. This record is not public.",
+      dateAdded: todayIsoDate(),
+      topic: "Needs topic review",
+    };
+    setBooks((current) => [nextBook, ...current]);
+    setQueueMessage("Added to acquisition review. It will stay hidden until approved.");
+    setQueueTitle("");
+    setQueueAuthor("");
+    setQueueSourceUrl("");
+    setQueueFileName("");
+    setQueueFileType("Manual entry");
+  }
+
+  function approveBook(id: string) {
+    setBooks((current) =>
+      current.map((book) =>
+        book.id === id
+          ? {
+              ...book,
+              reviewStatus: "Approved",
+              notes: `${book.notes} Approved for import only after source text, rights notes, and metadata are attached.`,
+            }
+          : book,
+      ),
+    );
+  }
+
+  function markBookNeedsReview(id: string) {
+    setBooks((current) => current.map((book) => (book.id === id ? { ...book, reviewStatus: "Needs Review" } : book)));
+  }
+
+  function sectionButtonClass(id: AcquisitionAdminTab) {
+    return `rounded-full px-3 py-2 text-xs font-semibold transition ${
+      activeTab === id
+        ? "bg-[var(--green)] text-white shadow-sm"
+        : "border border-[var(--line)] bg-white text-[var(--muted)] hover:border-[var(--green)] hover:text-[var(--green)]"
+    }`;
+  }
+
+  return (
+    <section id="library-acquisition" className="rounded-3xl border-2 border-[var(--green)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Admin</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Library Acquisition Center</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            A rights-first workflow for books, commentaries, devotionals, sermons, audio, and future premium resources. Nothing enters the public Library until it is reviewed and approved.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            {signedIn ? "Admin session" : "Local admin preview"}
+          </span>
+          <button
+            className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+            onClick={onClose}
+            type="button"
+          >
+            Hide admin area
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-5 flex gap-2 overflow-x-auto pb-2">
+        {tabs.map((tabItem) => (
+          <button
+            key={`acquisition-tab-${tabItem.id}`}
+            className={sectionButtonClass(tabItem.id)}
+            onClick={() => setActiveTab(tabItem.id)}
+            type="button"
+          >
+            {tabItem.label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === "dashboard" && (
+        <div className="mt-5 space-y-4">
+          <div className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+            {[
+              ["Total Authors", libraryStats.totalAuthors],
+              ["Total Books", libraryStats.totalBooks],
+              ["Public Domain", libraryStats.publicDomainBooks],
+              ["Copyrighted", libraryStats.copyrightedBooks],
+              ["Pending Reviews", libraryStats.pendingReviews],
+              ["Live Resources", libraryStats.liveLibraryResources],
+            ].map(([label, value]) => (
+              <div key={`acquisition-stat-${label}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+            <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Approval workflow</p>
+              <div className="mt-3 grid gap-2 sm:grid-cols-5">
+                {["Upload", "Analyze", "Review", "Approve", "Import"].map((step, index) => (
+                  <div key={`acquisition-workflow-${step}`} className="rounded-2xl bg-white p-3 text-center">
+                    <p className="text-lg font-semibold text-[var(--green)]">{index + 1}</p>
+                    <p className="mt-1 text-xs font-semibold text-[var(--ink)]">{step}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                Review must document title, author, edition, source URL, public-domain or licensing evidence, doctrinal notes, and import readiness. The checker supports review; it does not replace legal judgment.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Future rights architecture</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {["Licensing agreements", "Publisher partnerships", "Audio rights", "Ebook rights", "Translation rights", "AI voice permissions", "Public-domain collections"].map((item) => (
+                  <span key={`rights-future-${item}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                Modern publishers and ministries stay permission-needed until written permission is documented.
+              </p>
+            </article>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "authors" && (
+        <div className="mt-5 grid gap-3">
+          {authors.map((author) => (
+            <article key={`acquisition-author-${author.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-lg font-semibold text-[var(--ink)]">{author.name}</p>
+                  <p className="mt-1 text-sm text-[var(--muted)]">
+                    {author.birthYear ?? "?"}-{author.deathYear ?? "?"} · {author.tradition}
+                  </p>
+                </div>
+                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{author.publicDomainStatus}</span>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{author.biography}</p>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]"><strong>Notes:</strong> {author.notes}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]"><strong>Copyright:</strong> {author.copyrightNotes}</p>
+              {author.website && (
+                <a className="mt-3 inline-flex text-xs font-semibold text-[var(--green)] underline" href={author.website} rel="noreferrer" target="_blank">
+                  Source/research link
+                </a>
+              )}
+            </article>
+          ))}
+          <button
+            className="rounded-2xl border border-dashed border-[var(--line)] bg-white px-4 py-3 text-sm font-semibold text-[var(--green)]"
+            onClick={() =>
+              setAuthors((current) => [
+                {
+                  id: `author-${Date.now()}`,
+                  name: "New author review",
+                  birthYear: null,
+                  deathYear: null,
+                  tradition: "Needs review",
+                  biography: "Add biography before import approval.",
+                  website: "",
+                  notes: "New author record.",
+                  publicDomainStatus: "Unknown",
+                  copyrightNotes: "Needs source and rights review.",
+                },
+                ...current,
+              ])
+            }
+            type="button"
+          >
+            Add author review record
+          </button>
+        </div>
+      )}
+
+      {activeTab === "books" && (
+        <div className="mt-5 overflow-hidden rounded-2xl border border-[var(--line)]">
+          <div className="grid gap-0 bg-[var(--paper)] text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)] md:grid-cols-[1.4fr_1fr_0.6fr_0.9fr_0.8fr]">
+            <div className="p-3">Title</div>
+            <div className="p-3">Author</div>
+            <div className="p-3">Year</div>
+            <div className="p-3">Copyright</div>
+            <div className="p-3">Review</div>
+          </div>
+          {books.map((book) => (
+            <div key={`acquisition-book-${book.id}`} className="grid border-t border-[var(--line)] bg-white md:grid-cols-[1.4fr_1fr_0.6fr_0.9fr_0.8fr]">
+              <div className="p-3">
+                <p className="text-sm font-semibold text-[var(--ink)]">{book.title}</p>
+                <p className="mt-1 text-xs text-[var(--muted)]">{book.subtitle || book.topic}</p>
+              </div>
+              <div className="p-3 text-sm text-[var(--muted)]">{book.author}</div>
+              <div className="p-3 text-sm text-[var(--muted)]">{book.publicationYear ?? "Unknown"}</div>
+              <div className="p-3">
+                <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-xs font-semibold text-[var(--green)]">{book.copyrightStatus}</span>
+                <p className="mt-1 text-xs text-[var(--muted)]">{book.confidenceScore}% confidence</p>
+              </div>
+              <div className="p-3">
+                <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-xs font-semibold text-[var(--muted)]">{book.reviewStatus}</span>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  <button className="rounded-full border border-[var(--line)] px-2 py-1 text-[11px] font-semibold text-[var(--green)]" onClick={() => approveBook(book.id)} type="button">
+                    Approve
+                  </button>
+                  <button className="rounded-full border border-[var(--line)] px-2 py-1 text-[11px] font-semibold text-[var(--muted)]" onClick={() => markBookNeedsReview(book.id)} type="button">
+                    Needs review
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {activeTab === "copyright" && (
+        <div className="mt-5 grid gap-4 lg:grid-cols-[1fr_0.9fr]">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Copyright Checker</p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {([
+                ["title", "Title"],
+                ["author", "Author"],
+                ["publicationYear", "Publication Year"],
+                ["authorDeathYear", "Author Death Year"],
+                ["publisher", "Publisher"],
+                ["isbn", "ISBN"],
+                ["sourceUrl", "Source URL"],
+              ] as Array<[keyof CopyrightCheckerInput, string]>).map(([field, label]) => (
+                <label key={`checker-${field}`} className={field === "sourceUrl" ? "text-sm font-semibold text-[var(--muted)] md:col-span-2" : "text-sm font-semibold text-[var(--muted)]"}>
+                  {label}
+                  <input
+                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                    value={checkerInput[field]}
+                    onChange={(event) => updateCheckerInput(field, event.target.value)}
+                    placeholder={label}
+                  />
+                </label>
+              ))}
+            </div>
+            <button
+              className="mt-4 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+              onClick={() => setCheckerResult(analyzeCopyrightCandidate(checkerInput))}
+              type="button"
+            >
+              Analyze copyright status
+            </button>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Analysis result</p>
+            {checkerResult ? (
+              <div className="mt-4">
+                <p className="text-2xl font-semibold text-[var(--ink)]">{checkerResult.decision}</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{checkerResult.confidence}% confidence</p>
+                <div className="mt-4 space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reasoning</p>
+                    <ul className="mt-2 space-y-2 text-sm leading-6 text-[var(--muted)]">
+                      {checkerResult.reasoning.map((reason) => <li key={`reason-${reason}`}>{reason}</li>)}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Licensing concerns</p>
+                    <ul className="mt-2 space-y-2 text-sm leading-6 text-[var(--muted)]">
+                      {checkerResult.concerns.map((concern) => <li key={`concern-${concern}`}>{concern}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+                Enter the title, author, year, death year, publisher, ISBN, and source URL. The checker will recommend Likely Public Domain, Likely Copyrighted, or Needs Review.
+              </p>
+            )}
+          </article>
+        </div>
+      )}
+
+      {activeTab === "rightsHolders" && (
+        <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {rightsHolders.map((holder) => (
+            <article key={`rights-holder-${holder.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-lg font-semibold text-[var(--ink)]">{holder.organizationName}</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{holder.licensingNotes}</p>
+              <p className="mt-3 text-xs text-[var(--muted)]">Contact: {holder.contactName || "Not set"} {holder.email ? `· ${holder.email}` : ""}</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">Last contact: {holder.lastContactDate || "Not contacted"}</p>
+              {holder.website && (
+                <a className="mt-3 inline-flex text-xs font-semibold text-[var(--green)] underline" href={holder.website} rel="noreferrer" target="_blank">
+                  Website
+                </a>
+              )}
+            </article>
+          ))}
+          <button
+            className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-4 text-left text-sm font-semibold text-[var(--green)]"
+            onClick={() =>
+              setRightsHolders((current) => [
+                {
+                  id: `rights-holder-${Date.now()}`,
+                  organizationName: "New rights holder",
+                  contactName: "",
+                  email: "",
+                  website: "",
+                  licensingNotes: "Add licensing notes before contacting.",
+                  lastContactDate: "",
+                },
+                ...current,
+              ])
+            }
+            type="button"
+          >
+            Add rights holder record
+          </button>
+        </div>
+      )}
+
+      {activeTab === "importQueue" && (
+        <div className="mt-5 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Add to Import Queue</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Manual entry, PDF, EPUB, TXT, and URL imports are staged here first. Uploads are placeholders until text extraction and rights review are complete.
+            </p>
+            <div className="mt-4 grid gap-3">
+              <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold outline-none" value={queueTitle} onChange={(event) => setQueueTitle(event.target.value)} placeholder="Title" />
+              <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold outline-none" value={queueAuthor} onChange={(event) => setQueueAuthor(event.target.value)} placeholder="Author" />
+              <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold outline-none" value={queueSourceUrl} onChange={(event) => setQueueSourceUrl(event.target.value)} placeholder="Project Gutenberg, Internet Archive, PDF URL, or source URL" />
+              <label className="rounded-2xl border border-dashed border-[var(--line)] bg-white p-4 text-sm font-semibold text-[var(--muted)]">
+                Upload placeholder
+                <input
+                  accept=".pdf,.epub,.txt,.md,.markdown"
+                  className="mt-3 block w-full text-xs text-[var(--muted)] file:mr-3 file:rounded-full file:border-0 file:bg-[var(--green)] file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white"
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (!file) return;
+                    setQueueFileName(file.name);
+                    setQueueFileType(adminFileSupportLabel(file.name));
+                    if (!queueTitle.trim()) setQueueTitle(file.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " "));
+                  }}
+                  type="file"
+                />
+                <span className="mt-2 block text-xs">{queueFileName || "No file selected."}</span>
+              </label>
+            </div>
+            <button className="mt-4 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={addQueueBook} type="button">
+              Add to review queue
+            </button>
+            {queueMessage && <p className="mt-3 text-sm font-semibold text-[var(--green)]">{queueMessage}</p>}
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Queue status</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-4">
+              {(["Pending", "Needs Review", "Approved", "Rejected"] as AcquisitionReviewStatus[]).map((status) => (
+                <div key={`queue-status-${status}`} className="rounded-2xl bg-[var(--paper)] p-3">
+                  <p className="text-xl font-semibold text-[var(--green)]">{books.filter((book) => book.reviewStatus === status).length}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{status}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 space-y-2">
+              {books.slice(0, 6).map((book) => (
+                <div key={`queue-book-${book.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <p className="text-sm font-semibold text-[var(--ink)]">{book.title}</p>
+                    <span className="rounded-full bg-white px-2 py-1 text-xs font-semibold text-[var(--muted)]">{book.reviewStatus}</span>
+                  </div>
+                  <p className="mt-1 text-xs text-[var(--muted)]">{book.author} · {book.fileType} · {book.copyrightStatus}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+        </div>
+      )}
+
+      {activeTab === "libraryManager" && (
+        <div className="mt-5 space-y-4">
+          <div className="grid gap-3 md:grid-cols-5">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Public resources</p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-2xl font-semibold text-[var(--green)]">{liveStatusTotals.publicDomain}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Rights-safe</p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-2xl font-semibold text-[var(--green)]">{liveStatusTotals.needsReview}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Needs review flags</p>
+            </div>
+          </div>
+          <div className="grid gap-3 md:grid-cols-[1fr_220px]">
+            <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold outline-none" value={managerSearch} onChange={(event) => setManagerSearch(event.target.value)} placeholder="Search author, title, topic, or year" />
+            <select className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold outline-none" value={managerStatus} onChange={(event) => setManagerStatus(event.target.value)}>
+              {["All", "Public Domain", "Likely Public Domain", "Copyrighted", "Unknown", "Pending", "Approved", "Rejected", "Needs Review"].map((status) => (
+                <option key={`manager-status-${status}`} value={status}>{status}</option>
+              ))}
+            </select>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {filteredBooks.map((book) => (
+              <article key={`manager-book-${book.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+                <div className="flex flex-wrap justify-between gap-2">
+                  <div>
+                    <p className="text-base font-semibold text-[var(--ink)]">{book.title}</p>
+                    <p className="mt-1 text-sm text-[var(--muted)]">{book.author} · {book.publicationYear ?? "Unknown year"}</p>
+                  </div>
+                  <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{book.reviewStatus}</span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{book.notes}</p>
+                <p className="mt-2 text-xs text-[var(--muted)]">Status: {book.copyrightStatus} · Confidence: {book.confidenceScore}% · Topic: {book.topic}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onClose: () => void }) {
   const [resourceType, setResourceType] = useState<AdminResourceType>("Library Book");
   const [reviewStatus, setReviewStatus] = useState<ResourceImportStatus>("Draft");
