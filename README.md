@@ -2,6 +2,10 @@
 
 A first working prototype for a mobile-first KJV Bible study app.
 
+## Product Vision
+
+See [LONG_TERM_VISION.md](LONG_TERM_VISION.md) for the Scripture-first platform vision: Bible reading, study, library, prayer, journal, teaching, preaching, presentation, and Sermon Extractor integration.
+
 ## Current Prototype
 
 - Full KJV reader using the public-domain `es-kjv` package
