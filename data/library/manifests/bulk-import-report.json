@@ -1,0 +1,1184 @@
+{
+  "source_csv": "data/library/bulk-import-phase-3.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 120,
+  "total_attempted": 80,
+  "imported": 73,
+  "would_import": 0,
+  "skipped": 7,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 3,
+  "duplicate_sources": 4,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Expositor's Bible: The Second Book of Kings",
+      "file": "the-expositor-s-bible-the-second-book-of-kings-f-w-farrar.txt",
+      "bytes": 891484,
+      "words": 146108,
+      "reading_time_minutes": 649
+    },
+    {
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 2",
+      "file": "the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-2-george-adam-smith.txt",
+      "bytes": 969773,
+      "words": 160979,
+      "reading_time_minutes": 715
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 2",
+      "file": "the-expositor-s-bible-the-book-of-isaiah-volume-2-george-adam-smith.txt",
+      "bytes": 856356,
+      "words": 145141,
+      "reading_time_minutes": 645
+    },
+    {
+      "title": "The Expositor's Bible: The First Book of Kings",
+      "file": "the-expositor-s-bible-the-first-book-of-kings-f-w-farrar.txt",
+      "bytes": 868547,
+      "words": 142781,
+      "reading_time_minutes": 635
+    },
+    {
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 1",
+      "file": "the-expositor-s-bible-the-acts-of-the-apostles-vol-1-george-thomas-stokes.txt",
+      "bytes": 816100,
+      "words": 135732,
+      "reading_time_minutes": 603
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Proverbs",
+      "file": "the-expositor-s-bible-the-book-of-proverbs-robert-f-horton.txt",
+      "bytes": 757576,
+      "words": 126901,
+      "reading_time_minutes": 564
+    },
+    {
+      "title": "The Expositor's Bible: The Books of Chronicles",
+      "file": "the-expositor-s-bible-the-books-of-chronicles-w-h-bennett.txt",
+      "bytes": 774817,
+      "words": 127873,
+      "reading_time_minutes": 568
+    },
+    {
+      "title": "Expositor's Bible: The Book of Job",
+      "file": "expositor-s-bible-the-book-of-job-robert-a-watson.txt",
+      "bytes": 672204,
+      "words": 116547,
+      "reading_time_minutes": 518
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Ezekiel",
+      "file": "the-expositor-s-bible-the-book-of-ezekiel-john-skinner.txt",
+      "bytes": 924665,
+      "words": 155719,
+      "reading_time_minutes": 692
+    },
+    {
+      "title": "Expositor's Bible: The Epistles of St. John",
+      "file": "expositor-s-bible-the-epistles-of-st-john-william-alexander.txt",
+      "bytes": 700188,
+      "words": 109182,
+      "reading_time_minutes": 485
+    },
+    {
+      "title": "The Expositor's Bible: The Gospel According to St. Mark",
+      "file": "the-expositor-s-bible-the-gospel-according-to-st-mark-g-a-chadwick.txt",
+      "bytes": 792111,
+      "words": 136886,
+      "reading_time_minutes": 608
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 1",
+      "file": "the-expositor-s-bible-the-book-of-isaiah-volume-1-george-adam-smith.txt",
+      "bytes": 801715,
+      "words": 136603,
+      "reading_time_minutes": 607
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Numbers",
+      "file": "the-expositor-s-bible-the-book-of-numbers-robert-a-watson.txt",
+      "bytes": 715417,
+      "words": 122671,
+      "reading_time_minutes": 545
+    },
+    {
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 2",
+      "file": "the-expositor-s-bible-the-acts-of-the-apostles-vol-2-george-thomas-stokes.txt",
+      "bytes": 942087,
+      "words": 157337,
+      "reading_time_minutes": 699
+    },
+    {
+      "title": "The Expositor's Bible: The Epistle to the Ephesians",
+      "file": "the-expositor-s-bible-the-epistle-to-the-ephesians-george-g-findlay.txt",
+      "bytes": 748799,
+      "words": 127492,
+      "reading_time_minutes": 567
+    },
+    {
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 1",
+      "file": "the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-1-george-adam-smith.txt",
+      "bytes": 790932,
+      "words": 132396,
+      "reading_time_minutes": 588
+    },
+    {
+      "title": "Expositor's Bible: The Gospel of Matthew",
+      "file": "expositor-s-bible-the-gospel-of-matthew-john-monro-gibson.txt",
+      "bytes": 782331,
+      "words": 138888,
+      "reading_time_minutes": 617
+    },
+    {
+      "title": "The Expositor's Bible: The Prophecies of Jeremiah",
+      "file": "the-expositor-s-bible-the-prophecies-of-jeremiah-c-j-ball.txt",
+      "bytes": 755243,
+      "words": 128211,
+      "reading_time_minutes": 570
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Deuteronomy",
+      "file": "the-expositor-s-bible-the-book-of-deuteronomy-andrew-harper.txt",
+      "bytes": 937255,
+      "words": 160786,
+      "reading_time_minutes": 715
+    },
+    {
+      "title": "Expositor's Bible: The Book of Jeremiah, Chapters XXI-LII",
+      "file": "expositor-s-bible-the-book-of-jeremiah-chapters-xxi-lii-w-h-bennett.txt",
+      "bytes": 642411,
+      "words": 101107,
+      "reading_time_minutes": 449
+    },
+    {
+      "title": "Expositor's Bible: The Gospel of St Luke",
+      "file": "expositor-s-bible-the-gospel-of-st-luke-henry-burton.txt",
+      "bytes": 727610,
+      "words": 126852,
+      "reading_time_minutes": 564
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Leviticus",
+      "file": "the-expositor-s-bible-the-book-of-leviticus-samuel-h-kellogg.txt",
+      "bytes": 1019111,
+      "words": 176083,
+      "reading_time_minutes": 783
+    },
+    {
+      "title": "The Expositor's Bible: The Book of Daniel",
+      "file": "the-expositor-s-bible-the-book-of-daniel-f-w-farrar.txt",
+      "bytes": 615497,
+      "words": 99260,
+      "reading_time_minutes": 441
+    },
+    {
+      "title": "A Brief Commentary on the Apocalypse",
+      "file": "a-brief-commentary-on-the-apocalypse-sylvester-bliss.txt",
+      "bytes": 558017,
+      "words": 93489,
+      "reading_time_minutes": 416
+    },
+    {
+      "title": "The Gospel of Luke, an Exposition",
+      "file": "the-gospel-of-luke-an-exposition-charles-rosenbury-erdman.txt",
+      "bytes": 503288,
+      "words": 88531,
+      "reading_time_minutes": 393
+    },
+    {
+      "title": "Commentary on the Epistle to the Galatians",
+      "file": "commentary-on-the-epistle-to-the-galatians-martin-luther.txt",
+      "bytes": 484454,
+      "words": 85728,
+      "reading_time_minutes": 381
+    },
+    {
+      "title": "Messages from the Epistle to the Hebrews",
+      "file": "messages-from-the-epistle-to-the-hebrews-h-c-g-moule.txt",
+      "bytes": 155234,
+      "words": 26770,
+      "reading_time_minutes": 119
+    },
+    {
+      "title": "St. Paul's Epistles to the Colossians and Philemon",
+      "file": "st-paul-s-epistles-to-the-colossians-and-philemon-j-b-lightfoot.txt",
+      "bytes": 1491427,
+      "words": 216828,
+      "reading_time_minutes": 964
+    },
+    {
+      "title": "Commentary on Genesis, Vol. 1: Luther on the Creation",
+      "file": "commentary-on-genesis-vol-1-luther-on-the-creation-martin-luther.txt",
+      "bytes": 979038,
+      "words": 174259,
+      "reading_time_minutes": 774
+    },
+    {
+      "title": "Christology of the Old Testament, Vol. 1",
+      "file": "christology-of-the-old-testament-vol-1-ernst-wilhelm-hengstenberg.txt",
+      "bytes": 1306325,
+      "words": 221251,
+      "reading_time_minutes": 983
+    },
+    {
+      "title": "The Preacher's Complete Homiletic Commentary on Proverbs",
+      "file": "the-preacher-s-complete-homiletic-commentary-on-proverbs-rev-w-harris.txt",
+      "bytes": 3132247,
+      "words": 548463,
+      "reading_time_minutes": 2438
+    },
+    {
+      "title": "The Preacher's Complete Homiletic Commentary on Isaiah, Volume 1",
+      "file": "the-preacher-s-complete-homiletic-commentary-on-isaiah-volume-1-robert-aitkin-bertram-and-alfred-tucker.txt",
+      "bytes": 2650097,
+      "words": 454597,
+      "reading_time_minutes": 2020
+    },
+    {
+      "title": "The Preacher's Complete Homiletic Commentary on Galatians through Thessalonians",
+      "file": "the-preacher-s-complete-homiletic-commentary-on-galatians-through-thessalonians-george-barlow.txt",
+      "bytes": 2421631,
+      "words": 403781,
+      "reading_time_minutes": 1795
+    },
+    {
+      "title": "Among the Sioux: A Story of the Twin Cities and the Two Dakotas",
+      "file": "among-the-sioux-a-story-of-the-twin-cities-and-the-two-dakotas-r-j-creswell.txt",
+      "bytes": 153851,
+      "words": 25378,
+      "reading_time_minutes": 113
+    },
+    {
+      "title": "On Trail and Rapid by Dog-sled and Canoe",
+      "file": "on-trail-and-rapid-by-dog-sled-and-canoe-h-a-cody.txt",
+      "bytes": 366790,
+      "words": 63229,
+      "reading_time_minutes": 281
+    },
+    {
+      "title": "Stanley in Africa",
+      "file": "stanley-in-africa-james-p-boyd.txt",
+      "bytes": 1456961,
+      "words": 242691,
+      "reading_time_minutes": 1079
+    },
+    {
+      "title": "Life of John Coleridge Patteson",
+      "file": "life-of-john-coleridge-patteson-charlotte-m-yonge.txt",
+      "bytes": 1598377,
+      "words": 286624,
+      "reading_time_minutes": 1274
+    },
+    {
+      "title": "Pioneers and Founders",
+      "file": "pioneers-and-founders-charlotte-m-yonge.txt",
+      "bytes": 783490,
+      "words": 133743,
+      "reading_time_minutes": 594
+    },
+    {
+      "title": "Life and Labors of Elder John Kline, the Martyr Missionary",
+      "file": "life-and-labors-of-elder-john-kline-the-martyr-missionary-john-kline.txt",
+      "bytes": 1087180,
+      "words": 194254,
+      "reading_time_minutes": 863
+    },
+    {
+      "title": "Samuel Reynolds House of Siam, Pioneer Medical Missionary",
+      "file": "samuel-reynolds-house-of-siam-pioneer-medical-missionary-george-haws-feltus.txt",
+      "bytes": 419524,
+      "words": 69805,
+      "reading_time_minutes": 310
+    },
+    {
+      "title": "The White Queen of Okoyong",
+      "file": "the-white-queen-of-okoyong-w-p-livingstone.txt",
+      "bytes": 271423,
+      "words": 49719,
+      "reading_time_minutes": 221
+    },
+    {
+      "title": "The Book of Missionary Heroes",
+      "file": "the-book-of-missionary-heroes-basil-mathews.txt",
+      "bytes": 377776,
+      "words": 67343,
+      "reading_time_minutes": 299
+    },
+    {
+      "title": "Life and Work in Benares and Kumaon, 1839-1877",
+      "file": "life-and-work-in-benares-and-kumaon-1839-1877-james-kennedy.txt",
+      "bytes": 659129,
+      "words": 111998,
+      "reading_time_minutes": 498
+    },
+    {
+      "title": "Eli and Sibyl Jones, Their Life and Work",
+      "file": "eli-and-sibyl-jones-their-life-and-work-rufus-m-jones.txt",
+      "bytes": 492395,
+      "words": 85056,
+      "reading_time_minutes": 378
+    },
+    {
+      "title": "The Black-Bearded Barbarian",
+      "file": "the-black-bearded-barbarian-mary-esther-miller-macgregor.txt",
+      "bytes": 263151,
+      "words": 46760,
+      "reading_time_minutes": 208
+    },
+    {
+      "title": "Robert Moffat, the Missionary Hero of Kuruman",
+      "file": "robert-moffat-the-missionary-hero-of-kuruman-david-j-deane.txt",
+      "bytes": 235154,
+      "words": 39958,
+      "reading_time_minutes": 178
+    },
+    {
+      "title": "Mary Slessor of Calabar: Pioneer Missionary",
+      "file": "mary-slessor-of-calabar-pioneer-missionary-w-p-livingstone.txt",
+      "bytes": 757397,
+      "words": 134212,
+      "reading_time_minutes": 596
+    },
+    {
+      "title": "Calvin Wilson Mateer, Forty-five Years a Missionary in Shantung, China",
+      "file": "calvin-wilson-mateer-forty-five-years-a-missionary-in-shantung-china-d-w-fisher.txt",
+      "bytes": 534182,
+      "words": 90264,
+      "reading_time_minutes": 401
+    },
+    {
+      "title": "Schwartz of Tanjore",
+      "file": "schwartz-of-tanjore-jesse-page.txt",
+      "bytes": 386120,
+      "words": 66221,
+      "reading_time_minutes": 294
+    },
+    {
+      "title": "By Canoe and Dog Train Among the Cree and Salteaux Indians",
+      "file": "by-canoe-and-dog-train-among-the-cree-and-salteaux-indians-egerton-ryerson-young.txt",
+      "bytes": 450149,
+      "words": 80258,
+      "reading_time_minutes": 357
+    },
+    {
+      "title": "Life of Henry Martyn, Missionary to India and Persia",
+      "file": "life-of-henry-martyn-missionary-to-india-and-persia-sarah-j-rhea.txt",
+      "bytes": 76075,
+      "words": 13339,
+      "reading_time_minutes": 59
+    },
+    {
+      "title": "On the Indian Trail",
+      "file": "on-the-indian-trail-egerton-ryerson-young.txt",
+      "bytes": 258609,
+      "words": 45803,
+      "reading_time_minutes": 204
+    },
+    {
+      "title": "Ten Years of Missionary Work Among the Indians at Skokomish",
+      "file": "ten-years-of-missionary-work-among-the-indians-at-skokomish-myron-eells.txt",
+      "bytes": 298057,
+      "words": 51881,
+      "reading_time_minutes": 231
+    },
+    {
+      "title": "Seedtime in Kashmir",
+      "file": "seedtime-in-kashmir-william-jackson-elmslie.txt",
+      "bytes": 490007,
+      "words": 83841,
+      "reading_time_minutes": 373
+    },
+    {
+      "title": "An Englishwoman's Twenty-five Years in Tropical Africa",
+      "file": "an-englishwoman-s-twenty-five-years-in-tropical-africa-george-hawker.txt",
+      "bytes": 558885,
+      "words": 97061,
+      "reading_time_minutes": 431
+    },
+    {
+      "title": "The Life of Rev. David Brainerd",
+      "file": "the-life-of-rev-david-brainerd-david-brainerd.txt",
+      "bytes": 644020,
+      "words": 110269,
+      "reading_time_minutes": 490
+    },
+    {
+      "title": "Lives of the Three Mrs. Judsons",
+      "file": "lives-of-the-three-mrs-judsons-arabella-m-willson.txt",
+      "bytes": 475996,
+      "words": 80037,
+      "reading_time_minutes": 356
+    },
+    {
+      "title": "The Bloudy Tenent of Persecution",
+      "file": "the-bloudy-tenent-of-persecution-roger-williams.txt",
+      "bytes": 962548,
+      "words": 157154,
+      "reading_time_minutes": 698
+    },
+    {
+      "title": "The Cyclopedia of the Colored Baptists of Alabama",
+      "file": "the-cyclopedia-of-the-colored-baptists-of-alabama-charles-octavius-boothe.txt",
+      "bytes": 397243,
+      "words": 66819,
+      "reading_time_minutes": 297
+    },
+    {
+      "title": "A General History of the Sabbatarian Churches",
+      "file": "a-general-history-of-the-sabbatarian-churches-tamar-davis.txt",
+      "bytes": 446128,
+      "words": 70717,
+      "reading_time_minutes": 314
+    },
+    {
+      "title": "A Biblical and Theological Dictionary",
+      "file": "a-biblical-and-theological-dictionary-richard-watson.txt",
+      "bytes": 6285688,
+      "words": 1054504,
+      "reading_time_minutes": 4687
+    },
+    {
+      "title": "A Greek-English Lexicon to the New Testament",
+      "file": "a-greek-english-lexicon-to-the-new-testament-william-greenfield.txt",
+      "bytes": 955131,
+      "words": 135971,
+      "reading_time_minutes": 604
+    },
+    {
+      "title": "Encyclopaedia Britannica, 11th Edition, Bible to Bisectrix",
+      "file": "encyclopaedia-britannica-11th-edition-bible-to-bisectrix-various.txt",
+      "bytes": 1362837,
+      "words": 215689,
+      "reading_time_minutes": 959
+    },
+    {
+      "title": "The Book of Religions",
+      "file": "the-book-of-religions-john-hayward.txt",
+      "bytes": 893455,
+      "words": 142152,
+      "reading_time_minutes": 632
+    },
+    {
+      "title": "Quiet Talks on Prayer",
+      "file": "quiet-talks-on-prayer-s-d-gordon.txt",
+      "bytes": 297849,
+      "words": 52781,
+      "reading_time_minutes": 235
+    },
+    {
+      "title": "Prayers of the Early Church",
+      "file": "prayers-of-the-early-church-various.txt",
+      "bytes": 110759,
+      "words": 16917,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "Three Prayers and Sermons",
+      "file": "three-prayers-and-sermons-jonathan-swift.txt",
+      "bytes": 66103,
+      "words": 11372,
+      "reading_time_minutes": 51
+    },
+    {
+      "title": "Discipline and Other Sermons",
+      "file": "discipline-and-other-sermons-charles-kingsley.txt",
+      "bytes": 318942,
+      "words": 57140,
+      "reading_time_minutes": 254
+    },
+    {
+      "title": "Sermons for the Times",
+      "file": "sermons-for-the-times-charles-kingsley.txt",
+      "bytes": 464160,
+      "words": 85843,
+      "reading_time_minutes": 382
+    },
+    {
+      "title": "The World's Great Sermons, Volume 08",
+      "file": "the-world-s-great-sermons-volume-08-various.txt",
+      "bytes": 302212,
+      "words": 54154,
+      "reading_time_minutes": 241
+    },
+    {
+      "title": "Men of the Bible; Some Lesser-Known Characters",
+      "file": "men-of-the-bible-some-lesser-known-characters-various.txt",
+      "bytes": 301774,
+      "words": 52591,
+      "reading_time_minutes": 234
+    },
+    {
+      "title": "Sermons on Biblical Characters",
+      "file": "sermons-on-biblical-characters-clovis-gillham-chappell.txt",
+      "bytes": 305299,
+      "words": 56974,
+      "reading_time_minutes": 253
+    },
+    {
+      "title": "The Astronomy of the Bible",
+      "file": "the-astronomy-of-the-bible-e-walter-maunder.txt",
+      "bytes": 626337,
+      "words": 104228,
+      "reading_time_minutes": 463
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Expositor's Bible: The Second Book of Kings",
+      "author": "F. W. Farrar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-second-book-of-kings-f-w-farrar.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 2",
+      "author": "George Adam Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-2-george-adam-smith.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 2",
+      "author": "George Adam Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-isaiah-volume-2-george-adam-smith.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Expositor's Bible: The First Book of Kings",
+      "author": "F. W. Farrar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-first-book-of-kings-f-w-farrar.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 1",
+      "author": "George Thomas Stokes",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-1-george-thomas-stokes.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Expositor's Bible: The Book of Proverbs",
+      "author": "Robert F. Horton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-proverbs-robert-f-horton.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Expositor's Bible: The Books of Chronicles",
+      "author": "W. H. Bennett",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-books-of-chronicles-w-h-bennett.txt"
+    },
+    {
+      "row": 9,
+      "title": "Expositor's Bible: The Book of Job",
+      "author": "Robert A. Watson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/expositor-s-bible-the-book-of-job-robert-a-watson.txt"
+    },
+    {
+      "row": 10,
+      "title": "The Expositor's Bible: The Book of Ezekiel",
+      "author": "John Skinner",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-ezekiel-john-skinner.txt"
+    },
+    {
+      "row": 11,
+      "title": "Expositor's Bible: The Epistles of St. John",
+      "author": "William Alexander",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/expositor-s-bible-the-epistles-of-st-john-william-alexander.txt"
+    },
+    {
+      "row": 12,
+      "title": "The Expositor's Bible: The Gospel According to St. Mark",
+      "author": "G. A. Chadwick",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-according-to-st-mark-g-a-chadwick.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 1",
+      "author": "George Adam Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-isaiah-volume-1-george-adam-smith.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Expositor's Bible: The Book of Numbers",
+      "author": "Robert A. Watson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-numbers-robert-a-watson.txt"
+    },
+    {
+      "row": 15,
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 2",
+      "author": "George Thomas Stokes",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-2-george-thomas-stokes.txt"
+    },
+    {
+      "row": 16,
+      "title": "The Expositor's Bible: The Epistle to the Ephesians",
+      "author": "George G. Findlay",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-ephesians-george-g-findlay.txt"
+    },
+    {
+      "row": 17,
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 1",
+      "author": "George Adam Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-1-george-adam-smith.txt"
+    },
+    {
+      "row": 18,
+      "title": "Expositor's Bible: The Gospel of Matthew",
+      "author": "John Monro Gibson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-matthew-john-monro-gibson.txt"
+    },
+    {
+      "row": 19,
+      "title": "The Expositor's Bible: The Prophecies of Jeremiah",
+      "author": "C. J. Ball",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-prophecies-of-jeremiah-c-j-ball.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Expositor's Bible: The Book of Deuteronomy",
+      "author": "Andrew Harper",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-deuteronomy-andrew-harper.txt"
+    },
+    {
+      "row": 21,
+      "title": "Expositor's Bible: The Book of Jeremiah, Chapters XXI-LII",
+      "author": "W. H. Bennett",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/expositor-s-bible-the-book-of-jeremiah-chapters-xxi-lii-w-h-bennett.txt"
+    },
+    {
+      "row": 22,
+      "title": "Expositor's Bible: The Gospel of St Luke",
+      "author": "Henry Burton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-st-luke-henry-burton.txt"
+    },
+    {
+      "row": 23,
+      "title": "The Expositor's Bible: The Book of Leviticus",
+      "author": "Samuel H. Kellogg",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-leviticus-samuel-h-kellogg.txt"
+    },
+    {
+      "row": 24,
+      "title": "The Expositor's Bible: The Book of Daniel",
+      "author": "F. W. Farrar",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-daniel-f-w-farrar.txt"
+    },
+    {
+      "row": 25,
+      "title": "The Expositor's Bible: The Psalms, Vol. 3",
+      "author": "Alexander Maclaren",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 26,
+      "title": "A Brief Commentary on the Apocalypse",
+      "author": "Sylvester Bliss",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-brief-commentary-on-the-apocalypse-sylvester-bliss.txt"
+    },
+    {
+      "row": 27,
+      "title": "The Gospel of Luke, an Exposition",
+      "author": "Charles Rosenbury Erdman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-of-luke-an-exposition-charles-rosenbury-erdman.txt"
+    },
+    {
+      "row": 28,
+      "title": "Commentary on the Epistle to the Galatians",
+      "author": "Martin Luther",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/commentary-on-the-epistle-to-the-galatians-martin-luther.txt"
+    },
+    {
+      "row": 29,
+      "title": "Messages from the Epistle to the Hebrews",
+      "author": "H. C. G. Moule",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/messages-from-the-epistle-to-the-hebrews-h-c-g-moule.txt"
+    },
+    {
+      "row": 30,
+      "title": "St. Paul's Epistles to the Colossians and Philemon",
+      "author": "J. B. Lightfoot",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/st-paul-s-epistles-to-the-colossians-and-philemon-j-b-lightfoot.txt"
+    },
+    {
+      "row": 31,
+      "title": "Commentary on Genesis, Vol. 1: Luther on the Creation",
+      "author": "Martin Luther",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/commentary-on-genesis-vol-1-luther-on-the-creation-martin-luther.txt"
+    },
+    {
+      "row": 32,
+      "title": "Christology of the Old Testament, Vol. 1",
+      "author": "Ernst Wilhelm Hengstenberg",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christology-of-the-old-testament-vol-1-ernst-wilhelm-hengstenberg.txt"
+    },
+    {
+      "row": 33,
+      "title": "The Preacher's Complete Homiletic Commentary on Proverbs",
+      "author": "Rev. W. Harris",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-proverbs-rev-w-harris.txt"
+    },
+    {
+      "row": 34,
+      "title": "The Preacher's Complete Homiletic Commentary on Isaiah, Volume 1",
+      "author": "Robert Aitkin Bertram and Alfred Tucker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-isaiah-volume-1-robert-aitkin-bertram-and-alfred-tucker.txt"
+    },
+    {
+      "row": 35,
+      "title": "The Preacher's Complete Homiletic Commentary on Galatians through Thessalonians",
+      "author": "George Barlow",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-galatians-through-thessalonians-george-barlow.txt"
+    },
+    {
+      "row": 36,
+      "title": "Among the Sioux: A Story of the Twin Cities and the Two Dakotas",
+      "author": "R. J. Creswell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/among-the-sioux-a-story-of-the-twin-cities-and-the-two-dakotas-r-j-creswell.txt"
+    },
+    {
+      "row": 37,
+      "title": "On Trail and Rapid by Dog-sled and Canoe",
+      "author": "H. A. Cody",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/on-trail-and-rapid-by-dog-sled-and-canoe-h-a-cody.txt"
+    },
+    {
+      "row": 38,
+      "title": "Stanley in Africa",
+      "author": "James P. Boyd",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/stanley-in-africa-james-p-boyd.txt"
+    },
+    {
+      "row": 39,
+      "title": "Life of John Coleridge Patteson",
+      "author": "Charlotte M. Yonge",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-of-john-coleridge-patteson-charlotte-m-yonge.txt"
+    },
+    {
+      "row": 40,
+      "title": "Pioneers and Founders",
+      "author": "Charlotte M. Yonge",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/pioneers-and-founders-charlotte-m-yonge.txt"
+    },
+    {
+      "row": 41,
+      "title": "Life and Labors of Elder John Kline, the Martyr Missionary",
+      "author": "John Kline",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-and-labors-of-elder-john-kline-the-martyr-missionary-john-kline.txt"
+    },
+    {
+      "row": 42,
+      "title": "Samuel Reynolds House of Siam, Pioneer Medical Missionary",
+      "author": "George Haws Feltus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/samuel-reynolds-house-of-siam-pioneer-medical-missionary-george-haws-feltus.txt"
+    },
+    {
+      "row": 43,
+      "title": "The White Queen of Okoyong",
+      "author": "W. P. Livingstone",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-white-queen-of-okoyong-w-p-livingstone.txt"
+    },
+    {
+      "row": 44,
+      "title": "The Book of Missionary Heroes",
+      "author": "Basil Mathews",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-missionary-heroes-basil-mathews.txt"
+    },
+    {
+      "row": 45,
+      "title": "Life and Work in Benares and Kumaon, 1839-1877",
+      "author": "James Kennedy",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-and-work-in-benares-and-kumaon-1839-1877-james-kennedy.txt"
+    },
+    {
+      "row": 46,
+      "title": "Eli and Sibyl Jones, Their Life and Work",
+      "author": "Rufus M. Jones",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/eli-and-sibyl-jones-their-life-and-work-rufus-m-jones.txt"
+    },
+    {
+      "row": 47,
+      "title": "The Black-Bearded Barbarian",
+      "author": "Mary Esther Miller MacGregor",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-black-bearded-barbarian-mary-esther-miller-macgregor.txt"
+    },
+    {
+      "row": 48,
+      "title": "Robert Moffat, the Missionary Hero of Kuruman",
+      "author": "David J. Deane",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/robert-moffat-the-missionary-hero-of-kuruman-david-j-deane.txt"
+    },
+    {
+      "row": 49,
+      "title": "Mary Slessor of Calabar: Pioneer Missionary",
+      "author": "W. P. Livingstone",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/mary-slessor-of-calabar-pioneer-missionary-w-p-livingstone.txt"
+    },
+    {
+      "row": 50,
+      "title": "Calvin Wilson Mateer, Forty-five Years a Missionary in Shantung, China",
+      "author": "D. W. Fisher",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/calvin-wilson-mateer-forty-five-years-a-missionary-in-shantung-china-d-w-fisher.txt"
+    },
+    {
+      "row": 51,
+      "title": "Schwartz of Tanjore",
+      "author": "Jesse Page",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/schwartz-of-tanjore-jesse-page.txt"
+    },
+    {
+      "row": 52,
+      "title": "Missionary Work Among the Ojebway Indians",
+      "author": "Edward Francis Wilson",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 53,
+      "title": "By Canoe and Dog Train Among the Cree and Salteaux Indians",
+      "author": "Egerton Ryerson Young",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/by-canoe-and-dog-train-among-the-cree-and-salteaux-indians-egerton-ryerson-young.txt"
+    },
+    {
+      "row": 54,
+      "title": "Life of Henry Martyn, Missionary to India and Persia",
+      "author": "Sarah J. Rhea",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-of-henry-martyn-missionary-to-india-and-persia-sarah-j-rhea.txt"
+    },
+    {
+      "row": 55,
+      "title": "On the Indian Trail",
+      "author": "Egerton Ryerson Young",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/on-the-indian-trail-egerton-ryerson-young.txt"
+    },
+    {
+      "row": 56,
+      "title": "Ten Years of Missionary Work Among the Indians at Skokomish",
+      "author": "Myron Eells",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/ten-years-of-missionary-work-among-the-indians-at-skokomish-myron-eells.txt"
+    },
+    {
+      "row": 57,
+      "title": "Seedtime in Kashmir",
+      "author": "William Jackson Elmslie",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/seedtime-in-kashmir-william-jackson-elmslie.txt"
+    },
+    {
+      "row": 58,
+      "title": "Metlakahtla and the North Pacific Mission",
+      "author": "Eugene Stock",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 59,
+      "title": "An Englishwoman's Twenty-five Years in Tropical Africa",
+      "author": "George Hawker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-englishwoman-s-twenty-five-years-in-tropical-africa-george-hawker.txt"
+    },
+    {
+      "row": 60,
+      "title": "The Life of Rev. David Brainerd",
+      "author": "David Brainerd",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-rev-david-brainerd-david-brainerd.txt"
+    },
+    {
+      "row": 61,
+      "title": "Lives of the Three Mrs. Judsons",
+      "author": "Arabella M. Willson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lives-of-the-three-mrs-judsons-arabella-m-willson.txt"
+    },
+    {
+      "row": 62,
+      "title": "The Bloudy Tenent of Persecution",
+      "author": "Roger Williams",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-bloudy-tenent-of-persecution-roger-williams.txt"
+    },
+    {
+      "row": 63,
+      "title": "The Cyclopedia of the Colored Baptists of Alabama",
+      "author": "Charles Octavius Boothe",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-cyclopedia-of-the-colored-baptists-of-alabama-charles-octavius-boothe.txt"
+    },
+    {
+      "row": 64,
+      "title": "A General History of the Sabbatarian Churches",
+      "author": "Tamar Davis",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-general-history-of-the-sabbatarian-churches-tamar-davis.txt"
+    },
+    {
+      "row": 65,
+      "title": "A Biblical and Theological Dictionary",
+      "author": "Richard Watson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-biblical-and-theological-dictionary-richard-watson.txt"
+    },
+    {
+      "row": 66,
+      "title": "A Greek-English Lexicon to the New Testament",
+      "author": "William Greenfield",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-greek-english-lexicon-to-the-new-testament-william-greenfield.txt"
+    },
+    {
+      "row": 67,
+      "title": "Encyclopaedia Britannica, 11th Edition, Bible to Bisectrix",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/encyclopaedia-britannica-11th-edition-bible-to-bisectrix-various.txt"
+    },
+    {
+      "row": 68,
+      "title": "The Book of Religions",
+      "author": "John Hayward",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-religions-john-hayward.txt"
+    },
+    {
+      "row": 69,
+      "title": "The Wonders of Prayer",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 70,
+      "title": "Quiet Talks on Prayer",
+      "author": "S. D. Gordon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/quiet-talks-on-prayer-s-d-gordon.txt"
+    },
+    {
+      "row": 71,
+      "title": "Prayers of the Early Church",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/prayers-of-the-early-church-various.txt"
+    },
+    {
+      "row": 72,
+      "title": "Three Prayers and Sermons",
+      "author": "Jonathan Swift",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/three-prayers-and-sermons-jonathan-swift.txt"
+    },
+    {
+      "row": 73,
+      "title": "Discipline and Other Sermons",
+      "author": "Charles Kingsley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/discipline-and-other-sermons-charles-kingsley.txt"
+    },
+    {
+      "row": 74,
+      "title": "Sermons for the Times",
+      "author": "Charles Kingsley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-for-the-times-charles-kingsley.txt"
+    },
+    {
+      "row": 75,
+      "title": "The World's Great Sermons, Volume 08",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-world-s-great-sermons-volume-08-various.txt"
+    },
+    {
+      "row": 76,
+      "title": "Men of the Bible; Some Lesser-Known Characters",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/men-of-the-bible-some-lesser-known-characters-various.txt"
+    },
+    {
+      "row": 77,
+      "title": "Sermons on Biblical Characters",
+      "author": "Clovis Gillham Chappell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-on-biblical-characters-clovis-gillham-chappell.txt"
+    },
+    {
+      "row": 78,
+      "title": "The Astronomy of the Bible",
+      "author": "E. Walter Maunder",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-astronomy-of-the-bible-e-walter-maunder.txt"
+    },
+    {
+      "row": 79,
+      "title": "Separation and Service",
+      "author": "James Hudson Taylor",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 80,
+      "title": "John the Baptist",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 81,
+      "title": "The Fundamental Doctrines of the Christian Faith",
+      "author": "R. A. Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

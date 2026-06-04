@@ -2921,5 +2921,3220 @@
     "checksum_sha256": "2043794f8956a490b97e5ea83c2524a5d76daca9a8e40373f7b0e8868d825eff",
     "file_size_bytes": 674705,
     "word_count": 119790
+  },
+  {
+    "title": "The Expositor's Bible: The Second Book of Kings",
+    "author": "F. W. Farrar",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42027",
+    "download_url": "https://www.gutenberg.org/ebooks/42027.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-second-book-of-kings-f-w-farrar.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42027.",
+    "notes": "Public-domain exposition for teacher preparation after reading the KJV text. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain exposition for teacher preparation after reading the KJV text.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Second Book of Kings",
+      "author": "F. W. Farrar",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 649,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7bbbba184882f5291e3b7d673116ae4779828c41efe1ebfaada1e8a7e71ff3dc",
+    "file_size_bytes": 891484,
+    "word_count": 146108
+  },
+  {
+    "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 2",
+    "author": "George Adam Smith",
+    "year": 2015,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/50747",
+    "download_url": "https://www.gutenberg.org/ebooks/50747.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-2-george-adam-smith.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/50747.",
+    "notes": "Public-domain prophetic-book exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain prophetic-book exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 2",
+      "author": "George Adam Smith",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 715,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "efad9b6cdfbe8bdcf97af0c8c635c1a7c07368661724307704cd6e677348cfe9",
+    "file_size_bytes": 969773,
+    "word_count": 160979
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Isaiah, Volume 2",
+    "author": "George Adam Smith",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/43672",
+    "download_url": "https://www.gutenberg.org/ebooks/43672.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-isaiah-volume-2-george-adam-smith.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/43672.",
+    "notes": "Public-domain Isaiah exposition for study support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Isaiah exposition for study support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 2",
+      "author": "George Adam Smith",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 645,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "bd7b78b8be876de59572face1cb0ba60aaab97938a63c111a56525802ce72962",
+    "file_size_bytes": 856356,
+    "word_count": 145141
+  },
+  {
+    "title": "The Expositor's Bible: The First Book of Kings",
+    "author": "F. W. Farrar",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42891",
+    "download_url": "https://www.gutenberg.org/ebooks/42891.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-first-book-of-kings-f-w-farrar.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42891.",
+    "notes": "Public-domain exposition for Old Testament teaching. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain exposition for Old Testament teaching.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The First Book of Kings",
+      "author": "F. W. Farrar",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 635,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f1b012d7d485965cc1cb7fa57d758b78fa7e123d0dc34f23455241821a7dfa15",
+    "file_size_bytes": 868547,
+    "word_count": 142781
+  },
+  {
+    "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 1",
+    "author": "George Thomas Stokes",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42258",
+    "download_url": "https://www.gutenberg.org/ebooks/42258.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-1-george-thomas-stokes.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42258.",
+    "notes": "Public-domain Acts exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Acts exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 1",
+      "author": "George Thomas Stokes",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 603,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "94839167a3a80773d22b38a9bce97e1778cf6801d13b1e336996fbe3e10b584a",
+    "file_size_bytes": 816100,
+    "word_count": 135732
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Proverbs",
+    "author": "Robert F. Horton",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42189",
+    "download_url": "https://www.gutenberg.org/ebooks/42189.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-proverbs-robert-f-horton.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42189.",
+    "notes": "Public-domain Proverbs exposition for study and teaching. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Proverbs exposition for study and teaching.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Proverbs",
+      "author": "Robert F. Horton",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 564,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "3fe718515f08200eb098356fe909fd616f8a2568c4e386949034c43f656b3c76",
+    "file_size_bytes": 757576,
+    "word_count": 126901
+  },
+  {
+    "title": "The Expositor's Bible: The Books of Chronicles",
+    "author": "W. H. Bennett",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/40235",
+    "download_url": "https://www.gutenberg.org/ebooks/40235.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-books-of-chronicles-w-h-bennett.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/40235.",
+    "notes": "Public-domain Chronicles exposition for Bible survey work. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Chronicles exposition for Bible survey work.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Books of Chronicles",
+      "author": "W. H. Bennett",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 568,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9542d76ecab1ac1b8291564160a5817296bdc45e759bc7133c81db18fe479cb4",
+    "file_size_bytes": 774817,
+    "word_count": 127873
+  },
+  {
+    "title": "Expositor's Bible: The Book of Job",
+    "author": "Robert A. Watson",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/40470",
+    "download_url": "https://www.gutenberg.org/ebooks/40470.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/expositor-s-bible-the-book-of-job-robert-a-watson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/40470.",
+    "notes": "Public-domain Job exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Job exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expositor's Bible: The Book of Job",
+      "author": "Robert A. Watson",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 518,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "638befa83860a30fd5ad83cf8f296f2f4273488908f078e6781bb0ca466294df",
+    "file_size_bytes": 672204,
+    "word_count": 116547
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Ezekiel",
+    "author": "John Skinner",
+    "year": 2014,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/46975",
+    "download_url": "https://www.gutenberg.org/ebooks/46975.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-ezekiel-john-skinner.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/46975.",
+    "notes": "Public-domain Ezekiel exposition; keep Scripture primary. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Ezekiel exposition; keep Scripture primary.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Ezekiel",
+      "author": "John Skinner",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 692,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "dfe3b2216381ca4d54a25b94f9bee1bbd3d02345864ac2cb2e86dfeaf93419e0",
+    "file_size_bytes": 924665,
+    "word_count": 155719
+  },
+  {
+    "title": "Expositor's Bible: The Epistles of St. John",
+    "author": "William Alexander",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/40775",
+    "download_url": "https://www.gutenberg.org/ebooks/40775.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/expositor-s-bible-the-epistles-of-st-john-william-alexander.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/40775.",
+    "notes": "Public-domain exposition for John's epistles. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain exposition for John's epistles.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expositor's Bible: The Epistles of St. John",
+      "author": "William Alexander",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 485,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9585d3c4c7c5d1c37b68b4d8ceaef1ff31efd16df5cb66be49f3b4c7619aec1e",
+    "file_size_bytes": 700188,
+    "word_count": 109182
+  },
+  {
+    "title": "The Expositor's Bible: The Gospel According to St. Mark",
+    "author": "G. A. Chadwick",
+    "year": 2011,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/37120",
+    "download_url": "https://www.gutenberg.org/ebooks/37120.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-gospel-according-to-st-mark-g-a-chadwick.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/37120.",
+    "notes": "Public-domain Mark exposition for lesson preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Mark exposition for lesson preparation.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Gospel According to St. Mark",
+      "author": "G. A. Chadwick",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 608,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "6e4fb291c6f8c2b5b5001a8ccc5edece448047ba71b7c10d446e3d3b1fdb0f26",
+    "file_size_bytes": 792111,
+    "word_count": 136886
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Isaiah, Volume 1",
+    "author": "George Adam Smith",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/39767",
+    "download_url": "https://www.gutenberg.org/ebooks/39767.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-isaiah-volume-1-george-adam-smith.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/39767.",
+    "notes": "Public-domain Isaiah exposition for Bible study. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Isaiah exposition for Bible study.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Isaiah, Volume 1",
+      "author": "George Adam Smith",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 607,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "ce9a93ba358dd075bffd9302a1b6dfa186fe023ea4f12e25dbe69ffd4e086ee3",
+    "file_size_bytes": 801715,
+    "word_count": 136603
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Numbers",
+    "author": "Robert A. Watson",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42639",
+    "download_url": "https://www.gutenberg.org/ebooks/42639.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-numbers-robert-a-watson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42639.",
+    "notes": "Public-domain Numbers exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Numbers exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Numbers",
+      "author": "Robert A. Watson",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 545,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "52f7914bc922a260a9bbb348e653bd7b52609f1c5da461882ead8cae36e38f4c",
+    "file_size_bytes": 715417,
+    "word_count": 122671
+  },
+  {
+    "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 2",
+    "author": "George Thomas Stokes",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42303",
+    "download_url": "https://www.gutenberg.org/ebooks/42303.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-acts-of-the-apostles-vol-2-george-thomas-stokes.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42303.",
+    "notes": "Public-domain Acts exposition for church-history and missions study. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Acts exposition for church-history and missions study.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Acts of the Apostles, Vol. 2",
+      "author": "George Thomas Stokes",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 699,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "04018e002e4a925082e5d268114ace5066024a93193e0d71112f50f814d1ff7a",
+    "file_size_bytes": 942087,
+    "word_count": 157337
+  },
+  {
+    "title": "The Expositor's Bible: The Epistle to the Ephesians",
+    "author": "George G. Findlay",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/39196",
+    "download_url": "https://www.gutenberg.org/ebooks/39196.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-epistle-to-the-ephesians-george-g-findlay.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/39196.",
+    "notes": "Public-domain Ephesians exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Ephesians exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Epistle to the Ephesians",
+      "author": "George G. Findlay",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 567,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "2a56dbd09d2fcb405a7acdbd0f2488d7684b4cf439549337e8d8cecb56694085",
+    "file_size_bytes": 748799,
+    "word_count": 127492
+  },
+  {
+    "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 1",
+    "author": "George Adam Smith",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/43847",
+    "download_url": "https://www.gutenberg.org/ebooks/43847.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-the-twelve-prophets-vol-1-george-adam-smith.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/43847.",
+    "notes": "Public-domain minor-prophets exposition. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain minor-prophets exposition.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of the Twelve Prophets, Vol. 1",
+      "author": "George Adam Smith",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 588,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "bc62e6075e9f7989211efa07634bf10295a70a31444157e588703e5a81774e6c",
+    "file_size_bytes": 790932,
+    "word_count": 132396
+  },
+  {
+    "title": "Expositor's Bible: The Gospel of Matthew",
+    "author": "John Monro Gibson",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/40811",
+    "download_url": "https://www.gutenberg.org/ebooks/40811.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-matthew-john-monro-gibson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/40811.",
+    "notes": "Public-domain Matthew exposition for teaching support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Matthew exposition for teaching support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expositor's Bible: The Gospel of Matthew",
+      "author": "John Monro Gibson",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 617,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "c8198c97f6e500d5feda0654ea7322f6f7791a0f5419d94ccd663373632ec0c3",
+    "file_size_bytes": 782331,
+    "word_count": 138888
+  },
+  {
+    "title": "The Expositor's Bible: The Prophecies of Jeremiah",
+    "author": "C. J. Ball",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42601",
+    "download_url": "https://www.gutenberg.org/ebooks/42601.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-prophecies-of-jeremiah-c-j-ball.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42601.",
+    "notes": "Public-domain Jeremiah exposition for study support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Jeremiah exposition for study support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Prophecies of Jeremiah",
+      "author": "C. J. Ball",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 570,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "aae766dc1ffa6e716b3ff5ff6bb1c1ed2bd2d052c5ce905f37f40bea29999696",
+    "file_size_bytes": 755243,
+    "word_count": 128211
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Deuteronomy",
+    "author": "Andrew Harper",
+    "year": 2015,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/49045",
+    "download_url": "https://www.gutenberg.org/ebooks/49045.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-deuteronomy-andrew-harper.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/49045.",
+    "notes": "Public-domain Deuteronomy exposition for Bible survey. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Deuteronomy exposition for Bible survey.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Deuteronomy",
+      "author": "Andrew Harper",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 715,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "8df1a31a54fa89a07e707ab473556e3d460a7d374010ff4ff139b1b6c34da77b",
+    "file_size_bytes": 937255,
+    "word_count": 160786
+  },
+  {
+    "title": "Expositor's Bible: The Book of Jeremiah, Chapters XXI-LII",
+    "author": "W. H. Bennett",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/41893",
+    "download_url": "https://www.gutenberg.org/ebooks/41893.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/expositor-s-bible-the-book-of-jeremiah-chapters-xxi-lii-w-h-bennett.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/41893.",
+    "notes": "Public-domain Jeremiah exposition; use after KJV reading. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Jeremiah exposition; use after KJV reading.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expositor's Bible: The Book of Jeremiah, Chapters XXI-LII",
+      "author": "W. H. Bennett",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 449,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d1abf4a251d5702bfd6d388f7e9623421ad9921be16b690757a11a99f5eaaa22",
+    "file_size_bytes": 642411,
+    "word_count": 101107
+  },
+  {
+    "title": "Expositor's Bible: The Gospel of St Luke",
+    "author": "Henry Burton",
+    "year": 2012,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/39856",
+    "download_url": "https://www.gutenberg.org/ebooks/39856.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/expositor-s-bible-the-gospel-of-st-luke-henry-burton.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/39856.",
+    "notes": "Public-domain Luke exposition for teacher preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Luke exposition for teacher preparation.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expositor's Bible: The Gospel of St Luke",
+      "author": "Henry Burton",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 564,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f4801497ef50b34c6d92ff3eced6491b1f9a919733546a955c2030b7df32da7f",
+    "file_size_bytes": 727610,
+    "word_count": 126852
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Leviticus",
+    "author": "Samuel H. Kellogg",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/42334",
+    "download_url": "https://www.gutenberg.org/ebooks/42334.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-leviticus-samuel-h-kellogg.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42334.",
+    "notes": "Public-domain Leviticus exposition for careful study. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Leviticus exposition for careful study.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Leviticus",
+      "author": "Samuel H. Kellogg",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 783,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "bb2d6987807f74dcf24cdc55a2ddd67e8db250f407b56ab8911a0b65614a32df",
+    "file_size_bytes": 1019111,
+    "word_count": 176083
+  },
+  {
+    "title": "The Expositor's Bible: The Book of Daniel",
+    "author": "F. W. Farrar",
+    "year": 2013,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/44103",
+    "download_url": "https://www.gutenberg.org/ebooks/44103.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-expositor-s-bible-the-book-of-daniel-f-w-farrar.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/44103.",
+    "notes": "Public-domain Daniel exposition; label interpretive differences clearly. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Daniel exposition; label interpretive differences clearly.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Expositor's Bible: The Book of Daniel",
+      "author": "F. W. Farrar",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 441,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a769e3821a98fdc1da1b05cbcd671bbd71a6b061e0324975924a4d207f8aebe5",
+    "file_size_bytes": 615497,
+    "word_count": 99260
+  },
+  {
+    "title": "A Brief Commentary on the Apocalypse",
+    "author": "Sylvester Bliss",
+    "year": 2008,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/26639",
+    "download_url": "https://www.gutenberg.org/ebooks/26639.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-brief-commentary-on-the-apocalypse-sylvester-bliss.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/26639.",
+    "notes": "Public-domain Revelation commentary for comparison and review. Labels/warnings: Use with discernment;Not all doctrine endorsed.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Revelation commentary for comparison and review.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Not all doctrine endorsed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Brief Commentary on the Apocalypse",
+      "author": "Sylvester Bliss",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 416,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5e589ef6df02294a2fea265caea3395feb37573e72ebe7451886dcd296422c1b",
+    "file_size_bytes": 558017,
+    "word_count": 93489
+  },
+  {
+    "title": "The Gospel of Luke, an Exposition",
+    "author": "Charles Rosenbury Erdman",
+    "year": 2008,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/26881",
+    "download_url": "https://www.gutenberg.org/ebooks/26881.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-gospel-of-luke-an-exposition-charles-rosenbury-erdman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/26881.",
+    "notes": "Public-domain Luke exposition for study support. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Luke exposition for study support.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel of Luke, an Exposition",
+      "author": "Charles Rosenbury Erdman",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 393,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f3f95291c60c84ed05126df79897b08b8b29f9062c7b4ea67cac851c20f271bd",
+    "file_size_bytes": 503288,
+    "word_count": 88531
+  },
+  {
+    "title": "Commentary on the Epistle to the Galatians",
+    "author": "Martin Luther",
+    "year": 1998,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/1549",
+    "download_url": "https://www.gutenberg.org/ebooks/1549.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/commentary-on-the-epistle-to-the-galatians-martin-luther.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/1549.",
+    "notes": "Public-domain Galatians commentary for historical comparison. Labels/warnings: Use with discernment;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Galatians commentary for historical comparison.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Commentary on the Epistle to the Galatians",
+      "author": "Martin Luther",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 381,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "878031275fcaf8831bc168fd70f6aa58b2cdbd84b73fdec51d7355d9040ad6ea",
+    "file_size_bytes": 484454,
+    "word_count": 85728
+  },
+  {
+    "title": "Messages from the Epistle to the Hebrews",
+    "author": "H. C. G. Moule",
+    "year": 2007,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/22237",
+    "download_url": "https://www.gutenberg.org/ebooks/22237.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/messages-from-the-epistle-to-the-hebrews-h-c-g-moule.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/22237.",
+    "notes": "Public-domain Hebrews exposition for teacher preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Hebrews exposition for teacher preparation.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Messages from the Epistle to the Hebrews",
+      "author": "H. C. G. Moule",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 119,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "bb1a2d4a3f2f936e482e34dade2e4f93867e20c51bf4c27ec1f34561f3df671c",
+    "file_size_bytes": 155234,
+    "word_count": 26770
+  },
+  {
+    "title": "St. Paul's Epistles to the Colossians and Philemon",
+    "author": "J. B. Lightfoot",
+    "year": 2016,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/50857",
+    "download_url": "https://www.gutenberg.org/ebooks/50857.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/st-paul-s-epistles-to-the-colossians-and-philemon-j-b-lightfoot.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/50857.",
+    "notes": "Public-domain scholarly commentary for comparison. Labels/warnings: Use with discernment;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain scholarly commentary for comparison.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "St. Paul's Epistles to the Colossians and Philemon",
+      "author": "J. B. Lightfoot",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 964,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "bf50cd91a44237fe2cd07be226e5b8ba19df48b8ee12effc5dce05ff73edabc7",
+    "file_size_bytes": 1491427,
+    "word_count": 216828
+  },
+  {
+    "title": "Commentary on Genesis, Vol. 1: Luther on the Creation",
+    "author": "Martin Luther",
+    "year": 2015,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/48193",
+    "download_url": "https://www.gutenberg.org/ebooks/48193.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/commentary-on-genesis-vol-1-luther-on-the-creation-martin-luther.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/48193.",
+    "notes": "Public-domain Genesis commentary for historical comparison. Labels/warnings: Use with discernment;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Genesis commentary for historical comparison.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Commentary on Genesis, Vol. 1: Luther on the Creation",
+      "author": "Martin Luther",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 774,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7c8c12182526269c5b74f8571deebb89a4dc1fdc4710524dc3b15d3453213837",
+    "file_size_bytes": 979038,
+    "word_count": 174259
+  },
+  {
+    "title": "Christology of the Old Testament, Vol. 1",
+    "author": "Ernst Wilhelm Hengstenberg",
+    "year": 2009,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/30410",
+    "download_url": "https://www.gutenberg.org/ebooks/30410.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/christology-of-the-old-testament-vol-1-ernst-wilhelm-hengstenberg.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/30410.",
+    "notes": "Public-domain Old Testament Christology for reviewed study. Labels/warnings: Use with discernment;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Old Testament Christology for reviewed study.",
+    "resource_labels": [
+      "Commentary",
+      "Use with discernment",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christology of the Old Testament, Vol. 1",
+      "author": "Ernst Wilhelm Hengstenberg",
+      "category": "Commentaries",
+      "collection": "Commentary",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 983,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7c4e8484198b3e7380d545963c03d3566b29dc2efbe8b925ae0f1fcc62bc0738",
+    "file_size_bytes": 1306325,
+    "word_count": 221251
+  },
+  {
+    "title": "The Preacher's Complete Homiletic Commentary on Proverbs",
+    "author": "Rev. W. Harris",
+    "year": 2019,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/58767",
+    "download_url": "https://www.gutenberg.org/ebooks/58767.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-proverbs-rev-w-harris.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/58767.",
+    "notes": "Public-domain homiletic commentary for preaching and teaching. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain homiletic commentary for preaching and teaching.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Preacher's Complete Homiletic Commentary on Proverbs",
+      "author": "Rev. W. Harris",
+      "category": "Commentaries",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 2438,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "432dede18d520ec0f31d8a83383b36b414073021960da1875a8b49aa52bab9b7",
+    "file_size_bytes": 3132247,
+    "word_count": 548463
+  },
+  {
+    "title": "The Preacher's Complete Homiletic Commentary on Isaiah, Volume 1",
+    "author": "Robert Aitkin Bertram and Alfred Tucker",
+    "year": 2018,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/58062",
+    "download_url": "https://www.gutenberg.org/ebooks/58062.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-isaiah-volume-1-robert-aitkin-bertram-and-alfred-tucker.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/58062.",
+    "notes": "Public-domain homiletic commentary for sermon preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain homiletic commentary for sermon preparation.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Preacher's Complete Homiletic Commentary on Isaiah, Volume 1",
+      "author": "Robert Aitkin Bertram and Alfred Tucker",
+      "category": "Commentaries",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2020,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5d083e8388158c701455c98e25d32b215ddf39e9d84fbc96abcf55513666979c",
+    "file_size_bytes": 2650097,
+    "word_count": 454597
+  },
+  {
+    "title": "The Preacher's Complete Homiletic Commentary on Galatians through Thessalonians",
+    "author": "George Barlow",
+    "year": 2020,
+    "category": "Commentaries",
+    "source_url": "https://www.gutenberg.org/ebooks/62148",
+    "download_url": "https://www.gutenberg.org/ebooks/62148.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-galatians-through-thessalonians-george-barlow.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/62148.",
+    "notes": "Public-domain homiletic commentary for epistle teaching. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain homiletic commentary for epistle teaching.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Preacher's Complete Homiletic Commentary on Galatians through Thessalonians",
+      "author": "George Barlow",
+      "category": "Commentaries",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1795,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "2060ccb3238f8ec06f7eabd40b8a22a7cee3b5a79857e3026c1bbca1b62dec5a",
+    "file_size_bytes": 2421631,
+    "word_count": 403781
+  },
+  {
+    "title": "Among the Sioux: A Story of the Twin Cities and the Two Dakotas",
+    "author": "R. J. Creswell",
+    "year": 2007,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/21208",
+    "download_url": "https://www.gutenberg.org/ebooks/21208.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/among-the-sioux-a-story-of-the-twin-cities-and-the-two-dakotas-r-j-creswell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/21208.",
+    "notes": "Public-domain missions history and biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missions history and biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Among the Sioux: A Story of the Twin Cities and the Two Dakotas",
+      "author": "R. J. Creswell",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 113,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0385bd58343060c428eb404c8a05ab476f2b7c36caf828268dcebbb2794e49bf",
+    "file_size_bytes": 153851,
+    "word_count": 25378
+  },
+  {
+    "title": "On Trail and Rapid by Dog-sled and Canoe",
+    "author": "H. A. Cody",
+    "year": 2026,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/78770",
+    "download_url": "https://www.gutenberg.org/ebooks/78770.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/on-trail-and-rapid-by-dog-sled-and-canoe-h-a-cody.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/78770.",
+    "notes": "Public-domain missionary biography for missions reading. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography for missions reading.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "On Trail and Rapid by Dog-sled and Canoe",
+      "author": "H. A. Cody",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 281,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d2d81845aa4da36fd9888c56b40d04c06e9881719373bb4d84013c5d51f65dc2",
+    "file_size_bytes": 366790,
+    "word_count": 63229
+  },
+  {
+    "title": "Stanley in Africa",
+    "author": "James P. Boyd",
+    "year": 2014,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/44816",
+    "download_url": "https://www.gutenberg.org/ebooks/44816.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/stanley-in-africa-james-p-boyd.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/44816.",
+    "notes": "Public-domain missions and exploration background. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missions and exploration background.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Stanley in Africa",
+      "author": "James P. Boyd",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1079,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "8fd4ed08baaee99105515de1ef795b794888854d2e645ec182a6a7764e93af84",
+    "file_size_bytes": 1456961,
+    "word_count": 242691
+  },
+  {
+    "title": "Life of John Coleridge Patteson",
+    "author": "Charlotte M. Yonge",
+    "year": 2004,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/4952",
+    "download_url": "https://www.gutenberg.org/ebooks/4952.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-of-john-coleridge-patteson-charlotte-m-yonge.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/4952.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life of John Coleridge Patteson",
+      "author": "Charlotte M. Yonge",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1274,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d6ba3626da0e2ce11ef74c210aecb09658e6900c84dcbf0ee58bb49ced7c7db4",
+    "file_size_bytes": 1598377,
+    "word_count": 286624
+  },
+  {
+    "title": "Pioneers and Founders",
+    "author": "Charlotte M. Yonge",
+    "year": 2006,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/19308",
+    "download_url": "https://www.gutenberg.org/ebooks/19308.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/pioneers-and-founders-charlotte-m-yonge.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/19308.",
+    "notes": "Public-domain missionary biography collection. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography collection.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pioneers and Founders",
+      "author": "Charlotte M. Yonge",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 594,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f2c69c39c35b1be985e3e2a76a0b16794bddebea28fe6082b1fb1b18e8bd485d",
+    "file_size_bytes": 783490,
+    "word_count": 133743
+  },
+  {
+    "title": "Life and Labors of Elder John Kline, the Martyr Missionary",
+    "author": "John Kline",
+    "year": 2005,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/16711",
+    "download_url": "https://www.gutenberg.org/ebooks/16711.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-and-labors-of-elder-john-kline-the-martyr-missionary-john-kline.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/16711.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life and Labors of Elder John Kline, the Martyr Missionary",
+      "author": "John Kline",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 863,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "1ecc9d4c9e2d4946bdc446bd699a46c7dcb01574615605b6e3f84f4a1875a0a6",
+    "file_size_bytes": 1087180,
+    "word_count": 194254
+  },
+  {
+    "title": "Samuel Reynolds House of Siam, Pioneer Medical Missionary",
+    "author": "George Haws Feltus",
+    "year": 2022,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/68647",
+    "download_url": "https://www.gutenberg.org/ebooks/68647.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/samuel-reynolds-house-of-siam-pioneer-medical-missionary-george-haws-feltus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/68647.",
+    "notes": "Public-domain medical missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain medical missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Samuel Reynolds House of Siam, Pioneer Medical Missionary",
+      "author": "George Haws Feltus",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 310,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "36eb1e4d99a5b37851ba2b104a62adae78c94ef516fac98da7e9ec2d9c058461",
+    "file_size_bytes": 419524,
+    "word_count": 69805
+  },
+  {
+    "title": "The White Queen of Okoyong",
+    "author": "W. P. Livingstone",
+    "year": 2010,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/33214",
+    "download_url": "https://www.gutenberg.org/ebooks/33214.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-white-queen-of-okoyong-w-p-livingstone.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/33214.",
+    "notes": "Public-domain Mary Slessor missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Mary Slessor missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The White Queen of Okoyong",
+      "author": "W. P. Livingstone",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 221,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0f51c252ac331bd444d1f166d3212b2372d4f1b1d0fc1e968d6e74a651ed0d32",
+    "file_size_bytes": 271423,
+    "word_count": 49719
+  },
+  {
+    "title": "The Book of Missionary Heroes",
+    "author": "Basil Mathews",
+    "year": 2005,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/16657",
+    "download_url": "https://www.gutenberg.org/ebooks/16657.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-book-of-missionary-heroes-basil-mathews.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/16657.",
+    "notes": "Public-domain missionary biography collection. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography collection.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Missionary Heroes",
+      "author": "Basil Mathews",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 299,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "859edfa45fb351667577f4575c30fc1e532fc006155419697ac97171d746de3d",
+    "file_size_bytes": 377776,
+    "word_count": 67343
+  },
+  {
+    "title": "Life and Work in Benares and Kumaon, 1839-1877",
+    "author": "James Kennedy",
+    "year": 2008,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/24416",
+    "download_url": "https://www.gutenberg.org/ebooks/24416.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-and-work-in-benares-and-kumaon-1839-1877-james-kennedy.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/24416.",
+    "notes": "Public-domain missionary history in India. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary history in India.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life and Work in Benares and Kumaon, 1839-1877",
+      "author": "James Kennedy",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 498,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a467e8d34146ab8d290692a7fc7fc30bc9e1a4ed54c028745203aaaafe0fcf0c",
+    "file_size_bytes": 659129,
+    "word_count": 111998
+  },
+  {
+    "title": "Eli and Sibyl Jones, Their Life and Work",
+    "author": "Rufus M. Jones",
+    "year": 2013,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/42164",
+    "download_url": "https://www.gutenberg.org/ebooks/42164.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/eli-and-sibyl-jones-their-life-and-work-rufus-m-jones.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/42164.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Eli and Sibyl Jones, Their Life and Work",
+      "author": "Rufus M. Jones",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 378,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "069e387f337741e73f704e64f506b2bec9895965b25160e9fce42e46e33eaecb",
+    "file_size_bytes": 492395,
+    "word_count": 85056
+  },
+  {
+    "title": "The Black-Bearded Barbarian",
+    "author": "Mary Esther Miller MacGregor",
+    "year": 1999,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/1759",
+    "download_url": "https://www.gutenberg.org/ebooks/1759.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-black-bearded-barbarian-mary-esther-miller-macgregor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/1759.",
+    "notes": "Public-domain George Leslie Mackay missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain George Leslie Mackay missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Black-Bearded Barbarian",
+      "author": "Mary Esther Miller MacGregor",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 208,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "59e61ec3761949e995feb64165291aa3374e6ceea8f4d6c65735a8092222b4b2",
+    "file_size_bytes": 263151,
+    "word_count": 46760
+  },
+  {
+    "title": "Robert Moffat, the Missionary Hero of Kuruman",
+    "author": "David J. Deane",
+    "year": 2005,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/15379",
+    "download_url": "https://www.gutenberg.org/ebooks/15379.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/robert-moffat-the-missionary-hero-of-kuruman-david-j-deane.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/15379.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Robert Moffat, the Missionary Hero of Kuruman",
+      "author": "David J. Deane",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 178,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "18d74d25fe8686aa61bdc5645023175b63e1521f88528953c3fe662ac5aea263",
+    "file_size_bytes": 235154,
+    "word_count": 39958
+  },
+  {
+    "title": "Mary Slessor of Calabar: Pioneer Missionary",
+    "author": "W. P. Livingstone",
+    "year": 2005,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/8906",
+    "download_url": "https://www.gutenberg.org/ebooks/8906.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/mary-slessor-of-calabar-pioneer-missionary-w-p-livingstone.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/8906.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Mary Slessor of Calabar: Pioneer Missionary",
+      "author": "W. P. Livingstone",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 596,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "005c33a428cba5c54620ff0b2bbb0757337f221d27fa89abccfd1ff1e0dff04b",
+    "file_size_bytes": 757397,
+    "word_count": 134212
+  },
+  {
+    "title": "Calvin Wilson Mateer, Forty-five Years a Missionary in Shantung, China",
+    "author": "D. W. Fisher",
+    "year": 2023,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/71695",
+    "download_url": "https://www.gutenberg.org/ebooks/71695.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/calvin-wilson-mateer-forty-five-years-a-missionary-in-shantung-china-d-w-fisher.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/71695.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Calvin Wilson Mateer, Forty-five Years a Missionary in Shantung, China",
+      "author": "D. W. Fisher",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 401,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "6f181af9faab5c7e7b5caa0a5de2fe79f8fb52e37cef4e48b2a23fd5fc8487fc",
+    "file_size_bytes": 534182,
+    "word_count": 90264
+  },
+  {
+    "title": "Schwartz of Tanjore",
+    "author": "Jesse Page",
+    "year": 2024,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/73950",
+    "download_url": "https://www.gutenberg.org/ebooks/73950.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/schwartz-of-tanjore-jesse-page.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/73950.",
+    "notes": "Public-domain India missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain India missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Schwartz of Tanjore",
+      "author": "Jesse Page",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 294,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "58b1ec9a2d9576a13007b687977ba62a7a1fc49aedaef5657f961df6b250b0aa",
+    "file_size_bytes": 386120,
+    "word_count": 66221
+  },
+  {
+    "title": "By Canoe and Dog Train Among the Cree and Salteaux Indians",
+    "author": "Egerton Ryerson Young",
+    "year": 2007,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/21244",
+    "download_url": "https://www.gutenberg.org/ebooks/21244.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/by-canoe-and-dog-train-among-the-cree-and-salteaux-indians-egerton-ryerson-young.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/21244.",
+    "notes": "Public-domain missionary account. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary account.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "By Canoe and Dog Train Among the Cree and Salteaux Indians",
+      "author": "Egerton Ryerson Young",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 357,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "52b536ee6858cc47fd86d3ea561452101e6a476c31b7699c37e48542daeacfdf",
+    "file_size_bytes": 450149,
+    "word_count": 80258
+  },
+  {
+    "title": "Life of Henry Martyn, Missionary to India and Persia",
+    "author": "Sarah J. Rhea",
+    "year": 2009,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/30085",
+    "download_url": "https://www.gutenberg.org/ebooks/30085.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-of-henry-martyn-missionary-to-india-and-persia-sarah-j-rhea.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/30085.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life of Henry Martyn, Missionary to India and Persia",
+      "author": "Sarah J. Rhea",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 59,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "de19288c4ea2f4414df5ecb81307cff0f12a59228c47c76ff53420a8f1dcf358",
+    "file_size_bytes": 76075,
+    "word_count": 13339
+  },
+  {
+    "title": "On the Indian Trail",
+    "author": "Egerton Ryerson Young",
+    "year": 2007,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/23270",
+    "download_url": "https://www.gutenberg.org/ebooks/23270.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/on-the-indian-trail-egerton-ryerson-young.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/23270.",
+    "notes": "Public-domain missionary account. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary account.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "On the Indian Trail",
+      "author": "Egerton Ryerson Young",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 204,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "8f2451d2b1739f081aea49fc0d69ab399fdb19270c018afb100a392387880dc3",
+    "file_size_bytes": 258609,
+    "word_count": 45803
+  },
+  {
+    "title": "Ten Years of Missionary Work Among the Indians at Skokomish",
+    "author": "Myron Eells",
+    "year": 2017,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/56100",
+    "download_url": "https://www.gutenberg.org/ebooks/56100.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/ten-years-of-missionary-work-among-the-indians-at-skokomish-myron-eells.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/56100.",
+    "notes": "Public-domain missionary history. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary history.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Ten Years of Missionary Work Among the Indians at Skokomish",
+      "author": "Myron Eells",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 231,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0f01efb9c172e6237f9f20e461062034b9bfbfe193f0469d5dec788838c9070d",
+    "file_size_bytes": 298057,
+    "word_count": 51881
+  },
+  {
+    "title": "Seedtime in Kashmir",
+    "author": "William Jackson Elmslie",
+    "year": 2019,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/59457",
+    "download_url": "https://www.gutenberg.org/ebooks/59457.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/seedtime-in-kashmir-william-jackson-elmslie.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/59457.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Seedtime in Kashmir",
+      "author": "William Jackson Elmslie",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 373,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b3dc4c3ee8a4006903305ba6decf3686111eff0df1a35dc0c13c75681eeebc7f",
+    "file_size_bytes": 490007,
+    "word_count": 83841
+  },
+  {
+    "title": "An Englishwoman's Twenty-five Years in Tropical Africa",
+    "author": "George Hawker",
+    "year": 2024,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/74425",
+    "download_url": "https://www.gutenberg.org/ebooks/74425.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/an-englishwoman-s-twenty-five-years-in-tropical-africa-george-hawker.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/74425.",
+    "notes": "Public-domain missionary biography. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Englishwoman's Twenty-five Years in Tropical Africa",
+      "author": "George Hawker",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 431,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "beb408e98abd105d6ad87b27cd219d44f580e250a5c576a4af252f78813c9421",
+    "file_size_bytes": 558885,
+    "word_count": 97061
+  },
+  {
+    "title": "The Life of Rev. David Brainerd",
+    "author": "David Brainerd",
+    "year": 2021,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/65066",
+    "download_url": "https://www.gutenberg.org/ebooks/65066.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-rev-david-brainerd-david-brainerd.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/65066.",
+    "notes": "Public-domain missionary diary and biography. Labels/warnings: Devotional classic;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary diary and biography.",
+    "resource_labels": [
+      "Missions",
+      "Devotional classic",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Devotional classic",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of Rev. David Brainerd",
+      "author": "David Brainerd",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 490,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d0acea83e2623fa7cbd0443edac243081937b20d4964680491c15b4f581a287c",
+    "file_size_bytes": 644020,
+    "word_count": 110269
+  },
+  {
+    "title": "Lives of the Three Mrs. Judsons",
+    "author": "Arabella M. Willson",
+    "year": 2005,
+    "category": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/16863",
+    "download_url": "https://www.gutenberg.org/ebooks/16863.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/lives-of-the-three-mrs-judsons-arabella-m-willson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/16863.",
+    "notes": "Public-domain missionary biography connected with Adoniram Judson. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain missionary biography connected with Adoniram Judson.",
+    "resource_labels": [
+      "Missions",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lives of the Three Mrs. Judsons",
+      "author": "Arabella M. Willson",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 356,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f5540594325656797557ee7116abc6e2cb387fb670f8aafcffb72ca41ed1a389",
+    "file_size_bytes": 475996,
+    "word_count": 80037
+  },
+  {
+    "title": "The Bloudy Tenent of Persecution",
+    "author": "Roger Williams",
+    "year": 2021,
+    "category": "Baptist History",
+    "source_url": "https://www.gutenberg.org/ebooks/65739",
+    "download_url": "https://www.gutenberg.org/ebooks/65739.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-bloudy-tenent-of-persecution-roger-williams.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/65739.",
+    "notes": "Public-domain Baptist/religious liberty history. Labels/warnings: Baptist history;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Baptist/religious liberty history.",
+    "resource_labels": [
+      "Baptist History",
+      "Baptist history",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Baptist history",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bloudy Tenent of Persecution",
+      "author": "Roger Williams",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 698,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "21436ba32ed3ec3c8bd8fe6e362f6b878ce3201205cc74662944c95ca1c6252f",
+    "file_size_bytes": 962548,
+    "word_count": 157154
+  },
+  {
+    "title": "The Cyclopedia of the Colored Baptists of Alabama",
+    "author": "Charles Octavius Boothe",
+    "year": 2021,
+    "category": "Baptist History",
+    "source_url": "https://www.gutenberg.org/ebooks/66204",
+    "download_url": "https://www.gutenberg.org/ebooks/66204.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-cyclopedia-of-the-colored-baptists-of-alabama-charles-octavius-boothe.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/66204.",
+    "notes": "Public-domain Baptist history reference. Labels/warnings: Baptist history;Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Baptist history reference.",
+    "resource_labels": [
+      "Baptist History",
+      "Baptist history",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Baptist history",
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Cyclopedia of the Colored Baptists of Alabama",
+      "author": "Charles Octavius Boothe",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 297,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9554c68fcf6072cf7bac3b8ce7363eb7ad109faf3eda0116b277ae98c6d5846a",
+    "file_size_bytes": 397243,
+    "word_count": 66819
+  },
+  {
+    "title": "A General History of the Sabbatarian Churches",
+    "author": "Tamar Davis",
+    "year": 2021,
+    "category": "Baptist History",
+    "source_url": "https://www.gutenberg.org/ebooks/66265",
+    "download_url": "https://www.gutenberg.org/ebooks/66265.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-general-history-of-the-sabbatarian-churches-tamar-davis.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/66265.",
+    "notes": "Public-domain church history resource for review. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain church history resource for review.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A General History of the Sabbatarian Churches",
+      "author": "Tamar Davis",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 314,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a8d5a2d20a5c7af18d02f463a43b38d5c511128d49a21933ab49e3c3ed7df995",
+    "file_size_bytes": 446128,
+    "word_count": 70717
+  },
+  {
+    "title": "A Biblical and Theological Dictionary",
+    "author": "Richard Watson",
+    "year": 2017,
+    "category": "Dictionaries",
+    "source_url": "https://www.gutenberg.org/ebooks/53884",
+    "download_url": "https://www.gutenberg.org/ebooks/53884.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-biblical-and-theological-dictionary-richard-watson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/53884.",
+    "notes": "Public-domain Bible dictionary and theological reference. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Bible dictionary and theological reference.",
+    "resource_labels": [
+      "Dictionaries",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Biblical and Theological Dictionary",
+      "author": "Richard Watson",
+      "category": "Dictionaries",
+      "collection": "Dictionaries",
+      "badge": "Dictionaries",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 4687,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f8d603620c2f7d140a32d5b66044fa8de7046887deceb565078ad5977aa23a33",
+    "file_size_bytes": 6285688,
+    "word_count": 1054504
+  },
+  {
+    "title": "A Greek-English Lexicon to the New Testament",
+    "author": "William Greenfield",
+    "year": 2012,
+    "category": "Dictionaries",
+    "source_url": "https://www.gutenberg.org/ebooks/40935",
+    "download_url": "https://www.gutenberg.org/ebooks/40935.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-greek-english-lexicon-to-the-new-testament-william-greenfield.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/40935.",
+    "notes": "Public-domain New Testament lexicon reference. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain New Testament lexicon reference.",
+    "resource_labels": [
+      "Dictionaries",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Greek-English Lexicon to the New Testament",
+      "author": "William Greenfield",
+      "category": "Dictionaries",
+      "collection": "Dictionaries",
+      "badge": "Dictionaries",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 604,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "495a6df3ad4d32df335d68f410b33aea5cf6e07b9c01721b2769a083accba011",
+    "file_size_bytes": 955131,
+    "word_count": 135971
+  },
+  {
+    "title": "Encyclopaedia Britannica, 11th Edition, Bible to Bisectrix",
+    "author": "Various",
+    "year": 2010,
+    "category": "Dictionaries",
+    "source_url": "https://www.gutenberg.org/ebooks/34702",
+    "download_url": "https://www.gutenberg.org/ebooks/34702.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/encyclopaedia-britannica-11th-edition-bible-to-bisectrix-various.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/34702.",
+    "notes": "Public-domain reference material with Bible entries. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain reference material with Bible entries.",
+    "resource_labels": [
+      "Dictionaries",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Encyclopaedia Britannica, 11th Edition, Bible to Bisectrix",
+      "author": "Various",
+      "category": "Dictionaries",
+      "collection": "Dictionaries",
+      "badge": "Dictionaries",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 959,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "50a4cc97ba6a69e76cc5dd3c3d8036929a42c8130180c6baa1f54efab4772b54",
+    "file_size_bytes": 1362837,
+    "word_count": 215689
+  },
+  {
+    "title": "The Book of Religions",
+    "author": "John Hayward",
+    "year": 2009,
+    "category": "Dictionaries",
+    "source_url": "https://www.gutenberg.org/ebooks/30323",
+    "download_url": "https://www.gutenberg.org/ebooks/30323.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-book-of-religions-john-hayward.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/30323.",
+    "notes": "Public-domain historical reference on denominations and religious statistics. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain historical reference on denominations and religious statistics.",
+    "resource_labels": [
+      "Dictionaries",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Religions",
+      "author": "John Hayward",
+      "category": "Dictionaries",
+      "collection": "Dictionaries",
+      "badge": "Dictionaries",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 632,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "cf380086572ebb301764356444dbd560bfec6abf04b80fdfa1db2b27fb71f780",
+    "file_size_bytes": 893455,
+    "word_count": 142152
+  },
+  {
+    "title": "Quiet Talks on Prayer",
+    "author": "S. D. Gordon",
+    "year": 2004,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/13196",
+    "download_url": "https://www.gutenberg.org/ebooks/13196.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/quiet-talks-on-prayer-s-d-gordon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/13196.",
+    "notes": "Public-domain devotional prayer resource. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain devotional prayer resource.",
+    "resource_labels": [
+      "Prayer",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Quiet Talks on Prayer",
+      "author": "S. D. Gordon",
+      "category": "Prayer",
+      "collection": "Prayer",
+      "badge": "Prayer",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 235,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b2196f3fad6e9f6acb8cbec9f5d85fd3a916cb50091da5efab636cffd09a40ef",
+    "file_size_bytes": 297849,
+    "word_count": 52781
+  },
+  {
+    "title": "Prayers of the Early Church",
+    "author": "Various",
+    "year": 2015,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/48247",
+    "download_url": "https://www.gutenberg.org/ebooks/48247.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/prayers-of-the-early-church-various.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/48247.",
+    "notes": "Public-domain historical prayer resource. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain historical prayer resource.",
+    "resource_labels": [
+      "Prayer",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Prayers of the Early Church",
+      "author": "Various",
+      "category": "Prayer",
+      "collection": "Prayer",
+      "badge": "Prayer",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 75,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5da9e8beca26fd92da9e2784abc5f350555fd8799d14e5ea9d1fa7176291baf7",
+    "file_size_bytes": 110759,
+    "word_count": 16917
+  },
+  {
+    "title": "Three Prayers and Sermons",
+    "author": "Jonathan Swift",
+    "year": 2003,
+    "category": "Prayer",
+    "source_url": "https://www.gutenberg.org/ebooks/4738",
+    "download_url": "https://www.gutenberg.org/ebooks/4738.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/three-prayers-and-sermons-jonathan-swift.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/4738.",
+    "notes": "Public-domain prayers and sermons; use for historical comparison. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain prayers and sermons; use for historical comparison.",
+    "resource_labels": [
+      "Prayer",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Three Prayers and Sermons",
+      "author": "Jonathan Swift",
+      "category": "Prayer",
+      "collection": "Prayer",
+      "badge": "Prayer",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 51,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "476f21868db569675ec43778b3971e44d7f260535173a686d7a00a307800bf50",
+    "file_size_bytes": 66103,
+    "word_count": 11372
+  },
+  {
+    "title": "Discipline and Other Sermons",
+    "author": "Charles Kingsley",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/7042",
+    "download_url": "https://www.gutenberg.org/ebooks/7042.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/discipline-and-other-sermons-charles-kingsley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/7042.",
+    "notes": "Public-domain sermon resource. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain sermon resource.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Discipline and Other Sermons",
+      "author": "Charles Kingsley",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 254,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "c9e25d98eda817b6e30430542c2a03cbbfa063faaac298f6eef78d2078326a83",
+    "file_size_bytes": 318942,
+    "word_count": 57140
+  },
+  {
+    "title": "Sermons for the Times",
+    "author": "Charles Kingsley",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/11381",
+    "download_url": "https://www.gutenberg.org/ebooks/11381.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-for-the-times-charles-kingsley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/11381.",
+    "notes": "Public-domain sermon resource. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain sermon resource.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons for the Times",
+      "author": "Charles Kingsley",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 382,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "faa6abfbfc072d233d8aedad366d6f7d64e641bbe39deadb393ef42951a869cf",
+    "file_size_bytes": 464160,
+    "word_count": 85843
+  },
+  {
+    "title": "The World's Great Sermons, Volume 08",
+    "author": "Various",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/11693",
+    "download_url": "https://www.gutenberg.org/ebooks/11693.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-world-s-great-sermons-volume-08-various.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/11693.",
+    "notes": "Public-domain sermon anthology for historical comparison. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain sermon anthology for historical comparison.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The World's Great Sermons, Volume 08",
+      "author": "Various",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 241,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "03cd55ad4d8bef91a8237bcc9c44085e9f20e1752014ff88e5f89eae8ceced08",
+    "file_size_bytes": 302212,
+    "word_count": 54154
+  },
+  {
+    "title": "Men of the Bible; Some Lesser-Known Characters",
+    "author": "Various",
+    "year": 2004,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/13860",
+    "download_url": "https://www.gutenberg.org/ebooks/13860.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/men-of-the-bible-some-lesser-known-characters-various.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/13860.",
+    "notes": "Public-domain Bible character studies. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain Bible character studies.",
+    "resource_labels": [
+      "Bible Study",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Men of the Bible; Some Lesser-Known Characters",
+      "author": "Various",
+      "category": "Bible study helps",
+      "collection": "Bible Study",
+      "badge": "Bible Study",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 234,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "50199a33c06def4441d4e746f59e3043d2486894784fc1a327e533b7f3eb8424",
+    "file_size_bytes": 301774,
+    "word_count": 52591
+  },
+  {
+    "title": "Sermons on Biblical Characters",
+    "author": "Clovis Gillham Chappell",
+    "year": 2007,
+    "category": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/20578",
+    "download_url": "https://www.gutenberg.org/ebooks/20578.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-on-biblical-characters-clovis-gillham-chappell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/20578.",
+    "notes": "Public-domain sermon resource on Bible characters. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain sermon resource on Bible characters.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons on Biblical Characters",
+      "author": "Clovis Gillham Chappell",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 253,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "19c937dc0429c1772d33e0dce92cc23a905808bbf004bd57a95320de4093aa97",
+    "file_size_bytes": 305299,
+    "word_count": 56974
+  },
+  {
+    "title": "The Astronomy of the Bible",
+    "author": "E. Walter Maunder",
+    "year": 2009,
+    "category": "Bible study helps",
+    "source_url": "https://www.gutenberg.org/ebooks/28536",
+    "download_url": "https://www.gutenberg.org/ebooks/28536.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-astronomy-of-the-bible-e-walter-maunder.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "Verified. Source reviewed from https://www.gutenberg.org/ebooks/28536.",
+    "notes": "Public-domain background resource for Bible references to astronomy. Labels/warnings: Historical value;Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "Verified",
+    "doctrinal_review_status": "Reviewed",
+    "recommended_use": "Public-domain background resource for Bible references to astronomy.",
+    "resource_labels": [
+      "Bible Study",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Astronomy of the Bible",
+      "author": "E. Walter Maunder",
+      "category": "Bible study helps",
+      "collection": "Bible Study",
+      "badge": "Bible Study",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 463,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "1e097f90a234bbfae6091191331df3602f208ba6ea94cfa2c30b4a569c7f2025",
+    "file_size_bytes": 626337,
+    "word_count": 104228
   }
 ]

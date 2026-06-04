@@ -20,6 +20,16 @@ These resources are approved for shared Library import because source and rights
 
 Batch 2 brings the verified shared Library to 71 resources. The app should continue toward 75-100 resources only by adding clearly sourced public-domain texts or reviewed source manifests.
 
+Phase 3 brings the verified shared Library to 201 resources by adding 73 additional Project Gutenberg-backed texts through `data/library/bulk-import-phase-3.csv`. This batch focuses on public-domain commentary volumes, missions and missionary biographies, Baptist history, dictionaries/reference works, prayer, preaching/teaching, and Bible study helps. Seven candidates were skipped by duplicate title or source detection and were not added again.
+
+Phase 3 added meaningful growth in:
+
+- Commentaries and expository works, including Expositor's Bible volumes, Preacher's Complete Homiletic Commentary volumes, and selected public-domain New Testament/Old Testament studies.
+- Missions and biographies, including Mary Slessor, David Brainerd, the Judsons, Robert Moffat, Henry Martyn, Hudson Taylor-related work, and other missionary-history resources.
+- Baptist history, including Roger Williams and public-domain Baptist history/reference works.
+- Dictionaries and reference works, including Richard Watson's Biblical and Theological Dictionary and Greenfield's Greek-English Lexicon to the New Testament.
+- Prayer and preaching resources, including Quiet Talks on Prayer, Prayers of the Early Church, and selected sermon collections.
+
 ## Needs-Review Candidates
 
 Do not import these globally until exact source, edition, rights, quality, and doctrinal labels are documented.
