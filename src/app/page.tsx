@@ -79,6 +79,7 @@ type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bibl
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
 type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family" | "Friends" | "Special Requests";
 type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
+type PrayerRotation = "Daily" | "Weekly" | "Twice Weekly" | "Every Day";
 
 type BibleVerse = {
   ref: string;
@@ -122,6 +123,18 @@ type PrayerEntry = {
   birthday?: string;
   anniversary?: string;
   prayerNotes?: string;
+  prayerLetterNotes?: string;
+  familyNotes?: string;
+  supportStatus?: string;
+  bibleVerse?: string;
+  passage?: string;
+  studyNote?: string;
+  missionaryVerse?: string;
+  promiseVerse?: string;
+  rotation?: PrayerRotation;
+  lastPrayedAt?: string;
+  prayedDates?: string[];
+  praiseReport?: string;
   answeredAt?: string;
   updatedAt: string;
 };
@@ -136,6 +149,16 @@ type PrayerDraft = {
   birthday: string;
   anniversary: string;
   prayerNotes: string;
+  prayerLetterNotes: string;
+  familyNotes: string;
+  supportStatus: string;
+  bibleVerse: string;
+  passage: string;
+  studyNote: string;
+  missionaryVerse: string;
+  promiseVerse: string;
+  rotation: PrayerRotation;
+  praiseReport: string;
 };
 
 type SavedState = {
@@ -879,6 +902,13 @@ const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
 const PRAYER_CATEGORIES: PrayerCategory[] = ["Church Members", "Missionaries", "Ministries", "Family", "Friends", "Special Requests"];
 const PRAYER_STATUSES: PrayerAnswerStatus[] = ["Active", "Waiting", "Answered", "Archived"];
+const PRAYER_ROTATIONS: PrayerRotation[] = ["Daily", "Weekly", "Twice Weekly", "Every Day"];
+const PRAYER_ROTATION_LABELS: Record<PrayerRotation, string> = {
+  Daily: "Daily rotation",
+  Weekly: "Pray once per week",
+  "Twice Weekly": "Pray twice per week",
+  "Every Day": "Pray every day",
+};
 const EMPTY_PRAYER_DRAFT: PrayerDraft = {
   name: "",
   category: "Church Members",
@@ -889,6 +919,16 @@ const EMPTY_PRAYER_DRAFT: PrayerDraft = {
   birthday: "",
   anniversary: "",
   prayerNotes: "",
+  prayerLetterNotes: "",
+  familyNotes: "",
+  supportStatus: "",
+  bibleVerse: "",
+  passage: "",
+  studyNote: "",
+  missionaryVerse: "",
+  promiseVerse: "",
+  rotation: "Weekly",
+  praiseReport: "",
 };
 const DEFAULT_BOOK = "John";
 const DEFAULT_CHAPTER = 3;
@@ -6021,6 +6061,18 @@ function normalizePrayerEntry(entry: Partial<PrayerEntry>): PrayerEntry | null {
     birthday: entry.birthday ?? "",
     anniversary: entry.anniversary ?? "",
     prayerNotes: entry.prayerNotes ?? "",
+    prayerLetterNotes: entry.prayerLetterNotes ?? "",
+    familyNotes: entry.familyNotes ?? "",
+    supportStatus: entry.supportStatus ?? "",
+    bibleVerse: entry.bibleVerse ?? "",
+    passage: entry.passage ?? "",
+    studyNote: entry.studyNote ?? "",
+    missionaryVerse: entry.missionaryVerse ?? "",
+    promiseVerse: entry.promiseVerse ?? "",
+    rotation: PRAYER_ROTATIONS.includes(entry.rotation ?? "Weekly") ? entry.rotation ?? "Weekly" : "Weekly",
+    lastPrayedAt: entry.lastPrayedAt ?? "",
+    prayedDates: Array.isArray(entry.prayedDates) ? entry.prayedDates : [],
+    praiseReport: entry.praiseReport ?? "",
     answeredAt: entry.answeredAt ?? "",
     updatedAt: entry.updatedAt ?? now,
   };
@@ -6063,8 +6115,14 @@ function dayOfYear() {
 function rotatePrayerEntries(entries: PrayerEntry[], limit = 6) {
   const active = entries.filter((entry) => entry.answerStatus !== "Answered" && entry.answerStatus !== "Archived");
   if (!active.length) return [];
-  const start = dayOfYear() % active.length;
-  return [...active.slice(start), ...active.slice(0, start)].slice(0, limit);
+  const today = new Date().toISOString().slice(0, 10);
+  const daily = active.filter((entry) => entry.rotation === "Daily" || entry.rotation === "Every Day");
+  const twiceWeekly = active.filter((entry) => entry.rotation === "Twice Weekly" && dayOfYear() % 3 === 0);
+  const weekly = active.filter((entry) => entry.rotation === "Weekly" && dayOfYear() % 7 === 0);
+  const due = [...daily, ...twiceWeekly, ...weekly].filter((entry) => !entry.prayedDates?.includes(today));
+  const source = due.length ? due : active;
+  const start = dayOfYear() % source.length;
+  return [...source.slice(start), ...source.slice(0, start)].slice(0, limit);
 }
 
 function prayerEntrySummary(entry: PrayerEntry) {
@@ -6072,6 +6130,61 @@ function prayerEntrySummary(entry: PrayerEntry) {
     return [entry.field, entry.prayerNotes || entry.request].filter(Boolean).join(" · ");
   }
   return entry.notes || entry.request;
+}
+
+function prayerMarkdown(entries: PrayerEntry[], title: string) {
+  return [
+    `# ${title}`,
+    "",
+    `Exported: ${new Date().toLocaleDateString()}`,
+    "",
+    ...entries.flatMap((entry) => [
+      `## ${entry.name}`,
+      "",
+      `Category: ${entry.category}`,
+      `Status: ${entry.answerStatus}`,
+      `Rotation: ${PRAYER_ROTATION_LABELS[entry.rotation ?? "Weekly"]}`,
+      `Date added: ${formatShortDate(entry.dateAdded)}`,
+      entry.lastPrayedAt ? `Last prayed: ${formatShortDate(entry.lastPrayedAt)}` : "Last prayed: Not recorded",
+      entry.answeredAt ? `Answered: ${formatShortDate(entry.answeredAt)}` : "",
+      "",
+      entry.request,
+      "",
+      entry.notes ? `Notes: ${entry.notes}` : "",
+      entry.bibleVerse ? `Bible verse: ${entry.bibleVerse}` : "",
+      entry.passage ? `Passage: ${entry.passage}` : "",
+      entry.studyNote ? `Study note: ${entry.studyNote}` : "",
+      entry.promiseVerse ? `Promise verse: ${entry.promiseVerse}` : "",
+      entry.praiseReport ? `Praise report: ${entry.praiseReport}` : "",
+      "",
+    ].filter(Boolean)),
+  ].join("\n");
+}
+
+function missionaryPrayerMarkdown(entries: PrayerEntry[]) {
+  const missionaries = entries.filter((entry) => entry.category === "Missionaries" && entry.answerStatus !== "Archived");
+  return [
+    "# Missionary Prayer Sheet",
+    "",
+    `Exported: ${new Date().toLocaleDateString()}`,
+    "",
+    ...missionaries.flatMap((entry) => [
+      `## ${entry.missionaryName || entry.name}`,
+      "",
+      `Field: ${entry.field || "Not set"}`,
+      `Support status: ${entry.supportStatus || "Placeholder"}`,
+      `Birthday: ${formatShortDate(entry.birthday)}`,
+      `Anniversary: ${formatShortDate(entry.anniversary)}`,
+      entry.lastPrayedAt ? `Last prayed: ${formatShortDate(entry.lastPrayedAt)}` : "Last prayed: Not recorded",
+      "",
+      `Request: ${entry.request}`,
+      entry.prayerLetterNotes ? `Prayer letter notes: ${entry.prayerLetterNotes}` : "",
+      entry.familyNotes ? `Family notes: ${entry.familyNotes}` : "",
+      entry.missionaryVerse ? `Missionary verse: ${entry.missionaryVerse}` : "",
+      entry.promiseVerse ? `Promise verse: ${entry.promiseVerse}` : "",
+      "",
+    ].filter(Boolean)),
+  ].join("\n");
 }
 
 function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
@@ -7226,7 +7339,19 @@ export default function Home() {
       field: prayerDraft.category === "Missionaries" ? prayerDraft.field.trim() : "",
       birthday: prayerDraft.category === "Missionaries" ? prayerDraft.birthday : "",
       anniversary: prayerDraft.category === "Missionaries" ? prayerDraft.anniversary : "",
-      prayerNotes: prayerDraft.category === "Missionaries" ? prayerDraft.prayerNotes.trim() : "",
+      prayerNotes: prayerDraft.category === "Missionaries" ? (prayerDraft.prayerNotes.trim() || prayerDraft.prayerLetterNotes.trim()) : "",
+      prayerLetterNotes: prayerDraft.category === "Missionaries" ? prayerDraft.prayerLetterNotes.trim() : "",
+      familyNotes: prayerDraft.category === "Missionaries" ? prayerDraft.familyNotes.trim() : "",
+      supportStatus: prayerDraft.category === "Missionaries" ? prayerDraft.supportStatus.trim() : "",
+      bibleVerse: prayerDraft.bibleVerse.trim(),
+      passage: prayerDraft.passage.trim(),
+      studyNote: prayerDraft.studyNote.trim(),
+      missionaryVerse: prayerDraft.category === "Missionaries" ? prayerDraft.missionaryVerse.trim() : "",
+      promiseVerse: prayerDraft.promiseVerse.trim(),
+      rotation: prayerDraft.rotation,
+      lastPrayedAt: "",
+      prayedDates: [],
+      praiseReport: prayerDraft.praiseReport.trim(),
       answeredAt: prayerDraft.answerStatus === "Answered" ? now : "",
       updatedAt: now,
     };
@@ -7255,6 +7380,15 @@ export default function Home() {
   function deletePrayerEntry(id: string) {
     savePrayerEntryList((entries) => entries.filter((entry) => entry.id !== id));
     setSyncMessage("Prayer entry removed from this device.");
+  }
+
+  function markPrayerPrayedToday(id: string) {
+    const today = new Date().toISOString().slice(0, 10);
+    updatePrayerEntry(id, {
+      lastPrayedAt: new Date().toISOString(),
+      prayedDates: Array.from(new Set([...(prayerEntries.find((entry) => entry.id === id)?.prayedDates ?? []), today])).slice(-90),
+    });
+    setSyncMessage("Marked prayed today.");
   }
 
   useEffect(() => {
@@ -9904,6 +10038,7 @@ export default function Home() {
                 onDraftChange={setPrayerDraft}
                 onAddEntry={addPrayerEntry}
                 onUpdateEntry={updatePrayerEntry}
+                onMarkPrayed={markPrayerPrayedToday}
                 onDeleteEntry={deletePrayerEntry}
               />
             )}
@@ -10503,6 +10638,7 @@ function PrayerScreen({
   onDraftChange,
   onAddEntry,
   onUpdateEntry,
+  onMarkPrayed,
   onDeleteEntry,
 }: {
   entries: PrayerEntry[];
@@ -10514,6 +10650,7 @@ function PrayerScreen({
   onDraftChange: (draft: PrayerDraft) => void;
   onAddEntry: () => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+  onMarkPrayed: (id: string) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const categoryCounts = PRAYER_CATEGORIES.map((category) => ({
@@ -10522,16 +10659,20 @@ function PrayerScreen({
   }));
   const recentAnswers = answeredEntries.slice(0, 4);
   const missionaryEntries = entries.filter((entry) => entry.category === "Missionaries" && entry.answerStatus !== "Archived");
+  const churchFocus = focusEntries.find((entry) => entry.category === "Church Members") ?? activeEntries.find((entry) => entry.category === "Church Members");
+  const missionaryFocus = focusEntries.find((entry) => entry.category === "Missionaries") ?? missionaryEntries[0];
+  const ministryFocus = focusEntries.find((entry) => entry.category === "Ministries") ?? activeEntries.find((entry) => entry.category === "Ministries");
+  const specialFocus = focusEntries.find((entry) => entry.category === "Special Requests") ?? activeEntries.find((entry) => entry.category === "Special Requests");
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
-      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Prayer</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Daily Prayer Focus</h1>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Daily Prayer Flow</h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-              Keep prayer requests simple, Bible-centered, and useful for daily prayer. This is a local-first beta foundation, not a church management system.
+              A simple, Bible-centered way to pray for people, missionaries, ministries, and special needs without building church management.
             </p>
           </div>
           <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Saved on this device</span>
@@ -10544,8 +10685,51 @@ function PrayerScreen({
         </div>
       </section>
 
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Scripture encouragement</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Continue in prayer</h2>
+            <p className="mt-2 font-serif text-lg leading-8 text-[var(--scripture-ink)]">
+              Continue in prayer, and watch in the same with thanksgiving;
+            </p>
+            <p className="mt-1 text-sm font-semibold text-[var(--green)]">Colossians 4:2 KJV</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => downloadTextFile("prayer-list.md", prayerMarkdown(entries.filter((entry) => entry.answerStatus !== "Archived"), "Prayer List"), "text/markdown;charset=utf-8")}
+              type="button"
+            >
+              Export prayer list
+            </button>
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => downloadTextFile("missionary-prayer-sheet.md", missionaryPrayerMarkdown(entries), "text/markdown;charset=utf-8")}
+              type="button"
+            >
+              Export missionaries
+            </button>
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => downloadTextFile("answered-prayers.md", prayerMarkdown(answeredEntries, "Answered Prayers"), "text/markdown;charset=utf-8")}
+              type="button"
+            >
+              Export answered
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-4">
+        <PrayerFocusStep label="Church/member" entry={churchFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
+        <PrayerFocusStep label="Missionary" entry={missionaryFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
+        <PrayerFocusStep label="Ministry" entry={ministryFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
+        <PrayerFocusStep label="Special request" entry={specialFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
+      </section>
+
       <section className="grid gap-3 lg:grid-cols-[1fr_1fr]">
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <MessageSquareText size={18} />
             <h2 className="text-lg font-semibold text-[var(--ink)]">Today&apos;s Prayer List</h2>
@@ -10559,6 +10743,7 @@ function PrayerScreen({
                 key={`focus-prayer-${entry.id}`}
                 entry={entry}
                 compact
+                onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
                 onDeleteEntry={onDeleteEntry}
               />
@@ -10568,7 +10753,7 @@ function PrayerScreen({
           </div>
         </article>
 
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <Plus size={18} />
             <h2 className="text-lg font-semibold text-[var(--ink)]">Add Prayer Request</h2>
@@ -10578,7 +10763,7 @@ function PrayerScreen({
               Name
               <input
                 className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
-                placeholder="Person, ministry, missionary, or request name"
+                placeholder="Name, person, ministry..."
                 value={draft.name}
                 onChange={(event) => onDraftChange({ ...draft, name: event.target.value })}
               />
@@ -10608,6 +10793,18 @@ function PrayerScreen({
                   ))}
                 </select>
               </label>
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Rotation
+                <select
+                  className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
+                  value={draft.rotation}
+                  onChange={(event) => onDraftChange({ ...draft, rotation: event.target.value as PrayerRotation })}
+                >
+                  {PRAYER_ROTATIONS.map((rotation) => (
+                    <option key={`prayer-rotation-${rotation}`} value={rotation}>{PRAYER_ROTATION_LABELS[rotation]}</option>
+                  ))}
+                </select>
+              </label>
             </div>
             <label className="text-sm font-semibold text-[var(--muted)]">
               Request
@@ -10627,6 +10824,57 @@ function PrayerScreen({
                 onChange={(event) => onDraftChange({ ...draft, notes: event.target.value })}
               />
             </label>
+
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-sm font-semibold text-[var(--green)]">Prayer + Bible Connection</p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Bible verse
+                  <input
+                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                    placeholder="Philippians 4:6"
+                    value={draft.bibleVerse}
+                    onChange={(event) => onDraftChange({ ...draft, bibleVerse: event.target.value })}
+                  />
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Passage
+                  <input
+                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                    placeholder="Romans 10"
+                    value={draft.passage}
+                    onChange={(event) => onDraftChange({ ...draft, passage: event.target.value })}
+                  />
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)] sm:col-span-2">
+                  Study note
+                  <textarea
+                    className="mt-2 min-h-16 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-base leading-6 outline-none"
+                    placeholder="Attach a study note, promise, or burden from your Bible reading."
+                    value={draft.studyNote}
+                    onChange={(event) => onDraftChange({ ...draft, studyNote: event.target.value })}
+                  />
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Promise verse
+                  <input
+                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                    placeholder="Psalm 34:17"
+                    value={draft.promiseVerse}
+                    onChange={(event) => onDraftChange({ ...draft, promiseVerse: event.target.value })}
+                  />
+                </label>
+                <label className="text-sm font-semibold text-[var(--muted)]">
+                  Praise report
+                  <input
+                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                    placeholder="How did the Lord answer?"
+                    value={draft.praiseReport}
+                    onChange={(event) => onDraftChange({ ...draft, praiseReport: event.target.value })}
+                  />
+                </label>
+              </div>
+            </div>
 
             {draft.category === "Missionaries" && (
               <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
@@ -10660,12 +10908,39 @@ function PrayerScreen({
                     />
                   </label>
                   <label className="text-sm font-semibold text-[var(--muted)] sm:col-span-2">
-                    Prayer notes
+                    Prayer letter notes
                     <textarea
                       className="mt-2 min-h-20 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-base leading-6 outline-none"
                       placeholder="Family, furlough, field, health, support, language, outreach..."
-                      value={draft.prayerNotes}
-                      onChange={(event) => onDraftChange({ ...draft, prayerNotes: event.target.value })}
+                      value={draft.prayerLetterNotes}
+                      onChange={(event) => onDraftChange({ ...draft, prayerLetterNotes: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)]">
+                    Family notes
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      placeholder="Family details or needs"
+                      value={draft.familyNotes}
+                      onChange={(event) => onDraftChange({ ...draft, familyNotes: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)]">
+                    Support status
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      placeholder="Placeholder: supported, needs support..."
+                      value={draft.supportStatus}
+                      onChange={(event) => onDraftChange({ ...draft, supportStatus: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)] sm:col-span-2">
+                    Missionary verse
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      placeholder="Matthew 28:19"
+                      value={draft.missionaryVerse}
+                      onChange={(event) => onDraftChange({ ...draft, missionaryVerse: event.target.value })}
                     />
                   </label>
                 </div>
@@ -10685,7 +10960,7 @@ function PrayerScreen({
       </section>
 
       <section className="grid gap-3 lg:grid-cols-[0.85fr_1.15fr]">
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold text-[var(--ink)]">Prayer Categories</h2>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
             {categoryCounts.map((item) => (
@@ -10697,7 +10972,7 @@ function PrayerScreen({
           </div>
         </article>
 
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold text-[var(--ink)]">Missionary Support</h2>
           <div className="mt-4 space-y-2">
             {missionaryEntries.length ? missionaryEntries.slice(0, 6).map((entry) => (
@@ -10712,13 +10987,14 @@ function PrayerScreen({
       </section>
 
       <section className="grid gap-3 lg:grid-cols-2">
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold text-[var(--ink)]">Active Requests</h2>
           <div className="mt-4 space-y-2">
             {activeEntries.length ? activeEntries.map((entry) => (
               <PrayerEntryCard
                 key={`active-prayer-${entry.id}`}
                 entry={entry}
+                onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
                 onDeleteEntry={onDeleteEntry}
               />
@@ -10728,14 +11004,18 @@ function PrayerScreen({
           </div>
         </article>
 
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold text-[var(--ink)]">Answered Prayers</h2>
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <CheckCircle2 size={18} />
+            <h2 className="text-lg font-semibold text-[var(--ink)]">Praise Report</h2>
+          </div>
           <div className="mt-4 space-y-2">
             {recentAnswers.length ? recentAnswers.map((entry) => (
               <PrayerEntryCard
                 key={`answered-prayer-${entry.id}`}
                 entry={entry}
                 compact
+                onMarkPrayed={onMarkPrayed}
                 onUpdateEntry={onUpdateEntry}
                 onDeleteEntry={onDeleteEntry}
               />
@@ -10751,32 +11031,97 @@ function PrayerScreen({
   );
 }
 
+function PrayerFocusStep({
+  label,
+  entry,
+  onMarkPrayed,
+  onUpdateEntry,
+}: {
+  label: string;
+  entry?: PrayerEntry;
+  onMarkPrayed: (id: string) => void;
+  onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+}) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</p>
+      {entry ? (
+        <div className="mt-3">
+          <div className="flex flex-wrap items-start justify-between gap-2">
+            <h3 className="text-base font-semibold text-[var(--green)]">{entry.name}</h3>
+            <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{PRAYER_ROTATION_LABELS[entry.rotation ?? "Weekly"]}</span>
+          </div>
+          <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{entry.request}</p>
+          {entry.bibleVerse || entry.promiseVerse ? (
+            <p className="mt-2 text-xs font-semibold text-[var(--green)]">{entry.bibleVerse || entry.promiseVerse}</p>
+          ) : null}
+          <p className="mt-2 text-xs text-[var(--muted)]">Last prayed: {formatShortDate(entry.lastPrayedAt)}</p>
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <button
+              className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+              onClick={() => onMarkPrayed(entry.id)}
+              type="button"
+            >
+              Prayed today
+            </button>
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => onUpdateEntry(entry.id, { answerStatus: "Answered", praiseReport: entry.praiseReport || entry.notes || "Answered prayer noted." })}
+              type="button"
+            >
+              Answered
+            </button>
+          </div>
+        </div>
+      ) : (
+        <p className="mt-3 rounded-xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+          Add a {label.toLowerCase()} request to include it in the guided flow.
+        </p>
+      )}
+    </article>
+  );
+}
+
 function PrayerEntryCard({
   entry,
   compact = false,
+  onMarkPrayed,
   onUpdateEntry,
   onDeleteEntry,
 }: {
   entry: PrayerEntry;
   compact?: boolean;
+  onMarkPrayed: (id: string) => void;
   onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
   onDeleteEntry: (id: string) => void;
 }) {
   const isAnswered = entry.answerStatus === "Answered";
   return (
-    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <p className="text-sm font-semibold text-[var(--green)]">{entry.name}</p>
           <div className="mt-1 flex flex-wrap gap-1.5">
             <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{entry.category}</span>
             <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{entry.answerStatus}</span>
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{PRAYER_ROTATION_LABELS[entry.rotation ?? "Weekly"]}</span>
           </div>
         </div>
         <p className="text-xs font-semibold text-[var(--muted)]">Added {formatShortDate(entry.dateAdded)}</p>
       </div>
       <p className={`${compact ? "line-clamp-2" : ""} mt-3 text-sm leading-6 text-[var(--scripture-ink)]`}>{entry.request}</p>
       {!compact && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Notes: {prayerEntrySummary(entry)}</p>}
+      {!compact && (entry.bibleVerse || entry.passage || entry.promiseVerse || entry.studyNote) && (
+        <div className="mt-3 rounded-xl border border-[var(--line)] bg-white p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Bible connection</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {entry.bibleVerse && <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.bibleVerse}</span>}
+            {entry.passage && <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.passage}</span>}
+            {entry.promiseVerse && <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.promiseVerse}</span>}
+          </div>
+          {entry.studyNote && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.studyNote}</p>}
+        </div>
+      )}
       {!compact && entry.category === "Missionaries" && (
         <div className="mt-3 grid gap-2 sm:grid-cols-3">
           <PlaceholderPill label="Field" value={entry.field || "Not set"} />
@@ -10784,10 +11129,22 @@ function PrayerEntryCard({
           <PlaceholderPill label="Anniversary" value={formatShortDate(entry.anniversary)} />
         </div>
       )}
+      {isAnswered && entry.praiseReport && (
+        <p className="mt-3 rounded-xl bg-[var(--highlight)] px-3 py-2 text-sm leading-6 text-[var(--ink)]">Praise report: {entry.praiseReport}</p>
+      )}
+      <p className="mt-3 text-xs text-[var(--muted)]">Last prayed: {formatShortDate(entry.lastPrayedAt)}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <button
           className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-          onClick={() => onUpdateEntry(entry.id, { answerStatus: isAnswered ? "Active" : "Answered" })}
+          onClick={() => onMarkPrayed(entry.id)}
+          type="button"
+        >
+          <CheckCircle2 size={13} />
+          Mark prayed today
+        </button>
+        <button
+          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => onUpdateEntry(entry.id, { answerStatus: isAnswered ? "Active" : "Answered", praiseReport: isAnswered ? entry.praiseReport : entry.praiseReport || entry.notes || "Answered prayer noted." })}
           type="button"
         >
           <CheckCircle2 size={13} />
@@ -10825,7 +11182,7 @@ function PrayerEntryCard({
 
 function PrayerMissionaryCard({ entry }: { entry: PrayerEntry }) {
   return (
-    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <p className="text-sm font-semibold text-[var(--green)]">{entry.missionaryName || entry.name}</p>
@@ -10834,10 +11191,15 @@ function PrayerMissionaryCard({ entry }: { entry: PrayerEntry }) {
         <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{entry.answerStatus}</span>
       </div>
       <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{entry.request}</p>
-      {entry.prayerNotes && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.prayerNotes}</p>}
-      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+      {entry.prayerLetterNotes && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Prayer letter: {entry.prayerLetterNotes}</p>}
+      {entry.familyNotes && <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Family: {entry.familyNotes}</p>}
+      <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <PlaceholderPill label="Field" value={entry.field || "Not set"} />
         <PlaceholderPill label="Birthday" value={formatShortDate(entry.birthday)} />
         <PlaceholderPill label="Anniversary" value={formatShortDate(entry.anniversary)} />
+        <PlaceholderPill label="Support" value={entry.supportStatus || "Placeholder"} />
+        <PlaceholderPill label="Last prayed" value={formatShortDate(entry.lastPrayedAt)} />
+        <PlaceholderPill label="Verse" value={entry.missionaryVerse || entry.promiseVerse || "Not set"} />
       </div>
     </article>
   );
@@ -21841,11 +22203,11 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-7 gap-1">
+      <div className="mx-auto grid max-w-md grid-cols-7 gap-0.5">
         {items.map((item) => (
           <button
             key={item.id}
-            className={`flex h-14 flex-col items-center justify-center gap-1 rounded-2xl text-[0.7rem] font-semibold ${
+            className={`flex h-14 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[0.62rem] font-semibold ${
               tab === item.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
             }`}
             onClick={() => onTab(item.id)}
