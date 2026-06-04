@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Lectures Introductory to the Study of the Acts, the Catholic Epistles, and the Revelation",
+    "author": "William Kelly",
+    "source_url": "https://archive.org/download/lecturesintrodu03kellgoog/lecturesintrodu03kellgoog_djvu.txt",
+    "status": "needs review",
+    "reason": "Archive text download returned a server error during Phase 5 import. Find a stable public-domain text source before importing."
+  },
+  {
+    "title": "Lectures on the Epistle of Paul to the Galatians",
+    "author": "William Kelly",
+    "source_url": "https://archive.org/download/lecturesonepistl00kell/lecturesonepistl00kell_djvu.txt",
+    "status": "needs review",
+    "reason": "Archive text download returned a server error during Phase 5 import. Find a stable public-domain text source before importing."
+  },
+  {
+    "title": "Notes on the Epistle of Paul to the Romans",
+    "author": "William Kelly",
+    "source_url": "https://archive.org/download/notesonepistleof00kell/notesonepistleof00kell_djvu.txt",
+    "status": "needs review",
+    "reason": "Archive text download returned a server error during Phase 5 import. Find a stable public-domain text source before importing."
+  }
+]

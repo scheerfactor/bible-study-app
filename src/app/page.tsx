@@ -7842,6 +7842,7 @@ export default function Home() {
   const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false);
   const [speechVoices, setSpeechVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedSpeechVoiceURI, setSelectedSpeechVoiceURI] = useState("");
+  const [todayProverbDay, setTodayProverbDay] = useState(1);
   const [libraryFontSize, setLibraryFontSize] = useState(18);
   const [speechState, setSpeechState] = useState<SpeechState>({
     targetId: null,
@@ -7862,6 +7863,8 @@ export default function Home() {
   const speechProgressRef = useRef<((progress: number) => void) | null>(null);
   const speechCompleteRef = useRef<(() => void) | null>(null);
   const speechCancelledRef = useRef(false);
+  const speechVoicesRef = useRef<SpeechSynthesisVoice[]>([]);
+  const selectedSpeechVoiceURIRef = useRef("");
   const sleepTimerRef = useRef<number | null>(null);
   const selectedVerseRef = useRef<HTMLDivElement | null>(null);
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -8287,10 +8290,9 @@ export default function Home() {
   }), [activePrayerEntries.length, answeredPrayerEntries.length, prayerEntries, todaysPrayerFocus.length]);
 
   const proverbOfTheDay = useMemo(() => {
-    const day = Math.min(31, Math.max(1, new Date().getDate()));
-    const firstVerse = versesByRef.get(`Proverbs ${day}:1`);
-    return firstVerse ? `${firstVerse.ref} - ${firstVerse.plainText}` : `Proverbs ${day}`;
-  }, [versesByRef]);
+    const firstVerse = versesByRef.get(`Proverbs ${todayProverbDay}:1`);
+    return firstVerse ? `${firstVerse.ref} - ${firstVerse.plainText}` : `Proverbs ${todayProverbDay}`;
+  }, [todayProverbDay, versesByRef]);
 
   const dailyJournalDefaults = useMemo<JournalDraft>(() => {
     const verse = versesByRef.get(selectedRef) ?? versesByRef.get("John 3:16") ?? chapterVerses[0] ?? allVerses[0];
@@ -8725,10 +8727,17 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setTodayProverbDay(Math.min(31, Math.max(1, new Date().getDate())));
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     const updateVoices = () => {
-      const voices = window.speechSynthesis.getVoices().filter(isPreferredSpeechVoice);
+      const voices = sortSpeechVoices(window.speechSynthesis.getVoices().filter(isPreferredSpeechVoice));
       setSpeechVoices(voices);
       setSelectedSpeechVoiceURI((current) => voices.some((voice) => voice.voiceURI === current) ? current : voices[0]?.voiceURI || "");
     };
@@ -8759,6 +8768,14 @@ export default function Home() {
   useEffect(() => {
     speechRateRef.current = speechState.rate;
   }, [speechState.rate]);
+
+  useEffect(() => {
+    speechVoicesRef.current = speechVoices;
+  }, [speechVoices]);
+
+  useEffect(() => {
+    selectedSpeechVoiceURIRef.current = selectedSpeechVoiceURI;
+  }, [selectedSpeechVoiceURI]);
 
   useEffect(() => {
     return () => {
@@ -9824,6 +9841,22 @@ export default function Home() {
     }));
   }
 
+  function handleSpeechVoiceChange(voiceURI: string) {
+    selectedSpeechVoiceURIRef.current = voiceURI;
+    setSelectedSpeechVoiceURI(voiceURI);
+
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    if (!speechState.playing || speechState.paused || !speechChunksRef.current.length) return;
+
+    speechCancelledRef.current = true;
+    window.speechSynthesis.cancel();
+    speechCancelledRef.current = false;
+    window.setTimeout(() => {
+      speakCurrentChunk();
+    }, 80);
+    setSyncMessage("Voice changed. Continuing with the selected voice.");
+  }
+
   function speakCurrentChunk() {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     const chunks = speechChunksRef.current;
@@ -9838,7 +9871,7 @@ export default function Home() {
 
     const utterance = new SpeechSynthesisUtterance(chunks[index]);
     utterance.rate = speechRateRef.current;
-    const selectedVoice = speechVoices.find((voice) => voice.voiceURI === selectedSpeechVoiceURI);
+    const selectedVoice = speechVoicesRef.current.find((voice) => voice.voiceURI === selectedSpeechVoiceURIRef.current);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
       setSpeechState((state) => ({ ...state, currentChunkIndex: index }));
@@ -11139,7 +11172,7 @@ export default function Home() {
                 studyPlaylist={todayStudyPlaylist}
                 onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
-                onOpenProverb={() => goToVerse("Proverbs", Math.min(31, Math.max(1, new Date().getDate())), 1)}
+                onOpenProverb={() => goToVerse("Proverbs", todayProverbDay, 1)}
                 onListen={listenCurrentChapter}
                 onMarkBibleRead={() => markCurrentChapterMastery("readChapters")}
                 onOpenChapterAnalysis={openChapterAnalysis}
@@ -11244,7 +11277,7 @@ export default function Home() {
                 onIncludeVerseReferencesChange={setIncludeVerseReferences}
                 onIncludeChapterHeadingsChange={setIncludeChapterHeadings}
                 onSpeechRateChange={updateSpeechRate}
-                onSpeechVoiceChange={setSelectedSpeechVoiceURI}
+                onSpeechVoiceChange={handleSpeechVoiceChange}
                 onSleepTimerChange={setSleepTimer}
                 onPlaylistNameChange={setPlaylistName}
                 onSelectPlaylist={selectStudyPlaylist}
@@ -11470,7 +11503,7 @@ export default function Home() {
                     );
                   }
                 }}
-                onSpeechVoiceChange={setSelectedSpeechVoiceURI}
+                onSpeechVoiceChange={handleSpeechVoiceChange}
                 onStopSpeech={() => stopSpeech()}
                 onSleepTimerChange={setSleepTimer}
                 onMarkFinished={markLibraryFinished}
@@ -17493,30 +17526,41 @@ function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
     "zarvox",
   ];
   const isEnglish = !lang || lang.startsWith("en");
-  return isEnglish && speechVoiceCategory(voice) !== "Other" && !noveltyNames.some((novelty) => name.includes(novelty));
+  return isEnglish && !noveltyNames.some((novelty) => name.includes(novelty));
 }
 
 function speechVoiceCategory(voice: SpeechSynthesisVoice) {
   const lower = voice.name.toLowerCase();
-  if (lower.includes("female") || ["samantha", "susan", "victoria", "karen", "moira", "tessa", "veena", "zoe"].some((name) => lower.includes(name))) return "Female";
-  if (lower.includes("male") || ["alex", "daniel", "fred", "oliver", "thomas", "aaron", "arthur"].some((name) => lower.includes(name))) return "Male";
-  return "Other";
+  if (lower.includes("siri")) return "Apple Siri";
+  if (["ava", "samantha", "allison", "susan", "victoria", "karen", "moira", "tessa", "veena", "zoe", "nicky"].some((name) => lower.includes(name))) return "Apple Female";
+  if (["alex", "daniel", "fred", "oliver", "thomas", "tom", "aaron", "arthur", "reed", "evan"].some((name) => lower.includes(name))) return "Apple Male";
+  if (lower.includes("female")) return "Female";
+  if (lower.includes("male")) return "Male";
+  return voice.localService ? "Device Voices" : "Browser Voices";
 }
 
 function voiceDisplayName(voice: SpeechSynthesisVoice) {
-  const label = speechVoiceCategory(voice) !== "Other"
-    ? speechVoiceCategory(voice)
-    : voice.localService
-      ? "Device voice"
-      : "Browser voice";
-  return `${voice.name} · ${label}`;
+  return `${voice.name} · ${speechVoiceCategory(voice)}`;
 }
 
 function groupedSpeechVoices(voices: SpeechSynthesisVoice[]) {
-  return (["Male", "Female"] as const).map((category) => ({
+  return (["Apple Siri", "Apple Female", "Apple Male", "Female", "Male", "Device Voices", "Browser Voices"] as const).map((category) => ({
     category,
     voices: voices.filter((voice) => speechVoiceCategory(voice) === category),
   })).filter((group) => group.voices.length);
+}
+
+function sortSpeechVoices(voices: SpeechSynthesisVoice[]) {
+  const categoryOrder = new Map(
+    ["Apple Siri", "Apple Female", "Apple Male", "Female", "Male", "Device Voices", "Browser Voices"].map((category, index) => [category, index]),
+  );
+  return [...voices].sort((a, b) => {
+    const categoryDifference = (categoryOrder.get(speechVoiceCategory(a)) ?? 99) - (categoryOrder.get(speechVoiceCategory(b)) ?? 99);
+    if (categoryDifference) return categoryDifference;
+    const localDifference = Number(b.localService) - Number(a.localService);
+    if (localDifference) return localDifference;
+    return a.name.localeCompare(b.name);
+  });
 }
 
 function annotationLabel(type: LibraryAnnotationType) {
@@ -18643,6 +18687,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18659,6 +18705,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18675,6 +18723,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18744,6 +18794,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18760,6 +18812,8 @@ function LibraryScreen({
                 listeningProgress={listeningProgress[resource.slug]}
                 completed={Boolean(completedState[resource.slug])}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onOpenReader={() => onOpenReader(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
                 onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             )) : (
@@ -18815,6 +18869,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18831,6 +18887,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18867,6 +18925,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18906,7 +18966,7 @@ function LibraryScreen({
             <button
               key={`author-${author}`}
               className="min-w-[220px] rounded-2xl border border-[var(--line)] bg-white p-4 text-left shadow-sm"
-              onClick={() => onSearchTermChange(author)}
+              onClick={() => onOpenAuthor(author)}
               type="button"
             >
               <p className="text-base font-semibold text-[var(--ink)]">{author}</p>
@@ -18942,6 +19002,8 @@ function LibraryScreen({
               listeningProgress={listeningProgress[resource.slug]}
               completed={Boolean(completedState[resource.slug])}
               onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
           ))}
@@ -18957,6 +19019,8 @@ function LibraryScreen({
             listeningProgress={listeningProgress[resource.slug]}
             completed={Boolean(completedState[resource.slug])}
             onOpen={() => onOpenDetail(resource.slug)}
+            onOpenReader={() => onOpenReader(resource.slug)}
+            onOpenAuthor={() => onOpenAuthor(resource.author)}
           />
         ))}
       </LibraryShelf>
@@ -21202,6 +21266,7 @@ function LibraryAuthorScreen({
                 resource={resource}
                 completed={false}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
                 onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             ))}
@@ -21349,6 +21414,7 @@ function LibraryCollectionScreen({
                 resource={resource}
                 completed={false}
                 onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
                 onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
               />
             ))}
@@ -21440,6 +21506,7 @@ function ReadingPathScreen({
             resource={resource}
             completed={false}
             onOpen={() => onOpenDetail(resource.slug)}
+            onOpenAuthor={() => onOpenAuthor(resource.author)}
             onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
           />
         )) : (
@@ -22490,6 +22557,8 @@ function LibraryResourceCard({
   listeningProgress,
   completed,
   onOpen,
+  onOpenReader,
+  onOpenAuthor,
   onAddToPlaylist,
 }: {
   resource: LibraryResource;
@@ -22497,6 +22566,8 @@ function LibraryResourceCard({
   listeningProgress?: ListeningProgress;
   completed: boolean;
   onOpen: () => void;
+  onOpenReader?: () => void;
+  onOpenAuthor?: () => void;
   onAddToPlaylist?: () => void;
 }) {
   const [coverFailed, setCoverFailed] = useState(false);
@@ -22507,9 +22578,9 @@ function LibraryResourceCard({
   const showCoverImage = Boolean(resource.cover_image_url && !coverFailed);
 
   return (
-    <article className="w-full overflow-hidden rounded-2xl border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-      <button className="block w-full text-left" onClick={onOpen} type="button">
-        <div className={`relative aspect-[3/4] min-h-[220px] bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
+    <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+      <button className="block w-full text-left" onClick={onOpenReader ?? onOpen} type="button">
+        <div className={`relative aspect-[3/4] min-h-[220px] overflow-hidden bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
         {showCoverImage && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -22522,9 +22593,11 @@ function LibraryResourceCard({
         )}
         {showCoverImage && <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/5" />}
         <div className="absolute inset-x-6 top-5 h-px bg-white/30" />
+        <div className="absolute left-5 top-5 rounded-full bg-white/15 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-white/85 backdrop-blur">
+          {libraryCategoryLabel(resource.category)}
+        </div>
         <div className="absolute inset-x-5 bottom-5">
-          <p className="max-w-[10rem] text-xs font-semibold uppercase tracking-[0.14em] text-white/75">{libraryCategoryLabel(resource.category)}</p>
-          <h3 className="mt-4 line-clamp-4 text-2xl font-semibold leading-7">{resource.title}</h3>
+          <h3 className="line-clamp-4 text-2xl font-semibold leading-7">{resource.title}</h3>
           <p className="mt-4 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
         </div>
         {completed && (
@@ -22534,6 +22607,8 @@ function LibraryResourceCard({
         )}
         </div>
         <div className="p-4">
+        <h3 className="line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
+        <p className="mt-1 line-clamp-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
         <div className="flex flex-wrap items-center gap-2">
           <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
@@ -22564,18 +22639,37 @@ function LibraryResourceCard({
         </div>
         </div>
       </button>
-      {onAddToPlaylist && (
-        <div className="border-t border-[var(--line)] bg-[var(--paper)] p-3">
+      <div className="mt-auto border-t border-[var(--line)] bg-[var(--paper)] p-3">
+        <div className="grid grid-cols-2 gap-2">
           <button
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+            onClick={onOpenReader ?? onOpen}
+            type="button"
+          >
+            <BookOpen size={14} />
+            Read
+          </button>
+          <button
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50"
+            disabled={!onOpenAuthor}
+            onClick={onOpenAuthor}
+            type="button"
+          >
+            <Users size={14} />
+            Author
+          </button>
+        </div>
+        {onAddToPlaylist && (
+          <button
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
             onClick={onAddToPlaylist}
             type="button"
           >
             <ListMusic size={14} />
             Add to Playlist
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </article>
   );
 }
@@ -22622,6 +22716,7 @@ function libraryCategoryLabel(category: string) {
     "Christian life": "Christian Living",
     "Baptist history": "Baptist History",
     "Bible study helps": "Bible Handbooks",
+    "KJV/Textual Issues": "KJV / Textual Issues",
   };
 
   return labels[category] ?? category;

@@ -14,6 +14,8 @@ export const allowedCategories = new Set([
   "Classics",
   "Christian Living",
   "Preaching & Teaching",
+  "KJV / Textual Issues",
+  "KJV/Textual Issues",
   "Bible study helps",
   "Baptist history",
   "Baptist History",

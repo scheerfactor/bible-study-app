@@ -65,6 +65,7 @@ export const LIBRARY_CATEGORIES = [
   "Prayer",
   "Christian Living",
   "Preaching & Teaching",
+  "KJV / Textual Issues",
   "Biographies",
   "Classics",
 ] as const;

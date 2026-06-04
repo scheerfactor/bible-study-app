@@ -20253,5 +20253,478 @@
     "checksum_sha256": "000e40c65df70cf068d052f46cc9bcc0e51e2a4b87d15c39faff844a8f432d8c",
     "file_size_bytes": 118512,
     "word_count": 17501
+  },
+  {
+    "title": "Dispensational Truth: or, God's Plan and Purpose in the Ages",
+    "author": "Clarence Larkin",
+    "year": 1918,
+    "category": "KJV / Textual Issues",
+    "source_url": "https://archive.org/download/dispensationaltr0000clar/dispensationaltr0000clar_djvu.txt",
+    "download_url": "https://archive.org/download/dispensationaltr0000clar/dispensationaltr0000clar_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/dispensational-truth-or-god-s-plan-and-purpose-in-the-ages-clarence-larkin.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/dispensationaltr0000clar/dispensationaltr0000clar_djvu.txt.",
+    "notes": "Classic Baptist dispensational study resource. Keep Scripture primary and note that charts/images may not be represented in plain text. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Classic Baptist dispensational study resource. Keep Scripture primary and note that charts/images may not be represented in plain text.",
+    "resource_labels": [
+      "Larkin",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Dispensational Truth: or, God's Plan and Purpose in the Ages",
+      "author": "Clarence Larkin",
+      "category": "KJV / Textual Issues",
+      "collection": "Larkin",
+      "badge": "Larkin",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 934,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ed34146e10e1a78bec852b1e1201009ee44687e003299466d8f9646fa6cf7b98",
+    "file_size_bytes": 1208399,
+    "word_count": 210068
+  },
+  {
+    "title": "The Spirit World",
+    "author": "Clarence Larkin",
+    "year": 1921,
+    "category": "KJV / Textual Issues",
+    "source_url": "https://archive.org/download/spiritworld0000revc/spiritworld0000revc_djvu.txt",
+    "download_url": "https://archive.org/download/spiritworld0000revc/spiritworld0000revc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-spirit-world-clarence-larkin.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/spiritworld0000revc/spiritworld0000revc_djvu.txt.",
+    "notes": "Public-domain Larkin study resource for prophecy and doctrine review with Scripture-first caution. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Larkin study resource for prophecy and doctrine review with Scripture-first caution.",
+    "resource_labels": [
+      "Larkin",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Spirit World",
+      "author": "Clarence Larkin",
+      "category": "KJV / Textual Issues",
+      "collection": "Larkin",
+      "badge": "Larkin",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 195,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "90e0c3bfdac86be845f1318ffcf44842359f1f228326ea1e12dfb0e08f1c6d71",
+    "file_size_bytes": 258474,
+    "word_count": 43871
+  },
+  {
+    "title": "The Book of Revelation",
+    "author": "Clarence Larkin",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/bookofrevelation0000clar_c9f4/bookofrevelation0000clar_c9f4_djvu.txt",
+    "download_url": "https://archive.org/download/bookofrevelation0000clar_c9f4/bookofrevelation0000clar_c9f4_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-book-of-revelation-clarence-larkin.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bookofrevelation0000clar_c9f4/bookofrevelation0000clar_c9f4_djvu.txt.",
+    "notes": "Public-domain Revelation study resource; useful for comparison after reading the KJV text. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Revelation study resource; useful for comparison after reading the KJV text.",
+    "resource_labels": [
+      "Larkin",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Revelation",
+      "author": "Clarence Larkin",
+      "category": "Commentaries",
+      "collection": "Larkin",
+      "badge": "Larkin",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 458,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "552ac7e91abf0a5fcabbef0727269212a0c05ba7ae1b3ac9f8b8319fede8e1b8",
+    "file_size_bytes": 599721,
+    "word_count": 103033
+  },
+  {
+    "title": "The Book of Daniel",
+    "author": "Clarence Larkin",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/bookofdaniel00lark/bookofdaniel00lark_djvu.txt",
+    "download_url": "https://archive.org/download/bookofdaniel00lark/bookofdaniel00lark_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-book-of-daniel-clarence-larkin.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bookofdaniel00lark/bookofdaniel00lark_djvu.txt.",
+    "notes": "Public-domain Daniel study resource; useful for prophecy study with doctrinal discernment. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Daniel study resource; useful for prophecy study with doctrinal discernment.",
+    "resource_labels": [
+      "Larkin",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Daniel",
+      "author": "Clarence Larkin",
+      "category": "Commentaries",
+      "collection": "Larkin",
+      "badge": "Larkin",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 386,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a6405a23bc1df63382578ac23c332d15bee11d6335f01c7aa742d031bf96af6c",
+    "file_size_bytes": 507829,
+    "word_count": 86819
+  },
+  {
+    "title": "Lectures on the Epistle to the Colossians",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/lecturesonepistl0000hiro/lecturesonepistl0000hiro_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonepistl0000hiro/lecturesonepistl0000hiro_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-epistle-to-the-colossians-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lecturesonepistl0000hiro/lecturesonepistl0000hiro_djvu.txt.",
+    "notes": "Early Ironside exposition for teaching and devotional study after the Bible text. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early Ironside exposition for teaching and devotional study after the Bible text.",
+    "resource_labels": [
+      "Ironside",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Epistle to the Colossians",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside",
+      "badge": "Ironside",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 199,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "75d2fa41fa1ef41f02a21ac8e5686d98d006230901e8d64f1e51de37f8103a53",
+    "file_size_bytes": 254426,
+    "word_count": 44874
+  },
+  {
+    "title": "Notes on the Minor Prophets",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/notesonminorprop0000hair_o4r2/notesonminorprop0000hair_o4r2_djvu.txt",
+    "download_url": "https://archive.org/download/notesonminorprop0000hair_o4r2/notesonminorprop0000hair_o4r2_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-minor-prophets-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesonminorprop0000hair_o4r2/notesonminorprop0000hair_o4r2_djvu.txt.",
+    "notes": "Early Ironside Old Testament prophetic exposition for teaching prep and comparison. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early Ironside Old Testament prophetic exposition for teaching prep and comparison.",
+    "resource_labels": [
+      "Ironside",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Minor Prophets",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside",
+      "badge": "Ironside",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 491,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b037ca4727d0574f9a10dd3cdeb555e5b034ce32cfb0db42e4ccfb460af3a840",
+    "file_size_bytes": 628463,
+    "word_count": 110547
+  },
+  {
+    "title": "The Four Hundred Silent Years",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Bible Handbooks",
+    "source_url": "https://archive.org/download/fourhundredsilen0000hair_b6o5/fourhundredsilen0000hair_b6o5_djvu.txt",
+    "download_url": "https://archive.org/download/fourhundredsilen0000hair_b6o5/fourhundredsilen0000hair_b6o5_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-four-hundred-silent-years-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/fourhundredsilen0000hair_b6o5/fourhundredsilen0000hair_b6o5_djvu.txt.",
+    "notes": "Background resource for the period from Malachi to Matthew; use as history/background, not Scripture. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Background resource for the period from Malachi to Matthew; use as history/background, not Scripture.",
+    "resource_labels": [
+      "Ironside",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Four Hundred Silent Years",
+      "author": "H. A. Ironside",
+      "category": "Bible Handbooks",
+      "collection": "Ironside",
+      "badge": "Ironside",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 120,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cb5680a1d6198614607189764e17b2d4ba6a73f8435573fcab27a7c9c9c373d9",
+    "file_size_bytes": 159168,
+    "word_count": 27046
+  },
+  {
+    "title": "Exposition of the Epistle of James",
+    "author": "William Kelly",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/expositionofepis0000will_q9n7/expositionofepis0000will_q9n7_djvu.txt",
+    "download_url": "https://archive.org/download/expositionofepis0000will_q9n7/expositionofepis0000will_q9n7_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/exposition-of-the-epistle-of-james-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/expositionofepis0000will_q9n7/expositionofepis0000will_q9n7_djvu.txt.",
+    "notes": "Public-domain exposition useful for careful comparison and teaching preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain exposition useful for careful comparison and teaching preparation.",
+    "resource_labels": [
+      "William Kelly",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Exposition of the Epistle of James",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly",
+      "badge": "William Kelly",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 207,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e419498a8927b09d09dd8c4130f29ca3fc2f08e54150cf55a1a0d1bd18cb74ff",
+    "file_size_bytes": 259342,
+    "word_count": 46486
+  },
+  {
+    "title": "Notes on the Book of Daniel",
+    "author": "William Kelly",
+    "year": 2026,
+    "category": "Commentaries",
+    "source_url": "https://archive.org/download/notesonbookofdan00kell/notesonbookofdan00kell_djvu.txt",
+    "download_url": "https://archive.org/download/notesonbookofdan00kell/notesonbookofdan00kell_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-book-of-daniel-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesonbookofdan00kell/notesonbookofdan00kell_djvu.txt.",
+    "notes": "Public-domain Daniel notes for comparison after reading the KJV passage. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Daniel notes for comparison after reading the KJV passage.",
+    "resource_labels": [
+      "William Kelly",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Book of Daniel",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly",
+      "badge": "William Kelly",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 383,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c5ec8469d12a5d0e1851e22738c991303ba2952dab61f4e5b18f58d0e4bd4f3b",
+    "file_size_bytes": 548058,
+    "word_count": 86253
+  },
+  {
+    "title": "Lectures Introductory to the Study of the Epistles of Paul the Apostle",
+    "author": "William Kelly",
+    "year": 2026,
+    "category": "Bible study helps",
+    "source_url": "https://archive.org/download/lecturesintrodu00kellgoog/lecturesintrodu00kellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesintrodu00kellgoog/lecturesintrodu00kellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-introductory-to-the-study-of-the-epistles-of-paul-the-apostle-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lecturesintrodu00kellgoog/lecturesintrodu00kellgoog_djvu.txt.",
+    "notes": "Public-domain Pauline epistle survey for Bible study and teaching prep. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pauline epistle survey for Bible study and teaching prep.",
+    "resource_labels": [
+      "William Kelly",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures Introductory to the Study of the Epistles of Paul the Apostle",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "collection": "William Kelly",
+      "badge": "William Kelly",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 834,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0cc8a9bf54eb995465f914b8343f4db039d7b9539dae756be718ace2b80dbd37",
+    "file_size_bytes": 1194162,
+    "word_count": 187638
+  },
+  {
+    "title": "Lectures Introductory to the Study of the Gospels",
+    "author": "William Kelly",
+    "year": 2026,
+    "category": "Bible study helps",
+    "source_url": "https://archive.org/download/pts_lecturesintroduc_3730/pts_lecturesintroduc_3730_djvu.txt",
+    "download_url": "https://archive.org/download/pts_lecturesintroduc_3730/pts_lecturesintroduc_3730_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-introductory-to-the-study-of-the-gospels-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/pts_lecturesintroduc_3730/pts_lecturesintroduc_3730_djvu.txt.",
+    "notes": "Public-domain Gospel survey for Bible study and teaching prep. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Gospel survey for Bible study and teaching prep.",
+    "resource_labels": [
+      "William Kelly",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures Introductory to the Study of the Gospels",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "collection": "William Kelly",
+      "badge": "William Kelly",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 826,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7d4eb1f6d2da1ca8e5498bf6586d50c4d07a6107408dc7855838ecfda1f77827",
+    "file_size_bytes": 1197373,
+    "word_count": 185862
   }
 ]
