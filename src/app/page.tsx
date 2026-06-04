@@ -65,7 +65,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -77,6 +77,8 @@ type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission grant
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
+type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family" | "Friends" | "Special Requests";
+type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
 
 type BibleVerse = {
   ref: string;
@@ -105,6 +107,35 @@ type UserBookmark = {
   id: string;
   verse_ref: string;
   created_at: string;
+};
+
+type PrayerEntry = {
+  id: string;
+  name: string;
+  category: PrayerCategory;
+  request: string;
+  dateAdded: string;
+  answerStatus: PrayerAnswerStatus;
+  notes: string;
+  missionaryName?: string;
+  field?: string;
+  birthday?: string;
+  anniversary?: string;
+  prayerNotes?: string;
+  answeredAt?: string;
+  updatedAt: string;
+};
+
+type PrayerDraft = {
+  name: string;
+  category: PrayerCategory;
+  request: string;
+  answerStatus: PrayerAnswerStatus;
+  notes: string;
+  field: string;
+  birthday: string;
+  anniversary: string;
+  prayerNotes: string;
 };
 
 type SavedState = {
@@ -843,8 +874,22 @@ const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
+const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const LOCAL_SYNC_MESSAGE = "Saving locally until sync is available.";
 const SYNC_ERROR_MESSAGE = "Could not sync yet. Your data is still saved on this device.";
+const PRAYER_CATEGORIES: PrayerCategory[] = ["Church Members", "Missionaries", "Ministries", "Family", "Friends", "Special Requests"];
+const PRAYER_STATUSES: PrayerAnswerStatus[] = ["Active", "Waiting", "Answered", "Archived"];
+const EMPTY_PRAYER_DRAFT: PrayerDraft = {
+  name: "",
+  category: "Church Members",
+  request: "",
+  answerStatus: "Active",
+  notes: "",
+  field: "",
+  birthday: "",
+  anniversary: "",
+  prayerNotes: "",
+};
 const DEFAULT_BOOK = "John";
 const DEFAULT_CHAPTER = 3;
 const DEFAULT_VERSE = 16;
@@ -5960,6 +6005,75 @@ function saveLocalState(state: SavedState) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+function normalizePrayerEntry(entry: Partial<PrayerEntry>): PrayerEntry | null {
+  if (!entry.id || !entry.name || !entry.category || !entry.request) return null;
+  const now = new Date().toISOString();
+  return {
+    id: entry.id,
+    name: entry.name,
+    category: PRAYER_CATEGORIES.includes(entry.category) ? entry.category : "Special Requests",
+    request: entry.request,
+    dateAdded: entry.dateAdded ?? now,
+    answerStatus: PRAYER_STATUSES.includes(entry.answerStatus ?? "Active") ? entry.answerStatus ?? "Active" : "Active",
+    notes: entry.notes ?? "",
+    missionaryName: entry.missionaryName ?? "",
+    field: entry.field ?? "",
+    birthday: entry.birthday ?? "",
+    anniversary: entry.anniversary ?? "",
+    prayerNotes: entry.prayerNotes ?? "",
+    answeredAt: entry.answeredAt ?? "",
+    updatedAt: entry.updatedAt ?? now,
+  };
+}
+
+function loadPrayerEntries(): PrayerEntry[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(PRAYER_ENTRIES_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as Partial<PrayerEntry>[];
+    return parsed
+      .map(normalizePrayerEntry)
+      .filter((entry): entry is PrayerEntry => Boolean(entry))
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+  } catch {
+    return [];
+  }
+}
+
+function savePrayerEntries(entries: PrayerEntry[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(PRAYER_ENTRIES_KEY, JSON.stringify(entries));
+}
+
+function formatShortDate(value?: string) {
+  if (!value) return "Not set";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" });
+}
+
+function dayOfYear() {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  return Math.floor((Number(now) - Number(start)) / 86400000);
+}
+
+function rotatePrayerEntries(entries: PrayerEntry[], limit = 6) {
+  const active = entries.filter((entry) => entry.answerStatus !== "Answered" && entry.answerStatus !== "Archived");
+  if (!active.length) return [];
+  const start = dayOfYear() % active.length;
+  return [...active.slice(start), ...active.slice(0, start)].slice(0, limit);
+}
+
+function prayerEntrySummary(entry: PrayerEntry) {
+  if (entry.category === "Missionaries") {
+    return [entry.field, entry.prayerNotes || entry.request].filter(Boolean).join(" · ");
+  }
+  return entry.notes || entry.request;
+}
+
 function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
   const now = new Date().toISOString();
   return {
@@ -6702,6 +6816,8 @@ export default function Home() {
   const [repeatStudyPlaylist, setRepeatStudyPlaylist] = useState(false);
   const [repeatStudyPlaylistItem, setRepeatStudyPlaylistItem] = useState(false);
   const [scriptureMemory, setScriptureMemory] = useState<ScriptureMemoryItem[]>([]);
+  const [prayerEntries, setPrayerEntries] = useState<PrayerEntry[]>([]);
+  const [prayerDraft, setPrayerDraft] = useState<PrayerDraft>(EMPTY_PRAYER_DRAFT);
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
@@ -7057,6 +7173,21 @@ export default function Home() {
       ? "Sync error — saved on this device"
       : "Signed in — synced to Supabase"
     : "Signed out — saving locally";
+  const activePrayerEntries = useMemo(
+    () => prayerEntries.filter((entry) => entry.answerStatus !== "Answered" && entry.answerStatus !== "Archived"),
+    [prayerEntries],
+  );
+  const answeredPrayerEntries = useMemo(
+    () => prayerEntries.filter((entry) => entry.answerStatus === "Answered").sort((a, b) => (b.answeredAt || b.updatedAt).localeCompare(a.answeredAt || a.updatedAt)),
+    [prayerEntries],
+  );
+  const todaysPrayerFocus = useMemo(() => rotatePrayerEntries(prayerEntries, 6), [prayerEntries]);
+  const prayerStats = useMemo(() => ({
+    active: activePrayerEntries.length,
+    answered: answeredPrayerEntries.length,
+    focus: todaysPrayerFocus.length,
+    missionaries: prayerEntries.filter((entry) => entry.category === "Missionaries").length,
+  }), [activePrayerEntries.length, answeredPrayerEntries.length, prayerEntries, todaysPrayerFocus.length]);
 
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
@@ -7064,6 +7195,66 @@ export default function Home() {
       saveLocalState(nextState);
       return nextState;
     });
+  }
+
+  function savePrayerEntryList(updater: (entries: PrayerEntry[]) => PrayerEntry[]) {
+    setPrayerEntries((entries) => {
+      const nextEntries = updater(entries).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+      savePrayerEntries(nextEntries);
+      return nextEntries;
+    });
+  }
+
+  function addPrayerEntry() {
+    const name = prayerDraft.name.trim();
+    const request = prayerDraft.request.trim();
+    if (!name || !request) {
+      setSyncMessage("Add a name and prayer request first.");
+      return;
+    }
+
+    const now = new Date().toISOString();
+    const entry: PrayerEntry = {
+      id: `prayer-${now}-${Math.random().toString(36).slice(2, 8)}`,
+      name,
+      category: prayerDraft.category,
+      request,
+      dateAdded: now,
+      answerStatus: prayerDraft.answerStatus,
+      notes: prayerDraft.notes.trim(),
+      missionaryName: prayerDraft.category === "Missionaries" ? name : "",
+      field: prayerDraft.category === "Missionaries" ? prayerDraft.field.trim() : "",
+      birthday: prayerDraft.category === "Missionaries" ? prayerDraft.birthday : "",
+      anniversary: prayerDraft.category === "Missionaries" ? prayerDraft.anniversary : "",
+      prayerNotes: prayerDraft.category === "Missionaries" ? prayerDraft.prayerNotes.trim() : "",
+      answeredAt: prayerDraft.answerStatus === "Answered" ? now : "",
+      updatedAt: now,
+    };
+
+    savePrayerEntryList((entries) => [entry, ...entries]);
+    setPrayerDraft(EMPTY_PRAYER_DRAFT);
+    setSyncMessage("Prayer request saved locally.");
+  }
+
+  function updatePrayerEntry(id: string, patch: Partial<PrayerEntry>) {
+    const now = new Date().toISOString();
+    savePrayerEntryList((entries) =>
+      entries.map((entry) => {
+        if (entry.id !== id) return entry;
+        const nextStatus = patch.answerStatus ?? entry.answerStatus;
+        return {
+          ...entry,
+          ...patch,
+          answeredAt: nextStatus === "Answered" ? ((patch.answeredAt ?? entry.answeredAt) || now) : "",
+          updatedAt: now,
+        };
+      }),
+    );
+  }
+
+  function deletePrayerEntry(id: string) {
+    savePrayerEntryList((entries) => entries.filter((entry) => entry.id !== id));
+    setSyncMessage("Prayer entry removed from this device.");
   }
 
   useEffect(() => {
@@ -7086,6 +7277,7 @@ export default function Home() {
       setBiblePlaylists(loadedPlaylists);
       setActiveStudyPlaylistId(loadedPlaylists[0]?.id ?? null);
       setScriptureMemory(loadScriptureMemory());
+      setPrayerEntries(loadPrayerEntries());
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
@@ -9296,6 +9488,7 @@ export default function Home() {
       account_mode: user ? "signed_in_supabase" : "signed_out_local",
       user_email: user?.email ?? null,
       data: saved,
+      prayer_entries: prayerEntries,
     };
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -9472,6 +9665,7 @@ export default function Home() {
                 }}
               />
               <NavButton icon={<NotebookPen size={18} />} label="Notes" active={tab === "notes"} onClick={() => setTab("notes")} />
+              <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
 
@@ -9500,6 +9694,8 @@ export default function Home() {
                 noteCount={saved.notes.length}
                 highlightCount={saved.highlights.length}
                 bookmarkCount={saved.bookmarks.length}
+                prayerFocusEntries={todaysPrayerFocus}
+                prayerStats={prayerStats}
                 onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
                 onListen={listenCurrentChapter}
@@ -9515,6 +9711,7 @@ export default function Home() {
                   void listenToLibraryProgress(todayLibraryProgress);
                 }}
                 onRepeatMemory={(ref, nextProgress) => updateMemoryProgress(ref, nextProgress)}
+                onOpenPrayer={() => setTab("prayer")}
               />
             )}
 
@@ -9693,6 +9890,21 @@ export default function Home() {
                   goToVerse(verse.book, verse.chapter, verse.verse);
                   openStudyDrawer(verse.ref);
                 }}
+              />
+            )}
+
+            {tab === "prayer" && (
+              <PrayerScreen
+                entries={prayerEntries}
+                draft={prayerDraft}
+                focusEntries={todaysPrayerFocus}
+                activeEntries={activePrayerEntries}
+                answeredEntries={answeredPrayerEntries}
+                stats={prayerStats}
+                onDraftChange={setPrayerDraft}
+                onAddEntry={addPrayerEntry}
+                onUpdateEntry={updatePrayerEntry}
+                onDeleteEntry={deletePrayerEntry}
               />
             )}
 
@@ -10031,6 +10243,8 @@ function TodayScreen({
   noteCount,
   highlightCount,
   bookmarkCount,
+  prayerFocusEntries,
+  prayerStats,
   onContinue,
   onJohn316,
   onListen,
@@ -10038,6 +10252,7 @@ function TodayScreen({
   onOpenLibrary,
   onListenLibrary,
   onRepeatMemory,
+  onOpenPrayer,
 }: {
   book: string;
   chapter: number;
@@ -10050,6 +10265,8 @@ function TodayScreen({
   noteCount: number;
   highlightCount: number;
   bookmarkCount: number;
+  prayerFocusEntries: PrayerEntry[];
+  prayerStats: { active: number; answered: number; focus: number; missionaries: number };
   onContinue: () => void;
   onJohn316: () => void;
   onListen: () => void;
@@ -10057,6 +10274,7 @@ function TodayScreen({
   onOpenLibrary: () => void;
   onListenLibrary: () => void;
   onRepeatMemory: (ref: string, nextProgress: number) => void;
+  onOpenPrayer: () => void;
 }) {
   const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
   const memoryProgress = memoryItem?.progress ?? 0;
@@ -10196,13 +10414,40 @@ function TodayScreen({
       </section>
 
       <section className="grid gap-3 lg:grid-cols-2">
-        <TodayCard icon={<MessageSquareText size={18} />} title="Prayer Focus Placeholder">
+        <TodayCard
+          icon={<MessageSquareText size={18} />}
+          title="Prayer Focus"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onOpenPrayer} type="button">
+              Open Prayer
+            </button>
+          }
+        >
           <div className="grid gap-2 sm:grid-cols-3">
-            <PlaceholderPill label="Missionary" value="Coming soon" />
-            <PlaceholderPill label="Church member" value="Coming soon" />
-            <PlaceholderPill label="Ministry" value="Coming soon" />
+            <PlaceholderPill label="Active" value={String(prayerStats.active)} />
+            <PlaceholderPill label="Today" value={String(prayerStats.focus)} />
+            <PlaceholderPill label="Answered" value={String(prayerStats.answered)} />
           </div>
-          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">Prayer module coming soon.</p>
+          <div className="mt-3 space-y-2">
+            {prayerFocusEntries.length ? prayerFocusEntries.slice(0, 3).map((entry) => (
+              <button
+                key={`today-prayer-${entry.id}`}
+                className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
+                onClick={onOpenPrayer}
+                type="button"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--green)]">{entry.name}</p>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{entry.category}</span>
+                </div>
+                <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{entry.request}</p>
+              </button>
+            )) : (
+              <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+                Add church members, missionaries, ministries, family, friends, or special requests to build today&apos;s prayer focus.
+              </p>
+            )}
+          </div>
         </TodayCard>
 
         <TodayCard icon={<NotebookPen size={18} />} title="Journal Placeholder">
@@ -10244,6 +10489,356 @@ function TodayCard({
         {action}
       </div>
       <div className="mt-4">{children}</div>
+    </article>
+  );
+}
+
+function PrayerScreen({
+  entries,
+  draft,
+  focusEntries,
+  activeEntries,
+  answeredEntries,
+  stats,
+  onDraftChange,
+  onAddEntry,
+  onUpdateEntry,
+  onDeleteEntry,
+}: {
+  entries: PrayerEntry[];
+  draft: PrayerDraft;
+  focusEntries: PrayerEntry[];
+  activeEntries: PrayerEntry[];
+  answeredEntries: PrayerEntry[];
+  stats: { active: number; answered: number; focus: number; missionaries: number };
+  onDraftChange: (draft: PrayerDraft) => void;
+  onAddEntry: () => void;
+  onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+  onDeleteEntry: (id: string) => void;
+}) {
+  const categoryCounts = PRAYER_CATEGORIES.map((category) => ({
+    category,
+    count: entries.filter((entry) => entry.category === category && entry.answerStatus !== "Archived").length,
+  }));
+  const recentAnswers = answeredEntries.slice(0, 4);
+  const missionaryEntries = entries.filter((entry) => entry.category === "Missionaries" && entry.answerStatus !== "Archived");
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Prayer</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Daily Prayer Focus</h1>
+            <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
+              Keep prayer requests simple, Bible-centered, and useful for daily prayer. This is a local-first beta foundation, not a church management system.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Saved on this device</span>
+        </div>
+        <div className="mt-5 grid grid-cols-2 gap-2 md:grid-cols-4">
+          <MiniStat label="Active" value={String(stats.active)} />
+          <MiniStat label="Today" value={String(stats.focus)} />
+          <MiniStat label="Answered" value={String(stats.answered)} />
+          <MiniStat label="Missionaries" value={String(stats.missionaries)} />
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[1fr_1fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <MessageSquareText size={18} />
+            <h2 className="text-lg font-semibold text-[var(--ink)]">Today&apos;s Prayer List</h2>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            Rotates active requests so the same list does not get stale.
+          </p>
+          <div className="mt-4 space-y-2">
+            {focusEntries.length ? focusEntries.map((entry) => (
+              <PrayerEntryCard
+                key={`focus-prayer-${entry.id}`}
+                entry={entry}
+                compact
+                onUpdateEntry={onUpdateEntry}
+                onDeleteEntry={onDeleteEntry}
+              />
+            )) : (
+              <EmptyState title="No prayer focus yet" body="Add requests below to build a daily rotation." />
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Plus size={18} />
+            <h2 className="text-lg font-semibold text-[var(--ink)]">Add Prayer Request</h2>
+          </div>
+          <div className="mt-4 grid gap-3">
+            <label className="text-sm font-semibold text-[var(--muted)]">
+              Name
+              <input
+                className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
+                placeholder="Person, ministry, missionary, or request name"
+                value={draft.name}
+                onChange={(event) => onDraftChange({ ...draft, name: event.target.value })}
+              />
+            </label>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Category
+                <select
+                  className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
+                  value={draft.category}
+                  onChange={(event) => onDraftChange({ ...draft, category: event.target.value as PrayerCategory })}
+                >
+                  {PRAYER_CATEGORIES.map((category) => (
+                    <option key={`prayer-category-${category}`} value={category}>{category}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Answer status
+                <select
+                  className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
+                  value={draft.answerStatus}
+                  onChange={(event) => onDraftChange({ ...draft, answerStatus: event.target.value as PrayerAnswerStatus })}
+                >
+                  {PRAYER_STATUSES.filter((status) => status !== "Archived").map((status) => (
+                    <option key={`prayer-status-${status}`} value={status}>{status}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <label className="text-sm font-semibold text-[var(--muted)]">
+              Request
+              <textarea
+                className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-base leading-6 outline-none"
+                placeholder="What should be prayed for?"
+                value={draft.request}
+                onChange={(event) => onDraftChange({ ...draft, request: event.target.value })}
+              />
+            </label>
+            <label className="text-sm font-semibold text-[var(--muted)]">
+              Notes
+              <textarea
+                className="mt-2 min-h-20 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-base leading-6 outline-none"
+                placeholder="Updates, verses, details, or follow-up notes"
+                value={draft.notes}
+                onChange={(event) => onDraftChange({ ...draft, notes: event.target.value })}
+              />
+            </label>
+
+            {draft.category === "Missionaries" && (
+              <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+                <p className="text-sm font-semibold text-[var(--green)]">Missionary Support Foundation</p>
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  <label className="text-sm font-semibold text-[var(--muted)]">
+                    Field
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      placeholder="Country, city, or ministry field"
+                      value={draft.field}
+                      onChange={(event) => onDraftChange({ ...draft, field: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)]">
+                    Birthday
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      type="date"
+                      value={draft.birthday}
+                      onChange={(event) => onDraftChange({ ...draft, birthday: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)]">
+                    Anniversary
+                    <input
+                      className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
+                      type="date"
+                      value={draft.anniversary}
+                      onChange={(event) => onDraftChange({ ...draft, anniversary: event.target.value })}
+                    />
+                  </label>
+                  <label className="text-sm font-semibold text-[var(--muted)] sm:col-span-2">
+                    Prayer notes
+                    <textarea
+                      className="mt-2 min-h-20 w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-base leading-6 outline-none"
+                      placeholder="Family, furlough, field, health, support, language, outreach..."
+                      value={draft.prayerNotes}
+                      onChange={(event) => onDraftChange({ ...draft, prayerNotes: event.target.value })}
+                    />
+                  </label>
+                </div>
+              </div>
+            )}
+
+            <button
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white"
+              onClick={onAddEntry}
+              type="button"
+            >
+              <Save size={16} />
+              Save Prayer Request
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[0.85fr_1.15fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold text-[var(--ink)]">Prayer Categories</h2>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2">
+            {categoryCounts.map((item) => (
+              <div key={`prayer-category-count-${item.category}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{item.category}</p>
+                <p className="mt-1 text-2xl font-semibold text-[var(--ink)]">{item.count}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold text-[var(--ink)]">Missionary Support</h2>
+          <div className="mt-4 space-y-2">
+            {missionaryEntries.length ? missionaryEntries.slice(0, 6).map((entry) => (
+              <PrayerMissionaryCard key={`missionary-card-${entry.id}`} entry={entry} />
+            )) : (
+              <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">
+                Add missionaries with field, birthday, anniversary, and prayer notes. This stays simple for prayer support, not church management.
+              </p>
+            )}
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-2">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold text-[var(--ink)]">Active Requests</h2>
+          <div className="mt-4 space-y-2">
+            {activeEntries.length ? activeEntries.map((entry) => (
+              <PrayerEntryCard
+                key={`active-prayer-${entry.id}`}
+                entry={entry}
+                onUpdateEntry={onUpdateEntry}
+                onDeleteEntry={onDeleteEntry}
+              />
+            )) : (
+              <EmptyState title="No active prayer requests" body="Answered and archived requests are kept separate so today's list stays focused." />
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold text-[var(--ink)]">Answered Prayers</h2>
+          <div className="mt-4 space-y-2">
+            {recentAnswers.length ? recentAnswers.map((entry) => (
+              <PrayerEntryCard
+                key={`answered-prayer-${entry.id}`}
+                entry={entry}
+                compact
+                onUpdateEntry={onUpdateEntry}
+                onDeleteEntry={onDeleteEntry}
+              />
+            )) : (
+              <p className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">
+                Mark requests answered to build a record of the Lord&apos;s help.
+              </p>
+            )}
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
+function PrayerEntryCard({
+  entry,
+  compact = false,
+  onUpdateEntry,
+  onDeleteEntry,
+}: {
+  entry: PrayerEntry;
+  compact?: boolean;
+  onUpdateEntry: (id: string, patch: Partial<PrayerEntry>) => void;
+  onDeleteEntry: (id: string) => void;
+}) {
+  const isAnswered = entry.answerStatus === "Answered";
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">{entry.name}</p>
+          <div className="mt-1 flex flex-wrap gap-1.5">
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{entry.category}</span>
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{entry.answerStatus}</span>
+          </div>
+        </div>
+        <p className="text-xs font-semibold text-[var(--muted)]">Added {formatShortDate(entry.dateAdded)}</p>
+      </div>
+      <p className={`${compact ? "line-clamp-2" : ""} mt-3 text-sm leading-6 text-[var(--scripture-ink)]`}>{entry.request}</p>
+      {!compact && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Notes: {prayerEntrySummary(entry)}</p>}
+      {!compact && entry.category === "Missionaries" && (
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <PlaceholderPill label="Field" value={entry.field || "Not set"} />
+          <PlaceholderPill label="Birthday" value={formatShortDate(entry.birthday)} />
+          <PlaceholderPill label="Anniversary" value={formatShortDate(entry.anniversary)} />
+        </div>
+      )}
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button
+          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+          onClick={() => onUpdateEntry(entry.id, { answerStatus: isAnswered ? "Active" : "Answered" })}
+          type="button"
+        >
+          <CheckCircle2 size={13} />
+          {isAnswered ? "Move Active" : "Mark Answered"}
+        </button>
+        <button
+          className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+          onClick={() => onUpdateEntry(entry.id, { answerStatus: entry.answerStatus === "Waiting" ? "Active" : "Waiting" })}
+          type="button"
+        >
+          {entry.answerStatus === "Waiting" ? "Resume" : "Waiting"}
+        </button>
+        <button
+          className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+          onClick={() => onUpdateEntry(entry.id, { answerStatus: "Archived" })}
+          type="button"
+        >
+          Archive
+        </button>
+        <button
+          className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-red-700"
+          onClick={() => onDeleteEntry(entry.id)}
+          type="button"
+        >
+          <Trash2 size={13} />
+          Delete
+        </button>
+      </div>
+      {isAnswered && entry.answeredAt && (
+        <p className="mt-2 text-xs font-semibold text-[var(--green)]">Answered {formatShortDate(entry.answeredAt)}</p>
+      )}
+    </article>
+  );
+}
+
+function PrayerMissionaryCard({ entry }: { entry: PrayerEntry }) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <p className="text-sm font-semibold text-[var(--green)]">{entry.missionaryName || entry.name}</p>
+          <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.field || "Field not set"}</p>
+        </div>
+        <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{entry.answerStatus}</span>
+      </div>
+      <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{entry.request}</p>
+      {entry.prayerNotes && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{entry.prayerNotes}</p>}
+      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <PlaceholderPill label="Birthday" value={formatShortDate(entry.birthday)} />
+        <PlaceholderPill label="Anniversary" value={formatShortDate(entry.anniversary)} />
+      </div>
     </article>
   );
 }
@@ -21240,12 +21835,13 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "search", label: "Search", icon: <Search size={20} /> },
     { id: "library", label: "Library", icon: <Library size={20} /> },
     { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
+    { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-md grid-cols-6 gap-1">
+      <div className="mx-auto grid max-w-md grid-cols-7 gap-1">
         {items.map((item) => (
           <button
             key={item.id}
