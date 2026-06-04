@@ -359,6 +359,16 @@ type ReadingPath = {
   repeatOptions: string[];
 };
 
+type BibleStudyCollection = {
+  id: string;
+  book: string;
+  title: string;
+  description: string;
+  featuredChapters: string[];
+  playlistTitle: string;
+  relatedResourceTerms: string[];
+};
+
 type StudyPlaylistTemplate = {
   id: string;
   title: string;
@@ -1529,6 +1539,45 @@ const READING_PATHS: ReadingPath[] = [
 ];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds"];
+
+const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
+  {
+    id: "romans-study-collection",
+    book: "Romans",
+    title: "Romans Study Collection",
+    description: "Doctrine, Gospel clarity, justification, Christian living, and teaching helps for Romans.",
+    featuredChapters: ["Romans 1", "Romans 3", "Romans 5", "Romans 8"],
+    playlistTitle: "Romans Gospel Study",
+    relatedResourceTerms: ["romans", "grace", "gospel", "doctrine", "sovereign grace", "fundamental doctrines"],
+  },
+  {
+    id: "john-study-collection",
+    book: "John",
+    title: "John Study Collection",
+    description: "Christ, belief, everlasting life, witness, and Gospel conversations in John's Gospel.",
+    featuredChapters: ["John 1", "John 3", "John 14", "John 20"],
+    playlistTitle: "John 3 New Birth",
+    relatedResourceTerms: ["john", "gospel", "new believer", "way to god", "wicket gate", "evangelism"],
+  },
+  {
+    id: "luke-study-collection",
+    book: "Luke",
+    title: "Luke Study Collection",
+    description: "The Saviour, compassion, discipleship, resurrection, and witness from Luke's orderly account.",
+    featuredChapters: ["Luke 2", "Luke 9", "Luke 19", "Luke 24"],
+    playlistTitle: "Luke Gospel Witness",
+    relatedResourceTerms: ["luke", "gospel", "witness", "evangelism", "discipleship", "service"],
+  },
+  {
+    id: "amos-study-collection",
+    book: "Amos",
+    title: "Amos Study Collection",
+    description: "Judgment, righteousness, nations, prophetic burden, and a focused Amos 1-4 teaching workflow.",
+    featuredChapters: ["Amos 1", "Amos 2", "Amos 3", "Amos 4"],
+    playlistTitle: "Amos 1-4 Teaching Prep",
+    relatedResourceTerms: ["amos", "minor prophets", "preaching", "teaching", "prophets", "expositions"],
+  },
+];
 
 const STUDY_PLAYLIST_TEMPLATES: StudyPlaylistTemplate[] = [
   {
@@ -7313,6 +7362,7 @@ export default function Home() {
                 onOpenCollection={openLibraryCollection}
                 onOpenReadingPath={openReadingPath}
                 onOpenBible={() => setTab("bible")}
+                onOpenBookIntroduction={openBookIntroduction}
                 onAddToListeningQueue={addLibraryToListeningQueue}
                 onAddToStudyPlaylist={addCurrentResourceToStudyPlaylist}
                 onRemoveFromListeningQueue={removeLibraryFromListeningQueue}
@@ -7406,6 +7456,8 @@ export default function Home() {
               <BookIntroScreen
                 intro={activeBookIntro}
                 versesByRef={versesByRef}
+                resources={libraryResources}
+                commentaryEntries={commentaryEntries}
                 onBack={() => setTab("bible")}
                 onOpenReference={openReference}
                 onOpenLibraryResource={(slug) => {
@@ -7953,12 +8005,16 @@ function bookIntroTimelineEntries(intro: BookIntroduction, places: StudyPlace[])
 function BookIntroScreen({
   intro,
   versesByRef,
+  resources,
+  commentaryEntries,
   onBack,
   onOpenReference,
   onOpenLibraryResource,
 }: {
   intro: BookIntroduction;
   versesByRef: Map<string, BibleVerse>;
+  resources: LibraryResource[];
+  commentaryEntries: CommentaryEntry[];
   onBack: () => void;
   onOpenReference: (targetRef: string) => void;
   onOpenLibraryResource: (slug: string) => void;
@@ -7966,6 +8022,7 @@ function BookIntroScreen({
   const keyVerse = versesByRef.get(intro.overview.keyVerse);
   const introPlaces = placeEntriesForNames(intro.keyPlaces);
   const introTimeline = bookIntroTimelineEntries(intro, introPlaces);
+  const studyCollection = bibleStudyCollectionForBook(intro.book);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -7982,6 +8039,18 @@ function BookIntroScreen({
         <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{intro.book}</h1>
         <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">{intro.overview.theme}</p>
       </section>
+
+      {studyCollection && (
+        <BibleStudyCollectionCard
+          collection={studyCollection}
+          intro={intro}
+          resources={resources}
+          commentaryEntries={commentaryEntries}
+          onOpenBookIntroduction={() => onOpenReference(intro.overview.keyVerse)}
+          onOpenReference={onOpenReference}
+          onOpenLibraryResource={onOpenLibraryResource}
+        />
+      )}
 
       <section className="grid gap-3 lg:grid-cols-[0.9fr_1.1fr]">
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -9049,6 +9118,7 @@ function BibleReader({
         chapterCrossReferences={chapterCrossReferences}
         chapterKeyVerses={chapterKeyVerses}
         chapterResourceRecommendations={chapterResourceRecommendations}
+        libraryResources={libraryResources}
         bookIntroduction={bookIntroduction}
         chapterNotes={chapterNotes}
         explorer={explorer}
@@ -9893,6 +9963,7 @@ function ChapterStudyWorkflow({
   chapterCrossReferences,
   chapterKeyVerses,
   chapterResourceRecommendations,
+  libraryResources,
   bookIntroduction,
   chapterNotes,
   explorer,
@@ -9921,6 +9992,7 @@ function ChapterStudyWorkflow({
   chapterCrossReferences: CrossReference[];
   chapterKeyVerses: string[];
   chapterResourceRecommendations: ChapterResourceRecommendation[];
+  libraryResources: LibraryResource[];
   bookIntroduction: BookIntroduction | null;
   chapterNotes: Array<[string, UserNote[]]>;
   explorer: WordExplorerResult;
@@ -10014,6 +10086,7 @@ function ChapterStudyWorkflow({
     versesByRef,
   }), [amosRangeCommentaryEntries, bookIntroduction, teacherNotesByChapter, versesByRef]);
   const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
+  const activeStudyCollection = bibleStudyCollectionForBook(selectedVerse.book);
 
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
     setTeacherNotesByChapter((current) => {
@@ -10128,6 +10201,21 @@ function ChapterStudyWorkflow({
           </button>
         </div>
       </div>
+
+      {activeStudyCollection && (
+        <div className="mt-4">
+          <BibleStudyCollectionCard
+            collection={activeStudyCollection}
+            intro={bookIntroduction}
+            resources={libraryResources}
+            commentaryEntries={allCommentaryEntries}
+            compact
+            onOpenBookIntroduction={onOpenBookIntroduction}
+            onOpenReference={onOpenReference}
+            onOpenLibraryResource={onOpenLibraryResource}
+          />
+        </div>
+      )}
 
       {isAmosTeachingPrep && (
         <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
@@ -11669,6 +11757,20 @@ function libraryCollectionById(id: string) {
   return LIBRARY_COLLECTIONS.find((collection) => collection.id === id)!;
 }
 
+function bibleStudyCollectionForBook(bookName: string) {
+  return BIBLE_STUDY_COLLECTIONS.find((collection) => collection.book === bookName) ?? null;
+}
+
+function resourcesForBibleStudyCollection(resources: LibraryResource[], collection: BibleStudyCollection) {
+  return resources
+    .filter((resource) => libraryResourceMatches(resource, collection.relatedResourceTerms))
+    .slice(0, 6);
+}
+
+function commentaryForBibleStudyCollection(entries: CommentaryEntry[], collection: BibleStudyCollection) {
+  return entries.filter((entry) => entry.book === collection.book);
+}
+
 function fileExtension(fileName: string) {
   const parts = fileName.toLowerCase().split(".");
   return parts.length > 1 ? parts.pop() ?? "" : "";
@@ -11883,6 +11985,7 @@ function LibraryScreen({
   onOpenCollection,
   onOpenReadingPath,
   onOpenBible,
+  onOpenBookIntroduction,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
   onRemoveFromListeningQueue,
@@ -11956,6 +12059,7 @@ function LibraryScreen({
   onOpenCollection: (collectionId: string) => void;
   onOpenReadingPath: (pathId: string) => void;
   onOpenBible: () => void;
+  onOpenBookIntroduction: (book: string) => void;
   onAddToListeningQueue: (slug: string) => void;
   onAddToStudyPlaylist: (slug: string) => void;
   onRemoveFromListeningQueue: (slug: string) => void;
@@ -12256,6 +12360,24 @@ function LibraryScreen({
             path={path}
             count={resourcesForReadingPath(resources, path).length}
             onOpen={() => onOpenReadingPath(path.id)}
+          />
+        ))}
+      </LibraryShelf>
+
+      <LibraryShelf title="Bible Study Collections" horizontal>
+        {BIBLE_STUDY_COLLECTIONS.map((collection) => (
+          <BibleStudyCollectionCard
+            key={`library-study-collection-${collection.id}`}
+            collection={collection}
+            intro={bookIntroductions.find((intro) => intro.book === collection.book) ?? null}
+            resources={resources}
+            commentaryEntries={commentaryEntries}
+            compact
+            onOpenBookIntroduction={onOpenBookIntroduction}
+            onOpenReference={() => {
+              onOpenBookIntroduction(collection.book);
+            }}
+            onOpenLibraryResource={onOpenDetail}
           />
         ))}
       </LibraryShelf>
@@ -14941,6 +15063,132 @@ function LibraryStat({ label, value }: { label: string; value: string }) {
     <div className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
       <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+    </div>
+  );
+}
+
+function BibleStudyCollectionCard({
+  collection,
+  intro,
+  resources,
+  commentaryEntries,
+  compact = false,
+  onOpenBookIntroduction,
+  onOpenReference,
+  onOpenLibraryResource,
+}: {
+  collection: BibleStudyCollection;
+  intro: BookIntroduction | null;
+  resources: LibraryResource[];
+  commentaryEntries: CommentaryEntry[];
+  compact?: boolean;
+  onOpenBookIntroduction: (book: string) => void;
+  onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource?: (slug: string) => void;
+}) {
+  const relatedResources = resourcesForBibleStudyCollection(resources, collection);
+  const collectionCommentary = commentaryForBibleStudyCollection(commentaryEntries, collection);
+  const people = intro?.keyPeople.slice(0, 4) ?? [];
+  const places = intro?.keyPlaces.slice(0, 4) ?? [];
+  const themes = intro?.keyThemes?.slice(0, 4) ?? [intro?.overview.theme].filter(Boolean) as string[];
+  const memoryVerses = intro?.memoryVerses.slice(0, 4) ?? [];
+
+  return (
+    <article className={`rounded-2xl border border-[var(--line)] bg-white shadow-sm ${compact ? "p-4" : "p-5"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible Study Collection</p>
+          <h3 className={`${compact ? "mt-1 text-lg" : "mt-2 text-xl"} font-semibold text-[var(--ink)]`}>{collection.title}</h3>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">{collection.description}</p>
+        </div>
+        <button
+          className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+          onClick={() => onOpenBookIntroduction(collection.book)}
+          type="button"
+        >
+          <BookOpen size={15} />
+          Open Study
+        </button>
+      </div>
+
+      <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+        <MiniStat label="Timeline" value={intro ? "Ready" : "Soon"} />
+        <MiniStat label="Places" value={String(places.length)} />
+        <MiniStat label="People" value={String(people.length)} />
+        <MiniStat label="Commentary" value={String(collectionCommentary.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <CollectionChipGroup title="Key People" values={people} empty="No reviewed people yet" />
+        <CollectionChipGroup title="Places" values={places} empty="No reviewed places yet" />
+        <CollectionChipGroup title="Key Themes" values={themes} empty="No reviewed themes yet" />
+        <CollectionChipGroup
+          title="Memory Verses"
+          values={memoryVerses}
+          empty="No memory verses yet"
+          onClick={onOpenReference}
+        />
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Study Playlist</p>
+          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{collection.playlistTitle}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Use the Study Playlist Builder to mix Bible, commentary, notes, and library reading.</p>
+        </div>
+        <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related Library Resources</p>
+          {relatedResources.length ? (
+            <div className="mt-2 space-y-1">
+              {relatedResources.slice(0, 3).map((resource) => (
+                <button
+                  key={`study-collection-resource-${collection.id}-${resource.slug}`}
+                  className="block w-full truncate rounded-lg bg-white px-2 py-1.5 text-left text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenLibraryResource?.(resource.slug)}
+                  type="button"
+                >
+                  {resource.title}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Ready for future linked resources.</p>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function CollectionChipGroup({
+  title,
+  values,
+  empty,
+  onClick,
+}: {
+  title: string;
+  values: string[];
+  empty: string;
+  onClick?: (value: string) => void;
+}) {
+  return (
+    <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</p>
+      <div className="mt-2 flex flex-wrap gap-1.5">
+        {values.length ? values.map((value) => (
+          <button
+            key={`${title}-${value}`}
+            className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]"
+            disabled={!onClick}
+            onClick={() => onClick?.(value)}
+            type="button"
+          >
+            {value}
+          </button>
+        )) : (
+          <span className="text-xs leading-5 text-[var(--muted)]">{empty}</span>
+        )}
+      </div>
     </div>
   );
 }
