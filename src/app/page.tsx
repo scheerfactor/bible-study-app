@@ -51,10 +51,15 @@ import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-ac
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
 import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
 import jfbReviewedPhase4Batch2Commentary from "../../data/imports/jfb-reviewed-phase-4-batch-2-commentary.json";
+import jfbReviewedCoverageSprintBatch3Commentary from "../../data/imports/jfb-reviewed-coverage-sprint-batch-3-commentary.json";
+import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
+import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
+import adamClarkeReviewedCoverageSprintGenesisCommentary from "../../data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
+import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
@@ -209,6 +214,7 @@ type CommentaryCoverage = {
   booksCovered: number;
   chaptersCovered: number;
   missingChapters: number;
+  coveragePercentage: number;
   duplicateEntries: number;
   missingBooks: string[];
   bookCoverage: CommentaryCoverageBook[];
@@ -229,6 +235,17 @@ type CommentaryGuideProfile = {
   sampleQuote: string;
   bestFor: string[];
   priority: number;
+};
+
+type StrongMvpEntry = {
+  strongsNumber: string;
+  originalWord: string;
+  displayWord: string;
+  plainMeaning: string;
+  websterWord: string;
+  firstOccurrence: string;
+  keyVerses: string[];
+  note: string;
 };
 
 type CommentaryRecommendation = {
@@ -4356,6 +4373,79 @@ const dictionaryAliases: Record<string, string> = {
   worlds: "world",
 };
 
+const strongsMvpEntries: Record<string, StrongMvpEntry> = {
+  believe: {
+    strongsNumber: "G4100",
+    originalWord: "pisteuo",
+    displayWord: "believe",
+    plainMeaning: "To believe, trust, rely on, or commit unto.",
+    websterWord: "believe",
+    firstOccurrence: "Matthew 8:13",
+    keyVerses: ["John 3:16", "John 20:31", "Romans 10:9", "1 John 5:13"],
+    note: "Prototype mapping for common KJV forms such as believe, believed, believeth, and believing.",
+  },
+  love: {
+    strongsNumber: "G25",
+    originalWord: "agapao",
+    displayWord: "love",
+    plainMeaning: "To love, value, or show benevolent affection.",
+    websterWord: "love",
+    firstOccurrence: "Matthew 5:43",
+    keyVerses: ["John 3:16", "Romans 5:8", "1 John 4:9", "1 John 4:19"],
+    note: "Prototype mapping for love, loved, and loveth in key New Testament study passages.",
+  },
+  life: {
+    strongsNumber: "G2222",
+    originalWord: "zoe",
+    displayWord: "life",
+    plainMeaning: "Life; especially spiritual and eternal life in the New Testament.",
+    websterWord: "life",
+    firstOccurrence: "Matthew 7:14",
+    keyVerses: ["John 1:4", "John 3:16", "John 10:10", "Romans 6:23"],
+    note: "Prototype entry focused on everlasting life passages.",
+  },
+  grace: {
+    strongsNumber: "G5485",
+    originalWord: "charis",
+    displayWord: "grace",
+    plainMeaning: "Favor, kindness, or gracious help; often God's unmerited favor.",
+    websterWord: "grace",
+    firstOccurrence: "Luke 2:40",
+    keyVerses: ["John 1:17", "Romans 3:24", "Ephesians 2:8", "Titus 2:11"],
+    note: "Prototype entry for Gospel and Christian-life study.",
+  },
+  faith: {
+    strongsNumber: "G4102",
+    originalWord: "pistis",
+    displayWord: "faith",
+    plainMeaning: "Faith, belief, trust, or confidence.",
+    websterWord: "faith",
+    firstOccurrence: "Matthew 8:10",
+    keyVerses: ["Romans 1:17", "Romans 5:1", "Ephesians 2:8", "Hebrews 11:1"],
+    note: "Prototype entry connected to Webster lookup and occurrence study.",
+  },
+  death: {
+    strongsNumber: "G2288",
+    originalWord: "thanatos",
+    displayWord: "death",
+    plainMeaning: "Death; separation from life, and in Scripture often the consequence of sin.",
+    websterWord: "death",
+    firstOccurrence: "Matthew 4:16",
+    keyVerses: ["Romans 5:12", "Romans 6:23", "1 Corinthians 15:26", "Revelation 21:4"],
+    note: "Prototype entry for Romans and Gospel contrast studies.",
+  },
+  world: {
+    strongsNumber: "G2889",
+    originalWord: "kosmos",
+    displayWord: "world",
+    plainMeaning: "The world, its order, or mankind depending on context.",
+    websterWord: "world",
+    firstOccurrence: "Matthew 4:8",
+    keyVerses: ["John 1:10", "John 3:16", "John 17:9", "1 John 2:15"],
+    note: "Prototype entry; final import must handle context carefully.",
+  },
+};
+
 const studyStopWords = new Set([
   "about",
   "after",
@@ -4454,10 +4544,15 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
   ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
   ...(jfbReviewedPhase4Batch2Commentary as CommentaryEntry[]),
+  ...(jfbReviewedCoverageSprintBatch3Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
+  ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
+  ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
@@ -10907,6 +11002,34 @@ function commentaryAgreementSummary(entries: CommentaryEntry[]) {
   return `Available voices emphasize ${labels.join(" and ").toLowerCase()}. Compare them after reading the KJV text; do not let commentary replace the passage.`;
 }
 
+function commentaryComparisonInsights(entries: CommentaryEntry[]) {
+  const profiles = commentaryProfilesForEntries(entries);
+  const labels = Array.from(new Set(entries.map(commentaryStudyLabel)));
+  const devotionalAuthors = profiles.filter((profile) => profile.bestFor.includes("Devotions")).map((profile) => profile.author);
+  const teachingAuthors = profiles.filter((profile) => profile.bestFor.includes("Teaching")).map((profile) => profile.author);
+  const historicalAuthors = profiles.filter((profile) => profile.bestFor.includes("Historical background")).map((profile) => profile.author);
+  const wordStudyAuthors = profiles.filter((profile) => profile.bestFor.includes("Word studies")).map((profile) => profile.author);
+
+  return {
+    agreement: entries.length > 1
+      ? "Use these voices to confirm the chapter flow, main doctrine, and practical application after reading the KJV text."
+      : "Add another reviewed commentary voice to compare agreement points.",
+    distinct: labels.length
+      ? labels.join("; ")
+      : "No distinct commentary emphasis is available yet.",
+    teaching: teachingAuthors.length
+      ? `${teachingAuthors.join(", ")} ${teachingAuthors.length === 1 ? "is" : "are"} most useful for class preparation and explanation.`
+      : "No teaching-focused commentary voice is available yet.",
+    devotional: devotionalAuthors.length
+      ? `${devotionalAuthors.join(", ")} ${devotionalAuthors.length === 1 ? "is" : "are"} strongest for devotional application.`
+      : "No devotional-focused commentary voice is available yet.",
+    study: [
+      historicalAuthors.length ? `Historical background: ${historicalAuthors.join(", ")}` : "",
+      wordStudyAuthors.length ? `Word studies: ${wordStudyAuthors.join(", ")}` : "",
+    ].filter(Boolean).join(" · "),
+  };
+}
+
 function commentaryVolumeLabels(entries: CommentaryEntry[]) {
   return Array.from(new Set(entries.map((entry) => `${entry.resource_title}: ${entry.reference ?? `${entry.book} ${entry.chapter}`}`))).sort();
 }
@@ -11020,6 +11143,7 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
     booksCovered: bookCoverage.length,
     chaptersCovered,
     missingChapters: Math.max(0, totalChapters - chaptersCovered),
+    coveragePercentage: totalChapters ? Math.round((chaptersCovered / totalChapters) * 1000) / 10 : 0,
     duplicateEntries: duplicateKeys.size,
     missingBooks,
     bookCoverage,
@@ -12337,6 +12461,7 @@ function ChapterStudyWorkflow({
           <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
             <CommentaryChapterSummaryCard entries={chapterCommentaryEntries} compact onListen={onListenCommentary} />
             <CommentaryGuideCard entries={chapterCommentaryEntries} compact />
+            <CommentaryComparisonCard entries={chapterCommentaryEntries} compact />
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
@@ -15206,7 +15331,7 @@ function CommentaryCoverageDashboard({
         <LibraryStat label="Books covered" value={`${coverage.booksCovered}/${coverage.totalBooks}`} />
         <LibraryStat label="Chapters covered" value={String(coverage.chaptersCovered)} />
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
-        <LibraryStat label="Duplicates" value={String(coverage.duplicateEntries)} />
+        <LibraryStat label="Coverage" value={`${coverage.coveragePercentage}%`} />
         <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
       </div>
 
@@ -15215,6 +15340,13 @@ function CommentaryCoverageDashboard({
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Public commentary</p>
           <p className="mt-2 text-3xl font-semibold text-[var(--green)]">{coverage.totalEntries}</p>
           <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Verified entries visible in Study, Full Study, Teaching Mode, and exports.</p>
+        </article>
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Whole-Bible coverage</p>
+          <p className="mt-2 text-3xl font-semibold text-[var(--green)]">{coverage.coveragePercentage}%</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+            {coverage.chaptersCovered} of {coverage.totalChapters} Bible chapters have at least one reviewed commentary entry.
+          </p>
         </article>
         {coverage.stagingSummaries.map((summary) => (
           <article key={`commentary-staging-${summary.author}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -17189,6 +17321,7 @@ function FullStudyScreen({
           <div className="space-y-3">
             <CommentaryChapterSummaryCard entries={commentaryEntries} onListen={onListenCommentary} />
             <CommentaryGuideCard entries={commentaryEntries} />
+            <CommentaryComparisonCard entries={commentaryEntries} />
             <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--green)]">Commentary comparison</p>
@@ -17468,6 +17601,43 @@ function CommentaryGuideCard({ entries, compact = false }: { entries: Commentary
         </div>
       )}
     </article>
+  );
+}
+
+function CommentaryComparisonCard({ entries, compact = false }: { entries: CommentaryEntry[]; compact?: boolean }) {
+  if (!entries.length) return null;
+  const insights = commentaryComparisonInsights(entries);
+
+  return (
+    <article className={`rounded-2xl border border-[var(--line)] bg-white ${compact ? "p-3" : "p-4"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
+          <h3 className={`${compact ? "mt-1 text-sm" : "mt-2 text-base"} font-semibold text-[var(--ink)]`}>Compare without clutter</h3>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+          {entries.length} reviewed
+        </span>
+      </div>
+      <div className="mt-3 grid gap-2 md:grid-cols-2">
+        <ComparisonInsight label="Agreement points" body={insights.agreement} />
+        <ComparisonInsight label="Distinct insights" body={insights.distinct} />
+        <ComparisonInsight label="Teaching value" body={insights.teaching} />
+        <ComparisonInsight label="Devotional value" body={insights.devotional} />
+      </div>
+      {insights.study ? (
+        <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{insights.study}</p>
+      ) : null}
+    </article>
+  );
+}
+
+function ComparisonInsight({ label, body }: { label: string; body: string }) {
+  return (
+    <div className="rounded-xl bg-[var(--paper)] px-3 py-2">
+      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      <p className="mt-1 text-xs leading-5 text-[var(--ink)]">{body}</p>
+    </div>
   );
 }
 
@@ -18170,6 +18340,7 @@ function StudyDrawer({
             <div className="space-y-3">
               <CommentaryChapterSummaryCard entries={commentaryEntries} compact />
               <CommentaryGuideCard entries={commentaryEntries} compact />
+              <CommentaryComparisonCard entries={commentaryEntries} compact />
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
                 <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
@@ -18288,6 +18459,7 @@ function OccurrenceExplorerPanel({
 }) {
   const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
   const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
+  const strongsEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
 
   return (
     <div className="space-y-3">
@@ -18316,6 +18488,62 @@ function OccurrenceExplorerPanel({
           <MiniStat label="Book" value={String(explorer.bookOccurrences.length)} />
           <MiniStat label="Bible" value={String(explorer.bibleOccurrences.length)} />
         </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Strong&apos;s MVP Prototype</p>
+            <h4 className="mt-2 text-lg font-semibold text-[var(--ink)]">
+              {strongsEntry ? `${strongsEntry.strongsNumber} · ${strongsEntry.originalWord}` : "No Strong's starter card yet"}
+            </h4>
+          </div>
+          {strongsEntry && (
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => onLookupWord(strongsEntry.websterWord)}
+              type="button"
+            >
+              Webster: {strongsEntry.websterWord}
+            </button>
+          )}
+        </div>
+        {strongsEntry ? (
+          <>
+            <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{strongsEntry.plainMeaning}</p>
+            <div className="mt-3 grid gap-2 md:grid-cols-2">
+              <button
+                className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left"
+                onClick={() => onOpenReference(strongsEntry.firstOccurrence)}
+                type="button"
+              >
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First occurrence</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{strongsEntry.firstOccurrence}</p>
+              </button>
+              <div className="rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Display rule</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Plain-English meaning first; no advanced grammar in this MVP.</p>
+              </div>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {strongsEntry.keyVerses.map((ref) => (
+                <button
+                  key={`strongs-key-${strongsEntry.strongsNumber}-${ref}`}
+                  className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenReference(ref)}
+                  type="button"
+                >
+                  {ref}
+                </button>
+              ))}
+            </div>
+            <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{strongsEntry.note}</p>
+          </>
+        ) : (
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+            Strong&apos;s planning is ready, but this word is not in the starter prototype yet. Webster and occurrence study still work here.
+          </p>
+        )}
       </section>
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4">

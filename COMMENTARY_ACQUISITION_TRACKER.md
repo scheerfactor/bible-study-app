@@ -14,13 +14,13 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 
 | Author | Source | Rights status | Chapters imported | Chapters remaining | Review status |
 | --- | --- | --- | --- | --- | --- |
-| Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 357 public verified chapters: Genesis; Exodus; Psalms; John; Romans; Luke; Amos; Revelation; Acts 1-25. Full 1,189-chapter set is staged in Needs Review. | Review remaining staged entries by book/chapter before promotion. | Full parser staged; Phase 4 Acts batch promoted |
+| Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 382 public verified chapters: Genesis; Exodus; Psalms; John; Romans; Luke; Amos; Revelation; Acts 1-25; 1 Corinthians; 2 Corinthians 1-9. Full 1,189-chapter set is staged in Needs Review. | Review remaining staged entries by book/chapter before promotion. | Full parser staged; coverage sprint Corinthians batch promoted |
 | H. A. Ironside | https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/ and related source paths | Mixed. Romans 1928 source is public domain in the U.S.; John/Luke samples are curated summaries until renewal and edition audit are complete. | 3 chapters: John 3; Romans 5; Luke 24 | Genesis 1 and Exodus 3 remain blocked until exact source and rights verification. | Verified samples only |
-| Albert Barnes | https://www.studylight.org/commentaries/eng/bnb/ | StudyLight Barnes chapter pages state: "These files are public domain." Barnes died in 1870; source pages cite the work as 1870. | 219 public verified chapters: John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Phase 3 reviewed batch promoted |
-| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 56 public verified chapters: John 1-5; Romans 1-8; Amos 1-9; Luke 24; Psalms 1-5; Revelation 1-3; Genesis 1-25. Full 1,189-chapter set is staged in Needs Review. | Continue reviewed batches of 25-50 chapters. | Full pipeline staged; Phase 4 Genesis batch promoted |
-| John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 60 public verified New Testament chapters: John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Phase 3 reviewed batch promoted |
+| Albert Barnes | https://www.studylight.org/commentaries/eng/bnb/ | StudyLight Barnes chapter pages state: "These files are public domain." Barnes died in 1870; source pages cite the work as 1870. | 244 public verified chapters: Genesis 1-25; John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Coverage sprint Genesis batch promoted |
+| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 81 public verified chapters: Genesis 1-25; Exodus 1-25; John 1-5; Romans 1-8; Amos 1-9; Luke 24; Psalms 1-5; Revelation 1-3. Full 1,189-chapter set is staged in Needs Review. | Continue reviewed batches of 25-50 chapters. | Full pipeline staged; coverage sprint Exodus batch promoted |
+| John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 86 public verified New Testament chapters: Acts 1-25; John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Coverage sprint Acts batch promoted |
 | John Gill | https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ | Existing small reviewed samples remain. A StudyLight Gill path was reviewed and found to use a modernized Larry Pierce edition with rights reserved, so it is not safe for expansion. | 7 reviewed sample entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Find a stable original public-domain Gill source before any larger import. | Samples only; expansion blocked pending source review |
-| Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 219 public verified chapters: John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Phase 3 reviewed batch promoted |
+| Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 244 public verified chapters: Genesis 1-25; John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Coverage sprint Genesis batch promoted |
 
 ## Tier 2 Acquisition Queue
 
@@ -46,6 +46,16 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 - Matthew Henry Phase 4 batch 3: Acts 1-25 promoted from staged Needs Review to public verified entries after duplicate and reference checks.
 - Barnes, Clarke, and Wesley remain available through the Phase 3 reviewed public-domain batches. No new Gill expansion was added because the cleaner original source is still unresolved.
 
+## Commentary Coverage Sprint
+
+- Matthew Henry coverage sprint batch 4: 1 Corinthians 1-16 and 2 Corinthians 1-9 promoted from staged Needs Review to public verified entries.
+- JFB coverage sprint batch 3: Exodus 1-25 promoted from staged Needs Review to public verified entries.
+- Barnes coverage sprint: Genesis 1-25 imported from reviewed StudyLight public-domain chapter pages.
+- Adam Clarke coverage sprint: Genesis 1-25 imported from reviewed StudyLight public-domain chapter pages.
+- Wesley coverage sprint: Acts 1-25 imported from CCEL public-domain XML.
+- Public commentary now totals 1,047 entries, covering 382 unique Bible chapters across 11 books.
+- Gill remains blocked for expansion until a cleaner original public-domain source is verified.
+
 ## Full Pipeline Files
 
 - Pipeline guide: `COMMENTARY_IMPORT_PIPELINE.md`
@@ -54,14 +64,19 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 - JFB coverage report: `data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json`
 - JFB public reviewed batch 1: `data/imports/jfb-reviewed-batch-1-commentary.json`
 - JFB public reviewed phase 4 batch 2: `data/imports/jfb-reviewed-phase-4-batch-2-commentary.json`
+- JFB public reviewed coverage sprint batch 3: `data/imports/jfb-reviewed-coverage-sprint-batch-3-commentary.json`
 - Matthew Henry source manifest: `data/commentary/matthew-henry/source-manifest.json`
 - Matthew Henry staging file: `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json`
 - Matthew Henry coverage report: `data/commentary/reports/matthew-henry-complete-commentary-coverage.json`
 - Matthew Henry public reviewed batch 2: `data/imports/matthew-henry-reviewed-batch-2-commentary.json`
 - Matthew Henry public reviewed phase 4 batch 3: `data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json`
+- Matthew Henry public reviewed coverage sprint batch 4: `data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json`
 - Barnes public reviewed phase 3 batch: `data/imports/barnes-reviewed-phase-3-commentary.json`
+- Barnes public reviewed coverage sprint Genesis batch: `data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json`
 - Adam Clarke public reviewed phase 3 batch: `data/imports/adam-clarke-reviewed-phase-3-commentary.json`
+- Adam Clarke public reviewed coverage sprint Genesis batch: `data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json`
 - Wesley public reviewed phase 3 batch: `data/imports/wesley-reviewed-phase-3-commentary.json`
+- Wesley public reviewed coverage sprint Acts batch: `data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json`
 
 The JFB and Matthew Henry staging files are not imported into the public app. They are review queues. Public display still comes only from reviewed imports in `data/imports/`.
 
