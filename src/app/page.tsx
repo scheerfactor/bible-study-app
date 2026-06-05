@@ -95,8 +95,12 @@ type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "pre
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
 type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Closing / Invitation";
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
-type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
+type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment";
+type SermonSlideFontScale = "Compact" | "Normal" | "Large";
+type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
+type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 
 type BibleVerse = {
   ref: string;
@@ -278,7 +282,14 @@ type SermonSlide = {
   speakerNotes: string;
   backgroundStyle: SermonSlideBackgroundStyle;
   imageTheme: string;
+  imageSlot: SermonSlideImageSlotId;
   layout: SermonSlideLayout;
+  fontScale: SermonSlideFontScale;
+  textPlacement: SermonSlideTextPlacement;
+  accentStyle: SermonSlideAccentStyle;
+  showTypeLabel: boolean;
+  showImageLabel: boolean;
+  showFooterBranding: boolean;
 };
 
 type SermonLibraryItem = {
@@ -1353,6 +1364,79 @@ const SERMON_SECTION_FIELDS: SermonSectionKey[] = ["outline", "introduction", "p
 const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"];
 const SERMON_SLIDE_LAYOUTS: SermonSlideLayout[] = ["Centered", "Scripture Focus", "Two Column", "Teaching Point", "Image Left", "Minimal"];
 const SERMON_SLIDE_BACKGROUND_STYLES: SermonSlideBackgroundStyle[] = ["Theme", "Soft Gradient", "Paper", "Dark", "Light"];
+const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
+  label: string;
+  description: string;
+  background: string;
+  motif: string;
+}> = {
+  none: {
+    label: "No image / gradient only",
+    description: "Use the theme gradient with no image cue.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02))",
+    motif: "Gradient",
+  },
+  cross: {
+    label: "Cross",
+    description: "Gospel, grace, sacrifice, and salvation.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.18), transparent), radial-gradient(circle at 35% 30%, rgba(255,255,255,0.28), transparent 28%)",
+    motif: "Cross",
+  },
+  "open-bible": {
+    label: "Open Bible",
+    description: "Bible reading, teaching, and exposition.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.22), transparent), radial-gradient(ellipse at 50% 72%, rgba(245,230,196,0.38), transparent 36%)",
+    motif: "Open Bible",
+  },
+  sunrise: {
+    label: "Sunrise",
+    description: "Hope, joy, resurrection, and new life.",
+    background: "radial-gradient(circle at 50% 88%, rgba(255,211,117,0.62), transparent 24%), linear-gradient(135deg, rgba(255,255,255,0.18), transparent)",
+    motif: "Sunrise",
+  },
+  "empty-tomb": {
+    label: "Empty Tomb",
+    description: "Resurrection and Christ's victory.",
+    background: "radial-gradient(ellipse at 55% 68%, rgba(255,255,255,0.40), transparent 28%), linear-gradient(135deg, rgba(255,218,139,0.22), transparent)",
+    motif: "Empty Tomb",
+  },
+  "prayer-hands": {
+    label: "Prayer Hands",
+    description: "Prayer, intercession, and worship.",
+    background: "radial-gradient(circle at 70% 38%, rgba(255,255,255,0.24), transparent 26%), linear-gradient(145deg, rgba(207,221,224,0.22), transparent)",
+    motif: "Prayer",
+  },
+  "world-map": {
+    label: "World Map",
+    description: "Missions, nations, and evangelism.",
+    background: "radial-gradient(circle at 30% 35%, rgba(255,255,255,0.20), transparent 20%), radial-gradient(circle at 68% 55%, rgba(255,255,255,0.16), transparent 24%)",
+    motif: "Map",
+  },
+  "field-harvest": {
+    label: "Field / Harvest",
+    description: "Missions, sowing, harvest, and service.",
+    background: "linear-gradient(160deg, rgba(231,197,113,0.32), transparent 45%), radial-gradient(ellipse at 55% 82%, rgba(255,255,255,0.18), transparent 35%)",
+    motif: "Harvest",
+  },
+  "storm-judgment": {
+    label: "Storm / Judgment",
+    description: "Judgment, warning, and solemn passages.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.10), transparent), radial-gradient(circle at 25% 25%, rgba(180,190,202,0.22), transparent 24%)",
+    motif: "Storm",
+  },
+  "light-window": {
+    label: "Light / Window",
+    description: "Grace, guidance, truth, and hope.",
+    background: "linear-gradient(115deg, rgba(255,255,255,0.42), transparent 35%), radial-gradient(circle at 20% 22%, rgba(255,245,197,0.36), transparent 28%)",
+    motif: "Light",
+  },
+  parchment: {
+    label: "Parchment / Simple Texture",
+    description: "Quiet teaching background with no visual clutter.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.32), transparent), repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 12px)",
+    motif: "Parchment",
+  },
+};
 
 const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
   name: string;
@@ -1361,87 +1445,142 @@ const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
   foreground: string;
   muted: string;
   accent: string;
+  fontScale: SermonSlideFontScale;
+  textPlacement: SermonSlideTextPlacement;
+  accentStyle: SermonSlideAccentStyle;
+  imageSlot: SermonSlideImageSlotId;
 }> = {
   "classic-pulpit": {
     name: "Classic Pulpit",
     description: "Deep green, warm paper, and simple pulpit-style contrast.",
     background: "linear-gradient(135deg, #203a31 0%, #2f604d 55%, #efe5cd 140%)",
-    foreground: "#fffaf0",
-    muted: "#e7dac0",
-    accent: "#d9b469",
-  },
+	    foreground: "#fffaf0",
+	    muted: "#e7dac0",
+	    accent: "#d9b469",
+	    fontScale: "Normal",
+	    textPlacement: "Center",
+	    accentStyle: "Line",
+	    imageSlot: "open-bible",
+	  },
   "warm-bible-study": {
     name: "Warm Bible Study",
     description: "Soft paper tones for teaching, Sunday school, and Bible class.",
     background: "linear-gradient(135deg, #f6efe2 0%, #fffdf8 62%, #dfe8dc 125%)",
-    foreground: "#24342c",
-    muted: "#667267",
-    accent: "#2f6f55",
-  },
-  missions: {
-    name: "Missions",
-    description: "Field, map, and gospel outreach tone.",
+	    foreground: "#24342c",
+	    muted: "#667267",
+	    accent: "#2f6f55",
+	    fontScale: "Normal",
+	    textPlacement: "Left",
+	    accentStyle: "Panel",
+	    imageSlot: "open-bible",
+	  },
+	  "simple-scripture": {
+	    name: "Simple Scripture",
+	    description: "Minimal, readable Scripture slides with almost no decoration.",
+	    background: "linear-gradient(135deg, #fffdf8 0%, #f7f1e8 70%, #e4e0d6 130%)",
+	    foreground: "#1f241f",
+	    muted: "#606a60",
+	    accent: "#2f6f55",
+	    fontScale: "Large",
+	    textPlacement: "Center",
+	    accentStyle: "None",
+	    imageSlot: "none",
+	  },
+	  missions: {
+	    name: "Missions Map",
+	    description: "Field, map, and gospel outreach tone.",
     background: "linear-gradient(135deg, #21332d 0%, #496f5d 55%, #d7c08c 125%)",
-    foreground: "#fffaf0",
-    muted: "#e5dcc9",
-    accent: "#f0c86a",
-  },
+	    foreground: "#fffaf0",
+	    muted: "#e5dcc9",
+	    accent: "#f0c86a",
+	    fontScale: "Normal",
+	    textPlacement: "Left",
+	    accentStyle: "Badge",
+	    imageSlot: "world-map",
+	  },
   revival: {
     name: "Revival",
     description: "Warm urgency without visual noise.",
     background: "linear-gradient(135deg, #3b221e 0%, #7a4635 55%, #e0b15f 125%)",
-    foreground: "#fff8ed",
-    muted: "#f2dcc1",
-    accent: "#ffd078",
-  },
-  prayer: {
-    name: "Prayer",
+	    foreground: "#fff8ed",
+	    muted: "#f2dcc1",
+	    accent: "#ffd078",
+	    fontScale: "Large",
+	    textPlacement: "Center",
+	    accentStyle: "Line",
+	    imageSlot: "light-window",
+	  },
+	  prayer: {
+	    name: "Prayer Night",
     description: "Quiet, reflective, and uncluttered.",
     background: "linear-gradient(135deg, #273344 0%, #53677a 58%, #ece5d6 130%)",
-    foreground: "#fffaf0",
-    muted: "#dce5e8",
-    accent: "#c7d5d9",
-  },
+	    foreground: "#fffaf0",
+	    muted: "#dce5e8",
+	    accent: "#c7d5d9",
+	    fontScale: "Normal",
+	    textPlacement: "Bottom",
+	    accentStyle: "Panel",
+	    imageSlot: "prayer-hands",
+	  },
   salvation: {
     name: "Salvation",
     description: "Clear gospel warmth with open Bible imagery.",
     background: "linear-gradient(135deg, #184638 0%, #2f7b5f 58%, #f2d37e 135%)",
-    foreground: "#fffaf0",
-    muted: "#dcebdc",
-    accent: "#f8d36b",
-  },
+	    foreground: "#fffaf0",
+	    muted: "#dcebdc",
+	    accent: "#f8d36b",
+	    fontScale: "Large",
+	    textPlacement: "Center",
+	    accentStyle: "Badge",
+	    imageSlot: "cross",
+	  },
   judgment: {
     name: "Judgment",
     description: "Serious courtroom/storm tone for sober passages.",
     background: "linear-gradient(135deg, #191c22 0%, #3f4651 58%, #8b7454 135%)",
-    foreground: "#fffaf0",
-    muted: "#d8d8d2",
-    accent: "#d8b873",
-  },
+	    foreground: "#fffaf0",
+	    muted: "#d8d8d2",
+	    accent: "#d8b873",
+	    fontScale: "Normal",
+	    textPlacement: "Left",
+	    accentStyle: "Line",
+	    imageSlot: "storm-judgment",
+	  },
   grace: {
     name: "Grace",
     description: "Bright, gentle, and hopeful.",
     background: "linear-gradient(135deg, #eef4e7 0%, #fffdf8 55%, #cddfcb 125%)",
-    foreground: "#22372e",
-    muted: "#667266",
-    accent: "#3f7b5d",
-  },
+	    foreground: "#22372e",
+	    muted: "#667266",
+	    accent: "#3f7b5d",
+	    fontScale: "Large",
+	    textPlacement: "Center",
+	    accentStyle: "Panel",
+	    imageSlot: "light-window",
+	  },
   resurrection: {
     name: "Resurrection",
     description: "Sunrise, empty tomb, and light.",
     background: "linear-gradient(135deg, #f8d889 0%, #fff8df 48%, #9dbcae 125%)",
-    foreground: "#26372d",
-    muted: "#5d675e",
-    accent: "#b46e2b",
-  },
+	    foreground: "#26372d",
+	    muted: "#5d675e",
+	    accent: "#b46e2b",
+	    fontScale: "Large",
+	    textPlacement: "Center",
+	    accentStyle: "Badge",
+	    imageSlot: "empty-tomb",
+	  },
 };
 
 const SERMON_IMAGE_THEME_SUGGESTIONS = [
-  { terms: ["love", "believe", "salvation", "grace", "gospel"], label: "cross / open Bible / warm light" },
-  { terms: ["prayer", "pray", "intercession"], label: "kneeling / quiet room / hands / open Bible" },
-  { terms: ["missions", "missionary", "world", "nations"], label: "map / field / globe / open Bible" },
-  { terms: ["judgment", "wrath", "condemned", "sin"], label: "courtroom / scales / storm / sober light" },
-  { terms: ["resurrection", "risen", "life", "empty tomb"], label: "sunrise / empty tomb / light" },
+  { terms: ["love", "believe", "salvation", "gospel", "cross"], slot: "cross" },
+  { terms: ["grace", "truth", "light"], slot: "light-window" },
+  { terms: ["prayer", "pray", "intercession"], slot: "prayer-hands" },
+  { terms: ["missions", "missionary", "world", "nations"], slot: "world-map" },
+  { terms: ["harvest", "field", "sow"], slot: "field-harvest" },
+  { terms: ["judgment", "wrath", "condemned", "sin"], slot: "storm-judgment" },
+  { terms: ["resurrection", "risen", "life", "empty tomb"], slot: "empty-tomb" },
+  { terms: ["scripture", "word", "bible"], slot: "open-bible" },
 ];
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
@@ -7081,6 +7220,10 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
   const type = SERMON_SLIDE_TYPES.includes(slide.type as SermonSlideType) ? slide.type as SermonSlideType : "Main Point";
   const layout = SERMON_SLIDE_LAYOUTS.includes(slide.layout as SermonSlideLayout) ? slide.layout as SermonSlideLayout : "Centered";
   const backgroundStyle = SERMON_SLIDE_BACKGROUND_STYLES.includes(slide.backgroundStyle as SermonSlideBackgroundStyle) ? slide.backgroundStyle as SermonSlideBackgroundStyle : "Theme";
+  const imageSlot = typeof slide.imageSlot === "string" && slide.imageSlot in SERMON_SLIDE_IMAGE_SLOTS ? slide.imageSlot as SermonSlideImageSlotId : "open-bible";
+  const fontScale = ["Compact", "Normal", "Large"].includes(slide.fontScale ?? "") ? slide.fontScale as SermonSlideFontScale : "Normal";
+  const textPlacement = ["Center", "Left", "Bottom"].includes(slide.textPlacement ?? "") ? slide.textPlacement as SermonSlideTextPlacement : "Center";
+  const accentStyle = ["None", "Line", "Badge", "Panel"].includes(slide.accentStyle ?? "") ? slide.accentStyle as SermonSlideAccentStyle : "Line";
   return {
     id: slide.id || makeId("slide"),
     type,
@@ -7088,11 +7231,18 @@ function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): Sermo
     subtitle: slide.subtitle ?? "",
     body: slide.body ?? "",
     bibleText: slide.bibleText ?? "",
-    speakerNotes: slide.speakerNotes ?? "",
-    backgroundStyle,
-    imageTheme: slide.imageTheme ?? "open Bible / simple church background",
-    layout,
-  };
+	    speakerNotes: slide.speakerNotes ?? "",
+	    backgroundStyle,
+	    imageTheme: slide.imageTheme ?? SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label,
+	    imageSlot,
+	    layout,
+	    fontScale,
+	    textPlacement,
+	    accentStyle,
+	    showTypeLabel: slide.showTypeLabel ?? false,
+	    showImageLabel: slide.showImageLabel ?? false,
+	    showFooterBranding: slide.showFooterBranding ?? false,
+	  };
 }
 
 function sermonSlideThemeId(value: unknown): SermonSlideThemeId {
@@ -7213,9 +7363,42 @@ function sermonContentLines(text: string, limit = 8) {
     .slice(0, limit);
 }
 
-function suggestedSermonImageTheme(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">) {
+function suggestedSermonImageSlot(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">): SermonSlideImageSlotId {
   const haystack = [entry.title, entry.passage, entry.theme, entry.points, entry.applications].join(" ").toLowerCase();
-  return SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.label ?? "open Bible / pulpit / simple warm light";
+  return (SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.slot ?? "open-bible") as SermonSlideImageSlotId;
+}
+
+function suggestedSermonImageTheme(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">) {
+  return SERMON_SLIDE_IMAGE_SLOTS[suggestedSermonImageSlot(entry)].label;
+}
+
+function slidePresetPatch(themeId: SermonSlideThemeId): Partial<SermonSlide> {
+  const theme = SERMON_SLIDE_THEMES[themeId] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
+  return {
+    imageSlot: theme.imageSlot,
+    imageTheme: SERMON_SLIDE_IMAGE_SLOTS[theme.imageSlot].label,
+    fontScale: theme.fontScale,
+    textPlacement: theme.textPlacement,
+    accentStyle: theme.accentStyle,
+    backgroundStyle: "Theme",
+  };
+}
+
+function chunkScriptureText(text: string, maxLength = 460) {
+  const lines = text.split(/\n+/).map((line) => line.trim()).filter(Boolean);
+  const chunks: string[] = [];
+  let current = "";
+  lines.forEach((line) => {
+    const candidate = current ? `${current}\n${line}` : line;
+    if (candidate.length > maxLength && current) {
+      chunks.push(current);
+      current = line;
+    } else {
+      current = candidate;
+    }
+  });
+  if (current) chunks.push(current);
+  return chunks.length ? chunks : [text];
 }
 
 function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = {}): SermonSlide {
@@ -7226,70 +7409,95 @@ function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = 
     subtitle: patch.subtitle ?? "",
     body: patch.body ?? "",
     bibleText: patch.bibleText ?? "",
-    speakerNotes: patch.speakerNotes ?? "",
-    backgroundStyle: patch.backgroundStyle ?? "Theme",
-    imageTheme: patch.imageTheme ?? "open Bible / simple church background",
-    layout: patch.layout ?? (type === "Scripture" ? "Scripture Focus" : "Centered"),
-  }, 0);
+	    speakerNotes: patch.speakerNotes ?? "",
+	    backgroundStyle: patch.backgroundStyle ?? "Theme",
+	    imageTheme: patch.imageTheme ?? "Open Bible",
+	    imageSlot: patch.imageSlot ?? "open-bible",
+	    layout: patch.layout ?? (type === "Scripture" ? "Scripture Focus" : "Centered"),
+	    fontScale: patch.fontScale ?? (type === "Scripture" ? "Large" : "Normal"),
+	    textPlacement: patch.textPlacement ?? "Center",
+	    accentStyle: patch.accentStyle ?? "Line",
+	    showTypeLabel: patch.showTypeLabel ?? false,
+	    showImageLabel: patch.showImageLabel ?? false,
+	    showFooterBranding: patch.showFooterBranding ?? false,
+	  }, 0);
 }
 
 function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSlide[] {
-  const imageTheme = suggestedSermonImageTheme(entry);
+  const imageSlot = suggestedSermonImageSlot(entry);
+  const imageTheme = SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label;
+  const preset = slidePresetPatch(entry.slideTheme);
+  const scriptureChunks = scriptureText ? chunkScriptureText(scriptureText, 520) : [""];
   const pointLines = sermonContentLines(entry.points || entry.outline, 6);
   const quoteLines = sermonContentLines(entry.quotes, 3);
   const illustrationLines = sermonContentLines(entry.illustrations, 2);
   const applicationLines = sermonContentLines(entry.applications, 4);
   const slides: SermonSlide[] = [
     createSermonSlide("Title", {
+      ...preset,
       title: entry.title || `${entry.kind} Title`,
       subtitle: [entry.passage, entry.theme].filter(Boolean).join(" - "),
       body: entry.seriesId ? "Series message" : "",
       speakerNotes: entry.introduction,
       imageTheme,
+      imageSlot,
       layout: "Centered",
     }),
-    createSermonSlide("Scripture", {
-      title: entry.passage || "Scripture Reading",
+    ...scriptureChunks.map((chunk, index) => createSermonSlide("Scripture", {
+      ...preset,
+      title: scriptureChunks.length > 1 ? `${entry.passage || "Scripture Reading"} (${index + 1})` : entry.passage || "Scripture Reading",
       subtitle: "KJV",
       body: scriptureText ? "" : "Add or review the KJV text for this passage.",
-      bibleText: scriptureText,
+      bibleText: chunk,
       speakerNotes: "Read the Scripture before the outline or commentary.",
-      imageTheme: "open Bible / readable Scripture slide",
+      imageTheme: "Open Bible",
+      imageSlot: "open-bible",
       layout: "Scripture Focus",
-    }),
+      fontScale: "Large",
+    })),
     ...pointLines.map((point, index) => createSermonSlide("Main Point", {
+      ...preset,
       title: `Point ${index + 1}`,
       body: point,
       speakerNotes: point,
       imageTheme,
+      imageSlot,
       layout: "Teaching Point",
     })),
     ...quoteLines.map((quote) => createSermonSlide("Quote", {
+      ...preset,
       title: "Quote",
       body: quote,
       speakerNotes: "Verify the source and keep the quote secondary to Scripture.",
-      imageTheme: "simple paper / quote card / open Bible",
+      imageTheme: "Parchment / Simple Texture",
+      imageSlot: "parchment",
       layout: "Minimal",
     })),
     ...illustrationLines.map((illustration) => createSermonSlide("Illustration", {
+      ...preset,
       title: "Illustration",
       body: illustration,
       speakerNotes: "Keep the illustration short and clearly tied to the passage.",
       imageTheme,
+      imageSlot,
       layout: "Image Left",
     })),
     ...applicationLines.map((application, index) => createSermonSlide("Application", {
+      ...preset,
       title: `Application ${index + 1}`,
       body: application,
       speakerNotes: "Move from explanation to obedience and prayer.",
       imageTheme,
+      imageSlot,
       layout: "Two Column",
     })),
     createSermonSlide("Closing / Invitation", {
+      ...preset,
       title: "Closing / Invitation",
       body: entry.invitation || entry.conclusion || "Close with Scripture-centered response.",
       speakerNotes: entry.conclusion,
       imageTheme,
+      imageSlot,
       layout: "Centered",
     }),
   ];
@@ -12015,6 +12223,7 @@ export default function Home() {
 	                onPrintDraft={printSermonDraft}
 	                onGenerateSlides={generateSlidesForSermonDraft}
 	                onCopySlideOutline={copySermonSlideOutline}
+	                onResolveScriptureText={sermonScriptureTextForPassage}
 	                onStartPreaching={startPreachingMode}
                 onResetTimer={() => {
                   setSermonPreachingStartedAt(Date.now());
@@ -12049,7 +12258,7 @@ export default function Home() {
           </section>
         </div>
 
-        <MobileNav tab={tab} onTab={setTab} />
+        {!(tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) && <MobileNav tab={tab} onTab={setTab} />}
       </div>
 
       {tab === "bible" && studyRef && activeVerse && (
@@ -25360,6 +25569,7 @@ function SermonWorkspaceScreen({
 	  onPrintDraft,
 	  onGenerateSlides,
 	  onCopySlideOutline,
+	  onResolveScriptureText,
 	  onStartPreaching,
 	  onResetTimer,
 	  onBackToBible,
@@ -25394,6 +25604,7 @@ function SermonWorkspaceScreen({
 	  onPrintDraft: () => void;
 	  onGenerateSlides: () => void;
 	  onCopySlideOutline: () => void;
+	  onResolveScriptureText: (passage: string) => string;
 	  onStartPreaching: () => void;
 	  onResetTimer: () => void;
 	  onBackToBible: () => void;
@@ -25411,6 +25622,7 @@ function SermonWorkspaceScreen({
 	  const [darkPreachingMode, setDarkPreachingMode] = useState(true);
 	  const [selectedSlideId, setSelectedSlideId] = useState("");
 	  const [presentationSlideIndex, setPresentationSlideIndex] = useState(0);
+	  const [scriptureSlidePassage, setScriptureSlidePassage] = useState(draft.passage || "John 3:16");
 		  const sermonEstimate = sermonLengthEstimate(draft);
 		  const sermonSlides = useMemo(() => draft.slides ?? [], [draft.slides]);
 	  const activeSlide = sermonSlides.find((slide) => slide.id === selectedSlideId) ?? sermonSlides[0] ?? null;
@@ -25479,6 +25691,7 @@ function SermonWorkspaceScreen({
 	    const nextSlide = createSermonSlide(type, {
 	      title: type,
 	      imageTheme: suggestedSermonImageTheme(draft),
+	      imageSlot: suggestedSermonImageSlot(draft),
 	    });
 	    onDraftChange({ slides: [...sermonSlides, nextSlide] });
 	    setSelectedSlideId(nextSlide.id);
@@ -25502,6 +25715,25 @@ function SermonWorkspaceScreen({
 	  function generateAndFocusSlides() {
 	    onGenerateSlides();
 	    setSelectedSlideId("");
+	  }
+
+	  function addScriptureSlidesFromPassage() {
+	    const passage = scriptureSlidePassage.trim() || draft.passage || "John 3:16";
+	    const scriptureText = onResolveScriptureText(passage);
+	    const chunks = chunkScriptureText(scriptureText || "No KJV verse text found for this passage yet.");
+	    const nextSlides = chunks.map((chunk, index) => createSermonSlide("Scripture", {
+	      ...slidePresetPatch(draft.slideTheme),
+	      title: chunks.length > 1 ? `${passage} (${index + 1})` : passage,
+	      subtitle: "KJV",
+	      bibleText: chunk,
+	      imageTheme: SERMON_SLIDE_IMAGE_SLOTS["open-bible"].label,
+	      imageSlot: "open-bible",
+	      layout: "Scripture Focus",
+	      fontScale: "Large",
+	      speakerNotes: "Read the Scripture clearly before moving to explanation.",
+	    }));
+	    onDraftChange({ slides: [...sermonSlides, ...nextSlides] });
+	    setSelectedSlideId(nextSlides[0]?.id ?? "");
 	  }
 
 	  useEffect(() => {
@@ -25811,8 +26043,55 @@ function SermonWorkspaceScreen({
 	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{SERMON_SLIDE_THEMES[draft.slideTheme].description}</p>
 	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
 	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Image System Foundation</p>
-	                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Suggested image label: {suggestedSermonImageTheme(draft)}. Use reviewed church-safe images later; no AI image generation is required for this MVP.</p>
+	                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Suggested image: {suggestedSermonImageTheme(draft)}. Built-in backgrounds load instantly; reviewed church-safe photos can be added later without slowing presentation start.</p>
+	                <button
+	                  className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+	                  disabled={!activeSlide}
+	                  onClick={() => activeSlide && updateSlide(activeSlide.id, {
+	                    imageSlot: suggestedSermonImageSlot(draft),
+	                    imageTheme: SERMON_SLIDE_IMAGE_SLOTS[suggestedSermonImageSlot(draft)].label,
+	                  })}
+	                  type="button"
+	                >
+	                  Apply Suggested Image
+	                </button>
 	              </div>
+	              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+	                {Object.entries(SERMON_SLIDE_THEMES).map(([id, theme]) => (
+	                  <button
+	                    key={`slide-preset-${id}`}
+	                    className={`rounded-2xl border p-3 text-left ${draft.slideTheme === id ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-white"}`}
+	                    onClick={() => {
+	                      onDraftChange({ slideTheme: id as SermonSlideThemeId });
+	                      if (activeSlide) updateSlide(activeSlide.id, slidePresetPatch(id as SermonSlideThemeId));
+	                    }}
+	                    type="button"
+	                  >
+	                    <p className="text-sm font-semibold text-[var(--green)]">{theme.name}</p>
+	                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{theme.imageSlot === "none" ? "Gradient only" : SERMON_SLIDE_IMAGE_SLOTS[theme.imageSlot].label} · {theme.textPlacement}</p>
+	                  </button>
+	                ))}
+	              </div>
+	            </article>
+
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Scripture Slide Builder</p>
+	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Add verses fast</h2>
+	              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+	                <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]">
+	                  Passage
+	                  <input
+	                    className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)] outline-none"
+	                    onChange={(event) => setScriptureSlidePassage(event.target.value)}
+	                    placeholder="John 3:16 or John 3:16-18"
+	                    value={scriptureSlidePassage}
+	                  />
+	                </label>
+	                <button className="mt-auto rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white" onClick={addScriptureSlidesFromPassage} type="button">
+	                  Add Scripture Slide
+	                </button>
+	              </div>
+	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">One verse, a verse range, or a chapter excerpt can be added. Long Scripture text is split into readable slides.</p>
 	            </article>
 
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -25860,9 +26139,22 @@ function SermonWorkspaceScreen({
 	                {activeSlide ? <SermonSlideCanvas slide={activeSlide} themeId={draft.slideTheme} /> : <EmptyState title="No slide selected" body="Generate a slide outline or add a slide manually." />}
 	              </div>
 	              {activeSlide && (
-	                <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-	                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Presenter Notes</p>
-	                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
+	                <div className="mt-4 grid gap-3 lg:grid-cols-2">
+	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Next Slide</p>
+	                    {sermonSlides[activeSlideIndex + 1] ? (
+	                      <>
+	                        <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{sermonSlides[activeSlideIndex + 1].title || sermonSlides[activeSlideIndex + 1].type}</p>
+	                        <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{sermonSlides[activeSlideIndex + 1].body || sermonSlides[activeSlideIndex + 1].bibleText || "No body text yet."}</p>
+	                      </>
+	                    ) : (
+	                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">End of deck.</p>
+	                    )}
+	                  </div>
+	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Presenter Notes</p>
+	                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
+	                  </div>
 	                </div>
 	              )}
 	            </article>
@@ -26066,47 +26358,126 @@ function sermonSlideBackground(theme: (typeof SERMON_SLIDE_THEMES)[SermonSlideTh
   return theme.background;
 }
 
+function SermonSlideMotif({ slotId, color }: { slotId: SermonSlideImageSlotId; color: string }) {
+  if (slotId === "none") return null;
+  if (slotId === "cross") {
+    return (
+      <div aria-hidden="true" className="absolute right-8 top-8 h-32 w-24 opacity-25 md:right-12 md:top-12 md:h-44 md:w-32" style={{ color }}>
+        <span className="absolute left-1/2 top-0 h-full w-3 -translate-x-1/2 rounded-full bg-current" />
+        <span className="absolute left-0 top-1/3 h-3 w-full rounded-full bg-current" />
+      </div>
+    );
+  }
+  if (slotId === "open-bible" || slotId === "parchment") {
+    return (
+      <div aria-hidden="true" className="absolute bottom-8 right-8 flex gap-1 opacity-10 md:bottom-12 md:right-12">
+        <span className="h-24 w-24 rounded-l-3xl border-2 border-current md:h-36 md:w-36" style={{ color }} />
+        <span className="h-24 w-24 rounded-r-3xl border-2 border-current md:h-36 md:w-36" style={{ color }} />
+      </div>
+    );
+  }
+  if (slotId === "world-map" || slotId === "field-harvest") {
+    return (
+      <div aria-hidden="true" className="absolute right-6 top-8 h-36 w-36 rounded-full border-2 border-current opacity-20 md:right-12 md:top-12 md:h-48 md:w-48" style={{ color }}>
+        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
+        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+        <span className="absolute left-6 top-6 h-8 w-12 rounded-full border border-current" />
+        <span className="absolute bottom-8 right-7 h-10 w-16 rounded-full border border-current" />
+      </div>
+    );
+  }
+  if (slotId === "sunrise" || slotId === "empty-tomb") {
+    return (
+      <div aria-hidden="true" className="absolute bottom-8 right-8 h-28 w-44 overflow-hidden opacity-25 md:bottom-12 md:right-12 md:h-36 md:w-56" style={{ color }}>
+        <span className="absolute bottom-0 left-1/2 h-36 w-36 -translate-x-1/2 rounded-full border-4 border-current md:h-48 md:w-48" />
+        <span className="absolute bottom-0 left-0 h-1 w-full rounded-full bg-current" />
+      </div>
+    );
+  }
+  if (slotId === "prayer-hands" || slotId === "light-window") {
+    return (
+      <div aria-hidden="true" className="absolute right-8 top-8 grid h-32 w-32 grid-cols-2 gap-2 opacity-20 md:right-12 md:top-12 md:h-44 md:w-44" style={{ color }}>
+        <span className="rounded-tl-3xl border border-current bg-current/20" />
+        <span className="rounded-tr-3xl border border-current bg-current/10" />
+        <span className="rounded-bl-3xl border border-current bg-current/10" />
+        <span className="rounded-br-3xl border border-current bg-current/20" />
+      </div>
+    );
+  }
+  return (
+    <div aria-hidden="true" className="absolute right-8 top-8 h-32 w-32 rounded-full border-2 border-current opacity-20 md:right-12 md:top-12 md:h-44 md:w-44" style={{ color }} />
+  );
+}
+
 function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: SermonSlide; themeId: SermonSlideThemeId; presentation?: boolean }) {
   const theme = SERMON_SLIDE_THEMES[themeId] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
-  const lightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light" || themeId === "warm-bible-study" || themeId === "grace" || themeId === "resurrection";
+  const imageSlot = SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot] ?? SERMON_SLIDE_IMAGE_SLOTS["open-bible"];
+  const lightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light" || themeId === "warm-bible-study" || themeId === "simple-scripture" || themeId === "grace" || themeId === "resurrection";
   const foreground = lightStyle ? "#24342c" : theme.foreground;
   const muted = lightStyle ? "#5f6b61" : theme.muted;
-  const textAlign = slide.layout === "Image Left" || slide.layout === "Two Column" ? "text-left" : "text-center";
+  const textAlign = slide.textPlacement === "Left" || slide.layout === "Image Left" || slide.layout === "Two Column" ? "text-left" : "text-center";
   const gridLayout = slide.layout === "Image Left" || slide.layout === "Two Column";
+  const verticalPlacement = slide.textPlacement === "Bottom" ? "justify-end" : slide.textPlacement === "Left" ? "justify-center" : "justify-center";
+  const maxWidth = slide.textPlacement === "Left" ? "max-w-3xl" : "max-w-4xl";
+  const titleSize = slide.fontScale === "Large"
+    ? presentation ? "text-5xl md:text-7xl" : "text-3xl md:text-5xl"
+    : slide.fontScale === "Compact"
+      ? presentation ? "text-3xl md:text-5xl" : "text-2xl md:text-4xl"
+      : presentation ? "text-4xl md:text-6xl" : "text-3xl md:text-5xl";
+  const bodySize = slide.fontScale === "Large"
+    ? presentation ? "text-2xl md:text-4xl" : "text-xl md:text-3xl"
+    : slide.fontScale === "Compact"
+      ? presentation ? "text-xl md:text-2xl" : "text-base md:text-xl"
+      : presentation ? "text-2xl md:text-3xl" : "text-lg md:text-2xl";
+  const chromeVisible = slide.showTypeLabel || slide.showImageLabel;
   return (
     <div
       className={`${presentation ? "min-h-[68vh] w-full max-w-6xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
-      style={{ background: sermonSlideBackground(theme, slide.backgroundStyle), color: foreground }}
+      style={{
+        background: `${imageSlot.background}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
+        color: foreground,
+      }}
     >
-      <div className={`flex h-full w-full flex-col justify-between p-5 md:p-8 ${textAlign}`}>
-        <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
-          <span>{slide.type}</span>
-          <span>{slide.imageTheme}</span>
+      <div className={`relative flex h-full w-full flex-col p-5 md:p-8 ${textAlign}`}>
+        <div className="pointer-events-none absolute inset-0">
+          <SermonSlideMotif slotId={slide.imageSlot} color={foreground} />
         </div>
-        <div className={`${gridLayout ? "grid items-center gap-6 md:grid-cols-[0.8fr_1.2fr]" : "mx-auto max-w-4xl"} py-5`}>
+        {chromeVisible && (
+          <div className="relative z-10 flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
+            <span>{slide.showTypeLabel ? slide.type : ""}</span>
+            <span>{slide.showImageLabel ? imageSlot.label : ""}</span>
+          </div>
+        )}
+        <div className={`relative z-10 flex flex-1 ${verticalPlacement}`}>
+        <div className={`${gridLayout ? "grid w-full items-center gap-6 md:grid-cols-[0.8fr_1.2fr]" : `mx-auto w-full ${maxWidth}`} py-5`}>
           {gridLayout && (
-            <div className="hidden rounded-3xl border border-white/20 bg-white/15 p-5 text-sm font-semibold uppercase tracking-[0.16em] md:block" style={{ color: muted }}>
-              {slide.imageTheme || "open Bible / simple background"}
+            <div className="hidden min-h-48 rounded-3xl border border-white/20 bg-white/15 p-5 text-sm font-semibold uppercase tracking-[0.16em] md:flex md:items-end" style={{ color: muted }}>
+              {imageSlot.label}
             </div>
           )}
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>
-            <h3 className={`${presentation ? "text-5xl md:text-7xl" : "text-3xl md:text-5xl"} mt-3 font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
+          <div className={`${slide.accentStyle === "Panel" ? "rounded-3xl bg-white/15 p-5 shadow-sm backdrop-blur-sm" : ""}`}>
+            {slide.accentStyle === "Badge" && slide.subtitle && <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</span>}
+            {slide.accentStyle !== "Badge" && slide.subtitle && <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>}
+            {slide.accentStyle === "Line" && <div className={`mb-4 mt-3 h-1 w-16 rounded-full ${textAlign === "text-center" ? "mx-auto" : ""}`} style={{ backgroundColor: theme.accent }} />}
+            <h3 className={`${titleSize} ${slide.accentStyle === "Line" ? "mt-0" : "mt-3"} font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
             {slide.bibleText && (
-              <p className={`${presentation ? "text-2xl md:text-4xl" : "text-lg md:text-2xl"} mt-5 whitespace-pre-wrap font-serif leading-snug`}>
+              <p className={`${bodySize} mt-5 whitespace-pre-wrap font-serif leading-snug`}>
                 {slide.bibleText}
               </p>
             )}
             {slide.body && (
-              <p className={`${presentation ? "text-2xl md:text-4xl" : "text-lg md:text-2xl"} mt-5 whitespace-pre-wrap leading-snug`} style={{ color: slide.bibleText ? muted : foreground }}>
+              <p className={`${bodySize} mt-5 whitespace-pre-wrap leading-snug`} style={{ color: slide.bibleText ? muted : foreground }}>
                 {slide.body}
               </p>
             )}
           </div>
         </div>
-        <div className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
-          Father&apos;s Business Bible Study
         </div>
+        {slide.showFooterBranding && (
+          <div className="relative z-10 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
+            Father&apos;s Business Bible Study
+          </div>
+        )}
       </div>
     </div>
   );
@@ -26135,7 +26506,66 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
             {SERMON_SLIDE_BACKGROUND_STYLES.map((style) => <option key={style} value={style}>{style}</option>)}
           </select>
         </label>
-        <SermonField label="Image theme" value={slide.imageTheme} onChange={(value) => onChange({ imageTheme: value })} placeholder="open Bible / cross / light" />
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Font Scale
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.fontScale} onChange={(event) => onChange({ fontScale: event.target.value as SermonSlideFontScale })}>
+            {["Compact", "Normal", "Large"].map((value) => <option key={value} value={value}>{value}</option>)}
+          </select>
+        </label>
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Text Placement
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.textPlacement} onChange={(event) => onChange({ textPlacement: event.target.value as SermonSlideTextPlacement })}>
+            {["Center", "Left", "Bottom"].map((value) => <option key={value} value={value}>{value}</option>)}
+          </select>
+        </label>
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Accent Style
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.accentStyle} onChange={(event) => onChange({ accentStyle: event.target.value as SermonSlideAccentStyle })}>
+            {["None", "Line", "Badge", "Panel"].map((value) => <option key={value} value={value}>{value}</option>)}
+          </select>
+        </label>
+      </div>
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Clean Presentation</p>
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          {[
+            ["Show slide type label", "showTypeLabel", slide.showTypeLabel],
+            ["Show image label", "showImageLabel", slide.showImageLabel],
+            ["Show footer branding", "showFooterBranding", slide.showFooterBranding],
+          ].map(([label, key, checked]) => (
+            <label key={`slide-clean-${key}`} className="flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+              <input
+                checked={Boolean(checked)}
+                className="h-4 w-4 accent-[var(--green)]"
+                onChange={(event) => onChange({ [key as keyof SermonSlide]: event.target.checked } as Partial<SermonSlide>)}
+                type="checkbox"
+              />
+              {label as string}
+            </label>
+          ))}
+        </div>
+      </div>
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Image / Background Slot</p>
+          <p className="text-xs font-semibold text-[var(--muted)]">{SERMON_SLIDE_IMAGE_SLOTS[slide.imageSlot]?.label ?? "Open Bible"}</p>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          {Object.entries(SERMON_SLIDE_IMAGE_SLOTS).map(([id, slot]) => (
+            <button
+              key={`slide-image-slot-${id}`}
+              className={`overflow-hidden rounded-2xl border text-left ${slide.imageSlot === id ? "border-[var(--green)] bg-white shadow-sm" : "border-[var(--line)] bg-white/70"}`}
+              onClick={() => onChange({ imageSlot: id as SermonSlideImageSlotId, imageTheme: slot.label })}
+              type="button"
+            >
+              <span className="block h-14" style={{ background: `${slot.background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+              <span className="block px-3 py-2">
+                <span className="block text-xs font-semibold text-[var(--green)]">{slot.label}</span>
+                <span className="mt-1 block line-clamp-2 text-[0.7rem] leading-4 text-[var(--muted)]">{slot.description}</span>
+              </span>
+            </button>
+          ))}
+        </div>
       </div>
       <div className="mt-4 grid gap-3">
         <SermonField label="Title" value={slide.title} onChange={(value) => onChange({ title: value })} />
