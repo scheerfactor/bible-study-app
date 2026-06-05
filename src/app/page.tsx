@@ -26,6 +26,7 @@ import {
   LogOut,
   MessageSquareText,
   Minus,
+  MonitorPlay,
   NotebookPen,
   Plus,
   Search,
@@ -87,7 +88,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "sermons" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -123,6 +124,8 @@ type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
 type SermonSlideMediaCategory = "Cross" | "Bible" | "Prayer" | "Missions" | "Nature" | "Light" | "Judgment" | "Resurrection";
+type PresentationWorkspaceView = "manager" | "deck" | "presenter";
+type PresentationStatus = "Draft" | "Ready" | "Archived";
 
 type SavedChurchTheme = {
   id: string;
@@ -333,6 +336,29 @@ type SermonSlide = {
   showTypeLabel: boolean;
   showImageLabel: boolean;
   showFooterBranding: boolean;
+};
+
+type PresentationSlideGroup = {
+  id: string;
+  name: string;
+  slideIds: string[];
+};
+
+type PresentationEntry = {
+  id: string;
+  title: string;
+  sermonId: string;
+  lessonId: string;
+  slideDeckSourceId: string;
+  status: PresentationStatus;
+  themeId: SermonSlideThemeId;
+  slides: SermonSlide[];
+  groups: PresentationSlideGroup[];
+  notes: string;
+  targetMinutes: number;
+  createdAt: string;
+  updatedAt: string;
+  archived: boolean;
 };
 
 type SermonLibraryItem = {
@@ -1178,6 +1204,7 @@ const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
 const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
 const SERMON_CHURCH_THEMES_KEY = "fathers-business-sermon-church-themes";
+const PRESENTATION_ENTRIES_KEY = "fathers-business-presentation-workspace-entries";
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
   {
@@ -7497,6 +7524,77 @@ function saveSermonSeries(series: SermonSeries[]) {
   window.localStorage.setItem(SERMON_SERIES_KEY, JSON.stringify(series));
 }
 
+function createEmptyPresentation(title = "Sunday Presentation"): PresentationEntry {
+  const now = new Date().toISOString();
+  return {
+    id: makeId("presentation"),
+    title,
+    sermonId: "",
+    lessonId: "",
+    slideDeckSourceId: "",
+    status: "Draft",
+    themeId: "warm-bible-study",
+    slides: [],
+    groups: [],
+    notes: "",
+    targetMinutes: 30,
+    createdAt: now,
+    updatedAt: now,
+    archived: false,
+  };
+}
+
+function normalizePresentationEntry(entry: Partial<PresentationEntry>): PresentationEntry | null {
+  if (!entry.id) return null;
+  const now = new Date().toISOString();
+  const rawStatus = entry.status ?? "Draft";
+  const status: PresentationStatus = ["Draft", "Ready", "Archived"].includes(rawStatus) ? rawStatus as PresentationStatus : "Draft";
+  const slides = Array.isArray(entry.slides) ? entry.slides.map(normalizeSermonSlide) : [];
+  const slideIds = new Set(slides.map((slide) => slide.id));
+  const groups = Array.isArray(entry.groups)
+    ? entry.groups
+        .filter((group): group is PresentationSlideGroup => Boolean(group?.id && group?.name))
+        .map((group) => ({
+          id: group.id,
+          name: group.name,
+          slideIds: Array.isArray(group.slideIds) ? group.slideIds.filter((id) => slideIds.has(id)) : [],
+        }))
+    : [];
+  return {
+    id: entry.id,
+    title: entry.title ?? "Sunday Presentation",
+    sermonId: entry.sermonId ?? "",
+    lessonId: entry.lessonId ?? "",
+    slideDeckSourceId: entry.slideDeckSourceId ?? "",
+    status,
+    themeId: sermonSlideThemeId(entry.themeId),
+    slides,
+    groups,
+    notes: entry.notes ?? "",
+    targetMinutes: Number(entry.targetMinutes) > 0 ? Number(entry.targetMinutes) : 30,
+    createdAt: entry.createdAt ?? now,
+    updatedAt: entry.updatedAt ?? now,
+    archived: Boolean(entry.archived || status === "Archived"),
+  };
+}
+
+function loadPresentationEntries(): PresentationEntry[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(PRESENTATION_ENTRIES_KEY);
+    const parsed = raw ? JSON.parse(raw) as Partial<PresentationEntry>[] : [];
+    return parsed.map(normalizePresentationEntry).filter((entry): entry is PresentationEntry => Boolean(entry));
+  } catch {
+    return [];
+  }
+}
+
+function savePresentationEntries(entries: PresentationEntry[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(PRESENTATION_ENTRIES_KEY, JSON.stringify(entries));
+}
+
 function normalizeSavedChurchTheme(theme: Partial<SavedChurchTheme>): SavedChurchTheme | null {
   if (!theme.id || !theme.name) return null;
   const themeId = sermonSlideThemeId(theme.themeId);
@@ -7940,6 +8038,30 @@ function sermonSlideOutline(slides: SermonSlide[]) {
     slide.bibleText ? `   Scripture: ${slide.bibleText}` : "",
     slide.speakerNotes ? `   Notes: ${slide.speakerNotes}` : "",
   ].filter(Boolean).join("\n")).join("\n\n");
+}
+
+function presentationExportMarkdown(entry: PresentationEntry) {
+  const theme = SERMON_SLIDE_THEMES[entry.themeId] ?? SERMON_SLIDE_THEMES["warm-bible-study"];
+  return [
+    `# ${entry.title || "Presentation"}`,
+    "",
+    `- Status: ${entry.status}`,
+    `- Theme: ${theme.name}`,
+    `- Target time: ${entry.targetMinutes} minutes`,
+    `- Slides: ${entry.slides.length}`,
+    `- Groups: ${entry.groups.length}`,
+    "",
+    "## Presentation Notes",
+    entry.notes || "No notes yet.",
+    "",
+    "## Slide Outline",
+    entry.slides.length ? sermonSlideOutline(entry.slides) : "No slides yet.",
+    "",
+    "## Export Foundation",
+    "- PowerPoint export: planned.",
+    "- PDF export: planned.",
+    "- Remote control: later phase.",
+  ].join("\n");
 }
 
 function suggestedSermonLibraryItems(items: SermonLibraryItem[], searchText: string) {
@@ -8871,6 +8993,9 @@ export default function Home() {
   const [sermonSeriesPassageDraft, setSermonSeriesPassageDraft] = useState("");
   const [sermonPreachingStartedAt, setSermonPreachingStartedAt] = useState<number | null>(null);
   const [sermonTimerNow, setSermonTimerNow] = useState(() => Date.now());
+  const [presentationEntries, setPresentationEntries] = useState<PresentationEntry[]>([]);
+  const [presentationDraft, setPresentationDraft] = useState<PresentationEntry>(() => createEmptyPresentation());
+  const [presentationWorkspaceView, setPresentationWorkspaceView] = useState<PresentationWorkspaceView>("manager");
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
@@ -9671,6 +9796,11 @@ export default function Home() {
     setTab("sermons");
   }
 
+  function openPresentationWorkspace(view: PresentationWorkspaceView = "manager") {
+    setPresentationWorkspaceView(view);
+    setTab("presentations");
+  }
+
   function createSermonDraft(kind: SermonKind) {
     const entry = createEmptySermon(kind, `${book} ${chapter}`);
     setSermonDraft(entry);
@@ -10102,6 +10232,104 @@ export default function Home() {
     setTab("sermons");
   }
 
+  function savePresentationEntryList(updater: (entries: PresentationEntry[]) => PresentationEntry[]) {
+    setPresentationEntries((entries) => {
+      const nextEntries = updater(entries).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+      savePresentationEntries(nextEntries);
+      return nextEntries;
+    });
+  }
+
+  function createPresentationDraft() {
+    const entry = createEmptyPresentation(`${book} ${chapter} Presentation`);
+    setPresentationDraft(entry);
+    setPresentationWorkspaceView("deck");
+    setTab("presentations");
+    setSyncMessage("Presentation draft started.");
+  }
+
+  function openPresentationEntry(entry: PresentationEntry) {
+    setPresentationDraft(entry);
+    setPresentationWorkspaceView("deck");
+    setTab("presentations");
+  }
+
+  function updatePresentationDraft(patch: Partial<PresentationEntry>) {
+    setPresentationDraft((draft) => ({
+      ...draft,
+      ...patch,
+      updatedAt: new Date().toISOString(),
+    }));
+  }
+
+  function savePresentationDraft() {
+    const title = presentationDraft.title.trim();
+    if (!title) {
+      setSyncMessage("Add a presentation title first.");
+      return;
+    }
+    const now = new Date().toISOString();
+    const entry: PresentationEntry = {
+      ...presentationDraft,
+      title,
+      updatedAt: now,
+      createdAt: presentationDraft.createdAt || now,
+      archived: presentationDraft.status === "Archived" || presentationDraft.archived,
+    };
+    savePresentationEntryList((entries) => [entry, ...entries.filter((item) => item.id !== entry.id)]);
+    setPresentationDraft(entry);
+    setSyncMessage("Presentation saved locally.");
+  }
+
+  function archivePresentationEntry(id: string) {
+    savePresentationEntryList((entries) =>
+      entries.map((entry) =>
+        entry.id === id
+          ? { ...entry, status: "Archived", archived: true, updatedAt: new Date().toISOString() }
+          : entry,
+      ),
+    );
+    if (presentationDraft.id === id) {
+      setPresentationDraft((entry) => ({ ...entry, status: "Archived", archived: true, updatedAt: new Date().toISOString() }));
+    }
+    setSyncMessage("Presentation archived.");
+  }
+
+  function duplicatePresentationEntry(entry: PresentationEntry) {
+    const now = new Date().toISOString();
+    const slideIdMap = new Map<string, string>();
+    const slides = entry.slides.map((slide) => {
+      const id = makeId("slide");
+      slideIdMap.set(slide.id, id);
+      return { ...slide, id };
+    });
+    const copy: PresentationEntry = {
+      ...entry,
+      id: makeId("presentation"),
+      title: `${entry.title} Copy`,
+      slides,
+      groups: entry.groups.map((group) => ({
+        ...group,
+        id: makeId("slide-group"),
+        slideIds: group.slideIds.map((slideId) => slideIdMap.get(slideId)).filter((slideId): slideId is string => Boolean(slideId)),
+      })),
+      status: "Draft",
+      archived: false,
+      createdAt: now,
+      updatedAt: now,
+    };
+    savePresentationEntryList((entries) => [copy, ...entries]);
+    setPresentationDraft(copy);
+    setPresentationWorkspaceView("deck");
+    setTab("presentations");
+    setSyncMessage("Presentation duplicated.");
+  }
+
+  function exportPresentationPlan() {
+    downloadTextFile(`${sermonExportSlug(presentationDraft.title)}-presentation-plan.md`, presentationExportMarkdown(presentationDraft), "text/markdown;charset=utf-8");
+    setSyncMessage("Presentation plan downloaded. PowerPoint and PDF export are prepared for the next phase.");
+  }
+
   useEffect(() => {
     queueMicrotask(() => {
       setSaved(loadLocalState());
@@ -10128,6 +10356,9 @@ export default function Home() {
       setSermonEntries(loadedSermons);
       setSermonSeries(loadSermonSeries());
       if (loadedSermons[0]) setSermonDraft(loadedSermons[0]);
+      const loadedPresentations = loadPresentationEntries();
+      setPresentationEntries(loadedPresentations);
+      if (loadedPresentations[0]) setPresentationDraft(loadedPresentations[0]);
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
@@ -12557,6 +12788,7 @@ export default function Home() {
               <NavButton icon={<MessageSquareText size={18} />} label="Prayer" active={tab === "prayer"} onClick={() => setTab("prayer")} />
               <NavButton icon={<FileText size={18} />} label="Journal" active={tab === "journal"} onClick={() => setTab("journal")} />
               <NavButton icon={<Clipboard size={18} />} label="Sermons" active={tab === "sermons"} onClick={() => openSermonWorkspace("manager")} />
+              <NavButton icon={<FileText size={18} />} label="Presentations" active={tab === "presentations"} onClick={() => openPresentationWorkspace("manager")} />
               <NavButton icon={<Settings size={18} />} label="Settings" active={tab === "settings"} onClick={() => setTab("settings")} />
             </nav>
 
@@ -13097,6 +13329,24 @@ export default function Home() {
               />
             )}
 
+            {tab === "presentations" && (
+              <PresentationWorkspaceScreen
+                view={presentationWorkspaceView}
+                presentations={presentationEntries}
+                draft={presentationDraft}
+                sermons={sermonEntries}
+                syncMessage={syncMessage}
+                onViewChange={setPresentationWorkspaceView}
+                onCreateDraft={createPresentationDraft}
+                onOpenEntry={openPresentationEntry}
+                onDraftChange={updatePresentationDraft}
+                onSaveDraft={savePresentationDraft}
+                onArchiveEntry={archivePresentationEntry}
+                onDuplicateEntry={duplicatePresentationEntry}
+                onExportPlan={exportPresentationPlan}
+              />
+            )}
+
             {tab === "settings" && (
               <SettingsScreen
                 hasSupabaseConfig={hasSupabaseConfig}
@@ -13122,7 +13372,7 @@ export default function Home() {
           </section>
         </div>
 
-        {!(tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) && <MobileNav tab={tab} onTab={setTab} />}
+        {!((tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) || (tab === "presentations" && presentationWorkspaceView === "presenter")) && <MobileNav tab={tab} onTab={setTab} />}
       </div>
 
       {tab === "bible" && studyRef && activeVerse && (
@@ -27696,6 +27946,418 @@ function SermonManagerCard({
   );
 }
 
+function PresentationWorkspaceScreen({
+  view,
+  presentations,
+  draft,
+  sermons,
+  syncMessage,
+  onViewChange,
+  onCreateDraft,
+  onOpenEntry,
+  onDraftChange,
+  onSaveDraft,
+  onArchiveEntry,
+  onDuplicateEntry,
+  onExportPlan,
+}: {
+  view: PresentationWorkspaceView;
+  presentations: PresentationEntry[];
+  draft: PresentationEntry;
+  sermons: SermonEntry[];
+  syncMessage: string;
+  onViewChange: (view: PresentationWorkspaceView) => void;
+  onCreateDraft: () => void;
+  onOpenEntry: (entry: PresentationEntry) => void;
+  onDraftChange: (patch: Partial<PresentationEntry>) => void;
+  onSaveDraft: () => void;
+  onArchiveEntry: (id: string) => void;
+  onDuplicateEntry: (entry: PresentationEntry) => void;
+  onExportPlan: () => void;
+}) {
+  const activePresentations = presentations.filter((entry) => !entry.archived && entry.status !== "Archived");
+  const archivedPresentations = presentations.filter((entry) => entry.archived || entry.status === "Archived");
+  const sermonsWithSlides = sermons.filter((entry) => entry.slides.length > 0 && !entry.archived);
+  const [presentationSearch, setPresentationSearch] = useState("");
+  const [selectedSlideId, setSelectedSlideId] = useState("");
+  const [presenterSlideIndex, setPresenterSlideIndex] = useState(0);
+  const [presenterStartedAt, setPresenterStartedAt] = useState<number | null>(null);
+  const [presenterNow, setPresenterNow] = useState(() => Date.now());
+  const [groupNameDraft, setGroupNameDraft] = useState("Opening");
+  const [attachSourceId, setAttachSourceId] = useState("");
+  const slides = draft.slides ?? [];
+  const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
+  const currentSlide = slides[Math.min(presenterSlideIndex, Math.max(0, slides.length - 1))] ?? null;
+  const nextSlide = presenterSlideIndex + 1 < slides.length ? slides[presenterSlideIndex + 1] : null;
+  const elapsedSeconds = presenterStartedAt ? Math.max(0, Math.floor((presenterNow - presenterStartedAt) / 1000)) : 0;
+  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
+  const remainingSeconds = Math.max(0, targetSeconds - elapsedSeconds);
+  const progressPercent = slides.length ? Math.round(((Math.min(presenterSlideIndex + 1, slides.length)) / slides.length) * 100) : 0;
+  const filteredPresentations = activePresentations.filter((entry) => {
+    const haystack = [entry.title, entry.status, entry.notes, entry.createdAt, entry.updatedAt].join(" ").toLowerCase();
+    return !presentationSearch.trim() || presentationSearch.toLowerCase().split(/\s+/).every((term) => haystack.includes(term));
+  });
+
+  useEffect(() => {
+    if (view !== "presenter" || !presenterStartedAt) return;
+    const timer = window.setInterval(() => setPresenterNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, [presenterStartedAt, view]);
+
+  useEffect(() => {
+    if (view !== "presenter") return;
+    function handleKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onViewChange("deck");
+      }
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+        event.preventDefault();
+        setPresenterSlideIndex((index) => Math.min(Math.max(0, slides.length - 1), index + 1));
+      }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        event.preventDefault();
+        setPresenterSlideIndex((index) => Math.max(0, index - 1));
+      }
+    }
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onViewChange, slides.length, view]);
+
+  function updateSlide(id: string, patch: Partial<SermonSlide>) {
+    onDraftChange({ slides: slides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
+  }
+
+  function addSlide(type: SermonSlideType) {
+    const slide = createSermonSlide(type, slidePresetPatch(draft.themeId));
+    onDraftChange({ slides: [...slides, slide] });
+    setSelectedSlideId(slide.id);
+  }
+
+  function duplicateSlide(id: string) {
+    const index = slides.findIndex((slide) => slide.id === id);
+    if (index < 0) return;
+    const copy = { ...slides[index], id: makeId("slide"), title: `${slides[index].title} Copy` };
+    const nextSlides = [...slides.slice(0, index + 1), copy, ...slides.slice(index + 1)];
+    onDraftChange({ slides: nextSlides });
+    setSelectedSlideId(copy.id);
+  }
+
+  function deleteSlide(id: string) {
+    const nextSlides = slides.filter((slide) => slide.id !== id);
+    onDraftChange({
+      slides: nextSlides,
+      groups: draft.groups.map((group) => ({ ...group, slideIds: group.slideIds.filter((slideId) => slideId !== id) })),
+    });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+  }
+
+  function moveSlide(id: string, direction: -1 | 1) {
+    const index = slides.findIndex((slide) => slide.id === id);
+    const nextIndex = index + direction;
+    if (index < 0 || nextIndex < 0 || nextIndex >= slides.length) return;
+    const nextSlides = [...slides];
+    [nextSlides[index], nextSlides[nextIndex]] = [nextSlides[nextIndex], nextSlides[index]];
+    onDraftChange({ slides: nextSlides });
+  }
+
+  function attachSermonDeck(sourceId: string) {
+    const source = sermons.find((entry) => entry.id === sourceId);
+    if (!source) return;
+    const copiedSlides = source.slides.map((slide) => ({ ...slide, id: makeId("slide") }));
+    onDraftChange({
+      sermonId: source.kind === "Sermon" ? source.id : draft.sermonId,
+      lessonId: source.kind === "Lesson" ? source.id : draft.lessonId,
+      slideDeckSourceId: source.id,
+      title: draft.title || `${source.title} Presentation`,
+      themeId: source.slideTheme,
+      slides: copiedSlides,
+      groups: [],
+    });
+    setSelectedSlideId(copiedSlides[0]?.id ?? "");
+  }
+
+  function addSelectedSlideToGroup() {
+    if (!activeSlide) return;
+    const name = groupNameDraft.trim() || "Slide Group";
+    const existing = draft.groups.find((group) => group.name.toLowerCase() === name.toLowerCase());
+    const nextGroups = existing
+      ? draft.groups.map((group) => group.id === existing.id ? { ...group, slideIds: Array.from(new Set([...group.slideIds, activeSlide.id])) } : group)
+      : [...draft.groups, { id: makeId("slide-group"), name, slideIds: [activeSlide.id] }];
+    onDraftChange({ groups: nextGroups });
+  }
+
+  function applyThemeToDeck(themeId: SermonSlideThemeId) {
+    const patch = slidePresetPatch(themeId);
+    onDraftChange({
+      themeId,
+      slides: slides.map((slide) => ({ ...slide, ...patch })),
+    });
+  }
+
+  if (view === "presenter") {
+    return (
+      <div className="fixed inset-0 z-50 bg-black text-white">
+        <div className="flex min-h-screen flex-col">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
+            <button className="rounded-full bg-white/10 px-4 py-2" onClick={() => onViewChange("deck")} type="button">Exit Presenter</button>
+            <div className="flex flex-wrap items-center gap-3 text-white/75">
+              <span>{formatSermonTimer(elapsedSeconds)} elapsed</span>
+              <span>{formatSermonTimer(remainingSeconds)} left</span>
+              <span>{Math.min(presenterSlideIndex + 1, slides.length || 1)} / {slides.length || 1}</span>
+              <span>{progressPercent}%</span>
+            </div>
+          </div>
+          <div className="grid flex-1 gap-4 p-4 lg:grid-cols-[1fr_340px]">
+            <div className="flex min-h-[60vh] items-center justify-center">
+              {currentSlide ? (
+                <SermonSlideCanvas slide={currentSlide} themeId={draft.themeId} presentation />
+              ) : (
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+                  <p className="text-xl font-semibold">No slides in this presentation yet.</p>
+                </div>
+              )}
+            </div>
+            <aside className="space-y-3 rounded-3xl border border-white/10 bg-white/5 p-4">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Next Slide</p>
+                {nextSlide ? <SermonSlideCanvas slide={nextSlide} themeId={draft.themeId} /> : <p className="mt-3 text-sm text-white/60">End of presentation.</p>}
+              </div>
+              <div className="rounded-2xl bg-black/30 p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Presenter Notes</p>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-white/80">{currentSlide?.speakerNotes || draft.notes || "No notes for this slide yet."}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => setPresenterSlideIndex((index) => Math.max(0, index - 1))} type="button">Previous</button>
+                <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black disabled:opacity-40" disabled={presenterSlideIndex >= slides.length - 1} onClick={() => setPresenterSlideIndex((index) => Math.min(slides.length - 1, index + 1))} type="button">Next</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={() => { setPresenterStartedAt(Date.now()); setPresenterNow(Date.now()); }} type="button">Reset Timer</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Workspace</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build service-ready Bible presentations</h1>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Local Phase 1 foundation for presentations, slide decks, themes, presenter view, and future PowerPoint/PDF export. Remote control comes later.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onCreateDraft} type="button">
+              <Plus size={16} />
+              New Presentation
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onSaveDraft} type="button">
+              <Save size={16} />
+              Save
+            </button>
+          </div>
+        </div>
+        {syncMessage && <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm text-[var(--muted)]">{syncMessage}</p>}
+      </section>
+
+      <div className="flex flex-wrap gap-2">
+        {(["manager", "deck", "presenter"] as PresentationWorkspaceView[]).map((item) => (
+          <button key={`presentation-view-${item}`} className={`rounded-full px-4 py-2 text-sm font-semibold capitalize ${view === item ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-white text-[var(--green)]"}`} onClick={() => {
+            if (item === "presenter") {
+              setPresenterStartedAt(Date.now());
+              setPresenterNow(Date.now());
+              setPresenterSlideIndex(0);
+            }
+            onViewChange(item);
+          }} type="button">
+            {item === "deck" ? "Slide Deck" : item}
+          </button>
+        ))}
+      </div>
+
+      {view === "manager" && (
+        <section className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 className="text-xl font-semibold text-[var(--ink)]">Presentation Manager</h2>
+                <p className="mt-1 text-sm text-[var(--muted)]">{activePresentations.length} active · {archivedPresentations.length} archived</p>
+              </div>
+              <label className="min-w-0 flex-1 sm:max-w-xs">
+                <span className="sr-only">Search presentations</span>
+                <input className="h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-sm text-[var(--ink)] outline-none" placeholder="Search presentations..." value={presentationSearch} onChange={(event) => setPresentationSearch(event.target.value)} />
+              </label>
+            </div>
+            <div className="mt-4 space-y-3">
+              {filteredPresentations.length ? filteredPresentations.map((entry) => (
+                <article key={entry.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <button className="min-w-0 text-left" onClick={() => onOpenEntry(entry)} type="button">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.status} · {entry.slides.length} slides</p>
+                      <h3 className="mt-1 text-lg font-semibold text-[var(--green)]">{entry.title}</h3>
+                      <p className="mt-1 text-sm text-[var(--muted)]">Updated {formatShortDate(entry.updatedAt)} · target {entry.targetMinutes} min</p>
+                    </button>
+                    <div className="flex flex-wrap gap-2">
+                      <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenEntry(entry)} type="button">Open</button>
+                      <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onDuplicateEntry(entry)} type="button">Duplicate</button>
+                      <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]" onClick={() => onArchiveEntry(entry.id)} type="button">Archive</button>
+                    </div>
+                  </div>
+                </article>
+              )) : <EmptyState title="No presentations yet" body="Create a presentation, attach a sermon or lesson deck, then open Presenter View." />}
+            </div>
+          </article>
+
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <h2 className="text-xl font-semibold text-[var(--ink)]">Attach Sermon, Lesson, or Slide Deck</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Choose a saved sermon or lesson with slides. The deck is copied into this presentation so you can reorder, group, and present it.
+            </p>
+            <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Saved sermon or lesson
+              <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={attachSourceId || sermonsWithSlides[0]?.id || ""} onChange={(event) => setAttachSourceId(event.target.value)}>
+                {sermonsWithSlides.map((entry) => (
+                  <option key={`presentation-source-${entry.id}`} value={entry.id}>{entry.title} · {entry.kind} · {entry.slides.length} slides</option>
+                ))}
+              </select>
+            </label>
+            <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white disabled:opacity-50" disabled={!sermonsWithSlides.length} onClick={() => attachSermonDeck(attachSourceId || sermonsWithSlides[0]?.id || "")} type="button">
+              <Link size={16} />
+              Attach Slide Deck
+            </button>
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+              <p className="text-sm font-semibold text-[var(--ink)]">Export foundation</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">PowerPoint and PDF are planned. Phase 1 exports a clean Markdown slide plan for review.</p>
+              <button className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPlan} type="button">
+                <Download size={16} />
+                Download Slide Plan
+              </button>
+            </div>
+          </article>
+        </section>
+      )}
+
+      {view === "deck" && (
+        <section className="grid gap-4 xl:grid-cols-[0.95fr_1.05fr]">
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Presentation title
+                <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={draft.title} onChange={(event) => onDraftChange({ title: event.target.value })} />
+              </label>
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Status
+                <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={draft.status} onChange={(event) => onDraftChange({ status: event.target.value as PresentationStatus, archived: event.target.value === "Archived" })}>
+                  {(["Draft", "Ready", "Archived"] as PresentationStatus[]).map((status) => <option key={status} value={status}>{status}</option>)}
+                </select>
+              </label>
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Target minutes
+                <input className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]" min={1} type="number" value={draft.targetMinutes} onChange={(event) => onDraftChange({ targetMinutes: Number(event.target.value) || 30 })} />
+              </label>
+              <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                Theme
+                <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]" value={draft.themeId} onChange={(event) => applyThemeToDeck(event.target.value as SermonSlideThemeId)}>
+                  {Object.entries(SERMON_SLIDE_THEMES).map(([id, theme]) => <option key={id} value={id}>{theme.name}</option>)}
+                </select>
+              </label>
+            </div>
+            <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Presentation notes
+              <textarea className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm normal-case leading-6 tracking-normal text-[var(--ink)]" value={draft.notes} onChange={(event) => onDraftChange({ notes: event.target.value })} />
+            </label>
+
+            <div className="mt-5">
+              <p className="text-sm font-semibold text-[var(--ink)]">Curated local image foundations</p>
+              <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {(["Prayer", "Bible", "Cross", "Resurrection", "Missions", "Evangelism", "Grace", "Judgment"] as const).map((category) => {
+                  const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([, value]) => value.category === (category === "Evangelism" || category === "Grace" ? "Cross" : category))?.[0] as SermonSlideImageSlotId | undefined;
+                  return (
+                    <button key={`presentation-image-${category}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-3 text-left text-xs font-semibold text-[var(--green)]" onClick={() => activeSlide && updateSlide(activeSlide.id, { imageSlot: slot ?? "open-bible", imageTheme: SERMON_SLIDE_IMAGE_SLOTS[slot ?? "open-bible"].label })} type="button">
+                      {category}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Slide Deck Manager</p>
+                  <p className="mt-1 text-xs text-[var(--muted)]">{slides.length} slides · {draft.groups.length} groups</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {SERMON_SLIDE_TYPES.map((type) => (
+                    <button key={`presentation-add-${type}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => addSlide(type)} type="button">{type.replace(" / Invitation", "")}</button>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                {slides.map((slide, index) => (
+                  <div key={slide.id} className={`rounded-2xl border p-3 ${activeSlide?.id === slide.id ? "border-[var(--gold)] bg-[var(--highlight)]" : "border-[var(--line)] bg-white"}`}>
+                    <button className="w-full text-left" onClick={() => setSelectedSlideId(slide.id)} type="button">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Slide {index + 1} · {slide.type}</p>
+                      <p className="mt-1 text-sm font-semibold text-[var(--green)]">{slide.title || "Untitled slide"}</p>
+                    </button>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === 0} onClick={() => moveSlide(slide.id, -1)} type="button">Up</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold disabled:opacity-40" disabled={index === slides.length - 1} onClick={() => moveSlide(slide.id, 1)} type="button">Down</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => duplicateSlide(slide.id)} type="button">Duplicate</button>
+                      <button className="rounded-full border border-[var(--line)] px-2 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => deleteSlide(slide.id)} type="button">Delete</button>
+                    </div>
+                  </div>
+                ))}
+                {!slides.length && <EmptyState title="No slides yet" body="Attach a sermon/lesson deck or add slides manually." />}
+              </div>
+            </div>
+          </article>
+
+          <article className="space-y-4">
+            <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              {activeSlide ? (
+                <>
+                  <SermonSlideCanvas slide={activeSlide} themeId={draft.themeId} />
+                  <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+                </>
+              ) : (
+                <EmptyState title="Select a slide" body="Choose a slide from the deck manager to preview and edit it." />
+              )}
+            </div>
+
+            <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold text-[var(--ink)]">Slide Groups</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <input className="h-10 min-w-0 flex-1 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm text-[var(--ink)]" value={groupNameDraft} onChange={(event) => setGroupNameDraft(event.target.value)} />
+                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-40" disabled={!activeSlide} onClick={addSelectedSlideToGroup} type="button">Group Selected</button>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {draft.groups.length ? draft.groups.map((group) => (
+                  <span key={group.id} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{group.name} · {group.slideIds.length}</span>
+                )) : <span className="text-sm text-[var(--muted)]">No groups yet. Group slides by service section, sermon point, or invitation.</span>}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold text-[var(--ink)]">Export Foundation</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">PowerPoint and PDF export are prepared as roadmap buttons. Markdown slide plan works now.</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onExportPlan} type="button">Download Markdown Plan</button>
+                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--muted)]" disabled type="button">PowerPoint soon</button>
+                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--muted)]" disabled type="button">PDF soon</button>
+              </div>
+            </div>
+          </article>
+        </section>
+      )}
+    </div>
+  );
+}
+
 function sermonSlideBackground(theme: (typeof SERMON_SLIDE_THEMES)[SermonSlideThemeId], style: SermonSlideBackgroundStyle) {
   if (style === "Soft Gradient") return theme.background;
   if (style === "Paper") return "linear-gradient(135deg, #fbf5e9 0%, #fffdf8 65%, #e9dfcc 130%)";
@@ -28118,12 +28780,13 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
     { id: "journal", label: "Journal", icon: <FileText size={20} /> },
     { id: "sermons", label: "Sermons", icon: <Clipboard size={20} /> },
+    { id: "presentations", label: "Present", icon: <MonitorPlay size={20} /> },
     { id: "settings", label: "Settings", icon: <Settings size={20} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-lg grid-cols-9 gap-1">
+      <div className="mx-auto grid max-w-xl grid-cols-10 gap-1">
         {items.map((item) => (
           <button
             key={item.id}
