@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Presentation Workspace is planned, not built. Sermon preparation comes first.
+The Sermon Slides MVP is now connected to the Sermon Workspace. It is a simple sermon slide builder, preview, and present mode. The full presentation engine is still planned for later.
 
 ## Philosophy
 
@@ -16,6 +16,16 @@ Scripture first. Slides support the Bible text and the message. They should not 
 - Quote slide
 - Application slide
 - Closing slide
+
+## MVP Now
+
+- Generate a slide outline from a sermon or lesson draft.
+- Edit slide title, subtitle, body, Bible verse text, speaker notes, background style, image theme, and layout.
+- Choose built-in sermon themes.
+- Preview slides with thumbnails.
+- Enter basic present mode with next/previous navigation.
+- Copy the slide outline.
+- Show placeholders for PowerPoint and PDF export.
 
 ## Suggested Flow
 
@@ -62,8 +72,9 @@ Scripture first. Slides support the Bible text and the message. They should not 
 
 ## Not Yet
 
-- No full presentation engine.
-- No Proclaim replacement yet.
+- No full Proclaim replacement yet.
+- No network phone/tablet remote control yet.
+- No PowerPoint, Keynote, Proclaim, or PDF export yet.
 - No paid image/media search.
 - No copyrighted media import without permission.
 - No AI-generated doctrine.

@@ -1,5 +1,12 @@
 {
-  "purpose": "Planning data only. Do not build the full presentation engine yet.",
+  "purpose": "Sermon Slides MVP is available inside the Sermon Workspace. Full presentation engine, export, and remote control remain planned.",
+  "mvp_now": [
+    "generate slide outline from sermon fields",
+    "edit title, subtitle, body, Bible text, speaker notes, background style, image theme, and layout",
+    "preview slides",
+    "basic present mode",
+    "copy slide outline"
+  ],
   "slide_outline": [
     {
       "type": "title_slide",

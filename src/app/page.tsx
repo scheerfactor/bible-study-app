@@ -91,8 +91,12 @@ type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Draw
 type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
-type SermonWorkspaceView = "manager" | "builder" | "preaching";
+type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
 type SermonSectionKey = "outline" | "introduction" | "points" | "illustrations" | "applications" | "conclusion" | "invitation";
+type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustration" | "Application" | "Closing / Invitation";
+type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
+type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
+type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
 
 type BibleVerse = {
   ref: string;
@@ -256,10 +260,25 @@ type SermonEntry = {
   bulletManuscript: string;
   sectionOrder: SermonSectionKey[];
   targetMinutes: number;
+  slides: SermonSlide[];
+  slideTheme: SermonSlideThemeId;
   createdAt: string;
   updatedAt: string;
   preachedAt: string;
   archived: boolean;
+};
+
+type SermonSlide = {
+  id: string;
+  type: SermonSlideType;
+  title: string;
+  subtitle: string;
+  body: string;
+  bibleText: string;
+  speakerNotes: string;
+  backgroundStyle: SermonSlideBackgroundStyle;
+  imageTheme: string;
+  layout: SermonSlideLayout;
 };
 
 type SermonLibraryItem = {
@@ -1311,6 +1330,8 @@ const EMPTY_SERMON_ENTRY: SermonEntry = {
   bulletManuscript: "",
   sectionOrder: ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"],
   targetMinutes: 30,
+  slides: [],
+  slideTheme: "classic-pulpit",
   createdAt: "",
   updatedAt: "",
   preachedAt: "",
@@ -1328,6 +1349,100 @@ const SERMON_SECTION_LABELS: Record<SermonSectionKey, string> = {
 };
 
 const SERMON_SECTION_FIELDS: SermonSectionKey[] = ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"];
+
+const SERMON_SLIDE_TYPES: SermonSlideType[] = ["Title", "Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"];
+const SERMON_SLIDE_LAYOUTS: SermonSlideLayout[] = ["Centered", "Scripture Focus", "Two Column", "Teaching Point", "Image Left", "Minimal"];
+const SERMON_SLIDE_BACKGROUND_STYLES: SermonSlideBackgroundStyle[] = ["Theme", "Soft Gradient", "Paper", "Dark", "Light"];
+
+const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
+  name: string;
+  description: string;
+  background: string;
+  foreground: string;
+  muted: string;
+  accent: string;
+}> = {
+  "classic-pulpit": {
+    name: "Classic Pulpit",
+    description: "Deep green, warm paper, and simple pulpit-style contrast.",
+    background: "linear-gradient(135deg, #203a31 0%, #2f604d 55%, #efe5cd 140%)",
+    foreground: "#fffaf0",
+    muted: "#e7dac0",
+    accent: "#d9b469",
+  },
+  "warm-bible-study": {
+    name: "Warm Bible Study",
+    description: "Soft paper tones for teaching, Sunday school, and Bible class.",
+    background: "linear-gradient(135deg, #f6efe2 0%, #fffdf8 62%, #dfe8dc 125%)",
+    foreground: "#24342c",
+    muted: "#667267",
+    accent: "#2f6f55",
+  },
+  missions: {
+    name: "Missions",
+    description: "Field, map, and gospel outreach tone.",
+    background: "linear-gradient(135deg, #21332d 0%, #496f5d 55%, #d7c08c 125%)",
+    foreground: "#fffaf0",
+    muted: "#e5dcc9",
+    accent: "#f0c86a",
+  },
+  revival: {
+    name: "Revival",
+    description: "Warm urgency without visual noise.",
+    background: "linear-gradient(135deg, #3b221e 0%, #7a4635 55%, #e0b15f 125%)",
+    foreground: "#fff8ed",
+    muted: "#f2dcc1",
+    accent: "#ffd078",
+  },
+  prayer: {
+    name: "Prayer",
+    description: "Quiet, reflective, and uncluttered.",
+    background: "linear-gradient(135deg, #273344 0%, #53677a 58%, #ece5d6 130%)",
+    foreground: "#fffaf0",
+    muted: "#dce5e8",
+    accent: "#c7d5d9",
+  },
+  salvation: {
+    name: "Salvation",
+    description: "Clear gospel warmth with open Bible imagery.",
+    background: "linear-gradient(135deg, #184638 0%, #2f7b5f 58%, #f2d37e 135%)",
+    foreground: "#fffaf0",
+    muted: "#dcebdc",
+    accent: "#f8d36b",
+  },
+  judgment: {
+    name: "Judgment",
+    description: "Serious courtroom/storm tone for sober passages.",
+    background: "linear-gradient(135deg, #191c22 0%, #3f4651 58%, #8b7454 135%)",
+    foreground: "#fffaf0",
+    muted: "#d8d8d2",
+    accent: "#d8b873",
+  },
+  grace: {
+    name: "Grace",
+    description: "Bright, gentle, and hopeful.",
+    background: "linear-gradient(135deg, #eef4e7 0%, #fffdf8 55%, #cddfcb 125%)",
+    foreground: "#22372e",
+    muted: "#667266",
+    accent: "#3f7b5d",
+  },
+  resurrection: {
+    name: "Resurrection",
+    description: "Sunrise, empty tomb, and light.",
+    background: "linear-gradient(135deg, #f8d889 0%, #fff8df 48%, #9dbcae 125%)",
+    foreground: "#26372d",
+    muted: "#5d675e",
+    accent: "#b46e2b",
+  },
+};
+
+const SERMON_IMAGE_THEME_SUGGESTIONS = [
+  { terms: ["love", "believe", "salvation", "grace", "gospel"], label: "cross / open Bible / warm light" },
+  { terms: ["prayer", "pray", "intercession"], label: "kneeling / quiet room / hands / open Bible" },
+  { terms: ["missions", "missionary", "world", "nations"], label: "map / field / globe / open Bible" },
+  { terms: ["judgment", "wrath", "condemned", "sin"], label: "courtroom / scales / storm / sober light" },
+  { terms: ["resurrection", "risen", "life", "empty tomb"], label: "sunrise / empty tomb / light" },
+];
 
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
@@ -6962,6 +7077,28 @@ function createEmptySermon(kind: SermonKind, passage: string): SermonEntry {
   };
 }
 
+function normalizeSermonSlide(slide: Partial<SermonSlide>, index: number): SermonSlide {
+  const type = SERMON_SLIDE_TYPES.includes(slide.type as SermonSlideType) ? slide.type as SermonSlideType : "Main Point";
+  const layout = SERMON_SLIDE_LAYOUTS.includes(slide.layout as SermonSlideLayout) ? slide.layout as SermonSlideLayout : "Centered";
+  const backgroundStyle = SERMON_SLIDE_BACKGROUND_STYLES.includes(slide.backgroundStyle as SermonSlideBackgroundStyle) ? slide.backgroundStyle as SermonSlideBackgroundStyle : "Theme";
+  return {
+    id: slide.id || makeId("slide"),
+    type,
+    title: slide.title ?? `${type} ${index + 1}`,
+    subtitle: slide.subtitle ?? "",
+    body: slide.body ?? "",
+    bibleText: slide.bibleText ?? "",
+    speakerNotes: slide.speakerNotes ?? "",
+    backgroundStyle,
+    imageTheme: slide.imageTheme ?? "open Bible / simple church background",
+    layout,
+  };
+}
+
+function sermonSlideThemeId(value: unknown): SermonSlideThemeId {
+  return typeof value === "string" && value in SERMON_SLIDE_THEMES ? value as SermonSlideThemeId : "classic-pulpit";
+}
+
 function normalizeSermonEntry(entry: Partial<SermonEntry>): SermonEntry | null {
   if (!entry.id) return null;
   const now = new Date().toISOString();
@@ -6974,15 +7111,17 @@ function normalizeSermonEntry(entry: Partial<SermonEntry>): SermonEntry | null {
     : SERMON_SECTION_FIELDS;
   return {
     ...EMPTY_SERMON_ENTRY,
-    ...entry,
-    kind: entry.kind === "Lesson" ? "Lesson" : "Sermon",
-    status,
-    sectionOrder,
-    targetMinutes: Number(entry.targetMinutes) > 0 ? Number(entry.targetMinutes) : 30,
-    createdAt: entry.createdAt ?? now,
-    updatedAt: entry.updatedAt ?? now,
-    archived: Boolean(entry.archived || status === "Archived"),
-  };
+	    ...entry,
+	    kind: entry.kind === "Lesson" ? "Lesson" : "Sermon",
+	    status,
+	    sectionOrder,
+	    targetMinutes: Number(entry.targetMinutes) > 0 ? Number(entry.targetMinutes) : 30,
+	    slides: Array.isArray(entry.slides) ? entry.slides.map(normalizeSermonSlide) : [],
+	    slideTheme: sermonSlideThemeId(entry.slideTheme),
+	    createdAt: entry.createdAt ?? now,
+	    updatedAt: entry.updatedAt ?? now,
+	    archived: Boolean(entry.archived || status === "Archived"),
+	  };
 }
 
 function loadSermonEntries(): SermonEntry[] {
@@ -7066,6 +7205,107 @@ function sermonSectionProgress(entry: SermonEntry) {
   return SERMON_SECTION_FIELDS.filter((section) => entry[section].trim()).length;
 }
 
+function sermonContentLines(text: string, limit = 8) {
+  return text
+    .split(/\n+|;|\u2022/)
+    .map((line) => line.replace(/^[-*\d.IVXivx)\s]+/, "").trim())
+    .filter(Boolean)
+    .slice(0, limit);
+}
+
+function suggestedSermonImageTheme(entry: Pick<SermonEntry, "title" | "passage" | "theme" | "points" | "applications">) {
+  const haystack = [entry.title, entry.passage, entry.theme, entry.points, entry.applications].join(" ").toLowerCase();
+  return SERMON_IMAGE_THEME_SUGGESTIONS.find((suggestion) => suggestion.terms.some((term) => haystack.includes(term)))?.label ?? "open Bible / pulpit / simple warm light";
+}
+
+function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = {}): SermonSlide {
+  return normalizeSermonSlide({
+    id: makeId("slide"),
+    type,
+    title: patch.title ?? type,
+    subtitle: patch.subtitle ?? "",
+    body: patch.body ?? "",
+    bibleText: patch.bibleText ?? "",
+    speakerNotes: patch.speakerNotes ?? "",
+    backgroundStyle: patch.backgroundStyle ?? "Theme",
+    imageTheme: patch.imageTheme ?? "open Bible / simple church background",
+    layout: patch.layout ?? (type === "Scripture" ? "Scripture Focus" : "Centered"),
+  }, 0);
+}
+
+function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSlide[] {
+  const imageTheme = suggestedSermonImageTheme(entry);
+  const pointLines = sermonContentLines(entry.points || entry.outline, 6);
+  const quoteLines = sermonContentLines(entry.quotes, 3);
+  const illustrationLines = sermonContentLines(entry.illustrations, 2);
+  const applicationLines = sermonContentLines(entry.applications, 4);
+  const slides: SermonSlide[] = [
+    createSermonSlide("Title", {
+      title: entry.title || `${entry.kind} Title`,
+      subtitle: [entry.passage, entry.theme].filter(Boolean).join(" - "),
+      body: entry.seriesId ? "Series message" : "",
+      speakerNotes: entry.introduction,
+      imageTheme,
+      layout: "Centered",
+    }),
+    createSermonSlide("Scripture", {
+      title: entry.passage || "Scripture Reading",
+      subtitle: "KJV",
+      body: scriptureText ? "" : "Add or review the KJV text for this passage.",
+      bibleText: scriptureText,
+      speakerNotes: "Read the Scripture before the outline or commentary.",
+      imageTheme: "open Bible / readable Scripture slide",
+      layout: "Scripture Focus",
+    }),
+    ...pointLines.map((point, index) => createSermonSlide("Main Point", {
+      title: `Point ${index + 1}`,
+      body: point,
+      speakerNotes: point,
+      imageTheme,
+      layout: "Teaching Point",
+    })),
+    ...quoteLines.map((quote) => createSermonSlide("Quote", {
+      title: "Quote",
+      body: quote,
+      speakerNotes: "Verify the source and keep the quote secondary to Scripture.",
+      imageTheme: "simple paper / quote card / open Bible",
+      layout: "Minimal",
+    })),
+    ...illustrationLines.map((illustration) => createSermonSlide("Illustration", {
+      title: "Illustration",
+      body: illustration,
+      speakerNotes: "Keep the illustration short and clearly tied to the passage.",
+      imageTheme,
+      layout: "Image Left",
+    })),
+    ...applicationLines.map((application, index) => createSermonSlide("Application", {
+      title: `Application ${index + 1}`,
+      body: application,
+      speakerNotes: "Move from explanation to obedience and prayer.",
+      imageTheme,
+      layout: "Two Column",
+    })),
+    createSermonSlide("Closing / Invitation", {
+      title: "Closing / Invitation",
+      body: entry.invitation || entry.conclusion || "Close with Scripture-centered response.",
+      speakerNotes: entry.conclusion,
+      imageTheme,
+      layout: "Centered",
+    }),
+  ];
+  return slides.slice(0, 18);
+}
+
+function sermonSlideOutline(slides: SermonSlide[]) {
+  return slides.map((slide, index) => [
+    `${index + 1}. ${slide.type}: ${slide.title || "Untitled slide"}`,
+    slide.subtitle ? `   Subtitle: ${slide.subtitle}` : "",
+    slide.body ? `   Body: ${slide.body}` : "",
+    slide.bibleText ? `   Scripture: ${slide.bibleText}` : "",
+    slide.speakerNotes ? `   Notes: ${slide.speakerNotes}` : "",
+  ].filter(Boolean).join("\n")).join("\n\n");
+}
+
 function sermonPlainText(entry: SermonEntry, series: SermonSeries | null) {
   return sermonExportMarkdown(entry, series)
     .replace(/^# /gm, "")
@@ -7097,10 +7337,13 @@ function sermonExportMarkdown(entry: SermonEntry, series: SermonSeries | null) {
     "## Quotes",
     entry.quotes || "No quotes yet.",
     "",
-    "## Bulleted Manuscript",
-    entry.bulletManuscript || bulletEachSentence(buildSermonManuscript(entry)) || "No manuscript yet.",
-    "",
-  ].join("\n");
+	    "## Bulleted Manuscript",
+	    entry.bulletManuscript || bulletEachSentence(buildSermonManuscript(entry)) || "No manuscript yet.",
+	    "",
+	    "## Sermon Slide Outline",
+	    entry.slides.length ? sermonSlideOutline(entry.slides) : "No slides generated yet.",
+	    "",
+	  ].join("\n");
 }
 
 function sermonPrintHtml(entry: SermonEntry, series: SermonSeries | null) {
@@ -8730,19 +8973,59 @@ export default function Home() {
     setSyncMessage(bulleted ? "Each sentence has been bulleted for preaching mode." : "Add sermon manuscript text first.");
   }
 
-  function exportSermonDraft(format: "markdown" | "text" = "markdown") {
-    const series = sermonSeries.find((item) => item.id === sermonDraft.seriesId) ?? null;
-    const slug = (sermonDraft.title || sermonDraft.passage || "sermon-draft").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "sermon-draft";
+	  function exportSermonDraft(format: "markdown" | "text" = "markdown") {
+	    const series = sermonSeries.find((item) => item.id === sermonDraft.seriesId) ?? null;
+	    const slug = (sermonDraft.title || sermonDraft.passage || "sermon-draft").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "sermon-draft";
     if (format === "text") {
       downloadTextFile(`${slug}.txt`, sermonPlainText(sermonDraft, series), "text/plain;charset=utf-8");
       setSyncMessage("Plain text sermon draft exported.");
       return;
     }
-    downloadTextFile(`${slug}.md`, sermonExportMarkdown(sermonDraft, series), "text/markdown;charset=utf-8");
-    setSyncMessage("Markdown sermon draft exported.");
-  }
+	    downloadTextFile(`${slug}.md`, sermonExportMarkdown(sermonDraft, series), "text/markdown;charset=utf-8");
+	    setSyncMessage("Markdown sermon draft exported.");
+	  }
 
-  function printSermonDraft() {
+	  function sermonScriptureTextForPassage(passage: string) {
+	    const cleanPassage = passage.trim();
+	    if (!cleanPassage) return "";
+	    const exactVerse = versesByRef.get(cleanPassage);
+	    if (exactVerse) return `${exactVerse.ref} ${exactVerse.text}`;
+	    const rangeMatch = cleanPassage.match(/^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$/);
+	    if (rangeMatch) {
+	      const [, targetBook, chapterText, startText, endText] = rangeMatch;
+	      const targetChapter = Number(chapterText);
+	      const startVerse = Number(startText);
+	      const endVerse = Number(endText || startText);
+	      return allVerses
+	        .filter((verse) => verse.book.toLowerCase() === targetBook.toLowerCase().trim() && verse.chapter === targetChapter && verse.verse >= startVerse && verse.verse <= endVerse)
+	        .map((verse) => `${verse.ref} ${verse.text}`)
+	        .join("\n");
+	    }
+	    const passageTarget = parseQuickPassage(cleanPassage, allVerses, books);
+	    if (!passageTarget) return "";
+	    const passageVerses = allVerses
+	      .filter((verse) => verse.book === passageTarget.book && verse.chapter === passageTarget.chapter && (!passageTarget.verse || verse.verse === passageTarget.verse))
+	      .slice(0, passageTarget.verse ? 1 : 5);
+	    return passageVerses.map((verse) => `${verse.ref} ${verse.text}`).join("\n");
+	  }
+
+	  function generateSlidesForSermonDraft() {
+	    const nextSlides = generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage));
+	    updateSermonDraft({ slides: nextSlides });
+	    setSyncMessage(`${nextSlides.length} sermon slides generated from the current draft.`);
+	  }
+
+	  function copySermonSlideOutline() {
+	    const outline = sermonSlideOutline(sermonDraft.slides);
+	    if (!outline) {
+	      setSyncMessage("Generate slides before copying the slide outline.");
+	      return;
+	    }
+	    navigator.clipboard?.writeText(outline);
+	    setSyncMessage("Slide outline copied.");
+	  }
+
+	  function printSermonDraft() {
     const series = sermonSeries.find((item) => item.id === sermonDraft.seriesId) ?? null;
     const printWindow = window.open("", "_blank");
     if (!printWindow) {
@@ -11172,9 +11455,9 @@ export default function Home() {
                   type="button"
                   title="Listen to current chapter"
                 >
-                  {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
-                    <Pause size={17} />
-                  ) : (
+	                  {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? (
+	                    <Pause size={17} />
+	                  ) : (
                     <Headphones size={17} />
                   )}
                   {speechState.targetId === `bible-chapter-${book}-${chapter}` && speechState.playing && !speechState.paused ? "Pause" : "Listen"}
@@ -11727,10 +12010,12 @@ export default function Home() {
                 onSeriesPassageChange={setSermonSeriesPassageDraft}
                 onCreateSeries={createSermonSeries}
                 onAppendImport={appendSermonImport}
-                onBulletDraft={bulletSermonDraft}
-                onExportDraft={exportSermonDraft}
-                onPrintDraft={printSermonDraft}
-                onStartPreaching={startPreachingMode}
+	                onBulletDraft={bulletSermonDraft}
+	                onExportDraft={exportSermonDraft}
+	                onPrintDraft={printSermonDraft}
+	                onGenerateSlides={generateSlidesForSermonDraft}
+	                onCopySlideOutline={copySermonSlideOutline}
+	                onStartPreaching={startPreachingMode}
                 onResetTimer={() => {
                   setSermonPreachingStartedAt(Date.now());
                   setSermonTimerNow(Date.now());
@@ -25069,13 +25354,15 @@ function SermonWorkspaceScreen({
   onSeriesTitleChange,
   onSeriesPassageChange,
   onCreateSeries,
-  onAppendImport,
-  onBulletDraft,
-  onExportDraft,
-  onPrintDraft,
-  onStartPreaching,
-  onResetTimer,
-  onBackToBible,
+	  onAppendImport,
+	  onBulletDraft,
+	  onExportDraft,
+	  onPrintDraft,
+	  onGenerateSlides,
+	  onCopySlideOutline,
+	  onStartPreaching,
+	  onResetTimer,
+	  onBackToBible,
 }: {
   view: SermonWorkspaceView;
   sermons: SermonEntry[];
@@ -25102,13 +25389,15 @@ function SermonWorkspaceScreen({
   onSeriesPassageChange: (value: string) => void;
   onCreateSeries: () => void;
   onAppendImport: (label: string, body: string) => void;
-  onBulletDraft: () => void;
-  onExportDraft: (format?: "markdown" | "text") => void;
-  onPrintDraft: () => void;
-  onStartPreaching: () => void;
-  onResetTimer: () => void;
-  onBackToBible: () => void;
-}) {
+	  onBulletDraft: () => void;
+	  onExportDraft: (format?: "markdown" | "text") => void;
+	  onPrintDraft: () => void;
+	  onGenerateSlides: () => void;
+	  onCopySlideOutline: () => void;
+	  onStartPreaching: () => void;
+	  onResetTimer: () => void;
+	  onBackToBible: () => void;
+	}) {
   const activeSermons = sermons.filter((entry) => !entry.archived && entry.status !== "Archived");
   const archivedSermons = sermons.filter((entry) => entry.archived || entry.status === "Archived");
   const preachedCount = sermons.filter((entry) => entry.status === "Preached" || entry.status === "Taught").length;
@@ -25116,12 +25405,18 @@ function SermonWorkspaceScreen({
   const elapsedSeconds = timerStartedAt ? Math.max(0, Math.floor((timerNow - timerStartedAt) / 1000)) : 0;
   const [sermonSearch, setSermonSearch] = useState("");
   const [sermonStatusFilter, setSermonStatusFilter] = useState<SermonStatus | "All">("All");
-  const [sermonKindFilter, setSermonKindFilter] = useState<SermonKind | "All">("All");
-  const [preachingSectionIndex, setPreachingSectionIndex] = useState(0);
-  const [largeTextMode, setLargeTextMode] = useState(true);
-  const [darkPreachingMode, setDarkPreachingMode] = useState(true);
-  const sermonEstimate = sermonLengthEstimate(draft);
-  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
+	  const [sermonKindFilter, setSermonKindFilter] = useState<SermonKind | "All">("All");
+	  const [preachingSectionIndex, setPreachingSectionIndex] = useState(0);
+	  const [largeTextMode, setLargeTextMode] = useState(true);
+	  const [darkPreachingMode, setDarkPreachingMode] = useState(true);
+	  const [selectedSlideId, setSelectedSlideId] = useState("");
+	  const [presentationSlideIndex, setPresentationSlideIndex] = useState(0);
+		  const sermonEstimate = sermonLengthEstimate(draft);
+		  const sermonSlides = useMemo(() => draft.slides ?? [], [draft.slides]);
+	  const activeSlide = sermonSlides.find((slide) => slide.id === selectedSlideId) ?? sermonSlides[0] ?? null;
+	  const activeSlideIndex = activeSlide ? Math.max(0, sermonSlides.findIndex((slide) => slide.id === activeSlide.id)) : 0;
+	  const presentationSlide = sermonSlides[Math.min(presentationSlideIndex, Math.max(0, sermonSlides.length - 1))] ?? null;
+	  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
   const remainingSeconds = Math.max(0, targetSeconds - elapsedSeconds);
   const orderedSections = (draft.sectionOrder?.length ? draft.sectionOrder : SERMON_SECTION_FIELDS)
     .filter((section) => SERMON_SECTION_FIELDS.includes(section));
@@ -25166,19 +25461,52 @@ function SermonWorkspaceScreen({
     invitation: "Gospel appeal or response that fits the passage.",
   };
 
-  function moveSection(section: SermonSectionKey, direction: -1 | 1) {
+	  function moveSection(section: SermonSectionKey, direction: -1 | 1) {
     const currentOrder = orderedSections.length ? orderedSections : SERMON_SECTION_FIELDS;
     const index = currentOrder.indexOf(section);
     const nextIndex = index + direction;
     if (index < 0 || nextIndex < 0 || nextIndex >= currentOrder.length) return;
     const nextOrder = [...currentOrder];
     [nextOrder[index], nextOrder[nextIndex]] = [nextOrder[nextIndex], nextOrder[index]];
-    onDraftChange({ sectionOrder: nextOrder });
-  }
+	    onDraftChange({ sectionOrder: nextOrder });
+	  }
 
-  useEffect(() => {
-    if (view !== "preaching") return;
-    function handleKey(event: KeyboardEvent) {
+	  function updateSlide(id: string, patch: Partial<SermonSlide>) {
+	    onDraftChange({ slides: sermonSlides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
+	  }
+
+	  function addSlide(type: SermonSlideType = "Main Point") {
+	    const nextSlide = createSermonSlide(type, {
+	      title: type,
+	      imageTheme: suggestedSermonImageTheme(draft),
+	    });
+	    onDraftChange({ slides: [...sermonSlides, nextSlide] });
+	    setSelectedSlideId(nextSlide.id);
+	  }
+
+	  function deleteSlide(id: string) {
+	    const nextSlides = sermonSlides.filter((slide) => slide.id !== id);
+	    onDraftChange({ slides: nextSlides });
+	    setSelectedSlideId(nextSlides[0]?.id ?? "");
+	  }
+
+	  function moveSlide(id: string, direction: -1 | 1) {
+	    const index = sermonSlides.findIndex((slide) => slide.id === id);
+	    const nextIndex = index + direction;
+	    if (index < 0 || nextIndex < 0 || nextIndex >= sermonSlides.length) return;
+	    const nextSlides = [...sermonSlides];
+	    [nextSlides[index], nextSlides[nextIndex]] = [nextSlides[nextIndex], nextSlides[index]];
+	    onDraftChange({ slides: nextSlides });
+	  }
+
+	  function generateAndFocusSlides() {
+	    onGenerateSlides();
+	    setSelectedSlideId("");
+	  }
+
+	  useEffect(() => {
+	    if (view !== "preaching") return;
+	    function handleKey(event: KeyboardEvent) {
       if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
         event.preventDefault();
         setPreachingSectionIndex((index) => Math.min(preachingSections.length - 1, index + 1));
@@ -25188,11 +25516,67 @@ function SermonWorkspaceScreen({
         setPreachingSectionIndex((index) => Math.max(0, index - 1));
       }
     }
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [preachingSections.length, view]);
+	    window.addEventListener("keydown", handleKey);
+	    return () => window.removeEventListener("keydown", handleKey);
+	  }, [preachingSections.length, view]);
 
-  if (view === "preaching") {
+	  useEffect(() => {
+	    if (view !== "presenting") return;
+	    function handlePresentationKey(event: KeyboardEvent) {
+	      if (event.key === "Escape") {
+	        event.preventDefault();
+	        onViewChange("slides");
+	      }
+	      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+	        event.preventDefault();
+	        setPresentationSlideIndex((index) => Math.min(sermonSlides.length - 1, index + 1));
+	      }
+	      if (event.key === "ArrowLeft" || event.key === "PageUp") {
+	        event.preventDefault();
+	        setPresentationSlideIndex((index) => Math.max(0, index - 1));
+	      }
+	    }
+	    window.addEventListener("keydown", handlePresentationKey);
+	    return () => window.removeEventListener("keydown", handlePresentationKey);
+	  }, [onViewChange, sermonSlides.length, view]);
+
+	  if (view === "presenting") {
+	    return (
+	      <div className="fixed inset-0 z-50 bg-black text-white">
+	        <div className="flex min-h-screen flex-col">
+	          <div className="flex items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
+	            <button className="rounded-full bg-white/10 px-4 py-2 text-white" onClick={() => onViewChange("slides")} type="button">Exit Presentation</button>
+	            <span>{sermonSlides.length ? `${presentationSlideIndex + 1} / ${sermonSlides.length}` : "No slides"}</span>
+	          </div>
+	          <button
+	            className="flex flex-1 items-center justify-center p-4 text-left"
+	            onClick={() => setPresentationSlideIndex((index) => Math.min(sermonSlides.length - 1, index + 1))}
+	            type="button"
+	          >
+	            {presentationSlide ? (
+	              <SermonSlideCanvas slide={presentationSlide} themeId={draft.slideTheme} presentation />
+	            ) : (
+	              <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+	                <p className="text-2xl font-semibold">Generate slides before presenting.</p>
+	              </div>
+	            )}
+	          </button>
+	          <div className="grid gap-3 border-t border-white/10 bg-black/80 p-4 md:grid-cols-[1fr_auto]">
+	            <div>
+	              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Presenter Notes</p>
+	              <p className="mt-2 text-sm leading-6 text-white/75">{presentationSlide?.speakerNotes || "No presenter notes for this slide."}</p>
+	            </div>
+	            <div className="flex flex-wrap gap-2">
+	              <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white" onClick={() => setPresentationSlideIndex((index) => Math.max(0, index - 1))} type="button">Previous</button>
+	              <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black" onClick={() => setPresentationSlideIndex((index) => Math.min(sermonSlides.length - 1, index + 1))} type="button">Next</button>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    );
+	  }
+
+	  if (view === "preaching") {
     return (
       <div className={`min-h-screen p-4 pb-36 md:p-8 md:pb-10 ${darkPreachingMode ? "bg-[var(--ink)] text-white" : "bg-[#fffdf8] text-[var(--ink)]"}`}>
         <div className={`sticky top-0 z-10 -mx-4 border-b px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5 ${darkPreachingMode ? "border-white/10 bg-[var(--ink)]/95" : "border-[var(--line)] bg-white/95"}`}>
@@ -25293,14 +25677,14 @@ function SermonWorkspaceScreen({
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <div className="flex flex-wrap gap-2">
-          {(["manager", "builder"] as SermonWorkspaceView[]).map((item) => (
+	          {(["manager", "builder", "slides"] as SermonWorkspaceView[]).map((item) => (
             <button
               key={`sermon-view-${item}`}
               className={`rounded-full px-4 py-2 text-sm font-semibold ${view === item ? "bg-[var(--ink)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`}
               onClick={() => onViewChange(item)}
               type="button"
             >
-              {item === "manager" ? "Manager" : "Builder"}
+	              {item === "manager" ? "Manager" : item === "builder" ? "Builder" : "Slides"}
             </button>
           ))}
           <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
@@ -25394,9 +25778,112 @@ function SermonWorkspaceScreen({
               </div>
             </article>
           </section>
-        </div>
-      ) : (
-        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
+	        </div>
+	      ) : view === "slides" ? (
+	        <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr]">
+	          <section className="space-y-4">
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Slides</p>
+	              <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
+	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+	                Build simple Scripture-first slides from the sermon draft. The full presentation engine, remote control, PowerPoint export, and PDF export come later.
+	              </p>
+	              <div className="mt-4 flex flex-wrap gap-2">
+	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Generate Slide Outline</button>
+	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => addSlide()} type="button">Add Slide</button>
+	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
+	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PowerPoint soon</button>
+	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PDF soon</button>
+	              </div>
+	            </article>
+
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <label className="text-sm font-semibold text-[var(--muted)]">
+	                Deck Theme
+	                <select
+	                  className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+	                  value={draft.slideTheme}
+	                  onChange={(event) => onDraftChange({ slideTheme: event.target.value as SermonSlideThemeId })}
+	                >
+	                  {Object.entries(SERMON_SLIDE_THEMES).map(([id, theme]) => <option key={id} value={id}>{theme.name}</option>)}
+	                </select>
+	              </label>
+	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{SERMON_SLIDE_THEMES[draft.slideTheme].description}</p>
+	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Image System Foundation</p>
+	                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Suggested image label: {suggestedSermonImageTheme(draft)}. Use reviewed church-safe images later; no AI image generation is required for this MVP.</p>
+	              </div>
+	            </article>
+
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <div className="flex items-center justify-between gap-3">
+	                <div>
+	                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Slide Thumbnails</p>
+	                  <p className="mt-1 text-sm text-[var(--muted)]">{sermonSlides.length} slide{sermonSlides.length === 1 ? "" : "s"}</p>
+	                </div>
+	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50" disabled={!sermonSlides.length} onClick={() => {
+	                  setPresentationSlideIndex(activeSlideIndex);
+	                  onViewChange("presenting");
+	                }} type="button">Present</button>
+	              </div>
+	              <div className="mt-4 space-y-2">
+	                {sermonSlides.map((slide, index) => (
+	                  <button
+	                    key={slide.id}
+	                    className={`w-full rounded-2xl border p-3 text-left ${activeSlide?.id === slide.id ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-[var(--paper)]"}`}
+	                    onClick={() => setSelectedSlideId(slide.id)}
+	                    type="button"
+	                  >
+	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{index + 1}. {slide.type}</p>
+	                    <p className="mt-1 line-clamp-2 text-sm font-semibold text-[var(--green)]">{slide.title || "Untitled slide"}</p>
+	                  </button>
+	                ))}
+	                {!sermonSlides.length && <p className="rounded-2xl border border-dashed border-[var(--line)] p-4 text-sm leading-6 text-[var(--muted)]">Generate slides from the sermon draft to begin.</p>}
+	              </div>
+	            </article>
+	          </section>
+
+	          <section className="space-y-4">
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <div className="flex flex-wrap items-center justify-between gap-3">
+	                <div>
+	                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Preview</p>
+	                  <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{activeSlide ? `${activeSlideIndex + 1}. ${activeSlide.title || activeSlide.type}` : "No slide selected"}</h2>
+	                </div>
+	                <div className="flex flex-wrap gap-2">
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--muted)] disabled:opacity-40" disabled={!activeSlide || activeSlideIndex === 0} onClick={() => activeSlide && moveSlide(activeSlide.id, -1)} type="button">Move Up</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--muted)] disabled:opacity-40" disabled={!activeSlide || activeSlideIndex === sermonSlides.length - 1} onClick={() => activeSlide && moveSlide(activeSlide.id, 1)} type="button">Move Down</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-red-700 disabled:opacity-40" disabled={!activeSlide} onClick={() => activeSlide && deleteSlide(activeSlide.id)} type="button">Delete</button>
+	                </div>
+	              </div>
+	              <div className="mt-4">
+	                {activeSlide ? <SermonSlideCanvas slide={activeSlide} themeId={draft.slideTheme} /> : <EmptyState title="No slide selected" body="Generate a slide outline or add a slide manually." />}
+	              </div>
+	              {activeSlide && (
+	                <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Presenter Notes</p>
+	                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
+	                </div>
+	              )}
+	            </article>
+
+	            {activeSlide ? (
+	              <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
+	            ) : (
+	              <article className="rounded-3xl border border-[var(--line)] bg-white p-5 text-sm leading-6 text-[var(--muted)] shadow-sm">
+	                Add or generate a slide to open the editor.
+	              </article>
+	            )}
+
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Preacher Control</p>
+	              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Phone/tablet remote control coming later</h2>
+	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">This MVP does not build network remote control yet. It prepares the sermon slide structure so a future remote can control the same slide list.</p>
+	            </article>
+	          </section>
+	        </div>
+	      ) : (
+	        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
           <section className="space-y-4">
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <div className="flex flex-wrap items-start justify-between gap-3">
@@ -25408,9 +25895,10 @@ function SermonWorkspaceScreen({
                   <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onSaveDraft} type="button">Save</button>
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("markdown")} type="button">Download Markdown</button>
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("text")} type="button">Download Text</button>
-                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onPrintDraft} type="button">Print Notes</button>
-                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onDuplicateEntry(draft)} type="button">Duplicate</button>
-                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Preaching Mode</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onPrintDraft} type="button">Print Notes</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onDuplicateEntry(draft)} type="button">Duplicate</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("slides")} type="button">Slide Builder</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Preaching Mode</button>
                 </div>
               </div>
 
@@ -25565,6 +26053,96 @@ function SermonManagerCard({
             Mark {status}
           </button>
         ))}
+      </div>
+    </article>
+  );
+}
+
+function sermonSlideBackground(theme: (typeof SERMON_SLIDE_THEMES)[SermonSlideThemeId], style: SermonSlideBackgroundStyle) {
+  if (style === "Soft Gradient") return theme.background;
+  if (style === "Paper") return "linear-gradient(135deg, #fbf5e9 0%, #fffdf8 65%, #e9dfcc 130%)";
+  if (style === "Dark") return "linear-gradient(135deg, #171b1f 0%, #26332d 70%, #0f1114 130%)";
+  if (style === "Light") return "linear-gradient(135deg, #fffdf8 0%, #f6efe2 65%, #e7eadf 130%)";
+  return theme.background;
+}
+
+function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: SermonSlide; themeId: SermonSlideThemeId; presentation?: boolean }) {
+  const theme = SERMON_SLIDE_THEMES[themeId] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
+  const lightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light" || themeId === "warm-bible-study" || themeId === "grace" || themeId === "resurrection";
+  const foreground = lightStyle ? "#24342c" : theme.foreground;
+  const muted = lightStyle ? "#5f6b61" : theme.muted;
+  const textAlign = slide.layout === "Image Left" || slide.layout === "Two Column" ? "text-left" : "text-center";
+  const gridLayout = slide.layout === "Image Left" || slide.layout === "Two Column";
+  return (
+    <div
+      className={`${presentation ? "min-h-[68vh] w-full max-w-6xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
+      style={{ background: sermonSlideBackground(theme, slide.backgroundStyle), color: foreground }}
+    >
+      <div className={`flex h-full w-full flex-col justify-between p-5 md:p-8 ${textAlign}`}>
+        <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
+          <span>{slide.type}</span>
+          <span>{slide.imageTheme}</span>
+        </div>
+        <div className={`${gridLayout ? "grid items-center gap-6 md:grid-cols-[0.8fr_1.2fr]" : "mx-auto max-w-4xl"} py-5`}>
+          {gridLayout && (
+            <div className="hidden rounded-3xl border border-white/20 bg-white/15 p-5 text-sm font-semibold uppercase tracking-[0.16em] md:block" style={{ color: muted }}>
+              {slide.imageTheme || "open Bible / simple background"}
+            </div>
+          )}
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>
+            <h3 className={`${presentation ? "text-5xl md:text-7xl" : "text-3xl md:text-5xl"} mt-3 font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
+            {slide.bibleText && (
+              <p className={`${presentation ? "text-2xl md:text-4xl" : "text-lg md:text-2xl"} mt-5 whitespace-pre-wrap font-serif leading-snug`}>
+                {slide.bibleText}
+              </p>
+            )}
+            {slide.body && (
+              <p className={`${presentation ? "text-2xl md:text-4xl" : "text-lg md:text-2xl"} mt-5 whitespace-pre-wrap leading-snug`} style={{ color: slide.bibleText ? muted : foreground }}>
+                {slide.body}
+              </p>
+            )}
+          </div>
+        </div>
+        <div className="text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: muted }}>
+          Father&apos;s Business Bible Study
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
+  return (
+    <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Slide Editor</p>
+      <div className="mt-4 grid gap-3 md:grid-cols-2">
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Slide Type
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.type} onChange={(event) => onChange({ type: event.target.value as SermonSlideType })}>
+            {SERMON_SLIDE_TYPES.map((type) => <option key={type} value={type}>{type}</option>)}
+          </select>
+        </label>
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Layout
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.layout} onChange={(event) => onChange({ layout: event.target.value as SermonSlideLayout })}>
+            {SERMON_SLIDE_LAYOUTS.map((layout) => <option key={layout} value={layout}>{layout}</option>)}
+          </select>
+        </label>
+        <label className="text-sm font-semibold text-[var(--muted)]">
+          Background Style
+          <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.backgroundStyle} onChange={(event) => onChange({ backgroundStyle: event.target.value as SermonSlideBackgroundStyle })}>
+            {SERMON_SLIDE_BACKGROUND_STYLES.map((style) => <option key={style} value={style}>{style}</option>)}
+          </select>
+        </label>
+        <SermonField label="Image theme" value={slide.imageTheme} onChange={(value) => onChange({ imageTheme: value })} placeholder="open Bible / cross / light" />
+      </div>
+      <div className="mt-4 grid gap-3">
+        <SermonField label="Title" value={slide.title} onChange={(value) => onChange({ title: value })} />
+        <SermonField label="Subtitle" value={slide.subtitle} onChange={(value) => onChange({ subtitle: value })} />
+        <SermonTextArea label="Body text" value={slide.body} onChange={(value) => onChange({ body: value })} />
+        <SermonTextArea label="Bible verse text" value={slide.bibleText} onChange={(value) => onChange({ bibleText: value })} />
+        <SermonTextArea label="Speaker notes" value={slide.speakerNotes} onChange={(value) => onChange({ speakerNotes: value })} />
       </div>
     </article>
   );
