@@ -1,0 +1,62 @@
+{
+  "purpose": "Planning data only. Do not build the full presentation engine yet.",
+  "slide_outline": [
+    {
+      "type": "title_slide",
+      "label": "Title Slide",
+      "fields": ["sermon title", "passage", "series", "date"],
+      "recommended_use": "Open the sermon or lesson clearly."
+    },
+    {
+      "type": "scripture_slide",
+      "label": "Scripture Slide",
+      "fields": ["reference", "KJV text", "optional emphasis phrase"],
+      "recommended_use": "Show the Bible text before commentary, outline, or application."
+    },
+    {
+      "type": "main_point_slide",
+      "label": "Main Point Slide",
+      "fields": ["point number", "point title", "short supporting phrase"],
+      "recommended_use": "Keep sermon structure visible without crowding the screen."
+    },
+    {
+      "type": "quote_slide",
+      "label": "Quote Slide",
+      "fields": ["quote", "author", "source", "rights note"],
+      "recommended_use": "Use only reviewed quotes with source and rights notes."
+    },
+    {
+      "type": "application_slide",
+      "label": "Application Slide",
+      "fields": ["application question", "obedience step", "prayer response"],
+      "recommended_use": "Move from explanation to personal response."
+    },
+    {
+      "type": "closing_slide",
+      "label": "Closing Slide",
+      "fields": ["closing thought", "invitation", "memory verse"],
+      "recommended_use": "Close the lesson with Scripture-centered response."
+    }
+  ],
+  "suggested_image_theme": {
+    "bible_text": "open Bible, pulpit, study desk, simple parchment or paper texture",
+    "do_not_use": ["busy stock backgrounds", "unreadable dark images", "decorative clutter"],
+    "future_sources": ["public-domain images", "licensed church media", "generated backgrounds with review"]
+  },
+  "suggested_design_tone": [
+    "clean",
+    "warm",
+    "serious",
+    "readable",
+    "KJV Scripture first",
+    "minimal motion"
+  ],
+  "future_modes": [
+    "slide builder",
+    "presentation mode",
+    "tablet preaching view",
+    "remote control",
+    "confidence monitor",
+    "Proclaim export research"
+  ]
+}
