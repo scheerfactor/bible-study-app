@@ -1,13 +1,13 @@
 {
-  "source_csv": "data/library/bulk-import-phase-5.csv",
+  "source_csv": "data/library/bulk-import-phase-6.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 20,
-  "total_attempted": 14,
-  "imported": 11,
+  "batch_size": 130,
+  "total_attempted": 130,
+  "imported": 130,
   "would_import": 0,
   "skipped": 0,
-  "failed": 3,
+  "failed": 0,
   "missing_metadata": 0,
   "possible_rights_issues": 0,
   "duplicate_titles": 0,
@@ -15,198 +15,1956 @@
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "Dispensational Truth: or, God's Plan and Purpose in the Ages",
-      "file": "dispensational-truth-or-god-s-plan-and-purpose-in-the-ages-clarence-larkin.txt",
-      "bytes": 1208399,
-      "words": 210068,
-      "reading_time_minutes": 934
+      "title": "Biblical Geography and History",
+      "file": "biblical-geography-and-history-kent-charles-foster.txt",
+      "bytes": 628166,
+      "words": 102248,
+      "reading_time_minutes": 454
     },
     {
-      "title": "The Spirit World",
-      "file": "the-spirit-world-clarence-larkin.txt",
-      "bytes": 258474,
-      "words": 43871,
-      "reading_time_minutes": 195
+      "title": "Buried Cities and Bible Countries",
+      "file": "buried-cities-and-bible-countries-st-clair-george.txt",
+      "bytes": 694230,
+      "words": 116823,
+      "reading_time_minutes": 519
     },
     {
-      "title": "The Book of Revelation",
-      "file": "the-book-of-revelation-clarence-larkin.txt",
-      "bytes": 599721,
-      "words": 103033,
-      "reading_time_minutes": 458
+      "title": "A Class-Book of Biblical History and Geography with numerous maps",
+      "file": "a-class-book-of-biblical-history-and-geography-with-numerous-maps-osborn-h-s-henry-stafford.txt",
+      "bytes": 432092,
+      "words": 70674,
+      "reading_time_minutes": 314
     },
     {
-      "title": "The Book of Daniel",
-      "file": "the-book-of-daniel-clarence-larkin.txt",
-      "bytes": 507829,
-      "words": 86819,
-      "reading_time_minutes": 386
+      "title": "The Cities of Refuge: or, The Name of Jesus A Sunday book for the young",
+      "file": "the-cities-of-refuge-or-the-name-of-jesus-a-sunday-book-for-the-young-macduff-john-r-john-ross.txt",
+      "bytes": 80233,
+      "words": 13908,
+      "reading_time_minutes": 62
     },
     {
-      "title": "Lectures on the Epistle to the Colossians",
-      "file": "lectures-on-the-epistle-to-the-colossians-h-a-ironside.txt",
-      "bytes": 254426,
-      "words": 44874,
-      "reading_time_minutes": 199
+      "title": "Bible animals : being a description of every living creature mentioned in the Scripture, from the ape to the coral.",
+      "file": "bible-animals-being-a-description-of-every-living-creature-mentioned-in-the-scripture-from-the-ape-to-the-cora.txt",
+      "bytes": 1429077,
+      "words": 243828,
+      "reading_time_minutes": 1084
     },
     {
-      "title": "Notes on the Minor Prophets",
-      "file": "notes-on-the-minor-prophets-h-a-ironside.txt",
-      "bytes": 628463,
-      "words": 110547,
-      "reading_time_minutes": 491
+      "title": "Kingless Folk, and Other Addresses on Bible Animals",
+      "file": "kingless-folk-and-other-addresses-on-bible-animals-adams-john.txt",
+      "bytes": 134041,
+      "words": 23368,
+      "reading_time_minutes": 104
     },
     {
-      "title": "The Four Hundred Silent Years",
-      "file": "the-four-hundred-silent-years-h-a-ironside.txt",
-      "bytes": 159168,
-      "words": 27046,
-      "reading_time_minutes": 120
+      "title": "Peeps Into China; Or, The Missionary's Children",
+      "file": "peeps-into-china-or-the-missionary-s-children-phillips-e-c-edith-caroline.txt",
+      "bytes": 215330,
+      "words": 36488,
+      "reading_time_minutes": 162
     },
     {
-      "title": "Exposition of the Epistle of James",
-      "file": "exposition-of-the-epistle-of-james-william-kelly.txt",
-      "bytes": 259342,
-      "words": 46486,
-      "reading_time_minutes": 207
+      "title": "Letters to Children",
+      "file": "letters-to-children-bridgman-e-c-elijah-coleman.txt",
+      "bytes": 129117,
+      "words": 22235,
+      "reading_time_minutes": 99
     },
     {
-      "title": "Notes on the Book of Daniel",
-      "file": "notes-on-the-book-of-daniel-william-kelly.txt",
-      "bytes": 548058,
-      "words": 86253,
-      "reading_time_minutes": 383
+      "title": "\"They're a multitoode\" and other stories",
+      "file": "they-re-a-multitoode-and-other-stories-stephenson-f-c-frederick-clarke.txt",
+      "bytes": 131304,
+      "words": 23118,
+      "reading_time_minutes": 103
     },
     {
-      "title": "Lectures Introductory to the Study of the Epistles of Paul the Apostle",
-      "file": "lectures-introductory-to-the-study-of-the-epistles-of-paul-the-apostle-william-kelly.txt",
-      "bytes": 1194162,
-      "words": 187638,
-      "reading_time_minutes": 834
+      "title": "South and South Central Africa A record of fifteen years' missionary labors among primitive peoples",
+      "file": "south-and-south-central-africa-a-record-of-fifteen-years-missionary-labors-among-primitive-peoples-davidson-ha.txt",
+      "bytes": 673982,
+      "words": 118626,
+      "reading_time_minutes": 527
     },
     {
-      "title": "Lectures Introductory to the Study of the Gospels",
-      "file": "lectures-introductory-to-the-study-of-the-gospels-william-kelly.txt",
-      "bytes": 1197373,
-      "words": 185862,
-      "reading_time_minutes": 826
+      "title": "The History of the Negro Church",
+      "file": "the-history-of-the-negro-church-woodson-carter-godwin.txt",
+      "bytes": 503907,
+      "words": 80521,
+      "reading_time_minutes": 358
+    },
+    {
+      "title": "Through lands that were dark Being a record of a year's missionary journey in Africa and Madagascar",
+      "file": "through-lands-that-were-dark-being-a-record-of-a-year-s-missionary-journey-in-africa-and-madagascar-hawkins-f-.txt",
+      "bytes": 229033,
+      "words": 38248,
+      "reading_time_minutes": 170
+    },
+    {
+      "title": "The Works of Mr. George Gillespie (Vol. 1 of 2)",
+      "file": "the-works-of-mr-george-gillespie-vol-1-of-2-gillespie-george-hetherington-w-m-william-maxwell.txt",
+      "bytes": 1722785,
+      "words": 290581,
+      "reading_time_minutes": 1291
+    },
+    {
+      "title": "Fox's Book of Martyrs Or A History of the Lives, Sufferings, and Triumphant Deaths of the Primitive Protestant Martyrs",
+      "file": "fox-s-book-of-martyrs-or-a-history-of-the-lives-sufferings-and-triumphant-deaths-of-the-primitive-protestant-m.txt",
+      "bytes": 1561258,
+      "words": 263898,
+      "reading_time_minutes": 1173
+    },
+    {
+      "title": "A Source Book for Ancient Church History",
+      "file": "a-source-book-for-ancient-church-history-ayer-joseph-cullen.txt",
+      "bytes": 1504953,
+      "words": 251911,
+      "reading_time_minutes": 1120
+    },
+    {
+      "title": "Bede's Ecclesiastical History of England",
+      "file": "bede-s-ecclesiastical-history-of-england-bede-the-venerable-saint-sellar-a-m.txt",
+      "bytes": 1073748,
+      "words": 179967,
+      "reading_time_minutes": 800
+    },
+    {
+      "title": "A record of St. Cybi's Church, Holyhead : and the sermon preached after its restoration, 1879",
+      "file": "a-record-of-st-cybi-s-church-holyhead-and-the-sermon-preached-after-its-restoration-1879-stanley-arthur-penrhy.txt",
+      "bytes": 56767,
+      "words": 9382,
+      "reading_time_minutes": 42
+    },
+    {
+      "title": "Post-Mediæval Preachers Some Account of the Most Celebrated Preachers of the 15th, 16th, & 17th Centuries; with outlines of their sermons, and specimens of their style",
+      "file": "post-medi-val-preachers-some-account-of-the-most-celebrated-preachers-of-the-15th-16th-and-17th-centuries-with.txt",
+      "bytes": 416754,
+      "words": 68397,
+      "reading_time_minutes": 304
+    },
+    {
+      "title": "Plain Sermons, preached at Archbishop Tenison's Chapel, Regent Street. Second Series",
+      "file": "plain-sermons-preached-at-archbishop-tenison-s-chapel-regent-street-second-series-cowan-james-galloway.txt",
+      "bytes": 406617,
+      "words": 70351,
+      "reading_time_minutes": 313
+    },
+    {
+      "title": "Plain Parochial Sermons, preached in the Parish Church of Bolton-le-Moors",
+      "file": "plain-parochial-sermons-preached-in-the-parish-church-of-bolton-le-moors-slade-james.txt",
+      "bytes": 424071,
+      "words": 71509,
+      "reading_time_minutes": 318
+    },
+    {
+      "title": "The National Preacher, Vol. 2 No. 7 Dec. 1827 Or Original Monthly Sermons from Living Ministers, Sermons XXVI. and XXVII.",
+      "file": "the-national-preacher-vol-2-no-7-dec-1827-or-original-monthly-sermons-from-living-ministers-sermons-xxvi-and-x.txt",
+      "bytes": 61711,
+      "words": 9730,
+      "reading_time_minutes": 43
+    },
+    {
+      "title": "A Sermon Preached on the Anniversary of the Boston Female Asylum for Destitute Orphans, September 25, 1835",
+      "file": "a-sermon-preached-on-the-anniversary-of-the-boston-female-asylum-for-destitute-orphans-september-25-1835-wainw.txt",
+      "bytes": 34491,
+      "words": 5734,
+      "reading_time_minutes": 25
+    },
+    {
+      "title": "The Sin and Danger of Self-Love Described by a Sermon Preached At Plymouth, in New-England, 1621",
+      "file": "the-sin-and-danger-of-self-love-described-by-a-sermon-preached-at-plymouth-in-new-england-1621-cushman-robert.txt",
+      "bytes": 72104,
+      "words": 12714,
+      "reading_time_minutes": 57
+    },
+    {
+      "title": "Plain Sermons, Preached at Archbishop Tenison's Chapel, Regent Street",
+      "file": "plain-sermons-preached-at-archbishop-tenison-s-chapel-regent-street-cowan-james-galloway.txt",
+      "bytes": 220992,
+      "words": 37457,
+      "reading_time_minutes": 166
+    },
+    {
+      "title": "A Sermon Preached at the Quaker's Meeting House, in Gracechurch-Street, London, Eighth Month 12th, 1694.",
+      "file": "a-sermon-preached-at-the-quaker-s-meeting-house-in-gracechurch-street-london-eighth-month-12th-1694-penn-willi.txt",
+      "bytes": 27754,
+      "words": 5060,
+      "reading_time_minutes": 22
+    },
+    {
+      "title": "National Apostasy Considered in a Sermon Preached in St. Mary's Church, Oxford Before His Majesty's Judges of Assize on Sunday July 14th 1833",
+      "file": "national-apostasy-considered-in-a-sermon-preached-in-st-mary-s-church-oxford-before-his-majesty-s-judges-of-as.txt",
+      "bytes": 32548,
+      "words": 5327,
+      "reading_time_minutes": 24
+    },
+    {
+      "title": "The National Preacher, Vol. 2. No. 6., Nov. 1827 Or Original Monthly Sermons from Living Ministers",
+      "file": "the-national-preacher-vol-2-no-6-nov-1827-or-original-monthly-sermons-from-living-ministers-dickinson-austin-p.txt",
+      "bytes": 54864,
+      "words": 8847,
+      "reading_time_minutes": 39
+    },
+    {
+      "title": "The life of the departed : A sermon occasioned by the death of the Rev. Joseph Crandal, of Salsbury, preached in the Baptist chapel, Germain Street, city of St. John",
+      "file": "the-life-of-the-departed-a-sermon-occasioned-by-the-death-of-the-rev-joseph-crandal-of-salsbury-preached-in-th.txt",
+      "bytes": 57951,
+      "words": 10002,
+      "reading_time_minutes": 44
+    },
+    {
+      "title": "The Thirteen Names of the First Patriarchs, Considered as Figurative of the Progressive Influence of the Spirit. Being the Substance of Two Sermons, Preached on Wednesday March 24, and April 3, 1811, at the Obelisk Chapel",
+      "file": "the-thirteen-names-of-the-first-patriarchs-considered-as-figurative-of-the-progressive-influence-of-the-spirit.txt",
+      "bytes": 59935,
+      "words": 10259,
+      "reading_time_minutes": 46
+    },
+    {
+      "title": "A Sermon preached at St. George's Church, Bolton, on Sunday, 7th January, 1838 occasioned by the death of the Rev. William Thistlewaite",
+      "file": "a-sermon-preached-at-st-george-s-church-bolton-on-sunday-7th-january-1838-occasioned-by-the-death-of-the-rev-w.txt",
+      "bytes": 21531,
+      "words": 3664,
+      "reading_time_minutes": 16
+    },
+    {
+      "title": "The World's Great Sermons, Volume 10: Drummond to Jowett, and General Index",
+      "file": "the-world-s-great-sermons-volume-10-drummond-to-jowett-and-general-index-kleiser-grenville.txt",
+      "bytes": 305104,
+      "words": 53456,
+      "reading_time_minutes": 238
+    },
+    {
+      "title": "The Bible object book : A book of object lessons which are different, written in plain English and in common words",
+      "file": "the-bible-object-book-a-book-of-object-lessons-which-are-different-written-in-plain-english-and-in-common-word.txt",
+      "bytes": 380433,
+      "words": 68769,
+      "reading_time_minutes": 306
+    },
+    {
+      "title": "Training the Teacher",
+      "file": "training-the-teacher-schauffler-a-f-adolphus-frederick-brumbaugh-martin-grove-lamoreaux-antoinette-abernethy-l.txt",
+      "bytes": 490451,
+      "words": 79599,
+      "reading_time_minutes": 354
+    },
+    {
+      "title": "A Treatise on Good Works",
+      "file": "a-treatise-on-good-works-luther-martin-reu-johann-michael.txt",
+      "bytes": 223003,
+      "words": 40439,
+      "reading_time_minutes": 180
+    },
+    {
+      "title": "Institutes of the Christian Religion (Vol. 2 of 2)",
+      "file": "institutes-of-the-christian-religion-vol-2-of-2-calvin-jean-allen-john.txt",
+      "bytes": 2114718,
+      "words": 337832,
+      "reading_time_minutes": 1501
+    },
+    {
+      "title": "An Apology for the True Christian Divinity Being an explanation and vindication of the principles and doctrines of the people called Quakers",
+      "file": "an-apology-for-the-true-christian-divinity-being-an-explanation-and-vindication-of-the-principles-and-doctrine.txt",
+      "bytes": 1290440,
+      "words": 218692,
+      "reading_time_minutes": 972
+    },
+    {
+      "title": "Curiosities of Christian History Prior to the Reformation",
+      "file": "curiosities-of-christian-history-prior-to-the-reformation-paterson-james.txt",
+      "bytes": 1334065,
+      "words": 228468,
+      "reading_time_minutes": 1015
+    },
+    {
+      "title": "The Works of John Knox, Volume 1 (of 6)",
+      "file": "the-works-of-john-knox-volume-1-of-6-knox-john-laing-david.txt",
+      "bytes": 1373391,
+      "words": 226055,
+      "reading_time_minutes": 1005
+    },
+    {
+      "title": "Letters of John Calvin, Volume I Compiled from the Original Manuscripts and Edited with Historical Notes",
+      "file": "letters-of-john-calvin-volume-i-compiled-from-the-original-manuscripts-and-edited-with-historical-notes-calvin.txt",
+      "bytes": 1110437,
+      "words": 188214,
+      "reading_time_minutes": 837
+    },
+    {
+      "title": "The History of the Reformation of Religion in Scotland With Which Are Included Knox's Confession and The Book of Discipline",
+      "file": "the-history-of-the-reformation-of-religion-in-scotland-with-which-are-included-knox-s-confession-and-the-book-.txt",
+      "bytes": 982688,
+      "words": 167339,
+      "reading_time_minutes": 744
+    },
+    {
+      "title": "Letters of John Calvin, Volume II Compiled from the Original Manuscripts and Edited with Historical Notes",
+      "file": "letters-of-john-calvin-volume-ii-compiled-from-the-original-manuscripts-and-edited-with-historical-notes-calvi.txt",
+      "bytes": 1049497,
+      "words": 178382,
+      "reading_time_minutes": 793
+    },
+    {
+      "title": "The Eve of the Reformation Studies in the Religious Life and Thought of the English people in the Period Preceding the Rejection of the Roman jurisdiction by Henry VIII",
+      "file": "the-eve-of-the-reformation-studies-in-the-religious-life-and-thought-of-the-english-people-in-the-period-prece.txt",
+      "bytes": 909073,
+      "words": 150712,
+      "reading_time_minutes": 670
+    },
+    {
+      "title": "The Works of John Knox, Volume 2 (of 6)",
+      "file": "the-works-of-john-knox-volume-2-of-6-knox-john-laing-david.txt",
+      "bytes": 1432905,
+      "words": 230899,
+      "reading_time_minutes": 1026
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 02, February, 1878",
+      "file": "the-american-missionary-volume-32-no-02-february-1878-various.txt",
+      "bytes": 161163,
+      "words": 21452,
+      "reading_time_minutes": 95
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 05, May, 1879",
+      "file": "the-american-missionary-volume-33-no-05-may-1879-various.txt",
+      "bytes": 154954,
+      "words": 22095,
+      "reading_time_minutes": 98
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 2, February, 1881",
+      "file": "the-american-missionary-volume-35-no-2-february-1881-various.txt",
+      "bytes": 164357,
+      "words": 21221,
+      "reading_time_minutes": 94
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 02, February, 1879",
+      "file": "the-american-missionary-volume-33-no-02-february-1879-various.txt",
+      "bytes": 160879,
+      "words": 21803,
+      "reading_time_minutes": 97
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 7, July, 1882",
+      "file": "the-american-missionary-volume-36-no-7-july-1882-various.txt",
+      "bytes": 142046,
+      "words": 19176,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "Ports of Entry: Missionary Herald",
+      "file": "ports-of-entry-missionary-herald-home-missions-council-u-s-council-of-women-for-home-missions.txt",
+      "bytes": 64619,
+      "words": 8971,
+      "reading_time_minutes": 40
+    },
+    {
+      "title": "Ten years in Burma",
+      "file": "ten-years-in-burma-smith-julius.txt",
+      "bytes": 412449,
+      "words": 70779,
+      "reading_time_minutes": 315
+    },
+    {
+      "title": "Fruits of Toil in the London Missionary Society",
+      "file": "fruits-of-toil-in-the-london-missionary-society-london-missionary-society.txt",
+      "bytes": 132105,
+      "words": 21065,
+      "reading_time_minutes": 94
+    },
+    {
+      "title": "The Moravians in Labrador",
+      "file": "the-moravians-in-labrador-anonymous.txt",
+      "bytes": 415286,
+      "words": 69702,
+      "reading_time_minutes": 310
+    },
+    {
+      "title": "Dangers on the Ice Off the Coast of Labrador With Some Interesting Particulars Respecting the Natives of that Country",
+      "file": "dangers-on-the-ice-off-the-coast-of-labrador-with-some-interesting-particulars-respecting-the-natives-of-that-.txt",
+      "bytes": 15820,
+      "words": 2685,
+      "reading_time_minutes": 12
+    },
+    {
+      "title": "Under Many Flags",
+      "file": "under-many-flags-cronk-katharine-scherer-singmaster-elsie.txt",
+      "bytes": 154397,
+      "words": 27667,
+      "reading_time_minutes": 123
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 12, December, 1878",
+      "file": "the-american-missionary-volume-32-no-12-december-1878-various.txt",
+      "bytes": 225829,
+      "words": 33682,
+      "reading_time_minutes": 150
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 11, November, 1878",
+      "file": "the-american-missionary-volume-32-no-11-november-1878-various.txt",
+      "bytes": 166130,
+      "words": 23516,
+      "reading_time_minutes": 105
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 04, April 1878",
+      "file": "the-american-missionary-volume-32-no-04-april-1878-various.txt",
+      "bytes": 167262,
+      "words": 23832,
+      "reading_time_minutes": 106
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 10, October, 1878",
+      "file": "the-american-missionary-volume-32-no-10-october-1878-various.txt",
+      "bytes": 159843,
+      "words": 23401,
+      "reading_time_minutes": 104
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 01, January, 1878",
+      "file": "the-american-missionary-volume-32-no-01-january-1878-various.txt",
+      "bytes": 153850,
+      "words": 22909,
+      "reading_time_minutes": 102
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 08, August, 1878",
+      "file": "the-american-missionary-volume-32-no-08-august-1878-various.txt",
+      "bytes": 161155,
+      "words": 23343,
+      "reading_time_minutes": 104
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 07, July 1878",
+      "file": "the-american-missionary-volume-32-no-07-july-1878-various.txt",
+      "bytes": 160031,
+      "words": 23481,
+      "reading_time_minutes": 104
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 05, May, 1878",
+      "file": "the-american-missionary-volume-32-no-05-may-1878-various.txt",
+      "bytes": 159010,
+      "words": 22782,
+      "reading_time_minutes": 101
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 09, September, 1878",
+      "file": "the-american-missionary-volume-32-no-09-september-1878-various.txt",
+      "bytes": 155112,
+      "words": 22873,
+      "reading_time_minutes": 102
+    },
+    {
+      "title": "The American Missionary — Volume 32, No. 06, June, 1878",
+      "file": "the-american-missionary-volume-32-no-06-june-1878-various.txt",
+      "bytes": 157598,
+      "words": 22666,
+      "reading_time_minutes": 101
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 09, September, 1879",
+      "file": "the-american-missionary-volume-33-no-09-september-1879-various.txt",
+      "bytes": 145592,
+      "words": 21661,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 11, November, 1879",
+      "file": "the-american-missionary-volume-33-no-11-november-1879-various.txt",
+      "bytes": 147939,
+      "words": 21713,
+      "reading_time_minutes": 97
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 07, July, 1879",
+      "file": "the-american-missionary-volume-33-no-07-july-1879-various.txt",
+      "bytes": 155781,
+      "words": 22854,
+      "reading_time_minutes": 102
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 12, December 1879",
+      "file": "the-american-missionary-volume-33-no-12-december-1879-various.txt",
+      "bytes": 279133,
+      "words": 43347,
+      "reading_time_minutes": 193
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 06, June, 1879",
+      "file": "the-american-missionary-volume-33-no-06-june-1879-various.txt",
+      "bytes": 151803,
+      "words": 22076,
+      "reading_time_minutes": 98
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 04, April 1879",
+      "file": "the-american-missionary-volume-33-no-04-april-1879-various.txt",
+      "bytes": 147436,
+      "words": 21801,
+      "reading_time_minutes": 97
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 10, October, 1879",
+      "file": "the-american-missionary-volume-33-no-10-october-1879-various.txt",
+      "bytes": 147902,
+      "words": 22072,
+      "reading_time_minutes": 98
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 08, August, 1879",
+      "file": "the-american-missionary-volume-33-no-08-august-1879-various.txt",
+      "bytes": 147891,
+      "words": 21642,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 33, No. 01, January 1879",
+      "file": "the-american-missionary-volume-33-no-01-january-1879-various.txt",
+      "bytes": 151185,
+      "words": 21599,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 10, October, 1880",
+      "file": "the-american-missionary-volume-34-no-10-october-1880-various.txt",
+      "bytes": 151902,
+      "words": 22135,
+      "reading_time_minutes": 98
+    },
+    {
+      "title": "American Missionary, Vol. XXXIV., No. 5, May 1880",
+      "file": "american-missionary-vol-xxxiv-no-5-may-1880-various.txt",
+      "bytes": 146999,
+      "words": 21390,
+      "reading_time_minutes": 95
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 7, July, 1880",
+      "file": "the-american-missionary-volume-34-no-7-july-1880-various.txt",
+      "bytes": 148152,
+      "words": 21660,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 04, April, 1880",
+      "file": "the-american-missionary-volume-34-no-04-april-1880-various.txt",
+      "bytes": 153752,
+      "words": 22284,
+      "reading_time_minutes": 99
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 8, August, 1880",
+      "file": "the-american-missionary-volume-34-no-8-august-1880-various.txt",
+      "bytes": 148277,
+      "words": 21509,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 06, June, 1880",
+      "file": "the-american-missionary-volume-34-no-06-june-1880-various.txt",
+      "bytes": 148853,
+      "words": 21410,
+      "reading_time_minutes": 95
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 02, February, 1880",
+      "file": "the-american-missionary-volume-34-no-02-february-1880-various.txt",
+      "bytes": 163608,
+      "words": 21613,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 1, January, 1880",
+      "file": "the-american-missionary-volume-34-no-1-january-1880-various.txt",
+      "bytes": 150896,
+      "words": 21840,
+      "reading_time_minutes": 97
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 09, September, 1880",
+      "file": "the-american-missionary-volume-34-no-09-september-1880-various.txt",
+      "bytes": 153146,
+      "words": 22498,
+      "reading_time_minutes": 100
+    },
+    {
+      "title": "The American Missionary — Volume 34, No. 3, March, 1880",
+      "file": "the-american-missionary-volume-34-no-3-march-1880-various.txt",
+      "bytes": 161832,
+      "words": 22767,
+      "reading_time_minutes": 101
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 3, March 1881",
+      "file": "the-american-missionary-volume-35-no-3-march-1881-various.txt",
+      "bytes": 170562,
+      "words": 23149,
+      "reading_time_minutes": 103
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 7, July, 1881",
+      "file": "the-american-missionary-volume-35-no-7-july-1881-various.txt",
+      "bytes": 147013,
+      "words": 21114,
+      "reading_time_minutes": 94
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 9, September, 1881",
+      "file": "the-american-missionary-volume-35-no-9-september-1881-various.txt",
+      "bytes": 138319,
+      "words": 20071,
+      "reading_time_minutes": 89
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 10, October, 1881",
+      "file": "the-american-missionary-volume-35-no-10-october-1881-various.txt",
+      "bytes": 138952,
+      "words": 20248,
+      "reading_time_minutes": 90
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 6, June, 1881",
+      "file": "the-american-missionary-volume-35-no-6-june-1881-various.txt",
+      "bytes": 156074,
+      "words": 21896,
+      "reading_time_minutes": 97
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 4, April, 1881",
+      "file": "the-american-missionary-volume-35-no-4-april-1881-various.txt",
+      "bytes": 153879,
+      "words": 21524,
+      "reading_time_minutes": 96
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 1, January, 1881",
+      "file": "the-american-missionary-volume-35-no-1-january-1881-various.txt",
+      "bytes": 153295,
+      "words": 22508,
+      "reading_time_minutes": 100
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 11, November, 1881",
+      "file": "the-american-missionary-volume-35-no-11-november-1881-various.txt",
+      "bytes": 146940,
+      "words": 20800,
+      "reading_time_minutes": 92
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 12, December, 1881",
+      "file": "the-american-missionary-volume-35-no-12-december-1881-various.txt",
+      "bytes": 272118,
+      "words": 42262,
+      "reading_time_minutes": 188
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 8, August, 1881",
+      "file": "the-american-missionary-volume-35-no-8-august-1881-various.txt",
+      "bytes": 141107,
+      "words": 19903,
+      "reading_time_minutes": 88
+    },
+    {
+      "title": "The American Missionary — Volume 35, No. 5, May, 1881",
+      "file": "the-american-missionary-volume-35-no-5-may-1881-various.txt",
+      "bytes": 155134,
+      "words": 21064,
+      "reading_time_minutes": 94
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 5, May, 1882",
+      "file": "the-american-missionary-volume-36-no-5-may-1882-various.txt",
+      "bytes": 148658,
+      "words": 19823,
+      "reading_time_minutes": 88
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 12, December, 1882",
+      "file": "the-american-missionary-volume-36-no-12-december-1882-various.txt",
+      "bytes": 278088,
+      "words": 42829,
+      "reading_time_minutes": 190
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 3, March, 1882",
+      "file": "the-american-missionary-volume-36-no-3-march-1882-various.txt",
+      "bytes": 156627,
+      "words": 19367,
+      "reading_time_minutes": 86
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 1, January, 1882",
+      "file": "the-american-missionary-volume-36-no-1-january-1882-various.txt",
+      "bytes": 136200,
+      "words": 19497,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 4, April, 1882",
+      "file": "the-american-missionary-volume-36-no-4-april-1882-various.txt",
+      "bytes": 148511,
+      "words": 20217,
+      "reading_time_minutes": 90
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 8, August 1882",
+      "file": "the-american-missionary-volume-36-no-8-august-1882-various.txt",
+      "bytes": 137770,
+      "words": 19212,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 2, February, 1882",
+      "file": "the-american-missionary-volume-36-no-2-february-1882-various.txt",
+      "bytes": 159069,
+      "words": 19618,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 6, June, 1882",
+      "file": "the-american-missionary-volume-36-no-6-june-1882-various.txt",
+      "bytes": 139758,
+      "words": 19291,
+      "reading_time_minutes": 86
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 9, September, 1882",
+      "file": "the-american-missionary-volume-36-no-9-september-1882-various.txt",
+      "bytes": 136951,
+      "words": 19069,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 10, October, 1882",
+      "file": "the-american-missionary-volume-36-no-10-october-1882-various.txt",
+      "bytes": 136194,
+      "words": 20091,
+      "reading_time_minutes": 89
+    },
+    {
+      "title": "The American Missionary — Volume 36, No. 11, November, 1882",
+      "file": "the-american-missionary-volume-36-no-11-november-1882-various.txt",
+      "bytes": 153946,
+      "words": 21432,
+      "reading_time_minutes": 95
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 5, May, 1883",
+      "file": "the-american-missionary-volume-37-no-5-may-1883-various.txt",
+      "bytes": 140139,
+      "words": 19512,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 12, December, 1883",
+      "file": "the-american-missionary-volume-37-no-12-december-1883-various.txt",
+      "bytes": 277213,
+      "words": 42944,
+      "reading_time_minutes": 191
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 1, January, 1883",
+      "file": "the-american-missionary-volume-37-no-1-january-1883-various.txt",
+      "bytes": 139786,
+      "words": 19883,
+      "reading_time_minutes": 88
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 4, April, 1883",
+      "file": "the-american-missionary-volume-37-no-4-april-1883-various.txt",
+      "bytes": 137500,
+      "words": 19547,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 2, February, 1883",
+      "file": "the-american-missionary-volume-37-no-2-february-1883-various.txt",
+      "bytes": 149698,
+      "words": 18373,
+      "reading_time_minutes": 82
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 3, March, 1883",
+      "file": "the-american-missionary-volume-37-no-3-march-1883-various.txt",
+      "bytes": 147267,
+      "words": 20304,
+      "reading_time_minutes": 90
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 9, September, 1883",
+      "file": "the-american-missionary-volume-37-no-9-september-1883-various.txt",
+      "bytes": 130522,
+      "words": 18561,
+      "reading_time_minutes": 82
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 6, June 1883",
+      "file": "the-american-missionary-volume-37-no-6-june-1883-various.txt",
+      "bytes": 132469,
+      "words": 18157,
+      "reading_time_minutes": 81
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 10, October, 1883",
+      "file": "the-american-missionary-volume-37-no-10-october-1883-various.txt",
+      "bytes": 126496,
+      "words": 18171,
+      "reading_time_minutes": 81
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 7, July, 1883",
+      "file": "the-american-missionary-volume-37-no-7-july-1883-various.txt",
+      "bytes": 143173,
+      "words": 19847,
+      "reading_time_minutes": 88
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 8, August, 1883",
+      "file": "the-american-missionary-volume-37-no-8-august-1883-various.txt",
+      "bytes": 140195,
+      "words": 19927,
+      "reading_time_minutes": 89
+    },
+    {
+      "title": "The American Missionary — Volume 37, No. 11, November, 1883",
+      "file": "the-american-missionary-volume-37-no-11-november-1883-various.txt",
+      "bytes": 137618,
+      "words": 19062,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 39, No. 11, November, 1885",
+      "file": "the-american-missionary-volume-39-no-11-november-1885-various.txt",
+      "bytes": 152095,
+      "words": 19170,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 03, March, 1887",
+      "file": "the-american-missionary-volume-41-no-03-march-1887-various.txt",
+      "bytes": 137431,
+      "words": 19079,
+      "reading_time_minutes": 85
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 12, December, 1887",
+      "file": "the-american-missionary-volume-41-no-12-december-1887-various.txt",
+      "bytes": 234181,
+      "words": 34333,
+      "reading_time_minutes": 153
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 9, September, 1887",
+      "file": "the-american-missionary-volume-41-no-9-september-1887-various.txt",
+      "bytes": 173543,
+      "words": 23846,
+      "reading_time_minutes": 106
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 11, November, 1887",
+      "file": "the-american-missionary-volume-41-no-11-november-1887-various.txt",
+      "bytes": 162202,
+      "words": 19666,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 2, February, 1887",
+      "file": "the-american-missionary-volume-41-no-2-february-1887-various.txt",
+      "bytes": 150489,
+      "words": 17383,
+      "reading_time_minutes": 77
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 5, May, 1887",
+      "file": "the-american-missionary-volume-41-no-5-may-1887-various.txt",
+      "bytes": 143248,
+      "words": 18842,
+      "reading_time_minutes": 84
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 6, June, 1887",
+      "file": "the-american-missionary-volume-41-no-6-june-1887-various.txt",
+      "bytes": 142370,
+      "words": 19380,
+      "reading_time_minutes": 86
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 7, July, 1887",
+      "file": "the-american-missionary-volume-41-no-7-july-1887-various.txt",
+      "bytes": 142065,
+      "words": 18813,
+      "reading_time_minutes": 84
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 8, August, 1887",
+      "file": "the-american-missionary-volume-41-no-8-august-1887-various.txt",
+      "bytes": 137997,
+      "words": 18262,
+      "reading_time_minutes": 81
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 4, April, 1887",
+      "file": "the-american-missionary-volume-41-no-4-april-1887-various.txt",
+      "bytes": 140866,
+      "words": 19617,
+      "reading_time_minutes": 87
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 10, October, 1887",
+      "file": "the-american-missionary-volume-41-no-10-october-1887-various.txt",
+      "bytes": 133359,
+      "words": 18393,
+      "reading_time_minutes": 82
+    },
+    {
+      "title": "The American Missionary — Volume 41, No. 1, January, 1887",
+      "file": "the-american-missionary-volume-41-no-1-january-1887-various.txt",
+      "bytes": 136934,
+      "words": 19191,
+      "reading_time_minutes": 85
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "Dispensational Truth: or, God's Plan and Purpose in the Ages",
-      "author": "Clarence Larkin",
+      "title": "Biblical Geography and History",
+      "author": "Kent, Charles Foster",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/dispensational-truth-or-god-s-plan-and-purpose-in-the-ages-clarence-larkin.txt"
+      "file_path": "data/library/verified/biblical-geography-and-history-kent-charles-foster.txt"
     },
     {
       "row": 3,
-      "title": "The Spirit World",
-      "author": "Clarence Larkin",
+      "title": "Buried Cities and Bible Countries",
+      "author": "St. Clair, George",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-spirit-world-clarence-larkin.txt"
+      "file_path": "data/library/verified/buried-cities-and-bible-countries-st-clair-george.txt"
     },
     {
       "row": 4,
-      "title": "The Book of Revelation",
-      "author": "Clarence Larkin",
+      "title": "A Class-Book of Biblical History and Geography with numerous maps",
+      "author": "Osborn, H. S. (Henry Stafford)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-book-of-revelation-clarence-larkin.txt"
+      "file_path": "data/library/verified/a-class-book-of-biblical-history-and-geography-with-numerous-maps-osborn-h-s-henry-stafford.txt"
     },
     {
       "row": 5,
-      "title": "The Book of Daniel",
-      "author": "Clarence Larkin",
+      "title": "The Cities of Refuge: or, The Name of Jesus A Sunday book for the young",
+      "author": "Macduff, John R. (John Ross)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-book-of-daniel-clarence-larkin.txt"
+      "file_path": "data/library/verified/the-cities-of-refuge-or-the-name-of-jesus-a-sunday-book-for-the-young-macduff-john-r-john-ross.txt"
     },
     {
       "row": 6,
-      "title": "Lectures on the Epistle to the Colossians",
-      "author": "H. A. Ironside",
+      "title": "Bible animals : being a description of every living creature mentioned in the Scripture, from the ape to the coral.",
+      "author": "Wood, J. G. (John George); Keyl, Friedrich Wilhelm; Smith, E. A. (Edgar Albert); Wood, T. W. (Thomas W.)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/lectures-on-the-epistle-to-the-colossians-h-a-ironside.txt"
+      "file_path": "data/library/verified/bible-animals-being-a-description-of-every-living-creature-mentioned-in-the-scripture-from-the-ape-to-the-cora.txt"
     },
     {
       "row": 7,
-      "title": "Notes on the Minor Prophets",
-      "author": "H. A. Ironside",
+      "title": "Kingless Folk, and Other Addresses on Bible Animals",
+      "author": "Adams, John",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/notes-on-the-minor-prophets-h-a-ironside.txt"
+      "file_path": "data/library/verified/kingless-folk-and-other-addresses-on-bible-animals-adams-john.txt"
     },
     {
       "row": 8,
-      "title": "The Four Hundred Silent Years",
-      "author": "H. A. Ironside",
+      "title": "Peeps Into China; Or, The Missionary's Children",
+      "author": "Phillips, E. C. (Edith Caroline)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-four-hundred-silent-years-h-a-ironside.txt"
+      "file_path": "data/library/verified/peeps-into-china-or-the-missionary-s-children-phillips-e-c-edith-caroline.txt"
     },
     {
       "row": 9,
-      "title": "Lectures Introductory to the Study of the Acts, the Catholic Epistles, and the Revelation",
-      "author": "William Kelly",
-      "status": "failed",
-      "issues": [
-        "Download failed 500: https://archive.org/download/lecturesintrodu03kellgoog/lecturesintrodu03kellgoog_djvu.txt"
-      ]
+      "title": "Letters to Children",
+      "author": "Bridgman, E. C. (Elijah Coleman)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/letters-to-children-bridgman-e-c-elijah-coleman.txt"
     },
     {
       "row": 10,
-      "title": "Exposition of the Epistle of James",
-      "author": "William Kelly",
+      "title": "\"They're a multitoode\" and other stories",
+      "author": "Stephenson, F. C. (Frederick Clarke)",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/exposition-of-the-epistle-of-james-william-kelly.txt"
+      "file_path": "data/library/verified/they-re-a-multitoode-and-other-stories-stephenson-f-c-frederick-clarke.txt"
     },
     {
       "row": 11,
-      "title": "Notes on the Book of Daniel",
-      "author": "William Kelly",
+      "title": "South and South Central Africa A record of fifteen years' missionary labors among primitive peoples",
+      "author": "Davidson, Hannah Frances",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/notes-on-the-book-of-daniel-william-kelly.txt"
+      "file_path": "data/library/verified/south-and-south-central-africa-a-record-of-fifteen-years-missionary-labors-among-primitive-peoples-davidson-ha.txt"
     },
     {
       "row": 12,
-      "title": "Lectures Introductory to the Study of the Epistles of Paul the Apostle",
-      "author": "William Kelly",
+      "title": "The History of the Negro Church",
+      "author": "Woodson, Carter Godwin",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/lectures-introductory-to-the-study-of-the-epistles-of-paul-the-apostle-william-kelly.txt"
+      "file_path": "data/library/verified/the-history-of-the-negro-church-woodson-carter-godwin.txt"
     },
     {
       "row": 13,
-      "title": "Lectures Introductory to the Study of the Gospels",
-      "author": "William Kelly",
+      "title": "Through lands that were dark Being a record of a year's missionary journey in Africa and Madagascar",
+      "author": "Hawkins, F. H.",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/lectures-introductory-to-the-study-of-the-gospels-william-kelly.txt"
+      "file_path": "data/library/verified/through-lands-that-were-dark-being-a-record-of-a-year-s-missionary-journey-in-africa-and-madagascar-hawkins-f-.txt"
     },
     {
       "row": 14,
-      "title": "Lectures on the Epistle of Paul to the Galatians",
-      "author": "William Kelly",
-      "status": "failed",
-      "issues": [
-        "Download failed 500: https://archive.org/download/lecturesonepistl00kell/lecturesonepistl00kell_djvu.txt"
-      ]
+      "title": "The Works of Mr. George Gillespie (Vol. 1 of 2)",
+      "author": "Gillespie, George; Hetherington, W. M. (William Maxwell)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-mr-george-gillespie-vol-1-of-2-gillespie-george-hetherington-w-m-william-maxwell.txt"
     },
     {
       "row": 15,
-      "title": "Notes on the Epistle of Paul to the Romans",
-      "author": "William Kelly",
-      "status": "failed",
-      "issues": [
-        "Download failed 500: https://archive.org/download/notesonepistleof00kell/notesonepistleof00kell_djvu.txt"
-      ]
+      "title": "Fox's Book of Martyrs Or A History of the Lives, Sufferings, and Triumphant Deaths of the Primitive Protestant Martyrs",
+      "author": "Foxe, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/fox-s-book-of-martyrs-or-a-history-of-the-lives-sufferings-and-triumphant-deaths-of-the-primitive-protestant-m.txt"
+    },
+    {
+      "row": 16,
+      "title": "A Source Book for Ancient Church History",
+      "author": "Ayer, Joseph Cullen",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-source-book-for-ancient-church-history-ayer-joseph-cullen.txt"
+    },
+    {
+      "row": 17,
+      "title": "Bede's Ecclesiastical History of England",
+      "author": "Bede, the Venerable, Saint; Sellar, A. M.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bede-s-ecclesiastical-history-of-england-bede-the-venerable-saint-sellar-a-m.txt"
+    },
+    {
+      "row": 18,
+      "title": "A record of St. Cybi's Church, Holyhead : and the sermon preached after its restoration, 1879",
+      "author": "Stanley, Arthur Penrhyn",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-record-of-st-cybi-s-church-holyhead-and-the-sermon-preached-after-its-restoration-1879-stanley-arthur-penrhy.txt"
+    },
+    {
+      "row": 19,
+      "title": "Post-Mediæval Preachers Some Account of the Most Celebrated Preachers of the 15th, 16th, & 17th Centuries; with outlines of their sermons, and specimens of their style",
+      "author": "Baring-Gould, S. (Sabine)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/post-medi-val-preachers-some-account-of-the-most-celebrated-preachers-of-the-15th-16th-and-17th-centuries-with.txt"
+    },
+    {
+      "row": 20,
+      "title": "Plain Sermons, preached at Archbishop Tenison's Chapel, Regent Street. Second Series",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/plain-sermons-preached-at-archbishop-tenison-s-chapel-regent-street-second-series-cowan-james-galloway.txt"
+    },
+    {
+      "row": 21,
+      "title": "Plain Parochial Sermons, preached in the Parish Church of Bolton-le-Moors",
+      "author": "Slade, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/plain-parochial-sermons-preached-in-the-parish-church-of-bolton-le-moors-slade-james.txt"
+    },
+    {
+      "row": 22,
+      "title": "The National Preacher, Vol. 2 No. 7 Dec. 1827 Or Original Monthly Sermons from Living Ministers, Sermons XXVI. and XXVII.",
+      "author": "Dickinson, Austin; Baldwin, Elihu W. (Elihu Whittlesey); Leland, Aaron W. (Aaron Whitney)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-national-preacher-vol-2-no-7-dec-1827-or-original-monthly-sermons-from-living-ministers-sermons-xxvi-and-x.txt"
+    },
+    {
+      "row": 23,
+      "title": "A Sermon Preached on the Anniversary of the Boston Female Asylum for Destitute Orphans, September 25, 1835",
+      "author": "Wainwright, Jonathan Mayhew",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-sermon-preached-on-the-anniversary-of-the-boston-female-asylum-for-destitute-orphans-september-25-1835-wainw.txt"
+    },
+    {
+      "row": 24,
+      "title": "The Sin and Danger of Self-Love Described by a Sermon Preached At Plymouth, in New-England, 1621",
+      "author": "Cushman, Robert",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-sin-and-danger-of-self-love-described-by-a-sermon-preached-at-plymouth-in-new-england-1621-cushman-robert.txt"
+    },
+    {
+      "row": 25,
+      "title": "Plain Sermons, Preached at Archbishop Tenison's Chapel, Regent Street",
+      "author": "Cowan, James Galloway",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/plain-sermons-preached-at-archbishop-tenison-s-chapel-regent-street-cowan-james-galloway.txt"
+    },
+    {
+      "row": 26,
+      "title": "A Sermon Preached at the Quaker's Meeting House, in Gracechurch-Street, London, Eighth Month 12th, 1694.",
+      "author": "Penn, William",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-sermon-preached-at-the-quaker-s-meeting-house-in-gracechurch-street-london-eighth-month-12th-1694-penn-willi.txt"
+    },
+    {
+      "row": 27,
+      "title": "National Apostasy Considered in a Sermon Preached in St. Mary's Church, Oxford Before His Majesty's Judges of Assize on Sunday July 14th 1833",
+      "author": "Keble, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/national-apostasy-considered-in-a-sermon-preached-in-st-mary-s-church-oxford-before-his-majesty-s-judges-of-as.txt"
+    },
+    {
+      "row": 28,
+      "title": "The National Preacher, Vol. 2. No. 6., Nov. 1827 Or Original Monthly Sermons from Living Ministers",
+      "author": "Dickinson, Austin; Patton, William",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-national-preacher-vol-2-no-6-nov-1827-or-original-monthly-sermons-from-living-ministers-dickinson-austin-p.txt"
+    },
+    {
+      "row": 29,
+      "title": "The life of the departed : A sermon occasioned by the death of the Rev. Joseph Crandal, of Salsbury, preached in the Baptist chapel, Germain Street, city of St. John",
+      "author": "Bill, I. E. (Ingraham E.)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-the-departed-a-sermon-occasioned-by-the-death-of-the-rev-joseph-crandal-of-salsbury-preached-in-th.txt"
+    },
+    {
+      "row": 30,
+      "title": "The Thirteen Names of the First Patriarchs, Considered as Figurative of the Progressive Influence of the Spirit. Being the Substance of Two Sermons, Preached on Wednesday March 24, and April 3, 1811, at the Obelisk Chapel",
+      "author": "Church, J. (John)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-thirteen-names-of-the-first-patriarchs-considered-as-figurative-of-the-progressive-influence-of-the-spirit.txt"
+    },
+    {
+      "row": 31,
+      "title": "A Sermon preached at St. George's Church, Bolton, on Sunday, 7th January, 1838 occasioned by the death of the Rev. William Thistlewaite",
+      "author": "Slade, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-sermon-preached-at-st-george-s-church-bolton-on-sunday-7th-january-1838-occasioned-by-the-death-of-the-rev-w.txt"
+    },
+    {
+      "row": 32,
+      "title": "The World's Great Sermons, Volume 10: Drummond to Jowett, and General Index",
+      "author": "Kleiser, Grenville",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-world-s-great-sermons-volume-10-drummond-to-jowett-and-general-index-kleiser-grenville.txt"
+    },
+    {
+      "row": 33,
+      "title": "The Bible object book : A book of object lessons which are different, written in plain English and in common words",
+      "author": "Woolston, C. H. (Clarence Herbert); Rodeheaver, Homer A. (Homer Alvan)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-bible-object-book-a-book-of-object-lessons-which-are-different-written-in-plain-english-and-in-common-word.txt"
+    },
+    {
+      "row": 34,
+      "title": "Training the Teacher",
+      "author": "Schauffler, A. F. (Adolphus Frederick); Brumbaugh, Martin Grove; Lamoreaux, Antoinette Abernethy; Lawrance, Marion",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/training-the-teacher-schauffler-a-f-adolphus-frederick-brumbaugh-martin-grove-lamoreaux-antoinette-abernethy-l.txt"
+    },
+    {
+      "row": 35,
+      "title": "A Treatise on Good Works",
+      "author": "Luther, Martin; Reu, Johann Michael",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-treatise-on-good-works-luther-martin-reu-johann-michael.txt"
+    },
+    {
+      "row": 36,
+      "title": "Institutes of the Christian Religion (Vol. 2 of 2)",
+      "author": "Calvin, Jean; Allen, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/institutes-of-the-christian-religion-vol-2-of-2-calvin-jean-allen-john.txt"
+    },
+    {
+      "row": 37,
+      "title": "An Apology for the True Christian Divinity Being an explanation and vindication of the principles and doctrines of the people called Quakers",
+      "author": "Barclay, Robert",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-apology-for-the-true-christian-divinity-being-an-explanation-and-vindication-of-the-principles-and-doctrine.txt"
+    },
+    {
+      "row": 38,
+      "title": "Curiosities of Christian History Prior to the Reformation",
+      "author": "Paterson, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/curiosities-of-christian-history-prior-to-the-reformation-paterson-james.txt"
+    },
+    {
+      "row": 39,
+      "title": "The Works of John Knox, Volume 1 (of 6)",
+      "author": "Knox, John; Laing, David",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-john-knox-volume-1-of-6-knox-john-laing-david.txt"
+    },
+    {
+      "row": 40,
+      "title": "Letters of John Calvin, Volume I Compiled from the Original Manuscripts and Edited with Historical Notes",
+      "author": "Calvin, Jean; Bonnet, Jules",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/letters-of-john-calvin-volume-i-compiled-from-the-original-manuscripts-and-edited-with-historical-notes-calvin.txt"
+    },
+    {
+      "row": 41,
+      "title": "The History of the Reformation of Religion in Scotland With Which Are Included Knox's Confession and The Book of Discipline",
+      "author": "Knox, John; Lennox, Cuthbert",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-the-reformation-of-religion-in-scotland-with-which-are-included-knox-s-confession-and-the-book-.txt"
+    },
+    {
+      "row": 42,
+      "title": "Letters of John Calvin, Volume II Compiled from the Original Manuscripts and Edited with Historical Notes",
+      "author": "Calvin, Jean; Bonnet, Jules",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/letters-of-john-calvin-volume-ii-compiled-from-the-original-manuscripts-and-edited-with-historical-notes-calvi.txt"
+    },
+    {
+      "row": 43,
+      "title": "The Eve of the Reformation Studies in the Religious Life and Thought of the English people in the Period Preceding the Rejection of the Roman jurisdiction by Henry VIII",
+      "author": "Gasquet, Francis Aidan",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-eve-of-the-reformation-studies-in-the-religious-life-and-thought-of-the-english-people-in-the-period-prece.txt"
+    },
+    {
+      "row": 44,
+      "title": "The Works of John Knox, Volume 2 (of 6)",
+      "author": "Knox, John; Laing, David",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-john-knox-volume-2-of-6-knox-john-laing-david.txt"
+    },
+    {
+      "row": 45,
+      "title": "The American Missionary — Volume 32, No. 02, February, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-02-february-1878-various.txt"
+    },
+    {
+      "row": 46,
+      "title": "The American Missionary — Volume 33, No. 05, May, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-05-may-1879-various.txt"
+    },
+    {
+      "row": 47,
+      "title": "The American Missionary — Volume 35, No. 2, February, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-2-february-1881-various.txt"
+    },
+    {
+      "row": 48,
+      "title": "The American Missionary — Volume 33, No. 02, February, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-02-february-1879-various.txt"
+    },
+    {
+      "row": 49,
+      "title": "The American Missionary — Volume 36, No. 7, July, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-7-july-1882-various.txt"
+    },
+    {
+      "row": 50,
+      "title": "Ports of Entry: Missionary Herald",
+      "author": "Home Missions Council (U.S.); Council of Women for Home Missions",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/ports-of-entry-missionary-herald-home-missions-council-u-s-council-of-women-for-home-missions.txt"
+    },
+    {
+      "row": 51,
+      "title": "Ten years in Burma",
+      "author": "Smith, Julius",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/ten-years-in-burma-smith-julius.txt"
+    },
+    {
+      "row": 52,
+      "title": "Fruits of Toil in the London Missionary Society",
+      "author": "London Missionary Society",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/fruits-of-toil-in-the-london-missionary-society-london-missionary-society.txt"
+    },
+    {
+      "row": 53,
+      "title": "The Moravians in Labrador",
+      "author": "Anonymous",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-moravians-in-labrador-anonymous.txt"
+    },
+    {
+      "row": 54,
+      "title": "Dangers on the Ice Off the Coast of Labrador With Some Interesting Particulars Respecting the Natives of that Country",
+      "author": "Anonymous",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/dangers-on-the-ice-off-the-coast-of-labrador-with-some-interesting-particulars-respecting-the-natives-of-that-.txt"
+    },
+    {
+      "row": 55,
+      "title": "Under Many Flags",
+      "author": "Cronk, Katharine Scherer; Singmaster, Elsie",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/under-many-flags-cronk-katharine-scherer-singmaster-elsie.txt"
+    },
+    {
+      "row": 56,
+      "title": "The American Missionary — Volume 32, No. 12, December, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-12-december-1878-various.txt"
+    },
+    {
+      "row": 57,
+      "title": "The American Missionary — Volume 32, No. 11, November, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-11-november-1878-various.txt"
+    },
+    {
+      "row": 58,
+      "title": "The American Missionary — Volume 32, No. 04, April 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-04-april-1878-various.txt"
+    },
+    {
+      "row": 59,
+      "title": "The American Missionary — Volume 32, No. 10, October, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-10-october-1878-various.txt"
+    },
+    {
+      "row": 60,
+      "title": "The American Missionary — Volume 32, No. 01, January, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-01-january-1878-various.txt"
+    },
+    {
+      "row": 61,
+      "title": "The American Missionary — Volume 32, No. 08, August, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-08-august-1878-various.txt"
+    },
+    {
+      "row": 62,
+      "title": "The American Missionary — Volume 32, No. 07, July 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-07-july-1878-various.txt"
+    },
+    {
+      "row": 63,
+      "title": "The American Missionary — Volume 32, No. 05, May, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-05-may-1878-various.txt"
+    },
+    {
+      "row": 64,
+      "title": "The American Missionary — Volume 32, No. 09, September, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-09-september-1878-various.txt"
+    },
+    {
+      "row": 65,
+      "title": "The American Missionary — Volume 32, No. 06, June, 1878",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-32-no-06-june-1878-various.txt"
+    },
+    {
+      "row": 66,
+      "title": "The American Missionary — Volume 33, No. 09, September, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-09-september-1879-various.txt"
+    },
+    {
+      "row": 67,
+      "title": "The American Missionary — Volume 33, No. 11, November, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-11-november-1879-various.txt"
+    },
+    {
+      "row": 68,
+      "title": "The American Missionary — Volume 33, No. 07, July, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-07-july-1879-various.txt"
+    },
+    {
+      "row": 69,
+      "title": "The American Missionary — Volume 33, No. 12, December 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-12-december-1879-various.txt"
+    },
+    {
+      "row": 70,
+      "title": "The American Missionary — Volume 33, No. 06, June, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-06-june-1879-various.txt"
+    },
+    {
+      "row": 71,
+      "title": "The American Missionary — Volume 33, No. 04, April 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-04-april-1879-various.txt"
+    },
+    {
+      "row": 72,
+      "title": "The American Missionary — Volume 33, No. 10, October, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-10-october-1879-various.txt"
+    },
+    {
+      "row": 73,
+      "title": "The American Missionary — Volume 33, No. 08, August, 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-08-august-1879-various.txt"
+    },
+    {
+      "row": 74,
+      "title": "The American Missionary — Volume 33, No. 01, January 1879",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-33-no-01-january-1879-various.txt"
+    },
+    {
+      "row": 75,
+      "title": "The American Missionary — Volume 34, No. 10, October, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-10-october-1880-various.txt"
+    },
+    {
+      "row": 76,
+      "title": "American Missionary, Vol. XXXIV., No. 5, May 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/american-missionary-vol-xxxiv-no-5-may-1880-various.txt"
+    },
+    {
+      "row": 77,
+      "title": "The American Missionary — Volume 34, No. 7, July, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-7-july-1880-various.txt"
+    },
+    {
+      "row": 78,
+      "title": "The American Missionary — Volume 34, No. 04, April, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-04-april-1880-various.txt"
+    },
+    {
+      "row": 79,
+      "title": "The American Missionary — Volume 34, No. 8, August, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-8-august-1880-various.txt"
+    },
+    {
+      "row": 80,
+      "title": "The American Missionary — Volume 34, No. 06, June, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-06-june-1880-various.txt"
+    },
+    {
+      "row": 81,
+      "title": "The American Missionary — Volume 34, No. 02, February, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-02-february-1880-various.txt"
+    },
+    {
+      "row": 82,
+      "title": "The American Missionary — Volume 34, No. 1, January, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-1-january-1880-various.txt"
+    },
+    {
+      "row": 83,
+      "title": "The American Missionary — Volume 34, No. 09, September, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-09-september-1880-various.txt"
+    },
+    {
+      "row": 84,
+      "title": "The American Missionary — Volume 34, No. 3, March, 1880",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-34-no-3-march-1880-various.txt"
+    },
+    {
+      "row": 85,
+      "title": "The American Missionary — Volume 35, No. 3, March 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-3-march-1881-various.txt"
+    },
+    {
+      "row": 86,
+      "title": "The American Missionary — Volume 35, No. 7, July, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-7-july-1881-various.txt"
+    },
+    {
+      "row": 87,
+      "title": "The American Missionary — Volume 35, No. 9, September, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-9-september-1881-various.txt"
+    },
+    {
+      "row": 88,
+      "title": "The American Missionary — Volume 35, No. 10, October, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-10-october-1881-various.txt"
+    },
+    {
+      "row": 89,
+      "title": "The American Missionary — Volume 35, No. 6, June, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-6-june-1881-various.txt"
+    },
+    {
+      "row": 90,
+      "title": "The American Missionary — Volume 35, No. 4, April, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-4-april-1881-various.txt"
+    },
+    {
+      "row": 91,
+      "title": "The American Missionary — Volume 35, No. 1, January, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-1-january-1881-various.txt"
+    },
+    {
+      "row": 92,
+      "title": "The American Missionary — Volume 35, No. 11, November, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-11-november-1881-various.txt"
+    },
+    {
+      "row": 93,
+      "title": "The American Missionary — Volume 35, No. 12, December, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-12-december-1881-various.txt"
+    },
+    {
+      "row": 94,
+      "title": "The American Missionary — Volume 35, No. 8, August, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-8-august-1881-various.txt"
+    },
+    {
+      "row": 95,
+      "title": "The American Missionary — Volume 35, No. 5, May, 1881",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-35-no-5-may-1881-various.txt"
+    },
+    {
+      "row": 96,
+      "title": "The American Missionary — Volume 36, No. 5, May, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-5-may-1882-various.txt"
+    },
+    {
+      "row": 97,
+      "title": "The American Missionary — Volume 36, No. 12, December, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-12-december-1882-various.txt"
+    },
+    {
+      "row": 98,
+      "title": "The American Missionary — Volume 36, No. 3, March, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-3-march-1882-various.txt"
+    },
+    {
+      "row": 99,
+      "title": "The American Missionary — Volume 36, No. 1, January, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-1-january-1882-various.txt"
+    },
+    {
+      "row": 100,
+      "title": "The American Missionary — Volume 36, No. 4, April, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-4-april-1882-various.txt"
+    },
+    {
+      "row": 101,
+      "title": "The American Missionary — Volume 36, No. 8, August 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-8-august-1882-various.txt"
+    },
+    {
+      "row": 102,
+      "title": "The American Missionary — Volume 36, No. 2, February, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-2-february-1882-various.txt"
+    },
+    {
+      "row": 103,
+      "title": "The American Missionary — Volume 36, No. 6, June, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-6-june-1882-various.txt"
+    },
+    {
+      "row": 104,
+      "title": "The American Missionary — Volume 36, No. 9, September, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-9-september-1882-various.txt"
+    },
+    {
+      "row": 105,
+      "title": "The American Missionary — Volume 36, No. 10, October, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-10-october-1882-various.txt"
+    },
+    {
+      "row": 106,
+      "title": "The American Missionary — Volume 36, No. 11, November, 1882",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-36-no-11-november-1882-various.txt"
+    },
+    {
+      "row": 107,
+      "title": "The American Missionary — Volume 37, No. 5, May, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-5-may-1883-various.txt"
+    },
+    {
+      "row": 108,
+      "title": "The American Missionary — Volume 37, No. 12, December, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-12-december-1883-various.txt"
+    },
+    {
+      "row": 109,
+      "title": "The American Missionary — Volume 37, No. 1, January, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-1-january-1883-various.txt"
+    },
+    {
+      "row": 110,
+      "title": "The American Missionary — Volume 37, No. 4, April, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-4-april-1883-various.txt"
+    },
+    {
+      "row": 111,
+      "title": "The American Missionary — Volume 37, No. 2, February, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-2-february-1883-various.txt"
+    },
+    {
+      "row": 112,
+      "title": "The American Missionary — Volume 37, No. 3, March, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-3-march-1883-various.txt"
+    },
+    {
+      "row": 113,
+      "title": "The American Missionary — Volume 37, No. 9, September, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-9-september-1883-various.txt"
+    },
+    {
+      "row": 114,
+      "title": "The American Missionary — Volume 37, No. 6, June 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-6-june-1883-various.txt"
+    },
+    {
+      "row": 115,
+      "title": "The American Missionary — Volume 37, No. 10, October, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-10-october-1883-various.txt"
+    },
+    {
+      "row": 116,
+      "title": "The American Missionary — Volume 37, No. 7, July, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-7-july-1883-various.txt"
+    },
+    {
+      "row": 117,
+      "title": "The American Missionary — Volume 37, No. 8, August, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-8-august-1883-various.txt"
+    },
+    {
+      "row": 118,
+      "title": "The American Missionary — Volume 37, No. 11, November, 1883",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-37-no-11-november-1883-various.txt"
+    },
+    {
+      "row": 119,
+      "title": "The American Missionary — Volume 39, No. 11, November, 1885",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-39-no-11-november-1885-various.txt"
+    },
+    {
+      "row": 120,
+      "title": "The American Missionary — Volume 41, No. 03, March, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-03-march-1887-various.txt"
+    },
+    {
+      "row": 121,
+      "title": "The American Missionary — Volume 41, No. 12, December, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-12-december-1887-various.txt"
+    },
+    {
+      "row": 122,
+      "title": "The American Missionary — Volume 41, No. 9, September, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-9-september-1887-various.txt"
+    },
+    {
+      "row": 123,
+      "title": "The American Missionary — Volume 41, No. 11, November, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-11-november-1887-various.txt"
+    },
+    {
+      "row": 124,
+      "title": "The American Missionary — Volume 41, No. 2, February, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-2-february-1887-various.txt"
+    },
+    {
+      "row": 125,
+      "title": "The American Missionary — Volume 41, No. 5, May, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-5-may-1887-various.txt"
+    },
+    {
+      "row": 126,
+      "title": "The American Missionary — Volume 41, No. 6, June, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-6-june-1887-various.txt"
+    },
+    {
+      "row": 127,
+      "title": "The American Missionary — Volume 41, No. 7, July, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-7-july-1887-various.txt"
+    },
+    {
+      "row": 128,
+      "title": "The American Missionary — Volume 41, No. 8, August, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-8-august-1887-various.txt"
+    },
+    {
+      "row": 129,
+      "title": "The American Missionary — Volume 41, No. 4, April, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-4-april-1887-various.txt"
+    },
+    {
+      "row": 130,
+      "title": "The American Missionary — Volume 41, No. 10, October, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-10-october-1887-various.txt"
+    },
+    {
+      "row": 131,
+      "title": "The American Missionary — Volume 41, No. 1, January, 1887",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-american-missionary-volume-41-no-1-january-1887-various.txt"
     }
   ],
   "review_queues": {

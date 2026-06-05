@@ -40,6 +40,16 @@ Phase 4 added meaningful growth in:
 - Prayer classics and prayer testimony, including answered-prayer, model-prayer, and prayer-history resources with discernment labels where needed.
 - KJV/textual-issues background, including public-domain New Testament textual criticism and Scripture study works marked for careful historical use.
 
+Phase 5 brings the verified shared Library to 670 resources by adding 130 additional Project Gutenberg-backed texts through `data/library/bulk-import-phase-6.csv`. This batch focuses on Bible tools, geography/history, preaching and teaching helps, Protestant and Baptist-adjacent church history, missions biographies, missionary periodicals, and public-domain study background. The importer reported zero failed downloads, zero skipped rows, zero duplicate titles, zero duplicate source URLs, zero duplicate checksums, and zero rights metadata warnings.
+
+Phase 5 added meaningful growth in:
+
+- Bible tools and study helps, including biblical geography, Bible animals, Bible object lessons, teacher training, and Scripture-history resources.
+- Missions and missionary history, including China, Africa, Labrador, Burma, London Missionary Society material, and American Missionary volumes.
+- Baptist and church history background, including early American sermon material, Baptist chapel history, Reformation sources, Protestant martyr history, and historical church sourcebooks.
+- Preaching and teaching helps, including sermon collections, post-Reformation preacher studies, object lessons, and public-domain teaching resources.
+- Historical/theological works marked for careful use where doctrinal perspective differs from the target audience.
+
 ## Public-Domain Growth Targets
 
 The next Library growth should stay public-domain first, with rights metadata, doctrinal review metadata, and file-backed resources checked before deploy.

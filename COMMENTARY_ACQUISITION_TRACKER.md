@@ -66,6 +66,32 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 - Public commentary now totals 1,282 entries, covering 429 unique Bible chapters across 13 books.
 - Gill remains blocked for expansion until a cleaner original public-domain source is verified.
 
+## Library + Commentary Expansion Phase 5
+
+Phase 5 continues verified public commentary promotion without making staged or unreviewed text public.
+
+- Public commentary now totals 1,764 entries.
+- JFB Phase 5 added 277 reviewed public entries across Matthew, Mark, Acts, 1 Corinthians, Revelation, Psalms, Proverbs, Genesis, and Exodus.
+- Matthew Henry Phase 5 added 31 reviewed public entries for Proverbs 1-31.
+- Barnes Phase 5 added 87 reviewed public entries for Exodus, Proverbs, and 1 Corinthians.
+- Adam Clarke Phase 5 added 87 reviewed public entries for Exodus, Proverbs, and 1 Corinthians.
+- John Wesley remains at the current verified public coverage while the next CCEL-based batch is reviewed.
+- Gill remains blocked for expansion until a cleaner original public-domain source is verified.
+
+Phase 5 public commentary files:
+
+- `data/imports/jfb-reviewed-phase-5-gospels-acts-commentary.json`
+- `data/imports/jfb-reviewed-phase-5-acts-corinthians-revelation-commentary.json`
+- `data/imports/jfb-reviewed-phase-5-revelation-psalms-commentary.json`
+- `data/imports/jfb-reviewed-phase-5-psalms-49-98-commentary.json`
+- `data/imports/jfb-reviewed-phase-5-proverbs-genesis-commentary.json`
+- `data/imports/jfb-reviewed-phase-5-genesis-exodus-psalms-commentary.json`
+- `data/imports/matthew-henry-reviewed-phase-5-proverbs-commentary.json`
+- `data/imports/barnes-reviewed-phase-5-exodus-commentary.json`
+- `data/imports/barnes-reviewed-phase-5-proverbs-corinthians-commentary.json`
+- `data/imports/adam-clarke-reviewed-phase-5-exodus-commentary.json`
+- `data/imports/adam-clarke-reviewed-phase-5-proverbs-corinthians-commentary.json`
+
 ## Full Pipeline Files
 
 - Pipeline guide: `COMMENTARY_IMPORT_PIPELINE.md`
