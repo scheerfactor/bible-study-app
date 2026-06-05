@@ -1,5 +1,5 @@
 {
-  "purpose": "Sermon Slides MVP is available inside the Sermon Workspace. Full presentation engine, export, and remote control remain planned.",
+  "purpose": "Sermon & Bible Study Slide Builder MVP is available inside the Sermon Workspace. It is a church slide-prep workflow, not a ProPresenter replacement. Full presentation engine, remote control, and advanced exports remain planned.",
   "mvp_now": [
     "generate slide outline from sermon fields",
     "edit title, subtitle, body, Bible text, speaker notes, background style, image theme, and layout",

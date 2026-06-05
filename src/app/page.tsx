@@ -97,7 +97,7 @@ type SermonSlideType = "Title" | "Scripture" | "Main Point" | "Quote" | "Illustr
 type SermonSlideLayout = "Centered" | "Scripture Focus" | "Two Column" | "Teaching Point" | "Image Left" | "Minimal";
 type SermonSlideThemeId = "classic-pulpit" | "warm-bible-study" | "simple-scripture" | "missions" | "revival" | "prayer" | "salvation" | "judgment" | "grace" | "resurrection";
 type SermonSlideBackgroundStyle = "Theme" | "Soft Gradient" | "Paper" | "Dark" | "Light";
-type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment";
+type SermonSlideImageSlotId = "none" | "cross" | "open-bible" | "sunrise" | "empty-tomb" | "prayer-hands" | "world-map" | "field-harvest" | "storm-judgment" | "light-window" | "parchment" | "pulpit" | "communion-table" | "baptism-water" | "church-window" | "quiet-study" | "shepherd-field";
 type SermonSlideFontScale = "Compact" | "Normal" | "Large";
 type SermonSlideTitleScale = "Small" | "Medium" | "Large";
 type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
@@ -105,6 +105,23 @@ type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
 type SermonSlideMediaCategory = "Cross" | "Bible" | "Prayer" | "Missions" | "Nature" | "Light" | "Judgment" | "Resurrection";
+
+type SavedChurchTheme = {
+  id: string;
+  name: string;
+  themeId: SermonSlideThemeId;
+  imageSlot: SermonSlideImageSlotId;
+  fontScale: SermonSlideFontScale;
+  titleScale: SermonSlideTitleScale;
+  textPlacement: SermonSlideTextPlacement;
+  accentStyle: SermonSlideAccentStyle;
+  backgroundIntensity: SermonSlideBackgroundIntensity;
+  showImageMotif: boolean;
+  showTypeLabel: boolean;
+  showImageLabel: boolean;
+  showFooterBranding: boolean;
+  createdAt: string;
+};
 
 type BibleVerse = {
   ref: string;
@@ -1120,6 +1137,7 @@ const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
 const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
+const SERMON_CHURCH_THEMES_KEY = "fathers-business-sermon-church-themes";
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
   {
@@ -1455,6 +1473,48 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.32), transparent), repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 12px)",
     motif: "Parchment",
     category: "Bible",
+  },
+  pulpit: {
+    label: "Pulpit",
+    description: "Preaching, Bible exposition, and Sunday service teaching.",
+    background: "linear-gradient(155deg, rgba(255,255,255,0.18), transparent 42%), radial-gradient(ellipse at 50% 86%, rgba(118,78,38,0.28), transparent 34%)",
+    motif: "Pulpit",
+    category: "Bible",
+  },
+  "communion-table": {
+    label: "Communion Table",
+    description: "Lord's supper, remembrance, worship, and reverent reflection.",
+    background: "radial-gradient(ellipse at 50% 72%, rgba(255,255,255,0.30), transparent 30%), linear-gradient(145deg, rgba(212,180,111,0.22), transparent)",
+    motif: "Table",
+    category: "Cross",
+  },
+  "baptism-water": {
+    label: "Baptism Water",
+    description: "Baptism, testimony, obedience, and new life.",
+    background: "linear-gradient(145deg, rgba(159,202,212,0.32), transparent 44%), radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.24), transparent 34%)",
+    motif: "Water",
+    category: "Nature",
+  },
+  "church-window": {
+    label: "Church Window",
+    description: "Worship service, prayer meeting, and reverent teaching.",
+    background: "linear-gradient(115deg, rgba(255,245,202,0.42), transparent 36%), radial-gradient(circle at 74% 28%, rgba(255,255,255,0.22), transparent 24%)",
+    motif: "Window",
+    category: "Light",
+  },
+  "quiet-study": {
+    label: "Quiet Study",
+    description: "Desk, notes, Bible study, and lesson preparation.",
+    background: "linear-gradient(135deg, rgba(255,255,255,0.26), transparent), radial-gradient(ellipse at 32% 74%, rgba(236,220,179,0.34), transparent 32%)",
+    motif: "Study",
+    category: "Bible",
+  },
+  "shepherd-field": {
+    label: "Shepherd Field",
+    description: "Care, guidance, pastoral ministry, and Psalm passages.",
+    background: "linear-gradient(155deg, rgba(211,221,166,0.32), transparent 42%), radial-gradient(ellipse at 52% 88%, rgba(255,255,255,0.18), transparent 36%)",
+    motif: "Field",
+    category: "Nature",
   },
 };
 
@@ -7351,6 +7411,62 @@ function saveSermonSeries(series: SermonSeries[]) {
   window.localStorage.setItem(SERMON_SERIES_KEY, JSON.stringify(series));
 }
 
+function normalizeSavedChurchTheme(theme: Partial<SavedChurchTheme>): SavedChurchTheme | null {
+  if (!theme.id || !theme.name) return null;
+  const themeId = sermonSlideThemeId(theme.themeId);
+  const imageSlot = typeof theme.imageSlot === "string" && theme.imageSlot in SERMON_SLIDE_IMAGE_SLOTS ? theme.imageSlot as SermonSlideImageSlotId : SERMON_SLIDE_THEMES[themeId].imageSlot;
+  return {
+    id: theme.id,
+    name: theme.name,
+    themeId,
+    imageSlot,
+    fontScale: ["Compact", "Normal", "Large"].includes(theme.fontScale ?? "") ? theme.fontScale as SermonSlideFontScale : SERMON_SLIDE_THEMES[themeId].fontScale,
+    titleScale: ["Small", "Medium", "Large"].includes(theme.titleScale ?? "") ? theme.titleScale as SermonSlideTitleScale : "Medium",
+    textPlacement: ["Center", "Left", "Bottom"].includes(theme.textPlacement ?? "") ? theme.textPlacement as SermonSlideTextPlacement : SERMON_SLIDE_THEMES[themeId].textPlacement,
+    accentStyle: ["None", "Line", "Badge", "Panel"].includes(theme.accentStyle ?? "") ? theme.accentStyle as SermonSlideAccentStyle : SERMON_SLIDE_THEMES[themeId].accentStyle,
+    backgroundIntensity: ["Soft", "Balanced", "Strong"].includes(theme.backgroundIntensity ?? "") ? theme.backgroundIntensity as SermonSlideBackgroundIntensity : "Balanced",
+    showImageMotif: theme.showImageMotif ?? true,
+    showTypeLabel: theme.showTypeLabel ?? false,
+    showImageLabel: theme.showImageLabel ?? false,
+    showFooterBranding: theme.showFooterBranding ?? false,
+    createdAt: theme.createdAt ?? new Date().toISOString(),
+  };
+}
+
+function loadSavedChurchThemes(): SavedChurchTheme[] {
+  if (typeof window === "undefined") return [];
+
+  try {
+    const raw = window.localStorage.getItem(SERMON_CHURCH_THEMES_KEY);
+    const parsed = raw ? JSON.parse(raw) as Partial<SavedChurchTheme>[] : [];
+    return parsed.map(normalizeSavedChurchTheme).filter((theme): theme is SavedChurchTheme => Boolean(theme));
+  } catch {
+    return [];
+  }
+}
+
+function saveSavedChurchThemes(themes: SavedChurchTheme[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(SERMON_CHURCH_THEMES_KEY, JSON.stringify(themes));
+}
+
+function savedChurchThemePatch(theme: SavedChurchTheme): Partial<SermonSlide> {
+  return {
+    imageSlot: theme.imageSlot,
+    imageTheme: SERMON_SLIDE_IMAGE_SLOTS[theme.imageSlot].label,
+    fontScale: theme.fontScale,
+    titleScale: theme.titleScale,
+    textPlacement: theme.textPlacement,
+    accentStyle: theme.accentStyle,
+    backgroundIntensity: theme.backgroundIntensity,
+    backgroundStyle: "Theme",
+    showImageMotif: theme.showImageMotif,
+    showTypeLabel: theme.showTypeLabel,
+    showImageLabel: theme.showImageLabel,
+    showFooterBranding: theme.showFooterBranding,
+  };
+}
+
 function bulletEachSentence(text: string) {
   return text
     .replace(/\s+/g, " ")
@@ -7564,6 +7680,60 @@ function sermonSlideOutline(slides: SermonSlide[]) {
     slide.bibleText ? `   Scripture: ${slide.bibleText}` : "",
     slide.speakerNotes ? `   Notes: ${slide.speakerNotes}` : "",
   ].filter(Boolean).join("\n")).join("\n\n");
+}
+
+function transcriptSentences(transcript: string) {
+  return transcript
+    .replace(/\s+/g, " ")
+    .split(/(?<=[.!?])\s+/)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.length > 18);
+}
+
+function transcriptOutlineLines(transcript: string) {
+  const lines = transcript
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const explicitOutline = lines
+    .filter((line) => /^(?:point|main point|i\.|ii\.|iii\.|iv\.|v\.|\d+[.)-])\s+/i.test(line))
+    .map((line) => line.replace(/^(?:point|main point|i\.|ii\.|iii\.|iv\.|v\.|\d+[.)-])\s*/i, "").trim())
+    .filter(Boolean);
+  if (explicitOutline.length) return explicitOutline.slice(0, 6);
+  return transcriptSentences(transcript).slice(0, 5);
+}
+
+function transcriptApplicationLines(transcript: string) {
+  const applicationTerms = /\b(apply|application|obey|pray|believe|repent|witness|serve|trust|respond)\b/i;
+  return transcriptSentences(transcript).filter((sentence) => applicationTerms.test(sentence)).slice(0, 4);
+}
+
+function sermonExtractorDraftPatch(transcript: string, entry: SermonEntry): Partial<SermonEntry> {
+  const sentences = transcriptSentences(transcript);
+  const outlineLines = transcriptOutlineLines(transcript);
+  const applications = transcriptApplicationLines(transcript);
+  return {
+    outline: outlineLines.map((line, index) => `${index + 1}. ${line}`).join("\n"),
+    introduction: entry.introduction || sentences[0] || "",
+    points: outlineLines.join("\n"),
+    applications: applications.join("\n"),
+    conclusion: entry.conclusion || sentences.at(-1) || "",
+    importedStudyNotes: [
+      entry.importedStudyNotes,
+      "## Sermon Extractor Transcript Import",
+      "Transcript organized into a draft outline and slides. Review wording before teaching or preaching.",
+      transcript.slice(0, 1800),
+    ].filter(Boolean).join("\n\n"),
+  };
+}
+
+function generateSlidesFromTranscript(entry: SermonEntry, transcript: string, scriptureText = "") {
+  const patch = sermonExtractorDraftPatch(transcript, entry);
+  const extractorEntry: SermonEntry = {
+    ...entry,
+    ...patch,
+  };
+  return generateSermonSlides(extractorEntry, scriptureText);
 }
 
 function sermonPlainText(entry: SermonEntry, series: SermonSeries | null) {
@@ -9304,9 +9474,57 @@ export default function Home() {
 	      outline,
 	      "",
 	      "## Export Notes",
-	      "PowerPoint and PDF export are coming soon.",
+	      "PowerPoint export is available as an MVP. PDF export is still coming soon.",
 	    ].join("\n"), "text/markdown;charset=utf-8");
 	    setSyncMessage("Slide plan downloaded.");
+	  }
+
+	  async function exportSermonPowerPoint() {
+	    const slides = sermonDraft.slides.length
+	      ? sermonDraft.slides
+	      : generateSermonSlides(sermonDraft, sermonScriptureTextForPassage(sermonDraft.passage));
+	    if (!slides.length) {
+	      setSyncMessage("Generate slides before exporting PowerPoint.");
+	      return;
+	    }
+	    const { default: PptxGenJS } = await import("pptxgenjs");
+	    const pptx = new PptxGenJS();
+	    pptx.layout = "LAYOUT_WIDE";
+	    pptx.author = "Father's Business Bible Study";
+	    pptx.company = "Father's Business";
+	    pptx.subject = sermonDraft.passage || "Sermon slides";
+	    pptx.title = sermonDraft.title || "Sermon Slides";
+	    slides.forEach((sermonSlide, index) => {
+	      const theme = SERMON_SLIDE_THEMES[sermonDraft.slideTheme] ?? SERMON_SLIDE_THEMES["classic-pulpit"];
+	      const lightStyle = sermonSlide.backgroundStyle === "Paper" || sermonSlide.backgroundStyle === "Light" || sermonDraft.slideTheme === "warm-bible-study" || sermonDraft.slideTheme === "simple-scripture" || sermonDraft.slideTheme === "grace" || sermonDraft.slideTheme === "resurrection";
+	      const backgroundColor = lightStyle ? "F8F1E6" : pptxHex(theme.background.match(/#[0-9A-Fa-f]{6}/)?.[0] ?? "#203A31");
+	      const foreground = lightStyle ? "24342C" : pptxHex(theme.foreground);
+	      const muted = lightStyle ? "5F6B61" : pptxHex(theme.muted);
+	      const accent = pptxHex(theme.accent);
+	      const slide = pptx.addSlide();
+	      slide.background = { color: backgroundColor };
+	      slide.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 13.333, h: 7.5, fill: { color: backgroundColor }, line: { color: backgroundColor } });
+	      if (sermonSlide.imageSlot !== "none" && sermonSlide.showImageMotif) {
+	        slide.addShape(pptx.ShapeType.arc, { x: 9.4, y: 0.4, w: 2.5, h: 2.5, line: { color: accent, transparency: 70 } });
+	        slide.addShape(pptx.ShapeType.line, { x: 0.8, y: 6.8, w: 11.6, h: 0, line: { color: accent, transparency: 60, width: 1 } });
+	      }
+	      const align = sermonSlide.textPlacement === "Left" || sermonSlide.layout === "Image Left" || sermonSlide.layout === "Two Column" ? "left" : "center";
+	      const titleY = sermonSlide.textPlacement === "Bottom" ? 3.6 : 1.25;
+	      if (sermonSlide.subtitle) {
+	        slide.addText(sermonSlide.subtitle, { x: 1, y: titleY - 0.48, w: 11.333, h: 0.28, fontFace: "Aptos", fontSize: 10, bold: true, color: accent, align, margin: 0 });
+	      }
+	      slide.addText(sermonSlide.title || `${index + 1}. ${sermonSlide.type}`, { x: 1, y: titleY, w: 11.333, h: sermonSlide.type === "Title" ? 1.0 : 0.72, fontFace: "Aptos Display", fontSize: pptxFontSize(sermonSlide, "title"), bold: true, color: foreground, align, fit: "shrink", margin: 0.05 });
+	      const bodyText = pptxCleanText(sermonSlide.bibleText || sermonSlide.body, 1400);
+	      if (bodyText) {
+	        slide.addText(bodyText, { x: 1.05, y: sermonSlide.type === "Title" ? 2.75 : titleY + 1.0, w: 11.2, h: sermonSlide.type === "Title" ? 2.7 : 4.1, fontFace: sermonSlide.bibleText ? "Georgia" : "Aptos", fontSize: pptxFontSize(sermonSlide, "body"), color: sermonSlide.bibleText ? foreground : muted, align, valign: "middle", fit: "shrink", breakLine: false, margin: 0.08 });
+	      }
+	      if (sermonSlide.speakerNotes) {
+	        slide.addNotes(sermonSlide.speakerNotes);
+	      }
+	    });
+	    const filename = `${sermonExportSlug(sermonDraft.title || sermonDraft.passage || "sermon-slides")}-slides.pptx`;
+	    await pptx.writeFile({ fileName: filename });
+	    setSyncMessage("PowerPoint slide deck exported.");
 	  }
 
 	  function printSermonDraft() {
@@ -12300,6 +12518,7 @@ export default function Home() {
 	                onGenerateSlides={generateSlidesForSermonDraft}
 	                onCopySlideOutline={copySermonSlideOutline}
 	                onDownloadSlidePlan={downloadSermonSlidePlan}
+	                onExportPowerPoint={exportSermonPowerPoint}
 	                onResolveScriptureText={sermonScriptureTextForPassage}
 	                onStartPreaching={startPreachingMode}
                 onResetTimer={() => {
@@ -15362,6 +15581,29 @@ function downloadTextFile(filename: string, content: string, type: string) {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
+}
+
+function sermonExportSlug(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "sermon-slides";
+}
+
+function pptxHex(value: string) {
+  return value.replace("#", "").slice(0, 6) || "1F2A24";
+}
+
+function pptxFontSize(slide: SermonSlide, kind: "title" | "body") {
+  if (kind === "title") {
+    if (slide.titleScale === "Large") return 42;
+    if (slide.titleScale === "Small") return 28;
+    return 34;
+  }
+  if (slide.fontScale === "Large") return 28;
+  if (slide.fontScale === "Compact") return 18;
+  return 23;
+}
+
+function pptxCleanText(value: string, maxLength = 900) {
+  return value.replace(/\s+\n/g, "\n").replace(/\n{3,}/g, "\n\n").trim().slice(0, maxLength);
 }
 
 function escapeWordHtml(value: string) {
@@ -25647,6 +25889,7 @@ function SermonWorkspaceScreen({
 	  onGenerateSlides,
 	  onCopySlideOutline,
 	  onDownloadSlidePlan,
+	  onExportPowerPoint,
 	  onResolveScriptureText,
 	  onStartPreaching,
 	  onResetTimer,
@@ -25683,6 +25926,7 @@ function SermonWorkspaceScreen({
 	  onGenerateSlides: () => void;
 	  onCopySlideOutline: () => void;
 	  onDownloadSlidePlan: () => void;
+	  onExportPowerPoint: () => void;
 	  onResolveScriptureText: (passage: string) => string;
 	  onStartPreaching: () => void;
 	  onResetTimer: () => void;
@@ -25706,6 +25950,9 @@ function SermonWorkspaceScreen({
 	  const [scriptureSlideEndVerse, setScriptureSlideEndVerse] = useState("");
 	  const [scriptureSlideFontScale, setScriptureSlideFontScale] = useState<SermonSlideFontScale>("Large");
 	  const [scriptureSlideVerseDisplay, setScriptureSlideVerseDisplay] = useState<SermonSlideVerseDisplay>("Reference + Text");
+	  const [sermonTranscriptDraft, setSermonTranscriptDraft] = useState("");
+	  const [savedChurchThemes, setSavedChurchThemes] = useState<SavedChurchTheme[]>(() => loadSavedChurchThemes());
+	  const [churchThemeName, setChurchThemeName] = useState("Home Church Theme");
 		  const sermonEstimate = sermonLengthEstimate(draft);
 		  const sermonSlides = useMemo(() => draft.slides ?? [], [draft.slides]);
 	  const activeSlide = sermonSlides.find((slide) => slide.id === selectedSlideId) ?? sermonSlides[0] ?? null;
@@ -25826,6 +26073,51 @@ function SermonWorkspaceScreen({
 	    }));
 	    onDraftChange({ slides: [...sermonSlides, ...nextSlides] });
 	    setSelectedSlideId(nextSlides[0]?.id ?? "");
+	  }
+
+	  function saveCurrentChurchTheme() {
+	    const sourceSlide = activeSlide ?? sermonSlides[0] ?? createSermonSlide("Title", slidePresetPatch(draft.slideTheme));
+	    const now = new Date().toISOString();
+	    const theme: SavedChurchTheme = {
+	      id: makeId("church-theme"),
+	      name: churchThemeName.trim() || "Saved Church Theme",
+	      themeId: draft.slideTheme,
+	      imageSlot: sourceSlide.imageSlot,
+	      fontScale: sourceSlide.fontScale,
+	      titleScale: sourceSlide.titleScale,
+	      textPlacement: sourceSlide.textPlacement,
+	      accentStyle: sourceSlide.accentStyle,
+	      backgroundIntensity: sourceSlide.backgroundIntensity,
+	      showImageMotif: sourceSlide.showImageMotif,
+	      showTypeLabel: sourceSlide.showTypeLabel,
+	      showImageLabel: sourceSlide.showImageLabel,
+	      showFooterBranding: sourceSlide.showFooterBranding,
+	      createdAt: now,
+	    };
+	    const nextThemes = [theme, ...savedChurchThemes.filter((item) => item.name.toLowerCase() !== theme.name.toLowerCase())].slice(0, 12);
+	    setSavedChurchThemes(nextThemes);
+	    saveSavedChurchThemes(nextThemes);
+	  }
+
+	  function applySavedChurchTheme(theme: SavedChurchTheme) {
+	    const patch = savedChurchThemePatch(theme);
+	    onDraftChange({
+	      slideTheme: theme.themeId,
+	      slides: sermonSlides.map((slide) => ({ ...slide, ...patch })),
+	    });
+	    if (activeSlide) setSelectedSlideId(activeSlide.id);
+	  }
+
+	  function buildTranscriptOutlineAndSlides() {
+	    const transcript = sermonTranscriptDraft.trim();
+	    if (!transcript) return;
+	    const patch = sermonExtractorDraftPatch(transcript, draft);
+	    const slides = generateSlidesFromTranscript({ ...draft, ...patch }, transcript, onResolveScriptureText(draft.passage));
+	    onDraftChange({
+	      ...patch,
+	      slides,
+	    });
+	    setSelectedSlideId(slides[0]?.id ?? "");
 	  }
 
 	  useEffect(() => {
@@ -26015,10 +26307,10 @@ function SermonWorkspaceScreen({
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Workspace</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare sermons and lessons from Scripture</h1>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare sermons, lessons, and Scripture slides</h1>
             <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--muted)]">
-              Build a sermon, Sunday school lesson, or series from reviewed study data. Presentation software comes later; this workspace focuses on preparation and preaching.
+              Build Bible-centered teaching notes and clean sermon slides for church use. This beta is focused on preparation, slide planning, PowerPoint export, and presenter preview.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -26144,18 +26436,43 @@ function SermonWorkspaceScreen({
 	        <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr]">
 	          <section className="space-y-4">
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Slides</p>
+	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
 	              <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
 	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-	                Build simple Scripture-first slides from the sermon draft. The full presentation engine, remote control, PowerPoint export, and PDF export come later.
+	                Build simple Scripture-first slides from the sermon draft. This is a slide-prep tool for churches, not a ProPresenter replacement yet.
 	              </p>
 	              <div className="mt-4 flex flex-wrap gap-2">
 	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Generate Slide Outline</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => addSlide()} type="button">Add Slide</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onDownloadSlidePlan} type="button">Download Slide Plan</button>
-	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PowerPoint soon</button>
+	                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!sermonSlides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
 	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PDF soon</button>
+	              </div>
+	            </article>
+
+	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+	              <div className="flex flex-wrap items-start justify-between gap-3">
+	                <div>
+	                  <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon Extractor Integration</p>
+	                  <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Transcript to outline to slides</h2>
+	                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+	                    Paste a sermon transcript or rough notes. The app organizes your words into a draft outline and slide deck for review.
+	                  </p>
+	                </div>
+	                <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">MVP</span>
+	              </div>
+	              <textarea
+	                className="mt-4 min-h-32 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--ink)] outline-none placeholder:text-stone-400"
+	                onChange={(event) => setSermonTranscriptDraft(event.target.value)}
+	                placeholder="Paste transcript or sermon notes here..."
+	                value={sermonTranscriptDraft}
+	              />
+	              <div className="mt-3 flex flex-wrap items-center gap-2">
+	                <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-50" disabled={!sermonTranscriptDraft.trim()} onClick={buildTranscriptOutlineAndSlides} type="button">
+	                  Build Outline + Slides
+	                </button>
+	                <p className="text-xs leading-5 text-[var(--muted)]">Review every slide before teaching. This organizes existing transcript text; it does not create doctrine.</p>
 	              </div>
 	            </article>
 
@@ -26172,8 +26489,8 @@ function SermonWorkspaceScreen({
 	              </label>
 	              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{SERMON_SLIDE_THEMES[draft.slideTheme].description}</p>
 	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Image System Foundation</p>
-	                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Suggested image: {suggestedSermonImageTheme(draft)}. Built-in backgrounds load instantly; reviewed church-safe photos can be added later without slowing presentation start.</p>
+	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Curated Background Library</p>
+	                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Suggested background: {suggestedSermonImageTheme(draft)}. {Object.keys(SERMON_SLIDE_IMAGE_SLOTS).length} fast built-in church-safe backgrounds are available without external search.</p>
 	                <button
 	                  className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
 	                  disabled={!activeSlide}
@@ -26201,6 +26518,33 @@ function SermonWorkspaceScreen({
 	                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{theme.imageSlot === "none" ? "Gradient only" : SERMON_SLIDE_IMAGE_SLOTS[theme.imageSlot].label} · {theme.textPlacement}</p>
 	                  </button>
 	                ))}
+	              </div>
+	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Saved Church Themes</p>
+	                <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
+	                  <input
+	                    className="h-10 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm text-[var(--ink)] outline-none"
+	                    onChange={(event) => setChurchThemeName(event.target.value)}
+	                    placeholder="First Baptist Sunday Theme"
+	                    value={churchThemeName}
+	                  />
+	                  <button className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={saveCurrentChurchTheme} type="button">
+	                    Save Current Look
+	                  </button>
+	                </div>
+	                <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+	                  {savedChurchThemes.length ? savedChurchThemes.map((theme) => (
+	                    <button
+	                      key={`saved-church-theme-${theme.id}`}
+	                      className="shrink-0 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left text-xs font-semibold text-[var(--green)]"
+	                      onClick={() => applySavedChurchTheme(theme)}
+	                      type="button"
+	                    >
+	                      <span className="block">{theme.name}</span>
+	                      <span className="mt-1 block text-[0.68rem] font-semibold text-[var(--muted)]">{SERMON_SLIDE_THEMES[theme.themeId].name} · {SERMON_SLIDE_IMAGE_SLOTS[theme.imageSlot].label}</span>
+	                    </button>
+	                  )) : <p className="text-xs leading-5 text-[var(--muted)]">Save a theme after choosing a deck style, background, and clean presentation settings.</p>}
+	                </div>
 	              </div>
 	            </article>
 
@@ -26515,6 +26859,19 @@ function sermonSlideBackground(theme: (typeof SERMON_SLIDE_THEMES)[SermonSlideTh
   return theme.background;
 }
 
+function sermonSlideReadability(slide: SermonSlide, lightStyle: boolean) {
+  const textLength = `${slide.title} ${slide.body} ${slide.bibleText}`.length;
+  const hasDecorativeBackground = slide.imageSlot !== "none" && slide.showImageMotif;
+  const needsPanel = textLength > 260 || hasDecorativeBackground || slide.textPlacement === "Left";
+  const overlay = lightStyle
+    ? "linear-gradient(90deg, rgba(255,253,248,0.90), rgba(255,253,248,0.58) 56%, rgba(255,253,248,0.18))"
+    : "linear-gradient(90deg, rgba(9,13,11,0.62), rgba(9,13,11,0.36) 56%, rgba(9,13,11,0.08))";
+  const panelClass = lightStyle
+    ? "rounded-3xl bg-white/55 p-4 shadow-sm backdrop-blur-[2px]"
+    : "rounded-3xl bg-black/20 p-4 shadow-sm backdrop-blur-[2px]";
+  return { needsPanel, overlay, panelClass };
+}
+
 function SermonSlideMotif({ slotId, color }: { slotId: SermonSlideImageSlotId; color: string }) {
   if (slotId === "none") return null;
   if (slotId === "cross") {
@@ -26561,6 +26918,30 @@ function SermonSlideMotif({ slotId, color }: { slotId: SermonSlideImageSlotId; c
       </div>
     );
   }
+  if (slotId === "pulpit" || slotId === "communion-table" || slotId === "quiet-study") {
+    return (
+      <div aria-hidden="true" className="absolute bottom-10 left-10 h-24 w-44 rounded-2xl border-2 border-current opacity-20 md:h-32 md:w-60" style={{ color }}>
+        <span className="absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-current/35" />
+        <span className="absolute bottom-4 left-6 h-1 w-[calc(100%-3rem)] rounded-full bg-current" />
+      </div>
+    );
+  }
+  if (slotId === "baptism-water") {
+    return (
+      <div aria-hidden="true" className="absolute bottom-10 left-8 right-8 h-24 opacity-20" style={{ color }}>
+        <span className="absolute bottom-0 left-0 h-16 w-full rounded-[50%] border-t-4 border-current" />
+        <span className="absolute bottom-8 left-12 h-10 w-3/5 rounded-[50%] border-t-2 border-current" />
+      </div>
+    );
+  }
+  if (slotId === "church-window") {
+    return (
+      <div aria-hidden="true" className="absolute right-10 top-10 h-44 w-28 rounded-t-full border-2 border-current opacity-20" style={{ color }}>
+        <span className="absolute left-1/2 top-0 h-full w-px bg-current" />
+        <span className="absolute left-0 top-1/2 h-px w-full bg-current" />
+      </div>
+    );
+  }
   return (
     <div aria-hidden="true" className="absolute right-8 top-8 h-32 w-32 rounded-full border-2 border-current opacity-20 md:right-12 md:top-12 md:h-44 md:w-44" style={{ color }} />
   );
@@ -26592,11 +26973,12 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
     : slide.backgroundIntensity === "Strong"
       ? "linear-gradient(135deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02))"
       : "linear-gradient(135deg, rgba(255,255,255,0), rgba(255,255,255,0))";
+  const readability = sermonSlideReadability(slide, lightStyle);
   return (
     <div
       className={`${presentation ? "min-h-[68vh] w-full max-w-6xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
       style={{
-        background: `${intensityOverlay}, ${imageSlot.background}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
+        background: `${readability.overlay}, ${intensityOverlay}, ${imageSlot.background}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
         color: foreground,
       }}
     >
@@ -26617,7 +26999,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
               {imageSlot.label}
             </div>
           )}
-          <div className={`${slide.accentStyle === "Panel" ? "rounded-3xl bg-white/15 p-5 shadow-sm backdrop-blur-sm" : ""}`}>
+          <div className={`${slide.accentStyle === "Panel" ? "rounded-3xl bg-white/15 p-5 shadow-sm backdrop-blur-sm" : readability.needsPanel ? readability.panelClass : ""}`}>
             {slide.accentStyle === "Badge" && slide.subtitle && <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</span>}
             {slide.accentStyle !== "Badge" && slide.subtitle && <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>}
             {slide.accentStyle === "Line" && <div className={`mb-4 mt-3 h-1 w-16 rounded-full ${textAlign === "text-center" ? "mx-auto" : ""}`} style={{ backgroundColor: theme.accent }} />}
@@ -26648,9 +27030,17 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
 function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: (patch: Partial<SermonSlide>) => void }) {
   const [mediaCategory, setMediaCategory] = useState<"All" | SermonSlideMediaCategory>("All");
   const filteredImageSlots = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).filter(([, slot]) => mediaCategory === "All" || slot.category === mediaCategory);
+  const previewLightStyle = slide.backgroundStyle === "Paper" || slide.backgroundStyle === "Light";
+  const readability = sermonSlideReadability(slide, previewLightStyle);
   return (
     <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Slide Editor</p>
+      <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Automatic Readability Overlay</p>
+        <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+          {readability.needsPanel ? "Active: the slide is using an overlay and soft text panel so Scripture stays readable." : "Ready: the slide has enough contrast without a heavy panel."}
+        </p>
+      </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <label className="text-sm font-semibold text-[var(--muted)]">
           Slide Type
@@ -26671,7 +27061,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
           </select>
         </label>
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Font Scale
+          Scripture / Body Size
           <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.fontScale} onChange={(event) => onChange({ fontScale: event.target.value as SermonSlideFontScale })}>
             <option value="Compact">Small</option>
             <option value="Normal">Medium</option>
@@ -26687,19 +27077,19 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
           </select>
         </label>
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Text Placement
+          Text Position
           <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.textPlacement} onChange={(event) => onChange({ textPlacement: event.target.value as SermonSlideTextPlacement })}>
             {["Center", "Left", "Bottom"].map((value) => <option key={value} value={value}>{value}</option>)}
           </select>
         </label>
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Accent Style
+          Slide Accent
           <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.accentStyle} onChange={(event) => onChange({ accentStyle: event.target.value as SermonSlideAccentStyle })}>
             {["None", "Line", "Badge", "Panel"].map((value) => <option key={value} value={value}>{value}</option>)}
           </select>
         </label>
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Background Intensity
+          Background Strength
           <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold text-[var(--ink)] outline-none" value={slide.backgroundIntensity} onChange={(event) => onChange({ backgroundIntensity: event.target.value as SermonSlideBackgroundIntensity })}>
             <option value="Soft">Soft</option>
             <option value="Balanced">Balanced</option>
