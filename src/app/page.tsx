@@ -779,6 +779,17 @@ type StudyPlaylistTemplate = {
   repeatOptions: string[];
 };
 
+type SmartSermonSuggestion = {
+  id: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  meta: string;
+  actionText: string;
+  importLabel: string;
+  importBody: string;
+};
+
 type LibraryImportCandidate = {
   id: string;
   title: string;
@@ -8313,6 +8324,244 @@ function suggestedSermonLibraryItems(items: SermonLibraryItem[], searchText: str
     .slice(0, 3);
 }
 
+function smartSuggestionTerms(searchText: string) {
+  return Array.from(
+    new Set(
+      searchText
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, " ")
+        .split(/\s+/)
+        .map((term) => term.trim())
+        .filter((term) => term.length > 2),
+    ),
+  );
+}
+
+function scoreSmartSuggestion(text: string, terms: string[]) {
+  const haystack = text.toLowerCase();
+  if (!haystack.trim() || !terms.length) return 0;
+  return terms.reduce((total, term) => total + (haystack.includes(term) ? 1 : 0), 0);
+}
+
+function parseSermonPassageReference(searchText: string) {
+  const text = searchText.replace(/\s+/g, " ");
+  const sortedBooks = [...bookOrder].sort((a, b) => b.length - a.length);
+  for (const bookName of sortedBooks) {
+    const escapedBook = bookName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+    const chapterMatch = text.match(new RegExp(`\\b${escapedBook}\\s+(\\d+)(?::(\\d+))?`, "i"));
+    if (chapterMatch) {
+      return {
+        book: bookName,
+        chapter: Number(chapterMatch[1]),
+        verse: chapterMatch[2] ? Number(chapterMatch[2]) : undefined,
+        label: `${bookName} ${chapterMatch[1]}${chapterMatch[2] ? `:${chapterMatch[2]}` : ""}`,
+      };
+    }
+    if (new RegExp(`\\b${escapedBook}\\b`, "i").test(text)) {
+      return { book: bookName, chapter: undefined, verse: undefined, label: bookName };
+    }
+  }
+  return null;
+}
+
+function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: string): SmartSermonSuggestion[] {
+  const passage = parseSermonPassageReference(searchText);
+  const terms = smartSuggestionTerms(searchText);
+  return entries
+    .map((entry) => {
+      const referenceScore = passage
+        ? (entry.book === passage.book ? 5 : 0) + (passage.chapter && entry.chapter === passage.chapter ? 8 : 0)
+        : 0;
+      const textScore = scoreSmartSuggestion([
+        entry.author,
+        entry.resource_title,
+        entry.source_title ?? "",
+        entry.recommended_use ?? "",
+        entry.reference ?? "",
+      ].join(" "), terms);
+      return { entry, score: referenceScore + textScore };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.entry.author.localeCompare(b.entry.author))
+    .slice(0, 5)
+    .map(({ entry }) => {
+      const reference = entry.reference || `${entry.book} ${entry.chapter}`;
+      const verseRange = entry.verse_start && entry.verse_end
+        ? entry.verse_start === entry.verse_end ? `:${entry.verse_start}` : `:${entry.verse_start}-${entry.verse_end}`
+        : "";
+      return {
+        id: `commentary-${entry.id}`,
+        title: entry.author,
+        subtitle: entry.resource_title,
+        body: entry.entry_text,
+        meta: `${reference}${verseRange} - ${entry.public_domain_status}`,
+        actionText: "Add commentary connection",
+        importLabel: `Commentary: ${entry.author}`,
+        importBody: [
+          `${entry.author}, ${entry.resource_title}`,
+          `Reference: ${reference}${verseRange}`,
+          entry.recommended_use ? `Use: ${entry.recommended_use}` : "",
+          entry.entry_text,
+        ].filter(Boolean).join("\n"),
+      };
+    });
+}
+
+function suggestedSermonLibraryResources(resources: LibraryResource[], searchText: string): SmartSermonSuggestion[] {
+  const terms = smartSuggestionTerms(searchText);
+  return resources
+    .map((resource) => {
+      const score = scoreSmartSuggestion([
+        resource.title,
+        resource.author,
+        resource.category,
+        resource.collection,
+        resource.description,
+        resource.recommended_use,
+        resource.perspective_notes,
+        ...resource.resource_labels,
+      ].join(" "), terms);
+      return { resource, score };
+    })
+    .filter(({ score, resource }) => score > 0 && !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`))
+    .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title))
+    .slice(0, 5)
+    .map(({ resource }) => ({
+      id: `library-${resource.slug}`,
+      title: resource.title,
+      subtitle: resource.author,
+      body: resource.description || resource.recommended_use,
+      meta: `${resource.category} - ${resource.public_domain_status}`,
+      actionText: "Add book connection",
+      importLabel: `Library: ${resource.title}`,
+      importBody: [
+        `${resource.title} by ${resource.author}`,
+        `Category: ${resource.category}`,
+        `Recommended use: ${resource.recommended_use || "Use as a supporting resource."}`,
+        `Rights: ${resource.public_domain_status || resource.rights_status}`,
+      ].join("\n"),
+    }));
+}
+
+function suggestedSermonStudyPlaylists(playlists: StudyPlaylistTemplate[], searchText: string): SmartSermonSuggestion[] {
+  const terms = smartSuggestionTerms(searchText);
+  const scored = playlists
+    .map((playlist) => {
+      const score = scoreSmartSuggestion([
+        playlist.title,
+        playlist.description,
+        ...playlist.items.map((item) => `${item.kind} ${item.label}`),
+        ...playlist.repeatOptions,
+      ].join(" "), terms);
+      return { playlist, score };
+    })
+    .sort((a, b) => b.score - a.score || a.playlist.title.localeCompare(b.playlist.title));
+  return scored
+    .filter(({ score }) => score > 0)
+    .concat(scored.filter(({ score }) => score === 0).slice(0, 2))
+    .slice(0, 4)
+    .map(({ playlist }) => {
+      const totalMinutes = playlist.items.reduce((total, item) => total + item.minutes, 0);
+      return {
+        id: `playlist-${playlist.id}`,
+        title: playlist.title,
+        subtitle: `${playlist.items.length} items - about ${totalMinutes} minutes`,
+        body: playlist.description,
+        meta: playlist.items.map((item) => item.kind).join(" + "),
+        actionText: "Add playlist connection",
+        importLabel: `Study Playlist: ${playlist.title}`,
+        importBody: [
+          playlist.description,
+          `Estimated time: ${totalMinutes} minutes`,
+          ...playlist.items.map((item) => `- ${item.kind}: ${item.label} (${item.minutes} min)`),
+        ].join("\n"),
+      };
+    });
+}
+
+function suggestedSermonPrayerConnections(entries: PrayerEntry[], searchText: string): SmartSermonSuggestion[] {
+  const terms = smartSuggestionTerms(searchText);
+  const scored = entries
+    .filter((entry) => entry.answerStatus !== "Answered")
+    .map((entry) => {
+      const score = scoreSmartSuggestion([
+        entry.name,
+        entry.category,
+        entry.request,
+        entry.notes,
+        entry.bibleVerse ?? "",
+        entry.passage ?? "",
+        entry.studyNote ?? "",
+        entry.missionaryVerse ?? "",
+        entry.promiseVerse ?? "",
+      ].join(" "), terms);
+      return { entry, score };
+    })
+    .sort((a, b) => b.score - a.score || b.entry.updatedAt.localeCompare(a.entry.updatedAt));
+  return scored
+    .filter(({ score }) => score > 0)
+    .concat(scored.filter(({ score }) => score === 0).slice(0, 2))
+    .slice(0, 4)
+    .map(({ entry }) => ({
+      id: `prayer-${entry.id}`,
+      title: entry.name,
+      subtitle: entry.category,
+      body: entry.request,
+      meta: entry.passage || entry.bibleVerse || entry.rotation || "Prayer connection",
+      actionText: "Add prayer connection",
+      importLabel: `Prayer: ${entry.name}`,
+      importBody: [
+        `Category: ${entry.category}`,
+        `Request: ${entry.request}`,
+        entry.passage ? `Passage: ${entry.passage}` : "",
+        entry.bibleVerse ? `Verse: ${entry.bibleVerse}` : "",
+        entry.notes ? `Notes: ${entry.notes}` : "",
+      ].filter(Boolean).join("\n"),
+    }));
+}
+
+function suggestedSermonJournalConnections(entries: JournalEntry[], searchText: string): SmartSermonSuggestion[] {
+  const terms = smartSuggestionTerms(searchText);
+  const scored = entries
+    .map((entry) => {
+      const score = scoreSmartSuggestion([
+        entry.bibleReadingPassage,
+        entry.selectedVerseRefs,
+        entry.versePassage,
+        entry.wordsToDefine,
+        entry.verseSays,
+        entry.verseMeans,
+        entry.verseApplies,
+        entry.prayerResponse,
+        entry.teachingThought,
+        entry.sourceLabel,
+      ].join(" "), terms);
+      return { entry, score };
+    })
+    .sort((a, b) => b.score - a.score || b.entry.updatedAt.localeCompare(a.entry.updatedAt));
+  return scored
+    .filter(({ score }) => score > 0)
+    .concat(scored.filter(({ score }) => score === 0).slice(0, 2))
+    .slice(0, 4)
+    .map(({ entry }) => ({
+      id: `journal-${entry.id}`,
+      title: entry.versePassage || entry.selectedVerseRefs || entry.bibleReadingPassage || "Journal entry",
+      subtitle: formatShortDate(entry.date),
+      body: entry.teachingThought || entry.verseApplies || entry.verseMeans || entry.verseSays || "Saved Scripture journal entry.",
+      meta: entry.sourceLabel || entry.sourceType,
+      actionText: "Add journal connection",
+      importLabel: `Journal: ${entry.versePassage || entry.date}`,
+      importBody: [
+        `Date: ${entry.date}`,
+        entry.versePassage ? `Passage: ${entry.versePassage}` : "",
+        entry.verseSays ? `Says: ${entry.verseSays}` : "",
+        entry.verseMeans ? `Means: ${entry.verseMeans}` : "",
+        entry.verseApplies ? `Applies: ${entry.verseApplies}` : "",
+        entry.teachingThought ? `Teaching thought: ${entry.teachingThought}` : "",
+      ].filter(Boolean).join("\n"),
+    }));
+}
+
 function transcriptSentences(transcript: string) {
   return transcript
     .replace(/\s+/g, " ")
@@ -13526,6 +13775,10 @@ export default function Home() {
                 illustrationLibrary={SERMON_ILLUSTRATION_STARTERS}
                 quoteLibrary={SERMON_QUOTE_STARTERS}
                 applicationLibrary={SERMON_APPLICATION_STARTERS}
+                commentaryEntries={commentaryEntries}
+                libraryResources={libraryResources}
+                prayerEntries={prayerEntries}
+                journalEntries={journalEntries}
                 timerStartedAt={sermonPreachingStartedAt}
                 timerNow={sermonTimerNow}
                 syncMessage={syncMessage}
@@ -27130,6 +27383,10 @@ function SermonWorkspaceScreen({
   illustrationLibrary,
   quoteLibrary,
   applicationLibrary,
+  commentaryEntries,
+  libraryResources,
+  prayerEntries,
+  journalEntries,
   timerStartedAt,
   timerNow,
   syncMessage,
@@ -27170,6 +27427,10 @@ function SermonWorkspaceScreen({
   illustrationLibrary: SermonLibraryItem[];
   quoteLibrary: SermonLibraryItem[];
   applicationLibrary: SermonLibraryItem[];
+  commentaryEntries: CommentaryEntry[];
+  libraryResources: LibraryResource[];
+  prayerEntries: PrayerEntry[];
+  journalEntries: JournalEntry[];
   timerStartedAt: number | null;
   timerNow: number;
   syncMessage: string;
@@ -27274,6 +27535,11 @@ function SermonWorkspaceScreen({
   const suggestedIllustrations = suggestedSermonLibraryItems(illustrationLibrary, sermonSuggestionText);
   const suggestedQuotes = suggestedSermonLibraryItems(quoteLibrary, sermonSuggestionText);
   const suggestedApplications = suggestedSermonLibraryItems(applicationLibrary, sermonSuggestionText);
+  const suggestedCommentaries = suggestedSermonCommentaries(commentaryEntries, sermonSuggestionText);
+  const suggestedLibraryBooks = suggestedSermonLibraryResources(libraryResources, sermonSuggestionText);
+  const suggestedStudyPlaylists = suggestedSermonStudyPlaylists(STUDY_PLAYLIST_TEMPLATES, sermonSuggestionText);
+  const suggestedPrayerConnections = suggestedSermonPrayerConnections(prayerEntries, sermonSuggestionText);
+  const suggestedJournalConnections = suggestedSermonJournalConnections(journalEntries, sermonSuggestionText);
   const sectionPlaceholders: Record<SermonSectionKey, string> = {
     outline: "I. The need of the new birth...",
     introduction: "Hook, opening question, setting, and why the passage matters.",
@@ -27283,6 +27549,15 @@ function SermonWorkspaceScreen({
     conclusion: "Restate the truth and bring the lesson home.",
     invitation: "Gospel appeal or response that fits the passage.",
   };
+
+	  function appendSmartSermonConnection(label: string, body: string) {
+	    onDraftChange({
+	      importedStudyNotes: [
+	        draft.importedStudyNotes,
+	        `## ${label}\n${body}`,
+	      ].filter(Boolean).join("\n\n"),
+	    });
+	  }
 
 	  function moveSection(section: SermonSectionKey, direction: -1 | 1) {
     const currentOrder = orderedSections.length ? orderedSections : SERMON_SECTION_FIELDS;
@@ -27679,11 +27954,11 @@ function SermonWorkspaceScreen({
             </div>
           </section>
 
-          <section className="space-y-4">
+          <section className="min-w-0 space-y-4">
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Series Manager</p>
               <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Create a series</h2>
-              <div className="mt-4 grid gap-3">
+              <div className="mt-4 grid min-w-0 grid-cols-1 gap-3">
                 <SermonField label="Series title" value={seriesTitleDraft} onChange={onSeriesTitleChange} placeholder="Romans: The Gospel of God" />
                 <SermonField label="Passage range" value={seriesPassageDraft} onChange={onSeriesPassageChange} placeholder="Romans 1-8" />
                 <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onCreateSeries} type="button">Create Series</button>
@@ -27974,7 +28249,7 @@ function SermonWorkspaceScreen({
 	        </div>
 	      ) : (
 	        <div className="grid gap-5 xl:grid-cols-[1fr_0.9fr]">
-          <section className="space-y-4">
+          <section className="min-w-0 space-y-4">
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
@@ -28060,7 +28335,7 @@ function SermonWorkspaceScreen({
             </article>
           </section>
 
-          <section className="space-y-4">
+          <section className="min-w-0 space-y-4">
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Send to Sermon</p>
               <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Bring in reviewed study material</h2>
@@ -28086,12 +28361,12 @@ function SermonWorkspaceScreen({
             </article>
 
             <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Suggested Helps</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Smart Sermon Assistant</p>
               <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Matches for this sermon</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                These are local reviewed starter items matched to the title, passage, theme, and current notes.
+                Uses existing app metadata to connect the sermon with current commentaries, books, study playlists, prayer requests, journal entries, quotes, illustrations, and applications.
               </p>
-              <div className="mt-4 grid gap-3">
+              <div className="mt-4 grid min-w-0 grid-cols-1 gap-3">
                 <SermonSuggestionCard
                   label="Illustration"
                   item={suggestedIllustrations[0]}
@@ -28112,6 +28387,36 @@ function SermonWorkspaceScreen({
                   emptyText="Add sermon details to surface a matching application prompt."
                   buttonLabel="Add application"
                   onAdd={(item) => onDraftChange({ applications: [draft.applications, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })}
+                />
+                <SmartSermonConnectionList
+                  title="Suggested Commentaries"
+                  emptyText="No matching commentary entries found yet for this sermon."
+                  suggestions={suggestedCommentaries}
+                  onAdd={appendSmartSermonConnection}
+                />
+                <SmartSermonConnectionList
+                  title="Suggested Library Books"
+                  emptyText="No matching library books found yet. Add a stronger passage, theme, or topic."
+                  suggestions={suggestedLibraryBooks}
+                  onAdd={appendSmartSermonConnection}
+                />
+                <SmartSermonConnectionList
+                  title="Suggested Study Playlists"
+                  emptyText="No playlist suggestions available yet."
+                  suggestions={suggestedStudyPlaylists}
+                  onAdd={appendSmartSermonConnection}
+                />
+                <SmartSermonConnectionList
+                  title="Suggested Prayer Connections"
+                  emptyText="No active prayer connections found yet."
+                  suggestions={suggestedPrayerConnections}
+                  onAdd={appendSmartSermonConnection}
+                />
+                <SmartSermonConnectionList
+                  title="Suggested Journal Connections"
+                  emptyText="No matching journal entries found yet."
+                  suggestions={suggestedJournalConnections}
+                  onAdd={appendSmartSermonConnection}
                 />
               </div>
             </article>
@@ -29628,7 +29933,7 @@ function SermonSuggestionCard({
   onAdd: (item: SermonLibraryItem) => void;
 }) {
   return (
-    <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+    <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</p>
       {item ? (
         <>
@@ -29641,6 +29946,56 @@ function SermonSuggestionCard({
           <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{item.recommendedUse}</p>
           <button className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAdd(item)} type="button">{buttonLabel}</button>
         </>
+      ) : (
+        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{emptyText}</p>
+      )}
+    </div>
+  );
+}
+
+function SmartSermonConnectionList({
+  title,
+  emptyText,
+  suggestions,
+  onAdd,
+}: {
+  title: string;
+  emptyText: string;
+  suggestions: SmartSermonSuggestion[];
+  onAdd: (label: string, body: string) => void;
+}) {
+  return (
+    <div className="min-w-0 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{title}</p>
+        <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          {suggestions.length} found
+        </span>
+      </div>
+      {suggestions.length ? (
+        <div className="mt-3 grid min-w-0 grid-cols-1 gap-2">
+          {suggestions.map((suggestion) => (
+            <div key={suggestion.id} className="min-w-0 rounded-2xl border border-[var(--line)] bg-white p-3">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold leading-snug text-[var(--green)]">{suggestion.title}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{suggestion.subtitle}</p>
+                </div>
+                <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {suggestion.meta}
+                </span>
+              </div>
+              <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{suggestion.body}</p>
+              <button
+                className="mt-3 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                onClick={() => onAdd(suggestion.importLabel, suggestion.importBody)}
+                type="button"
+              >
+                {suggestion.actionText}
+              </button>
+            </div>
+          ))}
+        </div>
       ) : (
         <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{emptyText}</p>
       )}
