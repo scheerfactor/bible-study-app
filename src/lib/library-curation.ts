@@ -3,6 +3,7 @@ export type LibraryManifestEntry = {
   author: string;
   year: number;
   category: string;
+  collection?: string;
   source_url: string;
   source_license_url: string;
   file_path: string;
@@ -163,6 +164,7 @@ function recommendedUse(entry: LibraryManifestEntry, category: string) {
 
 export function curateLibraryEntry(entry: LibraryManifestEntry) {
   const category = normalizeLibraryCategory(entry.category);
+  const collection = entry.collection ?? entry.cover_metadata?.collection ?? entry.resource_labels?.[0] ?? category;
   const warnings = warningLabels(entry, category);
 
   return {
@@ -170,6 +172,7 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     author: entry.author,
     year: entry.year,
     category,
+    collection,
     original_category: entry.category,
     description: entry.notes,
     public_domain_status: entry.public_domain_status,

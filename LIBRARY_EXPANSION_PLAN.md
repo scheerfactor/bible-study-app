@@ -50,6 +50,18 @@ Phase 5 added meaningful growth in:
 - Preaching and teaching helps, including sermon collections, post-Reformation preacher studies, object lessons, and public-domain teaching resources.
 - Historical/theological works marked for careful use where doctrinal perspective differs from the target audience.
 
+Phase 6 brings the verified shared Library to 696 resources by adding 26 additional Project Gutenberg-backed texts through `data/library/bulk-import-phase-7.csv` and `data/library/bulk-import-phase-7b.csv`. This batch intentionally stayed smaller than the 1,000-resource target because the broad public-domain searches produced noisy matches, including off-topic fiction, modern/cult material, Catholic/Jesuit material, skeptical works, and unrelated author-name collisions. Those candidates were rejected instead of being imported just to raise the count.
+
+Phase 6 added clean growth in:
+
+- Preaching and teaching, including George Whitefield's six-volume public-domain works, missing volumes from `The World's Great Sermons`, and additional sermon-study material.
+- Bible handbooks and teacher helps, including Hurlbut Bible lesson and outline resources.
+- Missions and missionary history, including `Oowikapun`, `On Mule Back Thru Central America with the Gospel`, `Siam and Laos`, and selected mission-periodical content.
+- Baptist history, including `The Baptist Magazine, Vol. 27, 1835`.
+- Bible study helps, including `Bible Readings for the Home Circle`.
+
+Phase 6 also adds top-level `collection` metadata to the Library manifest and importer so every resource carries author, category, source URL, rights notes, recommended use, and collection data. Library search now also matches collection names, making large shelves easier to discover without adding clutter.
+
 ## Public-Domain Growth Targets
 
 The next Library growth should stay public-domain first, with rights metadata, doctrinal review metadata, and file-backed resources checked before deploy.
@@ -72,6 +84,7 @@ The next Library growth should stay public-domain first, with rights metadata, d
 - Keep searchable metadata in Supabase Postgres or a dedicated search index.
 - Add stronger admin review reports for duplicates, rights warnings, doctrinal notes, shelf counts, and missing files.
 - Keep premium/licensed content separate from public-domain imports until written rights are documented.
+- Build the next acquisition list from exact reviewed source records rather than broad keyword searches. The Phase 6 broad search trial showed that a raw 1,000-resource push would reduce library quality unless every row is reviewed before import.
 
 ## Needs-Review Candidates
 

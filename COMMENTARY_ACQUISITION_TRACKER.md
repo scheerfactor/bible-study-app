@@ -78,6 +78,26 @@ Phase 5 continues verified public commentary promotion without making staged or 
 - John Wesley remains at the current verified public coverage while the next CCEL-based batch is reviewed.
 - Gill remains blocked for expansion until a cleaner original public-domain source is verified.
 
+## Library Growth Phase 6 Commentary
+
+Phase 6 continues verified public JFB promotion in reviewed batches of 25-50 chapters without exposing the full staged commentary queue.
+
+- Public commentary now totals 2,010 entries.
+- JFB Phase 6 added 246 reviewed public entries across Leviticus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 1 Samuel, 2 Samuel, 1 Kings, and 2 Kings.
+- JFB now has 651 public verified entries.
+- Matthew Henry remains at 457 public verified entries while the remaining staged chapters wait for review.
+- Barnes and Adam Clarke remain at 403 public verified entries each.
+- Wesley remains at 86 public verified entries.
+- Gill remains blocked for expansion until a cleaner original public-domain source is verified.
+- Phase 6 public JFB files:
+  - `data/imports/jfb-reviewed-phase-6-leviticus-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-numbers-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-deuteronomy-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-joshua-judges-start-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-judges-ruth-samuel-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-samuel-kings-commentary.json`
+  - `data/imports/jfb-reviewed-phase-6-kings-commentary.json`
+
 Phase 5 public commentary files:
 
 - `data/imports/jfb-reviewed-phase-5-gospels-acts-commentary.json`

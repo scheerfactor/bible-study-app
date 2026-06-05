@@ -155,6 +155,7 @@ export function validateLibraryEntry(entry, index) {
     "author",
     "year",
     "category",
+    "collection",
     "source_url",
     "file_path",
     "public_domain_status",

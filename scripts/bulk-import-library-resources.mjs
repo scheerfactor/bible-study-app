@@ -360,6 +360,7 @@ for (const [index, row] of sourceRows.entries()) {
       author,
       year,
       category,
+      collection,
       source_url: sourceUrl,
       download_url: downloadUrl,
       source_license_url: sourceLicenseUrl(sourceUrl),

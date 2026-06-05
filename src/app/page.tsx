@@ -59,6 +59,13 @@ import jfbReviewedPhase5RevelationPsalmsCommentary from "../../data/imports/jfb-
 import jfbReviewedPhase5Psalms4998Commentary from "../../data/imports/jfb-reviewed-phase-5-psalms-49-98-commentary.json";
 import jfbReviewedPhase5ProverbsGenesisCommentary from "../../data/imports/jfb-reviewed-phase-5-proverbs-genesis-commentary.json";
 import jfbReviewedPhase5GenesisExodusPsalmsCommentary from "../../data/imports/jfb-reviewed-phase-5-genesis-exodus-psalms-commentary.json";
+import jfbReviewedPhase6LeviticusCommentary from "../../data/imports/jfb-reviewed-phase-6-leviticus-commentary.json";
+import jfbReviewedPhase6NumbersCommentary from "../../data/imports/jfb-reviewed-phase-6-numbers-commentary.json";
+import jfbReviewedPhase6DeuteronomyCommentary from "../../data/imports/jfb-reviewed-phase-6-deuteronomy-commentary.json";
+import jfbReviewedPhase6JoshuaJudgesStartCommentary from "../../data/imports/jfb-reviewed-phase-6-joshua-judges-start-commentary.json";
+import jfbReviewedPhase6JudgesRuthSamuelCommentary from "../../data/imports/jfb-reviewed-phase-6-judges-ruth-samuel-commentary.json";
+import jfbReviewedPhase6SamuelKingsCommentary from "../../data/imports/jfb-reviewed-phase-6-samuel-kings-commentary.json";
+import jfbReviewedPhase6KingsCommentary from "../../data/imports/jfb-reviewed-phase-6-kings-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
@@ -545,6 +552,7 @@ type LibraryResource = {
   author: string;
   year: number;
   category: string;
+  collection: string;
   original_category?: string;
   description: string;
   public_domain_status: string;
@@ -5769,6 +5777,13 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedPhase5Psalms4998Commentary as CommentaryEntry[]),
   ...(jfbReviewedPhase5ProverbsGenesisCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase5GenesisExodusPsalmsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6LeviticusCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6NumbersCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6DeuteronomyCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6JoshuaJudgesStartCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6JudgesRuthSamuelCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6SamuelKingsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase6KingsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
@@ -9002,6 +9017,7 @@ export default function Home() {
         resource.title.toLowerCase().includes(term) ||
         resource.author.toLowerCase().includes(term) ||
         resource.category.toLowerCase().includes(term) ||
+        resource.collection.toLowerCase().includes(term) ||
         resource.resource_labels.some((label) => label.toLowerCase().includes(term)) ||
         resource.resource_warnings.some((warning) => warning.toLowerCase().includes(term)) ||
         resource.perspective_notes.toLowerCase().includes(term) ||
@@ -19063,6 +19079,7 @@ function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
     resource.title,
     resource.author,
     resource.category,
+    resource.collection,
     resource.original_category ?? "",
     resource.description,
     ...resource.resource_labels,
