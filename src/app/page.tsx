@@ -7708,6 +7708,94 @@ function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = 
   }, 0);
 }
 
+function createJohn3SampleSermon(): SermonEntry {
+  const now = new Date().toISOString();
+  const entry: SermonEntry = {
+    ...EMPTY_SERMON_ENTRY,
+    id: makeId("sample-sermon"),
+    kind: "Lesson",
+    title: "Ye Must Be Born Again",
+    passage: "John 3:1-18",
+    theme: "The new birth and believing on the Son of God",
+    status: "Draft",
+    outline: [
+      "I. A religious man still needed the new birth (John 3:1-7).",
+      "II. The Son of man must be lifted up (John 3:14-15).",
+      "III. God gave His only begotten Son (John 3:16).",
+      "IV. The hearer must personally believe on Christ (John 3:16-18).",
+    ].join("\n"),
+    introduction: "Nicodemus had position, religion, and knowledge, yet the Lord Jesus told him that he must be born again. Begin by asking the class why outward religion cannot replace the inward work of God.",
+    points: [
+      "The new birth is necessary, not optional.",
+      "The lifted serpent in the wilderness points the hearer to look and live.",
+      "God's love is shown in the giving of His only begotten Son.",
+      "Believing on Christ is the dividing line between life and condemnation.",
+    ].join("\n"),
+    illustrations: "Use the simple picture of birth: a person does not improve himself into a new family; he must be born. Keep the illustration short and return quickly to the Lord's words.",
+    quotes: "Teaching principle: Let John 3 explain salvation before using outside stories or systems. The Bible text must govern the invitation.",
+    applications: "Ask each hearer: Have I trusted Christ, or am I resting in religion, knowledge, family, or works? Believers should be ready to explain the Gospel plainly from John 3:16.",
+    conclusion: "Bring the lesson back to Christ. The answer for Nicodemus was not more religion, but the Son of God lifted up and believed on.",
+    invitation: "If you are trusting anything besides the Lord Jesus Christ, come to Him by faith. John 3:16 says that whosoever believeth in him should not perish, but have everlasting life.",
+    importedStudyNotes: "Use Webster's 1828 for believe, begotten, perish, everlasting, and life. Use TSK cross references for Genesis 22:2, Romans 5:8, and 1 John 4:9 where reviewed.",
+    bulletManuscript: "",
+    sectionOrder: ["outline", "introduction", "points", "illustrations", "applications", "conclusion", "invitation"],
+    targetMinutes: 35,
+    slides: [],
+    slideTheme: "warm-bible-study",
+    createdAt: now,
+    updatedAt: now,
+    preachedAt: "",
+    archived: false,
+  };
+  entry.slides = [
+    createSermonSlide("Title", {
+      title: "Ye Must Be Born Again",
+      subtitle: "John 3:1-18",
+      body: "Sunday School lesson sample",
+      speakerNotes: "Open with the setting: Nicodemus came to Jesus by night.",
+      imageSlot: "open-bible",
+      imageTheme: "Open Bible",
+    }),
+    createSermonSlide("Scripture", {
+      title: "John 3:16",
+      subtitle: "KJV",
+      bibleText: "John 3:16 For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+      speakerNotes: "Read the verse slowly and keep the Scripture central.",
+      imageSlot: "open-bible",
+      imageTheme: "Open Bible",
+    }),
+    createSermonSlide("Main Point", {
+      title: "The New Birth Is Necessary",
+      subtitle: "John 3:3",
+      body: "A religious man still needed the inward work of God.",
+      speakerNotes: "Emphasize the Lord's word: Except a man be born again.",
+    }),
+    createSermonSlide("Illustration", {
+      title: "Birth, Not Improvement",
+      body: "A person does not improve himself into a new family; he must be born.",
+      speakerNotes: "Keep the illustration brief and return to John 3.",
+    }),
+    createSermonSlide("Quote", {
+      title: "Scripture First",
+      body: "Let John 3 explain salvation before using outside stories or systems.",
+      speakerNotes: "This is an original teaching reminder, not an imported quotation.",
+    }),
+    createSermonSlide("Application", {
+      title: "What Are You Resting In?",
+      body: "Religion, knowledge, family, and works cannot replace believing on the Son of God.",
+      speakerNotes: "Ask for personal examination without rushing the text.",
+    }),
+    createSermonSlide("Closing / Invitation", {
+      title: "Believe On Him",
+      body: "Whosoever believeth in him should not perish, but have everlasting life.",
+      speakerNotes: "Close with John 3:16 and a plain Gospel appeal.",
+      imageSlot: "cross",
+      imageTheme: "Cross",
+    }),
+  ];
+  return entry;
+}
+
 function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSlide[] {
   const imageSlot = suggestedSermonImageSlot(entry);
   const imageTheme = SERMON_SLIDE_IMAGE_SLOTS[imageSlot].label;
@@ -7916,6 +8004,48 @@ function sermonExportMarkdown(entry: SermonEntry, series: SermonSeries | null) {
 	    entry.slides.length ? sermonSlideOutline(entry.slides) : "No slides generated yet.",
 	    "",
 	  ].join("\n");
+}
+
+function sermonOutlineText(entry: SermonEntry) {
+  return [
+    entry.title || `${entry.kind} Draft`,
+    entry.passage ? `Passage: ${entry.passage}` : "",
+    entry.theme ? `Theme: ${entry.theme}` : "",
+    "",
+    "Outline",
+    entry.outline || "No outline yet.",
+    "",
+    "Main Points",
+    entry.points || "No main points yet.",
+    "",
+    "Conclusion",
+    entry.conclusion || "No conclusion yet.",
+  ].filter((line) => line !== "").join("\n");
+}
+
+function sermonPreachingNotesMarkdown(entry: SermonEntry) {
+  const length = sermonLengthEstimate(entry);
+  const manuscript = entry.bulletManuscript || bulletEachSentence(buildSermonManuscript(entry));
+  return [
+    `# ${entry.title || `${entry.kind} Preaching Notes`}`,
+    "",
+    `- Passage: ${entry.passage || "Not set"}`,
+    `- Theme: ${entry.theme || "Not set"}`,
+    `- Target time: ${entry.targetMinutes} minutes`,
+    `- Estimated length: ${length.minutes} minutes (${length.words} words)`,
+    "",
+    "## At-A-Glance Outline",
+    entry.outline || "No outline yet.",
+    "",
+    "## Preaching / Teaching Notes",
+    manuscript || "No preaching notes yet.",
+    "",
+    "## Next Section Reminders",
+    (entry.sectionOrder?.length ? entry.sectionOrder : SERMON_SECTION_FIELDS)
+      .filter((section) => entry[section].trim())
+      .map((section, index) => `${index + 1}. ${SERMON_SECTION_LABELS[section]}`)
+      .join("\n") || "No sections ready yet.",
+  ].join("\n");
 }
 
 function sermonPrintHtml(entry: SermonEntry, series: SermonSeries | null) {
@@ -9424,6 +9554,14 @@ export default function Home() {
     setSyncMessage(`${kind} draft started.`);
   }
 
+  function loadJohn3SampleSermon() {
+    const entry = createJohn3SampleSermon();
+    setSermonDraft(entry);
+    setSermonWorkspaceView("builder");
+    setTab("sermons");
+    setSyncMessage("John 3 sample sermon loaded locally. Save it if you want to keep it.");
+  }
+
   function openSermonEntry(entry: SermonEntry) {
     setSermonDraft(entry);
     setSermonWorkspaceView("builder");
@@ -9555,6 +9693,18 @@ export default function Home() {
     }
 	    downloadTextFile(`${slug}.md`, sermonExportMarkdown(sermonDraft, series), "text/markdown;charset=utf-8");
 	    setSyncMessage("Markdown sermon draft exported.");
+	  }
+
+	  function copySermonOutline() {
+	    const outline = sermonOutlineText(sermonDraft);
+	    navigator.clipboard?.writeText(outline);
+	    setSyncMessage("Sermon outline copied.");
+	  }
+
+	  function exportPreachingNotes() {
+	    const slug = sermonExportSlug(sermonDraft.title || sermonDraft.passage || "preaching-notes");
+	    downloadTextFile(`${slug}-preaching-notes.md`, sermonPreachingNotesMarkdown(sermonDraft), "text/markdown;charset=utf-8");
+	    setSyncMessage("Preaching notes exported.");
 	  }
 
 	  function sermonScriptureTextForPassage(passage: string) {
@@ -12644,6 +12794,7 @@ export default function Home() {
                 syncMessage={syncMessage}
                 onViewChange={setSermonWorkspaceView}
                 onCreateDraft={createSermonDraft}
+                onLoadSampleSermon={loadJohn3SampleSermon}
                 onOpenEntry={openSermonEntry}
                 onDraftChange={updateSermonDraft}
                 onSaveDraft={saveSermonDraft}
@@ -12656,6 +12807,8 @@ export default function Home() {
                 onAppendImport={appendSermonImport}
 	                onBulletDraft={bulletSermonDraft}
 	                onExportDraft={exportSermonDraft}
+	                onCopySermonOutline={copySermonOutline}
+	                onExportPreachingNotes={exportPreachingNotes}
 	                onPrintDraft={printSermonDraft}
 	                onGenerateSlides={generateSlidesForSermonDraft}
 	                onCopySlideOutline={copySermonSlideOutline}
@@ -26015,6 +26168,7 @@ function SermonWorkspaceScreen({
   syncMessage,
   onViewChange,
   onCreateDraft,
+  onLoadSampleSermon,
   onOpenEntry,
   onDraftChange,
   onSaveDraft,
@@ -26027,6 +26181,8 @@ function SermonWorkspaceScreen({
 	  onAppendImport,
 	  onBulletDraft,
 	  onExportDraft,
+	  onCopySermonOutline,
+	  onExportPreachingNotes,
 	  onPrintDraft,
 	  onGenerateSlides,
 	  onCopySlideOutline,
@@ -26052,6 +26208,7 @@ function SermonWorkspaceScreen({
   syncMessage: string;
   onViewChange: (view: SermonWorkspaceView) => void;
   onCreateDraft: (kind: SermonKind) => void;
+  onLoadSampleSermon: () => void;
   onOpenEntry: (entry: SermonEntry) => void;
   onDraftChange: (patch: Partial<SermonEntry>) => void;
   onSaveDraft: () => void;
@@ -26064,6 +26221,8 @@ function SermonWorkspaceScreen({
   onAppendImport: (label: string, body: string) => void;
 	  onBulletDraft: () => void;
 	  onExportDraft: (format?: "markdown" | "text") => void;
+	  onCopySermonOutline: () => void;
+	  onExportPreachingNotes: () => void;
 	  onPrintDraft: () => void;
 	  onGenerateSlides: () => void;
 	  onCopySlideOutline: () => void;
@@ -26394,7 +26553,8 @@ function SermonWorkspaceScreen({
             </button>
             <div className="flex flex-wrap items-center gap-2">
               <span className={`rounded-full px-4 py-2 text-sm font-semibold ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>Timer {formatSermonTimer(elapsedSeconds)}</span>
-              <span className={`rounded-full px-4 py-2 text-sm font-semibold ${remainingSeconds <= 300 ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>Left {formatSermonTimer(remainingSeconds)}</span>
+              <span className={`rounded-full px-4 py-2 text-sm font-semibold ${darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>Target {draft.targetMinutes || 30} min</span>
+              <span className={`rounded-full px-4 py-2 text-sm font-semibold ${remainingSeconds <= 300 ? "bg-[var(--highlight)] text-[var(--ink)]" : darkPreachingMode ? "bg-white/10" : "bg-[var(--paper)]"}`}>Time remaining {formatSermonTimer(remainingSeconds)}</span>
               <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[var(--ink)]" onClick={onResetTimer} type="button">Reset Timer</button>
             </div>
           </div>
@@ -26436,6 +26596,7 @@ function SermonWorkspaceScreen({
             <div className={`mt-5 rounded-2xl border p-4 ${darkPreachingMode ? "border-white/10 bg-white/5" : "border-[var(--line)] bg-white"}`}>
               <p className={`text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/45" : "text-[var(--muted)]"}`}>Next section</p>
               <p className="mt-2 text-lg font-semibold">{nextPreachingSection.label}</p>
+              <p className={`mt-2 line-clamp-3 text-sm leading-6 ${darkPreachingMode ? "text-white/60" : "text-[var(--muted)]"}`}>{nextPreachingSection.body}</p>
             </div>
           )}
 
@@ -26470,6 +26631,7 @@ function SermonWorkspaceScreen({
           <div className="flex flex-wrap gap-2">
             <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">Create Sermon</button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">Create Lesson</button>
+            <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Load John 3 Sample</button>
           </div>
         </div>
       </section>
@@ -26598,7 +26760,7 @@ function SermonWorkspaceScreen({
 	              <div className="mt-4 flex flex-wrap gap-2">
 	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Generate Slide Outline</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
-	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onDownloadSlidePlan} type="button">Download Slide Plan</button>
+	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onDownloadSlidePlan} type="button">Download Slide Outline Markdown</button>
 	                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!sermonSlides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
 	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PDF soon</button>
 	              </div>
@@ -26854,9 +27016,11 @@ function SermonWorkspaceScreen({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onSaveDraft} type="button">Save</button>
-                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("markdown")} type="button">Download Markdown</button>
+                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("markdown")} type="button">Download Sermon Markdown</button>
                   <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onExportDraft("text")} type="button">Download Text</button>
-	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onPrintDraft} type="button">Print Notes</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySermonOutline} type="button">Copy Sermon Outline</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onExportPreachingNotes} type="button">Download Preaching Notes</button>
+	                  <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onPrintDraft} type="button">Print-Friendly Notes</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onDuplicateEntry(draft)} type="button">Duplicate</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("slides")} type="button">Slide Builder</button>
 	                  <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onStartPreaching} type="button">Preaching Mode</button>
