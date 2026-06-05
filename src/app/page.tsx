@@ -124,7 +124,7 @@ type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
 type SermonSlideMediaCategory = "Cross" | "Bible" | "Prayer" | "Missions" | "Nature" | "Light" | "Judgment" | "Resurrection";
-type PresentationWorkspaceView = "manager" | "deck" | "presenter";
+type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
 type SavedChurchTheme = {
@@ -359,6 +359,21 @@ type PresentationEntry = {
   createdAt: string;
   updatedAt: string;
   archived: boolean;
+};
+
+type PresentationRemoteState = {
+  sessionId: string;
+  presentationId: string;
+  title: string;
+  themeId: SermonSlideThemeId;
+  slides: SermonSlide[];
+  slideIndex: number;
+  blank: boolean;
+  ended: boolean;
+  targetMinutes: number;
+  notes: string;
+  startedAt: string;
+  updatedAt: string;
 };
 
 type SermonLibraryItem = {
@@ -1205,6 +1220,7 @@ const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
 const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
 const SERMON_CHURCH_THEMES_KEY = "fathers-business-sermon-church-themes";
 const PRESENTATION_ENTRIES_KEY = "fathers-business-presentation-workspace-entries";
+const PRESENTATION_REMOTE_KEY_PREFIX = "fathers-business-presentation-remote-session:";
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
   {
@@ -7593,6 +7609,50 @@ function loadPresentationEntries(): PresentationEntry[] {
 function savePresentationEntries(entries: PresentationEntry[]) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(PRESENTATION_ENTRIES_KEY, JSON.stringify(entries));
+}
+
+function createPresentationSessionId() {
+  return Math.random().toString(36).slice(2, 5).toUpperCase() + "-" + Math.random().toString(36).slice(2, 5).toUpperCase();
+}
+
+function presentationRemoteStorageKey(sessionId: string) {
+  return `${PRESENTATION_REMOTE_KEY_PREFIX}${sessionId.trim().toUpperCase()}`;
+}
+
+function normalizePresentationRemoteState(value: Partial<PresentationRemoteState> | null | undefined): PresentationRemoteState | null {
+  if (!value?.sessionId) return null;
+  const now = new Date().toISOString();
+  const slides = Array.isArray(value.slides) ? value.slides.map(normalizeSermonSlide) : [];
+  const slideIndex = Math.min(Math.max(0, Number(value.slideIndex) || 0), Math.max(0, slides.length - 1));
+  return {
+    sessionId: value.sessionId.trim().toUpperCase(),
+    presentationId: value.presentationId ?? "",
+    title: value.title ?? "Presentation",
+    themeId: sermonSlideThemeId(value.themeId),
+    slides,
+    slideIndex,
+    blank: Boolean(value.blank),
+    ended: Boolean(value.ended),
+    targetMinutes: Number(value.targetMinutes) > 0 ? Number(value.targetMinutes) : 30,
+    notes: value.notes ?? "",
+    startedAt: value.startedAt ?? now,
+    updatedAt: value.updatedAt ?? now,
+  };
+}
+
+function loadPresentationRemoteState(sessionId: string): PresentationRemoteState | null {
+  if (typeof window === "undefined" || !sessionId.trim()) return null;
+  try {
+    const raw = window.localStorage.getItem(presentationRemoteStorageKey(sessionId));
+    return raw ? normalizePresentationRemoteState(JSON.parse(raw) as Partial<PresentationRemoteState>) : null;
+  } catch {
+    return null;
+  }
+}
+
+function savePresentationRemoteState(state: PresentationRemoteState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(presentationRemoteStorageKey(state.sessionId), JSON.stringify(state));
 }
 
 function normalizeSavedChurchTheme(theme: Partial<SavedChurchTheme>): SavedChurchTheme | null {
@@ -27985,14 +28045,26 @@ function PresentationWorkspaceScreen({
   const [presenterNow, setPresenterNow] = useState(() => Date.now());
   const [groupNameDraft, setGroupNameDraft] = useState("Opening");
   const [attachSourceId, setAttachSourceId] = useState("");
+  const [remoteSessionId, setRemoteSessionId] = useState("");
+  const [joinSessionId, setJoinSessionId] = useState("");
+  const [remoteState, setRemoteState] = useState<PresentationRemoteState | null>(null);
+  const [remoteMessage, setRemoteMessage] = useState("Remote control is local-only for this foundation.");
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
-  const currentSlide = slides[Math.min(presenterSlideIndex, Math.max(0, slides.length - 1))] ?? null;
-  const nextSlide = presenterSlideIndex + 1 < slides.length ? slides[presenterSlideIndex + 1] : null;
+  const remoteActive = Boolean(remoteState?.sessionId && remoteSessionId && remoteState.sessionId === remoteSessionId);
+  const sessionSlides = remoteActive ? remoteState?.slides ?? [] : slides;
+  const sessionThemeId = remoteActive ? remoteState?.themeId ?? draft.themeId : draft.themeId;
+  const sessionTitle = remoteActive ? remoteState?.title ?? draft.title : draft.title;
+  const sessionNotes = remoteActive ? remoteState?.notes ?? draft.notes : draft.notes;
+  const sessionTargetMinutes = remoteActive ? remoteState?.targetMinutes ?? draft.targetMinutes : draft.targetMinutes;
+  const sessionBlank = Boolean(remoteActive && remoteState?.blank);
+  const sessionEnded = Boolean(remoteActive && remoteState?.ended);
+  const currentSlide = sessionSlides[Math.min(presenterSlideIndex, Math.max(0, sessionSlides.length - 1))] ?? null;
+  const nextSlide = presenterSlideIndex + 1 < sessionSlides.length ? sessionSlides[presenterSlideIndex + 1] : null;
   const elapsedSeconds = presenterStartedAt ? Math.max(0, Math.floor((presenterNow - presenterStartedAt) / 1000)) : 0;
-  const targetSeconds = Math.max(1, draft.targetMinutes || 30) * 60;
+  const targetSeconds = Math.max(1, sessionTargetMinutes || 30) * 60;
   const remainingSeconds = Math.max(0, targetSeconds - elapsedSeconds);
-  const progressPercent = slides.length ? Math.round(((Math.min(presenterSlideIndex + 1, slides.length)) / slides.length) * 100) : 0;
+  const progressPercent = sessionSlides.length ? Math.round(((Math.min(presenterSlideIndex + 1, sessionSlides.length)) / sessionSlides.length) * 100) : 0;
   const filteredPresentations = activePresentations.filter((entry) => {
     const haystack = [entry.title, entry.status, entry.notes, entry.createdAt, entry.updatedAt].join(" ").toLowerCase();
     return !presentationSearch.trim() || presentationSearch.toLowerCase().split(/\s+/).every((term) => haystack.includes(term));
@@ -28013,16 +28085,37 @@ function PresentationWorkspaceScreen({
       }
       if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
         event.preventDefault();
-        setPresenterSlideIndex((index) => Math.min(Math.max(0, slides.length - 1), index + 1));
+        goToRemoteSlide(presenterSlideIndex + 1);
       }
       if (event.key === "ArrowLeft" || event.key === "PageUp") {
         event.preventDefault();
-        setPresenterSlideIndex((index) => Math.max(0, index - 1));
+        goToRemoteSlide(presenterSlideIndex - 1);
       }
     }
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [onViewChange, slides.length, view]);
+    // The keyboard handler intentionally delegates to the current presentation-control helper.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onViewChange, presenterSlideIndex, sessionSlides.length, view]);
+
+  useEffect(() => {
+    function handleRemoteStorage(event: StorageEvent) {
+      if (!event.key?.startsWith(PRESENTATION_REMOTE_KEY_PREFIX) || !event.newValue) return;
+      try {
+        const nextState = normalizePresentationRemoteState(JSON.parse(event.newValue) as Partial<PresentationRemoteState>);
+        if (!nextState || (remoteSessionId && nextState.sessionId !== remoteSessionId)) return;
+        setRemoteState(nextState);
+        setRemoteSessionId(nextState.sessionId);
+        setPresenterSlideIndex(nextState.slideIndex);
+        setRemoteMessage(`Session ${nextState.sessionId} updated.`);
+      } catch {
+        setRemoteMessage("Could not read the presentation session update.");
+      }
+    }
+
+    window.addEventListener("storage", handleRemoteStorage);
+    return () => window.removeEventListener("storage", handleRemoteStorage);
+  }, [remoteSessionId]);
 
   function updateSlide(id: string, patch: Partial<SermonSlide>) {
     onDraftChange({ slides: slides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
@@ -28095,6 +28188,110 @@ function PresentationWorkspaceScreen({
     });
   }
 
+  function buildRemoteState(sessionId: string, patch: Partial<PresentationRemoteState> = {}): PresentationRemoteState {
+    const now = new Date().toISOString();
+    const baseSlides = patch.slides ?? remoteState?.slides ?? slides;
+    const slideIndex = Math.min(Math.max(0, Number(patch.slideIndex ?? remoteState?.slideIndex ?? presenterSlideIndex) || 0), Math.max(0, baseSlides.length - 1));
+    return {
+      sessionId: sessionId.trim().toUpperCase(),
+      presentationId: patch.presentationId ?? remoteState?.presentationId ?? draft.id,
+      title: patch.title ?? remoteState?.title ?? draft.title,
+      themeId: patch.themeId ?? remoteState?.themeId ?? draft.themeId,
+      slides: baseSlides,
+      slideIndex,
+      blank: patch.blank ?? remoteState?.blank ?? false,
+      ended: patch.ended ?? remoteState?.ended ?? false,
+      targetMinutes: patch.targetMinutes ?? remoteState?.targetMinutes ?? draft.targetMinutes,
+      notes: patch.notes ?? remoteState?.notes ?? draft.notes,
+      startedAt: patch.startedAt ?? remoteState?.startedAt ?? now,
+      updatedAt: now,
+    };
+  }
+
+  function publishRemoteState(patch: Partial<PresentationRemoteState>) {
+    const sessionId = remoteSessionId || remoteState?.sessionId || createPresentationSessionId();
+    const nextState = buildRemoteState(sessionId, patch);
+    savePresentationRemoteState(nextState);
+    setRemoteSessionId(nextState.sessionId);
+    setRemoteState(nextState);
+    setPresenterSlideIndex(nextState.slideIndex);
+    setRemoteMessage(`Session ${nextState.sessionId} updated.`);
+    return nextState;
+  }
+
+  function startPresentationSession(nextView: PresentationWorkspaceView = "presentation") {
+    const sessionId = remoteSessionId || createPresentationSessionId();
+    const nextState = buildRemoteState(sessionId, {
+      presentationId: draft.id,
+      title: draft.title,
+      themeId: draft.themeId,
+      slides,
+      slideIndex: 0,
+      blank: false,
+      ended: false,
+      targetMinutes: draft.targetMinutes,
+      notes: draft.notes,
+      startedAt: new Date().toISOString(),
+    });
+    savePresentationRemoteState(nextState);
+    setRemoteSessionId(nextState.sessionId);
+    setJoinSessionId(nextState.sessionId);
+    setRemoteState(nextState);
+    setPresenterSlideIndex(0);
+    setPresenterStartedAt(Date.now());
+    setPresenterNow(Date.now());
+    setRemoteMessage(`Session ${nextState.sessionId} is ready.`);
+    onViewChange(nextView);
+  }
+
+  function joinPresentationSession() {
+    const sessionId = joinSessionId.trim().toUpperCase();
+    const nextState = loadPresentationRemoteState(sessionId);
+    if (!nextState) {
+      setRemoteMessage("No local presentation session found for that ID yet.");
+      return;
+    }
+    setRemoteSessionId(nextState.sessionId);
+    setRemoteState(nextState);
+    setPresenterSlideIndex(nextState.slideIndex);
+    setPresenterStartedAt(Date.now());
+    setPresenterNow(Date.now());
+    setRemoteMessage(`Joined session ${nextState.sessionId}.`);
+  }
+
+  function goToRemoteSlide(index: number) {
+    const boundedIndex = Math.min(Math.max(0, index), Math.max(0, sessionSlides.length - 1));
+    setPresenterSlideIndex(boundedIndex);
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false });
+  }
+
+  function toggleRemoteBlank() {
+    publishRemoteState({ blank: !sessionBlank, ended: false });
+  }
+
+  function endRemotePresentation() {
+    publishRemoteState({ ended: true, blank: false });
+  }
+
+  function splitActiveScriptureSlide() {
+    if (!activeSlide || activeSlide.type !== "Scripture" || !activeSlide.bibleText.trim()) return;
+    const chunks = chunkScriptureText(activeSlide.bibleText, activeSlide.fontScale === "Large" ? 360 : activeSlide.fontScale === "Compact" ? 620 : 480);
+    if (chunks.length <= 1) {
+      setRemoteMessage("That Scripture slide is already short enough.");
+      return;
+    }
+    const index = slides.findIndex((slide) => slide.id === activeSlide.id);
+    const nextSlides = chunks.map((chunk, chunkIndex) => normalizeSermonSlide({
+      ...activeSlide,
+      id: chunkIndex === 0 ? activeSlide.id : makeId("slide"),
+      title: chunks.length > 1 ? `${activeSlide.title.replace(/\s+\(\d+\)$/g, "")} (${chunkIndex + 1})` : activeSlide.title,
+      bibleText: chunk,
+    }, chunkIndex));
+    onDraftChange({ slides: [...slides.slice(0, index), ...nextSlides, ...slides.slice(index + 1)] });
+    setSelectedSlideId(nextSlides[0]?.id ?? "");
+    setRemoteMessage(`Split Scripture into ${chunks.length} readable slides.`);
+  }
+
   if (view === "presenter") {
     return (
       <div className="fixed inset-0 z-50 bg-black text-white">
@@ -28102,16 +28299,23 @@ function PresentationWorkspaceScreen({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
             <button className="rounded-full bg-white/10 px-4 py-2" onClick={() => onViewChange("deck")} type="button">Exit Presenter</button>
             <div className="flex flex-wrap items-center gap-3 text-white/75">
+              {remoteSessionId && <span>Session {remoteSessionId}</span>}
               <span>{formatSermonTimer(elapsedSeconds)} elapsed</span>
               <span>{formatSermonTimer(remainingSeconds)} left</span>
-              <span>{Math.min(presenterSlideIndex + 1, slides.length || 1)} / {slides.length || 1}</span>
+              <span>{Math.min(presenterSlideIndex + 1, sessionSlides.length || 1)} / {sessionSlides.length || 1}</span>
               <span>{progressPercent}%</span>
             </div>
           </div>
           <div className="grid flex-1 gap-4 p-4 lg:grid-cols-[1fr_340px]">
             <div className="flex min-h-[60vh] items-center justify-center">
-              {currentSlide ? (
-                <SermonSlideCanvas slide={currentSlide} themeId={draft.themeId} presentation />
+              {sessionEnded ? (
+                <div className="flex min-h-[68vh] w-full max-w-6xl items-center justify-center bg-black text-center">
+                  <p className="text-4xl font-semibold text-white/70">Presentation ended</p>
+                </div>
+              ) : sessionBlank ? (
+                <div className="min-h-[68vh] w-full max-w-6xl bg-black" aria-label="Blank screen" />
+              ) : currentSlide ? (
+                <SermonSlideCanvas slide={currentSlide} themeId={sessionThemeId} presentation />
               ) : (
                 <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
                   <p className="text-xl font-semibold">No slides in this presentation yet.</p>
@@ -28119,22 +28323,133 @@ function PresentationWorkspaceScreen({
               )}
             </div>
             <aside className="space-y-3 rounded-3xl border border-white/10 bg-white/5 p-4">
+              <div className="rounded-2xl bg-black/30 p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Current Slide</p>
+                <p className="mt-2 text-lg font-semibold text-white">{currentSlide?.title || sessionTitle || "Presentation"}</p>
+                <p className="mt-1 text-sm text-white/60">{sessionBlank ? "Blank screen active" : sessionEnded ? "Ended" : `${progressPercent}% complete`}</p>
+              </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Next Slide</p>
-                {nextSlide ? <SermonSlideCanvas slide={nextSlide} themeId={draft.themeId} /> : <p className="mt-3 text-sm text-white/60">End of presentation.</p>}
+                {nextSlide ? <SermonSlideCanvas slide={nextSlide} themeId={sessionThemeId} /> : <p className="mt-3 text-sm text-white/60">End of presentation.</p>}
               </div>
               <div className="rounded-2xl bg-black/30 p-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Presenter Notes</p>
-                <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-white/80">{currentSlide?.speakerNotes || draft.notes || "No notes for this slide yet."}</p>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-white/80">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
               </div>
               <div className="flex flex-wrap gap-2">
-                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => setPresenterSlideIndex((index) => Math.max(0, index - 1))} type="button">Previous</button>
-                <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black disabled:opacity-40" disabled={presenterSlideIndex >= slides.length - 1} onClick={() => setPresenterSlideIndex((index) => Math.min(slides.length - 1, index + 1))} type="button">Next</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => goToRemoteSlide(presenterSlideIndex - 1)} type="button">Previous</button>
+                <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black disabled:opacity-40" disabled={presenterSlideIndex >= sessionSlides.length - 1} onClick={() => goToRemoteSlide(presenterSlideIndex + 1)} type="button">Next</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={toggleRemoteBlank} type="button">{sessionBlank ? "Show Slide" : "Blank"}</button>
                 <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={() => { setPresenterStartedAt(Date.now()); setPresenterNow(Date.now()); }} type="button">Reset Timer</button>
               </div>
             </aside>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  if (view === "presentation") {
+    return (
+      <div className="fixed inset-0 z-50 bg-black text-white">
+        <div className="absolute left-4 top-4 z-10 flex flex-wrap gap-2 text-xs font-semibold">
+          <button className="rounded-full bg-white/10 px-3 py-2 text-white/80" onClick={() => onViewChange("deck")} type="button">Exit</button>
+          {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId}</span>}
+        </div>
+        <div className="flex min-h-screen items-center justify-center">
+          {sessionEnded ? (
+            <p className="text-4xl font-semibold text-white/70">Presentation ended</p>
+          ) : sessionBlank ? (
+            <div className="h-screen w-screen bg-black" aria-label="Blank screen" />
+          ) : currentSlide ? (
+            <SermonSlideCanvas slide={currentSlide} themeId={sessionThemeId} presentation />
+          ) : (
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+              <p className="text-xl font-semibold">Start or join a session to show slides.</p>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  if (view === "controller") {
+    return (
+      <div className="min-h-screen space-y-4 bg-[var(--paper)] p-4 pb-36 md:p-8 md:pb-10">
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Controller View</p>
+              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{sessionTitle || "Presentation Controller"}</h1>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
+            </div>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("deck")} type="button">Back to Deck</button>
+          </div>
+          <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_auto]">
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+              Presentation Session ID
+              <input className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-lg font-semibold uppercase tracking-[0.14em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="ABC-123" value={joinSessionId || remoteSessionId} />
+            </label>
+            <div className="flex items-end gap-2">
+              <button className="h-12 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white" onClick={joinPresentationSession} type="button">Join</button>
+              <button className="h-12 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("controller")} type="button">Start</button>
+            </div>
+          </div>
+        </section>
+
+        <section className="grid gap-4 lg:grid-cols-[1fr_0.8fr]">
+          <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Current Slide</p>
+                <h2 className="mt-1 text-2xl font-semibold text-[var(--ink)]">{currentSlide?.title || "No slide selected"}</h2>
+                <p className="mt-1 text-sm text-[var(--muted)]">{Math.min(presenterSlideIndex + 1, sessionSlides.length || 1)} / {sessionSlides.length || 1} · {progressPercent}% complete</p>
+              </div>
+              {remoteSessionId && <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Session {remoteSessionId}</span>}
+            </div>
+            <div className="mt-4">
+              {currentSlide ? <SermonSlideCanvas slide={currentSlide} themeId={sessionThemeId} /> : <EmptyState title="No presentation joined" body="Start a session from this deck or enter a session ID to control a presentation." />}
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => goToRemoteSlide(presenterSlideIndex - 1)} type="button">Previous</button>
+              <button className="rounded-2xl bg-[var(--green)] px-4 py-4 text-sm font-semibold text-white disabled:opacity-40" disabled={presenterSlideIndex >= sessionSlides.length - 1} onClick={() => goToRemoteSlide(presenterSlideIndex + 1)} type="button">Next</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)]" onClick={toggleRemoteBlank} type="button">{sessionBlank ? "Show Slide" : "Blank Screen"}</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--muted)]" onClick={endRemotePresentation} type="button">End</button>
+            </div>
+          </article>
+
+          <aside className="space-y-4">
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold text-[var(--ink)]">Presenter Tools</p>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <MiniStat label="Elapsed" value={formatSermonTimer(elapsedSeconds)} />
+                <MiniStat label="Remaining" value={formatSermonTimer(remainingSeconds)} />
+                <MiniStat label="Slides" value={String(sessionSlides.length)} />
+                <MiniStat label="Current" value={String(Math.min(presenterSlideIndex + 1, sessionSlides.length || 1))} />
+              </div>
+              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Next</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--green)]">{nextSlide?.title || "End of presentation"}</p>
+              </div>
+              <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Notes</p>
+                <p className="mt-1 whitespace-pre-wrap text-sm leading-6 text-[var(--scripture-ink)]">{currentSlide?.speakerNotes || sessionNotes || "No notes for this slide yet."}</p>
+              </div>
+            </article>
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold text-[var(--ink)]">Jump to Slide</p>
+              <div className="mt-3 grid max-h-80 gap-2 overflow-y-auto pr-1">
+                {sessionSlides.map((slide, index) => (
+                  <button key={`controller-jump-${slide.id}`} className={`rounded-2xl border px-3 py-2 text-left text-sm font-semibold ${index === presenterSlideIndex ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--green)]" : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`} onClick={() => goToRemoteSlide(index)} type="button">
+                    {index + 1}. {slide.title || slide.type}
+                  </button>
+                ))}
+                {!sessionSlides.length && <p className="text-sm text-[var(--muted)]">No slides available yet.</p>}
+              </div>
+            </article>
+          </aside>
+        </section>
       </div>
     );
   }
@@ -28145,9 +28460,9 @@ function PresentationWorkspaceScreen({
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Workspace</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build service-ready Bible presentations</h1>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build and control church presentations</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-              Local Phase 1 foundation for presentations, slide decks, themes, presenter view, and future PowerPoint/PDF export. Remote control comes later.
+              Phase 2 adds a local remote-control foundation, audience view, controller view, presenter tools, and cleaner Scripture slide handling. Real cross-device hosting comes later.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -28165,16 +28480,19 @@ function PresentationWorkspaceScreen({
       </section>
 
       <div className="flex flex-wrap gap-2">
-        {(["manager", "deck", "presenter"] as PresentationWorkspaceView[]).map((item) => (
+        {(["manager", "deck", "presenter", "controller", "presentation"] as PresentationWorkspaceView[]).map((item) => (
           <button key={`presentation-view-${item}`} className={`rounded-full px-4 py-2 text-sm font-semibold capitalize ${view === item ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-white text-[var(--green)]"}`} onClick={() => {
             if (item === "presenter") {
-              setPresenterStartedAt(Date.now());
-              setPresenterNow(Date.now());
-              setPresenterSlideIndex(0);
+              startPresentationSession("presenter");
+              return;
+            }
+            if (item === "presentation") {
+              startPresentationSession(item);
+              return;
             }
             onViewChange(item);
           }} type="button">
-            {item === "deck" ? "Slide Deck" : item}
+            {item === "deck" ? "Slide Deck" : item === "presentation" ? "Presentation View" : item}
           </button>
         ))}
       </div>
@@ -28271,6 +28589,29 @@ function PresentationWorkspaceScreen({
               <textarea className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm normal-case leading-6 tracking-normal text-[var(--ink)]" value={draft.notes} onChange={(event) => onDraftChange({ notes: event.target.value })} />
             </label>
 
+            <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Remote Control Foundation</p>
+                  <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
+                </div>
+                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">{remoteSessionId || "No session"}</span>
+              </div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => startPresentationSession("presentation")} type="button">Start Presentation View</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("controller")} type="button">Open Controller View</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("presenter")} type="button">Open Presenter Tools</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => {
+                  const nextState = publishRemoteState({ slides, themeId: draft.themeId, title: draft.title, targetMinutes: draft.targetMinutes, notes: draft.notes });
+                  setJoinSessionId(nextState.sessionId);
+                }} type="button">Refresh Session Deck</button>
+              </div>
+              <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
+                <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="Join session ID" value={joinSessionId} />
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={joinPresentationSession} type="button">Join Presentation</button>
+              </div>
+            </div>
+
             <div className="mt-5">
               <p className="text-sm font-semibold text-[var(--ink)]">Curated local image foundations</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -28322,6 +28663,17 @@ function PresentationWorkspaceScreen({
               {activeSlide ? (
                 <>
                   <SermonSlideCanvas slide={activeSlide} themeId={draft.themeId} />
+                  {activeSlide.type === "Scripture" && (
+                    <div className="my-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <div>
+                          <p className="text-sm font-semibold text-[var(--ink)]">Scripture Slide Improvements</p>
+                          <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Split longer passages into clean slides, then use Verse Display for reference-only, text-only, or reference plus text.</p>
+                        </div>
+                        <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={splitActiveScriptureSlide} type="button">Split Long Passage</button>
+                      </div>
+                    </div>
+                  )}
                   <SermonSlideEditor slide={activeSlide} onChange={(patch) => updateSlide(activeSlide.id, patch)} />
                 </>
               ) : (
@@ -28465,18 +28817,19 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
   const verticalPlacement = slide.textPlacement === "Bottom" ? "justify-end" : slide.textPlacement === "Left" ? "justify-center" : "justify-center";
   const slideText = `${slide.bibleText} ${slide.body}`.trim();
   const hasBodyText = Boolean(slideText);
+  const scriptureFocus = slide.type === "Scripture" || slide.layout === "Scripture Focus";
   const denseText = slideText.length > 420;
-  const maxWidth = slide.layout === "Scripture Focus" ? "max-w-5xl" : slide.textPlacement === "Left" ? "max-w-3xl" : "max-w-4xl";
+  const maxWidth = scriptureFocus ? "max-w-5xl" : slide.textPlacement === "Left" ? "max-w-3xl" : "max-w-4xl";
   const titleSize = slide.titleScale === "Large"
     ? presentation ? hasBodyText ? "text-4xl md:text-6xl" : "text-5xl md:text-7xl" : hasBodyText ? "text-3xl md:text-4xl" : "text-3xl md:text-5xl"
     : slide.titleScale === "Small"
       ? presentation ? "text-3xl md:text-5xl" : "text-2xl md:text-4xl"
       : presentation ? hasBodyText ? "text-3xl md:text-5xl" : "text-4xl md:text-6xl" : hasBodyText ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl";
   const bodySize = slide.fontScale === "Large"
-    ? presentation ? denseText ? "text-xl md:text-3xl" : "text-2xl md:text-4xl" : denseText ? "text-lg md:text-2xl" : "text-xl md:text-3xl"
+    ? presentation ? denseText ? "text-xl md:text-3xl" : scriptureFocus ? "text-3xl md:text-5xl" : "text-2xl md:text-4xl" : denseText ? "text-lg md:text-2xl" : "text-xl md:text-3xl"
     : slide.fontScale === "Compact"
       ? presentation ? "text-xl md:text-2xl" : "text-base md:text-xl"
-      : presentation ? denseText ? "text-xl md:text-2xl" : "text-2xl md:text-3xl" : denseText ? "text-base md:text-xl" : "text-lg md:text-2xl";
+      : presentation ? denseText ? "text-xl md:text-2xl" : scriptureFocus ? "text-2xl md:text-4xl" : "text-2xl md:text-3xl" : denseText ? "text-base md:text-xl" : "text-lg md:text-2xl";
   const bodyLeading = denseText ? "leading-normal" : "leading-snug";
   const chromeVisible = slide.showTypeLabel || slide.showImageLabel;
   const intensityOverlay = slide.backgroundIntensity === "Soft"
@@ -28487,13 +28840,13 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
   const readability = sermonSlideReadability(slide, lightStyle);
   return (
     <div
-      className={`${presentation ? "min-h-[68vh] w-full max-w-6xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
+      className={`${presentation ? "min-h-[72vh] w-full max-w-7xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
       style={{
         background: `${readability.overlay}, ${intensityOverlay}, ${imageSlot.background}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
         color: foreground,
       }}
     >
-      <div className={`relative flex h-full w-full flex-col ${presentation ? "p-6 md:p-10" : "p-5 md:p-7"} ${textAlign}`}>
+      <div className={`relative flex h-full w-full flex-col ${presentation ? "p-6 md:p-12" : "p-5 md:p-7"} ${textAlign}`}>
         <div className="pointer-events-none absolute inset-0">
           {slide.showImageMotif && <SermonSlideMotif slotId={slide.imageSlot} color={foreground} />}
         </div>
@@ -28504,7 +28857,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
           </div>
         )}
         <div className={`relative z-10 flex flex-1 ${verticalPlacement}`}>
-        <div className={`${gridLayout ? "grid w-full items-center gap-6 md:grid-cols-[0.8fr_1.2fr]" : `mx-auto w-full ${maxWidth}`} py-5`}>
+        <div className={`${gridLayout ? "grid w-full items-center gap-6 md:grid-cols-[0.8fr_1.2fr]" : `mx-auto w-full ${maxWidth}`} ${presentation ? "py-8" : "py-5"}`}>
           {gridLayout && (
             <div className="hidden min-h-48 rounded-3xl border border-white/20 bg-white/15 p-5 text-sm font-semibold uppercase tracking-[0.16em] md:flex md:items-end" style={{ color: muted }}>
               {imageSlot.label}
