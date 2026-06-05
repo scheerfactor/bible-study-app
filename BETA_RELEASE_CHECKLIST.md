@@ -36,6 +36,10 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Memory verse action reviews the selected verse and marks memory activity today.
 - Continue Library Reading opens the current resource or Library.
 - Study Playlist opens the Bible playlist/study workflow.
+- Continue Sermon opens the current sermon draft.
+- Continue Journal opens the Journal workflow.
+- Smart Resume shows last Bible, Library, Commentary, Sermon, and Journal context.
+- Ministry Dashboard shows sermons, lessons, study hours, books completed, memory verses, prayer entries, and reading streak.
 - Progress cards show Bible reading, Prayer, Journal, and Memory status for today.
 - Dashboard remains clean on phone and desktop.
 
@@ -49,6 +53,9 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Journal exports work.
 - Library notes export works.
 - Teaching notes exports work.
+- Sermon markdown export works.
+- Preaching notes export works.
+- Slide outline copy/download works.
 - Feedback falls back to copy if Supabase feedback table is unavailable.
 
 ## Quality Checks
@@ -64,6 +71,8 @@ Use this checklist before inviting private beta testers. The purpose is to confi
 - Listen controls start, stop, and do not require refresh.
 - Commentary Dashboard loads and does not expose staged unreviewed content as public.
 - Teaching Workspace exports John 3, Romans 8, Luke 24, and Amos 1 notes.
+- Sermon Workspace loads John 3 sample sermon.
+- Slide Builder opens quickly and can copy/download a slide outline.
 - Settings accurately reports local or Supabase mode.
 - Feedback form opens from beta notice, Settings, Library, and Teaching Workspace.
 

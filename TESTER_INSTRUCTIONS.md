@@ -10,15 +10,16 @@ https://bible-study-app-eight.vercel.app/
 
 1. Open the app on your phone.
 2. Start on Today.
-3. Use the Daily Growth Dashboard:
+3. Confirm the Daily Growth Dashboard shows Smart Resume and Ministry Dashboard.
+4. Use the Daily Growth Dashboard:
    - Read
    - Listen
    - Journal
    - Pray
    - Memorize
    - Continue
-4. Refresh the page and confirm your local progress did not disappear.
-5. Use Give feedback if anything feels unclear.
+5. Refresh the page and confirm your local progress did not disappear.
+6. Use Give feedback if anything feels unclear.
 
 ## Bible Reader Test
 
@@ -87,16 +88,30 @@ Also test:
 2. Open Teaching Workspace.
 3. Try John 3, Romans 8, Luke 24, and Amos 1.
 4. Export teaching notes.
-5. Report anything that feels cluttered or hard to understand.
+5. Use the connected workflow buttons to send study material into a sermon.
+6. Report anything that feels cluttered or hard to understand.
+
+## Sermon And Slides Test
+
+1. Open Sermons.
+2. Load the John 3 sample sermon.
+3. Open Builder and export sermon markdown.
+4. Export preaching notes.
+5. Open Slides.
+6. Generate or review the slide outline.
+7. Copy the slide outline.
+8. Download the slide outline Markdown.
+9. Enter Present mode and exit.
+10. Report any slide text, layout, or mobile issue.
 
 ## What Not To Test Yet
 
 - Payments or purchases.
 - AI tools.
 - Public uploads.
-- Sermon slides.
 - Licensed audio.
 - Full church management.
+- PDF, Keynote, Proclaim, and remote presentation control.
 
 ## Feedback Questions
 

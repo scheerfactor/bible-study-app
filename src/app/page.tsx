@@ -19081,6 +19081,7 @@ function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
     "superstar",
     "trinoids",
     "whisper",
+    "wobble",
     "zarvox",
   ];
   const isEnglish = !lang || lang.startsWith("en");

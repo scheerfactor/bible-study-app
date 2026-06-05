@@ -27,12 +27,13 @@ This app is in private beta. These limitations should be visible, expected, and 
 - David Cloud / Way of Life and modern copyrighted works must remain Permission Needed unless written permission exists.
 - Doctrinal labels such as Use with discernment and Not all doctrine endorsed are intentional.
 
-## Features Not Ready Yet
+## Features Still Limited
 
 - Paid plans, marketplace, subscriptions, and purchases.
 - AI sermon tools, AI narration, and generated voiceovers.
 - Full Strong's scholar-level grammar tools.
-- Sermon slide builder, Proclaim export, PowerPoint, Keynote, and production PDF exports.
+- Sermon slide builder is a beta MVP. It supports slide creation, preview, presenter mode, and PowerPoint export, but should still be tested carefully before Sunday use.
+- PDF, Keynote, Proclaim export, remote control, and full presentation replacement workflows are not ready yet.
 - Public personal uploads.
 - Church management, messaging, social features, and member directories.
 - Full licensed audiobook or Bible audio hosting.
@@ -47,5 +48,6 @@ This app is in private beta. These limitations should be visible, expected, and 
 ## Beta Expectations
 
 - The app should feel useful for Bible reading, study, prayer, journaling, and library reading.
+- Sermon and lesson preparation should be usable for a John 3 beta test, but exported slides and notes still need review before live preaching.
 - It is not expected to replace every Logos-style feature yet.
 - The goal of beta feedback is stability, clarity, mobile usability, and Bible-centered usefulness.
