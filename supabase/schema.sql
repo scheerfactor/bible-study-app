@@ -410,6 +410,54 @@ create table if not exists public.user_resource_permission_requests (
 create index if not exists user_resource_permission_requests_user_idx
   on public.user_resource_permission_requests (user_id, updated_at desc);
 
+create table if not exists public.presentation_sessions (
+  session_id text primary key,
+  presentation_id text,
+  current_slide_index integer not null default 0 check (current_slide_index >= 0),
+  is_blank boolean not null default false,
+  is_active boolean not null default true,
+  presenter_user_id uuid references auth.users(id) on delete set null,
+  title text not null default 'Presentation',
+  theme_id text not null default 'warm-bible-study',
+  slides jsonb not null default '[]'::jsonb,
+  target_minutes integer not null default 30 check (target_minutes > 0),
+  notes text not null default '',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists presentation_sessions_active_idx
+  on public.presentation_sessions (session_id, is_active, updated_at desc);
+
+create table if not exists public.presentation_session_events (
+  id uuid primary key default gen_random_uuid(),
+  session_id text not null references public.presentation_sessions(session_id) on delete cascade,
+  event_type text not null check (event_type in ('start', 'join', 'next', 'previous', 'jump', 'blank', 'unblank', 'end', 'refresh')),
+  slide_index integer,
+  is_blank boolean,
+  created_by uuid references auth.users(id) on delete set null,
+  payload jsonb not null default '{}'::jsonb,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists presentation_session_events_session_idx
+  on public.presentation_session_events (session_id, created_at desc);
+
+do $$
+begin
+  if exists (select 1 from pg_publication where pubname = 'supabase_realtime') then
+    if not exists (
+      select 1
+      from pg_publication_tables
+      where pubname = 'supabase_realtime'
+        and schemaname = 'public'
+        and tablename = 'presentation_sessions'
+    ) then
+      alter publication supabase_realtime add table public.presentation_sessions;
+    end if;
+  end if;
+end $$;
+
 alter table public.resource_sources enable row level security;
 alter table public.library_resources enable row level security;
 alter table public.bible_books enable row level security;
@@ -434,6 +482,8 @@ alter table public.strongs_sources enable row level security;
 alter table public.strongs_entries enable row level security;
 alter table public.user_personal_library_resources enable row level security;
 alter table public.user_resource_permission_requests enable row level security;
+alter table public.presentation_sessions enable row level security;
+alter table public.presentation_session_events enable row level security;
 
 drop policy if exists "Public sources are readable" on public.resource_sources;
 drop policy if exists "Library resources are readable" on public.library_resources;
@@ -498,6 +548,11 @@ drop policy if exists "Users can read their permission requests" on public.user_
 drop policy if exists "Users can create their permission requests" on public.user_resource_permission_requests;
 drop policy if exists "Users can update their permission requests" on public.user_resource_permission_requests;
 drop policy if exists "Users can delete their permission requests" on public.user_resource_permission_requests;
+drop policy if exists "Presentation sessions are joinable by code" on public.presentation_sessions;
+drop policy if exists "Presentation sessions can be started" on public.presentation_sessions;
+drop policy if exists "Presentation sessions can be controlled by code" on public.presentation_sessions;
+drop policy if exists "Presentation events are readable" on public.presentation_session_events;
+drop policy if exists "Presentation events can be created" on public.presentation_session_events;
 
 create policy "Public sources are readable"
   on public.resource_sources for select
@@ -779,6 +834,27 @@ create policy "Users can delete their permission requests"
   on public.user_resource_permission_requests for delete
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
+create policy "Presentation sessions are joinable by code"
+  on public.presentation_sessions for select
+  using (true);
+
+create policy "Presentation sessions can be started"
+  on public.presentation_sessions for insert
+  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+
+create policy "Presentation sessions can be controlled by code"
+  on public.presentation_sessions for update
+  using (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$')
+  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+
+create policy "Presentation events are readable"
+  on public.presentation_session_events for select
+  using (true);
+
+create policy "Presentation events can be created"
+  on public.presentation_session_events for insert
+  with check (session_id ~ '^[A-Z0-9]{3}-[A-Z0-9]{3}$');
+
 grant select on public.resource_sources to anon, authenticated;
 grant select on public.library_resources to anon, authenticated;
 grant select on public.bible_books to anon, authenticated;
@@ -803,6 +879,8 @@ grant select on public.strongs_sources to anon, authenticated;
 grant select on public.strongs_entries to anon, authenticated;
 grant select, insert, update, delete on public.user_personal_library_resources to authenticated;
 grant select, insert, update, delete on public.user_resource_permission_requests to authenticated;
+grant select, insert, update on public.presentation_sessions to anon, authenticated;
+grant select, insert on public.presentation_session_events to anon, authenticated;
 
 insert into public.resource_sources (
   title,

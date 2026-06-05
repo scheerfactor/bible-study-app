@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Presentation Workspace Phase 2 adds a local remote-control foundation for testing the church presentation workflow.
+Presentation Remote Phase 3 adds real shared-session structure with Supabase Realtime support and a local fallback.
 
 Works now:
 
@@ -12,24 +12,30 @@ Works now:
 - Presentation View
 - Presenter tools with current slide, next slide, notes, elapsed time, remaining time, slide count, and progress
 - Controller actions for next slide, previous slide, jump to slide, blank screen, and end presentation
+- Display reconnect from URLs like `#presentation-session-ABC-123`
 
-This first version uses browser local storage events. It is useful for testing multiple tabs on the same device/browser and proving the workflow without adding server risk.
+The app tries Supabase first when it is configured and the `presentation_sessions` tables exist. If Supabase is unavailable, it falls back to local browser storage so presentations can still be tested.
 
 ## Important Limitation
 
-The current remote control is local-only. A phone and a computer on separate devices will need a shared realtime backend before this can be used in a live church service.
+The current Supabase policies are beta-friendly and session-code based. Anyone with the session code can control that presentation. For public release, add host approval, controller permissions, and optional signed-in presenter ownership.
 
-## Future Production Architecture
+## Current Shared Architecture
+
+1. `presentation_sessions` stores the active slide deck, current slide index, blank-screen state, active/ended state, and short session code.
+2. `presentation_session_events` logs controller actions such as start, join, next, previous, blank, unblank, jump, refresh, and end.
+3. Display and controller views subscribe to `presentation_sessions` updates through Supabase Realtime.
+4. Local storage mirrors the same session state as a fallback.
+
+## Future Production Hardening
 
 Recommended next step:
 
-1. Create presentation sessions in Supabase.
-2. Store the active slide index, blank-screen state, ended state, current deck ID, and controller permissions.
-3. Use Supabase Realtime channels for controller-to-presentation updates.
-4. Add a short join code for the phone or tablet controller.
-5. Add host controls so only the presenter/admin can start, end, or grant controller access.
-6. Add connection status: connected, reconnecting, offline, and controller locked.
-7. Add fail-safe local keyboard controls in Presentation View.
+1. Add host controls so only the presenter/admin can start, end, or grant controller access.
+2. Add controller approval and revocation.
+3. Add connection status: connected, reconnecting, offline, and controller locked.
+4. Add fail-safe local keyboard controls in Presentation View.
+5. Add audit cleanup for stale sessions.
 
 ## Session Data Model
 
@@ -38,14 +44,20 @@ Fields:
 - session_id
 - presentation_id
 - title
-- active_slide_index
-- blank
-- ended
-- started_at
+- current_slide_index
+- is_blank
+- is_active
+- presenter_user_id
+- created_at
 - updated_at
-- controller_user_id
-- host_user_id
-- notes_visible_to_controller
+
+Current beta table also stores:
+
+- title
+- theme_id
+- slides
+- target_minutes
+- notes
 
 ## Controller Actions
 
@@ -84,4 +96,5 @@ Future:
 6. Join the same Session ID.
 7. Test Next, Previous, Jump, Blank, Show Slide, and End.
 8. Confirm Presentation View updates without refresh.
-9. Confirm Presenter View still shows current slide, next slide, notes, elapsed time, remaining time, and progress.
+9. Refresh the Presentation View and confirm it rejoins the same session from the URL.
+10. Confirm Presenter View still shows current slide, next slide, notes, elapsed time, remaining time, and progress.

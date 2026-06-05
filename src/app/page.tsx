@@ -376,6 +376,24 @@ type PresentationRemoteState = {
   updatedAt: string;
 };
 
+type PresentationSessionRow = {
+  session_id: string;
+  presentation_id: string | null;
+  current_slide_index: number;
+  is_blank: boolean;
+  is_active: boolean;
+  presenter_user_id: string | null;
+  title: string | null;
+  theme_id: string | null;
+  slides: unknown;
+  target_minutes: number | null;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
+type PresentationRemoteMode = "local" | "supabase";
+
 type SermonLibraryItem = {
   id: string;
   topic: string;
@@ -7655,6 +7673,42 @@ function savePresentationRemoteState(state: PresentationRemoteState) {
   window.localStorage.setItem(presentationRemoteStorageKey(state.sessionId), JSON.stringify(state));
 }
 
+function presentationStateFromSessionRow(row: PresentationSessionRow): PresentationRemoteState {
+  const slides = Array.isArray(row.slides) ? row.slides.map(normalizeSermonSlide) : [];
+  const slideIndex = Math.min(Math.max(0, Number(row.current_slide_index) || 0), Math.max(0, slides.length - 1));
+  return {
+    sessionId: row.session_id,
+    presentationId: row.presentation_id ?? "",
+    title: row.title ?? "Presentation",
+    themeId: sermonSlideThemeId(row.theme_id),
+    slides,
+    slideIndex,
+    blank: Boolean(row.is_blank),
+    ended: !row.is_active,
+    targetMinutes: Number(row.target_minutes ?? 30) || 30,
+    notes: row.notes ?? "",
+    startedAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+function presentationSessionRowFromState(state: PresentationRemoteState, userId?: string | null) {
+  return {
+    session_id: state.sessionId,
+    presentation_id: state.presentationId || null,
+    current_slide_index: state.slideIndex,
+    is_blank: state.blank,
+    is_active: !state.ended,
+    presenter_user_id: userId ?? null,
+    title: state.title || "Presentation",
+    theme_id: state.themeId,
+    slides: state.slides,
+    target_minutes: state.targetMinutes,
+    notes: state.notes,
+    updated_at: state.updatedAt,
+  };
+}
+
 function normalizeSavedChurchTheme(theme: Partial<SavedChurchTheme>): SavedChurchTheme | null {
   if (!theme.id || !theme.name) return null;
   const themeId = sermonSlideThemeId(theme.themeId);
@@ -9056,6 +9110,7 @@ export default function Home() {
   const [presentationEntries, setPresentationEntries] = useState<PresentationEntry[]>([]);
   const [presentationDraft, setPresentationDraft] = useState<PresentationEntry>(() => createEmptyPresentation());
   const [presentationWorkspaceView, setPresentationWorkspaceView] = useState<PresentationWorkspaceView>("manager");
+  const [presentationInitialSessionId, setPresentationInitialSessionId] = useState("");
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
@@ -9105,6 +9160,12 @@ export default function Home() {
       if (["#admin-import", "#library-acquisition"].includes(window.location.hash)) {
         setLibraryView("home");
         setTab("library");
+      }
+      const presentationSessionMatch = window.location.hash.match(/^#presentation-session-([A-Z0-9]{3}-[A-Z0-9]{3})$/i);
+      if (presentationSessionMatch) {
+        setPresentationInitialSessionId(presentationSessionMatch[1].toUpperCase());
+        setPresentationWorkspaceView("presentation");
+        setTab("presentations");
       }
     }
 
@@ -13395,6 +13456,9 @@ export default function Home() {
                 presentations={presentationEntries}
                 draft={presentationDraft}
                 sermons={sermonEntries}
+                supabase={supabase}
+                user={user}
+                initialSessionId={presentationInitialSessionId}
                 syncMessage={syncMessage}
                 onViewChange={setPresentationWorkspaceView}
                 onCreateDraft={createPresentationDraft}
@@ -28011,6 +28075,9 @@ function PresentationWorkspaceScreen({
   presentations,
   draft,
   sermons,
+  supabase,
+  user,
+  initialSessionId,
   syncMessage,
   onViewChange,
   onCreateDraft,
@@ -28025,6 +28092,9 @@ function PresentationWorkspaceScreen({
   presentations: PresentationEntry[];
   draft: PresentationEntry;
   sermons: SermonEntry[];
+  supabase: SupabaseClient | null;
+  user: User | null;
+  initialSessionId: string;
   syncMessage: string;
   onViewChange: (view: PresentationWorkspaceView) => void;
   onCreateDraft: () => void;
@@ -28048,7 +28118,8 @@ function PresentationWorkspaceScreen({
   const [remoteSessionId, setRemoteSessionId] = useState("");
   const [joinSessionId, setJoinSessionId] = useState("");
   const [remoteState, setRemoteState] = useState<PresentationRemoteState | null>(null);
-  const [remoteMessage, setRemoteMessage] = useState("Remote control is local-only for this foundation.");
+  const [remoteMode, setRemoteMode] = useState<PresentationRemoteMode>("local");
+  const [remoteMessage, setRemoteMessage] = useState(supabase ? "Shared Supabase sessions are available. Local fallback remains ready." : "Supabase is not configured here, so remote control is local-only.");
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
   const remoteActive = Boolean(remoteState?.sessionId && remoteSessionId && remoteState.sessionId === remoteSessionId);
@@ -28116,6 +28187,57 @@ function PresentationWorkspaceScreen({
     window.addEventListener("storage", handleRemoteStorage);
     return () => window.removeEventListener("storage", handleRemoteStorage);
   }, [remoteSessionId]);
+
+  useEffect(() => {
+    if (!supabase || !remoteSessionId) return;
+
+    const channel = supabase
+      .channel(`presentation-session-${remoteSessionId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "presentation_sessions",
+          filter: `session_id=eq.${remoteSessionId}`,
+        },
+        (payload) => {
+          const row = (payload.new ?? payload.old) as PresentationSessionRow | null;
+          if (!row?.session_id) return;
+          const nextState = presentationStateFromSessionRow(row);
+          setRemoteMode("supabase");
+          setRemoteState(nextState);
+          setRemoteSessionId(nextState.sessionId);
+          setPresenterSlideIndex(nextState.slideIndex);
+          savePresentationRemoteState(nextState);
+          setRemoteMessage(`Shared session ${nextState.sessionId} updated live.`);
+        },
+      )
+      .subscribe((status) => {
+        if (status === "SUBSCRIBED") {
+          setRemoteMode("supabase");
+          setRemoteMessage(`Listening for shared session ${remoteSessionId}.`);
+        }
+        if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") {
+          setRemoteMode("local");
+          setRemoteMessage("Shared session updates are unavailable. Local fallback is still active.");
+        }
+      });
+
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [remoteSessionId, supabase]);
+
+  useEffect(() => {
+    if (!initialSessionId || remoteSessionId) return;
+    queueMicrotask(() => {
+      setJoinSessionId(initialSessionId);
+      void joinPresentationSession(initialSessionId);
+    });
+    // The join helper owns Supabase/local fallback state and is intentionally reused for URL reconnects.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialSessionId, remoteSessionId]);
 
   function updateSlide(id: string, patch: Partial<SermonSlide>) {
     onDraftChange({ slides: slides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
@@ -28208,14 +28330,50 @@ function PresentationWorkspaceScreen({
     };
   }
 
-  function publishRemoteState(patch: Partial<PresentationRemoteState>) {
+  async function syncSupabasePresentationSession(state: PresentationRemoteState, eventType: string) {
+    if (!supabase) {
+      setRemoteMode("local");
+      return false;
+    }
+
+    const row = presentationSessionRowFromState(state, user?.id);
+    const { error } = await supabase
+      .from("presentation_sessions")
+      .upsert(row, { onConflict: "session_id" });
+
+    if (error) {
+      setRemoteMode("local");
+      setRemoteMessage("Shared Supabase session could not sync. Local fallback is still active.");
+      return false;
+    }
+
+    await supabase.from("presentation_session_events").insert({
+      session_id: state.sessionId,
+      event_type: eventType,
+      slide_index: state.slideIndex,
+      is_blank: state.blank,
+      created_by: user?.id ?? null,
+      payload: {
+        presentation_id: state.presentationId,
+        title: state.title,
+        is_active: !state.ended,
+      },
+    });
+
+    setRemoteMode("supabase");
+    setRemoteMessage(`Shared session ${state.sessionId} synced through Supabase.`);
+    return true;
+  }
+
+  function publishRemoteState(patch: Partial<PresentationRemoteState>, eventType = "jump") {
     const sessionId = remoteSessionId || remoteState?.sessionId || createPresentationSessionId();
     const nextState = buildRemoteState(sessionId, patch);
     savePresentationRemoteState(nextState);
     setRemoteSessionId(nextState.sessionId);
     setRemoteState(nextState);
     setPresenterSlideIndex(nextState.slideIndex);
-    setRemoteMessage(`Session ${nextState.sessionId} updated.`);
+    setRemoteMessage(`${remoteMode === "supabase" ? "Shared" : "Local"} session ${nextState.sessionId} updated.`);
+    void syncSupabasePresentationSession(nextState, eventType);
     return nextState;
   }
 
@@ -28241,36 +28399,85 @@ function PresentationWorkspaceScreen({
     setPresenterStartedAt(Date.now());
     setPresenterNow(Date.now());
     setRemoteMessage(`Session ${nextState.sessionId} is ready.`);
+    if (typeof window !== "undefined" && nextView === "presentation") {
+      window.location.hash = `presentation-session-${nextState.sessionId}`;
+    }
+    void syncSupabasePresentationSession(nextState, "start");
     onViewChange(nextView);
   }
 
-  function joinPresentationSession() {
-    const sessionId = joinSessionId.trim().toUpperCase();
+  async function joinPresentationSession(code = joinSessionId) {
+    const sessionId = code.trim().toUpperCase();
+    if (!sessionId) {
+      setRemoteMessage("Enter a presentation session ID first.");
+      return;
+    }
+    if (supabase) {
+      const { data, error } = await supabase
+        .from("presentation_sessions")
+        .select("session_id, presentation_id, current_slide_index, is_blank, is_active, presenter_user_id, title, theme_id, slides, target_minutes, notes, created_at, updated_at")
+        .eq("session_id", sessionId)
+        .maybeSingle();
+
+      if (!error && data) {
+        const nextState = presentationStateFromSessionRow(data as PresentationSessionRow);
+        setRemoteMode("supabase");
+        setRemoteSessionId(nextState.sessionId);
+        setRemoteState(nextState);
+        setPresenterSlideIndex(nextState.slideIndex);
+        setPresenterStartedAt(Date.now());
+        setPresenterNow(Date.now());
+        savePresentationRemoteState(nextState);
+        setRemoteMessage(`Joined shared session ${nextState.sessionId}.`);
+        setJoinSessionId(nextState.sessionId);
+        if (typeof window !== "undefined" && view === "presentation") {
+          window.location.hash = `presentation-session-${nextState.sessionId}`;
+        }
+        await supabase.from("presentation_session_events").insert({
+          session_id: nextState.sessionId,
+          event_type: "join",
+          slide_index: nextState.slideIndex,
+          is_blank: nextState.blank,
+          created_by: user?.id ?? null,
+          payload: { source: "presentation_workspace" },
+        });
+        return;
+      }
+
+      setRemoteMessage("Shared session was not found yet. Checking local fallback.");
+    }
+
     const nextState = loadPresentationRemoteState(sessionId);
     if (!nextState) {
       setRemoteMessage("No local presentation session found for that ID yet.");
       return;
     }
+    setRemoteMode("local");
     setRemoteSessionId(nextState.sessionId);
     setRemoteState(nextState);
     setPresenterSlideIndex(nextState.slideIndex);
     setPresenterStartedAt(Date.now());
     setPresenterNow(Date.now());
+    setJoinSessionId(nextState.sessionId);
+    if (typeof window !== "undefined" && view === "presentation") {
+      window.location.hash = `presentation-session-${nextState.sessionId}`;
+    }
     setRemoteMessage(`Joined session ${nextState.sessionId}.`);
   }
 
   function goToRemoteSlide(index: number) {
     const boundedIndex = Math.min(Math.max(0, index), Math.max(0, sessionSlides.length - 1));
+    const eventType = boundedIndex > presenterSlideIndex ? "next" : boundedIndex < presenterSlideIndex ? "previous" : "jump";
     setPresenterSlideIndex(boundedIndex);
-    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false });
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false, blank: false }, eventType);
   }
 
   function toggleRemoteBlank() {
-    publishRemoteState({ blank: !sessionBlank, ended: false });
+    publishRemoteState({ blank: !sessionBlank, ended: false }, sessionBlank ? "unblank" : "blank");
   }
 
   function endRemotePresentation() {
-    publishRemoteState({ ended: true, blank: false });
+    publishRemoteState({ ended: true, blank: false }, "end");
   }
 
   function splitActiveScriptureSlide() {
@@ -28299,7 +28506,7 @@ function PresentationWorkspaceScreen({
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-black/80 px-4 py-3 text-sm font-semibold backdrop-blur">
             <button className="rounded-full bg-white/10 px-4 py-2" onClick={() => onViewChange("deck")} type="button">Exit Presenter</button>
             <div className="flex flex-wrap items-center gap-3 text-white/75">
-              {remoteSessionId && <span>Session {remoteSessionId}</span>}
+              {remoteSessionId && <span>Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
               <span>{formatSermonTimer(elapsedSeconds)} elapsed</span>
               <span>{formatSermonTimer(remainingSeconds)} left</span>
               <span>{Math.min(presenterSlideIndex + 1, sessionSlides.length || 1)} / {sessionSlides.length || 1}</span>
@@ -28354,8 +28561,18 @@ function PresentationWorkspaceScreen({
       <div className="fixed inset-0 z-50 bg-black text-white">
         <div className="absolute left-4 top-4 z-10 flex flex-wrap gap-2 text-xs font-semibold">
           <button className="rounded-full bg-white/10 px-3 py-2 text-white/80" onClick={() => onViewChange("deck")} type="button">Exit</button>
-          {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId}</span>}
+          {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
         </div>
+        {!remoteActive && (
+          <div className="absolute right-4 top-4 z-10 w-[min(24rem,calc(100vw-2rem))] rounded-3xl border border-white/10 bg-black/70 p-4 shadow-2xl backdrop-blur">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Join Display</p>
+            <div className="mt-3 flex gap-2">
+              <input className="h-11 min-w-0 flex-1 rounded-2xl border border-white/10 bg-white/10 px-3 text-sm font-semibold uppercase tracking-[0.12em] text-white outline-none placeholder:text-white/40" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="ABC-123" value={joinSessionId} />
+              <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black" onClick={() => void joinPresentationSession()} type="button">Join</button>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-white/55">{remoteMessage}</p>
+          </div>
+        )}
         <div className="flex min-h-screen items-center justify-center">
           {sessionEnded ? (
             <p className="text-4xl font-semibold text-white/70">Presentation ended</p>
@@ -28391,7 +28608,7 @@ function PresentationWorkspaceScreen({
               <input className="mt-2 h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-lg font-semibold uppercase tracking-[0.14em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="ABC-123" value={joinSessionId || remoteSessionId} />
             </label>
             <div className="flex items-end gap-2">
-              <button className="h-12 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white" onClick={joinPresentationSession} type="button">Join</button>
+              <button className="h-12 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white" onClick={() => void joinPresentationSession()} type="button">Join</button>
               <button className="h-12 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("controller")} type="button">Start</button>
             </div>
           </div>
@@ -28405,7 +28622,7 @@ function PresentationWorkspaceScreen({
                 <h2 className="mt-1 text-2xl font-semibold text-[var(--ink)]">{currentSlide?.title || "No slide selected"}</h2>
                 <p className="mt-1 text-sm text-[var(--muted)]">{Math.min(presenterSlideIndex + 1, sessionSlides.length || 1)} / {sessionSlides.length || 1} · {progressPercent}% complete</p>
               </div>
-              {remoteSessionId && <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Session {remoteSessionId}</span>}
+              {remoteSessionId && <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
             </div>
             <div className="mt-4">
               {currentSlide ? <SermonSlideCanvas slide={currentSlide} themeId={sessionThemeId} /> : <EmptyState title="No presentation joined" body="Start a session from this deck or enter a session ID to control a presentation." />}
@@ -28462,7 +28679,7 @@ function PresentationWorkspaceScreen({
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Workspace</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build and control church presentations</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-              Phase 2 adds a local remote-control foundation, audience view, controller view, presenter tools, and cleaner Scripture slide handling. Real cross-device hosting comes later.
+              Phase 3 adds shared Supabase sessions, audience display, controller view, presenter tools, and a local fallback for beta testing.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -28484,10 +28701,6 @@ function PresentationWorkspaceScreen({
           <button key={`presentation-view-${item}`} className={`rounded-full px-4 py-2 text-sm font-semibold capitalize ${view === item ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-white text-[var(--green)]"}`} onClick={() => {
             if (item === "presenter") {
               startPresentationSession("presenter");
-              return;
-            }
-            if (item === "presentation") {
-              startPresentationSession(item);
               return;
             }
             onViewChange(item);
@@ -28595,20 +28808,20 @@ function PresentationWorkspaceScreen({
                   <p className="text-sm font-semibold text-[var(--ink)]">Remote Control Foundation</p>
                   <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
                 </div>
-                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">{remoteSessionId || "No session"}</span>
+                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">{remoteSessionId || "No session"} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => startPresentationSession("presentation")} type="button">Start Presentation View</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("controller")} type="button">Open Controller View</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("presenter")} type="button">Open Presenter Tools</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => {
-                  const nextState = publishRemoteState({ slides, themeId: draft.themeId, title: draft.title, targetMinutes: draft.targetMinutes, notes: draft.notes });
+                  const nextState = publishRemoteState({ slides, themeId: draft.themeId, title: draft.title, targetMinutes: draft.targetMinutes, notes: draft.notes }, "refresh");
                   setJoinSessionId(nextState.sessionId);
                 }} type="button">Refresh Session Deck</button>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
                 <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="Join session ID" value={joinSessionId} />
-                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={joinPresentationSession} type="button">Join Presentation</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => void joinPresentationSession()} type="button">Join Presentation</button>
               </div>
             </div>
 
