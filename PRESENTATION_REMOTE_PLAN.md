@@ -2,7 +2,7 @@
 
 ## Current Phase
 
-Presentation Remote Phase 3 adds real shared-session structure with Supabase Realtime support and a local fallback.
+Presentation Remote Phase 4 adds church-use safety controls on top of Supabase Realtime shared sessions and the local fallback.
 
 Works now:
 
@@ -13,17 +13,24 @@ Works now:
 - Presenter tools with current slide, next slide, notes, elapsed time, remaining time, slide count, and progress
 - Controller actions for next slide, previous slide, jump to slide, blank screen, and end presentation
 - Display reconnect from URLs like `#presentation-session-ABC-123`
+- Presenter ownership when signed in
+- Optional controller approval mode
+- Waiting, approved, blocked, and owner controller statuses
+- Controller lock/unlock
+- First slide, last slide, restart timer, and emergency end controls
+- Session expiry using `expires_at`
+- Display connection status using `display_last_seen_at`
 
 The app tries Supabase first when it is configured and the `presentation_sessions` tables exist. If Supabase is unavailable, it falls back to local browser storage so presentations can still be tested.
 
 ## Important Limitation
 
-The current Supabase policies are beta-friendly and session-code based. Anyone with the session code can control that presentation. For public release, add host approval, controller permissions, and optional signed-in presenter ownership.
+The current approval workflow is beta-safe app logic and session metadata. The next production hardening step is stricter server-side enforcement with owner/controller permissions, preferably through RPC or Edge Functions so unapproved controllers cannot bypass the UI.
 
 ## Current Shared Architecture
 
-1. `presentation_sessions` stores the active slide deck, current slide index, blank-screen state, active/ended state, and short session code.
-2. `presentation_session_events` logs controller actions such as start, join, next, previous, blank, unblank, jump, refresh, and end.
+1. `presentation_sessions` stores the active slide deck, current slide index, blank-screen state, active/ended state, short session code, owner, controller approval mode, controller list, display heartbeat, and expiry.
+2. `presentation_session_events` logs controller actions such as start, join, display join, next, previous, first, last, blank, unblank, jump, refresh, approve controller, lock/unlock controller, restart timer, expire, and end.
 3. Display and controller views subscribe to `presentation_sessions` updates through Supabase Realtime.
 4. Local storage mirrors the same session state as a fallback.
 
@@ -31,11 +38,11 @@ The current Supabase policies are beta-friendly and session-code based. Anyone w
 
 Recommended next step:
 
-1. Add host controls so only the presenter/admin can start, end, or grant controller access.
-2. Add controller approval and revocation.
-3. Add connection status: connected, reconnecting, offline, and controller locked.
-4. Add fail-safe local keyboard controls in Presentation View.
-5. Add audit cleanup for stale sessions.
+1. Move controller actions into server-side RPC or Edge Functions.
+2. Enforce presenter ownership and approved controller IDs server-side.
+3. Add controller approval and revocation audit logs.
+4. Add explicit session cleanup job for stale sessions.
+5. Add connection status: connected, reconnecting, offline, and controller locked.
 
 ## Session Data Model
 
@@ -48,6 +55,12 @@ Fields:
 - is_blank
 - is_active
 - presenter_user_id
+- control_mode
+- controller_lock
+- controllers
+- last_controller_id
+- display_last_seen_at
+- expires_at
 - created_at
 - updated_at
 
@@ -66,7 +79,13 @@ Supported now:
 - next slide
 - previous slide
 - jump to slide
+- first slide
+- last slide
 - blank screen
+- show slide
+- restart timer
+- lock/unlock controllers
+- approve/block controller
 - end presentation
 
 Future:

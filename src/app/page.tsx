@@ -364,12 +364,19 @@ type PresentationEntry = {
 type PresentationRemoteState = {
   sessionId: string;
   presentationId: string;
+  presenterUserId: string;
   title: string;
   themeId: SermonSlideThemeId;
   slides: SermonSlide[];
   slideIndex: number;
   blank: boolean;
   ended: boolean;
+  controlMode: PresentationControlMode;
+  controllerLocked: boolean;
+  controllers: PresentationController[];
+  lastControllerId: string;
+  displayLastSeenAt: string;
+  expiresAt: string;
   targetMinutes: number;
   notes: string;
   startedAt: string;
@@ -383,6 +390,12 @@ type PresentationSessionRow = {
   is_blank: boolean;
   is_active: boolean;
   presenter_user_id: string | null;
+  control_mode: string | null;
+  controller_lock: boolean | null;
+  controllers: unknown;
+  last_controller_id: string | null;
+  display_last_seen_at: string | null;
+  expires_at: string | null;
   title: string | null;
   theme_id: string | null;
   slides: unknown;
@@ -393,6 +406,17 @@ type PresentationSessionRow = {
 };
 
 type PresentationRemoteMode = "local" | "supabase";
+type PresentationControlMode = "open" | "approval";
+type PresentationControllerStatus = "owner" | "approved" | "waiting" | "blocked";
+
+type PresentationController = {
+  id: string;
+  name: string;
+  status: PresentationControllerStatus;
+  joinedAt: string;
+  approvedAt: string;
+  lastSeenAt: string;
+};
 
 type SermonLibraryItem = {
   id: string;
@@ -1239,6 +1263,8 @@ const SERMON_SERIES_KEY = "fathers-business-sermon-workspace-series";
 const SERMON_CHURCH_THEMES_KEY = "fathers-business-sermon-church-themes";
 const PRESENTATION_ENTRIES_KEY = "fathers-business-presentation-workspace-entries";
 const PRESENTATION_REMOTE_KEY_PREFIX = "fathers-business-presentation-remote-session:";
+const PRESENTATION_CONTROLLER_ID_KEY = "fathers-business-presentation-controller-id";
+const PRESENTATION_SESSION_DURATION_HOURS = 4;
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
   {
@@ -7633,8 +7659,69 @@ function createPresentationSessionId() {
   return Math.random().toString(36).slice(2, 5).toUpperCase() + "-" + Math.random().toString(36).slice(2, 5).toUpperCase();
 }
 
+function createPresentationControllerId() {
+  return `controller-${Math.random().toString(36).slice(2, 8)}-${Date.now().toString(36)}`;
+}
+
+function loadPresentationControllerId() {
+  if (typeof window === "undefined") return createPresentationControllerId();
+  const existing = window.localStorage.getItem(PRESENTATION_CONTROLLER_ID_KEY);
+  if (existing) return existing;
+  const nextId = createPresentationControllerId();
+  window.localStorage.setItem(PRESENTATION_CONTROLLER_ID_KEY, nextId);
+  return nextId;
+}
+
 function presentationRemoteStorageKey(sessionId: string) {
   return `${PRESENTATION_REMOTE_KEY_PREFIX}${sessionId.trim().toUpperCase()}`;
+}
+
+function presentationSessionExpiresAt(now = new Date()) {
+  return new Date(now.getTime() + PRESENTATION_SESSION_DURATION_HOURS * 60 * 60 * 1000).toISOString();
+}
+
+function normalizePresentationControlMode(value: unknown): PresentationControlMode {
+  return value === "approval" ? "approval" : "open";
+}
+
+function normalizePresentationController(value: Partial<PresentationController> | null | undefined): PresentationController | null {
+  if (!value?.id) return null;
+  const now = new Date().toISOString();
+  const status: PresentationControllerStatus = value.status === "owner" || value.status === "approved" || value.status === "waiting" || value.status === "blocked" ? value.status : "waiting";
+  return {
+    id: String(value.id),
+    name: value.name || "Controller",
+    status,
+    joinedAt: value.joinedAt || now,
+    approvedAt: value.approvedAt || "",
+    lastSeenAt: value.lastSeenAt || now,
+  };
+}
+
+function normalizePresentationControllers(value: unknown): PresentationController[] {
+  if (!Array.isArray(value)) return [];
+  return value
+    .map((item) => normalizePresentationController(item as Partial<PresentationController>))
+    .filter((item): item is PresentationController => Boolean(item));
+}
+
+function presentationControllerStatusLabel(status: PresentationControllerStatus) {
+  if (status === "owner") return "Owner";
+  if (status === "approved") return "Approved";
+  if (status === "blocked") return "Blocked";
+  return "Waiting";
+}
+
+function isPresentationSessionExpired(state: Pick<PresentationRemoteState, "expiresAt" | "ended">) {
+  return Boolean(state.expiresAt && Date.parse(state.expiresAt) < Date.now()) || state.ended;
+}
+
+function presentationConnectionLabel(isoDate: string) {
+  if (!isoDate) return "Not connected yet";
+  const ageSeconds = Math.max(0, Math.round((Date.now() - Date.parse(isoDate)) / 1000));
+  if (ageSeconds < 20) return "Connected now";
+  if (ageSeconds < 120) return `Seen ${ageSeconds}s ago`;
+  return `Seen ${Math.round(ageSeconds / 60)}m ago`;
 }
 
 function normalizePresentationRemoteState(value: Partial<PresentationRemoteState> | null | undefined): PresentationRemoteState | null {
@@ -7642,15 +7729,24 @@ function normalizePresentationRemoteState(value: Partial<PresentationRemoteState
   const now = new Date().toISOString();
   const slides = Array.isArray(value.slides) ? value.slides.map(normalizeSermonSlide) : [];
   const slideIndex = Math.min(Math.max(0, Number(value.slideIndex) || 0), Math.max(0, slides.length - 1));
+  const expiresAt = value.expiresAt ?? presentationSessionExpiresAt();
+  const ended = Boolean(value.ended) || Date.parse(expiresAt) < Date.now();
   return {
     sessionId: value.sessionId.trim().toUpperCase(),
     presentationId: value.presentationId ?? "",
+    presenterUserId: value.presenterUserId ?? "",
     title: value.title ?? "Presentation",
     themeId: sermonSlideThemeId(value.themeId),
     slides,
     slideIndex,
     blank: Boolean(value.blank),
-    ended: Boolean(value.ended),
+    ended,
+    controlMode: normalizePresentationControlMode(value.controlMode),
+    controllerLocked: Boolean(value.controllerLocked),
+    controllers: normalizePresentationControllers(value.controllers),
+    lastControllerId: value.lastControllerId ?? "",
+    displayLastSeenAt: value.displayLastSeenAt ?? "",
+    expiresAt,
     targetMinutes: Number(value.targetMinutes) > 0 ? Number(value.targetMinutes) : 30,
     notes: value.notes ?? "",
     startedAt: value.startedAt ?? now,
@@ -7676,15 +7772,24 @@ function savePresentationRemoteState(state: PresentationRemoteState) {
 function presentationStateFromSessionRow(row: PresentationSessionRow): PresentationRemoteState {
   const slides = Array.isArray(row.slides) ? row.slides.map(normalizeSermonSlide) : [];
   const slideIndex = Math.min(Math.max(0, Number(row.current_slide_index) || 0), Math.max(0, slides.length - 1));
+  const expiresAt = row.expires_at ?? presentationSessionExpiresAt();
+  const ended = !row.is_active || Date.parse(expiresAt) < Date.now();
   return {
     sessionId: row.session_id,
     presentationId: row.presentation_id ?? "",
+    presenterUserId: row.presenter_user_id ?? "",
     title: row.title ?? "Presentation",
     themeId: sermonSlideThemeId(row.theme_id),
     slides,
     slideIndex,
     blank: Boolean(row.is_blank),
-    ended: !row.is_active,
+    ended,
+    controlMode: normalizePresentationControlMode(row.control_mode),
+    controllerLocked: Boolean(row.controller_lock),
+    controllers: normalizePresentationControllers(row.controllers),
+    lastControllerId: row.last_controller_id ?? "",
+    displayLastSeenAt: row.display_last_seen_at ?? "",
+    expiresAt,
     targetMinutes: Number(row.target_minutes ?? 30) || 30,
     notes: row.notes ?? "",
     startedAt: row.created_at,
@@ -7698,8 +7803,14 @@ function presentationSessionRowFromState(state: PresentationRemoteState, userId?
     presentation_id: state.presentationId || null,
     current_slide_index: state.slideIndex,
     is_blank: state.blank,
-    is_active: !state.ended,
-    presenter_user_id: userId ?? null,
+    is_active: !state.ended && Date.parse(state.expiresAt) >= Date.now(),
+    presenter_user_id: state.presenterUserId || userId || null,
+    control_mode: state.controlMode,
+    controller_lock: state.controllerLocked,
+    controllers: state.controllers,
+    last_controller_id: state.lastControllerId || null,
+    display_last_seen_at: state.displayLastSeenAt || null,
+    expires_at: state.expiresAt,
     title: state.title || "Presentation",
     theme_id: state.themeId,
     slides: state.slides,
@@ -28120,6 +28231,7 @@ function PresentationWorkspaceScreen({
   const [remoteState, setRemoteState] = useState<PresentationRemoteState | null>(null);
   const [remoteMode, setRemoteMode] = useState<PresentationRemoteMode>("local");
   const [remoteMessage, setRemoteMessage] = useState(supabase ? "Shared Supabase sessions are available. Local fallback remains ready." : "Supabase is not configured here, so remote control is local-only.");
+  const [controllerClientId] = useState(() => loadPresentationControllerId());
   const slides = draft.slides ?? [];
   const activeSlide = slides.find((slide) => slide.id === selectedSlideId) ?? slides[0] ?? null;
   const remoteActive = Boolean(remoteState?.sessionId && remoteSessionId && remoteState.sessionId === remoteSessionId);
@@ -28130,6 +28242,18 @@ function PresentationWorkspaceScreen({
   const sessionTargetMinutes = remoteActive ? remoteState?.targetMinutes ?? draft.targetMinutes : draft.targetMinutes;
   const sessionBlank = Boolean(remoteActive && remoteState?.blank);
   const sessionEnded = Boolean(remoteActive && remoteState?.ended);
+  const sessionExpired = Boolean(remoteState?.expiresAt && Date.parse(remoteState.expiresAt) < Date.now());
+  const sessionControllers = remoteActive ? remoteState?.controllers ?? [] : [];
+  const currentController = sessionControllers.find((controller) => controller.id === controllerClientId) ?? null;
+  const controlMode = remoteActive ? remoteState?.controlMode ?? "open" : "open";
+  const controllerLocked = Boolean(remoteActive && remoteState?.controllerLocked);
+  const signedInOwner = Boolean(user?.id && remoteState?.presenterUserId && user.id === remoteState.presenterUserId);
+  const unsignedBetaOwner = Boolean(remoteActive && !remoteState?.presenterUserId && view !== "controller");
+  const canOwnSession = signedInOwner || unsignedBetaOwner || (!remoteActive && view !== "controller");
+  const canControlSession = !sessionExpired && !sessionEnded && (!remoteActive || view !== "controller" || (!controllerLocked && (controlMode === "open" || currentController?.status === "approved" || currentController?.status === "owner")));
+  const canEndSession = canOwnSession && !sessionExpired;
+  const controllerStatusText = view === "controller" && remoteActive ? (currentController ? presentationControllerStatusLabel(currentController.status) : controlMode === "approval" ? "Not joined" : "Open control") : "";
+  const displayConnectionText = remoteActive ? presentationConnectionLabel(remoteState?.displayLastSeenAt ?? "") : "Not connected yet";
   const currentSlide = sessionSlides[Math.min(presenterSlideIndex, Math.max(0, sessionSlides.length - 1))] ?? null;
   const nextSlide = presenterSlideIndex + 1 < sessionSlides.length ? sessionSlides[presenterSlideIndex + 1] : null;
   const elapsedSeconds = presenterStartedAt ? Math.max(0, Math.floor((presenterNow - presenterStartedAt) / 1000)) : 0;
@@ -28239,6 +28363,18 @@ function PresentationWorkspaceScreen({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialSessionId, remoteSessionId]);
 
+  useEffect(() => {
+    if (!supabase || view !== "presentation" || !remoteActive || !remoteSessionId || sessionEnded) return;
+    const heartbeat = window.setInterval(() => {
+      const now = new Date().toISOString();
+      void supabase
+        .from("presentation_sessions")
+        .update({ display_last_seen_at: now, updated_at: now })
+        .eq("session_id", remoteSessionId);
+    }, 15000);
+    return () => window.clearInterval(heartbeat);
+  }, [remoteActive, remoteSessionId, sessionEnded, supabase, view]);
+
   function updateSlide(id: string, patch: Partial<SermonSlide>) {
     onDraftChange({ slides: slides.map((slide) => slide.id === id ? { ...slide, ...patch } : slide) });
   }
@@ -28310,19 +28446,55 @@ function PresentationWorkspaceScreen({
     });
   }
 
+  function upsertPresentationController(controllers: PresentationController[], controller: PresentationController) {
+    const nextControllers = controllers.filter((item) => item.id !== controller.id);
+    return [...nextControllers, controller].sort((a, b) => a.joinedAt.localeCompare(b.joinedAt));
+  }
+
+  function ownerController(now: string): PresentationController {
+    return {
+      id: user?.id ? `owner-${user.id}` : `owner-${controllerClientId}`,
+      name: user?.email || "Presenter",
+      status: "owner",
+      joinedAt: now,
+      approvedAt: now,
+      lastSeenAt: now,
+    };
+  }
+
+  function controllerForJoin(state: PresentationRemoteState, status: PresentationControllerStatus): PresentationController {
+    const now = new Date().toISOString();
+    return {
+      id: controllerClientId,
+      name: "Controller",
+      status,
+      joinedAt: currentController?.joinedAt || now,
+      approvedAt: status === "approved" ? currentController?.approvedAt || now : currentController?.approvedAt || "",
+      lastSeenAt: now,
+    };
+  }
+
   function buildRemoteState(sessionId: string, patch: Partial<PresentationRemoteState> = {}): PresentationRemoteState {
     const now = new Date().toISOString();
     const baseSlides = patch.slides ?? remoteState?.slides ?? slides;
     const slideIndex = Math.min(Math.max(0, Number(patch.slideIndex ?? remoteState?.slideIndex ?? presenterSlideIndex) || 0), Math.max(0, baseSlides.length - 1));
+    const expiresAt = patch.expiresAt ?? remoteState?.expiresAt ?? presentationSessionExpiresAt();
     return {
       sessionId: sessionId.trim().toUpperCase(),
       presentationId: patch.presentationId ?? remoteState?.presentationId ?? draft.id,
+      presenterUserId: patch.presenterUserId ?? remoteState?.presenterUserId ?? user?.id ?? "",
       title: patch.title ?? remoteState?.title ?? draft.title,
       themeId: patch.themeId ?? remoteState?.themeId ?? draft.themeId,
       slides: baseSlides,
       slideIndex,
       blank: patch.blank ?? remoteState?.blank ?? false,
-      ended: patch.ended ?? remoteState?.ended ?? false,
+      ended: patch.ended ?? remoteState?.ended ?? Date.parse(expiresAt) < Date.now(),
+      controlMode: patch.controlMode ?? remoteState?.controlMode ?? "open",
+      controllerLocked: patch.controllerLocked ?? remoteState?.controllerLocked ?? false,
+      controllers: patch.controllers ?? remoteState?.controllers ?? [],
+      lastControllerId: patch.lastControllerId ?? remoteState?.lastControllerId ?? "",
+      displayLastSeenAt: patch.displayLastSeenAt ?? remoteState?.displayLastSeenAt ?? "",
+      expiresAt,
       targetMinutes: patch.targetMinutes ?? remoteState?.targetMinutes ?? draft.targetMinutes,
       notes: patch.notes ?? remoteState?.notes ?? draft.notes,
       startedAt: patch.startedAt ?? remoteState?.startedAt ?? now,
@@ -28333,6 +28505,15 @@ function PresentationWorkspaceScreen({
   async function syncSupabasePresentationSession(state: PresentationRemoteState, eventType: string) {
     if (!supabase) {
       setRemoteMode("local");
+      return false;
+    }
+    const controlEventTypes = ["next", "previous", "jump", "first", "last", "blank", "unblank", "refresh", "restart_timer"];
+    if (controlEventTypes.includes(eventType) && view === "controller" && !canControlSession) {
+      setRemoteMessage("Controller is waiting for approval or locked by the presenter.");
+      return false;
+    }
+    if (eventType === "end" && !canEndSession) {
+      setRemoteMessage("Only the presenter can end this shared session.");
       return false;
     }
 
@@ -28347,7 +28528,7 @@ function PresentationWorkspaceScreen({
       return false;
     }
 
-    await supabase.from("presentation_session_events").insert({
+    const { error: eventError } = await supabase.from("presentation_session_events").insert({
       session_id: state.sessionId,
       event_type: eventType,
       slide_index: state.slideIndex,
@@ -28359,6 +28540,9 @@ function PresentationWorkspaceScreen({
         is_active: !state.ended,
       },
     });
+    if (eventError) {
+      setRemoteMessage("Session updated, but the event log could not be saved.");
+    }
 
     setRemoteMode("supabase");
     setRemoteMessage(`Shared session ${state.sessionId} synced through Supabase.`);
@@ -28368,6 +28552,10 @@ function PresentationWorkspaceScreen({
   function publishRemoteState(patch: Partial<PresentationRemoteState>, eventType = "jump") {
     const sessionId = remoteSessionId || remoteState?.sessionId || createPresentationSessionId();
     const nextState = buildRemoteState(sessionId, patch);
+    if (view === "controller" && !canControlSession && eventType !== "join") {
+      setRemoteMessage("Controller is waiting for approval or locked by the presenter.");
+      return nextState;
+    }
     savePresentationRemoteState(nextState);
     setRemoteSessionId(nextState.sessionId);
     setRemoteState(nextState);
@@ -28379,17 +28567,23 @@ function PresentationWorkspaceScreen({
 
   function startPresentationSession(nextView: PresentationWorkspaceView = "presentation") {
     const sessionId = remoteSessionId || createPresentationSessionId();
+    const now = new Date().toISOString();
     const nextState = buildRemoteState(sessionId, {
       presentationId: draft.id,
+      presenterUserId: user?.id ?? "",
       title: draft.title,
       themeId: draft.themeId,
       slides,
       slideIndex: 0,
       blank: false,
       ended: false,
+      controllers: [ownerController(now)],
+      controllerLocked: false,
+      displayLastSeenAt: nextView === "presentation" ? now : "",
+      expiresAt: presentationSessionExpiresAt(new Date(now)),
       targetMinutes: draft.targetMinutes,
       notes: draft.notes,
-      startedAt: new Date().toISOString(),
+      startedAt: now,
     });
     savePresentationRemoteState(nextState);
     setRemoteSessionId(nextState.sessionId);
@@ -28398,7 +28592,7 @@ function PresentationWorkspaceScreen({
     setPresenterSlideIndex(0);
     setPresenterStartedAt(Date.now());
     setPresenterNow(Date.now());
-    setRemoteMessage(`Session ${nextState.sessionId} is ready.`);
+    setRemoteMessage(user?.id ? `Session ${nextState.sessionId} is ready and owned by the signed-in presenter.` : `Session ${nextState.sessionId} is ready. Signed-out beta sessions are controlled by session code.`);
     if (typeof window !== "undefined" && nextView === "presentation") {
       window.location.hash = `presentation-session-${nextState.sessionId}`;
     }
@@ -28415,31 +28609,62 @@ function PresentationWorkspaceScreen({
     if (supabase) {
       const { data, error } = await supabase
         .from("presentation_sessions")
-        .select("session_id, presentation_id, current_slide_index, is_blank, is_active, presenter_user_id, title, theme_id, slides, target_minutes, notes, created_at, updated_at")
+        .select("session_id, presentation_id, current_slide_index, is_blank, is_active, presenter_user_id, control_mode, controller_lock, controllers, last_controller_id, display_last_seen_at, expires_at, title, theme_id, slides, target_minutes, notes, created_at, updated_at")
         .eq("session_id", sessionId)
         .maybeSingle();
 
       if (!error && data) {
         const nextState = presentationStateFromSessionRow(data as PresentationSessionRow);
+        if (isPresentationSessionExpired(nextState)) {
+          setRemoteMessage("That presentation session has expired or ended.");
+          await supabase
+            .from("presentation_sessions")
+            .update({ is_active: false, updated_at: new Date().toISOString() })
+            .eq("session_id", nextState.sessionId);
+          return;
+        }
+        const now = new Date().toISOString();
+        const joinStatus: PresentationControllerStatus = view === "controller" && nextState.controlMode === "approval" ? "waiting" : "approved";
+        const nextControllers = view === "controller"
+          ? upsertPresentationController(nextState.controllers, {
+            ...controllerForJoin(nextState, joinStatus),
+            joinedAt: nextState.controllers.find((controller) => controller.id === controllerClientId)?.joinedAt || now,
+            lastSeenAt: now,
+          })
+          : nextState.controllers;
+        const joinedState: PresentationRemoteState = {
+          ...nextState,
+          controllers: nextControllers,
+          displayLastSeenAt: view === "presentation" ? now : nextState.displayLastSeenAt,
+          updatedAt: now,
+        };
         setRemoteMode("supabase");
-        setRemoteSessionId(nextState.sessionId);
-        setRemoteState(nextState);
-        setPresenterSlideIndex(nextState.slideIndex);
+        setRemoteSessionId(joinedState.sessionId);
+        setRemoteState(joinedState);
+        setPresenterSlideIndex(joinedState.slideIndex);
         setPresenterStartedAt(Date.now());
         setPresenterNow(Date.now());
-        savePresentationRemoteState(nextState);
-        setRemoteMessage(`Joined shared session ${nextState.sessionId}.`);
-        setJoinSessionId(nextState.sessionId);
+        savePresentationRemoteState(joinedState);
+        setRemoteMessage(view === "controller" && joinStatus === "waiting" ? `Joined shared session ${joinedState.sessionId}. Waiting for presenter approval.` : `Joined shared session ${joinedState.sessionId}.`);
+        setJoinSessionId(joinedState.sessionId);
         if (typeof window !== "undefined" && view === "presentation") {
-          window.location.hash = `presentation-session-${nextState.sessionId}`;
+          window.location.hash = `presentation-session-${joinedState.sessionId}`;
         }
+        await supabase
+          .from("presentation_sessions")
+          .update({
+            controllers: joinedState.controllers,
+            display_last_seen_at: joinedState.displayLastSeenAt || null,
+            updated_at: now,
+          })
+          .eq("session_id", joinedState.sessionId);
         await supabase.from("presentation_session_events").insert({
-          session_id: nextState.sessionId,
-          event_type: "join",
-          slide_index: nextState.slideIndex,
-          is_blank: nextState.blank,
+          session_id: joinedState.sessionId,
+          event_type: view === "presentation" ? "display_join" : "join",
+          slide_index: joinedState.slideIndex,
+          is_blank: joinedState.blank,
           created_by: user?.id ?? null,
-          payload: { source: "presentation_workspace" },
+          payload: { source: "presentation_workspace", controller_id: view === "controller" ? controllerClientId : null, status: joinStatus },
         });
         return;
       }
@@ -28452,32 +28677,127 @@ function PresentationWorkspaceScreen({
       setRemoteMessage("No local presentation session found for that ID yet.");
       return;
     }
+    if (isPresentationSessionExpired(nextState)) {
+      const expiredState = { ...nextState, ended: true, updatedAt: new Date().toISOString() };
+      savePresentationRemoteState(expiredState);
+      setRemoteMessage("That local presentation session has expired or ended.");
+      return;
+    }
+    const now = new Date().toISOString();
+    const localJoinStatus: PresentationControllerStatus = view === "controller" && nextState.controlMode === "approval" ? "waiting" : "approved";
+    const localJoinedState: PresentationRemoteState = {
+      ...nextState,
+      controllers: view === "controller" ? upsertPresentationController(nextState.controllers, {
+        ...controllerForJoin(nextState, localJoinStatus),
+        joinedAt: nextState.controllers.find((controller) => controller.id === controllerClientId)?.joinedAt || now,
+        lastSeenAt: now,
+      }) : nextState.controllers,
+      displayLastSeenAt: view === "presentation" ? now : nextState.displayLastSeenAt,
+      updatedAt: now,
+    };
+    savePresentationRemoteState(localJoinedState);
     setRemoteMode("local");
-    setRemoteSessionId(nextState.sessionId);
-    setRemoteState(nextState);
-    setPresenterSlideIndex(nextState.slideIndex);
+    setRemoteSessionId(localJoinedState.sessionId);
+    setRemoteState(localJoinedState);
+    setPresenterSlideIndex(localJoinedState.slideIndex);
     setPresenterStartedAt(Date.now());
     setPresenterNow(Date.now());
-    setJoinSessionId(nextState.sessionId);
+    setJoinSessionId(localJoinedState.sessionId);
     if (typeof window !== "undefined" && view === "presentation") {
-      window.location.hash = `presentation-session-${nextState.sessionId}`;
+      window.location.hash = `presentation-session-${localJoinedState.sessionId}`;
     }
-    setRemoteMessage(`Joined session ${nextState.sessionId}.`);
+    setRemoteMessage(view === "controller" && localJoinStatus === "waiting" ? `Joined session ${localJoinedState.sessionId}. Waiting for presenter approval.` : `Joined session ${localJoinedState.sessionId}.`);
   }
 
   function goToRemoteSlide(index: number) {
+    if (!canControlSession) {
+      setRemoteMessage("Controller is waiting for approval, locked, or the session has expired.");
+      return;
+    }
     const boundedIndex = Math.min(Math.max(0, index), Math.max(0, sessionSlides.length - 1));
     const eventType = boundedIndex > presenterSlideIndex ? "next" : boundedIndex < presenterSlideIndex ? "previous" : "jump";
     setPresenterSlideIndex(boundedIndex);
-    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false, blank: false }, eventType);
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: boundedIndex, ended: false, blank: false, lastControllerId: view === "controller" ? controllerClientId : remoteState?.lastControllerId ?? "" }, eventType);
+  }
+
+  function goToFirstSlide() {
+    if (!canControlSession) {
+      setRemoteMessage("Controller is waiting for approval, locked, or the session has expired.");
+      return;
+    }
+    setPresenterSlideIndex(0);
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: 0, ended: false, blank: false, lastControllerId: view === "controller" ? controllerClientId : remoteState?.lastControllerId ?? "" }, "first");
+  }
+
+  function goToLastSlide() {
+    if (!canControlSession) {
+      setRemoteMessage("Controller is waiting for approval, locked, or the session has expired.");
+      return;
+    }
+    const lastIndex = Math.max(0, sessionSlides.length - 1);
+    setPresenterSlideIndex(lastIndex);
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ slideIndex: lastIndex, ended: false, blank: false, lastControllerId: view === "controller" ? controllerClientId : remoteState?.lastControllerId ?? "" }, "last");
   }
 
   function toggleRemoteBlank() {
-    publishRemoteState({ blank: !sessionBlank, ended: false }, sessionBlank ? "unblank" : "blank");
+    if (!canControlSession) {
+      setRemoteMessage("Controller is waiting for approval, locked, or the session has expired.");
+      return;
+    }
+    publishRemoteState({ blank: !sessionBlank, ended: false, lastControllerId: view === "controller" ? controllerClientId : remoteState?.lastControllerId ?? "" }, sessionBlank ? "unblank" : "blank");
   }
 
   function endRemotePresentation() {
+    if (!canEndSession) {
+      setRemoteMessage("Only the presenter can end this shared session.");
+      return;
+    }
     publishRemoteState({ ended: true, blank: false }, "end");
+  }
+
+  function restartPresentationTimer() {
+    setPresenterStartedAt(Date.now());
+    setPresenterNow(Date.now());
+    if (remoteState?.sessionId || remoteSessionId) publishRemoteState({ updatedAt: new Date().toISOString() }, "restart_timer");
+  }
+
+  function updateSessionControlMode(controlMode: PresentationControlMode) {
+    if (!canOwnSession) {
+      setRemoteMessage("Only the presenter can change controller approval settings.");
+      return;
+    }
+    publishRemoteState({ controlMode }, "refresh");
+  }
+
+  function approveController(controllerId: string) {
+    if (!canOwnSession) {
+      setRemoteMessage("Only the presenter can approve controllers.");
+      return;
+    }
+    const now = new Date().toISOString();
+    const nextControllers = sessionControllers.map((controller) =>
+      controller.id === controllerId ? { ...controller, status: "approved" as const, approvedAt: now, lastSeenAt: now } : controller,
+    );
+    publishRemoteState({ controllers: nextControllers }, "approve_controller");
+  }
+
+  function blockController(controllerId: string) {
+    if (!canOwnSession) {
+      setRemoteMessage("Only the presenter can block controllers.");
+      return;
+    }
+    const nextControllers = sessionControllers.map((controller) =>
+      controller.id === controllerId ? { ...controller, status: "blocked" as const, lastSeenAt: new Date().toISOString() } : controller,
+    );
+    publishRemoteState({ controllers: nextControllers }, "lock_controller");
+  }
+
+  function toggleControllerLock() {
+    if (!canOwnSession) {
+      setRemoteMessage("Only the presenter can lock or unlock controllers.");
+      return;
+    }
+    publishRemoteState({ controllerLocked: !controllerLocked }, controllerLocked ? "unlock_controller" : "lock_controller");
   }
 
   function splitActiveScriptureSlide() {
@@ -28546,8 +28866,11 @@ function PresentationWorkspaceScreen({
               <div className="flex flex-wrap gap-2">
                 <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => goToRemoteSlide(presenterSlideIndex - 1)} type="button">Previous</button>
                 <button className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-black disabled:opacity-40" disabled={presenterSlideIndex >= sessionSlides.length - 1} onClick={() => goToRemoteSlide(presenterSlideIndex + 1)} type="button">Next</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={!sessionSlides.length} onClick={goToFirstSlide} type="button">First</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold disabled:opacity-40" disabled={!sessionSlides.length} onClick={goToLastSlide} type="button">Last</button>
                 <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={toggleRemoteBlank} type="button">{sessionBlank ? "Show Slide" : "Blank"}</button>
-                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={() => { setPresenterStartedAt(Date.now()); setPresenterNow(Date.now()); }} type="button">Reset Timer</button>
+                <button className="rounded-full bg-white/10 px-4 py-2 text-sm font-semibold" onClick={restartPresentationTimer} type="button">Restart Timer</button>
+                <button className="rounded-full bg-red-500/20 px-4 py-2 text-sm font-semibold text-red-100 disabled:opacity-40" disabled={!canEndSession} onClick={endRemotePresentation} type="button">Emergency End</button>
               </div>
             </aside>
           </div>
@@ -28599,6 +28922,7 @@ function PresentationWorkspaceScreen({
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Controller View</p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{sessionTitle || "Presentation Controller"}</h1>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
+              {controllerStatusText && <p className="mt-2 inline-flex rounded-full bg-[var(--highlight)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">Status: {controllerStatusText}</p>}
             </div>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => onViewChange("deck")} type="button">Back to Deck</button>
           </div>
@@ -28628,10 +28952,13 @@ function PresentationWorkspaceScreen({
               {currentSlide ? <SermonSlideCanvas slide={currentSlide} themeId={sessionThemeId} /> : <EmptyState title="No presentation joined" body="Start a session from this deck or enter a session ID to control a presentation." />}
             </div>
             <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
-              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={presenterSlideIndex <= 0} onClick={() => goToRemoteSlide(presenterSlideIndex - 1)} type="button">Previous</button>
-              <button className="rounded-2xl bg-[var(--green)] px-4 py-4 text-sm font-semibold text-white disabled:opacity-40" disabled={presenterSlideIndex >= sessionSlides.length - 1} onClick={() => goToRemoteSlide(presenterSlideIndex + 1)} type="button">Next</button>
-              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)]" onClick={toggleRemoteBlank} type="button">{sessionBlank ? "Show Slide" : "Blank Screen"}</button>
-              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--muted)]" onClick={endRemotePresentation} type="button">End</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={!canControlSession || presenterSlideIndex <= 0} onClick={() => goToRemoteSlide(presenterSlideIndex - 1)} type="button">Previous</button>
+              <button className="rounded-2xl bg-[var(--green)] px-4 py-4 text-sm font-semibold text-white disabled:opacity-40" disabled={!canControlSession || presenterSlideIndex >= sessionSlides.length - 1} onClick={() => goToRemoteSlide(presenterSlideIndex + 1)} type="button">Next</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={!canControlSession} onClick={toggleRemoteBlank} type="button">{sessionBlank ? "Show Slide" : "Blank Screen"}</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--muted)] disabled:opacity-40" disabled={!canEndSession} onClick={endRemotePresentation} type="button">Emergency End</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={!canControlSession || !sessionSlides.length} onClick={goToFirstSlide} type="button">First Slide</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={!canControlSession || !sessionSlides.length} onClick={goToLastSlide} type="button">Last Slide</button>
+              <button className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-4 text-sm font-semibold text-[var(--green)] disabled:opacity-40" disabled={!canControlSession} onClick={restartPresentationTimer} type="button">Restart Timer</button>
             </div>
           </article>
 
@@ -28658,7 +28985,7 @@ function PresentationWorkspaceScreen({
               <p className="text-sm font-semibold text-[var(--ink)]">Jump to Slide</p>
               <div className="mt-3 grid max-h-80 gap-2 overflow-y-auto pr-1">
                 {sessionSlides.map((slide, index) => (
-                  <button key={`controller-jump-${slide.id}`} className={`rounded-2xl border px-3 py-2 text-left text-sm font-semibold ${index === presenterSlideIndex ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--green)]" : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`} onClick={() => goToRemoteSlide(index)} type="button">
+                  <button key={`controller-jump-${slide.id}`} className={`rounded-2xl border px-3 py-2 text-left text-sm font-semibold disabled:opacity-40 ${index === presenterSlideIndex ? "border-[var(--gold)] bg-[var(--highlight)] text-[var(--green)]" : "border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"}`} disabled={!canControlSession} onClick={() => goToRemoteSlide(index)} type="button">
                     {index + 1}. {slide.title || slide.type}
                   </button>
                 ))}
@@ -28805,19 +29132,53 @@ function PresentationWorkspaceScreen({
             <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-[var(--ink)]">Remote Control Foundation</p>
+                  <p className="text-sm font-semibold text-[var(--ink)]">Remote Session Control</p>
                   <p className="mt-1 text-sm leading-6 text-[var(--muted)]">{remoteMessage}</p>
                 </div>
-                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">{remoteSessionId || "No session"} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>
+                <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">{remoteSessionId || "No session"} · {remoteMode === "supabase" ? "Shared" : "Local"} · {sessionExpired ? "Expired" : sessionEnded ? "Inactive" : "Active"}</span>
+              </div>
+              {remoteSessionId && (
+                <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                  <MiniStat label="Display" value={displayConnectionText} />
+                  <MiniStat label="Controllers" value={String(sessionControllers.filter((controller) => controller.status !== "blocked").length)} />
+                  <MiniStat label="Mode" value={controlMode === "approval" ? "Approval" : "Open"} />
+                </div>
+              )}
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Controller approval</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <button className={`rounded-full px-3 py-1.5 text-xs font-semibold ${controlMode === "open" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => updateSessionControlMode("open")} type="button">Anyone with code</button>
+                    <button className={`rounded-full px-3 py-1.5 text-xs font-semibold ${controlMode === "approval" ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => updateSessionControlMode("approval")} type="button">Require approval</button>
+                    <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={toggleControllerLock} type="button">{controllerLocked ? "Unlock controllers" : "Lock controllers"}</button>
+                  </div>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{user?.id ? "Signed-in sessions are tied to the presenter account." : "Signed out beta session: protect the code and use approval mode for safer testing."}</p>
+                </div>
+                <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Connected controllers</p>
+                  <div className="mt-2 space-y-2">
+                    {sessionControllers.length ? sessionControllers.map((controller) => (
+                      <div key={`presentation-controller-${controller.id}`} className="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-[var(--paper)] px-3 py-2">
+                        <div>
+                          <p className="text-sm font-semibold text-[var(--ink)]">{controller.name}</p>
+                          <p className="text-xs text-[var(--muted)]">{presentationControllerStatusLabel(controller.status)} · {presentationConnectionLabel(controller.lastSeenAt)}</p>
+                        </div>
+                        {controller.status === "waiting" && <button className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white" onClick={() => approveController(controller.id)} type="button">Approve</button>}
+                        {controller.status !== "owner" && controller.status !== "blocked" && <button className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]" onClick={() => blockController(controller.id)} type="button">Block</button>}
+                      </div>
+                    )) : <p className="text-sm text-[var(--muted)]">No controllers have joined yet.</p>}
+                  </div>
+                </div>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
                 <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={() => startPresentationSession("presentation")} type="button">Start Presentation View</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("controller")} type="button">Open Controller View</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => startPresentationSession("presenter")} type="button">Open Presenter Tools</button>
                 <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => {
-                  const nextState = publishRemoteState({ slides, themeId: draft.themeId, title: draft.title, targetMinutes: draft.targetMinutes, notes: draft.notes }, "refresh");
+                  const nextState = publishRemoteState({ slides, themeId: draft.themeId, title: draft.title, targetMinutes: draft.targetMinutes, notes: draft.notes, expiresAt: presentationSessionExpiresAt() }, "refresh");
                   setJoinSessionId(nextState.sessionId);
                 }} type="button">Refresh Session Deck</button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] disabled:opacity-40" disabled={!canEndSession} onClick={endRemotePresentation} type="button">Emergency End Session</button>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
                 <input className="h-11 rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--ink)]" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="Join session ID" value={joinSessionId} />

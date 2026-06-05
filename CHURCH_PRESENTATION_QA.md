@@ -1,0 +1,70 @@
+# Church Presentation QA
+
+Use this checklist before trusting remote presentation control in a live service.
+
+## Required Setup
+
+- Presenter computer opens Presentation Workspace.
+- Display computer or projector browser opens Presentation View.
+- Phone or tablet opens Controller View.
+- Supabase environment variables are configured.
+- `presentation_sessions` includes Phase 4 columns: `control_mode`, `controller_lock`, `controllers`, `display_last_seen_at`, and `expires_at`.
+
+## Core Flow
+
+1. Create or open a presentation with at least two slides.
+2. Start Presentation View.
+3. Confirm the session code is visible.
+4. Confirm display status changes from "Not connected yet" to "Connected now."
+5. Open Controller View on another device.
+6. Join with the session code.
+7. Confirm the controller appears in Connected controllers.
+
+## Open Control Mode
+
+1. Set controller approval to "Anyone with code."
+2. Join from the controller.
+3. Confirm the controller can advance slides.
+4. Confirm Previous, Next, First Slide, Last Slide, Blank Screen, Show Slide, and Restart Timer work.
+
+## Approval Mode
+
+1. Set controller approval to "Require approval."
+2. Join from the controller.
+3. Confirm controller status shows "Waiting."
+4. Confirm unapproved controller buttons are disabled.
+5. Approve the controller from the presenter screen.
+6. Confirm controller status changes to "Approved."
+7. Confirm approved controller can advance slides.
+8. Block the controller.
+9. Confirm blocked controller cannot advance slides.
+
+## Owner Controls
+
+- Signed-in presenter should own the session.
+- Signed-out sessions should be clearly treated as beta session-code control.
+- Emergency End Session should be available to the presenter.
+- Emergency End Session should not be available to a normal controller.
+- Ending a session should show "Presentation ended" on display and controller.
+
+## Session Safety
+
+- Refresh the display and confirm it rejoins from `#presentation-session-ABC-123`.
+- Refresh the controller and confirm it can rejoin by code.
+- Expired sessions should not accept slide-control actions.
+- Ended sessions should remain inactive.
+- Local fallback should still work if Supabase sync fails.
+
+## Mobile Checks
+
+- Controller buttons should be large enough for phone use.
+- Approval status should be visible without hunting.
+- Blank Screen and Emergency End should not be easy to hit accidentally.
+- No horizontal scrolling at 390x844.
+
+## Known Beta Limitations
+
+- Approval is enforced by app workflow and session metadata.
+- Production-grade enforcement should move controller actions to RPC or Edge Functions.
+- Session cleanup is expiry-based in the app; a scheduled cleanup job is still recommended.
+- Remote control should be tested on the church network before service.

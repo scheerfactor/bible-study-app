@@ -417,6 +417,12 @@ create table if not exists public.presentation_sessions (
   is_blank boolean not null default false,
   is_active boolean not null default true,
   presenter_user_id uuid references auth.users(id) on delete set null,
+  control_mode text not null default 'open' check (control_mode in ('open', 'approval')),
+  controller_lock boolean not null default false,
+  controllers jsonb not null default '[]'::jsonb,
+  last_controller_id text,
+  display_last_seen_at timestamptz,
+  expires_at timestamptz not null default (now() + interval '4 hours'),
   title text not null default 'Presentation',
   theme_id text not null default 'warm-bible-study',
   slides jsonb not null default '[]'::jsonb,
@@ -427,12 +433,31 @@ create table if not exists public.presentation_sessions (
 );
 
 create index if not exists presentation_sessions_active_idx
-  on public.presentation_sessions (session_id, is_active, updated_at desc);
+  on public.presentation_sessions (session_id, is_active, expires_at, updated_at desc);
+
+create index if not exists presentation_sessions_presenter_user_idx
+  on public.presentation_sessions (presenter_user_id)
+  where presenter_user_id is not null;
+
+alter table public.presentation_sessions
+  add column if not exists control_mode text not null default 'open',
+  add column if not exists controller_lock boolean not null default false,
+  add column if not exists controllers jsonb not null default '[]'::jsonb,
+  add column if not exists last_controller_id text,
+  add column if not exists display_last_seen_at timestamptz,
+  add column if not exists expires_at timestamptz not null default (now() + interval '4 hours');
+
+alter table public.presentation_sessions
+  drop constraint if exists presentation_sessions_control_mode_check;
+
+alter table public.presentation_sessions
+  add constraint presentation_sessions_control_mode_check
+  check (control_mode in ('open', 'approval'));
 
 create table if not exists public.presentation_session_events (
   id uuid primary key default gen_random_uuid(),
   session_id text not null references public.presentation_sessions(session_id) on delete cascade,
-  event_type text not null check (event_type in ('start', 'join', 'next', 'previous', 'jump', 'blank', 'unblank', 'end', 'refresh')),
+  event_type text not null check (event_type in ('start', 'join', 'display_join', 'next', 'previous', 'jump', 'first', 'last', 'blank', 'unblank', 'end', 'refresh', 'approve_controller', 'lock_controller', 'unlock_controller', 'restart_timer', 'expire')),
   slide_index integer,
   is_blank boolean,
   created_by uuid references auth.users(id) on delete set null,
@@ -442,6 +467,17 @@ create table if not exists public.presentation_session_events (
 
 create index if not exists presentation_session_events_session_idx
   on public.presentation_session_events (session_id, created_at desc);
+
+create index if not exists presentation_session_events_created_by_idx
+  on public.presentation_session_events (created_by)
+  where created_by is not null;
+
+alter table public.presentation_session_events
+  drop constraint if exists presentation_session_events_event_type_check;
+
+alter table public.presentation_session_events
+  add constraint presentation_session_events_event_type_check
+  check (event_type in ('start', 'join', 'display_join', 'next', 'previous', 'jump', 'first', 'last', 'blank', 'unblank', 'end', 'refresh', 'approve_controller', 'lock_controller', 'unlock_controller', 'restart_timer', 'expire'));
 
 do $$
 begin
