@@ -880,6 +880,23 @@ type BibleAudioPlaylist = {
   lastItemIndex?: number;
 };
 
+type TodayResumeItem = {
+  label: string;
+  title: string;
+  detail: string;
+  actionLabel: string;
+};
+
+type MinistryDashboardStats = {
+  sermonsCreated: number;
+  lessonsCreated: number;
+  hoursStudied: number;
+  booksCompleted: number;
+  memoryVerses: number;
+  prayerEntries: number;
+  readingStreak: string;
+};
+
 type ScriptureMemoryItem = {
   id: string;
   verse_ref: string;
@@ -9334,6 +9351,76 @@ export default function Home() {
     [activeStudyPlaylistId, biblePlaylists],
   );
 
+  const latestSermonResume = useMemo(() => {
+    const entries = [sermonDraft, ...sermonEntries]
+      .filter((entry) => entry.title.trim() || entry.passage.trim())
+      .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+    return entries[0] ?? null;
+  }, [sermonDraft, sermonEntries]);
+
+  const latestJournalResume = useMemo(
+    () => journalEntries.slice().sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))[0] ?? null,
+    [journalEntries],
+  );
+
+  const latestCommentaryResume = useMemo(
+    () => chapterCommentaryEntries[0] ?? commentaryEntries.slice().sort((a, b) => a.book.localeCompare(b.book) || a.chapter - b.chapter)[0] ?? null,
+    [chapterCommentaryEntries, commentaryEntries],
+  );
+
+  const smartResumeItems = useMemo<TodayResumeItem[]>(() => [
+    {
+      label: "Last Bible Location",
+      title: `${book} ${chapter}`,
+      detail: selectedRef ? `Selected verse: ${selectedRef}` : "Continue in the Bible reader.",
+      actionLabel: "Open Bible",
+    },
+    {
+      label: "Last Library Book",
+      title: todayLibraryProgress?.title ?? "No book started yet",
+      detail: todayLibraryProgress ? `${todayLibraryProgress.author} - ${formatPercent(todayLibraryProgress.progress)} complete` : "Start a resource in the Library.",
+      actionLabel: "Open Book",
+    },
+    {
+      label: "Last Commentary",
+      title: latestCommentaryResume ? `${latestCommentaryResume.author} on ${latestCommentaryResume.book} ${latestCommentaryResume.chapter}` : "No commentary opened yet",
+      detail: latestCommentaryResume?.resource_title ?? "Commentary appears after reviewed entries are available.",
+      actionLabel: "Review",
+    },
+    {
+      label: "Current Sermon",
+      title: latestSermonResume?.title || latestSermonResume?.passage || "No sermon draft yet",
+      detail: latestSermonResume ? `${latestSermonResume.kind} - ${latestSermonResume.status} - ${latestSermonResume.passage || "Passage not set"}` : "Start a sermon or lesson from the Sermon Workspace.",
+      actionLabel: "Open Sermon",
+    },
+    {
+      label: "Current Journal",
+      title: latestJournalResume ? `${latestJournalResume.date} - ${latestJournalResume.sourceLabel}` : "No journal entry yet",
+      detail: latestJournalResume?.selectedVerseRefs || "Start a Scripture Journal entry from Today or the Bible reader.",
+      actionLabel: "Open Journal",
+    },
+  ], [book, chapter, latestCommentaryResume, latestJournalResume, latestSermonResume, selectedRef, todayLibraryProgress]);
+
+  const ministryStats = useMemo<MinistryDashboardStats>(() => {
+    const sermonsCreated = sermonEntries.filter((entry) => entry.kind === "Sermon").length + (sermonDraft.kind === "Sermon" && sermonDraft.title.trim() ? 1 : 0);
+    const lessonsCreated = sermonEntries.filter((entry) => entry.kind === "Lesson").length + (sermonDraft.kind === "Lesson" && sermonDraft.title.trim() ? 1 : 0);
+    const estimatedStudyMinutes =
+      saved.notes.length * 6 +
+      journalEntries.length * 10 +
+      sermonEntries.length * 25 +
+      Object.values(libraryProgress).filter((progress) => progress.progress > 0).length * 12 +
+      scriptureMemory.length * 4;
+    return {
+      sermonsCreated,
+      lessonsCreated,
+      hoursStudied: Math.round(estimatedStudyMinutes / 60),
+      booksCompleted: completedLibraryResources.length,
+      memoryVerses: scriptureMemory.length,
+      prayerEntries: prayerEntries.length,
+      readingStreak: libraryStats.readingStreak,
+    };
+  }, [completedLibraryResources.length, journalEntries.length, libraryProgress, libraryStats.readingStreak, prayerEntries.length, saved.notes.length, scriptureMemory.length, sermonDraft.kind, sermonDraft.title, sermonEntries]);
+
   function saveDeviceFallback(updater: (state: SavedState) => SavedState) {
     setSaved((state) => {
       const nextState = updater(state);
@@ -9675,6 +9762,142 @@ export default function Home() {
       importedStudyNotes: [sermonDraft.importedStudyNotes, `## ${label}`, cleanBody].filter(Boolean).join("\n\n"),
     });
     setSyncMessage(`${label} added to sermon prep notes.`);
+  }
+
+  function verseWorkflowText(ref: string) {
+    const verse = versesByRef.get(ref);
+    return verse ? `${verse.ref} ${verse.text}` : ref;
+  }
+
+  function addVerseToJournal(ref: string) {
+    const verse = versesByRef.get(ref);
+    startJournalDraft("Bible Verse", {
+      selectedVerseRefs: ref,
+      versePassage: verseWorkflowText(ref),
+      wordsToDefine: verse ? keyWordsForVerse(verse).slice(0, 6).join(", ") : "",
+      memoryVerse: ref,
+      sourceLabel: ref,
+    });
+  }
+
+  function addVerseToPrayer(ref: string) {
+    const verse = versesByRef.get(ref);
+    const now = new Date().toISOString();
+    const entry: PrayerEntry = {
+      id: makeId("prayer"),
+      name: `Scripture Prayer - ${ref}`,
+      category: "Special Requests",
+      request: verse ? `Pray through ${ref}: ${verse.plainText}` : `Pray through ${ref}.`,
+      dateAdded: now,
+      answerStatus: "Active",
+      notes: "Added from the Bible reader.",
+      bibleVerse: ref,
+      passage: `${verse?.book ?? book} ${verse?.chapter ?? chapter}`,
+      studyNote: verseWorkflowText(ref),
+      promiseVerse: ref,
+      rotation: "Weekly",
+      lastPrayedAt: "",
+      prayedDates: [],
+      praiseReport: "",
+      answeredAt: "",
+      updatedAt: now,
+    };
+    savePrayerEntryList((entries) => [entry, ...entries]);
+    setTab("prayer");
+    setSyncMessage(`${ref} added to the prayer list.`);
+  }
+
+  function addVerseToSermon(ref: string) {
+    appendSermonImport(`Bible Verse - ${ref}`, verseWorkflowText(ref));
+    openSermonWorkspace("builder");
+  }
+
+  function addVerseToStudyPlaylist(ref: string) {
+    const verse = versesByRef.get(ref);
+    if (!verse) {
+      setSyncMessage(`${ref} could not be added to the study playlist yet.`);
+      return;
+    }
+    appendItemToActiveStudyPlaylist({
+      id: makeId("playlist_item"),
+      type: "bible_verse",
+      label: verse.ref,
+      book: verse.book,
+      chapter: verse.chapter,
+      verseStart: verse.verse,
+      verseEnd: verse.verse,
+    });
+  }
+
+  function commentaryWorkflowText(entry?: CommentaryEntry) {
+    const activeEntry = entry ?? chapterCommentaryEntries[0];
+    if (!activeEntry) return "";
+    return [
+      `${activeEntry.author}, ${activeEntry.resource_title}`,
+      activeEntry.reference ?? `${activeEntry.book} ${activeEntry.chapter}`,
+      activeEntry.entry_text.slice(0, 1200),
+    ].filter(Boolean).join("\n");
+  }
+
+  function addCommentaryInsightToSermon(entry?: CommentaryEntry) {
+    const activeEntry = entry ?? chapterCommentaryEntries[0];
+    appendSermonImport(
+      activeEntry ? `Commentary Insight - ${activeEntry.author}` : "Commentary Insight",
+      commentaryWorkflowText(activeEntry),
+    );
+    openSermonWorkspace("builder");
+  }
+
+  function addCommentaryInsightToNote(ref: string, entry?: CommentaryEntry) {
+    const insight = commentaryWorkflowText(entry);
+    if (!insight) {
+      setSyncMessage("No reviewed commentary insight is available for this verse yet.");
+      return;
+    }
+    const existing = notesByRef.get(ref)?.[0]?.body ?? noteDraft;
+    setNoteDraft([existing, "Commentary insight:", insight].filter(Boolean).join("\n\n"));
+    setStudyRef(ref);
+    setStudyTab("notes");
+    setSyncMessage("Commentary insight added to the note draft. Save the note when ready.");
+  }
+
+  function addCommentaryInsightToJournal(entry?: CommentaryEntry) {
+    const activeEntry = entry ?? chapterCommentaryEntries[0];
+    const insight = commentaryWorkflowText(activeEntry);
+    if (!insight) {
+      setSyncMessage("No reviewed commentary insight is available for a journal entry yet.");
+      return;
+    }
+    startJournalDraft("Commentary Note", {
+      sourceLabel: activeEntry ? `${activeEntry.author} on ${activeEntry.book} ${activeEntry.chapter}` : `${book} ${chapter} commentary`,
+      selectedVerseRefs: selectedRef,
+      versePassage: `${book} ${chapter}`,
+      teachingThought: insight,
+    });
+  }
+
+  function addLibrarySelectionToSermon(kind: "quote" | "illustration") {
+    const resource = activeLibraryResource;
+    const selectedText = selectedLibraryText();
+    if (!resource || !selectedText) {
+      setSyncMessage("Select text in the Library reader first, then add it to sermon prep.");
+      return;
+    }
+    appendSermonImport(
+      kind === "quote" ? `Library Quote - ${resource.title}` : `Illustration Idea - ${resource.title}`,
+      `"${selectedText}"\n\nSource: ${resource.title} - ${resource.author}`,
+    );
+    openSermonWorkspace("builder");
+  }
+
+  function addStudyWorkflowToSermon(nextView: SermonWorkspaceView = "builder") {
+    appendSermonImport(`${book} ${chapter} Study Workflow`, sermonImportPackage.passageGuide);
+    setSermonWorkspaceView(nextView);
+    setTab("sermons");
+    if (nextView === "preaching") {
+      setSermonPreachingStartedAt(Date.now());
+      setSermonTimerNow(Date.now());
+    }
   }
 
   function bulletSermonDraft() {
@@ -12327,10 +12550,12 @@ export default function Home() {
                 prayerFocusEntries={todaysPrayerFocus}
                 prayerStats={prayerStats}
                 journalStats={journalStats}
-                proverbOfTheDay={proverbOfTheDay}
-                dailyProgress={todayProgress}
-                studyPlaylist={todayStudyPlaylist}
-                onContinue={() => setTab("bible")}
+	                proverbOfTheDay={proverbOfTheDay}
+	                dailyProgress={todayProgress}
+	                studyPlaylist={todayStudyPlaylist}
+	                smartResumeItems={smartResumeItems}
+	                ministryStats={ministryStats}
+	                onContinue={() => setTab("bible")}
                 onJohn316={() => goToVerse("John", 3, 16)}
                 onOpenProverb={() => goToVerse("Proverbs", todayProverbDay, 1)}
                 onListen={listenCurrentChapter}
@@ -12348,10 +12573,15 @@ export default function Home() {
                 }}
                 onRepeatMemory={(ref, nextProgress) => updateMemoryProgress(ref, nextProgress)}
                 onOpenPrayer={() => setTab("prayer")}
-                onOpenJournal={() => setTab("journal")}
-                onCreateJournal={() => startJournalDraft("Today", { sourceLabel: "Daily Growth Flow" })}
-                onOpenStudyPlaylist={() => setTab("bible")}
-              />
+	                onOpenJournal={() => setTab("journal")}
+	                onCreateJournal={() => startJournalDraft("Today", { sourceLabel: "Daily Growth Flow" })}
+	                onOpenStudyPlaylist={() => setTab("bible")}
+	                onOpenSermonResume={() => openSermonWorkspace("builder")}
+	                onOpenCommentaryResume={() => {
+	                  setTab("bible");
+	                  setStudyTab("commentary");
+	                }}
+	              />
             )}
 
             {tab === "bible" && (
@@ -12460,11 +12690,14 @@ export default function Home() {
                 onOpenReference={openReference}
                 onOpenBookIntroduction={() => openBookIntroduction(book)}
                 onOpenPassageGuide={openPassageGuide}
-                onOpenLibraryResource={(slug) => {
-                  void openLibraryResource(slug, "detail");
-                }}
-                onOpenPersonStudy={openPersonStudy}
-                onVerseClick={(ref) => {
+	                onOpenLibraryResource={(slug) => {
+	                  void openLibraryResource(slug, "detail");
+	                }}
+	                onOpenPersonStudy={openPersonStudy}
+	                onBuildSermonFromStudy={() => addStudyWorkflowToSermon("builder")}
+	                onCreateSlidesFromStudy={() => addStudyWorkflowToSermon("slides")}
+	                onPreachFromStudy={() => addStudyWorkflowToSermon("preaching")}
+	                onVerseClick={(ref) => {
                   setSelectedRef(ref);
                   openStudyDrawer(ref);
                 }}
@@ -12646,10 +12879,12 @@ export default function Home() {
                 onJumpBookmark={jumpLibraryBookmark}
                 onNoteDraftChange={setLibraryNoteDraft}
                 onBookmarkNameDraftChange={setLibraryBookmarkNameDraft}
-                onSaveAnnotation={saveLibraryAnnotation}
-                onCopySelection={copyLibrarySelection}
-                onCopyQuote={copyLibraryQuote}
-                onExportAnnotations={exportLibraryAnnotations}
+	                onSaveAnnotation={saveLibraryAnnotation}
+	                onCopySelection={copyLibrarySelection}
+	                onCopyQuote={copyLibraryQuote}
+	                onAddQuoteToSermon={() => addLibrarySelectionToSermon("quote")}
+	                onAddIllustrationToSermon={() => addLibrarySelectionToSermon("illustration")}
+	                onExportAnnotations={exportLibraryAnnotations}
                 onListenResource={(resource, text, progress) => {
                   startLibraryResourceListening(resource, text, progress);
                 }}
@@ -12890,13 +13125,20 @@ export default function Home() {
           onAddMemory={() => addMemoryVerse(studyRef)}
           onUpdateMemoryProgress={(progress) => updateMemoryProgress(studyRef, progress)}
           onRemoveMemory={() => removeMemoryVerse(studyRef)}
-          onOpenFullStudy={() => {
-            setFullStudyRef(studyRef);
-            setNoteDraft(notesByRef.get(studyRef)?.[0]?.body ?? "");
-            setStudyRef(null);
-            setTab("fullStudy");
-          }}
-          onToggleAudio={() => toggleSpeech(`verse-${studyRef}`, studyRef, `${includeVerseReferences ? `${studyRef}. ` : ""}${activeVerse.plainText}`)}
+	          onOpenFullStudy={() => {
+	            setFullStudyRef(studyRef);
+	            setNoteDraft(notesByRef.get(studyRef)?.[0]?.body ?? "");
+	            setStudyRef(null);
+	            setTab("fullStudy");
+	          }}
+	          onAddVerseToJournal={() => addVerseToJournal(studyRef)}
+	          onAddVerseToPrayer={() => addVerseToPrayer(studyRef)}
+	          onAddVerseToSermon={() => addVerseToSermon(studyRef)}
+	          onAddVerseToPlaylist={() => addVerseToStudyPlaylist(studyRef)}
+	          onAddCommentaryToSermon={(entry) => addCommentaryInsightToSermon(entry)}
+	          onAddCommentaryToNote={(entry) => addCommentaryInsightToNote(studyRef, entry)}
+	          onAddCommentaryToJournal={(entry) => addCommentaryInsightToJournal(entry)}
+	          onToggleAudio={() => toggleSpeech(`verse-${studyRef}`, studyRef, `${includeVerseReferences ? `${studyRef}. ` : ""}${activeVerse.plainText}`)}
           onSpeechRateChange={updateSpeechRate}
         />
       )}
@@ -12964,6 +13206,8 @@ function TodayScreen({
   proverbOfTheDay,
   dailyProgress,
   studyPlaylist,
+  smartResumeItems,
+  ministryStats,
   onContinue,
   onJohn316,
   onOpenProverb,
@@ -12977,6 +13221,8 @@ function TodayScreen({
   onOpenJournal,
   onCreateJournal,
   onOpenStudyPlaylist,
+  onOpenSermonResume,
+  onOpenCommentaryResume,
 }: {
   book: string;
   chapter: number;
@@ -12995,6 +13241,8 @@ function TodayScreen({
   proverbOfTheDay: string;
   dailyProgress: { bibleRead: boolean; prayerCompleted: boolean; journalCompleted: boolean; memoryReviewed: boolean };
   studyPlaylist: BibleAudioPlaylist | null;
+  smartResumeItems: TodayResumeItem[];
+  ministryStats: MinistryDashboardStats;
   onContinue: () => void;
   onJohn316: () => void;
   onOpenProverb: () => void;
@@ -13008,6 +13256,8 @@ function TodayScreen({
   onOpenJournal: () => void;
   onCreateJournal: () => void;
   onOpenStudyPlaylist: () => void;
+  onOpenSermonResume: () => void;
+  onOpenCommentaryResume: () => void;
 }) {
   const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
   const memoryProgress = memoryItem?.progress ?? 0;
@@ -13094,6 +13344,69 @@ function TodayScreen({
           actionLabel="Open"
           onClick={onOpenStudyPlaylist}
         />
+        <DailyFlowTile
+          label="Continue Sermon"
+          title={smartResumeItems.find((item) => item.label === "Current Sermon")?.title ?? "Sermon Workspace"}
+          detail={smartResumeItems.find((item) => item.label === "Current Sermon")?.detail ?? "Resume the current sermon or lesson draft."}
+          actionLabel="Open"
+          onClick={onOpenSermonResume}
+        />
+        <DailyFlowTile
+          label="Continue Journal"
+          title={smartResumeItems.find((item) => item.label === "Current Journal")?.title ?? "Scripture Journal"}
+          detail={smartResumeItems.find((item) => item.label === "Current Journal")?.detail ?? "Resume the latest Scripture Journal entry."}
+          actionLabel="Open"
+          onClick={onOpenJournal}
+        />
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
+        <TodayCard
+          icon={<Link size={18} />}
+          title="Smart Resume"
+          action={
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onOpenCommentaryResume} type="button">
+              Review Study
+            </button>
+          }
+        >
+          <div className="grid gap-2 sm:grid-cols-2">
+            {smartResumeItems.map((item) => {
+              const handler =
+                item.label === "Current Sermon" ? onOpenSermonResume :
+                item.label === "Current Journal" ? onOpenJournal :
+                item.label === "Last Library Book" ? onOpenLibrary :
+                item.label === "Last Commentary" ? onOpenCommentaryResume :
+                onContinue;
+              return (
+                <button
+                  key={`smart-resume-${item.label}`}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left transition hover:border-[var(--gold)]"
+                  onClick={handler}
+                  type="button"
+                >
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{item.label}</p>
+                  <p className="mt-2 line-clamp-2 text-sm font-semibold text-[var(--green)]">{item.title}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{item.detail}</p>
+                </button>
+              );
+            })}
+          </div>
+        </TodayCard>
+
+        <TodayCard icon={<BarChart3 size={18} />} title="Ministry Dashboard">
+          <div className="grid grid-cols-2 gap-2">
+            <MiniStat label="Sermons" value={String(ministryStats.sermonsCreated)} />
+            <MiniStat label="Lessons" value={String(ministryStats.lessonsCreated)} />
+            <MiniStat label="Study Hours" value={String(ministryStats.hoursStudied)} />
+            <MiniStat label="Books Done" value={String(ministryStats.booksCompleted)} />
+            <MiniStat label="Memory" value={String(ministryStats.memoryVerses)} />
+            <MiniStat label="Prayer" value={String(ministryStats.prayerEntries)} />
+          </div>
+          <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+            Reading streak: {ministryStats.readingStreak}
+          </p>
+        </TodayCard>
       </section>
 
       <section className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
@@ -15136,6 +15449,9 @@ function BibleReader({
   onOpenPassageGuide,
   onOpenLibraryResource,
   onOpenPersonStudy,
+  onBuildSermonFromStudy,
+  onCreateSlidesFromStudy,
+  onPreachFromStudy,
   onVerseClick,
   onWordClick,
 }: {
@@ -15245,6 +15561,9 @@ function BibleReader({
   onOpenPassageGuide: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
+  onBuildSermonFromStudy: () => void;
+  onCreateSlidesFromStudy: () => void;
+  onPreachFromStudy: () => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
@@ -15798,6 +16117,9 @@ function BibleReader({
         onOpenPersonStudy={onOpenPersonStudy}
         onRemoveMemoryVerse={onRemoveMemoryVerse}
         onUpdateMemoryProgress={onUpdateMemoryProgress}
+        onBuildSermonFromStudy={onBuildSermonFromStudy}
+        onCreateSlidesFromStudy={onCreateSlidesFromStudy}
+        onPreachFromStudy={onPreachFromStudy}
       />
 
       <article className="rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-8 md:py-7">
@@ -16854,6 +17176,9 @@ function ChapterStudyWorkflow({
   onOpenPersonStudy,
   onRemoveMemoryVerse,
   onUpdateMemoryProgress,
+  onBuildSermonFromStudy,
+  onCreateSlidesFromStudy,
+  onPreachFromStudy,
 }: {
   allVerses: BibleVerse[];
   analysis: ChapterStudyAnalysis;
@@ -16883,6 +17208,9 @@ function ChapterStudyWorkflow({
   onOpenPersonStudy: (personId: string) => void;
   onRemoveMemoryVerse: (ref: string) => void;
   onUpdateMemoryProgress: (ref: string, progress: number) => void;
+  onBuildSermonFromStudy: () => void;
+  onCreateSlidesFromStudy: () => void;
+  onPreachFromStudy: () => void;
 }) {
   const suggestedWords = analysis.repeatedWords.slice(0, 8);
   const memoryPreview = memoryForChapter[0] ?? null;
@@ -17079,9 +17407,46 @@ function ChapterStudyWorkflow({
             Teaching Feedback
           </a>
         </div>
-      </div>
+	      </div>
 
-      {activeStudyCollection && (
+	      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+	        <div className="flex flex-wrap items-center justify-between gap-3">
+	          <div>
+	            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Teaching Preparation Workflow</p>
+	            <p className="mt-1 text-sm font-semibold text-[var(--ink)]">Study Passage to Preach</p>
+	          </div>
+	          <div className="flex flex-wrap gap-2">
+	            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={onBuildSermonFromStudy} type="button">
+	              Build Sermon
+	            </button>
+	            <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={onCreateSlidesFromStudy} type="button">
+	              Create Slides
+	            </button>
+	            <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={onPreachFromStudy} type="button">
+	              Preach
+	            </button>
+	          </div>
+	        </div>
+	        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+	          {[
+	            "Study Passage",
+	            "Review Commentary",
+	            "Review Strong's",
+	            "Review Cross References",
+	            "Add Notes",
+	            "Build Sermon",
+	            "Create Slides",
+	            "Preach",
+	          ].map((step, index) => (
+	            <div key={`teaching-flow-${step}`} className="rounded-2xl border border-[var(--line)] bg-white px-3 py-2">
+	              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Step {index + 1}</p>
+	              <p className="mt-1 text-sm font-semibold text-[var(--green)]">{step}</p>
+	            </div>
+	          ))}
+	        </div>
+	      </div>
+
+	      {activeStudyCollection && (
         <div className="mt-4">
           <BibleStudyCollectionCard
             collection={activeStudyCollection}
@@ -19213,6 +19578,8 @@ function LibraryScreen({
   onSaveAnnotation,
   onCopySelection,
   onCopyQuote,
+  onAddQuoteToSermon,
+  onAddIllustrationToSermon,
   onExportAnnotations,
   onListenResource,
   onSpeechRateChange,
@@ -19289,6 +19656,8 @@ function LibraryScreen({
   onSaveAnnotation: (type: LibraryAnnotationType) => void;
   onCopySelection: () => void;
   onCopyQuote: () => void;
+  onAddQuoteToSermon: () => void;
+  onAddIllustrationToSermon: () => void;
   onExportAnnotations: () => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
@@ -19340,6 +19709,8 @@ function LibraryScreen({
         onSaveAnnotation={onSaveAnnotation}
         onCopySelection={onCopySelection}
         onCopyQuote={onCopyQuote}
+        onAddQuoteToSermon={onAddQuoteToSermon}
+        onAddIllustrationToSermon={onAddIllustrationToSermon}
         onExportAnnotations={onExportAnnotations}
         speechState={speechState}
         speechVoices={speechVoices}
@@ -22919,6 +23290,8 @@ function LibraryReader({
   onSaveAnnotation,
   onCopySelection,
   onCopyQuote,
+  onAddQuoteToSermon,
+  onAddIllustrationToSermon,
   onExportAnnotations,
   speechState,
   speechVoices,
@@ -22957,6 +23330,8 @@ function LibraryReader({
   onSaveAnnotation: (type: LibraryAnnotationType) => void;
   onCopySelection: () => void;
   onCopyQuote: () => void;
+  onAddQuoteToSermon: () => void;
+  onAddIllustrationToSermon: () => void;
   onExportAnnotations: () => void;
   speechState: SpeechState;
   speechVoices: SpeechSynthesisVoice[];
@@ -23211,6 +23586,22 @@ function LibraryReader({
           >
             <Share2 size={16} />
             Copy Quote
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onAddQuoteToSermon}
+            type="button"
+          >
+            <FileText size={16} />
+            Add Quote to Sermon
+          </button>
+          <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onAddIllustrationToSermon}
+            type="button"
+          >
+            <NotebookPen size={16} />
+            Add Illustration
           </button>
           <button
             className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
@@ -25385,6 +25776,13 @@ function StudyDrawer({
   onUpdateMemoryProgress,
   onRemoveMemory,
   onOpenFullStudy,
+  onAddVerseToJournal,
+  onAddVerseToPrayer,
+  onAddVerseToSermon,
+  onAddVerseToPlaylist,
+  onAddCommentaryToSermon,
+  onAddCommentaryToNote,
+  onAddCommentaryToJournal,
   onToggleAudio,
   onSpeechRateChange,
 }: {
@@ -25421,6 +25819,13 @@ function StudyDrawer({
   onUpdateMemoryProgress: (progress: number) => void;
   onRemoveMemory: () => void;
   onOpenFullStudy: () => void;
+  onAddVerseToJournal: () => void;
+  onAddVerseToPrayer: () => void;
+  onAddVerseToSermon: () => void;
+  onAddVerseToPlaylist: () => void;
+  onAddCommentaryToSermon: (entry?: CommentaryEntry) => void;
+  onAddCommentaryToNote: (entry?: CommentaryEntry) => void;
+  onAddCommentaryToJournal: (entry?: CommentaryEntry) => void;
   onToggleAudio: () => void;
   onSpeechRateChange: (rate: number) => void;
 }) {
@@ -25710,6 +26115,17 @@ function StudyDrawer({
                 <ActionButton icon={<Search size={18} />} label="Occurrences" onClick={() => onActiveTabChange("occurrences")} />
               </div>
 
+              <StudySection title="One-Click Workflow">
+                <div className="grid grid-cols-2 gap-2">
+                  <CompactActionButton icon={<NotebookPen size={17} />} label="Add to Journal" onClick={onAddVerseToJournal} />
+                  <CompactActionButton icon={<MessageSquareText size={17} />} label="Add to Prayer" onClick={onAddVerseToPrayer} />
+                  <CompactActionButton icon={<Brain size={17} />} label="Add to Memory" onClick={onAddMemory} />
+                  <CompactActionButton icon={<FileText size={17} />} label="Add to Sermon" onClick={onAddVerseToSermon} />
+                  <CompactActionButton icon={<ListMusic size={17} />} label="Add to Playlist" onClick={onAddVerseToPlaylist} />
+                  <CompactActionButton icon={<BookOpen size={17} />} label="Full Study" onClick={onOpenFullStudy} />
+                </div>
+              </StudySection>
+
               <WordLookupStrip verse={verse} onLookupWord={onLookupWord} />
 
               {syncMessage && (
@@ -25902,6 +26318,32 @@ function StudyDrawer({
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                   Verified entries appear here after Scripture, Webster, TSK, and curated connections. Commentary stays secondary to the Bible text.
                 </p>
+                <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                  <button
+                    className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white disabled:opacity-40"
+                    disabled={!filteredCommentaryEntries.length}
+                    onClick={() => onAddCommentaryToSermon(filteredCommentaryEntries[0])}
+                    type="button"
+                  >
+                    Add to Sermon
+                  </button>
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-40"
+                    disabled={!filteredCommentaryEntries.length}
+                    onClick={() => onAddCommentaryToNote(filteredCommentaryEntries[0])}
+                    type="button"
+                  >
+                    Add to Note
+                  </button>
+                  <button
+                    className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-40"
+                    disabled={!filteredCommentaryEntries.length}
+                    onClick={() => onAddCommentaryToJournal(filteredCommentaryEntries[0])}
+                    type="button"
+                  >
+                    Add to Journal
+                  </button>
+                </div>
                 <label className="mt-4 block text-sm font-semibold text-[var(--muted)]">
                   Resource
                   <select
