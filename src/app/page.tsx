@@ -53,15 +53,26 @@ import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1
 import jfbReviewedPhase4Batch2Commentary from "../../data/imports/jfb-reviewed-phase-4-batch-2-commentary.json";
 import jfbReviewedCoverageSprintBatch3Commentary from "../../data/imports/jfb-reviewed-coverage-sprint-batch-3-commentary.json";
 import jfbReviewedLibraryExpansionBatch4Commentary from "../../data/imports/jfb-reviewed-library-expansion-batch-4-commentary.json";
+import jfbReviewedPhase5GospelsActsCommentary from "../../data/imports/jfb-reviewed-phase-5-gospels-acts-commentary.json";
+import jfbReviewedPhase5ActsCorinthiansRevelationCommentary from "../../data/imports/jfb-reviewed-phase-5-acts-corinthians-revelation-commentary.json";
+import jfbReviewedPhase5RevelationPsalmsCommentary from "../../data/imports/jfb-reviewed-phase-5-revelation-psalms-commentary.json";
+import jfbReviewedPhase5Psalms4998Commentary from "../../data/imports/jfb-reviewed-phase-5-psalms-49-98-commentary.json";
+import jfbReviewedPhase5ProverbsGenesisCommentary from "../../data/imports/jfb-reviewed-phase-5-proverbs-genesis-commentary.json";
+import jfbReviewedPhase5GenesisExodusPsalmsCommentary from "../../data/imports/jfb-reviewed-phase-5-genesis-exodus-psalms-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
+import matthewHenryReviewedPhase5ProverbsCommentary from "../../data/imports/matthew-henry-reviewed-phase-5-proverbs-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
+import barnesReviewedPhase5ExodusCommentary from "../../data/imports/barnes-reviewed-phase-5-exodus-commentary.json";
+import barnesReviewedPhase5ProverbsCorinthiansCommentary from "../../data/imports/barnes-reviewed-phase-5-proverbs-corinthians-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
 import adamClarkeReviewedCoverageSprintGenesisCommentary from "../../data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json";
 import adamClarkeReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/adam-clarke-reviewed-library-expansion-gospels-acts-commentary.json";
+import adamClarkeReviewedPhase5ExodusCommentary from "../../data/imports/adam-clarke-reviewed-phase-5-exodus-commentary.json";
+import adamClarkeReviewedPhase5ProverbsCorinthiansCommentary from "../../data/imports/adam-clarke-reviewed-phase-5-proverbs-corinthians-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
@@ -5752,15 +5763,26 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedPhase4Batch2Commentary as CommentaryEntry[]),
   ...(jfbReviewedCoverageSprintBatch3Commentary as CommentaryEntry[]),
   ...(jfbReviewedLibraryExpansionBatch4Commentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5GospelsActsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5ActsCorinthiansRevelationCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5RevelationPsalmsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5Psalms4998Commentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5ProverbsGenesisCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase5GenesisExodusPsalmsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedPhase5ProverbsCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
+  ...(barnesReviewedPhase5ExodusCommentary as CommentaryEntry[]),
+  ...(barnesReviewedPhase5ProverbsCorinthiansCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedPhase5ExodusCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedPhase5ProverbsCorinthiansCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
 ].map((entry) => ({
