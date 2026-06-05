@@ -319,10 +319,14 @@ type SermonSlide = {
 
 type SermonLibraryItem = {
   id: string;
+  topic: string;
   title: string;
+  content: string;
   body: string;
   passage: string;
   source: string;
+  rightsStatus: string;
+  recommendedUse: string;
   tags: string[];
 };
 
@@ -1668,26 +1672,38 @@ const SERMON_IMAGE_THEME_SUGGESTIONS = [
 const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
   {
     id: "illustration-lost-place",
+    topic: "Clear teaching",
     title: "Do not lose your place",
+    content: "Use a simple physical Bible marker or road sign illustration to show why clear structure helps hearers follow the truth.",
     body: "Use a simple physical Bible marker or road sign illustration to show why clear structure helps hearers follow the truth.",
     passage: "Nehemiah 8:8",
     source: "Starter illustration prompt",
+    rightsStatus: "Original starter prompt - reviewed for beta use",
+    recommendedUse: "Use when teaching clarity, order, or helping hearers follow the passage.",
     tags: ["clarity", "teaching", "preaching"],
   },
   {
     id: "illustration-light",
+    topic: "Scripture guidance",
     title: "Light makes the path plain",
+    content: "Use the ordinary picture of a lamp in a dark place to explain Scripture giving direction one step at a time.",
     body: "Use the ordinary picture of a lamp in a dark place to explain Scripture giving direction one step at a time.",
     passage: "Psalm 119:105",
     source: "KJV Scripture prompt",
+    rightsStatus: "Original starter prompt with KJV reference only",
+    recommendedUse: "Use with passages about Scripture, guidance, light, or obedience.",
     tags: ["Scripture", "guidance"],
   },
   {
     id: "illustration-sowing",
+    topic: "Sowing and reaping",
     title: "Sowing and reaping",
+    content: "Use seed, soil, and harvest carefully where the passage itself supports the application.",
     body: "Use seed, soil, and harvest carefully where the passage itself supports the application.",
     passage: "Galatians 6:7",
     source: "KJV Scripture prompt",
+    rightsStatus: "Original starter prompt with KJV reference only",
+    recommendedUse: "Use only when the passage itself supports harvest, sowing, reaping, or spiritual consequence.",
     tags: ["application", "evangelism"],
   },
 ];
@@ -1695,18 +1711,26 @@ const SERMON_ILLUSTRATION_STARTERS: SermonLibraryItem[] = [
 const SERMON_QUOTE_STARTERS: SermonLibraryItem[] = [
   {
     id: "quote-scripture-first",
+    topic: "Scripture first",
     title: "Scripture first",
+    content: "Let the Bible text govern the lesson. Commentary and illustration should serve the passage, not replace it.",
     body: "Let the Bible text govern the lesson. Commentary and illustration should serve the passage, not replace it.",
     passage: "2 Timothy 3:16",
     source: "Father's Business review principle",
+    rightsStatus: "Original platform principle - reviewed for beta use",
+    recommendedUse: "Use as a reminder in teaching prep that Scripture remains primary.",
     tags: ["Scripture", "teaching"],
   },
   {
     id: "quote-plainly",
+    topic: "Plain exposition",
     title: "Give the sense plainly",
+    content: "Read the text, explain the sense, and help the hearer understand what God has said.",
     body: "Read the text, explain the sense, and help the hearer understand what God has said.",
     passage: "Nehemiah 8:8",
     source: "KJV teaching principle",
+    rightsStatus: "Original teaching summary with KJV reference only",
+    recommendedUse: "Use for lessons about exposition, Bible teaching, and preaching plainly.",
     tags: ["exposition", "clarity"],
   },
 ];
@@ -1714,18 +1738,26 @@ const SERMON_QUOTE_STARTERS: SermonLibraryItem[] = [
 const SERMON_APPLICATION_STARTERS: SermonLibraryItem[] = [
   {
     id: "application-believe",
+    topic: "Gospel response",
     title: "Believe what God has said",
+    content: "Call the hearer to respond to the passage with faith, obedience, repentance, prayer, or witness according to the text.",
     body: "Call the hearer to respond to the passage with faith, obedience, repentance, prayer, or witness according to the text.",
     passage: "John 3:16",
     source: "Starter application prompt",
+    rightsStatus: "Original starter prompt - reviewed for beta use",
+    recommendedUse: "Use with Gospel passages and response-focused invitations.",
     tags: ["Gospel", "response"],
   },
   {
     id: "application-pray",
+    topic: "Prayerful application",
     title: "Turn truth into prayer",
+    content: "Ask what this passage should cause the believer to confess, thank God for, ask God for, or obey.",
     body: "Ask what this passage should cause the believer to confess, thank God for, ask God for, or obey.",
     passage: "Psalm 139:23-24",
     source: "Scripture journal prompt",
+    rightsStatus: "Original journal prompt with KJV reference only",
+    recommendedUse: "Use when moving from study notes into prayer, obedience, or personal application.",
     tags: ["prayer", "journal"],
   },
 ];
@@ -7564,7 +7596,93 @@ function formatScriptureSlideText(text: string, display: SermonSlideVerseDisplay
     .join("\n");
 }
 
+function sermonSlideTemplatePatch(type: SermonSlideType): Partial<SermonSlide> {
+  if (type === "Scripture") {
+    return {
+      layout: "Scripture Focus",
+      fontScale: "Large",
+      titleScale: "Medium",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Open Bible",
+      imageSlot: "open-bible",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Main Point") {
+    return {
+      layout: "Teaching Point",
+      fontScale: "Normal",
+      titleScale: "Large",
+      textPlacement: "Left",
+      accentStyle: "Badge",
+      imageTheme: "Pulpit / Teaching",
+      imageSlot: "pulpit",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Quote") {
+    return {
+      layout: "Minimal",
+      fontScale: "Normal",
+      titleScale: "Small",
+      textPlacement: "Center",
+      accentStyle: "Panel",
+      imageTheme: "Parchment / Simple Texture",
+      imageSlot: "parchment",
+      backgroundIntensity: "Soft",
+    };
+  }
+  if (type === "Illustration") {
+    return {
+      layout: "Image Left",
+      fontScale: "Normal",
+      titleScale: "Medium",
+      textPlacement: "Left",
+      accentStyle: "Panel",
+      imageTheme: "Quiet Study",
+      imageSlot: "quiet-study",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Application") {
+    return {
+      layout: "Two Column",
+      fontScale: "Normal",
+      titleScale: "Medium",
+      textPlacement: "Left",
+      accentStyle: "Line",
+      imageTheme: "Light / Window",
+      imageSlot: "light-window",
+      backgroundIntensity: "Balanced",
+    };
+  }
+  if (type === "Closing / Invitation") {
+    return {
+      layout: "Centered",
+      fontScale: "Large",
+      titleScale: "Large",
+      textPlacement: "Center",
+      accentStyle: "Line",
+      imageTheme: "Cross",
+      imageSlot: "cross",
+      backgroundIntensity: "Strong",
+    };
+  }
+  return {
+    layout: "Centered",
+    fontScale: "Normal",
+    titleScale: "Large",
+    textPlacement: "Center",
+    accentStyle: "Line",
+    imageTheme: "Open Bible",
+    imageSlot: "open-bible",
+    backgroundIntensity: "Balanced",
+  };
+}
+
 function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = {}): SermonSlide {
+  const template = sermonSlideTemplatePatch(type);
   return normalizeSermonSlide({
     id: makeId("slide"),
     type,
@@ -7572,22 +7690,22 @@ function createSermonSlide(type: SermonSlideType, patch: Partial<SermonSlide> = 
     subtitle: patch.subtitle ?? "",
     body: patch.body ?? "",
     bibleText: patch.bibleText ?? "",
-	    speakerNotes: patch.speakerNotes ?? "",
-	    backgroundStyle: patch.backgroundStyle ?? "Theme",
-	    imageTheme: patch.imageTheme ?? "Open Bible",
-	    imageSlot: patch.imageSlot ?? "open-bible",
-	    layout: patch.layout ?? (type === "Scripture" ? "Scripture Focus" : "Centered"),
-	    fontScale: patch.fontScale ?? (type === "Scripture" ? "Large" : "Normal"),
-	    titleScale: patch.titleScale ?? "Medium",
-	    textPlacement: patch.textPlacement ?? "Center",
-	    accentStyle: patch.accentStyle ?? "Line",
-	    verseDisplay: patch.verseDisplay ?? "Reference + Text",
-	    backgroundIntensity: patch.backgroundIntensity ?? "Balanced",
-	    showImageMotif: patch.showImageMotif ?? true,
-	    showTypeLabel: patch.showTypeLabel ?? false,
-	    showImageLabel: patch.showImageLabel ?? false,
-	    showFooterBranding: patch.showFooterBranding ?? false,
-	  }, 0);
+    speakerNotes: patch.speakerNotes ?? "",
+    backgroundStyle: patch.backgroundStyle ?? "Theme",
+    imageTheme: patch.imageTheme ?? template.imageTheme ?? "Open Bible",
+    imageSlot: patch.imageSlot ?? template.imageSlot ?? "open-bible",
+    layout: patch.layout ?? template.layout ?? "Centered",
+    fontScale: patch.fontScale ?? template.fontScale ?? "Normal",
+    titleScale: patch.titleScale ?? template.titleScale ?? "Medium",
+    textPlacement: patch.textPlacement ?? template.textPlacement ?? "Center",
+    accentStyle: patch.accentStyle ?? template.accentStyle ?? "Line",
+    verseDisplay: patch.verseDisplay ?? "Reference + Text",
+    backgroundIntensity: patch.backgroundIntensity ?? template.backgroundIntensity ?? "Balanced",
+    showImageMotif: patch.showImageMotif ?? true,
+    showTypeLabel: patch.showTypeLabel ?? false,
+    showImageLabel: patch.showImageLabel ?? false,
+    showFooterBranding: patch.showFooterBranding ?? false,
+  }, 0);
 }
 
 function generateSermonSlides(entry: SermonEntry, scriptureText = ""): SermonSlide[] {
@@ -7680,6 +7798,30 @@ function sermonSlideOutline(slides: SermonSlide[]) {
     slide.bibleText ? `   Scripture: ${slide.bibleText}` : "",
     slide.speakerNotes ? `   Notes: ${slide.speakerNotes}` : "",
   ].filter(Boolean).join("\n")).join("\n\n");
+}
+
+function suggestedSermonLibraryItems(items: SermonLibraryItem[], searchText: string) {
+  const haystack = searchText.toLowerCase();
+  if (!haystack.trim()) return [];
+  return items
+    .map((item) => {
+      const terms = [
+        item.topic,
+        item.title,
+        item.passage,
+        item.source,
+        item.recommendedUse,
+        ...item.tags,
+      ].map((term) => term.toLowerCase());
+      const score = terms.reduce((total, term) => total + (term && haystack.includes(term) ? 2 : 0), 0)
+        + item.tags.reduce((total, tag) => total + (haystack.includes(tag.toLowerCase()) ? 1 : 0), 0)
+        + (haystack.includes(item.passage.toLowerCase()) ? 3 : 0);
+      return { item, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.item.title.localeCompare(b.item.title))
+    .map(({ item }) => item)
+    .slice(0, 3);
 }
 
 function transcriptSentences(transcript: string) {
@@ -25994,6 +26136,18 @@ function SermonWorkspaceScreen({
     const kindMatch = sermonKindFilter === "All" || entry.kind === sermonKindFilter;
     return searchMatch && statusMatch && kindMatch;
   });
+  const sermonSuggestionText = [
+    draft.title,
+    draft.theme,
+    draft.passage,
+    draft.outline,
+    draft.points,
+    draft.introduction,
+    draft.importedStudyNotes,
+  ].join(" ");
+  const suggestedIllustrations = suggestedSermonLibraryItems(illustrationLibrary, sermonSuggestionText);
+  const suggestedQuotes = suggestedSermonLibraryItems(quoteLibrary, sermonSuggestionText);
+  const suggestedApplications = suggestedSermonLibraryItems(applicationLibrary, sermonSuggestionText);
   const sectionPlaceholders: Record<SermonSectionKey, string> = {
     outline: "I. The need of the new birth...",
     introduction: "Hook, opening question, setting, and why the passage matters.",
@@ -26181,21 +26335,21 @@ function SermonWorkspaceScreen({
 	                </div>
 	              )}
 	            </button>
-	            <aside className="grid max-h-[38vh] gap-3 overflow-y-auto rounded-3xl border border-white/10 bg-white/[0.04] p-3 lg:max-h-none">
-	              <div className="rounded-2xl border border-white/10 bg-black/30 p-3">
+	            <aside className="grid max-h-[42vh] gap-3 overflow-y-auto rounded-3xl border border-white/10 bg-white/[0.04] p-3 lg:max-h-none lg:grid-rows-[auto_auto_1fr]">
+	              <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
 	                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Next Slide</p>
 	                {nextPresentationSlide && nextPresentationSlide !== presentationSlide ? (
 	                  <>
-	                    <p className="mt-2 text-sm font-semibold text-white">{nextPresentationSlide.title || nextPresentationSlide.type}</p>
-	                    <p className="mt-1 line-clamp-4 text-xs leading-5 text-white/60">{nextPresentationSlide.body || nextPresentationSlide.bibleText || "No body text yet."}</p>
+	                    <p className="mt-2 text-base font-semibold leading-snug text-white">{nextPresentationSlide.title || nextPresentationSlide.type}</p>
+	                    <p className="mt-2 line-clamp-5 text-sm leading-6 text-white/65">{nextPresentationSlide.body || nextPresentationSlide.bibleText || "No body text yet."}</p>
 	                  </>
 	                ) : (
 	                  <p className="mt-2 text-sm text-white/60">End of deck.</p>
 	                )}
 	              </div>
-	              <div className="rounded-2xl border border-white/10 bg-black/30 p-3">
+	              <div className="min-h-32 rounded-2xl border border-white/10 bg-black/30 p-4">
 	                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Presenter Notes</p>
-	                <p className="mt-2 text-sm leading-6 text-white/75">{presentationSlide?.speakerNotes || "No presenter notes for this slide."}</p>
+	                <p className="mt-2 text-base leading-7 text-white/75">{presentationSlide?.speakerNotes || "No presenter notes for this slide."}</p>
 	              </div>
 	              <div className="rounded-2xl border border-white/10 bg-black/30 p-3">
 	                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Slide Thumbnails</p>
@@ -26433,21 +26587,35 @@ function SermonWorkspaceScreen({
           </section>
 	        </div>
 	      ) : view === "slides" ? (
-	        <div className="grid gap-5 xl:grid-cols-[0.85fr_1.15fr]">
-	          <section className="space-y-4">
+	        <div className="grid min-w-0 gap-5 xl:grid-cols-[0.85fr_1.15fr]">
+	          <section className="min-w-0 space-y-4">
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Sermon & Bible Study Slide Builder</p>
-	              <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
+	              <h2 className="mt-2 break-words text-2xl font-semibold text-[var(--ink)]">Slide builder for {draft.title || "this sermon"}</h2>
 	              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
 	                Build simple Scripture-first slides from the sermon draft. This is a slide-prep tool for churches, not a ProPresenter replacement yet.
 	              </p>
 	              <div className="mt-4 flex flex-wrap gap-2">
 	                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={generateAndFocusSlides} type="button">Generate Slide Outline</button>
-	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={() => addSlide()} type="button">Add Slide</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onCopySlideOutline} type="button">Copy Slide Outline</button>
 	                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onDownloadSlidePlan} type="button">Download Slide Plan</button>
 	                <button className="rounded-full border border-[var(--green)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50" disabled={!sermonSlides.length} onClick={onExportPowerPoint} type="button">Download PowerPoint</button>
 	                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)] opacity-75" disabled type="button">Export PDF soon</button>
+	              </div>
+	              <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Add Slide Template</p>
+	                <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+	                  {(["Scripture", "Main Point", "Quote", "Illustration", "Application", "Closing / Invitation"] as SermonSlideType[]).map((type) => (
+	                    <button
+	                      key={`add-slide-template-${type}`}
+	                      className="shrink-0 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+	                      onClick={() => addSlide(type)}
+	                      type="button"
+	                    >
+	                      {type === "Closing / Invitation" ? "Invitation" : type}
+	                    </button>
+	                  ))}
+	                </div>
 	              </div>
 	            </article>
 
@@ -26623,7 +26791,7 @@ function SermonWorkspaceScreen({
 	            </article>
 	          </section>
 
-	          <section className="space-y-4">
+	          <section className="min-w-0 space-y-4">
 	            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
 	              <div className="flex flex-wrap items-center justify-between gap-3">
 	                <div>
@@ -26641,20 +26809,20 @@ function SermonWorkspaceScreen({
 	              </div>
 	              {activeSlide && (
 	                <div className="mt-4 grid gap-3 lg:grid-cols-2">
-	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
 	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Next Slide</p>
 	                    {sermonSlides[activeSlideIndex + 1] ? (
 	                      <>
-	                        <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{sermonSlides[activeSlideIndex + 1].title || sermonSlides[activeSlideIndex + 1].type}</p>
-	                        <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{sermonSlides[activeSlideIndex + 1].body || sermonSlides[activeSlideIndex + 1].bibleText || "No body text yet."}</p>
+	                        <p className="mt-2 text-base font-semibold leading-snug text-[var(--ink)]">{sermonSlides[activeSlideIndex + 1].title || sermonSlides[activeSlideIndex + 1].type}</p>
+	                        <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--muted)]">{sermonSlides[activeSlideIndex + 1].body || sermonSlides[activeSlideIndex + 1].bibleText || "No body text yet."}</p>
 	                      </>
 	                    ) : (
 	                      <p className="mt-2 text-sm leading-6 text-[var(--muted)]">End of deck.</p>
 	                    )}
 	                  </div>
-	                  <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+	                  <div className="min-h-28 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
 	                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--green)]">Presenter Notes</p>
-	                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
+	                    <p className="mt-2 text-sm leading-7 text-[var(--muted)]">{activeSlide.speakerNotes || "No presenter notes yet."}</p>
 	                  </div>
 	                </div>
 	              )}
@@ -26784,6 +26952,37 @@ function SermonWorkspaceScreen({
                 ))}
               </div>
               <SermonTextArea label="Imported study notes" value={draft.importedStudyNotes} onChange={(value) => onDraftChange({ importedStudyNotes: value })} />
+            </article>
+
+            <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Suggested Helps</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Matches for this sermon</h2>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                These are local reviewed starter items matched to the title, passage, theme, and current notes.
+              </p>
+              <div className="mt-4 grid gap-3">
+                <SermonSuggestionCard
+                  label="Illustration"
+                  item={suggestedIllustrations[0]}
+                  emptyText="Add a title, theme, or passage to surface a matching illustration."
+                  buttonLabel="Add illustration"
+                  onAdd={(item) => onDraftChange({ illustrations: [draft.illustrations, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })}
+                />
+                <SermonSuggestionCard
+                  label="Quote"
+                  item={suggestedQuotes[0]}
+                  emptyText="Add sermon details to surface a matching quote or teaching principle."
+                  buttonLabel="Add quote"
+                  onAdd={(item) => onDraftChange({ quotes: [draft.quotes, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })}
+                />
+                <SermonSuggestionCard
+                  label="Application"
+                  item={suggestedApplications[0]}
+                  emptyText="Add sermon details to surface a matching application prompt."
+                  buttonLabel="Add application"
+                  onAdd={(item) => onDraftChange({ applications: [draft.applications, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })}
+                />
+              </div>
             </article>
 
             <SermonLibraryPanel title="Illustration Library" items={illustrationLibrary} buttonLabel="Add illustration" onAdd={(item) => onDraftChange({ illustrations: [draft.illustrations, `${item.title} (${item.passage}) - ${item.body}`].filter(Boolean).join("\n\n") })} />
@@ -26956,17 +27155,21 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
   const textAlign = slide.textPlacement === "Left" || slide.layout === "Image Left" || slide.layout === "Two Column" ? "text-left" : "text-center";
   const gridLayout = slide.layout === "Image Left" || slide.layout === "Two Column";
   const verticalPlacement = slide.textPlacement === "Bottom" ? "justify-end" : slide.textPlacement === "Left" ? "justify-center" : "justify-center";
-  const maxWidth = slide.textPlacement === "Left" ? "max-w-3xl" : "max-w-4xl";
+  const slideText = `${slide.bibleText} ${slide.body}`.trim();
+  const hasBodyText = Boolean(slideText);
+  const denseText = slideText.length > 420;
+  const maxWidth = slide.layout === "Scripture Focus" ? "max-w-5xl" : slide.textPlacement === "Left" ? "max-w-3xl" : "max-w-4xl";
   const titleSize = slide.titleScale === "Large"
-    ? presentation ? "text-5xl md:text-7xl" : "text-3xl md:text-5xl"
+    ? presentation ? hasBodyText ? "text-4xl md:text-6xl" : "text-5xl md:text-7xl" : hasBodyText ? "text-3xl md:text-4xl" : "text-3xl md:text-5xl"
     : slide.titleScale === "Small"
       ? presentation ? "text-3xl md:text-5xl" : "text-2xl md:text-4xl"
-      : presentation ? "text-4xl md:text-6xl" : "text-3xl md:text-5xl";
+      : presentation ? hasBodyText ? "text-3xl md:text-5xl" : "text-4xl md:text-6xl" : hasBodyText ? "text-2xl md:text-4xl" : "text-3xl md:text-5xl";
   const bodySize = slide.fontScale === "Large"
-    ? presentation ? "text-2xl md:text-4xl" : "text-xl md:text-3xl"
+    ? presentation ? denseText ? "text-xl md:text-3xl" : "text-2xl md:text-4xl" : denseText ? "text-lg md:text-2xl" : "text-xl md:text-3xl"
     : slide.fontScale === "Compact"
       ? presentation ? "text-xl md:text-2xl" : "text-base md:text-xl"
-      : presentation ? "text-2xl md:text-3xl" : "text-lg md:text-2xl";
+      : presentation ? denseText ? "text-xl md:text-2xl" : "text-2xl md:text-3xl" : denseText ? "text-base md:text-xl" : "text-lg md:text-2xl";
+  const bodyLeading = denseText ? "leading-normal" : "leading-snug";
   const chromeVisible = slide.showTypeLabel || slide.showImageLabel;
   const intensityOverlay = slide.backgroundIntensity === "Soft"
     ? "linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.10))"
@@ -26982,7 +27185,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
         color: foreground,
       }}
     >
-      <div className={`relative flex h-full w-full flex-col p-5 md:p-8 ${textAlign}`}>
+      <div className={`relative flex h-full w-full flex-col ${presentation ? "p-6 md:p-10" : "p-5 md:p-7"} ${textAlign}`}>
         <div className="pointer-events-none absolute inset-0">
           {slide.showImageMotif && <SermonSlideMotif slotId={slide.imageSlot} color={foreground} />}
         </div>
@@ -26999,18 +27202,18 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
               {imageSlot.label}
             </div>
           )}
-          <div className={`${slide.accentStyle === "Panel" ? "rounded-3xl bg-white/15 p-5 shadow-sm backdrop-blur-sm" : readability.needsPanel ? readability.panelClass : ""}`}>
+          <div className={`${slide.accentStyle === "Panel" ? "rounded-3xl bg-white/15 p-5 shadow-sm backdrop-blur-sm md:p-6" : readability.needsPanel ? readability.panelClass : ""}`}>
             {slide.accentStyle === "Badge" && slide.subtitle && <span className="inline-flex rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</span>}
             {slide.accentStyle !== "Badge" && slide.subtitle && <p className="text-sm font-semibold uppercase tracking-[0.16em]" style={{ color: theme.accent }}>{slide.subtitle}</p>}
             {slide.accentStyle === "Line" && <div className={`mb-4 mt-3 h-1 w-16 rounded-full ${textAlign === "text-center" ? "mx-auto" : ""}`} style={{ backgroundColor: theme.accent }} />}
             <h3 className={`${titleSize} ${slide.accentStyle === "Line" ? "mt-0" : "mt-3"} font-semibold leading-tight`}>{slide.title || "Untitled slide"}</h3>
             {slide.bibleText && (
-              <p className={`${bodySize} mt-5 whitespace-pre-wrap font-serif leading-snug`}>
+              <p className={`${bodySize} mt-4 whitespace-pre-wrap font-serif ${bodyLeading} md:mt-5`}>
                 {slide.bibleText}
               </p>
             )}
             {slide.body && (
-              <p className={`${bodySize} mt-5 whitespace-pre-wrap leading-snug`} style={{ color: slide.bibleText ? muted : foreground }}>
+              <p className={`${bodySize} mt-4 whitespace-pre-wrap ${bodyLeading} md:mt-5`} style={{ color: slide.bibleText ? muted : foreground }}>
                 {slide.body}
               </p>
             )}
@@ -27176,6 +27379,40 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
   );
 }
 
+function SermonSuggestionCard({
+  label,
+  item,
+  emptyText,
+  buttonLabel,
+  onAdd,
+}: {
+  label: string;
+  item?: SermonLibraryItem;
+  emptyText: string;
+  buttonLabel: string;
+  onAdd: (item: SermonLibraryItem) => void;
+}) {
+  return (
+    <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</p>
+      {item ? (
+        <>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.topic}</span>
+          </div>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.passage} - {item.source}</p>
+          <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{item.content}</p>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{item.recommendedUse}</p>
+          <button className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAdd(item)} type="button">{buttonLabel}</button>
+        </>
+      ) : (
+        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{emptyText}</p>
+      )}
+    </div>
+  );
+}
+
 function SermonLibraryPanel({ title, items, buttonLabel, onAdd }: { title: string; items: SermonLibraryItem[]; buttonLabel: string; onAdd: (item: SermonLibraryItem) => void }) {
   return (
     <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -27183,9 +27420,16 @@ function SermonLibraryPanel({ title, items, buttonLabel, onAdd }: { title: strin
       <div className="mt-4 space-y-2">
         {items.map((item) => (
           <div key={item.id} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-            <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+              <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.topic}</span>
+            </div>
             <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{item.passage} - {item.source}</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{item.body}</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{item.content}</p>
+            <div className="mt-3 grid gap-2 text-xs leading-5 text-[var(--muted)]">
+              <p><span className="font-semibold text-[var(--green)]">Rights:</span> {item.rightsStatus}</p>
+              <p><span className="font-semibold text-[var(--green)]">Use:</span> {item.recommendedUse}</p>
+            </div>
             <button className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAdd(item)} type="button">{buttonLabel}</button>
           </div>
         ))}
