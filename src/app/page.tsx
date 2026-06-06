@@ -2575,7 +2575,14 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "The Word of God is always most precious to the man who most lives upon it.",
     ],
     relatedAuthorIds: ["ryle", "moody", "bounds"],
-    recommendedReadingOrder: ["Around the Wicket Gate", "Gleanings among the Sheaves", "The Art of Illustration", "Talks to Farmers"],
+    recommendedReadingOrder: [
+      "Around the Wicket Gate",
+      "Gleanings among the Sheaves",
+      "The Art of Illustration",
+      "The Treasury of David, Volume 2",
+      "Sermons of Rev. C. H. Spurgeon, Volume 1",
+      "Talks to Farmers",
+    ],
     subjects: ["Preaching", "Evangelism", "Christian Living"],
   },
   {
@@ -2725,7 +2732,14 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "A Bible-reading Christian is a growing Christian.",
     ],
     relatedAuthorIds: ["spurgeon", "moody", "bounds"],
-    recommendedReadingOrder: ["The Cross: A Tract for the Times", "Practical Religion", "A Sketch of the Life and Labors of George Whitefield"],
+    recommendedReadingOrder: [
+      "The Cross: A Tract for the Times",
+      "Practical Religion",
+      "Expository Thoughts on the Gospels",
+      "Expository Thoughts on the Gospels: St. Mark",
+      "Knots Untied",
+      "A Sketch of the Life and Labors of George Whitefield",
+    ],
     subjects: ["Christian Living", "Biography", "Evangelism"],
   },
   {
@@ -2807,7 +2821,15 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Use doctrinal outlines as study helps under the text of Scripture.",
     ],
     relatedAuthorIds: ["moody", "spurgeon", "bounds"],
-    recommendedReadingOrder: ["How to Succeed in the Christian Life", "How to Bring Men to Christ", "The Person and Work of The Holy Spirit", "The Fundamental Doctrines of the Christian Faith"],
+    recommendedReadingOrder: [
+      "How to Study the Bible for Greatest Profit",
+      "How to Succeed in the Christian Life",
+      "How to Bring Men to Christ",
+      "Studies in the Life and Teachings of Our Lord",
+      "Revival Addresses",
+      "The Person and Work of The Holy Spirit",
+      "The Fundamental Doctrines of the Christian Faith",
+    ],
     subjects: ["Bible Study", "Evangelism", "Doctrine"],
   },
   {
@@ -2867,7 +2889,14 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Use Bible biography to strengthen application without replacing exposition.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "taylor"],
-    recommendedReadingOrder: ["John the Baptist", "Love to the Uttermost"],
+    recommendedReadingOrder: [
+      "David: Shepherd, Psalmist, King",
+      "Life and the Way Through",
+      "John the Baptist",
+      "Love to the Uttermost",
+      "Our Daily Homily, Volume 2",
+      "Our Daily Homily, Volume 3",
+    ],
     subjects: ["Bible Study", "Biography", "Christian Living"],
   },
   {
@@ -12001,15 +12030,21 @@ export default function Home() {
     });
   }
 
-  function addLibrarySelectionToSermon(kind: "quote" | "illustration") {
+  function addLibrarySelectionToSermon(kind: "quote" | "illustration" | "note") {
     const resource = activeLibraryResource;
     const selectedText = selectedLibraryText();
     if (!resource || !selectedText) {
       setSyncMessage("Select text in the Library reader first, then add it to sermon prep.");
       return;
     }
+    const title =
+      kind === "quote"
+        ? `Library Quote - ${resource.title}`
+        : kind === "illustration"
+          ? `Illustration Idea - ${resource.title}`
+          : `Sermon Note - ${resource.title}`;
     appendSermonImport(
-      kind === "quote" ? `Library Quote - ${resource.title}` : `Illustration Idea - ${resource.title}`,
+      title,
       `"${selectedText}"\n\nSource: ${resource.title} - ${resource.author}`,
     );
     openSermonWorkspace("builder");
@@ -15384,6 +15419,7 @@ export default function Home() {
 	                onCopyQuote={copyLibraryQuote}
 	                onAddQuoteToSermon={() => addLibrarySelectionToSermon("quote")}
 	                onAddIllustrationToSermon={() => addLibrarySelectionToSermon("illustration")}
+	                onAddSermonNote={() => addLibrarySelectionToSermon("note")}
 	                onExportAnnotations={exportLibraryAnnotations}
                 onListenResource={(resource, text, progress) => {
                   startLibraryResourceListening(resource, text, progress);
@@ -22896,6 +22932,65 @@ function audiobookMetadataForResource(resource: LibraryResource, rate = 1) {
   };
 }
 
+function libraryStudyText(resource: LibraryResource) {
+  return [
+    resource.title,
+    resource.author,
+    resource.category,
+    resource.collection,
+    resource.description,
+    resource.recommended_use,
+    resource.resource_labels.join(" "),
+    resource.resource_warnings.join(" "),
+  ].join(" ").toLowerCase();
+}
+
+function uniqueStudyCards(cards: Array<{ label: string; note: string }>, limit = 4) {
+  const seen = new Set<string>();
+  return cards.filter((card) => {
+    const key = card.label.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).slice(0, limit);
+}
+
+function relatedPassagesForLibraryResource(resource: LibraryResource) {
+  const text = libraryStudyText(resource);
+  const cards: Array<{ label: string; note: string }> = [];
+
+  if (text.includes("john") || text.includes("gospel") || text.includes("salvation")) cards.push({ label: "John 3", note: "Gospel, new birth, and personal evangelism." });
+  if (text.includes("roman") || text.includes("doctrine") || text.includes("faith")) cards.push({ label: "Romans 8", note: "Doctrine, assurance, and Christian living." });
+  if (text.includes("prayer") || text.includes("intercession")) cards.push({ label: "Luke 11", note: "Prayer instruction and daily dependence." });
+  if (text.includes("psalm") || text.includes("david") || text.includes("treasury")) cards.push({ label: "Psalm 23", note: "David, shepherd care, and devotional reading." });
+  if (text.includes("mission") || text.includes("evangel")) cards.push({ label: "Acts 13", note: "Missionary calling and Gospel labor." });
+  if (text.includes("preach") || text.includes("teach") || text.includes("study the bible")) cards.push({ label: "2 Timothy 2:15", note: "Bible study and approved work." });
+
+  return uniqueStudyCards(cards.length ? cards : [
+    { label: "John 3", note: "Start with a clear Gospel chapter." },
+    { label: "Romans 8", note: "Use for doctrine, assurance, and application." },
+  ], 3);
+}
+
+function sermonIdeasForLibraryResource(resource: LibraryResource) {
+  const text = libraryStudyText(resource);
+  const cards: Array<{ label: string; note: string }> = [];
+
+  if (text.includes("prayer")) cards.push({ label: "Prayer emphasis", note: "Pull a quote, application, or burden for a prayer lesson." });
+  if (text.includes("evangel") || text.includes("salvation")) cards.push({ label: "Gospel appeal", note: "Use as support for invitation, witness, or evangelism training." });
+  if (text.includes("preach") || text.includes("illustration")) cards.push({ label: "Teaching illustration", note: "Save a short selection into sermon prep while reading." });
+  if (text.includes("biography") || text.includes("mission") || text.includes("david")) cards.push({ label: "Life example", note: "Use the account as a careful historical or biographical illustration." });
+  if (text.includes("doctrine") || text.includes("bible study")) cards.push({ label: "Lesson support", note: "Add definitions, outlines, or study observations to teaching notes." });
+
+  return uniqueStudyCards(cards.length ? cards : [
+    { label: "Sermon support", note: "Select text in the reader and add it to sermon notes, quotes, or illustrations." },
+  ], 3);
+}
+
+function isCommentaryLikeResource(resource: LibraryResource) {
+  return libraryResourceMatches(resource, ["commentary", "expository", "exposition", "notes on", "homily"]);
+}
+
 function isEnglishSpeechVoice(voice: SpeechSynthesisVoice) {
   const lang = voice.lang.toLowerCase();
   return !lang || lang.startsWith("en");
@@ -23511,6 +23606,7 @@ function LibraryScreen({
   onCopyQuote,
   onAddQuoteToSermon,
   onAddIllustrationToSermon,
+  onAddSermonNote,
   onExportAnnotations,
   onListenResource,
   onSpeechRateChange,
@@ -23595,6 +23691,7 @@ function LibraryScreen({
   onCopyQuote: () => void;
   onAddQuoteToSermon: () => void;
   onAddIllustrationToSermon: () => void;
+  onAddSermonNote: () => void;
   onExportAnnotations: () => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
@@ -23651,6 +23748,7 @@ function LibraryScreen({
         onCopyQuote={onCopyQuote}
         onAddQuoteToSermon={onAddQuoteToSermon}
         onAddIllustrationToSermon={onAddIllustrationToSermon}
+        onAddSermonNote={onAddSermonNote}
         onExportAnnotations={onExportAnnotations}
         speechState={speechState}
         hasSpeechSynthesis={hasSpeechSynthesis}
@@ -23691,7 +23789,7 @@ function LibraryScreen({
         relatedResources={resources
           .filter((resource) => resource.slug !== activeResource.slug)
           .filter((resource) => resource.author === activeResource.author || resource.category === activeResource.category)
-          .slice(0, 4)}
+          .slice(0, 8)}
         onOpenDetail={onOpenDetail}
       />
     );
@@ -27308,6 +27406,11 @@ function LibraryDetail({
   onOpenDetail: (slug: string) => void;
 }) {
   const audiobookMeta = audiobookMetadataForResource(resource);
+  const relatedCommentaries = relatedResources.filter(isCommentaryLikeResource).slice(0, 3);
+  const relatedBooks = relatedResources.filter((related) => !isCommentaryLikeResource(related)).slice(0, 3);
+  const relatedPassages = relatedPassagesForLibraryResource(resource);
+  const relatedSermons = sermonIdeasForLibraryResource(resource);
+  const recommendedNextResource = relatedResources[0] ?? null;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -27370,6 +27473,95 @@ function LibraryDetail({
             <div className="mt-3 h-2 rounded-full bg-white">
               <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
             </div>
+          </div>
+        )}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Connections</p>
+            <h2 className="mt-2 text-lg font-semibold text-[var(--ink)]">Use this resource in Bible study</h2>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onOpenReader} type="button">
+              Read
+            </button>
+            <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onOpenReader} type="button">
+              Listen
+            </button>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
+              Add to Playlist
+            </button>
+          </div>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related passages</p>
+            <div className="mt-3 grid gap-2">
+              {relatedPassages.map((passage) => (
+                <div key={`related-passage-${resource.slug}-${passage.label}`} className="rounded-2xl bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{passage.label}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{passage.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related sermons</p>
+            <div className="mt-3 grid gap-2">
+              {relatedSermons.map((idea) => (
+                <div key={`related-sermon-${resource.slug}-${idea.label}`} className="rounded-2xl bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{idea.label}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{idea.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related books</p>
+            <div className="mt-3 grid gap-2">
+              {relatedBooks.length ? relatedBooks.map((related) => (
+                <button
+                  key={`related-book-${related.slug}`}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                  onClick={() => onOpenDetail(related.slug)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--green)]">{related.title}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{related.author}</p>
+                </button>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No related books are connected yet.</p>
+              )}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related commentaries</p>
+            <div className="mt-3 grid gap-2">
+              {relatedCommentaries.length ? relatedCommentaries.map((related) => (
+                <button
+                  key={`related-commentary-${related.slug}`}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+                  onClick={() => onOpenDetail(related.slug)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--green)]">{related.title}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{related.author}</p>
+                </button>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No related commentaries are connected yet.</p>
+              )}
+            </div>
+          </div>
+        </div>
+        {recommendedNextResource && (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended next resource</p>
+            <button className="mt-2 text-left" onClick={() => onOpenDetail(recommendedNextResource.slug)} type="button">
+              <span className="block text-base font-semibold text-[var(--green)]">{recommendedNextResource.title}</span>
+              <span className="mt-1 block text-sm text-[var(--muted)]">{recommendedNextResource.author}</span>
+            </button>
           </div>
         )}
       </section>
@@ -27481,6 +27673,7 @@ function LibraryReader({
   onCopyQuote,
   onAddQuoteToSermon,
   onAddIllustrationToSermon,
+  onAddSermonNote,
   onExportAnnotations,
   speechState,
   hasSpeechSynthesis,
@@ -27527,6 +27720,7 @@ function LibraryReader({
   onCopyQuote: () => void;
   onAddQuoteToSermon: () => void;
   onAddIllustrationToSermon: () => void;
+  onAddSermonNote: () => void;
   onExportAnnotations: () => void;
   speechState: SpeechState;
   hasSpeechSynthesis: boolean;
@@ -27570,6 +27764,21 @@ function LibraryReader({
   const activeChunkIndex = speechActive && readerChunks.length
     ? Math.min(readerChunks.length - 1, Math.max(0, speechState.currentChunkIndex ?? Math.floor((listeningValue / 100) * readerChunks.length)))
     : null;
+  const listeningMarkers = useMemo(() => {
+    if (!readerChunks.length) return [] as Array<{ label: string; progress: number }>;
+    const markerCount = Math.min(6, Math.max(1, Math.ceil(readerChunks.length / 35)));
+    const markerStep = Math.max(1, Math.floor(readerChunks.length / markerCount));
+    const markers: Array<{ label: string; progress: number }> = [];
+    for (let index = 0; index < readerChunks.length; index += markerStep) {
+      markers.push({
+        label: `Part ${markers.length + 1}`,
+        progress: Math.round((index / Math.max(1, readerChunks.length - 1)) * 100),
+      });
+      if (markers.length >= 6) break;
+    }
+    if (!markers.some((marker) => marker.progress === 100)) markers.push({ label: "End", progress: 100 });
+    return markers;
+  }, [readerChunks.length]);
   const readerChunkRefs = useRef<Array<HTMLParagraphElement | null>>([]);
 
   useEffect(() => {
@@ -27805,6 +28014,14 @@ function LibraryReader({
             Add Illustration
           </button>
           <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={onAddSermonNote}
+            type="button"
+          >
+            <FileText size={16} />
+            Add Sermon Note
+          </button>
+          <button
             className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
             onClick={() => onSaveAnnotation("bookmark")}
             type="button"
@@ -27859,6 +28076,27 @@ function LibraryReader({
           onToggleVoiceFavorite={onToggleVoiceFavorite}
           onApplyVoiceProfile={onApplyVoiceProfile}
         />
+        <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="grid gap-3 md:grid-cols-4">
+            <StatusCard label="Continue listening" status={listeningValue > 0 ? `${formatPercent(listeningValue)} saved` : "Ready"} good />
+            <StatusCard label="Current item" status={activeChunkIndex === null ? "Not playing" : `Paragraph ${activeChunkIndex + 1} of ${readerChunks.length}`} good={activeChunkIndex !== null} />
+            <StatusCard label="Next item" status={activeChunkIndex === null ? "Press Listen" : activeChunkIndex + 1 < readerChunks.length ? `Paragraph ${activeChunkIndex + 2}` : "End of resource"} good />
+            <StatusCard label="Follow text" status={speechActive ? "On" : "Prepared"} good />
+          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter markers</span>
+            {listeningMarkers.map((marker) => (
+              <button
+                key={`listening-marker-${resource.slug}-${marker.label}-${marker.progress}`}
+                className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onJumpBookmark(marker.progress)}
+                type="button"
+              >
+                {marker.label} · {marker.progress}%
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
           <div className="grid gap-2 md:grid-cols-[1fr_1fr_auto_auto]">
             <input

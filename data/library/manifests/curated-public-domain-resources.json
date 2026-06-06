@@ -28375,5 +28375,603 @@
     "checksum_sha256": "66ce21a3c3b4469ac62dbf0b07bdd4ba0e1bd1985f087280238e490a73569c03",
     "file_size_bytes": 1073447,
     "word_count": 167854
+  },
+  {
+    "title": "Life and the Way Through",
+    "author": "F. B. Meyer",
+    "year": 1913,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/lifewaythrough00meye/lifewaythrough00meye_djvu.txt",
+    "download_url": "https://archive.org/download/lifewaythrough00meye/lifewaythrough00meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/life-and-the-way-through-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item lifewaythrough00meye lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Devotional Christian living resource for sustained reading, listening, and sermon application support. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Devotional Christian living resource for sustained reading, listening, and sermon application support.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life and the Way Through",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 190,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7395fa5832a2534e6dc9842a4884629278accda339d47b5f2f32a2038db001e8",
+    "file_size_bytes": 275552,
+    "word_count": 42706
+  },
+  {
+    "title": "Our Daily Homily, Volume 2",
+    "author": "F. B. Meyer",
+    "year": 1898,
+    "category": "Preaching & Teaching",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/ourdailyhomily02meye/ourdailyhomily02meye_djvu.txt",
+    "download_url": "https://archive.org/download/ourdailyhomily02meye/ourdailyhomily02meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/our-daily-homily-volume-2-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item ourdailyhomily02meye lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Short devotional and homiletic readings for daily study, teaching prompts, and listening. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Short devotional and homiletic readings for daily study, teaching prompts, and listening.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Our Daily Homily, Volume 2",
+      "author": "F. B. Meyer",
+      "category": "Preaching & Teaching",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 361,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "64d4325d67fdbb027e5f15c4e70317d89fb5a9fb34314821a009e67393c0a19b",
+    "file_size_bytes": 510847,
+    "word_count": 81203
+  },
+  {
+    "title": "Our Daily Homily, Volume 3",
+    "author": "F. B. Meyer",
+    "year": 1898,
+    "category": "Preaching & Teaching",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/ourdailyhomily03meye/ourdailyhomily03meye_djvu.txt",
+    "download_url": "https://archive.org/download/ourdailyhomily03meye/ourdailyhomily03meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/our-daily-homily-volume-3-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item ourdailyhomily03meye lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Short devotional and homiletic readings for daily study, teaching prompts, and listening. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Short devotional and homiletic readings for daily study, teaching prompts, and listening.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Our Daily Homily, Volume 3",
+      "author": "F. B. Meyer",
+      "category": "Preaching & Teaching",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 292,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f0617cd8d38be6e734dd3addd72d1cd5b7cfa45b35ff5963c18da98f0d5c3193",
+    "file_size_bytes": 413342,
+    "word_count": 65639
+  },
+  {
+    "title": "David: Shepherd, Psalmist, King",
+    "author": "F. B. Meyer",
+    "year": 1910,
+    "category": "Bible study helps",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/davidshepherdpsa00meyeuoft/davidshepherdpsa00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/davidshepherdpsa00meyeuoft/davidshepherdpsa00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/david-shepherd-psalmist-king-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item davidshepherdpsa00meyeuoft lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Bible biography and devotional exposition for Old Testament study, teaching, and related sermon preparation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Bible biography and devotional exposition for Old Testament study, teaching, and related sermon preparation.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "David: Shepherd, Psalmist, King",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 279,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4ea5658059ea6cb9baf2c7504b2f51af7e2c2e179156129a828fd29afc42c28f",
+    "file_size_bytes": 405207,
+    "word_count": 62879
+  },
+  {
+    "title": "How to Study the Bible for Greatest Profit",
+    "author": "R. A. Torrey",
+    "year": 1903,
+    "category": "Bible study helps",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/howtostudybiblef00torriala/howtostudybiblef00torriala_djvu.txt",
+    "download_url": "https://archive.org/download/howtostudybiblef00torriala/howtostudybiblef00torriala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/how-to-study-the-bible-for-greatest-profit-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item howtostudybiblef00torriala lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Practical Bible study method resource for teachers, preachers, and serious Bible students. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Practical Bible study method resource for teachers, preachers, and serious Bible students.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Study the Bible for Greatest Profit",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 110,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ad347f5b7532585adfecb8954954fbfd111ac54d8b58f3c885d82c7e1e1fd826",
+    "file_size_bytes": 157428,
+    "word_count": 24638
+  },
+  {
+    "title": "Studies in the Life and Teachings of Our Lord",
+    "author": "R. A. Torrey",
+    "year": 1909,
+    "category": "Bible study helps",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/studiesinlifetea00torr/studiesinlifetea00torr_djvu.txt",
+    "download_url": "https://archive.org/download/studiesinlifetea00torr/studiesinlifetea00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/studies-in-the-life-and-teachings-of-our-lord-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item studiesinlifetea00torr lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Life of Christ study resource for Gospel reading paths, teaching preparation, and sermon study. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Life of Christ study resource for Gospel reading paths, teaching preparation, and sermon study.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Studies in the Life and Teachings of Our Lord",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 890,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a08fb16eca0a1f6fceb2e7eb67827d990d88776f66690cc5065187956971e6fb",
+    "file_size_bytes": 1279283,
+    "word_count": 200148
+  },
+  {
+    "title": "Revival Addresses",
+    "author": "R. A. Torrey",
+    "year": 1903,
+    "category": "Preaching & Teaching",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/revivaladdresses00torr/revivaladdresses00torr_djvu.txt",
+    "download_url": "https://archive.org/download/revivaladdresses00torr/revivaladdresses00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/revival-addresses-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item revivaladdresses00torr lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Evangelistic and revival preaching resource for sermon preparation and application study. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Evangelistic and revival preaching resource for sermon preparation and application study.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Revival Addresses",
+      "author": "R. A. Torrey",
+      "category": "Preaching & Teaching",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 396,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ac0050da8aee47c02e245318fea262b9bf5cd54ddee752d6ac29b6285b792d1a",
+    "file_size_bytes": 548819,
+    "word_count": 89137
+  },
+  {
+    "title": "Expository Thoughts on the Gospels: St. Mark",
+    "author": "J. C. Ryle",
+    "year": 1859,
+    "category": "Commentaries",
+    "collection": "J. C. Ryle Collection",
+    "source_url": "https://archive.org/download/expositorythough00ryleiala/expositorythough00ryleiala_djvu.txt",
+    "download_url": "https://archive.org/download/expositorythough00ryleiala/expositorythough00ryleiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/expository-thoughts-on-the-gospels-st-mark-j-c-ryle.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item expositorythough00ryleiala lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Gospel exposition for teaching and commentary comparison after direct Scripture reading. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gospel exposition for teaching and commentary comparison after direct Scripture reading.",
+    "resource_labels": [
+      "J. C. Ryle Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expository Thoughts on the Gospels: St. Mark",
+      "author": "J. C. Ryle",
+      "category": "Commentaries",
+      "collection": "J. C. Ryle Collection",
+      "badge": "J. C. Ryle Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 624,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7bbee83a56fc6cffb3d546c70330fcc95996fca9ac516d5700898326c8a2d2e7",
+    "file_size_bytes": 899856,
+    "word_count": 140479
+  },
+  {
+    "title": "Expository Thoughts on the Gospels",
+    "author": "J. C. Ryle",
+    "year": 1857,
+    "category": "Commentaries",
+    "collection": "J. C. Ryle Collection",
+    "source_url": "https://archive.org/download/expositorythough07ryle/expositorythough07ryle_djvu.txt",
+    "download_url": "https://archive.org/download/expositorythough07ryle/expositorythough07ryle_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/expository-thoughts-on-the-gospels-j-c-ryle.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item expositorythough07ryle lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Gospel exposition for family study, teaching preparation, and commentary comparison. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gospel exposition for family study, teaching preparation, and commentary comparison.",
+    "resource_labels": [
+      "J. C. Ryle Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expository Thoughts on the Gospels",
+      "author": "J. C. Ryle",
+      "category": "Commentaries",
+      "collection": "J. C. Ryle Collection",
+      "badge": "J. C. Ryle Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1005,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6aa687f8826120cee751d5fc086dd1c085019f7aac281328f35ae33a62dc0151",
+    "file_size_bytes": 1447745,
+    "word_count": 226208
+  },
+  {
+    "title": "Knots Untied",
+    "author": "J. C. Ryle",
+    "year": 1885,
+    "category": "Christian Living",
+    "collection": "J. C. Ryle Collection",
+    "source_url": "https://archive.org/download/knotsuntied00ryleuoft/knotsuntied00ryleuoft_djvu.txt",
+    "download_url": "https://archive.org/download/knotsuntied00ryleuoft/knotsuntied00ryleuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/knots-untied-j-c-ryle.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item knotsuntied00ryleuoft lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Plain doctrinal and practical Christian living resource with perspective labels. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Plain doctrinal and practical Christian living resource with perspective labels.",
+    "resource_labels": [
+      "J. C. Ryle Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Knots Untied",
+      "author": "J. C. Ryle",
+      "category": "Christian Living",
+      "collection": "J. C. Ryle Collection",
+      "badge": "J. C. Ryle Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 827,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a1391f00e029081df02bd75e36bf4314b00e348a864dadc8dde12de7376f7c78",
+    "file_size_bytes": 1199783,
+    "word_count": 186031
+  },
+  {
+    "title": "The Treasury of David, Volume 2",
+    "author": "C. H. Spurgeon",
+    "year": 1881,
+    "category": "Commentaries",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/treasuryofdavid02spuruoft/treasuryofdavid02spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/treasuryofdavid02spuruoft/treasuryofdavid02spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-treasury-of-david-volume-2-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item treasuryofdavid02spuruoft lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Psalms exposition and devotional commentary for teaching, preaching, and related Scripture study. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Psalms exposition and devotional commentary for teaching, preaching, and related Scripture study.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Treasury of David, Volume 2",
+      "author": "C. H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1819,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c876049435bd72ee8121e9672bf417b3e98f880dec4d3eb4b455121758bfb591",
+    "file_size_bytes": 2587162,
+    "word_count": 409186
+  },
+  {
+    "title": "Sermons of Rev. C. H. Spurgeon, Volume 1",
+    "author": "C. H. Spurgeon",
+    "year": 1857,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonssermons01spuruoft/spurgeonssermons01spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonssermons01spuruoft/spurgeonssermons01spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-of-rev-c-h-spurgeon-volume-1-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonssermons01spuruoft lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon sermon volume for preaching study, illustrations, quotations, and listening. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon sermon volume for preaching study, illustrations, quotations, and listening.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons of Rev. C. H. Spurgeon, Volume 1",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 564,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1590dc7f273fe7847ad2cdcbdf37cd3e40c01e45dbbdfb9ca4d4529e0cecd347",
+    "file_size_bytes": 782511,
+    "word_count": 126836
+  },
+  {
+    "title": "Sermons of Rev. C. H. Spurgeon, Volume 6",
+    "author": "C. H. Spurgeon",
+    "year": 1857,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonssermons06spuruoft/spurgeonssermons06spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonssermons06spuruoft/spurgeonssermons06spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-of-rev-c-h-spurgeon-volume-6-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonssermons06spuruoft lists possible copyright status NOT_IN_COPYRIGHT. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon sermon volume for preaching study, illustrations, quotations, and listening. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon sermon volume for preaching study, illustrations, quotations, and listening.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons of Rev. C. H. Spurgeon, Volume 6",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 867,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c1d6a43b81c8eac86ae441c4eb75be362f17faf024cd9486a38194bd8aeed90e",
+    "file_size_bytes": 1189336,
+    "word_count": 195017
   }
 ]
