@@ -11728,6 +11728,15 @@ export default function Home() {
     setTab("passageGuide");
   }
 
+  function openCommentaryCenter() {
+    recordRecentPassage(book, chapter, versesByRef.get(selectedRef)?.verse ?? verseJump);
+    setStudyRef(null);
+    setTab("passageGuide");
+    window.setTimeout(() => {
+      document.getElementById("passage-commentary")?.scrollIntoView({ block: "start", behavior: "smooth" });
+    }, 80);
+  }
+
   function openReference(targetRef: string) {
     const targetVerse = allVerses.find((candidate) => candidate.ref === targetRef);
     if (!targetVerse) {
@@ -13655,9 +13664,10 @@ export default function Home() {
                 onOpenReference={openReference}
                 onOpenBookIntroduction={() => openBookIntroduction(book)}
                 onOpenPassageGuide={openPassageGuide}
-	                onOpenLibraryResource={(slug) => {
-	                  void openLibraryResource(slug, "detail");
-	                }}
+                onOpenCommentaryCenter={openCommentaryCenter}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
 	                onOpenPersonStudy={openPersonStudy}
 	                onBuildSermonFromStudy={() => addStudyWorkflowToSermon("builder")}
 	                onCreateSlidesFromStudy={() => addStudyWorkflowToSermon("slides")}
@@ -16460,6 +16470,7 @@ function BibleReader({
   onOpenReference,
   onOpenBookIntroduction,
   onOpenPassageGuide,
+  onOpenCommentaryCenter,
   onOpenLibraryResource,
   onOpenPersonStudy,
   onBuildSermonFromStudy,
@@ -16577,6 +16588,7 @@ function BibleReader({
   onOpenReference: (targetRef: string) => void;
   onOpenBookIntroduction: () => void;
   onOpenPassageGuide: () => void;
+  onOpenCommentaryCenter: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onBuildSermonFromStudy: () => void;
@@ -16595,6 +16607,12 @@ function BibleReader({
     () => buildWordExplorer(explorerWord, book, chapter, allVerses),
     [allVerses, book, chapter, explorerWord],
   );
+  const commentaryAuthors = useMemo(
+    () => Array.from(new Set(chapterCommentaryEntries.map((entry) => entry.author))).sort(),
+    [chapterCommentaryEntries],
+  );
+  const commentaryOrder = useMemo(() => commentaryProfilesForEntries(chapterCommentaryEntries), [chapterCommentaryEntries]);
+  const commentaryConsensus = useMemo(() => commentaryComparisonInsights(chapterCommentaryEntries), [chapterCommentaryEntries]);
   const chapterNotes = Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`));
   const memoryForChapter = scriptureMemory.filter((item) => item.verse_ref.startsWith(`${book} ${chapter}:`));
   const playlistLibraryOptions = libraryResources
@@ -16805,6 +16823,90 @@ function BibleReader({
           passages={recentPassages}
           onOpenPassage={onOpenPassage}
         />
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary for this chapter</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{book} {chapter} commentary center</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              {chapterCommentaryEntries.length
+                ? commentaryChapterSummary(chapterCommentaryEntries)
+                : "No verified commentary is available for this chapter yet."}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              {chapterCommentaryEntries.length} entries
+            </span>
+            <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+              {commentaryAuthors.length} authors
+            </span>
+          </div>
+        </div>
+
+        {chapterCommentaryEntries.length ? (
+          <div className="mt-4 grid gap-3 xl:grid-cols-[0.95fr_1.05fr]">
+            <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended order</p>
+                <button
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={onOpenCommentaryCenter}
+                  type="button"
+                >
+                  Open commentary
+                </button>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {commentaryOrder.length ? commentaryOrder.map((profile, index) => (
+                  <span key={`reader-commentary-order-${profile.author}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                    {index + 1}. {profile.author}
+                  </span>
+                )) : commentaryAuthors.map((author, index) => (
+                  <span key={`reader-commentary-author-${author}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                    {index + 1}. {author}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                Read the KJV chapter first, then compare commentary voices for explanation, teaching value, and application.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Quick comparison</p>
+              <div className="mt-3 grid gap-2 md:grid-cols-3">
+                <ComparisonInsight label="Agreement" body={commentaryConsensus.agreement} />
+                <ComparisonInsight label="Differences" body={commentaryConsensus.distinct} />
+                <ComparisonInsight label="Teaching" body={commentaryConsensus.teaching} />
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white"
+                  onClick={onOpenCommentaryCenter}
+                  type="button"
+                >
+                  <FileText size={14} />
+                  Quick open
+                </button>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-xs font-semibold text-[var(--green)]"
+                  onClick={onListenCommentary}
+                  type="button"
+                >
+                  <Headphones size={14} />
+                  Listen commentary
+                </button>
+              </div>
+            </article>
+          </div>
+        ) : (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
+            Commentary import is source-first and review-first. Chapters appear here only after the source, edition, and rights notes are documented.
+          </div>
+        )}
       </section>
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
@@ -17847,6 +17949,69 @@ function commentaryReferenceLabel(entry: CommentaryEntry) {
   return entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`;
 }
 
+function commentaryReferenceSearchText(entry: CommentaryEntry) {
+  const verseRefs = Array.from(
+    { length: Math.max(1, entry.verse_end - entry.verse_start + 1) },
+    (_, index) => `${entry.book} ${entry.chapter}:${entry.verse_start + index}`,
+  );
+  return [
+    commentaryReferenceLabel(entry),
+    `${entry.book} ${entry.chapter}`,
+    ...verseRefs,
+  ].join(" ");
+}
+
+function commentaryEntryMatchesSearch(entry: CommentaryEntry, terms: string[]) {
+  if (!terms.length) return true;
+  const haystack = [
+    commentaryReferenceSearchText(entry),
+    entry.author,
+    entry.resource_title,
+    entry.source_title ?? "",
+    entry.recommended_use ?? "",
+    entry.entry_text,
+  ].join(" ").toLowerCase();
+  return terms.every((term) => haystack.includes(term));
+}
+
+function commentaryPublicStatusLabel(status: ResourceImportStatus) {
+  if (status === "Verified") return "Verified";
+  if (status === "Permission Needed") return "Permission needed";
+  if (status === "Personal Use Only") return "Personal use only";
+  if (status === "Do Not Import") return "Not public";
+  return "Under review";
+}
+
+function commentaryGrowthStatusLabel(status: CommentaryGrowthPriority["status"]) {
+  if (status === "Verified samples") return "Samples ready";
+  return "Under review";
+}
+
+const COMMENTARY_EXPANSION_PRIORITY = [
+  "The Pulpit Commentary",
+  "Pulpit Commentary",
+  "The Biblical Illustrator",
+  "Biblical Illustrator",
+  "H. A. Ironside",
+  "William Kelly",
+  "J. N. Darby",
+  "F. W. Grant",
+  "Arno C. Gaebelein",
+  "A. C. Gaebelein",
+];
+
+function commentaryExpansionPriority(candidate: CommentaryExpansionCandidate) {
+  const candidateText = `${candidate.author} ${candidate.resourceTitle}`.toLowerCase();
+  const index = COMMENTARY_EXPANSION_PRIORITY.findIndex((name) => candidateText.includes(name.toLowerCase()));
+  return index === -1 ? COMMENTARY_EXPANSION_PRIORITY.length : index;
+}
+
+function commentaryGrowthPriority(item: CommentaryGrowthPriority) {
+  const itemText = `${item.author} ${item.focus}`.toLowerCase();
+  const index = COMMENTARY_EXPANSION_PRIORITY.findIndex((name) => itemText.includes(name.toLowerCase()));
+  return index === -1 ? COMMENTARY_EXPANSION_PRIORITY.length : index;
+}
+
 function commentaryChapterSummary(entries: CommentaryEntry[]) {
   if (!entries.length) return "No reviewed commentary entries are available for this chapter yet.";
   const authors = Array.from(new Set(entries.map((entry) => entry.author))).join(", ");
@@ -18013,7 +18178,11 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       return a.author.localeCompare(b.author);
     }),
     stagingSummaries: buildCommentaryStagingSummaries(entries),
-    candidateAuthors: COMMENTARY_EXPANSION_CANDIDATES,
+    candidateAuthors: [...COMMENTARY_EXPANSION_CANDIDATES].sort((a, b) => {
+      const priorityDiff = commentaryExpansionPriority(a) - commentaryExpansionPriority(b);
+      if (priorityDiff !== 0) return priorityDiff;
+      return a.author.localeCompare(b.author);
+    }),
   };
 }
 
@@ -23557,7 +23726,18 @@ function CommentaryLibraryBrowser({
   );
   const [selectedAuthor, setSelectedAuthor] = useState("All");
   const [selectedBook, setSelectedBook] = useState(books[0] ?? "John");
+  const [commentarySearchTerm, setCommentarySearchTerm] = useState("");
   const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? "John";
+  const commentarySearchTerms = useMemo(
+    () => commentarySearchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean),
+    [commentarySearchTerm],
+  );
+  const commentarySearchResults = useMemo(
+    () => commentarySearchTerms.length
+      ? entries.filter((entry) => commentaryEntryMatchesSearch(entry, commentarySearchTerms)).slice(0, 40)
+      : [],
+    [commentarySearchTerms, entries],
+  );
   const filteredByBookAndAuthor = useMemo(
     () => entries.filter((entry) => entry.book === safeBook && (selectedAuthor === "All" || entry.author === selectedAuthor)),
     [entries, safeBook, selectedAuthor],
@@ -23593,6 +23773,86 @@ function CommentaryLibraryBrowser({
         <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
           {entries.length} public entries
         </span>
+      </div>
+
+      <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+        <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          Search commentary by verse, chapter, author, or keyword
+          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-4">
+            <Search size={18} className="shrink-0 text-[var(--green)]" />
+            <input
+              className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+              placeholder="John 3:16, Romans 5, Matthew Henry, grace..."
+              value={commentarySearchTerm}
+              onChange={(event) => setCommentarySearchTerm(event.target.value)}
+            />
+            {commentarySearchTerm && (
+              <button
+                className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                onClick={() => setCommentarySearchTerm("")}
+                type="button"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+        </label>
+        {commentarySearchTerms.length > 0 && (
+          <div className="mt-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-[var(--ink)]">
+                {commentarySearchResults.length} commentary result{commentarySearchResults.length === 1 ? "" : "s"}
+              </p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Verified public entries only</p>
+            </div>
+            <div className="mt-3 grid gap-2 lg:grid-cols-2">
+              {commentarySearchResults.length ? commentarySearchResults.map((entry) => (
+                <article key={`commentary-search-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-semibold text-[var(--green)]">{commentaryReferenceLabel(entry)}</p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.author}</p>
+                    </div>
+                    <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{entry.resource_title}</span>
+                  </div>
+                  <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <button
+                      className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                      onClick={() => onOpenReference(`${entry.book} ${entry.chapter}:${entry.verse_start}`)}
+                      type="button"
+                    >
+                      Open verse
+                    </button>
+                    <button
+                      className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => onListenChapter(entry.book, entry.chapter, [entry])}
+                      type="button"
+                    >
+                      Listen
+                    </button>
+                    <button
+                      className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                      onClick={() => {
+                        setSelectedAuthor(entry.author);
+                        setSelectedBook(entry.book);
+                        setSelectedChapter(entry.chapter);
+                        setCommentarySearchTerm("");
+                      }}
+                      type="button"
+                    >
+                      Open chapter
+                    </button>
+                  </div>
+                </article>
+              )) : (
+                <p className="rounded-2xl border border-[var(--line)] bg-white p-4 text-sm leading-6 text-[var(--muted)]">
+                  No verified commentary entries matched that search yet.
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mt-4 grid gap-3 md:grid-cols-3">
@@ -23969,7 +24229,7 @@ function CommentaryCoverageDashboard({
                 <div className="flex items-center justify-between gap-2">
                   <p className="text-sm font-semibold text-[var(--ink)]">{author.author}</p>
                   <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(author.status)}`}>
-                    {author.status}
+                    {commentaryPublicStatusLabel(author.status)}
                   </span>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
@@ -24042,11 +24302,14 @@ function CommentaryCoverageDashboard({
                     {candidate.author}
                   </button>
                   <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(candidate.status)}`}>
-                    {candidate.status}
+                    {commentaryPublicStatusLabel(candidate.status)}
                   </span>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.resourceTitle}</p>
-                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.rightsNotes}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.recommendedUse}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  Source, edition, and rights documentation required before public import.
+                </p>
               </div>
             ))}
           </div>
@@ -24263,11 +24526,13 @@ function LibraryAuthorScreen({
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="text-sm font-semibold text-[var(--green)]">{candidate.resourceTitle}</p>
                 <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(candidate.status)}`}>
-                  {candidate.status}
+                  {commentaryPublicStatusLabel(candidate.status)}
                 </span>
               </div>
-              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{candidate.sourcePlan}</p>
-              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Rights: {candidate.rightsNotes}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{candidate.recommendedUse}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+                Source, edition, and rights documentation required before public import.
+              </p>
             </div>
           ) : (
             <p className="mt-3 text-sm leading-6 text-[var(--muted)]">No commentary volumes are linked to this author yet.</p>
@@ -25997,6 +26262,14 @@ function PassageGuideScreen({
   const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
   const teachingIllustrations = passageTeachingIllustrationPrompts({ passage, topWords, connections });
   const commentaryOrder = commentaryProfilesForEntries(commentaryEntries);
+  const commentaryCenterAuthors = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside"];
+  const availableCommentaryAuthors = new Set(commentaryAuthors);
+  const commentaryCenterProfiles = commentaryCenterAuthors.map((author) => ({
+    author,
+    profile: commentaryGuideProfileFor(author),
+    available: availableCommentaryAuthors.has(author),
+    entries: commentaryEntries.filter((entry) => entry.author === author).length,
+  }));
   const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources);
   const summaryBody = bookIntroduction
     ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
@@ -26336,9 +26609,31 @@ function PassageGuideScreen({
         </div>
       </StudySection>
 
-      <StudySection id="passage-commentary" title="Commentary Comparison">
+      <StudySection id="passage-commentary" title="Commentary Center">
         {commentaryEntries.length ? (
           <div className="space-y-3">
+            <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+              {commentaryCenterProfiles.map((item) => (
+                <article
+                  key={`passage-commentary-center-${item.author}`}
+                  className={`rounded-2xl border p-3 ${
+                    item.available ? "border-[var(--line)] bg-[var(--paper)]" : "border-dashed border-[var(--line)] bg-white"
+                  }`}
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <p className="text-sm font-semibold text-[var(--green)]">{item.author}</p>
+                    <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${
+                      item.available ? "bg-white text-[var(--green)]" : "bg-[var(--paper)] text-[var(--muted)]"
+                    }`}>
+                      {item.available ? `${item.entries} ready` : "Under review"}
+                    </span>
+                  </div>
+                  <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">
+                    {item.profile?.bestUse ?? "Future commentary voice; source, edition, and rights notes must be documented first."}
+                  </p>
+                </article>
+              ))}
+            </div>
             <CommentaryChapterSummaryCard entries={commentaryEntries} compact onListen={onListenCommentary} />
             <CommentaryGuideCard entries={commentaryEntries} compact />
             <CommentaryComparisonCard entries={commentaryEntries} compact />
@@ -26379,11 +26674,13 @@ function PassageGuideScreen({
             <details className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <summary className="cursor-pointer text-sm font-semibold text-[var(--green)]">Content growth priority</summary>
               <div className="mt-3 grid gap-2 md:grid-cols-2">
-                {PASSAGE_GUIDE_COMMENTARY_GROWTH.map((item) => (
+                {[...PASSAGE_GUIDE_COMMENTARY_GROWTH].sort((a, b) => commentaryGrowthPriority(a) - commentaryGrowthPriority(b)).map((item) => (
                   <article key={`commentary-growth-${item.author}`} className="rounded-xl bg-white p-3">
                     <div className="flex flex-wrap items-start justify-between gap-2">
                       <p className="text-sm font-semibold text-[var(--ink)]">{item.author}</p>
-                      <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{item.status}</span>
+                      <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+                        {commentaryGrowthStatusLabel(item.status)}
+                      </span>
                     </div>
                     <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{item.focus}</p>
                     <p className="mt-2 text-xs leading-5 text-[var(--ink)]">Next: {item.nextStep}</p>
