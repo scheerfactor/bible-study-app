@@ -1,8 +1,8 @@
 # Release Notes
 
-## Connected Workflow Beta Hardening
+## Final Beta Depth And QA Sprint
 
-This release focuses on making the app feel like one connected Bible study platform without adding another major module.
+This release focuses on private beta depth: stronger commentary coverage, more Bible tool starter data, clearer tester docs, and listening QA.
 
 ## Added
 
@@ -19,10 +19,18 @@ This release focuses on making the app feel like one connected Bible study platf
 - Library reader can send selected text as a sermon quote or illustration idea.
 - Teaching Workflow shows the path from Study Passage to Preach.
 - Beta tester documentation now includes a simple start-here path, feedback form, known limitations, and release checklist.
+- Matthew Henry public commentary coverage now finishes Isaiah 51-66 and continues through Jeremiah, Lamentations, and Ezekiel 1-27.
+- JFB public commentary coverage now includes the remaining late New Testament epistles through Jude.
+- TSK beta-depth reviewed samples were added for John 3, Romans 8, Amos 1, Daniel 7, and Revelation 13.
+- Strong's starter entries were expanded for Romans 8 and Amos study words.
+- Daniel 7 and Revelation 13 now have targeted background notes for beta study testing.
+- Private beta docs were added:
+  - PRIVATE_BETA_START_HERE.md
+  - TESTER_TASKS.md
 
 ## Verified
 
-- Library QA passes with 540 verified public resources.
+- Library QA passes with 696 verified public resources.
 - Commentary validation passes.
 - Strong's validation passes.
 - Lint passes.
@@ -34,4 +42,5 @@ This release focuses on making the app feel like one connected Bible study platf
 - Signed-out data is local to the browser/device.
 - Prayer, Journal, Library progress, playlists, memory, and sermons are local-first in beta.
 - PowerPoint export is an MVP.
+- TSK and Strong's are not full imports yet; they are reviewed starter/beta datasets.
 - PDF, Keynote, Proclaim, licensed audio, AI tools, payments, public uploads, and church management are not ready yet.

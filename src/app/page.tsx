@@ -46,6 +46,7 @@ import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
+import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
@@ -78,12 +79,16 @@ import jfbReviewedPhase7EzekielCommentary from "../../data/imports/jfb-reviewed-
 import jfbReviewedPhase7DanielMinorProphetsStartCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
 import jfbReviewedPhase7MinorProphetsCompleteCommentary from "../../data/imports/jfb-reviewed-phase-7-minor-prophets-complete-commentary.json";
 import jfbReviewedPhase8PsalmsCompletionCommentary from "../../data/imports/jfb-reviewed-phase-8-psalms-completion-commentary.json";
+import jfbReviewedBetaDepthEpistlesBatch1Commentary from "../../data/imports/jfb-reviewed-beta-depth-epistles-batch-1-commentary.json";
+import jfbReviewedBetaDepthEpistlesBatch2Commentary from "../../data/imports/jfb-reviewed-beta-depth-epistles-batch-2-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
 import matthewHenryReviewedPhase5ProverbsCommentary from "../../data/imports/matthew-henry-reviewed-phase-5-proverbs-commentary.json";
 import matthewHenryReviewedPhase6LeviticusNumbersStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-6-leviticus-numbers-start-commentary.json";
 import matthewHenryReviewedPhase8IsaiahStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-8-isaiah-start-commentary.json";
+import matthewHenryReviewedBetaDepthIsaiahJeremiahCommentary from "../../data/imports/matthew-henry-reviewed-beta-depth-isaiah-jeremiah-commentary.json";
+import matthewHenryReviewedBetaDepthJeremiahEzekielCommentary from "../../data/imports/matthew-henry-reviewed-beta-depth-jeremiah-ezekiel-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
@@ -5885,10 +5890,13 @@ const dictionaryAliases: Record<string, string> = {
   beasts: "beast",
   covenants: "covenant",
   dominions: "dominion",
+  groanings: "groaning",
+  intercession: "intercede",
   kingdoms: "kingdom",
   marks: "mark",
   prophecies: "prophecy",
   spirits: "spirit",
+  transgressions: "transgression",
   visions: "vision",
   worlds: "world",
 };
@@ -6118,6 +6126,81 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     keyOccurrences: ["Matthew 5:21", "John 3:19", "John 5:24", "Hebrews 9:27", "Revelation 20:12"],
     keyVerses: ["John 3:19", "John 5:24", "Hebrews 9:27", "Revelation 20:12"],
     note: "Reviewed starter entry for prophecy, Amos, Romans, and evangelistic studies.",
+  },
+  adoption: {
+    strongsNumber: "G5206",
+    originalWord: "huiothesia",
+    displayWord: "adoption",
+    pronunciation: "hwee-oth-es-ee'-ah",
+    root: "huios / huiothesia",
+    rootChain: ["G5207 son", "G5206 adoption"],
+    relatedWords: ["adoption", "son", "children"],
+    plainMeaning: "Adoption or placing as a son. In Romans 8 it helps explain the believer's standing and assurance.",
+    websterWord: "adoption",
+    firstOccurrence: "Romans 8:15",
+    keyOccurrences: ["Romans 8:15", "Romans 8:23", "Romans 9:4", "Galatians 4:5", "Ephesians 1:5"],
+    keyVerses: ["Romans 8:15", "Galatians 4:5", "Ephesians 1:5"],
+    note: "Reviewed starter entry for Romans 8 and assurance studies.",
+  },
+  intercede: {
+    strongsNumber: "G5241",
+    originalWord: "huperentugchano",
+    displayWord: "intercede",
+    pronunciation: "hoop-er-en-toong-khan'-o",
+    root: "entugchano / huperentugchano",
+    rootChain: ["G1793 intercede", "G5241 intercede for"],
+    relatedWords: ["intercession", "intercede", "maketh intercession"],
+    plainMeaning: "To intercede on behalf of another. Romans 8 uses it of the Spirit's help in prayer.",
+    websterWord: "intercede",
+    firstOccurrence: "Romans 8:26",
+    keyOccurrences: ["Romans 8:26"],
+    keyVerses: ["Romans 8:26"],
+    note: "Reviewed starter entry for prayer, Romans 8, and teaching preparation.",
+  },
+  groaning: {
+    strongsNumber: "G4726",
+    originalWord: "stenagmos",
+    displayWord: "groaning",
+    pronunciation: "sten-ag-mos'",
+    root: "stenazo / stenagmos",
+    rootChain: ["G4727 groan", "G4726 groaning"],
+    relatedWords: ["groaning", "groanings", "sighing"],
+    plainMeaning: "A groaning or sighing. Romans 8 connects groaning with prayer weakness and the Spirit's help.",
+    websterWord: "groaning",
+    firstOccurrence: "Acts 7:34",
+    keyOccurrences: ["Acts 7:34", "Romans 8:26"],
+    keyVerses: ["Romans 8:26"],
+    note: "Reviewed starter entry for Romans 8 prayer and suffering context.",
+  },
+  transgression: {
+    strongsNumber: "H6588",
+    originalWord: "pesha",
+    displayWord: "transgression",
+    pronunciation: "peh'-shah",
+    root: "pasha / pesha",
+    rootChain: ["H6586 rebel", "H6588 transgression"],
+    relatedWords: ["transgression", "transgressions", "rebellion"],
+    plainMeaning: "Transgression, rebellion, or revolt against God.",
+    websterWord: "transgression",
+    firstOccurrence: "Genesis 31:36",
+    keyOccurrences: ["Exodus 34:7", "Psalm 32:1", "Isaiah 53:5", "Amos 1:3", "Amos 2:4"],
+    keyVerses: ["Isaiah 53:5", "Amos 1:3", "Amos 2:4"],
+    note: "Reviewed starter entry for Amos judgment passages and sin studies.",
+  },
+  zion: {
+    strongsNumber: "H6726",
+    originalWord: "Tsiyyon",
+    displayWord: "Zion",
+    pronunciation: "tsee-yone'",
+    root: "Tsiyyon",
+    rootChain: ["H6726 Zion"],
+    relatedWords: ["Zion", "Jerusalem"],
+    plainMeaning: "Zion; a name connected with Jerusalem and God's chosen place in many prophetic passages.",
+    websterWord: "Zion",
+    firstOccurrence: "2 Samuel 5:7",
+    keyOccurrences: ["2 Samuel 5:7", "Psalm 2:6", "Isaiah 2:3", "Joel 3:16", "Amos 1:2"],
+    keyVerses: ["Psalm 2:6", "Isaiah 2:3", "Joel 3:16", "Amos 1:2"],
+    note: "Reviewed starter entry for Amos, prophecy, and Bible geography connections.",
   },
   prophet: {
     strongsNumber: "G4396",
@@ -6369,6 +6452,17 @@ const localCrossReferences: CrossReference[] = [
     public_domain_status: row.public_domain_status,
     rights_basis: row.rights_basis,
   })),
+  ...(tskBetaDepthSample as TskCrossReferenceImportRow[]).map((row) => ({
+    id: referenceImportId(row),
+    verse_ref: row.verse_ref,
+    target_ref: row.target_ref,
+    label: row.label ?? "",
+    source: row.source,
+    source_title: row.source_title,
+    source_url: row.source_url,
+    public_domain_status: row.public_domain_status,
+    rights_basis: row.rights_basis,
+  })),
   ...amosTeachingCrossReferences,
 ];
 
@@ -6405,12 +6499,16 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedPhase7DanielMinorProphetsStartCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase7MinorProphetsCompleteCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase8PsalmsCompletionCommentary as CommentaryEntry[]),
+  ...(jfbReviewedBetaDepthEpistlesBatch1Commentary as CommentaryEntry[]),
+  ...(jfbReviewedBetaDepthEpistlesBatch2Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase5ProverbsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase6LeviticusNumbersStartCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase8IsaiahStartCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedBetaDepthIsaiahJeremiahCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedBetaDepthJeremiahEzekielCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
@@ -7278,6 +7376,26 @@ const chapterConnections: ChapterConnections[] = [
     themes: ["Jerusalem", "The pierced One", "Mourning", "Deliverance"],
   },
   {
+    book: "Daniel",
+    chapter: 7,
+    peopleIds: ["daniel"],
+    placeIds: ["babylon"],
+    timelineIds: ["daniel-exile"],
+    typeIds: [],
+    prophecyIds: ["daniel-9"],
+    themes: ["Kingdoms", "Beasts", "Ancient of days", "Son of man", "Everlasting dominion"],
+  },
+  {
+    book: "Revelation",
+    chapter: 13,
+    peopleIds: [],
+    placeIds: [],
+    timelineIds: ["acts-witness"],
+    typeIds: [],
+    prophecyIds: ["daniel-9"],
+    themes: ["Prophecy", "Beast", "Worship", "Patience", "Wisdom"],
+  },
+  {
     book: "Amos",
     chapter: 1,
     peopleIds: [],
@@ -7562,6 +7680,32 @@ const bibleBackgroundChapters: BibleBackgroundChapter[] = [
     culturalBackground: ["Bethel and Gilgal worship centers", "Famine", "Drought", "Pestilence", "Prepare to meet thy God"],
     majorEvents: ["Oppression rebuked", "Empty worship exposed", "Repeated refusals to return", "Final summons to meet God"],
     teachingNotes: ["Keep application direct but sober: repeated correction should produce repentance."],
+  },
+  {
+    book: "Daniel",
+    chapter: 7,
+    historicalSetting: "Daniel receives a night vision during the Babylonian exile, seeing successive kingdoms and the final triumph of God's everlasting dominion.",
+    geography: ["Babylon is the exile setting.", "The great sea imagery frames the vision symbolically rather than as a travel scene."],
+    timeline: ["Daniel's exile", "Gentile kingdoms", "Prophetic kingdom expectation"],
+    kings: ["Belshazzar"],
+    prophets: ["Daniel"],
+    nations: ["Babylon", "Medo-Persia", "Greece", "Rome"],
+    culturalBackground: ["Apocalyptic vision language", "Beast imagery", "Courtroom throne scene", "Kingdom succession"],
+    majorEvents: ["Four beasts arise", "The Ancient of days sits", "One like the Son of man receives dominion", "The saints receive the kingdom"],
+    teachingNotes: ["Keep the chapter anchored in the KJV text and compare Daniel's symbols with reviewed cross references before drawing conclusions."],
+  },
+  {
+    book: "Revelation",
+    chapter: 13,
+    historicalSetting: "John records a prophetic vision of beastly power, false worship, persecution, and the need for wisdom and patience among the saints.",
+    geography: ["The sea and earth language shapes the vision scene.", "The chapter connects with Daniel's kingdom visions rather than ordinary geography."],
+    timeline: ["Revelation prophecy", "Church witness under pressure", "Future judgment and kingdom hope"],
+    kings: [],
+    prophets: ["John"],
+    nations: ["The kingdoms of this world"],
+    culturalBackground: ["Imperial power imagery", "Worship and allegiance", "Mark/seal contrast", "Patient endurance"],
+    majorEvents: ["Beast from the sea", "Beast from the earth", "Image worship enforced", "Mark language introduced", "Wisdom called for"],
+    teachingNotes: ["Treat the chapter soberly. Show the Daniel connections, keep Christ central, and avoid speculation beyond reviewed Scripture links."],
   },
 ];
 

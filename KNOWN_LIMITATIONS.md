@@ -22,6 +22,9 @@ This app is in private beta. These limitations should be visible, expected, and 
 - KJV Bible text is central.
 - Webster definitions and Strong's data are useful but still expanding.
 - Commentary coverage is meaningful but not complete.
+- Matthew Henry and JFB coverage expanded for private beta, but not every commentary author is complete.
+- TSK cross references include reviewed starter/beta samples, not the full TSK dataset yet.
+- Bible geography and chronology are strongest for selected beta chapters and are still expanding chapter by chapter.
 - Staged or needs-review commentary is not public reviewed content.
 - Some library resources are metadata, planned, permission-needed, or review-only.
 - David Cloud / Way of Life and modern copyrighted works must remain Permission Needed unless written permission exists.
@@ -49,5 +52,6 @@ This app is in private beta. These limitations should be visible, expected, and 
 
 - The app should feel useful for Bible reading, study, prayer, journaling, and library reading.
 - Sermon and lesson preparation should be usable for a John 3 beta test, but exported slides and notes still need review before live preaching.
+- Daniel 7, Revelation 13, Amos 1, Romans 8, and John 3 are the best current depth-test chapters.
 - It is not expected to replace every Logos-style feature yet.
 - The goal of beta feedback is stability, clarity, mobile usability, and Bible-centered usefulness.
