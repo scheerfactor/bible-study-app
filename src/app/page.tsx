@@ -1072,6 +1072,7 @@ type TeachingNotesExportData = {
   keyVerses: string[];
   analysis: ChapterStudyAnalysis;
   connections: ActiveChapterConnections;
+  background: ActiveBibleBackground;
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
   notes: Array<[string, UserNote[]]>;
@@ -1108,11 +1109,16 @@ type StudyPerson = {
   name: string;
   summary: string;
   description: string;
+  biography?: string;
   firstAppearance: string;
   majorPassages: string[];
   keyEvents: string[];
   lessonsLearned: string[];
   relatedVerses: string[];
+  timeline?: Array<{ label: string; event: string }>;
+  relationships?: string[];
+  mapNote?: string;
+  relatedBooks?: string[];
 };
 
 type StudyPlace = {
@@ -1120,15 +1126,20 @@ type StudyPlace = {
   name: string;
   description: string;
   significance: string;
+  region?: string;
   keyPassages: string[];
   timelineLinks: string[];
   relatedPassages: string[];
   mapNote: string;
+  timeline?: Array<{ label: string; event: string }>;
+  keyEvents?: string[];
+  nations?: string[];
+  relatedBooks?: string[];
 };
 
 type StudyTimelineEntry = {
   id: string;
-  era: "Patriarchs" | "Exodus" | "Kings" | "Christ" | "Church";
+  era: "Patriarchs" | "Exodus" | "Judges" | "Kings" | "Prophets" | "Christ" | "Life of Christ" | "Church" | "Acts" | "Paul's Journeys";
   title: string;
   timeframe: string;
   description: string;
@@ -1170,6 +1181,26 @@ type ActiveChapterConnections = {
   types: ChristTypeConnection[];
   prophecies: ProphecyConnection[];
   themes: string[];
+};
+
+type BibleBackgroundChapter = {
+  book: string;
+  chapter: number;
+  historicalSetting: string;
+  geography: string[];
+  timeline: string[];
+  kings: string[];
+  prophets: string[];
+  nations: string[];
+  culturalBackground: string[];
+  majorEvents: string[];
+  teachingNotes: string[];
+};
+
+type ActiveBibleBackground = BibleBackgroundChapter & {
+  people: StudyPerson[];
+  places: StudyPlace[];
+  timelineEntries: StudyTimelineEntry[];
 };
 
 type PassageGuideConnectionKind = "Gospel Parallel" | "Acts Connection" | "Prophecy Fulfillment";
@@ -6293,11 +6324,21 @@ const studyPeople: StudyPerson[] = [
     summary: "The prophet and leader used of God to deliver Israel and give the law.",
     description:
       "The prophet and leader of Israel. John 3 refers to Moses lifting up the serpent in the wilderness.",
+    biography:
+      "Moses was preserved as a child, prepared in Egypt and the wilderness, called at the burning bush, and used of God to lead Israel out of bondage. His ministry connects deliverance, law, tabernacle worship, wilderness testing, and the promise of a Prophet like unto him.",
     firstAppearance: "Exodus 2:1",
     majorPassages: ["Exodus 2", "Exodus 12", "Numbers 21", "Deuteronomy 18"],
     keyEvents: ["Delivered Israel from Egypt", "Received the law", "Lifted up the brazen serpent in the wilderness"],
     lessonsLearned: ["God can prepare a servant over many years", "Faith obeys even when the task is heavy", "The law points forward to the need for Christ"],
     relatedVerses: ["Numbers 21:8", "Numbers 21:9", "Deuteronomy 18:15", "John 3:14"],
+    timeline: [
+      { label: "Birth and preservation", event: "Preserved in Egypt when Pharaoh sought to destroy the Hebrew children." },
+      { label: "Call", event: "Called by God at the burning bush to lead Israel out of Egypt." },
+      { label: "Wilderness", event: "Led Israel through the wilderness and received the law." },
+    ],
+    relationships: ["Aaron his brother", "Miriam his sister", "Joshua his minister and successor", "Israel as the delivered nation"],
+    mapNote: "Map focus: Egypt, Sinai, the wilderness, and the route toward Canaan.",
+    relatedBooks: ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
   },
   {
     id: "abraham",
@@ -6329,11 +6370,21 @@ const studyPeople: StudyPerson[] = [
     summary: "The shepherd king of Israel and writer of many psalms.",
     description:
       "David was chosen by God, faced Goliath by faith, ruled Israel, sinned grievously, and received mercy after repentance.",
+    biography:
+      "David was called from shepherding, anointed by Samuel, tested under Saul, established as king, and given covenant promises concerning his house and throne. His psalms give worship, confession, suffering, and Messianic expectation.",
     firstAppearance: "1 Samuel 16:12",
     majorPassages: ["1 Samuel 16", "1 Samuel 17", "2 Samuel 7", "Psalm 51"],
     keyEvents: ["Anointed by Samuel", "Defeats Goliath", "Receives the Davidic covenant", "Repents after sin"],
     lessonsLearned: ["God looks on the heart", "Faith sees the battle as the Lord's", "Sin must be confessed and forsaken"],
     relatedVerses: ["1 Samuel 16:7", "1 Samuel 17:45", "2 Samuel 7:16", "Psalm 51:10"],
+    timeline: [
+      { label: "Anointed", event: "Chosen by God while Saul still reigned." },
+      { label: "Tested", event: "Served, fled, and waited before receiving the kingdom." },
+      { label: "King", event: "Ruled from Jerusalem and received the covenant promise." },
+    ],
+    relationships: ["Samuel the prophet", "Saul the first king", "Jonathan his friend", "Solomon his son"],
+    mapNote: "Map focus: Bethlehem, the valley of Elah, Hebron, Jerusalem, and Judah.",
+    relatedBooks: ["1 Samuel", "2 Samuel", "1 Chronicles", "Psalms"],
   },
   {
     id: "paul",
@@ -6341,11 +6392,21 @@ const studyPeople: StudyPerson[] = [
     summary: "The apostle to the Gentiles, converted from persecutor to preacher of Christ.",
     description:
       "Paul was saved by Christ, called to preach the gospel, and used of God to write much of the New Testament.",
+    biography:
+      "Paul first appears as Saul, a persecutor of believers. After meeting the risen Christ on the Damascus road, he preached Christ, carried the gospel to the Gentiles, planted churches, strengthened believers, and wrote epistles that explain gospel doctrine and Christian living.",
     firstAppearance: "Acts 7:58",
     majorPassages: ["Acts 9", "Acts 13", "Romans 8", "2 Timothy 4"],
     keyEvents: ["Consents to Stephen's death", "Meets Christ on the Damascus road", "Preaches to the Gentiles", "Finishes his course"],
     lessonsLearned: ["Grace can save the chief of sinners", "The gospel is worth suffering for", "Sound doctrine should lead to faithful service"],
     relatedVerses: ["Acts 9:5", "Acts 13:2", "Romans 8:1", "2 Timothy 4:7"],
+    timeline: [
+      { label: "Conversion", event: "Met the risen Christ while traveling to Damascus." },
+      { label: "Mission", event: "Sent from Antioch and carried the gospel through multiple journeys." },
+      { label: "Final witness", event: "Testified while suffering and wrote of finishing his course." },
+    ],
+    relationships: ["Barnabas his early coworker", "Silas and Timothy his fellow laborers", "Luke his companion", "Gentile churches"],
+    mapNote: "Map focus: Damascus, Antioch, Asia Minor, Greece, Jerusalem, and Rome.",
+    relatedBooks: ["Acts", "Romans", "1 Corinthians", "2 Timothy"],
   },
   {
     id: "peter",
@@ -6353,11 +6414,87 @@ const studyPeople: StudyPerson[] = [
     summary: "An apostle of Christ known for bold confession, failure, restoration, and preaching.",
     description:
       "Peter followed Christ, confessed Him as the Christ, denied Him, was restored, and preached boldly after Pentecost.",
+    biography:
+      "Peter was called from fishing to follow Christ. He is prominent among the apostles, confessed Jesus as the Christ, failed by denying the Lord, was restored, and became a leading witness in the early chapters of Acts.",
     firstAppearance: "Matthew 4:18",
     majorPassages: ["Matthew 16", "Luke 22", "John 21", "Acts 2"],
     keyEvents: ["Called from fishing", "Confesses Christ", "Denies the Lord", "Is restored and preaches at Pentecost"],
     lessonsLearned: ["Confidence in self is dangerous", "Christ restores repentant servants", "Boldness comes from the Spirit of God"],
     relatedVerses: ["Matthew 16:16", "Luke 22:61", "John 21:17", "Acts 2:14"],
+    timeline: [
+      { label: "Called", event: "Called by Christ by the sea of Galilee." },
+      { label: "Restored", event: "Restored by the risen Lord after denial." },
+      { label: "Witness", event: "Preached at Pentecost and helped lead early gospel witness." },
+    ],
+    relationships: ["Andrew his brother", "James and John as fellow disciples", "The Lord Jesus Christ", "Early church at Jerusalem"],
+    mapNote: "Map focus: Galilee, Jerusalem, Joppa, Caesarea, and early church witness.",
+    relatedBooks: ["Matthew", "John", "Acts", "1 Peter"],
+  },
+  {
+    id: "isaiah",
+    name: "Isaiah",
+    summary: "A prophet of Judah whose book emphasizes holiness, judgment, comfort, and the promised Messiah.",
+    description:
+      "Isaiah ministered in Judah and gave major prophecies concerning judgment, comfort, the suffering Servant, and the kingdom hope.",
+    biography:
+      "Isaiah saw the LORD high and lifted up, warned Judah, spoke to kings, and recorded some of Scripture's clearest Messianic prophecies. His prophecy gives both the seriousness of sin and the hope of God's salvation.",
+    firstAppearance: "Isaiah 1:1",
+    majorPassages: ["Isaiah 6", "Isaiah 7", "Isaiah 9", "Isaiah 53"],
+    keyEvents: ["Sees the LORD in the temple", "Warns Judah and Jerusalem", "Gives prophecy of Immanuel", "Records the suffering Servant"],
+    lessonsLearned: ["God is holy", "Sin must be judged", "God provides salvation through His Servant"],
+    relatedVerses: ["Isaiah 6:3", "Isaiah 7:14", "Isaiah 9:6", "Isaiah 53:5"],
+    timeline: [
+      { label: "Call", event: "Called in the year king Uzziah died." },
+      { label: "Prophetic ministry", event: "Ministered during the days of kings of Judah." },
+      { label: "Messianic witness", event: "Pointed forward to the virgin birth, suffering Servant, and future kingdom." },
+    ],
+    relationships: ["Kings of Judah", "Jerusalem and Judah", "The suffering Servant as prophetic focus"],
+    mapNote: "Map focus: Judah, Jerusalem, Assyria, and surrounding nations.",
+    relatedBooks: ["Isaiah", "Matthew", "Luke", "Romans"],
+  },
+  {
+    id: "jeremiah",
+    name: "Jeremiah",
+    summary: "A prophet who warned Judah before Jerusalem's fall and wept over the nation's sin.",
+    description:
+      "Jeremiah ministered in Judah during the final years before Babylonian captivity, warning of judgment and calling the people back to the LORD.",
+    biography:
+      "Jeremiah was called from his youth and sent to speak God's word in a hard season. He warned Judah before Jerusalem fell, suffered rejection, and recorded both judgment and hope.",
+    firstAppearance: "Jeremiah 1:1",
+    majorPassages: ["Jeremiah 1", "Jeremiah 7", "Jeremiah 31", "Lamentations 3"],
+    keyEvents: ["Called as a prophet", "Warns at the temple", "Speaks of the new covenant", "Laments Jerusalem's fall"],
+    lessonsLearned: ["Faithfulness may be lonely", "God's word must be spoken plainly", "Hope remains because of the LORD's mercies"],
+    relatedVerses: ["Jeremiah 1:5", "Jeremiah 7:28", "Jeremiah 31:31", "Lamentations 3:22"],
+    timeline: [
+      { label: "Call", event: "Called before the fall of Jerusalem." },
+      { label: "Warning", event: "Warned Judah through the last days of the kingdom." },
+      { label: "Aftermath", event: "Lamented the destruction and pointed to the LORD's mercies." },
+    ],
+    relationships: ["Judah's final kings", "Babylon", "Jerusalem", "The remnant"],
+    mapNote: "Map focus: Jerusalem, Judah, Babylon, and exile routes.",
+    relatedBooks: ["Jeremiah", "Lamentations", "2 Kings", "Daniel"],
+  },
+  {
+    id: "daniel",
+    name: "Daniel",
+    summary: "A faithful Hebrew captive in Babylon used of God in prophecy and public witness.",
+    description:
+      "Daniel was taken to Babylon, remained faithful under pressure, interpreted dreams, prayed consistently, and received prophetic visions.",
+    biography:
+      "Daniel served in foreign courts without surrendering faithfulness to God. His book helps readers understand exile, Gentile kingdoms, faithful prayer, and prophetic expectation.",
+    firstAppearance: "Daniel 1:6",
+    majorPassages: ["Daniel 1", "Daniel 2", "Daniel 6", "Daniel 9"],
+    keyEvents: ["Purposes in his heart", "Interprets Nebuchadnezzar's dream", "Prays despite the decree", "Receives prophetic understanding"],
+    lessonsLearned: ["Conviction should begin early", "God rules over kingdoms", "Prayer remains essential in hostile settings"],
+    relatedVerses: ["Daniel 1:8", "Daniel 2:21", "Daniel 6:10", "Daniel 9:24"],
+    timeline: [
+      { label: "Captivity", event: "Taken to Babylon as a young man." },
+      { label: "Court witness", event: "Served through changing empires while remaining faithful." },
+      { label: "Prophecy", event: "Received visions concerning kingdoms and future events." },
+    ],
+    relationships: ["Hananiah, Mishael, and Azariah", "Nebuchadnezzar", "Darius", "The Jewish captives"],
+    mapNote: "Map focus: Jerusalem to Babylon and the empires in Daniel's visions.",
+    relatedBooks: ["Daniel", "Jeremiah", "Ezra", "Revelation"],
   },
   {
     id: "joshua",
@@ -6392,10 +6529,19 @@ const studyPlaces: StudyPlace[] = [
     description:
       "The chief city of the Jews, central to the temple, the feasts, the Lord's final week, the resurrection witness, and early gospel preaching.",
     significance: "Jerusalem gathers together temple worship, Christ's death and resurrection, and the first public preaching of the risen Lord.",
+    region: "Judea",
     keyPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
     timelineLinks: ["david", "christ-crucifixion", "christ-resurrection", "church-pentecost"],
     relatedPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
     mapNote: "Map coming soon: Jerusalem and Judea.",
+    timeline: [
+      { label: "David", event: "David takes the strong hold of Zion." },
+      { label: "Christ", event: "Christ suffers, dies, rises, and sends witnesses from Jerusalem." },
+      { label: "Church", event: "The gospel is preached publicly at Pentecost." },
+    ],
+    keyEvents: ["David establishes Jerusalem", "Temple worship", "Crucifixion and resurrection", "Pentecost witness"],
+    nations: ["Israel", "Judah", "Rome"],
+    relatedBooks: ["2 Samuel", "Luke", "Acts", "Revelation"],
   },
   {
     id: "bethlehem",
@@ -6403,20 +6549,38 @@ const studyPlaces: StudyPlace[] = [
     description:
       "The prophesied birthplace of Christ, included here as a reviewed prophecy-place connection.",
     significance: "Bethlehem connects David's line, Micah's prophecy, and the birth of the Lord Jesus Christ.",
+    region: "Judah",
     keyPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
     timelineLinks: ["david", "christ-birth"],
     relatedPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
     mapNote: "Map coming soon: Bethlehem.",
+    timeline: [
+      { label: "Ruth", event: "Bethlehem is part of the setting for Ruth and Boaz." },
+      { label: "David", event: "David is connected with Bethlehem." },
+      { label: "Christ", event: "The Lord Jesus is born in Bethlehem according to prophecy." },
+    ],
+    keyEvents: ["Ruth and Boaz", "David's family line", "Birth of Christ"],
+    nations: ["Judah", "Rome"],
+    relatedBooks: ["Ruth", "1 Samuel", "Micah", "Luke"],
   },
   {
     id: "nazareth",
     name: "Nazareth",
     description: "The Galilean town where Jesus was brought up and from which He was known as Jesus of Nazareth.",
     significance: "Nazareth helps readers connect the Lord's humble earthly upbringing with His public identification in the Gospels.",
+    region: "Galilee",
     keyPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
     timelineLinks: ["christ-birth", "christ-ministry"],
     relatedPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
     mapNote: "Map coming soon: Nazareth in Galilee.",
+    timeline: [
+      { label: "Announcement", event: "Gabriel is sent to Nazareth in Luke 1." },
+      { label: "Childhood", event: "Jesus is brought up in Nazareth." },
+      { label: "Ministry", event: "Jesus reads Isaiah in the synagogue at Nazareth." },
+    ],
+    keyEvents: ["Announcement to Mary", "The Lord's upbringing", "Synagogue reading"],
+    nations: ["Israel", "Rome"],
+    relatedBooks: ["Matthew", "Luke", "John"],
   },
   {
     id: "galilee",
@@ -6467,10 +6631,19 @@ const studyPlaces: StudyPlace[] = [
     description:
       "A kingdom and city connected with exile, pride, judgment, and prophetic Scripture.",
     significance: "Babylon helps students place Judah's exile, Daniel's setting, and later prophetic judgment language.",
+    region: "Mesopotamia",
     keyPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
     timelineLinks: ["solomon"],
     relatedPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
     mapNote: "Map coming soon: Babylon and the exile route.",
+    timeline: [
+      { label: "Exile", event: "Judah is carried away by Babylon." },
+      { label: "Daniel", event: "Daniel serves and testifies in Babylon." },
+      { label: "Prophecy", event: "Babylon becomes a major prophetic symbol of pride and judgment." },
+    ],
+    keyEvents: ["Judah's captivity", "Daniel's court witness", "Nebuchadnezzar humbled"],
+    nations: ["Babylon", "Judah", "Medo-Persia"],
+    relatedBooks: ["2 Kings", "Jeremiah", "Daniel", "Revelation"],
   },
   {
     id: "antioch",
@@ -6487,10 +6660,18 @@ const studyPlaces: StudyPlace[] = [
     name: "Corinth",
     description: "A city in Achaia where Paul preached and where a church later received inspired correction and instruction.",
     significance: "Corinth helps locate Paul's missionary work and the background for 1 and 2 Corinthians.",
+    region: "Achaia",
     keyPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
     mapNote: "Map coming soon: Corinth in Achaia.",
+    timeline: [
+      { label: "Paul's ministry", event: "Paul labours in Corinth during his missionary journeys." },
+      { label: "Church instruction", event: "The Corinthian church receives correction concerning doctrine and practice." },
+    ],
+    keyEvents: ["Paul meets Aquila and Priscilla", "Crispus believes", "Letters to the Corinthians"],
+    nations: ["Rome", "Achaia"],
+    relatedBooks: ["Acts", "1 Corinthians", "2 Corinthians"],
   },
   {
     id: "rome",
@@ -6517,10 +6698,37 @@ const studyPlaces: StudyPlace[] = [
     name: "Ephesus",
     description: "A city in Asia where Paul ministered and where the gospel confronted idolatry and public opposition.",
     significance: "Ephesus helps readers understand Acts 19, the Ephesian church, and later instruction about Christ and the church.",
+    region: "Asia",
     keyPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
     mapNote: "Map coming soon: Ephesus in Asia.",
+    timeline: [
+      { label: "Paul's labour", event: "Paul teaches in Ephesus and the word spreads through Asia." },
+      { label: "Opposition", event: "The gospel confronts the worship of Diana." },
+      { label: "Church instruction", event: "The church receives instruction about Christ and the church." },
+    ],
+    keyEvents: ["Paul teaches in the school of Tyrannus", "Idolatry challenged", "Ephesian epistle"],
+    nations: ["Rome", "Asia"],
+    relatedBooks: ["Acts", "Ephesians", "Revelation"],
+  },
+  {
+    id: "damascus",
+    name: "Damascus",
+    description: "A city connected with Saul's conversion and later gospel witness.",
+    significance: "Damascus helps readers locate the turning point where Saul the persecutor met the risen Christ and became a preacher of the gospel.",
+    region: "Syria",
+    keyPassages: ["Acts 9:2", "Acts 9:3", "Acts 9:10", "Acts 22:6"],
+    timelineLinks: ["acts-witness", "pauls-journeys"],
+    relatedPassages: ["Acts 9:2", "Acts 9:3", "Acts 9:10", "Acts 22:6"],
+    mapNote: "Map coming soon: road from Jerusalem toward Damascus.",
+    timeline: [
+      { label: "Conversion", event: "Saul meets the risen Christ near Damascus." },
+      { label: "Witness", event: "Saul begins preaching Christ after his conversion." },
+    ],
+    keyEvents: ["Saul's conversion", "Ananias sent to Saul", "Early preaching of Christ"],
+    nations: ["Syria", "Rome"],
+    relatedBooks: ["Acts", "Galatians"],
   },
   {
     id: "judea",
@@ -6596,6 +6804,14 @@ const timelineEntries: StudyTimelineEntry[] = [
     keyPassages: ["Exodus 14:21", "Numbers 21:8", "Deuteronomy 8:2"],
   },
   {
+    id: "judges-era",
+    era: "Judges",
+    title: "Judges",
+    timeframe: "After Joshua and before the monarchy",
+    description: "Israel's repeated cycles of departure, oppression, crying unto the LORD, and deliverance by judges.",
+    keyPassages: ["Judges 2:16", "Judges 2:18", "Judges 21:25"],
+  },
+  {
     id: "saul",
     era: "Kings",
     title: "Saul",
@@ -6620,8 +6836,40 @@ const timelineEntries: StudyTimelineEntry[] = [
     keyPassages: ["1 Kings 3:9", "1 Kings 8:20", "1 Kings 11:4"],
   },
   {
+    id: "isaiah-ministry",
+    era: "Prophets",
+    title: "Isaiah's Ministry",
+    timeframe: "Kings of Judah",
+    description: "Isaiah ministers in Judah with messages of holiness, judgment, comfort, and Messianic hope.",
+    keyPassages: ["Isaiah 1:1", "Isaiah 6:1", "Isaiah 53:5"],
+  },
+  {
+    id: "jeremiah-ministry",
+    era: "Prophets",
+    title: "Jeremiah's Ministry",
+    timeframe: "Last days of Judah",
+    description: "Jeremiah warns Judah before Jerusalem falls and records both judgment and hope.",
+    keyPassages: ["Jeremiah 1:5", "Jeremiah 7:28", "Jeremiah 31:31"],
+  },
+  {
+    id: "daniel-exile",
+    era: "Prophets",
+    title: "Daniel in Exile",
+    timeframe: "Babylonian and Medo-Persian period",
+    description: "Daniel serves in foreign courts, remains faithful, and receives prophetic visions.",
+    keyPassages: ["Daniel 1:8", "Daniel 2:21", "Daniel 6:10", "Daniel 9:24"],
+  },
+  {
+    id: "minor-prophets",
+    era: "Prophets",
+    title: "Minor Prophets",
+    timeframe: "Divided kingdom, exile, and return",
+    description: "The prophets warn, call for repentance, and point forward to the day of the LORD and Messianic hope.",
+    keyPassages: ["Hosea 6:1", "Amos 4:12", "Micah 5:2", "Malachi 3:1"],
+  },
+  {
     id: "christ-birth",
-    era: "Christ",
+    era: "Life of Christ",
     title: "Birth of Christ",
     timeframe: "Gospel era",
     description: "Christ is born in Bethlehem according to prophecy and announced as Saviour.",
@@ -6629,7 +6877,7 @@ const timelineEntries: StudyTimelineEntry[] = [
   },
   {
     id: "christ-ministry",
-    era: "Christ",
+    era: "Life of Christ",
     title: "Ministry of Christ",
     timeframe: "Gospel era",
     description: "The Lord Jesus preaches, teaches, works miracles, calls disciples, and reveals the Father.",
@@ -6637,7 +6885,7 @@ const timelineEntries: StudyTimelineEntry[] = [
   },
   {
     id: "christ-crucifixion",
-    era: "Christ",
+    era: "Life of Christ",
     title: "Crucifixion",
     timeframe: "Gospel era",
     description: "Christ suffers and dies at Jerusalem according to the Scriptures.",
@@ -6645,7 +6893,7 @@ const timelineEntries: StudyTimelineEntry[] = [
   },
   {
     id: "christ-resurrection",
-    era: "Christ",
+    era: "Life of Christ",
     title: "Resurrection",
     timeframe: "Gospel era",
     description: "Christ rises again and opens the Scriptures to His disciples.",
@@ -6653,7 +6901,7 @@ const timelineEntries: StudyTimelineEntry[] = [
   },
   {
     id: "church-pentecost",
-    era: "Church",
+    era: "Acts",
     title: "Pentecost",
     timeframe: "Early church",
     description: "The Spirit is given and the risen Christ is preached openly at Jerusalem.",
@@ -6661,11 +6909,19 @@ const timelineEntries: StudyTimelineEntry[] = [
   },
   {
     id: "pauls-journeys",
-    era: "Church",
+    era: "Paul's Journeys",
     title: "Paul's Journeys",
     timeframe: "Early church",
     description: "Paul carries the gospel through missionary journeys, strengthening churches and preaching Christ.",
     keyPassages: ["Acts 13:2", "Acts 16:9", "Acts 19:10", "Acts 20:24"],
+  },
+  {
+    id: "acts-witness",
+    era: "Acts",
+    title: "Witness in Acts",
+    timeframe: "Early church",
+    description: "The gospel witness moves from Jerusalem outward through the power of the Spirit.",
+    keyPassages: ["Acts 1:8", "Acts 2:41", "Acts 9:15", "Acts 28:31"],
   },
 ];
 
@@ -6848,8 +7104,9 @@ const chapterConnections: ChapterConnections[] = [
   {
     book: "Isaiah",
     chapter: 53,
-    peopleIds: ["jesus"],
+    peopleIds: ["isaiah", "jesus"],
     placeIds: [],
+    timelineIds: ["isaiah-ministry", "christ-crucifixion"],
     typeIds: [],
     prophecyIds: ["isaiah-53"],
     themes: ["Substitution", "Suffering servant", "Atonement", "Exaltation"],
@@ -6857,9 +7114,9 @@ const chapterConnections: ChapterConnections[] = [
   {
     book: "Daniel",
     chapter: 9,
-    peopleIds: [],
+    peopleIds: ["daniel", "jeremiah"],
     placeIds: ["babylon", "jerusalem"],
-    timelineIds: ["solomon"],
+    timelineIds: ["jeremiah-ministry", "daniel-exile"],
     typeIds: [],
     prophecyIds: ["daniel-9"],
     themes: ["Prayer", "Confession", "Prophecy", "Messiah"],
@@ -6878,7 +7135,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 1,
     peopleIds: [],
     placeIds: ["jerusalem"],
-    timelineIds: [],
+    timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Judgment", "Nations", "Accountability", "The LORD speaks"],
@@ -6888,7 +7145,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 2,
     peopleIds: [],
     placeIds: [],
-    timelineIds: [],
+    timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Judah", "Israel", "Privilege", "Judgment"],
@@ -6898,7 +7155,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 3,
     peopleIds: [],
     placeIds: [],
-    timelineIds: [],
+    timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Chosen people", "Accountability", "Hearing God", "Walking with God"],
@@ -6908,7 +7165,7 @@ const chapterConnections: ChapterConnections[] = [
     chapter: 4,
     peopleIds: [],
     placeIds: [],
-    timelineIds: [],
+    timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Warnings", "Refusal to return", "Correction", "Prepare to meet God"],
@@ -6937,8 +7194,8 @@ const chapterConnections: ChapterConnections[] = [
     book: "Acts",
     chapter: 9,
     peopleIds: ["paul", "peter"],
-    placeIds: ["jerusalem"],
-    timelineIds: ["church-pentecost", "pauls-journeys"],
+    placeIds: ["jerusalem", "damascus"],
+    timelineIds: ["acts-witness", "pauls-journeys"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Conversion", "Grace", "Calling", "Bold witness"],
@@ -6972,6 +7229,192 @@ const chapterConnections: ChapterConnections[] = [
     typeIds: [],
     prophecyIds: [],
     themes: ["No condemnation", "Spirit", "Adoption", "Assurance", "God's love"],
+  },
+];
+
+const DEFAULT_BIBLE_BACKGROUND: BibleBackgroundChapter = {
+  book: "",
+  chapter: 0,
+  historicalSetting: "Reviewed background notes have not been written for this chapter yet. Use the book introduction, attached people, places, timeline, and recommended resources as the starting point.",
+  geography: [],
+  timeline: [],
+  kings: [],
+  prophets: [],
+  nations: [],
+  culturalBackground: [],
+  majorEvents: [],
+  teachingNotes: [],
+};
+
+const bibleBackgroundChapters: BibleBackgroundChapter[] = [
+  {
+    book: "Genesis",
+    chapter: 12,
+    historicalSetting: "Abram is called out from his country and kindred as God begins unfolding covenant promises of land, seed, and blessing.",
+    geography: ["Ur and Haran stand behind the call; Canaan is the land of promise; Egypt appears as a place of famine refuge."],
+    timeline: ["Patriarchal era", "Call of Abraham"],
+    kings: [],
+    prophets: [],
+    nations: ["Canaan", "Egypt"],
+    culturalBackground: ["Patriarchal household movement", "Altars and calling on the name of the LORD", "Famine migration"],
+    majorEvents: ["Abram called", "Abram enters Canaan", "Abram goes down into Egypt"],
+    teachingNotes: ["Emphasize faith responding to God's word before full circumstances are visible."],
+  },
+  {
+    book: "Genesis",
+    chapter: 22,
+    historicalSetting: "Abraham is tested concerning Isaac, the promised son, on a mountain in Moriah.",
+    geography: ["Moriah becomes important for sacrifice, worship, and later Jerusalem connections."],
+    timeline: ["Patriarchal era", "Abraham and Isaac"],
+    kings: [],
+    prophets: [],
+    nations: [],
+    culturalBackground: ["Burnt offering language", "Father and son travel", "Substitute ram provided by God"],
+    majorEvents: ["Abraham commanded to offer Isaac", "God provides a ram", "The covenant promise is reaffirmed"],
+    teachingNotes: ["Handle the passage reverently: the text emphasizes testing, obedience, and God's provision."],
+  },
+  {
+    book: "Exodus",
+    chapter: 12,
+    historicalSetting: "Israel is still in Egypt as the LORD gives the Passover before deliverance from bondage.",
+    geography: ["Egypt is the place of bondage; the Exodus will move Israel toward the wilderness and Sinai."],
+    timeline: ["Exodus era", "Passover and deliverance"],
+    kings: ["Pharaoh"],
+    prophets: ["Moses"],
+    nations: ["Egypt", "Israel"],
+    culturalBackground: ["Passover lamb", "Blood on the door posts", "Unleavened bread", "Household observance"],
+    majorEvents: ["Passover instituted", "Judgment on Egypt", "Israel begins the Exodus"],
+    teachingNotes: ["Keep the chapter tied to redemption, judgment, and the New Testament Passover connection."],
+  },
+  {
+    book: "John",
+    chapter: 3,
+    historicalSetting: "Jesus speaks with Nicodemus, a ruler of the Jews, during His early Judean ministry and then the chapter returns to John the Baptist's witness.",
+    geography: ["Jerusalem and Judea frame the conversation and ministry movement.", "Aenon near Salim and Jordan River language connect the chapter with John's baptism witness."],
+    timeline: ["Life of Christ", "Early public ministry", "Moses and the wilderness are recalled through the brazen serpent."],
+    kings: [],
+    prophets: ["Moses", "John the Baptist"],
+    nations: ["Israel", "Rome"],
+    culturalBackground: ["Jewish religious leadership", "Rabbinic conversation by night", "Baptism witness", "Bridegroom friend imagery"],
+    majorEvents: ["Nicodemus comes to Jesus", "The new birth is taught", "The brazen serpent type is applied", "John says Christ must increase"],
+    teachingNotes: ["Let the passage move from religious need to new birth, then to believing on the Son of God."],
+  },
+  {
+    book: "Luke",
+    chapter: 24,
+    historicalSetting: "The chapter occurs on resurrection day, beginning at the empty tomb and moving through Emmaus and Jerusalem.",
+    geography: ["Jerusalem is the center of the resurrection witness.", "Emmaus is the road setting where Christ opens the Scriptures.", "Galilee is recalled by the angelic message."],
+    timeline: ["Life of Christ", "Resurrection", "Transition toward apostolic witness"],
+    kings: [],
+    prophets: ["Moses and all the prophets are referenced in Christ's explanation of Scripture."],
+    nations: ["Israel", "Rome"],
+    culturalBackground: ["Burial spices", "First day of the week", "Table fellowship", "Witness testimony"],
+    majorEvents: ["Empty tomb", "Emmaus road", "Christ appears to the disciples", "Scriptures opened", "Commission to witness"],
+    teachingNotes: ["Stress that Christ Himself connects His resurrection with the Scriptures."],
+  },
+  {
+    book: "Romans",
+    chapter: 5,
+    historicalSetting: "Paul explains justification, peace with God, grace, hope, and the contrast between Adam and Christ.",
+    geography: ["The epistle is written to believers at Rome, with Paul's missionary network in view."],
+    timeline: ["Apostolic teaching", "Paul's journeys", "Adam and Christ comparison reaches from Genesis to the gospel."],
+    kings: [],
+    prophets: [],
+    nations: ["Rome", "Gentile churches"],
+    culturalBackground: ["Legal justification language", "Representative headship", "Grace and reconciliation terms"],
+    majorEvents: ["Peace with God explained", "Christ's death for sinners", "Adam and Christ contrasted"],
+    teachingNotes: ["Keep the argument doctrinal and practical: justification leads to hope and rejoicing."],
+  },
+  {
+    book: "Romans",
+    chapter: 8,
+    historicalSetting: "Paul sets out assurance, life in the Spirit, adoption, suffering, intercession, and the security of God's love.",
+    geography: ["The Roman church is the original audience; the teaching applies broadly to believers."],
+    timeline: ["Apostolic teaching", "Present suffering and future glory"],
+    kings: [],
+    prophets: [],
+    nations: ["Rome", "Gentile churches"],
+    culturalBackground: ["Adoption language", "Roman legal setting", "Creation groaning", "Intercession"],
+    majorEvents: ["No condemnation stated", "Spirit's witness explained", "Future glory promised", "God's love affirmed"],
+    teachingNotes: ["Show how doctrine gives assurance, holiness, and endurance."],
+  },
+  {
+    book: "Acts",
+    chapter: 9,
+    historicalSetting: "Saul is traveling to Damascus to persecute believers when the risen Christ appears to him.",
+    geography: ["The road from Jerusalem toward Damascus frames the conversion account.", "Damascus becomes the place of Saul's first gospel witness."],
+    timeline: ["Acts witness", "Early church", "Paul's future missionary calling begins."],
+    kings: [],
+    prophets: [],
+    nations: ["Syria", "Israel", "Rome"],
+    culturalBackground: ["Synagogue letters", "Persecution of believers", "Disciples identified as followers of this way"],
+    majorEvents: ["Saul converted", "Ananias sent", "Saul baptized", "Saul preaches Christ"],
+    teachingNotes: ["Use the chapter to show grace, calling, and changed witness."],
+  },
+  {
+    book: "Acts",
+    chapter: 19,
+    historicalSetting: "Paul ministers at Ephesus, teaching disciples and seeing the word of God prevail amid idolatry and opposition.",
+    geography: ["Ephesus is a major city in Asia and a center of Diana worship.", "The gospel influence spreads through Asia from this ministry."],
+    timeline: ["Paul's journeys", "Early church expansion"],
+    kings: [],
+    prophets: [],
+    nations: ["Rome", "Asia"],
+    culturalBackground: ["Synagogue teaching", "School of Tyrannus", "Idolatry trade", "Public city assembly"],
+    majorEvents: ["Disciples instructed", "Word spreads through Asia", "Books burned", "Ephesian uproar"],
+    teachingNotes: ["Contrast the power of the word of God with religious confusion and economic idolatry."],
+  },
+  {
+    book: "Amos",
+    chapter: 1,
+    historicalSetting: "Amos begins with the LORD roaring from Zion and announcing judgment on surrounding nations.",
+    geography: ["Jerusalem and Zion frame the authority of the message.", "Damascus, Gaza, Tyrus, Edom, Ammon, and Moab form the opening nation-oracle pattern."],
+    timeline: ["Minor prophets", "Divided kingdom setting"],
+    kings: ["Uzziah of Judah", "Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Syria", "Philistia", "Tyrus", "Edom", "Ammon", "Moab"],
+    culturalBackground: ["Nation judgment oracle", "Threshing language", "Covenant brotherhood language", "Ancient warfare cruelty"],
+    majorEvents: ["The LORD roars", "Nations are judged for repeated transgressions"],
+    teachingNotes: ["Show that God's judgment is moral and not limited to Israel alone."],
+  },
+  {
+    book: "Amos",
+    chapter: 2,
+    historicalSetting: "The judgment oracles turn from surrounding nations to Judah and Israel.",
+    geography: ["Judah and Israel are now directly addressed after the surrounding nations."],
+    timeline: ["Minor prophets", "Divided kingdom setting"],
+    kings: ["Uzziah of Judah", "Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Moab", "Judah", "Israel"],
+    culturalBackground: ["Law of the LORD language", "Poor oppressed", "Prophets and Nazarites", "Covenant privilege"],
+    majorEvents: ["Moab judged", "Judah judged", "Israel judged for oppression and despising privilege"],
+    teachingNotes: ["Move carefully from the nations to God's own people: privilege increases accountability."],
+  },
+  {
+    book: "Amos",
+    chapter: 3,
+    historicalSetting: "Amos explains Israel's special accountability because they alone had been known of all families of the earth.",
+    geography: ["Israel's cities and palaces are in view, with surrounding nations called to witness."],
+    timeline: ["Minor prophets", "Divided kingdom setting"],
+    kings: ["Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Israel", "Philistia", "Egypt"],
+    culturalBackground: ["Covenant knowledge", "Prophetic warning", "Palace oppression", "Witnesses from other nations"],
+    majorEvents: ["Israel's accountability stated", "Prophetic cause and effect illustrated", "Judgment on altars and houses announced"],
+    teachingNotes: ["Use the chapter to teach that hearing God's word creates responsibility."],
+  },
+  {
+    book: "Amos",
+    chapter: 4,
+    historicalSetting: "Amos rebukes false security, empty worship, and Israel's refusal to return despite repeated corrections.",
+    geography: ["Samaria, Bethel, and Gilgal are important places in the rebuke."],
+    timeline: ["Minor prophets", "Divided kingdom setting"],
+    kings: ["Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Israel"],
+    culturalBackground: ["Bethel and Gilgal worship centers", "Famine", "Drought", "Pestilence", "Prepare to meet thy God"],
+    majorEvents: ["Oppression rebuked", "Empty worship exposed", "Repeated refusals to return", "Final summons to meet God"],
+    teachingNotes: ["Keep application direct but sober: repeated correction should produce repentance."],
   },
 ];
 
@@ -9784,6 +10227,50 @@ function keyWordsForVerse(verse: BibleVerse) {
   return Array.from(new Set(uniqueWords)).slice(0, 8);
 }
 
+function uniqueStrings(items: string[]) {
+  return Array.from(new Set(items.map((item) => item.trim()).filter(Boolean)));
+}
+
+function buildActiveBibleBackground({
+  book,
+  chapter,
+  connections,
+  bookIntroduction,
+}: {
+  book: string;
+  chapter: number;
+  connections: ActiveChapterConnections;
+  bookIntroduction: BookIntroduction | null;
+}): ActiveBibleBackground {
+  const reviewed = bibleBackgroundChapters.find((item) => item.book === book && item.chapter === chapter);
+  const fallbackHistoricalSetting = bookIntroduction?.historicalSetting
+    ?? bookIntroduction?.overview.purpose
+    ?? DEFAULT_BIBLE_BACKGROUND.historicalSetting;
+  const base: BibleBackgroundChapter = reviewed ?? {
+    ...DEFAULT_BIBLE_BACKGROUND,
+    book,
+    chapter,
+    historicalSetting: fallbackHistoricalSetting,
+    geography: connections.places.map((place) => `${place.name}: ${place.significance}`),
+    timeline: connections.timeline.map((entry) => `${entry.title}: ${entry.timeframe}`),
+    culturalBackground: bookIntroduction?.teachingCautions?.slice(0, 3) ?? [],
+    majorEvents: bookIntroduction?.outline.slice(0, 4).map((section) => `${section.reference}: ${section.title}`) ?? [],
+    teachingNotes: connections.themes.slice(0, 4).map((theme) => `Trace the reviewed theme of ${theme} through ${book} ${chapter}.`),
+  };
+
+  return {
+    ...base,
+    book,
+    chapter,
+    geography: uniqueStrings([...base.geography, ...connections.places.map((place) => `${place.name}: ${place.region ? `${place.region}. ` : ""}${place.significance}`)]),
+    timeline: uniqueStrings([...base.timeline, ...connections.timeline.map((entry) => `${entry.title}: ${entry.timeframe}`)]),
+    nations: uniqueStrings([...base.nations, ...connections.places.flatMap((place) => place.nations ?? [])]),
+    people: connections.people,
+    places: connections.places,
+    timelineEntries: connections.timeline,
+  };
+}
+
 export default function Home() {
   const allVerses = useMemo(() => parseVerses(), []);
   const supabase = useMemo(() => makeSupabaseClient(), []);
@@ -10157,6 +10644,15 @@ export default function Home() {
   const activePerson = activePersonId ? peopleById.get(activePersonId) ?? null : null;
   const activeBookIntroduction = bookIntroductionsByBook.get(book) ?? null;
   const activeBookIntro = bookIntroBook ? bookIntroductionsByBook.get(bookIntroBook) ?? null : null;
+  const activeBibleBackground = useMemo(
+    () => buildActiveBibleBackground({
+      book,
+      chapter,
+      connections: activeChapterConnections,
+      bookIntroduction: activeBookIntroduction,
+    }),
+    [activeBookIntroduction, activeChapterConnections, book, chapter],
+  );
 
   const chapterCrossReferences = useMemo(
     () => crossReferences.filter((reference) => reference.verse_ref.startsWith(`${book} ${chapter}:`)),
@@ -10211,6 +10707,7 @@ export default function Home() {
       keyVerses: chapterKeyVerses.length ? chapterKeyVerses : [fallbackVerse.ref],
       analysis: chapterAnalysis,
       connections: activeChapterConnections,
+      background: activeBibleBackground,
       crossReferences: chapterCrossReferences,
       commentaryEntries: chapterCommentaryEntries,
       notes: chapterNotes,
@@ -10245,6 +10742,7 @@ export default function Home() {
         `Repeated words: ${chapterAnalysis.repeatedWords.slice(0, 10).map((item) => `${item.word} (${item.count})`).join(", ") || "No repeated words loaded."}`,
         `People: ${activeChapterConnections.people.map((person) => person.name).join(", ") || "No reviewed people entries yet."}`,
         `Places: ${activeChapterConnections.places.map((place) => place.name).join(", ") || "No reviewed places entries yet."}`,
+        `Background: ${activeBibleBackground.historicalSetting}`,
       ].join("\n"),
       studyPack: buildChapterStudyPackMarkdown(exportData),
       commentary: chapterCommentaryEntries.length
@@ -10259,6 +10757,7 @@ export default function Home() {
     };
   }, [
     activeBookIntroduction,
+    activeBibleBackground,
     activeChapterConnections,
     activeChapterResourceRecommendations,
     allVerses,
@@ -13894,6 +14393,7 @@ export default function Home() {
                 versesByRef={versesByRef}
                 chapterAnalysis={chapterAnalysis}
                 chapterConnectionsData={activeChapterConnections}
+                bibleBackground={activeBibleBackground}
                 chapterCrossReferences={chapterCrossReferences}
                 chapterCommentaryEntries={chapterCommentaryEntries}
                 allCommentaryEntries={commentaryEntries}
@@ -14266,6 +14766,7 @@ export default function Home() {
                 verses={chapterVerses}
                 analysis={chapterAnalysis}
                 connections={activeChapterConnections}
+                background={activeBibleBackground}
                 crossReferences={chapterCrossReferences}
                 commentaryEntries={chapterCommentaryEntries}
                 keyVerses={chapterKeyVerses}
@@ -16045,6 +16546,12 @@ function PersonStudyScreen({
             <h2 className="text-base font-semibold text-[var(--ink)]">Profile</h2>
           </div>
           <div className="mt-4 space-y-3">
+            {person.biography && (
+              <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Biography</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{person.biography}</p>
+              </div>
+            )}
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First appearance</p>
               <button className="mt-1 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenReference(person.firstAppearance)} type="button">
@@ -16091,6 +16598,33 @@ function PersonStudyScreen({
               ))}
             </div>
           </div>
+          {person.timeline?.length ? (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Timeline</p>
+              <div className="mt-2 space-y-2">
+                {person.timeline.map((item) => (
+                  <p key={`person-timeline-${person.id}-${item.label}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--green)]">{item.label}:</span> {item.event}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {person.relationships?.length ? (
+            <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Relationships</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {person.relationships.map((relationship) => (
+                  <span key={`person-relationship-${person.id}-${relationship}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                    {relationship}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {person.mapNote && (
+            <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{person.mapNote}</p>
+          )}
         </article>
       </section>
 
@@ -16717,6 +17251,7 @@ function BibleReader({
   versesByRef,
   chapterAnalysis,
   chapterConnectionsData,
+  bibleBackground,
   chapterCrossReferences,
   chapterCommentaryEntries,
   allCommentaryEntries,
@@ -16836,6 +17371,7 @@ function BibleReader({
   versesByRef: Map<string, BibleVerse>;
   chapterAnalysis: ChapterStudyAnalysis;
   chapterConnectionsData: ActiveChapterConnections;
+  bibleBackground: ActiveBibleBackground;
   chapterCrossReferences: CrossReference[];
   chapterCommentaryEntries: CommentaryEntry[];
   allCommentaryEntries: CommentaryEntry[];
@@ -17565,6 +18101,7 @@ function BibleReader({
         allVerses={allVerses}
         analysis={chapterAnalysis}
         connections={chapterConnectionsData}
+        background={bibleBackground}
         chapterCommentaryEntries={chapterCommentaryEntries}
         allCommentaryEntries={allCommentaryEntries}
         chapterCrossReferences={chapterCrossReferences}
@@ -18603,6 +19140,9 @@ function buildLessonOutline(data: TeachingNotesExportData, teacherNotes: Teacher
       lines: sectionOrEmpty([
         `Teaching aim: ${summary.teachingAim}`,
         ...keyVerseLines.map((line) => `Key verse: ${line}`),
+        `Historical setting: ${data.background.historicalSetting}`,
+        ...data.background.majorEvents.slice(0, 4).map((event) => `Major event: ${event}`),
+        ...data.background.culturalBackground.slice(0, 4).map((item) => `Cultural background: ${item}`),
         ...data.connections.themes.slice(0, 5).map((theme) => `Reviewed theme: ${theme}`),
         ...data.connections.people.slice(0, 4).map((person) => `Person: ${person.name} - ${person.summary}`),
         ...data.connections.timeline.slice(0, 4).map((entry) => `Timeline: ${entry.era} - ${entry.title}. ${entry.description}`),
@@ -18702,6 +19242,27 @@ function buildTeachingNotesMarkdown(data: TeachingNotesExportData) {
       const preview = data.versesByRef.get(reference.target_ref)?.plainText;
       return `- ${reference.verse_ref} -> ${reference.target_ref}${reference.label ? ` (${reference.label})` : ""}${preview ? ` - ${preview}` : ""} [${reference.source_title ?? reference.source}]`;
     })),
+    "",
+    "## Bible Background",
+    `- Historical setting: ${data.background.historicalSetting}`,
+    ...sectionOrEmpty(data.background.majorEvents.map((event) => `- Major event: ${event}`)),
+    ...sectionOrEmpty(data.background.teachingNotes.map((note) => `- Teaching note: ${note}`)),
+    "",
+    "## Geography and Nations",
+    ...sectionOrEmpty([
+      ...data.background.geography.map((item) => `- Geography: ${item}`),
+      ...data.background.nations.map((item) => `- Nation: ${item}`),
+    ]),
+    "",
+    "## Kings, Prophets, and Timeline",
+    ...sectionOrEmpty([
+      ...data.background.kings.map((item) => `- King: ${item}`),
+      ...data.background.prophets.map((item) => `- Prophet: ${item}`),
+      ...data.background.timeline.map((item) => `- Timeline: ${item}`),
+    ]),
+    "",
+    "## Cultural Background",
+    ...sectionOrEmpty(data.background.culturalBackground.map((item) => `- ${item}`)),
     "",
     "## People Mentioned",
     ...sectionOrEmpty(data.connections.people.map((person) => `- ${person.name}: ${person.summary} First appearance: ${person.firstAppearance}`)),
@@ -18803,6 +19364,13 @@ function buildChapterStudyPackMarkdown(data: TeachingNotesExportData) {
     "## Timeline",
     ...sectionOrEmpty(data.connections.timeline.map((entry) => `- ${entry.era}: ${entry.title} (${entry.timeframe}). ${entry.description}`)),
     "",
+    "## Background",
+    `- Historical setting: ${data.background.historicalSetting}`,
+    ...sectionOrEmpty(data.background.majorEvents.slice(0, 8).map((event) => `- ${event}`)),
+    "",
+    "## Culture",
+    ...sectionOrEmpty(data.background.culturalBackground.map((item) => `- ${item}`)),
+    "",
     "## Applications",
     ...sectionOrEmpty(applicationLines.map((line) => `- ${line}`)),
     "",
@@ -18822,6 +19390,7 @@ function ChapterStudyWorkflow({
   allVerses,
   analysis,
   connections,
+  background,
   chapterCommentaryEntries,
   allCommentaryEntries,
   chapterCrossReferences,
@@ -18855,6 +19424,7 @@ function ChapterStudyWorkflow({
   allVerses: BibleVerse[];
   analysis: ChapterStudyAnalysis;
   connections: ActiveChapterConnections;
+  background: ActiveBibleBackground;
   chapterCommentaryEntries: CommentaryEntry[];
   allCommentaryEntries: CommentaryEntry[];
   chapterCrossReferences: CrossReference[];
@@ -18909,6 +19479,7 @@ function ChapterStudyWorkflow({
     keyVerses: chapterKeyVerses.length ? chapterKeyVerses : [selectedVerse.ref],
     analysis,
     connections,
+    background,
     crossReferences: chapterCrossReferences,
     commentaryEntries: chapterCommentaryEntries,
     notes: chapterNotes,
@@ -18925,6 +19496,7 @@ function ChapterStudyWorkflow({
     chapterNotes,
     chapterResourceRecommendations,
     connections,
+    background,
     memoryPreview,
     selectedVerse,
     versesByRef,
@@ -18967,15 +19539,6 @@ function ChapterStudyWorkflow({
   const relatedResourceCount = chapterResourceRecommendations.filter((resource) => resource.resourceSlug).length;
   const dictionaryToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Dictionary").length;
   const bibleToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Bible Tool").length;
-  const customsTopics = [
-    "feasts",
-    "offerings",
-    "temple",
-    "priesthood",
-    "agriculture",
-    "family life",
-  ];
-
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
     setTeacherNotesByChapter((current) => {
       const next = {
@@ -18992,6 +19555,12 @@ function ChapterStudyWorkflow({
       }
       return next;
     });
+  }
+
+  function appendTeacherBackgroundNote(label: string, body: string) {
+    const current = teacherNotesDraft.mainPoints.trim();
+    updateTeacherNote("mainPoints", current ? `${current}\n\n${label}: ${body}` : `${label}: ${body}`);
+    setExportMessage(`${label} added to teacher notes.`);
   }
 
   function toggleTeachingSection(sectionId: TeachingWorkspaceSectionId) {
@@ -19213,85 +19782,17 @@ function ChapterStudyWorkflow({
         </div>
       </article>
 
-      <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible Background</p>
-            <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">Geography, chronology, and customs</h3>
-            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-              Use reviewed background data for places, journeys, regions, nations, timeline, kings, prophets, offerings, feasts, priesthood, agriculture, and family life.
-            </p>
-          </div>
-          <button
-            className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-            onClick={() => onOpenStudyToolSearch(selectedVerse.book, "all")}
-            type="button"
-          >
-            Search background
-          </button>
-        </div>
-        <div className="mt-4 grid gap-3 lg:grid-cols-3">
-          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
-            <div className="flex items-center gap-2 text-[var(--green)]">
-              <MapPin size={16} />
-              <p className="text-sm font-semibold">Places and Regions</p>
-            </div>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {connections.places.length ? connections.places.slice(0, 6).map((place) => (
-                <button
-                  key={`background-place-${place.id}`}
-                  className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                  onClick={() => onOpenStudyToolSearch(place.name, "geography")}
-                  type="button"
-                >
-                  {place.name}
-                </button>
-              )) : (
-                <span className="text-xs leading-5 text-[var(--muted)]">No reviewed places attached to this chapter yet.</span>
-              )}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
-            <div className="flex items-center gap-2 text-[var(--green)]">
-              <Timer size={16} />
-              <p className="text-sm font-semibold">Timeline and Events</p>
-            </div>
-            <div className="mt-3 space-y-2">
-              {connections.timeline.length ? connections.timeline.slice(0, 3).map((entry) => (
-                <button
-                  key={`background-timeline-${entry.id}`}
-                  className="w-full rounded-xl bg-[var(--paper)] px-3 py-2 text-left"
-                  onClick={() => onOpenStudyToolSearch(entry.title, "chronology")}
-                  type="button"
-                >
-                  <span className="block text-xs font-semibold text-[var(--green)]">{entry.title}</span>
-                  <span className="mt-1 block text-[11px] leading-4 text-[var(--muted)]">{entry.timeframe}</span>
-                </button>
-              )) : (
-                <span className="text-xs leading-5 text-[var(--muted)]">Timeline entries will appear as chapters are reviewed.</span>
-              )}
-            </div>
-          </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
-            <div className="flex items-center gap-2 text-[var(--green)]">
-              <BookOpen size={16} />
-              <p className="text-sm font-semibold">Manners and Customs</p>
-            </div>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {customsTopics.map((topic) => (
-                <button
-                  key={`background-custom-${topic}`}
-                  className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                  onClick={() => onOpenStudyToolSearch(topic, "manners and customs")}
-                  type="button"
-                >
-                  {topic}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </article>
+      <div className="mt-4">
+        <BibleBackgroundCenter
+          background={background}
+          onOpenReference={onOpenReference}
+          onOpenPersonStudy={onOpenPersonStudy}
+          onOpenStudyToolSearch={onOpenStudyToolSearch}
+          onAddBackgroundNote={() => appendTeacherBackgroundNote("Background", background.historicalSetting)}
+          onAddGeographyNote={() => appendTeacherBackgroundNote("Geography", background.geography.slice(0, 4).join(" "))}
+          onAddTimelineNote={() => appendTeacherBackgroundNote("Timeline", background.timeline.slice(0, 4).join(" "))}
+        />
+      </div>
 
 	      {activeStudyCollection && (
         <div className="mt-4">
@@ -20260,6 +20761,187 @@ function StudyInsightSection({
   );
 }
 
+function BackgroundList({
+  title,
+  items,
+  empty,
+}: {
+  title: string;
+  items: string[];
+  empty: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</p>
+      <div className="mt-2 space-y-2">
+        {items.length ? items.map((item) => (
+          <p key={`${title}-${item}`} className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+            {item}
+          </p>
+        )) : (
+          <p className="text-xs leading-5 text-[var(--muted)]">{empty}</p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function BibleBackgroundCenter({
+  background,
+  compact = false,
+  onOpenReference,
+  onOpenPersonStudy,
+  onOpenStudyToolSearch,
+  onAddBackgroundNote,
+  onAddGeographyNote,
+  onAddTimelineNote,
+}: {
+  background: ActiveBibleBackground;
+  compact?: boolean;
+  onOpenReference: (targetRef: string) => void;
+  onOpenPersonStudy?: (personId: string) => void;
+  onOpenStudyToolSearch?: (query: string, filter?: string) => void;
+  onAddBackgroundNote?: () => void;
+  onAddGeographyNote?: () => void;
+  onAddTimelineNote?: () => void;
+}) {
+  const hasTeachingActions = Boolean(onAddBackgroundNote || onAddGeographyNote || onAddTimelineNote);
+  const peoplePreview = background.people.slice(0, compact ? 4 : 8);
+  const placesPreview = background.places.slice(0, compact ? 4 : 8);
+  const timelinePreview = background.timelineEntries.slice(0, compact ? 3 : 6);
+
+  return (
+    <article className={`rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 ${compact ? "" : "shadow-sm"}`}>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible Background Center</p>
+          <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{background.book} {background.chapter} background</h3>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">{background.historicalSetting}</p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            {background.places.length} places
+          </span>
+          <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+            {background.timelineEntries.length} timeline
+          </span>
+        </div>
+      </div>
+
+      {hasTeachingActions && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {onAddBackgroundNote && (
+            <button className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white" onClick={onAddBackgroundNote} type="button">
+              Add background note
+            </button>
+          )}
+          {onAddGeographyNote && (
+            <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={onAddGeographyNote} type="button">
+              Add geography note
+            </button>
+          )}
+          {onAddTimelineNote && (
+            <button className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={onAddTimelineNote} type="button">
+              Add timeline note
+            </button>
+          )}
+        </div>
+      )}
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-3">
+        <BackgroundList title="Geography" items={background.geography.slice(0, compact ? 4 : 8)} empty="No reviewed geography notes are attached yet." />
+        <BackgroundList title="Major Events" items={background.majorEvents.slice(0, compact ? 4 : 8)} empty="No reviewed major events are attached yet." />
+        <BackgroundList title="Culture" items={background.culturalBackground.slice(0, compact ? 4 : 8)} empty="No reviewed cultural background is attached yet." />
+      </div>
+
+      <div className="mt-3 grid gap-3 lg:grid-cols-3">
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Users size={16} />
+            <p className="text-sm font-semibold">People</p>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {peoplePreview.length ? peoplePreview.map((person) => (
+              <button
+                key={`background-person-${person.id}`}
+                className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onOpenPersonStudy?.(person.id)}
+                type="button"
+              >
+                {person.name}
+              </button>
+            )) : (
+              <span className="text-xs leading-5 text-[var(--muted)]">People profiles will appear as chapters are reviewed.</span>
+            )}
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <MapPin size={16} />
+            <p className="text-sm font-semibold">Places</p>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {placesPreview.length ? placesPreview.map((place) => (
+              <button
+                key={`background-place-${place.id}`}
+                className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onOpenStudyToolSearch?.(place.name, "geography")}
+                type="button"
+              >
+                {place.name}
+              </button>
+            )) : (
+              <span className="text-xs leading-5 text-[var(--muted)]">Place profiles will appear as chapters are reviewed.</span>
+            )}
+          </div>
+        </div>
+
+        <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <Timer size={16} />
+            <p className="text-sm font-semibold">Timeline</p>
+          </div>
+          <div className="mt-3 space-y-2">
+            {timelinePreview.length ? timelinePreview.map((entry) => (
+              <button
+                key={`background-timeline-${entry.id}`}
+                className="w-full rounded-xl bg-[var(--paper)] px-3 py-2 text-left"
+                onClick={() => onOpenStudyToolSearch?.(entry.title, "chronology")}
+                type="button"
+              >
+                <span className="block text-xs font-semibold text-[var(--green)]">{entry.title}</span>
+                <span className="mt-1 block text-[11px] leading-4 text-[var(--muted)]">{entry.era} · {entry.timeframe}</span>
+              </button>
+            )) : (
+              <span className="text-xs leading-5 text-[var(--muted)]">Timeline entries will appear as chapters are reviewed.</span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-3 grid gap-3 md:grid-cols-3">
+        <BackgroundList title="Kings" items={background.kings} empty="No king is attached to this chapter." />
+        <BackgroundList title="Prophets" items={background.prophets} empty="No prophet is attached to this chapter." />
+        <BackgroundList title="Nations" items={background.nations} empty="No nation list is attached yet." />
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {background.places.flatMap((place) => place.keyPassages.slice(0, 1)).slice(0, 4).map((reference) => (
+          <button
+            key={`background-ref-${reference}`}
+            className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+            onClick={() => onOpenReference(reference)}
+            type="button"
+          >
+            {reference}
+          </button>
+        ))}
+      </div>
+    </article>
+  );
+}
+
 function PlaceContextCard({
   place,
   onOpenReference,
@@ -20272,6 +20954,7 @@ function PlaceContextCard({
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
           <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
+          {place.region && <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{place.region}</p>}
           <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{place.description}</p>
         </div>
         <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
@@ -20281,6 +20964,33 @@ function PlaceContextCard({
       <p className="mt-2 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--ink)]">
         {place.significance}
       </p>
+      {place.keyEvents?.length ? (
+        <div className="mt-2 flex flex-wrap gap-2">
+          {place.keyEvents.slice(0, 4).map((event) => (
+            <span key={`place-event-${place.id}-${event}`} className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+              {event}
+            </span>
+          ))}
+        </div>
+      ) : null}
+      {place.timeline?.length ? (
+        <div className="mt-2 space-y-1">
+          {place.timeline.slice(0, 3).map((item) => (
+            <p key={`place-timeline-${place.id}-${item.label}`} className="rounded-xl bg-[var(--paper)] px-3 py-2 text-[11px] leading-4 text-[var(--muted)]">
+              <span className="font-semibold text-[var(--green)]">{item.label}:</span> {item.event}
+            </p>
+          ))}
+        </div>
+      ) : null}
+      {place.nations?.length ? (
+        <div className="mt-2 flex flex-wrap gap-2">
+          {place.nations.slice(0, 4).map((nation) => (
+            <span key={`place-nation-${place.id}-${nation}`} className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+              {nation}
+            </span>
+          ))}
+        </div>
+      ) : null}
       <ReferenceRow references={place.keyPassages.slice(0, 4)} onOpenReference={onOpenReference} />
       <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{place.mapNote}</p>
     </article>
@@ -26941,6 +27651,7 @@ function PassageGuideScreen({
   verses,
   analysis,
   connections,
+  background,
   crossReferences,
   commentaryEntries,
   keyVerses,
@@ -26963,6 +27674,7 @@ function PassageGuideScreen({
   verses: BibleVerse[];
   analysis: ChapterStudyAnalysis;
   connections: ActiveChapterConnections;
+  background: ActiveBibleBackground;
   crossReferences: CrossReference[];
   commentaryEntries: CommentaryEntry[];
   keyVerses: string[];
@@ -26996,6 +27708,7 @@ function PassageGuideScreen({
       keyVerses: displayKeyVerses,
       analysis,
       connections,
+      background,
       crossReferences,
       commentaryEntries,
       notes,
@@ -27011,6 +27724,7 @@ function PassageGuideScreen({
     chapter,
     commentaryEntries,
     connections,
+    background,
     crossReferences,
     displayKeyVerses,
     firstVerse,
@@ -27051,6 +27765,8 @@ function PassageGuideScreen({
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
     ["passage-study-pack", "Study Pack"],
+    ["passage-background", "Background"],
+    ["passage-culture", "Culture"],
     ["passage-questions", "Questions"],
     ["passage-illustrations", "Illustrations"],
     ["passage-summary", "Summary"],
@@ -27270,6 +27986,26 @@ function PassageGuideScreen({
         {packExportMessage && (
           <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{packExportMessage}</p>
         )}
+      </StudySection>
+
+      <StudySection id="passage-background" title="Bible Background Center">
+        <BibleBackgroundCenter
+          background={background}
+          compact
+          onOpenReference={onOpenReference}
+          onOpenPersonStudy={onOpenPersonStudy}
+        />
+      </StudySection>
+
+      <StudySection id="passage-culture" title="Culture and Setting">
+        <div className="grid gap-3 lg:grid-cols-2">
+          <BackgroundList title="Cultural Background" items={background.culturalBackground} empty="No reviewed cultural background is attached yet." />
+          <BackgroundList title="Teaching Notes" items={background.teachingNotes} empty="No reviewed background teaching notes are attached yet." />
+          <BackgroundList title="Kings" items={background.kings} empty="No king is attached to this chapter." />
+          <BackgroundList title="Prophets" items={background.prophets} empty="No prophet is attached to this chapter." />
+          <BackgroundList title="Nations" items={background.nations} empty="No nation list is attached yet." />
+          <BackgroundList title="Major Events" items={background.majorEvents} empty="No major events are attached yet." />
+        </div>
       </StudySection>
 
       <StudySection id="passage-questions" title="Study Questions">
