@@ -80,6 +80,7 @@ import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/impor
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
 import matthewHenryReviewedPhase5ProverbsCommentary from "../../data/imports/matthew-henry-reviewed-phase-5-proverbs-commentary.json";
+import matthewHenryReviewedPhase6LeviticusNumbersStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-6-leviticus-numbers-start-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
@@ -1191,7 +1192,7 @@ type BibleMarkers = Record<BibleMarkerId, BiblePassage | null>;
 
 type ChapterResourceRecommendation = {
   id: string;
-  kind: "Dictionary" | "Cross References" | "Commentary" | "Library Resource" | "Bible Handbook";
+  kind: "Dictionary" | "Cross References" | "Commentary" | "Library Resource" | "Bible Handbook" | "Bible Tool" | "Bible Survey" | "Bible Introduction";
   title: string;
   author?: string;
   status: "available" | "sample" | "planned" | "rights review";
@@ -2360,6 +2361,17 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
 };
 
 const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside"];
+const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer"];
+const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
+  spurgeon: 16,
+  ironside: 10,
+  moody: 12,
+  ryle: 10,
+  murray: 10,
+  bounds: 8,
+  torrey: 8,
+  meyer: 8,
+};
 
 const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
   {
@@ -2401,7 +2413,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Ironside is best used for clear expository support after reading the passage itself.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
-    recommendedReadingOrder: ["John commentary samples", "Romans commentary samples", "Luke commentary samples"],
+    recommendedReadingOrder: ["The Four Hundred Silent Years", "Lectures on the Epistle to the Colossians", "Notes on the Minor Prophets"],
     subjects: ["Commentary", "Exposition", "Bible Study"],
   },
   {
@@ -2690,7 +2702,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "bible-dictionaries",
     title: "Bible Dictionaries",
     description: "Webster, Easton, Smith, and other verified reference works for quick word and background lookup.",
-    terms: ["dictionary", "webster", "easton", "smith"],
+    terms: ["dictionary", "webster", "easton", "smith", "nave", "topical", "strong"],
     labels: ["Reference", "Fast lookup"],
     featuredAuthorIds: [],
   },
@@ -2698,7 +2710,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "bible-encyclopedias",
     title: "Bible Encyclopedias",
     description: "Bible background and encyclopedia resources to support people, places, customs, and history.",
-    terms: ["encyclopedia", "cyclopedia", "background"],
+    terms: ["encyclopedia", "cyclopedia", "background", "manners", "customs", "geography", "chronology"],
     labels: ["Coming soon", "Background"],
     featuredAuthorIds: [],
   },
@@ -2706,7 +2718,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "bible-handbooks",
     title: "Bible Handbooks",
     description: "Book introductions, outlines, and survey helps for seeing the flow of Scripture.",
-    terms: ["handbook", "outline", "introduction"],
+    terms: ["handbook", "outline", "introduction", "manners", "customs", "geography", "chronology"],
     labels: ["Book background", "Teaching prep"],
     featuredAuthorIds: [],
   },
@@ -2770,7 +2782,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "study-helps",
     title: "Bible Study Collection",
     description: "Dictionaries, topical helps, handbooks, and survey resources for quick study.",
-    terms: ["dictionary", "topical", "bible study", "handbook", "survey"],
+    terms: ["dictionary", "topical", "bible study", "handbook", "survey", "strong", "treasury of scripture knowledge", "tsk", "cross references", "manners", "customs", "geography", "chronology"],
     labels: ["Study helps", "Reference"],
     featuredAuthorIds: ["ironside"],
   },
@@ -3628,28 +3640,35 @@ function chapterEssentials({
       note: "First stop for KJV word meanings and older English usage.",
     },
     {
+      id: `${key}-strongs-starter`,
+      kind: "Bible Tool",
+      title: "Strong's Starter Word Study",
+      status: "sample",
+      note: "Reviewed starter entries connect common KJV words to simple Greek/Hebrew study panels while the full import remains under review.",
+    },
+    {
       id: `${key}-easton`,
       kind: "Dictionary",
       title: "Easton's Bible Dictionary",
       author: "M. G. Easton",
-      status: "planned",
-      note: "Public-domain dictionary candidate for Bible names, places, and themes after import review.",
+      status: "available",
+      note: "Public-domain Bible dictionary resource for names, places, themes, and background study.",
     },
     {
       id: `${key}-smith`,
       kind: "Dictionary",
       title: "Smith's Bible Dictionary",
       author: "William Smith",
-      status: "planned",
-      note: "Public-domain dictionary candidate for historical and geographical background after import review.",
+      status: "available",
+      note: "Public-domain dictionary resource for historical and geographical background.",
     },
     {
       id: `${key}-nave`,
       kind: "Dictionary",
       title: "Nave's Topical Bible",
       author: "Orville J. Nave",
-      status: "planned",
-      note: "Topical Bible candidate for tracing related subjects after source and edition review.",
+      status: "available",
+      note: "Topical Bible help for tracing doctrines, subjects, and related verses.",
     },
     {
       id: `${key}-tsk`,
@@ -3657,6 +3676,34 @@ function chapterEssentials({
       title: "Treasury of Scripture Knowledge",
       status: "sample",
       note: "Cross-reference structure is ready; reviewed samples display before full TSK import.",
+    },
+    {
+      id: `${key}-manners-customs`,
+      kind: "Bible Tool",
+      title: "Bible Manners and Customs",
+      status: "available",
+      note: "Use reviewed public-domain background resources for culture, daily life, and historical setting.",
+    },
+    {
+      id: `${key}-geography-chronology`,
+      kind: "Bible Tool",
+      title: "Bible Geography and Chronology",
+      status: "available",
+      note: "Place and timeline data connect chapters to locations, periods, and major Bible events.",
+    },
+    {
+      id: `${key}-book-introduction`,
+      kind: "Bible Introduction",
+      title: `${book} Book Introduction`,
+      status: "available",
+      note: "Author, date, theme, key verse, outline, Christ in the book, and recommended resources are available from the chapter workflow.",
+    },
+    {
+      id: `${key}-survey`,
+      kind: "Bible Survey",
+      title: "66-Book Bible Survey",
+      status: "available",
+      note: "Survey coverage gives every Bible book a consistent study entry for teaching and overview work.",
     },
     {
       id: `${key}-halley`,
@@ -5893,6 +5940,96 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     keyVerses: ["John 1:10", "John 3:16", "John 17:9", "1 John 2:15"],
     note: "Prototype entry; final import must handle context carefully.",
   },
+  born: {
+    strongsNumber: "G1080",
+    originalWord: "gennao",
+    displayWord: "born",
+    pronunciation: "ghen-nah'-o",
+    root: "gennao",
+    rootChain: ["G1096 become", "G1080 beget/bear"],
+    relatedWords: ["born", "begotten"],
+    plainMeaning: "To beget, bear, bring forth, or be born. In John 3 it is central to the new birth.",
+    websterWord: "born",
+    firstOccurrence: "Matthew 1:2",
+    keyOccurrences: ["Matthew 1:2", "John 1:13", "John 3:3", "John 3:7", "1 Peter 1:23"],
+    keyVerses: ["John 1:13", "John 3:3", "John 3:7", "1 Peter 1:23"],
+    note: "Reviewed starter entry for John 3 new-birth study. Full import will preserve exact verse-level mapping later.",
+  },
+  truth: {
+    strongsNumber: "G225",
+    originalWord: "aletheia",
+    displayWord: "truth",
+    pronunciation: "al-ay'-thi-a",
+    root: "alethes / aletheia",
+    rootChain: ["G227 true", "G225 truth"],
+    relatedWords: ["truth", "true"],
+    plainMeaning: "Truth; that which is real, certain, and faithful. John's writings often connect truth with Christ and God's word.",
+    websterWord: "truth",
+    firstOccurrence: "Mark 5:33",
+    keyOccurrences: ["John 1:14", "John 8:32", "John 14:6", "John 17:17", "3 John 4"],
+    keyVerses: ["John 8:32", "John 14:6", "John 17:17", "3 John 4"],
+    note: "Reviewed starter entry for John's Gospel and teaching-prep word studies.",
+  },
+  sin: {
+    strongsNumber: "G266",
+    originalWord: "hamartia",
+    displayWord: "sin",
+    pronunciation: "ham-ar-tee'-ah",
+    root: "hamartano / hamartia",
+    rootChain: ["G264 miss the mark/sin", "G266 sin"],
+    relatedWords: ["sin", "sinner", "sins"],
+    plainMeaning: "Sin; missing the mark, offence, or transgression against God.",
+    websterWord: "sin",
+    firstOccurrence: "Matthew 1:21",
+    keyOccurrences: ["Matthew 1:21", "John 1:29", "Romans 3:23", "Romans 5:12", "Romans 6:23"],
+    keyVerses: ["Matthew 1:21", "John 1:29", "Romans 3:23", "Romans 6:23"],
+    note: "Reviewed starter entry for Gospel and Romans studies.",
+  },
+  saved: {
+    strongsNumber: "G4982",
+    originalWord: "sozo",
+    displayWord: "saved",
+    pronunciation: "sode'-zo",
+    root: "sozo / soteria",
+    rootChain: ["G4982 save", "G4991 salvation"],
+    relatedWords: ["saved", "salvation", "save"],
+    plainMeaning: "To save, deliver, preserve, or make whole. In salvation passages it points to God's deliverance through Christ.",
+    websterWord: "saved",
+    firstOccurrence: "Matthew 1:21",
+    keyOccurrences: ["Matthew 1:21", "Luke 7:50", "Acts 16:31", "Romans 10:9", "Ephesians 2:8"],
+    keyVerses: ["Acts 16:31", "Romans 10:9", "Ephesians 2:8", "Titus 3:5"],
+    note: "Reviewed starter entry for evangelism, Romans, and teaching-prep workflows.",
+  },
+  righteousness: {
+    strongsNumber: "G1343",
+    originalWord: "dikaiosune",
+    displayWord: "righteousness",
+    pronunciation: "dik-ah-yos-oo'-nay",
+    root: "dikaios / dikaiosune",
+    rootChain: ["G1342 righteous", "G1343 righteousness"],
+    relatedWords: ["righteousness", "righteous", "just"],
+    plainMeaning: "Righteousness; justice, rightness, or conformity to what is right before God.",
+    websterWord: "righteousness",
+    firstOccurrence: "Matthew 3:15",
+    keyOccurrences: ["Matthew 3:15", "Matthew 6:33", "Romans 1:17", "Romans 3:22", "2 Corinthians 5:21"],
+    keyVerses: ["Matthew 6:33", "Romans 1:17", "Romans 3:22", "2 Corinthians 5:21"],
+    note: "Reviewed starter entry for Romans and sermon-prep word studies.",
+  },
+  repentance: {
+    strongsNumber: "G3341",
+    originalWord: "metanoia",
+    displayWord: "repentance",
+    pronunciation: "met-an'-oy-ah",
+    root: "metanoeo / metanoia",
+    rootChain: ["G3340 repent", "G3341 repentance"],
+    relatedWords: ["repentance", "repent"],
+    plainMeaning: "Repentance; a change of mind shown in turning from sin toward God.",
+    websterWord: "repentance",
+    firstOccurrence: "Matthew 3:8",
+    keyOccurrences: ["Matthew 3:8", "Luke 24:47", "Acts 20:21", "2 Corinthians 7:10", "2 Peter 3:9"],
+    keyVerses: ["Luke 24:47", "Acts 20:21", "2 Corinthians 7:10", "2 Peter 3:9"],
+    note: "Reviewed starter entry for Luke 24, evangelism, and application studies.",
+  },
 };
 
 const studyStopWords = new Set([
@@ -6021,6 +6158,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase5ProverbsCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedPhase6LeviticusNumbersStartCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
@@ -18685,6 +18823,13 @@ function ChapterStudyWorkflow({
   }), [amosRangeCommentaryEntries, bookIntroduction, teacherNotesByChapter, versesByRef]);
   const exportFileBase = teachingNotesFileBase(selectedVerse.book, selectedVerse.chapter);
   const activeStudyCollection = bibleStudyCollectionForBook(selectedVerse.book);
+  const firstStrongSuggestedWord = suggestedWords.find((item) => strongsMvpEntries[normalizeLookupWord(item.word)])?.word;
+  const toolLookupWord = explorer.word || explorer.lookupWord || firstStrongSuggestedWord || cleanWord(selectedVerse.plainText.split(/\s+/)[0] ?? "");
+  const strongStudyWord = chapterStrongEntry?.websterWord ?? firstStrongSuggestedWord ?? toolLookupWord;
+  const commentaryAuthors = Array.from(new Set(chapterCommentaryEntries.map((entry) => entry.author))).sort();
+  const relatedResourceCount = chapterResourceRecommendations.filter((resource) => resource.resourceSlug).length;
+  const dictionaryToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Dictionary").length;
+  const bibleToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Bible Tool").length;
 
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
     setTeacherNotesByChapter((current) => {
@@ -18843,6 +18988,86 @@ function ChapterStudyWorkflow({
 	          ))}
 	        </div>
 	      </div>
+
+      <article className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible Tools Hub</p>
+            <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{selectedVerse.book} {selectedVerse.chapter} study tools</h3>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Open the core tools for this chapter without leaving the Bible-centered workflow.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            Scripture first
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <StudyToolHubCard
+            title="Webster's 1828"
+            meta="KJV word meanings"
+            body={`Lookup ${toolLookupWord ? `"${toolLookupWord}"` : "a selected word"} with older English usage.`}
+            actionLabel="Open Webster"
+            onAction={() => onLookupWord(toolLookupWord)}
+            disabled={!toolLookupWord}
+          />
+          <StudyToolHubCard
+            title="Strong's"
+            meta={chapterStrongEntry ? chapterStrongEntry.strongsNumber : "Starter coverage"}
+            body={chapterStrongEntry ? `${chapterStrongEntry.displayWord}: ${chapterStrongEntry.plainMeaning}` : "Use reviewed starter entries while the full Strong's import remains under review."}
+            actionLabel={chapterStrongEntry ? "Open Strong's" : "Find sample word"}
+            onAction={() => onExplorerWordChange(strongStudyWord)}
+            disabled={!strongStudyWord}
+          />
+          <StudyToolHubCard
+            title="TSK Cross References"
+            meta={`${chapterCrossReferences.length} reviewed`}
+            body="Review linked verses tied to the current chapter and selected verse."
+            actionLabel={chapterCrossReferences[0] ? "Open first reference" : "Waiting for refs"}
+            onAction={() => chapterCrossReferences[0] && onOpenReference(chapterCrossReferences[0].target_ref)}
+            disabled={!chapterCrossReferences[0]}
+          />
+          <StudyToolHubCard
+            title="Commentary"
+            meta={`${chapterCommentaryEntries.length} entries`}
+            body={commentaryAuthors.length ? commentaryAuthors.slice(0, 3).join(", ") : "Commentary appears after verified chapter entries are ready."}
+            actionLabel="Listen commentary"
+            onAction={onListenCommentary}
+            disabled={!chapterCommentaryEntries.length}
+          />
+          <StudyToolHubCard
+            title="Dictionaries and Helps"
+            meta={`${dictionaryToolCount} dictionaries`}
+            body="Webster, Easton, Smith, Nave, and other Bible helps are grouped for chapter study."
+            actionLabel="View helps"
+            onAction={() => onExplorerWordChange(toolLookupWord)}
+            disabled={!toolLookupWord}
+          />
+          <StudyToolHubCard
+            title="Manners, Places, Timeline"
+            meta={`${bibleToolCount} tools`}
+            body={`${connections.places.length} places and ${connections.timeline.length} timeline links are attached where reviewed.`}
+            actionLabel={connections.places[0] ? "Open place" : "Review chapter"}
+            onAction={() => connections.places[0]?.relatedPassages[0] && onOpenReference(connections.places[0].relatedPassages[0])}
+            disabled={!connections.places[0]?.relatedPassages[0]}
+          />
+          <StudyToolHubCard
+            title="Book Intro and Survey"
+            meta={bookIntroduction ? "Ready" : "Coming soon"}
+            body="Open author, date, theme, outline, Christ in the book, memory verses, and recommended resources."
+            actionLabel="Open intro"
+            onAction={onOpenBookIntroduction}
+            disabled={!bookIntroduction}
+          />
+          <StudyToolHubCard
+            title="Sermon Suggestions"
+            meta={`${relatedResourceCount} linked books`}
+            body="Send this chapter's reviewed data into sermon and lesson preparation."
+            actionLabel="Build sermon"
+            onAction={onBuildSermonFromStudy}
+          />
+        </div>
+      </article>
 
 	      {activeStudyCollection && (
         <div className="mt-4">
@@ -19929,6 +20154,42 @@ function MiniStat({ label, value }: { label: string; value: string }) {
       <p className="text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{label}</p>
       <p className="mt-1 text-lg font-semibold text-[var(--ink)]">{value}</p>
     </div>
+  );
+}
+
+function StudyToolHubCard({
+  title,
+  meta,
+  body,
+  actionLabel,
+  onAction,
+  disabled = false,
+}: {
+  title: string;
+  meta: string;
+  body: string;
+  actionLabel: string;
+  onAction: () => void;
+  disabled?: boolean;
+}) {
+  return (
+    <article className="flex min-h-[178px] flex-col justify-between rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <div>
+        <div className="flex flex-wrap items-start justify-between gap-2">
+          <h4 className="text-sm font-semibold text-[var(--ink)]">{title}</h4>
+          <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{meta}</span>
+        </div>
+        <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{body}</p>
+      </div>
+      <button
+        className="mt-4 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={disabled}
+        onClick={onAction}
+        type="button"
+      >
+        {actionLabel}
+      </button>
+    </article>
   );
 }
 
@@ -21742,6 +22003,8 @@ function LibraryScreen({
           </div>
         </div>
       </section>
+
+      <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
 
       <LibraryMediaCenter
         books={resources.slice(0, 8)}
@@ -25888,6 +26151,85 @@ function LibraryAuthorCard({
         )}
       </div>
     </button>
+  );
+}
+
+function AuthorCompletionDashboard({
+  resources,
+  onOpenAuthor,
+}: {
+  resources: LibraryResource[];
+  onOpenAuthor: (authorId: string) => void;
+}) {
+  const rows = MAJOR_AUTHOR_COLLECTION_IDS
+    .map((authorId) => {
+      const profile = LIBRARY_AUTHOR_PROFILES.find((candidate) => candidate.id === authorId);
+      if (!profile) return null;
+      const authorResources = resourcesForAuthor(resources, profile);
+      const target = AUTHOR_COLLECTION_TARGETS[authorId] ?? 8;
+      const progress = Math.min(100, Math.round((authorResources.length / target) * 100));
+      const missingStarterTitles = profile.recommendedReadingOrder
+        .filter((title) => !authorResources.some((resource) => resource.title.toLowerCase().includes(title.toLowerCase()) || title.toLowerCase().includes(resource.title.toLowerCase())))
+        .slice(0, 3);
+      return { profile, authorResources, target, progress, missingStarterTitles };
+    })
+    .filter(Boolean) as Array<{
+      profile: LibraryAuthorProfile;
+      authorResources: LibraryResource[];
+      target: number;
+      progress: number;
+      missingStarterTitles: string[];
+    }>;
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Major Author Collections</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Meaningful shelves, not random books</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            These collections show the core authors we are building around for prayer, evangelism, Christian living, preaching, and Bible study.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          Verified resources only
+        </span>
+      </div>
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        {rows.map(({ profile, authorResources, target, progress, missingStarterTitles }) => (
+          <button
+            key={`author-completion-${profile.id}`}
+            className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
+            onClick={() => onOpenAuthor(profile.id)}
+            type="button"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-[var(--ink)]">{profile.name}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--green)]">{authorResources.length} of {target} core titles</p>
+              </div>
+              <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{progress}%</span>
+            </div>
+            <div className="mt-3 h-2 overflow-hidden rounded-full bg-white">
+              <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${progress}%` }} />
+            </div>
+            <p className="mt-3 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{profile.shortLabel}</p>
+            <div className="mt-3 space-y-1.5">
+              {featuredTitlesForAuthor(authorResources, profile, 2).map((resource) => (
+                <p key={`author-completion-title-${profile.id}-${resource.slug}`} className="line-clamp-1 rounded-lg bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  {resource.title}
+                </p>
+              ))}
+              {missingStarterTitles.length > 0 && (
+                <p className="rounded-lg bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+                  More verified titles coming: {missingStarterTitles.join(", ")}
+                </p>
+              )}
+            </div>
+          </button>
+        ))}
+      </div>
+    </section>
   );
 }
 
