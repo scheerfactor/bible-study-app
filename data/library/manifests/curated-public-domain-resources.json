@@ -30479,5 +30479,511 @@
     "file_size_bytes": 675193,
     "word_count": 126204,
     "rights_notes": "Internet Archive item morningbymornin00spurgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "Studies on the Book of Daniel: A Course of Lectures",
+    "author": "J. N. Darby",
+    "year": 1864,
+    "category": "Commentaries",
+    "collection": "Darby Collection",
+    "source_url": "https://archive.org/download/studiesonbookda00darbgoog/studiesonbookda00darbgoog_djvu.txt",
+    "download_url": "https://archive.org/download/studiesonbookda00darbgoog/studiesonbookda00darbgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/studies-on-the-book-of-daniel-a-course-of-lectures-j-n-darby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1864, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item studiesonbookda00darbgoog; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Darby Bible exposition for Daniel study and prophetic-background comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item studiesonbookda00darbgoog. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Darby Bible exposition for Daniel study and prophetic-background comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Darby Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Studies on the Book of Daniel: A Course of Lectures",
+      "author": "J. N. Darby",
+      "category": "Commentaries",
+      "collection": "Darby Collection",
+      "badge": "Darby Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 181,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ec37106a1e42dbf8b1c22cfc8da49c429ae2c506adffe63421c03937182fee0c",
+    "file_size_bytes": 223101,
+    "word_count": 40708
+  },
+  {
+    "title": "Nine Lectures on the First Epistle of John",
+    "author": "J. N. Darby",
+    "year": 1882,
+    "category": "Commentaries",
+    "collection": "Darby Collection",
+    "source_url": "https://archive.org/download/ninelecturesonf00darbgoog/ninelecturesonf00darbgoog_djvu.txt",
+    "download_url": "https://archive.org/download/ninelecturesonf00darbgoog/ninelecturesonf00darbgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/nine-lectures-on-the-first-epistle-of-john-j-n-darby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1882, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item ninelecturesonf00darbgoog; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Darby exposition for 1 John study and teaching comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item ninelecturesonf00darbgoog. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Darby exposition for 1 John study and teaching comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Darby Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Nine Lectures on the First Epistle of John",
+      "author": "J. N. Darby",
+      "category": "Commentaries",
+      "collection": "Darby Collection",
+      "badge": "Darby Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 162,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "af8c67ab0c567b45a623b92bea973aac9c33775ce5f8a5b37b1bdcda20dba6ed",
+    "file_size_bytes": 189230,
+    "word_count": 36536
+  },
+  {
+    "title": "Seven Lectures on the Second Coming of the Lord",
+    "author": "J. N. Darby",
+    "year": 1863,
+    "category": "KJV / Textual Issues",
+    "collection": "Darby Collection",
+    "source_url": "https://archive.org/download/cihm_07686/cihm_07686_djvu.txt",
+    "download_url": "https://archive.org/download/cihm_07686/cihm_07686_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/seven-lectures-on-the-second-coming-of-the-lord-j-n-darby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1863, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item cihm_07686; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Historical prophetic teaching resource for reviewed comparison, kept secondary to Scripture. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item cihm_07686. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical prophetic teaching resource for reviewed comparison, kept secondary to Scripture. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Darby Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Seven Lectures on the Second Coming of the Lord",
+      "author": "J. N. Darby",
+      "category": "KJV / Textual Issues",
+      "collection": "Darby Collection",
+      "badge": "Darby Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 271,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7831715ea4d8ba2b647188973a9703475319659d2373e71dfe539dd06ff4d889",
+    "file_size_bytes": 334394,
+    "word_count": 61086
+  },
+  {
+    "title": "An Exposition of the Gospel of John",
+    "author": "William Kelly",
+    "year": 1898,
+    "category": "Commentaries",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/bwb_Y0-BSQ-075/bwb_Y0-BSQ-075_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_Y0-BSQ-075/bwb_Y0-BSQ-075_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-exposition-of-the-gospel-of-john-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1898, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item bwb_Y0-BSQ-075; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Substantial Kelly exposition for John study and sermon preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item bwb_Y0-BSQ-075. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Substantial Kelly exposition for John study and sermon preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Exposition of the Gospel of John",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 840,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1c4d082710e06b1314e965a5cda1080e5d336a7cf2d333f7f00af13007c56910",
+    "file_size_bytes": 1038369,
+    "word_count": 189067
+  },
+  {
+    "title": "Facts and Theories as to a Future State",
+    "author": "F. W. Grant",
+    "year": 1879,
+    "category": "KJV / Textual Issues",
+    "collection": "F. W. Grant Collection",
+    "source_url": "https://archive.org/download/cihm_89794/cihm_89794_djvu.txt",
+    "download_url": "https://archive.org/download/cihm_89794/cihm_89794_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/facts-and-theories-as-to-a-future-state-f-w-grant.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1879, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item cihm_89794; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Historical doctrinal study resource on future state and judgment, for careful review and comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item cihm_89794. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical doctrinal study resource on future state and judgment, for careful review and comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. W. Grant Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Facts and Theories as to a Future State",
+      "author": "F. W. Grant",
+      "category": "KJV / Textual Issues",
+      "collection": "F. W. Grant Collection",
+      "badge": "F. W. Grant Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 974,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a31bdf65b26d6dfd277b75bc8f97f8d1b2065bef99d5f856ddd7f82a08b18834",
+    "file_size_bytes": 1224791,
+    "word_count": 219186
+  },
+  {
+    "title": "The Acts of the Apostles: An Exposition",
+    "author": "Arno C. Gaebelein",
+    "year": 1912,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/actsofapostles0000arno_q5g8/actsofapostles0000arno_q5g8_djvu.txt",
+    "download_url": "https://archive.org/download/actsofapostles0000arno_q5g8/actsofapostles0000arno_q5g8_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item actsofapostles0000arno_q5g8; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Gaebelein exposition for Acts study, Bible background, and teaching preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item actsofapostles0000arno_q5g8. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition for Acts study, Bible background, and teaching preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Acts of the Apostles: An Exposition",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 663,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f0458c5a0421ef76bacf47fbc0d206966f0dda6a5278c00592d6f6bfcbf9e70b",
+    "file_size_bytes": 843722,
+    "word_count": 149109
+  },
+  {
+    "title": "The Gospel of Matthew: An Exposition, Volume 1",
+    "author": "Arno C. Gaebelein",
+    "year": 1910,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/gospelofmatthewe01gaeb/gospelofmatthewe01gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/gospelofmatthewe01gaeb/gospelofmatthewe01gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-1-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1910, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item gospelofmatthewe01gaeb; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Gaebelein exposition for Matthew study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item gospelofmatthewe01gaeb. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition for Matthew study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel of Matthew: An Exposition, Volume 1",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 404,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9819b5a305381d45240960b3d06e1292bffc409113fb2256aeb5fad45467d8f2",
+    "file_size_bytes": 580346,
+    "word_count": 90959
+  },
+  {
+    "title": "The Gospel of Matthew: An Exposition, Volume 2",
+    "author": "Arno C. Gaebelein",
+    "year": 1910,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/gospelofmatthewe02gaeb/gospelofmatthewe02gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/gospelofmatthewe02gaeb/gospelofmatthewe02gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-2-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1910, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item gospelofmatthewe02gaeb; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Gaebelein exposition for Matthew study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item gospelofmatthewe02gaeb. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition for Matthew study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel of Matthew: An Exposition, Volume 2",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 497,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a7d821d11304f9cfbf8f694d10b55a2ff9c2124e7ce178615ff4778afa483bb4",
+    "file_size_bytes": 711495,
+    "word_count": 111814
+  },
+  {
+    "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
+    "author": "Arno C. Gaebelein",
+    "year": 1913,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/godsmasterpiecea0000gaeb/godsmasterpiecea0000gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/godsmasterpiecea0000gaeb/godsmasterpiecea0000gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/god-s-masterpiece-an-analytical-exposition-of-ephesians-i-iii-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1913, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item godsmasterpiecea0000gaeb; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Gaebelein exposition for Ephesians study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item godsmasterpiecea0000gaeb. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition for Ephesians study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 146,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "78f1b08e9b87f17dd63c893143ce31b1ed6f95f02715284a378bccd2249efc54",
+    "file_size_bytes": 187675,
+    "word_count": 32790
+  },
+  {
+    "title": "The Mission of the Holy Spirit: Five Addresses",
+    "author": "H. A. Ironside",
+    "year": 1930,
+    "category": "Christian Living",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/missionofholyspi00iron/missionofholyspi00iron_djvu.txt",
+    "download_url": "https://archive.org/download/missionofholyspi00iron/missionofholyspi00iron_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-mission-of-the-holy-spirit-five-addresses-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1930, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item missionofholyspi00iron; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Ironside addresses for study on the Holy Spirit and practical Christian life. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item missionofholyspi00iron. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Ironside addresses for study on the Holy Spirit and practical Christian life. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Mission of the Holy Spirit: Five Addresses",
+      "author": "H. A. Ironside",
+      "category": "Christian Living",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 89,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "82e71b18debadaf0a83c89a09c7de65410239e075fa4adc004a4486a07b07497",
+    "file_size_bytes": 111852,
+    "word_count": 20068
+  },
+  {
+    "title": "Rightly Dividing the Word",
+    "author": "Clarence Larkin",
+    "year": 1924,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV Defense / Textual Issues",
+    "source_url": "https://archive.org/download/bwb_W9-CVU-096/bwb_W9-CVU-096_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_W9-CVU-096/bwb_W9-CVU-096_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/rightly-dividing-the-word-clarence-larkin.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1924, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item bwb_W9-CVU-096; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Historical Bible study and dispensational chart resource, kept secondary to Scripture. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check. Source edition: Internet Archive item bwb_W9-CVU-096. OCR spot-check required.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical Bible study and dispensational chart resource, kept secondary to Scripture. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "KJV Defense / Textual Issues",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Rightly Dividing the Word",
+      "author": "Clarence Larkin",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV Defense / Textual Issues",
+      "badge": "KJV Defense / Textual Issues",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 464,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "39a2dd04a7fc3ff6f883a02fa9b13991585a9ad976313ca71b40a3cf2a3fc9ac",
+    "file_size_bytes": 604622,
+    "word_count": 104360
   }
 ]

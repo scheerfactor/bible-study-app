@@ -1,10 +1,10 @@
 {
-  "source_csv": "data/library/bulk-import-phase-10-retry.csv",
+  "source_csv": "data/library/bulk-import-phase-11.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 1,
-  "total_attempted": 1,
-  "imported": 1,
+  "batch_size": 11,
+  "total_attempted": 11,
+  "imported": 11,
   "would_import": 0,
   "skipped": 0,
   "failed": 0,
@@ -15,21 +15,171 @@
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "Morning by Morning",
-      "file": "morning-by-morning-c-h-spurgeon.txt",
-      "bytes": 675193,
-      "words": 126204,
-      "reading_time_minutes": 561
+      "title": "Studies on the Book of Daniel: A Course of Lectures",
+      "file": "studies-on-the-book-of-daniel-a-course-of-lectures-j-n-darby.txt",
+      "bytes": 223101,
+      "words": 40708,
+      "reading_time_minutes": 181
+    },
+    {
+      "title": "Nine Lectures on the First Epistle of John",
+      "file": "nine-lectures-on-the-first-epistle-of-john-j-n-darby.txt",
+      "bytes": 189230,
+      "words": 36536,
+      "reading_time_minutes": 162
+    },
+    {
+      "title": "Seven Lectures on the Second Coming of the Lord",
+      "file": "seven-lectures-on-the-second-coming-of-the-lord-j-n-darby.txt",
+      "bytes": 334394,
+      "words": 61086,
+      "reading_time_minutes": 271
+    },
+    {
+      "title": "An Exposition of the Gospel of John",
+      "file": "an-exposition-of-the-gospel-of-john-william-kelly.txt",
+      "bytes": 1038369,
+      "words": 189067,
+      "reading_time_minutes": 840
+    },
+    {
+      "title": "Facts and Theories as to a Future State",
+      "file": "facts-and-theories-as-to-a-future-state-f-w-grant.txt",
+      "bytes": 1224791,
+      "words": 219186,
+      "reading_time_minutes": 974
+    },
+    {
+      "title": "The Acts of the Apostles: An Exposition",
+      "file": "the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt",
+      "bytes": 843722,
+      "words": 149109,
+      "reading_time_minutes": 663
+    },
+    {
+      "title": "The Gospel of Matthew: An Exposition, Volume 1",
+      "file": "the-gospel-of-matthew-an-exposition-volume-1-arno-c-gaebelein.txt",
+      "bytes": 580346,
+      "words": 90959,
+      "reading_time_minutes": 404
+    },
+    {
+      "title": "The Gospel of Matthew: An Exposition, Volume 2",
+      "file": "the-gospel-of-matthew-an-exposition-volume-2-arno-c-gaebelein.txt",
+      "bytes": 711495,
+      "words": 111814,
+      "reading_time_minutes": 497
+    },
+    {
+      "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
+      "file": "god-s-masterpiece-an-analytical-exposition-of-ephesians-i-iii-arno-c-gaebelein.txt",
+      "bytes": 187675,
+      "words": 32790,
+      "reading_time_minutes": 146
+    },
+    {
+      "title": "The Mission of the Holy Spirit: Five Addresses",
+      "file": "the-mission-of-the-holy-spirit-five-addresses-h-a-ironside.txt",
+      "bytes": 111852,
+      "words": 20068,
+      "reading_time_minutes": 89
+    },
+    {
+      "title": "Rightly Dividing the Word",
+      "file": "rightly-dividing-the-word-clarence-larkin.txt",
+      "bytes": 604622,
+      "words": 104360,
+      "reading_time_minutes": 464
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "Morning by Morning",
-      "author": "C. H. Spurgeon",
+      "title": "Studies on the Book of Daniel: A Course of Lectures",
+      "author": "J. N. Darby",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/morning-by-morning-c-h-spurgeon.txt"
+      "file_path": "data/library/verified/studies-on-the-book-of-daniel-a-course-of-lectures-j-n-darby.txt"
+    },
+    {
+      "row": 3,
+      "title": "Nine Lectures on the First Epistle of John",
+      "author": "J. N. Darby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/nine-lectures-on-the-first-epistle-of-john-j-n-darby.txt"
+    },
+    {
+      "row": 4,
+      "title": "Seven Lectures on the Second Coming of the Lord",
+      "author": "J. N. Darby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/seven-lectures-on-the-second-coming-of-the-lord-j-n-darby.txt"
+    },
+    {
+      "row": 5,
+      "title": "An Exposition of the Gospel of John",
+      "author": "William Kelly",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-exposition-of-the-gospel-of-john-william-kelly.txt"
+    },
+    {
+      "row": 6,
+      "title": "Facts and Theories as to a Future State",
+      "author": "F. W. Grant",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/facts-and-theories-as-to-a-future-state-f-w-grant.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Acts of the Apostles: An Exposition",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Gospel of Matthew: An Exposition, Volume 1",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-1-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 9,
+      "title": "The Gospel of Matthew: An Exposition, Volume 2",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-2-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 10,
+      "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/god-s-masterpiece-an-analytical-exposition-of-ephesians-i-iii-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Mission of the Holy Spirit: Five Addresses",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-mission-of-the-holy-spirit-five-addresses-h-a-ironside.txt"
+    },
+    {
+      "row": 12,
+      "title": "Rightly Dividing the Word",
+      "author": "Clarence Larkin",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/rightly-dividing-the-word-clarence-larkin.txt"
     }
   ],
   "review_queues": {

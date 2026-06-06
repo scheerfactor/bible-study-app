@@ -607,6 +607,39 @@ type CommentaryCoverage = {
   candidateAuthors: CommentaryExpansionCandidate[];
 };
 
+type BibleCoverageBook = {
+  book: string;
+  testament: "Old Testament" | "New Testament";
+  totalChapters: number;
+  commentaryChapters: number;
+  commentaryAuthors: string[];
+  strongsChapters: number;
+  tskChapters: number;
+  backgroundChapters: number;
+  peopleChapters: number;
+  placesChapters: number;
+  timelineChapters: number;
+  bookIntroductionReady: boolean;
+  studyPackReady: boolean;
+  score: number;
+  nextStep: string;
+};
+
+type BibleCoverageSummary = {
+  books: BibleCoverageBook[];
+  totalBooks: number;
+  commentaryReadyBooks: number;
+  strongsReadyBooks: number;
+  tskReadyBooks: number;
+  backgroundReadyBooks: number;
+  peopleReadyBooks: number;
+  placesReadyBooks: number;
+  timelineReadyBooks: number;
+  studyPackReadyBooks: number;
+  averageScore: number;
+  weakestBooks: BibleCoverageBook[];
+};
+
 type CommentaryGuideProfile = {
   author: string;
   timePeriod: string;
@@ -2608,6 +2641,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
     recommendedReadingOrder: [
       "Holiness, the False and the True",
+      "The Mission of the Holy Spirit: Five Addresses",
       "The Four Hundred Silent Years",
       "Lectures on the Epistle to the Colossians",
       "Notes on the Epistle to the Philippians",
@@ -2931,6 +2965,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     relatedAuthorIds: ["grant", "darby", "gaebelein"],
     recommendedReadingOrder: [
+      "An Exposition of the Gospel of John",
       "Lectures on the Gospel of Matthew",
       "An Exposition of the Book of Isaiah",
       "Notes on the Book of Daniel",
@@ -2957,7 +2992,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Grant belongs in advanced comparison, not as a beginner's first commentary voice.",
     ],
     relatedAuthorIds: ["kelly", "darby", "gaebelein"],
-    recommendedReadingOrder: ["The Revelation of Christ to His Servants"],
+    recommendedReadingOrder: ["The Revelation of Christ to His Servants", "Facts and Theories as to a Future State"],
     subjects: ["Commentary", "Prophecy", "Use with discernment"],
   },
   {
@@ -2977,7 +3012,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Larkin is useful for visual study helps, but Scripture remains the final authority.",
     ],
     relatedAuthorIds: ["gaebelein", "kelly", "grant"],
-    recommendedReadingOrder: ["The Book of Revelation", "The Book of Daniel", "Dispensational Truth", "Rightly Dividing the Word"],
+    recommendedReadingOrder: ["Rightly Dividing the Word", "The Book of Revelation", "The Book of Daniel", "Dispensational Truth"],
     subjects: ["KJV / Textual Issues", "Prophecy", "Use with discernment"],
   },
   {
@@ -2997,7 +3032,13 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Use as historical comparison with clear perspective notes, not as the first study source.",
     ],
     relatedAuthorIds: ["kelly", "grant", "gaebelein"],
-    recommendedReadingOrder: ["Synopsis of the Books of the Bible", "Notes and Comments", "Seven Lectures on the Second Coming"],
+    recommendedReadingOrder: [
+      "Studies on the Book of Daniel: A Course of Lectures",
+      "Nine Lectures on the First Epistle of John",
+      "Seven Lectures on the Second Coming of the Lord",
+      "Synopsis of the Books of the Bible",
+      "Notes and Comments",
+    ],
     subjects: ["Historical value", "Commentary", "Use with discernment"],
   },
   {
@@ -3017,7 +3058,16 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Prophecy resources should be plainly labeled and checked carefully by the Scripture text.",
     ],
     relatedAuthorIds: ["larkin", "kelly", "grant"],
-    recommendedReadingOrder: ["Studies in Zechariah", "The Prophet Ezekiel", "Studies in Prophecy", "The Lord of Glory"],
+    recommendedReadingOrder: [
+      "The Acts of the Apostles: An Exposition",
+      "The Gospel of Matthew: An Exposition, Volume 1",
+      "The Gospel of Matthew: An Exposition, Volume 2",
+      "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
+      "Studies in Zechariah",
+      "The Prophet Ezekiel",
+      "Studies in Prophecy",
+      "The Lord of Glory",
+    ],
     subjects: ["Prophecy", "Bible Study", "Use with discernment"],
   },
 ];
@@ -15378,6 +15428,8 @@ export default function Home() {
                 activeReadingPath={activeReadingPath}
                 activeText={activeLibraryText}
                 loading={activeLibraryLoading}
+                allVerses={allVerses}
+                crossReferences={crossReferences}
                 commentaryCoverage={commentaryCoverage}
                 commentaryEntries={commentaryEntries}
                 progressState={libraryProgress}
@@ -17810,6 +17862,169 @@ function BibleSurveyDashboard({ compact = false }: { compact?: boolean }) {
   );
 }
 
+function BibleCoverageDashboard({
+  summary,
+  onOpenBookIntroduction,
+}: {
+  summary: BibleCoverageSummary;
+  onOpenBookIntroduction: (book: string) => void;
+}) {
+  const oldTestamentBooks = summary.books.filter((book) => book.testament === "Old Testament");
+  const newTestamentBooks = summary.books.filter((book) => book.testament === "New Testament");
+  const statRows = [
+    { label: "Commentary", value: `${summary.commentaryReadyBooks}/${summary.totalBooks}` },
+    { label: "Strong's", value: `${summary.strongsReadyBooks}/${summary.totalBooks}` },
+    { label: "Webster", value: `${Object.keys(dictionaryEntries).length} words` },
+    { label: "TSK", value: `${summary.tskReadyBooks}/${summary.totalBooks}` },
+    { label: "Background", value: `${summary.backgroundReadyBooks}/${summary.totalBooks}` },
+    { label: "Study packs", value: `${summary.studyPackReadyBooks}/${summary.totalBooks}` },
+  ];
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Bible Coverage Dashboard</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Every Bible book at a glance</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            This tracks the study ecosystem behind each book: commentary, Strong&apos;s starter coverage, Webster, TSK, background, people, places, timeline, and study pack readiness.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+          {summary.averageScore}% average readiness
+        </span>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+        {statRows.map((stat) => (
+          <LibraryStat key={`bible-coverage-stat-${stat.label}`} label={stat.label} value={stat.value} />
+        ))}
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[0.9fr_1.1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <BarChart3 size={18} />
+            <h3 className="text-sm font-semibold text-[var(--ink)]">Next books to strengthen</h3>
+          </div>
+          <div className="mt-3 space-y-2">
+            {summary.weakestBooks.map((book) => (
+              <button
+                key={`weak-bible-coverage-${book.book}`}
+                className="w-full rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenBookIntroduction(book.book)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.score}%</p>
+                </div>
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                  <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: `${book.score}%` }} />
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {book.nextStep} · {book.commentaryChapters}/{book.totalChapters} commentary chapters
+                </p>
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Coverage key</p>
+              <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">What each marker means</h3>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Webster available app-wide</span>
+          </div>
+          <div className="mt-3 grid gap-2 md:grid-cols-2">
+            {[
+              ["C", "Commentary chapter exists"],
+              ["S", "Strong's starter entry touches the book"],
+              ["W", "Webster lookup available"],
+              ["T", "Reviewed TSK/cross references exist"],
+              ["B", "Reviewed background exists"],
+              ["P", "People entries exist"],
+              ["L", "Places entries exist"],
+              ["M", "Timeline entries exist"],
+              ["Pack", "Book intro plus study material ready"],
+            ].map(([label, body]) => (
+              <div key={`bible-coverage-key-${label}`} className="flex items-center gap-2 rounded-xl bg-white px-3 py-2">
+                <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[var(--green)] px-2 text-xs font-semibold text-white">{label}</span>
+                <p className="text-xs leading-5 text-[var(--muted)]">{body}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-4 grid gap-4 xl:grid-cols-2">
+        <BibleCoverageBookGrid title="Old Testament" books={oldTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
+        <BibleCoverageBookGrid title="New Testament" books={newTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
+      </div>
+    </section>
+  );
+}
+
+function BibleCoverageBookGrid({
+  title,
+  books,
+  onOpenBookIntroduction,
+}: {
+  title: string;
+  books: BibleCoverageBook[];
+  onOpenBookIntroduction: (book: string) => void;
+}) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+      <div className="flex items-center justify-between gap-3">
+        <h3 className="text-base font-semibold text-[var(--ink)]">{title}</h3>
+        <p className="text-xs font-semibold text-[var(--muted)]">{books.length} books</p>
+      </div>
+      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        {books.map((book) => (
+          <button
+            key={`bible-coverage-book-${book.book}`}
+            className="rounded-xl bg-white px-3 py-2 text-left shadow-sm"
+            onClick={() => onOpenBookIntroduction(book.book)}
+            type="button"
+          >
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+              <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{book.score}%</span>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              <CoverageMarker label="C" ready={book.commentaryChapters > 0} title={`${book.commentaryChapters}/${book.totalChapters} commentary chapters`} />
+              <CoverageMarker label="S" ready={book.strongsChapters > 0} title={`${book.strongsChapters} Strong's chapters`} />
+              <CoverageMarker label="W" ready title="Webster lookup available" />
+              <CoverageMarker label="T" ready={book.tskChapters > 0} title={`${book.tskChapters} TSK chapters`} />
+              <CoverageMarker label="B" ready={book.backgroundChapters > 0} title={`${book.backgroundChapters} background chapters`} />
+              <CoverageMarker label="P" ready={book.peopleChapters > 0} title={`${book.peopleChapters} people chapters`} />
+              <CoverageMarker label="L" ready={book.placesChapters > 0} title={`${book.placesChapters} places chapters`} />
+              <CoverageMarker label="M" ready={book.timelineChapters > 0} title={`${book.timelineChapters} timeline chapters`} />
+            </div>
+            <p className="mt-2 line-clamp-1 text-xs text-[var(--muted)]">{book.nextStep}</p>
+          </button>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function CoverageMarker({ label, ready, title }: { label: string; ready: boolean; title: string }) {
+  return (
+    <span
+      className={`inline-flex h-7 min-w-7 items-center justify-center rounded-full px-2 text-[0.68rem] font-semibold ${
+        ready ? "bg-[var(--green)] text-white" : "bg-[var(--paper)] text-[var(--muted)]"
+      }`}
+      title={title}
+    >
+      {label}
+    </span>
+  );
+}
+
 function PassageShortcutRow({
   label,
   emptyText,
@@ -20153,6 +20368,157 @@ function buildCommentaryStagingSummaries(entries: CommentaryEntry[]): Commentary
       booksCovered: report.books_covered,
     };
   });
+}
+
+function parseReferenceBookChapter(reference: string) {
+  const normalizedReference = reference.replace(/\s+/g, " ").trim();
+  const match = normalizedReference.match(/^(.+?)\s+(\d+)(?::\d+)?/);
+  if (!match) return null;
+  const bookName = bookOrder.find((candidate) => candidate.toLowerCase() === match[1].toLowerCase());
+  if (!bookName) return null;
+  return { book: bookName, chapter: Number(match[2]) };
+}
+
+function bookChapterSetsFromVerses(verses: BibleVerse[]) {
+  const chaptersByBook = new Map<string, Set<number>>();
+  verses.forEach((verse) => {
+    const chapters = chaptersByBook.get(verse.book) ?? new Set<number>();
+    chapters.add(verse.chapter);
+    chaptersByBook.set(verse.book, chapters);
+  });
+  return chaptersByBook;
+}
+
+function addReferenceChapter(map: Map<string, Set<number>>, reference: string) {
+  const parsed = parseReferenceBookChapter(reference);
+  if (!parsed) return;
+  const chapters = map.get(parsed.book) ?? new Set<number>();
+  chapters.add(parsed.chapter);
+  map.set(parsed.book, chapters);
+}
+
+function buildBibleCoverageSummary({
+  verses,
+  commentaryCoverage,
+  crossReferences,
+}: {
+  verses: BibleVerse[];
+  commentaryCoverage: CommentaryCoverage;
+  crossReferences: CrossReference[];
+}): BibleCoverageSummary {
+  const chaptersByBook = bookChapterSetsFromVerses(verses);
+  const commentaryByBook = new Map(commentaryCoverage.bookCoverage.map((book) => [book.book, book]));
+  const strongsByBook = new Map<string, Set<number>>();
+  const tskByBook = new Map<string, Set<number>>();
+  const backgroundByBook = new Map<string, Set<number>>();
+  const peopleByBook = new Map<string, Set<number>>();
+  const placesByBook = new Map<string, Set<number>>();
+  const timelineByBook = new Map<string, Set<number>>();
+  const bookIntroBooks = new Set(bookIntroductions.map((intro) => intro.book));
+
+  Object.values(strongsMvpEntries).forEach((entry) => {
+    [entry.firstOccurrence, ...entry.keyOccurrences, ...entry.keyVerses].forEach((reference) => addReferenceChapter(strongsByBook, reference));
+  });
+
+  crossReferences.forEach((reference) => addReferenceChapter(tskByBook, reference.verse_ref));
+
+  bibleBackgroundChapters.forEach((entry) => {
+    const chapters = backgroundByBook.get(entry.book) ?? new Set<number>();
+    chapters.add(entry.chapter);
+    backgroundByBook.set(entry.book, chapters);
+  });
+
+  chapterConnections.forEach((connection) => {
+    if (connection.peopleIds.length) {
+      const chapters = peopleByBook.get(connection.book) ?? new Set<number>();
+      chapters.add(connection.chapter);
+      peopleByBook.set(connection.book, chapters);
+    }
+    if (connection.placeIds.length) {
+      const chapters = placesByBook.get(connection.book) ?? new Set<number>();
+      chapters.add(connection.chapter);
+      placesByBook.set(connection.book, chapters);
+    }
+    if (connection.timelineIds?.length) {
+      const chapters = timelineByBook.get(connection.book) ?? new Set<number>();
+      chapters.add(connection.chapter);
+      timelineByBook.set(connection.book, chapters);
+    }
+  });
+
+  const books = bookOrder.map((bookName) => {
+    const totalChapters = chaptersByBook.get(bookName)?.size ?? 0;
+    const commentary = commentaryByBook.get(bookName);
+    const commentaryChapters = commentary?.coveredChapters.length ?? 0;
+    const strongsChapters = strongsByBook.get(bookName)?.size ?? 0;
+    const tskChapters = tskByBook.get(bookName)?.size ?? 0;
+    const backgroundChapters = backgroundByBook.get(bookName)?.size ?? 0;
+    const peopleChapters = peopleByBook.get(bookName)?.size ?? 0;
+    const placesChapters = placesByBook.get(bookName)?.size ?? 0;
+    const timelineChapters = timelineByBook.get(bookName)?.size ?? 0;
+    const bookIntroductionReady = bookIntroBooks.has(bookName);
+    const studyPackReady = bookIntroductionReady && (commentaryChapters > 0 || backgroundChapters > 0 || tskChapters > 0);
+    const weightedScore = [
+      commentaryChapters > 0 ? 20 : 0,
+      strongsChapters > 0 ? 10 : 0,
+      tskChapters > 0 ? 15 : 0,
+      bookIntroductionReady ? 15 : 0,
+      backgroundChapters > 0 ? 10 : 0,
+      peopleChapters > 0 ? 8 : 0,
+      placesChapters > 0 ? 8 : 0,
+      timelineChapters > 0 ? 7 : 0,
+      studyPackReady ? 7 : 0,
+    ].reduce((total, value) => total + value, 0);
+    const nextStep = !commentaryChapters
+      ? "Add reviewed commentary"
+      : !tskChapters
+        ? "Add TSK references"
+        : !backgroundChapters
+          ? "Add background"
+          : !peopleChapters && !placesChapters
+            ? "Add people/places"
+            : !strongsChapters
+              ? "Add Strong's entries"
+              : "Deepen study pack";
+
+    return {
+      book: bookName,
+      testament: bookOrder.indexOf(bookName) >= NEW_TESTAMENT_START_INDEX ? "New Testament" as const : "Old Testament" as const,
+      totalChapters,
+      commentaryChapters,
+      commentaryAuthors: commentary?.authors ?? [],
+      strongsChapters,
+      tskChapters,
+      backgroundChapters,
+      peopleChapters,
+      placesChapters,
+      timelineChapters,
+      bookIntroductionReady,
+      studyPackReady,
+      score: weightedScore,
+      nextStep,
+    };
+  });
+
+  const countReady = (selector: (book: BibleCoverageBook) => boolean) => books.filter(selector).length;
+
+  return {
+    books,
+    totalBooks: books.length,
+    commentaryReadyBooks: countReady((book) => book.commentaryChapters > 0),
+    strongsReadyBooks: countReady((book) => book.strongsChapters > 0),
+    tskReadyBooks: countReady((book) => book.tskChapters > 0),
+    backgroundReadyBooks: countReady((book) => book.backgroundChapters > 0),
+    peopleReadyBooks: countReady((book) => book.peopleChapters > 0),
+    placesReadyBooks: countReady((book) => book.placesChapters > 0),
+    timelineReadyBooks: countReady((book) => book.timelineChapters > 0),
+    studyPackReadyBooks: countReady((book) => book.studyPackReady),
+    averageScore: books.length ? Math.round(books.reduce((total, book) => total + book.score, 0) / books.length) : 0,
+    weakestBooks: books
+      .slice()
+      .sort((a, b) => a.score - b.score || bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book))
+      .slice(0, 10),
+  };
 }
 
 function teachingWorkspaceSummary(data: TeachingNotesExportData): TeachingWorkspaceSummary {
@@ -23578,6 +23944,8 @@ function LibraryScreen({
   activeReadingPath,
   activeText,
   loading,
+  allVerses,
+  crossReferences,
   commentaryCoverage,
   commentaryEntries,
   progressState,
@@ -23656,6 +24024,8 @@ function LibraryScreen({
   activeReadingPath: ReadingPath | null;
   activeText: string;
   loading: boolean;
+  allVerses: BibleVerse[];
+  crossReferences: CrossReference[];
   commentaryCoverage: CommentaryCoverage;
   commentaryEntries: CommentaryEntry[];
   progressState: LibraryProgressState;
@@ -23998,6 +24368,7 @@ function LibraryScreen({
     count: authorResources.length,
     minutes: totalResourceReadingMinutes(authorResources),
   }));
+  const bibleCoverageSummary = buildBibleCoverageSummary({ verses: allVerses, commentaryCoverage, crossReferences });
   const quickFindCards = [
     {
       title: "New to the library",
@@ -24278,6 +24649,8 @@ function LibraryScreen({
       </LibraryShelf>
 
       <BibleSurveyDashboard />
+
+      <BibleCoverageDashboard summary={bibleCoverageSummary} onOpenBookIntroduction={onOpenBookIntroduction} />
 
       <LibraryShelf title="Author Collections" horizontal>
         {authorCollectionProfiles.map((profile) => {
