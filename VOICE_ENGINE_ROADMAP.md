@@ -32,6 +32,18 @@ Profiles should be saved user preferences, not separate content systems.
 | ElevenLabs | High-quality audiobook-style narration and expressive voices | Strong voice library, long-form/streaming docs, voice design/cloning options | Cost, voice licensing, cloning consent, data retention settings, and commercial terms need careful review | Strong candidate for premium audiobooks/devotionals, not beta default. |
 | PlayHT | Long-form and streaming TTS options | Voice engines, streaming endpoint, voice/emotion controls in docs | Must verify current terms, voice rights, pricing, and quality for Scripture-style reading | Candidate for premium comparison testing. |
 | Cartesia | Real-time low-latency voice and future interactive workflows | Sonic TTS streaming, real-time focus, short-lived browser token pattern in docs | More advanced infrastructure; verify cost, rights, retention, and whether quality suits long-form Bible/book reading | Good research candidate for live/interactive future use. |
+| Human Narration | Licensed Bible audio, premium audiobooks, sermons, and devotional collections | Best consistency, most natural long-form listening, strongest ministry trust when rights are documented | Highest production cost, requires recording/editing, narrator agreements, and audio storage/distribution rights | Best long-term quality path for flagship Scripture and library audio. |
+
+## Practical Comparison
+
+| Option | Quality | Device Consistency | Cost | Long-Form Audiobooks | Scripture / Audio Bible Fit |
+| --- | --- | --- | --- | --- | --- |
+| Browser Speech | Mixed; depends on installed voices | Low to medium; Safari, Chrome, iPhone, Mac, and Windows expose different voices | No direct API cost | Usable for beta, less polished for finished audiobooks | Good beta fallback, not final licensed audio. |
+| OpenAI TTS | High, provider-dependent | High when generated server-side | Usage-based API cost | Promising, but needs chunking, caching, and rights controls | Good candidate for generated public-domain audio after legal review. |
+| ElevenLabs | High and expressive | High when generated server-side | Usage-based; can become costly at scale | Strong candidate | Strong candidate if Scripture and voice licensing are clear. |
+| Cartesia | High, real-time focused | High when generated server-side | Usage-based | Better for interactive/real-time; long-form needs testing | Candidate for interactive study/listening workflows. |
+| PlayHT | Medium to high, voice-dependent | High when generated server-side | Usage-based | Candidate for long-form testing | Candidate after terms and voice quality review. |
+| Human Narration | Highest when well produced | Highest | Highest upfront cost | Best | Best for final KJV/audio Bible and premium trusted resources. |
 
 ## Architecture Needed Before Paid Engines
 

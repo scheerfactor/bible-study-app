@@ -67,6 +67,15 @@ import jfbReviewedPhase6JoshuaJudgesStartCommentary from "../../data/imports/jfb
 import jfbReviewedPhase6JudgesRuthSamuelCommentary from "../../data/imports/jfb-reviewed-phase-6-judges-ruth-samuel-commentary.json";
 import jfbReviewedPhase6SamuelKingsCommentary from "../../data/imports/jfb-reviewed-phase-6-samuel-kings-commentary.json";
 import jfbReviewedPhase6KingsCommentary from "../../data/imports/jfb-reviewed-phase-6-kings-commentary.json";
+import jfbReviewedPhase7ChroniclesStartCommentary from "../../data/imports/jfb-reviewed-phase-7-chronicles-start-commentary.json";
+import jfbReviewedPhase7ChroniclesEzraNehemiahCommentary from "../../data/imports/jfb-reviewed-phase-7-chronicles-ezra-nehemiah-commentary.json";
+import jfbReviewedPhase7EstherJobCommentary from "../../data/imports/jfb-reviewed-phase-7-esther-job-commentary.json";
+import jfbReviewedPhase7JobWisdomIsaiahStartCommentary from "../../data/imports/jfb-reviewed-phase-7-job-wisdom-isaiah-start-commentary.json";
+import jfbReviewedPhase7IsaiahJeremiahStartCommentary from "../../data/imports/jfb-reviewed-phase-7-isaiah-jeremiah-start-commentary.json";
+import jfbReviewedPhase7JeremiahLamentationsCommentary from "../../data/imports/jfb-reviewed-phase-7-jeremiah-lamentations-commentary.json";
+import jfbReviewedPhase7EzekielCommentary from "../../data/imports/jfb-reviewed-phase-7-ezekiel-commentary.json";
+import jfbReviewedPhase7DanielMinorProphetsStartCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
+import jfbReviewedPhase7MinorProphetsCompleteCommentary from "../../data/imports/jfb-reviewed-phase-7-minor-prophets-complete-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
@@ -1265,6 +1274,8 @@ type VoiceSettings = {
   femaleFavoriteVoiceURIs: string[];
   hideNoveltyVoices: boolean;
   activeProfile: VoiceProfileId;
+  profileVoiceURIs: Partial<Record<VoiceProfileId, string>>;
+  profileRates: Partial<Record<VoiceProfileId, number>>;
 };
 
 const STORAGE_KEY = "fathers-business-bible-study-state";
@@ -1302,8 +1313,10 @@ const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
   favoriteVoiceURIs: [],
   maleFavoriteVoiceURIs: [],
   femaleFavoriteVoiceURIs: [],
-  hideNoveltyVoices: false,
+  hideNoveltyVoices: true,
   activeProfile: "scripture",
+  profileVoiceURIs: {},
+  profileRates: {},
 };
 
 const VOICE_PROFILES: VoiceProfile[] = [
@@ -1321,7 +1334,7 @@ const VOICE_PROFILES: VoiceProfile[] = [
   },
   {
     id: "scripture",
-    label: "Scripture",
+    label: "Scripture Reading",
     description: "Readable and reverent for KJV Bible listening.",
     suggestedRate: 0.9,
   },
@@ -5995,6 +6008,15 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedPhase6JudgesRuthSamuelCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase6SamuelKingsCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase6KingsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7ChroniclesStartCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7ChroniclesEzraNehemiahCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7EstherJobCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7JobWisdomIsaiahStartCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7IsaiahJeremiahStartCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7JeremiahLamentationsCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7EzekielCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7DanielMinorProphetsStartCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase7MinorProphetsCompleteCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
@@ -9132,6 +9154,16 @@ function saveBibleBookMastery(state: BibleBookMasteryState) {
 
 function normalizeVoiceSettings(settings?: Partial<VoiceSettings>): VoiceSettings {
   const validProfileIds = new Set(VOICE_PROFILES.map((profile) => profile.id));
+  const profileVoiceURIs = Object.fromEntries(
+    Object.entries(settings?.profileVoiceURIs ?? {}).filter(([profileId, voiceURI]) =>
+      validProfileIds.has(profileId as VoiceProfileId) && typeof voiceURI === "string" && voiceURI.trim(),
+    ),
+  ) as Partial<Record<VoiceProfileId, string>>;
+  const profileRates = Object.fromEntries(
+    Object.entries(settings?.profileRates ?? {}).filter(([profileId, rate]) =>
+      validProfileIds.has(profileId as VoiceProfileId) && typeof rate === "number" && rate >= 0.5 && rate <= 2.5,
+    ),
+  ) as Partial<Record<VoiceProfileId, number>>;
   return {
     ...DEFAULT_VOICE_SETTINGS,
     ...settings,
@@ -9139,8 +9171,10 @@ function normalizeVoiceSettings(settings?: Partial<VoiceSettings>): VoiceSetting
     favoriteVoiceURIs: Array.isArray(settings?.favoriteVoiceURIs) ? Array.from(new Set(settings.favoriteVoiceURIs.filter(Boolean))) : [],
     maleFavoriteVoiceURIs: Array.isArray(settings?.maleFavoriteVoiceURIs) ? Array.from(new Set(settings.maleFavoriteVoiceURIs.filter(Boolean))) : [],
     femaleFavoriteVoiceURIs: Array.isArray(settings?.femaleFavoriteVoiceURIs) ? Array.from(new Set(settings.femaleFavoriteVoiceURIs.filter(Boolean))) : [],
-    hideNoveltyVoices: Boolean(settings?.hideNoveltyVoices),
+    hideNoveltyVoices: typeof settings?.hideNoveltyVoices === "boolean" ? settings.hideNoveltyVoices : DEFAULT_VOICE_SETTINGS.hideNoveltyVoices,
     activeProfile: validProfileIds.has(settings?.activeProfile as VoiceProfileId) ? settings!.activeProfile! : DEFAULT_VOICE_SETTINGS.activeProfile,
+    profileVoiceURIs,
+    profileRates,
   };
 }
 
@@ -11044,12 +11078,14 @@ export default function Home() {
   useEffect(() => {
     queueMicrotask(() => {
       setSelectedSpeechVoiceURI((current) => {
+        const profileVoiceURI = voiceSettings.profileVoiceURIs[voiceSettings.activeProfile];
+        if (profileVoiceURI && speechVoices.some((voice) => voice.voiceURI === profileVoiceURI)) return profileVoiceURI;
         if (voiceSettings.selectedVoiceURI && speechVoices.some((voice) => voice.voiceURI === voiceSettings.selectedVoiceURI)) return voiceSettings.selectedVoiceURI;
         if (speechVoices.some((voice) => voice.voiceURI === current)) return current;
         return speechVoices[0]?.voiceURI || "";
       });
     });
-  }, [speechVoices, voiceSettings.selectedVoiceURI]);
+  }, [speechVoices, voiceSettings.activeProfile, voiceSettings.profileVoiceURIs, voiceSettings.selectedVoiceURI]);
 
   useEffect(() => {
     let cancelled = false;
@@ -12186,15 +12222,36 @@ export default function Home() {
   function applyVoiceProfile(profileId: VoiceProfileId) {
     const profile = VOICE_PROFILES.find((candidate) => candidate.id === profileId);
     if (!profile) return;
-    updateVoiceSettings({ activeProfile: profileId });
-    updateSpeechRate(profile.suggestedRate);
+    const savedVoiceURI = voiceSettings.profileVoiceURIs[profileId];
+    const voiceAvailable = savedVoiceURI && allSpeechVoices.some((voice) => voice.voiceURI === savedVoiceURI);
+    const profileRate = voiceSettings.profileRates[profileId] ?? profile.suggestedRate;
+    if (voiceAvailable) {
+      selectedSpeechVoiceURIRef.current = savedVoiceURI;
+      setSelectedSpeechVoiceURI(savedVoiceURI);
+    }
+    updateVoiceSettings({
+      activeProfile: profileId,
+      selectedVoiceURI: voiceAvailable ? savedVoiceURI ?? voiceSettings.selectedVoiceURI : voiceSettings.selectedVoiceURI,
+      profileRates: {
+        ...voiceSettings.profileRates,
+        [profileId]: profileRate,
+      },
+    });
+    speechRateRef.current = profileRate;
+    setSpeechState((state) => ({ ...state, rate: profileRate }));
     setSyncMessage(`${profile.label} voice profile selected.`);
   }
 
   function handleSpeechVoiceChange(voiceURI: string) {
     selectedSpeechVoiceURIRef.current = voiceURI;
     setSelectedSpeechVoiceURI(voiceURI);
-    updateVoiceSettings({ selectedVoiceURI: voiceURI });
+    updateVoiceSettings({
+      selectedVoiceURI: voiceURI,
+      profileVoiceURIs: {
+        ...voiceSettings.profileVoiceURIs,
+        [voiceSettings.activeProfile]: voiceURI,
+      },
+    });
 
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     if (!speechState.playing || speechState.paused || !speechChunksRef.current.length) return;
@@ -12408,6 +12465,17 @@ export default function Home() {
   function updateSpeechRate(rate: number) {
     speechRateRef.current = rate;
     setSpeechState((state) => ({ ...state, rate }));
+    setVoiceSettings((current) => {
+      const next = normalizeVoiceSettings({
+        ...current,
+        profileRates: {
+          ...current.profileRates,
+          [current.activeProfile]: rate,
+        },
+      });
+      saveVoiceSettings(next);
+      return next;
+    });
   }
 
   function setSleepTimer(minutes: number | null) {
@@ -20581,6 +20649,17 @@ function voiceDisplayName(voice: SpeechSynthesisVoice) {
   return `${voice.name} · ${speechVoiceCategory(voice)}`;
 }
 
+function browserVoiceEnvironmentLabel() {
+  if (typeof navigator === "undefined") return "Unknown browser";
+  const agent = navigator.userAgent;
+  const nav = navigator as Navigator & { userAgentData?: { brands?: Array<{ brand: string }> } };
+  if (agent.includes("Edg/")) return "Microsoft Edge";
+  if (agent.includes("Chrome/") && !agent.includes("Edg/")) return "Chrome or Chromium";
+  if (agent.includes("Safari/") && !agent.includes("Chrome/")) return "Safari";
+  if (agent.includes("Firefox/")) return "Firefox";
+  return nav.userAgentData?.brands?.[0]?.brand ?? "Current browser";
+}
+
 function visibleSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSettings) {
   return voices.filter((voice) => isEnglishSpeechVoice(voice) && (!settings.hideNoveltyVoices || !isNoveltySpeechVoice(voice)));
 }
@@ -25458,6 +25537,7 @@ function VoiceControlPanel({
   voiceSettings,
   hasSpeechSynthesis,
   compact = false,
+  defaultOpen = false,
   onSpeechVoiceChange,
   onVoiceSettingsChange,
   onToggleVoiceFavorite,
@@ -25469,6 +25549,7 @@ function VoiceControlPanel({
   voiceSettings: VoiceSettings;
   hasSpeechSynthesis: boolean;
   compact?: boolean;
+  defaultOpen?: boolean;
   onSpeechVoiceChange: (voiceURI: string) => void;
   onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
   onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
@@ -25477,6 +25558,9 @@ function VoiceControlPanel({
   const selectedVoice = allVoices.find((voice) => voice.voiceURI === selectedVoiceURI) ?? visibleVoices[0] ?? null;
   const selectedVoiceName = selectedVoice ? voiceDisplayName(selectedVoice) : "Default device voice";
   const activeProfile = voiceProfileById(voiceSettings.activeProfile);
+  const activeProfileSavedVoiceURI = voiceSettings.profileVoiceURIs[voiceSettings.activeProfile] || voiceSettings.selectedVoiceURI;
+  const missingSavedVoice = Boolean(activeProfileSavedVoiceURI && !allVoices.some((voice) => voice.voiceURI === activeProfileSavedVoiceURI));
+  const profileRate = voiceSettings.profileRates[voiceSettings.activeProfile] ?? activeProfile.suggestedRate;
   const diagnostics = useMemo(() => {
     const appleVoices = allVoices.filter(isAppleSpeechVoice).length;
     const deviceVoices = allVoices.filter((voice) => voice.localService).length;
@@ -25489,13 +25573,13 @@ function VoiceControlPanel({
   const femaleFavoriteActive = selectedVoice ? voiceSettings.femaleFavoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
 
   return (
-    <details className={`${compact ? "mt-3" : "mt-4"} rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3`}>
+    <details className={`${compact ? "mt-3" : "mt-4"} rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3`} open={defaultOpen}>
       <summary className="cursor-pointer list-none">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div>
             <p className="text-sm font-semibold text-[var(--green)]">Voice Preferences</p>
             <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-              {hasSpeechSynthesis ? `${selectedVoiceName} · ${activeProfile.label}` : "Speech synthesis is not available in this browser."}
+              {hasSpeechSynthesis ? `${selectedVoiceName} · ${activeProfile.label} · ${profileRate}x` : "Speech synthesis is not available in this browser."}
             </p>
           </div>
           <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--muted)]">
@@ -25546,12 +25630,12 @@ function VoiceControlPanel({
 
           <label className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
             <input
-              checked={voiceSettings.hideNoveltyVoices}
-              onChange={(event) => onVoiceSettingsChange({ hideNoveltyVoices: event.target.checked })}
+              checked={!voiceSettings.hideNoveltyVoices}
+              onChange={(event) => onVoiceSettingsChange({ hideNoveltyVoices: !event.target.checked })}
               type="checkbox"
             />
-            Hide novelty voices
-            <span className="text-xs font-normal text-[var(--muted)]">(off by default)</span>
+            Show all voices
+            <span className="text-xs font-normal text-[var(--muted)]">(novelty voices hidden by default)</span>
           </label>
         </div>
 
@@ -25590,13 +25674,18 @@ function VoiceControlPanel({
         </div>
 
         <div className="grid gap-2 md:grid-cols-4">
+          <StatusCard label="Browser" status={browserVoiceEnvironmentLabel()} good={hasSpeechSynthesis} />
           <StatusCard label="Browser voice" status={`${diagnostics.browserVoices} available`} good={hasSpeechSynthesis} />
           <StatusCard label="Apple voice" status={`${diagnostics.appleVoices} detected`} good={diagnostics.appleVoices > 0} />
           <StatusCard label="Device voice" status={`${diagnostics.deviceVoices} local`} good={diagnostics.deviceVoices > 0} />
-          <StatusCard label="Premium voice" status="Future option" good={false} />
         </div>
+        <div className="grid gap-2 md:grid-cols-2">
+          <StatusCard label="Selected voice" status={selectedVoiceName} good={Boolean(selectedVoice)} />
+          <StatusCard label="Saved voice" status={missingSavedVoice ? "Saved voice not available on this browser/device" : "Available"} good={!missingSavedVoice} />
+        </div>
+        <StatusCard label="Premium voice availability" status="Future licensed option, not connected in beta" good={false} />
         <p className="text-xs leading-5 text-[var(--muted)]">
-          Recommended voices are shown first. Novelty voices detected: {diagnostics.noveltyVoices}. Premium voice engines are planned but not connected to beta listening.
+          Recommended voices are shown first. Novelty voices detected: {diagnostics.noveltyVoices}. Voices vary by browser, device, and installed Apple/system voices, so a saved voice may fall back when it is not available.
         </p>
       </div>
     </details>
@@ -27341,6 +27430,7 @@ function SettingsScreen({
           selectedVoiceURI={selectedSpeechVoiceURI}
           voiceSettings={voiceSettings}
           hasSpeechSynthesis={hasSpeechSynthesis}
+          defaultOpen
           onSpeechVoiceChange={onSpeechVoiceChange}
           onVoiceSettingsChange={onVoiceSettingsChange}
           onToggleVoiceFavorite={onToggleVoiceFavorite}
