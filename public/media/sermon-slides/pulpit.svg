@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Pulpit sermon slide background</title>
+<desc id="desc">Original ministry-safe pulpit background for Father&apos;s Business Bible Study. Preaching, invitation, and public teaching.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<path d="M520 715 L595 355 H1005 L1080 715 Z" fill="#faefd9" opacity="0.85"/><path d="M570 355 L1030 355" stroke="#faefd9" stroke-width="56" stroke-linecap="round" opacity="0.9"/><path d="M690 480 H910 M650 575 H950" stroke="#1c342a" stroke-width="20" stroke-linecap="round" opacity="0.28"/><path d="M800 370 L800 455 M752 415 L848 415" stroke="#1c342a" stroke-width="22" stroke-linecap="round" opacity="0.32"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

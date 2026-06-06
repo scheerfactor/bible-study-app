@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Church sermon slide background</title>
+<desc id="desc">Original ministry-safe church background for Father&apos;s Business Bible Study. Church service and worship.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<path d="M465 725 L465 380 L800 210 L1135 380 L1135 725 Z" fill="#fbf2e2" opacity="0.86"/><path d="M730 725 L730 540 C730 430 870 430 870 540 L870 725 Z" fill="#173127" opacity="0.55"/><path d="M800 250 L800 355 M745 305 L855 305" stroke="#173127" stroke-width="28" stroke-linecap="round" opacity="0.55"/><path d="M430 385 L800 180 L1170 385" fill="none" stroke="#fbf2e2" stroke-width="38" stroke-linecap="round" opacity="0.65"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

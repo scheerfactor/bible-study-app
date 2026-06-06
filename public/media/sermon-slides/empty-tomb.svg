@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Empty Tomb sermon slide background</title>
+<desc id="desc">Original ministry-safe empty tomb background for Father&apos;s Business Bible Study. Resurrection Sunday and victory in Christ.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<circle cx="1135" cy="255" r="125" fill="#ffe7aa" opacity="0.58"/><path d="M440 710 C455 465 640 350 820 360 C1020 370 1168 515 1172 710 Z" fill="#f8eddc" opacity="0.76"/><path d="M640 705 C645 560 745 485 850 492 C962 498 1048 585 1052 705 Z" fill="#162920" opacity="0.62"/><circle cx="1080" cy="690" r="100" fill="#f8eddc" opacity="0.73"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

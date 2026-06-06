@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Shepherd sermon slide background</title>
+<desc id="desc">Original ministry-safe shepherd background for Father&apos;s Business Bible Study. Pastoral care, Psalm passages, and guidance.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<path d="M0 680 C260 552 470 640 720 540 C980 438 1230 500 1600 390 L1600 900 L0 900 Z" fill="#203629" opacity="0.38"/><circle cx="660" cy="385" r="58" fill="#fff3dd" opacity="0.74"/><path d="M660 448 C640 535 635 630 625 720 M645 525 C760 545 850 610 910 720" stroke="#fff3dd" stroke-width="35" stroke-linecap="round" opacity="0.72"/><path d="M570 465 C495 460 452 520 455 595" fill="none" stroke="#fff3dd" stroke-width="24" stroke-linecap="round" opacity="0.66"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

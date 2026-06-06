@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Judgment sermon slide background</title>
+<desc id="desc">Original ministry-safe judgment background for Father&apos;s Business Bible Study. Warning, justice, and solemn passages.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<path d="M0 630 C230 540 410 570 640 480 C850 400 1020 430 1600 235 L1600 900 L0 900 Z" fill="#111c22" opacity="0.46"/><path d="M810 210 L690 520 L830 480 L742 725 L1015 360 L870 400 Z" fill="#fff2c1" opacity="0.82"/><path d="M300 285 C455 225 535 245 690 190 M980 250 C1150 170 1268 210 1415 145" stroke="#d7dde2" stroke-width="22" stroke-linecap="round" opacity="0.35"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<title id="title">Open Bible sermon slide background</title>
+<desc id="desc">Original ministry-safe open bible background for Father&apos;s Business Bible Study. Scripture reading and teaching.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#213b31"/>
+    <stop offset="0.55" stop-color="#627b66"/>
+    <stop offset="1" stop-color="#f0dfbd"/>
+  </linearGradient>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="table" tableValues="0 0.11"/></feComponentTransfer>
+  </filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="#f8edd9" opacity="0.12"/>
+<path d="M220 610 C390 535 560 535 780 630 L780 260 C560 175 390 180 220 255 Z" fill="#fff8ea" opacity="0.94"/><path d="M820 630 C1040 535 1210 535 1380 610 L1380 255 C1210 180 1040 175 820 260 Z" fill="#fff8ea" opacity="0.94"/><path d="M800 268 L800 660" stroke="#6f6a57" stroke-width="10" opacity="0.4"/><path d="M305 330 C435 300 560 305 700 350 M305 410 C445 385 565 390 700 432 M900 350 C1035 305 1160 302 1295 330 M900 432 C1030 392 1165 386 1295 410" stroke="#7c745f" stroke-width="12" stroke-linecap="round" opacity="0.35"/>
+<rect width="1600" height="900" filter="url(#grain)" opacity="0.32"/>
+</svg>

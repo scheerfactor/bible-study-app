@@ -1534,6 +1534,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   background: string;
   motif: string;
   category: SermonSlideMediaCategory;
+  assetUrl: string | null;
 }> = {
   none: {
     label: "No image / gradient only",
@@ -1541,6 +1542,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.02))",
     motif: "Gradient",
     category: "Grace",
+    assetUrl: null,
   },
   cross: {
     label: "Cross",
@@ -1548,6 +1550,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.18), transparent), radial-gradient(circle at 35% 30%, rgba(255,255,255,0.28), transparent 28%)",
     motif: "Cross",
     category: "Cross",
+    assetUrl: "/media/sermon-slides/cross.svg",
   },
   "open-bible": {
     label: "Open Bible",
@@ -1555,6 +1558,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.22), transparent), radial-gradient(ellipse at 50% 72%, rgba(245,230,196,0.38), transparent 36%)",
     motif: "Open Bible",
     category: "Open Bible",
+    assetUrl: "/media/sermon-slides/open-bible.svg",
   },
   sunrise: {
     label: "Sunrise",
@@ -1562,6 +1566,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 50% 88%, rgba(255,211,117,0.62), transparent 24%), linear-gradient(135deg, rgba(255,255,255,0.18), transparent)",
     motif: "Sunrise",
     category: "Resurrection",
+    assetUrl: "/media/sermon-slides/resurrection.svg",
   },
   "empty-tomb": {
     label: "Empty Tomb",
@@ -1569,6 +1574,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(ellipse at 55% 68%, rgba(255,255,255,0.40), transparent 28%), linear-gradient(135deg, rgba(255,218,139,0.22), transparent)",
     motif: "Empty Tomb",
     category: "Empty Tomb",
+    assetUrl: "/media/sermon-slides/empty-tomb.svg",
   },
   "prayer-hands": {
     label: "Prayer Hands",
@@ -1576,6 +1582,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 70% 38%, rgba(255,255,255,0.24), transparent 26%), linear-gradient(145deg, rgba(207,221,224,0.22), transparent)",
     motif: "Prayer",
     category: "Prayer",
+    assetUrl: "/media/sermon-slides/prayer.svg",
   },
   "world-map": {
     label: "World Map",
@@ -1583,6 +1590,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 30% 35%, rgba(255,255,255,0.20), transparent 20%), radial-gradient(circle at 68% 55%, rgba(255,255,255,0.16), transparent 24%)",
     motif: "Map",
     category: "Missions",
+    assetUrl: "/media/sermon-slides/missions.svg",
   },
   "field-harvest": {
     label: "Field / Harvest",
@@ -1590,6 +1598,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(160deg, rgba(231,197,113,0.32), transparent 45%), radial-gradient(ellipse at 55% 82%, rgba(255,255,255,0.18), transparent 35%)",
     motif: "Harvest",
     category: "Harvest",
+    assetUrl: "/media/sermon-slides/harvest.svg",
   },
   "storm-judgment": {
     label: "Storm / Judgment",
@@ -1597,6 +1606,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.10), transparent), radial-gradient(circle at 25% 25%, rgba(180,190,202,0.22), transparent 24%)",
     motif: "Storm",
     category: "Judgment",
+    assetUrl: "/media/sermon-slides/judgment.svg",
   },
   "light-window": {
     label: "Light / Window",
@@ -1604,6 +1614,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(115deg, rgba(255,255,255,0.42), transparent 35%), radial-gradient(circle at 20% 22%, rgba(255,245,197,0.36), transparent 28%)",
     motif: "Light",
     category: "Grace",
+    assetUrl: "/media/sermon-slides/grace.svg",
   },
   parchment: {
     label: "Parchment / Simple Texture",
@@ -1611,6 +1622,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.32), transparent), repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 12px)",
     motif: "Parchment",
     category: "Teaching",
+    assetUrl: "/media/sermon-slides/teaching.svg",
   },
   pulpit: {
     label: "Pulpit",
@@ -1618,6 +1630,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(155deg, rgba(255,255,255,0.18), transparent 42%), radial-gradient(ellipse at 50% 86%, rgba(118,78,38,0.28), transparent 34%)",
     motif: "Pulpit",
     category: "Pulpit",
+    assetUrl: "/media/sermon-slides/pulpit.svg",
   },
   "communion-table": {
     label: "Communion Table",
@@ -1625,6 +1638,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(ellipse at 50% 72%, rgba(255,255,255,0.30), transparent 30%), linear-gradient(145deg, rgba(212,180,111,0.22), transparent)",
     motif: "Table",
     category: "Cross",
+    assetUrl: "/media/sermon-slides/cross.svg",
   },
   "baptism-water": {
     label: "Baptism Water",
@@ -1632,6 +1646,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(145deg, rgba(159,202,212,0.32), transparent 44%), radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.24), transparent 34%)",
     motif: "Water",
     category: "Baptism",
+    assetUrl: "/media/sermon-slides/baptism.svg",
   },
   "church-window": {
     label: "Church Window",
@@ -1639,6 +1654,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(115deg, rgba(255,245,202,0.42), transparent 36%), radial-gradient(circle at 74% 28%, rgba(255,255,255,0.22), transparent 24%)",
     motif: "Window",
     category: "Church",
+    assetUrl: "/media/sermon-slides/church.svg",
   },
   "quiet-study": {
     label: "Quiet Study",
@@ -1646,6 +1662,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.26), transparent), radial-gradient(ellipse at 32% 74%, rgba(236,220,179,0.34), transparent 32%)",
     motif: "Study",
     category: "Teaching",
+    assetUrl: "/media/sermon-slides/teaching.svg",
   },
   "shepherd-field": {
     label: "Shepherd Field",
@@ -1653,6 +1670,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(155deg, rgba(211,221,166,0.32), transparent 42%), radial-gradient(ellipse at 52% 88%, rgba(255,255,255,0.18), transparent 36%)",
     motif: "Field",
     category: "Shepherd",
+    assetUrl: "/media/sermon-slides/shepherd.svg",
   },
 };
 
@@ -1661,13 +1679,17 @@ const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = [
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
   if (slotId === "parchment") return "Background texture";
-  return "Real image placeholder";
+  return "Local image asset";
 }
 
 function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
   return slotId === "none"
     ? "No image asset"
-    : "Local generated placeholder; no copyrighted photo included";
+    : "Original local asset created for this app; no copyrighted photo included";
+}
+
+function sermonSlideMediaBackground(slot: { assetUrl: string | null; background: string }) {
+  return slot.assetUrl ? `url("${slot.assetUrl}") center / cover no-repeat, ${slot.background}` : slot.background;
 }
 
 const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
@@ -29406,7 +29428,7 @@ function PresentationWorkspaceScreen({
           {remoteSessionId && <span className="rounded-full bg-white/10 px-3 py-2 text-white/70">Session {remoteSessionId} · {remoteMode === "supabase" ? "Shared" : "Local"}</span>}
         </div>
         {!remoteActive && (
-          <div className="absolute right-4 top-4 z-10 w-[min(24rem,calc(100vw-2rem))] rounded-3xl border border-white/10 bg-black/70 p-4 shadow-2xl backdrop-blur">
+          <div className="absolute bottom-4 left-4 right-4 z-10 rounded-3xl border border-white/10 bg-black/70 p-4 shadow-2xl backdrop-blur sm:bottom-auto sm:left-auto sm:right-4 sm:top-4 sm:w-[min(24rem,calc(100vw-2rem))]">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/55">Join Display</p>
             <div className="mt-3 flex gap-2">
               <input className="h-11 min-w-0 flex-1 rounded-2xl border border-white/10 bg-white/10 px-3 text-sm font-semibold uppercase tracking-[0.12em] text-white outline-none placeholder:text-white/40" onChange={(event) => setJoinSessionId(event.target.value.toUpperCase())} placeholder="ABC-123" value={joinSessionId} />
@@ -29716,14 +29738,14 @@ function PresentationWorkspaceScreen({
 
             <div className="mt-5">
               <p className="text-sm font-semibold text-[var(--ink)]">Curated local image foundations</p>
-              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Fast built-in placeholders only. No copyrighted photos or external image search are used.</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Fast local image assets only. No copyrighted photos or external image search are used.</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {SERMON_SLIDE_MEDIA_CATEGORIES.filter((category) => category !== "All").map((category) => {
-                  const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([, value]) => value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
+                  const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([id, value]) => id !== "none" && value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
                   const targetSlot = slot ?? "open-bible";
                   return (
                     <button key={`presentation-image-${category}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-left text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!activeSlide} onClick={() => activeSlide && updateSlide(activeSlide.id, { imageSlot: targetSlot, imageTheme: SERMON_SLIDE_IMAGE_SLOTS[targetSlot].label })} type="button">
-                      <span className="block h-12" style={{ background: `${SERMON_SLIDE_IMAGE_SLOTS[targetSlot].background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+                      <span className="block h-12" style={{ background: `${sermonSlideMediaBackground(SERMON_SLIDE_IMAGE_SLOTS[targetSlot])}, linear-gradient(135deg, #244233, #efe5cd)` }} />
                       <span className="block px-3 py-2">
                         <span className="block">{category}</span>
                         <span className="mt-0.5 block text-[0.68rem] text-[var(--muted)]">{sermonSlideMediaKind(targetSlot)}</span>
@@ -29950,7 +29972,7 @@ function SermonSlideCanvas({ slide, themeId, presentation = false }: { slide: Se
     <div
       className={`${presentation ? "min-h-[72vh] w-full max-w-7xl rounded-none md:rounded-[2rem]" : "aspect-video w-full rounded-3xl"} overflow-hidden border border-black/10 shadow-sm`}
       style={{
-        background: `${readability.overlay}, ${intensityOverlay}, ${imageSlot.background}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
+        background: `${readability.overlay}, ${intensityOverlay}, ${sermonSlideMediaBackground(imageSlot)}, ${sermonSlideBackground(theme, slide.backgroundStyle)}`,
         color: foreground,
       }}
     >
@@ -30128,7 +30150,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               onClick={() => onChange({ imageSlot: id as SermonSlideImageSlotId, imageTheme: slot.label })}
               type="button"
             >
-              <span className="block h-14" style={{ background: `${slot.background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+              <span className="block h-14" style={{ background: `${sermonSlideMediaBackground(slot)}, linear-gradient(135deg, #244233, #efe5cd)` }} />
               <span className="block px-3 py-2">
                 <span className="block text-xs font-semibold text-[var(--green)]">{slot.label}</span>
                 <span className="mt-1 inline-flex rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]">
