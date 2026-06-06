@@ -10227,6 +10227,41 @@ function keyWordsForVerse(verse: BibleVerse) {
   return Array.from(new Set(uniqueWords)).slice(0, 8);
 }
 
+function sermonLibraryItemMatchesTerms(item: SermonLibraryItem, terms: string[]) {
+  const haystack = [
+    item.title,
+    item.topic,
+    item.passage,
+    item.content,
+    item.recommendedUse,
+    ...item.tags,
+  ].join(" ").toLowerCase();
+  return terms.some((term) => term && haystack.includes(term.toLowerCase()));
+}
+
+function chapterStudyTerms({
+  book,
+  chapter,
+  selectedVerse,
+  themes,
+  words,
+}: {
+  book: string;
+  chapter: number;
+  selectedVerse: BibleVerse;
+  themes: string[];
+  words: string[];
+}) {
+  return uniqueStrings([
+    book,
+    `${book} ${chapter}`,
+    selectedVerse.ref,
+    ...themes,
+    ...words,
+    ...selectedVerse.plainText.split(/\s+/).map(cleanWord).filter((word) => word.length > 4).slice(0, 10),
+  ]).slice(0, 28);
+}
+
 function uniqueStrings(items: string[]) {
   return Array.from(new Set(items.map((item) => item.trim()).filter(Boolean)));
 }
@@ -17232,6 +17267,209 @@ function BibleMarkerRow({
   );
 }
 
+function AtAGlanceStudyPanel({
+  passage,
+  chapterSummary,
+  keyVerse,
+  mainTheme,
+  people,
+  places,
+  timeline,
+  crossReferenceCount,
+  commentaryCount,
+  commentaryAuthors,
+  dictionaryEntries,
+  relatedBooks,
+  playlist,
+  playlistTotalSeconds,
+  playlistRemainingSeconds,
+  currentPlaylistItem,
+  chapterReadingMinutes,
+  chapterProgressPercent,
+  discovery,
+  launchWord,
+  onStudyThisChapter,
+  onOpenCommentary,
+  onOpenBackground,
+  onOpenStrong,
+  onOpenWebster,
+  onOpenTsk,
+  onOpenRelatedBook,
+  onBuildSermon,
+}: {
+  passage: string;
+  chapterSummary: string;
+  keyVerse: string;
+  mainTheme: string;
+  people: StudyPerson[];
+  places: StudyPlace[];
+  timeline: StudyTimelineEntry[];
+  crossReferenceCount: number;
+  commentaryCount: number;
+  commentaryAuthors: string[];
+  dictionaryEntries: DictionaryEntry[];
+  relatedBooks: Array<{ title: string; slug?: string; note: string }>;
+  playlist: BibleAudioPlaylist | null;
+  playlistTotalSeconds: number;
+  playlistRemainingSeconds: number;
+  currentPlaylistItem: BiblePlaylistItem | null;
+  chapterReadingMinutes: number;
+  chapterProgressPercent: number;
+  discovery: {
+    quotes: SermonLibraryItem[];
+    illustrations: SermonLibraryItem[];
+    applications: SermonLibraryItem[];
+  };
+  launchWord: string;
+  onStudyThisChapter: () => void;
+  onOpenCommentary: () => void;
+  onOpenBackground: () => void;
+  onOpenStrong: () => void;
+  onOpenWebster: () => void;
+  onOpenTsk: () => void;
+  onOpenRelatedBook: (slug: string) => void;
+  onBuildSermon: () => void;
+}) {
+  const studyOrder = [
+    "Read",
+    keyVerse || "Key Verse",
+    "Commentary",
+    "Cross References",
+    "Background",
+    "Related Books",
+    "Sermon Builder",
+  ];
+  const primaryRelatedBook = relatedBooks.find((resource) => resource.slug);
+
+  return (
+    <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">At-a-Glance Study</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{passage}</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">{chapterSummary}</p>
+        </div>
+        <button
+          className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white"
+          onClick={onStudyThisChapter}
+          type="button"
+        >
+          <FileText size={16} />
+          Study This Chapter
+        </button>
+      </div>
+
+      <div className="mt-4 grid gap-2 md:grid-cols-4">
+        <MiniStat label="Key verse" value={keyVerse || passage} />
+        <MiniStat label="Theme" value={mainTheme || "Study"} />
+        <MiniStat label="Read time" value={`${chapterReadingMinutes} min`} />
+        <MiniStat label="Progress" value={`${chapterProgressPercent}%`} />
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[1.05fr_0.95fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended study order</p>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            {studyOrder.map((item, index) => (
+              <span key={`study-order-${item}-${index}`} className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                <span className="grid size-5 place-items-center rounded-full bg-[var(--paper)] text-[10px] text-[var(--muted)]">{index + 1}</span>
+                {item}
+              </span>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Current playlist</p>
+          <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{playlist?.name ?? "No active playlist"}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+            {playlist
+              ? `${formatListeningDuration(playlistTotalSeconds)} total · ${formatListeningDuration(playlistRemainingSeconds)} remaining · next: ${currentPlaylistItem?.label ?? "ready"}`
+              : "Create a study playlist below to combine Bible, commentary, books, and notes."}
+          </p>
+        </article>
+      </div>
+
+      <div className="mt-4 grid gap-2 md:grid-cols-3 xl:grid-cols-6">
+        <MiniStat label="People" value={String(people.length)} />
+        <MiniStat label="Places" value={String(places.length)} />
+        <MiniStat label="Timeline" value={String(timeline.length)} />
+        <MiniStat label="Cross refs" value={String(crossReferenceCount)} />
+        <MiniStat label="Commentary" value={String(commentaryCount)} />
+        <MiniStat label="Dictionary" value={String(dictionaryEntries.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter connections</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {[...people.map((person) => person.name), ...places.map((place) => place.name), ...timeline.map((entry) => entry.title)].slice(0, 10).map((item, index) => (
+              <span key={`glance-connection-${index}-${item}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {item}
+              </span>
+            ))}
+            {!people.length && !places.length && !timeline.length && (
+              <span className="text-xs leading-5 text-[var(--muted)]">Reviewed connections will appear as this chapter grows.</span>
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary and dictionary</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            {commentaryAuthors.length ? commentaryAuthors.slice(0, 4).join(", ") : "No reviewed commentary yet."}
+          </p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {dictionaryEntries.slice(0, 5).map((entry) => (
+              <span key={`glance-dictionary-${entry.lookupWord}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {entry.lookupWord}
+              </span>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resource discovery</p>
+          <div className="mt-2 grid grid-cols-3 gap-2">
+            <MiniStat label="Books" value={String(relatedBooks.length)} />
+            <MiniStat label="Quotes" value={String(discovery.quotes.length)} />
+            <MiniStat label="Apps" value={String(discovery.applications.length)} />
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onStudyThisChapter} type="button">
+          Guided Study
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenCommentary} type="button">
+          Commentary
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenTsk} type="button">
+          TSK
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenBackground} type="button">
+          Background
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenWebster} type="button">
+          Webster {launchWord ? `(${launchWord})` : ""}
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenStrong} type="button">
+          Strong&apos;s
+        </button>
+        {primaryRelatedBook?.slug && (
+          <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onOpenRelatedBook(primaryRelatedBook.slug!)} type="button">
+            Related Book
+          </button>
+        )}
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBuildSermon} type="button">
+          Sermon Builder
+        </button>
+      </div>
+    </section>
+  );
+}
+
 function BibleReader({
   book,
   books,
@@ -17531,6 +17769,70 @@ function BibleReader({
     .reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   const activeCompletedItemIds = new Set(activePlaylist?.completedItemIds ?? []);
   const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
+  const chapterWordCount = verses.reduce((total, verse) => total + wordsFromText(verse.plainText).length, 0);
+  const chapterReadingMinutes = Math.max(1, Math.round(chapterWordCount / 220));
+  const studyLaunchWord = chapterAnalysis.repeatedWords[0]?.word ?? keyWordsForVerse(selectedVerse)[0] ?? cleanWord(selectedVerse.plainText.split(/\s+/)[0] ?? "");
+  const chapterDictionaryEntries = Array.from(
+    new Map(
+      uniqueStrings([
+        ...keyWordsForVerse(selectedVerse),
+        ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => item.word),
+      ])
+        .map(findDictionaryEntry)
+        .filter((entry) => entry.found)
+        .map((entry) => [entry.lookupWord, entry]),
+    ).values(),
+  );
+  const atAGlanceRelatedBooks = chapterResourceRecommendations
+    .filter((resource) => resource.resourceSlug || resource.kind === "Library Resource")
+    .map((resource) => ({
+      title: resource.title,
+      slug: resource.resourceSlug,
+      note: resource.note,
+    }))
+    .slice(0, 6);
+  const studyTerms = chapterStudyTerms({
+    book,
+    chapter,
+    selectedVerse,
+    themes: chapterConnectionsData.themes,
+    words: chapterAnalysis.repeatedWords.slice(0, 8).map((item) => item.word),
+  });
+  const sermonDiscovery = {
+    quotes: SERMON_QUOTE_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, studyTerms)).slice(0, 3),
+    illustrations: SERMON_ILLUSTRATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, studyTerms)).slice(0, 3),
+    applications: SERMON_APPLICATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, studyTerms)).slice(0, 3),
+  };
+  const playlistModeCards = [
+    {
+      title: "Study Playlist",
+      detail: activePlaylist ? `${activePlaylist.items.length} items · ${formatListeningDuration(activePlaylistSeconds)}` : "Mix Bible, commentary, books, and notes.",
+      action: "Play active",
+      onAction: () => activePlaylist && onPlayPlaylist(activePlaylist, activePlaylist.lastItemIndex ?? 0, false),
+      disabled: !activePlaylist?.items.length,
+    },
+    {
+      title: "Commentary Playlist",
+      detail: `${chapterCommentaryEntries.length} entries for ${book} ${chapter}`,
+      action: "Add commentary",
+      onAction: () => onAddPlaylistItem("commentary_chapter"),
+      disabled: !chapterCommentaryEntries.length,
+    },
+    {
+      title: "Sermon Playlist",
+      detail: "Teaching notes and sermon prep queue.",
+      action: "Add teaching notes",
+      onAction: () => onAddPlaylistItem("teaching_notes"),
+      disabled: false,
+    },
+    {
+      title: "Book Playlist",
+      detail: playlistLibraryOptions.length ? `${playlistLibraryOptions.length} recommended books ready` : "Open Library to add books.",
+      action: "Add first book",
+      onAction: () => onAddLibraryPlaylistItem(playlistResourceSlug || playlistLibraryOptions[0]?.slug || ""),
+      disabled: !playlistLibraryOptions.length,
+    },
+  ];
   return (
     <div className="space-y-4 p-4 md:p-8">
       <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-[104px] md:z-10 md:rounded-3xl md:p-4">
@@ -17701,6 +18003,37 @@ function BibleReader({
         />
       </section>
 
+      <AtAGlanceStudyPanel
+        passage={`${book} ${chapter}`}
+        chapterSummary={bibleBackground.historicalSetting}
+        keyVerse={chapterKeyVerses[0] ?? selectedVerse.ref}
+        mainTheme={chapterConnectionsData.themes[0] ?? bookIntroduction?.overview.theme ?? "Bible study"}
+        people={chapterConnectionsData.people}
+        places={chapterConnectionsData.places}
+        timeline={chapterConnectionsData.timeline}
+        crossReferenceCount={chapterCrossReferences.length}
+        commentaryCount={chapterCommentaryEntries.length}
+        commentaryAuthors={commentaryAuthors}
+        dictionaryEntries={chapterDictionaryEntries}
+        relatedBooks={atAGlanceRelatedBooks}
+        playlist={activePlaylist}
+        playlistTotalSeconds={activePlaylistSeconds}
+        playlistRemainingSeconds={activePlaylistRemainingSeconds}
+        currentPlaylistItem={currentPlaylistItem}
+        chapterReadingMinutes={chapterReadingMinutes}
+        chapterProgressPercent={progressPercent}
+        discovery={sermonDiscovery}
+        launchWord={studyLaunchWord}
+        onStudyThisChapter={onOpenPassageGuide}
+        onOpenCommentary={onOpenCommentaryCenter}
+        onOpenBackground={onOpenPassageGuide}
+        onOpenStrong={() => onOpenStudyToolSearch(studyLaunchWord || book, "strongs")}
+        onOpenWebster={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
+        onOpenTsk={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
+        onOpenRelatedBook={onOpenLibraryResource}
+        onBuildSermon={onBuildSermonFromStudy}
+      />
+
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
@@ -17807,6 +18140,23 @@ function BibleReader({
             Text-to-speech is not available in this browser. Bible audio will use device speech when the browser supports it.
           </p>
         )}
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {playlistModeCards.map((card) => (
+            <article key={`playlist-mode-${card.title}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{card.title}</p>
+              <p className="mt-2 min-h-10 text-sm leading-5 text-[var(--ink)]">{card.detail}</p>
+              <button
+                className="mt-3 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-50"
+                disabled={card.disabled}
+                onClick={card.onAction}
+                type="button"
+              >
+                {card.action}
+              </button>
+            </article>
+          ))}
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white" onClick={onListenCurrentChapter} type="button">
@@ -27742,6 +28092,18 @@ function PassageGuideScreen({
   const commentaryConsensus = commentaryComparisonInsights(commentaryEntries);
   const passageConnections = PASSAGE_GUIDE_CONNECTIONS.filter((connection) => connection.book === book && connection.chapter === chapter);
   const topWords = analysis.repeatedWords.slice(0, 6);
+  const guideDictionaryEntries = Array.from(
+    new Map(
+      topWords
+        .map((item) => findDictionaryEntry(item.word))
+        .filter((entry) => entry.found)
+        .map((entry) => [entry.lookupWord, entry]),
+    ).values(),
+  );
+  const guideStrongEntries = topWords
+    .map((item) => strongsMvpEntries[normalizeLookupWord(item.word)])
+    .filter((entry): entry is StrongMvpEntry => Boolean(entry))
+    .slice(0, 6);
   const startHereCommentary = commentaryRecommendation.primary?.author ?? commentaryAuthors[0] ?? "No reviewed commentary yet";
   const startHereResources = recommendedResources.filter((resource) => resource.status === "available" || resource.resourceSlug).slice(0, 3);
   const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
@@ -27772,6 +28134,7 @@ function PassageGuideScreen({
     ["passage-summary", "Summary"],
     ["passage-key-verses", "Key Verses"],
     ["passage-repeated-words", "Repeated Words"],
+    ["passage-word-tools", "Word Tools"],
     ["passage-commentary-order", "Commentary Order"],
     ["passage-commentary", "Commentary"],
     ["passage-parallels", "Parallels"],
@@ -28113,6 +28476,42 @@ function PassageGuideScreen({
               )) : <p className="text-sm leading-6 text-[var(--muted)]">No repeated phrases found yet.</p>}
             </div>
           </div>
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-word-tools" title={"Webster and Strong's"}>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Webster&apos;s 1828 starter matches</p>
+            <div className="mt-3 space-y-2">
+              {guideDictionaryEntries.length ? guideDictionaryEntries.map((entry) => (
+                <div key={`passage-webster-${entry.lookupWord}`} className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-sm font-semibold text-[var(--green)]">{entry.lookupWord}</p>
+                  <p className="mt-1 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{entry.definition}</p>
+                </div>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No Webster entries match the repeated words in this chapter yet.</p>
+              )}
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Strong&apos;s starter matches</p>
+            <div className="mt-3 space-y-2">
+              {guideStrongEntries.length ? guideStrongEntries.map((entry) => (
+                <div key={`passage-strong-${entry.strongsNumber}`} className="rounded-xl bg-white px-3 py-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="text-sm font-semibold text-[var(--green)]">{entry.strongsNumber} · {entry.displayWord}</p>
+                    <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{entry.pronunciation || entry.originalWord}</span>
+                  </div>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entry.plainMeaning}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--ink)]">First occurrence: {entry.firstOccurrence}</p>
+                </div>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">Strong&apos;s starter matches will appear as reviewed entries are expanded.</p>
+              )}
+            </div>
+          </article>
         </div>
       </StudySection>
 
