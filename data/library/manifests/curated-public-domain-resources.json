@@ -28375,7 +28375,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "7395fa5832a2534e6dc9842a4884629278accda339d47b5f2f32a2038db001e8",
     "file_size_bytes": 275552,
-    "word_count": 42706
+    "word_count": 42706,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Our Daily Homily, Volume 2",
@@ -28421,7 +28426,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "64d4325d67fdbb027e5f15c4e70317d89fb5a9fb34314821a009e67393c0a19b",
     "file_size_bytes": 510847,
-    "word_count": 81203
+    "word_count": 81203,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Our Daily Homily, Volume 3",
@@ -28467,7 +28477,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "f0617cd8d38be6e734dd3addd72d1cd5b7cfa45b35ff5963c18da98f0d5c3193",
     "file_size_bytes": 413342,
-    "word_count": 65639
+    "word_count": 65639,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "David: Shepherd, Psalmist, King",
@@ -28513,7 +28528,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "4ea5658059ea6cb9baf2c7504b2f51af7e2c2e179156129a828fd29afc42c28f",
     "file_size_bytes": 405207,
-    "word_count": 62879
+    "word_count": 62879,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "How to Study the Bible for Greatest Profit",
@@ -28559,7 +28579,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "ad347f5b7532585adfecb8954954fbfd111ac54d8b58f3c885d82c7e1e1fd826",
     "file_size_bytes": 157428,
-    "word_count": 24638
+    "word_count": 24638,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Studies in the Life and Teachings of Our Lord",
@@ -28605,7 +28630,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "a08fb16eca0a1f6fceb2e7eb67827d990d88776f66690cc5065187956971e6fb",
     "file_size_bytes": 1279283,
-    "word_count": 200148
+    "word_count": 200148,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Revival Addresses",
@@ -28651,7 +28681,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "ac0050da8aee47c02e245318fea262b9bf5cd54ddee752d6ac29b6285b792d1a",
     "file_size_bytes": 548819,
-    "word_count": 89137
+    "word_count": 89137,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Expository Thoughts on the Gospels: St. Mark",
@@ -28697,7 +28732,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "7bbee83a56fc6cffb3d546c70330fcc95996fca9ac516d5700898326c8a2d2e7",
     "file_size_bytes": 899856,
-    "word_count": 140479
+    "word_count": 140479,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Expository Thoughts on the Gospels",
@@ -28743,7 +28783,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "6aa687f8826120cee751d5fc086dd1c085019f7aac281328f35ae33a62dc0151",
     "file_size_bytes": 1447745,
-    "word_count": 226208
+    "word_count": 226208,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Knots Untied",
@@ -28789,7 +28834,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "a1391f00e029081df02bd75e36bf4314b00e348a864dadc8dde12de7376f7c78",
     "file_size_bytes": 1199783,
-    "word_count": 186031
+    "word_count": 186031,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Treasury of David, Volume 2",
@@ -28835,7 +28885,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "c876049435bd72ee8121e9672bf417b3e98f880dec4d3eb4b455121758bfb591",
     "file_size_bytes": 2587162,
-    "word_count": 409186
+    "word_count": 409186,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Sermons of Rev. C. H. Spurgeon, Volume 1",
@@ -28881,7 +28936,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "1590dc7f273fe7847ad2cdcbdf37cd3e40c01e45dbbdfb9ca4d4529e0cecd347",
     "file_size_bytes": 782511,
-    "word_count": 126836
+    "word_count": 126836,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Sermons of Rev. C. H. Spurgeon, Volume 6",
@@ -28927,7 +28987,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "c1d6a43b81c8eac86ae441c4eb75be362f17faf024cd9486a38194bd8aeed90e",
     "file_size_bytes": 1189336,
-    "word_count": 195017
+    "word_count": 195017,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Cheque Book of the Bank of Faith",
@@ -28974,7 +29039,12 @@
     "checksum_sha256": "0b18b1eee4c6b035c5fd82a558413a9b8edfef2a23dc3cc3acc7db3efa2c93a4",
     "file_size_bytes": 590246,
     "word_count": 95778,
-    "rights_notes": "Internet Archive item thechequebookoft00purguoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item thechequebookoft00purguoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Treasury of David, Volume 1",
@@ -29021,7 +29091,12 @@
     "checksum_sha256": "38d558e4d70a4bf6d903114f85a49a4e82091728eca06a903aa99aa65ceed6d8",
     "file_size_bytes": 2328221,
     "word_count": 370451,
-    "rights_notes": "Internet Archive item thetreasuryofdav01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item thetreasuryofdav01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Treasury of David, Volume 3",
@@ -29068,7 +29143,12 @@
     "checksum_sha256": "99e6a259c619971ee1ca4bdf8c82cc6aba378fd229a600651d7c9cae3627cb46",
     "file_size_bytes": 2593156,
     "word_count": 406022,
-    "rights_notes": "Internet Archive item thetreasuryofdav03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item thetreasuryofdav03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Lectures to My Students",
@@ -29115,7 +29195,12 @@
     "checksum_sha256": "49f72c35a75b1052d98063fafc191ea05f009dc80d2a53953fd72076212f8e57",
     "file_size_bytes": 644144,
     "word_count": 100119,
-    "rights_notes": "Internet Archive item lecturestomystu00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item lecturestomystu00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "C. H. Spurgeon Autobiography, Volume 1",
@@ -29162,7 +29247,12 @@
     "checksum_sha256": "529e66da826b749d3f922de27856d1ffd1dadf293a2a100fa35993438caa8371",
     "file_size_bytes": 1116489,
     "word_count": 175855,
-    "rights_notes": "Internet Archive item spurgeonsautobio01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item spurgeonsautobio01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "C. H. Spurgeon Autobiography, Volume 2",
@@ -29209,7 +29299,12 @@
     "checksum_sha256": "c25466591b2f1a444d041b2f18f57839bb0e45e96f6ab09375d264a7ef12da05",
     "file_size_bytes": 1176740,
     "word_count": 179782,
-    "rights_notes": "Internet Archive item spurgeonsautobio02spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item spurgeonsautobio02spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "C. H. Spurgeon Autobiography, Volume 3",
@@ -29256,7 +29351,12 @@
     "checksum_sha256": "dca2bd787ac8dbe9c61faa47068f490214760d70c710eb436014f5512eb54c69",
     "file_size_bytes": 1069956,
     "word_count": 164624,
-    "rights_notes": "Internet Archive item spurgeonsautobio03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item spurgeonsautobio03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "C. H. Spurgeon Autobiography, Volume 4",
@@ -29303,7 +29403,12 @@
     "checksum_sha256": "3e30932e35bfefc7f8301f4fc695e223e3ca562cc6e273268863c9d836050cea",
     "file_size_bytes": 1093749,
     "word_count": 166450,
-    "rights_notes": "Internet Archive item spurgeonsautobio04spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item spurgeonsautobio04spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "John Ploughman's Pictures",
@@ -29350,7 +29455,12 @@
     "checksum_sha256": "084f37ee65009a6325379ae03b357d18c1fac431ce72d151e5184228edbfe90c",
     "file_size_bytes": 257083,
     "word_count": 42078,
-    "rights_notes": "Internet Archive item johnploughmanspi00spurrich lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item johnploughmanspi00spurrich lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Soul-Winner",
@@ -29397,7 +29507,12 @@
     "checksum_sha256": "0161f4e46389337dbfd0a28921e65d45cd144dd530d9fd363beb84d3cafd8f45",
     "file_size_bytes": 594100,
     "word_count": 95202,
-    "rights_notes": "Internet Archive item soulwinnerorhowt00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item soulwinnerorhowt00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Commenting and Commentaries",
@@ -29444,7 +29559,12 @@
     "checksum_sha256": "340b50b5d299a40024859fa52ea932f7cac0dcf46bc65f923659b7baec191fcd",
     "file_size_bytes": 634510,
     "word_count": 108457,
-    "rights_notes": "Published in 1876, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924031176252 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1876, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924031176252 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Second Series of Lectures to My Students",
@@ -29491,7 +29611,12 @@
     "checksum_sha256": "22a54c643f3e661f46b43a1345650096b0c14083412c20cb1304f13638a952be",
     "file_size_bytes": 633777,
     "word_count": 97347,
-    "rights_notes": "Internet Archive item secondseriesofle00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item secondseriesofle00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Gospel of the Kingdom",
@@ -29538,7 +29663,12 @@
     "checksum_sha256": "0d6d5e99a258d51f2a09ecbee87110d34c9e8d6b639d0e8eb6616a3101aca400",
     "file_size_bytes": 1156010,
     "word_count": 183613,
-    "rights_notes": "Published in 1893, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924029340720 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1893, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924029340720 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Christ in the Old Testament",
@@ -29585,7 +29715,12 @@
     "checksum_sha256": "e7608c1bc051c4f5ef0ace472de94bc13ab6cd6c87c8c11cfec1d94b1502dcdc",
     "file_size_bytes": 2728696,
     "word_count": 439548,
-    "rights_notes": "Published in 1899, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item christinoldtesta00spur imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1899, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item christinoldtesta00spur imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Daily Help",
@@ -29632,7 +29767,12 @@
     "checksum_sha256": "0025c382229d5b85cd168a133cf3fcaf1684c17d57ee4d99892811691c04e678",
     "file_size_bytes": 275118,
     "word_count": 44053,
-    "rights_notes": "Internet Archive item dailyhelp00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item dailyhelp00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "My Sermon Notes: Matthew to Acts",
@@ -29679,7 +29819,12 @@
     "checksum_sha256": "fc6e6c0a12202a35601bd853b1eec3af3cffed92c5300bcc6e6029a350adbfde",
     "file_size_bytes": 518812,
     "word_count": 81474,
-    "rights_notes": "Internet Archive item mysermonnotes00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item mysermonnotes00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "My Sermon Notes: Genesis to Proverbs",
@@ -29726,7 +29871,12 @@
     "checksum_sha256": "b7ae522d56a9fc83ed9c6c83b4111b6a00874a41c24c0410d6b4b213c28fc2a3",
     "file_size_bytes": 535994,
     "word_count": 84255,
-    "rights_notes": "Internet Archive item sermonnotesasele01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item sermonnotesasele01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "John Ploughman's Talk",
@@ -29773,7 +29923,12 @@
     "checksum_sha256": "d891ff9255b0847d41ef716d9ceb5f332d034ab6f657d0df765691216af83c30",
     "file_size_bytes": 276822,
     "word_count": 45553,
-    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item johnploughmansta00spur imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item johnploughmansta00spur imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "C. H. Spurgeon's Prayers",
@@ -29820,7 +29975,12 @@
     "checksum_sha256": "dcd10e1b66c6cb91bcc0045b9ac990e910f3a2b39f2a765a63d43575e88b94f4",
     "file_size_bytes": 286051,
     "word_count": 46145,
-    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item chspurgeonspraye00spur imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item chspurgeonspraye00spur imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Holiness, the False and the True",
@@ -29867,7 +30027,12 @@
     "checksum_sha256": "a07976733710a124e36fcc1e565b25576438b37c55cc3b146f5d86e9c1a52d9c",
     "file_size_bytes": 252511,
     "word_count": 39447,
-    "rights_notes": "Published in 1900, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item holinessfalsetru00iron imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1900, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item holinessfalsetru00iron imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Only Two Religions, and Other Gospel Papers",
@@ -29914,7 +30079,12 @@
     "checksum_sha256": "0aa446784c1d16b04b58e2b4ba5eb103015194ff453c78bfd2f80b8206ad45a7",
     "file_size_bytes": 127225,
     "word_count": 22497,
-    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cihm_66028 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cihm_66028 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Notes on the Epistle to the Philippians",
@@ -29961,7 +30131,12 @@
     "checksum_sha256": "91dfea7b7eea66f836d915c001a71f6c898bdf4e45ddfd0c2cf79cc3cd170c37",
     "file_size_bytes": 162513,
     "word_count": 28369,
-    "rights_notes": "Published in 1927, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item notesonepistleto0000iron imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1927, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item notesonepistleto0000iron imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Mormon's Mistake; or, What Is the Gospel?",
@@ -30008,7 +30183,12 @@
     "checksum_sha256": "2caa73af7f16a610258ff1c5c6ecce038409dd69dc4fec367d6accd55731b25a",
     "file_size_bytes": 24064,
     "word_count": 3647,
-    "rights_notes": "Internet Archive item mormonsmistakeor00iron lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item mormonsmistakeor00iron lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Six Lectures on Fundamental Truths Connected with the Church of God",
@@ -30055,7 +30235,12 @@
     "checksum_sha256": "3f786d8fd28b139426445502b153d188bacb3cb068fa2fb7203bdda6ae207912",
     "file_size_bytes": 431303,
     "word_count": 79462,
-    "rights_notes": "Internet Archive item sixlecturesonfu00kellgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item sixlecturesonfu00kellgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "In the Beginning and the Adamic Earth",
@@ -30102,7 +30287,12 @@
     "checksum_sha256": "39fd5acc23ea50a2bfa228ad3c141bc18ef99e0a337bc6ba74e37b27cb386ed2",
     "file_size_bytes": 207787,
     "word_count": 35689,
-    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item inbeginningandad0000will imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item inbeginningandad0000will imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "An Exposition of the Book of Isaiah",
@@ -30149,7 +30339,12 @@
     "checksum_sha256": "08598734bf5bb2253dd867332641c3b9036e947e8d2d45aa84764cfc16e9e13a",
     "file_size_bytes": 1048543,
     "word_count": 185704,
-    "rights_notes": "Published in 1916, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P9-EGA-318 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1916, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P9-EGA-318 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Secret of Guidance",
@@ -30196,7 +30391,12 @@
     "checksum_sha256": "c05ef522f53c76b78e5a61c9f89f7d57fd314915439ca444a962a2437b39714f",
     "file_size_bytes": 173282,
     "word_count": 31394,
-    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item secretofguidance0000fbme imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item secretofguidance0000fbme imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Expository Preaching: Plans and Methods",
@@ -30243,7 +30443,12 @@
     "checksum_sha256": "79a8fac11cc77570093fb803f13e614baa208945cbd8807096e09f03435fa64b",
     "file_size_bytes": 208510,
     "word_count": 36329,
-    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P7-EEC-931 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P7-EEC-931 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The New Topical Text Book",
@@ -30290,7 +30495,12 @@
     "checksum_sha256": "d759d15d9bff95b0605fb13b4eacf8a6c69cc79e5b9a907784317e83fca1ac84",
     "file_size_bytes": 1055949,
     "word_count": 186970,
-    "rights_notes": "Published in 1897, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item newtopicaltextbo0000rato_c4y7 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1897, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item newtopicaltextbo0000rato_c4y7 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Difficulties in the Bible",
@@ -30337,7 +30547,12 @@
     "checksum_sha256": "0374490d2da4c617c3099a1f0753d6ea7ad9621d59538eac65a2c2b2a453e50c",
     "file_size_bytes": 210886,
     "word_count": 37244,
-    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item difficultiesinbi0000rato imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item difficultiesinbi0000rato imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Real Salvation and Whole-Hearted Service",
@@ -30384,7 +30599,12 @@
     "checksum_sha256": "9a9b006f8ab654fa7af307ea8678a06ce0f1606b88645da2b960b35085942f5f",
     "file_size_bytes": 449034,
     "word_count": 83782,
-    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item realsalvationwho0000rato_k8a4 imported with source-edition review and OCR spot-check labels."
+    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item realsalvationwho0000rato_k8a4 imported with source-edition review and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Necessity of Prayer",
@@ -30431,7 +30651,12 @@
     "checksum_sha256": "567f8ef67bdd43a0d6a862b7003c37bea0d8f686ffbad8ace6aa5dda3e50cd56",
     "file_size_bytes": 221984,
     "word_count": 33605,
-    "rights_notes": "Internet Archive item x-necessity-prayer lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item x-necessity-prayer lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Morning by Morning",
@@ -30478,7 +30703,12 @@
     "checksum_sha256": "1dfcf126a1484c672145462dc21c9815bc29b2b467c6aa8dd4454f458909b960",
     "file_size_bytes": 675193,
     "word_count": 126204,
-    "rights_notes": "Internet Archive item morningbymornin00spurgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+    "rights_notes": "Internet Archive item morningbymornin00spurgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Studies on the Book of Daniel: A Course of Lectures",
@@ -30524,7 +30754,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "ec37106a1e42dbf8b1c22cfc8da49c429ae2c506adffe63421c03937182fee0c",
     "file_size_bytes": 223101,
-    "word_count": 40708
+    "word_count": 40708,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Nine Lectures on the First Epistle of John",
@@ -30570,7 +30805,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "af8c67ab0c567b45a623b92bea973aac9c33775ce5f8a5b37b1bdcda20dba6ed",
     "file_size_bytes": 189230,
-    "word_count": 36536
+    "word_count": 36536,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Seven Lectures on the Second Coming of the Lord",
@@ -30616,7 +30856,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "7831715ea4d8ba2b647188973a9703475319659d2373e71dfe539dd06ff4d889",
     "file_size_bytes": 334394,
-    "word_count": 61086
+    "word_count": 61086,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "An Exposition of the Gospel of John",
@@ -30662,7 +30907,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "1c4d082710e06b1314e965a5cda1080e5d336a7cf2d333f7f00af13007c56910",
     "file_size_bytes": 1038369,
-    "word_count": 189067
+    "word_count": 189067,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Facts and Theories as to a Future State",
@@ -30708,7 +30958,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "a31bdf65b26d6dfd277b75bc8f97f8d1b2065bef99d5f856ddd7f82a08b18834",
     "file_size_bytes": 1224791,
-    "word_count": 219186
+    "word_count": 219186,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Acts of the Apostles: An Exposition",
@@ -30754,7 +31009,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "f0458c5a0421ef76bacf47fbc0d206966f0dda6a5278c00592d6f6bfcbf9e70b",
     "file_size_bytes": 843722,
-    "word_count": 149109
+    "word_count": 149109,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Gospel of Matthew: An Exposition, Volume 1",
@@ -30800,7 +31060,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "9819b5a305381d45240960b3d06e1292bffc409113fb2256aeb5fad45467d8f2",
     "file_size_bytes": 580346,
-    "word_count": 90959
+    "word_count": 90959,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Gospel of Matthew: An Exposition, Volume 2",
@@ -30846,7 +31111,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "a7d821d11304f9cfbf8f694d10b55a2ff9c2124e7ce178615ff4778afa483bb4",
     "file_size_bytes": 711495,
-    "word_count": 111814
+    "word_count": 111814,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
@@ -30892,7 +31162,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "78f1b08e9b87f17dd63c893143ce31b1ed6f95f02715284a378bccd2249efc54",
     "file_size_bytes": 187675,
-    "word_count": 32790
+    "word_count": 32790,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "The Mission of the Holy Spirit: Five Addresses",
@@ -30938,7 +31213,12 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "82e71b18debadaf0a83c89a09c7de65410239e075fa4adc004a4486a07b07497",
     "file_size_bytes": 111852,
-    "word_count": 20068
+    "word_count": 20068,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   },
   {
     "title": "Rightly Dividing the Word",
@@ -30984,6 +31264,1235 @@
     "text_processing": "source_text_preserved",
     "checksum_sha256": "39a2dd04a7fc3ff6f883a02fa9b13991585a9ad976313ca71b40a3cf2a3fc9ac",
     "file_size_bytes": 604622,
-    "word_count": 104360
+    "word_count": 104360,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Notes on the Book of Esther",
+    "author": "H. A. Ironside",
+    "year": 1905,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/notesonbookofest0000iron/notesonbookofest0000iron_djvu.txt",
+    "download_url": "https://archive.org/download/notesonbookofest0000iron/notesonbookofest0000iron_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-book-of-esther-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesonbookofest0000iron/notesonbookofest0000iron_djvu.txt.",
+    "notes": "Ironside notes for Esther study and sermon preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Ironside notes for Esther study and sermon preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Book of Esther",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 134,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "706791fb35e185955959975f2b99c34439c036ccdb81300573c5a217e6addd68",
+    "file_size_bytes": 170903,
+    "word_count": 30060,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Notes on the Gospel of Luke",
+    "author": "J. N. Darby",
+    "year": 1869,
+    "category": "Commentaries",
+    "collection": "Darby Collection",
+    "source_url": "https://archive.org/download/notesongospellu00darbgoog/notesongospellu00darbgoog_djvu.txt",
+    "download_url": "https://archive.org/download/notesongospellu00darbgoog/notesongospellu00darbgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-gospel-of-luke-j-n-darby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesongospellu00darbgoog/notesongospellu00darbgoog_djvu.txt.",
+    "notes": "Darby exposition for Luke study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Darby exposition for Luke study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Darby Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Gospel of Luke",
+      "author": "J. N. Darby",
+      "category": "Commentaries",
+      "collection": "Darby Collection",
+      "badge": "Darby Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 319,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2788fb6fdc72e448ad2ea048a82a67aacb40f69885348b8a794da696b4af0ac2",
+    "file_size_bytes": 384461,
+    "word_count": 71791,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Weighty Words from the Writings of J. N. D.",
+    "author": "J. N. Darby",
+    "year": 1898,
+    "category": "Christian Living",
+    "collection": "Darby Collection",
+    "source_url": "https://archive.org/download/weightywordsfro00darbgoog/weightywordsfro00darbgoog_djvu.txt",
+    "download_url": "https://archive.org/download/weightywordsfro00darbgoog/weightywordsfro00darbgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/weighty-words-from-the-writings-of-j-n-d-j-n-darby.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/weightywordsfro00darbgoog/weightywordsfro00darbgoog_djvu.txt.",
+    "notes": "Collected Darby selections for devotional reading and doctrinal review. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Collected Darby selections for devotional reading and doctrinal review. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Darby Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Weighty Words from the Writings of J. N. D.",
+      "author": "J. N. Darby",
+      "category": "Christian Living",
+      "collection": "Darby Collection",
+      "badge": "Darby Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 324,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "17dc78acea16273a5936dccb2a6e69f00f8657afc8f33972ea9e1c3faa07f4ea",
+    "file_size_bytes": 393996,
+    "word_count": 72823,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Great Prophecies of Daniel",
+    "author": "William Kelly",
+    "year": 1897,
+    "category": "Commentaries",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/greatprophecieso00kell/greatprophecieso00kell_djvu.txt",
+    "download_url": "https://archive.org/download/greatprophecieso00kell/greatprophecieso00kell_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-great-prophecies-of-daniel-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/greatprophecieso00kell/greatprophecieso00kell_djvu.txt.",
+    "notes": "Kelly lectures on Daniel for prophecy study, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Kelly lectures on Daniel for prophecy study, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Great Prophecies of Daniel",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 445,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7eb4a6e71b1e956d68c4ab6e31249ac69ba5509950cbf8f720919fa8af470694",
+    "file_size_bytes": 640240,
+    "word_count": 100234,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Prophet Daniel",
+    "author": "Arno C. Gaebelein",
+    "year": 1911,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/prophetdanielkey00gaeb/prophetdanielkey00gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/prophetdanielkey00gaeb/prophetdanielkey00gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-prophet-daniel-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/prophetdanielkey00gaeb/prophetdanielkey00gaeb_djvu.txt.",
+    "notes": "Gaebelein exposition of Daniel for prophecy study and Bible coverage depth. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition of Daniel for prophecy study and Bible coverage depth. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Prophet Daniel",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 278,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e95328b90a8a0b572f920b90d3fb052db540dbb05ea62be84d7b58a2247c498d",
+    "file_size_bytes": 404748,
+    "word_count": 62557,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Revelation: An Analysis and Exposition",
+    "author": "Arno C. Gaebelein",
+    "year": 1915,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/revelationanalys00gaebiala/revelationanalys00gaebiala_djvu.txt",
+    "download_url": "https://archive.org/download/revelationanalys00gaebiala/revelationanalys00gaebiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-revelation-an-analysis-and-exposition-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/revelationanalys00gaebiala/revelationanalys00gaebiala_djvu.txt.",
+    "notes": "Gaebelein exposition of Revelation for prophecy study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition of Revelation for prophecy study and commentary comparison. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Revelation: An Analysis and Exposition",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 257,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8050dd60343f5fadad8c2752ca0c23f14c9a17e2008a9f22d4148fd136d490a8",
+    "file_size_bytes": 385437,
+    "word_count": 57774,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Book of Genesis",
+    "author": "Arno C. Gaebelein",
+    "year": 1912,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/bookofgenesiscom00gaeb/bookofgenesiscom00gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/bookofgenesiscom00gaeb/bookofgenesiscom00gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-book-of-genesis-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bookofgenesiscom00gaeb/bookofgenesiscom00gaeb_djvu.txt.",
+    "notes": "Gaebelein analysis of Genesis with annotations for book study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein analysis of Genesis with annotations for book study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Genesis",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 133,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "405f6eff3612961ef949971233e315da84a0320ef73243a809dceae95a53ca4e",
+    "file_size_bytes": 200580,
+    "word_count": 29993,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Prophet Ezekiel",
+    "author": "Arno C. Gaebelein",
+    "year": 1918,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/prophetezekielan00gaeb/prophetezekielan00gaeb_djvu.txt",
+    "download_url": "https://archive.org/download/prophetezekielan00gaeb/prophetezekielan00gaeb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-prophet-ezekiel-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/prophetezekielan00gaeb/prophetezekielan00gaeb_djvu.txt.",
+    "notes": "Gaebelein analytical exposition of Ezekiel for Old Testament prophetic study. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein analytical exposition of Ezekiel for Old Testament prophetic study. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Prophet Ezekiel",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 547,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "889d151b72332e1609d35187c3d6b20590548d39a748fb5f05dfd9f675852043",
+    "file_size_bytes": 802528,
+    "word_count": 123104,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Prophet Joel",
+    "author": "Arno C. Gaebelein",
+    "year": 1909,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/prophetjoelexpos00gaebuoft/prophetjoelexpos00gaebuoft_djvu.txt",
+    "download_url": "https://archive.org/download/prophetjoelexpos00gaebuoft/prophetjoelexpos00gaebuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-prophet-joel-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/prophetjoelexpos00gaebuoft/prophetjoelexpos00gaebuoft_djvu.txt.",
+    "notes": "Gaebelein exposition of Joel for Minor Prophets study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein exposition of Joel for Minor Prophets study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Prophet Joel",
+      "author": "Arno C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 190,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1ec58d6c2307c526570ea998fec81ec3b5a205a50ac6e95d00a260f77aeef452",
+    "file_size_bytes": 279023,
+    "word_count": 42640,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Harmony of the Prophetic Word",
+    "author": "Arno C. Gaebelein",
+    "year": 1907,
+    "category": "Bible study helps",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/harmonypropheti00gaebgoog/harmonypropheti00gaebgoog_djvu.txt",
+    "download_url": "https://archive.org/download/harmonypropheti00gaebgoog/harmonypropheti00gaebgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-harmony-of-the-prophetic-word-arno-c-gaebelein.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/harmonypropheti00gaebgoog/harmonypropheti00gaebgoog_djvu.txt.",
+    "notes": "Gaebelein prophetic Bible study help for Old Testament prophecy connections. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gaebelein prophetic Bible study help for Old Testament prophecy connections. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Harmony of the Prophetic Word",
+      "author": "Arno C. Gaebelein",
+      "category": "Bible study helps",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 252,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4f524e6ddd5be305e96049e8ef602c93ea608b21b59b2acfa86f293a1e0ef865",
+    "file_size_bytes": 315741,
+    "word_count": 56651,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Baptism with the Holy Spirit",
+    "author": "R. A. Torrey",
+    "year": 1895,
+    "category": "Christian Living",
+    "collection": "Torrey Collection",
+    "source_url": "https://archive.org/download/baptismwithholys00torr/baptismwithholys00torr_djvu.txt",
+    "download_url": "https://archive.org/download/baptismwithholys00torr/baptismwithholys00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-baptism-with-the-holy-spirit-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/baptismwithholys00torr/baptismwithholys00torr_djvu.txt.",
+    "notes": "Torrey doctrinal and practical teaching on the Holy Spirit for Bible study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Torrey doctrinal and practical teaching on the Holy Spirit for Bible study and teaching preparation. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Baptism with the Holy Spirit",
+      "author": "R. A. Torrey",
+      "category": "Christian Living",
+      "collection": "Torrey Collection",
+      "badge": "Torrey Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 75,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "67a4f2d745aa48e5bb810d565d4ae4f21daf527dcabf63ab558dbebaa4641b01",
+    "file_size_bytes": 107819,
+    "word_count": 16868,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Power of Prayer and the Prayer of Power",
+    "author": "R. A. Torrey",
+    "year": 1924,
+    "category": "Prayer",
+    "collection": "Torrey Collection",
+    "source_url": "https://archive.org/download/powerofprayerpra00torr/powerofprayerpra00torr_djvu.txt",
+    "download_url": "https://archive.org/download/powerofprayerpra00torr/powerofprayerpra00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-power-of-prayer-and-the-prayer-of-power-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/powerofprayerpra00torr/powerofprayerpra00torr_djvu.txt.",
+    "notes": "Torrey prayer classic for devotional reading, ministry burden, and teaching application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Torrey prayer classic for devotional reading, ministry burden, and teaching application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Power of Prayer and the Prayer of Power",
+      "author": "R. A. Torrey",
+      "category": "Prayer",
+      "collection": "Torrey Collection",
+      "badge": "Torrey Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 357,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "02fd326f38b351d93a29a77c8b486f57848b2213590e289676add76ef3bdff3a",
+    "file_size_bytes": 433649,
+    "word_count": 80432,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "What the Bible Teaches",
+    "author": "R. A. Torrey",
+    "year": 1898,
+    "category": "Bible study helps",
+    "collection": "Torrey Collection",
+    "source_url": "https://archive.org/download/whatthebibletea00torruoft/whatthebibletea00torruoft_djvu.txt",
+    "download_url": "https://archive.org/download/whatthebibletea00torruoft/whatthebibletea00torruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/what-the-bible-teaches-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/whatthebibletea00torruoft/whatthebibletea00torruoft_djvu.txt.",
+    "notes": "Torrey doctrinal Bible study resource for teachers and serious students. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Torrey doctrinal Bible study resource for teachers and serious students. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "What the Bible Teaches",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "collection": "Torrey Collection",
+      "badge": "Torrey Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 953,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "253c32606b65ff12e692aa4aed2b87dd2368c3343622416710d51554c0c02bf3",
+    "file_size_bytes": 1345554,
+    "word_count": 214447,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "How to Pray",
+    "author": "R. A. Torrey",
+    "year": 1900,
+    "category": "Prayer",
+    "collection": "Torrey Collection",
+    "source_url": "https://archive.org/download/howtopray00torr/howtopray00torr_djvu.txt",
+    "download_url": "https://archive.org/download/howtopray00torr/howtopray00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/how-to-pray-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/howtopray00torr/howtopray00torr_djvu.txt.",
+    "notes": "Torrey practical prayer resource for devotional reading and prayer teaching. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Torrey practical prayer resource for devotional reading and prayer teaching. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Pray",
+      "author": "R. A. Torrey",
+      "category": "Prayer",
+      "collection": "Torrey Collection",
+      "badge": "Torrey Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 115,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4b36ffbaeceea58a3fc594b3521cc05ef06126c575e29daf3f4a0c545b1b6700",
+    "file_size_bytes": 164324,
+    "word_count": 25944,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Lessons from the Life and Death of D. L. Moody",
+    "author": "R. A. Torrey",
+    "year": 1900,
+    "category": "Biographies",
+    "collection": "Torrey Collection",
+    "source_url": "https://archive.org/download/lessonsfromlifed00torr/lessonsfromlifed00torr_djvu.txt",
+    "download_url": "https://archive.org/download/lessonsfromlifed00torr/lessonsfromlifed00torr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lessons-from-the-life-and-death-of-d-l-moody-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lessonsfromlifed00torr/lessonsfromlifed00torr_djvu.txt.",
+    "notes": "Torrey's biographical lessons from Moody for ministry examples and sermon illustrations. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Torrey's biographical lessons from Moody for ministry examples and sermon illustrations. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lessons from the Life and Death of D. L. Moody",
+      "author": "R. A. Torrey",
+      "category": "Biographies",
+      "collection": "Torrey Collection",
+      "badge": "Torrey Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 23,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "af82c74c6aab82af5d618b29437c2d06e808481f4d9a53dd5aea8fb9e8bd3695",
+    "file_size_bytes": 33038,
+    "word_count": 5247,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Elijah and the Secret of His Power",
+    "author": "F. B. Meyer",
+    "year": 0,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/elijahsecretofhi00meyeuoft/elijahsecretofhi00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/elijahsecretofhi00meyeuoft/elijahsecretofhi00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/elijah-and-the-secret-of-his-power-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/elijahsecretofhi00meyeuoft/elijahsecretofhi00meyeuoft_djvu.txt.",
+    "notes": "Meyer character study for devotional reading, Bible background, and teaching application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer character study for devotional reading, Bible background, and teaching application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Elijah and the Secret of His Power",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 262,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4a67440930dbc4a1d6ab2afad4a86d9648de67c0e7d180a36f1525afcb7ec78c",
+    "file_size_bytes": 380164,
+    "word_count": 58891,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Samuel the Prophet",
+    "author": "F. B. Meyer",
+    "year": 1910,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/samueltheprophet00meytuoft/samueltheprophet00meytuoft_djvu.txt",
+    "download_url": "https://archive.org/download/samueltheprophet00meytuoft/samueltheprophet00meytuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/samuel-the-prophet-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/samueltheprophet00meytuoft/samueltheprophet00meytuoft_djvu.txt.",
+    "notes": "Meyer Old Testament character study for teaching and devotional reading. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer Old Testament character study for teaching and devotional reading. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Samuel the Prophet",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 284,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "19ae302361da968b20cbf436a2773a6fb65c0c87bcf6dc2dbde4af2d2799ee98",
+    "file_size_bytes": 411900,
+    "word_count": 63997,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Back to Bethel",
+    "author": "F. B. Meyer",
+    "year": 1901,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/backtobethelsepa00meyeuoft/backtobethelsepa00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/backtobethelsepa00meyeuoft/backtobethelsepa00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/back-to-bethel-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/backtobethelsepa00meyeuoft/backtobethelsepa00meyeuoft_djvu.txt.",
+    "notes": "Meyer practical Christian living resource on fellowship with God and separation from sin. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer practical Christian living resource on fellowship with God and separation from sin. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Back to Bethel",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 149,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a5a993707486d239e8e2e8bfd85bd39a6affbb22c345ffed1e7d7f5bd2a46faf",
+    "file_size_bytes": 207026,
+    "word_count": 33551,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Jeremiah, Priest and Prophet",
+    "author": "F. B. Meyer",
+    "year": 0,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/jeremiahpriestpr00meye/jeremiahpriestpr00meye_djvu.txt",
+    "download_url": "https://archive.org/download/jeremiahpriestpr00meye/jeremiahpriestpr00meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/jeremiah-priest-and-prophet-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/jeremiahpriestpr00meye/jeremiahpriestpr00meye_djvu.txt.",
+    "notes": "Meyer study of Jeremiah for Bible background, teaching, and devotional application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer study of Jeremiah for Bible background, teaching, and devotional application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Jeremiah, Priest and Prophet",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 282,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "32d523d2392ab61c99c7cb9d79718f38d9295c00b9c5b6a82e38d588fb3b8ec9",
+    "file_size_bytes": 412003,
+    "word_count": 63550,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Moses, the Servant of God",
+    "author": "F. B. Meyer",
+    "year": 1909,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/mosestheservanto00meyeuoft/mosestheservanto00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/mosestheservanto00meyeuoft/mosestheservanto00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/moses-the-servant-of-god-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/mosestheservanto00meyeuoft/mosestheservanto00meyeuoft_djvu.txt.",
+    "notes": "Meyer Old Testament character study for Exodus background and teaching application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer Old Testament character study for Exodus background and teaching application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Moses, the Servant of God",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 330,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1fd8607d662e79baab5878d2b471e262fcce65f37b468e11bd86c71f704b427b",
+    "file_size_bytes": 474490,
+    "word_count": 74310,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Tried by Fire",
+    "author": "F. B. Meyer",
+    "year": 0,
+    "category": "Commentaries",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/triedbyfireexpos00meye/triedbyfireexpos00meye_djvu.txt",
+    "download_url": "https://archive.org/download/triedbyfireexpos00meye/triedbyfireexpos00meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/tried-by-fire-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/triedbyfireexpos00meye/triedbyfireexpos00meye_djvu.txt.",
+    "notes": "Meyer expositions of First Peter for commentary comparison and Christian living application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer expositions of First Peter for commentary comparison and Christian living application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Tried by Fire",
+      "author": "F. B. Meyer",
+      "category": "Commentaries",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 366,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2f6a5a7ce3b9f991a5893818a66405e2cef37c7b4f4de0025201e14d888f5fb6",
+    "file_size_bytes": 529255,
+    "word_count": 82277,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Israel, a Prince with God",
+    "author": "F. B. Meyer",
+    "year": 1909,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/israelaprincewit00meyeuoft/israelaprincewit00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/israelaprincewit00meyeuoft/israelaprincewit00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/israel-a-prince-with-god-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/israelaprincewit00meyeuoft/israelaprincewit00meyeuoft_djvu.txt.",
+    "notes": "Meyer study of Jacob for Genesis background and practical application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer study of Jacob for Genesis background and practical application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Israel, a Prince with God",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 255,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "05aac684133d2a6bee63d58df63e7fc27b0a17957fcbba06824cde8cf5a13eba",
+    "file_size_bytes": 361942,
+    "word_count": 57453,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "The Shepherd Psalm",
+    "author": "F. B. Meyer",
+    "year": 1895,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/shepherdpsalm00meye/shepherdpsalm00meye_djvu.txt",
+    "download_url": "https://archive.org/download/shepherdpsalm00meye/shepherdpsalm00meye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-shepherd-psalm-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/shepherdpsalm00meye/shepherdpsalm00meye_djvu.txt.",
+    "notes": "Meyer devotional study of Psalm 23 for reading, teaching, and sermon support. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer devotional study of Psalm 23 for reading, teaching, and sermon support. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Shepherd Psalm",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 123,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "398298a09ac07d2df0f7119520459a6265c46efa59af26d80804d65d77927ebd",
+    "file_size_bytes": 175442,
+    "word_count": 27626,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
+  },
+  {
+    "title": "Joshua and the Land of Promise",
+    "author": "F. B. Meyer",
+    "year": 1893,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/joshuaandtheland00meyeuoft/joshuaandtheland00meyeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/joshuaandtheland00meyeuoft/joshuaandtheland00meyeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/joshua-and-the-land-of-promise-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/joshuaandtheland00meyeuoft/joshuaandtheland00meyeuoft_djvu.txt.",
+    "notes": "Meyer study of Joshua for Old Testament background and teaching application. OCR text should be spot-checked before quotation or public teaching use. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Meyer study of Joshua for Old Testament background and teaching application. OCR text should be spot-checked before quotation or public teaching use.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Joshua and the Land of Promise",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 303,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f3ca40626ee39d8a18705b0b1796a69ffa9e3f178b2baf0a4fcda4b2431cf978",
+    "file_size_bytes": 436014,
+    "word_count": 68147,
+    "ocr_quality_score": 70,
+    "ocr_quality_label": "Needs OCR review",
+    "front_matter_cleanup_needed": true,
+    "safe_for_quotation": false,
+    "ocr_cleanup_notes": "Readable public-domain OCR scan. Spot-check against page images before quoting in sermons, lessons, printed material, or public excerpts."
   }
 ]

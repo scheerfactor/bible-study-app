@@ -20,12 +20,20 @@ function rawGithubUrl(filePath: string) {
   return `${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath}`;
 }
 
+function localVerifiedResourcePath(filePath: string) {
+  return resolve(process.cwd(), "data", "library", "verified", basename(filePath));
+}
+
 async function fetchResourceText(entry: LibraryManifestEntry) {
+  if (process.env.NODE_ENV !== "production") {
+    return readFile(localVerifiedResourcePath(entry.file_path), "utf8");
+  }
+
   const textUrl = rawGithubUrl(entry.file_path);
   const response = await fetch(textUrl, { next: { revalidate: 60 * 60 * 24 } });
 
   if (!response.ok) {
-    throw new Error(`Library text fetch failed: ${response.status}`);
+    return readFile(localVerifiedResourcePath(entry.file_path), "utf8");
   }
 
   return response.text();

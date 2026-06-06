@@ -1,10 +1,10 @@
 {
-  "source_csv": "data/library/bulk-import-phase-11.csv",
+  "source_csv": "data/library/bulk-import-phase-12.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 11,
-  "total_attempted": 11,
-  "imported": 11,
+  "batch_size": 24,
+  "total_attempted": 24,
+  "imported": 24,
   "would_import": 0,
   "skipped": 0,
   "failed": 0,
@@ -15,171 +15,366 @@
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "Studies on the Book of Daniel: A Course of Lectures",
-      "file": "studies-on-the-book-of-daniel-a-course-of-lectures-j-n-darby.txt",
-      "bytes": 223101,
-      "words": 40708,
-      "reading_time_minutes": 181
+      "title": "Notes on the Book of Esther",
+      "file": "notes-on-the-book-of-esther-h-a-ironside.txt",
+      "bytes": 170903,
+      "words": 30060,
+      "reading_time_minutes": 134
     },
     {
-      "title": "Nine Lectures on the First Epistle of John",
-      "file": "nine-lectures-on-the-first-epistle-of-john-j-n-darby.txt",
-      "bytes": 189230,
-      "words": 36536,
-      "reading_time_minutes": 162
+      "title": "Notes on the Gospel of Luke",
+      "file": "notes-on-the-gospel-of-luke-j-n-darby.txt",
+      "bytes": 384461,
+      "words": 71791,
+      "reading_time_minutes": 319
     },
     {
-      "title": "Seven Lectures on the Second Coming of the Lord",
-      "file": "seven-lectures-on-the-second-coming-of-the-lord-j-n-darby.txt",
-      "bytes": 334394,
-      "words": 61086,
-      "reading_time_minutes": 271
+      "title": "Weighty Words from the Writings of J. N. D.",
+      "file": "weighty-words-from-the-writings-of-j-n-d-j-n-darby.txt",
+      "bytes": 393996,
+      "words": 72823,
+      "reading_time_minutes": 324
     },
     {
-      "title": "An Exposition of the Gospel of John",
-      "file": "an-exposition-of-the-gospel-of-john-william-kelly.txt",
-      "bytes": 1038369,
-      "words": 189067,
-      "reading_time_minutes": 840
+      "title": "The Great Prophecies of Daniel",
+      "file": "the-great-prophecies-of-daniel-william-kelly.txt",
+      "bytes": 640240,
+      "words": 100234,
+      "reading_time_minutes": 445
     },
     {
-      "title": "Facts and Theories as to a Future State",
-      "file": "facts-and-theories-as-to-a-future-state-f-w-grant.txt",
-      "bytes": 1224791,
-      "words": 219186,
-      "reading_time_minutes": 974
+      "title": "The Prophet Daniel",
+      "file": "the-prophet-daniel-arno-c-gaebelein.txt",
+      "bytes": 404748,
+      "words": 62557,
+      "reading_time_minutes": 278
     },
     {
-      "title": "The Acts of the Apostles: An Exposition",
-      "file": "the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt",
-      "bytes": 843722,
-      "words": 149109,
-      "reading_time_minutes": 663
+      "title": "The Revelation: An Analysis and Exposition",
+      "file": "the-revelation-an-analysis-and-exposition-arno-c-gaebelein.txt",
+      "bytes": 385437,
+      "words": 57774,
+      "reading_time_minutes": 257
     },
     {
-      "title": "The Gospel of Matthew: An Exposition, Volume 1",
-      "file": "the-gospel-of-matthew-an-exposition-volume-1-arno-c-gaebelein.txt",
-      "bytes": 580346,
-      "words": 90959,
-      "reading_time_minutes": 404
+      "title": "The Book of Genesis",
+      "file": "the-book-of-genesis-arno-c-gaebelein.txt",
+      "bytes": 200580,
+      "words": 29993,
+      "reading_time_minutes": 133
     },
     {
-      "title": "The Gospel of Matthew: An Exposition, Volume 2",
-      "file": "the-gospel-of-matthew-an-exposition-volume-2-arno-c-gaebelein.txt",
-      "bytes": 711495,
-      "words": 111814,
-      "reading_time_minutes": 497
+      "title": "The Prophet Ezekiel",
+      "file": "the-prophet-ezekiel-arno-c-gaebelein.txt",
+      "bytes": 802528,
+      "words": 123104,
+      "reading_time_minutes": 547
     },
     {
-      "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
-      "file": "god-s-masterpiece-an-analytical-exposition-of-ephesians-i-iii-arno-c-gaebelein.txt",
-      "bytes": 187675,
-      "words": 32790,
-      "reading_time_minutes": 146
+      "title": "The Prophet Joel",
+      "file": "the-prophet-joel-arno-c-gaebelein.txt",
+      "bytes": 279023,
+      "words": 42640,
+      "reading_time_minutes": 190
     },
     {
-      "title": "The Mission of the Holy Spirit: Five Addresses",
-      "file": "the-mission-of-the-holy-spirit-five-addresses-h-a-ironside.txt",
-      "bytes": 111852,
-      "words": 20068,
-      "reading_time_minutes": 89
+      "title": "The Harmony of the Prophetic Word",
+      "file": "the-harmony-of-the-prophetic-word-arno-c-gaebelein.txt",
+      "bytes": 315741,
+      "words": 56651,
+      "reading_time_minutes": 252
     },
     {
-      "title": "Rightly Dividing the Word",
-      "file": "rightly-dividing-the-word-clarence-larkin.txt",
-      "bytes": 604622,
-      "words": 104360,
-      "reading_time_minutes": 464
+      "title": "The Baptism with the Holy Spirit",
+      "file": "the-baptism-with-the-holy-spirit-r-a-torrey.txt",
+      "bytes": 107819,
+      "words": 16868,
+      "reading_time_minutes": 75
+    },
+    {
+      "title": "The Power of Prayer and the Prayer of Power",
+      "file": "the-power-of-prayer-and-the-prayer-of-power-r-a-torrey.txt",
+      "bytes": 433649,
+      "words": 80432,
+      "reading_time_minutes": 357
+    },
+    {
+      "title": "What the Bible Teaches",
+      "file": "what-the-bible-teaches-r-a-torrey.txt",
+      "bytes": 1345554,
+      "words": 214447,
+      "reading_time_minutes": 953
+    },
+    {
+      "title": "How to Pray",
+      "file": "how-to-pray-r-a-torrey.txt",
+      "bytes": 164324,
+      "words": 25944,
+      "reading_time_minutes": 115
+    },
+    {
+      "title": "Lessons from the Life and Death of D. L. Moody",
+      "file": "lessons-from-the-life-and-death-of-d-l-moody-r-a-torrey.txt",
+      "bytes": 33038,
+      "words": 5247,
+      "reading_time_minutes": 23
+    },
+    {
+      "title": "Elijah and the Secret of His Power",
+      "file": "elijah-and-the-secret-of-his-power-f-b-meyer.txt",
+      "bytes": 380164,
+      "words": 58891,
+      "reading_time_minutes": 262
+    },
+    {
+      "title": "Samuel the Prophet",
+      "file": "samuel-the-prophet-f-b-meyer.txt",
+      "bytes": 411900,
+      "words": 63997,
+      "reading_time_minutes": 284
+    },
+    {
+      "title": "Back to Bethel",
+      "file": "back-to-bethel-f-b-meyer.txt",
+      "bytes": 207026,
+      "words": 33551,
+      "reading_time_minutes": 149
+    },
+    {
+      "title": "Jeremiah, Priest and Prophet",
+      "file": "jeremiah-priest-and-prophet-f-b-meyer.txt",
+      "bytes": 412003,
+      "words": 63550,
+      "reading_time_minutes": 282
+    },
+    {
+      "title": "Moses, the Servant of God",
+      "file": "moses-the-servant-of-god-f-b-meyer.txt",
+      "bytes": 474490,
+      "words": 74310,
+      "reading_time_minutes": 330
+    },
+    {
+      "title": "Tried by Fire",
+      "file": "tried-by-fire-f-b-meyer.txt",
+      "bytes": 529255,
+      "words": 82277,
+      "reading_time_minutes": 366
+    },
+    {
+      "title": "Israel, a Prince with God",
+      "file": "israel-a-prince-with-god-f-b-meyer.txt",
+      "bytes": 361942,
+      "words": 57453,
+      "reading_time_minutes": 255
+    },
+    {
+      "title": "The Shepherd Psalm",
+      "file": "the-shepherd-psalm-f-b-meyer.txt",
+      "bytes": 175442,
+      "words": 27626,
+      "reading_time_minutes": 123
+    },
+    {
+      "title": "Joshua and the Land of Promise",
+      "file": "joshua-and-the-land-of-promise-f-b-meyer.txt",
+      "bytes": 436014,
+      "words": 68147,
+      "reading_time_minutes": 303
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "Studies on the Book of Daniel: A Course of Lectures",
-      "author": "J. N. Darby",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/studies-on-the-book-of-daniel-a-course-of-lectures-j-n-darby.txt"
-    },
-    {
-      "row": 3,
-      "title": "Nine Lectures on the First Epistle of John",
-      "author": "J. N. Darby",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/nine-lectures-on-the-first-epistle-of-john-j-n-darby.txt"
-    },
-    {
-      "row": 4,
-      "title": "Seven Lectures on the Second Coming of the Lord",
-      "author": "J. N. Darby",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/seven-lectures-on-the-second-coming-of-the-lord-j-n-darby.txt"
-    },
-    {
-      "row": 5,
-      "title": "An Exposition of the Gospel of John",
-      "author": "William Kelly",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/an-exposition-of-the-gospel-of-john-william-kelly.txt"
-    },
-    {
-      "row": 6,
-      "title": "Facts and Theories as to a Future State",
-      "author": "F. W. Grant",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/facts-and-theories-as-to-a-future-state-f-w-grant.txt"
-    },
-    {
-      "row": 7,
-      "title": "The Acts of the Apostles: An Exposition",
-      "author": "Arno C. Gaebelein",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/the-acts-of-the-apostles-an-exposition-arno-c-gaebelein.txt"
-    },
-    {
-      "row": 8,
-      "title": "The Gospel of Matthew: An Exposition, Volume 1",
-      "author": "Arno C. Gaebelein",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-1-arno-c-gaebelein.txt"
-    },
-    {
-      "row": 9,
-      "title": "The Gospel of Matthew: An Exposition, Volume 2",
-      "author": "Arno C. Gaebelein",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-2-arno-c-gaebelein.txt"
-    },
-    {
-      "row": 10,
-      "title": "God's Masterpiece: An Analytical Exposition of Ephesians I-III",
-      "author": "Arno C. Gaebelein",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/god-s-masterpiece-an-analytical-exposition-of-ephesians-i-iii-arno-c-gaebelein.txt"
-    },
-    {
-      "row": 11,
-      "title": "The Mission of the Holy Spirit: Five Addresses",
+      "title": "Notes on the Book of Esther",
       "author": "H. A. Ironside",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-mission-of-the-holy-spirit-five-addresses-h-a-ironside.txt"
+      "file_path": "data/library/verified/notes-on-the-book-of-esther-h-a-ironside.txt"
+    },
+    {
+      "row": 3,
+      "title": "Notes on the Gospel of Luke",
+      "author": "J. N. Darby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/notes-on-the-gospel-of-luke-j-n-darby.txt"
+    },
+    {
+      "row": 4,
+      "title": "Weighty Words from the Writings of J. N. D.",
+      "author": "J. N. Darby",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/weighty-words-from-the-writings-of-j-n-d-j-n-darby.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Great Prophecies of Daniel",
+      "author": "William Kelly",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-great-prophecies-of-daniel-william-kelly.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Prophet Daniel",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-prophet-daniel-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Revelation: An Analysis and Exposition",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-revelation-an-analysis-and-exposition-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Book of Genesis",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-genesis-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 9,
+      "title": "The Prophet Ezekiel",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-prophet-ezekiel-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 10,
+      "title": "The Prophet Joel",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-prophet-joel-arno-c-gaebelein.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Harmony of the Prophetic Word",
+      "author": "Arno C. Gaebelein",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-harmony-of-the-prophetic-word-arno-c-gaebelein.txt"
     },
     {
       "row": 12,
-      "title": "Rightly Dividing the Word",
-      "author": "Clarence Larkin",
+      "title": "The Baptism with the Holy Spirit",
+      "author": "R. A. Torrey",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/rightly-dividing-the-word-clarence-larkin.txt"
+      "file_path": "data/library/verified/the-baptism-with-the-holy-spirit-r-a-torrey.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Power of Prayer and the Prayer of Power",
+      "author": "R. A. Torrey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-power-of-prayer-and-the-prayer-of-power-r-a-torrey.txt"
+    },
+    {
+      "row": 14,
+      "title": "What the Bible Teaches",
+      "author": "R. A. Torrey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/what-the-bible-teaches-r-a-torrey.txt"
+    },
+    {
+      "row": 15,
+      "title": "How to Pray",
+      "author": "R. A. Torrey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/how-to-pray-r-a-torrey.txt"
+    },
+    {
+      "row": 16,
+      "title": "Lessons from the Life and Death of D. L. Moody",
+      "author": "R. A. Torrey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lessons-from-the-life-and-death-of-d-l-moody-r-a-torrey.txt"
+    },
+    {
+      "row": 17,
+      "title": "Elijah and the Secret of His Power",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/elijah-and-the-secret-of-his-power-f-b-meyer.txt"
+    },
+    {
+      "row": 18,
+      "title": "Samuel the Prophet",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/samuel-the-prophet-f-b-meyer.txt"
+    },
+    {
+      "row": 19,
+      "title": "Back to Bethel",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/back-to-bethel-f-b-meyer.txt"
+    },
+    {
+      "row": 20,
+      "title": "Jeremiah, Priest and Prophet",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/jeremiah-priest-and-prophet-f-b-meyer.txt"
+    },
+    {
+      "row": 21,
+      "title": "Moses, the Servant of God",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/moses-the-servant-of-god-f-b-meyer.txt"
+    },
+    {
+      "row": 22,
+      "title": "Tried by Fire",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/tried-by-fire-f-b-meyer.txt"
+    },
+    {
+      "row": 23,
+      "title": "Israel, a Prince with God",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/israel-a-prince-with-god-f-b-meyer.txt"
+    },
+    {
+      "row": 24,
+      "title": "The Shepherd Psalm",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-shepherd-psalm-f-b-meyer.txt"
+    },
+    {
+      "row": 25,
+      "title": "Joshua and the Land of Promise",
+      "author": "F. B. Meyer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/joshua-and-the-land-of-promise-f-b-meyer.txt"
     }
   ],
   "review_queues": {

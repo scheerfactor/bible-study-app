@@ -621,6 +621,7 @@ type BibleCoverageBook = {
   timelineChapters: number;
   bookIntroductionReady: boolean;
   studyPackReady: boolean;
+  sermonPrepReady: boolean;
   score: number;
   nextStep: string;
 };
@@ -636,6 +637,7 @@ type BibleCoverageSummary = {
   placesReadyBooks: number;
   timelineReadyBooks: number;
   studyPackReadyBooks: number;
+  sermonPrepReadyBooks: number;
   averageScore: number;
   weakestBooks: BibleCoverageBook[];
 };
@@ -744,6 +746,11 @@ type LibraryResource = {
   audiobook_audio_url?: string | null;
   audiobook_text_sync_available?: boolean | null;
   reading_time_minutes?: number | null;
+  ocr_quality_score?: number | null;
+  ocr_quality_label?: string | null;
+  front_matter_cleanup_needed?: boolean | null;
+  safe_for_quotation?: boolean | null;
+  ocr_cleanup_notes?: string | null;
   cover_metadata?: {
     type: string;
     title: string;
@@ -17878,6 +17885,7 @@ function BibleCoverageDashboard({
     { label: "TSK", value: `${summary.tskReadyBooks}/${summary.totalBooks}` },
     { label: "Background", value: `${summary.backgroundReadyBooks}/${summary.totalBooks}` },
     { label: "Study packs", value: `${summary.studyPackReadyBooks}/${summary.totalBooks}` },
+    { label: "Sermon prep", value: `${summary.sermonPrepReadyBooks}/${summary.totalBooks}` },
   ];
 
   return (
@@ -17895,7 +17903,7 @@ function BibleCoverageDashboard({
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7">
         {statRows.map((stat) => (
           <LibraryStat key={`bible-coverage-stat-${stat.label}`} label={stat.label} value={stat.value} />
         ))}
@@ -17949,6 +17957,7 @@ function BibleCoverageDashboard({
               ["L", "Places entries exist"],
               ["M", "Timeline entries exist"],
               ["Pack", "Book intro plus study material ready"],
+              ["Teach", "Sermon and lesson prep path is connected"],
             ].map(([label, body]) => (
               <div key={`bible-coverage-key-${label}`} className="flex items-center gap-2 rounded-xl bg-white px-3 py-2">
                 <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-[var(--green)] px-2 text-xs font-semibold text-white">{label}</span>
@@ -18003,6 +18012,7 @@ function BibleCoverageBookGrid({
               <CoverageMarker label="P" ready={book.peopleChapters > 0} title={`${book.peopleChapters} people chapters`} />
               <CoverageMarker label="L" ready={book.placesChapters > 0} title={`${book.placesChapters} places chapters`} />
               <CoverageMarker label="M" ready={book.timelineChapters > 0} title={`${book.timelineChapters} timeline chapters`} />
+              <CoverageMarker label="Teach" ready={book.sermonPrepReady} title={book.sermonPrepReady ? "Sermon prep path connected" : "Needs more reviewed study links for sermon prep"} />
             </div>
             <p className="mt-2 line-clamp-1 text-xs text-[var(--muted)]">{book.nextStep}</p>
           </button>
@@ -20458,16 +20468,18 @@ function buildBibleCoverageSummary({
     const timelineChapters = timelineByBook.get(bookName)?.size ?? 0;
     const bookIntroductionReady = bookIntroBooks.has(bookName);
     const studyPackReady = bookIntroductionReady && (commentaryChapters > 0 || backgroundChapters > 0 || tskChapters > 0);
+    const sermonPrepReady = studyPackReady && commentaryChapters > 0 && (tskChapters > 0 || backgroundChapters > 0 || peopleChapters > 0 || placesChapters > 0);
     const weightedScore = [
-      commentaryChapters > 0 ? 20 : 0,
+      commentaryChapters > 0 ? 18 : 0,
       strongsChapters > 0 ? 10 : 0,
-      tskChapters > 0 ? 15 : 0,
-      bookIntroductionReady ? 15 : 0,
+      tskChapters > 0 ? 14 : 0,
+      bookIntroductionReady ? 14 : 0,
       backgroundChapters > 0 ? 10 : 0,
       peopleChapters > 0 ? 8 : 0,
       placesChapters > 0 ? 8 : 0,
       timelineChapters > 0 ? 7 : 0,
-      studyPackReady ? 7 : 0,
+      studyPackReady ? 6 : 0,
+      sermonPrepReady ? 5 : 0,
     ].reduce((total, value) => total + value, 0);
     const nextStep = !commentaryChapters
       ? "Add reviewed commentary"
@@ -20479,7 +20491,9 @@ function buildBibleCoverageSummary({
             ? "Add people/places"
             : !strongsChapters
               ? "Add Strong's entries"
-              : "Deepen study pack";
+              : !sermonPrepReady
+                ? "Connect sermon prep"
+                : "Deepen study pack";
 
     return {
       book: bookName,
@@ -20495,6 +20509,7 @@ function buildBibleCoverageSummary({
       timelineChapters,
       bookIntroductionReady,
       studyPackReady,
+      sermonPrepReady,
       score: weightedScore,
       nextStep,
     };
@@ -20513,6 +20528,7 @@ function buildBibleCoverageSummary({
     placesReadyBooks: countReady((book) => book.placesChapters > 0),
     timelineReadyBooks: countReady((book) => book.timelineChapters > 0),
     studyPackReadyBooks: countReady((book) => book.studyPackReady),
+    sermonPrepReadyBooks: countReady((book) => book.sermonPrepReady),
     averageScore: books.length ? Math.round(books.reduce((total, book) => total + book.score, 0) / books.length) : 0,
     weakestBooks: books
       .slice()
@@ -23301,6 +23317,32 @@ function dedupeLibraryWorks(resources: LibraryResource[]) {
 function libraryReadingMinutes(resource: LibraryResource) {
   if (!resource.word_count) return "Time unknown";
   return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
+}
+
+function libraryReadingHours(resource: LibraryResource) {
+  const minutes = resource.reading_time_minutes ?? (resource.word_count ? Math.max(1, Math.round(resource.word_count / 225)) : null);
+  if (!minutes) return "Reading time unknown";
+  if (minutes < 60) return `${minutes} min read`;
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return remainingMinutes ? `${hours} hr ${remainingMinutes} min read` : `${hours} hr read`;
+}
+
+function ocrQualityLabel(resource: LibraryResource) {
+  if (resource.ocr_quality_label) return resource.ocr_quality_label;
+  if (typeof resource.ocr_quality_score === "number") {
+    if (resource.ocr_quality_score >= 90) return "Clean text";
+    if (resource.ocr_quality_score >= 75) return "Usable OCR";
+    return "Needs OCR review";
+  }
+  if (resource.resource_warnings.some((warning) => warning.toLowerCase().includes("ocr"))) return "Needs OCR review";
+  return "Text quality not separately scored";
+}
+
+function ocrQualityScore(resource: LibraryResource) {
+  if (typeof resource.ocr_quality_score === "number") return `${resource.ocr_quality_score}/100`;
+  if (resource.resource_warnings.some((warning) => warning.toLowerCase().includes("ocr"))) return "Review needed";
+  return "Not scored";
 }
 
 function audiobookDurationLabel(resource: LibraryResource, rate = 1) {
@@ -27844,6 +27886,9 @@ function LibraryDetail({
   const relatedPassages = relatedPassagesForLibraryResource(resource);
   const relatedSermons = sermonIdeasForLibraryResource(resource);
   const recommendedNextResource = relatedResources[0] ?? null;
+  const coverSeed = resource.category.length + resource.title.length;
+  const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
+  const quoteSafety = resource.safe_for_quotation === false ? "Spot-check before quoting" : resource.safe_for_quotation === true ? "Ready for careful quotation" : "Quote safety not reviewed";
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -27857,36 +27902,53 @@ function LibraryDetail({
       </button>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div className="max-w-3xl">
+        <div className="grid gap-5 lg:grid-cols-[minmax(220px,280px)_1fr]">
+          <div className={`relative aspect-[3/4] min-h-[280px] overflow-hidden rounded-[1.4rem] bg-gradient-to-br ${coverClass} p-6 text-white shadow-sm`}>
+            <div className="absolute inset-x-6 top-6 h-px bg-white/35" />
+            <div className="absolute left-6 top-6 rounded-full bg-white/15 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-white/85 backdrop-blur">
+              {libraryCategoryLabel(resource.category)}
+            </div>
+            <div className="absolute inset-x-6 bottom-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">{resource.collection}</p>
+              <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight">{resource.title}</h1>
+              <p className="mt-4 line-clamp-2 text-sm font-semibold text-white/80">{resource.author}</p>
+            </div>
+          </div>
+
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{resource.title}</h1>
             <p className="mt-3 text-base leading-7 text-[var(--muted)]">
               {resource.author} {resource.year ? `(${resource.year})` : ""}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onOpenAuthor} type="button">
-                Open Author
+            <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{resource.description}</p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              <StatusCard label="Estimated reading" status={libraryReadingHours(resource)} good={Boolean(resource.word_count)} />
+              <StatusCard label="Listening" status={audiobookMeta.duration} good />
+              <StatusCard label="Quote safety" status={quoteSafety} good={resource.safe_for_quotation !== false} />
+            </div>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
+                <BookOpen size={17} />
+                {completed ? "Read Again" : progress?.progress ? "Continue Reading" : "Read"}
               </button>
-              <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onOpenCollection} type="button">
-                Open Collection
+              <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onOpenReader} type="button">
+                <Headphones size={17} />
+                Listen
+              </button>
+              <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
+                <ListMusic size={16} />
+                Add to Queue
+              </button>
+              <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenAuthor} type="button">
+                Author Collection
+              </button>
+              <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenCollection} type="button">
+                Collection Shelf
               </button>
             </div>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
-              {completed ? "Read Again" : progress?.progress ? "Continue Reading" : "Open Resource"}
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onAddToListeningQueue} type="button">
-              <ListMusic size={16} />
-              Add to Listen Queue
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
-              <NotebookPen size={16} />
-              Add to Study Playlist
-            </button>
             {completed && (
-              <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
+              <button className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
                 <RotateCcw size={16} />
                 Restart
               </button>
@@ -27894,7 +27956,6 @@ function LibraryDetail({
           </div>
         </div>
 
-        <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{resource.description}</p>
         <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
 
         {progress && (
@@ -28053,8 +28114,18 @@ function LibraryDetail({
           <StatusCard label="Public domain" status={resource.public_domain_status} good={resource.public_domain_status === "verified"} />
           <StatusCard label="Commercial use" status={resource.commercial_use_status.replaceAll("_", " ")} good={resource.commercial_use_status.startsWith("verified")} />
           <StatusCard label="Words" status={resource.word_count ? resource.word_count.toLocaleString() : "Unknown"} good={Boolean(resource.word_count)} />
+          <StatusCard label="OCR quality" status={ocrQualityScore(resource)} good={(resource.ocr_quality_score ?? 100) >= 75 && resource.safe_for_quotation !== false} />
+          <StatusCard label="Text cleanup" status={resource.front_matter_cleanup_needed ? "Front matter review needed" : "No cleanup flag"} good={!resource.front_matter_cleanup_needed} />
+          <StatusCard label="Quotation use" status={quoteSafety} good={resource.safe_for_quotation !== false} />
         </div>
-        <p className="mt-4 text-sm leading-6 text-[var(--muted)]">{resource.rights_basis}</p>
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Text Quality</p>
+          <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">
+            {ocrQualityLabel(resource)}
+            {resource.ocr_cleanup_notes ? `: ${resource.ocr_cleanup_notes}` : ". Public-domain OCR scans remain readable, but rough scans should be spot-checked before quoting in sermons, lessons, or printed material."}
+          </p>
+        </div>
+        <p className="mt-4 break-words text-sm leading-6 text-[var(--muted)]">{resource.rights_basis}</p>
       </section>
 
       {relatedResources.length > 0 && (

@@ -25,6 +25,11 @@ export type LibraryManifestEntry = {
   cover_source_url?: string;
   cover_rights_status?: string;
   reading_time_minutes?: number;
+  ocr_quality_score?: number;
+  ocr_quality_label?: string;
+  front_matter_cleanup_needed?: boolean;
+  safe_for_quotation?: boolean;
+  ocr_cleanup_notes?: string;
   cover_metadata?: {
     type: string;
     title: string;
@@ -193,6 +198,11 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     cover_source_url: entry.cover_source_url ?? (entry.source_url.includes("gutenberg.org") ? entry.source_url : null),
     cover_rights_status: entry.cover_rights_status ?? (entry.source_url.includes("gutenberg.org") ? "Project Gutenberg hosted cover; use under source license/trademark terms." : "Generated fallback cover"),
     reading_time_minutes: entry.reading_time_minutes ?? (entry.word_count ? Math.max(1, Math.round(entry.word_count / 225)) : null),
+    ocr_quality_score: entry.ocr_quality_score ?? null,
+    ocr_quality_label: entry.ocr_quality_label ?? null,
+    front_matter_cleanup_needed: entry.front_matter_cleanup_needed ?? null,
+    safe_for_quotation: entry.safe_for_quotation ?? null,
+    ocr_cleanup_notes: entry.ocr_cleanup_notes ?? null,
     cover_metadata: entry.cover_metadata ?? null,
     added_at: entry.import_status,
   };
