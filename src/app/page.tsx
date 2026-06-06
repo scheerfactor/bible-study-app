@@ -123,7 +123,7 @@ type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -1568,7 +1568,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     description: "Resurrection and Christ's victory.",
     background: "radial-gradient(ellipse at 55% 68%, rgba(255,255,255,0.40), transparent 28%), linear-gradient(135deg, rgba(255,218,139,0.22), transparent)",
     motif: "Empty Tomb",
-    category: "Resurrection",
+    category: "Empty Tomb",
   },
   "prayer-hands": {
     label: "Prayer Hands",
@@ -1589,7 +1589,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     description: "Missions, sowing, harvest, and service.",
     background: "linear-gradient(160deg, rgba(231,197,113,0.32), transparent 45%), radial-gradient(ellipse at 55% 82%, rgba(255,255,255,0.18), transparent 35%)",
     motif: "Harvest",
-    category: "Missions",
+    category: "Harvest",
   },
   "storm-judgment": {
     label: "Storm / Judgment",
@@ -1617,7 +1617,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     description: "Preaching, Bible exposition, and Sunday service teaching.",
     background: "linear-gradient(155deg, rgba(255,255,255,0.18), transparent 42%), radial-gradient(ellipse at 50% 86%, rgba(118,78,38,0.28), transparent 34%)",
     motif: "Pulpit",
-    category: "Teaching",
+    category: "Pulpit",
   },
   "communion-table": {
     label: "Communion Table",
@@ -1652,11 +1652,23 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     description: "Care, guidance, pastoral ministry, and Psalm passages.",
     background: "linear-gradient(155deg, rgba(211,221,166,0.32), transparent 42%), radial-gradient(ellipse at 52% 88%, rgba(255,255,255,0.18), transparent 36%)",
     motif: "Field",
-    category: "Teaching",
+    category: "Shepherd",
   },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Church", "Teaching"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Church", "Teaching", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+
+function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
+  if (slotId === "none") return "Gradient only";
+  if (slotId === "parchment") return "Background texture";
+  return "Real image placeholder";
+}
+
+function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
+  return slotId === "none"
+    ? "No image asset"
+    : "Local generated placeholder; no copyrighted photo included";
+}
 
 const SERMON_SLIDE_THEMES: Record<SermonSlideThemeId, {
   name: string;
@@ -10907,7 +10919,7 @@ export default function Home() {
     fetch("/api/library")
       .then((response) => response.json())
       .then((data: { resources?: LibraryResource[] }) => {
-        if (!cancelled) setLibraryResources(data.resources ?? []);
+        if (!cancelled) setLibraryResources(dedupeLibraryWorks(data.resources ?? []));
       })
       .catch(() => {
         if (!cancelled) setLibraryResources([]);
@@ -19982,6 +19994,35 @@ function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
   return terms.some((term) => haystack.includes(term.toLowerCase()));
 }
 
+function normalizedLibraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
+  return `${resource.title}::${resource.author}`
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function strongerLibraryResource(current: LibraryResource, candidate: LibraryResource) {
+  if ((candidate.word_count ?? 0) > (current.word_count ?? 0)) return candidate;
+  if (candidate.public_domain_status === "verified" && current.public_domain_status !== "verified") return candidate;
+  if (candidate.source_url.includes("gutenberg.org") && !current.source_url.includes("gutenberg.org")) return candidate;
+  return current;
+}
+
+function dedupeLibraryWorks(resources: LibraryResource[]) {
+  const byWork = new Map<string, LibraryResource>();
+
+  for (const resource of resources) {
+    const key = normalizedLibraryWorkKey(resource);
+    const existing = byWork.get(key);
+    byWork.set(key, existing ? strongerLibraryResource(existing, resource) : resource);
+  }
+
+  return Array.from(byWork.values());
+}
+
 function libraryReadingMinutes(resource: LibraryResource) {
   if (!resource.word_count) return "Time unknown";
   return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
@@ -21516,6 +21557,7 @@ function LibraryScreen({
             onOpen={() => onOpenDetail(resource.slug)}
             onOpenReader={() => onOpenReader(resource.slug)}
             onOpenAuthor={() => onOpenAuthor(resource.author)}
+            onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
           />
         ))}
       </LibraryShelf>
@@ -21577,18 +21619,20 @@ function LibraryMediaCenter({
           listeningProgress={listeningProgress}
           completedState={completedState}
           onOpenDetail={onOpenDetail}
-        />
-        <MediaResourceShelf
-          title="Audiobooks"
-          kind="Audiobook"
-          resources={audiobooks}
-          progressState={progressState}
-          listeningProgress={listeningProgress}
-          completedState={completedState}
-          onOpenDetail={onOpenDetail}
           onOpenReader={onOpenReader}
           onAddToListeningQueue={onAddToListeningQueue}
         />
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-base font-semibold text-[var(--ink)]">Listening is built into each book</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+                {audiobooks.length} reviewed texts can be opened once and used with Read, Listen, and Add to Playlist controls. The same work is not shown again as a separate audiobook card.
+              </p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">No duplicate audiobook shelf</span>
+          </div>
+        </article>
         <MediaPlaceholderShelf
           title="Sermons"
           kind="Sermon"
@@ -25127,6 +25171,8 @@ function LibraryResourceCard({
         <div className="flex flex-wrap items-center gap-2">
           <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
+          <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Read</p>
+          <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Listen</p>
         </div>
         <p className="mt-3 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
         <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
@@ -25155,7 +25201,7 @@ function LibraryResourceCard({
         </div>
       </button>
       <div className="mt-auto border-t border-[var(--line)] bg-[var(--paper)] p-3">
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-3 gap-2">
           <button
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
             onClick={onOpenReader ?? onOpen}
@@ -25163,6 +25209,15 @@ function LibraryResourceCard({
           >
             <BookOpen size={14} />
             Read
+          </button>
+          <button
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50"
+            disabled={!onOpenReader}
+            onClick={onOpenReader}
+            type="button"
+          >
+            <Headphones size={14} />
+            Listen
           </button>
           <button
             className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50"
@@ -29661,15 +29716,18 @@ function PresentationWorkspaceScreen({
 
             <div className="mt-5">
               <p className="text-sm font-semibold text-[var(--ink)]">Curated local image foundations</p>
-              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Fast built-in backgrounds only. No external image search is used.</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Fast built-in placeholders only. No copyrighted photos or external image search are used.</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {SERMON_SLIDE_MEDIA_CATEGORIES.filter((category) => category !== "All").map((category) => {
                   const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([, value]) => value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
                   const targetSlot = slot ?? "open-bible";
                   return (
                     <button key={`presentation-image-${category}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-left text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!activeSlide} onClick={() => activeSlide && updateSlide(activeSlide.id, { imageSlot: targetSlot, imageTheme: SERMON_SLIDE_IMAGE_SLOTS[targetSlot].label })} type="button">
-                      <span className="block h-10" style={{ background: `${SERMON_SLIDE_IMAGE_SLOTS[targetSlot].background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
-                      <span className="block px-3 py-2">{category}</span>
+                      <span className="block h-12" style={{ background: `${SERMON_SLIDE_IMAGE_SLOTS[targetSlot].background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+                      <span className="block px-3 py-2">
+                        <span className="block">{category}</span>
+                        <span className="mt-0.5 block text-[0.68rem] text-[var(--muted)]">{sermonSlideMediaKind(targetSlot)}</span>
+                      </span>
                     </button>
                   );
                 })}
@@ -30073,7 +30131,11 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               <span className="block h-14" style={{ background: `${slot.background}, linear-gradient(135deg, #244233, #efe5cd)` }} />
               <span className="block px-3 py-2">
                 <span className="block text-xs font-semibold text-[var(--green)]">{slot.label}</span>
+                <span className="mt-1 inline-flex rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]">
+                  {sermonSlideMediaKind(id as SermonSlideImageSlotId)}
+                </span>
                 <span className="mt-1 block line-clamp-2 text-[0.7rem] leading-4 text-[var(--muted)]">{slot.description}</span>
+                <span className="mt-1 block text-[0.65rem] leading-4 text-[var(--muted)]">{sermonSlideMediaRights(id as SermonSlideImageSlotId)}</span>
               </span>
             </button>
           ))}
