@@ -2055,7 +2055,7 @@ const READING_PLAN_FOUNDATION: ReadingPlanFoundation[] = [
     id: "bible-in-a-year",
     category: "Bible in a Year",
     title: "Bible in a Year",
-    description: "A full-year KJV reading plan placeholder for future daily assignments.",
+    description: "A full-year KJV reading plan framework for future daily assignments.",
     startHere: "Start with Genesis 1 and Matthew 1 when the full plan is wired.",
     status: "Planned",
   },
@@ -2331,7 +2331,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     weaknesses: ["Only small reviewed samples are public", "Full expansion waits for a safe original source"],
     bestUse: "Use as an additional Baptist historical voice where reviewed entries are available.",
     doctrinalNotes: "Sample-only until a stable original public-domain source is verified.",
-    sampleQuote: "Baptist historical value; needs exact source review before wider import.",
+    sampleQuote: "Baptist historical value; best used as a careful comparison voice.",
     bestFor: ["Historical background", "Teaching"],
     priority: 7,
   },
@@ -2375,17 +2375,17 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     name: "H. A. Ironside",
     years: "1876-1951",
     shortLabel: "Expository Bible study",
-    biography: "Harry A. Ironside was a Bible teacher and pastor known for clear expository teaching. In this beta app, Ironside remains a careful sample/commentary path where exact source and rights verification control what can be imported.",
+    biography: "Harry A. Ironside was a Bible teacher and pastor known for clear expository teaching. His works are helpful for preaching, exposition, and connecting Bible truth to plain Christian instruction.",
     timeline: [
       { year: "1876", event: "Born in Toronto, Canada." },
       { year: "1929", event: "Began pastoral ministry at Moody Church in Chicago." },
       { year: "1930s", event: "Published and taught widely through Bible conferences and written exposition." },
       { year: "1951", event: "Died after decades of Bible teaching ministry." },
     ],
-    commentary: "Use as an expository voice where rights/source review has been completed. Do not bulk import unverified editions.",
+    commentary: "Use as an expository voice where available, with Scripture remaining primary.",
     quotes: [
       "Careful Bible teaching should explain the passage without moving Scripture out of the center.",
-      "Ironside material in this app is curated only where rights and source notes are documented.",
+      "Ironside is best used for clear expository support after reading the passage itself.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
     recommendedReadingOrder: ["John commentary samples", "Romans commentary samples", "Luke commentary samples"],
@@ -2396,7 +2396,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     name: "Matthew Henry",
     years: "1662-1714",
     shortLabel: "Devotional and practical commentary",
-    biography: "Matthew Henry was an English Nonconformist minister whose commentary has been widely used for devotional, practical, and pastoral Bible study. In this app, Henry is the first substantial public-domain commentary collection because the source and rights path are clear.",
+    biography: "Matthew Henry was an English Nonconformist minister whose commentary has been widely used for devotional, practical, and pastoral Bible study.",
     timeline: [
       { year: "1662", event: "Born in Wales." },
       { year: "1687", event: "Began pastoral ministry at Chester." },
@@ -2417,7 +2417,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     name: "Albert Barnes",
     years: "1798-1870",
     shortLabel: "Concise Bible notes",
-    biography: "Albert Barnes was an American Presbyterian minister known for concise Bible notes. A reviewed Phase 3 batch is available for John, Romans, Amos, Luke 24, Psalms, and Revelation from public-domain StudyLight chapter pages.",
+    biography: "Albert Barnes was an American Presbyterian minister known for concise Bible notes that can help teachers trace the sense of a passage.",
     timeline: [
       { year: "1798", event: "Born in Rome, New York." },
       { year: "1820s", event: "Entered pastoral ministry." },
@@ -2425,33 +2425,33 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       { year: "1870", event: "Died in Philadelphia." },
     ],
     commentary: "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
-    quotes: ["Reviewed Phase 3 chapters only.", "Use only verified public-domain editions."],
+    quotes: ["Concise notes are helpful after Scripture and primary study helps.", "Use with discernment as a historical commentary voice."],
     relatedAuthorIds: ["matthew-henry", "john-wesley", "adam-clarke"],
-    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "Barnes reviewed chapters"],
-    subjects: ["Commentary", "Reviewed Batch"],
+    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "Barnes notes"],
+    subjects: ["Commentary", "Teaching"],
   },
   {
     id: "jfb",
     name: "Jamieson-Fausset-Brown",
     years: "19th century",
     shortLabel: "Critical and explanatory commentary",
-    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB. A first reviewed public batch is available, while the complete staged set remains hidden until chapter review is finished.",
+    biography: "Robert Jamieson, A. R. Fausset, and David Brown produced a compact whole-Bible commentary often known as JFB.",
     timeline: [
       { year: "19th c.", event: "Prepared the Commentary Critical and Explanatory on the Whole Bible." },
-      { year: "2026", event: "First reviewed batch promoted for John, Romans, Amos, Luke 24, Psalms 1-5, and Revelation 1-3." },
+      { year: "Modern use", event: "Frequently used as a concise comparison commentary alongside fuller devotional works." },
     ],
     commentary: "Compact author comparison. Keep it collapsed by default and secondary to Scripture.",
-    quotes: ["Reviewed batches only.", "Use after the KJV text and primary study helps."],
+    quotes: ["Concise comparison can help teachers see the passage flow.", "Use after the KJV text and primary study helps."],
     relatedAuthorIds: ["matthew-henry", "albert-barnes", "adam-clarke"],
-    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "JFB reviewed batch"],
-    subjects: ["Commentary", "Reviewed Batch"],
+    recommendedReadingOrder: ["KJV passage", "Webster and cross references", "Matthew Henry", "JFB"],
+    subjects: ["Commentary", "Teaching"],
   },
   {
     id: "john-wesley",
     name: "John Wesley",
     years: "1703-1791",
     shortLabel: "Historical New Testament notes",
-    biography: "John Wesley was an English preacher and Methodist leader. His public-domain New Testament notes are available as a reviewed Phase 3 batch for John, Romans, Luke 24, and Revelation with perspective labels.",
+    biography: "John Wesley was an English preacher and Methodist leader. His New Testament notes are brief, practical, and useful as a historical comparison voice.",
     timeline: [
       { year: "1703", event: "Born in Epworth, England." },
       { year: "1730s", event: "Became central to the Methodist revival." },
@@ -2459,45 +2459,45 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       { year: "1791", event: "Died after decades of preaching and writing." },
     ],
     commentary: "Use as compact Methodist historical notes after the KJV text, with doctrinal discernment labels visible.",
-    quotes: ["Reviewed New Testament chapters only.", "Not all doctrine endorsed."],
+    quotes: ["Brief practical notes can help with application.", "Not all doctrine endorsed."],
     relatedAuthorIds: ["matthew-henry", "adam-clarke", "albert-barnes"],
-    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "JFB", "Wesley reviewed chapters"],
-    subjects: ["Commentary", "Reviewed Batch", "Use with discernment"],
+    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "JFB", "Wesley notes"],
+    subjects: ["Commentary", "Use with discernment"],
   },
   {
     id: "john-gill",
     name: "John Gill",
     years: "1697-1771",
-    shortLabel: "Baptist commentary candidate",
-    biography: "John Gill was an English Baptist pastor, theologian, and commentator. His work has Baptist historical value, but import still requires exact source, edition, rights, and quality review.",
+    shortLabel: "Baptist commentary and history",
+    biography: "John Gill was an English Baptist pastor, theologian, and commentator whose works have Baptist historical value.",
     timeline: [
       { year: "1697", event: "Born in Kettering, England." },
       { year: "1720", event: "Began pastoral ministry in London." },
       { year: "1740s-1760s", event: "Published extensive theological and expository works." },
       { year: "1771", event: "Died after long Baptist pastoral ministry." },
     ],
-    commentary: "Strong Baptist history/commentary candidate after source verification. Use with careful doctrinal labels and Scripture-first ordering.",
-    quotes: ["Baptist historical value.", "Needs exact source review before import."],
+    commentary: "Use as a Baptist historical commentary voice where available, with careful doctrinal labels and Scripture-first ordering.",
+    quotes: ["Baptist historical value.", "Best read as a historical comparison under Scripture."],
     relatedAuthorIds: ["matthew-henry", "spurgeon", "bunyan"],
-    recommendedReadingOrder: ["Rights review", "John sample", "Romans sample", "Coverage expansion"],
-    subjects: ["Commentary", "Baptist History", "Needs Review"],
+    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "Baptist historical comparison"],
+    subjects: ["Commentary", "Baptist History", "Use with discernment"],
   },
   {
     id: "adam-clarke",
     name: "Adam Clarke",
     years: "1762-1832",
     shortLabel: "Comparative commentary",
-    biography: "Adam Clarke was a Methodist theologian and commentator. A reviewed Phase 3 batch is available for John, Romans, Amos, Luke 24, Psalms, and Revelation from public-domain StudyLight chapter pages.",
+    biography: "Adam Clarke was a Methodist theologian and commentator known for historical notes and frequent language observations.",
     timeline: [
       { year: "1762", event: "Born in Ireland." },
       { year: "1790s-1830s", event: "Served as Methodist preacher and scholar." },
       { year: "1832", event: "Died after extensive writing and ministry." },
     ],
     commentary: "Use as a historical comparison with visible discernment labels; keep Scripture primary.",
-    quotes: ["Reviewed Phase 3 chapters only.", "Use with discernment."],
+    quotes: ["Historical and word-study notes can be useful with discernment.", "Keep Scripture primary."],
     relatedAuthorIds: ["john-wesley", "albert-barnes", "matthew-henry"],
-    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "Barnes", "Clarke reviewed chapters"],
-    subjects: ["Commentary", "Reviewed Batch", "Use with discernment"],
+    recommendedReadingOrder: ["KJV passage", "Matthew Henry", "Barnes", "Clarke"],
+    subjects: ["Commentary", "Use with discernment"],
   },
   {
     id: "ryle",
@@ -2576,7 +2576,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     commentary: "Best used for devotional reading, prayer, humility, and Christian life application. Mark secondary differences plainly.",
     quotes: [
-      "Quote review pending: add exact public-domain excerpts only after source review.",
+      "Read devotionally, with the open Bible as the final test.",
     ],
     relatedAuthorIds: ["bounds", "ryle", "moody"],
     recommendedReadingOrder: ["Lord, Teach Us To Pray", "Humility: The Beauty of Holiness", "Holy in Christ", "The Ministry of Intercession", "The Master's Indwelling"],
@@ -2596,7 +2596,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     commentary: "Best used for doctrinal outlines, evangelism, and practical Christian life. Keep doctrine checked directly against Scripture.",
     quotes: [
-      "Quote review pending: add exact public-domain excerpts only after source review.",
+      "Use doctrinal outlines as study helps under the text of Scripture.",
     ],
     relatedAuthorIds: ["moody", "spurgeon", "bounds"],
     recommendedReadingOrder: ["How to Succeed in the Christian Life", "How to Bring Men to Christ", "The Person and Work of The Holy Spirit", "The Fundamental Doctrines of the Christian Faith"],
@@ -2616,7 +2616,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     commentary: "Best used as Baptist devotional classics, illustrations, and Christian life reading. Do not treat allegory as doctrine by itself.",
     quotes: [
-      "Quote review pending: add exact public-domain excerpts only after source review.",
+      "Bunyan is especially useful for devotional reading and illustration.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
     recommendedReadingOrder: ["The Pilgrim's Progress", "Grace Abounding to the Chief of Sinners", "The Holy War"],
@@ -2636,7 +2636,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     commentary: "Best used for missionary burden, consecration, and devotional Bible study. Keep typological readings labeled and reviewed.",
     quotes: [
-      "Quote review pending: add exact public-domain excerpts only after source review.",
+      "Missionary biography should stir prayer, faith, and obedience.",
     ],
     relatedAuthorIds: ["bounds", "murray", "moody"],
     recommendedReadingOrder: ["A Retrospect", "Separation and Service; or, Thoughts on Numbers VI, VII.", "A Ribband of Blue, and Other Bible Studies", "Union and Communion; or, Thoughts on the Song of Solomon", "Unfailing Springs"],
@@ -2656,7 +2656,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     ],
     commentary: "Best used for devotional exposition, Bible biography, and teaching application. Use with discernment and keep Scripture primary.",
     quotes: [
-      "Quote review pending: add exact public-domain excerpts only after source review.",
+      "Use Bible biography to strengthen application without replacing exposition.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "taylor"],
     recommendedReadingOrder: ["John the Baptist", "Love to the Uttermost"],
@@ -2684,17 +2684,17 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "bible-encyclopedias",
     title: "Bible Encyclopedias",
-    description: "A planned shelf for reviewed Bible encyclopedias and background resources.",
+    description: "Bible background and encyclopedia resources to support people, places, customs, and history.",
     terms: ["encyclopedia", "cyclopedia", "background"],
-    labels: ["Needs review", "Future growth"],
+    labels: ["Coming soon", "Background"],
     featuredAuthorIds: [],
   },
   {
     id: "bible-handbooks",
     title: "Bible Handbooks",
-    description: "Book introductions, outlines, and survey helps after rights and source verification.",
+    description: "Book introductions, outlines, and survey helps for seeing the flow of Scripture.",
     terms: ["handbook", "outline", "introduction"],
-    labels: ["Book background", "Rights first"],
+    labels: ["Book background", "Teaching prep"],
     featuredAuthorIds: [],
   },
   {
@@ -2724,7 +2724,7 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "evangelism",
     title: "Evangelism Collection",
-    description: "Gospel, witness, and soul-winning resources with rights and doctrinal review.",
+    description: "Gospel, witness, and soul-winning resources for clear, practical evangelism.",
     terms: ["evangelism", "gospel", "witness", "christ"],
     labels: ["Gospel work", "Practical"],
     featuredAuthorIds: ["moody", "spurgeon", "ryle"],
@@ -2748,9 +2748,9 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "kjv-defense",
     title: "KJV Defense Collection",
-    description: "A planned shelf for reviewed KJV-related and textual-issue resources. Add only after rights and doctrinal review.",
+    description: "KJV-related and textual-issue resources for careful Bible study, added only when suitable for public use.",
     terms: ["kjv", "king james", "authorized", "textual"],
-    labels: ["Needs careful review", "Future growth"],
+    labels: ["Coming soon", "Careful study"],
     featuredAuthorIds: [],
   },
   {
@@ -2780,9 +2780,9 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "ironside",
     title: "Ironside Shelf",
-    description: "Carefully reviewed H. A. Ironside samples and future imports after edition and rights review.",
+    description: "H. A. Ironside resources for expository Bible study and preaching support.",
     terms: ["ironside"],
-    labels: ["Expository", "Rights first"],
+    labels: ["Expository", "Teaching"],
     featuredAuthorIds: ["ironside"],
   },
   {
@@ -2844,23 +2844,23 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "larkin",
     title: "Larkin Shelf",
-    description: "A planned shelf for Clarence Larkin material after exact edition, chart, and rights review.",
+    description: "Clarence Larkin material for future careful study use where appropriate.",
     terms: ["larkin"],
-    labels: ["Permission review", "Not all doctrine endorsed"],
+    labels: ["Coming soon", "Not all doctrine endorsed"],
     featuredAuthorIds: [],
   },
   {
     id: "william-kelly",
     title: "William Kelly Shelf",
-    description: "A planned shelf for William Kelly works after source, rights, and doctrinal review.",
+    description: "William Kelly works for future expository comparison and historical study.",
     terms: ["william kelly", "kelly"],
-    labels: ["Needs review", "Use with discernment"],
+    labels: ["Coming soon", "Use with discernment"],
     featuredAuthorIds: [],
   },
   {
     id: "darby",
     title: "Darby Shelf",
-    description: "A planned shelf for J. N. Darby works after careful doctrinal labeling and rights review.",
+    description: "J. N. Darby works for future historical comparison with clear perspective labels.",
     terms: ["darby"],
     labels: ["Use with discernment", "Historical value"],
     featuredAuthorIds: [],
@@ -2868,17 +2868,17 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "gaebelein",
     title: "Gaebelein Shelf",
-    description: "A planned shelf for A. C. Gaebelein resources after source and rights verification.",
+    description: "A. C. Gaebelein resources for future prophecy and exposition study.",
     terms: ["gaebelein"],
-    labels: ["Prophecy", "Needs review"],
+    labels: ["Prophecy", "Coming soon"],
     featuredAuthorIds: [],
   },
   {
     id: "fw-grant",
     title: "F. W. Grant Shelf",
-    description: "A planned shelf for F. W. Grant works after exact edition and rights review.",
+    description: "F. W. Grant works for future expository and historical comparison.",
     terms: ["f. w. grant", "f w grant", "grant"],
-    labels: ["Needs review", "Use with discernment"],
+    labels: ["Coming soon", "Use with discernment"],
     featuredAuthorIds: [],
   },
 ];
@@ -3582,6 +3582,17 @@ const DEFAULT_FAVORITE_PASSAGES: BiblePassage[] = [
 ];
 
 const LIBRARY_CATEGORY_FILTERS = ["All", ...LIBRARY_CATEGORIES];
+const LIBRARY_DISCOVERY_FILTERS = [
+  "All",
+  "Books",
+  "Commentaries",
+  "Dictionaries / Helps",
+  "Prayer",
+  "Preaching & Teaching",
+  "Baptist History",
+  "Missions",
+  "KJV / Textual Issues",
+];
 
 function chapterEssentials({
   book,
@@ -6150,7 +6161,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
     timelineLinks: ["david", "christ-crucifixion", "christ-resurrection", "church-pentecost"],
     relatedPassages: ["2 Samuel 5:6", "Luke 24:47", "Acts 2:5", "Revelation 21:2"],
-    mapNote: "Map placeholder: future Bible map layer for Jerusalem and Judea.",
+    mapNote: "Map coming soon: Jerusalem and Judea.",
   },
   {
     id: "bethlehem",
@@ -6161,7 +6172,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
     timelineLinks: ["david", "christ-birth"],
     relatedPassages: ["Ruth 1:1", "1 Samuel 16:1", "Micah 5:2", "Luke 2:4"],
-    mapNote: "Map placeholder: future Bible map layer for Bethlehem.",
+    mapNote: "Map coming soon: Bethlehem.",
   },
   {
     id: "nazareth",
@@ -6171,7 +6182,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
     timelineLinks: ["christ-birth", "christ-ministry"],
     relatedPassages: ["Matthew 2:23", "Luke 1:26", "Luke 4:16", "John 1:45"],
-    mapNote: "Map placeholder: future Bible map marker for Nazareth in Galilee.",
+    mapNote: "Map coming soon: Nazareth in Galilee.",
   },
   {
     id: "galilee",
@@ -6182,7 +6193,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Matthew 4:12", "Matthew 4:23", "Luke 24:6", "John 21:1"],
     timelineLinks: ["christ-ministry", "christ-resurrection"],
     relatedPassages: ["Matthew 4:12", "Matthew 4:23", "Luke 24:6", "John 21:1"],
-    mapNote: "Map placeholder: future Bible map layer for Galilee and the Sea of Galilee.",
+    mapNote: "Map coming soon: Galilee and the Sea of Galilee.",
   },
   {
     id: "jordan-river",
@@ -6193,7 +6204,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Joshua 3:17", "Matthew 3:13", "John 1:28", "John 3:26"],
     timelineLinks: ["exodus-wilderness", "christ-ministry"],
     relatedPassages: ["Joshua 3:17", "Matthew 3:13", "John 1:28", "John 3:26"],
-    mapNote: "Map placeholder: future Bible map layer for Jordan River crossings and baptism sites.",
+    mapNote: "Map coming soon: Jordan River crossings and baptism sites.",
   },
   {
     id: "emmaus",
@@ -6203,7 +6214,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Luke 24:13", "Luke 24:27", "Luke 24:31", "Luke 24:32"],
     timelineLinks: ["christ-resurrection"],
     relatedPassages: ["Luke 24:13", "Luke 24:27", "Luke 24:31", "Luke 24:32"],
-    mapNote: "Map placeholder: future simple route from Jerusalem toward Emmaus.",
+    mapNote: "Map coming soon: route from Jerusalem toward Emmaus.",
   },
   {
     id: "egypt",
@@ -6214,7 +6225,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Genesis 12:10", "Genesis 45:5", "Exodus 12:1", "Matthew 2:13"],
     timelineLinks: ["abraham", "joseph", "moses", "christ-birth"],
     relatedPassages: ["Genesis 12:10", "Genesis 45:5", "Exodus 12:1", "Matthew 2:13"],
-    mapNote: "Map placeholder: future Bible map layer for Egypt, Goshen, and the Exodus route.",
+    mapNote: "Map coming soon: Egypt, Goshen, and the Exodus route.",
   },
   {
     id: "babylon",
@@ -6225,7 +6236,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
     timelineLinks: ["solomon"],
     relatedPassages: ["2 Kings 24:10", "Daniel 1:1", "Daniel 4:30", "Revelation 18:2"],
-    mapNote: "Map placeholder: future Bible map layer for Babylon and the exile route.",
+    mapNote: "Map coming soon: Babylon and the exile route.",
   },
   {
     id: "antioch",
@@ -6235,7 +6246,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Acts 11:26", "Acts 13:1", "Acts 14:26", "Acts 15:35"],
     timelineLinks: ["church-pentecost", "pauls-journeys"],
     relatedPassages: ["Acts 11:26", "Acts 13:1", "Acts 14:26", "Acts 15:35"],
-    mapNote: "Map placeholder: future simple marker for Syrian Antioch and Paul's mission departures.",
+    mapNote: "Map coming soon: Syrian Antioch and Paul's mission departures.",
   },
   {
     id: "corinth",
@@ -6245,7 +6256,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Acts 18:1", "Acts 18:8", "1 Corinthians 1:2", "2 Corinthians 1:1"],
-    mapNote: "Map placeholder: future simple marker for Corinth in Achaia.",
+    mapNote: "Map coming soon: Corinth in Achaia.",
   },
   {
     id: "rome",
@@ -6255,7 +6266,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Romans 1:7", "Romans 1:15", "Acts 28:16", "Acts 28:31"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Romans 1:7", "Romans 1:15", "Acts 28:16", "Acts 28:31"],
-    mapNote: "Map placeholder: future simple marker for Rome.",
+    mapNote: "Map coming soon: Rome.",
   },
   {
     id: "cenchrea",
@@ -6265,7 +6276,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Romans 16:1", "Acts 18:18"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Romans 16:1", "Acts 18:18"],
-    mapNote: "Map placeholder: future simple marker for Cenchrea near Corinth.",
+    mapNote: "Map coming soon: Cenchrea near Corinth.",
   },
   {
     id: "ephesus",
@@ -6275,7 +6286,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
     timelineLinks: ["pauls-journeys"],
     relatedPassages: ["Acts 18:19", "Acts 19:10", "Acts 19:26", "Ephesians 1:1"],
-    mapNote: "Map placeholder: future simple marker for Ephesus in Asia.",
+    mapNote: "Map coming soon: Ephesus in Asia.",
   },
   {
     id: "judea",
@@ -6286,7 +6297,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["Matthew 3:1", "John 3:22", "Acts 1:8"],
     timelineLinks: ["christ-ministry", "church-pentecost"],
     relatedPassages: ["Matthew 3:1", "John 3:22", "Acts 1:8"],
-    mapNote: "Map placeholder: future Bible map layer for Judea.",
+    mapNote: "Map coming soon: Judea.",
   },
   {
     id: "aenon-salim",
@@ -6297,7 +6308,7 @@ const studyPlaces: StudyPlace[] = [
     keyPassages: ["John 3:23", "John 3:30"],
     timelineLinks: ["christ-ministry"],
     relatedPassages: ["John 3:23", "John 3:30"],
-    mapNote: "Map placeholder: future map marker for Aenon near Salim.",
+    mapNote: "Map coming soon: Aenon near Salim.",
   },
 ];
 
@@ -9729,7 +9740,7 @@ export default function Home() {
   }, [allVerses, searchFilter, searchTerm]);
 
   const libraryCategories = useMemo(
-    () => LIBRARY_CATEGORY_FILTERS,
+    () => LIBRARY_DISCOVERY_FILTERS,
     [],
   );
 
@@ -9753,19 +9764,10 @@ export default function Home() {
   );
 
   const filteredLibraryResources = useMemo(() => {
-    const term = librarySearchTerm.trim().toLowerCase();
+    const terms = librarySearchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return libraryResources.filter((resource) => {
-      const categoryMatch = libraryCategory === "All" || resource.category === libraryCategory;
-      const searchMatch =
-        !term ||
-        resource.title.toLowerCase().includes(term) ||
-        resource.author.toLowerCase().includes(term) ||
-        resource.category.toLowerCase().includes(term) ||
-        resource.collection.toLowerCase().includes(term) ||
-        resource.resource_labels.some((label) => label.toLowerCase().includes(term)) ||
-        resource.resource_warnings.some((warning) => warning.toLowerCase().includes(term)) ||
-        resource.perspective_notes.toLowerCase().includes(term) ||
-        resource.recommended_use.toLowerCase().includes(term);
+      const categoryMatch = libraryResourceMatchesDiscoveryFilter(resource, libraryCategory);
+      const searchMatch = terms.length === 0 || libraryResourceMatchesAllTerms(resource, terms);
       return categoryMatch && searchMatch;
     });
   }, [libraryCategory, libraryResources, librarySearchTerm]);
@@ -12614,14 +12616,14 @@ export default function Home() {
         {
           id: makeId("playlist_item"),
           type: "commentary_placeholder",
-          label: `${book} ${chapter} commentary placeholder`,
+          label: `${book} ${chapter} commentary`,
           book,
           chapter,
         },
         {
           id: makeId("playlist_item"),
           type: "library_placeholder",
-          label: "Related library reading placeholder",
+          label: "Related library reading",
         },
       ],
     };
@@ -15367,7 +15369,7 @@ function PrayerScreen({
                     Support status
                     <input
                       className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-base outline-none"
-                      placeholder="Placeholder: supported, needs support..."
+                      placeholder="Supported, needs support..."
                       value={draft.supportStatus}
                       onChange={(event) => onDraftChange({ ...draft, supportStatus: event.target.value })}
                     />
@@ -16048,7 +16050,7 @@ function BookIntroScreen({
                     {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
                   </div>
                   <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">
-                    {resource.status}
+                    {chapterResourceStatusLabel(resource.status)}
                   </span>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
@@ -18631,7 +18633,7 @@ function ChapterStudyWorkflow({
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prepare Amos 1-4</p>
               <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Sunday school teaching prep from reviewed data</h3>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Verified Matthew Henry commentary appears when available, with placeholders kept for future reviewed sources.
+                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Commentary appears only where suitable public entries are ready.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -18901,7 +18903,7 @@ function ChapterStudyWorkflow({
                       {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
                     </div>
                     <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">
-                      {resource.status}
+                      {chapterResourceStatusLabel(resource.status)}
                     </span>
                   </div>
                   <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
@@ -20212,6 +20214,83 @@ function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
   return terms.some((term) => haystack.includes(term.toLowerCase()));
 }
 
+function libraryResourceMatchesAllTerms(resource: LibraryResource, terms: string[]) {
+  const haystack = [
+    resource.title,
+    resource.author,
+    resource.category,
+    resource.collection,
+    resource.original_category ?? "",
+    resource.description,
+    resource.perspective_notes,
+    resource.recommended_use,
+    resource.source_url,
+    ...resource.resource_labels,
+    ...resource.resource_warnings,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return terms.every((term) => haystack.includes(term));
+}
+
+function libraryResourceMatchesDiscoveryFilter(resource: LibraryResource, filter: string) {
+  if (filter === "All") return true;
+  if (filter === "Books") {
+    return !libraryResourceMatches(resource, [
+      "commentary",
+      "dictionary",
+      "encyclopedia",
+      "topical",
+      "handbook",
+      "survey",
+      "cross references",
+    ]);
+  }
+  if (filter === "Commentaries") return libraryResourceMatches(resource, ["commentary", "commentaries", "exposition", "expository"]);
+  if (filter === "Dictionaries / Helps") {
+    return libraryResourceMatches(resource, [
+      "dictionary",
+      "dictionaries",
+      "encyclopedia",
+      "topical",
+      "handbook",
+      "survey",
+      "cross references",
+      "study helps",
+      "bible study",
+    ]);
+  }
+  if (filter === "Prayer") return libraryResourceMatches(resource, ["prayer", "pray", "intercession"]);
+  if (filter === "Preaching & Teaching") return libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "lesson", "illustration"]);
+  if (filter === "Baptist History") return libraryResourceMatches(resource, ["baptist history", "baptist", "church history"]);
+  if (filter === "Missions") return libraryResourceMatches(resource, ["missions", "missionary", "mission"]);
+  if (filter === "KJV / Textual Issues") return libraryResourceMatches(resource, ["kjv", "king james", "authorized", "textual", "scripture"]);
+  return resource.category === filter;
+}
+
+function libraryAuthorProfileMatches(profile: LibraryAuthorProfile, terms: string[]) {
+  const haystack = [
+    profile.name,
+    profile.shortLabel,
+    profile.biography,
+    profile.commentary,
+    ...profile.subjects,
+    ...profile.recommendedReadingOrder,
+    ...profile.relatedAuthorIds,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return terms.every((term) => haystack.includes(term));
+}
+
+function chapterResourceStatusLabel(status: ChapterResourceRecommendation["status"]) {
+  if (status === "available") return "Ready";
+  if (status === "sample") return "Sample";
+  return "Coming soon";
+}
+
 function normalizedLibraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
   return `${resource.title}::${resource.author}`
     .toLowerCase()
@@ -21110,7 +21189,7 @@ function LibraryScreen({
   const prayerClassicResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["prayer", "pray", "intercession", "müller", "muller"]))
     .slice(0, 8);
-  const categoryCards = categories
+  const categoryCards = LIBRARY_CATEGORY_FILTERS
     .filter((category) => category !== "All")
     .map((category) => ({
       category,
@@ -21215,11 +21294,15 @@ function LibraryScreen({
     },
     {
       title: "Baptist History",
-      body: "Baptist history and church history resources with review labels.",
+      body: "Baptist history and church history resources with helpful perspective notes.",
       meta: `${subjectShelves.find((shelf) => shelf.title === "Baptist History")?.resources.length ?? 0} resources`,
       action: () => onCategoryChange("Baptist History"),
     },
   ];
+  const searchTerms = searchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const authorMatches = searchTerms.length
+    ? LIBRARY_AUTHOR_PROFILES.filter((profile) => libraryAuthorProfileMatches(profile, searchTerms)).slice(0, 8)
+    : [];
   const browsingAllResources = !searchTerm && activeCategory === "All";
   const displayedLibraryResources = browsingAllResources ? resources.slice(0, 60) : filteredResources;
 
@@ -21233,7 +21316,7 @@ function LibraryScreen({
               Curated study resources
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-              Browse verified public-domain resources with category, rights, doctrinal review, and recommended-use labels visible before you read.
+              Browse polished public-domain resources by title, author, subject, and collection before you read or listen.
             </p>
             <a
               className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
@@ -21259,6 +21342,73 @@ function LibraryScreen({
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
       </section>
 
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm md:p-5">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]">
+            Find books, authors, and study helps
+            <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+              <Search size={18} className="shrink-0 text-[var(--green)]" />
+              <input
+                className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+                placeholder="Search Spurgeon, prayer, Romans, dictionary..."
+                value={searchTerm}
+                onChange={(event) => onSearchTermChange(event.target.value)}
+              />
+              {searchTerm && (
+                <button
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                  onClick={() => onSearchTermChange("")}
+                  type="button"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+          </label>
+          <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            {filteredResources.length.toLocaleString()} found
+          </p>
+        </div>
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${
+                activeCategory === category
+                  ? "bg-[var(--ink)] text-white"
+                  : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+              }`}
+              onClick={() => onCategoryChange(category)}
+              type="button"
+            >
+              {libraryCategoryLabel(category)}
+            </button>
+          ))}
+        </div>
+        {authorMatches.length > 0 && (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-[var(--ink)]">Author matches</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Tap to browse</p>
+            </div>
+            <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+              {authorMatches.map((profile) => (
+                <button
+                  key={`author-search-${profile.id}`}
+                  className="w-52 shrink-0 rounded-2xl border border-[var(--line)] bg-white p-3 text-left shadow-sm"
+                  onClick={() => onOpenAuthor(profile.id)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--ink)]">{profile.name}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--green)]">{resourcesForAuthor(resources, profile).length} books</p>
+                  <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{profile.shortLabel}</p>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
         <div className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr]">
           <div>
@@ -21267,7 +21417,7 @@ function LibraryScreen({
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Library at a glance</p>
                 <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Running total of what is on the site</h2>
                 <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-                  Public resources are verified before they appear. Permission-needed and needs-review items stay out of the public reader.
+                  Public resources are checked before they appear. Unapproved items stay out of the public reader.
                 </p>
               </div>
               <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
@@ -21575,37 +21725,6 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
-      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
-        <label className="text-sm font-semibold text-[var(--muted)]">
-          Search Library
-          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
-            <Search size={18} className="text-[var(--green)]" />
-            <input
-              className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
-              placeholder="title, author, category, label..."
-              value={searchTerm}
-              onChange={(event) => onSearchTermChange(event.target.value)}
-            />
-          </div>
-        </label>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${
-                activeCategory === category
-                  ? "bg-[var(--ink)] text-white"
-                  : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
-              }`}
-              onClick={() => onCategoryChange(category)}
-              type="button"
-            >
-              {libraryCategoryLabel(category)}
-            </button>
-          ))}
-        </div>
-      </section>
-
       <section className="grid gap-3 md:grid-cols-4">
         <DiscoveryCard title="Browse by Author" body="Open curated author pages with biography, books, and reading order." onOpen={() => onOpenAuthor("spurgeon")} />
         <DiscoveryCard title="Browse by Subject" body="Use clean subject shelves without losing the rights labels." onOpen={() => onCategoryChange("Christian Living")} />
@@ -21672,7 +21791,7 @@ function LibraryScreen({
         );
       })}
 
-      {plannedKjvItems.length > 0 && (
+      {showAdminImport && plannedKjvItems.length > 0 && (
         <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
@@ -21855,7 +21974,7 @@ function LibraryScreen({
       ))}
 
       <LibraryShelf title={searchTerm || activeCategory !== "All" ? "Search Results" : "All Resources"}>
-        {displayedLibraryResources.map((resource) => (
+        {displayedLibraryResources.length ? displayedLibraryResources.map((resource) => (
           <LibraryResourceCard
             key={resource.slug}
             resource={resource}
@@ -21867,7 +21986,11 @@ function LibraryScreen({
             onOpenAuthor={() => onOpenAuthor(resource.author)}
             onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
           />
-        ))}
+        )) : (
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-5 text-sm font-semibold text-[var(--muted)] shadow-sm">
+            No resources matched that search. Try an author name, topic, or a broader filter.
+          </div>
+        )}
       </LibraryShelf>
       {browsingAllResources && resources.length > displayedLibraryResources.length && (
         <div className="-mt-2 rounded-2xl border border-[var(--line)] bg-white p-4 text-center shadow-sm">
@@ -22132,7 +22255,7 @@ function MediaPlaceholderShelf({
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-base font-semibold text-[var(--ink)]">{title}</h3>
         <span className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
-          review placeholders
+          Coming soon
         </span>
       </div>
       <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
@@ -22173,7 +22296,7 @@ function SermonPlayerPreview() {
           <h3 className="mt-2 text-xl font-semibold text-[var(--ink)]">{active.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{active.scripturePassage} · {active.series}</p>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            Placeholder player for reviewed sermon audio. No public audio file is shipped until permission and source metadata are complete.
+            Sermon audio will appear here when suitable audio files are ready for public use.
           </p>
         </div>
         <div className="flex flex-wrap items-start gap-2">
@@ -22218,7 +22341,7 @@ function SermonPlayerPreview() {
       <div className="mt-4 flex flex-wrap gap-2 text-xs font-semibold text-[var(--muted)]">
         <span className="rounded-full bg-white px-3 py-1.5">Continue listening ready</span>
         <span className="rounded-full bg-white px-3 py-1.5">Next sermon in series ready</span>
-        <span className="rounded-full bg-white px-3 py-1.5">Audio path placeholder</span>
+        <span className="rounded-full bg-white px-3 py-1.5">Audio path coming soon</span>
       </div>
     </article>
   );
@@ -23464,7 +23587,7 @@ function CommentaryLibraryBrowser({
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary Library</p>
           <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Browse verified commentary chapters</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Browse by author, Bible book, and chapter. Staged or unverified commentary remains hidden until source and rights review are complete.
+            Browse by author, Bible book, and chapter. Only commentary entries ready for public study are shown here.
           </p>
         </div>
         <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
@@ -24119,7 +24242,7 @@ function LibraryAuthorScreen({
             ))}
           </div>
         ) : (
-          <EmptyState title="No library books imported yet" body="This author page is ready for verified public-domain books after rights review." />
+          <EmptyState title="No books available yet" body="Books for this author will appear here when they are ready for public reading." />
         )}
       </section>
 
@@ -26092,7 +26215,7 @@ function PassageGuideScreen({
             </button>
             <button
               className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]"
-              onClick={() => setPackExportMessage("PDF export placeholder is ready for a future print/PDF engine. Use Markdown or DOCX for this beta.")}
+              onClick={() => setPackExportMessage("PDF export is coming later. Use Markdown or DOCX for this beta.")}
               type="button"
             >
               <FileText size={15} />
@@ -26415,9 +26538,9 @@ function PassageGuideScreen({
 
       <StudySection id="passage-sermons" title="Related Sermons">
         <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-sm font-semibold text-[var(--green)]">Sermon resources placeholder</p>
+          <p className="text-sm font-semibold text-[var(--green)]">Sermon resources coming soon</p>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            Reviewed sermon audio, transcripts, and teaching series can be attached here later. Nothing is publicly imported until rights and doctrinal review are complete.
+            Sermon audio, transcripts, and teaching series can be attached here later when they are ready for public use.
           </p>
         </div>
       </StudySection>
@@ -26434,7 +26557,7 @@ function PassageGuideScreen({
                     <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
                     {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
                   </div>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">{resource.status}</span>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold capitalize text-[var(--muted)]">{chapterResourceStatusLabel(resource.status)}</span>
                 </div>
                 <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
                 {libraryResource?.word_count ? (
@@ -30045,7 +30168,7 @@ function PresentationWorkspaceScreen({
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Presentation Workspace</p>
             <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Build and control church presentations</h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-              Phase 3 adds shared Supabase sessions, audience display, controller view, presenter tools, and a local fallback for beta testing.
+              Build sermon slides, preview the next slide, and control a presentation from a presenter or controller view.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
