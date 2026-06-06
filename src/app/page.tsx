@@ -122,6 +122,7 @@ import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fa
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
+import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 
 type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -133,7 +134,7 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager" | "ocrQueue";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
@@ -613,6 +614,7 @@ type BibleCoverageBook = {
   totalChapters: number;
   commentaryChapters: number;
   commentaryAuthors: string[];
+  missingCommentaryAuthors: string[];
   strongsChapters: number;
   tskChapters: number;
   backgroundChapters: number;
@@ -622,6 +624,7 @@ type BibleCoverageBook = {
   bookIntroductionReady: boolean;
   studyPackReady: boolean;
   sermonPrepReady: boolean;
+  missingTools: string[];
   score: number;
   nextStep: string;
 };
@@ -764,6 +767,21 @@ type LibraryResource = {
     };
   } | null;
   added_at: string;
+};
+
+type OcrCleanupQueueItem = {
+  slug: string;
+  title: string;
+  author: string;
+  year: number | null;
+  category: string;
+  source_url: string;
+  file_path: string;
+  ocr_quality_score: number | null;
+  front_matter_cleanup_needed: boolean;
+  safe_for_quotation: boolean;
+  priority: "high" | "normal" | string;
+  notes: string;
 };
 
 type LibraryProgress = {
@@ -8341,6 +8359,21 @@ const bookOrder = [
 ];
 
 const NEW_TESTAMENT_START_INDEX = bookOrder.indexOf("Matthew");
+const CORE_COMMENTARY_AUTHORS = [
+  "Matthew Henry",
+  "Jamieson-Fausset-Brown",
+  "Albert Barnes",
+  "Adam Clarke",
+  "John Wesley",
+];
+const BIBLE_BOOK_DISPLAY_ALIASES: Record<string, string> = {
+  "Solomon's Song": "Song of Solomon",
+};
+const OCR_CLEANUP_QUEUE = ocrCleanupQueueData as OcrCleanupQueueItem[];
+
+function bibleBookDisplayName(bookName: string) {
+  return BIBLE_BOOK_DISPLAY_ALIASES[bookName] ?? bookName;
+}
 const BIBLE_SURVEY_COVERAGE = (() => {
   const completedBooks = new Set(bookIntroductions.map((intro) => intro.book));
   const remainingBooks = bookOrder.filter((bookName) => !completedBooks.has(bookName));
@@ -17876,8 +17909,9 @@ function BibleCoverageDashboard({
   summary: BibleCoverageSummary;
   onOpenBookIntroduction: (book: string) => void;
 }) {
-  const oldTestamentBooks = summary.books.filter((book) => book.testament === "Old Testament");
-  const newTestamentBooks = summary.books.filter((book) => book.testament === "New Testament");
+  const sortByWeakest = (books: BibleCoverageBook[]) => books.slice().sort((a, b) => a.score - b.score || bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book));
+  const oldTestamentBooks = sortByWeakest(summary.books.filter((book) => book.testament === "Old Testament"));
+  const newTestamentBooks = sortByWeakest(summary.books.filter((book) => book.testament === "New Testament"));
   const statRows = [
     { label: "Commentary", value: `${summary.commentaryReadyBooks}/${summary.totalBooks}` },
     { label: "Strong's", value: `${summary.strongsReadyBooks}/${summary.totalBooks}` },
@@ -17931,8 +17965,20 @@ function BibleCoverageDashboard({
                   <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: `${book.score}%` }} />
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  {book.nextStep} · {book.commentaryChapters}/{book.totalChapters} commentary chapters
+                  Next action: {book.nextStep} · {book.commentaryChapters}/{book.totalChapters} commentary chapters
                 </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {book.missingCommentaryAuthors.slice(0, 3).map((author) => (
+                    <span key={`weak-missing-author-${book.book}-${author}`} className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                      {author.replace("Jamieson-Fausset-Brown", "JFB")}
+                    </span>
+                  ))}
+                  {book.missingCommentaryAuthors.length > 3 && (
+                    <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                      +{book.missingCommentaryAuthors.length - 3} authors
+                    </span>
+                  )}
+                </div>
               </button>
             ))}
           </div>
@@ -17969,8 +18015,8 @@ function BibleCoverageDashboard({
       </div>
 
       <div className="mt-4 grid gap-4 xl:grid-cols-2">
-        <BibleCoverageBookGrid title="Old Testament" books={oldTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
-        <BibleCoverageBookGrid title="New Testament" books={newTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
+        <BibleCoverageBookGrid title="Old Testament - weakest first" books={oldTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
+        <BibleCoverageBookGrid title="New Testament - weakest first" books={newTestamentBooks} onOpenBookIntroduction={onOpenBookIntroduction} />
       </div>
     </section>
   );
@@ -18015,6 +18061,24 @@ function BibleCoverageBookGrid({
               <CoverageMarker label="Teach" ready={book.sermonPrepReady} title={book.sermonPrepReady ? "Sermon prep path connected" : "Needs more reviewed study links for sermon prep"} />
             </div>
             <p className="mt-2 line-clamp-1 text-xs text-[var(--muted)]">{book.nextStep}</p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {book.missingTools.slice(0, 4).map((tool) => (
+                <span key={`missing-tool-${book.book}-${tool}`} className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                  {tool}
+                </span>
+              ))}
+              {book.missingTools.length > 4 && (
+                <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                  +{book.missingTools.length - 4} more
+                </span>
+              )}
+            </div>
+            {book.missingCommentaryAuthors.length > 0 && (
+              <p className="mt-2 line-clamp-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                Missing voices: {book.missingCommentaryAuthors.map((author) => author.replace("Jamieson-Fausset-Brown", "JFB")).slice(0, 3).join(", ")}
+                {book.missingCommentaryAuthors.length > 3 ? ` +${book.missingCommentaryAuthors.length - 3}` : ""}
+              </p>
+            )}
           </button>
         ))}
       </div>
@@ -20225,12 +20289,7 @@ function commentaryVolumeLabels(entries: CommentaryEntry[]) {
 }
 
 function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[]): CommentaryCoverage {
-  const chaptersByBook = new Map<string, Set<number>>();
-  verses.forEach((verse) => {
-    const chapters = chaptersByBook.get(verse.book) ?? new Set<number>();
-    chapters.add(verse.chapter);
-    chaptersByBook.set(verse.book, chapters);
-  });
+  const chaptersByBook = bookChapterSetsFromVerses(verses);
 
   const coveredByBook = new Map<string, Set<number>>();
   const authorsByBook = new Map<string, Set<string>>();
@@ -20245,17 +20304,18 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
   const seenEntryKeys = new Set<string>();
 
   entries.forEach((entry) => {
+    const bookName = bibleBookDisplayName(entry.book);
     const entryKey = `${entry.book}|${entry.chapter}|${entry.verse_start}|${entry.verse_end}|${entry.author}|${entry.resource_title}`;
     if (seenEntryKeys.has(entryKey)) duplicateKeys.add(entryKey);
     seenEntryKeys.add(entryKey);
 
-    const chapters = coveredByBook.get(entry.book) ?? new Set<number>();
+    const chapters = coveredByBook.get(bookName) ?? new Set<number>();
     chapters.add(entry.chapter);
-    coveredByBook.set(entry.book, chapters);
+    coveredByBook.set(bookName, chapters);
 
-    const authors = authorsByBook.get(entry.book) ?? new Set<string>();
+    const authors = authorsByBook.get(bookName) ?? new Set<string>();
     authors.add(entry.author);
-    authorsByBook.set(entry.book, authors);
+    authorsByBook.set(bookName, authors);
 
     const stats = authorStats.get(entry.author) ?? {
       resourceTitles: new Set<string>(),
@@ -20264,12 +20324,12 @@ function buildCommentaryCoverage(entries: CommentaryEntry[], verses: BibleVerse[
       chaptersByBook: new Map<string, Set<number>>(),
       entries: 0,
     };
-    const authorBookChapters = stats.chaptersByBook.get(entry.book) ?? new Set<number>();
+    const authorBookChapters = stats.chaptersByBook.get(bookName) ?? new Set<number>();
     authorBookChapters.add(entry.chapter);
-    stats.chaptersByBook.set(entry.book, authorBookChapters);
+    stats.chaptersByBook.set(bookName, authorBookChapters);
     stats.resourceTitles.add(entry.resource_title);
-    stats.books.add(entry.book);
-    stats.chapters.add(`${entry.book} ${entry.chapter}`);
+    stats.books.add(bookName);
+    stats.chapters.add(`${bookName} ${entry.chapter}`);
     stats.entries += 1;
     authorStats.set(entry.author, stats);
   });
@@ -20384,7 +20444,8 @@ function parseReferenceBookChapter(reference: string) {
   const normalizedReference = reference.replace(/\s+/g, " ").trim();
   const match = normalizedReference.match(/^(.+?)\s+(\d+)(?::\d+)?/);
   if (!match) return null;
-  const bookName = bookOrder.find((candidate) => candidate.toLowerCase() === match[1].toLowerCase());
+  const displayBook = bibleBookDisplayName(match[1]);
+  const bookName = bookOrder.find((candidate) => candidate.toLowerCase() === displayBook.toLowerCase());
   if (!bookName) return null;
   return { book: bookName, chapter: Number(match[2]) };
 }
@@ -20392,9 +20453,10 @@ function parseReferenceBookChapter(reference: string) {
 function bookChapterSetsFromVerses(verses: BibleVerse[]) {
   const chaptersByBook = new Map<string, Set<number>>();
   verses.forEach((verse) => {
-    const chapters = chaptersByBook.get(verse.book) ?? new Set<number>();
+    const bookName = bibleBookDisplayName(verse.book);
+    const chapters = chaptersByBook.get(bookName) ?? new Set<number>();
     chapters.add(verse.chapter);
-    chaptersByBook.set(verse.book, chapters);
+    chaptersByBook.set(bookName, chapters);
   });
   return chaptersByBook;
 }
@@ -20460,6 +20522,8 @@ function buildBibleCoverageSummary({
     const totalChapters = chaptersByBook.get(bookName)?.size ?? 0;
     const commentary = commentaryByBook.get(bookName);
     const commentaryChapters = commentary?.coveredChapters.length ?? 0;
+    const commentaryAuthors = commentary?.authors ?? [];
+    const missingCommentaryAuthors = CORE_COMMENTARY_AUTHORS.filter((author) => !commentaryAuthors.includes(author));
     const strongsChapters = strongsByBook.get(bookName)?.size ?? 0;
     const tskChapters = tskByBook.get(bookName)?.size ?? 0;
     const backgroundChapters = backgroundByBook.get(bookName)?.size ?? 0;
@@ -20494,13 +20558,26 @@ function buildBibleCoverageSummary({
               : !sermonPrepReady
                 ? "Connect sermon prep"
                 : "Deepen study pack";
+    const missingTools = [
+      commentaryChapters ? "" : "Commentary",
+      tskChapters ? "" : "TSK",
+      strongsChapters ? "" : "Strong's",
+      backgroundChapters ? "" : "Background",
+      peopleChapters ? "" : "People",
+      placesChapters ? "" : "Places",
+      timelineChapters ? "" : "Timeline",
+      bookIntroductionReady ? "" : "Book intro",
+      studyPackReady ? "" : "Study pack",
+      sermonPrepReady ? "" : "Sermon prep",
+    ].filter(Boolean);
 
     return {
       book: bookName,
       testament: bookOrder.indexOf(bookName) >= NEW_TESTAMENT_START_INDEX ? "New Testament" as const : "Old Testament" as const,
       totalChapters,
       commentaryChapters,
-      commentaryAuthors: commentary?.authors ?? [],
+      commentaryAuthors,
+      missingCommentaryAuthors,
       strongsChapters,
       tskChapters,
       backgroundChapters,
@@ -20510,6 +20587,7 @@ function buildBibleCoverageSummary({
       bookIntroductionReady,
       studyPackReady,
       sermonPrepReady,
+      missingTools,
       score: weightedScore,
       nextStep,
     };
@@ -23345,6 +23423,37 @@ function ocrQualityScore(resource: LibraryResource) {
   return "Not scored";
 }
 
+function resourceQualityLabels(resource: LibraryResource) {
+  const labels = new Set<string>();
+  const hasOcrWarning = resource.resource_warnings.some((warning) => warning.toLowerCase().includes("ocr"));
+
+  if ((resource.ocr_quality_score ?? 100) >= 90 && !hasOcrWarning && resource.safe_for_quotation !== false && !resource.front_matter_cleanup_needed) {
+    labels.add("Clean text");
+  }
+
+  labels.add("Safe for reading");
+
+  if (hasOcrWarning || (resource.ocr_quality_score ?? 100) < 90) {
+    labels.add("OCR spot-check needed");
+  }
+
+  if (resource.safe_for_quotation === false) {
+    labels.add("Review before quoting");
+  }
+
+  if (resource.front_matter_cleanup_needed) {
+    labels.add("Needs cleanup");
+  }
+
+  return Array.from(labels);
+}
+
+function resourceQualityLabelClass(label: string) {
+  if (label === "Clean text" || label === "Safe for reading") return "bg-[var(--warm)] text-[var(--green)]";
+  if (label === "Review before quoting" || label === "Needs cleanup") return "bg-amber-50 text-amber-800";
+  return "bg-[var(--paper)] text-[var(--muted)]";
+}
+
 function audiobookDurationLabel(resource: LibraryResource, rate = 1) {
   if (resource.audiobook_duration) return resource.audiobook_duration;
   if (!resource.word_count) return "Duration unknown";
@@ -25635,6 +25744,7 @@ function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: 
     { id: "rightsHolders", label: "Rights Holders" },
     { id: "importQueue", label: "Import Queue" },
     { id: "libraryManager", label: "Library Manager" },
+    { id: "ocrQueue", label: "OCR Queue" },
   ];
 
   function updateCheckerInput(field: keyof CopyrightCheckerInput, value: string) {
@@ -26076,7 +26186,132 @@ function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: 
           </div>
         </div>
       )}
+
+      {activeTab === "ocrQueue" && (
+        <OcrReviewDashboard resources={resources} />
+      )}
     </section>
+  );
+}
+
+function OcrReviewDashboard({ resources }: { resources: LibraryResource[] }) {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [priorityFilter, setPriorityFilter] = useState<"All" | "High" | "Normal">("All");
+  const resourceByTitleAuthor = useMemo(() => {
+    const map = new Map<string, LibraryResource>();
+    resources.forEach((resource) => {
+      map.set(`${resource.title}::${resource.author}`.toLowerCase(), resource);
+    });
+    return map;
+  }, [resources]);
+  const items = OCR_CLEANUP_QUEUE.map((item) => ({
+    item,
+    resource: resourceByTitleAuthor.get(`${item.title}::${item.author}`.toLowerCase()) ?? null,
+  }));
+  const filteredItems = items.filter(({ item }) => {
+    const term = searchTerm.trim().toLowerCase();
+    const matchesTerm = !term || `${item.title} ${item.author} ${item.category} ${item.source_url} ${item.notes}`.toLowerCase().includes(term);
+    const matchesPriority = priorityFilter === "All" || item.priority.toLowerCase() === priorityFilter.toLowerCase();
+    return matchesTerm && matchesPriority;
+  });
+  const safeForReading = items.length;
+  const safeForQuoting = items.filter(({ item }) => item.safe_for_quotation).length;
+  const highPriority = items.filter(({ item }) => item.priority.toLowerCase() === "high").length;
+  const needsCleanup = items.filter(({ item }) => item.front_matter_cleanup_needed || !item.safe_for_quotation).length;
+  const averageScore = items.length
+    ? Math.round(items.reduce((total, { item }) => total + (item.ocr_quality_score ?? 0), 0) / items.length)
+    : 0;
+
+  return (
+    <div className="mt-5 space-y-4">
+      <div className="grid gap-3 md:grid-cols-5">
+        {[
+          ["Flagged resources", items.length],
+          ["Avg OCR score", `${averageScore}/100`],
+          ["High priority", highPriority],
+          ["Safe for reading", safeForReading],
+          ["Safe for quoting", safeForQuoting],
+        ].map(([label, value]) => (
+          <div key={`ocr-stat-${label}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+          </div>
+        ))}
+      </div>
+
+      <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">OCR Review Queue</p>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              These books are readable, but the text came from OCR scans and should be spot-checked before quotations, slides, printed lessons, or sermon notes.
+            </p>
+          </div>
+          <span className="rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-800">
+            {needsCleanup} need cleanup
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-[1fr_180px]">
+          <input
+            className="h-11 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold outline-none"
+            onChange={(event) => setSearchTerm(event.target.value)}
+            placeholder="Search OCR queue by title, author, category, or source"
+            value={searchTerm}
+          />
+          <select
+            className="h-11 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold outline-none"
+            onChange={(event) => setPriorityFilter(event.target.value as "All" | "High" | "Normal")}
+            value={priorityFilter}
+          >
+            <option>All</option>
+            <option>High</option>
+            <option>Normal</option>
+          </select>
+        </div>
+      </article>
+
+      <div className="grid gap-3 lg:grid-cols-2">
+        {filteredItems.map(({ item, resource }) => {
+          const labels = resource ? resourceQualityLabels(resource) : ["Safe for reading", "OCR spot-check needed", "Review before quoting"];
+          const preview = resource?.description || resource?.recommended_use || item.notes;
+          return (
+            <article key={`ocr-queue-${item.slug}`} className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-base font-semibold text-[var(--ink)]">{item.title}</p>
+                  <p className="mt-1 text-sm text-[var(--muted)]">{item.author} · {item.year ?? "Unknown year"} · {item.category}</p>
+                </div>
+                <span className={`rounded-full px-3 py-1.5 text-xs font-semibold ${item.priority.toLowerCase() === "high" ? "bg-amber-50 text-amber-800" : "bg-[var(--paper)] text-[var(--muted)]"}`}>
+                  {item.priority} priority
+                </span>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {labels.map((label) => (
+                  <span key={`ocr-label-${item.slug}-${label}`} className={`rounded-full px-3 py-1.5 text-xs font-semibold ${resourceQualityLabelClass(label)}`}>
+                    {label}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                <StatusCard label="OCR score" status={item.ocr_quality_score ? `${item.ocr_quality_score}/100` : "Not scored"} good={(item.ocr_quality_score ?? 0) >= 90} />
+                <StatusCard label="Safe for reading" status="Yes" good />
+                <StatusCard label="Safe for quoting" status={item.safe_for_quotation ? "Yes" : "Review first"} good={item.safe_for_quotation} />
+              </div>
+              <p className="mt-3 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{preview}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{item.notes}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <a className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" href={item.source_url} rel="noreferrer" target="_blank">
+                  Open source
+                </a>
+                <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
+                  {item.front_matter_cleanup_needed ? "Front matter cleanup needed" : "No front matter flag"}
+                </span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
@@ -27957,6 +28192,24 @@ function LibraryDetail({
         </div>
 
         <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
+
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Text Quality</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--scripture-ink)]">
+                Read freely in beta. Spot-check OCR resources before quoting in print, slides, or sermon notes.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {resourceQualityLabels(resource).map((label) => (
+                <span key={`resource-quality-${resource.slug}-${label}`} className={`rounded-full px-3 py-1.5 text-xs font-semibold ${resourceQualityLabelClass(label)}`}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {progress && (
           <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
