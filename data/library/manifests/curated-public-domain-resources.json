@@ -158,14 +158,15 @@
     "public_domain_status": "verified",
     "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
     "attribution_required": true,
-    "rights_basis": "Project Gutenberg catalog page reports public domain in the USA. Retain source/license notes for redistributed Project Gutenberg files.",
-    "notes": "Prayer resource with biblical examples.",
+    "rights_basis": "Published in 1921, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item in.ernet.dli.2015.158422 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Prayer resource with biblical examples. OCR text should be spot-checked before quotation and public teaching use.",
     "import_status": "imported_file",
     "checksum_sha256": "6b0aa2319c946904da325b1029b9a86fd12cdc9c9033527cbc59c77dd6394491",
     "file_size_bytes": 220831,
     "word_count": 38051,
     "collection": "Prayer",
-    "recommended_use": "Prayer resource for devotional reading, teaching application, and spiritual growth."
+    "recommended_use": "Prayer resource for devotional reading, teaching application, and spiritual growth.",
+    "rights_notes": "Published in 1921, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item in.ernet.dli.2015.158422 imported with source-edition review and OCR spot-check labels."
   },
   {
     "title": "Essentials of Prayer",
@@ -27923,52 +27924,6 @@
     "word_count": 18103
   },
   {
-    "title": "The Baptist Magazine, Vol. 27, 1835",
-    "author": "Various; Wightman, George",
-    "year": 2012,
-    "category": "Baptist History",
-    "collection": "Baptist History",
-    "source_url": "https://www.gutenberg.org/ebooks/40252",
-    "download_url": "https://www.gutenberg.org/ebooks/40252.txt.utf-8",
-    "source_license_url": "https://www.gutenberg.org/policy/license.html",
-    "file_path": "data/library/verified/the-baptist-magazine-vol-27-1835-various-wightman-george.txt",
-    "public_domain_status": "verified",
-    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
-    "attribution_required": true,
-    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/40252.",
-    "notes": "Baptist history resource for church heritage and historical context. Labels/warnings: Baptist history;Historical value.",
-    "import_status": "imported_file",
-    "rights_status": "verified public domain",
-    "doctrinal_review_status": "reviewed",
-    "recommended_use": "Baptist history resource for church heritage and historical context.",
-    "resource_labels": [
-      "Baptist History",
-      "Baptist history",
-      "Historical value"
-    ],
-    "resource_warnings": [
-      "Baptist history",
-      "Historical value"
-    ],
-    "cover_metadata": {
-      "type": "generated-fallback",
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "author": "Various; Wightman, George",
-      "category": "Baptist History",
-      "collection": "Baptist History",
-      "badge": "Baptist History",
-      "palette": {
-        "from": "#3f4a34",
-        "to": "#7b5641"
-      }
-    },
-    "reading_time_minutes": 129,
-    "text_processing": "project_gutenberg_boilerplate_removed",
-    "checksum_sha256": "ca47a370bbb195cb97d3d1bb1c8f0de74366f103609fae460bbd4475076b41a3",
-    "file_size_bytes": 183107,
-    "word_count": 29030
-  },
-  {
     "title": "Bible Readings for the Home Circle",
     "author": "Various",
     "year": 2010,
@@ -28973,5 +28928,1556 @@
     "checksum_sha256": "c1d6a43b81c8eac86ae441c4eb75be362f17faf024cd9486a38194bd8aeed90e",
     "file_size_bytes": 1189336,
     "word_count": 195017
+  },
+  {
+    "title": "The Cheque Book of the Bank of Faith",
+    "author": "C. H. Spurgeon",
+    "year": 1893,
+    "category": "Christian Living",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/thechequebookoft00purguoft/thechequebookoft00purguoft_djvu.txt",
+    "download_url": "https://archive.org/download/thechequebookoft00purguoft/thechequebookoft00purguoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-cheque-book-of-the-bank-of-faith-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item thechequebookoft00purguoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Daily promise readings for devotional use, prayer, listening, and sermon application support. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Daily promise readings for devotional use, prayer, listening, and sermon application support.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Cheque Book of the Bank of Faith",
+      "author": "C. H. Spurgeon",
+      "category": "Christian Living",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 426,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0b18b1eee4c6b035c5fd82a558413a9b8edfef2a23dc3cc3acc7db3efa2c93a4",
+    "file_size_bytes": 590246,
+    "word_count": 95778,
+    "rights_notes": "Internet Archive item thechequebookoft00purguoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "The Treasury of David, Volume 1",
+    "author": "C. H. Spurgeon",
+    "year": 1881,
+    "category": "Commentaries",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/thetreasuryofdav01spuruoft/thetreasuryofdav01spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/thetreasuryofdav01spuruoft/thetreasuryofdav01spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-treasury-of-david-volume-1-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item thetreasuryofdav01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Psalms exposition and devotional commentary for teaching, preaching, and Scripture meditation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Psalms exposition and devotional commentary for teaching, preaching, and Scripture meditation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Treasury of David, Volume 1",
+      "author": "C. H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1646,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "38d558e4d70a4bf6d903114f85a49a4e82091728eca06a903aa99aa65ceed6d8",
+    "file_size_bytes": 2328221,
+    "word_count": 370451,
+    "rights_notes": "Internet Archive item thetreasuryofdav01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "The Treasury of David, Volume 3",
+    "author": "C. H. Spurgeon",
+    "year": 1881,
+    "category": "Commentaries",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/thetreasuryofdav03spuruoft/thetreasuryofdav03spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/thetreasuryofdav03spuruoft/thetreasuryofdav03spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-treasury-of-david-volume-3-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item thetreasuryofdav03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Psalms exposition and devotional commentary for teaching, preaching, and Scripture meditation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Psalms exposition and devotional commentary for teaching, preaching, and Scripture meditation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Treasury of David, Volume 3",
+      "author": "C. H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1805,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "99e6a259c619971ee1ca4bdf8c82cc6aba378fd229a600651d7c9cae3627cb46",
+    "file_size_bytes": 2593156,
+    "word_count": 406022,
+    "rights_notes": "Internet Archive item thetreasuryofdav03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "Lectures to My Students",
+    "author": "C. H. Spurgeon",
+    "year": 1875,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/lecturestomystu00spuruoft/lecturestomystu00spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/lecturestomystu00spuruoft/lecturestomystu00spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-to-my-students-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item lecturestomystu00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Substantial preaching and pastoral training resource for sermon preparation and ministry development. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Substantial preaching and pastoral training resource for sermon preparation and ministry development.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures to My Students",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 445,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "49f72c35a75b1052d98063fafc191ea05f009dc80d2a53953fd72076212f8e57",
+    "file_size_bytes": 644144,
+    "word_count": 100119,
+    "rights_notes": "Internet Archive item lecturestomystu00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "C. H. Spurgeon Autobiography, Volume 1",
+    "author": "C. H. Spurgeon",
+    "year": 1897,
+    "category": "Biographies",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonsautobio01spuruoft/spurgeonsautobio01spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonsautobio01spuruoft/spurgeonsautobio01spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-autobiography-volume-1-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonsautobio01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement. Labels/warnings: Historical value;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon Autobiography, Volume 1",
+      "author": "C. H. Spurgeon",
+      "category": "Biographies",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 782,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "529e66da826b749d3f922de27856d1ffd1dadf293a2a100fa35993438caa8371",
+    "file_size_bytes": 1116489,
+    "word_count": 175855,
+    "rights_notes": "Internet Archive item spurgeonsautobio01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "C. H. Spurgeon Autobiography, Volume 2",
+    "author": "C. H. Spurgeon",
+    "year": 1897,
+    "category": "Biographies",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonsautobio02spuruoft/spurgeonsautobio02spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonsautobio02spuruoft/spurgeonsautobio02spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonsautobio02spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement. Labels/warnings: Historical value;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon Autobiography, Volume 2",
+      "author": "C. H. Spurgeon",
+      "category": "Biographies",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 799,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c25466591b2f1a444d041b2f18f57839bb0e45e96f6ab09375d264a7ef12da05",
+    "file_size_bytes": 1176740,
+    "word_count": 179782,
+    "rights_notes": "Internet Archive item spurgeonsautobio02spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "C. H. Spurgeon Autobiography, Volume 3",
+    "author": "C. H. Spurgeon",
+    "year": 1897,
+    "category": "Biographies",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonsautobio03spuruoft/spurgeonsautobio03spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonsautobio03spuruoft/spurgeonsautobio03spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-autobiography-volume-3-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonsautobio03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement. Labels/warnings: Historical value;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon Autobiography, Volume 3",
+      "author": "C. H. Spurgeon",
+      "category": "Biographies",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 732,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dca2bd787ac8dbe9c61faa47068f490214760d70c710eb436014f5512eb54c69",
+    "file_size_bytes": 1069956,
+    "word_count": 164624,
+    "rights_notes": "Internet Archive item spurgeonsautobio03spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "C. H. Spurgeon Autobiography, Volume 4",
+    "author": "C. H. Spurgeon",
+    "year": 1897,
+    "category": "Biographies",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonsautobio04spuruoft/spurgeonsautobio04spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonsautobio04spuruoft/spurgeonsautobio04spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-autobiography-volume-4-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item spurgeonsautobio04spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement. Labels/warnings: Historical value;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon biography and ministry history for Baptist history, preaching context, and pastoral encouragement.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon Autobiography, Volume 4",
+      "author": "C. H. Spurgeon",
+      "category": "Biographies",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 740,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3e30932e35bfefc7f8301f4fc695e223e3ca562cc6e273268863c9d836050cea",
+    "file_size_bytes": 1093749,
+    "word_count": 166450,
+    "rights_notes": "Internet Archive item spurgeonsautobio04spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "John Ploughman's Pictures",
+    "author": "C. H. Spurgeon",
+    "year": 1896,
+    "category": "Christian Living",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/johnploughmanspi00spurrich/johnploughmanspi00spurrich_djvu.txt",
+    "download_url": "https://archive.org/download/johnploughmanspi00spurrich/johnploughmanspi00spurrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/john-ploughman-s-pictures-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item johnploughmanspi00spurrich lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Plain practical Christian living resource with illustrations useful for teaching and sermon application. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Plain practical Christian living resource with illustrations useful for teaching and sermon application.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "John Ploughman's Pictures",
+      "author": "C. H. Spurgeon",
+      "category": "Christian Living",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 187,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "084f37ee65009a6325379ae03b357d18c1fac431ce72d151e5184228edbfe90c",
+    "file_size_bytes": 257083,
+    "word_count": 42078,
+    "rights_notes": "Internet Archive item johnploughmanspi00spurrich lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "The Soul-Winner",
+    "author": "C. H. Spurgeon",
+    "year": 1895,
+    "category": "Evangelism",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/soulwinnerorhowt00spur/soulwinnerorhowt00spur_djvu.txt",
+    "download_url": "https://archive.org/download/soulwinnerorhowt00spur/soulwinnerorhowt00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-soul-winner-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item soulwinnerorhowt00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Evangelism and personal witness resource for preaching, teaching, and outreach training. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Evangelism and personal witness resource for preaching, teaching, and outreach training.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Soul-Winner",
+      "author": "C. H. Spurgeon",
+      "category": "Evangelism",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 423,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0161f4e46389337dbfd0a28921e65d45cd144dd530d9fd363beb84d3cafd8f45",
+    "file_size_bytes": 594100,
+    "word_count": 95202,
+    "rights_notes": "Internet Archive item soulwinnerorhowt00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "Commenting and Commentaries",
+    "author": "C. H. Spurgeon",
+    "year": 1876,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/cu31924031176252/cu31924031176252_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924031176252/cu31924031176252_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/commenting-and-commentaries-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1876, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924031176252 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Preaching and study resource for evaluating commentaries, building lessons, and sermon preparation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Preaching and study resource for evaluating commentaries, building lessons, and sermon preparation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Commenting and Commentaries",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 482,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "340b50b5d299a40024859fa52ea932f7cac0dcf46bc65f923659b7baec191fcd",
+    "file_size_bytes": 634510,
+    "word_count": 108457,
+    "rights_notes": "Published in 1876, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924031176252 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Second Series of Lectures to My Students",
+    "author": "C. H. Spurgeon",
+    "year": 1906,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/secondseriesofle00spuruoft/secondseriesofle00spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/secondseriesofle00spuruoft/secondseriesofle00spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/second-series-of-lectures-to-my-students-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item secondseriesofle00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Substantial preaching and pastoral training resource for sermon preparation and ministry development. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Substantial preaching and pastoral training resource for sermon preparation and ministry development.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Second Series of Lectures to My Students",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 433,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "22a54c643f3e661f46b43a1345650096b0c14083412c20cb1304f13638a952be",
+    "file_size_bytes": 633777,
+    "word_count": 97347,
+    "rights_notes": "Internet Archive item secondseriesofle00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "The Gospel of the Kingdom",
+    "author": "C. H. Spurgeon",
+    "year": 1893,
+    "category": "Commentaries",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/cu31924029340720/cu31924029340720_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029340720/cu31924029340720_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-of-the-kingdom-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1893, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924029340720 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Popular exposition of Matthew for Gospel study, teaching, and commentary comparison. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Popular exposition of Matthew for Gospel study, teaching, and commentary comparison.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel of the Kingdom",
+      "author": "C. H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 816,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0d6d5e99a258d51f2a09ecbee87110d34c9e8d6b639d0e8eb6616a3101aca400",
+    "file_size_bytes": 1156010,
+    "word_count": 183613,
+    "rights_notes": "Published in 1893, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cu31924029340720 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Christ in the Old Testament",
+    "author": "C. H. Spurgeon",
+    "year": 1899,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/christinoldtesta00spur/christinoldtesta00spur_djvu.txt",
+    "download_url": "https://archive.org/download/christinoldtesta00spur/christinoldtesta00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/christ-in-the-old-testament-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1899, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item christinoldtesta00spur imported with source-edition review and OCR spot-check labels.",
+    "notes": "Sermons on Old Testament foreshadowings of Christ for preaching and teaching support. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Sermons on Old Testament foreshadowings of Christ for preaching and teaching support.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christ in the Old Testament",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1954,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e7608c1bc051c4f5ef0ace472de94bc13ab6cd6c87c8c11cfec1d94b1502dcdc",
+    "file_size_bytes": 2728696,
+    "word_count": 439548,
+    "rights_notes": "Published in 1899, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item christinoldtesta00spur imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Daily Help",
+    "author": "C. H. Spurgeon",
+    "year": 1900,
+    "category": "Christian Living",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/dailyhelp00spur/dailyhelp00spur_djvu.txt",
+    "download_url": "https://archive.org/download/dailyhelp00spur/dailyhelp00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/daily-help-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item dailyhelp00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Short devotional selections for daily reading, listening, prayer, and sermon illustration. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Short devotional selections for daily reading, listening, prayer, and sermon illustration.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Daily Help",
+      "author": "C. H. Spurgeon",
+      "category": "Christian Living",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 196,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0025c382229d5b85cd168a133cf3fcaf1684c17d57ee4d99892811691c04e678",
+    "file_size_bytes": 275118,
+    "word_count": 44053,
+    "rights_notes": "Internet Archive item dailyhelp00spur lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "My Sermon Notes: Matthew to Acts",
+    "author": "C. H. Spurgeon",
+    "year": 1886,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/mysermonnotes00spuruoft/mysermonnotes00spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/mysermonnotes00spuruoft/mysermonnotes00spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/my-sermon-notes-matthew-to-acts-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item mysermonnotes00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Sermon outlines, anecdotes, and illustrations for teachers and preachers. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Sermon outlines, anecdotes, and illustrations for teachers and preachers.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "My Sermon Notes: Matthew to Acts",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 362,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "fc6e6c0a12202a35601bd853b1eec3af3cffed92c5300bcc6e6029a350adbfde",
+    "file_size_bytes": 518812,
+    "word_count": 81474,
+    "rights_notes": "Internet Archive item mysermonnotes00spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "My Sermon Notes: Genesis to Proverbs",
+    "author": "C. H. Spurgeon",
+    "year": 1884,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/sermonnotesasele01spuruoft/sermonnotesasele01spuruoft_djvu.txt",
+    "download_url": "https://archive.org/download/sermonnotesasele01spuruoft/sermonnotesasele01spuruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/my-sermon-notes-genesis-to-proverbs-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item sermonnotesasele01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Sermon outlines, anecdotes, and illustrations for teachers and preachers. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Sermon outlines, anecdotes, and illustrations for teachers and preachers.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "My Sermon Notes: Genesis to Proverbs",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 374,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b7ae522d56a9fc83ed9c6c83b4111b6a00874a41c24c0410d6b4b213c28fc2a3",
+    "file_size_bytes": 535994,
+    "word_count": 84255,
+    "rights_notes": "Internet Archive item sermonnotesasele01spuruoft lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "John Ploughman's Talk",
+    "author": "C. H. Spurgeon",
+    "year": 1896,
+    "category": "Christian Living",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/johnploughmansta00spur/johnploughmansta00spur_djvu.txt",
+    "download_url": "https://archive.org/download/johnploughmansta00spur/johnploughmansta00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/john-ploughman-s-talk-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item johnploughmansta00spur imported with source-edition review and OCR spot-check labels.",
+    "notes": "Plain practical Christian living resource with illustrations useful for teaching and sermon application. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Plain practical Christian living resource with illustrations useful for teaching and sermon application.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "John Ploughman's Talk",
+      "author": "C. H. Spurgeon",
+      "category": "Christian Living",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 202,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d891ff9255b0847d41ef716d9ceb5f332d034ab6f657d0df765691216af83c30",
+    "file_size_bytes": 276822,
+    "word_count": 45553,
+    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item johnploughmansta00spur imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "C. H. Spurgeon's Prayers",
+    "author": "C. H. Spurgeon",
+    "year": 1905,
+    "category": "Prayer",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/chspurgeonspraye00spur/chspurgeonspraye00spur_djvu.txt",
+    "download_url": "https://archive.org/download/chspurgeonspraye00spur/chspurgeonspraye00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-s-prayers-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item chspurgeonspraye00spur imported with source-edition review and OCR spot-check labels.",
+    "notes": "Prayer resource for devotional reading, public prayer helps, and sermon preparation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Prayer resource for devotional reading, public prayer helps, and sermon preparation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon's Prayers",
+      "author": "C. H. Spurgeon",
+      "category": "Prayer",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 205,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dcd10e1b66c6cb91bcc0045b9ac990e910f3a2b39f2a765a63d43575e88b94f4",
+    "file_size_bytes": 286051,
+    "word_count": 46145,
+    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item chspurgeonspraye00spur imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Holiness, the False and the True",
+    "author": "H. A. Ironside",
+    "year": 1900,
+    "category": "Christian Living",
+    "collection": "H. A. Ironside Collection",
+    "source_url": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "download_url": "https://archive.org/download/holinessfalsetru00iron/holinessfalsetru00iron_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/holiness-the-false-and-the-true-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1900, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item holinessfalsetru00iron imported with source-edition review and OCR spot-check labels.",
+    "notes": "Ironside teaching resource for holiness, assurance, and doctrinal comparison with Scripture. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Ironside teaching resource for holiness, assurance, and doctrinal comparison with Scripture.",
+    "resource_labels": [
+      "H. A. Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Holiness, the False and the True",
+      "author": "H. A. Ironside",
+      "category": "Christian Living",
+      "collection": "H. A. Ironside Collection",
+      "badge": "H. A. Ironside Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 175,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a07976733710a124e36fcc1e565b25576438b37c55cc3b146f5d86e9c1a52d9c",
+    "file_size_bytes": 252511,
+    "word_count": 39447,
+    "rights_notes": "Published in 1900, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item holinessfalsetru00iron imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "The Only Two Religions, and Other Gospel Papers",
+    "author": "H. A. Ironside",
+    "year": 1912,
+    "category": "Evangelism",
+    "collection": "H. A. Ironside Collection",
+    "source_url": "https://archive.org/download/cihm_66028/cihm_66028_djvu.txt",
+    "download_url": "https://archive.org/download/cihm_66028/cihm_66028_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-only-two-religions-and-other-gospel-papers-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cihm_66028 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Gospel papers for evangelism, teaching, and doctrinal comparison. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gospel papers for evangelism, teaching, and doctrinal comparison.",
+    "resource_labels": [
+      "H. A. Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Only Two Religions, and Other Gospel Papers",
+      "author": "H. A. Ironside",
+      "category": "Evangelism",
+      "collection": "H. A. Ironside Collection",
+      "badge": "H. A. Ironside Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 100,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0aa446784c1d16b04b58e2b4ba5eb103015194ff453c78bfd2f80b8206ad45a7",
+    "file_size_bytes": 127225,
+    "word_count": 22497,
+    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item cihm_66028 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Notes on the Epistle to the Philippians",
+    "author": "H. A. Ironside",
+    "year": 1927,
+    "category": "Commentaries",
+    "collection": "H. A. Ironside Collection",
+    "source_url": "https://archive.org/download/notesonepistleto0000iron/notesonepistleto0000iron_djvu.txt",
+    "download_url": "https://archive.org/download/notesonepistleto0000iron/notesonepistleto0000iron_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-epistle-to-the-philippians-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1927, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item notesonepistleto0000iron imported with source-edition review and OCR spot-check labels.",
+    "notes": "Epistle exposition for teaching, sermon preparation, and commentary comparison. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Epistle exposition for teaching, sermon preparation, and commentary comparison.",
+    "resource_labels": [
+      "H. A. Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Epistle to the Philippians",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "H. A. Ironside Collection",
+      "badge": "H. A. Ironside Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 126,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "91dfea7b7eea66f836d915c001a71f6c898bdf4e45ddfd0c2cf79cc3cd170c37",
+    "file_size_bytes": 162513,
+    "word_count": 28369,
+    "rights_notes": "Published in 1927, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item notesonepistleto0000iron imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "The Mormon's Mistake; or, What Is the Gospel?",
+    "author": "H. A. Ironside",
+    "year": 1890,
+    "category": "Evangelism",
+    "collection": "H. A. Ironside Collection",
+    "source_url": "https://archive.org/download/mormonsmistakeor00iron/mormonsmistakeor00iron_djvu.txt",
+    "download_url": "https://archive.org/download/mormonsmistakeor00iron/mormonsmistakeor00iron_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-mormon-s-mistake-or-what-is-the-gospel-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item mormonsmistakeor00iron lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Gospel tract resource for evangelism and apologetics with Scripture-first review. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Gospel tract resource for evangelism and apologetics with Scripture-first review.",
+    "resource_labels": [
+      "H. A. Ironside Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Mormon's Mistake; or, What Is the Gospel?",
+      "author": "H. A. Ironside",
+      "category": "Evangelism",
+      "collection": "H. A. Ironside Collection",
+      "badge": "H. A. Ironside Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 16,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2caa73af7f16a610258ff1c5c6ecce038409dd69dc4fec367d6accd55731b25a",
+    "file_size_bytes": 24064,
+    "word_count": 3647,
+    "rights_notes": "Internet Archive item mormonsmistakeor00iron lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "Six Lectures on Fundamental Truths Connected with the Church of God",
+    "author": "William Kelly",
+    "year": 1865,
+    "category": "Bible study helps",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/sixlecturesonfu00kellgoog/sixlecturesonfu00kellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/sixlecturesonfu00kellgoog/sixlecturesonfu00kellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/six-lectures-on-fundamental-truths-connected-with-the-church-of-god-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item sixlecturesonfu00kellgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Doctrinal Bible study resource for careful comparison and teaching preparation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Doctrinal Bible study resource for careful comparison and teaching preparation.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Six Lectures on Fundamental Truths Connected with the Church of God",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 353,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3f786d8fd28b139426445502b153d188bacb3cb068fa2fb7203bdda6ae207912",
+    "file_size_bytes": 431303,
+    "word_count": 79462,
+    "rights_notes": "Internet Archive item sixlecturesonfu00kellgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "In the Beginning and the Adamic Earth",
+    "author": "William Kelly",
+    "year": 1907,
+    "category": "Bible study helps",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/inbeginningandad0000will/inbeginningandad0000will_djvu.txt",
+    "download_url": "https://archive.org/download/inbeginningandad0000will/inbeginningandad0000will_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/in-the-beginning-and-the-adamic-earth-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item inbeginningandad0000will imported with source-edition review and OCR spot-check labels.",
+    "notes": "Genesis exposition and doctrinal study resource for teachers and serious Bible students. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Genesis exposition and doctrinal study resource for teachers and serious Bible students.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "In the Beginning and the Adamic Earth",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 159,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "39fd5acc23ea50a2bfa228ad3c141bc18ef99e0a337bc6ba74e37b27cb386ed2",
+    "file_size_bytes": 207787,
+    "word_count": 35689,
+    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item inbeginningandad0000will imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "An Exposition of the Book of Isaiah",
+    "author": "William Kelly",
+    "year": 1916,
+    "category": "Commentaries",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/bwb_P9-EGA-318/bwb_P9-EGA-318_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_P9-EGA-318/bwb_P9-EGA-318_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-exposition-of-the-book-of-isaiah-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1916, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P9-EGA-318 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Isaiah exposition for commentary comparison, prophecy study, and teaching preparation. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Isaiah exposition for commentary comparison, prophecy study, and teaching preparation.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Exposition of the Book of Isaiah",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 825,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "08598734bf5bb2253dd867332641c3b9036e947e8d2d45aa84764cfc16e9e13a",
+    "file_size_bytes": 1048543,
+    "word_count": 185704,
+    "rights_notes": "Published in 1916, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P9-EGA-318 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "The Secret of Guidance",
+    "author": "F. B. Meyer",
+    "year": 1896,
+    "category": "Christian Living",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/secretofguidance0000fbme/secretofguidance0000fbme_djvu.txt",
+    "download_url": "https://archive.org/download/secretofguidance0000fbme/secretofguidance0000fbme_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-secret-of-guidance-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item secretofguidance0000fbme imported with source-edition review and OCR spot-check labels.",
+    "notes": "Christian living and guidance resource for devotional reading and sermon application. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Christian living and guidance resource for devotional reading and sermon application.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Secret of Guidance",
+      "author": "F. B. Meyer",
+      "category": "Christian Living",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 140,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c05ef522f53c76b78e5a61c9f89f7d57fd314915439ca444a962a2437b39714f",
+    "file_size_bytes": 173282,
+    "word_count": 31394,
+    "rights_notes": "Published in 1896, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item secretofguidance0000fbme imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Expository Preaching: Plans and Methods",
+    "author": "F. B. Meyer",
+    "year": 1912,
+    "category": "Preaching & Teaching",
+    "collection": "F. B. Meyer Collection",
+    "source_url": "https://archive.org/download/bwb_P7-EEC-931/bwb_P7-EEC-931_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_P7-EEC-931/bwb_P7-EEC-931_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/expository-preaching-plans-and-methods-f-b-meyer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P7-EEC-931 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Preaching method resource for lesson preparation, sermon planning, and teaching workflow. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Preaching method resource for lesson preparation, sermon planning, and teaching workflow.",
+    "resource_labels": [
+      "F. B. Meyer Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Expository Preaching: Plans and Methods",
+      "author": "F. B. Meyer",
+      "category": "Preaching & Teaching",
+      "collection": "F. B. Meyer Collection",
+      "badge": "F. B. Meyer Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 161,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "79a8fac11cc77570093fb803f13e614baa208945cbd8807096e09f03435fa64b",
+    "file_size_bytes": 208510,
+    "word_count": 36329,
+    "rights_notes": "Published in 1912, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item bwb_P7-EEC-931 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "The New Topical Text Book",
+    "author": "R. A. Torrey",
+    "year": 1897,
+    "category": "Topical Bible",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/newtopicaltextbo0000rato_c4y7/newtopicaltextbo0000rato_c4y7_djvu.txt",
+    "download_url": "https://archive.org/download/newtopicaltextbo0000rato_c4y7/newtopicaltextbo0000rato_c4y7_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-new-topical-text-book-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1897, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item newtopicaltextbo0000rato_c4y7 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Topical Bible study tool for sermon preparation, teaching, and Scripture lookup support. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Topical Bible study tool for sermon preparation, teaching, and Scripture lookup support.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The New Topical Text Book",
+      "author": "R. A. Torrey",
+      "category": "Topical Bible",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 831,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d759d15d9bff95b0605fb13b4eacf8a6c69cc79e5b9a907784317e83fca1ac84",
+    "file_size_bytes": 1055949,
+    "word_count": 186970,
+    "rights_notes": "Published in 1897, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item newtopicaltextbo0000rato_c4y7 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Difficulties in the Bible",
+    "author": "R. A. Torrey",
+    "year": 1907,
+    "category": "KJV / Textual Issues",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/difficultiesinbi0000rato/difficultiesinbi0000rato_djvu.txt",
+    "download_url": "https://archive.org/download/difficultiesinbi0000rato/difficultiesinbi0000rato_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/difficulties-in-the-bible-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item difficultiesinbi0000rato imported with source-edition review and OCR spot-check labels.",
+    "notes": "Bible difficulties and apologetics resource for careful study, teaching, and sermon support. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Bible difficulties and apologetics resource for careful study, teaching, and sermon support.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Difficulties in the Bible",
+      "author": "R. A. Torrey",
+      "category": "KJV / Textual Issues",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 166,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0374490d2da4c617c3099a1f0753d6ea7ad9621d59538eac65a2c2b2a453e50c",
+    "file_size_bytes": 210886,
+    "word_count": 37244,
+    "rights_notes": "Published in 1907, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item difficultiesinbi0000rato imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "Real Salvation and Whole-Hearted Service",
+    "author": "R. A. Torrey",
+    "year": 1905,
+    "category": "Evangelism",
+    "collection": "R. A. Torrey Collection",
+    "source_url": "https://archive.org/download/realsalvationwho0000rato_k8a4/realsalvationwho0000rato_k8a4_djvu.txt",
+    "download_url": "https://archive.org/download/realsalvationwho0000rato_k8a4/realsalvationwho0000rato_k8a4_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/real-salvation-and-whole-hearted-service-r-a-torrey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item realsalvationwho0000rato_k8a4 imported with source-edition review and OCR spot-check labels.",
+    "notes": "Evangelistic and discipleship resource for Gospel teaching and sermon application. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Evangelistic and discipleship resource for Gospel teaching and sermon application.",
+    "resource_labels": [
+      "R. A. Torrey Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Real Salvation and Whole-Hearted Service",
+      "author": "R. A. Torrey",
+      "category": "Evangelism",
+      "collection": "R. A. Torrey Collection",
+      "badge": "R. A. Torrey Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 372,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9a9b006f8ab654fa7af307ea8678a06ce0f1606b88645da2b960b35085942f5f",
+    "file_size_bytes": 449034,
+    "word_count": 83782,
+    "rights_notes": "Published in 1905, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text from item realsalvationwho0000rato_k8a4 imported with source-edition review and OCR spot-check labels."
+  },
+  {
+    "title": "The Necessity of Prayer",
+    "author": "E. M. Bounds",
+    "year": 1929,
+    "category": "Prayer",
+    "collection": "E. M. Bounds Collection",
+    "source_url": "https://archive.org/download/x-necessity-prayer/x necessity prayer_djvu.txt",
+    "download_url": "https://archive.org/download/x-necessity-prayer/x necessity prayer_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-necessity-of-prayer-e-m-bounds.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item x-necessity-prayer lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Prayer classic for devotional reading, listening, and ministry burden. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Prayer classic for devotional reading, listening, and ministry burden.",
+    "resource_labels": [
+      "E. M. Bounds Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Necessity of Prayer",
+      "author": "E. M. Bounds",
+      "category": "Prayer",
+      "collection": "E. M. Bounds Collection",
+      "badge": "E. M. Bounds Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 149,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "567f8ef67bdd43a0d6a862b7003c37bea0d8f686ffbad8ace6aa5dda3e50cd56",
+    "file_size_bytes": 221984,
+    "word_count": 33605,
+    "rights_notes": "Internet Archive item x-necessity-prayer lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
+  },
+  {
+    "title": "Morning by Morning",
+    "author": "C. H. Spurgeon",
+    "year": 1866,
+    "category": "Prayer",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/morningbymornin00spurgoog/morningbymornin00spurgoog_djvu.txt",
+    "download_url": "https://archive.org/download/morningbymornin00spurgoog/morningbymornin00spurgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/morning-by-morning-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item morningbymornin00spurgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels.",
+    "notes": "Daily devotional readings for prayer, spiritual encouragement, and listening. Labels/warnings: Use with discernment;OCR spot-check. OCR text should be spot-checked before quotation and public teaching use.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Daily devotional readings for prayer, spiritual encouragement, and listening.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Morning by Morning",
+      "author": "C. H. Spurgeon",
+      "category": "Prayer",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 561,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1dfcf126a1484c672145462dc21c9815bc29b2b467c6aa8dd4454f458909b960",
+    "file_size_bytes": 675193,
+    "word_count": 126204,
+    "rights_notes": "Internet Archive item morningbymornin00spurgoog lists public-domain or NOT_IN_COPYRIGHT status. Direct IA OCR text imported for beta reading with use-with-discernment and OCR spot-check labels."
   }
 ]

@@ -1,10 +1,10 @@
 {
-  "source_csv": "data/library/bulk-import-phase-9.csv",
+  "source_csv": "data/library/bulk-import-phase-10-retry.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 13,
-  "total_attempted": 13,
-  "imported": 13,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
   "would_import": 0,
   "skipped": 0,
   "failed": 0,
@@ -15,201 +15,21 @@
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "Life and the Way Through",
-      "file": "life-and-the-way-through-f-b-meyer.txt",
-      "bytes": 275552,
-      "words": 42706,
-      "reading_time_minutes": 190
-    },
-    {
-      "title": "Our Daily Homily, Volume 2",
-      "file": "our-daily-homily-volume-2-f-b-meyer.txt",
-      "bytes": 510847,
-      "words": 81203,
-      "reading_time_minutes": 361
-    },
-    {
-      "title": "Our Daily Homily, Volume 3",
-      "file": "our-daily-homily-volume-3-f-b-meyer.txt",
-      "bytes": 413342,
-      "words": 65639,
-      "reading_time_minutes": 292
-    },
-    {
-      "title": "David: Shepherd, Psalmist, King",
-      "file": "david-shepherd-psalmist-king-f-b-meyer.txt",
-      "bytes": 405207,
-      "words": 62879,
-      "reading_time_minutes": 279
-    },
-    {
-      "title": "How to Study the Bible for Greatest Profit",
-      "file": "how-to-study-the-bible-for-greatest-profit-r-a-torrey.txt",
-      "bytes": 157428,
-      "words": 24638,
-      "reading_time_minutes": 110
-    },
-    {
-      "title": "Studies in the Life and Teachings of Our Lord",
-      "file": "studies-in-the-life-and-teachings-of-our-lord-r-a-torrey.txt",
-      "bytes": 1279283,
-      "words": 200148,
-      "reading_time_minutes": 890
-    },
-    {
-      "title": "Revival Addresses",
-      "file": "revival-addresses-r-a-torrey.txt",
-      "bytes": 548819,
-      "words": 89137,
-      "reading_time_minutes": 396
-    },
-    {
-      "title": "Expository Thoughts on the Gospels: St. Mark",
-      "file": "expository-thoughts-on-the-gospels-st-mark-j-c-ryle.txt",
-      "bytes": 899856,
-      "words": 140479,
-      "reading_time_minutes": 624
-    },
-    {
-      "title": "Expository Thoughts on the Gospels",
-      "file": "expository-thoughts-on-the-gospels-j-c-ryle.txt",
-      "bytes": 1447745,
-      "words": 226208,
-      "reading_time_minutes": 1005
-    },
-    {
-      "title": "Knots Untied",
-      "file": "knots-untied-j-c-ryle.txt",
-      "bytes": 1199783,
-      "words": 186031,
-      "reading_time_minutes": 827
-    },
-    {
-      "title": "The Treasury of David, Volume 2",
-      "file": "the-treasury-of-david-volume-2-c-h-spurgeon.txt",
-      "bytes": 2587162,
-      "words": 409186,
-      "reading_time_minutes": 1819
-    },
-    {
-      "title": "Sermons of Rev. C. H. Spurgeon, Volume 1",
-      "file": "sermons-of-rev-c-h-spurgeon-volume-1-c-h-spurgeon.txt",
-      "bytes": 782511,
-      "words": 126836,
-      "reading_time_minutes": 564
-    },
-    {
-      "title": "Sermons of Rev. C. H. Spurgeon, Volume 6",
-      "file": "sermons-of-rev-c-h-spurgeon-volume-6-c-h-spurgeon.txt",
-      "bytes": 1189336,
-      "words": 195017,
-      "reading_time_minutes": 867
+      "title": "Morning by Morning",
+      "file": "morning-by-morning-c-h-spurgeon.txt",
+      "bytes": 675193,
+      "words": 126204,
+      "reading_time_minutes": 561
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "Life and the Way Through",
-      "author": "F. B. Meyer",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/life-and-the-way-through-f-b-meyer.txt"
-    },
-    {
-      "row": 3,
-      "title": "Our Daily Homily, Volume 2",
-      "author": "F. B. Meyer",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/our-daily-homily-volume-2-f-b-meyer.txt"
-    },
-    {
-      "row": 4,
-      "title": "Our Daily Homily, Volume 3",
-      "author": "F. B. Meyer",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/our-daily-homily-volume-3-f-b-meyer.txt"
-    },
-    {
-      "row": 5,
-      "title": "David: Shepherd, Psalmist, King",
-      "author": "F. B. Meyer",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/david-shepherd-psalmist-king-f-b-meyer.txt"
-    },
-    {
-      "row": 6,
-      "title": "How to Study the Bible for Greatest Profit",
-      "author": "R. A. Torrey",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/how-to-study-the-bible-for-greatest-profit-r-a-torrey.txt"
-    },
-    {
-      "row": 7,
-      "title": "Studies in the Life and Teachings of Our Lord",
-      "author": "R. A. Torrey",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/studies-in-the-life-and-teachings-of-our-lord-r-a-torrey.txt"
-    },
-    {
-      "row": 8,
-      "title": "Revival Addresses",
-      "author": "R. A. Torrey",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/revival-addresses-r-a-torrey.txt"
-    },
-    {
-      "row": 9,
-      "title": "Expository Thoughts on the Gospels: St. Mark",
-      "author": "J. C. Ryle",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/expository-thoughts-on-the-gospels-st-mark-j-c-ryle.txt"
-    },
-    {
-      "row": 10,
-      "title": "Expository Thoughts on the Gospels",
-      "author": "J. C. Ryle",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/expository-thoughts-on-the-gospels-j-c-ryle.txt"
-    },
-    {
-      "row": 11,
-      "title": "Knots Untied",
-      "author": "J. C. Ryle",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/knots-untied-j-c-ryle.txt"
-    },
-    {
-      "row": 12,
-      "title": "The Treasury of David, Volume 2",
+      "title": "Morning by Morning",
       "author": "C. H. Spurgeon",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-treasury-of-david-volume-2-c-h-spurgeon.txt"
-    },
-    {
-      "row": 13,
-      "title": "Sermons of Rev. C. H. Spurgeon, Volume 1",
-      "author": "C. H. Spurgeon",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/sermons-of-rev-c-h-spurgeon-volume-1-c-h-spurgeon.txt"
-    },
-    {
-      "row": 14,
-      "title": "Sermons of Rev. C. H. Spurgeon, Volume 6",
-      "author": "C. H. Spurgeon",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/sermons-of-rev-c-h-spurgeon-volume-6-c-h-spurgeon.txt"
+      "file_path": "data/library/verified/morning-by-morning-c-h-spurgeon.txt"
     }
   ],
   "review_queues": {

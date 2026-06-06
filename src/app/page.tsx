@@ -2541,18 +2541,18 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
 const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside", "kelly", "grant"];
 const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer", "kelly", "grant", "larkin", "darby", "gaebelein"];
 const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
-  spurgeon: 16,
-  ironside: 10,
+  spurgeon: 25,
+  ironside: 12,
   moody: 12,
   ryle: 10,
   murray: 10,
   bounds: 8,
   torrey: 8,
   meyer: 8,
-  kelly: 8,
-  grant: 6,
+  kelly: 12,
+  grant: 8,
   larkin: 6,
-  darby: 4,
+  darby: 8,
   gaebelein: 8,
 };
 
@@ -2577,8 +2577,11 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["ryle", "moody", "bounds"],
     recommendedReadingOrder: [
       "Around the Wicket Gate",
+      "The Soul-Winner",
+      "Lectures to My Students",
       "Gleanings among the Sheaves",
       "The Art of Illustration",
+      "The Cheque Book of the Bank of Faith",
       "The Treasury of David, Volume 2",
       "Sermons of Rev. C. H. Spurgeon, Volume 1",
       "Talks to Farmers",
@@ -2603,7 +2606,14 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Ironside is best used for clear expository support after reading the passage itself.",
     ],
     relatedAuthorIds: ["spurgeon", "ryle", "moody"],
-    recommendedReadingOrder: ["The Four Hundred Silent Years", "Lectures on the Epistle to the Colossians", "Notes on the Minor Prophets"],
+    recommendedReadingOrder: [
+      "Holiness, the False and the True",
+      "The Four Hundred Silent Years",
+      "Lectures on the Epistle to the Colossians",
+      "Notes on the Epistle to the Philippians",
+      "Notes on the Minor Prophets",
+      "The Only Two Religions, and Other Gospel Papers",
+    ],
     subjects: ["Commentary", "Exposition", "Bible Study"],
   },
   {
@@ -2781,7 +2791,7 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Talking to men for God is a great thing, but talking to God for men is greater still.",
     ],
     relatedAuthorIds: ["spurgeon", "moody", "ryle"],
-    recommendedReadingOrder: ["Power Through Prayer", "Preacher and Prayer", "Purpose in Prayer", "The Reality of Prayer", "Essentials of Prayer"],
+    recommendedReadingOrder: ["Power Through Prayer", "Preacher and Prayer", "Purpose in Prayer", "The Necessity of Prayer", "The Reality of Prayer", "Essentials of Prayer"],
     subjects: ["Prayer", "Preaching", "Christian Living"],
   },
   {
@@ -2823,9 +2833,11 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["moody", "spurgeon", "bounds"],
     recommendedReadingOrder: [
       "How to Study the Bible for Greatest Profit",
+      "The New Topical Text Book",
       "How to Succeed in the Christian Life",
       "How to Bring Men to Christ",
       "Studies in the Life and Teachings of Our Lord",
+      "Difficulties in the Bible",
       "Revival Addresses",
       "The Person and Work of The Holy Spirit",
       "The Fundamental Doctrines of the Christian Faith",
@@ -2891,7 +2903,9 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["spurgeon", "ryle", "taylor"],
     recommendedReadingOrder: [
       "David: Shepherd, Psalmist, King",
+      "The Secret of Guidance",
       "Life and the Way Through",
+      "Expository Preaching: Plans and Methods",
       "John the Baptist",
       "Love to the Uttermost",
       "Our Daily Homily, Volume 2",
@@ -2916,7 +2930,15 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
       "Kelly is best used for detailed comparison after direct Bible reading and primary study helps.",
     ],
     relatedAuthorIds: ["grant", "darby", "gaebelein"],
-    recommendedReadingOrder: ["Lectures on the Gospel of Matthew", "Notes on the Book of Daniel", "Lectures on the Book of Revelation", "Lectures Introductory to the Study of the Gospels"],
+    recommendedReadingOrder: [
+      "Lectures on the Gospel of Matthew",
+      "An Exposition of the Book of Isaiah",
+      "Notes on the Book of Daniel",
+      "In the Beginning and the Adamic Earth",
+      "Six Lectures on Fundamental Truths Connected with the Church of God",
+      "Lectures on the Book of Revelation",
+      "Lectures Introductory to the Study of the Gospels",
+    ],
     subjects: ["Commentary", "Bible Study", "Use with discernment"],
   },
   {
@@ -26989,6 +27011,9 @@ function LibraryAuthorScreen({
   const startHereResources = featuredTitlesForAuthor(resources, profile, 4);
   const readingPaths = READING_PATHS.filter((path) => path.authorIds.includes(profile.id));
   const totalMinutes = totalResourceReadingMinutes(resources);
+  const collectionTarget = AUTHOR_COLLECTION_TARGETS[profile.id] ?? Math.max(8, resources.length);
+  const collectionProgress = Math.min(100, Math.round((resources.length / collectionTarget) * 100));
+  const startingBook = startHereResources[0] ?? null;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -27025,6 +27050,41 @@ function LibraryAuthorScreen({
               {subject}
             </span>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Collection Completeness</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">What is ready for this author</h2>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            {collectionProgress}% complete
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-4">
+          <StatusCard label="Books owned" status={String(resources.length)} good={resources.length > 0} />
+          <StatusCard label="Available goal" status={`${collectionTarget}+`} good />
+          <StatusCard label="Reading hours" status={resources.length ? readingMinutesLabel(totalMinutes) : "Soon"} good={resources.length > 0} />
+          <StatusCard label="Recommended start" status={startingBook?.title ?? profile.recommendedReadingOrder[0] ?? "Needs review"} good={Boolean(startingBook)} />
+        </div>
+        <div className="mt-4 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+          <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${collectionProgress}%` }} />
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reading path</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{authorCollectionPathLabel(profile)}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Strengths</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{authorCollectionStrengths(profile)}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Cautions</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{authorCollectionCaution(profile)}</p>
+          </div>
         </div>
       </section>
 
@@ -28568,6 +28628,31 @@ function LibraryAuthorCard({
   );
 }
 
+function authorCollectionPathLabel(profile: LibraryAuthorProfile) {
+  if (profile.id === "spurgeon") return "Preaching, evangelism, Psalms, devotional reading";
+  if (profile.id === "ironside") return "Exposition, Gospel papers, practical doctrine";
+  if (profile.id === "kelly") return "Detailed exposition, prophecy, doctrinal comparison";
+  if (profile.id === "grant") return "Prophecy and Revelation study";
+  if (profile.id === "bounds") return "Prayer, preaching burden, devotional listening";
+  if (profile.id === "torrey") return "Bible study method, evangelism, doctrine";
+  if (profile.id === "meyer") return "Bible biography, devotional exposition, preaching helps";
+  if (profile.id === "moody") return "Evangelism, illustrations, Christian service";
+  if (profile.id === "ryle") return "Plain doctrine, Christian living, Gospel exposition";
+  if (profile.id === "murray") return "Prayer, humility, holiness, devotional reading";
+  return profile.subjects.join(", ");
+}
+
+function authorCollectionCaution(profile: LibraryAuthorProfile) {
+  if (["kelly", "grant", "darby", "gaebelein", "larkin"].includes(profile.id)) return "Use with discernment; prophecy and dispensational material stays secondary to Scripture.";
+  if (["murray", "john-wesley", "adam-clarke"].includes(profile.id)) return "Devotional and historical value; not all doctrine endorsed.";
+  if (profile.id === "ironside") return "Edition and source review remains important for later works.";
+  return "Use as a study helper; Scripture remains primary.";
+}
+
+function authorCollectionStrengths(profile: LibraryAuthorProfile) {
+  return profile.subjects.slice(0, 3).join(", ");
+}
+
 function AuthorCompletionDashboard({
   resources,
   onOpenAuthor,
@@ -28582,16 +28667,20 @@ function AuthorCompletionDashboard({
       const authorResources = resourcesForAuthor(resources, profile);
       const target = AUTHOR_COLLECTION_TARGETS[authorId] ?? 8;
       const progress = Math.min(100, Math.round((authorResources.length / target) * 100));
+      const totalMinutes = totalResourceReadingMinutes(authorResources);
+      const startResource = featuredTitlesForAuthor(authorResources, profile, 1)[0] ?? null;
       const missingStarterTitles = profile.recommendedReadingOrder
         .filter((title) => !authorResources.some((resource) => resource.title.toLowerCase().includes(title.toLowerCase()) || title.toLowerCase().includes(resource.title.toLowerCase())))
         .slice(0, 3);
-      return { profile, authorResources, target, progress, missingStarterTitles };
+      return { profile, authorResources, target, progress, totalMinutes, startResource, missingStarterTitles };
     })
     .filter(Boolean) as Array<{
       profile: LibraryAuthorProfile;
       authorResources: LibraryResource[];
       target: number;
       progress: number;
+      totalMinutes: number;
+      startResource: LibraryResource | null;
       missingStarterTitles: string[];
     }>;
 
@@ -28610,7 +28699,7 @@ function AuthorCompletionDashboard({
         </span>
       </div>
       <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-        {rows.map(({ profile, authorResources, target, progress, missingStarterTitles }) => (
+        {rows.map(({ profile, authorResources, target, progress, totalMinutes, startResource, missingStarterTitles }) => (
           <button
             key={`author-completion-${profile.id}`}
             className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left transition hover:-translate-y-0.5 hover:bg-white hover:shadow-sm"
@@ -28620,14 +28709,48 @@ function AuthorCompletionDashboard({
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-[var(--ink)]">{profile.name}</p>
-                <p className="mt-1 text-xs font-semibold text-[var(--green)]">{authorResources.length} of {target} core titles</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--green)]">{authorResources.length} owned · {target}+ target</p>
               </div>
               <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{progress}%</span>
             </div>
             <div className="mt-3 h-2 overflow-hidden rounded-full bg-white">
               <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${progress}%` }} />
             </div>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="rounded-xl bg-white px-2.5 py-2">
+                <p className="text-sm font-semibold text-[var(--green)]">{authorResources.length}</p>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Books owned</p>
+              </div>
+              <div className="rounded-xl bg-white px-2.5 py-2">
+                <p className="text-sm font-semibold text-[var(--green)]">{readingMinutesLabel(totalMinutes)}</p>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Reading hours</p>
+              </div>
+              <div className="rounded-xl bg-white px-2.5 py-2">
+                <p className="text-sm font-semibold text-[var(--green)]">{target}+</p>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Available goal</p>
+              </div>
+              <div className="rounded-xl bg-white px-2.5 py-2">
+                <p className="text-sm font-semibold text-[var(--green)]">{progress}%</p>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Complete</p>
+              </div>
+            </div>
             <p className="mt-3 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{profile.shortLabel}</p>
+            <div className="mt-3 rounded-xl bg-white px-2.5 py-2">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Start here</p>
+              <p className="mt-1 line-clamp-1 text-xs font-semibold text-[var(--green)]">{startResource?.title ?? profile.recommendedReadingOrder[0] ?? "Ready for verified imports"}</p>
+            </div>
+            <div className="mt-2 rounded-xl bg-white px-2.5 py-2">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Reading path</p>
+              <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--scripture-ink)]">{authorCollectionPathLabel(profile)}</p>
+            </div>
+            <div className="mt-2 grid gap-2">
+              <p className="rounded-xl bg-white px-2.5 py-2 text-xs leading-5 text-[var(--scripture-ink)]">
+                <span className="font-semibold text-[var(--green)]">Strengths: </span>{authorCollectionStrengths(profile)}
+              </p>
+              <p className="rounded-xl bg-white px-2.5 py-2 text-xs leading-5 text-[var(--scripture-ink)]">
+                <span className="font-semibold text-[var(--green)]">Caution: </span>{authorCollectionCaution(profile)}
+              </p>
+            </div>
             <div className="mt-3 space-y-1.5">
               {featuredTitlesForAuthor(authorResources, profile, 2).map((resource) => (
                 <p key={`author-completion-title-${profile.id}-${resource.slug}`} className="line-clamp-1 rounded-lg bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
