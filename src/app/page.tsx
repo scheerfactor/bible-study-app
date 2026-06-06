@@ -45,6 +45,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
+import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
@@ -76,11 +77,13 @@ import jfbReviewedPhase7JeremiahLamentationsCommentary from "../../data/imports/
 import jfbReviewedPhase7EzekielCommentary from "../../data/imports/jfb-reviewed-phase-7-ezekiel-commentary.json";
 import jfbReviewedPhase7DanielMinorProphetsStartCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
 import jfbReviewedPhase7MinorProphetsCompleteCommentary from "../../data/imports/jfb-reviewed-phase-7-minor-prophets-complete-commentary.json";
+import jfbReviewedPhase8PsalmsCompletionCommentary from "../../data/imports/jfb-reviewed-phase-8-psalms-completion-commentary.json";
 import matthewHenryReviewedCoverageSprintBatch4Commentary from "../../data/imports/matthew-henry-reviewed-coverage-sprint-batch-4-commentary.json";
 import matthewHenryReviewedPhase4Batch3Commentary from "../../data/imports/matthew-henry-reviewed-phase-4-batch-3-commentary.json";
 import matthewHenryReviewedLibraryExpansionGospelsCommentary from "../../data/imports/matthew-henry-reviewed-library-expansion-gospels-commentary.json";
 import matthewHenryReviewedPhase5ProverbsCommentary from "../../data/imports/matthew-henry-reviewed-phase-5-proverbs-commentary.json";
 import matthewHenryReviewedPhase6LeviticusNumbersStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-6-leviticus-numbers-start-commentary.json";
+import matthewHenryReviewedPhase8IsaiahStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-8-isaiah-start-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
@@ -1298,6 +1301,9 @@ type SpeechState = {
   paused: boolean;
   progress: number;
   currentChunkIndex: number | null;
+  totalChunkCount: number;
+  currentItemLabel: string | null;
+  nextItemLabel: string | null;
   rate: number;
   sleepTimerMinutes: number | null;
   sleepTimerEndsAt: string | null;
@@ -5876,6 +5882,14 @@ const dictionaryAliases: Record<string, string> = {
   loveth: "love",
   loved: "love",
   lovedst: "love",
+  beasts: "beast",
+  covenants: "covenant",
+  dominions: "dominion",
+  kingdoms: "kingdom",
+  marks: "mark",
+  prophecies: "prophecy",
+  spirits: "spirit",
+  visions: "vision",
   worlds: "world",
 };
 
@@ -6135,6 +6149,126 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     keyVerses: ["Matthew 6:33", "John 3:3", "Acts 1:3", "Romans 14:17"],
     note: "Reviewed starter entry for Gospel, prophecy, and Bible survey studies.",
   },
+  beast: {
+    strongsNumber: "G2342",
+    originalWord: "therion",
+    displayWord: "beast",
+    pronunciation: "thay-ree'-on",
+    root: "therion",
+    rootChain: ["G2339 hunt/catch", "G2342 beast"],
+    relatedWords: ["beast", "beasts"],
+    plainMeaning: "A wild beast; in Revelation it is used in prophetic and symbolic passages.",
+    websterWord: "beast",
+    firstOccurrence: "Mark 1:13",
+    keyOccurrences: ["Mark 1:13", "Acts 10:12", "Revelation 13:1", "Revelation 13:11", "Revelation 19:20"],
+    keyVerses: ["Revelation 13:1", "Revelation 13:11", "Revelation 19:20"],
+    note: "Starter entry for Revelation and prophecy study. Use with the full passage and reviewed commentary; avoid building doctrine from the word entry alone.",
+  },
+  mark: {
+    strongsNumber: "G5480",
+    originalWord: "charagma",
+    displayWord: "mark",
+    pronunciation: "khar'-ag-mah",
+    root: "charagma",
+    rootChain: ["G5482 engrave", "G5480 mark"],
+    relatedWords: ["mark", "seal", "name"],
+    plainMeaning: "A mark, stamp, or impressed sign.",
+    websterWord: "mark",
+    firstOccurrence: "Acts 17:29",
+    keyOccurrences: ["Acts 17:29", "Revelation 13:16", "Revelation 14:9", "Revelation 20:4"],
+    keyVerses: ["Revelation 13:16", "Revelation 14:9", "Revelation 20:4"],
+    note: "Starter entry for Revelation study. Keep connected to the KJV chapter and commentary context.",
+  },
+  vision: {
+    strongsNumber: "H2377",
+    originalWord: "chazon",
+    displayWord: "vision",
+    pronunciation: "khaw-zone'",
+    root: "chazah / chazon",
+    rootChain: ["H2372 see/behold", "H2377 vision"],
+    relatedWords: ["vision", "visions", "prophecy"],
+    plainMeaning: "A vision or prophetic sight.",
+    websterWord: "vision",
+    firstOccurrence: "1 Samuel 3:1",
+    keyOccurrences: ["1 Samuel 3:1", "Proverbs 29:18", "Daniel 7:1", "Daniel 8:1", "Habakkuk 2:2"],
+    keyVerses: ["Proverbs 29:18", "Daniel 7:1", "Habakkuk 2:2"],
+    note: "Starter entry for prophecy and Bible background study. Full import should preserve Hebrew/Aramaic source distinctions.",
+  },
+  dominion: {
+    strongsNumber: "H7985",
+    originalWord: "sholtan",
+    displayWord: "dominion",
+    pronunciation: "shol-tawn'",
+    root: "sholtan",
+    rootChain: ["H7981 have power", "H7985 dominion"],
+    relatedWords: ["dominion", "kingdom", "rule"],
+    plainMeaning: "Dominion, rule, or authority; especially important in Daniel's kingdom visions.",
+    websterWord: "dominion",
+    firstOccurrence: "Daniel 4:3",
+    keyOccurrences: ["Daniel 4:3", "Daniel 4:34", "Daniel 7:14", "Daniel 7:27"],
+    keyVerses: ["Daniel 7:14", "Daniel 7:27"],
+    note: "Starter Aramaic-linked entry for Daniel 7. Keep the display simple for non-specialists.",
+  },
+  covenant: {
+    strongsNumber: "H1285",
+    originalWord: "berith",
+    displayWord: "covenant",
+    pronunciation: "ber-eeth'",
+    root: "berith",
+    rootChain: ["H1285 covenant"],
+    relatedWords: ["covenant", "promise", "testament"],
+    plainMeaning: "A covenant, compact, or binding arrangement.",
+    websterWord: "covenant",
+    firstOccurrence: "Genesis 6:18",
+    keyOccurrences: ["Genesis 6:18", "Genesis 15:18", "Exodus 19:5", "Jeremiah 31:31", "Daniel 9:27"],
+    keyVerses: ["Genesis 15:18", "Jeremiah 31:31", "Daniel 9:27"],
+    note: "Starter entry for Bible survey, prophecy, and theology studies.",
+  },
+  resurrection: {
+    strongsNumber: "G386",
+    originalWord: "anastasis",
+    displayWord: "resurrection",
+    pronunciation: "an-as'-tas-is",
+    root: "anistemi / anastasis",
+    rootChain: ["G450 rise up", "G386 resurrection"],
+    relatedWords: ["resurrection", "raised", "rise"],
+    plainMeaning: "A raising up; especially resurrection from the dead.",
+    websterWord: "resurrection",
+    firstOccurrence: "Matthew 22:23",
+    keyOccurrences: ["Matthew 22:23", "John 11:25", "Acts 24:15", "1 Corinthians 15:12", "Philippians 3:10"],
+    keyVerses: ["John 11:25", "Acts 24:15", "1 Corinthians 15:12", "Philippians 3:10"],
+    note: "Starter entry for Gospel, doctrine, and teaching-prep studies.",
+  },
+  spirit: {
+    strongsNumber: "G4151",
+    originalWord: "pneuma",
+    displayWord: "spirit",
+    pronunciation: "pnyoo'-mah",
+    root: "pneo / pneuma",
+    rootChain: ["G4154 breathe", "G4151 spirit"],
+    relatedWords: ["spirit", "wind", "breath"],
+    plainMeaning: "Spirit, breath, or wind depending on context.",
+    websterWord: "spirit",
+    firstOccurrence: "Matthew 1:18",
+    keyOccurrences: ["Matthew 1:18", "John 3:5", "John 4:24", "Romans 8:9", "Ephesians 6:17"],
+    keyVerses: ["John 3:5", "John 4:24", "Romans 8:9", "Ephesians 6:17"],
+    note: "Starter entry for John 3, Romans 8, and devotional study. Context controls the sense.",
+  },
+  wisdom: {
+    strongsNumber: "G4678",
+    originalWord: "sophia",
+    displayWord: "wisdom",
+    pronunciation: "sof-ee'-ah",
+    root: "sophia",
+    rootChain: ["G4680 wise", "G4678 wisdom"],
+    relatedWords: ["wisdom", "wise", "understanding"],
+    plainMeaning: "Wisdom, skill, or understanding.",
+    websterWord: "wisdom",
+    firstOccurrence: "Matthew 11:19",
+    keyOccurrences: ["Matthew 11:19", "1 Corinthians 1:24", "James 1:5", "Revelation 13:18"],
+    keyVerses: ["1 Corinthians 1:24", "James 1:5", "Revelation 13:18"],
+    note: "Starter entry for Proverbs, teaching, and Revelation study.",
+  },
 };
 
 const studyStopWords = new Set([
@@ -6224,6 +6358,17 @@ const localCrossReferences: CrossReference[] = [
     public_domain_status: row.public_domain_status,
     rights_basis: row.rights_basis,
   })),
+  ...(tskPhase2ProphecySample as TskCrossReferenceImportRow[]).map((row) => ({
+    id: referenceImportId(row),
+    verse_ref: row.verse_ref,
+    target_ref: row.target_ref,
+    label: row.label ?? "",
+    source: row.source,
+    source_title: row.source_title,
+    source_url: row.source_url,
+    public_domain_status: row.public_domain_status,
+    rights_basis: row.rights_basis,
+  })),
   ...amosTeachingCrossReferences,
 ];
 
@@ -6259,11 +6404,13 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(jfbReviewedPhase7EzekielCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase7DanielMinorProphetsStartCommentary as CommentaryEntry[]),
   ...(jfbReviewedPhase7MinorProphetsCompleteCommentary as CommentaryEntry[]),
+  ...(jfbReviewedPhase8PsalmsCompletionCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedCoverageSprintBatch4Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase4Batch3Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedLibraryExpansionGospelsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase5ProverbsCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedPhase6LeviticusNumbersStartCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedPhase8IsaiahStartCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
@@ -10054,6 +10201,12 @@ function listeningFinishLabel(totalSeconds: number) {
   return new Date(Date.now() + totalSeconds * 1000).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 }
 
+function listeningSectionsRemaining(state: Pick<SpeechState, "currentChunkIndex" | "totalChunkCount" | "progress">) {
+  if (!state.totalChunkCount || state.progress >= 100) return 0;
+  const currentIndex = state.currentChunkIndex ?? 0;
+  return Math.max(0, state.totalChunkCount - currentIndex);
+}
+
 function formatPercent(value: number) {
   return `${Math.max(0, Math.min(100, Math.round(value)))}%`;
 }
@@ -10412,6 +10565,9 @@ export default function Home() {
     paused: false,
     progress: 0,
     currentChunkIndex: null,
+    totalChunkCount: 0,
+    currentItemLabel: null,
+    nextItemLabel: null,
     rate: 1,
     sleepTimerMinutes: null,
     sleepTimerEndsAt: null,
@@ -10419,6 +10575,7 @@ export default function Home() {
   const libraryReaderRef = useRef<HTMLDivElement | null>(null);
   const speechChunksRef = useRef<string[]>([]);
   const speechVerseRefsRef = useRef<Array<string | null>>([]);
+  const speechItemLabelsRef = useRef<Array<string | null>>([]);
   const speechIndexRef = useRef(0);
   const speechRateRef = useRef(1);
   const speechProgressRef = useRef<((progress: number) => void) | null>(null);
@@ -10848,6 +11005,9 @@ export default function Home() {
       ? "Sync error — saved on this device"
       : "Signed in — synced to Supabase"
     : "Signed out — saving locally";
+  const selectedSpeechVoice = allSpeechVoices.find((voice) => voice.voiceURI === selectedSpeechVoiceURI);
+  const activeVoiceProfile = voiceProfileById(voiceSettings.activeProfile);
+  const speechSectionsRemaining = listeningSectionsRemaining(speechState);
   const activePrayerEntries = useMemo(
     () => prayerEntries.filter((entry) => entry.answerStatus !== "Answered" && entry.answerStatus !== "Archived"),
     [prayerEntries],
@@ -13003,15 +13163,21 @@ export default function Home() {
     const profile = VOICE_PROFILES.find((candidate) => candidate.id === profileId);
     if (!profile) return;
     const savedVoiceURI = voiceSettings.profileVoiceURIs[profileId];
-    const voiceAvailable = savedVoiceURI && allSpeechVoices.some((voice) => voice.voiceURI === savedVoiceURI);
+    const availableVoiceURIs = new Set(speechVoices.map((voice) => voice.voiceURI));
+    const voiceAvailable = Boolean(savedVoiceURI && availableVoiceURIs.has(savedVoiceURI));
+    const fallbackVoiceURI =
+      savedVoiceURI && !voiceAvailable
+        ? speechVoices.find((voice) => isRecommendedSpeechVoice(voice, profileId))?.voiceURI || speechVoices[0]?.voiceURI || ""
+        : "";
+    const nextVoiceURI = voiceAvailable ? savedVoiceURI ?? "" : fallbackVoiceURI || voiceSettings.selectedVoiceURI;
     const profileRate = voiceSettings.profileRates[profileId] ?? profile.suggestedRate;
-    if (voiceAvailable) {
-      selectedSpeechVoiceURIRef.current = savedVoiceURI;
-      setSelectedSpeechVoiceURI(savedVoiceURI);
+    if (nextVoiceURI) {
+      selectedSpeechVoiceURIRef.current = nextVoiceURI;
+      setSelectedSpeechVoiceURI(nextVoiceURI);
     }
     updateVoiceSettings({
       activeProfile: profileId,
-      selectedVoiceURI: voiceAvailable ? savedVoiceURI ?? voiceSettings.selectedVoiceURI : voiceSettings.selectedVoiceURI,
+      selectedVoiceURI: nextVoiceURI || voiceSettings.selectedVoiceURI,
       profileRates: {
         ...voiceSettings.profileRates,
         [profileId]: profileRate,
@@ -13019,7 +13185,11 @@ export default function Home() {
     });
     speechRateRef.current = profileRate;
     setSpeechState((state) => ({ ...state, rate: profileRate }));
-    setSyncMessage(`${profile.label} voice profile selected.`);
+    setSyncMessage(
+      savedVoiceURI && !voiceAvailable && fallbackVoiceURI
+        ? `${profile.label} voice profile selected. The saved voice is not on this device, so a recommended local voice was used.`
+        : `${profile.label} voice profile selected.`,
+    );
   }
 
   function handleSpeechVoiceChange(voiceURI: string) {
@@ -13051,7 +13221,17 @@ export default function Home() {
     const index = speechIndexRef.current;
 
     if (index >= chunks.length) {
-      setSpeechState((state) => ({ ...state, playing: false, paused: false, progress: 100, currentChunkIndex: null, sleepTimerMinutes: null, sleepTimerEndsAt: null }));
+      setSpeechState((state) => ({
+        ...state,
+        playing: false,
+        paused: false,
+        progress: 100,
+        currentChunkIndex: null,
+        currentItemLabel: null,
+        nextItemLabel: null,
+        sleepTimerMinutes: null,
+        sleepTimerEndsAt: null,
+      }));
       speechProgressRef.current?.(100);
       speechCompleteRef.current?.();
       return;
@@ -13062,7 +13242,9 @@ export default function Home() {
     const selectedVoice = speechVoicesRef.current.find((voice) => voice.voiceURI === selectedSpeechVoiceURIRef.current);
     if (selectedVoice) utterance.voice = selectedVoice;
     utterance.onstart = () => {
-      setSpeechState((state) => ({ ...state, currentChunkIndex: index }));
+      const currentItemLabel = speechItemLabelsRef.current[index] ?? null;
+      const nextItemLabel = speechItemLabelsRef.current.slice(index + 1).find((itemLabel) => itemLabel && itemLabel !== currentItemLabel) ?? null;
+      setSpeechState((state) => ({ ...state, currentChunkIndex: index, currentItemLabel, nextItemLabel }));
       const verseRef = speechVerseRefsRef.current[index];
       if (!verseRef) return;
       setSelectedRef(verseRef);
@@ -13078,11 +13260,14 @@ export default function Home() {
       speechIndexRef.current += 1;
       const progress = Math.min(100, (speechIndexRef.current / Math.max(1, chunks.length)) * 100);
       speechProgressRef.current?.(progress);
-      setSpeechState((state) => ({ ...state, progress, currentChunkIndex: speechIndexRef.current }));
+      const nextIndex = speechIndexRef.current;
+      const currentItemLabel = speechItemLabelsRef.current[nextIndex] ?? null;
+      const nextItemLabel = speechItemLabelsRef.current.slice(nextIndex + 1).find((itemLabel) => itemLabel && itemLabel !== currentItemLabel) ?? null;
+      setSpeechState((state) => ({ ...state, progress, currentChunkIndex: nextIndex, currentItemLabel, nextItemLabel }));
       speakCurrentChunk();
     };
     utterance.onerror = () => {
-      setSpeechState((state) => ({ ...state, playing: false, paused: false, currentChunkIndex: null }));
+      setSpeechState((state) => ({ ...state, playing: false, paused: false, currentChunkIndex: null, currentItemLabel: null, nextItemLabel: null }));
       setSyncMessage("Could not play audio on this device yet.");
     };
     window.speechSynthesis.speak(utterance);
@@ -13098,6 +13283,9 @@ export default function Home() {
       chunks?: string[];
       verseRefs?: Array<string | null>;
       onComplete?: () => void;
+      currentItemLabel?: string | null;
+      nextItemLabel?: string | null;
+      itemLabels?: Array<string | null>;
     },
   ) {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -13120,6 +13308,7 @@ export default function Home() {
     }
     speechChunksRef.current = chunks;
     speechVerseRefsRef.current = options?.verseRefs ?? [];
+    speechItemLabelsRef.current = options?.itemLabels ?? chunks.map(() => options?.currentItemLabel ?? label);
     speechIndexRef.current = Math.min(chunks.length - 1, Math.max(0, Math.floor((startProgress / 100) * chunks.length)));
     speechProgressRef.current = onProgress ?? null;
     speechCompleteRef.current = options?.onComplete ?? null;
@@ -13131,6 +13320,9 @@ export default function Home() {
       paused: false,
       progress: startProgress,
       currentChunkIndex: speechIndexRef.current,
+      totalChunkCount: chunks.length,
+      currentItemLabel: speechItemLabelsRef.current[speechIndexRef.current] ?? options?.currentItemLabel ?? label,
+      nextItemLabel: options?.nextItemLabel ?? speechItemLabelsRef.current.slice(speechIndexRef.current + 1).find((itemLabel) => itemLabel && itemLabel !== (speechItemLabelsRef.current[speechIndexRef.current] ?? null)) ?? null,
       sleepTimerMinutes: null,
       sleepTimerEndsAt: null,
     }));
@@ -13148,11 +13340,14 @@ export default function Home() {
       sleepTimerRef.current = null;
     }
     speechCompleteRef.current = null;
+    speechItemLabelsRef.current = [];
     setSpeechState((state) => ({
       ...state,
       playing: false,
       paused: false,
       currentChunkIndex: null,
+      currentItemLabel: null,
+      nextItemLabel: null,
       sleepTimerMinutes: null,
       sleepTimerEndsAt: null,
     }));
@@ -13214,6 +13409,11 @@ export default function Home() {
     }
 
     const listeningStart = listeningProgress[resource.slug]?.progress ?? progress;
+    const queueIndex = libraryListeningQueue.indexOf(resource.slug);
+    const nextQueueResource =
+      queueIndex >= 0
+        ? libraryResources.find((candidate) => candidate.slug === libraryListeningQueue[queueIndex + 1])
+        : null;
     startSpeech(
       targetId,
       resource.title,
@@ -13234,6 +13434,8 @@ export default function Home() {
         }
       },
       {
+        currentItemLabel: resource.title,
+        nextItemLabel: nextQueueResource?.title ?? null,
         onComplete: () => {
           saveCompletedResource(resource);
           void playNextLibraryQueueItem(resource.slug);
@@ -13323,6 +13525,7 @@ export default function Home() {
       {
         chunks: speechParts.chunks,
         verseRefs: speechParts.verseRefs,
+        currentItemLabel: label,
         onComplete: () => {
           if (isSingleFullChapter && singleChapterBook && singleChapterNumber) {
             markListenedChapter(singleChapterBook, singleChapterNumber);
@@ -13383,6 +13586,7 @@ export default function Home() {
       {
         chunks,
         verseRefs: chunks.map(() => null),
+        currentItemLabel: `${book} ${chapter} commentary`,
       },
     );
   }
@@ -13405,6 +13609,7 @@ export default function Home() {
       {
         chunks,
         verseRefs: chunks.map(() => null),
+        currentItemLabel: `${targetBook} ${targetChapter} commentary`,
       },
     );
   }
@@ -13724,6 +13929,7 @@ export default function Home() {
     void (async () => {
       const chunks: string[] = [];
       const verseRefs: Array<string | null> = [];
+      const itemLabels: Array<string | null> = [];
       const safeIndex = Math.min(Math.max(0, startIndex), Math.max(0, playlist.items.length - 1));
       const itemsToPlay = playSingleItem ? playlist.items.slice(safeIndex, safeIndex + 1) : playlist.items.slice(safeIndex);
 
@@ -13731,6 +13937,7 @@ export default function Home() {
         const speechParts = await chunksForBiblePlaylistItem(item);
         chunks.push(...speechParts.chunks);
         verseRefs.push(...speechParts.verseRefs);
+        itemLabels.push(...speechParts.chunks.map(() => item.label));
       }
 
       setActiveStudyPlaylistId(playlist.id);
@@ -13745,6 +13952,9 @@ export default function Home() {
         {
           chunks,
           verseRefs,
+          itemLabels,
+          currentItemLabel: playlist.items[safeIndex]?.label ?? playlist.name,
+          nextItemLabel: playlist.items[safeIndex + 1]?.label ?? null,
           onComplete: () => {
             const completedItem = playlist.items[safeIndex];
             if (completedItem) updateStudyPlaylistProgress(playlist.id, safeIndex, completedItem.id);
@@ -14319,6 +14529,54 @@ export default function Home() {
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
             {accountStatus}
           </div>
+          {(speechState.playing || speechState.paused) && (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">
+                    <span>{speechState.paused ? "Paused" : "Listening now"}</span>
+                    <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[var(--green)]">{formatPercent(speechState.progress)}</span>
+                    {speechSectionsRemaining > 0 && <span>{speechSectionsRemaining} sections left</span>}
+                  </div>
+                  <p className="mt-1 truncate text-sm font-semibold text-[var(--ink)]">{speechState.currentItemLabel || speechState.label}</p>
+                  <p className="mt-1 truncate text-xs text-[var(--muted)]">
+                    Next: {speechState.nextItemLabel || "End of selection"} · {activeVoiceProfile.label} · {selectedSpeechVoice ? voiceDisplayName(selectedSpeechVoice) : "Device voice"}
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <select
+                    className="h-9 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 text-xs font-semibold text-[var(--ink)] outline-none"
+                    value={speechState.rate}
+                    onChange={(event) => updateSpeechRate(Number(event.target.value))}
+                    title="Listening speed"
+                  >
+                    {[0.75, 1, 1.25, 1.5, 2].map((rateOption) => (
+                      <option key={rateOption} value={rateOption}>{rateOption}x</option>
+                    ))}
+                  </select>
+                  <button
+                    className="inline-flex h-9 items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 text-xs font-semibold text-[var(--green)]"
+                    onClick={speechState.paused ? resumeSpeech : pauseSpeech}
+                    type="button"
+                  >
+                    {speechState.paused ? <Play size={15} /> : <Pause size={15} />}
+                    {speechState.paused ? "Resume" : "Pause"}
+                  </button>
+                  <button
+                    className="inline-flex h-9 items-center gap-2 rounded-full bg-[var(--ink)] px-3 text-xs font-semibold text-white"
+                    onClick={() => stopSpeech("All listening stopped.")}
+                    type="button"
+                  >
+                    <Square size={15} />
+                    Stop
+                  </button>
+                </div>
+              </div>
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: formatPercent(speechState.progress) }} />
+              </div>
+            </div>
+          )}
         </header>
 
         <BetaNotice />
