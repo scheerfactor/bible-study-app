@@ -1,10 +1,10 @@
 {
-  "source_csv": "data/library/bulk-import-phase-7b.csv",
+  "source_csv": "data/library/bulk-import-phase-8.csv",
   "manifest": "data/library/manifests/curated-public-domain-resources.json",
   "dry_run": false,
-  "batch_size": 100,
-  "total_attempted": 8,
-  "imported": 8,
+  "batch_size": 10,
+  "total_attempted": 3,
+  "imported": 3,
   "would_import": 0,
   "skipped": 0,
   "failed": 0,
@@ -15,126 +15,51 @@
   "duplicate_checksums": 0,
   "file_sizes": [
     {
-      "title": "The American missionary — volume 42, no. 9, September, 1888",
-      "file": "the-american-missionary-volume-42-no-9-september-1888-various.txt",
-      "bytes": 136815,
-      "words": 18103,
-      "reading_time_minutes": 80
+      "title": "Lectures on the Book of Revelation",
+      "file": "lectures-on-the-book-of-revelation-william-kelly.txt",
+      "bytes": 1592484,
+      "words": 251055,
+      "reading_time_minutes": 1116
     },
     {
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "file": "the-baptist-magazine-vol-27-1835-various-wightman-george.txt",
-      "bytes": 183107,
-      "words": 29030,
-      "reading_time_minutes": 129
+      "title": "Lectures on the Gospel of Matthew",
+      "file": "lectures-on-the-gospel-of-matthew-william-kelly.txt",
+      "bytes": 1101811,
+      "words": 175819,
+      "reading_time_minutes": 781
     },
     {
-      "title": "Bible Readings for the Home Circle",
-      "file": "bible-readings-for-the-home-circle-various.txt",
-      "bytes": 1532971,
-      "words": 247295,
-      "reading_time_minutes": 1099
-    },
-    {
-      "title": "Oowikapun, or, How the Gospel reached the Nelson River Indians",
-      "file": "oowikapun-or-how-the-gospel-reached-the-nelson-river-indians-young-egerton-ryerson.txt",
-      "bytes": 224482,
-      "words": 40138,
-      "reading_time_minutes": 178
-    },
-    {
-      "title": "On Mule Back Thru Central America with the Gospel",
-      "file": "on-mule-back-thru-central-america-with-the-gospel-crawford-mattie.txt",
-      "bytes": 180561,
-      "words": 33097,
-      "reading_time_minutes": 147
-    },
-    {
-      "title": "Self-Denial; or, Alice Wood, and Her Missionary Society",
-      "file": "self-denial-or-alice-wood-and-her-missionary-society-american-sunday-school-union.txt",
-      "bytes": 16695,
-      "words": 2999,
-      "reading_time_minutes": 13
-    },
-    {
-      "title": "The Call of the World; or, Every Man's Supreme Opportunity",
-      "file": "the-call-of-the-world-or-every-man-s-supreme-opportunity-doughty-william-e-william-ellison.txt",
-      "bytes": 175730,
-      "words": 28621,
-      "reading_time_minutes": 127
-    },
-    {
-      "title": "Siam and Laos, as Seen by Our American Missionaries",
-      "file": "siam-and-laos-as-seen-by-our-american-missionaries-various.txt",
-      "bytes": 663069,
-      "words": 111438,
-      "reading_time_minutes": 495
+      "title": "The Revelation of Christ to His Servants",
+      "file": "the-revelation-of-christ-to-his-servants-f-w-grant.txt",
+      "bytes": 1073447,
+      "words": 167854,
+      "reading_time_minutes": 746
     }
   ],
   "rows": [
     {
       "row": 2,
-      "title": "The American missionary — volume 42, no. 9, September, 1888",
-      "author": "Various",
+      "title": "Lectures on the Book of Revelation",
+      "author": "William Kelly",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-american-missionary-volume-42-no-9-september-1888-various.txt"
+      "file_path": "data/library/verified/lectures-on-the-book-of-revelation-william-kelly.txt"
     },
     {
       "row": 3,
-      "title": "The Baptist Magazine, Vol. 27, 1835",
-      "author": "Various; Wightman, George",
+      "title": "Lectures on the Gospel of Matthew",
+      "author": "William Kelly",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/the-baptist-magazine-vol-27-1835-various-wightman-george.txt"
+      "file_path": "data/library/verified/lectures-on-the-gospel-of-matthew-william-kelly.txt"
     },
     {
       "row": 4,
-      "title": "Bible Readings for the Home Circle",
-      "author": "Various",
+      "title": "The Revelation of Christ to His Servants",
+      "author": "F. W. Grant",
       "status": "imported",
       "issues": [],
-      "file_path": "data/library/verified/bible-readings-for-the-home-circle-various.txt"
-    },
-    {
-      "row": 5,
-      "title": "Oowikapun, or, How the Gospel reached the Nelson River Indians",
-      "author": "Young, Egerton Ryerson",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/oowikapun-or-how-the-gospel-reached-the-nelson-river-indians-young-egerton-ryerson.txt"
-    },
-    {
-      "row": 6,
-      "title": "On Mule Back Thru Central America with the Gospel",
-      "author": "Crawford, Mattie",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/on-mule-back-thru-central-america-with-the-gospel-crawford-mattie.txt"
-    },
-    {
-      "row": 7,
-      "title": "Self-Denial; or, Alice Wood, and Her Missionary Society",
-      "author": "American Sunday-School Union",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/self-denial-or-alice-wood-and-her-missionary-society-american-sunday-school-union.txt"
-    },
-    {
-      "row": 8,
-      "title": "The Call of the World; or, Every Man's Supreme Opportunity",
-      "author": "Doughty, William E. (William Ellison)",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/the-call-of-the-world-or-every-man-s-supreme-opportunity-doughty-william-e-william-ellison.txt"
-    },
-    {
-      "row": 9,
-      "title": "Siam and Laos, as Seen by Our American Missionaries",
-      "author": "Various",
-      "status": "imported",
-      "issues": [],
-      "file_path": "data/library/verified/siam-and-laos-as-seen-by-our-american-missionaries-various.txt"
+      "file_path": "data/library/verified/the-revelation-of-christ-to-his-servants-f-w-grant.txt"
     }
   ],
   "review_queues": {

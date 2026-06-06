@@ -97,6 +97,7 @@ for (const [key, count] of checksumCounts) {
 
 const featuredAuthorChecks = [
   ["Spurgeon", "spurgeon"],
+  ["Ironside", "ironside"],
   ["Ryle", "ryle"],
   ["Moody", "moody"],
   ["Bounds", "bounds"],
@@ -105,6 +106,10 @@ const featuredAuthorChecks = [
   ["Meyer", "meyer"],
   ["Bunyan", "bunyan"],
   ["Hudson Taylor", "taylor"],
+  ["William Kelly", "kelly"],
+  ["F. W. Grant", "grant"],
+  ["Clarence Larkin", "larkin"],
+  ["A. C. Gaebelein", "gaebelein"],
 ];
 
 const authorPageReport = featuredAuthorChecks.map(([label, needle]) => {

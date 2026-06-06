@@ -28243,5 +28243,137 @@
     "checksum_sha256": "0549bf04490e5b8cf2eef86bbadc1f0a61aafc914e4578bd4411554135fa22e9",
     "file_size_bytes": 663069,
     "word_count": 111438
+  },
+  {
+    "title": "Lectures on the Book of Revelation",
+    "author": "William Kelly",
+    "year": 1871,
+    "category": "Commentaries",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/lecturesonbook00kell/lecturesonbook00kell_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonbook00kell/lecturesonbook00kell_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-book-of-revelation-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item lecturesonbook00kell lists possible copyright status NOT_IN_COPYRIGHT. Bibliographic records identify William Kelly, W. H. Broom, 1871. Direct IA OCR text imported for beta reading with use-with-discernment labels.",
+    "notes": "Historical brethren exposition for Revelation study and commentary comparison. OCR text is readable but should be spot-checked before quotation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical brethren exposition for Revelation study and commentary comparison; review wording before using doctrinally.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Book of Revelation",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1116,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "68c29e084f3847787e1582488b3a69412f8a25d2a2a4cf6c05820c67b19ecbc1",
+    "file_size_bytes": 1592484,
+    "word_count": 251055
+  },
+  {
+    "title": "Lectures on the Gospel of Matthew",
+    "author": "William Kelly",
+    "year": 1868,
+    "category": "Commentaries",
+    "collection": "William Kelly Collection",
+    "source_url": "https://archive.org/download/lecturesongospel00kell/lecturesongospel00kell_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesongospel00kell/lecturesongospel00kell_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-gospel-of-matthew-william-kelly.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item lecturesongospel00kell lists possible copyright status NOT_IN_COPYRIGHT. Open Library/Google Books bibliographic records identify William Kelly, G. Morrish, 1868. Direct IA OCR text imported for beta reading with use-with-discernment labels.",
+    "notes": "Historical brethren exposition for Gospel study and teaching preparation. OCR text is readable but should be spot-checked before quotation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical brethren exposition for Gospel study and teaching preparation; keep Scripture primary.",
+    "resource_labels": [
+      "William Kelly Collection",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Gospel of Matthew",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "William Kelly Collection",
+      "badge": "William Kelly Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 781,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "77c1387c84baaa70217e0e5f41465e6742b61a45fcbca5bf4519d631d4e86875",
+    "file_size_bytes": 1101811,
+    "word_count": 175819
+  },
+  {
+    "title": "The Revelation of Christ to His Servants",
+    "author": "F. W. Grant",
+    "year": 1800,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Collection",
+    "source_url": "https://archive.org/download/revelationofchri00granrich/revelationofchri00granrich_djvu.txt",
+    "download_url": "https://archive.org/download/revelationofchri00granrich/revelationofchri00granrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-revelation-of-christ-to-his-servants-f-w-grant.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Internet Archive item revelationofchri00granrich lists possible copyright status NOT_IN_COPYRIGHT; metadata gives date [18--], creator F. W. Grant (1834-1902), and copyright evidence notes no visible copyright notice. Direct IA OCR text imported for beta reading with use-with-discernment labels.",
+    "notes": "Historical exposition of Revelation for comparison and teaching prep. OCR text is readable but should be spot-checked before quotation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical exposition of Revelation for comparison and teaching prep; use with visible perspective notes.",
+    "resource_labels": [
+      "F. W. Grant Collection",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Revelation of Christ to His Servants",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Collection",
+      "badge": "F. W. Grant Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 746,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "66ce21a3c3b4469ac62dbf0b07bdd4ba0e1bd1985f087280238e490a73569c03",
+    "file_size_bytes": 1073447,
+    "word_count": 167854
   }
 ]

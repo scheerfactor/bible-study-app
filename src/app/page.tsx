@@ -2289,18 +2289,18 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
   {
     author: "William Kelly",
     resourceTitle: "William Kelly Bible Expositions",
-    status: "Needs Review",
-    sourcePlan: "Verify original editions and source files before staging any chapter samples.",
-    rightsNotes: "Likely public-domain original works need exact source and edition review.",
-    recommendedUse: "Potential expository comparison with perspective notes and Scripture-first ordering.",
+    status: "Verified",
+    sourcePlan: "Library volumes for Matthew and Revelation are now imported from Internet Archive texts with NOT_IN_COPYRIGHT source metadata. Commentary-entry parsing still needs chapter-level review before public comparison entries are generated.",
+    rightsNotes: "Use only exact Internet Archive items with documented possible copyright status and visible source/edition metadata. Do not use modern edited sites as source text.",
+    recommendedUse: "Historical brethren exposition for teachers and preachers, with perspective notes and Scripture-first ordering.",
   },
   {
     author: "F. W. Grant",
     resourceTitle: "F. W. Grant Numerical Bible / Expository Works",
-    status: "Needs Review",
-    sourcePlan: "Identify a clean source and test chapter parsing with one small reviewed sample.",
-    rightsNotes: "Do not import until source, edition, and reuse status are documented.",
-    recommendedUse: "Potential historical/expository comparison after review.",
+    status: "Verified",
+    sourcePlan: "The Revelation of Christ to His Servants is imported as a Library commentary volume from an Internet Archive NOT_IN_COPYRIGHT source. Chapter-level commentary import remains staged work.",
+    rightsNotes: "Exact source metadata is required. Treat OCR text as beta reading text and spot-check before quoting.",
+    recommendedUse: "Historical expository comparison for Revelation study, with visible use-with-discernment labels.",
   },
   {
     author: "Arno C. Gaebelein",
@@ -2436,6 +2436,97 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     bestFor: ["Historical background", "Teaching"],
     priority: 7,
   },
+  {
+    author: "William Kelly",
+    timePeriod: "1821-1906",
+    biography: "Irish Brethren Bible teacher known for detailed exposition, prophecy study, and verse-by-verse works that require clear perspective labels.",
+    writingStyle: "Detailed, expository, and historically Brethren in perspective.",
+    strengths: ["Detailed exposition", "Prophecy study", "Teaching preparation", "Historical comparison"],
+    weaknesses: ["Not beginner-first", "Requires doctrinal perspective labels", "Chapter-level commentary entries are not public yet"],
+    bestUse: "Use current Library volumes as reviewed reading resources for Matthew and Revelation study; chapter commentary parsing remains a review workflow.",
+    doctrinalNotes: "Historical Brethren perspective. Useful with discernment; Scripture and the KJV passage remain primary.",
+    sampleQuote: "Use as a historical expository comparison, not as the first or controlling voice.",
+    bestFor: ["Teaching", "Preaching", "Historical background"],
+    priority: 8,
+  },
+  {
+    author: "F. W. Grant",
+    timePeriod: "1834-1902",
+    biography: "Brethren writer and expositor known for Revelation and biblical study works with historical and prophetic emphasis.",
+    writingStyle: "Analytical, expository, and prophecy-oriented.",
+    strengths: ["Revelation study", "Expository comparison", "Historical Bible study", "Teaching preparation"],
+    weaknesses: ["Can be dense", "Perspective notes are needed", "Imported OCR text should be spot-checked before quotation"],
+    bestUse: "Use as a supporting Revelation study voice where verified Library text is available.",
+    doctrinalNotes: "Historical Brethren perspective. Use with discernment and keep commentary secondary to Scripture.",
+    sampleQuote: "Best used as a careful comparison voice for Revelation, not a replacement for direct Bible study.",
+    bestFor: ["Teaching", "Historical background"],
+    priority: 9,
+  },
+  {
+    author: "Matthew Poole",
+    timePeriod: "1624-1679",
+    biography: "English Puritan commentator whose English Annotations may become a helpful historical comparison voice after source review.",
+    writingStyle: "Concise, explanatory, and Puritan-era.",
+    strengths: ["Historical commentary", "Concise explanation", "Teacher comparison"],
+    weaknesses: ["No public imports until an exact source and edition are verified", "Older language and doctrinal context need labels"],
+    bestUse: "Candidate for future comparison after a clean source is staged and reviewed.",
+    doctrinalNotes: "Do not import modern edited copies or unclear web text. Exact source and reuse terms are required.",
+    sampleQuote: "Future use only after source, edition, and rights review.",
+    bestFor: ["Teaching", "Historical background"],
+    priority: 10,
+  },
+  {
+    author: "J. N. Darby",
+    timePeriod: "1800-1882",
+    biography: "Historical Brethren teacher and translator whose notes and synopsis material require careful perspective and source labels.",
+    writingStyle: "Dense, theological, and historically Brethren.",
+    strengths: ["Historical comparison", "Prophecy and dispensational history", "Advanced study"],
+    weaknesses: ["Not beginner-first", "Needs exact source review", "Use with discernment labels are required"],
+    bestUse: "Candidate for advanced historical comparison after public-domain source review.",
+    doctrinalNotes: "Keep Darby material clearly labeled and secondary to Scripture. Do not import until source and edition metadata are clean.",
+    sampleQuote: "Advanced historical comparison only; Scripture remains primary.",
+    bestFor: ["Historical background", "Teaching"],
+    priority: 11,
+  },
+  {
+    author: "The Pulpit Commentary",
+    timePeriod: "19th century",
+    biography: "Large multi-author commentary set designed for preaching and teaching support. Volume-by-volume verification is required.",
+    writingStyle: "Preaching-oriented, sectional, and often practical.",
+    strengths: ["Preaching support", "Teaching outlines", "Application prompts", "Historical comparison"],
+    weaknesses: ["Multi-author quality varies", "Large volumes need careful source and OCR review", "Doctrinal perspective can vary by contributor"],
+    bestUse: "Future collapsed comparison resource for preaching and teaching after exact volume review.",
+    doctrinalNotes: "Do not expose unreviewed volume text publicly. Each volume needs source, edition, rights, and quality review.",
+    sampleQuote: "Useful only after volume-level review because it is a large multi-author set.",
+    bestFor: ["Preaching", "Teaching"],
+    priority: 12,
+  },
+  {
+    author: "The Biblical Illustrator",
+    timePeriod: "19th century",
+    biography: "Large compilation of sermon illustrations, observations, and homiletic helps requiring careful volume-level review.",
+    writingStyle: "Illustrative, homiletic, and quote-heavy.",
+    strengths: ["Illustrations", "Preaching helps", "Application ideas", "Historical quotations"],
+    weaknesses: ["Compilation rights and source quality need review", "Not all excerpts will be doctrinally recommended", "Can overwhelm the Bible text"],
+    bestUse: "Future sermon illustration and teaching support after source, doctrine, and quality review.",
+    doctrinalNotes: "Needs strong discernment labels and careful excerpt review before public import.",
+    sampleQuote: "Use as a future illustration source only after volume-by-volume review.",
+    bestFor: ["Preaching", "Teaching"],
+    priority: 13,
+  },
+  {
+    author: "Arno C. Gaebelein",
+    timePeriod: "1861-1945",
+    biography: "Bible teacher and prophetic writer known for Old Testament exposition, prophecy, and devotional studies.",
+    writingStyle: "Expository, prophetic, and devotional.",
+    strengths: ["Prophecy study", "Old Testament exposition", "Teaching support", "Historical comparison"],
+    weaknesses: ["Edition-specific rights review is required", "Prophecy material needs careful labels"],
+    bestUse: "Use existing verified Library books where available; commentary entry expansion waits for source and edition review.",
+    doctrinalNotes: "Not all doctrinal conclusions are endorsed. Keep prophecy material clearly labeled and secondary to Scripture.",
+    sampleQuote: "Helpful for prophecy and Old Testament exposition when source and perspective notes are clear.",
+    bestFor: ["Teaching", "Historical background"],
+    priority: 14,
+  },
 ];
 
 const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
@@ -2447,8 +2538,8 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
   lessonOutline: true,
 };
 
-const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside"];
-const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer"];
+const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside", "kelly", "grant"];
+const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer", "kelly", "grant", "larkin", "darby", "gaebelein"];
 const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
   spurgeon: 16,
   ironside: 10,
@@ -2458,6 +2549,11 @@ const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
   bounds: 8,
   torrey: 8,
   meyer: 8,
+  kelly: 8,
+  grant: 6,
+  larkin: 6,
+  darby: 4,
+  gaebelein: 8,
 };
 
 const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
@@ -2774,6 +2870,105 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     recommendedReadingOrder: ["John the Baptist", "Love to the Uttermost"],
     subjects: ["Bible Study", "Biography", "Christian Living"],
   },
+  {
+    id: "kelly",
+    name: "William Kelly",
+    years: "1821-1906",
+    shortLabel: "Detailed Brethren exposition",
+    biography: "William Kelly was an Irish Bible teacher and writer associated with the Brethren movement. His works are useful for detailed exposition, prophecy study, and historical comparison when clearly labeled and kept secondary to Scripture.",
+    timeline: [
+      { year: "1821", event: "Born in Ireland." },
+      { year: "1860s", event: "Published lectures and expositions on Gospel and Epistle studies." },
+      { year: "1871", event: "Lectures on the Book of Revelation published." },
+      { year: "1906", event: "Died after a long writing and Bible teaching ministry." },
+    ],
+    commentary: "Use as a detailed historical comparison voice for teachers and preachers. The app should surface source notes and use-with-discernment labels whenever Kelly resources are recommended.",
+    quotes: [
+      "Kelly is best used for detailed comparison after direct Bible reading and primary study helps.",
+    ],
+    relatedAuthorIds: ["grant", "darby", "gaebelein"],
+    recommendedReadingOrder: ["Lectures on the Gospel of Matthew", "Notes on the Book of Daniel", "Lectures on the Book of Revelation", "Lectures Introductory to the Study of the Gospels"],
+    subjects: ["Commentary", "Bible Study", "Use with discernment"],
+  },
+  {
+    id: "grant",
+    name: "F. W. Grant",
+    years: "1834-1902",
+    shortLabel: "Revelation and prophetic exposition",
+    biography: "Frederick William Grant was a Brethren writer known for expository and prophetic study. His Revelation work is useful for historical comparison when source and OCR quality are clearly documented.",
+    timeline: [
+      { year: "1834", event: "Born in England." },
+      { year: "19th c.", event: "Wrote expository and Bible study works connected with Brethren circles." },
+      { year: "1902", event: "Died after a writing ministry focused on Bible exposition." },
+    ],
+    commentary: "Use as a supporting Revelation study resource with clear source notes and discernment labels.",
+    quotes: [
+      "Grant belongs in advanced comparison, not as a beginner's first commentary voice.",
+    ],
+    relatedAuthorIds: ["kelly", "darby", "gaebelein"],
+    recommendedReadingOrder: ["The Revelation of Christ to His Servants"],
+    subjects: ["Commentary", "Prophecy", "Use with discernment"],
+  },
+  {
+    id: "larkin",
+    name: "Clarence Larkin",
+    years: "1850-1924",
+    shortLabel: "Charts, prophecy, and Bible study helps",
+    biography: "Clarence Larkin was a Baptist pastor and writer known for chart-based Bible study, prophecy, and dispensational works. His books can help visual learners, but chart material and prophecy conclusions need careful labels.",
+    timeline: [
+      { year: "1850", event: "Born in Pennsylvania." },
+      { year: "1880s", event: "Entered Baptist ministry." },
+      { year: "1918", event: "Published Dispensational Truth." },
+      { year: "1924", event: "Died after producing widely circulated Bible chart works." },
+    ],
+    commentary: "Use for chart-based study and prophecy review with visible caution that not all doctrinal conclusions are endorsed.",
+    quotes: [
+      "Larkin is useful for visual study helps, but Scripture remains the final authority.",
+    ],
+    relatedAuthorIds: ["gaebelein", "kelly", "grant"],
+    recommendedReadingOrder: ["The Book of Revelation", "The Book of Daniel", "Dispensational Truth", "Rightly Dividing the Word"],
+    subjects: ["KJV / Textual Issues", "Prophecy", "Use with discernment"],
+  },
+  {
+    id: "darby",
+    name: "J. N. Darby",
+    years: "1800-1882",
+    shortLabel: "Historical Brethren theology",
+    biography: "John Nelson Darby was a major Brethren figure whose writings are historically important but not beginner-first. Any public imports should remain source-verified and clearly labeled for perspective and discernment.",
+    timeline: [
+      { year: "1800", event: "Born in London." },
+      { year: "1820s", event: "Served as an Anglican clergyman before becoming connected with the Brethren movement." },
+      { year: "1830s-1880s", event: "Wrote and traveled widely in Bible teaching ministry." },
+      { year: "1882", event: "Died after a long and influential writing ministry." },
+    ],
+    commentary: "Candidate for future historical comparison only. Keep Darby material clearly labeled and secondary to Scripture.",
+    quotes: [
+      "Use as historical comparison with clear perspective notes, not as the first study source.",
+    ],
+    relatedAuthorIds: ["kelly", "grant", "gaebelein"],
+    recommendedReadingOrder: ["Synopsis of the Books of the Bible", "Notes and Comments", "Seven Lectures on the Second Coming"],
+    subjects: ["Historical value", "Commentary", "Use with discernment"],
+  },
+  {
+    id: "gaebelein",
+    name: "Arno C. Gaebelein",
+    years: "1861-1945",
+    shortLabel: "Prophecy and Old Testament exposition",
+    biography: "Arno Clemens Gaebelein was a Bible teacher, editor, and prophetic writer. His works are useful for prophecy, Old Testament exposition, and devotional study when publication and edition rights are clear.",
+    timeline: [
+      { year: "1861", event: "Born in Germany." },
+      { year: "1880s", event: "Moved to the United States and entered ministry." },
+      { year: "1890s-1930s", event: "Wrote and edited Bible study and prophetic works." },
+      { year: "1945", event: "Died after a long Bible teaching and publishing ministry." },
+    ],
+    commentary: "Use existing verified public-domain resources for prophecy and book study. Commentary entry expansion remains dependent on exact source and rights review.",
+    quotes: [
+      "Prophecy resources should be plainly labeled and checked carefully by the Scripture text.",
+    ],
+    relatedAuthorIds: ["larkin", "kelly", "grant"],
+    recommendedReadingOrder: ["Studies in Zechariah", "The Prophet Ezekiel", "Studies in Prophecy", "The Lord of Glory"],
+    subjects: ["Prophecy", "Bible Study", "Use with discernment"],
+  },
 ];
 
 const LIBRARY_COLLECTIONS: LibraryCollection[] = [
@@ -2956,18 +3151,18 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
   {
     id: "larkin",
     title: "Larkin Shelf",
-    description: "Clarence Larkin material for future careful study use where appropriate.",
+    description: "Clarence Larkin chart-based Bible study and prophecy resources with clear discernment labels.",
     terms: ["larkin"],
-    labels: ["Coming soon", "Not all doctrine endorsed"],
-    featuredAuthorIds: [],
+    labels: ["Visual study", "Not all doctrine endorsed"],
+    featuredAuthorIds: ["larkin"],
   },
   {
     id: "william-kelly",
     title: "William Kelly Shelf",
-    description: "William Kelly works for future expository comparison and historical study.",
+    description: "William Kelly expository works for Matthew, Daniel, Revelation, and historical study comparison.",
     terms: ["william kelly", "kelly"],
-    labels: ["Coming soon", "Use with discernment"],
-    featuredAuthorIds: [],
+    labels: ["Commentary", "Use with discernment"],
+    featuredAuthorIds: ["kelly"],
   },
   {
     id: "darby",
@@ -2975,23 +3170,23 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     description: "J. N. Darby works for future historical comparison with clear perspective labels.",
     terms: ["darby"],
     labels: ["Use with discernment", "Historical value"],
-    featuredAuthorIds: [],
+    featuredAuthorIds: ["darby"],
   },
   {
     id: "gaebelein",
     title: "Gaebelein Shelf",
-    description: "A. C. Gaebelein resources for future prophecy and exposition study.",
+    description: "A. C. Gaebelein prophecy and Bible study resources where source rights are clear.",
     terms: ["gaebelein"],
-    labels: ["Prophecy", "Coming soon"],
-    featuredAuthorIds: [],
+    labels: ["Prophecy", "Use with discernment"],
+    featuredAuthorIds: ["gaebelein"],
   },
   {
     id: "fw-grant",
     title: "F. W. Grant Shelf",
-    description: "F. W. Grant works for future expository and historical comparison.",
+    description: "F. W. Grant expository work for Revelation study and historical comparison.",
     terms: ["f. w. grant", "f w grant", "grant"],
-    labels: ["Coming soon", "Use with discernment"],
-    featuredAuthorIds: [],
+    labels: ["Commentary", "Use with discernment"],
+    featuredAuthorIds: ["grant"],
   },
 ];
 
@@ -3373,24 +3568,24 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
     title: "William Kelly works",
     author: "William Kelly",
     category: "Commentaries",
-    source: "Brethren Archive / public-domain scans to verify",
-    status: "Needs Review",
-    rightsNotes: "Do not import until exact edition, publication date, source URL, and reuse status are documented.",
-    doctrinalNotes: "Useful historical/expository value; mark perspective notes and use with discernment.",
-    warningLabels: ["Needs review", "Use with discernment"],
-    recommendedUse: "Candidate for later commentary and Bible study shelves after review.",
+    source: "Internet Archive public-domain scan/OCR items with NOT_IN_COPYRIGHT metadata",
+    status: "Verified",
+    rightsNotes: "First Library volumes imported only from exact IA items with documented source metadata. Chapter commentary parsing still requires review before public comparison entries.",
+    doctrinalNotes: "Useful historical/expository value; keep perspective notes and use-with-discernment labels visible.",
+    warningLabels: ["Use with discernment", "OCR spot-check"],
+    recommendedUse: "Reviewed Library volumes for Matthew, Daniel, Revelation, and historical Bible study comparison.",
   },
   {
     id: "review-fw-grant",
     title: "F. W. Grant works",
     author: "F. W. Grant",
     category: "Commentaries",
-    source: "Brethren Archive / public-domain scans to verify",
-    status: "Needs Review",
-    rightsNotes: "Do not import until exact edition, source URL, and public-domain status are documented.",
-    doctrinalNotes: "Historical/expository value; add perspective notes before user-facing import.",
-    warningLabels: ["Needs review", "Use with discernment"],
-    recommendedUse: "Candidate for later commentary and study shelves after review.",
+    source: "Internet Archive public-domain scan/OCR item with NOT_IN_COPYRIGHT metadata",
+    status: "Verified",
+    rightsNotes: "The Revelation of Christ to His Servants is imported as a Library volume from exact IA source metadata. Chapter commentary parsing remains staged.",
+    doctrinalNotes: "Historical/expository value; keep perspective notes visible before sermon or teaching use.",
+    warningLabels: ["Use with discernment", "OCR spot-check"],
+    recommendedUse: "Reviewed Revelation study volume for historical comparison and teaching preparation.",
   },
   {
     id: "review-gaebelein",
@@ -7897,9 +8092,9 @@ const PASSAGE_GUIDE_COMMENTARY_GROWTH: CommentaryGrowthPriority[] = [
   {
     author: "William Kelly",
     focus: "Detailed exposition and dispensational historical value.",
-    status: "Needs Review",
-    nextStep: "Verify exact public-domain editions and prepare doctrinal perspective labels.",
-    caution: "Use with discernment; do not import globally until reviewed.",
+    status: "Verified samples",
+    nextStep: "Keep imported Library volumes public; stage chapter-level commentary entries only after careful parsing and review.",
+    caution: "Use with discernment; imported OCR text should be spot-checked before quotation.",
   },
   {
     author: "A. C. Gaebelein",
@@ -7911,9 +8106,9 @@ const PASSAGE_GUIDE_COMMENTARY_GROWTH: CommentaryGrowthPriority[] = [
   {
     author: "F. W. Grant",
     focus: "Bible exposition and study helps.",
-    status: "Needs Review",
-    nextStep: "Verify exact editions and clean source text.",
-    caution: "Do not import until rights and doctrinal review are complete.",
+    status: "Verified samples",
+    nextStep: "Use the verified Revelation Library volume while chapter-level commentary entries remain staged.",
+    caution: "Use with discernment; imported OCR text should be spot-checked before quotation.",
   },
   {
     author: "J. N. Darby",
@@ -9540,6 +9735,7 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
   const terms = smartSuggestionTerms(searchText);
   return resources
     .map((resource) => {
+      const authorProfile = libraryAuthorProfileForName(resource.author);
       const score = scoreSmartSuggestion([
         resource.title,
         resource.author,
@@ -9549,6 +9745,10 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
         resource.recommended_use,
         resource.perspective_notes,
         ...resource.resource_labels,
+        authorProfile?.shortLabel ?? "",
+        authorProfile?.commentary ?? "",
+        authorProfile?.subjects.join(" ") ?? "",
+        authorProfile?.recommendedReadingOrder.join(" ") ?? "",
       ].join(" "), terms);
       return { resource, score };
     })
@@ -22902,6 +23102,11 @@ function libraryAuthorIdFromName(author: string) {
   if (normalized.includes("bunyan")) return "bunyan";
   if (normalized.includes("hudson taylor") || normalized.includes("james hudson taylor")) return "taylor";
   if (normalized.includes("meyer")) return "meyer";
+  if (normalized.includes("william kelly") || normalized.includes("kelly")) return "kelly";
+  if (normalized.includes("f. w. grant") || normalized.includes("f w grant") || normalized.includes("frederick william grant")) return "grant";
+  if (normalized.includes("clarence larkin") || normalized.includes("larkin")) return "larkin";
+  if (normalized.includes("j. n. darby") || normalized.includes("darby")) return "darby";
+  if (normalized.includes("gaebelein")) return "gaebelein";
   return normalized.replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
