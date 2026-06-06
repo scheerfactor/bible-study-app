@@ -89,16 +89,33 @@ import matthewHenryReviewedPhase6LeviticusNumbersStartCommentary from "../../dat
 import matthewHenryReviewedPhase8IsaiahStartCommentary from "../../data/imports/matthew-henry-reviewed-phase-8-isaiah-start-commentary.json";
 import matthewHenryReviewedBetaDepthIsaiahJeremiahCommentary from "../../data/imports/matthew-henry-reviewed-beta-depth-isaiah-jeremiah-commentary.json";
 import matthewHenryReviewedBetaDepthJeremiahEzekielCommentary from "../../data/imports/matthew-henry-reviewed-beta-depth-jeremiah-ezekiel-commentary.json";
+import matthewHenryReviewedCompletionBatch01Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-01-commentary.json";
+import matthewHenryReviewedCompletionBatch02Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-02-commentary.json";
+import matthewHenryReviewedCompletionBatch03Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-03-commentary.json";
+import matthewHenryReviewedCompletionBatch04Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-04-commentary.json";
+import matthewHenryReviewedCompletionBatch05Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-05-commentary.json";
+import matthewHenryReviewedCompletionBatch06Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-06-commentary.json";
+import matthewHenryReviewedCompletionBatch07Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-07-commentary.json";
+import matthewHenryReviewedCompletionBatch08Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-08-commentary.json";
+import matthewHenryReviewedCompletionBatch09Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json";
+import matthewHenryReviewedCompletionBatch10Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-10-commentary.json";
+import matthewHenryReviewedCompletionBatch11Commentary from "../../data/imports/matthew-henry-reviewed-completion-batch-11-commentary.json";
 import barnesReviewedPhase3Commentary from "../../data/imports/barnes-reviewed-phase-3-commentary.json";
 import barnesReviewedCoverageSprintGenesisCommentary from "../../data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json";
 import barnesReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json";
 import barnesReviewedPhase5ExodusCommentary from "../../data/imports/barnes-reviewed-phase-5-exodus-commentary.json";
 import barnesReviewedPhase5ProverbsCorinthiansCommentary from "../../data/imports/barnes-reviewed-phase-5-proverbs-corinthians-commentary.json";
+import barnesReviewedCompletionProphetsCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
+import barnesReviewedCompletionPentateuchGapsCommentary from "../../data/imports/barnes-reviewed-completion-pentateuch-gaps-commentary.json";
+import barnesReviewedCompletionJoshuaStarterCommentary from "../../data/imports/barnes-reviewed-completion-joshua-starter-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
 import adamClarkeReviewedCoverageSprintGenesisCommentary from "../../data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json";
 import adamClarkeReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/adam-clarke-reviewed-library-expansion-gospels-acts-commentary.json";
 import adamClarkeReviewedPhase5ExodusCommentary from "../../data/imports/adam-clarke-reviewed-phase-5-exodus-commentary.json";
 import adamClarkeReviewedPhase5ProverbsCorinthiansCommentary from "../../data/imports/adam-clarke-reviewed-phase-5-proverbs-corinthians-commentary.json";
+import adamClarkeReviewedCompletionProphetsCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
+import adamClarkeReviewedCompletionPentateuchGapsCommentary from "../../data/imports/adam-clarke-reviewed-completion-pentateuch-gaps-commentary.json";
+import adamClarkeReviewedCompletionJoshuaStarterCommentary from "../../data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
@@ -687,6 +704,12 @@ type LibraryResource = {
   cover_image_url?: string | null;
   cover_source_url?: string | null;
   cover_rights_status?: string | null;
+  audiobook_narrator?: string | null;
+  audiobook_duration?: string | null;
+  audiobook_source?: string | null;
+  audiobook_rights_status?: string | null;
+  audiobook_audio_url?: string | null;
+  audiobook_text_sync_available?: boolean | null;
   reading_time_minutes?: number | null;
   cover_metadata?: {
     type: string;
@@ -6509,16 +6532,33 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryReviewedPhase8IsaiahStartCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedBetaDepthIsaiahJeremiahCommentary as CommentaryEntry[]),
   ...(matthewHenryReviewedBetaDepthJeremiahEzekielCommentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch01Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch02Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch03Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch04Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch05Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch06Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch07Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch08Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch09Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch10Commentary as CommentaryEntry[]),
+  ...(matthewHenryReviewedCompletionBatch11Commentary as CommentaryEntry[]),
   ...(barnesReviewedPhase3Commentary as CommentaryEntry[]),
   ...(barnesReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(barnesReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase5ExodusCommentary as CommentaryEntry[]),
   ...(barnesReviewedPhase5ProverbsCorinthiansCommentary as CommentaryEntry[]),
+  ...(barnesReviewedCompletionProphetsCommentary as CommentaryEntry[]),
+  ...(barnesReviewedCompletionPentateuchGapsCommentary as CommentaryEntry[]),
+  ...(barnesReviewedCompletionJoshuaStarterCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase5ExodusCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase5ProverbsCorinthiansCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedCompletionProphetsCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedCompletionPentateuchGapsCommentary as CommentaryEntry[]),
+  ...(adamClarkeReviewedCompletionJoshuaStarterCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
 ].map((entry) => ({
@@ -22625,6 +22665,23 @@ function libraryReadingMinutes(resource: LibraryResource) {
   return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
 }
 
+function audiobookDurationLabel(resource: LibraryResource, rate = 1) {
+  if (resource.audiobook_duration) return resource.audiobook_duration;
+  if (!resource.word_count) return "Duration unknown";
+  return formatListeningDuration(listeningSecondsFromWordCount(resource.word_count, rate));
+}
+
+function audiobookMetadataForResource(resource: LibraryResource, rate = 1) {
+  return {
+    narrator: resource.audiobook_narrator || "Device text-to-speech",
+    duration: audiobookDurationLabel(resource, rate),
+    source: resource.audiobook_source || "Verified text read by browser/device voice",
+    rightsStatus: resource.audiobook_rights_status || "Text rights verified; audio generated on this device",
+    audioPath: resource.audiobook_audio_url || "Device speech synthesis",
+    textSyncAvailable: resource.audiobook_text_sync_available ?? true,
+  };
+}
+
 function isEnglishSpeechVoice(voice: SpeechSynthesisVoice) {
   const lang = voice.lang.toLowerCase();
   return !lang || lang.startsWith("en");
@@ -23563,8 +23620,26 @@ function LibraryScreen({
   const commentaryResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["commentary", "exposition", "ironside", "matthew henry"]))
     .slice(0, 8);
+  const continueListeningResources = Object.values(listeningProgress)
+    .filter((progress) => progress.progress > 0 && progress.progress < 100)
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .flatMap((progress) => resources.find((resource) => resource.slug === progress.slug) ?? [])
+    .slice(0, 6);
+  const listeningHistoryResources = Object.values(listeningProgress)
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    .flatMap((progress) => resources.find((resource) => resource.slug === progress.slug) ?? [])
+    .slice(0, 6);
   const audiobookReadyResources = resources
     .filter((resource) => resource.word_count && resource.word_count > 0)
+    .sort((a, b) => {
+      const aProgress = listeningProgress[a.slug]?.progress ?? 0;
+      const bProgress = listeningProgress[b.slug]?.progress ?? 0;
+      return bProgress - aProgress || (b.word_count ?? 0) - (a.word_count ?? 0);
+    })
+    .slice(0, 8);
+  const audiobookReadySlugs = new Set(audiobookReadyResources.map((resource) => resource.slug));
+  const mediaBookResources = resources
+    .filter((resource) => !audiobookReadySlugs.has(resource.slug))
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
@@ -23809,8 +23884,10 @@ function LibraryScreen({
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
 
       <LibraryMediaCenter
-        books={resources.slice(0, 8)}
+        books={mediaBookResources}
         audiobooks={audiobookReadyResources}
+        continueListening={continueListeningResources}
+        listeningHistory={listeningHistoryResources}
         devotionals={devotionalResources}
         commentaries={commentaryResources}
         progressState={progressState}
@@ -24319,6 +24396,8 @@ function LibraryScreen({
 function LibraryMediaCenter({
   books,
   audiobooks,
+  continueListening,
+  listeningHistory,
   devotionals,
   commentaries,
   progressState,
@@ -24330,6 +24409,8 @@ function LibraryMediaCenter({
 }: {
   books: LibraryResource[];
   audiobooks: LibraryResource[];
+  continueListening: LibraryResource[];
+  listeningHistory: LibraryResource[];
   devotionals: LibraryResource[];
   commentaries: LibraryResource[];
   progressState: LibraryProgressState;
@@ -24366,6 +24447,39 @@ function LibraryMediaCenter({
           onOpenReader={onOpenReader}
           onAddToListeningQueue={onAddToListeningQueue}
         />
+        <MediaResourceShelf
+          title="Continue Listening"
+          kind="Audiobook"
+          resources={continueListening}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+          onOpenReader={onOpenReader}
+          onAddToListeningQueue={onAddToListeningQueue}
+        />
+        <MediaResourceShelf
+          title="Audiobooks"
+          kind="Audiobook"
+          resources={audiobooks}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+          onOpenReader={onOpenReader}
+          onAddToListeningQueue={onAddToListeningQueue}
+        />
+        <MediaResourceShelf
+          title="Listening History"
+          kind="Audiobook"
+          resources={listeningHistory}
+          progressState={progressState}
+          listeningProgress={listeningProgress}
+          completedState={completedState}
+          onOpenDetail={onOpenDetail}
+          onOpenReader={onOpenReader}
+          onAddToListeningQueue={onAddToListeningQueue}
+        />
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -24375,6 +24489,11 @@ function LibraryMediaCenter({
               </p>
             </div>
             <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">No duplicate audiobook shelf</span>
+          </div>
+          <div className="mt-3 grid gap-2 text-xs font-semibold text-[var(--muted)] md:grid-cols-3">
+            <span className="rounded-xl bg-white px-3 py-2">Narrator: device voice now</span>
+            <span className="rounded-xl bg-white px-3 py-2">Follow text: prepared</span>
+            <span className="rounded-xl bg-white px-3 py-2">Audio files: rights-gated later</span>
           </div>
         </article>
         <MediaPlaceholderShelf
@@ -24507,6 +24626,7 @@ function MediaResourceCard({
   const listeningValue = listeningProgress?.progress ?? 0;
   const coverClass = coverGradientFor(resource.title, resource.author, resource.category);
   const showCoverImage = Boolean(resource.cover_image_url && !coverFailed);
+  const audiobookMeta = kind === "Audiobook" ? audiobookMetadataForResource(resource, listeningProgress?.rate ?? 1) : null;
 
   return (
     <article className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] shadow-sm">
@@ -24530,6 +24650,14 @@ function MediaResourceCard({
       </button>
       <div className="p-4">
         <p className="line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
+        {audiobookMeta && (
+          <div className="mt-3 grid gap-1 rounded-xl border border-[var(--line)] bg-white p-3 text-xs font-semibold text-[var(--muted)]">
+            <span>Narrator: {audiobookMeta.narrator}</span>
+            <span>Duration: {audiobookMeta.duration}</span>
+            <span>Source: {audiobookMeta.source}</span>
+            <span>{audiobookMeta.textSyncAvailable ? "Follow text while listening: prepared" : "Follow text while listening: not available yet"}</span>
+          </div>
+        )}
         <div className="mt-3 grid gap-2">
           <MediaProgress label="Read" value={progressValue} />
           {listeningValue > 0 && <MediaProgress label="Listened" value={listeningValue} />}
@@ -26960,6 +27088,8 @@ function LibraryDetail({
   relatedResources: LibraryResource[];
   onOpenDetail: (slug: string) => void;
 }) {
+  const audiobookMeta = audiobookMetadataForResource(resource);
+
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
       <button
@@ -27046,6 +27176,30 @@ function LibraryDetail({
           </div>
         </div>
         <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Audiobook</p>
+            <h2 className="mt-2 text-lg font-semibold text-[var(--ink)]">Read and listen from the same resource</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Device narration is available for reviewed text resources now. Licensed or uploaded audio can be attached later when rights are documented.
+            </p>
+          </div>
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onOpenReader} type="button">
+            <Headphones size={16} />
+            Listen
+          </button>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <StatusCard label="Narrator" status={audiobookMeta.narrator} good />
+          <StatusCard label="Duration" status={audiobookMeta.duration} good={Boolean(resource.word_count || resource.audiobook_duration)} />
+          <StatusCard label="Text sync" status={audiobookMeta.textSyncAvailable ? "Prepared" : "Not available yet"} good={audiobookMeta.textSyncAvailable} />
+          <StatusCard label="Audio source" status={audiobookMeta.source} good />
+          <StatusCard label="Audio path" status={audiobookMeta.audioPath} good={audiobookMeta.audioPath === "Device speech synthesis"} />
+          <StatusCard label="Audio rights" status={audiobookMeta.rightsStatus} good />
+        </div>
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
