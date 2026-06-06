@@ -1248,6 +1248,25 @@ type SpeechState = {
   sleepTimerEndsAt: string | null;
 };
 
+type VoiceProfileId = "pastor" | "teacher" | "scripture" | "audiobook" | "devotional" | "fast-study";
+type VoiceFavoriteGroup = "general" | "male" | "female";
+
+type VoiceProfile = {
+  id: VoiceProfileId;
+  label: string;
+  description: string;
+  suggestedRate: number;
+};
+
+type VoiceSettings = {
+  selectedVoiceURI: string;
+  favoriteVoiceURIs: string[];
+  maleFavoriteVoiceURIs: string[];
+  femaleFavoriteVoiceURIs: string[];
+  hideNoveltyVoices: boolean;
+  activeProfile: VoiceProfileId;
+};
+
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
@@ -1263,6 +1282,7 @@ const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
+const VOICE_SETTINGS_KEY = "fathers-business-voice-settings";
 const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
 const LIBRARY_ACQUISITION_AUTHORS_KEY = "fathers-business-acquisition-authors";
 const LIBRARY_ACQUISITION_BOOKS_KEY = "fathers-business-acquisition-books";
@@ -1276,6 +1296,54 @@ const PRESENTATION_ENTRIES_KEY = "fathers-business-presentation-workspace-entrie
 const PRESENTATION_REMOTE_KEY_PREFIX = "fathers-business-presentation-remote-session:";
 const PRESENTATION_CONTROLLER_ID_KEY = "fathers-business-presentation-controller-id";
 const PRESENTATION_SESSION_DURATION_HOURS = 4;
+
+const DEFAULT_VOICE_SETTINGS: VoiceSettings = {
+  selectedVoiceURI: "",
+  favoriteVoiceURIs: [],
+  maleFavoriteVoiceURIs: [],
+  femaleFavoriteVoiceURIs: [],
+  hideNoveltyVoices: false,
+  activeProfile: "scripture",
+};
+
+const VOICE_PROFILES: VoiceProfile[] = [
+  {
+    id: "pastor",
+    label: "Pastor",
+    description: "A steady, lower voice for preaching prep and longer passages.",
+    suggestedRate: 0.95,
+  },
+  {
+    id: "teacher",
+    label: "Teacher",
+    description: "Clear and balanced for lessons, commentary, and study notes.",
+    suggestedRate: 1,
+  },
+  {
+    id: "scripture",
+    label: "Scripture",
+    description: "Readable and reverent for KJV Bible listening.",
+    suggestedRate: 0.9,
+  },
+  {
+    id: "audiobook",
+    label: "Audiobook",
+    description: "Comfortable pacing for library books and longer listening.",
+    suggestedRate: 1,
+  },
+  {
+    id: "devotional",
+    label: "Devotional",
+    description: "Softer pacing for prayer, journal, and devotional reading.",
+    suggestedRate: 0.9,
+  },
+  {
+    id: "fast-study",
+    label: "Fast Study",
+    description: "Faster playback for review and study scanning.",
+    suggestedRate: 1.35,
+  },
+];
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
   {
@@ -9051,6 +9119,37 @@ function saveBibleBookMastery(state: BibleBookMasteryState) {
   window.localStorage.setItem(BIBLE_MASTERY_KEY, JSON.stringify(state));
 }
 
+function normalizeVoiceSettings(settings?: Partial<VoiceSettings>): VoiceSettings {
+  const validProfileIds = new Set(VOICE_PROFILES.map((profile) => profile.id));
+  return {
+    ...DEFAULT_VOICE_SETTINGS,
+    ...settings,
+    selectedVoiceURI: typeof settings?.selectedVoiceURI === "string" ? settings.selectedVoiceURI : "",
+    favoriteVoiceURIs: Array.isArray(settings?.favoriteVoiceURIs) ? Array.from(new Set(settings.favoriteVoiceURIs.filter(Boolean))) : [],
+    maleFavoriteVoiceURIs: Array.isArray(settings?.maleFavoriteVoiceURIs) ? Array.from(new Set(settings.maleFavoriteVoiceURIs.filter(Boolean))) : [],
+    femaleFavoriteVoiceURIs: Array.isArray(settings?.femaleFavoriteVoiceURIs) ? Array.from(new Set(settings.femaleFavoriteVoiceURIs.filter(Boolean))) : [],
+    hideNoveltyVoices: Boolean(settings?.hideNoveltyVoices),
+    activeProfile: validProfileIds.has(settings?.activeProfile as VoiceProfileId) ? settings!.activeProfile! : DEFAULT_VOICE_SETTINGS.activeProfile,
+  };
+}
+
+function loadVoiceSettings(): VoiceSettings {
+  if (typeof window === "undefined") return DEFAULT_VOICE_SETTINGS;
+
+  try {
+    const raw = window.localStorage.getItem(VOICE_SETTINGS_KEY);
+    if (!raw) return DEFAULT_VOICE_SETTINGS;
+    return normalizeVoiceSettings(JSON.parse(raw) as Partial<VoiceSettings>);
+  } catch {
+    return DEFAULT_VOICE_SETTINGS;
+  }
+}
+
+function saveVoiceSettings(settings: VoiceSettings) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(VOICE_SETTINGS_KEY, JSON.stringify(normalizeVoiceSettings(settings)));
+}
+
 function markBibleBookMasteryChapter(
   state: BibleBookMasteryState,
   bookName: string,
@@ -9518,8 +9617,9 @@ export default function Home() {
   const [includeVerseReferences, setIncludeVerseReferences] = useState(false);
   const [includeChapterHeadings, setIncludeChapterHeadings] = useState(true);
   const [hasSpeechSynthesis, setHasSpeechSynthesis] = useState(false);
-  const [speechVoices, setSpeechVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [allSpeechVoices, setAllSpeechVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedSpeechVoiceURI, setSelectedSpeechVoiceURI] = useState("");
+  const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>(DEFAULT_VOICE_SETTINGS);
   const [todayProverbDay, setTodayProverbDay] = useState(1);
   const [libraryFontSize, setLibraryFontSize] = useState(18);
   const [speechState, setSpeechState] = useState<SpeechState>({
@@ -9548,6 +9648,10 @@ export default function Home() {
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
+  const speechVoices = useMemo(
+    () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
+    [allSpeechVoices, voiceSettings],
+  );
 
   useEffect(() => {
     function openHiddenAdminAreas() {
@@ -10897,6 +11001,7 @@ export default function Home() {
       setRecentPassages(loadRecentPassages());
       setFavoritePassages(loadFavoritePassages());
       setBibleMarkers(loadBibleMarkers());
+      setVoiceSettings(loadVoiceSettings());
       setLocalStudyDataLoaded(true);
     });
   }, []);
@@ -10924,9 +11029,7 @@ export default function Home() {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
 
     const updateVoices = () => {
-      const voices = sortSpeechVoices(window.speechSynthesis.getVoices().filter(isPreferredSpeechVoice));
-      setSpeechVoices(voices);
-      setSelectedSpeechVoiceURI((current) => voices.some((voice) => voice.voiceURI === current) ? current : voices[0]?.voiceURI || "");
+      setAllSpeechVoices(window.speechSynthesis.getVoices().filter(isEnglishSpeechVoice));
     };
 
     updateVoices();
@@ -10935,6 +11038,16 @@ export default function Home() {
       window.speechSynthesis.removeEventListener("voiceschanged", updateVoices);
     };
   }, []);
+
+  useEffect(() => {
+    queueMicrotask(() => {
+      setSelectedSpeechVoiceURI((current) => {
+        if (voiceSettings.selectedVoiceURI && speechVoices.some((voice) => voice.voiceURI === voiceSettings.selectedVoiceURI)) return voiceSettings.selectedVoiceURI;
+        if (speechVoices.some((voice) => voice.voiceURI === current)) return current;
+        return speechVoices[0]?.voiceURI || "";
+      });
+    });
+  }, [speechVoices, voiceSettings.selectedVoiceURI]);
 
   useEffect(() => {
     let cancelled = false;
@@ -12028,9 +12141,49 @@ export default function Home() {
     }));
   }
 
+  function updateVoiceSettings(patch: Partial<VoiceSettings>) {
+    setVoiceSettings((current) => {
+      const next = normalizeVoiceSettings({ ...current, ...patch });
+      saveVoiceSettings(next);
+      return next;
+    });
+  }
+
+  function toggleVoiceFavorite(group: VoiceFavoriteGroup, voiceURI = selectedSpeechVoiceURI) {
+    if (!voiceURI) return;
+    const key =
+      group === "male"
+        ? "maleFavoriteVoiceURIs"
+        : group === "female"
+          ? "femaleFavoriteVoiceURIs"
+          : "favoriteVoiceURIs";
+    const label = group === "male" ? "male favorite" : group === "female" ? "female favorite" : "favorite";
+
+    setVoiceSettings((current) => {
+      const currentValues = current[key];
+      const exists = currentValues.includes(voiceURI);
+      const next = normalizeVoiceSettings({
+        ...current,
+        [key]: exists ? currentValues.filter((item) => item !== voiceURI) : [voiceURI, ...currentValues].slice(0, 12),
+      });
+      saveVoiceSettings(next);
+      setSyncMessage(exists ? "Voice removed from favorites." : `Voice saved as a ${label}.`);
+      return next;
+    });
+  }
+
+  function applyVoiceProfile(profileId: VoiceProfileId) {
+    const profile = VOICE_PROFILES.find((candidate) => candidate.id === profileId);
+    if (!profile) return;
+    updateVoiceSettings({ activeProfile: profileId });
+    updateSpeechRate(profile.suggestedRate);
+    setSyncMessage(`${profile.label} voice profile selected.`);
+  }
+
   function handleSpeechVoiceChange(voiceURI: string) {
     selectedSpeechVoiceURIRef.current = voiceURI;
     setSelectedSpeechVoiceURI(voiceURI);
+    updateVoiceSettings({ selectedVoiceURI: voiceURI });
 
     if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
     if (!speechState.playing || speechState.paused || !speechChunksRef.current.length) return;
@@ -13434,8 +13587,10 @@ export default function Home() {
                 includeVerseReferences={includeVerseReferences}
                 includeChapterHeadings={includeChapterHeadings}
                 hasSpeechSynthesis={hasSpeechSynthesis}
+                allSpeechVoices={allSpeechVoices}
                 speechVoices={speechVoices}
                 selectedSpeechVoiceURI={selectedSpeechVoiceURI}
+                voiceSettings={voiceSettings}
                 playlists={biblePlaylists}
                 activePlaylistId={activeStudyPlaylistId}
                 activePlaylistItemIndex={studyPlaylistCurrentIndex}
@@ -13473,6 +13628,9 @@ export default function Home() {
                 onIncludeChapterHeadingsChange={setIncludeChapterHeadings}
                 onSpeechRateChange={updateSpeechRate}
                 onSpeechVoiceChange={handleSpeechVoiceChange}
+                onVoiceSettingsChange={updateVoiceSettings}
+                onToggleVoiceFavorite={toggleVoiceFavorite}
+                onApplyVoiceProfile={applyVoiceProfile}
                 onSleepTimerChange={setSleepTimer}
                 onPlaylistNameChange={setPlaylistName}
                 onSelectPlaylist={selectStudyPlaylist}
@@ -13645,8 +13803,11 @@ export default function Home() {
                 stats={libraryStats}
                 fontSize={libraryFontSize}
                 speechState={speechState}
+                hasSpeechSynthesis={hasSpeechSynthesis}
+                allSpeechVoices={allSpeechVoices}
                 speechVoices={speechVoices}
                 selectedSpeechVoiceURI={selectedSpeechVoiceURI}
+                voiceSettings={voiceSettings}
                 readerRef={libraryReaderRef}
                 onCategoryChange={setLibraryCategory}
                 onSearchTermChange={setLibrarySearchTerm}
@@ -13704,6 +13865,9 @@ export default function Home() {
                   }
                 }}
                 onSpeechVoiceChange={handleSpeechVoiceChange}
+                onVoiceSettingsChange={updateVoiceSettings}
+                onToggleVoiceFavorite={toggleVoiceFavorite}
+                onApplyVoiceProfile={applyVoiceProfile}
                 onStopSpeech={() => stopSpeech()}
                 onSleepTimerChange={setSleepTimer}
                 onMarkFinished={markLibraryFinished}
@@ -13907,11 +14071,20 @@ export default function Home() {
                 masteryCount={Object.keys(bibleBookMastery).length}
                 playlistCount={biblePlaylists.length}
                 memoryVerseCount={scriptureMemory.length}
+                hasSpeechSynthesis={hasSpeechSynthesis}
+                allSpeechVoices={allSpeechVoices}
+                speechVoices={speechVoices}
+                selectedSpeechVoiceURI={selectedSpeechVoiceURI}
+                voiceSettings={voiceSettings}
                 exportMessage={syncMessage}
                 onAuthEmailChange={setAuthEmail}
                 onSendMagicLink={sendMagicLink}
                 onSignOut={signOut}
                 onExportStudyData={exportStudyData}
+                onSpeechVoiceChange={handleSpeechVoiceChange}
+                onVoiceSettingsChange={updateVoiceSettings}
+                onToggleVoiceFavorite={toggleVoiceFavorite}
+                onApplyVoiceProfile={applyVoiceProfile}
               />
             )}
           </section>
@@ -16219,8 +16392,10 @@ function BibleReader({
   includeVerseReferences,
   includeChapterHeadings,
   hasSpeechSynthesis,
+  allSpeechVoices,
   speechVoices,
   selectedSpeechVoiceURI,
+  voiceSettings,
   playlists,
   activePlaylistId,
   activePlaylistItemIndex,
@@ -16258,6 +16433,9 @@ function BibleReader({
   onIncludeChapterHeadingsChange,
   onSpeechRateChange,
   onSpeechVoiceChange,
+  onVoiceSettingsChange,
+  onToggleVoiceFavorite,
+  onApplyVoiceProfile,
   onSleepTimerChange,
   onPlaylistNameChange,
   onSelectPlaylist,
@@ -16331,8 +16509,10 @@ function BibleReader({
   includeVerseReferences: boolean;
   includeChapterHeadings: boolean;
   hasSpeechSynthesis: boolean;
+  allSpeechVoices: SpeechSynthesisVoice[];
   speechVoices: SpeechSynthesisVoice[];
   selectedSpeechVoiceURI: string;
+  voiceSettings: VoiceSettings;
   playlists: BibleAudioPlaylist[];
   activePlaylistId: string | null;
   activePlaylistItemIndex: number;
@@ -16370,6 +16550,9 @@ function BibleReader({
   onIncludeChapterHeadingsChange: (include: boolean) => void;
   onSpeechRateChange: (rate: number) => void;
   onSpeechVoiceChange: (voiceURI: string) => void;
+  onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
+  onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
+  onApplyVoiceProfile: (profileId: VoiceProfileId) => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onPlaylistNameChange: (name: string) => void;
   onSelectPlaylist: (playlistId: string) => void;
@@ -16668,7 +16851,7 @@ function BibleReader({
             <Volume2 size={15} />
             Voice
             <select className="min-w-0 flex-1 bg-transparent text-[var(--ink)] outline-none" value={selectedSpeechVoiceURI} onChange={(event) => onSpeechVoiceChange(event.target.value)}>
-              {speechVoices.length ? groupedSpeechVoices(speechVoices).map((group) => (
+              {speechVoices.length ? groupedSpeechVoices(speechVoices, voiceSettings).map((group) => (
                 <optgroup key={`bible-voice-group-${group.category}`} label={group.category}>
                   {group.voices.map((voice) => (
                     <option key={voice.voiceURI} value={voice.voiceURI}>{voiceDisplayName(voice)}</option>
@@ -16692,6 +16875,19 @@ function BibleReader({
             </select>
           </label>
         </div>
+
+        <VoiceControlPanel
+          allVoices={allSpeechVoices}
+          visibleVoices={speechVoices}
+          selectedVoiceURI={selectedSpeechVoiceURI}
+          voiceSettings={voiceSettings}
+          hasSpeechSynthesis={hasSpeechSynthesis}
+          compact
+          onSpeechVoiceChange={onSpeechVoiceChange}
+          onVoiceSettingsChange={onVoiceSettingsChange}
+          onToggleVoiceFavorite={onToggleVoiceFavorite}
+          onApplyVoiceProfile={onApplyVoiceProfile}
+        />
 
         <div className="mt-3 grid gap-2 md:grid-cols-3">
           <button className="inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--ink)]" onClick={onListenFromCurrentVerse} type="button">
@@ -20050,9 +20246,13 @@ function libraryReadingMinutes(resource: LibraryResource) {
   return `${Math.max(1, Math.round(resource.word_count / 225))} min read`;
 }
 
-function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
-  const name = voice.name.toLowerCase();
+function isEnglishSpeechVoice(voice: SpeechSynthesisVoice) {
   const lang = voice.lang.toLowerCase();
+  return !lang || lang.startsWith("en");
+}
+
+function isNoveltySpeechVoice(voice: SpeechSynthesisVoice) {
+  const name = voice.name.toLowerCase();
   const noveltyNames = [
     "albert",
     "bad news",
@@ -20077,8 +20277,7 @@ function isPreferredSpeechVoice(voice: SpeechSynthesisVoice) {
     "wobble",
     "zarvox",
   ];
-  const isEnglish = !lang || lang.startsWith("en");
-  return isEnglish && !noveltyNames.some((novelty) => name.includes(novelty));
+  return noveltyNames.some((novelty) => name.includes(novelty));
 }
 
 function speechVoiceCategory(voice: SpeechSynthesisVoice) {
@@ -20091,22 +20290,91 @@ function speechVoiceCategory(voice: SpeechSynthesisVoice) {
   return voice.localService ? "Device Voices" : "Browser Voices";
 }
 
+function speechVoiceGender(voice: SpeechSynthesisVoice): "male" | "female" | "unknown" {
+  const category = speechVoiceCategory(voice);
+  const lower = voice.name.toLowerCase();
+  if (category.includes("Female") || lower.includes("female")) return "female";
+  if (category.includes("Male") || lower.includes("male")) return "male";
+  return "unknown";
+}
+
+function isAppleSpeechVoice(voice: SpeechSynthesisVoice) {
+  return speechVoiceCategory(voice).startsWith("Apple") || voice.voiceURI.toLowerCase().includes("apple");
+}
+
+function voiceProfileById(profileId: VoiceProfileId) {
+  return VOICE_PROFILES.find((profile) => profile.id === profileId) ?? VOICE_PROFILES[0];
+}
+
+function profileVoiceRank(voice: SpeechSynthesisVoice, profileId: VoiceProfileId) {
+  const lower = voice.name.toLowerCase();
+  const gender = speechVoiceGender(voice);
+  const namedPriority: Record<VoiceProfileId, string[]> = {
+    pastor: ["alex", "daniel", "oliver", "thomas", "aaron", "arthur", "reed"],
+    teacher: ["samantha", "alex", "daniel", "ava", "allison", "karen"],
+    scripture: ["alex", "daniel", "samantha", "moira", "oliver", "thomas"],
+    audiobook: ["samantha", "alex", "daniel", "ava", "karen", "moira"],
+    devotional: ["samantha", "moira", "karen", "tessa", "ava", "allison"],
+    "fast-study": ["alex", "samantha", "daniel", "ava", "oliver"],
+  };
+  if (namedPriority[profileId].some((name) => lower.includes(name))) return 0;
+  if ((profileId === "pastor" || profileId === "scripture") && gender === "male") return 1;
+  if (profileId === "devotional" && gender === "female") return 1;
+  if (isAppleSpeechVoice(voice)) return 2;
+  if (voice.localService && !isNoveltySpeechVoice(voice)) return 3;
+  return 4;
+}
+
+function isRecommendedSpeechVoice(voice: SpeechSynthesisVoice, profileId: VoiceProfileId) {
+  return profileVoiceRank(voice, profileId) <= 2 && !isNoveltySpeechVoice(voice);
+}
+
 function voiceDisplayName(voice: SpeechSynthesisVoice) {
   return `${voice.name} · ${speechVoiceCategory(voice)}`;
 }
 
-function groupedSpeechVoices(voices: SpeechSynthesisVoice[]) {
-  return (["Apple Siri", "Apple Female", "Apple Male", "Female", "Male", "Device Voices", "Browser Voices"] as const).map((category) => ({
-    category,
-    voices: voices.filter((voice) => speechVoiceCategory(voice) === category),
-  })).filter((group) => group.voices.length);
+function visibleSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSettings) {
+  return voices.filter((voice) => isEnglishSpeechVoice(voice) && (!settings.hideNoveltyVoices || !isNoveltySpeechVoice(voice)));
 }
 
-function sortSpeechVoices(voices: SpeechSynthesisVoice[]) {
+function groupedSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSettings) {
+  const used = new Set<string>();
+  const groups: Array<{ category: string; voices: SpeechSynthesisVoice[] }> = [];
+  const addGroup = (category: string, groupVoices: SpeechSynthesisVoice[]) => {
+    const uniqueVoices = groupVoices.filter((voice) => {
+      if (used.has(voice.voiceURI)) return false;
+      used.add(voice.voiceURI);
+      return true;
+    });
+    if (uniqueVoices.length) groups.push({ category, voices: uniqueVoices });
+  };
+
+  const profile = voiceProfileById(settings.activeProfile);
+  addGroup("Favorite Voices", voices.filter((voice) => settings.favoriteVoiceURIs.includes(voice.voiceURI)));
+  addGroup("Male Favorites", voices.filter((voice) => settings.maleFavoriteVoiceURIs.includes(voice.voiceURI)));
+  addGroup("Female Favorites", voices.filter((voice) => settings.femaleFavoriteVoiceURIs.includes(voice.voiceURI)));
+  addGroup(`Recommended: ${profile.label}`, voices.filter((voice) => isRecommendedSpeechVoice(voice, settings.activeProfile)));
+  (["Apple Siri", "Apple Female", "Apple Male", "Female", "Male", "Device Voices", "Browser Voices"] as const).forEach((category) => {
+    addGroup(category, voices.filter((voice) => speechVoiceCategory(voice) === category));
+  });
+  addGroup("Other Voices", voices);
+  return groups;
+}
+
+function sortSpeechVoices(voices: SpeechSynthesisVoice[], settings: VoiceSettings) {
   const categoryOrder = new Map(
     ["Apple Siri", "Apple Female", "Apple Male", "Female", "Male", "Device Voices", "Browser Voices"].map((category, index) => [category, index]),
   );
   return [...voices].sort((a, b) => {
+    const favoriteDifference =
+      Number(!settings.favoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.favoriteVoiceURIs.includes(b.voiceURI)) ||
+      Number(!settings.maleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.maleFavoriteVoiceURIs.includes(b.voiceURI)) ||
+      Number(!settings.femaleFavoriteVoiceURIs.includes(a.voiceURI)) - Number(!settings.femaleFavoriteVoiceURIs.includes(b.voiceURI));
+    if (favoriteDifference) return favoriteDifference;
+    const profileDifference = profileVoiceRank(a, settings.activeProfile) - profileVoiceRank(b, settings.activeProfile);
+    if (profileDifference) return profileDifference;
+    const noveltyDifference = Number(isNoveltySpeechVoice(a)) - Number(isNoveltySpeechVoice(b));
+    if (noveltyDifference) return noveltyDifference;
     const categoryDifference = (categoryOrder.get(speechVoiceCategory(a)) ?? 99) - (categoryOrder.get(speechVoiceCategory(b)) ?? 99);
     if (categoryDifference) return categoryDifference;
     const localDifference = Number(b.localService) - Number(a.localService);
@@ -20543,8 +20811,11 @@ function LibraryScreen({
   stats,
   fontSize,
   speechState,
+  hasSpeechSynthesis,
+  allSpeechVoices,
   speechVoices,
   selectedSpeechVoiceURI,
+  voiceSettings,
   readerRef,
   onCategoryChange,
   onSearchTermChange,
@@ -20578,6 +20849,9 @@ function LibraryScreen({
   onListenResource,
   onSpeechRateChange,
   onSpeechVoiceChange,
+  onVoiceSettingsChange,
+  onToggleVoiceFavorite,
+  onApplyVoiceProfile,
   onStopSpeech,
   onSleepTimerChange,
   onMarkFinished,
@@ -20621,8 +20895,11 @@ function LibraryScreen({
   };
   fontSize: number;
   speechState: SpeechState;
+  hasSpeechSynthesis: boolean;
+  allSpeechVoices: SpeechSynthesisVoice[];
   speechVoices: SpeechSynthesisVoice[];
   selectedSpeechVoiceURI: string;
+  voiceSettings: VoiceSettings;
   readerRef: React.RefObject<HTMLDivElement | null>;
   onCategoryChange: (category: string) => void;
   onSearchTermChange: (value: string) => void;
@@ -20656,6 +20933,9 @@ function LibraryScreen({
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
   onSpeechVoiceChange: (voiceURI: string) => void;
+  onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
+  onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
+  onApplyVoiceProfile: (profileId: VoiceProfileId) => void;
   onStopSpeech: () => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onMarkFinished: (resource: LibraryResource) => void;
@@ -20707,11 +20987,17 @@ function LibraryScreen({
         onAddIllustrationToSermon={onAddIllustrationToSermon}
         onExportAnnotations={onExportAnnotations}
         speechState={speechState}
+        hasSpeechSynthesis={hasSpeechSynthesis}
+        allSpeechVoices={allSpeechVoices}
         speechVoices={speechVoices}
         selectedSpeechVoiceURI={selectedSpeechVoiceURI}
+        voiceSettings={voiceSettings}
         onListen={() => onListenResource(activeResource, activeText, listening?.progress ?? progress?.progress ?? 0)}
         onSpeechRateChange={onSpeechRateChange}
         onSpeechVoiceChange={onSpeechVoiceChange}
+        onVoiceSettingsChange={onVoiceSettingsChange}
+        onToggleVoiceFavorite={onToggleVoiceFavorite}
+        onApplyVoiceProfile={onApplyVoiceProfile}
         onStopSpeech={onStopSpeech}
         onSleepTimerChange={onSleepTimerChange}
         onMarkFinished={() => onMarkFinished(activeResource)}
@@ -24291,11 +24577,17 @@ function LibraryReader({
   onAddIllustrationToSermon,
   onExportAnnotations,
   speechState,
+  hasSpeechSynthesis,
+  allSpeechVoices,
   speechVoices,
   selectedSpeechVoiceURI,
+  voiceSettings,
   onListen,
   onSpeechRateChange,
   onSpeechVoiceChange,
+  onVoiceSettingsChange,
+  onToggleVoiceFavorite,
+  onApplyVoiceProfile,
   onStopSpeech,
   onSleepTimerChange,
   onMarkFinished,
@@ -24331,11 +24623,17 @@ function LibraryReader({
   onAddIllustrationToSermon: () => void;
   onExportAnnotations: () => void;
   speechState: SpeechState;
+  hasSpeechSynthesis: boolean;
+  allSpeechVoices: SpeechSynthesisVoice[];
   speechVoices: SpeechSynthesisVoice[];
   selectedSpeechVoiceURI: string;
+  voiceSettings: VoiceSettings;
   onListen: () => void;
   onSpeechRateChange: (rate: number) => void;
   onSpeechVoiceChange: (voiceURI: string) => void;
+  onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
+  onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
+  onApplyVoiceProfile: (profileId: VoiceProfileId) => void;
   onStopSpeech: () => void;
   onSleepTimerChange: (minutes: number | null) => void;
   onMarkFinished: () => void;
@@ -24513,7 +24811,7 @@ function LibraryReader({
               value={selectedSpeechVoiceURI}
               onChange={(event) => onSpeechVoiceChange(event.target.value)}
             >
-              {speechVoices.length ? groupedSpeechVoices(speechVoices).map((group) => (
+              {speechVoices.length ? groupedSpeechVoices(speechVoices, voiceSettings).map((group) => (
                 <optgroup key={`voice-group-${group.category}`} label={group.category}>
                   {group.voices.map((voice) => (
                     <option key={voice.voiceURI} value={voice.voiceURI}>
@@ -24643,6 +24941,18 @@ function LibraryReader({
             </button>
           ))}
         </div>
+        <VoiceControlPanel
+          allVoices={allSpeechVoices}
+          visibleVoices={speechVoices}
+          selectedVoiceURI={selectedSpeechVoiceURI}
+          voiceSettings={voiceSettings}
+          hasSpeechSynthesis={hasSpeechSynthesis}
+          compact
+          onSpeechVoiceChange={onSpeechVoiceChange}
+          onVoiceSettingsChange={onVoiceSettingsChange}
+          onToggleVoiceFavorite={onToggleVoiceFavorite}
+          onApplyVoiceProfile={onApplyVoiceProfile}
+        />
         <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
           <div className="grid gap-2 md:grid-cols-[1fr_1fr_auto_auto]">
             <input
@@ -24750,6 +25060,158 @@ function LibraryReader({
         )}
       </article>
     </div>
+  );
+}
+
+function VoiceControlPanel({
+  allVoices,
+  visibleVoices,
+  selectedVoiceURI,
+  voiceSettings,
+  hasSpeechSynthesis,
+  compact = false,
+  onSpeechVoiceChange,
+  onVoiceSettingsChange,
+  onToggleVoiceFavorite,
+  onApplyVoiceProfile,
+}: {
+  allVoices: SpeechSynthesisVoice[];
+  visibleVoices: SpeechSynthesisVoice[];
+  selectedVoiceURI: string;
+  voiceSettings: VoiceSettings;
+  hasSpeechSynthesis: boolean;
+  compact?: boolean;
+  onSpeechVoiceChange: (voiceURI: string) => void;
+  onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
+  onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
+  onApplyVoiceProfile: (profileId: VoiceProfileId) => void;
+}) {
+  const selectedVoice = allVoices.find((voice) => voice.voiceURI === selectedVoiceURI) ?? visibleVoices[0] ?? null;
+  const selectedVoiceName = selectedVoice ? voiceDisplayName(selectedVoice) : "Default device voice";
+  const activeProfile = voiceProfileById(voiceSettings.activeProfile);
+  const diagnostics = useMemo(() => {
+    const appleVoices = allVoices.filter(isAppleSpeechVoice).length;
+    const deviceVoices = allVoices.filter((voice) => voice.localService).length;
+    const browserVoices = allVoices.filter((voice) => !voice.localService).length;
+    const noveltyVoices = allVoices.filter(isNoveltySpeechVoice).length;
+    return { appleVoices, deviceVoices, browserVoices, noveltyVoices };
+  }, [allVoices]);
+  const favoriteActive = selectedVoice ? voiceSettings.favoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
+  const maleFavoriteActive = selectedVoice ? voiceSettings.maleFavoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
+  const femaleFavoriteActive = selectedVoice ? voiceSettings.femaleFavoriteVoiceURIs.includes(selectedVoice.voiceURI) : false;
+
+  return (
+    <details className={`${compact ? "mt-3" : "mt-4"} rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3`}>
+      <summary className="cursor-pointer list-none">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Voice Preferences</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+              {hasSpeechSynthesis ? `${selectedVoiceName} · ${activeProfile.label}` : "Speech synthesis is not available in this browser."}
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+            {visibleVoices.length} voice{visibleVoices.length === 1 ? "" : "s"}
+          </span>
+        </div>
+      </summary>
+
+      <div className="mt-4 grid gap-4">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Voice Profiles</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {VOICE_PROFILES.map((profile) => (
+              <button
+                key={`voice-profile-${profile.id}`}
+                className={`rounded-full px-3 py-2 text-xs font-semibold ${
+                  voiceSettings.activeProfile === profile.id
+                    ? "bg-[var(--green)] text-white"
+                    : "border border-[var(--line)] bg-white text-[var(--green)]"
+                }`}
+                onClick={() => onApplyVoiceProfile(profile.id)}
+                type="button"
+              >
+                {profile.label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{activeProfile.description}</p>
+        </div>
+
+        <div className="grid gap-2 md:grid-cols-[1.3fr_1fr]">
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Select Voice
+            <select
+              className="mt-1 h-11 w-full rounded-full border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={selectedVoiceURI}
+              onChange={(event) => onSpeechVoiceChange(event.target.value)}
+            >
+              {visibleVoices.length ? groupedSpeechVoices(visibleVoices, voiceSettings).map((group) => (
+                <optgroup key={`panel-voice-group-${group.category}`} label={group.category}>
+                  {group.voices.map((voice) => (
+                    <option key={voice.voiceURI} value={voice.voiceURI}>{voiceDisplayName(voice)}</option>
+                  ))}
+                </optgroup>
+              )) : <option value="">Default device voice</option>}
+            </select>
+          </label>
+
+          <label className="flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+            <input
+              checked={voiceSettings.hideNoveltyVoices}
+              onChange={(event) => onVoiceSettingsChange({ hideNoveltyVoices: event.target.checked })}
+              type="checkbox"
+            />
+            Hide novelty voices
+            <span className="text-xs font-normal text-[var(--muted)]">(off by default)</span>
+          </label>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <button
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold ${
+              favoriteActive ? "bg-[var(--highlight)] text-[var(--ink)]" : "border border-[var(--line)] bg-white text-[var(--green)]"
+            }`}
+            disabled={!selectedVoice}
+            onClick={() => onToggleVoiceFavorite("general")}
+            type="button"
+          >
+            <Star size={14} />
+            Favorite
+          </button>
+          <button
+            className={`rounded-full px-3 py-2 text-xs font-semibold ${
+              maleFavoriteActive ? "bg-[var(--highlight)] text-[var(--ink)]" : "border border-[var(--line)] bg-white text-[var(--green)]"
+            }`}
+            disabled={!selectedVoice}
+            onClick={() => onToggleVoiceFavorite("male")}
+            type="button"
+          >
+            Male favorite
+          </button>
+          <button
+            className={`rounded-full px-3 py-2 text-xs font-semibold ${
+              femaleFavoriteActive ? "bg-[var(--highlight)] text-[var(--ink)]" : "border border-[var(--line)] bg-white text-[var(--green)]"
+            }`}
+            disabled={!selectedVoice}
+            onClick={() => onToggleVoiceFavorite("female")}
+            type="button"
+          >
+            Female favorite
+          </button>
+        </div>
+
+        <div className="grid gap-2 md:grid-cols-4">
+          <StatusCard label="Browser voice" status={`${diagnostics.browserVoices} available`} good={hasSpeechSynthesis} />
+          <StatusCard label="Apple voice" status={`${diagnostics.appleVoices} detected`} good={diagnostics.appleVoices > 0} />
+          <StatusCard label="Device voice" status={`${diagnostics.deviceVoices} local`} good={diagnostics.deviceVoices > 0} />
+          <StatusCard label="Premium voice" status="Future option" good={false} />
+        </div>
+        <p className="text-xs leading-5 text-[var(--muted)]">
+          Recommended voices are shown first. Novelty voices detected: {diagnostics.noveltyVoices}. Premium voice engines are planned but not connected to beta listening.
+        </p>
+      </div>
+    </details>
   );
 }
 
@@ -26322,11 +26784,20 @@ function SettingsScreen({
   masteryCount,
   playlistCount,
   memoryVerseCount,
+  hasSpeechSynthesis,
+  allSpeechVoices,
+  speechVoices,
+  selectedSpeechVoiceURI,
+  voiceSettings,
   exportMessage,
   onAuthEmailChange,
   onSendMagicLink,
   onSignOut,
   onExportStudyData,
+  onSpeechVoiceChange,
+  onVoiceSettingsChange,
+  onToggleVoiceFavorite,
+  onApplyVoiceProfile,
 }: {
   hasSupabaseConfig: boolean;
   hasSupabaseUrl: boolean;
@@ -26341,11 +26812,20 @@ function SettingsScreen({
   masteryCount: number;
   playlistCount: number;
   memoryVerseCount: number;
+  hasSpeechSynthesis: boolean;
+  allSpeechVoices: SpeechSynthesisVoice[];
+  speechVoices: SpeechSynthesisVoice[];
+  selectedSpeechVoiceURI: string;
+  voiceSettings: VoiceSettings;
   exportMessage: string;
   onAuthEmailChange: (value: string) => void;
   onSendMagicLink: () => void;
   onSignOut: () => void;
   onExportStudyData: () => void;
+  onSpeechVoiceChange: (voiceURI: string) => void;
+  onVoiceSettingsChange: (settings: Partial<VoiceSettings>) => void;
+  onToggleVoiceFavorite: (group: VoiceFavoriteGroup, voiceURI?: string) => void;
+  onApplyVoiceProfile: (profileId: VoiceProfileId) => void;
 }) {
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -26428,6 +26908,24 @@ function SettingsScreen({
           <StatusCard label="Storage mode" status={user ? "Supabase sync" : "Local fallback"} good />
           <StatusCard label="Sync state" status={exportMessage || (user ? "Ready" : "Saving locally")} good={!exportMessage.toLowerCase().includes("could not")} />
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Voice System</h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+          Choose preferred device voices for Scripture, books, devotionals, and faster study listening. Paid voice engines are not connected in beta.
+        </p>
+        <VoiceControlPanel
+          allVoices={allSpeechVoices}
+          visibleVoices={speechVoices}
+          selectedVoiceURI={selectedSpeechVoiceURI}
+          voiceSettings={voiceSettings}
+          hasSpeechSynthesis={hasSpeechSynthesis}
+          onSpeechVoiceChange={onSpeechVoiceChange}
+          onVoiceSettingsChange={onVoiceSettingsChange}
+          onToggleVoiceFavorite={onToggleVoiceFavorite}
+          onApplyVoiceProfile={onApplyVoiceProfile}
+        />
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
