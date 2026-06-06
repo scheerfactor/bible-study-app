@@ -2319,6 +2319,14 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
     recommendedUse: "Historical comparison only, with visible perspective notes.",
   },
   {
+    author: "Matthew Poole",
+    resourceTitle: "Matthew Poole's English Annotations / Commentary",
+    status: "Needs Review",
+    sourcePlan: "Identify an original public-domain source, document edition details, and stage one small reviewed sample before any import.",
+    rightsNotes: "Do not import modern edited web copies or unclear source text. Exact source and reuse terms are required first.",
+    recommendedUse: "Potential Puritan-era comparison voice for teachers and preachers after source review.",
+  },
+  {
     author: "The Pulpit Commentary",
     resourceTitle: "The Pulpit Commentary",
     status: "Needs Review",
@@ -19633,12 +19641,18 @@ function commentaryReferenceSearchText(entry: CommentaryEntry) {
 
 function commentaryEntryMatchesSearch(entry: CommentaryEntry, terms: string[]) {
   if (!terms.length) return true;
+  const profile = commentaryGuideProfileFor(entry.author);
   const haystack = [
     commentaryReferenceSearchText(entry),
     entry.author,
     entry.resource_title,
     entry.source_title ?? "",
     entry.recommended_use ?? "",
+    commentaryStudyLabel(entry),
+    profile?.bestFor.join(" ") ?? "",
+    profile?.strengths.join(" ") ?? "",
+    profile?.writingStyle ?? "",
+    profile?.doctrinalNotes ?? "",
     entry.entry_text,
   ].join(" ").toLowerCase();
   return terms.every((term) => haystack.includes(term));
@@ -24491,7 +24505,7 @@ function LibraryMediaCenter({
             <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">No duplicate audiobook shelf</span>
           </div>
           <div className="mt-3 grid gap-2 text-xs font-semibold text-[var(--muted)] md:grid-cols-3">
-            <span className="rounded-xl bg-white px-3 py-2">Narrator: device voice now</span>
+            <span className="rounded-xl bg-white px-3 py-2">Narrator: current voice profile</span>
             <span className="rounded-xl bg-white px-3 py-2">Follow text: prepared</span>
             <span className="rounded-xl bg-white px-3 py-2">Audio files: rights-gated later</span>
           </div>
@@ -27194,6 +27208,7 @@ function LibraryDetail({
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           <StatusCard label="Narrator" status={audiobookMeta.narrator} good />
+          <StatusCard label="Voice profile" status="Uses the selected Scripture, Teacher, Pastor, or Audiobook profile" good />
           <StatusCard label="Duration" status={audiobookMeta.duration} good={Boolean(resource.word_count || resource.audiobook_duration)} />
           <StatusCard label="Text sync" status={audiobookMeta.textSyncAvailable ? "Prepared" : "Not available yet"} good={audiobookMeta.textSyncAvailable} />
           <StatusCard label="Audio source" status={audiobookMeta.source} good />
@@ -29940,9 +29955,42 @@ function CommentaryGuideCard({ entries, compact = false }: { entries: Commentary
   );
 }
 
-function CommentaryComparisonCard({ entries, compact = false }: { entries: CommentaryEntry[]; compact?: boolean }) {
-  if (!entries.length) return null;
+function CommentaryComparisonCard({
+  entries,
+  compact = false,
+  onSendInsightToSermon,
+}: {
+  entries: CommentaryEntry[];
+  compact?: boolean;
+  onSendInsightToSermon?: (entry: CommentaryEntry) => void;
+}) {
   const insights = commentaryComparisonInsights(entries);
+  const groupedEntries = useMemo(() => {
+    const authorOrder = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside"];
+    return Array.from(
+    entries.reduce<Map<string, CommentaryEntry[]>>((groups, entry) => {
+      groups.set(entry.author, [...(groups.get(entry.author) ?? []), entry]);
+      return groups;
+    }, new Map()),
+    ).sort(([a], [b]) => {
+      const aIndex = authorOrder.indexOf(a);
+      const bIndex = authorOrder.indexOf(b);
+      return (aIndex === -1 ? authorOrder.length : aIndex) - (bIndex === -1 ? authorOrder.length : bIndex) || a.localeCompare(b);
+    });
+  }, [entries]);
+  const defaultSelectedAuthors = useMemo(() => groupedEntries.slice(0, compact ? 3 : 4).map(([author]) => author), [compact, groupedEntries]);
+  const [selectedAuthors, setSelectedAuthors] = useState<string[]>(() => defaultSelectedAuthors);
+  const availableAuthorSet = new Set(groupedEntries.map(([author]) => author));
+  const activeSelectedAuthors = selectedAuthors.filter((author) => availableAuthorSet.has(author));
+  const visibleAuthorSet = new Set(activeSelectedAuthors.length ? activeSelectedAuthors : defaultSelectedAuthors);
+  const visibleGroups = groupedEntries.filter(([author]) => visibleAuthorSet.has(author));
+  const toggleAuthor = (author: string) => {
+    setSelectedAuthors((current) => {
+      if (current.includes(author)) return current.filter((item) => item !== author);
+      return [...current, author];
+    });
+  };
+  if (!entries.length) return null;
 
   return (
     <article className={`rounded-2xl border border-[var(--line)] bg-white ${compact ? "p-3" : "p-4"}`}>
@@ -29955,15 +30003,72 @@ function CommentaryComparisonCard({ entries, compact = false }: { entries: Comme
           {entries.length} reviewed
         </span>
       </div>
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+        {groupedEntries.map(([author, authorEntries]) => (
+          <button
+            key={`commentary-compare-author-${author}`}
+            className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+              visibleAuthorSet.has(author)
+                ? "bg-[var(--green)] text-white"
+                : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+            }`}
+            onClick={() => toggleAuthor(author)}
+            type="button"
+          >
+            {author} · {authorEntries.length}
+          </button>
+        ))}
+      </div>
       <div className="mt-3 grid gap-2 md:grid-cols-2">
         <ComparisonInsight label="Agreement points" body={insights.agreement} />
-        <ComparisonInsight label="Distinct insights" body={insights.distinct} />
+        <ComparisonInsight label="Differences / cautions" body={insights.distinct} />
         <ComparisonInsight label="Teaching value" body={insights.teaching} />
         <ComparisonInsight label="Devotional value" body={insights.devotional} />
       </div>
       {insights.study ? (
         <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{insights.study}</p>
       ) : null}
+      <div className={`mt-3 grid gap-3 ${compact ? "md:grid-cols-1 xl:grid-cols-3" : "md:grid-cols-2 xl:grid-cols-3"}`}>
+        {visibleGroups.map(([author, authorEntries]) => {
+          const entry = authorEntries[0];
+          const profile = commentaryGuideProfileFor(author);
+          return (
+            <article key={`commentary-side-by-side-${author}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">{author}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--green)]">{commentaryStudyLabel(entry)}</p>
+                </div>
+                <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+                  {profile?.bestFor[0] ?? "Reviewed"}
+                </span>
+              </div>
+              <p className="mt-3 line-clamp-4 text-sm leading-6 text-[var(--ink)]">{entry.entry_text}</p>
+              <div className="mt-3 grid gap-2">
+                <ComparisonInsight label="Best use" body={profile?.bestUse ?? entry.recommended_use ?? "Use as a reviewed secondary commentary voice."} />
+                <ComparisonInsight label="Caution" body={profile?.doctrinalNotes ?? "Keep Scripture primary and compare commentary claims with the KJV text."} />
+              </div>
+              <details className="mt-3 rounded-xl bg-white px-3 py-2">
+                <summary className="cursor-pointer text-xs font-semibold text-[var(--green)]">Full commentary</summary>
+                <p className="mt-2 whitespace-pre-wrap text-sm leading-7 text-[var(--ink)]">{entry.entry_text}</p>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+                  {entry.resource_title} · {commentaryReferenceLabel(entry)}
+                </p>
+              </details>
+              {onSendInsightToSermon && (
+                <button
+                  className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                  onClick={() => onSendInsightToSermon(entry)}
+                  type="button"
+                >
+                  <NotebookPen size={14} />
+                  Send insight to sermon
+                </button>
+              )}
+            </article>
+          );
+        })}
+      </div>
     </article>
   );
 }
@@ -30701,7 +30806,7 @@ function StudyDrawer({
             <div className="space-y-3">
               <CommentaryChapterSummaryCard entries={commentaryEntries} compact />
               <CommentaryGuideCard entries={commentaryEntries} compact />
-              <CommentaryComparisonCard entries={commentaryEntries} compact />
+              <CommentaryComparisonCard entries={commentaryEntries} compact onSendInsightToSermon={onAddCommentaryToSermon} />
               <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
                 <h3 className="text-sm font-semibold text-[var(--green)]">Commentary</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">

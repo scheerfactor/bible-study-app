@@ -14,13 +14,13 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 
 | Author | Source | Rights status | Chapters imported | Chapters remaining | Review status |
 | --- | --- | --- | --- | --- | --- |
-| Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 382 public verified chapters: Genesis; Exodus; Psalms; John; Romans; Luke; Amos; Revelation; Acts 1-25; 1 Corinthians; 2 Corinthians 1-9. Full 1,189-chapter set is staged in Needs Review. | Review remaining staged entries by book/chapter before promotion. | Full parser staged; coverage sprint Corinthians batch promoted |
+| Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 1,189 public verified chapters covering all 66 Bible books. | Complete for core chapter-level coverage; keep source notes and spot-check text quality as the UI grows. | Full parser staged and reviewed batches promoted |
 | H. A. Ironside | https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/ and related source paths | Mixed. Romans 1928 source is public domain in the U.S.; John/Luke samples are curated summaries until renewal and edition audit are complete. | 3 chapters: John 3; Romans 5; Luke 24 | Genesis 1 and Exodus 3 remain blocked until exact source and rights verification. | Verified samples only |
-| Albert Barnes | https://www.studylight.org/commentaries/eng/bnb/ | StudyLight Barnes chapter pages state: "These files are public domain." Barnes died in 1870; source pages cite the work as 1870. | 316 public verified chapters: Genesis 1-25; Matthew; Mark; Acts; John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Library expansion Gospels/Acts batch promoted |
-| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 128 public verified chapters: Genesis 1-25; Exodus 1-25; John; Romans; Luke; Amos 1-9; Psalms 1-5; Revelation 1-3. Full 1,189-chapter set is staged in Needs Review. | Continue reviewed batches of 25-50 chapters. | Full pipeline staged; Library Expansion JFB batch 4 promoted |
+| Albert Barnes | https://www.studylight.org/commentaries/eng/bnb/ | StudyLight Barnes chapter pages state: "These files are public domain." Barnes died in 1870; source pages cite the work as 1870. | 771 public verified chapters including Genesis 1-50, Exodus, Leviticus, Numbers, Deuteronomy, Joshua 1-5, Psalms, Prophets, Gospels/Acts, Romans, 1 Corinthians, Amos, and Revelation. | Continue only from chapter pages that preserve public-domain statements. | Completion sprint batches promoted |
+| Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 1,189 public verified chapters covering all 66 Bible books. | Complete for core chapter-level coverage; future work is quality review and comparison UX. | Full pipeline staged and reviewed batches promoted |
 | John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 86 public verified New Testament chapters: Acts 1-25; John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Coverage sprint Acts batch promoted |
 | John Gill | https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ | Existing small reviewed samples remain. A StudyLight Gill path was reviewed and found to use a modernized Larry Pierce edition with rights reserved, so it is not safe for expansion. | 7 reviewed sample entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Find a stable original public-domain Gill source before any larger import. | Samples only; expansion blocked pending source review |
-| Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 316 public verified chapters: Genesis 1-25; Matthew; Mark; Acts; John; Romans; Amos; Luke 24; Psalms; Revelation. | Whole-Bible expansion remains future review work. | Library expansion Gospels/Acts batch promoted |
+| Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 771 public verified chapters including Genesis 1-50, Exodus, Leviticus, Numbers, Deuteronomy, Joshua 1-5, Psalms, Prophets, Gospels/Acts, Romans, 1 Corinthians, Amos, and Revelation. | Continue only from chapter pages that preserve public-domain statements. | Completion sprint batches promoted |
 
 ## Tier 2 Acquisition Queue
 
@@ -31,6 +31,7 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 | Arno C. Gaebelein | Original editions / archive source required | Needs exact edition and renewal review before public import. | 0 commentary entries | Verify source and choose a small reviewed sample. | Needs review |
 | F. W. Grant | Original public-domain source required | Needs source and edition review before public import. | 0 commentary entries | Identify Bible-reference structure and validate sample parsing. | Needs review |
 | J. N. Darby | Original public-domain source required | Needs source, edition, and doctrinal-label review before public import. | 0 commentary entries | Determine whether content fits commentary, library, or both. | Needs review |
+| Matthew Poole | Original public-domain source required | Needs exact source, edition, and reuse review before public import. | 0 commentary entries | Identify an original source and stage one small reviewed sample only. | Needs review |
 | The Biblical Illustrator | Public-domain source/volume edition required | Likely public-domain in older volumes, but exact source and volume review required. | 0 commentary entries | Choose one Bible book/volume, verify source, stage sample. | Needs review |
 | The Pulpit Commentary | Original public-domain volume source required | Older volumes are likely public-domain, but exact scanned/source edition and reuse terms must be documented. | 0 commentary entries | Choose one volume, verify source, stage sample by chapter. | Needs review |
 | F. B. Meyer | Project Gutenberg / verified public-domain books already used in Library | Public-domain works available, but commentary-by-chapter mapping needs review. | 0 commentary entries | Identify passage-based exposition volumes and map to Bible references. | Needs review |
@@ -45,7 +46,18 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 3. Review Matthew Henry staged entries by book/chapter and promote only verified rows.
 4. Continue public-domain source-batch imports for Barnes and Clarke only where chapter pages preserve public-domain statements.
 5. Keep Gill in sample-only mode until a stable original public-domain source is selected; do not use the modernized StudyLight edition.
-6. Add author perspective notes before larger comparative commentary display.
+6. Review Pulpit Commentary, Biblical Illustrator, Matthew Poole, Kelly, Darby, Grant, Gaebelein, and Ironside as candidate sources only until exact source, edition, and rights documentation are complete.
+7. Add author perspective notes before larger comparative commentary display.
+
+## Commentary Completion + Audiobook Foundation Sprint
+
+- Public commentary now totals 4,016 verified entries.
+- Matthew Henry and JFB each cover all 1,189 Bible chapters.
+- Barnes and Adam Clarke each cover 771 public verified chapters.
+- Wesley remains at 86 public verified New Testament chapters.
+- Gill remains sample-only pending a cleaner original public-domain source.
+- H. A. Ironside remains sample-only except where source and edition review is clear.
+- No Pulpit Commentary, Biblical Illustrator, Matthew Poole, Kelly, Darby, Grant, or Gaebelein commentary text was imported in this sprint.
 
 ## Phase 4 Promotion
 
