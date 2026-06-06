@@ -473,6 +473,20 @@ type DictionarySearchResult = {
   review_status: string;
 };
 
+type StudyToolSearchResult = {
+  id: string;
+  tool_id: string;
+  title: string;
+  author: string;
+  category: "Dictionary" | "Topical Bible" | "Geography" | "Chronology" | "Manners and Customs";
+  resource_slug: string;
+  heading: string;
+  snippet: string;
+  source_url: string;
+  rights_status: string;
+  line_number: number;
+};
+
 type CrossReference = {
   id: string;
   verse_ref: string;
@@ -6030,6 +6044,66 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     keyVerses: ["Luke 24:47", "Acts 20:21", "2 Corinthians 7:10", "2 Peter 3:9"],
     note: "Reviewed starter entry for Luke 24, evangelism, and application studies.",
   },
+  light: {
+    strongsNumber: "G5457",
+    originalWord: "phos",
+    displayWord: "light",
+    pronunciation: "foce",
+    root: "phao / phos",
+    rootChain: ["G5316 shine", "G5457 light"],
+    relatedWords: ["light", "shine", "truth"],
+    plainMeaning: "Light; used of literal light and of spiritual illumination, truth, and witness.",
+    websterWord: "light",
+    firstOccurrence: "Matthew 4:16",
+    keyOccurrences: ["Matthew 4:16", "John 1:4", "John 8:12", "Ephesians 5:8", "1 John 1:7"],
+    keyVerses: ["John 1:4", "John 8:12", "Ephesians 5:8", "1 John 1:7"],
+    note: "Reviewed starter entry for John's Gospel, witness, and devotional studies.",
+  },
+  judgment: {
+    strongsNumber: "G2920",
+    originalWord: "krisis",
+    displayWord: "judgment",
+    pronunciation: "kree'-sis",
+    root: "krino / krisis",
+    rootChain: ["G2919 judge", "G2920 judgment"],
+    relatedWords: ["judgment", "judge", "condemned"],
+    plainMeaning: "Judgment, decision, condemnation, or judicial sentence depending on context.",
+    websterWord: "judgment",
+    firstOccurrence: "Matthew 5:21",
+    keyOccurrences: ["Matthew 5:21", "John 3:19", "John 5:24", "Hebrews 9:27", "Revelation 20:12"],
+    keyVerses: ["John 3:19", "John 5:24", "Hebrews 9:27", "Revelation 20:12"],
+    note: "Reviewed starter entry for prophecy, Amos, Romans, and evangelistic studies.",
+  },
+  prophet: {
+    strongsNumber: "G4396",
+    originalWord: "prophetes",
+    displayWord: "prophet",
+    pronunciation: "prof-ay'-tace",
+    root: "prophetes",
+    rootChain: ["G4395 prophesy", "G4396 prophet"],
+    relatedWords: ["prophet", "prophecy", "prophesy"],
+    plainMeaning: "A prophet; one who speaks forth God's message.",
+    websterWord: "prophet",
+    firstOccurrence: "Matthew 1:22",
+    keyOccurrences: ["Matthew 1:22", "Luke 24:19", "John 1:21", "Acts 3:22", "Hebrews 1:1"],
+    keyVerses: ["Luke 24:19", "Acts 3:22", "Hebrews 1:1", "2 Peter 1:21"],
+    note: "Reviewed starter entry for Bible survey, prophecy, and teaching-prep workflows.",
+  },
+  kingdom: {
+    strongsNumber: "G932",
+    originalWord: "basileia",
+    displayWord: "kingdom",
+    pronunciation: "bas-il-i'-ah",
+    root: "basileus / basileia",
+    rootChain: ["G935 king", "G932 kingdom"],
+    relatedWords: ["kingdom", "king", "reign"],
+    plainMeaning: "Kingdom, reign, rule, or royal dominion.",
+    websterWord: "kingdom",
+    firstOccurrence: "Matthew 3:2",
+    keyOccurrences: ["Matthew 3:2", "Matthew 6:33", "John 3:3", "Acts 1:3", "Romans 14:17"],
+    keyVerses: ["Matthew 6:33", "John 3:3", "Acts 1:3", "Romans 14:17"],
+    note: "Reviewed starter entry for Gospel, prophecy, and Bible survey studies.",
+  },
 };
 
 const studyStopWords = new Set([
@@ -9739,6 +9813,10 @@ export default function Home() {
   const [strongSearchTerm, setStrongSearchTerm] = useState("");
   const [strongSearchResults, setStrongSearchResults] = useState<StrongSearchResult[]>([]);
   const [strongSearchStatus, setStrongSearchStatus] = useState("");
+  const [studyToolSearchTerm, setStudyToolSearchTerm] = useState("");
+  const [studyToolSearchFilter, setStudyToolSearchFilter] = useState("all");
+  const [studyToolSearchResults, setStudyToolSearchResults] = useState<StudyToolSearchResult[]>([]);
+  const [studyToolSearchStatus, setStudyToolSearchStatus] = useState("");
   const [flashRef, setFlashRef] = useState<string | null>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authMessage, setAuthMessage] = useState("");
@@ -11321,6 +11399,36 @@ export default function Home() {
       controller.abort();
     };
   }, [strongSearchTerm]);
+
+  useEffect(() => {
+    const query = studyToolSearchTerm.trim();
+    if (query.length < 2) {
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => {
+      setStudyToolSearchStatus("Searching Bible tools...");
+      fetch(`/api/study-tools?query=${encodeURIComponent(query)}&filter=${encodeURIComponent(studyToolSearchFilter)}&limit=24`, {
+        signal: controller.signal,
+      })
+        .then((response) => response.json())
+        .then((data: { entries?: StudyToolSearchResult[] }) => {
+          setStudyToolSearchResults(data.entries ?? []);
+          setStudyToolSearchStatus((data.entries ?? []).length ? "" : "No Bible tool entries found yet.");
+        })
+        .catch((error: Error) => {
+          if (error.name === "AbortError") return;
+          setStudyToolSearchResults([]);
+          setStudyToolSearchStatus("Bible tools search is not available yet.");
+        });
+    }, 300);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [studyToolSearchFilter, studyToolSearchTerm]);
 
   useEffect(() => {
     if (!savedLoaded || user) return;
@@ -13581,6 +13689,13 @@ export default function Home() {
     });
   }
 
+  function openStudyToolSearch(query: string, filter = "all") {
+    const normalizedQuery = query.trim() || selectedRef.split(/\s+/)[0] || "Bible";
+    setStudyToolSearchTerm(normalizedQuery);
+    setStudyToolSearchFilter(filter);
+    setTab("search");
+  }
+
   const activeVerse = allVerses.find((verse) => verse.ref === studyRef);
   const activeCrossReferences = crossReferences.filter((reference) => reference.verse_ref === studyRef);
   const activeCommentaryEntries = activeVerse
@@ -13874,6 +13989,7 @@ export default function Home() {
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
+                onOpenStudyToolSearch={openStudyToolSearch}
 	                onOpenPersonStudy={openPersonStudy}
 	                onBuildSermonFromStudy={() => addStudyWorkflowToSermon("builder")}
 	                onCreateSlidesFromStudy={() => addStudyWorkflowToSermon("slides")}
@@ -13901,6 +14017,10 @@ export default function Home() {
                 strongSearchTerm={strongSearchTerm}
                 strongSearchResults={strongSearchResults}
                 strongSearchStatus={strongSearchStatus}
+                studyToolSearchTerm={studyToolSearchTerm}
+                studyToolSearchFilter={studyToolSearchFilter}
+                studyToolSearchResults={studyToolSearchResults}
+                studyToolSearchStatus={studyToolSearchStatus}
                 onSearchTermChange={setSearchTerm}
                 onSearchFilterChange={setSearchFilter}
                 onDictionarySearchTermChange={(value) => {
@@ -13917,8 +14037,19 @@ export default function Home() {
                     setStrongSearchStatus("");
                   }
                 }}
+                onStudyToolSearchTermChange={(value) => {
+                  setStudyToolSearchTerm(value);
+                  if (value.trim().length < 2) {
+                    setStudyToolSearchResults([]);
+                    setStudyToolSearchStatus("");
+                  }
+                }}
+                onStudyToolSearchFilterChange={setStudyToolSearchFilter}
                 onOpenVerse={openSearchResult}
                 onOpenReference={openReference}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
                 onOpenDictionaryEntry={(entry) => {
                   setActiveDictionaryEntry({
                     word: entry.headword.toLowerCase(),
@@ -15231,6 +15362,7 @@ function JournalScreen({
           )}
         </div>
       </section>
+
     </div>
   );
 }
@@ -16678,6 +16810,7 @@ function BibleReader({
   onOpenPassageGuide,
   onOpenCommentaryCenter,
   onOpenLibraryResource,
+  onOpenStudyToolSearch,
   onOpenPersonStudy,
   onBuildSermonFromStudy,
   onCreateSlidesFromStudy,
@@ -16796,6 +16929,7 @@ function BibleReader({
   onOpenPassageGuide: () => void;
   onOpenCommentaryCenter: () => void;
   onOpenLibraryResource: (slug: string) => void;
+  onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onBuildSermonFromStudy: () => void;
   onCreateSlidesFromStudy: () => void;
@@ -17449,6 +17583,7 @@ function BibleReader({
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
         onOpenBookIntroduction={onOpenBookIntroduction}
         onOpenLibraryResource={onOpenLibraryResource}
+        onOpenStudyToolSearch={onOpenStudyToolSearch}
         onListenCommentary={onListenCommentary}
         onListenChapterRange={onListenChapterRange}
         onAddPlaylistItem={onAddPlaylistItem}
@@ -18705,6 +18840,7 @@ function ChapterStudyWorkflow({
   onLookupWord,
   onOpenBookIntroduction,
   onOpenLibraryResource,
+  onOpenStudyToolSearch,
   onListenCommentary,
   onListenChapterRange,
   onAddPlaylistItem,
@@ -18737,6 +18873,7 @@ function ChapterStudyWorkflow({
   onLookupWord: (word: string) => void;
   onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
+  onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onListenCommentary: () => void;
   onListenChapterRange: (book: string, startChapter: number, endChapter: number) => void;
   onAddPlaylistItem: (type: BiblePlaylistItemType) => void;
@@ -18830,6 +18967,14 @@ function ChapterStudyWorkflow({
   const relatedResourceCount = chapterResourceRecommendations.filter((resource) => resource.resourceSlug).length;
   const dictionaryToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Dictionary").length;
   const bibleToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Bible Tool").length;
+  const customsTopics = [
+    "feasts",
+    "offerings",
+    "temple",
+    "priesthood",
+    "agriculture",
+    "family life",
+  ];
 
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
     setTeacherNotesByChapter((current) => {
@@ -19039,17 +19184,16 @@ function ChapterStudyWorkflow({
             title="Dictionaries and Helps"
             meta={`${dictionaryToolCount} dictionaries`}
             body="Webster, Easton, Smith, Nave, and other Bible helps are grouped for chapter study."
-            actionLabel="View helps"
-            onAction={() => onExplorerWordChange(toolLookupWord)}
+            actionLabel="Search helps"
+            onAction={() => onOpenStudyToolSearch(toolLookupWord, "dictionary")}
             disabled={!toolLookupWord}
           />
           <StudyToolHubCard
             title="Manners, Places, Timeline"
             meta={`${bibleToolCount} tools`}
             body={`${connections.places.length} places and ${connections.timeline.length} timeline links are attached where reviewed.`}
-            actionLabel={connections.places[0] ? "Open place" : "Review chapter"}
-            onAction={() => connections.places[0]?.relatedPassages[0] && onOpenReference(connections.places[0].relatedPassages[0])}
-            disabled={!connections.places[0]?.relatedPassages[0]}
+            actionLabel="Search background"
+            onAction={() => onOpenStudyToolSearch(connections.places[0]?.name ?? selectedVerse.book, connections.places[0] ? "geography" : "chronology")}
           />
           <StudyToolHubCard
             title="Book Intro and Survey"
@@ -19066,6 +19210,86 @@ function ChapterStudyWorkflow({
             actionLabel="Build sermon"
             onAction={onBuildSermonFromStudy}
           />
+        </div>
+      </article>
+
+      <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible Background</p>
+            <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">Geography, chronology, and customs</h3>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Use reviewed background data for places, journeys, regions, nations, timeline, kings, prophets, offerings, feasts, priesthood, agriculture, and family life.
+            </p>
+          </div>
+          <button
+            className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+            onClick={() => onOpenStudyToolSearch(selectedVerse.book, "all")}
+            type="button"
+          >
+            Search background
+          </button>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-3">
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <MapPin size={16} />
+              <p className="text-sm font-semibold">Places and Regions</p>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {connections.places.length ? connections.places.slice(0, 6).map((place) => (
+                <button
+                  key={`background-place-${place.id}`}
+                  className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenStudyToolSearch(place.name, "geography")}
+                  type="button"
+                >
+                  {place.name}
+                </button>
+              )) : (
+                <span className="text-xs leading-5 text-[var(--muted)]">No reviewed places attached to this chapter yet.</span>
+              )}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <Timer size={16} />
+              <p className="text-sm font-semibold">Timeline and Events</p>
+            </div>
+            <div className="mt-3 space-y-2">
+              {connections.timeline.length ? connections.timeline.slice(0, 3).map((entry) => (
+                <button
+                  key={`background-timeline-${entry.id}`}
+                  className="w-full rounded-xl bg-[var(--paper)] px-3 py-2 text-left"
+                  onClick={() => onOpenStudyToolSearch(entry.title, "chronology")}
+                  type="button"
+                >
+                  <span className="block text-xs font-semibold text-[var(--green)]">{entry.title}</span>
+                  <span className="mt-1 block text-[11px] leading-4 text-[var(--muted)]">{entry.timeframe}</span>
+                </button>
+              )) : (
+                <span className="text-xs leading-5 text-[var(--muted)]">Timeline entries will appear as chapters are reviewed.</span>
+              )}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-white p-3">
+            <div className="flex items-center gap-2 text-[var(--green)]">
+              <BookOpen size={16} />
+              <p className="text-sm font-semibold">Manners and Customs</p>
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {customsTopics.map((topic) => (
+                <button
+                  key={`background-custom-${topic}`}
+                  className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenStudyToolSearch(topic, "manners and customs")}
+                  type="button"
+                >
+                  {topic}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
 
@@ -19509,6 +19733,7 @@ function ChapterStudyWorkflow({
             onOpenReference={onOpenReference}
             onLookupWord={onLookupWord}
             onSelectWord={onExplorerWordChange}
+            onOpenStudyToolSearch={onOpenStudyToolSearch}
           />
           <div className="mt-3 flex flex-wrap gap-2">
             {suggestedWords.map((item) => (
@@ -20199,12 +20424,14 @@ function StrongStudyPanel({
   onOpenReference,
   onLookupWord,
   onSelectWord,
+  onOpenStudyToolSearch,
 }: {
   entry: StrongMvpEntry | null;
   dictionaryEntry: DictionaryEntry | null;
   onOpenReference: (targetRef: string) => void;
   onLookupWord: (word: string) => void;
   onSelectWord?: (word: string) => void;
+  onOpenStudyToolSearch?: (query: string, filter?: string) => void;
 }) {
   const relatedEntries = entry?.relatedWords
     ? entry.relatedWords
@@ -20292,6 +20519,15 @@ function StrongStudyPanel({
               >
                 Open definition
               </button>
+              {onOpenStudyToolSearch && (
+                <button
+                  className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                  onClick={() => onOpenStudyToolSearch(entry.websterWord, "dictionary")}
+                  type="button"
+                >
+                  Search Bible tools
+                </button>
+              )}
             </div>
             {dictionaryEntry?.found ? (
               <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
@@ -20375,12 +20611,19 @@ function SearchScreen({
   strongSearchTerm,
   strongSearchResults,
   strongSearchStatus,
+  studyToolSearchTerm,
+  studyToolSearchFilter,
+  studyToolSearchResults,
+  studyToolSearchStatus,
   onSearchTermChange,
   onSearchFilterChange,
   onDictionarySearchTermChange,
   onStrongSearchTermChange,
+  onStudyToolSearchTermChange,
+  onStudyToolSearchFilterChange,
   onOpenVerse,
   onOpenReference,
+  onOpenLibraryResource,
   onOpenDictionaryEntry,
 }: {
   searchTerm: string;
@@ -20392,18 +20635,33 @@ function SearchScreen({
   strongSearchTerm: string;
   strongSearchResults: StrongSearchResult[];
   strongSearchStatus: string;
+  studyToolSearchTerm: string;
+  studyToolSearchFilter: string;
+  studyToolSearchResults: StudyToolSearchResult[];
+  studyToolSearchStatus: string;
   onSearchTermChange: (value: string) => void;
   onSearchFilterChange: (value: TestamentFilter) => void;
   onDictionarySearchTermChange: (value: string) => void;
   onStrongSearchTermChange: (value: string) => void;
+  onStudyToolSearchTermChange: (value: string) => void;
+  onStudyToolSearchFilterChange: (value: string) => void;
   onOpenVerse: (verse: BibleVerse) => void;
   onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
   onOpenDictionaryEntry: (entry: DictionarySearchResult) => void;
 }) {
   const filters: { id: TestamentFilter; label: string }[] = [
     { id: "all", label: "All" },
     { id: "old", label: "Old Testament" },
     { id: "new", label: "New Testament" },
+  ];
+  const studyToolFilters = [
+    { id: "all", label: "All Tools" },
+    { id: "dictionary", label: "Dictionaries" },
+    { id: "topical bible", label: "Nave's" },
+    { id: "geography", label: "Geography" },
+    { id: "chronology", label: "Chronology" },
+    { id: "manners and customs", label: "Manners" },
   ];
 
   return (
@@ -20525,6 +20783,88 @@ function SearchScreen({
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]">
+            Search Bible tools
+            <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+              <Library size={18} className="shrink-0 text-[var(--green)]" />
+              <input
+                className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+                placeholder="Jerusalem, temple, offering, Abraham, Passover..."
+                value={studyToolSearchTerm}
+                onChange={(event) => onStudyToolSearchTermChange(event.target.value)}
+              />
+            </div>
+          </label>
+          {studyToolSearchTerm && (
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 py-2 text-sm font-semibold text-[var(--ink)]"
+              onClick={() => onStudyToolSearchTermChange("")}
+              type="button"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+          {studyToolFilters.map((filter) => (
+            <button
+              key={`study-tool-filter-${filter.id}`}
+              className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${
+                studyToolSearchFilter === filter.id
+                  ? "bg-[var(--ink)] text-white"
+                  : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
+              }`}
+              onClick={() => onStudyToolSearchFilterChange(filter.id)}
+              type="button"
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+        <div className="mt-3 space-y-3">
+          {studyToolSearchTerm.trim().length < 2 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">
+              Search Easton&apos;s, Smith&apos;s, Nave&apos;s, Bible geography, chronology/history, and manners/customs resources.
+            </p>
+          ) : studyToolSearchResults.length === 0 ? (
+            <p className="text-sm leading-6 text-[var(--muted)]">{studyToolSearchStatus || "No Bible tool entries found yet."}</p>
+          ) : (
+            studyToolSearchResults.map((entry) => (
+              <article
+                key={entry.id}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
+              >
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-base font-semibold text-[var(--ink)]">{entry.heading}</p>
+                      <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.category}</span>
+                    </div>
+                    <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.title} · {entry.author}</p>
+                  </div>
+                  <button
+                    className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => onOpenLibraryResource(entry.resource_slug)}
+                    type="button"
+                  >
+                    Open resource
+                  </button>
+                </div>
+                <p className="mt-3 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">
+                  <HighlightedText text={entry.snippet} query={studyToolSearchTerm} />
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Line {entry.line_number}</span>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{entry.rights_status}</span>
+                </div>
+              </article>
+            ))
+          )}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <label className="text-sm font-semibold text-[var(--muted)]">
           Search Strong&apos;s sample index
           <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
@@ -20572,7 +20912,7 @@ function SearchScreen({
                 <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
                   <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {[entry.root, ...entry.related_numbers].filter(Boolean).map((item) => (
+                    {Array.from(new Set([entry.root, ...entry.related_numbers].filter(Boolean))).map((item) => (
                       <span key={`search-strong-root-${entry.strongs_number}-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
                         {item}
                       </span>
