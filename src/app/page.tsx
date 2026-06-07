@@ -1154,6 +1154,19 @@ type WordExplorerResult = {
   bibleOccurrences: BibleVerse[];
 };
 
+type WordHighlightScope = "chapter" | "book" | "old" | "new" | "bible";
+type WordHighlightColor = "green" | "gold" | "blue" | "red" | "purple";
+
+type WordHighlightSet = {
+  id: string;
+  word: string;
+  lookupWord: string;
+  color: WordHighlightColor;
+  scope: WordHighlightScope;
+  enabled: boolean;
+  createdAt: string;
+};
+
 type TeachingNotesExportData = {
   book: string;
   chapter: number;
@@ -1429,6 +1442,7 @@ const SCRIPTURE_MEMORY_KEY = "fathers-business-scripture-memory";
 const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
+const WORD_HIGHLIGHT_SETS_KEY = "fathers-business-word-highlight-sets";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const VOICE_SETTINGS_KEY = "fathers-business-voice-settings";
@@ -1494,6 +1508,29 @@ const VOICE_PROFILES: VoiceProfile[] = [
     description: "Faster playback for review and study scanning.",
     suggestedRate: 1.35,
   },
+];
+
+const WORD_HIGHLIGHT_COLORS: Array<{ id: WordHighlightColor; label: string }> = [
+  { id: "green", label: "Green" },
+  { id: "gold", label: "Gold" },
+  { id: "blue", label: "Blue" },
+  { id: "red", label: "Red" },
+  { id: "purple", label: "Purple" },
+];
+
+const WORD_HIGHLIGHT_SCOPES: Array<{ id: WordHighlightScope; label: string }> = [
+  { id: "chapter", label: "Current chapter" },
+  { id: "book", label: "Current book" },
+  { id: "old", label: "Old Testament" },
+  { id: "new", label: "New Testament" },
+  { id: "bible", label: "Whole Bible" },
+];
+
+const DEFAULT_WORD_HIGHLIGHT_SETS: WordHighlightSet[] = [
+  { id: "word-set-believe", word: "believe", lookupWord: "believe", color: "green", scope: "chapter", enabled: true, createdAt: "starter" },
+  { id: "word-set-life", word: "life", lookupWord: "life", color: "gold", scope: "chapter", enabled: true, createdAt: "starter" },
+  { id: "word-set-world", word: "world", lookupWord: "world", color: "blue", scope: "chapter", enabled: true, createdAt: "starter" },
+  { id: "word-set-condemnation", word: "condemnation", lookupWord: "condemned", color: "red", scope: "chapter", enabled: true, createdAt: "starter" },
 ];
 
 const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
@@ -6211,6 +6248,46 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
     definition:
       "Love; benevolence; good will. In Scripture, supreme love to God and good will to men.",
   },
+  flesh: {
+    word: "flesh",
+    definition:
+      "The soft substance of an animal body; mankind; in Scripture use, often human nature, weakness, or sinful tendency depending on context.",
+  },
+  law: {
+    word: "law",
+    definition:
+      "A rule of action; command or precept; in Scripture, especially God's revealed commandments and principles of government.",
+  },
+  spirit: {
+    word: "spirit",
+    definition:
+      "Breath; life; an immaterial being; the rational soul; in Scripture, often used of the Spirit of God, wind, temper, or inner man.",
+  },
+  worship: {
+    word: "worship",
+    definition:
+      "To adore; to pay divine honors to; reverence offered to God, or improper honor given to another object.",
+  },
+  beast: {
+    word: "beast",
+    definition:
+      "A four-footed animal; in prophetic Scripture, sometimes used figuratively of kingdom power or a ruling system.",
+  },
+  kingdom: {
+    word: "kingdom",
+    definition:
+      "The territory, people, or dominion subject to a king; royal authority and rule.",
+  },
+  dominion: {
+    word: "dominion",
+    definition:
+      "Sovereign or supreme authority; power of governing; rule.",
+  },
+  mark: {
+    word: "mark",
+    definition:
+      "A visible impression, stamp, sign, token, or distinguishing note.",
+  },
   do: {
     word: "do",
     definition:
@@ -6242,6 +6319,10 @@ const dictionaryAliases: Record<string, string> = {
   beasts: "beast",
   covenants: "covenant",
   dominions: "dominion",
+  fleshy: "flesh",
+  fleshly: "flesh",
+  laws: "law",
+  lawful: "law",
   groanings: "groaning",
   intercession: "intercede",
   kingdoms: "kingdom",
@@ -6250,6 +6331,10 @@ const dictionaryAliases: Record<string, string> = {
   spirits: "spirit",
   transgressions: "transgression",
   visions: "vision",
+  worshipped: "worship",
+  worshippeth: "worship",
+  worshipping: "worship",
+  worshippedst: "worship",
   worlds: "world",
 };
 
@@ -6688,6 +6773,51 @@ const strongsMvpEntries: Record<string, StrongMvpEntry> = {
     keyOccurrences: ["Matthew 1:18", "John 3:5", "John 4:24", "Romans 8:9", "Ephesians 6:17"],
     keyVerses: ["John 3:5", "John 4:24", "Romans 8:9", "Ephesians 6:17"],
     note: "Starter entry for John 3, Romans 8, and devotional study. Context controls the sense.",
+  },
+  flesh: {
+    strongsNumber: "G4561",
+    originalWord: "sarx",
+    displayWord: "flesh",
+    pronunciation: "sarx",
+    root: "sarx",
+    rootChain: ["G4561 flesh"],
+    relatedWords: ["flesh", "carnal", "body"],
+    plainMeaning: "Flesh; the body, human nature, or sinful nature depending on context.",
+    websterWord: "flesh",
+    firstOccurrence: "Matthew 16:17",
+    keyOccurrences: ["John 3:6", "Romans 7:18", "Romans 8:1", "Romans 8:8", "Galatians 5:17"],
+    keyVerses: ["John 3:6", "Romans 8:1", "Romans 8:8", "Galatians 5:17"],
+    note: "Starter entry for Romans 8. Keep the English context visible because flesh may refer to the body or fallen nature.",
+  },
+  law: {
+    strongsNumber: "G3551",
+    originalWord: "nomos",
+    displayWord: "law",
+    pronunciation: "nom'-os",
+    root: "nemo / nomos",
+    rootChain: ["G3551 law"],
+    relatedWords: ["law", "commandment", "ordinance"],
+    plainMeaning: "Law, rule, principle, or command; often God's revealed commandments.",
+    websterWord: "law",
+    firstOccurrence: "Matthew 5:17",
+    keyOccurrences: ["Matthew 5:17", "John 1:17", "Romans 3:20", "Romans 8:2", "Galatians 3:24"],
+    keyVerses: ["John 1:17", "Romans 3:20", "Romans 8:2", "Galatians 3:24"],
+    note: "Starter entry for Romans. The final Strong's import should preserve verse-level Hebrew and Greek distinctions.",
+  },
+  worship: {
+    strongsNumber: "G4352",
+    originalWord: "proskuneo",
+    displayWord: "worship",
+    pronunciation: "pros-koo-neh'-o",
+    root: "pros / kuneo",
+    rootChain: ["G4314 toward", "G4352 worship"],
+    relatedWords: ["worship", "bow", "reverence"],
+    plainMeaning: "To worship, bow down, or show reverent homage.",
+    websterWord: "worship",
+    firstOccurrence: "Matthew 2:2",
+    keyOccurrences: ["Matthew 2:2", "John 4:24", "Revelation 13:4", "Revelation 13:8", "Revelation 19:10"],
+    keyVerses: ["John 4:24", "Revelation 13:4", "Revelation 13:8", "Revelation 19:10"],
+    note: "Starter entry for worship studies. Revelation 13 should be studied with the full chapter and reviewed commentary.",
   },
   wisdom: {
     strongsNumber: "G4678",
@@ -8573,6 +8703,42 @@ function loadBibleMarkers(): BibleMarkers {
 function saveBibleMarkers(markers: BibleMarkers) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(BIBLE_MARKERS_KEY, JSON.stringify(markers));
+}
+
+function normalizeWordHighlightSet(set: Partial<WordHighlightSet>): WordHighlightSet | null {
+  const word = cleanWord(set.word ?? "");
+  const lookupWord = normalizeLookupWord(set.lookupWord ?? word);
+  if (!word || !lookupWord) return null;
+  const color = WORD_HIGHLIGHT_COLORS.some((item) => item.id === set.color) ? set.color! : "green";
+  const scope = WORD_HIGHLIGHT_SCOPES.some((item) => item.id === set.scope) ? set.scope! : "chapter";
+  return {
+    id: set.id || makeId("word_set"),
+    word,
+    lookupWord,
+    color,
+    scope,
+    enabled: set.enabled !== false,
+    createdAt: set.createdAt || new Date().toISOString(),
+  };
+}
+
+function loadWordHighlightSets(): WordHighlightSet[] {
+  if (typeof window === "undefined") return DEFAULT_WORD_HIGHLIGHT_SETS;
+  try {
+    const raw = window.localStorage.getItem(WORD_HIGHLIGHT_SETS_KEY);
+    const parsed = raw ? JSON.parse(raw) : DEFAULT_WORD_HIGHLIGHT_SETS;
+    const normalized = Array.isArray(parsed)
+      ? parsed.map((item) => normalizeWordHighlightSet(item)).filter((item): item is WordHighlightSet => Boolean(item))
+      : [];
+    return raw ? normalized : DEFAULT_WORD_HIGHLIGHT_SETS;
+  } catch {
+    return DEFAULT_WORD_HIGHLIGHT_SETS;
+  }
+}
+
+function saveWordHighlightSets(sets: WordHighlightSet[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(WORD_HIGHLIGHT_SETS_KEY, JSON.stringify(sets));
 }
 
 function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string[]) {
@@ -10825,6 +10991,35 @@ function wordMatchesVerse(verse: BibleVerse, lookupWord: string) {
   return wordsFromText(verse.plainText).some((word) => normalizeLookupWord(word) === lookupWord || word === lookupWord);
 }
 
+function wordHighlightAppliesToVerse(set: WordHighlightSet, verse: BibleVerse, activeBook: string, activeChapter: number) {
+  if (!set.enabled) return false;
+  if (set.scope === "chapter") return verse.book === activeBook && verse.chapter === activeChapter;
+  if (set.scope === "book") return verse.book === activeBook;
+  if (set.scope === "old") return testamentForBook(verse.book) === "old";
+  if (set.scope === "new") return testamentForBook(verse.book) === "new";
+  return true;
+}
+
+function wordHighlightClass(color: WordHighlightColor) {
+  if (color === "green") return "bg-emerald-200/80 text-emerald-950 ring-1 ring-emerald-300";
+  if (color === "gold") return "bg-amber-200/90 text-amber-950 ring-1 ring-amber-300";
+  if (color === "blue") return "bg-sky-200/80 text-sky-950 ring-1 ring-sky-300";
+  if (color === "red") return "bg-rose-200/80 text-rose-950 ring-1 ring-rose-300";
+  return "bg-violet-200/80 text-violet-950 ring-1 ring-violet-300";
+}
+
+function wordHighlightDotClass(color: WordHighlightColor) {
+  if (color === "green") return "bg-emerald-500";
+  if (color === "gold") return "bg-amber-500";
+  if (color === "blue") return "bg-sky-500";
+  if (color === "red") return "bg-rose-500";
+  return "bg-violet-500";
+}
+
+function wordHighlightScopeLabel(scope: WordHighlightScope) {
+  return WORD_HIGHLIGHT_SCOPES.find((item) => item.id === scope)?.label ?? "Current chapter";
+}
+
 function buildWordExplorer(word: string, currentBook: string, currentChapter: number, allVerses: BibleVerse[]): WordExplorerResult {
   const lookupWord = normalizeLookupWord(word);
   const definition = findDictionaryEntry(word);
@@ -11076,6 +11271,7 @@ export default function Home() {
   const [recentPassages, setRecentPassages] = useState<BiblePassage[]>([]);
   const [favoritePassages, setFavoritePassages] = useState<BiblePassage[]>(DEFAULT_FAVORITE_PASSAGES);
   const [bibleMarkers, setBibleMarkers] = useState<BibleMarkers>(() => emptyBibleMarkers());
+  const [wordHighlightSets, setWordHighlightSets] = useState<WordHighlightSet[]>(() => loadWordHighlightSets());
   const [playlistName, setPlaylistName] = useState("Morning Bible Listening");
   const [listenRangeStart, setListenRangeStart] = useState(1);
   const [listenRangeEnd, setListenRangeEnd] = useState(DEFAULT_VERSE);
@@ -12076,6 +12272,82 @@ export default function Home() {
   function addVerseToSermon(ref: string) {
     appendSermonImport(`Bible Verse - ${ref}`, verseWorkflowText(ref));
     openSermonWorkspace("builder");
+  }
+
+  function wordStudyWorkflowText(explorer: WordExplorerResult) {
+    const strongEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
+    const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
+    return [
+      `Word Study - ${explorer.word || explorer.lookupWord}`,
+      `Lookup word: ${explorer.lookupWord}`,
+      `Chapter count: ${explorer.chapterOccurrences.length}`,
+      `Book count: ${explorer.bookOccurrences.length}`,
+      `Whole Bible count: ${explorer.bibleOccurrences.length}`,
+      firstOccurrence ? `First occurrence: ${firstOccurrence.ref} - ${firstOccurrence.plainText}` : "First occurrence: No local match found.",
+      strongEntry ? `Strong's: ${strongEntry.strongsNumber} (${strongEntry.originalWord}) - ${strongEntry.plainMeaning}` : "Strong's: No reviewed starter entry yet.",
+      `Webster's 1828: ${explorer.definition.definition}`,
+      `Key verses: ${uniqueStrings([...(strongEntry?.keyVerses ?? []), ...explorer.bibleOccurrences.slice(0, 6).map((occurrence) => occurrence.ref)]).join(", ") || "No key verses found."}`,
+    ].join("\n");
+  }
+
+  function addWordStudyToSermon(explorer: WordExplorerResult) {
+    appendSermonImport(`Word Study - ${explorer.word || explorer.lookupWord}`, wordStudyWorkflowText(explorer));
+    openSermonWorkspace("builder");
+  }
+
+  function addWordStudyToNote(explorer: WordExplorerResult) {
+    const existing = notesByRef.get(selectedRef)?.[0]?.body ?? noteDraft;
+    setNoteDraft([existing, wordStudyWorkflowText(explorer)].filter(Boolean).join("\n\n"));
+    setStudyRef(selectedRef);
+    setStudyTab("notes");
+    setSyncMessage("Word study added to the note draft. Save the note when ready.");
+  }
+
+  function addWordStudyToTeachingOutline(explorer: WordExplorerResult) {
+    appendSermonImport(`Teaching Word Study - ${explorer.word || explorer.lookupWord}`, wordStudyWorkflowText(explorer));
+    setSyncMessage(`Word study for ${explorer.word || explorer.lookupWord} added to teaching prep notes.`);
+  }
+
+  function saveWordHighlightSetList(updater: (current: WordHighlightSet[]) => WordHighlightSet[]) {
+    setWordHighlightSets((current) => {
+      const next = updater(current);
+      saveWordHighlightSets(next);
+      return next;
+    });
+  }
+
+  function addWordHighlightSet(word: string, color: WordHighlightColor, scope: WordHighlightScope) {
+    const normalized = normalizeWordHighlightSet({
+      id: makeId("word_set"),
+      word: cleanWord(word) || word,
+      lookupWord: normalizeLookupWord(word),
+      color,
+      scope,
+      enabled: true,
+      createdAt: new Date().toISOString(),
+    });
+    if (!normalized) {
+      setSyncMessage("Choose a Bible word before saving a word highlight set.");
+      return;
+    }
+    saveWordHighlightSetList((current) => {
+      const withoutDuplicate = current.filter((set) => !(set.lookupWord === normalized.lookupWord && set.scope === normalized.scope));
+      return [normalized, ...withoutDuplicate].slice(0, 24);
+    });
+    setSyncMessage(`${normalized.word} is now highlighted for ${wordHighlightScopeLabel(normalized.scope).toLowerCase()}.`);
+  }
+
+  function toggleWordHighlightSet(id: string) {
+    saveWordHighlightSetList((current) => current.map((set) => set.id === id ? { ...set, enabled: !set.enabled } : set));
+  }
+
+  function removeWordHighlightSet(id: string) {
+    saveWordHighlightSetList((current) => current.filter((set) => set.id !== id));
+  }
+
+  function clearWordHighlightSets() {
+    saveWordHighlightSetList(() => []);
+    setSyncMessage("Word highlights cleared.");
   }
 
   function addVerseToStudyPlaylist(ref: string) {
@@ -14919,7 +15191,7 @@ export default function Home() {
   async function lookupWord(word: string) {
     const fallbackEntry = findDictionaryEntry(word);
     setActiveDictionaryEntry(fallbackEntry);
-    setStudyTab("dictionary");
+    setStudyTab("occurrences");
 
     try {
       const response = await fetch(`/api/dictionary/${encodeURIComponent(word)}`);
@@ -15237,6 +15509,7 @@ export default function Home() {
                 recentPassages={recentPassages}
                 favoritePassages={favoritePassages}
                 bibleMarkers={bibleMarkers}
+                wordHighlightSets={wordHighlightSets}
                 currentChapterPinned={currentChapterPinned}
                 readingProgress={currentBookProgress}
                 bookMastery={currentBookMasteryStats}
@@ -15325,7 +15598,14 @@ export default function Home() {
 	                onOpenPersonStudy={openPersonStudy}
 	                onBuildSermonFromStudy={() => addStudyWorkflowToSermon("builder")}
 	                onCreateSlidesFromStudy={() => addStudyWorkflowToSermon("slides")}
-	                onPreachFromStudy={() => addStudyWorkflowToSermon("preaching")}
+                onPreachFromStudy={() => addStudyWorkflowToSermon("preaching")}
+                onAddWordHighlightSet={addWordHighlightSet}
+                onToggleWordHighlightSet={toggleWordHighlightSet}
+                onRemoveWordHighlightSet={removeWordHighlightSet}
+                onClearWordHighlightSets={clearWordHighlightSets}
+                onAddWordStudyToSermon={addWordStudyToSermon}
+                onAddWordStudyToNote={addWordStudyToNote}
+                onAddWordStudyToTeachingOutline={addWordStudyToTeachingOutline}
 	                onVerseClick={(ref) => {
                   setSelectedRef(ref);
                   openStudyDrawer(ref);
@@ -15788,6 +16068,7 @@ export default function Home() {
           bookIntroduction={activeVerse ? bookIntroductionsByBook.get(activeVerse.book) ?? null : null}
           versesByRef={versesByRef}
           allVerses={allVerses}
+          wordHighlightSets={wordHighlightSets}
           existingNote={notesByRef.get(studyRef)?.[0] ?? null}
           highlighted={highlightsByRef.has(studyRef)}
           bookmarked={bookmarksByRef.has(studyRef)}
@@ -15809,6 +16090,13 @@ export default function Home() {
           onLookupWord={(word) => {
             void lookupWord(word);
           }}
+          onAddWordHighlightSet={addWordHighlightSet}
+          onToggleWordHighlightSet={toggleWordHighlightSet}
+          onRemoveWordHighlightSet={removeWordHighlightSet}
+          onClearWordHighlightSets={clearWordHighlightSets}
+          onAddWordStudyToSermon={addWordStudyToSermon}
+          onAddWordStudyToNote={addWordStudyToNote}
+          onAddWordStudyToTeachingOutline={addWordStudyToTeachingOutline}
           onOpenReference={openReference}
           onOpenBookIntroduction={() => {
             if (activeVerse) openBookIntroduction(activeVerse.book);
@@ -18498,6 +18786,7 @@ function BibleReader({
   recentPassages,
   favoritePassages,
   bibleMarkers,
+  wordHighlightSets,
   currentChapterPinned,
   readingProgress,
   bookMastery,
@@ -18585,6 +18874,13 @@ function BibleReader({
   onBuildSermonFromStudy,
   onCreateSlidesFromStudy,
   onPreachFromStudy,
+  onAddWordHighlightSet,
+  onToggleWordHighlightSet,
+  onRemoveWordHighlightSet,
+  onClearWordHighlightSets,
+  onAddWordStudyToSermon,
+  onAddWordStudyToNote,
+  onAddWordStudyToTeachingOutline,
   onVerseClick,
   onWordClick,
 }: {
@@ -18618,6 +18914,7 @@ function BibleReader({
   recentPassages: BiblePassage[];
   favoritePassages: BiblePassage[];
   bibleMarkers: BibleMarkers;
+  wordHighlightSets: WordHighlightSet[];
   currentChapterPinned: boolean;
   readingProgress: { book: string; chapter: number; percent: number };
   bookMastery: BibleBookMasteryStats;
@@ -18705,6 +19002,13 @@ function BibleReader({
   onBuildSermonFromStudy: () => void;
   onCreateSlidesFromStudy: () => void;
   onPreachFromStudy: () => void;
+  onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
+  onToggleWordHighlightSet: (id: string) => void;
+  onRemoveWordHighlightSet: (id: string) => void;
+  onClearWordHighlightSets: () => void;
+  onAddWordStudyToSermon: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToNote: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToTeachingOutline: (explorer: WordExplorerResult) => void;
   onVerseClick: (ref: string) => void;
   onWordClick: (word: string, ref: string) => void;
 }) {
@@ -18766,6 +19070,7 @@ function BibleReader({
     .reduce((total, item) => total + estimatePlaylistItemSeconds(item), 0) ?? 0;
   const activeCompletedItemIds = new Set(activePlaylist?.completedItemIds ?? []);
   const completedPlaylists = playlists.filter((playlist) => playlist.completedAt);
+  const enabledWordHighlightSets = useMemo(() => wordHighlightSets.filter((set) => set.enabled), [wordHighlightSets]);
   const chapterWordCount = verses.reduce((total, verse) => total + wordsFromText(verse.plainText).length, 0);
   const chapterReadingMinutes = Math.max(1, Math.round(chapterWordCount / 220));
   const studyLaunchWord = chapterAnalysis.repeatedWords[0]?.word ?? keyWordsForVerse(selectedVerse)[0] ?? cleanWord(selectedVerse.plainText.split(/\s+/)[0] ?? "");
@@ -19459,12 +19764,20 @@ function BibleReader({
         chapterNotes={chapterNotes}
         explorer={explorer}
         explorerWord={explorerWord}
+        wordHighlightSets={wordHighlightSets}
         memoryForChapter={memoryForChapter}
         selectedVerse={selectedVerse}
         versesByRef={versesByRef}
         onAddMemoryVerse={onAddMemoryVerse}
         onExplorerWordChange={setExplorerWord}
         onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
+        onAddWordHighlightSet={onAddWordHighlightSet}
+        onToggleWordHighlightSet={onToggleWordHighlightSet}
+        onRemoveWordHighlightSet={onRemoveWordHighlightSet}
+        onClearWordHighlightSets={onClearWordHighlightSets}
+        onAddWordStudyToSermon={onAddWordStudyToSermon}
+        onAddWordStudyToNote={onAddWordStudyToNote}
+        onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
         onOpenBookIntroduction={onOpenBookIntroduction}
         onOpenLibraryResource={onOpenLibraryResource}
         onOpenStudyToolSearch={onOpenStudyToolSearch}
@@ -19513,10 +19826,18 @@ function BibleReader({
                   <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
                   {verse.text.split(/(\s+)/).map((part, index) => {
                     if (/^\s+$/.test(part)) return part;
+                    const matchingWordSet = enabledWordHighlightSets.find((set) => {
+                      if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
+                      const normalizedPart = normalizeLookupWord(part);
+                      return normalizedPart === set.lookupWord || cleanWord(part) === set.lookupWord;
+                    });
                     return (
                       <button
                         key={`${verse.ref}-${index}`}
-                        className="rounded px-0.5 text-left font-serif hover:bg-[var(--gold-soft)] hover:text-[var(--ink)]"
+                        className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
+                          matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
+                        }`}
+                        title={matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
                         onClick={(event) => {
                           event.stopPropagation();
                           onWordClick(part, verse.ref);
@@ -20925,12 +21246,20 @@ function ChapterStudyWorkflow({
   chapterNotes,
   explorer,
   explorerWord,
+  wordHighlightSets,
   memoryForChapter,
   selectedVerse,
   versesByRef,
   onAddMemoryVerse,
   onExplorerWordChange,
   onLookupWord,
+  onAddWordHighlightSet,
+  onToggleWordHighlightSet,
+  onRemoveWordHighlightSet,
+  onClearWordHighlightSets,
+  onAddWordStudyToSermon,
+  onAddWordStudyToNote,
+  onAddWordStudyToTeachingOutline,
   onOpenBookIntroduction,
   onOpenLibraryResource,
   onOpenStudyToolSearch,
@@ -20959,12 +21288,20 @@ function ChapterStudyWorkflow({
   chapterNotes: Array<[string, UserNote[]]>;
   explorer: WordExplorerResult;
   explorerWord: string;
+  wordHighlightSets: WordHighlightSet[];
   memoryForChapter: ScriptureMemoryItem[];
   selectedVerse: BibleVerse;
   versesByRef: Map<string, BibleVerse>;
   onAddMemoryVerse: (ref: string) => void;
   onExplorerWordChange: (word: string) => void;
   onLookupWord: (word: string) => void;
+  onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
+  onToggleWordHighlightSet: (id: string) => void;
+  onRemoveWordHighlightSet: (id: string) => void;
+  onClearWordHighlightSets: () => void;
+  onAddWordStudyToSermon: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToNote: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToTeachingOutline: (explorer: WordExplorerResult) => void;
   onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenStudyToolSearch: (query: string, filter?: string) => void;
@@ -21728,7 +22065,7 @@ function ChapterStudyWorkflow({
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <Search size={18} />
-            <h3 className="text-sm font-semibold">Occurrence Explorer</h3>
+            <h3 className="text-sm font-semibold">Word Connection Mode</h3>
           </div>
           <label className="mt-3 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
             Study word
@@ -21738,27 +22075,22 @@ function ChapterStudyWorkflow({
               onChange={(event) => onExplorerWordChange(event.target.value)}
             />
           </label>
-          <div className="mt-3 grid grid-cols-3 gap-2">
-            <MiniStat label="Chapter" value={String(explorer.chapterOccurrences.length)} />
-            <MiniStat label="Book" value={String(explorer.bookOccurrences.length)} />
-            <MiniStat label="Bible" value={String(explorer.bibleOccurrences.length)} />
-          </div>
-          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-sm font-semibold capitalize text-[var(--ink)]">{explorer.word || "word"}</p>
-              <button className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--green)]" onClick={() => onLookupWord(explorer.word)} type="button">
-                Webster&apos;s 1828
-              </button>
-            </div>
-            <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
-          </div>
-          <StrongStudyPanel
-            entry={chapterStrongEntry}
-            dictionaryEntry={chapterStrongEntry ? findDictionaryEntry(chapterStrongEntry.websterWord) : null}
-            onOpenReference={onOpenReference}
+          <WordConnectionPanel
+            explorer={explorer}
+            strongsEntry={chapterStrongEntry}
+            wordHighlightSets={wordHighlightSets}
+            compact
             onLookupWord={onLookupWord}
+            onOpenReference={onOpenReference}
             onSelectWord={onExplorerWordChange}
             onOpenStudyToolSearch={onOpenStudyToolSearch}
+            onAddWordHighlightSet={onAddWordHighlightSet}
+            onToggleWordHighlightSet={onToggleWordHighlightSet}
+            onRemoveWordHighlightSet={onRemoveWordHighlightSet}
+            onClearWordHighlightSets={onClearWordHighlightSets}
+            onAddWordStudyToSermon={onAddWordStudyToSermon}
+            onAddWordStudyToNote={onAddWordStudyToNote}
+            onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
           />
           <div className="mt-3 flex flex-wrap gap-2">
             {suggestedWords.map((item) => (
@@ -31508,6 +31840,7 @@ function StudyDrawer({
   bookIntroduction,
   versesByRef,
   allVerses,
+  wordHighlightSets,
   existingNote,
   highlighted,
   bookmarked,
@@ -31527,6 +31860,13 @@ function StudyDrawer({
   onSaveNote,
   onDeleteNote,
   onLookupWord,
+  onAddWordHighlightSet,
+  onToggleWordHighlightSet,
+  onRemoveWordHighlightSet,
+  onClearWordHighlightSets,
+  onAddWordStudyToSermon,
+  onAddWordStudyToNote,
+  onAddWordStudyToTeachingOutline,
   onOpenReference,
   onOpenBookIntroduction,
   onAddMemory,
@@ -31551,6 +31891,7 @@ function StudyDrawer({
   bookIntroduction: BookIntroduction | null;
   versesByRef: Map<string, BibleVerse>;
   allVerses: BibleVerse[];
+  wordHighlightSets: WordHighlightSet[];
   existingNote: UserNote | null;
   highlighted: boolean;
   bookmarked: boolean;
@@ -31570,6 +31911,13 @@ function StudyDrawer({
   onSaveNote: () => void;
   onDeleteNote: () => void;
   onLookupWord: (word: string) => void;
+  onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
+  onToggleWordHighlightSet: (id: string) => void;
+  onRemoveWordHighlightSet: (id: string) => void;
+  onClearWordHighlightSets: () => void;
+  onAddWordStudyToSermon: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToNote: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToTeachingOutline: (explorer: WordExplorerResult) => void;
   onOpenReference: (targetRef: string) => void;
   onOpenBookIntroduction: () => void;
   onAddMemory: () => void;
@@ -31594,7 +31942,7 @@ function StudyDrawer({
     { id: "study", label: "Study" },
     { id: "actions", label: "Actions" },
     { id: "dictionary", label: "Dictionary" },
-    { id: "occurrences", label: "Occurrences" },
+    { id: "occurrences", label: "Word Study" },
     { id: "crossReferences", label: "Cross References" },
     { id: "notes", label: "Notes" },
     { id: "audio", label: "Audio" },
@@ -31869,7 +32217,7 @@ function StudyDrawer({
                 <ActionButton icon={<Share2 size={18} />} label="Share" onClick={onShare} />
                 <ActionButton icon={<NotebookPen size={18} />} label="Note" onClick={() => onActiveTabChange("notes")} />
                 <ActionButton icon={<Volume2 size={18} />} label="Audio" onClick={() => onActiveTabChange("audio")} />
-                <ActionButton icon={<Search size={18} />} label="Occurrences" onClick={() => onActiveTabChange("occurrences")} />
+                <ActionButton icon={<Search size={18} />} label="Word Study" onClick={() => onActiveTabChange("occurrences")} />
               </div>
 
               <StudySection title="One-Click Workflow">
@@ -31915,7 +32263,7 @@ function StudyDrawer({
                     onClick={() => onActiveTabChange("occurrences")}
                     type="button"
                   >
-                    Open Occurrence Explorer
+                    Open Word Connection Mode
                   </button>
                   {drawerWordExplorer.chapterOccurrences.length > 0 && (
                     <div className="mt-3 space-y-2">
@@ -31942,8 +32290,16 @@ function StudyDrawer({
           {activeTab === "occurrences" && (
             <OccurrenceExplorerPanel
               explorer={drawerWordExplorer}
+              wordHighlightSets={wordHighlightSets}
               onLookupWord={onLookupWord}
               onOpenReference={onOpenReference}
+              onAddWordHighlightSet={onAddWordHighlightSet}
+              onToggleWordHighlightSet={onToggleWordHighlightSet}
+              onRemoveWordHighlightSet={onRemoveWordHighlightSet}
+              onClearWordHighlightSets={onClearWordHighlightSets}
+              onAddWordStudyToSermon={onAddWordStudyToSermon}
+              onAddWordStudyToNote={onAddWordStudyToNote}
+              onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
             />
           )}
 
@@ -32203,26 +32559,68 @@ function WordLookupStrip({
   );
 }
 
-function OccurrenceExplorerPanel({
+function WordConnectionPanel({
   explorer,
+  strongsEntry,
+  wordHighlightSets,
+  compact,
   onLookupWord,
   onOpenReference,
+  onSelectWord,
+  onOpenStudyToolSearch,
+  onAddWordHighlightSet,
+  onToggleWordHighlightSet,
+  onRemoveWordHighlightSet,
+  onClearWordHighlightSets,
+  onAddWordStudyToSermon,
+  onAddWordStudyToNote,
+  onAddWordStudyToTeachingOutline,
 }: {
   explorer: WordExplorerResult;
+  strongsEntry: StrongMvpEntry | null;
+  wordHighlightSets: WordHighlightSet[];
+  compact?: boolean;
   onLookupWord: (word: string) => void;
   onOpenReference: (targetRef: string) => void;
+  onSelectWord?: (word: string) => void;
+  onOpenStudyToolSearch?: (query: string, filter?: string) => void;
+  onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
+  onToggleWordHighlightSet: (id: string) => void;
+  onRemoveWordHighlightSet: (id: string) => void;
+  onClearWordHighlightSets: () => void;
+  onAddWordStudyToSermon: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToNote: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToTeachingOutline: (explorer: WordExplorerResult) => void;
 }) {
+  const [selectedColor, setSelectedColor] = useState<WordHighlightColor>("green");
+  const [selectedScope, setSelectedScope] = useState<WordHighlightScope>("chapter");
   const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
-  const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
-  const strongsEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
+  const keyVerses = uniqueStrings([
+    ...(strongsEntry?.keyVerses ?? []),
+    ...explorer.chapterOccurrences.slice(0, 4).map((verse) => verse.ref),
+    ...explorer.bibleOccurrences.slice(0, 8).map((verse) => verse.ref),
+  ]).slice(0, compact ? 8 : 12);
+  const relatedWords = uniqueStrings([
+    ...(strongsEntry?.relatedWords ?? []),
+    explorer.lookupWord,
+    ...(strongsEntry?.rootChain ?? []).map((item) => cleanWord(item.split(/\s+/)[1] ?? item)).filter(Boolean),
+  ]).filter((word) => word && word !== explorer.lookupWord).slice(0, 8);
+  const sermonValue = explorer.bibleOccurrences.length
+    ? `${explorer.word || explorer.lookupWord} appears ${explorer.chapterOccurrences.length} time(s) in this chapter and ${explorer.bibleOccurrences.length} time(s) in the local KJV text.`
+    : "No local occurrences found yet.";
 
   return (
     <div className="space-y-3">
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
-        <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">Occurrence Explorer</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">Word Connection Mode</p>
             <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{explorer.word || "word"}</h3>
+            <p className="mt-1 text-sm text-[var(--muted)]">
+              {explorer.lookupWord && explorer.lookupWord !== explorer.word
+                ? `Normalized to ${explorer.lookupWord}`
+                : `Lookup word: ${explorer.lookupWord || explorer.word}`}
+            </p>
           </div>
           <button
             className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
@@ -32232,24 +32630,220 @@ function OccurrenceExplorerPanel({
             Webster&apos;s 1828
           </button>
         </div>
-        <p className="mt-2 text-sm text-[var(--muted)]">
-          {explorer.lookupWord && explorer.lookupWord !== explorer.word
-            ? `Normalized to: ${explorer.lookupWord}`
-            : `Lookup root: ${explorer.lookupWord || explorer.word}`}
-        </p>
-        <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{explorer.definition.definition}</p>
+
         <div className="mt-4 grid grid-cols-3 gap-2">
           <MiniStat label="Chapter" value={String(explorer.chapterOccurrences.length)} />
           <MiniStat label="Book" value={String(explorer.bookOccurrences.length)} />
           <MiniStat label="Bible" value={String(explorer.bibleOccurrences.length)} />
         </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Main meaning</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{strongsEntry?.plainMeaning ?? explorer.definition.definition}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">First occurrence</p>
+            {firstOccurrence ? (
+              <button className="mt-2 w-full text-left" onClick={() => onOpenReference(firstOccurrence.ref)} type="button">
+                <span className="text-sm font-semibold text-[var(--green)]">{firstOccurrence.ref}</span>
+                <span className="mt-1 line-clamp-2 block font-serif text-sm leading-6 text-[var(--scripture-ink)]">{firstOccurrence.text}</span>
+              </button>
+            ) : (
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">No matching verse found in the local KJV text.</p>
+            )}
+          </div>
+        </div>
+
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">At-a-glance word panel</p>
+            {strongsEntry && (
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">
+                {strongsEntry.strongsNumber} · {strongsEntry.originalWord}
+              </span>
+            )}
+          </div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            <MiniStat label="Word" value={explorer.word || explorer.lookupWord || "Word"} />
+            <MiniStat label="Count" value={String(explorer.bibleOccurrences.length)} />
+            <MiniStat label="Root" value={strongsEntry?.root ?? "Not available yet"} />
+            <MiniStat label="Sermon value" value={sermonValue} />
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {relatedWords.length ? relatedWords.map((word) => (
+              <button
+                key={`word-related-${explorer.lookupWord}-${word}`}
+                className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => onSelectWord ? onSelectWord(word) : onLookupWord(word)}
+                type="button"
+              >
+                {word}
+              </button>
+            )) : (
+              <span className="text-xs leading-5 text-[var(--muted)]">Related words will appear as Strong&apos;s data grows.</span>
+            )}
+          </div>
+        </div>
       </section>
 
       <StrongStudyPanel
         entry={strongsEntry}
-        dictionaryEntry={explorer.definition}
+        dictionaryEntry={strongsEntry ? findDictionaryEntry(strongsEntry.websterWord) : explorer.definition}
         onOpenReference={onOpenReference}
         onLookupWord={onLookupWord}
+        onSelectWord={onSelectWord}
+        onOpenStudyToolSearch={onOpenStudyToolSearch}
+      />
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Multi-word highlighting</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Save word sets, choose colors, and control the study scope.</p>
+          </div>
+          <button
+            className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--muted)]"
+            onClick={onClearWordHighlightSets}
+            type="button"
+          >
+            Clear all
+          </button>
+        </div>
+        <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_1fr_auto]">
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Color
+            <select
+              className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
+              value={selectedColor}
+              onChange={(event) => setSelectedColor(event.target.value as WordHighlightColor)}
+            >
+              {WORD_HIGHLIGHT_COLORS.map((color) => <option key={color.id} value={color.id}>{color.label}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Scope
+            <select
+              className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm normal-case tracking-normal text-[var(--ink)]"
+              value={selectedScope}
+              onChange={(event) => setSelectedScope(event.target.value as WordHighlightScope)}
+            >
+              {WORD_HIGHLIGHT_SCOPES.map((scope) => <option key={scope.id} value={scope.id}>{scope.label}</option>)}
+            </select>
+          </label>
+          <button
+            className="self-end rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white"
+            onClick={() => onAddWordHighlightSet(explorer.word || explorer.lookupWord, selectedColor, selectedScope)}
+            type="button"
+          >
+            Save set
+          </button>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {wordHighlightSets.length ? wordHighlightSets.map((set) => (
+            <span key={set.id} className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-2 py-1 text-xs font-semibold text-[var(--muted)]">
+              <span className={`size-2.5 rounded-full ${wordHighlightDotClass(set.color)}`} />
+              <button className="capitalize text-[var(--ink)]" onClick={() => onSelectWord ? onSelectWord(set.word) : onLookupWord(set.word)} type="button">
+                {set.word}
+              </button>
+              <span>{wordHighlightScopeLabel(set.scope)}</span>
+              <button className="rounded-full bg-white px-2 py-0.5 text-[var(--green)]" onClick={() => onToggleWordHighlightSet(set.id)} type="button">
+                {set.enabled ? "On" : "Off"}
+              </button>
+              <button className="rounded-full bg-white px-2 py-0.5" onClick={() => onRemoveWordHighlightSet(set.id)} type="button">
+                Remove
+              </button>
+            </span>
+          )) : (
+            <p className="text-sm leading-6 text-[var(--muted)]">No saved word sets yet.</p>
+          )}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <p className="text-sm font-semibold text-[var(--green)]">Teaching actions</p>
+        <div className="mt-3 grid gap-2 sm:grid-cols-3">
+          <button className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white" onClick={() => onAddWordStudyToSermon(explorer)} type="button">
+            Add to sermon
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddWordStudyToNote(explorer)} type="button">
+            Add to notes
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddWordStudyToTeachingOutline(explorer)} type="button">
+            Add to outline
+          </button>
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm font-semibold text-[var(--green)]">Key verses</p>
+          <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+            {keyVerses.length} shown
+          </span>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {keyVerses.map((ref) => (
+            <button
+              key={`word-key-${explorer.lookupWord}-${ref}`}
+              className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+              onClick={() => onOpenReference(ref)}
+              type="button"
+            >
+              {ref}
+            </button>
+          ))}
+          {!keyVerses.length && <span className="text-sm leading-6 text-[var(--muted)]">Key verses will appear as this word is reviewed.</span>}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function OccurrenceExplorerPanel({
+  explorer,
+  wordHighlightSets,
+  onLookupWord,
+  onOpenReference,
+  onAddWordHighlightSet,
+  onToggleWordHighlightSet,
+  onRemoveWordHighlightSet,
+  onClearWordHighlightSets,
+  onAddWordStudyToSermon,
+  onAddWordStudyToNote,
+  onAddWordStudyToTeachingOutline,
+}: {
+  explorer: WordExplorerResult;
+  wordHighlightSets: WordHighlightSet[];
+  onLookupWord: (word: string) => void;
+  onOpenReference: (targetRef: string) => void;
+  onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
+  onToggleWordHighlightSet: (id: string) => void;
+  onRemoveWordHighlightSet: (id: string) => void;
+  onClearWordHighlightSets: () => void;
+  onAddWordStudyToSermon: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToNote: (explorer: WordExplorerResult) => void;
+  onAddWordStudyToTeachingOutline: (explorer: WordExplorerResult) => void;
+}) {
+  const firstOccurrence = explorer.bibleOccurrences[0] ?? null;
+  const visibleMatches = explorer.bibleOccurrences.slice(0, 36);
+  const strongsEntry = strongsMvpEntries[explorer.lookupWord] ?? null;
+
+  return (
+    <div className="space-y-3">
+      <WordConnectionPanel
+        explorer={explorer}
+        strongsEntry={strongsEntry}
+        wordHighlightSets={wordHighlightSets}
+        onLookupWord={onLookupWord}
+        onOpenReference={onOpenReference}
+        onAddWordHighlightSet={onAddWordHighlightSet}
+        onToggleWordHighlightSet={onToggleWordHighlightSet}
+        onRemoveWordHighlightSet={onRemoveWordHighlightSet}
+        onClearWordHighlightSets={onClearWordHighlightSets}
+        onAddWordStudyToSermon={onAddWordStudyToSermon}
+        onAddWordStudyToNote={onAddWordStudyToNote}
+        onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
       />
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
