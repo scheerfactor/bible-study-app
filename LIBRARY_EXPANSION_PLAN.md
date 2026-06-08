@@ -2,6 +2,23 @@
 
 Father's Business Bible Study should grow the Library carefully: public-domain first, rights documented, doctrinal review visible, and resources curated instead of dumped into the app.
 
+## Current Public Library Snapshot
+
+- Verified public Library resources: 779.
+- Public Library authors represented: 351.
+- Public commentary entries: 4,016.
+- Current duplicate title/author groups: 0.
+- Latest import dry-runs found no safe bulk growth left in the existing prepared CSV batches without creating duplicate or duplicate-equivalent records.
+
+## Library Depth Sprint Direction
+
+The next growth push should not be a raw number chase. It should strengthen the collections users are most likely to trust and use:
+
+1. Spurgeon, Ironside, Kelly, Darby, Grant, Gaebelein, Ryle, Torrey, and Meyer.
+2. Bible tools: dictionaries, handbooks, surveys, geography, chronology, manners and customs, TSK, and Strong's.
+3. Commentary candidates: Pulpit Commentary, Biblical Illustrator, and Matthew Poole only after exact source, edition, rights, and parser review.
+4. Baptist history, missions, preaching/teaching, prayer, and KJV/textual-issue resources only where source records are clean.
+
 ## Public-Domain Imports Approved Now
 
 These resources are approved for shared Library import because source and rights metadata are documented in `data/library/manifests/curated-public-domain-resources.json`.

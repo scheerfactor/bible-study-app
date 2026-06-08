@@ -2,6 +2,20 @@
 
 Father's Business Bible Study is expanding commentary depth by adding one reviewed source at a time. Scripture remains first. Commentary is secondary, collapsed where practical, and only imported when source, rights, and review status are documented.
 
+## Current Snapshot
+
+- Public commentary entries: 4,016.
+- Public commentary books covered: 66.
+- Public commentary authors represented: 7.
+- Commentary validation rows checked, including staging and review files: 6,394.
+- Matthew Henry: 1,189 public verified entries, covering all 66 Bible books.
+- JFB: 1,189 public verified entries, covering all 66 Bible books.
+- Barnes: 771 public verified entries from reviewed public-domain batches.
+- Adam Clarke: 771 public verified entries from reviewed public-domain batches.
+- Wesley: 86 public verified New Testament entries.
+- Gill and H. A. Ironside remain sample-only until cleaner source/edition review is complete.
+- Pulpit Commentary, Biblical Illustrator, and Matthew Poole remain needs-review candidates only.
+
 ## Sprint Rules
 
 - Import small verified samples before any full collection.

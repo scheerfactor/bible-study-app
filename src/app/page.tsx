@@ -23816,6 +23816,75 @@ function libraryStudyText(resource: LibraryResource) {
   ].join(" ").toLowerCase();
 }
 
+function libraryAudienceLabels(resource: LibraryResource) {
+  const text = libraryStudyText(resource);
+  const labels = new Set<string>();
+
+  if (text.includes("preach") || text.includes("teach") || text.includes("sermon") || text.includes("commentary")) labels.add("Teachers");
+  if (text.includes("preach") || text.includes("illustration") || text.includes("application")) labels.add("Preachers");
+  if (text.includes("prayer") || text.includes("pray") || text.includes("intercession")) labels.add("Prayer");
+  if (text.includes("evangel") || text.includes("salvation") || text.includes("soul winner")) labels.add("Evangelism");
+  if (text.includes("mission") || text.includes("missionary")) labels.add("Missions");
+  if (text.includes("baptist") || text.includes("church history")) labels.add("Baptist history");
+  if (text.includes("dictionary") || text.includes("topical") || text.includes("survey") || text.includes("handbook")) labels.add("Bible students");
+  if (text.includes("christian living") || text.includes("devotional") || text.includes("discipleship")) labels.add("Christian growth");
+  if (text.includes("kjv") || text.includes("textual") || text.includes("king james")) labels.add("Textual issues");
+
+  if (!labels.size) labels.add("Serious readers");
+  return Array.from(labels).slice(0, 4);
+}
+
+function relatedLibraryResourcesForResource(activeResource: LibraryResource, resources: LibraryResource[], limit = 10) {
+  const activeAuthorId = libraryAuthorIdFromName(activeResource.author);
+  const activeAudience = new Set(libraryAudienceLabels(activeResource));
+  const activeText = libraryStudyText(activeResource);
+  const importantTerms = [
+    "john",
+    "romans",
+    "amos",
+    "daniel",
+    "revelation",
+    "prayer",
+    "preaching",
+    "teaching",
+    "missions",
+    "baptist",
+    "prophecy",
+    "evangelism",
+    "doctrine",
+  ].filter((term) => activeText.includes(term));
+
+  return resources
+    .filter((resource) => resource.slug !== activeResource.slug)
+    .map((resource) => {
+      const relatedText = libraryStudyText(resource);
+      const sharedAudience = libraryAudienceLabels(resource).filter((label) => activeAudience.has(label)).length;
+      const sharedTerms = importantTerms.filter((term) => relatedText.includes(term)).length;
+      const score =
+        (libraryAuthorIdFromName(resource.author) === activeAuthorId ? 90 : 0) +
+        (resource.collection === activeResource.collection ? 55 : 0) +
+        (resource.category === activeResource.category ? 40 : 0) +
+        (isCommentaryLikeResource(resource) === isCommentaryLikeResource(activeResource) ? 18 : 0) +
+        sharedAudience * 14 +
+        sharedTerms * 10 +
+        Math.min(12, Math.round((resource.word_count ?? 0) / 25000));
+
+      return { resource, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || (b.resource.word_count ?? 0) - (a.resource.word_count ?? 0) || a.resource.title.localeCompare(b.resource.title))
+    .map((item) => item.resource)
+    .slice(0, limit);
+}
+
+function recommendedNextResourceReason(current: LibraryResource, next: LibraryResource) {
+  if (libraryAuthorIdFromName(current.author) === libraryAuthorIdFromName(next.author)) return "Continue with the same author.";
+  if (next.collection === current.collection) return "Another strong title from this collection.";
+  if (next.category === current.category) return `More ${libraryCategoryLabel(current.category)} reading.`;
+  if (isCommentaryLikeResource(next)) return "Compare this with another commentary voice.";
+  return "A related resource for the same study path.";
+}
+
 function uniqueStudyCards(cards: Array<{ label: string; note: string }>, limit = 4) {
   const seen = new Set<string>();
   return cards.filter((card) => {
@@ -24661,10 +24730,7 @@ function LibraryScreen({
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
-        relatedResources={resources
-          .filter((resource) => resource.slug !== activeResource.slug)
-          .filter((resource) => resource.author === activeResource.author || resource.category === activeResource.category)
-          .slice(0, 8)}
+        relatedResources={relatedLibraryResourcesForResource(activeResource, resources, 10)}
         onOpenDetail={onOpenDetail}
       />
     );
@@ -28453,6 +28519,7 @@ function LibraryDetail({
   const relatedPassages = relatedPassagesForLibraryResource(resource);
   const relatedSermons = sermonIdeasForLibraryResource(resource);
   const recommendedNextResource = relatedResources[0] ?? null;
+  const audienceLabels = libraryAudienceLabels(resource);
   const coverSeed = resource.category.length + resource.title.length;
   const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
   const quoteSafety = resource.safe_for_quotation === false ? "Spot-check before quoting" : resource.safe_for_quotation === true ? "Ready for careful quotation" : "Quote safety not reviewed";
@@ -28493,6 +28560,13 @@ function LibraryDetail({
               <StatusCard label="Estimated reading" status={libraryReadingHours(resource)} good={Boolean(resource.word_count)} />
               <StatusCard label="Listening" status={audiobookMeta.duration} good />
               <StatusCard label="Quote safety" status={quoteSafety} good={resource.safe_for_quotation !== false} />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {audienceLabels.map((label) => (
+                <span key={`detail-audience-${resource.slug}-${label}`} className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                  {label}
+                </span>
+              ))}
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
               <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={completed ? onReadAgain : onOpenReader} type="button">
@@ -28640,6 +28714,7 @@ function LibraryDetail({
             <button className="mt-2 text-left" onClick={() => onOpenDetail(recommendedNextResource.slug)} type="button">
               <span className="block text-base font-semibold text-[var(--green)]">{recommendedNextResource.title}</span>
               <span className="mt-1 block text-sm text-[var(--muted)]">{recommendedNextResource.author}</span>
+              <span className="mt-2 block text-xs leading-5 text-[var(--muted)]">{recommendedNextResourceReason(resource, recommendedNextResource)}</span>
             </button>
           </div>
         )}
@@ -30004,6 +30079,7 @@ function LibraryResourceCard({
   const coverSeed = resource.category.length + resource.title.length;
   const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
   const showCoverImage = Boolean(resource.cover_image_url && !coverFailed);
+  const audienceLabels = libraryAudienceLabels(resource);
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
@@ -30028,6 +30104,11 @@ function LibraryResourceCard({
           <h3 className="line-clamp-4 text-2xl font-semibold leading-7">{resource.title}</h3>
           <p className="mt-4 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
         </div>
+        <div className="pointer-events-none absolute inset-x-4 bottom-4 translate-y-3 rounded-2xl bg-white/95 p-3 text-[var(--ink)] opacity-0 shadow-lg backdrop-blur transition duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          <p className="line-clamp-2 text-sm font-semibold leading-5">{resource.title}</p>
+          <p className="mt-1 text-xs font-semibold text-[var(--green)]">{libraryReadingMinutes(resource)} · {audienceLabels.slice(0, 2).join(", ")}</p>
+          <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{resource.recommended_use || resource.description}</p>
+        </div>
         {completed && (
           <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
             Finished
@@ -30042,6 +30123,9 @@ function LibraryResourceCard({
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
           <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Read</p>
           <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Listen</p>
+          {audienceLabels.slice(0, 2).map((label) => (
+            <p key={`resource-card-audience-${resource.slug}-${label}`} className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--green)]">{label}</p>
+          ))}
         </div>
         <p className="mt-3 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
         <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />

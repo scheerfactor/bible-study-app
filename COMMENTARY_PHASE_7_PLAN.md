@@ -4,6 +4,15 @@
 
 Increase public commentary coverage without flooding the app with unreviewed or unclear material. Scripture remains primary; commentary is secondary and labeled.
 
+## Current Public Coverage
+
+- Public commentary entries: 4,016.
+- Matthew Henry and JFB each cover all 66 Bible books.
+- Barnes and Adam Clarke each have 771 reviewed public entries.
+- Wesley has 86 reviewed public New Testament entries.
+- Gill and H. A. Ironside remain sample-only.
+- Pulpit Commentary, Biblical Illustrator, and Matthew Poole are not imported publicly yet.
+
 ## Current Rule
 
 No commentary entry becomes public unless it has:
