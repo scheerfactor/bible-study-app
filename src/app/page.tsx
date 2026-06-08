@@ -3,6 +3,7 @@
 import { createClient, type SupabaseClient, type User } from "@supabase/supabase-js";
 import {
   Bookmark,
+  BookMarked,
   BookOpen,
   Brain,
   BarChart3,
@@ -3675,6 +3676,72 @@ const STUDY_THEMES: StudyTheme[] = [
     placeIds: ["babylon", "jerusalem", "bethel"],
     timelineIds: ["minor-prophets", "daniel-exile"],
     tags: ["wrath", "condemnation", "prophets", "accountability"],
+  },
+  {
+    id: "justice",
+    title: "Justice",
+    description: "God's right judgment, honest dealing, and concern for righteousness in public and private life.",
+    keyVerses: ["Amos 5:24", "Micah 6:8", "Proverbs 21:3", "Isaiah 1:17"],
+    crossReferences: [
+      { sourceRef: "Amos 5:24", targetRef: "Micah 6:8", label: "Judgment, mercy, and humble walking" },
+      { sourceRef: "Proverbs 21:3", targetRef: "Isaiah 1:17", label: "Righteousness before empty form" },
+    ],
+    strongWords: ["judgment", "righteousness", "law"],
+    websterWords: ["judgment", "righteousness", "law"],
+    commentaryTerms: ["justice", "judgment", "righteousness", "poor", "oppress"],
+    relatedBookTerms: ["justice", "amos", "prophets", "righteousness", "poor"],
+    relatedSermonTerms: ["justice", "judgment", "righteousness", "oppression"],
+    illustrations: ["A crooked balance exposed by a true standard.", "A gate where justice should be done openly and honestly."],
+    applications: ["Let Amos define justice by God's word, not by current slogans.", "Ask whether worship and daily dealing agree with righteousness."],
+    quotes: ["Biblical justice begins with the righteous character of God."],
+    peopleIds: ["moses", "isaiah"],
+    placeIds: ["samaria", "bethel", "jerusalem"],
+    timelineIds: ["minor-prophets", "isaiah-ministry"],
+    tags: ["judgment", "righteousness", "poor", "oppression", "amos"],
+  },
+  {
+    id: "mercy",
+    title: "Mercy",
+    description: "God's compassion and restrained judgment toward those who deserve correction.",
+    keyVerses: ["Lamentations 3:22", "Micah 7:18", "Titus 3:5", "Hebrews 4:16"],
+    crossReferences: [
+      { sourceRef: "Lamentations 3:22", targetRef: "Micah 7:18", label: "The LORD delights in mercy" },
+      { sourceRef: "Titus 3:5", targetRef: "Hebrews 4:16", label: "Mercy in salvation and help" },
+    ],
+    strongWords: ["mercy", "grace", "saved"],
+    websterWords: ["mercy", "grace", "saved"],
+    commentaryTerms: ["mercy", "compassion", "pardon", "return"],
+    relatedBookTerms: ["mercy", "grace", "prayer", "christian life", "gospel"],
+    relatedSermonTerms: ["mercy", "grace", "pardon", "return"],
+    illustrations: ["A judge who provides a lawful way of mercy without denying guilt.", "A father receiving a humbled child instead of casting him away."],
+    applications: ["Keep mercy tied to repentance and truth.", "Show mercy as God's kindness, not His indifference to sin."],
+    quotes: ["Mercy does not deny guilt; it magnifies God's compassion toward the guilty."],
+    peopleIds: ["david", "paul"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["david", "minor-prophets", "christ-crucifixion"],
+    tags: ["compassion", "pardon", "grace", "return"],
+  },
+  {
+    id: "pride",
+    title: "Pride",
+    description: "Self-exalting confidence that resists God, ignores warning, and trusts status or strength.",
+    keyVerses: ["Proverbs 16:18", "Amos 6:8", "Obadiah 1:3", "James 4:6"],
+    crossReferences: [
+      { sourceRef: "Proverbs 16:18", targetRef: "Amos 6:8", label: "Pride before judgment" },
+      { sourceRef: "Obadiah 1:3", targetRef: "James 4:6", label: "Pride resisted by God" },
+    ],
+    strongWords: ["pride", "boast", "glory"],
+    websterWords: ["pride", "glory", "boast"],
+    commentaryTerms: ["pride", "ease", "luxury", "boast", "self"],
+    relatedBookTerms: ["pride", "humility", "amos", "christian life", "revival"],
+    relatedSermonTerms: ["pride", "humility", "warning", "repentance"],
+    illustrations: ["A wall leaning outward while the owner insists it is safe.", "A man admiring his house while the foundation gives way."],
+    applications: ["Use pride passages to examine ourselves before naming others.", "Call for humility under God's word and correction."],
+    quotes: ["Pride makes warnings sound unnecessary until judgment proves them true."],
+    peopleIds: ["daniel", "peter"],
+    placeIds: ["babylon", "samaria", "bethel"],
+    timelineIds: ["david", "daniel-exile", "minor-prophets"],
+    tags: ["ease", "boasting", "humility", "warning", "amos"],
   },
   {
     id: "kingdom",
@@ -12284,6 +12351,59 @@ function themeTimeline(theme: StudyTheme) {
   return timelineEntriesForIds(theme.timelineIds);
 }
 
+function themeStudySummaryText({
+  theme,
+  versesByRef,
+  commentaryEntries,
+  resources,
+}: {
+  theme: StudyTheme;
+  versesByRef: Map<string, BibleVerse>;
+  commentaryEntries: CommentaryEntry[];
+  resources: LibraryResource[];
+}) {
+  const dictionaryEntriesForTheme = themeDictionaryEntries(theme);
+  const strongEntriesForTheme = themeStrongEntries(theme);
+  const commentaryForTheme = themeCommentaryEntries(theme, commentaryEntries);
+  const resourcesForTheme = themeLibraryResources(theme, resources);
+
+  return [
+    `# Theme Study: ${theme.title}`,
+    "",
+    theme.description,
+    "",
+    "## Key Verses",
+    ...sectionOrEmpty(theme.keyVerses.map((reference) => {
+      const verse = versesByRef.get(reference);
+      return `- ${reference}${verse ? ` - ${verse.plainText}` : ""}`;
+    })),
+    "",
+    "## Cross References",
+    ...sectionOrEmpty(theme.crossReferences.map((reference) => `- ${reference.sourceRef} -> ${reference.targetRef}: ${reference.label}`)),
+    "",
+    "## Webster's 1828",
+    ...sectionOrEmpty(dictionaryEntriesForTheme.map((entry) => `- ${entry.lookupWord}: ${entry.definition}`)),
+    "",
+    "## Strong's Starter Words",
+    ...sectionOrEmpty(strongEntriesForTheme.length
+      ? strongEntriesForTheme.map((entry) => `- ${entry.strongsNumber} ${entry.displayWord}: ${entry.plainMeaning}`)
+      : theme.strongWords.map((word) => `- ${word}: Strong's data pending review`)),
+    "",
+    "## Commentary Links",
+    ...sectionOrEmpty(commentaryForTheme.map((entry) => `- ${commentaryReferenceLabel(entry)} - ${entry.author}: ${entry.resource_title}`)),
+    "",
+    "## Related Books",
+    ...sectionOrEmpty(resourcesForTheme.map((resource) => `- ${resource.title} - ${resource.author}`)),
+    "",
+    "## Sermon / Lesson Uses",
+    ...sectionOrEmpty(theme.illustrations.map((item) => `- Illustration: ${item}`)),
+    ...sectionOrEmpty(theme.quotes.map((item) => `- Quote / principle: ${item}`)),
+    "",
+    "## Applications",
+    ...sectionOrEmpty(theme.applications.map((item) => `- ${item}`)),
+  ].join("\n");
+}
+
 function buildActiveBibleBackground({
   book,
   chapter,
@@ -13597,6 +13717,109 @@ export default function Home() {
       setSermonPreachingStartedAt(Date.now());
       setSermonTimerNow(Date.now());
     }
+  }
+
+  function themeWorkflowText(theme: StudyTheme) {
+    return themeStudySummaryText({
+      theme,
+      versesByRef,
+      commentaryEntries,
+      resources: libraryResources,
+    });
+  }
+
+  function addThemeToSermon(theme: StudyTheme) {
+    const content = themeWorkflowText(theme).trim();
+    if (!content) {
+      setSyncMessage(`${theme.title} has no reviewed theme content yet.`);
+      return;
+    }
+    setSermonDraft((draft) => ({
+      ...draft,
+      theme: draft.theme || theme.title,
+      importedStudyNotes: [draft.importedStudyNotes, `## Theme Study - ${theme.title}`, content].filter(Boolean).join("\n\n"),
+      updatedAt: new Date().toISOString(),
+    }));
+    setSyncMessage(`${theme.title} theme study added to sermon prep notes.`);
+    openSermonWorkspace("builder");
+  }
+
+  function addThemeToJournal(theme: StudyTheme) {
+    startJournalDraft("Passage Guide", {
+      sourceLabel: `Theme Explorer - ${theme.title}`,
+      bibleReadingPassage: `${book} ${chapter}`,
+      selectedVerseRefs: theme.keyVerses.slice(0, 4).join(", "),
+      versePassage: theme.keyVerses.map((reference) => verseWorkflowText(reference)).join("\n"),
+      wordsToDefine: uniqueStrings([...theme.websterWords, ...theme.strongWords]).slice(0, 10).join(", "),
+      strongsConnection: themeStrongEntries(theme).map((entry) => `${entry.strongsNumber} ${entry.displayWord}: ${entry.plainMeaning}`).join("\n"),
+      verseSays: theme.description,
+      verseMeans: `Trace ${theme.title.toLowerCase()} through the listed verses before applying it.`,
+      verseApplies: theme.applications.join("\n"),
+      teachingThought: themeWorkflowText(theme).slice(0, 1800),
+    });
+  }
+
+  function addThemeToStudyPlaylist(theme: StudyTheme) {
+    appendItemToActiveStudyPlaylist({
+      id: makeId("playlist_item"),
+      type: "teaching_notes",
+      label: `${theme.title} theme study`,
+      book,
+      chapter,
+    });
+  }
+
+  function amosTeachingWorkflowText() {
+    let teacherNotesByChapter: Record<string, TeacherNotesDraft> = {};
+    try {
+      const savedNotes = window.localStorage.getItem(TEACHER_NOTES_KEY);
+      teacherNotesByChapter = savedNotes ? JSON.parse(savedNotes) : {};
+    } catch {
+      teacherNotesByChapter = {};
+    }
+    return buildAmosTeachingNotesMarkdown({
+      bookIntroduction: bookIntroductionsByBook.get("Amos") ?? null,
+      commentaryEntries: commentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 9),
+      teacherNotesByChapter,
+      versesByRef,
+    });
+  }
+
+  function sendAmosToSermonBuilder() {
+    const content = amosTeachingWorkflowText().trim();
+    if (!content) {
+      setSyncMessage("Amos teaching dashboard has no reviewed content yet.");
+      return;
+    }
+    setSermonDraft((draft) => ({
+      ...draft,
+      kind: "Lesson",
+      passage: draft.passage || "Amos 1-9",
+      title: draft.title || "Amos 1-9 Lesson",
+      theme: draft.theme || "The LORD judges sin and calls His people to return",
+      importedStudyNotes: [draft.importedStudyNotes, "## Amos 1-9 Teaching Dashboard", content].filter(Boolean).join("\n\n"),
+      updatedAt: new Date().toISOString(),
+    }));
+    setSyncMessage("Amos teaching dashboard added to sermon prep notes.");
+    openSermonWorkspace("builder");
+  }
+
+  function sendAmosToJournal() {
+    startJournalDraft("Passage Guide", {
+      sourceLabel: "Amos Teaching Dashboard",
+      bibleReadingPassage: "Amos 1-9",
+      selectedVerseRefs: "Amos 3:3, Amos 4:12, Amos 5:24, Amos 9:11",
+      versePassage: ["Amos 3:3", "Amos 4:12", "Amos 5:24", "Amos 9:11"].map(verseWorkflowText).join("\n"),
+      wordsToDefine: "judgment, repentance, justice, mercy, pride, worship",
+      verseSays: "Amos warns Israel and the nations with reviewed chapter summaries, outlines, cross references, and applications.",
+      verseMeans: "Privilege increases accountability, empty worship is rejected, and God's promises remain sure.",
+      verseApplies: "Review Amos 1-4 first, then build the lesson from the KJV text, reviewed cross references, and secondary commentary.",
+      teachingThought: amosTeachingWorkflowText().slice(0, 1800),
+    });
+  }
+
+  function addAmosToStudyPlaylist() {
+    createCommentaryCompanionPlaylist("Amos", [1, 2, 3, 4]);
   }
 
   function bulletSermonDraft() {
@@ -16855,6 +17078,9 @@ export default function Home() {
                   void openLibraryResource(slug, "detail");
                 }}
                 onOpenPersonStudy={openPersonStudy}
+                onSendToSermon={addThemeToSermon}
+                onSendToJournal={addThemeToJournal}
+                onAddToStudyPlaylist={addThemeToStudyPlaylist}
               />
             )}
 
@@ -17128,6 +17354,9 @@ export default function Home() {
                 onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Amos", chapterNumber)}
                 onStopListening={() => stopSpeech()}
                 onOpenPlaylistBuilder={() => setTab("bible")}
+                onSendToSermon={sendAmosToSermonBuilder}
+                onSendToJournal={sendAmosToJournal}
+                onAddToStudyPlaylist={addAmosToStudyPlaylist}
               />
             )}
 
@@ -17143,6 +17372,7 @@ export default function Home() {
                 illustrationLibrary={SERMON_ILLUSTRATION_STARTERS}
                 quoteLibrary={SERMON_QUOTE_STARTERS}
                 applicationLibrary={SERMON_APPLICATION_STARTERS}
+                studyThemes={STUDY_THEMES}
                 commentaryEntries={commentaryEntries}
                 libraryResources={libraryResources}
                 prayerEntries={prayerEntries}
@@ -17163,6 +17393,7 @@ export default function Home() {
                 onSeriesPassageChange={setSermonSeriesPassageDraft}
                 onCreateSeries={createSermonSeries}
                 onAppendImport={appendSermonImport}
+                onAddThemeToSermon={addThemeToSermon}
 	                onBulletDraft={bulletSermonDraft}
 	                onExportDraft={exportSermonDraft}
 	                onCopySermonOutline={copySermonOutline}
@@ -19451,6 +19682,9 @@ function ThemeExplorerScreen({
   onOpenReference,
   onOpenLibraryResource,
   onOpenPersonStudy,
+  onSendToSermon,
+  onSendToJournal,
+  onAddToStudyPlaylist,
 }: {
   themes: StudyTheme[];
   activeThemes: StudyTheme[];
@@ -19462,6 +19696,9 @@ function ThemeExplorerScreen({
   onOpenReference: (targetRef: string) => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
+  onSendToSermon: (theme: StudyTheme) => void;
+  onSendToJournal: (theme: StudyTheme) => void;
+  onAddToStudyPlaylist: (theme: StudyTheme) => void;
 }) {
   const [query, setQuery] = useState("");
   const [selectedThemeId, setSelectedThemeId] = useState(activeThemes[0]?.id ?? themes[0]?.id ?? "faith");
@@ -19557,10 +19794,21 @@ function ThemeExplorerScreen({
                 <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{selectedTheme.title}</h2>
                 <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">{selectedTheme.description}</p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {selectedTheme.tags.slice(0, 4).map((tag) => (
-                  <span key={`theme-tag-${selectedTheme.id}-${tag}`} className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{tag}</span>
-                ))}
+              <div className="flex max-w-md flex-wrap justify-start gap-2 md:justify-end">
+                <button className="rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white" onClick={() => onSendToSermon(selectedTheme)} type="button">
+                  Send to Sermon Builder
+                </button>
+                <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onSendToJournal(selectedTheme)} type="button">
+                  Send to Journal
+                </button>
+                <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-xs font-semibold text-[var(--green)]" onClick={() => onAddToStudyPlaylist(selectedTheme)} type="button">
+                  Add to Study Playlist
+                </button>
+                <div className="flex w-full flex-wrap gap-2 md:justify-end">
+                  {selectedTheme.tags.slice(0, 4).map((tag) => (
+                    <span key={`theme-tag-${selectedTheme.id}-${tag}`} className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -21943,6 +22191,9 @@ function AmosStudyPathScreen({
   onPlayCommentaryChapter,
   onStopListening,
   onOpenPlaylistBuilder,
+  onSendToSermon,
+  onSendToJournal,
+  onAddToStudyPlaylist,
 }: {
   versesByRef: Map<string, BibleVerse>;
   commentaryEntries: CommentaryEntry[];
@@ -21953,10 +22204,15 @@ function AmosStudyPathScreen({
   onPlayCommentaryChapter: (chapter: number) => void;
   onStopListening: () => void;
   onOpenPlaylistBuilder: () => void;
+  onSendToSermon: () => void;
+  onSendToJournal: () => void;
+  onAddToStudyPlaylist: () => void;
 }) {
   const nationsJudged = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.placesAndNations))).slice(0, 18);
   const keyWords = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.repeatedFocus))).slice(0, 18);
   const keyCrossReferences = AMOS_CHAPTER_STUDIES.flatMap((study) => study.crossReferences).slice(0, 12);
+  const priorityChapters = AMOS_CHAPTER_STUDIES.filter((study) => study.chapter >= 1 && study.chapter <= 4);
+  const priorityCrossReferences = priorityChapters.flatMap((study) => study.crossReferences);
   const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
   const questionCount = AMOS_CHAPTER_STUDIES.reduce((total, study) => total + (study.sundaySchoolQuestions?.length ?? 0), 0);
   const applicationCount = AMOS_CHAPTER_STUDIES.reduce((total, study) => total + study.practicalApplications.length, 0);
@@ -22012,6 +22268,18 @@ function AmosStudyPathScreen({
             <ListMusic size={16} />
             Open Playlist Builder
           </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendToSermon} type="button">
+            <NotebookPen size={16} />
+            Send to Sermon Builder
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendToJournal} type="button">
+            <BookMarked size={16} />
+            Send to Journal
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
+            <ListMusic size={16} />
+            Add to Study Playlist
+          </button>
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={exportAmosLessonNotes} type="button">
             <Download size={16} />
             Export Amos Lesson Notes
@@ -22052,6 +22320,43 @@ function AmosStudyPathScreen({
               {commentaryAuthors.length ? commentaryAuthors.join(", ") : "No reviewed Amos commentary entries are available yet."}
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Amos 1-4 Priority</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">First lesson flow</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Use these four chapters as the first teaching unit: the circle of judgment closes from the nations to Israel, then the LORD presses covenant accountability and repeated refusal to return.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            {priorityCrossReferences.length} reviewed cross refs
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-4">
+          {priorityChapters.map((study) => {
+            const entries = commentaryByChapter.get(study.chapter) ?? [];
+            return (
+              <article key={`amos-priority-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Amos {study.chapter}</p>
+                <h3 className="mt-1 text-base font-semibold text-[var(--green)]">{study.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{study.teachingAim}</p>
+                <div className="mt-3 rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Lesson movement</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{(study.sermonOutline ?? []).join(" -> ")}</p>
+                </div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {study.keyThemes?.slice(0, 3).map((theme) => (
+                    <span key={`amos-priority-theme-${study.chapter}-${theme}`} className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{theme}</span>
+                  ))}
+                </div>
+                <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed commentary entries available for comparison.` : "No reviewed commentary entries available yet."}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -35150,6 +35455,7 @@ function SermonWorkspaceScreen({
   illustrationLibrary,
   quoteLibrary,
   applicationLibrary,
+  studyThemes,
   commentaryEntries,
   libraryResources,
   prayerEntries,
@@ -35170,6 +35476,7 @@ function SermonWorkspaceScreen({
   onSeriesPassageChange,
   onCreateSeries,
 	  onAppendImport,
+  onAddThemeToSermon,
 	  onBulletDraft,
 	  onExportDraft,
 	  onCopySermonOutline,
@@ -35195,6 +35502,7 @@ function SermonWorkspaceScreen({
   illustrationLibrary: SermonLibraryItem[];
   quoteLibrary: SermonLibraryItem[];
   applicationLibrary: SermonLibraryItem[];
+  studyThemes: StudyTheme[];
   commentaryEntries: CommentaryEntry[];
   libraryResources: LibraryResource[];
   prayerEntries: PrayerEntry[];
@@ -35215,6 +35523,7 @@ function SermonWorkspaceScreen({
   onSeriesPassageChange: (value: string) => void;
   onCreateSeries: () => void;
   onAppendImport: (label: string, body: string) => void;
+  onAddThemeToSermon: (theme: StudyTheme) => void;
 	  onBulletDraft: () => void;
 	  onExportDraft: (format?: "markdown" | "text") => void;
 	  onCopySermonOutline: () => void;
@@ -35309,6 +35618,16 @@ function SermonWorkspaceScreen({
   const suggestedStudyPlaylists = suggestedSermonStudyPlaylists(STUDY_PLAYLIST_TEMPLATES, sermonSuggestionText);
   const suggestedPrayerConnections = suggestedSermonPrayerConnections(prayerEntries, sermonSuggestionText);
   const suggestedJournalConnections = suggestedSermonJournalConnections(journalEntries, sermonSuggestionText);
+  const suggestedThemes = studyThemes
+    .map((theme) => {
+      const terms = themeSearchTerms(theme).map((term) => term.toLowerCase()).filter((term) => term.length > 2);
+      const score = terms.reduce((total, term) => total + (sermonSuggestionText.toLowerCase().includes(term) ? 1 : 0), 0);
+      return { theme, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.theme.title.localeCompare(b.theme.title))
+    .map((item) => item.theme)
+    .slice(0, 4);
   const sectionPlaceholders: Record<SermonSectionKey, string> = {
     outline: "I. The need of the new birth...",
     introduction: "Hook, opening question, setting, and why the passage matters.",
@@ -36136,6 +36455,29 @@ function SermonWorkspaceScreen({
                 Uses existing app metadata to connect the sermon with current commentaries, books, study playlists, prayer requests, journal entries, quotes, illustrations, and applications.
               </p>
               <div className="mt-4 grid min-w-0 grid-cols-1 gap-3">
+                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Suggested Themes</p>
+                      <p className="mt-1 text-sm leading-6 text-[var(--muted)]">Add a reviewed theme study into this sermon draft.</p>
+                    </div>
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{suggestedThemes.length} matches</span>
+                  </div>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {suggestedThemes.length ? suggestedThemes.map((theme) => (
+                      <button
+                        key={`sermon-theme-suggestion-${theme.id}`}
+                        className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                        onClick={() => onAddThemeToSermon(theme)}
+                        type="button"
+                      >
+                        {theme.title}
+                      </button>
+                    )) : (
+                      <p className="text-sm leading-6 text-[var(--muted)]">Add a passage, title, or theme such as judgment, mercy, repentance, faith, or grace.</p>
+                    )}
+                  </div>
+                </div>
                 <SermonSuggestionCard
                   label="Illustration"
                   item={suggestedIllustrations[0]}
