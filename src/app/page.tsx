@@ -125,7 +125,7 @@ import permissionTrackerData from "../../data/library/manifests/permission-track
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 
-type Tab = "today" | "bible" | "search" | "themes" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -12598,8 +12598,12 @@ export default function Home() {
     }
 
     openHiddenAdminAreas();
+    const retryTimer = window.setTimeout(openHiddenAdminAreas, 50);
     window.addEventListener("hashchange", openHiddenAdminAreas);
-    return () => window.removeEventListener("hashchange", openHiddenAdminAreas);
+    return () => {
+      window.clearTimeout(retryTimer);
+      window.removeEventListener("hashchange", openHiddenAdminAreas);
+    };
   }, []);
 
   const books = useMemo(
@@ -16784,6 +16788,7 @@ export default function Home() {
               <NavButton icon={<BookOpen size={18} />} label="Bible" active={tab === "bible"} onClick={() => setTab("bible")} />
               <NavButton icon={<Search size={18} />} label="Search" active={tab === "search"} onClick={() => setTab("search")} />
               <NavButton icon={<Brain size={18} />} label="Themes" active={tab === "themes"} onClick={() => setTab("themes")} />
+              <NavButton icon={<MessageSquareText size={18} />} label="Commentary" active={tab === "commentaryExplorer"} onClick={() => setTab("commentaryExplorer")} />
               <NavButton
                 icon={<Library size={18} />}
                 label="Library"
@@ -17081,6 +17086,24 @@ export default function Home() {
                 onSendToSermon={addThemeToSermon}
                 onSendToJournal={addThemeToJournal}
                 onAddToStudyPlaylist={addThemeToStudyPlaylist}
+              />
+            )}
+
+            {tab === "commentaryExplorer" && (
+              <CommentaryExplorerScreen
+                entries={commentaryEntries}
+                currentBook={book}
+                currentChapter={chapter}
+                themes={STUDY_THEMES}
+                libraryResources={libraryResources}
+                coverage={commentaryCoverage}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onOpenAuthor={openLibraryAuthor}
+                onListenChapter={listenCommentaryChapterEntries}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
               />
             )}
 
@@ -26131,6 +26154,46 @@ function sermonIdeasForLibraryResource(resource: LibraryResource) {
   ], 3);
 }
 
+function relatedThemesForLibraryResource(resource: LibraryResource, themes: StudyTheme[] = STUDY_THEMES) {
+  const text = libraryStudyText(resource);
+  return themes
+    .map((theme) => {
+      const terms = themeSearchTerms(theme).map((term) => term.toLowerCase()).filter((term) => term.length > 3);
+      const score =
+        (text.includes(theme.title.toLowerCase()) ? 60 : 0) +
+        terms.filter((term) => text.includes(term)).length * 12 +
+        theme.relatedBookTerms.filter((term) => text.includes(term.toLowerCase())).length * 16;
+      return { theme, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.theme.title.localeCompare(b.theme.title))
+    .map((item) => item.theme)
+    .slice(0, 6);
+}
+
+function relatedStudyPlaylistsForLibraryResource(resource: LibraryResource, templates: StudyPlaylistTemplate[] = STUDY_PLAYLIST_TEMPLATES) {
+  const text = libraryStudyText(resource);
+  return templates
+    .map((template) => {
+      const templateText = [
+        template.title,
+        template.description,
+        ...template.items.map((item) => `${item.kind} ${item.label}`),
+        ...template.repeatOptions,
+      ].join(" ").toLowerCase();
+      const resourceTerms = text.split(/[^a-z0-9]+/).filter((term) => term.length > 4);
+      const score =
+        (templateText.includes(resource.author.toLowerCase()) ? 45 : 0) +
+        (templateText.includes(resource.category.toLowerCase()) ? 25 : 0) +
+        resourceTerms.filter((term) => templateText.includes(term)).slice(0, 8).length * 8;
+      return { template, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.template.title.localeCompare(b.template.title))
+    .map((item) => item.template)
+    .slice(0, 4);
+}
+
 function isCommentaryLikeResource(resource: LibraryResource) {
   return libraryResourceMatches(resource, ["commentary", "expository", "exposition", "notes on", "homily"]);
 }
@@ -29616,6 +29679,264 @@ function permissionStatusPill(status: PermissionTrackerStatus) {
   return "bg-red-50 text-red-800";
 }
 
+function CommentaryExplorerScreen({
+  entries,
+  currentBook,
+  currentChapter,
+  themes,
+  libraryResources,
+  coverage,
+  onBack,
+  onOpenReference,
+  onOpenAuthor,
+  onListenChapter,
+  onOpenLibraryResource,
+}: {
+  entries: CommentaryEntry[];
+  currentBook: string;
+  currentChapter: number;
+  themes: StudyTheme[];
+  libraryResources: LibraryResource[];
+  coverage: CommentaryCoverage;
+  onBack: () => void;
+  onOpenReference: (reference: string) => void;
+  onOpenAuthor: (authorOrId: string) => void;
+  onListenChapter: (book: string, chapter: number, entries: CommentaryEntry[]) => void;
+  onOpenLibraryResource: (slug: string) => void;
+}) {
+  const books = useMemo(
+    () => Array.from(new Set(entries.map((entry) => entry.book))).sort((a, b) => bookOrder.indexOf(a) - bookOrder.indexOf(b)),
+    [entries],
+  );
+  const authors = useMemo(() => Array.from(new Set(entries.map((entry) => entry.author))).sort(), [entries]);
+  const [selectedBook, setSelectedBook] = useState(currentBook);
+  const [selectedChapter, setSelectedChapter] = useState(currentChapter);
+  const [selectedAuthor, setSelectedAuthor] = useState("All");
+  const [selectedThemeId, setSelectedThemeId] = useState("All");
+  const [selectedUse, setSelectedUse] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
+  const chapters = useMemo(
+    () => Array.from(new Set(entries.filter((entry) => entry.book === safeBook).map((entry) => entry.chapter))).sort((a, b) => a - b),
+    [entries, safeBook],
+  );
+  const safeChapter = chapters.includes(selectedChapter) ? selectedChapter : chapters[0] ?? currentChapter;
+  const selectedTheme = selectedThemeId === "All" ? null : themes.find((theme) => theme.id === selectedThemeId) ?? null;
+  const themeTerms = selectedTheme ? themeSearchTerms(selectedTheme).map((term) => term.toLowerCase()) : [];
+  const useTermsByKind: Record<string, string[]> = {
+    All: [],
+    "Teaching": ["teacher", "teaching", "explanation", "lesson", "expository", "clear"],
+    "Preaching": ["preaching", "pulpit", "application", "sermon", "devotional"],
+    "Devotional": ["devotional", "practical", "application", "heart"],
+    "Word studies": ["word", "historical", "language", "lexical"],
+  };
+  const searchTerms = searchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const filteredEntries = entries.filter((entry) => {
+    if (entry.book !== safeBook || entry.chapter !== safeChapter) return false;
+    if (selectedAuthor !== "All" && entry.author !== selectedAuthor) return false;
+    const profile = commentaryGuideProfileFor(entry.author);
+    const haystack = [
+      entry.author,
+      entry.resource_title,
+      entry.entry_text,
+      entry.public_domain_status,
+      entry.source_url ?? "",
+      profile?.bestUse ?? "",
+      profile?.writingStyle ?? "",
+      profile?.strengths.join(" ") ?? "",
+      profile?.doctrinalNotes ?? "",
+    ].join(" ").toLowerCase();
+    const themeMatch = !themeTerms.length || themeTerms.some((term) => haystack.includes(term));
+    const useTerms = useTermsByKind[selectedUse] ?? [];
+    const useMatch = !useTerms.length || useTerms.some((term) => haystack.includes(term));
+    const searchMatch = !searchTerms.length || searchTerms.every((term) => haystack.includes(term) || `${entry.book} ${entry.chapter}`.toLowerCase().includes(term));
+    return themeMatch && useMatch && searchMatch;
+  });
+  const chapterEntries = entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
+  const comparisonEntries = Array.from(new Map(chapterEntries.map((entry) => [entry.author, entry])).values()).slice(0, 6);
+  const relatedBooks = libraryResources
+    .filter((resource) => {
+      const haystack = [resource.title, resource.author, resource.category, resource.collection, resource.description, resource.recommended_use].join(" ").toLowerCase();
+      const terms = [safeBook.toLowerCase(), ...(selectedTheme ? themeSearchTerms(selectedTheme).map((term) => term.toLowerCase()) : [])];
+      return terms.some((term) => term.length > 2 && haystack.includes(term));
+    })
+    .slice(0, 6);
+  const bookCoverage = coverage.bookCoverage.find((item) => item.book === safeBook);
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <button
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm"
+        onClick={onBack}
+        type="button"
+      >
+        <ChevronLeft size={17} />
+        Back to Bible
+      </button>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary Explorer</p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">Find the right commentary fast</h1>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Search verified commentary by Bible book, chapter, author, theme, and preaching use. Scripture remains primary; commentary stays a helper.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            {coverage.totalEntries.toLocaleString()} public entries
+          </span>
+        </div>
+
+        <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Bible book
+            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeBook} onChange={(event) => setSelectedBook(event.target.value)}>
+              {books.map((bookName) => <option key={`commentary-explorer-book-${bookName}`} value={bookName}>{bookName}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Chapter
+            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={safeChapter} onChange={(event) => setSelectedChapter(Number(event.target.value))}>
+              {chapters.map((chapterNumber) => <option key={`commentary-explorer-chapter-${chapterNumber}`} value={chapterNumber}>{safeBook} {chapterNumber}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Author
+            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={selectedAuthor} onChange={(event) => setSelectedAuthor(event.target.value)}>
+              <option value="All">All authors</option>
+              {authors.map((author) => <option key={`commentary-explorer-author-${author}`} value={author}>{author}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Doctrine / theme
+            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={selectedThemeId} onChange={(event) => setSelectedThemeId(event.target.value)}>
+              <option value="All">All themes</option>
+              {themes.map((theme) => <option key={`commentary-explorer-theme-${theme.id}`} value={theme.id}>{theme.title}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+            Preaching use
+            <select className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none" value={selectedUse} onChange={(event) => setSelectedUse(event.target.value)}>
+              {Object.keys(useTermsByKind).map((use) => <option key={`commentary-explorer-use-${use}`} value={use}>{use}</option>)}
+            </select>
+          </label>
+        </div>
+
+        <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+          Keyword or phrase
+          <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+            <Search size={18} className="shrink-0 text-[var(--green)]" />
+            <input
+              className="w-full bg-transparent text-base normal-case tracking-normal text-[var(--ink)] outline-none placeholder:text-stone-400"
+              placeholder="grace, judgment, new birth, teacher, application..."
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+            />
+            {searchTerm && <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]" onClick={() => setSearchTerm("")} type="button">Clear</button>}
+          </div>
+        </label>
+
+        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <LibraryStat label="Book coverage" value={bookCoverage ? `${bookCoverage.coveragePercentage}%` : "0%"} />
+          <LibraryStat label="Authors here" value={String(new Set(chapterEntries.map((entry) => entry.author)).size)} />
+          <LibraryStat label="Chapter entries" value={String(chapterEntries.length)} />
+          <LibraryStat label="Filtered results" value={String(filteredEntries.length)} />
+        </div>
+      </section>
+
+      <section className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Chapter Results</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{safeBook} {safeChapter}</h2>
+            </div>
+            <button
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
+              disabled={!filteredEntries.length}
+              onClick={() => onListenChapter(safeBook, safeChapter, filteredEntries)}
+              type="button"
+            >
+              <Headphones size={16} />
+              Listen results
+            </button>
+          </div>
+          <div className="mt-4 space-y-3">
+            {filteredEntries.length ? filteredEntries.slice(0, 12).map((entry) => (
+              <article key={`commentary-explorer-result-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--green)]">{commentaryReferenceLabel(entry)}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{entry.author} · {entry.resource_title}</p>
+                  </div>
+                  <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(`${entry.book} ${entry.chapter}:${entry.verse_start}`)} type="button">
+                    Open verse
+                  </button>
+                </div>
+                <p className="mt-3 line-clamp-5 text-sm leading-6 text-[var(--scripture-ink)]">{entry.entry_text}</p>
+              </article>
+            )) : (
+              <p className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">
+                No verified commentary entries match those filters yet.
+              </p>
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Side-by-Side Comparison</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Compare available voices</h2>
+          <div className="mt-4 grid gap-3">
+            {comparisonEntries.length ? comparisonEntries.map((entry) => {
+              const profile = commentaryGuideProfileFor(entry.author);
+              return (
+                <article key={`commentary-explorer-compare-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-semibold text-[var(--green)]">{entry.author}</p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{profile?.writingStyle ?? "Reviewed commentary"}</p>
+                    </div>
+                    <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenAuthor(entry.author)} type="button">Author</button>
+                  </div>
+                  <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{entry.entry_text}</p>
+                  <div className="mt-3 grid gap-2 text-xs leading-5 text-[var(--muted)]">
+                    <p><span className="font-semibold text-[var(--green)]">Best use:</span> {profile?.bestUse ?? "Secondary comparison after reading the KJV text."}</p>
+                    <p><span className="font-semibold text-[var(--green)]">Caution:</span> {profile?.doctrinalNotes ?? "Use with discernment; Scripture remains primary."}</p>
+                  </div>
+                </article>
+              );
+            }) : (
+              <p className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">No comparison entries for this chapter yet.</p>
+            )}
+          </div>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Connections</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Related resources for this commentary search</h2>
+          </div>
+          {selectedTheme && <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{selectedTheme.title}</span>}
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {relatedBooks.length ? relatedBooks.map((resource) => (
+            <button key={`commentary-explorer-related-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left" onClick={() => onOpenLibraryResource(resource.slug)} type="button">
+              <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.author}</p>
+              <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{resource.description}</p>
+            </button>
+          )) : (
+            <p className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-sm leading-6 text-[var(--muted)]">No related books found for this combination yet.</p>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 function CommentaryLibraryBrowser({
   entries,
   onOpenReference,
@@ -30850,6 +31171,8 @@ function LibraryDetail({
   const relatedBooks = relatedResources.filter((related) => !isCommentaryLikeResource(related)).slice(0, 3);
   const relatedPassages = relatedPassagesForLibraryResource(resource);
   const relatedSermons = sermonIdeasForLibraryResource(resource);
+  const relatedThemes = relatedThemesForLibraryResource(resource);
+  const relatedStudyPlaylists = relatedStudyPlaylistsForLibraryResource(resource);
   const recommendedNextResource = relatedResources[0] ?? null;
   const audienceLabels = libraryAudienceLabels(resource);
   const coverSeed = resource.category.length + resource.title.length;
@@ -31046,6 +31369,32 @@ function LibraryDetail({
                   <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{idea.note}</p>
                 </div>
               ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related themes</p>
+            <div className="mt-3 grid gap-2">
+              {relatedThemes.length ? relatedThemes.map((theme) => (
+                <div key={`related-theme-${resource.slug}-${theme.id}`} className="rounded-2xl bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{theme.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{theme.description}</p>
+                </div>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No theme connections are attached yet.</p>
+              )}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Related study playlists</p>
+            <div className="mt-3 grid gap-2">
+              {relatedStudyPlaylists.length ? relatedStudyPlaylists.map((playlist) => (
+                <div key={`related-playlist-${resource.slug}-${playlist.id}`} className="rounded-2xl bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{playlist.title}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{playlist.description}</p>
+                </div>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">Add this book to a study playlist from the button above.</p>
+              )}
             </div>
           </div>
           <div className="rounded-2xl border border-[var(--line)] bg-white p-4">
@@ -38192,6 +38541,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "bible", label: "Bible", icon: <BookOpen size={20} /> },
     { id: "search", label: "Search", icon: <Search size={20} /> },
     { id: "themes", label: "Themes", icon: <Brain size={20} /> },
+    { id: "commentaryExplorer", label: "Commentary", icon: <MessageSquareText size={20} /> },
     { id: "library", label: "Library", icon: <Library size={20} /> },
     { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
     { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
@@ -38203,7 +38553,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-11 gap-1">
+      <div className="mx-auto grid max-w-xl grid-cols-12 gap-1">
         {items.map((item) => (
           <button
             key={item.id}

@@ -16,6 +16,7 @@
     "library:import": "node scripts/import-library-resources.mjs",
     "library:bulk-import": "node scripts/bulk-import-library-resources.mjs",
     "library:qa": "node scripts/qa-library.mjs",
+    "library:rank-high-value": "node scripts/rank-high-value-public-domain-resources.mjs",
     "prepare:webster": "node scripts/prepare-websters-1828-data.mjs",
     "import:commentary": "node scripts/import-commentary-entries.mjs",
     "commentary:prepare": "node scripts/prepare-commentary-source.mjs",
