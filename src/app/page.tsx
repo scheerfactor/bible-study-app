@@ -1379,6 +1379,11 @@ type AmosChapterStudy = {
   chapter: number;
   title: string;
   summary: string;
+  historicalSetting?: string;
+  mapNotes?: string[];
+  kingsAndNations?: string[];
+  majorMessages?: string[];
+  keyThemes?: string[];
   keyVerses: string[];
   repeatedFocus: string[];
   peopleMentioned: string[];
@@ -1386,6 +1391,13 @@ type AmosChapterStudy = {
   mainSinsJudged: string[];
   teachingAim: string;
   practicalApplications: string[];
+  prophecyConnections?: string[];
+  christConnections?: string[];
+  sundaySchoolQuestions?: string[];
+  discussionQuestions?: string[];
+  sermonOutline?: string[];
+  recommendedCommentaries?: string[];
+  recommendedBooks?: string[];
   crossReferences: Array<{
     sourceRef: string;
     targetRef: string;
@@ -2275,8 +2287,8 @@ const READING_PLAN_FOUNDATION: ReadingPlanFoundation[] = [
     id: "amos-study",
     category: "Amos Study",
     title: "Amos Study",
-    description: "A teacher-friendly plan built around Amos 1-4 and future Amos coverage.",
-    startHere: "Begin with Amos 1-4 and the Amos Teaching Prep path.",
+    description: "A teacher-friendly plan built around Amos 1-9 as a model complete study experience.",
+    startHere: "Begin with Amos 1-9 and the Amos Teaching Prep path.",
     status: "Ready",
   },
   {
@@ -3435,12 +3447,12 @@ const READING_PATHS: ReadingPath[] = [
     id: "amos-study",
     title: "Amos Study",
     shortLabel: "Teaching prep",
-    description: "A focused path for preparing Amos 1-4 with Bible reading, commentary, cross references, and teacher notes.",
-    biblePassages: ["Amos 1", "Amos 2", "Amos 3", "Amos 4"],
+    description: "A focused path for preparing Amos 1-9 with Bible reading, commentary, cross references, background, and teacher notes.",
+    biblePassages: ["Amos 1", "Amos 2", "Amos 3", "Amos 4", "Amos 5", "Amos 6", "Amos 7", "Amos 8", "Amos 9"],
     resourceTerms: ["amos", "minor prophets", "expositions of holy scripture", "commentary"],
     collectionIds: ["commentary", "preaching-teaching"],
     authorIds: ["matthew-henry"],
-    repeatOptions: ["Repeat Amos 1-4", "Stop after chapter range", "Loop for teaching prep"],
+    repeatOptions: ["Repeat Amos 1-9", "Stop after chapter range", "Loop for teaching prep"],
   },
   {
     id: "romans-study",
@@ -3491,25 +3503,25 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     id: "amos-study-collection",
     book: "Amos",
     title: "Amos Study Collection",
-    description: "Judgment, righteousness, nations, prophetic burden, and a focused Amos 1-4 teaching workflow.",
-    featuredChapters: ["Amos 1", "Amos 2", "Amos 3", "Amos 4"],
-    playlistTitle: "Amos 1-4 Teaching Prep",
+    description: "Judgment, righteousness, nations, prophetic burden, restoration hope, and a focused Amos 1-9 teaching workflow.",
+    featuredChapters: ["Amos 1", "Amos 3", "Amos 5", "Amos 7", "Amos 9"],
+    playlistTitle: "Amos 1-9 Teaching Prep",
     relatedResourceTerms: ["amos", "minor prophets", "preaching", "teaching", "prophets", "expositions"],
   },
 ];
 
 const STUDY_PLAYLIST_TEMPLATES: StudyPlaylistTemplate[] = [
   {
-    id: "amos-1-4-prep",
-    title: "Amos 1-4 Teaching Prep",
+    id: "amos-1-9-prep",
+    title: "Amos 1-9 Teaching Prep",
     description: "Bible chapters, available commentary, related reading, and teacher notes in one listening plan.",
     items: [
-      { kind: "Bible", label: "Amos 1-4 KJV", minutes: 18 },
-      { kind: "Commentary", label: "Reviewed Amos commentary", minutes: 28 },
+      { kind: "Bible", label: "Amos 1-9 KJV", minutes: 38 },
+      { kind: "Commentary", label: "Reviewed Amos commentary", minutes: 55 },
       { kind: "Book", label: "Minor prophets / preaching resource", minutes: 20 },
       { kind: "Notes", label: "Teacher notes and closing thought", minutes: 5 },
     ],
-    repeatOptions: ["Repeat range", "Stop after Amos 4", "Loop for prep"],
+    repeatOptions: ["Repeat range", "Stop after Amos 9", "Loop for prep"],
   },
   {
     id: "romans-gospel-study",
@@ -3598,18 +3610,18 @@ const EMPTY_ADMIN_IMPORT_METADATA: AdminImportMetadata = {
 
 const SERMON_PLACEHOLDER_ITEMS = [
   {
-    id: "sermon-placeholder-amos-1-4",
-    title: "Prepare Amos 1-4",
+    id: "sermon-placeholder-amos-1-9",
+    title: "Prepare Amos 1-9",
     preacher: "Stephen / reviewed preacher",
     date: "Draft",
-    scripturePassage: "Amos 1-4",
+    scripturePassage: "Amos 1-9",
     topic: "Judgment, repentance, and hearing the word of the Lord",
     series: "Amos Teaching Prep",
     sourceUrl: "Admin import placeholder",
     rightsStatus: "Needs Review",
-    audioFilePath: "audio/sermons/placeholder/amos-1-4.mp3",
-    transcriptFilePath: "transcripts/sermons/placeholder/amos-1-4.md",
-    coverImagePath: "covers/sermons/placeholder/amos-1-4.png",
+    audioFilePath: "audio/sermons/placeholder/amos-1-9.mp3",
+    transcriptFilePath: "transcripts/sermons/placeholder/amos-1-9.md",
+    coverImagePath: "covers/sermons/placeholder/amos-1-9.png",
     notes: "Placeholder only. Do not publish sermon audio until rights or ownership are documented.",
   },
   {
@@ -3926,6 +3938,36 @@ const REVIEWED_TEACHING_SUMMARIES: Record<string, Omit<TeachingWorkspaceSummary,
     teachingAim: "Show the mercy of God's warnings and the seriousness of refusing correction.",
     suggestedTitle: "Prepare to Meet Thy God",
   },
+  "Amos 5": {
+    mainTheme: "Seek the LORD and Live",
+    keyVerse: "Amos 5:14",
+    teachingAim: "Call the class to seek the LORD sincerely instead of trusting outward religion.",
+    suggestedTitle: "Seek the LORD, and Ye Shall Live",
+  },
+  "Amos 6": {
+    mainTheme: "Woe to Them That Are at Ease",
+    keyVerse: "Amos 6:1",
+    teachingAim: "Warn against comfortable pride that ignores spiritual danger and coming judgment.",
+    suggestedTitle: "At Ease in Zion",
+  },
+  "Amos 7": {
+    mainTheme: "The Plumbline and the Prophet",
+    keyVerse: "Amos 7:8",
+    teachingAim: "Show that God's standard exposes the nation and that God's messenger must speak faithfully.",
+    suggestedTitle: "A Plumbline in the Midst",
+  },
+  "Amos 8": {
+    mainTheme: "A Famine of Hearing the Words of the LORD",
+    keyVerse: "Amos 8:11",
+    teachingAim: "Show the danger of rejecting God's word until opportunity to hear is removed.",
+    suggestedTitle: "A Famine of the Word",
+  },
+  "Amos 9": {
+    mainTheme: "Judgment, Sifting, and Restoration",
+    keyVerse: "Amos 9:11",
+    teachingAim: "Show that God's judgment is certain, yet His promises of restoration remain sure.",
+    suggestedTitle: "I Will Raise Up the Tabernacle of David",
+  },
 };
 
 const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
@@ -3934,10 +3976,15 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
     title: "Judgment on the Nations",
     summary:
       "The LORD begins the burden of Amos by announcing judgment on surrounding nations. The repeated announcements show that God sees cruelty, covenant-breaking, and violence even outside Israel.",
+    historicalSetting: "Amos speaks in the days of Uzziah and Jeroboam II, when outward prosperity hid serious moral decay.",
+    mapNotes: ["Start at Tekoa and Jerusalem, then trace the ring of nations: Damascus, Gaza, Tyrus, Edom, Ammon, and Moab."],
+    kingsAndNations: ["Uzziah of Judah", "Jeroboam II of Israel", "Syria", "Philistia", "Tyrus", "Edom", "Ammon", "Moab"],
+    majorMessages: ["The LORD rules all nations", "Repeated sin is not hidden from God", "Judgment begins with a public word from Zion"],
+    keyThemes: ["Judgment", "Nations", "Accountability", "Cruelty judged"],
     keyVerses: ["Amos 1:2", "Amos 1:3", "Amos 1:6", "Amos 1:9", "Amos 1:11"],
     repeatedFocus: ["for three transgressions, and for four", "I will not turn away the punishment", "I will send a fire"],
     peopleMentioned: ["Amos", "Uzziah", "Jeroboam II", "Hazael", "Ben-hadad"],
-    placesAndNations: ["Tekoa", "Zion", "Jerusalem", "Damascus", "Gaza", "Tyrus", "Edom", "Ammon"],
+    placesAndNations: ["Tekoa", "Zion", "Jerusalem", "Damascus", "Gaza", "Tyrus", "Edom", "Ammon", "Moab"],
     mainSinsJudged: [
       "Cruel treatment of conquered people",
       "Slave traffic",
@@ -3951,6 +3998,20 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
       "Do not treat injustice as hidden because men do not answer for it immediately.",
       "Let Amos search our own hearts before we apply judgment to others.",
     ],
+    prophecyConnections: ["Joel 3:16 connects the LORD roaring from Zion with day-of-the-LORD judgment language."],
+    christConnections: ["Christ is the final righteous Judge, so national judgment passages should increase reverence for His authority."],
+    sundaySchoolQuestions: [
+      "Why does Amos begin with nations outside Israel?",
+      "What does the repeated phrase teach about God's patience and judgment?",
+      "How should believers respond when God exposes cruelty and injustice?",
+    ],
+    discussionQuestions: [
+      "Which sins in Amos 1 were public and national?",
+      "How can a class discuss judgment without becoming proud or harsh?",
+    ],
+    sermonOutline: ["The LORD speaks from Zion", "The nations are accountable", "Cruelty is remembered", "God's people must listen first"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Easton's Bible Dictionary", "Smith's Bible Dictionary", "Nave's Topical Bible"],
     crossReferences: [
       { sourceRef: "Amos 1:2", targetRef: "Joel 3:16", label: "The LORD roars from Zion" },
       { sourceRef: "Amos 1:3", targetRef: "Isaiah 17:1", label: "Damascus judged" },
@@ -3963,6 +4024,11 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
     title: "Judgment Reaches Judah and Israel",
     summary:
       "The judgments move from the nations to Moab, Judah, and Israel. Amos shows that covenant privilege increases responsibility, and Israel's sins include oppression, corruption, and silencing God's witnesses.",
+    historicalSetting: "The prophet's message narrows from surrounding nations to Judah and Israel, removing any false comfort from hearing others condemned.",
+    mapNotes: ["Move from Moab to Judah and then to Israel; show how the circle closes around God's own people."],
+    kingsAndNations: ["Moab", "Judah", "Israel", "Amorite land", "Egypt"],
+    majorMessages: ["Privilege increases accountability", "Despising God's law is serious", "Oppression and false religion belong together"],
+    keyThemes: ["Privilege", "Law", "Oppression", "Witness rejected"],
     keyVerses: ["Amos 2:4", "Amos 2:6", "Amos 2:11", "Amos 2:12"],
     repeatedFocus: ["for three transgressions, and for four", "they have despised the law", "ye commanded"],
     peopleMentioned: ["Judah", "Israel", "Prophets", "Nazirites", "Amorite"],
@@ -3980,6 +4046,20 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
       "Teach the class to notice sins against the poor and powerless.",
       "Warn against silencing voices that call God's people back to holiness.",
     ],
+    prophecyConnections: ["Amos 2 prepares for the direct warnings that dominate Amos 3-6."],
+    christConnections: ["The chapter points by contrast to Christ, who honors the Father's word and does not oppress the poor."],
+    sundaySchoolQuestions: [
+      "Why is Judah judged differently from the surrounding nations?",
+      "What does Israel's treatment of the poor reveal about their spiritual condition?",
+      "How can God's people silence His warnings today?",
+    ],
+    discussionQuestions: [
+      "What privileges had Israel received?",
+      "Why is it dangerous to hear sermons only for other people?",
+    ],
+    sermonOutline: ["The law despised", "The poor oppressed", "The witnesses silenced", "Privilege turned into accountability"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Webster's 1828 Dictionary", "Nave's Topical Bible", "Bible Manners and Customs"],
     crossReferences: [
       { sourceRef: "Amos 2:4", targetRef: "Deuteronomy 31:20", label: "Despising the LORD's law" },
       { sourceRef: "Amos 2:6", targetRef: "Proverbs 14:31", label: "Oppressing the poor" },
@@ -3992,6 +4072,11 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
     title: "Chosen and Accountable",
     summary:
       "The LORD reminds Israel that they alone were known of all families of the earth, therefore He will punish their iniquities. Amos presses the certainty of God's word and the seriousness of refusing warning.",
+    historicalSetting: "Israel's covenant privilege is placed before them as the reason their sins cannot be ignored.",
+    mapNotes: ["Place Samaria at the center of the warning and note Ashdod and Egypt as outside witnesses."],
+    kingsAndNations: ["Israel", "Philistia", "Egypt"],
+    majorMessages: ["Known by God, therefore accountable", "The prophet speaks because the LORD has spoken", "False security cannot protect sin"],
+    keyThemes: ["Chosen people", "Accountability", "Prophetic witness", "Walking with God"],
     keyVerses: ["Amos 3:2", "Amos 3:3", "Amos 3:7", "Amos 3:8"],
     repeatedFocus: ["Hear this word", "can two walk together", "the Lord GOD hath spoken"],
     peopleMentioned: ["Children of Israel", "Prophets", "Amos"],
@@ -4008,6 +4093,20 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
       "Let the warning passages build urgency, not harshness.",
       "Connect privilege, revelation, and accountability clearly.",
     ],
+    prophecyConnections: ["Amos 3:7 is a key principle for prophetic revelation and God's warnings before judgment."],
+    christConnections: ["Christ perfectly reveals the Father; Amos 3:7 helps teachers explain why God's revealed word must be heard."],
+    sundaySchoolQuestions: [
+      "What does it mean that Israel was known of the LORD?",
+      "Why does Amos ask, 'Can two walk together, except they be agreed?'",
+      "What should God's revealed word produce in hearers?",
+    ],
+    discussionQuestions: [
+      "How can privilege become false security?",
+      "What warnings should a teacher give with tenderness and clarity?",
+    ],
+    sermonOutline: ["A chosen people", "A necessary agreement", "A sure prophetic word", "A warning that must be heard"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Bible Manners and Customs", "Smith's Bible Dictionary", "Easton's Bible Dictionary"],
     crossReferences: [
       { sourceRef: "Amos 3:2", targetRef: "Deuteronomy 7:6", label: "Chosen people accountability" },
       { sourceRef: "Amos 3:3", targetRef: "2 Corinthians 6:14", label: "Walking together and separation" },
@@ -4020,6 +4119,11 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
     title: "Prepare to Meet Thy God",
     summary:
       "The LORD exposes oppression and religious hypocrisy, then recounts repeated chastisements that did not bring Israel back. The chapter closes with the solemn call to prepare to meet God.",
+    historicalSetting: "Israel has experienced warnings through famine, drought, pestilence, and overthrow, yet still has not returned unto the LORD.",
+    mapNotes: ["Set Samaria, Bethel, and Gilgal as centers of wealth and worship; compare the Sodom and Egypt references as warning markers."],
+    kingsAndNations: ["Israel", "Egypt", "Sodom", "Gomorrah"],
+    majorMessages: ["Religious activity can be empty", "Repeated warnings are mercy", "Refusing correction leads to a solemn meeting with God"],
+    keyThemes: ["Warnings", "Repentance refused", "False worship", "Accountability before God"],
     keyVerses: ["Amos 4:1", "Amos 4:6", "Amos 4:11", "Amos 4:12"],
     repeatedFocus: ["yet have ye not returned unto me", "come to Bethel", "prepare to meet thy God"],
     peopleMentioned: ["Kine of Bashan", "Israel", "The Lord GOD"],
@@ -4036,11 +4140,260 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
       "Trace each warning with the repeated phrase 'yet have ye not returned unto me.'",
       "End with reverent urgency from Amos 4:12.",
     ],
+    prophecyConnections: ["The repeated refusals prepare for the judgments and visions in Amos 5-9."],
+    christConnections: ["The call to meet God should point hearers to the need of mercy and to Christ as the only safe refuge."],
+    sundaySchoolQuestions: [
+      "Why did the LORD repeat 'yet have ye not returned unto me'?",
+      "How can worship become outward only?",
+      "What does Amos 4:12 require us to take seriously?",
+    ],
+    discussionQuestions: [
+      "What warnings has God used to get people's attention?",
+      "How can a teacher preach Amos 4:12 without manipulation?",
+    ],
+    sermonOutline: ["Oppression exposed", "False worship exposed", "Warnings refused", "Prepare to meet God"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Webster's 1828 Dictionary", "Nave's Topical Bible", "Power Through Prayer"],
     crossReferences: [
       { sourceRef: "Amos 4:1", targetRef: "Proverbs 22:16", label: "Oppressing the poor" },
       { sourceRef: "Amos 4:6", targetRef: "Haggai 2:17", label: "Warnings not heeded" },
       { sourceRef: "Amos 4:11", targetRef: "Genesis 19:24", label: "Sodom and Gomorrah" },
       { sourceRef: "Amos 4:12", targetRef: "Hebrews 10:31", label: "Meeting God in judgment" },
+    ],
+  },
+  {
+    chapter: 5,
+    title: "Seek the LORD and Live",
+    summary:
+      "Amos takes up a lamentation for Israel and calls them to seek the LORD, seek good, and establish judgment in the gate. Empty worship is rejected when righteousness and judgment are absent.",
+    historicalSetting: "Israel still has worship centers and public life, but the chapter exposes a nation that hates reproof and trusts religious form.",
+    mapNotes: ["Locate Bethel, Gilgal, Beersheba, and the gate as a place of public judgment and civic responsibility."],
+    kingsAndNations: ["Israel", "House of Joseph", "Bethel", "Gilgal", "Beersheba"],
+    majorMessages: ["Seek the LORD and live", "Hate evil and love good", "Outward worship without righteousness is rejected"],
+    keyThemes: ["Seeking God", "Righteousness", "Judgment", "Lamentation", "True worship"],
+    keyVerses: ["Amos 5:4", "Amos 5:14", "Amos 5:15", "Amos 5:24"],
+    repeatedFocus: ["seek ye me, and ye shall live", "seek good, and not evil", "judgment", "righteousness"],
+    peopleMentioned: ["House of Israel", "House of Joseph", "The LORD"],
+    placesAndNations: ["Bethel", "Gilgal", "Beersheba", "The gate", "Damascus"],
+    mainSinsJudged: [
+      "Hating reproof",
+      "Oppressing the poor",
+      "Turning judgment to wormwood",
+      "Trusting ceremonies while rejecting righteousness",
+    ],
+    teachingAim: "Call the class to seek the LORD sincerely instead of trusting outward religion.",
+    practicalApplications: [
+      "Make Amos 5:14-15 a clear call to love what God loves and hate what He hates.",
+      "Explain that public righteousness matters to God.",
+      "Keep worship tied to obedience rather than performance.",
+    ],
+    prophecyConnections: ["Acts 7:42-43 cites Amos 5:25-27 in Stephen's sermon against persistent idolatry."],
+    christConnections: ["Christ is the only one who fulfills righteousness perfectly; true seeking must lead to Him, not mere reform."],
+    sundaySchoolQuestions: [
+      "What does 'seek the LORD' mean in Amos 5?",
+      "Why does God reject worship in Amos 5:21-23?",
+      "How does Amos 5:24 define the kind of public life God requires?",
+    ],
+    discussionQuestions: [
+      "Where can people confuse religious activity with seeking God?",
+      "What would it look like to love good and establish judgment today?",
+    ],
+    sermonOutline: ["A lament over Israel", "A call to seek the LORD", "A warning against false worship", "A call for judgment and righteousness"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Nave's Topical Bible", "Easton's Bible Dictionary", "The Great Doctrines of the Bible"],
+    crossReferences: [
+      { sourceRef: "Amos 5:4", targetRef: "Isaiah 55:6", label: "Seek the LORD" },
+      { sourceRef: "Amos 5:14", targetRef: "Psalm 34:14", label: "Seek good and peace" },
+      { sourceRef: "Amos 5:24", targetRef: "Micah 6:8", label: "Judgment, mercy, and walking humbly" },
+      { sourceRef: "Amos 5:25", targetRef: "Acts 7:42", label: "Stephen cites Amos" },
+    ],
+  },
+  {
+    chapter: 6,
+    title: "Woe to Them That Are at Ease",
+    summary:
+      "Amos pronounces woe on careless leaders who live at ease, trust wealth and luxury, and are not grieved for the affliction of Joseph. Their pride will not stop captivity and judgment.",
+    historicalSetting: "The chapter addresses comfortable leadership in Zion and Samaria during a season of prosperity before national collapse.",
+    mapNotes: ["Compare Zion and Samaria; mention Calneh, Hamath, and Gath as places used to test false confidence."],
+    kingsAndNations: ["Judah", "Israel", "Samaria", "Zion", "Calneh", "Hamath", "Gath"],
+    majorMessages: ["Ease can blind people to judgment", "Luxury without grief for sin is dangerous", "The LORD abhors pride"],
+    keyThemes: ["Ease", "Pride", "Luxury", "Captivity", "False security"],
+    keyVerses: ["Amos 6:1", "Amos 6:6", "Amos 6:8", "Amos 6:14"],
+    repeatedFocus: ["woe", "at ease", "not grieved", "I abhor"],
+    peopleMentioned: ["House of Israel", "House of Jacob", "Joseph"],
+    placesAndNations: ["Zion", "Samaria", "Calneh", "Hamath", "Gath", "Arabah"],
+    mainSinsJudged: [
+      "Careless ease",
+      "Pride in national strength",
+      "Luxury without compassion",
+      "Turning judgment into poison",
+    ],
+    teachingAim: "Warn against comfortable pride that ignores spiritual danger and coming judgment.",
+    practicalApplications: [
+      "Use the chapter to examine comfort, not merely condemn comfort.",
+      "Ask whether God's people are grieved for spiritual decay.",
+      "Show that national or personal strength cannot replace repentance.",
+    ],
+    prophecyConnections: ["The captivity language in Amos 6 continues the judgment warnings that will culminate in Amos 7-9."],
+    christConnections: ["Christ is meek and lowly; Amos 6 exposes the opposite spirit of proud, careless ease."],
+    sundaySchoolQuestions: [
+      "What kind of ease does Amos condemn?",
+      "Why is it serious that they were not grieved for the affliction of Joseph?",
+      "What does pride make people trust instead of the LORD?",
+    ],
+    discussionQuestions: [
+      "How can prosperity hide spiritual danger?",
+      "What should grieve God's people today?",
+    ],
+    sermonOutline: ["The danger of ease", "The blindness of luxury", "The grief that was missing", "The judgment pride cannot escape"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["The Training of the Twelve", "Bible Manners and Customs", "Power Through Prayer"],
+    crossReferences: [
+      { sourceRef: "Amos 6:1", targetRef: "Zephaniah 1:12", label: "Settled carelessness judged" },
+      { sourceRef: "Amos 6:6", targetRef: "Ezekiel 9:4", label: "Grieved for abominations" },
+      { sourceRef: "Amos 6:8", targetRef: "Proverbs 16:18", label: "Pride before destruction" },
+      { sourceRef: "Amos 6:14", targetRef: "2 Kings 17:6", label: "Captivity of Israel" },
+    ],
+  },
+  {
+    chapter: 7,
+    title: "The Plumbline and the Prophet",
+    summary:
+      "Amos records visions of locusts, fire, and a plumbline, then the opposition of Amaziah at Bethel. The chapter shows mercy in delayed judgment, God's fixed standard, and the prophet's call to speak.",
+    historicalSetting: "Bethel is a royal worship center, and Amaziah resists Amos because the message threatens the kingdom's false security.",
+    mapNotes: ["Mark Bethel as the center of opposition and Tekoa as Amos's home background."],
+    kingsAndNations: ["Jeroboam II", "Amaziah", "Israel", "Bethel", "Judah"],
+    majorMessages: ["God's mercy delays deserved judgment", "God measures by His own standard", "The messenger must speak what God commands"],
+    keyThemes: ["Vision", "Plumbline", "Prophetic opposition", "Calling", "Mercy"],
+    keyVerses: ["Amos 7:7", "Amos 7:8", "Amos 7:14", "Amos 7:15"],
+    repeatedFocus: ["the Lord GOD shewed unto me", "plumbline", "prophesy"],
+    peopleMentioned: ["Amos", "Amaziah", "Jeroboam II", "Isaac", "Israel"],
+    placesAndNations: ["Bethel", "Tekoa", "Judah", "Israel"],
+    mainSinsJudged: [
+      "Rejecting the prophet's word",
+      "Trusting royal sanctuary religion",
+      "Measuring by politics instead of God's standard",
+      "Opposing the LORD's message",
+    ],
+    teachingAim: "Show that God's standard exposes the nation and that God's messenger must speak faithfully.",
+    practicalApplications: [
+      "Teach the difference between personal ambition and divine calling.",
+      "Use the plumbline as a simple picture of God's standard.",
+      "Prepare teachers to expect resistance without becoming bitter.",
+    ],
+    prophecyConnections: ["The visions introduce the judgment sequence that continues through Amos 8-9."],
+    christConnections: ["Christ is the faithful and true witness; Amos's obedience points teachers to faithfulness under pressure."],
+    sundaySchoolQuestions: [
+      "What did the locust and fire visions show about mercy?",
+      "What does the plumbline picture teach?",
+      "How did Amaziah try to silence Amos?",
+    ],
+    discussionQuestions: [
+      "What pressures tempt a teacher to soften God's word?",
+      "How should we answer opposition without pride?",
+    ],
+    sermonOutline: ["Mercy in the first visions", "The plumbline of God's standard", "The opposition at Bethel", "The prophet sent by the LORD"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Lectures to My Students", "The Soul Winner", "Power Through Prayer"],
+    crossReferences: [
+      { sourceRef: "Amos 7:7", targetRef: "2 Kings 21:13", label: "Measuring line judgment" },
+      { sourceRef: "Amos 7:10", targetRef: "Jeremiah 26:8", label: "Opposition to the prophet" },
+      { sourceRef: "Amos 7:14", targetRef: "1 Corinthians 1:27", label: "God using unlikely servants" },
+      { sourceRef: "Amos 7:15", targetRef: "Jeremiah 1:7", label: "Sent to speak" },
+    ],
+  },
+  {
+    chapter: 8,
+    title: "A Famine of Hearing the Words of the LORD",
+    summary:
+      "The basket of summer fruit shows that Israel's end is near. Amos exposes greed, dishonest trade, and contempt for holy days, then warns of a famine of hearing the words of the LORD.",
+    historicalSetting: "The northern kingdom's market life and worship calendar are exposed as corrupt while judgment draws near.",
+    mapNotes: ["Trace from the land of Israel to sea-to-sea searching imagery; note the north-to-east search for God's word."],
+    kingsAndNations: ["Israel", "Samaria", "Dan", "Beersheba"],
+    majorMessages: ["The end is near", "Greed corrupts worship and commerce", "Rejecting the word can lead to a famine of hearing it"],
+    keyThemes: ["Famine of the word", "Dishonesty", "Judgment", "Religious contempt", "Mourning"],
+    keyVerses: ["Amos 8:2", "Amos 8:5", "Amos 8:11", "Amos 8:12"],
+    repeatedFocus: ["the end", "hear this", "famine", "the words of the LORD"],
+    peopleMentioned: ["Jacob", "The poor", "The needy", "The LORD"],
+    placesAndNations: ["Samaria", "Dan", "Beersheba", "Sea", "North", "East"],
+    mainSinsJudged: [
+      "Dishonest weights and measures",
+      "Swallowing up the needy",
+      "Treating holy days as interruptions to greed",
+      "Rejecting the words of the LORD",
+    ],
+    teachingAim: "Show the danger of rejecting God's word until opportunity to hear is removed.",
+    practicalApplications: [
+      "Use Amos 8:11 to stir gratitude for access to Scripture.",
+      "Connect dishonest business practices with spiritual rebellion.",
+      "Warn against treating worship as an obstacle to personal gain.",
+    ],
+    prophecyConnections: ["The famine of hearing God's words becomes a sober principle for those who repeatedly refuse light."],
+    christConnections: ["Christ is the living Word; Amos 8 warns against despising the word God gives."],
+    sundaySchoolQuestions: [
+      "What did the basket of summer fruit mean?",
+      "How were business sins connected with spiritual sins?",
+      "Why is a famine of hearing God's words so serious?",
+    ],
+    discussionQuestions: [
+      "How should access to the Bible affect our habits?",
+      "What makes people tired of worship and eager for gain?",
+    ],
+    sermonOutline: ["The end pictured", "The poor swallowed up", "The worship despised", "The word withheld"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Pleasure & Profit in Bible Study", "How to Enjoy the Bible", "Nave's Topical Bible"],
+    crossReferences: [
+      { sourceRef: "Amos 8:5", targetRef: "Leviticus 19:35", label: "Just weights and measures" },
+      { sourceRef: "Amos 8:6", targetRef: "Proverbs 22:22", label: "Robbing the poor" },
+      { sourceRef: "Amos 8:11", targetRef: "1 Samuel 3:1", label: "Scarcity of the word" },
+      { sourceRef: "Amos 8:12", targetRef: "Proverbs 1:28", label: "Seeking too late" },
+    ],
+  },
+  {
+    chapter: 9,
+    title: "Judgment, Sifting, and Restoration",
+    summary:
+      "Amos closes with the certainty that sinners cannot escape the LORD's judgment, yet the house of Jacob will not be utterly destroyed. The book ends with the promised raising up of the tabernacle of David and future blessing.",
+    historicalSetting: "The final vision moves from unavoidable judgment to the sure promise that God will preserve and restore according to His purpose.",
+    mapNotes: ["Show Israel, Carmel, the sea, captivity, and the promised restoration in the land."],
+    kingsAndNations: ["Israel", "House of Jacob", "House of David", "Edom", "Heathen"],
+    majorMessages: ["No sinner can hide from God", "The LORD sifts His people", "Judgment does not cancel God's promises"],
+    keyThemes: ["Judgment", "Sifting", "Remnant", "Restoration", "Davidic hope"],
+    keyVerses: ["Amos 9:8", "Amos 9:9", "Amos 9:11", "Amos 9:15"],
+    repeatedFocus: ["I will", "sift", "raise up", "plant them"],
+    peopleMentioned: ["The Lord GOD", "Children of Israel", "House of Jacob", "David"],
+    placesAndNations: ["Israel", "Carmel", "Sea", "Edom", "The land"],
+    mainSinsJudged: [
+      "Presuming escape from God's presence",
+      "Saying evil shall not overtake",
+      "Trusting outward identity while refusing repentance",
+      "Forgetting that the LORD rules all kingdoms",
+    ],
+    teachingAim: "Show that God's judgment is certain, yet His promises of restoration remain sure.",
+    practicalApplications: [
+      "End Amos with both warning and hope.",
+      "Use Amos 9:11 with Acts 15 to show Scripture connection carefully.",
+      "Teach that God's promises are stronger than national collapse.",
+    ],
+    prophecyConnections: ["Acts 15:16-17 cites Amos 9:11-12 concerning the tabernacle of David and Gentiles called by God's name."],
+    christConnections: ["The restoration promise centers hope in the Davidic line, pointing forward to Christ the Son of David and His kingdom purpose."],
+    sundaySchoolQuestions: [
+      "Why can no one escape the LORD in Amos 9?",
+      "What does the sifting picture teach?",
+      "How does Acts 15 use Amos 9:11-12?",
+    ],
+    discussionQuestions: [
+      "Why is it important to end Amos with hope as well as warning?",
+      "How should restoration promises strengthen confidence in God's word?",
+    ],
+    sermonOutline: ["The God no sinner escapes", "The people sifted", "The tabernacle of David raised", "The land blessed by promise"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Wesley"],
+    recommendedBooks: ["Easton's Bible Dictionary", "Smith's Bible Dictionary", "Nave's Topical Bible"],
+    crossReferences: [
+      { sourceRef: "Amos 9:2", targetRef: "Psalm 139:7", label: "No hiding from God" },
+      { sourceRef: "Amos 9:8", targetRef: "Jeremiah 30:11", label: "Judgment yet not full end" },
+      { sourceRef: "Amos 9:11", targetRef: "Acts 15:16", label: "Tabernacle of David cited" },
+      { sourceRef: "Amos 9:15", targetRef: "Jeremiah 32:41", label: "Planted in the land" },
     ],
   },
 ];
@@ -4284,15 +4637,15 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
       },
     ],
   }),
-  ...chapterRecommendations("Amos", [1, 2, 3, 4], {
+  ...chapterRecommendations("Amos", [1, 2, 3, 4, 5, 6, 7, 8, 9], {
     commentaryForChapter: (chapter) => ({
-      id: `amos-${chapter}-commentary-foundation`,
+      id: `amos-${chapter}-commentary-center`,
       kind: "Commentary",
-      title: "Amos commentary import path",
-      author: "Reviewed public-domain commentary",
-      status: "planned",
-      note: "Commentary structure is ready for Amos 1-4; import only after rights and source review.",
-      warning: "Rights first",
+      title: "Amos Commentary Center",
+      author: "Matthew Henry, JFB, Barnes, Clarke, and Wesley where available",
+      status: "available",
+      note: "Reviewed public-domain Amos commentary entries are available in the chapter workflow; compare authors after reading the KJV text.",
+      warning: "Commentary is secondary to Scripture",
     }),
     libraryForChapter: (chapter) => [
       {
@@ -4764,11 +5117,11 @@ const bookIntroductions: BookIntroduction[] = [
       {
         id: "amos-intro-commentary",
         kind: "Commentary",
-        title: "Amos commentary import path",
-        author: "Reviewed public-domain commentary",
-        status: "planned",
-        note: "Commentary entries for Amos 1-4 are prepared structurally but not imported until rights review is complete.",
-        warning: "Rights first",
+        title: "Amos Commentary Center",
+        author: "Matthew Henry, JFB, Barnes, Clarke, and Wesley where available",
+        status: "available",
+        note: "Reviewed public-domain commentary entries are available for Amos and can be compared from the chapter workflow.",
+        warning: "Commentary is secondary to Scripture",
       },
     ],
     sourceNotes: [
@@ -7475,6 +7828,60 @@ const studyPlaces: StudyPlace[] = [
     relatedBooks: ["Acts", "Galatians"],
   },
   {
+    id: "tekoa",
+    name: "Tekoa",
+    description: "The town associated with Amos, who was among the herdmen of Tekoa.",
+    significance: "Tekoa helps students place Amos as a prophet called from ordinary life to carry the LORD's burden.",
+    region: "Judah",
+    keyPassages: ["Amos 1:1", "Amos 7:14", "Amos 7:15"],
+    timelineLinks: ["minor-prophets"],
+    relatedPassages: ["Amos 1:1", "Amos 7:14", "Amos 7:15"],
+    mapNote: "Map focus: Tekoa south of Jerusalem, with Amos sent northward to speak against Israel.",
+    timeline: [
+      { label: "Amos called", event: "Amos is identified with Tekoa before his message against Israel." },
+      { label: "Sent to prophesy", event: "Amos testifies that the LORD took him and sent him to prophesy." },
+    ],
+    keyEvents: ["Amos introduced", "Amos answers Amaziah"],
+    nations: ["Judah", "Israel"],
+    relatedBooks: ["Amos"],
+  },
+  {
+    id: "bethel",
+    name: "Bethel",
+    description: "A northern worship center repeatedly rebuked in Amos.",
+    significance: "Bethel shows how a place associated with religion can become a place of false confidence and opposition to God's word.",
+    region: "Israel",
+    keyPassages: ["Amos 3:14", "Amos 4:4", "Amos 5:5", "Amos 7:13"],
+    timelineLinks: ["minor-prophets"],
+    relatedPassages: ["Amos 3:14", "Amos 4:4", "Amos 5:5", "Amos 7:13"],
+    mapNote: "Map focus: Bethel in the northern kingdom, a center of worship and royal resistance in Amos.",
+    timeline: [
+      { label: "Warning", event: "Amos warns against seeking Bethel for false security." },
+      { label: "Opposition", event: "Amaziah resists Amos at Bethel." },
+    ],
+    keyEvents: ["Warnings against Bethel", "Amaziah opposes Amos"],
+    nations: ["Israel"],
+    relatedBooks: ["Amos", "1 Kings"],
+  },
+  {
+    id: "samaria",
+    name: "Samaria",
+    description: "The capital region of the northern kingdom, often connected with Israel's wealth, power, and coming judgment.",
+    significance: "Samaria helps readers understand Amos's warnings against ease, oppression, and false security in the northern kingdom.",
+    region: "Israel",
+    keyPassages: ["Amos 3:9", "Amos 4:1", "Amos 6:1", "2 Kings 17:6"],
+    timelineLinks: ["minor-prophets"],
+    relatedPassages: ["Amos 3:9", "Amos 4:1", "Amos 6:1", "2 Kings 17:6"],
+    mapNote: "Map focus: Samaria as the northern kingdom center before Assyrian conquest.",
+    timeline: [
+      { label: "Warning", event: "Amos exposes oppression and false confidence in Samaria." },
+      { label: "Captivity", event: "The northern kingdom is later carried away by Assyria." },
+    ],
+    keyEvents: ["Oppression rebuked", "Ease in Samaria warned", "Northern kingdom captivity"],
+    nations: ["Israel", "Assyria"],
+    relatedBooks: ["Amos", "2 Kings"],
+  },
+  {
     id: "judea",
     name: "Judea",
     description:
@@ -7898,7 +8305,7 @@ const chapterConnections: ChapterConnections[] = [
     book: "Amos",
     chapter: 1,
     peopleIds: [],
-    placeIds: ["jerusalem"],
+    placeIds: ["tekoa", "jerusalem", "damascus"],
     timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
@@ -7908,7 +8315,7 @@ const chapterConnections: ChapterConnections[] = [
     book: "Amos",
     chapter: 2,
     peopleIds: [],
-    placeIds: [],
+    placeIds: ["egypt"],
     timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
@@ -7918,7 +8325,7 @@ const chapterConnections: ChapterConnections[] = [
     book: "Amos",
     chapter: 3,
     peopleIds: [],
-    placeIds: [],
+    placeIds: ["samaria", "bethel", "egypt"],
     timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
@@ -7928,11 +8335,61 @@ const chapterConnections: ChapterConnections[] = [
     book: "Amos",
     chapter: 4,
     peopleIds: [],
-    placeIds: [],
+    placeIds: ["samaria", "bethel", "egypt"],
     timelineIds: ["minor-prophets"],
     typeIds: [],
     prophecyIds: [],
     themes: ["Warnings", "Refusal to return", "Correction", "Prepare to meet God"],
+  },
+  {
+    book: "Amos",
+    chapter: 5,
+    peopleIds: [],
+    placeIds: ["bethel", "samaria"],
+    timelineIds: ["minor-prophets"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Seek the LORD", "Righteousness", "Judgment", "True worship"],
+  },
+  {
+    book: "Amos",
+    chapter: 6,
+    peopleIds: [],
+    placeIds: ["jerusalem", "samaria"],
+    timelineIds: ["minor-prophets"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Ease", "Pride", "Luxury", "Captivity"],
+  },
+  {
+    book: "Amos",
+    chapter: 7,
+    peopleIds: [],
+    placeIds: ["tekoa", "bethel"],
+    timelineIds: ["minor-prophets"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Plumbline", "Prophetic calling", "Opposition", "Mercy"],
+  },
+  {
+    book: "Amos",
+    chapter: 8,
+    peopleIds: [],
+    placeIds: ["samaria"],
+    timelineIds: ["minor-prophets"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Famine of the word", "Dishonesty", "Judgment", "Mourning"],
+  },
+  {
+    book: "Amos",
+    chapter: 9,
+    peopleIds: [],
+    placeIds: ["samaria"],
+    timelineIds: ["minor-prophets"],
+    typeIds: [],
+    prophecyIds: [],
+    themes: ["Judgment", "Sifting", "Restoration", "Davidic hope"],
   },
   {
     book: "John",
@@ -8179,6 +8636,71 @@ const bibleBackgroundChapters: BibleBackgroundChapter[] = [
     culturalBackground: ["Bethel and Gilgal worship centers", "Famine", "Drought", "Pestilence", "Prepare to meet thy God"],
     majorEvents: ["Oppression rebuked", "Empty worship exposed", "Repeated refusals to return", "Final summons to meet God"],
     teachingNotes: ["Keep application direct but sober: repeated correction should produce repentance."],
+  },
+  {
+    book: "Amos",
+    chapter: 5,
+    historicalSetting: "Amos gives a lamentation over Israel and calls the people to seek the LORD rather than trust religious centers and ceremonies.",
+    geography: ["Bethel, Gilgal, and Beersheba are named as places of false confidence.", "The gate is important as the place where judgment and public justice should be established."],
+    timeline: ["Minor prophets", "Divided kingdom setting", "Before Assyrian judgment on the northern kingdom"],
+    kings: ["Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Israel"],
+    culturalBackground: ["City gate justice", "Pilgrimage and worship centers", "Sacrifices and songs rejected when righteousness is absent"],
+    majorEvents: ["Lament over Israel", "Call to seek the LORD", "False worship exposed", "Righteousness and judgment commanded"],
+    teachingNotes: ["Let Amos 5 move from lament to invitation, then to the exposure of worship without righteousness."],
+  },
+  {
+    book: "Amos",
+    chapter: 6,
+    historicalSetting: "Leaders in Zion and Samaria are at ease during outward prosperity while judgment is approaching.",
+    geography: ["Zion and Samaria are compared as centers of security.", "Calneh, Hamath, and Gath are used to challenge false confidence."],
+    timeline: ["Minor prophets", "Divided kingdom setting", "Approaching captivity"],
+    kings: ["Jeroboam of Israel", "Uzziah of Judah"],
+    prophets: ["Amos"],
+    nations: ["Israel", "Judah", "Philistia"],
+    culturalBackground: ["Luxury couches", "Feasting", "Music", "Palace confidence", "Captivity procession"],
+    majorEvents: ["Woe pronounced on careless leaders", "Luxury rebuked", "Pride condemned", "Captivity announced"],
+    teachingNotes: ["Use the chapter to expose careless ease, then ask what should grieve God's people."],
+  },
+  {
+    book: "Amos",
+    chapter: 7,
+    historicalSetting: "Amos records judgment visions and then faces Amaziah's opposition at Bethel.",
+    geography: ["Bethel is the royal worship center where Amaziah resists Amos.", "Tekoa recalls Amos's ordinary background before his prophetic call."],
+    timeline: ["Minor prophets", "Divided kingdom setting", "Prophetic opposition at Bethel"],
+    kings: ["Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Israel", "Judah"],
+    culturalBackground: ["Prophetic vision", "Royal sanctuary", "Plumbline image", "Herdman and gatherer of sycomore fruit"],
+    majorEvents: ["Locust vision", "Fire vision", "Plumbline vision", "Amaziah opposes Amos", "Amos answers his call"],
+    teachingNotes: ["The plumbline gives a simple teaching picture: God measures by His own standard, not national opinion."],
+  },
+  {
+    book: "Amos",
+    chapter: 8,
+    historicalSetting: "The vision of summer fruit announces that Israel's end is near while dishonest trade and rejection of God's word are exposed.",
+    geography: ["Samaria, Dan, and Beersheba show the reach of false worship and national confidence.", "Sea-to-sea language pictures desperate searching."],
+    timeline: ["Minor prophets", "Divided kingdom setting", "Nearness of judgment"],
+    kings: ["Jeroboam of Israel"],
+    prophets: ["Amos"],
+    nations: ["Israel"],
+    culturalBackground: ["Weights and measures", "Sabbath and new moon trade pressure", "Mourning rites", "Famine imagery"],
+    majorEvents: ["Summer fruit vision", "Dishonest commerce exposed", "Mourning announced", "Famine of hearing the words of the LORD declared"],
+    teachingNotes: ["Stress gratitude for access to Scripture and the danger of treating worship as an interruption to gain."],
+  },
+  {
+    book: "Amos",
+    chapter: 9,
+    historicalSetting: "The final vision shows unavoidable judgment, sifting, and then a promised restoration tied to the house of David.",
+    geography: ["Carmel, the sea, captivity, Edom, and the land frame the final judgment and restoration language."],
+    timeline: ["Minor prophets", "Divided kingdom setting", "Restoration promise", "Acts 15 Scripture connection"],
+    kings: ["House of David"],
+    prophets: ["Amos"],
+    nations: ["Israel", "Edom", "Gentiles called by God's name"],
+    culturalBackground: ["Temple judgment imagery", "Sifting grain", "Agricultural abundance", "Planting in the land"],
+    majorEvents: ["Final vision of judgment", "House of Jacob sifted", "Tabernacle of David promised", "Restoration blessing described"],
+    teachingNotes: ["End Amos with reverent hope: judgment is not softened, but God's covenant purpose stands."],
   },
   {
     book: "Daniel",
@@ -10539,19 +11061,29 @@ function defaultStudyPlaylists(): BibleAudioPlaylist[] {
   const createdAt = "2026-06-03T00:00:00.000Z";
   return [
     {
-      id: "playlist_amos_1_4_teaching_prep",
-      name: "Amos 1-4 Teaching Prep",
+      id: "playlist_amos_1_9_teaching_prep",
+      name: "Amos 1-9 Teaching Prep",
       createdAt,
       items: [
         { id: "amos-1", type: "bible_chapter", label: "Amos 1", book: "Amos", chapter: 1 },
         { id: "amos-2", type: "bible_chapter", label: "Amos 2", book: "Amos", chapter: 2 },
         { id: "amos-3", type: "bible_chapter", label: "Amos 3", book: "Amos", chapter: 3 },
         { id: "amos-4", type: "bible_chapter", label: "Amos 4", book: "Amos", chapter: 4 },
+        { id: "amos-5", type: "bible_chapter", label: "Amos 5", book: "Amos", chapter: 5 },
+        { id: "amos-6", type: "bible_chapter", label: "Amos 6", book: "Amos", chapter: 6 },
+        { id: "amos-7", type: "bible_chapter", label: "Amos 7", book: "Amos", chapter: 7 },
+        { id: "amos-8", type: "bible_chapter", label: "Amos 8", book: "Amos", chapter: 8 },
+        { id: "amos-9", type: "bible_chapter", label: "Amos 9", book: "Amos", chapter: 9 },
         { id: "amos-mh-1", type: "commentary_chapter", label: "Matthew Henry Amos 1", book: "Amos", chapter: 1 },
         { id: "amos-mh-2", type: "commentary_chapter", label: "Matthew Henry Amos 2", book: "Amos", chapter: 2 },
         { id: "amos-mh-3", type: "commentary_chapter", label: "Matthew Henry Amos 3", book: "Amos", chapter: 3 },
         { id: "amos-mh-4", type: "commentary_chapter", label: "Matthew Henry Amos 4", book: "Amos", chapter: 4 },
-        { id: "amos-teaching-notes", type: "teaching_notes", label: "Amos teaching notes", book: "Amos", chapter: 1, chapterEnd: 4 },
+        { id: "amos-mh-5", type: "commentary_chapter", label: "Matthew Henry Amos 5", book: "Amos", chapter: 5 },
+        { id: "amos-mh-6", type: "commentary_chapter", label: "Matthew Henry Amos 6", book: "Amos", chapter: 6 },
+        { id: "amos-mh-7", type: "commentary_chapter", label: "Matthew Henry Amos 7", book: "Amos", chapter: 7 },
+        { id: "amos-mh-8", type: "commentary_chapter", label: "Matthew Henry Amos 8", book: "Amos", chapter: 8 },
+        { id: "amos-mh-9", type: "commentary_chapter", label: "Matthew Henry Amos 9", book: "Amos", chapter: 9 },
+        { id: "amos-teaching-notes", type: "teaching_notes", label: "Amos teaching notes", book: "Amos", chapter: 1, chapterEnd: 9 },
       ],
     },
     {
@@ -15935,11 +16467,11 @@ export default function Home() {
             {tab === "amosStudyPath" && (
               <AmosStudyPathScreen
                 versesByRef={versesByRef}
-                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)}
+                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 9)}
                 bookIntroduction={bookIntroductionsByBook.get("Amos") ?? null}
                 onBack={() => setTab("bible")}
                 onOpenReference={openReference}
-                onListenAmos={() => listenChapterRange("Amos", 1, 4)}
+                onListenAmos={() => listenChapterRange("Amos", 1, 9)}
                 onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Amos", chapterNumber)}
                 onStopListening={() => stopSpeech()}
                 onOpenPlaylistBuilder={() => setTab("bible")}
@@ -19691,7 +20223,7 @@ function BibleReader({
                 <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
                   {activeCompletedItemIds.size}/{activePlaylist.items.length} complete
                 </span>
-                {activePlaylist.name === "Amos 1-4 Teaching Prep" && (
+                {(activePlaylist.name === "Amos 1-9 Teaching Prep" || activePlaylist.name === "Amos 1-4 Teaching Prep") && (
                   <button
                     className="rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
                     onClick={onOpenAmosStudyPath}
@@ -20123,7 +20655,7 @@ function buildAmosTeachingNotesMarkdown({
 }) {
   const amosIntro = bookIntroduction?.book === "Amos" ? bookIntroduction : bookIntroductions.find((intro) => intro.book === "Amos") ?? null;
   const lines: string[] = [
-    "# Amos 1-4 Teaching Notes",
+    "# Amos 1-9 Teaching Notes",
     "",
     "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
     "",
@@ -20161,10 +20693,23 @@ function buildAmosTeachingNotesMarkdown({
       `## Amos ${chapterStudy.chapter}: ${chapterStudy.title}`,
       "",
       `- Chapter summary: ${chapterStudy.summary}`,
+      chapterStudy.historicalSetting ? `- Historical setting: ${chapterStudy.historicalSetting}` : "",
       `- Main teaching aim: ${chapterStudy.teachingAim}`,
       "",
       "### Key Verses",
       ...sectionOrEmpty(chapterStudy.keyVerses.map((ref) => `- ${verseLine(ref, versesByRef)}`)),
+      "",
+      "### Major Messages And Themes",
+      ...sectionOrEmpty([
+        ...(chapterStudy.majorMessages ?? []).map((message) => `- Major message: ${message}`),
+        ...(chapterStudy.keyThemes ?? []).map((theme) => `- Theme: ${theme}`),
+      ]),
+      "",
+      "### Maps, Kings, And Nations",
+      ...sectionOrEmpty([
+        ...(chapterStudy.mapNotes ?? []).map((note) => `- Map note: ${note}`),
+        ...(chapterStudy.kingsAndNations ?? []).map((item) => `- King / nation: ${item}`),
+      ]),
       "",
       "### Repeated Words And Phrases",
       ...sectionOrEmpty([
@@ -20185,6 +20730,21 @@ function buildAmosTeachingNotesMarkdown({
       "### Practical Applications",
       ...sectionOrEmpty(chapterStudy.practicalApplications.map((application) => `- ${application}`)),
       "",
+      "### Prophecy And Christ Connections",
+      ...sectionOrEmpty([
+        ...(chapterStudy.prophecyConnections ?? []).map((connection) => `- Prophecy connection: ${connection}`),
+        ...(chapterStudy.christConnections ?? []).map((connection) => `- Christ connection: ${connection}`),
+      ]),
+      "",
+      "### Sunday School And Discussion Questions",
+      ...sectionOrEmpty([
+        ...(chapterStudy.sundaySchoolQuestions ?? []).map((question) => `- Sunday school: ${question}`),
+        ...(chapterStudy.discussionQuestions ?? []).map((question) => `- Discussion: ${question}`),
+      ]),
+      "",
+      "### Sermon Outline",
+      ...sectionOrEmpty((chapterStudy.sermonOutline ?? []).map((point, index) => `- ${index + 1}. ${point}`)),
+      "",
       "### Reviewed Cross References",
       ...sectionOrEmpty(chapterStudy.crossReferences.map((reference) => {
         const preview = versesByRef.get(reference.targetRef)?.plainText;
@@ -20195,7 +20755,11 @@ function buildAmosTeachingNotesMarkdown({
       ...formatTeacherNotesForExport(notes),
       "",
       "### Recommended Resources",
-      ...sectionOrEmpty(recommendations.map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
+      ...sectionOrEmpty([
+        ...(chapterStudy.recommendedCommentaries ?? []).map((item) => `- Commentary: ${item}`),
+        ...(chapterStudy.recommendedBooks ?? []).map((item) => `- Library / tool: ${item}`),
+        ...recommendations.map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`),
+      ]),
       "",
     );
   });
@@ -20212,7 +20776,7 @@ function buildAmosTeachingNotesMarkdown({
       "",
       entry.entry_text,
       "",
-    ]) : ["- No reviewed Amos 1-4 commentary entries have been imported yet."]),
+    ]) : ["- No reviewed Amos 1-9 commentary entries have been imported yet."]),
     "",
     "## Recommended Amos Resources",
     ...sectionOrEmpty((amosIntro?.recommendedResources ?? []).map((resource) => `- ${resource.title}${resource.author ? `, ${resource.author}` : ""} (${resource.kind}, ${resource.status}): ${resource.note}${resource.warning ? ` Warning: ${resource.warning}` : ""}`)),
@@ -20260,7 +20824,7 @@ function AmosStudyPathScreen({
       teacherNotesByChapter = {};
     }
     const markdown = buildAmosTeachingNotesMarkdown({ bookIntroduction, commentaryEntries, teacherNotesByChapter, versesByRef });
-    downloadTextFile("amos-1-4-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
+    downloadTextFile("amos-1-9-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
   }
 
   return (
@@ -20273,19 +20837,19 @@ function AmosStudyPathScreen({
       </div>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Amos 1-4 Study Path</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare Amos 1-4</h1>
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Amos 1-9 Study Path</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare Amos 1-9</h1>
         <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">
           A focused Sunday school prep path with KJV reading, chapter listening, Matthew Henry commentary, reviewed study data, and lesson export.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference("Amos 1:1")} type="button">
             <BookOpen size={16} />
-            Read Amos 1-4
+            Read Amos 1-9
           </button>
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onListenAmos} type="button">
             <Headphones size={16} />
-            Listen to Amos 1-4
+            Listen to Amos 1-9
           </button>
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
             <Square size={15} />
@@ -20304,15 +20868,15 @@ function AmosStudyPathScreen({
 
       <section className="grid gap-3 lg:grid-cols-2">
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold">Matthew Henry Amos 1-4</h2>
+          <h2 className="text-lg font-semibold">Amos Commentary</h2>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Commentary is separated by chapter so it stops after the selected chapter unless repeat is turned on.</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2">
-            {[1, 2, 3, 4].map((chapterNumber) => {
+            {AMOS_CHAPTER_STUDIES.map(({ chapter: chapterNumber }) => {
               const entries = commentaryByChapter.get(chapterNumber) ?? [];
               return (
                 <div key={`amos-commentary-path-${chapterNumber}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                   <p className="text-sm font-semibold text-[var(--green)]">Amos {chapterNumber} commentary</p>
-                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed Matthew Henry entry${entries.length === 1 ? "" : "ies"}` : "No reviewed commentary entry yet"}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed commentary entr${entries.length === 1 ? "y" : "ies"}` : "No reviewed commentary entry yet"}</p>
                   <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!entries.length} onClick={() => onPlayCommentaryChapter(chapterNumber)} type="button">
                     <Play size={14} />
                     Play Amos {chapterNumber} Commentary
@@ -20378,12 +20942,32 @@ function AmosStudyPathScreen({
               <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{study.summary}</p>
               <div className="mt-3 grid gap-2 md:grid-cols-2">
                 <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Major messages</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{(study.majorMessages ?? []).map((message) => <li key={`amos-path-message-${study.chapter}-${message}`}>{message}</li>)}</ul>
+                </div>
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Map / nations</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{[...(study.mapNotes ?? []), ...(study.kingsAndNations ?? []).slice(0, 4)].map((item) => <li key={`amos-path-map-${study.chapter}-${item}`}>{item}</li>)}</ul>
+                </div>
+              </div>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="rounded-xl bg-white px-3 py-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Main sins judged</p>
                   <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{study.mainSinsJudged.map((sin) => <li key={`amos-path-sin-${study.chapter}-${sin}`}>{sin}</li>)}</ul>
                 </div>
                 <div className="rounded-xl bg-white px-3 py-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Applications</p>
                   <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{study.practicalApplications.map((application) => <li key={`amos-path-app-${study.chapter}-${application}`}>{application}</li>)}</ul>
+                </div>
+              </div>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Questions</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{(study.sundaySchoolQuestions ?? []).slice(0, 3).map((question) => <li key={`amos-path-question-${study.chapter}-${question}`}>{question}</li>)}</ul>
+                </div>
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Sermon outline</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{(study.sermonOutline ?? []).map((point) => <li key={`amos-path-outline-${study.chapter}-${point}`}>{point}</li>)}</ul>
                 </div>
               </div>
             </article>
@@ -21375,13 +21959,13 @@ function ChapterStudyWorkflow({
   const displayedCommentaryEntries = effectiveCommentaryAuthorFilter === "All"
     ? chapterCommentaryEntries
     : chapterCommentaryEntries.filter((entry) => entry.author === effectiveCommentaryAuthorFilter);
-  const isAmosTeachingPrep = selectedVerse.book === "Amos" && selectedVerse.chapter >= 1 && selectedVerse.chapter <= 4;
+  const isAmosTeachingPrep = selectedVerse.book === "Amos" && selectedVerse.chapter >= 1 && selectedVerse.chapter <= 9;
   const amosChapterStudy = isAmosTeachingPrep
     ? AMOS_CHAPTER_STUDIES.find((item) => item.chapter === selectedVerse.chapter) ?? null
     : null;
   const amosRangeCommentaryEntries = useMemo(
     () => isAmosTeachingPrep
-      ? allCommentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 4)
+      ? allCommentaryEntries.filter((entry) => entry.book === "Amos" && entry.chapter >= 1 && entry.chapter <= 9)
       : [],
     [allCommentaryEntries, isAmosTeachingPrep],
   );
@@ -21472,15 +22056,15 @@ function ChapterStudyWorkflow({
   async function copyAmosRangeTeachingNotes() {
     try {
       await navigator.clipboard.writeText(amosRangeMarkdownExport);
-      setExportMessage("Amos 1-4 teaching notes copied.");
+      setExportMessage("Amos 1-9 teaching notes copied.");
     } catch {
       setExportMessage("Copy was not available here. Use the Amos download button.");
     }
   }
 
   function downloadAmosRangeTeachingNotes() {
-    downloadTextFile("amos-1-4-teaching-notes.md", amosRangeMarkdownExport, "text/markdown;charset=utf-8");
-    setExportMessage("Amos 1-4 teaching notes downloaded.");
+    downloadTextFile("amos-1-9-teaching-notes.md", amosRangeMarkdownExport, "text/markdown;charset=utf-8");
+    setExportMessage("Amos 1-9 teaching notes downloaded.");
   }
 
   function downloadPlainText() {
@@ -21678,10 +22262,10 @@ function ChapterStudyWorkflow({
         <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prepare Amos 1-4</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prepare Amos 1-9</p>
               <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Sunday school teaching prep from reviewed data</h3>
               <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
-                Read and listen to Amos 1-4, collect teacher notes, and export one focused lesson file. Commentary appears only where suitable public entries are ready.
+                Read and listen to Amos 1-9, collect teacher notes, and export one focused lesson file. Commentary appears only where suitable public entries are ready.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -21691,15 +22275,15 @@ function ChapterStudyWorkflow({
                 type="button"
               >
                 <BookOpen size={16} />
-                Read Amos 1-4
+                Read Amos 1-9
               </button>
               <button
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
-                onClick={() => onListenChapterRange("Amos", 1, 4)}
+                onClick={() => onListenChapterRange("Amos", 1, 9)}
                 type="button"
               >
                 <Headphones size={16} />
-                Listen Amos 1-4
+                Listen Amos 1-9
               </button>
               <button
                 className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
@@ -21723,7 +22307,7 @@ function ChapterStudyWorkflow({
                 type="button"
               >
                 <Download size={16} />
-                Export Amos 1-4
+                Export Amos 1-9
               </button>
               <button
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:opacity-50"
@@ -21745,7 +22329,7 @@ function ChapterStudyWorkflow({
             </div>
           </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
-            {["KJV text first", "Book intro ready", "Amos 1-4 export ready", chapterCommentaryEntries.length ? "Commentary available" : "Commentary not imported yet"].map((item) => (
+            {["KJV text first", "Book intro ready", "Amos 1-9 export ready", chapterCommentaryEntries.length ? "Commentary available" : "Commentary not imported yet"].map((item) => (
               <div key={`amos-prep-${item}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
                 {item}
               </div>
