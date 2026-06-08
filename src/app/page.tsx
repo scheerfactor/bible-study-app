@@ -719,6 +719,10 @@ type CommentaryRecommendation = {
 type LibraryResource = {
   slug: string;
   title: string;
+  work_key?: string;
+  work_title?: string;
+  edition_count?: number;
+  edition_group?: LibraryResource[];
   author: string;
   year: number;
   category: string;
@@ -12356,6 +12360,7 @@ export default function Home() {
   const [flashRef, setFlashRef] = useState<string | null>(null);
   const [authEmail, setAuthEmail] = useState("");
   const [authMessage, setAuthMessage] = useState("");
+  const [allLibraryResources, setAllLibraryResources] = useState<LibraryResource[]>([]);
   const [libraryResources, setLibraryResources] = useState<LibraryResource[]>([]);
   const [libraryView, setLibraryView] = useState<LibraryView>("home");
   const [librarySearchTerm, setLibrarySearchTerm] = useState("");
@@ -12461,6 +12466,9 @@ export default function Home() {
         setLibraryView("home");
         setTab("library");
       }
+      if (window.location.hash === "#amos-study") {
+        setTab("amosStudyPath");
+      }
       const presentationSessionMatch = window.location.hash.match(/^#presentation-session-([A-Z0-9]{3}-[A-Z0-9]{3})$/i);
       if (presentationSessionMatch) {
         setPresentationInitialSessionId(presentationSessionMatch[1].toUpperCase());
@@ -12536,8 +12544,11 @@ export default function Home() {
   );
 
   const activeLibraryResource = useMemo(
-    () => libraryResources.find((resource) => resource.slug === activeLibrarySlug) ?? null,
-    [activeLibrarySlug, libraryResources],
+    () =>
+      libraryResources.find((resource) => resource.slug === activeLibrarySlug) ??
+      allLibraryResources.find((resource) => resource.slug === activeLibrarySlug) ??
+      null,
+    [activeLibrarySlug, allLibraryResources, libraryResources],
   );
 
   const activeLibraryAuthor = useMemo(
@@ -13957,10 +13968,17 @@ export default function Home() {
     fetch("/api/library")
       .then((response) => response.json())
       .then((data: { resources?: LibraryResource[] }) => {
-        if (!cancelled) setLibraryResources(dedupeLibraryWorks(data.resources ?? []));
+        if (!cancelled) {
+          const fullResources = data.resources ?? [];
+          setAllLibraryResources(fullResources);
+          setLibraryResources(groupLibraryWorks(fullResources));
+        }
       })
       .catch(() => {
-        if (!cancelled) setLibraryResources([]);
+        if (!cancelled) {
+          setAllLibraryResources([]);
+          setLibraryResources([]);
+        }
       });
 
     return () => {
@@ -16901,6 +16919,7 @@ export default function Home() {
               <LibraryScreen
                 view={libraryView}
                 resources={libraryResources}
+                allResources={allLibraryResources}
                 signedIn={Boolean(user)}
                 filteredResources={filteredLibraryResources}
                 categories={libraryCategories}
@@ -20194,6 +20213,7 @@ function AtAGlanceStudyPanel({
   onOpenThemeExplorer,
   onOpenRelatedBook,
   onBuildSermon,
+  onOpenAmosStudyPath,
 }: {
   passage: string;
   chapterSummary: string;
@@ -20229,6 +20249,7 @@ function AtAGlanceStudyPanel({
   onOpenThemeExplorer: () => void;
   onOpenRelatedBook: (slug: string) => void;
   onBuildSermon: () => void;
+  onOpenAmosStudyPath?: () => void;
 }) {
   const studyOrder = [
     "Read",
@@ -20388,6 +20409,15 @@ function AtAGlanceStudyPanel({
         <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBuildSermon} type="button">
           Sermon Builder
         </button>
+        {onOpenAmosStudyPath && (
+          <a
+            className="rounded-full border border-[var(--line)] bg-[var(--warm)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
+            href="#amos-study"
+            onClick={onOpenAmosStudyPath}
+          >
+            Amos Teaching Dashboard
+          </a>
+        )}
       </div>
     </section>
   );
@@ -20978,6 +21008,7 @@ function BibleReader({
         onOpenThemeExplorer={onOpenThemeExplorer}
         onOpenRelatedBook={onOpenLibraryResource}
         onBuildSermon={onBuildSermonFromStudy}
+        onOpenAmosStudyPath={book === "Amos" ? onOpenAmosStudyPath : undefined}
       />
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
@@ -21926,6 +21957,12 @@ function AmosStudyPathScreen({
   const nationsJudged = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.placesAndNations))).slice(0, 18);
   const keyWords = Array.from(new Set(AMOS_CHAPTER_STUDIES.flatMap((study) => study.repeatedFocus))).slice(0, 18);
   const keyCrossReferences = AMOS_CHAPTER_STUDIES.flatMap((study) => study.crossReferences).slice(0, 12);
+  const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
+  const questionCount = AMOS_CHAPTER_STUDIES.reduce((total, study) => total + (study.sundaySchoolQuestions?.length ?? 0), 0);
+  const applicationCount = AMOS_CHAPTER_STUDIES.reduce((total, study) => total + study.practicalApplications.length, 0);
+  const outlineCount = AMOS_CHAPTER_STUDIES.reduce((total, study) => total + (study.sermonOutline?.length ?? 0), 0);
+  const amosTheme = bookIntroduction?.overview.theme ?? "The LORD judges sin and calls His people to return";
+  const amosSetting = bookIntroduction?.historicalSetting ?? "Amos prophesied to the northern kingdom of Israel during a season of outward prosperity and inward corruption.";
   const commentaryByChapter = new Map<number, CommentaryEntry[]>();
   commentaryEntries.forEach((entry) => {
     commentaryByChapter.set(entry.chapter, [...(commentaryByChapter.get(entry.chapter) ?? []), entry]);
@@ -21979,6 +22016,42 @@ function AmosStudyPathScreen({
             <Download size={16} />
             Export Amos Lesson Notes
           </button>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Teaching Dashboard</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Amos is ready for lesson preparation</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--scripture-ink)]">{amosTheme}</p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Export ready</span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+          <MiniStat label="Chapter outlines" value={String(AMOS_CHAPTER_STUDIES.length)} />
+          <MiniStat label="Questions" value={String(questionCount)} />
+          <MiniStat label="Applications" value={String(applicationCount)} />
+          <MiniStat label="Outline points" value={String(outlineCount)} />
+          <MiniStat label="Cross refs" value={String(keyCrossReferences.length)} />
+          <MiniStat label="Commentary entries" value={String(commentaryEntries.length)} />
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-3">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Lesson Starter</p>
+            <p className="mt-2 text-base font-semibold text-[var(--green)]">Prepare to Meet Thy God</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Read Amos, review the nations judged, compare commentary by chapter, add teacher notes, then export the lesson file.</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Background Notes</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{amosSetting}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary Comparison</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              {commentaryAuthors.length ? commentaryAuthors.join(", ") : "No reviewed Amos commentary entries are available yet."}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -25302,13 +25375,17 @@ function NotesScreen({
 }
 
 function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
+  const editions = resource.edition_group ?? [];
   const haystack = [
     resource.title,
+    resource.work_title ?? "",
     resource.author,
     resource.category,
     resource.collection,
     resource.original_category ?? "",
     resource.description,
+    resource.recommended_use,
+    ...editions.flatMap((edition) => [edition.title, edition.author, edition.source_url, edition.description]),
     ...resource.resource_labels,
     ...resource.resource_warnings,
   ]
@@ -25319,8 +25396,10 @@ function libraryResourceMatches(resource: LibraryResource, terms: string[]) {
 }
 
 function libraryResourceMatchesAllTerms(resource: LibraryResource, terms: string[]) {
+  const editions = resource.edition_group ?? [];
   const haystack = [
     resource.title,
+    resource.work_title ?? "",
     resource.author,
     resource.category,
     resource.collection,
@@ -25329,6 +25408,14 @@ function libraryResourceMatchesAllTerms(resource: LibraryResource, terms: string
     resource.perspective_notes,
     resource.recommended_use,
     resource.source_url,
+    ...editions.flatMap((edition) => [
+      edition.title,
+      edition.author,
+      edition.source_url,
+      edition.rights_basis,
+      edition.recommended_use,
+      edition.description,
+    ]),
     ...resource.resource_labels,
     ...resource.resource_warnings,
   ]
@@ -25395,33 +25482,145 @@ function chapterResourceStatusLabel(status: ChapterResourceRecommendation["statu
   return "Coming soon";
 }
 
-function normalizedLibraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
-  return `${resource.title}::${resource.author}`
+const KNOWN_LIBRARY_WORK_TITLES = [
+  "the treasury of david",
+  "morning by morning",
+  "evening by evening",
+  "expository preaching plans and methods",
+  "paul a servant of jesus christ",
+  "peter fisherman disciple apostle",
+  "the life and light of men",
+  "the creed of creeds",
+  "jeremiah priest and prophet",
+  "practical religion",
+  "living or dead",
+  "the christian leaders of the last century",
+  "the acts of the apostles an exposition",
+  "the annotated bible",
+  "the prophet daniel",
+  "the gospel of matthew an exposition",
+  "the prophet joel",
+  "the revelation an analysis and exposition",
+  "satan his personality power and overthrow",
+  "the person and work of the holy spirit",
+  "how to be saved and how to be lost",
+  "how to succeed in the christian life",
+  "why god used d l moody",
+  "the possibilities of prayer",
+  "the essentials of prayer",
+  "the necessity of prayer",
+  "illustrations and meditations",
+  "preaching to the spirits in prison",
+];
+
+function normalizedLibraryText(value: string) {
+  return value
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/&/g, " and ")
+    .replace(/\[[^\]]+\]/g, " ")
+    .replace(/\bmicroform\b/g, " ")
+    .replace(/\bfacsimile\b/g, " ")
+    .replace(/\bfrom old catalog\b/g, " ")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
 
+function canonicalLibraryTitle(title: string) {
+  const normalized = normalizedLibraryText(title)
+    .replace(/\bvol(?:ume)?\s+[ivxlcdm0-9]+\b/g, " ")
+    .replace(/\b\d+(st|nd|rd|th)?\s+series\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const knownTitle = KNOWN_LIBRARY_WORK_TITLES.find((candidate) => normalized.includes(candidate));
+  if (knownTitle) return knownTitle;
+
+  return normalized
+    .replace(/^(the|a|an)\s+/, "")
+    .replace(/\s+(or|being|containing|with|and other|microform)\s+.*$/, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function canonicalLibraryAuthor(author: string) {
+  const authorId = libraryAuthorIdFromName(author);
+  if (["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "meyer", "torrey", "moody", "bounds", "murray", "bunyan", "taylor"].includes(authorId)) {
+    return authorId;
+  }
+  return normalizedLibraryText(author);
+}
+
+function libraryWorkKey(resource: Pick<LibraryResource, "title" | "author">) {
+  return `${canonicalLibraryTitle(resource.title)}::${canonicalLibraryAuthor(resource.author)}`;
+}
+
 function strongerLibraryResource(current: LibraryResource, candidate: LibraryResource) {
-  if ((candidate.word_count ?? 0) > (current.word_count ?? 0)) return candidate;
   if (candidate.public_domain_status === "verified" && current.public_domain_status !== "verified") return candidate;
   if (candidate.source_url.includes("gutenberg.org") && !current.source_url.includes("gutenberg.org")) return candidate;
+  if ((candidate.ocr_quality_score ?? 0) > (current.ocr_quality_score ?? 0)) return candidate;
+  if (candidate.safe_for_quotation === true && current.safe_for_quotation !== true) return candidate;
+  if ((candidate.word_count ?? 0) > (current.word_count ?? 0)) return candidate;
   return current;
 }
 
-function dedupeLibraryWorks(resources: LibraryResource[]) {
-  const byWork = new Map<string, LibraryResource>();
+function preferredLibraryWorkTitle(resources: LibraryResource[]) {
+  const shortest = resources
+    .map((resource) => resource.title.trim())
+    .filter(Boolean)
+    .sort((a, b) => normalizedLibraryText(a).length - normalizedLibraryText(b).length || a.localeCompare(b))[0];
+  return shortest ?? resources[0]?.title ?? "Untitled Work";
+}
+
+function sortLibraryEditions(resources: LibraryResource[]) {
+  return [...resources].sort((a, b) => {
+    const aClean = a.source_url.includes("gutenberg.org") ? 1 : 0;
+    const bClean = b.source_url.includes("gutenberg.org") ? 1 : 0;
+    return (
+      bClean - aClean ||
+      (b.ocr_quality_score ?? 0) - (a.ocr_quality_score ?? 0) ||
+      (b.word_count ?? 0) - (a.word_count ?? 0) ||
+      a.title.localeCompare(b.title)
+    );
+  });
+}
+
+function groupLibraryWorks(resources: LibraryResource[]) {
+  const byWork = new Map<string, LibraryResource[]>();
 
   for (const resource of resources) {
-    const key = normalizedLibraryWorkKey(resource);
-    const existing = byWork.get(key);
-    byWork.set(key, existing ? strongerLibraryResource(existing, resource) : resource);
+    const key = libraryWorkKey(resource);
+    byWork.set(key, [...(byWork.get(key) ?? []), resource]);
   }
 
-  return Array.from(byWork.values());
+  return Array.from(byWork.entries()).map(([workKey, editions]) => {
+    const sortedEditions = sortLibraryEditions(editions);
+    const preferred = sortedEditions.reduce(strongerLibraryResource, sortedEditions[0]);
+    return {
+      ...preferred,
+      work_key: workKey,
+      work_title: preferredLibraryWorkTitle(sortedEditions),
+      edition_count: sortedEditions.length,
+      edition_group: sortedEditions,
+    };
+  });
+}
+
+function libraryWorkEditions(resource: LibraryResource, allResources: LibraryResource[]) {
+  const key = resource.work_key ?? libraryWorkKey(resource);
+  const explicitEditions = resource.edition_group ?? [];
+  const matchingEditions = allResources.filter((candidate) => libraryWorkKey(candidate) === key);
+  return sortLibraryEditions(matchingEditions.length ? matchingEditions : explicitEditions.length ? explicitEditions : [resource]);
+}
+
+function editionDescriptor(resource: LibraryResource, index: number) {
+  const parts = [
+    resource.source_url.includes("gutenberg.org") ? "Project Gutenberg" : resource.source_url.includes("archive.org") ? "Internet Archive scan" : "Verified source",
+    resource.ocr_quality_label ?? ocrQualityLabel(resource),
+    resource.year ? String(resource.year) : "",
+  ].filter(Boolean);
+  return `Edition ${index + 1}: ${parts.join(" · ")}`;
 }
 
 function libraryReadingMinutes(resource: LibraryResource) {
@@ -25874,6 +26073,47 @@ function featuredTitlesForAuthor(resources: LibraryResource[], profile: LibraryA
   return Array.from(new Map([...preferred, ...authorResources].map((resource) => [resource.slug, resource])).values()).slice(0, limit);
 }
 
+function resourceMatchesAnyPattern(resource: LibraryResource, patterns: RegExp[]) {
+  const text = libraryStudyText(resource);
+  return patterns.some((pattern) => pattern.test(text));
+}
+
+function bestWorksForAuthor(resources: LibraryResource[], profile: LibraryAuthorProfile, limit = 8) {
+  const preferred = featuredTitlesForAuthor(resources, profile, limit);
+  const substantial = resources
+    .filter((resource) => (resource.word_count ?? 0) >= 25000)
+    .sort((a, b) => (b.word_count ?? 0) - (a.word_count ?? 0));
+  return Array.from(new Map([...preferred, ...substantial, ...resources].map((resource) => [resource.slug, resource])).values()).slice(0, limit);
+}
+
+function shortWorksForAuthor(resources: LibraryResource[], limit = 8) {
+  return resources
+    .filter((resource) => {
+      const wordCount = resource.word_count ?? 0;
+      return wordCount > 0 && wordCount <= 18000;
+    })
+    .sort((a, b) => (a.word_count ?? 999999) - (b.word_count ?? 999999))
+    .slice(0, limit);
+}
+
+function expositoryWorksForAuthor(resources: LibraryResource[], limit = 8) {
+  return resources
+    .filter((resource) => resourceMatchesAnyPattern(resource, [/commentary/, /exposition/, /expository/, /notes on/, /lectures on/, /gospel of/, /epistle/, /prophet/, /revelation/, /psalm/]))
+    .slice(0, limit);
+}
+
+function devotionalWorksForAuthor(resources: LibraryResource[], limit = 8) {
+  return resources
+    .filter((resource) => resourceMatchesAnyPattern(resource, [/devotional/, /morning/, /evening/, /prayer/, /holiness/, /christian living/, /faith/, /grace/, /humility/, /surrender/]))
+    .slice(0, limit);
+}
+
+function preachingTeachingWorksForAuthor(resources: LibraryResource[], limit = 8) {
+  return resources
+    .filter((resource) => resourceMatchesAnyPattern(resource, [/preach/, /sermon/, /teacher/, /teaching/, /illustration/, /students/, /soul.?winner/, /addresses/]))
+    .slice(0, limit);
+}
+
 function resourcesForCollection(resources: LibraryResource[], collection: LibraryCollection) {
   return resources.filter((resource) => libraryResourceMatches(resource, collection.terms));
 }
@@ -26185,6 +26425,7 @@ function isMediaImportType(resourceType: AdminResourceType) {
 function LibraryScreen({
   view,
   resources,
+  allResources,
   signedIn,
   filteredResources,
   categories,
@@ -26265,6 +26506,7 @@ function LibraryScreen({
 }: {
   view: LibraryView;
   resources: LibraryResource[];
+  allResources: LibraryResource[];
   signedIn: boolean;
   filteredResources: LibraryResource[];
   categories: string[];
@@ -26430,6 +26672,7 @@ function LibraryScreen({
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
+        editions={libraryWorkEditions(activeResource, allResources)}
         relatedResources={relatedLibraryResourcesForResource(activeResource, resources, 10)}
         onOpenDetail={onOpenDetail}
       />
@@ -26441,7 +26684,7 @@ function LibraryScreen({
       <LibraryAuthorScreen
         profile={activeAuthor}
         resources={resourcesForAuthor(resources, activeAuthor)}
-        allResources={resources}
+        allResources={allResources}
         commentaryEntries={commentaryEntries.filter((entry) => libraryAuthorIdFromName(entry.author) === activeAuthor.id)}
         onBack={onOpenHome}
         onOpenDetail={onOpenDetail}
@@ -26601,8 +26844,9 @@ function LibraryScreen({
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
-  const verifiedResourceCount = resources.filter((resource) => resource.public_domain_status === "verified").length;
-  const totalLibraryWords = resources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
+  const verifiedResourceCount = allResources.filter((resource) => resource.public_domain_status === "verified").length;
+  const groupedWorkCount = resources.length;
+  const totalLibraryWords = allResources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
   const totalLibraryReadingMinutes = totalResourceReadingMinutes(resources);
   const topCategoryTotals = categoryCards
     .map(({ category, resources: categoryResources }) => ({
@@ -26672,7 +26916,7 @@ function LibraryScreen({
             </a>
           </div>
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
-            <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
+            <p className="text-2xl font-semibold text-[var(--green)]">{groupedWorkCount}</p>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
           </div>
         </div>
@@ -26680,10 +26924,10 @@ function LibraryScreen({
 
       <section className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
         <LibraryStat label="Total authors" value={String(libraryAuthorCount)} />
-        <LibraryStat label="Total books" value={String(resources.length)} />
+        <LibraryStat label="Grouped works" value={String(groupedWorkCount)} />
         <LibraryStat label="Total commentaries" value={String(commentaryCoverage.totalEntries)} />
         <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
-        <LibraryStat label="Total resources" value={String(stats.totalResources)} />
+        <LibraryStat label="Verified files" value={String(verifiedResourceCount)} />
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
       </section>
 
@@ -29762,6 +30006,12 @@ function LibraryAuthorScreen({
   const collectionTarget = AUTHOR_COLLECTION_TARGETS[profile.id] ?? Math.max(8, resources.length);
   const collectionProgress = Math.min(100, Math.round((resources.length / collectionTarget) * 100));
   const startingBook = startHereResources[0] ?? null;
+  const authorEditionTotal = resourcesForAuthor(allResources, profile).length;
+  const bestWorks = bestWorksForAuthor(resources, profile, 8);
+  const shortWorks = shortWorksForAuthor(resources, 8);
+  const expositoryWorks = expositoryWorksForAuthor(resources, 8);
+  const devotionalWorks = devotionalWorksForAuthor(resources, 8);
+  const preachingTeachingWorks = preachingTeachingWorksForAuthor(resources, 8);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -29812,10 +30062,11 @@ function LibraryAuthorScreen({
           </span>
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-4">
-          <StatusCard label="Books owned" status={String(resources.length)} good={resources.length > 0} />
+          <StatusCard label="Grouped works" status={String(resources.length)} good={resources.length > 0} />
+          <StatusCard label="Editions / scans" status={String(authorEditionTotal)} good={authorEditionTotal > 0} />
           <StatusCard label="Available goal" status={`${collectionTarget}+`} good />
           <StatusCard label="Reading hours" status={resources.length ? readingMinutesLabel(totalMinutes) : "Soon"} good={resources.length > 0} />
-          <StatusCard label="Recommended start" status={startingBook?.title ?? profile.recommendedReadingOrder[0] ?? "Needs review"} good={Boolean(startingBook)} />
+          <StatusCard label="Recommended start" status={startingBook?.work_title ?? startingBook?.title ?? profile.recommendedReadingOrder[0] ?? "Needs review"} good={Boolean(startingBook)} />
         </div>
         <div className="mt-4 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
           <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${collectionProgress}%` }} />
@@ -29877,7 +30128,7 @@ function LibraryAuthorScreen({
               <li key={`author-start-${profile.id}-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{index + 1}. Start here</p>
                 <button className="mt-2 text-left text-sm font-semibold leading-6 text-[var(--green)]" onClick={() => onOpenDetail(resource.slug)} type="button">
-                  {resource.title}
+                  {resource.work_title ?? resource.title}
                 </button>
                 <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
               </li>
@@ -29886,8 +30137,82 @@ function LibraryAuthorScreen({
         </section>
       )}
 
+      {bestWorks.length > 0 && (
+        <LibraryShelf title="Best Works">
+          {bestWorks.map((resource) => (
+            <LibraryResourceCard
+              key={`author-best-${profile.id}-${resource.slug}`}
+              resource={resource}
+              completed={false}
+              onOpen={() => onOpenDetail(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
+
+      <section className="grid gap-4 xl:grid-cols-2">
+        {shortWorks.length > 0 && (
+          <LibraryShelf title="Short Works">
+            {shortWorks.slice(0, 4).map((resource) => (
+              <LibraryResourceCard
+                key={`author-short-${profile.id}-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+              />
+            ))}
+          </LibraryShelf>
+        )}
+        {expositoryWorks.length > 0 && (
+          <LibraryShelf title="Commentary / Expository">
+            {expositoryWorks.slice(0, 4).map((resource) => (
+              <LibraryResourceCard
+                key={`author-expository-${profile.id}-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+              />
+            ))}
+          </LibraryShelf>
+        )}
+        {devotionalWorks.length > 0 && (
+          <LibraryShelf title="Devotional Works">
+            {devotionalWorks.slice(0, 4).map((resource) => (
+              <LibraryResourceCard
+                key={`author-devotional-${profile.id}-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+              />
+            ))}
+          </LibraryShelf>
+        )}
+        {preachingTeachingWorks.length > 0 && (
+          <LibraryShelf title="Preaching / Teaching">
+            {preachingTeachingWorks.slice(0, 4).map((resource) => (
+              <LibraryResourceCard
+                key={`author-teaching-${profile.id}-${resource.slug}`}
+                resource={resource}
+                completed={false}
+                onOpen={() => onOpenDetail(resource.slug)}
+                onOpenAuthor={() => onOpenAuthor(resource.author)}
+                onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+              />
+            ))}
+          </LibraryShelf>
+        )}
+      </section>
+
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-        <h2 className="text-lg font-semibold">Main Books</h2>
+        <h2 className="text-lg font-semibold">All Grouped Works</h2>
         {resources.length ? (
           <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {resources.map((resource) => (
@@ -30197,6 +30522,7 @@ function LibraryDetail({
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
+  editions,
   relatedResources,
   onOpenDetail,
 }: {
@@ -30210,6 +30536,7 @@ function LibraryDetail({
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
+  editions: LibraryResource[];
   relatedResources: LibraryResource[];
   onOpenDetail: (slug: string) => void;
 }) {
@@ -30223,6 +30550,8 @@ function LibraryDetail({
   const coverSeed = resource.category.length + resource.title.length;
   const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
   const quoteSafety = resource.safe_for_quotation === false ? "Spot-check before quoting" : resource.safe_for_quotation === true ? "Ready for careful quotation" : "Quote safety not reviewed";
+  const displayTitle = resource.work_title ?? resource.title;
+  const preferredEdition = editions[0] ?? resource;
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -30244,14 +30573,14 @@ function LibraryDetail({
             </div>
             <div className="absolute inset-x-6 bottom-6">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">{resource.collection}</p>
-              <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight">{resource.title}</h1>
+              <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight">{displayTitle}</h1>
               <p className="mt-4 line-clamp-2 text-sm font-semibold text-white/80">{resource.author}</p>
             </div>
           </div>
 
           <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{resource.title}</h1>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">{displayTitle}</h1>
             <p className="mt-3 text-base leading-7 text-[var(--muted)]">
               {resource.author} {resource.year ? `(${resource.year})` : ""}
             </p>
@@ -30298,6 +30627,49 @@ function LibraryDetail({
         </div>
 
         <ResourceBadgeRow labels={resource.resource_labels} warnings={resource.resource_warnings} />
+
+        {editions.length > 1 && (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Editions and Volumes</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--scripture-ink)]">
+                  One public work card groups {editions.length} verified file{editions.length === 1 ? "" : "s"}. Preferred reading edition: {preferredEdition.title}.
+                </p>
+              </div>
+              <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {editions.length} editions
+              </span>
+            </div>
+            <div className="mt-4 grid gap-2">
+              {editions.map((edition, index) => (
+                <div key={`edition-${resource.slug}-${edition.slug}`} className="rounded-2xl border border-[var(--line)] bg-white p-3">
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-[var(--green)]">
+                        {edition.title}
+                        {edition.slug === preferredEdition.slug && (
+                          <span className="ml-2 rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--green)]">Preferred</span>
+                        )}
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{editionDescriptor(edition, index)}</p>
+                      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                        {edition.word_count ? `${edition.word_count.toLocaleString()} words` : "Word count unknown"} · {edition.safe_for_quotation === false ? "Review before quoting" : "Safe for reading"}
+                      </p>
+                    </div>
+                    <button
+                      className="shrink-0 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => onOpenDetail(edition.slug)}
+                      type="button"
+                    >
+                      Open edition
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -31780,6 +32152,8 @@ function LibraryResourceCard({
   const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
   const showCoverImage = Boolean(resource.cover_image_url && !coverFailed);
   const audienceLabels = libraryAudienceLabels(resource);
+  const displayTitle = resource.work_title ?? resource.title;
+  const editionCount = resource.edition_count ?? resource.edition_group?.length ?? 1;
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
@@ -31801,11 +32175,11 @@ function LibraryResourceCard({
           {libraryCategoryLabel(resource.category)}
         </div>
         <div className="absolute inset-x-5 bottom-5">
-          <h3 className="line-clamp-4 text-2xl font-semibold leading-7">{resource.title}</h3>
+          <h3 className="line-clamp-4 text-2xl font-semibold leading-7">{displayTitle}</h3>
           <p className="mt-4 line-clamp-1 text-sm font-semibold text-white/80">{resource.author}</p>
         </div>
         <div className="pointer-events-none absolute inset-x-4 bottom-4 translate-y-3 rounded-2xl bg-white/95 p-3 text-[var(--ink)] opacity-0 shadow-lg backdrop-blur transition duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
-          <p className="line-clamp-2 text-sm font-semibold leading-5">{resource.title}</p>
+          <p className="line-clamp-2 text-sm font-semibold leading-5">{displayTitle}</p>
           <p className="mt-1 text-xs font-semibold text-[var(--green)]">{libraryReadingMinutes(resource)} · {audienceLabels.slice(0, 2).join(", ")}</p>
           <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{resource.recommended_use || resource.description}</p>
         </div>
@@ -31814,15 +32188,23 @@ function LibraryResourceCard({
             Finished
           </span>
         )}
+        {editionCount > 1 && (
+          <span className="absolute right-3 top-12 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            {editionCount} editions
+          </span>
+        )}
         </div>
         <div className="p-4">
-        <h3 className="line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
+        <h3 className="line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{displayTitle}</h3>
         <p className="mt-1 line-clamp-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
         <div className="flex flex-wrap items-center gap-2">
           <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryCategoryLabel(resource.category)}</p>
           <p className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">{libraryReadingMinutes(resource)}</p>
           <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Read</p>
           <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">Listen</p>
+          {editionCount > 1 && (
+            <p className="rounded-full bg-[var(--warm)] px-3 py-1 text-xs font-semibold text-[var(--green)]">{editionCount} editions</p>
+          )}
           {audienceLabels.slice(0, 2).map((label) => (
             <p key={`resource-card-audience-${resource.slug}-${label}`} className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--green)]">{label}</p>
           ))}
