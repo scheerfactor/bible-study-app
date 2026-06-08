@@ -1356,6 +1356,18 @@ type BibleBookEcosystem = {
   nextAction: string;
 };
 
+type SavedStudySession = {
+  id: string;
+  passage: string;
+  book: string;
+  chapter: number;
+  keyVerse: string;
+  mainTheme: string;
+  summary: string;
+  savedAt: string;
+  updatedAt: string;
+};
+
 type CommentaryGrowthPriority = {
   author: string;
   focus: string;
@@ -1494,6 +1506,7 @@ const RECENT_PASSAGES_KEY = "fathers-business-recent-passages";
 const FAVORITE_PASSAGES_KEY = "fathers-business-favorite-passages";
 const BIBLE_MARKERS_KEY = "fathers-business-bible-markers";
 const WORD_HIGHLIGHT_SETS_KEY = "fathers-business-word-highlight-sets";
+const STUDY_SESSIONS_KEY = "fathers-business-study-workspace-sessions";
 const TEACHER_NOTES_KEY = "fathers-business-teacher-notes";
 const TEACHING_WORKSPACE_VISIBILITY_KEY = "fathers-business-teaching-workspace-visibility";
 const VOICE_SETTINGS_KEY = "fathers-business-voice-settings";
@@ -9830,6 +9843,44 @@ function saveWordHighlightSets(sets: WordHighlightSet[]) {
   window.localStorage.setItem(WORD_HIGHLIGHT_SETS_KEY, JSON.stringify(sets));
 }
 
+function normalizeStudySessions(value: unknown): SavedStudySession[] {
+  if (!Array.isArray(value)) return [];
+  return value.flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const session = item as Partial<SavedStudySession>;
+    if (!session.book || typeof session.book !== "string" || !session.chapter) return [];
+    const safeBook = session.book;
+    const safeChapter = Number(session.chapter);
+    const passage = session.passage || `${safeBook} ${safeChapter}`;
+    return [{
+      id: session.id || makeId("study_session"),
+      passage,
+      book: safeBook,
+      chapter: safeChapter,
+      keyVerse: session.keyVerse || passage,
+      mainTheme: session.mainTheme || "Chapter study",
+      summary: session.summary || "Saved local study session.",
+      savedAt: session.savedAt || new Date().toISOString(),
+      updatedAt: session.updatedAt || session.savedAt || new Date().toISOString(),
+    }];
+  });
+}
+
+function loadStudySessions() {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(STUDY_SESSIONS_KEY);
+    return normalizeStudySessions(raw ? JSON.parse(raw) : []).slice(0, 20);
+  } catch {
+    return [];
+  }
+}
+
+function saveStudySessions(sessions: SavedStudySession[]) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(STUDY_SESSIONS_KEY, JSON.stringify(sessions.slice(0, 20)));
+}
+
 function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string[]) {
   const query = input.trim().replace(/\s+/g, " ");
   const match = query.match(/^(.+?)\s+(\d+)(?::(\d+))?$/);
@@ -13786,6 +13837,22 @@ export default function Home() {
     }
   }
 
+  function addStudyWorkflowToJournal() {
+    const keyVerse = chapterKeyVerses[0] ?? selectedRef;
+    startJournalDraft("Passage Guide", {
+      sourceLabel: `${book} ${chapter} Study Workspace`,
+      bibleReadingPassage: `${book} ${chapter}`,
+      selectedVerseRefs: chapterKeyVerses.slice(0, 5).join(", ") || keyVerse,
+      versePassage: chapterKeyVerses.slice(0, 5).map(verseWorkflowText).join("\n") || verseWorkflowText(keyVerse),
+      wordsToDefine: chapterAnalysis.repeatedWords.slice(0, 8).map((item) => item.word).join(", "),
+      strongsConnection: sermonImportPackage.strongs,
+      verseSays: sermonImportPackage.passageGuide,
+      verseMeans: "Study the chapter in the order: read, key verse, word study, cross references, commentary, background, application, sermon builder.",
+      verseApplies: activeChapterConnections.themes.slice(0, 5).join(", "),
+      teachingThought: sermonImportPackage.studyPack.slice(0, 1800),
+    });
+  }
+
   function themeWorkflowText(theme: StudyTheme) {
     return themeStudySummaryText({
       theme,
@@ -17053,6 +17120,7 @@ export default function Home() {
                 onOpenStudyToolSearch={openStudyToolSearch}
 	                onOpenPersonStudy={openPersonStudy}
 	                onBuildSermonFromStudy={() => addStudyWorkflowToSermon("builder")}
+	                onSendStudyToJournal={addStudyWorkflowToJournal}
 	                onCreateSlidesFromStudy={() => addStudyWorkflowToSermon("slides")}
                 onPreachFromStudy={() => addStudyWorkflowToSermon("preaching")}
                 onAddWordHighlightSet={addWordHighlightSet}
@@ -20473,6 +20541,26 @@ function ProgressLine({ label, value }: { label: string; value: number }) {
   );
 }
 
+function StudyWorkspaceCard({
+  title,
+  emptyText,
+  children,
+}: {
+  title: string;
+  emptyText: string;
+  children: React.ReactNode;
+}) {
+  const items = Children.toArray(children).filter(Boolean);
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{title}</p>
+      <div className="mt-2 space-y-2">
+        {items.length ? items : <p className="text-xs leading-5 text-[var(--muted)]">{emptyText}</p>}
+      </div>
+    </article>
+  );
+}
+
 function BibleMarkerRow({
   markers,
   onOpenMarker,
@@ -20530,7 +20618,12 @@ function AtAGlanceStudyPanel({
   passage,
   chapterSummary,
   keyVerse,
+  keyVerseText,
   mainTheme,
+  keyWords,
+  strongEntries,
+  topCrossReferences,
+  backgroundInfo,
   people,
   places,
   timeline,
@@ -20547,6 +20640,12 @@ function AtAGlanceStudyPanel({
   chapterReadingMinutes,
   chapterProgressPercent,
   discovery,
+  sermonIdeas,
+  discussionQuestions,
+  applications,
+  savedSessions,
+  currentStudySession,
+  workspaceMessage,
   launchWord,
   onStudyThisChapter,
   onOpenCommentary,
@@ -20556,13 +20655,23 @@ function AtAGlanceStudyPanel({
   onOpenTsk,
   onOpenThemeExplorer,
   onOpenRelatedBook,
+  onOpenReference,
   onBuildSermon,
+  onSendToJournal,
+  onSaveStudySession,
+  onExportStudySession,
+  onContinueStudySession,
   onOpenAmosStudyPath,
 }: {
   passage: string;
   chapterSummary: string;
   keyVerse: string;
+  keyVerseText: string;
   mainTheme: string;
+  keyWords: Array<{ word: string; count: number }>;
+  strongEntries: StrongMvpEntry[];
+  topCrossReferences: CrossReference[];
+  backgroundInfo: ActiveBibleBackground;
   people: StudyPerson[];
   places: StudyPlace[];
   timeline: StudyTimelineEntry[];
@@ -20583,6 +20692,12 @@ function AtAGlanceStudyPanel({
     illustrations: SermonLibraryItem[];
     applications: SermonLibraryItem[];
   };
+  sermonIdeas: string[];
+  discussionQuestions: string[];
+  applications: string[];
+  savedSessions: SavedStudySession[];
+  currentStudySession: SavedStudySession | null;
+  workspaceMessage: string;
   launchWord: string;
   onStudyThisChapter: () => void;
   onOpenCommentary: () => void;
@@ -20592,36 +20707,53 @@ function AtAGlanceStudyPanel({
   onOpenTsk: () => void;
   onOpenThemeExplorer: () => void;
   onOpenRelatedBook: (slug: string) => void;
+  onOpenReference: (targetRef: string) => void;
   onBuildSermon: () => void;
+  onSendToJournal: () => void;
+  onSaveStudySession: () => void;
+  onExportStudySession: () => void;
+  onContinueStudySession: (session: SavedStudySession) => void;
   onOpenAmosStudyPath?: () => void;
 }) {
   const studyOrder = [
     "Read",
     keyVerse || "Key Verse",
-    "Commentary",
+    "Word Study",
     "Cross References",
+    "Commentary",
     "Background",
-    "Related Books",
+    "Application",
     "Sermon Builder",
   ];
   const primaryRelatedBook = relatedBooks.find((resource) => resource.slug);
+  const recommendedCommentary = commentaryAuthors[0] ?? "No reviewed commentary yet";
 
   return (
     <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">At-a-Glance Study</p>
-          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{passage}</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Workspace 2.0</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{passage} guided study</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">{chapterSummary}</p>
         </div>
-        <button
-          className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white"
-          onClick={onStudyThisChapter}
-          type="button"
-        >
-          <FileText size={16} />
-          Study This Chapter
-        </button>
+        <div className="flex flex-wrap gap-2">
+          <button
+            className="inline-flex scroll-mt-[28rem] items-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white"
+            onClick={onStudyThisChapter}
+            type="button"
+          >
+            <FileText size={16} />
+            Study This Chapter
+          </button>
+          <button
+            className="inline-flex scroll-mt-[28rem] items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-3 text-sm font-semibold text-[var(--green)]"
+            onClick={onSaveStudySession}
+            type="button"
+          >
+            <Save size={16} />
+            Save Session
+          </button>
+        </div>
       </div>
 
       <div className="mt-4 grid gap-2 md:grid-cols-4">
@@ -20653,7 +20785,33 @@ function AtAGlanceStudyPanel({
               : "Create a study playlist below to combine Bible, commentary, books, and notes."}
           </p>
         </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Saved study sessions</p>
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{savedSessions.length}</span>
+          </div>
+          <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{currentStudySession ? `${currentStudySession.passage} saved` : "Local beta sessions"}</p>
+          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+            {currentStudySession
+              ? `Last saved ${new Date(currentStudySession.updatedAt).toLocaleString()}.`
+              : "Save this chapter study and continue it later from this panel."}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={onExportStudySession} type="button">
+              Export
+            </button>
+            {savedSessions.slice(0, 3).map((session) => (
+              <button key={`continue-study-session-${session.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]" onClick={() => onContinueStudySession(session)} type="button">
+                {session.passage}
+              </button>
+            ))}
+          </div>
+        </article>
       </div>
+      {workspaceMessage && (
+        <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{workspaceMessage}</p>
+      )}
 
       <div className="mt-4 grid gap-2 md:grid-cols-3 xl:grid-cols-6">
         <MiniStat label="People" value={String(people.length)} />
@@ -20663,6 +20821,111 @@ function AtAGlanceStudyPanel({
         <MiniStat label="Commentary" value={String(commentaryCount)} />
         <MiniStat label="Dictionary" value={String(dictionaryEntries.length)} />
         <MiniStat label="Themes" value={String(chapterThemes.length)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <StudyWorkspaceCard title="1. Key Verse" emptyText="No key verse selected yet.">
+          <button className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={() => onOpenReference(keyVerse)} type="button">
+            <p className="text-sm font-semibold text-[var(--green)]">{keyVerse}</p>
+            <p className="mt-1 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{keyVerseText || "KJV text will appear when the verse is available."}</p>
+          </button>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="2. Main Themes" emptyText="Theme links will appear as this chapter is reviewed.">
+          <div className="flex flex-wrap gap-2">
+            {chapterThemes.slice(0, 6).map((theme) => (
+              <span key={`workspace-theme-${theme.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{theme.title}</span>
+            ))}
+            {!chapterThemes.length && <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{mainTheme}</span>}
+          </div>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="3. Key Words" emptyText="No repeated study words found yet.">
+          <div className="flex flex-wrap gap-2">
+            {keyWords.slice(0, 10).map((item) => (
+              <button key={`workspace-word-${item.word}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={onOpenWebster} type="button">
+                {item.word} <span className="text-[var(--muted)]">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title={"4. Strong's Highlights"} emptyText="Strong's reviewed entries will appear as coverage expands.">
+          {strongEntries.slice(0, 4).map((entry) => (
+            <button key={`workspace-strong-${entry.strongsNumber}`} className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={onOpenStrong} type="button">
+              <p className="text-sm font-semibold text-[var(--green)]">{entry.displayWord} · {entry.strongsNumber}</p>
+              <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{entry.plainMeaning}</p>
+            </button>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="5. Cross References" emptyText="No reviewed cross references yet.">
+          {topCrossReferences.slice(0, 5).map((reference) => (
+            <button key={`workspace-cross-${reference.id}`} className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={() => onOpenReference(reference.target_ref)} type="button">
+              <p className="text-sm font-semibold text-[var(--green)]">{reference.verse_ref} {"->"} {reference.target_ref}</p>
+              <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{reference.label || reference.source}</p>
+            </button>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="6. Commentary Recommendations" emptyText="No reviewed commentary recommendations yet.">
+          <button className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={onOpenCommentary} type="button">
+            <p className="text-sm font-semibold text-[var(--green)]">Start with {recommendedCommentary}</p>
+            <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{commentaryAuthors.length ? commentaryAuthors.slice(0, 5).join(", ") : "Commentary remains secondary to Scripture."}</p>
+          </button>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="7. Related Books" emptyText="No related books linked yet.">
+          {relatedBooks.slice(0, 4).map((resource) => (
+            <button key={`workspace-book-${resource.title}`} className="w-full rounded-xl bg-white px-3 py-2 text-left disabled:opacity-70" disabled={!resource.slug} onClick={() => resource.slug && onOpenRelatedBook(resource.slug)} type="button">
+              <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+              <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
+            </button>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="8. Background Information" emptyText="No reviewed background entry yet.">
+          <p className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{backgroundInfo.historicalSetting}</p>
+          {backgroundInfo.majorEvents.slice(0, 3).map((event) => (
+            <p key={`workspace-event-${event}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{event}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="9. People" emptyText="No reviewed people entries yet.">
+          {people.slice(0, 4).map((person) => (
+            <p key={`workspace-person-${person.id}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]"><span className="font-semibold text-[var(--green)]">{person.name}:</span> {person.summary}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="10. Places" emptyText="No reviewed places entries yet.">
+          {places.slice(0, 4).map((place) => (
+            <p key={`workspace-place-${place.id}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]"><span className="font-semibold text-[var(--green)]">{place.name}:</span> {place.significance}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="11. Timeline" emptyText="No reviewed timeline entries yet.">
+          {timeline.slice(0, 4).map((entry) => (
+            <p key={`workspace-timeline-${entry.id}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]"><span className="font-semibold text-[var(--green)]">{entry.title}:</span> {entry.timeframe}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="12. Sermon Ideas" emptyText="Sermon ideas will appear as this book ecosystem is expanded.">
+          {sermonIdeas.slice(0, 4).map((idea) => (
+            <p key={`workspace-sermon-idea-${idea}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{idea}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="13. Discussion Questions" emptyText="Discussion questions will appear as this chapter is reviewed.">
+          {discussionQuestions.slice(0, 4).map((question) => (
+            <p key={`workspace-question-${question}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{question}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="14. Applications" emptyText="Applications will appear as reviewed teaching data is added.">
+          {applications.slice(0, 4).map((application) => (
+            <p key={`workspace-application-${application}`} className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{application}</p>
+          ))}
+        </StudyWorkspaceCard>
       </div>
 
       <div className="mt-4 grid gap-3 lg:grid-cols-4">
@@ -20724,7 +20987,7 @@ function AtAGlanceStudyPanel({
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onStudyThisChapter} type="button">
+        <button className="scroll-mt-[28rem] rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onStudyThisChapter} type="button">
           Guided Study
         </button>
         <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenCommentary} type="button">
@@ -20750,8 +21013,17 @@ function AtAGlanceStudyPanel({
             Related Book
           </button>
         )}
-        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBuildSermon} type="button">
-          Sermon Builder
+        <button className="scroll-mt-[28rem] rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSaveStudySession} type="button">
+          Save session
+        </button>
+        <button className="scroll-mt-[28rem] rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onExportStudySession} type="button">
+          Export session
+        </button>
+        <button className="scroll-mt-[28rem] rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBuildSermon} type="button">
+          Send to Sermon
+        </button>
+        <button className="scroll-mt-[28rem] rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendToJournal} type="button">
+          Send to Journal
         </button>
         {onOpenAmosStudyPath && (
           <a
@@ -20886,6 +21158,7 @@ function BibleReader({
   onOpenStudyToolSearch,
   onOpenPersonStudy,
   onBuildSermonFromStudy,
+  onSendStudyToJournal,
   onCreateSlidesFromStudy,
   onPreachFromStudy,
   onAddWordHighlightSet,
@@ -21016,6 +21289,7 @@ function BibleReader({
   onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onOpenPersonStudy: (personId: string) => void;
   onBuildSermonFromStudy: () => void;
+  onSendStudyToJournal: () => void;
   onCreateSlidesFromStudy: () => void;
   onPreachFromStudy: () => void;
   onAddWordHighlightSet: (word: string, color: WordHighlightColor, scope: WordHighlightScope) => void;
@@ -21032,6 +21306,8 @@ function BibleReader({
   const [quickJumpText, setQuickJumpText] = useState("");
   const [explorerWord, setExplorerWord] = useState("believe");
   const [playlistResourceSlug, setPlaylistResourceSlug] = useState("");
+  const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
+  const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const progressPercent = Math.round(readingProgress.percent);
   const explorer = useMemo(
@@ -21121,6 +21397,106 @@ function BibleReader({
     illustrations: SERMON_ILLUSTRATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, studyTerms)).slice(0, 3),
     applications: SERMON_APPLICATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, studyTerms)).slice(0, 3),
   };
+  const amosWorkspaceStudy = book === "Amos" ? AMOS_CHAPTER_STUDIES.find((item) => item.chapter === chapter) ?? null : null;
+  const bookEcosystem = bibleBookEcosystemForBook(book);
+  const workspaceKeyVerse = amosWorkspaceStudy?.keyVerses[0] ?? chapterKeyVerses[0] ?? selectedVerse.ref;
+  const workspaceKeyVerseText = versesByRef.get(workspaceKeyVerse)?.text ?? selectedVerse.text;
+  const workspaceSummary = amosWorkspaceStudy?.summary ?? bibleBackground.historicalSetting;
+  const workspaceThemeTitles = uniqueStrings([
+    ...(amosWorkspaceStudy?.keyThemes ?? []),
+    ...activeThemes.map((theme) => theme.title),
+    ...chapterConnectionsData.themes,
+    ...(bookEcosystem?.keyThemes ?? []),
+  ]);
+  const workspaceMainTheme = amosWorkspaceStudy?.title ?? workspaceThemeTitles[0] ?? bookIntroduction?.overview.theme ?? "Bible study";
+  const workspaceStrongEntries = uniqueStrings([
+    ...chapterAnalysis.repeatedWords.slice(0, 10).map((item) => item.word),
+    ...keyWordsForVerse(selectedVerse),
+  ])
+    .map((word) => strongsMvpEntries[normalizeLookupWord(word)])
+    .filter((entry): entry is StrongMvpEntry => Boolean(entry))
+    .slice(0, 6);
+  const workspaceTopCrossReferences = rankedCrossReferences(chapterCrossReferences, 8);
+  const workspaceSermonIdeas = uniqueStrings([
+    ...(amosWorkspaceStudy?.sermonOutline ?? []),
+    ...(bookEcosystem?.sermonIdeas ?? []),
+    ...sermonDiscovery.illustrations.map((item) => item.title),
+  ]).slice(0, 8);
+  const workspaceDiscussionQuestions = uniqueStrings([
+    ...(amosWorkspaceStudy?.sundaySchoolQuestions ?? []),
+    ...(amosWorkspaceStudy?.discussionQuestions ?? []),
+    ...(bookEcosystem?.discussionQuestions ?? []),
+  ]).slice(0, 8);
+  const workspaceApplications = uniqueStrings([
+    ...(amosWorkspaceStudy?.practicalApplications ?? []),
+    ...(bookEcosystem?.teachingApplications ?? []),
+    ...sermonDiscovery.applications.map((item) => item.content),
+  ]).slice(0, 8);
+  const currentStudySession = studySessions.find((session) => session.book === book && session.chapter === chapter) ?? null;
+  const workspaceExportData = useMemo<TeachingNotesExportData>(() => ({
+    book,
+    chapter,
+    bookIntroduction,
+    keyVerses: chapterKeyVerses.length ? chapterKeyVerses : [selectedVerse.ref],
+    analysis: chapterAnalysis,
+    connections: chapterConnectionsData,
+    background: bibleBackground,
+    crossReferences: chapterCrossReferences,
+    commentaryEntries: chapterCommentaryEntries,
+    notes: chapterNotes,
+    memoryVerse: memoryForChapter[0] ?? null,
+    fallbackMemoryVerse: selectedVerse,
+    recommendedResources: chapterResourceRecommendations,
+    versesByRef,
+  }), [
+    bibleBackground,
+    book,
+    bookIntroduction,
+    chapter,
+    chapterAnalysis,
+    chapterCommentaryEntries,
+    chapterConnectionsData,
+    chapterCrossReferences,
+    chapterKeyVerses,
+    chapterNotes,
+    chapterResourceRecommendations,
+    memoryForChapter,
+    selectedVerse,
+    versesByRef,
+  ]);
+  const workspaceExportMarkdown = useMemo(() => buildChapterStudyPackMarkdown(workspaceExportData), [workspaceExportData]);
+
+  function saveCurrentStudySession() {
+    const now = new Date().toISOString();
+    const session: SavedStudySession = {
+      id: currentStudySession?.id ?? makeId("study_session"),
+      passage: `${book} ${chapter}`,
+      book,
+      chapter,
+      keyVerse: workspaceKeyVerse,
+      mainTheme: workspaceMainTheme,
+      summary: workspaceSummary,
+      savedAt: currentStudySession?.savedAt ?? now,
+      updatedAt: now,
+    };
+    setStudySessions((current) => {
+      const next = [session, ...current.filter((item) => !(item.book === book && item.chapter === chapter))].slice(0, 20);
+      saveStudySessions(next);
+      return next;
+    });
+    setStudyWorkspaceMessage(`${session.passage} study session saved locally.`);
+  }
+
+  function exportCurrentStudySession() {
+    downloadTextFile(`${book.toLowerCase()}-${chapter}-study-session.md`, workspaceExportMarkdown, "text/markdown;charset=utf-8");
+    setStudyWorkspaceMessage(`${book} ${chapter} study session exported.`);
+  }
+
+  function continueStudySession(session: SavedStudySession) {
+    onOpenReference(`${session.book} ${session.chapter}:1`);
+    setStudyWorkspaceMessage(`Opened saved session ${session.passage}.`);
+  }
+
   const playlistModeCards = [
     {
       title: "Study Playlist",
@@ -21323,9 +21699,14 @@ function BibleReader({
 
       <AtAGlanceStudyPanel
         passage={`${book} ${chapter}`}
-        chapterSummary={bibleBackground.historicalSetting}
-        keyVerse={chapterKeyVerses[0] ?? selectedVerse.ref}
-        mainTheme={chapterConnectionsData.themes[0] ?? bookIntroduction?.overview.theme ?? "Bible study"}
+        chapterSummary={workspaceSummary}
+        keyVerse={workspaceKeyVerse}
+        keyVerseText={workspaceKeyVerseText}
+        mainTheme={workspaceMainTheme}
+        keyWords={chapterAnalysis.repeatedWords.slice(0, 10)}
+        strongEntries={workspaceStrongEntries}
+        topCrossReferences={workspaceTopCrossReferences}
+        backgroundInfo={bibleBackground}
         people={chapterConnectionsData.people}
         places={chapterConnectionsData.places}
         timeline={chapterConnectionsData.timeline}
@@ -21342,6 +21723,12 @@ function BibleReader({
         chapterReadingMinutes={chapterReadingMinutes}
         chapterProgressPercent={progressPercent}
         discovery={sermonDiscovery}
+        sermonIdeas={workspaceSermonIdeas}
+        discussionQuestions={workspaceDiscussionQuestions}
+        applications={workspaceApplications}
+        savedSessions={studySessions}
+        currentStudySession={currentStudySession}
+        workspaceMessage={studyWorkspaceMessage}
         launchWord={studyLaunchWord}
         onStudyThisChapter={onOpenPassageGuide}
         onOpenCommentary={onOpenCommentaryCenter}
@@ -21351,7 +21738,12 @@ function BibleReader({
         onOpenTsk={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
         onOpenThemeExplorer={onOpenThemeExplorer}
         onOpenRelatedBook={onOpenLibraryResource}
+        onOpenReference={onOpenReference}
         onBuildSermon={onBuildSermonFromStudy}
+        onSendToJournal={onSendStudyToJournal}
+        onSaveStudySession={saveCurrentStudySession}
+        onExportStudySession={exportCurrentStudySession}
+        onContinueStudySession={continueStudySession}
         onOpenAmosStudyPath={book === "Amos" ? onOpenAmosStudyPath : undefined}
       />
 
@@ -23664,7 +24056,7 @@ function ChapterStudyWorkflow({
   }
 
   return (
-    <section id="chapter-analysis-workflow" className="scroll-mt-40 rounded-2xl border border-[var(--line)] bg-white p-4 pb-28 shadow-sm md:scroll-mt-8 md:rounded-3xl md:pb-4">
+    <section id="chapter-analysis-workflow" className="scroll-mt-[28rem] rounded-2xl border border-[var(--line)] bg-white p-4 pb-28 shadow-sm md:scroll-mt-8 md:rounded-3xl md:pb-4">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Study Workflow</p>
@@ -24392,7 +24784,7 @@ function ChapterStudyWorkflow({
               ].map(([id, label]) => (
                 <button
                   key={`teaching-toggle-${id}`}
-                  className={`scroll-mb-40 scroll-mt-40 shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                  className={`scroll-mb-40 scroll-mt-[28rem] shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
                     teachingVisibility[id as TeachingWorkspaceSectionId]
                       ? "bg-[var(--green)] text-white"
                       : "border border-[var(--line)] bg-[var(--paper)] text-[var(--muted)]"
