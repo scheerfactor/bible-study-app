@@ -4,8 +4,9 @@ Date: 2026-06-08
 
 ## Current Status
 
-- Public commentary validation currently reports 6,394 commentary rows.
-- This already exceeds the sprint goal of moving from 4,016 toward 5,000+ entries.
+- Public in-app commentary coverage remains 4,016 entries.
+- `npm run validate:commentary` currently validates 6,394 rows across public import files and staging/review files.
+- The staged/review rows are not counted as public coverage until they are intentionally promoted into the app.
 - Existing public coverage remains built from reviewed commentary data already present in the repository.
 
 ## Source Review Decision
