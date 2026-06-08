@@ -42,7 +42,7 @@ import {
   X,
   MapPin,
 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Children, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -12351,6 +12351,69 @@ function themeTimeline(theme: StudyTheme) {
   return timelineEntriesForIds(theme.timelineIds);
 }
 
+function searchableText(parts: Array<string | number | undefined | null>) {
+  return parts.filter((part) => part !== undefined && part !== null).join(" ").toLowerCase();
+}
+
+function itemMatchesQuery(query: string, parts: Array<string | number | undefined | null>) {
+  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (!terms.length) return true;
+  const haystack = searchableText(parts);
+  return terms.every((term) => haystack.includes(term));
+}
+
+function testamentForReference(reference: string) {
+  const match = reference.match(/^(.+?)\s+\d+/);
+  const refBook = match?.[1] ?? "";
+  const index = bookOrder.indexOf(refBook);
+  if (index < 0) return "Unknown";
+  return index < 39 ? "Old Testament" : "New Testament";
+}
+
+function strongsUsageSummary(entry: StrongMvpEntry) {
+  const references = uniqueStrings([entry.firstOccurrence, ...entry.keyOccurrences, ...entry.keyVerses]);
+  const oldTestament = references.filter((reference) => testamentForReference(reference) === "Old Testament").length;
+  const newTestament = references.filter((reference) => testamentForReference(reference) === "New Testament").length;
+  return {
+    references,
+    oldTestament,
+    newTestament,
+    scope: oldTestament && newTestament ? "OT and NT" : oldTestament ? "Old Testament" : "New Testament",
+  };
+}
+
+function tskReferenceLabels(reference: CrossReference) {
+  const text = searchableText([reference.label, reference.source, reference.source_title, reference.target_ref]);
+  const labels = ["Key cross reference"];
+  if (text.includes("prophe") || ["Isaiah", "Daniel", "Micah", "Zechariah", "Psalms", "Psalm"].some((bookName) => reference.target_ref.startsWith(bookName))) {
+    labels.push("Prophecy");
+  }
+  if (text.includes("fulfill") || ["Matthew", "Luke", "John", "Acts", "Revelation"].some((bookName) => reference.target_ref.startsWith(bookName))) {
+    labels.push("Fulfillment");
+  }
+  if (text.includes("sermon") || text.includes("teaching") || text.includes("gospel") || text.includes("application")) {
+    labels.push("Sermon use");
+  }
+  return uniqueStrings(labels).slice(0, 4);
+}
+
+function rankCrossReference(reference: CrossReference) {
+  const labels = tskReferenceLabels(reference);
+  return (
+    (reference.source.toLowerCase().includes("tsk") ? 40 : 0) +
+    (labels.includes("Prophecy") ? 20 : 0) +
+    (labels.includes("Fulfillment") ? 18 : 0) +
+    (labels.includes("Sermon use") ? 16 : 0) +
+    (reference.label ? 8 : 0)
+  );
+}
+
+function rankedCrossReferences(references: CrossReference[], limit = 12) {
+  return [...references]
+    .sort((a, b) => rankCrossReference(b) - rankCrossReference(a) || a.verse_ref.localeCompare(b.verse_ref) || a.target_ref.localeCompare(b.target_ref))
+    .slice(0, limit);
+}
+
 function themeStudySummaryText({
   theme,
   versesByRef,
@@ -17026,6 +17089,15 @@ export default function Home() {
                 studyToolSearchFilter={studyToolSearchFilter}
                 studyToolSearchResults={studyToolSearchResults}
                 studyToolSearchStatus={studyToolSearchStatus}
+                allCrossReferences={crossReferences}
+                people={studyPeople}
+                places={studyPlaces}
+                timeline={timelineEntries}
+                themes={STUDY_THEMES}
+                libraryResources={libraryResources}
+                versesByRef={versesByRef}
+                currentBook={book}
+                currentChapter={chapter}
                 onSearchTermChange={setSearchTerm}
                 onSearchFilterChange={setSearchFilter}
                 onDictionarySearchTermChange={(value) => {
@@ -17066,6 +17138,7 @@ export default function Home() {
                   if (selectedRef) setStudyRef(selectedRef);
                   setTab("bible");
                 }}
+                onOpenPersonStudy={openPersonStudy}
               />
             )}
 
@@ -23501,6 +23574,7 @@ function ChapterStudyWorkflow({
   const relatedResourceCount = chapterResourceRecommendations.filter((resource) => resource.resourceSlug).length;
   const dictionaryToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Dictionary").length;
   const bibleToolCount = chapterResourceRecommendations.filter((resource) => resource.kind === "Bible Tool").length;
+  const strongestCrossReference = rankedCrossReferences(chapterCrossReferences, 1)[0] ?? null;
   function updateTeacherNote(field: keyof TeacherNotesDraft, value: string) {
     setTeacherNotesByChapter((current) => {
       const next = {
@@ -23698,10 +23772,14 @@ function ChapterStudyWorkflow({
           <StudyToolHubCard
             title="TSK Cross References"
             meta={`${chapterCrossReferences.length} reviewed`}
-            body="Review linked verses tied to the current chapter and selected verse."
-            actionLabel={chapterCrossReferences[0] ? "Open first reference" : "Waiting for refs"}
-            onAction={() => chapterCrossReferences[0] && onOpenReference(chapterCrossReferences[0].target_ref)}
-            disabled={!chapterCrossReferences[0]}
+            body={strongestCrossReference
+              ? `Strongest next link: ${strongestCrossReference.target_ref}. ${tskReferenceLabels(strongestCrossReference).join(", ")}.`
+              : "Review linked verses tied to the current chapter and selected verse."}
+            actionLabel={strongestCrossReference ? "Open strongest ref" : "Waiting for refs"}
+            onAction={() => {
+              if (strongestCrossReference) onOpenReference(strongestCrossReference.target_ref);
+            }}
+            disabled={!strongestCrossReference}
           />
           <StudyToolHubCard
             title="Commentary"
@@ -25105,6 +25183,7 @@ function StrongStudyPanel({
         .map((word) => ({ word, relatedEntry: strongsMvpEntries[normalizeLookupWord(word)] }))
         .filter((item) => item.relatedEntry)
     : [];
+  const usage = entry ? strongsUsageSummary(entry) : null;
 
   return (
     <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
@@ -25128,8 +25207,26 @@ function StrongStudyPanel({
             <MiniStat label="Pronounce" value={entry.pronunciation} />
             <MiniStat label="First" value={entry.firstOccurrence} />
             <MiniStat label="Webster" value={entry.websterWord} />
+            <MiniStat label="Usage" value={usage?.scope ?? "Starter"} />
+            <MiniStat label="OT refs" value={String(usage?.oldTestament ?? 0)} />
+            <MiniStat label="NT refs" value={String(usage?.newTestament ?? 0)} />
           </div>
           <p className="text-sm leading-6 text-[var(--scripture-ink)]">{entry.plainMeaning}</p>
+
+          <div className="grid gap-2 md:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching Value</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">
+                Connect the English word, Webster definition, first occurrence, and key verses before drawing application.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Sermon Value</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">
+                Useful for showing repeated Bible usage without making the original language feel scholar-only.
+              </p>
+            </div>
+          </div>
 
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
@@ -25268,6 +25365,29 @@ function MemoryReviewCard({
   );
 }
 
+function BibleToolExplorerColumn({
+  title,
+  emptyText,
+  children,
+}: {
+  title: string;
+  emptyText: string;
+  children: ReactNode;
+}) {
+  const items = Children.toArray(children).filter(Boolean);
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm font-semibold text-[var(--green)]">{title}</p>
+        <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{items.length}</span>
+      </div>
+      <div className="mt-3 grid gap-2">
+        {items.length ? items : <p className="text-sm leading-6 text-[var(--muted)]">{emptyText}</p>}
+      </div>
+    </article>
+  );
+}
+
 function SearchScreen({
   searchTerm,
   searchFilter,
@@ -25282,6 +25402,15 @@ function SearchScreen({
   studyToolSearchFilter,
   studyToolSearchResults,
   studyToolSearchStatus,
+  allCrossReferences,
+  people,
+  places,
+  timeline,
+  themes,
+  libraryResources,
+  versesByRef,
+  currentBook,
+  currentChapter,
   onSearchTermChange,
   onSearchFilterChange,
   onDictionarySearchTermChange,
@@ -25292,6 +25421,7 @@ function SearchScreen({
   onOpenReference,
   onOpenLibraryResource,
   onOpenDictionaryEntry,
+  onOpenPersonStudy,
 }: {
   searchTerm: string;
   searchFilter: TestamentFilter;
@@ -25306,6 +25436,15 @@ function SearchScreen({
   studyToolSearchFilter: string;
   studyToolSearchResults: StudyToolSearchResult[];
   studyToolSearchStatus: string;
+  allCrossReferences: CrossReference[];
+  people: StudyPerson[];
+  places: StudyPlace[];
+  timeline: StudyTimelineEntry[];
+  themes: StudyTheme[];
+  libraryResources: LibraryResource[];
+  versesByRef: Map<string, BibleVerse>;
+  currentBook: string;
+  currentChapter: number;
   onSearchTermChange: (value: string) => void;
   onSearchFilterChange: (value: TestamentFilter) => void;
   onDictionarySearchTermChange: (value: string) => void;
@@ -25316,6 +25455,7 @@ function SearchScreen({
   onOpenReference: (targetRef: string) => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenDictionaryEntry: (entry: DictionarySearchResult) => void;
+  onOpenPersonStudy: (personId: string) => void;
 }) {
   const filters: { id: TestamentFilter; label: string }[] = [
     { id: "all", label: "All" },
@@ -25330,9 +25470,228 @@ function SearchScreen({
     { id: "chronology", label: "Chronology" },
     { id: "manners and customs", label: "Manners" },
   ];
+  const toolsQuery = studyToolSearchTerm || dictionarySearchTerm || strongSearchTerm || searchTerm || `${currentBook} ${currentChapter}`;
+  const strongExplorerEntries = Object.values(strongsMvpEntries)
+    .filter((entry) => itemMatchesQuery(toolsQuery, [
+      entry.strongsNumber,
+      entry.displayWord,
+      entry.originalWord,
+      entry.root,
+      entry.plainMeaning,
+      entry.websterWord,
+      entry.note,
+      ...entry.keyOccurrences,
+      ...entry.keyVerses,
+      ...(entry.relatedWords ?? []),
+    ]))
+    .slice(0, 8);
+  const tskExplorerReferences = rankedCrossReferences(
+    allCrossReferences.filter((reference) => itemMatchesQuery(toolsQuery, [
+      reference.verse_ref,
+      reference.target_ref,
+      reference.label,
+      reference.source,
+      reference.source_title,
+      versesByRef.get(reference.target_ref)?.plainText,
+    ])),
+    10,
+  );
+  const peopleResults = people
+    .filter((person) => itemMatchesQuery(toolsQuery, [
+      person.name,
+      person.summary,
+      person.description,
+      person.biography,
+      person.firstAppearance,
+      ...person.majorPassages,
+      ...person.keyEvents,
+      ...person.lessonsLearned,
+      ...person.relatedVerses,
+      ...(person.relationships ?? []),
+      ...(person.relatedBooks ?? []),
+    ]))
+    .slice(0, 6);
+  const placeResults = places
+    .filter((place) => itemMatchesQuery(toolsQuery, [
+      place.name,
+      place.description,
+      place.significance,
+      place.region,
+      place.mapNote,
+      ...place.keyPassages,
+      ...place.relatedPassages,
+      ...(place.keyEvents ?? []),
+      ...(place.nations ?? []),
+      ...(place.relatedBooks ?? []),
+    ]))
+    .slice(0, 6);
+  const timelineResults = timeline
+    .filter((entry) => itemMatchesQuery(toolsQuery, [
+      entry.era,
+      entry.title,
+      entry.timeframe,
+      entry.description,
+      ...entry.keyPassages,
+    ]))
+    .slice(0, 8);
+  const themeResults = themes
+    .filter((theme) => itemMatchesQuery(toolsQuery, [
+      theme.title,
+      theme.description,
+      ...theme.keyVerses,
+      ...theme.strongWords,
+      ...theme.websterWords,
+      ...theme.tags,
+      ...theme.relatedBookTerms,
+      ...theme.relatedSermonTerms,
+    ]))
+    .slice(0, 6);
+  const dictionaryResources = libraryResources
+    .filter((resource) => libraryResourceMatches(resource, ["dictionary", "topical bible", "isbe", "hastings", "smith", "easton", "nave", "webster"]))
+    .slice(0, 8);
 
   return (
     <div className="space-y-4 p-4 md:p-8">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm md:p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Bible Tools Explorer</p>
+            <h1 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Search Scripture helps from one place</h1>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Dictionaries, TSK cross references, Strong&apos;s starters, people, places, and timeline entries stay connected to the Bible reading workflow.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            {currentBook} {currentChapter}
+          </span>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+          <MiniStat label="Dictionaries" value={String(dictionaryResources.length)} />
+          <MiniStat label="TSK refs" value={String(tskExplorerReferences.length)} />
+          <MiniStat label="Strong's" value={String(strongExplorerEntries.length)} />
+          <MiniStat label="People" value={String(peopleResults.length)} />
+          <MiniStat label="Places" value={String(placeResults.length)} />
+          <MiniStat label="Timeline" value={String(timelineResults.length)} />
+        </div>
+
+        <div className="mt-4 grid gap-3 xl:grid-cols-2">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-[var(--green)]">Unified Dictionary Hub</p>
+              <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onStudyToolSearchFilterChange("dictionary")} type="button">
+                Show dictionaries
+              </button>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Compare Webster&apos;s with Easton&apos;s, Smith&apos;s, Nave&apos;s, Hastings, ISBE, and other reviewed helps as they are indexed.</p>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2">
+              {dictionaryResources.slice(0, 6).map((resource) => (
+                <button key={`dictionary-hub-${resource.slug}`} className="rounded-2xl bg-white p-3 text-left" onClick={() => onOpenLibraryResource(resource.slug)} type="button">
+                  <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>
+                </button>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">TSK Cross Reference Center</p>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Strongest references are ranked first, with prophecy, fulfillment, and sermon-use labels where the reviewed metadata supports it.</p>
+            <div className="mt-3 space-y-2">
+              {tskExplorerReferences.slice(0, 5).map((reference) => (
+                <button key={`tsk-explorer-${reference.id}`} className="w-full rounded-2xl bg-white p-3 text-left" onClick={() => onOpenReference(reference.target_ref)} type="button">
+                  <p className="text-sm font-semibold text-[var(--green)]">{reference.verse_ref} {"->"} {reference.target_ref}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{reference.label || versesByRef.get(reference.target_ref)?.plainText || "Reviewed cross reference"}</p>
+                  <span className="mt-2 flex flex-wrap gap-1">
+                    {tskReferenceLabels(reference).map((label) => (
+                      <span key={`tsk-label-${reference.id}-${label}`} className="rounded-full bg-[var(--paper)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--muted)]">{label}</span>
+                    ))}
+                  </span>
+                </button>
+              ))}
+              {!tskExplorerReferences.length && <p className="text-sm leading-6 text-[var(--muted)]">Search a passage or theme to see reviewed TSK references.</p>}
+            </div>
+          </article>
+        </div>
+
+        <div className="mt-3 grid gap-3 lg:grid-cols-3">
+          <BibleToolExplorerColumn title="Strong's Word Studies" emptyText="Search believe, grace, judgment, kingdom, or a Strong's number.">
+            {strongExplorerEntries.map((entry) => {
+              const usage = strongsUsageSummary(entry);
+              return (
+                <article key={`strong-explorer-${entry.strongsNumber}`} className="rounded-2xl bg-white p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">{entry.displayWord} · {entry.strongsNumber}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.originalWord} · {usage.scope}</p>
+                  <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{entry.plainMeaning}</p>
+                  <div className="mt-2 flex flex-wrap gap-1">
+                    {usage.references.slice(0, 4).map((reference) => (
+                      <button key={`strong-explorer-ref-${entry.strongsNumber}-${reference}`} className="rounded-full bg-[var(--paper)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference)} type="button">
+                        {reference}
+                      </button>
+                    ))}
+                  </div>
+                </article>
+              );
+            })}
+          </BibleToolExplorerColumn>
+
+          <BibleToolExplorerColumn title="People Explorer" emptyText="Search Moses, David, Paul, Amos, or another reviewed person.">
+            {peopleResults.map((person) => (
+              <button key={`people-explorer-${person.id}`} className="rounded-2xl bg-white p-3 text-left" onClick={() => onOpenPersonStudy(person.id)} type="button">
+                <p className="text-sm font-semibold text-[var(--green)]">{person.name}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">First: {person.firstAppearance}</p>
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{person.summary}</p>
+              </button>
+            ))}
+          </BibleToolExplorerColumn>
+
+          <BibleToolExplorerColumn title="Places Explorer" emptyText="Search Jerusalem, Babylon, Tekoa, Bethel, or a region.">
+            {placeResults.map((place) => (
+              <article key={`places-explorer-${place.id}`} className="rounded-2xl bg-white p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{place.region ?? "Bible place"} · map placeholder</p>
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{place.significance}</p>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {place.keyPassages.slice(0, 3).map((reference) => (
+                    <button key={`place-explorer-ref-${place.id}-${reference}`} className="rounded-full bg-[var(--paper)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference)} type="button">
+                      {reference}
+                    </button>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </BibleToolExplorerColumn>
+        </div>
+
+        <div className="mt-3 grid gap-3 lg:grid-cols-2">
+          <BibleToolExplorerColumn title="Timeline Explorer" emptyText="Search Patriarchs, Exodus, Kings, Prophets, Life of Christ, Acts, or Paul.">
+            {timelineResults.map((entry) => (
+              <article key={`timeline-explorer-${entry.id}`} className="rounded-2xl bg-white p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{entry.title}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.era} · {entry.timeframe}</p>
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{entry.description}</p>
+              </article>
+            ))}
+          </BibleToolExplorerColumn>
+
+          <BibleToolExplorerColumn title="Related Themes" emptyText="Search faith, grace, judgment, repentance, prayer, or covenant.">
+            {themeResults.map((theme) => (
+              <article key={`tools-theme-${theme.id}`} className="rounded-2xl bg-white p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{theme.title}</p>
+                <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--scripture-ink)]">{theme.description}</p>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {theme.keyVerses.slice(0, 3).map((reference) => (
+                    <button key={`theme-tool-ref-${theme.id}-${reference}`} className="rounded-full bg-[var(--paper)] px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference)} type="button">
+                      {reference}
+                    </button>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </BibleToolExplorerColumn>
+        </div>
+      </section>
+
       <form
         className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm"
         onSubmit={(event) => {
