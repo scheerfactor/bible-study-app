@@ -126,6 +126,43 @@ The Biblical Illustrator is useful for teaching, illustrations, and homiletic ma
   - Teaching illustration source
 - Decide whether entries should appear in Commentary, Teaching Workspace, or Illustration Library.
 
+## Priority 6: Matthew Poole Review Queue
+
+Matthew Poole may become a useful Reformed-era comparison voice, but it must stay out of the public app until the exact public-domain edition and source text are documented.
+
+### Requirements Before Import
+
+- Exact source URL for the original public-domain text.
+- Edition notes that distinguish original text from modern edited copies.
+- Parser test on one chapter only.
+- Doctrinal label and recommended use note.
+- Duplicate check against any existing Poole metadata.
+
+### Recommended Pilot
+
+1. Pick one chapter from John, Romans, or Isaiah.
+2. Stage as Needs Review.
+3. Confirm the entry displays cleanly in Commentary Comparison and Teaching Export.
+4. Promote only after source, edition, and review status are complete.
+
+## Priority 7: Brethren And Dispensational Authors
+
+The following authors should remain in source review unless a clean edition is documented:
+
+- H. A. Ironside
+- William Kelly
+- J. N. Darby
+- F. W. Grant
+- Arno C. Gaebelein
+
+### Review Rules
+
+- Import only title-level verified works, not broad author indexes.
+- Preserve edition/source URL and public-domain reasoning.
+- Add "Use with discernment" where doctrinal perspective needs context.
+- Prefer small staged chapter samples before any full commentary import.
+- Do not expose staged entries publicly.
+
 ## Dashboard Expectations
 
 The Commentary Dashboard should continue showing:

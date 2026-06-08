@@ -124,7 +124,7 @@ import permissionTrackerData from "../../data/library/manifests/permission-track
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 
-type Tab = "today" | "bible" | "search" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "themes" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -1315,6 +1315,40 @@ type PassageGuideConnection = {
   references: string[];
   note: string;
   reviewStatus: "Reviewed" | "Needs Review";
+};
+
+type StudyTheme = {
+  id: string;
+  title: string;
+  description: string;
+  keyVerses: string[];
+  crossReferences: Array<{ sourceRef: string; targetRef: string; label: string }>;
+  strongWords: string[];
+  websterWords: string[];
+  commentaryTerms: string[];
+  relatedBookTerms: string[];
+  relatedSermonTerms: string[];
+  illustrations: string[];
+  applications: string[];
+  quotes: string[];
+  peopleIds: string[];
+  placeIds: string[];
+  timelineIds: string[];
+  tags: string[];
+};
+
+type BibleBookEcosystem = {
+  book: string;
+  modelStatus: "Model ready" | "Framework ready" | "Needs expansion";
+  focus: string;
+  timeline: string[];
+  keyThemes: string[];
+  keyVerses: string[];
+  sermonIdeas: string[];
+  discussionQuestions: string[];
+  teachingApplications: string[];
+  playlistTitle: string;
+  nextAction: string;
 };
 
 type CommentaryGrowthPriority = {
@@ -3546,6 +3580,468 @@ const STUDY_PLAYLIST_TEMPLATES: StudyPlaylistTemplate[] = [
       { kind: "Notes", label: "Lesson notes", minutes: 3 },
     ],
     repeatOptions: ["Repeat chapter", "Stop after commentary", "Memorize John 3:16"],
+  },
+];
+
+const STUDY_THEMES: StudyTheme[] = [
+  {
+    id: "faith",
+    title: "Faith",
+    description: "Believing God and resting on His word, promises, and salvation.",
+    keyVerses: ["Hebrews 11:1", "Romans 10:17", "Ephesians 2:8", "John 3:16"],
+    crossReferences: [
+      { sourceRef: "Romans 10:17", targetRef: "Hebrews 11:6", label: "Faith and hearing" },
+      { sourceRef: "John 3:16", targetRef: "Romans 5:1", label: "Believing and peace" },
+    ],
+    strongWords: ["faith", "believe"],
+    websterWords: ["faith", "believe"],
+    commentaryTerms: ["faith", "believe", "justification"],
+    relatedBookTerms: ["faith", "believe", "grace", "gospel", "salvation"],
+    relatedSermonTerms: ["faith", "believe", "salvation", "gospel"],
+    illustrations: ["A man trusting a bridge enough to cross it.", "A child receiving a promised gift because the father said it."],
+    applications: ["Ask whether your confidence rests in Christ or in your own effort.", "Use Romans 10:17 to connect faith with hearing the word of God."],
+    quotes: ["Faith is taking God at His word and acting upon it."],
+    peopleIds: ["abraham", "paul"],
+    placeIds: [],
+    timelineIds: ["abraham", "christ-crucifixion", "church-pentecost"],
+    tags: ["belief", "trust", "gospel", "justification"],
+  },
+  {
+    id: "grace",
+    title: "Grace",
+    description: "God's undeserved favour and saving kindness shown through Jesus Christ.",
+    keyVerses: ["Ephesians 2:8", "Titus 2:11", "Romans 3:24", "John 1:17"],
+    crossReferences: [
+      { sourceRef: "Ephesians 2:8", targetRef: "Romans 3:24", label: "Saved and justified by grace" },
+      { sourceRef: "John 1:17", targetRef: "Titus 2:11", label: "Grace in Christ and salvation" },
+    ],
+    strongWords: ["grace", "gift"],
+    websterWords: ["grace", "saved", "faith"],
+    commentaryTerms: ["grace", "gift", "justified"],
+    relatedBookTerms: ["grace", "gospel", "salvation", "christian life"],
+    relatedSermonTerms: ["grace", "salvation", "gospel"],
+    illustrations: ["A debt paid by another when the debtor could not pay.", "A pardon received rather than earned."],
+    applications: ["Keep grace distinct from works when teaching salvation.", "Let grace lead to humble obedience, not carelessness."],
+    quotes: ["Grace gives what sin cannot deserve."],
+    peopleIds: ["paul"],
+    placeIds: [],
+    timelineIds: ["christ-crucifixion", "christ-resurrection"],
+    tags: ["gift", "favour", "salvation", "mercy"],
+  },
+  {
+    id: "prayer",
+    title: "Prayer",
+    description: "Coming to God in dependence, worship, confession, request, and thanksgiving.",
+    keyVerses: ["Luke 11:1", "Philippians 4:6", "1 Thessalonians 5:17", "James 5:16"],
+    crossReferences: [
+      { sourceRef: "Luke 11:1", targetRef: "Matthew 6:9", label: "The Lord teaching prayer" },
+      { sourceRef: "Philippians 4:6", targetRef: "1 Peter 5:7", label: "Prayer and care" },
+    ],
+    strongWords: ["prayer", "pray"],
+    websterWords: ["prayer", "supplication", "thanksgiving"],
+    commentaryTerms: ["prayer", "supplication", "intercession"],
+    relatedBookTerms: ["prayer", "pray", "intercession", "devotional"],
+    relatedSermonTerms: ["prayer", "pray", "supplication"],
+    illustrations: ["A child coming honestly to a loving father.", "A watchman calling for help before the danger reaches the gate."],
+    applications: ["Turn study notes into specific prayer.", "Attach prayer requests to Scripture instead of keeping prayer detached from the Bible."],
+    quotes: ["Prayer is dependence spoken aloud before God."],
+    peopleIds: ["jesus", "paul", "elijah"],
+    placeIds: [],
+    timelineIds: ["christ-ministry", "church-pentecost"],
+    tags: ["supplication", "intercession", "devotion", "dependence"],
+  },
+  {
+    id: "judgment",
+    title: "Judgment",
+    description: "God's righteous dealing with sin, nations, and men.",
+    keyVerses: ["Hebrews 9:27", "Romans 2:2", "Amos 4:12", "Revelation 20:12"],
+    crossReferences: [
+      { sourceRef: "Amos 4:12", targetRef: "Hebrews 9:27", label: "Prepare to meet God" },
+      { sourceRef: "Romans 2:2", targetRef: "Revelation 20:12", label: "Righteous judgment" },
+    ],
+    strongWords: ["judge", "judgment", "wrath"],
+    websterWords: ["judgment", "condemned", "perish"],
+    commentaryTerms: ["judgment", "wrath", "condemnation", "nations"],
+    relatedBookTerms: ["judgment", "prophets", "revelation", "amos", "holiness"],
+    relatedSermonTerms: ["judgment", "repentance", "warning"],
+    illustrations: ["A courtroom where the facts cannot be hidden.", "A warning siren ignored until the storm arrives."],
+    applications: ["Warn plainly without delighting in judgment.", "Show the refuge God gives before the judgment falls."],
+    quotes: ["Judgment is sober because God is holy and man is accountable."],
+    peopleIds: ["moses", "daniel", "john-baptist"],
+    placeIds: ["babylon", "jerusalem", "bethel"],
+    timelineIds: ["minor-prophets", "daniel-exile"],
+    tags: ["wrath", "condemnation", "prophets", "accountability"],
+  },
+  {
+    id: "kingdom",
+    title: "Kingdom",
+    description: "The rule of God, the promised King, and His righteous reign.",
+    keyVerses: ["Matthew 6:33", "John 18:36", "Daniel 7:14", "Revelation 11:15"],
+    crossReferences: [
+      { sourceRef: "Daniel 7:14", targetRef: "Luke 1:33", label: "Everlasting kingdom" },
+      { sourceRef: "Matthew 6:33", targetRef: "Romans 14:17", label: "Kingdom priorities" },
+    ],
+    strongWords: ["kingdom", "king", "reign"],
+    websterWords: ["kingdom", "dominion"],
+    commentaryTerms: ["kingdom", "reign", "dominion", "king"],
+    relatedBookTerms: ["kingdom", "daniel", "revelation", "christ"],
+    relatedSermonTerms: ["kingdom", "christ", "reign"],
+    illustrations: ["A throne that is not vacant even when men rebel.", "A citizen showing loyalty by obeying the king."],
+    applications: ["Teach kingdom truth with Christ as King, not political excitement.", "Ask what obedience looks like under His rule today."],
+    quotes: ["The kingdom begins with the rightful King."],
+    peopleIds: ["david", "daniel", "jesus"],
+    placeIds: ["jerusalem", "babylon"],
+    timelineIds: ["david", "daniel-exile", "christ-ministry"],
+    tags: ["reign", "dominion", "king", "throne"],
+  },
+  {
+    id: "repentance",
+    title: "Repentance",
+    description: "Turning from sin toward God with a changed mind and humbled heart.",
+    keyVerses: ["Acts 17:30", "Luke 13:3", "2 Corinthians 7:10", "Matthew 3:2"],
+    crossReferences: [
+      { sourceRef: "Matthew 3:2", targetRef: "Acts 17:30", label: "Commanded repentance" },
+      { sourceRef: "Luke 13:3", targetRef: "2 Corinthians 7:10", label: "Repentance and godly sorrow" },
+    ],
+    strongWords: ["repent", "repentance"],
+    websterWords: ["repentance", "saved", "grace"],
+    commentaryTerms: ["repentance", "repent", "turn"],
+    relatedBookTerms: ["repentance", "evangelism", "salvation", "revival"],
+    relatedSermonTerms: ["repentance", "evangelism", "revival"],
+    illustrations: ["A traveller turning around after discovering he is on the wrong road.", "A sinner dropping excuses and coming honestly before God."],
+    applications: ["Do not soften repentance into mere regret.", "Show repentance connected to faith and the Gospel call."],
+    quotes: ["Repentance changes direction because truth has changed the mind."],
+    peopleIds: ["john-baptist", "paul", "peter"],
+    placeIds: ["jordan-river"],
+    timelineIds: ["christ-ministry", "church-pentecost"],
+    tags: ["turn", "gospel", "conviction", "revival"],
+  },
+  {
+    id: "salvation",
+    title: "Salvation",
+    description: "God's deliverance of sinners through the Lord Jesus Christ.",
+    keyVerses: ["Acts 4:12", "John 3:16", "Romans 10:13", "Ephesians 2:8"],
+    crossReferences: [
+      { sourceRef: "Acts 4:12", targetRef: "John 14:6", label: "Only one Saviour" },
+      { sourceRef: "Romans 10:13", targetRef: "Joel 2:32", label: "Calling on the Lord" },
+    ],
+    strongWords: ["save", "salvation", "saviour"],
+    websterWords: ["saved", "salvation", "believe", "grace"],
+    commentaryTerms: ["salvation", "saved", "saviour", "believe"],
+    relatedBookTerms: ["salvation", "gospel", "evangelism", "grace"],
+    relatedSermonTerms: ["salvation", "gospel", "evangelism"],
+    illustrations: ["A lifeline thrown to a drowning man.", "A condemned prisoner receiving pardon from the king."],
+    applications: ["Make the Gospel plain and personal.", "Invite the hearer to look to Christ, not to religious effort."],
+    quotes: ["Salvation is found in a Person, not a performance."],
+    peopleIds: ["jesus", "peter", "paul"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["christ-crucifixion", "christ-resurrection", "church-pentecost"],
+    tags: ["gospel", "saved", "saviour", "eternal life"],
+  },
+  {
+    id: "shepherd",
+    title: "Shepherd",
+    description: "The Lord's care, guidance, protection, and pastoral heart toward His people.",
+    keyVerses: ["Psalm 23:1", "John 10:11", "1 Peter 5:4", "Hebrews 13:20"],
+    crossReferences: [
+      { sourceRef: "Psalm 23:1", targetRef: "John 10:11", label: "The LORD and the good shepherd" },
+      { sourceRef: "John 10:11", targetRef: "Hebrews 13:20", label: "Good and great Shepherd" },
+    ],
+    strongWords: ["shepherd", "pastor", "feed"],
+    websterWords: ["shepherd", "pastor", "flock"],
+    commentaryTerms: ["shepherd", "flock", "pastor"],
+    relatedBookTerms: ["shepherd", "pastor", "preaching", "christian life"],
+    relatedSermonTerms: ["shepherd", "pastor", "care"],
+    illustrations: ["A shepherd leading sheep to pasture and water.", "A pastor watching for danger near the flock."],
+    applications: ["Comfort believers with the Shepherd's care.", "Warn teachers that shepherding means feeding and guarding."],
+    quotes: ["The Shepherd leads, feeds, restores, and guards."],
+    peopleIds: ["david", "jesus", "peter"],
+    placeIds: ["bethlehem", "galilee"],
+    timelineIds: ["david", "christ-ministry"],
+    tags: ["pastor", "flock", "care", "guide"],
+  },
+  {
+    id: "covenant",
+    title: "Covenant",
+    description: "God's solemn promises and dealings with His people.",
+    keyVerses: ["Genesis 12:3", "Jeremiah 31:31", "Luke 22:20", "Hebrews 8:6"],
+    crossReferences: [
+      { sourceRef: "Genesis 12:3", targetRef: "Galatians 3:8", label: "Promise and Gospel" },
+      { sourceRef: "Jeremiah 31:31", targetRef: "Hebrews 8:8", label: "New covenant promise" },
+    ],
+    strongWords: ["covenant", "promise"],
+    websterWords: ["covenant", "promise", "testament"],
+    commentaryTerms: ["covenant", "promise", "testament"],
+    relatedBookTerms: ["covenant", "promise", "genesis", "hebrews"],
+    relatedSermonTerms: ["covenant", "promise", "faithfulness"],
+    illustrations: ["A signed promise that rests on the character of the one who made it.", "A family inheritance secured by legal promise."],
+    applications: ["Distinguish God's promises from man's wishful thinking.", "Show the certainty of God's word across Scripture."],
+    quotes: ["A covenant rests on God's faithfulness, not man's strength."],
+    peopleIds: ["abraham", "moses", "jesus"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["abraham", "moses", "christ-crucifixion"],
+    tags: ["promise", "testament", "faithfulness", "abraham"],
+  },
+  {
+    id: "holiness",
+    title: "Holiness",
+    description: "God's separateness, purity, and the call for His people to be set apart.",
+    keyVerses: ["1 Peter 1:16", "Isaiah 6:3", "Leviticus 11:44", "Hebrews 12:14"],
+    crossReferences: [
+      { sourceRef: "Isaiah 6:3", targetRef: "1 Peter 1:16", label: "Holy God, holy people" },
+      { sourceRef: "Leviticus 11:44", targetRef: "Hebrews 12:14", label: "Separated unto God" },
+    ],
+    strongWords: ["holy", "sanctify", "clean"],
+    websterWords: ["holy", "sanctify", "sanctification"],
+    commentaryTerms: ["holy", "holiness", "sanctify"],
+    relatedBookTerms: ["holiness", "sanctification", "christian life", "revival"],
+    relatedSermonTerms: ["holiness", "sanctification", "separation"],
+    illustrations: ["A vessel set apart for sacred use.", "A clean garment kept from defilement."],
+    applications: ["Teach holiness as belonging to God, not merely rule-keeping.", "Connect separation with worship and obedience."],
+    quotes: ["Holiness begins with who God is."],
+    peopleIds: ["isaiah", "peter"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["isaiah-ministry", "church-pentecost"],
+    tags: ["sanctification", "purity", "separation", "obedience"],
+  },
+  {
+    id: "worship",
+    title: "Worship",
+    description: "Honouring God with reverence, praise, surrender, and truth.",
+    keyVerses: ["John 4:24", "Psalm 29:2", "Romans 12:1", "Revelation 4:11"],
+    crossReferences: [
+      { sourceRef: "John 4:24", targetRef: "Romans 12:1", label: "Spirit, truth, and living sacrifice" },
+      { sourceRef: "Psalm 29:2", targetRef: "Revelation 4:11", label: "Glory due unto God" },
+    ],
+    strongWords: ["worship", "praise", "glory"],
+    websterWords: ["worship", "praise", "glory"],
+    commentaryTerms: ["worship", "praise", "glory"],
+    relatedBookTerms: ["worship", "praise", "devotional", "prayer"],
+    relatedSermonTerms: ["worship", "praise", "surrender"],
+    illustrations: ["A subject bowing before a rightful king.", "A choir that loses itself in the worth of the one praised."],
+    applications: ["Keep worship tied to truth, not feeling only.", "Show that worship includes life yielded to God."],
+    quotes: ["True worship answers God's worth with surrender."],
+    peopleIds: ["jesus", "david"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["david", "christ-ministry"],
+    tags: ["praise", "glory", "reverence", "surrender"],
+  },
+  {
+    id: "wisdom",
+    title: "Wisdom",
+    description: "Skillful, God-fearing living according to truth.",
+    keyVerses: ["Proverbs 9:10", "James 1:5", "Proverbs 3:5", "Colossians 2:3"],
+    crossReferences: [
+      { sourceRef: "Proverbs 9:10", targetRef: "James 1:5", label: "Fear of the Lord and asking God" },
+      { sourceRef: "Proverbs 3:5", targetRef: "Colossians 2:3", label: "Trust and wisdom in Christ" },
+    ],
+    strongWords: ["wisdom", "understanding", "knowledge"],
+    websterWords: ["wisdom", "understanding", "knowledge"],
+    commentaryTerms: ["wisdom", "understanding", "knowledge"],
+    relatedBookTerms: ["wisdom", "proverbs", "christian life", "teaching"],
+    relatedSermonTerms: ["wisdom", "fear of the lord", "proverbs"],
+    illustrations: ["A builder who follows the plans instead of guessing.", "A traveller choosing the right road before the trip begins."],
+    applications: ["Begin wisdom with the fear of the Lord.", "Ask how the passage should change decisions this week."],
+    quotes: ["Wisdom is truth applied under the fear of God."],
+    peopleIds: ["solomon", "james"],
+    placeIds: ["jerusalem"],
+    timelineIds: ["solomon"],
+    tags: ["proverbs", "understanding", "fear of the lord", "discernment"],
+  },
+  {
+    id: "love",
+    title: "Love",
+    description: "God's love shown in Christ and reflected in obedient charity.",
+    keyVerses: ["John 3:16", "Romans 5:8", "1 John 4:9", "1 Corinthians 13:13"],
+    crossReferences: [
+      { sourceRef: "John 3:16", targetRef: "Romans 5:8", label: "God's love shown in giving" },
+      { sourceRef: "1 John 4:9", targetRef: "1 Corinthians 13:13", label: "Love and charity" },
+    ],
+    strongWords: ["love", "charity"],
+    websterWords: ["love", "charity", "believe"],
+    commentaryTerms: ["love", "charity", "gave"],
+    relatedBookTerms: ["love", "charity", "christian life", "gospel"],
+    relatedSermonTerms: ["love", "charity", "gospel"],
+    illustrations: ["A gift that costs the giver dearly.", "A family resemblance seen in how children love one another."],
+    applications: ["Define love by God's giving of His Son.", "Show love in obedience, sacrifice, and truth."],
+    quotes: ["God's love is not mere sentiment; it gave."],
+    peopleIds: ["jesus", "john-baptist"],
+    placeIds: [],
+    timelineIds: ["christ-crucifixion"],
+    tags: ["charity", "gospel", "gave", "sacrifice"],
+  },
+  {
+    id: "discipleship",
+    title: "Discipleship",
+    description: "Following Christ, learning His word, and obeying Him daily.",
+    keyVerses: ["Luke 9:23", "Matthew 28:19", "John 8:31", "2 Timothy 2:2"],
+    crossReferences: [
+      { sourceRef: "Luke 9:23", targetRef: "John 8:31", label: "Following and continuing" },
+      { sourceRef: "Matthew 28:19", targetRef: "2 Timothy 2:2", label: "Making and training disciples" },
+    ],
+    strongWords: ["disciple", "follow", "teach"],
+    websterWords: ["disciple", "teach", "follow"],
+    commentaryTerms: ["disciple", "follow", "teach"],
+    relatedBookTerms: ["discipleship", "christian life", "teaching", "service"],
+    relatedSermonTerms: ["discipleship", "follow", "teach"],
+    illustrations: ["An apprentice learning by staying with the master.", "A yoke that joins the learner to the teacher."],
+    applications: ["Move beyond hearing to obedient following.", "Ask who should be taught what you have learned."],
+    quotes: ["A disciple learns truth in order to follow."],
+    peopleIds: ["jesus", "peter", "paul"],
+    placeIds: ["galilee", "jerusalem"],
+    timelineIds: ["christ-ministry", "acts-witness"],
+    tags: ["follow", "teach", "obedience", "training"],
+  },
+  {
+    id: "missions",
+    title: "Missions",
+    description: "Carrying the Gospel to all nations under Christ's command.",
+    keyVerses: ["Matthew 28:19", "Acts 1:8", "Romans 10:14", "Mark 16:15"],
+    crossReferences: [
+      { sourceRef: "Acts 1:8", targetRef: "Matthew 28:19", label: "Witness and commission" },
+      { sourceRef: "Romans 10:14", targetRef: "Mark 16:15", label: "Preaching and hearing" },
+    ],
+    strongWords: ["witness", "preach", "send"],
+    websterWords: ["mission", "preach", "witness"],
+    commentaryTerms: ["missions", "witness", "preach", "nations"],
+    relatedBookTerms: ["missions", "missionary", "evangelism", "witness"],
+    relatedSermonTerms: ["missions", "evangelism", "witness"],
+    illustrations: ["A messenger carrying urgent news to a distant town.", "A lamp carried into a dark room instead of kept under a bushel."],
+    applications: ["Pray for specific fields and missionaries.", "Connect missions with local witness and global burden."],
+    quotes: ["Missions begins with Christ's command and moves with His witness."],
+    peopleIds: ["paul", "peter", "jesus"],
+    placeIds: ["jerusalem", "antioch", "corinth", "ephesus"],
+    timelineIds: ["church-pentecost", "acts-witness", "pauls-journeys"],
+    tags: ["evangelism", "witness", "nations", "missionary"],
+  },
+  {
+    id: "prophecy",
+    title: "Prophecy",
+    description: "God's revealed word concerning warning, promise, Christ, and things to come.",
+    keyVerses: ["2 Peter 1:21", "Isaiah 53:5", "Daniel 7:13", "Revelation 1:3"],
+    crossReferences: [
+      { sourceRef: "Isaiah 53:5", targetRef: "1 Peter 2:24", label: "Suffering fulfilled in Christ" },
+      { sourceRef: "Daniel 7:13", targetRef: "Revelation 1:7", label: "Son of man and coming" },
+    ],
+    strongWords: ["prophet", "prophecy", "vision"],
+    websterWords: ["prophecy", "prophet", "vision"],
+    commentaryTerms: ["prophecy", "prophet", "vision", "fulfillment"],
+    relatedBookTerms: ["prophecy", "daniel", "revelation", "isaiah", "minor prophets"],
+    relatedSermonTerms: ["prophecy", "warning", "fulfillment"],
+    illustrations: ["A sealed message opened at the appointed time.", "A watchman warning because he has heard from the king."],
+    applications: ["Keep prophecy tied to Scripture rather than speculation.", "Use fulfilled prophecy to magnify Christ and strengthen faith."],
+    quotes: ["Prophecy is not guesswork; it is God speaking before the event."],
+    peopleIds: ["isaiah", "jeremiah", "daniel", "john-baptist"],
+    placeIds: ["jerusalem", "babylon"],
+    timelineIds: ["isaiah-ministry", "jeremiah-ministry", "daniel-exile", "minor-prophets"],
+    tags: ["fulfillment", "warning", "daniel", "revelation"],
+  },
+];
+
+const BIBLE_BOOK_ECOSYSTEMS: BibleBookEcosystem[] = [
+  {
+    book: "Amos",
+    modelStatus: "Model ready",
+    focus: "Judgment, righteousness, covenant accountability, and restoration hope.",
+    timeline: ["Uzziah in Judah", "Jeroboam II in Israel", "Minor prophets", "Before the Assyrian captivity"],
+    keyThemes: ["Judgment", "Repentance", "Worship", "Justice", "Restoration"],
+    keyVerses: ["Amos 3:3", "Amos 4:12", "Amos 5:24", "Amos 9:11"],
+    sermonIdeas: ["Prepare to Meet Thy God", "Can Two Walk Together?", "Religion Without Righteousness", "The Fallen Tabernacle Raised"],
+    discussionQuestions: ["What sins does Amos confront?", "Why is empty religion dangerous?", "Where does hope appear in Amos?"],
+    teachingApplications: ["Warn plainly while keeping restoration in view.", "Apply Amos to worship, justice, and personal obedience."],
+    playlistTitle: "Amos 1-9 Teaching Prep",
+    nextAction: "Use Amos as the model complete study pack.",
+  },
+  {
+    book: "Romans",
+    modelStatus: "Framework ready",
+    focus: "Sin, justification, grace, sanctification, Israel, and Christian service.",
+    timeline: ["Apostolic church", "Paul's journeys", "Rome"],
+    keyThemes: ["Faith", "Grace", "Salvation", "Holiness", "Discipleship"],
+    keyVerses: ["Romans 1:16", "Romans 3:23", "Romans 5:8", "Romans 8:28", "Romans 12:1"],
+    sermonIdeas: ["The Gospel of God", "Justified by Faith", "No Condemnation", "A Living Sacrifice"],
+    discussionQuestions: ["How does Romans explain the Gospel?", "What changes after justification?", "How should doctrine become service?"],
+    teachingApplications: ["Keep doctrine practical.", "Use Romans to clarify salvation and assurance."],
+    playlistTitle: "Romans Gospel Study",
+    nextAction: "Expand Romans study packs around chapters 1-8 first.",
+  },
+  {
+    book: "Daniel",
+    modelStatus: "Framework ready",
+    focus: "Faithfulness in exile, Gentile kingdoms, prophecy, and God's dominion.",
+    timeline: ["Babylonian captivity", "Daniel in exile", "Gentile kingdoms"],
+    keyThemes: ["Kingdom", "Prophecy", "Prayer", "Judgment", "Faith"],
+    keyVerses: ["Daniel 2:21", "Daniel 3:17", "Daniel 6:10", "Daniel 7:14"],
+    sermonIdeas: ["Faithful in Babylon", "The Fourth Man", "Prayer When It Costs", "The Son of Man's Dominion"],
+    discussionQuestions: ["How did Daniel remain faithful?", "What does Daniel show about kingdoms?", "How should prophecy strengthen faith?"],
+    teachingApplications: ["Teach courage without sensationalism.", "Keep prophetic study anchored to the text."],
+    playlistTitle: "Daniel Prophecy and Faithfulness",
+    nextAction: "Build Daniel 1, 3, 6, 7 study packs next.",
+  },
+  {
+    book: "Revelation",
+    modelStatus: "Framework ready",
+    focus: "The revelation of Jesus Christ, churches, judgment, victory, and the coming kingdom.",
+    timeline: ["Apostolic churches", "Things which shall be hereafter", "New heaven and new earth"],
+    keyThemes: ["Prophecy", "Judgment", "Kingdom", "Worship", "Holiness"],
+    keyVerses: ["Revelation 1:3", "Revelation 1:18", "Revelation 11:15", "Revelation 22:20"],
+    sermonIdeas: ["The Living Christ", "Letters to the Churches", "The Lamb Prevails", "Even So, Come"],
+    discussionQuestions: ["What does the book reveal about Christ?", "How should the churches respond?", "Where do worship and warning meet?"],
+    teachingApplications: ["Keep Revelation Christ-centered.", "Avoid speculation that outruns the passage."],
+    playlistTitle: "Revelation Christ and Victory",
+    nextAction: "Prioritize Revelation 1-3 and 13 study support.",
+  },
+  {
+    book: "John",
+    modelStatus: "Framework ready",
+    focus: "The Son of God, belief, life, witness, and Gospel clarity.",
+    timeline: ["Life of Christ", "Public ministry", "Crucifixion", "Resurrection"],
+    keyThemes: ["Faith", "Love", "Salvation", "Discipleship", "Shepherd"],
+    keyVerses: ["John 1:14", "John 3:16", "John 10:11", "John 14:6", "John 20:31"],
+    sermonIdeas: ["Ye Must Be Born Again", "The Good Shepherd", "The Way, the Truth, and the Life", "That Ye Might Believe"],
+    discussionQuestions: ["What signs does John use?", "How is belief presented?", "How does John reveal Christ?"],
+    teachingApplications: ["Use John for clear evangelistic teaching.", "Connect belief with the person and work of Christ."],
+    playlistTitle: "John 3 New Birth",
+    nextAction: "Deepen John 1-5 and John 10 study packs.",
+  },
+  {
+    book: "Isaiah",
+    modelStatus: "Framework ready",
+    focus: "Holy God, sin, judgment, comfort, the Servant, and kingdom hope.",
+    timeline: ["Uzziah", "Jotham", "Ahaz", "Hezekiah", "Assyrian threat"],
+    keyThemes: ["Holiness", "Prophecy", "Judgment", "Salvation", "Kingdom"],
+    keyVerses: ["Isaiah 6:3", "Isaiah 9:6", "Isaiah 40:1", "Isaiah 53:5"],
+    sermonIdeas: ["Holy, Holy, Holy", "Unto Us a Son Is Given", "Comfort Ye My People", "Wounded for Our Transgressions"],
+    discussionQuestions: ["How does Isaiah reveal God's holiness?", "What prophecies point to Christ?", "How are judgment and comfort balanced?"],
+    teachingApplications: ["Teach prophecy with Christ in view.", "Use Isaiah to show holiness and hope together."],
+    playlistTitle: "Isaiah Holiness and Hope",
+    nextAction: "Build Isaiah 6, 9, 40, 53 study packs first.",
+  },
+  {
+    book: "Genesis",
+    modelStatus: "Framework ready",
+    focus: "Creation, fall, promise, covenant, patriarchs, and beginnings.",
+    timeline: ["Creation", "Fall", "Flood", "Abraham", "Isaac", "Jacob", "Joseph"],
+    keyThemes: ["Covenant", "Faith", "Judgment", "Grace", "Prophecy"],
+    keyVerses: ["Genesis 1:1", "Genesis 3:15", "Genesis 12:3", "Genesis 50:20"],
+    sermonIdeas: ["In the Beginning God", "The First Gospel Promise", "Called by Promise", "God Meant It Unto Good"],
+    discussionQuestions: ["What foundations begin in Genesis?", "How does promise develop?", "What does Genesis teach about God's sovereignty?"],
+    teachingApplications: ["Use Genesis to establish Bible foundations.", "Connect beginnings to the rest of Scripture carefully."],
+    playlistTitle: "Genesis Foundations",
+    nextAction: "Strengthen Genesis 1-5 and patriarch study connections.",
+  },
+  {
+    book: "Exodus",
+    modelStatus: "Framework ready",
+    focus: "Deliverance, redemption, law, worship, tabernacle, and God's presence.",
+    timeline: ["Bondage in Egypt", "Moses", "Passover", "Red Sea", "Sinai", "Tabernacle"],
+    keyThemes: ["Salvation", "Covenant", "Worship", "Holiness", "Types of Christ"],
+    keyVerses: ["Exodus 3:14", "Exodus 12:13", "Exodus 15:2", "Exodus 25:8"],
+    sermonIdeas: ["I AM THAT I AM", "When I See the Blood", "The LORD Is My Strength", "God Dwelling Among His People"],
+    discussionQuestions: ["What does Exodus teach about redemption?", "How does the Passover point forward?", "Why does worship require holiness?"],
+    teachingApplications: ["Use Exodus to explain redemption and worship.", "Keep types connected to clear Scripture."],
+    playlistTitle: "Exodus Redemption and Worship",
+    nextAction: "Expand Exodus 1-5 and Passover study packs.",
   },
 ];
 
@@ -11679,6 +12175,111 @@ function uniqueStrings(items: string[]) {
   return Array.from(new Set(items.map((item) => item.trim()).filter(Boolean)));
 }
 
+function themeSearchTerms(theme: StudyTheme) {
+  return uniqueStrings([
+    theme.title,
+    ...theme.tags,
+    ...theme.websterWords,
+    ...theme.strongWords,
+    ...theme.commentaryTerms,
+    ...theme.relatedBookTerms,
+    ...theme.relatedSermonTerms,
+    ...theme.keyVerses,
+  ]).slice(0, 40);
+}
+
+function bibleBookEcosystemForBook(book: string) {
+  return BIBLE_BOOK_ECOSYSTEMS.find((ecosystem) => ecosystem.book === book) ?? null;
+}
+
+function themesForChapter({
+  book,
+  chapter,
+  connections,
+  background,
+  bookIntroduction,
+  verses,
+}: {
+  book: string;
+  chapter: number;
+  connections: ActiveChapterConnections;
+  background: ActiveBibleBackground;
+  bookIntroduction: BookIntroduction | null;
+  verses: BibleVerse[];
+}) {
+  const ecosystem = bibleBookEcosystemForBook(book);
+  const haystack = [
+    book,
+    `${book} ${chapter}`,
+    bookIntroduction?.overview.theme ?? "",
+    bookIntroduction?.overview.purpose ?? "",
+    ...(bookIntroduction?.keyThemes ?? []),
+    ...(ecosystem?.keyThemes ?? []),
+    ...connections.themes,
+    ...background.nations,
+    ...background.majorEvents,
+    ...background.culturalBackground,
+    ...verses.map((verse) => verse.plainText),
+  ].join(" ").toLowerCase();
+
+  const matched = STUDY_THEMES.filter((theme) => themeSearchTerms(theme).some((term) => haystack.includes(term.toLowerCase())));
+  return matched.length ? matched.slice(0, 6) : STUDY_THEMES.slice(0, 4);
+}
+
+function themeDictionaryEntries(theme: StudyTheme) {
+  return Array.from(
+    new Map(
+      theme.websterWords
+        .map(findDictionaryEntry)
+        .filter((entry) => entry.found)
+        .map((entry) => [entry.lookupWord, entry]),
+    ).values(),
+  );
+}
+
+function themeStrongEntries(theme: StudyTheme) {
+  return theme.strongWords
+    .map((word) => strongsMvpEntries[normalizeLookupWord(word)])
+    .filter((entry): entry is StrongMvpEntry => Boolean(entry));
+}
+
+function themeCommentaryEntries(theme: StudyTheme, entries: CommentaryEntry[]) {
+  const terms = themeSearchTerms(theme);
+  return entries
+    .filter((entry) => commentaryEntryMatchesSearch(entry, terms))
+    .slice(0, 8);
+}
+
+function themeLibraryResources(theme: StudyTheme, resources: LibraryResource[]) {
+  const terms = themeSearchTerms(theme);
+  return resources
+    .filter((resource) => libraryResourceMatches(resource, terms))
+    .slice(0, 8);
+}
+
+function themeSermonResources(theme: StudyTheme) {
+  const terms = themeSearchTerms(theme);
+  return {
+    quotes: SERMON_QUOTE_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, terms)).slice(0, 4),
+    illustrations: SERMON_ILLUSTRATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, terms)).slice(0, 4),
+    applications: SERMON_APPLICATION_STARTERS.filter((item) => sermonLibraryItemMatchesTerms(item, terms)).slice(0, 4),
+  };
+}
+
+function themePeople(theme: StudyTheme) {
+  const byId = new Map(studyPeople.map((person) => [person.id, person]));
+  return theme.peopleIds.map((id) => byId.get(id)).filter((person): person is StudyPerson => Boolean(person));
+}
+
+function themePlaces(theme: StudyTheme) {
+  const byId = new Map(studyPlaces.map((place) => [place.id, place]));
+  return theme.placeIds.map((id) => byId.get(id)).filter((place): place is StudyPlace => Boolean(place));
+}
+
+function themeTimeline(theme: StudyTheme) {
+  return timelineEntriesForIds(theme.timelineIds);
+}
+
 function buildActiveBibleBackground({
   book,
   chapter,
@@ -12105,6 +12706,17 @@ export default function Home() {
       bookIntroduction: activeBookIntroduction,
     }),
     [activeBookIntroduction, activeChapterConnections, book, chapter],
+  );
+  const activeChapterThemes = useMemo(
+    () => themesForChapter({
+      book,
+      chapter,
+      connections: activeChapterConnections,
+      background: activeBibleBackground,
+      bookIntroduction: activeBookIntroduction,
+      verses: chapterVerses,
+    }),
+    [activeBibleBackground, activeBookIntroduction, activeChapterConnections, book, chapter, chapterVerses],
   );
 
   const chapterCrossReferences = useMemo(
@@ -15930,6 +16542,7 @@ export default function Home() {
               <NavButton icon={<HomeIcon size={18} />} label="Today" active={tab === "today"} onClick={() => setTab("today")} />
               <NavButton icon={<BookOpen size={18} />} label="Bible" active={tab === "bible"} onClick={() => setTab("bible")} />
               <NavButton icon={<Search size={18} />} label="Search" active={tab === "search"} onClick={() => setTab("search")} />
+              <NavButton icon={<Brain size={18} />} label="Themes" active={tab === "themes"} onClick={() => setTab("themes")} />
               <NavButton
                 icon={<Library size={18} />}
                 label="Library"
@@ -16037,6 +16650,7 @@ export default function Home() {
                 chapterResourceRecommendations={activeChapterResourceRecommendations}
                 libraryResources={libraryResources}
                 bookIntroduction={activeBookIntroduction}
+                activeThemes={activeChapterThemes}
                 scriptureMemory={scriptureMemory}
                 recentPassages={recentPassages}
                 favoritePassages={favoritePassages}
@@ -16123,6 +16737,7 @@ export default function Home() {
                 onOpenBookIntroduction={() => openBookIntroduction(book)}
                 onOpenPassageGuide={openPassageGuide}
                 onOpenCommentaryCenter={openCommentaryCenter}
+                onOpenThemeExplorer={() => setTab("themes")}
                 onOpenLibraryResource={(slug) => {
                   void openLibraryResource(slug, "detail");
                 }}
@@ -16205,6 +16820,23 @@ export default function Home() {
                   if (selectedRef) setStudyRef(selectedRef);
                   setTab("bible");
                 }}
+              />
+            )}
+
+            {tab === "themes" && (
+              <ThemeExplorerScreen
+                themes={STUDY_THEMES}
+                activeThemes={activeChapterThemes}
+                resources={libraryResources}
+                commentaryEntries={commentaryEntries}
+                versesByRef={versesByRef}
+                currentPassage={`${book} ${chapter}`}
+                onBackToBible={() => setTab("bible")}
+                onOpenReference={openReference}
+                onOpenLibraryResource={(slug) => {
+                  void openLibraryResource(slug, "detail");
+                }}
+                onOpenPersonStudy={openPersonStudy}
               />
             )}
 
@@ -16420,6 +17052,7 @@ export default function Home() {
                 recommendedResources={activeChapterResourceRecommendations}
                 libraryResources={libraryResources}
                 bookIntroduction={activeBookIntroduction}
+                activeThemes={activeChapterThemes}
                 notes={Array.from(notesByRef.entries()).filter(([ref]) => ref.startsWith(`${book} ${chapter}:`))}
                 memoryVerse={scriptureMemory.find((item) => item.verse_ref.startsWith(`${book} ${chapter}:`)) ?? null}
                 versesByRef={versesByRef}
@@ -16430,6 +17063,7 @@ export default function Home() {
                   void openLibraryResource(slug, "detail");
                 }}
                 onOpenPersonStudy={openPersonStudy}
+                onOpenThemeExplorer={() => setTab("themes")}
                 onListenCommentary={listenCurrentChapterCommentary}
                 onAddCommentaryToPlaylist={() => addBiblePlaylistItem("commentary_chapter")}
               />
@@ -18387,6 +19021,7 @@ function BookIntroScreen({
   const introPlaces = placeEntriesForNames(intro.keyPlaces);
   const introTimeline = bookIntroTimelineEntries(intro, introPlaces);
   const studyCollection = bibleStudyCollectionForBook(intro.book);
+  const bookEcosystem = bibleBookEcosystemForBook(intro.book);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -18411,6 +19046,17 @@ function BookIntroScreen({
           resources={resources}
           commentaryEntries={commentaryEntries}
           onOpenBookIntroduction={() => onOpenReference(intro.overview.keyVerse)}
+          onOpenReference={onOpenReference}
+          onOpenLibraryResource={onOpenLibraryResource}
+        />
+      )}
+
+      {bookEcosystem && (
+        <BibleBookEcosystemCard
+          intro={intro}
+          ecosystem={bookEcosystem}
+          resources={resources}
+          commentaryEntries={commentaryEntries}
           onOpenReference={onOpenReference}
           onOpenLibraryResource={onOpenLibraryResource}
         />
@@ -18638,6 +19284,439 @@ function BookIntroScreen({
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function BibleBookEcosystemCard({
+  intro,
+  ecosystem,
+  resources,
+  commentaryEntries,
+  onOpenReference,
+  onOpenLibraryResource,
+}: {
+  intro: BookIntroduction;
+  ecosystem: BibleBookEcosystem;
+  resources: LibraryResource[];
+  commentaryEntries: CommentaryEntry[];
+  onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
+}) {
+  const bookCommentaryEntries = commentaryEntries.filter((entry) => entry.book === intro.book);
+  const commentaryAuthors = Array.from(new Set(bookCommentaryEntries.map((entry) => entry.author))).sort();
+  const chaptersCovered = new Set(bookCommentaryEntries.map((entry) => entry.chapter)).size;
+  const relatedResources = resources
+    .filter((resource) => libraryResourceMatches(resource, [intro.book, ...ecosystem.keyThemes, ...ecosystem.sermonIdeas]))
+    .slice(0, 4);
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Bible Book Ecosystem</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">{intro.book} study framework</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">{ecosystem.focus}</p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{ecosystem.modelStatus}</span>
+      </div>
+
+      <div className="mt-4 grid gap-2 md:grid-cols-4">
+        <MiniStat label="Themes" value={String(ecosystem.keyThemes.length)} />
+        <MiniStat label="Key verses" value={String(ecosystem.keyVerses.length)} />
+        <MiniStat label="Commentaries" value={String(commentaryAuthors.length)} />
+        <MiniStat label="Chapters covered" value={String(chaptersCovered)} />
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-[1fr_1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Start here</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {ecosystem.keyThemes.map((theme) => (
+              <span key={`ecosystem-theme-${intro.book}-${theme}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{theme}</span>
+            ))}
+          </div>
+          <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{ecosystem.nextAction}</p>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Timeline</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {ecosystem.timeline.map((item) => (
+              <span key={`ecosystem-timeline-${intro.book}-${item}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">{item}</span>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-3">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key verses</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {ecosystem.keyVerses.map((reference) => (
+              <button key={`ecosystem-key-${intro.book}-${reference}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference)} type="button">
+                {reference}
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Sermon ideas</p>
+          <div className="mt-3 space-y-2">
+            {ecosystem.sermonIdeas.slice(0, 4).map((idea) => (
+              <p key={`ecosystem-sermon-${intro.book}-${idea}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{idea}</p>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Study playlist</p>
+          <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{ecosystem.playlistTitle}</p>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Use this as the reading/listening path for book-level study.</p>
+        </article>
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        <StudySection title="Discussion Questions">
+          <div className="space-y-2">
+            {ecosystem.discussionQuestions.map((question) => (
+              <p key={`ecosystem-question-${intro.book}-${question}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{question}</p>
+            ))}
+          </div>
+        </StudySection>
+        <StudySection title="Teaching Applications">
+          <div className="space-y-2">
+            {ecosystem.teachingApplications.map((application) => (
+              <p key={`ecosystem-application-${intro.book}-${application}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm leading-6 text-[var(--muted)]">{application}</p>
+            ))}
+          </div>
+        </StudySection>
+      </div>
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-2">
+        <StudySection title="Recommended Book Connections">
+          <div className="grid gap-2">
+            {relatedResources.length ? relatedResources.map((resource) => (
+              <button key={`ecosystem-resource-${intro.book}-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenLibraryResource(resource.slug)} type="button">
+                <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author} · {libraryCategoryLabel(resource.category)}</p>
+              </button>
+            )) : (
+              <p className="text-sm leading-6 text-[var(--muted)]">Related library books will appear as this book collection is curated.</p>
+            )}
+          </div>
+        </StudySection>
+        <StudySection title="Commentary Voices">
+          <div className="flex flex-wrap gap-2">
+            {commentaryAuthors.length ? commentaryAuthors.slice(0, 8).map((author) => (
+              <span key={`ecosystem-commentary-${intro.book}-${author}`} className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{author}</span>
+            )) : (
+              <span className="text-sm leading-6 text-[var(--muted)]">Reviewed commentary will appear after source and rights checks.</span>
+            )}
+          </div>
+        </StudySection>
+      </div>
+    </section>
+  );
+}
+
+function ThemeExplorerScreen({
+  themes,
+  activeThemes,
+  resources,
+  commentaryEntries,
+  versesByRef,
+  currentPassage,
+  onBackToBible,
+  onOpenReference,
+  onOpenLibraryResource,
+  onOpenPersonStudy,
+}: {
+  themes: StudyTheme[];
+  activeThemes: StudyTheme[];
+  resources: LibraryResource[];
+  commentaryEntries: CommentaryEntry[];
+  versesByRef: Map<string, BibleVerse>;
+  currentPassage: string;
+  onBackToBible: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onOpenLibraryResource: (slug: string) => void;
+  onOpenPersonStudy: (personId: string) => void;
+}) {
+  const [query, setQuery] = useState("");
+  const [selectedThemeId, setSelectedThemeId] = useState(activeThemes[0]?.id ?? themes[0]?.id ?? "faith");
+  const queryTerms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  const visibleThemes = themes.filter((theme) => {
+    if (!queryTerms.length) return true;
+    const haystack = themeSearchTerms(theme).join(" ").toLowerCase();
+    return queryTerms.every((term) => haystack.includes(term));
+  });
+  const selectedTheme = themes.find((theme) => theme.id === selectedThemeId) ?? visibleThemes[0] ?? themes[0];
+  const selectedDictionaryEntries = selectedTheme ? themeDictionaryEntries(selectedTheme) : [];
+  const selectedStrongEntries = selectedTheme ? themeStrongEntries(selectedTheme) : [];
+  const selectedCommentaryEntries = selectedTheme ? themeCommentaryEntries(selectedTheme, commentaryEntries) : [];
+  const selectedResources = selectedTheme ? themeLibraryResources(selectedTheme, resources) : [];
+  const selectedSermonResources = selectedTheme ? themeSermonResources(selectedTheme) : { quotes: [], illustrations: [], applications: [] };
+  const selectedPeople = selectedTheme ? themePeople(selectedTheme) : [];
+  const selectedPlaces = selectedTheme ? themePlaces(selectedTheme) : [];
+  const selectedTimeline = selectedTheme ? themeTimeline(selectedTheme) : [];
+
+  if (!selectedTheme) {
+    return (
+      <div className="p-4 md:p-8">
+        <EmptyState title="Theme Explorer not ready" body="Theme data will appear as reviewed study themes are added." />
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Theme Explorer</p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">Move from passage to theme in seconds</h1>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Current passage: {currentPassage}. Open a theme to see verses, word tools, commentaries, books, sermon helps, people, places, and timeline connections.
+            </p>
+          </div>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">
+            <ChevronLeft size={16} />
+            Back to Bible
+          </button>
+        </div>
+
+        <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_auto]">
+          <label className="block">
+            <span className="sr-only">Search themes</span>
+            <input
+              className="h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base font-semibold text-[var(--ink)] outline-none placeholder:text-stone-400"
+              placeholder="Search faith, grace, prayer, prophecy..."
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          </label>
+          <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 lg:min-w-[420px]">
+            <MiniStat label="Themes" value={String(themes.length)} />
+            <MiniStat label="Active" value={String(activeThemes.length)} />
+            <MiniStat label="Books" value={String(resources.length)} />
+            <MiniStat label="Commentary" value={String(commentaryEntries.length)} />
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-4 xl:grid-cols-[320px_1fr]">
+        <aside className="rounded-3xl border border-[var(--line)] bg-white p-3 shadow-sm xl:sticky xl:top-[104px] xl:max-h-[calc(100vh-7rem)] xl:overflow-y-auto">
+          <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Themes</p>
+          <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-1">
+            {visibleThemes.map((theme) => {
+              const active = theme.id === selectedTheme.id;
+              return (
+                <button
+                  key={`theme-picker-${theme.id}`}
+                  className={`rounded-2xl border p-3 text-left transition ${active ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-[var(--paper)] hover:bg-white"}`}
+                  onClick={() => setSelectedThemeId(theme.id)}
+                  type="button"
+                >
+                  <p className="text-sm font-semibold text-[var(--green)]">{theme.title}</p>
+                  <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{theme.description}</p>
+                </button>
+              );
+            })}
+            {!visibleThemes.length && (
+              <p className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">No theme matched that search yet.</p>
+            )}
+          </div>
+        </aside>
+
+        <div className="space-y-4">
+          <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Selected Theme</p>
+                <h2 className="mt-2 text-3xl font-semibold tracking-tight text-[var(--ink)]">{selectedTheme.title}</h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">{selectedTheme.description}</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {selectedTheme.tags.slice(0, 4).map((tag) => (
+                  <span key={`theme-tag-${selectedTheme.id}-${tag}`} className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{tag}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-2 md:grid-cols-5">
+              <MiniStat label="Key verses" value={String(selectedTheme.keyVerses.length)} />
+              <MiniStat label="Definitions" value={String(selectedDictionaryEntries.length)} />
+              <MiniStat label="Strong's" value={String(selectedStrongEntries.length || selectedTheme.strongWords.length)} />
+              <MiniStat label="Commentary" value={String(selectedCommentaryEntries.length)} />
+              <MiniStat label="Books" value={String(selectedResources.length)} />
+            </div>
+          </section>
+
+          <section className="grid gap-3 xl:grid-cols-2">
+            <StudySection title="Key Verses">
+              <div className="space-y-2">
+                {selectedTheme.keyVerses.map((reference) => {
+                  const verse = versesByRef.get(reference);
+                  return (
+                    <button key={`theme-verse-${selectedTheme.id}-${reference}`} className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenReference(reference)} type="button">
+                      <p className="text-sm font-semibold text-[var(--green)]">{reference}</p>
+                      <p className="mt-2 line-clamp-3 font-serif text-sm leading-6 text-[var(--scripture-ink)]">{verse?.text ?? "KJV verse text is not loaded in the local data yet."}</p>
+                    </button>
+                  );
+                })}
+              </div>
+            </StudySection>
+
+            <StudySection title="Cross References">
+              <div className="space-y-2">
+                {selectedTheme.crossReferences.map((reference) => (
+                  <button key={`theme-cross-${selectedTheme.id}-${reference.sourceRef}-${reference.targetRef}`} className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenReference(reference.targetRef)} type="button">
+                    <p className="text-sm font-semibold text-[var(--green)]">{reference.sourceRef} {"->"} {reference.targetRef}</p>
+                    <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{reference.label}</p>
+                  </button>
+                ))}
+              </div>
+            </StudySection>
+          </section>
+
+          <section className="grid gap-3 xl:grid-cols-2">
+            <StudySection title={"Webster and Strong's"}>
+              <div className="grid gap-3 lg:grid-cols-2">
+                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Webster&apos;s 1828</p>
+                  <div className="mt-3 space-y-2">
+                    {selectedDictionaryEntries.length ? selectedDictionaryEntries.map((entry) => (
+                      <article key={`theme-webster-${selectedTheme.id}-${entry.lookupWord}`} className="rounded-xl bg-white px-3 py-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">{entry.lookupWord}</p>
+                        <p className="mt-1 line-clamp-4 text-xs leading-5 text-[var(--muted)]">{entry.definition}</p>
+                      </article>
+                    )) : (
+                      <p className="text-sm leading-6 text-[var(--muted)]">Definitions will appear as the reviewed dictionary data grows.</p>
+                    )}
+                  </div>
+                </div>
+                <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Strong&apos;s starters</p>
+                  <div className="mt-3 space-y-2">
+                    {selectedStrongEntries.length ? selectedStrongEntries.map((entry) => (
+                      <article key={`theme-strong-${selectedTheme.id}-${entry.strongsNumber}`} className="rounded-xl bg-white px-3 py-2">
+                        <p className="text-sm font-semibold text-[var(--green)]">{entry.strongsNumber} · {entry.displayWord}</p>
+                        <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entry.plainMeaning}</p>
+                      </article>
+                    )) : (
+                      selectedTheme.strongWords.map((word) => (
+                        <p key={`theme-strong-pending-${selectedTheme.id}-${word}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">{word} · Strong&apos;s data pending review</p>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            </StudySection>
+
+            <StudySection title="Commentary Links">
+              <div className="space-y-2">
+                {selectedCommentaryEntries.length ? selectedCommentaryEntries.map((entry) => (
+                  <button key={`theme-commentary-${selectedTheme.id}-${entry.id}`} className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenReference(commentaryReferenceLabel(entry))} type="button">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <p className="text-sm font-semibold text-[var(--green)]">{entry.author}</p>
+                      <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{commentaryReferenceLabel(entry)}</span>
+                    </div>
+                    <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{entry.entry_text}</p>
+                  </button>
+                )) : (
+                  <p className="text-sm leading-6 text-[var(--muted)]">No commentary has been matched to this theme yet.</p>
+                )}
+              </div>
+            </StudySection>
+          </section>
+
+          <StudySection title="Related Books">
+            <div className="grid gap-2 md:grid-cols-2">
+              {selectedResources.length ? selectedResources.map((resource) => (
+                <button key={`theme-resource-${selectedTheme.id}-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenLibraryResource(resource.slug)} type="button">
+                  <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                  <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author} · {libraryCategoryLabel(resource.category)}</p>
+                  <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{resource.recommended_use || resource.description}</p>
+                </button>
+              )) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">No related books matched yet.</p>
+              )}
+            </div>
+          </StudySection>
+
+          <section className="grid gap-3 xl:grid-cols-3">
+            <StudySection title="Illustrations">
+              <ThemeSermonList items={selectedSermonResources.illustrations} fallback={selectedTheme.illustrations} />
+            </StudySection>
+            <StudySection title="Applications">
+              <ThemeSermonList items={selectedSermonResources.applications} fallback={selectedTheme.applications} />
+            </StudySection>
+            <StudySection title="Quotes">
+              <ThemeSermonList items={selectedSermonResources.quotes} fallback={selectedTheme.quotes} />
+            </StudySection>
+          </section>
+
+          <section className="grid gap-3 xl:grid-cols-3">
+            <StudySection title="People">
+              <div className="space-y-2">
+                {selectedPeople.length ? selectedPeople.map((person) => (
+                  <button key={`theme-person-${selectedTheme.id}-${person.id}`} className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenPersonStudy(person.id)} type="button">
+                    <p className="text-sm font-semibold text-[var(--green)]">{person.name}</p>
+                    <p className="mt-1 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{person.summary}</p>
+                  </button>
+                )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed people are attached yet.</p>}
+              </div>
+            </StudySection>
+            <StudySection title="Places">
+              <div className="space-y-2">
+                {selectedPlaces.length ? selectedPlaces.map((place) => (
+                  <article key={`theme-place-${selectedTheme.id}-${place.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                    <p className="text-sm font-semibold text-[var(--green)]">{place.name}</p>
+                    <p className="mt-1 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{place.description}</p>
+                  </article>
+                )) : <p className="text-sm leading-6 text-[var(--muted)]">No reviewed places are attached yet.</p>}
+              </div>
+            </StudySection>
+            <StudySection title="Timeline">
+              <div className="space-y-2">
+                {selectedTimeline.length ? selectedTimeline.map((entry) => (
+                  <article key={`theme-timeline-${selectedTheme.id}-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                    <p className="text-sm font-semibold text-[var(--green)]">{entry.title}</p>
+                    <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entry.era} · {entry.timeframe}</p>
+                    <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{entry.description}</p>
+                  </article>
+                )) : <p className="text-sm leading-6 text-[var(--muted)]">No timeline connection is attached yet.</p>}
+              </div>
+            </StudySection>
+          </section>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function ThemeSermonList({ items, fallback }: { items: SermonLibraryItem[]; fallback: string[] }) {
+  if (items.length) {
+    return (
+      <div className="space-y-2">
+        {items.map((item) => (
+          <article key={`theme-sermon-item-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-sm font-semibold text-[var(--green)]">{item.title}</p>
+            <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{item.topic} · {item.passage}</p>
+            <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{item.content}</p>
+          </article>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-2">
+      {fallback.map((item) => (
+        <p key={`theme-fallback-${item}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">{item}</p>
+      ))}
     </div>
   );
 }
@@ -19096,6 +20175,7 @@ function AtAGlanceStudyPanel({
   commentaryCount,
   commentaryAuthors,
   dictionaryEntries,
+  chapterThemes,
   relatedBooks,
   playlist,
   playlistTotalSeconds,
@@ -19111,6 +20191,7 @@ function AtAGlanceStudyPanel({
   onOpenStrong,
   onOpenWebster,
   onOpenTsk,
+  onOpenThemeExplorer,
   onOpenRelatedBook,
   onBuildSermon,
 }: {
@@ -19125,6 +20206,7 @@ function AtAGlanceStudyPanel({
   commentaryCount: number;
   commentaryAuthors: string[];
   dictionaryEntries: DictionaryEntry[];
+  chapterThemes: StudyTheme[];
   relatedBooks: Array<{ title: string; slug?: string; note: string }>;
   playlist: BibleAudioPlaylist | null;
   playlistTotalSeconds: number;
@@ -19144,6 +20226,7 @@ function AtAGlanceStudyPanel({
   onOpenStrong: () => void;
   onOpenWebster: () => void;
   onOpenTsk: () => void;
+  onOpenThemeExplorer: () => void;
   onOpenRelatedBook: (slug: string) => void;
   onBuildSermon: () => void;
 }) {
@@ -19214,9 +20297,10 @@ function AtAGlanceStudyPanel({
         <MiniStat label="Cross refs" value={String(crossReferenceCount)} />
         <MiniStat label="Commentary" value={String(commentaryCount)} />
         <MiniStat label="Dictionary" value={String(dictionaryEntries.length)} />
+        <MiniStat label="Themes" value={String(chapterThemes.length)} />
       </div>
 
-      <div className="mt-4 grid gap-3 lg:grid-cols-3">
+      <div className="mt-4 grid gap-3 lg:grid-cols-4">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter connections</p>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -19227,6 +20311,25 @@ function AtAGlanceStudyPanel({
             ))}
             {!people.length && !places.length && !timeline.length && (
               <span className="text-xs leading-5 text-[var(--muted)]">Reviewed connections will appear as this chapter grows.</span>
+            )}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Themes</p>
+            <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={onOpenThemeExplorer} type="button">
+              Open
+            </button>
+          </div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {chapterThemes.slice(0, 5).map((theme) => (
+              <span key={`glance-theme-${theme.id}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {theme.title}
+              </span>
+            ))}
+            {!chapterThemes.length && (
+              <span className="text-xs leading-5 text-[var(--muted)]">Theme links will appear as this chapter is reviewed.</span>
             )}
           </div>
         </article>
@@ -19264,6 +20367,9 @@ function AtAGlanceStudyPanel({
         </button>
         <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenTsk} type="button">
           TSK
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenThemeExplorer} type="button">
+          Theme Explorer
         </button>
         <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenBackground} type="button">
           Background
@@ -19314,6 +20420,7 @@ function BibleReader({
   chapterResourceRecommendations,
   libraryResources,
   bookIntroduction,
+  activeThemes,
   scriptureMemory,
   recentPassages,
   favoritePassages,
@@ -19400,6 +20507,7 @@ function BibleReader({
   onOpenBookIntroduction,
   onOpenPassageGuide,
   onOpenCommentaryCenter,
+  onOpenThemeExplorer,
   onOpenLibraryResource,
   onOpenStudyToolSearch,
   onOpenPersonStudy,
@@ -19442,6 +20550,7 @@ function BibleReader({
   chapterResourceRecommendations: ChapterResourceRecommendation[];
   libraryResources: LibraryResource[];
   bookIntroduction: BookIntroduction | null;
+  activeThemes: StudyTheme[];
   scriptureMemory: ScriptureMemoryItem[];
   recentPassages: BiblePassage[];
   favoritePassages: BiblePassage[];
@@ -19528,6 +20637,7 @@ function BibleReader({
   onOpenBookIntroduction: () => void;
   onOpenPassageGuide: () => void;
   onOpenCommentaryCenter: () => void;
+  onOpenThemeExplorer: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenStudyToolSearch: (query: string, filter?: string) => void;
   onOpenPersonStudy: (personId: string) => void;
@@ -19849,6 +20959,7 @@ function BibleReader({
         commentaryCount={chapterCommentaryEntries.length}
         commentaryAuthors={commentaryAuthors}
         dictionaryEntries={chapterDictionaryEntries}
+        chapterThemes={activeThemes}
         relatedBooks={atAGlanceRelatedBooks}
         playlist={activePlaylist}
         playlistTotalSeconds={activePlaylistSeconds}
@@ -19864,6 +20975,7 @@ function BibleReader({
         onOpenStrong={() => onOpenStudyToolSearch(studyLaunchWord || book, "strongs")}
         onOpenWebster={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
         onOpenTsk={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
+        onOpenThemeExplorer={onOpenThemeExplorer}
         onOpenRelatedBook={onOpenLibraryResource}
         onBuildSermon={onBuildSermonFromStudy}
       />
@@ -19920,11 +21032,15 @@ function BibleReader({
 
             <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Quick comparison</p>
-              <div className="mt-3 grid gap-2 md:grid-cols-3">
+              <div className="mt-3 grid gap-2 md:grid-cols-4">
                 <ComparisonInsight label="Agreement" body={commentaryConsensus.agreement} />
                 <ComparisonInsight label="Differences" body={commentaryConsensus.distinct} />
                 <ComparisonInsight label="Teaching" body={commentaryConsensus.teaching} />
+                <ComparisonInsight label="Devotional" body={commentaryConsensus.devotional} />
               </div>
+              <p className="mt-3 rounded-2xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+                Caution: Scripture remains first. Use commentary for explanation, teaching help, and devotional application after reading the KJV passage.
+              </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <button
                   className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-xs font-semibold text-white"
@@ -30842,6 +31958,7 @@ function PassageGuideScreen({
   recommendedResources,
   libraryResources,
   bookIntroduction,
+  activeThemes,
   notes,
   memoryVerse,
   versesByRef,
@@ -30850,6 +31967,7 @@ function PassageGuideScreen({
   onOpenBookIntroduction,
   onOpenLibraryResource,
   onOpenPersonStudy,
+  onOpenThemeExplorer,
   onListenCommentary,
   onAddCommentaryToPlaylist,
 }: {
@@ -30865,6 +31983,7 @@ function PassageGuideScreen({
   recommendedResources: ChapterResourceRecommendation[];
   libraryResources: LibraryResource[];
   bookIntroduction: BookIntroduction | null;
+  activeThemes: StudyTheme[];
   notes: Array<[string, UserNote[]]>;
   memoryVerse: ScriptureMemoryItem | null;
   versesByRef: Map<string, BibleVerse>;
@@ -30873,6 +31992,7 @@ function PassageGuideScreen({
   onOpenBookIntroduction: () => void;
   onOpenLibraryResource: (slug: string) => void;
   onOpenPersonStudy: (personId: string) => void;
+  onOpenThemeExplorer: () => void;
   onListenCommentary: () => void;
   onAddCommentaryToPlaylist: () => void;
 }) {
@@ -30960,6 +32080,7 @@ function PassageGuideScreen({
   const sections = [
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
+    ["passage-themes", "Themes"],
     ["passage-study-pack", "Study Pack"],
     ["passage-background", "Background"],
     ["passage-culture", "Culture"],
@@ -31056,6 +32177,7 @@ function PassageGuideScreen({
           <MiniStat label="Words" value={String(analysis.stats.words)} />
           <MiniStat label="Cross refs" value={String(crossReferences.length)} />
           <MiniStat label="Commentaries" value={String(commentaryAuthors.length)} />
+          <MiniStat label="Themes" value={String(activeThemes.length)} />
         </div>
       </section>
 
@@ -31067,6 +32189,7 @@ function PassageGuideScreen({
           <MiniStat label="People" value={String(connections.people.length)} />
           <MiniStat label="Places" value={String(connections.places.length)} />
           <MiniStat label="Resources" value={String(recommendedResources.length)} />
+          <MiniStat label="Themes" value={String(activeThemes.length)} />
         </div>
         <div className="mt-4 grid gap-3 lg:grid-cols-2">
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
@@ -31129,6 +32252,27 @@ function PassageGuideScreen({
             <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereResources.length || recommendedResources.length} ready</p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
           </a>
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-themes" title="Theme Explorer">
+        <div className="grid gap-3 lg:grid-cols-[1fr_auto]">
+          <div>
+            <p className="text-sm leading-6 text-[var(--muted)]">
+              These themes connect {passage} to verses, dictionaries, Strong&apos;s starters, commentaries, books, sermon helps, people, places, and timeline entries.
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {activeThemes.length ? activeThemes.map((theme) => (
+                <span key={`passage-theme-${theme.id}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{theme.title}</span>
+              )) : (
+                <span className="text-sm leading-6 text-[var(--muted)]">Theme links will appear as this passage is reviewed.</span>
+              )}
+            </div>
+          </div>
+          <button className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onOpenThemeExplorer} type="button">
+            <Brain size={16} />
+            Open Theme Explorer
+          </button>
         </div>
       </StudySection>
 
@@ -36323,6 +37467,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "today", label: "Today", icon: <HomeIcon size={20} /> },
     { id: "bible", label: "Bible", icon: <BookOpen size={20} /> },
     { id: "search", label: "Search", icon: <Search size={20} /> },
+    { id: "themes", label: "Themes", icon: <Brain size={20} /> },
     { id: "library", label: "Library", icon: <Library size={20} /> },
     { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
     { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
@@ -36334,7 +37479,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-10 gap-1">
+      <div className="mx-auto grid max-w-xl grid-cols-11 gap-1">
         {items.map((item) => (
           <button
             key={item.id}

@@ -56,6 +56,17 @@ Profiles should be saved user preferences, not separate content systems.
 7. Add admin-only controls for enabling premium engines.
 8. Keep browser/device speech as fallback if a premium provider fails.
 
+## Follow-Text Study Features To Plan
+
+These should be designed before any paid voice API is enabled, because they affect storage, chunking, and user workflow.
+
+- Follow-text reading: track the current Bible verse, commentary paragraph, or library paragraph while audio plays.
+- Quote capture while listening: save a selected sentence or paragraph to sermon notes with source metadata.
+- Sermon note capture while listening: add the current audio position and text snippet to the active sermon.
+- Illustration capture while listening: save a teaching illustration candidate with source and rights notes.
+- Continue listening: resume the exact playlist item, paragraph, or verse range across devices after Supabase sync is ready.
+- Audio/text matching: store a stable content chunk ID so premium audio can line up with the reader without loading an entire book in the browser.
+
 ## Rights And Ministry Safety
 
 - Do not generate, store, or publish audio for copyrighted books without documented permission.
