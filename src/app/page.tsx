@@ -51,6 +51,7 @@ import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sampl
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
+import treasuryOfDavidReviewedPsalmsCommentary from "../../data/imports/treasury-of-david-reviewed-psalms-1-87-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
 import jfbReviewedBatch1Commentary from "../../data/imports/jfb-reviewed-batch-1-commentary.json";
@@ -644,6 +645,8 @@ type BibleCoverageSummary = {
   sermonPrepReadyBooks: number;
   averageScore: number;
   weakestBooks: BibleCoverageBook[];
+  strongestBooks: BibleCoverageBook[];
+  focusBooks: BibleCoverageBook[];
 };
 
 type CommentaryGuideProfile = {
@@ -2377,6 +2380,7 @@ const FAVORITE_PASSAGE_LIMIT = 24;
 const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
+const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -2387,6 +2391,7 @@ const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
 const ACTIVE_COMMENTARY_COLLECTIONS = [
   MATTHEW_HENRY_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_COMMENTARY_COLLECTION,
+  TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
@@ -2519,6 +2524,19 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     priority: 1,
   },
   {
+    author: "C. H. Spurgeon",
+    timePeriod: "1834-1892",
+    biography: "English Baptist pastor and preacher whose Treasury of David is especially valuable for Psalms, preaching warmth, devotional application, and sermon preparation.",
+    writingStyle: "Pastoral, devotional, illustrative, and preaching-oriented.",
+    strengths: ["Psalms", "Preaching", "Devotional application", "Illustrations", "Pastoral warmth"],
+    weaknesses: ["OCR excerpts should be spot-checked before quoting", "Not a technical original-language commentary"],
+    bestUse: "Use for Psalms after reading the KJV text, especially when preparing devotional teaching, sermon applications, and pastoral observations.",
+    doctrinalNotes: "Baptist historical resource. Public entries use reviewed excerpts from verified public-domain Library texts; spot-check OCR before print or slide quotation.",
+    sampleQuote: "Best used for Psalms devotional and preaching help while Scripture remains primary.",
+    bestFor: ["Devotions", "Preaching", "Teaching"],
+    priority: 2,
+  },
+  {
     author: "Albert Barnes",
     timePeriod: "1798-1870",
     biography: "American Presbyterian minister known for concise explanatory Bible notes.",
@@ -2529,7 +2547,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Helpful public-domain explanatory voice. Not all doctrinal conclusions are endorsed.",
     sampleQuote: "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 2,
+    priority: 3,
   },
   {
     author: "H. A. Ironside",
@@ -2542,7 +2560,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Use only reviewed source paths. Keep imported Ironside material secondary to Scripture.",
     sampleQuote: "Careful Bible teaching should explain the passage without moving Scripture out of the center.",
     bestFor: ["Preaching", "Teaching"],
-    priority: 3,
+    priority: 4,
   },
   {
     author: "Jamieson-Fausset-Brown",
@@ -2555,7 +2573,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Reviewed public batches only. Commentary remains secondary and collapsed by default.",
     sampleQuote: "Use after the KJV text and primary study helps.",
     bestFor: ["Historical background", "Teaching"],
-    priority: 4,
+    priority: 5,
   },
   {
     author: "Adam Clarke",
@@ -2568,7 +2586,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Methodist historical resource. Not all doctrine endorsed; use with discernment labels visible.",
     sampleQuote: "Use as a historical comparison with visible discernment labels; keep Scripture primary.",
     bestFor: ["Word studies", "Historical background"],
-    priority: 5,
+    priority: 6,
   },
   {
     author: "John Wesley",
@@ -2581,7 +2599,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Not all doctrine endorsed. Keep perspective labels visible and Scripture first.",
     sampleQuote: "Use as compact Methodist historical notes after the KJV text.",
     bestFor: ["Devotions", "Teaching"],
-    priority: 6,
+    priority: 7,
   },
   {
     author: "John Gill",
@@ -2594,7 +2612,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Sample-only until a stable original public-domain source is verified.",
     sampleQuote: "Baptist historical value; best used as a careful comparison voice.",
     bestFor: ["Historical background", "Teaching"],
-    priority: 7,
+    priority: 8,
   },
   {
     author: "William Kelly",
@@ -2607,7 +2625,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Historical Brethren perspective. Useful with discernment; Scripture and the KJV passage remain primary.",
     sampleQuote: "Use as a historical expository comparison, not as the first or controlling voice.",
     bestFor: ["Teaching", "Preaching", "Historical background"],
-    priority: 8,
+    priority: 9,
   },
   {
     author: "F. W. Grant",
@@ -2620,7 +2638,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Historical Brethren perspective. Use with discernment and keep commentary secondary to Scripture.",
     sampleQuote: "Best used as a careful comparison voice for Revelation, not a replacement for direct Bible study.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 9,
+    priority: 10,
   },
   {
     author: "Matthew Poole",
@@ -2633,7 +2651,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Do not import modern edited copies or unclear web text. Exact source and reuse terms are required.",
     sampleQuote: "Future use only after source, edition, and rights review.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 10,
+    priority: 11,
   },
   {
     author: "J. N. Darby",
@@ -2646,7 +2664,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Keep Darby material clearly labeled and secondary to Scripture. Do not import until source and edition metadata are clean.",
     sampleQuote: "Advanced historical comparison only; Scripture remains primary.",
     bestFor: ["Historical background", "Teaching"],
-    priority: 11,
+    priority: 12,
   },
   {
     author: "The Pulpit Commentary",
@@ -2659,7 +2677,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Do not expose unreviewed volume text publicly. Each volume needs source, edition, rights, and quality review.",
     sampleQuote: "Useful only after volume-level review because it is a large multi-author set.",
     bestFor: ["Preaching", "Teaching"],
-    priority: 12,
+    priority: 13,
   },
   {
     author: "The Biblical Illustrator",
@@ -2672,7 +2690,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Needs strong discernment labels and careful excerpt review before public import.",
     sampleQuote: "Use as a future illustration source only after volume-by-volume review.",
     bestFor: ["Preaching", "Teaching"],
-    priority: 13,
+    priority: 14,
   },
   {
     author: "Arno C. Gaebelein",
@@ -2685,7 +2703,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Not all doctrinal conclusions are endorsed. Keep prophecy material clearly labeled and secondary to Scripture.",
     sampleQuote: "Helpful for prophecy and Old Testament exposition when source and perspective notes are clear.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 14,
+    priority: 15,
   },
 ];
 
@@ -7919,6 +7937,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedBatch2Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
+  ...(treasuryOfDavidReviewedPsalmsCommentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
   ...(jfbReviewedBatch1Commentary as CommentaryEntry[]),
@@ -9632,6 +9651,7 @@ const CORE_COMMENTARY_AUTHORS = [
   "Adam Clarke",
   "John Wesley",
 ];
+const FOCUS_BIBLE_COVERAGE_BOOKS = ["Amos", "Romans", "Daniel", "Revelation", "John", "Isaiah", "Genesis", "Exodus", "Psalms"];
 const BIBLE_BOOK_DISPLAY_ALIASES: Record<string, string> = {
   "Solomon's Song": "Song of Solomon",
 };
@@ -20310,7 +20330,32 @@ function BibleCoverageDashboard({
         ))}
       </div>
 
-      <div className="mt-4 grid gap-3 xl:grid-cols-[0.9fr_1.1fr]">
+      <div className="mt-4 grid gap-3 xl:grid-cols-3">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex items-center gap-2 text-[var(--green)]">
+            <CheckCircle2 size={18} />
+            <h3 className="text-sm font-semibold text-[var(--ink)]">Strongest books now</h3>
+          </div>
+          <div className="mt-3 space-y-2">
+            {summary.strongestBooks.slice(0, 6).map((book) => (
+              <button
+                key={`strong-bible-coverage-${book.book}`}
+                className="w-full rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenBookIntroduction(book.book)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.score}%</p>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {book.commentaryAuthors.length} commentary voices · {book.commentaryChapters}/{book.totalChapters} chapters · {book.nextStep}
+                </p>
+              </button>
+            ))}
+          </div>
+        </article>
+
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex items-center gap-2 text-[var(--green)]">
             <BarChart3 size={18} />
@@ -20335,6 +20380,11 @@ function BibleCoverageDashboard({
                   Next action: {book.nextStep} · {book.commentaryChapters}/{book.totalChapters} commentary chapters
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
+                  {book.missingTools.slice(0, 3).map((tool) => (
+                    <span key={`weak-missing-tool-${book.book}-${tool}`} className="rounded-full bg-amber-50 px-2 py-1 text-[0.68rem] font-semibold text-amber-800">
+                      Missing {tool}
+                    </span>
+                  ))}
                   {book.missingCommentaryAuthors.slice(0, 3).map((author) => (
                     <span key={`weak-missing-author-${book.book}-${author}`} className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
                       {author.replace("Jamieson-Fausset-Brown", "JFB")}
@@ -20351,6 +20401,41 @@ function BibleCoverageDashboard({
           </div>
         </article>
 
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Sprint focus</p>
+              <h3 className="mt-1 text-sm font-semibold text-[var(--ink)]">Books to deepen first</h3>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{summary.focusBooks.length} books</span>
+          </div>
+          <div className="mt-3 grid gap-2">
+            {summary.focusBooks.map((book) => (
+              <button
+                key={`focus-bible-coverage-${book.book}`}
+                className="rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenBookIntroduction(book.book)}
+                type="button"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{book.score}%</p>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                  {book.commentaryAuthors.join(", ") || "No commentary yet"} · Next: {book.nextStep}
+                </p>
+                {book.missingTools.length > 0 && (
+                  <p className="mt-1 line-clamp-1 text-[0.7rem] font-semibold text-amber-800">
+                    Missing: {book.missingTools.slice(0, 4).join(", ")}{book.missingTools.length > 4 ? "..." : ""}
+                  </p>
+                )}
+              </button>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      <div className="mt-4">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
@@ -23536,6 +23621,14 @@ function buildBibleCoverageSummary({
       .slice()
       .sort((a, b) => a.score - b.score || bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book))
       .slice(0, 10),
+    strongestBooks: books
+      .slice()
+      .sort((a, b) => b.score - a.score || bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book))
+      .slice(0, 10),
+    focusBooks: FOCUS_BIBLE_COVERAGE_BOOKS.flatMap((focusBook) => {
+      const match = books.find((book) => book.book === focusBook);
+      return match ? [match] : [];
+    }),
   };
 }
 
