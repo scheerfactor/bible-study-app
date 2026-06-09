@@ -1403,6 +1403,14 @@ type ChapterResourceRecommendation = {
   warning?: string;
 };
 
+type BestChapterResources = {
+  commentary: ChapterResourceRecommendation | null;
+  devotional: ChapterResourceRecommendation | null;
+  studyBook: ChapterResourceRecommendation | null;
+  preaching: ChapterResourceRecommendation | null;
+  nextResource: ChapterResourceRecommendation | null;
+};
+
 type BookIntroduction = {
   book: string;
   overview: {
@@ -2719,19 +2727,19 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
 const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside", "kelly", "grant"];
 const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer", "kelly", "grant", "larkin", "darby", "gaebelein"];
 const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
-  spurgeon: 25,
-  ironside: 12,
-  moody: 12,
-  ryle: 10,
-  murray: 10,
-  bounds: 8,
-  torrey: 8,
-  meyer: 8,
-  kelly: 12,
-  grant: 8,
-  larkin: 6,
-  darby: 8,
-  gaebelein: 8,
+  spurgeon: 100,
+  ironside: 30,
+  moody: 50,
+  ryle: 75,
+  murray: 30,
+  bounds: 30,
+  torrey: 60,
+  meyer: 75,
+  kelly: 40,
+  grant: 20,
+  larkin: 20,
+  darby: 20,
+  gaebelein: 60,
 };
 
 const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
@@ -3573,7 +3581,7 @@ const READING_PATHS: ReadingPath[] = [
 
 const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history"];
 
-const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds"];
+const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds"];
 
 const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
   {
@@ -20901,6 +20909,7 @@ function AtAGlanceStudyPanel({
   dictionaryEntries,
   chapterThemes,
   relatedBooks,
+  bestResources,
   playlist,
   playlistTotalSeconds,
   playlistRemainingSeconds,
@@ -20949,6 +20958,7 @@ function AtAGlanceStudyPanel({
   dictionaryEntries: DictionaryEntry[];
   chapterThemes: StudyTheme[];
   relatedBooks: Array<{ title: string; slug?: string; note: string }>;
+  bestResources: BestChapterResources;
   playlist: BibleAudioPlaylist | null;
   playlistTotalSeconds: number;
   playlistRemainingSeconds: number;
@@ -21141,6 +21151,28 @@ function AtAGlanceStudyPanel({
             <p className="text-sm font-semibold text-[var(--green)]">Start with {recommendedCommentary}</p>
             <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{commentaryAuthors.length ? commentaryAuthors.slice(0, 5).join(", ") : "Commentary remains secondary to Scripture."}</p>
           </button>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="Best Resources" emptyText="Reviewed resource picks will appear as this chapter is connected.">
+          {([
+            ["Commentary", bestResources.commentary],
+            ["Devotional", bestResources.devotional],
+            ["Study Book", bestResources.studyBook],
+            ["Preaching", bestResources.preaching],
+            ["Next", bestResources.nextResource],
+          ] as Array<[string, ChapterResourceRecommendation | null]>).map(([label, resource]) => resource ? (
+            <button
+              key={`workspace-best-${label}-${resource.id}`}
+              className="w-full rounded-xl bg-white px-3 py-2 text-left disabled:opacity-70"
+              disabled={!resource.resourceSlug}
+              onClick={() => resource.resourceSlug && onOpenRelatedBook(resource.resourceSlug)}
+              type="button"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">{label}</p>
+              <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+              {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
+            </button>
+          ) : null)}
         </StudyWorkspaceCard>
 
         <StudyWorkspaceCard title="7. Related Books" emptyText="No related books linked yet.">
@@ -21653,6 +21685,7 @@ function BibleReader({
       note: resource.note,
     }))
     .slice(0, 6);
+  const workspaceBestResources = bestChapterResources(chapterResourceRecommendations, chapterCommentaryEntries);
   const studyTerms = chapterStudyTerms({
     book,
     chapter,
@@ -21984,6 +22017,7 @@ function BibleReader({
         dictionaryEntries={chapterDictionaryEntries}
         chapterThemes={activeThemes}
         relatedBooks={atAGlanceRelatedBooks}
+        bestResources={workspaceBestResources}
         playlist={activePlaylist}
         playlistTotalSeconds={activePlaylistSeconds}
         playlistRemainingSeconds={activePlaylistRemainingSeconds}
@@ -23316,6 +23350,38 @@ function relatedLibraryResourcesForPassage(recommendations: ChapterResourceRecom
       return resource ? { recommendation, resource } : null;
     })
     .filter((item): item is { recommendation: ChapterResourceRecommendation; resource: LibraryResource } => Boolean(item));
+}
+
+function bestChapterResources(recommendations: ChapterResourceRecommendation[], commentaryEntries: CommentaryEntry[]): BestChapterResources {
+  const ready = recommendations.filter((resource) => resource.status === "available" || Boolean(resource.resourceSlug));
+  const availableLibrary = ready.filter((resource) => resource.kind === "Library Resource");
+  const commentary =
+    ready.find((resource) => resource.kind === "Commentary") ??
+    (commentaryEntries[0]
+      ? {
+          id: `best-commentary-${commentaryEntries[0].id}`,
+          kind: "Commentary" as const,
+          title: commentaryEntries[0].resource_title,
+          author: commentaryEntries[0].author,
+          status: "available" as const,
+          note: "Best available reviewed commentary for this chapter. Read the KJV text first, then compare this entry.",
+          warning: commentaryGuideProfileFor(commentaryEntries[0].author)?.doctrinalNotes,
+        }
+      : null);
+  const devotional =
+    availableLibrary.find((resource) => /devotional|prayer|christian living|classic|spurgeon|bounds|murray|ryle|meyer/i.test(`${resource.title} ${resource.author ?? ""} ${resource.note}`)) ??
+    ready.find((resource) => resource.kind === "Dictionary" && resource.title.includes("Webster")) ??
+    null;
+  const studyBook =
+    ready.find((resource) => /survey|introduction|handbook|dictionary|topical|manners|geography|chronology|strong|tsk|cross/i.test(`${resource.kind} ${resource.title} ${resource.note}`)) ??
+    null;
+  const preaching =
+    availableLibrary.find((resource) => /preach|teach|sermon|illustration|spurgeon|moody|torrey|ironside/i.test(`${resource.title} ${resource.author ?? ""} ${resource.note}`)) ??
+    commentary ??
+    null;
+  const nextResource = ([commentary, devotional, studyBook, preaching, ...ready].find((resource): resource is ChapterResourceRecommendation => Boolean(resource)) ?? null);
+
+  return { commentary, devotional, studyBook, preaching, nextResource };
 }
 
 function commentaryGuideBestForGroups(profiles: CommentaryGuideProfile[] = COMMENTARY_GUIDE_PROFILES) {
@@ -34205,6 +34271,7 @@ function PassageGuideScreen({
     .slice(0, 6);
   const startHereCommentary = commentaryRecommendation.primary?.author ?? commentaryAuthors[0] ?? "No reviewed commentary yet";
   const startHereResources = recommendedResources.filter((resource) => resource.status === "available" || resource.resourceSlug).slice(0, 3);
+  const bestResources = bestChapterResources(recommendedResources, commentaryEntries);
   const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
   const teachingIllustrations = passageTeachingIllustrationPrompts({ passage, topWords, connections });
   const commentaryOrder = commentaryProfilesForEntries(commentaryEntries);
@@ -34225,6 +34292,7 @@ function PassageGuideScreen({
   const sections = [
     ["passage-scorecard", "Scorecard"],
     ["passage-start-here", "Start Here"],
+    ["passage-best-resources", "Best Resources"],
     ["passage-themes", "Themes"],
     ["passage-study-pack", "Study Pack"],
     ["passage-background", "Background"],
@@ -34397,6 +34465,47 @@ function PassageGuideScreen({
             <p className="mt-1 text-sm font-semibold text-[var(--green)]">{startHereResources.length || recommendedResources.length} ready</p>
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">Open only the best helps for this chapter.</p>
           </a>
+        </div>
+      </StudySection>
+
+      <StudySection id="passage-best-resources" title="Best Resources">
+        <p className="text-sm leading-6 text-[var(--muted)]">
+          A short reviewed path for this chapter so users do not have to sort through the full library first.
+        </p>
+        <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-5">
+          {([
+            ["Best Commentary", bestResources.commentary],
+            ["Best Devotional", bestResources.devotional],
+            ["Best Study Book", bestResources.studyBook],
+            ["Best Preaching Resource", bestResources.preaching],
+            ["Best Next Resource", bestResources.nextResource],
+          ] as Array<[string, ChapterResourceRecommendation | null]>).map(([label, resource]) => (
+            <article key={`passage-best-resource-${label}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+              {resource ? (
+                <>
+                  <p className="mt-2 text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                  {resource.author && <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{resource.author}</p>}
+                  <p className="mt-2 line-clamp-4 text-xs leading-5 text-[var(--muted)]">{resource.note}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">{resource.kind}</span>
+                    {resource.resourceSlug && (
+                      <button
+                        className="rounded-full bg-[var(--green)] px-3 py-1.5 text-xs font-semibold text-white"
+                        onClick={() => onOpenLibraryResource(resource.resourceSlug!)}
+                        type="button"
+                      >
+                        Open
+                      </button>
+                    )}
+                  </div>
+                  {resource.warning && <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{resource.warning}</p>}
+                </>
+              ) : (
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">No reviewed resource selected yet.</p>
+              )}
+            </article>
+          ))}
         </div>
       </StudySection>
 
