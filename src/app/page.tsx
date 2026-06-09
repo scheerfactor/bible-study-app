@@ -798,6 +798,7 @@ type LibraryProgress = {
   lineSpacing: number;
   readingWidth: LibraryReadingWidth;
   theme: LibraryReaderTheme;
+  readingGoalMinutes: number;
   bookmarks: number[];
   startedAt: string;
   updatedAt: string;
@@ -825,7 +826,7 @@ type ListeningProgress = {
 
 type ListeningProgressState = Record<string, ListeningProgress>;
 
-type LibraryAnnotationType = "highlight" | "underline" | "note" | "bookmark";
+type LibraryAnnotationType = "highlight" | "underline" | "note" | "bookmark" | "journal";
 
 type LibraryAnnotation = {
   id: string;
@@ -3453,7 +3454,7 @@ const READING_PATHS: ReadingPath[] = [
   },
   {
     id: "preacher",
-    title: "Preacher",
+    title: "Preaching",
     shortLabel: "Lesson prep",
     description: "Resources for Sunday school teachers and preachers: illustration, exposition, prayer, and practical lesson building.",
     biblePassages: ["2 Timothy 4", "Acts 20", "John 3"],
@@ -3461,6 +3462,17 @@ const READING_PATHS: ReadingPath[] = [
     collectionIds: ["preaching-teaching", "commentary", "prayer"],
     authorIds: ["spurgeon", "bounds", "moody"],
     repeatOptions: ["Repeat during weekly prep", "Loop commentary once", "Stop after selected passage"],
+  },
+  {
+    id: "missions",
+    title: "Missions",
+    shortLabel: "Burden and biography",
+    description: "Missionary biography, Gospel burden, prayer, and Great Commission passages for church and personal reading.",
+    biblePassages: ["Matthew 28", "Acts 13", "Romans 10"],
+    resourceTerms: ["mission", "missionary", "carey", "judson", "hudson taylor", "paton"],
+    collectionIds: ["missions", "evangelism", "prayer"],
+    authorIds: ["taylor", "moody", "spurgeon"],
+    repeatOptions: ["Read one biography at a time", "Listen during work", "Save sermon illustrations"],
   },
   {
     id: "baptist-history",
@@ -3517,9 +3529,31 @@ const READING_PATHS: ReadingPath[] = [
     authorIds: ["moody", "torrey", "matthew-henry"],
     repeatOptions: ["Repeat chapter", "Stop after Romans 8", "Add notes between chapters"],
   },
+  {
+    id: "spurgeon-starter",
+    title: "Spurgeon Starter",
+    shortLabel: "Start with Spurgeon",
+    description: "A guided entry into Spurgeon for grace, evangelism, preaching, devotional reading, and Psalms study.",
+    biblePassages: ["John 3", "Romans 5", "Psalms 23"],
+    resourceTerms: ["spurgeon", "all of grace", "morning and evening", "treasury of david", "soul winner"],
+    collectionIds: ["spurgeon", "preaching-teaching", "evangelism"],
+    authorIds: ["spurgeon"],
+    repeatOptions: ["Start with All of Grace", "Use Treasury of David with Psalms", "Capture sermon quotes"],
+  },
+  {
+    id: "ironside-starter",
+    title: "Ironside Starter",
+    shortLabel: "Expository study",
+    description: "A careful starter path for H. A. Ironside where source and edition review is clear.",
+    biblePassages: ["John 3", "Romans 8", "Revelation 1"],
+    resourceTerms: ["ironside", "expository", "lectures", "addresses"],
+    collectionIds: ["ironside", "commentary", "preaching-teaching"],
+    authorIds: ["ironside"],
+    repeatOptions: ["Read one chapter section", "Compare with Scripture first", "Use edition notes carefully"],
+  },
 ];
 
-const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "evangelism", "bible-doctrine", "baptist-history"];
+const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds"];
 
@@ -11498,6 +11532,7 @@ function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title"
     lineSpacing: 1.65,
     readingWidth: "comfortable",
     theme: "sepia",
+    readingGoalMinutes: 20,
     bookmarks: [],
     startedAt: now,
     updatedAt: now,
@@ -11540,6 +11575,7 @@ function normalizeLibraryProgress(progress: Partial<LibraryProgress> & Pick<Libr
     lineSpacing: Math.min(2.2, Math.max(1.35, Number(progress.lineSpacing ?? fallback.lineSpacing))),
     readingWidth: progress.readingWidth ?? fallback.readingWidth,
     theme: progress.theme ?? fallback.theme,
+    readingGoalMinutes: Math.min(180, Math.max(5, Number(progress.readingGoalMinutes ?? fallback.readingGoalMinutes))),
     bookmarks: Array.isArray(progress.bookmarks) ? progress.bookmarks : [],
     startedAt: progress.startedAt ?? fallback.startedAt,
     updatedAt: progress.updatedAt ?? fallback.updatedAt,
@@ -15237,6 +15273,7 @@ export default function Home() {
 
     saveLibraryProgressUpdate(slug, (current) => ({
       ...current,
+      progress: current.progress > 0 ? current.progress : 0.1,
       fontSize: current.fontSize || libraryFontSize,
       title: current.title,
       author: current.author,
@@ -15371,7 +15408,7 @@ export default function Home() {
       selectedText ||
       (type === "bookmark" ? bookmarkName || `Reader location at ${progress}%` : resource.title);
 
-    if (type === "note" && !note) {
+    if ((type === "note" || type === "journal") && !note) {
       setSyncMessage("Write a reader note first, then save it.");
       return;
     }
@@ -15382,7 +15419,7 @@ export default function Home() {
       resourceTitle: resource.title,
       type,
       text,
-      note: type === "note" ? note : type === "bookmark" ? bookmarkName || `Bookmark ${progress}%` : undefined,
+      note: type === "note" || type === "journal" ? note : type === "bookmark" ? bookmarkName || `Bookmark ${progress}%` : undefined,
       location: progress,
       createdAt: new Date().toISOString(),
     };
@@ -15397,7 +15434,7 @@ export default function Home() {
     });
 
     if (type === "bookmark") bookmarkLibraryLocation();
-    if (type === "note") setLibraryNoteDraft("");
+    if (type === "note" || type === "journal") setLibraryNoteDraft("");
     if (type === "bookmark") setLibraryBookmarkNameDraft("");
     setSyncMessage(`${annotationLabel(type)} saved for ${resource.title}.`);
   }
@@ -15448,7 +15485,7 @@ export default function Home() {
     node.scrollTop = (node.scrollHeight - node.clientHeight) * (progress / 100);
   }
 
-  function updateLibraryReaderSettings(settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) {
+  function updateLibraryReaderSettings(settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme" | "readingGoalMinutes">>) {
     const resource = activeLibraryResource;
     if (!resource) return;
     saveLibraryProgressUpdate(resource.slug, (current) => ({
@@ -27101,6 +27138,7 @@ function annotationLabel(type: LibraryAnnotationType) {
   if (type === "highlight") return "Highlight";
   if (type === "underline") return "Underline";
   if (type === "note") return "Note";
+  if (type === "journal") return "Journal Note";
   return "Bookmark";
 }
 
@@ -27108,6 +27146,7 @@ function annotationTone(type: LibraryAnnotationType) {
   if (type === "highlight") return "border-amber-200 bg-amber-50 text-amber-900";
   if (type === "underline") return "border-sky-200 bg-sky-50 text-sky-900";
   if (type === "note") return "border-emerald-200 bg-emerald-50 text-emerald-900";
+  if (type === "journal") return "border-violet-200 bg-violet-50 text-violet-900";
   return "border-stone-200 bg-white text-[var(--ink)]";
 }
 
@@ -27686,7 +27725,7 @@ function LibraryScreen({
   onMoveListeningQueueItem: (slug: string, direction: -1 | 1) => void;
   onScrollReader: () => void;
   onFontSizeChange: (size: number) => void;
-  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
+  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme" | "readingGoalMinutes">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   onNoteDraftChange: (value: string) => void;
@@ -32351,7 +32390,7 @@ function LibraryReader({
   onHome: () => void;
   onScroll: () => void;
   onFontSizeChange: (size: number) => void;
-  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme">>) => void;
+  onReaderSettingsChange: (settings: Partial<Pick<LibraryProgress, "lineSpacing" | "readingWidth" | "theme" | "readingGoalMinutes">>) => void;
   onBookmarkLocation: () => void;
   onJumpBookmark: (progress: number) => void;
   onNoteDraftChange: (value: string) => void;
@@ -32401,10 +32440,16 @@ function LibraryReader({
   const remainingMinutes = estimatedMinutes ? Math.max(1, Math.round(estimatedMinutes * (1 - Math.min(100, activeProgress.progress) / 100))) : null;
   const readingFinished = completed || activeProgress.progress >= 100;
   const listeningValue = listeningProgress?.progress ?? speechState.progress;
+  const estimatedListeningSeconds = listeningSecondsFromWordCount(resource.word_count ?? 1200, speechState.rate || 1);
+  const remainingListeningSeconds = Math.max(0, Math.round(estimatedListeningSeconds * (1 - Math.min(100, listeningValue) / 100)));
+  const readingGoalMinutes = activeProgress.readingGoalMinutes || 20;
+  const readMinutesCompleted = estimatedMinutes ? Math.round(estimatedMinutes * (Math.min(100, activeProgress.progress) / 100)) : 0;
+  const readingGoalPercent = Math.min(100, estimatedMinutes ? (readMinutesCompleted / readingGoalMinutes) * 100 : activeProgress.progress);
   const readerChunks = useMemo(() => chunkSpeechText(text), [text]);
   const activeChunkIndex = speechActive && readerChunks.length
     ? Math.min(readerChunks.length - 1, Math.max(0, speechState.currentChunkIndex ?? Math.floor((listeningValue / 100) * readerChunks.length)))
     : null;
+  const currentParagraphNumber = activeChunkIndex === null ? Math.min(readerChunks.length, Math.max(1, Math.round((activeProgress.progress / 100) * readerChunks.length))) : activeChunkIndex + 1;
   const listeningMarkers = useMemo(() => {
     if (!readerChunks.length) return [] as Array<{ label: string; progress: number }>;
     const markerCount = Math.min(6, Math.max(1, Math.ceil(readerChunks.length / 35)));
@@ -32457,6 +32502,42 @@ function LibraryReader({
             >
               {primaryCollectionForResource(resource).title}
             </button>
+          </div>
+        </div>
+
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-5">
+          <StatusCard label="Estimated reading" status={estimatedMinutes ? `${estimatedMinutes} min total` : "Calculating"} good />
+          <StatusCard label="Time remaining" status={remainingMinutes && !readingFinished ? `${remainingMinutes} min` : readingFinished ? "Finished" : "Ready"} good />
+          <StatusCard label="Estimated listening" status={formatListeningDuration(estimatedListeningSeconds)} good />
+          <StatusCard label="Continue listening" status={listeningValue > 0 ? `${formatPercent(listeningValue)} saved` : "Ready"} good />
+          <StatusCard label="Reading streak" status="Tracked from Library activity" good />
+        </div>
+
+        <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--ink)]">Reading goal</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                {readMinutesCompleted} of {readingGoalMinutes} minutes today · paragraph {currentParagraphNumber || 1} of {readerChunks.length || 1}
+              </p>
+            </div>
+            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+              Goal
+              <select
+                className="bg-transparent text-[var(--ink)] outline-none"
+                value={readingGoalMinutes}
+                onChange={(event) => onReaderSettingsChange({ readingGoalMinutes: Number(event.target.value) })}
+              >
+                <option value={10}>10 min</option>
+                <option value={20}>20 min</option>
+                <option value={30}>30 min</option>
+                <option value={45}>45 min</option>
+                <option value={60}>60 min</option>
+              </select>
+            </label>
+          </div>
+          <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
+            <div className="h-2 rounded-full bg-[var(--gold)]" style={{ width: formatPercent(readingGoalPercent) }} />
           </div>
         </div>
 
@@ -32663,6 +32744,14 @@ function LibraryReader({
             Add Sermon Note
           </button>
           <button
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+            onClick={() => onSaveAnnotation("journal")}
+            type="button"
+          >
+            <NotebookPen size={16} />
+            Add Journal Note
+          </button>
+          <button
             className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
             onClick={() => onSaveAnnotation("bookmark")}
             type="button"
@@ -32718,14 +32807,25 @@ function LibraryReader({
           onApplyVoiceProfile={onApplyVoiceProfile}
         />
         <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-          <div className="grid gap-3 md:grid-cols-4">
-            <StatusCard label="Continue listening" status={listeningValue > 0 ? `${formatPercent(listeningValue)} saved` : "Ready"} good />
-            <StatusCard label="Current item" status={activeChunkIndex === null ? "Not playing" : `Paragraph ${activeChunkIndex + 1} of ${readerChunks.length}`} good={activeChunkIndex !== null} />
-            <StatusCard label="Next item" status={activeChunkIndex === null ? "Press Listen" : activeChunkIndex + 1 < readerChunks.length ? `Paragraph ${activeChunkIndex + 2}` : "End of resource"} good />
-            <StatusCard label="Follow text" status={speechActive ? "On" : "Prepared"} good />
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-[var(--green)]">Audiobook Mode</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                Browser voice now, future human or premium voice later. Follow-along highlights the current paragraph while listening.
+              </p>
+            </div>
+            <span className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]">
+              {formatListeningDuration(remainingListeningSeconds)} left
+            </span>
+          </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-4">
+            <StatusCard label="Current chapter" status={activeChunkIndex === null ? `Part ${currentParagraphNumber || 1}` : `Part ${activeChunkIndex + 1}`} good />
+            <StatusCard label="Next chapter" status={activeChunkIndex !== null && activeChunkIndex + 1 < readerChunks.length ? `Part ${activeChunkIndex + 2}` : "End of resource"} good />
+            <StatusCard label="Bookmarks" status={`${activeProgress.bookmarks.length} saved`} good />
+            <StatusCard label="Notes while listening" status={`${annotations.filter((annotation) => annotation.type === "note" || annotation.type === "journal").length} saved`} good />
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter markers</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Chapter table of contents</span>
             {listeningMarkers.map((marker) => (
               <button
                 key={`listening-marker-${resource.slug}-${marker.label}-${marker.progress}`}
@@ -32736,6 +32836,12 @@ function LibraryReader({
                 {marker.label} · {marker.progress}%
               </button>
             ))}
+          </div>
+          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Follow Along Reading</p>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Paragraph highlighting is active during listening. Sentence tracking is prepared for a future text/audio alignment pass. Use the part buttons above to jump to a paragraph.
+            </p>
           </div>
         </div>
         <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
