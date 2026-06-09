@@ -1,5 +1,41 @@
 # Release Notes
 
+## Private Beta Ready - Pre-Tester QA (June 9, 2026)
+
+Status: Private Beta Ready for 3-5 invited testers.
+
+This pass focused on the live production app only. The goal was to confirm that a new tester can open the site, find the main study workflows, and move through Bible reading, study, library, prayer, journal, sermons, presentations, and feedback without hitting broken screens.
+
+## Verified In Production
+
+- Today welcome flow loads cleanly on desktop and 390px mobile.
+- Study Amos opens the Amos 1-9 Study Path with reading, listening, sermon, journal, playlist, and export actions.
+- Study John / Start Reading opens John 3 and John 3:16 correctly.
+- Bible Reader shows Quick Navigation, Passage Guide, Study Workspace 2.0, Word Connection Mode, Webster/Strong's study signals, favorites, recent passages, and markers.
+- Library search works by author/resource, including Spurgeon search and author matches.
+- Library opens real resources with Read, Listen, Add to Playlist, reading/listening estimates, quality labels, related passages, related themes, and related books.
+- Commentary Explorer opens with 4,099 public commentary entries and no console errors.
+- Prayer, Journal, Notes, Sermons, Presentations, Settings, and Feedback all open without console errors.
+- Feedback form includes beta categories for bug reports, suggestions, resource issues, commentary issues, audio issues, and study workflow issues.
+- Mobile 390px QA passed for Library, Commentary, Prayer, Journal, Sermons, Presentations, and Today.
+- No horizontal overflow was found in the tested desktop or mobile views.
+- Local signed-out beta state survived refresh in the production browser.
+
+## Current Content Totals Shown In App
+
+- 924 public resource cards / grouped works.
+- 1,079 verified public-domain files.
+- 334 authors.
+- 4,099 public commentary entries.
+- 13 dictionary / Bible help resources.
+
+## Beta Notes
+
+- Browser/device speech varies. The Listen controls are visible and production handles unavailable playback with a clear message, but testers should confirm actual audio on their own Chrome, Safari, iPhone, and iPad devices.
+- The in-app QA browser cannot complete native downloads, so testers should confirm export downloads in their normal browser.
+- Signed-out data remains local to the device/browser. Supabase sync status is shown, but beta testers should still export important notes.
+- TSK and Strong's are still reviewed starter datasets, not complete imports.
+
 ## Final Beta Depth And QA Sprint
 
 This release focuses on private beta depth: stronger commentary coverage, more Bible tool starter data, clearer tester docs, and listening QA.
