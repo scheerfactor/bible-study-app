@@ -6,16 +6,20 @@ import { ChevronLeft, Clipboard, MessageSquareText, Send } from "lucide-react";
 import { useMemo, useState } from "react";
 
 const categories = [
-  "General",
+  "Bug report",
+  "Suggestion",
+  "Resource issue",
+  "Commentary issue",
+  "Audio issue",
+  "Study workflow issue",
   "Bible Reader",
   "Study Drawer",
+  "Passage Guide",
   "Library",
-  "Listening",
-  "Commentary",
   "Search",
   "Mobile Layout",
-  "Bug",
-  "Feature Request",
+  "Sermons / Presentations",
+  "Other",
 ];
 
 export default function FeedbackPage() {
@@ -95,6 +99,22 @@ export default function FeedbackPage() {
           <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
             Send a short note about what you were viewing and what helped, confused you, or did not work.
           </p>
+          <div className="mt-4 grid gap-2 sm:grid-cols-3">
+            {["Bug report", "Resource issue", "Audio issue"].map((item) => (
+              <button
+                key={`feedback-shortcut-${item}`}
+                className={`rounded-2xl border px-3 py-2 text-left text-xs font-semibold ${
+                  category === item
+                    ? "border-[var(--green)] bg-[var(--green)] text-white"
+                    : "border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"
+                }`}
+                onClick={() => setCategory(item)}
+                type="button"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
         </section>
 
         <form className="mt-4 space-y-4" onSubmit={(event) => event.preventDefault()}>

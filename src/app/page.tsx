@@ -17052,6 +17052,18 @@ export default function Home() {
 	                  setTab("bible");
 	                  setStudyTab("commentary");
 	                }}
+	                onStudyAmos={() => {
+	                  goToVerse("Amos", 1, 1);
+	                  setTab("amosStudyPath");
+	                }}
+	                onStudyJohn={() => {
+	                  goToVerse("John", 3, 16);
+	                  setTab("passageGuide");
+	                }}
+	                onStudyRomans={() => {
+	                  goToVerse("Romans", 8, 1);
+	                  setTab("passageGuide");
+	                }}
 	              />
             )}
 
@@ -17839,6 +17851,9 @@ function TodayScreen({
   onOpenStudyPlaylist,
   onOpenSermonResume,
   onOpenCommentaryResume,
+  onStudyAmos,
+  onStudyJohn,
+  onStudyRomans,
 }: {
   book: string;
   chapter: number;
@@ -17874,6 +17889,9 @@ function TodayScreen({
   onOpenStudyPlaylist: () => void;
   onOpenSermonResume: () => void;
   onOpenCommentaryResume: () => void;
+  onStudyAmos: () => void;
+  onStudyJohn: () => void;
+  onStudyRomans: () => void;
 }) {
   const [memoryMode, setMemoryMode] = useState<"repeat" | "hide" | "letters">("repeat");
   const memoryProgress = memoryItem?.progress ?? 0;
@@ -17881,6 +17899,8 @@ function TodayScreen({
   const prayerFocus = prayerFocusEntries[0] ?? null;
   const playlistCompleted = studyPlaylist?.completedItemIds?.length ?? 0;
   const playlistTotal = studyPlaylist?.items.length ?? 0;
+  const currentSermon = smartResumeItems.find((item) => item.label === "Current Sermon");
+  const currentJournal = smartResumeItems.find((item) => item.label === "Current Journal");
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -17892,18 +17912,88 @@ function TodayScreen({
               Daily Growth Dashboard
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-              One clean flow for Bible reading, prayer, journaling, memory, reading plans, and library study.
+              Start with Scripture, then continue the next study, sermon, journal, or reading step without hunting through the app.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:justify-end">
+          <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-end">
             <DailyAction label="Read" icon={<BookOpen size={15} />} onClick={onContinue} primary />
             <DailyAction label="Listen" icon={<Headphones size={15} />} onClick={onListen} />
+            <DailyAction label="Study" icon={<Brain size={15} />} onClick={onOpenChapterAnalysis} />
             <DailyAction label="Journal" icon={<NotebookPen size={15} />} onClick={onCreateJournal} />
-            <DailyAction label="Pray" icon={<MessageSquareText size={15} />} onClick={onOpenPrayer} />
-            <DailyAction label="Memorize" icon={<Brain size={15} />} onClick={() => onRepeatMemory(selectedVerse.ref, Math.min(100, memoryProgress + 25))} />
-            <DailyAction label="Continue" icon={<Library size={15} />} onClick={onOpenLibrary} />
           </div>
         </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Welcome walkthrough</p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">First time here?</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+              Try one simple path: open the Bible, study a prepared passage, listen while you work, or start a trusted book.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <QuickStartButton label="Study Amos" detail="Teaching prep" onClick={onStudyAmos} primary />
+            <QuickStartButton label="Study John" detail="John 3 guide" onClick={onStudyJohn} />
+            <QuickStartButton label="Study Romans" detail="Romans 8 guide" onClick={onStudyRomans} />
+            <QuickStartButton label="Start Reading" detail={`${book} ${chapter}`} onClick={onContinue} />
+            <QuickStartButton label="Start Listening" detail="Current chapter" onClick={onListen} />
+            <QuickStartButton label="Open Library" detail="Trusted books" onClick={onOpenLibrary} />
+          </div>
+        </div>
+        <div className="mt-5 grid gap-3 md:grid-cols-4">
+          {[
+            ["1", "Read Scripture", `Begin in ${book} ${chapter} with the KJV text.`],
+            ["2", "Study the passage", "Use key words, cross references, commentary, and background."],
+            ["3", "Capture response", "Send a verse to notes, prayer, journal, memory, or sermon prep."],
+            ["4", "Teach or continue", "Export study notes, build a sermon, or keep reading."],
+          ].map(([step, title, detail]) => (
+            <article key={`welcome-step-${step}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-semibold text-[var(--green)]">{step}</span>
+              <p className="mt-3 text-sm font-semibold text-[var(--ink)]">{title}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-3 md:grid-cols-5">
+        <BetaResumeCard
+          icon={<BookOpen size={17} />}
+          label="Continue Reading"
+          title={`${book} ${chapter}`}
+          detail={`${chapterAnalysis.stats.verses} verses · ${chapterAnalysis.stats.words} words`}
+          onClick={onContinue}
+        />
+        <BetaResumeCard
+          icon={<Headphones size={17} />}
+          label="Continue Listening"
+          title={`${book} ${chapter}`}
+          detail="Listen to the current chapter."
+          onClick={onListen}
+        />
+        <BetaResumeCard
+          icon={<Brain size={17} />}
+          label="Continue Study"
+          title={studyPlaylist?.name ?? `${book} ${chapter} study`}
+          detail={studyPlaylist ? `${playlistCompleted}/${playlistTotal} playlist items complete` : "Open the guided study workflow."}
+          onClick={studyPlaylist ? onOpenStudyPlaylist : onOpenChapterAnalysis}
+        />
+        <BetaResumeCard
+          icon={<Clipboard size={17} />}
+          label="Continue Sermon"
+          title={currentSermon?.title ?? "Sermon Workspace"}
+          detail={currentSermon?.detail ?? "Resume or create a lesson draft."}
+          onClick={onOpenSermonResume}
+        />
+        <BetaResumeCard
+          icon={<NotebookPen size={17} />}
+          label="Continue Journal"
+          title={currentJournal?.title ?? "Scripture Journal"}
+          detail={currentJournal?.detail ?? "Resume or start today's entry."}
+          onClick={onOpenJournal}
+        />
       </section>
 
       <section className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
@@ -18247,6 +18337,62 @@ function DailyAction({
     >
       {icon}
       {label}
+    </button>
+  );
+}
+
+function QuickStartButton({
+  label,
+  detail,
+  primary,
+  onClick,
+}: {
+  label: string;
+  detail: string;
+  primary?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className={`min-w-[9.5rem] rounded-2xl border px-4 py-3 text-left shadow-sm transition hover:-translate-y-0.5 ${
+        primary
+          ? "border-[var(--green)] bg-[var(--green)] text-white"
+          : "border-[var(--line)] bg-[var(--paper)] text-[var(--ink)] hover:border-[var(--gold)]"
+      }`}
+      onClick={onClick}
+      type="button"
+    >
+      <span className={`block text-sm font-semibold ${primary ? "text-white" : "text-[var(--ink)]"}`}>{label}</span>
+      <span className={`mt-1 block text-xs font-semibold ${primary ? "text-white/75" : "text-[var(--muted)]"}`}>{detail}</span>
+    </button>
+  );
+}
+
+function BetaResumeCard({
+  icon,
+  label,
+  title,
+  detail,
+  onClick,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  title: string;
+  detail: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className="min-h-36 rounded-3xl border border-[var(--line)] bg-white p-4 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--gold)] hover:shadow-md"
+      onClick={onClick}
+      type="button"
+    >
+      <div className="flex items-center gap-2 text-[var(--green)]">
+        {icon}
+        <span className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</span>
+      </div>
+      <p className="mt-3 line-clamp-2 text-base font-semibold leading-6 text-[var(--ink)]">{title}</p>
+      <p className="mt-2 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{detail}</p>
     </button>
   );
 }
@@ -33758,6 +33904,7 @@ function LibraryResourceCard({
   const audienceLabels = libraryAudienceLabels(resource);
   const displayTitle = resource.work_title ?? resource.title;
   const editionCount = resource.edition_count ?? resource.edition_group?.length ?? 1;
+  const qualityLabels = resourceQualityLabels(resource).slice(0, 2);
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
@@ -33815,6 +33962,18 @@ function LibraryResourceCard({
         </div>
         <p className="mt-3 line-clamp-2 text-sm leading-6 text-[var(--scripture-ink)]">{resource.description}</p>
         <ResourceBadgeRow labels={resource.resource_labels.slice(0, 3)} warnings={resource.resource_warnings.slice(0, 2)} compact />
+        {qualityLabels.length > 0 && (
+          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+            <p className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Text quality</p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {qualityLabels.map((label) => (
+                <span key={`resource-card-quality-${resource.slug}-${label}`} className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${resourceQualityLabelClass(label)}`}>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="mt-4 space-y-2">
           <div>
             <div className="flex items-center justify-between text-xs font-semibold text-[var(--muted)]">
