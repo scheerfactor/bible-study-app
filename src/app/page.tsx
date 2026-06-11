@@ -151,11 +151,34 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager" | "storage" | "audio" | "ocrQueue";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
+type StoragePlanningRow = {
+  id: string;
+  label: string;
+  count: number;
+  currentBytes: number;
+  projectedBytes: number;
+  monthlyGrowthBytes: number;
+  monthlyCost: number;
+  note: string;
+};
+type PremiumAudioProviderPlan = {
+  id: string;
+  name: string;
+  quality: string;
+  cost: string;
+  costPerGeneratedHour: number;
+  latency: string;
+  audiobookSuitability: string;
+  bibleReadingSuitability: string;
+  estimatedMonthlyCost: string;
+  bestUse: string;
+  caution: string;
+};
 type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family" | "Friends" | "Special Requests";
 type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
 type PrayerRotation = "Daily" | "Weekly" | "Twice Weekly" | "Every Day";
@@ -29210,7 +29233,7 @@ function LibraryScreen({
         </section>
       )}
 
-      {showAdminImport && <LibraryAcquisitionCenter signedIn={signedIn} resources={resources} onClose={() => {
+      {showAdminImport && <LibraryAcquisitionCenter signedIn={signedIn} resources={allResources} commentaryEntries={commentaryEntries} onClose={() => {
         window.history.replaceState(null, "", window.location.pathname + window.location.search);
         setShowAdminImport(false);
       }} />}
@@ -30033,6 +30056,375 @@ function MediaProgress({ label, value }: { label: string; value: number }) {
   );
 }
 
+const STORAGE_PLANNING_COST_PER_GB_MONTH = 0.025;
+const ESTIMATED_COVER_BYTES = 220 * 1024;
+const ESTIMATED_AUDIOBOOK_BYTES_PER_MINUTE = 950 * 1024;
+const ESTIMATED_SERMON_AUDIO_BYTES = 38 * 1024 * 1024;
+const ESTIMATED_PRESENTATION_MEDIA_BYTES = 450 * 1024;
+const ESTIMATED_VIDEO_BYTES = 650 * 1024 * 1024;
+const ESTIMATED_AUDIO_BYTES_PER_HOUR = ESTIMATED_AUDIOBOOK_BYTES_PER_MINUTE * 60;
+const ESTIMATED_AUDIO_BANDWIDTH_PER_GB = 0.09;
+const PREMIUM_AUDIO_LISTENING_HOURS_PER_USER = 6;
+const PREMIUM_AUDIO_GENERATION_SHARE = 0.2;
+
+const PREMIUM_AUDIO_PROVIDER_PLANS: PremiumAudioProviderPlan[] = [
+  {
+    id: "browser-speech",
+    name: "Browser Speech",
+    quality: "Fair to good",
+    cost: "No API cost",
+    costPerGeneratedHour: 0,
+    latency: "Instant on device",
+    audiobookSuitability: "Useful for beta and personal listening",
+    bibleReadingSuitability: "Good enough for daily reading when voices are acceptable",
+    estimatedMonthlyCost: "$0 for API usage",
+    bestUse: "Default free listening, beta testing, and offline-ish device behavior.",
+    caution: "Voice quality varies by browser and device.",
+  },
+  {
+    id: "apple-voices",
+    name: "Apple Voices",
+    quality: "Good to excellent on Apple devices",
+    cost: "No API cost",
+    costPerGeneratedHour: 0,
+    latency: "Instant on device",
+    audiobookSuitability: "Strong for iPhone, iPad, and Mac users",
+    bibleReadingSuitability: "Strong Scripture reading fallback for Apple users",
+    estimatedMonthlyCost: "$0 for API usage",
+    bestUse: "Best free near-term experience for Apple users.",
+    caution: "Not consistent on Windows, Android, or non-Safari browsers.",
+  },
+  {
+    id: "openai-tts",
+    name: "OpenAI TTS",
+    quality: "High",
+    cost: "Planning estimate: about $0.90/generated hour",
+    costPerGeneratedHour: 0.9,
+    latency: "Low for generated clips; streaming integration later",
+    audiobookSuitability: "Promising for polished chapters and short resources",
+    bibleReadingSuitability: "Promising for chapter/range reading after licensing review",
+    estimatedMonthlyCost: "Depends on generated hours and cache policy",
+    bestUse: "Premium voice mode, Scripture samples, devotionals, and sermon prep clips.",
+    caution: "Do not generate licensed audio Bible replacements without rights review.",
+  },
+  {
+    id: "elevenlabs",
+    name: "ElevenLabs",
+    quality: "Very high",
+    cost: "Planning estimate: about $3.60/generated hour",
+    costPerGeneratedHour: 3.6,
+    latency: "Low; voice settings and previews use credits",
+    audiobookSuitability: "Strong for premium audiobook-style narration",
+    bibleReadingSuitability: "Strong if voice rights and Scripture usage are clear",
+    estimatedMonthlyCost: "Higher cost; best for paid tier testing",
+    bestUse: "Flagship voices, premium devotional audio, and carefully selected audiobooks.",
+    caution: "Voice cloning, commercial license, and credit limits require careful review.",
+  },
+  {
+    id: "cartesia",
+    name: "Cartesia",
+    quality: "High",
+    cost: "Planning estimate: about $1.80/generated hour",
+    costPerGeneratedHour: 1.8,
+    latency: "Designed for very low latency",
+    audiobookSuitability: "Good candidate for long-form once pricing is verified",
+    bibleReadingSuitability: "Good candidate for responsive chapter reading",
+    estimatedMonthlyCost: "Needs current credit-to-minute verification",
+    bestUse: "Fast premium listening and possible live follow-along reading.",
+    caution: "Credit model should be verified before budgeting.",
+  },
+  {
+    id: "playht",
+    name: "PlayHT",
+    quality: "High",
+    cost: "Planning estimate: plan-based",
+    costPerGeneratedHour: 2.4,
+    latency: "Low to moderate depending on workflow",
+    audiobookSuitability: "Possible audiobook candidate after plan review",
+    bibleReadingSuitability: "Useful if long-form generation terms fit",
+    estimatedMonthlyCost: "Needs current plan verification",
+    bestUse: "Alternative premium provider if pricing and voice terms fit.",
+    caution: "Plan limits, commercial terms, and long-form suitability need review.",
+  },
+  {
+    id: "human-narration",
+    name: "Human Narration",
+    quality: "Best when well recorded",
+    cost: "Highest upfront cost",
+    costPerGeneratedHour: 120,
+    latency: "Slow production; instant playback after upload",
+    audiobookSuitability: "Best for flagship books and owned sermon audio",
+    bibleReadingSuitability: "Best for licensed or owned recordings",
+    estimatedMonthlyCost: "Storage and bandwidth after production",
+    bestUse: "Flagship works, sermons, and paid/licensed audiobook projects.",
+    caution: "Requires narrator rights, editing, mastering, and storage.",
+  },
+];
+
+const PREMIUM_AUDIO_USER_SCENARIOS = [100, 500, 1000, 5000];
+
+function estimatedResourceTextBytes(resource: LibraryResource) {
+  if (resource.file_size_bytes && resource.file_size_bytes > 0) return resource.file_size_bytes;
+  if (resource.word_count && resource.word_count > 0) return resource.word_count * 6;
+  return 0;
+}
+
+function estimatedCommentaryBytes(entries: CommentaryEntry[]) {
+  return entries.reduce((total, entry) => total + entry.entry_text.length * 2 + 450, 0);
+}
+
+function formatStorageBytes(bytes: number) {
+  if (!Number.isFinite(bytes) || bytes <= 0) return "0 MB";
+  const units = ["B", "KB", "MB", "GB", "TB"];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+  const precision = value >= 100 || unitIndex <= 1 ? 0 : value >= 10 ? 1 : 2;
+  return `${value.toFixed(precision)} ${units[unitIndex]}`;
+}
+
+function estimateMonthlyStorageCost(bytes: number) {
+  return (bytes / 1024 / 1024 / 1024) * STORAGE_PLANNING_COST_PER_GB_MONTH;
+}
+
+function formatStorageCost(cost: number) {
+  if (cost <= 0.005) return "<$0.01";
+  return `$${cost.toFixed(2)}`;
+}
+
+function buildStoragePlanningRows(resources: LibraryResource[], commentaryEntries: CommentaryEntry[]): StoragePlanningRow[] {
+  const currentBookBytes = resources.reduce((total, resource) => total + estimatedResourceTextBytes(resource), 0);
+  const averageBookBytes = resources.length ? currentBookBytes / resources.length : 650 * 1024;
+  const currentCommentaryBytes = estimatedCommentaryBytes(commentaryEntries);
+  const averageCommentaryBytes = commentaryEntries.length ? currentCommentaryBytes / commentaryEntries.length : 6 * 1024;
+  const coverCount = resources.filter((resource) => resource.cover_image_url || resource.cover_metadata).length;
+  const audiobookCount = resources.filter((resource) => resource.audiobook_audio_url && !/device speech|placeholder/i.test(resource.audiobook_audio_url)).length;
+  const audiobookReadyCount = resources.filter((resource) => (resource.word_count ?? 0) > 0).length;
+  const currentAudiobookBytes = resources.reduce((total, resource) => {
+    if (!resource.audiobook_audio_url || /device speech|placeholder/i.test(resource.audiobook_audio_url)) return total;
+    const minutes = resource.reading_time_minutes ?? (resource.word_count ? Math.max(1, Math.round(resource.word_count / 150)) : 45);
+    return total + minutes * ESTIMATED_AUDIOBOOK_BYTES_PER_MINUTE;
+  }, 0);
+  const presentationMediaCount = Object.keys(SERMON_SLIDE_IMAGE_SLOTS).filter((slotId) => slotId !== "none").length;
+  const rows = [
+    {
+      id: "books",
+      label: "Books",
+      count: resources.length,
+      currentBytes: currentBookBytes,
+      projectedBytes: currentBookBytes + averageBookBytes * 500,
+      note: "Text files and searchable metadata. Large books should move to object storage when the library grows further.",
+    },
+    {
+      id: "commentaries",
+      label: "Commentaries",
+      count: commentaryEntries.length,
+      currentBytes: currentCommentaryBytes,
+      projectedBytes: currentCommentaryBytes + averageCommentaryBytes * 2500,
+      note: "Chapter and verse indexed entries. Keep metadata in Postgres and larger text in chunked storage if needed.",
+    },
+    {
+      id: "covers",
+      label: "Covers",
+      count: coverCount,
+      currentBytes: coverCount * ESTIMATED_COVER_BYTES,
+      projectedBytes: Math.max(coverCount, resources.length + 500) * ESTIMATED_COVER_BYTES,
+      note: "Use optimized WebP/AVIF covers. Generated cover metadata is tiny; real scans need compression.",
+    },
+    {
+      id: "audiobooks",
+      label: "Audio books",
+      count: audiobookCount,
+      currentBytes: currentAudiobookBytes,
+      projectedBytes: Math.min(Math.max(audiobookReadyCount, 75), 300) * 65 * ESTIMATED_AUDIOBOOK_BYTES_PER_MINUTE,
+      note: "Browser voices cost no storage. Human or premium narration should be stored separately from book text.",
+    },
+    {
+      id: "sermon-audio",
+      label: "Sermon audio",
+      count: 0,
+      currentBytes: 0,
+      projectedBytes: 200 * ESTIMATED_SERMON_AUDIO_BYTES,
+      note: "Plan for recorded sermons only after rights/ownership and upload workflow are clear.",
+    },
+    {
+      id: "presentation-media",
+      label: "Presentation media",
+      count: presentationMediaCount,
+      currentBytes: presentationMediaCount * ESTIMATED_PRESENTATION_MEDIA_BYTES,
+      projectedBytes: 350 * ESTIMATED_PRESENTATION_MEDIA_BYTES,
+      note: "Local optimized backgrounds now; future church media packs should stay curated and compressed.",
+    },
+    {
+      id: "video",
+      label: "Video",
+      count: 0,
+      currentBytes: 0,
+      projectedBytes: 30 * ESTIMATED_VIDEO_BYTES,
+      note: "Video should use dedicated object storage/CDN. Keep only metadata in the app database.",
+    },
+  ];
+
+  return rows.map((row) => ({
+    ...row,
+    monthlyGrowthBytes: Math.max(0, row.projectedBytes - row.currentBytes) / 12,
+    monthlyCost: estimateMonthlyStorageCost(row.projectedBytes),
+  }));
+}
+
+function audioScenarioEstimate(users: number, provider: PremiumAudioProviderPlan) {
+  const listeningHours = users * PREMIUM_AUDIO_LISTENING_HOURS_PER_USER;
+  const generatedHours = listeningHours * PREMIUM_AUDIO_GENERATION_SHARE;
+  const generationCost = generatedHours * provider.costPerGeneratedHour;
+  const storageBytes = generatedHours * ESTIMATED_AUDIO_BYTES_PER_HOUR;
+  const bandwidthBytes = listeningHours * ESTIMATED_AUDIO_BYTES_PER_HOUR;
+  const bandwidthCost = (bandwidthBytes / 1024 / 1024 / 1024) * ESTIMATED_AUDIO_BANDWIDTH_PER_GB;
+  return {
+    users,
+    listeningHours,
+    generatedHours,
+    generationCost,
+    storageBytes,
+    bandwidthBytes,
+    bandwidthCost,
+    totalCost: generationCost + bandwidthCost + estimateMonthlyStorageCost(storageBytes),
+  };
+}
+
+function PremiumAudioFeasibilityCenter() {
+  const comparisonRows = PREMIUM_AUDIO_PROVIDER_PLANS;
+  const paidComparisonRows = comparisonRows.filter((provider) => provider.costPerGeneratedHour > 0 && provider.id !== "human-narration").slice(0, 4);
+
+  return (
+    <div className="mt-5 space-y-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Audio Comparison Center</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Premium voice feasibility before paid APIs</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Compare free device voices, premium TTS providers, and human narration before connecting any paid service. Costs are planning estimates and must be checked again before launch.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">No paid API connected</span>
+        </div>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+        <div className="grid gap-0 bg-[var(--paper)] text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)] md:grid-cols-[0.8fr_0.8fr_0.9fr_0.8fr_1fr_1fr]">
+          <div className="p-3">Provider</div>
+          <div className="p-3">Quality</div>
+          <div className="p-3">Cost</div>
+          <div className="p-3">Latency</div>
+          <div className="p-3">Audiobook</div>
+          <div className="p-3">Bible reading</div>
+        </div>
+        {comparisonRows.map((provider) => (
+          <article key={`audio-provider-${provider.id}`} className="grid border-t border-[var(--line)] bg-white md:grid-cols-[0.8fr_0.8fr_0.9fr_0.8fr_1fr_1fr]">
+            <div className="p-3">
+              <p className="text-sm font-semibold text-[var(--ink)]">{provider.name}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{provider.bestUse}</p>
+            </div>
+            <div className="p-3 text-sm font-semibold text-[var(--green)]">{provider.quality}</div>
+            <div className="p-3 text-sm leading-6 text-[var(--muted)]">
+              <span className="font-semibold text-[var(--ink)]">{provider.cost}</span>
+              <span className="mt-1 block text-xs">{provider.estimatedMonthlyCost}</span>
+            </div>
+            <div className="p-3 text-sm text-[var(--muted)]">{provider.latency}</div>
+            <div className="p-3 text-sm leading-6 text-[var(--muted)]">{provider.audiobookSuitability}</div>
+            <div className="p-3 text-sm leading-6 text-[var(--muted)]">
+              {provider.bibleReadingSuitability}
+              <span className="mt-2 block rounded-xl bg-[var(--paper)] px-3 py-2 text-xs font-semibold">{provider.caution}</span>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Audio Usage Estimator</p>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Scenario assumes {PREMIUM_AUDIO_LISTENING_HOURS_PER_USER} listening hours per user per month and {Math.round(PREMIUM_AUDIO_GENERATION_SHARE * 100)}% new generated audio, with the rest served from cached audio or device voices.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">Storage + bandwidth included</span>
+        </div>
+
+        <div className="mt-4 grid gap-3 xl:grid-cols-2">
+          {paidComparisonRows.map((provider) => (
+            <article key={`audio-estimator-${provider.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-base font-semibold text-[var(--ink)]">{provider.name}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                    {provider.cost}
+                  </p>
+                </div>
+                <Headphones className="text-[var(--green)]" size={20} />
+              </div>
+              <div className="mt-3 overflow-hidden rounded-2xl border border-[var(--line)]">
+                <div className="grid grid-cols-4 bg-[var(--paper)] text-[0.68rem] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                  <div className="p-2">Users</div>
+                  <div className="p-2">Generation</div>
+                  <div className="p-2">Storage</div>
+                  <div className="p-2">Est. total</div>
+                </div>
+                {PREMIUM_AUDIO_USER_SCENARIOS.map((users) => {
+                  const estimate = audioScenarioEstimate(users, provider);
+                  return (
+                    <div key={`audio-estimate-${provider.id}-${users}`} className="grid grid-cols-4 border-t border-[var(--line)] text-xs font-semibold text-[var(--muted)]">
+                      <div className="p-2 text-[var(--ink)]">{users.toLocaleString()}</div>
+                      <div className="p-2">{formatStorageCost(estimate.generationCost)}</div>
+                      <div className="p-2">{formatStorageBytes(estimate.storageBytes)}</div>
+                      <div className="p-2 text-[var(--green)]">{formatStorageCost(estimate.totalCost)}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-2">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Recommended beta path</p>
+          <div className="mt-3 space-y-2">
+            {[
+              "Keep Browser Speech and Apple Voices as the default free mode.",
+              "Cache generated premium audio by passage/resource before scaling.",
+              "Test one paid provider with short devotional, commentary, and chapter samples.",
+              "Do not create licensed KJV audio replacements without rights review.",
+              "Track quote capture, sermon-note capture, and follow-text timing before paying for long-form generation.",
+            ].map((item) => (
+              <p key={`audio-beta-path-${item}`} className="rounded-2xl bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">{item}</p>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Roadmap documents</p>
+          <div className="mt-3 grid gap-2">
+            {[
+              ["Reading Audio Roadmap", "READING_AUDIO_ROADMAP.md"],
+              ["Follow Text Reading Plan", "FOLLOW_TEXT_READING_PLAN.md"],
+              ["Audiobook Import Plan", "AUDIOBOOK_IMPORT_PLAN.md"],
+            ].map(([label, file]) => (
+              <p key={`audio-roadmap-doc-${file}`} className="rounded-2xl bg-[var(--paper)] p-3 text-sm font-semibold text-[var(--muted)]">
+                {label}: <span className="text-[var(--green)]">{file}</span>
+              </p>
+            ))}
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
 function coverGradientFor(title: string, author: string, category: string) {
   const seed = title.length + author.length + category.length;
   if (seed % 4 === 0) return "from-[#314c43] to-[#a67d3d]";
@@ -30041,7 +30433,115 @@ function coverGradientFor(title: string, author: string, category: string) {
   return "from-[#3f4a34] to-[#7b5641]";
 }
 
-function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: boolean; resources: LibraryResource[]; onClose: () => void }) {
+function StoragePlanningDashboard({ resources, commentaryEntries }: { resources: LibraryResource[]; commentaryEntries: CommentaryEntry[] }) {
+  const rows = useMemo(() => buildStoragePlanningRows(resources, commentaryEntries), [resources, commentaryEntries]);
+  const currentTotal = rows.reduce((total, row) => total + row.currentBytes, 0);
+  const projectedTotal = rows.reduce((total, row) => total + row.projectedBytes, 0);
+  const monthlyGrowthTotal = rows.reduce((total, row) => total + row.monthlyGrowthBytes, 0);
+  const monthlyCostTotal = rows.reduce((total, row) => total + row.monthlyCost, 0);
+  const largestRows = rows.slice().sort((a, b) => b.projectedBytes - a.projectedBytes).slice(0, 3);
+
+  return (
+    <div className="mt-5 space-y-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Storage Planning Dashboard</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Plan growth before files get expensive</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Planning estimate for text, commentary, covers, audio, presentation media, and future video. Costs use a simple storage-only model at ${STORAGE_PLANNING_COST_PER_GB_MONTH.toFixed(3)}/GB/month; bandwidth, transforms, database, and paid voice costs are not included.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            Admin planning only
+          </span>
+        </div>
+
+        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{formatStorageBytes(currentTotal)}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Current size</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{formatStorageBytes(projectedTotal)}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Projected size</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{formatStorageBytes(monthlyGrowthTotal)}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Growth / month</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{formatStorageCost(monthlyCostTotal)}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Est. monthly storage</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+        <div className="grid gap-0 bg-[var(--paper)] text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)] md:grid-cols-[1fr_0.6fr_0.8fr_0.8fr_0.8fr_0.8fr]">
+          <div className="p-3">Area</div>
+          <div className="p-3">Count</div>
+          <div className="p-3">Current</div>
+          <div className="p-3">Projected</div>
+          <div className="p-3">Growth rate</div>
+          <div className="p-3">Monthly cost</div>
+        </div>
+        {rows.map((row) => (
+          <article key={`storage-plan-${row.id}`} className="grid border-t border-[var(--line)] bg-white md:grid-cols-[1fr_0.6fr_0.8fr_0.8fr_0.8fr_0.8fr]">
+            <div className="p-3">
+              <p className="text-sm font-semibold text-[var(--ink)]">{row.label}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{row.note}</p>
+            </div>
+            <div className="p-3 text-sm font-semibold text-[var(--muted)]">{row.count.toLocaleString()}</div>
+            <div className="p-3 text-sm font-semibold text-[var(--green)]">{formatStorageBytes(row.currentBytes)}</div>
+            <div className="p-3 text-sm font-semibold text-[var(--green)]">{formatStorageBytes(row.projectedBytes)}</div>
+            <div className="p-3 text-sm font-semibold text-[var(--muted)]">{formatStorageBytes(row.monthlyGrowthBytes)}/mo</div>
+            <div className="p-3 text-sm font-semibold text-[var(--muted)]">{formatStorageCost(row.monthlyCost)}/mo</div>
+          </article>
+        ))}
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Largest future storage drivers</p>
+          <div className="mt-3 space-y-2">
+            {largestRows.map((row) => (
+              <div key={`largest-storage-${row.id}`} className="rounded-2xl bg-white p-3">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-[var(--ink)]">{row.label}</p>
+                  <p className="text-xs font-semibold text-[var(--green)]">{formatStorageBytes(row.projectedBytes)}</p>
+                </div>
+                <div className="mt-2 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                  <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: `${Math.min(100, Math.round((row.projectedBytes / projectedTotal) * 100))}%` }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Storage rules to keep the app fast</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {[
+              "Keep app code and small metadata in Git/Vercel.",
+              "Move large books, covers, audio, and video to object storage.",
+              "Keep searchable metadata in Postgres.",
+              "Chunk long books instead of loading the whole file.",
+              "Cache chapters, dictionary lookups, and study metadata.",
+              "Keep paid audio/video rights separate from public-domain text.",
+            ].map((item) => (
+              <p key={`storage-rule-${item}`} className="rounded-2xl bg-[var(--paper)] p-3 text-xs font-semibold leading-5 text-[var(--muted)]">
+                {item}
+              </p>
+            ))}
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
+function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onClose }: { signedIn: boolean; resources: LibraryResource[]; commentaryEntries: CommentaryEntry[]; onClose: () => void }) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
   const [checkerInput, setCheckerInput] = useState<CopyrightCheckerInput>(EMPTY_COPYRIGHT_CHECKER_INPUT);
   const [checkerResult, setCheckerResult] = useState<CopyrightCheckerResult | null>(null);
@@ -30112,6 +30612,8 @@ function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: 
     { id: "rightsHolders", label: "Rights Holders" },
     { id: "importQueue", label: "Import Queue" },
     { id: "libraryManager", label: "Library Manager" },
+    { id: "storage", label: "Storage Plan" },
+    { id: "audio", label: "Audio Plan" },
     { id: "ocrQueue", label: "OCR Queue" },
   ];
 
@@ -30264,6 +30766,14 @@ function LibraryAcquisitionCenter({ signedIn, resources, onClose }: { signedIn: 
             </article>
           </div>
         </div>
+      )}
+
+      {activeTab === "storage" && (
+        <StoragePlanningDashboard resources={resources} commentaryEntries={commentaryEntries} />
+      )}
+
+      {activeTab === "audio" && (
+        <PremiumAudioFeasibilityCenter />
       )}
 
       {activeTab === "authors" && (
