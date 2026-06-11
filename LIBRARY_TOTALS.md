@@ -1,34 +1,59 @@
 # Library Totals
 
-Updated during the Library Depth + Commentary Expansion sprint. Counts are generated from the public Library manifest, public commentary import files, and the current QA commands.
+Updated during the Bible Coverage + Commentary Depth sprint. Counts are generated from the public Library manifest, public commentary import files, and the current QA commands.
 
 ## Running Totals
 
-- Verified public Library resources: 779
-- Public commentary entries: 4,016
-- Commentary validation rows checked, including staging/review files: 6,394
-- Commentary authors represented publicly: 7
-- Library authors represented: 351
+- Verified public Library resources: 1,261
+- Public commentary entries shown in the app: 5,167
+- Commentary validation rows checked, including staging/review files: 7,545
+- Commentary authors represented publicly: 22+
+- Library authors represented: 422+
 - Public Library duplicate title/author groups: 0
+
+## Latest Neglected Subjects Sprint
+
+Imported 25 verified public-domain resources from Project Gutenberg and skipped 10 duplicate title/source rows automatically.
+
+Strengthened areas:
+
+- Apologetics and evidences
+- Creation/evolution response
+- False religion and discernment
+- Home and family
+- Pastoral ministry
+- Sunday School teaching
+- Baptist and religious-liberty history
+- Academic church history
+
+## Latest Bible Coverage + Commentary Depth Sprint
+
+Added 120 verified public commentary entries for Exodus:
+
+- Matthew Poole, Exodus 1-40
+- The Pulpit Commentary, Exodus 1-40
+- The Biblical Illustrator, Exodus 1-40
+
+These entries were generated from source pages that state public-domain status, preserve chapter source URLs, and include rights/source notes in each row.
 
 ## Library By Category
 
 | Category | Resources |
 | --- | ---: |
-| Missions | 236 |
-| Commentaries | 148 |
-| Preaching & Teaching | 97 |
-| Christian Living | 95 |
-| Bible study helps | 49 |
-| Prayer | 40 |
-| Baptist History | 31 |
+| Commentaries | 252 |
+| Missions | 243 |
+| Christian Living | 212 |
+| Preaching & Teaching | 163 |
+| Bible study helps | 128 |
+| Prayer | 79 |
+| Baptist History | 50 |
+| Evangelism | 46 |
 | Bible Handbooks | 19 |
+| KJV / Textual Issues | 16 |
 | Biographies | 12 |
-| Evangelism | 12 |
+| Classics | 12 |
 | Dictionaries | 11 |
 | Christian life | 7 |
-| KJV / Textual Issues | 6 |
-| Classics | 5 |
 | Surveys | 4 |
 | Fiction/classics | 2 |
 | Preaching/teaching | 2 |
@@ -42,53 +67,54 @@ Updated during the Library Depth + Commentary Expansion sprint. Counts are gener
 | Missions Biographies | 128 |
 | Commentary | 93 |
 | Preaching & Teaching | 87 |
+| Spurgeon Collection | 84 |
+| F. B. Meyer Collection | 72 |
 | Missions Periodicals | 62 |
-| Missions | 45 |
+| Ryle Collection | 54 |
+| Missions | 50 |
+| Torrey Collection | 46 |
 | Bible Doctrine | 44 |
+| Gaebelein Collection | 44 |
 | Baptist History | 31 |
 | Christian Living | 29 |
-| Spurgeon Collection | 23 |
+| Alexander Maclaren Collection | 26 |
+| William Kelly Collection | 23 |
+| G. Campbell Morgan Collection | 22 |
 | Bible Study Essentials | 20 |
+| Andrew Murray Collection | 19 |
 | Commentaries | 19 |
 | Prayer | 19 |
+| Bounds Collection | 18 |
+| Moody Collection | 16 |
 | Bible Handbooks | 15 |
 | Bible study helps | 15 |
-| F. B. Meyer Collection | 15 |
 | Prayer Classics | 15 |
-| Gaebelein Collection | 10 |
+| Revival & Evangelism | 13 |
+| Darby Collection | 11 |
+| R. A. Torrey Collection | 10 |
+| False Religion & Discernment | 7 |
+| Creation & Evolution Response | 4 |
+| Apologetics & Evidences | 5 |
+| Home & Family | 2 |
 | Evangelism | 8 |
-| Biographies | 7 |
-| Christian life | 7 |
-| William Kelly Collection | 7 |
-| Dictionaries | 6 |
-| KJV / Textual Issues | 6 |
-| R. A. Torrey Collection | 6 |
-| Bible Dictionaries | 5 |
-| Classics | 5 |
-| Darby Collection | 5 |
-| Torrey Collection | 5 |
-| Bible Surveys | 4 |
-| H. A. Ironside Collection | 4 |
-| Larkin | 4 |
-| William Kelly | 4 |
 
 ## Major Author Shelves
 
 | Author | Resources |
 | --- | ---: |
-| C. H. Spurgeon | 27 |
-| F. B. Meyer | 17 |
-| R. A. Torrey | 15 |
-| D. L. Moody | 11 |
-| William Kelly | 11 |
-| Arno C. Gaebelein | 10 |
-| H. A. Ironside | 9 |
-| Andrew Murray | 8 |
-| J. C. Ryle | 6 |
-| Edward M. Bounds | 6 |
-| J. N. Darby | 5 |
-| Clarence Larkin | 5 |
-| F. W. Grant | 2 |
+| C. H. Spurgeon | 85+ combined normalized author matches |
+| F. B. Meyer | 69+ combined normalized author matches |
+| R. A. Torrey | 50+ combined normalized author matches |
+| J. C. Ryle | 50+ combined normalized author matches |
+| D. L. Moody | 14+ |
+| William Kelly | 26+ combined normalized author matches |
+| Arno C. Gaebelein | 38+ combined normalized author matches |
+| H. A. Ironside | 10+ |
+| Andrew Murray | 27+ |
+| Edward M. Bounds | 13+ |
+| J. N. Darby | 11+ |
+| Clarence Larkin | 7+ |
+| F. W. Grant | 5+ |
 
 ## Commentary By Author
 
@@ -98,9 +124,13 @@ Updated during the Library Depth + Commentary Expansion sprint. Counts are gener
 | Matthew Henry | 1,189 |
 | Adam Clarke | 771 |
 | Albert Barnes | 771 |
+| Joseph S. Exell / Biblical Illustrator | 287 |
+| Matthew Poole | 278 |
+| Joseph S. Exell and H. D. M. Spence-Jones / Pulpit Commentary | 278 |
+| C. H. Spurgeon / Treasury of David | 150 |
 | John Wesley | 86 |
-| John Gill | 7 |
-| H. A. Ironside | 3 |
+| H. A. Ironside | 62 |
+| Amos public-domain specialist/sample voices | 9 each |
 
 ## Commentary Status
 
@@ -108,14 +138,14 @@ Updated during the Library Depth + Commentary Expansion sprint. Counts are gener
 - Barnes and Adam Clarke have broad public coverage across the current reviewed batches.
 - Wesley remains New Testament oriented.
 - Gill and Ironside remain sample-only until cleaner source/edition review is complete.
-- Pulpit Commentary, Biblical Illustrator, and Matthew Poole remain needs-review candidates. No text from those sets should be public until an exact source, edition, rights basis, and parser pilot are documented.
+- Pulpit Commentary, Biblical Illustrator, and Matthew Poole now have focused public verified batches where source, edition notes, rights basis, and parser output were documented. Continue importing only in reviewed batches.
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 779 public resources verified, complete, and file-backed.
+- `npm run library:qa`: 1,261 public resources verified, complete, and file-backed.
 - `npm run library:validate`: manifest validation passed.
-- `npm run validate:commentary`: 73 commentary/review files validated, 6,394 rows checked.
+- `npm run validate:commentary`: 89 commentary/review files validated, 7,545 rows checked.
 
 ## Next Growth Rule
 
-Grow the Library from verified source records, not broad keyword searches. The importer dry-run showed remaining prepared CSV rows are mostly duplicates or duplicate-equivalent works, so future growth should start from a fresh reviewed acquisition list with exact source URLs and no title/author/source/checksum duplicates.
+Grow the Library from verified source records, not broad keyword searches. The next push toward 2,500+ resources should be staged in 50-100 item batches with exact source URLs, duplicate checks, OCR quality labels, and subject shelves so the Library stays enjoyable instead of overwhelming.

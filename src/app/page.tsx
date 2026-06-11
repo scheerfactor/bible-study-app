@@ -120,6 +120,21 @@ import adamClarkeReviewedCompletionPentateuchGapsCommentary from "../../data/imp
 import adamClarkeReviewedCompletionJoshuaStarterCommentary from "../../data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
+import amosExpandedPublicDomainCommentary from "../../data/imports/amos-expanded-public-domain-commentary.json";
+import hAIronsideSelectedBooksPhase1Commentary from "../../data/imports/h-a-ironside-selected-books-phase-1-commentary.json";
+import treasuryOfDavidCompletionCommentary from "../../data/imports/treasury-of-david-completion-commentary.json";
+import matthewPooleReviewedFocusBooksCommentary from "../../data/imports/matthew-poole-reviewed-focus-books-commentary.json";
+import pulpitCommentaryReviewedFocusBooksCommentary from "../../data/imports/pulpit-commentary-reviewed-focus-books-commentary.json";
+import biblicalIllustratorReviewedFocusBooksCommentary from "../../data/imports/biblical-illustrator-reviewed-focus-books-commentary.json";
+import matthewPooleReviewedProphecyTeachingCommentary from "../../data/imports/matthew-poole-reviewed-prophecy-teaching-commentary.json";
+import pulpitCommentaryReviewedProphecyTeachingCommentary from "../../data/imports/pulpit-commentary-reviewed-prophecy-teaching-commentary.json";
+import biblicalIllustratorReviewedProphecyTeachingCommentary from "../../data/imports/biblical-illustrator-reviewed-prophecy-teaching-commentary.json";
+import matthewPooleReviewedWeakBooksCommentary from "../../data/imports/matthew-poole-reviewed-weak-books-commentary.json";
+import pulpitCommentaryReviewedWeakBooksCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
+import biblicalIllustratorReviewedWeakBooksCommentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-commentary.json";
+import matthewPooleReviewedExodusCommentary from "../../data/imports/matthew-poole-reviewed-exodus-commentary.json";
+import pulpitCommentaryReviewedExodusCommentary from "../../data/imports/pulpit-commentary-reviewed-exodus-commentary.json";
+import biblicalIllustratorReviewedExodusCommentary from "../../data/imports/biblical-illustrator-reviewed-exodus-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
@@ -615,19 +630,34 @@ type BibleCoverageBook = {
   testament: "Old Testament" | "New Testament";
   totalChapters: number;
   commentaryChapters: number;
+  commentaryCoveragePercent: number;
   commentaryAuthors: string[];
   missingCommentaryAuthors: string[];
   strongsChapters: number;
+  strongsCoveragePercent: number;
   tskChapters: number;
+  tskCoveragePercent: number;
   backgroundChapters: number;
+  backgroundCoveragePercent: number;
   peopleChapters: number;
+  peopleCoveragePercent: number;
   placesChapters: number;
+  placesCoveragePercent: number;
   timelineChapters: number;
+  timelineCoveragePercent: number;
+  dictionaryToolChapters: number;
+  dictionaryToolCoveragePercent: number;
+  resourceRecommendationChapters: number;
+  resourceRecommendationCoveragePercent: number;
   bookIntroductionReady: boolean;
+  ecosystemReady: boolean;
   studyPackReady: boolean;
+  studyPackReadinessPercent: number;
   sermonPrepReady: boolean;
+  sermonPrepReadinessPercent: number;
   missingTools: string[];
   score: number;
+  overallReadinessScore: number;
   nextStep: string;
 };
 
@@ -641,9 +671,21 @@ type BibleCoverageSummary = {
   peopleReadyBooks: number;
   placesReadyBooks: number;
   timelineReadyBooks: number;
+  dictionaryToolReadyBooks: number;
   studyPackReadyBooks: number;
   sermonPrepReadyBooks: number;
   averageScore: number;
+  averageCommentaryCoverage: number;
+  averageStrongsCoverage: number;
+  averageTskCoverage: number;
+  averageBackgroundCoverage: number;
+  averagePeopleCoverage: number;
+  averagePlacesCoverage: number;
+  averageTimelineCoverage: number;
+  averageDictionaryToolCoverage: number;
+  averageResourceRecommendationCoverage: number;
+  averageStudyPackReadiness: number;
+  averageSermonPrepReadiness: number;
   weakestBooks: BibleCoverageBook[];
   strongestBooks: BibleCoverageBook[];
   focusBooks: BibleCoverageBook[];
@@ -2395,12 +2437,23 @@ const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Wesley's Notes on the Bible",
   "Gill's Exposition of the Bible",
   "Adam Clarke's Commentary on the Bible",
+  "Poole's English Annotations on the Holy Bible",
+  "The Pulpit Commentary",
+  "The Biblical Illustrator",
+];
+const AMOS_VERIFIED_COMMENTARY_COLLECTIONS = [
+  "Calvin's Commentary on the Bible",
+  "Keil & Delitzsch Old Testament Commentary",
+  "The Pulpit Commentary",
+  "Notes on the Minor Prophets",
+  "Ironside's Notes on Selected Books",
 ];
 const ACTIVE_COMMENTARY_COLLECTIONS = [
   MATTHEW_HENRY_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_COMMENTARY_COLLECTION,
   TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
+  ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
 const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
   {
@@ -3310,9 +3363,57 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "kjv-defense",
     title: "KJV Defense Collection",
     description: "KJV-related and textual-issue resources for careful Bible study, added only when suitable for public use.",
-    terms: ["kjv", "king james", "authorized", "textual"],
-    labels: ["Coming soon", "Careful study"],
+    terms: ["kjv", "king james", "authorized", "textual", "english bible", "translators", "old bibles"],
+    labels: ["English Bible history", "Careful study"],
     featuredAuthorIds: [],
+  },
+  {
+    id: "english-bible-history",
+    title: "English Bible History",
+    description: "KJV background, English Bible history, translators, and early English Bible resources with documented public-domain sources.",
+    terms: ["english bible", "old bibles", "translators revived", "records of the english bible", "annals of the english bible", "king james", "authorized"],
+    labels: ["KJV background", "History"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "apologetics-evidences",
+    title: "Apologetics & Evidences",
+    description: "Evidence-focused public-domain resources for defending the faith, the resurrection, theism, and Scripture credibility.",
+    terms: ["apologetics", "evidences", "resurrection", "theism", "theistic", "proofs", "paul's religion", "difficulties", "defense"],
+    labels: ["Apologetics", "Study carefully"],
+    featuredAuthorIds: ["torrey"],
+  },
+  {
+    id: "creation-evolution-response",
+    title: "Creation & Evolution Response",
+    description: "Public-domain Bible-and-science resources, including older Christian critiques of Darwinism and evolution.",
+    terms: ["darwinism", "evolution", "origin of the world", "revelation and science", "creation", "science"],
+    labels: ["Creation study", "Historical value"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "false-religion-discernment",
+    title: "False Religion & Discernment",
+    description: "Historical and missionary resources on cults, Islam, papacy, world religions, and religious discernment.",
+    terms: ["cults", "islam", "arabia", "oriental religions", "papal", "papacy", "jesuits", "paganism", "discernment", "mormon"],
+    labels: ["Use with discernment", "Historical context"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "home-family",
+    title: "Home & Family",
+    description: "Christian home, family discipleship, parenting, and religious education resources for the household.",
+    terms: ["christian home", "religious education in the family", "home", "family", "parents", "children", "household"],
+    labels: ["Home", "Family discipleship"],
+    featuredAuthorIds: [],
+  },
+  {
+    id: "doctrine-theology",
+    title: "Doctrine & Theology",
+    description: "Foundational theology and doctrine resources for pastors, Sunday School teachers, and serious students.",
+    terms: ["doctrine", "theology", "fundamental doctrines", "holy spirit", "theism", "atonement", "salvation", "faith"],
+    labels: ["Doctrine", "Teacher helps"],
+    featuredAuthorIds: ["torrey", "ryle"],
   },
   {
     id: "study-helps",
@@ -3326,9 +3427,17 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     id: "preaching-teaching",
     title: "Preaching & Teaching Collection",
     description: "Resources useful for lesson preparation, preaching, illustrations, and teaching support.",
-    terms: ["preaching", "teaching", "sermon", "illustration", "farmers"],
+    terms: ["preaching", "teaching", "sermon", "illustration", "farmers", "pastor", "sunday-school", "qualifications and duties"],
     labels: ["Teaching", "Sermon prep"],
     featuredAuthorIds: ["spurgeon", "moody", "bounds"],
+  },
+  {
+    id: "revival-evangelism",
+    title: "Revival & Evangelism Gold Nuggets",
+    description: "Lesser-known but useful public-domain revival, evangelism, and soul-winning resources.",
+    terms: ["revival", "evangelism", "bringing in sheaves", "a. b. earle", "soul", "gospel"],
+    labels: ["Gold nuggets", "Evangelism"],
+    featuredAuthorIds: ["moody", "spurgeon", "torrey"],
   },
   {
     id: "spurgeon",
@@ -3512,6 +3621,50 @@ const READING_PATHS: ReadingPath[] = [
     repeatOptions: ["Read by biography", "Use for illustration review", "Mark historical cautions"],
   },
   {
+    id: "apologetics",
+    title: "Apologetics",
+    shortLabel: "Answer clearly",
+    description: "Evidence, Bible defense, creation/evolution response, and discernment resources kept practical for teachers and serious students.",
+    biblePassages: ["1 Peter 3", "Acts 17", "Psalm 19"],
+    resourceTerms: ["apologetics", "evidences", "theism", "darwinism", "evolution", "cults", "religions", "proofs"],
+    collectionIds: ["apologetics-evidences", "creation-evolution-response", "false-religion-discernment"],
+    authorIds: ["torrey"],
+    repeatOptions: ["Use for question prep", "Save careful quotes with source", "Compare everything with Scripture"],
+  },
+  {
+    id: "family",
+    title: "Family",
+    shortLabel: "Home discipleship",
+    description: "Older public-domain helps on the Christian home, family worship, training children, and practical home discipleship.",
+    biblePassages: ["Deuteronomy 6", "Ephesians 5", "Ephesians 6"],
+    resourceTerms: ["family", "home", "children", "religious education", "parents", "christian home"],
+    collectionIds: ["home-family", "christian-living"],
+    authorIds: ["murray"],
+    repeatOptions: ["Read one short section together", "Save applications", "Use for family devotion ideas"],
+  },
+  {
+    id: "english-bible-history",
+    title: "English Bible History",
+    shortLabel: "KJV background",
+    description: "A careful path through English Bible history, the KJV translators, early English Bibles, and public-domain textual-history resources.",
+    biblePassages: ["Psalm 12", "2 Timothy 3", "Matthew 24"],
+    resourceTerms: ["english bible", "translators revived", "old bibles", "records of the english bible", "annals of the english bible", "king james"],
+    collectionIds: ["english-bible-history", "kjv-defense", "study-helps"],
+    authorIds: [],
+    repeatOptions: ["Read one history section at a time", "Use OCR spot-check before quoting", "Keep Scripture primary"],
+  },
+  {
+    id: "revival-evangelism",
+    title: "Revival & Evangelism",
+    shortLabel: "Gold nuggets",
+    description: "A path for older revival, prayer, and evangelism works, including lesser-known authors like A. B. Earle.",
+    biblePassages: ["Psalm 126", "John 4", "Acts 8", "Romans 10"],
+    resourceTerms: ["revival", "evangelism", "bringing in sheaves", "a. b. earle", "prayer", "soul"],
+    collectionIds: ["revival-evangelism", "evangelism", "prayer"],
+    authorIds: ["moody", "spurgeon", "torrey"],
+    repeatOptions: ["Listen during work", "Save quotes for sermon notes", "Mark practical applications"],
+  },
+  {
     id: "evangelism",
     title: "Evangelism",
     shortLabel: "Gospel clarity",
@@ -3579,7 +3732,9 @@ const READING_PATHS: ReadingPath[] = [
   },
 ];
 
-const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history"];
+const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
+
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds"];
 
@@ -3619,6 +3774,42 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     featuredChapters: ["Amos 1", "Amos 3", "Amos 5", "Amos 7", "Amos 9"],
     playlistTitle: "Amos 1-9 Teaching Prep",
     relatedResourceTerms: ["amos", "minor prophets", "preaching", "teaching", "prophets", "expositions"],
+  },
+  {
+    id: "daniel-study-collection",
+    book: "Daniel",
+    title: "Daniel Study Collection",
+    description: "Kingdom prophecy, courage in captivity, Gentile empires, prayer, visions, and teaching support for Daniel.",
+    featuredChapters: ["Daniel 1", "Daniel 2", "Daniel 3", "Daniel 7", "Daniel 9"],
+    playlistTitle: "Daniel Prophecy and Kingdom Study",
+    relatedResourceTerms: ["daniel", "prophecy", "kingdom", "babylon", "visions", "exposition", "commentary"],
+  },
+  {
+    id: "revelation-study-collection",
+    book: "Revelation",
+    title: "Revelation Study Collection",
+    description: "The Lord Jesus Christ revealed, the churches, judgment, prophecy, worship, and final victory.",
+    featuredChapters: ["Revelation 1", "Revelation 2", "Revelation 3", "Revelation 13", "Revelation 21"],
+    playlistTitle: "Revelation Prophecy Study",
+    relatedResourceTerms: ["revelation", "prophecy", "judgment", "churches", "christ", "kingdom", "exposition"],
+  },
+  {
+    id: "isaiah-study-collection",
+    book: "Isaiah",
+    title: "Isaiah Study Collection",
+    description: "Holiness, judgment, comfort, the suffering Servant, kingdom hope, and Messianic prophecy.",
+    featuredChapters: ["Isaiah 6", "Isaiah 9", "Isaiah 40", "Isaiah 53", "Isaiah 55"],
+    playlistTitle: "Isaiah Gospel and Prophecy Study",
+    relatedResourceTerms: ["isaiah", "prophecy", "messiah", "servant", "comfort", "holiness", "commentary"],
+  },
+  {
+    id: "genesis-study-collection",
+    book: "Genesis",
+    title: "Genesis Study Collection",
+    description: "Creation, fall, promise, covenant, patriarchs, origins, and foundational Bible doctrine.",
+    featuredChapters: ["Genesis 1", "Genesis 3", "Genesis 12", "Genesis 22", "Genesis 50"],
+    playlistTitle: "Genesis Foundations Study",
+    relatedResourceTerms: ["genesis", "creation", "covenant", "abraham", "joseph", "foundations", "commentary"],
   },
 ];
 
@@ -4100,40 +4291,40 @@ const BIBLE_BOOK_ECOSYSTEMS: BibleBookEcosystem[] = [
     book: "Romans",
     modelStatus: "Framework ready",
     focus: "Sin, justification, grace, sanctification, Israel, and Christian service.",
-    timeline: ["Apostolic church", "Paul's journeys", "Rome"],
-    keyThemes: ["Faith", "Grace", "Salvation", "Holiness", "Discipleship"],
-    keyVerses: ["Romans 1:16", "Romans 3:23", "Romans 5:8", "Romans 8:28", "Romans 12:1"],
-    sermonIdeas: ["The Gospel of God", "Justified by Faith", "No Condemnation", "A Living Sacrifice"],
-    discussionQuestions: ["How does Romans explain the Gospel?", "What changes after justification?", "How should doctrine become service?"],
-    teachingApplications: ["Keep doctrine practical.", "Use Romans to clarify salvation and assurance."],
+    timeline: ["Paul's missionary journeys", "Roman church", "Apostolic church", "Jew and Gentile in one Gospel"],
+    keyThemes: ["Sin", "Faith", "Grace", "Justification", "Sanctification", "Assurance", "Service"],
+    keyVerses: ["Romans 1:16", "Romans 3:23", "Romans 5:8", "Romans 8:1", "Romans 8:28", "Romans 12:1"],
+    sermonIdeas: ["The Gospel of God", "All Have Sinned", "Justified by Faith", "No Condemnation", "A Living Sacrifice"],
+    discussionQuestions: ["How does Romans explain the Gospel?", "Why must guilt be understood before grace?", "What changes after justification?", "How should doctrine become service?"],
+    teachingApplications: ["Keep doctrine practical.", "Use Romans to clarify salvation, assurance, and yielded service.", "Help new believers see the flow from guilt to grace to growth."],
     playlistTitle: "Romans Gospel Study",
-    nextAction: "Expand Romans study packs around chapters 1-8 first.",
+    nextAction: "Deepen Romans 1-8 with Strong's, TSK, commentary comparison, and teaching outlines.",
   },
   {
     book: "Daniel",
     modelStatus: "Framework ready",
     focus: "Faithfulness in exile, Gentile kingdoms, prophecy, and God's dominion.",
-    timeline: ["Babylonian captivity", "Daniel in exile", "Gentile kingdoms"],
-    keyThemes: ["Kingdom", "Prophecy", "Prayer", "Judgment", "Faith"],
-    keyVerses: ["Daniel 2:21", "Daniel 3:17", "Daniel 6:10", "Daniel 7:14"],
-    sermonIdeas: ["Faithful in Babylon", "The Fourth Man", "Prayer When It Costs", "The Son of Man's Dominion"],
-    discussionQuestions: ["How did Daniel remain faithful?", "What does Daniel show about kingdoms?", "How should prophecy strengthen faith?"],
-    teachingApplications: ["Teach courage without sensationalism.", "Keep prophetic study anchored to the text."],
+    timeline: ["Babylonian captivity", "Daniel in exile", "Nebuchadnezzar", "Belshazzar", "Medo-Persia", "Gentile kingdoms"],
+    keyThemes: ["Kingdom", "Prophecy", "Prayer", "Judgment", "Faithfulness", "God's Dominion"],
+    keyVerses: ["Daniel 2:21", "Daniel 3:17", "Daniel 6:10", "Daniel 7:13", "Daniel 7:14"],
+    sermonIdeas: ["Faithful in Babylon", "The Fourth Man", "Prayer When It Costs", "The Son of Man's Dominion", "God Rules Over Kingdoms"],
+    discussionQuestions: ["How did Daniel remain faithful?", "What does Daniel show about kingdoms?", "How should prophecy strengthen faith rather than speculation?", "Where does Daniel point to Christ's dominion?"],
+    teachingApplications: ["Teach courage without sensationalism.", "Keep prophetic study anchored to the text.", "Use Daniel to encourage faithfulness in an unfriendly culture."],
     playlistTitle: "Daniel Prophecy and Faithfulness",
-    nextAction: "Build Daniel 1, 3, 6, 7 study packs next.",
+    nextAction: "Build Daniel 1, 3, 6, 7, and 9 study packs with prophecy, timeline, and sermon-ready outlines.",
   },
   {
     book: "Revelation",
     modelStatus: "Framework ready",
     focus: "The revelation of Jesus Christ, churches, judgment, victory, and the coming kingdom.",
-    timeline: ["Apostolic churches", "Things which shall be hereafter", "New heaven and new earth"],
-    keyThemes: ["Prophecy", "Judgment", "Kingdom", "Worship", "Holiness"],
-    keyVerses: ["Revelation 1:3", "Revelation 1:18", "Revelation 11:15", "Revelation 22:20"],
-    sermonIdeas: ["The Living Christ", "Letters to the Churches", "The Lamb Prevails", "Even So, Come"],
-    discussionQuestions: ["What does the book reveal about Christ?", "How should the churches respond?", "Where do worship and warning meet?"],
-    teachingApplications: ["Keep Revelation Christ-centered.", "Avoid speculation that outruns the passage."],
+    timeline: ["Apostolic churches", "Things which are", "Things which shall be hereafter", "Millennial kingdom", "New heaven and new earth"],
+    keyThemes: ["Christ Revealed", "Prophecy", "Judgment", "Kingdom", "Worship", "Victory"],
+    keyVerses: ["Revelation 1:3", "Revelation 1:18", "Revelation 4:11", "Revelation 11:15", "Revelation 22:20"],
+    sermonIdeas: ["The Living Christ", "Letters to the Churches", "The Lamb Prevails", "Babylon Judged", "Even So, Come"],
+    discussionQuestions: ["What does the book reveal about Christ?", "How should the churches respond?", "Where do worship and warning meet?", "How can prophecy move us to holiness?"],
+    teachingApplications: ["Keep Revelation Christ-centered.", "Avoid speculation that outruns the passage.", "Let the warnings and worship shape obedience now."],
     playlistTitle: "Revelation Christ and Victory",
-    nextAction: "Prioritize Revelation 1-3 and 13 study support.",
+    nextAction: "Prioritize Revelation 1-3, 13, 19, and 22 with commentary comparison and teaching cautions.",
   },
   {
     book: "John",
@@ -4152,27 +4343,27 @@ const BIBLE_BOOK_ECOSYSTEMS: BibleBookEcosystem[] = [
     book: "Isaiah",
     modelStatus: "Framework ready",
     focus: "Holy God, sin, judgment, comfort, the Servant, and kingdom hope.",
-    timeline: ["Uzziah", "Jotham", "Ahaz", "Hezekiah", "Assyrian threat"],
-    keyThemes: ["Holiness", "Prophecy", "Judgment", "Salvation", "Kingdom"],
-    keyVerses: ["Isaiah 6:3", "Isaiah 9:6", "Isaiah 40:1", "Isaiah 53:5"],
-    sermonIdeas: ["Holy, Holy, Holy", "Unto Us a Son Is Given", "Comfort Ye My People", "Wounded for Our Transgressions"],
-    discussionQuestions: ["How does Isaiah reveal God's holiness?", "What prophecies point to Christ?", "How are judgment and comfort balanced?"],
-    teachingApplications: ["Teach prophecy with Christ in view.", "Use Isaiah to show holiness and hope together."],
+    timeline: ["Uzziah", "Jotham", "Ahaz", "Hezekiah", "Assyrian threat", "Promise of restoration"],
+    keyThemes: ["Holiness", "Prophecy", "Judgment", "Comfort", "Salvation", "The Servant", "Kingdom"],
+    keyVerses: ["Isaiah 6:3", "Isaiah 9:6", "Isaiah 40:1", "Isaiah 53:5", "Isaiah 55:6"],
+    sermonIdeas: ["Holy, Holy, Holy", "Unto Us a Son Is Given", "Comfort Ye My People", "Wounded for Our Transgressions", "Seek Ye the LORD"],
+    discussionQuestions: ["How does Isaiah reveal God's holiness?", "What prophecies point to Christ?", "How are judgment and comfort balanced?", "How does the Servant passage shape Gospel teaching?"],
+    teachingApplications: ["Teach prophecy with Christ in view.", "Use Isaiah to show holiness and hope together.", "Use Isaiah 53 carefully as a Gospel-centered passage."],
     playlistTitle: "Isaiah Holiness and Hope",
-    nextAction: "Build Isaiah 6, 9, 40, 53 study packs first.",
+    nextAction: "Build Isaiah 6, 9, 40, 53, and 55 with prophecy fulfillment, commentary, and sermon-ready outlines.",
   },
   {
     book: "Genesis",
     modelStatus: "Framework ready",
     focus: "Creation, fall, promise, covenant, patriarchs, and beginnings.",
-    timeline: ["Creation", "Fall", "Flood", "Abraham", "Isaac", "Jacob", "Joseph"],
-    keyThemes: ["Covenant", "Faith", "Judgment", "Grace", "Prophecy"],
-    keyVerses: ["Genesis 1:1", "Genesis 3:15", "Genesis 12:3", "Genesis 50:20"],
-    sermonIdeas: ["In the Beginning God", "The First Gospel Promise", "Called by Promise", "God Meant It Unto Good"],
-    discussionQuestions: ["What foundations begin in Genesis?", "How does promise develop?", "What does Genesis teach about God's sovereignty?"],
-    teachingApplications: ["Use Genesis to establish Bible foundations.", "Connect beginnings to the rest of Scripture carefully."],
+    timeline: ["Creation", "Fall", "Flood", "Babel", "Abraham", "Isaac", "Jacob", "Joseph"],
+    keyThemes: ["Creation", "Fall", "Promise", "Covenant", "Faith", "Judgment", "Providence"],
+    keyVerses: ["Genesis 1:1", "Genesis 3:15", "Genesis 12:3", "Genesis 15:6", "Genesis 50:20"],
+    sermonIdeas: ["In the Beginning God", "The First Gospel Promise", "Called by Promise", "He Believed in the LORD", "God Meant It Unto Good"],
+    discussionQuestions: ["What foundations begin in Genesis?", "How does promise develop?", "What does Genesis teach about sin and grace?", "How does Joseph show God's providence?"],
+    teachingApplications: ["Use Genesis to establish Bible foundations.", "Connect beginnings to the rest of Scripture carefully.", "Trace promise, faith, and providence without forcing types."],
     playlistTitle: "Genesis Foundations",
-    nextAction: "Strengthen Genesis 1-5 and patriarch study connections.",
+    nextAction: "Strengthen Genesis 1-5, 12, 15, 22, and 37-50 with background, TSK, and teaching outlines.",
   },
   {
     book: "Exodus",
@@ -4186,6 +4377,19 @@ const BIBLE_BOOK_ECOSYSTEMS: BibleBookEcosystem[] = [
     teachingApplications: ["Use Exodus to explain redemption and worship.", "Keep types connected to clear Scripture."],
     playlistTitle: "Exodus Redemption and Worship",
     nextAction: "Expand Exodus 1-5 and Passover study packs.",
+  },
+  {
+    book: "Psalms",
+    modelStatus: "Framework ready",
+    focus: "Prayer, worship, trust, lament, praise, wisdom, and Messianic hope.",
+    timeline: ["David", "Temple worship", "Exile and return", "Messianic expectation"],
+    keyThemes: ["Prayer", "Worship", "Shepherd", "Messiah", "Wisdom", "Trust", "Praise"],
+    keyVerses: ["Psalms 1:1", "Psalms 19:14", "Psalms 22:1", "Psalms 23:1", "Psalms 51:10", "Psalms 119:105"],
+    sermonIdeas: ["The Blessed Man", "The LORD Is My Shepherd", "Create in Me a Clean Heart", "Thy Word Is a Lamp", "The Suffering and Victorious Messiah"],
+    discussionQuestions: ["How do the Psalms teach us to pray?", "What should lament do in a believer's heart?", "Where do the Psalms point to Christ?", "How can Psalms help public worship and private devotion?"],
+    teachingApplications: ["Use Psalms to teach honest prayer, worship, repentance, and confidence in God.", "Connect Messianic Psalms to clear New Testament fulfillment references."],
+    playlistTitle: "Psalms Prayer and Worship Study",
+    nextAction: "Deepen Psalms 1, 22, 23, 51, and 119 with Treasury of David, cross references, and teaching outlines.",
   },
 ];
 
@@ -5277,6 +5481,47 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
       },
     ],
   }),
+  ...chapterRecommendations("Psalms", [1, 22, 23, 51, 119], {
+    commentaryForChapter: (chapter) => ({
+      id: `psalms-${chapter}-treasury-of-david`,
+      kind: "Commentary",
+      title: "The Treasury of David",
+      author: "C. H. Spurgeon",
+      status: "available",
+      note: "Reviewed public-domain Psalms commentary resource connected for devotional, teaching, and preaching use.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `psalms-${chapter}-treasury-of-david-library`,
+        kind: "Library Resource",
+        title: "The Treasury of David",
+        author: "C. H. Spurgeon",
+        status: "available",
+        note: "Best first Library resource for Psalms study, devotional reading, and sermon preparation.",
+        resourceSlug: "the-treasury-of-david-c-h-spurgeon",
+        warning: "Use with discernment",
+      },
+      {
+        id: `psalms-${chapter}-spurgeon-prayers`,
+        kind: "Library Resource",
+        title: "C. H. Spurgeon's Prayers",
+        author: "C. H. Spurgeon",
+        status: "available",
+        note: "Helpful prayer and worship companion for Psalm-based devotion and public prayer.",
+        resourceSlug: "c-h-spurgeon-s-prayers-c-h-spurgeon",
+      },
+      {
+        id: `psalms-${chapter}-murray-prayer-life`,
+        kind: "Library Resource",
+        title: "With Christ in the School of Prayer",
+        author: "Andrew Murray",
+        status: "available",
+        note: "Useful for turning Psalm study into prayer and personal application.",
+        resourceSlug: "with-christ-in-the-school-of-prayer-thoughts-on-our-training-for-the-ministry-of-intercession-andrew-murray",
+      },
+    ],
+  }),
   ...chapterRecommendations("Amos", [1, 2, 3, 4, 5, 6, 7, 8, 9], {
     commentaryForChapter: (chapter) => ({
       id: `amos-${chapter}-commentary-center`,
@@ -5459,6 +5704,132 @@ const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
             },
           ]
         : []),
+    ],
+  }),
+  ...chapterRecommendations("Daniel", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], {
+    commentaryForChapter: (chapter) => ({
+      id: `daniel-${chapter}-commentary-center`,
+      kind: "Commentary",
+      title: "Daniel Commentary Center",
+      author: "Matthew Henry, JFB, Ironside, Gaebelein, Kelly, Darby, and other verified voices where available",
+      status: "available",
+      note: "Use the public commentary comparison after reading the KJV chapter. Prophecy books should stay text-anchored and cautious.",
+      warning: "Use with discernment",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `daniel-${chapter}-gaebelein-prophet-daniel`,
+        kind: "Library Resource",
+        title: "The Prophet Daniel",
+        author: "Arno C. Gaebelein",
+        status: "available",
+        note: "Reviewed public-domain Daniel resource for prophecy, kingdom, and historical setting study.",
+        resourceSlug: "the-prophet-daniel-arno-c-gaebelein",
+        warning: "Use with discernment",
+      },
+      {
+        id: `daniel-${chapter}-kelly-notes`,
+        kind: "Library Resource",
+        title: "Notes on the Book of Daniel",
+        author: "William Kelly",
+        status: "available",
+        note: "Substantial public-domain Daniel study resource for teachers comparing prophecy-focused authors.",
+        resourceSlug: "notes-on-the-book-of-daniel-william-kelly",
+        warning: "Use with discernment",
+      },
+      {
+        id: `daniel-${chapter}-moody-man-of-god`,
+        kind: "Library Resource",
+        title: "Daniel, Man of God",
+        author: "D. L. Moody",
+        status: "available",
+        note: "Practical devotional and teaching help for faithfulness, courage, and obedience in Daniel.",
+        resourceSlug: "daniel-man-of-god-dwight-l-moody-dwight-l-moody",
+      },
+    ],
+  }),
+  ...chapterRecommendations("Revelation", Array.from({ length: 22 }, (_, index) => index + 1), {
+    commentaryForChapter: (chapter) => ({
+      id: `revelation-${chapter}-commentary-center`,
+      kind: "Commentary",
+      title: "Revelation Commentary Center",
+      author: "Matthew Henry, JFB, Barnes, Ironside, Gaebelein, Grant, Kelly, and other verified voices where available",
+      status: "available",
+      note: "Compare public-domain commentaries carefully while keeping Revelation centered on Jesus Christ and the KJV text.",
+      warning: "Avoid speculation that outruns Scripture",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `revelation-${chapter}-ironside-lectures`,
+        kind: "Library Resource",
+        title: "Lectures on the Book of Revelation",
+        author: "H. A. Ironside",
+        status: "available",
+        note: "Reviewed public-domain Revelation resource for exposition and teaching preparation.",
+        resourceSlug: "lectures-on-the-book-of-revelation-h-a-ironside",
+        warning: "Use with discernment",
+      },
+      {
+        id: `revelation-${chapter}-grant-revelation`,
+        kind: "Library Resource",
+        title: "The Revelation of Christ to His Servants",
+        author: "F. W. Grant",
+        status: "available",
+        note: "Public-domain Revelation resource useful for comparing prophetic exposition.",
+        resourceSlug: "the-revelation-of-christ-to-his-servants-f-w-grant",
+        warning: "Use with discernment",
+      },
+      {
+        id: `revelation-${chapter}-barnes-revelation`,
+        kind: "Library Resource",
+        title: "Notes on the New Testament, Explanatory and Practical: Revelation",
+        author: "Albert Barnes and Robert Frew",
+        status: "available",
+        note: "Helpful explanatory resource for teachers who need clearer chapter-by-chapter notes.",
+        resourceSlug: "notes-on-the-new-testament-explanatory-and-practical-revelation-albert-barnes-and-robert-frew",
+      },
+    ],
+  }),
+  ...chapterRecommendations("Isaiah", [1, 2, 3, 4, 5, 6, 7, 8, 9, 40, 41, 42, 43, 44, 45, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66], {
+    commentaryForChapter: (chapter) => ({
+      id: `isaiah-${chapter}-commentary-center`,
+      kind: "Commentary",
+      title: "Isaiah Commentary Center",
+      author: "Matthew Henry, JFB, Barnes, Clarke, Wesley, Kelly, Maclaren, and other verified voices where available",
+      status: "available",
+      note: "Use Isaiah commentary after the chapter, with special attention to holiness, judgment, comfort, and Messianic prophecy.",
+      warning: "Commentary is secondary to Scripture",
+    }),
+    libraryForChapter: (chapter) => [
+      {
+        id: `isaiah-${chapter}-kelly-exposition`,
+        kind: "Library Resource",
+        title: "An Exposition of the Book of Isaiah",
+        author: "William Kelly",
+        status: "available",
+        note: "Public-domain Isaiah resource for prophecy, chapter flow, and teaching comparison.",
+        resourceSlug: "an-exposition-of-the-book-of-isaiah-william-kelly",
+        warning: "Use with discernment",
+      },
+      {
+        id: `isaiah-${chapter}-meyer-christ-in-isaiah`,
+        kind: "Library Resource",
+        title: "Christ in Isaiah",
+        author: "F. B. Meyer",
+        status: "available",
+        note: "Helpful devotional and Christ-centered reading alongside Isaiah's Servant and kingdom passages.",
+        resourceSlug: "christ-in-isaiah-meyer-f-b-frederick-brotherton-1847-1929",
+      },
+      {
+        id: `isaiah-${chapter}-maclaren-expositions`,
+        kind: "Library Resource",
+        title: "Expositions of Holy Scripture: Isaiah and Jeremiah",
+        author: "Alexander Maclaren",
+        status: "available",
+        note: "Preaching and teaching helps for selected Isaiah passages.",
+        resourceSlug: "expositions-of-holy-scripture-isaiah-and-jeremiah",
+        warning: "Use with discernment",
+      },
     ],
   }),
 ];
@@ -8014,6 +8385,21 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(adamClarkeReviewedCompletionJoshuaStarterCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
+  ...(amosExpandedPublicDomainCommentary as CommentaryEntry[]),
+  ...(hAIronsideSelectedBooksPhase1Commentary as CommentaryEntry[]),
+  ...(treasuryOfDavidCompletionCommentary as CommentaryEntry[]),
+  ...(matthewPooleReviewedFocusBooksCommentary as CommentaryEntry[]),
+  ...(pulpitCommentaryReviewedFocusBooksCommentary as CommentaryEntry[]),
+  ...(biblicalIllustratorReviewedFocusBooksCommentary as CommentaryEntry[]),
+  ...(matthewPooleReviewedProphecyTeachingCommentary as CommentaryEntry[]),
+  ...(pulpitCommentaryReviewedProphecyTeachingCommentary as CommentaryEntry[]),
+  ...(biblicalIllustratorReviewedProphecyTeachingCommentary as CommentaryEntry[]),
+  ...(matthewPooleReviewedWeakBooksCommentary as CommentaryEntry[]),
+  ...(pulpitCommentaryReviewedWeakBooksCommentary as CommentaryEntry[]),
+  ...(biblicalIllustratorReviewedWeakBooksCommentary as CommentaryEntry[]),
+  ...(matthewPooleReviewedExodusCommentary as CommentaryEntry[]),
+  ...(pulpitCommentaryReviewedExodusCommentary as CommentaryEntry[]),
+  ...(biblicalIllustratorReviewedExodusCommentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
@@ -20454,13 +20840,17 @@ function BibleCoverageDashboard({
   const oldTestamentBooks = sortByWeakest(summary.books.filter((book) => book.testament === "Old Testament"));
   const newTestamentBooks = sortByWeakest(summary.books.filter((book) => book.testament === "New Testament"));
   const statRows = [
-    { label: "Commentary", value: `${summary.commentaryReadyBooks}/${summary.totalBooks}` },
-    { label: "Strong's", value: `${summary.strongsReadyBooks}/${summary.totalBooks}` },
+    { label: "Commentary", value: `${summary.averageCommentaryCoverage}% avg` },
+    { label: "TSK", value: `${summary.averageTskCoverage}% avg` },
+    { label: "Strong's", value: `${summary.averageStrongsCoverage}% avg` },
     { label: "Webster", value: `${Object.keys(dictionaryEntries).length} words` },
-    { label: "TSK", value: `${summary.tskReadyBooks}/${summary.totalBooks}` },
-    { label: "Background", value: `${summary.backgroundReadyBooks}/${summary.totalBooks}` },
-    { label: "Study packs", value: `${summary.studyPackReadyBooks}/${summary.totalBooks}` },
-    { label: "Sermon prep", value: `${summary.sermonPrepReadyBooks}/${summary.totalBooks}` },
+    { label: "Bible tools", value: `${summary.averageDictionaryToolCoverage}% avg` },
+    { label: "Background", value: `${summary.averageBackgroundCoverage}% avg` },
+    { label: "People/Places", value: `${Math.round((summary.averagePeopleCoverage + summary.averagePlacesCoverage) / 2)}% avg` },
+    { label: "Timeline", value: `${summary.averageTimelineCoverage}% avg` },
+    { label: "Best resources", value: `${summary.averageResourceRecommendationCoverage}% avg` },
+    { label: "Teaching", value: `${summary.averageStudyPackReadiness}% avg` },
+    { label: "Sermon prep", value: `${summary.averageSermonPrepReadiness}% avg` },
   ];
 
   return (
@@ -20478,10 +20868,20 @@ function BibleCoverageDashboard({
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-7">
+      <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5 xl:grid-cols-10">
         {statRows.map((stat) => (
           <LibraryStat key={`bible-coverage-stat-${stat.label}`} label={stat.label} value={stat.value} />
         ))}
+      </div>
+
+      <div className="mt-4 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+        <CoverageAverageBar label="Commentary coverage" value={summary.averageCommentaryCoverage} detail={`${summary.commentaryReadyBooks}/${summary.totalBooks} books have commentary`} />
+        <CoverageAverageBar label="TSK coverage" value={summary.averageTskCoverage} detail={`${summary.tskReadyBooks}/${summary.totalBooks} books have references`} />
+        <CoverageAverageBar label="Dictionary/tools" value={summary.averageDictionaryToolCoverage} detail={`${summary.dictionaryToolReadyBooks}/${summary.totalBooks} books have dictionary or tool support`} />
+        <CoverageAverageBar label="Background coverage" value={summary.averageBackgroundCoverage} detail={`${summary.backgroundReadyBooks}/${summary.totalBooks} books have background`} />
+        <CoverageAverageBar label="Best resources" value={summary.averageResourceRecommendationCoverage} detail="Chapter-level recommended resources connected" />
+        <CoverageAverageBar label="Teaching readiness" value={summary.averageStudyPackReadiness} detail={`${summary.studyPackReadyBooks}/${summary.totalBooks} books have study-pack support`} />
+        <CoverageAverageBar label="Sermon prep readiness" value={summary.averageSermonPrepReadiness} detail={`${summary.sermonPrepReadyBooks}/${summary.totalBooks} books connected`} />
       </div>
 
       <div className="mt-4 grid gap-3 xl:grid-cols-3">
@@ -20503,7 +20903,7 @@ function BibleCoverageDashboard({
                   <p className="text-xs font-semibold text-[var(--green)]">{book.score}%</p>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  {book.commentaryAuthors.length} commentary voices · {book.commentaryChapters}/{book.totalChapters} chapters · {book.nextStep}
+                  {book.commentaryAuthors.length} commentary voices · {book.commentaryCoveragePercent}% commentary · {book.studyPackReadinessPercent}% teaching · {book.nextStep}
                 </p>
               </button>
             ))}
@@ -20531,7 +20931,7 @@ function BibleCoverageDashboard({
                   <div className="h-full rounded-full bg-[var(--gold)]" style={{ width: `${book.score}%` }} />
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  Next action: {book.nextStep} · {book.commentaryChapters}/{book.totalChapters} commentary chapters
+                  Next action: {book.nextStep} · {book.commentaryCoveragePercent}% commentary · {book.resourceRecommendationCoveragePercent}% best resources · {book.overallReadinessScore}% overall
                 </p>
                 <div className="mt-2 flex flex-wrap gap-1.5">
                   {book.missingTools.slice(0, 3).map((tool) => (
@@ -20576,7 +20976,7 @@ function BibleCoverageDashboard({
                   <p className="text-xs font-semibold text-[var(--green)]">{book.score}%</p>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
-                  {book.commentaryAuthors.join(", ") || "No commentary yet"} · Next: {book.nextStep}
+                  {book.commentaryAuthors.join(", ") || "No commentary yet"} · {book.commentaryCoveragePercent}% commentary · {book.sermonPrepReadinessPercent}% sermon prep · Next: {book.nextStep}
                 </p>
                 {book.missingTools.length > 0 && (
                   <p className="mt-1 line-clamp-1 text-[0.7rem] font-semibold text-amber-800">
@@ -20603,11 +21003,13 @@ function BibleCoverageDashboard({
               ["C", "Commentary chapter exists"],
               ["S", "Strong's starter entry touches the book"],
               ["W", "Webster lookup available"],
+              ["D", "Dictionaries, handbooks, surveys, or Bible tools connected"],
               ["T", "Reviewed TSK/cross references exist"],
               ["B", "Reviewed background exists"],
               ["P", "People entries exist"],
               ["L", "Places entries exist"],
               ["M", "Timeline entries exist"],
+              ["Best", "Best commentary, devotional, study, sermon, and next resource path exists"],
               ["Pack", "Book intro plus study material ready"],
               ["Teach", "Sermon and lesson prep path is connected"],
             ].map(([label, body]) => (
@@ -20653,17 +21055,28 @@ function BibleCoverageBookGrid({
           >
             <div className="flex items-center justify-between gap-2">
               <p className="text-sm font-semibold text-[var(--ink)]">{book.book}</p>
-              <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{book.score}%</span>
+              <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{book.overallReadinessScore}%</span>
+            </div>
+            <div className="mt-2 space-y-1.5">
+              <CoverageMiniBar label="C" value={book.commentaryCoveragePercent} />
+              <CoverageMiniBar label="T" value={book.tskCoveragePercent} />
+              <CoverageMiniBar label="S" value={book.strongsCoveragePercent} />
+              <CoverageMiniBar label="D" value={book.dictionaryToolCoveragePercent} />
+              <CoverageMiniBar label="Best" value={book.resourceRecommendationCoveragePercent} />
+              <CoverageMiniBar label="Teach" value={book.studyPackReadinessPercent} />
             </div>
             <div className="mt-2 flex flex-wrap gap-1.5">
-              <CoverageMarker label="C" ready={book.commentaryChapters > 0} title={`${book.commentaryChapters}/${book.totalChapters} commentary chapters`} />
-              <CoverageMarker label="S" ready={book.strongsChapters > 0} title={`${book.strongsChapters} Strong's chapters`} />
+              <CoverageMarker label="C" ready={book.commentaryCoveragePercent >= 50} title={`${book.commentaryCoveragePercent}% commentary coverage`} />
+              <CoverageMarker label="S" ready={book.strongsCoveragePercent >= 30} title={`${book.strongsCoveragePercent}% Strong's coverage`} />
               <CoverageMarker label="W" ready title="Webster lookup available" />
-              <CoverageMarker label="T" ready={book.tskChapters > 0} title={`${book.tskChapters} TSK chapters`} />
-              <CoverageMarker label="B" ready={book.backgroundChapters > 0} title={`${book.backgroundChapters} background chapters`} />
-              <CoverageMarker label="P" ready={book.peopleChapters > 0} title={`${book.peopleChapters} people chapters`} />
-              <CoverageMarker label="L" ready={book.placesChapters > 0} title={`${book.placesChapters} places chapters`} />
-              <CoverageMarker label="M" ready={book.timelineChapters > 0} title={`${book.timelineChapters} timeline chapters`} />
+              <CoverageMarker label="D" ready={book.dictionaryToolCoveragePercent >= 35} title={`${book.dictionaryToolCoveragePercent}% dictionary/tool coverage`} />
+              <CoverageMarker label="T" ready={book.tskCoveragePercent >= 35} title={`${book.tskCoveragePercent}% TSK coverage`} />
+              <CoverageMarker label="B" ready={book.backgroundCoveragePercent >= 35} title={`${book.backgroundCoveragePercent}% background coverage`} />
+              <CoverageMarker label="P" ready={book.peopleCoveragePercent >= 30} title={`${book.peopleCoveragePercent}% people coverage`} />
+              <CoverageMarker label="L" ready={book.placesCoveragePercent >= 30} title={`${book.placesCoveragePercent}% places coverage`} />
+              <CoverageMarker label="M" ready={book.timelineCoveragePercent >= 30} title={`${book.timelineCoveragePercent}% timeline coverage`} />
+              <CoverageMarker label="Best" ready={book.resourceRecommendationCoveragePercent >= 35} title={`${book.resourceRecommendationCoveragePercent}% best resource coverage`} />
+              <CoverageMarker label="Pack" ready={book.studyPackReady} title={`${book.studyPackReadinessPercent}% teaching readiness`} />
               <CoverageMarker label="Teach" ready={book.sermonPrepReady} title={book.sermonPrepReady ? "Sermon prep path connected" : "Needs more reviewed study links for sermon prep"} />
             </div>
             <p className="mt-2 line-clamp-1 text-xs text-[var(--muted)]">{book.nextStep}</p>
@@ -20689,6 +21102,33 @@ function BibleCoverageBookGrid({
         ))}
       </div>
     </article>
+  );
+}
+
+function CoverageAverageBar({ label, value, detail }: { label: string; value: number; detail: string }) {
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+        <p className="text-sm font-semibold text-[var(--green)]">{value}%</p>
+      </div>
+      <div className="mt-2 h-2 overflow-hidden rounded-full bg-white">
+        <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${value}%` }} />
+      </div>
+      <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{detail}</p>
+    </article>
+  );
+}
+
+function CoverageMiniBar({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="grid grid-cols-[1.4rem_1fr_2.4rem] items-center gap-2">
+      <span className="text-[0.65rem] font-semibold text-[var(--muted)]">{label}</span>
+      <span className="h-1.5 overflow-hidden rounded-full bg-[var(--paper)]">
+        <span className="block h-full rounded-full bg-[var(--gold)]" style={{ width: `${value}%` }} />
+      </span>
+      <span className="text-right text-[0.65rem] font-semibold text-[var(--green)]">{value}%</span>
+    </div>
   );
 }
 
@@ -23707,7 +24147,11 @@ function buildBibleCoverageSummary({
   const peopleByBook = new Map<string, Set<number>>();
   const placesByBook = new Map<string, Set<number>>();
   const timelineByBook = new Map<string, Set<number>>();
+  const dictionaryToolsByBook = new Map<string, Set<number>>();
+  const resourceRecommendationsByBook = new Map<string, Set<number>>();
   const bookIntroBooks = new Set(bookIntroductions.map((intro) => intro.book));
+  const ecosystemBooks = new Set(BIBLE_BOOK_ECOSYSTEMS.map((ecosystem) => ecosystem.book));
+  const chapterPercent = (covered: number, total: number) => (total ? Math.min(100, Math.round((covered / total) * 100)) : 0);
 
   Object.values(strongsMvpEntries).forEach((entry) => {
     [entry.firstOccurrence, ...entry.keyOccurrences, ...entry.keyVerses].forEach((reference) => addReferenceChapter(strongsByBook, reference));
@@ -23739,6 +24183,29 @@ function buildBibleCoverageSummary({
     }
   });
 
+  CHAPTER_RESOURCE_RECOMMENDATIONS.forEach((entry) => {
+    const hasReadyRecommendation = entry.recommendations.some((recommendation) => recommendation.status === "available" || Boolean(recommendation.resourceSlug));
+    const hasReadyDictionaryTool = entry.recommendations.some((recommendation) => {
+      const studyToolKinds: ChapterResourceRecommendation["kind"][] = [
+        "Dictionary",
+        "Bible Tool",
+        "Bible Handbook",
+        "Bible Survey",
+        "Bible Introduction",
+      ];
+      return studyToolKinds.includes(recommendation.kind) && (recommendation.status === "available" || Boolean(recommendation.resourceSlug));
+    });
+    if (hasReadyDictionaryTool) {
+      const chapters = dictionaryToolsByBook.get(entry.book) ?? new Set<number>();
+      chapters.add(entry.chapter);
+      dictionaryToolsByBook.set(entry.book, chapters);
+    }
+    if (!hasReadyRecommendation) return;
+    const chapters = resourceRecommendationsByBook.get(entry.book) ?? new Set<number>();
+    chapters.add(entry.chapter);
+    resourceRecommendationsByBook.set(entry.book, chapters);
+  });
+
   const books = bookOrder.map((bookName) => {
     const totalChapters = chaptersByBook.get(bookName)?.size ?? 0;
     const commentary = commentaryByBook.get(bookName);
@@ -23751,43 +24218,86 @@ function buildBibleCoverageSummary({
     const peopleChapters = peopleByBook.get(bookName)?.size ?? 0;
     const placesChapters = placesByBook.get(bookName)?.size ?? 0;
     const timelineChapters = timelineByBook.get(bookName)?.size ?? 0;
+    const dictionaryToolChapters = dictionaryToolsByBook.get(bookName)?.size ?? 0;
+    const resourceRecommendationChapters = resourceRecommendationsByBook.get(bookName)?.size ?? 0;
     const bookIntroductionReady = bookIntroBooks.has(bookName);
-    const studyPackReady = bookIntroductionReady && (commentaryChapters > 0 || backgroundChapters > 0 || tskChapters > 0);
-    const sermonPrepReady = studyPackReady && commentaryChapters > 0 && (tskChapters > 0 || backgroundChapters > 0 || peopleChapters > 0 || placesChapters > 0);
-    const weightedScore = [
-      commentaryChapters > 0 ? 18 : 0,
-      strongsChapters > 0 ? 10 : 0,
-      tskChapters > 0 ? 14 : 0,
-      bookIntroductionReady ? 14 : 0,
-      backgroundChapters > 0 ? 10 : 0,
-      peopleChapters > 0 ? 8 : 0,
-      placesChapters > 0 ? 8 : 0,
-      timelineChapters > 0 ? 7 : 0,
-      studyPackReady ? 6 : 0,
-      sermonPrepReady ? 5 : 0,
-    ].reduce((total, value) => total + value, 0);
-    const nextStep = !commentaryChapters
-      ? "Add reviewed commentary"
-      : !tskChapters
-        ? "Add TSK references"
-        : !backgroundChapters
-          ? "Add background"
-          : !peopleChapters && !placesChapters
-            ? "Add people/places"
-            : !strongsChapters
+    const ecosystemReady = ecosystemBooks.has(bookName);
+    const commentaryCoveragePercent = chapterPercent(commentaryChapters, totalChapters);
+    const strongsCoveragePercent = chapterPercent(strongsChapters, totalChapters);
+    const tskCoveragePercent = chapterPercent(tskChapters, totalChapters);
+    const backgroundCoveragePercent = chapterPercent(backgroundChapters, totalChapters);
+    const peopleCoveragePercent = chapterPercent(peopleChapters, totalChapters);
+    const placesCoveragePercent = chapterPercent(placesChapters, totalChapters);
+    const timelineCoveragePercent = chapterPercent(timelineChapters, totalChapters);
+    const dictionaryToolCoveragePercent = chapterPercent(dictionaryToolChapters, totalChapters);
+    const resourceRecommendationCoveragePercent = chapterPercent(resourceRecommendationChapters, totalChapters);
+    const studyPackReadinessPercent = Math.min(100, Math.round(
+      ((bookIntroductionReady ? 100 : 0) * 0.18) +
+      ((ecosystemReady ? 100 : 0) * 0.18) +
+      (commentaryCoveragePercent * 0.2) +
+      (tskCoveragePercent * 0.12) +
+      (backgroundCoveragePercent * 0.12) +
+      (dictionaryToolCoveragePercent * 0.08) +
+      (resourceRecommendationCoveragePercent * 0.08) +
+      (Math.max(peopleCoveragePercent, placesCoveragePercent, timelineCoveragePercent) * 0.08),
+    ));
+    const sermonPrepReadinessPercent = Math.min(100, Math.round(
+      (studyPackReadinessPercent * 0.22) +
+      (commentaryCoveragePercent * 0.22) +
+      (tskCoveragePercent * 0.13) +
+      (backgroundCoveragePercent * 0.12) +
+      (peopleCoveragePercent * 0.08) +
+      (placesCoveragePercent * 0.08) +
+      (timelineCoveragePercent * 0.07) +
+      (dictionaryToolCoveragePercent * 0.04) +
+      (resourceRecommendationCoveragePercent * 0.04),
+    ));
+    const studyPackReady = studyPackReadinessPercent >= 55;
+    const sermonPrepReady = sermonPrepReadinessPercent >= 55;
+    const overallReadinessScore = Math.round(
+      (commentaryCoveragePercent * 0.22) +
+      (tskCoveragePercent * 0.12) +
+      (strongsCoveragePercent * 0.1) +
+      (backgroundCoveragePercent * 0.1) +
+      (peopleCoveragePercent * 0.08) +
+      (placesCoveragePercent * 0.08) +
+      (timelineCoveragePercent * 0.07) +
+      ((bookIntroductionReady ? 100 : 0) * 0.07) +
+      ((ecosystemReady ? 100 : 0) * 0.05) +
+      (dictionaryToolCoveragePercent * 0.04) +
+      (resourceRecommendationCoveragePercent * 0.06) +
+      (studyPackReadinessPercent * 0.07) +
+      (sermonPrepReadinessPercent * 0.05),
+    );
+    const nextStep = commentaryCoveragePercent < 50
+      ? "Add verified commentary chapters"
+      : tskCoveragePercent < 35
+        ? "Add reviewed TSK references"
+        : backgroundCoveragePercent < 35
+          ? "Add historical background"
+          : peopleCoveragePercent < 30 && placesCoveragePercent < 30
+            ? "Add people and places"
+            : strongsCoveragePercent < 30
               ? "Add Strong's entries"
-              : !sermonPrepReady
-                ? "Connect sermon prep"
-                : "Deepen study pack";
+              : dictionaryToolCoveragePercent < 35
+                ? "Add dictionaries and Bible tools"
+              : resourceRecommendationCoveragePercent < 35
+                ? "Add best resource recommendations"
+                : sermonPrepReadinessPercent < 75
+                  ? "Connect sermon prep"
+                  : "Deepen study pack";
     const missingTools = [
-      commentaryChapters ? "" : "Commentary",
-      tskChapters ? "" : "TSK",
-      strongsChapters ? "" : "Strong's",
-      backgroundChapters ? "" : "Background",
-      peopleChapters ? "" : "People",
-      placesChapters ? "" : "Places",
-      timelineChapters ? "" : "Timeline",
+      commentaryCoveragePercent >= 50 ? "" : "Commentary",
+      tskCoveragePercent >= 35 ? "" : "TSK",
+      strongsCoveragePercent >= 30 ? "" : "Strong's",
+      backgroundCoveragePercent >= 35 ? "" : "Background",
+      peopleCoveragePercent >= 30 ? "" : "People",
+      placesCoveragePercent >= 30 ? "" : "Places",
+      timelineCoveragePercent >= 30 ? "" : "Timeline",
+      dictionaryToolCoveragePercent >= 35 ? "" : "Dictionary/tools",
       bookIntroductionReady ? "" : "Book intro",
+      ecosystemReady ? "" : "Book ecosystem",
+      resourceRecommendationCoveragePercent >= 35 ? "" : "Best resources",
       studyPackReady ? "" : "Study pack",
       sermonPrepReady ? "" : "Sermon prep",
     ].filter(Boolean);
@@ -23797,24 +24307,41 @@ function buildBibleCoverageSummary({
       testament: bookOrder.indexOf(bookName) >= NEW_TESTAMENT_START_INDEX ? "New Testament" as const : "Old Testament" as const,
       totalChapters,
       commentaryChapters,
+      commentaryCoveragePercent,
       commentaryAuthors,
       missingCommentaryAuthors,
       strongsChapters,
+      strongsCoveragePercent,
       tskChapters,
+      tskCoveragePercent,
       backgroundChapters,
+      backgroundCoveragePercent,
       peopleChapters,
+      peopleCoveragePercent,
       placesChapters,
+      placesCoveragePercent,
       timelineChapters,
+      timelineCoveragePercent,
+      dictionaryToolChapters,
+      dictionaryToolCoveragePercent,
+      resourceRecommendationChapters,
+      resourceRecommendationCoveragePercent,
       bookIntroductionReady,
+      ecosystemReady,
       studyPackReady,
+      studyPackReadinessPercent,
       sermonPrepReady,
+      sermonPrepReadinessPercent,
       missingTools,
-      score: weightedScore,
+      score: overallReadinessScore,
+      overallReadinessScore,
       nextStep,
     };
   });
 
   const countReady = (selector: (book: BibleCoverageBook) => boolean) => books.filter(selector).length;
+  const averagePercent = (selector: (book: BibleCoverageBook) => number) =>
+    books.length ? Math.round(books.reduce((total, book) => total + selector(book), 0) / books.length) : 0;
 
   return {
     books,
@@ -23826,9 +24353,21 @@ function buildBibleCoverageSummary({
     peopleReadyBooks: countReady((book) => book.peopleChapters > 0),
     placesReadyBooks: countReady((book) => book.placesChapters > 0),
     timelineReadyBooks: countReady((book) => book.timelineChapters > 0),
+    dictionaryToolReadyBooks: countReady((book) => book.dictionaryToolChapters > 0),
     studyPackReadyBooks: countReady((book) => book.studyPackReady),
     sermonPrepReadyBooks: countReady((book) => book.sermonPrepReady),
     averageScore: books.length ? Math.round(books.reduce((total, book) => total + book.score, 0) / books.length) : 0,
+    averageCommentaryCoverage: averagePercent((book) => book.commentaryCoveragePercent),
+    averageStrongsCoverage: averagePercent((book) => book.strongsCoveragePercent),
+    averageTskCoverage: averagePercent((book) => book.tskCoveragePercent),
+    averageBackgroundCoverage: averagePercent((book) => book.backgroundCoveragePercent),
+    averagePeopleCoverage: averagePercent((book) => book.peopleCoveragePercent),
+    averagePlacesCoverage: averagePercent((book) => book.placesCoveragePercent),
+    averageTimelineCoverage: averagePercent((book) => book.timelineCoveragePercent),
+    averageDictionaryToolCoverage: averagePercent((book) => book.dictionaryToolCoveragePercent),
+    averageResourceRecommendationCoverage: averagePercent((book) => book.resourceRecommendationCoveragePercent),
+    averageStudyPackReadiness: averagePercent((book) => book.studyPackReadinessPercent),
+    averageSermonPrepReadiness: averagePercent((book) => book.sermonPrepReadinessPercent),
     weakestBooks: books
       .slice()
       .sort((a, b) => a.score - b.score || bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book))
@@ -28215,6 +28754,9 @@ function LibraryScreen({
   const startHerePaths = START_HERE_READING_PATH_IDS
     .map((pathId) => READING_PATHS.find((path) => path.id === pathId))
     .filter(Boolean) as ReadingPath[];
+  const bestResourcePaths = BEST_RESOURCE_READING_PATH_IDS
+    .map((pathId) => READING_PATHS.find((path) => path.id === pathId))
+    .filter(Boolean) as ReadingPath[];
   const preachersTeachersResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["preaching", "teaching", "sermon", "illustration", "bible characters", "ten commandments"]))
     .slice(0, 8);
@@ -28233,6 +28775,11 @@ function LibraryScreen({
     { title: "Commentary", resources: resources.filter((resource) => libraryResourceMatches(resource, ["commentary", "commentaries"])) },
     { title: "Prayer", resources: resources.filter((resource) => libraryResourceMatches(resource, ["prayer", "pray"])) },
     { title: "Bible Study", resources: resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "topical", "cross references", "bible study", "handbook", "survey"])) },
+    { title: "Apologetics & Evidences", resources: resources.filter((resource) => libraryResourceMatches(resource, ["apologetics", "evidences", "resurrection", "theism", "proofs", "defense"])) },
+    { title: "Creation & Evolution Response", resources: resources.filter((resource) => libraryResourceMatches(resource, ["darwinism", "evolution", "creation", "origin of the world", "revelation and science"])) },
+    { title: "False Religion & Discernment", resources: resources.filter((resource) => libraryResourceMatches(resource, ["cults", "islam", "papacy", "papal", "jesuits", "oriental religions", "discernment", "paganism"])) },
+    { title: "Home & Family", resources: resources.filter((resource) => libraryResourceMatches(resource, ["christian home", "religious education in the family", "home", "family", "parents", "children"])) },
+    { title: "Doctrine & Theology", resources: resources.filter((resource) => libraryResourceMatches(resource, ["doctrine", "theology", "fundamental doctrines", "holy spirit", "theistic"])) },
     { title: "KJV Defense / Textual Issues", resources: resources.filter((resource) => libraryResourceMatches(resource, ["kjv", "king james", "textual", "scripture", "authorized"])) },
     { title: "Baptist History", resources: resources.filter((resource) => libraryResourceMatches(resource, ["baptist history", "baptist"])) },
     { title: "Missions", resources: resources.filter((resource) => libraryResourceMatches(resource, ["missions", "missionary", "mission"])) },
@@ -28241,6 +28788,11 @@ function LibraryScreen({
   const storefrontCollectionIds = [
     "commentary",
     "kjv-defense",
+    "apologetics-evidences",
+    "creation-evolution-response",
+    "false-religion-discernment",
+    "home-family",
+    "doctrine-theology",
     "baptist-history",
     "prayer",
     "evangelism",
@@ -28568,6 +29120,17 @@ function LibraryScreen({
         {startHerePaths.map((path) => (
           <ReadingPathCard
             key={`start-here-path-${path.id}`}
+            path={path}
+            count={resourcesForReadingPath(resources, path).length}
+            onOpen={() => onOpenReadingPath(path.id)}
+          />
+        ))}
+      </LibraryShelf>
+
+      <LibraryShelf title="Best Resources For" horizontal>
+        {bestResourcePaths.map((path) => (
+          <ReadingPathCard
+            key={`best-resource-path-${path.id}`}
             path={path}
             count={resourcesForReadingPath(resources, path).length}
             onOpen={() => onOpenReadingPath(path.id)}
@@ -34476,9 +35039,9 @@ function PassageGuideScreen({
           {([
             ["Best Commentary", bestResources.commentary],
             ["Best Devotional", bestResources.devotional],
-            ["Best Study Book", bestResources.studyBook],
+            ["Best Study Resource", bestResources.studyBook],
             ["Best Preaching Resource", bestResources.preaching],
-            ["Best Next Resource", bestResources.nextResource],
+            ["Best Next Book", bestResources.nextResource],
           ] as Array<[string, ChapterResourceRecommendation | null]>).map(([label, resource]) => (
             <article key={`passage-best-resource-${label}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
