@@ -13206,6 +13206,7 @@ export default function Home() {
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
   const [tab, setTab] = useState<Tab>("today");
+  const [showLibraryAcquisitionAdmin, setShowLibraryAcquisitionAdmin] = useState(false);
   const [book, setBook] = useState(DEFAULT_BOOK);
   const [chapter, setChapter] = useState(DEFAULT_CHAPTER);
   const [verseJump, setVerseJump] = useState(DEFAULT_VERSE);
@@ -13339,6 +13340,8 @@ export default function Home() {
 
   useEffect(() => {
     function openHiddenAdminAreas() {
+      const shouldShowLibraryAcquisition = ["#admin-import", "#library-acquisition"].includes(window.location.hash);
+      setShowLibraryAcquisitionAdmin(shouldShowLibraryAcquisition);
       if (["#admin-import", "#library-acquisition"].includes(window.location.hash)) {
         setLibraryView("home");
         setTab("library");
@@ -13355,10 +13358,10 @@ export default function Home() {
     }
 
     openHiddenAdminAreas();
-    const retryTimer = window.setTimeout(openHiddenAdminAreas, 50);
+    const retryTimers = [50, 250, 750].map((delay) => window.setTimeout(openHiddenAdminAreas, delay));
     window.addEventListener("hashchange", openHiddenAdminAreas);
     return () => {
-      window.clearTimeout(retryTimer);
+      retryTimers.forEach((timer) => window.clearTimeout(timer));
       window.removeEventListener("hashchange", openHiddenAdminAreas);
     };
   }, []);
@@ -17592,6 +17595,20 @@ export default function Home() {
           </aside>
 
           <section className="min-w-0 pb-32 md:pb-6">
+            {showLibraryAcquisitionAdmin && (
+              <div className="p-4 md:p-6">
+                <LibraryAcquisitionCenter
+                  signedIn={Boolean(user)}
+                  resources={allLibraryResources.length ? allLibraryResources : libraryResources}
+                  commentaryEntries={commentaryEntries}
+                  onClose={() => {
+                    window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                    setShowLibraryAcquisitionAdmin(false);
+                  }}
+                />
+              </div>
+            )}
+
             {tab === "today" && (
               <TodayScreen
                 book={book}
@@ -17966,7 +17983,6 @@ export default function Home() {
                 view={libraryView}
                 resources={libraryResources}
                 allResources={allLibraryResources}
-                signedIn={Boolean(user)}
                 filteredResources={filteredLibraryResources}
                 categories={libraryCategories}
                 activeCategory={libraryCategory}
@@ -28621,7 +28637,6 @@ function LibraryScreen({
   view,
   resources,
   allResources,
-  signedIn,
   filteredResources,
   categories,
   activeCategory,
@@ -28702,7 +28717,6 @@ function LibraryScreen({
   view: LibraryView;
   resources: LibraryResource[];
   allResources: LibraryResource[];
-  signedIn: boolean;
   filteredResources: LibraryResource[];
   categories: string[];
   activeCategory: string;
@@ -28787,18 +28801,6 @@ function LibraryScreen({
   onRemoveCompleted: (slug: string) => void;
   onReadAgain: (slug: string) => void;
 }) {
-  const [showAdminImport, setShowAdminImport] = useState(false);
-
-  useEffect(() => {
-    function updateAdminVisibility() {
-      setShowAdminImport(["#admin-import", "#library-acquisition"].includes(window.location.hash));
-    }
-
-    updateAdminVisibility();
-    window.addEventListener("hashchange", updateAdminVisibility);
-    return () => window.removeEventListener("hashchange", updateAdminVisibility);
-  }, []);
-
   if (view === "reader" && activeResource) {
     const progress = progressState[activeResource.slug];
     const listening = listeningProgress[activeResource.slug];
@@ -29023,6 +29025,7 @@ function LibraryScreen({
   const plannedKjvItems = [
     ...LIBRARY_IMPORT_CANDIDATES.filter((candidate) => candidate.category === "KJV Defense" || candidate.title.toLowerCase().includes("king james") || candidate.title.toLowerCase().includes("way of life")),
   ];
+  const showAdminPlanning = typeof window !== "undefined" && ["#admin-import", "#library-acquisition"].includes(window.location.hash);
   const devotionalResources = resources
     .filter((resource) => libraryResourceMatches(resource, ["devotional", "devotion", "christian living", "prayer"]))
     .slice(0, 8);
@@ -29403,11 +29406,6 @@ function LibraryScreen({
         </section>
       )}
 
-      {showAdminImport && <LibraryAcquisitionCenter signedIn={signedIn} resources={allResources} commentaryEntries={commentaryEntries} onClose={() => {
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-        setShowAdminImport(false);
-      }} />}
-
       <CommentaryCoverageDashboard
         coverage={commentaryCoverage}
         onOpenAuthor={onOpenAuthor}
@@ -29605,7 +29603,7 @@ function LibraryScreen({
         );
       })}
 
-      {showAdminImport && plannedKjvItems.length > 0 && (
+      {showAdminPlanning && plannedKjvItems.length > 0 && (
         <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
