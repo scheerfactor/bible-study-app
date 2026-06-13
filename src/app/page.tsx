@@ -200,7 +200,7 @@ type SermonSlideTextPlacement = "Center" | "Left" | "Bottom";
 type SermonSlideAccentStyle = "None" | "Line" | "Badge" | "Panel";
 type SermonSlideVerseDisplay = "Reference + Text" | "Text Only" | "Reference Only";
 type SermonSlideBackgroundIntensity = "Soft" | "Balanced" | "Strong";
-type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit";
+type SermonSlideMediaCategory = "Cross" | "Open Bible" | "Prayer" | "Missions" | "Resurrection" | "Grace" | "Judgment" | "Baptism" | "Church" | "Teaching" | "Harvest" | "Shepherd" | "Empty Tomb" | "Pulpit" | "Communion";
 type PresentationWorkspaceView = "manager" | "deck" | "presenter" | "controller" | "presentation";
 type PresentationStatus = "Draft" | "Ready" | "Archived";
 
@@ -351,6 +351,19 @@ type JournalDraft = {
   teachingThought: string;
   sourceType: JournalSourceType;
   sourceLabel: string;
+};
+
+type DailyChapterStudy = {
+  reference: string;
+  summary: string;
+  keyThemes: string[];
+  wordStudies: Array<{ word: string; count: number; definition: string }>;
+  commentaryRecommendations: Array<{ author: string; title: string; recommendedUse: string }>;
+  crossReferences: Array<{ source: string; target: string; label: string }>;
+  highlightVerses: Array<{ ref: string; text: string }>;
+  prayerFocus: string;
+  applicationPrompts: string[];
+  noteCount: number;
 };
 
 type SermonSeries = {
@@ -2204,8 +2217,8 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     description: "Lord's supper, remembrance, worship, and reverent reflection.",
     background: "radial-gradient(ellipse at 50% 72%, rgba(255,255,255,0.30), transparent 30%), linear-gradient(145deg, rgba(212,180,111,0.22), transparent)",
     motif: "Table",
-    category: "Cross",
-    assetUrl: "/media/sermon-slides/cross.svg",
+    category: "Communion",
+    assetUrl: "/media/sermon-slides/communion.svg",
   },
   "baptism-water": {
     label: "Baptism Water",
@@ -2241,7 +2254,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
   },
 };
 
-const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Church", "Teaching", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
+const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = ["All", "Cross", "Open Bible", "Prayer", "Missions", "Resurrection", "Grace", "Judgment", "Baptism", "Communion", "Church", "Teaching", "Harvest", "Shepherd", "Empty Tomb", "Pulpit"];
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
@@ -10242,6 +10255,28 @@ const FOCUS_BIBLE_COVERAGE_BOOKS = ["Amos", "Romans", "Daniel", "Revelation", "J
 const BIBLE_BOOK_DISPLAY_ALIASES: Record<string, string> = {
   "Solomon's Song": "Song of Solomon",
 };
+const QUICK_PASSAGE_BOOK_ALIASES: Record<string, string> = {
+  ge: "Genesis",
+  gen: "Genesis",
+  ex: "Exodus",
+  exo: "Exodus",
+  jn: "John",
+  jhn: "John",
+  joh: "John",
+  rom: "Romans",
+  ro: "Romans",
+  rev: "Revelation",
+  re: "Revelation",
+  revelation: "Revelation",
+  ps: "Psalms",
+  psa: "Psalms",
+  psalm: "Psalms",
+  prov: "Proverbs",
+  pr: "Proverbs",
+  pro: "Proverbs",
+  song: "Song of Solomon",
+  sos: "Song of Solomon",
+};
 const OCR_CLEANUP_QUEUE = ocrCleanupQueueData as OcrCleanupQueueItem[];
 
 function bibleBookDisplayName(bookName: string) {
@@ -10522,14 +10557,26 @@ function saveStudySessions(sessions: SavedStudySession[]) {
   window.localStorage.setItem(STUDY_SESSIONS_KEY, JSON.stringify(sessions.slice(0, 20)));
 }
 
+function normalizeQuickPassageBook(rawBook: string, books: string[]) {
+  const normalized = rawBook.toLowerCase().replace(/\./g, "").replace(/\s+/g, " ").trim();
+  const compact = normalized.replace(/\s+/g, "");
+  const alias = QUICK_PASSAGE_BOOK_ALIASES[normalized] ?? QUICK_PASSAGE_BOOK_ALIASES[compact];
+  if (alias && books.includes(alias)) return alias;
+
+  return books.find((candidate) => {
+    const candidateNormalized = candidate.toLowerCase().replace(/\./g, "").replace(/\s+/g, " ").trim();
+    const candidateCompact = candidateNormalized.replace(/\s+/g, "");
+    return candidateNormalized === normalized || candidateCompact === compact;
+  }) ?? null;
+}
+
 function parseQuickPassage(input: string, allVerses: BibleVerse[], books: string[]) {
   const query = input.trim().replace(/\s+/g, " ");
   const match = query.match(/^(.+?)\s+(\d+)(?::(\d+))?$/);
   if (!match) return null;
 
   const [, rawBook, rawChapter, rawVerse] = match;
-  const normalizedBook = rawBook.toLowerCase().replace(/\./g, "");
-  const targetBook = books.find((candidate) => candidate.toLowerCase().replace(/\./g, "") === normalizedBook);
+  const targetBook = normalizeQuickPassageBook(rawBook, books);
   if (!targetBook) return null;
 
   const targetChapter = Number(rawChapter);
@@ -13207,6 +13254,7 @@ export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [tab, setTab] = useState<Tab>("today");
   const [showLibraryAcquisitionAdmin, setShowLibraryAcquisitionAdmin] = useState(false);
+  const [globalQuickJumpText, setGlobalQuickJumpText] = useState("");
   const [book, setBook] = useState(DEFAULT_BOOK);
   const [chapter, setChapter] = useState(DEFAULT_CHAPTER);
   const [verseJump, setVerseJump] = useState(DEFAULT_VERSE);
@@ -13821,6 +13869,79 @@ export default function Home() {
     };
   }, [allVerses, book, chapter, chapterVerses, proverbOfTheDay, scriptureMemory, selectedRef, todaysPrayerFocus, versesByRef]);
 
+  const dailyChapterStudy = useMemo<DailyChapterStudy>(() => {
+    const reference = `${book} ${chapter}`;
+    const keyVerseRefs = chapterKeyVerses.length ? chapterKeyVerses.slice(0, 4) : [selectedRef];
+    const highlightVerses = keyVerseRefs
+      .map((ref) => versesByRef.get(ref))
+      .filter((verse): verse is BibleVerse => Boolean(verse))
+      .map((verse) => ({ ref: verse.ref, text: verse.plainText }));
+    const commentaryByAuthor = new Map<string, { author: string; title: string; recommendedUse: string }>();
+    chapterCommentaryEntries.forEach((entry) => {
+      if (commentaryByAuthor.has(entry.author)) return;
+      commentaryByAuthor.set(entry.author, {
+        author: entry.author,
+        title: entry.resource_title,
+        recommendedUse: entry.recommended_use || "Reviewed public-domain commentary for chapter study.",
+      });
+    });
+    const chapterThemes = uniqueStrings([
+      ...activeChapterThemes.map((theme) => theme.title),
+      ...activeChapterConnections.themes,
+      activeBookIntroduction?.overview.theme ?? "",
+    ].filter(Boolean));
+    const summary =
+      activeBibleBackground.historicalSetting !== DEFAULT_BIBLE_BACKGROUND.historicalSetting
+        ? activeBibleBackground.historicalSetting
+        : activeBookIntroduction?.overview.purpose
+          || activeBookIntroduction?.overview.theme
+          || `Read ${reference}, mark the key verse, define repeated words, and turn the chapter into prayer and application.`;
+    const prayerFocus = todaysPrayerFocus[0]
+      ? `${todaysPrayerFocus[0].name}: ${todaysPrayerFocus[0].request}`
+      : `Pray through ${reference} and ask what should be obeyed today.`;
+
+    return {
+      reference,
+      summary,
+      keyThemes: chapterThemes.slice(0, 6),
+      wordStudies: chapterAnalysis.repeatedWords.slice(0, 6).map((item) => ({
+        word: item.word,
+        count: item.count,
+        definition: findDictionaryEntry(item.word).definition,
+      })),
+      commentaryRecommendations: Array.from(commentaryByAuthor.values()).slice(0, 4),
+      crossReferences: chapterCrossReferences.slice(0, 5).map((referenceItem) => ({
+        source: referenceItem.verse_ref,
+        target: referenceItem.target_ref,
+        label: referenceItem.label || referenceItem.source || "Cross reference",
+      })),
+      highlightVerses,
+      prayerFocus,
+      applicationPrompts: uniqueStrings([
+        ...activeBibleBackground.teachingNotes,
+        ...activeChapterConnections.themes.map((theme) => `How does ${theme.toLowerCase()} shape obedience in ${reference}?`),
+        "What stood out to you today?",
+        "What should I pray, obey, or teach from this chapter?",
+      ]).slice(0, 5),
+      noteCount: saved.notes.filter((note) => note.verse_ref.startsWith(`${book} ${chapter}:`)).length,
+    };
+  }, [
+    activeBibleBackground,
+    activeBookIntroduction,
+    activeChapterConnections,
+    activeChapterThemes,
+    book,
+    chapter,
+    chapterAnalysis.repeatedWords,
+    chapterCommentaryEntries,
+    chapterCrossReferences,
+    chapterKeyVerses,
+    saved.notes,
+    selectedRef,
+    todaysPrayerFocus,
+    versesByRef,
+  ]);
+
   const journalStats = useMemo(() => {
     const today = todayIsoDate();
     const devotionalCount = journalEntries.filter((entry) => entry.prayerResponse || entry.verseApplies || entry.obedienceStep).length;
@@ -14094,6 +14215,78 @@ export default function Home() {
       readingPlanStatus: `${plan.title} - ${plan.status}. ${plan.startHere}`,
       sourceLabel: plan.title,
     });
+  }
+
+  function startJournalFromDailyChapterStudy() {
+    startJournalDraft("Passage Guide", {
+      sourceLabel: `${dailyChapterStudy.reference} Daily Chapter Study`,
+      bibleReadingPassage: dailyChapterStudy.reference,
+      selectedVerseRefs: dailyChapterStudy.highlightVerses.map((verse) => verse.ref).join(", ") || selectedRef,
+      prayerFocus: dailyChapterStudy.prayerFocus,
+      versePassage: dailyChapterStudy.highlightVerses.map((verse) => `${verse.ref} ${verse.text}`).join("\n") || dailyJournalDefaults.versePassage,
+      wordsToDefine: dailyChapterStudy.wordStudies.map((item) => item.word).join(", "),
+      verseSays: dailyChapterStudy.summary,
+      verseMeans: [
+        dailyChapterStudy.keyThemes.length ? `Key themes: ${dailyChapterStudy.keyThemes.join(", ")}` : "",
+        dailyChapterStudy.commentaryRecommendations.length ? `Review: ${dailyChapterStudy.commentaryRecommendations.map((item) => `${item.author} (${item.title})`).join("; ")}` : "",
+        dailyChapterStudy.crossReferences.length ? `Cross references: ${dailyChapterStudy.crossReferences.map((item) => `${item.source} -> ${item.target}`).join("; ")}` : "",
+      ].filter(Boolean).join("\n"),
+      verseApplies: dailyChapterStudy.applicationPrompts.join("\n"),
+      prayerResponse: dailyChapterStudy.prayerFocus,
+      obedienceStep: "What stood out to you today?",
+      memoryVerse: dailyChapterStudy.highlightVerses[0]?.ref ?? dailyJournalDefaults.memoryVerse,
+      teachingThought: `Daily Chapter Study for ${dailyChapterStudy.reference}. Send the strongest observation to sermon or lesson prep if helpful.`,
+    });
+  }
+
+  function startPrayerFromDailyChapterStudy() {
+    setPrayerDraft({
+      ...EMPTY_PRAYER_DRAFT,
+      name: `${dailyChapterStudy.reference} application`,
+      category: "Special Requests",
+      request: `Help me understand, pray, and obey ${dailyChapterStudy.reference}.`,
+      bibleVerse: dailyChapterStudy.highlightVerses[0]?.ref ?? selectedRef,
+      passage: dailyChapterStudy.reference,
+      studyNote: dailyChapterStudy.summary,
+      promiseVerse: dailyChapterStudy.highlightVerses[0]?.ref ?? "",
+    });
+    setTab("prayer");
+    setSyncMessage("Prayer draft prepared from today's chapter study.");
+  }
+
+  function sendDailyChapterStudyToSermon() {
+    appendSermonImport(
+      `${dailyChapterStudy.reference} Daily Chapter Study`,
+      [
+        `Passage: ${dailyChapterStudy.reference}`,
+        `Summary: ${dailyChapterStudy.summary}`,
+        dailyChapterStudy.keyThemes.length ? `Themes: ${dailyChapterStudy.keyThemes.join(", ")}` : "Themes: No reviewed themes yet.",
+        dailyChapterStudy.highlightVerses.length ? `Key verses:\n${dailyChapterStudy.highlightVerses.map((verse) => `- ${verse.ref} - ${verse.text}`).join("\n")}` : "Key verses: No reviewed key verses yet.",
+        dailyChapterStudy.wordStudies.length ? `Word studies:\n${dailyChapterStudy.wordStudies.map((item) => `- ${item.word} (${item.count}): ${item.definition}`).join("\n")}` : "Word studies: No repeated words loaded yet.",
+        dailyChapterStudy.crossReferences.length ? `Cross references:\n${dailyChapterStudy.crossReferences.map((item) => `- ${item.source} -> ${item.target}: ${item.label}`).join("\n")}` : "Cross references: No reviewed entries yet.",
+        dailyChapterStudy.commentaryRecommendations.length ? `Commentary:\n${dailyChapterStudy.commentaryRecommendations.map((item) => `- ${item.author}, ${item.title}: ${item.recommendedUse}`).join("\n")}` : "Commentary: No reviewed entries yet.",
+        dailyChapterStudy.applicationPrompts.length ? `Applications:\n${dailyChapterStudy.applicationPrompts.map((item) => `- ${item}`).join("\n")}` : "Applications: No reviewed applications yet.",
+      ].join("\n\n"),
+    );
+    openSermonWorkspace("builder");
+  }
+
+  function saveDailyChapterStudySession() {
+    const now = new Date().toISOString();
+    const session: SavedStudySession = {
+      id: makeId("daily_study"),
+      passage: dailyChapterStudy.reference,
+      book,
+      chapter,
+      keyVerse: dailyChapterStudy.highlightVerses[0]?.ref ?? selectedRef,
+      mainTheme: dailyChapterStudy.keyThemes[0] ?? "Daily chapter study",
+      summary: dailyChapterStudy.summary,
+      savedAt: now,
+      updatedAt: now,
+    };
+    const nextSessions = [session, ...loadStudySessions().filter((item) => item.passage !== session.passage)].slice(0, 20);
+    saveStudySessions(nextSessions);
+    setSyncMessage(`${dailyChapterStudy.reference} study session saved on this device.`);
   }
 
   function exportActiveJournalEntry() {
@@ -15708,11 +15901,12 @@ export default function Home() {
   function quickJumpToPassage(query: string) {
     const passage = parseQuickPassage(query, allVerses, books);
     if (!passage) {
-      setSyncMessage("Enter a passage like John 3:16, Luke 24, or Romans 8.");
+      setSyncMessage("Enter a passage like John 3:16, Romans 8, Amos 5, or Rev 13.");
       return;
     }
 
     openPassage(passage);
+    setGlobalQuickJumpText("");
   }
 
   function toggleCurrentChapterFavorite() {
@@ -17506,6 +17700,26 @@ export default function Home() {
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
             {accountStatus}
           </div>
+          <form
+            className="mt-3 flex w-full max-w-2xl flex-col gap-2 sm:flex-row"
+            onSubmit={(event) => {
+              event.preventDefault();
+              quickJumpToPassage(globalQuickJumpText);
+            }}
+          >
+            <label className="sr-only" htmlFor="global-quick-jump">Quick Jump</label>
+            <input
+              id="global-quick-jump"
+              className="min-h-11 flex-1 rounded-full border border-[var(--line)] bg-white px-4 text-base text-[var(--ink)] shadow-sm outline-none focus:border-[var(--gold)]"
+              placeholder="Quick Jump: John 3:16, Romans 8, Amos 5, Rev 13"
+              value={globalQuickJumpText}
+              onChange={(event) => setGlobalQuickJumpText(event.target.value)}
+            />
+            <button id="global-quick-jump-submit" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white shadow-sm" type="submit">
+              <Search size={16} />
+              Open
+            </button>
+          </form>
           {(speechState.playing || speechState.paused) && (
             <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
@@ -17955,6 +18169,7 @@ export default function Home() {
                 entries={journalEntries}
                 draft={journalDraft}
                 stats={journalStats}
+                dailyChapterStudy={dailyChapterStudy}
                 readingPlans={READING_PLAN_FOUNDATION}
                 exportStart={journalExportStart}
                 exportEnd={journalExportEnd}
@@ -17970,6 +18185,10 @@ export default function Home() {
                 onStartFromLibrary={startJournalFromLibrary}
                 onStartFromCommentary={startJournalFromCommentary}
                 onStartFromReadingPlan={startJournalFromReadingPlan}
+                onStartDailyChapterStudy={startJournalFromDailyChapterStudy}
+                onSendDailyStudyToPrayer={startPrayerFromDailyChapterStudy}
+                onSendDailyStudyToSermon={sendDailyChapterStudyToSermon}
+                onSaveDailyStudySession={saveDailyChapterStudySession}
                 onExportEntry={exportActiveJournalEntry}
                 onExportRange={exportJournalRange}
                 onExportDevotional={exportDevotionalNotes}
@@ -19083,6 +19302,7 @@ function JournalScreen({
   entries,
   draft,
   stats,
+  dailyChapterStudy,
   readingPlans,
   exportStart,
   exportEnd,
@@ -19098,6 +19318,10 @@ function JournalScreen({
   onStartFromLibrary,
   onStartFromCommentary,
   onStartFromReadingPlan,
+  onStartDailyChapterStudy,
+  onSendDailyStudyToPrayer,
+  onSendDailyStudyToSermon,
+  onSaveDailyStudySession,
   onExportEntry,
   onExportRange,
   onExportDevotional,
@@ -19107,6 +19331,7 @@ function JournalScreen({
   entries: JournalEntry[];
   draft: JournalDraft;
   stats: { total: number; today: number; devotional: number; plans: number };
+  dailyChapterStudy: DailyChapterStudy;
   readingPlans: ReadingPlanFoundation[];
   exportStart: string;
   exportEnd: string;
@@ -19122,6 +19347,10 @@ function JournalScreen({
   onStartFromLibrary: () => void;
   onStartFromCommentary: () => void;
   onStartFromReadingPlan: (plan: ReadingPlanFoundation) => void;
+  onStartDailyChapterStudy: () => void;
+  onSendDailyStudyToPrayer: () => void;
+  onSendDailyStudyToSermon: () => void;
+  onSaveDailyStudySession: () => void;
   onExportEntry: () => void;
   onExportRange: () => void;
   onExportDevotional: () => void;
@@ -19173,6 +19402,87 @@ function JournalScreen({
             <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{text}</p>
           </article>
         ))}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Daily Chapter Study Mode</p>
+            <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">{dailyChapterStudy.reference}</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{dailyChapterStudy.summary}</p>
+            <p className="mt-3 rounded-2xl bg-[var(--warm)] px-4 py-3 text-sm font-semibold text-[var(--green)]">
+              What stood out to you today?
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onStartDailyChapterStudy} type="button">
+              <NotebookPen size={15} />
+              Send to Journal
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendDailyStudyToPrayer} type="button">
+              <MessageSquareText size={15} />
+              Send to Prayer
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendDailyStudyToSermon} type="button">
+              <Clipboard size={15} />
+              Send to Sermon
+            </button>
+            <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSaveDailyStudySession} type="button">
+              <Save size={15} />
+              Save Study Session
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-5 grid gap-3 lg:grid-cols-3">
+          <DailyStudyMiniSection title="Key Themes" empty="No reviewed themes yet.">
+            {dailyChapterStudy.keyThemes.map((theme) => (
+              <span key={`daily-theme-${theme}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{theme}</span>
+            ))}
+          </DailyStudyMiniSection>
+          <DailyStudyMiniSection title="Word Studies" empty="No repeated words loaded yet.">
+            {dailyChapterStudy.wordStudies.map((item) => (
+              <div key={`daily-word-${item.word}`} className="rounded-2xl bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--ink)]">{item.word} <span className="text-xs text-[var(--muted)]">x{item.count}</span></p>
+                <p className="mt-1 line-clamp-3 text-xs leading-5 text-[var(--muted)]">{item.definition}</p>
+              </div>
+            ))}
+          </DailyStudyMiniSection>
+          <DailyStudyMiniSection title="Commentary" empty="No reviewed commentary recommendations yet.">
+            {dailyChapterStudy.commentaryRecommendations.map((item) => (
+              <div key={`daily-commentary-${item.author}-${item.title}`} className="rounded-2xl bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--ink)]">{item.author}</p>
+                <p className="text-xs font-semibold text-[var(--green)]">{item.title}</p>
+                <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{item.recommendedUse}</p>
+              </div>
+            ))}
+          </DailyStudyMiniSection>
+        </div>
+
+        <div className="mt-3 grid gap-3 lg:grid-cols-3">
+          <DailyStudyMiniSection title="Cross References" empty="No reviewed cross references yet.">
+            {dailyChapterStudy.crossReferences.map((item) => (
+              <p key={`daily-cross-${item.source}-${item.target}`} className="rounded-2xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--muted)]">
+                <span className="font-semibold text-[var(--ink)]">{item.source}</span> <span aria-hidden="true">-&gt;</span> <span className="font-semibold text-[var(--green)]">{item.target}</span><br />
+                {item.label}
+              </p>
+            ))}
+          </DailyStudyMiniSection>
+          <DailyStudyMiniSection title="Highlight Verses" empty="No key verses selected yet.">
+            {dailyChapterStudy.highlightVerses.map((verse) => (
+              <p key={`daily-highlight-${verse.ref}`} className="rounded-2xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--muted)]">
+                <span className="font-semibold text-[var(--green)]">{verse.ref}</span> {verse.text}
+              </p>
+            ))}
+          </DailyStudyMiniSection>
+          <DailyStudyMiniSection title="Prayer + Application" empty="No prompts yet.">
+            <p className="rounded-2xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--muted)]">{dailyChapterStudy.prayerFocus}</p>
+            {dailyChapterStudy.applicationPrompts.slice(0, 3).map((prompt) => (
+              <p key={`daily-application-${prompt}`} className="rounded-2xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--muted)]">{prompt}</p>
+            ))}
+            <span className="rounded-full bg-[var(--highlight)] px-3 py-1.5 text-xs font-semibold text-[var(--ink)]">{dailyChapterStudy.noteCount} notes in this chapter</span>
+          </DailyStudyMiniSection>
+        </div>
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -19383,6 +19693,19 @@ function JournalSourceButton({ label, detail, onClick }: { label: string; detail
       <p className="text-sm font-semibold text-[var(--green)]">{label}</p>
       <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{detail}</p>
     </button>
+  );
+}
+
+function DailyStudyMiniSection({ title, empty, children }: { title: string; empty: string; children: ReactNode }) {
+  const hasChildren = Children.count(children) > 0;
+
+  return (
+    <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+      <h3 className="text-sm font-semibold text-[var(--ink)]">{title}</h3>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {hasChildren ? children : <p className="text-sm leading-6 text-[var(--muted)]">{empty}</p>}
+      </div>
+    </article>
   );
 }
 

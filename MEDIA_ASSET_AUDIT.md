@@ -13,6 +13,7 @@ All files are local SVG assets under `public/media/sermon-slides/`. Each file is
 | File name | Category | Source | Rights status | Recommended use |
 |---|---|---|---|---|
 | `cross.svg` | Cross | Personally created original SVG asset for Father's Business Bible Study; no third-party image source. | Project-owned original asset; safe for app use. | Gospel, salvation, sacrifice, grace, invitation, and communion slides. |
+| `communion.svg` | Communion | Personally created original SVG asset for Father's Business Bible Study; no third-party image source. | Project-owned original asset; safe for app use. | Lord's supper, remembrance, worship, reverent reflection, and church service slides. |
 | `open-bible.svg` | Open Bible | Personally created original SVG asset for Father's Business Bible Study; no third-party image source. | Project-owned original asset; safe for app use. | Scripture reading, exposition, Bible study, and teaching slides. |
 | `prayer.svg` | Prayer | Personally created original SVG asset for Father's Business Bible Study; no third-party image source. | Project-owned original asset; safe for app use. | Prayer meeting, intercession, devotion, altar, and quiet worship slides. |
 | `missions.svg` | Missions | Personally created original SVG asset for Father's Business Bible Study; no third-party image source. | Project-owned original asset; safe for app use. | Missions, evangelism, nations, outreach, and missionary emphasis slides. |
