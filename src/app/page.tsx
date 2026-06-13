@@ -151,9 +151,10 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rightsHolders" | "importQueue" | "libraryManager" | "storage" | "audio" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "storage" | "audio" | "ocrQueue";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
+type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
 type MediaItemKind = "Book" | "Audiobook" | "Sermon" | "Teaching Series" | "Bible Audio" | "Devotional" | "Commentary";
 type MediaPlayerStatus = "idle" | "playing" | "paused" | "stopped";
 type StoragePlanningRow = {
@@ -1059,6 +1060,40 @@ type PermissionRequest = {
   notes: string;
 };
 
+type LicensedResourceRightsRecord = {
+  id: string;
+  title: string;
+  author: string;
+  publisher: string;
+  rightsHolder: string;
+  contactName: string;
+  contactEmail: string;
+  website: string;
+  copyrightYear: string;
+  edition: string;
+  isbn: string;
+  requestedUse: string;
+  permissionStatus: RightsPermissionStatus;
+  publicAppPermission: string;
+  privateUserImportPermission: string;
+  excerptPermission: string;
+  audiobookPermission: string;
+  aiTtsNarrationPermission: string;
+  paidSubscriptionPermission: string;
+  freeBetaPermission: string;
+  royaltyTerms: string;
+  nextFollowUpDate: string;
+  notes: string;
+};
+
+type PermissionRequestTemplate = {
+  id: string;
+  title: string;
+  purpose: string;
+  subject: string;
+  body: string;
+};
+
 type PremiumResourcePlaceholder = {
   id: string;
   author: string;
@@ -1591,6 +1626,7 @@ const ADMIN_IMPORT_QUEUE_KEY = "fathers-business-admin-import-queue";
 const LIBRARY_ACQUISITION_AUTHORS_KEY = "fathers-business-acquisition-authors";
 const LIBRARY_ACQUISITION_BOOKS_KEY = "fathers-business-acquisition-books";
 const LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY = "fathers-business-acquisition-rights-holders";
+const LIBRARY_LICENSED_RIGHTS_KEY = "fathers-business-licensed-rights-records";
 const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
@@ -1869,6 +1905,140 @@ const DEFAULT_RIGHTS_HOLDERS: AcquisitionRightsHolderRecord[] = [
     website: "https://www.christianfocus.com/",
     licensingNotes: "Track ebook, audiobook, and app display permissions separately.",
     lastContactDate: "",
+  },
+];
+
+const RIGHTS_PERMISSION_STATUSES: RightsPermissionStatus[] = [
+  "Public Domain",
+  "Permission Needed",
+  "Contacted",
+  "Negotiating",
+  "Approved",
+  "Denied",
+  "Personal Use Only",
+  "Do Not Import",
+];
+
+const DEFAULT_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [
+  {
+    id: "way-of-life-permission-needed",
+    title: "Way of Life resource review",
+    author: "David Cloud",
+    publisher: "Way of Life Literature",
+    rightsHolder: "Way of Life Literature",
+    contactName: "",
+    contactEmail: "",
+    website: "https://www.wayoflife.org/",
+    copyrightYear: "Modern",
+    edition: "Current ministry edition",
+    isbn: "",
+    requestedUse: "Evaluate whether selected books could be licensed for public Library, private-user upload, excerpts, or audio.",
+    permissionStatus: "Permission Needed",
+    publicAppPermission: "No",
+    privateUserImportPermission: "Unknown",
+    excerptPermission: "Unknown",
+    audiobookPermission: "Unknown",
+    aiTtsNarrationPermission: "Unknown",
+    paidSubscriptionPermission: "Unknown",
+    freeBetaPermission: "Unknown",
+    royaltyTerms: "Not requested",
+    nextFollowUpDate: "",
+    notes: "Do not import or publish any copyrighted text without written permission.",
+  },
+  {
+    id: "john-phillips-premium-candidate",
+    title: "John Phillips commentary resources",
+    author: "John Phillips",
+    publisher: "Kregel / rights holder review needed",
+    rightsHolder: "Kregel or estate/publisher to confirm",
+    contactName: "",
+    contactEmail: "",
+    website: "https://www.kregel.com/",
+    copyrightYear: "Modern",
+    edition: "Modern print/digital editions",
+    isbn: "",
+    requestedUse: "Future premium commentary licensing candidate.",
+    permissionStatus: "Permission Needed",
+    publicAppPermission: "No",
+    privateUserImportPermission: "Unknown",
+    excerptPermission: "Unknown",
+    audiobookPermission: "Unknown",
+    aiTtsNarrationPermission: "Unknown",
+    paidSubscriptionPermission: "Unknown",
+    freeBetaPermission: "No",
+    royaltyTerms: "Not requested",
+    nextFollowUpDate: "",
+    notes: "Keep as licensed-resource planning only until rights holder confirms terms.",
+  },
+  {
+    id: "public-domain-control",
+    title: "Public-domain control record",
+    author: "Public-domain author",
+    publisher: "Original public-domain source",
+    rightsHolder: "No modern rights holder for original text",
+    contactName: "",
+    contactEmail: "",
+    website: "",
+    copyrightYear: "Before 1929",
+    edition: "Original public-domain edition",
+    isbn: "",
+    requestedUse: "Public Library, search, reading, study, and device TTS.",
+    permissionStatus: "Public Domain",
+    publicAppPermission: "Yes, for verified public-domain source text",
+    privateUserImportPermission: "Yes",
+    excerptPermission: "Yes",
+    audiobookPermission: "Device TTS allowed; generated/public audio reviewed separately",
+    aiTtsNarrationPermission: "Review before distributing generated audio files",
+    paidSubscriptionPermission: "Review source and attribution requirements first",
+    freeBetaPermission: "Yes",
+    royaltyTerms: "None for original public-domain text",
+    nextFollowUpDate: "",
+    notes: "Use this as the contrast record for public-domain imports.",
+  },
+];
+
+const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
+  {
+    id: "full-digital-library",
+    title: "Full digital library permission",
+    purpose: "Request permission to display the full work inside the Bible Study App.",
+    subject: "Permission request to include [TITLE] in Father's Business Bible Study",
+    body: "Hello [NAME],\n\nI am building Father's Business Bible Study, a Scripture-first Bible study platform for Christians, Sunday School teachers, pastors, missionaries, and serious Bible students.\n\nI would like to request written permission to include [TITLE] by [AUTHOR] in the app's digital Library. The requested use would include in-app reading, search, bookmarks, notes, highlighting, study playlists, and links from Bible study workflows.\n\nWe will preserve attribution, source information, copyright notices, and any usage limitations you require. We will not alter the text except for formatting needed for reading and accessibility.\n\nWould you be willing to grant permission for this use, and if so, what terms or limitations should be included?\n\nThank you,\n[YOUR NAME]",
+  },
+  {
+    id: "excerpt-quote",
+    title: "Excerpt / quote permission",
+    purpose: "Request permission for short excerpts in study, sermon, and quote workflows.",
+    subject: "Excerpt permission request for [TITLE]",
+    body: "Hello [NAME],\n\nI am requesting permission to use short excerpts from [TITLE] by [AUTHOR] inside Father's Business Bible Study. These excerpts would support Bible study, sermon preparation, quote capture, teaching notes, and related study recommendations.\n\nThe app would display attribution and source information with excerpts. Please let me know any word limits, attribution requirements, or restrictions you require.\n\nThank you,\n[YOUR NAME]",
+  },
+  {
+    id: "audiobook-tts",
+    title: "Audiobook / TTS narration permission",
+    purpose: "Request permission to provide audio or generated narration.",
+    subject: "Audio narration permission request for [TITLE]",
+    body: "Hello [NAME],\n\nI am requesting permission to provide an audio listening option for [TITLE] by [AUTHOR] inside Father's Business Bible Study.\n\nPossible uses include human narration, uploaded licensed audio, or text-to-speech narration. Generated audio would be clearly treated as an app listening feature, not as a replacement for an official audiobook unless you authorize that use.\n\nPlease let me know whether audiobook, TTS, or AI narration is permitted, and what licensing terms, attribution, storage, or distribution limits would apply.\n\nThank you,\n[YOUR NAME]",
+  },
+  {
+    id: "paid-subscription",
+    title: "Paid subscription inclusion",
+    purpose: "Request permission for use inside a future paid tier.",
+    subject: "Licensing request for paid app access to [TITLE]",
+    body: "Hello [NAME],\n\nI am exploring whether [TITLE] by [AUTHOR] could be licensed for inclusion in a future paid tier of Father's Business Bible Study.\n\nThe goal is to provide trusted Bible study resources in a clean, Scripture-first workflow while respecting publisher and author rights. Please let me know whether paid subscription inclusion is available and what royalty, reporting, attribution, territory, or usage terms would apply.\n\nThank you,\n[YOUR NAME]",
+  },
+  {
+    id: "free-beta",
+    title: "Free beta inclusion",
+    purpose: "Request limited beta permission before public or paid launch.",
+    subject: "Limited free beta permission request for [TITLE]",
+    body: "Hello [NAME],\n\nI am preparing a small private beta for Father's Business Bible Study and would like to ask whether [TITLE] by [AUTHOR] could be included for limited beta testing.\n\nThe beta would be small, access-controlled, and used to test study workflows. We can keep the resource hidden from public navigation, include attribution, and remove it immediately if requested.\n\nWould you consider granting limited free beta permission, and what restrictions would you require?\n\nThank you,\n[YOUR NAME]",
+  },
+  {
+    id: "personal-use-upload",
+    title: "Personal-use upload clarification",
+    purpose: "Clarify whether users may privately upload a personally owned copy.",
+    subject: "Personal-use upload clarification for [TITLE]",
+    body: "Hello [NAME],\n\nI am seeking clarification about personal-use uploads for [TITLE] by [AUTHOR]. In the future, Father's Business Bible Study may allow a signed-in user to upload a privately owned copy for their own reading, listening, notes, and study.\n\nThese personal uploads would not be published to the public Library, shared with other users, or distributed by the app. Please let me know whether your terms allow this type of private personal use, and whether any restrictions should be displayed to users.\n\nThank you,\n[YOUR NAME]",
   },
 ];
 
@@ -30541,6 +30711,224 @@ function StoragePlanningDashboard({ resources, commentaryEntries }: { resources:
   );
 }
 
+function RightsManagementCenter({
+  records,
+  onAddRecord,
+  onUpdateRecord,
+}: {
+  records: LicensedResourceRightsRecord[];
+  onAddRecord: () => void;
+  onUpdateRecord: (id: string, field: keyof LicensedResourceRightsRecord, value: string) => void;
+}) {
+  const [templateCopied, setTemplateCopied] = useState("");
+  const statusTotals = RIGHTS_PERMISSION_STATUSES.map((status) => ({
+    status,
+    count: records.filter((record) => record.permissionStatus === status).length,
+  }));
+  const safetyRules = [
+    "Do not import copyrighted text publicly without written permission.",
+    "Owning a physical book does not grant public digital distribution rights.",
+    "No response does not equal permission.",
+    "Keep public-domain, licensed, and personal-use resources separated.",
+  ];
+
+  async function copyPermissionTemplate(template: PermissionRequestTemplate) {
+    const text = `Subject: ${template.subject}\n\n${template.body}`;
+    try {
+      await navigator.clipboard?.writeText(text);
+      setTemplateCopied(template.id);
+    } catch {
+      setTemplateCopied("unavailable");
+    }
+  }
+
+  return (
+    <div className="mt-5 space-y-4">
+      <div className="grid gap-3 md:grid-cols-4 xl:grid-cols-8">
+        {statusTotals.map(({ status, count }) => (
+          <div key={`licensed-rights-status-${status}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-2xl font-semibold text-[var(--green)]">{count}</p>
+            <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{status}</p>
+          </div>
+        ))}
+      </div>
+
+      <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Rights Management Center</p>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Track modern books, publishers, permissions, licensing options, follow-ups, and audio/TTS limits before any copyrighted resource reaches the public Library.
+            </p>
+          </div>
+          <button
+            className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+            onClick={onAddRecord}
+            type="button"
+          >
+            Add rights record
+          </button>
+        </div>
+      </article>
+
+      <div className="grid gap-4 xl:grid-cols-[1.35fr_0.65fr]">
+        <div className="grid gap-3">
+          {records.map((record) => (
+            <article key={`licensed-rights-record-${record.id}`} className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <input
+                    className="w-full rounded-xl border border-transparent bg-transparent text-base font-semibold text-[var(--ink)] outline-none focus:border-[var(--line)] focus:bg-[var(--paper)] focus:px-2"
+                    onChange={(event) => onUpdateRecord(record.id, "title", event.target.value)}
+                    value={record.title}
+                  />
+                  <p className="mt-1 text-sm text-[var(--muted)]">
+                    {record.author} · {record.publisher || "Publisher not set"} · {record.copyrightYear || "Year not set"}
+                  </p>
+                </div>
+                <select
+                  className="h-10 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 text-xs font-semibold text-[var(--green)] outline-none"
+                  onChange={(event) => onUpdateRecord(record.id, "permissionStatus", event.target.value)}
+                  value={record.permissionStatus}
+                >
+                  {RIGHTS_PERMISSION_STATUSES.map((status) => (
+                    <option key={`licensed-status-option-${record.id}-${status}`} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                {([
+                  ["author", "Author"],
+                  ["publisher", "Publisher"],
+                  ["rightsHolder", "Ministry / rights holder"],
+                  ["contactName", "Contact name"],
+                  ["contactEmail", "Contact email"],
+                  ["website", "Website"],
+                  ["copyrightYear", "Copyright year"],
+                  ["edition", "Edition"],
+                  ["isbn", "ISBN"],
+                ] as Array<[keyof LicensedResourceRightsRecord, string]>).map(([field, label]) => (
+                  <label key={`licensed-rights-field-${record.id}-${field}`} className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                    {label}
+                    <input
+                      className="mt-2 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                      onChange={(event) => onUpdateRecord(record.id, field, event.target.value)}
+                      value={record[field]}
+                    />
+                  </label>
+                ))}
+              </div>
+
+              <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                {([
+                  ["publicAppPermission", "Public app"],
+                  ["privateUserImportPermission", "Private-user import"],
+                  ["excerptPermission", "Excerpt / quote"],
+                  ["audiobookPermission", "Audiobook"],
+                  ["aiTtsNarrationPermission", "AI/TTS narration"],
+                  ["paidSubscriptionPermission", "Paid subscription"],
+                  ["freeBetaPermission", "Free beta"],
+                  ["royaltyTerms", "Royalty terms"],
+                ] as Array<[keyof LicensedResourceRightsRecord, string]>).map(([field, label]) => (
+                  <label key={`licensed-rights-permission-${record.id}-${field}`} className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                    {label}
+                    <input
+                      className="mt-2 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                      onChange={(event) => onUpdateRecord(record.id, field, event.target.value)}
+                      value={record[field]}
+                    />
+                  </label>
+                ))}
+              </div>
+
+              <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_220px]">
+                <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                  Requested use
+                  <textarea
+                    className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                    onChange={(event) => onUpdateRecord(record.id, "requestedUse", event.target.value)}
+                    value={record.requestedUse}
+                  />
+                </label>
+                <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                  Next follow-up
+                  <input
+                    className="mt-2 h-10 w-full rounded-xl border border-[var(--line)] bg-[var(--paper)] px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                    onChange={(event) => onUpdateRecord(record.id, "nextFollowUpDate", event.target.value)}
+                    type="date"
+                    value={record.nextFollowUpDate}
+                  />
+                  <span className="mt-3 block rounded-2xl bg-[var(--paper)] p-3 text-xs leading-5 text-[var(--muted)]">
+                    Status: {record.permissionStatus}. Keep this hidden from public Library unless permission is Public Domain or Approved.
+                  </span>
+                </label>
+              </div>
+
+              <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                Notes
+                <textarea
+                  className="mt-2 min-h-24 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+                  onChange={(event) => onUpdateRecord(record.id, "notes", event.target.value)}
+                  value={record.notes}
+                />
+              </label>
+            </article>
+          ))}
+        </div>
+
+        <div className="space-y-4">
+          <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Safety rules</p>
+            <div className="mt-3 space-y-2">
+              {safetyRules.map((rule) => (
+                <p key={`rights-safety-${rule}`} className="rounded-2xl bg-white p-3 text-sm font-semibold leading-6 text-[var(--muted)]">
+                  {rule}
+                </p>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <p className="text-sm font-semibold text-[var(--green)]">Permission request templates</p>
+            <div className="mt-3 space-y-3">
+              {PERMISSION_REQUEST_TEMPLATES.map((template) => (
+                <div key={`permission-template-${template.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-sm font-semibold text-[var(--ink)]">{template.title}</p>
+                      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{template.purpose}</p>
+                    </div>
+                    <button
+                      className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                      onClick={() => {
+                        void copyPermissionTemplate(template);
+                      }}
+                      type="button"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                  <p className="mt-3 text-xs font-semibold text-[var(--green)]">{template.subject}</p>
+                  <p className="mt-2 line-clamp-4 whitespace-pre-line text-xs leading-5 text-[var(--muted)]">{template.body}</p>
+                  {templateCopied === template.id && <p className="mt-2 text-xs font-semibold text-[var(--green)]">Template copied.</p>}
+                </div>
+              ))}
+              {templateCopied === "unavailable" && (
+                <p className="rounded-2xl bg-amber-50 p-3 text-xs font-semibold text-amber-800">
+                  Clipboard is unavailable in this browser. Open the template and copy the text manually.
+                </p>
+              )}
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onClose }: { signedIn: boolean; resources: LibraryResource[]; commentaryEntries: CommentaryEntry[]; onClose: () => void }) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
   const [checkerInput, setCheckerInput] = useState<CopyrightCheckerInput>(EMPTY_COPYRIGHT_CHECKER_INPUT);
@@ -30561,6 +30949,9 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
   );
   const [rightsHolders, setRightsHolders] = useState<AcquisitionRightsHolderRecord[]>(() =>
     loadAcquisitionStorage(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, DEFAULT_RIGHTS_HOLDERS),
+  );
+  const [rightsRecords, setRightsRecords] = useState<LicensedResourceRightsRecord[]>(() =>
+    loadAcquisitionStorage(LIBRARY_LICENSED_RIGHTS_KEY, DEFAULT_LICENSED_RIGHTS_RECORDS),
   );
 
   const libraryStats = useMemo(() => {
@@ -30599,16 +30990,18 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
       window.localStorage.setItem(LIBRARY_ACQUISITION_AUTHORS_KEY, JSON.stringify(authors));
       window.localStorage.setItem(LIBRARY_ACQUISITION_BOOKS_KEY, JSON.stringify(books));
       window.localStorage.setItem(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, JSON.stringify(rightsHolders));
+      window.localStorage.setItem(LIBRARY_LICENSED_RIGHTS_KEY, JSON.stringify(rightsRecords));
     } catch {
       // Local acquisition records are advisory admin data; keep the UI usable if storage is unavailable.
     }
-  }, [authors, books, rightsHolders]);
+  }, [authors, books, rightsHolders, rightsRecords]);
 
   const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
     { id: "dashboard", label: "Dashboard" },
     { id: "authors", label: "Authors" },
     { id: "books", label: "Books" },
     { id: "copyright", label: "Copyright Checker" },
+    { id: "rights", label: "Rights" },
     { id: "rightsHolders", label: "Rights Holders" },
     { id: "importQueue", label: "Import Queue" },
     { id: "libraryManager", label: "Library Manager" },
@@ -30670,6 +31063,50 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
 
   function markBookNeedsReview(id: string) {
     setBooks((current) => current.map((book) => (book.id === id ? { ...book, reviewStatus: "Needs Review" } : book)));
+  }
+
+  function addRightsRecord() {
+    setRightsRecords((current) => [
+      {
+        id: `licensed-rights-${Date.now()}`,
+        title: "New rights request",
+        author: "",
+        publisher: "",
+        rightsHolder: "",
+        contactName: "",
+        contactEmail: "",
+        website: "",
+        copyrightYear: "",
+        edition: "",
+        isbn: "",
+        requestedUse: "Describe public app, private-user import, excerpt, audio, and subscription use before contacting.",
+        permissionStatus: "Permission Needed",
+        publicAppPermission: "Unknown",
+        privateUserImportPermission: "Unknown",
+        excerptPermission: "Unknown",
+        audiobookPermission: "Unknown",
+        aiTtsNarrationPermission: "Unknown",
+        paidSubscriptionPermission: "Unknown",
+        freeBetaPermission: "Unknown",
+        royaltyTerms: "Not requested",
+        nextFollowUpDate: "",
+        notes: "No public import until written permission is documented.",
+      },
+      ...current,
+    ]);
+  }
+
+  function updateRightsRecord(id: string, field: keyof LicensedResourceRightsRecord, value: string) {
+    setRightsRecords((current) =>
+      current.map((record) =>
+        record.id === id
+          ? {
+              ...record,
+              [field]: field === "permissionStatus" ? (value as RightsPermissionStatus) : value,
+            }
+          : record,
+      ),
+    );
   }
 
   function sectionButtonClass(id: AcquisitionAdminTab) {
@@ -30774,6 +31211,10 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
 
       {activeTab === "audio" && (
         <PremiumAudioFeasibilityCenter />
+      )}
+
+      {activeTab === "rights" && (
+        <RightsManagementCenter records={rightsRecords} onAddRecord={addRightsRecord} onUpdateRecord={updateRightsRecord} />
       )}
 
       {activeTab === "authors" && (
