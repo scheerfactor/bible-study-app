@@ -4,6 +4,8 @@
 
 Status: Private Beta Ready for 3-5 invited testers.
 
+Deployment recovery verified after clean Vercel CLI production deploy.
+
 This pass focused on the live production app only. The goal was to confirm that a new tester can open the site, find the main study workflows, and move through Bible reading, study, library, prayer, journal, sermons, presentations, and feedback without hitting broken screens.
 
 ## Verified In Production
