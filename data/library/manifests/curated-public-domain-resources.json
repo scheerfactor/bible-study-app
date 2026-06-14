@@ -55359,5 +55359,143 @@
     "checksum_sha256": "ca47a370bbb195cb97d3d1bb1c8f0de74366f103609fae460bbd4475076b41a3",
     "file_size_bytes": 183107,
     "word_count": 29030
+  },
+  {
+    "title": "The Bible Book by Book",
+    "author": "Josiah Blake Tidwell",
+    "year": 2005,
+    "category": "Surveys",
+    "collection": "Bible Study Essentials",
+    "source_url": "https://www.gutenberg.org/ebooks/16290",
+    "download_url": "https://www.gutenberg.org/ebooks/16290.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-bible-book-by-book-josiah-blake-tidwell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/16290.",
+    "notes": "Book-by-book Bible survey for teachers, Sunday School preparation, and study plans. Labels/warnings: Bible survey; Teacher resource.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Book-by-book Bible survey for teachers, Sunday School preparation, and study plans.",
+    "resource_labels": [
+      "Bible Study Essentials",
+      "Bible survey",
+      "Teacher resource"
+    ],
+    "resource_warnings": [
+      "Bible survey",
+      "Teacher resource"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible Book by Book",
+      "author": "Josiah Blake Tidwell",
+      "category": "Surveys",
+      "collection": "Bible Study Essentials",
+      "badge": "Bible Study Essentials",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 210,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7264477ce8fdc69526d4d22507adf359ac997c47762c9587791b0cd3bf087982",
+    "file_size_bytes": 282449,
+    "word_count": 47207
+  },
+  {
+    "title": "How to Master the English Bible",
+    "author": "James M. Gray",
+    "year": 2013,
+    "category": "Bible study helps",
+    "collection": "Bible Study Essentials",
+    "source_url": "https://www.gutenberg.org/ebooks/41900",
+    "download_url": "https://www.gutenberg.org/ebooks/41900.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/how-to-master-the-english-bible-james-m-gray.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/41900.",
+    "notes": "Practical Bible study method resource for serious students, teachers, and preachers. Labels/warnings: Bible study method; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Practical Bible study method resource for serious students, teachers, and preachers.",
+    "resource_labels": [
+      "Bible Study Essentials",
+      "Bible study method",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Bible study method",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Master the English Bible",
+      "author": "James M. Gray",
+      "category": "Bible study helps",
+      "collection": "Bible Study Essentials",
+      "badge": "Bible Study Essentials",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 57,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b553eefea884be28cb9e9693a142c6976fa93dcd76fd820c89665266bc691607",
+    "file_size_bytes": 74022,
+    "word_count": 12877
+  },
+  {
+    "title": "Organizing and Building Up the Sunday School",
+    "author": "Jesse Lyman Hurlbut",
+    "year": 2011,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teacher Collection",
+    "source_url": "https://www.gutenberg.org/ebooks/35050",
+    "download_url": "https://www.gutenberg.org/ebooks/35050.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/organizing-and-building-up-the-sunday-school-jesse-lyman-hurlbut.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/35050.",
+    "notes": "Sunday School organization and teaching help for church teachers and ministry leaders. Labels/warnings: Teacher resource; Historical methods.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Sunday School organization and teaching help for church teachers and ministry leaders.",
+    "resource_labels": [
+      "Sunday School Teacher Collection",
+      "Teacher resource",
+      "Historical methods"
+    ],
+    "resource_warnings": [
+      "Teacher resource",
+      "Historical methods"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Organizing and Building Up the Sunday School",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teacher Collection",
+      "badge": "Sunday School Teacher Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 164,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "653e3857a33a0b4e749eeac302c22744faac96561fb96e13ed20ddb8a9f345ae",
+    "file_size_bytes": 222356,
+    "word_count": 36900
   }
 ]

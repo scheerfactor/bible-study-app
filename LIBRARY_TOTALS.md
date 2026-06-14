@@ -4,9 +4,9 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,261
-- Public commentary entries shown in the app: 5,167
-- Commentary validation rows checked, including staging/review files: 7,545
+- Verified public Library resources: 1,264
+- Public commentary entries shown in the app: 5,260
+- Commentary validation rows checked, including staging/review files: 7,638
 - Commentary authors represented publicly: 22+
 - Library authors represented: 422+
 - Public Library duplicate title/author groups: 0
@@ -36,6 +36,22 @@ Added 120 verified public commentary entries for Exodus:
 
 These entries were generated from source pages that state public-domain status, preserve chapter source URLs, and include rights/source notes in each row.
 
+## Latest Study Teaching + Proverbs Commentary Sprint
+
+Added 93 verified public commentary entries for Proverbs:
+
+- Matthew Poole, Proverbs 1-31
+- The Pulpit Commentary, Proverbs 1-31
+- The Biblical Illustrator, Proverbs 1-31
+
+Added 3 verified public-domain Project Gutenberg resources:
+
+- The Bible Book by Book — Josiah Blake Tidwell
+- How to Master the English Bible — James M. Gray
+- Organizing and Building Up the Sunday School — Jesse Lyman Hurlbut
+
+These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunday School teaching preparation.
+
 ## Library By Category
 
 | Category | Resources |
@@ -43,8 +59,8 @@ These entries were generated from source pages that state public-domain status, 
 | Commentaries | 252 |
 | Missions | 243 |
 | Christian Living | 212 |
-| Preaching & Teaching | 163 |
-| Bible study helps | 128 |
+| Preaching & Teaching | 164 |
+| Bible study helps | 129 |
 | Prayer | 79 |
 | Baptist History | 50 |
 | Evangelism | 46 |
@@ -54,7 +70,7 @@ These entries were generated from source pages that state public-domain status, 
 | Classics | 12 |
 | Dictionaries | 11 |
 | Christian life | 7 |
-| Surveys | 4 |
+| Surveys | 5 |
 | Fiction/classics | 2 |
 | Preaching/teaching | 2 |
 | Topical Bible | 2 |
@@ -80,7 +96,7 @@ These entries were generated from source pages that state public-domain status, 
 | Alexander Maclaren Collection | 26 |
 | William Kelly Collection | 23 |
 | G. Campbell Morgan Collection | 22 |
-| Bible Study Essentials | 20 |
+| Bible Study Essentials | 22 |
 | Andrew Murray Collection | 19 |
 | Commentaries | 19 |
 | Prayer | 19 |
@@ -124,9 +140,9 @@ These entries were generated from source pages that state public-domain status, 
 | Matthew Henry | 1,189 |
 | Adam Clarke | 771 |
 | Albert Barnes | 771 |
-| Joseph S. Exell / Biblical Illustrator | 287 |
-| Matthew Poole | 278 |
-| Joseph S. Exell and H. D. M. Spence-Jones / Pulpit Commentary | 278 |
+| Joseph S. Exell / Biblical Illustrator | 318 |
+| Matthew Poole | 309 |
+| Joseph S. Exell and H. D. M. Spence-Jones / Pulpit Commentary | 309 |
 | C. H. Spurgeon / Treasury of David | 150 |
 | John Wesley | 86 |
 | H. A. Ironside | 62 |
@@ -138,13 +154,13 @@ These entries were generated from source pages that state public-domain status, 
 - Barnes and Adam Clarke have broad public coverage across the current reviewed batches.
 - Wesley remains New Testament oriented.
 - Gill and Ironside remain sample-only until cleaner source/edition review is complete.
-- Pulpit Commentary, Biblical Illustrator, and Matthew Poole now have focused public verified batches where source, edition notes, rights basis, and parser output were documented. Continue importing only in reviewed batches.
+- Pulpit Commentary, Biblical Illustrator, and Matthew Poole now have focused public verified batches for Exodus and Proverbs where source, edition notes, rights basis, and parser output were documented. Continue importing only in reviewed batches.
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,261 public resources verified, complete, and file-backed.
+- `npm run library:qa`: 1,264 public resources verified, complete, and file-backed.
 - `npm run library:validate`: manifest validation passed.
-- `npm run validate:commentary`: 89 commentary/review files validated, 7,545 rows checked.
+- `npm run validate:commentary`: 92 commentary/review files validated, 7,638 rows checked.
 
 ## Next Growth Rule
 

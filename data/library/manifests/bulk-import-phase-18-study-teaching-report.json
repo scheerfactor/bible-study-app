@@ -1,0 +1,71 @@
+{
+  "source_csv": "data/library/bulk-import-phase-18-study-teaching.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 10,
+  "total_attempted": 3,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Bible Book by Book",
+      "file": "the-bible-book-by-book-josiah-blake-tidwell.txt",
+      "bytes": 282449,
+      "words": 47207,
+      "reading_time_minutes": 210
+    },
+    {
+      "title": "How to Master the English Bible",
+      "file": "how-to-master-the-english-bible-james-m-gray.txt",
+      "bytes": 74022,
+      "words": 12877,
+      "reading_time_minutes": 57
+    },
+    {
+      "title": "Organizing and Building Up the Sunday School",
+      "file": "organizing-and-building-up-the-sunday-school-jesse-lyman-hurlbut.txt",
+      "bytes": 222356,
+      "words": 36900,
+      "reading_time_minutes": 164
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Bible Book by Book",
+      "author": "Josiah Blake Tidwell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-bible-book-by-book-josiah-blake-tidwell.txt"
+    },
+    {
+      "row": 3,
+      "title": "How to Master the English Bible",
+      "author": "James M. Gray",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/how-to-master-the-english-bible-james-m-gray.txt"
+    },
+    {
+      "row": 4,
+      "title": "Organizing and Building Up the Sunday School",
+      "author": "Jesse Lyman Hurlbut",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/organizing-and-building-up-the-sunday-school-jesse-lyman-hurlbut.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

@@ -135,6 +135,9 @@ import biblicalIllustratorReviewedWeakBooksCommentary from "../../data/imports/b
 import matthewPooleReviewedExodusCommentary from "../../data/imports/matthew-poole-reviewed-exodus-commentary.json";
 import pulpitCommentaryReviewedExodusCommentary from "../../data/imports/pulpit-commentary-reviewed-exodus-commentary.json";
 import biblicalIllustratorReviewedExodusCommentary from "../../data/imports/biblical-illustrator-reviewed-exodus-commentary.json";
+import matthewPooleReviewedProverbsCommentary from "../../data/imports/matthew-poole-reviewed-proverbs-commentary.json";
+import pulpitCommentaryReviewedProverbsCommentary from "../../data/imports/pulpit-commentary-reviewed-proverbs-commentary.json";
+import biblicalIllustratorReviewedProverbsCommentary from "../../data/imports/biblical-illustrator-reviewed-proverbs-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
@@ -8606,6 +8609,9 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewPooleReviewedExodusCommentary as CommentaryEntry[]),
   ...(pulpitCommentaryReviewedExodusCommentary as CommentaryEntry[]),
   ...(biblicalIllustratorReviewedExodusCommentary as CommentaryEntry[]),
+  ...(matthewPooleReviewedProverbsCommentary as CommentaryEntry[]),
+  ...(pulpitCommentaryReviewedProverbsCommentary as CommentaryEntry[]),
+  ...(biblicalIllustratorReviewedProverbsCommentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
