@@ -144,7 +144,7 @@ import permissionTrackerData from "../../data/library/manifests/permission-track
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 
-type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath";
+type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
 type StudyDrawerSize = "collapsed" | "half" | "full";
 type TestamentFilter = "all" | "old" | "new";
@@ -187,7 +187,7 @@ type PrayerCategory = "Church Members" | "Missionaries" | "Ministries" | "Family
 type PrayerAnswerStatus = "Active" | "Answered" | "Waiting" | "Archived";
 type PrayerRotation = "Daily" | "Weekly" | "Twice Weekly" | "Every Day";
 type JournalSourceType = "Today" | "Bible Verse" | "Passage Guide" | "Study Drawer" | "Prayer Entry" | "Reading Plan" | "Library Book" | "Commentary Note";
-type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
+type ReadingPlanCategory = "Bible in a Year" | "Proverbs of the Day" | "New Testament in 90 Days" | "Romans Study" | "Amos Study" | "Hosea Study" | "Prayer Study" | "Evangelism Study" | "Fear of the Lord Study";
 type SermonKind = "Sermon" | "Lesson";
 type SermonStatus = "Draft" | "Ready" | "Preached" | "Taught" | "Archived";
 type SermonWorkspaceView = "manager" | "builder" | "slides" | "preaching" | "presenting";
@@ -1584,6 +1584,16 @@ type AmosChapterStudy = {
   }>;
 };
 
+type ProverbsChapterGuide = {
+  chapter: number;
+  title: string;
+  theme: string;
+  keyVerse: string;
+  journalPrompt: string;
+  prayerPrompt: string;
+  teachingUse: string;
+};
+
 type SpeechState = {
   targetId: string | null;
   label: string;
@@ -2604,6 +2614,14 @@ const READING_PLAN_FOUNDATION: ReadingPlanFoundation[] = [
     title: "Amos Study",
     description: "A teacher-friendly plan built around Amos 1-9 as a model complete study experience.",
     startHere: "Begin with Amos 1-9 and the Amos Teaching Prep path.",
+    status: "Ready",
+  },
+  {
+    id: "hosea-study",
+    category: "Hosea Study",
+    title: "Hosea Study",
+    description: "A focused Sunday school path for Hosea 4-9 with judgment, mercy, covenant unfaithfulness, and the call to return.",
+    startHere: "Begin with Hosea 4-9 and compare the reviewed commentary voices after reading the KJV text.",
     status: "Ready",
   },
   {
@@ -3985,6 +4003,24 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     relatedResourceTerms: ["amos", "minor prophets", "preaching", "teaching", "prophets", "expositions"],
   },
   {
+    id: "hosea-study-collection",
+    book: "Hosea",
+    title: "Hosea Study Collection",
+    description: "Covenant unfaithfulness, rejected knowledge, mercy, judgment, and the call to return in Hosea 4-9.",
+    featuredChapters: ["Hosea 4", "Hosea 5", "Hosea 6", "Hosea 8", "Hosea 9"],
+    playlistTitle: "Hosea 4-9 Sunday School Prep",
+    relatedResourceTerms: ["hosea", "minor prophets", "repentance", "judgment", "mercy", "covenant", "commentary"],
+  },
+  {
+    id: "proverbs-daily-study-collection",
+    book: "Proverbs",
+    title: "Proverbs Daily Study Collection",
+    description: "A daily wisdom workflow with the chapter of the day, journal prompts, word study, prayer, and teaching helps.",
+    featuredChapters: ["Proverbs 1", "Proverbs 3", "Proverbs 9", "Proverbs 13", "Proverbs 31"],
+    playlistTitle: "Proverbs Daily Wisdom",
+    relatedResourceTerms: ["proverbs", "wisdom", "fear of the lord", "daily", "devotional", "teaching"],
+  },
+  {
     id: "daniel-study-collection",
     book: "Daniel",
     title: "Daniel Study Collection",
@@ -4034,6 +4070,30 @@ const STUDY_PLAYLIST_TEMPLATES: StudyPlaylistTemplate[] = [
       { kind: "Notes", label: "Teacher notes and closing thought", minutes: 5 },
     ],
     repeatOptions: ["Repeat range", "Stop after Amos 9", "Loop for prep"],
+  },
+  {
+    id: "hosea-4-9-prep",
+    title: "Hosea 4-9 Sunday School Prep",
+    description: "A focused study playlist for Hosea 4-9 with KJV reading, commentary comparison, and teacher notes.",
+    items: [
+      { kind: "Bible", label: "Hosea 4-9 KJV", minutes: 28 },
+      { kind: "Commentary", label: "Hosea 4-9 commentary comparison", minutes: 45 },
+      { kind: "Notes", label: "Hosea teacher notes and applications", minutes: 8 },
+      { kind: "Book", label: "Minor prophets background reading", minutes: 15 },
+    ],
+    repeatOptions: ["Repeat Hosea 4-9", "Stop after chapter range", "Loop for teaching prep"],
+  },
+  {
+    id: "proverbs-daily-wisdom",
+    title: "Proverbs Daily Wisdom",
+    description: "The Proverb of the day with a key verse, word study, commentary, journal prompt, and prayer response.",
+    items: [
+      { kind: "Bible", label: "Today's Proverb", minutes: 5 },
+      { kind: "Commentary", label: "Proverbs chapter commentary", minutes: 12 },
+      { kind: "Notes", label: "Scripture journal prompt", minutes: 5 },
+      { kind: "Notes", label: "Prayer and obedience step", minutes: 3 },
+    ],
+    repeatOptions: ["Repeat chapter", "Stop after journal prompt", "Use for daily growth"],
   },
   {
     id: "romans-gospel-study",
@@ -5447,6 +5507,223 @@ const AMOS_CHAPTER_STUDIES: AmosChapterStudy[] = [
       { sourceRef: "Amos 9:8", targetRef: "Jeremiah 30:11", label: "Judgment yet not full end" },
       { sourceRef: "Amos 9:11", targetRef: "Acts 15:16", label: "Tabernacle of David cited" },
       { sourceRef: "Amos 9:15", targetRef: "Jeremiah 32:41", label: "Planted in the land" },
+    ],
+  },
+];
+
+const PROVERBS_CHAPTER_GUIDES: ProverbsChapterGuide[] = [
+  { chapter: 1, title: "The Fear of the LORD", theme: "Wisdom begins with the fear of the LORD and refuses the way of sinners.", keyVerse: "Proverbs 1:7", journalPrompt: "Where do I need to receive instruction instead of leaning on myself?", prayerPrompt: "Ask the LORD for a teachable heart and holy fear.", teachingUse: "Use as an introduction to wisdom, correction, and the danger of rejecting reproof." },
+  { chapter: 2, title: "Wisdom Preserves", theme: "The LORD gives wisdom that preserves from evil men and strange women.", keyVerse: "Proverbs 2:6", journalPrompt: "What wisdom should I seek as treasure today?", prayerPrompt: "Pray for discernment and protection from hidden snares.", teachingUse: "Good for teaching the value of seeking wisdom diligently." },
+  { chapter: 3, title: "Trust in the LORD", theme: "Trust, acknowledge, honor, and receive the chastening of the LORD.", keyVerse: "Proverbs 3:5", journalPrompt: "What area am I tempted to direct without acknowledging the LORD?", prayerPrompt: "Commit today's decisions to the LORD.", teachingUse: "Useful for a simple lesson on trust, guidance, and correction." },
+  { chapter: 4, title: "Keep Thy Heart", theme: "Wisdom must be kept, guarded, and practiced in the path of life.", keyVerse: "Proverbs 4:23", journalPrompt: "What has been shaping my heart this week?", prayerPrompt: "Ask God to guard your heart and steps.", teachingUse: "Strong for youth, family, and discipleship lessons." },
+  { chapter: 5, title: "Faithfulness and Warning", theme: "Wisdom warns against immorality and calls for covenant faithfulness.", keyVerse: "Proverbs 5:21", journalPrompt: "What private path do I need to bring under the fear of God?", prayerPrompt: "Pray for purity, faithfulness, and honest accountability.", teachingUse: "Teach with care, Scripture first, and pastoral clarity." },
+  { chapter: 6, title: "Diligence and Integrity", theme: "Wisdom exposes sloth, deceit, pride, and the things the LORD hates.", keyVerse: "Proverbs 6:16", journalPrompt: "Which warning in this chapter searches me most?", prayerPrompt: "Ask the LORD to correct sinful habits before they harden.", teachingUse: "Good for practical warnings on work, speech, and character." },
+  { chapter: 7, title: "Kept by the Word", theme: "God's word must be kept close because temptation is persuasive and destructive.", keyVerse: "Proverbs 7:2", journalPrompt: "What Scripture should I keep before me today?", prayerPrompt: "Pray for deliverance from persuasive temptation.", teachingUse: "Useful for showing why wisdom must be stored before temptation comes." },
+  { chapter: 8, title: "Wisdom's Call", theme: "Wisdom calls publicly, speaks truth, and is better than riches.", keyVerse: "Proverbs 8:11", journalPrompt: "Where do I value gain more than wisdom?", prayerPrompt: "Ask God to make wisdom more precious than advantage.", teachingUse: "Use for wisdom's worth and the public call to hear." },
+  { chapter: 9, title: "Two Invitations", theme: "Wisdom and folly both invite, but the fear of the LORD is the beginning of wisdom.", keyVerse: "Proverbs 9:10", journalPrompt: "Which invitation am I answering by my habits?", prayerPrompt: "Pray to choose wisdom's table and reject folly.", teachingUse: "Clear contrast lesson between wisdom's feast and folly's snare." },
+  { chapter: 10, title: "The Righteous and the Wicked", theme: "Short sayings contrast righteous and wicked speech, labor, and fruit.", keyVerse: "Proverbs 10:12", journalPrompt: "How is my speech revealing my heart?", prayerPrompt: "Ask the LORD to make your words life-giving.", teachingUse: "Great for selected proverb discussion and speech application." },
+  { chapter: 11, title: "Integrity and Humility", theme: "The LORD weighs honesty, pride, mercy, and the fruit of righteousness.", keyVerse: "Proverbs 11:30", journalPrompt: "Where do I need integrity when no one is watching?", prayerPrompt: "Pray for humility and righteous influence.", teachingUse: "Useful for stewardship, witness, and character." },
+  { chapter: 12, title: "Loving Instruction", theme: "The wise receive correction, speak truth, and show diligence.", keyVerse: "Proverbs 12:1", journalPrompt: "How do I respond when corrected?", prayerPrompt: "Ask for love of instruction and hatred of lying.", teachingUse: "Good for teaching teachability and honest speech." },
+  { chapter: 13, title: "The Way of the Faithful", theme: "Wisdom shapes hearing, work, discipline, hope, and companionship.", keyVerse: "Proverbs 13:20", journalPrompt: "Who or what is influencing my walk?", prayerPrompt: "Pray for wise companions and disciplined steps.", teachingUse: "Helpful for Sunday school discussion on influence and discipline." },
+  { chapter: 14, title: "Wisdom Builds", theme: "The fear of the LORD, truthful witness, and compassion mark wisdom.", keyVerse: "Proverbs 14:26", journalPrompt: "What am I building or tearing down by my choices?", prayerPrompt: "Pray for a home and heart built in God's fear.", teachingUse: "Good for home, family, and testimony." },
+  { chapter: 15, title: "A Soft Answer", theme: "God sees the heart, hears prayer, and weighs speech and correction.", keyVerse: "Proverbs 15:1", journalPrompt: "Where do I need a softer answer and a humbler spirit?", prayerPrompt: "Ask for gracious speech under pressure.", teachingUse: "Strong for conflict, prayer, and discipline." },
+  { chapter: 16, title: "The LORD Directs", theme: "Man's plans are weighed by the LORD, who directs steps and hates pride.", keyVerse: "Proverbs 16:9", journalPrompt: "What plan do I need to commit to the LORD?", prayerPrompt: "Pray for humble planning and submitted steps.", teachingUse: "Useful for guidance, leadership, and humility." },
+  { chapter: 17, title: "Tried Hearts", theme: "The LORD tries hearts; wisdom governs friendship, speech, and conflict.", keyVerse: "Proverbs 17:3", journalPrompt: "What trial is revealing my heart?", prayerPrompt: "Pray for faithful friendship and restrained words.", teachingUse: "Good for relationships and heart-testing." },
+  { chapter: 18, title: "Words and Strong Towers", theme: "Speech can wound or nourish; the name of the LORD is a strong tower.", keyVerse: "Proverbs 18:10", journalPrompt: "Am I running to the LORD or to my own opinion?", prayerPrompt: "Pray for refuge in His name and wisdom in words.", teachingUse: "Clear lesson on words, counsel, and refuge." },
+  { chapter: 19, title: "Mercy, Counsel, and Correction", theme: "Wisdom receives counsel, shows mercy, and fears the LORD.", keyVerse: "Proverbs 19:21", journalPrompt: "What counsel have I been resisting?", prayerPrompt: "Ask for a heart that receives correction.", teachingUse: "Good for practical discipleship and counsel." },
+  { chapter: 20, title: "Honest Weights", theme: "The LORD searches motives, hates dishonest gain, and honors integrity.", keyVerse: "Proverbs 20:27", journalPrompt: "Where do my motives need the LORD's searching?", prayerPrompt: "Pray for clean motives and honest dealings.", teachingUse: "Useful for stewardship, business, and integrity." },
+  { chapter: 21, title: "The King's Heart", theme: "The LORD rules hearts and values righteousness over sacrifice.", keyVerse: "Proverbs 21:3", journalPrompt: "Where could I be substituting activity for obedience?", prayerPrompt: "Pray for righteousness, mercy, and obedient worship.", teachingUse: "Connects well to prophetic warnings against empty religion." },
+  { chapter: 22, title: "A Good Name", theme: "Wisdom prizes a good name, training, humility, and care for the poor.", keyVerse: "Proverbs 22:1", journalPrompt: "What kind of name am I building before God and others?", prayerPrompt: "Pray for humility and faithful influence.", teachingUse: "Good for parenting, testimony, and stewardship." },
+  { chapter: 23, title: "Buy the Truth", theme: "Wisdom guards appetite, envy, discipline, and the heart's direction.", keyVerse: "Proverbs 23:23", journalPrompt: "What truth must I refuse to sell for comfort or approval?", prayerPrompt: "Ask God to make truth precious.", teachingUse: "Good for discipline, appetites, and convictions." },
+  { chapter: 24, title: "Through Wisdom Is a House Builded", theme: "Wisdom builds, strengthens, warns against envy, and calls for courage.", keyVerse: "Proverbs 24:3", journalPrompt: "What should I build patiently instead of envying others?", prayerPrompt: "Pray for courage and steady obedience.", teachingUse: "Useful for family, ministry, and perseverance." },
+  { chapter: 25, title: "A Word Fitly Spoken", theme: "Wisdom handles honor, conflict, self-control, and timely words.", keyVerse: "Proverbs 25:11", journalPrompt: "What word should I speak or hold back today?", prayerPrompt: "Ask for timing, grace, and self-control.", teachingUse: "Good for communication and peacemaking." },
+  { chapter: 26, title: "Folly Exposed", theme: "Folly, sloth, gossip, and deceit are exposed with vivid pictures.", keyVerse: "Proverbs 26:20", journalPrompt: "Where should I stop feeding strife?", prayerPrompt: "Pray for wisdom to avoid foolish cycles.", teachingUse: "Use carefully for practical warnings against destructive habits." },
+  { chapter: 27, title: "Faithful Wounds", theme: "Wisdom values faithful friendship, humility about tomorrow, and diligent care.", keyVerse: "Proverbs 27:17", journalPrompt: "Who sharpens me toward the LORD?", prayerPrompt: "Pray for faithful friendships and diligence.", teachingUse: "Strong for fellowship, accountability, and stewardship." },
+  { chapter: 28, title: "The Boldness of the Righteous", theme: "Wisdom contrasts righteous boldness with oppression, cover-up, and greed.", keyVerse: "Proverbs 28:13", journalPrompt: "What should I confess rather than cover?", prayerPrompt: "Ask for mercy through honest confession.", teachingUse: "Good for repentance, leadership, and justice." },
+  { chapter: 29, title: "Where There Is No Vision", theme: "Correction, righteous rule, anger, and revelation shape a people.", keyVerse: "Proverbs 29:18", journalPrompt: "How is God's word governing my life?", prayerPrompt: "Pray for obedience to revealed truth.", teachingUse: "Useful for leadership, discipline, and Scripture's necessity." },
+  { chapter: 30, title: "The Words of Agur", theme: "Agur shows humility, God's pure word, contentment, and creation's lessons.", keyVerse: "Proverbs 30:5", journalPrompt: "Where do I need contentment and confidence in God's pure word?", prayerPrompt: "Pray for humility and simple trust in Scripture.", teachingUse: "Good for Bible confidence and humility." },
+  { chapter: 31, title: "Virtue and Faithfulness", theme: "Wisdom praises righteous leadership, warning against excess, and virtuous womanhood.", keyVerse: "Proverbs 31:30", journalPrompt: "What does fearing the LORD look like in ordinary faithfulness?", prayerPrompt: "Pray for homes and lives shaped by the fear of the LORD.", teachingUse: "Teach as a chapter of faithful character, not performance pressure." },
+];
+
+const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
+  {
+    chapter: 4,
+    title: "No Truth, Nor Mercy, Nor Knowledge",
+    summary: "The LORD has a controversy with Israel because truth, mercy, and the knowledge of God are missing. Priests and people are judged together because they rejected knowledge and turned to idolatry.",
+    historicalSetting: "Hosea speaks to the northern kingdom before Assyria's conquest, exposing spiritual decay beneath national confidence.",
+    mapNotes: ["Locate Israel/Ephraim and the worship centers that drew the people away from the LORD."],
+    kingsAndNations: ["Israel", "Ephraim", "Judah"],
+    majorMessages: ["Rejected knowledge ruins a people", "Priests and people can share guilt", "Idolatry corrupts worship and life"],
+    keyThemes: ["Knowledge of God", "Covenant controversy", "Idolatry", "Leadership failure"],
+    keyVerses: ["Hosea 4:1", "Hosea 4:6", "Hosea 4:9", "Hosea 4:17"],
+    repeatedFocus: ["knowledge", "whoredom", "controversy", "Ephraim"],
+    peopleMentioned: ["Hosea", "Israel", "Ephraim", "Priests", "Judah"],
+    placesAndNations: ["Israel", "Ephraim", "Judah", "Gilgal", "Bethaven"],
+    mainSinsJudged: ["Rejecting the knowledge of God", "Swearing, lying, killing, stealing, and adultery", "Priestly corruption", "Idolatry and spiritual adultery"],
+    teachingAim: "Show that spiritual decay begins when people reject the knowledge of God and normalize sin.",
+    practicalApplications: ["Keep the Bible central so knowledge of God is not replaced by religious habit.", "Warn leaders that public influence carries accountability.", "Use Hosea 4:6 carefully: knowledge must lead to obedience."],
+    prophecyConnections: ["Micah 6:2 also uses covenant controversy language as the LORD pleads with His people."],
+    christConnections: ["Christ reveals the Father perfectly; rejecting the knowledge of God points to the need for true light in Him."],
+    sundaySchoolQuestions: ["What is missing in Hosea 4:1?", "Why is rejected knowledge so serious?", "How does leadership failure affect a people?"],
+    discussionQuestions: ["What happens when people keep religious words but lose the knowledge of God?", "How can a class apply Hosea 4 without pride?"],
+    sermonOutline: ["The LORD's controversy", "The rejected knowledge", "The corrupt leadership", "The idolatry that enslaves"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Matthew Poole", "Pulpit Commentary", "Biblical Illustrator"],
+    recommendedBooks: ["Easton's Bible Dictionary", "Smith's Bible Dictionary", "Nave's Topical Bible"],
+    crossReferences: [
+      { sourceRef: "Hosea 4:1", targetRef: "Micah 6:2", label: "The LORD's controversy" },
+      { sourceRef: "Hosea 4:6", targetRef: "Isaiah 5:13", label: "Captivity through lack of knowledge" },
+      { sourceRef: "Hosea 4:9", targetRef: "Malachi 2:8", label: "Priests causing stumbling" },
+      { sourceRef: "Hosea 4:17", targetRef: "Romans 1:24", label: "Given up to chosen idols" },
+    ],
+  },
+  {
+    chapter: 5,
+    title: "Pride Testifies",
+    summary: "Hosea addresses priests, Israel, and the king's house. Their pride, treachery, and false refuge in Assyria cannot heal what sin has broken.",
+    historicalSetting: "Political pressure grows, but Israel seeks human alliances rather than returning to the LORD.",
+    mapNotes: ["Trace Mizpah, Tabor, Ephraim, Judah, and Assyria as the chapter exposes religious and political snares."],
+    kingsAndNations: ["Israel", "Ephraim", "Judah", "Assyria"],
+    majorMessages: ["Pride testifies against sinners", "False refuge cannot heal spiritual disease", "The LORD withdraws until they seek Him"],
+    keyThemes: ["Pride", "False refuge", "Return", "Leadership accountability"],
+    keyVerses: ["Hosea 5:4", "Hosea 5:5", "Hosea 5:13", "Hosea 5:15"],
+    repeatedFocus: ["Ephraim", "Judah", "pride", "return"],
+    peopleMentioned: ["Priests", "House of Israel", "King's house", "Ephraim", "Judah"],
+    placesAndNations: ["Mizpah", "Tabor", "Ephraim", "Judah", "Assyria"],
+    mainSinsJudged: ["Pride", "Treachery against the LORD", "False worship", "Trusting Assyria for healing"],
+    teachingAim: "Teach that pride and false refuge keep people from returning to the LORD.",
+    practicalApplications: ["Ask what people run to when sin wounds them.", "Show that conviction should lead to seeking the LORD, not covering symptoms.", "Use Hosea 5:15 as a sober mercy: God waits for true seeking."],
+    prophecyConnections: ["The Assyrian pressure anticipates the fall of the northern kingdom."],
+    christConnections: ["Christ is the true healer; Hosea exposes the futility of seeking healing apart from God."],
+    sundaySchoolQuestions: ["How does pride testify against Israel?", "Why could Assyria not heal Ephraim?", "What does Hosea 5:15 reveal about God's purpose in chastening?"],
+    discussionQuestions: ["What false refuges do people use today?", "How does pride make repentance harder?"],
+    sermonOutline: ["The snare of corrupt leadership", "The testimony of pride", "The failure of false refuge", "The call to seek the LORD"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Matthew Poole"],
+    recommendedBooks: ["Bible Manners and Customs", "Easton's Bible Dictionary", "Nave's Topical Bible"],
+    crossReferences: [
+      { sourceRef: "Hosea 5:4", targetRef: "Jeremiah 13:23", label: "Habitual evil and inability" },
+      { sourceRef: "Hosea 5:5", targetRef: "Proverbs 16:18", label: "Pride before destruction" },
+      { sourceRef: "Hosea 5:13", targetRef: "2 Chronicles 28:16", label: "Looking to Assyria" },
+      { sourceRef: "Hosea 5:15", targetRef: "Luke 15:17", label: "Returning under conviction" },
+    ],
+  },
+  {
+    chapter: 6,
+    title: "Mercy, Not Sacrifice",
+    summary: "The people speak of returning, but the LORD exposes shallow goodness that disappears like morning cloud. He desires mercy and the knowledge of God more than empty sacrifice.",
+    historicalSetting: "Israel knows religious language but lacks steadfast covenant loyalty.",
+    mapNotes: ["Set Ephraim and Judah together under the same searching word; note Gilead and Shechem as places of violence."],
+    kingsAndNations: ["Ephraim", "Judah", "Israel"],
+    majorMessages: ["Return must be real", "Shallow goodness cannot satisfy God", "Mercy and knowledge matter more than ceremony"],
+    keyThemes: ["Return", "Mercy", "Knowledge of God", "Empty religion"],
+    keyVerses: ["Hosea 6:1", "Hosea 6:3", "Hosea 6:4", "Hosea 6:6"],
+    repeatedFocus: ["return", "know", "mercy", "sacrifice"],
+    peopleMentioned: ["Ephraim", "Judah", "Priests", "Israel"],
+    placesAndNations: ["Ephraim", "Judah", "Gilead", "Shechem"],
+    mainSinsJudged: ["Shallow repentance", "Goodness that quickly passes", "Violence", "Empty sacrifice without mercy"],
+    teachingAim: "Help the class distinguish religious words from genuine return to the LORD.",
+    practicalApplications: ["Use Hosea 6:6 to test worship by mercy and knowledge of God.", "Warn against temporary emotion that does not become obedience.", "Connect the verse carefully to the Lord Jesus' use of it in Matthew."],
+    prophecyConnections: ["Hosea 6:6 is quoted by Christ in Matthew 9:13 and Matthew 12:7."],
+    christConnections: ["Christ teaches the meaning of mercy, not sacrifice, and exposes religion without compassion."],
+    sundaySchoolQuestions: ["What sounds hopeful in Hosea 6:1-3?", "Why does the LORD question Ephraim and Judah in verse 4?", "How did Jesus use Hosea 6:6?"],
+    discussionQuestions: ["How can a person sound repentant but remain shallow?", "What would mercy and the knowledge of God look like in daily life?"],
+    sermonOutline: ["A call to return", "A shallow goodness", "A desired mercy", "A religion exposed"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Matthew Poole"],
+    recommendedBooks: ["Nave's Topical Bible", "Webster's 1828 Dictionary", "The Bible Book by Book"],
+    crossReferences: [
+      { sourceRef: "Hosea 6:1", targetRef: "Deuteronomy 32:39", label: "He wounds and heals" },
+      { sourceRef: "Hosea 6:3", targetRef: "Psalm 63:1", label: "Following on to know the LORD" },
+      { sourceRef: "Hosea 6:6", targetRef: "Matthew 9:13", label: "Mercy, not sacrifice" },
+      { sourceRef: "Hosea 6:6", targetRef: "Matthew 12:7", label: "Christ applies Hosea" },
+    ],
+  },
+  {
+    chapter: 7,
+    title: "A Cake Not Turned",
+    summary: "Hosea uses vivid images: a heated oven, a cake not turned, a silly dove, and a deceitful bow. Israel is mixed with the nations, weakened without noticing, and unwilling to cry unto God with the heart.",
+    historicalSetting: "Foreign alliances and inward corruption combine while Israel grows weak and unaware.",
+    mapNotes: ["Trace Ephraim between Egypt and Assyria as a picture of unstable reliance."],
+    kingsAndNations: ["Ephraim", "Israel", "Egypt", "Assyria"],
+    majorMessages: ["Sin can weaken people before they notice", "Religious cries may not come from the heart", "Worldly mixture leaves a people half-baked and unstable"],
+    keyThemes: ["Mixture", "Deception", "False confidence", "Half-hearted religion"],
+    keyVerses: ["Hosea 7:8", "Hosea 7:9", "Hosea 7:11", "Hosea 7:14"],
+    repeatedFocus: ["Ephraim", "heart", "Egypt", "Assyria"],
+    peopleMentioned: ["Ephraim", "Israel", "Princes", "Kings"],
+    placesAndNations: ["Ephraim", "Egypt", "Assyria"],
+    mainSinsJudged: ["Secret wickedness", "Political flattery and instability", "Mixture with the nations", "Crying on beds but not unto God with the heart"],
+    teachingAim: "Show the danger of mixture, unnoticed spiritual weakness, and heartless religion.",
+    practicalApplications: ["Use the chapter's pictures to help adults remember the warning.", "Ask where spiritual strength may be leaving unnoticed.", "Emphasize prayer from the heart, not mere complaint."],
+    prophecyConnections: ["The Egypt/Assyria tension anticipates the failed politics that cannot save Israel."],
+    christConnections: ["Christ calls for whole-hearted faith and exposes divided hearts."],
+    sundaySchoolQuestions: ["What does 'a cake not turned' picture?", "How can gray hairs be here and there upon a person without them knowing it?", "What is the difference between crying on beds and crying unto God with the heart?"],
+    discussionQuestions: ["Where does compromise make a believer unstable?", "What signs might show spiritual strength is slipping?"],
+    sermonOutline: ["The oven of hidden sin", "The cake not turned", "The silly dove", "The cry without the heart"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Pulpit Commentary", "Biblical Illustrator"],
+    recommendedBooks: ["Smith's Bible Dictionary", "Bible Manners and Customs", "How to Master the English Bible"],
+    crossReferences: [
+      { sourceRef: "Hosea 7:8", targetRef: "Psalm 106:35", label: "Mixed among the heathen" },
+      { sourceRef: "Hosea 7:9", targetRef: "Isaiah 42:25", label: "Not laying it to heart" },
+      { sourceRef: "Hosea 7:11", targetRef: "Matthew 10:16", label: "Simplicity and wisdom contrasted" },
+      { sourceRef: "Hosea 7:14", targetRef: "Isaiah 29:13", label: "Near with mouth, heart far away" },
+    ],
+  },
+  {
+    chapter: 8,
+    title: "Sowing the Wind",
+    summary: "The trumpet sounds because Israel has transgressed the covenant. Their calf-idols, political self-will, and neglect of God's law lead to the harvest of the whirlwind.",
+    historicalSetting: "Israel's rulers and worship systems appear established, but Hosea exposes them as man-made and covenant-breaking.",
+    mapNotes: ["Mark Samaria, Israel, Egypt, and Assyria as the chapter moves from idolatry to exile threat."],
+    kingsAndNations: ["Israel", "Samaria", "Ephraim", "Egypt", "Assyria"],
+    majorMessages: ["Covenant transgression brings alarm", "Man-made worship cannot save", "Sowing wind reaps whirlwind"],
+    keyThemes: ["Covenant", "Idolatry", "Harvest", "Law neglected"],
+    keyVerses: ["Hosea 8:1", "Hosea 8:7", "Hosea 8:12", "Hosea 8:14"],
+    repeatedFocus: ["Israel", "calf", "sown", "law"],
+    peopleMentioned: ["Israel", "Ephraim", "The LORD"],
+    placesAndNations: ["Samaria", "Israel", "Egypt", "Assyria", "Judah"],
+    mainSinsJudged: ["Transgressing the covenant", "Setting up kings without the LORD", "Idolatry", "Treating God's law as a strange thing"],
+    teachingAim: "Warn that what a people sow spiritually will become a harvest they cannot control.",
+    practicalApplications: ["Use Hosea 8:7 to teach sowing and reaping without turning the lesson into slogans.", "Ask whether God's law feels strange or familiar.", "Show that self-made religion cannot replace obedience."],
+    prophecyConnections: ["The Assyrian references point toward the coming conquest of the northern kingdom."],
+    christConnections: ["Christ fulfills the law and calls His people from man-made religion to truth and obedience."],
+    sundaySchoolQuestions: ["Why is the trumpet sounded in Hosea 8?", "What does it mean to sow the wind and reap the whirlwind?", "Why is it serious that God's law was counted as a strange thing?"],
+    discussionQuestions: ["What small sowings can become large harvests?", "How can Bible truth become strange to religious people?"],
+    sermonOutline: ["The trumpet of warning", "The idols of self-will", "The harvest of the whirlwind", "The law treated as strange"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Matthew Poole"],
+    recommendedBooks: ["Webster's 1828 Dictionary", "Nave's Topical Bible", "The Bible Book by Book"],
+    crossReferences: [
+      { sourceRef: "Hosea 8:1", targetRef: "Isaiah 58:1", label: "Trumpet warning" },
+      { sourceRef: "Hosea 8:7", targetRef: "Galatians 6:7", label: "Sowing and reaping" },
+      { sourceRef: "Hosea 8:12", targetRef: "Deuteronomy 4:8", label: "Great things of God's law" },
+      { sourceRef: "Hosea 8:14", targetRef: "Jeremiah 17:27", label: "Fire in cities" },
+    ],
+  },
+  {
+    chapter: 9,
+    title: "The Days of Recompence",
+    summary: "Israel is told not to rejoice like other people. Exile, barrenness, and rejection are announced because of deep corruption, with Baal-peor remembered as a warning from the past.",
+    historicalSetting: "The prophet speaks as national joy and harvest celebration are shadowed by approaching judgment.",
+    mapNotes: ["Trace Egypt, Assyria, Gibeah, Baal-peor, Gilgal, and Ephraim to connect history, worship, and judgment."],
+    kingsAndNations: ["Israel", "Ephraim", "Egypt", "Assyria"],
+    majorMessages: ["Sin turns joy into mourning", "Past rebellion warns present hearers", "Persistent rejection leads to wandering"],
+    keyThemes: ["Recompence", "Exile", "Corruption", "Remembered sin"],
+    keyVerses: ["Hosea 9:1", "Hosea 9:7", "Hosea 9:10", "Hosea 9:17"],
+    repeatedFocus: ["Ephraim", "days", "found", "cast"],
+    peopleMentioned: ["Israel", "Ephraim", "The prophet", "My God"],
+    placesAndNations: ["Egypt", "Assyria", "Gibeah", "Baalpeor", "Gilgal"],
+    mainSinsJudged: ["Rejoicing like the heathen", "Rejecting the prophet", "Baal-peor corruption", "Persistent disobedience"],
+    teachingAim: "Show that remembered sin and rejected warnings make judgment solemn, but also teach the class to hear warnings while mercy is offered.",
+    practicalApplications: ["Use the historical references to show that old sins can become present warnings.", "Teach adults to receive correction rather than mock the messenger.", "End by pointing forward to the restoring mercy in Hosea 14."],
+    prophecyConnections: ["Hosea 9:17 anticipates scattering among the nations for refusing the LORD."],
+    christConnections: ["The rejection and wandering of Israel heighten the need for the Shepherd who seeks and restores."],
+    sundaySchoolQuestions: ["Why does Hosea say not to rejoice?", "What warning comes from Baal-peor?", "What does Hosea 9:17 say about refusing to hearken?"],
+    discussionQuestions: ["How should past failures become warnings instead of excuses?", "How do people treat faithful warnings today?"],
+    sermonOutline: ["Joy interrupted", "Warnings rejected", "Old corruption remembered", "Wandering under judgment"],
+    recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Pulpit Commentary", "Biblical Illustrator"],
+    recommendedBooks: ["Easton's Bible Dictionary", "Smith's Bible Dictionary", "Nave's Topical Bible"],
+    crossReferences: [
+      { sourceRef: "Hosea 9:7", targetRef: "Ezekiel 7:7", label: "Days of visitation" },
+      { sourceRef: "Hosea 9:9", targetRef: "Judges 19:22", label: "Gibeah remembered" },
+      { sourceRef: "Hosea 9:10", targetRef: "Numbers 25:3", label: "Baal-peor corruption" },
+      { sourceRef: "Hosea 9:17", targetRef: "Deuteronomy 28:64", label: "Wandering among nations" },
     ],
   },
 ];
@@ -8484,6 +8761,23 @@ const amosTeachingCrossReferences: CrossReference[] = AMOS_CHAPTER_STUDIES.flatM
   })),
 );
 
+const hoseaTeachingCrossReferences: CrossReference[] = HOSEA_CHAPTER_STUDIES.flatMap((chapterStudy) =>
+  chapterStudy.crossReferences.map((reference) => ({
+    id: `hosea-teaching-${reference.sourceRef}-${reference.targetRef}`
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, ""),
+    verse_ref: reference.sourceRef,
+    target_ref: reference.targetRef,
+    label: reference.label,
+    source: "Reviewed Hosea teaching sample",
+    source_title: "Father's Business reviewed Hosea 4-9 teaching prep",
+    source_url: "",
+    public_domain_status: "Reference metadata only",
+    rights_basis: "Verse references and labels are reviewed metadata; no commentary text imported.",
+  })),
+);
+
 const localCrossReferences: CrossReference[] = [
   ...(tskPhase1Sample as TskCrossReferenceImportRow[]).map((row) => ({
     id: referenceImportId(row),
@@ -8519,6 +8813,7 @@ const localCrossReferences: CrossReference[] = [
     rights_basis: row.rights_basis,
   })),
   ...amosTeachingCrossReferences,
+  ...hoseaTeachingCrossReferences,
 ];
 
 const localCommentaryEntries: CommentaryEntry[] = [
@@ -12412,6 +12707,36 @@ function defaultStudyPlaylists(): BibleAudioPlaylist[] {
       ],
     },
     {
+      id: "playlist_hosea_4_9_sunday_school",
+      name: "Hosea 4-9 Sunday School Prep",
+      createdAt,
+      items: [
+        { id: "hosea-4", type: "bible_chapter", label: "Hosea 4", book: "Hosea", chapter: 4 },
+        { id: "hosea-5", type: "bible_chapter", label: "Hosea 5", book: "Hosea", chapter: 5 },
+        { id: "hosea-6", type: "bible_chapter", label: "Hosea 6", book: "Hosea", chapter: 6 },
+        { id: "hosea-7", type: "bible_chapter", label: "Hosea 7", book: "Hosea", chapter: 7 },
+        { id: "hosea-8", type: "bible_chapter", label: "Hosea 8", book: "Hosea", chapter: 8 },
+        { id: "hosea-9", type: "bible_chapter", label: "Hosea 9", book: "Hosea", chapter: 9 },
+        { id: "hosea-commentary-4", type: "commentary_chapter", label: "Hosea 4 commentary", book: "Hosea", chapter: 4 },
+        { id: "hosea-commentary-5", type: "commentary_chapter", label: "Hosea 5 commentary", book: "Hosea", chapter: 5 },
+        { id: "hosea-commentary-6", type: "commentary_chapter", label: "Hosea 6 commentary", book: "Hosea", chapter: 6 },
+        { id: "hosea-commentary-7", type: "commentary_chapter", label: "Hosea 7 commentary", book: "Hosea", chapter: 7 },
+        { id: "hosea-commentary-8", type: "commentary_chapter", label: "Hosea 8 commentary", book: "Hosea", chapter: 8 },
+        { id: "hosea-commentary-9", type: "commentary_chapter", label: "Hosea 9 commentary", book: "Hosea", chapter: 9 },
+        { id: "hosea-teaching-notes", type: "teaching_notes", label: "Hosea 4-9 teaching notes", book: "Hosea", chapter: 4, chapterEnd: 9 },
+      ],
+    },
+    {
+      id: "playlist_proverbs_daily_wisdom",
+      name: "Proverbs Daily Wisdom",
+      createdAt,
+      items: [
+        { id: "proverbs-today", type: "bible_chapter", label: "Today's Proverb", book: "Proverbs", chapter: 1 },
+        { id: "proverbs-commentary", type: "commentary_chapter", label: "Proverbs commentary", book: "Proverbs", chapter: 1 },
+        { id: "proverbs-journal", type: "reader_notes", label: "Proverbs journal prompt", book: "Proverbs", chapter: 1 },
+      ],
+    },
+    {
       id: "playlist_new_believer_starter",
       name: "New Believer Starter",
       createdAt,
@@ -13403,6 +13728,12 @@ export default function Home() {
       if (window.location.hash === "#amos-study") {
         setTab("amosStudyPath");
       }
+      if (window.location.hash === "#proverbs-study") {
+        setTab("proverbsStudyPath");
+      }
+      if (window.location.hash === "#hosea-study") {
+        setTab("hoseaStudyPath");
+      }
       const presentationSessionMatch = window.location.hash.match(/^#presentation-session-([A-Z0-9]{3}-[A-Z0-9]{3})$/i);
       if (presentationSessionMatch) {
         setPresentationInitialSessionId(presentationSessionMatch[1].toUpperCase());
@@ -13412,7 +13743,7 @@ export default function Home() {
     }
 
     openHiddenAdminAreas();
-    const retryTimers = [50, 250, 750].map((delay) => window.setTimeout(openHiddenAdminAreas, delay));
+    const retryTimers = [50, 250, 750, 1500, 2500].map((delay) => window.setTimeout(openHiddenAdminAreas, delay));
     window.addEventListener("hashchange", openHiddenAdminAreas);
     return () => {
       retryTimers.forEach((timer) => window.clearTimeout(timer));
@@ -14799,6 +15130,123 @@ export default function Home() {
 
   function addAmosToStudyPlaylist() {
     createCommentaryCompanionPlaylist("Amos", [1, 2, 3, 4]);
+  }
+
+  function proverbsDailyWorkflowText(chapterNumber: number) {
+    const guide = PROVERBS_CHAPTER_GUIDES.find((item) => item.chapter === chapterNumber) ?? PROVERBS_CHAPTER_GUIDES[0];
+    const chapterVerses = allVerses.filter((verse) => verse.book === "Proverbs" && verse.chapter === chapterNumber);
+    const chapterAnalysis = chapterAnalysisForVerses(chapterVerses, []);
+    const chapterCommentary = commentaryEntries.filter((entry) => entry.book === "Proverbs" && entry.chapter === chapterNumber);
+    return [
+      `# Proverbs ${chapterNumber} Daily Study`,
+      "",
+      "Prepared from existing reviewed/stored study data. Keep the KJV chapter central.",
+      "",
+      `## Theme`,
+      `- ${guide.theme}`,
+      "",
+      "## Key Verse",
+      `- ${verseLine(guide.keyVerse, versesByRef)}`,
+      "",
+      "## Repeated Words",
+      ...sectionOrEmpty(chapterAnalysis.repeatedWords.slice(0, 10).map((item) => `- ${item.word} (${item.count})`)),
+      "",
+      "## Journal Prompt",
+      `- ${guide.journalPrompt}`,
+      "",
+      "## Prayer Prompt",
+      `- ${guide.prayerPrompt}`,
+      "",
+      "## Teaching Use",
+      `- ${guide.teachingUse}`,
+      "",
+      "## Commentary Available",
+      ...sectionOrEmpty(chapterCommentary.map((entry) => `- ${entry.author}: ${entry.resource_title} (${commentaryStudyLabel(entry)})`)),
+    ].join("\n");
+  }
+
+  function sendProverbsToSermonBuilder(chapterNumber: number) {
+    const content = proverbsDailyWorkflowText(chapterNumber).trim();
+    setSermonDraft((draft) => ({
+      ...draft,
+      kind: "Lesson",
+      passage: draft.passage || `Proverbs ${chapterNumber}`,
+      title: draft.title || `Proverbs ${chapterNumber} Lesson`,
+      theme: draft.theme || (PROVERBS_CHAPTER_GUIDES.find((item) => item.chapter === chapterNumber)?.theme ?? "Daily wisdom from Proverbs"),
+      importedStudyNotes: [draft.importedStudyNotes, `## Proverbs ${chapterNumber} Daily Study`, content].filter(Boolean).join("\n\n"),
+      updatedAt: new Date().toISOString(),
+    }));
+    setSyncMessage(`Proverbs ${chapterNumber} study added to sermon prep notes.`);
+    openSermonWorkspace("builder");
+  }
+
+  function sendProverbsToJournal(chapterNumber: number) {
+    const guide = PROVERBS_CHAPTER_GUIDES.find((item) => item.chapter === chapterNumber) ?? PROVERBS_CHAPTER_GUIDES[0];
+    startJournalDraft("Reading Plan", {
+      sourceLabel: `Proverbs Daily Study - Proverbs ${chapterNumber}`,
+      bibleReadingPassage: `Proverbs ${chapterNumber}`,
+      selectedVerseRefs: guide.keyVerse,
+      versePassage: verseWorkflowText(guide.keyVerse),
+      wordsToDefine: chapterAnalysisForVerses(allVerses.filter((verse) => verse.book === "Proverbs" && verse.chapter === chapterNumber), []).repeatedWords.slice(0, 6).map((item) => item.word).join(", "),
+      verseSays: guide.theme,
+      verseMeans: guide.teachingUse,
+      verseApplies: guide.journalPrompt,
+      prayerResponse: guide.prayerPrompt,
+      teachingThought: proverbsDailyWorkflowText(chapterNumber).slice(0, 1800),
+    });
+  }
+
+  function addProverbsToStudyPlaylist(chapterNumber: number) {
+    createCommentaryCompanionPlaylist("Proverbs", [chapterNumber]);
+  }
+
+  function hoseaTeachingWorkflowText() {
+    let teacherNotesByChapter: Record<string, TeacherNotesDraft> = {};
+    try {
+      const savedNotes = window.localStorage.getItem(TEACHER_NOTES_KEY);
+      teacherNotesByChapter = savedNotes ? JSON.parse(savedNotes) : {};
+    } catch {
+      teacherNotesByChapter = {};
+    }
+    return buildHoseaTeachingNotesMarkdown({
+      bookIntroduction: bookIntroductionsByBook.get("Hosea") ?? null,
+      commentaryEntries: commentaryEntries.filter((entry) => entry.book === "Hosea" && entry.chapter >= 4 && entry.chapter <= 9),
+      teacherNotesByChapter,
+      versesByRef,
+    });
+  }
+
+  function sendHoseaToSermonBuilder() {
+    const content = hoseaTeachingWorkflowText().trim();
+    setSermonDraft((draft) => ({
+      ...draft,
+      kind: "Lesson",
+      passage: draft.passage || "Hosea 4-9",
+      title: draft.title || "Hosea 4-9 Lesson",
+      theme: draft.theme || "The LORD calls His unfaithful people to know Him, return, and hear His warnings",
+      importedStudyNotes: [draft.importedStudyNotes, "## Hosea 4-9 Teaching Dashboard", content].filter(Boolean).join("\n\n"),
+      updatedAt: new Date().toISOString(),
+    }));
+    setSyncMessage("Hosea 4-9 teaching dashboard added to sermon prep notes.");
+    openSermonWorkspace("builder");
+  }
+
+  function sendHoseaToJournal() {
+    startJournalDraft("Passage Guide", {
+      sourceLabel: "Hosea 4-9 Teaching Dashboard",
+      bibleReadingPassage: "Hosea 4-9",
+      selectedVerseRefs: "Hosea 4:6, Hosea 5:15, Hosea 6:6, Hosea 8:7",
+      versePassage: ["Hosea 4:6", "Hosea 5:15", "Hosea 6:6", "Hosea 8:7"].map(verseWorkflowText).join("\n"),
+      wordsToDefine: "knowledge, mercy, sacrifice, pride, covenant, repentance",
+      verseSays: "Hosea 4-9 exposes rejected knowledge, false refuge, shallow return, mixture, idolatry, and coming recompence.",
+      verseMeans: "The LORD wants mercy and the knowledge of God, not empty ceremony or political self-rescue.",
+      verseApplies: "Read the KJV first, then use commentary and questions to prepare a clear Sunday school lesson.",
+      teachingThought: hoseaTeachingWorkflowText().slice(0, 1800),
+    });
+  }
+
+  function addHoseaToStudyPlaylist() {
+    createCommentaryCompanionPlaylist("Hosea", [4, 5, 6, 7, 8, 9]);
   }
 
   function bulletSermonDraft() {
@@ -17880,6 +18328,14 @@ export default function Home() {
 	                  goToVerse("Amos", 1, 1);
 	                  setTab("amosStudyPath");
 	                }}
+	                onStudyProverbs={() => {
+	                  goToVerse("Proverbs", todayProverbDay, 1);
+	                  setTab("proverbsStudyPath");
+	                }}
+	                onStudyHosea={() => {
+	                  goToVerse("Hosea", 4, 1);
+	                  setTab("hoseaStudyPath");
+	                }}
 	                onStudyJohn={() => {
 	                  goToVerse("John", 3, 16);
 	                  setTab("passageGuide");
@@ -18421,6 +18877,38 @@ export default function Home() {
               />
             )}
 
+            {tab === "proverbsStudyPath" && (
+              <ProverbsDailyStudyPathScreen
+                selectedChapter={todayProverbDay}
+                versesByRef={versesByRef}
+                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Proverbs")}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onListenChapter={(chapterNumber) => listenChapterRange("Proverbs", chapterNumber, chapterNumber)}
+                onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Proverbs", chapterNumber)}
+                onStopListening={() => stopSpeech()}
+                onSendToSermon={sendProverbsToSermonBuilder}
+                onSendToJournal={sendProverbsToJournal}
+                onAddToStudyPlaylist={addProverbsToStudyPlaylist}
+              />
+            )}
+
+            {tab === "hoseaStudyPath" && (
+              <HoseaStudyPathScreen
+                versesByRef={versesByRef}
+                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Hosea" && entry.chapter >= 4 && entry.chapter <= 9)}
+                bookIntroduction={bookIntroductionsByBook.get("Hosea") ?? null}
+                onBack={() => setTab("bible")}
+                onOpenReference={openReference}
+                onListenHosea={() => listenChapterRange("Hosea", 4, 9)}
+                onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Hosea", chapterNumber)}
+                onStopListening={() => stopSpeech()}
+                onSendToSermon={sendHoseaToSermonBuilder}
+                onSendToJournal={sendHoseaToJournal}
+                onAddToStudyPlaylist={addHoseaToStudyPlaylist}
+              />
+            )}
+
             {tab === "sermons" && (
               <SermonWorkspaceScreen
                 view={sermonWorkspaceView}
@@ -18680,6 +19168,8 @@ function TodayScreen({
   onOpenSermonResume,
   onOpenCommentaryResume,
   onStudyAmos,
+  onStudyProverbs,
+  onStudyHosea,
   onStudyJohn,
   onStudyRomans,
 }: {
@@ -18718,6 +19208,8 @@ function TodayScreen({
   onOpenSermonResume: () => void;
   onOpenCommentaryResume: () => void;
   onStudyAmos: () => void;
+  onStudyProverbs: () => void;
+  onStudyHosea: () => void;
   onStudyJohn: () => void;
   onStudyRomans: () => void;
 }) {
@@ -18763,6 +19255,8 @@ function TodayScreen({
           </div>
           <div className="flex flex-wrap gap-2">
             <QuickStartButton label="Study Amos" detail="Teaching prep" onClick={onStudyAmos} primary />
+            <QuickStartButton label="Hosea 4-9" detail="Sunday prep" onClick={onStudyHosea} />
+            <QuickStartButton label="Proverbs Daily" detail="Wisdom path" onClick={onStudyProverbs} />
             <QuickStartButton label="Study John" detail="John 3 guide" onClick={onStudyJohn} />
             <QuickStartButton label="Study Romans" detail="Romans 8 guide" onClick={onStudyRomans} />
             <QuickStartButton label="Start Reading" detail={`${book} ${chapter}`} onClick={onContinue} />
@@ -23949,6 +24443,124 @@ function buildAmosTeachingNotesMarkdown({
   return lines.join("\n");
 }
 
+function buildHoseaTeachingNotesMarkdown({
+  bookIntroduction,
+  commentaryEntries,
+  teacherNotesByChapter,
+  versesByRef,
+}: {
+  bookIntroduction: BookIntroduction | null;
+  commentaryEntries: CommentaryEntry[];
+  teacherNotesByChapter: Record<string, TeacherNotesDraft>;
+  versesByRef: Map<string, BibleVerse>;
+}) {
+  const hoseaIntro = bookIntroduction?.book === "Hosea" ? bookIntroduction : bookIntroductions.find((intro) => intro.book === "Hosea") ?? null;
+  const lines: string[] = [
+    "# Hosea 4-9 Teaching Notes",
+    "",
+    "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
+    "",
+    "## Hosea Book Introduction",
+    ...sectionOrEmpty(hoseaIntro ? [
+      `- Author: ${hoseaIntro.overview.author}`,
+      `- Date: ${hoseaIntro.overview.date}`,
+      `- Audience: ${hoseaIntro.overview.audience}`,
+      `- Theme: ${hoseaIntro.overview.theme}`,
+      `- Key verse: ${hoseaIntro.overview.keyVerse}`,
+      `- Purpose: ${hoseaIntro.overview.purpose}`,
+      hoseaIntro.historicalSetting ? `- Historical setting: ${hoseaIntro.historicalSetting}` : "",
+      hoseaIntro.mainBurden ? `- Main burden/message: ${hoseaIntro.mainBurden}` : "",
+      `- Christ in Hosea: ${hoseaIntro.christInTheBook}`,
+    ] : []),
+    "",
+    "## Recommended Commentary Order",
+    "- Read the KJV text first.",
+    "- Matthew Henry: devotional and practical overview.",
+    "- Jamieson-Fausset-Brown and Barnes: concise explanation and teaching clarity.",
+    "- Matthew Poole and Adam Clarke: compact notes, word help, and historical detail.",
+    "- Pulpit Commentary and Biblical Illustrator: homiletic helps and illustration ideas; use with discernment.",
+    "",
+  ];
+
+  HOSEA_CHAPTER_STUDIES.forEach((chapterStudy) => {
+    const chapterVerses = Array.from(versesByRef.values()).filter((verse) => verse.book === "Hosea" && verse.chapter === chapterStudy.chapter);
+    const chapterAnalysis = chapterAnalysisForVerses(chapterVerses, hoseaTeachingCrossReferences);
+    const notes = teacherNotesByChapter[teacherNotesChapterKey("Hosea", chapterStudy.chapter)] ?? EMPTY_TEACHER_NOTES;
+    const chapterCommentaryEntries = commentaryEntries.filter((entry) => entry.chapter === chapterStudy.chapter);
+
+    lines.push(
+      `## Hosea ${chapterStudy.chapter}: ${chapterStudy.title}`,
+      "",
+      `- Chapter summary: ${chapterStudy.summary}`,
+      chapterStudy.historicalSetting ? `- Historical setting: ${chapterStudy.historicalSetting}` : "",
+      `- Main teaching aim: ${chapterStudy.teachingAim}`,
+      "",
+      "### Key Verses",
+      ...sectionOrEmpty(chapterStudy.keyVerses.map((ref) => `- ${verseLine(ref, versesByRef)}`)),
+      "",
+      "### Major Messages And Themes",
+      ...sectionOrEmpty([
+        ...(chapterStudy.majorMessages ?? []).map((message) => `- Major message: ${message}`),
+        ...(chapterStudy.keyThemes ?? []).map((theme) => `- Theme: ${theme}`),
+      ]),
+      "",
+      "### Repeated Words And Phrases",
+      ...sectionOrEmpty([
+        ...chapterStudy.repeatedFocus.map((phrase) => `- Reviewed focus: ${phrase}`),
+        ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => `- Repeated word: ${item.word} (${item.count})`),
+      ]),
+      "",
+      "### People, Places, And Nations",
+      ...sectionOrEmpty([
+        ...chapterStudy.peopleMentioned.map((person) => `- Person/group: ${person}`),
+        ...chapterStudy.placesAndNations.map((place) => `- Place/nation: ${place}`),
+      ]),
+      "",
+      "### Main Sins Judged",
+      ...sectionOrEmpty(chapterStudy.mainSinsJudged.map((sin) => `- ${sin}`)),
+      "",
+      "### Practical Applications",
+      ...sectionOrEmpty(chapterStudy.practicalApplications.map((application) => `- ${application}`)),
+      "",
+      "### Prophecy And Christ Connections",
+      ...sectionOrEmpty([
+        ...(chapterStudy.prophecyConnections ?? []).map((connection) => `- Prophecy connection: ${connection}`),
+        ...(chapterStudy.christConnections ?? []).map((connection) => `- Christ connection: ${connection}`),
+      ]),
+      "",
+      "### Questions",
+      ...sectionOrEmpty([
+        ...(chapterStudy.sundaySchoolQuestions ?? []).map((question) => `- Sunday school: ${question}`),
+        ...(chapterStudy.discussionQuestions ?? []).map((question) => `- Discussion: ${question}`),
+      ]),
+      "",
+      "### Sermon / Lesson Outline",
+      ...sectionOrEmpty((chapterStudy.sermonOutline ?? []).map((point, index) => `- ${index + 1}. ${point}`)),
+      "",
+      "### Reviewed Cross References",
+      ...sectionOrEmpty(chapterStudy.crossReferences.map((reference) => {
+        const preview = versesByRef.get(reference.targetRef)?.plainText;
+        return `- ${reference.sourceRef} -> ${reference.targetRef} (${reference.label})${preview ? ` - ${preview}` : ""}`;
+      })),
+      "",
+      "### Teacher Notes",
+      ...formatTeacherNotesForExport(notes),
+      "",
+      "### Commentary References",
+      ...sectionOrEmpty(chapterCommentaryEntries.map((entry) => `- ${entry.author}: ${entry.resource_title}. ${entry.public_domain_status}. ${entry.recommended_use ?? "Use as secondary support after the KJV text."}`)),
+      "",
+    );
+  });
+
+  lines.push(
+    "## Hosea 4-9 Commentary Sources",
+    ...(commentaryEntries.length ? commentaryEntries.map((entry) => `- ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`} - ${entry.author}, ${entry.resource_title}. Source: ${entry.source_url}. Rights: ${entry.public_domain_status}.`) : ["- No reviewed Hosea 4-9 commentary entries have been imported yet."]),
+    "",
+  );
+
+  return lines.join("\n");
+}
+
 function AmosStudyPathScreen({
   versesByRef,
   commentaryEntries,
@@ -24231,6 +24843,395 @@ function AmosStudyPathScreen({
                   <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Sermon outline</p>
                   <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{(study.sermonOutline ?? []).map((point) => <li key={`amos-path-outline-${study.chapter}-${point}`}>{point}</li>)}</ul>
                 </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function ProverbsDailyStudyPathScreen({
+  selectedChapter,
+  versesByRef,
+  commentaryEntries,
+  onBack,
+  onOpenReference,
+  onListenChapter,
+  onPlayCommentaryChapter,
+  onStopListening,
+  onSendToSermon,
+  onSendToJournal,
+  onAddToStudyPlaylist,
+}: {
+  selectedChapter: number;
+  versesByRef: Map<string, BibleVerse>;
+  commentaryEntries: CommentaryEntry[];
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onListenChapter: (chapter: number) => void;
+  onPlayCommentaryChapter: (chapter: number) => void;
+  onStopListening: () => void;
+  onSendToSermon: (chapter: number) => void;
+  onSendToJournal: (chapter: number) => void;
+  onAddToStudyPlaylist: (chapter: number) => void;
+}) {
+  const [chapterNumber, setChapterNumber] = useState(selectedChapter);
+  const guide = PROVERBS_CHAPTER_GUIDES.find((item) => item.chapter === chapterNumber) ?? PROVERBS_CHAPTER_GUIDES[0];
+  const chapterVerses = Array.from(versesByRef.values()).filter((verse) => verse.book === "Proverbs" && verse.chapter === chapterNumber);
+  const analysis = chapterAnalysisForVerses(chapterVerses, []);
+  const chapterCommentary = commentaryEntries.filter((entry) => entry.chapter === chapterNumber);
+  const commentaryAuthors = Array.from(new Set(chapterCommentary.map((entry) => entry.author))).sort();
+  const keyVerseText = verseLine(guide.keyVerse, versesByRef);
+  const repeatedWords = analysis.repeatedWords.slice(0, 10);
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <div className="sticky top-0 z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5">
+        <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
+          <ChevronLeft size={17} />
+          Back to Bible
+        </button>
+      </div>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Proverbs Daily Study</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Proverbs {chapterNumber}: {guide.title}</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">{guide.theme}</p>
+        <div className="mt-5 flex flex-wrap items-center gap-2">
+          <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+            Chapter
+            <select className="bg-transparent text-[var(--ink)] outline-none" value={chapterNumber} onChange={(event) => setChapterNumber(Number(event.target.value))}>
+              {PROVERBS_CHAPTER_GUIDES.map((item) => <option key={`proverbs-select-${item.chapter}`} value={item.chapter}>{item.chapter}</option>)}
+            </select>
+          </label>
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference(`Proverbs ${chapterNumber}:1`)} type="button">
+            <BookOpen size={16} />
+            Read Proverbs {chapterNumber}
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onListenChapter(chapterNumber)} type="button">
+            <Headphones size={16} />
+            Listen
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+            <Square size={15} />
+            Stop
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onSendToJournal(chapterNumber)} type="button">
+            <BookMarked size={16} />
+            Send to Journal
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onSendToSermon(chapterNumber)} type="button">
+            <NotebookPen size={16} />
+            Send to Sermon
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onAddToStudyPlaylist(chapterNumber)} type="button">
+            <ListMusic size={16} />
+            Add to Playlist
+          </button>
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[1.1fr_.9fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Daily Chapter Study</p>
+          <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Read, think, pray, obey</h2>
+          <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key Verse</p>
+              <button className="mt-2 text-left text-sm font-semibold leading-6 text-[var(--green)]" onClick={() => onOpenReference(guide.keyVerse)} type="button">{keyVerseText}</button>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Journal Prompt</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{guide.journalPrompt}</p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Prayer Prompt</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{guide.prayerPrompt}</p>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching Use</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{guide.teachingUse}</p>
+            </div>
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">At a Glance</p>
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <MiniStat label="Verses" value={String(chapterVerses.length)} />
+            <MiniStat label="Repeated words" value={String(repeatedWords.length)} />
+            <MiniStat label="Commentaries" value={String(chapterCommentary.length)} />
+            <MiniStat label="Authors" value={String(commentaryAuthors.length)} />
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {repeatedWords.map((item) => (
+              <span key={`proverbs-word-${chapterNumber}-${item.word}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{item.word} ({item.count})</span>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Commentary</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Use after reading Proverbs {chapterNumber}</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">Commentary is secondary. Read the KJV chapter first, then use these voices to clarify the practical flow.</p>
+          </div>
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white disabled:opacity-50" disabled={!chapterCommentary.length} onClick={() => onPlayCommentaryChapter(chapterNumber)} type="button">
+            <Play size={15} />
+            Play Commentary
+          </button>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          {commentaryAuthors.map((author) => {
+            const entries = chapterCommentary.filter((entry) => entry.author === author);
+            return (
+              <article key={`proverbs-commentary-${chapterNumber}-${author}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <p className="text-sm font-semibold text-[var(--green)]">{author}</p>
+                <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{entries[0] ? commentaryStudyLabel(entries[0]) : "Reviewed commentary"}</p>
+                <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--muted)]">{entries[0]?.entry_text ?? "No entry preview available yet."}</p>
+              </article>
+            );
+          })}
+          {!commentaryAuthors.length && <p className="rounded-2xl bg-[var(--paper)] p-4 text-sm text-[var(--muted)]">No reviewed Proverbs commentary entries are available for this chapter yet.</p>}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function HoseaStudyPathScreen({
+  versesByRef,
+  commentaryEntries,
+  bookIntroduction,
+  onBack,
+  onOpenReference,
+  onListenHosea,
+  onPlayCommentaryChapter,
+  onStopListening,
+  onSendToSermon,
+  onSendToJournal,
+  onAddToStudyPlaylist,
+}: {
+  versesByRef: Map<string, BibleVerse>;
+  commentaryEntries: CommentaryEntry[];
+  bookIntroduction: BookIntroduction | null;
+  onBack: () => void;
+  onOpenReference: (targetRef: string) => void;
+  onListenHosea: () => void;
+  onPlayCommentaryChapter: (chapter: number) => void;
+  onStopListening: () => void;
+  onSendToSermon: () => void;
+  onSendToJournal: () => void;
+  onAddToStudyPlaylist: () => void;
+}) {
+  const commentaryAuthors = Array.from(new Set(commentaryEntries.map((entry) => entry.author))).sort();
+  const commentaryByChapter = new Map<number, CommentaryEntry[]>();
+  commentaryEntries.forEach((entry) => {
+    commentaryByChapter.set(entry.chapter, [...(commentaryByChapter.get(entry.chapter) ?? []), entry]);
+  });
+  const keyWords = Array.from(new Set(HOSEA_CHAPTER_STUDIES.flatMap((study) => study.repeatedFocus))).slice(0, 18);
+  const keyCrossReferences = HOSEA_CHAPTER_STUDIES.flatMap((study) => study.crossReferences).slice(0, 16);
+  const questionCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + (study.sundaySchoolQuestions?.length ?? 0), 0);
+  const applicationCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + study.practicalApplications.length, 0);
+  const outlineCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + (study.sermonOutline?.length ?? 0), 0);
+  const hoseaTheme = bookIntroduction?.overview.theme ?? "Covenant unfaithfulness, judgment, and restoring love";
+
+  function exportHoseaLessonNotes() {
+    let teacherNotesByChapter: Record<string, TeacherNotesDraft> = {};
+    try {
+      const saved = window.localStorage.getItem(TEACHER_NOTES_KEY);
+      teacherNotesByChapter = saved ? JSON.parse(saved) : {};
+    } catch {
+      teacherNotesByChapter = {};
+    }
+    const markdown = buildHoseaTeachingNotesMarkdown({ bookIntroduction, commentaryEntries, teacherNotesByChapter, versesByRef });
+    downloadTextFile("hosea-4-9-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
+  }
+
+  return (
+    <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
+      <div className="sticky top-0 z-10 -mx-4 border-b border-[var(--line)] bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5">
+        <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)] shadow-sm" onClick={onBack} type="button">
+          <ChevronLeft size={17} />
+          Back to Bible
+        </button>
+      </div>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Hosea 4-9 Study Path</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare Hosea 4-9</h1>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">
+          A Sunday school prep path for rejected knowledge, shallow return, false refuge, mercy, judgment, and the call to know the LORD.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference("Hosea 4:1")} type="button">
+            <BookOpen size={16} />
+            Read Hosea 4-9
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onListenHosea} type="button">
+            <Headphones size={16} />
+            Listen to Hosea 4-9
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
+            <Square size={15} />
+            Stop
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendToSermon} type="button">
+            <NotebookPen size={16} />
+            Send to Sermon Builder
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onSendToJournal} type="button">
+            <BookMarked size={16} />
+            Send to Journal
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
+            <ListMusic size={16} />
+            Add to Study Playlist
+          </button>
+          <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={exportHoseaLessonNotes} type="button">
+            <Download size={16} />
+            Export Hosea Notes
+          </button>
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Lesson Big Idea</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{hoseaTheme}</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              When the knowledge of God is rejected, worship decays, leadership fails, and judgment becomes unavoidable; yet the LORD still calls His people to return.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Sunday school ready</span>
+        </div>
+        <div className="mt-4 grid gap-3 md:grid-cols-3 xl:grid-cols-6">
+          <MiniStat label="Chapters" value={String(HOSEA_CHAPTER_STUDIES.length)} />
+          <MiniStat label="Questions" value={String(questionCount)} />
+          <MiniStat label="Applications" value={String(applicationCount)} />
+          <MiniStat label="Outline points" value={String(outlineCount)} />
+          <MiniStat label="Cross refs" value={String(keyCrossReferences.length)} />
+          <MiniStat label="Commentaries" value={String(commentaryEntries.length)} />
+        </div>
+      </section>
+
+      <section className="grid gap-3 lg:grid-cols-[.9fr_1.1fr]">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Recommended Commentary Order</h2>
+          <div className="mt-4 space-y-2">
+            {[
+              ["KJV first", "Read the chapter aloud and mark the repeated words before opening secondary helps."],
+              ["Matthew Henry", "Devotional and practical flow for class application."],
+              ["JFB / Barnes", "Concise explanation and teaching clarity."],
+              ["Poole / Clarke", "Compact exegetical, historical, and word-study help."],
+              ["Pulpit / Biblical Illustrator", "Homiletic material and illustrations; use with discernment."],
+            ].map(([title, detail]) => (
+              <div key={`hosea-commentary-order-${title}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <p className="text-sm font-semibold text-[var(--green)]">{title}</p>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Available Hosea 4-9 Commentary Authors</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">These are pulled from the existing public-domain commentary data and stay hidden if not verified.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {commentaryAuthors.map((author) => (
+              <span key={`hosea-author-${author}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{author}</span>
+            ))}
+            {!commentaryAuthors.length && <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">No reviewed Hosea entries yet</span>}
+          </div>
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {HOSEA_CHAPTER_STUDIES.map((study) => {
+              const entries = commentaryByChapter.get(study.chapter) ?? [];
+              return (
+                <div key={`hosea-commentary-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">Hosea {study.chapter}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed commentary entries` : "No reviewed entry yet"}</p>
+                  <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!entries.length} onClick={() => onPlayCommentaryChapter(study.chapter)} type="button">
+                    <Play size={14} />
+                    Play Commentary
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-3 xl:grid-cols-3">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Key Words</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {keyWords.map((word) => <span key={`hosea-key-word-${word}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{word}</span>)}
+          </div>
+        </article>
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Key Cross References</h2>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {keyCrossReferences.map((reference) => (
+              <button key={`hosea-cross-${reference.sourceRef}-${reference.targetRef}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference.targetRef)} type="button">
+                {reference.sourceRef} {"->"} {reference.targetRef}
+              </button>
+            ))}
+          </div>
+        </article>
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Best Lesson Flow</h2>
+          <ol className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
+            <li>1. Hosea 4: rejected knowledge</li>
+            <li>2. Hosea 5: pride and false refuge</li>
+            <li>3. Hosea 6: mercy, not sacrifice</li>
+            <li>4. Hosea 7-9: vivid pictures and coming recompence</li>
+          </ol>
+        </article>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Chapter Prep</h2>
+        <div className="mt-4 grid gap-3 lg:grid-cols-2">
+          {HOSEA_CHAPTER_STUDIES.map((study) => (
+            <article key={`hosea-study-path-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Hosea {study.chapter}</p>
+                  <h3 className="mt-1 text-base font-semibold text-[var(--green)]">{study.title}</h3>
+                </div>
+                <button className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(`Hosea ${study.chapter}:1`)} type="button">Read chapter</button>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{study.summary}</p>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Teaching aim</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{study.teachingAim}</p>
+                </div>
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Key verses</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {study.keyVerses.map((ref) => <button key={`hosea-key-${study.chapter}-${ref}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onOpenReference(ref)} type="button">{ref}</button>)}
+                  </div>
+                </div>
+              </div>
+              <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Applications</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{study.practicalApplications.map((application) => <li key={`hosea-app-${study.chapter}-${application}`}>{application}</li>)}</ul>
+                </div>
+                <div className="rounded-xl bg-white px-3 py-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Questions</p>
+                  <ul className="mt-2 space-y-1 text-xs leading-5 text-[var(--muted)]">{(study.sundaySchoolQuestions ?? []).slice(0, 3).map((question) => <li key={`hosea-question-${study.chapter}-${question}`}>{question}</li>)}</ul>
+                </div>
+              </div>
+              <div className="mt-3 rounded-xl bg-white px-3 py-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">Sermon / lesson outline</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{(study.sermonOutline ?? []).join(" -> ")}</p>
               </div>
             </article>
           ))}
