@@ -55497,5 +55497,915 @@
     "checksum_sha256": "653e3857a33a0b4e749eeac302c22744faac96561fb96e13ed20ddb8a9f345ae",
     "file_size_bytes": 222356,
     "word_count": 36900
+  },
+  {
+    "title": "George Whitefield: A Biography, with special reference to his labors in America",
+    "author": "Joseph Belcher",
+    "year": 2013,
+    "category": "Biographies",
+    "collection": "Revival & Awakening",
+    "source_url": "https://www.gutenberg.org/ebooks/44140",
+    "download_url": "https://www.gutenberg.org/ebooks/44140.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/george-whitefield-a-biography-with-special-reference-to-his-labors-in-america-joseph-belcher.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/44140.",
+    "notes": "Public-domain biography for revival history, evangelism, and preaching background. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography for revival history, evangelism, and preaching background.",
+    "resource_labels": [
+      "Revival & Awakening",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "George Whitefield: A Biography, with special reference to his labors in America",
+      "author": "Joseph Belcher",
+      "category": "Biographies",
+      "collection": "Revival & Awakening",
+      "badge": "Revival & Awakening",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 625,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a60adb9483c48459f610a3fced7894049800a47da530f4b9efa447b63caf7a83",
+    "file_size_bytes": 827955,
+    "word_count": 140518
+  },
+  {
+    "title": "The Life of the Rev. George Whitefield, Volume 1",
+    "author": "L. Tyerman",
+    "year": 2013,
+    "category": "Biographies",
+    "collection": "Revival & Awakening",
+    "source_url": "https://www.gutenberg.org/ebooks/44280",
+    "download_url": "https://www.gutenberg.org/ebooks/44280.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-the-rev-george-whitefield-volume-1-l-tyerman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/44280.",
+    "notes": "Public-domain Whitefield biography for revival history and preacher biography reading. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Whitefield biography for revival history and preacher biography reading.",
+    "resource_labels": [
+      "Revival & Awakening",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of the Rev. George Whitefield, Volume 1",
+      "author": "L. Tyerman",
+      "category": "Biographies",
+      "collection": "Revival & Awakening",
+      "badge": "Revival & Awakening",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1142,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d04d0593a95869b358c4702efba0deda036df44316bd76ab6c32763e9ce032d0",
+    "file_size_bytes": 1606733,
+    "word_count": 256990
+  },
+  {
+    "title": "The Life of the Rev. George Whitefield, Volume 2",
+    "author": "L. Tyerman",
+    "year": 2020,
+    "category": "Biographies",
+    "collection": "Revival & Awakening",
+    "source_url": "https://www.gutenberg.org/ebooks/62023",
+    "download_url": "https://www.gutenberg.org/ebooks/62023.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-the-rev-george-whitefield-volume-2-l-tyerman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/62023.",
+    "notes": "Public-domain Whitefield biography continuation for revival history and preacher biography reading. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Whitefield biography continuation for revival history and preacher biography reading.",
+    "resource_labels": [
+      "Revival & Awakening",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of the Rev. George Whitefield, Volume 2",
+      "author": "L. Tyerman",
+      "category": "Biographies",
+      "collection": "Revival & Awakening",
+      "badge": "Revival & Awakening",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1265,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "44d80295ed53aae9abda70761ad47ed00b8d0c13f67c4aa2a910185c3be58c3c",
+    "file_size_bytes": 1798953,
+    "word_count": 284704
+  },
+  {
+    "title": "The Great Revival of the Eighteenth Century: With a supplemental chapter on the revival in America",
+    "author": "Edwin Paxton Hood",
+    "year": 2019,
+    "category": "Christian Living",
+    "collection": "Revival & Awakening",
+    "source_url": "https://www.gutenberg.org/ebooks/61062",
+    "download_url": "https://www.gutenberg.org/ebooks/61062.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-great-revival-of-the-eighteenth-century-with-a-supplemental-chapter-on-the-revival-in-america-edwin-paxton.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/61062.",
+    "notes": "Public-domain revival history for preaching, evangelism, and devotional encouragement. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain revival history for preaching, evangelism, and devotional encouragement.",
+    "resource_labels": [
+      "Revival & Awakening",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Great Revival of the Eighteenth Century: With a supplemental chapter on the revival in America",
+      "author": "Edwin Paxton Hood",
+      "category": "Christian Living",
+      "collection": "Revival & Awakening",
+      "badge": "Revival & Awakening",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 292,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "804253576fb31338981a2ddca3d403f70f57cde46b65303e7b96b75a8e8be155",
+    "file_size_bytes": 405098,
+    "word_count": 65652
+  },
+  {
+    "title": "New Tabernacle Sermons",
+    "author": "T. De Witt Talmage",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/14139",
+    "download_url": "https://www.gutenberg.org/ebooks/14139.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/new-tabernacle-sermons-t-de-witt-talmage.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/14139.",
+    "notes": "Public-domain sermon collection for illustration, preaching style, and teaching preparation. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection for illustration, preaching style, and teaching preparation.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "New Tabernacle Sermons",
+      "author": "T. De Witt Talmage",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 436,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "4c9b68673ca9674f6b0213462b7e1eb07d57eb3d094e5c1fbe031ecd2170dc13",
+    "file_size_bytes": 547217,
+    "word_count": 98004
+  },
+  {
+    "title": "Sermons of Christmas Evans",
+    "author": "Christmas Evans",
+    "year": 2013,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/42340",
+    "download_url": "https://www.gutenberg.org/ebooks/42340.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-of-christmas-evans-christmas-evans.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/42340.",
+    "notes": "Public-domain Welsh Baptist sermon collection for preaching history and homiletic study. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Welsh Baptist sermon collection for preaching history and homiletic study.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons of Christmas Evans",
+      "author": "Christmas Evans",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 553,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "aa8b313bdd844a212587886be6486eae31b6226f3c17df9e5bb917ac1d16b8c7",
+    "file_size_bytes": 757438,
+    "word_count": 124384
+  },
+  {
+    "title": "Human Nature, and Other Sermons",
+    "author": "Joseph Butler",
+    "year": 2002,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/3150",
+    "download_url": "https://www.gutenberg.org/ebooks/3150.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/human-nature-and-other-sermons-joseph-butler.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/3150.",
+    "notes": "Public-domain sermon/theology collection for moral and doctrinal reflection. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon/theology collection for moral and doctrinal reflection.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Human Nature, and Other Sermons",
+      "author": "Joseph Butler",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 209,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9bcea680f20b84614be34e4d495f416566ca1e52248a62eab4abac7898db1e59",
+    "file_size_bytes": 274855,
+    "word_count": 46962
+  },
+  {
+    "title": "Sermons on the Card, and Other Discourses",
+    "author": "Hugh Latimer",
+    "year": 2001,
+    "category": "Preaching & Teaching",
+    "collection": "Reformation & Church History",
+    "source_url": "https://www.gutenberg.org/ebooks/2458",
+    "download_url": "https://www.gutenberg.org/ebooks/2458.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-on-the-card-and-other-discourses-hugh-latimer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/2458.",
+    "notes": "Public-domain Reformation sermon collection for church history, preaching history, and teaching background. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Reformation sermon collection for church history, preaching history, and teaching background.",
+    "resource_labels": [
+      "Reformation & Church History",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons on the Card, and Other Discourses",
+      "author": "Hugh Latimer",
+      "category": "Preaching & Teaching",
+      "collection": "Reformation & Church History",
+      "badge": "Reformation & Church History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 166,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "dced814b26fd1586c0e6c1222b48d798ef82c35a7105ff1acb98c07b4a877c75",
+    "file_size_bytes": 206325,
+    "word_count": 37245
+  },
+  {
+    "title": "All Saints' Day and Other Sermons",
+    "author": "Charles Kingsley",
+    "year": 2003,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/10116",
+    "download_url": "https://www.gutenberg.org/ebooks/10116.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/all-saints-day-and-other-sermons-charles-kingsley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/10116.",
+    "notes": "Public-domain sermon collection for historical preaching comparison and devotional reading. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection for historical preaching comparison and devotional reading.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "All Saints' Day and Other Sermons",
+      "author": "Charles Kingsley",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 516,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "4b133b1c39da81a6befa7de1f52e1c4444f028cfc6aa3361d42dfa02d2c409cc",
+    "file_size_bytes": 637024,
+    "word_count": 116204
+  },
+  {
+    "title": "Sermons on National Subjects",
+    "author": "Charles Kingsley",
+    "year": 2005,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/8202",
+    "download_url": "https://www.gutenberg.org/ebooks/8202.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/sermons-on-national-subjects-charles-kingsley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/8202.",
+    "notes": "Public-domain sermon collection for historical preaching comparison. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection for historical preaching comparison.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons on National Subjects",
+      "author": "Charles Kingsley",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 709,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d7563949f34772db293f0b59935ef27206ce4c63ac402485caf46d88807c4d26",
+    "file_size_bytes": 870995,
+    "word_count": 159605
+  },
+  {
+    "title": "Twenty-Five Village Sermons",
+    "author": "Charles Kingsley",
+    "year": 2005,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/7954",
+    "download_url": "https://www.gutenberg.org/ebooks/7954.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/twenty-five-village-sermons-charles-kingsley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/7954.",
+    "notes": "Public-domain sermon collection for pastoral and village preaching examples. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection for pastoral and village preaching examples.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Twenty-Five Village Sermons",
+      "author": "Charles Kingsley",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 306,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "fd5354004e80b211f5d0d66878eb8ce8b8fcacf0b1c51745491b73b4e345bec9",
+    "file_size_bytes": 381339,
+    "word_count": 68949
+  },
+  {
+    "title": "The Christian Life: Its Course, Its Hindrances, and Its Helps",
+    "author": "Thomas Arnold",
+    "year": 2004,
+    "category": "Christian Living",
+    "collection": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/13151",
+    "download_url": "https://www.gutenberg.org/ebooks/13151.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-christian-life-its-course-its-hindrances-and-its-helps-thomas-arnold.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/13151.",
+    "notes": "Public-domain Christian living resource for discipleship, application, and devotional study. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian living resource for discipleship, application, and devotional study.",
+    "resource_labels": [
+      "Christian Living",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Christian Life: Its Course, Its Hindrances, and Its Helps",
+      "author": "Thomas Arnold",
+      "category": "Christian Living",
+      "collection": "Christian Living",
+      "badge": "Christian Living",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 574,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "cdcfb514733e790e4e9247de61838b9ac279bca595f7ec8f8afa12ea6854c93d",
+    "file_size_bytes": 725331,
+    "word_count": 129213
+  },
+  {
+    "title": "Studies in the Life of the Christian: His Faith and His Service",
+    "author": "Henry T. Sell",
+    "year": 2005,
+    "category": "Christian Living",
+    "collection": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/7338",
+    "download_url": "https://www.gutenberg.org/ebooks/7338.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/studies-in-the-life-of-the-christian-his-faith-and-his-service-henry-t-sell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/7338.",
+    "notes": "Public-domain Christian life study for discipleship and class discussion. Labels/warnings: Historical value.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian life study for discipleship and class discussion.",
+    "resource_labels": [
+      "Christian Living",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Historical value"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Studies in the Life of the Christian: His Faith and His Service",
+      "author": "Henry T. Sell",
+      "category": "Christian Living",
+      "collection": "Christian Living",
+      "badge": "Christian Living",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 177,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "98df2979b4f12d2ab86d6fdadcddcb971c5a1dfed9d62378ac8452b4e82fb4f0",
+    "file_size_bytes": 228601,
+    "word_count": 39729
+  },
+  {
+    "title": "Riches of Grace: A Compilation of Experiences in the Christian Life",
+    "author": "E. E. Byrum",
+    "year": 2011,
+    "category": "Christian Living",
+    "collection": "Christian Living",
+    "source_url": "https://www.gutenberg.org/ebooks/36476",
+    "download_url": "https://www.gutenberg.org/ebooks/36476.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/riches-of-grace-a-compilation-of-experiences-in-the-christian-life-e-e-byrum.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/36476.",
+    "notes": "Public-domain testimonies and Christian living resource for devotional encouragement. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain testimonies and Christian living resource for devotional encouragement.",
+    "resource_labels": [
+      "Christian Living",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Riches of Grace: A Compilation of Experiences in the Christian Life",
+      "author": "E. E. Byrum",
+      "category": "Christian Living",
+      "collection": "Christian Living",
+      "badge": "Christian Living",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 250,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "2690137ee0e238dcf4b23f9fea0431f3a814a6ec0b1640f7836b4c1780f1946b",
+    "file_size_bytes": 309878,
+    "word_count": 56233
+  },
+  {
+    "title": "Kanamori's Life-Story: How the Higher Criticism Wrecked a Japanese Christian—and How He Came Back",
+    "author": "Paul M. Kanamori",
+    "year": 2024,
+    "category": "Biographies",
+    "collection": "Missions Collection",
+    "source_url": "https://www.gutenberg.org/ebooks/74257",
+    "download_url": "https://www.gutenberg.org/ebooks/74257.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/kanamori-s-life-story-how-the-higher-criticism-wrecked-a-japanese-christian-and-how-he-came-back-paul-m-kanamo.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/74257.",
+    "notes": "Public-domain testimony and missions-adjacent biography, useful for warnings about higher criticism and restoration. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain testimony and missions-adjacent biography, useful for warnings about higher criticism and restoration.",
+    "resource_labels": [
+      "Missions Collection",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Kanamori's Life-Story: How the Higher Criticism Wrecked a Japanese Christian—and How He Came Back",
+      "author": "Paul M. Kanamori",
+      "category": "Biographies",
+      "collection": "Missions Collection",
+      "badge": "Missions Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 97,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "237123f639148b8a558ea352e8f9991180c34e969f280a44910b4b1d9cd4b01e",
+    "file_size_bytes": 124704,
+    "word_count": 21743
+  },
+  {
+    "title": "Valeria, the Martyr of the Catacombs: A Tale of Early Christian Life in Rome",
+    "author": "W. H. Withrow",
+    "year": 2010,
+    "category": "Fiction/classics",
+    "collection": "Martyrs / Persecuted Church",
+    "source_url": "https://www.gutenberg.org/ebooks/33484",
+    "download_url": "https://www.gutenberg.org/ebooks/33484.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/valeria-the-martyr-of-the-catacombs-a-tale-of-early-christian-life-in-rome-w-h-withrow.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/33484.",
+    "notes": "Public-domain historical Christian fiction connected to martyrdom themes; label as fiction and use for reading, not doctrine. Labels/warnings: Historical value; Fiction.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical Christian fiction connected to martyrdom themes; label as fiction and use for reading, not doctrine.",
+    "resource_labels": [
+      "Martyrs / Persecuted Church",
+      "Historical value",
+      "Fiction"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Fiction"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Valeria, the Martyr of the Catacombs: A Tale of Early Christian Life in Rome",
+      "author": "W. H. Withrow",
+      "category": "Fiction/classics",
+      "collection": "Martyrs / Persecuted Church",
+      "badge": "Martyrs / Persecuted Church",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 212,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "85f658817efd16e7b7f11e0ce3a579962fb38fe917954c3932cf877e4cd08dca",
+    "file_size_bytes": 287187,
+    "word_count": 47742
+  },
+  {
+    "title": "The History of Christianity",
+    "author": "John S. C. Abbott",
+    "year": 2019,
+    "category": "Bible study helps",
+    "collection": "Church History",
+    "source_url": "https://www.gutenberg.org/ebooks/59400",
+    "download_url": "https://www.gutenberg.org/ebooks/59400.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-history-of-christianity-john-s-c-abbott.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/59400.",
+    "notes": "Public-domain church history overview for background reading and teaching context. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain church history overview for background reading and teaching context.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of Christianity",
+      "author": "John S. C. Abbott",
+      "category": "Bible study helps",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 769,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0928d0b5219993aa4f92ff0956100c53b227d1175329a161b47e262b3e4c8988",
+    "file_size_bytes": 1050349,
+    "word_count": 172937
+  },
+  {
+    "title": "The Journal of George Fox, Volume 1",
+    "author": "George Fox",
+    "year": 2025,
+    "category": "Biographies",
+    "collection": "Church History",
+    "source_url": "https://www.gutenberg.org/ebooks/75559",
+    "download_url": "https://www.gutenberg.org/ebooks/75559.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-journal-of-george-fox-volume-1-george-fox.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/75559.",
+    "notes": "Public-domain historical religious biography; useful for church history with doctrinal discernment labels. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical religious biography; useful for church history with doctrinal discernment labels.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Journal of George Fox, Volume 1",
+      "author": "George Fox",
+      "category": "Biographies",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1111,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "734521dfa33644dcd0b5a6fcaee13cf605c4af5c12a79ce66944339da1a9a06c",
+    "file_size_bytes": 1418930,
+    "word_count": 250004
+  },
+  {
+    "title": "The Journal of George Fox, Volume 2",
+    "author": "George Fox",
+    "year": 2025,
+    "category": "Biographies",
+    "collection": "Church History",
+    "source_url": "https://www.gutenberg.org/ebooks/75590",
+    "download_url": "https://www.gutenberg.org/ebooks/75590.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-journal-of-george-fox-volume-2-george-fox.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/75590.",
+    "notes": "Public-domain historical religious biography continuation; useful for church history with doctrinal discernment labels. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical religious biography continuation; useful for church history with doctrinal discernment labels.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Journal of George Fox, Volume 2",
+      "author": "George Fox",
+      "category": "Biographies",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1131,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "692f6ec72e3bc8952b6720b44c645316f948ce89aa9fd640918000663b1958d6",
+    "file_size_bytes": 1522624,
+    "word_count": 254565
+  },
+  {
+    "title": "Selected Sermons of Jonathan Edwards",
+    "author": "Jonathan Edwards",
+    "year": 2010,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/cache/epub/34632/pg34632.txt",
+    "download_url": "https://www.gutenberg.org/cache/epub/34632/pg34632.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/selected-sermons-of-jonathan-edwards-jonathan-edwards.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/cache/epub/34632/pg34632.txt.",
+    "notes": "Public-domain sermon collection useful for preaching history, theology, and teaching comparison. Scripture remains primary. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection useful for preaching history, theology, and teaching comparison. Scripture remains primary.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Selected Sermons of Jonathan Edwards",
+      "author": "Jonathan Edwards",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 317,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "cc172c18cfcf38d132837151bca4cf53a30f3880b48222660ace499e58944583",
+    "file_size_bytes": 405260,
+    "word_count": 71394
   }
 ]

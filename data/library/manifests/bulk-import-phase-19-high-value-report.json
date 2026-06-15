@@ -1,0 +1,241 @@
+{
+  "source_csv": "data/library/bulk-import-phase-19-high-value.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "generated_as_final_summary": true,
+  "note": "The first import added 19 rows, Jonathan Edwards failed on an ebook redirect, then the CSV was updated to a direct Project Gutenberg text URL and the retry imported Edwards. This final report summarizes the completed sprint.",
+  "total_attempted": 20,
+  "imported": 20,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles_after_import": 0,
+  "rows": [
+    {
+      "row": 2,
+      "title": "Selected Sermons of Jonathan Edwards",
+      "author": "Jonathan Edwards",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/selected-sermons-of-jonathan-edwards-jonathan-edwards.txt",
+      "source_url": "https://www.gutenberg.org/cache/epub/34632/pg34632.txt",
+      "word_count": 71394,
+      "reading_time_minutes": 317
+    },
+    {
+      "row": 3,
+      "title": "George Whitefield: A Biography, with special reference to his labors in America",
+      "author": "Joseph Belcher",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/george-whitefield-a-biography-with-special-reference-to-his-labors-in-america-joseph-belcher.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/44140",
+      "word_count": 140518,
+      "reading_time_minutes": 625
+    },
+    {
+      "row": 4,
+      "title": "The Life of the Rev. George Whitefield, Volume 1",
+      "author": "L. Tyerman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-the-rev-george-whitefield-volume-1-l-tyerman.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/44280",
+      "word_count": 256990,
+      "reading_time_minutes": 1142
+    },
+    {
+      "row": 5,
+      "title": "The Life of the Rev. George Whitefield, Volume 2",
+      "author": "L. Tyerman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-the-rev-george-whitefield-volume-2-l-tyerman.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/62023",
+      "word_count": 284704,
+      "reading_time_minutes": 1265
+    },
+    {
+      "row": 6,
+      "title": "The Great Revival of the Eighteenth Century: With a supplemental chapter on the revival in America",
+      "author": "Edwin Paxton Hood",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-great-revival-of-the-eighteenth-century-with-a-supplemental-chapter-on-the-revival-in-america-edwin-paxton.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/61062",
+      "word_count": 65652,
+      "reading_time_minutes": 292
+    },
+    {
+      "row": 7,
+      "title": "New Tabernacle Sermons",
+      "author": "T. De Witt Talmage",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/new-tabernacle-sermons-t-de-witt-talmage.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/14139",
+      "word_count": 98004,
+      "reading_time_minutes": 436
+    },
+    {
+      "row": 8,
+      "title": "Sermons of Christmas Evans",
+      "author": "Christmas Evans",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-of-christmas-evans-christmas-evans.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/42340",
+      "word_count": 124384,
+      "reading_time_minutes": 553
+    },
+    {
+      "row": 9,
+      "title": "Human Nature, and Other Sermons",
+      "author": "Joseph Butler",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/human-nature-and-other-sermons-joseph-butler.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/3150",
+      "word_count": 46962,
+      "reading_time_minutes": 209
+    },
+    {
+      "row": 10,
+      "title": "Sermons on the Card, and Other Discourses",
+      "author": "Hugh Latimer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-on-the-card-and-other-discourses-hugh-latimer.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/2458",
+      "word_count": 37245,
+      "reading_time_minutes": 166
+    },
+    {
+      "row": 11,
+      "title": "All Saints' Day and Other Sermons",
+      "author": "Charles Kingsley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/all-saints-day-and-other-sermons-charles-kingsley.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/10116",
+      "word_count": 116204,
+      "reading_time_minutes": 516
+    },
+    {
+      "row": 12,
+      "title": "Sermons on National Subjects",
+      "author": "Charles Kingsley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-on-national-subjects-charles-kingsley.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/8202",
+      "word_count": 159605,
+      "reading_time_minutes": 709
+    },
+    {
+      "row": 13,
+      "title": "Twenty-Five Village Sermons",
+      "author": "Charles Kingsley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/twenty-five-village-sermons-charles-kingsley.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/7954",
+      "word_count": 68949,
+      "reading_time_minutes": 306
+    },
+    {
+      "row": 14,
+      "title": "The Christian Life: Its Course, Its Hindrances, and Its Helps",
+      "author": "Thomas Arnold",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-christian-life-its-course-its-hindrances-and-its-helps-thomas-arnold.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/13151",
+      "word_count": 129213,
+      "reading_time_minutes": 574
+    },
+    {
+      "row": 15,
+      "title": "Studies in the Life of the Christian: His Faith and His Service",
+      "author": "Henry T. Sell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/studies-in-the-life-of-the-christian-his-faith-and-his-service-henry-t-sell.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/7338",
+      "word_count": 39729,
+      "reading_time_minutes": 177
+    },
+    {
+      "row": 16,
+      "title": "Riches of Grace: A Compilation of Experiences in the Christian Life",
+      "author": "E. E. Byrum",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/riches-of-grace-a-compilation-of-experiences-in-the-christian-life-e-e-byrum.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/36476",
+      "word_count": 56233,
+      "reading_time_minutes": 250
+    },
+    {
+      "row": 17,
+      "title": "Kanamori's Life-Story: How the Higher Criticism Wrecked a Japanese Christian—and How He Came Back",
+      "author": "Paul M. Kanamori",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/kanamori-s-life-story-how-the-higher-criticism-wrecked-a-japanese-christian-and-how-he-came-back-paul-m-kanamo.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/74257",
+      "word_count": 21743,
+      "reading_time_minutes": 97
+    },
+    {
+      "row": 18,
+      "title": "Valeria, the Martyr of the Catacombs: A Tale of Early Christian Life in Rome",
+      "author": "W. H. Withrow",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/valeria-the-martyr-of-the-catacombs-a-tale-of-early-christian-life-in-rome-w-h-withrow.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/33484",
+      "word_count": 47742,
+      "reading_time_minutes": 212
+    },
+    {
+      "row": 19,
+      "title": "The History of Christianity",
+      "author": "John S. C. Abbott",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-christianity-john-s-c-abbott.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/59400",
+      "word_count": 172937,
+      "reading_time_minutes": 769
+    },
+    {
+      "row": 20,
+      "title": "The Journal of George Fox, Volume 1",
+      "author": "George Fox",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-journal-of-george-fox-volume-1-george-fox.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/75559",
+      "word_count": 250004,
+      "reading_time_minutes": 1111
+    },
+    {
+      "row": 21,
+      "title": "The Journal of George Fox, Volume 2",
+      "author": "George Fox",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-journal-of-george-fox-volume-2-george-fox.txt",
+      "source_url": "https://www.gutenberg.org/ebooks/75590",
+      "word_count": 254565,
+      "reading_time_minutes": 1131
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

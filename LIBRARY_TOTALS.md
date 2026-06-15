@@ -4,14 +4,60 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,264
+- Verified public Library resources: 1,284
 - Public commentary entries shown in the app: 5,260
 - Commentary validation rows checked, including staging/review files: 7,638
 - Commentary authors represented publicly: 22+
-- Library authors represented: 422+
+- Library authors represented: 461
 - Public Library duplicate title/author groups: 0
 
-## Latest Neglected Subjects Sprint
+## Latest High-Value Books Sprint
+
+Added 20 verified public-domain resources from Project Gutenberg, after pruning noisy or poor-fit catalog results.
+
+Strengthened areas:
+
+- Revival history and George Whitefield biography
+- Preaching and sermon collections
+- Welsh Baptist preaching through Christmas Evans
+- Reformation preaching through Hugh Latimer
+- Christian life and discipleship
+- Church history and martyrdom-themed reading
+- Higher criticism warning/testimony through Paul Kanamori
+
+Imported resources:
+
+- Selected Sermons of Jonathan Edwards — Jonathan Edwards
+- George Whitefield: A Biography — Joseph Belcher
+- The Life of the Rev. George Whitefield, Volume 1 — L. Tyerman
+- The Life of the Rev. George Whitefield, Volume 2 — L. Tyerman
+- The Great Revival of the Eighteenth Century — Edwin Paxton Hood
+- New Tabernacle Sermons — T. De Witt Talmage
+- Sermons of Christmas Evans — Christmas Evans
+- Human Nature, and Other Sermons — Joseph Butler
+- Sermons on the Card, and Other Discourses — Hugh Latimer
+- All Saints' Day and Other Sermons — Charles Kingsley
+- Sermons on National Subjects — Charles Kingsley
+- Twenty-Five Village Sermons — Charles Kingsley
+- The Christian Life: Its Course, Its Hindrances, and Its Helps — Thomas Arnold
+- Studies in the Life of the Christian — Henry T. Sell
+- Riches of Grace — E. E. Byrum
+- Kanamori's Life-Story — Paul M. Kanamori
+- Valeria, the Martyr of the Catacombs — W. H. Withrow
+- The History of Christianity — John S. C. Abbott
+- The Journal of George Fox, Volume 1 — George Fox
+- The Journal of George Fox, Volume 2 — George Fox
+
+Rejected from this sprint:
+
+- Noisy catalog hits
+- Secular art/history works misclassified by search terms
+- LDS/Mormon resources
+- Universalism resources
+- Catholic devotional manuals
+- Non-Christian comparative religion/evolution-of-religion works
+
+## Previous Neglected Subjects Sprint
 
 Imported 25 verified public-domain resources from Project Gutenberg and skipped 10 duplicate title/source rows automatically.
 
@@ -58,20 +104,20 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | --- | ---: |
 | Commentaries | 252 |
 | Missions | 243 |
-| Christian Living | 212 |
-| Preaching & Teaching | 164 |
-| Bible study helps | 129 |
+| Christian Living | 216 |
+| Preaching & Teaching | 172 |
+| Bible study helps | 130 |
 | Prayer | 79 |
 | Baptist History | 50 |
 | Evangelism | 46 |
 | Bible Handbooks | 19 |
 | KJV / Textual Issues | 16 |
-| Biographies | 12 |
+| Biographies | 18 |
 | Classics | 12 |
 | Dictionaries | 11 |
 | Christian life | 7 |
 | Surveys | 5 |
-| Fiction/classics | 2 |
+| Fiction/classics | 3 |
 | Preaching/teaching | 2 |
 | Topical Bible | 2 |
 | Baptist history | 1 |
@@ -82,7 +128,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | --- | ---: |
 | Missions Biographies | 128 |
 | Commentary | 93 |
-| Preaching & Teaching | 87 |
+| Preaching & Teaching | 94 |
 | Spurgeon Collection | 84 |
 | F. B. Meyer Collection | 72 |
 | Missions Periodicals | 62 |
@@ -92,7 +138,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Bible Doctrine | 44 |
 | Gaebelein Collection | 44 |
 | Baptist History | 31 |
-| Christian Living | 29 |
+| Christian Living | 32 |
 | Alexander Maclaren Collection | 26 |
 | William Kelly Collection | 23 |
 | G. Campbell Morgan Collection | 22 |
@@ -107,6 +153,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Prayer Classics | 15 |
 | Revival & Evangelism | 13 |
 | Darby Collection | 11 |
+| Church History | 11 |
 | R. A. Torrey Collection | 10 |
 | False Religion & Discernment | 7 |
 | Creation & Evolution Response | 4 |
@@ -158,7 +205,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,264 public resources verified, complete, and file-backed.
+- `npm run library:qa`: 1,284 public resources verified, complete, and file-backed.
 - `npm run library:validate`: manifest validation passed.
 - `npm run validate:commentary`: 92 commentary/review files validated, 7,638 rows checked.
 
