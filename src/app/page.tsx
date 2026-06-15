@@ -10561,22 +10561,161 @@ const QUICK_PASSAGE_BOOK_ALIASES: Record<string, string> = {
   gen: "Genesis",
   ex: "Exodus",
   exo: "Exodus",
+  exod: "Exodus",
+  lev: "Leviticus",
+  le: "Leviticus",
+  num: "Numbers",
+  nu: "Numbers",
+  deut: "Deuteronomy",
+  de: "Deuteronomy",
+  dt: "Deuteronomy",
+  josh: "Joshua",
+  jos: "Joshua",
+  judg: "Judges",
+  jdg: "Judges",
+  ru: "Ruth",
+  ruth: "Ruth",
+  "1 sam": "1 Samuel",
+  "1sam": "1 Samuel",
+  "i sam": "1 Samuel",
+  "isam": "1 Samuel",
+  "2 sam": "2 Samuel",
+  "2sam": "2 Samuel",
+  "ii sam": "2 Samuel",
+  "iisam": "2 Samuel",
+  "1 ki": "1 Kings",
+  "1ki": "1 Kings",
+  "1 kings": "1 Kings",
+  "1kings": "1 Kings",
+  "2 ki": "2 Kings",
+  "2ki": "2 Kings",
+  "2 kings": "2 Kings",
+  "2kings": "2 Kings",
+  "1 chr": "1 Chronicles",
+  "1chr": "1 Chronicles",
+  "1 chron": "1 Chronicles",
+  "1chron": "1 Chronicles",
+  "2 chr": "2 Chronicles",
+  "2chr": "2 Chronicles",
+  "2 chron": "2 Chronicles",
+  "2chron": "2 Chronicles",
+  ezr: "Ezra",
+  ezra: "Ezra",
+  neh: "Nehemiah",
+  ne: "Nehemiah",
+  est: "Esther",
+  esth: "Esther",
+  job: "Job",
   jn: "John",
   jhn: "John",
   joh: "John",
+  mt: "Matthew",
+  matt: "Matthew",
+  mat: "Matthew",
+  mk: "Mark",
+  mrk: "Mark",
+  mark: "Mark",
+  lk: "Luke",
+  lu: "Luke",
+  luk: "Luke",
+  luke: "Luke",
+  ac: "Acts",
+  act: "Acts",
+  acts: "Acts",
   rom: "Romans",
   ro: "Romans",
+  "1 cor": "1 Corinthians",
+  "1cor": "1 Corinthians",
+  "i cor": "1 Corinthians",
+  "icor": "1 Corinthians",
+  "2 cor": "2 Corinthians",
+  "2cor": "2 Corinthians",
+  "ii cor": "2 Corinthians",
+  "iicor": "2 Corinthians",
+  gal: "Galatians",
+  eph: "Ephesians",
+  phil: "Philippians",
+  php: "Philippians",
+  col: "Colossians",
+  "1 th": "1 Thessalonians",
+  "1th": "1 Thessalonians",
+  "1 thess": "1 Thessalonians",
+  "1thess": "1 Thessalonians",
+  "2 th": "2 Thessalonians",
+  "2th": "2 Thessalonians",
+  "2 thess": "2 Thessalonians",
+  "2thess": "2 Thessalonians",
+  "1 tim": "1 Timothy",
+  "1tim": "1 Timothy",
+  "2 tim": "2 Timothy",
+  "2tim": "2 Timothy",
+  tit: "Titus",
+  philem: "Philemon",
+  phm: "Philemon",
+  heb: "Hebrews",
+  jas: "James",
+  jam: "James",
+  "1 pet": "1 Peter",
+  "1pet": "1 Peter",
+  "2 pet": "2 Peter",
+  "2pet": "2 Peter",
+  "1 jn": "1 John",
+  "1jn": "1 John",
+  "1 john": "1 John",
+  "1john": "1 John",
+  "2 jn": "2 John",
+  "2jn": "2 John",
+  "2 john": "2 John",
+  "2john": "2 John",
+  "3 jn": "3 John",
+  "3jn": "3 John",
+  "3 john": "3 John",
+  "3john": "3 John",
+  jude: "Jude",
   rev: "Revelation",
   re: "Revelation",
   revelation: "Revelation",
   ps: "Psalms",
   psa: "Psalms",
   psalm: "Psalms",
+  provs: "Proverbs",
   prov: "Proverbs",
   pr: "Proverbs",
   pro: "Proverbs",
+  ecc: "Ecclesiastes",
+  eccl: "Ecclesiastes",
+  eccles: "Ecclesiastes",
   song: "Song of Solomon",
   sos: "Song of Solomon",
+  isa: "Isaiah",
+  is: "Isaiah",
+  jer: "Jeremiah",
+  je: "Jeremiah",
+  lam: "Lamentations",
+  la: "Lamentations",
+  ezek: "Ezekiel",
+  eze: "Ezekiel",
+  dan: "Daniel",
+  da: "Daniel",
+  hos: "Hosea",
+  hosea: "Hosea",
+  jl: "Joel",
+  joe: "Joel",
+  am: "Amos",
+  amos: "Amos",
+  obad: "Obadiah",
+  ob: "Obadiah",
+  jon: "Jonah",
+  jonah: "Jonah",
+  mic: "Micah",
+  nah: "Nahum",
+  hab: "Habakkuk",
+  zeph: "Zephaniah",
+  zep: "Zephaniah",
+  hag: "Haggai",
+  zech: "Zechariah",
+  zec: "Zechariah",
+  mal: "Malachi",
 };
 const OCR_CLEANUP_QUEUE = ocrCleanupQueueData as OcrCleanupQueueItem[];
 
@@ -18154,26 +18293,40 @@ export default function Home() {
           <div className="mt-3 inline-flex max-w-full items-center rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">
             {accountStatus}
           </div>
-          <form
-            className="mt-3 flex w-full max-w-2xl flex-col gap-2 sm:flex-row"
-            onSubmit={(event) => {
-              event.preventDefault();
-              quickJumpToPassage(globalQuickJumpText);
-            }}
-          >
+	          <form
+	            className="mt-3 flex w-full max-w-2xl flex-col gap-2 sm:flex-row"
+	            onSubmit={(event) => {
+	              event.preventDefault();
+	              (event.currentTarget.querySelector("input") as HTMLInputElement | null)?.blur();
+	              quickJumpToPassage(globalQuickJumpText);
+	              requestAnimationFrame(() => (document.activeElement as HTMLElement | null)?.blur());
+	            }}
+	          >
             <label className="sr-only" htmlFor="global-quick-jump">Quick Jump</label>
             <input
               id="global-quick-jump"
               className="min-h-11 flex-1 rounded-full border border-[var(--line)] bg-white px-4 text-base text-[var(--ink)] shadow-sm outline-none focus:border-[var(--gold)]"
-              placeholder="Quick Jump: John 3:16, Romans 8, Amos 5, Rev 13"
+              placeholder="Jump to John 3:16, Romans 8, Amos 5, Rev 13"
               value={globalQuickJumpText}
               onChange={(event) => setGlobalQuickJumpText(event.target.value)}
             />
             <button id="global-quick-jump-submit" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--green)] px-5 text-sm font-semibold text-white shadow-sm" type="submit">
               <Search size={16} />
-              Open
+              Jump
             </button>
           </form>
+          <div className="mt-2 flex max-w-2xl flex-wrap gap-2">
+            {["John 3", "Hosea 4", "Luke 24", "Romans 8"].map((reference) => (
+              <button
+                key={`global-jump-chip-${reference}`}
+                className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)] shadow-sm"
+                onClick={() => quickJumpToPassage(reference)}
+                type="button"
+              >
+                {reference}
+              </button>
+            ))}
+          </div>
           {(speechState.playing || speechState.paused) && (
             <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
@@ -19020,10 +19173,10 @@ export default function Home() {
           </section>
         </div>
 
-        {!((tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) || (tab === "presentations" && presentationWorkspaceView === "presenter")) && <MobileNav tab={tab} onTab={setTab} />}
-      </div>
+	      </div>
+	      {!((tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) || (tab === "presentations" && presentationWorkspaceView === "presenter")) && <MobileNav tab={tab} onTab={setTab} />}
 
-      {tab === "bible" && studyRef && activeVerse && (
+	      {tab === "bible" && studyRef && activeVerse && (
         <StudyDrawer
           verse={activeVerse}
           activeTab={studyTab}
@@ -22491,10 +22644,10 @@ function AtAGlanceStudyPanel({
             className="inline-flex scroll-mt-[28rem] items-center gap-2 rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-white"
             onClick={onStudyThisChapter}
             type="button"
-          >
-            <FileText size={16} />
-            Study This Chapter
-          </button>
+	          >
+	            <FileText size={16} />
+	            Open Passage Guide
+	          </button>
           <button
             className="inline-flex scroll-mt-[28rem] items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-3 text-sm font-semibold text-[var(--green)]"
             onClick={onSaveStudySession}
@@ -23302,7 +23455,7 @@ function BibleReader({
   ];
   return (
     <div className="space-y-4 p-4 md:p-8">
-      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-[104px] md:z-10 md:rounded-3xl md:p-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-[232px] md:z-10 md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
@@ -23336,18 +23489,20 @@ function BibleReader({
             type="button"
           >
             <FileText size={15} />
-            Passage Guide
+            Study This Chapter
           </button>
         </div>
 
-        <form
-          className="mt-3 flex gap-2"
-          onSubmit={(event) => {
-            event.preventDefault();
-            onQuickJump(quickJumpText);
-            setQuickJumpText("");
-          }}
-        >
+	        <form
+	          className="mt-3 flex gap-2"
+	          onSubmit={(event) => {
+	            event.preventDefault();
+	            (event.currentTarget.querySelector("input") as HTMLInputElement | null)?.blur();
+	            onQuickJump(quickJumpText);
+	            setQuickJumpText("");
+	            requestAnimationFrame(() => (document.activeElement as HTMLElement | null)?.blur());
+	          }}
+	        >
           <label className="sr-only" htmlFor="quick-jump-input">Quick Jump</label>
           <input
             id="quick-jump-input"
@@ -30472,18 +30627,20 @@ function LibraryScreen({
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
       </section>
 
-      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm md:p-5">
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]">
-            Find books, authors, and study helps
-            <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
-              <Search size={18} className="shrink-0 text-[var(--green)]" />
-              <input
-                className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
-                placeholder="Search Spurgeon, prayer, Romans, dictionary..."
-                value={searchTerm}
-                onChange={(event) => onSearchTermChange(event.target.value)}
-              />
+	      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm md:p-5">
+	        <div className="flex flex-wrap items-end justify-between gap-3">
+	          <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]" htmlFor="library-search-input">
+	            Find a book, author, subject, or study tool
+	            <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+	              <Search size={18} className="shrink-0 text-[var(--green)]" />
+	              <input
+	                id="library-search-input"
+	                type="search"
+	                className="w-full bg-transparent text-base outline-none placeholder:text-stone-400"
+	                placeholder="Try Spurgeon, prayer, Romans, dictionary..."
+	                value={searchTerm}
+	                onChange={(event) => onSearchTermChange(event.target.value)}
+	              />
               {searchTerm && (
                 <button
                   className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
@@ -30496,11 +30653,29 @@ function LibraryScreen({
             </div>
           </label>
           <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-            {filteredResources.length.toLocaleString()} found
-          </p>
-        </div>
-        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          {categories.map((category) => (
+	            {filteredResources.length.toLocaleString()} found
+	          </p>
+	        </div>
+	        <div className="mt-3 flex flex-wrap gap-2">
+	          {[
+	            { label: "Spurgeon", value: "Spurgeon" },
+	            { label: "Prayer", value: "Prayer" },
+	            { label: "Commentaries", value: "Commentary" },
+	            { label: "Baptist history", value: "Baptist History" },
+	            { label: "KJV study", value: "KJV" },
+	          ].map((item) => (
+	            <button
+	              key={`library-search-chip-${item.label}`}
+	              className="rounded-full border border-[var(--line)] bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)] shadow-sm"
+	              onClick={() => onSearchTermChange(item.value)}
+	              type="button"
+	            >
+	              {item.label}
+	            </button>
+	          ))}
+	        </div>
+	        <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+	          {categories.map((category) => (
             <button
               key={category}
               className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${
@@ -42612,7 +42787,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
   ];
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
       <div className="mx-auto grid max-w-xl grid-cols-12 gap-1">
         {items.map((item) => (
           <button
