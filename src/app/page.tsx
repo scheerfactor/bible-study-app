@@ -57,6 +57,8 @@ import gCampbellMorganHoseaCommentary from "../../data/imports/g-campbell-morgan
 import gCampbellMorganMinorProphetsCommentary from "../../data/imports/g-campbell-morgan-minor-prophets-commentary.json";
 import gCampbellMorganDanielCommentary from "../../data/imports/g-campbell-morgan-daniel-commentary.json";
 import gCampbellMorganRevelationCommentary from "../../data/imports/g-campbell-morgan-revelation-commentary.json";
+import gCampbellMorganGospelsActsRomansCommentary from "../../data/imports/g-campbell-morgan-gospels-acts-romans-commentary.json";
+import gCampbellMorganGenesisStarterCommentary from "../../data/imports/g-campbell-morgan-genesis-starter-commentary.json";
 import treasuryOfDavidReviewedPsalmsCommentary from "../../data/imports/treasury-of-david-reviewed-psalms-1-87-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
@@ -8866,6 +8868,8 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(gCampbellMorganMinorProphetsCommentary as CommentaryEntry[]),
   ...(gCampbellMorganDanielCommentary as CommentaryEntry[]),
   ...(gCampbellMorganRevelationCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganGospelsActsRomansCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganGenesisStarterCommentary as CommentaryEntry[]),
   ...(treasuryOfDavidReviewedPsalmsCommentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),

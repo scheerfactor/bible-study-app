@@ -5,12 +5,23 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,302
-- Active public commentary entries shown in the app: 5,318
-- Reviewed public commentary import rows: 5,408
-- Commentary validation rows checked, including staging/review files: 7,786
+- Active public commentary entries shown in the app: 5,408
+- Reviewed public commentary import rows: 5,498
+- Commentary validation rows checked, including staging/review files: 7,876
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 476
 - Public Library duplicate title/author groups: 0
+
+## Latest Morgan Major Books Commentary Sprint
+
+Added 90 verified public commentary entries:
+
+- G. Campbell Morgan, John 1-21
+- G. Campbell Morgan, Acts 1-28
+- G. Campbell Morgan, Romans 1-16
+- G. Campbell Morgan, Genesis 1-25
+
+These batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. They strengthen the app's high-use teaching books while preserving source URLs, rights notes, and reviewed metadata for every chapter.
 
 ## Latest Hosea Commentary Sprint
 

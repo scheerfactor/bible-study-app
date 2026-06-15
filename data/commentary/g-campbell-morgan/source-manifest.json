@@ -9,7 +9,7 @@
   "rights_basis": "Use only StudyLight chapter pages with explicit public-domain statements. Preserve chapter source URLs and do not mix in modern edited editions or later copyrighted Morgan compilations.",
   "doctrinal_review_status": "reviewed for public beta comparison use with Scripture kept primary",
   "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing chapter flow before consulting larger homiletic works.",
-  "notes": "Public imports cover Hosea 1-14, Daniel 1-12, Revelation 1-22, and selected Minor Prophets chapters for Sunday school preparation and commentary comparison.",
+  "notes": "Public imports cover Hosea 1-14, Daniel 1-12, Revelation 1-22, John 1-21, Acts 1-28, Romans 1-16, Genesis 1-25, and selected Minor Prophets chapters for Sunday school preparation and commentary comparison.",
   "import_status": "public-verified-batch",
   "sources": [
     {
@@ -34,6 +34,30 @@
       "work_title": "Morgan's Exposition on the Bible",
       "source_url": "https://www.studylight.org/commentaries/eng/gcm/revelation-1.html",
       "source_status": "StudyLight Revelation chapter pages verified during import.",
+      "rights_status": "Chapter pages state public domain and BibleSupport permission."
+    },
+    {
+      "work_title": "Morgan's Exposition on the Bible",
+      "source_url": "https://www.studylight.org/commentaries/eng/gcm/john-1.html",
+      "source_status": "StudyLight John chapter pages verified during import.",
+      "rights_status": "Chapter pages state public domain and BibleSupport permission."
+    },
+    {
+      "work_title": "Morgan's Exposition on the Bible",
+      "source_url": "https://www.studylight.org/commentaries/eng/gcm/acts-1.html",
+      "source_status": "StudyLight Acts chapter pages verified during import.",
+      "rights_status": "Chapter pages state public domain and BibleSupport permission."
+    },
+    {
+      "work_title": "Morgan's Exposition on the Bible",
+      "source_url": "https://www.studylight.org/commentaries/eng/gcm/romans-1.html",
+      "source_status": "StudyLight Romans chapter pages verified during import.",
+      "rights_status": "Chapter pages state public domain and BibleSupport permission."
+    },
+    {
+      "work_title": "Morgan's Exposition on the Bible",
+      "source_url": "https://www.studylight.org/commentaries/eng/gcm/genesis-1.html",
+      "source_status": "StudyLight Genesis chapter pages verified during import.",
       "rights_status": "Chapter pages state public domain and BibleSupport permission."
     }
   ]

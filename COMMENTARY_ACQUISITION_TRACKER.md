@@ -4,17 +4,17 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 
 ## Current Snapshot
 
-- Public commentary entries: 5,318 active app entries.
+- Public commentary entries: 5,408 active app entries.
 - Public commentary books covered: 66.
 - Public commentary authors represented: 14 active app authors.
-- Commentary validation rows checked, including staging and review files: 7,786.
+- Commentary validation rows checked, including staging and review files: 7,876.
 - Matthew Henry: 1,189 public verified entries, covering all 66 Bible books.
 - JFB: 1,189 public verified entries, covering all 66 Bible books.
 - Barnes: 771 public verified entries from reviewed public-domain batches.
 - Adam Clarke: 771 public verified entries from reviewed public-domain batches.
 - Wesley: 85 public verified New Testament entries.
 - Gill remains sample-only until a cleaner original source is verified.
-- H. A. Ironside and G. Campbell Morgan have reviewed StudyLight chapter-page imports for Hosea and selected Minor Prophets. Morgan also has reviewed Daniel and Revelation imports.
+- H. A. Ironside and G. Campbell Morgan have reviewed StudyLight chapter-page imports for Hosea and selected Minor Prophets. Morgan also has reviewed Daniel, Revelation, John, Acts, Romans, and Genesis starter imports.
 - Pulpit Commentary, Biblical Illustrator, and Matthew Poole have selected reviewed chapter imports from source pages that state public-domain status and BibleSupport permission; larger full-set work still requires source-by-source review.
 
 ## Sprint Rules
@@ -36,7 +36,7 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 | John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 85 public verified New Testament chapters: Acts 1-25; John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Coverage sprint Acts batch promoted |
 | John Gill | https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ | Existing small reviewed samples remain. A StudyLight Gill path was reviewed and found to use a modernized Larry Pierce edition with rights reserved, so it is not safe for expansion. | 7 reviewed sample entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Find a stable original public-domain Gill source before any larger import. | Samples only; expansion blocked pending source review |
 | Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 771 public verified chapters including Genesis 1-50, Exodus, Leviticus, Numbers, Deuteronomy, Joshua 1-5, Psalms, Prophets, Gospels/Acts, Romans, 1 Corinthians, Amos, and Revelation. | Continue only from chapter pages that preserve public-domain statements. | Completion sprint batches promoted |
-| G. Campbell Morgan | https://www.studylight.org/commentaries/eng/gcm/ | StudyLight Morgan chapter pages state: "These files are public domain." Text Courtesy of BibleSupport.com. Used by Permission. | 91 active public verified chapters: Hosea 1-14, Daniel 1-12, Revelation 1-22, plus Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi. | Continue only from chapter pages that preserve public-domain statements; avoid modern edited Morgan compilations unless separately reviewed. | Hosea, selected Minor Prophets, Daniel, and Revelation promoted |
+| G. Campbell Morgan | https://www.studylight.org/commentaries/eng/gcm/ | StudyLight Morgan chapter pages state: "These files are public domain." Text Courtesy of BibleSupport.com. Used by Permission. | 181 active public verified chapters: Hosea 1-14, Daniel 1-12, Revelation 1-22, John 1-21, Acts 1-28, Romans 1-16, Genesis 1-25, plus Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi. | Continue only from chapter pages that preserve public-domain statements; avoid modern edited Morgan compilations unless separately reviewed. | Hosea, selected Minor Prophets, Daniel, Revelation, John, Acts, Romans, and Genesis starter promoted |
 
 ## Tier 2 Acquisition Queue
 
