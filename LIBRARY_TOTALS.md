@@ -4,12 +4,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,284
-- Public commentary entries shown in the app: 5,260
-- Commentary validation rows checked, including staging/review files: 7,638
-- Commentary authors represented publicly: 22+
+- Verified public Library resources: 1,302
+- Public commentary entries shown in the app: 5,288
+- Commentary validation rows checked, including staging/review files: 7,666
+- Commentary authors represented publicly: 23
 - Library authors represented: 461
 - Public Library duplicate title/author groups: 0
+
+## Latest Hosea Commentary Sprint
+
+Added 28 verified public commentary entries for Hosea:
+
+- H. A. Ironside, Hosea 1-14
+- G. Campbell Morgan, Hosea 1-14
+
+Both batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. Each entry preserves its chapter source URL, rights basis, recommended use, and review status.
 
 ## Latest High-Value Books Sprint
 
@@ -192,7 +201,8 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Joseph S. Exell and H. D. M. Spence-Jones / Pulpit Commentary | 309 |
 | C. H. Spurgeon / Treasury of David | 150 |
 | John Wesley | 86 |
-| H. A. Ironside | 62 |
+| H. A. Ironside | 76 |
+| G. Campbell Morgan | 14 |
 | Amos public-domain specialist/sample voices | 9 each |
 
 ## Commentary Status
@@ -200,14 +210,15 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 - Matthew Henry and JFB each cover all 66 Bible books at public chapter level.
 - Barnes and Adam Clarke have broad public coverage across the current reviewed batches.
 - Wesley remains New Testament oriented.
-- Gill and Ironside remain sample-only until cleaner source/edition review is complete.
+- Gill remains sample-only until cleaner source/edition review is complete.
+- Ironside now includes verified public Hosea 1-14 entries from StudyLight; additional Ironside imports still require source and edition review.
 - Pulpit Commentary, Biblical Illustrator, and Matthew Poole now have focused public verified batches for Exodus and Proverbs where source, edition notes, rights basis, and parser output were documented. Continue importing only in reviewed batches.
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,284 public resources verified, complete, and file-backed.
+- `npm run library:qa`: 1,302 public resources verified, complete, and file-backed.
 - `npm run library:validate`: manifest validation passed.
-- `npm run validate:commentary`: 92 commentary/review files validated, 7,638 rows checked.
+- `npm run validate:commentary`: 94 commentary/review files validated, 7,666 rows checked.
 
 ## Next Growth Rule
 

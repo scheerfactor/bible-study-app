@@ -1,0 +1,22 @@
+{
+  "title": "Morgan's Exposition on the Whole Bible",
+  "author": "G. Campbell Morgan",
+  "category": "Commentaries",
+  "source_url": "https://www.studylight.org/commentaries/eng/gcm.html",
+  "public_domain_status": "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
+  "commercial_use_status": "Public beta import is limited to chapter pages that preserve StudyLight's public-domain and BibleSupport permission statements.",
+  "attribution_required": true,
+  "rights_basis": "Use only StudyLight chapter pages with explicit public-domain statements. Preserve chapter source URLs and do not mix in modern edited editions or later copyrighted Morgan compilations.",
+  "doctrinal_review_status": "reviewed for public beta comparison use with Scripture kept primary",
+  "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing chapter flow before consulting larger homiletic works.",
+  "notes": "Initial public import covers Hosea 1-14 for Sunday school preparation and commentary comparison.",
+  "import_status": "public-verified-batch",
+  "sources": [
+    {
+      "work_title": "Morgan's Exposition on the Bible",
+      "source_url": "https://www.studylight.org/commentaries/eng/gcm/hosea-1.html",
+      "source_status": "StudyLight Hosea chapter pages verified during import.",
+      "rights_status": "Chapter pages state public domain and BibleSupport permission."
+    }
+  ]
+}

@@ -71,6 +71,24 @@ const sources = {
     rightsBasis: "Public-domain StudyLight chapter pages for The Biblical Illustrator. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     recommendedUse: "Use as a preaching and teaching illustration source, secondary to Scripture and doctrinally reviewed commentary.",
   },
+  "studylight-isn": {
+    author: "H. A. Ironside",
+    resourceTitle: "Ironside's Notes on Selected Books",
+    sourceTitle: "Ironside's Notes on Selected Books",
+    abbr: "isn",
+    publicDomainStatus: "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
+    rightsBasis: "Public-domain StudyLight chapter pages for Ironside's Notes on Selected Books. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
+    recommendedUse: "Use as a clear expository and preaching-oriented comparison voice after reading the KJV text and reviewed cross references.",
+  },
+  "studylight-gcm": {
+    author: "G. Campbell Morgan",
+    resourceTitle: "Morgan's Exposition on the Whole Bible",
+    sourceTitle: "Morgan's Exposition on the Bible",
+    abbr: "gcm",
+    publicDomainStatus: "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
+    rightsBasis: "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
+    recommendedUse: "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
+  },
   "ccel-wesley-xml": {
     author: "John Wesley",
     resourceTitle: "Wesley's Notes on the Bible",
@@ -323,8 +341,11 @@ function cleanStudyLightText(value) {
   let text = String(value);
   const toolboxIndex = text.search(/Resource Toolbox/i);
   const firstVerseIndex = text.search(/\bVerse\s+1\b/i);
+  const firstVersesIndex = text.search(/\bVerses\s+1\b/i);
   if (toolboxIndex >= 0 && firstVerseIndex > toolboxIndex && firstVerseIndex < 12000) {
     text = text.slice(firstVerseIndex);
+  } else if (toolboxIndex >= 0 && firstVersesIndex > toolboxIndex && firstVersesIndex < 12000) {
+    text = text.slice(firstVersesIndex);
   }
   return text
     .replace(/\bResource Toolbox\b/gi, " ")
@@ -333,7 +354,8 @@ function cleanStudyLightText(value) {
     .replace(/\bCopyright\b/gi, " ")
     .replace(/\bBibliography\b/gi, " ")
     .replace(/\bAdditional Authors\b/gi, " ")
-    .replace(/return to ['"‘’]? Top of Page ['"‘’]?/gi, " ");
+    .replace(/return to ['"‘’]? Top of Page ['"‘’]?/gi, " ")
+    .replace(/\n\s*[1-3]?\s?[A-Z][A-Za-z' ]+\s+[A-Z][a-z]{2}\s+\d+[\s\S]*?\bFootnotes:\s*$/i, " ");
 }
 
 function slugify(value) {

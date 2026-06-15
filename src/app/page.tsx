@@ -51,6 +51,8 @@ import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sampl
 import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase-1-commentary.json";
 import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
+import hAIronsideHoseaCommentary from "../../data/imports/h-a-ironside-hosea-commentary.json";
+import gCampbellMorganHoseaCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
 import treasuryOfDavidReviewedPsalmsCommentary from "../../data/imports/treasury-of-david-reviewed-psalms-1-87-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
@@ -2884,6 +2886,19 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     priority: 5,
   },
   {
+    author: "G. Campbell Morgan",
+    timePeriod: "1863-1945",
+    biography: "British pastor, Bible teacher, and expositor known for clear chapter-level Bible surveys and preaching-oriented exposition.",
+    writingStyle: "Concise, expository, pastoral, and chapter-flow oriented.",
+    strengths: ["Chapter overview", "Preaching preparation", "Teaching flow", "Concise exposition"],
+    weaknesses: ["Less detailed than larger technical commentaries", "Use as a supporting voice after the Bible text and core cross references"],
+    bestUse: "Use for quick chapter orientation and sermon or lesson flow before moving into larger commentary sets.",
+    doctrinalNotes: "Historical evangelical resource. Keep Scripture primary and use Morgan as a concise comparison voice.",
+    sampleQuote: "Helpful for seeing the movement of a chapter before building a lesson outline.",
+    bestFor: ["Teaching", "Preaching"],
+    priority: 6,
+  },
+  {
     author: "Adam Clarke",
     timePeriod: "1762-1832",
     biography: "Methodist theologian and commentator known for historical notes and frequent language observations.",
@@ -2894,7 +2909,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Methodist historical resource. Not all doctrine endorsed; use with discernment labels visible.",
     sampleQuote: "Use as a historical comparison with visible discernment labels; keep Scripture primary.",
     bestFor: ["Word studies", "Historical background"],
-    priority: 6,
+    priority: 7,
   },
   {
     author: "John Wesley",
@@ -2907,7 +2922,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Not all doctrine endorsed. Keep perspective labels visible and Scripture first.",
     sampleQuote: "Use as compact Methodist historical notes after the KJV text.",
     bestFor: ["Devotions", "Teaching"],
-    priority: 7,
+    priority: 8,
   },
   {
     author: "John Gill",
@@ -2920,7 +2935,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Sample-only until a stable original public-domain source is verified.",
     sampleQuote: "Baptist historical value; best used as a careful comparison voice.",
     bestFor: ["Historical background", "Teaching"],
-    priority: 8,
+    priority: 9,
   },
   {
     author: "William Kelly",
@@ -2933,7 +2948,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Historical Brethren perspective. Useful with discernment; Scripture and the KJV passage remain primary.",
     sampleQuote: "Use as a historical expository comparison, not as the first or controlling voice.",
     bestFor: ["Teaching", "Preaching", "Historical background"],
-    priority: 9,
+    priority: 10,
   },
   {
     author: "F. W. Grant",
@@ -2946,7 +2961,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Historical Brethren perspective. Use with discernment and keep commentary secondary to Scripture.",
     sampleQuote: "Best used as a careful comparison voice for Revelation, not a replacement for direct Bible study.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 10,
+    priority: 11,
   },
   {
     author: "Matthew Poole",
@@ -2959,7 +2974,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Do not import modern edited copies or unclear web text. Exact source and reuse terms are required.",
     sampleQuote: "Future use only after source, edition, and rights review.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 11,
+    priority: 12,
   },
   {
     author: "J. N. Darby",
@@ -2972,7 +2987,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Keep Darby material clearly labeled and secondary to Scripture. Do not import until source and edition metadata are clean.",
     sampleQuote: "Advanced historical comparison only; Scripture remains primary.",
     bestFor: ["Historical background", "Teaching"],
-    priority: 12,
+    priority: 13,
   },
   {
     author: "The Pulpit Commentary",
@@ -2985,7 +3000,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Do not expose unreviewed volume text publicly. Each volume needs source, edition, rights, and quality review.",
     sampleQuote: "Useful only after volume-level review because it is a large multi-author set.",
     bestFor: ["Preaching", "Teaching"],
-    priority: 13,
+    priority: 14,
   },
   {
     author: "The Biblical Illustrator",
@@ -2998,7 +3013,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Needs strong discernment labels and careful excerpt review before public import.",
     sampleQuote: "Use as a future illustration source only after volume-by-volume review.",
     bestFor: ["Preaching", "Teaching"],
-    priority: 14,
+    priority: 15,
   },
   {
     author: "Arno C. Gaebelein",
@@ -3011,7 +3026,7 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     doctrinalNotes: "Not all doctrinal conclusions are endorsed. Keep prophecy material clearly labeled and secondary to Scripture.",
     sampleQuote: "Helpful for prophecy and Old Testament exposition when source and perspective notes are clear.",
     bestFor: ["Teaching", "Historical background"],
-    priority: 15,
+    priority: 16,
   },
 ];
 
@@ -8840,6 +8855,8 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryPhase1Commentary as CommentaryEntry[]),
   ...(matthewHenryReviewedBatch2Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
+  ...(hAIronsideHoseaCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganHoseaCommentary as CommentaryEntry[]),
   ...(treasuryOfDavidReviewedPsalmsCommentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
@@ -25822,6 +25839,7 @@ const COMMENTARY_EXPANSION_PRIORITY = [
   "The Biblical Illustrator",
   "Biblical Illustrator",
   "H. A. Ironside",
+  "G. Campbell Morgan",
   "William Kelly",
   "J. N. Darby",
   "F. W. Grant",
@@ -37678,7 +37696,7 @@ function PassageGuideScreen({
   const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
   const teachingIllustrations = passageTeachingIllustrationPrompts({ passage, topWords, connections });
   const commentaryOrder = commentaryProfilesForEntries(commentaryEntries);
-  const commentaryCenterAuthors = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside"];
+  const commentaryCenterAuthors = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "G. Campbell Morgan"];
   const availableCommentaryAuthors = new Set(commentaryAuthors);
   const commentaryCenterProfiles = commentaryCenterAuthors.map((author) => ({
     author,
@@ -39030,7 +39048,7 @@ function CommentaryComparisonCard({
 }) {
   const insights = commentaryComparisonInsights(entries);
   const groupedEntries = useMemo(() => {
-    const authorOrder = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside"];
+    const authorOrder = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "G. Campbell Morgan"];
     return Array.from(
     entries.reduce<Map<string, CommentaryEntry[]>>((groups, entry) => {
       groups.set(entry.author, [...(groups.get(entry.author) ?? []), entry]);
