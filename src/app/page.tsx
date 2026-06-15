@@ -900,6 +900,25 @@ type CompletedResource = {
 
 type CompletedResourceState = Record<string, CompletedResource>;
 
+type ManualReadBook = {
+  id: string;
+  title: string;
+  author: string;
+  completedAt: string;
+  notes?: string;
+};
+
+type ManualReadBookState = Record<string, ManualReadBook>;
+
+type ReadingListItem = {
+  id: string;
+  title: string;
+  author: string;
+  completedAt: string;
+  source: "site" | "manual";
+  slug?: string;
+};
+
 type ListeningProgress = {
   slug: string;
   title: string;
@@ -1633,6 +1652,7 @@ type VoiceSettings = {
 const STORAGE_KEY = "fathers-business-bible-study-state";
 const LIBRARY_PROGRESS_KEY = "fathers-business-library-progress";
 const LIBRARY_COMPLETED_KEY = "fathers-business-library-completed";
+const MANUAL_READ_BOOKS_KEY = "fathers-business-manual-read-books";
 const LIBRARY_LISTENING_KEY = "fathers-business-library-listening-progress";
 const LIBRARY_LISTENING_QUEUE_KEY = "fathers-business-library-listening-queue";
 const LIBRARY_ANNOTATIONS_KEY = "fathers-business-library-annotations";
@@ -12717,6 +12737,27 @@ function saveCompletedResources(state: CompletedResourceState) {
   window.localStorage.setItem(LIBRARY_COMPLETED_KEY, JSON.stringify(state));
 }
 
+function loadManualReadBooks(): ManualReadBookState {
+  if (typeof window === "undefined") return {};
+
+  try {
+    const raw = window.localStorage.getItem(MANUAL_READ_BOOKS_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as ManualReadBookState;
+    if (!parsed || typeof parsed !== "object") return {};
+    return Object.fromEntries(
+      Object.entries(parsed).filter(([, book]) => book?.id && book?.title && book?.author && book?.completedAt),
+    );
+  } catch {
+    return {};
+  }
+}
+
+function saveManualReadBooks(state: ManualReadBookState) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(MANUAL_READ_BOOKS_KEY, JSON.stringify(state));
+}
+
 function loadListeningProgress(): ListeningProgressState {
   if (typeof window === "undefined") return {};
 
@@ -13769,6 +13810,10 @@ export default function Home() {
   const [activeLibraryLoading, setActiveLibraryLoading] = useState(false);
   const [libraryProgress, setLibraryProgress] = useState<LibraryProgressState>({});
   const [completedResources, setCompletedResources] = useState<CompletedResourceState>({});
+  const [manualReadBooks, setManualReadBooks] = useState<ManualReadBookState>({});
+  const [manualReadBookTitle, setManualReadBookTitle] = useState("");
+  const [manualReadBookAuthor, setManualReadBookAuthor] = useState("");
+  const [readingListSearchTerm, setReadingListSearchTerm] = useState("");
   const [listeningProgress, setListeningProgress] = useState<ListeningProgressState>({});
   const [localStudyDataLoaded, setLocalStudyDataLoaded] = useState(false);
   const [accountDataLoaded, setAccountDataLoaded] = useState(false);
@@ -14006,6 +14051,78 @@ export default function Home() {
     [completedResources],
   );
 
+  const manualReadBookList = useMemo(
+    () => Object.values(manualReadBooks).sort((a, b) => b.completedAt.localeCompare(a.completedAt)),
+    [manualReadBooks],
+  );
+
+  const readingListItems = useMemo<ReadingListItem[]>(
+    () =>
+      [
+        ...completedLibraryResources.map((resource) => ({
+          id: `site-${resource.slug}`,
+          title: resource.title,
+          author: resource.author,
+          completedAt: resource.completedAt,
+          source: "site" as const,
+          slug: resource.slug,
+        })),
+        ...manualReadBookList.map((book) => ({
+          id: book.id,
+          title: book.title,
+          author: book.author,
+          completedAt: book.completedAt,
+          source: "manual" as const,
+        })),
+      ].sort((a, b) => b.completedAt.localeCompare(a.completedAt)),
+    [completedLibraryResources, manualReadBookList],
+  );
+
+  const filteredReadingListItems = useMemo(() => {
+    const terms = readingListSearchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) return readingListItems.slice(0, 12);
+    return readingListItems
+      .filter((item) => {
+        const searchable = `${item.title} ${item.author}`.toLowerCase();
+        return terms.every((term) => searchable.includes(term));
+      })
+      .slice(0, 24);
+  }, [readingListItems, readingListSearchTerm]);
+
+  const readingListRecommendations = useMemo(() => {
+    const completedSlugs = new Set(completedLibraryResources.map((resource) => resource.slug));
+    const completedAuthors = new Set(readingListItems.map((item) => item.author.toLowerCase()).filter(Boolean));
+    const completedTitleWords = new Set(
+      readingListItems
+        .flatMap((item) => item.title.toLowerCase().split(/[^a-z0-9]+/))
+        .filter((word) => word.length > 4),
+    );
+
+    const scored = libraryResources
+      .filter((resource) => !completedSlugs.has(resource.slug))
+      .map((resource) => {
+        const searchable = `${resource.title} ${resource.author} ${resource.category} ${resource.description ?? ""} ${resource.recommended_use ?? ""}`.toLowerCase();
+        const authorMatch = completedAuthors.has(resource.author.toLowerCase()) ? 40 : 0;
+        const titleMatch = Array.from(completedTitleWords).some((word) => searchable.includes(word)) ? 15 : 0;
+        const ministryMatch = libraryResourceMatches(resource, ["prayer", "preaching", "teaching", "christian living", "missions", "baptist"]) ? 10 : 0;
+        const wordWeight = Math.min(10, Math.round((resource.word_count ?? 0) / 25000));
+        return { resource, score: authorMatch + titleMatch + ministryMatch + wordWeight };
+      })
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title))
+      .map((item) => item.resource);
+
+    const fallback = libraryResources.filter((resource) =>
+      ["All of Grace", "Power Through Prayer", "Practical Religion", "The Pilgrim's Progress", "Pleasure & Profit in Bible Study", "A Retrospect"].includes(resource.title),
+    );
+
+    const deduped = new Map<string, LibraryResource>();
+    for (const resource of [...scored, ...fallback]) {
+      if (!completedSlugs.has(resource.slug)) deduped.set(resource.slug, resource);
+    }
+    return Array.from(deduped.values()).slice(0, 6);
+  }, [completedLibraryResources, libraryResources, readingListItems]);
+
   const libraryStats = useMemo(
     () => {
       const progressValues = Object.values(libraryProgress);
@@ -14021,6 +14138,9 @@ export default function Home() {
       for (const completed of completedLibraryResources) {
         authorActivity.set(completed.author, (authorActivity.get(completed.author) ?? 0) + 125);
       }
+      for (const manualBook of manualReadBookList) {
+        authorActivity.set(manualBook.author, (authorActivity.get(manualBook.author) ?? 0) + 75);
+      }
       for (const entries of Object.values(libraryAnnotations)) {
         for (const annotation of entries) {
           const resource = libraryResources.find((candidate) => candidate.slug === annotation.resourceSlug);
@@ -14034,14 +14154,14 @@ export default function Home() {
 
       return {
         booksStarted: progressValues.filter((progress) => progress.progress > 0 || progress.bookmarks.length > 0).length,
-        booksCompleted: completedLibraryResources.length,
+        booksCompleted: completedLibraryResources.length + manualReadBookList.length,
         hoursListened: listeningHours >= 10 ? String(Math.round(listeningHours)) : listeningHours > 0 ? listeningHours.toFixed(1) : "0",
         readingStreak: computeLibraryReadingStreak(progressValues, completedLibraryResources),
         favoriteAuthors,
         totalResources: libraryResources.length,
       };
     },
-    [completedLibraryResources, libraryAnnotations, libraryProgress, libraryResources, listeningProgress, speechState.rate],
+    [completedLibraryResources, libraryAnnotations, libraryProgress, libraryResources, listeningProgress, manualReadBookList, speechState.rate],
   );
 
   const libraryListeningQueueResources = useMemo(
@@ -15681,6 +15801,7 @@ export default function Home() {
     queueMicrotask(() => {
       setLibraryProgress(loadLibraryProgress());
       setCompletedResources(loadCompletedResources());
+      setManualReadBooks(loadManualReadBooks());
       setListeningProgress(loadListeningProgress());
       setLibraryListeningQueue(loadLibraryListeningQueue());
       setLibraryAnnotations(loadLibraryAnnotations());
@@ -16626,6 +16747,51 @@ export default function Home() {
       const nextState = { ...state };
       delete nextState[slug];
       saveCompletedResources(nextState);
+      return nextState;
+    });
+  }
+
+  function addManualReadBook() {
+    const title = manualReadBookTitle.trim();
+    const author = manualReadBookAuthor.trim() || "Unknown author";
+    if (!title) {
+      setSyncMessage("Add a book title before saving it to your reading list.");
+      return;
+    }
+
+    const normalized = `${title}::${author}`.toLowerCase();
+    const alreadySaved =
+      Object.values(manualReadBooks).some((book) => `${book.title}::${book.author}`.toLowerCase() === normalized) ||
+      Object.values(completedResources).some((book) => `${book.title}::${book.author}`.toLowerCase() === normalized);
+    if (alreadySaved) {
+      setSyncMessage("That book is already on your reading list.");
+      return;
+    }
+
+    setManualReadBooks((state) => {
+      const id = makeId("manual-read-book");
+      const nextState = {
+        ...state,
+        [id]: {
+          id,
+          title,
+          author,
+          completedAt: new Date().toISOString(),
+        },
+      };
+      saveManualReadBooks(nextState);
+      return nextState;
+    });
+    setManualReadBookTitle("");
+    setManualReadBookAuthor("");
+    setSyncMessage(`${title} added to your reading list.`);
+  }
+
+  function removeManualReadBook(id: string) {
+    setManualReadBooks((state) => {
+      const nextState = { ...state };
+      delete nextState[id];
+      saveManualReadBooks(nextState);
       return nextState;
     });
   }
@@ -18832,8 +18998,13 @@ export default function Home() {
                 commentaryCoverage={commentaryCoverage}
                 commentaryEntries={commentaryEntries}
                 progressState={libraryProgress}
-                completedResources={completedLibraryResources}
                 completedState={completedResources}
+                readingListItems={filteredReadingListItems}
+                readingListTotal={readingListItems.length}
+                readingListSearchTerm={readingListSearchTerm}
+                manualReadBookTitle={manualReadBookTitle}
+                manualReadBookAuthor={manualReadBookAuthor}
+                readingListRecommendations={readingListRecommendations}
                 listeningProgress={listeningProgress}
                 libraryListeningQueue={libraryListeningQueueResources}
                 libraryListeningQueueSeconds={libraryListeningQueueSeconds}
@@ -18916,6 +19087,11 @@ export default function Home() {
                 onMarkFinished={markLibraryFinished}
                 onRestartResource={restartLibraryResource}
                 onRemoveCompleted={removeCompletedResource}
+                onRemoveManualReadBook={removeManualReadBook}
+                onReadingListSearchTermChange={setReadingListSearchTerm}
+                onManualReadBookTitleChange={setManualReadBookTitle}
+                onManualReadBookAuthorChange={setManualReadBookAuthor}
+                onAddManualReadBook={addManualReadBook}
                 onReadAgain={(slug) => {
                   const resource = libraryResources.find((candidate) => candidate.slug === slug);
                   if (!resource) return;
@@ -30199,8 +30375,13 @@ function LibraryScreen({
   commentaryCoverage,
   commentaryEntries,
   progressState,
-  completedResources,
   completedState,
+  readingListItems,
+  readingListTotal,
+  readingListSearchTerm,
+  manualReadBookTitle,
+  manualReadBookAuthor,
+  readingListRecommendations,
   listeningProgress,
   libraryListeningQueue,
   libraryListeningQueueSeconds,
@@ -30259,6 +30440,11 @@ function LibraryScreen({
   onMarkFinished,
   onRestartResource,
   onRemoveCompleted,
+  onRemoveManualReadBook,
+  onReadingListSearchTermChange,
+  onManualReadBookTitleChange,
+  onManualReadBookAuthorChange,
+  onAddManualReadBook,
   onReadAgain,
 }: {
   view: LibraryView;
@@ -30279,8 +30465,13 @@ function LibraryScreen({
   commentaryCoverage: CommentaryCoverage;
   commentaryEntries: CommentaryEntry[];
   progressState: LibraryProgressState;
-  completedResources: CompletedResource[];
   completedState: CompletedResourceState;
+  readingListItems: ReadingListItem[];
+  readingListTotal: number;
+  readingListSearchTerm: string;
+  manualReadBookTitle: string;
+  manualReadBookAuthor: string;
+  readingListRecommendations: LibraryResource[];
   listeningProgress: ListeningProgressState;
   libraryListeningQueue: LibraryResource[];
   libraryListeningQueueSeconds: number;
@@ -30346,6 +30537,11 @@ function LibraryScreen({
   onMarkFinished: (resource: LibraryResource) => void;
   onRestartResource: (resource: LibraryResource) => void;
   onRemoveCompleted: (slug: string) => void;
+  onRemoveManualReadBook: (id: string) => void;
+  onReadingListSearchTermChange: (value: string) => void;
+  onManualReadBookTitleChange: (value: string) => void;
+  onManualReadBookAuthorChange: (value: string) => void;
+  onAddManualReadBook: () => void;
   onReadAgain: (slug: string) => void;
 }) {
   if (view === "reader" && activeResource) {
@@ -31279,6 +31475,141 @@ function LibraryScreen({
         </LibraryShelf>
       )}
 
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm md:p-5">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Reading List</p>
+            <h2 className="mt-1 text-2xl font-semibold tracking-tight text-[var(--ink)]">Books you have finished</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Finished books from this Library are added automatically. Add outside books manually so recommendations can keep improving.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] px-4 py-3 text-center">
+            <p className="text-2xl font-semibold text-[var(--green)]">{readingListTotal}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Read</p>
+          </div>
+        </div>
+
+        <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr]">
+          <label className="text-sm font-semibold text-[var(--muted)]" htmlFor="reading-list-search">
+            Search your reading list
+            <div className="mt-2 flex h-11 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
+              <Search size={17} className="shrink-0 text-[var(--green)]" />
+              <input
+                id="reading-list-search"
+                className="w-full bg-transparent text-sm outline-none placeholder:text-stone-400"
+                placeholder="Search title or author..."
+                type="search"
+                value={readingListSearchTerm}
+                onChange={(event) => onReadingListSearchTermChange(event.target.value)}
+              />
+            </div>
+          </label>
+
+          <form
+            className="grid gap-2 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 sm:grid-cols-[1fr_1fr_auto]"
+            onSubmit={(event) => {
+              event.preventDefault();
+              onAddManualReadBook();
+            }}
+          >
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]" htmlFor="manual-read-title">
+              Title
+              <input
+                id="manual-read-title"
+                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)] outline-none"
+                placeholder="Book title"
+                value={manualReadBookTitle}
+                onChange={(event) => onManualReadBookTitleChange(event.target.value)}
+              />
+            </label>
+            <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]" htmlFor="manual-read-author">
+              Author
+              <input
+                id="manual-read-author"
+                className="mt-1 h-10 w-full rounded-xl border border-[var(--line)] bg-white px-3 text-sm normal-case tracking-normal text-[var(--ink)] outline-none"
+                placeholder="Author"
+                value={manualReadBookAuthor}
+                onChange={(event) => onManualReadBookAuthorChange(event.target.value)}
+              />
+            </label>
+            <button className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-[var(--green)] px-4 text-sm font-semibold text-white sm:mt-auto" type="submit">
+              <Plus size={16} />
+              Add
+            </button>
+          </form>
+        </div>
+
+        <div className="mt-4 grid gap-3 xl:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)]">
+          <div className="grid gap-3 md:grid-cols-2">
+            {readingListItems.length > 0 ? (
+              readingListItems.map((item) => (
+                <article key={`reading-list-${item.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-0.5 shrink-0 text-[var(--green)]" size={19} />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <p className="min-w-0 text-sm font-semibold text-[var(--ink)]">{item.title}</p>
+                        <span className="rounded-full bg-white px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+                          {item.source === "site" ? "Library" : "Manual"}
+                        </span>
+                      </div>
+                      <button className="mt-1 text-left text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]" onClick={() => onOpenAuthor(item.author)} type="button">
+                        {item.author}
+                      </button>
+                      <p className="mt-2 text-xs text-[var(--muted)]">Completed {new Date(item.completedAt).toLocaleDateString()}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {item.slug && (
+                      <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-sm font-semibold text-white" onClick={() => onReadAgain(item.slug!)} type="button">
+                        <RotateCcw size={15} />
+                        Read Again
+                      </button>
+                    )}
+                    <button
+                      className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--muted)]"
+                      onClick={() => (item.source === "site" && item.slug ? onRemoveCompleted(item.slug) : onRemoveManualReadBook(item.id))}
+                      type="button"
+                    >
+                      <Trash2 size={15} />
+                      Remove
+                    </button>
+                  </div>
+                </article>
+              ))
+            ) : (
+              <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-5 md:col-span-2">
+                <p className="text-sm font-semibold text-[var(--ink)]">No finished books match this list yet.</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--muted)]">Mark a Library book finished or add an outside book you have already read.</p>
+              </div>
+            )}
+          </div>
+
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended next</p>
+            <div className="mt-3 space-y-3">
+              {readingListRecommendations.length > 0 ? (
+                readingListRecommendations.map((resource) => (
+                  <button
+                    key={`reading-list-recommendation-${resource.slug}`}
+                    className="w-full rounded-2xl border border-[var(--line)] bg-white p-3 text-left shadow-sm"
+                    onClick={() => onOpenDetail(resource.slug)}
+                    type="button"
+                  >
+                    <p className="text-sm font-semibold text-[var(--ink)]">{resource.title}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--green)]">{resource.author}</p>
+                    <p className="mt-2 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{resource.description || resource.recommended_use || resource.category}</p>
+                  </button>
+                ))
+              ) : (
+                <p className="text-sm leading-6 text-[var(--muted)]">Read or add one finished book to start personalized recommendations.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {recentlyAdded.length > 0 && (
         <LibraryShelf title="Recently Added">
           {recentlyAdded.map((resource) => (
@@ -31293,33 +31624,6 @@ function LibraryScreen({
               onOpenAuthor={() => onOpenAuthor(resource.author)}
               onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
             />
-          ))}
-        </LibraryShelf>
-      )}
-
-      {completedResources.length > 0 && (
-        <LibraryShelf title="Completed" horizontal>
-          {completedResources.map((completed) => (
-            <article key={`completed-${completed.slug}`} className="min-w-[260px] rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:min-w-0">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 shrink-0 text-[var(--green)]" size={20} />
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold text-[var(--ink)]">{completed.title}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{completed.author}</p>
-                  <p className="mt-2 text-xs text-[var(--muted)]">Completed {new Date(completed.completedAt).toLocaleDateString()}</p>
-                </div>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-sm font-semibold text-white" onClick={() => onReadAgain(completed.slug)} type="button">
-                  <RotateCcw size={15} />
-                  Read Again
-                </button>
-                <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]" onClick={() => onRemoveCompleted(completed.slug)} type="button">
-                  <Trash2 size={15} />
-                  Remove
-                </button>
-              </div>
-            </article>
           ))}
         </LibraryShelf>
       )}
