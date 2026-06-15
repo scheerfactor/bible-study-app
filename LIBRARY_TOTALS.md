@@ -5,9 +5,9 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,302
-- Active public commentary entries shown in the app: 5,284
-- Reviewed public commentary import rows: 5,374
-- Commentary validation rows checked, including staging/review files: 7,752
+- Active public commentary entries shown in the app: 5,318
+- Reviewed public commentary import rows: 5,408
+- Commentary validation rows checked, including staging/review files: 7,786
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 476
 - Public Library duplicate title/author groups: 0
@@ -29,6 +29,15 @@ Added 86 verified public commentary entries for selected Minor Prophets:
 - G. Campbell Morgan, Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi
 
 Both batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. The added chapters now have nine active commentary voices where already-covered by Matthew Henry, JFB, Barnes, Clarke, Poole, Pulpit Commentary, Biblical Illustrator, Morgan, and Ironside.
+
+## Latest Library Quality + Morgan Commentary Sprint
+
+Added 34 verified public commentary entries:
+
+- G. Campbell Morgan, Daniel 1-12
+- G. Campbell Morgan, Revelation 1-22
+
+Both batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. The Library grouping logic was also improved so volume and edition families such as Wesley, Whitefield, Spurgeon Autobiography, Treasury of David, Systematic Theology, Expositor's Bible volumes, and selected Gaebelein/Meyer groups browse as cleaner work cards while preserving the underlying verified files.
 
 ## Latest High-Value Books Sprint
 

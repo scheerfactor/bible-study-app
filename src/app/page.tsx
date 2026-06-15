@@ -55,6 +55,8 @@ import hAIronsideHoseaCommentary from "../../data/imports/h-a-ironside-hosea-com
 import hAIronsideMinorProphetsCommentary from "../../data/imports/h-a-ironside-minor-prophets-commentary.json";
 import gCampbellMorganHoseaCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
 import gCampbellMorganMinorProphetsCommentary from "../../data/imports/g-campbell-morgan-minor-prophets-commentary.json";
+import gCampbellMorganDanielCommentary from "../../data/imports/g-campbell-morgan-daniel-commentary.json";
+import gCampbellMorganRevelationCommentary from "../../data/imports/g-campbell-morgan-revelation-commentary.json";
 import treasuryOfDavidReviewedPsalmsCommentary from "../../data/imports/treasury-of-david-reviewed-psalms-1-87-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
@@ -8862,6 +8864,8 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hAIronsideMinorProphetsCommentary as CommentaryEntry[]),
   ...(gCampbellMorganHoseaCommentary as CommentaryEntry[]),
   ...(gCampbellMorganMinorProphetsCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganDanielCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganRevelationCommentary as CommentaryEntry[]),
   ...(treasuryOfDavidReviewedPsalmsCommentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),
@@ -29398,9 +29402,21 @@ function chapterResourceStatusLabel(status: ChapterResourceRecommendation["statu
 }
 
 const KNOWN_LIBRARY_WORK_TITLES = [
+  "the works of the rev john wesley",
+  "the works of the reverend george whitefield",
+  "c h spurgeon autobiography",
   "the treasury of david",
   "morning by morning",
   "evening by evening",
+  "systematic theology",
+  "a body of divinity",
+  "works of john bunyan",
+  "letters of john calvin",
+  "the works of john knox",
+  "the expositor s bible the gospel of st john",
+  "the expositor s bible the acts of the apostles",
+  "the expositor s bible the book of isaiah",
+  "the expositor s bible the book of the twelve prophets",
   "expository preaching plans and methods",
   "paul a servant of jesus christ",
   "peter fisherman disciple apostle",
@@ -29445,7 +29461,15 @@ function normalizedLibraryText(value: string) {
 function canonicalLibraryTitle(title: string) {
   const normalized = normalizedLibraryText(title)
     .replace(/\bvol(?:ume)?\s+[ivxlcdm0-9]+\b/g, " ")
+    .replace(/\bvol\s*\d+\b/g, " ")
+    .replace(/\bvolume\s*(?:one|two|three|four|five|six|seven|eight|nine|ten)\b/g, " ")
+    .replace(/\b(?:volume|vol)\s+\d+\s+of\s+\d+\b/g, " ")
+    .replace(/\b(?:volume|vol)\s+[ivxlcdm]+\s+of\s+[ivxlcdm]+\b/g, " ")
+    .replace(/\b(?:part|book)\s+[ivxlcdm0-9]+\b/g, " ")
+    .replace(/\bcomplete\b/g, " ")
     .replace(/\b\d+(st|nd|rd|th)?\s+series\b/g, " ")
+    .replace(/\bno\s+\d+\b/g, " ")
+    .replace(/\bnos\s+\d+(?:\s+\d+)*\b/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 
