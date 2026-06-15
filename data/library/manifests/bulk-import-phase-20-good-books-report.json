@@ -1,0 +1,296 @@
+{
+  "source_csv": "data/library/bulk-import-phase-20-good-books.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 50,
+  "total_attempted": 18,
+  "imported": 18,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Bible of the Reformation : its translators and their work",
+      "file": "the-bible-of-the-reformation-its-translators-and-their-work-heaton-w-j-william-james-1845.txt",
+      "bytes": 423080,
+      "words": 71563,
+      "reading_time_minutes": 318
+    },
+    {
+      "title": "Our own English Bible : its translators and their work, the manuscript period",
+      "file": "our-own-english-bible-its-translators-and-their-work-the-manuscript-period-heaton-william-james-1845.txt",
+      "bytes": 580179,
+      "words": 85913,
+      "reading_time_minutes": 382
+    },
+    {
+      "title": "The Puritan Bible : and other contemporaneous Protestant versions : being the third volume of \"Our own English Bible ; its translators and their work\" : illustrated",
+      "file": "the-puritan-bible-and-other-contemporaneous-protestant-versions-being-the-third-volume-of-our-own-english-bibl.txt",
+      "bytes": 501564,
+      "words": 83786,
+      "reading_time_minutes": 372
+    },
+    {
+      "title": "The revision revised : three articles reprinted from the 'Quarterly review' : I. The new Greek text. II. The new English version. III. Westcott and Hort's new textual theory ; to which is added a reply to Bishop Ellicott's pamphlet in defence of the revisers and their Greek text of the New Testament",
+      "file": "the-revision-revised-three-articles-reprinted-from-the-quarterly-review-i-the-new-greek-text-ii-the-new-englis.txt",
+      "bytes": 1387747,
+      "words": 211805,
+      "reading_time_minutes": 941
+    },
+    {
+      "title": "A History of the English Baptists, Volume 3",
+      "file": "a-history-of-the-english-baptists-volume-3-ivimey-joseph-1773-1834.txt",
+      "bytes": 1511094,
+      "words": 224615,
+      "reading_time_minutes": 998
+    },
+    {
+      "title": "A History of the English Baptists, Volume 4",
+      "file": "a-history-of-the-english-baptists-volume-4-ivimey-joseph.txt",
+      "bytes": 1410175,
+      "words": 235482,
+      "reading_time_minutes": 1047
+    },
+    {
+      "title": "A history of the Baptists in New England",
+      "file": "a-history-of-the-baptists-in-new-england-burrage-henry-s-henry-sweetser-1837-1926-american-baptist-publication.txt",
+      "bytes": 549182,
+      "words": 78170,
+      "reading_time_minutes": 347
+    },
+    {
+      "title": "The History of the English General Baptists, Volume 1",
+      "file": "the-history-of-the-english-general-baptists-volume-1-taylor-adam.txt",
+      "bytes": 1056912,
+      "words": 155819,
+      "reading_time_minutes": 693
+    },
+    {
+      "title": "The History of the English General Baptists, Volume 2",
+      "file": "the-history-of-the-english-general-baptists-volume-2-taylor-adam.txt",
+      "bytes": 1033010,
+      "words": 149959,
+      "reading_time_minutes": 666
+    },
+    {
+      "title": "The Early English Baptists, Volume 1",
+      "file": "the-early-english-baptists-volume-1-evans-benjamin-1803-1871.txt",
+      "bytes": 760419,
+      "words": 113616,
+      "reading_time_minutes": 505
+    },
+    {
+      "title": "The Early English Baptists, Volume 2",
+      "file": "the-early-english-baptists-volume-2-evans-benjamin-1803-1871.txt",
+      "bytes": 946326,
+      "words": 141125,
+      "reading_time_minutes": 627
+    },
+    {
+      "title": "History of the early Baptists : from the beginning of the Gospel to the rise of affusion as baptism, and of infant baptism, 28 A.D.-250 A.D. : with an appendix of the origin of the Baptists in America",
+      "file": "history-of-the-early-baptists-from-the-beginning-of-the-gospel-to-the-rise-of-affusion-as-baptism-and-of-infan.txt",
+      "bytes": 429931,
+      "words": 72511,
+      "reading_time_minutes": 322
+    },
+    {
+      "title": "The Evils of Infant Baptism",
+      "file": "the-evils-of-infant-baptism-robert-boyte-c-howell.txt",
+      "bytes": 521582,
+      "words": 87840,
+      "reading_time_minutes": 390
+    },
+    {
+      "title": "Memorials of Baptist martyrs. With a preliminary historical essay",
+      "file": "memorials-of-baptist-martyrs-with-a-preliminary-historical-essay-american-baptist-publication-society-brown-j-.txt",
+      "bytes": 531357,
+      "words": 82675,
+      "reading_time_minutes": 367
+    },
+    {
+      "title": "The History of Protestantism, Volume 3",
+      "file": "the-history-of-protestantism-volume-3-wylie-james-aitken-1808-1890.txt",
+      "bytes": 3190747,
+      "words": 471775,
+      "reading_time_minutes": 2097
+    },
+    {
+      "title": "History of the crusades against the Albigenses, in the thirteenth century",
+      "file": "history-of-the-crusades-against-the-albigenses-in-the-thirteenth-century-sismondi-j-c-l-simonde-de-jean-charle.txt",
+      "bytes": 531402,
+      "words": 79189,
+      "reading_time_minutes": 352
+    },
+    {
+      "title": "Remarks upon the ecclesiastical history of the ancient churches of the Albigenses.",
+      "file": "remarks-upon-the-ecclesiastical-history-of-the-ancient-churches-of-the-albigenses-allix-pierre-1641-1717.txt",
+      "bytes": 593660,
+      "words": 102722,
+      "reading_time_minutes": 457
+    },
+    {
+      "title": "Crises in the history of the papacy; a study of twenty famous popes whose careers and whose influence were important in the development of the church and in the history of the world",
+      "file": "crises-in-the-history-of-the-papacy-a-study-of-twenty-famous-popes-whose-careers-and-whose-influence-were-impo.txt",
+      "bytes": 861393,
+      "words": 146089,
+      "reading_time_minutes": 649
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Bible of the Reformation : its translators and their work",
+      "author": "Heaton, W. J. (William James), 1845-",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-bible-of-the-reformation-its-translators-and-their-work-heaton-w-j-william-james-1845.txt"
+    },
+    {
+      "row": 3,
+      "title": "Our own English Bible : its translators and their work, the manuscript period",
+      "author": "Heaton, William James, 1845-",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/our-own-english-bible-its-translators-and-their-work-the-manuscript-period-heaton-william-james-1845.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Puritan Bible : and other contemporaneous Protestant versions : being the third volume of \"Our own English Bible ; its translators and their work\" : illustrated",
+      "author": "Heaton, William James, 1845-",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-puritan-bible-and-other-contemporaneous-protestant-versions-being-the-third-volume-of-our-own-english-bibl.txt"
+    },
+    {
+      "row": 5,
+      "title": "The revision revised : three articles reprinted from the 'Quarterly review' : I. The new Greek text. II. The new English version. III. Westcott and Hort's new textual theory ; to which is added a reply to Bishop Ellicott's pamphlet in defence of the revisers and their Greek text of the New Testament",
+      "author": "Burgon, John William, 1813-1888",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-revision-revised-three-articles-reprinted-from-the-quarterly-review-i-the-new-greek-text-ii-the-new-englis.txt"
+    },
+    {
+      "row": 6,
+      "title": "A History of the English Baptists, Volume 3",
+      "author": "Ivimey, Joseph, 1773-1834",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-english-baptists-volume-3-ivimey-joseph-1773-1834.txt"
+    },
+    {
+      "row": 7,
+      "title": "A History of the English Baptists, Volume 4",
+      "author": "Ivimey, Joseph",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-english-baptists-volume-4-ivimey-joseph.txt"
+    },
+    {
+      "row": 8,
+      "title": "A history of the Baptists in New England",
+      "author": "Burrage, Henry S. (Henry Sweetser), 1837-1926; American Baptist Publication Society",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-the-baptists-in-new-england-burrage-henry-s-henry-sweetser-1837-1926-american-baptist-publication.txt"
+    },
+    {
+      "row": 9,
+      "title": "The History of the English General Baptists, Volume 1",
+      "author": "Taylor, Adam",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-the-english-general-baptists-volume-1-taylor-adam.txt"
+    },
+    {
+      "row": 10,
+      "title": "The History of the English General Baptists, Volume 2",
+      "author": "Taylor, Adam",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-the-english-general-baptists-volume-2-taylor-adam.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Early English Baptists, Volume 1",
+      "author": "Evans, Benjamin, 1803-1871",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-early-english-baptists-volume-1-evans-benjamin-1803-1871.txt"
+    },
+    {
+      "row": 12,
+      "title": "The Early English Baptists, Volume 2",
+      "author": "Evans, Benjamin, 1803-1871",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-early-english-baptists-volume-2-evans-benjamin-1803-1871.txt"
+    },
+    {
+      "row": 13,
+      "title": "History of the early Baptists : from the beginning of the Gospel to the rise of affusion as baptism, and of infant baptism, 28 A.D.-250 A.D. : with an appendix of the origin of the Baptists in America",
+      "author": "Duncan, William Cecil, 1824-1864",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-early-baptists-from-the-beginning-of-the-gospel-to-the-rise-of-affusion-as-baptism-and-of-infan.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Evils of Infant Baptism",
+      "author": "Robert Boyte C. Howell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-evils-of-infant-baptism-robert-boyte-c-howell.txt"
+    },
+    {
+      "row": 15,
+      "title": "Memorials of Baptist martyrs. With a preliminary historical essay",
+      "author": "American Baptist Publication Society; Brown, J. Newton (John Newton), 1803-1868; Belcher, Joseph, 1794-1859",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memorials-of-baptist-martyrs-with-a-preliminary-historical-essay-american-baptist-publication-society-brown-j-.txt"
+    },
+    {
+      "row": 16,
+      "title": "The History of Protestantism, Volume 3",
+      "author": "Wylie, James Aitken, 1808-1890",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-history-of-protestantism-volume-3-wylie-james-aitken-1808-1890.txt"
+    },
+    {
+      "row": 17,
+      "title": "History of the crusades against the Albigenses, in the thirteenth century",
+      "author": "Sismondi, J.-C.-L. Simonde de (Jean-Charles-Léonard Simonde), 1773-1842",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-crusades-against-the-albigenses-in-the-thirteenth-century-sismondi-j-c-l-simonde-de-jean-charle.txt"
+    },
+    {
+      "row": 18,
+      "title": "Remarks upon the ecclesiastical history of the ancient churches of the Albigenses.",
+      "author": "Allix, Pierre, 1641-1717",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/remarks-upon-the-ecclesiastical-history-of-the-ancient-churches-of-the-albigenses-allix-pierre-1641-1717.txt"
+    },
+    {
+      "row": 19,
+      "title": "Crises in the history of the papacy; a study of twenty famous popes whose careers and whose influence were important in the development of the church and in the history of the world",
+      "author": "McCabe, Joseph, 1867-1955",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/crises-in-the-history-of-the-papacy-a-study-of-twenty-famous-popes-whose-careers-and-whose-influence-were-impo.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

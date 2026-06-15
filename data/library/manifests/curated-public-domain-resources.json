@@ -56407,5 +56407,905 @@
     "checksum_sha256": "cc172c18cfcf38d132837151bca4cf53a30f3880b48222660ace499e58944583",
     "file_size_bytes": 405260,
     "word_count": 71394
+  },
+  {
+    "title": "The Bible of the Reformation : its translators and their work",
+    "author": "Heaton, W. J. (William James), 1845-",
+    "year": 1534,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV Defense / English Bible History",
+    "source_url": "https://archive.org/download/bibleofreformati0000heat/bibleofreformati0000heat_djvu.txt",
+    "download_url": "https://archive.org/download/bibleofreformati0000heat/bibleofreformati0000heat_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-of-the-reformation-its-translators-and-their-work-heaton-w-j-william-james-1845.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/bibleofreformati0000heat/bibleofreformati0000heat_djvu.txt.",
+    "notes": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV Defense / English Bible History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible of the Reformation : its translators and their work",
+      "author": "Heaton, W. J. (William James), 1845-",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV Defense / English Bible History",
+      "badge": "KJV Defense / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 318,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "eb8adb63b0b5c7111a9eac7a015d2f3b6ade7609b0ea83b2599b33c7de50cebb",
+    "file_size_bytes": 423080,
+    "word_count": 71563
+  },
+  {
+    "title": "Our own English Bible : its translators and their work, the manuscript period",
+    "author": "Heaton, William James, 1845-",
+    "year": 1842,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV Defense / English Bible History",
+    "source_url": "https://archive.org/download/ourownenglishbib00heatuoft/ourownenglishbib00heatuoft_djvu.txt",
+    "download_url": "https://archive.org/download/ourownenglishbib00heatuoft/ourownenglishbib00heatuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/our-own-english-bible-its-translators-and-their-work-the-manuscript-period-heaton-william-james-1845.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/ourownenglishbib00heatuoft/ourownenglishbib00heatuoft_djvu.txt.",
+    "notes": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV Defense / English Bible History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Our own English Bible : its translators and their work, the manuscript period",
+      "author": "Heaton, William James, 1845-",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV Defense / English Bible History",
+      "badge": "KJV Defense / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 382,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bde56493114566af5f384306ca4ee1adafeb4480481ff56b3fbfbc74099b4aa6",
+    "file_size_bytes": 580179,
+    "word_count": 85913
+  },
+  {
+    "title": "The Puritan Bible : and other contemporaneous Protestant versions : being the third volume of \"Our own English Bible ; its translators and their work\" : illustrated",
+    "author": "Heaton, William James, 1845-",
+    "year": 1843,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV Defense / English Bible History",
+    "source_url": "https://archive.org/download/puritanbible0000unse/puritanbible0000unse_djvu.txt",
+    "download_url": "https://archive.org/download/puritanbible0000unse/puritanbible0000unse_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-puritan-bible-and-other-contemporaneous-protestant-versions-being-the-third-volume-of-our-own-english-bibl.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/puritanbible0000unse/puritanbible0000unse_djvu.txt.",
+    "notes": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV Defense / English Bible History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Puritan Bible : and other contemporaneous Protestant versions : being the third volume of \"Our own English Bible ; its translators and their work\" : illustrated",
+      "author": "Heaton, William James, 1845-",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV Defense / English Bible History",
+      "badge": "KJV Defense / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 372,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "61bba2d4ed05b60dc5f9fa1487d7c5565c3f4c2ac0a252170cce42fb8fdd5cb0",
+    "file_size_bytes": 501564,
+    "word_count": 83786
+  },
+  {
+    "title": "The revision revised : three articles reprinted from the 'Quarterly review' : I. The new Greek text. II. The new English version. III. Westcott and Hort's new textual theory ; to which is added a reply to Bishop Ellicott's pamphlet in defence of the revisers and their Greek text of the New Testament",
+    "author": "Burgon, John William, 1813-1888",
+    "year": 1871,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV Defense / English Bible History",
+    "source_url": "https://archive.org/download/revisionrevisedt00burg/revisionrevisedt00burg_djvu.txt",
+    "download_url": "https://archive.org/download/revisionrevisedt00burg/revisionrevisedt00burg_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-revision-revised-three-articles-reprinted-from-the-quarterly-review-i-the-new-greek-text-ii-the-new-englis.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/revisionrevisedt00burg/revisionrevisedt00burg_djvu.txt.",
+    "notes": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "English Bible and textual-history background for KJV study with careful source review. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV Defense / English Bible History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The revision revised : three articles reprinted from the 'Quarterly review' : I. The new Greek text. II. The new English version. III. Westcott and Hort's new textual theory ; to which is added a reply to Bishop Ellicott's pamphlet in defence of the revisers and their Greek text of the New Testament",
+      "author": "Burgon, John William, 1813-1888",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV Defense / English Bible History",
+      "badge": "KJV Defense / English Bible History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 941,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5e8bed13a22cabfa2aa804e9129446024178aed6b29d14d4814da4b9873a7460",
+    "file_size_bytes": 1387747,
+    "word_count": 211805
+  },
+  {
+    "title": "A History of the English Baptists, Volume 3",
+    "author": "Ivimey, Joseph, 1773-1834",
+    "year": 1738,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofenglish03ivim/historyofenglish03ivim_djvu.txt",
+    "download_url": "https://archive.org/download/historyofenglish03ivim/historyofenglish03ivim_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-history-of-the-english-baptists-volume-3-ivimey-joseph-1773-1834.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofenglish03ivim/historyofenglish03ivim_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A History of the English Baptists, Volume 3",
+      "author": "Ivimey, Joseph, 1773-1834",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 998,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f00a8dcf1ce0105c286af7314d10bb2590b1b97a7dad1e3819211d922b450404",
+    "file_size_bytes": 1511094,
+    "word_count": 224615
+  },
+  {
+    "title": "A History of the English Baptists, Volume 4",
+    "author": "Ivimey, Joseph",
+    "year": 1790,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofenglish0004ivim/historyofenglish0004ivim_djvu.txt",
+    "download_url": "https://archive.org/download/historyofenglish0004ivim/historyofenglish0004ivim_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-history-of-the-english-baptists-volume-4-ivimey-joseph.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofenglish0004ivim/historyofenglish0004ivim_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A History of the English Baptists, Volume 4",
+      "author": "Ivimey, Joseph",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1047,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b5f8701cbf7955bb41ad8047923f5e7006ca435fa2666e08ddf839ca882679f3",
+    "file_size_bytes": 1410175,
+    "word_count": 235482
+  },
+  {
+    "title": "A history of the Baptists in New England",
+    "author": "Burrage, Henry S. (Henry Sweetser), 1837-1926; American Baptist Publication Society",
+    "year": 1813,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofbaptist00burr/historyofbaptist00burr_djvu.txt",
+    "download_url": "https://archive.org/download/historyofbaptist00burr/historyofbaptist00burr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-history-of-the-baptists-in-new-england-burrage-henry-s-henry-sweetser-1837-1926-american-baptist-publication.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofbaptist00burr/historyofbaptist00burr_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A history of the Baptists in New England",
+      "author": "Burrage, Henry S. (Henry Sweetser), 1837-1926; American Baptist Publication Society",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 347,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0ab45c3c59719c2aa6023ca0447962b08765da08c7c8d95ddcd0626a96256dd5",
+    "file_size_bytes": 549182,
+    "word_count": 78170
+  },
+  {
+    "title": "The History of the English General Baptists, Volume 1",
+    "author": "Taylor, Adam",
+    "year": 1525,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofenglish01tayl/historyofenglish01tayl_djvu.txt",
+    "download_url": "https://archive.org/download/historyofenglish01tayl/historyofenglish01tayl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-history-of-the-english-general-baptists-volume-1-taylor-adam.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofenglish01tayl/historyofenglish01tayl_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of the English General Baptists, Volume 1",
+      "author": "Taylor, Adam",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 693,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3fd29f039a73f72e78393cfd5df053995d04cdc64413ca348f5535f7940c8352",
+    "file_size_bytes": 1056912,
+    "word_count": 155819
+  },
+  {
+    "title": "The History of the English General Baptists, Volume 2",
+    "author": "Taylor, Adam",
+    "year": 1724,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofenglish02tayl/historyofenglish02tayl_djvu.txt",
+    "download_url": "https://archive.org/download/historyofenglish02tayl/historyofenglish02tayl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-history-of-the-english-general-baptists-volume-2-taylor-adam.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofenglish02tayl/historyofenglish02tayl_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of the English General Baptists, Volume 2",
+      "author": "Taylor, Adam",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 666,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "88c0b1d791f4dd9bd7fe7f6a6944b8986929fb42b6eacf62b03612d152b158e2",
+    "file_size_bytes": 1033010,
+    "word_count": 149959
+  },
+  {
+    "title": "The Early English Baptists, Volume 1",
+    "author": "Evans, Benjamin, 1803-1871",
+    "year": 1516,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/earlyenglishbapt01evan/earlyenglishbapt01evan_djvu.txt",
+    "download_url": "https://archive.org/download/earlyenglishbapt01evan/earlyenglishbapt01evan_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-early-english-baptists-volume-1-evans-benjamin-1803-1871.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/earlyenglishbapt01evan/earlyenglishbapt01evan_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Early English Baptists, Volume 1",
+      "author": "Evans, Benjamin, 1803-1871",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 505,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ae856b75532552394d6ac7dc708a421b34d2f2327232bc764ecd87661e662173",
+    "file_size_bytes": 760419,
+    "word_count": 113616
+  },
+  {
+    "title": "The Early English Baptists, Volume 2",
+    "author": "Evans, Benjamin, 1803-1871",
+    "year": 1644,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/earlyenglishbapt02evan/earlyenglishbapt02evan_djvu.txt",
+    "download_url": "https://archive.org/download/earlyenglishbapt02evan/earlyenglishbapt02evan_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-early-english-baptists-volume-2-evans-benjamin-1803-1871.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/earlyenglishbapt02evan/earlyenglishbapt02evan_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Early English Baptists, Volume 2",
+      "author": "Evans, Benjamin, 1803-1871",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 627,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "58d4784d15f3fadabdad10e874656db14ff6a6add27a061f75bbb1d424406503",
+    "file_size_bytes": 946326,
+    "word_count": 141125
+  },
+  {
+    "title": "History of the early Baptists : from the beginning of the Gospel to the rise of affusion as baptism, and of infant baptism, 28 A.D.-250 A.D. : with an appendix of the origin of the Baptists in America",
+    "author": "Duncan, William Cecil, 1824-1864",
+    "year": 1819,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/cu31924029451790/cu31924029451790_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029451790/cu31924029451790_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-early-baptists-from-the-beginning-of-the-gospel-to-the-rise-of-affusion-as-baptism-and-of-infan.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/cu31924029451790/cu31924029451790_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the early Baptists : from the beginning of the Gospel to the rise of affusion as baptism, and of infant baptism, 28 A.D.-250 A.D. : with an appendix of the origin of the Baptists in America",
+      "author": "Duncan, William Cecil, 1824-1864",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 322,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a071712a6bdd2afdb9c09564887e3bcb9df8f8e49ac4d9254c2ed66d3ee098b2",
+    "file_size_bytes": 429931,
+    "word_count": 72511
+  },
+  {
+    "title": "The Evils of Infant Baptism",
+    "author": "Robert Boyte C. Howell",
+    "year": 1529,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/evilsofinfantbap0000robe/evilsofinfantbap0000robe_djvu.txt",
+    "download_url": "https://archive.org/download/evilsofinfantbap0000robe/evilsofinfantbap0000robe_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-evils-of-infant-baptism-robert-boyte-c-howell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/evilsofinfantbap0000robe/evilsofinfantbap0000robe_djvu.txt.",
+    "notes": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Evils of Infant Baptism",
+      "author": "Robert Boyte C. Howell",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 390,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1c5501f3d71f417cbb873e14229f9fc540c439290b0dc5e980f4532ebc7f519d",
+    "file_size_bytes": 521582,
+    "word_count": 87840
+  },
+  {
+    "title": "Memorials of Baptist martyrs. With a preliminary historical essay",
+    "author": "American Baptist Publication Society; Brown, J. Newton (John Newton), 1803-1868; Belcher, Joseph, 1794-1859",
+    "year": 1819,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/memorialsofbapti00amer/memorialsofbapti00amer_djvu.txt",
+    "download_url": "https://archive.org/download/memorialsofbapti00amer/memorialsofbapti00amer_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/memorials-of-baptist-martyrs-with-a-preliminary-historical-essay-american-baptist-publication-society-brown-j-.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/memorialsofbapti00amer/memorialsofbapti00amer_djvu.txt.",
+    "notes": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and church-history background for pastors, teachers, and serious readers. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memorials of Baptist martyrs. With a preliminary historical essay",
+      "author": "American Baptist Publication Society; Brown, J. Newton (John Newton), 1803-1868; Belcher, Joseph, 1794-1859",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 367,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1ebaffb5175b5ee0ca347a8942eba4a859fc5d34b412f19b4506e8b6191d52ee",
+    "file_size_bytes": 531357,
+    "word_count": 82675
+  },
+  {
+    "title": "The History of Protestantism, Volume 3",
+    "author": "Wylie, James Aitken, 1808-1890",
+    "year": 1712,
+    "category": "Bible Handbooks",
+    "collection": "Church History",
+    "source_url": "https://archive.org/download/historyofprotest03wyli/historyofprotest03wyli_djvu.txt",
+    "download_url": "https://archive.org/download/historyofprotest03wyli/historyofprotest03wyli_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-history-of-protestantism-volume-3-wylie-james-aitken-1808-1890.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofprotest03wyli/historyofprotest03wyli_djvu.txt.",
+    "notes": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of Protestantism, Volume 3",
+      "author": "Wylie, James Aitken, 1808-1890",
+      "category": "Bible Handbooks",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2097,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "359d8056f33636736b1840995912169ea7d6145305ded073a1d042b1e3b63c81",
+    "file_size_bytes": 3190747,
+    "word_count": 471775
+  },
+  {
+    "title": "History of the crusades against the Albigenses, in the thirteenth century",
+    "author": "Sismondi, J.-C.-L. Simonde de (Jean-Charles-Léonard Simonde), 1773-1842",
+    "year": 1793,
+    "category": "Bible Handbooks",
+    "collection": "Church History",
+    "source_url": "https://archive.org/download/historyofcrusade00sism/historyofcrusade00sism_djvu.txt",
+    "download_url": "https://archive.org/download/historyofcrusade00sism/historyofcrusade00sism_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-crusades-against-the-albigenses-in-the-thirteenth-century-sismondi-j-c-l-simonde-de-jean-charle.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/historyofcrusade00sism/historyofcrusade00sism_djvu.txt.",
+    "notes": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the crusades against the Albigenses, in the thirteenth century",
+      "author": "Sismondi, J.-C.-L. Simonde de (Jean-Charles-Léonard Simonde), 1773-1842",
+      "category": "Bible Handbooks",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 352,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9fd2068b2c674dbcf6769b2508b39e00f8a4a13db0ac68d29c1b29380a8762ca",
+    "file_size_bytes": 531402,
+    "word_count": 79189
+  },
+  {
+    "title": "Remarks upon the ecclesiastical history of the ancient churches of the Albigenses.",
+    "author": "Allix, Pierre, 1641-1717",
+    "year": 1514,
+    "category": "Bible Handbooks",
+    "collection": "Church History",
+    "source_url": "https://archive.org/download/remarksuponeccle01alli/remarksuponeccle01alli_djvu.txt",
+    "download_url": "https://archive.org/download/remarksuponeccle01alli/remarksuponeccle01alli_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/remarks-upon-the-ecclesiastical-history-of-the-ancient-churches-of-the-albigenses-allix-pierre-1641-1717.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/remarksuponeccle01alli/remarksuponeccle01alli_djvu.txt.",
+    "notes": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Remarks upon the ecclesiastical history of the ancient churches of the Albigenses.",
+      "author": "Allix, Pierre, 1641-1717",
+      "category": "Bible Handbooks",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 457,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f163241f9f3a6b3ca3bf362046afea8e8a86ff57f84ea03f2944a330f1e41f94",
+    "file_size_bytes": 593660,
+    "word_count": 102722
+  },
+  {
+    "title": "Crises in the history of the papacy; a study of twenty famous popes whose careers and whose influence were important in the development of the church and in the history of the world",
+    "author": "McCabe, Joseph, 1867-1955",
+    "year": 1916,
+    "category": "Bible Handbooks",
+    "collection": "Church History",
+    "source_url": "https://archive.org/download/cu31924029388091/cu31924029388091_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029388091/cu31924029388091_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/crises-in-the-history-of-the-papacy-a-study-of-twenty-famous-popes-whose-careers-and-whose-influence-were-impo.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/cu31924029388091/cu31924029388091_djvu.txt.",
+    "notes": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Church-history background for teaching, apologetics, and historical study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Church History",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Crises in the history of the papacy; a study of twenty famous popes whose careers and whose influence were important in the development of the church and in the history of the world",
+      "author": "McCabe, Joseph, 1867-1955",
+      "category": "Bible Handbooks",
+      "collection": "Church History",
+      "badge": "Church History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 649,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8e67be0592ae8b335f27c1adb0483c1c9587f33ba853302795adecae254abaa9",
+    "file_size_bytes": 861393,
+    "word_count": 146089
   }
 ]
