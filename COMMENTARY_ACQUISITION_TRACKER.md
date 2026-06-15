@@ -4,17 +4,18 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 
 ## Current Snapshot
 
-- Public commentary entries: 4,016.
+- Public commentary entries: 5,284 active app entries.
 - Public commentary books covered: 66.
-- Public commentary authors represented: 7.
-- Commentary validation rows checked, including staging and review files: 6,394.
+- Public commentary authors represented: 14 active app authors.
+- Commentary validation rows checked, including staging and review files: 7,752.
 - Matthew Henry: 1,189 public verified entries, covering all 66 Bible books.
 - JFB: 1,189 public verified entries, covering all 66 Bible books.
 - Barnes: 771 public verified entries from reviewed public-domain batches.
 - Adam Clarke: 771 public verified entries from reviewed public-domain batches.
-- Wesley: 86 public verified New Testament entries.
-- Gill and H. A. Ironside remain sample-only until cleaner source/edition review is complete.
-- Pulpit Commentary, Biblical Illustrator, and Matthew Poole remain needs-review candidates only.
+- Wesley: 85 public verified New Testament entries.
+- Gill remains sample-only until a cleaner original source is verified.
+- H. A. Ironside and G. Campbell Morgan have reviewed StudyLight chapter-page imports for Hosea and selected Minor Prophets.
+- Pulpit Commentary, Biblical Illustrator, and Matthew Poole have selected reviewed chapter imports from source pages that state public-domain status and BibleSupport permission; larger full-set work still requires source-by-source review.
 
 ## Sprint Rules
 
@@ -29,19 +30,19 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 | Author | Source | Rights status | Chapters imported | Chapters remaining | Review status |
 | --- | --- | --- | --- | --- | --- |
 | Matthew Henry | https://www.ccel.org/h/henry/mhc2/MHC00000.HTM | Public-domain original work. Old CCEL archive page states public-domain text with no rights reserved. | 1,189 public verified chapters covering all 66 Bible books. | Complete for core chapter-level coverage; keep source notes and spot-check text quality as the UI grows. | Full parser staged and reviewed batches promoted |
-| H. A. Ironside | https://www.brethrenarchive.org/people/harry-a-ironside/pamphlets/addresses-on-the-gospel-of-john/ and related source paths | Mixed. Romans 1928 source is public domain in the U.S.; John/Luke samples are curated summaries until renewal and edition audit are complete. | 3 chapters: John 3; Romans 5; Luke 24 | Genesis 1 and Exodus 3 remain blocked until exact source and rights verification. | Verified samples only |
+| H. A. Ironside | https://www.studylight.org/commentaries/eng/isn/ plus archival source paths | Mixed by work/edition. StudyLight chapter pages imported here state public-domain status and BibleSupport permission; other Ironside works still need exact source and renewal review. | 57 active public entries including Hosea 1-14 and selected Minor Prophets, plus earlier reviewed samples. | Continue only from exact chapter pages or editions with source/rights documentation. | Reviewed StudyLight batches plus source-specific samples |
 | Albert Barnes | https://www.studylight.org/commentaries/eng/bnb/ | StudyLight Barnes chapter pages state: "These files are public domain." Barnes died in 1870; source pages cite the work as 1870. | 771 public verified chapters including Genesis 1-50, Exodus, Leviticus, Numbers, Deuteronomy, Joshua 1-5, Psalms, Prophets, Gospels/Acts, Romans, 1 Corinthians, Amos, and Revelation. | Continue only from chapter pages that preserve public-domain statements. | Completion sprint batches promoted |
 | Jamieson-Fausset-Brown | https://www.ccel.org/j/jfb/jfb/old/JFB00.htm | Public-domain original work first published in 1871; CCEL electronic edition states public-domain status. | 1,189 public verified chapters covering all 66 Bible books. | Complete for core chapter-level coverage; future work is quality review and comparison UX. | Full pipeline staged and reviewed batches promoted |
-| John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 86 public verified New Testament chapters: Acts 1-25; John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Coverage sprint Acts batch promoted |
+| John Wesley | https://www.ccel.org/ccel/w/wesley/notes.xml | CCEL XML metadata lists Wesley's Notes on the Bible as Public Domain. | 85 public verified New Testament chapters: Acts 1-25; John; Romans; Luke 24; Revelation. | Wesley's source is New Testament only; Old Testament requested books remain unavailable for this set. | Coverage sprint Acts batch promoted |
 | John Gill | https://www.biblestudytools.com/commentaries/gills-exposition-of-the-bible/ | Existing small reviewed samples remain. A StudyLight Gill path was reviewed and found to use a modernized Larry Pierce edition with rights reserved, so it is not safe for expansion. | 7 reviewed sample entries: John 1; John 3; John 5; Romans 1; Romans 8; Luke 24; Amos 9 | Find a stable original public-domain Gill source before any larger import. | Samples only; expansion blocked pending source review |
 | Adam Clarke | https://www.studylight.org/commentaries/eng/acc/ | StudyLight Clarke chapter pages state: "These files are public domain." Source pages cite Clarke's commentary as 1832. | 771 public verified chapters including Genesis 1-50, Exodus, Leviticus, Numbers, Deuteronomy, Joshua 1-5, Psalms, Prophets, Gospels/Acts, Romans, 1 Corinthians, Amos, and Revelation. | Continue only from chapter pages that preserve public-domain statements. | Completion sprint batches promoted |
-| G. Campbell Morgan | https://www.studylight.org/commentaries/eng/gcm/ | StudyLight Morgan chapter pages state: "These files are public domain." Text Courtesy of BibleSupport.com. Used by Permission. | 14 public verified chapters: Hosea 1-14. | Continue only from chapter pages that preserve public-domain statements; avoid modern edited Morgan compilations unless separately reviewed. | Hosea batch promoted |
+| G. Campbell Morgan | https://www.studylight.org/commentaries/eng/gcm/ | StudyLight Morgan chapter pages state: "These files are public domain." Text Courtesy of BibleSupport.com. Used by Permission. | 57 active public verified chapters: Hosea 1-14 plus Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi. | Continue only from chapter pages that preserve public-domain statements; avoid modern edited Morgan compilations unless separately reviewed. | Hosea and selected Minor Prophets promoted |
 
 ## Tier 2 Acquisition Queue
 
 | Author | Source | Rights status | Chapters imported | Chapters remaining | Review status |
 | --- | --- | --- | --- | --- | --- |
-| H. A. Ironside | Exact editions and StudyLight/archival pages required for each work | Mixed by title/edition. Import only exact sources with verified U.S. public-domain or documented permission status. | 76 public verified entries including Hosea 1-14, Amos 1-9, Daniel, Mark, Romans 5, John 3, Luke 24, and Revelation. | Identify additional Bible-book works and verify edition/source status before import. | Source-by-source review |
+| H. A. Ironside | Exact editions and StudyLight/archival pages required for each work | Mixed by title/edition. Import only exact sources with verified U.S. public-domain or documented permission status. | 57 active public entries from reviewed active collections; additional reviewed/source rows may exist outside active display. | Identify additional Bible-book works and verify edition/source status before import. | Source-by-source review |
 | William Kelly | Brethren Archive / original public-domain editions to be verified | Likely public-domain for many original works, but exact source and edition review required. | 0 commentary entries | Select one passage-based work, verify source, stage a small sample. | Needs review |
 | Arno C. Gaebelein | Original editions / archive source required | Needs exact edition and renewal review before public import. | 0 commentary entries | Verify source and choose a small reviewed sample. | Needs review |
 | F. W. Grant | Original public-domain source required | Needs source and edition review before public import. | 0 commentary entries | Identify Bible-reference structure and validate sample parsing. | Needs review |
@@ -69,7 +70,7 @@ Father's Business Bible Study is expanding commentary depth by adding one review
 - Public commentary now totals 4,016 verified entries.
 - Matthew Henry and JFB each cover all 1,189 Bible chapters.
 - Barnes and Adam Clarke each cover 771 public verified chapters.
-- Wesley remains at 86 public verified New Testament chapters.
+- Wesley remains at 85 public verified New Testament chapters.
 - Gill remains sample-only pending a cleaner original public-domain source.
 - H. A. Ironside remains sample-only except where source and edition review is clear.
 - No Pulpit Commentary, Biblical Illustrator, Matthew Poole, Kelly, Darby, Grant, or Gaebelein commentary text was imported in this sprint.
@@ -114,7 +115,7 @@ Phase 6 continues verified public JFB promotion in reviewed batches of 25-50 cha
 - JFB now has 651 public verified entries.
 - Matthew Henry remains at 457 public verified entries while the remaining staged chapters wait for review.
 - Barnes and Adam Clarke remain at 403 public verified entries each.
-- Wesley remains at 86 public verified entries.
+- Wesley remains at 85 public verified entries.
 - Gill remains blocked for expansion until a cleaner original public-domain source is verified.
 - Phase 6 public JFB files:
   - `data/imports/jfb-reviewed-phase-6-leviticus-commentary.json`

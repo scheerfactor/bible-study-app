@@ -52,7 +52,9 @@ import matthewHenryPhase1Commentary from "../../data/imports/matthew-henry-phase
 import matthewHenryReviewedBatch2Commentary from "../../data/imports/matthew-henry-reviewed-batch-2-commentary.json";
 import hAIronsidePhase2Commentary from "../../data/imports/h-a-ironside-phase-2-commentary.json";
 import hAIronsideHoseaCommentary from "../../data/imports/h-a-ironside-hosea-commentary.json";
+import hAIronsideMinorProphetsCommentary from "../../data/imports/h-a-ironside-minor-prophets-commentary.json";
 import gCampbellMorganHoseaCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
+import gCampbellMorganMinorProphetsCommentary from "../../data/imports/g-campbell-morgan-minor-prophets-commentary.json";
 import treasuryOfDavidReviewedPsalmsCommentary from "../../data/imports/treasury-of-david-reviewed-psalms-1-87-commentary.json";
 import commentaryAcquisitionPhase1Samples from "../../data/imports/commentary-acquisition-phase-1-samples.json";
 import commentaryAcquisitionPhase2Batch from "../../data/imports/commentary-acquisition-phase-2-reviewed-batch.json";
@@ -8857,7 +8859,9 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewHenryReviewedBatch2Commentary as CommentaryEntry[]),
   ...(hAIronsidePhase2Commentary as CommentaryEntry[]),
   ...(hAIronsideHoseaCommentary as CommentaryEntry[]),
+  ...(hAIronsideMinorProphetsCommentary as CommentaryEntry[]),
   ...(gCampbellMorganHoseaCommentary as CommentaryEntry[]),
+  ...(gCampbellMorganMinorProphetsCommentary as CommentaryEntry[]),
   ...(treasuryOfDavidReviewedPsalmsCommentary as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase1Samples as CommentaryEntry[]),
   ...(commentaryAcquisitionPhase2Batch as CommentaryEntry[]),

@@ -5,11 +5,11 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,302
-- Active public commentary entries shown in the app: 5,198
-- Reviewed public commentary import rows: 5,288
-- Commentary validation rows checked, including staging/review files: 7,666
-- Commentary authors represented publicly: 23
-- Library authors represented: 461
+- Active public commentary entries shown in the app: 5,284
+- Reviewed public commentary import rows: 5,374
+- Commentary validation rows checked, including staging/review files: 7,752
+- Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
+- Library authors represented: 476
 - Public Library duplicate title/author groups: 0
 
 ## Latest Hosea Commentary Sprint
@@ -20,6 +20,15 @@ Added 28 verified public commentary entries for Hosea:
 - G. Campbell Morgan, Hosea 1-14
 
 Both batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. Each entry preserves its chapter source URL, rights basis, recommended use, and review status.
+
+## Latest Minor Prophets Commentary Sprint
+
+Added 86 verified public commentary entries for selected Minor Prophets:
+
+- H. A. Ironside, Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi
+- G. Campbell Morgan, Joel, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai, Zechariah, and Malachi
+
+Both batches were generated from StudyLight chapter pages that state public-domain status and BibleSupport permission. The added chapters now have nine active commentary voices where already-covered by Matthew Henry, JFB, Barnes, Clarke, Poole, Pulpit Commentary, Biblical Illustrator, Morgan, and Ironside.
 
 ## Latest High-Value Books Sprint
 
@@ -201,7 +210,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Matthew Poole | 309 |
 | Joseph S. Exell and H. D. M. Spence-Jones / Pulpit Commentary | 309 |
 | C. H. Spurgeon / Treasury of David | 150 |
-| John Wesley | 86 |
+| John Wesley | 85 |
 | H. A. Ironside | 76 |
 | G. Campbell Morgan | 14 |
 | Amos public-domain specialist/sample voices | 9 each |
