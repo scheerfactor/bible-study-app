@@ -19433,6 +19433,49 @@ function TodayScreen({
         </div>
       </section>
 
+      <section className="grid gap-3 lg:grid-cols-3">
+        {[
+          {
+            title: "Pastor or teacher",
+            body: "Start with the passage, open the study guide, then send notes into Sermons when the lesson direction is clear.",
+            primary: "Study Hosea 4-9",
+            secondary: "Open Sermons",
+            onPrimary: onStudyHosea,
+            onSecondary: onOpenSermonResume,
+          },
+          {
+            title: "Daily growth",
+            body: "Read the chapter, answer the journal prompt, pray the passage, and mark today complete.",
+            primary: "Start Journal",
+            secondary: "Open Prayer",
+            onPrimary: onCreateJournal,
+            onSecondary: onOpenPrayer,
+          },
+          {
+            title: "Book lover",
+            body: "Search by author or subject, open one trusted book, then use Read or Listen from the same card.",
+            primary: "Open Library",
+            secondary: "Listen",
+            onPrimary: onOpenLibrary,
+            onSecondary: onListenLibrary,
+          },
+        ].map((card) => (
+          <article key={`persona-path-${card.title}`} className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Quick path</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{card.title}</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{card.body}</p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={card.onPrimary} type="button">
+                {card.primary}
+              </button>
+              <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={card.onSecondary} type="button">
+                {card.secondary}
+              </button>
+            </div>
+          </article>
+        ))}
+      </section>
+
       <section className="grid gap-3 md:grid-cols-5">
         <BetaResumeCard
           icon={<BookOpen size={17} />}
@@ -20495,6 +20538,30 @@ function PrayerScreen({
         </div>
       </section>
 
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Simple setup</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Build a useful prayer list in four entries</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--muted)]">
+              Add one church member, one missionary, one ministry, and one special request. The daily flow will rotate them and keep answered prayers separate.
+            </p>
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:min-w-[420px]">
+            {["Church Members", "Missionaries", "Ministries", "Special Requests"].map((category) => (
+              <button
+                key={`prayer-setup-${category}`}
+                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-left text-sm font-semibold text-[var(--green)]"
+                onClick={() => onDraftChange({ ...draft, category: category as PrayerCategory })}
+                type="button"
+              >
+                Add {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="grid gap-3 lg:grid-cols-4">
         <PrayerFocusStep label="Church/member" entry={churchFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
         <PrayerFocusStep label="Missionary" entry={missionaryFocus} onMarkPrayed={onMarkPrayed} onUpdateEntry={onUpdateEntry} />
@@ -20849,7 +20916,7 @@ function PrayerFocusStep({
         </div>
       ) : (
         <p className="mt-3 rounded-xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">
-          Add a {label.toLowerCase()} request to include it in the guided flow.
+          Add {label.toLowerCase().startsWith("special") ? "a special request" : `a ${label.toLowerCase()} request`} to include it in the guided flow.
         </p>
       )}
     </article>
@@ -29116,13 +29183,8 @@ function libraryResourceMatchesDiscoveryFilter(resource: LibraryResource, filter
 
 function libraryAuthorProfileMatches(profile: LibraryAuthorProfile, terms: string[]) {
   const haystack = [
+    profile.id,
     profile.name,
-    profile.shortLabel,
-    profile.biography,
-    profile.commentary,
-    ...profile.subjects,
-    ...profile.recommendedReadingOrder,
-    ...profile.relatedAuthorIds,
   ]
     .join(" ")
     .toLowerCase();
@@ -30714,6 +30776,28 @@ function LibraryScreen({
         )}
       </section>
 
+      {!browsingAllResources && (
+        <LibraryShelf title="Search Results">
+          {displayedLibraryResources.length ? displayedLibraryResources.map((resource) => (
+            <LibraryResourceCard
+              key={`search-result-${resource.slug}`}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+            />
+          )) : (
+            <div className="rounded-2xl border border-[var(--line)] bg-white p-5 text-sm font-semibold text-[var(--muted)] shadow-sm">
+              No resources matched that search. Try an author name, topic, or a broader filter.
+            </div>
+          )}
+        </LibraryShelf>
+      )}
+
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
         <div className="grid gap-5 xl:grid-cols-[1.1fr_0.9fr]">
           <div>
@@ -31290,25 +31374,23 @@ function LibraryScreen({
         </LibraryShelf>
       ))}
 
-      <LibraryShelf title={searchTerm || activeCategory !== "All" ? "Search Results" : "All Resources"}>
-        {displayedLibraryResources.length ? displayedLibraryResources.map((resource) => (
-          <LibraryResourceCard
-            key={resource.slug}
-            resource={resource}
-            progress={progressState[resource.slug]}
-            listeningProgress={listeningProgress[resource.slug]}
-            completed={Boolean(completedState[resource.slug])}
-            onOpen={() => onOpenDetail(resource.slug)}
-            onOpenReader={() => onOpenReader(resource.slug)}
-            onOpenAuthor={() => onOpenAuthor(resource.author)}
-            onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
-          />
-        )) : (
-          <div className="rounded-2xl border border-[var(--line)] bg-white p-5 text-sm font-semibold text-[var(--muted)] shadow-sm">
-            No resources matched that search. Try an author name, topic, or a broader filter.
-          </div>
-        )}
-      </LibraryShelf>
+      {browsingAllResources && (
+        <LibraryShelf title="All Resources">
+          {displayedLibraryResources.map((resource) => (
+            <LibraryResourceCard
+              key={resource.slug}
+              resource={resource}
+              progress={progressState[resource.slug]}
+              listeningProgress={listeningProgress[resource.slug]}
+              completed={Boolean(completedState[resource.slug])}
+              onOpen={() => onOpenDetail(resource.slug)}
+              onOpenReader={() => onOpenReader(resource.slug)}
+              onOpenAuthor={() => onOpenAuthor(resource.author)}
+              onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+            />
+          ))}
+        </LibraryShelf>
+      )}
       {browsingAllResources && resources.length > displayedLibraryResources.length && (
         <div className="-mt-2 rounded-2xl border border-[var(--line)] bg-white p-4 text-center shadow-sm">
           <p className="text-sm font-semibold text-[var(--muted)]">
@@ -40573,6 +40655,38 @@ function SermonWorkspaceScreen({
           <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onBackToBible} type="button">Back to Bible</button>
         </div>
         {syncMessage && <p className="mt-3 text-sm font-semibold text-[var(--muted)]">{syncMessage}</p>}
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Pastor quick start</p>
+            <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Prepare one message without hunting through tools</h2>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Use this order for a real sermon or Sunday School lesson: choose the passage, collect study notes, draft the outline, generate slides, then rehearse in preaching mode.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onCreateDraft("Sermon")} type="button">New Sermon</button>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={() => onCreateDraft("Lesson")} type="button">New Lesson</button>
+            <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onLoadSampleSermon} type="button">Use John 3 Sample</button>
+          </div>
+        </div>
+        <div className="mt-5 grid gap-3 md:grid-cols-5">
+          {[
+            ["1", "Passage", draft.passage || "Add John 3, Hosea 4-9, or next lesson text."],
+            ["2", "Study", "Pull from Passage Guide, commentary, Strong's, Webster, notes, and journal."],
+            ["3", "Outline", "Write title, theme, introduction, points, application, and invitation."],
+            ["4", "Slides", "Generate title, Scripture, point, quote, application, and closing slides."],
+            ["5", "Preach", "Use large text, timer, section progress, and next-section preview."],
+          ].map(([step, title, detail]) => (
+            <article key={`sermon-quick-start-${step}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-sm font-semibold text-[var(--green)]">{step}</span>
+              <p className="mt-3 text-sm font-semibold text-[var(--ink)]">{title}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{detail}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       {view === "manager" ? (
