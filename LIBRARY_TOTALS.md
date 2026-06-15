@@ -5,7 +5,8 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,302
-- Public commentary entries shown in the app: 5,288
+- Active public commentary entries shown in the app: 5,198
+- Reviewed public commentary import rows: 5,288
 - Commentary validation rows checked, including staging/review files: 7,666
 - Commentary authors represented publicly: 23
 - Library authors represented: 461

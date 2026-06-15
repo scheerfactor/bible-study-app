@@ -2689,6 +2689,7 @@ const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Poole's English Annotations on the Holy Bible",
   "The Pulpit Commentary",
   "The Biblical Illustrator",
+  "Morgan's Exposition on the Whole Bible",
 ];
 const AMOS_VERIFIED_COMMENTARY_COLLECTIONS = [
   "Calvin's Commentary on the Bible",
