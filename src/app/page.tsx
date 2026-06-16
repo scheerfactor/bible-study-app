@@ -12665,7 +12665,7 @@ function sermonPrintHtml(entry: SermonEntry, series: SermonSeries | null) {
   return `<!doctype html><html><head><meta charset="utf-8"><title>${entry.title || "Sermon Notes"}</title><style>body{font-family:Georgia,serif;line-height:1.55;margin:48px;color:#1f211c}h1{font-size:32px}h2{margin-top:28px;border-bottom:1px solid #ddd;padding-bottom:6px}.bullet{font-size:22px;margin:14px 0;padding-left:18px;border-left:4px solid #78966d}@media print{body{margin:32px}.bullet{break-inside:avoid}}</style></head><body>${body}</body></html>`;
 }
 
-function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 18): LibraryProgress {
+function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title" | "author">, fontSize = 20): LibraryProgress {
   const now = new Date().toISOString();
   return {
     slug: resource.slug,
@@ -12673,7 +12673,7 @@ function defaultLibraryProgress(resource: Pick<LibraryResource, "slug" | "title"
     author: resource.author,
     progress: 0,
     fontSize,
-    lineSpacing: 1.65,
+    lineSpacing: 1.72,
     readingWidth: "comfortable",
     theme: "sepia",
     readingGoalMinutes: 20,
@@ -12715,7 +12715,7 @@ function normalizeLibraryProgress(progress: Partial<LibraryProgress> & Pick<Libr
     ...fallback,
     ...progress,
     progress: Math.min(100, Math.max(0, Number(progress.progress ?? fallback.progress))),
-    fontSize: Math.min(26, Math.max(15, Number(progress.fontSize ?? fallback.fontSize))),
+    fontSize: Math.min(28, Math.max(16, Number(progress.fontSize ?? fallback.fontSize))),
     lineSpacing: Math.min(2.2, Math.max(1.35, Number(progress.lineSpacing ?? fallback.lineSpacing))),
     readingWidth: progress.readingWidth ?? fallback.readingWidth,
     theme: progress.theme ?? fallback.theme,
@@ -13237,6 +13237,28 @@ function chunkSpeechText(text: string) {
 
   if (current) chunks.push(current);
   return chunks;
+}
+
+function cleanLibraryReaderText(text: string, title: string) {
+  const trimmed = text.trim();
+  if (!trimmed) return trimmed;
+
+  const frontMatterWindow = trimmed.slice(0, 8000);
+  const escapedTitle = title.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+  if (!escapedTitle) return trimmed;
+
+  const titleMatches = Array.from(frontMatterWindow.matchAll(new RegExp(escapedTitle, "gi")));
+  if (titleMatches.length < 2) return trimmed;
+
+  const secondTitleIndex = titleMatches[1].index ?? 0;
+  const afterTitle = frontMatterWindow.slice(secondTitleIndex);
+  const startMarker = afterTitle.search(/\b(?:TO YOU!?|PREFACE|INTRODUCTION|CHAPTER\s+(?:I|1|ONE)|SECTION\s+(?:I|1|ONE))\b/i);
+  if (startMarker < 0 || startMarker > 4500) return trimmed;
+
+  const absoluteStart = secondTitleIndex + startMarker;
+  if (absoluteStart < 400) return trimmed;
+
+  return trimmed.slice(absoluteStart).trim();
 }
 
 function bibleSpeechParts(
@@ -13895,7 +13917,7 @@ export default function Home() {
   const [selectedSpeechVoiceURI, setSelectedSpeechVoiceURI] = useState("");
   const [voiceSettings, setVoiceSettings] = useState<VoiceSettings>(DEFAULT_VOICE_SETTINGS);
   const [todayProverbDay, setTodayProverbDay] = useState(1);
-  const [libraryFontSize, setLibraryFontSize] = useState(18);
+  const [libraryFontSize, setLibraryFontSize] = useState(20);
   const [speechState, setSpeechState] = useState<SpeechState>({
     targetId: null,
     label: "",
@@ -16880,7 +16902,7 @@ export default function Home() {
       const data = (await response.json()) as { resource?: LibraryResource; text?: string };
       setActiveLibraryText(data.text ?? "");
       const savedProgress = libraryProgress[slug];
-      setLibraryFontSize(savedProgress?.fontSize ?? 18);
+      setLibraryFontSize(savedProgress?.fontSize ?? 20);
       window.requestAnimationFrame(() => {
         const node = libraryReaderRef.current;
         if (!node || !savedProgress) return;
@@ -23727,8 +23749,8 @@ function BibleReader({
     },
   ];
   return (
-    <div className="space-y-4 p-4 md:p-8">
-      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:sticky md:top-[232px] md:z-10 md:rounded-3xl md:p-4">
+    <div className="space-y-4 p-3 md:p-6">
+      <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Quick Navigation</p>
@@ -23875,79 +23897,93 @@ function BibleReader({
           </div>
         </div>
 
-        <BibleBookMasteryCard
-          chapter={chapter}
-          stats={bookMastery}
-          onMarkRead={onMarkChapterRead}
-          onMarkListened={onMarkChapterListened}
-        />
+        <details className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--green)]">
+            Navigation tools, markers, and progress
+          </summary>
+          <div className="mt-3 space-y-3">
+            <BibleBookMasteryCard
+              chapter={chapter}
+              stats={bookMastery}
+              onMarkRead={onMarkChapterRead}
+              onMarkListened={onMarkChapterListened}
+            />
 
-        <BibleMarkerRow markers={bibleMarkers} onOpenMarker={onOpenMarker} onSaveMarker={onSaveMarker} />
+            <BibleMarkerRow markers={bibleMarkers} onOpenMarker={onOpenMarker} onSaveMarker={onSaveMarker} />
 
-        <PassageShortcutRow
-          label="Favorites"
-          emptyText="Pin a passage for one-tap access."
-          passages={favoritePassages}
-          onOpenPassage={onOpenPassage}
-        />
-        <PassageShortcutRow
-          label="Recent"
-          emptyText="Recent passages will appear as you move through the Bible."
-          passages={recentPassages}
-          onOpenPassage={onOpenPassage}
-        />
+            <PassageShortcutRow
+              label="Favorites"
+              emptyText="Pin a passage for one-tap access."
+              passages={favoritePassages}
+              onOpenPassage={onOpenPassage}
+            />
+            <PassageShortcutRow
+              label="Recent"
+              emptyText="Recent passages will appear as you move through the Bible."
+              passages={recentPassages}
+              onOpenPassage={onOpenPassage}
+            />
+          </div>
+        </details>
       </section>
 
-      <AtAGlanceStudyPanel
-        passage={`${book} ${chapter}`}
-        chapterSummary={workspaceSummary}
-        keyVerse={workspaceKeyVerse}
-        keyVerseText={workspaceKeyVerseText}
-        mainTheme={workspaceMainTheme}
-        keyWords={chapterAnalysis.repeatedWords.slice(0, 10)}
-        strongEntries={workspaceStrongEntries}
-        topCrossReferences={workspaceTopCrossReferences}
-        backgroundInfo={bibleBackground}
-        people={chapterConnectionsData.people}
-        places={chapterConnectionsData.places}
-        timeline={chapterConnectionsData.timeline}
-        crossReferenceCount={chapterCrossReferences.length}
-        commentaryCount={chapterCommentaryEntries.length}
-        commentaryAuthors={commentaryAuthors}
-        dictionaryEntries={chapterDictionaryEntries}
-        chapterThemes={activeThemes}
-        relatedBooks={atAGlanceRelatedBooks}
-        bestResources={workspaceBestResources}
-        playlist={activePlaylist}
-        playlistTotalSeconds={activePlaylistSeconds}
-        playlistRemainingSeconds={activePlaylistRemainingSeconds}
-        currentPlaylistItem={currentPlaylistItem}
-        chapterReadingMinutes={chapterReadingMinutes}
-        chapterProgressPercent={progressPercent}
-        discovery={sermonDiscovery}
-        sermonIdeas={workspaceSermonIdeas}
-        discussionQuestions={workspaceDiscussionQuestions}
-        applications={workspaceApplications}
-        savedSessions={studySessions}
-        currentStudySession={currentStudySession}
-        workspaceMessage={studyWorkspaceMessage}
-        launchWord={studyLaunchWord}
-        onStudyThisChapter={onOpenPassageGuide}
-        onOpenCommentary={onOpenCommentaryCenter}
-        onOpenBackground={onOpenPassageGuide}
-        onOpenStrong={() => onOpenStudyToolSearch(studyLaunchWord || book, "strongs")}
-        onOpenWebster={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
-        onOpenTsk={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
-        onOpenThemeExplorer={onOpenThemeExplorer}
-        onOpenRelatedBook={onOpenLibraryResource}
-        onOpenReference={onOpenReference}
-        onBuildSermon={onBuildSermonFromStudy}
-        onSendToJournal={onSendStudyToJournal}
-        onSaveStudySession={saveCurrentStudySession}
-        onExportStudySession={exportCurrentStudySession}
-        onContinueStudySession={continueStudySession}
-        onOpenAmosStudyPath={book === "Amos" ? onOpenAmosStudyPath : undefined}
-      />
+      <details className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+        <summary className="cursor-pointer list-none text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">
+          Study tools for {book} {chapter}
+        </summary>
+        <div className="mt-4">
+          <AtAGlanceStudyPanel
+            passage={`${book} ${chapter}`}
+            chapterSummary={workspaceSummary}
+            keyVerse={workspaceKeyVerse}
+            keyVerseText={workspaceKeyVerseText}
+            mainTheme={workspaceMainTheme}
+            keyWords={chapterAnalysis.repeatedWords.slice(0, 10)}
+            strongEntries={workspaceStrongEntries}
+            topCrossReferences={workspaceTopCrossReferences}
+            backgroundInfo={bibleBackground}
+            people={chapterConnectionsData.people}
+            places={chapterConnectionsData.places}
+            timeline={chapterConnectionsData.timeline}
+            crossReferenceCount={chapterCrossReferences.length}
+            commentaryCount={chapterCommentaryEntries.length}
+            commentaryAuthors={commentaryAuthors}
+            dictionaryEntries={chapterDictionaryEntries}
+            chapterThemes={activeThemes}
+            relatedBooks={atAGlanceRelatedBooks}
+            bestResources={workspaceBestResources}
+            playlist={activePlaylist}
+            playlistTotalSeconds={activePlaylistSeconds}
+            playlistRemainingSeconds={activePlaylistRemainingSeconds}
+            currentPlaylistItem={currentPlaylistItem}
+            chapterReadingMinutes={chapterReadingMinutes}
+            chapterProgressPercent={progressPercent}
+            discovery={sermonDiscovery}
+            sermonIdeas={workspaceSermonIdeas}
+            discussionQuestions={workspaceDiscussionQuestions}
+            applications={workspaceApplications}
+            savedSessions={studySessions}
+            currentStudySession={currentStudySession}
+            workspaceMessage={studyWorkspaceMessage}
+            launchWord={studyLaunchWord}
+            onStudyThisChapter={onOpenPassageGuide}
+            onOpenCommentary={onOpenCommentaryCenter}
+            onOpenBackground={onOpenPassageGuide}
+            onOpenStrong={() => onOpenStudyToolSearch(studyLaunchWord || book, "strongs")}
+            onOpenWebster={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
+            onOpenTsk={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
+            onOpenThemeExplorer={onOpenThemeExplorer}
+            onOpenRelatedBook={onOpenLibraryResource}
+            onOpenReference={onOpenReference}
+            onBuildSermon={onBuildSermonFromStudy}
+            onSendToJournal={onSendStudyToJournal}
+            onSaveStudySession={saveCurrentStudySession}
+            onExportStudySession={exportCurrentStudySession}
+            onContinueStudySession={continueStudySession}
+            onOpenAmosStudyPath={book === "Amos" ? onOpenAmosStudyPath : undefined}
+          />
+        </div>
+      </details>
 
       <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -24366,51 +24402,58 @@ function BibleReader({
         )}
       </section>
 
-      <ChapterStudyWorkflow
-        allVerses={allVerses}
-        analysis={chapterAnalysis}
-        connections={chapterConnectionsData}
-        background={bibleBackground}
-        chapterCommentaryEntries={chapterCommentaryEntries}
-        allCommentaryEntries={allCommentaryEntries}
-        chapterCrossReferences={chapterCrossReferences}
-        chapterKeyVerses={chapterKeyVerses}
-        chapterResourceRecommendations={chapterResourceRecommendations}
-        libraryResources={libraryResources}
-        bookIntroduction={bookIntroduction}
-        chapterNotes={chapterNotes}
-        explorer={explorer}
-        explorerWord={explorerWord}
-        wordHighlightSets={wordHighlightSets}
-        memoryForChapter={memoryForChapter}
-        selectedVerse={selectedVerse}
-        versesByRef={versesByRef}
-        onAddMemoryVerse={onAddMemoryVerse}
-        onExplorerWordChange={setExplorerWord}
-        onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
-        onAddWordHighlightSet={onAddWordHighlightSet}
-        onToggleWordHighlightSet={onToggleWordHighlightSet}
-        onRemoveWordHighlightSet={onRemoveWordHighlightSet}
-        onClearWordHighlightSets={onClearWordHighlightSets}
-        onAddWordStudyToSermon={onAddWordStudyToSermon}
-        onAddWordStudyToNote={onAddWordStudyToNote}
-        onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
-        onOpenBookIntroduction={onOpenBookIntroduction}
-        onOpenLibraryResource={onOpenLibraryResource}
-        onOpenStudyToolSearch={onOpenStudyToolSearch}
-        onListenCommentary={onListenCommentary}
-        onListenChapterRange={onListenChapterRange}
-        onAddPlaylistItem={onAddPlaylistItem}
-        onOpenReference={onOpenReference}
-        onOpenPersonStudy={onOpenPersonStudy}
-        onRemoveMemoryVerse={onRemoveMemoryVerse}
-        onUpdateMemoryProgress={onUpdateMemoryProgress}
-        onBuildSermonFromStudy={onBuildSermonFromStudy}
-        onCreateSlidesFromStudy={onCreateSlidesFromStudy}
-        onPreachFromStudy={onPreachFromStudy}
-      />
+      <details className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
+        <summary className="cursor-pointer list-none text-sm font-semibold uppercase tracking-[0.14em] text-[var(--green)]">
+          Deep study workspace
+        </summary>
+        <div className="mt-4">
+          <ChapterStudyWorkflow
+            allVerses={allVerses}
+            analysis={chapterAnalysis}
+            connections={chapterConnectionsData}
+            background={bibleBackground}
+            chapterCommentaryEntries={chapterCommentaryEntries}
+            allCommentaryEntries={allCommentaryEntries}
+            chapterCrossReferences={chapterCrossReferences}
+            chapterKeyVerses={chapterKeyVerses}
+            chapterResourceRecommendations={chapterResourceRecommendations}
+            libraryResources={libraryResources}
+            bookIntroduction={bookIntroduction}
+            chapterNotes={chapterNotes}
+            explorer={explorer}
+            explorerWord={explorerWord}
+            wordHighlightSets={wordHighlightSets}
+            memoryForChapter={memoryForChapter}
+            selectedVerse={selectedVerse}
+            versesByRef={versesByRef}
+            onAddMemoryVerse={onAddMemoryVerse}
+            onExplorerWordChange={setExplorerWord}
+            onLookupWord={(word) => onWordClick(word, selectedVerse.ref)}
+            onAddWordHighlightSet={onAddWordHighlightSet}
+            onToggleWordHighlightSet={onToggleWordHighlightSet}
+            onRemoveWordHighlightSet={onRemoveWordHighlightSet}
+            onClearWordHighlightSets={onClearWordHighlightSets}
+            onAddWordStudyToSermon={onAddWordStudyToSermon}
+            onAddWordStudyToNote={onAddWordStudyToNote}
+            onAddWordStudyToTeachingOutline={onAddWordStudyToTeachingOutline}
+            onOpenBookIntroduction={onOpenBookIntroduction}
+            onOpenLibraryResource={onOpenLibraryResource}
+            onOpenStudyToolSearch={onOpenStudyToolSearch}
+            onListenCommentary={onListenCommentary}
+            onListenChapterRange={onListenChapterRange}
+            onAddPlaylistItem={onAddPlaylistItem}
+            onOpenReference={onOpenReference}
+            onOpenPersonStudy={onOpenPersonStudy}
+            onRemoveMemoryVerse={onRemoveMemoryVerse}
+            onUpdateMemoryProgress={onUpdateMemoryProgress}
+            onBuildSermonFromStudy={onBuildSermonFromStudy}
+            onCreateSlidesFromStudy={onCreateSlidesFromStudy}
+            onPreachFromStudy={onPreachFromStudy}
+          />
+        </div>
+      </details>
 
-      <article className="rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-8 md:py-7">
+      <article className="mx-auto w-full max-w-5xl rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-10 md:py-8">
         <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-stone-300/70 pb-4">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
@@ -24419,7 +24462,7 @@ function BibleReader({
           <p className="text-sm font-semibold text-[var(--green)]">{verses.length} verses</p>
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-2">
           {verses.map((verse) => {
             const highlighted = highlightsByRef.has(verse.ref);
             const hasNote = notesByRef.has(verse.ref);
@@ -24430,7 +24473,7 @@ function BibleReader({
               <div
                 key={verse.ref}
                 ref={selected ? selectedVerseRef : null}
-                className={`group rounded-2xl border px-3 py-3 transition ${
+                className={`group rounded-2xl border px-2 py-3 transition md:px-4 md:py-4 ${
                   selected
                     ? "border-[var(--gold)] bg-white shadow-sm"
                     : "border-transparent hover:border-stone-200 hover:bg-white/70"
@@ -24439,7 +24482,7 @@ function BibleReader({
                 role="button"
                 tabIndex={0}
               >
-                <p className="font-serif text-[1.2rem] leading-9 text-[var(--scripture-ink)] md:text-[1.34rem] md:leading-10">
+                <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
                   <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
                   {verse.text.split(/(\s+)/).map((part, index) => {
                     if (/^\s+$/.test(part)) return part;
@@ -36204,7 +36247,8 @@ function LibraryReader({
   const readingGoalMinutes = activeProgress.readingGoalMinutes || 20;
   const readMinutesCompleted = estimatedMinutes ? Math.round(estimatedMinutes * (Math.min(100, activeProgress.progress) / 100)) : 0;
   const readingGoalPercent = Math.min(100, estimatedMinutes ? (readMinutesCompleted / readingGoalMinutes) * 100 : activeProgress.progress);
-  const readerChunks = useMemo(() => chunkSpeechText(text), [text]);
+  const readerText = useMemo(() => cleanLibraryReaderText(text, resource.title), [text, resource.title]);
+  const readerChunks = useMemo(() => chunkSpeechText(readerText), [readerText]);
   const activeChunkIndex = speechActive && readerChunks.length
     ? Math.min(readerChunks.length - 1, Math.max(0, speechState.currentChunkIndex ?? Math.floor((listeningValue / 100) * readerChunks.length)))
     : null;
@@ -36264,6 +36308,76 @@ function LibraryReader({
           </div>
         </div>
 
+        <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-semibold text-white"
+              onClick={onListen}
+              type="button"
+            >
+              {speechActive && !speechState.paused ? <Pause size={16} /> : <Play size={16} />}
+              {speechActive ? (speechState.paused ? "Resume" : "Listen") : "Listen"}
+            </button>
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--muted)]"
+              onClick={onStopSpeech}
+              type="button"
+            >
+              <Square size={15} />
+              Stop
+            </button>
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"
+              onClick={() => onFontSizeChange(Math.max(16, fontSize - 1))}
+              title="Decrease font size"
+              type="button"
+            >
+              <Minus size={17} />
+            </button>
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"
+              onClick={() => onFontSizeChange(Math.min(28, fontSize + 1))}
+              title="Increase font size"
+              type="button"
+            >
+              <Plus size={17} />
+            </button>
+            <label className="inline-flex min-w-[92px] items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-sm font-semibold text-[var(--muted)]">
+              Speed
+              <select
+                className="bg-transparent text-[var(--ink)] outline-none"
+                value={speechState.rate}
+                onChange={(event) => onSpeechRateChange(Number(event.target.value))}
+              >
+                <option value={0.75}>0.75x</option>
+                <option value={1}>1x</option>
+                <option value={1.25}>1.25x</option>
+                <option value={1.5}>1.5x</option>
+                <option value={2}>2x</option>
+              </select>
+            </label>
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]"
+              onClick={onBookmarkLocation}
+              type="button"
+            >
+              <Bookmark size={16} />
+              Bookmark
+            </button>
+            <span className="ml-auto rounded-full bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+              {readingFinished ? "Finished" : `${formatPercent(activeProgress.progress)} read`}
+            </span>
+          </div>
+          <div className="mt-3 h-2 rounded-full bg-[var(--warm)]">
+            <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(activeProgress.progress) }} />
+          </div>
+        </div>
+
+        <details className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--green)]">
+            Reader tools, notes, voice, and audiobook settings
+          </summary>
+          <div className="mt-3">
         <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-5">
           <StatusCard label="Estimated reading" status={estimatedMinutes ? `${estimatedMinutes} min total` : "Calculating"} good />
           <StatusCard label="Time remaining" status={remainingMinutes && !readingFinished ? `${remainingMinutes} min` : readingFinished ? "Finished" : "Ready"} good />
@@ -36303,7 +36417,7 @@ function LibraryReader({
         <div className="mt-3 grid grid-cols-[auto_1fr_auto] items-center gap-3">
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--green)]"
-            onClick={() => onFontSizeChange(Math.max(15, fontSize - 1))}
+            onClick={() => onFontSizeChange(Math.max(16, fontSize - 1))}
             title="Decrease font size"
             type="button"
           >
@@ -36321,7 +36435,7 @@ function LibraryReader({
           </div>
           <button
             className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-white text-[var(--green)]"
-            onClick={() => onFontSizeChange(Math.min(24, fontSize + 1))}
+            onClick={() => onFontSizeChange(Math.min(28, fontSize + 1))}
             title="Increase font size"
             type="button"
           >
@@ -36680,11 +36794,13 @@ function LibraryReader({
             )}
           </details>
         </div>
+          </div>
+        </details>
       </header>
 
       <article
         ref={readerRef}
-        className="min-h-0 flex-1 overflow-y-auto px-4 py-5 pb-32 md:px-10 md:py-8"
+        className="min-h-0 flex-1 overflow-y-auto px-3 py-5 pb-32 md:px-8 md:py-8"
         onScroll={onScroll}
       >
         {loading ? (
@@ -36697,7 +36813,7 @@ function LibraryReader({
                 ref={(node) => {
                   readerChunkRefs.current[index] = node;
                 }}
-                className={`mb-5 rounded-2xl px-3 py-2 transition-colors ${
+                className={`mb-6 rounded-2xl px-2 py-2 transition-colors md:px-3 ${
                   activeChunkIndex === index
                     ? "bg-[var(--highlight)] text-[var(--ink)] shadow-sm"
                     : "bg-transparent"
