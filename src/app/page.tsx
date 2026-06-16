@@ -2300,7 +2300,7 @@ const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = [
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
   if (slotId === "parchment") return "Study image";
-  return "Public-domain image";
+  return "Rights-safe image";
 }
 
 function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
@@ -42786,14 +42786,14 @@ function PresentationWorkspaceScreen({
 
             <div className="mt-5">
               <p className="text-sm font-semibold text-[var(--ink)]">Curated real image backgrounds</p>
-              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Public-domain/CC0 images are stored locally for speed. No copyrighted photos or external image search are used.</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Public-domain, CC0, and original generated backgrounds are stored locally for speed. No copyrighted photos or external image search are used.</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {SERMON_SLIDE_MEDIA_CATEGORIES.filter((category) => category !== "All").map((category) => {
                   const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([id, value]) => id !== "none" && value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
                   const targetSlot = slot ?? "open-bible";
                   return (
                     <button key={`presentation-image-${category}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-[var(--paper)] text-left text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!activeSlide} onClick={() => activeSlide && updateSlide(activeSlide.id, { imageSlot: targetSlot, imageTheme: SERMON_SLIDE_IMAGE_SLOTS[targetSlot].label })} type="button">
-                      <span className="block h-12" style={{ background: `${sermonSlideMediaBackground(SERMON_SLIDE_IMAGE_SLOTS[targetSlot])}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+                      <span className="block h-20 sm:h-24" style={{ background: `${sermonSlideMediaBackground(SERMON_SLIDE_IMAGE_SLOTS[targetSlot])}, linear-gradient(135deg, #244233, #efe5cd)` }} />
                       <span className="block px-3 py-2">
                         <span className="block">{category}</span>
                         <span className="mt-0.5 block text-[0.68rem] text-[var(--muted)]">{sermonSlideMediaKind(targetSlot)}</span>
@@ -43198,7 +43198,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
               onClick={() => onChange({ imageSlot: id as SermonSlideImageSlotId, imageTheme: slot.label })}
               type="button"
             >
-              <span className="block h-14" style={{ background: `${sermonSlideMediaBackground(slot)}, linear-gradient(135deg, #244233, #efe5cd)` }} />
+              <span className="block h-24" style={{ background: `${sermonSlideMediaBackground(slot)}, linear-gradient(135deg, #244233, #efe5cd)` }} />
               <span className="block px-3 py-2">
                 <span className="block text-xs font-semibold text-[var(--green)]">{slot.label}</span>
                 <span className="mt-1 inline-flex rounded-full bg-[var(--warm)] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.08em] text-[var(--muted)]">

@@ -1,24 +1,28 @@
 # Media Asset Audit
 
-Sermon slide image pack. All files are stored locally and optimized for fast loading. Use gradients as fallback only when no image is desired.
+Sermon slide image pack. Files are stored locally and optimized for fast loading. The pack uses public-domain/CC0 sources where available and original generated backgrounds where a clean ministry-safe photo was needed. Gradients remain available as a no-image fallback.
+
+## Original Generated Background Prompt
+
+The generated backgrounds were created for this app with the following direction: photorealistic 16:9 church presentation backgrounds, no text, no logos, no watermarks, warm reverent style, darker space on the left for sermon text, and uncluttered ministry-safe composition.
 
 ## Cross - photos/cross.jpg
 - Slot: `cross`
-- Source: [Wikimedia Commons: Frederic Edwin Church - Cross in the Wilderness.jpg](https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Cross_in_the_Wilderness.jpg)
-- Rights status: Public domain
-- Artist/creator: Frederic Edwin Church
-- Credit: Museo Thyssen-Bornemisza, Madrid
-- Recommended use: Gospel, salvation, sacrifice, grace, and invitation slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Source: [Wikimedia Commons: Cross and sunset (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Cross_and_sunset_(Unsplash).jpg)
+- Rights status: Public domain / CC0
+- Artist/creator: See Wikimedia Commons source page
+- Credit: See Wikimedia Commons source page
+- Recommended use: Gospel, salvation, sacrifice, grace, invitation, and closing slides.
+- Optimization: 1600x900 progressive JPEG stored locally with a soft presentation vignette.
 
 ## Open Bible - photos/open-bible.jpg
 - Slot: `open-bible`
-- Source: [Wikimedia Commons: Bible main altar Roskilde cathedral Denmark.jpg](https://commons.wikimedia.org/wiki/File:Bible_main_altar_Roskilde_cathedral_Denmark.jpg)
-- Rights status: CC0
-- Artist/creator: Jebulon
-- Credit: Own work
-- Recommended use: Scripture reading, exposition, Bible study, and teaching slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Source: [Wikimedia Commons: Reading Scripture (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Reading_Scripture_(Unsplash).jpg)
+- Rights status: Public domain / CC0
+- Artist/creator: See Wikimedia Commons source page
+- Credit: See Wikimedia Commons source page
+- Recommended use: Scripture reading, exposition, Bible study, teaching, and lesson slides.
+- Optimization: 1600x900 progressive JPEG stored locally with a soft presentation vignette.
 
 ## Prayer - photos/prayer.jpg
 - Slot: `prayer-hands`
@@ -31,12 +35,12 @@ Sermon slide image pack. All files are stored locally and optimized for fast loa
 
 ## Missions - photos/missions.jpg
 - Slot: `world-map`
-- Source: [Wikimedia Commons: 1861 map - The pictorial missionary map of the world.tif](https://commons.wikimedia.org/wiki/File:1861_map_-_The_pictorial_missionary_map_of_the_world.tif)
-- Rights status: Public domain
-- Artist/creator: Gilbert, John (archive claims dates, possibly an error: 1810-1889)
-- Credit: http://nla.gov.au/nla.obj-232361632/view
+- Source: [Wikimedia Commons: The Earth seen from Apollo 17.jpg](https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg)
+- Rights status: Public domain / CC0
+- Artist/creator: See Wikimedia Commons source page
+- Credit: See Wikimedia Commons source page
 - Recommended use: Missions, evangelism, nations, outreach, and missionary emphasis slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally with a soft presentation vignette.
 
 ## Resurrection - photos/resurrection.jpg
 - Slot: `sunrise`
@@ -50,12 +54,12 @@ http://apod.nasa.gov/apod/ap150314.html
 
 ## Empty Tomb - photos/empty-tomb.jpg
 - Slot: `empty-tomb`
-- Source: [Wikimedia Commons: Discovery of the empty tomb, Church of the East manuscript.jpg](https://commons.wikimedia.org/wiki/File:Discovery_of_the_empty_tomb,_Church_of_the_East_manuscript.jpg)
-- Rights status: Public domain
-- Artist/creator: Unknown authorUnknown author
-- Credit: https://blogs.bl.uk/asian-and-african/syriac/
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Resurrection, victory, Gospel accounts, and empty-tomb emphasis slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Harvest - photos/harvest.jpg
 - Slot: `field-harvest`
@@ -86,58 +90,54 @@ http://apod.nasa.gov/apod/ap150314.html
 
 ## Baptism - photos/baptism.jpg
 - Slot: `baptism-water`
-- Source: [Wikimedia Commons: Baptism by immersion in the MIssissippi River, May 29, 1938- shoulder-deep in water LCCN2006687118.jpg](https://commons.wikimedia.org/wiki/File:Baptism_by_immersion_in_the_MIssissippi_River,_May_29,_1938-_shoulder-deep_in_water_LCCN2006687118.jpg)
-- Rights status: Public domain
-- Artist/creator: Johnston, Frances Benjamin, 1864-1952, photographer
-- Credit: Library of Congress
-
-Catalog: https://lccn.loc.gov/2006687118
-Image download: https://cdn.loc.gov/service/pnp/cph/3a40000/3a49000/3a49700/3a49750r.jpg
-Original url: https://www.loc.gov/pictures/item/2006687118/
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Baptism, testimony, obedience, discipleship, and new-life slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Church - photos/church.jpg
 - Slot: `church-window`
-- Source: [Wikimedia Commons: Rensselaer Open Bible Baptist Church.jpg](https://commons.wikimedia.org/wiki/File:Rensselaer_Open_Bible_Baptist_Church.jpg)
-- Rights status: CC0
-- Artist/creator: Tyler A. McNeil
-- Credit: Own work
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Church service, worship, announcements, prayer meeting, and teaching slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Teaching - photos/teaching.jpg
 - Slot: `quiet-study`
-- Source: [Wikimedia Commons: Laura Theresa Alma-Tadema - The Bible Lesson.jpg](https://commons.wikimedia.org/wiki/File:Laura_Theresa_Alma-Tadema_-_The_Bible_Lesson.jpg)
-- Rights status: Public domain
-- Artist/creator: Laura Theresa Alma-Tadema
-- Credit: Art Renewal Center
-- Recommended use: Sunday school, lesson prep, Bible teaching, quiet study, and classroom teaching slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
+- Recommended use: Sunday school, lesson prep, Bible teaching, sermon planning, and classroom teaching slides.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Shepherd - photos/shepherd.jpg
 - Slot: `shepherd-field`
-- Source: [Wikimedia Commons: Sheep, shepherd Fortepan 95046.jpg](https://commons.wikimedia.org/wiki/File:Sheep,_shepherd_Fortepan_95046.jpg)
-- Rights status: Public domain
-- Artist/creator: FOTO:Fortepan — ID 95046: Adományozó/Donor: Magyar Földrajzi Múzeum / Diagyűjtemény.
-- Credit: http://www.fortepan.hu/_photo/download/fortepan_95046.jpg
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Pastoral care, Psalm passages, guidance, comfort, and discipleship slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Pulpit - photos/pulpit.jpg
 - Slot: `pulpit`
-- Source: [Wikimedia Commons: Pulpit church Saint Michael Munich.jpg](https://commons.wikimedia.org/wiki/File:Pulpit_church_Saint_Michael_Munich.jpg)
-- Rights status: CC0
-- Artist/creator: Jebulon
-- Credit: Own work
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Preaching, pulpit ministry, sermon series, invitation, and church service slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
 
 ## Communion - photos/communion.jpg
 - Slot: `communion-table`
-- Source: [Wikimedia Commons: Cristo com pão e cálice (séc. XIX).png](https://commons.wikimedia.org/wiki/File:Cristo_com_pão_e_cálice_(séc._XIX).png)
-- Rights status: Public domain
-- Artist/creator: Unidentified painter
-- Credit: Palácio do Correio Velho
+- Source: [Original generated sermon-slide background](#original-generated-background-prompt)
+- Rights status: Original generated asset
+- Artist/creator: OpenAI image generation
+- Credit: Created for Father's Business Bible Study
 - Recommended use: Lord's supper, remembrance, worship, reverent reflection, and church service slides.
-- Optimization: 1600x900 progressive JPEG stored locally for fast presentation use.
+- Optimization: 1600x900 progressive JPEG stored locally; original generated background created for this app.
