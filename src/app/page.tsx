@@ -2171,7 +2171,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.18), transparent), radial-gradient(circle at 35% 30%, rgba(255,255,255,0.28), transparent 28%)",
     motif: "Cross",
     category: "Cross",
-    assetUrl: "/media/sermon-slides/cross.svg",
+    assetUrl: "/media/sermon-slides/photos/cross.jpg",
   },
   "open-bible": {
     label: "Open Bible",
@@ -2179,7 +2179,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.22), transparent), radial-gradient(ellipse at 50% 72%, rgba(245,230,196,0.38), transparent 36%)",
     motif: "Open Bible",
     category: "Open Bible",
-    assetUrl: "/media/sermon-slides/open-bible.svg",
+    assetUrl: "/media/sermon-slides/photos/open-bible.jpg",
   },
   sunrise: {
     label: "Sunrise",
@@ -2187,7 +2187,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 50% 88%, rgba(255,211,117,0.62), transparent 24%), linear-gradient(135deg, rgba(255,255,255,0.18), transparent)",
     motif: "Sunrise",
     category: "Resurrection",
-    assetUrl: "/media/sermon-slides/resurrection.svg",
+    assetUrl: "/media/sermon-slides/photos/resurrection.jpg",
   },
   "empty-tomb": {
     label: "Empty Tomb",
@@ -2195,7 +2195,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(ellipse at 55% 68%, rgba(255,255,255,0.40), transparent 28%), linear-gradient(135deg, rgba(255,218,139,0.22), transparent)",
     motif: "Empty Tomb",
     category: "Empty Tomb",
-    assetUrl: "/media/sermon-slides/empty-tomb.svg",
+    assetUrl: "/media/sermon-slides/photos/empty-tomb.jpg",
   },
   "prayer-hands": {
     label: "Prayer Hands",
@@ -2203,7 +2203,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 70% 38%, rgba(255,255,255,0.24), transparent 26%), linear-gradient(145deg, rgba(207,221,224,0.22), transparent)",
     motif: "Prayer",
     category: "Prayer",
-    assetUrl: "/media/sermon-slides/prayer.svg",
+    assetUrl: "/media/sermon-slides/photos/prayer.jpg",
   },
   "world-map": {
     label: "World Map",
@@ -2211,7 +2211,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(circle at 30% 35%, rgba(255,255,255,0.20), transparent 20%), radial-gradient(circle at 68% 55%, rgba(255,255,255,0.16), transparent 24%)",
     motif: "Map",
     category: "Missions",
-    assetUrl: "/media/sermon-slides/missions.svg",
+    assetUrl: "/media/sermon-slides/photos/missions.jpg",
   },
   "field-harvest": {
     label: "Field / Harvest",
@@ -2219,7 +2219,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(160deg, rgba(231,197,113,0.32), transparent 45%), radial-gradient(ellipse at 55% 82%, rgba(255,255,255,0.18), transparent 35%)",
     motif: "Harvest",
     category: "Harvest",
-    assetUrl: "/media/sermon-slides/harvest.svg",
+    assetUrl: "/media/sermon-slides/photos/harvest.jpg",
   },
   "storm-judgment": {
     label: "Storm / Judgment",
@@ -2227,7 +2227,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.10), transparent), radial-gradient(circle at 25% 25%, rgba(180,190,202,0.22), transparent 24%)",
     motif: "Storm",
     category: "Judgment",
-    assetUrl: "/media/sermon-slides/judgment.svg",
+    assetUrl: "/media/sermon-slides/photos/judgment.jpg",
   },
   "light-window": {
     label: "Light / Window",
@@ -2235,7 +2235,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(115deg, rgba(255,255,255,0.42), transparent 35%), radial-gradient(circle at 20% 22%, rgba(255,245,197,0.36), transparent 28%)",
     motif: "Light",
     category: "Grace",
-    assetUrl: "/media/sermon-slides/grace.svg",
+    assetUrl: "/media/sermon-slides/photos/grace.jpg",
   },
   parchment: {
     label: "Parchment / Simple Texture",
@@ -2243,7 +2243,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.32), transparent), repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 12px)",
     motif: "Parchment",
     category: "Teaching",
-    assetUrl: "/media/sermon-slides/teaching.svg",
+    assetUrl: "/media/sermon-slides/photos/teaching.jpg",
   },
   pulpit: {
     label: "Pulpit",
@@ -2251,7 +2251,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(155deg, rgba(255,255,255,0.18), transparent 42%), radial-gradient(ellipse at 50% 86%, rgba(118,78,38,0.28), transparent 34%)",
     motif: "Pulpit",
     category: "Pulpit",
-    assetUrl: "/media/sermon-slides/pulpit.svg",
+    assetUrl: "/media/sermon-slides/photos/pulpit.jpg",
   },
   "communion-table": {
     label: "Communion Table",
@@ -2259,7 +2259,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "radial-gradient(ellipse at 50% 72%, rgba(255,255,255,0.30), transparent 30%), linear-gradient(145deg, rgba(212,180,111,0.22), transparent)",
     motif: "Table",
     category: "Communion",
-    assetUrl: "/media/sermon-slides/communion.svg",
+    assetUrl: "/media/sermon-slides/photos/communion.jpg",
   },
   "baptism-water": {
     label: "Baptism Water",
@@ -2267,7 +2267,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(145deg, rgba(159,202,212,0.32), transparent 44%), radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.24), transparent 34%)",
     motif: "Water",
     category: "Baptism",
-    assetUrl: "/media/sermon-slides/baptism.svg",
+    assetUrl: "/media/sermon-slides/photos/baptism.jpg",
   },
   "church-window": {
     label: "Church Window",
@@ -2275,7 +2275,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(115deg, rgba(255,245,202,0.42), transparent 36%), radial-gradient(circle at 74% 28%, rgba(255,255,255,0.22), transparent 24%)",
     motif: "Window",
     category: "Church",
-    assetUrl: "/media/sermon-slides/church.svg",
+    assetUrl: "/media/sermon-slides/photos/church.jpg",
   },
   "quiet-study": {
     label: "Quiet Study",
@@ -2283,7 +2283,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(135deg, rgba(255,255,255,0.26), transparent), radial-gradient(ellipse at 32% 74%, rgba(236,220,179,0.34), transparent 32%)",
     motif: "Study",
     category: "Teaching",
-    assetUrl: "/media/sermon-slides/teaching.svg",
+    assetUrl: "/media/sermon-slides/photos/teaching.jpg",
   },
   "shepherd-field": {
     label: "Shepherd Field",
@@ -2291,7 +2291,7 @@ const SERMON_SLIDE_IMAGE_SLOTS: Record<SermonSlideImageSlotId, {
     background: "linear-gradient(155deg, rgba(211,221,166,0.32), transparent 42%), radial-gradient(ellipse at 52% 88%, rgba(255,255,255,0.18), transparent 36%)",
     motif: "Field",
     category: "Shepherd",
-    assetUrl: "/media/sermon-slides/shepherd.svg",
+    assetUrl: "/media/sermon-slides/photos/shepherd.jpg",
   },
 };
 
@@ -2299,14 +2299,14 @@ const SERMON_SLIDE_MEDIA_CATEGORIES: Array<"All" | SermonSlideMediaCategory> = [
 
 function sermonSlideMediaKind(slotId: SermonSlideImageSlotId) {
   if (slotId === "none") return "Gradient only";
-  if (slotId === "parchment") return "Background texture";
-  return "Local image asset";
+  if (slotId === "parchment") return "Study image";
+  return "Public-domain image";
 }
 
 function sermonSlideMediaRights(slotId: SermonSlideImageSlotId) {
   return slotId === "none"
     ? "No image asset"
-    : "Original local asset created for this app; no copyrighted photo included";
+    : "Rights documented";
 }
 
 function sermonSlideMediaBackground(slot: { assetUrl: string | null; background: string }) {
@@ -42785,8 +42785,8 @@ function PresentationWorkspaceScreen({
             </div>
 
             <div className="mt-5">
-              <p className="text-sm font-semibold text-[var(--ink)]">Curated local image foundations</p>
-              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Fast local image assets only. No copyrighted photos or external image search are used.</p>
+              <p className="text-sm font-semibold text-[var(--ink)]">Curated real image backgrounds</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Public-domain/CC0 images are stored locally for speed. No copyrighted photos or external image search are used.</p>
               <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 {SERMON_SLIDE_MEDIA_CATEGORIES.filter((category) => category !== "All").map((category) => {
                   const slot = Object.entries(SERMON_SLIDE_IMAGE_SLOTS).find(([id, value]) => id !== "none" && value.category === category)?.[0] as SermonSlideImageSlotId | undefined;
@@ -43190,7 +43190,7 @@ function SermonSlideEditor({ slide, onChange }: { slide: SermonSlide; onChange: 
             </button>
           ))}
         </div>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {filteredImageSlots.map(([id, slot]) => (
             <button
               key={`slide-image-slot-${id}`}

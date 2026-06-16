@@ -1,107 +1,182 @@
 [
   {
-    "file": "cross.svg",
+    "file": "photos/cross.jpg",
+    "slot": "cross",
     "category": "Cross",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Gospel, salvation, sacrifice, grace, invitation, and communion slides."
+    "source": "Wikimedia Commons: Frederic Edwin Church - Cross in the Wilderness.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Frederic_Edwin_Church_-_Cross_in_the_Wilderness.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Frederic Edwin Church",
+    "credit": "Museo Thyssen-Bornemisza, Madrid",
+    "recommendedUse": "Gospel, salvation, sacrifice, grace, and invitation slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "communion.svg",
-    "category": "Communion",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Lord's supper, remembrance, worship, reverent reflection, and church service slides."
-  },
-  {
-    "file": "open-bible.svg",
+    "file": "photos/open-bible.jpg",
+    "slot": "open-bible",
     "category": "Open Bible",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Scripture reading, exposition, Bible study, and teaching slides."
+    "source": "Wikimedia Commons: Bible main altar Roskilde cathedral Denmark.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bible_main_altar_Roskilde_cathedral_Denmark.jpg",
+    "rightsStatus": "CC0",
+    "artist": "Jebulon",
+    "credit": "Own work",
+    "recommendedUse": "Scripture reading, exposition, Bible study, and teaching slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "prayer.svg",
+    "file": "photos/prayer.jpg",
+    "slot": "prayer-hands",
     "category": "Prayer",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Prayer meeting, intercession, devotion, altar, and quiet worship slides."
+    "source": "Wikimedia Commons: Albrecht D\u00fcrer - Praying Hands, 1508 - Google Art Project.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Albrecht_D\u00fcrer_-_Praying_Hands,_1508_-_Google_Art_Project.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Albrecht D\u00fcrer",
+    "credit": "Google Arts & Culture",
+    "recommendedUse": "Prayer meeting, intercession, devotion, altar, and quiet worship slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "missions.svg",
+    "file": "photos/missions.jpg",
+    "slot": "world-map",
     "category": "Missions",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Missions, evangelism, nations, outreach, and missionary emphasis slides."
+    "source": "Wikimedia Commons: 1861 map - The pictorial missionary map of the world.tif",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1861_map_-_The_pictorial_missionary_map_of_the_world.tif",
+    "rightsStatus": "Public domain",
+    "artist": "Gilbert, John (archive claims dates, possibly an error: 1810-1889)",
+    "credit": "http://nla.gov.au/nla.obj-232361632/view",
+    "recommendedUse": "Missions, evangelism, nations, outreach, and missionary emphasis slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "resurrection.svg",
+    "file": "photos/resurrection.jpg",
+    "slot": "sunrise",
     "category": "Resurrection",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Resurrection, hope, victory, Easter, and new-life slides."
+    "source": "Wikimedia Commons: Expedition 42 Soyuz TMA-14M Landing (201503120102HQ).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Expedition_42_Soyuz_TMA-14M_Landing_(201503120102HQ).jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Bill Ingalls",
+    "credit": "https://www.flickr.com/photos/nasahqphoto/16604583049/\nhttp://apod.nasa.gov/apod/ap150314.html",
+    "recommendedUse": "Resurrection, hope, victory, and new-life slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "grace.svg",
-    "category": "Grace",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Grace, guidance, light, assurance, and gospel encouragement slides."
-  },
-  {
-    "file": "judgment.svg",
-    "category": "Judgment",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Judgment, warning passages, repentance, prophecy, and solemn teaching slides."
-  },
-  {
-    "file": "baptism.svg",
-    "category": "Baptism",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Baptism, testimony, obedience, discipleship, and new-life slides."
-  },
-  {
-    "file": "church.svg",
-    "category": "Church",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Church service, worship, announcements, prayer meeting, and teaching slides."
-  },
-  {
-    "file": "teaching.svg",
-    "category": "Teaching",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Sunday school, lesson prep, book study, quiet study, and classroom teaching slides."
-  },
-  {
-    "file": "harvest.svg",
-    "category": "Harvest",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Harvest, soulwinning, service, missions, and labor-in-the-field slides."
-  },
-  {
-    "file": "shepherd.svg",
-    "category": "Shepherd",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Pastoral care, Psalm passages, guidance, comfort, and discipleship slides."
-  },
-  {
-    "file": "empty-tomb.svg",
+    "file": "photos/empty-tomb.jpg",
+    "slot": "empty-tomb",
     "category": "Empty Tomb",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Resurrection, victory, Gospel accounts, and empty-tomb emphasis slides."
+    "source": "Wikimedia Commons: Discovery of the empty tomb, Church of the East manuscript.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Discovery_of_the_empty_tomb,_Church_of_the_East_manuscript.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Unknown authorUnknown author",
+    "credit": "https://blogs.bl.uk/asian-and-african/syriac/",
+    "recommendedUse": "Resurrection, victory, Gospel accounts, and empty-tomb emphasis slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   },
   {
-    "file": "pulpit.svg",
+    "file": "photos/harvest.jpg",
+    "slot": "field-harvest",
+    "category": "Harvest",
+    "source": "Wikimedia Commons: Indiana Wheat Harvest (20210628-NRCS-BJOC-001).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Indiana_Wheat_Harvest_(20210628-NRCS-BJOC-001).jpg",
+    "rightsStatus": "Public domain",
+    "artist": "USDAgov",
+    "credit": "20210628-NRCS-BJOC-001",
+    "recommendedUse": "Harvest, soulwinning, service, missions, and labor-in-the-field slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/judgment.jpg",
+    "slot": "storm-judgment",
+    "category": "Judgment",
+    "source": "Wikimedia Commons: Storm clouds over the Oasis of Mara (51183673752).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Storm_clouds_over_the_Oasis_of_Mara_(51183673752).jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Joshua Tree National Park",
+    "credit": "Storm clouds over the Oasis of Mara",
+    "recommendedUse": "Judgment, warning passages, repentance, prophecy, and solemn teaching slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/grace.jpg",
+    "slot": "light-window",
+    "category": "Grace",
+    "source": "Wikimedia Commons: Sunlight streaming through windows of main concourse of Grand Central Terminal, Manhattan, New York City, New York.tif",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sunlight_streaming_through_windows_of_main_concourse_of_Grand_Central_Terminal,_Manhattan,_New_York_City,_New_York.tif",
+    "rightsStatus": "Public domain",
+    "artist": "Rizzuto, Angelo, 1906-1967, photographer",
+    "credit": "https://www.loc.gov/pictures/item/2020636826/",
+    "recommendedUse": "Grace, guidance, light, assurance, and gospel encouragement slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/baptism.jpg",
+    "slot": "baptism-water",
+    "category": "Baptism",
+    "source": "Wikimedia Commons: Baptism by immersion in the MIssissippi River, May 29, 1938- shoulder-deep in water LCCN2006687118.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baptism_by_immersion_in_the_MIssissippi_River,_May_29,_1938-_shoulder-deep_in_water_LCCN2006687118.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Johnston, Frances Benjamin, 1864-1952, photographer",
+    "credit": "Library of Congress\n\nCatalog: https://lccn.loc.gov/2006687118\nImage download: https://cdn.loc.gov/service/pnp/cph/3a40000/3a49000/3a49700/3a49750r.jpg\nOriginal url: https://www.loc.gov/pictures/item/2006687118/",
+    "recommendedUse": "Baptism, testimony, obedience, discipleship, and new-life slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/church.jpg",
+    "slot": "church-window",
+    "category": "Church",
+    "source": "Wikimedia Commons: Rensselaer Open Bible Baptist Church.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rensselaer_Open_Bible_Baptist_Church.jpg",
+    "rightsStatus": "CC0",
+    "artist": "Tyler A. McNeil",
+    "credit": "Own work",
+    "recommendedUse": "Church service, worship, announcements, prayer meeting, and teaching slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/teaching.jpg",
+    "slot": "quiet-study",
+    "category": "Teaching",
+    "source": "Wikimedia Commons: Laura Theresa Alma-Tadema - The Bible Lesson.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Laura_Theresa_Alma-Tadema_-_The_Bible_Lesson.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "Laura Theresa Alma-Tadema",
+    "credit": "Art Renewal Center",
+    "recommendedUse": "Sunday school, lesson prep, Bible teaching, quiet study, and classroom teaching slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/shepherd.jpg",
+    "slot": "shepherd-field",
+    "category": "Shepherd",
+    "source": "Wikimedia Commons: Sheep, shepherd Fortepan 95046.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sheep,_shepherd_Fortepan_95046.jpg",
+    "rightsStatus": "Public domain",
+    "artist": "FOTO:Fortepan \u2014 ID 95046: Adom\u00e1nyoz\u00f3/Donor: Magyar F\u00f6ldrajzi M\u00fazeum / Diagy\u0171jtem\u00e9ny.",
+    "credit": "http://www.fortepan.hu/_photo/download/fortepan_95046.jpg",
+    "recommendedUse": "Pastoral care, Psalm passages, guidance, comfort, and discipleship slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/pulpit.jpg",
+    "slot": "pulpit",
     "category": "Pulpit",
-    "source": "Personally created original SVG asset for Father's Business Bible Study; generated locally from simple vector shapes with no third-party photo or artwork.",
-    "rightsStatus": "Project-owned original asset; safe for app presentation use.",
-    "recommendedUse": "Preaching, pulpit ministry, sermon series, invitation, and church service slides."
+    "source": "Wikimedia Commons: Pulpit church Saint Michael Munich.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pulpit_church_Saint_Michael_Munich.jpg",
+    "rightsStatus": "CC0",
+    "artist": "Jebulon",
+    "credit": "Own work",
+    "recommendedUse": "Preaching, pulpit ministry, sermon series, invitation, and church service slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
+  },
+  {
+    "file": "photos/communion.jpg",
+    "slot": "communion-table",
+    "category": "Communion",
+    "source": "Wikimedia Commons: Cristo com p\u00e3o e c\u00e1lice (s\u00e9c. XIX).png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cristo_com_p\u00e3o_e_c\u00e1lice_(s\u00e9c._XIX).png",
+    "rightsStatus": "Public domain",
+    "artist": "Unidentified painter",
+    "credit": "Pal\u00e1cio do Correio Velho",
+    "recommendedUse": "Lord's supper, remembrance, worship, reverent reflection, and church service slides.",
+    "optimized": "1600x900 progressive JPEG stored locally for fast presentation use."
   }
 ]
