@@ -1,5 +1,6 @@
 import { basename } from "node:path";
 import { NextResponse } from "next/server";
+import { readTextContent } from "@/lib/server-content-storage";
 
 type StudyToolSource = {
   id: string;
@@ -10,8 +11,6 @@ type StudyToolSource = {
   sourceUrl: string;
   rightsStatus: string;
 };
-
-const githubRawBase = "https://raw.githubusercontent.com/scheerfactor/bible-study-app";
 
 const sources: StudyToolSource[] = [
   {
@@ -101,15 +100,6 @@ function slugFromFileName(fileName: string) {
   return basename(fileName, ".txt");
 }
 
-function rawGithubUrl(fileName: string) {
-  const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
-  const filePath = ["data", "library", "verified", fileName]
-    .map((part) => encodeURIComponent(part))
-    .join("/");
-
-  return `${githubRawBase}/${encodeURIComponent(ref)}/${filePath}`;
-}
-
 function clean(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
@@ -137,10 +127,14 @@ function snippetFor(lines: string[], index: number) {
 }
 
 async function searchSource(source: StudyToolSource, query: string, perSourceLimit: number) {
-  const response = await fetch(rawGithubUrl(source.fileName), { next: { revalidate: 60 * 60 * 24 } });
-  if (!response.ok) return [];
+  let raw = "";
 
-  const raw = await response.text();
+  try {
+    raw = await readTextContent(["data", "library", "verified", source.fileName], { errorLabel: source.title });
+  } catch {
+    return [];
+  }
+
   const lines = raw.split(/\r?\n/);
   const normalizedQuery = clean(query);
   const terms = normalizedQuery.split(/\s+/).filter((term) => term.length > 1);

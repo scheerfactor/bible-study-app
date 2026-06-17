@@ -1,5 +1,4 @@
-import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { readTextContent } from "@/lib/server-content-storage";
 
 export type WebsterEntry = {
   headword: string;
@@ -13,7 +12,6 @@ export type WebsterEntry = {
 };
 
 const dictionaryRelativePath = ["data", "generated", "websters-1828.entries.json"];
-const githubRawBase = "https://raw.githubusercontent.com/scheerfactor/bible-study-app";
 let dictionaryPromise: Promise<WebsterEntry[]> | null = null;
 
 const dictionaryAliases: Record<string, string> = {
@@ -56,31 +54,10 @@ export function normalizeDictionaryWord(value: string) {
   return cleaned;
 }
 
-function localDictionaryPath() {
-  return resolve(/* turbopackIgnore: true */ process.cwd(), ...dictionaryRelativePath);
-}
-
-function rawGithubDictionaryUrl() {
-  const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
-  const filePath = dictionaryRelativePath.map((part) => encodeURIComponent(part)).join("/");
-  return `${githubRawBase}/${encodeURIComponent(ref)}/${filePath}`;
-}
-
-async function loadDictionaryRaw() {
-  if (process.env.NODE_ENV !== "production") {
-    return readFile(localDictionaryPath(), "utf8");
-  }
-
-  const response = await fetch(rawGithubDictionaryUrl());
-  if (!response.ok) {
-    throw new Error(`Webster dictionary fetch failed: ${response.status}`);
-  }
-
-  return response.text();
-}
-
 export async function getDictionaryEntries() {
-  dictionaryPromise ??= loadDictionaryRaw().then((raw) => JSON.parse(raw) as WebsterEntry[]);
+  dictionaryPromise ??= readTextContent(dictionaryRelativePath, { errorLabel: "Webster dictionary" }).then(
+    (raw) => JSON.parse(raw) as WebsterEntry[],
+  );
   return dictionaryPromise;
 }
 
