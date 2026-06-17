@@ -2,8 +2,8 @@ import { basename, resolve } from "node:path";
 import { NextResponse } from "next/server";
 import { curateLibraryEntry, type LibraryManifestEntry } from "@/lib/library-curation";
 import { readFile } from "node:fs/promises";
+import { loadLibraryManifestEntries } from "@/lib/library-manifest";
 
-const manifestPath = resolve(process.cwd(), "data", "library", "manifests", "curated-public-domain-resources.json");
 const githubRawBase = "https://raw.githubusercontent.com/scheerfactor/bible-study-app";
 
 function slugFromPath(filePath: string) {
@@ -41,8 +41,7 @@ async function fetchResourceText(entry: LibraryManifestEntry) {
 
 export async function GET(_request: Request, context: { params: Promise<{ slug: string }> }) {
   const { slug } = await context.params;
-  const raw = await readFile(manifestPath, "utf8");
-  const entries = JSON.parse(raw) as LibraryManifestEntry[];
+  const entries = await loadLibraryManifestEntries();
   const entry = entries.find((candidate) => slugFromPath(candidate.file_path) === slug);
 
   if (!entry) {
