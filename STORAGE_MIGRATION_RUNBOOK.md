@@ -209,6 +209,23 @@ Implemented starting point:
 - Reads from `CONTENT_PUBLIC_BASE_URL` in production when configured.
 - Falls back to GitHub raw in production during transition.
 - Used by Webster, Library manifest, Library reader API, and Study Tools search.
+- Deferred commentary batches read from `NEXT_PUBLIC_CONTENT_BASE_URL` when configured.
+
+Planning/upload commands:
+
+```bash
+npm run storage:plan
+npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --execute
+```
+
+Current public-content migration inventory:
+
+- Library text files: 1,302 files, about 702 MB.
+- Commentary batch files: 118 files, about 308 MB.
+- Webster dictionary file: about 34 MB.
+- Study tool files: 9 files, about 26 MB.
+- Total first storage move: about 1.05 GB.
 
 Recommended environment variables:
 
@@ -223,6 +240,8 @@ R2_BUCKET_PUBLIC_CONTENT=
 Do not expose R2 secret keys in client code.
 
 ### Phase 3: Move Public Library Text
+
+Status: ready for bucket credentials.
 
 Start with public-domain Library text:
 
