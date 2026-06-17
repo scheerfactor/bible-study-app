@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T16:31:41.477Z",
+  "generated_at": "2026-06-17T23:31:48.311Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 7134,
@@ -25,6 +25,13 @@
       "total_bytes": 35950046,
       "total_size": "34.28 MB"
     },
+    "library_manifest": {
+      "files": 1,
+      "present": 1,
+      "missing": 0,
+      "total_bytes": 2669772,
+      "total_size": "2.55 MB"
+    },
     "study_tool": {
       "files": 9,
       "present": 9,
@@ -33,10 +40,10 @@
       "total_size": "26.41 MB"
     },
     "all_public_content": {
-      "files": 1430,
-      "present": 1430,
+      "files": 1431,
+      "present": 1431,
       "missing": 0,
-      "total_bytes": 1123263547,
+      "total_bytes": 1125933319,
       "total_size": "1.05 GB"
     }
   },
@@ -16852,6 +16859,14 @@
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 35950046,
       "checksum_sha256": "41bf1d7c17bf71559d4d0e3628a0516a5cca3b0e0ae758bb0cf944a241e17a49"
+    },
+    {
+      "kind": "library_manifest",
+      "source_path": "data/library/manifests/curated-public-domain-resources.json",
+      "storage_path": "data/library/manifests/curated-public-domain-resources.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2669772,
+      "checksum_sha256": "4c610f269ed22f6990eddc8278833308be90796d90b791db920bdcaef5969c09"
     },
     {
       "kind": "study_tool",

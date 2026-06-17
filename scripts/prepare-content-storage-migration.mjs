@@ -12,6 +12,10 @@ const dictionaryFiles = [
   "data/generated/websters-1828.entries.json",
 ];
 
+const libraryManifestFiles = [
+  defaultLibraryManifest,
+];
+
 const studyToolFiles = [
   "data/library/verified/eastons-bible-dictionary.txt",
   "data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt",
@@ -132,13 +136,17 @@ async function main() {
   );
 
   const dictionaryItems = await Promise.all(dictionaryFiles.map((filePath) => existingInventoryFile("dictionary", filePath)));
+  const libraryManifestItems = await Promise.all(
+    libraryManifestFiles.map((filePath) => existingInventoryFile("library_manifest", filePath)),
+  );
   const studyToolItems = await Promise.all(studyToolFiles.map((filePath) => existingInventoryFile("study_tool", filePath)));
 
-  const items = [...libraryItems, ...commentaryItems, ...dictionaryItems, ...studyToolItems];
+  const items = [...libraryItems, ...commentaryItems, ...dictionaryItems, ...libraryManifestItems, ...studyToolItems];
   const summaries = {
     library_text: summarize(libraryItems),
     commentary_batch: summarize(commentaryItems),
     dictionary: summarize(dictionaryItems),
+    library_manifest: summarize(libraryManifestItems),
     study_tool: summarize(studyToolItems),
     all_public_content: summarize(items),
   };
@@ -171,6 +179,7 @@ Mirror current repository-relative paths in object storage during the transition
 ${tableRow("Library text", summaries.library_text)}
 ${tableRow("Commentary batches", summaries.commentary_batch)}
 ${tableRow("Dictionary files", summaries.dictionary)}
+${tableRow("Library manifests", summaries.library_manifest)}
 ${tableRow("Study tool files", summaries.study_tool)}
 ${tableRow("Total public content", summaries.all_public_content)}
 

@@ -5,8 +5,11 @@ const manifestRelativePath = ["data", "library", "manifests", "curated-public-do
 let manifestPromise: Promise<LibraryManifestEntry[]> | null = null;
 
 export async function loadLibraryManifestEntries() {
-  manifestPromise ??= readTextContent(manifestRelativePath, { errorLabel: "Library manifest" }).then(
-    (raw) => JSON.parse(raw) as LibraryManifestEntry[],
-  );
+  manifestPromise ??= readTextContent(manifestRelativePath, { errorLabel: "Library manifest" })
+    .then((raw) => JSON.parse(raw) as LibraryManifestEntry[])
+    .catch((error) => {
+      manifestPromise = null;
+      throw error;
+    });
   return manifestPromise;
 }
