@@ -27,7 +27,8 @@
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
     "import:strongs": "node scripts/import-strongs-entries.mjs",
     "storage:plan": "node scripts/prepare-content-storage-migration.mjs",
-    "storage:upload:r2": "node scripts/upload-public-content-to-r2.mjs"
+    "storage:upload:r2": "node scripts/upload-public-content-to-r2.mjs",
+    "storage:upload:wrangler": "node scripts/upload-public-content-with-wrangler.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

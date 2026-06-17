@@ -217,6 +217,8 @@ Planning/upload commands:
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:wrangler -- --dry-run
+npm run storage:upload:wrangler -- --bucket=fathers-business-bible-study-public --execute
 ```
 
 Current public-content migration inventory:
@@ -235,6 +237,7 @@ R2_ACCOUNT_ID=
 R2_ACCESS_KEY_ID=
 R2_SECRET_ACCESS_KEY=
 R2_BUCKET_PUBLIC_CONTENT=
+NEXT_PUBLIC_CONTENT_BASE_URL=
 ```
 
 Do not expose R2 secret keys in client code.
