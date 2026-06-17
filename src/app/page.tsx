@@ -118,11 +118,6 @@ import barnesReviewedPhase5ProverbsCorinthiansCommentary from "../../data/import
 import barnesReviewedCompletionProphetsCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
 import barnesReviewedCompletionPentateuchGapsCommentary from "../../data/imports/barnes-reviewed-completion-pentateuch-gaps-commentary.json";
 import barnesReviewedCompletionJoshuaStarterCommentary from "../../data/imports/barnes-reviewed-completion-joshua-starter-commentary.json";
-import barnesReviewedSolomonsSongCommentary from "../../data/imports/barnes-reviewed-solomons-song-commentary.json";
-import barnesReviewedWeakBooksPhase2Commentary from "../../data/imports/barnes-reviewed-weak-books-phase-2-commentary.json";
-import barnesReviewedEpistlesDepthPhase1Commentary from "../../data/imports/barnes-reviewed-epistles-depth-phase-1-commentary.json";
-import barnesReviewedHistoricalBooksPhase1Commentary from "../../data/imports/barnes-reviewed-historical-books-phase-1-commentary.json";
-import barnesReviewedJoshuaCompletionCommentary from "../../data/imports/barnes-reviewed-joshua-completion-commentary.json";
 import adamClarkeReviewedPhase3Commentary from "../../data/imports/adam-clarke-reviewed-phase-3-commentary.json";
 import adamClarkeReviewedCoverageSprintGenesisCommentary from "../../data/imports/adam-clarke-reviewed-coverage-sprint-genesis-commentary.json";
 import adamClarkeReviewedLibraryExpansionGospelsActsCommentary from "../../data/imports/adam-clarke-reviewed-library-expansion-gospels-acts-commentary.json";
@@ -131,11 +126,6 @@ import adamClarkeReviewedPhase5ProverbsCorinthiansCommentary from "../../data/im
 import adamClarkeReviewedCompletionProphetsCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
 import adamClarkeReviewedCompletionPentateuchGapsCommentary from "../../data/imports/adam-clarke-reviewed-completion-pentateuch-gaps-commentary.json";
 import adamClarkeReviewedCompletionJoshuaStarterCommentary from "../../data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json";
-import adamClarkeReviewedSolomonsSongCommentary from "../../data/imports/adam-clarke-reviewed-solomons-song-commentary.json";
-import adamClarkeReviewedWeakBooksPhase2Commentary from "../../data/imports/adam-clarke-reviewed-weak-books-phase-2-commentary.json";
-import adamClarkeReviewedEpistlesDepthPhase1Commentary from "../../data/imports/adam-clarke-reviewed-epistles-depth-phase-1-commentary.json";
-import adamClarkeReviewedHistoricalBooksPhase1Commentary from "../../data/imports/adam-clarke-reviewed-historical-books-phase-1-commentary.json";
-import adamClarkeReviewedJoshuaCompletionCommentary from "../../data/imports/adam-clarke-reviewed-joshua-completion-commentary.json";
 import wesleyReviewedPhase3Commentary from "../../data/imports/wesley-reviewed-phase-3-commentary.json";
 import wesleyReviewedCoverageSprintActsCommentary from "../../data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json";
 import amosExpandedPublicDomainCommentary from "../../data/imports/amos-expanded-public-domain-commentary.json";
@@ -156,18 +146,6 @@ import biblicalIllustratorReviewedExodusCommentary from "../../data/imports/bibl
 import matthewPooleReviewedProverbsCommentary from "../../data/imports/matthew-poole-reviewed-proverbs-commentary.json";
 import pulpitCommentaryReviewedProverbsCommentary from "../../data/imports/pulpit-commentary-reviewed-proverbs-commentary.json";
 import biblicalIllustratorReviewedProverbsCommentary from "../../data/imports/biblical-illustrator-reviewed-proverbs-commentary.json";
-import matthewPooleReviewedWeakBooksPhase2Commentary from "../../data/imports/matthew-poole-reviewed-weak-books-phase-2-commentary.json";
-import pulpitCommentaryReviewedWeakBooksPhase2Commentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-phase-2-commentary.json";
-import biblicalIllustratorReviewedWeakBooksPhase2Commentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-phase-2-commentary.json";
-import matthewPooleReviewedEpistlesDepthPhase1Commentary from "../../data/imports/matthew-poole-reviewed-epistles-depth-phase-1-commentary.json";
-import pulpitCommentaryReviewedEpistlesDepthPhase1Commentary from "../../data/imports/pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json";
-import biblicalIllustratorReviewedEpistlesDepthPhase1Commentary from "../../data/imports/biblical-illustrator-reviewed-epistles-depth-phase-1-commentary.json";
-import matthewPooleReviewedHistoricalBooksPhase1Commentary from "../../data/imports/matthew-poole-reviewed-historical-books-phase-1-commentary.json";
-import pulpitCommentaryReviewedHistoricalBooksPhase1Commentary from "../../data/imports/pulpit-commentary-reviewed-historical-books-phase-1-commentary.json";
-import biblicalIllustratorReviewedHistoricalBooksPhase1Commentary from "../../data/imports/biblical-illustrator-reviewed-historical-books-phase-1-commentary.json";
-import matthewPooleReviewedFoundationBooksPhase1Commentary from "../../data/imports/matthew-poole-reviewed-foundation-books-phase-1-commentary.json";
-import pulpitCommentaryReviewedFoundationBooksPhase1Commentary from "../../data/imports/pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json";
-import biblicalIllustratorReviewedFoundationBooksPhase1Commentary from "../../data/imports/biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
@@ -8951,11 +8929,6 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(barnesReviewedCompletionProphetsCommentary as CommentaryEntry[]),
   ...(barnesReviewedCompletionPentateuchGapsCommentary as CommentaryEntry[]),
   ...(barnesReviewedCompletionJoshuaStarterCommentary as CommentaryEntry[]),
-  ...(barnesReviewedSolomonsSongCommentary as CommentaryEntry[]),
-  ...(barnesReviewedWeakBooksPhase2Commentary as CommentaryEntry[]),
-  ...(barnesReviewedEpistlesDepthPhase1Commentary as CommentaryEntry[]),
-  ...(barnesReviewedHistoricalBooksPhase1Commentary as CommentaryEntry[]),
-  ...(barnesReviewedJoshuaCompletionCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedPhase3Commentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCoverageSprintGenesisCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedLibraryExpansionGospelsActsCommentary as CommentaryEntry[]),
@@ -8964,11 +8937,6 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(adamClarkeReviewedCompletionProphetsCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCompletionPentateuchGapsCommentary as CommentaryEntry[]),
   ...(adamClarkeReviewedCompletionJoshuaStarterCommentary as CommentaryEntry[]),
-  ...(adamClarkeReviewedSolomonsSongCommentary as CommentaryEntry[]),
-  ...(adamClarkeReviewedWeakBooksPhase2Commentary as CommentaryEntry[]),
-  ...(adamClarkeReviewedEpistlesDepthPhase1Commentary as CommentaryEntry[]),
-  ...(adamClarkeReviewedHistoricalBooksPhase1Commentary as CommentaryEntry[]),
-  ...(adamClarkeReviewedJoshuaCompletionCommentary as CommentaryEntry[]),
   ...(wesleyReviewedPhase3Commentary as CommentaryEntry[]),
   ...(wesleyReviewedCoverageSprintActsCommentary as CommentaryEntry[]),
   ...(amosExpandedPublicDomainCommentary as CommentaryEntry[]),
@@ -8989,22 +8957,54 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(matthewPooleReviewedProverbsCommentary as CommentaryEntry[]),
   ...(pulpitCommentaryReviewedProverbsCommentary as CommentaryEntry[]),
   ...(biblicalIllustratorReviewedProverbsCommentary as CommentaryEntry[]),
-  ...(matthewPooleReviewedWeakBooksPhase2Commentary as CommentaryEntry[]),
-  ...(pulpitCommentaryReviewedWeakBooksPhase2Commentary as CommentaryEntry[]),
-  ...(biblicalIllustratorReviewedWeakBooksPhase2Commentary as CommentaryEntry[]),
-  ...(matthewPooleReviewedEpistlesDepthPhase1Commentary as CommentaryEntry[]),
-  ...(pulpitCommentaryReviewedEpistlesDepthPhase1Commentary as CommentaryEntry[]),
-  ...(biblicalIllustratorReviewedEpistlesDepthPhase1Commentary as CommentaryEntry[]),
-  ...(matthewPooleReviewedHistoricalBooksPhase1Commentary as CommentaryEntry[]),
-  ...(pulpitCommentaryReviewedHistoricalBooksPhase1Commentary as CommentaryEntry[]),
-  ...(biblicalIllustratorReviewedHistoricalBooksPhase1Commentary as CommentaryEntry[]),
-  ...(matthewPooleReviewedFoundationBooksPhase1Commentary as CommentaryEntry[]),
-  ...(pulpitCommentaryReviewedFoundationBooksPhase1Commentary as CommentaryEntry[]),
-  ...(biblicalIllustratorReviewedFoundationBooksPhase1Commentary as CommentaryEntry[]),
 ].map((entry) => ({
   ...entry,
   source_title: entry.source_title ?? entry.resource_title,
 }));
+
+const deferredCommentaryImportFiles = [
+  "adam-clarke-reviewed-epistles-depth-phase-1-commentary.json",
+  "adam-clarke-reviewed-historical-books-phase-1-commentary.json",
+  "adam-clarke-reviewed-joshua-completion-commentary.json",
+  "adam-clarke-reviewed-solomons-song-commentary.json",
+  "adam-clarke-reviewed-weak-books-phase-2-commentary.json",
+  "barnes-reviewed-epistles-depth-phase-1-commentary.json",
+  "barnes-reviewed-historical-books-phase-1-commentary.json",
+  "barnes-reviewed-joshua-completion-commentary.json",
+  "barnes-reviewed-solomons-song-commentary.json",
+  "barnes-reviewed-weak-books-phase-2-commentary.json",
+  "biblical-illustrator-reviewed-epistles-depth-phase-1-commentary.json",
+  "biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json",
+  "biblical-illustrator-reviewed-historical-books-phase-1-commentary.json",
+  "biblical-illustrator-reviewed-weak-books-phase-2-commentary.json",
+  "matthew-poole-reviewed-epistles-depth-phase-1-commentary.json",
+  "matthew-poole-reviewed-foundation-books-phase-1-commentary.json",
+  "matthew-poole-reviewed-historical-books-phase-1-commentary.json",
+  "matthew-poole-reviewed-weak-books-phase-2-commentary.json",
+  "pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json",
+  "pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json",
+  "pulpit-commentary-reviewed-historical-books-phase-1-commentary.json",
+  "pulpit-commentary-reviewed-weak-books-phase-2-commentary.json",
+];
+
+function rawDeferredCommentaryUrl(fileName: string) {
+  return `https://raw.githubusercontent.com/scheerfactor/bible-study-app/main/data/imports/${encodeURIComponent(fileName)}`;
+}
+
+async function fetchDeferredCommentaryEntries(signal: AbortSignal) {
+  const groups = await Promise.all(
+    deferredCommentaryImportFiles.map(async (fileName) => {
+      const response = await fetch(rawDeferredCommentaryUrl(fileName), { signal });
+      if (!response.ok) return [];
+      return (await response.json()) as CommentaryEntry[];
+    }),
+  );
+
+  return groups.flat().map((entry) => ({
+    ...entry,
+    source_title: entry.source_title ?? entry.resource_title,
+  }));
+}
 
 const studyPeople: StudyPerson[] = [
   {
@@ -13996,6 +13996,21 @@ export default function Home() {
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
   );
+
+  useEffect(() => {
+    const controller = new AbortController();
+
+    void fetchDeferredCommentaryEntries(controller.signal)
+      .then((deferredEntries) => {
+        if (!deferredEntries.length) return;
+        setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, deferredEntries));
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+      });
+
+    return () => controller.abort();
+  }, []);
 
   useEffect(() => {
     function openHiddenAdminAreas() {
