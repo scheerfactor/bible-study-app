@@ -204,6 +204,13 @@ async function validateAudiobookPilots() {
       if (seenAudioPaths.has(segment.audioPath)) warnings.push(`${segmentLabel}: duplicate audioPath ${segment.audioPath}`);
       seenAudioPaths.add(segment.audioPath);
       if (libraryText && !libraryText.includes(segment.textAnchor)) warnings.push(`${segmentLabel}: textAnchor not found in ${pilot.libraryFilePath}`);
+      if (["Ready To Record", "Recorded", "Uploaded", "Approved"].includes(segment.status)) {
+        try {
+          await readFile(segment.transcriptPath, "utf8");
+        } catch {
+          errors.push(`${segmentLabel}: ${segment.status} requires an existing transcript file (${segment.transcriptPath})`);
+        }
+      }
     }
   }
 

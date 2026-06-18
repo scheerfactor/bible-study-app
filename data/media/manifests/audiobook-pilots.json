@@ -27,9 +27,9 @@
         "textAnchor": "TO YOU!",
         "audioPath": "audio/audiobooks/spurgeon/all-of-grace/001-to-you.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/001-to-you.md",
-        "status": "Cleanup Needed",
+        "status": "Ready To Record",
         "estimatedMinutes": 7,
-        "notes": "Good first private narration sample after OCR cleanup."
+        "notes": "Clean private transcript exists. Ready for the first narration sample."
       },
       {
         "number": 2,
