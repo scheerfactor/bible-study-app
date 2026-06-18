@@ -37,9 +37,9 @@
         "textAnchor": "WHAT ARE WE AT?",
         "audioPath": "audio/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.md",
-        "status": "Planned",
+        "status": "Ready To Record",
         "estimatedMinutes": 8,
-        "notes": "Use for second quality pass after the opening sample."
+        "notes": "Clean private transcript exists. Ready for the second narration sample."
       },
       {
         "number": 3,
