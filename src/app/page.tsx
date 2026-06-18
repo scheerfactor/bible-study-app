@@ -32710,6 +32710,70 @@ function MediaIntakeCenter({
         </article>
       </section>
 
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Simple audio upload workflow</p>
+            <h4 className="mt-1 text-lg font-semibold text-[var(--ink)]">The goal is upload, review, then publish</h4>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              The transcript cleanup is only for books that come from rough OCR scans. For sermons, teaching, and finished audiobook files, the better workflow is much simpler: create an intake record, upload the audio to R2, attach transcript/notes if available, review rights, then publish when approved.
+            </p>
+          </div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            <Upload size={14} />
+            R2 media ready
+          </span>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-3">
+          {[
+            {
+              title: "Audiobook from a clean text",
+              now: "Use the Library book as the source text.",
+              next: "Upload MP3/M4B chapters and attach the matching transcript or chapter list.",
+            },
+            {
+              title: "Sermon or teaching audio",
+              now: "Record the message and confirm church/preacher permission.",
+              next: "Upload one MP3, add passage, transcript, outline, and public/private status.",
+            },
+            {
+              title: "Licensed Bible audio",
+              now: "Keep browser/device voices active.",
+              next: "Do not upload files until written KJV audio rights are approved.",
+            },
+          ].map((workflow) => (
+            <div key={`audio-workflow-${workflow.title}`} className="rounded-2xl bg-[var(--paper)] p-4">
+              <p className="text-sm font-semibold text-[var(--ink)]">{workflow.title}</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{workflow.now}</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--green)]">{workflow.next}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 grid gap-3 lg:grid-cols-[1fr_1fr]">
+          <div className="rounded-2xl border border-[var(--line)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Recommended upload package</p>
+            <div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
+              <p><span className="font-semibold text-[var(--ink)]">Audio:</span> MP3 for sermons; M4B or chaptered MP3 folders for audiobooks.</p>
+              <p><span className="font-semibold text-[var(--ink)]">Transcript:</span> Markdown/TXT when available; sermon notes can be attached later.</p>
+              <p><span className="font-semibold text-[var(--ink)]">Cover:</span> WebP image with source/rights notes.</p>
+              <p><span className="font-semibold text-[var(--ink)]">Metadata:</span> title, speaker/narrator, passage, duration, rights, and recommended use.</p>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Current practical path</p>
+            <div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
+              <p>1. Add or choose a Media Intake record.</p>
+              <p>2. Upload audio into the matching R2 folder.</p>
+              <p>3. Paste the R2 path into the record.</p>
+              <p>4. Add transcript/notes and rights evidence.</p>
+              <p>5. Keep it private until the record is approved for public use.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="space-y-3">
         {records.map((record) => (
           <article key={record.id} className="rounded-2xl border border-[var(--line)] bg-white p-4">
