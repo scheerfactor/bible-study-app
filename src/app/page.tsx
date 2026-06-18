@@ -32730,8 +32730,11 @@ function MediaIntakeCenter({
   const [draftSourceUrl, setDraftSourceUrl] = useState("");
   const [draftRightsStatus, setDraftRightsStatus] = useState<RightsPermissionStatus>("Permission Needed");
   const [draftVisibility, setDraftVisibility] = useState<ResourceVisibility>("Private admin draft");
+  const [draftFile, setDraftFile] = useState<File | null>(null);
   const [draftFileName, setDraftFileName] = useState("");
+  const [draftUploadToken, setDraftUploadToken] = useState("");
   const [draftMessage, setDraftMessage] = useState("");
+  const [draftUploadBusy, setDraftUploadBusy] = useState(false);
   const readyCount = records.filter((record) => record.intakeStatus === "Ready For Storage" || record.intakeStatus === "Uploaded To R2").length;
   const rightsBlockedCount = records.filter((record) => record.rightsStatus === "Permission Needed" || record.intakeStatus === "Needs Rights Review").length;
   const publicReadyCount = records.filter((record) => record.intakeStatus === "Approved For Public Use").length;
@@ -32751,15 +32754,15 @@ function MediaIntakeCenter({
         ? "Ready For Storage"
         : "Needs Rights Review";
 
-  function createMediaReviewRecord() {
+  function buildDraftMediaRecord(intakeStatus = draftIntakeStatus): MediaIntakeRecord | null {
     const title = draftTitle.trim();
     if (!title) {
       setDraftMessage("Add a title before creating the media review record.");
-      return;
+      return null;
     }
 
     const creator = draftCreator.trim() || (draftKind === "Bible Audio" ? "Licensed narrator/provider needed" : "Creator needed");
-    const nextRecord: MediaIntakeRecord = {
+    return {
       id: `media-intake-${Date.now()}`,
       kind: draftKind,
       title,
@@ -32769,7 +32772,7 @@ function MediaIntakeCenter({
       duration: draftDuration.trim() || "Duration needed",
       sourceUrl: draftSourceUrl.trim(),
       rightsStatus: draftRightsStatus,
-      intakeStatus: draftIntakeStatus,
+      intakeStatus,
       storageBucket: "fathers-business-bible-study-public",
       storagePath: draftPaths.storagePath,
       transcriptPath: draftPaths.transcriptPath,
@@ -32781,13 +32784,15 @@ function MediaIntakeCenter({
         "This record is not public until rights and storage are reviewed.",
       ].join(" "),
       nextAction:
-        draftIntakeStatus === "Ready For Storage"
-          ? "Upload the file to R2, attach transcript/cover if available, then review before public approval."
+        intakeStatus === "Uploaded To R2"
+          ? "File uploaded to R2. Attach transcript/cover if available, then review before public approval."
+          : intakeStatus === "Ready For Storage"
+            ? "Upload the file to R2, attach transcript/cover if available, then review before public approval."
           : "Document rights or permission before uploading/publishing.",
     };
+  }
 
-    onAddRecord(nextRecord);
-    setDraftMessage("Private media review record created. Upload the file to R2, then update this record when reviewed.");
+  function resetDraftMediaForm() {
     setDraftTitle("");
     setDraftCreator("");
     setDraftPassage("");
@@ -32796,7 +32801,79 @@ function MediaIntakeCenter({
     setDraftSourceUrl("");
     setDraftRightsStatus("Permission Needed");
     setDraftVisibility("Private admin draft");
+    setDraftFile(null);
     setDraftFileName("");
+  }
+
+  function createMediaReviewRecord() {
+    const nextRecord = buildDraftMediaRecord();
+    if (!nextRecord) return;
+    onAddRecord(nextRecord);
+    setDraftMessage("Private media review record created. Upload the file to R2, then update this record when reviewed.");
+    resetDraftMediaForm();
+  }
+
+  async function uploadDraftFileToR2() {
+    const nextRecord = buildDraftMediaRecord("Uploaded To R2");
+    if (!nextRecord) return;
+    if (!draftFile) {
+      setDraftMessage("Choose an MP3, M4B, MP4, or related media file before requesting an upload.");
+      return;
+    }
+    if (!draftUploadToken.trim()) {
+      setDraftMessage("Enter the admin upload token before requesting a secure R2 upload URL.");
+      return;
+    }
+    if (draftRightsStatus !== "Public Domain" && draftRightsStatus !== "Approved") {
+      setDraftMessage("Direct upload is only enabled for Public Domain or Approved media. Create a review record first for anything else.");
+      return;
+    }
+
+    setDraftUploadBusy(true);
+    setDraftMessage("Requesting a secure R2 upload URL...");
+    try {
+      const signResponse = await fetch("/api/media/r2-upload-url", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-upload-token": draftUploadToken.trim(),
+        },
+        body: JSON.stringify({
+          storagePath: draftPaths.storagePath,
+          contentType: draftFile.type || "application/octet-stream",
+          fileName: draftFile.name,
+          size: draftFile.size,
+          kind: draftKind,
+          rightsStatus: draftRightsStatus,
+        }),
+      });
+      const signResult = await signResponse.json().catch(() => ({}));
+      if (!signResponse.ok) {
+        const missing = Array.isArray(signResult.missing) ? ` Missing server settings: ${signResult.missing.join(", ")}.` : "";
+        throw new Error(`${signResult.error || "Could not create upload URL."}${missing}`);
+      }
+
+      setDraftMessage("Uploading file to R2...");
+      const uploadResponse = await fetch(signResult.uploadUrl, {
+        method: "PUT",
+        headers: signResult.requiredHeaders || { "Content-Type": draftFile.type || "application/octet-stream" },
+        body: draftFile,
+      });
+      if (!uploadResponse.ok) {
+        throw new Error(`R2 upload failed (${uploadResponse.status}). If this is a browser CORS error, add PUT permission for this app origin in the R2 bucket CORS settings.`);
+      }
+
+      onAddRecord({
+        ...nextRecord,
+        notes: `${nextRecord.notes} Uploaded through the secure R2 upload flow.`,
+      });
+      setDraftMessage("Upload complete. A private media record was created and marked Uploaded To R2.");
+      resetDraftMediaForm();
+    } catch (error) {
+      setDraftMessage(error instanceof Error ? error.message : "Upload failed. Check R2 settings and try again.");
+    } finally {
+      setDraftUploadBusy(false);
+    }
   }
 
   return (
@@ -32894,12 +32971,23 @@ function MediaIntakeCenter({
               onChange={(event) => {
                 const file = event.target.files?.[0];
                 if (!file) return;
+                setDraftFile(file);
                 setDraftFileName(file.name);
                 if (!draftTitle.trim()) setDraftTitle(file.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " "));
               }}
               type="file"
             />
             <span className="mt-2 block normal-case tracking-normal">{draftFileName || "No file selected yet. File selection creates a review record; direct R2 upload comes next."}</span>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Admin upload token
+            <input
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              onChange={(event) => setDraftUploadToken(event.target.value)}
+              placeholder="Required for direct R2 upload"
+              type="password"
+              value={draftUploadToken}
+            />
           </label>
         </div>
 
@@ -32926,6 +33014,20 @@ function MediaIntakeCenter({
               <Upload size={16} />
               Create private review record
             </button>
+            <button
+              className="mt-3 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)] disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={draftUploadBusy}
+              onClick={() => {
+                void uploadDraftFileToR2();
+              }}
+              type="button"
+            >
+              <Upload size={16} />
+              {draftUploadBusy ? "Uploading..." : "Upload file to R2"}
+            </button>
+            <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+              Direct upload requires server R2 credentials, an admin token, and Public Domain or Approved rights status.
+            </p>
             {draftMessage && <p className="mt-3 text-sm font-semibold text-[var(--green)]">{draftMessage}</p>}
           </div>
         </div>

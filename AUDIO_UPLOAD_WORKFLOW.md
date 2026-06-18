@@ -29,9 +29,53 @@ The first audiobook pilot, _All of Grace_, is using cleaned transcript samples b
 
 ## What The App Does Today
 
-The current admin form creates the media review record and suggests safe R2 paths. The actual file still needs to be uploaded through Cloudflare R2 or a trusted script.
+The current admin form creates the media review record and suggests safe R2 paths. It can also request a short-lived R2 upload URL when the server has upload credentials configured.
 
-The next upgrade is direct in-app uploading with signed R2 upload URLs. That should happen only after the R2 write credentials are safely stored in Vercel and the endpoint is protected for admins.
+Direct upload is intentionally limited:
+
+- Server-side R2 credentials only.
+- Admin upload token required.
+- Public Domain or Approved rights status required.
+- Permission Needed, Personal Use Only, and Do Not Import records can be reviewed but cannot be directly uploaded into the public bucket.
+
+## Direct R2 Upload Setup
+
+Set these only in Vercel/server environment variables. Do not expose them in client code.
+
+```text
+R2_ACCOUNT_ID=
+R2_ACCESS_KEY_ID=
+R2_SECRET_ACCESS_KEY=
+R2_BUCKET_PUBLIC_CONTENT=fathers-business-bible-study-public
+MEDIA_UPLOAD_ADMIN_TOKEN=
+MEDIA_UPLOAD_MAX_BYTES=1073741824
+```
+
+Optional:
+
+```text
+R2_BUCKET_MEDIA=
+```
+
+If `R2_BUCKET_MEDIA` is set, direct media uploads use that bucket. Otherwise they use `R2_BUCKET_PUBLIC_CONTENT`.
+
+The R2 bucket also needs CORS for browser uploads. Allow the production app origin and local development origin to `PUT` objects with `Content-Type`.
+
+Suggested CORS intent:
+
+```text
+Allowed origins:
+- https://bible-study-app-eight.vercel.app
+- http://localhost:3052
+
+Allowed methods:
+- PUT
+
+Allowed headers:
+- Content-Type
+```
+
+Keep actual Cloudflare CORS settings as narrow as practical.
 
 ## Review Record Fields
 
