@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-06-17T23:31:48.311Z",
+  "generated_at": "2026-06-18T00:42:37.445Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 7134,
+  "commentary_entries": 7296,
   "summaries": {
     "library_text": {
-      "files": 1302,
-      "present": 1302,
+      "files": 1306,
+      "present": 1306,
       "missing": 0,
-      "total_bytes": 736442930,
-      "total_size": "702.33 MB"
+      "total_bytes": 737635799,
+      "total_size": "703.46 MB"
     },
     "commentary_batch": {
-      "files": 118,
-      "present": 118,
+      "files": 125,
+      "present": 125,
       "missing": 0,
-      "total_bytes": 323179705,
-      "total_size": "308.21 MB"
+      "total_bytes": 337479568,
+      "total_size": "321.85 MB"
     },
     "dictionary": {
       "files": 1,
@@ -29,7 +29,7 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 2669772,
+      "total_bytes": 2677850,
       "total_size": "2.55 MB"
     },
     "study_tool": {
@@ -40,11 +40,11 @@
       "total_size": "26.41 MB"
     },
     "all_public_content": {
-      "files": 1431,
-      "present": 1431,
+      "files": 1442,
+      "present": 1442,
       "missing": 0,
-      "total_bytes": 1125933319,
-      "total_size": "1.05 GB"
+      "total_bytes": 1141434129,
+      "total_size": "1.06 GB"
     }
   },
   "items": [
@@ -15673,6 +15673,54 @@
       "source_url": "https://archive.org/download/cu31924029388091/cu31924029388091_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-and-his-models-the-yale-lectures-on-preaching-1891-stalker-james.txt",
+      "storage_path": "data/library/verified/the-preacher-and-his-models-the-yale-lectures-on-preaching-1891-stalker-james.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 363182,
+      "checksum_sha256": "1f2a1a8576373fa17e8bb25a7cbb3e3e30de782a639cbbcb31fb2a09dc4536e1",
+      "title": "The Preacher and His Models: The Yale Lectures on Preaching 1891",
+      "author": "Stalker, James",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/24311"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-message-and-the-man-some-essentials-of-effective-preaching-jackson-j-dodd-james-dodd.txt",
+      "storage_path": "data/library/verified/the-message-and-the-man-some-essentials-of-effective-preaching-jackson-j-dodd-james-dodd.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 346241,
+      "checksum_sha256": "649f61ea0f1b08428a55d946f6e990a321a3f1a95caa1f2c3e5df1da50102878",
+      "title": "The Message and the Man: Some Essentials of Effective Preaching",
+      "author": "Jackson, J. Dodd (James Dodd)",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/30609"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hints-on-extemporaneous-preaching-ware-henry.txt",
+      "storage_path": "data/library/verified/hints-on-extemporaneous-preaching-ware-henry.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 112885,
+      "checksum_sha256": "e41e58f576c9e362e2cb658a602f9459a44a63650a2ac357c42024927052ad96",
+      "title": "Hints on Extemporaneous Preaching",
+      "author": "Ware, Henry",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/26308"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-greatest-english-classic-a-study-of-the-king-james-version-of-the-bible-and-its-influence-on-life-and-lite.txt",
+      "storage_path": "data/library/verified/the-greatest-english-classic-a-study-of-the-king-james-version-of-the-bible-and-its-influence-on-life-and-lite.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 370561,
+      "checksum_sha256": "5011069ff05deb014739f89cf3eaf1b048acdb40631086781457c92ea4ac5dad",
+      "title": "The Greatest English Classic: A Study of the King James Version of the Bible and Its Influence on Life and Literature",
+      "author": "McAfee, Cleland Boyd",
+      "category": "KJV / Textual Issues",
+      "source_url": "https://www.gutenberg.org/ebooks/40822"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -15754,13 +15802,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/adam-clarke-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/adam-clarke-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 634460,
+      "checksum_sha256": "930e3d1213e3ccb21301a0bf934e5ffb13d20c0334bf4a25f04964eb4f207d05",
+      "batch_name": "adam-clarke-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-phase-3-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-phase-3-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 4584446,
-      "checksum_sha256": "fa8c5f37e8f7920b58aec5ebf73f598a6714c588df46e357441b99924338343a",
+      "size_bytes": 4547562,
+      "checksum_sha256": "ccb53b126299840233f4940401d521ea421528ff5eda7bc55fb57b6801087642",
       "batch_name": "adam-clarke-reviewed-phase-3-commentary.json",
-      "entries": 219
+      "entries": 218
     },
     {
       "kind": "commentary_batch",
@@ -15894,13 +15952,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/barnes-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/barnes-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 564296,
+      "checksum_sha256": "e0f211d706292df0c8a942f94cf83b9183d4c116dffc356fd392a8588b8d6d3d",
+      "batch_name": "barnes-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/barnes-reviewed-phase-3-commentary.json",
       "storage_path": "data/imports/barnes-reviewed-phase-3-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 8152081,
-      "checksum_sha256": "98ba68b5fe667e091a3a53cce8d1eacec7c54cb9f5959426aed5797886ae4564",
+      "size_bytes": 8119804,
+      "checksum_sha256": "474f7691a5b4085fa9505e5ef0b83914c1afcf5b2eb13c534894dc2481976aa3",
       "batch_name": "barnes-reviewed-phase-3-commentary.json",
-      "entries": 219
+      "entries": 218
     },
     {
       "kind": "commentary_batch",
@@ -15994,13 +16062,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 8609641,
+      "checksum_sha256": "f102e274688b27d56b16aabb0e569ee67f7ff91afba4ab46bdcfc2025d01bd8d",
+      "batch_name": "biblical-illustrator-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/biblical-illustrator-reviewed-prophecy-teaching-commentary.json",
       "storage_path": "data/imports/biblical-illustrator-reviewed-prophecy-teaching-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 10806180,
-      "checksum_sha256": "b636e659b508df9c0ecfded586b1f4dab74458a9e6f074d4caac35035bfafeb0",
+      "size_bytes": 10446215,
+      "checksum_sha256": "1821ae03b5d7e2b7c0dff31ca95af7800dc77581ae3fadf86efb4384bd07a04f",
       "batch_name": "biblical-illustrator-reviewed-prophecy-teaching-commentary.json",
-      "entries": 41
+      "entries": 40
     },
     {
       "kind": "commentary_batch",
@@ -16101,6 +16179,16 @@
       "checksum_sha256": "0ada2da0a1449a007571e952310c14b09d7f92d026eb3ac5880eb962425e3022",
       "batch_name": "h-a-ironside-hosea-commentary.json",
       "entries": 14
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-luke-complete-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1161054,
+      "checksum_sha256": "7da814741c83650ae0f6273e9cc96e30c00173cd35aabeaba6a6de74b68246af",
+      "batch_name": "h-a-ironside-luke-complete-commentary.json",
+      "entries": 24
     },
     {
       "kind": "commentary_batch",
@@ -16684,13 +16772,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/matthew-poole-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/matthew-poole-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 594370,
+      "checksum_sha256": "ef2718d90bdddfcda62df2d2f73a4391b65c728a6fa523fb511422d17c64ca06",
+      "batch_name": "matthew-poole-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/matthew-poole-reviewed-prophecy-teaching-commentary.json",
       "storage_path": "data/imports/matthew-poole-reviewed-prophecy-teaching-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 848764,
-      "checksum_sha256": "5d48c09b20f7e515d945359373beb461d51eeeffa36f8701831dad520b158b28",
+      "size_bytes": 822804,
+      "checksum_sha256": "0177cd49e906518254f8f2dc876cea00513f5d1eb026c0612328800eef59638b",
       "batch_name": "matthew-poole-reviewed-prophecy-teaching-commentary.json",
-      "entries": 41
+      "entries": 40
     },
     {
       "kind": "commentary_batch",
@@ -16774,13 +16872,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 3224415,
+      "checksum_sha256": "dc829730871b4390a7cb3802076b5a92e7a1a6069d851c1551663bffbbae6f3e",
+      "batch_name": "pulpit-commentary-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/pulpit-commentary-reviewed-prophecy-teaching-commentary.json",
       "storage_path": "data/imports/pulpit-commentary-reviewed-prophecy-teaching-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 6069569,
-      "checksum_sha256": "5477b28c3a9b979453a525e833431aa56e3975e0ce4009245de9e3c0e2a23c4f",
+      "size_bytes": 5890757,
+      "checksum_sha256": "e38cdf95be3558037ac50e2d182f91249e688e092f8dc0bd5b8d26214b2c2470",
       "batch_name": "pulpit-commentary-reviewed-prophecy-teaching-commentary.json",
-      "entries": 41
+      "entries": 40
     },
     {
       "kind": "commentary_batch",
@@ -16844,13 +16952,23 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-luke-complete-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-luke-complete-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 150951,
+      "checksum_sha256": "8dcb1de36b648d65f299939e81dbe9e4136a49c748616b7f805aefe3edf424b5",
+      "batch_name": "wesley-reviewed-luke-complete-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/wesley-reviewed-phase-3-commentary.json",
       "storage_path": "data/imports/wesley-reviewed-phase-3-commentary.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 654091,
-      "checksum_sha256": "a732c5add103fe12280e2919a65e04092d3462e08fc7599629f58422238442ef",
+      "size_bytes": 648665,
+      "checksum_sha256": "4b019531dd1aac899038f2ab9e4c56c932b1f619a1e1162948fa3d9339cb9f28",
       "batch_name": "wesley-reviewed-phase-3-commentary.json",
-      "entries": 60
+      "entries": 59
     },
     {
       "kind": "dictionary",
@@ -16865,8 +16983,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 2669772,
-      "checksum_sha256": "4c610f269ed22f6990eddc8278833308be90796d90b791db920bdcaef5969c09"
+      "size_bytes": 2677850,
+      "checksum_sha256": "c290a0df6bebdd05409d11bbc3685b3ac28e1b9e52435de124e6621d00772ef4"
     },
     {
       "kind": "study_tool",

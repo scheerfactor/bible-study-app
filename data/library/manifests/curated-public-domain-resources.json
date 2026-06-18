@@ -57307,5 +57307,181 @@
     "checksum_sha256": "8e67be0592ae8b335f27c1adb0483c1c9587f33ba853302795adecae254abaa9",
     "file_size_bytes": 861393,
     "word_count": 146089
+  },
+  {
+    "title": "The Preacher and His Models: The Yale Lectures on Preaching 1891",
+    "author": "Stalker, James",
+    "year": 2008,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/24311",
+    "download_url": "https://www.gutenberg.org/ebooks/24311.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-preacher-and-his-models-the-yale-lectures-on-preaching-1891-stalker-james.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/24311.",
+    "notes": "Preaching and teaching help for sermon preparation, pastoral formation, and lesson craft. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Preaching and teaching help for sermon preparation, pastoral formation, and lesson craft.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Preacher and His Models: The Yale Lectures on Preaching 1891",
+      "author": "Stalker, James",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 283,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "1f2a1a8576373fa17e8bb25a7cbb3e3e30de782a639cbbcb31fb2a09dc4536e1",
+    "file_size_bytes": 363182,
+    "word_count": 63642
+  },
+  {
+    "title": "The Message and the Man: Some Essentials of Effective Preaching",
+    "author": "Jackson, J. Dodd (James Dodd)",
+    "year": 2009,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/30609",
+    "download_url": "https://www.gutenberg.org/ebooks/30609.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-message-and-the-man-some-essentials-of-effective-preaching-jackson-j-dodd-james-dodd.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/30609.",
+    "notes": "Preaching and teaching help for sermon preparation, pastoral formation, and lesson craft. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Preaching and teaching help for sermon preparation, pastoral formation, and lesson craft.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Message and the Man: Some Essentials of Effective Preaching",
+      "author": "Jackson, J. Dodd (James Dodd)",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 269,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "649f61ea0f1b08428a55d946f6e990a321a3f1a95caa1f2c3e5df1da50102878",
+    "file_size_bytes": 346241,
+    "word_count": 60488
+  },
+  {
+    "title": "Hints on Extemporaneous Preaching",
+    "author": "Ware, Henry",
+    "year": 2008,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching & Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/26308",
+    "download_url": "https://www.gutenberg.org/ebooks/26308.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/hints-on-extemporaneous-preaching-ware-henry.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/26308.",
+    "notes": "Preaching and teaching help for delivery, structure, and pulpit readiness. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Preaching and teaching help for delivery, structure, and pulpit readiness.",
+    "resource_labels": [
+      "Preaching & Teaching",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hints on Extemporaneous Preaching",
+      "author": "Ware, Henry",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching & Teaching",
+      "badge": "Preaching & Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 84,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "e41e58f576c9e362e2cb658a602f9459a44a63650a2ac357c42024927052ad96",
+    "file_size_bytes": 112885,
+    "word_count": 18909
+  },
+  {
+    "title": "The Greatest English Classic: A Study of the King James Version of the Bible and Its Influence on Life and Literature",
+    "author": "McAfee, Cleland Boyd",
+    "year": 2012,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://www.gutenberg.org/ebooks/40822",
+    "download_url": "https://www.gutenberg.org/ebooks/40822.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-greatest-english-classic-a-study-of-the-king-james-version-of-the-bible-and-its-influence-on-life-and-lite.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/40822.",
+    "notes": "English Bible history and KJV-related study resource for background, teaching, and quotation with source context. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "English Bible history and KJV-related study resource for background, teaching, and quotation with source context.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Greatest English Classic: A Study of the King James Version of the Bible and Its Influence on Life and Literature",
+      "author": "McAfee, Cleland Boyd",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 286,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5011069ff05deb014739f89cf3eaf1b048acdb40631086781457c92ea4ac5dad",
+    "file_size_bytes": 370561,
+    "word_count": 64392
   }
 ]

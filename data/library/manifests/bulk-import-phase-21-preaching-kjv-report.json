@@ -1,0 +1,86 @@
+{
+  "source_csv": "/tmp/next-bible-library-batch.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 4,
+  "imported": 4,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Preacher and His Models: The Yale Lectures on Preaching 1891",
+      "file": "the-preacher-and-his-models-the-yale-lectures-on-preaching-1891-stalker-james.txt",
+      "bytes": 363182,
+      "words": 63642,
+      "reading_time_minutes": 283
+    },
+    {
+      "title": "The Message and the Man: Some Essentials of Effective Preaching",
+      "file": "the-message-and-the-man-some-essentials-of-effective-preaching-jackson-j-dodd-james-dodd.txt",
+      "bytes": 346241,
+      "words": 60488,
+      "reading_time_minutes": 269
+    },
+    {
+      "title": "Hints on Extemporaneous Preaching",
+      "file": "hints-on-extemporaneous-preaching-ware-henry.txt",
+      "bytes": 112885,
+      "words": 18909,
+      "reading_time_minutes": 84
+    },
+    {
+      "title": "The Greatest English Classic: A Study of the King James Version of the Bible and Its Influence on Life and Literature",
+      "file": "the-greatest-english-classic-a-study-of-the-king-james-version-of-the-bible-and-its-influence-on-life-and-lite.txt",
+      "bytes": 370561,
+      "words": 64392,
+      "reading_time_minutes": 286
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Preacher and His Models: The Yale Lectures on Preaching 1891",
+      "author": "Stalker, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-and-his-models-the-yale-lectures-on-preaching-1891-stalker-james.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Message and the Man: Some Essentials of Effective Preaching",
+      "author": "Jackson, J. Dodd (James Dodd)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-message-and-the-man-some-essentials-of-effective-preaching-jackson-j-dodd-james-dodd.txt"
+    },
+    {
+      "row": 4,
+      "title": "Hints on Extemporaneous Preaching",
+      "author": "Ware, Henry",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hints-on-extemporaneous-preaching-ware-henry.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Greatest English Classic: A Study of the King James Version of the Bible and Its Influence on Life and Literature",
+      "author": "McAfee, Cleland Boyd",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-greatest-english-classic-a-study-of-the-king-james-version-of-the-bible-and-its-influence-on-life-and-lite.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
