@@ -2,6 +2,7 @@
 import { readFile } from "node:fs/promises";
 
 const manifestPath = process.argv[2] || "data/media/manifests/media-intake-candidates.json";
+const audiobookPilotPath = process.argv[3] || "data/media/manifests/audiobook-pilots.json";
 
 const allowedKinds = new Set(["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"]);
 const allowedRightsStatuses = new Set([
@@ -25,6 +26,7 @@ const allowedIntakeStatuses = new Set([
 ]);
 const allowedVisibility = new Set(["Public after review", "Private admin draft", "Personal use only"]);
 const publicReadyStatuses = new Set(["Uploaded To R2", "Approved For Public Use"]);
+const allowedSegmentStatuses = new Set(["Planned", "Cleanup Needed", "Ready To Record", "Recorded", "Uploaded", "Approved"]);
 
 const raw = await readFile(manifestPath, "utf8");
 const records = JSON.parse(raw);
@@ -123,9 +125,98 @@ records.forEach((record, index) => {
   }
 });
 
+async function validateAudiobookPilots() {
+  let pilotRaw = "[]";
+  try {
+    pilotRaw = await readFile(audiobookPilotPath, "utf8");
+  } catch {
+    warnings.push(`audiobook pilot manifest not found at ${audiobookPilotPath}`);
+    return { pilotCount: 0, segmentCount: 0 };
+  }
+
+  const pilots = JSON.parse(pilotRaw);
+  if (!Array.isArray(pilots)) {
+    errors.push("Audiobook pilot manifest must be a JSON array.");
+    return { pilotCount: 0, segmentCount: 0 };
+  }
+
+  const recordIds = new Set(records.map((record) => record.id));
+  const seenPilotIds = new Set();
+  let segmentCount = 0;
+
+  for (const [pilotIndex, pilot] of pilots.entries()) {
+    const pilotLabel = `audiobook pilot ${pilotIndex + 1}`;
+    for (const field of [
+      "id",
+      "mediaRecordId",
+      "libraryTitle",
+      "libraryAuthor",
+      "libraryFilePath",
+      "sourceUrl",
+      "rightsEvidence",
+      "pilotStatus",
+      "textCleanupStatus",
+      "narrationStatus",
+      "estimatedDuration",
+      "publicReadiness",
+    ]) {
+      if (!String(pilot[field] ?? "").trim()) errors.push(`${pilotLabel}: missing ${field}`);
+    }
+
+    if (seenPilotIds.has(pilot.id)) errors.push(`${pilotLabel}: duplicate id ${pilot.id}`);
+    seenPilotIds.add(pilot.id);
+
+    if (!recordIds.has(pilot.mediaRecordId)) errors.push(`${pilotLabel}: mediaRecordId ${pilot.mediaRecordId} does not match an intake record`);
+    if (!isValidUrl(pilot.sourceUrl)) errors.push(`${pilotLabel}: sourceUrl is not a valid URL`);
+    if (!Array.isArray(pilot.pilotSteps) || pilot.pilotSteps.length < 3) errors.push(`${pilotLabel}: pilotSteps must include at least 3 steps`);
+    if (!Array.isArray(pilot.segments) || pilot.segments.length === 0) errors.push(`${pilotLabel}: segments must not be empty`);
+
+    let libraryText = "";
+    try {
+      libraryText = await readFile(pilot.libraryFilePath, "utf8");
+    } catch {
+      errors.push(`${pilotLabel}: libraryFilePath does not exist (${pilot.libraryFilePath})`);
+    }
+
+    const seenSegmentNumbers = new Set();
+    const seenAudioPaths = new Set();
+    for (const [segmentIndex, segment] of (pilot.segments ?? []).entries()) {
+      segmentCount += 1;
+      const segmentLabel = `${pilotLabel} segment ${segmentIndex + 1}`;
+      for (const field of ["number", "title", "textAnchor", "audioPath", "transcriptPath", "status", "estimatedMinutes", "notes"]) {
+        if (segment[field] === undefined || segment[field] === null || String(segment[field]).trim() === "") {
+          errors.push(`${segmentLabel}: missing ${field}`);
+        }
+      }
+
+      if (seenSegmentNumbers.has(segment.number)) errors.push(`${segmentLabel}: duplicate segment number ${segment.number}`);
+      seenSegmentNumbers.add(segment.number);
+
+      if (!Number.isInteger(segment.number) || segment.number < 1) errors.push(`${segmentLabel}: number must be a positive integer`);
+      if (!Number.isFinite(segment.estimatedMinutes) || segment.estimatedMinutes < 1) errors.push(`${segmentLabel}: estimatedMinutes must be at least 1`);
+      if (!allowedSegmentStatuses.has(segment.status)) errors.push(`${segmentLabel}: unsupported status ${segment.status}`);
+      if (!String(segment.audioPath ?? "").startsWith("audio/") || !String(segment.audioPath ?? "").endsWith(".mp3")) {
+        errors.push(`${segmentLabel}: audioPath must start with audio/ and end with .mp3`);
+      }
+      if (!String(segment.transcriptPath ?? "").startsWith("transcripts/") || !String(segment.transcriptPath ?? "").endsWith(".md")) {
+        errors.push(`${segmentLabel}: transcriptPath must start with transcripts/ and end with .md`);
+      }
+      if (seenAudioPaths.has(segment.audioPath)) warnings.push(`${segmentLabel}: duplicate audioPath ${segment.audioPath}`);
+      seenAudioPaths.add(segment.audioPath);
+      if (libraryText && !libraryText.includes(segment.textAnchor)) warnings.push(`${segmentLabel}: textAnchor not found in ${pilot.libraryFilePath}`);
+    }
+  }
+
+  return { pilotCount: pilots.length, segmentCount };
+}
+
+const audiobookPilotSummary = await validateAudiobookPilots();
+
 console.log("Media manifest validation summary");
 console.table({
   records: records.length,
+  audiobook_pilots: audiobookPilotSummary.pilotCount,
+  audiobook_segments: audiobookPilotSummary.segmentCount,
   errors: errors.length,
   warnings: warnings.length,
   public_ready: records.filter((record) => publicReadyStatuses.has(record.intakeStatus)).length,

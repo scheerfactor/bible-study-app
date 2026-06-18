@@ -70,6 +70,15 @@ No media becomes public until:
 4. **Bible audio planning:** keep browser/device speech active while researching licensed KJV audio or premium TTS terms.
 5. **Video planning:** wait until audio workflow, transcripts, storage costs, and rights gates are working smoothly.
 
+## All of Grace Audiobook Pilot
+
+- Manifest: `data/media/manifests/audiobook-pilots.json`
+- Linked media intake record: `all-of-grace-audiobook-candidate`
+- Linked Library text: `data/library/verified/all-of-grace-c-h-spurgeon.txt`
+- Planned output path: `audio/audiobooks/spurgeon/all-of-grace/`
+- Status: private pilot only; no narration files are public yet.
+- Current need: clean OCR front matter and section headings before recording a polished public audiobook.
+
 ## Validation
 
 Run before adding or publishing media records:
@@ -78,7 +87,7 @@ Run before adding or publishing media records:
 npm run validate:media
 ```
 
-The validator checks required metadata, rights status, public-readiness gates, storage path prefixes, and placeholder paths.
+The validator checks required metadata, rights status, public-readiness gates, storage path prefixes, placeholder paths, audiobook pilot segments, transcript paths, and source text anchors.
 
 ## Do Not Add Yet
 

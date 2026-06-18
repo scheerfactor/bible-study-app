@@ -54,6 +54,7 @@ import permissionTrackerData from "../../data/library/manifests/permission-track
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 import mediaIntakeCandidatesData from "../../data/media/manifests/media-intake-candidates.json";
+import audiobookPilotsData from "../../data/media/manifests/audiobook-pilots.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -1054,6 +1055,34 @@ type MediaIntakeRecord = {
   nextAction: string;
 };
 
+type AudiobookPilotSegment = {
+  number: number;
+  title: string;
+  textAnchor: string;
+  audioPath: string;
+  transcriptPath: string;
+  status: "Planned" | "Cleanup Needed" | "Ready To Record" | "Recorded" | "Uploaded" | "Approved";
+  estimatedMinutes: number;
+  notes: string;
+};
+
+type AudiobookPilot = {
+  id: string;
+  mediaRecordId: string;
+  libraryTitle: string;
+  libraryAuthor: string;
+  libraryFilePath: string;
+  sourceUrl: string;
+  rightsEvidence: string;
+  pilotStatus: string;
+  textCleanupStatus: string;
+  narrationStatus: string;
+  estimatedDuration: string;
+  publicReadiness: string;
+  pilotSteps: string[];
+  segments: AudiobookPilotSegment[];
+};
+
 type PermissionRequestTemplate = {
   id: string;
   title: string;
@@ -1910,6 +1939,7 @@ const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
 ];
 
 const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeCandidatesData as MediaIntakeRecord[];
+const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotsData as AudiobookPilot[];
 
 const DEFAULT_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [
   {
@@ -32601,10 +32631,12 @@ function mediaIntakeStatusPill(status: MediaIntakeStatus) {
 
 function MediaIntakeCenter({
   records,
+  audiobookPilots,
   onAddRecord,
   onUpdateRecord,
 }: {
   records: MediaIntakeRecord[];
+  audiobookPilots: AudiobookPilot[];
   onAddRecord: () => void;
   onUpdateRecord: (id: string, field: keyof MediaIntakeRecord, value: string) => void;
 }) {
@@ -32612,6 +32644,7 @@ function MediaIntakeCenter({
   const rightsBlockedCount = records.filter((record) => record.rightsStatus === "Permission Needed" || record.intakeStatus === "Needs Rights Review").length;
   const publicReadyCount = records.filter((record) => record.intakeStatus === "Approved For Public Use").length;
   const mediaKinds = ["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"] as const;
+  const audiobookPilotsByRecordId = new Map(audiobookPilots.map((pilot) => [pilot.mediaRecordId, pilot]));
 
   return (
     <div className="mt-5 space-y-4">
@@ -32680,6 +32713,13 @@ function MediaIntakeCenter({
       <section className="space-y-3">
         {records.map((record) => (
           <article key={record.id} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            {(() => {
+              const pilot = audiobookPilotsByRecordId.get(record.id);
+              const cleanupCount = pilot?.segments.filter((segment) => segment.status === "Cleanup Needed").length ?? 0;
+              const readyToRecordCount = pilot?.segments.filter((segment) => segment.status === "Ready To Record").length ?? 0;
+              const uploadedCount = pilot?.segments.filter((segment) => segment.status === "Uploaded" || segment.status === "Approved").length ?? 0;
+              return (
+                <>
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-base font-semibold text-[var(--ink)]">{record.title}</p>
@@ -32748,10 +32788,80 @@ function MediaIntakeCenter({
               <AdminImportField label="Cover path" value={record.coverPath} onChange={(value) => onUpdateRecord(record.id, "coverPath", value)} />
             </div>
 
+            {pilot && (
+              <section className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--green)]">Audiobook pilot plan</p>
+                    <h4 className="mt-1 text-lg font-semibold text-[var(--ink)]">{pilot.libraryTitle}</h4>
+                    <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+                      {pilot.libraryAuthor} · {pilot.estimatedDuration} · {pilot.pilotStatus}
+                    </p>
+                  </div>
+                  <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">
+                    {pilot.segments.length} segments planned
+                  </span>
+                </div>
+
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  {[
+                    ["Cleanup needed", cleanupCount],
+                    ["Ready to record", readyToRecordCount],
+                    ["Uploaded/approved", uploadedCount],
+                  ].map(([label, value]) => (
+                    <div key={`audiobook-pilot-${pilot.id}-${label}`} className="rounded-2xl bg-white p-3">
+                      <p className="text-xl font-semibold text-[var(--green)]">{value}</p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-4 grid gap-3 lg:grid-cols-[0.95fr_1.05fr]">
+                  <div className="rounded-2xl bg-white p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Pilot gates</p>
+                    <div className="mt-2 space-y-2">
+                      {pilot.pilotSteps.slice(0, 4).map((step) => (
+                        <p key={`audiobook-step-${pilot.id}-${step}`} className="text-sm leading-6 text-[var(--muted)]">
+                          {step}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="rounded-2xl bg-white p-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Next segments</p>
+                    <div className="mt-2 space-y-2">
+                      {pilot.segments.slice(0, 5).map((segment) => (
+                        <div key={`audiobook-segment-${pilot.id}-${segment.number}`} className="rounded-xl border border-[var(--line)] p-3">
+                          <div className="flex flex-wrap items-center justify-between gap-2">
+                            <p className="text-sm font-semibold text-[var(--ink)]">{segment.number}. {segment.title}</p>
+                            <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[11px] font-semibold text-[var(--muted)]">{segment.status}</span>
+                          </div>
+                          <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{segment.audioPath}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-3 grid gap-2 md:grid-cols-2">
+                  <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--ink)]">Text cleanup:</span> {pilot.textCleanupStatus}
+                  </p>
+                  <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--ink)]">Public readiness:</span> {pilot.publicReadiness}
+                  </p>
+                </div>
+              </section>
+            )}
+
             <div className="mt-4 grid gap-3 md:grid-cols-2">
               <AdminImportTextArea label="Notes" value={record.notes} onChange={(value) => onUpdateRecord(record.id, "notes", value)} />
               <AdminImportTextArea label="Next action" value={record.nextAction} onChange={(value) => onUpdateRecord(record.id, "nextAction", value)} />
             </div>
+                </>
+              );
+            })()}
           </article>
         ))}
       </section>
@@ -33432,6 +33542,7 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
       {activeTab === "mediaIntake" && (
         <MediaIntakeCenter
           records={mediaIntakeRecords}
+          audiobookPilots={DEFAULT_AUDIOBOOK_PILOTS}
           onAddRecord={addMediaIntakeRecord}
           onUpdateRecord={updateMediaIntakeRecord}
         />

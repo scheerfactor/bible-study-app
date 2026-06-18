@@ -1,0 +1,256 @@
+[
+  {
+    "id": "all-of-grace-audiobook-pilot",
+    "mediaRecordId": "all-of-grace-audiobook-candidate",
+    "libraryTitle": "All of Grace",
+    "libraryAuthor": "C. H. Spurgeon",
+    "libraryFilePath": "data/library/verified/all-of-grace-c-h-spurgeon.txt",
+    "sourceUrl": "https://archive.org/details/allofgraceearnes00spur",
+    "rightsEvidence": "Internet Archive scan of an 1886 edition. C. H. Spurgeon died in 1892; this edition is public domain in the United States.",
+    "pilotStatus": "Text cleanup needed before public narration",
+    "textCleanupStatus": "Front matter and OCR artifacts need review before polished narration.",
+    "narrationStatus": "No narration files uploaded yet",
+    "estimatedDuration": "3 hr 10 min",
+    "publicReadiness": "Private pilot only until narration rights, transcript cleanup, and audio quality review are complete.",
+    "pilotSteps": [
+      "Confirm the preferred public-domain text edition already attached in the Library.",
+      "Remove OCR front matter noise and proof chapter headings without changing Spurgeon's wording.",
+      "Record or generate one short private sample segment for voice quality review.",
+      "Upload approved sample audio to R2 under the planned path.",
+      "Attach transcript timing after the voice and file format are approved.",
+      "Only mark public after source, narration, transcript, and rights review are documented."
+    ],
+    "segments": [
+      {
+        "number": 1,
+        "title": "To You!",
+        "textAnchor": "TO YOU!",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/001-to-you.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/001-to-you.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 7,
+        "notes": "Good first private narration sample after OCR cleanup."
+      },
+      {
+        "number": 2,
+        "title": "What Are We At?",
+        "textAnchor": "WHAT ARE WE AT?",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.md",
+        "status": "Planned",
+        "estimatedMinutes": 8,
+        "notes": "Use for second quality pass after the opening sample."
+      },
+      {
+        "number": 3,
+        "title": "God Justifieth the Ungodly",
+        "textAnchor": "GOD JUSTIFIETH THE UNGODLY.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/003-god-justifieth-the-ungodly.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/003-god-justifieth-the-ungodly.md",
+        "status": "Planned",
+        "estimatedMinutes": 13,
+        "notes": "Core gospel section; review pronunciation and pacing carefully."
+      },
+      {
+        "number": 4,
+        "title": "It Is God That Justifieth",
+        "textAnchor": "JUST AND THE JUSTIFIER.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/004-it-is-god-that-justifieth.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/004-it-is-god-that-justifieth.md",
+        "status": "Planned",
+        "estimatedMinutes": 15,
+        "notes": "Confirm section boundary from the source text before narration."
+      },
+      {
+        "number": 5,
+        "title": "Concerning Deliverance from Sinning",
+        "textAnchor": "CONCERNING DELIVERANCE FROM SIN-",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/005-concerning-deliverance-from-sinning.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/005-concerning-deliverance-from-sinning.md",
+        "status": "Planned",
+        "estimatedMinutes": 12,
+        "notes": "Heading is hyphenated in OCR; proof against scan before final transcript."
+      },
+      {
+        "number": 6,
+        "title": "By Grace Through Faith",
+        "textAnchor": "BY GRACE THROUGH FAITH.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/006-by-grace-through-faith.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/006-by-grace-through-faith.md",
+        "status": "Planned",
+        "estimatedMinutes": 7,
+        "notes": "Short, high-value segment for gospel clarity."
+      },
+      {
+        "number": 7,
+        "title": "Faith, What Is It?",
+        "textAnchor": "FAITH, WHAT IS IT?",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/007-faith-what-is-it.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/007-faith-what-is-it.md",
+        "status": "Planned",
+        "estimatedMinutes": 12,
+        "notes": "Strong candidate for quote capture testing."
+      },
+      {
+        "number": 8,
+        "title": "How May Faith Be Illustrated?",
+        "textAnchor": "HOW MAY FAITH BE ILLUSTRATED ?",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/008-how-may-faith-be-illustrated.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/008-how-may-faith-be-illustrated.md",
+        "status": "Planned",
+        "estimatedMinutes": 13,
+        "notes": "Useful for future illustration capture while listening."
+      },
+      {
+        "number": 9,
+        "title": "Why Are We Saved by Faith?",
+        "textAnchor": "WHY ARE. WE SAVED BY FAITH?",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/009-why-are-we-saved-by-faith.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/009-why-are-we-saved-by-faith.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 12,
+        "notes": "OCR heading contains punctuation spacing; clean transcript heading before narration."
+      },
+      {
+        "number": 10,
+        "title": "Alas! I Can Do Nothing!",
+        "textAnchor": "ALAS! I CAN DO NOTHING!",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/010-alas-i-can-do-nothing.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/010-alas-i-can-do-nothing.md",
+        "status": "Planned",
+        "estimatedMinutes": 18,
+        "notes": "Longer section; split later if audio pacing feels heavy."
+      },
+      {
+        "number": 11,
+        "title": "The Increase of Faith",
+        "textAnchor": "THE INCREASE OF FAITH.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/011-the-increase-of-faith.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/011-the-increase-of-faith.md",
+        "status": "Planned",
+        "estimatedMinutes": 11,
+        "notes": "Good devotional listening segment."
+      },
+      {
+        "number": 12,
+        "title": "Regeneration and the Holy Spirit",
+        "textAnchor": "REGENERATION AND THE HOLY SPIRIT.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/012-regeneration-and-the-holy-spirit.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/012-regeneration-and-the-holy-spirit.md",
+        "status": "Planned",
+        "estimatedMinutes": 16,
+        "notes": "Doctrine-heavy section; review carefully for clean sentence breaks."
+      },
+      {
+        "number": 13,
+        "title": "Repentance Must Go with Forgiveness",
+        "textAnchor": "REPENTANCE MUST GO WITH FORGIVE-",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/013-repentance-must-go-with-forgiveness.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/013-repentance-must-go-with-forgiveness.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 14,
+        "notes": "OCR heading wraps mid-word; proof before final transcript."
+      },
+      {
+        "number": 14,
+        "title": "How Repentance Is Given",
+        "textAnchor": "HOW REPENTANCE IS GIVEN.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/014-how-repentance-is-given.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/014-how-repentance-is-given.md",
+        "status": "Planned",
+        "estimatedMinutes": 12,
+        "notes": "Connect later to repentance theme path."
+      },
+      {
+        "number": 15,
+        "title": "Christ Is All",
+        "textAnchor": "CHRIST IS ALL.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/015-christ-is-all.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/015-christ-is-all.md",
+        "status": "Planned",
+        "estimatedMinutes": 1,
+        "notes": "Very short heading/transition area; may merge with adjacent section."
+      },
+      {
+        "number": 16,
+        "title": "The Fear of Final Falling",
+        "textAnchor": "THE FEAR OF FINAL FALLING.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/016-the-fear-of-final-falling.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/016-the-fear-of-final-falling.md",
+        "status": "Planned",
+        "estimatedMinutes": 13,
+        "notes": "May need pastoral tone review for anxious listeners."
+      },
+      {
+        "number": 17,
+        "title": "Confirmation",
+        "textAnchor": "CONFIRMATION.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/017-confirmation.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/017-confirmation.md",
+        "status": "Planned",
+        "estimatedMinutes": 5,
+        "notes": "Short section."
+      },
+      {
+        "number": 18,
+        "title": "Confirmation from God",
+        "textAnchor": "CONFIRMATION FROM GOD.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/018-confirmation-from-god.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/018-confirmation-from-god.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 7,
+        "notes": "OCR has stray characters near heading; clean before narration."
+      },
+      {
+        "number": 19,
+        "title": "Why Saints Persevere",
+        "textAnchor": "WHY SAINTS PERSEVERE.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/019-why-saints-persevere.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/019-why-saints-persevere.md",
+        "status": "Planned",
+        "estimatedMinutes": 10,
+        "notes": "Good theology segment for future topic linking."
+      },
+      {
+        "number": 20,
+        "title": "Close",
+        "textAnchor": "CLOSE.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/020-close.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/020-close.md",
+        "status": "Planned",
+        "estimatedMinutes": 3,
+        "notes": "May merge with final appeal if pacing requires."
+      },
+      {
+        "number": 21,
+        "title": "I Beseech You",
+        "textAnchor": "I BESEECH YOU,",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/021-i-beseech-you.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/021-i-beseech-you.md",
+        "status": "Planned",
+        "estimatedMinutes": 4,
+        "notes": "Closing appeal."
+      },
+      {
+        "number": 22,
+        "title": "Now or Never",
+        "textAnchor": "NOW OR NEVER",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/022-now-or-never.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/022-now-or-never.md",
+        "status": "Planned",
+        "estimatedMinutes": 1,
+        "notes": "Very short section; may merge with final segment."
+      },
+      {
+        "number": 23,
+        "title": "Meet Me in Heaven",
+        "textAnchor": "MEET ME IN HEAVEN.",
+        "audioPath": "audio/audiobooks/spurgeon/all-of-grace/023-meet-me-in-heaven.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/all-of-grace/023-meet-me-in-heaven.md",
+        "status": "Planned",
+        "estimatedMinutes": 3,
+        "notes": "Final segment."
+      }
+    ]
+  }
+]
