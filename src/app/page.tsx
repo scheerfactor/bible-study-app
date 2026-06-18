@@ -18375,9 +18375,14 @@ export default function Home() {
       setAuthMessage("Supabase is not configured. Add env values to enable account sign-in.");
       return;
     }
+    const email = authEmail.trim();
+    if (!email) {
+      setAuthMessage("Enter your email address first.");
+      return;
+    }
 
     const { error } = await supabase.auth.signInWithOtp({
-      email: authEmail,
+      email,
       options: {
         emailRedirectTo: window.location.origin,
       },
@@ -18704,8 +18709,14 @@ export default function Home() {
                 ) : (
                   <AdminLockedNotice
                     signedIn={Boolean(user)}
+                    user={user}
                     adminEmailsConfigured={configuredAdminEmails.length > 0}
                     hasSupabaseConfig={hasSupabaseConfig}
+                    authEmail={authEmail}
+                    authMessage={authMessage}
+                    onAuthEmailChange={setAuthEmail}
+                    onSendMagicLink={sendMagicLink}
+                    onSignOut={signOut}
                     onClose={() => {
                       window.history.replaceState(null, "", window.location.pathname + window.location.search);
                       setShowLibraryAcquisitionAdmin(false);
@@ -30420,14 +30431,26 @@ function loadAcquisitionStorage<T>(key: string, fallback: T[]): T[] {
 
 function AdminLockedNotice({
   signedIn,
+  user,
   adminEmailsConfigured,
   hasSupabaseConfig,
+  authEmail,
+  authMessage,
+  onAuthEmailChange,
+  onSendMagicLink,
+  onSignOut,
   onClose,
   onOpenSettings,
 }: {
   signedIn: boolean;
+  user: User | null;
   adminEmailsConfigured: boolean;
   hasSupabaseConfig: boolean;
+  authEmail: string;
+  authMessage: string;
+  onAuthEmailChange: (value: string) => void;
+  onSendMagicLink: () => void;
+  onSignOut: () => void;
   onClose: () => void;
   onOpenSettings: () => void;
 }) {
@@ -30456,6 +30479,18 @@ function AdminLockedNotice({
         />
       </div>
 
+      <AccountSignInCard
+        user={user}
+        hasSupabaseConfig={hasSupabaseConfig}
+        authEmail={authEmail}
+        authMessage={authMessage}
+        title="Sign in to unlock admin tools"
+        signedOutBody="Enter your allow-listed admin email. The app will send you a secure sign-in link, then the Library Acquisition Center will open after you return."
+        onAuthEmailChange={onAuthEmailChange}
+        onSendMagicLink={onSendMagicLink}
+        onSignOut={onSignOut}
+      />
+
       <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
         <p className="text-sm font-semibold text-[var(--ink)]">For Stephen/admin use</p>
         <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
@@ -30465,13 +30500,82 @@ function AdminLockedNotice({
 
       <div className="mt-5 flex flex-wrap gap-2">
         <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenSettings} type="button">
-          Open sign-in settings
+          Open full settings
         </button>
         <button className="rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onClose} type="button">
           Back to the app
         </button>
       </div>
     </section>
+  );
+}
+
+function AccountSignInCard({
+  user,
+  hasSupabaseConfig,
+  authEmail,
+  authMessage,
+  title = "Account sign-in",
+  signedOutBody = "Study data stays in this browser until you sign in.",
+  onAuthEmailChange,
+  onSendMagicLink,
+  onSignOut,
+}: {
+  user: User | null;
+  hasSupabaseConfig: boolean;
+  authEmail: string;
+  authMessage: string;
+  title?: string;
+  signedOutBody?: string;
+  onAuthEmailChange: (value: string) => void;
+  onSendMagicLink: () => void;
+  onSignOut: () => void;
+}) {
+  if (user) {
+    return (
+      <div className="mt-5 space-y-3">
+        <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Signed in as {user.email}</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">Notes, highlights, bookmarks, and private tools use this account.</p>
+        </div>
+        <button className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white" onClick={onSignOut} type="button">
+          <LogOut size={16} />
+          Sign out
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-5 space-y-3 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+      <div>
+        <p className="text-sm font-semibold text-[var(--green)]">{title}</p>
+        <p className="mt-1 text-sm text-[var(--muted)]">
+          {hasSupabaseConfig ? signedOutBody : "Account sign-in is not configured yet. Add Supabase environment values before testing accounts."}
+        </p>
+      </div>
+      <div className="grid gap-2 md:grid-cols-[minmax(0,1fr)_auto]">
+        <input
+          className="h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
+          placeholder="st396@hotmail.com"
+          type="email"
+          value={authEmail}
+          onChange={(event) => onAuthEmailChange(event.target.value)}
+        />
+        <button
+          className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-50"
+          disabled={!hasSupabaseConfig}
+          onClick={onSendMagicLink}
+          type="button"
+        >
+          Send sign-in link
+        </button>
+      </div>
+      <p className="text-xs leading-5 text-[var(--muted)]">
+        After clicking the email link, return to Library Acquisition. If the email is on the admin allowlist, the private tools will open.
+      </p>
+      {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
+    </div>
   );
 }
 
@@ -39820,34 +39924,25 @@ function SettingsScreen({
         </div>
 
         {user ? (
-          <div className="mt-5 space-y-3">
-            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
-              <p className="text-sm font-semibold text-[var(--green)]">Signed in — syncing to Supabase</p>
-              <p className="mt-1 text-sm text-[var(--muted)]">Notes, highlights, and bookmarks are saved to your account.</p>
-            </div>
-            <button className="inline-flex items-center gap-2 rounded-full bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white" onClick={onSignOut} type="button">
-              <LogOut size={16} />
-              Sign out
-            </button>
-          </div>
+          <AccountSignInCard
+            user={user}
+            hasSupabaseConfig={hasSupabaseConfig}
+            authEmail={authEmail}
+            authMessage={authMessage}
+            onAuthEmailChange={onAuthEmailChange}
+            onSendMagicLink={onSendMagicLink}
+            onSignOut={onSignOut}
+          />
         ) : (
-          <div className="mt-5 space-y-3">
-            <div className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
-              <p className="text-sm font-semibold text-[var(--green)]">Signed out — saving locally</p>
-              <p className="mt-1 text-sm text-[var(--muted)]">Study data stays in this browser until you sign in.</p>
-            </div>
-            <input
-              className="h-12 w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 text-base outline-none"
-              placeholder="you@example.com"
-              type="email"
-              value={authEmail}
-              onChange={(event) => onAuthEmailChange(event.target.value)}
-            />
-            <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onSendMagicLink} type="button">
-              Send sign-in link
-            </button>
-            {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
-          </div>
+          <AccountSignInCard
+            user={user}
+            hasSupabaseConfig={hasSupabaseConfig}
+            authEmail={authEmail}
+            authMessage={authMessage}
+            onAuthEmailChange={onAuthEmailChange}
+            onSendMagicLink={onSendMagicLink}
+            onSignOut={onSignOut}
+          />
         )}
       </section>
 
