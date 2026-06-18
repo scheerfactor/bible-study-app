@@ -10813,6 +10813,10 @@ const starterKeyWords: Record<string, string[]> = {
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const configuredAdminEmails = (process.env.NEXT_PUBLIC_ADMIN_EMAILS ?? "")
+  .split(",")
+  .map((email) => email.trim().toLowerCase())
+  .filter(Boolean);
 const hasSupabaseConfig = Boolean(supabaseUrl && supabaseAnonKey);
 let browserSupabaseClient: SupabaseClient | null | undefined;
 
@@ -13841,6 +13845,11 @@ export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [tab, setTab] = useState<Tab>("today");
   const [showLibraryAcquisitionAdmin, setShowLibraryAcquisitionAdmin] = useState(false);
+  const [isLocalAdminPreviewHost] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const host = window.location.hostname;
+    return host === "localhost" || host === "127.0.0.1" || host === "::1";
+  });
   const [globalQuickJumpText, setGlobalQuickJumpText] = useState("");
   const [book, setBook] = useState(DEFAULT_BOOK);
   const [chapter, setChapter] = useState(DEFAULT_CHAPTER);
@@ -13977,6 +13986,8 @@ export default function Home() {
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
   );
+  const signedInAdminEmail = Boolean(user?.email && configuredAdminEmails.includes(user.email.toLowerCase()));
+  const canOpenAdminArea = signedInAdminEmail || isLocalAdminPreviewHost;
 
   useEffect(() => {
     const shouldLoadCommentary =
@@ -18680,15 +18691,32 @@ export default function Home() {
           <section className="min-w-0 pb-32 md:pb-6">
             {showLibraryAcquisitionAdmin && (
               <div className="p-4 md:p-6">
-                <LibraryAcquisitionCenter
-                  signedIn={Boolean(user)}
-                  resources={allLibraryResources.length ? allLibraryResources : libraryResources}
-                  commentaryEntries={commentaryEntries}
-                  onClose={() => {
-                    window.history.replaceState(null, "", window.location.pathname + window.location.search);
-                    setShowLibraryAcquisitionAdmin(false);
-                  }}
-                />
+                {canOpenAdminArea ? (
+                  <LibraryAcquisitionCenter
+                    signedIn={Boolean(user)}
+                    resources={allLibraryResources.length ? allLibraryResources : libraryResources}
+                    commentaryEntries={commentaryEntries}
+                    onClose={() => {
+                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                      setShowLibraryAcquisitionAdmin(false);
+                    }}
+                  />
+                ) : (
+                  <AdminLockedNotice
+                    signedIn={Boolean(user)}
+                    adminEmailsConfigured={configuredAdminEmails.length > 0}
+                    hasSupabaseConfig={hasSupabaseConfig}
+                    onClose={() => {
+                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                      setShowLibraryAcquisitionAdmin(false);
+                    }}
+                    onOpenSettings={() => {
+                      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+                      setShowLibraryAcquisitionAdmin(false);
+                      setTab("settings");
+                    }}
+                  />
+                )}
               </div>
             )}
 
@@ -30390,6 +30418,63 @@ function loadAcquisitionStorage<T>(key: string, fallback: T[]): T[] {
   }
 }
 
+function AdminLockedNotice({
+  signedIn,
+  adminEmailsConfigured,
+  hasSupabaseConfig,
+  onClose,
+  onOpenSettings,
+}: {
+  signedIn: boolean;
+  adminEmailsConfigured: boolean;
+  hasSupabaseConfig: boolean;
+  onClose: () => void;
+  onOpenSettings: () => void;
+}) {
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-6 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Admin locked</p>
+          <h2 className="mt-2 text-2xl font-semibold text-[var(--ink)]">Library Acquisition Center is private</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Rights tracking, import queues, permission-needed resources, draft audio, and publisher notes are hidden from public beta users. Public visitors only see reviewed Bible study content.
+          </p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+          Public-safe
+        </span>
+      </div>
+
+      <div className="mt-5 grid gap-3 md:grid-cols-3">
+        <StatusCard label="Public Library" status="Reviewed resources only" good />
+        <StatusCard label="Admin Drafts" status="Hidden from guests" good />
+        <StatusCard
+          label="Admin access"
+          status={!hasSupabaseConfig ? "Sign-in not configured" : !adminEmailsConfigured ? "Admin allowlist missing" : signedIn ? "Email not allowed" : "Sign in required"}
+          good={false}
+        />
+      </div>
+
+      <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <p className="text-sm font-semibold text-[var(--ink)]">For Stephen/admin use</p>
+        <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+          Use an allow-listed signed-in admin account on production, or use localhost while building. Do not expose permission-needed books, personal-use uploads, or copyrighted review notes to normal guests.
+        </p>
+      </div>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        <button className="rounded-full bg-[var(--green)] px-5 py-3 text-sm font-semibold text-white" onClick={onOpenSettings} type="button">
+          Open sign-in settings
+        </button>
+        <button className="rounded-full border border-[var(--line)] bg-white px-5 py-3 text-sm font-semibold text-[var(--green)]" onClick={onClose} type="button">
+          Back to the app
+        </button>
+      </div>
+    </section>
+  );
+}
+
 function analyzeCopyrightCandidate(input: CopyrightCheckerInput): CopyrightCheckerResult {
   const publicationYear = Number.parseInt(input.publicationYear, 10);
   const authorDeathYear = Number.parseInt(input.authorDeathYear, 10);
@@ -39835,6 +39920,25 @@ function SettingsScreen({
           <li>Treasury of Scripture Knowledge: source metadata table is included.</li>
           <li>Commentaries: public-domain rights records are required before import.</li>
         </ul>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <h2 className="text-lg font-semibold">Public beta readiness</h2>
+        <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+          The safest launch path is free public beta first, optional support later, then accounts and paid access after sync, licensing, and admin separation are proven.
+        </p>
+        <div className="mt-4 grid gap-2 md:grid-cols-3">
+          <StatusCard label="Guest access" status="Bible and reviewed public-domain study" good />
+          <StatusCard label="Admin material" status="Hidden from guests" good />
+          <StatusCard label="Donation" status="Recommended before payments" good />
+          <StatusCard label="User accounts" status={hasSupabaseConfig ? "Ready to test" : "Configure before public sync"} good={hasSupabaseConfig} />
+          <StatusCard label="Admin area" status={configuredAdminEmails.length ? "Email allowlist configured" : "Allowlist needed"} good={configuredAdminEmails.length > 0} />
+          <StatusCard label="Payments" status="Later, after beta demand" good={false} />
+          <StatusCard label="Licensed books" status="Written permission required" good />
+        </div>
+        <p className="mt-3 text-xs leading-5 text-[var(--muted)]">
+          Permission-needed, personal-use, draft imports, and copyrighted review notes must stay out of normal Library search and public navigation.
+        </p>
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
