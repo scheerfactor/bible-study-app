@@ -64,7 +64,7 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "storage" | "audio" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "ocrQueue";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
@@ -1031,6 +1031,28 @@ type LicensedResourceRightsRecord = {
   notes: string;
 };
 
+type MediaIntakeStatus = "Draft" | "Needs Rights Review" | "Ready For Storage" | "Uploaded To R2" | "Approved For Public Use" | "Personal Use Only" | "Do Not Publish";
+
+type MediaIntakeRecord = {
+  id: string;
+  kind: "Audiobook" | "Sermon Audio" | "Sermon Video" | "Teaching Series" | "Bible Audio";
+  title: string;
+  creator: string;
+  passage: string;
+  series: string;
+  duration: string;
+  sourceUrl: string;
+  rightsStatus: RightsPermissionStatus;
+  intakeStatus: MediaIntakeStatus;
+  storageBucket: string;
+  storagePath: string;
+  transcriptPath: string;
+  coverPath: string;
+  visibility: ResourceVisibility;
+  notes: string;
+  nextAction: string;
+};
+
 type PermissionRequestTemplate = {
   id: string;
   title: string;
@@ -1583,6 +1605,7 @@ const LIBRARY_ACQUISITION_AUTHORS_KEY = "fathers-business-acquisition-authors";
 const LIBRARY_ACQUISITION_BOOKS_KEY = "fathers-business-acquisition-books";
 const LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY = "fathers-business-acquisition-rights-holders";
 const LIBRARY_LICENSED_RIGHTS_KEY = "fathers-business-licensed-rights-records";
+const MEDIA_INTAKE_RECORDS_KEY = "fathers-business-media-intake-records";
 const PRAYER_ENTRIES_KEY = "fathers-business-prayer-entries";
 const JOURNAL_ENTRIES_KEY = "fathers-business-scripture-journal-entries";
 const SERMON_ENTRIES_KEY = "fathers-business-sermon-workspace-entries";
@@ -1873,6 +1896,76 @@ const RIGHTS_PERMISSION_STATUSES: RightsPermissionStatus[] = [
   "Denied",
   "Personal Use Only",
   "Do Not Import",
+];
+
+const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
+  "Draft",
+  "Needs Rights Review",
+  "Ready For Storage",
+  "Uploaded To R2",
+  "Approved For Public Use",
+  "Personal Use Only",
+  "Do Not Publish",
+];
+
+const DEFAULT_MEDIA_INTAKE_RECORDS: MediaIntakeRecord[] = [
+  {
+    id: "all-of-grace-audiobook-candidate",
+    kind: "Audiobook",
+    title: "All of Grace audiobook candidate",
+    creator: "C. H. Spurgeon",
+    passage: "",
+    series: "Spurgeon Starter",
+    duration: "3 hr 10 min estimate",
+    sourceUrl: "https://www.gutenberg.org/ebooks/772",
+    rightsStatus: "Public Domain",
+    intakeStatus: "Ready For Storage",
+    storageBucket: "fathers-business-bible-study-public",
+    storagePath: "audio/audiobooks/all-of-grace/",
+    transcriptPath: "data/library/verified/all-of-grace-c-h-spurgeon.txt",
+    coverPath: "media/covers/generated/all-of-grace.webp",
+    visibility: "Private admin draft",
+    notes: "Text is public domain. Human or generated narration should be reviewed separately before distributing audio files.",
+    nextAction: "Choose narration path: device voice only, human narration, or premium TTS sample.",
+  },
+  {
+    id: "hosea-4-9-teaching-audio",
+    kind: "Teaching Series",
+    title: "Hosea 4-9 Sunday School teaching audio",
+    creator: "Stephen Scheer",
+    passage: "Hosea 4-9",
+    series: "Minor Prophets Sunday School",
+    duration: "45-60 min planned",
+    sourceUrl: "",
+    rightsStatus: "Personal Use Only",
+    intakeStatus: "Draft",
+    storageBucket: "fathers-business-bible-study-public",
+    storagePath: "audio/teaching/hosea-4-9/",
+    transcriptPath: "transcripts/teaching/hosea-4-9.md",
+    coverPath: "media/covers/teaching/hosea-4-9.webp",
+    visibility: "Private admin draft",
+    notes: "Use for testing sermon/lesson audio workflow. Public release requires ownership and speaker permission confirmation.",
+    nextAction: "Record, transcribe, attach teaching outline, and confirm whether public app use is intended.",
+  },
+  {
+    id: "church-sermon-audio-owned",
+    kind: "Sermon Audio",
+    title: "Church sermon audio intake template",
+    creator: "Preacher / church",
+    passage: "John 3",
+    series: "Gospel Messages",
+    duration: "35 min estimate",
+    sourceUrl: "",
+    rightsStatus: "Permission Needed",
+    intakeStatus: "Needs Rights Review",
+    storageBucket: "fathers-business-bible-study-public",
+    storagePath: "audio/sermons/{church}/{series}/{slug}.mp3",
+    transcriptPath: "transcripts/sermons/{church}/{series}/{slug}.md",
+    coverPath: "media/covers/sermons/{church}/{series}.webp",
+    visibility: "Private admin draft",
+    notes: "Do not publish sermon audio until church/preacher ownership, recording consent, and distribution permission are documented.",
+    nextAction: "Add rights holder, speaker permission, source file, transcript, and public/private decision.",
+  },
 ];
 
 const DEFAULT_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [
@@ -32556,6 +32649,173 @@ function PremiumAudioFeasibilityCenter() {
   );
 }
 
+function mediaIntakeStatusPill(status: MediaIntakeStatus) {
+  if (status === "Approved For Public Use" || status === "Uploaded To R2") return "bg-emerald-50 text-emerald-800";
+  if (status === "Ready For Storage") return "bg-sky-50 text-sky-800";
+  if (status === "Needs Rights Review" || status === "Draft") return "bg-amber-50 text-amber-800";
+  return "bg-red-50 text-red-800";
+}
+
+function MediaIntakeCenter({
+  records,
+  onAddRecord,
+  onUpdateRecord,
+}: {
+  records: MediaIntakeRecord[];
+  onAddRecord: () => void;
+  onUpdateRecord: (id: string, field: keyof MediaIntakeRecord, value: string) => void;
+}) {
+  const readyCount = records.filter((record) => record.intakeStatus === "Ready For Storage" || record.intakeStatus === "Uploaded To R2").length;
+  const rightsBlockedCount = records.filter((record) => record.rightsStatus === "Permission Needed" || record.intakeStatus === "Needs Rights Review").length;
+  const publicReadyCount = records.filter((record) => record.intakeStatus === "Approved For Public Use").length;
+  const mediaKinds = ["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"] as const;
+
+  return (
+    <div className="mt-5 space-y-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Media Intake Center</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Audio and video stay rights-first</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Track audiobook, sermon audio, teaching series, Bible audio, and future video files before anything becomes public. Store large media in R2; keep metadata, rights, transcripts, and review status in the app database later.
+            </p>
+          </div>
+          <button
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+            onClick={onAddRecord}
+            type="button"
+          >
+            <Plus size={16} />
+            Add media record
+          </button>
+        </div>
+
+        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+          {[
+            ["Intake records", records.length],
+            ["Ready for storage", readyCount],
+            ["Rights blocked", rightsBlockedCount],
+            ["Public ready", publicReadyCount],
+          ].map(([label, value]) => (
+            <div key={`media-intake-stat-${label}`} className="rounded-2xl bg-white p-4">
+              <p className="text-2xl font-semibold text-[var(--green)]">{value}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Storage route</p>
+          <div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
+            <p className="rounded-2xl bg-[var(--paper)] p-3"><span className="font-semibold text-[var(--ink)]">Audio:</span> R2 paths under <span className="font-mono text-xs">audio/</span> for MP3, M4B, and future narration files.</p>
+            <p className="rounded-2xl bg-[var(--paper)] p-3"><span className="font-semibold text-[var(--ink)]">Video:</span> R2 or a video CDN later; keep only metadata in the app until playback needs are clear.</p>
+            <p className="rounded-2xl bg-[var(--paper)] p-3"><span className="font-semibold text-[var(--ink)]">Transcripts:</span> Markdown or TXT under <span className="font-mono text-xs">transcripts/</span>, connected to sermons, lessons, and search.</p>
+            <p className="rounded-2xl bg-[var(--paper)] p-3"><span className="font-semibold text-[var(--ink)]">Covers:</span> optimized WebP under <span className="font-mono text-xs">media/covers/</span> with source and rights notes.</p>
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-white p-4">
+          <p className="text-sm font-semibold text-[var(--green)]">Publish gates</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {[
+              "Written permission or public-domain evidence is documented.",
+              "Speaker, preacher, narrator, and church ownership are confirmed.",
+              "Transcript is attached or marked not available.",
+              "Storage path, file type, duration, and cover path are complete.",
+              "Public, private, and personal-use media are separated.",
+              "No AI/TTS audio is distributed without narration rights review.",
+            ].map((rule) => (
+              <p key={`media-gate-${rule}`} className="rounded-2xl bg-[var(--paper)] p-3 text-sm leading-6 text-[var(--muted)]">{rule}</p>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="space-y-3">
+        {records.map((record) => (
+          <article key={record.id} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-base font-semibold text-[var(--ink)]">{record.title}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                  {record.kind} · {record.creator || "Creator needed"} {record.passage ? `· ${record.passage}` : ""}
+                </p>
+              </div>
+              <span className={`rounded-full px-3 py-1 text-xs font-semibold ${mediaIntakeStatusPill(record.intakeStatus)}`}>
+                {record.intakeStatus}
+              </span>
+            </div>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+              <AdminImportField label="Title" value={record.title} onChange={(value) => onUpdateRecord(record.id, "title", value)} />
+              <AdminImportField label="Creator / preacher / narrator" value={record.creator} onChange={(value) => onUpdateRecord(record.id, "creator", value)} />
+              <AdminImportField label="Passage" value={record.passage} onChange={(value) => onUpdateRecord(record.id, "passage", value)} />
+              <AdminImportField label="Series" value={record.series} onChange={(value) => onUpdateRecord(record.id, "series", value)} />
+              <AdminImportField label="Duration" value={record.duration} onChange={(value) => onUpdateRecord(record.id, "duration", value)} />
+              <AdminImportField label="Source URL" value={record.sourceUrl} onChange={(value) => onUpdateRecord(record.id, "sourceUrl", value)} />
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Media type
+                <select
+                  className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                  value={record.kind}
+                  onChange={(event) => onUpdateRecord(record.id, "kind", event.target.value)}
+                >
+                  {mediaKinds.map((kind) => <option key={`media-kind-${kind}`} value={kind}>{kind}</option>)}
+                </select>
+              </label>
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Intake status
+                <select
+                  className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                  value={record.intakeStatus}
+                  onChange={(event) => onUpdateRecord(record.id, "intakeStatus", event.target.value)}
+                >
+                  {MEDIA_INTAKE_STATUSES.map((status) => <option key={`media-status-${status}`} value={status}>{status}</option>)}
+                </select>
+              </label>
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Rights status
+                <select
+                  className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                  value={record.rightsStatus}
+                  onChange={(event) => onUpdateRecord(record.id, "rightsStatus", event.target.value)}
+                >
+                  {RIGHTS_PERMISSION_STATUSES.map((status) => <option key={`media-rights-${status}`} value={status}>{status}</option>)}
+                </select>
+              </label>
+              <label className="text-sm font-semibold text-[var(--muted)]">
+                Visibility
+                <select
+                  className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold text-[var(--ink)] outline-none"
+                  value={record.visibility}
+                  onChange={(event) => onUpdateRecord(record.id, "visibility", event.target.value)}
+                >
+                  {ADMIN_VISIBILITY_OPTIONS.map((option) => <option key={`media-visibility-${option}`} value={option}>{option}</option>)}
+                </select>
+              </label>
+            </div>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <AdminImportField label="Storage bucket" value={record.storageBucket} onChange={(value) => onUpdateRecord(record.id, "storageBucket", value)} />
+              <AdminImportField label="Media storage path" value={record.storagePath} onChange={(value) => onUpdateRecord(record.id, "storagePath", value)} />
+              <AdminImportField label="Transcript path" value={record.transcriptPath} onChange={(value) => onUpdateRecord(record.id, "transcriptPath", value)} />
+              <AdminImportField label="Cover path" value={record.coverPath} onChange={(value) => onUpdateRecord(record.id, "coverPath", value)} />
+            </div>
+
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <AdminImportTextArea label="Notes" value={record.notes} onChange={(value) => onUpdateRecord(record.id, "notes", value)} />
+              <AdminImportTextArea label="Next action" value={record.nextAction} onChange={(value) => onUpdateRecord(record.id, "nextAction", value)} />
+            </div>
+          </article>
+        ))}
+      </section>
+    </div>
+  );
+}
+
 function coverGradientFor(title: string, author: string, category: string) {
   const seed = title.length + author.length + category.length;
   if (seed % 4 === 0) return "from-[#314c43] to-[#a67d3d]";
@@ -32914,6 +33174,9 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
   const [rightsRecords, setRightsRecords] = useState<LicensedResourceRightsRecord[]>(() =>
     loadAcquisitionStorage(LIBRARY_LICENSED_RIGHTS_KEY, DEFAULT_LICENSED_RIGHTS_RECORDS),
   );
+  const [mediaIntakeRecords, setMediaIntakeRecords] = useState<MediaIntakeRecord[]>(() =>
+    loadAcquisitionStorage(MEDIA_INTAKE_RECORDS_KEY, DEFAULT_MEDIA_INTAKE_RECORDS),
+  );
 
   const libraryStats = useMemo(() => {
     const publicDomainBooks = books.filter((book) => book.copyrightStatus === "Public Domain" || book.copyrightStatus === "Likely Public Domain").length;
@@ -32952,10 +33215,11 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
       window.localStorage.setItem(LIBRARY_ACQUISITION_BOOKS_KEY, JSON.stringify(books));
       window.localStorage.setItem(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, JSON.stringify(rightsHolders));
       window.localStorage.setItem(LIBRARY_LICENSED_RIGHTS_KEY, JSON.stringify(rightsRecords));
+      window.localStorage.setItem(MEDIA_INTAKE_RECORDS_KEY, JSON.stringify(mediaIntakeRecords));
     } catch {
       // Local acquisition records are advisory admin data; keep the UI usable if storage is unavailable.
     }
-  }, [authors, books, rightsHolders, rightsRecords]);
+  }, [authors, books, rightsHolders, rightsRecords, mediaIntakeRecords]);
 
   const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
     { id: "dashboard", label: "Dashboard" },
@@ -32966,6 +33230,7 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
     { id: "rightsHolders", label: "Rights Holders" },
     { id: "importQueue", label: "Import Queue" },
     { id: "libraryManager", label: "Library Manager" },
+    { id: "mediaIntake", label: "Media Intake" },
     { id: "storage", label: "Storage Plan" },
     { id: "audio", label: "Audio Plan" },
     { id: "ocrQueue", label: "OCR Queue" },
@@ -33064,6 +33329,53 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
           ? {
               ...record,
               [field]: field === "permissionStatus" ? (value as RightsPermissionStatus) : value,
+            }
+          : record,
+      ),
+    );
+  }
+
+  function addMediaIntakeRecord() {
+    setMediaIntakeRecords((current) => [
+      {
+        id: `media-intake-${Date.now()}`,
+        kind: "Sermon Audio",
+        title: "New media intake record",
+        creator: "",
+        passage: "",
+        series: "",
+        duration: "",
+        sourceUrl: "",
+        rightsStatus: "Permission Needed",
+        intakeStatus: "Draft",
+        storageBucket: "fathers-business-bible-study-public",
+        storagePath: "audio/",
+        transcriptPath: "transcripts/",
+        coverPath: "media/covers/",
+        visibility: "Private admin draft",
+        notes: "No public media until rights, ownership, transcript, and storage path are reviewed.",
+        nextAction: "Attach source, confirm rights, and decide public/private visibility.",
+      },
+      ...current,
+    ]);
+  }
+
+  function updateMediaIntakeRecord(id: string, field: keyof MediaIntakeRecord, value: string) {
+    setMediaIntakeRecords((current) =>
+      current.map((record) =>
+        record.id === id
+          ? {
+              ...record,
+              [field]:
+                field === "rightsStatus"
+                  ? (value as RightsPermissionStatus)
+                  : field === "intakeStatus"
+                    ? (value as MediaIntakeStatus)
+                    : field === "visibility"
+                      ? (value as ResourceVisibility)
+                      : field === "kind"
+                        ? (value as MediaIntakeRecord["kind"])
+                        : value,
             }
           : record,
       ),
@@ -33172,6 +33484,14 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
 
       {activeTab === "audio" && (
         <PremiumAudioFeasibilityCenter />
+      )}
+
+      {activeTab === "mediaIntake" && (
+        <MediaIntakeCenter
+          records={mediaIntakeRecords}
+          onAddRecord={addMediaIntakeRecord}
+          onUpdateRecord={updateMediaIntakeRecord}
+        />
       )}
 
       {activeTab === "rights" && (
