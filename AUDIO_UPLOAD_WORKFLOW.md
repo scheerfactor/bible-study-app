@@ -77,6 +77,40 @@ Allowed headers:
 
 Keep actual Cloudflare CORS settings as narrow as practical.
 
+## Bulk Uploading Many Files
+
+For dozens or hundreds of sermons/audiobooks, use the batch uploader instead of clicking one file at a time.
+
+1. Copy the sample CSV:
+
+```text
+data/media/batches/media-upload-batch.sample.csv
+```
+
+2. Create a new batch CSV with one row per file.
+3. Use absolute local file paths when the files are outside the repository.
+4. Keep `rights_status` as `Public Domain` or `Approved` only. Permission-needed items should stay in review and should not be uploaded to the public bucket.
+5. Run a dry run:
+
+```text
+npm run media:upload -- --csv=data/media/batches/my-sermon-batch.csv --dry-run
+```
+
+6. When the dry run is clean and R2 credentials are available:
+
+```text
+npm run media:upload -- --csv=data/media/batches/my-sermon-batch.csv --execute
+```
+
+The batch uploader checks:
+
+- local file exists
+- storage path begins with `audio/` or `video/`
+- extension is supported
+- rights status is upload-safe
+- duplicate storage paths are blocked
+- content type is supported
+
 ## Review Record Fields
 
 Every media record should include:

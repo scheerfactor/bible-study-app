@@ -1,0 +1,3 @@
+local_file,storage_path,kind,title,creator,rights_status,visibility,content_type,source_url,notes
+/absolute/path/to/sermon.mp3,audio/sermons/church-name/gospel-messages/john-3-new-birth.mp3,Sermon Audio,The New Birth,Stephen Scheer,Approved,Private admin draft,audio/mpeg,,Church/preacher permission must be documented before public display.
+/absolute/path/to/all-of-grace-001.mp3,audio/audiobooks/spurgeon/all-of-grace/001-to-you.mp3,Audiobook,All of Grace - To You!,C. H. Spurgeon,Public Domain,Private admin draft,audio/mpeg,https://www.gutenberg.org/ebooks/772,Public-domain text; narration rights still reviewed separately.
