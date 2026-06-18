@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 import { createHash, createHmac } from "node:crypto";
+import { execFile } from "node:child_process";
 import { readFile, stat } from "node:fs/promises";
 import { basename, dirname, isAbsolute, join, resolve } from "node:path";
+import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const csvArg = process.argv.find((arg) => arg.startsWith("--csv="));
 const csvPath = csvArg ? csvArg.split("=").slice(1).join("=") : "";
+const methodArg = process.argv.find((arg) => arg.startsWith("--method="));
+const uploadMethod = methodArg ? methodArg.split("=").slice(1).join("=") : "s3";
 const execute = process.argv.includes("--execute");
 const dryRun = !execute || process.argv.includes("--dry-run");
 const requiredEnv = ["R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY"];
@@ -25,6 +29,7 @@ const allowedContentTypes = new Set([
   "video/webm",
   "application/octet-stream",
 ]);
+const execFileAsync = promisify(execFile);
 
 function env(name) {
   const value = process.env[name];
@@ -225,6 +230,28 @@ async function uploadItem(item, config) {
   }
 }
 
+async function uploadItemWithWrangler(item, bucket) {
+  await execFileAsync(
+    "npx",
+    [
+      "wrangler",
+      "r2",
+      "object",
+      "put",
+      `${bucket}/${item.storage_path}`,
+      "--file",
+      item.sourcePath,
+      "--content-type",
+      item.contentType,
+      "--remote",
+    ],
+    {
+      cwd: repoRoot,
+      maxBuffer: 1024 * 1024 * 5,
+    },
+  );
+}
+
 async function main() {
   if (!csvPath) {
     console.log("Media batch uploader");
@@ -232,6 +259,7 @@ async function main() {
     console.log("Sample: data/media/batches/media-upload-batch.sample.csv");
     console.log("Dry run: npm run media:upload -- --csv=data/media/batches/my-media-batch.csv --dry-run");
     console.log("Execute: npm run media:upload -- --csv=data/media/batches/my-media-batch.csv --execute");
+    console.log("Wrangler execute: npm run media:upload -- --csv=data/media/batches/my-media-batch.csv --method=wrangler --execute");
     return;
   }
 
@@ -249,6 +277,7 @@ async function main() {
     errors: errors.length,
     warnings: warnings.length,
     mode: dryRun ? "dry-run" : "execute",
+    method: uploadMethod,
   });
 
   if (warnings.length) {
@@ -263,34 +292,46 @@ async function main() {
 
   if (dryRun) {
     console.log("Dry run only. No files uploaded.");
-    console.log(`Run: npm run media:upload -- --csv=${csvPath} --execute`);
+    console.log(`Run with S3 credentials: npm run media:upload -- --csv=${csvPath} --execute`);
+    console.log(`Run with Wrangler login: npm run media:upload -- --csv=${csvPath} --method=wrangler --execute`);
     for (const item of prepared.slice(0, 10)) {
       console.log(`- ${item.local_file} -> ${item.storage_path} (${item.contentType}, ${Math.round(item.size / 1024)} KB)`);
     }
     return;
   }
 
+  if (uploadMethod !== "s3" && uploadMethod !== "wrangler") {
+    throw new Error(`Unsupported upload method: ${uploadMethod}. Use s3 or wrangler.`);
+  }
+
   const missing = requiredEnv.filter((name) => !process.env[name]);
   const bucket = process.env.R2_BUCKET_MEDIA || process.env.R2_BUCKET_PUBLIC_CONTENT;
-  if (!bucket) missing.push("R2_BUCKET_MEDIA or R2_BUCKET_PUBLIC_CONTENT");
-  if (missing.length > 0) throw new Error(`Cannot upload. Missing environment variables: ${missing.join(", ")}`);
-
-  const config = {
-    accountId: env("R2_ACCOUNT_ID"),
-    accessKeyId: env("R2_ACCESS_KEY_ID"),
-    secretAccessKey: env("R2_SECRET_ACCESS_KEY"),
-    bucket,
-  };
+  const resolvedBucket = bucket || "fathers-business-bible-study-public";
+  let config = null;
+  if (uploadMethod === "s3") {
+    if (!bucket) missing.push("R2_BUCKET_MEDIA or R2_BUCKET_PUBLIC_CONTENT");
+    if (missing.length > 0) throw new Error(`Cannot upload. Missing environment variables: ${missing.join(", ")}`);
+    config = {
+      accountId: env("R2_ACCOUNT_ID"),
+      accessKeyId: env("R2_ACCESS_KEY_ID"),
+      secretAccessKey: env("R2_SECRET_ACCESS_KEY"),
+      bucket,
+    };
+  }
 
   let uploaded = 0;
   for (const item of prepared) {
-    await uploadItem(item, config);
+    if (uploadMethod === "wrangler") {
+      await uploadItemWithWrangler(item, resolvedBucket);
+    } else {
+      await uploadItem(item, config);
+    }
     uploaded += 1;
     if (uploaded % 10 === 0 || uploaded === prepared.length) {
       console.log(`Uploaded ${uploaded}/${prepared.length}: ${basename(item.sourcePath)}`);
     }
   }
-  console.log(`Upload complete: ${uploaded} media files uploaded to R2 bucket ${config.bucket}.`);
+  console.log(`Upload complete: ${uploaded} media files uploaded to R2 bucket ${uploadMethod === "wrangler" ? resolvedBucket : config.bucket}.`);
 }
 
 main().catch((error) => {

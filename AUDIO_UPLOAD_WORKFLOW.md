@@ -96,10 +96,18 @@ data/media/batches/media-upload-batch.sample.csv
 npm run media:upload -- --csv=data/media/batches/my-sermon-batch.csv --dry-run
 ```
 
-6. When the dry run is clean and R2 credentials are available:
+6. When the dry run is clean, upload with one of these methods.
+
+If server-style R2 credentials are available in the shell:
 
 ```text
 npm run media:upload -- --csv=data/media/batches/my-sermon-batch.csv --execute
+```
+
+If you are logged in to Cloudflare with Wrangler, use the easier local admin path:
+
+```text
+npm run media:upload -- --csv=data/media/batches/my-sermon-batch.csv --method=wrangler --execute
 ```
 
 The batch uploader checks:
@@ -190,4 +198,4 @@ Do not upload public KJV Bible audio until written license terms are approved. B
 
 ## Future Improvement
 
-The next technical improvement is a signed R2 upload endpoint so an admin can upload directly inside the app instead of uploading in Cloudflare and pasting the path manually.
+The app now has a signed R2 upload endpoint for admin browser uploads, but production still needs the R2 write environment variables and bucket CORS before that button can upload directly from the browser. Until then, the Wrangler batch uploader is the preferred path for larger sermon, audiobook, and video batches.
