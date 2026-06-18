@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 
 const manifestPath = process.argv[2] || "data/media/manifests/media-intake-candidates.json";
 const audiobookPilotPath = process.argv[3] || "data/media/manifests/audiobook-pilots.json";
+const uploadedPilotPath = process.argv[4] || "data/media/manifests/uploaded-public-domain-audio-pilots.json";
 
 const allowedKinds = new Set(["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"]);
 const allowedRightsStatuses = new Set([
@@ -27,6 +28,7 @@ const allowedIntakeStatuses = new Set([
 const allowedVisibility = new Set(["Public after review", "Private admin draft", "Personal use only"]);
 const publicReadyStatuses = new Set(["Uploaded To R2", "Approved For Public Use"]);
 const allowedSegmentStatuses = new Set(["Planned", "Cleanup Needed", "Ready To Record", "Recorded", "Uploaded", "Approved"]);
+const allowedUploadedPilotStatuses = new Set(["Uploaded Pilot", "Approved", "Archived"]);
 
 const raw = await readFile(manifestPath, "utf8");
 const records = JSON.parse(raw);
@@ -219,11 +221,92 @@ async function validateAudiobookPilots() {
 
 const audiobookPilotSummary = await validateAudiobookPilots();
 
+async function validateUploadedAudioPilots() {
+  let uploadedRaw = "[]";
+  try {
+    uploadedRaw = await readFile(uploadedPilotPath, "utf8");
+  } catch {
+    warnings.push(`uploaded audio pilot manifest not found at ${uploadedPilotPath}`);
+    return { uploadedCount: 0, uploadedBytes: 0 };
+  }
+
+  const uploadedPilots = JSON.parse(uploadedRaw);
+  if (!Array.isArray(uploadedPilots)) {
+    errors.push("Uploaded audio pilot manifest must be a JSON array.");
+    return { uploadedCount: 0, uploadedBytes: 0 };
+  }
+
+  const seenUploadedIds = new Set();
+  const seenUploadedPaths = new Set();
+  let uploadedBytes = 0;
+
+  for (const [pilotIndex, pilot] of uploadedPilots.entries()) {
+    const pilotLabel = `uploaded audio pilot ${pilotIndex + 1}`;
+    for (const field of [
+      "id",
+      "workTitle",
+      "segmentTitle",
+      "creator",
+      "kind",
+      "category",
+      "sourceUrl",
+      "sourceFileUrl",
+      "rightsStatus",
+      "rightsEvidence",
+      "storageBucket",
+      "storagePath",
+      "publicUrl",
+      "contentType",
+      "sizeBytes",
+      "visibility",
+      "intakeStatus",
+      "recommendedUse",
+      "nextAction",
+    ]) {
+      if (pilot[field] === undefined || pilot[field] === null || String(pilot[field]).trim() === "") {
+        errors.push(`${pilotLabel}: missing ${field}`);
+      }
+    }
+
+    if (seenUploadedIds.has(pilot.id)) errors.push(`${pilotLabel}: duplicate id ${pilot.id}`);
+    seenUploadedIds.add(pilot.id);
+
+    if (seenUploadedPaths.has(pilot.storagePath)) warnings.push(`${pilotLabel}: duplicate storagePath ${pilot.storagePath}`);
+    seenUploadedPaths.add(pilot.storagePath);
+
+    if (!allowedKinds.has(pilot.kind)) errors.push(`${pilotLabel}: unsupported kind ${pilot.kind}`);
+    if (!String(pilot.rightsStatus ?? "").startsWith("Public Domain")) {
+      errors.push(`${pilotLabel}: uploaded public-domain pilot must keep Public Domain rightsStatus`);
+    }
+    if (!allowedUploadedPilotStatuses.has(pilot.intakeStatus)) {
+      errors.push(`${pilotLabel}: unsupported intakeStatus ${pilot.intakeStatus}`);
+    }
+    if (pilot.visibility !== "Private admin draft" && pilot.visibility !== "Public after review") {
+      errors.push(`${pilotLabel}: visibility must be Private admin draft or Public after review`);
+    }
+    if (!isValidUrl(pilot.sourceUrl)) errors.push(`${pilotLabel}: sourceUrl is not a valid URL`);
+    if (!isValidUrl(pilot.sourceFileUrl)) errors.push(`${pilotLabel}: sourceFileUrl is not a valid URL`);
+    if (!isValidUrl(pilot.publicUrl)) errors.push(`${pilotLabel}: publicUrl is not a valid URL`);
+    if (!String(pilot.storagePath ?? "").startsWith("audio/") || !String(pilot.storagePath ?? "").endsWith(".mp3")) {
+      errors.push(`${pilotLabel}: storagePath must start with audio/ and end with .mp3`);
+    }
+    if (pilot.contentType !== "audio/mpeg") errors.push(`${pilotLabel}: contentType must be audio/mpeg`);
+    if (!Number.isInteger(pilot.sizeBytes) || pilot.sizeBytes < 1) errors.push(`${pilotLabel}: sizeBytes must be a positive integer`);
+    uploadedBytes += Number(pilot.sizeBytes) || 0;
+  }
+
+  return { uploadedCount: uploadedPilots.length, uploadedBytes };
+}
+
+const uploadedAudioSummary = await validateUploadedAudioPilots();
+
 console.log("Media manifest validation summary");
 console.table({
   records: records.length,
   audiobook_pilots: audiobookPilotSummary.pilotCount,
   audiobook_segments: audiobookPilotSummary.segmentCount,
+  uploaded_audio_pilots: uploadedAudioSummary.uploadedCount,
+  uploaded_audio_mb: Math.round((uploadedAudioSummary.uploadedBytes / 1024 / 1024) * 10) / 10,
   errors: errors.length,
   warnings: warnings.length,
   public_ready: records.filter((record) => publicReadyStatuses.has(record.intakeStatus)).length,
