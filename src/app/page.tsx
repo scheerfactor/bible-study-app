@@ -53,6 +53,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
 import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
+import mediaIntakeCandidatesData from "../../data/media/manifests/media-intake-candidates.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -1908,65 +1909,7 @@ const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
   "Do Not Publish",
 ];
 
-const DEFAULT_MEDIA_INTAKE_RECORDS: MediaIntakeRecord[] = [
-  {
-    id: "all-of-grace-audiobook-candidate",
-    kind: "Audiobook",
-    title: "All of Grace audiobook candidate",
-    creator: "C. H. Spurgeon",
-    passage: "",
-    series: "Spurgeon Starter",
-    duration: "3 hr 10 min estimate",
-    sourceUrl: "https://www.gutenberg.org/ebooks/772",
-    rightsStatus: "Public Domain",
-    intakeStatus: "Ready For Storage",
-    storageBucket: "fathers-business-bible-study-public",
-    storagePath: "audio/audiobooks/all-of-grace/",
-    transcriptPath: "data/library/verified/all-of-grace-c-h-spurgeon.txt",
-    coverPath: "media/covers/generated/all-of-grace.webp",
-    visibility: "Private admin draft",
-    notes: "Text is public domain. Human or generated narration should be reviewed separately before distributing audio files.",
-    nextAction: "Choose narration path: device voice only, human narration, or premium TTS sample.",
-  },
-  {
-    id: "hosea-4-9-teaching-audio",
-    kind: "Teaching Series",
-    title: "Hosea 4-9 Sunday School teaching audio",
-    creator: "Stephen Scheer",
-    passage: "Hosea 4-9",
-    series: "Minor Prophets Sunday School",
-    duration: "45-60 min planned",
-    sourceUrl: "",
-    rightsStatus: "Personal Use Only",
-    intakeStatus: "Draft",
-    storageBucket: "fathers-business-bible-study-public",
-    storagePath: "audio/teaching/hosea-4-9/",
-    transcriptPath: "transcripts/teaching/hosea-4-9.md",
-    coverPath: "media/covers/teaching/hosea-4-9.webp",
-    visibility: "Private admin draft",
-    notes: "Use for testing sermon/lesson audio workflow. Public release requires ownership and speaker permission confirmation.",
-    nextAction: "Record, transcribe, attach teaching outline, and confirm whether public app use is intended.",
-  },
-  {
-    id: "church-sermon-audio-owned",
-    kind: "Sermon Audio",
-    title: "Church sermon audio intake template",
-    creator: "Preacher / church",
-    passage: "John 3",
-    series: "Gospel Messages",
-    duration: "35 min estimate",
-    sourceUrl: "",
-    rightsStatus: "Permission Needed",
-    intakeStatus: "Needs Rights Review",
-    storageBucket: "fathers-business-bible-study-public",
-    storagePath: "audio/sermons/{church}/{series}/{slug}.mp3",
-    transcriptPath: "transcripts/sermons/{church}/{series}/{slug}.md",
-    coverPath: "media/covers/sermons/{church}/{series}.webp",
-    visibility: "Private admin draft",
-    notes: "Do not publish sermon audio until church/preacher ownership, recording consent, and distribution permission are documented.",
-    nextAction: "Add rights holder, speaker permission, source file, transcript, and public/private decision.",
-  },
-];
+const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeCandidatesData as MediaIntakeRecord[];
 
 const DEFAULT_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [
   {

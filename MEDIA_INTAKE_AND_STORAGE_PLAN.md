@@ -62,6 +62,24 @@ No media becomes public until:
 4. Add public sermon/audio only when ownership and permission are clear.
 5. Add video later after storage, bandwidth, and player needs are proven.
 
+## Pilot Order
+
+1. **Audiobook structure pilot:** public-domain text such as Spurgeon's _All of Grace_ using private generated or human narration samples.
+2. **Teaching audio pilot:** Hosea 4-9 Sunday School audio with transcript and teaching notes, kept private until publication intent is clear.
+3. **Sermon audio pilot:** one church-owned sermon with speaker/church permission, transcript, and cover art.
+4. **Bible audio planning:** keep browser/device speech active while researching licensed KJV audio or premium TTS terms.
+5. **Video planning:** wait until audio workflow, transcripts, storage costs, and rights gates are working smoothly.
+
+## Validation
+
+Run before adding or publishing media records:
+
+```bash
+npm run validate:media
+```
+
+The validator checks required metadata, rights status, public-readiness gates, storage path prefixes, and placeholder paths.
+
 ## Do Not Add Yet
 
 - copyrighted sermon audio without permission
@@ -69,4 +87,3 @@ No media becomes public until:
 - AI/TTS-generated public audio without narration rights review
 - video hosting inside the Vercel bundle
 - public member uploads
-
