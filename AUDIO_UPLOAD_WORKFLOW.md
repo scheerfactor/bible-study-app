@@ -10,6 +10,53 @@ The first audiobook pilot, _All of Grace_, is using cleaned transcript samples b
 
 ## Simple Workflow
 
+1. Open Admin -> Library Acquisition Center -> Media Intake.
+2. Use **New audio or sermon upload** to create a private review record.
+3. Choose the media type:
+   - Audiobook
+   - Sermon Audio
+   - Teaching Series
+   - Bible Audio
+   - Future video
+4. Add title, creator/preacher/narrator, passage, series, duration, source, rights status, and visibility.
+5. Choose the local MP3/M4B/MP4 file so the app can suggest the proper R2 path.
+6. Create the review record. This does not publish anything.
+7. Upload the audio file or folder to Cloudflare R2 at the suggested path.
+8. Attach transcript, notes, chapter markers, and cover art if available.
+9. Confirm rights and visibility.
+10. Keep private until reviewed.
+11. Mark approved only when public use is safe.
+
+## What The App Does Today
+
+The current admin form creates the media review record and suggests safe R2 paths. The actual file still needs to be uploaded through Cloudflare R2 or a trusted script.
+
+The next upgrade is direct in-app uploading with signed R2 upload URLs. That should happen only after the R2 write credentials are safely stored in Vercel and the endpoint is protected for admins.
+
+## Review Record Fields
+
+Every media record should include:
+
+- Title
+- Creator, preacher, teacher, or narrator
+- Passage when applicable
+- Series or collection
+- Duration
+- Source URL or ownership notes
+- Rights status
+- Intake status
+- Visibility
+- Storage bucket
+- Media path
+- Transcript path
+- Cover path
+- Notes
+- Next action
+
+## Old Manual Workflow
+
+This still works when needed:
+
 1. Create or choose a Media Intake record.
 2. Confirm the resource type:
    - Audiobook

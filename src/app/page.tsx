@@ -32629,6 +32629,87 @@ function mediaIntakeStatusPill(status: MediaIntakeStatus) {
   return "bg-red-50 text-red-800";
 }
 
+function mediaUploadSlug(value: string, fallback = "untitled") {
+  return value
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+    || fallback;
+}
+
+function mediaFolderForKind(kind: MediaIntakeRecord["kind"]) {
+  if (kind === "Audiobook") return "audio/audiobooks";
+  if (kind === "Sermon Audio") return "audio/sermons";
+  if (kind === "Teaching Series") return "audio/teaching";
+  if (kind === "Bible Audio") return "audio/bible/kjv";
+  return "video/sermons";
+}
+
+function mediaFileExtension(fileName: string, kind: MediaIntakeRecord["kind"]) {
+  const match = fileName.toLowerCase().match(/\.([a-z0-9]+)$/);
+  if (match?.[1]) return match[1];
+  return kind === "Sermon Video" ? "mp4" : "mp3";
+}
+
+function suggestedMediaPaths({
+  kind,
+  title,
+  creator,
+  series,
+  fileName,
+}: {
+  kind: MediaIntakeRecord["kind"];
+  title: string;
+  creator: string;
+  series: string;
+  fileName: string;
+}) {
+  const titleSlug = mediaUploadSlug(title, "new-media");
+  const creatorSlug = mediaUploadSlug(creator || "unknown-creator", "unknown-creator");
+  const seriesSlug = mediaUploadSlug(series || title, titleSlug);
+  const extension = mediaFileExtension(fileName, kind);
+  const folder = mediaFolderForKind(kind);
+
+  if (kind === "Audiobook") {
+    return {
+      storagePath: `${folder}/${creatorSlug}/${titleSlug}/001-${titleSlug}.${extension}`,
+      transcriptPath: `transcripts/audiobooks/${creatorSlug}/${titleSlug}/001-${titleSlug}.md`,
+      coverPath: `media/covers/audiobooks/${titleSlug}.webp`,
+    };
+  }
+
+  if (kind === "Bible Audio") {
+    return {
+      storagePath: `${folder}/${seriesSlug}/${titleSlug}.${extension}`,
+      transcriptPath: `data/bible/kjv/${seriesSlug}/${titleSlug}.json`,
+      coverPath: "media/covers/bible/kjv-audio.webp",
+    };
+  }
+
+  if (kind === "Teaching Series") {
+    return {
+      storagePath: `${folder}/${seriesSlug}/${titleSlug}.${extension}`,
+      transcriptPath: `transcripts/teaching/${seriesSlug}/${titleSlug}.md`,
+      coverPath: `media/covers/teaching/${seriesSlug}.webp`,
+    };
+  }
+
+  if (kind === "Sermon Video") {
+    return {
+      storagePath: `${folder}/${creatorSlug}/${seriesSlug}/${titleSlug}.${extension}`,
+      transcriptPath: `transcripts/sermons/${creatorSlug}/${seriesSlug}/${titleSlug}.md`,
+      coverPath: `media/covers/sermons/${seriesSlug}.webp`,
+    };
+  }
+
+  return {
+    storagePath: `${folder}/${creatorSlug}/${seriesSlug}/${titleSlug}.${extension}`,
+    transcriptPath: `transcripts/sermons/${creatorSlug}/${seriesSlug}/${titleSlug}.md`,
+    coverPath: `media/covers/sermons/${seriesSlug}.webp`,
+  };
+}
+
 function MediaIntakeCenter({
   records,
   audiobookPilots,
@@ -32637,14 +32718,86 @@ function MediaIntakeCenter({
 }: {
   records: MediaIntakeRecord[];
   audiobookPilots: AudiobookPilot[];
-  onAddRecord: () => void;
+  onAddRecord: (record: MediaIntakeRecord) => void;
   onUpdateRecord: (id: string, field: keyof MediaIntakeRecord, value: string) => void;
 }) {
+  const [draftKind, setDraftKind] = useState<MediaIntakeRecord["kind"]>("Sermon Audio");
+  const [draftTitle, setDraftTitle] = useState("");
+  const [draftCreator, setDraftCreator] = useState("");
+  const [draftPassage, setDraftPassage] = useState("");
+  const [draftSeries, setDraftSeries] = useState("");
+  const [draftDuration, setDraftDuration] = useState("");
+  const [draftSourceUrl, setDraftSourceUrl] = useState("");
+  const [draftRightsStatus, setDraftRightsStatus] = useState<RightsPermissionStatus>("Permission Needed");
+  const [draftVisibility, setDraftVisibility] = useState<ResourceVisibility>("Private admin draft");
+  const [draftFileName, setDraftFileName] = useState("");
+  const [draftMessage, setDraftMessage] = useState("");
   const readyCount = records.filter((record) => record.intakeStatus === "Ready For Storage" || record.intakeStatus === "Uploaded To R2").length;
   const rightsBlockedCount = records.filter((record) => record.rightsStatus === "Permission Needed" || record.intakeStatus === "Needs Rights Review").length;
   const publicReadyCount = records.filter((record) => record.intakeStatus === "Approved For Public Use").length;
   const mediaKinds = ["Audiobook", "Sermon Audio", "Sermon Video", "Teaching Series", "Bible Audio"] as const;
   const audiobookPilotsByRecordId = new Map(audiobookPilots.map((pilot) => [pilot.mediaRecordId, pilot]));
+  const draftPaths = suggestedMediaPaths({
+    kind: draftKind,
+    title: draftTitle,
+    creator: draftCreator,
+    series: draftSeries,
+    fileName: draftFileName,
+  });
+  const draftIntakeStatus: MediaIntakeStatus =
+    draftRightsStatus === "Personal Use Only"
+      ? "Personal Use Only"
+      : draftRightsStatus === "Public Domain" || draftRightsStatus === "Approved"
+        ? "Ready For Storage"
+        : "Needs Rights Review";
+
+  function createMediaReviewRecord() {
+    const title = draftTitle.trim();
+    if (!title) {
+      setDraftMessage("Add a title before creating the media review record.");
+      return;
+    }
+
+    const creator = draftCreator.trim() || (draftKind === "Bible Audio" ? "Licensed narrator/provider needed" : "Creator needed");
+    const nextRecord: MediaIntakeRecord = {
+      id: `media-intake-${Date.now()}`,
+      kind: draftKind,
+      title,
+      creator,
+      passage: draftPassage.trim(),
+      series: draftSeries.trim(),
+      duration: draftDuration.trim() || "Duration needed",
+      sourceUrl: draftSourceUrl.trim(),
+      rightsStatus: draftRightsStatus,
+      intakeStatus: draftIntakeStatus,
+      storageBucket: "fathers-business-bible-study-public",
+      storagePath: draftPaths.storagePath,
+      transcriptPath: draftPaths.transcriptPath,
+      coverPath: draftPaths.coverPath,
+      visibility: draftVisibility,
+      notes: [
+        "Created from the guided media upload form.",
+        draftFileName ? `Selected local file: ${draftFileName}. Upload it to the suggested R2 path before marking Uploaded To R2.` : "No local file selected yet.",
+        "This record is not public until rights and storage are reviewed.",
+      ].join(" "),
+      nextAction:
+        draftIntakeStatus === "Ready For Storage"
+          ? "Upload the file to R2, attach transcript/cover if available, then review before public approval."
+          : "Document rights or permission before uploading/publishing.",
+    };
+
+    onAddRecord(nextRecord);
+    setDraftMessage("Private media review record created. Upload the file to R2, then update this record when reviewed.");
+    setDraftTitle("");
+    setDraftCreator("");
+    setDraftPassage("");
+    setDraftSeries("");
+    setDraftDuration("");
+    setDraftSourceUrl("");
+    setDraftRightsStatus("Permission Needed");
+    setDraftVisibility("Private admin draft");
+    setDraftFileName("");
+  }
 
   return (
     <div className="mt-5 space-y-4">
@@ -32659,11 +32812,11 @@ function MediaIntakeCenter({
           </div>
           <button
             className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
-            onClick={onAddRecord}
+            onClick={createMediaReviewRecord}
             type="button"
           >
             <Plus size={16} />
-            Add media record
+            Create review record
           </button>
         </div>
 
@@ -32679,6 +32832,102 @@ function MediaIntakeCenter({
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-2xl border border-[var(--line)] bg-white p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">New audio or sermon upload</p>
+            <h4 className="mt-1 text-lg font-semibold text-[var(--ink)]">Create a private review record first</h4>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Choose the file and metadata here, then upload the actual audio/video file to Cloudflare R2 at the suggested path. This keeps large files out of Vercel and keeps every item private until rights are reviewed.
+            </p>
+          </div>
+          <span className="rounded-full bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            Private by default
+          </span>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Media type
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={draftKind}
+              onChange={(event) => setDraftKind(event.target.value as MediaIntakeRecord["kind"])}
+            >
+              {mediaKinds.map((kind) => <option key={`new-media-kind-${kind}`} value={kind}>{kind}</option>)}
+            </select>
+          </label>
+          <AdminImportField label="Title" value={draftTitle} onChange={setDraftTitle} />
+          <AdminImportField label="Creator / preacher / narrator" value={draftCreator} onChange={setDraftCreator} />
+          <AdminImportField label="Passage" value={draftPassage} onChange={setDraftPassage} />
+          <AdminImportField label="Series / collection" value={draftSeries} onChange={setDraftSeries} />
+          <AdminImportField label="Duration" value={draftDuration} onChange={setDraftDuration} />
+          <AdminImportField label="Source URL" value={draftSourceUrl} onChange={setDraftSourceUrl} />
+          <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Rights status
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={draftRightsStatus}
+              onChange={(event) => setDraftRightsStatus(event.target.value as RightsPermissionStatus)}
+            >
+              {RIGHTS_PERMISSION_STATUSES.map((status) => <option key={`new-media-rights-${status}`} value={status}>{status}</option>)}
+            </select>
+          </label>
+          <label className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)]">
+            Visibility
+            <select
+              className="mt-2 h-11 w-full rounded-2xl border border-[var(--line)] bg-white px-3 text-sm font-semibold normal-case tracking-normal text-[var(--ink)] outline-none"
+              value={draftVisibility}
+              onChange={(event) => setDraftVisibility(event.target.value as ResourceVisibility)}
+            >
+              {ADMIN_VISIBILITY_OPTIONS.map((option) => <option key={`new-media-visibility-${option}`} value={option}>{option}</option>)}
+            </select>
+          </label>
+          <label className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--paper)] p-4 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--muted)] md:col-span-2 xl:col-span-3">
+            Choose audio/video file
+            <input
+              accept=".mp3,.m4a,.m4b,.wav,.aac,.mp4,.mov,.webm"
+              className="mt-3 block w-full text-xs normal-case tracking-normal text-[var(--muted)] file:mr-3 file:rounded-full file:border-0 file:bg-[var(--green)] file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (!file) return;
+                setDraftFileName(file.name);
+                if (!draftTitle.trim()) setDraftTitle(file.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " "));
+              }}
+              type="file"
+            />
+            <span className="mt-2 block normal-case tracking-normal">{draftFileName || "No file selected yet. File selection creates a review record; direct R2 upload comes next."}</span>
+          </label>
+        </div>
+
+        <div className="mt-4 grid gap-3 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Suggested R2 package</p>
+            <div className="mt-3 space-y-2 text-xs leading-5 text-[var(--muted)]">
+              <p><span className="font-semibold text-[var(--ink)]">Bucket:</span> fathers-business-bible-study-public</p>
+              <p className="break-all"><span className="font-semibold text-[var(--ink)]">Media:</span> {draftPaths.storagePath}</p>
+              <p className="break-all"><span className="font-semibold text-[var(--ink)]">Transcript:</span> {draftPaths.transcriptPath}</p>
+              <p className="break-all"><span className="font-semibold text-[var(--ink)]">Cover:</span> {draftPaths.coverPath}</p>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Review outcome</p>
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">
+              This will be created as <span className="font-semibold text-[var(--green)]">{draftIntakeStatus}</span>. It stays out of public Library/audio until you mark the rights and upload status safe.
+            </p>
+            <button
+              className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+              onClick={createMediaReviewRecord}
+              type="button"
+            >
+              <Upload size={16} />
+              Create private review record
+            </button>
+            {draftMessage && <p className="mt-3 text-sm font-semibold text-[var(--green)]">{draftMessage}</p>}
+          </div>
         </div>
       </section>
 
@@ -33452,29 +33701,8 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
     );
   }
 
-  function addMediaIntakeRecord() {
-    setMediaIntakeRecords((current) => [
-      {
-        id: `media-intake-${Date.now()}`,
-        kind: "Sermon Audio",
-        title: "New media intake record",
-        creator: "",
-        passage: "",
-        series: "",
-        duration: "",
-        sourceUrl: "",
-        rightsStatus: "Permission Needed",
-        intakeStatus: "Draft",
-        storageBucket: "fathers-business-bible-study-public",
-        storagePath: "audio/",
-        transcriptPath: "transcripts/",
-        coverPath: "media/covers/",
-        visibility: "Private admin draft",
-        notes: "No public media until rights, ownership, transcript, and storage path are reviewed.",
-        nextAction: "Attach source, confirm rights, and decide public/private visibility.",
-      },
-      ...current,
-    ]);
+  function addMediaIntakeRecord(record: MediaIntakeRecord) {
+    setMediaIntakeRecords((current) => [record, ...current]);
   }
 
   function updateMediaIntakeRecord(id: string, field: keyof MediaIntakeRecord, value: string) {
