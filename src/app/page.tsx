@@ -14030,9 +14030,12 @@ export default function Home() {
 
   useEffect(() => {
     function openHiddenAdminAreas() {
-      const shouldShowLibraryAcquisition = ["#admin-import", "#library-acquisition"].includes(window.location.hash);
+      const params = new URLSearchParams(window.location.search);
+      const shouldShowLibraryAcquisition =
+        ["#admin-import", "#library-acquisition"].includes(window.location.hash) ||
+        params.get("open") === "library-acquisition";
       setShowLibraryAcquisitionAdmin(shouldShowLibraryAcquisition);
-      if (["#admin-import", "#library-acquisition"].includes(window.location.hash)) {
+      if (shouldShowLibraryAcquisition) {
         setLibraryView("home");
         setTab("library");
       }
@@ -18384,7 +18387,7 @@ export default function Home() {
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: window.location.origin,
+        emailRedirectTo: `${window.location.origin}/?open=library-acquisition`,
       },
     });
 
