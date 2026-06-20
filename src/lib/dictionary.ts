@@ -12,6 +12,7 @@ export type WebsterEntry = {
 };
 
 const dictionaryRelativePath = ["data", "generated", "websters-1828.entries.json"];
+const dictionaryOverrideRelativePath = ["data", "generated", "websters-1828-reviewed-overrides.json"];
 let dictionaryPromise: Promise<WebsterEntry[]> | null = null;
 
 const dictionaryAliases: Record<string, string> = {
@@ -26,6 +27,9 @@ const dictionaryAliases: Record<string, string> = {
   saveth: "save",
   condemneth: "condemn",
   condemned: "condemn",
+  doeth: "do",
+  doth: "do",
+  didst: "do",
 };
 
 export function cleanDictionaryWord(value: string) {
@@ -55,9 +59,12 @@ export function normalizeDictionaryWord(value: string) {
 }
 
 export async function getDictionaryEntries() {
-  dictionaryPromise ??= readTextContent(dictionaryRelativePath, { errorLabel: "Webster dictionary" }).then(
-    (raw) => JSON.parse(raw) as WebsterEntry[],
-  );
+  dictionaryPromise ??= Promise.all([
+    readTextContent(dictionaryRelativePath, { errorLabel: "Webster dictionary" }).then((raw) => JSON.parse(raw) as WebsterEntry[]),
+    readTextContent(dictionaryOverrideRelativePath, { errorLabel: "Webster reviewed overrides" })
+      .then((raw) => JSON.parse(raw) as WebsterEntry[])
+      .catch(() => []),
+  ]).then(([entries, overrides]) => [...overrides, ...entries]);
   return dictionaryPromise;
 }
 

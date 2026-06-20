@@ -34,7 +34,7 @@ function publicContentUrl(relativePath: string) {
 export async function readTextContent(relativePathInput: string | string[], options: ReadContentOptions = {}) {
   const relativePath = normalizeRelativePath(relativePathInput);
 
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV !== "production" || process.env.VERCEL !== "1") {
     return readFile(resolve(/* turbopackIgnore: true */ process.cwd(), relativePath), "utf8");
   }
 

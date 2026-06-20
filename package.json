@@ -26,6 +26,7 @@
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
     "validate:media": "node scripts/validate-media-manifest.mjs",
+    "audit:study-data": "node scripts/audit-core-study-data.mjs",
     "media:upload": "node scripts/upload-media-to-r2.mjs",
     "import:strongs": "node scripts/import-strongs-entries.mjs",
     "storage:plan": "node scripts/prepare-content-storage-migration.mjs",
