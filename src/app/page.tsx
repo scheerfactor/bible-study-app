@@ -50,11 +50,7 @@ import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-rev
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
-import permissionTrackerData from "../../data/library/manifests/permission-tracker.json";
-import premiumResourcePlaceholdersData from "../../data/library/manifests/premium-resource-placeholders.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
-import mediaIntakeCandidatesData from "../../data/media/manifests/media-intake-candidates.json";
-import audiobookPilotsData from "../../data/media/manifests/audiobook-pilots.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -67,6 +63,7 @@ type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Impo
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
 type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "ocrQueue";
+type AdminAcquisitionRecordType = "author" | "book" | "rights_holder" | "licensed_rights" | "media_intake" | "audiobook_pilot";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
 type RightsPermissionStatus = "Public Domain" | "Permission Needed" | "Contacted" | "Negotiating" | "Approved" | "Denied" | "Personal Use Only" | "Do Not Import";
@@ -1719,203 +1716,9 @@ const DEFAULT_WORD_HIGHLIGHT_SETS: WordHighlightSet[] = [
   { id: "word-set-condemnation", word: "condemnation", lookupWord: "condemned", color: "red", scope: "chapter", enabled: true, createdAt: "starter" },
 ];
 
-const DEFAULT_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [
-  {
-    id: "harry-a-ironside",
-    name: "Harry A. Ironside",
-    birthYear: 1876,
-    deathYear: 1951,
-    tradition: "Brethren / Bible teacher",
-    biography: "American Bible teacher and preacher known for clear expository teaching and many published addresses.",
-    website: "https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22",
-    notes: "Useful for Bible exposition, but editions and later reprints need careful review.",
-    publicDomainStatus: "Mixed",
-    copyrightNotes: "Early works may be public domain by publication date. Later editions, revised works, and modern publisher editions require review.",
-  },
-  {
-    id: "charles-spurgeon",
-    name: "Charles Spurgeon",
-    birthYear: 1834,
-    deathYear: 1892,
-    tradition: "Baptist",
-    biography: "English Baptist preacher whose sermons, devotional works, and pastoral writings remain widely used.",
-    website: "https://www.gutenberg.org/ebooks/author/45",
-    notes: "Strong priority author for preaching, devotion, evangelism, and Christian living.",
-    publicDomainStatus: "Public Domain",
-    copyrightNotes: "Original nineteenth-century works are public domain. Verify source text and edition notes before import.",
-  },
-  {
-    id: "j-c-ryle",
-    name: "J. C. Ryle",
-    birthYear: 1816,
-    deathYear: 1900,
-    tradition: "Anglican evangelical",
-    biography: "Evangelical bishop known for practical, plain-spoken works on holiness, the Gospels, and Christian living.",
-    website: "https://archive.org/search?query=creator%3A%22Ryle%2C+J.+C.%22",
-    notes: "Helpful devotional and teaching resource. Mark secondary doctrinal differences where appropriate.",
-    publicDomainStatus: "Public Domain",
-    copyrightNotes: "Original works are generally public domain. Confirm edition/source before import.",
-  },
-  {
-    id: "d-l-moody",
-    name: "D. L. Moody",
-    birthYear: 1837,
-    deathYear: 1899,
-    tradition: "Evangelist",
-    biography: "American evangelist associated with revival work, evangelism, and practical Christian instruction.",
-    website: "https://www.gutenberg.org/ebooks/author/402",
-    notes: "Useful for evangelism, Christian living, and simple teaching.",
-    publicDomainStatus: "Public Domain",
-    copyrightNotes: "Original works are generally public domain. Confirm Project Gutenberg or comparable source notices.",
-  },
-  {
-    id: "e-m-bounds",
-    name: "E. M. Bounds",
-    birthYear: 1835,
-    deathYear: 1913,
-    tradition: "Methodist / prayer writer",
-    biography: "Prayer-focused writer whose works have been widely used for devotional and ministry preparation.",
-    website: "https://www.gutenberg.org/ebooks/author/2832",
-    notes: "Important prayer collection candidate. Add discernment labels where needed.",
-    publicDomainStatus: "Public Domain",
-    copyrightNotes: "Original works are generally public domain; verify modern compiled editions separately.",
-  },
-  {
-    id: "andrew-murray",
-    name: "Andrew Murray",
-    birthYear: 1828,
-    deathYear: 1917,
-    tradition: "Dutch Reformed",
-    biography: "Pastor and devotional writer known for works on prayer, abiding in Christ, humility, and Christian growth.",
-    website: "https://www.gutenberg.org/ebooks/author/1231",
-    notes: "Useful devotional classic author. Mark perspective notes where helpful.",
-    publicDomainStatus: "Public Domain",
-    copyrightNotes: "Original works are generally public domain. Verify edition and source terms.",
-  },
-];
-
-const DEFAULT_ACQUISITION_BOOKS: AcquisitionBookRecord[] = [
-  {
-    id: "all-of-grace",
-    title: "All of Grace",
-    subtitle: "",
-    author: "Charles Spurgeon",
-    publicationYear: 1886,
-    publisher: "Original nineteenth-century edition",
-    isbn: "",
-    edition: "Public-domain source edition",
-    sourceUrl: "https://www.gutenberg.org/ebooks/58181",
-    fileType: "TXT",
-    copyrightStatus: "Public Domain",
-    confidenceScore: 96,
-    reviewStatus: "Approved",
-    notes: "Project Gutenberg source. Keep source notice and verify text before public import.",
-    dateAdded: "2026-06-04",
-    topic: "Evangelism",
-  },
-  {
-    id: "power-through-prayer",
-    title: "Power Through Prayer",
-    subtitle: "",
-    author: "E. M. Bounds",
-    publicationYear: 1910,
-    publisher: "Original edition",
-    isbn: "",
-    edition: "Public-domain source edition",
-    sourceUrl: "https://www.gutenberg.org/ebooks/33441",
-    fileType: "TXT",
-    copyrightStatus: "Public Domain",
-    confidenceScore: 95,
-    reviewStatus: "Approved",
-    notes: "Useful prayer classic candidate. Verify source notice before import.",
-    dateAdded: "2026-06-04",
-    topic: "Prayer",
-  },
-  {
-    id: "lectures-on-romans-ironside",
-    title: "Lectures on Romans",
-    subtitle: "",
-    author: "Harry A. Ironside",
-    publicationYear: null,
-    publisher: "Needs source verification",
-    isbn: "",
-    edition: "Unknown",
-    sourceUrl: "https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22+Romans",
-    fileType: "Unknown",
-    copyrightStatus: "Unknown",
-    confidenceScore: 42,
-    reviewStatus: "Needs Review",
-    notes: "Do not import until publication year, edition, publisher, and rights basis are documented.",
-    dateAdded: "2026-06-04",
-    topic: "Commentary",
-  },
-  {
-    id: "modern-way-of-life-placeholder",
-    title: "Way of Life resource placeholder",
-    subtitle: "Permission needed only",
-    author: "David Cloud / Way of Life Literature",
-    publicationYear: null,
-    publisher: "Way of Life Literature",
-    isbn: "",
-    edition: "Modern",
-    sourceUrl: "https://www.wayoflife.org/",
-    fileType: "Permission tracker",
-    copyrightStatus: "Copyrighted",
-    confidenceScore: 98,
-    reviewStatus: "Rejected",
-    notes: "Do not publicly import without written permission. Keep as permission-needed or personal-use-only planning.",
-    dateAdded: "2026-06-04",
-    topic: "KJV / Textual Issues",
-  },
-];
-
-const DEFAULT_RIGHTS_HOLDERS: AcquisitionRightsHolderRecord[] = [
-  {
-    id: "moody-publishers",
-    organizationName: "Moody Publishers",
-    contactName: "",
-    email: "",
-    website: "https://www.moodypublishers.com/",
-    licensingNotes: "Modern editions and Moody-controlled works require permission or a licensing agreement.",
-    lastContactDate: "",
-  },
-  {
-    id: "kregel",
-    organizationName: "Kregel",
-    contactName: "",
-    email: "",
-    website: "https://www.kregel.com/",
-    licensingNotes: "Track commentary, Bible study, and reprint rights separately.",
-    lastContactDate: "",
-  },
-  {
-    id: "baker",
-    organizationName: "Baker",
-    contactName: "",
-    email: "",
-    website: "https://www.bakerpublishinggroup.com/",
-    licensingNotes: "Publisher partnership candidate for future premium/authorized resources.",
-    lastContactDate: "",
-  },
-  {
-    id: "crossway",
-    organizationName: "Crossway",
-    contactName: "",
-    email: "",
-    website: "https://www.crossway.org/",
-    licensingNotes: "Modern copyrighted works and Bible/licensing questions require written permission.",
-    lastContactDate: "",
-  },
-  {
-    id: "christian-focus",
-    organizationName: "Christian Focus",
-    contactName: "",
-    email: "",
-    website: "https://www.christianfocus.com/",
-    licensingNotes: "Track ebook, audiobook, and app display permissions separately.",
-    lastContactDate: "",
-  },
-];
+const EMPTY_ACQUISITION_AUTHORS: AcquisitionAuthorRecord[] = [];
+const EMPTY_ACQUISITION_BOOKS: AcquisitionBookRecord[] = [];
+const EMPTY_RIGHTS_HOLDERS: AcquisitionRightsHolderRecord[] = [];
 
 const RIGHTS_PERMISSION_STATUSES: RightsPermissionStatus[] = [
   "Public Domain",
@@ -1938,86 +1741,9 @@ const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
   "Do Not Publish",
 ];
 
-const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeCandidatesData as MediaIntakeRecord[];
-const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotsData as AudiobookPilot[];
-
-const DEFAULT_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [
-  {
-    id: "way-of-life-permission-needed",
-    title: "Way of Life resource review",
-    author: "David Cloud",
-    publisher: "Way of Life Literature",
-    rightsHolder: "Way of Life Literature",
-    contactName: "",
-    contactEmail: "",
-    website: "https://www.wayoflife.org/",
-    copyrightYear: "Modern",
-    edition: "Current ministry edition",
-    isbn: "",
-    requestedUse: "Evaluate whether selected books could be licensed for public Library, private-user upload, excerpts, or audio.",
-    permissionStatus: "Permission Needed",
-    publicAppPermission: "No",
-    privateUserImportPermission: "Unknown",
-    excerptPermission: "Unknown",
-    audiobookPermission: "Unknown",
-    aiTtsNarrationPermission: "Unknown",
-    paidSubscriptionPermission: "Unknown",
-    freeBetaPermission: "Unknown",
-    royaltyTerms: "Not requested",
-    nextFollowUpDate: "",
-    notes: "Do not import or publish any copyrighted text without written permission.",
-  },
-  {
-    id: "john-phillips-premium-candidate",
-    title: "John Phillips commentary resources",
-    author: "John Phillips",
-    publisher: "Kregel / rights holder review needed",
-    rightsHolder: "Kregel or estate/publisher to confirm",
-    contactName: "",
-    contactEmail: "",
-    website: "https://www.kregel.com/",
-    copyrightYear: "Modern",
-    edition: "Modern print/digital editions",
-    isbn: "",
-    requestedUse: "Future premium commentary licensing candidate.",
-    permissionStatus: "Permission Needed",
-    publicAppPermission: "No",
-    privateUserImportPermission: "Unknown",
-    excerptPermission: "Unknown",
-    audiobookPermission: "Unknown",
-    aiTtsNarrationPermission: "Unknown",
-    paidSubscriptionPermission: "Unknown",
-    freeBetaPermission: "No",
-    royaltyTerms: "Not requested",
-    nextFollowUpDate: "",
-    notes: "Keep as licensed-resource planning only until rights holder confirms terms.",
-  },
-  {
-    id: "public-domain-control",
-    title: "Public-domain control record",
-    author: "Public-domain author",
-    publisher: "Original public-domain source",
-    rightsHolder: "No modern rights holder for original text",
-    contactName: "",
-    contactEmail: "",
-    website: "",
-    copyrightYear: "Before 1929",
-    edition: "Original public-domain edition",
-    isbn: "",
-    requestedUse: "Public Library, search, reading, study, and device TTS.",
-    permissionStatus: "Public Domain",
-    publicAppPermission: "Yes, for verified public-domain source text",
-    privateUserImportPermission: "Yes",
-    excerptPermission: "Yes",
-    audiobookPermission: "Device TTS allowed; generated/public audio reviewed separately",
-    aiTtsNarrationPermission: "Review before distributing generated audio files",
-    paidSubscriptionPermission: "Review source and attribution requirements first",
-    freeBetaPermission: "Yes",
-    royaltyTerms: "None for original public-domain text",
-    nextFollowUpDate: "",
-    notes: "Use this as the contrast record for public-domain imports.",
-  },
-];
+const EMPTY_MEDIA_INTAKE_RECORDS: MediaIntakeRecord[] = [];
+const EMPTY_AUDIOBOOK_PILOTS: AudiobookPilot[] = [];
+const EMPTY_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [];
 
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
   {
@@ -5007,8 +4733,8 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
   },
 ];
 
-const PERMISSION_REQUESTS = permissionTrackerData as PermissionRequest[];
-const PREMIUM_RESOURCE_PLACEHOLDERS = premiumResourcePlaceholdersData as PremiumResourcePlaceholder[];
+const PERMISSION_REQUESTS: PermissionRequest[] = [];
+const PREMIUM_RESOURCE_PLACEHOLDERS: PremiumResourcePlaceholder[] = [];
 
 const EMPTY_TEACHER_NOTES: TeacherNotesDraft = {
   hook: "",
@@ -18732,6 +18458,7 @@ export default function Home() {
                   <LibraryAcquisitionCenter
                     signedIn={Boolean(user)}
                     signedInEmail={user?.email ?? null}
+                    supabase={supabase}
                     resources={allLibraryResources.length ? allLibraryResources : libraryResources}
                     commentaryEntries={commentaryEntries}
                     onSignOut={signOut}
@@ -30463,6 +30190,18 @@ function loadAcquisitionStorage<T>(key: string, fallback: T[]): T[] {
   }
 }
 
+function adminRecordRows<T extends { id: string }>(recordType: AdminAcquisitionRecordType, records: T[]) {
+  return records.map((record) => ({
+    record_type: recordType,
+    record_key: record.id,
+    payload: record,
+  }));
+}
+
+function adminRecordsOfType<T>(rows: Array<{ record_type: string; payload: unknown }>, recordType: AdminAcquisitionRecordType): T[] {
+  return rows.filter((row) => row.record_type === recordType).map((row) => row.payload as T);
+}
+
 function AdminLockedNotice({
   signedIn,
   user,
@@ -33844,6 +33583,7 @@ function RightsManagementCenter({
 function LibraryAcquisitionCenter({
   signedIn,
   signedInEmail,
+  supabase,
   resources,
   commentaryEntries,
   onSignOut,
@@ -33851,12 +33591,17 @@ function LibraryAcquisitionCenter({
 }: {
   signedIn: boolean;
   signedInEmail: string | null;
+  supabase: SupabaseClient | null;
   resources: LibraryResource[];
   commentaryEntries: CommentaryEntry[];
   onSignOut: () => void;
   onClose: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
+  const [adminRecordStatus, setAdminRecordStatus] = useState("Loading private admin records...");
+  const [adminRecordsLoaded, setAdminRecordsLoaded] = useState(false);
+  const adminRecordsHydratingRef = useRef(false);
+  const adminRecordSyncTimerRef = useRef<number | null>(null);
   const [checkerInput, setCheckerInput] = useState<CopyrightCheckerInput>(EMPTY_COPYRIGHT_CHECKER_INPUT);
   const [checkerResult, setCheckerResult] = useState<CopyrightCheckerResult | null>(null);
   const [managerSearch, setManagerSearch] = useState("");
@@ -33868,20 +33613,21 @@ function LibraryAcquisitionCenter({
   const [queueAuthor, setQueueAuthor] = useState("");
   const [queueFileType, setQueueFileType] = useState("Manual entry");
   const [authors, setAuthors] = useState<AcquisitionAuthorRecord[]>(() =>
-    loadAcquisitionStorage(LIBRARY_ACQUISITION_AUTHORS_KEY, DEFAULT_ACQUISITION_AUTHORS),
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_AUTHORS_KEY, EMPTY_ACQUISITION_AUTHORS),
   );
   const [books, setBooks] = useState<AcquisitionBookRecord[]>(() =>
-    loadAcquisitionStorage(LIBRARY_ACQUISITION_BOOKS_KEY, DEFAULT_ACQUISITION_BOOKS),
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_BOOKS_KEY, EMPTY_ACQUISITION_BOOKS),
   );
   const [rightsHolders, setRightsHolders] = useState<AcquisitionRightsHolderRecord[]>(() =>
-    loadAcquisitionStorage(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, DEFAULT_RIGHTS_HOLDERS),
+    loadAcquisitionStorage(LIBRARY_ACQUISITION_RIGHTS_HOLDERS_KEY, EMPTY_RIGHTS_HOLDERS),
   );
   const [rightsRecords, setRightsRecords] = useState<LicensedResourceRightsRecord[]>(() =>
-    loadAcquisitionStorage(LIBRARY_LICENSED_RIGHTS_KEY, DEFAULT_LICENSED_RIGHTS_RECORDS),
+    loadAcquisitionStorage(LIBRARY_LICENSED_RIGHTS_KEY, EMPTY_LICENSED_RIGHTS_RECORDS),
   );
   const [mediaIntakeRecords, setMediaIntakeRecords] = useState<MediaIntakeRecord[]>(() =>
-    loadAcquisitionStorage(MEDIA_INTAKE_RECORDS_KEY, DEFAULT_MEDIA_INTAKE_RECORDS),
+    loadAcquisitionStorage(MEDIA_INTAKE_RECORDS_KEY, EMPTY_MEDIA_INTAKE_RECORDS),
   );
+  const [audiobookPilots, setAudiobookPilots] = useState<AudiobookPilot[]>(EMPTY_AUDIOBOOK_PILOTS);
 
   const libraryStats = useMemo(() => {
     const publicDomainBooks = books.filter((book) => book.copyrightStatus === "Public Domain" || book.copyrightStatus === "Likely Public Domain").length;
@@ -33915,6 +33661,57 @@ function LibraryAcquisitionCenter({
   }, [resources]);
 
   useEffect(() => {
+    let cancelled = false;
+
+    async function loadPrivateAdminRecords() {
+      if (!supabase) {
+        setAdminRecordStatus("Using local admin records for this browser.");
+        setAdminRecordsLoaded(true);
+        return;
+      }
+
+      adminRecordsHydratingRef.current = true;
+      setAdminRecordStatus("Loading private admin records from Supabase...");
+
+      const { data, error } = await supabase
+        .from("admin_acquisition_records")
+        .select("record_type, payload")
+        .order("record_type", { ascending: true })
+        .order("record_key", { ascending: true });
+
+      if (cancelled) return;
+
+      if (error) {
+        setAdminRecordStatus("Could not load private admin records. Local browser records remain active.");
+        setAdminRecordsLoaded(true);
+        window.setTimeout(() => {
+          adminRecordsHydratingRef.current = false;
+        }, 0);
+        return;
+      }
+
+      const rows = data ?? [];
+      setAuthors(adminRecordsOfType<AcquisitionAuthorRecord>(rows, "author"));
+      setBooks(adminRecordsOfType<AcquisitionBookRecord>(rows, "book"));
+      setRightsHolders(adminRecordsOfType<AcquisitionRightsHolderRecord>(rows, "rights_holder"));
+      setRightsRecords(adminRecordsOfType<LicensedResourceRightsRecord>(rows, "licensed_rights"));
+      setMediaIntakeRecords(adminRecordsOfType<MediaIntakeRecord>(rows, "media_intake"));
+      setAudiobookPilots(adminRecordsOfType<AudiobookPilot>(rows, "audiobook_pilot"));
+      setAdminRecordStatus(rows.length ? `Loaded ${rows.length} private admin records from Supabase.` : "No private admin records are stored yet.");
+      setAdminRecordsLoaded(true);
+      window.setTimeout(() => {
+        adminRecordsHydratingRef.current = false;
+      }, 0);
+    }
+
+    void loadPrivateAdminRecords();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase]);
+
+  useEffect(() => {
     try {
       window.localStorage.setItem(LIBRARY_ACQUISITION_AUTHORS_KEY, JSON.stringify(authors));
       window.localStorage.setItem(LIBRARY_ACQUISITION_BOOKS_KEY, JSON.stringify(books));
@@ -33924,7 +33721,40 @@ function LibraryAcquisitionCenter({
     } catch {
       // Local acquisition records are advisory admin data; keep the UI usable if storage is unavailable.
     }
-  }, [authors, books, rightsHolders, rightsRecords, mediaIntakeRecords]);
+
+    if (!supabase || !adminRecordsLoaded || adminRecordsHydratingRef.current) return;
+
+    if (adminRecordSyncTimerRef.current) {
+      window.clearTimeout(adminRecordSyncTimerRef.current);
+    }
+
+    adminRecordSyncTimerRef.current = window.setTimeout(() => {
+      const rows = [
+        ...adminRecordRows("author", authors),
+        ...adminRecordRows("book", books),
+        ...adminRecordRows("rights_holder", rightsHolders),
+        ...adminRecordRows("licensed_rights", rightsRecords),
+        ...adminRecordRows("media_intake", mediaIntakeRecords),
+        ...adminRecordRows("audiobook_pilot", audiobookPilots),
+      ];
+
+      if (!rows.length) {
+        setAdminRecordStatus("No private admin records are stored yet.");
+        return;
+      }
+
+      supabase
+        .from("admin_acquisition_records")
+        .upsert(rows, { onConflict: "record_type,record_key" })
+        .then(({ error }) => {
+          setAdminRecordStatus(error ? "Could not save admin records to Supabase." : `Saved ${rows.length} private admin records to Supabase.`);
+        });
+    }, 700);
+
+    return () => {
+      if (adminRecordSyncTimerRef.current) window.clearTimeout(adminRecordSyncTimerRef.current);
+    };
+  }, [adminRecordsLoaded, audiobookPilots, authors, books, mediaIntakeRecords, rightsHolders, rightsRecords, supabase]);
 
   const tabs: Array<{ id: AcquisitionAdminTab; label: string }> = [
     { id: "dashboard", label: "Dashboard" },
@@ -34111,6 +33941,10 @@ function LibraryAcquisitionCenter({
         </div>
       </div>
 
+      <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-xs font-semibold text-[var(--muted)]">
+        {adminRecordStatus}
+      </p>
+
       <div className="mt-5 flex gap-2 overflow-x-auto pb-2">
         {tabs.map((tabItem) => (
           <button
@@ -34186,7 +34020,7 @@ function LibraryAcquisitionCenter({
       {activeTab === "mediaIntake" && (
         <MediaIntakeCenter
           records={mediaIntakeRecords}
-          audiobookPilots={DEFAULT_AUDIOBOOK_PILOTS}
+          audiobookPilots={audiobookPilots}
           onAddRecord={addMediaIntakeRecord}
           onUpdateRecord={updateMediaIntakeRecord}
         />

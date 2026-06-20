@@ -483,6 +483,19 @@ create table if not exists public.user_roles (
 create index if not exists user_roles_user_role_idx
   on public.user_roles (user_id, role);
 
+create table if not exists public.admin_acquisition_records (
+  id uuid primary key default gen_random_uuid(),
+  record_type text not null check (record_type in ('author', 'book', 'rights_holder', 'licensed_rights', 'media_intake', 'audiobook_pilot')),
+  record_key text not null,
+  payload jsonb not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (record_type, record_key)
+);
+
+create index if not exists admin_acquisition_records_type_idx
+  on public.admin_acquisition_records (record_type, record_key);
+
 alter table public.presentation_session_events
   drop constraint if exists presentation_session_events_event_type_check;
 
@@ -532,6 +545,7 @@ alter table public.user_resource_permission_requests enable row level security;
 alter table public.presentation_sessions enable row level security;
 alter table public.presentation_session_events enable row level security;
 alter table public.user_roles enable row level security;
+alter table public.admin_acquisition_records enable row level security;
 
 drop policy if exists "Public sources are readable" on public.resource_sources;
 drop policy if exists "Library resources are readable" on public.library_resources;
@@ -602,6 +616,8 @@ drop policy if exists "Presentation sessions can be controlled by code" on publi
 drop policy if exists "Presentation events are readable" on public.presentation_session_events;
 drop policy if exists "Presentation events can be created" on public.presentation_session_events;
 drop policy if exists "Users can read their own roles" on public.user_roles;
+drop policy if exists "Admins can read acquisition records" on public.admin_acquisition_records;
+drop policy if exists "Admins can manage acquisition records" on public.admin_acquisition_records;
 
 create policy "Public sources are readable"
   on public.resource_sources for select
@@ -908,6 +924,36 @@ create policy "Users can read their own roles"
   on public.user_roles for select
   using ((select auth.uid()) is not null and (select auth.uid()) = user_id);
 
+create policy "Admins can read acquisition records"
+  on public.admin_acquisition_records for select
+  using (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
+create policy "Admins can manage acquisition records"
+  on public.admin_acquisition_records for all
+  using (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  )
+  with check (
+    exists (
+      select 1
+      from public.user_roles
+      where user_id = (select auth.uid())
+        and role = 'admin'
+    )
+  );
+
 grant select on public.resource_sources to anon, authenticated;
 grant select on public.library_resources to anon, authenticated;
 grant select on public.bible_books to anon, authenticated;
@@ -936,12 +982,458 @@ grant select, insert, update on public.presentation_sessions to anon, authentica
 grant select, insert on public.presentation_session_events to anon, authenticated;
 grant select on public.user_roles to authenticated;
 revoke all on public.user_roles from anon;
+grant select, insert, update, delete on public.admin_acquisition_records to authenticated;
+revoke all on public.admin_acquisition_records from anon;
 
 insert into public.user_roles (user_id, role)
 select id, 'admin'
 from auth.users
 where lower(email) = 'st396@hotmail.com'
 on conflict (user_id, role) do nothing;
+
+insert into public.admin_acquisition_records (record_type, record_key, payload)
+values
+  (
+    'author',
+    'harry-a-ironside',
+    jsonb_build_object(
+      'id', 'harry-a-ironside',
+      'name', 'Harry A. Ironside',
+      'birthYear', 1876,
+      'deathYear', 1951,
+      'tradition', 'Brethren / Bible teacher',
+      'biography', 'American Bible teacher and preacher known for clear expository teaching and many published addresses.',
+      'website', 'https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22',
+      'notes', 'Useful for Bible exposition, but editions and later reprints need careful review.',
+      'publicDomainStatus', 'Mixed',
+      'copyrightNotes', 'Early works may be public domain by publication date. Later editions, revised works, and modern publisher editions require review.'
+    )
+  ),
+  (
+    'author',
+    'charles-spurgeon',
+    jsonb_build_object(
+      'id', 'charles-spurgeon',
+      'name', 'Charles Spurgeon',
+      'birthYear', 1834,
+      'deathYear', 1892,
+      'tradition', 'Baptist',
+      'biography', 'English Baptist preacher whose sermons, devotional works, and pastoral writings remain widely used.',
+      'website', 'https://www.gutenberg.org/ebooks/author/45',
+      'notes', 'Strong priority author for preaching, devotion, evangelism, and Christian living.',
+      'publicDomainStatus', 'Public Domain',
+      'copyrightNotes', 'Original nineteenth-century works are public domain. Verify source text and edition notes before import.'
+    )
+  ),
+  (
+    'author',
+    'j-c-ryle',
+    jsonb_build_object(
+      'id', 'j-c-ryle',
+      'name', 'J. C. Ryle',
+      'birthYear', 1816,
+      'deathYear', 1900,
+      'tradition', 'Anglican evangelical',
+      'biography', 'Evangelical bishop known for practical, plain-spoken works on holiness, the Gospels, and Christian living.',
+      'website', 'https://archive.org/search?query=creator%3A%22Ryle%2C+J.+C.%22',
+      'notes', 'Helpful devotional and teaching resource. Mark secondary doctrinal differences where appropriate.',
+      'publicDomainStatus', 'Public Domain',
+      'copyrightNotes', 'Original works are generally public domain. Confirm edition/source before import.'
+    )
+  ),
+  (
+    'author',
+    'd-l-moody',
+    jsonb_build_object(
+      'id', 'd-l-moody',
+      'name', 'D. L. Moody',
+      'birthYear', 1837,
+      'deathYear', 1899,
+      'tradition', 'Evangelist',
+      'biography', 'American evangelist associated with revival work, evangelism, and practical Christian instruction.',
+      'website', 'https://www.gutenberg.org/ebooks/author/402',
+      'notes', 'Useful for evangelism, Christian living, and simple teaching.',
+      'publicDomainStatus', 'Public Domain',
+      'copyrightNotes', 'Original works are generally public domain. Confirm Project Gutenberg or comparable source notices.'
+    )
+  ),
+  (
+    'author',
+    'e-m-bounds',
+    jsonb_build_object(
+      'id', 'e-m-bounds',
+      'name', 'E. M. Bounds',
+      'birthYear', 1835,
+      'deathYear', 1913,
+      'tradition', 'Methodist / prayer writer',
+      'biography', 'Prayer-focused writer whose works have been widely used for devotional and ministry preparation.',
+      'website', 'https://www.gutenberg.org/ebooks/author/2832',
+      'notes', 'Important prayer collection candidate. Add discernment labels where needed.',
+      'publicDomainStatus', 'Public Domain',
+      'copyrightNotes', 'Original works are generally public domain; verify modern compiled editions separately.'
+    )
+  ),
+  (
+    'author',
+    'andrew-murray',
+    jsonb_build_object(
+      'id', 'andrew-murray',
+      'name', 'Andrew Murray',
+      'birthYear', 1828,
+      'deathYear', 1917,
+      'tradition', 'Dutch Reformed',
+      'biography', 'Pastor and devotional writer known for works on prayer, abiding in Christ, humility, and Christian growth.',
+      'website', 'https://www.gutenberg.org/ebooks/author/1231',
+      'notes', 'Useful devotional classic author. Mark perspective notes where helpful.',
+      'publicDomainStatus', 'Public Domain',
+      'copyrightNotes', 'Original works are generally public domain. Verify edition and source terms.'
+    )
+  ),
+  (
+    'book',
+    'all-of-grace',
+    jsonb_build_object(
+      'id', 'all-of-grace',
+      'title', 'All of Grace',
+      'subtitle', '',
+      'author', 'Charles Spurgeon',
+      'publicationYear', 1886,
+      'publisher', 'Original nineteenth-century edition',
+      'isbn', '',
+      'edition', 'Public-domain source edition',
+      'sourceUrl', 'https://www.gutenberg.org/ebooks/58181',
+      'fileType', 'TXT',
+      'copyrightStatus', 'Public Domain',
+      'confidenceScore', 96,
+      'reviewStatus', 'Approved',
+      'notes', 'Project Gutenberg source. Keep source notice and verify text before public import.',
+      'dateAdded', '2026-06-04',
+      'topic', 'Evangelism'
+    )
+  ),
+  (
+    'book',
+    'power-through-prayer',
+    jsonb_build_object(
+      'id', 'power-through-prayer',
+      'title', 'Power Through Prayer',
+      'subtitle', '',
+      'author', 'E. M. Bounds',
+      'publicationYear', 1910,
+      'publisher', 'Original edition',
+      'isbn', '',
+      'edition', 'Public-domain source edition',
+      'sourceUrl', 'https://www.gutenberg.org/ebooks/33441',
+      'fileType', 'TXT',
+      'copyrightStatus', 'Public Domain',
+      'confidenceScore', 95,
+      'reviewStatus', 'Approved',
+      'notes', 'Useful prayer classic candidate. Verify source notice before import.',
+      'dateAdded', '2026-06-04',
+      'topic', 'Prayer'
+    )
+  ),
+  (
+    'book',
+    'lectures-on-romans-ironside',
+    jsonb_build_object(
+      'id', 'lectures-on-romans-ironside',
+      'title', 'Lectures on Romans',
+      'subtitle', '',
+      'author', 'Harry A. Ironside',
+      'publicationYear', null,
+      'publisher', 'Needs source verification',
+      'isbn', '',
+      'edition', 'Unknown',
+      'sourceUrl', 'https://archive.org/search?query=creator%3A%22H.+A.+Ironside%22+Romans',
+      'fileType', 'Unknown',
+      'copyrightStatus', 'Unknown',
+      'confidenceScore', 42,
+      'reviewStatus', 'Needs Review',
+      'notes', 'Do not import until publication year, edition, publisher, and rights basis are documented.',
+      'dateAdded', '2026-06-04',
+      'topic', 'Commentary'
+    )
+  ),
+  (
+    'book',
+    'modern-way-of-life-placeholder',
+    jsonb_build_object(
+      'id', 'modern-way-of-life-placeholder',
+      'title', 'Way of Life resource placeholder',
+      'subtitle', 'Permission needed only',
+      'author', 'David Cloud / Way of Life Literature',
+      'publicationYear', null,
+      'publisher', 'Way of Life Literature',
+      'isbn', '',
+      'edition', 'Modern',
+      'sourceUrl', 'https://www.wayoflife.org/',
+      'fileType', 'Permission tracker',
+      'copyrightStatus', 'Copyrighted',
+      'confidenceScore', 98,
+      'reviewStatus', 'Rejected',
+      'notes', 'Do not publicly import without written permission. Keep as permission-needed or personal-use-only planning.',
+      'dateAdded', '2026-06-04',
+      'topic', 'KJV / Textual Issues'
+    )
+  ),
+  (
+    'rights_holder',
+    'moody-publishers',
+    jsonb_build_object('id', 'moody-publishers', 'organizationName', 'Moody Publishers', 'contactName', '', 'email', '', 'website', 'https://www.moodypublishers.com/', 'licensingNotes', 'Modern editions and Moody-controlled works require permission or a licensing agreement.', 'lastContactDate', '')
+  ),
+  (
+    'rights_holder',
+    'kregel',
+    jsonb_build_object('id', 'kregel', 'organizationName', 'Kregel', 'contactName', '', 'email', '', 'website', 'https://www.kregel.com/', 'licensingNotes', 'Track commentary, Bible study, and reprint rights separately.', 'lastContactDate', '')
+  ),
+  (
+    'rights_holder',
+    'baker',
+    jsonb_build_object('id', 'baker', 'organizationName', 'Baker', 'contactName', '', 'email', '', 'website', 'https://www.bakerpublishinggroup.com/', 'licensingNotes', 'Publisher partnership candidate for future premium/authorized resources.', 'lastContactDate', '')
+  ),
+  (
+    'rights_holder',
+    'crossway',
+    jsonb_build_object('id', 'crossway', 'organizationName', 'Crossway', 'contactName', '', 'email', '', 'website', 'https://www.crossway.org/', 'licensingNotes', 'Modern copyrighted works and Bible/licensing questions require written permission.', 'lastContactDate', '')
+  ),
+  (
+    'rights_holder',
+    'christian-focus',
+    jsonb_build_object('id', 'christian-focus', 'organizationName', 'Christian Focus', 'contactName', '', 'email', '', 'website', 'https://www.christianfocus.com/', 'licensingNotes', 'Track ebook, audiobook, and app display permissions separately.', 'lastContactDate', '')
+  ),
+  (
+    'licensed_rights',
+    'way-of-life-permission-needed',
+    jsonb_build_object(
+      'id', 'way-of-life-permission-needed',
+      'title', 'Way of Life resource review',
+      'author', 'David Cloud',
+      'publisher', 'Way of Life Literature',
+      'rightsHolder', 'Way of Life Literature',
+      'contactName', '',
+      'contactEmail', '',
+      'website', 'https://www.wayoflife.org/',
+      'copyrightYear', 'Modern',
+      'edition', 'Current ministry edition',
+      'isbn', '',
+      'requestedUse', 'Evaluate whether selected books could be licensed for public Library, private-user upload, excerpts, or audio.',
+      'permissionStatus', 'Permission Needed',
+      'publicAppPermission', 'No',
+      'privateUserImportPermission', 'Unknown',
+      'excerptPermission', 'Unknown',
+      'audiobookPermission', 'Unknown',
+      'aiTtsNarrationPermission', 'Unknown',
+      'paidSubscriptionPermission', 'Unknown',
+      'freeBetaPermission', 'Unknown',
+      'royaltyTerms', 'Not requested',
+      'nextFollowUpDate', '',
+      'notes', 'Do not import or publish any copyrighted text without written permission.'
+    )
+  ),
+  (
+    'licensed_rights',
+    'john-phillips-premium-candidate',
+    jsonb_build_object(
+      'id', 'john-phillips-premium-candidate',
+      'title', 'John Phillips commentary resources',
+      'author', 'John Phillips',
+      'publisher', 'Kregel / rights holder review needed',
+      'rightsHolder', 'Kregel or estate/publisher to confirm',
+      'contactName', '',
+      'contactEmail', '',
+      'website', 'https://www.kregel.com/',
+      'copyrightYear', 'Modern',
+      'edition', 'Modern print/digital editions',
+      'isbn', '',
+      'requestedUse', 'Future premium commentary licensing candidate.',
+      'permissionStatus', 'Permission Needed',
+      'publicAppPermission', 'No',
+      'privateUserImportPermission', 'Unknown',
+      'excerptPermission', 'Unknown',
+      'audiobookPermission', 'Unknown',
+      'aiTtsNarrationPermission', 'Unknown',
+      'paidSubscriptionPermission', 'Unknown',
+      'freeBetaPermission', 'No',
+      'royaltyTerms', 'Not requested',
+      'nextFollowUpDate', '',
+      'notes', 'Keep as licensed-resource planning only until rights holder confirms terms.'
+    )
+  ),
+  (
+    'licensed_rights',
+    'public-domain-control',
+    jsonb_build_object(
+      'id', 'public-domain-control',
+      'title', 'Public-domain control record',
+      'author', 'Public-domain author',
+      'publisher', 'Original public-domain source',
+      'rightsHolder', 'No modern rights holder for original text',
+      'contactName', '',
+      'contactEmail', '',
+      'website', '',
+      'copyrightYear', 'Before 1929',
+      'edition', 'Original public-domain edition',
+      'isbn', '',
+      'requestedUse', 'Public Library, search, reading, study, and device TTS.',
+      'permissionStatus', 'Public Domain',
+      'publicAppPermission', 'Yes, for verified public-domain source text',
+      'privateUserImportPermission', 'Yes',
+      'excerptPermission', 'Yes',
+      'audiobookPermission', 'Device TTS allowed; generated/public audio reviewed separately',
+      'aiTtsNarrationPermission', 'Review before distributing generated audio files',
+      'paidSubscriptionPermission', 'Review source and attribution requirements first',
+      'freeBetaPermission', 'Yes',
+      'royaltyTerms', 'None for original public-domain text',
+      'nextFollowUpDate', '',
+      'notes', 'Use this as the contrast record for public-domain imports.'
+    )
+  ),
+  (
+    'media_intake',
+    'all-of-grace-audiobook-candidate',
+    jsonb_build_object(
+      'id', 'all-of-grace-audiobook-candidate',
+      'kind', 'Audiobook',
+      'title', 'All of Grace audiobook candidate',
+      'creator', 'C. H. Spurgeon',
+      'passage', '',
+      'series', 'Spurgeon Starter',
+      'duration', '3 hr 10 min estimate',
+      'sourceUrl', 'https://www.gutenberg.org/ebooks/772',
+      'rightsStatus', 'Public Domain',
+      'intakeStatus', 'Ready For Storage',
+      'storageBucket', 'fathers-business-bible-study-public',
+      'storagePath', 'audio/audiobooks/spurgeon/all-of-grace/',
+      'transcriptPath', 'data/library/verified/all-of-grace-c-h-spurgeon.txt',
+      'coverPath', 'media/covers/audiobooks/all-of-grace.webp',
+      'visibility', 'Private admin draft',
+      'notes', 'Text is public domain. Human or generated narration should be reviewed separately before distributing audio files.',
+      'nextAction', 'Choose narration path: device voice only, human narration, or premium TTS sample.'
+    )
+  ),
+  (
+    'media_intake',
+    'pilgrims-progress-audiobook-candidate',
+    jsonb_build_object(
+      'id', 'pilgrims-progress-audiobook-candidate',
+      'kind', 'Audiobook',
+      'title', 'The Pilgrim''s Progress audiobook candidate',
+      'creator', 'John Bunyan',
+      'passage', '',
+      'series', 'Christian Classics Starter',
+      'duration', '6 hr estimate',
+      'sourceUrl', 'https://www.gutenberg.org/ebooks/131',
+      'rightsStatus', 'Public Domain',
+      'intakeStatus', 'Ready For Storage',
+      'storageBucket', 'fathers-business-bible-study-public',
+      'storagePath', 'audio/audiobooks/bunyan/pilgrims-progress/',
+      'transcriptPath', 'data/library/verified/the-pilgrim-s-progress-john-bunyan.txt',
+      'coverPath', 'media/covers/audiobooks/pilgrims-progress.webp',
+      'visibility', 'Private admin draft',
+      'notes', 'Public-domain candidate for testing long-form audiobook structure. Confirm exact Library text slug before attaching audio.',
+      'nextAction', 'Verify matching text resource, choose chapter markers, and decide narrator approach.'
+    )
+  ),
+  (
+    'media_intake',
+    'hosea-4-9-teaching-audio',
+    jsonb_build_object(
+      'id', 'hosea-4-9-teaching-audio',
+      'kind', 'Teaching Series',
+      'title', 'Hosea 4-9 Sunday School teaching audio',
+      'creator', 'Stephen Scheer',
+      'passage', 'Hosea 4-9',
+      'series', 'Minor Prophets Sunday School',
+      'duration', '45-60 min planned',
+      'sourceUrl', '',
+      'rightsStatus', 'Personal Use Only',
+      'intakeStatus', 'Draft',
+      'storageBucket', 'fathers-business-bible-study-public',
+      'storagePath', 'audio/teaching/minor-prophets/hosea-4-9/',
+      'transcriptPath', 'transcripts/teaching/minor-prophets/hosea-4-9.md',
+      'coverPath', 'media/covers/teaching/hosea-4-9.webp',
+      'visibility', 'Private admin draft',
+      'notes', 'Use for testing sermon/lesson audio workflow. Public release requires ownership and speaker permission confirmation.',
+      'nextAction', 'Record, transcribe, attach teaching outline, and confirm whether public app use is intended.'
+    )
+  ),
+  (
+    'media_intake',
+    'church-sermon-audio-owned',
+    jsonb_build_object(
+      'id', 'church-sermon-audio-owned',
+      'kind', 'Sermon Audio',
+      'title', 'Church sermon audio intake template',
+      'creator', 'Preacher / church',
+      'passage', 'John 3',
+      'series', 'Gospel Messages',
+      'duration', '35 min estimate',
+      'sourceUrl', '',
+      'rightsStatus', 'Permission Needed',
+      'intakeStatus', 'Needs Rights Review',
+      'storageBucket', 'fathers-business-bible-study-public',
+      'storagePath', 'audio/sermons/{church}/{series}/{slug}.mp3',
+      'transcriptPath', 'transcripts/sermons/{church}/{series}/{slug}.md',
+      'coverPath', 'media/covers/sermons/{church}/{series}.webp',
+      'visibility', 'Private admin draft',
+      'notes', 'Do not publish sermon audio until church/preacher ownership, recording consent, and distribution permission are documented.',
+      'nextAction', 'Add rights holder, speaker permission, source file, transcript, and public/private decision.'
+    )
+  ),
+  (
+    'media_intake',
+    'bible-audio-kjv-future-license',
+    jsonb_build_object(
+      'id', 'bible-audio-kjv-future-license',
+      'kind', 'Bible Audio',
+      'title', 'Licensed KJV Bible audio placeholder',
+      'creator', 'Future licensed narrator or provider',
+      'passage', 'John 3',
+      'series', 'KJV Bible Audio',
+      'duration', 'Chapter based',
+      'sourceUrl', '',
+      'rightsStatus', 'Permission Needed',
+      'intakeStatus', 'Needs Rights Review',
+      'storageBucket', 'fathers-business-bible-study-public',
+      'storagePath', 'audio/bible/kjv/{book}/{chapter}.mp3',
+      'transcriptPath', 'data/bible/kjv/{book}/{chapter}.json',
+      'coverPath', 'media/covers/bible/kjv-audio.webp',
+      'visibility', 'Private admin draft',
+      'notes', 'Browser/device speech remains the default. Do not distribute licensed Bible audio files until rights are granted.',
+      'nextAction', 'Research licensed KJV audio terms and compare with premium TTS pilot.'
+    )
+  ),
+  (
+    'audiobook_pilot',
+    'all-of-grace-audiobook-pilot',
+    jsonb_build_object(
+      'id', 'all-of-grace-audiobook-pilot',
+      'mediaRecordId', 'all-of-grace-audiobook-candidate',
+      'libraryTitle', 'All of Grace',
+      'libraryAuthor', 'C. H. Spurgeon',
+      'libraryFilePath', 'data/library/verified/all-of-grace-c-h-spurgeon.txt',
+      'sourceUrl', 'https://archive.org/details/allofgraceearnes00spur',
+      'rightsEvidence', 'Internet Archive scan of an 1886 edition. C. H. Spurgeon died in 1892; this edition is public domain in the United States.',
+      'pilotStatus', 'Text cleanup needed before public narration',
+      'textCleanupStatus', 'Front matter and OCR artifacts need review before polished narration.',
+      'narrationStatus', 'No narration files uploaded yet',
+      'estimatedDuration', '3 hr 10 min',
+      'publicReadiness', 'Private pilot only until narration rights, transcript cleanup, and audio quality review are complete.',
+      'pilotSteps', jsonb_build_array(
+        'Confirm the preferred public-domain text edition already attached in the Library.',
+        'Remove OCR front matter noise and proof chapter headings without changing Spurgeon''s wording.',
+        'Record or generate one short private sample segment for voice quality review.',
+        'Upload approved sample audio to R2 under the planned path.',
+        'Only mark public after source, narration, transcript, and rights review are documented.'
+      ),
+      'segments', jsonb_build_array(
+        jsonb_build_object('number', 1, 'title', 'To You!', 'textAnchor', 'TO YOU!', 'audioPath', 'audio/audiobooks/spurgeon/all-of-grace/001-to-you.mp3', 'transcriptPath', 'transcripts/audiobooks/spurgeon/all-of-grace/001-to-you.md', 'status', 'Ready To Record', 'estimatedMinutes', 7, 'notes', 'Clean private transcript exists. Ready for the first narration sample.'),
+        jsonb_build_object('number', 2, 'title', 'What Are We At?', 'textAnchor', 'WHAT ARE WE AT?', 'audioPath', 'audio/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.mp3', 'transcriptPath', 'transcripts/audiobooks/spurgeon/all-of-grace/002-what-are-we-at.md', 'status', 'Ready To Record', 'estimatedMinutes', 8, 'notes', 'Clean private transcript exists. Ready for the second narration sample.')
+      )
+    )
+  )
+on conflict (record_type, record_key) do nothing;
 
 insert into public.resource_sources (
   title,
