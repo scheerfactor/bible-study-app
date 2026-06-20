@@ -10,11 +10,12 @@
       "download_url": "https://a.openbible.info/data/cross-references.zip",
       "rights_status": "Creative Commons Attribution License unless otherwise indicated.",
       "license_summary": "OpenBible states the data draws primarily from public-domain sources, especially Treasury of Scripture Knowledge, and licenses content under Creative Commons Attribution unless otherwise indicated. Import references only; do not import ESV quotations.",
-      "commercial_use_status": "Needs attribution review before public import.",
+      "commercial_use_status": "Commercial use allowed under CC BY attribution requirements for reference-pair data.",
       "attribution_required": true,
-      "review_status": "Approved For Staging",
-      "public_import_allowed": false,
-      "next_action": "Download the zip, parse reference pairs only, preserve OpenBible attribution, and stage a 50-reference sample for review."
+      "review_status": "Approved For Public Import",
+      "public_import_allowed": true,
+      "next_action": "Continue promoting small reviewed batches only. Do not import the full dataset until attribution display, ordering, and quality workflow are complete.",
+      "public_import_scope": "Limited reviewed reference-pair batches only; no ESV quotations, no rendered website text, and no full automated public import."
     },
     {
       "id": "tsk-metav-crossrefindex",

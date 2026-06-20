@@ -179,7 +179,9 @@ for (const file of await tskFiles()) {
   const rows = await readJsonOrCsv(file);
   rows.forEach((row) => tskRows.push({ ...row, file }));
 }
-const tskSourceVerses = new Set(tskRows.map((row) => row.verse_ref));
+const publicTskRows = tskRows.filter((row) => !String(row.file).includes("needs-review"));
+const stagedTskRows = tskRows.filter((row) => String(row.file).includes("needs-review"));
+const tskSourceVerses = new Set(publicTskRows.map((row) => row.verse_ref));
 const tskFocusChecks = ["John 3:16", "Romans 8:28", "Amos 5:24", "Daniel 7:13", "Revelation 13:1"].map((ref) => ({
   ref,
   covered: tskSourceVerses.has(ref),
@@ -239,7 +241,8 @@ const summary = {
     focusWordChecks: strongsChecks,
   },
   tsk: {
-    rows: tskRows.length,
+    rows: publicTskRows.length,
+    stagedRows: stagedTskRows.length,
     sourceVersesCovered: tskSourceVerses.size,
     status: tskSourceVerses.size >= allRefs.length * 0.8 ? "broad coverage" : "reviewed samples only",
     focusChecks: tskFocusChecks,
@@ -269,7 +272,7 @@ const lines = [
   `- Commentary authors represented in public imports: ${summary.commentary.authors}.`,
   `- Webster 1828 entries: ${summary.webster1828.entries} (${summary.webster1828.uniqueNormalizedHeadwords} normalized headwords; ${summary.webster1828.reviewedOverrides} reviewed overlay).`,
   `- Strong's entries: ${summary.strongs.verifiedEntries} (${summary.strongs.status}).`,
-  `- TSK rows: ${summary.tsk.rows}; source verses covered: ${summary.tsk.sourceVersesCovered} (${summary.tsk.status}).`,
+  `- Public TSK rows: ${summary.tsk.rows}; staged TSK rows: ${summary.tsk.stagedRows}; source verses covered: ${summary.tsk.sourceVersesCovered} (${summary.tsk.status}).`,
   `- Study tool files present: ${summary.studyTools.filesPresent}/${summary.studyTools.filesExpected}.`,
   `- Public-domain audio candidates: ${summary.audio.publicDomainCandidateRows}.`,
   "",

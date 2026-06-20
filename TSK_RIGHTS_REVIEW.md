@@ -10,6 +10,12 @@ that the data draws primarily from public-domain sources, especially TSK, with
 Creative Commons Attribution terms. This does not mean it is public-domain-only;
 the app must preserve attribution and import reference links only.
 
+Limited public promotion on 2026-06-20: 33 reviewed OpenBible/TSK reference-pair
+rows were promoted into `data/imports/tsk-beta-depth-reviewed-sample.json` for
+Genesis 1, John 3:16, Romans 8, Hosea 4-6, and Amos 3/8. The full OpenBible
+dataset remains staged only; the app is not importing ESV quotations, rendered
+website text, or the complete dataset.
+
 ## Summary
 
 The original Treasury of Scripture Knowledge tradition is public domain, but not every modern digital TSK dataset is automatically unrestricted. Treat the printed/source work and the downloadable dataset as two separate rights questions.
