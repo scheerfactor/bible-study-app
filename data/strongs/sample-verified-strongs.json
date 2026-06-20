@@ -891,5 +891,548 @@
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1656",
+    "language": "Greek",
+    "original_word": "ἔλεος",
+    "transliteration": "eleos",
+    "pronunciation": "el'-eh-os",
+    "english_words": [
+      "mercy",
+      "merciful"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G1653",
+      "H2617"
+    ],
+    "plain_definition": "Mercy, compassion, or kindness shown to the needy and guilty. Useful for Hosea 6:6 and the Bible theme of mercy.",
+    "first_occurrence": "Matthew 9:13",
+    "key_verses": [
+      "Matthew 9:13",
+      "Matthew 12:7",
+      "Luke 1:50",
+      "Titus 3:5"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4335",
+    "language": "Greek",
+    "original_word": "προσευχή",
+    "transliteration": "proseuche",
+    "pronunciation": "pros-yoo-khay'",
+    "english_words": [
+      "prayer",
+      "pray"
+    ],
+    "root": "G4336",
+    "related_numbers": [
+      "G4336"
+    ],
+    "plain_definition": "Prayer; speaking to God in dependence, worship, confession, and request.",
+    "first_occurrence": "Matthew 17:21",
+    "key_verses": [
+      "Matthew 21:22",
+      "Luke 6:12",
+      "Acts 6:4",
+      "Philippians 4:6"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G38",
+    "language": "Greek",
+    "original_word": "ἁγιασμός",
+    "transliteration": "hagiasmos",
+    "pronunciation": "hag-ee-as-mos'",
+    "english_words": [
+      "holiness",
+      "sanctification"
+    ],
+    "root": "G37",
+    "related_numbers": [
+      "G37",
+      "G40"
+    ],
+    "plain_definition": "Holiness or sanctification; being set apart unto God.",
+    "first_occurrence": "Romans 6:19",
+    "key_verses": [
+      "Romans 6:19",
+      "1 Corinthians 1:30",
+      "1 Thessalonians 4:3",
+      "Hebrews 12:14"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G40",
+    "language": "Greek",
+    "original_word": "ἅγιος",
+    "transliteration": "hagios",
+    "pronunciation": "hag'-ee-os",
+    "english_words": [
+      "holy",
+      "saint",
+      "saints"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G38",
+      "H6918"
+    ],
+    "plain_definition": "Holy, set apart, or sacred. Used of God, the Spirit, holy things, and believers as saints.",
+    "first_occurrence": "Matthew 1:18",
+    "key_verses": [
+      "Matthew 1:18",
+      "Romans 1:7",
+      "1 Peter 1:16",
+      "Revelation 4:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3056",
+    "language": "Greek",
+    "original_word": "λόγος",
+    "transliteration": "logos",
+    "pronunciation": "log'-os",
+    "english_words": [
+      "word",
+      "Word",
+      "saying"
+    ],
+    "root": "G3004",
+    "related_numbers": [
+      "G3004"
+    ],
+    "plain_definition": "Word, speech, message, or account. In John 1 it is used of Christ as the eternal Word.",
+    "first_occurrence": "Matthew 5:32",
+    "key_verses": [
+      "John 1:1",
+      "John 1:14",
+      "John 17:17",
+      "Hebrews 4:12"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2098",
+    "language": "Greek",
+    "original_word": "εὐαγγέλιον",
+    "transliteration": "euaggelion",
+    "pronunciation": "yoo-ang-ghel'-ee-on",
+    "english_words": [
+      "gospel"
+    ],
+    "root": "G2097",
+    "related_numbers": [
+      "G2097"
+    ],
+    "plain_definition": "Good news; the Gospel message concerning Christ.",
+    "first_occurrence": "Matthew 4:23",
+    "key_verses": [
+      "Mark 1:1",
+      "Romans 1:16",
+      "1 Corinthians 15:1",
+      "Galatians 1:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G386",
+    "language": "Greek",
+    "original_word": "ἀνάστασις",
+    "transliteration": "anastasis",
+    "pronunciation": "an-as'-tas-is",
+    "english_words": [
+      "resurrection",
+      "rising again"
+    ],
+    "root": "G450",
+    "related_numbers": [
+      "G450"
+    ],
+    "plain_definition": "Resurrection; a rising up from the dead. Central to Christ's victory and the believer's hope.",
+    "first_occurrence": "Matthew 22:23",
+    "key_verses": [
+      "John 11:25",
+      "Acts 17:31",
+      "1 Corinthians 15:12",
+      "Revelation 20:6"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1344",
+    "language": "Greek",
+    "original_word": "δικαιόω",
+    "transliteration": "dikaioo",
+    "pronunciation": "dik-ah-yo'-o",
+    "english_words": [
+      "justify",
+      "justified"
+    ],
+    "root": "G1342",
+    "related_numbers": [
+      "G1342",
+      "G1343"
+    ],
+    "plain_definition": "To justify, declare righteous, or show to be righteous. Important in Romans for salvation by faith.",
+    "first_occurrence": "Matthew 11:19",
+    "key_verses": [
+      "Luke 18:14",
+      "Romans 3:24",
+      "Romans 5:1",
+      "Galatians 2:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G629",
+    "language": "Greek",
+    "original_word": "ἀπολύτρωσις",
+    "transliteration": "apolutrosis",
+    "pronunciation": "ap-ol-oo'-tro-sis",
+    "english_words": [
+      "redemption"
+    ],
+    "root": "G3083",
+    "related_numbers": [
+      "G3083"
+    ],
+    "plain_definition": "Redemption; deliverance by ransom. Used of salvation, forgiveness, and final deliverance in Christ.",
+    "first_occurrence": "Luke 21:28",
+    "key_verses": [
+      "Romans 3:24",
+      "Ephesians 1:7",
+      "Colossians 1:14",
+      "Hebrews 9:15"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1680",
+    "language": "Greek",
+    "original_word": "ἐλπίς",
+    "transliteration": "elpis",
+    "pronunciation": "el-pece'",
+    "english_words": [
+      "hope"
+    ],
+    "root": "G1679",
+    "related_numbers": [
+      "G1679"
+    ],
+    "plain_definition": "Hope; confident expectation grounded in God and His promises.",
+    "first_occurrence": "Acts 2:26",
+    "key_verses": [
+      "Romans 5:2",
+      "Romans 8:24",
+      "Titus 2:13",
+      "Hebrews 6:19"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1515",
+    "language": "Greek",
+    "original_word": "εἰρήνη",
+    "transliteration": "eirene",
+    "pronunciation": "i-ray'-nay",
+    "english_words": [
+      "peace"
+    ],
+    "root": "G1518",
+    "related_numbers": [
+      "G1518",
+      "H7965"
+    ],
+    "plain_definition": "Peace; rest, quietness, reconciliation, and well-being.",
+    "first_occurrence": "Matthew 10:13",
+    "key_verses": [
+      "John 14:27",
+      "Romans 5:1",
+      "Philippians 4:7",
+      "Colossians 1:20"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G129",
+    "language": "Greek",
+    "original_word": "αἷμα",
+    "transliteration": "haima",
+    "pronunciation": "hah'-ee-mah",
+    "english_words": [
+      "blood"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H1818"
+    ],
+    "plain_definition": "Blood. In redemption passages it speaks of life given and atonement through Christ.",
+    "first_occurrence": "Matthew 16:17",
+    "key_verses": [
+      "Matthew 26:28",
+      "Romans 5:9",
+      "Ephesians 1:7",
+      "Hebrews 9:22"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4716",
+    "language": "Greek",
+    "original_word": "σταυρός",
+    "transliteration": "stauros",
+    "pronunciation": "stow-ros'",
+    "english_words": [
+      "cross"
+    ],
+    "root": "G2476",
+    "related_numbers": [
+      "G2476"
+    ],
+    "plain_definition": "Cross; the instrument of Christ's death, and a central word for sacrifice, shame, and salvation.",
+    "first_occurrence": "Matthew 10:38",
+    "key_verses": [
+      "Matthew 27:32",
+      "1 Corinthians 1:18",
+      "Galatians 6:14",
+      "Philippians 2:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2617",
+    "language": "Hebrew",
+    "original_word": "חֶסֶד",
+    "transliteration": "chesed",
+    "pronunciation": "kheh'-sed",
+    "english_words": [
+      "mercy",
+      "kindness",
+      "lovingkindness"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G1656"
+    ],
+    "plain_definition": "Mercy, kindness, loyal love, or covenant kindness. Important in Hosea and the Psalms.",
+    "first_occurrence": "Genesis 19:19",
+    "key_verses": [
+      "Hosea 6:6",
+      "Micah 6:8",
+      "Psalms 23:6",
+      "Psalms 136:1"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1847",
+    "language": "Hebrew",
+    "original_word": "דַּעַת",
+    "transliteration": "daath",
+    "pronunciation": "dah'-ath",
+    "english_words": [
+      "knowledge"
+    ],
+    "root": "H3045",
+    "related_numbers": [
+      "H3045"
+    ],
+    "plain_definition": "Knowledge, discernment, or understanding. Hosea uses it for knowing God, not merely collecting facts.",
+    "first_occurrence": "Genesis 2:9",
+    "key_verses": [
+      "Hosea 4:1",
+      "Hosea 4:6",
+      "Hosea 6:6",
+      "Proverbs 1:7"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7725",
+    "language": "Hebrew",
+    "original_word": "שׁוּב",
+    "transliteration": "shuwb",
+    "pronunciation": "shoob",
+    "english_words": [
+      "return",
+      "turn",
+      "restore"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G3340"
+    ],
+    "plain_definition": "To return, turn back, restore, or repent depending on context. Often used by the prophets in calls to return unto the LORD.",
+    "first_occurrence": "Genesis 3:19",
+    "key_verses": [
+      "Hosea 6:1",
+      "Hosea 14:1",
+      "Isaiah 55:7",
+      "Joel 2:13"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1285",
+    "language": "Hebrew",
+    "original_word": "בְּרִית",
+    "transliteration": "berith",
+    "pronunciation": "ber-eeth'",
+    "english_words": [
+      "covenant"
+    ],
+    "root": "H1262",
+    "related_numbers": [
+      "H1262"
+    ],
+    "plain_definition": "Covenant; a binding agreement or solemn arrangement. Important for understanding Israel, promise, and prophecy.",
+    "first_occurrence": "Genesis 6:18",
+    "key_verses": [
+      "Genesis 9:13",
+      "Genesis 15:18",
+      "Exodus 24:8",
+      "Jeremiah 31:31"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4941",
+    "language": "Hebrew",
+    "original_word": "מִשְׁפָּט",
+    "transliteration": "mishpat",
+    "pronunciation": "mish-pawt'",
+    "english_words": [
+      "judgment",
+      "justice",
+      "ordinance"
+    ],
+    "root": "H8199",
+    "related_numbers": [
+      "H8199",
+      "G2920"
+    ],
+    "plain_definition": "Judgment, justice, ordinance, or right decision. Amos 5:24 uses it in the call for true righteousness.",
+    "first_occurrence": "Genesis 18:19",
+    "key_verses": [
+      "Amos 5:24",
+      "Micah 6:8",
+      "Isaiah 1:17",
+      "Psalms 89:14"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6666",
+    "language": "Hebrew",
+    "original_word": "צְדָקָה",
+    "transliteration": "tsedaqah",
+    "pronunciation": "tsed-aw-kaw'",
+    "english_words": [
+      "righteousness",
+      "justice"
+    ],
+    "root": "H6663",
+    "related_numbers": [
+      "H6663",
+      "G1343"
+    ],
+    "plain_definition": "Righteousness or justice; what is right before God. Amos 5:24 connects it with a mighty stream.",
+    "first_occurrence": "Genesis 15:6",
+    "key_verses": [
+      "Amos 5:24",
+      "Isaiah 32:17",
+      "Psalms 23:3",
+      "Daniel 9:24"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2184",
+    "language": "Hebrew",
+    "original_word": "זְנוּת",
+    "transliteration": "zenuth",
+    "pronunciation": "zen-ooth'",
+    "english_words": [
+      "whoredom",
+      "fornication"
+    ],
+    "root": "H2181",
+    "related_numbers": [
+      "H2181"
+    ],
+    "plain_definition": "Whoredom or spiritual unfaithfulness. In Hosea it vividly pictures Israel's idolatry and covenant betrayal.",
+    "first_occurrence": "Hosea 4:11",
+    "key_verses": [
+      "Hosea 4:11",
+      "Hosea 5:4",
+      "Hosea 6:10"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
   }
 ]
