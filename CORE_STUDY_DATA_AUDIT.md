@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-20T10:47:45.710Z
+Generated: 2026-06-20T10:57:08.903Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-20T10:47:45.710Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's entries: 74 (starter data only).
-- TSK rows: 218; source verses covered: 151 (reviewed samples only).
+- Strong's entries: 96 (starter data only).
+- TSK rows: 246; source verses covered: 178 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
