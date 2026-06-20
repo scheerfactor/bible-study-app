@@ -117,7 +117,7 @@ create table if not exists public.cross_references (
   target_ref text not null,
   label text,
   source text not null default 'TSK placeholder',
-  source_id uuid references public.resource_sources(id),
+  source_id uuid,
   created_at timestamptz not null default now(),
   unique (verse_ref, target_ref, source)
 );
@@ -127,7 +127,7 @@ create index if not exists cross_references_source_id_idx on public.cross_refere
 
 create table if not exists public.commentary_entries (
   id uuid primary key default gen_random_uuid(),
-  source_id uuid references public.resource_sources(id),
+  source_id uuid,
   book text not null,
   chapter integer not null check (chapter > 0),
   verse_start integer not null check (verse_start > 0),
