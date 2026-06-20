@@ -18702,8 +18702,10 @@ export default function Home() {
                 {canOpenAdminArea ? (
                   <LibraryAcquisitionCenter
                     signedIn={Boolean(user)}
+                    signedInEmail={user?.email ?? null}
                     resources={allLibraryResources.length ? allLibraryResources : libraryResources}
                     commentaryEntries={commentaryEntries}
+                    onSignOut={signOut}
                     onClose={() => {
                       window.history.replaceState(null, "", window.location.pathname + window.location.search);
                       setShowLibraryAcquisitionAdmin(false);
@@ -33810,7 +33812,21 @@ function RightsManagementCenter({
   );
 }
 
-function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onClose }: { signedIn: boolean; resources: LibraryResource[]; commentaryEntries: CommentaryEntry[]; onClose: () => void }) {
+function LibraryAcquisitionCenter({
+  signedIn,
+  signedInEmail,
+  resources,
+  commentaryEntries,
+  onSignOut,
+  onClose,
+}: {
+  signedIn: boolean;
+  signedInEmail: string | null;
+  resources: LibraryResource[];
+  commentaryEntries: CommentaryEntry[];
+  onSignOut: () => void;
+  onClose: () => void;
+}) {
   const [activeTab, setActiveTab] = useState<AcquisitionAdminTab>("dashboard");
   const [checkerInput, setCheckerInput] = useState<CopyrightCheckerInput>(EMPTY_COPYRIGHT_CHECKER_INPUT);
   const [checkerResult, setCheckerResult] = useState<CopyrightCheckerResult | null>(null);
@@ -34039,10 +34055,23 @@ function LibraryAcquisitionCenter({ signedIn, resources, commentaryEntries, onCl
             A rights-first workflow for books, commentaries, devotionals, sermons, audio, and future premium resources. Nothing enters the public Library until it is reviewed and approved.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-            {signedIn ? "Admin session" : "Local admin preview"}
-          </span>
+        <div className="flex flex-wrap items-center gap-2">
+          <div className="rounded-2xl bg-[var(--warm)] px-3 py-2">
+            <p className="text-xs font-semibold text-[var(--green)]">{signedIn ? "Admin session" : "Local admin preview"}</p>
+            <p className="mt-0.5 text-[0.7rem] font-semibold text-[var(--muted)]">
+              {signedInEmail ? signedInEmail : signedIn ? "Signed in" : "Sign in to unlock private tools"}
+            </p>
+          </div>
+          {signedIn && (
+            <button
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)] hover:border-[var(--green)] hover:text-[var(--green)]"
+              onClick={onSignOut}
+              type="button"
+            >
+              <LogOut size={14} />
+              Sign out
+            </button>
+          )}
           <button
             className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]"
             onClick={onClose}
