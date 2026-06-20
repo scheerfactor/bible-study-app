@@ -1434,5 +1434,606 @@
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G26",
+    "language": "Greek",
+    "original_word": "ἀγάπη",
+    "transliteration": "agape",
+    "pronunciation": "ag-ah'-pay",
+    "english_words": [
+      "charity",
+      "love"
+    ],
+    "root": "G25",
+    "related_numbers": [
+      "G25"
+    ],
+    "plain_definition": "Love, charity, or benevolent affection. In the New Testament it is often used of Christian love and God's love.",
+    "first_occurrence": "Matthew 24:12",
+    "key_verses": [
+      "John 13:35",
+      "Romans 5:5",
+      "1 Corinthians 13:13",
+      "1 John 4:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3101",
+    "language": "Greek",
+    "original_word": "μαθητής",
+    "transliteration": "mathetes",
+    "pronunciation": "math-ay-tes'",
+    "english_words": [
+      "disciple",
+      "disciples"
+    ],
+    "root": "G3129",
+    "related_numbers": [
+      "G3129"
+    ],
+    "plain_definition": "A disciple, learner, or follower. Useful for studying discipleship and following Christ.",
+    "first_occurrence": "Matthew 5:1",
+    "key_verses": [
+      "Matthew 28:19",
+      "Luke 14:27",
+      "John 8:31",
+      "Acts 11:26"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1577",
+    "language": "Greek",
+    "original_word": "ἐκκλησία",
+    "transliteration": "ekklesia",
+    "pronunciation": "ek-klay-see'-ah",
+    "english_words": [
+      "church",
+      "assembly"
+    ],
+    "root": "G1537",
+    "related_numbers": [
+      "G1537",
+      "G2564"
+    ],
+    "plain_definition": "A called-out assembly. In the New Testament it is used for the church, local assemblies, and gathered believers.",
+    "first_occurrence": "Matthew 16:18",
+    "key_verses": [
+      "Matthew 18:17",
+      "Acts 2:47",
+      "Ephesians 5:25",
+      "1 Timothy 3:15"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4166",
+    "language": "Greek",
+    "original_word": "ποιμήν",
+    "transliteration": "poimen",
+    "pronunciation": "poy-mane'",
+    "english_words": [
+      "shepherd",
+      "pastor"
+    ],
+    "root": "G4165",
+    "related_numbers": [
+      "G4165",
+      "H7462"
+    ],
+    "plain_definition": "A shepherd or pastor; one who feeds, guards, and cares for sheep.",
+    "first_occurrence": "Matthew 9:36",
+    "key_verses": [
+      "John 10:11",
+      "Ephesians 4:11",
+      "Hebrews 13:20",
+      "1 Peter 2:25"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1248",
+    "language": "Greek",
+    "original_word": "διακονία",
+    "transliteration": "diakonia",
+    "pronunciation": "dee-ak-on-ee'-ah",
+    "english_words": [
+      "ministry",
+      "ministration",
+      "service"
+    ],
+    "root": "G1249",
+    "related_numbers": [
+      "G1249"
+    ],
+    "plain_definition": "Service or ministry rendered for another. Helpful for church service and ministry passages.",
+    "first_occurrence": "Luke 10:40",
+    "key_verses": [
+      "Acts 6:4",
+      "Romans 12:7",
+      "2 Corinthians 4:1",
+      "Ephesians 4:12"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1249",
+    "language": "Greek",
+    "original_word": "διάκονος",
+    "transliteration": "diakonos",
+    "pronunciation": "dee-ak'-on-os",
+    "english_words": [
+      "minister",
+      "servant",
+      "deacon"
+    ],
+    "root": "G1247",
+    "related_numbers": [
+      "G1248"
+    ],
+    "plain_definition": "A servant, minister, or deacon; one who serves.",
+    "first_occurrence": "Matthew 20:26",
+    "key_verses": [
+      "Romans 13:4",
+      "1 Corinthians 3:5",
+      "Philippians 1:1",
+      "1 Timothy 3:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5486",
+    "language": "Greek",
+    "original_word": "χάρισμα",
+    "transliteration": "charisma",
+    "pronunciation": "khar'-is-mah",
+    "english_words": [
+      "gift",
+      "gifts"
+    ],
+    "root": "G5483",
+    "related_numbers": [
+      "G5485"
+    ],
+    "plain_definition": "A gracious gift; a gift given by grace. Useful for spiritual gifts and service.",
+    "first_occurrence": "Romans 1:11",
+    "key_verses": [
+      "Romans 6:23",
+      "Romans 12:6",
+      "1 Corinthians 12:4",
+      "1 Peter 4:10"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1375",
+    "language": "Greek",
+    "original_word": "διωγμός",
+    "transliteration": "diogmos",
+    "pronunciation": "dee-ogue-mos'",
+    "english_words": [
+      "persecution",
+      "persecutions"
+    ],
+    "root": "G1377",
+    "related_numbers": [
+      "G1377"
+    ],
+    "plain_definition": "Persecution or pressure suffered for righteousness or for Christ.",
+    "first_occurrence": "Matthew 13:21",
+    "key_verses": [
+      "Mark 10:30",
+      "Acts 8:1",
+      "2 Timothy 3:12",
+      "Galatians 6:12"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5401",
+    "language": "Greek",
+    "original_word": "φόβος",
+    "transliteration": "phobos",
+    "pronunciation": "fob'-os",
+    "english_words": [
+      "fear",
+      "terror"
+    ],
+    "root": "G5399",
+    "related_numbers": [
+      "G5399",
+      "H3374"
+    ],
+    "plain_definition": "Fear, reverence, or terror depending on context. Useful for fear of God and fear of man studies.",
+    "first_occurrence": "Matthew 14:26",
+    "key_verses": [
+      "Acts 9:31",
+      "Romans 3:18",
+      "2 Corinthians 7:1",
+      "1 John 4:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4678",
+    "language": "Greek",
+    "original_word": "σοφία",
+    "transliteration": "sophia",
+    "pronunciation": "sof-ee'-ah",
+    "english_words": [
+      "wisdom"
+    ],
+    "root": "G4680",
+    "related_numbers": [
+      "G4680",
+      "H2451"
+    ],
+    "plain_definition": "Wisdom; skill, insight, or right understanding. Biblical wisdom begins with God and His truth.",
+    "first_occurrence": "Matthew 11:19",
+    "key_verses": [
+      "Luke 2:40",
+      "1 Corinthians 1:24",
+      "James 1:5",
+      "James 3:17"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3709",
+    "language": "Greek",
+    "original_word": "ὀργή",
+    "transliteration": "orge",
+    "pronunciation": "or-gay'",
+    "english_words": [
+      "wrath",
+      "anger"
+    ],
+    "root": "G3713",
+    "related_numbers": [
+      "G3713"
+    ],
+    "plain_definition": "Wrath or settled anger. In Scripture often used of righteous divine judgment against sin.",
+    "first_occurrence": "Matthew 3:7",
+    "key_verses": [
+      "John 3:36",
+      "Romans 1:18",
+      "Ephesians 5:6",
+      "Revelation 6:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3874",
+    "language": "Greek",
+    "original_word": "παράκλησις",
+    "transliteration": "paraklesis",
+    "pronunciation": "par-ak'-lay-sis",
+    "english_words": [
+      "comfort",
+      "consolation",
+      "exhortation"
+    ],
+    "root": "G3870",
+    "related_numbers": [
+      "G3870"
+    ],
+    "plain_definition": "Comfort, consolation, encouragement, or exhortation.",
+    "first_occurrence": "Luke 2:25",
+    "key_verses": [
+      "Acts 9:31",
+      "Romans 15:4",
+      "2 Corinthians 1:4",
+      "Hebrews 12:5"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2842",
+    "language": "Greek",
+    "original_word": "κοινωνία",
+    "transliteration": "koinonia",
+    "pronunciation": "koy-nohn-ee'-ah",
+    "english_words": [
+      "fellowship",
+      "communion"
+    ],
+    "root": "G2844",
+    "related_numbers": [
+      "G2844"
+    ],
+    "plain_definition": "Fellowship, sharing, communion, or partnership.",
+    "first_occurrence": "Acts 2:42",
+    "key_verses": [
+      "1 Corinthians 1:9",
+      "2 Corinthians 6:14",
+      "Philippians 1:5",
+      "1 John 1:3"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5012",
+    "language": "Greek",
+    "original_word": "ταπεινοφροσύνη",
+    "transliteration": "tapeinophrosune",
+    "pronunciation": "tap-i-nof-ros-oo'-nay",
+    "english_words": [
+      "humility",
+      "lowliness"
+    ],
+    "root": "G5011",
+    "related_numbers": [
+      "G5011"
+    ],
+    "plain_definition": "Humility or lowliness of mind. Important for Christian service and unity.",
+    "first_occurrence": "Acts 20:19",
+    "key_verses": [
+      "Ephesians 4:2",
+      "Philippians 2:3",
+      "Colossians 3:12",
+      "1 Peter 5:5"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5243",
+    "language": "Greek",
+    "original_word": "ὑπερηφανία",
+    "transliteration": "huperephania",
+    "pronunciation": "hoop-er-ay-fan-ee'-ah",
+    "english_words": [
+      "pride"
+    ],
+    "root": "G5244",
+    "related_numbers": [
+      "G5244"
+    ],
+    "plain_definition": "Pride, arrogance, or haughtiness. Scripture treats pride as a root sin against God.",
+    "first_occurrence": "Mark 7:22",
+    "key_verses": [
+      "Luke 1:51",
+      "Romans 1:30",
+      "2 Timothy 3:2",
+      "James 4:6"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4991",
+    "language": "Greek",
+    "original_word": "σωτηρία",
+    "transliteration": "soteria",
+    "pronunciation": "so-tay-ree'-ah",
+    "english_words": [
+      "salvation",
+      "deliverance"
+    ],
+    "root": "G4990",
+    "related_numbers": [
+      "G4982"
+    ],
+    "plain_definition": "Salvation, deliverance, or rescue. In the New Testament it points especially to God's salvation through Christ.",
+    "first_occurrence": "Luke 1:69",
+    "key_verses": [
+      "John 4:22",
+      "Acts 4:12",
+      "Romans 1:16",
+      "Hebrews 2:3"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3374",
+    "language": "Hebrew",
+    "original_word": "יִרְאָה",
+    "transliteration": "yirah",
+    "pronunciation": "yir-aw'",
+    "english_words": [
+      "fear",
+      "reverence"
+    ],
+    "root": "H3372",
+    "related_numbers": [
+      "G5401"
+    ],
+    "plain_definition": "Fear, reverence, or awe, especially in the fear of the LORD.",
+    "first_occurrence": "Genesis 20:11",
+    "key_verses": [
+      "Job 28:28",
+      "Psalms 111:10",
+      "Proverbs 1:7",
+      "Ecclesiastes 12:13"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2451",
+    "language": "Hebrew",
+    "original_word": "חָכְמָה",
+    "transliteration": "chokmah",
+    "pronunciation": "khok-maw'",
+    "english_words": [
+      "wisdom"
+    ],
+    "root": "H2449",
+    "related_numbers": [
+      "G4678"
+    ],
+    "plain_definition": "Wisdom, skill, or sound judgment. Biblical wisdom is rooted in fearing the LORD.",
+    "first_occurrence": "Exodus 28:3",
+    "key_verses": [
+      "Job 28:28",
+      "Proverbs 3:13",
+      "Proverbs 9:10",
+      "Ecclesiastes 2:26"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7462",
+    "language": "Hebrew",
+    "original_word": "רָעָה",
+    "transliteration": "raah",
+    "pronunciation": "raw-aw'",
+    "english_words": [
+      "feed",
+      "shepherd",
+      "pastor"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G4166"
+    ],
+    "plain_definition": "To feed, pasture, tend, or shepherd. Used of literal shepherding and spiritual leadership.",
+    "first_occurrence": "Genesis 29:7",
+    "key_verses": [
+      "Psalms 23:1",
+      "Jeremiah 3:15",
+      "Ezekiel 34:2",
+      "Micah 5:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H571",
+    "language": "Hebrew",
+    "original_word": "אֱמֶת",
+    "transliteration": "emeth",
+    "pronunciation": "eh'-meth",
+    "english_words": [
+      "truth",
+      "true",
+      "faithfulness"
+    ],
+    "root": "H539",
+    "related_numbers": [
+      "G225"
+    ],
+    "plain_definition": "Truth, firmness, faithfulness, or reliability.",
+    "first_occurrence": "Genesis 24:27",
+    "key_verses": [
+      "Psalms 119:160",
+      "Proverbs 23:23",
+      "Isaiah 59:14",
+      "Zechariah 8:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7965",
+    "language": "Hebrew",
+    "original_word": "שָׁלוֹם",
+    "transliteration": "shalom",
+    "pronunciation": "shaw-lome'",
+    "english_words": [
+      "peace",
+      "welfare"
+    ],
+    "root": "H7999",
+    "related_numbers": [
+      "G1515"
+    ],
+    "plain_definition": "Peace, wholeness, welfare, or well-being.",
+    "first_occurrence": "Genesis 15:15",
+    "key_verses": [
+      "Numbers 6:26",
+      "Psalms 29:11",
+      "Isaiah 9:6",
+      "Jeremiah 29:7"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H5769",
+    "language": "Hebrew",
+    "original_word": "עוֹלָם",
+    "transliteration": "olam",
+    "pronunciation": "o-lawm'",
+    "english_words": [
+      "everlasting",
+      "eternal",
+      "evermore"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G166"
+    ],
+    "plain_definition": "Everlasting, ancient, perpetual, or age-lasting depending on context.",
+    "first_occurrence": "Genesis 3:22",
+    "key_verses": [
+      "Genesis 21:33",
+      "Psalms 90:2",
+      "Isaiah 40:28",
+      "Daniel 7:14"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
   }
 ]
