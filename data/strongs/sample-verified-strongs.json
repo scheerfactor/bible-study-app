@@ -5,12 +5,25 @@
     "original_word": "πιστεύω",
     "transliteration": "pisteuo",
     "pronunciation": "pist-yoo'-o",
-    "english_words": ["believe", "believeth", "trust", "commit"],
+    "english_words": [
+      "believe",
+      "believeth",
+      "trust",
+      "commit"
+    ],
     "root": "G4102",
-    "related_numbers": ["G4102", "G4103"],
+    "related_numbers": [
+      "G4102",
+      "G4103"
+    ],
     "plain_definition": "To believe, trust, or place confidence in. In John 3:16 it points to personal reliance upon the Son of God.",
     "first_occurrence": "Matthew 8:13",
-    "key_verses": ["John 3:16", "John 20:31", "Acts 16:31", "Romans 10:9"],
+    "key_verses": [
+      "John 3:16",
+      "John 20:31",
+      "Acts 16:31",
+      "Romans 10:9"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -22,12 +35,23 @@
     "original_word": "πίστις",
     "transliteration": "pistis",
     "pronunciation": "pis'-tis",
-    "english_words": ["faith", "belief", "fidelity"],
+    "english_words": [
+      "faith",
+      "belief",
+      "fidelity"
+    ],
     "root": "G3982",
-    "related_numbers": ["G4100", "G4103"],
+    "related_numbers": [
+      "G4100",
+      "G4103"
+    ],
     "plain_definition": "Faith, belief, trust, or faithfulness. In Bible study it should be explained plainly as believing God and resting upon His word.",
     "first_occurrence": "Matthew 8:10",
-    "key_verses": ["Romans 5:1", "Ephesians 2:8", "Hebrews 11:1"],
+    "key_verses": [
+      "Romans 5:1",
+      "Ephesians 2:8",
+      "Hebrews 11:1"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -39,12 +63,24 @@
     "original_word": "ἀγαπάω",
     "transliteration": "agapao",
     "pronunciation": "ag-ap-ah'-o",
-    "english_words": ["love", "loved", "beloved"],
+    "english_words": [
+      "love",
+      "loved",
+      "beloved"
+    ],
     "root": "",
-    "related_numbers": ["G26", "G27"],
+    "related_numbers": [
+      "G26",
+      "G27"
+    ],
     "plain_definition": "To love. In John 3:16 it speaks of God's love toward the world in giving His only begotten Son.",
     "first_occurrence": "Matthew 5:43",
-    "key_verses": ["John 3:16", "John 13:34", "Romans 5:8", "1 John 4:9"],
+    "key_verses": [
+      "John 3:16",
+      "John 13:34",
+      "Romans 5:8",
+      "1 John 4:9"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -56,12 +92,22 @@
     "original_word": "ζωή",
     "transliteration": "zoe",
     "pronunciation": "dzo-ay'",
-    "english_words": ["life", "lifetime"],
+    "english_words": [
+      "life",
+      "lifetime"
+    ],
     "root": "G2198",
-    "related_numbers": ["G2198"],
+    "related_numbers": [
+      "G2198"
+    ],
     "plain_definition": "Life. In John's writings it often points to the life God gives in Christ.",
     "first_occurrence": "Matthew 7:14",
-    "key_verses": ["John 1:4", "John 3:16", "John 10:10", "1 John 5:12"],
+    "key_verses": [
+      "John 1:4",
+      "John 3:16",
+      "John 10:10",
+      "1 John 5:12"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -73,12 +119,24 @@
     "original_word": "χάρις",
     "transliteration": "charis",
     "pronunciation": "khar'-ece",
-    "english_words": ["grace", "favor", "thanks"],
+    "english_words": [
+      "grace",
+      "favor",
+      "thanks"
+    ],
     "root": "G5463",
-    "related_numbers": ["G5463", "G5486"],
+    "related_numbers": [
+      "G5463",
+      "G5486"
+    ],
     "plain_definition": "Grace, favor, or kindness freely shown. In salvation passages it points to God's unearned favor.",
     "first_occurrence": "Luke 1:30",
-    "key_verses": ["John 1:17", "Acts 15:11", "Ephesians 2:8", "Titus 2:11"],
+    "key_verses": [
+      "John 1:17",
+      "Acts 15:11",
+      "Ephesians 2:8",
+      "Titus 2:11"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -90,12 +148,22 @@
     "original_word": "θάνατος",
     "transliteration": "thanatos",
     "pronunciation": "than'-at-os",
-    "english_words": ["death", "deadly"],
+    "english_words": [
+      "death",
+      "deadly"
+    ],
     "root": "G2348",
-    "related_numbers": ["G2348"],
+    "related_numbers": [
+      "G2348"
+    ],
     "plain_definition": "Death. Used of physical death and, in doctrinal passages, separation and judgment because of sin.",
     "first_occurrence": "Matthew 4:16",
-    "key_verses": ["Romans 5:12", "Romans 6:23", "1 Corinthians 15:26", "Revelation 20:14"],
+    "key_verses": [
+      "Romans 5:12",
+      "Romans 6:23",
+      "1 Corinthians 15:26",
+      "Revelation 20:14"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -107,12 +175,22 @@
     "original_word": "κόσμος",
     "transliteration": "kosmos",
     "pronunciation": "kos'-mos",
-    "english_words": ["world", "adorning"],
+    "english_words": [
+      "world",
+      "adorning"
+    ],
     "root": "G2865",
-    "related_numbers": ["G2865"],
+    "related_numbers": [
+      "G2865"
+    ],
     "plain_definition": "World, order, or arrangement. In John 3:16 it refers to the world of mankind as the object of God's love.",
     "first_occurrence": "Matthew 4:8",
-    "key_verses": ["John 1:10", "John 3:16", "John 17:9", "1 John 2:15"],
+    "key_verses": [
+      "John 1:10",
+      "John 3:16",
+      "John 17:9",
+      "1 John 2:15"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -124,12 +202,24 @@
     "original_word": "γεννάω",
     "transliteration": "gennao",
     "pronunciation": "ghen-nah'-o",
-    "english_words": ["born", "begotten", "beget", "bring forth"],
+    "english_words": [
+      "born",
+      "begotten",
+      "beget",
+      "bring forth"
+    ],
     "root": "G1096",
-    "related_numbers": ["G1096"],
+    "related_numbers": [
+      "G1096"
+    ],
     "plain_definition": "To beget, bear, bring forth, or be born. In John 3 it is central to the new birth.",
     "first_occurrence": "Matthew 1:2",
-    "key_verses": ["John 1:13", "John 3:3", "John 3:7", "1 Peter 1:23"],
+    "key_verses": [
+      "John 1:13",
+      "John 3:3",
+      "John 3:7",
+      "1 Peter 1:23"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -141,12 +231,22 @@
     "original_word": "ἀλήθεια",
     "transliteration": "aletheia",
     "pronunciation": "al-ay'-thi-a",
-    "english_words": ["truth", "true"],
+    "english_words": [
+      "truth",
+      "true"
+    ],
     "root": "G227",
-    "related_numbers": ["G227"],
+    "related_numbers": [
+      "G227"
+    ],
     "plain_definition": "Truth; that which is real, certain, and faithful. John's writings often connect truth with Christ and God's word.",
     "first_occurrence": "Mark 5:33",
-    "key_verses": ["John 8:32", "John 14:6", "John 17:17", "3 John 4"],
+    "key_verses": [
+      "John 8:32",
+      "John 14:6",
+      "John 17:17",
+      "3 John 4"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -158,12 +258,24 @@
     "original_word": "ἁμαρτία",
     "transliteration": "hamartia",
     "pronunciation": "ham-ar-tee'-ah",
-    "english_words": ["sin", "sins", "sinner"],
+    "english_words": [
+      "sin",
+      "sins",
+      "sinner"
+    ],
     "root": "G264",
-    "related_numbers": ["G264", "G268"],
+    "related_numbers": [
+      "G264",
+      "G268"
+    ],
     "plain_definition": "Sin; missing the mark, offence, or transgression against God.",
     "first_occurrence": "Matthew 1:21",
-    "key_verses": ["Matthew 1:21", "John 1:29", "Romans 3:23", "Romans 6:23"],
+    "key_verses": [
+      "Matthew 1:21",
+      "John 1:29",
+      "Romans 3:23",
+      "Romans 6:23"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -175,12 +287,24 @@
     "original_word": "σῴζω",
     "transliteration": "sozo",
     "pronunciation": "sode'-zo",
-    "english_words": ["save", "saved", "salvation", "deliver"],
+    "english_words": [
+      "save",
+      "saved",
+      "salvation",
+      "deliver"
+    ],
     "root": "",
-    "related_numbers": ["G4991"],
+    "related_numbers": [
+      "G4991"
+    ],
     "plain_definition": "To save, deliver, preserve, or make whole. In salvation passages it points to God's deliverance through Christ.",
     "first_occurrence": "Matthew 1:21",
-    "key_verses": ["Acts 16:31", "Romans 10:9", "Ephesians 2:8", "Titus 3:5"],
+    "key_verses": [
+      "Acts 16:31",
+      "Romans 10:9",
+      "Ephesians 2:8",
+      "Titus 3:5"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -192,12 +316,24 @@
     "original_word": "δικαιοσύνη",
     "transliteration": "dikaiosune",
     "pronunciation": "dik-ah-yos-oo'-nay",
-    "english_words": ["righteousness", "righteous", "just"],
+    "english_words": [
+      "righteousness",
+      "righteous",
+      "just"
+    ],
     "root": "G1342",
-    "related_numbers": ["G1342", "G1344"],
+    "related_numbers": [
+      "G1342",
+      "G1344"
+    ],
     "plain_definition": "Righteousness; justice, rightness, or conformity to what is right before God.",
     "first_occurrence": "Matthew 3:15",
-    "key_verses": ["Matthew 6:33", "Romans 1:17", "Romans 3:22", "2 Corinthians 5:21"],
+    "key_verses": [
+      "Matthew 6:33",
+      "Romans 1:17",
+      "Romans 3:22",
+      "2 Corinthians 5:21"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -209,12 +345,22 @@
     "original_word": "μετάνοια",
     "transliteration": "metanoia",
     "pronunciation": "met-an'-oy-ah",
-    "english_words": ["repentance", "repent"],
+    "english_words": [
+      "repentance",
+      "repent"
+    ],
     "root": "G3340",
-    "related_numbers": ["G3340"],
+    "related_numbers": [
+      "G3340"
+    ],
     "plain_definition": "Repentance; a change of mind shown in turning from sin toward God.",
     "first_occurrence": "Matthew 3:8",
-    "key_verses": ["Luke 24:47", "Acts 20:21", "2 Corinthians 7:10", "2 Peter 3:9"],
+    "key_verses": [
+      "Luke 24:47",
+      "Acts 20:21",
+      "2 Corinthians 7:10",
+      "2 Peter 3:9"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -226,12 +372,23 @@
     "original_word": "φῶς",
     "transliteration": "phos",
     "pronunciation": "foce",
-    "english_words": ["light", "shine"],
+    "english_words": [
+      "light",
+      "shine"
+    ],
     "root": "G5316",
-    "related_numbers": ["G5316", "G5458"],
+    "related_numbers": [
+      "G5316",
+      "G5458"
+    ],
     "plain_definition": "Light; used of literal light and of spiritual illumination, truth, and witness.",
     "first_occurrence": "Matthew 4:16",
-    "key_verses": ["John 1:4", "John 8:12", "Ephesians 5:8", "1 John 1:7"],
+    "key_verses": [
+      "John 1:4",
+      "John 8:12",
+      "Ephesians 5:8",
+      "1 John 1:7"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -243,12 +400,24 @@
     "original_word": "κρίσις",
     "transliteration": "krisis",
     "pronunciation": "kree'-sis",
-    "english_words": ["judgment", "condemnation", "decision"],
+    "english_words": [
+      "judgment",
+      "condemnation",
+      "decision"
+    ],
     "root": "G2919",
-    "related_numbers": ["G2919", "G2922"],
+    "related_numbers": [
+      "G2919",
+      "G2922"
+    ],
     "plain_definition": "Judgment, decision, condemnation, or judicial sentence depending on context.",
     "first_occurrence": "Matthew 5:21",
-    "key_verses": ["John 3:19", "John 5:24", "Hebrews 9:27", "Revelation 20:12"],
+    "key_verses": [
+      "John 3:19",
+      "John 5:24",
+      "Hebrews 9:27",
+      "Revelation 20:12"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -260,12 +429,24 @@
     "original_word": "προφήτης",
     "transliteration": "prophetes",
     "pronunciation": "prof-ay'-tace",
-    "english_words": ["prophet", "prophecy", "prophesy"],
+    "english_words": [
+      "prophet",
+      "prophecy",
+      "prophesy"
+    ],
     "root": "G4395",
-    "related_numbers": ["G4395", "G4394"],
+    "related_numbers": [
+      "G4395",
+      "G4394"
+    ],
     "plain_definition": "A prophet; one who speaks forth God's message.",
     "first_occurrence": "Matthew 1:22",
-    "key_verses": ["Luke 24:19", "Acts 3:22", "Hebrews 1:1", "2 Peter 1:21"],
+    "key_verses": [
+      "Luke 24:19",
+      "Acts 3:22",
+      "Hebrews 1:1",
+      "2 Peter 1:21"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -277,12 +458,24 @@
     "original_word": "βασιλεία",
     "transliteration": "basileia",
     "pronunciation": "bas-il-i'-ah",
-    "english_words": ["kingdom", "reign", "royal dominion"],
+    "english_words": [
+      "kingdom",
+      "reign",
+      "royal dominion"
+    ],
     "root": "G935",
-    "related_numbers": ["G935", "G936"],
+    "related_numbers": [
+      "G935",
+      "G936"
+    ],
     "plain_definition": "Kingdom, reign, rule, or royal dominion.",
     "first_occurrence": "Matthew 3:2",
-    "key_verses": ["Matthew 6:33", "John 3:3", "Acts 1:3", "Romans 14:17"],
+    "key_verses": [
+      "Matthew 6:33",
+      "John 3:3",
+      "Acts 1:3",
+      "Romans 14:17"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -294,12 +487,22 @@
     "original_word": "υἱοθεσία",
     "transliteration": "huiothesia",
     "pronunciation": "hwee-oth-es-ee'-ah",
-    "english_words": ["adoption", "sonship"],
+    "english_words": [
+      "adoption",
+      "sonship"
+    ],
     "root": "G5207",
-    "related_numbers": ["G5207"],
+    "related_numbers": [
+      "G5207"
+    ],
     "plain_definition": "Adoption or placing as a son. In Romans 8 it helps explain the believer's standing and assurance.",
     "first_occurrence": "Romans 8:15",
-    "key_verses": ["Romans 8:15", "Romans 8:23", "Galatians 4:5", "Ephesians 1:5"],
+    "key_verses": [
+      "Romans 8:15",
+      "Romans 8:23",
+      "Galatians 4:5",
+      "Ephesians 1:5"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -311,12 +514,20 @@
     "original_word": "ὑπερεντυγχάνω",
     "transliteration": "huperentugchano",
     "pronunciation": "hoop-er-en-toong-khan'-o",
-    "english_words": ["intercession", "intercede", "maketh intercession"],
+    "english_words": [
+      "intercession",
+      "intercede",
+      "maketh intercession"
+    ],
     "root": "G1793",
-    "related_numbers": ["G1793"],
+    "related_numbers": [
+      "G1793"
+    ],
     "plain_definition": "To intercede on behalf of another. Romans 8 uses it of the Spirit's help in prayer.",
     "first_occurrence": "Romans 8:26",
-    "key_verses": ["Romans 8:26"],
+    "key_verses": [
+      "Romans 8:26"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -328,12 +539,21 @@
     "original_word": "στεναγμός",
     "transliteration": "stenagmos",
     "pronunciation": "sten-ag-mos'",
-    "english_words": ["groaning", "groanings", "sighing"],
+    "english_words": [
+      "groaning",
+      "groanings",
+      "sighing"
+    ],
     "root": "G4727",
-    "related_numbers": ["G4727"],
+    "related_numbers": [
+      "G4727"
+    ],
     "plain_definition": "A groaning or sighing. Romans 8 connects groaning with prayer weakness and the Spirit's help.",
     "first_occurrence": "Acts 7:34",
-    "key_verses": ["Acts 7:34", "Romans 8:26"],
+    "key_verses": [
+      "Acts 7:34",
+      "Romans 8:26"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -345,12 +565,22 @@
     "original_word": "פֶּשַׁע",
     "transliteration": "pesha",
     "pronunciation": "peh'-shah",
-    "english_words": ["transgression", "transgressions", "rebellion"],
+    "english_words": [
+      "transgression",
+      "transgressions",
+      "rebellion"
+    ],
     "root": "H6586",
-    "related_numbers": ["H6586"],
+    "related_numbers": [
+      "H6586"
+    ],
     "plain_definition": "Transgression, rebellion, or revolt against God.",
     "first_occurrence": "Genesis 31:36",
-    "key_verses": ["Isaiah 53:5", "Amos 1:3", "Amos 2:4"],
+    "key_verses": [
+      "Isaiah 53:5",
+      "Amos 1:3",
+      "Amos 2:4"
+    ],
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
@@ -362,13 +592,302 @@
     "original_word": "צִיּוֹן",
     "transliteration": "Tsiyyon",
     "pronunciation": "tsee-yone'",
-    "english_words": ["Zion", "Jerusalem"],
+    "english_words": [
+      "Zion",
+      "Jerusalem"
+    ],
     "root": "H6726",
     "related_numbers": [],
     "plain_definition": "Zion; a name connected with Jerusalem and God's chosen place in many prophetic passages.",
     "first_occurrence": "2 Samuel 5:7",
-    "key_verses": ["Psalm 2:6", "Isaiah 2:3", "Joel 3:16", "Amos 1:2"],
+    "key_verses": [
+      "Psalm 2:6",
+      "Isaiah 2:3",
+      "Joel 3:16",
+      "Amos 1:2"
+    ],
     "source_title": "Manual verified Strong's sample entries",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4151",
+    "language": "Greek",
+    "original_word": "πνεῦμα",
+    "transliteration": "pneuma",
+    "pronunciation": "pnyoo'-mah",
+    "english_words": [
+      "spirit",
+      "Spirit",
+      "ghost",
+      "wind"
+    ],
+    "root": "G4154",
+    "related_numbers": [
+      "G4154",
+      "H7307"
+    ],
+    "plain_definition": "Spirit, wind, or breath. In Romans 8 it is central to the believer's life, assurance, prayer, and walk in the Spirit.",
+    "first_occurrence": "Matthew 1:18",
+    "key_verses": [
+      "John 3:6",
+      "Romans 8:9",
+      "Romans 8:16",
+      "Romans 8:26"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4561",
+    "language": "Greek",
+    "original_word": "σάρξ",
+    "transliteration": "sarx",
+    "pronunciation": "sarx",
+    "english_words": [
+      "flesh",
+      "carnal"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G4559",
+      "H1320"
+    ],
+    "plain_definition": "Flesh; the body, natural human weakness, or the fallen nature depending on context. Romans 8 contrasts the flesh with life in the Spirit.",
+    "first_occurrence": "Matthew 16:17",
+    "key_verses": [
+      "John 3:6",
+      "Romans 8:4",
+      "Romans 8:8",
+      "Galatians 5:17"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3551",
+    "language": "Greek",
+    "original_word": "νόμος",
+    "transliteration": "nomos",
+    "pronunciation": "nom'-os",
+    "english_words": [
+      "law"
+    ],
+    "root": "G3542",
+    "related_numbers": [
+      "G3542",
+      "H8451"
+    ],
+    "plain_definition": "Law; a rule, principle, or the law of God. In Romans it often helps explain sin, righteousness, and the believer's relationship to God's commandment.",
+    "first_occurrence": "Matthew 5:17",
+    "key_verses": [
+      "Romans 3:20",
+      "Romans 7:12",
+      "Romans 8:2",
+      "Galatians 3:24"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2342",
+    "language": "Greek",
+    "original_word": "θηρίον",
+    "transliteration": "therion",
+    "pronunciation": "thay-ree'-on",
+    "english_words": [
+      "beast",
+      "wild beast"
+    ],
+    "root": "G2339",
+    "related_numbers": [
+      "G2339",
+      "H929"
+    ],
+    "plain_definition": "A beast or wild animal. In Revelation it is used prophetically of the beastly world power opposed to God.",
+    "first_occurrence": "Mark 1:13",
+    "key_verses": [
+      "Revelation 11:7",
+      "Revelation 13:1",
+      "Revelation 13:11",
+      "Revelation 17:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4352",
+    "language": "Greek",
+    "original_word": "προσκυνέω",
+    "transliteration": "proskuneo",
+    "pronunciation": "pros-koo-neh'-o",
+    "english_words": [
+      "worship",
+      "worshipped",
+      "worshippeth"
+    ],
+    "root": "G4314",
+    "related_numbers": [
+      "G4314",
+      "H7812"
+    ],
+    "plain_definition": "To worship, bow down, or show reverence. Revelation 13 uses worship language to show false allegiance and idolatry.",
+    "first_occurrence": "Matthew 2:2",
+    "key_verses": [
+      "John 4:24",
+      "Revelation 13:4",
+      "Revelation 13:8",
+      "Revelation 22:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7307",
+    "language": "Hebrew",
+    "original_word": "רוּחַ",
+    "transliteration": "ruach",
+    "pronunciation": "roo'-akh",
+    "english_words": [
+      "spirit",
+      "Spirit",
+      "wind",
+      "breath"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G4151"
+    ],
+    "plain_definition": "Spirit, wind, or breath. Used of God's Spirit, human spirit, wind, and breath depending on context.",
+    "first_occurrence": "Genesis 1:2",
+    "key_verses": [
+      "Genesis 1:2",
+      "Psalm 51:11",
+      "Ezekiel 37:9",
+      "Zechariah 4:6"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H8451",
+    "language": "Hebrew",
+    "original_word": "תּוֹרָה",
+    "transliteration": "torah",
+    "pronunciation": "to-raw'",
+    "english_words": [
+      "law",
+      "instruction"
+    ],
+    "root": "H3384",
+    "related_numbers": [
+      "H3384",
+      "G3551"
+    ],
+    "plain_definition": "Law, direction, or instruction. Often used of God's revealed instruction to Israel.",
+    "first_occurrence": "Genesis 26:5",
+    "key_verses": [
+      "Psalm 1:2",
+      "Psalm 19:7",
+      "Isaiah 8:20",
+      "Malachi 4:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1320",
+    "language": "Hebrew",
+    "original_word": "בָּשָׂר",
+    "transliteration": "basar",
+    "pronunciation": "baw-sawr'",
+    "english_words": [
+      "flesh",
+      "body"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G4561"
+    ],
+    "plain_definition": "Flesh or body. Used of physical flesh, mankind, and creaturely weakness depending on context.",
+    "first_occurrence": "Genesis 2:21",
+    "key_verses": [
+      "Genesis 6:12",
+      "Isaiah 40:6",
+      "Joel 2:28",
+      "Zechariah 2:13"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H929",
+    "language": "Hebrew",
+    "original_word": "בְּהֵמָה",
+    "transliteration": "behemah",
+    "pronunciation": "be-hay-maw'",
+    "english_words": [
+      "beast",
+      "cattle"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G2342"
+    ],
+    "plain_definition": "Beast, cattle, or animal. Used broadly for living creatures and domestic animals.",
+    "first_occurrence": "Genesis 1:24",
+    "key_verses": [
+      "Genesis 1:24",
+      "Psalm 50:10",
+      "Daniel 4:16",
+      "Jonah 4:11"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7812",
+    "language": "Hebrew",
+    "original_word": "שָׁחָה",
+    "transliteration": "shachah",
+    "pronunciation": "shaw-khaw'",
+    "english_words": [
+      "worship",
+      "bow",
+      "bow down"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G4352"
+    ],
+    "plain_definition": "To bow down, prostrate oneself, or worship. It may describe reverence before God or bowing before men, depending on context.",
+    "first_occurrence": "Genesis 18:2",
+    "key_verses": [
+      "Genesis 22:5",
+      "Exodus 20:5",
+      "Psalm 95:6",
+      "Isaiah 66:23"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"

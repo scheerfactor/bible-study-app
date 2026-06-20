@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-20T02:16:32.909Z
+Generated: 2026-06-20T10:22:50.485Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-20T02:16:32.909Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's entries: 22 (starter data only).
-- TSK rows: 132; source verses covered: 84 (reviewed samples only).
+- Strong's entries: 32 (starter data only).
+- TSK rows: 150; source verses covered: 96 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -33,12 +33,12 @@ Generated: 2026-06-20T02:16:32.909Z
 | believe | yes |
 | faith | yes |
 | love | yes |
-| spirit | no |
-| flesh | no |
-| law | no |
-| beast | no |
+| spirit | yes |
+| flesh | yes |
+| law | yes |
+| beast | yes |
 | kingdom | yes |
-| worship | no |
+| worship | yes |
 
 ## TSK Focus Reference Checks
 
@@ -46,7 +46,7 @@ Generated: 2026-06-20T02:16:32.909Z
 | --- | --- |
 | John 3:16 | yes |
 | Romans 8:28 | yes |
-| Amos 5:24 | no |
+| Amos 5:24 | yes |
 | Daniel 7:13 | yes |
 | Revelation 13:1 | yes |
 

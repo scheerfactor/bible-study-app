@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { readTextContent } from "@/lib/server-content-storage";
 
-const publicCommentaryFilePattern = /^[a-z0-9-]+commentary\.json$/;
+const publicCommentaryFilePattern = /^[a-z0-9-]+(?:commentary|samples|batch)\.json$/;
 
 export async function GET(_request: Request, context: { params: Promise<{ fileName: string }> }) {
   const { fileName } = await context.params;
