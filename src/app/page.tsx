@@ -10813,10 +10813,6 @@ const starterKeyWords: Record<string, string[]> = {
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const configuredAdminEmails = (process.env.NEXT_PUBLIC_ADMIN_EMAILS ?? "")
-  .split(",")
-  .map((email) => email.trim().toLowerCase())
-  .filter(Boolean);
 const hasSupabaseConfig = Boolean(supabaseUrl && supabaseAnonKey);
 let browserSupabaseClient: SupabaseClient | null | undefined;
 
@@ -13843,6 +13839,8 @@ export default function Home() {
   const allVerses = useMemo(() => parseVerses(), []);
   const supabase = useMemo(() => makeSupabaseClient(), []);
   const [user, setUser] = useState<User | null>(null);
+  const [adminRoleLoaded, setAdminRoleLoaded] = useState(false);
+  const [hasAdminRole, setHasAdminRole] = useState(false);
   const [tab, setTab] = useState<Tab>("today");
   const [showLibraryAcquisitionAdmin, setShowLibraryAcquisitionAdmin] = useState(false);
   const [isLocalAdminPreviewHost] = useState(() => {
@@ -13986,8 +13984,7 @@ export default function Home() {
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
   );
-  const signedInAdminEmail = Boolean(user?.email && configuredAdminEmails.includes(user.email.toLowerCase()));
-  const canOpenAdminArea = signedInAdminEmail || isLocalAdminPreviewHost;
+  const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
 
   useEffect(() => {
     const shouldLoadCommentary =
@@ -16159,6 +16156,38 @@ export default function Home() {
       data.subscription.unsubscribe();
     };
   }, [supabase]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadAdminRole() {
+      setHasAdminRole(false);
+
+      if (!supabase || !user?.id) {
+        setAdminRoleLoaded(true);
+        return;
+      }
+
+      setAdminRoleLoaded(false);
+
+      const { data, error } = await supabase
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", user.id)
+        .eq("role", "admin")
+        .maybeSingle();
+
+      if (cancelled) return;
+      setHasAdminRole(Boolean(data && !error));
+      setAdminRoleLoaded(true);
+    }
+
+    void loadAdminRole();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase, user?.id]);
 
   useEffect(() => {
     if (!supabase || !user || !localStudyDataLoaded || !savedLoaded) return;
@@ -18715,7 +18744,7 @@ export default function Home() {
                   <AdminLockedNotice
                     signedIn={Boolean(user)}
                     user={user}
-                    adminEmailsConfigured={configuredAdminEmails.length > 0}
+                    adminRoleLoaded={adminRoleLoaded}
                     hasSupabaseConfig={hasSupabaseConfig}
                     authEmail={authEmail}
                     authMessage={authMessage}
@@ -30437,7 +30466,7 @@ function loadAcquisitionStorage<T>(key: string, fallback: T[]): T[] {
 function AdminLockedNotice({
   signedIn,
   user,
-  adminEmailsConfigured,
+  adminRoleLoaded,
   hasSupabaseConfig,
   authEmail,
   authMessage,
@@ -30449,7 +30478,7 @@ function AdminLockedNotice({
 }: {
   signedIn: boolean;
   user: User | null;
-  adminEmailsConfigured: boolean;
+  adminRoleLoaded: boolean;
   hasSupabaseConfig: boolean;
   authEmail: string;
   authMessage: string;
@@ -30479,7 +30508,7 @@ function AdminLockedNotice({
         <StatusCard label="Admin Drafts" status="Hidden from guests" good />
         <StatusCard
           label="Admin access"
-          status={!hasSupabaseConfig ? "Sign-in not configured" : !adminEmailsConfigured ? "Admin allowlist missing" : signedIn ? "Email not allowed" : "Sign in required"}
+          status={!hasSupabaseConfig ? "Sign-in not configured" : signedIn && !adminRoleLoaded ? "Checking role" : signedIn ? "Account not approved" : "Sign in required"}
           good={false}
         />
       </div>
@@ -30490,7 +30519,7 @@ function AdminLockedNotice({
         authEmail={authEmail}
         authMessage={authMessage}
         title="Sign in to unlock admin tools"
-        signedOutBody="Enter your allow-listed admin email. The app will send you a secure sign-in link, then the Library Acquisition Center will open after you return."
+        signedOutBody="Enter your admin account email. The app will send you a secure sign-in link, then unlock this area only if the account has the admin role."
         onAuthEmailChange={onAuthEmailChange}
         onSendMagicLink={onSendMagicLink}
         onSignOut={onSignOut}
@@ -30499,7 +30528,7 @@ function AdminLockedNotice({
       <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
         <p className="text-sm font-semibold text-[var(--ink)]">For Stephen/admin use</p>
         <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
-          Use an allow-listed signed-in admin account on production, or use localhost while building. Do not expose permission-needed books, personal-use uploads, or copyrighted review notes to normal guests.
+          Use a signed-in account with the admin role on production, or use localhost while building. Do not expose permission-needed books, personal-use uploads, or copyrighted review notes to normal guests.
         </p>
       </div>
 
@@ -30577,7 +30606,7 @@ function AccountSignInCard({
         </button>
       </div>
       <p className="text-xs leading-5 text-[var(--muted)]">
-        After clicking the email link, return to Library Acquisition. If the email is on the admin allowlist, the private tools will open.
+        After clicking the email link, return to Library Acquisition. If the account has the admin role, the private tools will open.
       </p>
       {authMessage && <p className="text-sm text-[var(--muted)]">{authMessage}</p>}
     </div>
@@ -40059,7 +40088,7 @@ function SettingsScreen({
           <StatusCard label="Admin material" status="Hidden from guests" good />
           <StatusCard label="Donation" status="Recommended before payments" good />
           <StatusCard label="User accounts" status={hasSupabaseConfig ? "Ready to test" : "Configure before public sync"} good={hasSupabaseConfig} />
-          <StatusCard label="Admin area" status={configuredAdminEmails.length ? "Email allowlist configured" : "Allowlist needed"} good={configuredAdminEmails.length > 0} />
+          <StatusCard label="Admin area" status="Protected by Supabase role" good={hasSupabaseConfig} />
           <StatusCard label="Payments" status="Later, after beta demand" good={false} />
           <StatusCard label="Licensed books" status="Written permission required" good />
         </div>
