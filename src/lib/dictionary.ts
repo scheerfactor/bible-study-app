@@ -15,6 +15,20 @@ const dictionaryRelativePath = ["data", "generated", "websters-1828.entries.json
 const dictionaryOverrideRelativePath = ["data", "generated", "websters-1828-reviewed-overrides.json"];
 let dictionaryPromise: Promise<WebsterEntry[]> | null = null;
 
+const reviewedDictionaryOverlays: WebsterEntry[] = [
+  {
+    headword: "DO",
+    normalized_headword: "do",
+    definition:
+      "DO, verb transitive or auxiliary; preterit tense Did; participle passive Done. To perform; to execute; to carry into effect; to exert labor or power for bringing any thing to the state desired, or to completion; to bring any thing to pass. Also, to practice or perform, as to do good or evil.",
+    source_title: "American Dictionary of the English Language",
+    source_file: "https://webstersdictionary1828.com/Home?word=Do",
+    source_line_start: 1,
+    source_line_end: 1,
+    review_status: "reviewed_overlay",
+  },
+];
+
 const dictionaryAliases: Record<string, string> = {
   believest: "believe",
   believeth: "believe",
@@ -64,7 +78,7 @@ export async function getDictionaryEntries() {
     readTextContent(dictionaryOverrideRelativePath, { errorLabel: "Webster reviewed overrides" })
       .then((raw) => JSON.parse(raw) as WebsterEntry[])
       .catch(() => []),
-  ]).then(([entries, overrides]) => [...overrides, ...entries]);
+  ]).then(([entries, overrides]) => [...reviewedDictionaryOverlays, ...overrides, ...entries]);
   return dictionaryPromise;
 }
 

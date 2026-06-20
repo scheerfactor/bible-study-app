@@ -8678,12 +8678,7 @@ const deferredCommentaryImportFiles = [
 ];
 
 function rawDeferredCommentaryUrl(fileName: string) {
-  const publicContentBaseUrl = process.env.NEXT_PUBLIC_CONTENT_BASE_URL?.replace(/\/+$/, "");
-  if (publicContentBaseUrl) {
-    return `${publicContentBaseUrl}/data/imports/${encodeURIComponent(fileName)}`;
-  }
-
-  return `https://raw.githubusercontent.com/scheerfactor/bible-study-app/main/data/imports/${encodeURIComponent(fileName)}`;
+  return `/api/commentary/import/${encodeURIComponent(fileName)}`;
 }
 
 async function fetchDeferredCommentaryEntries(
