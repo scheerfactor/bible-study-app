@@ -2651,5 +2651,891 @@
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3068",
+    "language": "Hebrew",
+    "original_word": "יְהוָה",
+    "transliteration": "Yehovah",
+    "pronunciation": "yeh-ho-vaw",
+    "english_words": [
+      "LORD",
+      "Jehovah"
+    ],
+    "root": "H1961",
+    "related_numbers": [
+      "H136",
+      "H430"
+    ],
+    "plain_definition": "The covenant name of God, commonly printed LORD in the KJV.",
+    "first_occurrence": "Genesis 2:4",
+    "key_verses": [
+      "Exodus 3:15",
+      "Deuteronomy 6:4",
+      "Psalms 23:1",
+      "Isaiah 42:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H430",
+    "language": "Hebrew",
+    "original_word": "אֱלֹהִים",
+    "transliteration": "elohim",
+    "pronunciation": "el-o-heem",
+    "english_words": [
+      "God",
+      "gods"
+    ],
+    "root": "H433",
+    "related_numbers": [
+      "H410",
+      "H3068"
+    ],
+    "plain_definition": "God; also used of rulers or false gods depending on context.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Exodus 20:2",
+      "Deuteronomy 6:4",
+      "Psalms 46:10"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7225",
+    "language": "Hebrew",
+    "original_word": "רֵאשִׁית",
+    "transliteration": "reshith",
+    "pronunciation": "ray-sheeth",
+    "english_words": [
+      "beginning",
+      "firstfruits",
+      "chief"
+    ],
+    "root": "H7218",
+    "related_numbers": [
+      "G746"
+    ],
+    "plain_definition": "Beginning, first, chief, or first part.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Proverbs 1:7",
+      "Proverbs 8:22",
+      "Jeremiah 2:3"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1254",
+    "language": "Hebrew",
+    "original_word": "בָּרָא",
+    "transliteration": "bara",
+    "pronunciation": "baw-raw",
+    "english_words": [
+      "create",
+      "created",
+      "make"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H6213",
+      "G2936"
+    ],
+    "plain_definition": "To create, shape, or bring into being; often used of God’s creative work.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Genesis 1:27",
+      "Psalms 51:10",
+      "Isaiah 45:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H8064",
+    "language": "Hebrew",
+    "original_word": "שָׁמַיִם",
+    "transliteration": "shamayim",
+    "pronunciation": "shaw-mah-yim",
+    "english_words": [
+      "heaven",
+      "heavens",
+      "sky"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G3772"
+    ],
+    "plain_definition": "Heaven or heavens; the sky, the visible heavens, or the dwelling place of God.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Psalms 19:1",
+      "Isaiah 66:1",
+      "Daniel 4:26"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H776",
+    "language": "Hebrew",
+    "original_word": "אֶרֶץ",
+    "transliteration": "erets",
+    "pronunciation": "eh-rets",
+    "english_words": [
+      "earth",
+      "land",
+      "country"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G1093"
+    ],
+    "plain_definition": "Earth, land, ground, territory, or country depending on context.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Genesis 12:1",
+      "Psalms 24:1",
+      "Isaiah 11:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H216",
+    "language": "Hebrew",
+    "original_word": "אוֹר",
+    "transliteration": "or",
+    "pronunciation": "ore",
+    "english_words": [
+      "light"
+    ],
+    "root": "H215",
+    "related_numbers": [
+      "G5457"
+    ],
+    "plain_definition": "Light, illumination, or brightness.",
+    "first_occurrence": "Genesis 1:3",
+    "key_verses": [
+      "Genesis 1:3",
+      "Psalms 27:1",
+      "Isaiah 9:2",
+      "Isaiah 60:1"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2822",
+    "language": "Hebrew",
+    "original_word": "חֹשֶׁךְ",
+    "transliteration": "choshek",
+    "pronunciation": "kho-shek",
+    "english_words": [
+      "darkness",
+      "dark"
+    ],
+    "root": "H2821",
+    "related_numbers": [
+      "G4655"
+    ],
+    "plain_definition": "Darkness, obscurity, or gloom.",
+    "first_occurrence": "Genesis 1:2",
+    "key_verses": [
+      "Genesis 1:2",
+      "Exodus 10:21",
+      "Psalms 18:28",
+      "Isaiah 9:2"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3117",
+    "language": "Hebrew",
+    "original_word": "יוֹם",
+    "transliteration": "yom",
+    "pronunciation": "yome",
+    "english_words": [
+      "day",
+      "time"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G2250"
+    ],
+    "plain_definition": "Day; a daylight period, a full day, or a time/season depending on context.",
+    "first_occurrence": "Genesis 1:5",
+    "key_verses": [
+      "Genesis 1:5",
+      "Exodus 20:11",
+      "Psalms 118:24",
+      "Amos 5:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1697",
+    "language": "Hebrew",
+    "original_word": "דָּבָר",
+    "transliteration": "dabar",
+    "pronunciation": "daw-bawr",
+    "english_words": [
+      "word",
+      "thing",
+      "matter"
+    ],
+    "root": "H1696",
+    "related_numbers": [
+      "G3056"
+    ],
+    "plain_definition": "A word, matter, speech, thing, or command.",
+    "first_occurrence": "Genesis 11:1",
+    "key_verses": [
+      "Deuteronomy 8:3",
+      "Psalms 119:11",
+      "Isaiah 55:11",
+      "Jeremiah 1:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H5030",
+    "language": "Hebrew",
+    "original_word": "נָבִיא",
+    "transliteration": "nabi",
+    "pronunciation": "naw-bee",
+    "english_words": [
+      "prophet"
+    ],
+    "root": "H5012",
+    "related_numbers": [
+      "G4396",
+      "G4397"
+    ],
+    "plain_definition": "A prophet; one who speaks a message from God.",
+    "first_occurrence": "Genesis 20:7",
+    "key_verses": [
+      "Deuteronomy 18:18",
+      "Amos 3:7",
+      "Hosea 12:10",
+      "Malachi 4:5"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H5971",
+    "language": "Hebrew",
+    "original_word": "עַם",
+    "transliteration": "am",
+    "pronunciation": "am",
+    "english_words": [
+      "people",
+      "nation"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H1471",
+      "G2992"
+    ],
+    "plain_definition": "A people, tribe, nation, or community.",
+    "first_occurrence": "Genesis 11:6",
+    "key_verses": [
+      "Exodus 6:7",
+      "Deuteronomy 7:6",
+      "Hosea 1:9",
+      "Zechariah 8:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1471",
+    "language": "Hebrew",
+    "original_word": "גּוֹי",
+    "transliteration": "goy",
+    "pronunciation": "go-ee",
+    "english_words": [
+      "nation",
+      "Gentiles",
+      "people"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H5971",
+      "G1484"
+    ],
+    "plain_definition": "A nation or people; often used for Gentile nations.",
+    "first_occurrence": "Genesis 10:5",
+    "key_verses": [
+      "Genesis 12:2",
+      "Psalms 2:1",
+      "Isaiah 49:6",
+      "Amos 9:12"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4428",
+    "language": "Hebrew",
+    "original_word": "מֶלֶךְ",
+    "transliteration": "melek",
+    "pronunciation": "meh-lek",
+    "english_words": [
+      "king"
+    ],
+    "root": "H4427",
+    "related_numbers": [
+      "H4438",
+      "G935"
+    ],
+    "plain_definition": "A king or royal ruler.",
+    "first_occurrence": "Genesis 14:1",
+    "key_verses": [
+      "1 Samuel 8:5",
+      "Psalms 2:6",
+      "Isaiah 9:7",
+      "Daniel 7:17"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4438",
+    "language": "Hebrew",
+    "original_word": "מַמְלָכָה",
+    "transliteration": "mamlakah",
+    "pronunciation": "mam-law-kaw",
+    "english_words": [
+      "kingdom",
+      "reign",
+      "realm"
+    ],
+    "root": "H4427",
+    "related_numbers": [
+      "H4428",
+      "G932"
+    ],
+    "plain_definition": "A kingdom, reign, or royal dominion.",
+    "first_occurrence": "Genesis 10:10",
+    "key_verses": [
+      "Exodus 19:6",
+      "1 Samuel 10:18",
+      "Daniel 2:44",
+      "Daniel 7:27"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H5771",
+    "language": "Hebrew",
+    "original_word": "עָוֹן",
+    "transliteration": "avon",
+    "pronunciation": "aw-vone",
+    "english_words": [
+      "iniquity",
+      "guilt",
+      "punishment"
+    ],
+    "root": "H5753",
+    "related_numbers": [
+      "H6588",
+      "G458"
+    ],
+    "plain_definition": "Iniquity, guilt, perversity, or the punishment connected with sin.",
+    "first_occurrence": "Genesis 15:16",
+    "key_verses": [
+      "Exodus 34:7",
+      "Psalms 51:2",
+      "Isaiah 53:6",
+      "Hosea 4:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7563",
+    "language": "Hebrew",
+    "original_word": "רָשָׁע",
+    "transliteration": "rasha",
+    "pronunciation": "raw-shaw",
+    "english_words": [
+      "wicked",
+      "ungodly"
+    ],
+    "root": "H7561",
+    "related_numbers": [
+      "G765"
+    ],
+    "plain_definition": "Wicked, guilty, or morally wrong.",
+    "first_occurrence": "Genesis 18:23",
+    "key_verses": [
+      "Psalms 1:1",
+      "Proverbs 15:9",
+      "Isaiah 55:7",
+      "Malachi 3:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H8199",
+    "language": "Hebrew",
+    "original_word": "שָׁפַט",
+    "transliteration": "shaphat",
+    "pronunciation": "shaw-fat",
+    "english_words": [
+      "judge",
+      "govern",
+      "plead"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H4941",
+      "G2919"
+    ],
+    "plain_definition": "To judge, govern, decide, or execute judgment.",
+    "first_occurrence": "Genesis 16:5",
+    "key_verses": [
+      "Genesis 18:25",
+      "Judges 2:16",
+      "Psalms 96:13",
+      "Isaiah 1:17"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3820",
+    "language": "Hebrew",
+    "original_word": "לֵב",
+    "transliteration": "leb",
+    "pronunciation": "labe",
+    "english_words": [
+      "heart",
+      "mind",
+      "understanding"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H3824",
+      "G2588"
+    ],
+    "plain_definition": "The heart; inner person, mind, will, or understanding.",
+    "first_occurrence": "Genesis 6:5",
+    "key_verses": [
+      "Deuteronomy 6:5",
+      "Psalms 51:10",
+      "Proverbs 4:23",
+      "Jeremiah 17:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H5315",
+    "language": "Hebrew",
+    "original_word": "נֶפֶשׁ",
+    "transliteration": "nephesh",
+    "pronunciation": "neh-fesh",
+    "english_words": [
+      "soul",
+      "life",
+      "person"
+    ],
+    "root": "H5314",
+    "related_numbers": [
+      "G5590"
+    ],
+    "plain_definition": "Soul, life, creature, person, or living being depending on context.",
+    "first_occurrence": "Genesis 1:20",
+    "key_verses": [
+      "Genesis 2:7",
+      "Leviticus 17:11",
+      "Psalms 23:3",
+      "Ezekiel 18:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3467",
+    "language": "Hebrew",
+    "original_word": "יָשַׁע",
+    "transliteration": "yasha",
+    "pronunciation": "yaw-shah",
+    "english_words": [
+      "save",
+      "deliver",
+      "help"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H3468",
+      "G4982"
+    ],
+    "plain_definition": "To save, deliver, rescue, or give victory.",
+    "first_occurrence": "Exodus 2:17",
+    "key_verses": [
+      "Exodus 14:30",
+      "Psalms 20:9",
+      "Isaiah 45:22",
+      "Hosea 13:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3468",
+    "language": "Hebrew",
+    "original_word": "יֶשַׁע",
+    "transliteration": "yesha",
+    "pronunciation": "yeh-shah",
+    "english_words": [
+      "salvation",
+      "deliverance",
+      "safety"
+    ],
+    "root": "H3467",
+    "related_numbers": [
+      "H3444",
+      "G4991"
+    ],
+    "plain_definition": "Salvation, deliverance, safety, or rescue.",
+    "first_occurrence": "Genesis 49:18",
+    "key_verses": [
+      "Psalms 9:14",
+      "Psalms 27:1",
+      "Isaiah 12:2",
+      "Jonah 2:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2424",
+    "language": "Greek",
+    "original_word": "Ἰησοῦς",
+    "transliteration": "Iesous",
+    "pronunciation": "ee-ay-sooce",
+    "english_words": [
+      "Jesus"
+    ],
+    "root": "H3091",
+    "related_numbers": [
+      "G5547"
+    ],
+    "plain_definition": "Jesus; the Greek form connected with Joshua, meaning Jehovah is salvation.",
+    "first_occurrence": "Matthew 1:1",
+    "key_verses": [
+      "Matthew 1:21",
+      "John 1:17",
+      "Acts 4:12",
+      "Philippians 2:10"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5547",
+    "language": "Greek",
+    "original_word": "Χριστός",
+    "transliteration": "Christos",
+    "pronunciation": "khris-tos",
+    "english_words": [
+      "Christ",
+      "Messiah",
+      "anointed"
+    ],
+    "root": "G5548",
+    "related_numbers": [
+      "G3323",
+      "H4899"
+    ],
+    "plain_definition": "Christ, Messiah, or Anointed One.",
+    "first_occurrence": "Matthew 1:1",
+    "key_verses": [
+      "Matthew 16:16",
+      "John 20:31",
+      "Acts 2:36",
+      "Romans 5:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2316",
+    "language": "Greek",
+    "original_word": "θεός",
+    "transliteration": "theos",
+    "pronunciation": "theh-os",
+    "english_words": [
+      "God"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H430"
+    ],
+    "plain_definition": "God; also used of a god depending on context.",
+    "first_occurrence": "Matthew 1:23",
+    "key_verses": [
+      "John 1:1",
+      "John 3:16",
+      "Romans 1:16",
+      "1 Timothy 3:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2962",
+    "language": "Greek",
+    "original_word": "κύριος",
+    "transliteration": "kurios",
+    "pronunciation": "koo-ree-os",
+    "english_words": [
+      "Lord",
+      "master"
+    ],
+    "root": "G2963",
+    "related_numbers": [
+      "H3068"
+    ],
+    "plain_definition": "Lord, master, owner, or one with authority.",
+    "first_occurrence": "Matthew 1:20",
+    "key_verses": [
+      "Matthew 22:44",
+      "Luke 2:11",
+      "John 20:28",
+      "Romans 10:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1342",
+    "language": "Greek",
+    "original_word": "δίκαιος",
+    "transliteration": "dikaios",
+    "pronunciation": "dik-ah-yos",
+    "english_words": [
+      "righteous",
+      "just"
+    ],
+    "root": "G1349",
+    "related_numbers": [
+      "G1343",
+      "G1344"
+    ],
+    "plain_definition": "Righteous, just, upright, or right according to God’s standard.",
+    "first_occurrence": "Matthew 1:19",
+    "key_verses": [
+      "Matthew 5:45",
+      "Romans 1:17",
+      "Romans 5:19",
+      "1 Peter 3:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4990",
+    "language": "Greek",
+    "original_word": "σωτήρ",
+    "transliteration": "soter",
+    "pronunciation": "so-tare",
+    "english_words": [
+      "Saviour",
+      "savior"
+    ],
+    "root": "G4982",
+    "related_numbers": [
+      "G4991"
+    ],
+    "plain_definition": "A saviour, deliverer, or rescuer.",
+    "first_occurrence": "Luke 1:47",
+    "key_verses": [
+      "Luke 2:11",
+      "John 4:42",
+      "Titus 2:13",
+      "2 Peter 3:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G264",
+    "language": "Greek",
+    "original_word": "ἁμαρτάνω",
+    "transliteration": "hamartano",
+    "pronunciation": "ham-ar-tan-o",
+    "english_words": [
+      "sin",
+      "sinned"
+    ],
+    "root": "G1",
+    "related_numbers": [
+      "G266"
+    ],
+    "plain_definition": "To sin; to miss the mark or act contrary to God’s will.",
+    "first_occurrence": "Matthew 18:15",
+    "key_verses": [
+      "John 5:14",
+      "Romans 3:23",
+      "Romans 6:15",
+      "1 John 2:1"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2663",
+    "language": "Greek",
+    "original_word": "μετάνοια",
+    "transliteration": "metanoia",
+    "pronunciation": "met-an-oy-ah",
+    "english_words": [
+      "repentance"
+    ],
+    "root": "G3340",
+    "related_numbers": [
+      "G3340"
+    ],
+    "plain_definition": "Repentance; a changed mind that turns from sin toward God.",
+    "first_occurrence": "Matthew 3:8",
+    "key_verses": [
+      "Mark 1:4",
+      "Luke 24:47",
+      "Acts 20:21",
+      "2 Corinthians 7:10"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4397",
+    "language": "Greek",
+    "original_word": "προφητικός",
+    "transliteration": "prophetikos",
+    "pronunciation": "prof-ay-tik-os",
+    "english_words": [
+      "prophetic",
+      "prophecy"
+    ],
+    "root": "G4396",
+    "related_numbers": [
+      "H5030",
+      "G4396"
+    ],
+    "plain_definition": "Prophetic; belonging to prophecy or the prophetic word.",
+    "first_occurrence": "Romans 16:26",
+    "key_verses": [
+      "Romans 16:26",
+      "2 Peter 1:19"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3952",
+    "language": "Greek",
+    "original_word": "παρουσία",
+    "transliteration": "parousia",
+    "pronunciation": "par-oo-see-ah",
+    "english_words": [
+      "coming",
+      "presence"
+    ],
+    "root": "G3918",
+    "related_numbers": [
+      "G2064"
+    ],
+    "plain_definition": "Presence or coming, often used of the coming of Christ.",
+    "first_occurrence": "Matthew 24:3",
+    "key_verses": [
+      "Matthew 24:27",
+      "1 Corinthians 15:23",
+      "1 Thessalonians 4:15",
+      "2 Peter 3:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
   }
 ]

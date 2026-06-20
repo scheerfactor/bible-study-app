@@ -16,6 +16,11 @@ Genesis 1, John 3:16, Romans 8, Hosea 4-6, and Amos 3/8. The full OpenBible
 dataset remains staged only; the app is not importing ESV quotations, rendered
 website text, or the complete dataset.
 
+Second limited promotion on 2026-06-20: 44 more reviewed OpenBible/TSK
+reference-pair rows were promoted for Daniel 7, Revelation 13, John 1,
+Romans 5/10, Isaiah 53, and Genesis 3:15. These remain reference pairs only
+with attribution; the full OpenBible dataset is still not public.
+
 ## Summary
 
 The original Treasury of Scripture Knowledge tradition is public domain, but not every modern digital TSK dataset is automatically unrestricted. Treat the printed/source work and the downloadable dataset as two separate rights questions.
