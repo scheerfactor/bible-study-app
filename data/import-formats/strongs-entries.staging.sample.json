@@ -1,0 +1,31 @@
+[
+  {
+    "strongs_number": "G4100",
+    "language": "Greek",
+    "original_word": "πιστεύω",
+    "transliteration": "pisteuo",
+    "pronunciation": "pist-yoo'-o",
+    "english_words": [
+      "believe",
+      "believeth",
+      "trust",
+      "commit"
+    ],
+    "root": "G4102",
+    "related_numbers": [
+      "G4102",
+      "G4103"
+    ],
+    "plain_definition": "To believe, trust, or place confidence in.",
+    "first_occurrence": "Matthew 8:13",
+    "key_verses": [
+      "John 3:16",
+      "Acts 16:31",
+      "Romans 10:9"
+    ],
+    "source_title": "Example staging source",
+    "source_url": "https://example.com/replace-with-real-source",
+    "rights_status": "Needs Review",
+    "review_status": "Needs Review"
+  }
+]

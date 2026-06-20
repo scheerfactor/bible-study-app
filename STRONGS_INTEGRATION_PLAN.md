@@ -14,6 +14,13 @@ Father's Business Bible Study should make original-language helps plain, fast, a
 
 ### Public-Domain / Open Options To Review
 
+- STEPBible Data Repository: currently the strongest staging candidate because
+  its repository states CC BY 4.0 terms and permits inclusion in software with
+  credit. Exact files, attribution wording, and transformation notes still need
+  review before public import.
+- CrossWire KJV with Strong's Numbers and Morphology: useful provenance source
+  for KJV-to-Strong mapping, but redistribution and base-text/module terms must
+  be reviewed before public import.
 - Strong's Exhaustive Concordance original public-domain data: likely public domain by age, but exact digital source and edition must be documented.
 - Open Scriptures Hebrew Bible / Greek New Testament alignment projects: useful structure, but license compatibility must be reviewed before commercial use.
 - STEP Bible / Tyndale data: strong quality, but license terms must be reviewed carefully before app import.
@@ -179,3 +186,25 @@ Strong's should help a normal Bible reader, Sunday school teacher, and preacher 
 - Plain-English display is understandable on a phone.
 - No unclear or copyrighted source is public.
 - KJV text remains the center of the screen.
+
+## Current Source Gate
+
+Use `data/study-tools/source-candidates.json` as the source gate for Strong's
+and TSK completion work. Validate it with:
+
+```bash
+npm run validate:study-sources
+```
+
+No full Strong's source may be promoted into public lookup until its manifest
+candidate has:
+
+- `review_status`: `Approved For Public Import`
+- `public_import_allowed`: `true`
+- documented source URL
+- documented license/commercial-use status
+- attribution notes if required
+- transformation notes for any parser or cleanup work
+
+The current `data/strongs/sample-verified-strongs.json` file remains a reviewed
+starter set, not a complete Strong's import.

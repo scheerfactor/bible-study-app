@@ -1,0 +1,76 @@
+{
+  "last_reviewed": "2026-06-20",
+  "policy": "No full Strong's or TSK dataset becomes public until the source URL, license, commercial-use status, attribution requirements, parser quality, and review status are documented. Staged imports remain hidden until promoted.",
+  "source_candidates": [
+    {
+      "id": "tsk-openbible-cross-references",
+      "tool": "tsk",
+      "title": "OpenBible.info Bible Cross References",
+      "source_url": "https://www.openbible.info/labs/cross-references/",
+      "download_url": "https://a.openbible.info/data/cross-references.zip",
+      "rights_status": "Creative Commons Attribution License unless otherwise indicated.",
+      "license_summary": "OpenBible states the data draws primarily from public-domain sources, especially Treasury of Scripture Knowledge, and licenses content under Creative Commons Attribution unless otherwise indicated. Import references only; do not import ESV quotations.",
+      "commercial_use_status": "Needs attribution review before public import.",
+      "attribution_required": true,
+      "review_status": "Approved For Staging",
+      "public_import_allowed": false,
+      "next_action": "Download the zip, parse reference pairs only, preserve OpenBible attribution, and stage a 50-reference sample for review."
+    },
+    {
+      "id": "tsk-metav-crossrefindex",
+      "tool": "tsk",
+      "title": "MetaV CrossRefIndex",
+      "source_url": "https://github.com/theonize/KJV-bible-database-with-metadata-MetaV-",
+      "download_url": "https://github.com/theonize/KJV-bible-database-with-metadata-MetaV-",
+      "rights_status": "Creative Commons Attribution-ShareAlike 3.0 per local rights review.",
+      "license_summary": "The repository describes CrossRefIndex as compiled from public-domain TSK tradition, but its distributed files carry CC BY-SA obligations.",
+      "commercial_use_status": "Share-alike implications need acceptance before public import.",
+      "attribution_required": true,
+      "review_status": "Needs Review",
+      "public_import_allowed": false,
+      "next_action": "Keep as alternate path only; do not promote unless share-alike obligations are explicitly accepted."
+    },
+    {
+      "id": "strongs-stepbible-data",
+      "tool": "strongs",
+      "title": "STEPBible Data Repository",
+      "source_url": "https://github.com/STEPBible/STEPBible-Data",
+      "download_url": "https://github.com/STEPBible/STEPBible-Data",
+      "rights_status": "CC BY 4.0 according to the current repository readme.",
+      "license_summary": "STEPBible says the data may be included in software/publications without requesting permission, with credit to STEP Bible and notes for changes/corrections.",
+      "commercial_use_status": "Promising, but exact files and attribution language must be reviewed before public import.",
+      "attribution_required": true,
+      "review_status": "Approved For Staging",
+      "public_import_allowed": false,
+      "next_action": "Identify exact lexicon and tagged-Bible files needed, stage a small sample, and record transformation notes."
+    },
+    {
+      "id": "strongs-crosswire-kjv",
+      "tool": "strongs",
+      "title": "CrossWire KJV 1769 with Strong's Numbers and Morphology",
+      "source_url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
+      "download_url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
+      "rights_status": "Module notes describe KJV with embedded Strong's numbers and source acknowledgements; base KJV text rights and module permissions require careful review.",
+      "license_summary": "CrossWire documents embedded Strong's numbers with OT data from Bible Foundation and NT data from KJV2003. Do not import until module license and base-text handling are documented.",
+      "commercial_use_status": "Needs Review",
+      "attribution_required": true,
+      "review_status": "Needs Review",
+      "public_import_allowed": false,
+      "next_action": "Use only for source review/provenance until exact redistribution terms are approved."
+    },
+    {
+      "id": "strongs-original-scan",
+      "tool": "strongs",
+      "title": "Original Strong's Exhaustive Concordance Public-Domain Scan",
+      "source_url": "https://archive.org/",
+      "download_url": "https://archive.org/",
+      "rights_status": "Likely public domain by publication age when an original pre-1931 edition is selected.",
+      "license_summary": "Use as evidence and OCR verification source, not as an automatic structured import.",
+      "commercial_use_status": "Needs specific edition review.",
+      "attribution_required": false,
+      "review_status": "Needs Review",
+      "public_import_allowed": false,
+      "next_action": "Select an exact scan, record publication data, spot-check OCR quality, and use it to verify lexicon entries."
+    }
+  ]
+}

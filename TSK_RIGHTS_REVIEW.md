@@ -2,6 +2,14 @@
 
 Last reviewed: 2026-06-02
 
+Update on 2026-06-20: a formal study-tool source manifest now lives at
+`data/study-tools/source-candidates.json`, with validation through
+`npm run validate:study-sources`. OpenBible.info is the preferred next staging
+candidate because it provides a downloadable cross-reference dataset and states
+that the data draws primarily from public-domain sources, especially TSK, with
+Creative Commons Attribution terms. This does not mean it is public-domain-only;
+the app must preserve attribution and import reference links only.
+
 ## Summary
 
 The original Treasury of Scripture Knowledge tradition is public domain, but not every modern digital TSK dataset is automatically unrestricted. Treat the printed/source work and the downloadable dataset as two separate rights questions.
@@ -178,3 +186,24 @@ npm run import:tsk -- data/imports/tsk-phase-1-reviewed-sample.json --dry-run
 ## Current Decision
 
 Do not import full TSK yet. The app should keep the Phase 1 reviewed sample and prepare a public-domain archive source as the preferred completion path. Creative Commons datasets remain alternate paths only if attribution/share-alike obligations are accepted and documented.
+
+## Next Safe Sprint
+
+1. Download the OpenBible cross-reference zip into a local, uncommitted review
+   folder.
+2. Parse only reference pairs and ranking/order metadata; do not import ESV
+   quotations or rendered website text.
+3. Generate a 50-reference staging sample with:
+   - source URL
+   - attribution note
+   - license summary
+   - review status `Needs Review`
+4. Run:
+
+```bash
+npm run prepare:tsk-openbible -- --input=/path/to/cross_references.txt --limit=50
+npm run validate:study-sources
+npm run validate:tsk -- data/imports/<new-tsk-staging-sample>.json
+```
+
+5. Promote only reviewed rows into public app data.
