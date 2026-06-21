@@ -688,6 +688,19 @@ type StrongSearchResult = {
   review_status?: string;
 };
 
+type KJVStrongMapping = {
+  verse_ref: string;
+  token_index: number;
+  kjv_word: string;
+  normalized_kjv_word: string;
+  strongs_number: string;
+  source_title: string;
+  source_url: string;
+  rights_status: string;
+  review_status: string;
+  strong_entry?: StrongSearchResult | null;
+};
+
 type BibleBookMasteryRecord = {
   readChapters: number[];
   listenedChapters: number[];
@@ -23367,12 +23380,65 @@ function BibleReader({
   const [playlistResourceSlug, setPlaylistResourceSlug] = useState("");
   const [studySessions, setStudySessions] = useState<SavedStudySession[]>(() => loadStudySessions());
   const [studyWorkspaceMessage, setStudyWorkspaceMessage] = useState("");
+  const [showStrongNumbers, setShowStrongNumbers] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.localStorage.getItem("fbbs_show_strongs_numbers") === "true";
+  });
+  const [kjvStrongMappings, setKjvStrongMappings] = useState<KJVStrongMapping[]>([]);
+  const [strongMappingStatus, setStrongMappingStatus] = useState("");
   const selectedVerse = verses.find((verse) => verse.ref === selectedRef) ?? verses[0];
   const progressPercent = Math.round(readingProgress.percent);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("fbbs_show_strongs_numbers", showStrongNumbers ? "true" : "false");
+    }
+
+    if (!showStrongNumbers) {
+      return;
+    }
+
+    const controller = new AbortController();
+
+    fetch(`/api/strongs?book=${encodeURIComponent(book)}&chapter=${chapter}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Strong's mapping lookup failed.");
+        return response.json() as Promise<{ mappings?: KJVStrongMapping[] }>;
+      })
+      .then((data) => {
+        const mappings = data.mappings ?? [];
+        setKjvStrongMappings(mappings);
+        setStrongMappingStatus(mappings.length ? `${mappings.length} mapped words in this chapter.` : "No reviewed Strong's word mapping for this chapter yet.");
+      })
+      .catch((error: unknown) => {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+        setKjvStrongMappings([]);
+        setStrongMappingStatus("Strong's mapping is not available for this chapter yet.");
+      });
+
+    return () => controller.abort();
+  }, [book, chapter, showStrongNumbers]);
   const explorer = useMemo(
     () => buildWordExplorer(explorerWord, book, chapter, allVerses),
     [allVerses, book, chapter, explorerWord],
   );
+  const strongMappingsByVerse = useMemo(() => {
+    const next = new Map<string, Map<number, KJVStrongMapping>>();
+    for (const mapping of kjvStrongMappings) {
+      const verseMap = next.get(mapping.verse_ref) ?? new Map<number, KJVStrongMapping>();
+      verseMap.set(mapping.token_index, mapping);
+      next.set(mapping.verse_ref, verseMap);
+    }
+    return next;
+  }, [kjvStrongMappings]);
+  const currentChapterStrongMappingCount = useMemo(
+    () => kjvStrongMappings.filter((mapping) => mapping.verse_ref.toLowerCase().startsWith(`${book.toLowerCase()} ${chapter}:`)).length,
+    [book, chapter, kjvStrongMappings],
+  );
+  const strongMappingDisplayStatus = currentChapterStrongMappingCount
+    ? `${currentChapterStrongMappingCount} mapped words in this chapter.`
+    : strongMappingStatus.startsWith("No reviewed") || strongMappingStatus.startsWith("Strong's mapping")
+      ? strongMappingStatus
+      : "Loading Strong's numbers...";
   const commentaryAuthors = useMemo(
     () => Array.from(new Set(chapterCommentaryEntries.map((entry) => entry.author))).sort(),
     [chapterCommentaryEntries],
@@ -24293,13 +24359,29 @@ function BibleReader({
       </details>
 
       <article className="mx-auto w-full max-w-5xl rounded-3xl border border-[var(--line)] bg-[var(--scripture)] px-4 py-5 shadow-sm md:px-10 md:py-8">
-        <div className="mb-5 flex items-baseline justify-between gap-4 border-b border-stone-300/70 pb-4">
+        <div className="mb-5 flex flex-col gap-4 border-b border-stone-300/70 pb-4 md:flex-row md:items-end md:justify-between">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-[var(--ink)]">{book} {chapter}</h2>
             <p className="mt-1 text-sm text-[var(--muted)]">King James Version</p>
           </div>
-          <p className="text-sm font-semibold text-[var(--green)]">{verses.length} verses</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">{verses.length} verses</span>
+            <label className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm font-semibold text-[var(--green)]">
+              <input
+                checked={showStrongNumbers}
+                className="accent-[var(--green)]"
+                onChange={(event) => setShowStrongNumbers(event.target.checked)}
+                type="checkbox"
+              />
+              Show Strong&apos;s numbers
+            </label>
+          </div>
         </div>
+        {showStrongNumbers && (
+          <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
+            {strongMappingDisplayStatus} Reviewed sample coverage is live now; full KJV word mapping will appear here as rights-cleared data is imported.
+          </p>
+        )}
 
         <div className="space-y-2">
           {verses.map((verse) => {
@@ -24308,6 +24390,8 @@ function BibleReader({
             const bookmarked = bookmarksByRef.has(verse.ref);
             const selected = selectedRef === verse.ref;
             const flashed = flashRef === verse.ref;
+            const strongMappingsForVerse = strongMappingsByVerse.get(verse.ref);
+            let wordTokenIndex = 0;
             return (
               <div
                 key={verse.ref}
@@ -24324,7 +24408,10 @@ function BibleReader({
                 <p className="font-serif text-[1.28rem] leading-[2.15rem] text-[var(--scripture-ink)] md:text-[1.45rem] md:leading-[2.45rem]">
                   <sup className="mr-2 font-sans text-xs font-bold text-[var(--green)]">{verse.verse}</sup>
                   {verse.text.split(/(\s+)/).map((part, index) => {
+                    if (!part) return null;
                     if (/^\s+$/.test(part)) return part;
+                    wordTokenIndex += 1;
+                    const strongMapping = showStrongNumbers ? strongMappingsForVerse?.get(wordTokenIndex) : undefined;
                     const matchingWordSet = enabledWordHighlightSets.find((set) => {
                       if (!wordHighlightAppliesToVerse(set, verse, book, chapter)) return false;
                       const normalizedPart = normalizeLookupWord(part);
@@ -24336,7 +24423,7 @@ function BibleReader({
                         className={`rounded px-0.5 text-left font-serif transition hover:bg-[var(--gold-soft)] hover:text-[var(--ink)] ${
                           matchingWordSet ? wordHighlightClass(matchingWordSet.color) : ""
                         }`}
-                        title={matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
+                        title={strongMapping?.strong_entry ? `${strongMapping.strongs_number} · ${strongMapping.strong_entry.plain_definition}` : matchingWordSet ? `${matchingWordSet.word} word set · ${wordHighlightScopeLabel(matchingWordSet.scope)}` : undefined}
                         onClick={(event) => {
                           event.stopPropagation();
                           onWordClick(part, verse.ref);
@@ -24344,6 +24431,11 @@ function BibleReader({
                         type="button"
                       >
                         {part}
+                        {strongMapping && (
+                          <span className="ml-0.5 align-super font-sans text-[0.58em] font-bold leading-none text-[var(--green)]">
+                            {strongMapping.strongs_number}
+                          </span>
+                        )}
                       </button>
                     );
                   })}

@@ -59,16 +59,21 @@ async function loadMappings() {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const verse = (searchParams.get("verse") ?? "").trim();
+  const book = (searchParams.get("book") ?? "").trim();
+  const chapter = Number(searchParams.get("chapter") ?? 0);
   const query = (searchParams.get("query") ?? searchParams.get("q") ?? "").trim().toLowerCase();
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") ?? 20)));
 
-  if (verse) {
+  if (verse || (book && chapter > 0)) {
     const [entries, mappings] = await Promise.all([loadEntries(), loadMappings()]);
     const entriesByNumber = new Map(entries.map((entry) => [entry.strongs_number, entry]));
-    const verseMappings = mappings
+    const matchingMappings = mappings
       .filter((mapping) => mapping.review_status === "Verified")
-      .filter((mapping) => mapping.verse_ref.toLowerCase() === verse.toLowerCase())
-      .sort((a, b) => a.token_index - b.token_index)
+      .filter((mapping) => {
+        if (verse) return mapping.verse_ref.toLowerCase() === verse.toLowerCase();
+        return mapping.verse_ref.toLowerCase().startsWith(`${book.toLowerCase()} ${chapter}:`);
+      })
+      .sort((a, b) => a.verse_ref.localeCompare(b.verse_ref, undefined, { numeric: true }) || a.token_index - b.token_index)
       .map((mapping) => ({
         ...mapping,
         strong_entry: entriesByNumber.get(mapping.strongs_number) ?? null,
@@ -76,7 +81,7 @@ export async function GET(request: Request) {
 
     return Response.json({
       entries: [],
-      mappings: verseMappings,
+      mappings: matchingMappings,
       source_note: "Verse-level KJV Strong's mappings are reviewed samples until a full rights-cleared source is imported.",
     });
   }
