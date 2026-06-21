@@ -4,7 +4,10 @@ import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 
 const fileArg = process.argv.find((arg) => arg.startsWith("--file="));
-const filePath = path.resolve(process.cwd(), fileArg?.split("=")[1] ?? "data/strongs/kjv-strongs-mapping.sample-reviewed.json");
+const dirArg = process.argv.find((arg) => arg.startsWith("--dir="));
+const defaultDir = "data/strongs/mapping-batches";
+const targetFilePath = fileArg ? path.resolve(process.cwd(), fileArg.split("=")[1]) : null;
+const targetDirPath = path.resolve(process.cwd(), dirArg?.split("=")[1] ?? defaultDir);
 
 const required = [
   "verse_ref",
@@ -30,17 +33,20 @@ function verseTokens(verseText) {
   return String(verseText ?? "").match(/[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?/g) ?? [];
 }
 
-function fail(message) {
-  console.error(message);
-  process.exitCode = 1;
+async function mappingFiles() {
+  if (targetFilePath) return [targetFilePath];
+  const entries = await fs.readdir(targetDirPath, { withFileTypes: true });
+  return entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => path.join(targetDirPath, entry.name))
+    .sort();
 }
 
-const [raw, strongRaw] = await Promise.all([
-  fs.readFile(filePath, "utf8"),
+const [files, strongRaw] = await Promise.all([
+  mappingFiles(),
   fs.readFile(path.resolve(process.cwd(), "data/strongs/sample-verified-strongs.json"), "utf8"),
 ]);
 
-const mappings = JSON.parse(raw);
 const strongEntries = JSON.parse(strongRaw);
 const verifiedStrongNumbers = new Set(
   strongEntries
@@ -48,16 +54,24 @@ const verifiedStrongNumbers = new Set(
     .map((entry) => entry.strongs_number),
 );
 
-if (!Array.isArray(mappings)) {
-  fail("KJV Strong's mapping data must be a JSON array.");
-} else {
-  const seen = new Set();
-  const errors = [];
-  const warnings = [];
-  const versesCovered = new Set();
+const seen = new Set();
+const errors = [];
+const warnings = [];
+const versesCovered = new Set();
+let rowCount = 0;
+
+for (const file of files) {
+  const relativeFile = path.relative(process.cwd(), file);
+  const raw = await fs.readFile(file, "utf8");
+  const mappings = JSON.parse(raw);
+  if (!Array.isArray(mappings)) {
+    errors.push(`${relativeFile} must contain a JSON array.`);
+    continue;
+  }
 
   mappings.forEach((mapping, index) => {
-    const row = index + 1;
+    rowCount += 1;
+    const row = `${relativeFile} row ${index + 1}`;
     for (const field of required) {
       if (mapping[field] === undefined || mapping[field] === null || mapping[field] === "") {
         errors.push(`Row ${row} is missing ${field}.`);
@@ -103,17 +117,18 @@ if (!Array.isArray(mappings)) {
     if (seen.has(key)) errors.push(`Duplicate mapping row: ${key}`);
     seen.add(key);
   });
-
-  for (const warning of warnings) console.warn(`Warning: ${warning}`);
-  for (const error of errors) console.error(`Error: ${error}`);
-
-  console.log("KJV Strong's mapping validation complete");
-  console.table({
-    rows: mappings.length,
-    versesCovered: versesCovered.size,
-    errors: errors.length,
-    warnings: warnings.length,
-  });
-
-  if (errors.length) process.exitCode = 1;
 }
+
+for (const warning of warnings) console.warn(`Warning: ${warning}`);
+for (const error of errors) console.error(`Error: ${error}`);
+
+console.log("KJV Strong's mapping validation complete");
+console.table({
+  files: files.length,
+  rows: rowCount,
+  versesCovered: versesCovered.size,
+  errors: errors.length,
+  warnings: warnings.length,
+});
+
+if (errors.length) process.exitCode = 1;

@@ -125,15 +125,21 @@ The fastest safe path is not manual entry. It is a repeatable staging pipeline:
 
 1. Select one rights-cleared KJV-to-Strong mapping source.
 2. Store the raw file outside the public app bundle first.
-3. Convert it into `data/strongs/kjv-strongs-mapping.<source>.staging.json`.
+3. Convert it into reviewed batch files under `data/strongs/mapping-batches/`.
 4. Validate every row with:
 
 ```bash
-npm run validate:strongs-mapping -- --file=data/strongs/kjv-strongs-mapping.<source>.staging.json
+npm run validate:strongs-mapping
 ```
 
-5. Promote only reviewed batches into public lookup data.
-6. Keep full datasets in Supabase/R2 or a server-side index when the files get
+5. Rebuild the fast public lookup index with:
+
+```bash
+npm run build:strongs-mapping-index
+```
+
+6. Promote only reviewed batches into public lookup data.
+7. Keep full datasets in Supabase/R2 or a server-side index when the files get
    too large for Vercel.
 
 The mapping format is one row per KJV word/token:
@@ -152,6 +158,10 @@ The mapping format is one row per KJV word/token:
 
 This gives us the same kind of experience users recognize from e-Sword's KJV+
 view, but with our own documented, rights-safe data pipeline.
+
+The generated production file is
+`data/strongs/kjv-strongs-mappings.reviewed.json`. It should be rebuilt from
+the reviewed batch files, not hand edited.
 
 ## e-Sword-Style Display
 

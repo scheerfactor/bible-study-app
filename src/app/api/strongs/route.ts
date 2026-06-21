@@ -46,7 +46,7 @@ async function loadEntries() {
 
 async function loadMappings() {
   if (cachedMappings) return cachedMappings;
-  const filePath = path.join(process.cwd(), "data/strongs/kjv-strongs-mapping.sample-reviewed.json");
+  const filePath = path.join(process.cwd(), "data/strongs/kjv-strongs-mappings.reviewed.json");
   try {
     const raw = await fs.readFile(filePath, "utf8");
     cachedMappings = JSON.parse(raw) as StrongMapping[];

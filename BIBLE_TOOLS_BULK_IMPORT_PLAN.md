@@ -31,16 +31,23 @@ Use a rights-cleared KJV-to-Strong mapping source, not e-Sword module files.
 
 1. Choose a source that allows redistribution/commercial app use.
 2. Record it in `data/study-tools/source-candidates.json`.
-3. Convert the source into one row per KJV word/token.
+3. Convert the source into reviewed batch files under
+   `data/strongs/mapping-batches/`.
 4. Validate against the local KJV verse text and verified Strong's lexicon.
-5. Promote only reviewed rows.
-6. Store full indexes outside the browser bundle when the dataset gets large.
+5. Build the optimized reviewed lookup index.
+6. Promote only reviewed rows.
+7. Store full indexes outside the browser bundle when the dataset gets large.
 
-Command now available:
+Commands now available:
 
 ```bash
-npm run validate:strongs-mapping -- --file=data/strongs/kjv-strongs-mapping.sample-reviewed.json
+npm run validate:strongs-mapping
+npm run build:strongs-mapping-index
 ```
+
+The app reads `data/strongs/kjv-strongs-mappings.reviewed.json` for fast
+chapter lookup. Do not edit that index by hand; rebuild it from the reviewed
+batch folder.
 
 ## e-Sword KJV+ Note
 
