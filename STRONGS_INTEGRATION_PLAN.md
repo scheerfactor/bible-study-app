@@ -163,6 +163,29 @@ The generated production file is
 `data/strongs/kjv-strongs-mappings.reviewed.json`. It should be rebuilt from
 the reviewed batch files, not hand edited.
 
+### CrossWire OSIS Staging Import
+
+The CrossWire KJV OSIS source is the best technical candidate for a fast
+KJV-to-Strong mapping import, but it should remain a staging source until the
+project accepts and documents the module obligations. Use:
+
+```bash
+npm run import:strongs-crosswire-osis -- --input=/path/to/kjv.xml --refs="John 3" --output=data/strongs/mapping-staging/john-3.needs-review.json
+```
+
+Generated rows stay hidden in `data/strongs/mapping-staging/`. After manual
+review, copy only approved rows into `data/strongs/mapping-batches/`, set
+`review_status` to `Verified`, rebuild the index, and validate.
+
+The importer currently handles:
+
+- OSIS verse IDs such as `John.3.16`
+- `<w lemma="strong:G####">word</w>` tags
+- multi-word KJV phrases
+- article + noun tags where a one-word English phrase should use the noun
+  Strong's number
+- alignment warnings when generated token positions do not match the KJV text
+
 ## e-Sword-Style Display
 
 e-Sword is a useful model for the user experience: a reader can see the KJV word

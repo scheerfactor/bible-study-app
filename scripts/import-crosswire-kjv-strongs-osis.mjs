@@ -1,0 +1,240 @@
+#!/usr/bin/env node
+import fs from "node:fs/promises";
+import path from "node:path";
+import verses1769 from "es-kjv/json/verses-1769.js";
+
+const args = new Map(
+  process.argv
+    .slice(2)
+    .filter((arg) => arg.startsWith("--"))
+    .map((arg) => {
+      const [key, ...valueParts] = arg.slice(2).split("=");
+      return [key, valueParts.join("=") || "true"];
+    }),
+);
+
+const inputPath = args.get("input");
+const refsArg = args.get("refs") ?? "John 3";
+const outputPath = args.get("output") ?? "data/strongs/mapping-staging/kjv-strongs-crosswire.staging-needs-review.json";
+const reviewStatus = args.get("review-status") ?? "Needs Review";
+
+const sourceMetadata = {
+  source_id: "strongs-crosswire-kjv",
+  source_title: "CrossWire KJV 1769 with Strong's Numbers and Morphology",
+  source_url: "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
+  rights_status: "CrossWire KJV module; GPL/general public license notes require project approval before public promotion.",
+  rights_basis:
+    "Staging import from CrossWire OSIS source. Keep hidden until module obligations, attribution, and KJV base-text handling are reviewed.",
+};
+
+const osisBookToKjv = new Map([
+  ["Gen", "Genesis"],
+  ["Exod", "Exodus"],
+  ["Lev", "Leviticus"],
+  ["Num", "Numbers"],
+  ["Deut", "Deuteronomy"],
+  ["Josh", "Joshua"],
+  ["Judg", "Judges"],
+  ["Ruth", "Ruth"],
+  ["1Sam", "1 Samuel"],
+  ["2Sam", "2 Samuel"],
+  ["1Kgs", "1 Kings"],
+  ["2Kgs", "2 Kings"],
+  ["1Chr", "1 Chronicles"],
+  ["2Chr", "2 Chronicles"],
+  ["Ezra", "Ezra"],
+  ["Neh", "Nehemiah"],
+  ["Esth", "Esther"],
+  ["Job", "Job"],
+  ["Ps", "Psalms"],
+  ["Prov", "Proverbs"],
+  ["Eccl", "Ecclesiastes"],
+  ["Song", "Song of Solomon"],
+  ["Isa", "Isaiah"],
+  ["Jer", "Jeremiah"],
+  ["Lam", "Lamentations"],
+  ["Ezek", "Ezekiel"],
+  ["Dan", "Daniel"],
+  ["Hos", "Hosea"],
+  ["Joel", "Joel"],
+  ["Amos", "Amos"],
+  ["Obad", "Obadiah"],
+  ["Jonah", "Jonah"],
+  ["Mic", "Micah"],
+  ["Nah", "Nahum"],
+  ["Hab", "Habakkuk"],
+  ["Zeph", "Zephaniah"],
+  ["Hag", "Haggai"],
+  ["Zech", "Zechariah"],
+  ["Mal", "Malachi"],
+  ["Matt", "Matthew"],
+  ["Mark", "Mark"],
+  ["Luke", "Luke"],
+  ["John", "John"],
+  ["Acts", "Acts"],
+  ["Rom", "Romans"],
+  ["1Cor", "1 Corinthians"],
+  ["2Cor", "2 Corinthians"],
+  ["Gal", "Galatians"],
+  ["Eph", "Ephesians"],
+  ["Phil", "Philippians"],
+  ["Col", "Colossians"],
+  ["1Thess", "1 Thessalonians"],
+  ["2Thess", "2 Thessalonians"],
+  ["1Tim", "1 Timothy"],
+  ["2Tim", "2 Timothy"],
+  ["Titus", "Titus"],
+  ["Phlm", "Philemon"],
+  ["Heb", "Hebrews"],
+  ["Jas", "James"],
+  ["1Pet", "1 Peter"],
+  ["2Pet", "2 Peter"],
+  ["1John", "1 John"],
+  ["2John", "2 John"],
+  ["3John", "3 John"],
+  ["Jude", "Jude"],
+  ["Rev", "Revelation"],
+]);
+
+function normalizeWord(value) {
+  return String(value ?? "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+function verseTokens(verseText) {
+  return String(verseText ?? "").match(/[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?/g) ?? [];
+}
+
+function stripTags(value) {
+  return String(value ?? "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseRefs(value) {
+  return String(value)
+    .split(",")
+    .map((ref) => ref.trim())
+    .filter(Boolean);
+}
+
+function osisIdToVerseRef(osisId) {
+  const parts = String(osisId).split(".");
+  if (parts.length !== 3) return null;
+  const [osisBook, chapter, verse] = parts;
+  const book = osisBookToKjv.get(osisBook);
+  if (!book) return null;
+  return `${book} ${Number(chapter)}:${Number(verse)}`;
+}
+
+function refMatches(verseRef, targets) {
+  return targets.some((target) => verseRef === target || verseRef.startsWith(`${target}:`));
+}
+
+function strongNumbersFromLemma(lemma) {
+  const matches = String(lemma ?? "").match(/strong:([GH][0-9]+)/g) ?? [];
+  return matches.map((match) => match.replace("strong:", ""));
+}
+
+function rowsFromWordTag({ verseRef, tokenIndex, tag, body }) {
+  const lemma = tag.match(/\slemma="([^"]+)"/)?.[1] ?? "";
+  const strongs = strongNumbersFromLemma(lemma);
+  if (!strongs.length) return [];
+
+  const text = stripTags(body);
+  const tokens = verseTokens(text);
+  if (!tokens.length) return [];
+
+  return tokens.map((token, phraseIndex) => {
+    const strongsNumber =
+      tokens.length === 1
+        ? strongs[strongs.length - 1]
+        : strongs.length === tokens.length
+          ? strongs[phraseIndex]
+          : strongs.length === 1
+            ? strongs[0]
+            : strongs[Math.min(phraseIndex, strongs.length - 1)];
+
+    return {
+      verse_ref: verseRef,
+      token_index: tokenIndex + phraseIndex,
+      kjv_word: token,
+      normalized_kjv_word: normalizeWord(token),
+      strongs_number: strongsNumber,
+      ...sourceMetadata,
+      review_status: reviewStatus,
+    };
+  });
+}
+
+function extractRows(xml, targetRefs) {
+  const rows = [];
+  const versePattern = /<verse\s+osisID="([^"]+)"\s+sID="[^"]+"\s*\/>([\s\S]*?)<verse\s+eID="\1"\s*\/>/g;
+  let verseMatch;
+
+  while ((verseMatch = versePattern.exec(xml))) {
+    const verseRef = osisIdToVerseRef(verseMatch[1]);
+    if (!verseRef || !refMatches(verseRef, targetRefs)) continue;
+
+    const kjvTokens = verseTokens(verses1769[verseRef] ?? "");
+    if (!kjvTokens.length) continue;
+
+    const verseBody = verseMatch[2].replace(/<w\b[^>]*\/>/g, "");
+    const wordPattern = /<w\b([^>]*)>([\s\S]*?)<\/w>/g;
+    let wordMatch;
+    let tokenIndex = 1;
+
+    while ((wordMatch = wordPattern.exec(verseBody))) {
+      const wordRows = rowsFromWordTag({
+        verseRef,
+        tokenIndex,
+        tag: wordMatch[1],
+        body: wordMatch[2],
+      });
+
+      for (const row of wordRows) {
+        const expectedToken = kjvTokens[row.token_index - 1];
+        if (!expectedToken || normalizeWord(expectedToken) !== row.normalized_kjv_word) {
+          row.review_status = "Needs Manual Alignment";
+          row.notes = `Token alignment needs review. Expected ${expectedToken ?? "no token"} at KJV token ${row.token_index}.`;
+        }
+        rows.push(row);
+      }
+
+      tokenIndex += Math.max(wordRows.length, verseTokens(stripTags(wordMatch[2])).length);
+    }
+  }
+
+  return rows;
+}
+
+if (!inputPath) {
+  console.error("Missing --input=/path/to/kjv.xml");
+  process.exit(1);
+}
+
+const resolvedInput = path.resolve(process.cwd(), inputPath);
+const resolvedOutput = path.resolve(process.cwd(), outputPath);
+const targetRefs = parseRefs(refsArg);
+const xml = await fs.readFile(resolvedInput, "utf8");
+const rows = extractRows(xml, targetRefs);
+
+await fs.mkdir(path.dirname(resolvedOutput), { recursive: true });
+await fs.writeFile(resolvedOutput, `${JSON.stringify(rows, null, 2)}\n`);
+
+console.log("CrossWire KJV Strong's OSIS staging import complete");
+console.table({
+  input: path.relative(process.cwd(), resolvedInput),
+  output: path.relative(process.cwd(), resolvedOutput),
+  refs: targetRefs.join(", "),
+  rows: rows.length,
+  reviewStatus,
+  publicImport: "No - staging only",
+});

@@ -48,6 +48,16 @@ import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
 import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-reviewed-sample.json";
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
+import tskHoseaSundaySchoolSample from "../../data/imports/tsk-hosea-4-9-reviewed-sunday-school.json";
+import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
+import hoseaBarnesCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
+import hoseaBiblicalIllustratorCommentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-commentary.json";
+import hoseaMorganCommentary from "../../data/imports/g-campbell-morgan-hosea-commentary.json";
+import hoseaIronsideCommentary from "../../data/imports/h-a-ironside-hosea-commentary.json";
+import hoseaJfbCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
+import hoseaMatthewHenryCommentary from "../../data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json";
+import hoseaMatthewPooleCommentary from "../../data/imports/matthew-poole-reviewed-weak-books-commentary.json";
+import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -1556,6 +1566,11 @@ type AmosChapterStudy = {
   keyThemes?: string[];
   keyVerses: string[];
   repeatedFocus: string[];
+  wordStudyStarters?: Array<{
+    word: string;
+    strongs?: string;
+    note: string;
+  }>;
   peopleMentioned: string[];
   placesAndNations: string[];
   mainSinsJudged: string[];
@@ -5306,6 +5321,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Knowledge of God", "Covenant controversy", "Idolatry", "Leadership failure"],
     keyVerses: ["Hosea 4:1", "Hosea 4:6", "Hosea 4:9", "Hosea 4:17"],
     repeatedFocus: ["knowledge", "whoredom", "controversy", "Ephraim"],
+    wordStudyStarters: [
+      { word: "knowledge", strongs: "H1847", note: "Knowing God, not merely gathering religious information." },
+      { word: "whoredom", strongs: "H2184", note: "Spiritual unfaithfulness and idolatry pictured with shocking force." },
+      { word: "controversy", strongs: "H7379", note: "A covenant lawsuit: the LORD has a case against His people." },
+    ],
     peopleMentioned: ["Hosea", "Israel", "Ephraim", "Priests", "Judah"],
     placesAndNations: ["Israel", "Ephraim", "Judah", "Gilgal", "Bethaven"],
     mainSinsJudged: ["Rejecting the knowledge of God", "Swearing, lying, killing, stealing, and adultery", "Priestly corruption", "Idolatry and spiritual adultery"],
@@ -5336,6 +5356,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Pride", "False refuge", "Return", "Leadership accountability"],
     keyVerses: ["Hosea 5:4", "Hosea 5:5", "Hosea 5:13", "Hosea 5:15"],
     repeatedFocus: ["Ephraim", "Judah", "pride", "return"],
+    wordStudyStarters: [
+      { word: "pride", strongs: "H1347", note: "Lifted-up self-confidence that testifies against Israel." },
+      { word: "return", strongs: "H7725", note: "Turning back; Hosea presses for more than outward adjustment." },
+      { word: "heal", strongs: "H7495", note: "Assyria cannot heal what only the LORD can address." },
+    ],
     peopleMentioned: ["Priests", "House of Israel", "King's house", "Ephraim", "Judah"],
     placesAndNations: ["Mizpah", "Tabor", "Ephraim", "Judah", "Assyria"],
     mainSinsJudged: ["Pride", "Treachery against the LORD", "False worship", "Trusting Assyria for healing"],
@@ -5366,6 +5391,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Return", "Mercy", "Knowledge of God", "Empty religion"],
     keyVerses: ["Hosea 6:1", "Hosea 6:3", "Hosea 6:4", "Hosea 6:6"],
     repeatedFocus: ["return", "know", "mercy", "sacrifice"],
+    wordStudyStarters: [
+      { word: "mercy", strongs: "H2617", note: "Covenant kindness and mercy; the word Christ applies in Matthew." },
+      { word: "know", strongs: "H3045", note: "Relational knowledge of the LORD that changes obedience." },
+      { word: "sacrifice", strongs: "H2077", note: "Ceremony cannot replace mercy and the knowledge of God." },
+    ],
     peopleMentioned: ["Ephraim", "Judah", "Priests", "Israel"],
     placesAndNations: ["Ephraim", "Judah", "Gilead", "Shechem"],
     mainSinsJudged: ["Shallow repentance", "Goodness that quickly passes", "Violence", "Empty sacrifice without mercy"],
@@ -5380,7 +5410,7 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     recommendedBooks: ["Nave's Topical Bible", "Webster's 1828 Dictionary", "The Bible Book by Book"],
     crossReferences: [
       { sourceRef: "Hosea 6:1", targetRef: "Deuteronomy 32:39", label: "He wounds and heals" },
-      { sourceRef: "Hosea 6:3", targetRef: "Psalm 63:1", label: "Following on to know the LORD" },
+      { sourceRef: "Hosea 6:3", targetRef: "Psalms 63:1", label: "Following on to know the LORD" },
       { sourceRef: "Hosea 6:6", targetRef: "Matthew 9:13", label: "Mercy, not sacrifice" },
       { sourceRef: "Hosea 6:6", targetRef: "Matthew 12:7", label: "Christ applies Hosea" },
     ],
@@ -5396,6 +5426,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Mixture", "Deception", "False confidence", "Half-hearted religion"],
     keyVerses: ["Hosea 7:8", "Hosea 7:9", "Hosea 7:11", "Hosea 7:14"],
     repeatedFocus: ["Ephraim", "heart", "Egypt", "Assyria"],
+    wordStudyStarters: [
+      { word: "heart", strongs: "H3820", note: "Their cries did not rise to God from the heart." },
+      { word: "mixed", strongs: "H1101", note: "Ephraim mixed himself among the people and lost distinction." },
+      { word: "dove", strongs: "H3123", note: "A silly dove: unstable, vulnerable, and without discernment." },
+    ],
     peopleMentioned: ["Ephraim", "Israel", "Princes", "Kings"],
     placesAndNations: ["Ephraim", "Egypt", "Assyria"],
     mainSinsJudged: ["Secret wickedness", "Political flattery and instability", "Mixture with the nations", "Crying on beds but not unto God with the heart"],
@@ -5409,7 +5444,7 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     recommendedCommentaries: ["Matthew Henry", "JFB", "Barnes", "Clarke", "Pulpit Commentary", "Biblical Illustrator"],
     recommendedBooks: ["Smith's Bible Dictionary", "Bible Manners and Customs", "How to Master the English Bible"],
     crossReferences: [
-      { sourceRef: "Hosea 7:8", targetRef: "Psalm 106:35", label: "Mixed among the heathen" },
+      { sourceRef: "Hosea 7:8", targetRef: "Psalms 106:35", label: "Mixed among the heathen" },
       { sourceRef: "Hosea 7:9", targetRef: "Isaiah 42:25", label: "Not laying it to heart" },
       { sourceRef: "Hosea 7:11", targetRef: "Matthew 10:16", label: "Simplicity and wisdom contrasted" },
       { sourceRef: "Hosea 7:14", targetRef: "Isaiah 29:13", label: "Near with mouth, heart far away" },
@@ -5426,6 +5461,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Covenant", "Idolatry", "Harvest", "Law neglected"],
     keyVerses: ["Hosea 8:1", "Hosea 8:7", "Hosea 8:12", "Hosea 8:14"],
     repeatedFocus: ["Israel", "calf", "sown", "law"],
+    wordStudyStarters: [
+      { word: "covenant", strongs: "H1285", note: "The relationship Israel transgressed." },
+      { word: "sown", strongs: "H2232", note: "The seed they chose becomes a whirlwind harvest." },
+      { word: "law", strongs: "H8451", note: "God's instruction had become a strange thing to them." },
+    ],
     peopleMentioned: ["Israel", "Ephraim", "The LORD"],
     placesAndNations: ["Samaria", "Israel", "Egypt", "Assyria", "Judah"],
     mainSinsJudged: ["Transgressing the covenant", "Setting up kings without the LORD", "Idolatry", "Treating God's law as a strange thing"],
@@ -5456,6 +5496,11 @@ const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
     keyThemes: ["Recompence", "Exile", "Corruption", "Remembered sin"],
     keyVerses: ["Hosea 9:1", "Hosea 9:7", "Hosea 9:10", "Hosea 9:17"],
     repeatedFocus: ["Ephraim", "days", "found", "cast"],
+    wordStudyStarters: [
+      { word: "visitation", strongs: "H6486", note: "The day when God calls sin to account." },
+      { word: "recompence", strongs: "H7966", note: "Repayment or consequence for persistent rebellion." },
+      { word: "hearken", strongs: "H8085", note: "Refusing to hear the LORD leads to wandering." },
+    ],
     peopleMentioned: ["Israel", "Ephraim", "The prophet", "My God"],
     placesAndNations: ["Egypt", "Assyria", "Gibeah", "Baalpeor", "Gilgal"],
     mainSinsJudged: ["Rejoicing like the heathen", "Rejecting the prophet", "Baal-peor corruption", "Persistent disobedience"],
@@ -8510,23 +8555,6 @@ const amosTeachingCrossReferences: CrossReference[] = AMOS_CHAPTER_STUDIES.flatM
   })),
 );
 
-const hoseaTeachingCrossReferences: CrossReference[] = HOSEA_CHAPTER_STUDIES.flatMap((chapterStudy) =>
-  chapterStudy.crossReferences.map((reference) => ({
-    id: `hosea-teaching-${reference.sourceRef}-${reference.targetRef}`
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, ""),
-    verse_ref: reference.sourceRef,
-    target_ref: reference.targetRef,
-    label: reference.label,
-    source: "Reviewed Hosea teaching sample",
-    source_title: "Father's Business reviewed Hosea 4-9 teaching prep",
-    source_url: "",
-    public_domain_status: "Reference metadata only",
-    rights_basis: "Verse references and labels are reviewed metadata; no commentary text imported.",
-  })),
-);
-
 const localCrossReferences: CrossReference[] = [
   ...(tskPhase1Sample as TskCrossReferenceImportRow[]).map((row) => ({
     id: referenceImportId(row),
@@ -8561,11 +8589,36 @@ const localCrossReferences: CrossReference[] = [
     public_domain_status: row.public_domain_status,
     rights_basis: row.rights_basis,
   })),
+  ...(tskHoseaSundaySchoolSample as TskCrossReferenceImportRow[]).map((row) => ({
+    id: referenceImportId(row),
+    verse_ref: row.verse_ref,
+    target_ref: row.target_ref,
+    label: row.label ?? "",
+    source: row.source,
+    source_title: row.source_title,
+    source_url: row.source_url,
+    public_domain_status: row.public_domain_status,
+    rights_basis: row.rights_basis,
+  })),
   ...amosTeachingCrossReferences,
-  ...hoseaTeachingCrossReferences,
 ];
 
-const localCommentaryEntries: CommentaryEntry[] = [];
+const localCommentaryEntries: CommentaryEntry[] = [
+  ...(hoseaAdamClarkeCommentary as CommentaryEntry[]),
+  ...(hoseaBarnesCommentary as CommentaryEntry[]),
+  ...(hoseaBiblicalIllustratorCommentary as CommentaryEntry[]),
+  ...(hoseaMorganCommentary as CommentaryEntry[]),
+  ...(hoseaIronsideCommentary as CommentaryEntry[]),
+  ...(hoseaJfbCommentary as CommentaryEntry[]),
+  ...(hoseaMatthewHenryCommentary as CommentaryEntry[]),
+  ...(hoseaMatthewPooleCommentary as CommentaryEntry[]),
+  ...(hoseaPulpitCommentary as CommentaryEntry[]),
+]
+  .filter((entry) => entry.book === "Hosea")
+  .map((entry) => ({
+    ...entry,
+    source_title: entry.source_title ?? entry.resource_title,
+  }));
 
 const deferredCommentaryImportFiles = [
   "matthew-henry-phase-1-commentary.json",
@@ -24886,7 +24939,8 @@ function buildHoseaTeachingNotesMarkdown({
 
   HOSEA_CHAPTER_STUDIES.forEach((chapterStudy) => {
     const chapterVerses = Array.from(versesByRef.values()).filter((verse) => verse.book === "Hosea" && verse.chapter === chapterStudy.chapter);
-    const chapterAnalysis = chapterAnalysisForVerses(chapterVerses, hoseaTeachingCrossReferences);
+    const chapterCrossReferences = localCrossReferences.filter((reference) => reference.verse_ref.startsWith(`Hosea ${chapterStudy.chapter}:`));
+    const chapterAnalysis = chapterAnalysisForVerses(chapterVerses, chapterCrossReferences);
     const notes = teacherNotesByChapter[teacherNotesChapterKey("Hosea", chapterStudy.chapter)] ?? EMPTY_TEACHER_NOTES;
     const chapterCommentaryEntries = commentaryEntries.filter((entry) => entry.chapter === chapterStudy.chapter);
 
@@ -24911,6 +24965,9 @@ function buildHoseaTeachingNotesMarkdown({
         ...chapterStudy.repeatedFocus.map((phrase) => `- Reviewed focus: ${phrase}`),
         ...chapterAnalysis.repeatedWords.slice(0, 8).map((item) => `- Repeated word: ${item.word} (${item.count})`),
       ]),
+      "",
+      "### Word Study Starters",
+      ...sectionOrEmpty((chapterStudy.wordStudyStarters ?? []).map((starter) => `- ${starter.word}${starter.strongs ? ` (${starter.strongs})` : ""}: ${starter.note}`)),
       "",
       "### People, Places, And Nations",
       ...sectionOrEmpty([
@@ -25576,6 +25633,20 @@ function HoseaStudyPathScreen({
           </div>
         </article>
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <h2 className="text-lg font-semibold">Word Study Starters</h2>
+          <div className="mt-3 space-y-2">
+            {HOSEA_CHAPTER_STUDIES.flatMap((study) => study.wordStudyStarters ?? []).slice(0, 8).map((starter) => (
+              <div key={`hosea-word-starter-${starter.word}-${starter.strongs ?? "no-strongs"}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-sm font-semibold text-[var(--green)]">{starter.word}</p>
+                  {starter.strongs && <span className="rounded-full bg-white px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--muted)]">{starter.strongs}</span>}
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{starter.note}</p>
+              </div>
+            ))}
+          </div>
+        </article>
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
           <h2 className="text-lg font-semibold">Key Cross References</h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {keyCrossReferences.map((reference) => (
@@ -25585,7 +25656,7 @@ function HoseaStudyPathScreen({
             ))}
           </div>
         </article>
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm xl:col-span-3">
           <h2 className="text-lg font-semibold">Best Lesson Flow</h2>
           <ol className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
             <li>1. Hosea 4: rejected knowledge</li>

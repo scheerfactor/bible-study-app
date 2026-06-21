@@ -1,5 +1,5 @@
 {
-  "last_reviewed": "2026-06-20",
+  "last_reviewed": "2026-06-21",
   "policy": "No full Strong's or TSK dataset becomes public until the source URL, license, commercial-use status, attribution requirements, parser quality, and review status are documented. Staged imports remain hidden until promoted.",
   "source_candidates": [
     {
@@ -38,12 +38,12 @@
       "source_url": "https://github.com/STEPBible/STEPBible-Data",
       "download_url": "https://github.com/STEPBible/STEPBible-Data",
       "rights_status": "CC BY 4.0 according to the current repository readme.",
-      "license_summary": "STEPBible says the data may be included in software/publications without requesting permission, with credit to STEP Bible and notes for changes/corrections.",
+      "license_summary": "STEPBible says the data may be included in software/publications without requesting permission, with credit to STEP Bible and notes for changes/corrections. Current tagged translation data identified in the repository is not a direct KJV word-to-Strong's mapping.",
       "commercial_use_status": "Promising, but exact files and attribution language must be reviewed before public import.",
       "attribution_required": true,
       "review_status": "Approved For Staging",
       "public_import_allowed": false,
-      "next_action": "Identify exact lexicon and tagged-Bible files needed, stage a small sample, and record transformation notes."
+      "next_action": "Use for lexicon/source comparison first. Do not use as the primary KJV mapping source until an exact KJV-tagged file is identified."
     },
     {
       "id": "strongs-crosswire-kjv",
@@ -51,13 +51,13 @@
       "title": "CrossWire KJV 1769 with Strong's Numbers and Morphology",
       "source_url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
       "download_url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
-      "rights_status": "Module notes describe KJV with embedded Strong's numbers and source acknowledgements; base KJV text rights and module permissions require careful review.",
-      "license_summary": "CrossWire documents embedded Strong's numbers with OT data from Bible Foundation and NT data from KJV2003. Do not import until module license and base-text handling are documented.",
-      "commercial_use_status": "Needs Review",
+      "rights_status": "CrossWire KJV module with embedded Strong's numbers. Module documentation includes GPL distribution notes, general public license language, Crown-rights notes for the base KJV text, and multiple source acknowledgements.",
+      "license_summary": "CrossWire documents embedded Strong's numbers with OT data from Bible Foundation and NT data from KJV2003. Use for hidden staging and parser work only until GPL/module attribution and base-text handling are approved.",
+      "commercial_use_status": "Approved for local staging only; public app import requires project approval of redistribution obligations.",
       "attribution_required": true,
-      "review_status": "Needs Review",
+      "review_status": "Approved For Staging",
       "public_import_allowed": false,
-      "next_action": "Use only for source review/provenance until exact redistribution terms are approved."
+      "next_action": "Run the OSIS staging importer against reviewed local source files. Promote only manually reviewed rows after obligations and attribution are documented."
     },
     {
       "id": "strongs-original-scan",
