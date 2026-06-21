@@ -119,6 +119,55 @@ Example display:
 - Occurrences: John, New Testament, whole Bible
 - Related KJV words: believe, believed, believeth, believing
 
+## Fast Upload Path
+
+The fastest safe path is not manual entry. It is a repeatable staging pipeline:
+
+1. Select one rights-cleared KJV-to-Strong mapping source.
+2. Store the raw file outside the public app bundle first.
+3. Convert it into `data/strongs/kjv-strongs-mapping.<source>.staging.json`.
+4. Validate every row with:
+
+```bash
+npm run validate:strongs-mapping -- --file=data/strongs/kjv-strongs-mapping.<source>.staging.json
+```
+
+5. Promote only reviewed batches into public lookup data.
+6. Keep full datasets in Supabase/R2 or a server-side index when the files get
+   too large for Vercel.
+
+The mapping format is one row per KJV word/token:
+
+- `verse_ref`
+- `token_index`
+- `kjv_word`
+- `normalized_kjv_word`
+- `strongs_number`
+- `source_id`
+- `source_title`
+- `source_url`
+- `rights_status`
+- `rights_basis`
+- `review_status`
+
+This gives us the same kind of experience users recognize from e-Sword's KJV+
+view, but with our own documented, rights-safe data pipeline.
+
+## e-Sword-Style Display
+
+e-Sword is a useful model for the user experience: a reader can see the KJV word
+and the Strong's number close together. The Bible Study App should support that
+as an optional reader mode:
+
+- normal reading mode: no Strong's numbers visible
+- study mode: small Strong's number beside or under mapped words
+- tap/click mode: show the Strong's card only when a word is selected
+- teaching mode: allow sending the word study to sermon notes
+
+Do not import e-Sword module files unless written permission and redistribution
+terms are documented. Treat e-Sword as a workflow reference, not as a content
+source.
+
 ## Plain-English Display Rules
 
 - Lead with the KJV word the user tapped.

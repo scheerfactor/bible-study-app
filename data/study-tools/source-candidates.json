@@ -72,6 +72,20 @@
       "review_status": "Needs Review",
       "public_import_allowed": false,
       "next_action": "Select an exact scan, record publication data, spot-check OCR quality, and use it to verify lexicon entries."
+    },
+    {
+      "id": "strongs-esword-kjv-plus-reference-only",
+      "tool": "strongs",
+      "title": "e-Sword KJV+ Strong's Module Experience",
+      "source_url": "https://www.e-sword.net/",
+      "download_url": "https://www.e-sword.net/",
+      "rights_status": "Reference only; do not import e-Sword modules or bundled data without explicit permission and redistribution terms.",
+      "license_summary": "e-Sword demonstrates the desired user experience of KJV words with adjacent Strong's numbers. Its modules should be treated as modern app/module content, not as a public import source, unless written permission and license terms are documented.",
+      "commercial_use_status": "Do not use for public import without written permission.",
+      "attribution_required": true,
+      "review_status": "Blocked",
+      "public_import_allowed": false,
+      "next_action": "Use as a UX reference only. Build the app display from rights-cleared KJV-to-Strong mapping sources such as approved STEP/CrossWire-compatible data or a documented public-domain source."
     }
   ]
 }

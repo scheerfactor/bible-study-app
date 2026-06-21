@@ -19,7 +19,22 @@ type StrongEntry = {
   review_status?: string;
 };
 
+type StrongMapping = {
+  verse_ref: string;
+  token_index: number;
+  kjv_word: string;
+  normalized_kjv_word: string;
+  strongs_number: string;
+  source_id: string;
+  source_title: string;
+  source_url: string;
+  rights_status: string;
+  rights_basis: string;
+  review_status: string;
+};
+
 let cachedEntries: StrongEntry[] | null = null;
+let cachedMappings: StrongMapping[] | null = null;
 
 async function loadEntries() {
   if (cachedEntries) return cachedEntries;
@@ -29,10 +44,42 @@ async function loadEntries() {
   return cachedEntries;
 }
 
+async function loadMappings() {
+  if (cachedMappings) return cachedMappings;
+  const filePath = path.join(process.cwd(), "data/strongs/kjv-strongs-mapping.sample-reviewed.json");
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    cachedMappings = JSON.parse(raw) as StrongMapping[];
+  } catch {
+    cachedMappings = [];
+  }
+  return cachedMappings;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const verse = (searchParams.get("verse") ?? "").trim();
   const query = (searchParams.get("query") ?? searchParams.get("q") ?? "").trim().toLowerCase();
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") ?? 20)));
+
+  if (verse) {
+    const [entries, mappings] = await Promise.all([loadEntries(), loadMappings()]);
+    const entriesByNumber = new Map(entries.map((entry) => [entry.strongs_number, entry]));
+    const verseMappings = mappings
+      .filter((mapping) => mapping.review_status === "Verified")
+      .filter((mapping) => mapping.verse_ref.toLowerCase() === verse.toLowerCase())
+      .sort((a, b) => a.token_index - b.token_index)
+      .map((mapping) => ({
+        ...mapping,
+        strong_entry: entriesByNumber.get(mapping.strongs_number) ?? null,
+      }));
+
+    return Response.json({
+      entries: [],
+      mappings: verseMappings,
+      source_note: "Verse-level KJV Strong's mappings are reviewed samples until a full rights-cleared source is imported.",
+    });
+  }
 
   if (query.length < 2) {
     return Response.json({ entries: [] });

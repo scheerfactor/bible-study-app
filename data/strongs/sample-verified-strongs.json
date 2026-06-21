@@ -3537,5 +3537,428 @@
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1063",
+    "language": "Greek",
+    "original_word": "γάρ",
+    "transliteration": "gar",
+    "pronunciation": "gar",
+    "english_words": [
+      "for",
+      "because"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "For, because, or indeed; a connecting word giving reason or explanation.",
+    "first_occurrence": "Matthew 1:20",
+    "key_verses": [
+      "Matthew 1:20",
+      "John 3:16",
+      "Romans 1:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3588",
+    "language": "Greek",
+    "original_word": "ὁ",
+    "transliteration": "ho",
+    "pronunciation": "ho",
+    "english_words": [
+      "the",
+      "this",
+      "that"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "The definite article; often translated the, this, that, or not translated directly in English.",
+    "first_occurrence": "Matthew 1:2",
+    "key_verses": [
+      "John 1:1",
+      "John 3:16",
+      "Romans 5:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3779",
+    "language": "Greek",
+    "original_word": "οὕτως",
+    "transliteration": "houto",
+    "pronunciation": "hoo-tos",
+    "english_words": [
+      "so",
+      "thus",
+      "in this manner"
+    ],
+    "root": "G3778",
+    "related_numbers": [
+      "G3778"
+    ],
+    "plain_definition": "So, thus, or in this manner.",
+    "first_occurrence": "Matthew 1:18",
+    "key_verses": [
+      "John 3:16",
+      "Matthew 5:16",
+      "Romans 11:26"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5620",
+    "language": "Greek",
+    "original_word": "ὥστε",
+    "transliteration": "hoste",
+    "pronunciation": "hoce-teh",
+    "english_words": [
+      "so that",
+      "wherefore",
+      "insomuch that"
+    ],
+    "root": "G5613",
+    "related_numbers": [
+      "G5613"
+    ],
+    "plain_definition": "So that, therefore, or as a result.",
+    "first_occurrence": "Matthew 8:24",
+    "key_verses": [
+      "John 3:16",
+      "Matthew 8:24",
+      "Romans 7:4"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1325",
+    "language": "Greek",
+    "original_word": "δίδωμι",
+    "transliteration": "didomi",
+    "pronunciation": "did-o-mee",
+    "english_words": [
+      "give",
+      "gave",
+      "grant"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G1435"
+    ],
+    "plain_definition": "To give, grant, bestow, or deliver.",
+    "first_occurrence": "Matthew 4:9",
+    "key_verses": [
+      "John 3:16",
+      "John 10:28",
+      "Romans 12:3",
+      "James 1:5"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G846",
+    "language": "Greek",
+    "original_word": "αὐτός",
+    "transliteration": "autos",
+    "pronunciation": "ow-tos",
+    "english_words": [
+      "he",
+      "him",
+      "his",
+      "same"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "He, she, it, himself, or the same depending on context.",
+    "first_occurrence": "Matthew 1:2",
+    "key_verses": [
+      "John 1:11",
+      "John 3:16",
+      "Romans 8:32"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3439",
+    "language": "Greek",
+    "original_word": "μονογενής",
+    "transliteration": "monogenes",
+    "pronunciation": "mon-og-en-ace",
+    "english_words": [
+      "only begotten",
+      "only",
+      "one of a kind"
+    ],
+    "root": "G3441",
+    "related_numbers": [
+      "G3441",
+      "G1085"
+    ],
+    "plain_definition": "Only begotten, only, or one of a kind; used of the Son in John 3:16.",
+    "first_occurrence": "Luke 7:12",
+    "key_verses": [
+      "John 1:14",
+      "John 1:18",
+      "John 3:16",
+      "1 John 4:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G5207",
+    "language": "Greek",
+    "original_word": "υἱός",
+    "transliteration": "huios",
+    "pronunciation": "hwee-os",
+    "english_words": [
+      "son",
+      "child"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G5043"
+    ],
+    "plain_definition": "A son; used of natural sonship and especially of Christ as the Son of God.",
+    "first_occurrence": "Matthew 1:1",
+    "key_verses": [
+      "John 3:16",
+      "Romans 1:4",
+      "Galatians 4:4",
+      "Hebrews 1:2"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2443",
+    "language": "Greek",
+    "original_word": "ἵνα",
+    "transliteration": "hina",
+    "pronunciation": "hin-ah",
+    "english_words": [
+      "that",
+      "in order that"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "That, in order that, or so that; often marks purpose.",
+    "first_occurrence": "Matthew 1:22",
+    "key_verses": [
+      "John 3:16",
+      "John 20:31",
+      "1 John 5:13"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3956",
+    "language": "Greek",
+    "original_word": "πᾶς",
+    "transliteration": "pas",
+    "pronunciation": "pas",
+    "english_words": [
+      "all",
+      "every",
+      "whosoever"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "All, every, each, or whoever depending on context.",
+    "first_occurrence": "Matthew 1:17",
+    "key_verses": [
+      "John 3:16",
+      "Romans 10:13",
+      "2 Timothy 3:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1519",
+    "language": "Greek",
+    "original_word": "εἰς",
+    "transliteration": "eis",
+    "pronunciation": "ice",
+    "english_words": [
+      "in",
+      "into",
+      "unto",
+      "toward"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G1722"
+    ],
+    "plain_definition": "Into, unto, toward, for, or in; points toward direction, relation, or purpose.",
+    "first_occurrence": "Matthew 2:1",
+    "key_verses": [
+      "John 3:16",
+      "Acts 2:38",
+      "Romans 1:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3361",
+    "language": "Greek",
+    "original_word": "μή",
+    "transliteration": "me",
+    "pronunciation": "may",
+    "english_words": [
+      "not",
+      "no"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G3756"
+    ],
+    "plain_definition": "Not; a negative particle, often used with purpose or possibility.",
+    "first_occurrence": "Matthew 1:19",
+    "key_verses": [
+      "John 3:16",
+      "Romans 6:12",
+      "Galatians 6:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G622",
+    "language": "Greek",
+    "original_word": "ἀπόλλυμι",
+    "transliteration": "apollumi",
+    "pronunciation": "ap-ol-loo-mee",
+    "english_words": [
+      "perish",
+      "destroy",
+      "lost"
+    ],
+    "root": "G575",
+    "related_numbers": [
+      "G684"
+    ],
+    "plain_definition": "To destroy, lose, perish, or be lost.",
+    "first_occurrence": "Matthew 2:13",
+    "key_verses": [
+      "John 3:16",
+      "Luke 19:10",
+      "Romans 2:12",
+      "2 Peter 3:9"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G235",
+    "language": "Greek",
+    "original_word": "ἀλλά",
+    "transliteration": "alla",
+    "pronunciation": "al-lah",
+    "english_words": [
+      "but",
+      "nevertheless"
+    ],
+    "root": "G243",
+    "related_numbers": [
+      "G243"
+    ],
+    "plain_definition": "But, nevertheless, or rather; marks contrast.",
+    "first_occurrence": "Matthew 4:4",
+    "key_verses": [
+      "John 3:16",
+      "Romans 5:14",
+      "Galatians 2:20"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2192",
+    "language": "Greek",
+    "original_word": "ἔχω",
+    "transliteration": "echo",
+    "pronunciation": "ekh-o",
+    "english_words": [
+      "have",
+      "hold",
+      "possess"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "To have, hold, possess, or keep.",
+    "first_occurrence": "Matthew 1:18",
+    "key_verses": [
+      "John 3:16",
+      "John 5:24",
+      "Romans 5:1",
+      "1 John 5:12"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G166",
+    "language": "Greek",
+    "original_word": "αἰώνιος",
+    "transliteration": "aionios",
+    "pronunciation": "ahee-o-nee-os",
+    "english_words": [
+      "eternal",
+      "everlasting"
+    ],
+    "root": "G165",
+    "related_numbers": [
+      "G165"
+    ],
+    "plain_definition": "Eternal or everlasting; pertaining to the age to come or without end.",
+    "first_occurrence": "Matthew 18:8",
+    "key_verses": [
+      "John 3:16",
+      "John 10:28",
+      "Romans 6:23",
+      "1 John 5:11"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
   }
 ]

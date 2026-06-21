@@ -26,6 +26,7 @@
     "commentary:source-batch": "node scripts/create-commentary-source-batch.mjs",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
+    "validate:strongs-mapping": "node scripts/validate-kjv-strongs-mappings.mjs",
     "validate:study-sources": "node scripts/validate-study-tool-source-manifests.mjs",
     "validate:media": "node scripts/validate-media-manifest.mjs",
     "audit:study-data": "node scripts/audit-core-study-data.mjs",
