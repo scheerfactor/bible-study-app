@@ -31,6 +31,17 @@ function publicContentUrl(relativePath: string) {
   return `${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`;
 }
 
+function githubRawContentUrl(relativePath: string) {
+  const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
+  return `${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`;
+}
+
+function candidateContentUrls(relativePath: string) {
+  const primaryUrl = publicContentUrl(relativePath);
+  const fallbackUrl = githubRawContentUrl(relativePath);
+  return primaryUrl === fallbackUrl ? [primaryUrl] : [primaryUrl, fallbackUrl];
+}
+
 export async function readTextContent(relativePathInput: string | string[], options: ReadContentOptions = {}) {
   const relativePath = normalizeRelativePath(relativePathInput);
 
@@ -38,14 +49,19 @@ export async function readTextContent(relativePathInput: string | string[], opti
     return readFile(resolve(/* turbopackIgnore: true */ process.cwd(), relativePath), "utf8");
   }
 
-  const response = await fetch(publicContentUrl(relativePath), {
-    next: { revalidate: options.revalidateSeconds ?? 60 * 60 * 24 },
-  });
+  const urls = candidateContentUrls(relativePath);
+  let lastStatus = 0;
 
-  if (!response.ok) {
-    const label = options.errorLabel ?? "Content";
-    throw new Error(`${label} fetch failed: ${response.status}`);
+  for (const url of urls) {
+    const response = await fetch(url, {
+      next: { revalidate: options.revalidateSeconds ?? 60 * 60 * 24 },
+    });
+
+    if (response.ok) return response.text();
+
+    lastStatus = response.status;
   }
 
-  return response.text();
+  const label = options.errorLabel ?? "Content";
+  throw new Error(`${label} fetch failed: ${lastStatus}`);
 }
