@@ -50,6 +50,7 @@ import tskPhase2ProphecySample from "../../data/imports/tsk-phase-2-prophecy-rev
 import tskBetaDepthSample from "../../data/imports/tsk-beta-depth-reviewed-sample.json";
 import tskHoseaSundaySchoolSample from "../../data/imports/tsk-hosea-4-9-reviewed-sunday-school.json";
 import tskWeakBooksPhase1 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-1.json";
+import tskWeakBooksPhase2 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-2.json";
 import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
 import hoseaBarnesCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
 import hoseaBiblicalIllustratorCommentary from "../../data/imports/biblical-illustrator-reviewed-weak-books-commentary.json";
@@ -8842,6 +8843,17 @@ const localCrossReferences: CrossReference[] = [
     rights_basis: row.rights_basis,
   })),
   ...(tskWeakBooksPhase1 as TskCrossReferenceImportRow[]).map((row) => ({
+    id: referenceImportId(row),
+    verse_ref: row.verse_ref,
+    target_ref: row.target_ref,
+    label: row.label ?? "",
+    source: row.source,
+    source_title: row.source_title,
+    source_url: row.source_url,
+    public_domain_status: row.public_domain_status,
+    rights_basis: row.rights_basis,
+  })),
+  ...(tskWeakBooksPhase2 as TskCrossReferenceImportRow[]).map((row) => ({
     id: referenceImportId(row),
     verse_ref: row.verse_ref,
     target_ref: row.target_ref,

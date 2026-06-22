@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-22T18:29:20.869Z
+Generated: 2026-06-22T18:38:28.136Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-22T18:29:20.869Z
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
 - Strong's lexicon entries: 154; reviewed KJV word mappings: 25 rows across 1 books and 1 chapters (starter data only).
-- Public TSK rows: 622; staged TSK rows: 50; source verses covered: 334; chapters covered: 112; books covered: 53 (reviewed samples only).
+- Public TSK rows: 930; staged TSK rows: 50; source verses covered: 490; chapters covered: 126; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -71,18 +71,18 @@ Generated: 2026-06-22T18:29:20.869Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Ephesians | 0 | 6 | 0% | 0 | 0 |
-| Philippians | 0 | 4 | 0% | 0 | 0 |
-| Colossians | 0 | 4 | 0% | 0 | 0 |
-| 1 Thessalonians | 0 | 5 | 0% | 0 | 0 |
-| 2 Thessalonians | 0 | 3 | 0% | 0 | 0 |
-| Philemon | 0 | 1 | 0% | 0 | 0 |
-| Hebrews | 0 | 13 | 0% | 0 | 0 |
-| James | 0 | 5 | 0% | 0 | 0 |
-| 1 Peter | 0 | 5 | 0% | 0 | 0 |
-| 2 Peter | 0 | 3 | 0% | 0 | 0 |
-| 2 John | 0 | 1 | 0% | 0 | 0 |
-| 3 John | 0 | 1 | 0% | 0 | 0 |
+| Numbers | 1 | 36 | 2.8% | 12 | 21 |
+| Deuteronomy | 1 | 34 | 2.9% | 12 | 23 |
+| 1 Samuel | 1 | 31 | 3.2% | 1 | 1 |
+| 1 Chronicles | 1 | 29 | 3.4% | 12 | 18 |
+| Matthew | 1 | 28 | 3.6% | 1 | 1 |
+| Acts | 1 | 28 | 3.6% | 1 | 1 |
+| Leviticus | 1 | 27 | 3.7% | 12 | 23 |
+| 2 Kings | 1 | 25 | 4% | 1 | 1 |
+| Joshua | 1 | 24 | 4.2% | 1 | 1 |
+| 2 Samuel | 1 | 24 | 4.2% | 1 | 1 |
+| Ezekiel | 2 | 48 | 4.2% | 2 | 2 |
+| Luke | 1 | 24 | 4.2% | 6 | 12 |
 
 ## Thinnest Commentary Books
 
