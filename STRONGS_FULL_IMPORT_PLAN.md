@@ -28,6 +28,44 @@ Father's Business Bible Study should make Strong's useful without making Bible s
 5. After Supabase schema is live and a service role key is available locally, run `npm run import:strongs`.
 6. Keep entries as `Needs Review` unless review is complete.
 
+## KJV Word Mapping Fast Lane
+
+The app can already display Strong's numbers beside KJV words when reviewed
+mapping rows exist. The public mapping index is:
+
+```text
+data/strongs/kjv-strongs-mappings.reviewed.json
+```
+
+Current completion state is tracked by:
+
+```bash
+npm run audit:study-data
+```
+
+Use the CrossWire OSIS parser for local staging only:
+
+```bash
+npm run import:strongs-crosswire-osis -- --input=/path/to/kjv.xml --refs="John 3,Romans 8,Hosea 4" --output=data/strongs/mapping-staging/kjv-strongs-next.staging-needs-review.json
+```
+
+Review rows manually, then copy approved rows into a tracked file under:
+
+```text
+data/strongs/mapping-batches/
+```
+
+After promotion, rebuild and validate:
+
+```bash
+npm run build:strongs-mapping-index
+npm run validate:strongs-mapping
+```
+
+Do not commit raw CrossWire, STEP, e-Sword, or other source exports. Raw source
+files belong in local review storage, R2, or another private source bucket until
+the rights path is fully approved.
+
 ## Future Fields
 
 - KJV word-to-Strong mapping

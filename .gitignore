@@ -26,6 +26,9 @@
 data/sources/websters-1828/*_djvu.txt
 data/commentary/**/source/*.ZIP
 data/commentary/**/source/*.zip
+data/sources/tsk/metav/
+data/staging/
+data/strongs/source/
 
 # debug
 npm-debug.log*

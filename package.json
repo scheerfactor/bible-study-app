@@ -11,6 +11,7 @@
     "import:tsk": "node scripts/import-tsk-cross-references.mjs",
     "validate:tsk": "node scripts/validate-tsk-cross-references.mjs",
     "prepare:tsk-metav": "node scripts/prepare-tsk-metav-cross-references.mjs",
+    "prepare:tsk-metav-full": "node scripts/prepare-tsk-metav-full-staging.mjs",
     "prepare:tsk-openbible": "node scripts/prepare-openbible-tsk-cross-references.mjs",
     "library:validate": "node scripts/validate-library-manifests.mjs",
     "library:download": "node scripts/download-library-resources.mjs",
