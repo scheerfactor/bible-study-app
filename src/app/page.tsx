@@ -25808,7 +25808,12 @@ function HoseaStudyPathScreen({
     commentaryByChapter.set(entry.chapter, [...(commentaryByChapter.get(entry.chapter) ?? []), entry]);
   });
   const keyWords = Array.from(new Set(HOSEA_CHAPTER_STUDIES.flatMap((study) => study.repeatedFocus))).slice(0, 18);
-  const keyCrossReferences = HOSEA_CHAPTER_STUDIES.flatMap((study) => study.crossReferences).slice(0, 16);
+  const wordStudyStarters = HOSEA_CHAPTER_STUDIES.flatMap((study) =>
+    (study.wordStudyStarters ?? []).map((starter) => ({ ...starter, chapter: study.chapter })),
+  );
+  const keyCrossReferences = HOSEA_CHAPTER_STUDIES.flatMap((study) =>
+    study.crossReferences.map((reference) => ({ ...reference, chapter: study.chapter })),
+  );
   const questionCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + (study.sundaySchoolQuestions?.length ?? 0), 0);
   const applicationCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + study.practicalApplications.length, 0);
   const outlineCount = HOSEA_CHAPTER_STUDIES.reduce((total, study) => total + (study.sermonOutline?.length ?? 0), 0);
@@ -25947,26 +25952,35 @@ function HoseaStudyPathScreen({
             {keyWords.map((word) => <span key={`hosea-key-word-${word}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{word}</span>)}
           </div>
         </article>
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm xl:col-span-2">
           <h2 className="text-lg font-semibold">Word Study Starters</h2>
-          <div className="mt-3 space-y-2">
-            {HOSEA_CHAPTER_STUDIES.flatMap((study) => study.wordStudyStarters ?? []).slice(0, 8).map((starter) => (
-              <div key={`hosea-word-starter-${starter.word}-${starter.strongs ?? "no-strongs"}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            All reviewed starter words for Hosea 4-9 are shown here so the lesson does not hide useful word studies.
+          </p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {wordStudyStarters.map((starter) => (
+              <div key={`hosea-word-starter-${starter.chapter}-${starter.word}-${starter.strongs ?? "no-strongs"}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="text-sm font-semibold text-[var(--green)]">{starter.word}</p>
                   {starter.strongs && <span className="rounded-full bg-white px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--muted)]">{starter.strongs}</span>}
+                  <span className="rounded-full bg-white px-2 py-0.5 text-[0.68rem] font-semibold text-[var(--muted)]">Hosea {starter.chapter}</span>
                 </div>
                 <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{starter.note}</p>
               </div>
             ))}
           </div>
         </article>
-        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+        <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm xl:col-span-3">
           <h2 className="text-lg font-semibold">Key Cross References</h2>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+            Complete reviewed Hosea 4-9 teaching references. Tap any target reference to jump back to the Bible.
+          </p>
+          <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
             {keyCrossReferences.map((reference) => (
-              <button key={`hosea-cross-${reference.sourceRef}-${reference.targetRef}`} className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference.targetRef)} type="button">
-                {reference.sourceRef} {"->"} {reference.targetRef}
+              <button key={`hosea-cross-${reference.chapter}-${reference.sourceRef}-${reference.targetRef}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left text-xs font-semibold text-[var(--green)]" onClick={() => onOpenReference(reference.targetRef)} type="button">
+                <span className="block text-[0.68rem] uppercase tracking-[0.1em] text-[var(--muted)]">Hosea {reference.chapter}</span>
+                <span className="mt-1 block">{reference.sourceRef} {"->"} {reference.targetRef}</span>
+                <span className="mt-1 block font-medium leading-5 text-[var(--muted)]">{reference.label}</span>
               </button>
             ))}
           </div>
