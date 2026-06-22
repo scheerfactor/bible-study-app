@@ -22237,6 +22237,37 @@ function BibleCoverageDashboard({
     { label: "Teaching", value: `${summary.averageStudyPackReadiness}% avg` },
     { label: "Sermon prep", value: `${summary.averageSermonPrepReadiness}% avg` },
   ];
+  const dictionaryEntryCount = Object.keys(dictionaryEntries).length;
+  const toolCompletionRows = [
+    {
+      label: "Webster 1828",
+      value: dictionaryEntryCount >= 50000 ? 100 : Math.min(99, Math.round((dictionaryEntryCount / 70000) * 100)),
+      detail: `${dictionaryEntryCount.toLocaleString()} lookup entries available`,
+      next: dictionaryEntryCount >= 50000 ? "Spot-check word normalization and definitions." : "Finish full verified Webster import and normalization review.",
+      weakBooks: [] as BibleCoverageBook[],
+    },
+    {
+      label: "Strong's",
+      value: summary.averageStrongsCoverage,
+      detail: `${summary.strongsReadyBooks}/${summary.totalBooks} books have reviewed starter coverage`,
+      next: "Use the OSIS staging importer, review batches, then promote only verified mappings.",
+      weakBooks: sortByWeakest(summary.books.filter((book) => book.strongsCoveragePercent < 30)).slice(0, 5),
+    },
+    {
+      label: "TSK",
+      value: summary.averageTskCoverage,
+      detail: `${summary.tskReadyBooks}/${summary.totalBooks} books have reviewed references`,
+      next: "Import reviewed batches by teaching priority, then validate references and duplicates.",
+      weakBooks: sortByWeakest(summary.books.filter((book) => book.tskCoveragePercent < 35)).slice(0, 5),
+    },
+    {
+      label: "Bible dictionaries and helps",
+      value: summary.averageDictionaryToolCoverage,
+      detail: `${summary.dictionaryToolReadyBooks}/${summary.totalBooks} books connect to study helps`,
+      next: "Connect Easton's, Smith's, Nave's, geography, chronology, and manners/customs to weak books.",
+      weakBooks: sortByWeakest(summary.books.filter((book) => book.dictionaryToolCoveragePercent < 35)).slice(0, 5),
+    },
+  ];
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
@@ -22268,6 +22299,50 @@ function BibleCoverageDashboard({
         <CoverageAverageBar label="Teaching readiness" value={summary.averageStudyPackReadiness} detail={`${summary.studyPackReadyBooks}/${summary.totalBooks} books have study-pack support`} />
         <CoverageAverageBar label="Sermon prep readiness" value={summary.averageSermonPrepReadiness} detail={`${summary.sermonPrepReadyBooks}/${summary.totalBooks} books connected`} />
       </div>
+
+      <article className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Bible tools completion</p>
+            <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">What to finish next</h3>
+            <p className="mt-1 max-w-3xl text-xs leading-5 text-[var(--muted)]">
+              This keeps Strong&apos;s, TSK, Webster, and dictionary work from becoming a pile of imports. Each tool shows its current app coverage and the next safe import path.
+            </p>
+          </div>
+          <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Rights-safe batches only</span>
+        </div>
+        <div className="mt-3 grid gap-3 xl:grid-cols-4">
+          {toolCompletionRows.map((tool) => (
+            <div key={`tool-completion-${tool.label}`} className="rounded-2xl border border-[var(--line)] bg-white p-4">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-sm font-semibold text-[var(--ink)]">{tool.label}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{tool.detail}</p>
+                </div>
+                <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{tool.value}%</span>
+              </div>
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-[var(--paper)]">
+                <div className="h-full rounded-full bg-[var(--green)]" style={{ width: `${Math.max(4, Math.min(100, tool.value))}%` }} />
+              </div>
+              <p className="mt-3 text-xs leading-5 text-[var(--muted)]">{tool.next}</p>
+              {tool.weakBooks.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {tool.weakBooks.map((book) => (
+                    <button
+                      key={`tool-completion-weak-book-${tool.label}-${book.book}`}
+                      className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]"
+                      onClick={() => onOpenBookIntroduction(book.book)}
+                      type="button"
+                    >
+                      {book.book}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </article>
 
       <div className="mt-4 grid gap-3 xl:grid-cols-3">
         <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
