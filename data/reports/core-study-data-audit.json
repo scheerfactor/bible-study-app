@@ -196,11 +196,11 @@
     ]
   },
   "tsk": {
-    "rows": 347,
+    "rows": 622,
     "stagedRows": 50,
-    "sourceVersesCovered": 190,
-    "booksCovered": 41,
-    "chaptersCovered": 100,
+    "sourceVersesCovered": 334,
+    "booksCovered": 53,
+    "chaptersCovered": 112,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -226,47 +226,31 @@
     ],
     "weakestBooks": [
       {
-        "book": "Leviticus",
+        "book": "Ephesians",
         "chaptersCovered": 0,
-        "totalChapters": 27,
+        "totalChapters": 6,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
       },
       {
-        "book": "Numbers",
+        "book": "Philippians",
         "chaptersCovered": 0,
-        "totalChapters": 36,
+        "totalChapters": 4,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
       },
       {
-        "book": "Deuteronomy",
+        "book": "Colossians",
         "chaptersCovered": 0,
-        "totalChapters": 34,
+        "totalChapters": 4,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
       },
       {
-        "book": "1 Chronicles",
-        "chaptersCovered": 0,
-        "totalChapters": 29,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "Solomon's Song",
-        "chaptersCovered": 0,
-        "totalChapters": 8,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "Lamentations",
+        "book": "1 Thessalonians",
         "chaptersCovered": 0,
         "totalChapters": 5,
         "chapterCoveragePercent": 0,
@@ -274,15 +258,7 @@
         "rows": 0
       },
       {
-        "book": "Obadiah",
-        "chaptersCovered": 0,
-        "totalChapters": 1,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "Zephaniah",
+        "book": "2 Thessalonians",
         "chaptersCovered": 0,
         "totalChapters": 3,
         "chapterCoveragePercent": 0,
@@ -290,23 +266,15 @@
         "rows": 0
       },
       {
-        "book": "Haggai",
+        "book": "Philemon",
         "chaptersCovered": 0,
-        "totalChapters": 2,
+        "totalChapters": 1,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
       },
       {
-        "book": "Mark",
-        "chaptersCovered": 0,
-        "totalChapters": 16,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "2 Corinthians",
+        "book": "Hebrews",
         "chaptersCovered": 0,
         "totalChapters": 13,
         "chapterCoveragePercent": 0,
@@ -314,9 +282,41 @@
         "rows": 0
       },
       {
-        "book": "Galatians",
+        "book": "James",
         "chaptersCovered": 0,
-        "totalChapters": 6,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "1 Peter",
+        "chaptersCovered": 0,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "2 Peter",
+        "chaptersCovered": 0,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "2 John",
+        "chaptersCovered": 0,
+        "totalChapters": 1,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "3 John",
+        "chaptersCovered": 0,
+        "totalChapters": 1,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0

@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-22T15:48:20.299Z
+Generated: 2026-06-22T18:29:20.869Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-22T15:48:20.299Z
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
 - Strong's lexicon entries: 154; reviewed KJV word mappings: 25 rows across 1 books and 1 chapters (starter data only).
-- Public TSK rows: 347; staged TSK rows: 50; source verses covered: 190; chapters covered: 100; books covered: 41 (reviewed samples only).
+- Public TSK rows: 622; staged TSK rows: 50; source verses covered: 334; chapters covered: 112; books covered: 53 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -71,18 +71,18 @@ Generated: 2026-06-22T15:48:20.299Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Leviticus | 0 | 27 | 0% | 0 | 0 |
-| Numbers | 0 | 36 | 0% | 0 | 0 |
-| Deuteronomy | 0 | 34 | 0% | 0 | 0 |
-| 1 Chronicles | 0 | 29 | 0% | 0 | 0 |
-| Solomon's Song | 0 | 8 | 0% | 0 | 0 |
-| Lamentations | 0 | 5 | 0% | 0 | 0 |
-| Obadiah | 0 | 1 | 0% | 0 | 0 |
-| Zephaniah | 0 | 3 | 0% | 0 | 0 |
-| Haggai | 0 | 2 | 0% | 0 | 0 |
-| Mark | 0 | 16 | 0% | 0 | 0 |
-| 2 Corinthians | 0 | 13 | 0% | 0 | 0 |
-| Galatians | 0 | 6 | 0% | 0 | 0 |
+| Ephesians | 0 | 6 | 0% | 0 | 0 |
+| Philippians | 0 | 4 | 0% | 0 | 0 |
+| Colossians | 0 | 4 | 0% | 0 | 0 |
+| 1 Thessalonians | 0 | 5 | 0% | 0 | 0 |
+| 2 Thessalonians | 0 | 3 | 0% | 0 | 0 |
+| Philemon | 0 | 1 | 0% | 0 | 0 |
+| Hebrews | 0 | 13 | 0% | 0 | 0 |
+| James | 0 | 5 | 0% | 0 | 0 |
+| 1 Peter | 0 | 5 | 0% | 0 | 0 |
+| 2 Peter | 0 | 3 | 0% | 0 | 0 |
+| 2 John | 0 | 1 | 0% | 0 | 0 |
+| 3 John | 0 | 1 | 0% | 0 | 0 |
 
 ## Thinnest Commentary Books
 
