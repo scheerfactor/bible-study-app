@@ -3960,5 +3960,274 @@
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7379",
+    "language": "Hebrew",
+    "original_word": "רִיב",
+    "transliteration": "riyb",
+    "pronunciation": "reeb",
+    "english_words": [
+      "controversy",
+      "plead",
+      "strive",
+      "contend"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "A dispute, contention, or pleaded case. In Hosea it describes the LORD's covenant case against His people.",
+    "first_occurrence": "Genesis 13:7",
+    "key_verses": [
+      "Hosea 4:1",
+      "Hosea 12:2",
+      "Micah 6:2"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1347",
+    "language": "Hebrew",
+    "original_word": "גָּאוֹן",
+    "transliteration": "gaown",
+    "pronunciation": "gaw-ohn",
+    "english_words": [
+      "pride",
+      "excellency",
+      "majesty"
+    ],
+    "root": "H1342",
+    "related_numbers": [
+      "H1342",
+      "H1346"
+    ],
+    "plain_definition": "Lifted-up greatness, excellency, or pride. Hosea uses it to expose Israel's self-confidence before judgment.",
+    "first_occurrence": "Exodus 15:7",
+    "key_verses": [
+      "Hosea 5:5",
+      "Hosea 7:10",
+      "Amos 6:8"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7495",
+    "language": "Hebrew",
+    "original_word": "רָפָא",
+    "transliteration": "rapha",
+    "pronunciation": "raw-faw",
+    "english_words": [
+      "heal",
+      "healed",
+      "physician",
+      "repair"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H7496"
+    ],
+    "plain_definition": "To heal, mend, or make whole. In Hosea, false political help cannot heal what only the LORD can address.",
+    "first_occurrence": "Genesis 20:17",
+    "key_verses": [
+      "Hosea 5:13",
+      "Hosea 6:1",
+      "Hosea 14:4",
+      "Jeremiah 17:14"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3045",
+    "language": "Hebrew",
+    "original_word": "יָדַע",
+    "transliteration": "yada",
+    "pronunciation": "yaw-dah",
+    "english_words": [
+      "know",
+      "known",
+      "knowledge",
+      "understand"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H1847"
+    ],
+    "plain_definition": "To know, perceive, recognize, or understand. In Hosea it stresses real knowledge of the LORD, not empty religious form.",
+    "first_occurrence": "Genesis 3:5",
+    "key_verses": [
+      "Hosea 4:6",
+      "Hosea 6:3",
+      "Hosea 6:6",
+      "Jeremiah 9:24"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2077",
+    "language": "Hebrew",
+    "original_word": "זֶבַח",
+    "transliteration": "zebach",
+    "pronunciation": "zeh-bakh",
+    "english_words": [
+      "sacrifice",
+      "offering"
+    ],
+    "root": "H2076",
+    "related_numbers": [
+      "H2076"
+    ],
+    "plain_definition": "A slain sacrifice or offering. Hosea contrasts sacrifice with mercy and the knowledge of God.",
+    "first_occurrence": "Genesis 31:54",
+    "key_verses": [
+      "Hosea 6:6",
+      "1 Samuel 15:22",
+      "Matthew 9:13",
+      "Matthew 12:7"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1101",
+    "language": "Hebrew",
+    "original_word": "בָּלַל",
+    "transliteration": "balal",
+    "pronunciation": "baw-lal",
+    "english_words": [
+      "mixed",
+      "mingle",
+      "mix",
+      "confound"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H894"
+    ],
+    "plain_definition": "To mix, mingle, or confound. Hosea uses it to describe Ephraim losing separation by mixing among the people.",
+    "first_occurrence": "Genesis 11:7",
+    "key_verses": [
+      "Hosea 7:8",
+      "Psalms 106:35"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3123",
+    "language": "Hebrew",
+    "original_word": "יוֹנָה",
+    "transliteration": "yownah",
+    "pronunciation": "yo-naw",
+    "english_words": [
+      "dove",
+      "pigeon"
+    ],
+    "root": "",
+    "related_numbers": [],
+    "plain_definition": "A dove. In Hosea 7 it pictures Ephraim as simple, unstable, and easily drawn away.",
+    "first_occurrence": "Genesis 8:8",
+    "key_verses": [
+      "Hosea 7:11",
+      "Matthew 10:16"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2232",
+    "language": "Hebrew",
+    "original_word": "זָרַע",
+    "transliteration": "zara",
+    "pronunciation": "zaw-rah",
+    "english_words": [
+      "sow",
+      "sown",
+      "scatter seed"
+    ],
+    "root": "",
+    "related_numbers": [
+      "H2233"
+    ],
+    "plain_definition": "To sow, scatter seed, or plant. Hosea uses sowing and reaping to show the consequences of sin.",
+    "first_occurrence": "Genesis 1:29",
+    "key_verses": [
+      "Hosea 8:7",
+      "Hosea 10:12",
+      "Galatians 6:7"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6486",
+    "language": "Hebrew",
+    "original_word": "פְּקֻדָּה",
+    "transliteration": "pequddah",
+    "pronunciation": "pek-ood-daw",
+    "english_words": [
+      "visitation",
+      "oversight",
+      "punishment"
+    ],
+    "root": "H6485",
+    "related_numbers": [
+      "H6485"
+    ],
+    "plain_definition": "A visitation, appointment, oversight, or reckoning. Hosea uses it for the day when God calls sin to account.",
+    "first_occurrence": "Numbers 16:29",
+    "key_verses": [
+      "Hosea 9:7",
+      "Micah 7:4",
+      "Luke 19:44"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7966",
+    "language": "Hebrew",
+    "original_word": "שִׁלּוּם",
+    "transliteration": "shillum",
+    "pronunciation": "shil-loom",
+    "english_words": [
+      "recompence",
+      "reward",
+      "repayment"
+    ],
+    "root": "H7999",
+    "related_numbers": [
+      "H7999"
+    ],
+    "plain_definition": "Repayment, recompense, or reward. In Hosea it points to sin's appointed return upon the people.",
+    "first_occurrence": "Deuteronomy 32:35",
+    "key_verses": [
+      "Hosea 9:7",
+      "Isaiah 59:18"
+    ],
+    "source_title": "Manual verified Strong's starter expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
   }
 ]
