@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-21T02:20:07.949Z
+Generated: 2026-06-22T15:23:21.652Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-21T02:20:07.949Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's entries: 144 (starter data only).
-- Public TSK rows: 323; staged TSK rows: 50; source verses covered: 182 (reviewed samples only).
+- Strong's lexicon entries: 154; reviewed KJV word mappings: 25 rows across 1 books and 1 chapters (starter data only).
+- Public TSK rows: 347; staged TSK rows: 50; source verses covered: 190; chapters covered: 100; books covered: 41 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -40,6 +40,23 @@ Generated: 2026-06-21T02:20:07.949Z
 | kingdom | yes |
 | worship | yes |
 
+## Weakest Strong's Mapping Books
+
+| Book | Chapters Mapped | Total Chapters | Chapter Coverage | Mapped Verses | Mapping Rows |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Genesis | 0 | 50 | 0% | 0 | 0 |
+| Exodus | 0 | 40 | 0% | 0 | 0 |
+| Leviticus | 0 | 27 | 0% | 0 | 0 |
+| Numbers | 0 | 36 | 0% | 0 | 0 |
+| Deuteronomy | 0 | 34 | 0% | 0 | 0 |
+| Joshua | 0 | 24 | 0% | 0 | 0 |
+| Judges | 0 | 21 | 0% | 0 | 0 |
+| Ruth | 0 | 4 | 0% | 0 | 0 |
+| 1 Samuel | 0 | 31 | 0% | 0 | 0 |
+| 2 Samuel | 0 | 24 | 0% | 0 | 0 |
+| 1 Kings | 0 | 22 | 0% | 0 | 0 |
+| 2 Kings | 0 | 25 | 0% | 0 | 0 |
+
 ## TSK Focus Reference Checks
 
 | Reference | Covered |
@@ -49,6 +66,23 @@ Generated: 2026-06-21T02:20:07.949Z
 | Amos 5:24 | yes |
 | Daniel 7:13 | yes |
 | Revelation 13:1 | yes |
+
+## Weakest TSK Books
+
+| Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Leviticus | 0 | 27 | 0% | 0 | 0 |
+| Numbers | 0 | 36 | 0% | 0 | 0 |
+| Deuteronomy | 0 | 34 | 0% | 0 | 0 |
+| 1 Chronicles | 0 | 29 | 0% | 0 | 0 |
+| Solomon's Song | 0 | 8 | 0% | 0 | 0 |
+| Lamentations | 0 | 5 | 0% | 0 | 0 |
+| Obadiah | 0 | 1 | 0% | 0 | 0 |
+| Zephaniah | 0 | 3 | 0% | 0 | 0 |
+| Haggai | 0 | 2 | 0% | 0 | 0 |
+| Mark | 0 | 16 | 0% | 0 | 0 |
+| 2 Corinthians | 0 | 13 | 0% | 0 | 0 |
+| Galatians | 0 | 6 | 0% | 0 | 0 |
 
 ## Thinnest Commentary Books
 
@@ -69,8 +103,8 @@ Generated: 2026-06-21T02:20:07.949Z
 
 ## Recommendations
 
-- Strong's should stay labeled as starter data until a full rights-safe dataset is imported and validated.
-- TSK is still sample/reviewed coverage, not a full TSK import.
+- Strong's should stay labeled as starter data until a full rights-safe dataset is imported, reviewed, mapped, and validated.
+- TSK is still sample/reviewed coverage, not a full TSK import. Build the next reviewed batches from the weakest-book table.
 - Webster is large enough to be useful, but OCR quality remains the main cleanup need. Favor reviewed entries first in user-facing displays.
 - Continue commentary expansion by thinnest books first rather than by raw count.
 - Public-domain audio should be piloted through the media intake workflow before becoming public.

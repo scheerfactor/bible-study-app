@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { readJsonOrCsv } from "./import-utils.mjs";
@@ -13,6 +13,62 @@ const bookOrder = [
 function pct(value, total) {
   if (!total) return "0%";
   return `${Math.round((value / total) * 1000) / 10}%`;
+}
+
+function pctNumber(value, total) {
+  if (!total) return 0;
+  return Math.round((value / total) * 1000) / 10;
+}
+
+function parseReference(reference) {
+  const match = String(reference ?? "").trim().match(/^(.+) (\d+):(\d+)$/);
+  if (!match) return null;
+  return {
+    book: match[1],
+    chapter: Number(match[2]),
+    verse: Number(match[3]),
+  };
+}
+
+function addCoverage(map, reference) {
+  const parsed = parseReference(reference);
+  if (!parsed) return;
+  if (!map.has(parsed.book)) {
+    map.set(parsed.book, {
+      chapters: new Set(),
+      verses: new Set(),
+      rows: 0,
+    });
+  }
+  const bucket = map.get(parsed.book);
+  bucket.chapters.add(parsed.chapter);
+  bucket.verses.add(`${parsed.book} ${parsed.chapter}:${parsed.verse}`);
+  bucket.rows += 1;
+}
+
+function weakestBookCoverage(map, limit = 12) {
+  return bookOrder
+    .map((book) => {
+      const totalBookChapters = chaptersByBook.get(book)?.size ?? 0;
+      const bucket = map.get(book);
+      const chaptersCovered = bucket?.chapters.size ?? 0;
+      const versesCovered = bucket?.verses.size ?? 0;
+      const rows = bucket?.rows ?? 0;
+      return {
+        book,
+        chaptersCovered,
+        totalChapters: totalBookChapters,
+        chapterCoveragePercent: pctNumber(chaptersCovered, totalBookChapters),
+        versesCovered,
+        rows,
+      };
+    })
+    .sort((a, b) =>
+      a.chapterCoveragePercent - b.chapterCoveragePercent ||
+      a.rows - b.rows ||
+      bookOrder.indexOf(a.book) - bookOrder.indexOf(b.book),
+    )
+    .slice(0, limit);
 }
 
 const dictionaryAliases = {
@@ -137,6 +193,11 @@ const strongsChecks = ["believe", "faith", "love", "spirit", "flesh", "law", "be
   word,
   covered: strongsWords.has(word),
 }));
+const strongsMappings = await readJson("data/strongs/kjv-strongs-mappings.reviewed.json");
+const verifiedStrongsMappings = strongsMappings.filter((row) => row.review_status === "Verified");
+const strongsMappingByBook = new Map();
+for (const row of verifiedStrongsMappings) addCoverage(strongsMappingByBook, row.verse_ref);
+const weakestStrongsBooks = weakestBookCoverage(strongsMappingByBook, 12);
 
 const commentaryRows = [];
 for (const file of await commentaryFiles()) {
@@ -182,6 +243,9 @@ for (const file of await tskFiles()) {
 const publicTskRows = tskRows.filter((row) => !String(row.file).includes("needs-review"));
 const stagedTskRows = tskRows.filter((row) => String(row.file).includes("needs-review"));
 const tskSourceVerses = new Set(publicTskRows.map((row) => row.verse_ref));
+const tskByBook = new Map();
+for (const row of publicTskRows) addCoverage(tskByBook, row.verse_ref);
+const weakestTskBooks = weakestBookCoverage(tskByBook, 12);
 const tskFocusChecks = ["John 3:16", "Romans 8:28", "Amos 5:24", "Daniel 7:13", "Revelation 13:1"].map((ref) => ({
   ref,
   covered: tskSourceVerses.has(ref),
@@ -237,15 +301,22 @@ const summary = {
   },
   strongs: {
     verifiedEntries: verifiedStrongs.length,
+    reviewedMappingRows: verifiedStrongsMappings.length,
+    reviewedMappedBooks: strongsMappingByBook.size,
+    reviewedMappedChapters: [...strongsMappingByBook.values()].reduce((sum, bucket) => sum + bucket.chapters.size, 0),
     status: verifiedStrongs.length >= 8000 ? "broad import" : "starter data only",
     focusWordChecks: strongsChecks,
+    weakestBooks: weakestStrongsBooks,
   },
   tsk: {
     rows: publicTskRows.length,
     stagedRows: stagedTskRows.length,
     sourceVersesCovered: tskSourceVerses.size,
+    booksCovered: tskByBook.size,
+    chaptersCovered: [...tskByBook.values()].reduce((sum, bucket) => sum + bucket.chapters.size, 0),
     status: tskSourceVerses.size >= allRefs.length * 0.8 ? "broad coverage" : "reviewed samples only",
     focusChecks: tskFocusChecks,
+    weakestBooks: weakestTskBooks,
   },
   studyTools: {
     filesPresent: studyToolFileChecks.filter((item) => item.exists).length,
@@ -271,8 +342,8 @@ const lines = [
   `- Public commentary chapter coverage: ${summary.commentary.publicChapterCoverage} (${summary.commentary.publicChapterCoveragePercent}).`,
   `- Commentary authors represented in public imports: ${summary.commentary.authors}.`,
   `- Webster 1828 entries: ${summary.webster1828.entries} (${summary.webster1828.uniqueNormalizedHeadwords} normalized headwords; ${summary.webster1828.reviewedOverrides} reviewed overlay).`,
-  `- Strong's entries: ${summary.strongs.verifiedEntries} (${summary.strongs.status}).`,
-  `- Public TSK rows: ${summary.tsk.rows}; staged TSK rows: ${summary.tsk.stagedRows}; source verses covered: ${summary.tsk.sourceVersesCovered} (${summary.tsk.status}).`,
+  `- Strong's lexicon entries: ${summary.strongs.verifiedEntries}; reviewed KJV word mappings: ${summary.strongs.reviewedMappingRows} rows across ${summary.strongs.reviewedMappedBooks} books and ${summary.strongs.reviewedMappedChapters} chapters (${summary.strongs.status}).`,
+  `- Public TSK rows: ${summary.tsk.rows}; staged TSK rows: ${summary.tsk.stagedRows}; source verses covered: ${summary.tsk.sourceVersesCovered}; chapters covered: ${summary.tsk.chaptersCovered}; books covered: ${summary.tsk.booksCovered} (${summary.tsk.status}).`,
   `- Study tool files present: ${summary.studyTools.filesPresent}/${summary.studyTools.filesExpected}.`,
   `- Public-domain audio candidates: ${summary.audio.publicDomainCandidateRows}.`,
   "",
@@ -288,11 +359,23 @@ const lines = [
   "| --- | --- |",
   ...strongsChecks.map((item) => `| ${item.word} | ${item.covered ? "yes" : "no"} |`),
   "",
+  "## Weakest Strong's Mapping Books",
+  "",
+  "| Book | Chapters Mapped | Total Chapters | Chapter Coverage | Mapped Verses | Mapping Rows |",
+  "| --- | ---: | ---: | ---: | ---: | ---: |",
+  ...weakestStrongsBooks.map((item) => `| ${item.book} | ${item.chaptersCovered} | ${item.totalChapters} | ${item.chapterCoveragePercent}% | ${item.versesCovered} | ${item.rows} |`),
+  "",
   "## TSK Focus Reference Checks",
   "",
   "| Reference | Covered |",
   "| --- | --- |",
   ...tskFocusChecks.map((item) => `| ${item.ref} | ${item.covered ? "yes" : "no"} |`),
+  "",
+  "## Weakest TSK Books",
+  "",
+  "| Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |",
+  "| --- | ---: | ---: | ---: | ---: | ---: |",
+  ...weakestTskBooks.map((item) => `| ${item.book} | ${item.chaptersCovered} | ${item.totalChapters} | ${item.chapterCoveragePercent}% | ${item.versesCovered} | ${item.rows} |`),
   "",
   "## Thinnest Commentary Books",
   "",
@@ -302,15 +385,19 @@ const lines = [
   "",
   "## Recommendations",
   "",
-  "- Strong's should stay labeled as starter data until a full rights-safe dataset is imported and validated.",
-  "- TSK is still sample/reviewed coverage, not a full TSK import.",
+  "- Strong's should stay labeled as starter data until a full rights-safe dataset is imported, reviewed, mapped, and validated.",
+  "- TSK is still sample/reviewed coverage, not a full TSK import. Build the next reviewed batches from the weakest-book table.",
   "- Webster is large enough to be useful, but OCR quality remains the main cleanup need. Favor reviewed entries first in user-facing displays.",
   "- Continue commentary expansion by thinnest books first rather than by raw count.",
   "- Public-domain audio should be piloted through the media intake workflow before becoming public.",
   "",
 ];
 
-await writeFile("CORE_STUDY_DATA_AUDIT.md", `${lines.join("\n")}\n`, "utf8");
+await mkdir("data/reports", { recursive: true });
+await Promise.all([
+  writeFile("CORE_STUDY_DATA_AUDIT.md", `${lines.join("\n")}\n`, "utf8"),
+  writeFile("data/reports/core-study-data-audit.json", `${JSON.stringify(summary, null, 2)}\n`, "utf8"),
+]);
 
 console.log("Core study data audit complete");
 console.table({
@@ -319,7 +406,9 @@ console.table({
   commentary_chapter_coverage: summary.commentary.publicChapterCoveragePercent,
   webster_entries: summary.webster1828.entries,
   strongs_entries: summary.strongs.verifiedEntries,
+  strongs_mapping_rows: summary.strongs.reviewedMappingRows,
   tsk_rows: summary.tsk.rows,
   audio_candidates: summary.audio.publicDomainCandidateRows,
 });
 console.log("Wrote CORE_STUDY_DATA_AUDIT.md");
+console.log("Wrote data/reports/core-study-data-audit.json");

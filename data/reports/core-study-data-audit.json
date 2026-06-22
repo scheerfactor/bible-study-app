@@ -1,0 +1,432 @@
+{
+  "bible": {
+    "books": 66,
+    "chapters": 1189,
+    "verses": 31102
+  },
+  "library": {
+    "verifiedResources": 1306
+  },
+  "commentary": {
+    "publicRows": 7304,
+    "publicChapterCoverage": "1189/1189",
+    "publicChapterCoveragePercent": "100%",
+    "authors": 23
+  },
+  "webster1828": {
+    "entries": 57562,
+    "baseEntries": 57561,
+    "reviewedOverrides": 1,
+    "uniqueNormalizedHeadwords": 50292,
+    "suspiciousOcrEntries": 1883,
+    "normalizationChecks": [
+      {
+        "word": "believeth",
+        "normalized": "believe",
+        "hasEntry": true
+      },
+      {
+        "word": "loved",
+        "normalized": "love",
+        "hasEntry": true
+      },
+      {
+        "word": "death",
+        "normalized": "death",
+        "hasEntry": true
+      },
+      {
+        "word": "doeth",
+        "normalized": "do",
+        "hasEntry": true
+      },
+      {
+        "word": "believe",
+        "normalized": "believe",
+        "hasEntry": true
+      },
+      {
+        "word": "love",
+        "normalized": "love",
+        "hasEntry": true
+      }
+    ]
+  },
+  "strongs": {
+    "verifiedEntries": 154,
+    "reviewedMappingRows": 25,
+    "reviewedMappedBooks": 1,
+    "reviewedMappedChapters": 1,
+    "status": "starter data only",
+    "focusWordChecks": [
+      {
+        "word": "believe",
+        "covered": true
+      },
+      {
+        "word": "faith",
+        "covered": true
+      },
+      {
+        "word": "love",
+        "covered": true
+      },
+      {
+        "word": "spirit",
+        "covered": true
+      },
+      {
+        "word": "flesh",
+        "covered": true
+      },
+      {
+        "word": "law",
+        "covered": true
+      },
+      {
+        "word": "beast",
+        "covered": true
+      },
+      {
+        "word": "kingdom",
+        "covered": true
+      },
+      {
+        "word": "worship",
+        "covered": true
+      }
+    ],
+    "weakestBooks": [
+      {
+        "book": "Genesis",
+        "chaptersCovered": 0,
+        "totalChapters": 50,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Exodus",
+        "chaptersCovered": 0,
+        "totalChapters": 40,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Leviticus",
+        "chaptersCovered": 0,
+        "totalChapters": 27,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 0,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Deuteronomy",
+        "chaptersCovered": 0,
+        "totalChapters": 34,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Joshua",
+        "chaptersCovered": 0,
+        "totalChapters": 24,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Judges",
+        "chaptersCovered": 0,
+        "totalChapters": 21,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Ruth",
+        "chaptersCovered": 0,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "1 Samuel",
+        "chaptersCovered": 0,
+        "totalChapters": 31,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "2 Samuel",
+        "chaptersCovered": 0,
+        "totalChapters": 24,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "1 Kings",
+        "chaptersCovered": 0,
+        "totalChapters": 22,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "2 Kings",
+        "chaptersCovered": 0,
+        "totalChapters": 25,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      }
+    ]
+  },
+  "tsk": {
+    "rows": 347,
+    "stagedRows": 50,
+    "sourceVersesCovered": 190,
+    "booksCovered": 41,
+    "chaptersCovered": 100,
+    "status": "reviewed samples only",
+    "focusChecks": [
+      {
+        "ref": "John 3:16",
+        "covered": true
+      },
+      {
+        "ref": "Romans 8:28",
+        "covered": true
+      },
+      {
+        "ref": "Amos 5:24",
+        "covered": true
+      },
+      {
+        "ref": "Daniel 7:13",
+        "covered": true
+      },
+      {
+        "ref": "Revelation 13:1",
+        "covered": true
+      }
+    ],
+    "weakestBooks": [
+      {
+        "book": "Leviticus",
+        "chaptersCovered": 0,
+        "totalChapters": 27,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 0,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Deuteronomy",
+        "chaptersCovered": 0,
+        "totalChapters": 34,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "1 Chronicles",
+        "chaptersCovered": 0,
+        "totalChapters": 29,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Solomon's Song",
+        "chaptersCovered": 0,
+        "totalChapters": 8,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Lamentations",
+        "chaptersCovered": 0,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Obadiah",
+        "chaptersCovered": 0,
+        "totalChapters": 1,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Zephaniah",
+        "chaptersCovered": 0,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Haggai",
+        "chaptersCovered": 0,
+        "totalChapters": 2,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Mark",
+        "chaptersCovered": 0,
+        "totalChapters": 16,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "2 Corinthians",
+        "chaptersCovered": 0,
+        "totalChapters": 13,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Galatians",
+        "chaptersCovered": 0,
+        "totalChapters": 6,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      }
+    ]
+  },
+  "studyTools": {
+    "filesPresent": 9,
+    "filesExpected": 9,
+    "missingFiles": []
+  },
+  "audio": {
+    "publicDomainCandidateRows": 43
+  },
+  "weakestCommentaryBooks": [
+    {
+      "book": "2 Chronicles",
+      "coveredChapters": 36,
+      "totalChapters": 36,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 2.8333333333333335
+    },
+    {
+      "book": "Job",
+      "coveredChapters": 42,
+      "totalChapters": 42,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 2.857142857142857
+    },
+    {
+      "book": "1 Chronicles",
+      "coveredChapters": 29,
+      "totalChapters": 29,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 3.0344827586206895
+    },
+    {
+      "book": "Ecclesiastes",
+      "coveredChapters": 12,
+      "totalChapters": 12,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 5
+    },
+    {
+      "book": "Esther",
+      "coveredChapters": 10,
+      "totalChapters": 10,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 5
+    },
+    {
+      "book": "Ezra",
+      "coveredChapters": 10,
+      "totalChapters": 10,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 5
+    },
+    {
+      "book": "Nehemiah",
+      "coveredChapters": 13,
+      "totalChapters": 13,
+      "coverage": 1,
+      "authors": 5,
+      "rowsPerChapter": 5
+    },
+    {
+      "book": "Isaiah",
+      "coveredChapters": 66,
+      "totalChapters": 66,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 4.2272727272727275
+    },
+    {
+      "book": "Jeremiah",
+      "coveredChapters": 52,
+      "totalChapters": 52,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 4.576923076923077
+    },
+    {
+      "book": "Ezekiel",
+      "coveredChapters": 48,
+      "totalChapters": 48,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 4.75
+    },
+    {
+      "book": "1 Corinthians",
+      "coveredChapters": 16,
+      "totalChapters": 16,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 4.9375
+    },
+    {
+      "book": "1 John",
+      "coveredChapters": 5,
+      "totalChapters": 5,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 7
+    }
+  ]
+}
