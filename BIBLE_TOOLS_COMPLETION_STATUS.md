@@ -8,8 +8,8 @@ Generated from `npm run audit:study-data` on 2026-06-23.
 | --- | --- | ---: | --- |
 | Webster's 1828 | Broadly useful | 57,562 entries, 50,292 normalized headwords | Show as available; keep reviewed overrides preferred. |
 | Strong's lexicon | Starter data only | 225 verified entries | Do not call complete. |
-| Strong's KJV word mapping | Expanded reviewed mapping coverage | 27,468 reviewed rows across 12 books and 63 chapters | Show only where reviewed mappings exist; definition cards appear only where lexicon entries exist. |
-| TSK / cross references | Reviewed sample coverage | 1,320 public reviewed rows, 677 source verses | Show as reviewed cross references, not full TSK. |
+| Strong's KJV word mapping | Expanded reviewed mapping coverage | 47,010 reviewed rows across 13 books and 104 chapters | Show only where reviewed mappings exist; definition cards appear only where lexicon entries exist. |
+| TSK / cross references | Reviewed sample coverage | 1,958 public reviewed rows, 937 source verses | Show as reviewed cross references, not full TSK. |
 | Commentaries | Broad public coverage | 7,304 public rows, 66 books covered | Continue completion by author and quality. |
 | Study reference tools | Present | 9/9 core files present | Integrate from Passage Guide and Bible Reader. |
 
@@ -17,8 +17,8 @@ Generated from `npm run audit:study-data` on 2026-06-23.
 
 - Webster lookup is large enough to be a core feature.
 - Commentary coverage is broad enough to be a core feature, but author depth varies.
-- TSK references are useful for focus passages and selected weak-book batches.
-- Strong's word-to-number mapping is useful where reviewed mappings exist, especially John, Romans, Hosea, Daniel, Revelation, and selected anchor chapters.
+- TSK references are useful for focus passages, selected weak-book batches, and prophecy-focused study batches.
+- Strong's word-to-number mapping is useful where reviewed mappings exist, especially John, Romans, Hosea, Amos, Daniel, Revelation, and selected anchor chapters.
 
 ## What Is Not Complete Yet
 
@@ -37,8 +37,9 @@ Generated from `npm run audit:study-data` on 2026-06-23.
    - John
    - Romans
    - Hosea
-   - Daniel 7
-   - Revelation 13
+   - Amos
+   - Daniel
+   - Revelation
    - Genesis 1-3
    - Exodus 12
    - Psalms 22-23
@@ -76,14 +77,26 @@ npm run validate:strongs-mapping -- --strict-lexicon
    - 2 Samuel
    - Ezekiel
    - Mark
-5. Validate every promoted file:
+5. Current prophecy-focused OpenBible batch added reviewed references for selected verses in:
+   - Amos
+   - Daniel
+   - Ezekiel
+   - Hosea
+   - Isaiah
+   - Jeremiah
+   - Joel
+   - Malachi
+   - Psalms
+   - Revelation
+   - Zechariah
+6. Validate every promoted file:
 
 ```bash
 npm run validate:tsk -- data/imports/<reviewed-tsk-file>.json
 ```
 
-6. Do not scrape rendered Bible study websites.
-7. Do not import Bible quotation text from non-KJV or copyrighted Bible editions.
+7. Do not scrape rendered Bible study websites.
+8. Do not import Bible quotation text from non-KJV or copyrighted Bible editions.
 
 ## Bible Reader Improvement Rule
 
@@ -99,7 +112,7 @@ If a tool is incomplete for that chapter, say "starter coverage" or "reviewed en
 ## Next Best Work
 
 1. Expand Strong's lexicon definition cards so more displayed Strong's numbers open complete word-study panels.
-2. Continue full-book Strong's mapping promotion for Genesis, Exodus, Psalms, Isaiah, Daniel, Revelation, and the Gospels.
+2. Continue full-book Strong's mapping promotion for Genesis, Exodus, Psalms, Isaiah, the Gospels, and Acts.
 3. Promote larger TSK batches for weakest books while keeping source attribution and duplicate validation.
 4. Add a Study Data Coverage badge to the Bible Reader and Passage Guide.
 5. Continue commentary completion with Biblical Illustrator, Pulpit Commentary, Matthew Poole, and Ironside only where source and rights are clean.

@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-23T22:20:09.727Z
+Generated: 2026-06-23T22:34:45.465Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-23T22:20:09.727Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's lexicon entries: 225; reviewed KJV word mappings: 27468 rows from 7 batch files across 12 books and 63 chapters (starter data only).
-- Public TSK rows: 1320; staged TSK rows: 50; source verses covered: 677; chapters covered: 143; books covered: 66 (reviewed samples only).
+- Strong's lexicon entries: 225; reviewed KJV word mappings: 47010 rows from 8 batch files across 13 books and 104 chapters (starter data only).
+- Public TSK rows: 1958; staged TSK rows: 50; source verses covered: 937; chapters covered: 159; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -75,14 +75,14 @@ Generated: 2026-06-23T22:20:09.727Z
 | Leviticus | 1 | 27 | 3.7% | 12 | 23 |
 | Luke | 1 | 24 | 4.2% | 6 | 12 |
 | 1 Kings | 1 | 22 | 4.5% | 1 | 1 |
-| Psalms | 7 | 150 | 4.7% | 10 | 10 |
 | Judges | 1 | 21 | 4.8% | 1 | 1 |
 | Job | 2 | 42 | 4.8% | 2 | 2 |
+| Psalms | 8 | 150 | 5.3% | 32 | 81 |
 | 2 Chronicles | 2 | 36 | 5.6% | 2 | 3 |
-| Jeremiah | 3 | 52 | 5.8% | 3 | 3 |
 | 1 Corinthians | 1 | 16 | 6.3% | 1 | 1 |
 | Mark | 1 | 16 | 6.3% | 12 | 23 |
 | 1 Samuel | 2 | 31 | 6.5% | 21 | 46 |
+| Acts | 2 | 28 | 7.1% | 21 | 54 |
 
 ## Thinnest Commentary Books
 

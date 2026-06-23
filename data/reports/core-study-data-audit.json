@@ -54,10 +54,10 @@
   },
   "strongs": {
     "verifiedEntries": 225,
-    "reviewedMappingFiles": 7,
-    "reviewedMappingRows": 27468,
-    "reviewedMappedBooks": 12,
-    "reviewedMappedChapters": 63,
+    "reviewedMappingFiles": 8,
+    "reviewedMappingRows": 47010,
+    "reviewedMappedBooks": 13,
+    "reviewedMappedChapters": 104,
     "status": "starter data only",
     "focusWordChecks": [
       {
@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 1320,
+    "rows": 1958,
     "stagedRows": 50,
-    "sourceVersesCovered": 677,
+    "sourceVersesCovered": 937,
     "booksCovered": 66,
-    "chaptersCovered": 143,
+    "chaptersCovered": 159,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -259,14 +259,6 @@
         "rows": 1
       },
       {
-        "book": "Psalms",
-        "chaptersCovered": 7,
-        "totalChapters": 150,
-        "chapterCoveragePercent": 4.7,
-        "versesCovered": 10,
-        "rows": 10
-      },
-      {
         "book": "Judges",
         "chaptersCovered": 1,
         "totalChapters": 21,
@@ -283,19 +275,19 @@
         "rows": 2
       },
       {
+        "book": "Psalms",
+        "chaptersCovered": 8,
+        "totalChapters": 150,
+        "chapterCoveragePercent": 5.3,
+        "versesCovered": 32,
+        "rows": 81
+      },
+      {
         "book": "2 Chronicles",
         "chaptersCovered": 2,
         "totalChapters": 36,
         "chapterCoveragePercent": 5.6,
         "versesCovered": 2,
-        "rows": 3
-      },
-      {
-        "book": "Jeremiah",
-        "chaptersCovered": 3,
-        "totalChapters": 52,
-        "chapterCoveragePercent": 5.8,
-        "versesCovered": 3,
         "rows": 3
       },
       {
@@ -321,6 +313,14 @@
         "chapterCoveragePercent": 6.5,
         "versesCovered": 21,
         "rows": 46
+      },
+      {
+        "book": "Acts",
+        "chaptersCovered": 2,
+        "totalChapters": 28,
+        "chapterCoveragePercent": 7.1,
+        "versesCovered": 21,
+        "rows": 54
       }
     ]
   },
