@@ -2603,6 +2603,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H157",
+    "language": "Hebrew",
+    "original_word": "אָהַב",
+    "transliteration": "ahab",
+    "pronunciation": "aw-hab",
+    "english_words": [
+      "love",
+      "loved",
+      "lovers",
+      "beloved"
+    ],
+    "root": "H157",
+    "related_numbers": [
+      "H160"
+    ],
+    "plain_definition": "To love or have affection for; Hosea uses it of both covenant love and misplaced loves.",
+    "first_occurrence": "Genesis 22:2",
+    "key_verses": [
+      "Hosea 2:5",
+      "Hosea 3:1",
+      "Hosea 14:4"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H216",
     "language": "Hebrew",
     "original_word": "אוֹר",
@@ -2626,6 +2654,29 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H251",
+    "language": "Hebrew",
+    "original_word": "אָח",
+    "transliteration": "ach",
+    "pronunciation": "awkh",
+    "english_words": [
+      "brother",
+      "brethren"
+    ],
+    "root": "H251",
+    "related_numbers": [],
+    "plain_definition": "A brother, relative, or fellow member of a people.",
+    "first_occurrence": "Genesis 4:2",
+    "key_verses": [
+      "Hosea 2:1",
+      "Hosea 12:3"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -2683,6 +2734,33 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H559",
+    "language": "Hebrew",
+    "original_word": "אָמַר",
+    "transliteration": "amar",
+    "pronunciation": "aw-mar",
+    "english_words": [
+      "say",
+      "said",
+      "speak",
+      "command",
+      "answer"
+    ],
+    "root": "H559",
+    "related_numbers": [],
+    "plain_definition": "To say, speak, utter, command, or answer.",
+    "first_occurrence": "Genesis 1:3",
+    "key_verses": [
+      "Hosea 1:2",
+      "Hosea 1:4",
+      "Hosea 2:1"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H571",
     "language": "Hebrew",
     "original_word": "אֱמֶת",
@@ -2708,6 +2786,34 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H639",
+    "language": "Hebrew",
+    "original_word": "אַף",
+    "transliteration": "aph",
+    "pronunciation": "af",
+    "english_words": [
+      "anger",
+      "wrath",
+      "nostril",
+      "face"
+    ],
+    "root": "H599",
+    "related_numbers": [
+      "H599"
+    ],
+    "plain_definition": "Anger or wrath; literally also nose or nostril, often used figuratively for anger.",
+    "first_occurrence": "Genesis 2:7",
+    "key_verses": [
+      "Hosea 11:9",
+      "Hosea 13:11",
+      "Hosea 14:4"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -2764,6 +2870,112 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H781",
+    "language": "Hebrew",
+    "original_word": "אָרַשׂ",
+    "transliteration": "aras",
+    "pronunciation": "aw-ras",
+    "english_words": [
+      "betroth",
+      "espouse"
+    ],
+    "root": "H781",
+    "related_numbers": [],
+    "plain_definition": "To betroth, pledge in marriage, or espouse.",
+    "first_occurrence": "Exodus 22:16",
+    "key_verses": [
+      "Hosea 2:19",
+      "Hosea 2:20"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H802",
+    "language": "Hebrew",
+    "original_word": "אִשָּׁה",
+    "transliteration": "ishshah",
+    "pronunciation": "ish-shaw",
+    "english_words": [
+      "woman",
+      "wife",
+      "women"
+    ],
+    "root": "H376",
+    "related_numbers": [
+      "H376"
+    ],
+    "plain_definition": "A woman or wife.",
+    "first_occurrence": "Genesis 2:22",
+    "key_verses": [
+      "Hosea 1:2",
+      "Hosea 3:1",
+      "Hosea 12:12"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H804",
+    "language": "Hebrew",
+    "original_word": "אַשּׁוּר",
+    "transliteration": "ashshur",
+    "pronunciation": "ash-shoor",
+    "english_words": [
+      "Assyria",
+      "Assyrian",
+      "Assyrians",
+      "Asshur"
+    ],
+    "root": "H833",
+    "related_numbers": [
+      "H833"
+    ],
+    "plain_definition": "Assyria or Asshur; a major empire often associated with Israel’s judgment and false political trust.",
+    "first_occurrence": "Genesis 2:14",
+    "key_verses": [
+      "Hosea 10:6",
+      "Hosea 11:5",
+      "Hosea 14:3"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H816",
+    "language": "Hebrew",
+    "original_word": "אָשַׁם",
+    "transliteration": "asham",
+    "pronunciation": "aw-sham",
+    "english_words": [
+      "offend",
+      "offended",
+      "guilty",
+      "faulty"
+    ],
+    "root": "H816",
+    "related_numbers": [
+      "H817"
+    ],
+    "plain_definition": "To be guilty, offend, or bear guilt.",
+    "first_occurrence": "Leviticus 5:2",
+    "key_verses": [
+      "Hosea 10:2",
+      "Hosea 13:1",
+      "Hosea 13:16"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H929",
     "language": "Hebrew",
     "original_word": "בְּהֵמָה",
@@ -2788,6 +3000,33 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1004",
+    "language": "Hebrew",
+    "original_word": "בַּיִת",
+    "transliteration": "bayith",
+    "pronunciation": "bah-yith",
+    "english_words": [
+      "house",
+      "houses",
+      "household"
+    ],
+    "root": "H1129",
+    "related_numbers": [
+      "H1129"
+    ],
+    "plain_definition": "A house, dwelling, household, family, or temple depending on context.",
+    "first_occurrence": "Genesis 7:1",
+    "key_verses": [
+      "Hosea 1:7",
+      "Hosea 11:11",
+      "Hosea 12:1"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -2984,6 +3223,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H1696",
+    "language": "Hebrew",
+    "original_word": "דָּבַר",
+    "transliteration": "dabar",
+    "pronunciation": "daw-bar",
+    "english_words": [
+      "speak",
+      "spoken",
+      "word",
+      "talk"
+    ],
+    "root": "H1697",
+    "related_numbers": [
+      "H1697"
+    ],
+    "plain_definition": "To speak, declare, converse, or utter words.",
+    "first_occurrence": "Genesis 8:15",
+    "key_verses": [
+      "Hosea 1:2",
+      "Hosea 2:14",
+      "Hosea 12:10"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H1697",
     "language": "Hebrew",
     "original_word": "דָּבָר",
@@ -3035,6 +3302,34 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H1870",
+    "language": "Hebrew",
+    "original_word": "דֶּרֶךְ",
+    "transliteration": "derek",
+    "pronunciation": "deh-rek",
+    "english_words": [
+      "way",
+      "ways",
+      "path",
+      "road"
+    ],
+    "root": "H1869",
+    "related_numbers": [
+      "H1869"
+    ],
+    "plain_definition": "A way, road, path, course, or manner of life.",
+    "first_occurrence": "Genesis 3:24",
+    "key_verses": [
+      "Hosea 2:6",
+      "Hosea 10:13",
+      "Hosea 14:9"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -3257,6 +3552,33 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H2719",
+    "language": "Hebrew",
+    "original_word": "חֶרֶב",
+    "transliteration": "chereb",
+    "pronunciation": "kheh-reb",
+    "english_words": [
+      "sword",
+      "knife",
+      "dagger"
+    ],
+    "root": "H2717",
+    "related_numbers": [
+      "H2717"
+    ],
+    "plain_definition": "A sword or cutting instrument; often a picture of war or judgment.",
+    "first_occurrence": "Genesis 3:24",
+    "key_verses": [
+      "Hosea 1:7",
+      "Hosea 11:6",
+      "Hosea 13:16"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H2822",
     "language": "Hebrew",
     "original_word": "חֹשֶׁךְ",
@@ -3281,6 +3603,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3027",
+    "language": "Hebrew",
+    "original_word": "יָד",
+    "transliteration": "yad",
+    "pronunciation": "yawd",
+    "english_words": [
+      "hand",
+      "hands",
+      "ministry",
+      "power"
+    ],
+    "root": "H3027",
+    "related_numbers": [],
+    "plain_definition": "Hand; often used for power, possession, agency, or service.",
+    "first_occurrence": "Genesis 3:22",
+    "key_verses": [
+      "Hosea 2:10",
+      "Hosea 12:10",
+      "Hosea 14:3"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -3413,6 +3761,35 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3205",
+    "language": "Hebrew",
+    "original_word": "יָלַד",
+    "transliteration": "yalad",
+    "pronunciation": "yaw-lad",
+    "english_words": [
+      "bare",
+      "bear",
+      "born",
+      "beget",
+      "bring forth"
+    ],
+    "root": "H3205",
+    "related_numbers": [
+      "H1121"
+    ],
+    "plain_definition": "To bear, bring forth, beget, or give birth.",
+    "first_occurrence": "Genesis 4:1",
+    "key_verses": [
+      "Hosea 1:3",
+      "Hosea 1:6",
+      "Hosea 13:13"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -3660,6 +4037,33 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H3947",
+    "language": "Hebrew",
+    "original_word": "לָקַח",
+    "transliteration": "laqach",
+    "pronunciation": "law-kakh",
+    "english_words": [
+      "take",
+      "took",
+      "receive",
+      "bring",
+      "fetch"
+    ],
+    "root": "H3947",
+    "related_numbers": [],
+    "plain_definition": "To take, receive, fetch, or bring.",
+    "first_occurrence": "Genesis 2:15",
+    "key_verses": [
+      "Hosea 1:2",
+      "Hosea 1:3",
+      "Hosea 14:2"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H3988",
     "language": "Hebrew",
     "original_word": "מָאַס",
@@ -3681,6 +4085,32 @@
       "1 Samuel 8:7"
     ],
     "source_title": "Manual reviewed Hebrew Strong's starter entries",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4057",
+    "language": "Hebrew",
+    "original_word": "מִדְבָּר",
+    "transliteration": "midbar",
+    "pronunciation": "mid-bawr",
+    "english_words": [
+      "wilderness",
+      "desert"
+    ],
+    "root": "H1696",
+    "related_numbers": [
+      "H1696"
+    ],
+    "plain_definition": "A wilderness, desert, or open pasture land.",
+    "first_occurrence": "Genesis 14:6",
+    "key_verses": [
+      "Hosea 2:3",
+      "Hosea 2:14",
+      "Hosea 13:5"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
@@ -3768,6 +4198,32 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H4672",
+    "language": "Hebrew",
+    "original_word": "מָצָא",
+    "transliteration": "matsa",
+    "pronunciation": "maw-tsaw",
+    "english_words": [
+      "find",
+      "found",
+      "meet",
+      "obtain"
+    ],
+    "root": "H4672",
+    "related_numbers": [],
+    "plain_definition": "To find, discover, meet with, or obtain.",
+    "first_occurrence": "Genesis 2:20",
+    "key_verses": [
+      "Hosea 2:6",
+      "Hosea 12:4",
+      "Hosea 12:8"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H4687",
     "language": "Hebrew",
     "original_word": "מִצְוָה",
@@ -3792,6 +4248,31 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4714",
+    "language": "Hebrew",
+    "original_word": "מִצְרַיִם",
+    "transliteration": "mitsrayim",
+    "pronunciation": "mits-rah-yim",
+    "english_words": [
+      "Egypt"
+    ],
+    "root": "H4693",
+    "related_numbers": [
+      "H4693"
+    ],
+    "plain_definition": "Egypt; the land associated with Israel’s bondage and later false refuge.",
+    "first_occurrence": "Genesis 10:6",
+    "key_verses": [
+      "Hosea 2:15",
+      "Hosea 11:1",
+      "Hosea 11:5"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -3991,6 +4472,35 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H5927",
+    "language": "Hebrew",
+    "original_word": "עָלָה",
+    "transliteration": "alah",
+    "pronunciation": "aw-law",
+    "english_words": [
+      "come up",
+      "go up",
+      "bring",
+      "brought",
+      "ascend"
+    ],
+    "root": "H5927",
+    "related_numbers": [
+      "H5930"
+    ],
+    "plain_definition": "To go up, come up, ascend, or bring up.",
+    "first_occurrence": "Genesis 2:6",
+    "key_verses": [
+      "Hosea 1:11",
+      "Hosea 10:8",
+      "Hosea 12:13"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H5930",
     "language": "Hebrew",
     "original_word": "עֹלָה",
@@ -4044,6 +4554,58 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6010",
+    "language": "Hebrew",
+    "original_word": "עֵמֶק",
+    "transliteration": "emeq",
+    "pronunciation": "ay-mek",
+    "english_words": [
+      "valley",
+      "vale"
+    ],
+    "root": "H6009",
+    "related_numbers": [
+      "H6009"
+    ],
+    "plain_definition": "A valley or low plain.",
+    "first_occurrence": "Genesis 14:3",
+    "key_verses": [
+      "Hosea 1:5",
+      "Hosea 2:15"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6030",
+    "language": "Hebrew",
+    "original_word": "עָנָה",
+    "transliteration": "anah",
+    "pronunciation": "aw-naw",
+    "english_words": [
+      "answer",
+      "answered",
+      "hear",
+      "sing",
+      "testify"
+    ],
+    "root": "H6030",
+    "related_numbers": [],
+    "plain_definition": "To answer, respond, testify, or speak in reply.",
+    "first_occurrence": "Genesis 18:27",
+    "key_verses": [
+      "Hosea 2:15",
+      "Hosea 2:21",
+      "Hosea 2:22"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -4240,6 +4802,32 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H7121",
+    "language": "Hebrew",
+    "original_word": "קָרָא",
+    "transliteration": "qara",
+    "pronunciation": "kaw-raw",
+    "english_words": [
+      "call",
+      "called",
+      "cry",
+      "proclaim"
+    ],
+    "root": "H7121",
+    "related_numbers": [],
+    "plain_definition": "To call, cry out, proclaim, or name.",
+    "first_occurrence": "Genesis 1:5",
+    "key_verses": [
+      "Hosea 1:4",
+      "Hosea 1:6",
+      "Hosea 11:1"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H7126",
     "language": "Hebrew",
     "original_word": "קָרַב",
@@ -4379,6 +4967,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H7355",
+    "language": "Hebrew",
+    "original_word": "רָחַם",
+    "transliteration": "racham",
+    "pronunciation": "raw-kham",
+    "english_words": [
+      "mercy",
+      "mercies",
+      "compassion",
+      "pity"
+    ],
+    "root": "H7356",
+    "related_numbers": [
+      "H7356"
+    ],
+    "plain_definition": "To show mercy, compassion, pity, or tender affection.",
+    "first_occurrence": "Deuteronomy 13:17",
+    "key_verses": [
+      "Hosea 1:6",
+      "Hosea 1:7",
+      "Hosea 2:23"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H7379",
     "language": "Hebrew",
     "original_word": "רִיב",
@@ -4486,6 +5102,31 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7704",
+    "language": "Hebrew",
+    "original_word": "שָׂדֶה",
+    "transliteration": "sadeh",
+    "pronunciation": "saw-deh",
+    "english_words": [
+      "field",
+      "country",
+      "land"
+    ],
+    "root": "H7704",
+    "related_numbers": [],
+    "plain_definition": "A field, open country, or cultivated land.",
+    "first_occurrence": "Genesis 2:5",
+    "key_verses": [
+      "Hosea 2:18",
+      "Hosea 10:4",
+      "Hosea 12:12"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -4732,6 +5373,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H8492",
+    "language": "Hebrew",
+    "original_word": "תִּירוֹשׁ",
+    "transliteration": "tiyrosh",
+    "pronunciation": "tee-roshe",
+    "english_words": [
+      "wine",
+      "new wine"
+    ],
+    "root": "H3423",
+    "related_numbers": [
+      "H3423"
+    ],
+    "plain_definition": "New wine or fresh grape juice/wine from the harvest.",
+    "first_occurrence": "Genesis 27:28",
+    "key_verses": [
+      "Hosea 2:8",
+      "Hosea 2:9",
+      "Hosea 4:11"
+    ],
+    "source_title": "Manual reviewed Hebrew Strong's Hosea expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   }
 ]
