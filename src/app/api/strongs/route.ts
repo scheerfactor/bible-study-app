@@ -56,6 +56,45 @@ async function loadMappings() {
   return cachedMappings;
 }
 
+function normalizeSearch(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function scoreEntry(entry: StrongEntry, query: string) {
+  const normalizedQuery = normalizeSearch(query);
+  const englishWords = entry.english_words ?? [];
+  const relatedNumbers = entry.related_numbers ?? [];
+  const keyVerses = entry.key_verses ?? [];
+
+  if (entry.strongs_number.toLowerCase() === query) return 120;
+  if (englishWords.some((word) => normalizeSearch(word) === normalizedQuery)) return 110;
+  if (normalizeSearch(entry.original_word) === normalizedQuery) return 105;
+  if (normalizeSearch(entry.transliteration ?? "") === normalizedQuery) return 100;
+  if (normalizeSearch(entry.root ?? "") === normalizedQuery) return 95;
+  if (relatedNumbers.some((number) => normalizeSearch(number) === normalizedQuery)) return 90;
+  if (englishWords.some((word) => normalizeSearch(word).startsWith(normalizedQuery))) return 85;
+  if (normalizeSearch(entry.plain_definition).includes(normalizedQuery)) return 60;
+  if (keyVerses.some((verse) => normalizeSearch(verse).includes(normalizedQuery))) return 45;
+
+  const haystack = [
+    entry.strongs_number,
+    entry.language,
+    entry.original_word,
+    entry.transliteration ?? "",
+    entry.pronunciation ?? "",
+    entry.root ?? "",
+    ...englishWords,
+    ...relatedNumbers,
+    entry.plain_definition,
+    entry.first_occurrence ?? "",
+    ...keyVerses,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return haystack.includes(query) ? 25 : 0;
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const verse = (searchParams.get("verse") ?? "").trim();
@@ -93,25 +132,14 @@ export async function GET(request: Request) {
   const entries = await loadEntries();
   const matches = entries
     .filter((entry) => entry.review_status === "Verified")
-    .filter((entry) => {
-      const haystack = [
-        entry.strongs_number,
-        entry.language,
-        entry.original_word,
-        entry.transliteration ?? "",
-        entry.pronunciation ?? "",
-        entry.root ?? "",
-        ...(entry.english_words ?? []),
-        ...(entry.related_numbers ?? []),
-        entry.plain_definition,
-        entry.first_occurrence ?? "",
-        ...(entry.key_verses ?? []),
-      ]
-        .join(" ")
-        .toLowerCase();
-
-      return haystack.includes(query);
-    })
+    .map((entry) => ({ entry, score: scoreEntry(entry, query) }))
+    .filter((match) => match.score > 0)
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        a.entry.strongs_number.localeCompare(b.entry.strongs_number, undefined, { numeric: true }),
+    )
+    .map((match) => match.entry)
     .slice(0, limit);
 
   return Response.json({ entries: matches });
