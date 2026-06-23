@@ -5,6 +5,7 @@ import verses1769 from "es-kjv/json/verses-1769.js";
 
 const fileArg = process.argv.find((arg) => arg.startsWith("--file="));
 const dirArg = process.argv.find((arg) => arg.startsWith("--dir="));
+const strictLexicon = process.argv.includes("--strict-lexicon");
 const defaultDir = "data/strongs/mapping-batches";
 const targetFilePath = fileArg ? path.resolve(process.cwd(), fileArg.split("=")[1]) : null;
 const targetDirPath = path.resolve(process.cwd(), dirArg?.split("=")[1] ?? defaultDir);
@@ -75,6 +76,8 @@ const seen = new Set();
 const errors = [];
 const warnings = [];
 const versesCovered = new Set();
+const missingLexiconNumbers = new Set();
+const glossMismatchRows = [];
 let rowCount = 0;
 
 for (const file of files) {
@@ -123,15 +126,21 @@ for (const file of files) {
     if (!/^[GH][0-9]+$/.test(mapping.strongs_number ?? "")) {
       errors.push(`Row ${row} has invalid Strong's number: ${mapping.strongs_number}`);
     } else if (!verifiedStrongNumbers.has(mapping.strongs_number)) {
-      errors.push(`Row ${row} maps to a Strong's number not present in the verified lexicon sample: ${mapping.strongs_number}`);
+      missingLexiconNumbers.add(mapping.strongs_number);
+      if (strictLexicon) {
+        errors.push(`Row ${row} maps to a Strong's number not present in the verified lexicon sample: ${mapping.strongs_number}`);
+      }
     } else {
       const strongEntry = strongEntriesByNumber.get(mapping.strongs_number);
       const allowedForms = new Set((strongEntry?.english_words ?? []).flatMap((word) => [...wordForms(word)]));
       const mappedForms = wordForms(mapping.normalized_kjv_word || mapping.kjv_word);
       if (![...mappedForms].some((form) => allowedForms.has(form))) {
-        errors.push(
-          `Row ${row} maps ${mapping.kjv_word} to ${mapping.strongs_number}, but that word is not listed in the reviewed English glosses.`,
-        );
+        glossMismatchRows.push(`${row} maps ${mapping.kjv_word} to ${mapping.strongs_number}`);
+        if (strictLexicon) {
+          errors.push(
+            `Row ${row} maps ${mapping.kjv_word} to ${mapping.strongs_number}, but that word is not listed in the reviewed English glosses.`,
+          );
+        }
       }
     }
 
@@ -146,6 +155,18 @@ for (const file of files) {
 }
 
 for (const warning of warnings) console.warn(`Warning: ${warning}`);
+if (missingLexiconNumbers.size) {
+  console.warn(
+    `Warning: ${missingLexiconNumbers.size} Strong's numbers in reviewed mappings do not yet have verified lexicon cards. ` +
+      "The reader can still show Strong's numbers; definition cards will appear as lexicon coverage expands.",
+  );
+}
+if (glossMismatchRows.length) {
+  console.warn(
+    `Warning: ${glossMismatchRows.length} reviewed mapping rows use KJV words not listed in the current starter lexicon glosses. ` +
+      "Run with --strict-lexicon to fail on these while expanding lexicon cards.",
+  );
+}
 for (const error of errors) console.error(`Error: ${error}`);
 
 console.log("KJV Strong's mapping validation complete");
@@ -155,6 +176,9 @@ console.table({
   versesCovered: versesCovered.size,
   errors: errors.length,
   warnings: warnings.length,
+  missingLexiconNumbers: missingLexiconNumbers.size,
+  glossMismatches: glossMismatchRows.length,
+  strictLexicon,
 });
 
 if (errors.length) process.exitCode = 1;

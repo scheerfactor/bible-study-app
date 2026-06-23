@@ -62,6 +62,20 @@ npm run build:strongs-mapping-index
 npm run validate:strongs-mapping
 ```
 
+The default mapping validator now checks structural safety for public display:
+valid KJV references, token alignment, duplicate protection, reviewed status, and
+valid Strong's number format. Missing lexicon definition cards are reported as
+warnings because the reader can still show the Strong's number and word mapping.
+
+When expanding the lexicon itself, run strict validation:
+
+```bash
+npm run validate:strongs-mapping -- --strict-lexicon
+```
+
+Strict mode fails if a reviewed mapping references a Strong's number that does not
+yet have a verified lexicon card.
+
 Do not commit raw CrossWire, STEP, e-Sword, or other source exports. Raw source
 files belong in local review storage, R2, or another private source bucket until
 the rights path is fully approved.

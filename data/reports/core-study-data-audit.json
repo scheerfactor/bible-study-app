@@ -54,10 +54,10 @@
   },
   "strongs": {
     "verifiedEntries": 225,
-    "reviewedMappingFiles": 5,
-    "reviewedMappingRows": 1295,
-    "reviewedMappedBooks": 8,
-    "reviewedMappedChapters": 21,
+    "reviewedMappingFiles": 7,
+    "reviewedMappingRows": 27468,
+    "reviewedMappedBooks": 12,
+    "reviewedMappedChapters": 63,
     "status": "starter data only",
     "focusWordChecks": [
       {
@@ -98,22 +98,6 @@
       }
     ],
     "weakestBooks": [
-      {
-        "book": "Genesis",
-        "chaptersCovered": 0,
-        "totalChapters": 50,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "Exodus",
-        "chaptersCovered": 0,
-        "totalChapters": 40,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
       {
         "book": "Numbers",
         "chaptersCovered": 0,
@@ -193,15 +177,31 @@
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
+      },
+      {
+        "book": "2 Chronicles",
+        "chaptersCovered": 0,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "Ezra",
+        "chaptersCovered": 0,
+        "totalChapters": 10,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
       }
     ]
   },
   "tsk": {
-    "rows": 930,
+    "rows": 1320,
     "stagedRows": 50,
-    "sourceVersesCovered": 490,
+    "sourceVersesCovered": 677,
     "booksCovered": 66,
-    "chaptersCovered": 126,
+    "chaptersCovered": 143,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -227,52 +227,12 @@
     ],
     "weakestBooks": [
       {
-        "book": "Numbers",
-        "chaptersCovered": 1,
-        "totalChapters": 36,
-        "chapterCoveragePercent": 2.8,
-        "versesCovered": 12,
-        "rows": 21
-      },
-      {
         "book": "Deuteronomy",
         "chaptersCovered": 1,
         "totalChapters": 34,
         "chapterCoveragePercent": 2.9,
-        "versesCovered": 12,
-        "rows": 23
-      },
-      {
-        "book": "1 Samuel",
-        "chaptersCovered": 1,
-        "totalChapters": 31,
-        "chapterCoveragePercent": 3.2,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "1 Chronicles",
-        "chaptersCovered": 1,
-        "totalChapters": 29,
-        "chapterCoveragePercent": 3.4,
-        "versesCovered": 12,
-        "rows": 18
-      },
-      {
-        "book": "Matthew",
-        "chaptersCovered": 1,
-        "totalChapters": 28,
-        "chapterCoveragePercent": 3.6,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "Acts",
-        "chaptersCovered": 1,
-        "totalChapters": 28,
-        "chapterCoveragePercent": 3.6,
-        "versesCovered": 1,
-        "rows": 1
+        "versesCovered": 24,
+        "rows": 61
       },
       {
         "book": "Leviticus",
@@ -283,44 +243,84 @@
         "rows": 23
       },
       {
-        "book": "2 Kings",
-        "chaptersCovered": 1,
-        "totalChapters": 25,
-        "chapterCoveragePercent": 4,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "Joshua",
-        "chaptersCovered": 1,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 4.2,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "2 Samuel",
-        "chaptersCovered": 1,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 4.2,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "Ezekiel",
-        "chaptersCovered": 2,
-        "totalChapters": 48,
-        "chapterCoveragePercent": 4.2,
-        "versesCovered": 2,
-        "rows": 2
-      },
-      {
         "book": "Luke",
         "chaptersCovered": 1,
         "totalChapters": 24,
         "chapterCoveragePercent": 4.2,
         "versesCovered": 6,
         "rows": 12
+      },
+      {
+        "book": "1 Kings",
+        "chaptersCovered": 1,
+        "totalChapters": 22,
+        "chapterCoveragePercent": 4.5,
+        "versesCovered": 1,
+        "rows": 1
+      },
+      {
+        "book": "Psalms",
+        "chaptersCovered": 7,
+        "totalChapters": 150,
+        "chapterCoveragePercent": 4.7,
+        "versesCovered": 10,
+        "rows": 10
+      },
+      {
+        "book": "Judges",
+        "chaptersCovered": 1,
+        "totalChapters": 21,
+        "chapterCoveragePercent": 4.8,
+        "versesCovered": 1,
+        "rows": 1
+      },
+      {
+        "book": "Job",
+        "chaptersCovered": 2,
+        "totalChapters": 42,
+        "chapterCoveragePercent": 4.8,
+        "versesCovered": 2,
+        "rows": 2
+      },
+      {
+        "book": "2 Chronicles",
+        "chaptersCovered": 2,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 5.6,
+        "versesCovered": 2,
+        "rows": 3
+      },
+      {
+        "book": "Jeremiah",
+        "chaptersCovered": 3,
+        "totalChapters": 52,
+        "chapterCoveragePercent": 5.8,
+        "versesCovered": 3,
+        "rows": 3
+      },
+      {
+        "book": "1 Corinthians",
+        "chaptersCovered": 1,
+        "totalChapters": 16,
+        "chapterCoveragePercent": 6.3,
+        "versesCovered": 1,
+        "rows": 1
+      },
+      {
+        "book": "Mark",
+        "chaptersCovered": 1,
+        "totalChapters": 16,
+        "chapterCoveragePercent": 6.3,
+        "versesCovered": 12,
+        "rows": 23
+      },
+      {
+        "book": "1 Samuel",
+        "chaptersCovered": 2,
+        "totalChapters": 31,
+        "chapterCoveragePercent": 6.5,
+        "versesCovered": 21,
+        "rows": 46
       }
     ]
   },

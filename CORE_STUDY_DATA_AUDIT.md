@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-23T21:33:59.371Z
+Generated: 2026-06-23T22:20:09.727Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-23T21:33:59.371Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's lexicon entries: 225; reviewed KJV word mappings: 1295 rows from 5 batch files across 8 books and 21 chapters (starter data only).
-- Public TSK rows: 930; staged TSK rows: 50; source verses covered: 490; chapters covered: 126; books covered: 66 (reviewed samples only).
+- Strong's lexicon entries: 225; reviewed KJV word mappings: 27468 rows from 7 batch files across 12 books and 63 chapters (starter data only).
+- Public TSK rows: 1320; staged TSK rows: 50; source verses covered: 677; chapters covered: 143; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
 
@@ -44,8 +44,6 @@ Generated: 2026-06-23T21:33:59.371Z
 
 | Book | Chapters Mapped | Total Chapters | Chapter Coverage | Mapped Verses | Mapping Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Genesis | 0 | 50 | 0% | 0 | 0 |
-| Exodus | 0 | 40 | 0% | 0 | 0 |
 | Numbers | 0 | 36 | 0% | 0 | 0 |
 | Deuteronomy | 0 | 34 | 0% | 0 | 0 |
 | Joshua | 0 | 24 | 0% | 0 | 0 |
@@ -56,6 +54,8 @@ Generated: 2026-06-23T21:33:59.371Z
 | 1 Kings | 0 | 22 | 0% | 0 | 0 |
 | 2 Kings | 0 | 25 | 0% | 0 | 0 |
 | 1 Chronicles | 0 | 29 | 0% | 0 | 0 |
+| 2 Chronicles | 0 | 36 | 0% | 0 | 0 |
+| Ezra | 0 | 10 | 0% | 0 | 0 |
 
 ## TSK Focus Reference Checks
 
@@ -71,18 +71,18 @@ Generated: 2026-06-23T21:33:59.371Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Numbers | 1 | 36 | 2.8% | 12 | 21 |
-| Deuteronomy | 1 | 34 | 2.9% | 12 | 23 |
-| 1 Samuel | 1 | 31 | 3.2% | 1 | 1 |
-| 1 Chronicles | 1 | 29 | 3.4% | 12 | 18 |
-| Matthew | 1 | 28 | 3.6% | 1 | 1 |
-| Acts | 1 | 28 | 3.6% | 1 | 1 |
+| Deuteronomy | 1 | 34 | 2.9% | 24 | 61 |
 | Leviticus | 1 | 27 | 3.7% | 12 | 23 |
-| 2 Kings | 1 | 25 | 4% | 1 | 1 |
-| Joshua | 1 | 24 | 4.2% | 1 | 1 |
-| 2 Samuel | 1 | 24 | 4.2% | 1 | 1 |
-| Ezekiel | 2 | 48 | 4.2% | 2 | 2 |
 | Luke | 1 | 24 | 4.2% | 6 | 12 |
+| 1 Kings | 1 | 22 | 4.5% | 1 | 1 |
+| Psalms | 7 | 150 | 4.7% | 10 | 10 |
+| Judges | 1 | 21 | 4.8% | 1 | 1 |
+| Job | 2 | 42 | 4.8% | 2 | 2 |
+| 2 Chronicles | 2 | 36 | 5.6% | 2 | 3 |
+| Jeremiah | 3 | 52 | 5.8% | 3 | 3 |
+| 1 Corinthians | 1 | 16 | 6.3% | 1 | 1 |
+| Mark | 1 | 16 | 6.3% | 12 | 23 |
+| 1 Samuel | 2 | 31 | 6.5% | 21 | 46 |
 
 ## Thinnest Commentary Books
 
