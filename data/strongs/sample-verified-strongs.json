@@ -331,6 +331,33 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "G615",
+    "language": "Greek",
+    "original_word": "ἀποκτείνω",
+    "transliteration": "apokteino",
+    "pronunciation": "ap-ok-ti-no",
+    "english_words": [
+      "kill",
+      "killeth",
+      "killed",
+      "slay"
+    ],
+    "root": "G575",
+    "related_numbers": [
+      "G575"
+    ],
+    "plain_definition": "To kill, slay, or put to death.",
+    "first_occurrence": "Matthew 10:28",
+    "key_verses": [
+      "Revelation 13:10",
+      "Revelation 13:15"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "G622",
     "language": "Greek",
     "original_word": "ἀπόλλυμι",
@@ -382,6 +409,30 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G706",
+    "language": "Greek",
+    "original_word": "ἀριθμός",
+    "transliteration": "arithmos",
+    "pronunciation": "ar-ith-mos",
+    "english_words": [
+      "number"
+    ],
+    "root": "G142",
+    "related_numbers": [
+      "G705"
+    ],
+    "plain_definition": "A number or counted total.",
+    "first_occurrence": "Luke 22:3",
+    "key_verses": [
+      "Revelation 13:17",
+      "Revelation 13:18"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -548,6 +599,32 @@
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1093",
+    "language": "Greek",
+    "original_word": "γῆ",
+    "transliteration": "ge",
+    "pronunciation": "ghay",
+    "english_words": [
+      "earth",
+      "land",
+      "world",
+      "ground"
+    ],
+    "root": "G1093",
+    "related_numbers": [],
+    "plain_definition": "Earth, land, ground, or world depending on context.",
+    "first_occurrence": "Matthew 2:6",
+    "key_verses": [
+      "Revelation 13:3",
+      "Revelation 13:8",
+      "Revelation 13:12"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -831,6 +908,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "G1492",
+    "language": "Greek",
+    "original_word": "εἴδω",
+    "transliteration": "eido",
+    "pronunciation": "i-do",
+    "english_words": [
+      "saw",
+      "see",
+      "beheld",
+      "know"
+    ],
+    "root": "G1492",
+    "related_numbers": [
+      "G3708"
+    ],
+    "plain_definition": "To see, perceive, behold, or know.",
+    "first_occurrence": "Matthew 2:2",
+    "key_verses": [
+      "Revelation 13:1",
+      "Revelation 13:3",
+      "Revelation 13:11"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "G1515",
     "language": "Greek",
     "original_word": "εἰρήνη",
@@ -993,6 +1098,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1909",
+    "language": "Greek",
+    "original_word": "ἐπί",
+    "transliteration": "epi",
+    "pronunciation": "ep-ee",
+    "english_words": [
+      "upon",
+      "on",
+      "over",
+      "in"
+    ],
+    "root": "G1909",
+    "related_numbers": [],
+    "plain_definition": "Upon, on, over, or toward, depending on context.",
+    "first_occurrence": "Matthew 1:11",
+    "key_verses": [
+      "Revelation 13:1",
+      "Revelation 13:7",
+      "Revelation 13:16"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -1261,6 +1392,32 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "G2532",
+    "language": "Greek",
+    "original_word": "καί",
+    "transliteration": "kai",
+    "pronunciation": "kahee",
+    "english_words": [
+      "and",
+      "also",
+      "even",
+      "both"
+    ],
+    "root": "G2532",
+    "related_numbers": [],
+    "plain_definition": "And, also, even, or both; a common connecting word.",
+    "first_occurrence": "Matthew 1:2",
+    "key_verses": [
+      "Revelation 13:1",
+      "Revelation 13:7",
+      "Revelation 13:16"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "G2663",
     "language": "Greek",
     "original_word": "μετάνοια",
@@ -1284,6 +1441,33 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2730",
+    "language": "Greek",
+    "original_word": "κατοικέω",
+    "transliteration": "katoikeo",
+    "pronunciation": "kat-oy-keh-o",
+    "english_words": [
+      "dwell",
+      "dwelleth",
+      "inhabit"
+    ],
+    "root": "G3611",
+    "related_numbers": [
+      "G3611"
+    ],
+    "plain_definition": "To dwell, inhabit, or settle in a place.",
+    "first_occurrence": "Matthew 2:23",
+    "key_verses": [
+      "Revelation 13:8",
+      "Revelation 13:12",
+      "Revelation 13:14"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -1422,6 +1606,35 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2980",
+    "language": "Greek",
+    "original_word": "λαλέω",
+    "transliteration": "laleo",
+    "pronunciation": "lal-eh-o",
+    "english_words": [
+      "speak",
+      "spake",
+      "speaking",
+      "say",
+      "utter"
+    ],
+    "root": "G2980",
+    "related_numbers": [
+      "G3056"
+    ],
+    "plain_definition": "To speak, utter, or say.",
+    "first_occurrence": "Matthew 9:18",
+    "key_verses": [
+      "Revelation 13:5",
+      "Revelation 13:11",
+      "Revelation 13:15"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -1638,6 +1851,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3686",
+    "language": "Greek",
+    "original_word": "ὄνομα",
+    "transliteration": "onoma",
+    "pronunciation": "on-om-ah",
+    "english_words": [
+      "name",
+      "names"
+    ],
+    "root": "G1097",
+    "related_numbers": [
+      "G1097"
+    ],
+    "plain_definition": "A name, title, reputation, or authority represented by a name.",
+    "first_occurrence": "Matthew 1:21",
+    "key_verses": [
+      "Revelation 13:1",
+      "Revelation 13:6",
+      "Revelation 13:17"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -1860,6 +2099,37 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G4160",
+    "language": "Greek",
+    "original_word": "ποιέω",
+    "transliteration": "poieo",
+    "pronunciation": "poy-eh-o",
+    "english_words": [
+      "do",
+      "make",
+      "maketh",
+      "doeth",
+      "cause",
+      "causeth",
+      "work"
+    ],
+    "root": "G4160",
+    "related_numbers": [
+      "G4161"
+    ],
+    "plain_definition": "To do, make, produce, cause, or work.",
+    "first_occurrence": "Matthew 1:24",
+    "key_verses": [
+      "Revelation 13:5",
+      "Revelation 13:13",
+      "Revelation 13:16"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -2491,6 +2761,32 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "G5480",
+    "language": "Greek",
+    "original_word": "χάραγμα",
+    "transliteration": "charagma",
+    "pronunciation": "khar-ag-mah",
+    "english_words": [
+      "mark",
+      "graven"
+    ],
+    "root": "G5482",
+    "related_numbers": [
+      "G5482"
+    ],
+    "plain_definition": "A mark, stamp, engraving, or impressed sign.",
+    "first_occurrence": "Acts 17:29",
+    "key_verses": [
+      "Revelation 13:16",
+      "Revelation 13:17",
+      "Revelation 14:9"
+    ],
+    "source_title": "Manual reviewed Greek Strong's Daniel/Revelation expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "G5485",
     "language": "Greek",
     "original_word": "χάρις",
@@ -2761,6 +3057,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H560",
+    "language": "Aramaic",
+    "original_word": "אֲמַר",
+    "transliteration": "amar",
+    "pronunciation": "am-ar",
+    "english_words": [
+      "said",
+      "say",
+      "tell",
+      "told"
+    ],
+    "root": "H559",
+    "related_numbers": [
+      "H559"
+    ],
+    "plain_definition": "To say, tell, speak, or command.",
+    "first_occurrence": "Ezra 5:15",
+    "key_verses": [
+      "Daniel 7:2",
+      "Daniel 7:16",
+      "Daniel 7:23"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H571",
     "language": "Hebrew",
     "original_word": "אֱמֶת",
@@ -2837,6 +3161,32 @@
       "Hosea 11:8"
     ],
     "source_title": "Manual reviewed Hebrew Strong's starter entries",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H703",
+    "language": "Aramaic",
+    "original_word": "אַרְבַּע",
+    "transliteration": "arba",
+    "pronunciation": "ar-bah",
+    "english_words": [
+      "four",
+      "fourth"
+    ],
+    "root": "H702",
+    "related_numbers": [
+      "H702"
+    ],
+    "plain_definition": "Four.",
+    "first_occurrence": "Daniel 3:25",
+    "key_verses": [
+      "Daniel 7:2",
+      "Daniel 7:3",
+      "Daniel 7:17"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
@@ -3279,6 +3629,34 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H1780",
+    "language": "Aramaic",
+    "original_word": "דִּין",
+    "transliteration": "din",
+    "pronunciation": "deen",
+    "english_words": [
+      "judgment",
+      "judge",
+      "cause"
+    ],
+    "root": "H1777",
+    "related_numbers": [
+      "H1777",
+      "H1779"
+    ],
+    "plain_definition": "Judgment, legal cause, or decision.",
+    "first_occurrence": "Daniel 4:37",
+    "key_verses": [
+      "Daniel 7:10",
+      "Daniel 7:22",
+      "Daniel 7:26"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H1847",
     "language": "Hebrew",
     "original_word": "דַּעַת",
@@ -3470,6 +3848,61 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H2370",
+    "language": "Aramaic",
+    "original_word": "חֲזָה",
+    "transliteration": "chaza",
+    "pronunciation": "khaz-aw",
+    "english_words": [
+      "saw",
+      "see",
+      "beheld",
+      "looked"
+    ],
+    "root": "H2370",
+    "related_numbers": [
+      "H2376"
+    ],
+    "plain_definition": "To see, behold, or look in vision.",
+    "first_occurrence": "Daniel 2:8",
+    "key_verses": [
+      "Daniel 7:1",
+      "Daniel 7:2",
+      "Daniel 7:13"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2376",
+    "language": "Aramaic",
+    "original_word": "חֶזְוָא",
+    "transliteration": "chezva",
+    "pronunciation": "khez-vaw",
+    "english_words": [
+      "vision",
+      "visions",
+      "appearance"
+    ],
+    "root": "H2370",
+    "related_numbers": [
+      "H2370"
+    ],
+    "plain_definition": "A vision or appearance, especially a prophetic vision.",
+    "first_occurrence": "Daniel 2:19",
+    "key_verses": [
+      "Daniel 7:1",
+      "Daniel 7:2",
+      "Daniel 7:7"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H2398",
     "language": "Hebrew",
     "original_word": "חָטָא",
@@ -3493,6 +3926,33 @@
       "Romans 3:23"
     ],
     "source_title": "Manual reviewed Hebrew Strong's starter entries",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H2423",
+    "language": "Aramaic",
+    "original_word": "חֵיוָא",
+    "transliteration": "cheyva",
+    "pronunciation": "khay-vaw",
+    "english_words": [
+      "beast",
+      "beasts",
+      "living creature"
+    ],
+    "root": "H2416",
+    "related_numbers": [
+      "H2416"
+    ],
+    "plain_definition": "A beast or living creature; Daniel 7 uses beasts to picture kingdoms.",
+    "first_occurrence": "Daniel 2:38",
+    "key_verses": [
+      "Daniel 7:3",
+      "Daniel 7:17",
+      "Daniel 7:23"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
@@ -3738,6 +4198,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H3118",
+    "language": "Aramaic",
+    "original_word": "יוֹם",
+    "transliteration": "yom",
+    "pronunciation": "yome",
+    "english_words": [
+      "day",
+      "days"
+    ],
+    "root": "H3117",
+    "related_numbers": [
+      "H3117"
+    ],
+    "plain_definition": "Day or days.",
+    "first_occurrence": "Ezra 4:15",
+    "key_verses": [
+      "Daniel 7:9",
+      "Daniel 7:13",
+      "Daniel 7:22"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -4009,6 +4495,31 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H3916",
+    "language": "Aramaic",
+    "original_word": "לֵילְיָא",
+    "transliteration": "lelya",
+    "pronunciation": "lay-leh-yaw",
+    "english_words": [
+      "night"
+    ],
+    "root": "H3915",
+    "related_numbers": [
+      "H3915"
+    ],
+    "plain_definition": "Night.",
+    "first_occurrence": "Daniel 2:19",
+    "key_verses": [
+      "Daniel 7:2",
+      "Daniel 7:7",
+      "Daniel 7:13"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H3925",
     "language": "Hebrew",
     "original_word": "לָמַד",
@@ -4166,6 +4677,35 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4437",
+    "language": "Aramaic",
+    "original_word": "מַלְכוּ",
+    "transliteration": "malku",
+    "pronunciation": "mal-koo",
+    "english_words": [
+      "kingdom",
+      "kingdoms",
+      "realm",
+      "reign"
+    ],
+    "root": "H4428",
+    "related_numbers": [
+      "H4428",
+      "H4438"
+    ],
+    "plain_definition": "Kingdom, realm, reign, or royal dominion; important in Daniel 7 for earthly kingdoms and God’s everlasting kingdom.",
+    "first_occurrence": "Ezra 4:5",
+    "key_verses": [
+      "Daniel 7:14",
+      "Daniel 7:18",
+      "Daniel 7:27"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -4529,6 +5069,33 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H5946",
+    "language": "Aramaic",
+    "original_word": "עִלַּי",
+    "transliteration": "illay",
+    "pronunciation": "il-lah-ee",
+    "english_words": [
+      "high",
+      "most high"
+    ],
+    "root": "H5924",
+    "related_numbers": [
+      "H5924",
+      "H5943"
+    ],
+    "plain_definition": "High or Most High; used in Daniel for God’s supreme authority.",
+    "first_occurrence": "Daniel 3:26",
+    "key_verses": [
+      "Daniel 7:18",
+      "Daniel 7:22",
+      "Daniel 7:27"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H5971",
     "language": "Hebrew",
     "original_word": "עַם",
@@ -4665,6 +5232,56 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H6236",
+    "language": "Aramaic",
+    "original_word": "עֲשַׂר",
+    "transliteration": "asar",
+    "pronunciation": "as-ar",
+    "english_words": [
+      "ten"
+    ],
+    "root": "H6235",
+    "related_numbers": [
+      "H6235"
+    ],
+    "plain_definition": "Ten.",
+    "first_occurrence": "Daniel 7:7",
+    "key_verses": [
+      "Daniel 7:20",
+      "Daniel 7:24"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6268",
+    "language": "Aramaic",
+    "original_word": "עַתִּיק",
+    "transliteration": "attiq",
+    "pronunciation": "at-teek",
+    "english_words": [
+      "ancient",
+      "aged"
+    ],
+    "root": "H6275",
+    "related_numbers": [
+      "H6275"
+    ],
+    "plain_definition": "Ancient or aged; used in Daniel 7 in the title Ancient of days.",
+    "first_occurrence": "Daniel 7:9",
+    "key_verses": [
+      "Daniel 7:9",
+      "Daniel 7:13",
+      "Daniel 7:22"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H6486",
     "language": "Hebrew",
     "original_word": "פְּקֻדָּה",
@@ -4769,6 +5386,33 @@
     "source_title": "Manual verified Strong's sample entries",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H6922",
+    "language": "Aramaic",
+    "original_word": "קַדִּישׁ",
+    "transliteration": "qaddish",
+    "pronunciation": "kad-deesh",
+    "english_words": [
+      "saint",
+      "saints",
+      "holy"
+    ],
+    "root": "H6942",
+    "related_numbers": [
+      "H6942"
+    ],
+    "plain_definition": "Holy, set apart, or saints; in Daniel 7 it refers to the saints of the Most High.",
+    "first_occurrence": "Daniel 4:8",
+    "key_verses": [
+      "Daniel 7:18",
+      "Daniel 7:22",
+      "Daniel 7:27"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -4884,6 +5528,32 @@
     "review_status": "Verified"
   },
   {
+    "strongs_number": "H7162",
+    "language": "Aramaic",
+    "original_word": "קֶרֶן",
+    "transliteration": "qeren",
+    "pronunciation": "keh-ren",
+    "english_words": [
+      "horn",
+      "horns"
+    ],
+    "root": "H7161",
+    "related_numbers": [
+      "H7161"
+    ],
+    "plain_definition": "A horn; a symbol of power, rulers, or kingdoms in Daniel’s vision.",
+    "first_occurrence": "Daniel 7:7",
+    "key_verses": [
+      "Daniel 7:8",
+      "Daniel 7:20",
+      "Daniel 7:24"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
     "strongs_number": "H7218",
     "language": "Hebrew",
     "original_word": "רֹאשׁ",
@@ -4935,6 +5605,32 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7244",
+    "language": "Aramaic",
+    "original_word": "רְבִיעָי",
+    "transliteration": "rebiyai",
+    "pronunciation": "reb-ee-ah-ee",
+    "english_words": [
+      "fourth"
+    ],
+    "root": "H7251",
+    "related_numbers": [
+      "H703",
+      "H7240"
+    ],
+    "plain_definition": "Fourth.",
+    "first_occurrence": "Daniel 2:40",
+    "key_verses": [
+      "Daniel 7:7",
+      "Daniel 7:19",
+      "Daniel 7:23"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
@@ -5260,6 +5956,33 @@
     "source_title": "Manual verified Strong's starter expansion",
     "source_url": "local://data/strongs/sample-verified-strongs.json",
     "rights_status": "Reviewed prototype sample from public-domain Strong's numbering tradition; full dataset not imported yet.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H7985",
+    "language": "Aramaic",
+    "original_word": "שָׁלְטָן",
+    "transliteration": "sholtan",
+    "pronunciation": "shol-tawn",
+    "english_words": [
+      "dominion",
+      "rule",
+      "power"
+    ],
+    "root": "H7981",
+    "related_numbers": [
+      "H7981"
+    ],
+    "plain_definition": "Dominion, rule, authority, or governing power.",
+    "first_occurrence": "Daniel 4:3",
+    "key_verses": [
+      "Daniel 7:14",
+      "Daniel 7:26",
+      "Daniel 7:27"
+    ],
+    "source_title": "Manual reviewed Aramaic Strong's Daniel expansion",
+    "source_url": "local://data/strongs/sample-verified-strongs.json",
+    "rights_status": "Reviewed prototype sample; concise definitions are locally prepared for study lookup. Full Strong's dataset not imported yet.",
     "review_status": "Verified"
   },
   {
