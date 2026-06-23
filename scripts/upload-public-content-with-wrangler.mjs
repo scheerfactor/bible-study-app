@@ -9,6 +9,8 @@ const execute = process.argv.includes("--execute");
 const local = process.argv.includes("--local");
 const startAtArg = process.argv.find((arg) => arg.startsWith("--start-at="));
 const bucketArg = process.argv.find((arg) => arg.startsWith("--bucket="));
+const kindArg = process.argv.find((arg) => arg.startsWith("--kind="));
+const pathPrefixArg = process.argv.find((arg) => arg.startsWith("--path-prefix="));
 const bucket = bucketArg?.split("=").slice(1).join("=") || process.env.R2_BUCKET_PUBLIC_CONTENT || "fathers-business-bible-study-public";
 
 function wait(ms) {
@@ -39,7 +41,12 @@ async function run(command, args, attempt = 1) {
 
 async function main() {
   const inventory = JSON.parse(await readFile(inventoryPath, "utf8"));
-  let items = inventory.items.filter((item) => !item.missing);
+  const kindFilter = kindArg?.split("=").slice(1).join("=");
+  const pathPrefixFilter = pathPrefixArg?.split("=").slice(1).join("=");
+  let items = inventory.items
+    .filter((item) => !item.missing)
+    .filter((item) => !kindFilter || item.kind === kindFilter)
+    .filter((item) => !pathPrefixFilter || String(item.storage_path ?? "").startsWith(pathPrefixFilter));
   if (startAtArg) {
     const startAt = startAtArg.split("=").slice(1).join("=");
     const startIndex = items.findIndex((item) => item.storage_path === startAt);
@@ -52,6 +59,8 @@ async function main() {
 
   if (!execute) {
     console.log(`Dry run only. ${items.length} files would be uploaded to R2 bucket "${bucket}".`);
+    if (kindFilter) console.log(`Kind filter: ${kindFilter}`);
+    if (pathPrefixFilter) console.log(`Path prefix filter: ${pathPrefixFilter}`);
     console.table(inventory.summaries);
     console.log(`Run: npm run storage:upload:wrangler -- --bucket=${bucket} --execute`);
     return;

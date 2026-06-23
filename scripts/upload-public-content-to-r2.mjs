@@ -7,6 +7,8 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const inventoryPath = join(repoRoot, "data", "storage", "public-content-storage-inventory.json");
 const execute = process.argv.includes("--execute");
 const dryRun = !execute || process.argv.includes("--dry-run");
+const kindArg = process.argv.find((arg) => arg.startsWith("--kind="));
+const pathPrefixArg = process.argv.find((arg) => arg.startsWith("--path-prefix="));
 
 const requiredEnv = [
   "R2_ACCOUNT_ID",
@@ -102,10 +104,17 @@ async function uploadItem(item, config) {
 
 async function main() {
   const inventory = JSON.parse(await readFile(inventoryPath, "utf8"));
-  const items = inventory.items.filter((item) => !item.missing);
+  const kindFilter = kindArg?.split("=").slice(1).join("=");
+  const pathPrefixFilter = pathPrefixArg?.split("=").slice(1).join("=");
+  const items = inventory.items
+    .filter((item) => !item.missing)
+    .filter((item) => !kindFilter || item.kind === kindFilter)
+    .filter((item) => !pathPrefixFilter || String(item.storage_path ?? "").startsWith(pathPrefixFilter));
 
   if (dryRun) {
     console.log(`Dry run only. ${items.length} files would be uploaded.`);
+    if (kindFilter) console.log(`Kind filter: ${kindFilter}`);
+    if (pathPrefixFilter) console.log(`Path prefix filter: ${pathPrefixFilter}`);
     console.table(inventory.summaries);
     console.log("Pass --execute to upload to R2.");
     return;

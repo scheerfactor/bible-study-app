@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-06-18T00:42:37.445Z
+Generated: 2026-06-23T23:20:35.290Z
 
 ## Path Strategy
 
@@ -15,7 +15,9 @@ Mirror current repository-relative paths in object storage during the transition
 | Dictionary files | 1 | 1 | 0 | 34.28 MB |
 | Library manifests | 1 | 1 | 0 | 2.55 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
-| Total public content | 1,442 | 1,442 | 0 | 1.06 GB |
+| Strong's indexes | 2 | 2 | 0 | 39.33 MB |
+| TSK/cross-reference batches | 8 | 8 | 0 | 1.38 MB |
+| Total public content | 1,452 | 1,452 | 0 | 1.10 GB |
 
 Commentary entries represented in public batch files: 7,296
 
@@ -24,12 +26,23 @@ Commentary entries represented in public batch files: 7,296
 ```bash
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --kind=strongs_index --dry-run
+npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 ```
 
 When R2 credentials and a public base URL are configured:
 
 ```bash
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=strongs_index --execute
+npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
+```
+
+If using Wrangler instead of S3 credentials:
+
+```bash
+npm run storage:upload:wrangler -- --kind=strongs_index --execute
+npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 ```
 
 Required environment variables:

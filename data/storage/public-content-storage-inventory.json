@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T00:42:37.445Z",
+  "generated_at": "2026-06-23T23:20:35.290Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 7296,
@@ -39,12 +39,26 @@
       "total_bytes": 27690866,
       "total_size": "26.41 MB"
     },
-    "all_public_content": {
-      "files": 1442,
-      "present": 1442,
+    "strongs_index": {
+      "files": 2,
+      "present": 2,
       "missing": 0,
-      "total_bytes": 1141434129,
-      "total_size": "1.06 GB"
+      "total_bytes": 41243401,
+      "total_size": "39.33 MB"
+    },
+    "tsk_cross_reference_batch": {
+      "files": 8,
+      "present": 8,
+      "missing": 0,
+      "total_bytes": 1443473,
+      "total_size": "1.38 MB"
+    },
+    "all_public_content": {
+      "files": 1452,
+      "present": 1452,
+      "missing": 0,
+      "total_bytes": 1184121003,
+      "total_size": "1.10 GB"
     }
   },
   "items": [
@@ -17057,6 +17071,86 @@
       "content_type": "text/plain; charset=utf-8",
       "size_bytes": 432092,
       "checksum_sha256": "d59f5002286fcd5c06c26f2123433241b14026bd4a6ddd2393082cac24c3e635"
+    },
+    {
+      "kind": "strongs_index",
+      "source_path": "data/strongs/sample-verified-strongs.json",
+      "storage_path": "data/strongs/sample-verified-strongs.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 184763,
+      "checksum_sha256": "45f96380ac3d5da273608265804c2f778e51d587ffd9bfdcf08e69dbab535aba"
+    },
+    {
+      "kind": "strongs_index",
+      "source_path": "data/strongs/kjv-strongs-mappings.reviewed.json",
+      "storage_path": "data/strongs/kjv-strongs-mappings.reviewed.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 41058638,
+      "checksum_sha256": "b85e78881ad722c0cbbfd3b515c249dcdd95a4a6ed825bc6c66ca2ef4e51af9a"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-beta-depth-reviewed-sample.json",
+      "storage_path": "data/imports/tsk-beta-depth-reviewed-sample.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 124046,
+      "checksum_sha256": "a01364387ca4ffd5bf6f9d371f0eeb82b535a61bd70b00a4976d100389e8f5b7"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-hosea-4-9-reviewed-sunday-school.json",
+      "storage_path": "data/imports/tsk-hosea-4-9-reviewed-sunday-school.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 12126,
+      "checksum_sha256": "918679412706860a5446a8722757c4a732bf3f290ad3ad56627118e8152856ed"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-1.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-1.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 212349,
+      "checksum_sha256": "f8dbacbca35cdd3e9d7e76459458ca3ea779b8fe7b6dcbea643f36bdce8d8cc8"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-2.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-2.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 237437,
+      "checksum_sha256": "5126275baed56b1439898ad9da946326be54a6747b6c2e31aac725ccad0374b0"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-openbible-reviewed-prophecy-focus-phase-4.json",
+      "storage_path": "data/imports/tsk-openbible-reviewed-prophecy-focus-phase-4.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 494866,
+      "checksum_sha256": "55189a130fe6066fc8423b87a7a094910f16e0c1feec5258128b1a8469c0d5a9"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-openbible-reviewed-weak-books-phase-3.json",
+      "storage_path": "data/imports/tsk-openbible-reviewed-weak-books-phase-3.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 302754,
+      "checksum_sha256": "d957eb00003d1f3425467e8e3ae993050b79c403fe1419b59f271f70ccb2b45a"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-phase-1-reviewed-sample.json",
+      "storage_path": "data/imports/tsk-phase-1-reviewed-sample.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 54101,
+      "checksum_sha256": "d0adf297701fd509ce813e941b4026e4eba4c7f91db727865dc77cde920675b9"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-phase-2-prophecy-reviewed-sample.json",
+      "storage_path": "data/imports/tsk-phase-2-prophecy-reviewed-sample.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 5794,
+      "checksum_sha256": "7bea94f7ea1788cfbe79f570f69331cef9dd049b6eb53973a52bde7faa694f55"
     }
   ]
 }

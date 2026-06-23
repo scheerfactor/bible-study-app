@@ -1,5 +1,4 @@
-import fs from "node:fs/promises";
-import path from "node:path";
+import { readTextContent } from "@/lib/server-content-storage";
 
 type StrongEntry = {
   strongs_number: string;
@@ -38,17 +37,17 @@ let cachedMappings: StrongMapping[] | null = null;
 
 async function loadEntries() {
   if (cachedEntries) return cachedEntries;
-  const filePath = path.join(process.cwd(), "data/strongs/sample-verified-strongs.json");
-  const raw = await fs.readFile(filePath, "utf8");
+  const raw = await readTextContent("data/strongs/sample-verified-strongs.json", { errorLabel: "Strong's lexicon" });
   cachedEntries = JSON.parse(raw) as StrongEntry[];
   return cachedEntries;
 }
 
 async function loadMappings() {
   if (cachedMappings) return cachedMappings;
-  const filePath = path.join(process.cwd(), "data/strongs/kjv-strongs-mappings.reviewed.json");
   try {
-    const raw = await fs.readFile(filePath, "utf8");
+    const raw = await readTextContent("data/strongs/kjv-strongs-mappings.reviewed.json", {
+      errorLabel: "KJV Strong's mappings",
+    });
     cachedMappings = JSON.parse(raw) as StrongMapping[];
   } catch {
     cachedMappings = [];

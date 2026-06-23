@@ -28,6 +28,11 @@ const studyToolFiles = [
   "data/library/verified/a-class-book-of-biblical-history-and-geography-with-numerous-maps-osborn-h-s-henry-stafford.txt",
 ];
 
+const strongsFiles = [
+  "data/strongs/sample-verified-strongs.json",
+  "data/strongs/kjv-strongs-mappings.reviewed.json",
+];
+
 function relativePath(...parts) {
   return parts.join("/").replace(/^\/+/, "");
 }
@@ -93,6 +98,14 @@ async function commentaryFiles() {
   return fileNames.map((fileName) => relativePath("data", "imports", fileName));
 }
 
+async function tskFiles() {
+  const importsDir = join(repoRoot, "data", "imports");
+  const fileNames = (await readdir(importsDir))
+    .filter((fileName) => fileName.includes("tsk") && fileName.endsWith(".json") && !fileName.includes("needs-review"))
+    .sort();
+  return fileNames.map((fileName) => relativePath("data", "imports", fileName));
+}
+
 function summarize(items) {
   const present = items.filter((item) => !item.missing);
   const missing = items.filter((item) => item.missing);
@@ -140,14 +153,27 @@ async function main() {
     libraryManifestFiles.map((filePath) => existingInventoryFile("library_manifest", filePath)),
   );
   const studyToolItems = await Promise.all(studyToolFiles.map((filePath) => existingInventoryFile("study_tool", filePath)));
+  const strongsItems = await Promise.all(strongsFiles.map((filePath) => existingInventoryFile("strongs_index", filePath)));
+  const tskPaths = await tskFiles();
+  const tskItems = await Promise.all(tskPaths.map((filePath) => existingInventoryFile("tsk_cross_reference_batch", filePath)));
 
-  const items = [...libraryItems, ...commentaryItems, ...dictionaryItems, ...libraryManifestItems, ...studyToolItems];
+  const items = [
+    ...libraryItems,
+    ...commentaryItems,
+    ...dictionaryItems,
+    ...libraryManifestItems,
+    ...studyToolItems,
+    ...strongsItems,
+    ...tskItems,
+  ];
   const summaries = {
     library_text: summarize(libraryItems),
     commentary_batch: summarize(commentaryItems),
     dictionary: summarize(dictionaryItems),
     library_manifest: summarize(libraryManifestItems),
     study_tool: summarize(studyToolItems),
+    strongs_index: summarize(strongsItems),
+    tsk_cross_reference_batch: summarize(tskItems),
     all_public_content: summarize(items),
   };
 
@@ -181,6 +207,8 @@ ${tableRow("Commentary batches", summaries.commentary_batch)}
 ${tableRow("Dictionary files", summaries.dictionary)}
 ${tableRow("Library manifests", summaries.library_manifest)}
 ${tableRow("Study tool files", summaries.study_tool)}
+${tableRow("Strong's indexes", summaries.strongs_index)}
+${tableRow("TSK/cross-reference batches", summaries.tsk_cross_reference_batch)}
 ${tableRow("Total public content", summaries.all_public_content)}
 
 Commentary entries represented in public batch files: ${commentaryEntries.toLocaleString()}
@@ -190,12 +218,23 @@ Commentary entries represented in public batch files: ${commentaryEntries.toLoca
 \`\`\`bash
 npm run storage:plan
 npm run storage:upload:r2 -- --dry-run
+npm run storage:upload:r2 -- --kind=strongs_index --dry-run
+npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --dry-run
 \`\`\`
 
 When R2 credentials and a public base URL are configured:
 
 \`\`\`bash
 npm run storage:upload:r2 -- --execute
+npm run storage:upload:r2 -- --kind=strongs_index --execute
+npm run storage:upload:r2 -- --kind=tsk_cross_reference_batch --execute
+\`\`\`
+
+If using Wrangler instead of S3 credentials:
+
+\`\`\`bash
+npm run storage:upload:wrangler -- --kind=strongs_index --execute
+npm run storage:upload:wrangler -- --kind=tsk_cross_reference_batch --execute
 \`\`\`
 
 Required environment variables:
