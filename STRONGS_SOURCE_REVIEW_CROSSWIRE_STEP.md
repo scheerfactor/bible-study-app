@@ -2,6 +2,29 @@
 
 Reviewed: 2026-06-21
 
+Update on 2026-06-22: a limited reviewed CrossWire mapping batch was promoted
+for the first public KJV+ style expansion. The batch file is:
+
+```text
+data/strongs/mapping-batches/kjv-strongs-crosswire-focus.sample-reviewed.json
+```
+
+Promotion scope:
+
+- John 3
+- Romans 8
+- Mark 1
+- Ephesians 1
+
+Only rows with clean KJV token alignment and an already verified local Strong's
+lexicon entry were promoted. The generated public index now contains 795
+reviewed mapping rows across 125 verses. CrossWire-derived staging files remain
+ignored and uncommitted.
+
+Hosea and Leviticus were staged but not promoted because their Hebrew Strong's
+numbers do not yet have enough verified local lexicon entries for public display.
+Finish Hebrew lexicon review before promoting those rows.
+
 ## Purpose
 
 The Bible Study App needs a fast KJV word-to-Strong's mapping so users can see
