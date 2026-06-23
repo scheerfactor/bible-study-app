@@ -44707,36 +44707,37 @@ function formatSermonTimer(seconds: number) {
 }
 
 function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
-  const items: { id: Tab; label: string; icon: React.ReactNode }[] = [
-    { id: "today", label: "Today", icon: <HomeIcon size={20} /> },
-    { id: "bible", label: "Bible", icon: <BookOpen size={20} /> },
-    { id: "search", label: "Search", icon: <Search size={20} /> },
-    { id: "themes", label: "Themes", icon: <Brain size={20} /> },
-    { id: "commentaryExplorer", label: "Commentary", icon: <MessageSquareText size={20} /> },
-    { id: "library", label: "Library", icon: <Library size={20} /> },
-    { id: "notes", label: "Notes", icon: <NotebookPen size={20} /> },
-    { id: "prayer", label: "Prayer", icon: <MessageSquareText size={20} /> },
-    { id: "journal", label: "Journal", icon: <FileText size={20} /> },
-    { id: "sermons", label: "Sermons", icon: <Clipboard size={20} /> },
-    { id: "presentations", label: "Present", icon: <MonitorPlay size={20} /> },
-    { id: "settings", label: "Settings", icon: <Settings size={20} /> },
+  const items: { id: Tab; label: string; shortLabel: string; icon: React.ReactNode }[] = [
+    { id: "today", label: "Today", shortLabel: "Today", icon: <HomeIcon size={18} /> },
+    { id: "bible", label: "Bible", shortLabel: "Bible", icon: <BookOpen size={18} /> },
+    { id: "search", label: "Search", shortLabel: "Search", icon: <Search size={18} /> },
+    { id: "themes", label: "Themes", shortLabel: "Theme", icon: <Brain size={18} /> },
+    { id: "commentaryExplorer", label: "Commentary", shortLabel: "Comm", icon: <MessageSquareText size={18} /> },
+    { id: "library", label: "Library", shortLabel: "Library", icon: <Library size={18} /> },
+    { id: "notes", label: "Notes", shortLabel: "Notes", icon: <NotebookPen size={18} /> },
+    { id: "prayer", label: "Prayer", shortLabel: "Prayer", icon: <MessageSquareText size={18} /> },
+    { id: "journal", label: "Journal", shortLabel: "Jrnl", icon: <FileText size={18} /> },
+    { id: "sermons", label: "Sermons", shortLabel: "Serm", icon: <Clipboard size={18} /> },
+    { id: "presentations", label: "Presentations", shortLabel: "Slides", icon: <MonitorPlay size={18} /> },
+    { id: "settings", label: "Settings", shortLabel: "Set", icon: <Settings size={18} /> },
   ];
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-[70] border-t border-stone-200 bg-[var(--paper)]/95 px-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur md:hidden">
-      <div className="mx-auto grid max-w-xl grid-cols-12 gap-1">
+      <div className="mx-auto grid max-w-xl grid-cols-6 gap-1">
         {items.map((item) => (
           <button
             key={item.id}
             aria-label={item.label}
-            className={`flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-0.5 text-[0.56rem] font-semibold min-[430px]:h-14 ${
+            title={item.label}
+            className={`flex h-12 min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 text-[0.58rem] font-semibold leading-none min-[430px]:h-14 ${
               tab === item.id ? "bg-[var(--green)] text-white" : "text-[var(--muted)]"
             }`}
             onClick={() => onTab(item.id)}
             type="button"
           >
             {item.icon}
-            <span className="sr-only">{item.label}</span>
+            <span className="block max-w-full truncate">{item.shortLabel}</span>
           </button>
         ))}
       </div>
