@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-22T23:58:41.144Z
+Generated: 2026-06-23T00:48:02.978Z
 
 ## Summary
 
@@ -10,7 +10,7 @@ Generated: 2026-06-22T23:58:41.144Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 23.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's lexicon entries: 154; reviewed KJV word mappings: 795 rows across 4 books and 4 chapters (starter data only).
+- Strong's lexicon entries: 173; reviewed KJV word mappings: 765 rows across 6 books and 11 chapters (starter data only).
 - Public TSK rows: 930; staged TSK rows: 50; source verses covered: 490; chapters covered: 126; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 43.
@@ -46,7 +46,6 @@ Generated: 2026-06-22T23:58:41.144Z
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Genesis | 0 | 50 | 0% | 0 | 0 |
 | Exodus | 0 | 40 | 0% | 0 | 0 |
-| Leviticus | 0 | 27 | 0% | 0 | 0 |
 | Numbers | 0 | 36 | 0% | 0 | 0 |
 | Deuteronomy | 0 | 34 | 0% | 0 | 0 |
 | Joshua | 0 | 24 | 0% | 0 | 0 |
@@ -56,6 +55,7 @@ Generated: 2026-06-22T23:58:41.144Z
 | 2 Samuel | 0 | 24 | 0% | 0 | 0 |
 | 1 Kings | 0 | 22 | 0% | 0 | 0 |
 | 2 Kings | 0 | 25 | 0% | 0 | 0 |
+| 1 Chronicles | 0 | 29 | 0% | 0 | 0 |
 
 ## TSK Focus Reference Checks
 

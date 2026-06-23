@@ -53,10 +53,10 @@
     ]
   },
   "strongs": {
-    "verifiedEntries": 154,
-    "reviewedMappingRows": 795,
-    "reviewedMappedBooks": 4,
-    "reviewedMappedChapters": 4,
+    "verifiedEntries": 173,
+    "reviewedMappingRows": 765,
+    "reviewedMappedBooks": 6,
+    "reviewedMappedChapters": 11,
     "status": "starter data only",
     "focusWordChecks": [
       {
@@ -109,14 +109,6 @@
         "book": "Exodus",
         "chaptersCovered": 0,
         "totalChapters": 40,
-        "chapterCoveragePercent": 0,
-        "versesCovered": 0,
-        "rows": 0
-      },
-      {
-        "book": "Leviticus",
-        "chaptersCovered": 0,
-        "totalChapters": 27,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0
@@ -189,6 +181,14 @@
         "book": "2 Kings",
         "chaptersCovered": 0,
         "totalChapters": 25,
+        "chapterCoveragePercent": 0,
+        "versesCovered": 0,
+        "rows": 0
+      },
+      {
+        "book": "1 Chronicles",
+        "chaptersCovered": 0,
+        "totalChapters": 29,
         "chapterCoveragePercent": 0,
         "versesCovered": 0,
         "rows": 0

@@ -235,19 +235,6 @@
   },
   {
     "verse_ref": "John 3:16",
-    "token_index": 19,
-    "kjv_word": "should",
-    "normalized_kjv_word": "should",
-    "strongs_number": "G3361",
-    "source_id": "manual-john-3-16-strongs-sample",
-    "source_title": "Manual reviewed KJV Strong's mapping sample",
-    "source_url": "local://data/strongs/kjv-strongs-mapping.sample-reviewed.json",
-    "rights_status": "Reviewed prototype sample; full verse-level mapping source not imported yet.",
-    "rights_basis": "Manual reference-only sample created for import validation and UI prototyping. Do not treat as a full Strong's dataset.",
-    "review_status": "Verified"
-  },
-  {
-    "verse_ref": "John 3:16",
     "token_index": 20,
     "kjv_word": "not",
     "normalized_kjv_word": "not",

@@ -29,6 +29,22 @@ function normalizeWord(value) {
     .replace(/[^a-z0-9]+/g, "");
 }
 
+function wordForms(value) {
+  const raw = String(value ?? "").toLowerCase();
+  const tokens = raw.match(/[a-z0-9]+/g) ?? [];
+  const forms = new Set([normalizeWord(raw), ...tokens.map(normalizeWord)].filter(Boolean));
+
+  for (const form of [...forms]) {
+    for (const suffix of ["eth", "est", "ed", "ing", "es", "s"]) {
+      if (form.endsWith(suffix) && form.length > suffix.length + 2) {
+        forms.add(form.slice(0, -suffix.length));
+      }
+    }
+  }
+
+  return forms;
+}
+
 function verseTokens(verseText) {
   return String(verseText ?? "").match(/[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?/g) ?? [];
 }
@@ -53,6 +69,7 @@ const verifiedStrongNumbers = new Set(
     .filter((entry) => entry.review_status === "Verified")
     .map((entry) => entry.strongs_number),
 );
+const strongEntriesByNumber = new Map(strongEntries.map((entry) => [entry.strongs_number, entry]));
 
 const seen = new Set();
 const errors = [];
@@ -107,6 +124,15 @@ for (const file of files) {
       errors.push(`Row ${row} has invalid Strong's number: ${mapping.strongs_number}`);
     } else if (!verifiedStrongNumbers.has(mapping.strongs_number)) {
       errors.push(`Row ${row} maps to a Strong's number not present in the verified lexicon sample: ${mapping.strongs_number}`);
+    } else {
+      const strongEntry = strongEntriesByNumber.get(mapping.strongs_number);
+      const allowedForms = new Set((strongEntry?.english_words ?? []).flatMap((word) => [...wordForms(word)]));
+      const mappedForms = wordForms(mapping.normalized_kjv_word || mapping.kjv_word);
+      if (![...mappedForms].some((form) => allowedForms.has(form))) {
+        errors.push(
+          `Row ${row} maps ${mapping.kjv_word} to ${mapping.strongs_number}, but that word is not listed in the reviewed English glosses.`,
+        );
+      }
     }
 
     if (mapping.review_status !== "Verified") {
