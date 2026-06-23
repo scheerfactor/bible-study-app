@@ -24194,6 +24194,45 @@ function BibleReader({
           </div>
         </div>
 
+        <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+          <button
+            className="min-h-20 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left shadow-sm"
+            onClick={onOpenCommentaryCenter}
+            type="button"
+          >
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Commentary</span>
+            <span className="mt-1 block text-lg font-bold text-[var(--green)]">{chapterCommentaryEntries.length}</span>
+            <span className="block text-xs text-[var(--muted)]">{commentaryAuthors.slice(0, 2).join(", ") || "No reviewed entries yet"}</span>
+          </button>
+          <button
+            className="min-h-20 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left shadow-sm"
+            onClick={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
+            type="button"
+          >
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Cross References</span>
+            <span className="mt-1 block text-lg font-bold text-[var(--green)]">{chapterCrossReferences.length}</span>
+            <span className="block text-xs text-[var(--muted)]">Reviewed TSK-style links</span>
+          </button>
+          <button
+            className="min-h-20 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left shadow-sm"
+            onClick={() => onOpenStudyToolSearch(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || book, "strongs")}
+            type="button"
+          >
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Strong&apos;s</span>
+            <span className="mt-1 block text-lg font-bold text-[var(--green)]">{showStrongNumbers ? currentChapterStrongMappingCount : workspaceStrongEntries.length}</span>
+            <span className="block text-xs text-[var(--muted)]">{showStrongNumbers ? "Mapped words shown" : "Starter word studies"}</span>
+          </button>
+          <button
+            className="min-h-20 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left shadow-sm"
+            onClick={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
+            type="button"
+          >
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">Dictionary</span>
+            <span className="mt-1 block text-lg font-bold text-[var(--green)]">{chapterDictionaryEntries.length}</span>
+            <span className="block text-xs text-[var(--muted)]">Webster and study helps</span>
+          </button>
+        </div>
+
         <details className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
           <summary className="cursor-pointer list-none text-sm font-semibold text-[var(--green)]">
             Navigation tools, markers, and progress

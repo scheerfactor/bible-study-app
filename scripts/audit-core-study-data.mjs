@@ -152,6 +152,18 @@ async function tskFiles() {
   return files.sort();
 }
 
+async function strongsMappingFiles() {
+  try {
+    const names = await readdir("data/strongs/mapping-batches");
+    return names
+      .filter((name) => name.endsWith(".json"))
+      .map((name) => path.join("data/strongs/mapping-batches", name))
+      .sort();
+  } catch {
+    return [];
+  }
+}
+
 const allRefs = Object.keys(verses1769);
 const chaptersByBook = new Map();
 for (const ref of allRefs) {
@@ -193,7 +205,12 @@ const strongsChecks = ["believe", "faith", "love", "spirit", "flesh", "law", "be
   word,
   covered: strongsWords.has(word),
 }));
-const strongsMappings = await readJson("data/strongs/kjv-strongs-mappings.reviewed.json");
+const strongsMappingFilePaths = await strongsMappingFiles();
+const strongsMappings = [];
+for (const file of strongsMappingFilePaths) {
+  const rows = await readJson(file, []);
+  rows.forEach((row) => strongsMappings.push({ ...row, file }));
+}
 const verifiedStrongsMappings = strongsMappings.filter((row) => row.review_status === "Verified");
 const strongsMappingByBook = new Map();
 for (const row of verifiedStrongsMappings) addCoverage(strongsMappingByBook, row.verse_ref);
@@ -301,6 +318,7 @@ const summary = {
   },
   strongs: {
     verifiedEntries: verifiedStrongs.length,
+    reviewedMappingFiles: strongsMappingFilePaths.length,
     reviewedMappingRows: verifiedStrongsMappings.length,
     reviewedMappedBooks: strongsMappingByBook.size,
     reviewedMappedChapters: [...strongsMappingByBook.values()].reduce((sum, bucket) => sum + bucket.chapters.size, 0),
@@ -342,7 +360,7 @@ const lines = [
   `- Public commentary chapter coverage: ${summary.commentary.publicChapterCoverage} (${summary.commentary.publicChapterCoveragePercent}).`,
   `- Commentary authors represented in public imports: ${summary.commentary.authors}.`,
   `- Webster 1828 entries: ${summary.webster1828.entries} (${summary.webster1828.uniqueNormalizedHeadwords} normalized headwords; ${summary.webster1828.reviewedOverrides} reviewed overlay).`,
-  `- Strong's lexicon entries: ${summary.strongs.verifiedEntries}; reviewed KJV word mappings: ${summary.strongs.reviewedMappingRows} rows across ${summary.strongs.reviewedMappedBooks} books and ${summary.strongs.reviewedMappedChapters} chapters (${summary.strongs.status}).`,
+  `- Strong's lexicon entries: ${summary.strongs.verifiedEntries}; reviewed KJV word mappings: ${summary.strongs.reviewedMappingRows} rows from ${summary.strongs.reviewedMappingFiles} batch files across ${summary.strongs.reviewedMappedBooks} books and ${summary.strongs.reviewedMappedChapters} chapters (${summary.strongs.status}).`,
   `- Public TSK rows: ${summary.tsk.rows}; staged TSK rows: ${summary.tsk.stagedRows}; source verses covered: ${summary.tsk.sourceVersesCovered}; chapters covered: ${summary.tsk.chaptersCovered}; books covered: ${summary.tsk.booksCovered} (${summary.tsk.status}).`,
   `- Study tool files present: ${summary.studyTools.filesPresent}/${summary.studyTools.filesExpected}.`,
   `- Public-domain audio candidates: ${summary.audio.publicDomainCandidateRows}.`,
