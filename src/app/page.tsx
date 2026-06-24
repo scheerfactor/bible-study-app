@@ -9223,6 +9223,7 @@ const deferredCommentaryImportFiles = [
   "pulpit-commentary-reviewed-historical-books-phase-1-commentary.json",
   "pulpit-commentary-reviewed-weak-books-phase-2-commentary.json",
   "scofield-1917-study-notes-reviewed-sample-commentary.json",
+  "scofield-1917-book-introductions-commentary.json",
 ];
 
 function rawDeferredCommentaryUrl(fileName: string) {

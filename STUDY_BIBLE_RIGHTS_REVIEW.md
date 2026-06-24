@@ -17,10 +17,10 @@ This file tracks Study Bible candidates before any notes are imported into the p
 - Work: *Scofield Reference Bible Notes* / original 1917 Scofield Reference Bible notes
 - Author/editor: C. I. Scofield
 - Known publication evidence: Original notes first appeared in 1909 and revised in 1917.
-- Current status: Public-domain original notes approved for small reviewed sample import.
-- Public import decision: Small sample imported for Genesis 1-3, Hosea 4-9, John 3, Romans 8, Daniel 7, and Revelation 13. Do not bulk public import modern Scofield editions.
+- Current status: Public-domain original notes approved for reviewed original-1917 import.
+- Public import decision: Sample imported for Genesis 1-3, Hosea 4-9, John 3, Romans 8, Daniel 7, and Revelation 13. Book-introduction notes are imported for Exodus through Revelation and attached to chapter 1 of each book as study Bible orientation notes. Do not bulk public import modern Scofield editions.
 - Scope limit: Use only the original 1917 notes. Do not import modern Oxford revisions, Scofield Study Bible III material, modern publisher introductions, modern layouts, or modern derivative editorial notes without separate permission.
-- Safe next step: Review a larger original-1917 batch only from the same public-domain source path; keep modern Oxford revisions permission-needed.
+- Safe next step: If expanding beyond book introductions, review verse-level original-1917 notes only from the same public-domain source path; keep modern Oxford revisions permission-needed.
 
 ## Recommended Import Path For Scofield
 
@@ -37,6 +37,7 @@ This file tracks Study Bible candidates before any notes are imported into the p
    - Hosea 4-9
 6. Label use as "Study Bible note; compare with Scripture and other commentaries."
 7. Add doctrinal/perspective note: dispensational study Bible notes; helpful for outlines and cross-references, but Scripture remains primary.
+8. For the current verified book-introduction batch, keep each entry attached to chapter 1 only so users understand it as book-level orientation rather than full chapter commentary.
 
 ## Permission Needed Candidates
 
