@@ -32,6 +32,7 @@
     "validate:study-sources": "node scripts/validate-study-tool-source-manifests.mjs",
     "validate:media": "node scripts/validate-media-manifest.mjs",
     "audit:study-data": "node scripts/audit-core-study-data.mjs",
+    "content:audit": "node scripts/audit-content-depth.mjs",
     "media:upload": "node scripts/upload-media-to-r2.mjs",
     "import:strongs": "node scripts/import-strongs-entries.mjs",
     "import:strongs-crosswire-osis": "node scripts/import-crosswire-kjv-strongs-osis.mjs",

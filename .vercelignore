@@ -1,0 +1,26 @@
+# Large runtime content is served from Cloudflare R2 through CONTENT_PUBLIC_BASE_URL.
+# Keep app code, metadata, and statically imported JSON available to the build.
+
+data/generated/**
+data/library/verified/**
+data/library/needs-review/**
+data/library/do-not-import/**
+
+data/strongs/source/**
+data/strongs/mapping-staging/**
+data/strongs/mappings-by-chapter/*.json
+data/strongs/kjv-strongs-mappings.reviewed.json
+
+data/commentary/staging/**
+data/commentary/**/source/**
+data/storage/**
+
+*.zip
+*.ZIP
+*.mp3
+*.m4a
+*.m4b
+*.wav
+*.mp4
+*.mov
+*.webm
