@@ -164,6 +164,24 @@ async function strongsMappingFiles() {
   }
 }
 
+async function strongsLexiconEntries() {
+  const baseEntries = await readJson("data/strongs/sample-verified-strongs.json", []);
+  const batchIndex = await readJson("data/strongs/lexicon-batches/index.json", { files: [] });
+  const batchFiles = Array.isArray(batchIndex.files) ? batchIndex.files : [];
+  const batches = [];
+  for (const file of batchFiles) {
+    const rows = await readJson(file, []);
+    if (Array.isArray(rows)) batches.push(...rows);
+  }
+  const entriesByNumber = new Map();
+  for (const entry of [...baseEntries, ...batches]) {
+    if (entry?.strongs_number && !entriesByNumber.has(entry.strongs_number)) {
+      entriesByNumber.set(entry.strongs_number, entry);
+    }
+  }
+  return [...entriesByNumber.values()];
+}
+
 const allRefs = Object.keys(verses1769);
 const chaptersByBook = new Map();
 for (const ref of allRefs) {
@@ -198,7 +216,7 @@ const normalizationChecks = ["believeth", "loved", "death", "doeth", "believe", 
 
 const suspiciousWebsterEntries = websterEntries.filter((entry) => /[�■]|\\bajie\\b|li'|\\bmanmr\\b/i.test(entry.definition ?? "")).length;
 
-const strongsEntries = await readJson("data/strongs/sample-verified-strongs.json");
+const strongsEntries = await strongsLexiconEntries();
 const verifiedStrongs = strongsEntries.filter((entry) => entry.review_status === "Verified");
 const strongsWords = new Set(verifiedStrongs.flatMap((entry) => entry.english_words ?? []).map((word) => String(word).toLowerCase()));
 const strongsChecks = ["believe", "faith", "love", "spirit", "flesh", "law", "beast", "kingdom", "worship"].map((word) => ({

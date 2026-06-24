@@ -2,7 +2,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const fileArg = process.argv.find((arg) => arg.startsWith("--file="));
-const filePath = path.resolve(process.cwd(), fileArg?.split("=")[1] ?? "data/strongs/sample-verified-strongs.json");
+const root = process.cwd();
+const baseFile = "data/strongs/sample-verified-strongs.json";
+const batchIndexFile = "data/strongs/lexicon-batches/index.json";
 
 const required = [
   "strongs_number",
@@ -20,8 +22,46 @@ function fail(message) {
   process.exitCode = 1;
 }
 
-const raw = await fs.readFile(filePath, "utf8");
-const entries = JSON.parse(raw);
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function loadEntriesForValidation() {
+  if (fileArg) {
+    const filePath = path.resolve(root, fileArg.split("=")[1]);
+    const raw = await fs.readFile(filePath, "utf8");
+    return { entries: JSON.parse(raw), files: [path.relative(root, filePath)] };
+  }
+
+  const files = [baseFile];
+  const batchIndexPath = path.resolve(root, batchIndexFile);
+  if (await fileExists(batchIndexPath)) {
+    const batchIndex = JSON.parse(await fs.readFile(batchIndexPath, "utf8"));
+    if (Array.isArray(batchIndex.files)) {
+      files.push(...batchIndex.files);
+    }
+  }
+
+  const entries = [];
+  for (const file of files) {
+    const raw = await fs.readFile(path.resolve(root, file), "utf8");
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      fail(`${file} must be a JSON array.`);
+      continue;
+    }
+    for (const entry of parsed) entries.push({ ...entry, __sourceFile: file });
+  }
+
+  return { entries, files };
+}
+
+const { entries, files } = await loadEntriesForValidation();
 
 if (!Array.isArray(entries)) {
   fail("Strong's data must be a JSON array.");
@@ -31,9 +71,10 @@ if (!Array.isArray(entries)) {
   const warnings = [];
 
   entries.forEach((entry, index) => {
+    const sourceFile = entry.__sourceFile ?? "provided file";
     for (const field of required) {
       if (entry[field] === undefined || entry[field] === null || entry[field] === "") {
-        errors.push(`Entry ${index + 1} is missing ${field}.`);
+        errors.push(`${sourceFile}: entry ${index + 1} is missing ${field}.`);
       }
     }
 
@@ -54,7 +95,7 @@ if (!Array.isArray(entries)) {
     }
 
     if (seen.has(entry.strongs_number)) {
-      errors.push(`Duplicate Strong's number: ${entry.strongs_number}`);
+      errors.push(`Duplicate Strong's number: ${entry.strongs_number} in ${sourceFile}`);
     }
     seen.add(entry.strongs_number);
   });
@@ -62,6 +103,8 @@ if (!Array.isArray(entries)) {
   for (const warning of warnings) console.warn(`Warning: ${warning}`);
   for (const error of errors) console.error(`Error: ${error}`);
 
-  console.log(`Strong's validation complete: ${entries.length} entries checked, ${errors.length} errors, ${warnings.length} warnings.`);
+  console.log(
+    `Strong's validation complete: ${entries.length} entries checked across ${files.length} file(s), ${errors.length} errors, ${warnings.length} warnings.`,
+  );
   if (errors.length) process.exitCode = 1;
 }

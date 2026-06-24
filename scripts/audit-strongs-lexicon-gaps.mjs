@@ -4,6 +4,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const entriesPath = path.join(root, "data", "strongs", "sample-verified-strongs.json");
+const lexiconBatchIndexPath = path.join(root, "data", "strongs", "lexicon-batches", "index.json");
 const batchesDir = path.join(root, "data", "strongs", "mapping-batches");
 const outputDir = path.join(root, "data", "strongs", "reports");
 const outputJson = path.join(outputDir, "strongs-lexicon-gaps.json");
@@ -76,9 +77,37 @@ async function mappingFiles() {
     .map((file) => path.join(batchesDir, file));
 }
 
+async function readJson(filePath, fallback) {
+  try {
+    return JSON.parse(await readFile(filePath, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+async function lexiconEntries() {
+  const baseEntries = await readJson(entriesPath, []);
+  const batchIndex = await readJson(lexiconBatchIndexPath, { files: [] });
+  const batchFiles = Array.isArray(batchIndex.files) ? batchIndex.files : [];
+  const entriesByNumber = new Map();
+  for (const entry of baseEntries) {
+    if (entry?.strongs_number && !entriesByNumber.has(entry.strongs_number)) {
+      entriesByNumber.set(entry.strongs_number, entry);
+    }
+  }
+  for (const file of batchFiles) {
+    const rows = await readJson(path.join(root, file), []);
+    for (const entry of Array.isArray(rows) ? rows : []) {
+      if (entry?.strongs_number && !entriesByNumber.has(entry.strongs_number)) {
+        entriesByNumber.set(entry.strongs_number, entry);
+      }
+    }
+  }
+  return [...entriesByNumber.values()];
+}
+
 async function main() {
-  const [entriesRaw, files] = await Promise.all([readFile(entriesPath, "utf8"), mappingFiles()]);
-  const entries = JSON.parse(entriesRaw);
+  const [entries, files] = await Promise.all([lexiconEntries(), mappingFiles()]);
   const verifiedNumbers = new Set(entries.filter((entry) => entry.review_status === "Verified").map((entry) => entry.strongs_number));
   const gaps = new Map();
   const covered = new Map();
@@ -143,7 +172,7 @@ async function main() {
   const report = {
     generated_at: new Date().toISOString(),
     source: "data/strongs/mapping-batches/*.json",
-    lexicon_source: "data/strongs/sample-verified-strongs.json",
+    lexicon_source: "data/strongs/sample-verified-strongs.json + data/strongs/lexicon-batches/index.json",
     totals: {
       mapping_files: files.length,
       mapping_rows: rows,

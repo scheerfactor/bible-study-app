@@ -1,0 +1,349 @@
+[
+  {
+    "strongs_number": "G3004",
+    "language": "Greek",
+    "original_word": "λέγω",
+    "transliteration": "lego",
+    "pronunciation": "leg'-o",
+    "english_words": [
+      "say",
+      "speak",
+      "tell",
+      "call"
+    ],
+    "root": "",
+    "related_numbers": [
+      "G2036"
+    ],
+    "plain_definition": "To say, speak, tell, call, or declare. One of the main New Testament words for spoken words and reported speech.",
+    "first_occurrence": "Matthew 1:20",
+    "key_verses": [
+      "John 3:3",
+      "John 3:5",
+      "Romans 8:18",
+      "Revelation 13:14"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2036",
+    "language": "Greek",
+    "original_word": "εἶπον",
+    "transliteration": "eipon",
+    "pronunciation": "i'-pon",
+    "english_words": [
+      "said",
+      "say",
+      "speak",
+      "tell"
+    ],
+    "root": "G3004",
+    "related_numbers": [
+      "G3004"
+    ],
+    "plain_definition": "To say or speak, commonly used for the past action of saying. It often introduces a statement, answer, warning, or command.",
+    "key_verses": [
+      "John 3:12",
+      "Romans 8:31",
+      "Revelation 13:4"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2064",
+    "language": "Greek",
+    "original_word": "ἔρχομαι",
+    "transliteration": "erchomai",
+    "pronunciation": "er'-khom-ahee",
+    "english_words": [
+      "come",
+      "go",
+      "came",
+      "coming"
+    ],
+    "plain_definition": "To come or go. It can describe physical arrival, movement toward someone, or the coming of a person, event, or judgment.",
+    "key_verses": [
+      "John 3:19",
+      "Romans 8:18",
+      "Revelation 13:11"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G191",
+    "language": "Greek",
+    "original_word": "ἀκούω",
+    "transliteration": "akouo",
+    "pronunciation": "ak-oo'-o",
+    "english_words": [
+      "hear",
+      "heard",
+      "hearken"
+    ],
+    "plain_definition": "To hear, listen, hearken, or give attention. The word can describe hearing sound, receiving a report, or responding obediently.",
+    "first_occurrence": "Matthew 2:3",
+    "key_verses": [
+      "John 3:8",
+      "John 3:29",
+      "Romans 8:15",
+      "Revelation 13:9"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H0559",
+    "language": "Hebrew",
+    "original_word": "אָמַר",
+    "transliteration": "amar",
+    "pronunciation": "aw-mar'",
+    "english_words": [
+      "say",
+      "said",
+      "speak",
+      "command"
+    ],
+    "plain_definition": "To say, speak, answer, command, or declare. It is the common Hebrew word used when God or man speaks.",
+    "first_occurrence": "Genesis 1:3",
+    "key_verses": [
+      "Genesis 1:3",
+      "Amos 5:1",
+      "Daniel 7:16"
+    ],
+    "source_title": "Strong's Hebrew Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3962",
+    "language": "Greek",
+    "original_word": "πατήρ",
+    "transliteration": "pater",
+    "pronunciation": "pat-ayr'",
+    "english_words": [
+      "father"
+    ],
+    "plain_definition": "Father. Used of a natural father, an ancestor, or God as Father depending on context.",
+    "key_verses": [
+      "John 3:35",
+      "Romans 8:15",
+      "Romans 8:29"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H0430",
+    "language": "Hebrew",
+    "original_word": "אֱלֹהִים",
+    "transliteration": "elohim",
+    "pronunciation": "el-o-heem'",
+    "english_words": [
+      "God",
+      "gods"
+    ],
+    "plain_definition": "God, gods, rulers, or mighty ones depending on context. In Genesis 1:1 it names the one true God as Creator.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Exodus 20:3",
+      "Amos 4:11"
+    ],
+    "source_title": "Strong's Hebrew Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H04430",
+    "language": "Aramaic",
+    "original_word": "מֶלֶךְ",
+    "transliteration": "melek",
+    "pronunciation": "meh'-lek",
+    "english_words": [
+      "king"
+    ],
+    "plain_definition": "King. The Aramaic form used in Daniel and Ezra for a ruler or monarch.",
+    "key_verses": [
+      "Daniel 2:4",
+      "Daniel 7:1",
+      "Daniel 7:17"
+    ],
+    "source_title": "Strong's Hebrew Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H03068",
+    "language": "Hebrew",
+    "original_word": "יְהוָה",
+    "transliteration": "YHWH",
+    "pronunciation": "yeh-ho-vaw'",
+    "english_words": [
+      "LORD",
+      "Jehovah"
+    ],
+    "plain_definition": "The covenant name of God, commonly represented as LORD in the KJV.",
+    "first_occurrence": "Genesis 2:4",
+    "key_verses": [
+      "Genesis 2:4",
+      "Exodus 3:15",
+      "Amos 5:4"
+    ],
+    "source_title": "Strong's Hebrew Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1096",
+    "language": "Greek",
+    "original_word": "γίνομαι",
+    "transliteration": "ginomai",
+    "pronunciation": "ghin'-om-ahee",
+    "english_words": [
+      "be",
+      "become",
+      "come to pass",
+      "made"
+    ],
+    "plain_definition": "To become, be made, happen, arise, or come to pass. It often marks something taking place or coming into being.",
+    "key_verses": [
+      "John 3:9",
+      "Romans 8:13",
+      "Revelation 13:3"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H0776",
+    "language": "Hebrew",
+    "original_word": "אֶרֶץ",
+    "transliteration": "erets",
+    "pronunciation": "eh'-rets",
+    "english_words": [
+      "earth",
+      "land",
+      "country",
+      "ground"
+    ],
+    "plain_definition": "Earth, land, country, or ground. Context determines whether it refers to the whole earth, a territory, or the soil.",
+    "first_occurrence": "Genesis 1:1",
+    "key_verses": [
+      "Genesis 1:1",
+      "Amos 5:7",
+      "Daniel 7:17"
+    ],
+    "source_title": "Strong's Hebrew Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2983",
+    "language": "Greek",
+    "original_word": "λαμβάνω",
+    "transliteration": "lambano",
+    "pronunciation": "lam-ban'-o",
+    "english_words": [
+      "receive",
+      "take",
+      "lay hold"
+    ],
+    "plain_definition": "To take, receive, accept, or lay hold of. The context may stress either receiving what is given or taking hold of something.",
+    "key_verses": [
+      "John 3:11",
+      "Romans 8:15",
+      "Revelation 13:16"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G444",
+    "language": "Greek",
+    "original_word": "ἄνθρωπος",
+    "transliteration": "anthropos",
+    "pronunciation": "anth'-ro-pos",
+    "english_words": [
+      "man",
+      "men",
+      "mankind"
+    ],
+    "plain_definition": "A man, human being, or mankind. The word can refer to one person or to humanity generally.",
+    "first_occurrence": "Matthew 4:4",
+    "key_verses": [
+      "John 3:4",
+      "Romans 8:3",
+      "Revelation 13:18"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G1125",
+    "language": "Greek",
+    "original_word": "γράφω",
+    "transliteration": "grapho",
+    "pronunciation": "graf'-o",
+    "english_words": [
+      "write",
+      "written"
+    ],
+    "plain_definition": "To write. In Scripture study it often points to what is written in the Scriptures.",
+    "key_verses": [
+      "Romans 8:36",
+      "Revelation 13:8",
+      "Revelation 13:18"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3140",
+    "language": "Greek",
+    "original_word": "μαρτυρέω",
+    "transliteration": "martureo",
+    "pronunciation": "mar-too-reh'-o",
+    "english_words": [
+      "witness",
+      "bear witness",
+      "testify"
+    ],
+    "plain_definition": "To witness, testify, or bear record. It is used for giving testimony about a person, truth, or event.",
+    "key_verses": [
+      "John 3:11",
+      "John 3:26",
+      "Romans 8:16",
+      "Revelation 13:8"
+    ],
+    "source_title": "Strong's Greek Bible Dictionary, reviewed public-domain batch",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this app entry is a concise reviewed study summary.",
+    "review_status": "Verified"
+  }
+]

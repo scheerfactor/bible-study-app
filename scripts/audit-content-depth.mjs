@@ -27,6 +27,20 @@ async function jsonFiles(directory) {
   }
 }
 
+async function strongsLexiconEntries() {
+  const baseEntries = await safeReadJson("data/strongs/sample-verified-strongs.json", []);
+  const batchIndex = await safeReadJson("data/strongs/lexicon-batches/index.json", { files: [] });
+  const batchFiles = Array.isArray(batchIndex.files) ? batchIndex.files : [];
+  const batches = await Promise.all(batchFiles.map((file) => safeReadJson(file, [])));
+  const entriesByNumber = new Map();
+  for (const entry of [baseEntries, ...batches].flat()) {
+    if (entry?.strongs_number && !entriesByNumber.has(entry.strongs_number)) {
+      entriesByNumber.set(entry.strongs_number, entry);
+    }
+  }
+  return [...entriesByNumber.values()];
+}
+
 function isCommentaryFile(filePath, rows) {
   return filePath.endsWith("commentary.json") && Array.isArray(rows) && rows.every((row) => row.reference && row.author);
 }
@@ -78,7 +92,7 @@ async function tskSummary() {
 async function main() {
   const [library, strongEntries, strongShardManifest, websterEntries, audioCandidates, commentary, tsk] = await Promise.all([
     safeReadJson("data/library/manifests/curated-public-domain-resources.json", []),
-    safeReadJson("data/strongs/sample-verified-strongs.json", []),
+    strongsLexiconEntries(),
     safeReadJson("data/strongs/mappings-by-chapter/manifest.json", { rows: 0, chapters: 0 }),
     safeReadJson("data/generated/websters-1828.entries.json", []),
     readFile(path.join(root, "data/media/acquisition/public-domain-audio-candidates.csv"), "utf8").then((raw) => raw.trim().split(/\r?\n/).length - 1).catch(() => 0),

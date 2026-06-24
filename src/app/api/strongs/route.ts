@@ -39,7 +39,38 @@ const cachedMappingShards = new Map<string, StrongMapping[]>();
 async function loadEntries() {
   if (cachedEntries) return cachedEntries;
   const raw = await readTextContent("data/strongs/sample-verified-strongs.json", { errorLabel: "Strong's lexicon" });
-  cachedEntries = JSON.parse(raw) as StrongEntry[];
+  const baseEntries = JSON.parse(raw) as StrongEntry[];
+  let batchEntries: StrongEntry[] = [];
+
+  try {
+    const batchIndexRaw = await readTextContent("data/strongs/lexicon-batches/index.json", {
+      errorLabel: "Strong's lexicon batch index",
+      revalidateSeconds: 86400,
+    });
+    const batchIndex = JSON.parse(batchIndexRaw) as { files?: string[] };
+    const batchFiles = Array.isArray(batchIndex.files) ? batchIndex.files : [];
+    const batches = await Promise.all(
+      batchFiles.map(async (file) => {
+        const batchRaw = await readTextContent(file, {
+          errorLabel: `Strong's lexicon batch ${file}`,
+          revalidateSeconds: 86400,
+        });
+        return JSON.parse(batchRaw) as StrongEntry[];
+      }),
+    );
+    batchEntries = batches.flat();
+  } catch {
+    batchEntries = [];
+  }
+
+  const entriesByNumber = new Map<string, StrongEntry>();
+  for (const entry of [...baseEntries, ...batchEntries]) {
+    if (!entriesByNumber.has(entry.strongs_number)) {
+      entriesByNumber.set(entry.strongs_number, entry);
+    }
+  }
+
+  cachedEntries = [...entriesByNumber.values()];
   return cachedEntries;
 }
 
