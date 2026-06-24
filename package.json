@@ -27,6 +27,7 @@
     "commentary:review-batch": "node scripts/create-commentary-review-batch.mjs",
     "commentary:source-batch": "node scripts/create-commentary-source-batch.mjs",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
+    "audit:commentary-quality": "node scripts/audit-commentary-text-quality.mjs",
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
     "validate:strongs-mapping": "node scripts/validate-kjv-strongs-mappings.mjs",
     "audit:strongs-gaps": "node scripts/audit-strongs-lexicon-gaps.mjs",

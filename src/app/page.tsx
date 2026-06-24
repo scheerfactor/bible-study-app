@@ -535,6 +535,55 @@ type CommentaryEntry = {
   source_url: string;
 };
 
+function escapeCommentaryRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function cleanCommentaryEntryText(entry: CommentaryEntry) {
+  const rawText = String(entry.entry_text ?? "")
+    .replace(/\u00a0/g, " ")
+    .replace(/\r\n?/g, "\n")
+    .trim();
+
+  if (!rawText) return rawText;
+
+  let text = rawText
+    .replace(/\n+\[ Table of Contents \][\s\S]*$/i, "")
+    .replace(/\n+\[ Previous \][\s\S]*$/i, "")
+    .replace(/\n+Send Addenda, Corrigenda[\s\S]*$/i, "")
+    .trim();
+
+  const looksLikeNavigationPrefix =
+    /^(Whole Bible|Old Testament|New Testament|Individual Books|Bible Commentaries\s+Verse-by-Verse)\s/i.test(text);
+
+  if (looksLikeNavigationPrefix) {
+    const referenceMarker = new RegExp(`\\b${escapeCommentaryRegExp(entry.book)}\\s+${entry.chapter}:\\d+\\b`, "i");
+    const markerCandidates = [
+      text.search(referenceMarker),
+      text.search(/\bVerses?\s+\d+(?:-\d+)?\b/i),
+      text.search(/\bCHAPTER\s+\d+\b/i),
+      text.search(/\bEXPOSITION\b/i),
+      text.search(/\bHOMILETICS\b/i),
+    ]
+      .filter((index) => index >= 0 && index < 8000)
+      .sort((a, b) => a - b);
+
+    if (markerCandidates.length) {
+      text = text.slice(markerCandidates[0]).trim();
+    }
+  }
+
+  return text.replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function normalizeCommentaryEntry(entry: CommentaryEntry): CommentaryEntry {
+  return {
+    ...entry,
+    source_title: entry.source_title ?? entry.resource_title,
+    entry_text: cleanCommentaryEntryText(entry),
+  };
+}
+
 type CommentaryExpansionCandidate = {
   author: string;
   resourceTitle: string;
@@ -9035,10 +9084,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hoseaPulpitCommentary as CommentaryEntry[]),
 ]
   .filter((entry) => entry.book === "Hosea")
-  .map((entry) => ({
-    ...entry,
-    source_title: entry.source_title ?? entry.resource_title,
-  }));
+  .map(normalizeCommentaryEntry);
 
 const deferredCommentaryImportFiles = [
   "matthew-henry-phase-1-commentary.json",
@@ -9184,10 +9230,7 @@ async function fetchDeferredCommentaryEntries(
         return (await response.json()) as CommentaryEntry[];
       }),
     );
-    const entries = groups.flat().map((entry) => ({
-      ...entry,
-      source_title: entry.source_title ?? entry.resource_title,
-    }));
+    const entries = groups.flat().map(normalizeCommentaryEntry);
 
     if (entries.length) onEntriesLoaded(entries);
   }
@@ -10730,7 +10773,7 @@ function mergeCommentaryEntries(...entryGroups: CommentaryEntry[][]) {
   const seen = new Set<string>();
 
   return entryGroups.flatMap((entries) =>
-    entries.filter((entry) => {
+    entries.map(normalizeCommentaryEntry).filter((entry) => {
       const key = `${entry.book}-${entry.chapter}-${entry.verse_start}-${entry.verse_end}-${entry.author}-${entry.resource_title}`;
       if (seen.has(key)) return false;
       seen.add(key);

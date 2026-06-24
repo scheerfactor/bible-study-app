@@ -1,5 +1,27 @@
 [
   {
+    "id": "premium-henry-morris-defenders-study-bible",
+    "author": "Henry M. Morris",
+    "publisherMinistry": "Institute for Creation Research / publisher rights holder to verify",
+    "resourceTitle": "The Defender's Study Bible / The Henry Morris Study Bible",
+    "category": "Bible Study",
+    "plannedUse": "Creation, apologetics, and Scripture-defense study Bible notes if licensed.",
+    "rightsGate": "Written permission required before public text, excerpts, search, audio, or TTS use.",
+    "visibility": "Admin-only planning",
+    "notes": "Strong target-audience fit, but not public domain."
+  },
+  {
+    "id": "premium-modern-scofield-editions",
+    "author": "C. I. Scofield / edition-specific editors",
+    "publisherMinistry": "Oxford University Press / edition-specific rights holder",
+    "resourceTitle": "Modern Scofield Study Bible revisions",
+    "category": "Bible Study",
+    "plannedUse": "Modern edition notes only if licensed; original 1917 notes should be handled separately as a public-domain source review.",
+    "rightsGate": "Written permission required for modern revised editions.",
+    "visibility": "Admin-only planning",
+    "notes": "Do not mix modern revised notes with original 1917 public-domain notes."
+  },
+  {
     "id": "premium-john-phillips",
     "author": "John Phillips",
     "publisherMinistry": "Kregel Publications / rights holder to verify",
