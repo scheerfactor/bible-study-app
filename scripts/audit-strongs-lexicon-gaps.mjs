@@ -159,7 +159,7 @@ async function main() {
       .filter((item) => item.study_word_rows > 0)
       .sort((a, b) => b.study_word_rows - a.study_word_rows || b.mapping_rows - a.mapping_rows || a.strongs_number.localeCompare(b.strongs_number, undefined, { numeric: true }))
       .slice(0, 75),
-    missing,
+    missing_top_500: missing.slice(0, 500),
   };
 
   const md = `# Strong's Lexicon Gap Report
