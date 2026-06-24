@@ -34,6 +34,7 @@ type StrongMapping = {
 
 let cachedEntries: StrongEntry[] | null = null;
 let cachedMappings: StrongMapping[] | null = null;
+const cachedMappingShards = new Map<string, StrongMapping[]>();
 
 async function loadEntries() {
   if (cachedEntries) return cachedEntries;
@@ -53,6 +54,44 @@ async function loadMappings() {
     cachedMappings = [];
   }
   return cachedMappings;
+}
+
+function slugForBook(book: string) {
+  return book
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function parseVerseRef(ref: string) {
+  const match = ref.match(/^(.+) (\d+):(\d+)$/);
+  if (!match) return null;
+  return {
+    book: match[1],
+    chapter: Number(match[2]),
+    verse: Number(match[3]),
+  };
+}
+
+async function loadMappingShard(book: string, chapter: number) {
+  const normalizedBook = book.trim();
+  const normalizedChapter = Number(chapter);
+  if (!normalizedBook || normalizedChapter <= 0) return null;
+
+  const key = `${normalizedBook.toLowerCase()}-${normalizedChapter}`;
+  if (cachedMappingShards.has(key)) return cachedMappingShards.get(key) ?? null;
+
+  try {
+    const raw = await readTextContent(`data/strongs/mappings-by-chapter/${slugForBook(normalizedBook)}-${normalizedChapter}.json`, {
+      errorLabel: `KJV Strong's mappings for ${normalizedBook} ${normalizedChapter}`,
+      revalidateSeconds: 86400,
+    });
+    const rows = JSON.parse(raw) as StrongMapping[];
+    cachedMappingShards.set(key, rows);
+    return rows;
+  } catch {
+    return null;
+  }
 }
 
 function normalizeSearch(value: string) {
@@ -103,7 +142,12 @@ export async function GET(request: Request) {
   const limit = Math.min(50, Math.max(1, Number(searchParams.get("limit") ?? 20)));
 
   if (verse || (book && chapter > 0)) {
-    const [entries, mappings] = await Promise.all([loadEntries(), loadMappings()]);
+    const parsedVerse = verse ? parseVerseRef(verse) : null;
+    const shardBook = parsedVerse?.book ?? book;
+    const shardChapter = parsedVerse?.chapter ?? chapter;
+    const [entries, mappingShard] = await Promise.all([loadEntries(), loadMappingShard(shardBook, shardChapter)]);
+    const mappings = mappingShard ?? (await loadMappings());
+    const usedChapterShard = Boolean(mappingShard);
     const entriesByNumber = new Map(entries.map((entry) => [entry.strongs_number, entry]));
     const matchingMappings = mappings
       .filter((mapping) => mapping.review_status === "Verified")
@@ -120,7 +164,9 @@ export async function GET(request: Request) {
     return Response.json({
       entries: [],
       mappings: matchingMappings,
-      source_note: "Verse-level KJV Strong's mappings are reviewed samples until a full rights-cleared source is imported.",
+      mapping_source: usedChapterShard ? "chapter-shard" : "full-index",
+      source_note:
+        "Verse-level KJV Strong's mappings are reviewed samples. Chapter lookups use content-storage shards when available.",
     });
   }
 

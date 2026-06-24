@@ -30,6 +30,8 @@ data/sources/tsk/metav/
 data/staging/
 data/strongs/source/
 data/strongs/mapping-staging/*.json
+data/strongs/mappings-by-chapter/*.json
+!data/strongs/mappings-by-chapter/README.md
 
 # debug
 npm-debug.log*

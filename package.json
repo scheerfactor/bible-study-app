@@ -38,7 +38,9 @@
     "storage:plan": "node scripts/prepare-content-storage-migration.mjs",
     "storage:upload:r2": "node scripts/upload-public-content-to-r2.mjs",
     "storage:upload:wrangler": "node scripts/upload-public-content-with-wrangler.mjs",
-    "build:strongs-mapping-index": "node scripts/build-kjv-strongs-mapping-index.mjs"
+    "build:strongs-mapping-index": "node scripts/build-kjv-strongs-mapping-index.mjs",
+    "build:strongs-chapter-shards": "node scripts/build-strongs-chapter-shards.mjs",
+    "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
