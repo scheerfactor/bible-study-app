@@ -6,49 +6,18 @@ This report flags imported commentary rows that likely contain website navigatio
 
 - Commentary files scanned: 131
 - Commentary rows scanned: 9760
-- Rows with quality flags: 1638
-- Files with quality flags: 68
+- Rows with quality flags: 134
+- Files with quality flags: 29
 
 ## Files With Flags
 
 | File | Flagged Rows | Total Rows | Issue Types |
 | --- | ---: | ---: | --- |
-| `data/imports/pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json` | 158 | 165 | navigation-prefix: 158 |
-| `data/imports/pulpit-commentary-reviewed-weak-books-commentary.json` | 146 | 165 | navigation-prefix: 146 |
-| `data/imports/biblical-illustrator-reviewed-foundation-books-phase-1-commentary.json` | 141 | 165 | navigation-prefix: 141 |
-| `data/imports/biblical-illustrator-reviewed-weak-books-commentary.json` | 119 | 165 | navigation-prefix: 119 |
-| `data/imports/pulpit-commentary-reviewed-historical-books-phase-1-commentary.json` | 115 | 123 | navigation-prefix: 115 |
-| `data/imports/biblical-illustrator-reviewed-historical-books-phase-1-commentary.json` | 114 | 123 | navigation-prefix: 114 |
-| `data/imports/pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json` | 83 | 85 | navigation-prefix: 83 |
-| `data/imports/barnes-reviewed-completion-pentateuch-gaps-commentary.json` | 73 | 122 | navigation-prefix: 73 |
-| `data/imports/matthew-poole-reviewed-foundation-books-phase-1-commentary.json` | 69 | 165 | navigation-prefix: 69 |
 | `data/commentary/staging/jamieson-fausset-brown-complete-commentary-needs-review.json` | 66 | 1189 | table-footer: 65; previous-next-footer: 66; editorial-footer: 66 |
-| `data/imports/biblical-illustrator-reviewed-epistles-depth-phase-1-commentary.json` | 54 | 85 | navigation-prefix: 54 |
-| `data/imports/pulpit-commentary-reviewed-exodus-commentary.json` | 40 | 40 | navigation-prefix: 40 |
-| `data/imports/pulpit-commentary-reviewed-prophecy-teaching-commentary.json` | 39 | 40 | navigation-prefix: 39 |
-| `data/imports/biblical-illustrator-reviewed-prophecy-teaching-commentary.json` | 33 | 40 | navigation-prefix: 33 |
-| `data/imports/biblical-illustrator-reviewed-exodus-commentary.json` | 30 | 40 | navigation-prefix: 30 |
-| `data/imports/pulpit-commentary-reviewed-focus-books-commentary.json` | 28 | 32 | navigation-prefix: 28 |
-| `data/imports/pulpit-commentary-reviewed-proverbs-commentary.json` | 28 | 31 | navigation-prefix: 28 |
-| `data/imports/barnes-reviewed-completion-prophets-commentary.json` | 27 | 241 | navigation-prefix: 27 |
-| `data/imports/barnes-reviewed-historical-books-phase-1-commentary.json` | 26 | 123 | navigation-prefix: 26 |
-| `data/imports/barnes-reviewed-coverage-sprint-genesis-commentary.json` | 23 | 25 | navigation-prefix: 23 |
-| `data/imports/biblical-illustrator-reviewed-focus-books-commentary.json` | 23 | 32 | navigation-prefix: 23 |
-| `data/imports/barnes-reviewed-phase-5-exodus-commentary.json` | 21 | 40 | navigation-prefix: 21 |
-| `data/imports/barnes-reviewed-library-expansion-gospels-acts-commentary.json` | 17 | 72 | navigation-prefix: 17 |
-| `data/imports/barnes-reviewed-phase-3-commentary.json` | 16 | 218 | navigation-prefix: 16 |
-| `data/imports/matthew-poole-reviewed-exodus-commentary.json` | 13 | 40 | navigation-prefix: 13 |
-| `data/imports/matthew-poole-reviewed-weak-books-commentary.json` | 13 | 165 | navigation-prefix: 13 |
 | `data/imports/jfb-reviewed-beta-depth-epistles-batch-2-commentary.json` | 11 | 39 | table-footer: 11; previous-next-footer: 11; editorial-footer: 11 |
-| `data/imports/matthew-poole-reviewed-historical-books-phase-1-commentary.json` | 11 | 123 | navigation-prefix: 11 |
-| `data/imports/biblical-illustrator-reviewed-proverbs-commentary.json` | 10 | 31 | navigation-prefix: 10 |
-| `data/imports/pulpit-commentary-reviewed-weak-books-phase-2-commentary.json` | 10 | 13 | navigation-prefix: 10 |
 | `data/imports/jfb-reviewed-beta-depth-epistles-batch-1-commentary.json` | 8 | 50 | table-footer: 7; previous-next-footer: 8; editorial-footer: 8 |
 | `data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json` | 8 | 47 | table-footer: 8; previous-next-footer: 8; editorial-footer: 8 |
-| `data/imports/barnes-reviewed-joshua-completion-commentary.json` | 5 | 19 | navigation-prefix: 5 |
-| `data/imports/biblical-illustrator-reviewed-weak-books-phase-2-commentary.json` | 5 | 13 | navigation-prefix: 5 |
 | `data/imports/jfb-reviewed-phase-7-minor-prophets-complete-commentary.json` | 5 | 25 | table-footer: 5; previous-next-footer: 5; editorial-footer: 5 |
-| `data/imports/barnes-reviewed-phase-5-proverbs-corinthians-commentary.json` | 4 | 47 | navigation-prefix: 4 |
 | `data/imports/jfb-reviewed-phase-7-chronicles-ezra-nehemiah-commentary.json` | 3 | 38 | table-footer: 3; previous-next-footer: 3; editorial-footer: 3 |
 | `data/imports/jfb-reviewed-phase-7-job-wisdom-isaiah-start-commentary.json` | 3 | 50 | table-footer: 3; previous-next-footer: 3; editorial-footer: 3 |
 | `data/imports/jfb-reviewed-batch-1-commentary.json` | 2 | 31 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
@@ -59,13 +28,7 @@ This report flags imported commentary rows that likely contain website navigatio
 | `data/imports/jfb-reviewed-phase-6-judges-ruth-samuel-commentary.json` | 2 | 49 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
 | `data/imports/jfb-reviewed-phase-6-samuel-kings-commentary.json` | 2 | 50 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
 | `data/imports/jfb-reviewed-phase-7-jeremiah-lamentations-commentary.json` | 2 | 45 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/matthew-poole-reviewed-proverbs-commentary.json` | 2 | 31 | navigation-prefix: 2 |
-| `data/imports/matthew-poole-reviewed-weak-books-phase-2-commentary.json` | 2 | 13 | navigation-prefix: 2 |
 | `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json` | 1 | 1189 | table-footer: 1; previous-next-footer: 1 |
-| `data/imports/barnes-reviewed-completion-joshua-starter-commentary.json` | 1 | 5 | navigation-prefix: 1 |
-| `data/imports/barnes-reviewed-solomons-song-commentary.json` | 1 | 8 | navigation-prefix: 1 |
-| `data/imports/barnes-reviewed-weak-books-phase-2-commentary.json` | 1 | 8 | navigation-prefix: 1 |
-| `data/imports/biblical-illustrator-reviewed-luke-complete-commentary.json` | 1 | 24 | navigation-prefix: 1 |
 | `data/imports/jfb-reviewed-phase-5-proverbs-genesis-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
 | `data/imports/jfb-reviewed-phase-5-revelation-psalms-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
 | `data/imports/jfb-reviewed-phase-6-deuteronomy-commentary.json` | 1 | 34 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
@@ -79,8 +42,6 @@ This report flags imported commentary rows that likely contain website navigatio
 | `data/imports/jfb-reviewed-phase-7-isaiah-jeremiah-start-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
 | `data/imports/jfb-reviewed-phase-8-psalms-completion-commentary.json` | 1 | 46 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
 | `data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1 |
-| `data/imports/matthew-poole-reviewed-epistles-depth-phase-1-commentary.json` | 1 | 85 | navigation-prefix: 1 |
-| `data/imports/matthew-poole-reviewed-prophecy-teaching-commentary.json` | 1 | 40 | navigation-prefix: 1 |
 
 ## Sample Rows
 
@@ -366,4 +327,4 @@ This report flags imported commentary rows that likely contain website navigatio
 
 ## Current Mitigation
 
-The app normalizes commentary entries at load time and strips known navigation prefixes/footers from display, listening, export, and search contexts. Source files remain unchanged so original evidence is preserved for future review.
+The app normalizes commentary entries at load time and strips known navigation prefixes/footers from display, listening, export, and search contexts. Public import files are also cleaned when wrappers can be removed without changing commentary wording; staging files remain available for source review.

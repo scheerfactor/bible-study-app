@@ -127,7 +127,7 @@ const reportLines = [
   "",
   "## Current Mitigation",
   "",
-  "The app normalizes commentary entries at load time and strips known navigation prefixes/footers from display, listening, export, and search contexts. Source files remain unchanged so original evidence is preserved for future review.",
+  "The app normalizes commentary entries at load time and strips known navigation prefixes/footers from display, listening, export, and search contexts. Public import files are also cleaned when wrappers can be removed without changing commentary wording; staging files remain available for source review.",
   "",
 ];
 
