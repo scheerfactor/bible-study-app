@@ -17,10 +17,10 @@ This file tracks Study Bible candidates before any notes are imported into the p
 - Work: *Scofield Reference Bible Notes* / original 1917 Scofield Reference Bible notes
 - Author/editor: C. I. Scofield
 - Known publication evidence: Original notes first appeared in 1909 and revised in 1917.
-- Current status: Likely Public Domain in the United States for the original 1917 notes.
-- Public import decision: Approved for staged source review, not bulk public import yet.
+- Current status: Public-domain original notes approved for small reviewed sample import.
+- Public import decision: Small sample imported for Genesis 1-3, Hosea 4-9, John 3, Romans 8, Daniel 7, and Revelation 13. Do not bulk public import modern Scofield editions.
 - Scope limit: Use only the original 1917 notes. Do not import modern Oxford revisions, Scofield Study Bible III material, modern publisher introductions, modern layouts, or modern derivative editorial notes without separate permission.
-- Safe next step: Create a staged parser from a public-domain source, then promote small verified batches first.
+- Safe next step: Review a larger original-1917 batch only from the same public-domain source path; keep modern Oxford revisions permission-needed.
 
 ## Recommended Import Path For Scofield
 
@@ -44,4 +44,3 @@ This file tracks Study Bible candidates before any notes are imported into the p
 - J. Vernon McGee / Thru the Bible
 - Modern Oxford Scofield revisions
 - Any modern study Bible notes or publisher-enhanced editions
-

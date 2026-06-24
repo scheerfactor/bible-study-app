@@ -2582,6 +2582,7 @@ const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
 const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
+const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edition)";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -2604,6 +2605,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   MATTHEW_HENRY_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_COMMENTARY_COLLECTION,
   TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
+  SCOFIELD_REFERENCE_NOTES_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
@@ -2774,6 +2776,19 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     sampleQuote: "Careful Bible teaching should explain the passage without moving Scripture out of the center.",
     bestFor: ["Preaching", "Teaching"],
     priority: 4,
+  },
+  {
+    author: "C. I. Scofield",
+    timePeriod: "1843-1921",
+    biography: "American Bible teacher and editor of the original Scofield Reference Bible notes.",
+    writingStyle: "Concise study Bible notes, book introductions, outlines, and dispensational cross-reference orientation.",
+    strengths: ["Book introductions", "Outlines", "Cross-reference study", "Dispensational study"],
+    weaknesses: ["Not a full verse-by-verse commentary", "Use only original 1917 notes unless later rights are documented"],
+    bestUse: "Use for quick book orientation and outline help before moving into fuller commentaries.",
+    doctrinalNotes: "Dispensational perspective. Not all conclusions are endorsed; keep Scripture primary and compare with other reviewed commentaries.",
+    sampleQuote: "Best used as concise study Bible orientation, not as a replacement for chapter-level commentary.",
+    bestFor: ["Teaching", "Preaching", "Historical background"],
+    priority: 5,
   },
   {
     author: "Jamieson-Fausset-Brown",
@@ -9207,6 +9222,7 @@ const deferredCommentaryImportFiles = [
   "pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json",
   "pulpit-commentary-reviewed-historical-books-phase-1-commentary.json",
   "pulpit-commentary-reviewed-weak-books-phase-2-commentary.json",
+  "scofield-1917-study-notes-reviewed-sample-commentary.json",
 ];
 
 function rawDeferredCommentaryUrl(fileName: string) {
@@ -23501,8 +23517,8 @@ function AtAGlanceStudyPanel({
         </StudyWorkspaceCard>
 
         <StudyWorkspaceCard title="5. Cross References" emptyText="No reviewed cross references yet.">
-          {topCrossReferences.slice(0, 5).map((reference) => (
-            <button key={`workspace-cross-${reference.id}`} className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={() => onOpenReference(reference.target_ref)} type="button">
+          {topCrossReferences.slice(0, 5).map((reference, index) => (
+            <button key={`workspace-cross-${reference.id}-${index}`} className="w-full rounded-xl bg-white px-3 py-2 text-left" onClick={() => onOpenReference(reference.target_ref)} type="button">
               <p className="text-sm font-semibold text-[var(--green)]">{reference.verse_ref} {"->"} {reference.target_ref}</p>
               <p className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{reference.label || reference.source}</p>
             </button>
@@ -26313,6 +26329,7 @@ function commentaryStudyLabel(entry: CommentaryEntry) {
   if (entry.author === "John Wesley") return "Practical holiness";
   if (entry.author === "Jamieson-Fausset-Brown") return "Concise overview";
   if (entry.author === "John Gill") return "Baptist historical";
+  if (entry.author === "C. I. Scofield") return "Study Bible / outline";
   return "Reviewed commentary";
 }
 
@@ -39424,7 +39441,7 @@ function PassageGuideScreen({
   const studyQuestions = passageStudyQuestions({ passage, keyVerses: displayKeyVerses, topWords, connections, commentaryAuthors });
   const teachingIllustrations = passageTeachingIllustrationPrompts({ passage, topWords, connections });
   const commentaryOrder = commentaryProfilesForEntries(commentaryEntries);
-  const commentaryCenterAuthors = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "G. Campbell Morgan"];
+  const commentaryCenterAuthors = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "C. I. Scofield", "G. Campbell Morgan"];
   const availableCommentaryAuthors = new Set(commentaryAuthors);
   const commentaryCenterProfiles = commentaryCenterAuthors.map((author) => ({
     author,
@@ -40011,11 +40028,11 @@ function PassageGuideScreen({
 
       <StudySection id="passage-cross-references" title="Cross References">
         <div className="grid gap-2 md:grid-cols-2">
-          {visibleCrossReferences.length ? visibleCrossReferences.map((reference) => {
+          {visibleCrossReferences.length ? visibleCrossReferences.map((reference, index) => {
             const preview = versesByRef.get(reference.target_ref)?.text;
             return (
               <button
-                key={`passage-cross-${reference.id}`}
+                key={`passage-cross-${reference.id}-${index}`}
                 className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
                 onClick={() => onOpenReference(reference.target_ref)}
                 type="button"
@@ -40335,11 +40352,11 @@ function FullStudyScreen({
       <StudySection id="full-study-cross-references" title="Cross References">
         {crossReferences.length ? (
           <div className="space-y-2">
-            {crossReferences.map((reference) => {
+            {crossReferences.map((reference, index) => {
               const preview = versesByRef.get(reference.target_ref)?.text;
               return (
                 <button
-                  key={`full-cross-reference-${reference.id}`}
+                  key={`full-cross-reference-${reference.id}-${index}`}
                   className="w-full rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
                   onClick={() => onOpenReference(reference.target_ref)}
                   type="button"
@@ -40786,7 +40803,7 @@ function CommentaryComparisonCard({
 }) {
   const insights = commentaryComparisonInsights(entries);
   const groupedEntries = useMemo(() => {
-    const authorOrder = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "G. Campbell Morgan"];
+    const authorOrder = ["Matthew Henry", "Jamieson-Fausset-Brown", "Albert Barnes", "Adam Clarke", "John Wesley", "John Gill", "H. A. Ironside", "C. I. Scofield", "G. Campbell Morgan"];
     return Array.from(
     entries.reduce<Map<string, CommentaryEntry[]>>((groups, entry) => {
       groups.set(entry.author, [...(groups.get(entry.author) ?? []), entry]);
