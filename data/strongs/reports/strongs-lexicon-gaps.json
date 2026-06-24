@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-06-24T12:31:31.302Z",
+  "generated_at": "2026-06-24T13:41:41.558Z",
   "source": "data/strongs/mapping-batches/*.json",
   "lexicon_source": "data/strongs/sample-verified-strongs.json + data/strongs/lexicon-batches/index.json",
   "totals": {
     "mapping_files": 8,
     "mapping_rows": 47010,
     "verified_mapping_rows": 47010,
-    "verified_lexicon_entries": 240,
-    "missing_lexicon_numbers": 3301,
-    "covered_mapping_rows": 14755,
-    "missing_mapping_rows": 32255,
-    "covered_mapping_row_percent": 31.4
+    "verified_lexicon_entries": 262,
+    "missing_lexicon_numbers": 3279,
+    "covered_mapping_rows": 17038,
+    "missing_mapping_rows": 29972,
+    "covered_mapping_row_percent": 36.2
   },
   "next_review_batch": [
     {
@@ -458,70 +458,6 @@
       ]
     },
     {
-      "strongs_number": "G3767",
-      "language": "Greek",
-      "mapping_rows": 246,
-      "study_word_rows": 93,
-      "verses": 233,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "then",
-          "count": 138
-        },
-        {
-          "word": "therefore",
-          "count": 84
-        },
-        {
-          "word": "so",
-          "count": 8
-        },
-        {
-          "word": "when",
-          "count": 5
-        },
-        {
-          "word": "now",
-          "count": 3
-        },
-        {
-          "word": "but",
-          "count": 2
-        },
-        {
-          "word": "and",
-          "count": 1
-        },
-        {
-          "word": "is",
-          "count": 1
-        },
-        {
-          "word": "it",
-          "count": 1
-        },
-        {
-          "word": "people",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:5 \"therefore\"",
-        "Revelation 3:3 \"therefore\"",
-        "Revelation 3:19 \"therefore\"",
-        "John 1:21 \"then\"",
-        "John 1:22 \"Then\"",
-        "John 1:25 \"then\"",
-        "John 2:18 \"Then\"",
-        "John 2:20 \"Then\"",
-        "John 2:22 \"therefore\"",
-        "John 3:25 \"Then\"",
-        "John 3:29 \"therefore\"",
-        "John 4:1 \"therefore\""
-      ]
-    },
-    {
       "strongs_number": "G2453",
       "language": "Greek",
       "mapping_rows": 170,
@@ -726,134 +662,6 @@
       ]
     },
     {
-      "strongs_number": "H0935",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 151,
-      "study_word_rows": 85,
-      "verses": 47,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "come",
-          "count": 24
-        },
-        {
-          "word": "shall",
-          "count": 17
-        },
-        {
-          "word": "and",
-          "count": 16
-        },
-        {
-          "word": "he",
-          "count": 13
-        },
-        {
-          "word": "came",
-          "count": 8
-        },
-        {
-          "word": "brought",
-          "count": 6
-        },
-        {
-          "word": "enter",
-          "count": 5
-        },
-        {
-          "word": "to",
-          "count": 5
-        },
-        {
-          "word": "bring",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"came\"",
-        "Daniel 1:2 \"which\"",
-        "Daniel 1:2 \"he\"",
-        "Daniel 1:2 \"carried\"",
-        "Daniel 1:2 \"and\"",
-        "Daniel 1:2 \"brought\"",
-        "Daniel 1:3 \"that\"",
-        "Daniel 1:3 \"he\"",
-        "Daniel 1:3 \"should\"",
-        "Daniel 1:3 \"bring\"",
-        "Daniel 1:18 \"he\"",
-        "Daniel 1:18 \"should\""
-      ]
-    },
-    {
-      "strongs_number": "G3173",
-      "language": "Greek",
-      "mapping_rows": 147,
-      "study_word_rows": 82,
-      "verses": 75,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "great",
-          "count": 55
-        },
-        {
-          "word": "a",
-          "count": 35
-        },
-        {
-          "word": "loud",
-          "count": 14
-        },
-        {
-          "word": "with",
-          "count": 10
-        },
-        {
-          "word": "the",
-          "count": 8
-        },
-        {
-          "word": "of",
-          "count": 7
-        },
-        {
-          "word": "greater",
-          "count": 5
-        },
-        {
-          "word": "that",
-          "count": 4
-        },
-        {
-          "word": "things",
-          "count": 2
-        },
-        {
-          "word": "an",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"great\"",
-        "Revelation 2:22 \"great\"",
-        "Revelation 5:2 \"with\"",
-        "Revelation 5:2 \"a\"",
-        "Revelation 5:2 \"loud\"",
-        "Revelation 5:12 \"with\"",
-        "Revelation 5:12 \"a\"",
-        "Revelation 5:12 \"loud\"",
-        "Revelation 6:10 \"with\"",
-        "Revelation 6:10 \"a\"",
-        "Revelation 6:10 \"loud\"",
-        "Revelation 6:12 \"a\""
-      ]
-    },
-    {
       "strongs_number": "G3450",
       "language": "Greek",
       "mapping_rows": 144,
@@ -1019,198 +827,6 @@
         "Revelation 7:13 \"which\"",
         "Revelation 13:4 \"Who\"",
         "Revelation 15:4 \"Who\""
-      ]
-    },
-    {
-      "strongs_number": "H0398",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 130,
-      "study_word_rows": 77,
-      "verses": 38,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "eat",
-          "count": 25
-        },
-        {
-          "word": "shall",
-          "count": 18
-        },
-        {
-          "word": "and",
-          "count": 12
-        },
-        {
-          "word": "devour",
-          "count": 8
-        },
-        {
-          "word": "thou",
-          "count": 7
-        },
-        {
-          "word": "ye",
-          "count": 6
-        },
-        {
-          "word": "it",
-          "count": 5
-        },
-        {
-          "word": "which",
-          "count": 5
-        },
-        {
-          "word": "not",
-          "count": 4
-        },
-        {
-          "word": "shalt",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:12 \"to\"",
-        "Daniel 1:12 \"eat\"",
-        "Daniel 1:13 \"that\"",
-        "Daniel 1:13 \"eat\"",
-        "Daniel 1:15 \"which\"",
-        "Daniel 1:15 \"did\"",
-        "Daniel 1:15 \"eat\"",
-        "Daniel 10:3 \"I\"",
-        "Daniel 10:3 \"ate\"",
-        "Daniel 11:26 \"Yea\"",
-        "Daniel 11:26 \"they\"",
-        "Daniel 11:26 \"that\""
-      ]
-    },
-    {
-      "strongs_number": "H03117",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 125,
-      "study_word_rows": 66,
-      "verses": 45,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "day",
-          "count": 36
-        },
-        {
-          "word": "the",
-          "count": 18
-        },
-        {
-          "word": "days",
-          "count": 17
-        },
-        {
-          "word": "in",
-          "count": 13
-        },
-        {
-          "word": "that",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 4
-        },
-        {
-          "word": "for",
-          "count": 3
-        },
-        {
-          "word": "it",
-          "count": 3
-        },
-        {
-          "word": "of",
-          "count": 3
-        },
-        {
-          "word": "as",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"them\"",
-        "Daniel 1:5 \"a\"",
-        "Daniel 1:5 \"daily\"",
-        "Daniel 1:12 \"days\"",
-        "Daniel 1:14 \"days\"",
-        "Daniel 1:15 \"days\"",
-        "Daniel 1:18 \"of\"",
-        "Daniel 1:18 \"the\"",
-        "Daniel 1:18 \"days\"",
-        "Daniel 9:15 \"as\"",
-        "Daniel 9:15 \"at\"",
-        "Daniel 9:15 \"this\""
-      ]
-    },
-    {
-      "strongs_number": "H06213",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 124,
-      "study_word_rows": 77,
-      "verses": 39,
-      "books": 6,
-      "common_words": [
-        {
-          "word": "do",
-          "count": 12
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "he",
-          "count": 9
-        },
-        {
-          "word": "made",
-          "count": 9
-        },
-        {
-          "word": "shall",
-          "count": 8
-        },
-        {
-          "word": "done",
-          "count": 7
-        },
-        {
-          "word": "had",
-          "count": 6
-        },
-        {
-          "word": "did",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 4
-        },
-        {
-          "word": "thus",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:13 \"deal\"",
-        "Daniel 8:24 \"and\"",
-        "Daniel 8:24 \"practise\"",
-        "Daniel 9:12 \"hath\"",
-        "Daniel 9:12 \"not\"",
-        "Daniel 9:12 \"been\"",
-        "Daniel 9:12 \"done\"",
-        "Daniel 9:12 \"as\"",
-        "Daniel 9:15 \"and\"",
-        "Daniel 9:15 \"hast\"",
-        "Daniel 9:15 \"gotten\"",
-        "Daniel 9:19 \"and\""
       ]
     },
     {
@@ -1403,198 +1019,6 @@
         "Revelation 11:6 \"These\"",
         "Revelation 11:10 \"these\"",
         "Revelation 12:15 \"her\""
-      ]
-    },
-    {
-      "strongs_number": "G1097",
-      "language": "Greek",
-      "mapping_rows": 114,
-      "study_word_rows": 84,
-      "verses": 54,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "know",
-          "count": 21
-        },
-        {
-          "word": "known",
-          "count": 12
-        },
-        {
-          "word": "knew",
-          "count": 11
-        },
-        {
-          "word": "ye",
-          "count": 11
-        },
-        {
-          "word": "have",
-          "count": 8
-        },
-        {
-          "word": "shall",
-          "count": 6
-        },
-        {
-          "word": "they",
-          "count": 6
-        },
-        {
-          "word": "may",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 3
-        },
-        {
-          "word": "knowest",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 2:23 \"shall\"",
-        "Revelation 2:23 \"know\"",
-        "Revelation 2:24 \"have\"",
-        "Revelation 2:24 \"known\"",
-        "John 1:10 \"knew\"",
-        "John 1:48 \"knowest\"",
-        "John 1:48 \"thou\"",
-        "John 2:24 \"knew\"",
-        "John 2:25 \"knew\"",
-        "John 3:10 \"knowest\"",
-        "John 4:1 \"knew\"",
-        "John 4:53 \"knew\""
-      ]
-    },
-    {
-      "strongs_number": "H04428",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 112,
-      "study_word_rows": 54,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "king",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 31
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "kings",
-          "count": 9
-        },
-        {
-          "word": "of",
-          "count": 6
-        },
-        {
-          "word": "to",
-          "count": 3
-        },
-        {
-          "word": "against",
-          "count": 2
-        },
-        {
-          "word": "for",
-          "count": 2
-        },
-        {
-          "word": "so",
-          "count": 2
-        },
-        {
-          "word": "a",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"king\"",
-        "Daniel 1:2 \"king\"",
-        "Daniel 1:3 \"And\"",
-        "Daniel 1:3 \"the\"",
-        "Daniel 1:3 \"king\"",
-        "Daniel 1:5 \"And\"",
-        "Daniel 1:5 \"the\"",
-        "Daniel 1:5 \"king\"",
-        "Daniel 1:5 \"of\"",
-        "Daniel 1:5 \"king's\"",
-        "Daniel 1:8 \"of\"",
-        "Daniel 1:8 \"the\""
-      ]
-    },
-    {
-      "strongs_number": "H05975",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 109,
-      "study_word_rows": 75,
-      "verses": 28,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "stand",
-          "count": 20
-        },
-        {
-          "word": "shall",
-          "count": 16
-        },
-        {
-          "word": "up",
-          "count": 10
-        },
-        {
-          "word": "and",
-          "count": 9
-        },
-        {
-          "word": "stood",
-          "count": 6
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "behold",
-          "count": 3
-        },
-        {
-          "word": "not",
-          "count": 3
-        },
-        {
-          "word": "but",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"thereof\"",
-        "Daniel 1:5 \"they\"",
-        "Daniel 1:5 \"might\"",
-        "Daniel 1:5 \"stand\"",
-        "Daniel 1:19 \"therefore\"",
-        "Daniel 1:19 \"stood\"",
-        "Daniel 2:2 \"and\"",
-        "Daniel 2:2 \"stood\"",
-        "Daniel 8:3 \"and\"",
-        "Daniel 8:3 \"behold\"",
-        "Daniel 8:3 \"there\"",
-        "Daniel 8:3 \"stood\""
       ]
     },
     {
@@ -1830,134 +1254,6 @@
       ]
     },
     {
-      "strongs_number": "H0136",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 50,
-      "verses": 33,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "lord",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 27
-        },
-        {
-          "word": "o",
-          "count": 8
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 3
-        },
-        {
-          "word": "thus",
-          "count": 3
-        },
-        {
-          "word": "behold",
-          "count": 2
-        },
-        {
-          "word": "me",
-          "count": 2
-        },
-        {
-          "word": "to",
-          "count": 2
-        },
-        {
-          "word": "unto",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:2 \"And\"",
-        "Daniel 1:2 \"the\"",
-        "Daniel 1:2 \"Lord\"",
-        "Daniel 9:3 \"unto\"",
-        "Daniel 9:3 \"the\"",
-        "Daniel 9:3 \"Lord\"",
-        "Daniel 9:4 \"Lord\"",
-        "Daniel 9:7 \"O\"",
-        "Daniel 9:7 \"Lord\"",
-        "Daniel 9:8 \"O\"",
-        "Daniel 9:8 \"Lord\"",
-        "Daniel 9:9 \"To\""
-      ]
-    },
-    {
-      "strongs_number": "H07725",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 56,
-      "verses": 23,
-      "books": 4,
-      "common_words": [
-        {
-          "word": "i",
-          "count": 11
-        },
-        {
-          "word": "turn",
-          "count": 11
-        },
-        {
-          "word": "will",
-          "count": 11
-        },
-        {
-          "word": "not",
-          "count": 10
-        },
-        {
-          "word": "away",
-          "count": 9
-        },
-        {
-          "word": "return",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "have",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 9:16 \"be\"",
-        "Daniel 9:16 \"turned\"",
-        "Daniel 9:16 \"away\"",
-        "Daniel 10:20 \"unto\"",
-        "Daniel 10:20 \"thee\"",
-        "Daniel 10:20 \"and\"",
-        "Daniel 10:20 \"now\"",
-        "Daniel 10:20 \"will\"",
-        "Daniel 10:20 \"I\"",
-        "Daniel 10:20 \"return\"",
-        "Daniel 11:13 \"shall\"",
-        "Daniel 11:13 \"return\""
-      ]
-    },
-    {
       "strongs_number": "G3326",
       "language": "Greek",
       "mapping_rows": 94,
@@ -2174,50 +1470,6 @@
       ]
     },
     {
-      "strongs_number": "G611",
-      "language": "Greek",
-      "mapping_rows": 89,
-      "study_word_rows": 78,
-      "verses": 78,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "answered",
-          "count": 77
-        },
-        {
-          "word": "they",
-          "count": 7
-        },
-        {
-          "word": "he",
-          "count": 3
-        },
-        {
-          "word": "answerest",
-          "count": 1
-        },
-        {
-          "word": "thou",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 7:13 \"answered\"",
-        "John 1:21 \"he\"",
-        "John 1:21 \"answered\"",
-        "John 1:26 \"answered\"",
-        "John 1:48 \"answered\"",
-        "John 1:49 \"answered\"",
-        "John 1:50 \"answered\"",
-        "John 2:18 \"answered\"",
-        "John 2:19 \"answered\"",
-        "John 3:3 \"answered\"",
-        "John 3:5 \"answered\"",
-        "John 3:9 \"answered\""
-      ]
-    },
-    {
       "strongs_number": "G3762",
       "language": "Greek",
       "mapping_rows": 89,
@@ -2327,126 +1579,6 @@
         "Revelation 3:8 \"thy\"",
         "Revelation 3:8 \"thee\"",
         "Revelation 3:9 \"thy\""
-      ]
-    },
-    {
-      "strongs_number": "G1831",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 69,
-      "verses": 42,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "went",
-          "count": 18
-        },
-        {
-          "word": "out",
-          "count": 14
-        },
-        {
-          "word": "came",
-          "count": 13
-        },
-        {
-          "word": "forth",
-          "count": 11
-        },
-        {
-          "word": "he",
-          "count": 8
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "go",
-          "count": 3
-        },
-        {
-          "word": "come",
-          "count": 2
-        },
-        {
-          "word": "shall",
-          "count": 2
-        },
-        {
-          "word": "they",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 3:12 \"he\"",
-        "Revelation 3:12 \"shall\"",
-        "Revelation 3:12 \"go\"",
-        "Revelation 6:2 \"he\"",
-        "Revelation 6:2 \"went\"",
-        "Revelation 6:2 \"forth\"",
-        "Revelation 6:4 \"there\"",
-        "Revelation 6:4 \"went\"",
-        "Revelation 6:4 \"out\"",
-        "Revelation 9:3 \"there\"",
-        "Revelation 9:3 \"came\"",
-        "Revelation 14:15 \"came\""
-      ]
-    },
-    {
-      "strongs_number": "G5456",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 64,
-      "verses": 56,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "voice",
-          "count": 53
-        },
-        {
-          "word": "the",
-          "count": 14
-        },
-        {
-          "word": "a",
-          "count": 8
-        },
-        {
-          "word": "voices",
-          "count": 6
-        },
-        {
-          "word": "sound",
-          "count": 3
-        },
-        {
-          "word": "hear",
-          "count": 1
-        },
-        {
-          "word": "noise",
-          "count": 1
-        },
-        {
-          "word": "with",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"a\"",
-        "Revelation 1:10 \"voice\"",
-        "Revelation 1:12 \"voice\"",
-        "Revelation 1:15 \"voice\"",
-        "Revelation 1:15 \"the\"",
-        "Revelation 1:15 \"sound\"",
-        "Revelation 3:20 \"voice\"",
-        "Revelation 4:5 \"voices\"",
-        "Revelation 5:2 \"voice\"",
-        "Revelation 5:11 \"the\"",
-        "Revelation 5:11 \"voice\"",
-        "Revelation 5:12 \"voice\""
       ]
     },
     {
@@ -2575,50 +1707,6 @@
         "Revelation 22:16 \"am\"",
         "John 1:20 \"am\"",
         "John 1:21 \"I\""
-      ]
-    },
-    {
-      "strongs_number": "G32",
-      "language": "Greek",
-      "mapping_rows": 82,
-      "study_word_rows": 71,
-      "verses": 67,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "angel",
-          "count": 44
-        },
-        {
-          "word": "angels",
-          "count": 26
-        },
-        {
-          "word": "the",
-          "count": 9
-        },
-        {
-          "word": "an",
-          "count": 2
-        },
-        {
-          "word": "another",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:20 \"the\"",
-        "Revelation 1:20 \"angels\"",
-        "Revelation 2:1 \"the\"",
-        "Revelation 2:1 \"angel\"",
-        "Revelation 2:8 \"the\"",
-        "Revelation 2:8 \"angel\"",
-        "Revelation 2:12 \"the\"",
-        "Revelation 2:12 \"angel\"",
-        "Revelation 2:18 \"the\"",
-        "Revelation 2:18 \"angel\"",
-        "Revelation 3:1 \"the\"",
-        "Revelation 3:1 \"angel\""
       ]
     },
     {
@@ -2806,70 +1894,6 @@
       ]
     },
     {
-      "strongs_number": "G906",
-      "language": "Greek",
-      "mapping_rows": 80,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "cast",
-          "count": 30
-        },
-        {
-          "word": "was",
-          "count": 7
-        },
-        {
-          "word": "put",
-          "count": 6
-        },
-        {
-          "word": "out",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "they",
-          "count": 4
-        },
-        {
-          "word": "thrust",
-          "count": 4
-        },
-        {
-          "word": "were",
-          "count": 4
-        },
-        {
-          "word": "did",
-          "count": 2
-        },
-        {
-          "word": "will",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 2:10 \"cast\"",
-        "Revelation 2:14 \"to\"",
-        "Revelation 2:14 \"cast\"",
-        "Revelation 2:22 \"will\"",
-        "Revelation 2:22 \"cast\"",
-        "Revelation 2:24 \"I\"",
-        "Revelation 2:24 \"will\"",
-        "Revelation 2:24 \"put\"",
-        "Revelation 4:10 \"cast\"",
-        "Revelation 6:13 \"casteth\"",
-        "Revelation 8:5 \"cast\"",
-        "Revelation 8:7 \"they\""
-      ]
-    },
-    {
       "strongs_number": "H01004",
       "language": "Hebrew/Aramaic",
       "mapping_rows": 79,
@@ -2995,70 +2019,6 @@
         "Daniel 4:25 \"in\"",
         "Daniel 4:25 \"the\"",
         "Daniel 4:25 \"kingdom\""
-      ]
-    },
-    {
-      "strongs_number": "G599",
-      "language": "Greek",
-      "mapping_rows": 78,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "die",
-          "count": 21
-        },
-        {
-          "word": "dead",
-          "count": 11
-        },
-        {
-          "word": "died",
-          "count": 8
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "are",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 4
-        },
-        {
-          "word": "shall",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "should",
-          "count": 3
-        },
-        {
-          "word": "to",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 3:2 \"die\"",
-        "Revelation 8:9 \"died\"",
-        "Revelation 9:6 \"to\"",
-        "Revelation 9:6 \"die\"",
-        "John 4:49 \"die\"",
-        "John 6:49 \"are\"",
-        "John 6:49 \"dead\"",
-        "John 6:50 \"die\"",
-        "John 6:58 \"are\"",
-        "John 6:58 \"dead\"",
-        "John 8:21 \"shall\"",
-        "John 8:21 \"die\""
       ]
     },
     {
@@ -3486,70 +2446,6 @@
       ]
     },
     {
-      "strongs_number": "G2919",
-      "language": "Greek",
-      "mapping_rows": 73,
-      "study_word_rows": 52,
-      "verses": 30,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "judge",
-          "count": 18
-        },
-        {
-          "word": "judged",
-          "count": 7
-        },
-        {
-          "word": "that",
-          "count": 6
-        },
-        {
-          "word": "judgest",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "thou",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 3
-        },
-        {
-          "word": "judgeth",
-          "count": 3
-        },
-        {
-          "word": "be",
-          "count": 2
-        },
-        {
-          "word": "condemned",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 6:10 \"dost\"",
-        "Revelation 6:10 \"thou\"",
-        "Revelation 6:10 \"judge\"",
-        "Revelation 11:18 \"that\"",
-        "Revelation 11:18 \"they\"",
-        "Revelation 11:18 \"should\"",
-        "Revelation 11:18 \"be\"",
-        "Revelation 11:18 \"judged\"",
-        "Revelation 16:5 \"thou\"",
-        "Revelation 16:5 \"hast\"",
-        "Revelation 16:5 \"judged\"",
-        "Revelation 20:13 \"they\""
-      ]
-    },
-    {
       "strongs_number": "H01121",
       "language": "Hebrew/Aramaic",
       "mapping_rows": 73,
@@ -3795,70 +2691,6 @@
         "John 5:43 \"if\"",
         "John 6:44 \"except\"",
         "John 6:51 \"if\""
-      ]
-    },
-    {
-      "strongs_number": "G2198",
-      "language": "Greek",
-      "mapping_rows": 72,
-      "study_word_rows": 57,
-      "verses": 34,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "live",
-          "count": 17
-        },
-        {
-          "word": "living",
-          "count": 10
-        },
-        {
-          "word": "shall",
-          "count": 10
-        },
-        {
-          "word": "liveth",
-          "count": 9
-        },
-        {
-          "word": "alive",
-          "count": 4
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "that",
-          "count": 2
-        },
-        {
-          "word": "ye",
-          "count": 2
-        },
-        {
-          "word": "him",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:8 \"is\"",
-        "Revelation 2:8 \"alive\"",
-        "Revelation 3:1 \"thou\"",
-        "Revelation 3:1 \"livest\"",
-        "Revelation 4:9 \"liveth\"",
-        "Revelation 4:10 \"that\"",
-        "Revelation 4:10 \"liveth\"",
-        "Revelation 7:2 \"of\"",
-        "Revelation 7:2 \"the\"",
-        "Revelation 7:2 \"living\"",
-        "Revelation 7:17 \"living\"",
-        "Revelation 10:6 \"him\""
       ]
     },
     {
@@ -4338,38 +3170,6 @@
       ]
     },
     {
-      "strongs_number": "G3772",
-      "language": "Greek",
-      "mapping_rows": 69,
-      "study_word_rows": 68,
-      "verses": 64,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "heaven",
-          "count": 68
-        },
-        {
-          "word": "the",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 4:2 \"heaven\"",
-        "Revelation 5:3 \"heaven\"",
-        "Revelation 5:13 \"heaven\"",
-        "Revelation 6:13 \"heaven\"",
-        "Revelation 6:14 \"the\"",
-        "Revelation 6:14 \"heaven\"",
-        "Revelation 8:1 \"heaven\"",
-        "Revelation 8:10 \"heaven\"",
-        "Revelation 9:1 \"heaven\"",
-        "Revelation 10:1 \"heaven\"",
-        "Revelation 10:4 \"heaven\"",
-        "Revelation 10:5 \"heaven\""
-      ]
-    },
-    {
       "strongs_number": "G1520",
       "language": "Greek",
       "mapping_rows": 68,
@@ -4496,73 +3296,1141 @@
         "Revelation 12:8 \"found\"",
         "Revelation 14:5 \"was\""
       ]
-    }
-  ],
-  "study_value_batch": [
+    },
     {
-      "strongs_number": "G3767",
-      "language": "Greek",
-      "mapping_rows": 246,
-      "study_word_rows": 93,
-      "verses": 233,
-      "books": 3,
+      "strongs_number": "H06440",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 67,
+      "study_word_rows": 47,
+      "verses": 37,
+      "books": 5,
       "common_words": [
         {
-          "word": "then",
-          "count": 138
+          "word": "before",
+          "count": 20
         },
         {
-          "word": "therefore",
-          "count": 84
+          "word": "face",
+          "count": 13
         },
         {
-          "word": "so",
-          "count": 8
+          "word": "my",
+          "count": 6
         },
         {
-          "word": "when",
-          "count": 5
+          "word": "his",
+          "count": 4
         },
         {
-          "word": "now",
+          "word": "from",
           "count": 3
         },
         {
-          "word": "but",
-          "count": 2
+          "word": "on",
+          "count": 3
+        },
+        {
+          "word": "the",
+          "count": 3
         },
         {
           "word": "and",
+          "count": 2
+        },
+        {
+          "word": "cause",
           "count": 1
         },
         {
-          "word": "is",
-          "count": 1
-        },
-        {
-          "word": "it",
-          "count": 1
-        },
-        {
-          "word": "people",
+          "word": "countenance",
           "count": 1
         }
       ],
       "examples": [
-        "Revelation 2:5 \"therefore\"",
-        "Revelation 3:3 \"therefore\"",
-        "Revelation 3:19 \"therefore\"",
-        "John 1:21 \"then\"",
-        "John 1:22 \"Then\"",
-        "John 1:25 \"then\"",
-        "John 2:18 \"Then\"",
-        "John 2:20 \"Then\"",
-        "John 2:22 \"therefore\"",
-        "John 3:25 \"Then\"",
-        "John 3:29 \"therefore\"",
-        "John 4:1 \"therefore\""
+        "Daniel 1:5 \"before\"",
+        "Daniel 1:9 \"with\"",
+        "Daniel 1:10 \"your\"",
+        "Daniel 1:10 \"faces\"",
+        "Daniel 1:13 \"before\"",
+        "Daniel 1:18 \"them\"",
+        "Daniel 1:18 \"in\"",
+        "Daniel 1:18 \"before\"",
+        "Daniel 1:19 \"they\"",
+        "Daniel 1:19 \"before\"",
+        "Daniel 2:2 \"before\"",
+        "Daniel 8:3 \"before\""
       ]
     },
+    {
+      "strongs_number": "G455",
+      "language": "Greek",
+      "mapping_rows": 66,
+      "study_word_rows": 35,
+      "verses": 33,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "opened",
+          "count": 22
+        },
+        {
+          "word": "he",
+          "count": 11
+        },
+        {
+          "word": "open",
+          "count": 10
+        },
+        {
+          "word": "had",
+          "count": 6
+        },
+        {
+          "word": "to",
+          "count": 5
+        },
+        {
+          "word": "openeth",
+          "count": 3
+        },
+        {
+          "word": "was",
+          "count": 3
+        },
+        {
+          "word": "hath",
+          "count": 2
+        },
+        {
+          "word": "were",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 3:7 \"he\"",
+        "Revelation 3:7 \"that\"",
+        "Revelation 3:7 \"openeth\"",
+        "Revelation 3:8 \"open\"",
+        "Revelation 3:20 \"open\"",
+        "Revelation 5:2 \"to\"",
+        "Revelation 5:2 \"open\"",
+        "Revelation 5:3 \"to\"",
+        "Revelation 5:3 \"open\"",
+        "Revelation 5:4 \"to\"",
+        "Revelation 5:4 \"open\"",
+        "Revelation 5:5 \"to\""
+      ]
+    },
+    {
+      "strongs_number": "G991",
+      "language": "Greek",
+      "mapping_rows": 66,
+      "study_word_rows": 42,
+      "verses": 29,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "see",
+          "count": 17
+        },
+        {
+          "word": "seeth",
+          "count": 6
+        },
+        {
+          "word": "they",
+          "count": 6
+        },
+        {
+          "word": "he",
+          "count": 4
+        },
+        {
+          "word": "that",
+          "count": 4
+        },
+        {
+          "word": "to",
+          "count": 3
+        },
+        {
+          "word": "look",
+          "count": 2
+        },
+        {
+          "word": "might",
+          "count": 2
+        },
+        {
+          "word": "saw",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 1:11 \"thou\"",
+        "Revelation 1:11 \"seest\"",
+        "Revelation 1:12 \"to\"",
+        "Revelation 1:12 \"see\"",
+        "Revelation 5:3 \"to\"",
+        "Revelation 5:3 \"look\"",
+        "Revelation 5:4 \"to\"",
+        "Revelation 5:4 \"look\"",
+        "Revelation 6:1 \"see\"",
+        "Revelation 6:3 \"see\"",
+        "Revelation 6:5 \"see\"",
+        "Revelation 6:7 \"see\""
+      ]
+    },
+    {
+      "strongs_number": "G4771",
+      "language": "Greek",
+      "mapping_rows": 66,
+      "study_word_rows": 0,
+      "verses": 58,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "thou",
+          "count": 66
+        }
+      ],
+      "examples": [
+        "Revelation 2:15 \"thou\"",
+        "Revelation 3:17 \"thou\"",
+        "Revelation 4:11 \"thou\"",
+        "Revelation 7:14 \"thou\"",
+        "John 1:19 \"thou\"",
+        "John 1:21 \"thou\"",
+        "John 1:25 \"thou\"",
+        "John 1:42 \"Thou\"",
+        "John 1:42 \"thou\"",
+        "John 1:49 \"thou\"",
+        "John 2:20 \"thou\"",
+        "John 3:2 \"thou\""
+      ]
+    },
+    {
+      "strongs_number": "G2212",
+      "language": "Greek",
+      "mapping_rows": 64,
+      "study_word_rows": 40,
+      "verses": 31,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "seek",
+          "count": 15
+        },
+        {
+          "word": "sought",
+          "count": 9
+        },
+        {
+          "word": "ye",
+          "count": 9
+        },
+        {
+          "word": "they",
+          "count": 5
+        },
+        {
+          "word": "seeketh",
+          "count": 4
+        },
+        {
+          "word": "shall",
+          "count": 4
+        },
+        {
+          "word": "that",
+          "count": 3
+        },
+        {
+          "word": "for",
+          "count": 2
+        },
+        {
+          "word": "seekest",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 9:6 \"shall\"",
+        "Revelation 9:6 \"seek\"",
+        "John 4:23 \"seeketh\"",
+        "John 4:27 \"seekest\"",
+        "John 4:27 \"thou\"",
+        "John 5:16 \"sought\"",
+        "John 5:18 \"sought\"",
+        "John 5:30 \"I\"",
+        "John 5:30 \"seek\"",
+        "John 5:44 \"seek\"",
+        "John 6:24 \"seeking\"",
+        "John 6:24 \"for\""
+      ]
+    },
+    {
+      "strongs_number": "G1484",
+      "language": "Greek",
+      "mapping_rows": 63,
+      "study_word_rows": 46,
+      "verses": 43,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "nations",
+          "count": 21
+        },
+        {
+          "word": "gentiles",
+          "count": 19
+        },
+        {
+          "word": "the",
+          "count": 14
+        },
+        {
+          "word": "nation",
+          "count": 6
+        },
+        {
+          "word": "of",
+          "count": 2
+        },
+        {
+          "word": "ye",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:26 \"nations\"",
+        "Revelation 5:9 \"nation\"",
+        "Revelation 7:9 \"nations\"",
+        "Revelation 10:11 \"nations\"",
+        "Revelation 11:9 \"nations\"",
+        "Revelation 11:18 \"nations\"",
+        "Revelation 12:5 \"nations\"",
+        "Revelation 13:7 \"nations\"",
+        "Revelation 14:6 \"nation\"",
+        "Revelation 14:8 \"nations\"",
+        "Revelation 16:19 \"the\"",
+        "Revelation 16:19 \"nations\""
+      ]
+    },
+    {
+      "strongs_number": "G2476",
+      "language": "Greek",
+      "mapping_rows": 63,
+      "study_word_rows": 45,
+      "verses": 36,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "stood",
+          "count": 20
+        },
+        {
+          "word": "stand",
+          "count": 7
+        },
+        {
+          "word": "standing",
+          "count": 5
+        },
+        {
+          "word": "there",
+          "count": 3
+        },
+        {
+          "word": "they",
+          "count": 3
+        },
+        {
+          "word": "i",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        },
+        {
+          "word": "standeth",
+          "count": 2
+        },
+        {
+          "word": "to",
+          "count": 2
+        },
+        {
+          "word": "we",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 3:20 \"I\"",
+        "Revelation 3:20 \"stand\"",
+        "Revelation 5:6 \"stood\"",
+        "Revelation 6:17 \"to\"",
+        "Revelation 6:17 \"stand\"",
+        "Revelation 7:1 \"standing\"",
+        "Revelation 7:9 \"stood\"",
+        "Revelation 7:11 \"stood\"",
+        "Revelation 8:2 \"stood\"",
+        "Revelation 8:3 \"stood\"",
+        "Revelation 10:5 \"stand\"",
+        "Revelation 11:4 \"standing\""
+      ]
+    },
+    {
+      "strongs_number": "H01841",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 63,
+      "study_word_rows": 48,
+      "verses": 39,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "daniel",
+          "count": 43
+        },
+        {
+          "word": "unto",
+          "count": 3
+        },
+        {
+          "word": "that",
+          "count": 2
+        },
+        {
+          "word": "then",
+          "count": 2
+        },
+        {
+          "word": "against",
+          "count": 1
+        },
+        {
+          "word": "but",
+          "count": 1
+        },
+        {
+          "word": "concerning",
+          "count": 1
+        },
+        {
+          "word": "in",
+          "count": 1
+        },
+        {
+          "word": "let",
+          "count": 1
+        },
+        {
+          "word": "now",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:14 \"Daniel\"",
+        "Daniel 2:16 \"Then\"",
+        "Daniel 2:16 \"Daniel\"",
+        "Daniel 2:17 \"Daniel\"",
+        "Daniel 2:18 \"that\"",
+        "Daniel 2:18 \"Daniel\"",
+        "Daniel 2:19 \"unto\"",
+        "Daniel 2:19 \"Daniel\"",
+        "Daniel 2:20 \"Daniel\"",
+        "Daniel 2:24 \"Daniel\"",
+        "Daniel 2:25 \"Daniel\"",
+        "Daniel 2:26 \"to\""
+      ]
+    },
+    {
+      "strongs_number": "G1526",
+      "language": "Greek",
+      "mapping_rows": 62,
+      "study_word_rows": 0,
+      "verses": 41,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "are",
+          "count": 44
+        },
+        {
+          "word": "they",
+          "count": 14
+        },
+        {
+          "word": "there",
+          "count": 3
+        },
+        {
+          "word": "were",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 1:19 \"are\"",
+        "Revelation 1:20 \"are\"",
+        "Revelation 2:2 \"are\"",
+        "Revelation 3:4 \"they\"",
+        "Revelation 3:4 \"are\"",
+        "Revelation 3:9 \"are\"",
+        "Revelation 4:11 \"they\"",
+        "Revelation 4:11 \"are\"",
+        "Revelation 5:6 \"are\"",
+        "Revelation 7:13 \"are\"",
+        "Revelation 7:14 \"are\"",
+        "Revelation 7:15 \"are\""
+      ]
+    },
+    {
+      "strongs_number": "G5209",
+      "language": "Greek",
+      "mapping_rows": 62,
+      "study_word_rows": 3,
+      "verses": 50,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "you",
+          "count": 53
+        },
+        {
+          "word": "ye",
+          "count": 6
+        },
+        {
+          "word": "your",
+          "count": 2
+        },
+        {
+          "word": "sakes",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:24 \"you\"",
+        "John 3:7 \"Ye\"",
+        "John 4:38 \"you\"",
+        "John 5:42 \"you\"",
+        "John 6:61 \"you\"",
+        "John 6:70 \"you\"",
+        "John 7:7 \"you\"",
+        "John 8:32 \"you\"",
+        "John 8:36 \"you\"",
+        "John 11:15 \"your\"",
+        "John 11:15 \"sakes\"",
+        "John 12:30 \"your\""
+      ]
+    },
+    {
+      "strongs_number": "G2309",
+      "language": "Greek",
+      "mapping_rows": 61,
+      "study_word_rows": 35,
+      "verses": 30,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "will",
+          "count": 13
+        },
+        {
+          "word": "would",
+          "count": 13
+        },
+        {
+          "word": "i",
+          "count": 8
+        },
+        {
+          "word": "they",
+          "count": 4
+        },
+        {
+          "word": "that",
+          "count": 3
+        },
+        {
+          "word": "he",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        },
+        {
+          "word": "were",
+          "count": 2
+        },
+        {
+          "word": "ye",
+          "count": 2
+        },
+        {
+          "word": "desirous",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 11:5 \"will\"",
+        "Revelation 11:6 \"they\"",
+        "Revelation 11:6 \"will\"",
+        "Revelation 22:17 \"whosoever\"",
+        "Revelation 22:17 \"will\"",
+        "John 1:43 \"would\"",
+        "John 3:8 \"it\"",
+        "John 3:8 \"listeth\"",
+        "John 5:35 \"were\"",
+        "John 5:35 \"willing\"",
+        "John 5:40 \"ye\"",
+        "John 5:40 \"will\""
+      ]
+    },
+    {
+      "strongs_number": "G5210",
+      "language": "Greek",
+      "mapping_rows": 61,
+      "study_word_rows": 1,
+      "verses": 55,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "ye",
+          "count": 60
+        },
+        {
+          "word": "have",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "John 3:28 \"Ye\"",
+        "John 4:20 \"ye\"",
+        "John 4:22 \"Ye\"",
+        "John 4:32 \"ye\"",
+        "John 4:35 \"ye\"",
+        "John 4:38 \"ye\"",
+        "John 5:20 \"ye\"",
+        "John 5:33 \"Ye\"",
+        "John 5:34 \"ye\"",
+        "John 5:35 \"ye\"",
+        "John 5:38 \"ye\"",
+        "John 5:39 \"ye\""
+      ]
+    },
+    {
+      "strongs_number": "H05922",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 60,
+      "study_word_rows": 36,
+      "verses": 41,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "upon",
+          "count": 13
+        },
+        {
+          "word": "unto",
+          "count": 9
+        },
+        {
+          "word": "over",
+          "count": 7
+        },
+        {
+          "word": "against",
+          "count": 4
+        },
+        {
+          "word": "him",
+          "count": 4
+        },
+        {
+          "word": "me",
+          "count": 4
+        },
+        {
+          "word": "in",
+          "count": 3
+        },
+        {
+          "word": "of",
+          "count": 3
+        },
+        {
+          "word": "thee",
+          "count": 3
+        },
+        {
+          "word": "concerning",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Daniel 2:10 \"upon\"",
+        "Daniel 2:18 \"concerning\"",
+        "Daniel 2:24 \"unto\"",
+        "Daniel 2:28 \"upon\"",
+        "Daniel 2:34 \"upon\"",
+        "Daniel 2:46 \"upon\"",
+        "Daniel 2:48 \"over\"",
+        "Daniel 2:49 \"over\"",
+        "Daniel 3:12 \"over\"",
+        "Daniel 3:12 \"thee\"",
+        "Daniel 3:19 \"against\"",
+        "Daniel 3:29 \"against\""
+      ]
+    },
+    {
+      "strongs_number": "G2257",
+      "language": "Greek",
+      "mapping_rows": 59,
+      "study_word_rows": 50,
+      "verses": 45,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "our",
+          "count": 41
+        },
+        {
+          "word": "of",
+          "count": 7
+        },
+        {
+          "word": "us",
+          "count": 7
+        },
+        {
+          "word": "we",
+          "count": 2
+        },
+        {
+          "word": "to",
+          "count": 1
+        },
+        {
+          "word": "unto",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 5:10 \"unto\"",
+        "Revelation 5:10 \"our\"",
+        "Revelation 6:10 \"our\"",
+        "Revelation 7:3 \"of\"",
+        "Revelation 7:3 \"our\"",
+        "Revelation 7:10 \"to\"",
+        "Revelation 7:10 \"our\"",
+        "Revelation 12:10 \"of\"",
+        "Revelation 12:10 \"our\"",
+        "Revelation 19:1 \"our\"",
+        "Revelation 19:5 \"our\"",
+        "Revelation 22:21 \"of\""
+      ]
+    },
+    {
+      "strongs_number": "G305",
+      "language": "Greek",
+      "mapping_rows": 58,
+      "study_word_rows": 48,
+      "verses": 24,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "up",
+          "count": 18
+        },
+        {
+          "word": "went",
+          "count": 7
+        },
+        {
+          "word": "ascended",
+          "count": 3
+        },
+        {
+          "word": "ascend",
+          "count": 2
+        },
+        {
+          "word": "ascendeth",
+          "count": 2
+        },
+        {
+          "word": "ascending",
+          "count": 2
+        },
+        {
+          "word": "go",
+          "count": 2
+        },
+        {
+          "word": "i",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 7:2 \"ascending\"",
+        "Revelation 9:2 \"there\"",
+        "Revelation 9:2 \"arose\"",
+        "Revelation 11:7 \"that\"",
+        "Revelation 11:7 \"ascendeth\"",
+        "Revelation 11:12 \"Come\"",
+        "Revelation 11:12 \"up\"",
+        "Revelation 11:12 \"they\"",
+        "Revelation 11:12 \"ascended\"",
+        "Revelation 13:1 \"rise\"",
+        "Revelation 13:1 \"up\"",
+        "Revelation 13:11 \"coming\""
+      ]
+    },
+    {
+      "strongs_number": "G3708",
+      "language": "Greek",
+      "mapping_rows": 58,
+      "study_word_rows": 37,
+      "verses": 21,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "seen",
+          "count": 18
+        },
+        {
+          "word": "have",
+          "count": 7
+        },
+        {
+          "word": "hath",
+          "count": 6
+        },
+        {
+          "word": "saw",
+          "count": 4
+        },
+        {
+          "word": "hast",
+          "count": 3
+        },
+        {
+          "word": "they",
+          "count": 3
+        },
+        {
+          "word": "thou",
+          "count": 3
+        },
+        {
+          "word": "i",
+          "count": 2
+        },
+        {
+          "word": "see",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 18:18 \"when\"",
+        "Revelation 18:18 \"they\"",
+        "Revelation 18:18 \"saw\"",
+        "Revelation 19:10 \"See\"",
+        "Revelation 22:9 \"See\"",
+        "John 1:18 \"hath\"",
+        "John 1:18 \"seen\"",
+        "John 1:34 \"I\"",
+        "John 1:34 \"saw\"",
+        "John 3:11 \"we\"",
+        "John 3:11 \"have\"",
+        "John 3:11 \"seen\""
+      ]
+    },
+    {
+      "strongs_number": "G3745",
+      "language": "Greek",
+      "mapping_rows": 58,
+      "study_word_rows": 30,
+      "verses": 26,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "as",
+          "count": 20
+        },
+        {
+          "word": "many",
+          "count": 9
+        },
+        {
+          "word": "whatsoever",
+          "count": 6
+        },
+        {
+          "word": "that",
+          "count": 5
+        },
+        {
+          "word": "ever",
+          "count": 3
+        },
+        {
+          "word": "things",
+          "count": 3
+        },
+        {
+          "word": "much",
+          "count": 2
+        },
+        {
+          "word": "of",
+          "count": 2
+        },
+        {
+          "word": "all",
+          "count": 1
+        },
+        {
+          "word": "how",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 1:2 \"of\"",
+        "Revelation 1:2 \"all\"",
+        "Revelation 1:2 \"things\"",
+        "Revelation 1:2 \"that\"",
+        "Revelation 2:24 \"as\"",
+        "Revelation 2:24 \"many\"",
+        "Revelation 3:19 \"As\"",
+        "Revelation 3:19 \"many\"",
+        "Revelation 3:19 \"as\"",
+        "Revelation 13:15 \"as\"",
+        "Revelation 13:15 \"many\"",
+        "Revelation 18:7 \"How\""
+      ]
+    },
+    {
+      "strongs_number": "G243",
+      "language": "Greek",
+      "mapping_rows": 56,
+      "study_word_rows": 49,
+      "verses": 42,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "another",
+          "count": 21
+        },
+        {
+          "word": "other",
+          "count": 16
+        },
+        {
+          "word": "others",
+          "count": 5
+        },
+        {
+          "word": "the",
+          "count": 5
+        },
+        {
+          "word": "some",
+          "count": 2
+        },
+        {
+          "word": "did",
+          "count": 1
+        },
+        {
+          "word": "man",
+          "count": 1
+        },
+        {
+          "word": "men",
+          "count": 1
+        },
+        {
+          "word": "of",
+          "count": 1
+        },
+        {
+          "word": "one",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:24 \"other\"",
+        "Revelation 6:4 \"another\"",
+        "Revelation 7:2 \"another\"",
+        "Revelation 8:3 \"another\"",
+        "Revelation 10:1 \"another\"",
+        "Revelation 12:3 \"another\"",
+        "Revelation 13:11 \"another\"",
+        "Revelation 14:6 \"another\"",
+        "Revelation 14:8 \"another\"",
+        "Revelation 14:15 \"another\"",
+        "Revelation 14:17 \"another\"",
+        "Revelation 14:18 \"another\""
+      ]
+    },
+    {
+      "strongs_number": "G1410",
+      "language": "Greek",
+      "mapping_rows": 56,
+      "study_word_rows": 40,
+      "verses": 35,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "can",
+          "count": 17
+        },
+        {
+          "word": "able",
+          "count": 5
+        },
+        {
+          "word": "cannot",
+          "count": 5
+        },
+        {
+          "word": "could",
+          "count": 5
+        },
+        {
+          "word": "be",
+          "count": 2
+        },
+        {
+          "word": "canst",
+          "count": 2
+        },
+        {
+          "word": "he",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        },
+        {
+          "word": "was",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 2:2 \"thou\"",
+        "Revelation 2:2 \"canst\"",
+        "Revelation 3:8 \"can\"",
+        "Revelation 5:3 \"was\"",
+        "Revelation 5:3 \"able\"",
+        "Revelation 6:17 \"shall\"",
+        "Revelation 6:17 \"be\"",
+        "Revelation 6:17 \"able\"",
+        "Revelation 7:9 \"could\"",
+        "Revelation 13:17 \"might\"",
+        "Revelation 14:3 \"could\"",
+        "Revelation 15:8 \"was\""
+      ]
+    },
+    {
+      "strongs_number": "G3306",
+      "language": "Greek",
+      "mapping_rows": 56,
+      "study_word_rows": 41,
+      "verses": 28,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "abide",
+          "count": 10
+        },
+        {
+          "word": "he",
+          "count": 6
+        },
+        {
+          "word": "abode",
+          "count": 5
+        },
+        {
+          "word": "ye",
+          "count": 4
+        },
+        {
+          "word": "abideth",
+          "count": 3
+        },
+        {
+          "word": "tarry",
+          "count": 3
+        },
+        {
+          "word": "continue",
+          "count": 2
+        },
+        {
+          "word": "dwelleth",
+          "count": 2
+        },
+        {
+          "word": "it",
+          "count": 2
+        },
+        {
+          "word": "remain",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "John 1:32 \"it\"",
+        "John 1:32 \"abode\"",
+        "John 1:33 \"remaining\"",
+        "John 1:39 \"he\"",
+        "John 1:39 \"dwelt\"",
+        "John 1:39 \"abode\"",
+        "John 2:12 \"they\"",
+        "John 2:12 \"continued\"",
+        "John 3:36 \"abideth\"",
+        "John 4:40 \"that\"",
+        "John 4:40 \"he\"",
+        "John 4:40 \"would\""
+      ]
+    }
+  ],
+  "study_value_batch": [
     {
       "strongs_number": "G4675",
       "language": "Greek",
@@ -4617,70 +4485,6 @@
         "Revelation 3:8 \"thy\"",
         "Revelation 3:8 \"thee\"",
         "Revelation 3:9 \"thy\""
-      ]
-    },
-    {
-      "strongs_number": "H0935",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 151,
-      "study_word_rows": 85,
-      "verses": 47,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "come",
-          "count": 24
-        },
-        {
-          "word": "shall",
-          "count": 17
-        },
-        {
-          "word": "and",
-          "count": 16
-        },
-        {
-          "word": "he",
-          "count": 13
-        },
-        {
-          "word": "came",
-          "count": 8
-        },
-        {
-          "word": "brought",
-          "count": 6
-        },
-        {
-          "word": "enter",
-          "count": 5
-        },
-        {
-          "word": "to",
-          "count": 5
-        },
-        {
-          "word": "bring",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"came\"",
-        "Daniel 1:2 \"which\"",
-        "Daniel 1:2 \"he\"",
-        "Daniel 1:2 \"carried\"",
-        "Daniel 1:2 \"and\"",
-        "Daniel 1:2 \"brought\"",
-        "Daniel 1:3 \"that\"",
-        "Daniel 1:3 \"he\"",
-        "Daniel 1:3 \"should\"",
-        "Daniel 1:3 \"bring\"",
-        "Daniel 1:18 \"he\"",
-        "Daniel 1:18 \"should\""
       ]
     },
     {
@@ -4812,370 +4616,6 @@
       ]
     },
     {
-      "strongs_number": "G1097",
-      "language": "Greek",
-      "mapping_rows": 114,
-      "study_word_rows": 84,
-      "verses": 54,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "know",
-          "count": 21
-        },
-        {
-          "word": "known",
-          "count": 12
-        },
-        {
-          "word": "knew",
-          "count": 11
-        },
-        {
-          "word": "ye",
-          "count": 11
-        },
-        {
-          "word": "have",
-          "count": 8
-        },
-        {
-          "word": "shall",
-          "count": 6
-        },
-        {
-          "word": "they",
-          "count": 6
-        },
-        {
-          "word": "may",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 3
-        },
-        {
-          "word": "knowest",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 2:23 \"shall\"",
-        "Revelation 2:23 \"know\"",
-        "Revelation 2:24 \"have\"",
-        "Revelation 2:24 \"known\"",
-        "John 1:10 \"knew\"",
-        "John 1:48 \"knowest\"",
-        "John 1:48 \"thou\"",
-        "John 2:24 \"knew\"",
-        "John 2:25 \"knew\"",
-        "John 3:10 \"knowest\"",
-        "John 4:1 \"knew\"",
-        "John 4:53 \"knew\""
-      ]
-    },
-    {
-      "strongs_number": "G3173",
-      "language": "Greek",
-      "mapping_rows": 147,
-      "study_word_rows": 82,
-      "verses": 75,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "great",
-          "count": 55
-        },
-        {
-          "word": "a",
-          "count": 35
-        },
-        {
-          "word": "loud",
-          "count": 14
-        },
-        {
-          "word": "with",
-          "count": 10
-        },
-        {
-          "word": "the",
-          "count": 8
-        },
-        {
-          "word": "of",
-          "count": 7
-        },
-        {
-          "word": "greater",
-          "count": 5
-        },
-        {
-          "word": "that",
-          "count": 4
-        },
-        {
-          "word": "things",
-          "count": 2
-        },
-        {
-          "word": "an",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"great\"",
-        "Revelation 2:22 \"great\"",
-        "Revelation 5:2 \"with\"",
-        "Revelation 5:2 \"a\"",
-        "Revelation 5:2 \"loud\"",
-        "Revelation 5:12 \"with\"",
-        "Revelation 5:12 \"a\"",
-        "Revelation 5:12 \"loud\"",
-        "Revelation 6:10 \"with\"",
-        "Revelation 6:10 \"a\"",
-        "Revelation 6:10 \"loud\"",
-        "Revelation 6:12 \"a\""
-      ]
-    },
-    {
-      "strongs_number": "G611",
-      "language": "Greek",
-      "mapping_rows": 89,
-      "study_word_rows": 78,
-      "verses": 78,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "answered",
-          "count": 77
-        },
-        {
-          "word": "they",
-          "count": 7
-        },
-        {
-          "word": "he",
-          "count": 3
-        },
-        {
-          "word": "answerest",
-          "count": 1
-        },
-        {
-          "word": "thou",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 7:13 \"answered\"",
-        "John 1:21 \"he\"",
-        "John 1:21 \"answered\"",
-        "John 1:26 \"answered\"",
-        "John 1:48 \"answered\"",
-        "John 1:49 \"answered\"",
-        "John 1:50 \"answered\"",
-        "John 2:18 \"answered\"",
-        "John 2:19 \"answered\"",
-        "John 3:3 \"answered\"",
-        "John 3:5 \"answered\"",
-        "John 3:9 \"answered\""
-      ]
-    },
-    {
-      "strongs_number": "H0398",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 130,
-      "study_word_rows": 77,
-      "verses": 38,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "eat",
-          "count": 25
-        },
-        {
-          "word": "shall",
-          "count": 18
-        },
-        {
-          "word": "and",
-          "count": 12
-        },
-        {
-          "word": "devour",
-          "count": 8
-        },
-        {
-          "word": "thou",
-          "count": 7
-        },
-        {
-          "word": "ye",
-          "count": 6
-        },
-        {
-          "word": "it",
-          "count": 5
-        },
-        {
-          "word": "which",
-          "count": 5
-        },
-        {
-          "word": "not",
-          "count": 4
-        },
-        {
-          "word": "shalt",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:12 \"to\"",
-        "Daniel 1:12 \"eat\"",
-        "Daniel 1:13 \"that\"",
-        "Daniel 1:13 \"eat\"",
-        "Daniel 1:15 \"which\"",
-        "Daniel 1:15 \"did\"",
-        "Daniel 1:15 \"eat\"",
-        "Daniel 10:3 \"I\"",
-        "Daniel 10:3 \"ate\"",
-        "Daniel 11:26 \"Yea\"",
-        "Daniel 11:26 \"they\"",
-        "Daniel 11:26 \"that\""
-      ]
-    },
-    {
-      "strongs_number": "H06213",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 124,
-      "study_word_rows": 77,
-      "verses": 39,
-      "books": 6,
-      "common_words": [
-        {
-          "word": "do",
-          "count": 12
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "he",
-          "count": 9
-        },
-        {
-          "word": "made",
-          "count": 9
-        },
-        {
-          "word": "shall",
-          "count": 8
-        },
-        {
-          "word": "done",
-          "count": 7
-        },
-        {
-          "word": "had",
-          "count": 6
-        },
-        {
-          "word": "did",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 4
-        },
-        {
-          "word": "thus",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:13 \"deal\"",
-        "Daniel 8:24 \"and\"",
-        "Daniel 8:24 \"practise\"",
-        "Daniel 9:12 \"hath\"",
-        "Daniel 9:12 \"not\"",
-        "Daniel 9:12 \"been\"",
-        "Daniel 9:12 \"done\"",
-        "Daniel 9:12 \"as\"",
-        "Daniel 9:15 \"and\"",
-        "Daniel 9:15 \"hast\"",
-        "Daniel 9:15 \"gotten\"",
-        "Daniel 9:19 \"and\""
-      ]
-    },
-    {
-      "strongs_number": "H05975",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 109,
-      "study_word_rows": 75,
-      "verses": 28,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "stand",
-          "count": 20
-        },
-        {
-          "word": "shall",
-          "count": 16
-        },
-        {
-          "word": "up",
-          "count": 10
-        },
-        {
-          "word": "and",
-          "count": 9
-        },
-        {
-          "word": "stood",
-          "count": 6
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "behold",
-          "count": 3
-        },
-        {
-          "word": "not",
-          "count": 3
-        },
-        {
-          "word": "but",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"thereof\"",
-        "Daniel 1:5 \"they\"",
-        "Daniel 1:5 \"might\"",
-        "Daniel 1:5 \"stand\"",
-        "Daniel 1:19 \"therefore\"",
-        "Daniel 1:19 \"stood\"",
-        "Daniel 2:2 \"and\"",
-        "Daniel 2:2 \"stood\"",
-        "Daniel 8:3 \"and\"",
-        "Daniel 8:3 \"behold\"",
-        "Daniel 8:3 \"there\"",
-        "Daniel 8:3 \"stood\""
-      ]
-    },
-    {
       "strongs_number": "G2453",
       "language": "Greek",
       "mapping_rows": 170,
@@ -5285,50 +4725,6 @@
         "Revelation 14:9 \"If\"",
         "John 1:25 \"if\"",
         "John 3:12 \"If\""
-      ]
-    },
-    {
-      "strongs_number": "G32",
-      "language": "Greek",
-      "mapping_rows": 82,
-      "study_word_rows": 71,
-      "verses": 67,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "angel",
-          "count": 44
-        },
-        {
-          "word": "angels",
-          "count": 26
-        },
-        {
-          "word": "the",
-          "count": 9
-        },
-        {
-          "word": "an",
-          "count": 2
-        },
-        {
-          "word": "another",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:20 \"the\"",
-        "Revelation 1:20 \"angels\"",
-        "Revelation 2:1 \"the\"",
-        "Revelation 2:1 \"angel\"",
-        "Revelation 2:8 \"the\"",
-        "Revelation 2:8 \"angel\"",
-        "Revelation 2:12 \"the\"",
-        "Revelation 2:12 \"angel\"",
-        "Revelation 2:18 \"the\"",
-        "Revelation 2:18 \"angel\"",
-        "Revelation 3:1 \"the\"",
-        "Revelation 3:1 \"angel\""
       ]
     },
     {
@@ -5448,166 +4844,6 @@
       ]
     },
     {
-      "strongs_number": "G1831",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 69,
-      "verses": 42,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "went",
-          "count": 18
-        },
-        {
-          "word": "out",
-          "count": 14
-        },
-        {
-          "word": "came",
-          "count": 13
-        },
-        {
-          "word": "forth",
-          "count": 11
-        },
-        {
-          "word": "he",
-          "count": 8
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "go",
-          "count": 3
-        },
-        {
-          "word": "come",
-          "count": 2
-        },
-        {
-          "word": "shall",
-          "count": 2
-        },
-        {
-          "word": "they",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 3:12 \"he\"",
-        "Revelation 3:12 \"shall\"",
-        "Revelation 3:12 \"go\"",
-        "Revelation 6:2 \"he\"",
-        "Revelation 6:2 \"went\"",
-        "Revelation 6:2 \"forth\"",
-        "Revelation 6:4 \"there\"",
-        "Revelation 6:4 \"went\"",
-        "Revelation 6:4 \"out\"",
-        "Revelation 9:3 \"there\"",
-        "Revelation 9:3 \"came\"",
-        "Revelation 14:15 \"came\""
-      ]
-    },
-    {
-      "strongs_number": "G3772",
-      "language": "Greek",
-      "mapping_rows": 69,
-      "study_word_rows": 68,
-      "verses": 64,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "heaven",
-          "count": 68
-        },
-        {
-          "word": "the",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 4:2 \"heaven\"",
-        "Revelation 5:3 \"heaven\"",
-        "Revelation 5:13 \"heaven\"",
-        "Revelation 6:13 \"heaven\"",
-        "Revelation 6:14 \"the\"",
-        "Revelation 6:14 \"heaven\"",
-        "Revelation 8:1 \"heaven\"",
-        "Revelation 8:10 \"heaven\"",
-        "Revelation 9:1 \"heaven\"",
-        "Revelation 10:1 \"heaven\"",
-        "Revelation 10:4 \"heaven\"",
-        "Revelation 10:5 \"heaven\""
-      ]
-    },
-    {
-      "strongs_number": "H03117",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 125,
-      "study_word_rows": 66,
-      "verses": 45,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "day",
-          "count": 36
-        },
-        {
-          "word": "the",
-          "count": 18
-        },
-        {
-          "word": "days",
-          "count": 17
-        },
-        {
-          "word": "in",
-          "count": 13
-        },
-        {
-          "word": "that",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 4
-        },
-        {
-          "word": "for",
-          "count": 3
-        },
-        {
-          "word": "it",
-          "count": 3
-        },
-        {
-          "word": "of",
-          "count": 3
-        },
-        {
-          "word": "as",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"them\"",
-        "Daniel 1:5 \"a\"",
-        "Daniel 1:5 \"daily\"",
-        "Daniel 1:12 \"days\"",
-        "Daniel 1:14 \"days\"",
-        "Daniel 1:15 \"days\"",
-        "Daniel 1:18 \"of\"",
-        "Daniel 1:18 \"the\"",
-        "Daniel 1:18 \"days\"",
-        "Daniel 9:15 \"as\"",
-        "Daniel 9:15 \"at\"",
-        "Daniel 9:15 \"this\""
-      ]
-    },
-    {
       "strongs_number": "G1537",
       "language": "Greek",
       "mapping_rows": 316,
@@ -5669,62 +4905,6 @@
         "Revelation 3:10 \"from\"",
         "Revelation 3:16 \"out\"",
         "Revelation 3:16 \"of\""
-      ]
-    },
-    {
-      "strongs_number": "G5456",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 64,
-      "verses": 56,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "voice",
-          "count": 53
-        },
-        {
-          "word": "the",
-          "count": 14
-        },
-        {
-          "word": "a",
-          "count": 8
-        },
-        {
-          "word": "voices",
-          "count": 6
-        },
-        {
-          "word": "sound",
-          "count": 3
-        },
-        {
-          "word": "hear",
-          "count": 1
-        },
-        {
-          "word": "noise",
-          "count": 1
-        },
-        {
-          "word": "with",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"a\"",
-        "Revelation 1:10 \"voice\"",
-        "Revelation 1:12 \"voice\"",
-        "Revelation 1:15 \"voice\"",
-        "Revelation 1:15 \"the\"",
-        "Revelation 1:15 \"sound\"",
-        "Revelation 3:20 \"voice\"",
-        "Revelation 4:5 \"voices\"",
-        "Revelation 5:2 \"voice\"",
-        "Revelation 5:11 \"the\"",
-        "Revelation 5:11 \"voice\"",
-        "Revelation 5:12 \"voice\""
       ]
     },
     {
@@ -6104,198 +5284,6 @@
       ]
     },
     {
-      "strongs_number": "G906",
-      "language": "Greek",
-      "mapping_rows": 80,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "cast",
-          "count": 30
-        },
-        {
-          "word": "was",
-          "count": 7
-        },
-        {
-          "word": "put",
-          "count": 6
-        },
-        {
-          "word": "out",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "they",
-          "count": 4
-        },
-        {
-          "word": "thrust",
-          "count": 4
-        },
-        {
-          "word": "were",
-          "count": 4
-        },
-        {
-          "word": "did",
-          "count": 2
-        },
-        {
-          "word": "will",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 2:10 \"cast\"",
-        "Revelation 2:14 \"to\"",
-        "Revelation 2:14 \"cast\"",
-        "Revelation 2:22 \"will\"",
-        "Revelation 2:22 \"cast\"",
-        "Revelation 2:24 \"I\"",
-        "Revelation 2:24 \"will\"",
-        "Revelation 2:24 \"put\"",
-        "Revelation 4:10 \"cast\"",
-        "Revelation 6:13 \"casteth\"",
-        "Revelation 8:5 \"cast\"",
-        "Revelation 8:7 \"they\""
-      ]
-    },
-    {
-      "strongs_number": "G599",
-      "language": "Greek",
-      "mapping_rows": 78,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "die",
-          "count": 21
-        },
-        {
-          "word": "dead",
-          "count": 11
-        },
-        {
-          "word": "died",
-          "count": 8
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "are",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 4
-        },
-        {
-          "word": "shall",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "should",
-          "count": 3
-        },
-        {
-          "word": "to",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 3:2 \"die\"",
-        "Revelation 8:9 \"died\"",
-        "Revelation 9:6 \"to\"",
-        "Revelation 9:6 \"die\"",
-        "John 4:49 \"die\"",
-        "John 6:49 \"are\"",
-        "John 6:49 \"dead\"",
-        "John 6:50 \"die\"",
-        "John 6:58 \"are\"",
-        "John 6:58 \"dead\"",
-        "John 8:21 \"shall\"",
-        "John 8:21 \"die\""
-      ]
-    },
-    {
-      "strongs_number": "G2198",
-      "language": "Greek",
-      "mapping_rows": 72,
-      "study_word_rows": 57,
-      "verses": 34,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "live",
-          "count": 17
-        },
-        {
-          "word": "living",
-          "count": 10
-        },
-        {
-          "word": "shall",
-          "count": 10
-        },
-        {
-          "word": "liveth",
-          "count": 9
-        },
-        {
-          "word": "alive",
-          "count": 4
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "that",
-          "count": 2
-        },
-        {
-          "word": "ye",
-          "count": 2
-        },
-        {
-          "word": "him",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:8 \"is\"",
-        "Revelation 2:8 \"alive\"",
-        "Revelation 3:1 \"thou\"",
-        "Revelation 3:1 \"livest\"",
-        "Revelation 4:9 \"liveth\"",
-        "Revelation 4:10 \"that\"",
-        "Revelation 4:10 \"liveth\"",
-        "Revelation 7:2 \"of\"",
-        "Revelation 7:2 \"the\"",
-        "Revelation 7:2 \"living\"",
-        "Revelation 7:17 \"living\"",
-        "Revelation 10:6 \"him\""
-      ]
-    },
-    {
       "strongs_number": "G1438",
       "language": "Greek",
       "mapping_rows": 69,
@@ -6360,106 +5348,6 @@
       ]
     },
     {
-      "strongs_number": "G281",
-      "language": "Greek",
-      "mapping_rows": 58,
-      "study_word_rows": 57,
-      "verses": 32,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "verily",
-          "count": 50
-        },
-        {
-          "word": "amen",
-          "count": 7
-        },
-        {
-          "word": "the",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 3:14 \"the\"",
-        "Revelation 3:14 \"Amen\"",
-        "Revelation 5:14 \"Amen\"",
-        "Revelation 7:12 \"Amen\"",
-        "Revelation 19:4 \"Amen\"",
-        "Revelation 22:20 \"Amen\"",
-        "John 1:51 \"Verily\"",
-        "John 1:51 \"verily\"",
-        "John 3:3 \"Verily\"",
-        "John 3:3 \"verily\"",
-        "John 3:5 \"Verily\"",
-        "John 3:5 \"verily\""
-      ]
-    },
-    {
-      "strongs_number": "H07725",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 56,
-      "verses": 23,
-      "books": 4,
-      "common_words": [
-        {
-          "word": "i",
-          "count": 11
-        },
-        {
-          "word": "turn",
-          "count": 11
-        },
-        {
-          "word": "will",
-          "count": 11
-        },
-        {
-          "word": "not",
-          "count": 10
-        },
-        {
-          "word": "away",
-          "count": 9
-        },
-        {
-          "word": "return",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "have",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 9:16 \"be\"",
-        "Daniel 9:16 \"turned\"",
-        "Daniel 9:16 \"away\"",
-        "Daniel 10:20 \"unto\"",
-        "Daniel 10:20 \"thee\"",
-        "Daniel 10:20 \"and\"",
-        "Daniel 10:20 \"now\"",
-        "Daniel 10:20 \"will\"",
-        "Daniel 10:20 \"I\"",
-        "Daniel 10:20 \"return\"",
-        "Daniel 11:13 \"shall\"",
-        "Daniel 11:13 \"return\""
-      ]
-    },
-    {
       "strongs_number": "G2250",
       "language": "Greek",
       "mapping_rows": 72,
@@ -6520,190 +5408,6 @@
       ]
     },
     {
-      "strongs_number": "H04428",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 112,
-      "study_word_rows": 54,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "king",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 31
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "kings",
-          "count": 9
-        },
-        {
-          "word": "of",
-          "count": 6
-        },
-        {
-          "word": "to",
-          "count": 3
-        },
-        {
-          "word": "against",
-          "count": 2
-        },
-        {
-          "word": "for",
-          "count": 2
-        },
-        {
-          "word": "so",
-          "count": 2
-        },
-        {
-          "word": "a",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"king\"",
-        "Daniel 1:2 \"king\"",
-        "Daniel 1:3 \"And\"",
-        "Daniel 1:3 \"the\"",
-        "Daniel 1:3 \"king\"",
-        "Daniel 1:5 \"And\"",
-        "Daniel 1:5 \"the\"",
-        "Daniel 1:5 \"king\"",
-        "Daniel 1:5 \"of\"",
-        "Daniel 1:5 \"king's\"",
-        "Daniel 1:8 \"of\"",
-        "Daniel 1:8 \"the\""
-      ]
-    },
-    {
-      "strongs_number": "G2041",
-      "language": "Greek",
-      "mapping_rows": 60,
-      "study_word_rows": 54,
-      "verses": 51,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "works",
-          "count": 34
-        },
-        {
-          "word": "deeds",
-          "count": 10
-        },
-        {
-          "word": "work",
-          "count": 8
-        },
-        {
-          "word": "the",
-          "count": 4
-        },
-        {
-          "word": "a",
-          "count": 1
-        },
-        {
-          "word": "deed",
-          "count": 1
-        },
-        {
-          "word": "doing",
-          "count": 1
-        },
-        {
-          "word": "to",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:2 \"works\"",
-        "Revelation 2:5 \"the\"",
-        "Revelation 2:5 \"works\"",
-        "Revelation 2:6 \"deeds\"",
-        "Revelation 2:9 \"works\"",
-        "Revelation 2:13 \"works\"",
-        "Revelation 2:19 \"works\"",
-        "Revelation 2:22 \"deeds\"",
-        "Revelation 2:23 \"works\"",
-        "Revelation 2:26 \"works\"",
-        "Revelation 3:1 \"works\"",
-        "Revelation 3:2 \"works\""
-      ]
-    },
-    {
-      "strongs_number": "G2919",
-      "language": "Greek",
-      "mapping_rows": 73,
-      "study_word_rows": 52,
-      "verses": 30,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "judge",
-          "count": 18
-        },
-        {
-          "word": "judged",
-          "count": 7
-        },
-        {
-          "word": "that",
-          "count": 6
-        },
-        {
-          "word": "judgest",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "thou",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 3
-        },
-        {
-          "word": "judgeth",
-          "count": 3
-        },
-        {
-          "word": "be",
-          "count": 2
-        },
-        {
-          "word": "condemned",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 6:10 \"dost\"",
-        "Revelation 6:10 \"thou\"",
-        "Revelation 6:10 \"judge\"",
-        "Revelation 11:18 \"that\"",
-        "Revelation 11:18 \"they\"",
-        "Revelation 11:18 \"should\"",
-        "Revelation 11:18 \"be\"",
-        "Revelation 11:18 \"judged\"",
-        "Revelation 16:5 \"thou\"",
-        "Revelation 16:5 \"hast\"",
-        "Revelation 16:5 \"judged\"",
-        "Revelation 20:13 \"they\""
-      ]
-    },
-    {
       "strongs_number": "G3762",
       "language": "Greek",
       "mapping_rows": 89,
@@ -6757,70 +5461,6 @@
         "Revelation 5:4 \"man\"",
         "Revelation 7:9 \"no\"",
         "Revelation 14:3 \"no\""
-      ]
-    },
-    {
-      "strongs_number": "H0136",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 50,
-      "verses": 33,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "lord",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 27
-        },
-        {
-          "word": "o",
-          "count": 8
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 3
-        },
-        {
-          "word": "thus",
-          "count": 3
-        },
-        {
-          "word": "behold",
-          "count": 2
-        },
-        {
-          "word": "me",
-          "count": 2
-        },
-        {
-          "word": "to",
-          "count": 2
-        },
-        {
-          "word": "unto",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:2 \"And\"",
-        "Daniel 1:2 \"the\"",
-        "Daniel 1:2 \"Lord\"",
-        "Daniel 9:3 \"unto\"",
-        "Daniel 9:3 \"the\"",
-        "Daniel 9:3 \"Lord\"",
-        "Daniel 9:4 \"Lord\"",
-        "Daniel 9:7 \"O\"",
-        "Daniel 9:7 \"Lord\"",
-        "Daniel 9:8 \"O\"",
-        "Daniel 9:8 \"Lord\"",
-        "Daniel 9:9 \"To\""
       ]
     },
     {
@@ -9010,6 +7650,1250 @@
         "John 2:6 \"the\"",
         "John 2:6 \"manner\""
       ]
+    },
+    {
+      "strongs_number": "G5216",
+      "language": "Greek",
+      "mapping_rows": 70,
+      "study_word_rows": 38,
+      "verses": 58,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "your",
+          "count": 37
+        },
+        {
+          "word": "you",
+          "count": 27
+        },
+        {
+          "word": "of",
+          "count": 4
+        },
+        {
+          "word": "among",
+          "count": 1
+        },
+        {
+          "word": "unto",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:23 \"your\"",
+        "John 5:45 \"you\"",
+        "John 6:49 \"Your\"",
+        "John 6:58 \"your\"",
+        "John 6:64 \"you\"",
+        "John 6:70 \"you\"",
+        "John 7:33 \"you\"",
+        "John 8:7 \"among\"",
+        "John 8:7 \"you\"",
+        "John 8:21 \"your\"",
+        "John 8:24 \"your\"",
+        "John 8:26 \"you\""
+      ]
+    },
+    {
+      "strongs_number": "G5204",
+      "language": "Greek",
+      "mapping_rows": 50,
+      "study_word_rows": 38,
+      "verses": 36,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "water",
+          "count": 27
+        },
+        {
+          "word": "waters",
+          "count": 11
+        },
+        {
+          "word": "of",
+          "count": 6
+        },
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "that",
+          "count": 1
+        },
+        {
+          "word": "with",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 1:15 \"of\"",
+        "Revelation 1:15 \"waters\"",
+        "Revelation 7:17 \"of\"",
+        "Revelation 7:17 \"waters\"",
+        "Revelation 8:10 \"of\"",
+        "Revelation 8:10 \"waters\"",
+        "Revelation 11:6 \"waters\"",
+        "Revelation 12:15 \"water\"",
+        "Revelation 14:2 \"waters\"",
+        "Revelation 14:7 \"of\"",
+        "Revelation 14:7 \"waters\"",
+        "Revelation 16:4 \"waters\""
+      ]
+    },
+    {
+      "strongs_number": "G2089",
+      "language": "Greek",
+      "mapping_rows": 39,
+      "study_word_rows": 38,
+      "verses": 29,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "more",
+          "count": 17
+        },
+        {
+          "word": "yet",
+          "count": 11
+        },
+        {
+          "word": "still",
+          "count": 4
+        },
+        {
+          "word": "any",
+          "count": 3
+        },
+        {
+          "word": "longer",
+          "count": 2
+        },
+        {
+          "word": "hereafter",
+          "count": 1
+        },
+        {
+          "word": "now",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 3:12 \"more\"",
+        "Revelation 6:11 \"yet\"",
+        "Revelation 7:16 \"more\"",
+        "Revelation 10:6 \"longer\"",
+        "Revelation 12:8 \"any\"",
+        "Revelation 12:8 \"more\"",
+        "Revelation 18:22 \"more\"",
+        "Revelation 18:23 \"more\"",
+        "Revelation 20:3 \"more\"",
+        "Revelation 21:4 \"more\"",
+        "Revelation 21:4 \"any\"",
+        "Revelation 22:3 \"more\""
+      ]
+    },
+    {
+      "strongs_number": "H01121",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 73,
+      "study_word_rows": 37,
+      "verses": 22,
+      "books": 4,
+      "common_words": [
+        {
+          "word": "the",
+          "count": 14
+        },
+        {
+          "word": "children",
+          "count": 12
+        },
+        {
+          "word": "and",
+          "count": 6
+        },
+        {
+          "word": "of",
+          "count": 5
+        },
+        {
+          "word": "sons",
+          "count": 4
+        },
+        {
+          "word": "son",
+          "count": 3
+        },
+        {
+          "word": "to",
+          "count": 3
+        },
+        {
+          "word": "o",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        },
+        {
+          "word": "thy",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Daniel 1:6 \"Now\"",
+        "Daniel 1:6 \"among\"",
+        "Daniel 1:6 \"these\"",
+        "Daniel 1:6 \"were\"",
+        "Daniel 1:6 \"of\"",
+        "Daniel 1:6 \"the\"",
+        "Daniel 1:6 \"children\"",
+        "Daniel 8:17 \"O\"",
+        "Daniel 8:17 \"son\"",
+        "Daniel 9:1 \"the\"",
+        "Daniel 9:1 \"son\"",
+        "Daniel 10:16 \"the\""
+      ]
+    },
+    {
+      "strongs_number": "G3708",
+      "language": "Greek",
+      "mapping_rows": 58,
+      "study_word_rows": 37,
+      "verses": 21,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "seen",
+          "count": 18
+        },
+        {
+          "word": "have",
+          "count": 7
+        },
+        {
+          "word": "hath",
+          "count": 6
+        },
+        {
+          "word": "saw",
+          "count": 4
+        },
+        {
+          "word": "hast",
+          "count": 3
+        },
+        {
+          "word": "they",
+          "count": 3
+        },
+        {
+          "word": "thou",
+          "count": 3
+        },
+        {
+          "word": "i",
+          "count": 2
+        },
+        {
+          "word": "see",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 18:18 \"when\"",
+        "Revelation 18:18 \"they\"",
+        "Revelation 18:18 \"saw\"",
+        "Revelation 19:10 \"See\"",
+        "Revelation 22:9 \"See\"",
+        "John 1:18 \"hath\"",
+        "John 1:18 \"seen\"",
+        "John 1:34 \"I\"",
+        "John 1:34 \"saw\"",
+        "John 3:11 \"we\"",
+        "John 3:11 \"have\"",
+        "John 3:11 \"seen\""
+      ]
+    },
+    {
+      "strongs_number": "H03046",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 53,
+      "study_word_rows": 37,
+      "verses": 22,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "known",
+          "count": 12
+        },
+        {
+          "word": "know",
+          "count": 7
+        },
+        {
+          "word": "make",
+          "count": 6
+        },
+        {
+          "word": "and",
+          "count": 5
+        },
+        {
+          "word": "made",
+          "count": 3
+        },
+        {
+          "word": "that",
+          "count": 3
+        },
+        {
+          "word": "thou",
+          "count": 3
+        },
+        {
+          "word": "me",
+          "count": 2
+        },
+        {
+          "word": "hast",
+          "count": 1
+        },
+        {
+          "word": "hath",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:5 \"make\"",
+        "Daniel 2:5 \"known\"",
+        "Daniel 2:8 \"know\"",
+        "Daniel 2:9 \"make\"",
+        "Daniel 2:9 \"known\"",
+        "Daniel 2:17 \"known\"",
+        "Daniel 2:21 \"to\"",
+        "Daniel 2:21 \"them\"",
+        "Daniel 2:21 \"that\"",
+        "Daniel 2:21 \"know\"",
+        "Daniel 2:22 \"he\"",
+        "Daniel 2:22 \"knoweth\""
+      ]
+    },
+    {
+      "strongs_number": "H05922",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 60,
+      "study_word_rows": 36,
+      "verses": 41,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "upon",
+          "count": 13
+        },
+        {
+          "word": "unto",
+          "count": 9
+        },
+        {
+          "word": "over",
+          "count": 7
+        },
+        {
+          "word": "against",
+          "count": 4
+        },
+        {
+          "word": "him",
+          "count": 4
+        },
+        {
+          "word": "me",
+          "count": 4
+        },
+        {
+          "word": "in",
+          "count": 3
+        },
+        {
+          "word": "of",
+          "count": 3
+        },
+        {
+          "word": "thee",
+          "count": 3
+        },
+        {
+          "word": "concerning",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Daniel 2:10 \"upon\"",
+        "Daniel 2:18 \"concerning\"",
+        "Daniel 2:24 \"unto\"",
+        "Daniel 2:28 \"upon\"",
+        "Daniel 2:34 \"upon\"",
+        "Daniel 2:46 \"upon\"",
+        "Daniel 2:48 \"over\"",
+        "Daniel 2:49 \"over\"",
+        "Daniel 3:12 \"over\"",
+        "Daniel 3:12 \"thee\"",
+        "Daniel 3:19 \"against\"",
+        "Daniel 3:29 \"against\""
+      ]
+    },
+    {
+      "strongs_number": "G455",
+      "language": "Greek",
+      "mapping_rows": 66,
+      "study_word_rows": 35,
+      "verses": 33,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "opened",
+          "count": 22
+        },
+        {
+          "word": "he",
+          "count": 11
+        },
+        {
+          "word": "open",
+          "count": 10
+        },
+        {
+          "word": "had",
+          "count": 6
+        },
+        {
+          "word": "to",
+          "count": 5
+        },
+        {
+          "word": "openeth",
+          "count": 3
+        },
+        {
+          "word": "was",
+          "count": 3
+        },
+        {
+          "word": "hath",
+          "count": 2
+        },
+        {
+          "word": "were",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 3:7 \"he\"",
+        "Revelation 3:7 \"that\"",
+        "Revelation 3:7 \"openeth\"",
+        "Revelation 3:8 \"open\"",
+        "Revelation 3:20 \"open\"",
+        "Revelation 5:2 \"to\"",
+        "Revelation 5:2 \"open\"",
+        "Revelation 5:3 \"to\"",
+        "Revelation 5:3 \"open\"",
+        "Revelation 5:4 \"to\"",
+        "Revelation 5:4 \"open\"",
+        "Revelation 5:5 \"to\""
+      ]
+    },
+    {
+      "strongs_number": "G2309",
+      "language": "Greek",
+      "mapping_rows": 61,
+      "study_word_rows": 35,
+      "verses": 30,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "will",
+          "count": 13
+        },
+        {
+          "word": "would",
+          "count": 13
+        },
+        {
+          "word": "i",
+          "count": 8
+        },
+        {
+          "word": "they",
+          "count": 4
+        },
+        {
+          "word": "that",
+          "count": 3
+        },
+        {
+          "word": "he",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        },
+        {
+          "word": "were",
+          "count": 2
+        },
+        {
+          "word": "ye",
+          "count": 2
+        },
+        {
+          "word": "desirous",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 11:5 \"will\"",
+        "Revelation 11:6 \"they\"",
+        "Revelation 11:6 \"will\"",
+        "Revelation 22:17 \"whosoever\"",
+        "Revelation 22:17 \"will\"",
+        "John 1:43 \"would\"",
+        "John 3:8 \"it\"",
+        "John 3:8 \"listeth\"",
+        "John 5:35 \"were\"",
+        "John 5:35 \"willing\"",
+        "John 5:40 \"ye\"",
+        "John 5:40 \"will\""
+      ]
+    },
+    {
+      "strongs_number": "H0426",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 55,
+      "study_word_rows": 35,
+      "verses": 27,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "god",
+          "count": 21
+        },
+        {
+          "word": "the",
+          "count": 11
+        },
+        {
+          "word": "gods",
+          "count": 6
+        },
+        {
+          "word": "of",
+          "count": 4
+        },
+        {
+          "word": "his",
+          "count": 3
+        },
+        {
+          "word": "thy",
+          "count": 2
+        },
+        {
+          "word": "a",
+          "count": 1
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "in",
+          "count": 1
+        },
+        {
+          "word": "my",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:11 \"the\"",
+        "Daniel 2:18 \"the\"",
+        "Daniel 2:18 \"God\"",
+        "Daniel 2:19 \"the\"",
+        "Daniel 2:19 \"God\"",
+        "Daniel 2:20 \"of\"",
+        "Daniel 2:20 \"God\"",
+        "Daniel 2:23 \"thee\"",
+        "Daniel 2:23 \"O\"",
+        "Daniel 2:23 \"thou\"",
+        "Daniel 2:23 \"God\"",
+        "Daniel 2:28 \"a\""
+      ]
+    },
+    {
+      "strongs_number": "G4671",
+      "language": "Greek",
+      "mapping_rows": 53,
+      "study_word_rows": 35,
+      "verses": 32,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "thee",
+          "count": 33
+        },
+        {
+          "word": "unto",
+          "count": 15
+        },
+        {
+          "word": "to",
+          "count": 2
+        },
+        {
+          "word": "for",
+          "count": 1
+        },
+        {
+          "word": "thine",
+          "count": 1
+        },
+        {
+          "word": "up",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:5 \"unto\"",
+        "Revelation 2:5 \"thee\"",
+        "Revelation 2:16 \"unto\"",
+        "Revelation 2:16 \"thee\"",
+        "Revelation 3:18 \"thee\"",
+        "Revelation 11:17 \"thee\"",
+        "Revelation 14:15 \"for\"",
+        "Revelation 14:15 \"thee\"",
+        "Revelation 17:1 \"unto\"",
+        "Revelation 17:1 \"thee\"",
+        "Revelation 17:7 \"thee\"",
+        "Revelation 18:22 \"thee\""
+      ]
+    },
+    {
+      "strongs_number": "G1392",
+      "language": "Greek",
+      "mapping_rows": 50,
+      "study_word_rows": 35,
+      "verses": 20,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "glorified",
+          "count": 11
+        },
+        {
+          "word": "glorify",
+          "count": 10
+        },
+        {
+          "word": "be",
+          "count": 3
+        },
+        {
+          "word": "may",
+          "count": 3
+        },
+        {
+          "word": "shall",
+          "count": 3
+        },
+        {
+          "word": "i",
+          "count": 2
+        },
+        {
+          "word": "is",
+          "count": 2
+        },
+        {
+          "word": "should",
+          "count": 2
+        },
+        {
+          "word": "that",
+          "count": 2
+        },
+        {
+          "word": "am",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 15:4 \"glorify\"",
+        "Revelation 18:7 \"she\"",
+        "Revelation 18:7 \"hath\"",
+        "Revelation 18:7 \"glorified\"",
+        "John 8:54 \"honour\"",
+        "John 8:54 \"that\"",
+        "John 8:54 \"honoureth\"",
+        "John 12:16 \"was\"",
+        "John 12:16 \"glorified\"",
+        "John 12:23 \"should\"",
+        "John 12:23 \"be\"",
+        "John 12:23 \"glorified\""
+      ]
+    },
+    {
+      "strongs_number": "G240",
+      "language": "Greek",
+      "mapping_rows": 38,
+      "study_word_rows": 35,
+      "verses": 21,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "another",
+          "count": 15
+        },
+        {
+          "word": "one",
+          "count": 12
+        },
+        {
+          "word": "themselves",
+          "count": 3
+        },
+        {
+          "word": "toward",
+          "count": 2
+        },
+        {
+          "word": "yourselves",
+          "count": 2
+        },
+        {
+          "word": "mutual",
+          "count": 1
+        },
+        {
+          "word": "on",
+          "count": 1
+        },
+        {
+          "word": "the",
+          "count": 1
+        },
+        {
+          "word": "to",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 11:10 \"one\"",
+        "Revelation 11:10 \"to\"",
+        "Revelation 11:10 \"another\"",
+        "John 4:33 \"one\"",
+        "John 4:33 \"another\"",
+        "John 5:44 \"one\"",
+        "John 5:44 \"another\"",
+        "John 6:43 \"yourselves\"",
+        "John 6:52 \"themselves\"",
+        "John 11:56 \"themselves\"",
+        "John 13:22 \"on\"",
+        "John 13:22 \"another\""
+      ]
+    },
+    {
+      "strongs_number": "H01540",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 44,
+      "study_word_rows": 34,
+      "verses": 9,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "go",
+          "count": 6
+        },
+        {
+          "word": "shall",
+          "count": 5
+        },
+        {
+          "word": "captivity",
+          "count": 4
+        },
+        {
+          "word": "into",
+          "count": 4
+        },
+        {
+          "word": "captive",
+          "count": 3
+        },
+        {
+          "word": "surely",
+          "count": 3
+        },
+        {
+          "word": "revealed",
+          "count": 2
+        },
+        {
+          "word": "therefore",
+          "count": 2
+        },
+        {
+          "word": "away",
+          "count": 1
+        },
+        {
+          "word": "be",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 10:1 \"was\"",
+        "Daniel 10:1 \"revealed\"",
+        "Amos 1:5 \"shall\"",
+        "Amos 1:5 \"go\"",
+        "Amos 1:5 \"into\"",
+        "Amos 1:5 \"captivity\"",
+        "Amos 3:7 \"but\"",
+        "Amos 3:7 \"he\"",
+        "Amos 3:7 \"revealeth\"",
+        "Amos 5:5 \"shall\"",
+        "Amos 5:5 \"surely\"",
+        "Amos 5:5 \"go\""
+      ]
+    },
+    {
+      "strongs_number": "G5083",
+      "language": "Greek",
+      "mapping_rows": 43,
+      "study_word_rows": 34,
+      "verses": 20,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "keep",
+          "count": 11
+        },
+        {
+          "word": "kept",
+          "count": 7
+        },
+        {
+          "word": "keepeth",
+          "count": 4
+        },
+        {
+          "word": "have",
+          "count": 3
+        },
+        {
+          "word": "they",
+          "count": 3
+        },
+        {
+          "word": "will",
+          "count": 3
+        },
+        {
+          "word": "hast",
+          "count": 2
+        },
+        {
+          "word": "he",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        },
+        {
+          "word": "fast",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:26 \"keepeth\"",
+        "Revelation 3:3 \"hold\"",
+        "Revelation 3:3 \"fast\"",
+        "Revelation 3:8 \"hast\"",
+        "Revelation 3:8 \"kept\"",
+        "Revelation 3:10 \"thou\"",
+        "Revelation 3:10 \"hast\"",
+        "Revelation 3:10 \"kept\"",
+        "Revelation 3:10 \"will\"",
+        "Revelation 3:10 \"keep\"",
+        "Revelation 12:17 \"keep\"",
+        "John 8:51 \"keep\""
+      ]
+    },
+    {
+      "strongs_number": "G3777",
+      "language": "Greek",
+      "mapping_rows": 34,
+      "study_word_rows": 34,
+      "verses": 14,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "nor",
+          "count": 20
+        },
+        {
+          "word": "neither",
+          "count": 12
+        },
+        {
+          "word": "nothing",
+          "count": 1
+        },
+        {
+          "word": "yet",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 3:15 \"neither\"",
+        "Revelation 3:15 \"nor\"",
+        "Revelation 3:16 \"neither\"",
+        "Revelation 3:16 \"nor\"",
+        "Revelation 5:4 \"neither\"",
+        "Revelation 9:21 \"nor\"",
+        "Revelation 12:8 \"neither\"",
+        "Revelation 21:4 \"neither\"",
+        "Revelation 21:4 \"nor\"",
+        "John 1:25 \"nor\"",
+        "John 1:25 \"neither\"",
+        "John 4:11 \"nothing\""
+      ]
+    },
+    {
+      "strongs_number": "G3326",
+      "language": "Greek",
+      "mapping_rows": 94,
+      "study_word_rows": 33,
+      "verses": 87,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "with",
+          "count": 60
+        },
+        {
+          "word": "after",
+          "count": 22
+        },
+        {
+          "word": "against",
+          "count": 4
+        },
+        {
+          "word": "among",
+          "count": 3
+        },
+        {
+          "word": "hereafter",
+          "count": 2
+        },
+        {
+          "word": "afterward",
+          "count": 1
+        },
+        {
+          "word": "between",
+          "count": 1
+        },
+        {
+          "word": "unto",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 1:7 \"with\"",
+        "Revelation 1:12 \"with\"",
+        "Revelation 1:19 \"hereafter\"",
+        "Revelation 2:16 \"against\"",
+        "Revelation 2:22 \"with\"",
+        "Revelation 3:4 \"with\"",
+        "Revelation 3:20 \"with\"",
+        "Revelation 3:21 \"with\"",
+        "Revelation 4:1 \"After\"",
+        "Revelation 6:8 \"with\"",
+        "Revelation 7:1 \"after\"",
+        "Revelation 7:9 \"After\""
+      ]
+    },
+    {
+      "strongs_number": "G5154",
+      "language": "Greek",
+      "mapping_rows": 52,
+      "study_word_rows": 33,
+      "verses": 14,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "third",
+          "count": 20
+        },
+        {
+          "word": "the",
+          "count": 19
+        },
+        {
+          "word": "part",
+          "count": 11
+        },
+        {
+          "word": "time",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 6:5 \"the\"",
+        "Revelation 6:5 \"third\"",
+        "Revelation 8:7 \"the\"",
+        "Revelation 8:7 \"third\"",
+        "Revelation 8:7 \"part\"",
+        "Revelation 8:8 \"the\"",
+        "Revelation 8:8 \"third\"",
+        "Revelation 8:8 \"part\"",
+        "Revelation 8:9 \"the\"",
+        "Revelation 8:9 \"third\"",
+        "Revelation 8:9 \"part\"",
+        "Revelation 8:10 \"the\""
+      ]
+    },
+    {
+      "strongs_number": "G1488",
+      "language": "Greek",
+      "mapping_rows": 44,
+      "study_word_rows": 33,
+      "verses": 33,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "art",
+          "count": 33
+        },
+        {
+          "word": "thou",
+          "count": 9
+        },
+        {
+          "word": "be",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 2:9 \"thou\"",
+        "Revelation 2:9 \"art\"",
+        "Revelation 3:1 \"art\"",
+        "Revelation 3:15 \"thou\"",
+        "Revelation 3:15 \"art\"",
+        "Revelation 3:16 \"thou\"",
+        "Revelation 3:16 \"art\"",
+        "Revelation 3:17 \"art\"",
+        "Revelation 4:11 \"Thou\"",
+        "Revelation 4:11 \"art\"",
+        "Revelation 5:9 \"Thou\"",
+        "Revelation 5:9 \"art\""
+      ]
+    },
+    {
+      "strongs_number": "G1849",
+      "language": "Greek",
+      "mapping_rows": 34,
+      "study_word_rows": 33,
+      "verses": 26,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "power",
+          "count": 27
+        },
+        {
+          "word": "powers",
+          "count": 2
+        },
+        {
+          "word": "authority",
+          "count": 1
+        },
+        {
+          "word": "having",
+          "count": 1
+        },
+        {
+          "word": "over",
+          "count": 1
+        },
+        {
+          "word": "strength",
+          "count": 1
+        },
+        {
+          "word": "the",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 2:26 \"power\"",
+        "Revelation 6:8 \"power\"",
+        "Revelation 9:3 \"power\"",
+        "Revelation 9:10 \"power\"",
+        "Revelation 9:19 \"power\"",
+        "Revelation 11:6 \"power\"",
+        "Revelation 12:10 \"power\"",
+        "Revelation 13:4 \"power\"",
+        "Revelation 13:5 \"power\"",
+        "Revelation 13:7 \"power\"",
+        "Revelation 13:12 \"power\"",
+        "Revelation 14:18 \"power\""
+      ]
+    },
+    {
+      "strongs_number": "G1453",
+      "language": "Greek",
+      "mapping_rows": 50,
+      "study_word_rows": 32,
+      "verses": 18,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "raised",
+          "count": 10
+        },
+        {
+          "word": "he",
+          "count": 6
+        },
+        {
+          "word": "up",
+          "count": 6
+        },
+        {
+          "word": "that",
+          "count": 4
+        },
+        {
+          "word": "was",
+          "count": 4
+        },
+        {
+          "word": "him",
+          "count": 2
+        },
+        {
+          "word": "risen",
+          "count": 2
+        },
+        {
+          "word": "after",
+          "count": 1
+        },
+        {
+          "word": "again",
+          "count": 1
+        },
+        {
+          "word": "arise",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "John 2:19 \"I\"",
+        "John 2:19 \"will\"",
+        "John 2:19 \"raise\"",
+        "John 2:19 \"up\"",
+        "John 2:20 \"wilt\"",
+        "John 2:20 \"rear\"",
+        "John 2:22 \"he\"",
+        "John 2:22 \"was\"",
+        "John 2:22 \"risen\"",
+        "John 5:8 \"Rise\"",
+        "John 5:21 \"raiseth\"",
+        "John 5:21 \"up\""
+      ]
+    },
+    {
+      "strongs_number": "G4137",
+      "language": "Greek",
+      "mapping_rows": 47,
+      "study_word_rows": 32,
+      "verses": 20,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "fulfilled",
+          "count": 11
+        },
+        {
+          "word": "be",
+          "count": 8
+        },
+        {
+          "word": "might",
+          "count": 6
+        },
+        {
+          "word": "filled",
+          "count": 4
+        },
+        {
+          "word": "full",
+          "count": 2
+        },
+        {
+          "word": "hath",
+          "count": 2
+        },
+        {
+          "word": "is",
+          "count": 2
+        },
+        {
+          "word": "being",
+          "count": 1
+        },
+        {
+          "word": "come",
+          "count": 1
+        },
+        {
+          "word": "fill",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 3:2 \"perfect\"",
+        "John 3:29 \"is\"",
+        "John 3:29 \"fulfilled\"",
+        "John 7:8 \"is\"",
+        "John 7:8 \"full\"",
+        "John 7:8 \"come\"",
+        "John 12:3 \"was\"",
+        "John 12:3 \"filled\"",
+        "John 12:38 \"might\"",
+        "John 12:38 \"be\"",
+        "John 12:38 \"fulfilled\"",
+        "John 13:18 \"may\""
+      ]
     }
   ],
   "missing_top_500": [
@@ -9458,70 +9342,6 @@
       ]
     },
     {
-      "strongs_number": "G3767",
-      "language": "Greek",
-      "mapping_rows": 246,
-      "study_word_rows": 93,
-      "verses": 233,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "then",
-          "count": 138
-        },
-        {
-          "word": "therefore",
-          "count": 84
-        },
-        {
-          "word": "so",
-          "count": 8
-        },
-        {
-          "word": "when",
-          "count": 5
-        },
-        {
-          "word": "now",
-          "count": 3
-        },
-        {
-          "word": "but",
-          "count": 2
-        },
-        {
-          "word": "and",
-          "count": 1
-        },
-        {
-          "word": "is",
-          "count": 1
-        },
-        {
-          "word": "it",
-          "count": 1
-        },
-        {
-          "word": "people",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:5 \"therefore\"",
-        "Revelation 3:3 \"therefore\"",
-        "Revelation 3:19 \"therefore\"",
-        "John 1:21 \"then\"",
-        "John 1:22 \"Then\"",
-        "John 1:25 \"then\"",
-        "John 2:18 \"Then\"",
-        "John 2:20 \"Then\"",
-        "John 2:22 \"therefore\"",
-        "John 3:25 \"Then\"",
-        "John 3:29 \"therefore\"",
-        "John 4:1 \"therefore\""
-      ]
-    },
-    {
       "strongs_number": "G2453",
       "language": "Greek",
       "mapping_rows": 170,
@@ -9726,134 +9546,6 @@
       ]
     },
     {
-      "strongs_number": "H0935",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 151,
-      "study_word_rows": 85,
-      "verses": 47,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "come",
-          "count": 24
-        },
-        {
-          "word": "shall",
-          "count": 17
-        },
-        {
-          "word": "and",
-          "count": 16
-        },
-        {
-          "word": "he",
-          "count": 13
-        },
-        {
-          "word": "came",
-          "count": 8
-        },
-        {
-          "word": "brought",
-          "count": 6
-        },
-        {
-          "word": "enter",
-          "count": 5
-        },
-        {
-          "word": "to",
-          "count": 5
-        },
-        {
-          "word": "bring",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"came\"",
-        "Daniel 1:2 \"which\"",
-        "Daniel 1:2 \"he\"",
-        "Daniel 1:2 \"carried\"",
-        "Daniel 1:2 \"and\"",
-        "Daniel 1:2 \"brought\"",
-        "Daniel 1:3 \"that\"",
-        "Daniel 1:3 \"he\"",
-        "Daniel 1:3 \"should\"",
-        "Daniel 1:3 \"bring\"",
-        "Daniel 1:18 \"he\"",
-        "Daniel 1:18 \"should\""
-      ]
-    },
-    {
-      "strongs_number": "G3173",
-      "language": "Greek",
-      "mapping_rows": 147,
-      "study_word_rows": 82,
-      "verses": 75,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "great",
-          "count": 55
-        },
-        {
-          "word": "a",
-          "count": 35
-        },
-        {
-          "word": "loud",
-          "count": 14
-        },
-        {
-          "word": "with",
-          "count": 10
-        },
-        {
-          "word": "the",
-          "count": 8
-        },
-        {
-          "word": "of",
-          "count": 7
-        },
-        {
-          "word": "greater",
-          "count": 5
-        },
-        {
-          "word": "that",
-          "count": 4
-        },
-        {
-          "word": "things",
-          "count": 2
-        },
-        {
-          "word": "an",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"great\"",
-        "Revelation 2:22 \"great\"",
-        "Revelation 5:2 \"with\"",
-        "Revelation 5:2 \"a\"",
-        "Revelation 5:2 \"loud\"",
-        "Revelation 5:12 \"with\"",
-        "Revelation 5:12 \"a\"",
-        "Revelation 5:12 \"loud\"",
-        "Revelation 6:10 \"with\"",
-        "Revelation 6:10 \"a\"",
-        "Revelation 6:10 \"loud\"",
-        "Revelation 6:12 \"a\""
-      ]
-    },
-    {
       "strongs_number": "G3450",
       "language": "Greek",
       "mapping_rows": 144,
@@ -10019,198 +9711,6 @@
         "Revelation 7:13 \"which\"",
         "Revelation 13:4 \"Who\"",
         "Revelation 15:4 \"Who\""
-      ]
-    },
-    {
-      "strongs_number": "H0398",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 130,
-      "study_word_rows": 77,
-      "verses": 38,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "eat",
-          "count": 25
-        },
-        {
-          "word": "shall",
-          "count": 18
-        },
-        {
-          "word": "and",
-          "count": 12
-        },
-        {
-          "word": "devour",
-          "count": 8
-        },
-        {
-          "word": "thou",
-          "count": 7
-        },
-        {
-          "word": "ye",
-          "count": 6
-        },
-        {
-          "word": "it",
-          "count": 5
-        },
-        {
-          "word": "which",
-          "count": 5
-        },
-        {
-          "word": "not",
-          "count": 4
-        },
-        {
-          "word": "shalt",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:12 \"to\"",
-        "Daniel 1:12 \"eat\"",
-        "Daniel 1:13 \"that\"",
-        "Daniel 1:13 \"eat\"",
-        "Daniel 1:15 \"which\"",
-        "Daniel 1:15 \"did\"",
-        "Daniel 1:15 \"eat\"",
-        "Daniel 10:3 \"I\"",
-        "Daniel 10:3 \"ate\"",
-        "Daniel 11:26 \"Yea\"",
-        "Daniel 11:26 \"they\"",
-        "Daniel 11:26 \"that\""
-      ]
-    },
-    {
-      "strongs_number": "H03117",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 125,
-      "study_word_rows": 66,
-      "verses": 45,
-      "books": 5,
-      "common_words": [
-        {
-          "word": "day",
-          "count": 36
-        },
-        {
-          "word": "the",
-          "count": 18
-        },
-        {
-          "word": "days",
-          "count": 17
-        },
-        {
-          "word": "in",
-          "count": 13
-        },
-        {
-          "word": "that",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 4
-        },
-        {
-          "word": "for",
-          "count": 3
-        },
-        {
-          "word": "it",
-          "count": 3
-        },
-        {
-          "word": "of",
-          "count": 3
-        },
-        {
-          "word": "as",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"them\"",
-        "Daniel 1:5 \"a\"",
-        "Daniel 1:5 \"daily\"",
-        "Daniel 1:12 \"days\"",
-        "Daniel 1:14 \"days\"",
-        "Daniel 1:15 \"days\"",
-        "Daniel 1:18 \"of\"",
-        "Daniel 1:18 \"the\"",
-        "Daniel 1:18 \"days\"",
-        "Daniel 9:15 \"as\"",
-        "Daniel 9:15 \"at\"",
-        "Daniel 9:15 \"this\""
-      ]
-    },
-    {
-      "strongs_number": "H06213",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 124,
-      "study_word_rows": 77,
-      "verses": 39,
-      "books": 6,
-      "common_words": [
-        {
-          "word": "do",
-          "count": 12
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "he",
-          "count": 9
-        },
-        {
-          "word": "made",
-          "count": 9
-        },
-        {
-          "word": "shall",
-          "count": 8
-        },
-        {
-          "word": "done",
-          "count": 7
-        },
-        {
-          "word": "had",
-          "count": 6
-        },
-        {
-          "word": "did",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 4
-        },
-        {
-          "word": "thus",
-          "count": 4
-        }
-      ],
-      "examples": [
-        "Daniel 1:13 \"deal\"",
-        "Daniel 8:24 \"and\"",
-        "Daniel 8:24 \"practise\"",
-        "Daniel 9:12 \"hath\"",
-        "Daniel 9:12 \"not\"",
-        "Daniel 9:12 \"been\"",
-        "Daniel 9:12 \"done\"",
-        "Daniel 9:12 \"as\"",
-        "Daniel 9:15 \"and\"",
-        "Daniel 9:15 \"hast\"",
-        "Daniel 9:15 \"gotten\"",
-        "Daniel 9:19 \"and\""
       ]
     },
     {
@@ -10403,198 +9903,6 @@
         "Revelation 11:6 \"These\"",
         "Revelation 11:10 \"these\"",
         "Revelation 12:15 \"her\""
-      ]
-    },
-    {
-      "strongs_number": "G1097",
-      "language": "Greek",
-      "mapping_rows": 114,
-      "study_word_rows": 84,
-      "verses": 54,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "know",
-          "count": 21
-        },
-        {
-          "word": "known",
-          "count": 12
-        },
-        {
-          "word": "knew",
-          "count": 11
-        },
-        {
-          "word": "ye",
-          "count": 11
-        },
-        {
-          "word": "have",
-          "count": 8
-        },
-        {
-          "word": "shall",
-          "count": 6
-        },
-        {
-          "word": "they",
-          "count": 6
-        },
-        {
-          "word": "may",
-          "count": 4
-        },
-        {
-          "word": "i",
-          "count": 3
-        },
-        {
-          "word": "knowest",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 2:23 \"shall\"",
-        "Revelation 2:23 \"know\"",
-        "Revelation 2:24 \"have\"",
-        "Revelation 2:24 \"known\"",
-        "John 1:10 \"knew\"",
-        "John 1:48 \"knowest\"",
-        "John 1:48 \"thou\"",
-        "John 2:24 \"knew\"",
-        "John 2:25 \"knew\"",
-        "John 3:10 \"knowest\"",
-        "John 4:1 \"knew\"",
-        "John 4:53 \"knew\""
-      ]
-    },
-    {
-      "strongs_number": "H04428",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 112,
-      "study_word_rows": 54,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "king",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 31
-        },
-        {
-          "word": "and",
-          "count": 10
-        },
-        {
-          "word": "kings",
-          "count": 9
-        },
-        {
-          "word": "of",
-          "count": 6
-        },
-        {
-          "word": "to",
-          "count": 3
-        },
-        {
-          "word": "against",
-          "count": 2
-        },
-        {
-          "word": "for",
-          "count": 2
-        },
-        {
-          "word": "so",
-          "count": 2
-        },
-        {
-          "word": "a",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Daniel 1:1 \"king\"",
-        "Daniel 1:2 \"king\"",
-        "Daniel 1:3 \"And\"",
-        "Daniel 1:3 \"the\"",
-        "Daniel 1:3 \"king\"",
-        "Daniel 1:5 \"And\"",
-        "Daniel 1:5 \"the\"",
-        "Daniel 1:5 \"king\"",
-        "Daniel 1:5 \"of\"",
-        "Daniel 1:5 \"king's\"",
-        "Daniel 1:8 \"of\"",
-        "Daniel 1:8 \"the\""
-      ]
-    },
-    {
-      "strongs_number": "H05975",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 109,
-      "study_word_rows": 75,
-      "verses": 28,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "stand",
-          "count": 20
-        },
-        {
-          "word": "shall",
-          "count": 16
-        },
-        {
-          "word": "up",
-          "count": 10
-        },
-        {
-          "word": "and",
-          "count": 9
-        },
-        {
-          "word": "stood",
-          "count": 6
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "behold",
-          "count": 3
-        },
-        {
-          "word": "not",
-          "count": 3
-        },
-        {
-          "word": "but",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:5 \"thereof\"",
-        "Daniel 1:5 \"they\"",
-        "Daniel 1:5 \"might\"",
-        "Daniel 1:5 \"stand\"",
-        "Daniel 1:19 \"therefore\"",
-        "Daniel 1:19 \"stood\"",
-        "Daniel 2:2 \"and\"",
-        "Daniel 2:2 \"stood\"",
-        "Daniel 8:3 \"and\"",
-        "Daniel 8:3 \"behold\"",
-        "Daniel 8:3 \"there\"",
-        "Daniel 8:3 \"stood\""
       ]
     },
     {
@@ -10830,134 +10138,6 @@
       ]
     },
     {
-      "strongs_number": "H0136",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 50,
-      "verses": 33,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "lord",
-          "count": 35
-        },
-        {
-          "word": "the",
-          "count": 27
-        },
-        {
-          "word": "o",
-          "count": 8
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "hath",
-          "count": 3
-        },
-        {
-          "word": "thus",
-          "count": 3
-        },
-        {
-          "word": "behold",
-          "count": 2
-        },
-        {
-          "word": "me",
-          "count": 2
-        },
-        {
-          "word": "to",
-          "count": 2
-        },
-        {
-          "word": "unto",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 1:2 \"And\"",
-        "Daniel 1:2 \"the\"",
-        "Daniel 1:2 \"Lord\"",
-        "Daniel 9:3 \"unto\"",
-        "Daniel 9:3 \"the\"",
-        "Daniel 9:3 \"Lord\"",
-        "Daniel 9:4 \"Lord\"",
-        "Daniel 9:7 \"O\"",
-        "Daniel 9:7 \"Lord\"",
-        "Daniel 9:8 \"O\"",
-        "Daniel 9:8 \"Lord\"",
-        "Daniel 9:9 \"To\""
-      ]
-    },
-    {
-      "strongs_number": "H07725",
-      "language": "Hebrew/Aramaic",
-      "mapping_rows": 95,
-      "study_word_rows": 56,
-      "verses": 23,
-      "books": 4,
-      "common_words": [
-        {
-          "word": "i",
-          "count": 11
-        },
-        {
-          "word": "turn",
-          "count": 11
-        },
-        {
-          "word": "will",
-          "count": 11
-        },
-        {
-          "word": "not",
-          "count": 10
-        },
-        {
-          "word": "away",
-          "count": 9
-        },
-        {
-          "word": "return",
-          "count": 7
-        },
-        {
-          "word": "and",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "have",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Daniel 9:16 \"be\"",
-        "Daniel 9:16 \"turned\"",
-        "Daniel 9:16 \"away\"",
-        "Daniel 10:20 \"unto\"",
-        "Daniel 10:20 \"thee\"",
-        "Daniel 10:20 \"and\"",
-        "Daniel 10:20 \"now\"",
-        "Daniel 10:20 \"will\"",
-        "Daniel 10:20 \"I\"",
-        "Daniel 10:20 \"return\"",
-        "Daniel 11:13 \"shall\"",
-        "Daniel 11:13 \"return\""
-      ]
-    },
-    {
       "strongs_number": "G3326",
       "language": "Greek",
       "mapping_rows": 94,
@@ -11174,50 +10354,6 @@
       ]
     },
     {
-      "strongs_number": "G611",
-      "language": "Greek",
-      "mapping_rows": 89,
-      "study_word_rows": 78,
-      "verses": 78,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "answered",
-          "count": 77
-        },
-        {
-          "word": "they",
-          "count": 7
-        },
-        {
-          "word": "he",
-          "count": 3
-        },
-        {
-          "word": "answerest",
-          "count": 1
-        },
-        {
-          "word": "thou",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 7:13 \"answered\"",
-        "John 1:21 \"he\"",
-        "John 1:21 \"answered\"",
-        "John 1:26 \"answered\"",
-        "John 1:48 \"answered\"",
-        "John 1:49 \"answered\"",
-        "John 1:50 \"answered\"",
-        "John 2:18 \"answered\"",
-        "John 2:19 \"answered\"",
-        "John 3:3 \"answered\"",
-        "John 3:5 \"answered\"",
-        "John 3:9 \"answered\""
-      ]
-    },
-    {
       "strongs_number": "G3762",
       "language": "Greek",
       "mapping_rows": 89,
@@ -11327,126 +10463,6 @@
         "Revelation 3:8 \"thy\"",
         "Revelation 3:8 \"thee\"",
         "Revelation 3:9 \"thy\""
-      ]
-    },
-    {
-      "strongs_number": "G1831",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 69,
-      "verses": 42,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "went",
-          "count": 18
-        },
-        {
-          "word": "out",
-          "count": 14
-        },
-        {
-          "word": "came",
-          "count": 13
-        },
-        {
-          "word": "forth",
-          "count": 11
-        },
-        {
-          "word": "he",
-          "count": 8
-        },
-        {
-          "word": "there",
-          "count": 4
-        },
-        {
-          "word": "go",
-          "count": 3
-        },
-        {
-          "word": "come",
-          "count": 2
-        },
-        {
-          "word": "shall",
-          "count": 2
-        },
-        {
-          "word": "they",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 3:12 \"he\"",
-        "Revelation 3:12 \"shall\"",
-        "Revelation 3:12 \"go\"",
-        "Revelation 6:2 \"he\"",
-        "Revelation 6:2 \"went\"",
-        "Revelation 6:2 \"forth\"",
-        "Revelation 6:4 \"there\"",
-        "Revelation 6:4 \"went\"",
-        "Revelation 6:4 \"out\"",
-        "Revelation 9:3 \"there\"",
-        "Revelation 9:3 \"came\"",
-        "Revelation 14:15 \"came\""
-      ]
-    },
-    {
-      "strongs_number": "G5456",
-      "language": "Greek",
-      "mapping_rows": 87,
-      "study_word_rows": 64,
-      "verses": 56,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "voice",
-          "count": 53
-        },
-        {
-          "word": "the",
-          "count": 14
-        },
-        {
-          "word": "a",
-          "count": 8
-        },
-        {
-          "word": "voices",
-          "count": 6
-        },
-        {
-          "word": "sound",
-          "count": 3
-        },
-        {
-          "word": "hear",
-          "count": 1
-        },
-        {
-          "word": "noise",
-          "count": 1
-        },
-        {
-          "word": "with",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:10 \"a\"",
-        "Revelation 1:10 \"voice\"",
-        "Revelation 1:12 \"voice\"",
-        "Revelation 1:15 \"voice\"",
-        "Revelation 1:15 \"the\"",
-        "Revelation 1:15 \"sound\"",
-        "Revelation 3:20 \"voice\"",
-        "Revelation 4:5 \"voices\"",
-        "Revelation 5:2 \"voice\"",
-        "Revelation 5:11 \"the\"",
-        "Revelation 5:11 \"voice\"",
-        "Revelation 5:12 \"voice\""
       ]
     },
     {
@@ -11575,50 +10591,6 @@
         "Revelation 22:16 \"am\"",
         "John 1:20 \"am\"",
         "John 1:21 \"I\""
-      ]
-    },
-    {
-      "strongs_number": "G32",
-      "language": "Greek",
-      "mapping_rows": 82,
-      "study_word_rows": 71,
-      "verses": 67,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "angel",
-          "count": 44
-        },
-        {
-          "word": "angels",
-          "count": 26
-        },
-        {
-          "word": "the",
-          "count": 9
-        },
-        {
-          "word": "an",
-          "count": 2
-        },
-        {
-          "word": "another",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 1:20 \"the\"",
-        "Revelation 1:20 \"angels\"",
-        "Revelation 2:1 \"the\"",
-        "Revelation 2:1 \"angel\"",
-        "Revelation 2:8 \"the\"",
-        "Revelation 2:8 \"angel\"",
-        "Revelation 2:12 \"the\"",
-        "Revelation 2:12 \"angel\"",
-        "Revelation 2:18 \"the\"",
-        "Revelation 2:18 \"angel\"",
-        "Revelation 3:1 \"the\"",
-        "Revelation 3:1 \"angel\""
       ]
     },
     {
@@ -11806,70 +10778,6 @@
       ]
     },
     {
-      "strongs_number": "G906",
-      "language": "Greek",
-      "mapping_rows": 80,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 2,
-      "common_words": [
-        {
-          "word": "cast",
-          "count": 30
-        },
-        {
-          "word": "was",
-          "count": 7
-        },
-        {
-          "word": "put",
-          "count": 6
-        },
-        {
-          "word": "out",
-          "count": 5
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "they",
-          "count": 4
-        },
-        {
-          "word": "thrust",
-          "count": 4
-        },
-        {
-          "word": "were",
-          "count": 4
-        },
-        {
-          "word": "did",
-          "count": 2
-        },
-        {
-          "word": "will",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 2:10 \"cast\"",
-        "Revelation 2:14 \"to\"",
-        "Revelation 2:14 \"cast\"",
-        "Revelation 2:22 \"will\"",
-        "Revelation 2:22 \"cast\"",
-        "Revelation 2:24 \"I\"",
-        "Revelation 2:24 \"will\"",
-        "Revelation 2:24 \"put\"",
-        "Revelation 4:10 \"cast\"",
-        "Revelation 6:13 \"casteth\"",
-        "Revelation 8:5 \"cast\"",
-        "Revelation 8:7 \"they\""
-      ]
-    },
-    {
       "strongs_number": "H01004",
       "language": "Hebrew/Aramaic",
       "mapping_rows": 79,
@@ -11995,70 +10903,6 @@
         "Daniel 4:25 \"in\"",
         "Daniel 4:25 \"the\"",
         "Daniel 4:25 \"kingdom\""
-      ]
-    },
-    {
-      "strongs_number": "G599",
-      "language": "Greek",
-      "mapping_rows": 78,
-      "study_word_rows": 57,
-      "verses": 36,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "die",
-          "count": 21
-        },
-        {
-          "word": "dead",
-          "count": 11
-        },
-        {
-          "word": "died",
-          "count": 8
-        },
-        {
-          "word": "he",
-          "count": 5
-        },
-        {
-          "word": "are",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 4
-        },
-        {
-          "word": "shall",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "should",
-          "count": 3
-        },
-        {
-          "word": "to",
-          "count": 3
-        }
-      ],
-      "examples": [
-        "Revelation 3:2 \"die\"",
-        "Revelation 8:9 \"died\"",
-        "Revelation 9:6 \"to\"",
-        "Revelation 9:6 \"die\"",
-        "John 4:49 \"die\"",
-        "John 6:49 \"are\"",
-        "John 6:49 \"dead\"",
-        "John 6:50 \"die\"",
-        "John 6:58 \"are\"",
-        "John 6:58 \"dead\"",
-        "John 8:21 \"shall\"",
-        "John 8:21 \"die\""
       ]
     },
     {
@@ -12486,70 +11330,6 @@
       ]
     },
     {
-      "strongs_number": "G2919",
-      "language": "Greek",
-      "mapping_rows": 73,
-      "study_word_rows": 52,
-      "verses": 30,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "judge",
-          "count": 18
-        },
-        {
-          "word": "judged",
-          "count": 7
-        },
-        {
-          "word": "that",
-          "count": 6
-        },
-        {
-          "word": "judgest",
-          "count": 5
-        },
-        {
-          "word": "shall",
-          "count": 5
-        },
-        {
-          "word": "thou",
-          "count": 4
-        },
-        {
-          "word": "is",
-          "count": 3
-        },
-        {
-          "word": "judgeth",
-          "count": 3
-        },
-        {
-          "word": "be",
-          "count": 2
-        },
-        {
-          "word": "condemned",
-          "count": 2
-        }
-      ],
-      "examples": [
-        "Revelation 6:10 \"dost\"",
-        "Revelation 6:10 \"thou\"",
-        "Revelation 6:10 \"judge\"",
-        "Revelation 11:18 \"that\"",
-        "Revelation 11:18 \"they\"",
-        "Revelation 11:18 \"should\"",
-        "Revelation 11:18 \"be\"",
-        "Revelation 11:18 \"judged\"",
-        "Revelation 16:5 \"thou\"",
-        "Revelation 16:5 \"hast\"",
-        "Revelation 16:5 \"judged\"",
-        "Revelation 20:13 \"they\""
-      ]
-    },
-    {
       "strongs_number": "H01121",
       "language": "Hebrew/Aramaic",
       "mapping_rows": 73,
@@ -12795,70 +11575,6 @@
         "John 5:43 \"if\"",
         "John 6:44 \"except\"",
         "John 6:51 \"if\""
-      ]
-    },
-    {
-      "strongs_number": "G2198",
-      "language": "Greek",
-      "mapping_rows": 72,
-      "study_word_rows": 57,
-      "verses": 34,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "live",
-          "count": 17
-        },
-        {
-          "word": "living",
-          "count": 10
-        },
-        {
-          "word": "shall",
-          "count": 10
-        },
-        {
-          "word": "liveth",
-          "count": 9
-        },
-        {
-          "word": "alive",
-          "count": 4
-        },
-        {
-          "word": "he",
-          "count": 4
-        },
-        {
-          "word": "we",
-          "count": 4
-        },
-        {
-          "word": "that",
-          "count": 2
-        },
-        {
-          "word": "ye",
-          "count": 2
-        },
-        {
-          "word": "him",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:8 \"is\"",
-        "Revelation 2:8 \"alive\"",
-        "Revelation 3:1 \"thou\"",
-        "Revelation 3:1 \"livest\"",
-        "Revelation 4:9 \"liveth\"",
-        "Revelation 4:10 \"that\"",
-        "Revelation 4:10 \"liveth\"",
-        "Revelation 7:2 \"of\"",
-        "Revelation 7:2 \"the\"",
-        "Revelation 7:2 \"living\"",
-        "Revelation 7:17 \"living\"",
-        "Revelation 10:6 \"him\""
       ]
     },
     {
@@ -13335,38 +12051,6 @@
         "Revelation 17:13 \"their\"",
         "Revelation 18:7 \"herself\"",
         "Revelation 19:7 \"herself\""
-      ]
-    },
-    {
-      "strongs_number": "G3772",
-      "language": "Greek",
-      "mapping_rows": 69,
-      "study_word_rows": 68,
-      "verses": 64,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "heaven",
-          "count": 68
-        },
-        {
-          "word": "the",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 4:2 \"heaven\"",
-        "Revelation 5:3 \"heaven\"",
-        "Revelation 5:13 \"heaven\"",
-        "Revelation 6:13 \"heaven\"",
-        "Revelation 6:14 \"the\"",
-        "Revelation 6:14 \"heaven\"",
-        "Revelation 8:1 \"heaven\"",
-        "Revelation 8:10 \"heaven\"",
-        "Revelation 9:1 \"heaven\"",
-        "Revelation 10:1 \"heaven\"",
-        "Revelation 10:4 \"heaven\"",
-        "Revelation 10:5 \"heaven\""
       ]
     },
     {
@@ -14134,62 +12818,6 @@
       ]
     },
     {
-      "strongs_number": "G2041",
-      "language": "Greek",
-      "mapping_rows": 60,
-      "study_word_rows": 54,
-      "verses": 51,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "works",
-          "count": 34
-        },
-        {
-          "word": "deeds",
-          "count": 10
-        },
-        {
-          "word": "work",
-          "count": 8
-        },
-        {
-          "word": "the",
-          "count": 4
-        },
-        {
-          "word": "a",
-          "count": 1
-        },
-        {
-          "word": "deed",
-          "count": 1
-        },
-        {
-          "word": "doing",
-          "count": 1
-        },
-        {
-          "word": "to",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 2:2 \"works\"",
-        "Revelation 2:5 \"the\"",
-        "Revelation 2:5 \"works\"",
-        "Revelation 2:6 \"deeds\"",
-        "Revelation 2:9 \"works\"",
-        "Revelation 2:13 \"works\"",
-        "Revelation 2:19 \"works\"",
-        "Revelation 2:22 \"deeds\"",
-        "Revelation 2:23 \"works\"",
-        "Revelation 2:26 \"works\"",
-        "Revelation 3:1 \"works\"",
-        "Revelation 3:2 \"works\""
-      ]
-    },
-    {
       "strongs_number": "H05922",
       "language": "Hebrew/Aramaic",
       "mapping_rows": 60,
@@ -14299,42 +12927,6 @@
         "Revelation 19:1 \"our\"",
         "Revelation 19:5 \"our\"",
         "Revelation 22:21 \"of\""
-      ]
-    },
-    {
-      "strongs_number": "G281",
-      "language": "Greek",
-      "mapping_rows": 58,
-      "study_word_rows": 57,
-      "verses": 32,
-      "books": 3,
-      "common_words": [
-        {
-          "word": "verily",
-          "count": 50
-        },
-        {
-          "word": "amen",
-          "count": 7
-        },
-        {
-          "word": "the",
-          "count": 1
-        }
-      ],
-      "examples": [
-        "Revelation 3:14 \"the\"",
-        "Revelation 3:14 \"Amen\"",
-        "Revelation 5:14 \"Amen\"",
-        "Revelation 7:12 \"Amen\"",
-        "Revelation 19:4 \"Amen\"",
-        "Revelation 22:20 \"Amen\"",
-        "John 1:51 \"Verily\"",
-        "John 1:51 \"verily\"",
-        "John 3:3 \"Verily\"",
-        "John 3:3 \"verily\"",
-        "John 3:5 \"Verily\"",
-        "John 3:5 \"verily\""
       ]
     },
     {
@@ -36335,6 +34927,1165 @@
         "John 12:37 \"many\"",
         "John 14:9 \"so\"",
         "John 14:9 \"long\""
+      ]
+    },
+    {
+      "strongs_number": "G5443",
+      "language": "Greek",
+      "mapping_rows": 14,
+      "study_word_rows": 10,
+      "verses": 10,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "tribe",
+          "count": 5
+        },
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "kindreds",
+          "count": 3
+        },
+        {
+          "word": "kindred",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Revelation 5:5 \"tribe\"",
+        "Revelation 5:9 \"kindred\"",
+        "Revelation 7:5 \"the\"",
+        "Revelation 7:5 \"tribe\"",
+        "Revelation 7:6 \"the\"",
+        "Revelation 7:6 \"tribe\"",
+        "Revelation 7:7 \"the\"",
+        "Revelation 7:7 \"tribe\"",
+        "Revelation 7:8 \"the\"",
+        "Revelation 7:8 \"tribe\"",
+        "Revelation 7:9 \"kindreds\"",
+        "Revelation 11:9 \"kindreds\""
+      ]
+    },
+    {
+      "strongs_number": "G5552",
+      "language": "Greek",
+      "mapping_rows": 14,
+      "study_word_rows": 8,
+      "verses": 8,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "golden",
+          "count": 8
+        },
+        {
+          "word": "a",
+          "count": 3
+        },
+        {
+          "word": "of",
+          "count": 1
+        },
+        {
+          "word": "the",
+          "count": 1
+        },
+        {
+          "word": "with",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Revelation 1:20 \"golden\"",
+        "Revelation 2:1 \"golden\"",
+        "Revelation 8:3 \"a\"",
+        "Revelation 8:3 \"golden\"",
+        "Revelation 9:13 \"of\"",
+        "Revelation 9:13 \"the\"",
+        "Revelation 9:13 \"golden\"",
+        "Revelation 15:6 \"with\"",
+        "Revelation 15:6 \"golden\"",
+        "Revelation 15:7 \"golden\"",
+        "Revelation 17:4 \"a\"",
+        "Revelation 17:4 \"golden\""
+      ]
+    },
+    {
+      "strongs_number": "H0113",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 5,
+      "verses": 3,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "lord",
+          "count": 4
+        },
+        {
+          "word": "my",
+          "count": 4
+        },
+        {
+          "word": "this",
+          "count": 2
+        },
+        {
+          "word": "i",
+          "count": 1
+        },
+        {
+          "word": "o",
+          "count": 1
+        },
+        {
+          "word": "of",
+          "count": 1
+        },
+        {
+          "word": "with",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 1:10 \"my\"",
+        "Daniel 1:10 \"lord\"",
+        "Daniel 10:17 \"of\"",
+        "Daniel 10:17 \"this\"",
+        "Daniel 10:17 \"my\"",
+        "Daniel 10:17 \"lord\"",
+        "Daniel 10:17 \"with\"",
+        "Daniel 12:8 \"I\"",
+        "Daniel 12:8 \"O\"",
+        "Daniel 12:8 \"my\"",
+        "Daniel 12:8 \"Lord\""
+      ]
+    },
+    {
+      "strongs_number": "H0216",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 6,
+      "verses": 5,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "light",
+          "count": 5
+        },
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "clear",
+          "count": 1
+        },
+        {
+          "word": "in",
+          "count": 1
+        },
+        {
+          "word": "there",
+          "count": 1
+        },
+        {
+          "word": "was",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Amos 8:9 \"in\"",
+        "Amos 8:9 \"the\"",
+        "Amos 8:9 \"clear\"",
+        "Genesis 1:3 \"light\"",
+        "Genesis 1:3 \"and\"",
+        "Genesis 1:3 \"there\"",
+        "Genesis 1:3 \"was\"",
+        "Genesis 1:4 \"the\"",
+        "Genesis 1:4 \"light\"",
+        "Genesis 1:5 \"the\"",
+        "Genesis 1:5 \"light\"",
+        "Genesis 1:18 \"the\""
+      ]
+    },
+    {
+      "strongs_number": "H0410",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 10,
+      "verses": 3,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "god",
+          "count": 5
+        },
+        {
+          "word": "my",
+          "count": 2
+        },
+        {
+          "word": "above",
+          "count": 1
+        },
+        {
+          "word": "against",
+          "count": 1
+        },
+        {
+          "word": "every",
+          "count": 1
+        },
+        {
+          "word": "gods",
+          "count": 1
+        },
+        {
+          "word": "himself",
+          "count": 1
+        },
+        {
+          "word": "of",
+          "count": 1
+        },
+        {
+          "word": "the",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 9:4 \"God\"",
+        "Daniel 11:36 \"himself\"",
+        "Daniel 11:36 \"above\"",
+        "Daniel 11:36 \"every\"",
+        "Daniel 11:36 \"god\"",
+        "Daniel 11:36 \"against\"",
+        "Daniel 11:36 \"the\"",
+        "Daniel 11:36 \"God\"",
+        "Daniel 11:36 \"of\"",
+        "Daniel 11:36 \"gods\"",
+        "Psalms 22:1 \"My\"",
+        "Psalms 22:1 \"God\""
+      ]
+    },
+    {
+      "strongs_number": "H01870",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 8,
+      "verses": 5,
+      "books": 3,
+      "common_words": [
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "way",
+          "count": 3
+        },
+        {
+          "word": "manner",
+          "count": 2
+        },
+        {
+          "word": "after",
+          "count": 1
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "his",
+          "count": 1
+        },
+        {
+          "word": "own",
+          "count": 1
+        },
+        {
+          "word": "to",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Amos 2:7 \"the\"",
+        "Amos 2:7 \"way\"",
+        "Amos 4:10 \"after\"",
+        "Amos 4:10 \"the\"",
+        "Amos 4:10 \"manner\"",
+        "Amos 8:14 \"and\"",
+        "Amos 8:14 \"The\"",
+        "Amos 8:14 \"manner\"",
+        "Genesis 3:24 \"the\"",
+        "Genesis 3:24 \"way\"",
+        "Isaiah 53:6 \"to\"",
+        "Isaiah 53:6 \"his\""
+      ]
+    },
+    {
+      "strongs_number": "H02942",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 8,
+      "verses": 7,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "a",
+          "count": 4
+        },
+        {
+          "word": "decree",
+          "count": 4
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "he",
+          "count": 1
+        },
+        {
+          "word": "regarded",
+          "count": 1
+        },
+        {
+          "word": "tasted",
+          "count": 1
+        },
+        {
+          "word": "whiles",
+          "count": 1
+        },
+        {
+          "word": "wisdom",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:14 \"and\"",
+        "Daniel 2:14 \"wisdom\"",
+        "Daniel 3:10 \"a\"",
+        "Daniel 3:10 \"decree\"",
+        "Daniel 3:12 \"regarded\"",
+        "Daniel 3:29 \"a\"",
+        "Daniel 3:29 \"decree\"",
+        "Daniel 4:6 \"a\"",
+        "Daniel 4:6 \"decree\"",
+        "Daniel 5:2 \"whiles\"",
+        "Daniel 5:2 \"he\"",
+        "Daniel 5:2 \"tasted\""
+      ]
+    },
+    {
+      "strongs_number": "H03063",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 8,
+      "verses": 7,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "judah",
+          "count": 7
+        },
+        {
+          "word": "of",
+          "count": 6
+        },
+        {
+          "word": "upon",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 1:1 \"of\"",
+        "Daniel 1:1 \"Judah\"",
+        "Daniel 1:2 \"of\"",
+        "Daniel 1:2 \"Judah\"",
+        "Daniel 1:6 \"of\"",
+        "Daniel 1:6 \"Judah\"",
+        "Amos 1:1 \"of\"",
+        "Amos 1:1 \"Judah\"",
+        "Amos 2:4 \"of\"",
+        "Amos 2:4 \"Judah\"",
+        "Amos 2:5 \"upon\"",
+        "Amos 2:5 \"Judah\""
+      ]
+    },
+    {
+      "strongs_number": "H03202",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 6,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "that",
+          "count": 3
+        },
+        {
+          "word": "can",
+          "count": 2
+        },
+        {
+          "word": "canst",
+          "count": 2
+        },
+        {
+          "word": "thou",
+          "count": 2
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "cannot",
+          "count": 1
+        },
+        {
+          "word": "could",
+          "count": 1
+        },
+        {
+          "word": "prevailed",
+          "count": 1
+        },
+        {
+          "word": "they",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:10 \"that\"",
+        "Daniel 2:10 \"can\"",
+        "Daniel 2:27 \"cannot\"",
+        "Daniel 3:29 \"that\"",
+        "Daniel 3:29 \"can\"",
+        "Daniel 5:16 \"that\"",
+        "Daniel 5:16 \"thou\"",
+        "Daniel 5:16 \"canst\"",
+        "Daniel 6:4 \"they\"",
+        "Daniel 6:4 \"could\"",
+        "Daniel 7:21 \"and\"",
+        "Daniel 7:21 \"prevailed\""
+      ]
+    },
+    {
+      "strongs_number": "H04150",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 6,
+      "verses": 5,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "for",
+          "count": 3
+        },
+        {
+          "word": "time",
+          "count": 3
+        },
+        {
+          "word": "appointed",
+          "count": 2
+        },
+        {
+          "word": "at",
+          "count": 2
+        },
+        {
+          "word": "the",
+          "count": 2
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "seasons",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 8:19 \"for\"",
+        "Daniel 8:19 \"at\"",
+        "Daniel 8:19 \"the\"",
+        "Daniel 8:19 \"time\"",
+        "Daniel 8:19 \"appointed\"",
+        "Daniel 11:29 \"At\"",
+        "Daniel 11:29 \"the\"",
+        "Daniel 11:29 \"time\"",
+        "Daniel 11:29 \"appointed\"",
+        "Daniel 11:35 \"time\"",
+        "Daniel 12:7 \"for\"",
+        "Genesis 1:14 \"and\""
+      ]
+    },
+    {
+      "strongs_number": "H04910",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 4,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "he",
+          "count": 2
+        },
+        {
+          "word": "rule",
+          "count": 2
+        },
+        {
+          "word": "shall",
+          "count": 2
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "but",
+          "count": 1
+        },
+        {
+          "word": "have",
+          "count": 1
+        },
+        {
+          "word": "power",
+          "count": 1
+        },
+        {
+          "word": "ruled",
+          "count": 1
+        },
+        {
+          "word": "that",
+          "count": 1
+        },
+        {
+          "word": "to",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 11:3 \"that\"",
+        "Daniel 11:3 \"shall\"",
+        "Daniel 11:3 \"rule\"",
+        "Daniel 11:4 \"which\"",
+        "Daniel 11:4 \"he\"",
+        "Daniel 11:4 \"ruled\"",
+        "Daniel 11:43 \"But\"",
+        "Daniel 11:43 \"he\"",
+        "Daniel 11:43 \"shall\"",
+        "Daniel 11:43 \"have\"",
+        "Daniel 11:43 \"power\"",
+        "Genesis 1:18 \"And\""
+      ]
+    },
+    {
+      "strongs_number": "H05030",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 7,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "prophets",
+          "count": 5
+        },
+        {
+          "word": "the",
+          "count": 5
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "for",
+          "count": 1
+        },
+        {
+          "word": "prophecy",
+          "count": 1
+        },
+        {
+          "word": "prophet",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 9:2 \"the\"",
+        "Daniel 9:2 \"prophet\"",
+        "Daniel 9:6 \"the\"",
+        "Daniel 9:6 \"prophets\"",
+        "Daniel 9:10 \"the\"",
+        "Daniel 9:10 \"prophets\"",
+        "Daniel 9:24 \"and\"",
+        "Daniel 9:24 \"prophecy\"",
+        "Amos 2:11 \"for\"",
+        "Amos 2:11 \"prophets\"",
+        "Amos 2:12 \"the\"",
+        "Amos 2:12 \"prophets\""
+      ]
+    },
+    {
+      "strongs_number": "H05174",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 7,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "brass",
+          "count": 7
+        },
+        {
+          "word": "of",
+          "count": 3
+        },
+        {
+          "word": "and",
+          "count": 2
+        },
+        {
+          "word": "the",
+          "count": 2
+        }
+      ],
+      "examples": [
+        "Daniel 2:35 \"the\"",
+        "Daniel 2:35 \"brass\"",
+        "Daniel 2:39 \"of\"",
+        "Daniel 2:39 \"brass\"",
+        "Daniel 2:45 \"the\"",
+        "Daniel 2:45 \"brass\"",
+        "Daniel 4:15 \"and\"",
+        "Daniel 4:15 \"brass\"",
+        "Daniel 4:23 \"and\"",
+        "Daniel 4:23 \"brass\"",
+        "Daniel 5:4 \"of\"",
+        "Daniel 5:4 \"brass\""
+      ]
+    },
+    {
+      "strongs_number": "H06485",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 10,
+      "verses": 2,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "i",
+          "count": 3
+        },
+        {
+          "word": "visit",
+          "count": 2
+        },
+        {
+          "word": "will",
+          "count": 2
+        },
+        {
+          "word": "also",
+          "count": 1
+        },
+        {
+          "word": "him",
+          "count": 1
+        },
+        {
+          "word": "punish",
+          "count": 1
+        },
+        {
+          "word": "shall",
+          "count": 1
+        },
+        {
+          "word": "that",
+          "count": 1
+        },
+        {
+          "word": "therefore",
+          "count": 1
+        },
+        {
+          "word": "upon",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Amos 3:2 \"therefore\"",
+        "Amos 3:2 \"I\"",
+        "Amos 3:2 \"will\"",
+        "Amos 3:2 \"punish\"",
+        "Amos 3:14 \"that\"",
+        "Amos 3:14 \"I\"",
+        "Amos 3:14 \"shall\"",
+        "Amos 3:14 \"visit\"",
+        "Amos 3:14 \"upon\"",
+        "Amos 3:14 \"him\"",
+        "Amos 3:14 \"will\"",
+        "Amos 3:14 \"also\""
+      ]
+    },
+    {
+      "strongs_number": "H06643",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 4,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "glorious",
+          "count": 3
+        },
+        {
+          "word": "in",
+          "count": 2
+        },
+        {
+          "word": "also",
+          "count": 1
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "into",
+          "count": 1
+        },
+        {
+          "word": "pleasant",
+          "count": 1
+        },
+        {
+          "word": "toward",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 8:9 \"and\"",
+        "Daniel 8:9 \"toward\"",
+        "Daniel 8:9 \"the\"",
+        "Daniel 8:9 \"pleasant\"",
+        "Daniel 11:16 \"in\"",
+        "Daniel 11:16 \"the\"",
+        "Daniel 11:16 \"glorious\"",
+        "Daniel 11:41 \"also\"",
+        "Daniel 11:41 \"into\"",
+        "Daniel 11:41 \"the\"",
+        "Daniel 11:41 \"glorious\"",
+        "Daniel 11:45 \"in\""
+      ]
+    },
+    {
+      "strongs_number": "H07117",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 4,
+      "verses": 4,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "at",
+          "count": 3
+        },
+        {
+          "word": "end",
+          "count": 3
+        },
+        {
+          "word": "the",
+          "count": 3
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "now",
+          "count": 1
+        },
+        {
+          "word": "part",
+          "count": 1
+        },
+        {
+          "word": "that",
+          "count": 1
+        },
+        {
+          "word": "with",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 1:2 \"with\"",
+        "Daniel 1:2 \"part\"",
+        "Daniel 1:5 \"that\"",
+        "Daniel 1:5 \"at\"",
+        "Daniel 1:5 \"the\"",
+        "Daniel 1:5 \"end\"",
+        "Daniel 1:15 \"And\"",
+        "Daniel 1:15 \"at\"",
+        "Daniel 1:15 \"the\"",
+        "Daniel 1:15 \"end\"",
+        "Daniel 1:18 \"Now\"",
+        "Daniel 1:18 \"at\""
+      ]
+    },
+    {
+      "strongs_number": "H07127",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 9,
+      "verses": 5,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "came",
+          "count": 5
+        },
+        {
+          "word": "near",
+          "count": 4
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "he",
+          "count": 1
+        },
+        {
+          "word": "i",
+          "count": 1
+        },
+        {
+          "word": "they",
+          "count": 1
+        },
+        {
+          "word": "when",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 3:8 \"came\"",
+        "Daniel 3:8 \"near\"",
+        "Daniel 3:26 \"came\"",
+        "Daniel 3:26 \"near\"",
+        "Daniel 6:12 \"they\"",
+        "Daniel 6:12 \"came\"",
+        "Daniel 6:12 \"near\"",
+        "Daniel 6:20 \"And\"",
+        "Daniel 6:20 \"when\"",
+        "Daniel 6:20 \"he\"",
+        "Daniel 6:20 \"came\"",
+        "Daniel 7:16 \"I\""
+      ]
+    },
+    {
+      "strongs_number": "H07130",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 6,
+      "verses": 4,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "midst",
+          "count": 4
+        },
+        {
+          "word": "the",
+          "count": 4
+        },
+        {
+          "word": "in",
+          "count": 3
+        },
+        {
+          "word": "against",
+          "count": 1
+        },
+        {
+          "word": "from",
+          "count": 1
+        },
+        {
+          "word": "thee",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Amos 2:3 \"from\"",
+        "Amos 2:3 \"the\"",
+        "Amos 2:3 \"midst\"",
+        "Amos 3:9 \"in\"",
+        "Amos 3:9 \"the\"",
+        "Amos 3:9 \"midst\"",
+        "Amos 7:8 \"in\"",
+        "Amos 7:8 \"the\"",
+        "Amos 7:8 \"midst\"",
+        "Amos 7:10 \"against\"",
+        "Amos 7:10 \"thee\"",
+        "Amos 7:10 \"in\""
+      ]
+    },
+    {
+      "strongs_number": "H07244",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 6,
+      "verses": 5,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "fourth",
+          "count": 6
+        },
+        {
+          "word": "the",
+          "count": 5
+        },
+        {
+          "word": "a",
+          "count": 1
+        },
+        {
+          "word": "and",
+          "count": 1
+        },
+        {
+          "word": "of",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:40 \"And\"",
+        "Daniel 2:40 \"the\"",
+        "Daniel 2:40 \"fourth\"",
+        "Daniel 3:25 \"of\"",
+        "Daniel 3:25 \"the\"",
+        "Daniel 3:25 \"fourth\"",
+        "Daniel 7:7 \"a\"",
+        "Daniel 7:7 \"fourth\"",
+        "Daniel 7:19 \"the\"",
+        "Daniel 7:19 \"fourth\"",
+        "Daniel 7:23 \"The\"",
+        "Daniel 7:23 \"fourth\""
+      ]
+    },
+    {
+      "strongs_number": "H07412",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 7,
+      "verses": 5,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "cast",
+          "count": 5
+        },
+        {
+          "word": "and",
+          "count": 2
+        },
+        {
+          "word": "be",
+          "count": 2
+        },
+        {
+          "word": "down",
+          "count": 1
+        },
+        {
+          "word": "he",
+          "count": 1
+        },
+        {
+          "word": "shall",
+          "count": 1
+        },
+        {
+          "word": "they",
+          "count": 1
+        },
+        {
+          "word": "were",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 3:6 \"be\"",
+        "Daniel 3:6 \"cast\"",
+        "Daniel 6:7 \"he\"",
+        "Daniel 6:7 \"shall\"",
+        "Daniel 6:7 \"be\"",
+        "Daniel 6:7 \"cast\"",
+        "Daniel 6:16 \"and\"",
+        "Daniel 6:16 \"cast\"",
+        "Daniel 6:24 \"and\"",
+        "Daniel 6:24 \"they\"",
+        "Daniel 6:24 \"cast\"",
+        "Daniel 7:9 \"were\""
+      ]
+    },
+    {
+      "strongs_number": "H07981",
+      "language": "Hebrew/Aramaic",
+      "mapping_rows": 14,
+      "study_word_rows": 10,
+      "verses": 4,
+      "books": 1,
+      "common_words": [
+        {
+          "word": "and",
+          "count": 2
+        },
+        {
+          "word": "made",
+          "count": 2
+        },
+        {
+          "word": "ruler",
+          "count": 2
+        },
+        {
+          "word": "bear",
+          "count": 1
+        },
+        {
+          "word": "hath",
+          "count": 1
+        },
+        {
+          "word": "him",
+          "count": 1
+        },
+        {
+          "word": "power",
+          "count": 1
+        },
+        {
+          "word": "rule",
+          "count": 1
+        },
+        {
+          "word": "shall",
+          "count": 1
+        },
+        {
+          "word": "thee",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "Daniel 2:38 \"and\"",
+        "Daniel 2:38 \"hath\"",
+        "Daniel 2:38 \"made\"",
+        "Daniel 2:38 \"thee\"",
+        "Daniel 2:38 \"ruler\"",
+        "Daniel 2:39 \"which\"",
+        "Daniel 2:39 \"shall\"",
+        "Daniel 2:39 \"bear\"",
+        "Daniel 2:39 \"rule\"",
+        "Daniel 2:48 \"and\"",
+        "Daniel 2:48 \"made\"",
+        "Daniel 2:48 \"him\""
+      ]
+    },
+    {
+      "strongs_number": "G312",
+      "language": "Greek",
+      "mapping_rows": 13,
+      "study_word_rows": 10,
+      "verses": 6,
+      "books": 2,
+      "common_words": [
+        {
+          "word": "shall",
+          "count": 3
+        },
+        {
+          "word": "shew",
+          "count": 3
+        },
+        {
+          "word": "he",
+          "count": 1
+        },
+        {
+          "word": "i",
+          "count": 1
+        },
+        {
+          "word": "spoken",
+          "count": 1
+        },
+        {
+          "word": "tell",
+          "count": 1
+        },
+        {
+          "word": "told",
+          "count": 1
+        },
+        {
+          "word": "was",
+          "count": 1
+        },
+        {
+          "word": "will",
+          "count": 1
+        }
+      ],
+      "examples": [
+        "John 4:25 \"he\"",
+        "John 4:25 \"will\"",
+        "John 4:25 \"tell\"",
+        "John 5:15 \"told\"",
+        "John 16:14 \"shall\"",
+        "John 16:14 \"shew\"",
+        "John 16:15 \"shall\"",
+        "John 16:15 \"shew\"",
+        "John 16:25 \"I\"",
+        "John 16:25 \"shall\"",
+        "John 16:25 \"shew\"",
+        "Romans 15:21 \"was\""
       ]
     }
   ]
