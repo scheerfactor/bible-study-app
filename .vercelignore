@@ -4,6 +4,7 @@
 data/generated/**
 data/library/verified/**
 data/library/needs-review/**
+!data/library/needs-review/ocr-cleanup-queue.json
 data/library/do-not-import/**
 
 data/strongs/source/**
