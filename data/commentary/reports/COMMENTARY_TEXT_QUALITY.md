@@ -5,9 +5,9 @@ This report flags imported commentary rows that likely contain website navigatio
 ## Summary
 
 - Commentary files scanned: 131
-- Commentary rows scanned: 9760
-- Rows with quality flags: 68
-- Files with quality flags: 3
+- Commentary rows scanned: 9759
+- Rows with quality flags: 67
+- Files with quality flags: 2
 
 ## Files With Flags
 
@@ -15,7 +15,6 @@ This report flags imported commentary rows that likely contain website navigatio
 | --- | ---: | ---: | --- |
 | `data/commentary/staging/jamieson-fausset-brown-complete-commentary-needs-review.json` | 66 | 1189 | table-footer: 65; previous-next-footer: 66; editorial-footer: 66 |
 | `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json` | 1 | 1189 | table-footer: 1; previous-next-footer: 1 |
-| `data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json` | 1 | 50 | table-footer: 1 |
 
 ## Sample Rows
 
