@@ -548,9 +548,10 @@ function cleanCommentaryEntryText(entry: CommentaryEntry) {
   if (!rawText) return rawText;
 
   let text = rawText
-    .replace(/\n+\[ Table of Contents \][\s\S]*$/i, "")
-    .replace(/\n+\[ Previous \][\s\S]*$/i, "")
-    .replace(/\n+Send Addenda, Corrigenda[\s\S]*$/i, "")
+    .replace(/\n+\s*\[ Table of Contents \][\s\S]*$/i, "")
+    .replace(/\n+\s*\[ Previous \][\s\S]*$/i, "")
+    .replace(/\n+\s*\[ Next \][\s\S]*$/i, "")
+    .replace(/\n+\s*Send Addenda, Corrigenda[\s\S]*$/i, "")
     .trim();
 
   const looksLikeNavigationPrefix =

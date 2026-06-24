@@ -6,42 +6,16 @@ This report flags imported commentary rows that likely contain website navigatio
 
 - Commentary files scanned: 131
 - Commentary rows scanned: 9760
-- Rows with quality flags: 134
-- Files with quality flags: 29
+- Rows with quality flags: 68
+- Files with quality flags: 3
 
 ## Files With Flags
 
 | File | Flagged Rows | Total Rows | Issue Types |
 | --- | ---: | ---: | --- |
 | `data/commentary/staging/jamieson-fausset-brown-complete-commentary-needs-review.json` | 66 | 1189 | table-footer: 65; previous-next-footer: 66; editorial-footer: 66 |
-| `data/imports/jfb-reviewed-beta-depth-epistles-batch-2-commentary.json` | 11 | 39 | table-footer: 11; previous-next-footer: 11; editorial-footer: 11 |
-| `data/imports/jfb-reviewed-beta-depth-epistles-batch-1-commentary.json` | 8 | 50 | table-footer: 7; previous-next-footer: 8; editorial-footer: 8 |
-| `data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json` | 8 | 47 | table-footer: 8; previous-next-footer: 8; editorial-footer: 8 |
-| `data/imports/jfb-reviewed-phase-7-minor-prophets-complete-commentary.json` | 5 | 25 | table-footer: 5; previous-next-footer: 5; editorial-footer: 5 |
-| `data/imports/jfb-reviewed-phase-7-chronicles-ezra-nehemiah-commentary.json` | 3 | 38 | table-footer: 3; previous-next-footer: 3; editorial-footer: 3 |
-| `data/imports/jfb-reviewed-phase-7-job-wisdom-isaiah-start-commentary.json` | 3 | 50 | table-footer: 3; previous-next-footer: 3; editorial-footer: 3 |
-| `data/imports/jfb-reviewed-batch-1-commentary.json` | 2 | 31 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-library-expansion-batch-4-commentary.json` | 2 | 47 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-5-acts-corinthians-revelation-commentary.json` | 2 | 50 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-5-genesis-exodus-psalms-commentary.json` | 2 | 27 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-5-gospels-acts-commentary.json` | 2 | 50 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-6-judges-ruth-samuel-commentary.json` | 2 | 49 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-6-samuel-kings-commentary.json` | 2 | 50 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
-| `data/imports/jfb-reviewed-phase-7-jeremiah-lamentations-commentary.json` | 2 | 45 | table-footer: 2; previous-next-footer: 2; editorial-footer: 2 |
 | `data/commentary/staging/matthew-henry-complete-commentary-needs-review.json` | 1 | 1189 | table-footer: 1; previous-next-footer: 1 |
-| `data/imports/jfb-reviewed-phase-5-proverbs-genesis-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-5-revelation-psalms-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-6-deuteronomy-commentary.json` | 1 | 34 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-6-joshua-judges-start-commentary.json` | 1 | 25 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-6-kings-commentary.json` | 1 | 25 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-6-leviticus-commentary.json` | 1 | 27 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-6-numbers-commentary.json` | 1 | 36 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-7-chronicles-start-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-7-esther-job-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-7-ezekiel-commentary.json` | 1 | 48 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-7-isaiah-jeremiah-start-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/jfb-reviewed-phase-8-psalms-completion-commentary.json` | 1 | 46 | table-footer: 1; previous-next-footer: 1; editorial-footer: 1 |
-| `data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json` | 1 | 50 | table-footer: 1; previous-next-footer: 1 |
+| `data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json` | 1 | 50 | table-footer: 1 |
 
 ## Sample Rows
 
