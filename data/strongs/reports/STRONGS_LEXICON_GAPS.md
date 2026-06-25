@@ -1,6 +1,6 @@
 # Strong's Lexicon Gap Report
 
-Generated: 2026-06-24T13:41:41.558Z
+Generated: 2026-06-25T22:32:34.962Z
 
 This report ranks Strong's numbers that appear in reviewed KJV word mappings but do not yet have verified lexicon cards.
 
@@ -10,11 +10,11 @@ This report ranks Strong's numbers that appear in reviewed KJV word mappings but
 | --- | ---: |
 | Mapping files | 8 |
 | Verified mapping rows | 47,010 |
-| Verified lexicon entries | 262 |
-| Missing lexicon numbers | 3,279 |
-| Mapping rows with lexicon cards | 17,038 |
-| Mapping rows missing lexicon cards | 29,972 |
-| Mapping-row definition coverage | 36.2% |
+| Verified lexicon entries | 301 |
+| Missing lexicon numbers | 3,240 |
+| Mapping rows with lexicon cards | 22,123 |
+| Mapping rows missing lexicon cards | 24,887 |
+| Mapping-row definition coverage | 47.1% |
 
 ## Next Review Batch
 
@@ -22,46 +22,46 @@ These are the highest-impact missing cards to verify first.
 
 | Strong's | Language | Rows | Verses | Books | Common KJV words | Examples |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| G1722 | Greek | 433 | 336 | 3 | in (294), with (36), at (17), among (14), by (13), on (10), through (10), which (6), into (5), wherein (5) | Revelation 1:4 "which"; Revelation 1:4 "are"; Revelation 1:4 "in" |
-| G3756 | Greek | 388 | 336 | 3 | not (304), no (55), never (6), none (6), cannot (4), neither (4), and (2), in (2), nothing (2), wise (2) | Revelation 2:2 "not"; Revelation 2:3 "not"; Revelation 2:11 "not" |
-| G1161 | Greek | 321 | 295 | 3 | but (127), and (115), now (36), then (11), when (6), for (4), also (3), howbeit (3), so (3), yea (3) | Revelation 2:9 "but"; Revelation 2:24 "But"; Revelation 10:2 "and" |
-| G1537 | Greek | 316 | 224 | 3 | of (167), from (61), out (49), by (7), with (5), over (3), among (2), as (2), in (2), reason (2) | Revelation 1:16 "out"; Revelation 2:5 "out"; Revelation 2:7 "of" |
-| G3739 | Greek | 308 | 217 | 3 | which (95), whom (53), that (45), what (14), who (12), the (10), things (10), to (8), whose (8), he (6) | Revelation 1:1 "which"; Revelation 1:1 "things"; Revelation 1:2 "Who" |
-| G3754 | Greek | 295 | 268 | 3 | that (162), because (64), for (60), how (4), in (1), intent (1), seeing (1), the (1), to (1) | Revelation 2:2 "how"; Revelation 2:6 "that"; Revelation 2:14 "because" |
-| G2076 | Greek | 271 | 185 | 3 | is (172), it (25), he (17), there (16), are (14), was (10), be (3), have (2), not (2), am (1) | Revelation 2:7 "is"; Revelation 5:2 "is"; Revelation 5:12 "is" |
-| G2453 | Greek | 170 | 71 | 3 | the (67), jews (64), of (19), jew (9), a (4), to (4), unto (2), hath (1) | Revelation 3:9 "Jews"; John 1:19 "the"; John 1:19 "Jews" |
-| G1473 | Greek | 168 | 150 | 3 | i (166), am (1), that (1) | Revelation 1:8 "I"; Revelation 1:9 "I"; Revelation 1:11 "I" |
 | G5213 | Greek | 168 | 87 | 3 | you (101), unto (57), to (6), for (2), with (1), ye (1) | Revelation 2:23 "unto"; Revelation 2:23 "you"; Revelation 2:24 "unto" |
 | G2258 | Greek | 153 | 95 | 3 | was (75), were (23), there (13), it (12), he (9), ye (5), they (3), thou (3), wast (3), been (2) | Revelation 1:8 "which"; Revelation 1:8 "was"; Revelation 4:3 "was" |
 | G3450 | Greek | 144 | 112 | 3 | my (128), me (8), mine (7), own (1) | Revelation 1:10 "me"; Revelation 1:20 "my"; Revelation 2:3 "my" |
-| G1223 | Greek | 143 | 112 | 3 | by (47), for (27), through (19), therefore (16), because (11), of (5), sake (4), cause (3), why (3), reason (2) | Revelation 2:3 "for"; Revelation 2:3 "sake"; Revelation 4:11 "for" |
-| G5101 | Greek | 130 | 111 | 3 | what (63), who (32), why (14), whom (7), which (4), any (1), for (1), how (1), intent (1), thing (1) | Revelation 2:7 "what"; Revelation 2:11 "what"; Revelation 2:17 "what" |
 | G5023 | Greek | 117 | 68 | 3 | these (52), things (43), thus (6), this (4), words (4), that (2), they (2), so (1), such (1), them (1) | Revelation 4:1 "this"; Revelation 7:1 "these"; Revelation 7:1 "things" |
 | G5613 | Greek | 116 | 76 | 3 | as (63), when (12), were (11), it (10), about (4), soon (4), even (3), how (3), like (3), if (1) | Revelation 1:10 "as"; Revelation 1:15 "as"; Revelation 1:15 "if" |
-| G3778 | Greek | 115 | 90 | 3 | this (56), these (21), same (8), the (8), he (7), man (7), they (3), are (1), her (1), of (1) | Revelation 2:24 "this"; Revelation 3:5 "the"; Revelation 3:5 "same" |
 | G5100 | Greek | 104 | 61 | 3 | man (32), any (28), a (14), some (12), certain (5), he (2), of (2), thing (2), one (1), soever (1) | Revelation 3:20 "any"; Revelation 3:20 "man"; Revelation 11:5 "any" |
-| G4314 | Greek | 102 | 94 | 3 | unto (46), to (42), at (5), among (4), with (3), against (1), for (1) | Revelation 1:17 "at"; Revelation 3:20 "to"; Revelation 10:9 "unto" |
-| G575 | Greek | 96 | 79 | 3 | from (47), of (22), on (5), off (4), out (3), by (2), in (2), and (1), for (1), forth (1) | Revelation 1:5 "from"; Revelation 2:17 "of"; Revelation 6:10 "on" |
 | G3427 | Greek | 95 | 65 | 3 | me (66), unto (22), to (2), with (2), i (1), in (1), my (1) | Revelation 1:17 "unto"; Revelation 1:17 "me"; Revelation 5:5 "unto" |
-| G3326 | Greek | 94 | 87 | 3 | with (60), after (22), against (4), among (3), hereafter (2), afterward (1), between (1), unto (1) | Revelation 1:7 "with"; Revelation 1:12 "with"; Revelation 1:19 "hereafter" |
-| G3992 | Greek | 91 | 34 | 3 | sent (27), that (19), him (7), which (6), send (5), hath (4), he (4), of (4), his (2), i (2) | Revelation 1:11 "send"; Revelation 11:10 "shall"; Revelation 11:10 "send" |
 | G3165 | Greek | 90 | 81 | 3 | me (88), i (2) | Revelation 17:3 "me"; Revelation 21:9 "me"; Revelation 21:10 "me" |
-| H03606 | Hebrew/Aramaic | 90 | 44 | 1 | all (31), and (7), that (6), in (5), the (5), whole (5), every (4), as (3), over (3), any (2) | Daniel 2:12 "cause"; Daniel 2:12 "all"; Daniel 2:24 "Therefore" |
-| G3762 | Greek | 89 | 53 | 3 | no (36), man (33), nothing (11), none (5), any (1), never (1), of (1), to (1) | Revelation 3:7 "no"; Revelation 3:7 "man"; Revelation 3:8 "no" |
 | G4675 | Greek | 89 | 69 | 3 | thy (65), thine (10), thee (9), is (1), own (1), sake (1), thou (1), unto (1) | Revelation 2:2 "thy"; Revelation 2:5 "thy"; Revelation 2:9 "thy" |
-| H07200 | Hebrew/Aramaic | 87 | 33 | 6 | saw (15), and (12), i (5), see (5), he (4), shewed (4), looked (3), seest (3), when (3), appeared (2) | Daniel 1:10 "for"; Daniel 1:10 "why"; Daniel 1:10 "should" |
 | G1510 | Greek | 84 | 61 | 3 | am (59), i (16), be (1), been (1), have (1), is (1), it (1), now (1), thou (1), we (1) | Revelation 1:8 "am"; Revelation 1:11 "am"; Revelation 1:17 "am" |
-| G1487 | Greek | 82 | 76 | 3 | if (69), that (4), but (3), or (2), else (1), had (1), save (1), whether (1) | Revelation 2:5 "or"; Revelation 2:5 "else"; Revelation 2:16 "or" |
-| H0560 | Hebrew/Aramaic | 81 | 40 | 1 | and (28), said (23), commanded (10), he (3), tell (2), they (2), told (2), declare (1), is (1), it (1) | Daniel 2:4 "tell"; Daniel 2:5 "and"; Daniel 2:5 "said" |
-| H04481 | Hebrew/Aramaic | 81 | 45 | 1 | from (20), of (20), thee (6), out (5), part (4), and (3), i (3), because (2), before (2), for (2) | Daniel 2:5 "from"; Daniel 2:5 "me"; Daniel 2:6 "of" |
-| H01004 | Hebrew/Aramaic | 79 | 23 | 4 | house (24), the (17), houses (6), in (5), of (5), out (3), unto (3), your (3), and (2), into (2) | Daniel 1:2 "of"; Daniel 1:2 "the"; Daniel 1:2 "house" |
-| H04437 | Hebrew/Aramaic | 79 | 27 | 1 | kingdom (30), the (17), of (6), in (5), and (4), a (3), my (3), thy (3), his (2), reign (2) | Daniel 2:39 "kingdom"; Daniel 2:40 "kingdom"; Daniel 2:41 "the" |
 | G5607 | Greek | 76 | 35 | 3 | is (11), being (9), that (9), which (8), when (6), he (5), were (5), are (3), art (2), be (2) | Revelation 1:8 "which"; Revelation 1:8 "is"; Revelation 11:17 "which" |
-| H01934 | Hebrew/Aramaic | 75 | 32 | 1 | be (11), shall (9), beheld (5), he (4), would (4), saw (3), was (3), whom (3), became (2), it (2) | Daniel 2:20 "be"; Daniel 2:28 "shall"; Daniel 2:28 "be" |
 | G1565 | Greek | 74 | 63 | 3 | he (24), that (15), same (8), the (7), they (6), him (3), those (3), his (2), of (2), she (2) | Revelation 9:6 "those"; Revelation 11:13 "the"; Revelation 11:13 "same" |
-| G2033 | Greek | 74 | 26 | 1 | seven (46), the (22), of (3), to (1), unto (1), with (1) | Revelation 1:4 "seven"; Revelation 1:12 "seven"; Revelation 1:13 "seven" |
 | G4183 | Greek | 74 | 56 | 3 | many (36), much (17), of (9), great (4), a (3), them (2), things (2), long (1) | Revelation 1:15 "many"; Revelation 5:4 "much"; Revelation 5:11 "of" |
-| H03478 | Hebrew/Aramaic | 74 | 34 | 4 | israel (35), of (27), and (2), against (1), all (1), concerning (1), from (1), not (1), o (1), off (1) | Daniel 9:11 "Yea"; Daniel 9:11 "all"; Daniel 9:11 "Israel" |
+| H05971 | Hebrew/Aramaic | 74 | 25 | 5 | people (25), the (9), and (7), thy (7), my (6), of (6), upon (3), but (2), unto (2), a (1) | Daniel 8:24 "people"; Daniel 9:6 "and"; Daniel 9:6 "to" |
+| H01121 | Hebrew/Aramaic | 73 | 22 | 4 | the (14), children (12), and (6), of (5), sons (4), son (3), to (3), o (2), shall (2), thy (2) | Daniel 1:6 "Now"; Daniel 1:6 "among"; Daniel 1:6 "these" |
+| H05414 | Hebrew/Aramaic | 73 | 25 | 5 | and (9), given (5), i (5), set (5), gave (4), give (4), have (3), he (3), shall (3), not (2) | Daniel 1:2 "gave"; Daniel 1:9 "had"; Daniel 1:9 "brought" |
+| G4012 | Greek | 72 | 60 | 3 | of (48), for (14), concerning (5), at (2), having (1), their (1), to (1) | Revelation 15:6 "having"; Revelation 15:6 "their"; John 1:7 "of" |
+| G5124 | Greek | 72 | 55 | 3 | this (43), that (15), cause (2), end (2), in (2), so (2), at (1), had (1), he (1), purpose (1) | Revelation 2:6 "this"; John 2:12 "this"; John 2:22 "this" |
+| G2596 | Greek | 71 | 40 | 3 | according (18), to (18), after (10), against (5), by (4), of (3), in (2), a (1), as (1), at (1) | Revelation 2:14 "against"; Revelation 2:20 "against"; Revelation 2:23 "according" |
+| G5216 | Greek | 70 | 58 | 3 | your (37), you (27), of (4), among (1), unto (1) | Revelation 2:23 "your"; John 5:45 "you"; John 6:49 "Your" |
+| H03809 | Hebrew/Aramaic | 70 | 29 | 1 | not (24), nor (7), no (6), is (3), hast (2), neither (2), shall (2), that (2), they (2), will (2) | Daniel 2:5 "ye"; Daniel 2:5 "will"; Daniel 2:5 "not" |
+| H08085 | Hebrew/Aramaic | 70 | 26 | 4 | hear (10), heard (10), i (7), and (6), have (2), he (2), hearkened (2), neither (2), not (2), they (2) | Daniel 1:14 "So"; Daniel 1:14 "he"; Daniel 1:14 "consented" |
+| G1438 | Greek | 69 | 52 | 3 | himself (19), themselves (8), own (6), their (5), his (4), to (4), herself (3), you (3), yourselves (3), them (2) | Revelation 2:20 "herself"; Revelation 3:9 "they"; Revelation 4:8 "of" |
+| G2147 | Greek | 67 | 29 | 3 | found (17), find (9), was (7), findeth (4), i (4), shall (4), had (3), have (3), when (3), he (2) | Revelation 2:2 "hast"; Revelation 2:2 "found"; Revelation 3:2 "I" |
+| G455 | Greek | 66 | 33 | 2 | opened (22), he (11), open (10), had (6), to (5), openeth (3), was (3), hath (2), were (2), that (1) | Revelation 3:7 "he"; Revelation 3:7 "that"; Revelation 3:7 "openeth" |
+| G4771 | Greek | 66 | 58 | 3 | thou (66) | Revelation 2:15 "thou"; Revelation 3:17 "thou"; Revelation 4:11 "thou" |
+| G2212 | Greek | 64 | 31 | 3 | seek (15), sought (9), ye (9), they (5), seeketh (4), shall (4), that (3), for (2), seekest (2), thou (2) | Revelation 9:6 "shall"; Revelation 9:6 "seek"; John 4:23 "seeketh" |
+| G2476 | Greek | 63 | 36 | 3 | stood (20), stand (7), standing (5), there (3), they (3), i (2), shall (2), standeth (2), to (2), we (2) | Revelation 3:20 "I"; Revelation 3:20 "stand"; Revelation 5:6 "stood" |
+| G1526 | Greek | 62 | 41 | 3 | are (44), they (14), there (3), were (1) | Revelation 1:19 "are"; Revelation 1:20 "are"; Revelation 2:2 "are" |
+| G5209 | Greek | 62 | 50 | 3 | you (53), ye (6), your (2), sakes (1) | Revelation 2:24 "you"; John 3:7 "Ye"; John 4:38 "you" |
+| G2309 | Greek | 61 | 30 | 3 | will (13), would (13), i (8), they (4), that (3), he (2), thou (2), were (2), ye (2), desirous (1) | Revelation 11:5 "will"; Revelation 11:6 "they"; Revelation 11:6 "will" |
+| G5210 | Greek | 61 | 55 | 2 | ye (60), have (1) | John 3:28 "Ye"; John 4:20 "ye"; John 4:22 "Ye" |
+| H05922 | Hebrew/Aramaic | 60 | 41 | 1 | upon (13), unto (9), over (7), against (4), him (4), me (4), in (3), of (3), thee (3), concerning (2) | Daniel 2:10 "upon"; Daniel 2:18 "concerning"; Daniel 2:24 "unto" |
+| G2257 | Greek | 59 | 45 | 3 | our (41), of (7), us (7), we (2), to (1), unto (1) | Revelation 5:10 "unto"; Revelation 5:10 "our"; Revelation 6:10 "our" |
+| G3708 | Greek | 58 | 21 | 2 | seen (18), have (7), hath (6), saw (4), hast (3), they (3), thou (3), i (2), see (2), that (2) | Revelation 18:18 "when"; Revelation 18:18 "they"; Revelation 18:18 "saw" |
+| G3745 | Greek | 58 | 26 | 3 | as (20), many (9), whatsoever (6), that (5), ever (3), things (3), much (2), of (2), all (1), how (1) | Revelation 1:2 "of"; Revelation 1:2 "all"; Revelation 1:2 "things" |
+| G243 | Greek | 56 | 42 | 2 | another (21), other (16), others (5), the (5), some (2), did (1), man (1), men (1), of (1), one (1) | Revelation 2:24 "other"; Revelation 6:4 "another"; Revelation 7:2 "another" |
+| G1410 | Greek | 56 | 35 | 3 | can (17), able (5), cannot (5), could (5), be (2), canst (2), he (2), shall (2), thou (2), was (2) | Revelation 2:2 "thou"; Revelation 2:2 "canst"; Revelation 3:8 "can" |
+| G3306 | Greek | 56 | 28 | 1 | abide (10), he (6), abode (5), ye (4), abideth (3), tarry (3), continue (2), dwelleth (2), it (2), remain (2) | John 1:32 "it"; John 1:32 "abode"; John 1:33 "remaining" |
+| G5217 | Greek | 56 | 30 | 2 | go (21), goeth (5), i (5), away (3), goest (3), thou (3), went (3), he (2), my (2), way (2) | Revelation 10:8 "Go"; Revelation 13:10 "shall"; Revelation 13:10 "go" |
 
 ## Study-Value Batch
 
@@ -71,44 +71,44 @@ This list de-emphasizes common function words and prioritizes entries likely to 
 | --- | --- | ---: | ---: | --- | --- |
 | G4675 | Greek | 86 | 89 | thy (65), thine (10), thee (9), is (1), own (1), sake (1), thou (1), unto (1) | Revelation 2:2 "thy"; Revelation 2:5 "thy"; Revelation 2:9 "thy" |
 | G5100 | Greek | 85 | 104 | man (32), any (28), a (14), some (12), certain (5), he (2), of (2), thing (2), one (1), soever (1) | Revelation 3:20 "any"; Revelation 3:20 "man"; Revelation 11:5 "any" |
-| G5101 | Greek | 84 | 130 | what (63), who (32), why (14), whom (7), which (4), any (1), for (1), how (1), intent (1), thing (1) | Revelation 2:7 "what"; Revelation 2:11 "what"; Revelation 2:17 "what" |
-| G2453 | Greek | 73 | 170 | the (67), jews (64), of (19), jew (9), a (4), to (4), unto (2), hath (1) | Revelation 3:9 "Jews"; John 1:19 "the"; John 1:19 "Jews" |
-| G1487 | Greek | 72 | 82 | if (69), that (4), but (3), or (2), else (1), had (1), save (1), whether (1) | Revelation 2:5 "or"; Revelation 2:5 "else"; Revelation 2:16 "or" |
-| G3754 | Greek | 70 | 295 | that (162), because (64), for (60), how (4), in (1), intent (1), seeing (1), the (1), to (1) | Revelation 2:2 "how"; Revelation 2:6 "that"; Revelation 2:14 "because" |
-| G1437 | Greek | 70 | 72 | if (55), except (9), whether (3), as (1), or (1), though (1), whensoever (1), whomsoever (1) | Revelation 2:5 "except"; Revelation 2:22 "except"; Revelation 3:3 "If" |
-| G1537 | Greek | 65 | 316 | of (167), from (61), out (49), by (7), with (5), over (3), among (2), as (2), in (2), reason (2) | Revelation 1:16 "out"; Revelation 2:5 "out"; Revelation 2:7 "of" |
-| G3739 | Greek | 62 | 308 | which (95), whom (53), that (45), what (14), who (12), the (10), things (10), to (8), whose (8), he (6) | Revelation 1:1 "which"; Revelation 1:1 "things"; Revelation 1:2 "Who" |
 | G4183 | Greek | 62 | 74 | many (36), much (17), of (9), great (4), a (3), them (2), things (2), long (1) | Revelation 1:15 "many"; Revelation 5:4 "much"; Revelation 5:11 "of" |
-| G1223 | Greek | 61 | 143 | by (47), for (27), through (19), therefore (16), because (11), of (5), sake (4), cause (3), why (3), reason (2) | Revelation 2:3 "for"; Revelation 2:3 "sake"; Revelation 4:11 "for" |
-| G1520 | Greek | 58 | 68 | one (51), the (3), a (2), an (2), first (2), of (2), any (1), here (1), in (1), mans (1) | Revelation 5:5 "one"; Revelation 6:1 "one"; Revelation 7:13 "one" |
 | G5023 | Greek | 57 | 117 | these (52), things (43), thus (6), this (4), words (4), that (2), they (2), so (1), such (1), them (1) | Revelation 4:1 "this"; Revelation 7:1 "these"; Revelation 7:1 "things" |
-| H03606 | Hebrew/Aramaic | 57 | 90 | all (31), and (7), that (6), in (5), the (5), whole (5), every (4), as (3), over (3), any (2) | Daniel 2:12 "cause"; Daniel 2:12 "all"; Daniel 2:24 "Therefore" |
 | G1438 | Greek | 57 | 69 | himself (19), themselves (8), own (6), their (5), his (4), to (4), herself (3), you (3), yourselves (3), them (2) | Revelation 2:20 "herself"; Revelation 3:9 "they"; Revelation 4:8 "of" |
-| G2250 | Greek | 56 | 72 | day (39), days (13), the (11), at (3), long (2), a (1), another (1), by (1), one (1) | Revelation 1:10 "the"; Revelation 1:10 "day"; Revelation 6:17 "day" |
-| G3762 | Greek | 51 | 89 | no (36), man (33), nothing (11), none (5), any (1), never (1), of (1), to (1) | Revelation 3:7 "no"; Revelation 3:7 "man"; Revelation 3:8 "no" |
 | G2257 | Greek | 50 | 59 | our (41), of (7), us (7), we (2), to (1), unto (1) | Revelation 5:10 "unto"; Revelation 5:10 "our"; Revelation 6:10 "our" |
-| G3992 | Greek | 49 | 91 | sent (27), that (19), him (7), which (6), send (5), hath (4), he (4), of (4), his (2), i (2) | Revelation 1:11 "send"; Revelation 11:10 "shall"; Revelation 11:10 "send" |
-| H07200 | Hebrew/Aramaic | 49 | 87 | saw (15), and (12), i (5), see (5), he (4), shewed (4), looked (3), seest (3), when (3), appeared (2) | Daniel 1:10 "for"; Daniel 1:10 "why"; Daniel 1:10 "should" |
 | G243 | Greek | 49 | 56 | another (21), other (16), others (5), the (5), some (2), did (1), man (1), men (1), of (1), one (1) | Revelation 2:24 "other"; Revelation 6:4 "another"; Revelation 7:2 "another" |
-| H01841 | Hebrew/Aramaic | 48 | 63 | daniel (43), unto (3), that (2), then (2), against (1), but (1), concerning (1), in (1), let (1), now (1) | Daniel 2:14 "Daniel"; Daniel 2:16 "Then"; Daniel 2:16 "Daniel" |
-| G305 | Greek | 48 | 58 | up (18), went (7), ascended (3), ascend (2), ascendeth (2), ascending (2), go (2), i (2), shall (2), that (2) | Revelation 7:2 "ascending"; Revelation 9:2 "there"; Revelation 9:2 "arose" |
-| G3825 | Greek | 48 | 48 | again (48) | Revelation 10:8 "again"; Revelation 10:11 "again"; John 1:35 "Again" |
-| H06440 | Hebrew/Aramaic | 47 | 67 | before (20), face (13), my (6), his (4), from (3), on (3), the (3), and (2), cause (1), countenance (1) | Daniel 1:5 "before"; Daniel 1:9 "with"; Daniel 1:10 "your" |
-| G1722 | Greek | 46 | 433 | in (294), with (36), at (17), among (14), by (13), on (10), through (10), which (6), into (5), wherein (5) | Revelation 1:4 "which"; Revelation 1:4 "are"; Revelation 1:4 "in" |
-| G2033 | Greek | 46 | 74 | seven (46), the (22), of (3), to (1), unto (1), with (1) | Revelation 1:4 "seven"; Revelation 1:12 "seven"; Revelation 1:13 "seven" |
-| G1484 | Greek | 46 | 63 | nations (21), gentiles (19), the (14), nation (6), of (2), ye (1) | Revelation 2:26 "nations"; Revelation 5:9 "nation"; Revelation 7:9 "nations" |
-| H01004 | Hebrew/Aramaic | 45 | 79 | house (24), the (17), houses (6), in (5), of (5), out (3), unto (3), your (3), and (2), into (2) | Daniel 1:2 "of"; Daniel 1:2 "the"; Daniel 1:2 "house" |
 | G2476 | Greek | 45 | 63 | stood (20), stand (7), standing (5), there (3), they (3), i (2), shall (2), standeth (2), to (2), we (2) | Revelation 3:20 "I"; Revelation 3:20 "stand"; Revelation 5:6 "stood" |
 | G2597 | Greek | 44 | 55 | down (18), came (7), which (5), come (4), descending (4), cometh (2), he (2), i (2), went (2), angel (1) | Revelation 10:1 "come"; Revelation 10:1 "down"; Revelation 13:13 "come" |
-| H0560 | Hebrew/Aramaic | 43 | 81 | and (28), said (23), commanded (10), he (3), tell (2), they (2), told (2), declare (1), is (1), it (1) | Daniel 2:4 "tell"; Daniel 2:5 "and"; Daniel 2:5 "said" |
-| H01934 | Hebrew/Aramaic | 43 | 75 | be (11), shall (9), beheld (5), he (4), would (4), saw (3), was (3), whom (3), became (2), it (2) | Daniel 2:20 "be"; Daniel 2:28 "shall"; Daniel 2:28 "be" |
 | G5217 | Greek | 43 | 56 | go (21), goeth (5), i (5), away (3), goest (3), thou (3), went (3), he (2), my (2), way (2) | Revelation 10:8 "Go"; Revelation 13:10 "shall"; Revelation 13:10 "go" |
 | G565 | Greek | 43 | 54 | went (13), away (6), departed (4), i (4), are (3), go (3), way (3), her (2), is (2), past (2) | Revelation 9:12 "is"; Revelation 9:12 "past"; Revelation 10:9 "I" |
-| G142 | Greek | 43 | 53 | away (9), take (8), up (7), taketh (4), they (4), took (4), have (2), taken (2), thou (2), dost (1) | Revelation 10:5 "lifted"; Revelation 10:5 "up"; Revelation 18:21 "took" |
-| G1391 | Greek | 43 | 50 | glory (35), the (7), honour (4), praise (3), glorious (1) | Revelation 4:9 "glory"; Revelation 4:11 "glory"; Revelation 5:12 "glory" |
-| H03478 | Hebrew/Aramaic | 42 | 74 | israel (35), of (27), and (2), against (1), all (1), concerning (1), from (1), not (1), o (1), off (1) | Daniel 9:11 "Yea"; Daniel 9:11 "all"; Daniel 9:11 "Israel" |
-| G991 | Greek | 42 | 66 | see (17), seeth (6), they (6), he (4), that (4), to (3), look (2), might (2), saw (2), shall (2) | Revelation 1:11 "thou"; Revelation 1:11 "seest"; Revelation 1:12 "to" |
-| H01697 | Hebrew/Aramaic | 41 | 73 | words (12), the (11), word (8), this (6), his (4), thing (4), in (3), a (2), all (2), and (2) | Daniel 1:5 "provision"; Daniel 1:14 "to"; Daniel 1:14 "them" |
+| H08085 | Hebrew/Aramaic | 41 | 70 | hear (10), heard (10), i (7), and (6), have (2), he (2), hearkened (2), neither (2), not (2), they (2) | Daniel 1:14 "So"; Daniel 1:14 "he"; Daniel 1:14 "consented" |
+| G2147 | Greek | 41 | 67 | found (17), find (9), was (7), findeth (4), i (4), shall (4), had (3), have (3), when (3), he (2) | Revelation 2:2 "hast"; Revelation 2:2 "found"; Revelation 3:2 "I" |
+| G3306 | Greek | 41 | 56 | abide (10), he (6), abode (5), ye (4), abideth (3), tarry (3), continue (2), dwelleth (2), it (2), remain (2) | John 1:32 "it"; John 1:32 "abode"; John 1:33 "remaining" |
+| G2212 | Greek | 40 | 64 | seek (15), sought (9), ye (9), they (5), seeketh (4), shall (4), that (3), for (2), seekest (2), thou (2) | Revelation 9:6 "shall"; Revelation 9:6 "seek"; John 4:23 "seeketh" |
+| G1410 | Greek | 40 | 56 | can (17), able (5), cannot (5), could (5), be (2), canst (2), he (2), shall (2), thou (2), was (2) | Revelation 2:2 "thou"; Revelation 2:2 "canst"; Revelation 3:8 "can" |
+| G5087 | Greek | 40 | 54 | lay (8), down (7), laid (7), have (4), i (4), put (3), they (3), set (2), thou (2), to (2) | Revelation 10:2 "he"; Revelation 10:2 "set"; Revelation 11:9 "to" |
+| G1135 | Greek | 40 | 52 | woman (36), the (6), a (4), wife (2), women (2), of (1), unto (1) | Revelation 2:20 "woman"; Revelation 9:8 "of"; Revelation 9:8 "women" |
+| G2046 | Greek | 40 | 51 | say (10), shall (8), we (7), i (4), said (4), thou (3), have (2), wilt (2), called (1), saidst (1) | Revelation 7:14 "I"; Revelation 7:14 "said"; Revelation 17:7 "will" |
+| H05414 | Hebrew/Aramaic | 39 | 73 | and (9), given (5), i (5), set (5), gave (4), give (4), have (3), he (3), shall (3), not (2) | Daniel 1:2 "gave"; Daniel 1:9 "had"; Daniel 1:9 "brought" |
+| H03318 | Hebrew/Aramaic | 39 | 55 | forth (10), out (5), and (3), brought (3), shall (3), went (3), bring (2), came (2), go (2), him (2) | Daniel 8:9 "of"; Daniel 8:9 "them"; Daniel 8:9 "came" |
+| H05971 | Hebrew/Aramaic | 38 | 74 | people (25), the (9), and (7), thy (7), my (6), of (6), upon (3), but (2), unto (2), a (1) | Daniel 8:24 "people"; Daniel 9:6 "and"; Daniel 9:6 "to" |
+| G2596 | Greek | 38 | 71 | according (18), to (18), after (10), against (5), by (4), of (3), in (2), a (1), as (1), at (1) | Revelation 2:14 "against"; Revelation 2:20 "against"; Revelation 2:23 "according" |
+| G5216 | Greek | 38 | 70 | your (37), you (27), of (4), among (1), unto (1) | Revelation 2:23 "your"; John 5:45 "you"; John 6:49 "Your" |
+| G5204 | Greek | 38 | 50 | water (27), waters (11), of (6), the (4), that (1), with (1) | Revelation 1:15 "of"; Revelation 1:15 "waters"; Revelation 7:17 "of" |
+| G2089 | Greek | 38 | 39 | more (17), yet (11), still (4), any (3), longer (2), hereafter (1), now (1) | Revelation 3:12 "more"; Revelation 6:11 "yet"; Revelation 7:16 "more" |
+| H01121 | Hebrew/Aramaic | 37 | 73 | the (14), children (12), and (6), of (5), sons (4), son (3), to (3), o (2), shall (2), thy (2) | Daniel 1:6 "Now"; Daniel 1:6 "among"; Daniel 1:6 "these" |
+| G3708 | Greek | 37 | 58 | seen (18), have (7), hath (6), saw (4), hast (3), they (3), thou (3), i (2), see (2), that (2) | Revelation 18:18 "when"; Revelation 18:18 "they"; Revelation 18:18 "saw" |
+| H03046 | Hebrew/Aramaic | 37 | 53 | known (12), know (7), make (6), and (5), made (3), that (3), thou (3), me (2), hast (1), hath (1) | Daniel 2:5 "make"; Daniel 2:5 "known"; Daniel 2:8 "know" |
+| H05922 | Hebrew/Aramaic | 36 | 60 | upon (13), unto (9), over (7), against (4), him (4), me (4), in (3), of (3), thee (3), concerning (2) | Daniel 2:10 "upon"; Daniel 2:18 "concerning"; Daniel 2:24 "unto" |
+| G455 | Greek | 35 | 66 | opened (22), he (11), open (10), had (6), to (5), openeth (3), was (3), hath (2), were (2), that (1) | Revelation 3:7 "he"; Revelation 3:7 "that"; Revelation 3:7 "openeth" |
+| G2309 | Greek | 35 | 61 | will (13), would (13), i (8), they (4), that (3), he (2), thou (2), were (2), ye (2), desirous (1) | Revelation 11:5 "will"; Revelation 11:6 "they"; Revelation 11:6 "will" |
+| H0426 | Hebrew/Aramaic | 35 | 55 | god (21), the (11), gods (6), of (4), his (3), thy (2), a (1), and (1), in (1), my (1) | Daniel 2:11 "the"; Daniel 2:18 "the"; Daniel 2:18 "God" |
+| G4671 | Greek | 35 | 53 | thee (33), unto (15), to (2), for (1), thine (1), up (1) | Revelation 2:5 "unto"; Revelation 2:5 "thee"; Revelation 2:16 "unto" |
+| G1392 | Greek | 35 | 50 | glorified (11), glorify (10), be (3), may (3), shall (3), i (2), is (2), should (2), that (2), am (1) | Revelation 15:4 "glorify"; Revelation 18:7 "she"; Revelation 18:7 "hath" |
+| G240 | Greek | 35 | 38 | another (15), one (12), themselves (3), toward (2), yourselves (2), mutual (1), on (1), the (1), to (1) | Revelation 11:10 "one"; Revelation 11:10 "to"; Revelation 11:10 "another" |
+| H01540 | Hebrew/Aramaic | 34 | 44 | go (6), shall (5), captivity (4), into (4), captive (3), surely (3), revealed (2), therefore (2), away (1), be (1) | Daniel 10:1 "was"; Daniel 10:1 "revealed"; Amos 1:5 "shall" |
+| G5083 | Greek | 34 | 43 | keep (11), kept (7), keepeth (4), have (3), they (3), will (3), hast (2), he (2), thou (2), fast (1) | Revelation 2:26 "keepeth"; Revelation 3:3 "hold"; Revelation 3:3 "fast" |
+| G3777 | Greek | 34 | 34 | nor (20), neither (12), nothing (1), yet (1) | Revelation 3:15 "neither"; Revelation 3:15 "nor"; Revelation 3:16 "neither" |
+| G5154 | Greek | 33 | 52 | third (20), the (19), part (11), time (2) | Revelation 6:5 "the"; Revelation 6:5 "third"; Revelation 8:7 "the" |
 
 ## Review Rules
 
