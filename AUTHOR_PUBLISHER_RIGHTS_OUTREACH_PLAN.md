@@ -9,13 +9,35 @@ Prepare Father's Business Bible Study to request permission for modern copyright
 The app is close enough to begin conversations with rights holders because it can show:
 
 - a working Bible-centered study platform
-- a curated public-domain library
+- a curated public-domain library with more than 1,300 verified resources
+- public commentary coverage across all 66 Bible books at chapter level
 - admin-only rights tracking
 - public/private resource separation
 - no automatic public publishing of unreviewed imports
 - a clear mission for pastors, Sunday School teachers, missionaries, and serious Bible students
 
 Do not promise paid placement or broad public distribution until written permission terms are documented.
+
+## Recommendation
+
+Start permission conversations now.
+
+Do not wait until the app is fully public. Rights conversations can take weeks or months, and the app now has enough working proof to show publishers, ministries, authors, and heirs what the platform is becoming. The first goal is not to ask for entire catalogs. The first goal is to build trust, learn each rights holder's process, and request narrow permission for specific resources.
+
+Best first request:
+
+- metadata and official store/ministry links
+- a short excerpt or sample chapter
+- private beta inclusion for a small selected title
+- a conversation about full digital, audio, or subscription rights later
+
+Avoid promising:
+
+- guaranteed paid placement
+- revenue share before pricing is tested
+- unrestricted public distribution
+- AI/TTS narration rights unless explicitly granted
+- full publisher catalog import
 
 ## What To Ask For First
 
@@ -29,6 +51,35 @@ Start with narrow, easier permissions:
 6. Permission to include content in a paid subscription later.
 
 Do not ask for everything in the first email unless the rights holder already has a licensing process.
+
+## First Outreach Targets
+
+Start with reachable, ministry-aligned contacts before approaching large publishers.
+
+1. Authors, pastors, and ministries you already know or can reach directly.
+2. Smaller Baptist or Bible-believing publishers with clear contact paths.
+3. Missionary biography and sermon ministries that may want broader distribution.
+4. Public-domain-adjacent works where a modern edition or ministry-controlled scan needs permission.
+5. Larger publishers after the app has beta usage, screenshots, and a clean landing page.
+
+Good early candidates:
+
+- Way of Life Literature / David Cloud: permission-needed only until written approval exists.
+- Thru the Bible / J. Vernon McGee: strong teaching and audio fit, likely formal permissions.
+- Kregel: Bible study and commentary titles, title-specific permission likely.
+- Moody Publishers / Moody Bible Institute: important for legacy and modern titles, permission likely title-specific.
+- Christian Focus: strong biographies and ministry resources, ask for excerpt or beta inclusion first.
+- Local and independent Baptist authors/pastors: likely easier relationship-building.
+
+Keep these as permission-needed until written approval:
+
+- John Phillips
+- J. Vernon McGee
+- David Cloud / Way of Life
+- S. M. Davis
+- Mark Cahill
+- modern sermon audio and teaching videos
+- modern study Bibles and revised editions
 
 ## First Rights Holders To Contact
 
@@ -80,6 +131,49 @@ Stephen Scheer
 Father's Business Bible Study  
 [website URL]  
 [email]  
+
+## Short Author/Ministry Email
+
+Subject: Request to feature your book in a Bible study app
+
+Hello [NAME],
+
+I am building Father's Business Bible Study, a Scripture-first study app for Christians, Sunday School teachers, pastors, missionaries, and serious Bible students.
+
+The app only publishes public-domain or permission-cleared resources. I would like to ask whether [TITLE] could be included in one of these ways:
+
+- list the book with a link to your official page
+- include a short approved excerpt
+- include the full text for a small private beta
+- discuss full digital or audio licensing later
+
+Nothing would be made public without written permission. If you are open to it, I can send screenshots and a short demo video.
+
+Thank you,
+
+Stephen Scheer
+
+## Audio/TTS Permission Email
+
+Subject: Audio and text-to-speech permission question
+
+Hello [NAME],
+
+I am preparing an audio/listening workflow for Father's Business Bible Study. Before any copyrighted work is read aloud, generated as audio, or included in an audiobook workflow, I want to confirm the rights clearly.
+
+Could you tell me whether [TITLE] may be used for any of the following?
+
+- browser/device text-to-speech for the signed-in user
+- generated audio narration
+- human audiobook narration
+- short audio excerpts for teaching or promotion
+- full audiobook access inside a free beta or paid tier
+
+If these rights are handled separately from ebook/text rights, please point me to the right process.
+
+Thank you,
+
+Stephen Scheer
 
 ## Follow-Up Schedule
 

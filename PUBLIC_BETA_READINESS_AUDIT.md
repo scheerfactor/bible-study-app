@@ -4,6 +4,16 @@
 
 The app is ready to keep moving toward a small public beta, but it should launch free first with optional support/donation rather than paid access. Paid plans should wait until account sync, admin separation, licensed-resource tracking, and support workflows are proven with real testers.
 
+## Realistic Launch Status
+
+- Private beta: ready for a small trusted group.
+- Public demo videos: ready.
+- Permission outreach: ready to start now.
+- Free public beta: close, after one more admin-access and new-user QA pass.
+- Paid public launch: not yet.
+
+The app can already show serious value, but broad public launch should be positioned as active beta until Strong's, TSK, user sync, support, and licensing workflows are clearer.
+
 ## Public-Ready Areas
 
 - Bible Reader and Quick Jump
@@ -76,3 +86,12 @@ Rules:
 - add a gentle donation/support page only after tester feedback
 - confirm feedback submissions are captured reliably
 - finish one or two real audio/listening flows before advertising audio heavily
+
+## Best Next Improvements Before Public Beta
+
+1. Add a simple public landing page or website page.
+2. Record a 5-minute Hosea 4-9 Sunday School prep demo.
+3. Add a clear beta tester path from the Today screen or website.
+4. Verify a brand-new non-admin account cannot see admin tools.
+5. Keep the first public launch free with optional donation.
+6. Begin permission outreach for selected modern resources in parallel.

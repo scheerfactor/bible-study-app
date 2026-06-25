@@ -4,6 +4,22 @@
 
 Start public access as a free private beta with an optional donation link. Add accounts before payments. Add paid access only after the app proves daily value, admin-only content is fully hidden, and licensed resource rules are mature.
 
+## Current Readiness Snapshot
+
+As of the latest internal audit:
+
+- Library: more than 1,300 verified resources
+- Bible text: 66 books, 1,189 chapters, 31,102 verses
+- Commentary: chapter-level public coverage across all 66 Bible books
+- Webster 1828: substantial searchable import with normalization checks
+- Strong's: useful starter/reviewed dataset, not complete yet
+- TSK: useful reviewed samples, not complete yet
+- Admin rights/import areas: built, but must remain admin-only
+
+This is strong enough for private beta, public demos, and permission conversations.
+
+It is not yet strong enough for a broad paid launch unless the paid offer is clearly beta/supporter access rather than a finished commercial Bible software product.
+
 ## Why
 
 The app is becoming a serious Bible study platform, but the first public risk is not payment. The first risk is trust:
@@ -92,6 +108,25 @@ Do not launch payments immediately. When ready, test:
 - Pastor/Teacher: $15-20/month for presentation/export tools and larger storage
 - Lifetime public-domain edition: one-time $49-99, only if support burden is manageable
 
+## Recommended Near-Term Money Path
+
+Use this order:
+
+1. Free private beta.
+2. Free public beta with optional donation/support.
+3. Founder supporter option after testers are active.
+4. Paid membership only after users are asking for sync, premium audio, presentations, or licensed resources.
+
+Best first donation wording:
+
+> Father's Business Bible Study is being built to help Christians read, study, pray, journal, and teach Scripture. If this tool helps you, you can support continued development.
+
+Best first paid offer later:
+
+> Supporter / Pro beta access for people who want sync, sermon workspace improvements, presentation tools, and future premium audio.
+
+Do not put basic Bible reading behind a paywall.
+
 ## Admin-Only Content Rule
 
 Anything with these statuses must never appear in normal public Library/search:
@@ -164,3 +199,20 @@ Before inviting broader public users:
 - exports do not break
 - local data persistence is clear
 - release notes and known limitations are current
+
+## Paid Launch Gate
+
+Before charging normal users, confirm:
+
+- sign-in works reliably
+- admin-only areas are hidden from non-admin accounts
+- user data can be exported
+- basic sync is stable or clearly labeled local-only
+- support email/form exists
+- payment provider is selected
+- cancellation and refund wording exists
+- privacy policy and terms are posted
+- public-domain and licensed resources are separated
+- no permission-needed or personal-use-only resources appear publicly
+- premium audio/storage costs are estimated
+- at least 10-25 testers have used the app without needing hand-holding
