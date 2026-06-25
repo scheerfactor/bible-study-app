@@ -77,7 +77,7 @@ type LibraryReadingWidth = "narrow" | "comfortable" | "wide";
 type ResourceImportStatus = "Draft" | "Verified" | "Needs Review" | "Do Not Import" | "Permission Needed" | "Personal Use Only";
 type PermissionTrackerStatus = "Not contacted" | "Contacted" | "Permission granted" | "Denied" | "Needs follow-up";
 type ResourceVisibility = "Public after review" | "Private admin draft" | "Personal use only";
-type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "ocrQueue";
+type AcquisitionAdminTab = "dashboard" | "authors" | "books" | "copyright" | "rights" | "rightsHolders" | "importQueue" | "libraryManager" | "mediaIntake" | "storage" | "audio" | "contentHealth" | "ocrQueue";
 type AdminAcquisitionRecordType = "author" | "book" | "rights_holder" | "licensed_rights" | "media_intake" | "audiobook_pilot";
 type AcquisitionCopyrightStatus = "Public Domain" | "Likely Public Domain" | "Copyrighted" | "Unknown";
 type AcquisitionReviewStatus = "Pending" | "Approved" | "Rejected" | "Needs Review";
@@ -93,6 +93,27 @@ type StoragePlanningRow = {
   monthlyGrowthBytes: number;
   monthlyCost: number;
   note: string;
+};
+type ContentHealthSourceResult = {
+  ok: boolean;
+  status: number;
+  bytes: number;
+  markerFound: boolean;
+  error?: string;
+};
+type ContentHealthCheckResult = {
+  id: string;
+  label: string;
+  path: string;
+  repository: ContentHealthSourceResult;
+  publicContent: ContentHealthSourceResult | null;
+};
+type ContentHealthResponse = {
+  checkedAt: string;
+  commitSha: string;
+  publicBaseConfigured: boolean;
+  commentaryImportsPreferRepository: boolean;
+  results: ContentHealthCheckResult[];
 };
 type PremiumAudioProviderPlan = {
   id: string;
@@ -34130,6 +34151,146 @@ function StoragePlanningDashboard({ resources, commentaryEntries }: { resources:
   );
 }
 
+function ContentHealthDashboard() {
+  const [health, setHealth] = useState<ContentHealthResponse | null>(null);
+  const [message, setMessage] = useState("Checking content sources...");
+  const [checking, setChecking] = useState(false);
+
+  const loadHealth = useCallback(async () => {
+    setChecking(true);
+    setMessage("Checking content sources...");
+    try {
+      const response = await fetch(`/api/content-health?qa=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Content health check returned ${response.status}.`);
+      const nextHealth = (await response.json()) as ContentHealthResponse;
+      setHealth(nextHealth);
+      const publicProblems = nextHealth.results.filter((result) => result.publicContent && !result.publicContent.ok).length;
+      const repositoryProblems = nextHealth.results.filter((result) => !result.repository.ok).length;
+      setMessage(
+        repositoryProblems
+          ? "Repository content needs attention before importing more."
+          : publicProblems
+            ? "Repository content is clean. Public bucket has stale or unavailable copies."
+            : "Repository and public content checks are clean.",
+      );
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not run the content health check.");
+    } finally {
+      setChecking(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      void loadHealth();
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [loadHealth]);
+
+  const repositoryClean = health ? health.results.every((result) => result.repository.ok) : false;
+  const publicChecks = health?.results.filter((result) => result.publicContent) ?? [];
+  const publicClean = publicChecks.length ? publicChecks.every((result) => result.publicContent?.ok) : false;
+
+  function statusLabel(result: ContentHealthSourceResult | null) {
+    if (!result) return "Not configured";
+    if (result.ok) return "Clean";
+    if (result.markerFound) return "Stale content";
+    if (result.status === 0) return "Unavailable";
+    return `HTTP ${result.status}`;
+  }
+
+  function statusClass(result: ContentHealthSourceResult | null) {
+    if (!result) return "bg-[var(--paper)] text-[var(--muted)]";
+    return result.ok ? "bg-emerald-50 text-[var(--green)]" : "bg-amber-100 text-amber-900";
+  }
+
+  return (
+    <div className="mt-5 space-y-4">
+      <section className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[var(--green)]">Content Health</p>
+            <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Confirm live content matches the current app</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              Commentary imports now read from the repository version for the deployed commit. This check catches stale public storage copies before they confuse future imports.
+            </p>
+          </div>
+          <button
+            className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white disabled:opacity-60"
+            disabled={checking}
+            onClick={loadHealth}
+            type="button"
+          >
+            {checking ? "Checking..." : "Recheck"}
+          </button>
+        </div>
+
+        <div className="mt-4 grid gap-3 md:grid-cols-4">
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-lg font-semibold text-[var(--green)]">{health?.commitSha.slice(0, 7) ?? "Checking"}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Deployed commit</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${repositoryClean ? "bg-emerald-50 text-[var(--green)]" : "bg-amber-100 text-amber-900"}`}>
+              {repositoryClean ? "Clean" : "Checking"}
+            </p>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Repository source</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${publicClean ? "bg-emerald-50 text-[var(--green)]" : "bg-[var(--paper)] text-[var(--muted)]"}`}>
+              {health?.publicBaseConfigured ? (publicClean ? "Clean" : "Check needed") : "Not configured"}
+            </p>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Public storage</p>
+          </div>
+          <div className="rounded-2xl bg-white p-4">
+            <p className="text-lg font-semibold text-[var(--green)]">{health?.commentaryImportsPreferRepository ? "Repository first" : "Bucket first"}</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Commentary route</p>
+          </div>
+        </div>
+
+        <p className="mt-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-[var(--muted)]">{message}</p>
+      </section>
+
+      <section className="overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+        <div className="grid gap-0 bg-[var(--paper)] text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)] md:grid-cols-[1.1fr_0.9fr_0.55fr_0.55fr]">
+          <div className="p-3">Check</div>
+          <div className="p-3">File</div>
+          <div className="p-3">Repository</div>
+          <div className="p-3">Public storage</div>
+        </div>
+        {(health?.results ?? []).map((result) => (
+          <article key={`content-health-${result.id}`} className="grid border-t border-[var(--line)] md:grid-cols-[1.1fr_0.9fr_0.55fr_0.55fr]">
+            <div className="p-3">
+              <p className="text-sm font-semibold text-[var(--ink)]">{result.label}</p>
+              <p className="mt-1 text-xs leading-5 text-[var(--muted)]">Checks for old import markers that should no longer appear.</p>
+            </div>
+            <div className="break-all p-3 text-xs leading-5 text-[var(--muted)]">{result.path}</div>
+            <div className="p-3">
+              <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${statusClass(result.repository)}`}>
+                {statusLabel(result.repository)}
+              </span>
+              <p className="mt-1 text-[0.7rem] text-[var(--muted)]">{result.repository.bytes.toLocaleString()} bytes</p>
+            </div>
+            <div className="p-3">
+              <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${statusClass(result.publicContent)}`}>
+                {statusLabel(result.publicContent)}
+              </span>
+              {result.publicContent && (
+                <p className="mt-1 text-[0.7rem] text-[var(--muted)]">{result.publicContent.bytes.toLocaleString()} bytes</p>
+              )}
+            </div>
+          </article>
+        ))}
+        {!health && (
+          <div className="border-t border-[var(--line)] p-4 text-sm font-semibold text-[var(--muted)]">
+            Content health results will appear here after the first check finishes.
+          </div>
+        )}
+      </section>
+    </div>
+  );
+}
+
 function RightsManagementCenter({
   records,
   onAddRecord,
@@ -34536,6 +34697,7 @@ function LibraryAcquisitionCenter({
     { id: "mediaIntake", label: "Media Intake" },
     { id: "storage", label: "Storage Plan" },
     { id: "audio", label: "Audio Plan" },
+    { id: "contentHealth", label: "Content Health" },
     { id: "ocrQueue", label: "OCR Queue" },
   ];
 
@@ -34783,6 +34945,10 @@ function LibraryAcquisitionCenter({
 
       {activeTab === "audio" && (
         <PremiumAudioFeasibilityCenter />
+      )}
+
+      {activeTab === "contentHealth" && (
+        <ContentHealthDashboard />
       )}
 
       {activeTab === "mediaIntake" && (
