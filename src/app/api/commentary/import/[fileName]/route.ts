@@ -14,6 +14,7 @@ export async function GET(_request: Request, context: { params: Promise<{ fileNa
   try {
     const raw = await readTextContent(["data", "imports", decodedFileName], {
       errorLabel: "Commentary import",
+      preferRepository: true,
       revalidateSeconds: 60 * 60 * 24,
     });
 

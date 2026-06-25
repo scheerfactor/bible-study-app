@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 
 type ReadContentOptions = {
   errorLabel?: string;
+  preferRepository?: boolean;
   revalidateSeconds?: number;
 };
 
@@ -49,7 +50,7 @@ export async function readTextContent(relativePathInput: string | string[], opti
     return readFile(resolve(/* turbopackIgnore: true */ process.cwd(), relativePath), "utf8");
   }
 
-  const urls = candidateContentUrls(relativePath);
+  const urls = options.preferRepository ? [githubRawContentUrl(relativePath)] : candidateContentUrls(relativePath);
   let lastStatus = 0;
 
   for (const url of urls) {
