@@ -1,11 +1,11 @@
 # Core Study Data Audit
 
-Generated: 2026-06-25T22:32:36.857Z
+Generated: 2026-06-25T23:02:28.432Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- Library: 1306 verified resources.
+- Library: 1313 verified resources.
 - Public commentary rows: 7381.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.

@@ -1,0 +1,4037 @@
+{
+  "source_csv": "data/library/bulk-import-phase-13.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 999,
+  "total_attempted": 441,
+  "imported": 7,
+  "would_import": 0,
+  "skipped": 434,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 432,
+  "duplicate_sources": 1,
+  "duplicate_checksums": 1,
+  "file_sizes": [
+    {
+      "title": "The most eloquent sermons of the greatest living preachers: Rev. Wm. Morley Punshon, D.D., Rev. Henry Ward Beecher, Rev. C.H. Spurgeon [microform] : containing select pulpit orations delivered on various occasions, from a great variety of texts of scripture, and including Dr. Punshon's famous \"Farewell sermon,\" preached in the Metropolitan Church, Toronto, previous to his departure for England : with portraits and biographical notices of each divine; and an introduction to Dr. Punshon's sermons",
+      "file": "the-most-eloquent-sermons-of-the-greatest-living-preachers-rev-wm-morley-punshon-d-d-rev-henry-ward-beecher-re.txt",
+      "bytes": 1079739,
+      "words": 191864,
+      "reading_time_minutes": 853
+    },
+    {
+      "title": "The Four great preachers [microform] : a collection of choice sermons by Spurgeon, Moody, Talmage, and Beecher, with short biographical sketches of these celebrated divines",
+      "file": "the-four-great-preachers-microform-a-collection-of-choice-sermons-by-spurgeon-moody-talmage-and-beecher-with-s.txt",
+      "bytes": 714978,
+      "words": 133961,
+      "reading_time_minutes": 595
+    },
+    {
+      "title": "Evangelistic songs",
+      "file": "evangelistic-songs-ironside-h-a-henry-allan-1876-1951-compiler-tovey-herbert-g-herbert-george-1888-1972-editor.txt",
+      "bytes": 251459,
+      "words": 40520,
+      "reading_time_minutes": 180
+    },
+    {
+      "title": "The Greatest hymns",
+      "file": "the-greatest-hymns-stebbins-george-c-george-coles-1846-1945-torrey-r-a-reuben-archer-1856-1928.txt",
+      "bytes": 890564,
+      "words": 145866,
+      "reading_time_minutes": 648
+    },
+    {
+      "title": "Peanut patriotism and pure patriotism",
+      "file": "peanut-patriotism-and-pure-patriotism-torrey-r-a-reuben-archer-1856-1928.txt",
+      "bytes": 34232,
+      "words": 5374,
+      "reading_time_minutes": 24
+    },
+    {
+      "title": "What the war teaches;",
+      "file": "what-the-war-teaches-torrey-reuben-archer-1856-from-old-catalog.txt",
+      "bytes": 45228,
+      "words": 6872,
+      "reading_time_minutes": 31
+    },
+    {
+      "title": "D.L. Moody [microform] : oo kukaskwawina (his sermons)",
+      "file": "d-l-moody-microform-oo-kukaskwawina-his-sermons-moody-d-l-dwight-lyman-1837-1899.txt",
+      "bytes": 41815,
+      "words": 5796,
+      "reading_time_minutes": 26
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Sword and the trowel",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "The treasury of David",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "Third series of lectures to my students : the art of illustration : being addresses delivered to the students of the Pastors' College, Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "Autobiography of Charles H. Spurgeon compiled from his diary, letters and records by his wife and his private secretary",
+      "author": "Spurgeon, C. H. (Charles Haddon)",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "Morning by morning : or, Daily readings for the family or the closet",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "The autobiography of Charles H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892; Spurgeon, Susannah Thompson, 1832-1903; Harrald, W J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "The autobiography of Charles H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892; Spurgeon, Susannah Thompson, 1832-1903; Harrald, W J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "Illustrations and meditations; or, Flowers from a Puritan's garden, distilled and dispensed",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "Our Lord's passion and death : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "The treasury of David",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "The most eloquent sermons of the greatest living preachers: Rev. Wm. Morley Punshon, D.D., Rev. Henry Ward Beecher, Rev. C.H. Spurgeon [microform] : containing select pulpit orations delivered on various occasions, from a great variety of texts of scripture, and including Dr. Punshon's famous \"Farewell sermon,\" preached in the Metropolitan Church, Toronto, previous to his departure for England : with portraits and biographical notices of each divine; and an introduction to Dr. Punshon's sermons",
+      "author": "Punshon, W. Morley (William Morley), 1824-1881; Beecher, Henry Ward, 1813-1887; Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-most-eloquent-sermons-of-the-greatest-living-preachers-rev-wm-morley-punshon-d-d-rev-henry-ward-beecher-re.txt"
+    },
+    {
+      "row": 13,
+      "title": "Sermons on our Lord's parables : delivered at the Metropolitan Tabernacle and New Park Street Chapel",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "The treasury of David",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "My sermon notes : a selection from outlines of discourses delivered at the Metropolitan Taberbacle : from Romans to Revelation - CXCVI to CCLXIV",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Till he come : communion meditations and addresses",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "The cheque book of the bank of faith : being precious promises arranged for daily use, with brief experimental comments",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "The autobiography of Charles H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892; Spurgeon, Susannah Thompson, 1832-1903; Harrald, W J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "Life and works of Rev. Charles H. Spurgeon : being a graphic account of the greatest preacher of modern times ...",
+      "author": "Northrop, Henry Davenport, 1836-1909; Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 20,
+      "title": "Commenting and commentaries: two lectures addressed to the students of the Pastors' College, Metropolitan Tabernacle, together with a catalogue of Biblical commentaries and expositions",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 21,
+      "title": "Spurgeon's gold..",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 22,
+      "title": "Hands full of honey : and other sermons preached in 1883",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 23,
+      "title": "Commenting and commentaries",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 24,
+      "title": "The autobiography of Charles H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892; Spurgeon, Susannah Thompson, 1832-1903; Harrald, W J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 25,
+      "title": "Spurgeon's Illustrative anecdotes",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892; Banks, Louis Albert, 1855-1933",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 26,
+      "title": "Spurgeon's gems being brilliant passages from the discourses of the Rev. C. H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 27,
+      "title": "The treasury of David",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 28,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 29,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 30,
+      "title": "Evening by evening : or, Readings at eventide for the family or the closet",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 31,
+      "title": "The art of illustration",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 32,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 33,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 34,
+      "title": "The treasury of David: containing an original exposition of the book of Psalms; a collection of illustrative extracts from the whole range of literature; a series of homiletical hints upon almost every verse; and lists of writers upon each psalm",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 35,
+      "title": "My sermon-notes : a selection from outlines of discourses delivered at the Metropolitan Taberbacle : from Ecclesiastes to Malachi LXV to CXXIX",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 36,
+      "title": "According to promise : or, The Lord's method of dealing with his chosen people",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 37,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 38,
+      "title": "The treasury of David: containing an original exposition of the book of Psalms; a collection of illustrative extracts from the whole range of literature; a series of homiletical hints upon almost every verse; and lists of writers upon each psalm",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 39,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 40,
+      "title": "Sermons of the Rev. C. H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 41,
+      "title": "Illustrations and meditations; or, Flowers from a Puritan's garden",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 42,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 43,
+      "title": "My sermon notes : a selection from outlines of discourses delivered at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 44,
+      "title": "Types and emblems : being a collection of sermons preached on Sunday and Thursday evenings at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 45,
+      "title": "Autobiography of Charles H. Spurgeon compiled from his diary, letters and records by his wife and his private secretary",
+      "author": "Spurgeon, C. H. (Charles Haddon)",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 46,
+      "title": "The saint and his Saviour [microform] : the progress of the soul in the knowledge of Jesus",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 47,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 48,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 49,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 50,
+      "title": "\"The modern Whitfield.\" Sermons of the Rev. C. H. Spurgeon, of London;",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 51,
+      "title": "Sermons of the Rev. C. H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 52,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 53,
+      "title": "Lectures to my students : being addresses delivered to the students of the Pastors' College, Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 54,
+      "title": "The Four great preachers [microform] : a collection of choice sermons by Spurgeon, Moody, Talmage, and Beecher, with short biographical sketches of these celebrated divines",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-four-great-preachers-microform-a-collection-of-choice-sermons-by-spurgeon-moody-talmage-and-beecher-with-s.txt"
+    },
+    {
+      "row": 55,
+      "title": "Life and works of Charles H. Spurgeon being a graphic account of the greatest preacher of modern times ... to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings. By Henry Davenport Northrop",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 56,
+      "title": "Twelve soul-winning sermons, delivered at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 57,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 58,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 59,
+      "title": "My sermon notes : a selection from outlines of discourses delivered at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 60,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 61,
+      "title": "The treasury of David:",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 62,
+      "title": "John Ploughman's pictures; or, More of his plain talk for plain people",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 63,
+      "title": "The treasury of David : containing an original exposition of the book of Psalms ; a collection of illustrative extracts from the whole range of literature ; a series of homiletical hints upon almost every verse, and lists of writers upon each psalm",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 64,
+      "title": "Lectures to my students : being addresses delivered to the students of the Pastors' College, Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 65,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 66,
+      "title": "Sermons preached and revised by the Rev. C. H. Spurgeon, fifth series. New York, Sheldon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 67,
+      "title": "First healing and then service : and other sermons preached in 1885",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 68,
+      "title": "\"The modern Whitfield.\" Sermons of the Rev. C. H. Spurgeon, of London;",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 69,
+      "title": "Sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 70,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 71,
+      "title": "Spurgeon's Sermons - Vol. IX: Metropolitan Tabernacle Pulpit",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 72,
+      "title": "Spurgeon's Sermons - New Park Street Pulpit, Vol. I",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 73,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 74,
+      "title": "Trumpet calls to Christian energy : being a collection of sermons preached on Sunday and Thursday evenings at the Metropolitan Tabernacle / by C.H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 75,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 76,
+      "title": "Morning by morning; or, Daily readings for the family or the closet ..",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 77,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 78,
+      "title": "Autobiography of Charles H. Spurgeon compiled from his diary, letters and records by his wife and his private secretary",
+      "author": "Spurgeon, C. H. (Charles Haddon)",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 79,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 80,
+      "title": "\"The modern Whitfield.\" Sermons of the Rev. C. H. Spurgeon, of London;",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 81,
+      "title": "Sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 82,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 83,
+      "title": "Evening by evening or, Readings at eventide for the family or the closet",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 84,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 85,
+      "title": "The treasury of David : containing an original exposition of the book of Psalms ; a collection of illustrative extracts from the whole range of literature ; a series of homiletical hints upon almost every verse, and lists of writers upon each psalm",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 86,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 87,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 88,
+      "title": "Spurgeon : episodes and anecdotes of his busy life, with personal reminiscences",
+      "author": "Handford, Thomas W; Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 89,
+      "title": "Sermons of the Rev. C. H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 90,
+      "title": "Sermons of the Rev. C. H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 91,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 92,
+      "title": "Lectures to my students: a selection from addresses delivered to the students of the Pastor's college, Metropolitan tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 93,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 94,
+      "title": "The treasury of David:",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 95,
+      "title": "Morning by morning; or, Daily readings for the family or the closet",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 96,
+      "title": "John Ploughman's pictures",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 97,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 98,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 99,
+      "title": "Around the wicket gate; or, A friendly talk with seekers concerning faith in the Lord Jesus Christ",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 100,
+      "title": "Types and emblems : being a collection of sermons preached on Sunday and Thursday evenings at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 101,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 102,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 103,
+      "title": "Second series of lectures to my students : being the addresses delivered to the students of the Pastors' College, Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 104,
+      "title": "My sermon notes : a selection from outlines of discourses delivered at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 105,
+      "title": "The saint and his Saviour; or, The progress of the soul in the knowledge of Jesus",
+      "author": "Spurgeon, Charles Haddon, 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 106,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 107,
+      "title": "Storm signals : being a collection of sermons preached on Sunday and Thursday evenings at the Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 108,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 109,
+      "title": "Daily help [microform]",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 110,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 111,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 112,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 113,
+      "title": "Brilliants, selected from the works of C.H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 114,
+      "title": "Representative modern preachers",
+      "author": "Brastow, Lewis Orsmond, 1834-1912; Schleiermacher, Friedrich, 1768-1834; Robertson, Frederick William, 1816-1853; Beecher, Henry Ward, 1813-1887; Bushnell, Horace, 1802-1876; Brooks, Phillips, 1835-1893; Newman, John Henry, 1801-1890; Mozley, J. B. (James Bowling), 1813-1878; Guthrie, Thomas, 1803-1873; Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 115,
+      "title": "Sermons of Rev. C.H. Spurgeon of London",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 116,
+      "title": "Second series of lectures to my students; being addresses delivered to the students of the Pastors' College, Metropolitan Tabernacle",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 117,
+      "title": "The Metropolitan Tabernacle pulpit : sermons",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 118,
+      "title": "Sermons preached and revised by the Rev. C. H. Spurgeon, fifth series. New York, Sheldon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 119,
+      "title": "Sermons of the Rev. c. H. Spurgeon ... 3d series",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 120,
+      "title": "Evangelistic songs",
+      "author": "Ironside, H. A. (Henry Allan), 1876-1951, compiler; Tovey, Herbert G. (Herbert George), 1888-1972, editor",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/evangelistic-songs-ironside-h-a-henry-allan-1876-1951-compiler-tovey-herbert-g-herbert-george-1888-1972-editor.txt"
+    },
+    {
+      "row": 121,
+      "title": "Lectures on the Epistle to the Colossians",
+      "author": "Ironside, H. A. (Henry Allan), 1876-1951",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 122,
+      "title": "Notes on the book of Nehemiah",
+      "author": "Ironside, H. A. (Henry Allan), 1876-1951",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 123,
+      "title": "DEATH AND AFTERWARDS: For the Christian, For the Christless, Spirit, Soul & Body",
+      "author": "Harry A. Ironside Litt. D.",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 124,
+      "title": "Lectures on the Epistle to the Colossians",
+      "author": "Ironside, H. A. (Henry Allan), 1876-1951",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 125,
+      "title": "Lectures on the Book of Revelation",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 126,
+      "title": "Notes on the Epistle of Paul, the apostle, to the Romans : with a new translation",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 127,
+      "title": "Lectures on the Epistle of Paul the Apostle to the Philippians : with a new translation..",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 128,
+      "title": "Lectures on the Epistle of Paul, the Apostle, to the Galatians : with a new translation..",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 129,
+      "title": "Preaching to the spirits in prison, I Peter, 3:18-20",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 130,
+      "title": "Lectures on the Epistle of Paul the apostle to the Ephesians [microform]",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 131,
+      "title": "Lectures on the book of Isaiah",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 132,
+      "title": "Lectures introductory to the study of the Pentateuch",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 133,
+      "title": "Preaching to the spirits in prison, I Peter, 3:18-20 [microform]",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 134,
+      "title": "Lectures introductory to the study of the Epistles of Paul the apostle",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 135,
+      "title": "Lectures introductory to the study of the Epistles of Paul the apostle",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 136,
+      "title": "Lectures introductory to the study of the Gospels",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 137,
+      "title": "Notes on the book of Job : with a new version",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 138,
+      "title": "Notes on the book of Job : with a new version",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 139,
+      "title": "Six lectures on fundamental truths connected with the church of God",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 140,
+      "title": "Lectures introductory to the study of the Gospels",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 141,
+      "title": "Lectures introductory to the study of the Gospels",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 142,
+      "title": "Lectures introductory to the study of the Gospels",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 143,
+      "title": "Preaching to the spirits in prison, I Peter, 3:18-20",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 144,
+      "title": "Lectures on the New Testament doctrine of the Holy Spirit",
+      "author": "Kelly, William, 1821-1906",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 145,
+      "title": "Synopsis of the books of the Bible",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 146,
+      "title": "Synopsis of the books of the Bible",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 147,
+      "title": "Synopsis of the books of the Bible",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 148,
+      "title": "The claims of the church of England considered : being the close of a correspondence between the Rev. James Kelly, of Stillogen, Ireland, and J.N. Darby",
+      "author": "Kelly, James; Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 149,
+      "title": "Synopsis of the books of the Bible",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 150,
+      "title": "Practical reflections on the Psalms",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 151,
+      "title": "Dialogues on the essays and reviews",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 152,
+      "title": "Dr. Colenso and the Pentateuch [microform]",
+      "author": "Darby, John Nelson, 1800-1882; Colenso, John William, 1814-1883. The Pentateuch and book of Joshua critically examined",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 153,
+      "title": "The claims of the church of England considered : being the close of a correspondence between the Rev. James Kelly, of Stillogen, Ireland, and J.N. Darby",
+      "author": "Kelly, James; Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 154,
+      "title": "Ministry on the epistle to the Ephesians",
+      "author": "Darby, J. N. (John Nelson), 1800-1882",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 155,
+      "title": "Ought we to be watching? [microform] : a reply to Mr. Laing's tract on the \"Second coming of the Lord\"",
+      "author": "Grant, F. W. (Frederick William), 1834-1902; Laing, John, 1828-1902. Second coming of the Lord",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 156,
+      "title": "A letter relating to the division at Montreal [microform]",
+      "author": "Grant, F. W. (Frederick William), 1834-1902",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 157,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 158,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 159,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 160,
+      "title": "Things new and old; Old and New Testament studies",
+      "author": "Scofield, C. I. (Cyrus Ingerson), 1843-1921; Gaebelein, Arno Clemens, 1861-1945, ed",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 161,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 162,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 163,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 164,
+      "title": "The Prophet Daniel, a key to the visions and prophecies of the Book of Daniel",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 165,
+      "title": "The Jewish question",
+      "author": "Gaebelein, Arno Clemens, 1861-1945; Scofield, C. I. (Cyrus Ingerson), 1843-1921",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 166,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 167,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 168,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 169,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 170,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 171,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 172,
+      "title": "The Jewish question",
+      "author": "Gaebelein, Arno Clemens, 1861-1945; Scofield, C. I. (Cyrus Ingerson), 1843-1921",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 173,
+      "title": "The annotated Bible; the Holy Scriptures analysed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 174,
+      "title": "Current events in the light of the Bible",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 175,
+      "title": "Studies in prophecy",
+      "author": "Gaebelein, Arno Clemens, 1861-",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 176,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 177,
+      "title": "His riches--our riches : a gospel message",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 178,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 179,
+      "title": "The seven parables, Matthew XIII : an exposition ..",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 180,
+      "title": "The Gospel of John",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 181,
+      "title": "The Gospel of Matthew : An exposition",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 182,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 183,
+      "title": "The Gospel of Matthew, an exposition",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 184,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 185,
+      "title": "The prophet Joel; an exposition",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 186,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 187,
+      "title": "\"Hath God cast away His people?\" [microform]",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 188,
+      "title": "The Acts of the apostles;",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 189,
+      "title": "The prophet Daniel; a key to the visions and prophecies of the Book of Daniel",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 190,
+      "title": "The annotated Bible; the Holy Scriptures analyzed and annotated",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 191,
+      "title": "God’s Masterpiece",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 192,
+      "title": "The Revelation : an analysis and exposition of the last book of the Bible",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 193,
+      "title": "The prophet Joel [microform] : an exposition",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 194,
+      "title": "The annotated Bible : the Holy Scriptures analyzed and annotated.",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 195,
+      "title": "The prophet Daniel : a key to the visions and prophecies of the book of Daniel",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 196,
+      "title": "Studies in Zechariah",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 197,
+      "title": "The healing question; an examination of the claims of faith-healing and divine healing systems in the lights of the Scriptures and history",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 198,
+      "title": "The return of the Lord : what the New Testament teaches about the second coming of Christ. An examination of the leading passages in the New Testament dealing with His return",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 199,
+      "title": "Christianity or religion? A study of the origin and growth of religion and the supernaturalism of Christianity",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 200,
+      "title": "The Christ we know : meditations on the person and glory of our Lord Jesus Christ",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 201,
+      "title": "the annotated bible : the holy scriptures analyzed and annotated",
+      "author": "arno c. gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 202,
+      "title": "The Revelation: An Analysis and Exposition of the Last Book of the Bible",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 203,
+      "title": "The Gospel of John",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 204,
+      "title": "The Revelation",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 205,
+      "title": "The Holy Spirit in the New Testament : an exegetical examination of every New Testament reference to the Spirit of God ; a text book for seminaries, Bible institutes and all Christian workers and Bible students",
+      "author": "Gaebelein, Arno Clemens, 1861-1945",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 206,
+      "title": "Studies in Prophecy",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 207,
+      "title": "THE ACTS OF THE APOSTLES An Exposition",
+      "author": "ARNO C. GAEBELEIN",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 208,
+      "title": "Studies in Prophecy",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 209,
+      "title": "the prophet ezekiel: an analytical exposition",
+      "author": "arno c. gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 210,
+      "title": "The revelation an analysis and exposition of the last book of the bible",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 211,
+      "title": "Expository thoughts on the Gospels",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 212,
+      "title": "Practical religion : being plain papers on the daily duties, experience, dangers, and privileges of professing Christians",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 213,
+      "title": "Light from old times : or Protestant facts and men",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 214,
+      "title": "The Christian leaders of England in the eighteenth century",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 215,
+      "title": "Old paths : being plain statements on some of the weightier matters of Christianity from the standpoint of an evangelical churchman",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 216,
+      "title": "Principles for churchmen : a manual of positive statements on some subjects of controversy ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 217,
+      "title": "Expository thoughts on the Gospels : for family and private use, with the text complete ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 218,
+      "title": "Practical religion. Being plain papers on the daily duties, experience, dangers and privileges of professing Christians",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 219,
+      "title": "Expository thoughts on the Gospels : for family and private use, with the text complete ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 220,
+      "title": "Expository thoughts on the gospels : St. Mark : for family and private use",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 221,
+      "title": "The Christian race and other sermons",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 222,
+      "title": "The Christian leaders of the last century; or, England a hundred years ago",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 223,
+      "title": "Startling questions",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 224,
+      "title": "Expository thoughts on the Gospels",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 225,
+      "title": "Bible inspiration: its reality and nature",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 226,
+      "title": "The Christian leaders of the last century ; or, England a hundred years ago",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 227,
+      "title": "Expository thoughts on the Gospels : for family and private use, with the text complete ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 228,
+      "title": "Living or dead? A series of home truths",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 229,
+      "title": "A call to prayer [microform]",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 230,
+      "title": "Expository thoughts on the Gospels ... With the text complete",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 231,
+      "title": "Expository thoughts on the Gospels : for family and private use, with the text complete ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 232,
+      "title": "The two bears, and other sermons for children",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 233,
+      "title": "The priest, the Puritan, and the preacher",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 234,
+      "title": "Simplicity in preaching, a few short hints",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 235,
+      "title": "Expository Thoughts on the Gospels: For Family and Private Use. With the Text Complete",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 236,
+      "title": "You must pray",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 237,
+      "title": "The Christian leaders of the last century",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 238,
+      "title": "The Christian leaders of the last century;",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 239,
+      "title": "Living or dead? : a series of home truths",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 240,
+      "title": "What good will it do? : a question about the disestablishment of the Church of England, examined and answered",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 241,
+      "title": "Facts and men, pages from English Church history, between 1553 and 1683",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 242,
+      "title": "Only one way [microform] : a tract for the times : being thoughts on Acts IV.12",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 243,
+      "title": "No more crying : an address to children",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 244,
+      "title": "Have you the Spirit? : a question for 1854",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 245,
+      "title": "Expository Thoughts on the Gospels: For Family and Private Use. With the Text Complete",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 246,
+      "title": "What is your hope? : a question for 1857",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 247,
+      "title": "Expository thoughts on the Gospels ... With the text complete",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 248,
+      "title": "Hymns for the Church on earth, selected and arranged by J.C. Ryle: Being Three Hundred Hymns and ...",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 249,
+      "title": "Expository Thoughts on the Gospels: For Family and Private Use. With the Text Complete",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 250,
+      "title": "What time is it? : being thoughts on Rom. xiii. 12.",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 251,
+      "title": "Expository Thoughts on the Gospels: For Family and Private Use. With the Text Complete",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 252,
+      "title": "Expository thoughts on the Gospels, with the text complete",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 253,
+      "title": "Rich and poor : a tract for the times : being thoughts of Luke xvi. 19-23",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 254,
+      "title": "Living or dead?",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 255,
+      "title": "\"Occupy till I come\" / by the Rev. J.C. Ryle",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 256,
+      "title": "J C Ryle, \"Simplicity In Preaching\"",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 257,
+      "title": "Are you forgiven? [microform] : a question for everybody",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 258,
+      "title": "Saint Luke",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 259,
+      "title": "Expository thoughts on the Gospel of Saint Matthew",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 260,
+      "title": "Saint John",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 261,
+      "title": "Living Or Dead?: A Series of Home Truths",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 262,
+      "title": "Home truths, miscellaneous addresses and tracts",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 263,
+      "title": "Hymns for the church on earth. ..",
+      "author": "Ryle, J. C. (John Charles), 1816-1900 comp",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 264,
+      "title": "Thoughts on immortality, with some remarks on canon Farrar's 'Eternal hope' and kindred subjects",
+      "author": "John Charles Ryle , Frederic William Farrar",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 265,
+      "title": "A Sketch of the Life and Labors of George Whitefield",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 266,
+      "title": "Home truths, miscellaneous addresses and tracts",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 267,
+      "title": "Home truths, miscellaneous addresses and tracts",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 268,
+      "title": "Hymns for the church on earth",
+      "author": "Ryle, J. C.",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 269,
+      "title": "Worldly conformity, what it is not, and what it is",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 270,
+      "title": "Expository thoughts on the Gospels ... With the text complete",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 271,
+      "title": "Living Or Dead?: A Series of Home Truths",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 272,
+      "title": "How should a child be trained?",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 273,
+      "title": "Saint Mark",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 274,
+      "title": "The lessons of English church history, with an appendix of opinions of English divines on the Lord's Supper",
+      "author": "Ryle, J. C. (John Charles), 1816-1900",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 275,
+      "title": "Knots Untied",
+      "author": "John Charles Ryle",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 276,
+      "title": "George Whitefield [microform] : a lecture",
+      "author": "Ryle, J. C. (John Charles), 1816-1900. EMU10000040428",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 277,
+      "title": "Expository preaching plans and methods",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 278,
+      "title": "Moses : the servant of God",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 279,
+      "title": "Love to the uttermost; exposition of John XIII.-XXI",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 280,
+      "title": "Paul, a servant of Jesus Christ",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 281,
+      "title": "Peter : fisherman, disciple, apostle",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 282,
+      "title": "The life and light of men : expositions of John I.-XII.",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 283,
+      "title": "The prophet of hope; studies in Zechariah",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 284,
+      "title": "Our daily homily",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 285,
+      "title": "Our daily homily",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 286,
+      "title": "Calvary to Pentecost",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 287,
+      "title": "Paul : a servant of Jesus Christ",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 288,
+      "title": "John the Baptist",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 289,
+      "title": "Through the Bible day by day : a devotional commentary",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 290,
+      "title": "Joseph Beloved Hated Exalted By F. B. Meyer",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 291,
+      "title": "The exalted Christ and our identification with Him in His exaltation : addresses and Bible readings delivered at Mildmay Conference",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 292,
+      "title": "Christian living",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 293,
+      "title": "Saved and kept : counsels to young believers",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 294,
+      "title": "A castaway, and other addresses",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 295,
+      "title": "The present tenses of the blessed life",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 296,
+      "title": "Joshua, and the land of promise",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 297,
+      "title": "The creed of creeds : a series of short expositions of the Apostles' Creed",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 298,
+      "title": "Our daily homily",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 299,
+      "title": "Samuel, the prophet",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 300,
+      "title": "Jottings and hints for lay preachers",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 301,
+      "title": "Christ in Isaiah",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 302,
+      "title": "The bells of Is; or, Voices of human need and sorrow; echoes from my early pastorates",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 303,
+      "title": "Peace, perfect peace; a portion for the sorrowing",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 304,
+      "title": "I promise",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 305,
+      "title": "Cheer for life's pilgrimage",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 306,
+      "title": "A castaway, and other addresses",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 307,
+      "title": "The bells of Is; or, Voices of human need and sorrow; echoes from my early pastorate",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 308,
+      "title": "Memorials of Cecil Robertson of Sianfu, medical missionary",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 309,
+      "title": "The creed of creeds [microform] : a series of short expositions of the Apostles' Creed",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 310,
+      "title": "A good start",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 311,
+      "title": "Expository preaching plans and methods [microform]",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 312,
+      "title": "Peter: fisherman, disciple, apostle",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 313,
+      "title": "The Directory of the Devout Life: Meditations on the Sermon on the Mount",
+      "author": "Frederick Brotherton Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 314,
+      "title": "The wideness of God's mercy",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 315,
+      "title": "Jeremiah [microform] : priest and prophet",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 316,
+      "title": "I promise",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 317,
+      "title": "Blessed are ye : talks on the Beatitudes",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 318,
+      "title": "The glorious Lord ..",
+      "author": "Meyer, F. B. [from old catalog]",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 319,
+      "title": "The Future Tenses of the Blessed Life",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 320,
+      "title": "Expository preaching; plans & methods",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 321,
+      "title": "In defence of the faith; the old better than the new",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 322,
+      "title": "Light on Life's Duties",
+      "author": "Frederick Brotherton Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 323,
+      "title": "Christian living",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 324,
+      "title": "The prophet of hope; studies in Zechariah",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 325,
+      "title": "The life and light of men : expositions of John I.-XII",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 326,
+      "title": "The present tenses of the blessed life",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 327,
+      "title": "Joseph : beloved-hated-exalted",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 328,
+      "title": "Peace, perfect peace; a portion for the sorrowing",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 329,
+      "title": "The future tenses of the blessed life...",
+      "author": "Meyer, F. B. [from old catalog]",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 330,
+      "title": "The epistle to the Philippians : a devotional commentary",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 331,
+      "title": "Jeremiah, priest and prophet",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 332,
+      "title": "The wideness of God's mercy",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 333,
+      "title": "Peace, perfect peace; a portion for the sorrowing",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 334,
+      "title": "Peace, perfect peace; a portion for the sorrowing",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 335,
+      "title": "I promise",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 336,
+      "title": "The wideness of God's mercy",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 337,
+      "title": "Elijah, and the secret of his power",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 338,
+      "title": "The soul's pure intention",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 339,
+      "title": "Paul, a servant of Jesus Christ /",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 340,
+      "title": "The Present Tenses of the Blessed Life",
+      "author": "Frederick Brotherton Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 341,
+      "title": "Back to Bethel : separation from sin, and fellowship with God",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 342,
+      "title": "Joshua, and the land of promise",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 343,
+      "title": "Love to the uttermost : expositions of John XIII-XXI",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 344,
+      "title": "Shepherd Psalm",
+      "author": "Meyer, F. B. (Frederick Brotherton), 1847-1929",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 345,
+      "title": "How to bring men to Christ",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 346,
+      "title": "How to succeed in the Christian life",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 347,
+      "title": "How to bring men to Christ",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 348,
+      "title": "The voice of God in the present hour",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 349,
+      "title": "What the Bible teaches : a thorough and comprehensive study of what the Bible has to say concerning the great doctrines of which it treats",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 350,
+      "title": "Difficulties and alleged errors and contradictions in the Bible",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 351,
+      "title": "The new topical text book; a Scripture text book for the use of ministers, teachers, and all Christian workers",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 352,
+      "title": "How to promote & conduct a successful revival : with suggestive outlines",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 353,
+      "title": "The Higher criticism and the new theology : unscientific, unscriptural, and unwholesome",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 354,
+      "title": "Anecdotes and illustrations",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 355,
+      "title": "The Fundamental Doctrines of the Christian Faith",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 356,
+      "title": "The importance and value of proper Bible study; how properly to study and interpret the Bible",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 357,
+      "title": "Revival addresses",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 358,
+      "title": "How to Pray",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 359,
+      "title": "Will Christ come again? : an exposure of the foolishness, fallacies, and falsehoods of Shailer Mathews",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 360,
+      "title": "How to Study the Bible for Greatest Profit: The Methods and Fundamental Conditions of the Bible ...",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 361,
+      "title": "The Greatest hymns",
+      "author": "Stebbins, George C. (George Coles), 1846-1945; Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-greatest-hymns-stebbins-george-c-george-coles-1846-1945-torrey-r-a-reuben-archer-1856-1928.txt"
+    },
+    {
+      "row": 362,
+      "title": "The new topical text book; a Scripture text book for the use of ministers, teachers, and all Christian workers",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 363,
+      "title": "How to study the Bible for greatest profit ..",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 364,
+      "title": "The fundamental doctrines of the Christian faith.",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 365,
+      "title": "How to obtain fullness of power in Christian life and service",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 366,
+      "title": "Why God used D. L. Moody,",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 367,
+      "title": "The Holy Spirit : who He is and what He does, and how to know Him in all the fulness of His gracious and glorious ministry",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928; Torrey, R. A. (Reuben Archer), 1856-1928. Person and work of the Holy Spirit as revealed in the Scriptures and in personal experience",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 368,
+      "title": "The Higher criticism and the new theology : unscientific, unscriptural, and unwholesome",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 369,
+      "title": "The person and work of the Holy Spirit as revealed in the Scriptures and in personal experience [microform]",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 370,
+      "title": "Why God used D. L. Moody",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 371,
+      "title": "The Bible and its Christ; being noonday talks with business men on faith and unbelief",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 372,
+      "title": "The Baptism with the Holy Spirit ...",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 373,
+      "title": "Peanut patriotism and pure patriotism",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/peanut-patriotism-and-pure-patriotism-torrey-r-a-reuben-archer-1856-1928.txt"
+    },
+    {
+      "row": 374,
+      "title": "The gospel for to-day : new evangelistic sermons for a new day",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 375,
+      "title": "The higher criticism and the new theology",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928, ed",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 376,
+      "title": "How to obtain fullness of power in Christian life and service",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 377,
+      "title": "How to Obtain Fulness of Power in Christian Life and Service",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 378,
+      "title": "How to bring men to Christ",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 379,
+      "title": "What the war teaches;",
+      "author": "Torrey, Reuben Archer, 1856- [from old catalog]",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/what-the-war-teaches-torrey-reuben-archer-1856-from-old-catalog.txt"
+    },
+    {
+      "row": 380,
+      "title": "Anecdotes and Illustrations",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 381,
+      "title": "How to be saved, and how to be lost ;the way of salvation and the way of condemnation made as plain as day,",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 382,
+      "title": "Anecdotes and illustrations",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 383,
+      "title": "The person and work of the Holy Spirit as revealed in the Scriptures and in personal experience",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 384,
+      "title": "Revival addresses [microform]",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 385,
+      "title": "Difficulties and alleged errors and contradictions in the Bible",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 386,
+      "title": "Personal work",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 387,
+      "title": "The fundamental doctrines of the Christian faith.",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 388,
+      "title": "Will Christ Come Again?: An Exposure of the Foolishness, Fallacies, and ...",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 389,
+      "title": "The baptism with the Holy Spirit",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 390,
+      "title": "The Christ of the Bible",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 391,
+      "title": "How to be saved, and how to be lost ; the way of salvation and the way of condemnation made as plain as day",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 392,
+      "title": "Practical and perplexing questions answered /",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 393,
+      "title": "Traits and tracts of Torrey : a fresh appreciation of a great man and teacher",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 394,
+      "title": "How to bring men to Christ",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 395,
+      "title": "Will Christ come again? : an exposure of the foolishness, fallacies, and falsehoods of Shailer Mathews",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 396,
+      "title": "What the Bible teaches",
+      "author": "Reuben Archer Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 397,
+      "title": "Real salvation and whole-hearted service",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 398,
+      "title": "How To Succeed In The Christian Life [FACSIMILE]",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 399,
+      "title": "How to obtain fullness of power in Christian life and service",
+      "author": "Torrey, R. A. (Reuben Archer), 1856-1928",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 400,
+      "title": "The life and work of Dwight L. Moody, presented to the Christian world as a tribute to the memory of the greatest apostle of the age",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 401,
+      "title": "New sermons, addresses and prayers [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 402,
+      "title": "Moody's new sermons [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 403,
+      "title": "Moody's Bible stories and gems of Christian thought [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899; Daniels, W. H. (William Haven), b. 1836",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 404,
+      "title": "Best thoughts and discourses of D.L. Moody [microform] : the work of Moody and Sankey as evangelists, with sketches of their lives and portraits on steel",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899; Morrow, Abbie Clemens; Haines, Emory J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 405,
+      "title": "D.L. Moody [microform] : oo kukaskwawina (his sermons)",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/d-l-moody-microform-oo-kukaskwawina-his-sermons-moody-d-l-dwight-lyman-1837-1899.txt"
+    },
+    {
+      "row": 406,
+      "title": "The way to God and how to find it [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 407,
+      "title": "Heaven: where it is, its inhabitants, and how to get there [microform] : the certainty of God's promise of a life beyond the grave, and the rewards that are in store for faithful service",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 408,
+      "title": "New sermons, addresses and prayers [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 409,
+      "title": "Anecdotes and illustrations of D.L. Moody related by him in his revival work [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899; McClure, J. B. (James Baird), 1832-1895",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 410,
+      "title": "Anecdotes and illustrations of D.L. Moody related by him in his revival work [microform]",
+      "author": "Moody, D. L. (Dwight Lyman), 1837-1899; McClure, J. B. (James Baird), 1832-1895",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 411,
+      "title": "Daniel, Man of God - Dwight L. Moody",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 412,
+      "title": "Life, work and sermons of Dwight L. Moody : the great evangelist",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 413,
+      "title": "The Man and His Mission",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 414,
+      "title": "Weighed And Wanting, Or The Ten Commandments",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 415,
+      "title": "Sowing And Reaping, Dwight L Moody",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 416,
+      "title": "Thou Fool and Eleven Other Sermons",
+      "author": "dwight l. moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 417,
+      "title": "The Life and Works of the World's Greatest Evangelist",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 418,
+      "title": "Anecdotes and Illustrations of D.L. Moody in His Revival Work",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 419,
+      "title": "The Man And His Mission",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 420,
+      "title": "The life and works of the world's greatest evangelist",
+      "author": "Dwight L. Moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 421,
+      "title": "the life and works of the world's greatest evangelist",
+      "author": "dwight l. moody",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 422,
+      "title": "Power through prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 423,
+      "title": "Preacher and prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 424,
+      "title": "Purpose in prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 425,
+      "title": "The essentials of prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 426,
+      "title": "Preacher and prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 427,
+      "title": "The resurrection",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 428,
+      "title": "Satan : his personality, power and overthrow",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 429,
+      "title": "The ineffable glory; thoughts on the resurrection",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 430,
+      "title": "The possibilities of prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 431,
+      "title": "The necessity of prayer",
+      "author": "Edward M. Bounds; Homer W. Hodge",
+      "status": "duplicate_checksum",
+      "issues": [
+        "Downloaded text checksum already exists in the library"
+      ]
+    },
+    {
+      "row": 432,
+      "title": "The Possibilities of Prayer",
+      "author": "Edward M. Bounds, D. D.",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 433,
+      "title": "The essentials of prayer",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 434,
+      "title": "Purpose in prayer",
+      "author": "Bounds, Edward M. (Edward McKendree), 1835-1913",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 435,
+      "title": "The ineffable glory",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 436,
+      "title": "Prayer and Praying Men",
+      "author": "Re. edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 437,
+      "title": "HEAVEN A PLACE -A CITY-A HOME",
+      "author": "EDWARD M. BOUNDS",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 438,
+      "title": "Satan: His Personality, Power and Overthrow",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 439,
+      "title": "The Possibilities of Prayer",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 440,
+      "title": "Satan : His personality, power and overthrow",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 441,
+      "title": "The Necessity of Prayer",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 442,
+      "title": "The Neccessity of Prayer",
+      "author": "Edward M. Bounds",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
