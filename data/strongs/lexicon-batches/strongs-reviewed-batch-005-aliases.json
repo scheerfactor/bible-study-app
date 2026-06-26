@@ -14,5 +14,21 @@
     "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
     "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain / Copy Freely; this entry is a reviewed proper-name alias for the mapped Aramaic form.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H4709",
+    "language": "Hebrew",
+    "original_word": "Mitspah",
+    "transliteration": "Mitspah",
+    "pronunciation": "mits-paw'",
+    "english_words": ["mitspah"],
+    "related_numbers": ["H4708"],
+    "plain_definition": "Strong's definition: feminine of H4708; Mitspah, the name of two places in Palestine. KJV rendering: Mitspah.",
+    "first_occurrence": "Genesis 31:49",
+    "key_verses": ["Genesis 31:49"],
+    "source_title": "Strong's Hebrew Bible Dictionary",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
+    "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain / Copy Freely; this entry is a reviewed supplement for a mapped proper-name form.",
+    "review_status": "Verified"
   }
 ]
