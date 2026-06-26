@@ -29,6 +29,7 @@ const allowedVisibility = new Set(["Public after review", "Private admin draft",
 const publicReadyStatuses = new Set(["Uploaded To R2", "Approved For Public Use"]);
 const allowedSegmentStatuses = new Set(["Planned", "Cleanup Needed", "Ready To Record", "Recorded", "Uploaded", "Approved"]);
 const allowedUploadedPilotStatuses = new Set(["Uploaded Pilot", "Approved", "Archived"]);
+const allowedChapterMarkerStatuses = new Set(["Estimated", "Verified"]);
 
 const raw = await readFile(manifestPath, "utf8");
 const records = JSON.parse(raw);
@@ -56,6 +57,14 @@ function isValidUrl(value) {
   } catch {
     return false;
   }
+}
+
+function durationToSeconds(value) {
+  if (!value) return null;
+  const parts = String(value).split(":").map((part) => Number(part));
+  if (parts.length < 2 || parts.length > 3 || parts.some((part) => !Number.isFinite(part) || part < 0)) return null;
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return parts[0] * 3600 + parts[1] * 60 + parts[2];
 }
 
 records.forEach((record, index) => {
@@ -239,6 +248,9 @@ async function validateUploadedAudioPilots() {
   const seenUploadedIds = new Set();
   const seenUploadedPaths = new Set();
   let uploadedBytes = 0;
+  let chapterMarkerCount = 0;
+  let estimatedChapterMarkerCount = 0;
+  let verifiedChapterMarkerCount = 0;
 
   for (const [pilotIndex, pilot] of uploadedPilots.entries()) {
     const pilotLabel = `uploaded audio pilot ${pilotIndex + 1}`;
@@ -293,9 +305,70 @@ async function validateUploadedAudioPilots() {
     if (pilot.contentType !== "audio/mpeg") errors.push(`${pilotLabel}: contentType must be audio/mpeg`);
     if (!Number.isInteger(pilot.sizeBytes) || pilot.sizeBytes < 1) errors.push(`${pilotLabel}: sizeBytes must be a positive integer`);
     uploadedBytes += Number(pilot.sizeBytes) || 0;
+
+    if (pilot.kind === "Bible Audio") {
+      const durationSeconds = durationToSeconds(pilot.duration);
+      if (durationSeconds === null) errors.push(`${pilotLabel}: Bible Audio requires a parseable duration like mm:ss or h:mm:ss`);
+
+      if (pilot.chapterMarkers !== undefined) {
+        if (!Array.isArray(pilot.chapterMarkers)) {
+          errors.push(`${pilotLabel}: chapterMarkers must be an array when present`);
+        } else if (pilot.chapterMarkers.length === 0) {
+          errors.push(`${pilotLabel}: chapterMarkers must not be empty when present`);
+        } else {
+          let previousMarker = null;
+          for (const [markerIndex, marker] of pilot.chapterMarkers.entries()) {
+            const markerLabel = `${pilotLabel} chapter marker ${markerIndex + 1}`;
+            chapterMarkerCount += 1;
+
+            for (const field of ["book", "chapter", "startSeconds", "endSeconds", "status", "method"]) {
+              if (marker[field] === undefined || marker[field] === null || String(marker[field]).trim() === "") {
+                errors.push(`${markerLabel}: missing ${field}`);
+              }
+            }
+
+            if (!Number.isInteger(marker.chapter) || marker.chapter < 1) errors.push(`${markerLabel}: chapter must be a positive integer`);
+            if (!Number.isFinite(marker.startSeconds) || marker.startSeconds < 0) errors.push(`${markerLabel}: startSeconds must be a non-negative number`);
+            if (!Number.isFinite(marker.endSeconds) || marker.endSeconds <= marker.startSeconds) {
+              errors.push(`${markerLabel}: endSeconds must be greater than startSeconds`);
+            }
+            if (!allowedChapterMarkerStatuses.has(marker.status)) errors.push(`${markerLabel}: unsupported status ${marker.status}`);
+            if (marker.status === "Estimated") estimatedChapterMarkerCount += 1;
+            if (marker.status === "Verified") verifiedChapterMarkerCount += 1;
+            if (durationSeconds !== null && marker.endSeconds > durationSeconds + 1) {
+              errors.push(`${markerLabel}: endSeconds exceeds pilot duration ${pilot.duration}`);
+            }
+
+            if (previousMarker) {
+              if (marker.book !== previousMarker.book) errors.push(`${markerLabel}: all markers in a range file must use the same book`);
+              if (marker.chapter !== previousMarker.chapter + 1) errors.push(`${markerLabel}: chapters must be consecutive`);
+              if (Math.abs(marker.startSeconds - previousMarker.endSeconds) > 1) {
+                errors.push(`${markerLabel}: startSeconds must continue from previous marker endSeconds`);
+              }
+            } else if (marker.startSeconds !== 0) {
+              errors.push(`${markerLabel}: first marker must start at 0`);
+            }
+
+            previousMarker = marker;
+          }
+
+          const lastMarker = pilot.chapterMarkers[pilot.chapterMarkers.length - 1];
+          if (durationSeconds !== null && Math.abs(lastMarker.endSeconds - durationSeconds) > 1) {
+            errors.push(`${pilotLabel}: final chapter marker must end at the file duration ${pilot.duration}`);
+          }
+        }
+      }
+
+      if (pilot.visibility === "Public after review" && (pilot.chapterMarkers ?? []).some((marker) => marker.status !== "Verified")) {
+        errors.push(`${pilotLabel}: public Bible Audio with chapterMarkers requires every marker to be Verified`);
+      }
+      if (pilot.visibility === "Public after review" && String(pilot.nextAction ?? "").toLowerCase().includes("verify")) {
+        errors.push(`${pilotLabel}: public Bible Audio cannot keep a verification nextAction`);
+      }
+    }
   }
 
-  return { uploadedCount: uploadedPilots.length, uploadedBytes };
+  return { uploadedCount: uploadedPilots.length, uploadedBytes, chapterMarkerCount, estimatedChapterMarkerCount, verifiedChapterMarkerCount };
 }
 
 const uploadedAudioSummary = await validateUploadedAudioPilots();
@@ -307,6 +380,9 @@ console.table({
   audiobook_segments: audiobookPilotSummary.segmentCount,
   uploaded_audio_pilots: uploadedAudioSummary.uploadedCount,
   uploaded_audio_mb: Math.round((uploadedAudioSummary.uploadedBytes / 1024 / 1024) * 10) / 10,
+  audio_chapter_markers: uploadedAudioSummary.chapterMarkerCount,
+  estimated_audio_markers: uploadedAudioSummary.estimatedChapterMarkerCount,
+  verified_audio_markers: uploadedAudioSummary.verifiedChapterMarkerCount,
   errors: errors.length,
   warnings: warnings.length,
   public_ready: records.filter((record) => publicReadyStatuses.has(record.intakeStatus)).length,
