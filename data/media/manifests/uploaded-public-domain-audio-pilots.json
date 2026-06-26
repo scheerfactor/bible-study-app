@@ -83,7 +83,41 @@
     "visibility": "Private admin draft",
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Admin-only Bible audio pilot for testing full-book John listening from R2 before public release.",
-    "nextAction": "Review territory/copyright notes and add chapter timing markers before public chapter-level playback."
+    "nextAction": "Manually verify chapter timing markers before public chapter-level playback.",
+    "chapterMarkers": [
+      {
+        "book": "John",
+        "chapter": 1,
+        "startSeconds": 0,
+        "endSeconds": 460,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 2,
+        "startSeconds": 460,
+        "endSeconds": 693,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 3,
+        "startSeconds": 693,
+        "endSeconds": 1043,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 4,
+        "startSeconds": 1043,
+        "endSeconds": 1543,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      }
+    ]
   },
   {
     "id": "kjv-john-librivox-002-john-5-8",
@@ -106,7 +140,41 @@
     "visibility": "Private admin draft",
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Admin-only Bible audio pilot for testing full-book John listening from R2 before public release.",
-    "nextAction": "Review territory/copyright notes and add chapter timing markers before public chapter-level playback."
+    "nextAction": "Manually verify chapter timing markers before public chapter-level playback.",
+    "chapterMarkers": [
+      {
+        "book": "John",
+        "chapter": 5,
+        "startSeconds": 0,
+        "endSeconds": 498,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 6,
+        "startSeconds": 498,
+        "endSeconds": 1244,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 7,
+        "startSeconds": 1244,
+        "endSeconds": 1743,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 8,
+        "startSeconds": 1743,
+        "endSeconds": 2390,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      }
+    ]
   },
   {
     "id": "kjv-john-librivox-003-john-9-12",
@@ -129,7 +197,41 @@
     "visibility": "Private admin draft",
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Admin-only Bible audio pilot for testing full-book John listening from R2 before public release.",
-    "nextAction": "Review territory/copyright notes and add chapter timing markers before public chapter-level playback."
+    "nextAction": "Manually verify chapter timing markers before public chapter-level playback.",
+    "chapterMarkers": [
+      {
+        "book": "John",
+        "chapter": 9,
+        "startSeconds": 0,
+        "endSeconds": 269,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 10,
+        "startSeconds": 269,
+        "endSeconds": 520,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 11,
+        "startSeconds": 520,
+        "endSeconds": 875,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 12,
+        "startSeconds": 875,
+        "endSeconds": 1201,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      }
+    ]
   },
   {
     "id": "kjv-john-librivox-004-john-13-17",
@@ -152,7 +254,49 @@
     "visibility": "Private admin draft",
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Admin-only Bible audio pilot for testing full-book John listening from R2 before public release.",
-    "nextAction": "Review territory/copyright notes and add chapter timing markers before public chapter-level playback."
+    "nextAction": "Manually verify chapter timing markers before public chapter-level playback.",
+    "chapterMarkers": [
+      {
+        "book": "John",
+        "chapter": 13,
+        "startSeconds": 0,
+        "endSeconds": 268,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 14,
+        "startSeconds": 268,
+        "endSeconds": 504,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 15,
+        "startSeconds": 504,
+        "endSeconds": 703,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 16,
+        "startSeconds": 703,
+        "endSeconds": 957,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 17,
+        "startSeconds": 957,
+        "endSeconds": 1163,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      }
+    ]
   },
   {
     "id": "kjv-john-librivox-005-john-18-21",
@@ -175,6 +319,40 @@
     "visibility": "Private admin draft",
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Admin-only Bible audio pilot for testing full-book John listening from R2 before public release.",
-    "nextAction": "Review territory/copyright notes and add chapter timing markers before public chapter-level playback."
+    "nextAction": "Manually verify chapter timing markers before public chapter-level playback.",
+    "chapterMarkers": [
+      {
+        "book": "John",
+        "chapter": 18,
+        "startSeconds": 0,
+        "endSeconds": 476,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 19,
+        "startSeconds": 476,
+        "endSeconds": 986,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 20,
+        "startSeconds": 986,
+        "endSeconds": 1363,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      },
+      {
+        "book": "John",
+        "chapter": 21,
+        "startSeconds": 1363,
+        "endSeconds": 1711,
+        "status": "Estimated",
+        "method": "Estimated from KJV chapter word-count proportions inside the LibriVox range file; verify manually before public chapter-level release."
+      }
+    ]
   }
 ]
