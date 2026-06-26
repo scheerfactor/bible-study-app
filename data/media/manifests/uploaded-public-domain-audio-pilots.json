@@ -61,5 +61,26 @@
     "intakeStatus": "Uploaded Pilot",
     "recommendedUse": "Prayer module and prayer reading path audiobook pilot.",
     "nextAction": "Connect to prayer path after audio playback testing."
+  },
+  {
+    "id": "kjv-john-librivox-001-john-1",
+    "workTitle": "Bible (KJV) NT 04: John",
+    "segmentTitle": "John 1",
+    "creator": "King James Version / LibriVox readers",
+    "kind": "Bible Audio",
+    "category": "Bible Audio / Gospel of John",
+    "sourceUrl": "https://librivox.org/john-by-king-james-version/",
+    "sourceFileUrl": "https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_1_kjv_64kb.mp3",
+    "rightsStatus": "Public Domain - USA",
+    "rightsEvidence": "LibriVox catalog page presents the recording as public domain in the USA; keep KJV text and recording source notes attached before public display.",
+    "storageBucket": "fathers-business-bible-study-public",
+    "storagePath": "audio/bible/kjv/librivox-john/001-john-1.mp3",
+    "publicUrl": "https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1.mp3",
+    "contentType": "audio/mpeg",
+    "sizeBytes": 12351967,
+    "visibility": "Private admin draft",
+    "intakeStatus": "Uploaded Pilot",
+    "recommendedUse": "First Bible audio R2 pilot for John chapter listening and follow-along testing.",
+    "nextAction": "Connect to Bible Listen Mode only after public-domain and KJV territory notes are reviewed for the launch audience."
   }
 ]
