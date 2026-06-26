@@ -49,17 +49,29 @@ function normalizedStrongKey(value) {
 
 function parseEnglishWords(renderings) {
   const cleaned = cleanText(renderings)
+    .replace(/^:?\s*-+\s*/, "")
     .replace(/\bX\b/g, " ")
     .replace(/[()+?]/g, " ")
     .replace(/\s+-\s+/g, "-");
 
   const words = cleaned
     .split(/[,;]+|\s+or\s+|\s+and\s+/i)
-    .map((word) => word.replace(/[^A-Za-z0-9'\-\s]/g, " ").replace(/\s+/g, " ").trim().toLowerCase())
+    .map((word) =>
+      word
+        .replace(/^-+/, "")
+        .replace(/[^A-Za-z0-9'\-\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase(),
+    )
     .filter((word) => word && word.length <= 40)
     .filter((word) => !["a", "an", "the", "to", "of", "in", "for", "with", "by"].includes(word));
 
   return [...new Set(words)].slice(0, 16);
+}
+
+function cleanKjvRenderings(value) {
+  return cleanText(value).replace(/^:?\s*-+\s*/, "").replace(/[.]+$/g, "").trim();
 }
 
 function parseRelatedNumbers(body) {
@@ -97,7 +109,7 @@ function parseEntry(number, body, strongsNumber) {
   const definitionPart = splitIndex >= 0 ? bodyWithoutKey.slice(0, splitIndex) : bodyWithoutKey;
   const renderPart = splitIndex >= 0 ? bodyWithoutKey.slice(splitIndex + splitLength) : "";
   const definition = cleanText(definitionPart.replace(/see HEBREW for\s+0*\d{1,5}/gi, ""));
-  const renderings = cleanText(renderPart.replace(/see HEBREW for\s+0*\d{1,5}/gi, ""));
+  const renderings = cleanKjvRenderings(renderPart.replace(/see HEBREW for\s+0*\d{1,5}/gi, ""));
   const englishWords = parseEnglishWords(renderings);
   const language = /\(Aramaic\)/i.test(body) ? "Aramaic" : "Hebrew";
   if (!definition || !englishWords.length) return null;

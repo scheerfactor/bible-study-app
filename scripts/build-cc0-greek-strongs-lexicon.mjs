@@ -31,8 +31,20 @@ function decodeXmlEntities(value) {
     .replace(/&apos;/g, "'");
 }
 
+function expandStrongRefs(value) {
+  return String(value ?? "")
+    .replace(
+      /<strongsref\b[^>]*\blanguage="GREEK"[^>]*\bstrongs="([^"]+)"[^>]*>/gi,
+      (_, number) => ` G${Number(String(number).replace(/\D/g, ""))} `,
+    )
+    .replace(
+      /<strongsref\b[^>]*\blanguage="HEBREW"[^>]*\bstrongs="([^"]+)"[^>]*>/gi,
+      (_, number) => ` H${String(number).replace(/\D/g, "").padStart(4, "0")} `,
+    );
+}
+
 function stripTags(value) {
-  return decodeXmlEntities(String(value ?? "").replace(/<[^>]+>/g, " "));
+  return decodeXmlEntities(expandStrongRefs(value).replace(/<[^>]+>/g, " "));
 }
 
 function cleanText(value) {
@@ -58,14 +70,26 @@ function parseEnglishWords(kjvDefinition) {
   return [
     ...new Set(
       cleanText(kjvDefinition)
+        .replace(/^:?\s*-+\s*/, "")
         .replace(/\bX\b/g, " ")
         .replace(/[()+?]/g, " ")
         .split(/[,;]+|\s+or\s+|\s+and\s+/i)
-        .map((word) => word.replace(/[^A-Za-z0-9'\-\s]/g, " ").replace(/\s+/g, " ").trim().toLowerCase())
+        .map((word) =>
+          word
+            .replace(/^-+/, "")
+            .replace(/[^A-Za-z0-9'\-\s]/g, " ")
+            .replace(/\s+/g, " ")
+            .trim()
+            .toLowerCase(),
+        )
         .filter((word) => word && word.length <= 40)
         .filter((word) => !["a", "an", "the", "to", "of", "in", "for", "with", "by"].includes(word)),
     ),
   ].slice(0, 16);
+}
+
+function cleanKjvRenderings(value) {
+  return cleanText(value).replace(/^:?\s*-+\s*/, "").replace(/[.]+$/g, "").trim();
 }
 
 function parseRelatedNumbers(body) {
@@ -139,6 +163,7 @@ function parseEntry(strongsNumber, body) {
   let definition = elementText(body, "strongs_def");
   const derivation = elementText(body, "strongs_derivation");
   const kjvDefinition = elementText(body, "kjv_def");
+  const kjvRenderings = cleanKjvRenderings(kjvDefinition);
   const englishWords = parseEnglishWords(kjvDefinition);
   if (!definition && derivation) definition = derivation;
 
@@ -152,7 +177,7 @@ function parseEntry(strongsNumber, body) {
     pronunciation: pronunciationAttrs.strongs || undefined,
     english_words: englishWords,
     related_numbers: parseRelatedNumbers(body),
-    plain_definition: `Strong's definition: ${[derivation, definition].filter(Boolean).join(" ")}. KJV renderings include: ${kjvDefinition}.`,
+    plain_definition: `Strong's definition: ${[derivation, definition].filter(Boolean).join(" ")}. KJV renderings include: ${kjvRenderings}.`,
     source_title: "Strong's Greek Dictionary in XML with real Greek",
     source_url: "https://github.com/morphgnt/strongs-dictionary-xml",
     rights_status:

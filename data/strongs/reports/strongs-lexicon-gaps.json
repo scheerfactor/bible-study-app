@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-26T21:31:21.121Z",
+  "generated_at": "2026-06-26T21:42:11.170Z",
   "source": "data/strongs/mapping-batches/*.json",
   "lexicon_source": "data/strongs/sample-verified-strongs.json + data/strongs/lexicon-batches/index.json",
   "totals": {
     "mapping_files": 8,
     "mapping_rows": 47010,
     "verified_mapping_rows": 47010,
-    "verified_lexicon_entries": 14283,
+    "verified_lexicon_entries": 14285,
     "missing_lexicon_numbers": 0,
     "covered_mapping_rows": 47010,
     "missing_mapping_rows": 0,
