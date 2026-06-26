@@ -41,6 +41,8 @@
     "content:audit": "node scripts/audit-content-depth.mjs",
     "media:upload": "node scripts/upload-media-to-r2.mjs",
     "import:strongs": "node scripts/import-strongs-entries.mjs",
+    "build:strongs-greek-lexicon": "node scripts/build-cc0-greek-strongs-lexicon.mjs",
+    "build:strongs-hebrew-lexicon": "node scripts/build-crosswire-hebrew-strongs-lexicon.mjs",
     "import:strongs-crosswire-osis": "node scripts/import-crosswire-kjv-strongs-osis.mjs",
     "storage:plan": "node scripts/prepare-content-storage-migration.mjs",
     "storage:upload:r2": "node scripts/upload-public-content-to-r2.mjs",

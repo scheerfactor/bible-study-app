@@ -31,6 +31,15 @@
       "rights_status": "Public Domain",
       "commercial_use_notes": "CrossWire lists the module as Public Domain / Copy Freely and the distribution license as Public Domain. Use for reviewed concise lexicon entries and preserve source attribution.",
       "review_status": "Verified"
+    },
+    {
+      "title": "Strong's Greek Dictionary in XML with real Greek",
+      "author": "James Strong; XML edition by Ulrik Sandborg-Petersen",
+      "year": 1890,
+      "source_url": "https://github.com/morphgnt/strongs-dictionary-xml",
+      "rights_status": "CC0 / Public Domain",
+      "commercial_use_notes": "The project README says the XML work is released under the Creative Commons CC0 waiver and derives from Strong's 1890 public-domain dictionary. Use for reviewed Greek lexicon lookup entries and preserve source attribution.",
+      "review_status": "Verified"
     }
   ],
   "candidate_sources_needing_review": [
