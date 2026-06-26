@@ -39,12 +39,12 @@ For each boundary:
 - Source file: https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_1_kjv_64kb.mp3
 - R2 URL: https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1-4.mp3
 
-| Chapter | Start | End | Status | Review checkpoint |
-| --- | ---: | ---: | --- | --- |
-| John 1 | 0:00 | 7:40 | Estimated | Confirm file begins with this chapter/range opening. |
-| John 2 | 7:40 | 11:33 | Estimated | Listen from 7:30 and confirm boundary. |
-| John 3 | 11:33 | 17:23 | Estimated | Listen from 11:23 and confirm boundary. |
-| John 4 | 17:23 | 25:43 | Estimated | Listen from 17:13 and confirm boundary. |
+| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| [ ] | John 1 | 0:00 | 7:40 | Estimated | [Open at 0:00](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1-4.mp3#t=0) | Confirm file begins with this chapter/range opening. |
+| [ ] | John 2 | 7:40 | 11:33 | Estimated | [Open at 7:30](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1-4.mp3#t=450) | Listen from 7:30 and confirm boundary. |
+| [ ] | John 3 | 11:33 | 17:23 | Estimated | [Open at 11:23](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1-4.mp3#t=683) | Listen from 11:23 and confirm boundary. |
+| [ ] | John 4 | 17:23 | 25:43 | Estimated | [Open at 17:13](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/001-john-1-4.mp3#t=1033) | Listen from 17:13 and confirm boundary. |
 
 Marker notes:
 
@@ -64,12 +64,12 @@ Marker notes:
 - Source file: https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_2_kjv_64kb.mp3
 - R2 URL: https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/002-john-5-8.mp3
 
-| Chapter | Start | End | Status | Review checkpoint |
-| --- | ---: | ---: | --- | --- |
-| John 5 | 0:00 | 8:18 | Estimated | Confirm file begins with this chapter/range opening. |
-| John 6 | 8:18 | 20:44 | Estimated | Listen from 8:08 and confirm boundary. |
-| John 7 | 20:44 | 29:03 | Estimated | Listen from 20:34 and confirm boundary. |
-| John 8 | 29:03 | 39:50 | Estimated | Listen from 28:53 and confirm boundary. |
+| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| [ ] | John 5 | 0:00 | 8:18 | Estimated | [Open at 0:00](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/002-john-5-8.mp3#t=0) | Confirm file begins with this chapter/range opening. |
+| [ ] | John 6 | 8:18 | 20:44 | Estimated | [Open at 8:08](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/002-john-5-8.mp3#t=488) | Listen from 8:08 and confirm boundary. |
+| [ ] | John 7 | 20:44 | 29:03 | Estimated | [Open at 20:34](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/002-john-5-8.mp3#t=1234) | Listen from 20:34 and confirm boundary. |
+| [ ] | John 8 | 29:03 | 39:50 | Estimated | [Open at 28:53](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/002-john-5-8.mp3#t=1733) | Listen from 28:53 and confirm boundary. |
 
 Marker notes:
 
@@ -89,12 +89,12 @@ Marker notes:
 - Source file: https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_3_kjv_64kb.mp3
 - R2 URL: https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/003-john-9-12.mp3
 
-| Chapter | Start | End | Status | Review checkpoint |
-| --- | ---: | ---: | --- | --- |
-| John 9 | 0:00 | 4:29 | Estimated | Confirm file begins with this chapter/range opening. |
-| John 10 | 4:29 | 8:40 | Estimated | Listen from 4:19 and confirm boundary. |
-| John 11 | 8:40 | 14:35 | Estimated | Listen from 8:30 and confirm boundary. |
-| John 12 | 14:35 | 20:01 | Estimated | Listen from 14:25 and confirm boundary. |
+| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| [ ] | John 9 | 0:00 | 4:29 | Estimated | [Open at 0:00](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/003-john-9-12.mp3#t=0) | Confirm file begins with this chapter/range opening. |
+| [ ] | John 10 | 4:29 | 8:40 | Estimated | [Open at 4:19](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/003-john-9-12.mp3#t=259) | Listen from 4:19 and confirm boundary. |
+| [ ] | John 11 | 8:40 | 14:35 | Estimated | [Open at 8:30](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/003-john-9-12.mp3#t=510) | Listen from 8:30 and confirm boundary. |
+| [ ] | John 12 | 14:35 | 20:01 | Estimated | [Open at 14:25](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/003-john-9-12.mp3#t=865) | Listen from 14:25 and confirm boundary. |
 
 Marker notes:
 
@@ -114,13 +114,13 @@ Marker notes:
 - Source file: https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_4_kjv_64kb.mp3
 - R2 URL: https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3
 
-| Chapter | Start | End | Status | Review checkpoint |
-| --- | ---: | ---: | --- | --- |
-| John 13 | 0:00 | 4:28 | Estimated | Confirm file begins with this chapter/range opening. |
-| John 14 | 4:28 | 8:24 | Estimated | Listen from 4:18 and confirm boundary. |
-| John 15 | 8:24 | 11:43 | Estimated | Listen from 8:14 and confirm boundary. |
-| John 16 | 11:43 | 15:57 | Estimated | Listen from 11:33 and confirm boundary. |
-| John 17 | 15:57 | 19:23 | Estimated | Listen from 15:47 and confirm boundary. |
+| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| [ ] | John 13 | 0:00 | 4:28 | Estimated | [Open at 0:00](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3#t=0) | Confirm file begins with this chapter/range opening. |
+| [ ] | John 14 | 4:28 | 8:24 | Estimated | [Open at 4:18](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3#t=258) | Listen from 4:18 and confirm boundary. |
+| [ ] | John 15 | 8:24 | 11:43 | Estimated | [Open at 8:14](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3#t=494) | Listen from 8:14 and confirm boundary. |
+| [ ] | John 16 | 11:43 | 15:57 | Estimated | [Open at 11:33](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3#t=693) | Listen from 11:33 and confirm boundary. |
+| [ ] | John 17 | 15:57 | 19:23 | Estimated | [Open at 15:47](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/004-john-13-17.mp3#t=947) | Listen from 15:47 and confirm boundary. |
 
 Marker notes:
 
@@ -141,12 +141,12 @@ Marker notes:
 - Source file: https://www.archive.org/download/biblent04_john_kjv_librivox/gospeljohn_5_kjv_64kb.mp3
 - R2 URL: https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/005-john-18-21.mp3
 
-| Chapter | Start | End | Status | Review checkpoint |
-| --- | ---: | ---: | --- | --- |
-| John 18 | 0:00 | 7:56 | Estimated | Confirm file begins with this chapter/range opening. |
-| John 19 | 7:56 | 16:26 | Estimated | Listen from 7:46 and confirm boundary. |
-| John 20 | 16:26 | 22:43 | Estimated | Listen from 16:16 and confirm boundary. |
-| John 21 | 22:43 | 28:31 | Estimated | Listen from 22:33 and confirm boundary. |
+| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| [ ] | John 18 | 0:00 | 7:56 | Estimated | [Open at 0:00](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/005-john-18-21.mp3#t=0) | Confirm file begins with this chapter/range opening. |
+| [ ] | John 19 | 7:56 | 16:26 | Estimated | [Open at 7:46](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/005-john-18-21.mp3#t=466) | Listen from 7:46 and confirm boundary. |
+| [ ] | John 20 | 16:26 | 22:43 | Estimated | [Open at 16:16](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/005-john-18-21.mp3#t=976) | Listen from 16:16 and confirm boundary. |
+| [ ] | John 21 | 22:43 | 28:31 | Estimated | [Open at 22:33](https://pub-43622fd1081447d097b3256b0d418e3b.r2.dev/audio/bible/kjv/librivox-john/005-john-18-21.mp3#t=1353) | Listen from 22:33 and confirm boundary. |
 
 Marker notes:
 

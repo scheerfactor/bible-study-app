@@ -20,6 +20,11 @@ function markerSummary(marker) {
   return `${marker.book} ${marker.chapter}: ${secondsToClock(marker.startSeconds)}-${secondsToClock(marker.endSeconds)} (${marker.status})`;
 }
 
+function timestampLink(url, seconds, label) {
+  const rounded = Math.max(0, Math.round(Number(seconds) || 0));
+  return `[${label}](${url}#t=${rounded})`;
+}
+
 const bibleAudioPilots = pilots.filter((pilot) => pilot.kind === "Bible Audio");
 const markerPilots = bibleAudioPilots.filter((pilot) => Array.isArray(pilot.chapterMarkers) && pilot.chapterMarkers.length > 0);
 const allMarkers = markerPilots.flatMap((pilot) => pilot.chapterMarkers.map((marker) => ({ pilot, marker })));
@@ -74,13 +79,14 @@ for (const pilot of markerPilots) {
   lines.push(`- Source file: ${pilot.sourceFileUrl}`);
   lines.push(`- R2 URL: ${pilot.publicUrl}`);
   lines.push("");
-  lines.push("| Chapter | Start | End | Status | Review checkpoint |");
-  lines.push("| --- | ---: | ---: | --- | --- |");
+  lines.push("| Done | Chapter | Start | End | Status | Open review point | Review checkpoint |");
+  lines.push("| --- | --- | ---: | ---: | --- | --- | --- |");
 
   for (const marker of pilot.chapterMarkers) {
-    const checkpoint = marker.startSeconds === 0 ? "Confirm file begins with this chapter/range opening." : `Listen from ${secondsToClock(marker.startSeconds - 10)} and confirm boundary.`;
+    const reviewStart = Math.max(0, marker.startSeconds - 10);
+    const checkpoint = marker.startSeconds === 0 ? "Confirm file begins with this chapter/range opening." : `Listen from ${secondsToClock(reviewStart)} and confirm boundary.`;
     lines.push(
-      `| ${marker.book} ${marker.chapter} | ${secondsToClock(marker.startSeconds)} | ${secondsToClock(marker.endSeconds)} | ${marker.status} | ${checkpoint} |`,
+      `| [ ] | ${marker.book} ${marker.chapter} | ${secondsToClock(marker.startSeconds)} | ${secondsToClock(marker.endSeconds)} | ${marker.status} | ${timestampLink(pilot.publicUrl, reviewStart, `Open at ${secondsToClock(reviewStart)}`)} | ${checkpoint} |`,
     );
   }
 
