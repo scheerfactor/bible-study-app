@@ -19449,10 +19449,20 @@ export default function Home() {
       themes: connection?.themes ?? [],
     };
   }, [fullStudyVerse, peopleById, placesById, propheciesById, timelineById, typesById]);
+  const immersiveMode =
+    (tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) ||
+    (tab === "presentations" && (presentationWorkspaceView === "presenter" || presentationWorkspaceView === "presentation"));
 
   return (
     <main className="min-h-screen bg-[var(--page)] text-[var(--ink)]">
-      <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col bg-[var(--paper)] shadow-2xl shadow-stone-950/10 md:my-6 md:min-h-[calc(100vh-3rem)] md:rounded-[1.75rem] md:border md:border-stone-200">
+      <div
+        className={
+          immersiveMode
+            ? "flex min-h-screen w-full flex-col bg-[var(--paper)]"
+            : "mx-auto flex min-h-screen w-full max-w-6xl flex-col bg-[var(--paper)] shadow-2xl shadow-stone-950/10 md:my-6 md:min-h-[calc(100vh-3rem)] md:rounded-[1.75rem] md:border md:border-stone-200"
+        }
+      >
+        {!immersiveMode && (
         <header className="sticky top-0 z-20 border-b border-stone-200/80 bg-[var(--paper)]/95 px-4 py-3 backdrop-blur md:rounded-t-[1.75rem]">
           <div className="flex items-center justify-between gap-3">
             <button
@@ -19580,10 +19590,12 @@ export default function Home() {
             </div>
           )}
         </header>
+        )}
 
-        <BetaNotice />
+        {!immersiveMode && <BetaNotice />}
 
-        <div className="grid flex-1 md:grid-cols-[260px_1fr]">
+        <div className={immersiveMode ? "flex min-h-screen flex-1" : "grid flex-1 md:grid-cols-[260px_1fr]"}>
+          {!immersiveMode && (
           <aside className="hidden border-r border-stone-200 bg-white/45 p-4 md:block">
             <nav className="space-y-2">
               <NavButton icon={<HomeIcon size={18} />} label="Today" active={tab === "today"} onClick={() => setTab("today")} />
@@ -19618,8 +19630,9 @@ export default function Home() {
               </p>
             </div>
           </aside>
+          )}
 
-          <section className="min-w-0 pb-32 md:pb-6">
+          <section className={immersiveMode ? "min-w-0 flex-1" : "min-w-0 pb-32 md:pb-6"}>
             {showLibraryAcquisitionAdmin && (
               <div className="p-4 md:p-6">
                 {canOpenAdminArea ? (
@@ -20414,7 +20427,7 @@ export default function Home() {
         </div>
 
 	      </div>
-	      {!((tab === "sermons" && (sermonWorkspaceView === "presenting" || sermonWorkspaceView === "preaching")) || (tab === "presentations" && presentationWorkspaceView === "presenter")) && <MobileNav tab={tab} onTab={setTab} />}
+	      {!immersiveMode && <MobileNav tab={tab} onTab={setTab} />}
 
 	      {tab === "bible" && studyRef && activeVerse && (
         <StudyDrawer

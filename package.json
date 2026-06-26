@@ -10,6 +10,7 @@
     "import:webster": "node scripts/import-websters-1828.mjs",
     "import:tsk": "node scripts/import-tsk-cross-references.mjs",
     "validate:tsk": "node scripts/validate-tsk-cross-references.mjs",
+    "validate:tsk:all": "node scripts/validate-all-tsk-cross-references.mjs",
     "prepare:tsk-metav": "node scripts/prepare-tsk-metav-cross-references.mjs",
     "prepare:tsk-metav-full": "node scripts/prepare-tsk-metav-full-staging.mjs",
     "create:tsk-metav-review-batch": "node scripts/create-tsk-metav-review-batch.mjs",
