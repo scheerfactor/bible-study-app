@@ -129,13 +129,19 @@ function normalizeSearch(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+function normalizeStrongNumber(value: string) {
+  const match = String(value ?? "").match(/^([GH])0*(\d+)$/i);
+  if (!match) return String(value ?? "");
+  return `${match[1].toUpperCase()}${Number(match[2])}`;
+}
+
 function scoreEntry(entry: StrongEntry, query: string) {
   const normalizedQuery = normalizeSearch(query);
   const englishWords = entry.english_words ?? [];
   const relatedNumbers = entry.related_numbers ?? [];
   const keyVerses = entry.key_verses ?? [];
 
-  if (entry.strongs_number.toLowerCase() === query) return 120;
+  if (normalizeStrongNumber(entry.strongs_number).toLowerCase() === normalizeStrongNumber(query).toLowerCase()) return 120;
   if (englishWords.some((word) => normalizeSearch(word) === normalizedQuery)) return 110;
   if (normalizeSearch(entry.original_word) === normalizedQuery) return 105;
   if (normalizeSearch(entry.transliteration ?? "") === normalizedQuery) return 100;
@@ -179,7 +185,7 @@ export async function GET(request: Request) {
     const [entries, mappingShard] = await Promise.all([loadEntries(), loadMappingShard(shardBook, shardChapter)]);
     const mappings = mappingShard ?? (await loadMappings());
     const usedChapterShard = Boolean(mappingShard);
-    const entriesByNumber = new Map(entries.map((entry) => [entry.strongs_number, entry]));
+    const entriesByNumber = new Map(entries.map((entry) => [normalizeStrongNumber(entry.strongs_number), entry]));
     const matchingMappings = mappings
       .filter((mapping) => mapping.review_status === "Verified")
       .filter((mapping) => {
@@ -189,7 +195,7 @@ export async function GET(request: Request) {
       .sort((a, b) => a.verse_ref.localeCompare(b.verse_ref, undefined, { numeric: true }) || a.token_index - b.token_index)
       .map((mapping) => ({
         ...mapping,
-        strong_entry: entriesByNumber.get(mapping.strongs_number) ?? null,
+        strong_entry: entriesByNumber.get(normalizeStrongNumber(mapping.strongs_number)) ?? null,
       }));
 
     return Response.json({

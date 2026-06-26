@@ -140,7 +140,11 @@ function refMatches(verseRef, targets) {
 
 function strongNumbersFromLemma(lemma) {
   const matches = String(lemma ?? "").match(/strong:([GH][0-9]+)/g) ?? [];
-  return matches.map((match) => match.replace("strong:", ""));
+  return matches.map((match) => {
+    const [, prefix, digits] = match.match(/strong:([GH])([0-9]+)/) ?? [];
+    if (!prefix || !digits) return match.replace("strong:", "");
+    return `${prefix}${Number(digits)}`;
+  });
 }
 
 function rowsFromWordTag({ verseRef, tokenIndex, tag, body }) {
@@ -190,8 +194,12 @@ function extractRows(xml, targetRefs) {
     const wordPattern = /<w\b([^>]*)>([\s\S]*?)<\/w>/g;
     let wordMatch;
     let tokenIndex = 1;
+    let cursor = 0;
 
     while ((wordMatch = wordPattern.exec(verseBody))) {
+      const beforeTag = verseBody.slice(cursor, wordMatch.index);
+      tokenIndex += verseTokens(stripTags(beforeTag)).length;
+
       const wordRows = rowsFromWordTag({
         verseRef,
         tokenIndex,
@@ -209,6 +217,7 @@ function extractRows(xml, targetRefs) {
       }
 
       tokenIndex += Math.max(wordRows.length, verseTokens(stripTags(wordMatch[2])).length);
+      cursor = wordPattern.lastIndex;
     }
   }
 

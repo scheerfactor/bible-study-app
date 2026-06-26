@@ -30,6 +30,12 @@ function normalizeWord(value) {
     .replace(/[^a-z0-9]+/g, "");
 }
 
+function normalizeStrongNumber(value) {
+  const match = String(value ?? "").match(/^([GH])0*(\d+)$/);
+  if (!match) return String(value ?? "");
+  return `${match[1]}${Number(match[2])}`;
+}
+
 function wordForms(value) {
   const raw = String(value ?? "").toLowerCase();
   const tokens = raw.match(/[a-z0-9]+/g) ?? [];
@@ -59,18 +65,46 @@ async function mappingFiles() {
     .sort();
 }
 
-const [files, strongRaw] = await Promise.all([
-  mappingFiles(),
-  fs.readFile(path.resolve(process.cwd(), "data/strongs/sample-verified-strongs.json"), "utf8"),
-]);
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
-const strongEntries = JSON.parse(strongRaw);
+async function loadStrongEntries() {
+  const root = process.cwd();
+  const files = ["data/strongs/sample-verified-strongs.json"];
+  const batchIndexPath = path.resolve(root, "data/strongs/lexicon-batches/index.json");
+  if (await fileExists(batchIndexPath)) {
+    const batchIndex = JSON.parse(await fs.readFile(batchIndexPath, "utf8"));
+    if (Array.isArray(batchIndex.files)) files.push(...batchIndex.files);
+  }
+
+  const byNumber = new Map();
+  for (const file of files) {
+    const rows = JSON.parse(await fs.readFile(path.resolve(root, file), "utf8"));
+    if (!Array.isArray(rows)) {
+      throw new Error(`${file} must contain a JSON array.`);
+    }
+    for (const entry of rows) {
+      if (entry?.strongs_number && !byNumber.has(entry.strongs_number)) {
+        byNumber.set(entry.strongs_number, entry);
+      }
+    }
+  }
+  return [...byNumber.values()];
+}
+
+const [files, strongEntries] = await Promise.all([mappingFiles(), loadStrongEntries()]);
 const verifiedStrongNumbers = new Set(
   strongEntries
     .filter((entry) => entry.review_status === "Verified")
-    .map((entry) => entry.strongs_number),
+    .map((entry) => normalizeStrongNumber(entry.strongs_number)),
 );
-const strongEntriesByNumber = new Map(strongEntries.map((entry) => [entry.strongs_number, entry]));
+const strongEntriesByNumber = new Map(strongEntries.map((entry) => [normalizeStrongNumber(entry.strongs_number), entry]));
 
 const seen = new Set();
 const errors = [];
@@ -125,13 +159,13 @@ for (const file of files) {
 
     if (!/^[GH][0-9]+$/.test(mapping.strongs_number ?? "")) {
       errors.push(`Row ${row} has invalid Strong's number: ${mapping.strongs_number}`);
-    } else if (!verifiedStrongNumbers.has(mapping.strongs_number)) {
+    } else if (!verifiedStrongNumbers.has(normalizeStrongNumber(mapping.strongs_number))) {
       missingLexiconNumbers.add(mapping.strongs_number);
       if (strictLexicon) {
-        errors.push(`Row ${row} maps to a Strong's number not present in the verified lexicon sample: ${mapping.strongs_number}`);
+        errors.push(`Row ${row} maps to a Strong's number not present in the verified lexicon: ${mapping.strongs_number}`);
       }
     } else {
-      const strongEntry = strongEntriesByNumber.get(mapping.strongs_number);
+      const strongEntry = strongEntriesByNumber.get(normalizeStrongNumber(mapping.strongs_number));
       const allowedForms = new Set((strongEntry?.english_words ?? []).flatMap((word) => [...wordForms(word)]));
       const mappedForms = wordForms(mapping.normalized_kjv_word || mapping.kjv_word);
       if (![...mappedForms].some((form) => allowedForms.has(form))) {
@@ -163,7 +197,7 @@ if (missingLexiconNumbers.size) {
 }
 if (glossMismatchRows.length) {
   console.warn(
-    `Warning: ${glossMismatchRows.length} reviewed mapping rows use KJV words not listed in the current starter lexicon glosses. ` +
+    `Warning: ${glossMismatchRows.length} reviewed mapping rows use KJV words not listed in the current compact lexicon glosses. ` +
       "Run with --strict-lexicon to fail on these while expanding lexicon cards.",
   );
 }
@@ -173,6 +207,7 @@ console.log("KJV Strong's mapping validation complete");
 console.table({
   files: files.length,
   rows: rowCount,
+  verifiedLexiconEntries: verifiedStrongNumbers.size,
   versesCovered: versesCovered.size,
   errors: errors.length,
   warnings: warnings.length,

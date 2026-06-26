@@ -1,6 +1,6 @@
 # Strong's Lexicon Gap Report
 
-Generated: 2026-06-26T21:42:11.170Z
+Generated: 2026-06-26T22:43:30.749Z
 
 This report ranks Strong's numbers that appear in reviewed KJV word mappings but do not yet have verified lexicon cards.
 
@@ -8,11 +8,11 @@ This report ranks Strong's numbers that appear in reviewed KJV word mappings but
 
 | Metric | Count |
 | --- | ---: |
-| Mapping files | 8 |
-| Verified mapping rows | 47,010 |
-| Verified lexicon entries | 14,285 |
+| Mapping files | 9 |
+| Verified mapping rows | 55,061 |
+| Verified lexicon entries | 14,184 |
 | Missing lexicon numbers | 0 |
-| Mapping rows with lexicon cards | 47,010 |
+| Mapping rows with lexicon cards | 55,061 |
 | Mapping rows missing lexicon cards | 0 |
 | Mapping-row definition coverage | 100% |
 

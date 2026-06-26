@@ -64,6 +64,12 @@ function normalizeWord(value) {
     .replace(/[^a-z0-9]+/g, "");
 }
 
+function normalizeStrongNumber(value) {
+  const match = String(value ?? "").match(/^([GH])0*(\d+)$/);
+  if (!match) return String(value ?? "");
+  return `${match[1]}${Number(match[2])}`;
+}
+
 function pushLimited(list, value, limit = 12) {
   if (!value || list.includes(value) || list.length >= limit) return;
   list.push(value);
@@ -108,7 +114,9 @@ async function lexiconEntries() {
 
 async function main() {
   const [entries, files] = await Promise.all([lexiconEntries(), mappingFiles()]);
-  const verifiedNumbers = new Set(entries.filter((entry) => entry.review_status === "Verified").map((entry) => entry.strongs_number));
+  const verifiedNumbers = new Set(
+    entries.filter((entry) => entry.review_status === "Verified").map((entry) => normalizeStrongNumber(entry.strongs_number)),
+  );
   const gaps = new Map();
   const covered = new Map();
   let rows = 0;
@@ -120,7 +128,7 @@ async function main() {
       rows += 1;
       if (mapping.review_status !== "Verified") continue;
       verifiedMappingRows += 1;
-      const number = mapping.strongs_number;
+      const number = normalizeStrongNumber(mapping.strongs_number);
       const target = verifiedNumbers.has(number) ? covered : gaps;
       const record = target.get(number) ?? {
         strongs_number: number,

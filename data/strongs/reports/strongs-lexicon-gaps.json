@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-06-26T21:42:11.170Z",
+  "generated_at": "2026-06-26T22:43:30.749Z",
   "source": "data/strongs/mapping-batches/*.json",
   "lexicon_source": "data/strongs/sample-verified-strongs.json + data/strongs/lexicon-batches/index.json",
   "totals": {
-    "mapping_files": 8,
-    "mapping_rows": 47010,
-    "verified_mapping_rows": 47010,
-    "verified_lexicon_entries": 14285,
+    "mapping_files": 9,
+    "mapping_rows": 55061,
+    "verified_mapping_rows": 55061,
+    "verified_lexicon_entries": 14184,
     "missing_lexicon_numbers": 0,
-    "covered_mapping_rows": 47010,
+    "covered_mapping_rows": 55061,
     "missing_mapping_rows": 0,
     "covered_mapping_row_percent": 100
   },
