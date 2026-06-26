@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T22:49:43.310Z",
+  "generated_at": "2026-06-26T23:21:15.921Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 7625,
@@ -43,8 +43,8 @@
       "files": 2,
       "present": 2,
       "missing": 0,
-      "total_bytes": 46672242,
-      "total_size": "44.51 MB"
+      "total_bytes": 68805862,
+      "total_size": "65.62 MB"
     },
     "tsk_cross_reference_batch": {
       "files": 10,
@@ -57,8 +57,8 @@
       "files": 1472,
       "present": 1472,
       "missing": 0,
-      "total_bytes": 1213177340,
-      "total_size": "1.13 GB"
+      "total_bytes": 1235310960,
+      "total_size": "1.15 GB"
     }
   },
   "items": [
@@ -17279,8 +17279,8 @@
       "source_path": "data/strongs/kjv-strongs-mappings.reviewed.json",
       "storage_path": "data/strongs/kjv-strongs-mappings.reviewed.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 46487479,
-      "checksum_sha256": "9e871b1358cfdd1a53b0fb8c240fd30fa9b0c973468bd715d5cb4e0ac583b97a"
+      "size_bytes": 68621099,
+      "checksum_sha256": "8f9a903bee46a41bc3a5a58e7eec0b0f74a1cb2353c260b37fadf66dca27a946"
     },
     {
       "kind": "tsk_cross_reference_batch",
