@@ -1177,27 +1177,52 @@ type UploadedPublicDomainAudioPilot = {
 
 type BibleAudioPilot = UploadedPublicDomainAudioPilot & {
   bibleBook: string;
-  bibleChapter: number;
+  bibleStartChapter: number;
+  bibleEndChapter: number;
 };
 
 const BIBLE_AUDIO_PILOTS: BibleAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
   .filter((pilot) => pilot.kind === "Bible Audio" && pilot.publicUrl && pilot.segmentTitle)
   .flatMap((pilot) => {
-    const match = pilot.segmentTitle.match(/^(.+?)\s+(\d+)$/);
+    const match = pilot.segmentTitle.match(/^(.+?)\s+(\d+)(?:-(\d+))?$/);
     if (!match) return [];
+    const startChapter = Number(match[2]);
+    const endChapter = Number(match[3] ?? match[2]);
     return [{
       ...pilot,
       bibleBook: match[1],
-      bibleChapter: Number(match[2]),
+      bibleStartChapter: startChapter,
+      bibleEndChapter: endChapter,
     }];
   });
 
 function bibleAudioPilotFor(targetBook: string, targetChapter: number, canUseAdminDrafts: boolean) {
   return BIBLE_AUDIO_PILOTS.find((pilot) => (
     pilot.bibleBook === targetBook &&
-    pilot.bibleChapter === targetChapter &&
+    pilot.bibleStartChapter === targetChapter &&
+    pilot.bibleEndChapter === targetChapter &&
     (pilot.visibility === "Public after review" || canUseAdminDrafts)
   )) ?? null;
+}
+
+function bibleAudioPilotsForRange(targetBook: string, startChapter: number, endChapter: number, canUseAdminDrafts: boolean) {
+  const availablePilots = BIBLE_AUDIO_PILOTS
+    .filter((pilot) => (
+      pilot.bibleBook === targetBook &&
+      pilot.bibleStartChapter >= startChapter &&
+      pilot.bibleEndChapter <= endChapter &&
+      (pilot.visibility === "Public after review" || canUseAdminDrafts)
+    ))
+    .sort((a, b) => a.bibleStartChapter - b.bibleStartChapter);
+  const selected: BibleAudioPilot[] = [];
+  let nextChapter = startChapter;
+  for (const pilot of availablePilots) {
+    if (pilot.bibleStartChapter !== nextChapter) continue;
+    selected.push(pilot);
+    nextChapter = pilot.bibleEndChapter + 1;
+    if (nextChapter > endChapter) break;
+  }
+  return nextChapter > endChapter ? selected : [];
 }
 
 type AudiobookPilotSegment = {
@@ -18141,16 +18166,23 @@ export default function Home() {
     saveBibleListeningProgress(nextProgress);
   }
 
-  function startUploadedBibleAudioPilot(pilot: BibleAudioPilot, verses: BibleVerse[], label: string, targetId: string, repeat = false, startProgress?: number) {
+  function startUploadedBibleAudioPilotSequence(pilots: BibleAudioPilot[], verses: BibleVerse[], label: string, targetId: string, repeat = false, startProgress?: number) {
     if (!verses.length) {
       setSyncMessage("No Bible text is available for that listening selection.");
       return;
     }
+    if (!pilots.length) return;
     if (typeof window === "undefined") return;
 
+    const orderedPilots = [...pilots].sort((a, b) => a.bibleStartChapter - b.bibleStartChapter);
     const savedStart = startProgress ?? (bibleListeningProgress?.targetId === targetId ? bibleListeningProgress.progress : 0);
-    const singleChapterBook = verses[0]?.book;
-    const singleChapterNumber = verses[0]?.chapter;
+    const segmentPercent = 100 / orderedPilots.length;
+    const startIndex = Math.min(orderedPilots.length - 1, Math.max(0, Math.floor(savedStart / segmentPercent)));
+    const chaptersListened = Array.from(new Set(verses.map((verse) => `${verse.book}|${verse.chapter}`)))
+      .map((value) => {
+        const [chapterBook, chapterNumber] = value.split("|");
+        return { book: chapterBook, chapter: Number(chapterNumber) };
+      });
 
     if ("speechSynthesis" in window) {
       speechCancelledRef.current = true;
@@ -18163,90 +18195,113 @@ export default function Home() {
       sleepTimerRef.current = null;
     }
 
-    const audio = new Audio(pilot.publicUrl);
-    audio.preload = "metadata";
-    audio.playbackRate = speechRateRef.current;
-    uploadedBibleAudioRef.current = audio;
-    uploadedBibleAudioTargetRef.current = targetId;
     speechChunksRef.current = [];
     speechVerseRefsRef.current = [];
     speechItemLabelsRef.current = [label];
     speechProgressRef.current = (nextProgress) => saveBibleProgress(targetId, label, verses, nextProgress);
     speechCompleteRef.current = null;
 
-    const updateProgress = () => {
-      if (uploadedBibleAudioTargetRef.current !== targetId) return;
-      const progress = Number.isFinite(audio.duration) && audio.duration > 0
-        ? Math.min(100, Math.max(0, (audio.currentTime / audio.duration) * 100))
-        : savedStart;
-      saveBibleProgress(targetId, label, verses, progress);
+    const playSegment = (segmentIndex: number, segmentStartProgress: number) => {
+      const pilot = orderedPilots[segmentIndex];
+      if (!pilot) return;
+      stopUploadedBibleAudioElement();
+      const audio = new Audio(pilot.publicUrl);
+      audio.preload = "metadata";
+      audio.playbackRate = speechRateRef.current;
+      uploadedBibleAudioRef.current = audio;
+      uploadedBibleAudioTargetRef.current = targetId;
+      const segmentBaseProgress = segmentIndex * segmentPercent;
+      const nextItemLabel = orderedPilots[segmentIndex + 1]?.segmentTitle ?? null;
+      const updateProgress = () => {
+        if (uploadedBibleAudioTargetRef.current !== targetId) return;
+        const localProgress = Number.isFinite(audio.duration) && audio.duration > 0
+          ? Math.min(100, Math.max(0, (audio.currentTime / audio.duration) * 100))
+          : Math.max(0, Math.min(100, ((segmentStartProgress - segmentBaseProgress) / segmentPercent) * 100));
+        const progress = Math.min(100, segmentBaseProgress + (localProgress / 100) * segmentPercent);
+        saveBibleProgress(targetId, label, verses, progress);
+        setSpeechState((state) => ({
+          ...state,
+          targetId,
+          label,
+          playing: true,
+          paused: audio.paused,
+          progress,
+          currentChunkIndex: segmentIndex,
+          totalChunkCount: orderedPilots.length,
+          currentItemLabel: pilot.segmentTitle,
+          nextItemLabel,
+        }));
+      };
+
+      audio.onloadedmetadata = () => {
+        if (
+          segmentStartProgress > segmentBaseProgress &&
+          segmentStartProgress < segmentBaseProgress + segmentPercent &&
+          Number.isFinite(audio.duration) &&
+          audio.duration > 0
+        ) {
+          const localPercent = ((segmentStartProgress - segmentBaseProgress) / segmentPercent) * 100;
+          audio.currentTime = (localPercent / 100) * audio.duration;
+        }
+        updateProgress();
+      };
+      audio.ontimeupdate = updateProgress;
+      audio.onended = () => {
+        if (uploadedBibleAudioTargetRef.current !== targetId) return;
+        const nextSegmentIndex = segmentIndex + 1;
+        if (nextSegmentIndex < orderedPilots.length) {
+          playSegment(nextSegmentIndex, nextSegmentIndex * segmentPercent);
+          return;
+        }
+        saveBibleProgress(targetId, label, verses, 100);
+        chaptersListened.forEach((chapterRecord) => markListenedChapter(chapterRecord.book, chapterRecord.chapter));
+        uploadedBibleAudioRef.current = null;
+        uploadedBibleAudioTargetRef.current = null;
+        setSpeechState((state) => ({
+          ...state,
+          playing: false,
+          paused: false,
+          progress: 100,
+          currentChunkIndex: null,
+          currentItemLabel: null,
+          nextItemLabel: null,
+        }));
+        if (repeat) startUploadedBibleAudioPilotSequence(orderedPilots, verses, label, targetId, true, 0);
+      };
+      audio.onerror = () => {
+        stopUploadedBibleAudioElement();
+        setSyncMessage("Uploaded audio could not start. Falling back to browser speech.");
+        startBibleListening(verses, label, targetId, repeat, segmentStartProgress);
+      };
+
       setSpeechState((state) => ({
         ...state,
         targetId,
         label,
         playing: true,
-        paused: audio.paused,
-        progress,
-        currentChunkIndex: 0,
-        totalChunkCount: 1,
-        currentItemLabel: `${label} uploaded audio`,
-        nextItemLabel: null,
-      }));
-    };
-
-    audio.onloadedmetadata = () => {
-      if (savedStart > 0 && savedStart < 100 && Number.isFinite(audio.duration) && audio.duration > 0) {
-        audio.currentTime = (savedStart / 100) * audio.duration;
-      }
-      updateProgress();
-    };
-    audio.ontimeupdate = updateProgress;
-    audio.onended = () => {
-      if (uploadedBibleAudioTargetRef.current !== targetId) return;
-      saveBibleProgress(targetId, label, verses, 100);
-      if (singleChapterBook && singleChapterNumber) {
-        markListenedChapter(singleChapterBook, singleChapterNumber);
-      }
-      uploadedBibleAudioRef.current = null;
-      uploadedBibleAudioTargetRef.current = null;
-      setSpeechState((state) => ({
-        ...state,
-        playing: false,
         paused: false,
-        progress: 100,
-        currentChunkIndex: null,
-        currentItemLabel: null,
-        nextItemLabel: null,
+        progress: segmentStartProgress,
+        currentChunkIndex: segmentIndex,
+        totalChunkCount: orderedPilots.length,
+        currentItemLabel: pilot.segmentTitle,
+        nextItemLabel,
+        sleepTimerMinutes: null,
+        sleepTimerEndsAt: null,
       }));
-      if (repeat) startUploadedBibleAudioPilot(pilot, verses, label, targetId, true, 0);
-    };
-    audio.onerror = () => {
-      stopUploadedBibleAudioElement();
-      setSyncMessage("Uploaded audio could not start. Falling back to browser speech.");
-      startBibleListening(verses, label, targetId, repeat, savedStart);
+      void audio.play()
+        .then(() => setSyncMessage(`${label} is using the uploaded public-domain audio pilot set.`))
+        .catch(() => {
+          stopUploadedBibleAudioElement();
+          setSyncMessage("Uploaded audio could not start. Falling back to browser speech.");
+          startBibleListening(verses, label, targetId, repeat, segmentStartProgress);
+        });
     };
 
-    setSpeechState((state) => ({
-      ...state,
-      targetId,
-      label,
-      playing: true,
-      paused: false,
-      progress: savedStart,
-      currentChunkIndex: 0,
-      totalChunkCount: 1,
-      currentItemLabel: `${label} uploaded audio`,
-      nextItemLabel: null,
-      sleepTimerMinutes: null,
-      sleepTimerEndsAt: null,
-    }));
-    void audio.play()
-      .then(() => setSyncMessage(`${label} is using the uploaded public-domain audio pilot.`))
-      .catch(() => {
-        stopUploadedBibleAudioElement();
-        setSyncMessage("Uploaded audio could not start. Falling back to browser speech.");
-        startBibleListening(verses, label, targetId, repeat, savedStart);
-      });
+    playSegment(startIndex, savedStart);
+  }
+
+  function startUploadedBibleAudioPilot(pilot: BibleAudioPilot, verses: BibleVerse[], label: string, targetId: string, repeat = false, startProgress?: number) {
+    startUploadedBibleAudioPilotSequence([pilot], verses, label, targetId, repeat, startProgress);
   }
 
   function startBibleListening(verses: BibleVerse[], label: string, targetId: string, repeat = false, startProgress?: number) {
@@ -18314,6 +18369,11 @@ export default function Home() {
 
   function listenWholeBook() {
     const verses = allVerses.filter((verse) => verse.book === book);
+    const fullBookPilots = bibleAudioPilotsForRange(book, chapters[0] ?? 1, chapters.at(-1) ?? 1, canOpenAdminArea);
+    if (fullBookPilots.length) {
+      startUploadedBibleAudioPilotSequence(fullBookPilots, verses, `${book}`, `bible-book-${book}`, repeatBook);
+      return;
+    }
     startBibleListening(verses, `${book}`, `bible-book-${book}`, repeatBook);
   }
 
@@ -18321,6 +18381,11 @@ export default function Home() {
     const start = Math.min(startChapter, endChapter);
     const end = Math.max(startChapter, endChapter);
     const verses = allVerses.filter((verse) => verse.book === targetBook && verse.chapter >= start && verse.chapter <= end);
+    const rangePilots = bibleAudioPilotsForRange(targetBook, start, end, canOpenAdminArea);
+    if (rangePilots.length) {
+      startUploadedBibleAudioPilotSequence(rangePilots, verses, `${targetBook} ${start}-${end}`, `bible-range-${targetBook}-${start}-${end}`);
+      return;
+    }
     startBibleListening(verses, `${targetBook} ${start}-${end}`, `bible-range-${targetBook}-${start}-${end}`);
   }
 
