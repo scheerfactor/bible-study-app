@@ -43403,7 +43403,7 @@ function SermonWorkspaceScreen({
 
 	  if (view === "preaching") {
     return (
-      <div className={`min-h-screen p-4 pb-36 md:p-8 md:pb-10 ${darkPreachingMode ? "bg-[var(--ink)] text-white" : "bg-[#fffdf8] text-[var(--ink)]"}`}>
+      <div className={`min-h-screen p-4 pb-44 md:p-8 md:pb-40 xl:pb-10 ${darkPreachingMode ? "bg-[var(--ink)] text-white" : "bg-[#fffdf8] text-[var(--ink)]"}`}>
         <div className={`sticky top-0 z-10 -mx-4 border-b px-4 py-3 backdrop-blur md:static md:mx-0 md:rounded-3xl md:border md:px-5 ${darkPreachingMode ? "border-white/10 bg-[var(--ink)]/95" : "border-[var(--line)] bg-white/95"}`}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <button className={`inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold ${darkPreachingMode ? "bg-white/10 text-white" : "bg-[var(--paper)] text-[var(--green)]"}`} onClick={() => onViewChange("builder")} type="button">
@@ -43422,6 +43422,7 @@ function SermonWorkspaceScreen({
             <button className={`rounded-full px-3 py-2 text-xs font-semibold ${darkPreachingMode ? "bg-white text-[var(--ink)]" : "bg-[var(--ink)] text-white"}`} onClick={() => setDarkPreachingMode((value) => !value)} type="button">{darkPreachingMode ? "Light Mode" : "Dark Mode"}</button>
             <button className={`rounded-full px-3 py-2 text-xs font-semibold ${darkPreachingMode ? "bg-white/10 text-white" : "bg-[var(--paper)] text-[var(--muted)]"}`} onClick={() => setPreachingSectionIndex((index) => Math.max(0, index - 1))} type="button">Previous</button>
             <button className={`rounded-full px-3 py-2 text-xs font-semibold ${darkPreachingMode ? "bg-white/10 text-white" : "bg-[var(--paper)] text-[var(--muted)]"}`} onClick={() => setPreachingSectionIndex((index) => Math.min(preachingSections.length - 1, index + 1))} type="button">Next</button>
+            <span className={`rounded-full px-3 py-2 text-xs font-semibold ${darkPreachingMode ? "bg-white/10 text-white/70" : "bg-[var(--paper)] text-[var(--muted)]"}`}>Tap notes to advance</span>
           </div>
         </div>
 
@@ -43438,7 +43439,7 @@ function SermonWorkspaceScreen({
 
           {activePreachingSection ? (
             <button
-              className={`mt-8 block w-full rounded-3xl border p-5 text-left shadow-sm ${darkPreachingMode ? "border-white/10 bg-white/5" : "border-[var(--line)] bg-white"}`}
+              className={`mt-8 block min-h-[48vh] w-full touch-manipulation rounded-3xl border p-5 text-left shadow-sm md:p-7 ${darkPreachingMode ? "border-white/10 bg-white/5" : "border-[var(--line)] bg-white"}`}
               onClick={() => setPreachingSectionIndex((index) => Math.min(preachingSections.length - 1, index + 1))}
               type="button"
             >
@@ -43472,6 +43473,35 @@ function SermonWorkspaceScreen({
             ))}
           </div>
         </section>
+
+        <div className={`fixed inset-x-0 bottom-0 z-20 border-t p-3 shadow-2xl backdrop-blur xl:hidden ${darkPreachingMode ? "border-white/10 bg-[var(--ink)]/95" : "border-[var(--line)] bg-white/95"}`}>
+          <div className="mx-auto grid max-w-4xl grid-cols-[auto_1fr_auto] items-center gap-2">
+            <button
+              className={`min-h-14 rounded-2xl px-4 text-sm font-semibold disabled:opacity-40 ${darkPreachingMode ? "bg-white/10 text-white" : "border border-[var(--line)] bg-[var(--paper)] text-[var(--green)]"}`}
+              disabled={preachingSectionIndex <= 0}
+              onClick={() => setPreachingSectionIndex((index) => Math.max(0, index - 1))}
+              type="button"
+            >
+              Previous
+            </button>
+            <div className="min-w-0 text-center">
+              <p className={`truncate text-xs font-semibold uppercase tracking-[0.14em] ${darkPreachingMode ? "text-white/55" : "text-[var(--muted)]"}`}>
+                {activePreachingSection?.label ?? "No section"}
+              </p>
+              <p className={`mt-1 text-sm font-semibold ${darkPreachingMode ? "text-white" : "text-[var(--ink)]"}`}>
+                {formatSermonTimer(elapsedSeconds)} · {formatSermonTimer(remainingSeconds)} left
+              </p>
+            </div>
+            <button
+              className="min-h-14 rounded-2xl bg-[var(--green)] px-5 text-sm font-semibold text-white disabled:opacity-40"
+              disabled={!preachingSections.length || preachingSectionIndex >= preachingSections.length - 1}
+              onClick={() => setPreachingSectionIndex((index) => Math.min(preachingSections.length - 1, index + 1))}
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
