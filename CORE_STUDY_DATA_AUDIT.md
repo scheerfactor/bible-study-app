@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-27T19:15:45.342Z
+Generated: 2026-06-27T23:49:53.241Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-27T19:15:45.342Z
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
 - Strong's lexicon entries: 14286; reviewed KJV word mappings: 87802 rows from 10 batch files across 13 books and 167 chapters (broad import).
-- Public TSK rows: 3859; staged TSK rows: 50; source verses covered: 1411; chapters covered: 483; books covered: 66 (reviewed samples only).
+- Public TSK rows: 4293; staged TSK rows: 50; source verses covered: 1531; chapters covered: 585; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,18 +71,18 @@ Generated: 2026-06-27T19:15:45.342Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Joshua | 3 | 24 | 12.5% | 21 | 45 |
-| Proverbs | 4 | 31 | 12.9% | 4 | 4 |
-| 1 Chronicles | 4 | 29 | 13.8% | 29 | 44 |
-| Psalms | 21 | 150 | 14% | 45 | 222 |
-| Micah | 1 | 7 | 14.3% | 1 | 1 |
-| Exodus | 6 | 40 | 15% | 11 | 11 |
-| Genesis | 8 | 50 | 16% | 13 | 25 |
-| 1 Timothy | 1 | 6 | 16.7% | 1 | 1 |
-| Ecclesiastes | 2 | 12 | 16.7% | 2 | 2 |
-| Galatians | 1 | 6 | 16.7% | 12 | 24 |
-| Ephesians | 1 | 6 | 16.7% | 12 | 24 |
-| Revelation | 4 | 22 | 18.2% | 34 | 94 |
+| Psalms | 21 | 150 | 14% | 45 | 270 |
+| 1 John | 1 | 5 | 20% | 1 | 1 |
+| 1 Peter | 1 | 5 | 20% | 12 | 23 |
+| Lamentations | 1 | 5 | 20% | 12 | 24 |
+| James | 1 | 5 | 20% | 12 | 24 |
+| Nehemiah | 3 | 13 | 23.1% | 14 | 38 |
+| John | 5 | 21 | 23.8% | 23 | 67 |
+| Ruth | 1 | 4 | 25% | 1 | 1 |
+| Jonah | 1 | 4 | 25% | 1 | 1 |
+| Philippians | 1 | 4 | 25% | 12 | 23 |
+| Colossians | 1 | 4 | 25% | 12 | 24 |
+| Zechariah | 4 | 14 | 28.6% | 26 | 55 |
 
 ## Thinnest Commentary Books
 

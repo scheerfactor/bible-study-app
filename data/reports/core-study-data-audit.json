@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 3859,
+    "rows": 4293,
     "stagedRows": 50,
-    "sourceVersesCovered": 1411,
+    "sourceVersesCovered": 1531,
     "booksCovered": 66,
-    "chaptersCovered": 483,
+    "chaptersCovered": 585,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -227,100 +227,100 @@
     ],
     "weakestBooks": [
       {
-        "book": "Joshua",
-        "chaptersCovered": 3,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 12.5,
-        "versesCovered": 21,
-        "rows": 45
-      },
-      {
-        "book": "Proverbs",
-        "chaptersCovered": 4,
-        "totalChapters": 31,
-        "chapterCoveragePercent": 12.9,
-        "versesCovered": 4,
-        "rows": 4
-      },
-      {
-        "book": "1 Chronicles",
-        "chaptersCovered": 4,
-        "totalChapters": 29,
-        "chapterCoveragePercent": 13.8,
-        "versesCovered": 29,
-        "rows": 44
-      },
-      {
         "book": "Psalms",
         "chaptersCovered": 21,
         "totalChapters": 150,
         "chapterCoveragePercent": 14,
         "versesCovered": 45,
-        "rows": 222
+        "rows": 270
       },
       {
-        "book": "Micah",
+        "book": "1 John",
         "chaptersCovered": 1,
-        "totalChapters": 7,
-        "chapterCoveragePercent": 14.3,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 20,
         "versesCovered": 1,
         "rows": 1
       },
       {
-        "book": "Exodus",
-        "chaptersCovered": 6,
-        "totalChapters": 40,
-        "chapterCoveragePercent": 15,
-        "versesCovered": 11,
-        "rows": 11
-      },
-      {
-        "book": "Genesis",
-        "chaptersCovered": 8,
-        "totalChapters": 50,
-        "chapterCoveragePercent": 16,
-        "versesCovered": 13,
-        "rows": 25
-      },
-      {
-        "book": "1 Timothy",
+        "book": "1 Peter",
         "chaptersCovered": 1,
-        "totalChapters": 6,
-        "chapterCoveragePercent": 16.7,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 20,
+        "versesCovered": 12,
+        "rows": 23
+      },
+      {
+        "book": "Lamentations",
+        "chaptersCovered": 1,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 20,
+        "versesCovered": 12,
+        "rows": 24
+      },
+      {
+        "book": "James",
+        "chaptersCovered": 1,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 20,
+        "versesCovered": 12,
+        "rows": 24
+      },
+      {
+        "book": "Nehemiah",
+        "chaptersCovered": 3,
+        "totalChapters": 13,
+        "chapterCoveragePercent": 23.1,
+        "versesCovered": 14,
+        "rows": 38
+      },
+      {
+        "book": "John",
+        "chaptersCovered": 5,
+        "totalChapters": 21,
+        "chapterCoveragePercent": 23.8,
+        "versesCovered": 23,
+        "rows": 67
+      },
+      {
+        "book": "Ruth",
+        "chaptersCovered": 1,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 25,
         "versesCovered": 1,
         "rows": 1
       },
       {
-        "book": "Ecclesiastes",
-        "chaptersCovered": 2,
-        "totalChapters": 12,
-        "chapterCoveragePercent": 16.7,
-        "versesCovered": 2,
-        "rows": 2
+        "book": "Jonah",
+        "chaptersCovered": 1,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 25,
+        "versesCovered": 1,
+        "rows": 1
       },
       {
-        "book": "Galatians",
+        "book": "Philippians",
         "chaptersCovered": 1,
-        "totalChapters": 6,
-        "chapterCoveragePercent": 16.7,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 25,
+        "versesCovered": 12,
+        "rows": 23
+      },
+      {
+        "book": "Colossians",
+        "chaptersCovered": 1,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 25,
         "versesCovered": 12,
         "rows": 24
       },
       {
-        "book": "Ephesians",
-        "chaptersCovered": 1,
-        "totalChapters": 6,
-        "chapterCoveragePercent": 16.7,
-        "versesCovered": 12,
-        "rows": 24
-      },
-      {
-        "book": "Revelation",
+        "book": "Zechariah",
         "chaptersCovered": 4,
-        "totalChapters": 22,
-        "chapterCoveragePercent": 18.2,
-        "versesCovered": 34,
-        "rows": 94
+        "totalChapters": 14,
+        "chapterCoveragePercent": 28.6,
+        "versesCovered": 26,
+        "rows": 55
       }
     ]
   },
