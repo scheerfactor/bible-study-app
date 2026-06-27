@@ -14,4 +14,6 @@ Upload generated shards to Cloudflare R2:
 npm run storage:upload:strongs-shards -- --execute
 ```
 
-The app API first tries to load `data/strongs/mappings-by-chapter/<book>-<chapter>.json` from content storage. If a shard is missing, it falls back to the full reviewed mapping index.
+The app API loads `data/strongs/mappings-by-chapter/<book>-<chapter>.json` from content storage for verse and chapter lookups. If a shard is missing, that chapter returns no Strong's mapping rows until it is reviewed, generated, and uploaded.
+
+The reviewed source of truth is `data/strongs/mapping-batches/*.json`. The older full combined mapping index is intentionally not required by the runtime.

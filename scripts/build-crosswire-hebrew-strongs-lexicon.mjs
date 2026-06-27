@@ -24,7 +24,7 @@ const outputPath = path.resolve(
 );
 const batchIndexPath = path.resolve(root, "data/strongs/lexicon-batches/index.json");
 const baseFile = path.resolve(root, "data/strongs/sample-verified-strongs.json");
-const mappingFile = path.resolve(root, "data/strongs/kjv-strongs-mappings.reviewed.json");
+const mappingBatchesDir = path.resolve(root, "data/strongs/mapping-batches");
 const crossWireRawZipUrl = "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/StrongsHebrew.zip";
 
 function cleanText(value) {
@@ -201,15 +201,22 @@ async function existingStrongNumbers() {
 }
 
 async function mappedHebrewNumbersByNormalizedKey() {
-  const rows = await readJsonIfExists(mappingFile, []);
+  const entries = await fs.readdir(mappingBatchesDir, { withFileTypes: true }).catch(() => []);
+  const files = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => path.join(mappingBatchesDir, entry.name))
+    .sort();
   const mapped = new Map();
-  for (const row of rows) {
-    const number = row?.strongs_number;
-    if (!/^H[0-9]+$/.test(number ?? "")) continue;
-    const key = normalizedStrongKey(number);
-    const bucket = mapped.get(key) ?? new Set();
-    bucket.add(number);
-    mapped.set(key, bucket);
+  for (const file of files) {
+    const rows = await readJsonIfExists(file, []);
+    for (const row of rows) {
+      const number = row?.strongs_number;
+      if (!/^H[0-9]+$/.test(number ?? "")) continue;
+      const key = normalizedStrongKey(number);
+      const bucket = mapped.get(key) ?? new Set();
+      bucket.add(number);
+      mapped.set(key, bucket);
+    }
   }
   return mapped;
 }

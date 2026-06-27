@@ -159,9 +159,9 @@ The mapping format is one row per KJV word/token:
 This gives us the same kind of experience users recognize from e-Sword's KJV+
 view, but with our own documented, rights-safe data pipeline.
 
-The generated production file is
-`data/strongs/kjv-strongs-mappings.reviewed.json`. It should be rebuilt from
-the reviewed batch files, not hand edited.
+The reviewed mapping source is `data/strongs/mapping-batches/*.json`. Generated
+chapter shards are built from those batches and uploaded to content storage for
+runtime lookup. Generated shard files should not be hand edited.
 
 ### CrossWire OSIS Staging Import
 

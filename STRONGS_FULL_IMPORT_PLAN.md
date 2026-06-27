@@ -31,11 +31,14 @@ Father's Business Bible Study should make Strong's useful without making Bible s
 ## KJV Word Mapping Fast Lane
 
 The app can already display Strong's numbers beside KJV words when reviewed
-mapping rows exist. The public mapping index is:
+mapping rows exist. Reviewed source rows live in:
 
 ```text
-data/strongs/kjv-strongs-mappings.reviewed.json
+data/strongs/mapping-batches/
 ```
+
+Chapter lookup shards are generated from those batches and uploaded to content
+storage under `data/strongs/mappings-by-chapter/`.
 
 Current completion state is tracked by:
 

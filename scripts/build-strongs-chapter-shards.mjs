@@ -4,7 +4,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
-const sourcePath = join(repoRoot, "data", "strongs", "kjv-strongs-mappings.reviewed.json");
+const batchesDir = join(repoRoot, "data", "strongs", "mapping-batches");
 const outDir = join(repoRoot, "data", "strongs", "mappings-by-chapter");
 
 function slugForBook(book) {
@@ -38,8 +38,40 @@ async function cleanGeneratedJson() {
   );
 }
 
+async function readReviewedMappings() {
+  const entries = await readdir(batchesDir, { withFileTypes: true }).catch(() => []);
+  const files = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => join(batchesDir, entry.name))
+    .sort();
+
+  const rows = [];
+  const seen = new Set();
+  let duplicateRowsSkipped = 0;
+
+  for (const file of files) {
+    const batchRows = JSON.parse(await readFile(file, "utf8"));
+    if (!Array.isArray(batchRows)) {
+      throw new Error(`${file} must contain a JSON array.`);
+    }
+
+    for (const row of batchRows) {
+      if (row.review_status !== "Verified") continue;
+      const key = `${row.verse_ref}|${row.token_index}|${row.strongs_number}`;
+      if (seen.has(key)) {
+        duplicateRowsSkipped += 1;
+        continue;
+      }
+      seen.add(key);
+      rows.push(row);
+    }
+  }
+
+  return { rows, batchFileCount: files.length, duplicateRowsSkipped };
+}
+
 async function main() {
-  const mappings = JSON.parse(await readFile(sourcePath, "utf8"));
+  const { rows: mappings, batchFileCount, duplicateRowsSkipped } = await readReviewedMappings();
   const groups = new Map();
   let skipped = 0;
 
@@ -90,10 +122,12 @@ async function main() {
 
   const manifest = {
     generated_at: new Date().toISOString(),
-    source_path: "data/strongs/kjv-strongs-mappings.reviewed.json",
+    source_path: "data/strongs/mapping-batches/*.json",
+    source_batch_files: batchFileCount,
     chapters: manifestFiles.length,
     rows: totalRows,
     skipped_rows: skipped,
+    duplicate_rows_skipped: duplicateRowsSkipped,
     files: manifestFiles,
   };
   await writeFile(join(outDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");

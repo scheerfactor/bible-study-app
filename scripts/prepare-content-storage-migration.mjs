@@ -30,7 +30,7 @@ const studyToolFiles = [
 
 const strongsFiles = [
   "data/strongs/sample-verified-strongs.json",
-  "data/strongs/kjv-strongs-mappings.reviewed.json",
+  "data/strongs/lexicon-batches/index.json",
 ];
 
 function relativePath(...parts) {

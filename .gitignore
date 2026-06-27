@@ -30,6 +30,7 @@ data/sources/tsk/metav/
 data/staging/
 data/strongs/source/
 data/strongs/mapping-staging/*.json
+data/strongs/kjv-strongs-mappings.reviewed.json
 data/strongs/mappings-by-chapter/*.json
 !data/strongs/mappings-by-chapter/README.md
 

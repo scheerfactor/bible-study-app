@@ -34,7 +34,7 @@ Use a rights-cleared KJV-to-Strong mapping source, not e-Sword module files.
 3. Convert the source into reviewed batch files under
    `data/strongs/mapping-batches/`.
 4. Validate against the local KJV verse text and verified Strong's lexicon.
-5. Build the optimized reviewed lookup index.
+5. Build optimized reviewed chapter shards.
 6. Promote only reviewed rows.
 7. Store full indexes outside the browser bundle when the dataset gets large.
 
@@ -43,11 +43,12 @@ Commands now available:
 ```bash
 npm run validate:strongs-mapping
 npm run build:strongs-mapping-index
+npm run build:strongs-chapter-shards
 ```
 
-The app reads `data/strongs/kjv-strongs-mappings.reviewed.json` for fast
-chapter lookup. Do not edit that index by hand; rebuild it from the reviewed
-batch folder.
+The app reads generated `data/strongs/mappings-by-chapter/<book>-<chapter>.json`
+shards from content storage for fast chapter lookup. Do not edit generated
+shards by hand; rebuild them from the reviewed batch folder.
 
 ## e-Sword KJV+ Note
 

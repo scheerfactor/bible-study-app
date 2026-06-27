@@ -33,7 +33,6 @@ type StrongMapping = {
 };
 
 let cachedEntries: StrongEntry[] | null = null;
-let cachedMappings: StrongMapping[] | null = null;
 const cachedMappingShards = new Map<string, StrongMapping[]>();
 
 async function loadEntries() {
@@ -72,19 +71,6 @@ async function loadEntries() {
 
   cachedEntries = [...entriesByNumber.values()];
   return cachedEntries;
-}
-
-async function loadMappings() {
-  if (cachedMappings) return cachedMappings;
-  try {
-    const raw = await readTextContent("data/strongs/kjv-strongs-mappings.reviewed.json", {
-      errorLabel: "KJV Strong's mappings",
-    });
-    cachedMappings = JSON.parse(raw) as StrongMapping[];
-  } catch {
-    cachedMappings = [];
-  }
-  return cachedMappings;
 }
 
 function slugForBook(book: string) {
@@ -183,7 +169,7 @@ export async function GET(request: Request) {
     const shardBook = parsedVerse?.book ?? book;
     const shardChapter = parsedVerse?.chapter ?? chapter;
     const [entries, mappingShard] = await Promise.all([loadEntries(), loadMappingShard(shardBook, shardChapter)]);
-    const mappings = mappingShard ?? (await loadMappings());
+    const mappings = mappingShard ?? [];
     const usedChapterShard = Boolean(mappingShard);
     const entriesByNumber = new Map(entries.map((entry) => [normalizeStrongNumber(entry.strongs_number), entry]));
     const matchingMappings = mappings
@@ -201,9 +187,9 @@ export async function GET(request: Request) {
     return Response.json({
       entries: [],
       mappings: matchingMappings,
-      mapping_source: usedChapterShard ? "chapter-shard" : "full-index",
+      mapping_source: usedChapterShard ? "chapter-shard" : "chapter-shard-missing",
       source_note:
-        "Verse-level KJV Strong's mappings are reviewed samples. Chapter lookups use content-storage shards when available.",
+        "Verse-level KJV Strong's mappings use reviewed content-storage shards. Chapters not mapped yet return no Strong's rows until reviewed.",
     });
   }
 
