@@ -25,6 +25,9 @@ const books = String(args.get("books") ?? "")
   .filter(Boolean);
 const maxVersesPerBook = Math.max(1, Number(args.get("max-verses-per-book") ?? 10));
 const maxRefsPerVerse = Math.max(1, Number(args.get("max-refs-per-verse") ?? 2));
+const spreadByChapter = args.get("spread-by-chapter") === "true";
+const avoidExisting = args.get("avoid-existing") === "true";
+const existingImportsDir = path.resolve(process.cwd(), args.get("existing-imports-dir") ?? "data/imports");
 
 if (!books.length) {
   console.error('Usage: npm run create:tsk-metav-review-batch -- --books="Leviticus|Numbers|Mark"');
@@ -75,6 +78,34 @@ function bookFromReference(reference) {
   return match?.[1] ?? "";
 }
 
+function chapterFromReference(reference) {
+  const match = String(reference).match(/^.+ (\d+):\d+$/);
+  return match?.[1] ? Number(match[1]) : null;
+}
+
+async function loadExistingPairs(outputFileName) {
+  if (!avoidExisting) return new Set();
+
+  const pairs = new Set();
+  const entries = await fs.readdir(existingImportsDir, { withFileTypes: true }).catch(() => []);
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".json") || entry.name === outputFileName) continue;
+    const filePath = path.join(existingImportsDir, entry.name);
+    let rows = [];
+    try {
+      rows = JSON.parse(await fs.readFile(filePath, "utf8"));
+    } catch {
+      continue;
+    }
+    if (!Array.isArray(rows)) continue;
+    for (const row of rows) {
+      if (!row?.verse_ref || !row?.target_ref || !row?.source) continue;
+      pairs.add(`${row.verse_ref}|${row.target_ref}|${row.source}`);
+    }
+  }
+  return pairs;
+}
+
 async function main() {
   const [verses, crossRefs] = await Promise.all([
     readJsonOrCsv(path.join(sourceDir, "Verses.csv")),
@@ -90,7 +121,10 @@ async function main() {
   const wantedBooks = new Set(books);
   const rowsByVerse = new Map();
   const selectedVerseRefsByBook = new Map();
-  const seenPairs = new Set();
+  const selectedChaptersByBook = new Map();
+  const outputFileName = path.basename(outputPath);
+  const seenPairs = await loadExistingPairs(outputFileName);
+  let existingPairsAvoided = 0;
 
   for (const row of crossRefs) {
     const verseRef = verseById.get(String(row.VerseID));
@@ -101,15 +135,31 @@ async function main() {
     if (!wantedBooks.has(book)) continue;
 
     const selectedVerses = selectedVerseRefsByBook.get(book) ?? new Set();
+    const selectedChapters = selectedChaptersByBook.get(book) ?? new Set();
+    const chapter = chapterFromReference(verseRef);
     const existingRows = rowsByVerse.get(verseRef) ?? [];
     const pairKey = `${verseRef}|${targetRef}|${sourceMetadata.source}`;
-    if (seenPairs.has(pairKey)) continue;
+    if (seenPairs.has(pairKey)) {
+      existingPairsAvoided += 1;
+      continue;
+    }
     if (!selectedVerses.has(verseRef) && selectedVerses.size >= maxVersesPerBook) continue;
+    if (
+      spreadByChapter &&
+      chapter &&
+      !selectedVerses.has(verseRef) &&
+      selectedChapters.has(chapter) &&
+      selectedChapters.size < maxVersesPerBook
+    ) {
+      continue;
+    }
     if (existingRows.length >= maxRefsPerVerse) continue;
 
     seenPairs.add(pairKey);
     selectedVerses.add(verseRef);
+    if (chapter) selectedChapters.add(chapter);
     selectedVerseRefsByBook.set(book, selectedVerses);
+    selectedChaptersByBook.set(book, selectedChapters);
     existingRows.push({
       verse_ref: verseRef,
       target_ref: targetRef,
@@ -131,6 +181,7 @@ async function main() {
 
   const coverage = books.map((book) => ({
     book,
+    chapters: selectedChaptersByBook.get(book)?.size ?? 0,
     sourceVerses: selectedVerseRefsByBook.get(book)?.size ?? 0,
     rows: output.filter((row) => bookFromReference(row.verse_ref) === book).length,
   }));
@@ -142,6 +193,9 @@ async function main() {
     books: books.length,
     maxVersesPerBook,
     maxRefsPerVerse,
+    spreadByChapter,
+    avoidExisting,
+    existingPairsAvoided,
   });
   console.table(coverage);
 }
