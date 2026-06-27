@@ -8,7 +8,7 @@
     "verifiedResources": 1313
   },
   "commentary": {
-    "publicRows": 7381,
+    "publicRows": 7633,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -53,12 +53,12 @@
     ]
   },
   "strongs": {
-    "verifiedEntries": 301,
-    "reviewedMappingFiles": 8,
-    "reviewedMappingRows": 47010,
+    "verifiedEntries": 14286,
+    "reviewedMappingFiles": 10,
+    "reviewedMappingRows": 87802,
     "reviewedMappedBooks": 13,
-    "reviewedMappedChapters": 104,
-    "status": "starter data only",
+    "reviewedMappedChapters": 167,
+    "status": "broad import",
     "focusWordChecks": [
       {
         "word": "believe",

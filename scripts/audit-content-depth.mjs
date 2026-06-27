@@ -89,11 +89,29 @@ async function tskSummary() {
   return { files: files.length, references, sourceVerses: sourceVerses.size };
 }
 
+async function strongsMappingSummary() {
+  const files = await jsonFiles("data/strongs/mapping-batches");
+  let rows = 0;
+  const chapters = new Set();
+
+  for (const file of files) {
+    const entries = await safeReadJson(file, []);
+    if (!Array.isArray(entries)) continue;
+    rows += entries.length;
+    for (const entry of entries) {
+      const match = String(entry.verse_ref ?? "").trim().match(/^(.+) (\d+):(\d+)$/);
+      if (match) chapters.add(`${match[1]} ${match[2]}`);
+    }
+  }
+
+  return { files: files.length, rows, chapters: chapters.size };
+}
+
 async function main() {
-  const [library, strongEntries, strongShardManifest, websterEntries, audioCandidates, commentary, tsk] = await Promise.all([
+  const [library, strongEntries, strongMappings, websterEntries, audioCandidates, commentary, tsk] = await Promise.all([
     safeReadJson("data/library/manifests/curated-public-domain-resources.json", []),
     strongsLexiconEntries(),
-    safeReadJson("data/strongs/mappings-by-chapter/manifest.json", { rows: 0, chapters: 0 }),
+    strongsMappingSummary(),
     safeReadJson("data/generated/websters-1828.entries.json", []),
     readFile(path.join(root, "data/media/acquisition/public-domain-audio-candidates.csv"), "utf8").then((raw) => raw.trim().split(/\r?\n/).length - 1).catch(() => 0),
     commentarySummary(),
@@ -118,8 +136,8 @@ async function main() {
     tskReferences: tsk.references,
     tskSourceVerses: tsk.sourceVerses,
     strongsLexiconEntries: Array.isArray(strongEntries) ? strongEntries.length : 0,
-    strongsMappingRows: strongShardManifest.rows,
-    strongsMappingChapters: strongShardManifest.chapters,
+    strongsMappingRows: strongMappings.rows,
+    strongsMappingChapters: strongMappings.chapters,
     websterEntries: Array.isArray(websterEntries) ? websterEntries.length : 0,
     publicDomainAudioCandidates: audioCandidates,
   });
