@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 2441,
+    "rows": 2853,
     "stagedRows": 50,
-    "sourceVersesCovered": 1033,
+    "sourceVersesCovered": 1081,
     "booksCovered": 66,
-    "chaptersCovered": 162,
+    "chaptersCovered": 167,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -232,15 +232,7 @@
         "totalChapters": 34,
         "chapterCoveragePercent": 2.9,
         "versesCovered": 27,
-        "rows": 115
-      },
-      {
-        "book": "1 Kings",
-        "chaptersCovered": 1,
-        "totalChapters": 22,
-        "chapterCoveragePercent": 4.5,
-        "versesCovered": 1,
-        "rows": 1
+        "rows": 148
       },
       {
         "book": "Job",
@@ -248,7 +240,7 @@
         "totalChapters": 42,
         "chapterCoveragePercent": 4.8,
         "versesCovered": 22,
-        "rows": 59
+        "rows": 93
       },
       {
         "book": "Psalms",
@@ -256,23 +248,7 @@
         "totalChapters": 150,
         "chapterCoveragePercent": 5.3,
         "versesCovered": 32,
-        "rows": 140
-      },
-      {
-        "book": "2 Chronicles",
-        "chaptersCovered": 2,
-        "totalChapters": 36,
-        "chapterCoveragePercent": 5.6,
-        "versesCovered": 2,
-        "rows": 3
-      },
-      {
-        "book": "1 Corinthians",
-        "chaptersCovered": 1,
-        "totalChapters": 16,
-        "chapterCoveragePercent": 6.3,
-        "versesCovered": 1,
-        "rows": 1
+        "rows": 175
       },
       {
         "book": "Mark",
@@ -280,7 +256,7 @@
         "totalChapters": 16,
         "chapterCoveragePercent": 6.3,
         "versesCovered": 12,
-        "rows": 23
+        "rows": 54
       },
       {
         "book": "1 Samuel",
@@ -288,7 +264,7 @@
         "totalChapters": 31,
         "chapterCoveragePercent": 6.5,
         "versesCovered": 26,
-        "rows": 104
+        "rows": 138
       },
       {
         "book": "Acts",
@@ -296,7 +272,7 @@
         "totalChapters": 28,
         "chapterCoveragePercent": 7.1,
         "versesCovered": 24,
-        "rows": 113
+        "rows": 149
       },
       {
         "book": "Leviticus",
@@ -304,15 +280,15 @@
         "totalChapters": 27,
         "chapterCoveragePercent": 7.4,
         "versesCovered": 20,
-        "rows": 80
+        "rows": 113
       },
       {
-        "book": "Nehemiah",
+        "book": "Hebrews",
         "chaptersCovered": 1,
         "totalChapters": 13,
         "chapterCoveragePercent": 7.7,
-        "versesCovered": 2,
-        "rows": 2
+        "versesCovered": 12,
+        "rows": 24
       },
       {
         "book": "2 Corinthians",
@@ -320,7 +296,31 @@
         "totalChapters": 13,
         "chapterCoveragePercent": 7.7,
         "versesCovered": 12,
-        "rows": 24
+        "rows": 60
+      },
+      {
+        "book": "Jeremiah",
+        "chaptersCovered": 4,
+        "totalChapters": 52,
+        "chapterCoveragePercent": 7.7,
+        "versesCovered": 27,
+        "rows": 64
+      },
+      {
+        "book": "2 Chronicles",
+        "chaptersCovered": 3,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 8.3,
+        "versesCovered": 14,
+        "rows": 38
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 3,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 8.3,
+        "versesCovered": 30,
+        "rows": 49
       }
     ]
   },
