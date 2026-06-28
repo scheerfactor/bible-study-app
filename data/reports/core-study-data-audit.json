@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 4562,
+    "rows": 4865,
     "stagedRows": 50,
-    "sourceVersesCovered": 1601,
+    "sourceVersesCovered": 1642,
     "booksCovered": 66,
-    "chaptersCovered": 644,
+    "chaptersCovered": 664,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -231,96 +231,96 @@
         "chaptersCovered": 21,
         "totalChapters": 150,
         "chapterCoveragePercent": 14,
-        "versesCovered": 47,
-        "rows": 310
+        "versesCovered": 50,
+        "rows": 352
       },
       {
         "book": "Isaiah",
         "chaptersCovered": 19,
         "totalChapters": 66,
         "chapterCoveragePercent": 28.8,
-        "versesCovered": 47,
-        "rows": 124
-      },
-      {
-        "book": "Nahum",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "Habakkuk",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "Titus",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 1,
-        "rows": 1
-      },
-      {
-        "book": "2 Thessalonians",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 12,
-        "rows": 23
-      },
-      {
-        "book": "Zephaniah",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 12,
-        "rows": 24
-      },
-      {
-        "book": "2 Peter",
-        "chaptersCovered": 1,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 12,
-        "rows": 24
-      },
-      {
-        "book": "Daniel",
-        "chaptersCovered": 4,
-        "totalChapters": 12,
-        "chapterCoveragePercent": 33.3,
-        "versesCovered": 34,
-        "rows": 74
+        "versesCovered": 48,
+        "rows": 168
       },
       {
         "book": "Genesis",
         "chaptersCovered": 17,
         "totalChapters": 50,
         "chapterCoveragePercent": 34,
-        "versesCovered": 28,
-        "rows": 69
+        "versesCovered": 31,
+        "rows": 113
       },
       {
         "book": "Jeremiah",
         "chaptersCovered": 18,
         "totalChapters": 52,
         "chapterCoveragePercent": 34.6,
-        "versesCovered": 42,
-        "rows": 107
+        "versesCovered": 46,
+        "rows": 152
       },
       {
         "book": "Ezekiel",
         "chaptersCovered": 18,
         "totalChapters": 48,
         "chapterCoveragePercent": 37.5,
-        "versesCovered": 55,
-        "rows": 136
+        "versesCovered": 61,
+        "rows": 179
+      },
+      {
+        "book": "1 Thessalonians",
+        "chaptersCovered": 2,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 40,
+        "versesCovered": 12,
+        "rows": 24
+      },
+      {
+        "book": "Exodus",
+        "chaptersCovered": 16,
+        "totalChapters": 40,
+        "chapterCoveragePercent": 40,
+        "versesCovered": 26,
+        "rows": 56
+      },
+      {
+        "book": "Job",
+        "chaptersCovered": 17,
+        "totalChapters": 42,
+        "chapterCoveragePercent": 40.5,
+        "versesCovered": 37,
+        "rows": 131
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 16,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 44.4,
+        "versesCovered": 45,
+        "rows": 88
+      },
+      {
+        "book": "Deuteronomy",
+        "chaptersCovered": 16,
+        "totalChapters": 34,
+        "chapterCoveragePercent": 47.1,
+        "versesCovered": 42,
+        "rows": 194
+      },
+      {
+        "book": "2 Chronicles",
+        "chaptersCovered": 17,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 47.2,
+        "versesCovered": 29,
+        "rows": 84
+      },
+      {
+        "book": "2 Timothy",
+        "chaptersCovered": 2,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 50,
+        "versesCovered": 2,
+        "rows": 2
       }
     ]
   },
