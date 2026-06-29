@@ -14698,30 +14698,63 @@ export default function Home() {
   }, [supabase]);
 
   useEffect(() => {
+    const hashTabMap: Partial<Record<string, Tab>> = {
+      "#today": "today",
+      "#bible": "bible",
+      "#search": "search",
+      "#themes": "themes",
+      "#commentary": "commentaryExplorer",
+      "#commentary-explorer": "commentaryExplorer",
+      "#commentaryexplorer": "commentaryExplorer",
+      "#library": "library",
+      "#notes": "notes",
+      "#prayer": "prayer",
+      "#journal": "journal",
+      "#sermons": "sermons",
+      "#presentations": "presentations",
+      "#settings": "settings",
+      "#full-study": "fullStudy",
+      "#fullstudy": "fullStudy",
+      "#passage-guide": "passageGuide",
+      "#passageguide": "passageGuide",
+      "#amos": "amosStudyPath",
+      "#amos-study": "amosStudyPath",
+      "#proverbs": "proverbsStudyPath",
+      "#proverbs-study": "proverbsStudyPath",
+      "#hosea": "hoseaStudyPath",
+      "#hosea-study": "hoseaStudyPath",
+    };
+
     function openHiddenAdminAreas() {
+      const normalizedHash = window.location.hash.toLowerCase();
       const params = new URLSearchParams(window.location.search);
       const shouldShowLibraryAcquisition =
-        ["#admin-import", "#library-acquisition"].includes(window.location.hash) ||
+        ["#admin-import", "#library-acquisition"].includes(normalizedHash) ||
         params.get("open") === "library-acquisition";
       setShowLibraryAcquisitionAdmin(shouldShowLibraryAcquisition);
       if (shouldShowLibraryAcquisition) {
         setLibraryView("home");
         setTab("library");
+        return;
       }
-      if (window.location.hash === "#amos-study") {
-        setTab("amosStudyPath");
-      }
-      if (window.location.hash === "#proverbs-study") {
-        setTab("proverbsStudyPath");
-      }
-      if (window.location.hash === "#hosea-study") {
-        setTab("hoseaStudyPath");
-      }
-      const presentationSessionMatch = window.location.hash.match(/^#presentation-session-([A-Z0-9]{3}-[A-Z0-9]{3})$/i);
+
+      const presentationSessionMatch = normalizedHash.match(/^#presentation-session-([a-z0-9]{3}-[a-z0-9]{3})$/i);
       if (presentationSessionMatch) {
         setPresentationInitialSessionId(presentationSessionMatch[1].toUpperCase());
         setPresentationWorkspaceView("presentation");
         setTab("presentations");
+        return;
+      }
+
+      const hashTab = hashTabMap[normalizedHash];
+      if (hashTab) {
+        if (hashTab === "library") {
+          setLibraryView("home");
+        }
+        if (hashTab === "presentations") {
+          setPresentationWorkspaceView("manager");
+        }
+        setTab(hashTab);
       }
     }
 
