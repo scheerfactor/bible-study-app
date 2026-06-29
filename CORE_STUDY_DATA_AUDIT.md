@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-29T10:17:24.878Z
+Generated: 2026-06-29T12:51:41.036Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-29T10:17:24.878Z
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
-- Public TSK rows: 5331; staged TSK rows: 50; source verses covered: 1809; chapters covered: 806; books covered: 66 (reviewed samples only).
+- Public TSK rows: 5560; staged TSK rows: 50; source verses covered: 1927; chapters covered: 924; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,18 +71,18 @@ Generated: 2026-06-29T10:17:24.878Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Psalms | 33 | 150 | 22% | 63 | 395 |
-| Isaiah | 31 | 66 | 47% | 64 | 211 |
-| Haggai | 1 | 2 | 50% | 12 | 23 |
-| Proverbs | 17 | 31 | 54.8% | 20 | 52 |
-| 1 Chronicles | 16 | 29 | 55.2% | 42 | 89 |
-| Amos | 5 | 9 | 55.6% | 28 | 64 |
-| Romans | 9 | 16 | 56.3% | 25 | 58 |
-| Acts | 16 | 28 | 57.1% | 39 | 197 |
-| Jeremiah | 30 | 52 | 57.7% | 59 | 193 |
-| Genesis | 29 | 50 | 58% | 46 | 155 |
-| Leviticus | 16 | 27 | 59.3% | 34 | 152 |
-| Matthew | 17 | 28 | 60.7% | 35 | 93 |
+| Psalms | 45 | 150 | 30% | 75 | 419 |
+| Ezekiel | 30 | 48 | 62.5% | 75 | 222 |
+| Isaiah | 43 | 66 | 65.2% | 76 | 235 |
+| Joel | 2 | 3 | 66.7% | 26 | 45 |
+| 2 Samuel | 16 | 24 | 66.7% | 36 | 78 |
+| 2 Kings | 17 | 25 | 68% | 35 | 87 |
+| Job | 29 | 42 | 69% | 53 | 169 |
+| Exodus | 28 | 40 | 70% | 38 | 97 |
+| Joshua | 17 | 24 | 70.8% | 35 | 92 |
+| Luke | 17 | 24 | 70.8% | 41 | 115 |
+| Malachi | 3 | 4 | 75% | 25 | 59 |
+| John | 16 | 21 | 76.2% | 38 | 113 |
 
 ## Thinnest Commentary Books
 

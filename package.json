@@ -14,6 +14,7 @@
     "prepare:tsk-metav": "node scripts/prepare-tsk-metav-cross-references.mjs",
     "prepare:tsk-metav-full": "node scripts/prepare-tsk-metav-full-staging.mjs",
     "create:tsk-metav-review-batch": "node scripts/create-tsk-metav-review-batch.mjs",
+    "create:tsk-metav-uncovered-batch": "node scripts/create-tsk-metav-uncovered-chapter-batch.mjs",
     "prepare:tsk-openbible": "node scripts/prepare-openbible-tsk-cross-references.mjs",
     "library:validate": "node scripts/validate-library-manifests.mjs",
     "library:download": "node scripts/download-library-resources.mjs",
