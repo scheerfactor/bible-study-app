@@ -46,5 +46,21 @@
     "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
     "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this entry is a reviewed supplement for a mapped proper-name form missing from the compact Greek import.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G3872",
+    "language": "Greek",
+    "original_word": "παρακαταθήκη",
+    "transliteration": "parakatatheke",
+    "pronunciation": "par-ak-at-ath-ay'-kay",
+    "english_words": ["committed", "trust", "deposit"],
+    "related_numbers": ["G3844", "G2698"],
+    "plain_definition": "Strong's definition: something put down alongside; a deposit or sacred trust. In 1 Timothy 6:20 and 2 Timothy 1:14 it refers to what was committed to Timothy's keeping.",
+    "first_occurrence": "1 Timothy 6:20",
+    "key_verses": ["1 Timothy 6:20", "2 Timothy 1:14"],
+    "source_title": "Strong's Greek Bible Dictionary",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this entry is a reviewed supplement for a mapped form missing from the compact Greek import.",
+    "review_status": "Verified"
   }
 ]
