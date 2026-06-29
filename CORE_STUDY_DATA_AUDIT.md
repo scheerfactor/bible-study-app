@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-06-28T12:07:45.676Z
+Generated: 2026-06-29T02:00:36.685Z
 
 ## Summary
 
@@ -10,8 +10,8 @@ Generated: 2026-06-28T12:07:45.676Z
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
-- Strong's lexicon entries: 14286; reviewed KJV word mappings: 87802 rows from 10 batch files across 13 books and 167 chapters (broad import).
-- Public TSK rows: 4865; staged TSK rows: 50; source verses covered: 1642; chapters covered: 664; books covered: 66 (reviewed samples only).
+- Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
+- Public TSK rows: 5068; staged TSK rows: 50; source verses covered: 1672; chapters covered: 669; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,18 +71,18 @@ Generated: 2026-06-28T12:07:45.676Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Psalms | 21 | 150 | 14% | 50 | 352 |
-| Isaiah | 19 | 66 | 28.8% | 48 | 168 |
-| Genesis | 17 | 50 | 34% | 31 | 113 |
-| Jeremiah | 18 | 52 | 34.6% | 46 | 152 |
-| Ezekiel | 18 | 48 | 37.5% | 61 | 179 |
-| 1 Thessalonians | 2 | 5 | 40% | 12 | 24 |
-| Exodus | 16 | 40 | 40% | 26 | 56 |
-| Job | 17 | 42 | 40.5% | 37 | 131 |
-| Numbers | 16 | 36 | 44.4% | 45 | 88 |
-| Deuteronomy | 16 | 34 | 47.1% | 42 | 194 |
-| 2 Chronicles | 17 | 36 | 47.2% | 29 | 84 |
-| 2 Timothy | 2 | 4 | 50% | 2 | 2 |
+| Psalms | 21 | 150 | 14% | 51 | 371 |
+| Isaiah | 19 | 66 | 28.8% | 52 | 187 |
+| Genesis | 17 | 50 | 34% | 34 | 132 |
+| Jeremiah | 18 | 52 | 34.6% | 47 | 170 |
+| Ezekiel | 18 | 48 | 37.5% | 63 | 198 |
+| Exodus | 16 | 40 | 40% | 26 | 73 |
+| Job | 17 | 42 | 40.5% | 41 | 150 |
+| Numbers | 16 | 36 | 44.4% | 49 | 106 |
+| Deuteronomy | 16 | 34 | 47.1% | 44 | 213 |
+| 2 Chronicles | 17 | 36 | 47.2% | 31 | 102 |
+| Haggai | 1 | 2 | 50% | 12 | 23 |
+| 1 Samuel | 16 | 31 | 51.6% | 41 | 183 |
 
 ## Thinnest Commentary Books
 
