@@ -500,6 +500,7 @@ type DictionaryEntry = {
   lookupWord: string;
   definition: string;
   found: boolean;
+  sourceTitle?: string;
 };
 
 type DictionarySearchResult = {
@@ -16866,7 +16867,7 @@ export default function Home() {
 
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
-      setDictionarySearchStatus("Searching Webster's 1828...");
+      setDictionarySearchStatus("Searching Bible dictionaries...");
       fetch(`/api/dictionary?query=${encodeURIComponent(query)}&limit=20`, {
         signal: controller.signal,
       })
@@ -19592,9 +19593,10 @@ export default function Home() {
             lookupWord: data.lookupWord,
             definition: definitions
               .slice(0, 3)
-              .map((entry) => entry.definition)
+              .map((entry) => `${entry.source_title}: ${entry.definition}`)
               .join("\n\n"),
             found: true,
+            sourceTitle: definitions.length > 1 ? "Dictionary Matches" : definitions[0]?.source_title,
           });
           return;
         }
@@ -20172,6 +20174,7 @@ export default function Home() {
                     lookupWord: entry.normalized_headword,
                     definition: entry.definition,
                     found: true,
+                    sourceTitle: entry.source_title,
                   });
                   setStudyTab("dictionary");
                   if (selectedRef) setStudyRef(selectedRef);
@@ -30036,7 +30039,9 @@ function StrongStudyPanel({
 
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Webster&apos;s 1828</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                {dictionaryEntry?.sourceTitle ?? "Bible Dictionary"}
+              </p>
               <button
                 className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
                 onClick={() => onLookupWord(entry.websterWord)}
@@ -30057,7 +30062,7 @@ function StrongStudyPanel({
             {dictionaryEntry?.found ? (
               <p className="mt-2 line-clamp-4 text-sm leading-6 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
             ) : (
-              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">No Webster&apos;s definition found yet for this word.</p>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">No dictionary definition found yet for this word.</p>
             )}
           </div>
 
@@ -30533,7 +30538,7 @@ function SearchScreen({
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Search Webster&apos;s 1828
+          Search Bible dictionaries
           <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
             <BookOpen size={18} className="text-[var(--green)]" />
             <input
@@ -30547,7 +30552,7 @@ function SearchScreen({
 
         <div className="mt-3 space-y-3">
           {dictionarySearchTerm.trim().length < 2 ? (
-            <p className="text-sm leading-6 text-[var(--muted)]">Search the imported Webster&apos;s 1828 headwords.</p>
+            <p className="text-sm leading-6 text-[var(--muted)]">Search Webster&apos;s 1828 and Easton&apos;s Bible Dictionary entries.</p>
           ) : dictionarySearchResults.length === 0 ? (
             <p className="text-sm leading-6 text-[var(--muted)]">{dictionarySearchStatus || "No dictionary entries found yet."}</p>
           ) : (
@@ -30560,7 +30565,7 @@ function SearchScreen({
               >
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="text-base font-semibold text-[var(--ink)]">{entry.headword}</p>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">Webster&apos;s 1828</span>
+                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.source_title}</span>
                 </div>
                 <p className="mt-2 line-clamp-3 text-sm leading-6 text-[var(--scripture-ink)]">{entry.definition}</p>
               </button>
@@ -42503,12 +42508,14 @@ function StudyDrawer({
 
               {dictionaryEntry ? (
                 <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">Webster&apos;s 1828</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">
+                    {dictionaryEntry.sourceTitle ?? "Bible Dictionary"}
+                  </p>
                   <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{dictionaryEntry.word}</h3>
                   {dictionaryEntry.lookupWord && dictionaryEntry.lookupWord !== dictionaryEntry.word && (
                     <p className="mt-1 text-sm text-[var(--muted)]">Normalized to: {dictionaryEntry.lookupWord}</p>
                   )}
-                  <p className="mt-4 text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
+                  <p className="mt-4 whitespace-pre-line text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
                   <div className="mt-4 grid grid-cols-3 gap-2">
                     <MiniStat label="Chapter" value={String(drawerWordExplorer.chapterOccurrences.length)} />
                     <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />

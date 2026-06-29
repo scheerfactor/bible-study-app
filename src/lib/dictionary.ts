@@ -11,9 +11,24 @@ export type WebsterEntry = {
   review_status: string;
 };
 
+type EastonEntry = {
+  headword: string;
+  normalized_headword: string;
+  definition: string;
+  source?: string;
+  source_file: string;
+  rights_status: string;
+  review_status: string;
+  line_start: number;
+  line_end: number;
+};
+
 const dictionaryRelativePath = ["data", "generated", "websters-1828.entries.json"];
 const dictionaryOverrideRelativePath = ["data", "generated", "websters-1828-reviewed-overrides.json"];
+const eastonDictionaryRelativePath = ["data", "generated", "eastons-bible-dictionary.entries.json"];
 let dictionaryPromise: Promise<WebsterEntry[]> | null = null;
+let eastonDictionaryPromise: Promise<WebsterEntry[]> | null = null;
+let allDictionaryPromise: Promise<WebsterEntry[]> | null = null;
 
 const reviewedDictionaryOverlays: WebsterEntry[] = [
   {
@@ -87,12 +102,49 @@ export async function getDictionaryEntries() {
   return dictionaryPromise;
 }
 
+export async function getEastonDictionaryEntries() {
+  eastonDictionaryPromise ??= readTextContent(eastonDictionaryRelativePath, { errorLabel: "Easton Bible dictionary" })
+    .then((raw) => JSON.parse(raw) as EastonEntry[])
+    .then((entries) =>
+      entries.map((entry) => ({
+        headword: entry.headword,
+        normalized_headword: entry.normalized_headword,
+        definition: entry.definition,
+        source_title: entry.source ?? "Easton's Bible Dictionary",
+        source_file: entry.source_file,
+        source_line_start: entry.line_start,
+        source_line_end: entry.line_end,
+        review_status: entry.review_status,
+      })),
+    );
+
+  return eastonDictionaryPromise;
+}
+
+export async function getAllDictionaryEntries() {
+  allDictionaryPromise ??= Promise.all([getDictionaryEntries(), getEastonDictionaryEntries()]).then(([websterEntries, eastonEntries]) => [
+    ...websterEntries,
+    ...eastonEntries,
+  ]);
+  return allDictionaryPromise;
+}
+
+function dictionarySourcePriority(entry: WebsterEntry) {
+  if (/american dictionary|webster/i.test(entry.source_title)) return 0;
+  if (/easton/i.test(entry.source_title)) return 1;
+  return 2;
+}
+
 export async function lookupDictionaryWord(word: string) {
   const normalized = normalizeDictionaryWord(word);
-  const entries = await getDictionaryEntries();
+  const entries = await getAllDictionaryEntries();
   const matches = entries
     .filter((entry) => entry.normalized_headword === normalized)
-    .sort((a, b) => b.definition.length - a.definition.length);
+    .sort((a, b) => {
+      const priority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
+      if (priority !== 0) return priority;
+      return b.definition.length - a.definition.length;
+    });
 
   return {
     word: cleanDictionaryWord(word) || word,
@@ -106,7 +158,7 @@ export async function searchDictionary(query: string, limit = 25) {
   const normalizedQuery = normalizeDictionaryWord(query);
   if (normalizedQuery.length < 2) return [];
 
-  const entries = await getDictionaryEntries();
+  const entries = await getAllDictionaryEntries();
   return entries
     .filter(
       (entry) =>
@@ -120,6 +172,8 @@ export async function searchDictionary(query: string, limit = 25) {
       const aPrefix = a.normalized_headword.startsWith(normalizedQuery) ? 0 : 1;
       const bPrefix = b.normalized_headword.startsWith(normalizedQuery) ? 0 : 1;
       if (aPrefix !== bPrefix) return aPrefix - bPrefix;
+      const sourcePriority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
+      if (sourcePriority !== 0) return sourcePriority;
       return a.normalized_headword.localeCompare(b.normalized_headword);
     })
     .slice(0, limit);
