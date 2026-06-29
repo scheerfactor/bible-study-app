@@ -12,6 +12,20 @@ type StudyToolSource = {
   rightsStatus: string;
 };
 
+type NaveTopic = {
+  topic: string;
+  normalized_topic: string;
+  body: string;
+  references: string[];
+  reference_count: number;
+  source: string;
+  source_file: string;
+  rights_status: string;
+  review_status: string;
+  line_start: number;
+  line_end: number;
+};
+
 const sources: StudyToolSource[] = [
   {
     id: "easton",
@@ -126,7 +140,60 @@ function snippetFor(lines: string[], index: number) {
   return compactWhitespace(lines.slice(Math.max(0, index - 1), Math.min(lines.length, index + 3)).join(" ")).slice(0, 520);
 }
 
-async function searchSource(source: StudyToolSource, query: string, perSourceLimit: number) {
+function topicMatchesQuery(topic: NaveTopic, terms: string[], includeBody = false) {
+  const topicText = clean(`${topic.topic} ${topic.normalized_topic}`);
+  if (terms.every((term) => topicText.includes(term))) return true;
+  if (!includeBody) return false;
+
+  const bodyText = clean(topic.body);
+  return terms.every((term) => bodyText.includes(term));
+}
+
+function topicRank(query: string, topic: NaveTopic) {
+  const normalizedQuery = clean(query);
+  if (topic.normalized_topic === normalizedQuery) return 0;
+  if (topic.normalized_topic.startsWith(normalizedQuery)) return 1;
+  if (topic.normalized_topic.includes(normalizedQuery)) return 2;
+  return 3;
+}
+
+async function searchNaveIndex(source: StudyToolSource, query: string, perSourceLimit: number) {
+  let topics: NaveTopic[] = [];
+
+  try {
+    const raw = await readTextContent(["data", "generated", "naves-topical-bible.topics.json"], { errorLabel: "Nave topical index" });
+    topics = JSON.parse(raw) as NaveTopic[];
+  } catch {
+    return searchSourceText(source, query, perSourceLimit);
+  }
+
+  const terms = clean(query).split(/\s+/).filter((term) => term.length > 1);
+  const topicMatches = topics.filter((topic) => topicMatchesQuery(topic, terms));
+  const bodyMatches = topicMatches.length > 0 ? [] : topics.filter((topic) => topicMatchesQuery(topic, terms, true));
+
+  return [...topicMatches, ...bodyMatches]
+    .sort((a, b) => {
+      const rank = topicRank(query, a) - topicRank(query, b);
+      if (rank !== 0) return rank;
+      return b.reference_count - a.reference_count;
+    })
+    .slice(0, perSourceLimit)
+    .map((topic) => ({
+      id: `${source.id}:${topic.normalized_topic}:${topic.line_start}`,
+      tool_id: source.id,
+      title: source.title,
+      author: source.author,
+      category: source.category,
+      resource_slug: slugFromFileName(source.fileName),
+      heading: topic.topic,
+      snippet: compactWhitespace(`${topic.body} ${topic.references.slice(0, 8).join("; ")}`).slice(0, 520),
+      source_url: source.sourceUrl,
+      rights_status: `${source.rightsStatus} Topic index: ${topic.review_status}.`,
+      line_number: topic.line_start,
+    }));
+}
+
+async function searchSourceText(source: StudyToolSource, query: string, perSourceLimit: number) {
   let raw = "";
 
   try {
@@ -167,6 +234,11 @@ async function searchSource(source: StudyToolSource, query: string, perSourceLim
   }
 
   return results;
+}
+
+async function searchSource(source: StudyToolSource, query: string, perSourceLimit: number) {
+  if (source.id === "nave") return searchNaveIndex(source, query, perSourceLimit);
+  return searchSourceText(source, query, perSourceLimit);
 }
 
 export async function GET(request: Request) {
