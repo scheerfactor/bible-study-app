@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "generated_at": "2026-06-29T22:17:16.344Z",
+    "study_word_count": 79,
+    "easton_entry_count": 3883,
+    "easton_exact_study_word_matches": 38,
+    "study_index": {
+      "easton": {
+        "source": "Easton's Bible Dictionary",
+        "indexed_terms": 79,
+        "terms_with_matches": 38,
+        "terms_without_matches": [
+          "believe",
+          "boast",
+          "born",
+          "condemned",
+          "controversy",
+          "dominion",
+          "flock",
+          "follow",
+          "groaning",
+          "heal",
+          "hearken",
+          "holy",
+          "intercede",
+          "judgment",
+          "kingdom",
+          "know",
+          "knowledge",
+          "mission",
+          "mix",
+          "pastor",
+          "perish",
+          "praise",
+          "preach",
+          "pride",
+          "promise",
+          "recompense",
+          "resurrection",
+          "return",
+          "righteousness",
+          "sanctify",
+          "saved",
+          "sow",
+          "supplication",
+          "teach",
+          "thanksgiving",
+          "transgression",
+          "understanding",
+          "visitation",
+          "whoredom",
+          "wisdom",
+          "world"
+        ]
+      },
+      "smith": {
+        "source": "Smith's Comprehensive Dictionary of the Bible",
+        "indexed_terms": 79,
+        "terms_with_matches": 79,
+        "terms_without_matches": []
+      },
+      "nave": {
+        "source": "Nave's Topical Bible",
+        "indexed_terms": 79,
+        "terms_with_matches": 78,
+        "terms_without_matches": [
+          "intercede"
+        ]
+      }
+    }
+  },
+  "source_files": {
+    "app": "src/app/page.tsx",
+    "easton": "data/library/verified/eastons-bible-dictionary.txt",
+    "smith": "data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt",
+    "nave": "data/library/verified/naves-topical-bible.txt"
+  },
+  "output_files": {
+    "easton_entries": "data/generated/eastons-bible-dictionary.entries.json",
+    "study_word_index": "data/generated/bible-reference-study-word-index.json"
+  },
+  "notes": [
+    "Easton is parsed into normalized entries because the source has reliable single-column headword structure.",
+    "Smith and Nave are currently indexed by study-word evidence windows because the available texts are OCR-heavy and need article/topic split review before public-facing article parsing.",
+    "These indexes are source-backed and rights-safe; they are not doctrine-generated summaries."
+  ]
+}

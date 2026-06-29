@@ -31,6 +31,7 @@
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
     "audit:commentary-quality": "node scripts/audit-commentary-text-quality.mjs",
     "audit:dictionary": "node scripts/audit-dictionary-coverage.mjs",
+    "build:dictionary-indexes": "node scripts/build-dictionary-resource-indexes.mjs",
     "commentary:cleanup-studylight": "node scripts/cleanup-studylight-commentary-wrappers.mjs",
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
     "validate:strongs-mapping": "node scripts/validate-kjv-strongs-mappings.mjs",
