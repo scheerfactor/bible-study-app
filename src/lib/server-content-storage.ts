@@ -21,11 +21,19 @@ function encodedPath(relativePath: string) {
     .join("/");
 }
 
+function withContentVersion(url: string) {
+  const version = process.env.VERCEL_GIT_COMMIT_SHA;
+  if (!version) return url;
+
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}v=${encodeURIComponent(version)}`;
+}
+
 function publicContentUrl(relativePath: string) {
   const baseUrl = process.env.CONTENT_PUBLIC_BASE_URL?.replace(/\/+$/, "");
 
   if (baseUrl) {
-    return `${baseUrl}/${encodedPath(relativePath)}`;
+    return withContentVersion(`${baseUrl}/${encodedPath(relativePath)}`);
   }
 
   const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
@@ -34,7 +42,7 @@ function publicContentUrl(relativePath: string) {
 
 function githubRawContentUrl(relativePath: string) {
   const ref = process.env.VERCEL_GIT_COMMIT_SHA ?? "main";
-  return `${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`;
+  return withContentVersion(`${githubRawBase}/${encodeURIComponent(ref)}/${encodedPath(relativePath)}`);
 }
 
 function candidateContentUrls(relativePath: string) {
