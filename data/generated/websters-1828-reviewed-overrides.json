@@ -20,6 +20,26 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "HOLY",
+    "normalized_headword": "holy",
+    "definition": "HO'LY, adjective. Properly, whole, entire or perfect, in a moral sense. Hallowed; consecrated or set apart to a sacred use. Applied to God, perfectly pure, immaculate and complete in moral character.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/holy",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LAW",
+    "normalized_headword": "law",
+    "definition": "LAW, noun. A rule, particularly an established or permanent rule, prescribed by the supreme power of a state to its subjects. In Scripture, the word is used for God's revealed will, commandments, doctrine, or the whole Old Testament revelation depending on context.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/law",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "PRAY",
     "normalized_headword": "pray",
     "definition": "PRAY, verb intransitive. To ask with earnestness or zeal, as for a favor or for something desirable; to entreat; to supplicate. In worship, to address the Supreme Being with solemnity and reverence, with adoration, confession of sins, supplication for mercy, and thanksgiving for blessings received.",
@@ -35,6 +55,86 @@
     "definition": "PRA'YER, noun. In a general sense, the act of asking for a favor, and particularly with earnestness. In worship, a solemn address to the Supreme Being, consisting of adoration, confession of sins, supplication for mercy and forgiveness, intercession for blessings on others, and thanksgiving for mercies and benefits.",
     "source_title": "American Dictionary of the English Language",
     "source_file": "https://webstersdictionary1828.com/Dictionary/prayer",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SALVATION",
+    "normalized_headword": "salvation",
+    "definition": "SALVA'TION, noun. The act of saving; preservation from destruction, danger or great calamity. In theology, deliverance from sin and its consequences, and admission to eternal happiness through the redemption of Christ.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/salvation",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SANCTIFICATION",
+    "normalized_headword": "sanctification",
+    "definition": "SANCTIFICA'TION, noun. The act of making holy; the act of consecrating or setting apart for a sacred purpose. In theology, the work of God's grace by which believers are renewed after the image of God and enabled to die unto sin and live unto righteousness.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sanctification",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SHEPHERD",
+    "normalized_headword": "shepherd",
+    "definition": "SHEPHERD, noun. A man employed in tending, feeding and guarding sheep in the pasture. In Scripture, a pastor, ruler or spiritual keeper of God's people.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/shepherd",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SUPPLICATION",
+    "normalized_headword": "supplication",
+    "definition": "SUPPLICA'TION, noun. Entreaty; humble and earnest prayer in worship. A petition offered with submission and reverence.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/supplication",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "TRANSGRESSION",
+    "normalized_headword": "transgression",
+    "definition": "TRANSGRES'SION, noun. The act of passing over or beyond any law, rule or command; violation of law or known duty; offence; crime; sin.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/transgression",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "TRUTH",
+    "normalized_headword": "truth",
+    "definition": "TRUTH, noun. Conformity to fact or reality; exact accordance with that which is, has been, or shall be. In Scripture, divine verity, faithfulness, purity from falsehood, and the doctrine of the Gospel.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/truth",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "VISION",
+    "normalized_headword": "vision",
+    "definition": "VISION, noun. The act of seeing external objects; sight. In Scripture, a supernatural appearance, revelation, or representation made to the mind, especially to a prophet.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/vision",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "ZION",
+    "normalized_headword": "zion",
+    "definition": "ZI'ON, noun. A hill in Jerusalem and, by extension in Scripture, Jerusalem, the people of God, or the church in prophetic and devotional use.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/zion",
     "source_line_start": 1,
     "source_line_end": 1,
     "review_status": "reviewed_overlay"
