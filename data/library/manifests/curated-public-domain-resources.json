@@ -59480,5 +59480,269 @@
     "checksum_sha256": "529f96e6327a0c7e14a30681a8f7d72796575c8650b96e73003f45741b0acfb6",
     "file_size_bytes": 565281,
     "word_count": 91262
+  },
+  {
+    "title": "Lectures on the Epistle to the Romans",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/lecturesonepistl0000hair_u7v0/lecturesonepistl0000hair_u7v0_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonepistl0000hair_u7v0/lecturesonepistl0000hair_u7v0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-epistle-to-the-romans-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/lecturesonepistl0000hair_u7v0/lecturesonepistl0000hair_u7v0_djvu.txt.",
+    "notes": "Pre-1930 Ironside exposition for Romans study preaching and teaching; use as a secondary commentary after Scripture. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside exposition for Romans study preaching and teaching; use as a secondary commentary after Scripture.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Epistle to the Romans",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 187,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "79a858b1f6ec8c4ca9a18ef91c035199471f9a5d80afb63b4b37c997dc00b4a4",
+    "file_size_bytes": 239622,
+    "word_count": 42076
+  },
+  {
+    "title": "Notes on the Prophecy and Lamentations of Jeremiah",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/notesonprophecyl0000hair/notesonprophecyl0000hair_djvu.txt",
+    "download_url": "https://archive.org/download/notesonprophecyl0000hair/notesonprophecyl0000hair_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-prophecy-and-lamentations-of-jeremiah-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/notesonprophecyl0000hair/notesonprophecyl0000hair_djvu.txt.",
+    "notes": "Pre-1930 Ironside exposition for Jeremiah and Lamentations study; useful for prophecy background and teaching preparation. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside exposition for Jeremiah and Lamentations study; useful for prophecy background and teaching preparation.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Prophecy and Lamentations of Jeremiah",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 432,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ee749e6932d0ec1d3b309604248ca37a50e4e8ddc39768494892a015d12a4c3a",
+    "file_size_bytes": 552346,
+    "word_count": 97295
+  },
+  {
+    "title": "Lectures on Daniel the Prophet",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/lecturesondaniel0000hair_d9x0/lecturesondaniel0000hair_d9x0_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesondaniel0000hair_d9x0/lecturesondaniel0000hair_d9x0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-daniel-the-prophet-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/lecturesondaniel0000hair_d9x0/lecturesondaniel0000hair_d9x0_djvu.txt.",
+    "notes": "Pre-1930 Ironside exposition for Daniel study; useful for prophecy teaching with discernment and Scripture kept first. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside exposition for Daniel study; useful for prophecy teaching with discernment and Scripture kept first.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on Daniel the Prophet",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 278,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "19e692155cb9134941f472ae66c8291daba5e03351ed3683f716f5c7f9a70f9e",
+    "file_size_bytes": 350999,
+    "word_count": 62537
+  },
+  {
+    "title": "Notes on the Books of Ezra Nehemiah and Esther",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/notesonbooksofez0000hair_p4l9/notesonbooksofez0000hair_p4l9_djvu.txt",
+    "download_url": "https://archive.org/download/notesonbooksofez0000hair_p4l9/notesonbooksofez0000hair_p4l9_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-books-of-ezra-nehemiah-and-esther-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/notesonbooksofez0000hair_p4l9/notesonbooksofez0000hair_p4l9_djvu.txt.",
+    "notes": "Pre-1930 Ironside exposition for Ezra Nehemiah and Esther; useful for historical-book study and teaching outlines. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside exposition for Ezra Nehemiah and Esther; useful for historical-book study and teaching outlines.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Books of Ezra Nehemiah and Esther",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 368,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3467a9dfecf52a7dc351ae7c8283ae0faf7b0bb48503560aed3f1104bf43f00e",
+    "file_size_bytes": 468072,
+    "word_count": 82844
+  },
+  {
+    "title": "The Lamp of Prophecy",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/bwb_T5-CWR-083/bwb_T5-CWR-083_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_T5-CWR-083/bwb_T5-CWR-083_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-lamp-of-prophecy-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/bwb_T5-CWR-083/bwb_T5-CWR-083_djvu.txt.",
+    "notes": "Pre-1930 Ironside prophecy resource for Bible prophecy study; use with Scripture-first discernment. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside prophecy resource for Bible prophecy study; use with Scripture-first discernment.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Lamp of Prophecy",
+      "author": "H. A. Ironside",
+      "category": "Bible study helps",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 209,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "91cf82090bed1ddc29e290d8002d623854503cd566b630cfcce6cc9bae9d812f",
+    "file_size_bytes": 261908,
+    "word_count": 47047
+  },
+  {
+    "title": "Notes on the Book of Proverbs",
+    "author": "H. A. Ironside",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Ironside Collection",
+    "source_url": "https://archive.org/download/bwb_S0-ATB-471_d0e9/bwb_S0-ATB-471_d0e9_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_S0-ATB-471_d0e9/bwb_S0-ATB-471_d0e9_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-on-the-book-of-proverbs-h-a-ironside.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/bwb_S0-ATB-471_d0e9/bwb_S0-ATB-471_d0e9_djvu.txt.",
+    "notes": "Pre-1930 Ironside exposition for Proverbs; useful for wisdom study devotional reading and teaching. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Pre-1930 Ironside exposition for Proverbs; useful for wisdom study devotional reading and teaching.",
+    "resource_labels": [
+      "Ironside Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes on the Book of Proverbs",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "collection": "Ironside Collection",
+      "badge": "Ironside Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 484,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d898ed8c73cd6506d8884cb7f57c094c69380e1943baaeb0f1003318dae49773",
+    "file_size_bytes": 615213,
+    "word_count": 108995
   }
 ]

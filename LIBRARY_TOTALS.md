@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,349
+- Verified public Library resources: 1,355
 - Active public commentary entries shown in the app: 5,408
 - Reviewed public commentary import rows: 5,498
 - Commentary validation rows checked, including staging/review files: 7,876
@@ -22,6 +22,19 @@ Added 36 verified public-domain resources:
 - 4 hymnology and worship-history resources from Project Gutenberg
 
 These resources strengthen Charles Wesley coverage, John Wesley primary-source depth, Spurgeon preaching helps, hymn history, worship background, and sermon illustration material. Rough eighteenth-century Charles Wesley OCR scans were not imported as public reader text.
+
+## Latest Ironside Exposition Sprint
+
+Added 6 verified public-domain H. A. Ironside resources from pre-1930 Internet Archive scans:
+
+- _Lectures on the Epistle to the Romans_
+- _Notes on the Prophecy and Lamentations of Jeremiah_
+- _Lectures on Daniel the Prophet_
+- _Notes on the Books of Ezra Nehemiah and Esther_
+- _The Lamp of Prophecy_
+- _Notes on the Book of Proverbs_
+
+These strengthen Romans, Daniel, Jeremiah, Lamentations, Ezra, Nehemiah, Esther, Proverbs, and prophecy study. Each entry includes source URL, rights basis, recommended use, and an OCR spot-check warning before quotation.
 
 ## Latest Morgan Major Books Commentary Sprint
 
@@ -152,11 +165,11 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 | Category | Resources |
 | --- | ---: |
-| Commentaries | 252 |
+| Commentaries | 257 |
 | Missions | 244 |
 | Christian Living | 218 |
 | Preaching & Teaching | 185 |
-| Bible study helps | 130 |
+| Bible study helps | 131 |
 | Prayer | 79 |
 | Baptist History | 60 |
 | Evangelism | 46 |
@@ -204,6 +217,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Prayer Classics | 15 |
 | Revival & Evangelism | 13 |
 | Wesley Hymns and Poetry | 13 |
+| Ironside Collection | 12 |
 | Darby Collection | 11 |
 | Church History | 11 |
 | R. A. Torrey Collection | 10 |

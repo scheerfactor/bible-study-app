@@ -1,0 +1,116 @@
+{
+  "source_csv": "data/library/import-batches/ironside-exposition-phase-2.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 6,
+  "total_attempted": 6,
+  "imported": 6,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Lectures on the Epistle to the Romans",
+      "file": "lectures-on-the-epistle-to-the-romans-h-a-ironside.txt",
+      "bytes": 239622,
+      "words": 42076,
+      "reading_time_minutes": 187
+    },
+    {
+      "title": "Notes on the Prophecy and Lamentations of Jeremiah",
+      "file": "notes-on-the-prophecy-and-lamentations-of-jeremiah-h-a-ironside.txt",
+      "bytes": 552346,
+      "words": 97295,
+      "reading_time_minutes": 432
+    },
+    {
+      "title": "Lectures on Daniel the Prophet",
+      "file": "lectures-on-daniel-the-prophet-h-a-ironside.txt",
+      "bytes": 350999,
+      "words": 62537,
+      "reading_time_minutes": 278
+    },
+    {
+      "title": "Notes on the Books of Ezra Nehemiah and Esther",
+      "file": "notes-on-the-books-of-ezra-nehemiah-and-esther-h-a-ironside.txt",
+      "bytes": 468072,
+      "words": 82844,
+      "reading_time_minutes": 368
+    },
+    {
+      "title": "The Lamp of Prophecy",
+      "file": "the-lamp-of-prophecy-h-a-ironside.txt",
+      "bytes": 261908,
+      "words": 47047,
+      "reading_time_minutes": 209
+    },
+    {
+      "title": "Notes on the Book of Proverbs",
+      "file": "notes-on-the-book-of-proverbs-h-a-ironside.txt",
+      "bytes": 615213,
+      "words": 108995,
+      "reading_time_minutes": 484
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Lectures on the Epistle to the Romans",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lectures-on-the-epistle-to-the-romans-h-a-ironside.txt"
+    },
+    {
+      "row": 3,
+      "title": "Notes on the Prophecy and Lamentations of Jeremiah",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/notes-on-the-prophecy-and-lamentations-of-jeremiah-h-a-ironside.txt"
+    },
+    {
+      "row": 4,
+      "title": "Lectures on Daniel the Prophet",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lectures-on-daniel-the-prophet-h-a-ironside.txt"
+    },
+    {
+      "row": 5,
+      "title": "Notes on the Books of Ezra Nehemiah and Esther",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/notes-on-the-books-of-ezra-nehemiah-and-esther-h-a-ironside.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Lamp of Prophecy",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-lamp-of-prophecy-h-a-ironside.txt"
+    },
+    {
+      "row": 7,
+      "title": "Notes on the Book of Proverbs",
+      "author": "H. A. Ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/notes-on-the-book-of-proverbs-h-a-ironside.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
