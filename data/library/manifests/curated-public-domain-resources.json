@@ -57832,5 +57832,1653 @@
     "checksum_sha256": "16d5eb7b9a03c1d4ae0db5dd6b8aebdb557101806c9f3b8edc388fad0edbdc6f",
     "file_size_bytes": 41815,
     "word_count": 5796
+  },
+  {
+    "title": "The Story of the Hymns and Tunes",
+    "author": "Hezekiah Butterworth; Theron Brown",
+    "year": 1906,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/18444",
+    "download_url": "https://www.gutenberg.org/ebooks/18444.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-story-of-the-hymns-and-tunes-hezekiah-butterworth-theron-brown.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/18444.",
+    "notes": "Use for hymn history, worship background, sermon illustrations, and Charles Wesley context. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn history, worship background, sermon illustrations, and Charles Wesley context.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Story of the Hymns and Tunes",
+      "author": "Hezekiah Butterworth; Theron Brown",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 544,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7e0cfc15cedaa64f0bf4be9d1532619ad734ec59a3640bb03f1af61344339fb8",
+    "file_size_bytes": 784036,
+    "word_count": 122483
+  },
+  {
+    "title": "The Hymn-Book of the Modern Church: Brief Studies of Hymns and Hymn-Writers",
+    "author": "Arthur E. Gregory",
+    "year": 1904,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/58619",
+    "download_url": "https://www.gutenberg.org/ebooks/58619.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-hymn-book-of-the-modern-church-brief-studies-of-hymns-and-hymn-writers-arthur-e-gregory.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/58619.",
+    "notes": "Use for hymn background, worship study, and sermon preparation. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn background, worship study, and sermon preparation.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Hymn-Book of the Modern Church: Brief Studies of Hymns and Hymn-Writers",
+      "author": "Arthur E. Gregory",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 352,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "848a29d38194071fdf5a8f20472de87c9e984bd7c094c0e7787743c788e5cee6",
+    "file_size_bytes": 507301,
+    "word_count": 79155
+  },
+  {
+    "title": "The Singing Church: The Hymns It Wrote and Sang",
+    "author": "Edmund S. Lorenz",
+    "year": 1938,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/61393",
+    "download_url": "https://www.gutenberg.org/ebooks/61393.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-singing-church-the-hymns-it-wrote-and-sang-edmund-s-lorenz.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/61393.",
+    "notes": "Use for hymn background, worship history, and devotional reading. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn background, worship history, and devotional reading.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Singing Church: The Hymns It Wrote and Sang",
+      "author": "Edmund S. Lorenz",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 378,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7eafb7b50e81dd1948d609a46c86f39d65b8a60cef26bafcaec87eb652637faf",
+    "file_size_bytes": 572581,
+    "word_count": 84957
+  },
+  {
+    "title": "The Story of Our Hymns",
+    "author": "Ernest Edwin Ryden",
+    "year": 1930,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/33998",
+    "download_url": "https://www.gutenberg.org/ebooks/33998.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-story-of-our-hymns-ernest-edwin-ryden.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/33998.",
+    "notes": "Use for hymn stories, worship background, and sermon illustrations. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn stories, worship background, and sermon illustrations.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Story of Our Hymns",
+      "author": "Ernest Edwin Ryden",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 505,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a910a0af3027309d87abec2fc3817f3f013367a4858f697cea252b4a2132d436",
+    "file_size_bytes": 726792,
+    "word_count": 113572
+  },
+  {
+    "title": "Feathers for Arrows: Illustrations for Preachers and Teachers from My Note Book",
+    "author": "C. H. Spurgeon",
+    "year": 1870,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt",
+    "download_url": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt.",
+    "notes": "Use for sermon illustrations, teaching examples, and preaching preparation. Labels/warnings: Preaching illustration classic; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for sermon illustrations, teaching examples, and preaching preparation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Preaching illustration classic",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Preaching illustration classic",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Feathers for Arrows: Illustrations for Preachers and Teachers from My Note Book",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 473,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "85d89943315929485864cd68a29c89a30d76e65d9c351cd5c6754cc9a6c4b45f",
+    "file_size_bytes": 590513,
+    "word_count": 106506
+  },
+  {
+    "title": "Twelve Sermons on Conversion",
+    "author": "C. H. Spurgeon",
+    "year": 1890,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/twelvesermonsonc0000spur/twelvesermonsonc0000spur_djvu.txt",
+    "download_url": "https://archive.org/download/twelvesermonsonc0000spur/twelvesermonsonc0000spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/twelve-sermons-on-conversion-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/twelvesermonsonc0000spur/twelvesermonsonc0000spur_djvu.txt.",
+    "notes": "Use for evangelistic preaching, salvation sermons, and sermon study. Labels/warnings: Evangelistic sermons; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for evangelistic preaching, salvation sermons, and sermon study.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Evangelistic sermons",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Evangelistic sermons",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Twelve Sermons on Conversion",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 400,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "96abadcec31040ec2e24d1a26a8f8925d2d0636af146b982b25333f3cae99bab",
+    "file_size_bytes": 486464,
+    "word_count": 89916
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 1",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj01wesl/poeticalworksofj01wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj01wesl/poeticalworksofj01wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-1-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj01wesl/poeticalworksofj01wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 1",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 356,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5f286436329730931f421bfedc278ca286cd25842c7ffcd4b809cf8ed93f1717",
+    "file_size_bytes": 502440,
+    "word_count": 80054
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 2",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj02wesl/poeticalworksofj02wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj02wesl/poeticalworksofj02wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-2-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj02wesl/poeticalworksofj02wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 2",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 323,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cf2c22866de2dc53bc0bc760701d2c5a0c465b5a5006377da2ee7702eb50a41e",
+    "file_size_bytes": 449835,
+    "word_count": 72730
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 3",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj03wesl/poeticalworksofj03wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj03wesl/poeticalworksofj03wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-3-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj03wesl/poeticalworksofj03wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 3",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 328,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5e8ff9596a2a3411d57ec2e09c3bd7519f896b342920d530aafa23532e7cdcf0",
+    "file_size_bytes": 466839,
+    "word_count": 73888
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 4",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj04wesl/poeticalworksofj04wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj04wesl/poeticalworksofj04wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-4-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj04wesl/poeticalworksofj04wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 4",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 395,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f1f471b639716d2df1e653f92bd7d0306cc57eeae4ee662695bd4ba0242e9a76",
+    "file_size_bytes": 559503,
+    "word_count": 88832
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 5",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj05wesluoft/poeticalworksofj05wesluoft_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj05wesluoft/poeticalworksofj05wesluoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-5-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj05wesluoft/poeticalworksofj05wesluoft_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 5",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 419,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "48fc47db47103ac273aa427a51d2475f2ee3d1ff6d5314518cca8171b92ed0f3",
+    "file_size_bytes": 594858,
+    "word_count": 94331
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 6",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj06wesl/poeticalworksofj06wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj06wesl/poeticalworksofj06wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-6-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj06wesl/poeticalworksofj06wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 6",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 373,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dbf1729ba0286a46e57a0a97d209ad6f91541251f3230443e1eda404c558ad9b",
+    "file_size_bytes": 542485,
+    "word_count": 83899
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 7",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj07wesl/poeticalworksofj07wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj07wesl/poeticalworksofj07wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-7-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj07wesl/poeticalworksofj07wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 7",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 353,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1626be942dd7ccf713f083448545629eca315712941f3668b7ab818cf1979663",
+    "file_size_bytes": 509576,
+    "word_count": 79315
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 8",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj08wesl/poeticalworksofj08wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj08wesl/poeticalworksofj08wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-8-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj08wesl/poeticalworksofj08wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 8",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 411,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c932b96fc8e20fae11b03fc0a6af82e01a9ec84fa818fbae53911ca632864e00",
+    "file_size_bytes": 593589,
+    "word_count": 92549
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 9",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj09wesl/poeticalworksofj09wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj09wesl/poeticalworksofj09wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-9-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj09wesl/poeticalworksofj09wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 9",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 440,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cd6c1e8dd609ec560c2a646fb765563632dd4cadca101c3421329c2d322e1d0e",
+    "file_size_bytes": 626584,
+    "word_count": 99023
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 10",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj10wesl/poeticalworksofj10wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj10wesl/poeticalworksofj10wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-10-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj10wesl/poeticalworksofj10wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 10",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 450,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "96cfe60ddbcbab785da8a80e77d2b8bc563c31962f9f85ed66788796e63a2b7c",
+    "file_size_bytes": 644913,
+    "word_count": 101172
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 11",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj11wesl/poeticalworksofj11wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj11wesl/poeticalworksofj11wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-11-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj11wesl/poeticalworksofj11wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 11",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 462,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "aba85bfb1dd6d7d6a30908d9b93b945856db546210c01de9042fc7b52cd25a47",
+    "file_size_bytes": 661447,
+    "word_count": 103922
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 12",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj12wesl/poeticalworksofj12wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj12wesl/poeticalworksofj12wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-12-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj12wesl/poeticalworksofj12wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 12",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 406,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "64fe2d9ad6445f301e03825f0a1afe297ed9c8088424a8454a79d3d28add80f2",
+    "file_size_bytes": 587889,
+    "word_count": 91244
+  },
+  {
+    "title": "The Poetical Works of John and Charles Wesley, Vol. 13",
+    "author": "John Wesley; Charles Wesley",
+    "year": 1868,
+    "category": "Classics",
+    "collection": "Wesley Hymns and Poetry",
+    "source_url": "https://archive.org/download/poeticalworksofj0013wesl/poeticalworksofj0013wesl_djvu.txt",
+    "download_url": "https://archive.org/download/poeticalworksofj0013wesl/poeticalworksofj0013wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-13-john-wesley-charles-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poeticalworksofj0013wesl/poeticalworksofj0013wesl_djvu.txt.",
+    "notes": "Use for Charles Wesley hymn and poetry study with historical perspective. Labels/warnings: Historical hymn collection; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Charles Wesley hymn and poetry study with historical perspective.",
+    "resource_labels": [
+      "Wesley Hymns and Poetry",
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical hymn collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 13",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "collection": "Wesley Hymns and Poetry",
+      "badge": "Wesley Hymns and Poetry",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 901,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dfd62fb07b0da6258b55917762595d75bded3057f505b2292f00f136823a4953",
+    "file_size_bytes": 1090068,
+    "word_count": 202771
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 16",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe16wesl/worksofrevjohnwe16wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe16wesl/worksofrevjohnwe16wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-16-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe16wesl/worksofrevjohnwe16wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 16",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 416,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "29492e8df0a1a0e2a6e7f6cbeeede2d2fe1e8ef0910fc01b0f4235cdb14333c0",
+    "file_size_bytes": 578132,
+    "word_count": 93668
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 17",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe17wesl/worksofrevjohnwe17wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe17wesl/worksofrevjohnwe17wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-17-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe17wesl/worksofrevjohnwe17wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 17",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 438,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "55b9f7f09ff975b3e674745caef0aa18482950b2b6c7233abb30c3d1cfb0e1d7",
+    "file_size_bytes": 616369,
+    "word_count": 98653
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 18",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe18wesl/worksofrevjohnwe18wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe18wesl/worksofrevjohnwe18wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-18-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe18wesl/worksofrevjohnwe18wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 18",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 434,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "fa0e549c2dc5e48a19ced897b93987e2a1329111e1e8860e63525ac7fb8ef2a7",
+    "file_size_bytes": 605725,
+    "word_count": 97655
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 19",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe19wesl/worksofrevjohnwe19wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe19wesl/worksofrevjohnwe19wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-19-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe19wesl/worksofrevjohnwe19wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 19",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 368,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bb8fa9090a3c0867c87d1de6f7d9edbf8b0025fa45b8183aa92848fc66b1cb22",
+    "file_size_bytes": 512799,
+    "word_count": 82733
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 20",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe20wesl/worksofrevjohnwe20wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe20wesl/worksofrevjohnwe20wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-20-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe20wesl/worksofrevjohnwe20wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 20",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 364,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "986a2519d774513f0897a8a3acf02477e7329536f4202a1d37449a1595245779",
+    "file_size_bytes": 506687,
+    "word_count": 81887
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 21",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe21wesl/worksofrevjohnwe21wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe21wesl/worksofrevjohnwe21wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-21-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe21wesl/worksofrevjohnwe21wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 21",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 554,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3810002da153b9beb94bdfa913d0edce85c3e6c36ce3bf2a7ceb2e5b7b5bef70",
+    "file_size_bytes": 773006,
+    "word_count": 124717
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 22",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe22wesl/worksofrevjohnwe22wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe22wesl/worksofrevjohnwe22wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-22-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe22wesl/worksofrevjohnwe22wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 22",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 415,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f2696c0fc49e4d4445e6b3cd587e6d2c11d687a35c16d6980174d9380ca8b95f",
+    "file_size_bytes": 588173,
+    "word_count": 93474
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 23",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe23wesl/worksofrevjohnwe23wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe23wesl/worksofrevjohnwe23wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-23-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe23wesl/worksofrevjohnwe23wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 23",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 391,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7fd4b0c72194bc406d3727d7446452506d93ae0f2462f879d77d509ae691a623",
+    "file_size_bytes": 562784,
+    "word_count": 87979
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 24",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe24wesl/worksofrevjohnwe24wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe24wesl/worksofrevjohnwe24wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-24-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe24wesl/worksofrevjohnwe24wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 24",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 412,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "588b072362f1aa4b791ee9056f044256755346f0ce90caddce4fce9255107b55",
+    "file_size_bytes": 573676,
+    "word_count": 92624
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 25",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe25wesl/worksofrevjohnwe25wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe25wesl/worksofrevjohnwe25wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-25-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe25wesl/worksofrevjohnwe25wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 25",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 464,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6da1e21e5276f53da40647781737f49a4593c252f773f474a05bae46ab5051d4",
+    "file_size_bytes": 664261,
+    "word_count": 104455
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 26",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe26wesl/worksofrevjohnwe26wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe26wesl/worksofrevjohnwe26wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-26-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe26wesl/worksofrevjohnwe26wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 26",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 369,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e36ab75c6c53f5bc46b6c796436a68eddd86cceba0b6aea777ddc740f86a0cc1",
+    "file_size_bytes": 515812,
+    "word_count": 83120
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 27",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe27wesl/worksofrevjohnwe27wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe27wesl/worksofrevjohnwe27wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-27-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe27wesl/worksofrevjohnwe27wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 27",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 370,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a994c2d2fd3f2d14509562edea617ff72fd06e5f2d2a0a8ebe9fc9d15b8329bc",
+    "file_size_bytes": 511249,
+    "word_count": 83301
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 28",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe28wesl/worksofrevjohnwe28wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe28wesl/worksofrevjohnwe28wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-28-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe28wesl/worksofrevjohnwe28wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 28",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 470,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4919be5c157c2f581a9ece1543d3286ad0caa6862e3f3770dee5ab5dc21cf619",
+    "file_size_bytes": 644884,
+    "word_count": 105639
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 29",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe29wesl/worksofrevjohnwe29wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe29wesl/worksofrevjohnwe29wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-29-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe29wesl/worksofrevjohnwe29wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 29",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 355,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "56e887d73f95f29cefebbfb8e44472e510db53c93bdb8f62745c6fd4fea78254",
+    "file_size_bytes": 492296,
+    "word_count": 79844
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 30",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe30wesl/worksofrevjohnwe30wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe30wesl/worksofrevjohnwe30wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-30-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe30wesl/worksofrevjohnwe30wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 30",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 431,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d32376790d2ab79b6926caba19e44f1d0cd5c0d4f0fb01d1df9ae1fc183cf82e",
+    "file_size_bytes": 599074,
+    "word_count": 97015
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 31",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe31wesl/worksofrevjohnwe31wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe31wesl/worksofrevjohnwe31wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-31-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe31wesl/worksofrevjohnwe31wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 31",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 432,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7c2e7b37612e640c46ec7ee5fd758e7e0479a52b7c8d795de4377f87ea54c94f",
+    "file_size_bytes": 602168,
+    "word_count": 97219
+  },
+  {
+    "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 32",
+    "author": "John Wesley",
+    "year": 1771,
+    "category": "Classics",
+    "collection": "John Wesley Collection",
+    "source_url": "https://archive.org/download/worksofrevjohnwe32wesl/worksofrevjohnwe32wesl_djvu.txt",
+    "download_url": "https://archive.org/download/worksofrevjohnwe32wesl/worksofrevjohnwe32wesl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-32-john-wesley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/worksofrevjohnwe32wesl/worksofrevjohnwe32wesl_djvu.txt.",
+    "notes": "Use for Wesley primary-source study and historical theology with discernment. Labels/warnings: Historical Methodist perspective; OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for Wesley primary-source study and historical theology with discernment.",
+    "resource_labels": [
+      "John Wesley Collection",
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "Historical Methodist perspective",
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 32",
+      "author": "John Wesley",
+      "category": "Classics",
+      "collection": "John Wesley Collection",
+      "badge": "John Wesley Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 406,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "529f96e6327a0c7e14a30681a8f7d72796575c8650b96e73003f45741b0acfb6",
+    "file_size_bytes": 565281,
+    "word_count": 91262
   }
 ]

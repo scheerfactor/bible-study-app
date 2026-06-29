@@ -4,13 +4,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,302
+- Verified public Library resources: 1,349
 - Active public commentary entries shown in the app: 5,408
 - Reviewed public commentary import rows: 5,498
 - Commentary validation rows checked, including staging/review files: 7,876
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 476
+- Library authors represented: 489
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley, Spurgeon, and Hymnology Sprint
+
+Added 36 verified public-domain resources:
+
+- 13 volumes of _The Poetical Works of John and Charles Wesley_
+- 17 missing later volumes from the 1771 _Works of the Rev. John Wesley_ sequence
+- 2 Spurgeon preaching resources: _Feathers for Arrows_ and _Twelve Sermons on Conversion_
+- 4 hymnology and worship-history resources from Project Gutenberg
+
+These resources strengthen Charles Wesley coverage, John Wesley primary-source depth, Spurgeon preaching helps, hymn history, worship background, and sermon illustration material. Rough eighteenth-century Charles Wesley OCR scans were not imported as public reader text.
 
 ## Latest Morgan Major Books Commentary Sprint
 
@@ -142,17 +153,17 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Category | Resources |
 | --- | ---: |
 | Commentaries | 252 |
-| Missions | 243 |
-| Christian Living | 216 |
-| Preaching & Teaching | 172 |
+| Missions | 244 |
+| Christian Living | 218 |
+| Preaching & Teaching | 185 |
 | Bible study helps | 130 |
 | Prayer | 79 |
-| Baptist History | 50 |
+| Baptist History | 60 |
 | Evangelism | 46 |
-| Bible Handbooks | 19 |
-| KJV / Textual Issues | 16 |
+| Classics | 42 |
+| Bible Handbooks | 23 |
+| KJV / Textual Issues | 21 |
 | Biographies | 18 |
-| Classics | 12 |
 | Dictionaries | 11 |
 | Christian life | 7 |
 | Surveys | 5 |
@@ -167,16 +178,16 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | --- | ---: |
 | Missions Biographies | 128 |
 | Commentary | 93 |
-| Preaching & Teaching | 94 |
-| Spurgeon Collection | 84 |
+| Preaching & Teaching | 97 |
+| Spurgeon Collection | 88 |
 | F. B. Meyer Collection | 72 |
 | Missions Periodicals | 62 |
 | Ryle Collection | 54 |
 | Missions | 50 |
-| Torrey Collection | 46 |
+| Torrey Collection | 48 |
 | Bible Doctrine | 44 |
 | Gaebelein Collection | 44 |
-| Baptist History | 31 |
+| Baptist History | 41 |
 | Christian Living | 32 |
 | Alexander Maclaren Collection | 26 |
 | William Kelly Collection | 23 |
@@ -186,11 +197,13 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | Commentaries | 19 |
 | Prayer | 19 |
 | Bounds Collection | 18 |
+| John Wesley Collection | 17 |
 | Moody Collection | 16 |
 | Bible Handbooks | 15 |
 | Bible study helps | 15 |
 | Prayer Classics | 15 |
 | Revival & Evangelism | 13 |
+| Wesley Hymns and Poetry | 13 |
 | Darby Collection | 11 |
 | Church History | 11 |
 | R. A. Torrey Collection | 10 |
@@ -204,7 +217,7 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 | Author | Resources |
 | --- | ---: |
-| C. H. Spurgeon | 85+ combined normalized author matches |
+| C. H. Spurgeon | 96+ combined normalized author matches |
 | F. B. Meyer | 69+ combined normalized author matches |
 | R. A. Torrey | 50+ combined normalized author matches |
 | J. C. Ryle | 50+ combined normalized author matches |
@@ -217,6 +230,9 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 | J. N. Darby | 11+ |
 | Clarence Larkin | 7+ |
 | F. W. Grant | 5+ |
+| George Whitefield | 24+ combined normalized author/title matches |
+| John Wesley | 47+ combined normalized author/title matches |
+| Charles Wesley | 14+ combined normalized author/title matches |
 
 ## Commentary By Author
 

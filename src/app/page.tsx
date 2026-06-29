@@ -3274,7 +3274,7 @@ const DEFAULT_TEACHING_WORKSPACE_VISIBILITY: TeachingWorkspaceVisibility = {
   lessonOutline: true,
 };
 
-const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside", "kelly", "grant"];
+const FEATURED_LIBRARY_AUTHOR_IDS = ["spurgeon", "ryle", "moody", "bounds", "murray", "torrey", "bunyan", "taylor", "meyer", "ironside", "kelly", "grant", "whitefield", "charles-wesley"];
 const MAJOR_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "moody", "ryle", "murray", "bounds", "torrey", "meyer", "kelly", "grant", "larkin", "darby", "gaebelein"];
 const AUTHOR_COLLECTION_TARGETS: Record<string, number> = {
   spurgeon: 100,
@@ -3425,6 +3425,58 @@ const LIBRARY_AUTHOR_PROFILES: LibraryAuthorProfile[] = [
     relatedAuthorIds: ["matthew-henry", "adam-clarke", "albert-barnes"],
     recommendedReadingOrder: ["KJV passage", "Matthew Henry", "JFB", "Wesley notes"],
     subjects: ["Commentary", "Use with discernment"],
+  },
+  {
+    id: "charles-wesley",
+    name: "Charles Wesley",
+    years: "1707-1788",
+    shortLabel: "Hymns, poetry, and worship history",
+    biography: "Charles Wesley was an English hymn writer and Methodist preacher whose hymns shaped English-speaking evangelical worship. His material is most useful for hymn history, worship background, devotional reflection, and sermon illustration, while doctrine should remain checked directly against Scripture.",
+    timeline: [
+      { year: "1707", event: "Born in Epworth, England." },
+      { year: "1738", event: "Closely connected with the Methodist revival alongside John Wesley and George Whitefield." },
+      { year: "1740s", event: "Published hymn and sacred-poetry collections used widely in Methodist worship." },
+      { year: "1788", event: "Died after a large hymn-writing ministry." },
+    ],
+    commentary: "Use as hymn and devotional background. The app labels these works as historical Methodist/Wesleyan resources and keeps Scripture primary.",
+    quotes: [
+      "Best used for hymn background, worship history, and sermon illustration.",
+      "Historical hymns should support Scripture, not replace exposition.",
+    ],
+    relatedAuthorIds: ["john-wesley", "whitefield", "spurgeon"],
+    recommendedReadingOrder: [
+      "The Poetical Works of John and Charles Wesley, Vol. 1",
+      "The Poetical Works of John and Charles Wesley, Vol. 2",
+      "The Story of the Hymns and Tunes",
+      "The Hymn-Book of the Modern Church",
+    ],
+    subjects: ["Hymns", "Worship", "Devotional", "Use with discernment"],
+  },
+  {
+    id: "whitefield",
+    name: "George Whitefield",
+    years: "1714-1770",
+    shortLabel: "Evangelistic preaching and revival history",
+    biography: "George Whitefield was a leading evangelistic preacher in the eighteenth-century revival. His sermons, journals, and biographies are useful for evangelism, revival history, preaching burden, and historical comparison.",
+    timeline: [
+      { year: "1714", event: "Born in Gloucester, England." },
+      { year: "1730s", event: "Began wide itinerant preaching connected with the evangelical revival." },
+      { year: "1740s", event: "Preached extensively in Britain and America." },
+      { year: "1770", event: "Died in Newburyport, Massachusetts." },
+    ],
+    commentary: "Use for evangelistic preaching, revival history, and sermon study. Keep direct exposition and KJV Scripture first.",
+    quotes: [
+      "Whitefield is most useful for evangelistic urgency and revival history.",
+      "Use historical sermons as support, not as a substitute for Scripture.",
+    ],
+    relatedAuthorIds: ["spurgeon", "ryle", "john-wesley"],
+    recommendedReadingOrder: [
+      "The works of the Reverend George Whitefield, M.A., Vol. 1 (of 6)",
+      "Selected sermons of George Whitefield",
+      "A Sketch of the Life and Labors of George Whitefield",
+      "The Life of the Rev. George Whitefield, Volume 1",
+    ],
+    subjects: ["Evangelism", "Preaching", "Revival", "Biography"],
   },
   {
     id: "john-gill",
@@ -4233,7 +4285,7 @@ const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "pra
 
 const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
-const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds"];
+const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
 const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
   {
@@ -13961,22 +14013,55 @@ function cleanLibraryReaderText(text: string, title: string) {
   const trimmed = text.trim();
   if (!trimmed) return trimmed;
 
-  const frontMatterWindow = trimmed.slice(0, 8000);
+  const frontMatterWindow = trimmed.slice(0, 12000);
   const escapedTitle = title.trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
   if (!escapedTitle) return trimmed;
 
   const titleMatches = Array.from(frontMatterWindow.matchAll(new RegExp(escapedTitle, "gi")));
-  if (titleMatches.length < 2) return trimmed;
+  if (titleMatches.length >= 2) {
+    const secondTitleIndex = titleMatches[1].index ?? 0;
+    const afterTitle = frontMatterWindow.slice(secondTitleIndex);
+    const startMarker = afterTitle.search(/\b(?:TO YOU!?|PREFACE|INTRODUCTION|CHAPTER\s+(?:I|1|ONE)|SECTION\s+(?:I|1|ONE))\b/i);
+    if (startMarker >= 0 && startMarker <= 4500) {
+      const absoluteStart = secondTitleIndex + startMarker;
+      if (absoluteStart >= 400) return trimmed.slice(absoluteStart).trim();
+    }
+  }
 
-  const secondTitleIndex = titleMatches[1].index ?? 0;
-  const afterTitle = frontMatterWindow.slice(secondTitleIndex);
-  const startMarker = afterTitle.search(/\b(?:TO YOU!?|PREFACE|INTRODUCTION|CHAPTER\s+(?:I|1|ONE)|SECTION\s+(?:I|1|ONE))\b/i);
-  if (startMarker < 0 || startMarker > 4500) return trimmed;
+  const titleWords = title
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((word) => word.length >= 4 && !["with", "from", "that", "this", "volume"].includes(word))
+    .slice(0, 8);
 
-  const absoluteStart = secondTitleIndex + startMarker;
-  if (absoluteStart < 400) return trimmed;
+  if (!titleWords.length) return trimmed;
 
-  return trimmed.slice(absoluteStart).trim();
+  const scanNoticePattern = /(?:google\s+this\s+is\s+a\s+digital\s+copy|digitized\s+by\s+the\s+internet\s+archive|library\s+of\s+the\s+theological\s+seminary|duke\s+university\s+divinity\s+school\s+library)/i;
+  if (!scanNoticePattern.test(frontMatterWindow)) return trimmed;
+
+  let offset = 0;
+  for (const rawLine of frontMatterWindow.split(/\n/)) {
+    const line = rawLine.trim();
+    const normalizedLine = line
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const hitCount = titleWords.filter((word) => normalizedLine.includes(word)).length;
+
+    if (offset > 300 && hitCount >= Math.min(3, titleWords.length)) {
+      return trimmed.slice(offset).trim();
+    }
+
+    offset += rawLine.length + 1;
+  }
+
+  return trimmed;
 }
 
 function bibleSpeechParts(
@@ -31442,9 +31527,11 @@ function libraryAuthorIdFromName(author: string) {
   const normalized = author.toLowerCase();
   if (normalized.includes("spurgeon")) return "spurgeon";
   if (normalized.includes("ironside")) return "ironside";
+  if (normalized.includes("whitefield")) return "whitefield";
   if (normalized.includes("matthew henry")) return "matthew-henry";
   if (normalized.includes("barnes")) return "albert-barnes";
   if (normalized.includes("jamieson") || normalized.includes("fausset") || normalized.includes("brown")) return "jfb";
+  if (normalized.includes("charles wesley")) return "charles-wesley";
   if (normalized.includes("wesley")) return "john-wesley";
   if (normalized.includes("john gill") || normalized.includes("gill")) return "john-gill";
   if (normalized.includes("adam clarke") || normalized.includes("clarke")) return "adam-clarke";

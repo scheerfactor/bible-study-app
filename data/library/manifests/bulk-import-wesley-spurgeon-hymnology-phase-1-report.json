@@ -1,0 +1,566 @@
+{
+  "source_csv": "data/library/import-batches/wesley-spurgeon-hymnology-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 36,
+  "total_attempted": 36,
+  "imported": 36,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Story of the Hymns and Tunes",
+      "file": "the-story-of-the-hymns-and-tunes-hezekiah-butterworth-theron-brown.txt",
+      "bytes": 784036,
+      "words": 122483,
+      "reading_time_minutes": 544
+    },
+    {
+      "title": "The Hymn-Book of the Modern Church: Brief Studies of Hymns and Hymn-Writers",
+      "file": "the-hymn-book-of-the-modern-church-brief-studies-of-hymns-and-hymn-writers-arthur-e-gregory.txt",
+      "bytes": 507301,
+      "words": 79155,
+      "reading_time_minutes": 352
+    },
+    {
+      "title": "The Singing Church: The Hymns It Wrote and Sang",
+      "file": "the-singing-church-the-hymns-it-wrote-and-sang-edmund-s-lorenz.txt",
+      "bytes": 572581,
+      "words": 84957,
+      "reading_time_minutes": 378
+    },
+    {
+      "title": "The Story of Our Hymns",
+      "file": "the-story-of-our-hymns-ernest-edwin-ryden.txt",
+      "bytes": 726792,
+      "words": 113572,
+      "reading_time_minutes": 505
+    },
+    {
+      "title": "Feathers for Arrows: Illustrations for Preachers and Teachers from My Note Book",
+      "file": "feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+      "bytes": 590513,
+      "words": 106506,
+      "reading_time_minutes": 473
+    },
+    {
+      "title": "Twelve Sermons on Conversion",
+      "file": "twelve-sermons-on-conversion-c-h-spurgeon.txt",
+      "bytes": 486464,
+      "words": 89916,
+      "reading_time_minutes": 400
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 1",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-1-john-wesley-charles-wesley.txt",
+      "bytes": 502440,
+      "words": 80054,
+      "reading_time_minutes": 356
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 2",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-2-john-wesley-charles-wesley.txt",
+      "bytes": 449835,
+      "words": 72730,
+      "reading_time_minutes": 323
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 3",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-3-john-wesley-charles-wesley.txt",
+      "bytes": 466839,
+      "words": 73888,
+      "reading_time_minutes": 328
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 4",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-4-john-wesley-charles-wesley.txt",
+      "bytes": 559503,
+      "words": 88832,
+      "reading_time_minutes": 395
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 5",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-5-john-wesley-charles-wesley.txt",
+      "bytes": 594858,
+      "words": 94331,
+      "reading_time_minutes": 419
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 6",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-6-john-wesley-charles-wesley.txt",
+      "bytes": 542485,
+      "words": 83899,
+      "reading_time_minutes": 373
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 7",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-7-john-wesley-charles-wesley.txt",
+      "bytes": 509576,
+      "words": 79315,
+      "reading_time_minutes": 353
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 8",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-8-john-wesley-charles-wesley.txt",
+      "bytes": 593589,
+      "words": 92549,
+      "reading_time_minutes": 411
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 9",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-9-john-wesley-charles-wesley.txt",
+      "bytes": 626584,
+      "words": 99023,
+      "reading_time_minutes": 440
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 10",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-10-john-wesley-charles-wesley.txt",
+      "bytes": 644913,
+      "words": 101172,
+      "reading_time_minutes": 450
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 11",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-11-john-wesley-charles-wesley.txt",
+      "bytes": 661447,
+      "words": 103922,
+      "reading_time_minutes": 462
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 12",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-12-john-wesley-charles-wesley.txt",
+      "bytes": 587889,
+      "words": 91244,
+      "reading_time_minutes": 406
+    },
+    {
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 13",
+      "file": "the-poetical-works-of-john-and-charles-wesley-vol-13-john-wesley-charles-wesley.txt",
+      "bytes": 1090068,
+      "words": 202771,
+      "reading_time_minutes": 901
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 16",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-16-john-wesley.txt",
+      "bytes": 578132,
+      "words": 93668,
+      "reading_time_minutes": 416
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 17",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-17-john-wesley.txt",
+      "bytes": 616369,
+      "words": 98653,
+      "reading_time_minutes": 438
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 18",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-18-john-wesley.txt",
+      "bytes": 605725,
+      "words": 97655,
+      "reading_time_minutes": 434
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 19",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-19-john-wesley.txt",
+      "bytes": 512799,
+      "words": 82733,
+      "reading_time_minutes": 368
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 20",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-20-john-wesley.txt",
+      "bytes": 506687,
+      "words": 81887,
+      "reading_time_minutes": 364
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 21",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-21-john-wesley.txt",
+      "bytes": 773006,
+      "words": 124717,
+      "reading_time_minutes": 554
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 22",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-22-john-wesley.txt",
+      "bytes": 588173,
+      "words": 93474,
+      "reading_time_minutes": 415
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 23",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-23-john-wesley.txt",
+      "bytes": 562784,
+      "words": 87979,
+      "reading_time_minutes": 391
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 24",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-24-john-wesley.txt",
+      "bytes": 573676,
+      "words": 92624,
+      "reading_time_minutes": 412
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 25",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-25-john-wesley.txt",
+      "bytes": 664261,
+      "words": 104455,
+      "reading_time_minutes": 464
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 26",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-26-john-wesley.txt",
+      "bytes": 515812,
+      "words": 83120,
+      "reading_time_minutes": 369
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 27",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-27-john-wesley.txt",
+      "bytes": 511249,
+      "words": 83301,
+      "reading_time_minutes": 370
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 28",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-28-john-wesley.txt",
+      "bytes": 644884,
+      "words": 105639,
+      "reading_time_minutes": 470
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 29",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-29-john-wesley.txt",
+      "bytes": 492296,
+      "words": 79844,
+      "reading_time_minutes": 355
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 30",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-30-john-wesley.txt",
+      "bytes": 599074,
+      "words": 97015,
+      "reading_time_minutes": 431
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 31",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-31-john-wesley.txt",
+      "bytes": 602168,
+      "words": 97219,
+      "reading_time_minutes": 432
+    },
+    {
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 32",
+      "file": "the-works-of-the-rev-john-wesley-1771-edition-vol-32-john-wesley.txt",
+      "bytes": 565281,
+      "words": 91262,
+      "reading_time_minutes": 406
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Story of the Hymns and Tunes",
+      "author": "Hezekiah Butterworth; Theron Brown",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-story-of-the-hymns-and-tunes-hezekiah-butterworth-theron-brown.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Hymn-Book of the Modern Church: Brief Studies of Hymns and Hymn-Writers",
+      "author": "Arthur E. Gregory",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-hymn-book-of-the-modern-church-brief-studies-of-hymns-and-hymn-writers-arthur-e-gregory.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Singing Church: The Hymns It Wrote and Sang",
+      "author": "Edmund S. Lorenz",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-singing-church-the-hymns-it-wrote-and-sang-edmund-s-lorenz.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Story of Our Hymns",
+      "author": "Ernest Edwin Ryden",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-story-of-our-hymns-ernest-edwin-ryden.txt"
+    },
+    {
+      "row": 6,
+      "title": "Feathers for Arrows: Illustrations for Preachers and Teachers from My Note Book",
+      "author": "C. H. Spurgeon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt"
+    },
+    {
+      "row": 7,
+      "title": "Twelve Sermons on Conversion",
+      "author": "C. H. Spurgeon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/twelve-sermons-on-conversion-c-h-spurgeon.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 1",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-1-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 9,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 2",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-2-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 10,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 3",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-3-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 4",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-4-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 12,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 5",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-5-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 6",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-6-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 7",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-7-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 15,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 8",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-8-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 16,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 9",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-9-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 17,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 10",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-10-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 18,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 11",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-11-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 19,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 12",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-12-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 13",
+      "author": "John Wesley; Charles Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-13-john-wesley-charles-wesley.txt"
+    },
+    {
+      "row": 21,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 16",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-16-john-wesley.txt"
+    },
+    {
+      "row": 22,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 17",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-17-john-wesley.txt"
+    },
+    {
+      "row": 23,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 18",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-18-john-wesley.txt"
+    },
+    {
+      "row": 24,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 19",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-19-john-wesley.txt"
+    },
+    {
+      "row": 25,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 20",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-20-john-wesley.txt"
+    },
+    {
+      "row": 26,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 21",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-21-john-wesley.txt"
+    },
+    {
+      "row": 27,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 22",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-22-john-wesley.txt"
+    },
+    {
+      "row": 28,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 23",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-23-john-wesley.txt"
+    },
+    {
+      "row": 29,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 24",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-24-john-wesley.txt"
+    },
+    {
+      "row": 30,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 25",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-25-john-wesley.txt"
+    },
+    {
+      "row": 31,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 26",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-26-john-wesley.txt"
+    },
+    {
+      "row": 32,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 27",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-27-john-wesley.txt"
+    },
+    {
+      "row": 33,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 28",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-28-john-wesley.txt"
+    },
+    {
+      "row": 34,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 29",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-29-john-wesley.txt"
+    },
+    {
+      "row": 35,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 30",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-30-john-wesley.txt"
+    },
+    {
+      "row": 36,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 31",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-31-john-wesley.txt"
+    },
+    {
+      "row": 37,
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 32",
+      "author": "John Wesley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-32-john-wesley.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
