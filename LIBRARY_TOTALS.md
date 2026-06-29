@@ -5,9 +5,9 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,355
-- Active public commentary entries shown in the app: 5,408
-- Reviewed public commentary import rows: 5,498
-- Commentary validation rows checked, including staging/review files: 7,876
+- Active public commentary entries shown in the app: 5,500
+- Reviewed public commentary import rows: 7,725
+- Commentary validation rows checked, including staging/review files: 10,103
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 489
 - Public Library duplicate title/author groups: 0
@@ -35,6 +35,19 @@ Added 6 verified public-domain H. A. Ironside resources from pre-1930 Internet A
 - _Notes on the Book of Proverbs_
 
 These strengthen Romans, Daniel, Jeremiah, Lamentations, Ezra, Nehemiah, Esther, Proverbs, and prophecy study. Each entry includes source URL, rights basis, recommended use, and an OCR spot-check warning before quotation.
+
+## Latest Ironside Commentary Expansion Sprint
+
+Added 92 verified public commentary entries generated from the newly imported H. A. Ironside source texts:
+
+- Proverbs 1-31 from _Notes on the Book of Proverbs_
+- Jeremiah source sections from _Notes on the Prophecy and Lamentations of Jeremiah_
+- Lamentations 1-5 from _Notes on the Prophecy and Lamentations of Jeremiah_
+- Ezra 1-10 from _Notes on the Books of Ezra, Nehemiah and Esther_
+- Nehemiah 1-13 from _Notes on the Books of Ezra, Nehemiah and Esther_
+- Esther 1-10 from _Notes on the Books of Ezra, Nehemiah and Esther_
+
+Grouped Jeremiah sections are attached to their leading chapter rather than duplicated across every chapter in a range, keeping commentary comparison useful without flooding a chapter with repeated text.
 
 ## Latest Morgan Major Books Commentary Sprint
 
