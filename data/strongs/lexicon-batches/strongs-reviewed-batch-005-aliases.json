@@ -30,5 +30,21 @@
     "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsHebrew",
     "rights_status": "CrossWire lists Strong's Hebrew Bible Dictionary as Public Domain / Copy Freely; this entry is a reviewed supplement for a mapped proper-name form.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "G2581",
+    "language": "Greek",
+    "original_word": "Kananites",
+    "transliteration": "Kananites",
+    "pronunciation": "kan-an-ee'-tace",
+    "english_words": ["canaanite"],
+    "related_numbers": ["H3669"],
+    "plain_definition": "Strong's definition: of Hebrew origin; a Cananite, or Canaanite. In Matthew 10:4 and Mark 3:18 it identifies Simon the Canaanite.",
+    "first_occurrence": "Matthew 10:4",
+    "key_verses": ["Matthew 10:4", "Mark 3:18"],
+    "source_title": "Strong's Greek Bible Dictionary",
+    "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
+    "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this entry is a reviewed supplement for a mapped proper-name form missing from the compact Greek import.",
+    "review_status": "Verified"
   }
 ]
