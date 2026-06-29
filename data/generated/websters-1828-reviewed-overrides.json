@@ -1,10 +1,40 @@
 [
   {
+    "headword": "BELIEVE",
+    "normalized_headword": "believe",
+    "definition": "BELIE'VE, verb transitive. To credit upon the authority or testimony of another; to be persuaded of the truth of something upon the declaration of another, or upon evidence furnished by reasons, arguments, and deductions of the mind. BELIE'VE, verb intransitive. To have a firm persuasion of any thing. In Scripture use, to believe in or on Christ is to trust, place full confidence in, and rest upon Him with faith.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/believe",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "DO",
     "normalized_headword": "do",
     "definition": "DO, verb transitive or auxiliary; preterit tense Did; participle passive Done. To perform; to execute; to carry into effect; to exert labor or power for bringing any thing to the state desired, or to completion; to bring any thing to pass. Also, to practice or perform, as to do good or evil.",
     "source_title": "American Dictionary of the English Language",
     "source_file": "https://webstersdictionary1828.com/Home?word=Do",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "PRAY",
+    "normalized_headword": "pray",
+    "definition": "PRAY, verb intransitive. To ask with earnestness or zeal, as for a favor or for something desirable; to entreat; to supplicate. In worship, to address the Supreme Being with solemnity and reverence, with adoration, confession of sins, supplication for mercy, and thanksgiving for blessings received.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Home?word=Pray",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "PRAYER",
+    "normalized_headword": "prayer",
+    "definition": "PRA'YER, noun. In a general sense, the act of asking for a favor, and particularly with earnestness. In worship, a solemn address to the Supreme Being, consisting of adoration, confession of sins, supplication for mercy and forgiveness, intercession for blessings on others, and thanksgiving for mercies and benefits.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/prayer",
     "source_line_start": 1,
     "source_line_end": 1,
     "review_status": "reviewed_overlay"
