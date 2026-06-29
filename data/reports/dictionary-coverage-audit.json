@@ -1,0 +1,561 @@
+{
+  "summary": {
+    "checked_at": "2026-06-29T22:07:38.907Z",
+    "study_word_count": 75,
+    "webster_exact_matches": 75,
+    "easton_text_matches": 72,
+    "smith_text_matches": 75,
+    "nave_text_matches": 74,
+    "webster_coverage_percent": 100,
+    "easton_text_coverage_percent": 96,
+    "smith_text_coverage_percent": 100,
+    "nave_text_coverage_percent": 98.7
+  },
+  "source_files": {
+    "app": "src/app/page.tsx",
+    "webster": "data/generated/websters-1828.entries.json",
+    "webster_overrides": "data/generated/websters-1828-reviewed-overrides.json",
+    "easton": "data/library/verified/eastons-bible-dictionary.txt",
+    "smith": "data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt",
+    "nave": "data/library/verified/naves-topical-bible.txt"
+  },
+  "rows": [
+    {
+      "word": "adoption",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "beast",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "believe",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "boast",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "born",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "charity",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "condemned",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "controversy",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "covenant",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "death",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "disciple",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "dominion",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "dove",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "faith",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "flesh",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "flock",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "follow",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "glory",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "grace",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "groaning",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "heal",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "hearken",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "heart",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "holy",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "intercede",
+      "webster": true,
+      "easton": false,
+      "smith": true,
+      "nave": false
+    },
+    {
+      "word": "judgment",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "kingdom",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "know",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "knowledge",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "law",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "life",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "light",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "love",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "mark",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "mercy",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "mission",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "mix",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "pastor",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "perish",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "praise",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "prayer",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "preach",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "pride",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "promise",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "prophecy",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "prophet",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "recompense",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "repentance",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "resurrection",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "return",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "righteousness",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "sacrifice",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "salvation",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "sanctification",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "sanctify",
+      "webster": true,
+      "easton": false,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "saved",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "shepherd",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "sin",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "sow",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "spirit",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "supplication",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "teach",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "testament",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "thanksgiving",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "transgression",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "truth",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "understanding",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "vision",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "visitation",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "whoredom",
+      "webster": true,
+      "easton": false,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "wisdom",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "witness",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "world",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "worship",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    },
+    {
+      "word": "zion",
+      "webster": true,
+      "easton": true,
+      "smith": true,
+      "nave": true
+    }
+  ],
+  "missing": {
+    "webster": [],
+    "easton": [
+      "intercede",
+      "sanctify",
+      "whoredom"
+    ],
+    "smith": [],
+    "nave": [
+      "intercede"
+    ]
+  }
+}
