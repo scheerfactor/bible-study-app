@@ -15295,7 +15295,7 @@ export default function Home() {
         ? chapterCommentaryEntries.slice(0, 8).map((entry) => `${entry.author}, ${entry.resource_title}, ${entry.reference ?? `${entry.book} ${entry.chapter}`}: ${entry.entry_text.slice(0, 700)}${entry.entry_text.length > 700 ? "..." : ""}`).join("\n\n")
         : "No reviewed commentary entries are available for this chapter yet.",
       webster: websterLines.join("\n"),
-      strongs: strongLines.length ? strongLines.join("\n") : "No Strong's sample entries matched this chapter's key words yet.",
+      strongs: strongLines.length ? strongLines.join("\n") : "No reviewed Strong's entries matched this chapter's key words yet.",
       notes: chapterNotes.length
         ? chapterNotes.flatMap(([ref, notes]) => notes.map((note) => `${ref}: ${note.body}`)).join("\n")
         : "No personal Bible notes are saved for this chapter yet.",
@@ -16904,7 +16904,7 @@ export default function Home() {
         .then((response) => response.json())
         .then((data: { entries?: StrongSearchResult[] }) => {
           setStrongSearchResults(data.entries ?? []);
-          setStrongSearchStatus((data.entries ?? []).length ? "" : "No Strong's entries found in the verified sample yet.");
+          setStrongSearchStatus((data.entries ?? []).length ? "" : "No reviewed Strong's entries found for that search yet.");
         })
         .catch((error: Error) => {
           if (error.name === "AbortError") return;
@@ -25960,7 +25960,7 @@ function BibleReader({
         </div>
         {showStrongNumbers && (
           <p className="mb-4 rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm leading-6 text-[var(--muted)]">
-            {strongMappingDisplayStatus} Reviewed sample coverage is live now; full KJV word mapping will appear here as rights-cleared data is imported.
+            {strongMappingDisplayStatus} Reviewed KJV word mapping is live for the available data. Tap a Strong&apos;s number to open the word-study panel.
           </p>
         )}
 
@@ -28592,9 +28592,9 @@ function ChapterStudyWorkflow({
           />
           <StudyToolHubCard
             title="Strong's"
-            meta={chapterStrongEntry ? chapterStrongEntry.strongsNumber : "Starter coverage"}
-            body={chapterStrongEntry ? `${chapterStrongEntry.displayWord}: ${chapterStrongEntry.plainMeaning}` : "Use reviewed starter entries while the full Strong's import remains under review."}
-            actionLabel={chapterStrongEntry ? "Open Strong's" : "Find sample word"}
+            meta={chapterStrongEntry ? chapterStrongEntry.strongsNumber : "Reviewed index"}
+            body={chapterStrongEntry ? `${chapterStrongEntry.displayWord}: ${chapterStrongEntry.plainMeaning}` : "Search the reviewed Strong's index for the key words in this passage."}
+            actionLabel={chapterStrongEntry ? "Open Strong's" : "Find word"}
             onAction={() => onExplorerWordChange(strongStudyWord)}
             disabled={!strongStudyWord}
           />
@@ -30855,7 +30855,7 @@ function SearchScreen({
               Search reviewed Strong&apos;s entries by number, English word, original word, transliteration, or definition.
             </p>
           ) : strongSearchResults.length === 0 ? (
-            <p className="text-sm leading-6 text-[var(--muted)]">{strongSearchStatus || "No Strong's entries found in the verified sample yet."}</p>
+            <p className="text-sm leading-6 text-[var(--muted)]">{strongSearchStatus || "No reviewed Strong's entries found for that search yet."}</p>
           ) : (
             strongSearchResults.map((entry) => {
               const englishWords = entry.english_words ?? [];
@@ -42869,7 +42869,7 @@ function StudyDrawer({
                   <h3 className="text-sm font-semibold">Cross references</h3>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                  TSK structure is in place. John 3:16 has sample references now; the full import can come later.
+                  Reviewed Treasury of Scripture Knowledge references are shown where available, with the strongest and teaching-use links surfaced first.
                 </p>
               </div>
 
@@ -42900,7 +42900,7 @@ function StudyDrawer({
                   );
                 })
               ) : (
-                <EmptyState title="No cross references yet" body="This verse is ready for a future TSK import." />
+                <EmptyState title="No reviewed cross references yet" body="Try the chapter-level Study Workspace or another verse while the TSK review continues." />
               )}
             </div>
           )}
@@ -44549,7 +44549,7 @@ function SermonWorkspaceScreen({
               <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Send to Sermon</p>
               <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Bring in reviewed study material</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-                Pull from Passage Guide, commentary, personal notes, journal thoughts, Webster, and Strong&apos;s samples into this sermon draft.
+                Pull from Passage Guide, commentary, personal notes, journal thoughts, Webster, and Strong&apos;s word studies into this sermon draft.
               </p>
               <div className="mt-4 grid gap-2 sm:grid-cols-2">
                 {[

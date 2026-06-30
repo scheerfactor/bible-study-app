@@ -1,15 +1,15 @@
 # Core Study Data Audit
 
-Generated: 2026-06-29T12:51:41.036Z
+Generated: 2026-06-30T01:36:59.843Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- Library: 1313 verified resources.
-- Public commentary rows: 7633.
+- Library: 1355 verified resources.
+- Public commentary rows: 7725.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.
-- Webster 1828 entries: 57562 (50292 normalized headwords; 1 reviewed overlay).
+- Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
 - Public TSK rows: 5560; staged TSK rows: 50; source verses covered: 1927; chapters covered: 924; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
@@ -91,15 +91,15 @@ Generated: 2026-06-29T12:51:41.036Z
 | 2 Chronicles | 36 | 36 | 100% | 6 | 2.9 |
 | Job | 42 | 42 | 100% | 6 | 2.9 |
 | 1 Chronicles | 29 | 29 | 100% | 6 | 3.1 |
-| Nehemiah | 13 | 13 | 100% | 6 | 5.1 |
 | Ecclesiastes | 12 | 12 | 100% | 6 | 5.1 |
-| Esther | 10 | 10 | 100% | 6 | 5.1 |
-| Ezra | 10 | 10 | 100% | 6 | 5.1 |
+| Nehemiah | 13 | 13 | 100% | 7 | 6.1 |
+| Esther | 10 | 10 | 100% | 7 | 6.1 |
+| Ezra | 10 | 10 | 100% | 7 | 6.1 |
 | Isaiah | 66 | 66 | 100% | 8 | 4.2 |
-| Jeremiah | 52 | 52 | 100% | 8 | 4.6 |
 | Ezekiel | 48 | 48 | 100% | 8 | 4.8 |
 | 1 Corinthians | 16 | 16 | 100% | 8 | 5.0 |
 | Exodus | 40 | 40 | 100% | 8 | 7.0 |
+| Numbers | 36 | 36 | 100% | 8 | 7.0 |
 
 ## Recommendations
 

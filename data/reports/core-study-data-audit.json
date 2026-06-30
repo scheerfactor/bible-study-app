@@ -5,19 +5,19 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 1313
+    "verifiedResources": 1355
   },
   "commentary": {
-    "publicRows": 7633,
+    "publicRows": 7725,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
   },
   "webster1828": {
-    "entries": 57562,
+    "entries": 57575,
     "baseEntries": 57561,
-    "reviewedOverrides": 1,
-    "uniqueNormalizedHeadwords": 50292,
+    "reviewedOverrides": 14,
+    "uniqueNormalizedHeadwords": 50303,
     "suspiciousOcrEntries": 1883,
     "normalizationChecks": [
       {
@@ -358,14 +358,6 @@
       "rowsPerChapter": 3.0689655172413794
     },
     {
-      "book": "Nehemiah",
-      "coveredChapters": 13,
-      "totalChapters": 13,
-      "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 5.076923076923077
-    },
-    {
       "book": "Ecclesiastes",
       "coveredChapters": 12,
       "totalChapters": 12,
@@ -374,20 +366,28 @@
       "rowsPerChapter": 5.083333333333333
     },
     {
+      "book": "Nehemiah",
+      "coveredChapters": 13,
+      "totalChapters": 13,
+      "coverage": 1,
+      "authors": 7,
+      "rowsPerChapter": 6.076923076923077
+    },
+    {
       "book": "Esther",
       "coveredChapters": 10,
       "totalChapters": 10,
       "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 5.1
+      "authors": 7,
+      "rowsPerChapter": 6.1
     },
     {
       "book": "Ezra",
       "coveredChapters": 10,
       "totalChapters": 10,
       "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 5.1
+      "authors": 7,
+      "rowsPerChapter": 6.1
     },
     {
       "book": "Isaiah",
@@ -396,14 +396,6 @@
       "coverage": 1,
       "authors": 8,
       "rowsPerChapter": 4.242424242424242
-    },
-    {
-      "book": "Jeremiah",
-      "coveredChapters": 52,
-      "totalChapters": 52,
-      "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 4.596153846153846
     },
     {
       "book": "Ezekiel",
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 8,
       "rowsPerChapter": 7.025
+    },
+    {
+      "book": "Numbers",
+      "coveredChapters": 36,
+      "totalChapters": 36,
+      "coverage": 1,
+      "authors": 8,
+      "rowsPerChapter": 7.027777777777778
     }
   ]
 }
