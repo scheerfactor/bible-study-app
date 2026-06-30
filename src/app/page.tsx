@@ -23212,6 +23212,41 @@ function ThemeExplorerScreen({
   const selectedPeople = selectedTheme ? themePeople(selectedTheme) : [];
   const selectedPlaces = selectedTheme ? themePlaces(selectedTheme) : [];
   const selectedTimeline = selectedTheme ? themeTimeline(selectedTheme) : [];
+  const selectedThemeTopicId = selectedTheme?.id ?? "";
+  const selectedThemeTopicTitle = selectedTheme?.title ?? "";
+  const [themeTopicState, setThemeTopicState] = useState<{ themeId: string; entries: StudyToolSearchResult[]; status: string } | null>(null);
+  const themeTopicResults = themeTopicState?.themeId === selectedThemeTopicId ? themeTopicState.entries : [];
+  const themeTopicStatus = themeTopicState?.themeId === selectedThemeTopicId ? themeTopicState.status : "Finding Nave topical references...";
+
+  useEffect(() => {
+    if (!selectedThemeTopicId || !selectedThemeTopicTitle) return;
+
+    const controller = new AbortController();
+
+    fetch(`/api/study-tools?query=${encodeURIComponent(selectedThemeTopicTitle)}&filter=topical&limit=6`, {
+      cache: "no-store",
+      signal: controller.signal,
+    })
+      .then((response) => (response.ok ? response.json() : Promise.reject(new Error("Study tool search failed"))))
+      .then((data: { entries?: StudyToolSearchResult[] }) => {
+        const entries = data.entries ?? [];
+        setThemeTopicState({
+          themeId: selectedThemeTopicId,
+          entries,
+          status: entries.length ? "" : "No Nave topic matched this theme yet.",
+        });
+      })
+      .catch((error: Error) => {
+        if (error.name === "AbortError") return;
+        setThemeTopicState({
+          themeId: selectedThemeTopicId,
+          entries: [],
+          status: "Nave topical search is not available right now.",
+        });
+      });
+
+    return () => controller.abort();
+  }, [selectedThemeTopicId, selectedThemeTopicTitle]);
 
   if (!selectedTheme) {
     return (
@@ -23307,8 +23342,9 @@ function ThemeExplorerScreen({
               </div>
             </div>
 
-            <div className="mt-5 grid gap-2 md:grid-cols-5">
+            <div className="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
               <MiniStat label="Key verses" value={String(selectedTheme.keyVerses.length)} />
+              <MiniStat label="Nave topics" value={String(themeTopicResults.length)} />
               <MiniStat label="Definitions" value={String(selectedDictionaryEntries.length)} />
               <MiniStat label="Strong's" value={String(selectedStrongEntries.length || selectedTheme.strongWords.length)} />
               <MiniStat label="Commentary" value={String(selectedCommentaryEntries.length)} />
@@ -23342,6 +23378,25 @@ function ThemeExplorerScreen({
               </div>
             </StudySection>
           </section>
+
+          <StudySection title="Nave Topical Bible">
+            {themeTopicResults.length ? (
+              <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+                {themeTopicResults.map((entry) => (
+                  <button key={`theme-nave-${selectedTheme.id}-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left" onClick={() => onOpenLibraryResource(entry.resource_slug)} type="button">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <p className="text-sm font-semibold text-[var(--green)]">{entry.heading}</p>
+                      <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">{entry.title}</span>
+                    </div>
+                    <p className="mt-2 line-clamp-4 text-xs leading-5 text-[var(--muted)]">{entry.snippet}</p>
+                    <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Verified public-domain topical index</p>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <p className="text-sm leading-6 text-[var(--muted)]">{themeTopicStatus || "Reviewed topical references will appear here as the Bible tools index grows."}</p>
+            )}
+          </StudySection>
 
           <section className="grid gap-3 xl:grid-cols-2">
             <StudySection title={"Webster and Strong's"}>
