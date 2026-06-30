@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,060
-- Reviewed public commentary import rows: 8,285
-- Commentary validation rows checked, including staging/review files: 10,663
+- Active public commentary entries shown in the app: 6,117
+- Reviewed public commentary import rows: 8,342
+- Commentary validation rows checked, including staging/review files: 10,720
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest 1 Chronicles Commentary Sprint
+
+Added 57 verified public commentary entries for 1 Chronicles 11-29:
+
+- Matthew Poole, 1 Chronicles 11-29
+- The Pulpit Commentary, 1 Chronicles 11-29
+- The Biblical Illustrator, 1 Chronicles 11-29
+
+This completes 1 Chronicles 1-29 coverage for Poole, Pulpit Commentary, and Biblical Illustrator in the reviewed public commentary imports, strengthening kingship, temple, genealogy, Davidic-covenant, and Old Testament background study.
 
 ## Latest 1 Corinthians Commentary Sprint
 
