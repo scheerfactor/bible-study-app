@@ -5131,7 +5131,7 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
     title: "Treasury of Scripture Knowledge",
     author: "Reference editors",
     category: "Cross References",
-    source: "Reviewed sample import path",
+    source: "Reviewed import path",
     status: "Needs Review",
     rightsNotes: "Phase 1 uses verified samples only until full source and quality review are complete.",
     doctrinalNotes: "Cross references must resolve to valid KJV verses.",
@@ -16897,7 +16897,7 @@ export default function Home() {
 
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
-      setStrongSearchStatus("Searching Strong's sample index...");
+      setStrongSearchStatus("Searching Strong's reviewed index...");
       fetch(`/api/strongs?query=${encodeURIComponent(query)}&limit=20`, {
         signal: controller.signal,
       })
@@ -30380,6 +30380,61 @@ function SearchScreen({
   const dictionaryResources = libraryResources
     .filter((resource) => libraryResourceMatches(resource, ["dictionary", "topical bible", "isbe", "hastings", "smith", "easton", "nave", "webster"]))
     .slice(0, 8);
+  const unifiedToolSearchValue = studyToolSearchTerm || dictionarySearchTerm || strongSearchTerm;
+  const quickToolSearches = [
+    { label: "Current chapter", query: `${currentBook} ${currentChapter}`, filter: "all" },
+    { label: "Faith", query: "faith", filter: "topical bible" },
+    { label: "Grace", query: "grace", filter: "topical bible" },
+    { label: "Prayer", query: "prayer", filter: "topical bible" },
+    { label: "Salvation", query: "salvation", filter: "topical bible" },
+    { label: "Repentance", query: "repentance", filter: "topical bible" },
+    { label: "Baptism", query: "baptism", filter: "dictionary" },
+  ];
+  const bibleToolHubCards = [
+    {
+      title: "Dictionaries",
+      body: "Webster, Easton, Smith, ISBE, Hastings, and Bible word helps.",
+      filter: "dictionary",
+      query: unifiedToolSearchValue || "believe",
+    },
+    {
+      title: "Nave Topics",
+      body: "Topical Bible links for doctrines, themes, and practical studies.",
+      filter: "topical bible",
+      query: unifiedToolSearchValue || "prayer",
+    },
+    {
+      title: "Strong's",
+      body: "Reviewed word-study entries, roots, related words, and key uses.",
+      filter: "all",
+      query: unifiedToolSearchValue || "G4100",
+    },
+    {
+      title: "TSK References",
+      body: "Cross references ranked for teaching, prophecy, and Bible study.",
+      filter: "all",
+      query: unifiedToolSearchValue || `${currentBook} ${currentChapter}`,
+    },
+    {
+      title: "People & Places",
+      body: "Bible people, geography, maps, timeline, and background links.",
+      filter: "geography",
+      query: unifiedToolSearchValue || "Jerusalem",
+    },
+  ];
+
+  function applyBibleToolSearch(value: string, filter = "all") {
+    onStudyToolSearchFilterChange(filter);
+    onStudyToolSearchTermChange(value);
+    onDictionarySearchTermChange(value);
+    onStrongSearchTermChange(value);
+  }
+
+  function clearBibleToolSearch() {
+    onStudyToolSearchTermChange("");
+    onDictionarySearchTermChange("");
+    onStrongSearchTermChange("");
+  }
 
   return (
     <div className="space-y-4 p-4 md:p-8">
@@ -30404,6 +30459,65 @@ function SearchScreen({
           <MiniStat label="People" value={String(peopleResults.length)} />
           <MiniStat label="Places" value={String(placeResults.length)} />
           <MiniStat label="Timeline" value={String(timelineResults.length)} />
+        </div>
+
+        <form
+          className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
+          onSubmit={(event) => {
+            event.preventDefault();
+            applyBibleToolSearch(unifiedToolSearchValue || `${currentBook} ${currentChapter}`, studyToolSearchFilter);
+          }}
+        >
+          <label className="text-sm font-semibold text-[var(--green)]">
+            Search all Bible tools
+            <div className="mt-2 flex min-h-12 flex-wrap items-center gap-2 rounded-2xl border border-[var(--line)] bg-white px-4 py-2">
+              <Search size={18} className="shrink-0 text-[var(--green)]" />
+              <input
+                className="min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-stone-400"
+                placeholder="believe, prayer, Jerusalem, covenant, G4100..."
+                value={unifiedToolSearchValue}
+                onChange={(event) => applyBibleToolSearch(event.target.value, studyToolSearchFilter)}
+              />
+              {unifiedToolSearchValue && (
+                <button
+                  className="rounded-full border border-[var(--line)] bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]"
+                  onClick={clearBibleToolSearch}
+                  type="button"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+          </label>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            One search fills dictionaries, Nave topics, Strong&apos;s, TSK, people, places, timeline, and themes below.
+          </p>
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {quickToolSearches.map((item) => (
+              <button
+                key={`quick-tool-${item.label}`}
+                className="shrink-0 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                onClick={() => applyBibleToolSearch(item.query, item.filter)}
+                type="button"
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </form>
+
+        <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          {bibleToolHubCards.map((card) => (
+            <button
+              key={`tool-hub-card-${card.title}`}
+              className="rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-3 text-left transition hover:-translate-y-0.5 hover:shadow-sm"
+              onClick={() => applyBibleToolSearch(card.query, card.filter)}
+              type="button"
+            >
+              <p className="text-sm font-semibold text-[var(--green)]">{card.title}</p>
+              <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{card.body}</p>
+            </button>
+          ))}
         </div>
 
         <div className="mt-4 grid gap-3 xl:grid-cols-2">
@@ -30723,7 +30837,7 @@ function SearchScreen({
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-4 shadow-sm">
         <label className="text-sm font-semibold text-[var(--muted)]">
-          Search Strong&apos;s sample index
+          Search Strong&apos;s reviewed index
           <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
             <Search size={18} className="text-[var(--green)]" />
             <input
@@ -30738,72 +30852,83 @@ function SearchScreen({
         <div className="mt-3 space-y-3">
           {strongSearchTerm.trim().length < 2 ? (
             <p className="text-sm leading-6 text-[var(--muted)]">
-              The full Strong&apos;s import path is staged for review. This searches verified sample entries first.
+              Search reviewed Strong&apos;s entries by number, English word, original word, transliteration, or definition.
             </p>
           ) : strongSearchResults.length === 0 ? (
             <p className="text-sm leading-6 text-[var(--muted)]">{strongSearchStatus || "No Strong's entries found in the verified sample yet."}</p>
           ) : (
-            strongSearchResults.map((entry) => (
-              <article
-                key={entry.strongs_number}
-                className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-base font-semibold text-[var(--ink)]">{entry.strongs_number}</p>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.language}</span>
-                  <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Reviewed sample</span>
-                </div>
-                <p className="mt-2 text-sm leading-6 text-[var(--ink)]">
-                  <span className="font-semibold">{entry.original_word}</span>
-                  {entry.transliteration ? ` · ${entry.transliteration}` : ""}
-                  {entry.pronunciation ? ` · ${entry.pronunciation}` : ""}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{entry.plain_definition}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {entry.english_words.slice(0, 6).map((word) => (
-                    <span key={word} className="rounded-full border border-[var(--line)] bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
-                      {word}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {Array.from(new Set([entry.root, ...entry.related_numbers].filter(Boolean))).map((item) => (
-                      <span key={`search-strong-root-${entry.strongs_number}-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
-                        {item}
-                      </span>
-                    ))}
+            strongSearchResults.map((entry) => {
+              const englishWords = entry.english_words ?? [];
+              const relatedNumbers = entry.related_numbers ?? [];
+              const keyVerses = entry.key_verses ?? [];
+              const rootItems = Array.from(new Set([entry.root, ...relatedNumbers].filter(Boolean)));
+
+              return (
+                <article
+                  key={entry.strongs_number}
+                  className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4"
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-base font-semibold text-[var(--ink)]">{entry.strongs_number}</p>
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{entry.language}</span>
+                    <span className="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">Reviewed entry</span>
                   </div>
-                </div>
-                {(entry.first_occurrence || entry.key_verses.length > 0) && (
-                  <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key Occurrences</p>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      {entry.first_occurrence && (
-                        <button
-                          className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                          onClick={() => onOpenReference(entry.first_occurrence!)}
-                          type="button"
-                        >
-                          First: {entry.first_occurrence}
-                        </button>
-                      )}
-                      {entry.key_verses.slice(0, 5).map((ref) => (
-                        <button
-                          key={`search-strong-key-${entry.strongs_number}-${ref}`}
-                          className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
-                          onClick={() => onOpenReference(ref)}
-                          type="button"
-                        >
-                          {ref}
-                        </button>
+                  <p className="mt-2 text-sm leading-6 text-[var(--ink)]">
+                    <span className="font-semibold">{entry.original_word}</span>
+                    {entry.transliteration ? ` · ${entry.transliteration}` : ""}
+                    {entry.pronunciation ? ` · ${entry.pronunciation}` : ""}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{entry.plain_definition}</p>
+                  {englishWords.length > 0 && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {englishWords.slice(0, 6).map((word) => (
+                        <span key={word} className="rounded-full border border-[var(--line)] bg-white px-2.5 py-1 text-xs font-semibold text-[var(--muted)]">
+                          {word}
+                        </span>
                       ))}
                     </div>
-                  </div>
-                )}
-              </article>
-            ))
+                  )}
+                  {rootItems.length > 0 && (
+                    <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Root Chain</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {rootItems.map((item) => (
+                          <span key={`search-strong-root-${entry.strongs_number}-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {(entry.first_occurrence || keyVerses.length > 0) && (
+                    <div className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Key Occurrences</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {entry.first_occurrence && (
+                          <button
+                            className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                            onClick={() => onOpenReference(entry.first_occurrence!)}
+                            type="button"
+                          >
+                            First: {entry.first_occurrence}
+                          </button>
+                        )}
+                        {keyVerses.slice(0, 5).map((ref) => (
+                          <button
+                            key={`search-strong-key-${entry.strongs_number}-${ref}`}
+                            className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                            onClick={() => onOpenReference(ref)}
+                            type="button"
+                          >
+                            {ref}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </article>
+              );
+            })
           )}
         </div>
       </section>
