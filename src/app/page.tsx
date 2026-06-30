@@ -24309,6 +24309,11 @@ function AtAGlanceStudyPanel({
   ];
   const primaryRelatedBook = relatedBooks.find((resource) => resource.slug);
   const recommendedCommentary = commentaryAuthors[0] ?? "No reviewed commentary yet";
+  const { entries: chapterTopicEntries, status: chapterTopicStatus } = useNaveTopicResults([
+    mainTheme,
+    ...chapterThemes.map((theme) => theme.title),
+    ...keyWords.slice(0, 3).map((item) => item.word),
+  ], 6);
 
   return (
     <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm md:rounded-3xl">
@@ -24403,6 +24408,7 @@ function AtAGlanceStudyPanel({
         <MiniStat label="Commentary" value={String(commentaryCount)} />
         <MiniStat label="Dictionary" value={String(dictionaryEntries.length)} />
         <MiniStat label="Themes" value={String(chapterThemes.length)} />
+        <MiniStat label="Topical" value={String(chapterTopicEntries.length)} />
       </div>
 
       <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -24420,6 +24426,10 @@ function AtAGlanceStudyPanel({
             ))}
             {!chapterThemes.length && <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{mainTheme}</span>}
           </div>
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="Nave Topical Bible" emptyText="Reviewed topical references will appear as chapter themes are connected.">
+          <NaveTopicCards entries={chapterTopicEntries.slice(0, 3)} status={chapterTopicStatus} onOpenLibraryResource={onOpenRelatedBook} />
         </StudyWorkspaceCard>
 
         <StudyWorkspaceCard title="3. Key Words" emptyText="No repeated study words found yet.">
@@ -40396,6 +40406,97 @@ function libraryCategoryLabel(category: string) {
   return labels[category] ?? category;
 }
 
+function useNaveTopicResults(queries: string[], limit = 6) {
+  const queryKey = uniqueStrings(queries.map((query) => query.trim()).filter((query) => query.length > 1)).slice(0, 4).join("|");
+  const [state, setState] = useState<{ queryKey: string; entries: StudyToolSearchResult[]; status: string } | null>(null);
+  const entries = state?.queryKey === queryKey ? state.entries : [];
+  const status = state?.queryKey === queryKey
+    ? state.status
+    : queryKey
+      ? "Finding Nave topical references..."
+      : "No reviewed topical terms are attached yet.";
+
+  useEffect(() => {
+    if (!queryKey) return;
+
+    const controller = new AbortController();
+    const searchQueries = queryKey.split("|").filter(Boolean);
+
+    Promise.all(
+      searchQueries.map((query) =>
+        fetch(`/api/study-tools?query=${encodeURIComponent(query)}&filter=topical&limit=3`, {
+          cache: "no-store",
+          signal: controller.signal,
+        })
+          .then((response) => (response.ok ? response.json() : Promise.reject(new Error("Study tool search failed"))))
+          .then((data: { entries?: StudyToolSearchResult[] }) => data.entries ?? []),
+      ),
+    )
+      .then((groups) => {
+        const seen = new Set<string>();
+        const nextEntries = groups
+          .flat()
+          .filter((entry) => {
+            if (seen.has(entry.id)) return false;
+            seen.add(entry.id);
+            return true;
+          })
+          .slice(0, limit);
+        setState({
+          queryKey,
+          entries: nextEntries,
+          status: nextEntries.length ? "" : "No Nave topic matched these chapter themes yet.",
+        });
+      })
+      .catch((error: Error) => {
+        if (error.name === "AbortError") return;
+        setState({
+          queryKey,
+          entries: [],
+          status: "Nave topical search is not available right now.",
+        });
+      });
+
+    return () => controller.abort();
+  }, [limit, queryKey]);
+
+  return { entries, status };
+}
+
+function NaveTopicCards({
+  entries,
+  status,
+  onOpenLibraryResource,
+}: {
+  entries: StudyToolSearchResult[];
+  status: string;
+  onOpenLibraryResource: (slug: string) => void;
+}) {
+  if (!entries.length) {
+    return <p className="text-sm leading-6 text-[var(--muted)]">{status}</p>;
+  }
+
+  return (
+    <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+      {entries.map((entry) => (
+        <button
+          key={`nave-topic-${entry.id}`}
+          className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3 text-left"
+          onClick={() => onOpenLibraryResource(entry.resource_slug)}
+          type="button"
+        >
+          <div className="flex flex-wrap items-start justify-between gap-2">
+            <p className="text-sm font-semibold text-[var(--green)]">{entry.heading}</p>
+            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">Nave</span>
+          </div>
+          <p className="mt-2 line-clamp-4 text-xs leading-5 text-[var(--muted)]">{entry.snippet}</p>
+          <p className="mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Verified public-domain topical index</p>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function PassageGuideScreen({
   book,
   chapter,
@@ -40524,6 +40625,11 @@ function PassageGuideScreen({
     entries: commentaryEntries.filter((entry) => entry.author === author).length,
   }));
   const relatedBooks = relatedLibraryResourcesForPassage(recommendedResources, libraryResources);
+  const { entries: passageTopicEntries, status: passageTopicStatus } = useNaveTopicResults([
+    ...activeThemes.map((theme) => theme.title),
+    ...connections.themes,
+    ...topWords.slice(0, 3).map((item) => item.word),
+  ], 8);
   const summaryBody = bookIntroduction
     ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
     : connections.themes.length
@@ -40534,6 +40640,7 @@ function PassageGuideScreen({
     ["passage-start-here", "Start Here"],
     ["passage-best-resources", "Best Resources"],
     ["passage-themes", "Themes"],
+    ["passage-topical-bible", "Topical"],
     ["passage-study-pack", "Study Pack"],
     ["passage-background", "Background"],
     ["passage-culture", "Culture"],
@@ -40643,6 +40750,7 @@ function PassageGuideScreen({
           <MiniStat label="Places" value={String(connections.places.length)} />
           <MiniStat label="Resources" value={String(recommendedResources.length)} />
           <MiniStat label="Themes" value={String(activeThemes.length)} />
+          <MiniStat label="Topical" value={String(passageTopicEntries.length)} />
         </div>
         <div className="mt-4 grid gap-3 lg:grid-cols-2">
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
@@ -40768,6 +40876,13 @@ function PassageGuideScreen({
             Open Theme Explorer
           </button>
         </div>
+      </StudySection>
+
+      <StudySection id="passage-topical-bible" title="Nave Topical Bible">
+        <p className="mb-3 text-sm leading-6 text-[var(--muted)]">
+          Reviewed topical Bible entries connected to the chapter themes and repeated words. Use these after reading the passage to trace related subjects quickly.
+        </p>
+        <NaveTopicCards entries={passageTopicEntries} status={passageTopicStatus} onOpenLibraryResource={onOpenLibraryResource} />
       </StudySection>
 
       <StudySection id="passage-study-pack" title="Chapter Study Pack">
