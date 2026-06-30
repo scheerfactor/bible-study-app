@@ -16223,6 +16223,44 @@ export default function Home() {
     openSermonWorkspace("builder");
   }
 
+  function libraryResourceSermonPrepText(resource: LibraryResource) {
+    return [
+      `Title: ${resource.work_title ?? resource.title}`,
+      `Author: ${resource.author}`,
+      resource.year ? `Year: ${resource.year}` : "",
+      `Category: ${libraryCategoryLabel(resource.category)}`,
+      `Recommended use: ${resource.recommended_use || "Use as a supporting study resource under Scripture."}`,
+      `Description: ${resource.description}`,
+      `Perspective notes: ${resource.perspective_notes || "No additional perspective notes attached."}`,
+      resource.resource_warnings.length ? `Warnings: ${resource.resource_warnings.join(", ")}` : "",
+      `Text quality: ${resourceQualityLabels(resource).join(", ") || "No quality label attached."}`,
+      `Rights: ${resource.rights_status.replaceAll("_", " ")}. ${resource.rights_basis}`,
+      resource.source_url ? `Source: ${resource.source_url}` : "",
+    ].filter(Boolean).join("\n");
+  }
+
+  function addLibraryResourceToSermon(resource: LibraryResource) {
+    appendSermonImport(`Library Resource - ${resource.work_title ?? resource.title}`, libraryResourceSermonPrepText(resource));
+    openSermonWorkspace("builder");
+  }
+
+  function addReadingPathToSermon(path: ReadingPath, resources: LibraryResource[]) {
+    const resourceLines = resources.slice(0, 8).map((resource, index) => (
+      `${index + 1}. ${resource.work_title ?? resource.title} - ${resource.author}: ${resource.recommended_use || resource.description}`
+    ));
+    appendSermonImport(
+      `Reading Path - ${path.title}`,
+      [
+        `Path: ${path.title}`,
+        `Purpose: ${path.description}`,
+        path.biblePassages.length ? `Bible passages: ${path.biblePassages.join(", ")}` : "",
+        path.repeatOptions.length ? `Prep steps:\n${path.repeatOptions.map((option) => `- ${option}`).join("\n")}` : "",
+        resourceLines.length ? `Recommended resources:\n${resourceLines.join("\n")}` : "Recommended resources: No reviewed resources matched yet.",
+      ].filter(Boolean).join("\n\n"),
+    );
+    openSermonWorkspace("builder");
+  }
+
   function addStudyWorkflowToSermon(nextView: SermonWorkspaceView = "builder") {
     appendSermonImport(`${book} ${chapter} Study Workflow`, sermonImportPackage.passageGuide);
     setSermonWorkspaceView(nextView);
@@ -20385,10 +20423,12 @@ export default function Home() {
                 onBookmarkNameDraftChange={setLibraryBookmarkNameDraft}
 	                onSaveAnnotation={saveLibraryAnnotation}
 	                onCopySelection={copyLibrarySelection}
-	                onCopyQuote={copyLibraryQuote}
+                onCopyQuote={copyLibraryQuote}
 	                onAddQuoteToSermon={() => addLibrarySelectionToSermon("quote")}
 	                onAddIllustrationToSermon={() => addLibrarySelectionToSermon("illustration")}
 	                onAddSermonNote={() => addLibrarySelectionToSermon("note")}
+                onAddResourceToSermon={addLibraryResourceToSermon}
+                onAddReadingPathToSermon={addReadingPathToSermon}
 	                onExportAnnotations={exportLibraryAnnotations}
                 onListenResource={(resource, text, progress) => {
                   startLibraryResourceListening(resource, text, progress);
@@ -32377,6 +32417,8 @@ function LibraryScreen({
   onAddQuoteToSermon,
   onAddIllustrationToSermon,
   onAddSermonNote,
+  onAddResourceToSermon,
+  onAddReadingPathToSermon,
   onExportAnnotations,
   onListenResource,
   onSpeechRateChange,
@@ -32474,6 +32516,8 @@ function LibraryScreen({
   onAddQuoteToSermon: () => void;
   onAddIllustrationToSermon: () => void;
   onAddSermonNote: () => void;
+  onAddResourceToSermon: (resource: LibraryResource) => void;
+  onAddReadingPathToSermon: (path: ReadingPath, resources: LibraryResource[]) => void;
   onExportAnnotations: () => void;
   onListenResource: (resource: LibraryResource, text: string, progress: number) => void;
   onSpeechRateChange: (rate: number) => void;
@@ -32558,6 +32602,7 @@ function LibraryScreen({
         onOpenReader={() => onOpenReader(activeResource.slug)}
         onAddToListeningQueue={() => onAddToListeningQueue(activeResource.slug)}
         onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
+        onAddToSermon={() => onAddResourceToSermon(activeResource)}
         onReadAgain={() => onReadAgain(activeResource.slug)}
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
@@ -32611,6 +32656,8 @@ function LibraryScreen({
         onOpenAuthor={onOpenAuthor}
         onOpenBible={onOpenBible}
         onAddToStudyPlaylist={onAddToStudyPlaylist}
+        onAddToSermon={onAddResourceToSermon}
+        onSendPathToSermon={(path, pathResources) => onAddReadingPathToSermon(path, pathResources)}
       />
     );
   }
@@ -38445,6 +38492,8 @@ function ReadingPathScreen({
   onOpenAuthor,
   onOpenBible,
   onAddToStudyPlaylist,
+  onAddToSermon,
+  onSendPathToSermon,
 }: {
   path: ReadingPath;
   resources: LibraryResource[];
@@ -38456,6 +38505,8 @@ function ReadingPathScreen({
   onOpenAuthor: (authorOrId: string) => void;
   onOpenBible: () => void;
   onAddToStudyPlaylist: (slug: string) => void;
+  onAddToSermon: (resource: LibraryResource) => void;
+  onSendPathToSermon: (path: ReadingPath, resources: LibraryResource[]) => void;
 }) {
   const totalMinutes = resources.slice(0, 8).reduce((total, resource) => total + Math.max(1, Math.round((resource.word_count ?? 1200) / 225)), 0);
 
@@ -38482,6 +38533,14 @@ function ReadingPathScreen({
             <p className="text-2xl font-semibold text-[var(--green)]">{resources.length}</p>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Resources</p>
           </div>
+        </div>
+        <div className="mt-5 flex flex-wrap gap-2">
+          <button className="rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onSendPathToSermon(path, resources)} type="button">
+            Send Path to Sermon
+          </button>
+          <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenBible} type="button">
+            Open Bible Reader
+          </button>
         </div>
         <div className="mt-5 grid gap-3 md:grid-cols-3">
           <StatusCard label="First pass" status={totalMinutes ? `${totalMinutes} min` : "Resource review"} good={Boolean(resources.length)} />
@@ -38515,6 +38574,7 @@ function ReadingPathScreen({
             onOpen={() => onOpenDetail(resource.slug)}
             onOpenAuthor={() => onOpenAuthor(resource.author)}
             onAddToPlaylist={() => onAddToStudyPlaylist(resource.slug)}
+            onAddToSermon={() => onAddToSermon(resource)}
           />
         )) : (
           <EmptyState title="No reviewed resources matched yet" body="This path is ready for more verified public-domain imports." />
@@ -38569,6 +38629,7 @@ function LibraryDetail({
   onOpenReader,
   onAddToListeningQueue,
   onAddToStudyPlaylist,
+  onAddToSermon,
   onReadAgain,
   onOpenAuthor,
   onOpenCollection,
@@ -38583,6 +38644,7 @@ function LibraryDetail({
   onOpenReader: () => void;
   onAddToListeningQueue: () => void;
   onAddToStudyPlaylist: () => void;
+  onAddToSermon: () => void;
   onReadAgain: () => void;
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
@@ -38665,10 +38727,13 @@ function LibraryDetail({
               <button className="rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenAuthor} type="button">
                 Author Collection
               </button>
-              <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenCollection} type="button">
-                Collection Shelf
-              </button>
-            </div>
+            <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onOpenCollection} type="button">
+              Collection Shelf
+            </button>
+            <button className="rounded-full bg-[var(--gold)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onAddToSermon} type="button">
+              Add to Sermon Prep
+            </button>
+          </div>
             {completed && (
               <button className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onReadAgain} type="button">
                 <RotateCcw size={16} />
@@ -38769,6 +38834,9 @@ function LibraryDetail({
             </button>
             <button className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2 text-sm font-semibold text-[var(--green)]" onClick={onAddToStudyPlaylist} type="button">
               Add to Playlist
+            </button>
+            <button className="rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white" onClick={onAddToSermon} type="button">
+              Add to Sermon Prep
             </button>
           </div>
         </div>
@@ -40353,6 +40421,7 @@ function LibraryResourceCard({
   onOpenReader,
   onOpenAuthor,
   onAddToPlaylist,
+  onAddToSermon,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
@@ -40362,6 +40431,7 @@ function LibraryResourceCard({
   onOpenReader?: () => void;
   onOpenAuthor?: () => void;
   onAddToPlaylist?: () => void;
+  onAddToSermon?: () => void;
 }) {
   const [coverFailed, setCoverFailed] = useState(false);
   const progressValue = completed ? 100 : progress?.progress ?? 0;
@@ -40503,6 +40573,16 @@ function LibraryResourceCard({
           >
             <ListMusic size={14} />
             Add to Playlist
+          </button>
+        )}
+        {onAddToSermon && (
+          <button
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+            onClick={onAddToSermon}
+            type="button"
+          >
+            <FileText size={14} />
+            Add to Sermon Prep
           </button>
         )}
       </div>
