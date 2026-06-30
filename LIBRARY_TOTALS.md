@@ -5,12 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 5,700
-- Reviewed public commentary import rows: 7,925
-- Commentary validation rows checked, including staging/review files: 10,303
+- Active public commentary entries shown in the app: 5,793
+- Reviewed public commentary import rows: 8,018
+- Commentary validation rows checked, including staging/review files: 10,396
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Isaiah Commentary and Preaching Books Sprint
+
+## Latest Isaiah Completion Commentary Sprint
+
+Added 93 verified public commentary entries for Isaiah 36-66:
+
+- Matthew Poole, Isaiah 36-66
+- The Pulpit Commentary, Isaiah 36-66
+- The Biblical Illustrator, Isaiah 36-66
+
+This completes Isaiah 1-66 coverage for Poole, Pulpit Commentary, and Biblical Illustrator in the reviewed public commentary imports, giving Isaiah a much stronger teaching and prophecy-study ecosystem.
 
 ## Latest Isaiah Commentary and Preaching Books Sprint
 
