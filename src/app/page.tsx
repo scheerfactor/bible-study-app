@@ -13082,6 +13082,53 @@ function scoreSmartSuggestion(text: string, terms: string[]) {
   return terms.reduce((total, term) => total + (haystack.includes(term) ? 1 : 0), 0);
 }
 
+function sermonLibraryExpansionTerms(searchText: string) {
+  const terms = smartSuggestionTerms(searchText);
+  const passage = parseSermonPassageReference(searchText);
+  const text = searchText.toLowerCase();
+  const preachingTerms = ["sermon", "preaching", "teaching", "lesson", "illustration", "outline", "application", "quote"];
+  const studyTerms = ["commentary", "exposition", "study", "bible", "doctrine", "devotional"];
+  const expanded = new Set<string>(terms);
+
+  if (passage) {
+    expanded.add(passage.book.toLowerCase());
+    expanded.add(`${passage.book.toLowerCase()} commentary`);
+    expanded.add(`${passage.book.toLowerCase()} exposition`);
+    expanded.add(`${passage.book.toLowerCase()} study`);
+  }
+
+  if (!terms.length || preachingTerms.some((term) => text.includes(term))) {
+    preachingTerms.forEach((term) => expanded.add(term));
+  }
+
+  if (studyTerms.some((term) => text.includes(term)) || passage) {
+    studyTerms.forEach((term) => expanded.add(term));
+  }
+
+  return Array.from(expanded).filter((term) => term.length > 2).slice(0, 40);
+}
+
+function preachingHelpResourceScore(resource: LibraryResource) {
+  const haystack = [
+    resource.title,
+    resource.category,
+    resource.collection,
+    resource.description,
+    resource.recommended_use,
+    ...resource.resource_labels,
+  ].join(" ").toLowerCase();
+  let score = 0;
+  if (haystack.includes("preaching")) score += 5;
+  if (haystack.includes("teaching")) score += 4;
+  if (haystack.includes("sermon")) score += 4;
+  if (haystack.includes("illustration")) score += 4;
+  if (haystack.includes("outline")) score += 3;
+  if (haystack.includes("quote")) score += 2;
+  if (haystack.includes("commentary")) score += 2;
+  if (["Commentaries", "Preaching & Teaching", "Bible study helps"].includes(resource.category)) score += 2;
+  return score;
+}
+
 function parseSermonPassageReference(searchText: string) {
   const text = searchText.replace(/\s+/g, " ");
   const sortedBooks = [...bookOrder].sort((a, b) => b.length - a.length);
@@ -13147,8 +13194,8 @@ function suggestedSermonCommentaries(entries: CommentaryEntry[], searchText: str
 }
 
 function suggestedSermonLibraryResources(resources: LibraryResource[], searchText: string): SmartSermonSuggestion[] {
-  const terms = smartSuggestionTerms(searchText);
-  return resources
+  const terms = sermonLibraryExpansionTerms(searchText);
+  const scored = resources
     .map((resource) => {
       const authorProfile = libraryAuthorProfileForName(resource.author);
       const score = scoreSmartSuggestion([
@@ -13167,23 +13214,41 @@ function suggestedSermonLibraryResources(resources: LibraryResource[], searchTex
       ].join(" "), terms);
       return { resource, score };
     })
-    .filter(({ score, resource }) => score > 0 && !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`))
-    .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title))
-    .slice(0, 5)
+    .filter(({ resource }) => !/do not import|permission needed/i.test(`${resource.rights_status} ${resource.public_domain_status}`));
+
+  const directMatches = scored
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || preachingHelpResourceScore(b.resource) - preachingHelpResourceScore(a.resource) || a.resource.title.localeCompare(b.resource.title));
+
+  const fallbackMatches = scored
+    .filter(({ score }) => score === 0)
+    .map(({ resource }) => ({ resource, score: preachingHelpResourceScore(resource) }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.resource.title.localeCompare(b.resource.title));
+
+  const deduped = new Map<string, { resource: LibraryResource; score: number }>();
+  [...directMatches, ...fallbackMatches].forEach((item) => {
+    if (!deduped.has(item.resource.slug)) deduped.set(item.resource.slug, item);
+  });
+
+  return Array.from(deduped.values())
+    .slice(0, 6)
     .map(({ resource }) => ({
       id: `library-${resource.slug}`,
       title: resource.title,
       subtitle: resource.author,
       body: resource.description || resource.recommended_use,
       meta: `${resource.category} - ${resource.public_domain_status}`,
-      actionText: "Add book connection",
+      actionText: "Add resource connection",
       importLabel: `Library: ${resource.title}`,
       importBody: [
         `${resource.title} by ${resource.author}`,
         `Category: ${resource.category}`,
         `Recommended use: ${resource.recommended_use || "Use as a supporting resource."}`,
+        resource.perspective_notes ? `Perspective: ${resource.perspective_notes}` : "",
         `Rights: ${resource.public_domain_status || resource.rights_status}`,
-      ].join("\n"),
+        resource.source_url ? `Source: ${resource.source_url}` : "",
+      ].filter(Boolean).join("\n"),
     }));
 }
 
@@ -44734,8 +44799,8 @@ function SermonWorkspaceScreen({
                   onAdd={appendSmartSermonConnection}
                 />
                 <SmartSermonConnectionList
-                  title="Suggested Library Books"
-                  emptyText="No matching library books found yet. Add a stronger passage, theme, or topic."
+                  title="Suggested Library Books & Preaching Helps"
+                  emptyText="No matching library resources found yet. Add a passage, sermon theme, or topic."
                   suggestions={suggestedLibraryBooks}
                   onAdd={appendSmartSermonConnection}
                 />
