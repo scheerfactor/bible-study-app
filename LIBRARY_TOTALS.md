@@ -5,14 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 5,919
-- Reviewed public commentary import rows: 8,144
-- Commentary validation rows checked, including staging/review files: 10,522
+- Active public commentary entries shown in the app: 6,027
+- Reviewed public commentary import rows: 8,252
+- Commentary validation rows checked, including staging/review files: 10,630
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
 
 ## Latest Isaiah Commentary and Preaching Books Sprint
+
+## Latest Ezekiel Completion Commentary Sprint
+
+Added 108 verified public commentary entries for Ezekiel 13-48:
+
+- Matthew Poole, Ezekiel 13-48
+- The Pulpit Commentary, Ezekiel 13-48
+- The Biblical Illustrator, Ezekiel 13-48
+
+This completes Ezekiel 1-48 coverage for Poole, Pulpit Commentary, and Biblical Illustrator in the reviewed public commentary imports, strengthening a difficult prophetic book for teaching, prophecy study, and Bible coverage scoring.
 
 ## Latest Jeremiah Completion Commentary Sprint
 
