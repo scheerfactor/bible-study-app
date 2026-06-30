@@ -5,14 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 5,793
-- Reviewed public commentary import rows: 8,018
-- Commentary validation rows checked, including staging/review files: 10,396
+- Active public commentary entries shown in the app: 5,919
+- Reviewed public commentary import rows: 8,144
+- Commentary validation rows checked, including staging/review files: 10,522
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
 
 ## Latest Isaiah Commentary and Preaching Books Sprint
+
+## Latest Jeremiah Completion Commentary Sprint
+
+Added 126 verified public commentary entries for Jeremiah 11-52:
+
+- Matthew Poole, Jeremiah 11-52
+- The Pulpit Commentary, Jeremiah 11-52
+- The Biblical Illustrator, Jeremiah 11-52
+
+This completes Jeremiah 1-52 coverage for Poole, Pulpit Commentary, and Biblical Illustrator in the reviewed public commentary imports, strengthening a major prophetic book for preaching, teaching, and Bible coverage scoring.
 
 ## Latest Isaiah Completion Commentary Sprint
 
