@@ -3982,6 +3982,14 @@ const LIBRARY_COLLECTIONS: LibraryCollection[] = [
     featuredAuthorIds: ["spurgeon", "moody", "bounds"],
   },
   {
+    id: "preachers-workshop",
+    title: "Preacher's Workshop",
+    description: "A focused shelf for sermon outlines, illustrations, quote sources, hymn helps, preaching craft, and pastoral preparation.",
+    terms: ["my sermon notes", "sermon notes", "feathers for arrows", "art of illustration", "illustrations", "anecdotes", "lectures to my students", "preacher and prayer", "hymn", "story of the hymns", "preaching", "homiletic", "outline", "quote"],
+    labels: ["Sermon prep", "Illustrations", "Quotes"],
+    featuredAuthorIds: ["spurgeon", "moody", "torrey", "bounds", "ryle"],
+  },
+  {
     id: "revival-evangelism",
     title: "Revival & Evangelism Gold Nuggets",
     description: "Lesser-known but useful public-domain revival, evangelism, and soul-winning resources.",
@@ -4144,9 +4152,20 @@ const READING_PATHS: ReadingPath[] = [
     description: "Resources for Sunday school teachers and preachers: illustration, exposition, prayer, and practical lesson building.",
     biblePassages: ["2 Timothy 4", "Acts 20", "John 3"],
     resourceTerms: ["preaching", "teaching", "sermon", "illustration", "farmers", "preacher"],
-    collectionIds: ["preaching-teaching", "commentary", "prayer"],
+    collectionIds: ["preachers-workshop", "preaching-teaching", "commentary", "prayer"],
     authorIds: ["spurgeon", "bounds", "moody"],
     repeatOptions: ["Repeat during weekly prep", "Loop commentary once", "Stop after selected passage"],
+  },
+  {
+    id: "preachers-workshop",
+    title: "Preacher's Workshop",
+    shortLabel: "Quotes and outlines",
+    description: "A fast route into sermon outlines, illustrations, quote sources, hymn stories, and preaching craft so lesson prep does not start with a blank page.",
+    biblePassages: ["2 Timothy 4", "Nehemiah 8", "Acts 20", "John 3"],
+    resourceTerms: ["my sermon notes", "feathers for arrows", "art of illustration", "anecdotes", "illustrations", "hymn", "lectures to my students", "preacher and prayer", "sermon outlines", "homiletic"],
+    collectionIds: ["preachers-workshop", "preaching-teaching", "prayer", "commentary"],
+    authorIds: ["spurgeon", "moody", "torrey", "bounds", "ryle"],
+    repeatOptions: ["Open one outline source first", "Capture one quote or illustration", "Send useful notes to Sermon Builder"],
   },
   {
     id: "missions",
@@ -4282,9 +4301,9 @@ const READING_PATHS: ReadingPath[] = [
   },
 ];
 
-const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
+const START_HERE_READING_PATH_IDS = ["new-believer", "teacher", "preacher", "preachers-workshop", "prayer", "missions", "evangelism", "spurgeon-starter", "ironside-starter", "bible-doctrine", "baptist-history", "apologetics", "family"];
 
-const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
+const BEST_RESOURCE_READING_PATH_IDS = ["new-believer", "preacher", "preachers-workshop", "teacher", "evangelism", "missions", "baptist-history", "english-bible-history", "apologetics", "family"];
 
 const FEATURED_AUTHOR_COLLECTION_IDS = ["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "torrey", "meyer", "moody", "bounds", "whitefield", "charles-wesley"];
 
@@ -32648,6 +32667,7 @@ function LibraryScreen({
     { title: "False Religion & Discernment", resources: resources.filter((resource) => libraryResourceMatches(resource, ["cults", "islam", "papacy", "papal", "jesuits", "oriental religions", "discernment", "paganism"])) },
     { title: "Home & Family", resources: resources.filter((resource) => libraryResourceMatches(resource, ["christian home", "religious education in the family", "home", "family", "parents", "children"])) },
     { title: "Doctrine & Theology", resources: resources.filter((resource) => libraryResourceMatches(resource, ["doctrine", "theology", "fundamental doctrines", "holy spirit", "theistic"])) },
+    { title: "Preacher's Workshop", resources: resourcesForCollection(resources, libraryCollectionById("preachers-workshop")) },
     { title: "KJV Defense / Textual Issues", resources: resources.filter((resource) => libraryResourceMatches(resource, ["kjv", "king james", "textual", "scripture", "authorized"])) },
     { title: "Baptist History", resources: resources.filter((resource) => libraryResourceMatches(resource, ["baptist history", "baptist"])) },
     { title: "Missions", resources: resources.filter((resource) => libraryResourceMatches(resource, ["missions", "missionary", "mission"])) },
@@ -32661,6 +32681,7 @@ function LibraryScreen({
     "false-religion-discernment",
     "home-family",
     "doctrine-theology",
+    "preachers-workshop",
     "baptist-history",
     "prayer",
     "evangelism",
@@ -32764,6 +32785,12 @@ function LibraryScreen({
       body: "Lesson prep, sermons, illustrations, exposition, and ministry helps.",
       meta: `${subjectShelves.find((shelf) => shelf.title === "Preaching & Teaching")?.resources.length ?? 0} resources`,
       action: () => onCategoryChange("Preaching & Teaching"),
+    },
+    {
+      title: "Preacher's Workshop",
+      body: "Open sermon notes, quote sources, illustrations, hymn stories, and preaching craft.",
+      meta: `${resourcesForCollection(resources, libraryCollectionById("preachers-workshop")).length} helps`,
+      action: () => onOpenReadingPath("preachers-workshop"),
     },
     {
       title: "Baptist History",
