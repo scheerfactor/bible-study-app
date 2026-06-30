@@ -60542,5 +60542,313 @@
     "checksum_sha256": "335114d4fa6a7133bdd8ea6a9266a9f3a565e660baf4b319e416e59c04a90bce",
     "file_size_bytes": 749733,
     "word_count": 117667
+  },
+  {
+    "title": "Lectures on the History of Preaching",
+    "author": "John A. Broadus",
+    "year": 1858,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching Collection",
+    "source_url": "https://archive.org/download/lecturesonhisto00broagoog/lecturesonhisto00broagoog_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonhisto00broagoog/lecturesonhisto00broagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-history-of-preaching-john-a-broadus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/lecturesonhisto00broagoog/lecturesonhisto00broagoog_djvu.txt.",
+    "notes": "A Baptist preaching-history resource useful for pastors teachers and sermon-workflow background. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A Baptist preaching-history resource useful for pastors teachers and sermon-workflow background.",
+    "resource_labels": [
+      "Preaching Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the History of Preaching",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching Collection",
+      "badge": "Preaching Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 224,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "beaa4b157daeb81791e5d183d34eeb5ad59efc1484b9ed59e3c784139b71b60c",
+    "file_size_bytes": 302015,
+    "word_count": 50352
+  },
+  {
+    "title": "A Treatise on the Preparation and Delivery of Sermons",
+    "author": "John A. Broadus",
+    "year": 1870,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching Collection",
+    "source_url": "https://archive.org/download/atreatiseonprep00broagoog/atreatiseonprep00broagoog_djvu.txt",
+    "download_url": "https://archive.org/download/atreatiseonprep00broagoog/atreatiseonprep00broagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/atreatiseonprep00broagoog/atreatiseonprep00broagoog_djvu.txt.",
+    "notes": "A classic Baptist homiletics text for sermon preparation delivery and preaching-mode development. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A classic Baptist homiletics text for sermon preparation delivery and preaching-mode development.",
+    "resource_labels": [
+      "Preaching Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Treatise on the Preparation and Delivery of Sermons",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching Collection",
+      "badge": "Preaching Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 756,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e414ad1b5cba6b717a339241ee8a764690801ba1d8f439e2f550f0a9ecb90af6",
+    "file_size_bytes": 1006721,
+    "word_count": 170141
+  },
+  {
+    "title": "Sermons and Addresses",
+    "author": "John A. Broadus",
+    "year": 1833,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching Collection",
+    "source_url": "https://archive.org/download/sermonsandaddre00broagoog/sermonsandaddre00broagoog_djvu.txt",
+    "download_url": "https://archive.org/download/sermonsandaddre00broagoog/sermonsandaddre00broagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-and-addresses-john-a-broadus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/sermonsandaddre00broagoog/sermonsandaddre00broagoog_djvu.txt.",
+    "notes": "A collection of Broadus sermons and addresses useful for preaching examples and pastoral study. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A collection of Broadus sermons and addresses useful for preaching examples and pastoral study.",
+    "resource_labels": [
+      "Preaching Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons and Addresses",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching Collection",
+      "badge": "Preaching Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 593,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ce0054a05a964015a3f2ce1b0ffd0393cbd7b94fe78b6cade5592977d59756bb",
+    "file_size_bytes": 755119,
+    "word_count": 133327
+  },
+  {
+    "title": "Memoir of James Petigru Boyce D.D. LL.D.",
+    "author": "John A. Broadus",
+    "year": 1801,
+    "category": "Baptist history",
+    "collection": "Baptist History Collection",
+    "source_url": "https://archive.org/download/memoirjamespeti00broagoog/memoirjamespeti00broagoog_djvu.txt",
+    "download_url": "https://archive.org/download/memoirjamespeti00broagoog/memoirjamespeti00broagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/memoir-of-james-petigru-boyce-d-d-ll-d-john-a-broadus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/memoirjamespeti00broagoog/memoirjamespeti00broagoog_djvu.txt.",
+    "notes": "A Baptist history and biography resource on James P. Boyce and early Southern Baptist theological education. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A Baptist history and biography resource on James P. Boyce and early Southern Baptist theological education.",
+    "resource_labels": [
+      "Baptist History Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memoir of James Petigru Boyce D.D. LL.D.",
+      "author": "John A. Broadus",
+      "category": "Baptist history",
+      "collection": "Baptist History Collection",
+      "badge": "Baptist History Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 590,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "82254a9467e1dc5c8b9e2ff300a59a46bfb114b89f587624ddf121ece92892bb",
+    "file_size_bytes": 779248,
+    "word_count": 132769
+  },
+  {
+    "title": "Lectures on Preaching",
+    "author": "Phillips Brooks",
+    "year": 1877,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching Collection",
+    "source_url": "https://archive.org/download/lecturesonpreac00broogoog/lecturesonpreac00broogoog_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonpreac00broogoog/lecturesonpreac00broogoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-preaching-phillips-brooks.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/lecturesonpreac00broogoog/lecturesonpreac00broogoog_djvu.txt.",
+    "notes": "A classic preaching lecture series useful for comparing preaching philosophy and improving sermon delivery. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A classic preaching lecture series useful for comparing preaching philosophy and improving sermon delivery.",
+    "resource_labels": [
+      "Preaching Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on Preaching",
+      "author": "Phillips Brooks",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching Collection",
+      "badge": "Preaching Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 335,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0fa1380be80abeacc2242804e4ad57747c2c1449192b6cdd5df5000899096681",
+    "file_size_bytes": 415714,
+    "word_count": 75280
+  },
+  {
+    "title": "The English Bible History of the Translation of the Holy Scriptures",
+    "author": "Hannah O'Brien Chaplin Conant",
+    "year": 1568,
+    "category": "KJV / Textual Issues",
+    "collection": "English Bible History Collection",
+    "source_url": "https://archive.org/download/englishbiblehis03conagoog/englishbiblehis03conagoog_djvu.txt",
+    "download_url": "https://archive.org/download/englishbiblehis03conagoog/englishbiblehis03conagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-english-bible-history-of-the-translation-of-the-holy-scriptures-hannah-o-brien-chaplin-conant.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/englishbiblehis03conagoog/englishbiblehis03conagoog_djvu.txt.",
+    "notes": "A public-domain English Bible history resource useful for Bible transmission and English Bible study. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A public-domain English Bible history resource useful for Bible transmission and English Bible study.",
+    "resource_labels": [
+      "English Bible History Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The English Bible History of the Translation of the Holy Scriptures",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "category": "KJV / Textual Issues",
+      "collection": "English Bible History Collection",
+      "badge": "English Bible History Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 660,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "82038613ff3ed1725fa6fd7d778a712727fc0bc362e41980048ee01a7fa93d24",
+    "file_size_bytes": 859442,
+    "word_count": 148506
+  },
+  {
+    "title": "The Earnest Man A Memoir of Adoniram Judson",
+    "author": "Hannah O'Brien Chaplin Conant",
+    "year": 2026,
+    "category": "Missions",
+    "collection": "Missions Collection",
+    "source_url": "https://archive.org/download/earnestmanamemo00conagoog/earnestmanamemo00conagoog_djvu.txt",
+    "download_url": "https://archive.org/download/earnestmanamemo00conagoog/earnestmanamemo00conagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-earnest-man-a-memoir-of-adoniram-judson-hannah-o-brien-chaplin-conant.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/earnestmanamemo00conagoog/earnestmanamemo00conagoog_djvu.txt.",
+    "notes": "A missionary biography of Adoniram Judson useful for missions reading and sermon illustrations. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A missionary biography of Adoniram Judson useful for missions reading and sermon illustrations.",
+    "resource_labels": [
+      "Missions Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Earnest Man A Memoir of Adoniram Judson",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "category": "Missions",
+      "collection": "Missions Collection",
+      "badge": "Missions Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 627,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "58eb16b9896de06a65a29ddeffee6b72af5dde580cfab346e0a1a25c479143e9",
+    "file_size_bytes": 812049,
+    "word_count": 141007
   }
 ]

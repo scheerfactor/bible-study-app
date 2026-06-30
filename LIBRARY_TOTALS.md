@@ -4,13 +4,33 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,372
-- Active public commentary entries shown in the app: 5,610
-- Reviewed public commentary import rows: 7,835
-- Commentary validation rows checked, including staging/review files: 10,213
+- Verified public Library resources: 1,379
+- Active public commentary entries shown in the app: 5,700
+- Reviewed public commentary import rows: 7,925
+- Commentary validation rows checked, including staging/review files: 10,303
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 497
+- Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Isaiah Commentary and Preaching Books Sprint
+
+Added 90 verified public commentary entries for Isaiah 6-35:
+
+- Matthew Poole, Isaiah 6-35
+- The Pulpit Commentary, Isaiah 6-35
+- The Biblical Illustrator, Isaiah 6-35
+
+Added 7 verified public-domain Library resources:
+
+- John A. Broadus, _Lectures on the History of Preaching_
+- John A. Broadus, _A Treatise on the Preparation and Delivery of Sermons_
+- John A. Broadus, _Sermons and Addresses_
+- John A. Broadus, _Memoir of James Petigru Boyce D.D. LL.D._
+- Phillips Brooks, _Lectures on Preaching_
+- Hannah O'Brien Chaplin Conant, _The English Bible History of the Translation of the Holy Scriptures_
+- Hannah O'Brien Chaplin Conant, _The Earnest Man A Memoir of Adoniram Judson_
+
+This sprint strengthens Isaiah commentary depth, preaching and homiletics, Baptist history, English Bible history, and missionary biography. Internet Archive OCR resources remain labeled for spot-checking before quotation.
 
 ## Latest Classic Theology, Baptist Books, and Job Commentary Sprint
 

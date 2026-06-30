@@ -1,0 +1,131 @@
+{
+  "source_csv": "data/library/import-batches/preaching-baptist-history-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 7,
+  "imported": 7,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Lectures on the History of Preaching",
+      "file": "lectures-on-the-history-of-preaching-john-a-broadus.txt",
+      "bytes": 302015,
+      "words": 50352,
+      "reading_time_minutes": 224
+    },
+    {
+      "title": "A Treatise on the Preparation and Delivery of Sermons",
+      "file": "a-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "bytes": 1006721,
+      "words": 170141,
+      "reading_time_minutes": 756
+    },
+    {
+      "title": "Sermons and Addresses",
+      "file": "sermons-and-addresses-john-a-broadus.txt",
+      "bytes": 755119,
+      "words": 133327,
+      "reading_time_minutes": 593
+    },
+    {
+      "title": "Memoir of James Petigru Boyce D.D. LL.D.",
+      "file": "memoir-of-james-petigru-boyce-d-d-ll-d-john-a-broadus.txt",
+      "bytes": 779248,
+      "words": 132769,
+      "reading_time_minutes": 590
+    },
+    {
+      "title": "Lectures on Preaching",
+      "file": "lectures-on-preaching-phillips-brooks.txt",
+      "bytes": 415714,
+      "words": 75280,
+      "reading_time_minutes": 335
+    },
+    {
+      "title": "The English Bible History of the Translation of the Holy Scriptures",
+      "file": "the-english-bible-history-of-the-translation-of-the-holy-scriptures-hannah-o-brien-chaplin-conant.txt",
+      "bytes": 859442,
+      "words": 148506,
+      "reading_time_minutes": 660
+    },
+    {
+      "title": "The Earnest Man A Memoir of Adoniram Judson",
+      "file": "the-earnest-man-a-memoir-of-adoniram-judson-hannah-o-brien-chaplin-conant.txt",
+      "bytes": 812049,
+      "words": 141007,
+      "reading_time_minutes": 627
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Lectures on the History of Preaching",
+      "author": "John A. Broadus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lectures-on-the-history-of-preaching-john-a-broadus.txt"
+    },
+    {
+      "row": 3,
+      "title": "A Treatise on the Preparation and Delivery of Sermons",
+      "author": "John A. Broadus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt"
+    },
+    {
+      "row": 4,
+      "title": "Sermons and Addresses",
+      "author": "John A. Broadus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-and-addresses-john-a-broadus.txt"
+    },
+    {
+      "row": 5,
+      "title": "Memoir of James Petigru Boyce D.D. LL.D.",
+      "author": "John A. Broadus",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memoir-of-james-petigru-boyce-d-d-ll-d-john-a-broadus.txt"
+    },
+    {
+      "row": 6,
+      "title": "Lectures on Preaching",
+      "author": "Phillips Brooks",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/lectures-on-preaching-phillips-brooks.txt"
+    },
+    {
+      "row": 7,
+      "title": "The English Bible History of the Translation of the Holy Scriptures",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-english-bible-history-of-the-translation-of-the-holy-scriptures-hannah-o-brien-chaplin-conant.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Earnest Man A Memoir of Adoniram Judson",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-earnest-man-a-memoir-of-adoniram-judson-hannah-o-brien-chaplin-conant.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
