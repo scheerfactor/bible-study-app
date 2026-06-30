@@ -4,13 +4,34 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,364
-- Active public commentary entries shown in the app: 5,520
-- Reviewed public commentary import rows: 7,745
-- Commentary validation rows checked, including staging/review files: 10,123
+- Verified public Library resources: 1,372
+- Active public commentary entries shown in the app: 5,610
+- Reviewed public commentary import rows: 7,835
+- Commentary validation rows checked, including staging/review files: 10,213
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 493
+- Library authors represented: 497
 - Public Library duplicate title/author groups: 0
+
+## Latest Classic Theology, Baptist Books, and Job Commentary Sprint
+
+Added 8 verified public-domain Library resources:
+
+- Stephen Charnock, _The Existence and Attributes of God_
+- Thomas Boston, _Human Nature in Its Fourfold State_
+- John Flavel, _The Method of Grace_
+- Andrew Fuller, _The Gospel Worthy of All Acceptation_
+- Andrew Fuller, _The Gospel Its Own Witness_
+- Andrew Fuller, _Dialogues Letters and Essays on Various Subjects_
+- Andrew Fuller, _Memoir of Rev. Samuel Pearce A.M._
+- Andrew Fuller, _The Atonement of Christ_
+
+Added 90 verified public commentary entries for Job 13-42:
+
+- Matthew Poole, Job 13-42
+- The Pulpit Commentary, Job 13-42
+- The Biblical Illustrator, Job 13-42
+
+These entries complete the Job 13-42 gap for three major public-domain commentary voices while adding substantial classic theology, Baptist theology, evangelism, and missions biography resources. Internet Archive OCR resources remain labeled for spot-checking before quotation.
 
 ## Latest Chafer, Study Books, and Job Commentary Sprint
 

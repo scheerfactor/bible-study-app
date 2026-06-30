@@ -1,0 +1,146 @@
+{
+  "source_csv": "data/library/import-batches/classic-theology-baptist-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Existence and Attributes of God",
+      "file": "the-existence-and-attributes-of-god-stephen-charnock.txt",
+      "bytes": 3929833,
+      "words": 699679,
+      "reading_time_minutes": 3110
+    },
+    {
+      "title": "Human Nature in Its Fourfold State",
+      "file": "human-nature-in-its-fourfold-state-thomas-boston.txt",
+      "bytes": 738202,
+      "words": 137176,
+      "reading_time_minutes": 610
+    },
+    {
+      "title": "The Method of Grace",
+      "file": "the-method-of-grace-john-flavel.txt",
+      "bytes": 1297807,
+      "words": 208775,
+      "reading_time_minutes": 928
+    },
+    {
+      "title": "The Gospel Worthy of All Acceptation",
+      "file": "the-gospel-worthy-of-all-acceptation-andrew-fuller.txt",
+      "bytes": 172640,
+      "words": 31288,
+      "reading_time_minutes": 139
+    },
+    {
+      "title": "The Gospel Its Own Witness",
+      "file": "the-gospel-its-own-witness-andrew-fuller.txt",
+      "bytes": 541267,
+      "words": 95311,
+      "reading_time_minutes": 424
+    },
+    {
+      "title": "Dialogues Letters and Essays on Various Subjects",
+      "file": "dialogues-letters-and-essays-on-various-subjects-andrew-fuller.txt",
+      "bytes": 451359,
+      "words": 80835,
+      "reading_time_minutes": 359
+    },
+    {
+      "title": "Memoir of Rev. Samuel Pearce A.M.",
+      "file": "memoir-of-rev-samuel-pearce-a-m-andrew-fuller.txt",
+      "bytes": 685726,
+      "words": 121955,
+      "reading_time_minutes": 542
+    },
+    {
+      "title": "The Atonement of Christ",
+      "file": "the-atonement-of-christ-andrew-fuller.txt",
+      "bytes": 749733,
+      "words": 117667,
+      "reading_time_minutes": 523
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Existence and Attributes of God",
+      "author": "Stephen Charnock",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-existence-and-attributes-of-god-stephen-charnock.txt"
+    },
+    {
+      "row": 3,
+      "title": "Human Nature in Its Fourfold State",
+      "author": "Thomas Boston",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/human-nature-in-its-fourfold-state-thomas-boston.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Method of Grace",
+      "author": "John Flavel",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-method-of-grace-john-flavel.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Gospel Worthy of All Acceptation",
+      "author": "Andrew Fuller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-worthy-of-all-acceptation-andrew-fuller.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Gospel Its Own Witness",
+      "author": "Andrew Fuller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-its-own-witness-andrew-fuller.txt"
+    },
+    {
+      "row": 7,
+      "title": "Dialogues Letters and Essays on Various Subjects",
+      "author": "Andrew Fuller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/dialogues-letters-and-essays-on-various-subjects-andrew-fuller.txt"
+    },
+    {
+      "row": 8,
+      "title": "Memoir of Rev. Samuel Pearce A.M.",
+      "author": "Andrew Fuller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memoir-of-rev-samuel-pearce-a-m-andrew-fuller.txt"
+    },
+    {
+      "row": 9,
+      "title": "The Atonement of Christ",
+      "author": "Andrew Fuller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-atonement-of-christ-andrew-fuller.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

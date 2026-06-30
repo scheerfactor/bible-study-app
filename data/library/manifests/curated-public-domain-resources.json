@@ -60190,5 +60190,357 @@
     "checksum_sha256": "9a2ff2ffcf8477530f18bd20e793a51d5094e2014ad396b8d65dc01dbf67d0ae",
     "file_size_bytes": 536677,
     "word_count": 81106
+  },
+  {
+    "title": "The Existence and Attributes of God",
+    "author": "Stephen Charnock",
+    "year": 2016,
+    "category": "Bible study helps",
+    "collection": "Classic Theology Collection",
+    "source_url": "https://www.gutenberg.org/cache/epub/53527/pg53527.txt",
+    "download_url": "https://www.gutenberg.org/cache/epub/53527/pg53527.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-existence-and-attributes-of-god-stephen-charnock.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/cache/epub/53527/pg53527.txt.",
+    "notes": "A major classic work on the doctrine of God; best for pastors teachers and serious students studying God's attributes. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A major classic work on the doctrine of God; best for pastors teachers and serious students studying God's attributes.",
+    "resource_labels": [
+      "Classic Theology Collection",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Existence and Attributes of God",
+      "author": "Stephen Charnock",
+      "category": "Bible study helps",
+      "collection": "Classic Theology Collection",
+      "badge": "Classic Theology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 3110,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a99b2d91c7bb69a95637258056993f4f05207064bf4954d9ab5d560285e014c3",
+    "file_size_bytes": 3929833,
+    "word_count": 699679
+  },
+  {
+    "title": "Human Nature in Its Fourfold State",
+    "author": "Thomas Boston",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Classic Theology Collection",
+    "source_url": "https://archive.org/download/humannatureinit00bostgoog/humannatureinit00bostgoog_djvu.txt",
+    "download_url": "https://archive.org/download/humannatureinit00bostgoog/humannatureinit00bostgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/human-nature-in-its-fourfold-state-thomas-boston.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/humannatureinit00bostgoog/humannatureinit00bostgoog_djvu.txt.",
+    "notes": "A classic doctrinal work on man's state before and after the fall and redemption; useful for doctrine and preaching preparation. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A classic doctrinal work on man's state before and after the fall and redemption; useful for doctrine and preaching preparation.",
+    "resource_labels": [
+      "Classic Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Human Nature in Its Fourfold State",
+      "author": "Thomas Boston",
+      "category": "Bible study helps",
+      "collection": "Classic Theology Collection",
+      "badge": "Classic Theology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 610,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b04d91fea7fe1cbb12b6dd3642340c7ab86781085cd155fba278f58521c3b552",
+    "file_size_bytes": 738202,
+    "word_count": 137176
+  },
+  {
+    "title": "The Method of Grace",
+    "author": "John Flavel",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Classic Theology Collection",
+    "source_url": "https://archive.org/download/methodofgraceinh00flavrich/methodofgraceinh00flavrich_djvu.txt",
+    "download_url": "https://archive.org/download/methodofgraceinh00flavrich/methodofgraceinh00flavrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-method-of-grace-john-flavel.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/methodofgraceinh00flavrich/methodofgraceinh00flavrich_djvu.txt.",
+    "notes": "A Puritan-era treatment of the Spirit's application of redemption; useful for devotional doctrine and pastoral study. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A Puritan-era treatment of the Spirit's application of redemption; useful for devotional doctrine and pastoral study.",
+    "resource_labels": [
+      "Classic Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Method of Grace",
+      "author": "John Flavel",
+      "category": "Christian Living",
+      "collection": "Classic Theology Collection",
+      "badge": "Classic Theology Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 928,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "adf13c1217666f2c548e82e105877c4cc0e6f151f7cb7b6ca306df282eb7b306",
+    "file_size_bytes": 1297807,
+    "word_count": 208775
+  },
+  {
+    "title": "The Gospel Worthy of All Acceptation",
+    "author": "Andrew Fuller",
+    "year": 2026,
+    "category": "Evangelism",
+    "collection": "Baptist Theology Collection",
+    "source_url": "https://archive.org/download/gospelworthyall02fullgoog/gospelworthyall02fullgoog_djvu.txt",
+    "download_url": "https://archive.org/download/gospelworthyall02fullgoog/gospelworthyall02fullgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-worthy-of-all-acceptation-andrew-fuller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/gospelworthyall02fullgoog/gospelworthyall02fullgoog_djvu.txt.",
+    "notes": "A key Baptist work on gospel preaching and the duty of sinners to believe; useful for evangelism preaching and Baptist theology. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A key Baptist work on gospel preaching and the duty of sinners to believe; useful for evangelism preaching and Baptist theology.",
+    "resource_labels": [
+      "Baptist Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel Worthy of All Acceptation",
+      "author": "Andrew Fuller",
+      "category": "Evangelism",
+      "collection": "Baptist Theology Collection",
+      "badge": "Baptist Theology Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 139,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "14756e28ed0e7d2eedc23940cf258444b957d59499d6422c1bd3f56b62f292ad",
+    "file_size_bytes": 172640,
+    "word_count": 31288
+  },
+  {
+    "title": "The Gospel Its Own Witness",
+    "author": "Andrew Fuller",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Baptist Theology Collection",
+    "source_url": "https://archive.org/download/gospelitsownwit00fullgoog/gospelitsownwit00fullgoog_djvu.txt",
+    "download_url": "https://archive.org/download/gospelitsownwit00fullgoog/gospelitsownwit00fullgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-its-own-witness-andrew-fuller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/gospelitsownwit00fullgoog/gospelitsownwit00fullgoog_djvu.txt.",
+    "notes": "A Baptist apologetic work defending the internal evidence and moral excellence of Christianity. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A Baptist apologetic work defending the internal evidence and moral excellence of Christianity.",
+    "resource_labels": [
+      "Baptist Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel Its Own Witness",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "collection": "Baptist Theology Collection",
+      "badge": "Baptist Theology Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 424,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c02d6b3cd5c8270e008586cb894eff511417a9f3cf4feb5237bb52f7a3a484e2",
+    "file_size_bytes": 541267,
+    "word_count": 95311
+  },
+  {
+    "title": "Dialogues Letters and Essays on Various Subjects",
+    "author": "Andrew Fuller",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Baptist Theology Collection",
+    "source_url": "https://archive.org/download/dialoguesletter00fullgoog/dialoguesletter00fullgoog_djvu.txt",
+    "download_url": "https://archive.org/download/dialoguesletter00fullgoog/dialoguesletter00fullgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/dialogues-letters-and-essays-on-various-subjects-andrew-fuller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/dialoguesletter00fullgoog/dialoguesletter00fullgoog_djvu.txt.",
+    "notes": "A collection of Fuller essays and letters useful for doctrinal study Baptist history and pastoral reflection. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A collection of Fuller essays and letters useful for doctrinal study Baptist history and pastoral reflection.",
+    "resource_labels": [
+      "Baptist Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Dialogues Letters and Essays on Various Subjects",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "collection": "Baptist Theology Collection",
+      "badge": "Baptist Theology Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 359,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "20f685cab764600de0a8c62c26b0c5cac1b21995e3cb537c936fbde06dc91c4a",
+    "file_size_bytes": 451359,
+    "word_count": 80835
+  },
+  {
+    "title": "Memoir of Rev. Samuel Pearce A.M.",
+    "author": "Andrew Fuller",
+    "year": 2026,
+    "category": "Biographies",
+    "collection": "Missions Collection",
+    "source_url": "https://archive.org/download/memoirofrevsamue0000reva/memoirofrevsamue0000reva_djvu.txt",
+    "download_url": "https://archive.org/download/memoirofrevsamue0000reva/memoirofrevsamue0000reva_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/memoir-of-rev-samuel-pearce-a-m-andrew-fuller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/memoirofrevsamue0000reva/memoirofrevsamue0000reva_djvu.txt.",
+    "notes": "A missionary-era Baptist biography connected to the Carey circle; useful for missions inspiration and Baptist history. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A missionary-era Baptist biography connected to the Carey circle; useful for missions inspiration and Baptist history.",
+    "resource_labels": [
+      "Missions Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memoir of Rev. Samuel Pearce A.M.",
+      "author": "Andrew Fuller",
+      "category": "Biographies",
+      "collection": "Missions Collection",
+      "badge": "Missions Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 542,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "be7f3983e1a1a687455c0dbbb4e973548a0a53e10dc4505f84df579254e2dace",
+    "file_size_bytes": 685726,
+    "word_count": 121955
+  },
+  {
+    "title": "The Atonement of Christ",
+    "author": "Andrew Fuller",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Baptist Theology Collection",
+    "source_url": "https://archive.org/download/atonementofchris00revarich/atonementofchris00revarich_djvu.txt",
+    "download_url": "https://archive.org/download/atonementofchris00revarich/atonementofchris00revarich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-atonement-of-christ-andrew-fuller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/atonementofchris00revarich/atonementofchris00revarich_djvu.txt.",
+    "notes": "A Baptist theological work on the atonement; useful for careful doctrinal study and preaching preparation. Labels/warnings: OCR spot-check needed before quotation.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "A Baptist theological work on the atonement; useful for careful doctrinal study and preaching preparation.",
+    "resource_labels": [
+      "Baptist Theology Collection",
+      "OCR spot-check needed before quotation"
+    ],
+    "resource_warnings": [
+      "OCR spot-check needed before quotation"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Atonement of Christ",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "collection": "Baptist Theology Collection",
+      "badge": "Baptist Theology Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 523,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "335114d4fa6a7133bdd8ea6a9266a9f3a565e660baf4b319e416e59c04a90bce",
+    "file_size_bytes": 749733,
+    "word_count": 117667
   }
 ]
