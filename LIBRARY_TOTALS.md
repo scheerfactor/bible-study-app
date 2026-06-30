@@ -4,13 +4,29 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,355
-- Active public commentary entries shown in the app: 5,500
-- Reviewed public commentary import rows: 7,725
-- Commentary validation rows checked, including staging/review files: 10,103
+- Verified public Library resources: 1,364
+- Active public commentary entries shown in the app: 5,520
+- Reviewed public commentary import rows: 7,745
+- Commentary validation rows checked, including staging/review files: 10,123
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 489
+- Library authors represented: 493
 - Public Library duplicate title/author groups: 0
+
+## Latest Chafer, Study Books, and Job Commentary Sprint
+
+Added 9 verified public-domain Library resources:
+
+- 6 early Lewis Sperry Chafer works: _Satan_, _He That Is Spiritual_, _True Evangelism_, _Salvation_, _Grace_, and _The Kingdom in History and Prophecy_
+- Alexander Balmain Bruce, _The Training of the Twelve_
+- E. W. Bullinger, _Number in Scripture_
+- John Urquhart, _The Wonders of Prophecy_
+
+Added 20 verified public commentary entries for Job 1-10:
+
+- Albert Barnes, Job 1-10
+- Adam Clarke, Job 1-10
+
+Chafer's later copyright-sensitive works, including _Systematic Theology_ and later editions, were not imported. Internet Archive OCR resources are labeled for spot-checking before quotation.
 
 ## Latest Wesley, Spurgeon, and Hymnology Sprint
 

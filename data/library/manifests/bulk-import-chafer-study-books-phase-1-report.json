@@ -1,0 +1,161 @@
+{
+  "source_csv": "data/library/import-batches/chafer-study-books-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 9,
+  "imported": 9,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Satan",
+      "file": "satan-lewis-sperry-chafer.txt",
+      "bytes": 246473,
+      "words": 43302,
+      "reading_time_minutes": 192
+    },
+    {
+      "title": "He That Is Spiritual",
+      "file": "he-that-is-spiritual-lewis-sperry-chafer.txt",
+      "bytes": 252100,
+      "words": 44144,
+      "reading_time_minutes": 196
+    },
+    {
+      "title": "True Evangelism",
+      "file": "true-evangelism-lewis-sperry-chafer.txt",
+      "bytes": 207741,
+      "words": 32301,
+      "reading_time_minutes": 144
+    },
+    {
+      "title": "Salvation",
+      "file": "salvation-lewis-sperry-chafer.txt",
+      "bytes": 265978,
+      "words": 41306,
+      "reading_time_minutes": 184
+    },
+    {
+      "title": "Grace",
+      "file": "grace-lewis-sperry-chafer.txt",
+      "bytes": 650170,
+      "words": 112518,
+      "reading_time_minutes": 500
+    },
+    {
+      "title": "The Kingdom in History and Prophecy",
+      "file": "the-kingdom-in-history-and-prophecy-lewis-sperry-chafer.txt",
+      "bytes": 233803,
+      "words": 41933,
+      "reading_time_minutes": 186
+    },
+    {
+      "title": "The Training of the Twelve",
+      "file": "the-training-of-the-twelve-alexander-balmain-bruce.txt",
+      "bytes": 1436437,
+      "words": 219965,
+      "reading_time_minutes": 978
+    },
+    {
+      "title": "Number in Scripture",
+      "file": "number-in-scripture-e-w-bullinger.txt",
+      "bytes": 560482,
+      "words": 100003,
+      "reading_time_minutes": 444
+    },
+    {
+      "title": "The Wonders of Prophecy",
+      "file": "the-wonders-of-prophecy-john-urquhart.txt",
+      "bytes": 536677,
+      "words": 81106,
+      "reading_time_minutes": 360
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Satan",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/satan-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 3,
+      "title": "He That Is Spiritual",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/he-that-is-spiritual-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 4,
+      "title": "True Evangelism",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/true-evangelism-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 5,
+      "title": "Salvation",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/salvation-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 6,
+      "title": "Grace",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/grace-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Kingdom in History and Prophecy",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-kingdom-in-history-and-prophecy-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Training of the Twelve",
+      "author": "Alexander Balmain Bruce",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-training-of-the-twelve-alexander-balmain-bruce.txt"
+    },
+    {
+      "row": 9,
+      "title": "Number in Scripture",
+      "author": "E. W. Bullinger",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/number-in-scripture-e-w-bullinger.txt"
+    },
+    {
+      "row": 10,
+      "title": "The Wonders of Prophecy",
+      "author": "John Urquhart",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-wonders-of-prophecy-john-urquhart.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

@@ -59744,5 +59744,451 @@
     "checksum_sha256": "d898ed8c73cd6506d8884cb7f57c094c69380e1943baaeb0f1003318dae49773",
     "file_size_bytes": 615213,
     "word_count": 108995
+  },
+  {
+    "title": "Satan",
+    "author": "Lewis Sperry Chafer",
+    "year": 2004,
+    "category": "Bible study helps",
+    "collection": "Theology / Doctrine",
+    "source_url": "https://www.gutenberg.org/ebooks/12586",
+    "download_url": "https://www.gutenberg.org/ebooks/12586.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/satan-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/12586.",
+    "notes": "Early Chafer doctrinal study on Satan; useful for theology and preaching preparation with Scripture kept primary. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early Chafer doctrinal study on Satan; useful for theology and preaching preparation with Scripture kept primary.",
+    "resource_labels": [
+      "Theology / Doctrine",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Satan",
+      "author": "Lewis Sperry Chafer",
+      "category": "Bible study helps",
+      "collection": "Theology / Doctrine",
+      "badge": "Theology / Doctrine",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 192,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "062574f083a941a41e7d42bfbc91380b286cf675ecd358f5741309ac13227a40",
+    "file_size_bytes": 246473,
+    "word_count": 43302
+  },
+  {
+    "title": "He That Is Spiritual",
+    "author": "Lewis Sperry Chafer",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Spiritual Life",
+    "source_url": "https://archive.org/download/hethatisspiritua00chaf_0/hethatisspiritua00chaf_0_djvu.txt",
+    "download_url": "https://archive.org/download/hethatisspiritua00chaf_0/hethatisspiritua00chaf_0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/he-that-is-spiritual-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/hethatisspiritua00chaf_0/hethatisspiritua00chaf_0_djvu.txt.",
+    "notes": "Early public-domain Chafer study on spirituality and the Christian life; use for discipleship with doctrinal discernment. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early public-domain Chafer study on spirituality and the Christian life; use for discipleship with doctrinal discernment.",
+    "resource_labels": [
+      "Spiritual Life",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "He That Is Spiritual",
+      "author": "Lewis Sperry Chafer",
+      "category": "Christian Living",
+      "collection": "Spiritual Life",
+      "badge": "Spiritual Life",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 196,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7636cacc8ce382084fd2595bb917b5af33014a383c49a75cf88934e94873bdbe",
+    "file_size_bytes": 252100,
+    "word_count": 44144
+  },
+  {
+    "title": "True Evangelism",
+    "author": "Lewis Sperry Chafer",
+    "year": 2026,
+    "category": "Evangelism",
+    "collection": "Evangelism",
+    "source_url": "https://archive.org/download/trueevangelism00chaf/trueevangelism00chaf_djvu.txt",
+    "download_url": "https://archive.org/download/trueevangelism00chaf/trueevangelism00chaf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/true-evangelism-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/trueevangelism00chaf/trueevangelism00chaf_djvu.txt.",
+    "notes": "Public-domain evangelism study useful for pastors, teachers, and soul-winning study. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain evangelism study useful for pastors, teachers, and soul-winning study.",
+    "resource_labels": [
+      "Evangelism",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "True Evangelism",
+      "author": "Lewis Sperry Chafer",
+      "category": "Evangelism",
+      "collection": "Evangelism",
+      "badge": "Evangelism",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 144,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7a8624ec76c0581228b7331031d148064aa9a3427c24e36495eee474961a3787",
+    "file_size_bytes": 207741,
+    "word_count": 32301
+  },
+  {
+    "title": "Salvation",
+    "author": "Lewis Sperry Chafer",
+    "year": 2026,
+    "category": "Evangelism",
+    "collection": "Salvation / Gospel",
+    "source_url": "https://archive.org/download/salvation00chafiala/salvation00chafiala_djvu.txt",
+    "download_url": "https://archive.org/download/salvation00chafiala/salvation00chafiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/salvation-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/salvation00chafiala/salvation00chafiala_djvu.txt.",
+    "notes": "Early Chafer Gospel study; useful for salvation doctrine, evangelism, and sermon preparation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early Chafer Gospel study; useful for salvation doctrine, evangelism, and sermon preparation.",
+    "resource_labels": [
+      "Salvation / Gospel",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Salvation",
+      "author": "Lewis Sperry Chafer",
+      "category": "Evangelism",
+      "collection": "Salvation / Gospel",
+      "badge": "Salvation / Gospel",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 184,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0a52562a7f96e6e653bf4b67885cd819f405b68cf9913854afe71930b9c7dfb4",
+    "file_size_bytes": 265978,
+    "word_count": 41306
+  },
+  {
+    "title": "Grace",
+    "author": "Lewis Sperry Chafer",
+    "year": 1922,
+    "category": "Christian Living",
+    "collection": "Grace / Doctrine",
+    "source_url": "https://archive.org/download/bwb_T2-CSF-074/bwb_T2-CSF-074_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_T2-CSF-074/bwb_T2-CSF-074_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/grace-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/bwb_T2-CSF-074/bwb_T2-CSF-074_djvu.txt.",
+    "notes": "Early public-domain Chafer work on grace; useful for doctrine, devotion, and sermon preparation. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Early public-domain Chafer work on grace; useful for doctrine, devotion, and sermon preparation.",
+    "resource_labels": [
+      "Grace / Doctrine",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Grace",
+      "author": "Lewis Sperry Chafer",
+      "category": "Christian Living",
+      "collection": "Grace / Doctrine",
+      "badge": "Grace / Doctrine",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 500,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0b95ca53d53821a0b05c1343e78603cc158cf5f8afa771461fc3c41b610b0420",
+    "file_size_bytes": 650170,
+    "word_count": 112518
+  },
+  {
+    "title": "The Kingdom in History and Prophecy",
+    "author": "Lewis Sperry Chafer",
+    "year": 1915,
+    "category": "Bible study helps",
+    "collection": "Prophecy / Kingdom",
+    "source_url": "https://archive.org/download/kingdominhistory00chaf/kingdominhistory00chaf_djvu.txt",
+    "download_url": "https://archive.org/download/kingdominhistory00chaf/kingdominhistory00chaf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-kingdom-in-history-and-prophecy-lewis-sperry-chafer.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/kingdominhistory00chaf/kingdominhistory00chaf_djvu.txt.",
+    "notes": "Public-domain prophetic and kingdom study; useful for Bible students with visible discernment labels. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prophetic and kingdom study; useful for Bible students with visible discernment labels.",
+    "resource_labels": [
+      "Prophecy / Kingdom",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Kingdom in History and Prophecy",
+      "author": "Lewis Sperry Chafer",
+      "category": "Bible study helps",
+      "collection": "Prophecy / Kingdom",
+      "badge": "Prophecy / Kingdom",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 186,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5e9a3ed165b5a8bde2805cf5b0dd981896a5443356ec8642d6053c32da8892ff",
+    "file_size_bytes": 233803,
+    "word_count": 41933
+  },
+  {
+    "title": "The Training of the Twelve",
+    "author": "Alexander Balmain Bruce",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Life of Christ / Discipleship",
+    "source_url": "https://archive.org/download/trainingtwelveo00brucgoog/trainingtwelveo00brucgoog_djvu.txt",
+    "download_url": "https://archive.org/download/trainingtwelveo00brucgoog/trainingtwelveo00brucgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-training-of-the-twelve-alexander-balmain-bruce.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/trainingtwelveo00brucgoog/trainingtwelveo00brucgoog_djvu.txt.",
+    "notes": "Classic study of Christ's training of the apostles; useful for Gospel study, discipleship, and teaching. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Classic study of Christ's training of the apostles; useful for Gospel study, discipleship, and teaching.",
+    "resource_labels": [
+      "Life of Christ / Discipleship",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Training of the Twelve",
+      "author": "Alexander Balmain Bruce",
+      "category": "Bible study helps",
+      "collection": "Life of Christ / Discipleship",
+      "badge": "Life of Christ / Discipleship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 978,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7066da3f7da9f4caa24c75700963cd3bd706a0f5948c25a55111689c6c83d938",
+    "file_size_bytes": 1436437,
+    "word_count": 219965
+  },
+  {
+    "title": "Number in Scripture",
+    "author": "E. W. Bullinger",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Bible Study / Symbolism",
+    "source_url": "https://archive.org/download/number-in-scripture/Number%20in%20Scripture_djvu.txt",
+    "download_url": "https://archive.org/download/number-in-scripture/Number%20in%20Scripture_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/number-in-scripture-e-w-bullinger.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/number-in-scripture/Number%20in%20Scripture_djvu.txt.",
+    "notes": "Public-domain Bible study reference on numbers in Scripture; useful as a secondary reference with discernment. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study reference on numbers in Scripture; useful as a secondary reference with discernment.",
+    "resource_labels": [
+      "Bible Study / Symbolism",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Number in Scripture",
+      "author": "E. W. Bullinger",
+      "category": "Bible study helps",
+      "collection": "Bible Study / Symbolism",
+      "badge": "Bible Study / Symbolism",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 444,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "965b3dbcb77eecb79956368c9021b85fd1f7a24e8fd6ba4d47f6b2d2d0625d3f",
+    "file_size_bytes": 560482,
+    "word_count": 100003
+  },
+  {
+    "title": "The Wonders of Prophecy",
+    "author": "John Urquhart",
+    "year": 1827,
+    "category": "Bible study helps",
+    "collection": "Prophecy / Apologetics",
+    "source_url": "https://archive.org/download/wondersofprophec00urqu/wondersofprophec00urqu_djvu.txt",
+    "download_url": "https://archive.org/download/wondersofprophec00urqu/wondersofprophec00urqu_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-wonders-of-prophecy-john-urquhart.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified. Source reviewed from https://archive.org/download/wondersofprophec00urqu/wondersofprophec00urqu_djvu.txt.",
+    "notes": "Public-domain prophecy and apologetics resource; useful for prophecy study and teaching background. Labels/warnings: Historical value; Use with discernment; OCR spot-check needed; Review before quoting.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prophecy and apologetics resource; useful for prophecy study and teaching background.",
+    "resource_labels": [
+      "Prophecy / Apologetics",
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Review before quoting"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Wonders of Prophecy",
+      "author": "John Urquhart",
+      "category": "Bible study helps",
+      "collection": "Prophecy / Apologetics",
+      "badge": "Prophecy / Apologetics",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 360,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9a2ff2ffcf8477530f18bd20e793a51d5094e2014ad396b8d65dc01dbf67d0ae",
+    "file_size_bytes": 536677,
+    "word_count": 81106
   }
 ]
