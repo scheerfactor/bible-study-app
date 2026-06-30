@@ -5,14 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,027
-- Reviewed public commentary import rows: 8,252
-- Commentary validation rows checked, including staging/review files: 10,630
+- Active public commentary entries shown in the app: 6,060
+- Reviewed public commentary import rows: 8,285
+- Commentary validation rows checked, including staging/review files: 10,663
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
 
-## Latest Isaiah Commentary and Preaching Books Sprint
+## Latest 1 Corinthians Commentary Sprint
+
+Added 33 verified public commentary entries for 1 Corinthians 6-16:
+
+- Matthew Poole, 1 Corinthians 6-16
+- The Pulpit Commentary, 1 Corinthians 6-16
+- The Biblical Illustrator, 1 Corinthians 6-16
+
+This extends 1 Corinthians coverage for three major public-domain commentary voices and strengthens an important pastoral book for preaching, teaching, church-order study, and sermon preparation.
 
 ## Latest Ezekiel Completion Commentary Sprint
 
