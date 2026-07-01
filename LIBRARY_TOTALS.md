@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,555
-- Reviewed public commentary import rows: 8,780
-- Commentary validation rows checked, including staging/review files: 11,158
+- Active public commentary entries shown in the app: 6,630
+- Reviewed public commentary import rows: 8,855
+- Commentary validation rows checked, including staging/review files: 11,233
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Psalms Completion Commentary Sprint
+
+Added 75 verified public commentary entries for Psalms 126-150:
+
+- Matthew Poole, Psalms 126-150
+- The Pulpit Commentary, Psalms 126-150
+- The Biblical Illustrator, Psalms 126-150
+
+This completes the Psalms expansion for these three public-domain commentary voices, strengthening the Songs of degrees, final praise psalms, worship, prayer, and preaching preparation.
 
 ## Latest Psalms Worship Commentary Sprint
 
