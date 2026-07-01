@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,375
-- Reviewed public commentary import rows: 8,600
-- Commentary validation rows checked, including staging/review files: 10,978
+- Active public commentary entries shown in the app: 6,465
+- Reviewed public commentary import rows: 8,690
+- Commentary validation rows checked, including staging/review files: 11,068
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Psalms Mid-Book Commentary Sprint
+
+Added 90 verified public commentary entries for Psalms 66-95:
+
+- Matthew Poole, Psalms 66-95
+- The Pulpit Commentary, Psalms 66-95
+- The Biblical Illustrator, Psalms 66-95
+
+This continues the Psalms expansion for worship, thanksgiving, lament, temple praise, and messianic study while keeping the import split into reviewable public-domain batches.
 
 ## Latest Psalms Continuation Commentary Sprint
 
