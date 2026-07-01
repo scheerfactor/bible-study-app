@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,285
-- Reviewed public commentary import rows: 8,510
-- Commentary validation rows checked, including staging/review files: 10,888
+- Active public commentary entries shown in the app: 6,375
+- Reviewed public commentary import rows: 8,600
+- Commentary validation rows checked, including staging/review files: 10,978
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Psalms Continuation Commentary Sprint
+
+Added 90 verified public commentary entries for Psalms 36-65:
+
+- Matthew Poole, Psalms 36-65
+- The Pulpit Commentary, Psalms 36-65
+- The Biblical Illustrator, Psalms 36-65
+
+This continues the Psalms expansion in a controlled public-domain batch, strengthening prayer, worship, lament, trust, messianic study, and preaching preparation.
 
 ## Latest Psalms Commentary Sprint
 
