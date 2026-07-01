@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,117
-- Reviewed public commentary import rows: 8,342
-- Commentary validation rows checked, including staging/review files: 10,720
+- Active public commentary entries shown in the app: 6,195
+- Reviewed public commentary import rows: 8,420
+- Commentary validation rows checked, including staging/review files: 10,798
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest 2 Chronicles Commentary Sprint
+
+Added 78 verified public commentary entries for 2 Chronicles 11-36:
+
+- Matthew Poole, 2 Chronicles 11-36
+- The Pulpit Commentary, 2 Chronicles 11-36
+- The Biblical Illustrator, 2 Chronicles 11-36
+
+This completes 2 Chronicles 1-36 coverage for Poole, Pulpit Commentary, and Biblical Illustrator in the reviewed public commentary imports, strengthening the kings, temple, worship, revival, decline, and restoration-history study path.
 
 ## Latest 1 Chronicles Commentary Sprint
 
