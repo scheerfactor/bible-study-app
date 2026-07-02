@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,010
-- Reviewed public commentary import rows: 9,235
-- Commentary validation rows checked, including staging/review files: 11,613
+- Active public commentary entries shown in the app: 7,019
+- Reviewed public commentary import rows: 9,244
+- Commentary validation rows checked, including staging/review files: 11,622
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Amos Commentary Expansion Sprint
+
+Added 9 verified public commentary entries for Amos 1-9:
+
+- G. Campbell Morgan, Amos 1-9
+
+This strengthens Amos as a teaching-focus book with a concise expository voice for judgment, repentance, worship, justice, restoration, and Sunday school preparation.
 
 ## Latest Jeremiah Commentary Expansion Sprint
 
