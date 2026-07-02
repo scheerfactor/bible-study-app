@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,826
-- Reviewed public commentary import rows: 9,051
-- Commentary validation rows checked, including staging/review files: 11,429
+- Active public commentary entries shown in the app: 6,958
+- Reviewed public commentary import rows: 9,183
+- Commentary validation rows checked, including staging/review files: 11,561
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Isaiah Commentary Expansion Sprint
+
+Added 132 verified public commentary entries for Isaiah 1-66:
+
+- G. Campbell Morgan, Isaiah 1-66
+- H. A. Ironside, Isaiah 1-66
+
+This strengthens Isaiah with two concise expository voices for messianic prophecy, holiness, judgment, comfort, missions, and preaching preparation.
 
 ## Latest Ezekiel Commentary Expansion Sprint
 
