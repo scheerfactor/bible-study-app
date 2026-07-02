@@ -5,12 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,334
-- Reviewed public commentary import rows: 9,559
-- Commentary validation rows checked, including staging/review files: 11,937
+- Active public commentary entries shown in the app: 7,432
+- Reviewed public commentary import rows: 9,657
+- Commentary validation rows checked, including staging/review files: 12,035
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Chronicles and Restoration Commentary Expansion Sprint
+
+Added 98 verified public commentary entries for Chronicles, Ezra, Nehemiah, and Esther:
+
+- G. Campbell Morgan, 1 Chronicles 1-29
+- G. Campbell Morgan, 2 Chronicles 1-36
+- G. Campbell Morgan, Ezra 1-10
+- G. Campbell Morgan, Nehemiah 1-13
+- G. Campbell Morgan, Esther 1-10
+
+This strengthens neglected historical books for temple worship, revival, covenant renewal, return from captivity, rebuilding, providence, and teaching preparation.
 
 ## Latest Samuel and Kings Commentary Expansion Sprint
 
