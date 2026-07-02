@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,432
-- Reviewed public commentary import rows: 9,657
-- Commentary validation rows checked, including staging/review files: 12,035
+- Active public commentary entries shown in the app: 7,448
+- Reviewed public commentary import rows: 9,673
+- Commentary validation rows checked, including staging/review files: 12,051
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Solomon's Song Commentary Coverage Sprint
+
+Added 16 verified public commentary entries for Solomon's Song:
+
+- G. Campbell Morgan, Solomon's Song 1-8
+- H. A. Ironside, Solomon's Song 1-8
+
+This closes a visible wisdom-book commentary gap for love, devotion, covenant affection, purity, and Christ-centered devotional study. Wesley was checked but skipped because the current Wesley source has no Solomon's Song section.
 
 ## Latest Chronicles and Restoration Commentary Expansion Sprint
 
