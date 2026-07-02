@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,730
-- Reviewed public commentary import rows: 8,955
-- Commentary validation rows checked, including staging/review files: 11,333
+- Active public commentary entries shown in the app: 6,826
+- Reviewed public commentary import rows: 9,051
+- Commentary validation rows checked, including staging/review files: 11,429
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Ezekiel Commentary Expansion Sprint
+
+Added 96 verified public commentary entries for Ezekiel 1-48:
+
+- G. Campbell Morgan, Ezekiel 1-48
+- H. A. Ironside, Ezekiel 1-48
+
+This strengthens Ezekiel with two concise expository voices for prophetic study, holiness, judgment, restoration, temple visions, and teaching preparation.
 
 ## Latest Job Commentary Completion Sprint
 
