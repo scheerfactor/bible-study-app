@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,490
-- Reviewed public commentary import rows: 9,715
-- Commentary validation rows checked, including staging/review files: 12,093
+- Active public commentary entries shown in the app: 7,640
+- Reviewed public commentary import rows: 9,865
+- Commentary validation rows checked, including staging/review files: 12,243
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Psalms Commentary Expansion Sprint
+
+Added 150 verified public commentary entries for Psalms 1-150:
+
+- G. Campbell Morgan, Psalms 1-150
+
+This strengthens Psalms for worship, prayer, lament, praise, Messianic prophecy, pastoral care, and devotional teaching.
 
 ## Latest Job Commentary Expansion Sprint
 
