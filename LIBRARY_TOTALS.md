@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,086
-- Reviewed public commentary import rows: 9,311
-- Commentary validation rows checked, including staging/review files: 11,689
+- Active public commentary entries shown in the app: 7,113
+- Reviewed public commentary import rows: 9,338
+- Commentary validation rows checked, including staging/review files: 11,716
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Leviticus Commentary Expansion Sprint
+
+Added 27 verified public commentary entries for Leviticus 1-27:
+
+- G. Campbell Morgan, Leviticus 1-27
+
+This strengthens the Leviticus ecosystem for holiness, sacrifice, priesthood, clean and unclean laws, feasts, worship, atonement, and types of Christ.
 
 ## Latest Exodus Commentary Expansion Sprint
 
