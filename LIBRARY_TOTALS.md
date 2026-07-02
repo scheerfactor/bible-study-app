@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,046
-- Reviewed public commentary import rows: 9,271
-- Commentary validation rows checked, including staging/review files: 11,649
+- Active public commentary entries shown in the app: 7,086
+- Reviewed public commentary import rows: 9,311
+- Commentary validation rows checked, including staging/review files: 11,689
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Exodus Commentary Expansion Sprint
+
+Added 40 verified public commentary entries for Exodus 1-40:
+
+- G. Campbell Morgan, Exodus 1-40
+
+This strengthens the Exodus ecosystem for redemption, Moses, the Passover, the law, the tabernacle, wilderness testing, types of Christ, and teaching preparation.
 
 ## Latest Genesis Commentary Completion Sprint
 
