@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,630
-- Reviewed public commentary import rows: 8,855
-- Commentary validation rows checked, including staging/review files: 11,233
+- Active public commentary entries shown in the app: 6,666
+- Reviewed public commentary import rows: 8,891
+- Commentary validation rows checked, including staging/review files: 11,269
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Ecclesiastes Commentary Sprint
+
+Added 36 verified public commentary entries for Ecclesiastes 1-12:
+
+- Albert Barnes, Ecclesiastes 1-12
+- Adam Clarke, Ecclesiastes 1-12
+- G. Campbell Morgan, Ecclesiastes 1-12
+
+This strengthens Ecclesiastes for wisdom literature, worldview study, counseling, Sunday school discussion, and preaching preparation while avoiding duplicate imports.
 
 ## Latest Psalms Completion Commentary Sprint
 
