@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,113
-- Reviewed public commentary import rows: 9,338
-- Commentary validation rows checked, including staging/review files: 11,716
+- Active public commentary entries shown in the app: 7,149
+- Reviewed public commentary import rows: 9,374
+- Commentary validation rows checked, including staging/review files: 11,752
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Numbers Commentary Expansion Sprint
+
+Added 36 verified public commentary entries for Numbers 1-36:
+
+- G. Campbell Morgan, Numbers 1-36
+
+This strengthens the Numbers ecosystem for wilderness testing, unbelief, leadership, holiness, judgment, Balaam, the brazen serpent, and teaching preparation.
 
 ## Latest Leviticus Commentary Expansion Sprint
 
