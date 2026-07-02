@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,958
-- Reviewed public commentary import rows: 9,183
-- Commentary validation rows checked, including staging/review files: 11,561
+- Active public commentary entries shown in the app: 7,010
+- Reviewed public commentary import rows: 9,235
+- Commentary validation rows checked, including staging/review files: 11,613
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Jeremiah Commentary Expansion Sprint
+
+Added 52 verified public commentary entries for Jeremiah 1-52:
+
+- G. Campbell Morgan, Jeremiah 1-52
+
+This strengthens Jeremiah with a concise expository overview voice for prophetic burden, repentance, judgment, pastoral courage, covenant warning, and teaching preparation.
 
 ## Latest Isaiah Commentary Expansion Sprint
 
