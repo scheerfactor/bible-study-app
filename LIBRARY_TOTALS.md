@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,183
-- Reviewed public commentary import rows: 9,408
-- Commentary validation rows checked, including staging/review files: 11,786
+- Active public commentary entries shown in the app: 7,232
+- Reviewed public commentary import rows: 9,457
+- Commentary validation rows checked, including staging/review files: 11,835
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Historical Books Commentary Expansion Sprint
+
+Added 49 verified public commentary entries for Joshua, Judges, and Ruth:
+
+- G. Campbell Morgan, Joshua 1-24
+- G. Campbell Morgan, Judges 1-21
+- G. Campbell Morgan, Ruth 1-4
+
+This extends Morgan coverage beyond the Pentateuch into Israel's conquest, decline in the judges, and Ruth's redemption story, strengthening Bible-book ecosystems for teaching, preaching, and devotional study.
 
 ## Latest Deuteronomy Commentary Expansion Sprint
 

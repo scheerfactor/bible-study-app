@@ -93,6 +93,45 @@ Keep these as permission-needed until written approval:
 | 6 | Lifeway | Broad church/ministry resources and a formal licensing/permissions request process. | Use their permissions request process for specific titles only. |
 | 7 | HarperCollins Christian / Thomas Nelson / Zondervan | Major Bible and Christian publishing rights holder. | Later-stage request after traffic and beta metrics exist. |
 
+## First 10 Permission Conversations To Start
+
+Use these as the first practical outreach list. The goal is to learn each rights holder's process, not to secure a whole catalog immediately.
+
+| Priority | Contact target | Suggested first title/type | Why it fits | Ask first |
+| --- | --- | --- | --- | --- |
+| 1 | Local or known Bible-believing pastors/teachers | Sermon outlines, lesson notes, short booklets | Warmest relationship path and easiest trust-building. | Permission for one sample sermon/lesson, excerpt, and official link. |
+| 2 | Way of Life Literature / David Cloud | KJV, Baptist doctrine, church issues, Bible encyclopedia resources | Strong target audience fit but must remain permission-needed until approved. | Metadata/linking plus one approved excerpt or sample chapter. |
+| 3 | Thru the Bible / J. Vernon McGee | Bible teaching notes and audio pathways | Strong listening and Bible-book workflow fit. | Ask who handles app, text, and audio licensing separately. |
+| 4 | Moody Publishers / Moody Bible Institute | Legacy evangelism, biography, Bible study, Ironside-adjacent questions | Important catalog and name recognition. | Ask for the correct permissions contact and one title-specific path. |
+| 5 | Kregel Publications | Bible study and commentary resources | Likely formal rights workflow. | Ask for excerpt or beta inclusion for one selected resource. |
+| 6 | Christian Focus | Biographies, theology, missionary and ministry books | Strong for future premium/curated shelves. | Ask about metadata, excerpts, and future subscription licensing. |
+| 7 | Independent Baptist authors with active ministries | Doctrine, preaching, evangelism, KJV, church helps | May be more open to ministry distribution. | Ask for free beta inclusion of one work and optional purchase link. |
+| 8 | Mission boards or missionary biography rights holders | Missionary biographies, prayer letters, sermon audio | Excellent fit for missions and prayer modules. | Ask for approved excerpts, photos, and audio/video usage boundaries. |
+| 9 | SermonAudio / church media contacts | Sermon audio metadata and embed/link options | Useful for audio sermons without hosting copyrighted files. | Ask whether linking/embedding is permitted and what metadata may be stored. |
+| 10 | Larger publishers after beta metrics | Study Bibles, modern commentaries, Christian living | Better approached after screenshots, beta numbers, and a clear pricing plan. | Ask for their permissions process, not a broad catalog deal. |
+
+## First Outreach Packet To Prepare
+
+Before sending the first email, prepare a small packet:
+
+- 3-5 screenshots: Bible Reader, Passage Guide, Library, Sermon Builder, Rights Center
+- 60-90 second demo video showing Scripture first and resources secondary
+- current public-domain resource count
+- explanation that unapproved works stay hidden
+- requested title and exact uses requested
+- contact email and removal/revocation promise
+
+## Recommended First Ask Sequence
+
+1. May we list metadata and link to your official page?
+2. May we show a short approved excerpt or sample chapter?
+3. May we include one selected title in a small private beta?
+4. May we include full digital text for approved users?
+5. May users use browser/device text-to-speech?
+6. Are generated audio, human narration, subscription access, or sermon/media use licensed separately?
+
+This sequence keeps the first conversation simple and avoids sounding like a request to republish a full catalog immediately.
+
 ## Contact Source Links
 
 - Way of Life Literature: https://www.wayoflife.org/

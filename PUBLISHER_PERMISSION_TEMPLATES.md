@@ -9,6 +9,26 @@
 - Ask about audio/TTS separately from ebook/text rights.
 - No response does not equal permission.
 
+## Template 0: Metadata and Official Link Permission
+
+Subject: Permission to list [TITLE] with an official link
+
+Hello [NAME],
+
+My name is Stephen Scheer. I am building Father's Business Bible Study, a Scripture-first Bible study app for Christians, Sunday School teachers, pastors, missionaries, evangelists, and serious Bible students.
+
+Before requesting any full digital rights, I would like to ask a smaller question:
+
+May the app list [TITLE] by [AUTHOR] with basic metadata, a short description, and a link to your official purchase or ministry page?
+
+This would not include the full copyrighted text. It would simply help users discover trusted resources while directing them back to your official page. If you allow a short approved excerpt or sample chapter, I would be glad to follow your exact requirements.
+
+Nothing copyrighted will be published publicly without written permission.
+
+Thank you,
+
+Stephen Scheer
+
 ## Template 1: Full Digital Library Permission
 
 Subject: Permission request for [TITLE] in Father's Business Bible Study
