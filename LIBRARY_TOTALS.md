@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,021
-- Reviewed public commentary import rows: 9,246
-- Commentary validation rows checked, including staging/review files: 11,624
+- Active public commentary entries shown in the app: 7,046
+- Reviewed public commentary import rows: 9,271
+- Commentary validation rows checked, including staging/review files: 11,649
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Genesis Commentary Completion Sprint
+
+Added 25 verified public commentary entries for Genesis 26-50:
+
+- G. Campbell Morgan, Genesis 26-50
+
+This completes Morgan's public Genesis coverage and strengthens the Genesis ecosystem for creation, covenant, patriarchs, faith, family, providence, Joseph, and teaching preparation.
 
 ## Latest Obadiah Commentary Coverage Cleanup
 
