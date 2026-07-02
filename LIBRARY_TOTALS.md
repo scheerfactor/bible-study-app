@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 6,666
-- Reviewed public commentary import rows: 8,891
-- Commentary validation rows checked, including staging/review files: 11,269
+- Active public commentary entries shown in the app: 6,730
+- Reviewed public commentary import rows: 8,955
+- Commentary validation rows checked, including staging/review files: 11,333
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Job Commentary Completion Sprint
+
+Added 64 verified public commentary entries for Job 11-42:
+
+- Albert Barnes, Job 11-42
+- Adam Clarke, Job 11-42
+
+This completes Job coverage for Barnes and Clarke after their earlier Job 1-10 batches, strengthening suffering, counsel, worship, creation, repentance, and pastoral teaching preparation.
 
 ## Latest Ecclesiastes Commentary Sprint
 
