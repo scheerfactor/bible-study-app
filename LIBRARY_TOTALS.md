@@ -5,12 +5,23 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,232
-- Reviewed public commentary import rows: 9,457
-- Commentary validation rows checked, including staging/review files: 11,835
+- Active public commentary entries shown in the app: 7,334
+- Reviewed public commentary import rows: 9,559
+- Commentary validation rows checked, including staging/review files: 11,937
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Samuel and Kings Commentary Expansion Sprint
+
+Added 102 verified public commentary entries for Samuel and Kings:
+
+- G. Campbell Morgan, 1 Samuel 1-31
+- G. Campbell Morgan, 2 Samuel 1-24
+- G. Campbell Morgan, 1 Kings 1-22
+- G. Campbell Morgan, 2 Kings 1-25
+
+This strengthens Israel's monarchy history for Samuel, Saul, David, Solomon, divided kingdom, Elijah, Elisha, judgment, revival, leadership, and sermon preparation.
 
 ## Latest Historical Books Commentary Expansion Sprint
 
