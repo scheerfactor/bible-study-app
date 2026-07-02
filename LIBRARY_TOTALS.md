@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,149
-- Reviewed public commentary import rows: 9,374
-- Commentary validation rows checked, including staging/review files: 11,752
+- Active public commentary entries shown in the app: 7,183
+- Reviewed public commentary import rows: 9,408
+- Commentary validation rows checked, including staging/review files: 11,786
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Deuteronomy Commentary Expansion Sprint
+
+Added 34 verified public commentary entries for Deuteronomy 1-34:
+
+- G. Campbell Morgan, Deuteronomy 1-34
+
+This completes Morgan's Pentateuch coverage and strengthens Deuteronomy for covenant renewal, obedience, remembrance, worship, law, leadership, and Christ's wilderness quotations.
 
 ## Latest Numbers Commentary Expansion Sprint
 
