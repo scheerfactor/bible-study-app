@@ -8,7 +8,7 @@
     "verifiedResources": 1379
   },
   "commentary": {
-    "publicRows": 11182,
+    "publicRows": 11378,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -334,46 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "2 Chronicles",
-      "coveredChapters": 36,
-      "totalChapters": 36,
-      "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 7.027777777777778
-    },
-    {
-      "book": "1 Chronicles",
-      "coveredChapters": 29,
-      "totalChapters": 29,
-      "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 7.0344827586206895
-    },
-    {
-      "book": "Nehemiah",
-      "coveredChapters": 13,
-      "totalChapters": 13,
-      "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.076923076923077
-    },
-    {
-      "book": "Esther",
-      "coveredChapters": 10,
-      "totalChapters": 10,
-      "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.1
-    },
-    {
-      "book": "Ezra",
-      "coveredChapters": 10,
-      "totalChapters": 10,
-      "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.1
-    },
-    {
       "book": "2 Samuel",
       "coveredChapters": 24,
       "totalChapters": 24,
@@ -406,6 +366,14 @@
       "rowsPerChapter": 9.025
     },
     {
+      "book": "2 Chronicles",
+      "coveredChapters": 36,
+      "totalChapters": 36,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.027777777777779
+    },
+    {
       "book": "Numbers",
       "coveredChapters": 36,
       "totalChapters": 36,
@@ -428,6 +396,38 @@
       "coverage": 1,
       "authors": 10,
       "rowsPerChapter": 9.03225806451613
+    },
+    {
+      "book": "1 Chronicles",
+      "coveredChapters": 29,
+      "totalChapters": 29,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.03448275862069
+    },
+    {
+      "book": "Acts",
+      "coveredChapters": 28,
+      "totalChapters": 28,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.035714285714286
+    },
+    {
+      "book": "Matthew",
+      "coveredChapters": 28,
+      "totalChapters": 28,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.035714285714286
+    },
+    {
+      "book": "2 Kings",
+      "coveredChapters": 25,
+      "totalChapters": 25,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.04
     }
   ]
 }
