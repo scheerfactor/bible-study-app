@@ -5,12 +5,29 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,935
-- Reviewed public commentary import rows: 10,160
-- Commentary validation rows checked, including staging/review files: 12,538
+- Active public commentary entries shown in the app: 7,987
+- Reviewed public commentary import rows: 10,212
+- Commentary validation rows checked, including staging/review files: 12,590
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Epistles Commentary Sprint
+
+Added 52 verified public commentary entries:
+
+- John Wesley, 2 Corinthians 1-13
+- John Wesley, 1 Thessalonians 1-5
+- John Wesley, 2 Thessalonians 1-3
+- John Wesley, 1 Timothy 1-6
+- John Wesley, 2 Timothy 1-4
+- John Wesley, Titus 1-3
+- John Wesley, James 1-5
+- John Wesley, 1 Peter 1-5
+- John Wesley, 2 Peter 1-3
+- John Wesley, 1 John 1-5
+
+This strengthens epistle coverage for church order, pastoral ministry, holiness, suffering, assurance, and practical teaching. Philemon, 2 John, 3 John, and Jude were checked but need a separate CCEL parser edge-case pass.
 
 ## Latest Wesley Parser and New Testament Commentary Sprint
 
