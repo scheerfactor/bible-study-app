@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 5748,
+    "rows": 5837,
     "stagedRows": 50,
-    "sourceVersesCovered": 2023,
+    "sourceVersesCovered": 2068,
     "booksCovered": 66,
-    "chaptersCovered": 1020,
+    "chaptersCovered": 1065,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -228,51 +228,11 @@
     "weakestBooks": [
       {
         "book": "Psalms",
-        "chaptersCovered": 57,
+        "chaptersCovered": 69,
         "totalChapters": 150,
-        "chapterCoveragePercent": 38,
-        "versesCovered": 87,
-        "rows": 443
-      },
-      {
-        "book": "Revelation",
-        "chaptersCovered": 17,
-        "totalChapters": 22,
-        "chapterCoveragePercent": 77.3,
-        "versesCovered": 47,
-        "rows": 142
-      },
-      {
-        "book": "Numbers",
-        "chaptersCovered": 28,
-        "totalChapters": 36,
-        "chapterCoveragePercent": 77.8,
-        "versesCovered": 61,
-        "rows": 129
-      },
-      {
-        "book": "2 Chronicles",
-        "chaptersCovered": 29,
-        "totalChapters": 36,
-        "chapterCoveragePercent": 80.6,
-        "versesCovered": 43,
-        "rows": 124
-      },
-      {
-        "book": "Jeremiah",
-        "chaptersCovered": 42,
-        "totalChapters": 52,
-        "chapterCoveragePercent": 80.8,
-        "versesCovered": 71,
-        "rows": 216
-      },
-      {
-        "book": "Judges",
-        "chaptersCovered": 17,
-        "totalChapters": 21,
-        "chapterCoveragePercent": 81,
-        "versesCovered": 36,
-        "rows": 98
+        "chapterCoveragePercent": 46,
+        "versesCovered": 99,
+        "rows": 467
       },
       {
         "book": "Genesis",
@@ -321,6 +281,46 @@
         "chapterCoveragePercent": 90.3,
         "versesCovered": 53,
         "rows": 207
+      },
+      {
+        "book": "Proverbs",
+        "chaptersCovered": 29,
+        "totalChapters": 31,
+        "chapterCoveragePercent": 93.5,
+        "versesCovered": 32,
+        "rows": 75
+      },
+      {
+        "book": "1 Chronicles",
+        "chaptersCovered": 28,
+        "totalChapters": 29,
+        "chapterCoveragePercent": 96.6,
+        "versesCovered": 54,
+        "rows": 113
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 35,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 97.2,
+        "versesCovered": 68,
+        "rows": 142
+      },
+      {
+        "book": "Exodus",
+        "chaptersCovered": 39,
+        "totalChapters": 40,
+        "chapterCoveragePercent": 97.5,
+        "versesCovered": 49,
+        "rows": 119
+      },
+      {
+        "book": "Job",
+        "chaptersCovered": 41,
+        "totalChapters": 42,
+        "chapterCoveragePercent": 97.6,
+        "versesCovered": 65,
+        "rows": 190
       }
     ]
   },
