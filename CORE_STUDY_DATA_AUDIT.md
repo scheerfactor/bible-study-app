@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T12:54:34.139Z
+Generated: 2026-07-03T13:05:31.617Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-07-03T12:54:34.139Z
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
-- Public TSK rows: 6026; staged TSK rows: 50; source verses covered: 2164; chapters covered: 1161; books covered: 66 (reviewed samples only).
+- Public TSK rows: 6074; staged TSK rows: 50; source verses covered: 2188; chapters covered: 1185; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,7 +71,6 @@ Generated: 2026-07-03T12:54:34.139Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Psalms | 126 | 150 | 84% | 156 | 581 |
 | Genesis | 48 | 50 | 96% | 65 | 193 |
 | Numbers | 35 | 36 | 97.2% | 68 | 142 |
 | Exodus | 39 | 40 | 97.5% | 49 | 119 |
@@ -83,6 +82,7 @@ Generated: 2026-07-03T12:54:34.139Z
 | Ruth | 4 | 4 | 100% | 5 | 13 |
 | 1 John | 5 | 5 | 100% | 6 | 16 |
 | 1 Timothy | 6 | 6 | 100% | 7 | 19 |
+| Micah | 7 | 7 | 100% | 8 | 22 |
 
 ## Thinnest Commentary Books
 

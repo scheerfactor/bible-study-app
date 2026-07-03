@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 6026,
+    "rows": 6074,
     "stagedRows": 50,
-    "sourceVersesCovered": 2164,
+    "sourceVersesCovered": 2188,
     "booksCovered": 66,
-    "chaptersCovered": 1161,
+    "chaptersCovered": 1185,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -226,14 +226,6 @@
       }
     ],
     "weakestBooks": [
-      {
-        "book": "Psalms",
-        "chaptersCovered": 126,
-        "totalChapters": 150,
-        "chapterCoveragePercent": 84,
-        "versesCovered": 156,
-        "rows": 581
-      },
       {
         "book": "Genesis",
         "chaptersCovered": 48,
@@ -321,6 +313,14 @@
         "chapterCoveragePercent": 100,
         "versesCovered": 7,
         "rows": 19
+      },
+      {
+        "book": "Micah",
+        "chaptersCovered": 7,
+        "totalChapters": 7,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 8,
+        "rows": 22
       }
     ]
   },
