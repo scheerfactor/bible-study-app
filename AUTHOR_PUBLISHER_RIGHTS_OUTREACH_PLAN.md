@@ -99,6 +99,14 @@ Use these as the first practical outreach list. The goal is to learn each rights
 
 For an operational CSV queue, use `data/library/acquisition/rights-outreach-priority-queue.csv`. That queue separates direct relationship targets, publisher targets, ministry contacts, sermon/audio opportunities, and later-stage large publishers so permission work can be tracked without accidentally treating copyrighted resources as public imports.
 
+For ready-to-send email wording and a first small batch of permission requests, use:
+
+- `PERMISSION_OUTREACH_PACKET.md`
+- `PERMISSION_EMAIL_SEND_CHECKLIST.md`
+- `data/library/acquisition/first-permission-email-batch.csv`
+
+Send permission requests from `hello@fathersbusinessmasteryresources.com` so publishers and authors see the request as coming from the ministry/business rather than a personal inbox.
+
 | Priority | Contact target | Suggested first title/type | Why it fits | Ask first |
 | --- | --- | --- | --- | --- |
 | 1 | Local or known Bible-believing pastors/teachers | Sermon outlines, lesson notes, short booklets | Warmest relationship path and easiest trust-building. | Permission for one sample sermon/lesson, excerpt, and official link. |
