@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,987
-- Reviewed public commentary import rows: 10,212
-- Commentary validation rows checked, including staging/review files: 12,590
+- Active public commentary entries shown in the app: 8,077
+- Reviewed public commentary import rows: 10,302
+- Commentary validation rows checked, including staging/review files: 12,680
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Pentateuch Foundation Sprint
+
+Added 90 verified public commentary entries:
+
+- John Wesley, Genesis 1-50
+- John Wesley, Exodus 1-40
+
+This brings active public commentary entries past 8,000 and strengthens creation, patriarchs, covenant, Exodus, redemption, law, worship, and typology study workflows.
 
 ## Latest Wesley Epistles Commentary Sprint
 
