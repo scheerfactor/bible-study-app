@@ -50,6 +50,15 @@ Prepared follow-up drafts live in:
 
 Do not send a follow-up if a reply has already arrived. Review the reply first.
 
+## Next Ready-To-Review Batch
+
+The next five permission requests are staged for Stephen review here:
+
+- `PERMISSION_READY_TO_SEND_BATCH_2.md`
+- `data/library/acquisition/permission-ready-to-send-batch-2.csv`
+
+These are not sent. Stephen must verify the contact route, approve the message, and send each request manually before any status changes to `Permission Requested`.
+
 ## If They Say Yes
 
 Before importing, confirm:
