@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,077
-- Reviewed public commentary import rows: 10,302
-- Commentary validation rows checked, including staging/review files: 12,680
+- Active public commentary entries shown in the app: 8,173
+- Reviewed public commentary import rows: 10,398
+- Commentary validation rows checked, including staging/review files: 12,776
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Pentateuch Completion Sprint
+
+Added 96 verified public commentary entries:
+
+- John Wesley, Leviticus 2-27
+- John Wesley, Numbers 1-36
+- John Wesley, Deuteronomy 1-34
+
+This strengthens the Pentateuch for sacrifice, priesthood, holiness, wilderness lessons, covenant renewal, law, and teaching preparation. Leviticus 1 was checked but skipped because the current CCEL source does not expose a chapter 1 commentary section.
 
 ## Latest Wesley Pentateuch Foundation Sprint
 
