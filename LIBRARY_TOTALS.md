@@ -5,12 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,323
-- Reviewed public commentary import rows: 10,548
-- Commentary validation rows checked, including staging/review files: 12,926
+- Active public commentary entries shown in the app: 8,421
+- Reviewed public commentary import rows: 10,646
+- Commentary validation rows checked, including staging/review files: 13,024
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Chronicles and Restoration Commentary Sprint
+
+Added 98 verified public commentary entries:
+
+- John Wesley, 1 Chronicles 1-29
+- John Wesley, 2 Chronicles 1-36
+- John Wesley, Ezra 1-10
+- John Wesley, Nehemiah 1-13
+- John Wesley, Esther 1-10
+
+This strengthens Bible-book ecosystems for worship, temple history, covenant renewal, rebuilding, reform, providence, courage, and leadership.
 
 ## Latest Wesley Historical Books Commentary Sprint
 
