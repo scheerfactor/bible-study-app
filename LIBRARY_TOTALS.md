@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,640
-- Reviewed public commentary import rows: 9,865
-- Commentary validation rows checked, including staging/review files: 12,243
+- Active public commentary entries shown in the app: 7,832
+- Reviewed public commentary import rows: 10,057
+- Commentary validation rows checked, including staging/review files: 12,435
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Wisdom Commentary Sprint
+
+Added 192 verified public commentary entries:
+
+- John Wesley, Job 1-42
+- John Wesley, Psalms 1-150
+
+This adds a concise practical commentary voice beside Morgan, Matthew Henry, JFB, Barnes, Clarke, Poole, Pulpit, and other reviewed entries for Job and Psalms. Wesley Proverbs was checked but skipped because the current CCEL source has no Proverbs section.
 
 ## Latest Psalms Commentary Expansion Sprint
 
