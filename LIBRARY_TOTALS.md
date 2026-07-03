@@ -5,12 +5,26 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,858
-- Reviewed public commentary import rows: 10,083
-- Commentary validation rows checked, including staging/review files: 12,461
+- Active public commentary entries shown in the app: 7,935
+- Reviewed public commentary import rows: 10,160
+- Commentary validation rows checked, including staging/review files: 12,538
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Parser and New Testament Commentary Sprint
+
+Expanded the Wesley CCEL parser to recognize the full set of Bible book OSIS abbreviations, then added 77 verified public commentary entries:
+
+- John Wesley, Matthew 1-28
+- John Wesley, 1 Corinthians 1-16
+- John Wesley, Galatians 1-6
+- John Wesley, Ephesians 1-6
+- John Wesley, Philippians 1-4
+- John Wesley, Colossians 1-4
+- John Wesley, Hebrews 1-13
+
+This strengthens Gospel, epistle, doctrine, church-life, and teaching-preparation coverage using CCEL's public-domain Wesley source.
 
 ## Latest Wesley Gospel Commentary Sprint
 
