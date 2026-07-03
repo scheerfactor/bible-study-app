@@ -5,12 +5,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,421
-- Reviewed public commentary import rows: 10,646
-- Commentary validation rows checked, including staging/review files: 13,024
+- Active public commentary entries shown in the app: 8,604
+- Reviewed public commentary import rows: 10,829
+- Commentary validation rows checked, including staging/review files: 13,207
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Major Prophets Commentary Sprint
+
+Added 183 verified public commentary entries:
+
+- John Wesley, Isaiah 1-66
+- John Wesley, Jeremiah 1-52
+- John Wesley, Lamentations 1-5
+- John Wesley, Ezekiel 1-48
+- John Wesley, Daniel 1-12
+
+This strengthens prophecy, exile, judgment, restoration, Messianic hope, Daniel study, and end-times teaching workflows with another reviewed public-domain commentary voice.
 
 ## Latest Wesley Chronicles and Restoration Commentary Sprint
 
