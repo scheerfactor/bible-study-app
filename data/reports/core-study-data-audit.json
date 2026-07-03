@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 5665,
+    "rows": 5748,
     "stagedRows": 50,
-    "sourceVersesCovered": 1980,
+    "sourceVersesCovered": 2023,
     "booksCovered": 66,
-    "chaptersCovered": 977,
+    "chaptersCovered": 1020,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -233,54 +233,6 @@
         "chapterCoveragePercent": 38,
         "versesCovered": 87,
         "rows": 443
-      },
-      {
-        "book": "Job",
-        "chaptersCovered": 29,
-        "totalChapters": 42,
-        "chapterCoveragePercent": 69,
-        "versesCovered": 53,
-        "rows": 169
-      },
-      {
-        "book": "Exodus",
-        "chaptersCovered": 28,
-        "totalChapters": 40,
-        "chapterCoveragePercent": 70,
-        "versesCovered": 38,
-        "rows": 97
-      },
-      {
-        "book": "Joshua",
-        "chaptersCovered": 17,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 70.8,
-        "versesCovered": 35,
-        "rows": 92
-      },
-      {
-        "book": "Luke",
-        "chaptersCovered": 17,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 70.8,
-        "versesCovered": 41,
-        "rows": 115
-      },
-      {
-        "book": "Malachi",
-        "chaptersCovered": 3,
-        "totalChapters": 4,
-        "chapterCoveragePercent": 75,
-        "versesCovered": 25,
-        "rows": 59
-      },
-      {
-        "book": "John",
-        "chaptersCovered": 16,
-        "totalChapters": 21,
-        "chapterCoveragePercent": 76.2,
-        "versesCovered": 38,
-        "rows": 113
       },
       {
         "book": "Revelation",
@@ -321,6 +273,54 @@
         "chapterCoveragePercent": 81,
         "versesCovered": 36,
         "rows": 98
+      },
+      {
+        "book": "Genesis",
+        "chaptersCovered": 41,
+        "totalChapters": 50,
+        "chapterCoveragePercent": 82,
+        "versesCovered": 58,
+        "rows": 179
+      },
+      {
+        "book": "Deuteronomy",
+        "chaptersCovered": 28,
+        "totalChapters": 34,
+        "chapterCoveragePercent": 82.4,
+        "versesCovered": 56,
+        "rows": 237
+      },
+      {
+        "book": "Isaiah",
+        "chaptersCovered": 55,
+        "totalChapters": 66,
+        "chapterCoveragePercent": 83.3,
+        "versesCovered": 88,
+        "rows": 259
+      },
+      {
+        "book": "Hosea",
+        "chaptersCovered": 12,
+        "totalChapters": 14,
+        "chapterCoveragePercent": 85.7,
+        "versesCovered": 71,
+        "rows": 141
+      },
+      {
+        "book": "Ezekiel",
+        "chaptersCovered": 42,
+        "totalChapters": 48,
+        "chapterCoveragePercent": 87.5,
+        "versesCovered": 87,
+        "rows": 245
+      },
+      {
+        "book": "1 Samuel",
+        "chaptersCovered": 28,
+        "totalChapters": 31,
+        "chapterCoveragePercent": 90.3,
+        "versesCovered": 53,
+        "rows": 207
       }
     ]
   },

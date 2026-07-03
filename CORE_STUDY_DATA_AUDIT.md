@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T03:15:04.913Z
+Generated: 2026-07-03T03:38:34.203Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-07-03T03:15:04.913Z
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
-- Public TSK rows: 5665; staged TSK rows: 50; source verses covered: 1980; chapters covered: 977; books covered: 66 (reviewed samples only).
+- Public TSK rows: 5748; staged TSK rows: 50; source verses covered: 2023; chapters covered: 1020; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -72,17 +72,17 @@ Generated: 2026-07-03T03:15:04.913Z
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Psalms | 57 | 150 | 38% | 87 | 443 |
-| Job | 29 | 42 | 69% | 53 | 169 |
-| Exodus | 28 | 40 | 70% | 38 | 97 |
-| Joshua | 17 | 24 | 70.8% | 35 | 92 |
-| Luke | 17 | 24 | 70.8% | 41 | 115 |
-| Malachi | 3 | 4 | 75% | 25 | 59 |
-| John | 16 | 21 | 76.2% | 38 | 113 |
 | Revelation | 17 | 22 | 77.3% | 47 | 142 |
 | Numbers | 28 | 36 | 77.8% | 61 | 129 |
 | 2 Chronicles | 29 | 36 | 80.6% | 43 | 124 |
 | Jeremiah | 42 | 52 | 80.8% | 71 | 216 |
 | Judges | 17 | 21 | 81% | 36 | 98 |
+| Genesis | 41 | 50 | 82% | 58 | 179 |
+| Deuteronomy | 28 | 34 | 82.4% | 56 | 237 |
+| Isaiah | 55 | 66 | 83.3% | 88 | 259 |
+| Hosea | 12 | 14 | 85.7% | 71 | 141 |
+| Ezekiel | 42 | 48 | 87.5% | 87 | 245 |
+| 1 Samuel | 28 | 31 | 90.3% | 53 | 207 |
 
 ## Thinnest Commentary Books
 
