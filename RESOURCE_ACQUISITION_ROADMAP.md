@@ -4,6 +4,16 @@
 
 This roadmap expands the permissions database into a practical acquisition plan. The goal is not to collect every possible Christian book. The goal is to build a curated, KJV-friendly, Baptist-friendly, dispensational-friendly library that helps users study Scripture clearly.
 
+## Foundation Documents
+
+Use these documents together:
+
+- `DOCTRINAL_BASIS.md` states the doctrinal reference point for resource review.
+- `RESOURCE_REVIEW.md` defines the review board workflow and scoring rubric.
+- `AUTHOR_PROFILE.md` provides the template for author and ministry pages.
+- `RESOURCE_VETTING_GUIDELINES.md` defines resource labels, caution rules, and review criteria.
+- `STUDY_WORKSPACE_ROADMAP.md` describes the long-term passage-level study environment.
+
 ## Guiding Principle
 
 Do not label authors broadly as "safe" or "unsafe." Classify each resource according to how it fits the app's doctrinal basis, audience, rights status, and use case.
