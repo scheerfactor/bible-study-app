@@ -1,21 +1,5 @@
 [
   {
-    "id": "wesley-amos-9-phase-2",
-    "reference": "Amos 9",
-    "book": "Amos",
-    "chapter": 9,
-    "verse_start": 1,
-    "verse_end": 15,
-    "author": "John Wesley",
-    "resource_title": "Wesley's Notes on the Bible",
-    "source_title": "Wesley's Notes on the Bible",
-    "source_url": "https://www.ccel.org/w/wesley/notes/index.html",
-    "public_domain_status": "CCEL work record lists Wesley's Notes on the Bible as Public Domain.",
-    "rights_basis": "Phase 2 reviewed chapter-level acquisition entry. Mark Methodist perspective notes before any larger import.",
-    "recommended_use": "Use as a short historical comparison voice with visible perspective notes.",
-    "entry_text": "This Phase 2 entry supports Amos study by comparing the final judgment scene, the certainty that none can escape God, and the closing promise of restoration. Use it in Amos teaching prep after the KJV chapter and reviewed cross references. Source voice: John Wesley; this is a reviewed chapter-level acquisition entry, not a full bulk commentary import."
-  },
-  {
     "id": "gill-john-1-phase-2",
     "reference": "John 1",
     "book": "John",

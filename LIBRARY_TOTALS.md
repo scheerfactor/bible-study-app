@@ -5,12 +5,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,832
-- Reviewed public commentary import rows: 10,057
-- Commentary validation rows checked, including staging/review files: 12,435
+- Active public commentary entries shown in the app: 7,842
+- Reviewed public commentary import rows: 10,067
+- Commentary validation rows checked, including staging/review files: 12,445
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Completion Sprint
+
+Added 11 Wesley public commentary rows and removed 1 older duplicate overlap, for a net gain of 10 active entries:
+
+- John Wesley, Acts 26-28
+- John Wesley, Amos 2-9
+
+This completes Wesley coverage for Acts and strengthens Amos for Sunday School teaching, prophecy study, judgment, repentance, and restoration.
 
 ## Latest Wesley Wisdom Commentary Sprint
 
