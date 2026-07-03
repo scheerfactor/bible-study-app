@@ -8,7 +8,7 @@
     "verifiedResources": 1379
   },
   "commentary": {
-    "publicRows": 11078,
+    "publicRows": 11126,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -350,14 +350,6 @@
       "rowsPerChapter": 7.0344827586206895
     },
     {
-      "book": "Hebrews",
-      "coveredChapters": 13,
-      "totalChapters": 13,
-      "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.076923076923077
-    },
-    {
       "book": "Nehemiah",
       "coveredChapters": 13,
       "totalChapters": 13,
@@ -382,52 +374,60 @@
       "rowsPerChapter": 8.1
     },
     {
-      "book": "1 Timothy",
-      "coveredChapters": 6,
-      "totalChapters": 6,
+      "book": "2 Samuel",
+      "coveredChapters": 24,
+      "totalChapters": 24,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.166666666666666
+      "authors": 10,
+      "rowsPerChapter": 9
     },
     {
-      "book": "1 John",
-      "coveredChapters": 5,
-      "totalChapters": 5,
+      "book": "Leviticus",
+      "coveredChapters": 27,
+      "totalChapters": 27,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.2
+      "authors": 10,
+      "rowsPerChapter": 9
     },
     {
-      "book": "1 Peter",
-      "coveredChapters": 5,
-      "totalChapters": 5,
+      "book": "Job",
+      "coveredChapters": 42,
+      "totalChapters": 42,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.2
+      "authors": 10,
+      "rowsPerChapter": 9.023809523809524
     },
     {
-      "book": "James",
-      "coveredChapters": 5,
-      "totalChapters": 5,
+      "book": "Exodus",
+      "coveredChapters": 40,
+      "totalChapters": 40,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.2
+      "authors": 10,
+      "rowsPerChapter": 9.025
     },
     {
-      "book": "2 Timothy",
-      "coveredChapters": 4,
-      "totalChapters": 4,
+      "book": "Numbers",
+      "coveredChapters": 36,
+      "totalChapters": 36,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.25
+      "authors": 10,
+      "rowsPerChapter": 9.027777777777779
     },
     {
-      "book": "2 Peter",
-      "coveredChapters": 3,
-      "totalChapters": 3,
+      "book": "Deuteronomy",
+      "coveredChapters": 34,
+      "totalChapters": 34,
       "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.333333333333334
+      "authors": 10,
+      "rowsPerChapter": 9.029411764705882
+    },
+    {
+      "book": "1 Samuel",
+      "coveredChapters": 31,
+      "totalChapters": 31,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.03225806451613
     }
   ]
 }

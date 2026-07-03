@@ -1,12 +1,12 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T16:14:31.390Z
+Generated: 2026-07-03T16:20:20.073Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 1379 verified resources.
-- Public commentary rows: 11078.
+- Public commentary rows: 11126.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
@@ -90,16 +90,16 @@ Generated: 2026-07-03T16:14:31.390Z
 | --- | ---: | ---: | ---: | ---: | ---: |
 | 2 Chronicles | 36 | 36 | 100% | 8 | 7.0 |
 | 1 Chronicles | 29 | 29 | 100% | 8 | 7.0 |
-| Hebrews | 13 | 13 | 100% | 9 | 8.1 |
 | Nehemiah | 13 | 13 | 100% | 9 | 8.1 |
 | Esther | 10 | 10 | 100% | 9 | 8.1 |
 | Ezra | 10 | 10 | 100% | 9 | 8.1 |
-| 1 Timothy | 6 | 6 | 100% | 9 | 8.2 |
-| 1 John | 5 | 5 | 100% | 9 | 8.2 |
-| 1 Peter | 5 | 5 | 100% | 9 | 8.2 |
-| James | 5 | 5 | 100% | 9 | 8.2 |
-| 2 Timothy | 4 | 4 | 100% | 9 | 8.3 |
-| 2 Peter | 3 | 3 | 100% | 9 | 8.3 |
+| 2 Samuel | 24 | 24 | 100% | 10 | 9.0 |
+| Leviticus | 27 | 27 | 100% | 10 | 9.0 |
+| Job | 42 | 42 | 100% | 10 | 9.0 |
+| Exodus | 40 | 40 | 100% | 10 | 9.0 |
+| Numbers | 36 | 36 | 100% | 10 | 9.0 |
+| Deuteronomy | 34 | 34 | 100% | 10 | 9.0 |
+| 1 Samuel | 31 | 31 | 100% | 10 | 9.0 |
 
 ## Recommendations
 
