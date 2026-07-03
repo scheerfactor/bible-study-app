@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 5924,
+    "rows": 6026,
     "stagedRows": 50,
-    "sourceVersesCovered": 2112,
+    "sourceVersesCovered": 2164,
     "booksCovered": 66,
-    "chaptersCovered": 1109,
+    "chaptersCovered": 1161,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -228,27 +228,11 @@
     "weakestBooks": [
       {
         "book": "Psalms",
-        "chaptersCovered": 81,
+        "chaptersCovered": 126,
         "totalChapters": 150,
-        "chapterCoveragePercent": 54,
-        "versesCovered": 111,
-        "rows": 491
-      },
-      {
-        "book": "1 Samuel",
-        "chaptersCovered": 28,
-        "totalChapters": 31,
-        "chapterCoveragePercent": 90.3,
-        "versesCovered": 53,
-        "rows": 207
-      },
-      {
-        "book": "Proverbs",
-        "chaptersCovered": 29,
-        "totalChapters": 31,
-        "chapterCoveragePercent": 93.5,
-        "versesCovered": 32,
-        "rows": 75
+        "chapterCoveragePercent": 84,
+        "versesCovered": 156,
+        "rows": 581
       },
       {
         "book": "Genesis",
@@ -257,14 +241,6 @@
         "chapterCoveragePercent": 96,
         "versesCovered": 65,
         "rows": 193
-      },
-      {
-        "book": "1 Chronicles",
-        "chaptersCovered": 28,
-        "totalChapters": 29,
-        "chapterCoveragePercent": 96.6,
-        "versesCovered": 54,
-        "rows": 113
       },
       {
         "book": "Numbers",
@@ -281,14 +257,6 @@
         "chapterCoveragePercent": 97.5,
         "versesCovered": 49,
         "rows": 119
-      },
-      {
-        "book": "Job",
-        "chaptersCovered": 41,
-        "totalChapters": 42,
-        "chapterCoveragePercent": 97.6,
-        "versesCovered": 65,
-        "rows": 190
       },
       {
         "book": "Habakkuk",
@@ -321,6 +289,38 @@
         "chapterCoveragePercent": 100,
         "versesCovered": 3,
         "rows": 10
+      },
+      {
+        "book": "Jonah",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 5,
+        "rows": 11
+      },
+      {
+        "book": "Ruth",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 5,
+        "rows": 13
+      },
+      {
+        "book": "1 John",
+        "chaptersCovered": 5,
+        "totalChapters": 5,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 6,
+        "rows": 16
+      },
+      {
+        "book": "1 Timothy",
+        "chaptersCovered": 6,
+        "totalChapters": 6,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 7,
+        "rows": 19
       }
     ]
   },
