@@ -35,6 +35,8 @@ Record:
 - status
 - next follow-up date
 
+Also add a row to `data/library/acquisition/permission-reply-review-log.csv` with `No Response Yet`.
+
 ## Follow-Up Timing
 
 - 7-10 days: one friendly follow-up
@@ -57,6 +59,8 @@ Before importing, confirm:
 
 Save the written approval.
 
+Then update `data/library/acquisition/permission-reply-review-log.csv`. Do not update `permission-targets.csv` to approved unless the reply clearly grants the exact use being requested.
+
 ## If They Say No
 
 - Mark the resource as denied.
@@ -67,3 +71,5 @@ Save the written approval.
 ## If The Reply Is Unclear
 
 Mark as needs review. Do not import.
+
+Use `PERMISSION_REPLY_REVIEW_WORKFLOW.md` to classify unclear replies before taking any public-library action.
