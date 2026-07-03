@@ -1,12 +1,12 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T14:12:13.522Z
+Generated: 2026-07-03T14:22:35.511Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 1379 verified resources.
-- Public commentary rows: 10953.
+- Public commentary rows: 11021.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
@@ -90,7 +90,6 @@ Generated: 2026-07-03T14:12:13.522Z
 | --- | ---: | ---: | ---: | ---: | ---: |
 | 2 Chronicles | 36 | 36 | 100% | 8 | 7.0 |
 | 1 Chronicles | 29 | 29 | 100% | 8 | 7.0 |
-| Matthew | 28 | 28 | 100% | 9 | 8.0 |
 | 1 Corinthians | 16 | 16 | 100% | 9 | 8.1 |
 | 2 Corinthians | 13 | 13 | 100% | 9 | 8.1 |
 | Hebrews | 13 | 13 | 100% | 9 | 8.1 |
@@ -100,6 +99,7 @@ Generated: 2026-07-03T14:12:13.522Z
 | 1 Timothy | 6 | 6 | 100% | 9 | 8.2 |
 | Ephesians | 6 | 6 | 100% | 9 | 8.2 |
 | Galatians | 6 | 6 | 100% | 9 | 8.2 |
+| 1 John | 5 | 5 | 100% | 9 | 8.2 |
 
 ## Recommendations
 
