@@ -8,7 +8,7 @@
     "verifiedResources": 1379
   },
   "commentary": {
-    "publicRows": 11056,
+    "publicRows": 11078,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -390,14 +390,6 @@
       "rowsPerChapter": 8.166666666666666
     },
     {
-      "book": "Ephesians",
-      "coveredChapters": 6,
-      "totalChapters": 6,
-      "coverage": 1,
-      "authors": 9,
-      "rowsPerChapter": 8.166666666666666
-    },
-    {
       "book": "1 John",
       "coveredChapters": 5,
       "totalChapters": 5,
@@ -414,7 +406,7 @@
       "rowsPerChapter": 8.2
     },
     {
-      "book": "1 Thessalonians",
+      "book": "James",
       "coveredChapters": 5,
       "totalChapters": 5,
       "coverage": 1,
@@ -422,12 +414,20 @@
       "rowsPerChapter": 8.2
     },
     {
-      "book": "James",
-      "coveredChapters": 5,
-      "totalChapters": 5,
+      "book": "2 Timothy",
+      "coveredChapters": 4,
+      "totalChapters": 4,
       "coverage": 1,
       "authors": 9,
-      "rowsPerChapter": 8.2
+      "rowsPerChapter": 8.25
+    },
+    {
+      "book": "2 Peter",
+      "coveredChapters": 3,
+      "totalChapters": 3,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.333333333333334
     }
   ]
 }
