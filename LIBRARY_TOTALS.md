@@ -5,12 +5,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 7,842
-- Reviewed public commentary import rows: 10,067
-- Commentary validation rows checked, including staging/review files: 12,445
+- Active public commentary entries shown in the app: 7,858
+- Reviewed public commentary import rows: 10,083
+- Commentary validation rows checked, including staging/review files: 12,461
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Gospel Commentary Sprint
+
+Added 16 verified public commentary entries:
+
+- John Wesley, Mark 1-16
+
+This adds a complete concise public-domain Wesley voice for Mark, strengthening Gospel study, preaching, teaching, and commentary comparison.
 
 ## Latest Wesley Completion Sprint
 
