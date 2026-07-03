@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 5837,
+    "rows": 5924,
     "stagedRows": 50,
-    "sourceVersesCovered": 2068,
+    "sourceVersesCovered": 2112,
     "booksCovered": 66,
-    "chaptersCovered": 1065,
+    "chaptersCovered": 1109,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -228,51 +228,11 @@
     "weakestBooks": [
       {
         "book": "Psalms",
-        "chaptersCovered": 69,
+        "chaptersCovered": 81,
         "totalChapters": 150,
-        "chapterCoveragePercent": 46,
-        "versesCovered": 99,
-        "rows": 467
-      },
-      {
-        "book": "Genesis",
-        "chaptersCovered": 41,
-        "totalChapters": 50,
-        "chapterCoveragePercent": 82,
-        "versesCovered": 58,
-        "rows": 179
-      },
-      {
-        "book": "Deuteronomy",
-        "chaptersCovered": 28,
-        "totalChapters": 34,
-        "chapterCoveragePercent": 82.4,
-        "versesCovered": 56,
-        "rows": 237
-      },
-      {
-        "book": "Isaiah",
-        "chaptersCovered": 55,
-        "totalChapters": 66,
-        "chapterCoveragePercent": 83.3,
-        "versesCovered": 88,
-        "rows": 259
-      },
-      {
-        "book": "Hosea",
-        "chaptersCovered": 12,
-        "totalChapters": 14,
-        "chapterCoveragePercent": 85.7,
-        "versesCovered": 71,
-        "rows": 141
-      },
-      {
-        "book": "Ezekiel",
-        "chaptersCovered": 42,
-        "totalChapters": 48,
-        "chapterCoveragePercent": 87.5,
-        "versesCovered": 87,
-        "rows": 245
+        "chapterCoveragePercent": 54,
+        "versesCovered": 111,
+        "rows": 491
       },
       {
         "book": "1 Samuel",
@@ -289,6 +249,14 @@
         "chapterCoveragePercent": 93.5,
         "versesCovered": 32,
         "rows": 75
+      },
+      {
+        "book": "Genesis",
+        "chaptersCovered": 48,
+        "totalChapters": 50,
+        "chapterCoveragePercent": 96,
+        "versesCovered": 65,
+        "rows": 193
       },
       {
         "book": "1 Chronicles",
@@ -321,6 +289,38 @@
         "chapterCoveragePercent": 97.6,
         "versesCovered": 65,
         "rows": 190
+      },
+      {
+        "book": "Habakkuk",
+        "chaptersCovered": 3,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 4,
+        "rows": 7
+      },
+      {
+        "book": "Nahum",
+        "chaptersCovered": 3,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 4,
+        "rows": 10
+      },
+      {
+        "book": "2 Timothy",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 6,
+        "rows": 10
+      },
+      {
+        "book": "Titus",
+        "chaptersCovered": 3,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 3,
+        "rows": 10
       }
     ]
   },

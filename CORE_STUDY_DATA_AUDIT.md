@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T05:01:26.245Z
+Generated: 2026-07-03T12:38:39.485Z
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-07-03T05:01:26.245Z
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
-- Public TSK rows: 5837; staged TSK rows: 50; source verses covered: 2068; chapters covered: 1065; books covered: 66 (reviewed samples only).
+- Public TSK rows: 5924; staged TSK rows: 50; source verses covered: 2112; chapters covered: 1109; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,18 +71,18 @@ Generated: 2026-07-03T05:01:26.245Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Psalms | 69 | 150 | 46% | 99 | 467 |
-| Genesis | 41 | 50 | 82% | 58 | 179 |
-| Deuteronomy | 28 | 34 | 82.4% | 56 | 237 |
-| Isaiah | 55 | 66 | 83.3% | 88 | 259 |
-| Hosea | 12 | 14 | 85.7% | 71 | 141 |
-| Ezekiel | 42 | 48 | 87.5% | 87 | 245 |
+| Psalms | 81 | 150 | 54% | 111 | 491 |
 | 1 Samuel | 28 | 31 | 90.3% | 53 | 207 |
 | Proverbs | 29 | 31 | 93.5% | 32 | 75 |
+| Genesis | 48 | 50 | 96% | 65 | 193 |
 | 1 Chronicles | 28 | 29 | 96.6% | 54 | 113 |
 | Numbers | 35 | 36 | 97.2% | 68 | 142 |
 | Exodus | 39 | 40 | 97.5% | 49 | 119 |
 | Job | 41 | 42 | 97.6% | 65 | 190 |
+| Habakkuk | 3 | 3 | 100% | 4 | 7 |
+| Nahum | 3 | 3 | 100% | 4 | 10 |
+| 2 Timothy | 4 | 4 | 100% | 6 | 10 |
+| Titus | 3 | 3 | 100% | 3 | 10 |
 
 ## Thinnest Commentary Books
 
