@@ -5,12 +5,22 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,661
-- Reviewed public commentary import rows: 10,886
-- Commentary validation rows checked, including staging/review files: 13,264
+- Active public commentary entries shown in the app: 8,691
+- Reviewed public commentary import rows: 10,916
+- Commentary validation rows checked, including staging/review files: 13,294
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Wisdom Books Commentary Sprint
+
+Added 30 verified public commentary entries:
+
+- John Wesley, Proverbs 1-10
+- John Wesley, Ecclesiastes 1-12
+- John Wesley, Solomon's Song 1-8
+
+This strengthens wisdom, vanity, fear of the Lord, diligence, speech, family instruction, worship, love, and devotional teaching workflows. Proverbs 11-31 remain held for a separate source/parser review because the current CCEL XML source does not expose those chapters in the expected chapter-section format.
 
 ## Latest Wesley Minor Prophets Commentary Sprint
 
