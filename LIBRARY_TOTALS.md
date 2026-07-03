@@ -5,12 +5,26 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,173
-- Reviewed public commentary import rows: 10,398
-- Commentary validation rows checked, including staging/review files: 12,776
+- Active public commentary entries shown in the app: 8,323
+- Reviewed public commentary import rows: 10,548
+- Commentary validation rows checked, including staging/review files: 12,926
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Historical Books Commentary Sprint
+
+Added 150 verified public commentary entries:
+
+- John Wesley, Joshua 1-24
+- John Wesley, Judges 1-21
+- John Wesley, Ruth 1-4
+- John Wesley, 1 Samuel 1-31
+- John Wesley, 2 Samuel 1-23
+- John Wesley, 1 Kings 1-22
+- John Wesley, 2 Kings 1-25
+
+This strengthens historical-book study for conquest, compromise, redemption, Samuel, Saul, David, Solomon, the divided kingdom, Elijah, Elisha, judgment, and revival. 2 Samuel 24 was checked but skipped because the current CCEL source does not expose that chapter.
 
 ## Latest Wesley Pentateuch Completion Sprint
 
