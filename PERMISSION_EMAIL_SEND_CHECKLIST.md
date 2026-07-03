@@ -43,6 +43,13 @@ Also add a row to `data/library/acquisition/permission-reply-review-log.csv` wit
 - 21 days: mark as needs follow-up or no response
 - 45 days: keep as permission needed and do not import
 
+Prepared follow-up drafts live in:
+
+- `PERMISSION_FOLLOW_UP_DRAFTS.md`
+- `data/library/acquisition/permission-follow-up-drafts.csv`
+
+Do not send a follow-up if a reply has already arrived. Review the reply first.
+
 ## If They Say Yes
 
 Before importing, confirm:
