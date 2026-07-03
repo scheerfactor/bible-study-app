@@ -8,7 +8,7 @@
     "verifiedResources": 1379
   },
   "commentary": {
-    "publicRows": 11378,
+    "publicRows": 11411,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -334,22 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "2 Samuel",
-      "coveredChapters": 24,
-      "totalChapters": 24,
-      "coverage": 1,
-      "authors": 10,
-      "rowsPerChapter": 9
-    },
-    {
-      "book": "Leviticus",
-      "coveredChapters": 27,
-      "totalChapters": 27,
-      "coverage": 1,
-      "authors": 10,
-      "rowsPerChapter": 9
-    },
-    {
       "book": "Job",
       "coveredChapters": 42,
       "totalChapters": 42,
@@ -422,12 +406,28 @@
       "rowsPerChapter": 9.035714285714286
     },
     {
+      "book": "Leviticus",
+      "coveredChapters": 27,
+      "totalChapters": 27,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.037037037037036
+    },
+    {
       "book": "2 Kings",
       "coveredChapters": 25,
       "totalChapters": 25,
       "coverage": 1,
       "authors": 10,
       "rowsPerChapter": 9.04
+    },
+    {
+      "book": "2 Samuel",
+      "coveredChapters": 24,
+      "totalChapters": 24,
+      "coverage": 1,
+      "authors": 10,
+      "rowsPerChapter": 9.041666666666666
     }
   ]
 }

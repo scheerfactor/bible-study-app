@@ -97,6 +97,8 @@ Keep these as permission-needed until written approval:
 
 Use these as the first practical outreach list. The goal is to learn each rights holder's process, not to secure a whole catalog immediately.
 
+For an operational CSV queue, use `data/library/acquisition/rights-outreach-priority-queue.csv`. That queue separates direct relationship targets, publisher targets, ministry contacts, sermon/audio opportunities, and later-stage large publishers so permission work can be tracked without accidentally treating copyrighted resources as public imports.
+
 | Priority | Contact target | Suggested first title/type | Why it fits | Ask first |
 | --- | --- | --- | --- | --- |
 | 1 | Local or known Bible-believing pastors/teachers | Sermon outlines, lesson notes, short booklets | Warmest relationship path and easiest trust-building. | Permission for one sample sermon/lesson, excerpt, and official link. |

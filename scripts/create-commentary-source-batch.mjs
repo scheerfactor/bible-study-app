@@ -89,6 +89,15 @@ const sources = {
     rightsBasis: "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     recommendedUse: "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
   },
+  "studylight-wen": {
+    author: "John Wesley",
+    resourceTitle: "Wesley's Explanatory Notes on the Whole Bible",
+    sourceTitle: "Wesley's Explanatory Notes",
+    abbr: "wen",
+    publicDomainStatus: "StudyLight chapter pages state: These files are public domain and are a derivative of an electronic edition available on the Christian Classics Ethereal Library Website. Source pages cite Wesley's Explanatory Notes on the Whole Bible as 1765.",
+    rightsBasis: "Public-domain StudyLight chapter pages for Wesley's Explanatory Notes. Preserve chapter URL and CCEL derivative note; do not mix with modern edited editions.",
+    recommendedUse: "Use as compact Methodist historical notes after the KJV text, with doctrinal discernment labels visible.",
+  },
   "ccel-wesley-xml": {
     author: "John Wesley",
     resourceTitle: "Wesley's Notes on the Bible",
