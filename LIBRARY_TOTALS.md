@@ -5,12 +5,25 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,691
-- Reviewed public commentary import rows: 10,916
-- Commentary validation rows checked, including staging/review files: 13,294
+- Active public commentary entries shown in the app: 8,697
+- Reviewed public commentary import rows: 10,922
+- Commentary validation rows checked, including staging/review files: 13,300
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Parser Recovery Sprint
+
+Added 6 verified public commentary entries after improving the CCEL Wesley XML parser to recognize one-chapter books that use verse-level `osisRef` markers:
+
+- John Wesley, Amos 1
+- John Wesley, Proverbs 31
+- John Wesley, Philemon
+- John Wesley, 2 John
+- John Wesley, 3 John
+- John Wesley, Jude
+
+This closes several real commentary gaps without changing the source text. Obadiah, Leviticus 1, 2 Samuel 24, and Proverbs 11-30 remain held because the current CCEL XML source does not expose normal chapter commentary sections for those references.
 
 ## Latest Wesley Wisdom Books Commentary Sprint
 

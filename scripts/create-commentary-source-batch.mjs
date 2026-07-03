@@ -202,7 +202,7 @@ function extractStudyLightCommentary(html) {
 
 function extractWesleyChapterSections(xml) {
   const sections = new Map();
-  const matches = Array.from(xml.matchAll(/<div3\b[^>]*>[\s\S]*?<scripCom\b[^>]*osisRef="Bible:([^."]+)\.(\d+)"[^>]*\/>[\s\S]*?(?=<div3\b|<\/div2>|<\/div1>)/g));
+  const matches = Array.from(xml.matchAll(/<div3\b[^>]*>[\s\S]*?<scripCom\b[^>]*osisRef="Bible:([^."]+)\.(\d+)(?:\.\d+)?"[^>]*\/>[\s\S]*?(?=<div3\b|<\/div2>|<\/div1>)/g));
   const osisToBook = new Map(bookOrder.map((book) => [osisBook(book), book]));
 
   for (const match of matches) {
