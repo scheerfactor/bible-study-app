@@ -75,6 +75,12 @@ Before sending larger publisher requests, prepare:
 - exact resource title requested
 - exact uses requested
 
+Contact links and first-batch drafts:
+
+- `data/library/acquisition/permission-contact-links.csv`
+- `data/library/acquisition/first-permission-email-batch.csv`
+- `PERMISSION_EMAIL_DRAFTS_FIRST_BATCH.md`
+
 ## First Email
 
 Subject:
