@@ -4,13 +4,13 @@
 
 Father's Business Bible Study should be a curated KJV-friendly, Baptist-friendly, dispensational-friendly resource library. Resources may be useful even when not every doctrinal detail is endorsed, but users should not be left confused about the perspective of a resource.
 
-Every author and resource must be reviewed before being marked safe for the app.
+Every author and resource must be reviewed before being marked suitable for the app. Avoid broad labels like "safe" or "unsafe" for authors in general. Classify each resource based on its relationship to the app's stated doctrinal basis, intended audience, rights status, and usefulness.
 
 ## Review Labels
 
-### Approved Core
+### Core Library
 
-Use for resources that are a strong fit for normal recommendations.
+Use for resources that are fully aligned with the app's doctrinal statement and strong enough for normal recommendations.
 
 Expected traits:
 
@@ -21,9 +21,9 @@ Expected traits:
 - sound practical doctrine
 - suitable for new believers, teachers, and pastors
 
-### Approved With Note
+### Recommended
 
-Use for generally helpful resources with a visible note about perspective or limitations.
+Use for resources that are strongly compatible and suitable for most users, while still allowing a short note about perspective or limitations.
 
 Examples:
 
@@ -33,9 +33,22 @@ Examples:
 - older wording or dated cultural references
 - solid on the passage but not a core doctrinal recommendation
 
-### Historical / Use Carefully
+### Historical Collection
 
-Use for resources that are valuable for history, quotations, comparison, or background, but should not be treated as primary doctrinal guidance.
+Use for valuable historical works that may differ on some secondary doctrines or denominational assumptions. These can be useful for history, quotations, background, and mature study, but should not be treated as primary doctrinal guidance.
+
+### Comparative Study
+
+Use for resources included to help users understand differing theological perspectives with appropriate context.
+
+Examples:
+
+- historical covenant theology perspectives
+- non-Baptist but historically important commentary
+- academic background resources
+- opposing or contrasting views used for careful study
+
+These should be clearly labeled and should not appear as default recommendations for new believers.
 
 Examples:
 
@@ -121,11 +134,11 @@ Check:
 
 ## Recommendation Rules
 
-Only `Approved Core` resources should appear as default recommendations for new believers.
+Only `Core Library` resources should appear as default recommendations for new believers.
 
-`Approved With Note` resources may appear with a short label.
+`Recommended` resources may appear with a short label.
 
-`Historical / Use Carefully` resources should be available for mature study but not treated as primary guidance.
+`Historical Collection` and `Comparative Study` resources should be available for mature study but not treated as primary guidance.
 
 `Needs Review` resources should remain hidden from normal public recommendations.
 
@@ -145,7 +158,26 @@ Use short, plain labels:
 - OCR spot-check needed
 - Review before quoting
 
+## Resource Data Fields To Track
+
+Add these fields to acquisition and review records:
+
+| Field | Purpose |
+| --- | --- |
+| Primary Audience | Pastor, Sunday School, New Believer, Teen, Family, Evangelism, Missions, Apologetics, Theology |
+| Verse-by-Verse | Yes, No, or Unknown |
+| Topical | Yes, No, or Unknown |
+| Audio Available | Yes, No, or Unknown |
+| Video Available | Yes, No, or Unknown |
+| Public API/RSS | Yes, No, or Unknown |
+| Mobile Friendly | Yes, No, or Unknown |
+| Embed Allowed | Yes, No, or Unknown |
+| AI Summary Allowed | Yes, No, or Unknown |
+| License Obtained | Yes or No |
+| Expiration Date | If applicable |
+
+These fields help the app decide whether a resource belongs in reading, commentary, audio, video, sermon preparation, study tools, or only the review queue.
+
 ## Safety Warning
 
 Do not send mass emails automatically. Prepare drafts only. Stephen must review each contact and approve each email before it is sent.
-

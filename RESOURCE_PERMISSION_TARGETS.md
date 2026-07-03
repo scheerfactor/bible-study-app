@@ -23,6 +23,88 @@ The app should remain:
 
 ## Core Permission Targets
 
+## Resource Acquisition Roadmap
+
+### Tier 1: Highest Priority
+
+Independent Baptist and closely aligned ministries that could give the app a distinctive identity:
+
+- David Cloud / Way of Life Literature
+- Mark Cahill
+- Dr. S. M. Davis
+- Dr. Bo Wagner
+- Dr. William P. Grady
+- Dr. David H. Sorenson
+- John Goetsch
+- Douglas Hammett
+- Bogard Press
+- Ronald T. Meeks
+- Sword of the Lord selected resources
+
+### Tier 2: Classic Dispensational And Bible Study Resources
+
+Excellent classic study resources, many of which may have public-domain or public-domain-adjacent editions that still require title-by-title review:
+
+- H. A. Ironside
+- Lewis Sperry Chafer
+- C. I. Scofield
+- Clarence Larkin
+- Arno C. Gaebelein
+- William Kelly
+- C. H. Mackintosh
+- Andrew Bonar
+- G. Campbell Morgan
+- F. B. Meyer
+
+### Tier 3: Classic Preaching And Devotional Resources
+
+Useful for sermons, devotional reading, illustration, and preaching preparation:
+
+- Charles Spurgeon
+- Alexander Maclaren
+- Vance Havner
+- Oliver B. Greene
+- John R. Rice
+- Leonard Ravenhill
+- J. Vernon McGee
+
+### Tier 4: Study Tools And Reference Works
+
+Reference resources should be integrated directly into Bible study workflows, not merely listed as library books:
+
+- Willmington's Bible Handbook
+- Willmington's Guide to the Bible
+- Treasury of Scripture Knowledge
+- Webster 1828 Dictionary
+- Nave's Topical Bible
+- Easton's Bible Dictionary
+- Smith's Bible Dictionary
+- Hitchcock's Bible Names
+- Torrey New Topical Textbook
+
+### Audio And Video Targets
+
+Do not think only in terms of books. Audio and video can make the app unusually useful if rights are clear.
+
+Audio candidates:
+
+- Thru the Bible
+- Way of Life
+- S. M. Davis
+- Mark Cahill
+- Faith Baptist ministries that publish sermons
+- Independent Baptist conferences with permission
+
+Video candidates:
+
+- Mark Cahill
+- S. M. Davis
+- Bo Wagner
+- David Cloud
+- John Goetsch
+
+All audio and video must remain permission-needed until explicit linking, embedding, streaming, transcript, or hosting rights are documented.
+
 ### Evangelism, Apologetics, And Practical Ministry
 
 | Target | Resource fit | Initial permission ask | Notes |
@@ -97,4 +179,3 @@ Ask for narrow permission first:
 - Do not treat online availability as permission.
 - Do not treat physical ownership as digital distribution rights.
 - Do not combine text, audio, video, chart, image, and transcript rights into one assumption.
-
