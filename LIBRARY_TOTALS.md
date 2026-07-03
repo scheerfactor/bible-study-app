@@ -5,12 +5,29 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 ## Running Totals
 
 - Verified public Library resources: 1,379
-- Active public commentary entries shown in the app: 8,604
-- Reviewed public commentary import rows: 10,829
-- Commentary validation rows checked, including staging/review files: 13,207
+- Active public commentary entries shown in the app: 8,661
+- Reviewed public commentary import rows: 10,886
+- Commentary validation rows checked, including staging/review files: 13,264
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
 - Library authors represented: 500
 - Public Library duplicate title/author groups: 0
+
+## Latest Wesley Minor Prophets Commentary Sprint
+
+Added 57 verified public commentary entries:
+
+- John Wesley, Hosea 1-14
+- John Wesley, Joel 1-3
+- John Wesley, Jonah 1-4
+- John Wesley, Micah 1-7
+- John Wesley, Nahum 1-3
+- John Wesley, Habakkuk 1-3
+- John Wesley, Zephaniah 1-3
+- John Wesley, Haggai 1-2
+- John Wesley, Zechariah 1-14
+- John Wesley, Malachi 1-4
+
+This strengthens teaching coverage for repentance, judgment, mercy, restoration, missions, Messianic hope, and remnant themes. Amos was already covered in earlier reviewed Wesley batches, and Obadiah remains held for a separate source/parser check because the current CCEL XML source does not expose it as a normal chapter section.
 
 ## Latest Wesley Major Prophets Commentary Sprint
 
