@@ -5,10 +5,10 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 1355
+    "verifiedResources": 1379
   },
   "commentary": {
-    "publicRows": 7725,
+    "publicRows": 10922,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 24
@@ -197,11 +197,11 @@
     ]
   },
   "tsk": {
-    "rows": 5560,
+    "rows": 5665,
     "stagedRows": 50,
-    "sourceVersesCovered": 1927,
+    "sourceVersesCovered": 1980,
     "booksCovered": 66,
-    "chaptersCovered": 924,
+    "chaptersCovered": 977,
     "status": "reviewed samples only",
     "focusChecks": [
       {
@@ -228,51 +228,11 @@
     "weakestBooks": [
       {
         "book": "Psalms",
-        "chaptersCovered": 45,
+        "chaptersCovered": 57,
         "totalChapters": 150,
-        "chapterCoveragePercent": 30,
-        "versesCovered": 75,
-        "rows": 419
-      },
-      {
-        "book": "Ezekiel",
-        "chaptersCovered": 30,
-        "totalChapters": 48,
-        "chapterCoveragePercent": 62.5,
-        "versesCovered": 75,
-        "rows": 222
-      },
-      {
-        "book": "Isaiah",
-        "chaptersCovered": 43,
-        "totalChapters": 66,
-        "chapterCoveragePercent": 65.2,
-        "versesCovered": 76,
-        "rows": 235
-      },
-      {
-        "book": "Joel",
-        "chaptersCovered": 2,
-        "totalChapters": 3,
-        "chapterCoveragePercent": 66.7,
-        "versesCovered": 26,
-        "rows": 45
-      },
-      {
-        "book": "2 Samuel",
-        "chaptersCovered": 16,
-        "totalChapters": 24,
-        "chapterCoveragePercent": 66.7,
-        "versesCovered": 36,
-        "rows": 78
-      },
-      {
-        "book": "2 Kings",
-        "chaptersCovered": 17,
-        "totalChapters": 25,
-        "chapterCoveragePercent": 68,
-        "versesCovered": 35,
-        "rows": 87
+        "chapterCoveragePercent": 38,
+        "versesCovered": 87,
+        "rows": 443
       },
       {
         "book": "Job",
@@ -321,6 +281,46 @@
         "chapterCoveragePercent": 76.2,
         "versesCovered": 38,
         "rows": 113
+      },
+      {
+        "book": "Revelation",
+        "chaptersCovered": 17,
+        "totalChapters": 22,
+        "chapterCoveragePercent": 77.3,
+        "versesCovered": 47,
+        "rows": 142
+      },
+      {
+        "book": "Numbers",
+        "chaptersCovered": 28,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 77.8,
+        "versesCovered": 61,
+        "rows": 129
+      },
+      {
+        "book": "2 Chronicles",
+        "chaptersCovered": 29,
+        "totalChapters": 36,
+        "chapterCoveragePercent": 80.6,
+        "versesCovered": 43,
+        "rows": 124
+      },
+      {
+        "book": "Jeremiah",
+        "chaptersCovered": 42,
+        "totalChapters": 52,
+        "chapterCoveragePercent": 80.8,
+        "versesCovered": 71,
+        "rows": 216
+      },
+      {
+        "book": "Judges",
+        "chaptersCovered": 17,
+        "totalChapters": 21,
+        "chapterCoveragePercent": 81,
+        "versesCovered": 36,
+        "rows": 98
       }
     ]
   },
@@ -338,96 +338,96 @@
       "coveredChapters": 36,
       "totalChapters": 36,
       "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 2.861111111111111
-    },
-    {
-      "book": "Job",
-      "coveredChapters": 42,
-      "totalChapters": 42,
-      "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 2.880952380952381
+      "authors": 8,
+      "rowsPerChapter": 7.027777777777778
     },
     {
       "book": "1 Chronicles",
       "coveredChapters": 29,
       "totalChapters": 29,
       "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 3.0689655172413794
-    },
-    {
-      "book": "Ecclesiastes",
-      "coveredChapters": 12,
-      "totalChapters": 12,
-      "coverage": 1,
-      "authors": 6,
-      "rowsPerChapter": 5.083333333333333
-    },
-    {
-      "book": "Nehemiah",
-      "coveredChapters": 13,
-      "totalChapters": 13,
-      "coverage": 1,
-      "authors": 7,
-      "rowsPerChapter": 6.076923076923077
-    },
-    {
-      "book": "Esther",
-      "coveredChapters": 10,
-      "totalChapters": 10,
-      "coverage": 1,
-      "authors": 7,
-      "rowsPerChapter": 6.1
-    },
-    {
-      "book": "Ezra",
-      "coveredChapters": 10,
-      "totalChapters": 10,
-      "coverage": 1,
-      "authors": 7,
-      "rowsPerChapter": 6.1
-    },
-    {
-      "book": "Isaiah",
-      "coveredChapters": 66,
-      "totalChapters": 66,
-      "coverage": 1,
       "authors": 8,
-      "rowsPerChapter": 4.242424242424242
+      "rowsPerChapter": 7.0344827586206895
     },
     {
-      "book": "Ezekiel",
-      "coveredChapters": 48,
-      "totalChapters": 48,
+      "book": "Matthew",
+      "coveredChapters": 28,
+      "totalChapters": 28,
       "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 4.770833333333333
+      "authors": 9,
+      "rowsPerChapter": 8.035714285714286
     },
     {
       "book": "1 Corinthians",
       "coveredChapters": 16,
       "totalChapters": 16,
       "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 5
+      "authors": 9,
+      "rowsPerChapter": 8.0625
     },
     {
-      "book": "Exodus",
-      "coveredChapters": 40,
-      "totalChapters": 40,
+      "book": "2 Corinthians",
+      "coveredChapters": 13,
+      "totalChapters": 13,
       "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 7.025
+      "authors": 9,
+      "rowsPerChapter": 8.076923076923077
     },
     {
-      "book": "Numbers",
-      "coveredChapters": 36,
-      "totalChapters": 36,
+      "book": "Hebrews",
+      "coveredChapters": 13,
+      "totalChapters": 13,
       "coverage": 1,
-      "authors": 8,
-      "rowsPerChapter": 7.027777777777778
+      "authors": 9,
+      "rowsPerChapter": 8.076923076923077
+    },
+    {
+      "book": "Nehemiah",
+      "coveredChapters": 13,
+      "totalChapters": 13,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.076923076923077
+    },
+    {
+      "book": "Esther",
+      "coveredChapters": 10,
+      "totalChapters": 10,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.1
+    },
+    {
+      "book": "Ezra",
+      "coveredChapters": 10,
+      "totalChapters": 10,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.1
+    },
+    {
+      "book": "1 Timothy",
+      "coveredChapters": 6,
+      "totalChapters": 6,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.166666666666666
+    },
+    {
+      "book": "Ephesians",
+      "coveredChapters": 6,
+      "totalChapters": 6,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.166666666666666
+    },
+    {
+      "book": "Galatians",
+      "coveredChapters": 6,
+      "totalChapters": 6,
+      "coverage": 1,
+      "authors": 9,
+      "rowsPerChapter": 8.166666666666666
     }
   ]
 }
