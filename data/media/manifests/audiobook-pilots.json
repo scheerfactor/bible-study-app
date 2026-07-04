@@ -782,5 +782,218 @@
         "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
       }
     ]
+  },
+  {
+    "id": "spurgeon-talks-to-farmers-librivox-audio-pilot",
+    "mediaRecordId": "talks-to-farmers-spurgeon-librivox-audiobook-candidate",
+    "libraryTitle": "Talks to Farmers",
+    "libraryAuthor": "C. H. Spurgeon",
+    "libraryFilePath": "data/library/verified/talks-to-farmers.txt",
+    "sourceUrl": "https://librivox.org/talks-to-farmers-by-charles-h-spurgeon/",
+    "rightsEvidence": "LibriVox and Internet Archive identify this recording as public domain; Internet Archive metadata uses Creative Commons Public Domain Mark 1.0. The matching text is already in the Library from Project Gutenberg public-domain source.",
+    "pilotStatus": "Uploaded to R2 for admin QA",
+    "textCleanupStatus": "Library text exists from Project Gutenberg; transcript anchors need section-by-section spot check before follow-along release.",
+    "narrationStatus": "LibriVox public-domain narration uploaded to R2 as a private admin draft.",
+    "estimatedDuration": "9 hr 47 min",
+    "publicReadiness": "Private uploaded pilot only until playback, no-duplicate-card behavior, transcript anchors, and source notes are QA checked.",
+    "pilotSteps": [
+      "Confirm the existing Library book card remains the single public work card.",
+      "Verify all nineteen R2 audio files play from the admin audio pilot panel.",
+      "Spot-check sermon titles, order, reader/source metadata, duration, and source URL against LibriVox and Internet Archive metadata.",
+      "Add transcript anchors so follow-along reading can jump to each sermon without changing Spurgeon wording.",
+      "Only mark public after source, playback, transcript, and rights review are documented."
+    ],
+    "segments": [
+      {
+        "number": 1,
+        "title": "The Sluggard's Farm",
+        "textAnchor": "THE SLUGGARD'S FARM.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/01.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/01-the-sluggard-s-farm.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 42,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 2,
+        "title": "The Broken Fence",
+        "textAnchor": "THE BROKEN FENCE.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/02.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/02-the-broken-fence.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 28,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 3,
+        "title": "Frost and Thaw",
+        "textAnchor": "FROST AND THAW.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/03.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/03-frost-and-thaw.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 34,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 4,
+        "title": "The Corn of Wheat Dying To Bring Forth Fruit",
+        "textAnchor": "THE CORN OF WHEAT DYING TO BRING FORTH FRUIT.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/04.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/04-the-corn-of-wheat-dying-to-bring-forth-fruit.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 31,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 5,
+        "title": "The Ploughman",
+        "textAnchor": "THE PLOUGHMAN.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/05.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/05-the-ploughman.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 33,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 6,
+        "title": "Ploughing The Rock",
+        "textAnchor": "PLOUGHING THE ROCK.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/06.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/06-ploughing-the-rock.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 29,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 7,
+        "title": "The Parable of The Sower",
+        "textAnchor": "THE PARABLE OF THE SOWER.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/07.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/07-the-parable-of-the-sower.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 29,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 8,
+        "title": "The Principal Wheat",
+        "textAnchor": "THE PRINCIPAL WHEAT.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/08.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/08-the-principal-wheat.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 27,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 9,
+        "title": "Spring in The Heart",
+        "textAnchor": "SPRING IN THE HEART.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/09.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/09-spring-in-the-heart.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 33,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 10,
+        "title": "Farm Laborers",
+        "textAnchor": "FARM LABORERS.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/10.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/10-farm-laborers.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 29,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 11,
+        "title": "What The Farm Laborers Can Do and What They Cannot Do",
+        "textAnchor": "WHAT THE FARM LABORERS CAN DO AND WHAT THEY CANNOT DO.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/11.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/11-what-the-farm-laborers-can-do-and-what-they-cannot-do.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 32,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 12,
+        "title": "The Sheep Before The Shearers",
+        "textAnchor": "THE SHEEP BEFORE THE SHEARERS.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/12.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/12-the-sheep-before-the-shearers.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 28,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 13,
+        "title": "In The Hay-Field",
+        "textAnchor": "IN THE HAY-FIELD.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/13.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/13-in-the-hay-field.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 30,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 14,
+        "title": "The Joy of Harvest",
+        "textAnchor": "THE JOY OF HARVEST.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/14.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/14-the-joy-of-harvest.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 29,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 15,
+        "title": "Spiritual Gleaning",
+        "textAnchor": "SPIRITUAL GLEANING.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/15.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/15-spiritual-gleaning.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 31,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 16,
+        "title": "Meal-Time in The Cornfields",
+        "textAnchor": "MEAL-TIME IN THE CORNFIELDS.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/16.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/16-meal-time-in-the-cornfields.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 30,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 17,
+        "title": "The Loaded Wagon",
+        "textAnchor": "THE LOADED WAGON.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/17.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/17-the-loaded-wagon.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 34,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 18,
+        "title": "Threshing",
+        "textAnchor": "THRESHING.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/18.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/18-threshing.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 31,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 19,
+        "title": "Wheat in The Barn",
+        "textAnchor": "WHEAT IN THE BARN.",
+        "audioPath": "audio/sermons/spurgeon/talks-to-farmers/librivox/19.mp3",
+        "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/19-wheat-in-the-barn.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 27,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      }
+    ]
   }
 ]

@@ -1089,17 +1089,17 @@
     "creator": "C. H. Spurgeon / LibriVox readers",
     "passage": "Sermons with rural illustrations",
     "series": "Spurgeon Sermon Audio / Illustration Helps",
-    "duration": "Duration to verify from LibriVox catalog",
+    "duration": "9 hr 47 min",
     "sourceUrl": "https://librivox.org/talks-to-farmers-by-charles-h-spurgeon/",
     "rightsStatus": "Public Domain",
-    "intakeStatus": "Ready For Storage",
+    "intakeStatus": "Uploaded To R2",
     "storageBucket": "fathers-business-bible-study-public",
     "storagePath": "audio/sermons/spurgeon/talks-to-farmers/librivox/",
     "transcriptPath": "transcripts/sermons/spurgeon/talks-to-farmers/",
     "coverPath": "media/covers/sermons/talks-to-farmers.webp",
     "visibility": "Private admin draft",
-    "notes": "Public-domain LibriVox recording of nineteen Spurgeon sermons using farm and harvest illustrations. Strong candidate for future illustration/quote capture in Sermon Builder.",
-    "nextAction": "Verify matching text source, upload audio to R2, and tag sermons by topic: harvest, sowing, shepherd, sheep, and preaching illustrations."
+    "notes": "Public-domain LibriVox recording of nineteen Spurgeon sermons using farm and harvest illustrations. Nineteen 64kb MP3 files were uploaded to R2 as a private admin draft. Matching Project Gutenberg text is already in the public Library; keep one work card with Read/Listen after playback QA.",
+    "nextAction": "Verify R2 playback in the admin audio pilot panel, spot-check sermon order against LibriVox and the Gutenberg text, add transcript anchors, then decide whether to expose public Listen controls."
   },
   {
     "id": "spurgeon-autobiography-volume-1-librivox-audiobook-candidate",
