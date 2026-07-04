@@ -19,6 +19,25 @@
     "nextAction": "Choose narration path: device voice only, human narration, or premium TTS sample."
   },
   {
+    "id": "around-the-wicket-gate-audiobook-candidate",
+    "kind": "Audiobook",
+    "title": "Around the Wicket Gate audiobook candidate",
+    "creator": "C. H. Spurgeon / LibriVox reader MaryAnn",
+    "passage": "",
+    "series": "Spurgeon Starter",
+    "duration": "02:08:32",
+    "sourceUrl": "https://librivox.org/around-the-wicket-gate-by-charles-h-spurgeon/",
+    "rightsStatus": "Public Domain",
+    "intakeStatus": "Ready For Storage",
+    "storageBucket": "fathers-business-bible-study-public",
+    "storagePath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/",
+    "transcriptPath": "data/library/verified/around-the-wicket-gate.txt",
+    "coverPath": "media/covers/audiobooks/around-the-wicket-gate.webp",
+    "visibility": "Private admin draft",
+    "notes": "LibriVox catalog page states recordings are public domain in the USA. Text is the Project Gutenberg public-domain edition. Keep private until all section files, playback, and source notes are checked.",
+    "nextAction": "Upload remaining LibriVox section files to R2, verify section order, then connect Listen controls to the existing Around the Wicket Gate book card."
+  },
+  {
     "id": "pilgrims-progress-audiobook-candidate",
     "kind": "Audiobook",
     "title": "The Pilgrim's Progress audiobook candidate",

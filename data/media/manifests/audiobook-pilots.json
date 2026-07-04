@@ -252,5 +252,148 @@
         "notes": "Final segment."
       }
     ]
+  },
+  {
+    "id": "around-the-wicket-gate-librivox-audiobook-pilot",
+    "mediaRecordId": "around-the-wicket-gate-audiobook-candidate",
+    "libraryTitle": "Around the Wicket Gate",
+    "libraryAuthor": "C. H. Spurgeon",
+    "libraryFilePath": "data/library/verified/around-the-wicket-gate.txt",
+    "sourceUrl": "https://librivox.org/around-the-wicket-gate-by-charles-h-spurgeon/",
+    "rightsEvidence": "LibriVox states its recordings are public domain in the USA. The linked recording is read by MaryAnn, cataloged 2013-12-27, and runs 02:08:32. The matching text is the public-domain Project Gutenberg edition.",
+    "pilotStatus": "Ready for R2 section upload",
+    "textCleanupStatus": "Project Gutenberg text is readable; keep front matter and section anchors checked before follow-along highlighting.",
+    "narrationStatus": "LibriVox narration selected; one preface segment is already present in uploaded public-domain audio pilots.",
+    "estimatedDuration": "02:08:32",
+    "publicReadiness": "Private pilot only until all section files are uploaded, playback is checked, and source notes are visible in the app.",
+    "pilotSteps": [
+      "Confirm the existing Library book card remains the single public work card.",
+      "Upload the remaining LibriVox section files to R2 under the planned paths.",
+      "Verify section order, titles, reader, duration, and source URL against the LibriVox catalog page.",
+      "Connect the book detail Listen section to these audio segments without creating a duplicate audiobook card.",
+      "Test continue listening, stop, speed, bookmarks, and quote capture before public release."
+    ],
+    "segments": [
+      {
+        "number": 1,
+        "title": "Preface",
+        "textAnchor": "PREFACE.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/000-preface.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/000-preface.md",
+        "status": "Planned",
+        "estimatedMinutes": 5,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback before public release."
+      },
+      {
+        "number": 2,
+        "title": "Awakening",
+        "textAnchor": "AWAKENING.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/001-awakening.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/001-awakening.md",
+        "status": "Planned",
+        "estimatedMinutes": 10,
+        "notes": "LibriVox section 01; upload and verify after preface playback is checked."
+      },
+      {
+        "number": 3,
+        "title": "Jesus Only",
+        "textAnchor": "JESUS ONLY.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/002-jesus-only.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/002-jesus-only.md",
+        "status": "Planned",
+        "estimatedMinutes": 11,
+        "notes": "Strong gospel section for new-believer listening."
+      },
+      {
+        "number": 4,
+        "title": "Faith in the Person of the Lord Jesus",
+        "textAnchor": "FAITH IN THE PERSON OF THE LORD JESUS.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/003-faith-in-the-person.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/003-faith-in-the-person.md",
+        "status": "Planned",
+        "estimatedMinutes": 15,
+        "notes": "Useful for salvation, faith, and assurance study paths."
+      },
+      {
+        "number": 5,
+        "title": "Faith Very Simple",
+        "textAnchor": "FAITH VERY SIMPLE.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/004-faith-very-simple.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/004-faith-very-simple.md",
+        "status": "Planned",
+        "estimatedMinutes": 16,
+        "notes": "High-value gospel clarity segment."
+      },
+      {
+        "number": 6,
+        "title": "Fearing to Believe",
+        "textAnchor": "FEARING TO BELIEVE.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/005-fearing-to-believe.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/005-fearing-to-believe.md",
+        "status": "Planned",
+        "estimatedMinutes": 12,
+        "notes": "Pastoral section for seekers and assurance."
+      },
+      {
+        "number": 7,
+        "title": "Difficulty in the Way of Believing",
+        "textAnchor": "DIFFICULTY IN THE WAY OF BELIEVING.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/006-difficulty-in-believing.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/006-difficulty-in-believing.md",
+        "status": "Planned",
+        "estimatedMinutes": 11,
+        "notes": "Connect later to gospel counseling and evangelism paths."
+      },
+      {
+        "number": 8,
+        "title": "A Helpful Survey of Christ's Work",
+        "textAnchor": "A HELPFUL SURVEY.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/007-helpful-survey.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/007-helpful-survey.md",
+        "status": "Planned",
+        "estimatedMinutes": 13,
+        "notes": "Good Christ-centered study segment."
+      },
+      {
+        "number": 9,
+        "title": "A Real Hindrance to Faith",
+        "textAnchor": "A REAL HINDRANCE.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/008-real-hindrance.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/008-real-hindrance.md",
+        "status": "Planned",
+        "estimatedMinutes": 10,
+        "notes": "Useful for preaching application and counseling notes."
+      },
+      {
+        "number": 10,
+        "title": "On Raising Questions",
+        "textAnchor": "ON RAISING QUESTIONS.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/009-raising-questions.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/009-raising-questions.md",
+        "status": "Planned",
+        "estimatedMinutes": 9,
+        "notes": "Good illustration and quote capture candidate."
+      },
+      {
+        "number": 11,
+        "title": "Without Faith No Salvation",
+        "textAnchor": "WITHOUT FAITH NO SALVATION.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/010-without-faith-no-salvation.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/010-without-faith-no-salvation.md",
+        "status": "Planned",
+        "estimatedMinutes": 7,
+        "notes": "Short doctrinal segment for gospel path."
+      },
+      {
+        "number": 12,
+        "title": "To Those Who Have Believed",
+        "textAnchor": "TO THOSE WHO HAVE BELIEVED.",
+        "audioPath": "audio/audiobooks/spurgeon/around-the-wicket-gate/librivox-64kb/011-to-those-who-have-believed.mp3",
+        "transcriptPath": "transcripts/audiobooks/spurgeon/around-the-wicket-gate/011-to-those-who-have-believed.md",
+        "status": "Planned",
+        "estimatedMinutes": 15,
+        "notes": "Final section; connect to new-believer follow-up path after playback testing."
+      }
+    ]
   }
 ]
