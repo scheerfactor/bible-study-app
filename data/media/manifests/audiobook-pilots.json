@@ -405,14 +405,14 @@
     "sourceUrl": "https://librivox.org/prayers-by-charles-h-spurgeon/",
     "rightsEvidence": "LibriVox catalog page states recordings are Public Domain in the USA. The source text is linked to the Internet Archive scan of C. H. Spurgeon's Prayers, and Spurgeon died in 1892.",
     "pilotStatus": "LibriVox section map created for private review",
-    "textCleanupStatus": "Library OCR includes front-matter artifacts and should be spot-checked before synchronized transcript use.",
-    "narrationStatus": "LibriVox public-domain audio available; no files uploaded to R2 from this pilot yet",
+    "textCleanupStatus": "Audio is uploaded, but Library OCR front matter and section anchors must be cleaned before synchronized transcript use.",
+    "narrationStatus": "LibriVox public-domain audio uploaded to R2 as a private admin pilot",
     "estimatedDuration": "5 hr 1 min",
-    "publicReadiness": "Private pilot only until LibriVox section files are uploaded to R2, chapter order is verified, transcript anchors are cleaned, and the existing book card receives one Read/Listen experience.",
+    "publicReadiness": "Private uploaded pilot only until playback, no-duplicate-card behavior, transcript anchors, and book detail Listen integration are QA checked.",
     "pilotSteps": [
       "Confirm the existing Library text edition is the preferred public-domain edition for reading.",
-      "Upload the LibriVox 64kb MP3 section files to R2 under the planned Spurgeon prayers path.",
-      "Verify section order, duration, reader credit, and source URL against the LibriVox catalog page.",
+      "LibriVox 64kb MP3 section files have been uploaded to R2 under the planned Spurgeon prayers path.",
+      "Verify playback, section order, duration, reader credit, and source URL against the LibriVox catalog page.",
       "Clean OCR front matter and create stable transcript anchors without changing Spurgeon's wording.",
       "Attach Listen to the existing C. H. Spurgeon's Prayers book card instead of creating a duplicate audiobook card.",
       "Only mark public after playback, rights notes, and no-duplicate-card checks pass."
@@ -424,7 +424,7 @@
         "textAnchor": "Introduction",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/001-introduction.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/001-introduction.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 8,
         "notes": "LibriVox source file prayers_00_spurgeon_64kb.mp3; catalog duration 00:07:48; reader MaryAnn."
       },
@@ -434,7 +434,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/002-prayer-help-from-on-high.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/002-prayer-help-from-on-high.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 12,
         "notes": "LibriVox source file prayers_01_spurgeon_64kb.mp3; catalog duration 00:11:59; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -444,7 +444,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/003-prayer-thanks-be-unto-god.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/003-prayer-thanks-be-unto-god.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_02_spurgeon_64kb.mp3; catalog duration 00:10:43; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -454,7 +454,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/004-prayer-the-love-without-measure-or-end.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/004-prayer-the-love-without-measure-or-end.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_03_spurgeon_64kb.mp3; catalog duration 00:10:36; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -464,7 +464,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/005-prayer-the-all-prevailing-plea.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/005-prayer-the-all-prevailing-plea.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 12,
         "notes": "LibriVox source file prayers_04_spurgeon_64kb.mp3; catalog duration 00:11:54; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -474,7 +474,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/006-prayer-to-the-king-eternal.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/006-prayer-to-the-king-eternal.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 15,
         "notes": "LibriVox source file prayers_05_spurgeon_64kb.mp3; catalog duration 00:14:19; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -484,7 +484,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/007-prayer-the-wonders-of-calvary.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/007-prayer-the-wonders-of-calvary.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_06_spurgeon_64kb.mp3; catalog duration 00:10:06; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -494,7 +494,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/008-prayer-let-all-the-people-praise-thee.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/008-prayer-let-all-the-people-praise-thee.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_07_spurgeon_64kb.mp3; catalog duration 00:10:19; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -504,7 +504,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/009-prayer-a-prayer-for-holiness.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/009-prayer-a-prayer-for-holiness.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_08_spurgeon_64kb.mp3; catalog duration 00:09:46; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -514,7 +514,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/010-prayer-glorious-liberty.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/010-prayer-glorious-liberty.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 6,
         "notes": "LibriVox source file prayers_09_spurgeon_64kb.mp3; catalog duration 00:05:22; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -524,7 +524,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/011-prayer-the-music-of-praise.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/011-prayer-the-music-of-praise.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_10_spurgeon_64kb.mp3; catalog duration 00:09:01; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -534,7 +534,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/012-prayer-under-the-blood.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/012-prayer-under-the-blood.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_11_spurgeon_64kb.mp3; catalog duration 00:09:42; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -544,7 +544,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/013-prayer-on-holy-ground.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/013-prayer-on-holy-ground.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_12_spurgeon_64kb.mp3; catalog duration 00:09:26; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -554,7 +554,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/014-prayer-the-wings-of-prayer.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/014-prayer-the-wings-of-prayer.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_13_spurgeon_64kb.mp3; catalog duration 00:09:18; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -564,7 +564,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/015-prayer-bless-the-lord-o-my-soul.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/015-prayer-bless-the-lord-o-my-soul.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_14_spurgeon_64kb.mp3; catalog duration 00:09:13; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -574,7 +574,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/016-prayer-the-peace-of-god.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/016-prayer-the-peace-of-god.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 9,
         "notes": "LibriVox source file prayers_15_spurgeon_64kb.mp3; catalog duration 00:08:26; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -584,7 +584,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/017-prayer-he-ever-liveth.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/017-prayer-he-ever-liveth.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 9,
         "notes": "LibriVox source file prayers_16_spurgeon_64kb.mp3; catalog duration 00:08:02; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -594,7 +594,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/018-prayer-to-be-like-christ.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/018-prayer-to-be-like-christ.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 10,
         "notes": "LibriVox source file prayers_17_spurgeon_64kb.mp3; catalog duration 00:09:11; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -604,7 +604,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/019-prayer-o-for-more-grace.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/019-prayer-o-for-more-grace.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 8,
         "notes": "LibriVox source file prayers_18_spurgeon_64kb.mp3; catalog duration 00:07:43; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -614,7 +614,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/020-prayer-god-s-unspeakable-gift.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/020-prayer-god-s-unspeakable-gift.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 9,
         "notes": "LibriVox source file prayers_19_spurgeon_64kb.mp3; catalog duration 00:08:13; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -624,7 +624,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/021-prayer-the-great-sacrifice.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/021-prayer-the-great-sacrifice.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_20_spurgeon_64kb.mp3; catalog duration 00:10:13; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -634,7 +634,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/022-prayer-boldness-at-the-throne-of-grace.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/022-prayer-boldness-at-the-throne-of-grace.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 9,
         "notes": "LibriVox source file prayers_21_spurgeon_64kb.mp3; catalog duration 00:08:57; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -644,7 +644,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/023-prayer-the-presence-of-god.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/023-prayer-the-presence-of-god.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 13,
         "notes": "LibriVox source file prayers_22_spurgeon_64kb.mp3; catalog duration 00:12:08; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -654,7 +654,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/024-prayer-the-look-of-faith.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/024-prayer-the-look-of-faith.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 8,
         "notes": "LibriVox source file prayers_23_spurgeon_64kb.mp3; catalog duration 00:07:05; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -664,7 +664,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/025-prayer-deliver-us-from-evil.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/025-prayer-deliver-us-from-evil.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 9,
         "notes": "LibriVox source file prayers_24_spurgeon_64kb.mp3; catalog duration 00:08:53; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -674,7 +674,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/026-prayer-the-washing-of-water-by-the-word.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/026-prayer-the-washing-of-water-by-the-word.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_25_spurgeon_64kb.mp3; catalog duration 00:10:07; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -684,7 +684,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/027-prayer-prayer-answered-and-unanswered.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/027-prayer-prayer-answered-and-unanswered.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 11,
         "notes": "LibriVox source file prayers_26_spurgeon_64kb.mp3; catalog duration 00:10:27; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       },
@@ -694,7 +694,7 @@
         "textAnchor": "C.  H.  SPURGEON'S",
         "audioPath": "audio/audiobooks/spurgeon/prayers/librivox/028-sermon-the-golden-key-of-prayer.mp3",
         "transcriptPath": "transcripts/audiobooks/spurgeon/prayers/028-sermon-the-golden-key-of-prayer.md",
-        "status": "Planned",
+        "status": "Cleanup Needed",
         "estimatedMinutes": 43,
         "notes": "LibriVox source file prayers_27_spurgeon_64kb.mp3; catalog duration 00:42:25; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       }
