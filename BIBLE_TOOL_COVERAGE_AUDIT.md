@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-04T21:37:34.363Z
+Generated: 2026-07-04T22:04:20.270Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -10,8 +10,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - KJV words measured: 792,215 tokens, 12,449 unique words, 12,376 meaningful unique words after common-word filtering.
 - Webster 1828: 7,520/12,376 meaningful KJV words have a lookup candidate (60.8%).
 - Combined word/topic lookup: 10,368/12,376 meaningful KJV words have Webster, Easton, or Nave help (83.8%).
-- Strong's lexicon: 14,289 entries available; reviewed KJV mappings cover 508/1189 chapters and 14,210 source verses.
-- Strong's KJV word mapping: 8,190/12,376 meaningful KJV words appear in reviewed mapping batches (66.2%).
+- Strong's lexicon: 14,289 entries available; reviewed KJV mappings cover 544/1189 chapters and 15,032 source verses.
+- Strong's KJV word mapping: 8,504/12,376 meaningful KJV words appear in reviewed mapping batches (68.7%).
 - TSK: 6,110 public rows cover 1185/1189 chapters (99.7%).
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
 
@@ -149,7 +149,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | 1 Kings | 0 | 22 | 0% | 0 | 0 |
 | 2 Kings | 0 | 25 | 0% | 0 | 0 |
 | 1 Chronicles | 0 | 29 | 0% | 0 | 0 |
-| 2 Chronicles | 0 | 36 | 0% | 0 | 0 |
 | Ezra | 0 | 10 | 0% | 0 | 0 |
 | Nehemiah | 0 | 13 | 0% | 0 | 0 |
 | Esther | 0 | 10 | 0% | 0 | 0 |
@@ -159,6 +158,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Lamentations | 0 | 5 | 0% | 0 | 0 |
 | Joel | 0 | 3 | 0% | 0 | 0 |
 | Obadiah | 0 | 1 | 0% | 0 | 0 |
+| Jonah | 0 | 4 | 0% | 0 | 0 |
 
 ## Weakest TSK Books
 
@@ -191,34 +191,34 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | --- | ---: | --- |
 | joshua | 216 | Exodus 17:9; Exodus 17:10; Exodus 17:13; Exodus 17:14; Exodus 24:13 |
 | joab | 145 | 1 Samuel 26:6; 2 Samuel 2:13; 2 Samuel 2:14; 2 Samuel 2:14; 2 Samuel 2:18 |
-| absalom | 108 | 2 Samuel 3:3; 2 Samuel 13:1; 2 Samuel 13:4; 2 Samuel 13:20; 2 Samuel 13:20 |
-| jehoshaphat | 85 | 2 Samuel 8:16; 2 Samuel 20:24; 1 Kings 4:3; 1 Kings 4:17; 1 Kings 15:24 |
-| atonement | 81 | Exodus 29:33; Exodus 29:36; Exodus 29:36; Exodus 29:37; Exodus 30:10 |
-| elijah | 69 | 1 Kings 17:1; 1 Kings 17:13; 1 Kings 17:15; 1 Kings 17:16; 1 Kings 17:18 |
-| acts | 66 | Deuteronomy 11:3; Deuteronomy 11:7; Judges 5:11; Judges 5:11; 1 Samuel 12:7 |
 | abner | 63 | 1 Samuel 14:50; 1 Samuel 14:51; 1 Samuel 17:55; 1 Samuel 17:55; 1 Samuel 17:55 |
 | mordecai | 60 | Ezra 2:2; Nehemiah 7:7; Esther 2:5; Esther 2:7; Esther 2:10 |
-| jehu | 59 | 1 Kings 16:1; 1 Kings 16:7; 1 Kings 16:12; 1 Kings 19:16; 1 Kings 19:17 |
 | elisha | 58 | 1 Kings 19:16; 1 Kings 19:17; 1 Kings 19:19; 2 Kings 2:1; 2 Kings 2:2 |
 | esther | 56 | Esther 2:7; Esther 2:8; Esther 2:10; Esther 2:11; Esther 2:15 |
 | sockets | 54 | Exodus 26:19; Exodus 26:19; Exodus 26:19; Exodus 26:21; Exodus 26:21 |
 | haman | 53 | Esther 3:1; Esther 3:2; Esther 3:4; Esther 3:5; Esther 3:5 |
 | ephod | 52 | Exodus 25:7; Exodus 28:4; Exodus 28:6; Exodus 28:8; Exodus 28:12 |
-| rehoboam | 50 | 1 Kings 11:43; 1 Kings 12:1; 1 Kings 12:3; 1 Kings 12:6; 1 Kings 12:12 |
-| gibeah | 48 | Joshua 15:57; Judges 19:12; Judges 19:13; Judges 19:14; Judges 19:15 |
-| repaired | 44 | Judges 21:23; 1 Kings 11:27; 1 Kings 18:30; 2 Kings 12:6; 2 Kings 12:14 |
 | balak | 43 | Numbers 22:2; Numbers 22:4; Numbers 22:7; Numbers 22:10; Numbers 22:13 |
-| shimei | 42 | Numbers 3:18; 2 Samuel 16:5; 2 Samuel 16:7; 2 Samuel 16:13; 2 Samuel 19:16 |
 | gideon | 39 | Judges 6:11; Judges 6:13; Judges 6:19; Judges 6:22; Judges 6:22 |
-| zechariah | 39 | 1 Chronicles 5:7; 1 Chronicles 9:21; 1 Chronicles 9:37; 1 Chronicles 15:18; 1 Chronicles 15:20 |
 | chronicles | 38 | 1 Kings 14:19; 1 Kings 14:29; 1 Kings 15:7; 1 Kings 15:23; 1 Kings 15:31 |
-| ahaziah | 37 | 1 Kings 22:40; 1 Kings 22:49; 1 Kings 22:51; 2 Kings 1:2; 2 Kings 1:18 |
 | caleb | 37 | Numbers 13:6; Numbers 13:30; Numbers 14:6; Numbers 14:24; Numbers 14:30 |
-| valour | 37 | Joshua 1:14; Joshua 6:2; Joshua 8:3; Joshua 10:7; Judges 3:29 |
-| jezreel | 36 | Joshua 15:56; Joshua 17:16; Joshua 19:18; Judges 6:33; 1 Samuel 25:43 |
-| asaph | 34 | 2 Kings 18:18; 2 Kings 18:37; 1 Chronicles 6:39; 1 Chronicles 6:39; 1 Chronicles 9:15 |
-| encamped | 33 | Exodus 13:20; Exodus 15:27; Exodus 18:5; Numbers 33:10; Numbers 33:11 |
 | philistine | 33 | 1 Samuel 17:8; 1 Samuel 17:10; 1 Samuel 17:11; 1 Samuel 17:16; 1 Samuel 17:23 |
+| shittim | 33 | Exodus 25:5; Exodus 25:10; Exodus 25:13; Exodus 25:23; Exodus 25:28 |
+| heave | 29 | Exodus 29:27; Exodus 29:28; Exodus 29:28; Exodus 29:28; Leviticus 7:14 |
+| jephthah | 29 | Judges 11:1; Judges 11:1; Judges 11:2; Judges 11:3; Judges 11:3 |
+| nun | 29 | Exodus 33:11; Numbers 11:28; Numbers 13:8; Numbers 13:16; Numbers 14:6 |
+| amnon | 28 | 2 Samuel 3:2; 2 Samuel 13:1; 2 Samuel 13:2; 2 Samuel 13:2; 2 Samuel 13:3 |
+| uriah | 28 | 2 Samuel 11:3; 2 Samuel 11:6; 2 Samuel 11:6; 2 Samuel 11:7; 2 Samuel 11:8 |
+| curtain | 26 | Exodus 26:2; Exodus 26:2; Exodus 26:4; Exodus 26:4; Exodus 26:5 |
+| ezra | 26 | 1 Chronicles 4:17; Ezra 7:1; Ezra 7:6; Ezra 7:10; Ezra 7:11 |
+| uncover | 26 | Leviticus 10:6; Leviticus 18:6; Leviticus 18:7; Leviticus 18:7; Leviticus 18:8 |
+| zeruiah | 26 | 1 Samuel 26:6; 2 Samuel 2:13; 2 Samuel 2:18; 2 Samuel 3:39; 2 Samuel 8:16 |
+| abishai | 25 | 1 Samuel 26:6; 1 Samuel 26:6; 1 Samuel 26:7; 1 Samuel 26:8; 1 Samuel 26:9 |
+| phinehas | 25 | Exodus 6:25; Numbers 25:7; Numbers 25:11; Numbers 31:6; Joshua 22:13 |
+| jabesh | 24 | Judges 21:8; Judges 21:9; Judges 21:10; Judges 21:12; Judges 21:14 |
+| mizpeh | 24 | Joshua 11:3; Joshua 11:8; Joshua 13:26; Joshua 15:38; Joshua 18:26 |
+| estimation | 23 | Leviticus 5:15; Leviticus 5:18; Leviticus 6:6; Leviticus 27:2; Leviticus 27:3 |
+| hiram | 23 | 2 Samuel 5:11; 1 Kings 5:1; 1 Kings 5:1; 1 Kings 5:2; 1 Kings 5:7 |
 
 ## Top KJV Words Without Exact Nave Topic Yet
 

@@ -1,22 +1,21 @@
 # Strong's Mapping Completion Plan
 
-Generated: 2026-07-04T21:41:54.574Z
+Generated: 2026-07-04T22:04:18.882Z
 
 This plan tracks the reviewed KJV-to-Strong's word mapping gap. The lexicons are broad, but a Bible reader only feels complete when each chapter has clean word-level mapping attached to the KJV text.
 
 ## Current State
 
-- Reviewed mapping batch files: 19
-- Reviewed mapping rows: 314,346
-- Chapter coverage: 508/1189 chapters (42.7%).
-- Complete Bible books: 34/66.
-- Generated chapter shards: 508 chapters, 314,346 rows.
+- Reviewed mapping batch files: 20
+- Reviewed mapping rows: 338,982
+- Chapter coverage: 544/1189 chapters (45.8%).
+- Complete Bible books: 35/66.
+- Generated chapter shards: 544 chapters, 338,982 rows.
 
 ## Recommended Next Books
 
 | Book | Missing Chapters | Reason |
 | --- | ---: | --- |
-| 2 Chronicles | 36 | No reviewed Strong's mapping chapters yet. |
 | Numbers | 36 | No reviewed Strong's mapping chapters yet. |
 | Deuteronomy | 34 | No reviewed Strong's mapping chapters yet. |
 | 1 Samuel | 31 | No reviewed Strong's mapping chapters yet. |
@@ -28,6 +27,7 @@ This plan tracks the reviewed KJV-to-Strong's word mapping gap. The lexicons are
 | 1 Kings | 22 | No reviewed Strong's mapping chapters yet. |
 | Judges | 21 | No reviewed Strong's mapping chapters yet. |
 | Zechariah | 14 | No reviewed Strong's mapping chapters yet. |
+| Nehemiah | 13 | No reviewed Strong's mapping chapters yet. |
 
 ## Completion Phases
 
@@ -54,11 +54,10 @@ Missing chapters in this phase: 130
 
 ### Historical books
 
-Missing chapters in this phase: 249
+Missing chapters in this phase: 213
 
 | Book | Mapped | Total | Missing Chapters | Coverage |
 | --- | ---: | ---: | --- | ---: |
-| 2 Chronicles | 0 | 36 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36 | 0% |
 | 1 Samuel | 0 | 31 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 | 0% |
 | 1 Chronicles | 0 | 29 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 | 0% |
 | 2 Kings | 0 | 25 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 | 0% |

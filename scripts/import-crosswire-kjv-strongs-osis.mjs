@@ -104,6 +104,7 @@ function normalizeWord(value) {
 
 const kjvSpellingBridge = {
   ankles: "ancles",
+  floats: "flotes",
   soap: "sope",
 };
 
@@ -183,6 +184,70 @@ function rowsFromWordTag({ verseRef, tokenIndex, tag, body }) {
   });
 }
 
+function note(row, message) {
+  row.notes = row.notes ? `${row.notes} ${message}` : message;
+}
+
+function collapseSourcePhraseIfNeeded(wordRows, tokenIndex, kjvTokens) {
+  if (wordRows.length < 2) return wordRows;
+
+  const expectedToken = kjvTokens[tokenIndex - 1];
+  const combinedSource = wordRows.map((row) => row.kjv_word).join("");
+  if (!expectedToken || normalizeWord(expectedToken) !== normalizeWord(combinedSource)) return wordRows;
+
+  const [firstRow] = wordRows;
+  const collapsedRow = {
+    ...firstRow,
+    token_index: tokenIndex,
+    kjv_word: expectedToken,
+    normalized_kjv_word: normalizeWord(expectedToken),
+  };
+  note(collapsedRow, `KJV spelling normalized to app text. Source phrase: ${wordRows.map((row) => row.kjv_word).join("-")}.`);
+  return [collapsedRow];
+}
+
+function collapseCurrentAndNextIfNeeded(row, nextRow, tokenIndex, kjvTokens) {
+  if (!nextRow) return { row, consumed: 1 };
+
+  const expectedToken = kjvTokens[tokenIndex - 1];
+  const combinedSource = `${row.kjv_word}${nextRow.kjv_word}`;
+  if (!expectedToken || normalizeWord(expectedToken) !== normalizeWord(combinedSource)) return { row, consumed: 1 };
+
+  const collapsedRow = {
+    ...row,
+    token_index: tokenIndex,
+    kjv_word: expectedToken,
+    normalized_kjv_word: normalizeWord(expectedToken),
+  };
+  note(collapsedRow, `KJV spelling normalized to app text. Source phrase: ${row.kjv_word}-${nextRow.kjv_word}.`);
+  return { row: collapsedRow, consumed: 2 };
+}
+
+function matchesExpectedToken(row, expectedToken) {
+  if (!expectedToken) return false;
+  if (normalizeWord(expectedToken) === row.normalized_kjv_word) return true;
+
+  const sourceWord = normalizeWord(row.kjv_word);
+  const bridgedWord = kjvSpellingBridge[sourceWord];
+  return Boolean(bridgedWord && bridgedWord === normalizeWord(expectedToken));
+}
+
+function alignTokenIndex(row, kjvTokens) {
+  let expectedToken = kjvTokens[row.token_index - 1];
+  if (matchesExpectedToken(row, expectedToken)) return expectedToken;
+
+  for (let offset = 1; offset <= 8; offset += 1) {
+    const candidateToken = kjvTokens[row.token_index - 1 + offset];
+    if (matchesExpectedToken(row, candidateToken)) {
+      row.token_index += offset;
+      note(row, `Token index advanced ${offset} to follow app KJV wording.`);
+      return candidateToken;
+    }
+  }
+
+  return expectedToken;
+}
+
 function extractRows(xml, targetRefs) {
   const rows = [];
   const versePattern = /<verse\s+osisID="([^"]+)"\s+sID="[^"]+"\s*\/>([\s\S]*?)<verse\s+eID="\1"\s*\/>/g;
@@ -205,31 +270,45 @@ function extractRows(xml, targetRefs) {
       const beforeTag = verseBody.slice(cursor, wordMatch.index);
       tokenIndex += verseTokens(stripTags(beforeTag)).length;
 
-      const wordRows = rowsFromWordTag({
-        verseRef,
+      const wordRows = collapseSourcePhraseIfNeeded(
+        rowsFromWordTag({
+          verseRef,
+          tokenIndex,
+          tag: wordMatch[1],
+          body: wordMatch[2],
+        }),
         tokenIndex,
-        tag: wordMatch[1],
-        body: wordMatch[2],
-      });
+        kjvTokens,
+      );
 
-      for (const row of wordRows) {
-        const expectedToken = kjvTokens[row.token_index - 1];
-        if (!expectedToken || normalizeWord(expectedToken) !== row.normalized_kjv_word) {
+      let nextTokenIndex = tokenIndex;
+      for (let rowIndex = 0; rowIndex < wordRows.length; rowIndex += 1) {
+        const collapsed = collapseCurrentAndNextIfNeeded(wordRows[rowIndex], wordRows[rowIndex + 1], nextTokenIndex, kjvTokens);
+        const row = collapsed.row;
+        rowIndex += collapsed.consumed - 1;
+        row.token_index = nextTokenIndex;
+        const expectedToken = alignTokenIndex(row, kjvTokens);
+        if (expectedToken && normalizeWord(expectedToken) === row.normalized_kjv_word && expectedToken !== row.kjv_word) {
+          note(row, `KJV spelling normalized to app text. Source token: ${row.kjv_word}.`);
+          row.kjv_word = expectedToken;
+          row.normalized_kjv_word = normalizeWord(expectedToken);
+        } else if (!expectedToken || normalizeWord(expectedToken) !== row.normalized_kjv_word) {
           const sourceWord = normalizeWord(row.kjv_word);
           const bridgedWord = kjvSpellingBridge[sourceWord];
           if (expectedToken && bridgedWord && bridgedWord === normalizeWord(expectedToken)) {
-            row.notes = `KJV spelling normalized to app text. Source token: ${row.kjv_word}.`;
+            note(row, `KJV spelling normalized to app text. Source token: ${row.kjv_word}.`);
             row.kjv_word = expectedToken;
             row.normalized_kjv_word = normalizeWord(expectedToken);
           } else {
             row.review_status = "Needs Manual Alignment";
-            row.notes = `Token alignment needs review. Expected ${expectedToken ?? "no token"} at KJV token ${row.token_index}.`;
+            note(row, `Token alignment needs review. Expected ${expectedToken ?? "no token"} at KJV token ${row.token_index}.`);
           }
         }
         rows.push(row);
+        nextTokenIndex = row.token_index + 1;
       }
 
-      tokenIndex += Math.max(wordRows.length, verseTokens(stripTags(wordMatch[2])).length);
+      tokenIndex = nextTokenIndex;
       cursor = wordPattern.lastIndex;
     }
   }
