@@ -1285,6 +1285,37 @@ type AudiobookPilot = {
   segments: AudiobookPilotSegment[];
 };
 
+const UPLOADED_AUDIOBOOK_PILOTS: UploadedPublicDomainAudioPilot[] = (uploadedPublicDomainAudioPilots as UploadedPublicDomainAudioPilot[])
+  .filter((pilot) => pilot.kind === "Audiobook" && Boolean(pilot.publicUrl));
+
+function uploadedAudiobookPilotsForResource(resource: LibraryResource, canUseAdminDrafts: boolean) {
+  const resourceTitleKey = canonicalLibraryTitle(resource.work_title ?? resource.title);
+  const resourceAuthorId = libraryAuthorIdFromName(resource.author);
+  return UPLOADED_AUDIOBOOK_PILOTS
+    .filter((pilot) => pilot.visibility === "Public after review" || canUseAdminDrafts)
+    .filter((pilot) => {
+      const pilotTitleKey = canonicalLibraryTitle(pilot.workTitle);
+      const pilotAuthorId = libraryAuthorIdFromName(pilot.creator);
+      return pilotTitleKey === resourceTitleKey && pilotAuthorId === resourceAuthorId;
+    })
+    .sort((a, b) => a.storagePath.localeCompare(b.storagePath));
+}
+
+function audiobookPilotPlanForResource(resource: LibraryResource, canUseAdminDrafts: boolean) {
+  const resourceTitleKey = canonicalLibraryTitle(resource.work_title ?? resource.title);
+  const resourceAuthorId = libraryAuthorIdFromName(resource.author);
+  return (audiobookPilotSeedData as AudiobookPilot[]).find((pilot) => {
+    const hasUploadedSegments = uploadedAudiobookPilotsForResource(resource, canUseAdminDrafts).length > 0;
+    if (!hasUploadedSegments && !canUseAdminDrafts) return false;
+    return canonicalLibraryTitle(pilot.libraryTitle) === resourceTitleKey && libraryAuthorIdFromName(pilot.libraryAuthor) === resourceAuthorId;
+  }) ?? null;
+}
+
+function uploadedAudiobookSizeLabel(segments: UploadedPublicDomainAudioPilot[]) {
+  const totalBytes = segments.reduce((sum, segment) => sum + (segment.sizeBytes || 0), 0);
+  return formatStorageBytes(totalBytes);
+}
+
 type PermissionRequestTemplate = {
   id: string;
   title: string;
@@ -20411,6 +20442,7 @@ export default function Home() {
             {tab === "library" && (
               <LibraryScreen
                 view={libraryView}
+                canUseAdminDrafts={canOpenAdminArea}
                 resources={libraryResources}
                 allResources={allLibraryResources}
                 filteredResources={filteredLibraryResources}
@@ -32414,6 +32446,7 @@ function isMediaImportType(resourceType: AdminResourceType) {
 
 function LibraryScreen({
   view,
+  canUseAdminDrafts,
   resources,
   allResources,
   filteredResources,
@@ -32506,6 +32539,7 @@ function LibraryScreen({
   onReadAgain,
 }: {
   view: LibraryView;
+  canUseAdminDrafts: boolean;
   resources: LibraryResource[];
   allResources: LibraryResource[];
   filteredResources: LibraryResource[];
@@ -32655,6 +32689,7 @@ function LibraryScreen({
         onOpenAuthor={() => onOpenAuthor(activeResource.author)}
         onOpenCollection={() => onOpenCollection(primaryCollectionForResource(activeResource).id)}
         onAddToStudyPlaylist={() => onAddToStudyPlaylist(activeResource.slug)}
+        canUseAdminDrafts={canUseAdminDrafts}
       />
     );
   }
@@ -32676,6 +32711,7 @@ function LibraryScreen({
         editions={libraryWorkEditions(activeResource, allResources)}
         relatedResources={relatedLibraryResourcesForResource(activeResource, resources, 10)}
         onOpenDetail={onOpenDetail}
+        canUseAdminDrafts={canUseAdminDrafts}
       />
     );
   }
@@ -38724,6 +38760,7 @@ function LibraryDetail({
   editions,
   relatedResources,
   onOpenDetail,
+  canUseAdminDrafts,
 }: {
   resource: LibraryResource;
   progress?: LibraryProgress;
@@ -38739,8 +38776,11 @@ function LibraryDetail({
   editions: LibraryResource[];
   relatedResources: LibraryResource[];
   onOpenDetail: (slug: string) => void;
+  canUseAdminDrafts: boolean;
 }) {
   const audiobookMeta = audiobookMetadataForResource(resource);
+  const uploadedAudiobookSegments = uploadedAudiobookPilotsForResource(resource, canUseAdminDrafts);
+  const audiobookPilotPlan = audiobookPilotPlanForResource(resource, canUseAdminDrafts);
   const relatedCommentaries = relatedResources.filter(isCommentaryLikeResource).slice(0, 3);
   const relatedBooks = relatedResources.filter((related) => !isCommentaryLikeResource(related)).slice(0, 3);
   const relatedPassages = relatedPassagesForLibraryResource(resource);
@@ -38902,6 +38942,47 @@ function LibraryDetail({
             </div>
             <div className="mt-3 h-2 rounded-full bg-white">
               <div className="h-2 rounded-full bg-[var(--green)]" style={{ width: formatPercent(progress.progress) }} />
+            </div>
+          </div>
+        )}
+
+        {uploadedAudiobookSegments.length > 0 && (
+          <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Admin audio pilot</p>
+                <h2 className="mt-1 text-lg font-semibold text-[var(--ink)]">Uploaded audiobook files ready for QA</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                  {uploadedAudiobookSegments.length} public-domain section file{uploadedAudiobookSegments.length === 1 ? "" : "s"} are stored in R2 for review. Browser voice remains the public Listen path until transcript anchors and playback are approved.
+                </p>
+              </div>
+              <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {uploadedAudiobookSizeLabel(uploadedAudiobookSegments)}
+              </span>
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-3">
+              <StatusCard label="Narration source" status={uploadedAudiobookSegments[0]?.sourceUrl.includes("librivox") ? "LibriVox public-domain audio" : "Uploaded public-domain audio"} good />
+              <StatusCard label="Duration" status={audiobookPilotPlan?.estimatedDuration ?? audiobookMeta.duration} good />
+              <StatusCard label="Review status" status={audiobookPilotPlan?.publicReadiness ?? "Private admin draft"} good={false} />
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {uploadedAudiobookSegments.slice(0, 5).map((segment) => (
+                <a
+                  key={`uploaded-audiobook-${resource.slug}-${segment.id}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]"
+                  href={segment.publicUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Headphones size={14} />
+                  {segment.segmentTitle}
+                </a>
+              ))}
+              {uploadedAudiobookSegments.length > 5 && (
+                <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  +{uploadedAudiobookSegments.length - 5} more sections
+                </span>
+              )}
             </div>
           </div>
         )}
@@ -39164,6 +39245,7 @@ function LibraryReader({
   onOpenAuthor,
   onOpenCollection,
   onAddToStudyPlaylist,
+  canUseAdminDrafts,
 }: {
   resource: LibraryResource;
   text: string;
@@ -39211,8 +39293,11 @@ function LibraryReader({
   onOpenAuthor: () => void;
   onOpenCollection: () => void;
   onAddToStudyPlaylist: () => void;
+  canUseAdminDrafts: boolean;
 }) {
   const speechActive = speechState.targetId === `resource-${resource.slug}` && speechState.playing;
+  const uploadedAudiobookSegments = uploadedAudiobookPilotsForResource(resource, canUseAdminDrafts);
+  const audiobookPilotPlan = audiobookPilotPlanForResource(resource, canUseAdminDrafts);
   const activeProgress = progress ?? defaultLibraryProgress(resource, fontSize);
   const readerThemeClass =
     activeProgress.theme === "dark"
@@ -39679,6 +39764,32 @@ function LibraryReader({
               {formatListeningDuration(remainingListeningSeconds)} left
             </span>
           </div>
+          {uploadedAudiobookSegments.length > 0 && (
+            <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Admin audio pilot</p>
+                  <p className="mt-1 text-sm font-semibold text-[var(--green)]">
+                    {uploadedAudiobookSegments.length} uploaded section file{uploadedAudiobookSegments.length === 1 ? "" : "s"} · {audiobookPilotPlan?.estimatedDuration ?? "Duration under review"}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+                    MP3 playback is available for QA. Public Listen still uses browser voice until transcript cleanup and section syncing are approved.
+                  </p>
+                </div>
+                {uploadedAudiobookSegments[0] && (
+                  <a
+                    className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-3 py-2 text-xs font-semibold text-white"
+                    href={uploadedAudiobookSegments[0].publicUrl}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Headphones size={14} />
+                    Play first section
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
           <div className="mt-3 grid gap-3 md:grid-cols-4">
             <StatusCard label="Current chapter" status={activeChunkIndex === null ? `Part ${currentParagraphNumber || 1}` : `Part ${activeChunkIndex + 1}`} good />
             <StatusCard label="Next chapter" status={activeChunkIndex !== null && activeChunkIndex + 1 < readerChunks.length ? `Part ${activeChunkIndex + 2}` : "End of resource"} good />
