@@ -102,6 +102,11 @@ function normalizeWord(value) {
     .replace(/[^a-z0-9]+/g, "");
 }
 
+const kjvSpellingBridge = {
+  ankles: "ancles",
+  soap: "sope",
+};
+
 function verseTokens(verseText) {
   return String(verseText ?? "").match(/[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?/g) ?? [];
 }
@@ -135,7 +140,7 @@ function osisIdToVerseRef(osisId) {
 }
 
 function refMatches(verseRef, targets) {
-  return targets.some((target) => verseRef === target || verseRef.startsWith(`${target}:`));
+  return targets.some((target) => verseRef === target || verseRef.startsWith(`${target}:`) || verseRef.startsWith(`${target} `));
 }
 
 function strongNumbersFromLemma(lemma) {
@@ -210,8 +215,16 @@ function extractRows(xml, targetRefs) {
       for (const row of wordRows) {
         const expectedToken = kjvTokens[row.token_index - 1];
         if (!expectedToken || normalizeWord(expectedToken) !== row.normalized_kjv_word) {
-          row.review_status = "Needs Manual Alignment";
-          row.notes = `Token alignment needs review. Expected ${expectedToken ?? "no token"} at KJV token ${row.token_index}.`;
+          const sourceWord = normalizeWord(row.kjv_word);
+          const bridgedWord = kjvSpellingBridge[sourceWord];
+          if (expectedToken && bridgedWord && bridgedWord === normalizeWord(expectedToken)) {
+            row.notes = `KJV spelling normalized to app text. Source token: ${row.kjv_word}.`;
+            row.kjv_word = expectedToken;
+            row.normalized_kjv_word = normalizeWord(expectedToken);
+          } else {
+            row.review_status = "Needs Manual Alignment";
+            row.notes = `Token alignment needs review. Expected ${expectedToken ?? "no token"} at KJV token ${row.token_index}.`;
+          }
         }
         rows.push(row);
       }

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-04T20:31:01.398Z",
+    "generated_at": "2026-07-04T21:21:59.882Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5146,14 +5146,14 @@
     },
     "strongs": {
       "lexiconEntries": 14288,
-      "mappingFiles": 16,
-      "mappingRows": 221052,
-      "mappedBooks": 35,
-      "mappedChapters": 366,
-      "mappedVerses": 10503,
-      "mappedUniqueKjvWords": 7076,
-      "meaningfulWordsWithMapping": 6948,
-      "meaningfulWordMappingCoveragePercent": 56.1,
+      "mappingFiles": 18,
+      "mappingRows": 277709,
+      "mappedBooks": 37,
+      "mappedChapters": 460,
+      "mappedVerses": 12937,
+      "mappedUniqueKjvWords": 7990,
+      "meaningfulWordsWithMapping": 7851,
+      "meaningfulWordMappingCoveragePercent": 63.4,
       "weakestBooks": [
         {
           "book": "Numbers",
@@ -5268,14 +5268,6 @@
           "rows": 0
         },
         {
-          "book": "Job",
-          "chaptersCovered": 0,
-          "totalChapters": 42,
-          "chapterCoveragePercent": 0,
-          "versesCovered": 0,
-          "rows": 0
-        },
-        {
           "book": "Proverbs",
           "chaptersCovered": 0,
           "totalChapters": 31,
@@ -5300,17 +5292,25 @@
           "rows": 0
         },
         {
-          "book": "Jeremiah",
+          "book": "Lamentations",
           "chaptersCovered": 0,
-          "totalChapters": 52,
+          "totalChapters": 5,
           "chapterCoveragePercent": 0,
           "versesCovered": 0,
           "rows": 0
         },
         {
-          "book": "Lamentations",
+          "book": "Ezekiel",
           "chaptersCovered": 0,
-          "totalChapters": 5,
+          "totalChapters": 48,
+          "chapterCoveragePercent": 0,
+          "versesCovered": 0,
+          "rows": 0
+        },
+        {
+          "book": "Joel",
+          "chaptersCovered": 0,
+          "totalChapters": 3,
           "chapterCoveragePercent": 0,
           "versesCovered": 0,
           "rows": 0
@@ -5340,17 +5340,6 @@
           ]
         },
         {
-          "word": "jonathan",
-          "count": 121,
-          "sampleRefs": [
-            "Judges 18:30",
-            "1 Samuel 13:2",
-            "1 Samuel 13:3",
-            "1 Samuel 13:16",
-            "1 Samuel 13:22"
-          ]
-        },
-        {
           "word": "suburbs",
           "count": 115,
           "sampleRefs": [
@@ -5373,28 +5362,6 @@
           ]
         },
         {
-          "word": "bullock",
-          "count": 107,
-          "sampleRefs": [
-            "Exodus 29:1",
-            "Exodus 29:3",
-            "Exodus 29:10",
-            "Exodus 29:10",
-            "Exodus 29:11"
-          ]
-        },
-        {
-          "word": "ahab",
-          "count": 94,
-          "sampleRefs": [
-            "1 Kings 16:28",
-            "1 Kings 16:29",
-            "1 Kings 16:29",
-            "1 Kings 16:30",
-            "1 Kings 16:33"
-          ]
-        },
-        {
           "word": "jehoshaphat",
           "count": 85,
           "sampleRefs": [
@@ -5414,28 +5381,6 @@
             "Exodus 29:36",
             "Exodus 29:37",
             "Exodus 30:10"
-          ]
-        },
-        {
-          "word": "skin",
-          "count": 77,
-          "sampleRefs": [
-            "Exodus 22:27",
-            "Exodus 29:14",
-            "Exodus 34:29",
-            "Exodus 34:30",
-            "Exodus 34:35"
-          ]
-        },
-        {
-          "word": "lebanon",
-          "count": 71,
-          "sampleRefs": [
-            "Deuteronomy 1:7",
-            "Deuteronomy 3:25",
-            "Deuteronomy 11:24",
-            "Joshua 1:4",
-            "Joshua 9:1"
           ]
         },
         {
@@ -5469,17 +5414,6 @@
             "1 Samuel 17:55",
             "1 Samuel 17:55",
             "1 Samuel 17:55"
-          ]
-        },
-        {
-          "word": "zedekiah",
-          "count": 62,
-          "sampleRefs": [
-            "1 Kings 22:11",
-            "1 Kings 22:24",
-            "2 Kings 24:17",
-            "2 Kings 24:18",
-            "2 Kings 24:20"
           ]
         },
         {
@@ -5549,17 +5483,6 @@
           ]
         },
         {
-          "word": "josiah",
-          "count": 53,
-          "sampleRefs": [
-            "1 Kings 13:2",
-            "2 Kings 21:24",
-            "2 Kings 21:26",
-            "2 Kings 22:1",
-            "2 Kings 22:3"
-          ]
-        },
-        {
           "word": "zadok",
           "count": 53,
           "sampleRefs": [
@@ -5582,39 +5505,6 @@
           ]
         },
         {
-          "word": "jehoiada",
-          "count": 52,
-          "sampleRefs": [
-            "2 Samuel 8:18",
-            "2 Samuel 20:23",
-            "2 Samuel 23:20",
-            "2 Samuel 23:22",
-            "1 Kings 1:8"
-          ]
-        },
-        {
-          "word": "cedar",
-          "count": 51,
-          "sampleRefs": [
-            "Leviticus 14:4",
-            "Leviticus 14:6",
-            "Leviticus 14:49",
-            "Leviticus 14:51",
-            "Leviticus 14:52"
-          ]
-        },
-        {
-          "word": "blue",
-          "count": 50,
-          "sampleRefs": [
-            "Exodus 25:4",
-            "Exodus 26:1",
-            "Exodus 26:4",
-            "Exodus 26:31",
-            "Exodus 26:36"
-          ]
-        },
-        {
           "word": "rehoboam",
           "count": 50,
           "sampleRefs": [
@@ -5626,17 +5516,6 @@
           ]
         },
         {
-          "word": "beauty",
-          "count": 49,
-          "sampleRefs": [
-            "Exodus 28:2",
-            "Exodus 28:40",
-            "2 Samuel 1:19",
-            "2 Samuel 14:25",
-            "1 Chronicles 16:29"
-          ]
-        },
-        {
           "word": "gibeah",
           "count": 48,
           "sampleRefs": [
@@ -5645,17 +5524,6 @@
             "Judges 19:13",
             "Judges 19:14",
             "Judges 19:15"
-          ]
-        },
-        {
-          "word": "sides",
-          "count": 48,
-          "sampleRefs": [
-            "Exodus 25:14",
-            "Exodus 25:32",
-            "Exodus 26:13",
-            "Exodus 26:22",
-            "Exodus 26:23"
           ]
         },
         {
@@ -5714,17 +5582,6 @@
           ]
         },
         {
-          "word": "shemaiah",
-          "count": 41,
-          "sampleRefs": [
-            "1 Kings 12:22",
-            "1 Chronicles 3:22",
-            "1 Chronicles 3:22",
-            "1 Chronicles 4:37",
-            "1 Chronicles 5:4"
-          ]
-        },
-        {
           "word": "gideon",
           "count": 39,
           "sampleRefs": [
@@ -5733,17 +5590,6 @@
             "Judges 6:19",
             "Judges 6:22",
             "Judges 6:22"
-          ]
-        },
-        {
-          "word": "molten",
-          "count": 39,
-          "sampleRefs": [
-            "Exodus 32:4",
-            "Exodus 32:8",
-            "Exodus 34:17",
-            "Leviticus 19:4",
-            "Numbers 33:52"
           ]
         },
         {
@@ -5758,17 +5604,6 @@
           ]
         },
         {
-          "word": "bars",
-          "count": 38,
-          "sampleRefs": [
-            "Exodus 26:26",
-            "Exodus 26:27",
-            "Exodus 26:27",
-            "Exodus 26:29",
-            "Exodus 26:29"
-          ]
-        },
-        {
           "word": "chronicles",
           "count": 38,
           "sampleRefs": [
@@ -5777,17 +5612,6 @@
             "1 Kings 15:7",
             "1 Kings 15:23",
             "1 Kings 15:31"
-          ]
-        },
-        {
-          "word": "heshbon",
-          "count": 38,
-          "sampleRefs": [
-            "Numbers 21:25",
-            "Numbers 21:26",
-            "Numbers 21:27",
-            "Numbers 21:28",
-            "Numbers 21:30"
           ]
         },
         {
@@ -5824,28 +5648,6 @@
           ]
         },
         {
-          "word": "gibeon",
-          "count": 37,
-          "sampleRefs": [
-            "Joshua 9:3",
-            "Joshua 9:17",
-            "Joshua 10:1",
-            "Joshua 10:2",
-            "Joshua 10:4"
-          ]
-        },
-        {
-          "word": "sihon",
-          "count": 37,
-          "sampleRefs": [
-            "Numbers 21:21",
-            "Numbers 21:23",
-            "Numbers 21:23",
-            "Numbers 21:26",
-            "Numbers 21:27"
-          ]
-        },
-        {
           "word": "valour",
           "count": 37,
           "sampleRefs": [
@@ -5868,28 +5670,6 @@
           ]
         },
         {
-          "word": "ramah",
-          "count": 36,
-          "sampleRefs": [
-            "Joshua 18:25",
-            "Joshua 19:29",
-            "Joshua 19:36",
-            "Judges 4:5",
-            "Judges 19:13"
-          ]
-        },
-        {
-          "word": "testimonies",
-          "count": 36,
-          "sampleRefs": [
-            "Deuteronomy 4:45",
-            "Deuteronomy 6:17",
-            "Deuteronomy 6:20",
-            "1 Kings 2:3",
-            "2 Kings 17:15"
-          ]
-        },
-        {
           "word": "asaph",
           "count": 34,
           "sampleRefs": [
@@ -5898,17 +5678,6 @@
             "1 Chronicles 6:39",
             "1 Chronicles 6:39",
             "1 Chronicles 9:15"
-          ]
-        },
-        {
-          "word": "hilkiah",
-          "count": 34,
-          "sampleRefs": [
-            "2 Kings 18:18",
-            "2 Kings 18:26",
-            "2 Kings 18:37",
-            "2 Kings 22:4",
-            "2 Kings 22:8"
           ]
         },
         {
@@ -5956,72 +5725,6 @@
           ]
         },
         {
-          "word": "wheels",
-          "count": 33,
-          "sampleRefs": [
-            "Exodus 14:25",
-            "Judges 5:28",
-            "1 Kings 7:30",
-            "1 Kings 7:32",
-            "1 Kings 7:32"
-          ]
-        },
-        {
-          "word": "gedaliah",
-          "count": 32,
-          "sampleRefs": [
-            "2 Kings 25:22",
-            "2 Kings 25:23",
-            "2 Kings 25:23",
-            "2 Kings 25:24",
-            "2 Kings 25:25"
-          ]
-        },
-        {
-          "word": "whoredoms",
-          "count": 32,
-          "sampleRefs": [
-            "Numbers 14:33",
-            "2 Kings 9:22",
-            "2 Chronicles 21:13",
-            "Jeremiah 3:2",
-            "Ezekiel 16:20"
-          ]
-        },
-        {
-          "word": "curtains",
-          "count": 31,
-          "sampleRefs": [
-            "Exodus 26:1",
-            "Exodus 26:2",
-            "Exodus 26:3",
-            "Exodus 26:3",
-            "Exodus 26:6"
-          ]
-        },
-        {
-          "word": "dismayed",
-          "count": 31,
-          "sampleRefs": [
-            "Deuteronomy 31:8",
-            "Joshua 1:9",
-            "Joshua 8:1",
-            "Joshua 10:25",
-            "1 Samuel 17:11"
-          ]
-        },
-        {
-          "word": "nebuchadrezzar",
-          "count": 31,
-          "sampleRefs": [
-            "Jeremiah 21:2",
-            "Jeremiah 21:7",
-            "Jeremiah 22:25",
-            "Jeremiah 24:1",
-            "Jeremiah 25:1"
-          ]
-        },
-        {
           "word": "sprinkle",
           "count": 31,
           "sampleRefs": [
@@ -6052,50 +5755,6 @@
             "Ezra 2:2",
             "Ezra 2:6",
             "Ezra 2:36"
-          ]
-        },
-        {
-          "word": "micah",
-          "count": 30,
-          "sampleRefs": [
-            "Judges 17:1",
-            "Judges 17:4",
-            "Judges 17:5",
-            "Judges 17:8",
-            "Judges 17:9"
-          ]
-        },
-        {
-          "word": "nobles",
-          "count": 30,
-          "sampleRefs": [
-            "Exodus 24:11",
-            "Numbers 21:18",
-            "Judges 5:13",
-            "1 Kings 21:8",
-            "1 Kings 21:11"
-          ]
-        },
-        {
-          "word": "shaphan",
-          "count": 30,
-          "sampleRefs": [
-            "2 Kings 22:3",
-            "2 Kings 22:8",
-            "2 Kings 22:8",
-            "2 Kings 22:9",
-            "2 Kings 22:10"
-          ]
-        },
-        {
-          "word": "vows",
-          "count": 30,
-          "sampleRefs": [
-            "Leviticus 22:18",
-            "Leviticus 23:38",
-            "Numbers 29:39",
-            "Numbers 30:4",
-            "Numbers 30:5"
           ]
         },
         {
@@ -6143,17 +5802,6 @@
           ]
         },
         {
-          "word": "baasha",
-          "count": 28,
-          "sampleRefs": [
-            "1 Kings 15:16",
-            "1 Kings 15:17",
-            "1 Kings 15:19",
-            "1 Kings 15:21",
-            "1 Kings 15:22"
-          ]
-        },
-        {
           "word": "uriah",
           "count": 28,
           "sampleRefs": [
@@ -6162,17 +5810,6 @@
             "2 Samuel 11:6",
             "2 Samuel 11:7",
             "2 Samuel 11:8"
-          ]
-        },
-        {
-          "word": "johanan",
-          "count": 27,
-          "sampleRefs": [
-            "2 Kings 25:23",
-            "1 Chronicles 3:15",
-            "1 Chronicles 3:24",
-            "1 Chronicles 6:9",
-            "1 Chronicles 6:10"
           ]
         },
         {
@@ -6187,14 +5824,377 @@
           ]
         },
         {
-          "word": "shallum",
-          "count": 27,
+          "word": "adonijah",
+          "count": 26,
           "sampleRefs": [
-            "2 Kings 15:10",
-            "2 Kings 15:13",
-            "2 Kings 15:14",
-            "2 Kings 15:15",
-            "2 Kings 22:14"
+            "2 Samuel 3:4",
+            "1 Kings 1:5",
+            "1 Kings 1:7",
+            "1 Kings 1:8",
+            "1 Kings 1:9"
+          ]
+        },
+        {
+          "word": "curtain",
+          "count": 26,
+          "sampleRefs": [
+            "Exodus 26:2",
+            "Exodus 26:2",
+            "Exodus 26:4",
+            "Exodus 26:4",
+            "Exodus 26:5"
+          ]
+        },
+        {
+          "word": "ezra",
+          "count": 26,
+          "sampleRefs": [
+            "1 Chronicles 4:17",
+            "Ezra 7:1",
+            "Ezra 7:6",
+            "Ezra 7:10",
+            "Ezra 7:11"
+          ]
+        },
+        {
+          "word": "separation",
+          "count": 26,
+          "sampleRefs": [
+            "Leviticus 12:2",
+            "Leviticus 12:5",
+            "Leviticus 15:20",
+            "Leviticus 15:25",
+            "Leviticus 15:25"
+          ]
+        },
+        {
+          "word": "timber",
+          "count": 26,
+          "sampleRefs": [
+            "Exodus 31:5",
+            "Leviticus 14:45",
+            "1 Kings 5:6",
+            "1 Kings 5:8",
+            "1 Kings 5:8"
+          ]
+        },
+        {
+          "word": "uncover",
+          "count": 26,
+          "sampleRefs": [
+            "Leviticus 10:6",
+            "Leviticus 18:6",
+            "Leviticus 18:7",
+            "Leviticus 18:7",
+            "Leviticus 18:8"
+          ]
+        },
+        {
+          "word": "zeruiah",
+          "count": 26,
+          "sampleRefs": [
+            "1 Samuel 26:6",
+            "2 Samuel 2:13",
+            "2 Samuel 2:18",
+            "2 Samuel 3:39",
+            "2 Samuel 8:16"
+          ]
+        },
+        {
+          "word": "abishai",
+          "count": 25,
+          "sampleRefs": [
+            "1 Samuel 26:6",
+            "1 Samuel 26:6",
+            "1 Samuel 26:7",
+            "1 Samuel 26:8",
+            "1 Samuel 26:9"
+          ]
+        },
+        {
+          "word": "meshullam",
+          "count": 25,
+          "sampleRefs": [
+            "2 Kings 22:3",
+            "1 Chronicles 3:19",
+            "1 Chronicles 5:13",
+            "1 Chronicles 8:17",
+            "1 Chronicles 9:7"
+          ]
+        },
+        {
+          "word": "nebat",
+          "count": 25,
+          "sampleRefs": [
+            "1 Kings 11:26",
+            "1 Kings 12:2",
+            "1 Kings 12:15",
+            "1 Kings 15:1",
+            "1 Kings 16:3"
+          ]
+        },
+        {
+          "word": "phinehas",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 6:25",
+            "Numbers 25:7",
+            "Numbers 25:11",
+            "Numbers 31:6",
+            "Joshua 22:13"
+          ]
+        },
+        {
+          "word": "boaz",
+          "count": 24,
+          "sampleRefs": [
+            "Ruth 2:1",
+            "Ruth 2:3",
+            "Ruth 2:4",
+            "Ruth 2:5",
+            "Ruth 2:8"
+          ]
+        },
+        {
+          "word": "jabesh",
+          "count": 24,
+          "sampleRefs": [
+            "Judges 21:8",
+            "Judges 21:9",
+            "Judges 21:10",
+            "Judges 21:12",
+            "Judges 21:14"
+          ]
+        },
+        {
+          "word": "mizpeh",
+          "count": 24,
+          "sampleRefs": [
+            "Joshua 11:3",
+            "Joshua 11:8",
+            "Joshua 13:26",
+            "Joshua 15:38",
+            "Joshua 18:26"
+          ]
+        },
+        {
+          "word": "estimation",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 5:15",
+            "Leviticus 5:18",
+            "Leviticus 6:6",
+            "Leviticus 27:2",
+            "Leviticus 27:3"
+          ]
+        },
+        {
+          "word": "hiram",
+          "count": 23,
+          "sampleRefs": [
+            "2 Samuel 5:11",
+            "1 Kings 5:1",
+            "1 Kings 5:1",
+            "1 Kings 5:2",
+            "1 Kings 5:7"
+          ]
+        },
+        {
+          "word": "jehoahaz",
+          "count": 23,
+          "sampleRefs": [
+            "2 Kings 10:35",
+            "2 Kings 13:1",
+            "2 Kings 13:4",
+            "2 Kings 13:7",
+            "2 Kings 13:8"
+          ]
+        },
+        {
+          "word": "jehoram",
+          "count": 23,
+          "sampleRefs": [
+            "1 Kings 22:50",
+            "2 Kings 1:17",
+            "2 Kings 1:17",
+            "2 Kings 3:1",
+            "2 Kings 3:6"
+          ]
+        },
+        {
+          "word": "namely",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 1:10",
+            "Numbers 1:32",
+            "Numbers 9:15",
+            "Numbers 13:11",
+            "Numbers 31:8"
+          ]
+        },
+        {
+          "word": "pronounce",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 5:4",
+            "Leviticus 13:3",
+            "Leviticus 13:6",
+            "Leviticus 13:8",
+            "Leviticus 13:11"
+          ]
+        },
+        {
+          "word": "hin",
+          "count": 22,
+          "sampleRefs": [
+            "Exodus 29:40",
+            "Exodus 29:40",
+            "Exodus 30:24",
+            "Leviticus 19:36",
+            "Leviticus 23:13"
+          ]
+        },
+        {
+          "word": "jubile",
+          "count": 22,
+          "sampleRefs": [
+            "Leviticus 25:9",
+            "Leviticus 25:10",
+            "Leviticus 25:11",
+            "Leviticus 25:12",
+            "Leviticus 25:13"
+          ]
+        },
+        {
+          "word": "nabal",
+          "count": 22,
+          "sampleRefs": [
+            "1 Samuel 25:3",
+            "1 Samuel 25:4",
+            "1 Samuel 25:5",
+            "1 Samuel 25:9",
+            "1 Samuel 25:10"
+          ]
+        },
+        {
+          "word": "naboth",
+          "count": 22,
+          "sampleRefs": [
+            "1 Kings 21:1",
+            "1 Kings 21:2",
+            "1 Kings 21:3",
+            "1 Kings 21:4",
+            "1 Kings 21:6"
+          ]
+        },
+        {
+          "word": "zerubbabel",
+          "count": 22,
+          "sampleRefs": [
+            "1 Chronicles 3:19",
+            "1 Chronicles 3:19",
+            "Ezra 2:2",
+            "Ezra 3:2",
+            "Ezra 3:8"
+          ]
+        },
+        {
+          "word": "achish",
+          "count": 21,
+          "sampleRefs": [
+            "1 Samuel 21:10",
+            "1 Samuel 21:11",
+            "1 Samuel 21:12",
+            "1 Samuel 21:14",
+            "1 Samuel 27:2"
+          ]
+        },
+        {
+          "word": "eliab",
+          "count": 21,
+          "sampleRefs": [
+            "Numbers 1:9",
+            "Numbers 2:7",
+            "Numbers 7:24",
+            "Numbers 7:29",
+            "Numbers 10:16"
+          ]
+        },
+        {
+          "word": "elkanah",
+          "count": 21,
+          "sampleRefs": [
+            "Exodus 6:24",
+            "1 Samuel 1:1",
+            "1 Samuel 1:4",
+            "1 Samuel 1:8",
+            "1 Samuel 1:19"
+          ]
+        },
+        {
+          "word": "fir",
+          "count": 21,
+          "sampleRefs": [
+            "2 Samuel 6:5",
+            "1 Kings 5:8",
+            "1 Kings 5:10",
+            "1 Kings 6:15",
+            "1 Kings 6:34"
+          ]
+        },
+        {
+          "word": "ithamar",
+          "count": 21,
+          "sampleRefs": [
+            "Exodus 6:23",
+            "Exodus 28:1",
+            "Exodus 38:21",
+            "Leviticus 10:6",
+            "Leviticus 10:12"
+          ]
+        },
+        {
+          "word": "kish",
+          "count": 21,
+          "sampleRefs": [
+            "1 Samuel 9:1",
+            "1 Samuel 9:3",
+            "1 Samuel 9:3",
+            "1 Samuel 10:11",
+            "1 Samuel 10:21"
+          ]
+        },
+        {
+          "word": "naomi",
+          "count": 21,
+          "sampleRefs": [
+            "Ruth 1:2",
+            "Ruth 1:3",
+            "Ruth 1:8",
+            "Ruth 1:11",
+            "Ruth 1:19"
+          ]
+        },
+        {
+          "word": "rimmon",
+          "count": 21,
+          "sampleRefs": [
+            "Numbers 33:19",
+            "Numbers 33:20",
+            "Joshua 15:32",
+            "Joshua 19:45",
+            "Joshua 21:24"
+          ]
+        },
+        {
+          "word": "shushan",
+          "count": 21,
+          "sampleRefs": [
+            "Nehemiah 1:1",
+            "Esther 1:2",
+            "Esther 1:5",
+            "Esther 2:3",
+            "Esther 2:5"
           ]
         }
       ]
@@ -7398,11 +7398,11 @@
     },
     {
       "book": "Job",
-      "chaptersCovered": 0,
+      "chaptersCovered": 42,
       "totalChapters": 42,
-      "chapterCoveragePercent": 0,
-      "versesCovered": 0,
-      "rows": 0
+      "chapterCoveragePercent": 100,
+      "versesCovered": 1070,
+      "rows": 16283
     },
     {
       "book": "Psalms",
@@ -7446,11 +7446,11 @@
     },
     {
       "book": "Jeremiah",
-      "chaptersCovered": 0,
+      "chaptersCovered": 52,
       "totalChapters": 52,
-      "chapterCoveragePercent": 0,
-      "versesCovered": 0,
-      "rows": 0
+      "chapterCoveragePercent": 100,
+      "versesCovered": 1364,
+      "rows": 40374
     },
     {
       "book": "Lamentations",
@@ -13464,17 +13464,6 @@
         ]
       },
       {
-        "word": "jonathan",
-        "count": 121,
-        "sampleRefs": [
-          "Judges 18:30",
-          "1 Samuel 13:2",
-          "1 Samuel 13:3",
-          "1 Samuel 13:16",
-          "1 Samuel 13:22"
-        ]
-      },
-      {
         "word": "suburbs",
         "count": 115,
         "sampleRefs": [
@@ -13497,28 +13486,6 @@
         ]
       },
       {
-        "word": "bullock",
-        "count": 107,
-        "sampleRefs": [
-          "Exodus 29:1",
-          "Exodus 29:3",
-          "Exodus 29:10",
-          "Exodus 29:10",
-          "Exodus 29:11"
-        ]
-      },
-      {
-        "word": "ahab",
-        "count": 94,
-        "sampleRefs": [
-          "1 Kings 16:28",
-          "1 Kings 16:29",
-          "1 Kings 16:29",
-          "1 Kings 16:30",
-          "1 Kings 16:33"
-        ]
-      },
-      {
         "word": "jehoshaphat",
         "count": 85,
         "sampleRefs": [
@@ -13538,28 +13505,6 @@
           "Exodus 29:36",
           "Exodus 29:37",
           "Exodus 30:10"
-        ]
-      },
-      {
-        "word": "skin",
-        "count": 77,
-        "sampleRefs": [
-          "Exodus 22:27",
-          "Exodus 29:14",
-          "Exodus 34:29",
-          "Exodus 34:30",
-          "Exodus 34:35"
-        ]
-      },
-      {
-        "word": "lebanon",
-        "count": 71,
-        "sampleRefs": [
-          "Deuteronomy 1:7",
-          "Deuteronomy 3:25",
-          "Deuteronomy 11:24",
-          "Joshua 1:4",
-          "Joshua 9:1"
         ]
       },
       {
@@ -13593,17 +13538,6 @@
           "1 Samuel 17:55",
           "1 Samuel 17:55",
           "1 Samuel 17:55"
-        ]
-      },
-      {
-        "word": "zedekiah",
-        "count": 62,
-        "sampleRefs": [
-          "1 Kings 22:11",
-          "1 Kings 22:24",
-          "2 Kings 24:17",
-          "2 Kings 24:18",
-          "2 Kings 24:20"
         ]
       },
       {
@@ -13673,17 +13607,6 @@
         ]
       },
       {
-        "word": "josiah",
-        "count": 53,
-        "sampleRefs": [
-          "1 Kings 13:2",
-          "2 Kings 21:24",
-          "2 Kings 21:26",
-          "2 Kings 22:1",
-          "2 Kings 22:3"
-        ]
-      },
-      {
         "word": "zadok",
         "count": 53,
         "sampleRefs": [
@@ -13706,39 +13629,6 @@
         ]
       },
       {
-        "word": "jehoiada",
-        "count": 52,
-        "sampleRefs": [
-          "2 Samuel 8:18",
-          "2 Samuel 20:23",
-          "2 Samuel 23:20",
-          "2 Samuel 23:22",
-          "1 Kings 1:8"
-        ]
-      },
-      {
-        "word": "cedar",
-        "count": 51,
-        "sampleRefs": [
-          "Leviticus 14:4",
-          "Leviticus 14:6",
-          "Leviticus 14:49",
-          "Leviticus 14:51",
-          "Leviticus 14:52"
-        ]
-      },
-      {
-        "word": "blue",
-        "count": 50,
-        "sampleRefs": [
-          "Exodus 25:4",
-          "Exodus 26:1",
-          "Exodus 26:4",
-          "Exodus 26:31",
-          "Exodus 26:36"
-        ]
-      },
-      {
         "word": "rehoboam",
         "count": 50,
         "sampleRefs": [
@@ -13750,17 +13640,6 @@
         ]
       },
       {
-        "word": "beauty",
-        "count": 49,
-        "sampleRefs": [
-          "Exodus 28:2",
-          "Exodus 28:40",
-          "2 Samuel 1:19",
-          "2 Samuel 14:25",
-          "1 Chronicles 16:29"
-        ]
-      },
-      {
         "word": "gibeah",
         "count": 48,
         "sampleRefs": [
@@ -13769,17 +13648,6 @@
           "Judges 19:13",
           "Judges 19:14",
           "Judges 19:15"
-        ]
-      },
-      {
-        "word": "sides",
-        "count": 48,
-        "sampleRefs": [
-          "Exodus 25:14",
-          "Exodus 25:32",
-          "Exodus 26:13",
-          "Exodus 26:22",
-          "Exodus 26:23"
         ]
       },
       {
@@ -13838,17 +13706,6 @@
         ]
       },
       {
-        "word": "shemaiah",
-        "count": 41,
-        "sampleRefs": [
-          "1 Kings 12:22",
-          "1 Chronicles 3:22",
-          "1 Chronicles 3:22",
-          "1 Chronicles 4:37",
-          "1 Chronicles 5:4"
-        ]
-      },
-      {
         "word": "gideon",
         "count": 39,
         "sampleRefs": [
@@ -13857,17 +13714,6 @@
           "Judges 6:19",
           "Judges 6:22",
           "Judges 6:22"
-        ]
-      },
-      {
-        "word": "molten",
-        "count": 39,
-        "sampleRefs": [
-          "Exodus 32:4",
-          "Exodus 32:8",
-          "Exodus 34:17",
-          "Leviticus 19:4",
-          "Numbers 33:52"
         ]
       },
       {
@@ -13882,17 +13728,6 @@
         ]
       },
       {
-        "word": "bars",
-        "count": 38,
-        "sampleRefs": [
-          "Exodus 26:26",
-          "Exodus 26:27",
-          "Exodus 26:27",
-          "Exodus 26:29",
-          "Exodus 26:29"
-        ]
-      },
-      {
         "word": "chronicles",
         "count": 38,
         "sampleRefs": [
@@ -13901,17 +13736,6 @@
           "1 Kings 15:7",
           "1 Kings 15:23",
           "1 Kings 15:31"
-        ]
-      },
-      {
-        "word": "heshbon",
-        "count": 38,
-        "sampleRefs": [
-          "Numbers 21:25",
-          "Numbers 21:26",
-          "Numbers 21:27",
-          "Numbers 21:28",
-          "Numbers 21:30"
         ]
       },
       {
@@ -13948,28 +13772,6 @@
         ]
       },
       {
-        "word": "gibeon",
-        "count": 37,
-        "sampleRefs": [
-          "Joshua 9:3",
-          "Joshua 9:17",
-          "Joshua 10:1",
-          "Joshua 10:2",
-          "Joshua 10:4"
-        ]
-      },
-      {
-        "word": "sihon",
-        "count": 37,
-        "sampleRefs": [
-          "Numbers 21:21",
-          "Numbers 21:23",
-          "Numbers 21:23",
-          "Numbers 21:26",
-          "Numbers 21:27"
-        ]
-      },
-      {
         "word": "valour",
         "count": 37,
         "sampleRefs": [
@@ -13992,28 +13794,6 @@
         ]
       },
       {
-        "word": "ramah",
-        "count": 36,
-        "sampleRefs": [
-          "Joshua 18:25",
-          "Joshua 19:29",
-          "Joshua 19:36",
-          "Judges 4:5",
-          "Judges 19:13"
-        ]
-      },
-      {
-        "word": "testimonies",
-        "count": 36,
-        "sampleRefs": [
-          "Deuteronomy 4:45",
-          "Deuteronomy 6:17",
-          "Deuteronomy 6:20",
-          "1 Kings 2:3",
-          "2 Kings 17:15"
-        ]
-      },
-      {
         "word": "asaph",
         "count": 34,
         "sampleRefs": [
@@ -14022,17 +13802,6 @@
           "1 Chronicles 6:39",
           "1 Chronicles 6:39",
           "1 Chronicles 9:15"
-        ]
-      },
-      {
-        "word": "hilkiah",
-        "count": 34,
-        "sampleRefs": [
-          "2 Kings 18:18",
-          "2 Kings 18:26",
-          "2 Kings 18:37",
-          "2 Kings 22:4",
-          "2 Kings 22:8"
         ]
       },
       {
@@ -14080,72 +13849,6 @@
         ]
       },
       {
-        "word": "wheels",
-        "count": 33,
-        "sampleRefs": [
-          "Exodus 14:25",
-          "Judges 5:28",
-          "1 Kings 7:30",
-          "1 Kings 7:32",
-          "1 Kings 7:32"
-        ]
-      },
-      {
-        "word": "gedaliah",
-        "count": 32,
-        "sampleRefs": [
-          "2 Kings 25:22",
-          "2 Kings 25:23",
-          "2 Kings 25:23",
-          "2 Kings 25:24",
-          "2 Kings 25:25"
-        ]
-      },
-      {
-        "word": "whoredoms",
-        "count": 32,
-        "sampleRefs": [
-          "Numbers 14:33",
-          "2 Kings 9:22",
-          "2 Chronicles 21:13",
-          "Jeremiah 3:2",
-          "Ezekiel 16:20"
-        ]
-      },
-      {
-        "word": "curtains",
-        "count": 31,
-        "sampleRefs": [
-          "Exodus 26:1",
-          "Exodus 26:2",
-          "Exodus 26:3",
-          "Exodus 26:3",
-          "Exodus 26:6"
-        ]
-      },
-      {
-        "word": "dismayed",
-        "count": 31,
-        "sampleRefs": [
-          "Deuteronomy 31:8",
-          "Joshua 1:9",
-          "Joshua 8:1",
-          "Joshua 10:25",
-          "1 Samuel 17:11"
-        ]
-      },
-      {
-        "word": "nebuchadrezzar",
-        "count": 31,
-        "sampleRefs": [
-          "Jeremiah 21:2",
-          "Jeremiah 21:7",
-          "Jeremiah 22:25",
-          "Jeremiah 24:1",
-          "Jeremiah 25:1"
-        ]
-      },
-      {
         "word": "sprinkle",
         "count": 31,
         "sampleRefs": [
@@ -14176,50 +13879,6 @@
           "Ezra 2:2",
           "Ezra 2:6",
           "Ezra 2:36"
-        ]
-      },
-      {
-        "word": "micah",
-        "count": 30,
-        "sampleRefs": [
-          "Judges 17:1",
-          "Judges 17:4",
-          "Judges 17:5",
-          "Judges 17:8",
-          "Judges 17:9"
-        ]
-      },
-      {
-        "word": "nobles",
-        "count": 30,
-        "sampleRefs": [
-          "Exodus 24:11",
-          "Numbers 21:18",
-          "Judges 5:13",
-          "1 Kings 21:8",
-          "1 Kings 21:11"
-        ]
-      },
-      {
-        "word": "shaphan",
-        "count": 30,
-        "sampleRefs": [
-          "2 Kings 22:3",
-          "2 Kings 22:8",
-          "2 Kings 22:8",
-          "2 Kings 22:9",
-          "2 Kings 22:10"
-        ]
-      },
-      {
-        "word": "vows",
-        "count": 30,
-        "sampleRefs": [
-          "Leviticus 22:18",
-          "Leviticus 23:38",
-          "Numbers 29:39",
-          "Numbers 30:4",
-          "Numbers 30:5"
         ]
       },
       {
@@ -14267,17 +13926,6 @@
         ]
       },
       {
-        "word": "baasha",
-        "count": 28,
-        "sampleRefs": [
-          "1 Kings 15:16",
-          "1 Kings 15:17",
-          "1 Kings 15:19",
-          "1 Kings 15:21",
-          "1 Kings 15:22"
-        ]
-      },
-      {
         "word": "uriah",
         "count": 28,
         "sampleRefs": [
@@ -14286,17 +13934,6 @@
           "2 Samuel 11:6",
           "2 Samuel 11:7",
           "2 Samuel 11:8"
-        ]
-      },
-      {
-        "word": "johanan",
-        "count": 27,
-        "sampleRefs": [
-          "2 Kings 25:23",
-          "1 Chronicles 3:15",
-          "1 Chronicles 3:24",
-          "1 Chronicles 6:9",
-          "1 Chronicles 6:10"
         ]
       },
       {
@@ -14311,14 +13948,377 @@
         ]
       },
       {
-        "word": "shallum",
-        "count": 27,
+        "word": "adonijah",
+        "count": 26,
         "sampleRefs": [
-          "2 Kings 15:10",
-          "2 Kings 15:13",
-          "2 Kings 15:14",
-          "2 Kings 15:15",
-          "2 Kings 22:14"
+          "2 Samuel 3:4",
+          "1 Kings 1:5",
+          "1 Kings 1:7",
+          "1 Kings 1:8",
+          "1 Kings 1:9"
+        ]
+      },
+      {
+        "word": "curtain",
+        "count": 26,
+        "sampleRefs": [
+          "Exodus 26:2",
+          "Exodus 26:2",
+          "Exodus 26:4",
+          "Exodus 26:4",
+          "Exodus 26:5"
+        ]
+      },
+      {
+        "word": "ezra",
+        "count": 26,
+        "sampleRefs": [
+          "1 Chronicles 4:17",
+          "Ezra 7:1",
+          "Ezra 7:6",
+          "Ezra 7:10",
+          "Ezra 7:11"
+        ]
+      },
+      {
+        "word": "separation",
+        "count": 26,
+        "sampleRefs": [
+          "Leviticus 12:2",
+          "Leviticus 12:5",
+          "Leviticus 15:20",
+          "Leviticus 15:25",
+          "Leviticus 15:25"
+        ]
+      },
+      {
+        "word": "timber",
+        "count": 26,
+        "sampleRefs": [
+          "Exodus 31:5",
+          "Leviticus 14:45",
+          "1 Kings 5:6",
+          "1 Kings 5:8",
+          "1 Kings 5:8"
+        ]
+      },
+      {
+        "word": "uncover",
+        "count": 26,
+        "sampleRefs": [
+          "Leviticus 10:6",
+          "Leviticus 18:6",
+          "Leviticus 18:7",
+          "Leviticus 18:7",
+          "Leviticus 18:8"
+        ]
+      },
+      {
+        "word": "zeruiah",
+        "count": 26,
+        "sampleRefs": [
+          "1 Samuel 26:6",
+          "2 Samuel 2:13",
+          "2 Samuel 2:18",
+          "2 Samuel 3:39",
+          "2 Samuel 8:16"
+        ]
+      },
+      {
+        "word": "abishai",
+        "count": 25,
+        "sampleRefs": [
+          "1 Samuel 26:6",
+          "1 Samuel 26:6",
+          "1 Samuel 26:7",
+          "1 Samuel 26:8",
+          "1 Samuel 26:9"
+        ]
+      },
+      {
+        "word": "meshullam",
+        "count": 25,
+        "sampleRefs": [
+          "2 Kings 22:3",
+          "1 Chronicles 3:19",
+          "1 Chronicles 5:13",
+          "1 Chronicles 8:17",
+          "1 Chronicles 9:7"
+        ]
+      },
+      {
+        "word": "nebat",
+        "count": 25,
+        "sampleRefs": [
+          "1 Kings 11:26",
+          "1 Kings 12:2",
+          "1 Kings 12:15",
+          "1 Kings 15:1",
+          "1 Kings 16:3"
+        ]
+      },
+      {
+        "word": "phinehas",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 6:25",
+          "Numbers 25:7",
+          "Numbers 25:11",
+          "Numbers 31:6",
+          "Joshua 22:13"
+        ]
+      },
+      {
+        "word": "boaz",
+        "count": 24,
+        "sampleRefs": [
+          "Ruth 2:1",
+          "Ruth 2:3",
+          "Ruth 2:4",
+          "Ruth 2:5",
+          "Ruth 2:8"
+        ]
+      },
+      {
+        "word": "jabesh",
+        "count": 24,
+        "sampleRefs": [
+          "Judges 21:8",
+          "Judges 21:9",
+          "Judges 21:10",
+          "Judges 21:12",
+          "Judges 21:14"
+        ]
+      },
+      {
+        "word": "mizpeh",
+        "count": 24,
+        "sampleRefs": [
+          "Joshua 11:3",
+          "Joshua 11:8",
+          "Joshua 13:26",
+          "Joshua 15:38",
+          "Joshua 18:26"
+        ]
+      },
+      {
+        "word": "estimation",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 5:15",
+          "Leviticus 5:18",
+          "Leviticus 6:6",
+          "Leviticus 27:2",
+          "Leviticus 27:3"
+        ]
+      },
+      {
+        "word": "hiram",
+        "count": 23,
+        "sampleRefs": [
+          "2 Samuel 5:11",
+          "1 Kings 5:1",
+          "1 Kings 5:1",
+          "1 Kings 5:2",
+          "1 Kings 5:7"
+        ]
+      },
+      {
+        "word": "jehoahaz",
+        "count": 23,
+        "sampleRefs": [
+          "2 Kings 10:35",
+          "2 Kings 13:1",
+          "2 Kings 13:4",
+          "2 Kings 13:7",
+          "2 Kings 13:8"
+        ]
+      },
+      {
+        "word": "jehoram",
+        "count": 23,
+        "sampleRefs": [
+          "1 Kings 22:50",
+          "2 Kings 1:17",
+          "2 Kings 1:17",
+          "2 Kings 3:1",
+          "2 Kings 3:6"
+        ]
+      },
+      {
+        "word": "namely",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 1:10",
+          "Numbers 1:32",
+          "Numbers 9:15",
+          "Numbers 13:11",
+          "Numbers 31:8"
+        ]
+      },
+      {
+        "word": "pronounce",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 5:4",
+          "Leviticus 13:3",
+          "Leviticus 13:6",
+          "Leviticus 13:8",
+          "Leviticus 13:11"
+        ]
+      },
+      {
+        "word": "hin",
+        "count": 22,
+        "sampleRefs": [
+          "Exodus 29:40",
+          "Exodus 29:40",
+          "Exodus 30:24",
+          "Leviticus 19:36",
+          "Leviticus 23:13"
+        ]
+      },
+      {
+        "word": "jubile",
+        "count": 22,
+        "sampleRefs": [
+          "Leviticus 25:9",
+          "Leviticus 25:10",
+          "Leviticus 25:11",
+          "Leviticus 25:12",
+          "Leviticus 25:13"
+        ]
+      },
+      {
+        "word": "nabal",
+        "count": 22,
+        "sampleRefs": [
+          "1 Samuel 25:3",
+          "1 Samuel 25:4",
+          "1 Samuel 25:5",
+          "1 Samuel 25:9",
+          "1 Samuel 25:10"
+        ]
+      },
+      {
+        "word": "naboth",
+        "count": 22,
+        "sampleRefs": [
+          "1 Kings 21:1",
+          "1 Kings 21:2",
+          "1 Kings 21:3",
+          "1 Kings 21:4",
+          "1 Kings 21:6"
+        ]
+      },
+      {
+        "word": "zerubbabel",
+        "count": 22,
+        "sampleRefs": [
+          "1 Chronicles 3:19",
+          "1 Chronicles 3:19",
+          "Ezra 2:2",
+          "Ezra 3:2",
+          "Ezra 3:8"
+        ]
+      },
+      {
+        "word": "achish",
+        "count": 21,
+        "sampleRefs": [
+          "1 Samuel 21:10",
+          "1 Samuel 21:11",
+          "1 Samuel 21:12",
+          "1 Samuel 21:14",
+          "1 Samuel 27:2"
+        ]
+      },
+      {
+        "word": "eliab",
+        "count": 21,
+        "sampleRefs": [
+          "Numbers 1:9",
+          "Numbers 2:7",
+          "Numbers 7:24",
+          "Numbers 7:29",
+          "Numbers 10:16"
+        ]
+      },
+      {
+        "word": "elkanah",
+        "count": 21,
+        "sampleRefs": [
+          "Exodus 6:24",
+          "1 Samuel 1:1",
+          "1 Samuel 1:4",
+          "1 Samuel 1:8",
+          "1 Samuel 1:19"
+        ]
+      },
+      {
+        "word": "fir",
+        "count": 21,
+        "sampleRefs": [
+          "2 Samuel 6:5",
+          "1 Kings 5:8",
+          "1 Kings 5:10",
+          "1 Kings 6:15",
+          "1 Kings 6:34"
+        ]
+      },
+      {
+        "word": "ithamar",
+        "count": 21,
+        "sampleRefs": [
+          "Exodus 6:23",
+          "Exodus 28:1",
+          "Exodus 38:21",
+          "Leviticus 10:6",
+          "Leviticus 10:12"
+        ]
+      },
+      {
+        "word": "kish",
+        "count": 21,
+        "sampleRefs": [
+          "1 Samuel 9:1",
+          "1 Samuel 9:3",
+          "1 Samuel 9:3",
+          "1 Samuel 10:11",
+          "1 Samuel 10:21"
+        ]
+      },
+      {
+        "word": "naomi",
+        "count": 21,
+        "sampleRefs": [
+          "Ruth 1:2",
+          "Ruth 1:3",
+          "Ruth 1:8",
+          "Ruth 1:11",
+          "Ruth 1:19"
+        ]
+      },
+      {
+        "word": "rimmon",
+        "count": 21,
+        "sampleRefs": [
+          "Numbers 33:19",
+          "Numbers 33:20",
+          "Joshua 15:32",
+          "Joshua 19:45",
+          "Joshua 21:24"
+        ]
+      },
+      {
+        "word": "shushan",
+        "count": 21,
+        "sampleRefs": [
+          "Nehemiah 1:1",
+          "Esther 1:2",
+          "Esther 1:5",
+          "Esther 2:3",
+          "Esther 2:5"
         ]
       }
     ],
