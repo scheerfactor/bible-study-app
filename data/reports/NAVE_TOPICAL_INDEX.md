@@ -1,14 +1,14 @@
 # Nave Topical Bible Index
 
-Generated: 2026-06-29T22:53:05.167Z
+Generated: 2026-07-04T19:07:45.216Z
 
 This index parses the verified public-domain Nave's Topical Bible text into topic records for faster Bible Tools search. The source is OCR-heavy, so records are marked for spot review before quotation.
 
 ## Summary
 
-- Topics parsed: 5689
-- Topics with extracted references: 4793
-- Topics without extracted references: 896
+- Topics parsed: 4674
+- Topics with extracted references: 3862
+- Topics without extracted references: 812
 - Output: `data/generated/naves-topical-bible.topics.json`
 
 ## Review Rule
@@ -19,23 +19,23 @@ This index parses the verified public-domain Nave's Topical Bible text into topi
 
 ## Suspicious Sample
 
-- .1*8 ALMS. —THANKSGIVING (184864-184970, refs: 0)
-- 1'KMTKVr (160656-160660, refs: 0)
-- 1*S ALMS.— AFFLICTIONS (176763-176828, refs: 0)
-- 1UJO (182507-182581, refs: 0)
-- 2. See ARTAXERXES (8542-8544, refs: 1)
-- 2. See (JKKSHON (72478-72482, refs: 0)
-- 3IICIIA. 1. See MICAII, 3 (143732-143735, refs: 1)
-- 41. See CALVARY; GETHSEMANE; OLIVES, (112225-112226, refs: 0)
-- 80x8 OF K»KAM, MASCIIIL, A SONO OF LOVKS (184101-184171, refs: 0)
-- 8AMECH (180442-180471, refs: 0)
-- A 1'SAI.M (185458-185494, refs: 0)
-- A/A/IOL (15559-15560, refs: 1)
-- A I'.-AI.M OF DAVID (177919-177951, refs: 0)
-- A I'.-AI.M or DAVID (174821-174942, refs: 0)
-- A I.I ELETH S H AH AR (8789-8793, refs: 0)
-- A I'SALM OF DAVID (179956-180033, refs: 0)
-- A II HAN (8588-8589, refs: 0)
-- A IONF..MKNT (14658-14669, refs: 0)
-- A IV. MM OF DAVID (181650-181719, refs: 0)
-- A KOI) I (13604-13604, refs: 1)
+- ABAGTHA (650-652, refs: 1)
+- ABAPH (185327-185397, refs: 0)
+- ABDA (661-662, refs: 1)
+- ABDEEL (663-665, refs: 0)
+- ABDI (666-667, refs: 1)
+- ABDIEL (668-669, refs: 1)
+- ABEL-SHITTIM (707-708, refs: 0)
+- ABETTING (709-710, refs: 0)
+- ABEZ (711-712, refs: 0)
+- ABIASAPH (729-731, refs: 0)
+- ABISHAG (880-882, refs: 1)
+- ABISHALOM (898-901, refs: 0)
+- ABIUD (915-916, refs: 1)
+- ACCAD (1344-1346, refs: 0)
+- ACCESSORY (1347-1348, refs: 0)
+- ACCOMPLICE (1352-1353, refs: 0)
+- ACCOUNTABILITY (1354-1354, refs: 0)
+- ACHAICUS (1440-1442, refs: 1)
+- ACHBOR (681-682, refs: 1)
+- ACHIM (1455-1455, refs: 1)

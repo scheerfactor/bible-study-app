@@ -27,19 +27,19 @@ function cleanTopicHeading(value) {
   return compactWhitespace(value)
     .replace(/\s+([,.;:])/g, "$1")
     .replace(/\s+-\s+/g, "-")
+    .replace(/[,.;:]+$/, "")
     .replace(/\.$/, "")
     .trim();
 }
 
-function isLikelyHeading(line) {
+function isLikelyStandaloneHeading(line) {
   const text = compactWhitespace(line);
-  if (!text || text.length < 3 || text.length > 90) return false;
+  if (!text || text.length < 3 || text.length > 70) return false;
   if (/^(THE TOPICAL BIBLE|NAVE'?S TOPICAL BIBLE|WEST|SOUTH|NORTH|EAST)$/i.test(text)) return false;
   if (/^\d+$/.test(text)) return false;
   if (/^[A-Z]\.?$/.test(text)) return false;
+  if (!/^[A-Z][A-Z '&()/-]+[.,]?$/.test(text)) return false;
   if (!/[A-Z]/.test(text)) return false;
-  if (/[a-z]{3,}/.test(text)) return false;
-  if (/[;:]\s*\d/.test(text)) return false;
 
   const letters = text.replace(/[^A-Za-z]/g, "");
   if (letters.length < 3) return false;
@@ -48,21 +48,21 @@ function isLikelyHeading(line) {
   const uppercaseRatio = uppercaseLetters / letters.length;
   if (uppercaseRatio < 0.78) return false;
 
-  return /[.,-]$/.test(text) || /^[A-Z0-9 .,'’()/-]+$/.test(text);
+  return /[.,]$/.test(text);
 }
 
 function headingAndRemainder(line) {
   const text = compactWhitespace(line);
 
-  const inlineMatch = text.match(/^([A-Z][A-Z0-9 .,'’()/-]{2,64}?)[.,]\s+(.+)$/);
-  if (inlineMatch && /[a-z]{3,}/.test(inlineMatch[2])) {
+  const inlineMatch = text.match(/^([A-Z][A-Z '&()/-]{2,48})[.,]\s+(.+)$/);
+  if (inlineMatch && !/^\d/.test(inlineMatch[1]) && inlineMatch[2].length >= 8) {
     return {
       heading: cleanTopicHeading(inlineMatch[1]),
       remainder: inlineMatch[2],
     };
   }
 
-  if (isLikelyHeading(line)) {
+  if (isLikelyStandaloneHeading(line)) {
     return {
       heading: cleanTopicHeading(text),
       remainder: "",
@@ -92,6 +92,13 @@ function flushTopic(topics, current, endLine) {
   const topic = cleanTopicHeading(current.topic);
   const normalizedTopic = normalizeTopic(topic);
   if (!normalizedTopic || body.length < 12) return;
+  if (/\d/.test(normalizedTopic)) return;
+
+  const topicTokens = normalizedTopic.split(" ");
+  if (topicTokens[0]?.length === 1) return;
+
+  const singleLetterTokens = topicTokens.filter((token) => token.length === 1).length;
+  if (topicTokens.length >= 3 && singleLetterTokens / topicTokens.length > 0.5) return;
 
   const references = extractReferences(`${topic} ${body}`);
   topics.push({
@@ -121,7 +128,10 @@ function parseNave(raw) {
     const text = compactWhitespace(line);
 
     if (lineNumber > 250000 && /^INDEX\.?$/i.test(text)) break;
-    if (!started && /^AARON[.,]/.test(text)) started = true;
+    if (!started && /^THE\s+TOPICAL\s+BIBLE\.?$/i.test(text)) {
+      started = true;
+      continue;
+    }
     if (!started) continue;
 
     const parsedHeading = headingAndRemainder(line);

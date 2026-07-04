@@ -31115,7 +31115,7 @@ function SearchScreen({
 
         <div className="mt-3 space-y-3">
           {dictionarySearchTerm.trim().length < 2 ? (
-            <p className="text-sm leading-6 text-[var(--muted)]">Search Webster&apos;s 1828 and Easton&apos;s Bible Dictionary entries.</p>
+            <p className="text-sm leading-6 text-[var(--muted)]">Search Webster&apos;s 1828, Easton&apos;s Bible Dictionary, and reviewed Nave&apos;s topical index records.</p>
           ) : dictionarySearchResults.length === 0 ? (
             <p className="text-sm leading-6 text-[var(--muted)]">{dictionarySearchStatus || "No dictionary entries found yet."}</p>
           ) : (
