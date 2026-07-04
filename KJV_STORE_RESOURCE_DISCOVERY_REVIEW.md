@@ -110,6 +110,11 @@ Do not use The KJV Store to:
 4. Prepare separate permission targets for modern controlled works: David W. Daniels, Doug Stauffer, Henry Morris, J. Vernon McGee, Chick Publications, Leadership Ministries, Northstar Ministries, and The Bible For Today.
 5. Use the categories above to improve app browsing shelves without importing retail content.
 
+Follow-up queues:
+
+- data/library/acquisition/kjv-store-permission-priority-queue.csv
+- data/library/acquisition/kjv-store-public-domain-alternatives.csv
+
 ## Guardrails
 
 - Retail availability does not equal app redistribution permission.
