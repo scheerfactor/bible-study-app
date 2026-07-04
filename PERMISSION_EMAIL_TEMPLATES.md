@@ -8,6 +8,8 @@ Send permission emails from:
 
 `hello@fathersbusinessmasteryresources.com`
 
+Keep first-contact requests narrow. Do not ask about AI summaries, AI search, vector indexing, TTS, or AI training in the first outreach unless that is the specific reason for the request. Track AI-specific permissions separately after a relationship is established.
+
 ## Sample Email
 
 Subject:
@@ -19,27 +21,31 @@ Body:
 ```text
 Hello,
 
-My name is Stephen Scheer, and I am building a Bible study app through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and serious students of Scripture.
+My name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first Bible study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
 
-I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY/PUBLISHER] inside the app.
+I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY/PUBLISHER] inside the platform.
+
+One goal of the platform is to introduce users to trusted Bible teachers and direct them to purchase resources through the author's or publisher's official website whenever possible.
 
 At this stage, we are not asking for broad catalog rights. We are asking about limited permission for specific approved titles, excerpts, links, or embedded audio/video where allowed.
 
 Possible use cases:
 - Listing the resource in a curated library
 - Linking to the official page
-- Displaying approved excerpts
+- Directing readers to the official ministry or publisher website whenever possible
+- Displaying excerpts only with prior written approval
 - Embedding approved audio/video
 - Future paid licensing discussion if needed
 
-The app is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
+The platform is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
 
 Please let us know:
 1. Which resources may be linked to
 2. Which resources may be quoted or excerpted
 3. Whether audio/video embedding is allowed
 4. Whether written permission or licensing is required
-5. The best contact person for future permissions
+5. Whether cover images or promotional graphics may be displayed with permission
+6. The best contact person for future permissions
 
 Thank you for your time and consideration.
 
@@ -60,27 +66,31 @@ Body:
 ```text
 Hello [NAME],
 
-My name is Stephen Scheer, and I am building a Bible study app through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and serious students of Scripture.
+My name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first Bible study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
 
-I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY] inside the app.
+I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY] inside the platform.
+
+One goal of the platform is to introduce users to trusted Bible teachers and direct them to purchase resources through the author's or publisher's official website whenever possible.
 
 At this stage, we are not asking for broad catalog rights. We are asking about limited permission for specific approved titles, excerpts, links, or embedded audio/video where allowed.
 
 Possible use cases:
 - Listing the resource in a curated library
 - Linking to the official page
-- Displaying approved excerpts
+- Directing readers to the official ministry or publisher website whenever possible
+- Displaying excerpts only with prior written approval
 - Embedding approved audio/video
 - Future paid licensing discussion if needed
 
-The app is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
+The platform is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
 
 Please let us know:
 1. Which resources may be linked to
 2. Which resources may be quoted or excerpted
 3. Whether audio/video embedding is allowed
 4. Whether written permission or licensing is required
-5. The best contact person for future permissions
+5. Whether cover images or promotional graphics may be displayed with permission
+6. The best contact person for future permissions
 
 Thank you for your time and consideration.
 
@@ -216,4 +226,3 @@ Father's Business Mastery Resources
 fathersbusinessmasteryresources.com
 hello@fathersbusinessmasteryresources.com
 ```
-
