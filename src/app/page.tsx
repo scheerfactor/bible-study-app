@@ -76,6 +76,8 @@ import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
+import audiobookPilotSeedData from "../../data/media/manifests/audiobook-pilots.json";
+import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candidates.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
@@ -1949,9 +1951,9 @@ const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
   "Do Not Publish",
 ];
 
-const EMPTY_MEDIA_INTAKE_RECORDS: MediaIntakeRecord[] = [];
-const EMPTY_AUDIOBOOK_PILOTS: AudiobookPilot[] = [];
 const EMPTY_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [];
+const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeSeedData as MediaIntakeRecord[];
+const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotSeedData as AudiobookPilot[];
 
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
   {
@@ -35063,7 +35065,9 @@ function MediaIntakeCenter({
               const pilot = audiobookPilotsByRecordId.get(record.id);
               const cleanupCount = pilot?.segments.filter((segment) => segment.status === "Cleanup Needed").length ?? 0;
               const readyToRecordCount = pilot?.segments.filter((segment) => segment.status === "Ready To Record").length ?? 0;
+              const plannedCount = pilot?.segments.filter((segment) => segment.status === "Planned").length ?? 0;
               const uploadedCount = pilot?.segments.filter((segment) => segment.status === "Uploaded" || segment.status === "Approved").length ?? 0;
+              const approvedCount = pilot?.segments.filter((segment) => segment.status === "Approved").length ?? 0;
               return (
                 <>
             <div className="flex flex-wrap items-start justify-between gap-3">
@@ -35149,11 +35153,13 @@ function MediaIntakeCenter({
                   </span>
                 </div>
 
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                <div className="mt-4 grid gap-3 sm:grid-cols-5">
                   {[
+                    ["Planned", plannedCount],
                     ["Cleanup needed", cleanupCount],
                     ["Ready to record", readyToRecordCount],
                     ["Uploaded/approved", uploadedCount],
+                    ["Approved", approvedCount],
                   ].map(([label, value]) => (
                     <div key={`audiobook-pilot-${pilot.id}-${label}`} className="rounded-2xl bg-white p-3">
                       <p className="text-xl font-semibold text-[var(--green)]">{value}</p>
@@ -35190,12 +35196,27 @@ function MediaIntakeCenter({
                   </div>
                 </div>
 
-                <div className="mt-3 grid gap-2 md:grid-cols-2">
+                <div className="mt-3 grid gap-2 md:grid-cols-3">
+                  <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--ink)]">Source:</span>{" "}
+                    <a className="font-semibold text-[var(--green)] underline-offset-4 hover:underline" href={pilot.sourceUrl} rel="noreferrer" target="_blank">
+                      Open catalog
+                    </a>
+                  </p>
+                  <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--ink)]">Rights:</span> {pilot.rightsEvidence}
+                  </p>
                   <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
                     <span className="font-semibold text-[var(--ink)]">Text cleanup:</span> {pilot.textCleanupStatus}
                   </p>
+                </div>
+
+                <div className="mt-3 grid gap-2 md:grid-cols-2">
                   <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
                     <span className="font-semibold text-[var(--ink)]">Public readiness:</span> {pilot.publicReadiness}
+                  </p>
+                  <p className="rounded-2xl bg-white p-3 text-sm leading-6 text-[var(--muted)]">
+                    <span className="font-semibold text-[var(--ink)]">No duplicate card rule:</span> Attach audio to the existing Library book card; do not publish a second audiobook-only resource for the same work.
                   </p>
                 </div>
               </section>
@@ -35734,9 +35755,9 @@ function LibraryAcquisitionCenter({
     loadAcquisitionStorage(LIBRARY_LICENSED_RIGHTS_KEY, EMPTY_LICENSED_RIGHTS_RECORDS),
   );
   const [mediaIntakeRecords, setMediaIntakeRecords] = useState<MediaIntakeRecord[]>(() =>
-    loadAcquisitionStorage(MEDIA_INTAKE_RECORDS_KEY, EMPTY_MEDIA_INTAKE_RECORDS),
+    loadAcquisitionStorage(MEDIA_INTAKE_RECORDS_KEY, DEFAULT_MEDIA_INTAKE_RECORDS),
   );
-  const [audiobookPilots, setAudiobookPilots] = useState<AudiobookPilot[]>(EMPTY_AUDIOBOOK_PILOTS);
+  const [audiobookPilots, setAudiobookPilots] = useState<AudiobookPilot[]>(DEFAULT_AUDIOBOOK_PILOTS);
 
   const libraryStats = useMemo(() => {
     const publicDomainBooks = books.filter((book) => book.copyrightStatus === "Public Domain" || book.copyrightStatus === "Likely Public Domain").length;
@@ -35804,9 +35825,11 @@ function LibraryAcquisitionCenter({
       setBooks(adminRecordsOfType<AcquisitionBookRecord>(rows, "book"));
       setRightsHolders(adminRecordsOfType<AcquisitionRightsHolderRecord>(rows, "rights_holder"));
       setRightsRecords(adminRecordsOfType<LicensedResourceRightsRecord>(rows, "licensed_rights"));
-      setMediaIntakeRecords(adminRecordsOfType<MediaIntakeRecord>(rows, "media_intake"));
-      setAudiobookPilots(adminRecordsOfType<AudiobookPilot>(rows, "audiobook_pilot"));
-      setAdminRecordStatus(rows.length ? `Loaded ${rows.length} private admin records from Supabase.` : "No private admin records are stored yet.");
+      const loadedMediaIntakeRecords = adminRecordsOfType<MediaIntakeRecord>(rows, "media_intake");
+      const loadedAudiobookPilots = adminRecordsOfType<AudiobookPilot>(rows, "audiobook_pilot");
+      setMediaIntakeRecords(loadedMediaIntakeRecords.length ? loadedMediaIntakeRecords : DEFAULT_MEDIA_INTAKE_RECORDS);
+      setAudiobookPilots(loadedAudiobookPilots.length ? loadedAudiobookPilots : DEFAULT_AUDIOBOOK_PILOTS);
+      setAdminRecordStatus(rows.length ? `Loaded ${rows.length} private admin records from Supabase.` : "Loaded starter media review records for this admin session.");
       setAdminRecordsLoaded(true);
       window.setTimeout(() => {
         adminRecordsHydratingRef.current = false;
