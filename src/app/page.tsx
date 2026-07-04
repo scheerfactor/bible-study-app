@@ -33210,11 +33210,14 @@ function LibraryScreen({
       </section>
 
       {licensedResourceLinks.length > 0 && (
-        <LibraryShelf title="Permission-Granted Resource Links" horizontal>
-          {licensedResourceLinks.map((resource) => (
-            <LicensedResourceLinkCard key={resource.id} resource={resource} />
-          ))}
-        </LibraryShelf>
+        <>
+          <LicensedMinistrySpotlight resources={licensedResourceLinks} />
+          <LibraryShelf title="Permission-Granted Resource Links" horizontal>
+            {licensedResourceLinks.map((resource) => (
+              <LicensedResourceLinkCard key={resource.id} resource={resource} />
+            ))}
+          </LibraryShelf>
+        </>
       )}
 
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
@@ -40156,6 +40159,46 @@ function LibraryMetricCard({ label, value, detail }: { label: string; value: str
   );
 }
 
+function LicensedMinistrySpotlight({ resources }: { resources: LicensedResourceLink[] }) {
+  const commentaryCount = resources.filter((resource) => resource.category === "Commentaries").length;
+  const kjvCount = resources.filter((resource) => resource.category === "KJV / Textual Issues").length;
+  const familyCount = resources.filter((resource) => resource.category === "Family").length;
+  const ministryCount = resources.filter((resource) => resource.category === "Pastoral Ministry" || resource.category === "Evangelism").length;
+
+  return (
+    <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+      <div className="grid gap-5 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Permissioned Ministry Resource</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Northstar Ministries · Dr. David H. Sorenson</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+            Northstar Ministries has granted permission to link to their resources, use excerpts, and display cover graphics. At this stage, users purchase or view resources through Northstar directly while the app builds title-level review and future licensing records.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Official links allowed</span>
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Excerpts allowed after review</span>
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Cover graphics allowed</span>
+          </div>
+          <div className="mt-5 grid gap-3 md:grid-cols-4">
+            <MiniStat label="Resources" value={String(resources.length)} />
+            <MiniStat label="Commentary" value={String(commentaryCount)} />
+            <MiniStat label="KJV Study" value={String(kjvCount)} />
+            <MiniStat label="Family/Ministry" value={String(familyCount + ministryCount)} />
+          </div>
+        </div>
+        <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-sm font-semibold text-[var(--ink)]">Current rights boundary</p>
+          <div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
+            <p>Users can open official Northstar pages from the Library.</p>
+            <p>No full copyrighted book text, audio, video, transcript, AI narration, or paid in-app access is hosted unless broader permission is granted later.</p>
+            <p>This is the right first step toward publisher-style relationships: start with trust, links, and reviewed excerpts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
@@ -40191,7 +40234,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           target="_blank"
         >
           <Link size={15} />
-          Open official page
+          View / buy at Northstar
         </a>
       </div>
     </article>
