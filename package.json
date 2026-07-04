@@ -38,6 +38,7 @@
     "validate:strongs": "node scripts/validate-strongs-entries.mjs",
     "validate:strongs-mapping": "node scripts/validate-kjv-strongs-mappings.mjs",
     "audit:strongs-gaps": "node scripts/audit-strongs-lexicon-gaps.mjs",
+    "audit:bible-tools": "node scripts/audit-bible-tool-coverage.mjs",
     "validate:study-sources": "node scripts/validate-study-tool-source-manifests.mjs",
     "validate:media": "node scripts/validate-media-manifest.mjs",
     "media:marker-review": "node scripts/create-bible-audio-marker-review.mjs",

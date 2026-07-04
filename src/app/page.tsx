@@ -8453,6 +8453,291 @@ const bookIntroductions: BookIntroduction[] = [
 ];
 
 const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "found">> = {
+  also: {
+    word: "also",
+    definition:
+      "In like manner; likewise; too; in addition to something already mentioned.",
+  },
+  every: {
+    word: "every",
+    definition:
+      "Each individual of a whole collection; each one of all; all taken separately.",
+  },
+  father: {
+    word: "father",
+    definition:
+      "A male parent. In Scripture, also used for an ancestor, founder, protector, ruler, instructor, or one who sustains a fatherly relation.",
+  },
+  have: {
+    word: "have",
+    definition:
+      "To possess; to hold in possession or power; to enjoy; to contain; also used as an auxiliary verb.",
+  },
+  one: {
+    word: "one",
+    definition:
+      "Single in number; individual; undivided; the same.",
+  },
+  say: {
+    word: "say",
+    definition:
+      "To utter or pronounce in words; to speak; to declare; to tell; to affirm.",
+  },
+  shall: {
+    word: "shall",
+    definition:
+      "An auxiliary verb used to express future action, command, promise, determination, or obligation according to context.",
+  },
+  speak: {
+    word: "speak",
+    definition:
+      "To utter words; to express thoughts by words; to declare or tell.",
+  },
+  there: {
+    word: "there",
+    definition:
+      "In that place; at that point; in that respect.",
+  },
+  thereof: {
+    word: "thereof",
+    definition:
+      "Of that; of it; from that; concerning that thing.",
+  },
+  thing: {
+    word: "thing",
+    definition:
+      "Whatever exists or is conceived to exist as a separate object; an event, act, matter, subject, or concern.",
+  },
+  upon: {
+    word: "upon",
+    definition:
+      "On; resting on the surface; in older English also used for against, concerning, or immediately after according to context.",
+  },
+  beget: {
+    word: "beget",
+    definition:
+      "To procreate; to generate; to produce as an effect.",
+  },
+  brother: {
+    word: "brother",
+    definition:
+      "A male born of the same parents, or of one parent; also one closely united by affection, fellowship, nation, office, or faith.",
+  },
+  cast: {
+    word: "cast",
+    definition:
+      "To throw; to fling; to send or drive by force; to put, place, or turn.",
+  },
+  dwell: {
+    word: "dwell",
+    definition:
+      "To abide as a permanent resident; to inhabit; to live in a place; to continue.",
+  },
+  none: {
+    word: "none",
+    definition:
+      "Not one; not any; no person or thing.",
+  },
+  nor: {
+    word: "nor",
+    definition:
+      "A negative connective; and not; used after neither or another negative.",
+  },
+  other: {
+    word: "other",
+    definition:
+      "Not the same; different; additional; the remaining one of two or more.",
+  },
+  shew: {
+    word: "shew",
+    definition:
+      "Older spelling of show; to exhibit to view; to make known; to declare; to prove.",
+  },
+  should: {
+    word: "should",
+    definition:
+      "Used to express duty, obligation, fitness, condition, expectation, or future action from a past point of view.",
+  },
+  sure: {
+    word: "sure",
+    definition:
+      "Certain; firm; stable; not liable to fail; worthy of confidence.",
+  },
+  take: {
+    word: "take",
+    definition:
+      "To receive; to seize; to lay hold of; to get into possession; to accept; to choose.",
+  },
+  thus: {
+    word: "thus",
+    definition:
+      "In this manner; in this way; to this degree or extent.",
+  },
+  two: {
+    word: "two",
+    definition:
+      "One and one; twice one; the number next after one.",
+  },
+  until: {
+    word: "until",
+    definition:
+      "To; unto; as far as; before the time that; up to the time when.",
+  },
+  where: {
+    word: "where",
+    definition:
+      "At which place; in what place; to what place; in which respect.",
+  },
+  whom: {
+    word: "whom",
+    definition:
+      "The objective case of who; used of persons as the object of a verb or preposition.",
+  },
+  why: {
+    word: "why",
+    definition:
+      "For what reason or cause; on what account.",
+  },
+  yea: {
+    word: "yea",
+    definition:
+      "Yes; truly; certainly; used to affirm, intensify, or introduce a stronger statement.",
+  },
+  certain: {
+    word: "certain",
+    definition:
+      "Sure; true; fixed; settled; not doubtful. Sometimes used for some particular person or thing not named.",
+  },
+  commandment: {
+    word: "commandment",
+    definition:
+      "A command; an order or precept given by authority, especially a divine precept.",
+  },
+  forty: {
+    word: "forty",
+    definition:
+      "Four times ten; the number next after thirty-nine.",
+  },
+  honour: {
+    word: "honour",
+    definition:
+      "Dignity; reputation; esteem; reverence. As a verb, to revere, respect, or treat with due esteem.",
+  },
+  labour: {
+    word: "labour",
+    definition:
+      "Exertion of body or mind; toil; work. As a verb, to work or exert one's powers.",
+  },
+  neighbour: {
+    word: "neighbour",
+    definition:
+      "One who lives near another; in Scripture and moral use, a fellow man whom we are bound to regard with kindness.",
+  },
+  remnant: {
+    word: "remnant",
+    definition:
+      "That which is left after a part is removed, destroyed, or used; a residue; the remainder.",
+  },
+  sake: {
+    word: "sake",
+    definition:
+      "Cause; account; regard; purpose; end. Used chiefly in phrases such as for the sake of.",
+  },
+  thence: {
+    word: "thence",
+    definition:
+      "From that place; from that time; from that source.",
+  },
+  therein: {
+    word: "therein",
+    definition:
+      "In that; in that place, thing, matter, or respect.",
+  },
+  thither: {
+    word: "thither",
+    definition:
+      "To that place; toward that place.",
+  },
+  threescore: {
+    word: "threescore",
+    definition:
+      "Three times twenty; sixty.",
+  },
+  whither: {
+    word: "whither",
+    definition:
+      "To what place; to which place; to what point or end.",
+  },
+  woe: {
+    word: "woe",
+    definition:
+      "Grief; sorrow; misery; calamity. Also used as an exclamation of grief or warning.",
+  },
+  that: {
+    word: "that",
+    definition:
+      "Used to point out a person, thing, or matter; also used as a connective introducing a clause.",
+  },
+  will: {
+    word: "will",
+    definition:
+      "Choice; purpose; determination; desire. As a verb or auxiliary, used of intention, command, promise, or future action.",
+  },
+  self: {
+    word: "self",
+    definition:
+      "One's own person; the individual considered as the subject of his own consciousness or action.",
+  },
+  die: {
+    word: "die",
+    definition:
+      "To cease to live; to expire; to perish; in Scripture also used of spiritual death or dying to sin.",
+  },
+  slay: {
+    word: "slay",
+    definition:
+      "To kill; to put to death; to destroy life.",
+  },
+  begin: {
+    word: "begin",
+    definition:
+      "To do the first act; to enter upon something new; to commence.",
+  },
+  arise: {
+    word: "arise",
+    definition:
+      "To rise; to get up; to spring up; to come into action or notice.",
+  },
+  carry: {
+    word: "carry",
+    definition:
+      "To bear; to convey; to transport; to take from one place to another.",
+  },
+  go: {
+    word: "go",
+    definition:
+      "To move from one place to another; to depart; to proceed; to walk or travel.",
+  },
+  bury: {
+    word: "bury",
+    definition:
+      "To put into a grave; to cover in the earth; to hide or conceal.",
+  },
+  ox: {
+    word: "ox",
+    definition:
+      "The male of the bovine kind; commonly used for labor and sacrifice in Scripture.",
+  },
+  commit: {
+    word: "commit",
+    definition:
+      "To give in trust; to put into the hands or power of another; to do or perpetrate.",
+  },
+  draw: {
+    word: "draw",
+    definition:
+      "To pull; to attract; to bring or lead; to take out or derive.",
+  },
   believe: {
     word: "believe",
     definition:
@@ -8641,6 +8926,55 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
 };
 
 const dictionaryAliases: Record<string, string> = {
+  hath: "have",
+  hast: "have",
+  hadst: "have",
+  having: "have",
+  shalt: "shall",
+  saith: "say",
+  saidst: "say",
+  saying: "say",
+  sayings: "say",
+  spake: "speak",
+  speaketh: "speak",
+  speakest: "speak",
+  speaking: "speak",
+  spoken: "speak",
+  things: "thing",
+  fathers: "father",
+  did: "do",
+  brethren: "brother",
+  begat: "beget",
+  begotten: "beget",
+  dwelt: "dwell",
+  dwelleth: "dwell",
+  dwelling: "dwell",
+  should: "should",
+  shouldest: "should",
+  surely: "sure",
+  taken: "take",
+  took: "take",
+  taketh: "take",
+  taking: "take",
+  shewed: "shew",
+  sheweth: "shew",
+  shewing: "shew",
+  those: "that",
+  would: "will",
+  known: "know",
+  thyself: "self",
+  yourselves: "self",
+  died: "die",
+  slew: "slay",
+  began: "begin",
+  arose: "arise",
+  carried: "carry",
+  goeth: "go",
+  sinned: "sin",
+  buried: "bury",
+  oxen: "ox",
+  committed: "commit",
+  drew: "draw",
   believest: "believe",
   believeth: "believe",
   believed: "believe",
@@ -8677,7 +9011,6 @@ const dictionaryAliases: Record<string, string> = {
   prophesied: "prophecy",
   visions: "vision",
   charity: "charity",
-  did: "do",
   doeth: "do",
   doth: "do",
   done: "do",

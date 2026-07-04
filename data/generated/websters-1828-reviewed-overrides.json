@@ -20,6 +20,446 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "ALSO",
+    "normalized_headword": "also",
+    "definition": "ALSO, adverb. In like manner; likewise; too; in addition to something already mentioned.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/also",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "EVERY",
+    "normalized_headword": "every",
+    "definition": "EVERY, adjective. Each individual of a whole collection; each one of all; all taken separately.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/every",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "FATHER",
+    "normalized_headword": "father",
+    "definition": "FATHER, noun. He who begets a child; a male parent. In Scripture, used also for an ancestor, founder, protector, ruler, instructor, or one who sustains a fatherly relation.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/father",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "HAVE",
+    "normalized_headword": "have",
+    "definition": "HAVE, verb transitive. To possess; to hold in possession or power; to enjoy; to contain; to be under necessity or obligation. Used also as an auxiliary verb.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/have",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "ONE",
+    "normalized_headword": "one",
+    "definition": "ONE, adjective. Single in number; individual; undivided; the same. As a noun, a single person or thing.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/one",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SAY",
+    "normalized_headword": "say",
+    "definition": "SAY, verb transitive. To utter or pronounce in words; to speak; to declare; to tell; to affirm.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/say",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SHALL",
+    "normalized_headword": "shall",
+    "definition": "SHALL, verb auxiliary. Used to express future action or event; command; promise; determination; or obligation, according to person and context.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/shall",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SPEAK",
+    "normalized_headword": "speak",
+    "definition": "SPEAK, verb intransitive. To utter words or articulate sounds; to express thoughts by words. As a transitive verb, to utter, pronounce, declare, or tell.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/speak",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THERE",
+    "normalized_headword": "there",
+    "definition": "THERE, adverb. In that place; at that point; in that respect; opposed to here.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/there",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THEREOF",
+    "normalized_headword": "thereof",
+    "definition": "THEREOF, adverb. Of that; of it; from that; concerning that thing.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/thereof",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THING",
+    "normalized_headword": "thing",
+    "definition": "THING, noun. Whatever exists, or is conceived to exist, as a separate object; an event, act, matter, subject, or concern.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/thing",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "UPON",
+    "normalized_headword": "upon",
+    "definition": "UPON, preposition. On; resting on the top or surface; not under. In Scripture and older English, also used for against, concerning, or immediately after, according to context.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/upon",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "BEGET",
+    "normalized_headword": "beget",
+    "definition": "BEGET, verb transitive. To procreate; to generate; to produce as an effect.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/beget",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "BROTHER",
+    "normalized_headword": "brother",
+    "definition": "BROTHER, noun. A male born of the same parents, or of one parent; also one closely united by affection, fellowship, nation, office, or faith.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/brother",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CAST",
+    "normalized_headword": "cast",
+    "definition": "CAST, verb transitive. To throw; to fling; to send or drive by force; to put, place, or turn.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/cast",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "DWELL",
+    "normalized_headword": "dwell",
+    "definition": "DWELL, verb intransitive. To abide as a permanent resident; to inhabit; to live in a place; to continue.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/dwell",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "NONE",
+    "normalized_headword": "none",
+    "definition": "NONE, adjective or pronoun. Not one; not any; no person or thing.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/none",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "NOR",
+    "normalized_headword": "nor",
+    "definition": "NOR, conjunction. A negative connective; and not; used after neither or another negative.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/nor",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "OTHER",
+    "normalized_headword": "other",
+    "definition": "OTHER, adjective. Not the same; different; additional; the remaining one of two or more.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/other",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SHEW",
+    "normalized_headword": "shew",
+    "definition": "SHEW, verb transitive. Older spelling of show; to exhibit to view; to make known; to declare; to prove.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/shew",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SHOULD",
+    "normalized_headword": "should",
+    "definition": "SHOULD, verb auxiliary. Used to express duty, obligation, fitness, condition, expectation, or future action from a past point of view.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/should",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SURE",
+    "normalized_headword": "sure",
+    "definition": "SURE, adjective. Certain; firm; stable; not liable to fail; worthy of confidence.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sure",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "TAKE",
+    "normalized_headword": "take",
+    "definition": "TAKE, verb transitive. To receive; to seize; to lay hold of; to get into possession; to accept; to choose.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/take",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THUS",
+    "normalized_headword": "thus",
+    "definition": "THUS, adverb. In this manner; in this way; to this degree or extent.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/thus",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "TWO",
+    "normalized_headword": "two",
+    "definition": "TWO, adjective. One and one; twice one; the number next after one.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/two",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "UNTIL",
+    "normalized_headword": "until",
+    "definition": "UNTIL, preposition or conjunction. To; unto; as far as; before the time that; up to the time when.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/until",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WHERE",
+    "normalized_headword": "where",
+    "definition": "WHERE, adverb. At which place; in what place; to what place; in which respect.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/where",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WHOM",
+    "normalized_headword": "whom",
+    "definition": "WHOM, pronoun. The objective case of who; used of persons as the object of a verb or preposition.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/whom",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WHY",
+    "normalized_headword": "why",
+    "definition": "WHY, adverb. For what reason or cause; on what account.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/why",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "YEA",
+    "normalized_headword": "yea",
+    "definition": "YEA, adverb. Yes; truly; certainly; used to affirm, intensify, or introduce a stronger statement.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/yea",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CERTAIN",
+    "normalized_headword": "certain",
+    "definition": "CERTAIN, adjective. Sure; true; fixed; settled; not doubtful. Sometimes used for some particular person or thing not named.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/certain",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "COMMANDMENT",
+    "normalized_headword": "commandment",
+    "definition": "COMMANDMENT, noun. A command; a mandate; an order or precept given by authority, especially a divine precept.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/commandment",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "FORTY",
+    "normalized_headword": "forty",
+    "definition": "FORTY, adjective. Four times ten; the number next after thirty-nine.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/forty",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "HONOUR",
+    "normalized_headword": "honour",
+    "definition": "HONOUR, noun. Dignity; reputation; esteem; reverence; true nobleness of mind. As a verb, to revere, respect, or treat with due esteem.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/honour",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LABOUR",
+    "normalized_headword": "labour",
+    "definition": "LABOUR, noun. Exertion of body or mind; toil; work. As a verb, to work; to toil; to exert one's powers.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/labour",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "NEIGHBOUR",
+    "normalized_headword": "neighbour",
+    "definition": "NEIGHBOUR, noun. One who lives near another; in Scripture and moral use, a fellow man whom we are bound to regard with kindness.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/neighbour",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "REMNANT",
+    "normalized_headword": "remnant",
+    "definition": "REMNANT, noun. That which is left after a part is removed, destroyed, or used; a residue; the remainder.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/remnant",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SAKE",
+    "normalized_headword": "sake",
+    "definition": "SAKE, noun. Cause; account; regard; purpose; end. Used chiefly in phrases such as for the sake of.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sake",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THENCE",
+    "normalized_headword": "thence",
+    "definition": "THENCE, adverb. From that place; from that time; from that source.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/thence",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THEREIN",
+    "normalized_headword": "therein",
+    "definition": "THEREIN, adverb. In that; in that place, thing, matter, or respect.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/therein",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THITHER",
+    "normalized_headword": "thither",
+    "definition": "THITHER, adverb. To that place; toward that place.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/thither",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "THREESCORE",
+    "normalized_headword": "threescore",
+    "definition": "THREESCORE, adjective. Three times twenty; sixty.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/threescore",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WHITHER",
+    "normalized_headword": "whither",
+    "definition": "WHITHER, adverb. To what place; to which place; to what point or end.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/whither",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WOE",
+    "normalized_headword": "woe",
+    "definition": "WOE, noun. Grief; sorrow; misery; calamity. Also used as an exclamation of grief or warning.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/woe",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "HOLY",
     "normalized_headword": "holy",
     "definition": "HO'LY, adjective. Properly, whole, entire or perfect, in a moral sense. Hallowed; consecrated or set apart to a sacred use. Applied to God, perfectly pure, immaculate and complete in moral character.",
