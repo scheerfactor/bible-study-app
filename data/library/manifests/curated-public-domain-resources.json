@@ -3451,7 +3451,7 @@
   {
     "title": "Religious Life of Virginia in the Seventeenth Century: The Faith of Our Fathers",
     "author": "Brydon, G. MacLaren (George MacLaren)",
-    "year": 2009,
+    "year": 1919,
     "category": "Christian Living",
     "source_url": "https://www.gutenberg.org/ebooks/28634",
     "download_url": "https://www.gutenberg.org/ebooks/28634.txt.utf-8",
@@ -60850,5 +60850,51 @@
     "checksum_sha256": "58eb16b9896de06a65a29ddeffee6b72af5dde580cfab346e0a1a25c479143e9",
     "file_size_bytes": 812049,
     "word_count": 141007
+  },
+  {
+    "title": "Why I Preach the Second Coming",
+    "author": "Isaac Massey Haldeman",
+    "year": 2009,
+    "category": "Bible study helps",
+    "collection": "Prophecy and Second Coming",
+    "source_url": "https://www.gutenberg.org/ebooks/30573",
+    "download_url": "https://www.gutenberg.org/ebooks/30573.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/why-i-preach-the-second-coming-isaac-massey-haldeman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified. Source reviewed from https://www.gutenberg.org/ebooks/30573.",
+    "notes": "Public-domain prophecy and Second Coming study for pastors, teachers, and serious Bible students. Useful for doctrine and sermon preparation with Berean review. Labels/warnings: Historical value; Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prophecy and Second Coming study for pastors, teachers, and serious Bible students. Useful for doctrine and sermon preparation with Berean review.",
+    "resource_labels": [
+      "Prophecy and Second Coming",
+      "Historical value",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical value",
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Why I Preach the Second Coming",
+      "author": "Isaac Massey Haldeman",
+      "category": "Bible study helps",
+      "collection": "Prophecy and Second Coming",
+      "badge": "Prophecy and Second Coming",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 133,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "58ab59fc957032e1ddde33e2a17859560bc65545104eac1060207eeb341b9a9e",
+    "file_size_bytes": 167253,
+    "word_count": 29821
   }
 ]

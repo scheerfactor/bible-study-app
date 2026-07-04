@@ -14,7 +14,7 @@ This queue is for the next content pass after the permission emails. It is not a
 
 | Title | Author | Source | Rights Evidence | Duplicate Status | Next Action |
 | --- | --- | --- | --- | --- | --- |
-| Why I Preach the Second Coming | Isaac Massey Haldeman | Project Gutenberg `https://www.gutenberg.org/ebooks/30573` | Project Gutenberg lists the ebook as public domain in the USA. | Not found in current title/author check | Add to the next small import batch after doctrinal/source review. |
+| Why I Preach the Second Coming | Isaac Massey Haldeman | Project Gutenberg `https://www.gutenberg.org/ebooks/30573` | Project Gutenberg lists the ebook as public domain in the USA. | Not found in current title/author check | Imported 2026-07-04 as a verified public-domain Library resource. |
 
 ## Immediate Audio Candidates
 
@@ -46,10 +46,10 @@ Do not start with broad new commentary sets until the existing review backlog is
 
 Recommended first batch:
 
-1. Add `Why I Preach the Second Coming` as a small book import candidate.
-2. Add audiobook metadata for `How to Pray`.
-3. Add audiobook metadata for `Around the Wicket Gate`.
-4. Add audiobook metadata for `With Christ in the School of Prayer`.
-5. Add sermon-audio metadata for `Spurgeon's Sermons May 1858`.
+1. Attach audiobook metadata for `How to Pray`.
+2. Add audiobook metadata for `Around the Wicket Gate`.
+3. Add audiobook metadata for `With Christ in the School of Prayer`.
+4. Add sermon-audio metadata for `Spurgeon's Sermons May 1858`.
+5. Continue one small verified book import at a time after duplicate and source checks.
 
 This gives one book, three audiobooks, and one sermon-series pilot without bloating the app or duplicating visible resource cards.

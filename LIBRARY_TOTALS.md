@@ -4,13 +4,21 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,379
+- Verified public Library resources: 1,380
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
-- Commentary validation rows checked, including staging/review files: 13,300
+- Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 500
+- Library authors represented: 501
 - Public Library duplicate title/author groups: 0
+
+## Latest Public-Domain Book Import
+
+Added 1 verified public-domain Library resource from Project Gutenberg:
+
+- `Why I Preach the Second Coming` - Isaac Massey Haldeman, 1919
+
+The import is filed under `Bible study helps` and `Prophecy and Second Coming`, with historical/use-with-discernment labels, source URL and rights notes preserved, 29,821 words, and an estimated 133 minutes of reading time.
 
 ## Latest Wesley Parser Recovery Sprint
 
@@ -770,9 +778,10 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,302 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed.
-- `npm run validate:commentary`: 94 commentary/review files validated, 7,666 rows checked.
+- `npm run library:qa`: 1,380 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,380 verified resources.
+- `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
+- `npm run validate:strongs`: 14,288 entries checked across 8 files.
 
 ## Next Growth Rule
 
