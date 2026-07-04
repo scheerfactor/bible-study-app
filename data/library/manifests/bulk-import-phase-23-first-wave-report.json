@@ -1,0 +1,365 @@
+{
+  "source_csv": "data/library/bulk-import-phase-23-first-wave.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 23,
+  "total_attempted": 23,
+  "imported": 22,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 1,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Hebrew Monarchy (An Interpretation of the English Bible)",
+      "file": "the-hebrew-monarchy-an-interpretation-of-the-english-bible-b-h-carroll.txt",
+      "bytes": 608071,
+      "words": 106091,
+      "reading_time_minutes": 472
+    },
+    {
+      "title": "Baptists And Their Doctrines",
+      "file": "baptists-and-their-doctrines-b-h-carroll.txt",
+      "bytes": 295570,
+      "words": 50420,
+      "reading_time_minutes": 224
+    },
+    {
+      "title": "The Genesis of American Anti-Missionism",
+      "file": "the-genesis-of-american-anti-missionism-b-h-carroll-jr.txt",
+      "bytes": 373603,
+      "words": 61557,
+      "reading_time_minutes": 274
+    },
+    {
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra191exel)",
+      "file": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor.txt",
+      "bytes": 3241896,
+      "words": 504752,
+      "reading_time_minutes": 2243
+    },
+    {
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra451exel)",
+      "file": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-2.txt",
+      "bytes": 4465453,
+      "words": 701880,
+      "reading_time_minutes": 3119
+    },
+    {
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra282exel)",
+      "file": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-3.txt",
+      "bytes": 3509243,
+      "words": 540216,
+      "reading_time_minutes": 2401
+    },
+    {
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra233exel)",
+      "file": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-4.txt",
+      "bytes": 2979481,
+      "words": 463435,
+      "reading_time_minutes": 2060
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104564)",
+      "file": "the-pulpit-commentary-cu31924101104564-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3420099,
+      "words": 528054,
+      "reading_time_minutes": 2347
+    },
+    {
+      "title": "The pulpit commentary (thepulpitcomment09spenuoft)",
+      "file": "the-pulpit-commentary-thepulpitcomment09spenuoft-spence-jones-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3290818,
+      "words": 500873,
+      "reading_time_minutes": 2226
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104952)",
+      "file": "the-pulpit-commentary-cu31924101104952-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3574862,
+      "words": 611286,
+      "reading_time_minutes": 2717
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104895)",
+      "file": "the-pulpit-commentary-cu31924101104895-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3582608,
+      "words": 556364,
+      "reading_time_minutes": 2473
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet32newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet32newy-various.txt",
+      "bytes": 1072895,
+      "words": 157301,
+      "reading_time_minutes": 699
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet22newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet22newy-various.txt",
+      "bytes": 3201703,
+      "words": 495985,
+      "reading_time_minutes": 2204
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet02newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various.txt",
+      "bytes": 3013174,
+      "words": 456424,
+      "reading_time_minutes": 2029
+    },
+    {
+      "title": "Christian baptism (illustrated) [microform] : its proper subjects and proper act, with a brief history of Baptist principles and practices, from the planting of the Apostolic Church to the present time; also a biographical sketch of the life and labors of Rev. Charles Haddon Spurgeon, Pastor of the Metropolitan Tabernacle, London, England",
+      "file": "christian-baptism-illustrated-microform-its-proper-subjects-and-proper-act-with-a-brief-history-of-baptist-pri.txt",
+      "bytes": 319399,
+      "words": 54726,
+      "reading_time_minutes": 243
+    },
+    {
+      "title": "Charles H. Spurgeon",
+      "file": "charles-h-spurgeon-wayland-h-l-heman-lincoln-1830-1898-american-baptist-publication-society.txt",
+      "bytes": 585460,
+      "words": 89618,
+      "reading_time_minutes": 398
+    },
+    {
+      "title": "A history of American Baptist missions",
+      "file": "a-history-of-american-baptist-missions-merriam-edmund-franklin-1847-1930.txt",
+      "bytes": 481173,
+      "words": 69141,
+      "reading_time_minutes": 307
+    },
+    {
+      "title": "A short history of Baptist missions [microform]",
+      "file": "a-short-history-of-baptist-missions-microform-vedder-henry-c-henry-clay-1853-1935.txt",
+      "bytes": 1052784,
+      "words": 173264,
+      "reading_time_minutes": 770
+    },
+    {
+      "title": "notes on philippians",
+      "file": "notes-on-philippians-h-a-ironside.txt",
+      "bytes": 168134,
+      "words": 29339,
+      "reading_time_minutes": 130
+    },
+    {
+      "title": "THE PROPHET JOEL",
+      "file": "the-prophet-joel-a-c-gaebelein.txt",
+      "bytes": 244534,
+      "words": 42934,
+      "reading_time_minutes": 191
+    },
+    {
+      "title": "The Bible word-book : a glossary of archaic words and phrases in the authorized version of the Bible and the Book of Common Prayer",
+      "file": "the-bible-word-book-a-glossary-of-archaic-words-and-phrases-in-the-authorized-version-of-the-bible-and-the-boo.txt",
+      "bytes": 1551356,
+      "words": 235617,
+      "reading_time_minutes": 1047
+    },
+    {
+      "title": "Annotations Upon The Holy Bible Vol. 1",
+      "file": "annotations-upon-the-holy-bible-vol-1-pool-matthew.txt",
+      "bytes": 6534908,
+      "words": 1325342,
+      "reading_time_minutes": 5890
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Hebrew Monarchy (An Interpretation of the English Bible)",
+      "author": "B. H. Carroll",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-hebrew-monarchy-an-interpretation-of-the-english-bible-b-h-carroll.txt"
+    },
+    {
+      "row": 3,
+      "title": "Baptists And Their Doctrines",
+      "author": "B. H. Carroll",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/baptists-and-their-doctrines-b-h-carroll.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Genesis of American Anti-Missionism",
+      "author": "B. H. Carroll, Jr.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-genesis-of-american-anti-missionism-b-h-carroll-jr.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra191exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra451exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-2.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra282exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-3.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra233exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-4.txt"
+    },
+    {
+      "row": 9,
+      "title": "The pulpit commentary (cu31924101104564)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104564-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 10,
+      "title": "The pulpit commentary (thepulpitcomment09spenuoft)",
+      "author": "Spence-Jones, Henry Donald Maurice, 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-thepulpitcomment09spenuoft-spence-jones-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 11,
+      "title": "The pulpit commentary (cu31924101104952)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104952-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 12,
+      "title": "The pulpit commentary (cu31924101104895)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104895-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet32newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet32newy-various.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet22newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet22newy-various.txt"
+    },
+    {
+      "row": 15,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet30newy)",
+      "author": "Various",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/preacherscomplet30newy/preacherscomplet30newy_djvu.txt"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet02newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various.txt"
+    },
+    {
+      "row": 17,
+      "title": "Christian baptism (illustrated) [microform] : its proper subjects and proper act, with a brief history of Baptist principles and practices, from the planting of the Apostolic Church to the present time; also a biographical sketch of the life and labors of Rev. Charles Haddon Spurgeon, Pastor of the Metropolitan Tabernacle, London, England",
+      "author": "Carey, T. H",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christian-baptism-illustrated-microform-its-proper-subjects-and-proper-act-with-a-brief-history-of-baptist-pri.txt"
+    },
+    {
+      "row": 18,
+      "title": "Charles H. Spurgeon",
+      "author": "Wayland, H. L. (Heman Lincoln), 1830-1898; American Baptist Publication Society",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/charles-h-spurgeon-wayland-h-l-heman-lincoln-1830-1898-american-baptist-publication-society.txt"
+    },
+    {
+      "row": 19,
+      "title": "A history of American Baptist missions",
+      "author": "Merriam, Edmund Franklin, 1847-1930",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-history-of-american-baptist-missions-merriam-edmund-franklin-1847-1930.txt"
+    },
+    {
+      "row": 20,
+      "title": "A short history of Baptist missions [microform]",
+      "author": "Vedder, Henry C. (Henry Clay), 1853-1935",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-short-history-of-baptist-missions-microform-vedder-henry-c-henry-clay-1853-1935.txt"
+    },
+    {
+      "row": 21,
+      "title": "notes on philippians",
+      "author": "h. a. ironside",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/notes-on-philippians-h-a-ironside.txt"
+    },
+    {
+      "row": 22,
+      "title": "THE PROPHET JOEL",
+      "author": "A. C. GAEBELEIN",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-prophet-joel-a-c-gaebelein.txt"
+    },
+    {
+      "row": 23,
+      "title": "The Bible word-book : a glossary of archaic words and phrases in the authorized version of the Bible and the Book of Common Prayer",
+      "author": "Wright, William Aldis, 1831-1914",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-bible-word-book-a-glossary-of-archaic-words-and-phrases-in-the-authorized-version-of-the-bible-and-the-boo.txt"
+    },
+    {
+      "row": 24,
+      "title": "Annotations Upon The Holy Bible Vol. 1",
+      "author": "Pool, Matthew",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/annotations-upon-the-holy-bible-vol-1-pool-matthew.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

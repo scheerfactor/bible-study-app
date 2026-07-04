@@ -4,15 +4,32 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,381
+- Verified public Library resources: 1,403
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 501
+- Library authors represented: 515
 - Public Library duplicate title/author groups: 0
 
-## Latest Public-Domain Book Import
+## Latest Public-Domain Resource Import
+
+Added 22 verified public-domain Library resources from Internet Archive:
+
+- 4 Biblical Illustrator volumes
+- 4 Pulpit Commentary volumes
+- 3 Preacher's Complete Homiletical Commentary volumes
+- 3 B. H. Carroll resources
+- 2 Spurgeon/Baptist history resources
+- 2 Baptist missions resources
+- 1 H. A. Ironside resource
+- 1 A. C. Gaebelein resource
+- 1 Matthew Poole annotation volume
+- 1 KJV / English Bible word-book resource
+
+Also created a 315-row reviewed public-domain acquisition queue for future import waves, focused on Pulpit Commentary, Biblical Illustrator, Preacher's Homiletical Commentary, KJV / English Bible history, Spurgeon, Baptist history, Ironside, Gaebelein, missions, prayer, and Christian living. These queued resources remain staged for review/import; they are not all public Library resources yet.
+
+## Previous Public-Domain Book Import
 
 Added 1 verified public-domain Library resource from Internet Archive:
 
