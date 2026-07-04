@@ -21,7 +21,7 @@ Body:
 ```text
 Hello,
 
-My name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first Bible study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
+My name is Stephen Scheer, and I am building the Father's Business Bible Study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
 
 I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY/PUBLISHER] inside the platform.
 
@@ -31,21 +31,24 @@ At this stage, we are not asking for broad catalog rights. We are asking about l
 
 Possible use cases:
 - Listing the resource in a curated library
-- Linking to the official page
-- Directing readers to the official ministry or publisher website whenever possible
+- Listing selected resources with links directing users to your official ministry or publisher website
 - Displaying excerpts only with prior written approval
 - Embedding approved audio/video
 - Future paid licensing discussion if needed
+
+No copyrighted content would be reproduced, distributed, or hosted without your prior written permission.
 
 The platform is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
 
 Please let us know:
 1. Which resources may be linked to
-2. Which resources may be quoted or excerpted
-3. Whether audio/video embedding is allowed
-4. Whether written permission or licensing is required
-5. Whether cover images or promotional graphics may be displayed with permission
+2. Whether cover images or promotional graphics may be displayed with permission
+3. Which resources may be quoted or excerpted
+4. Whether audio/video embedding is allowed
+5. Whether written permission or licensing is required
 6. The best contact person for future permissions
+
+I appreciate your ministry and the many people it has helped over the years.
 
 Thank you for your time and consideration.
 
@@ -66,7 +69,7 @@ Body:
 ```text
 Hello [NAME],
 
-My name is Stephen Scheer, and I am building Father's Business Bible Study, a Scripture-first Bible study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
+My name is Stephen Scheer, and I am building the Father's Business Bible Study platform through Father's Business Mastery Resources. The goal is to provide carefully curated Bible study helps for readers, Sunday school teachers, pastors, and Bible students.
 
 I am writing to ask whether we may receive permission to include or link to selected resources from [AUTHOR/MINISTRY] inside the platform.
 
@@ -76,21 +79,24 @@ At this stage, we are not asking for broad catalog rights. We are asking about l
 
 Possible use cases:
 - Listing the resource in a curated library
-- Linking to the official page
-- Directing readers to the official ministry or publisher website whenever possible
+- Listing selected resources with links directing users to your official ministry or publisher website
 - Displaying excerpts only with prior written approval
 - Embedding approved audio/video
 - Future paid licensing discussion if needed
+
+No copyrighted content would be reproduced, distributed, or hosted without your prior written permission.
 
 The platform is currently being built with a conservative Bible-believing audience in mind, with a strong emphasis on the King James Bible, sound doctrine, and practical Bible study.
 
 Please let us know:
 1. Which resources may be linked to
-2. Which resources may be quoted or excerpted
-3. Whether audio/video embedding is allowed
-4. Whether written permission or licensing is required
-5. Whether cover images or promotional graphics may be displayed with permission
+2. Whether cover images or promotional graphics may be displayed with permission
+3. Which resources may be quoted or excerpted
+4. Whether audio/video embedding is allowed
+5. Whether written permission or licensing is required
 6. The best contact person for future permissions
+
+I appreciate your ministry and the many people it has helped over the years.
 
 Thank you for your time and consideration.
 
