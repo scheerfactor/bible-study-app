@@ -31246,6 +31246,26 @@ function libraryResourceMatchesAllTerms(resource: LibraryResource, terms: string
   return terms.every((term) => haystack.includes(term));
 }
 
+function licensedResourceLinkMatchesAllTerms(resource: LicensedResourceLink, terms: string[]) {
+  const haystack = [
+    resource.id,
+    resource.title,
+    resource.author,
+    resource.publisherMinistry,
+    resource.category,
+    resource.collection,
+    resource.permissionStatus,
+    resource.reviewStatus,
+    resource.recommendedUse,
+    resource.notes,
+    ...resource.approvedPublicUse,
+  ]
+    .join(" ")
+    .toLowerCase();
+
+  return terms.every((term) => haystack.includes(term));
+}
+
 function libraryResourceMatchesDiscoveryFilter(resource: LibraryResource, filter: string) {
   if (filter === "All") return true;
   if (filter === "Books") {
@@ -32975,6 +32995,9 @@ function LibraryScreen({
   const authorMatches = searchTerms.length
     ? LIBRARY_AUTHOR_PROFILES.filter((profile) => libraryAuthorProfileMatches(profile, searchTerms)).slice(0, 8)
     : [];
+  const filteredLicensedResourceLinks = searchTerms.length
+    ? licensedResourceLinks.filter((resource) => licensedResourceLinkMatchesAllTerms(resource, searchTerms))
+    : [];
   const browsingAllResources = !searchTerm && activeCategory === "All";
   const displayedLibraryResources = browsingAllResources ? resources.slice(0, 60) : filteredResources;
 
@@ -33040,12 +33063,14 @@ function LibraryScreen({
             </div>
           </label>
           <p className="rounded-full bg-[var(--warm)] px-3 py-2 text-xs font-semibold text-[var(--green)]">
-	            {filteredResources.length.toLocaleString()} found
+	            {filteredResources.length.toLocaleString()} books{filteredLicensedResourceLinks.length ? ` · ${filteredLicensedResourceLinks.length} links` : ""}
 	          </p>
 	        </div>
 	        <div className="mt-3 flex flex-wrap gap-2">
 	          {[
 	            { label: "Spurgeon", value: "Spurgeon" },
+	            { label: "Northstar", value: "Northstar" },
+	            { label: "Sorenson", value: "Sorenson" },
 	            { label: "Prayer", value: "Prayer" },
 	            { label: "Commentaries", value: "Commentary" },
 	            { label: "Baptist history", value: "Baptist History" },
@@ -33120,6 +33145,14 @@ function LibraryScreen({
               No resources matched that search. Try an author name, topic, or a broader filter.
             </div>
           )}
+        </LibraryShelf>
+      )}
+
+      {!browsingAllResources && filteredLicensedResourceLinks.length > 0 && (
+        <LibraryShelf title="Permissioned Link Results" horizontal>
+          {filteredLicensedResourceLinks.map((resource) => (
+            <LicensedResourceLinkCard key={`licensed-search-${resource.id}`} resource={resource} />
+          ))}
         </LibraryShelf>
       )}
 
