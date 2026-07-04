@@ -882,6 +882,14 @@ type LibraryResource = {
   added_at: string;
 };
 
+type CommentaryVolumeReferenceHint = {
+  resourceSlug: string;
+  books: string[];
+  label: string;
+  priority: "Open now" | "Teaching focus" | "Index next";
+  note: string;
+};
+
 type LicensedResourceLink = {
   id: string;
   title: string;
@@ -9651,6 +9659,86 @@ const localCommentaryEntries: CommentaryEntry[] = [
 ]
   .filter((entry) => entry.book === "Hosea")
   .map(normalizeCommentaryEntry);
+
+const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
+  {
+    resourceSlug: "notes-on-philippians-h-a-ironside",
+    books: ["Philippians"],
+    label: "Ironside full Philippians volume",
+    priority: "Teaching focus",
+    note: "Open the whole public-domain volume for extended devotional and preaching help on Philippians.",
+  },
+  {
+    resourceSlug: "the-prophet-joel-a-c-gaebelein",
+    books: ["Joel"],
+    label: "Gaebelein full Joel volume",
+    priority: "Teaching focus",
+    note: "Open the whole public-domain volume for prophecy background and chapter flow on Joel.",
+  },
+  {
+    resourceSlug: "annotations-upon-the-holy-bible-vol-1-pool-matthew",
+    books: ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth"],
+    label: "Matthew Poole full annotation volume",
+    priority: "Index next",
+    note: "Large public-domain scan. Best opened as a full volume until individual chapters are promoted into the Bible-linked commentary index.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various",
+    books: ["Exodus"],
+    label: "Preacher's Homiletical Commentary volume",
+    priority: "Open now",
+    note: "Open the full volume for teaching outlines, homiletic notes, and applications connected to Exodus.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet22newy-various",
+    books: ["Matthew"],
+    label: "Preacher's Homiletical Commentary volume",
+    priority: "Open now",
+    note: "Open the full Matthew volume for teaching structure, applications, and sermon helps.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet32newy-various",
+    books: ["Romans", "Philippians"],
+    label: "Preacher's Homiletical Commentary volume",
+    priority: "Open now",
+    note: "Open the full epistle volume for teaching outlines and application material.",
+  },
+  {
+    resourceSlug: "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-2",
+    books: ["Matthew", "John", "Romans", "Isaiah", "Hosea", "Joel", "Amos", "Obadiah"],
+    label: "Biblical Illustrator full volume",
+    priority: "Index next",
+    note: "Open the whole illustration volume for preaching material while chapter indexing is reviewed.",
+  },
+  {
+    resourceSlug: "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-3",
+    books: ["Habakkuk", "Haggai", "Zechariah", "Malachi"],
+    label: "Biblical Illustrator full volume",
+    priority: "Index next",
+    note: "Open the whole Minor Prophets illustration volume for teaching and sermon material.",
+  },
+  {
+    resourceSlug: "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-4",
+    books: ["Isaiah", "Hosea", "Joel", "Amos", "Obadiah", "Matthew", "John", "Romans"],
+    label: "Biblical Illustrator full volume",
+    priority: "Index next",
+    note: "Open the whole illustration volume for expanded teaching and preaching examples.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104952-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi"],
+    label: "Pulpit Commentary full volume",
+    priority: "Index next",
+    note: "Open the whole public-domain Pulpit volume for homiletic and exposition notes on the Minor Prophets.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104895-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude"],
+    label: "Pulpit Commentary full volume",
+    priority: "Index next",
+    note: "Open the whole epistle volume for exposition and homiletic material while the chapter index is reviewed.",
+  },
+];
 
 const deferredCommentaryImportFiles = [
   "matthew-henry-phase-1-commentary.json",
@@ -37422,6 +37510,14 @@ function CommentaryExplorerScreen({
       return terms.some((term) => term.length > 2 && haystack.includes(term));
     })
     .slice(0, 6);
+  const relatedFullCommentaryVolumes = commentaryVolumeReferenceHints
+    .filter((hint) => hint.books.includes(safeBook))
+    .map((hint) => ({
+      hint,
+      resource: libraryResources.find((resource) => resource.slug === hint.resourceSlug),
+    }))
+    .filter((item): item is { hint: CommentaryVolumeReferenceHint; resource: LibraryResource } => Boolean(item.resource))
+    .slice(0, 6);
   const bookCoverage = coverage.bookCoverage.find((item) => item.book === safeBook);
 
   return (
@@ -37582,6 +37678,40 @@ function CommentaryExplorerScreen({
           </div>
           {selectedTheme && <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">{selectedTheme.title}</span>}
         </div>
+        {relatedFullCommentaryVolumes.length > 0 && (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Full Commentary Volumes</p>
+                <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Open the larger public-domain works</h3>
+                <p className="mt-1 max-w-2xl text-xs leading-5 text-[var(--muted)]">
+                  These are full Library books related to {safeBook}. Use them when you want the larger work in addition to the chapter cards above.
+                </p>
+              </div>
+              <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+                {relatedFullCommentaryVolumes.length} volume{relatedFullCommentaryVolumes.length === 1 ? "" : "s"}
+              </span>
+            </div>
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+              {relatedFullCommentaryVolumes.map(({ hint, resource }) => (
+                <button
+                  key={`commentary-volume-link-${safeBook}-${resource.slug}`}
+                  className="rounded-2xl border border-[var(--line)] bg-white p-4 text-left transition hover:border-[var(--green)] hover:shadow-sm"
+                  onClick={() => onOpenLibraryResource(resource.slug)}
+                  type="button"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <p className="text-sm font-semibold text-[var(--green)]">{resource.title}</p>
+                    <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[var(--green)]">{hint.priority}</span>
+                  </div>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.author}</p>
+                  <p className="mt-2 text-xs leading-5 text-[var(--scripture-ink)]">{hint.note}</p>
+                  <p className="mt-3 text-xs font-semibold text-[var(--green)]">Read full volume</p>
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {relatedBooks.length ? relatedBooks.map((resource) => (
             <button key={`commentary-explorer-related-${resource.slug}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 text-left" onClick={() => onOpenLibraryResource(resource.slug)} type="button">
