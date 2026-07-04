@@ -1051,17 +1051,17 @@
     "creator": "H. A. Ironside / LibriVox reader MaryAnn",
     "passage": "Malachi to Matthew background",
     "series": "Bible Background / Ironside Collection",
-    "duration": "73 MB download; duration to verify from section list",
+    "duration": "2 hr 36 min",
     "sourceUrl": "https://librivox.org/the-four-hundred-silent-years-by-henry-allan-ironside/",
     "rightsStatus": "Public Domain",
-    "intakeStatus": "Ready For Storage",
+    "intakeStatus": "Uploaded To R2",
     "storageBucket": "fathers-business-bible-study-public",
     "storagePath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/",
     "transcriptPath": "data/library/verified/the-four-hundred-silent-years-h-a-ironside.txt",
     "coverPath": "media/covers/audiobooks/the-four-hundred-silent-years.webp",
     "visibility": "Private admin draft",
-    "notes": "LibriVox author page lists Ironside and the catalog page is public-domain audio in the USA; Internet Archive mirror also marks the recording Public Domain Mark 1.0. Text resource is already in the Library. Keep one work card with Read/Listen after upload QA.",
-    "nextAction": "Download LibriVox section files, upload to R2, verify order against the existing text, and add transcript anchors before public release."
+    "notes": "LibriVox author page lists Ironside and the catalog page is public-domain audio in the USA; Internet Archive mirror also marks the recording Public Domain Mark 1.0. Six 64kb MP3 section files were uploaded to R2 as a private admin draft. Text resource is already in the Library. Keep one work card with Read/Listen after upload QA.",
+    "nextAction": "Verify R2 playback in the admin audio pilot panel, spot-check section order against LibriVox, add transcript anchors, then decide whether to expose public Listen controls."
   },
   {
     "id": "spurgeons-sermons-may-1858-librivox-audiobook-candidate",

@@ -699,5 +699,88 @@
         "notes": "LibriVox source file prayers_27_spurgeon_64kb.mp3; catalog duration 00:42:25; reader MaryAnn. Section-level transcript anchor pending OCR cleanup."
       }
     ]
+  },
+  {
+    "id": "ironside-four-hundred-silent-years-librivox-audiobook-pilot",
+    "mediaRecordId": "four-hundred-silent-years-ironside-librivox-audiobook-candidate",
+    "libraryTitle": "The Four Hundred Silent Years",
+    "libraryAuthor": "H. A. Ironside",
+    "libraryFilePath": "data/library/verified/the-four-hundred-silent-years-h-a-ironside.txt",
+    "sourceUrl": "https://librivox.org/the-four-hundred-silent-years-by-henry-allan-ironside/",
+    "rightsEvidence": "LibriVox catalog and Internet Archive mirror identify this recording as public domain in the USA; Internet Archive metadata uses Creative Commons Public Domain Mark 1.0. H. A. Ironside text is already reviewed in the Library from a public-domain source.",
+    "pilotStatus": "Uploaded to R2 for admin QA",
+    "textCleanupStatus": "Library text exists; transcript anchors need section-by-section spot check before follow-along release.",
+    "narrationStatus": "LibriVox public-domain narration uploaded to R2 as a private admin draft.",
+    "estimatedDuration": "2 hr 36 min",
+    "publicReadiness": "Private uploaded pilot only until playback, no-duplicate-card behavior, transcript anchors, and source notes are QA checked.",
+    "pilotSteps": [
+      "Confirm the existing Library book card remains the single public work card.",
+      "Verify all six R2 audio files play from the admin audio pilot panel.",
+      "Spot-check section titles, order, reader, duration, and source URL against LibriVox and Internet Archive metadata.",
+      "Add transcript anchors so follow-along reading can jump to each section without changing Ironside wording.",
+      "Only mark public after source, playback, transcript, and rights review are documented."
+    ],
+    "segments": [
+      {
+        "number": 1,
+        "title": "Preface",
+        "textAnchor": "PREFACE",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/000-preface.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/000-preface.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 3,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 2,
+        "title": "The Jews under Priestly Rule",
+        "textAnchor": "The Jews under Priestly Rule",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/001-the-jews-under-priestly-rule.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/001-the-jews-under-priestly-rule.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 39,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 3,
+        "title": "The Days of the Maccabees",
+        "textAnchor": "The Days of the Maccabees",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/002-the-days-of-the-maccabees.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/002-the-days-of-the-maccabees.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 55,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 4,
+        "title": "To the End of the Asmonean Dynasty",
+        "textAnchor": "To the End of the Asmonean Dynasty",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/003-to-the-end-of-the-asmonean-dynasty.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/003-to-the-end-of-the-asmonean-dynasty.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 24,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 5,
+        "title": "The Edomite Ascendancy",
+        "textAnchor": "The Edomite Ascendancy",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/004-the-edomite-ascendancy.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/004-the-edomite-ascendancy.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 21,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      },
+      {
+        "number": 6,
+        "title": "The Literature of the Jews",
+        "textAnchor": "The Literature of the Jews",
+        "audioPath": "audio/audiobooks/ironside/the-four-hundred-silent-years/librivox/005-the-literature-of-the-jews.mp3",
+        "transcriptPath": "transcripts/audiobooks/ironside/the-four-hundred-silent-years/005-the-literature-of-the-jews.md",
+        "status": "Cleanup Needed",
+        "estimatedMinutes": 15,
+        "notes": "Uploaded pilot exists in uploaded-public-domain-audio-pilots.json; verify playback and transcript anchor before public release."
+      }
+    ]
   }
 ]
