@@ -145,3 +145,64 @@ Father's Business Mastery Resources
 fathersbusinessmasteryresources.com
 hello@fathersbusinessmasteryresources.com
 ```
+
+## Next Prepared Contact: Douglas Hammett / Purposed Coaching Blog
+
+Status: Ready for Stephen review only. Do not send or submit automatically.
+
+Official route:
+
+- About page: `https://www.purposedcoachingblog.com/about/`
+- Contact form: `https://www.purposedcoachingblog.com/contact-doug/`
+
+Evidence note:
+
+- The Purposed Coaching Blog About page identifies Pastor Doug Hammett's ministry background and author/ministry coaching work.
+- The Contact Doug page provides a contact form with name, email, subject, and message fields.
+
+Suggested subject:
+
+```text
+Permission question for Baptist doctrine and discipleship resources
+```
+
+Suggested first request:
+
+```text
+Hello Pastor Hammett,
+
+My name is Stephen Scheer, and I am building the Father's Business Bible Study platform through Father's Business Mastery Resources for Christians, Sunday School teachers, pastors, missionaries, evangelists, and Bible students.
+
+I am writing to ask whether we may receive limited permission to list, link to, or excerpt selected Douglas Hammett resources inside the platform.
+
+One goal of the platform is to introduce users to trusted Bible teachers and direct them to purchase resources through the author's or publisher's official website whenever possible.
+
+At this stage, I am not asking for broad catalog rights. I am asking about a narrow permission path for specific approved titles, excerpts, official links, or audio/video where allowed.
+
+Possible uses:
+
+- listing selected resources with links directing users to your official ministry website
+- displaying short excerpts only with your prior written approval
+- connecting approved resources to Bible study, discipleship, missions, and teaching workflows
+- embedding or linking approved audio/video if allowed
+
+No copyrighted content would be reproduced, distributed, or hosted without your prior written permission.
+
+Could you let me know:
+
+1. Which resources may be linked to
+2. Whether cover images or promotional graphics may be displayed with permission
+3. Whether short excerpts are permitted
+4. Whether audio/video embedding is permitted
+5. Whether written permission or licensing is required
+6. The best contact person for future permissions
+
+I appreciate your ministry and the many people it has helped over the years.
+
+Thank you for your time.
+
+Stephen Scheer
+Father's Business Mastery Resources
+fathersbusinessmasteryresources.com
+hello@fathersbusinessmasteryresources.com
+```
