@@ -8533,10 +8533,65 @@ const dictionaryEntries: Record<string, Omit<DictionaryEntry, "lookupWord" | "fo
     definition:
       "Sorrow for any thing done or said; in theology, sorrow for sin with a sincere turning from it unto God.",
   },
+  prayer: {
+    word: "prayer",
+    definition:
+      "A solemn address to God, including adoration, confession, supplication, intercession, and thanksgiving.",
+  },
+  supplication: {
+    word: "supplication",
+    definition:
+      "Humble and earnest prayer; entreaty offered with submission and reverence.",
+  },
+  mercy: {
+    word: "mercy",
+    definition:
+      "Tenderness, compassion, and kindness toward the miserable or guilty; in Scripture, often God's pity and covenant kindness.",
+  },
+  covenant: {
+    word: "covenant",
+    definition:
+      "A mutual agreement, compact, or promise; in Scripture, God's solemn arrangement or promise with man.",
+  },
+  holy: {
+    word: "holy",
+    definition:
+      "Set apart to sacred use; morally pure; applied to God, perfect in purity and complete moral excellence.",
+  },
+  sanctification: {
+    word: "sanctification",
+    definition:
+      "The act of making holy or setting apart for sacred use; in theology, God's work of grace in the believer.",
+  },
   charity: {
     word: "charity",
     definition:
       "Love; benevolence; good will. In Scripture, supreme love to God and good will to men.",
+  },
+  righteousness: {
+    word: "righteousness",
+    definition:
+      "Purity of heart and rectitude of life; conformity to truth, justice, and the revealed will of God.",
+  },
+  prophecy: {
+    word: "prophecy",
+    definition:
+      "A declaration of something to come; in Scripture, a revelation or message from God delivered by a prophet.",
+  },
+  vision: {
+    word: "vision",
+    definition:
+      "The act of seeing; in Scripture, a supernatural revelation or representation given especially to a prophet.",
+  },
+  transgression: {
+    word: "transgression",
+    definition:
+      "The act of passing over or beyond a law, rule, or command; violation of known duty; sin.",
+  },
+  thanksgiving: {
+    word: "thanksgiving",
+    definition:
+      "The act of rendering thanks or expressing gratitude, especially to God for mercies and benefits.",
   },
   flesh: {
     word: "flesh",
@@ -8595,8 +8650,32 @@ const dictionaryAliases: Record<string, string> = {
   condemnation: "condemned",
   saved: "saved",
   saveth: "saved",
+  save: "saved",
+  saves: "saved",
+  saving: "saved",
   repentance: "repentance",
   repent: "repentance",
+  repented: "repentance",
+  prayer: "prayer",
+  prayers: "prayer",
+  prayed: "prayer",
+  prayeth: "prayer",
+  praying: "prayer",
+  supplications: "supplication",
+  mercies: "mercy",
+  merciful: "mercy",
+  holiness: "holy",
+  sanctify: "sanctification",
+  sanctified: "sanctification",
+  sanctifieth: "sanctification",
+  righteous: "righteousness",
+  just: "righteousness",
+  prophecy: "prophecy",
+  prophet: "prophecy",
+  prophets: "prophecy",
+  prophesy: "prophecy",
+  prophesied: "prophecy",
+  visions: "vision",
   charity: "charity",
   did: "do",
   doeth: "do",
@@ -8620,7 +8699,6 @@ const dictionaryAliases: Record<string, string> = {
   prophecies: "prophecy",
   spirits: "spirit",
   transgressions: "transgression",
-  visions: "vision",
   worshipped: "worship",
   worshippeth: "worship",
   worshipping: "worship",
@@ -19877,7 +19955,7 @@ export default function Home() {
   async function lookupWord(word: string) {
     const fallbackEntry = findDictionaryEntry(word);
     setActiveDictionaryEntry(fallbackEntry);
-    setStudyTab("occurrences");
+    setStudyTab("dictionary");
 
     try {
       const response = await fetch(`/api/dictionary/${encodeURIComponent(word)}`);
