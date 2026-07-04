@@ -35,6 +35,55 @@ type StrongMapping = {
 let cachedEntries: StrongEntry[] | null = null;
 const cachedMappingShards = new Map<string, StrongMapping[]>();
 
+const strongSearchAliases: Record<string, string> = {
+  believest: "believe",
+  believeth: "believe",
+  believed: "believe",
+  believing: "believe",
+  believes: "believe",
+  prayers: "prayer",
+  prayed: "pray",
+  prayeth: "pray",
+  praying: "pray",
+  loveth: "love",
+  loved: "love",
+  loving: "love",
+  saved: "save",
+  saveth: "save",
+  saving: "save",
+  saith: "say",
+  spake: "speak",
+  shewed: "show",
+  sheweth: "show",
+  doeth: "do",
+  doth: "do",
+  didst: "do",
+  children: "child",
+  brethren: "brother",
+};
+
+function cleanStrongText(value: string) {
+  return String(value ?? "")
+    .replace(/\r\n?/g, "\n")
+    .replace(/\u00ad/g, "")
+    .replace(/([A-Za-z]{3,})-\s+([a-z]{2,})/g, "$1$2")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function cleanStrongEntry(entry: StrongEntry): StrongEntry {
+  return {
+    ...entry,
+    original_word: cleanStrongText(entry.original_word),
+    transliteration: entry.transliteration ? cleanStrongText(entry.transliteration) : entry.transliteration,
+    pronunciation: entry.pronunciation ? cleanStrongText(entry.pronunciation) : entry.pronunciation,
+    english_words: (entry.english_words ?? []).map(cleanStrongText).filter(Boolean),
+    plain_definition: cleanStrongText(entry.plain_definition),
+    first_occurrence: entry.first_occurrence ? cleanStrongText(entry.first_occurrence) : entry.first_occurrence,
+    key_verses: (entry.key_verses ?? []).map(cleanStrongText).filter(Boolean),
+  };
+}
+
 async function loadEntries() {
   if (cachedEntries) return cachedEntries;
   const raw = await readTextContent("data/strongs/sample-verified-strongs.json", { errorLabel: "Strong's lexicon" });
@@ -65,7 +114,7 @@ async function loadEntries() {
   const entriesByNumber = new Map<string, StrongEntry>();
   for (const entry of [...baseEntries, ...batchEntries]) {
     if (!entriesByNumber.has(entry.strongs_number)) {
-      entriesByNumber.set(entry.strongs_number, entry);
+      entriesByNumber.set(entry.strongs_number, cleanStrongEntry(entry));
     }
   }
 
@@ -115,6 +164,31 @@ function normalizeSearch(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+function strongSearchCandidates(value: string) {
+  const normalized = normalizeSearch(value);
+  const compact = normalized.replace(/\s+/g, "");
+  const candidates = [normalized, compact, strongSearchAliases[compact]];
+  const suffixRules: Array<[RegExp, string]> = [
+    [/eth$/, ""],
+    [/est$/, ""],
+    [/ies$/, "y"],
+    [/ing$/, ""],
+    [/ed$/, ""],
+    [/s$/, ""],
+  ];
+
+  for (const [pattern, replacement] of suffixRules) {
+    if (!pattern.test(compact)) continue;
+    const candidate = compact.replace(pattern, replacement);
+    if (candidate.length >= 3) {
+      candidates.push(candidate);
+      if (/[^aeiou]$/.test(candidate)) candidates.push(`${candidate}e`);
+    }
+  }
+
+  return [...new Set(candidates.filter(Boolean))];
+}
+
 function normalizeStrongNumber(value: string) {
   const match = String(value ?? "").match(/^([GH])0*(\d+)$/i);
   if (!match) return String(value ?? "");
@@ -123,6 +197,7 @@ function normalizeStrongNumber(value: string) {
 
 function scoreEntry(entry: StrongEntry, query: string) {
   const normalizedQuery = normalizeSearch(query);
+  if (!normalizedQuery) return 0;
   const englishWords = entry.english_words ?? [];
   const relatedNumbers = entry.related_numbers ?? [];
   const keyVerses = entry.key_verses ?? [];
@@ -137,7 +212,7 @@ function scoreEntry(entry: StrongEntry, query: string) {
   if (normalizeSearch(entry.plain_definition).includes(normalizedQuery)) return 60;
   if (keyVerses.some((verse) => normalizeSearch(verse).includes(normalizedQuery))) return 45;
 
-  const haystack = [
+  const haystack = normalizeSearch([
     entry.strongs_number,
     entry.language,
     entry.original_word,
@@ -150,10 +225,9 @@ function scoreEntry(entry: StrongEntry, query: string) {
     entry.first_occurrence ?? "",
     ...keyVerses,
   ]
-    .join(" ")
-    .toLowerCase();
+    .join(" "));
 
-  return haystack.includes(query) ? 25 : 0;
+  return haystack.includes(normalizedQuery) ? 25 : 0;
 }
 
 export async function GET(request: Request) {
@@ -198,9 +272,10 @@ export async function GET(request: Request) {
   }
 
   const entries = await loadEntries();
+  const queryCandidates = strongSearchCandidates(query);
   const matches = entries
     .filter((entry) => entry.review_status === "Verified")
-    .map((entry) => ({ entry, score: scoreEntry(entry, query) }))
+    .map((entry) => ({ entry, score: Math.max(...queryCandidates.map((candidate) => scoreEntry(entry, candidate))) }))
     .filter((match) => match.score > 0)
     .sort(
       (a, b) =>

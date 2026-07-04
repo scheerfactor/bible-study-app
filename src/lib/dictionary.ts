@@ -49,11 +49,16 @@ const dictionaryAliases: Record<string, string> = {
   believeth: "believe",
   believed: "believe",
   believing: "believe",
+  believes: "believe",
   loved: "love",
   loveth: "love",
   lovedst: "love",
+  loves: "love",
+  loving: "love",
   saved: "save",
   saveth: "save",
+  saves: "save",
+  saving: "save",
   prayed: "pray",
   prayest: "pray",
   prayeth: "pray",
@@ -74,7 +79,18 @@ export function normalizeDictionaryWord(value: string) {
   const cleaned = cleanDictionaryWord(value);
   if (!cleaned) return "";
   if (dictionaryAliases[cleaned]) return dictionaryAliases[cleaned];
+  return cleaned;
+}
 
+function uniqueValues(values: string[]) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function dictionaryLookupCandidates(value: string) {
+  const cleaned = cleanDictionaryWord(value);
+  if (!cleaned) return [];
+
+  const candidates = [cleaned, normalizeDictionaryWord(cleaned)];
   const suffixRules: Array<[RegExp, string]> = [
     [/eth$/, ""],
     [/est$/, ""],
@@ -85,11 +101,70 @@ export function normalizeDictionaryWord(value: string) {
   ];
 
   for (const [pattern, replacement] of suffixRules) {
+    if (!pattern.test(cleaned)) continue;
     const candidate = cleaned.replace(pattern, replacement);
-    if (candidate.length >= 3) return candidate;
+    if (candidate.length >= 3) {
+      candidates.push(candidate);
+      if (/[^aeiou]$/.test(candidate)) candidates.push(`${candidate}e`);
+    }
   }
 
-  return cleaned;
+  return uniqueValues(candidates);
+}
+
+function cleanDictionaryDefinition(value: string) {
+  const safeReplacements: Array<[RegExp, string]> = [
+    [/\btlje\b/gi, "the"],
+    [/\btliese\b/gi, "these"],
+    [/\btliem\b/gi, "them"],
+    [/\btlie\b/gi, "the"],
+    [/\btliat\b/gi, "that"],
+    [/\btliis\b/gi, "this"],
+    [/\btliere\b/gi, "there"],
+    [/\bwitli\b/gi, "with"],
+    [/\bot\b/g, "of"],
+    [/\bhi\.s\b/gi, "his"],
+    [/\bapi\)ears\b/gi, "appears"],
+    [/\binijilied\b/gi, "implied"],
+    [/\bpeniiission\b/gi, "permission"],
+    [/\bJt\b/g, "It"],
+    [/\bOod\b/g, "God"],
+    [/\bG od\b/g, "God"],
+    [/\bL ord\b/g, "Lord"],
+    [/\bJ esus\b/g, "Jesus"],
+    [/\bC hrist\b/g, "Christ"],
+    [/\bP aul\b/g, "Paul"],
+    [/\bM oses\b/g, "Moses"],
+    [/\bD avid\b/g, "David"],
+    [/\bA braham\b/g, "Abraham"],
+  ];
+
+  let cleaned = String(value ?? "")
+    .replace(/\r\n?/g, "\n")
+    .replace(/\u00ad/g, "")
+    .replace(/([A-Za-z]{3,})-\s+([a-z]{2,})/g, "$1$2")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  for (const [pattern, replacement] of safeReplacements) {
+    cleaned = cleaned.replace(pattern, replacement);
+  }
+
+  cleaned = cleaned.replace(/^([A-Z][A-Z' -]*),\s*71\./, "$1, n.");
+
+  return cleaned
+    .replace(/(^|[.;])\s+([1-9]|1[0-9]|20)\.\s+(?=[A-Z])/g, "$1\n\n$2. ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function cleanDictionaryEntry(entry: WebsterEntry): WebsterEntry {
+  return {
+    ...entry,
+    headword: String(entry.headword ?? "").replace(/\s+/g, " ").trim(),
+    normalized_headword: cleanDictionaryWord(entry.normalized_headword || entry.headword),
+    definition: cleanDictionaryDefinition(entry.definition),
+  };
 }
 
 export async function getDictionaryEntries() {
@@ -98,7 +173,7 @@ export async function getDictionaryEntries() {
     readTextContent(dictionaryOverrideRelativePath, { errorLabel: "Webster reviewed overrides" })
       .then((raw) => JSON.parse(raw) as WebsterEntry[])
       .catch(() => []),
-  ]).then(([entries, overrides]) => [...reviewedDictionaryOverlays, ...overrides, ...entries]);
+  ]).then(([entries, overrides]) => [...reviewedDictionaryOverlays, ...overrides, ...entries].map(cleanDictionaryEntry));
   return dictionaryPromise;
 }
 
@@ -115,7 +190,7 @@ export async function getEastonDictionaryEntries() {
         source_line_start: entry.line_start,
         source_line_end: entry.line_end,
         review_status: entry.review_status,
-      })),
+      })).map(cleanDictionaryEntry),
     );
 
   return eastonDictionaryPromise;
@@ -136,11 +211,13 @@ function dictionarySourcePriority(entry: WebsterEntry) {
 }
 
 export async function lookupDictionaryWord(word: string) {
-  const normalized = normalizeDictionaryWord(word);
+  const candidates = dictionaryLookupCandidates(word);
   const entries = await getAllDictionaryEntries();
   const matches = entries
-    .filter((entry) => entry.normalized_headword === normalized)
+    .filter((entry) => candidates.includes(entry.normalized_headword))
     .sort((a, b) => {
+      const candidatePriority = candidates.indexOf(a.normalized_headword) - candidates.indexOf(b.normalized_headword);
+      if (candidatePriority !== 0) return candidatePriority;
       const priority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
       if (priority !== 0) return priority;
       return b.definition.length - a.definition.length;
@@ -148,7 +225,7 @@ export async function lookupDictionaryWord(word: string) {
 
   return {
     word: cleanDictionaryWord(word) || word,
-    lookupWord: normalized,
+    lookupWord: matches[0]?.normalized_headword ?? candidates[0] ?? normalizeDictionaryWord(word),
     found: matches.length > 0,
     entries: matches.slice(0, 5),
   };
