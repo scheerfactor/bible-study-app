@@ -1,17 +1,17 @@
 # Core Study Data Audit
 
-Generated: 2026-07-03T17:26:30.991Z
+Generated: 2026-07-04T18:38:31.171Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- Library: 1379 verified resources.
+- Library: 1403 verified resources.
 - Public commentary rows: 11411.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 24.
 - Webster 1828 entries: 57575 (50303 normalized headwords; 14 reviewed overlay).
 - Strong's lexicon entries: 14288; reviewed KJV word mappings: 221052 rows from 16 batch files across 35 books and 366 chapters (broad import).
-- Public TSK rows: 6074; staged TSK rows: 50; source verses covered: 2188; chapters covered: 1185; books covered: 66 (reviewed samples only).
+- Public TSK rows: 6110; staged TSK rows: 50; source verses covered: 2221; chapters covered: 1185; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -74,15 +74,15 @@ Generated: 2026-07-03T17:26:30.991Z
 | Genesis | 48 | 50 | 96% | 65 | 193 |
 | Numbers | 35 | 36 | 97.2% | 68 | 142 |
 | Exodus | 39 | 40 | 97.5% | 49 | 119 |
-| Habakkuk | 3 | 3 | 100% | 4 | 7 |
-| Nahum | 3 | 3 | 100% | 4 | 10 |
-| 2 Timothy | 4 | 4 | 100% | 6 | 10 |
-| Titus | 3 | 3 | 100% | 3 | 10 |
-| Jonah | 4 | 4 | 100% | 5 | 11 |
-| Ruth | 4 | 4 | 100% | 5 | 13 |
-| 1 John | 5 | 5 | 100% | 6 | 16 |
-| 1 Timothy | 6 | 6 | 100% | 7 | 19 |
+| Habakkuk | 3 | 3 | 100% | 9 | 12 |
+| Nahum | 3 | 3 | 100% | 8 | 14 |
+| Titus | 3 | 3 | 100% | 7 | 14 |
+| Jonah | 4 | 4 | 100% | 9 | 15 |
+| 2 Timothy | 4 | 4 | 100% | 10 | 15 |
+| Ruth | 4 | 4 | 100% | 8 | 17 |
+| 1 John | 5 | 5 | 100% | 10 | 21 |
 | Micah | 7 | 7 | 100% | 8 | 22 |
+| Jude | 1 | 1 | 100% | 12 | 23 |
 
 ## Thinnest Commentary Books
 

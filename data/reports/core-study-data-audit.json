@@ -5,7 +5,7 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 1379
+    "verifiedResources": 1403
   },
   "commentary": {
     "publicRows": 11411,
@@ -197,9 +197,9 @@
     ]
   },
   "tsk": {
-    "rows": 6074,
+    "rows": 6110,
     "stagedRows": 50,
-    "sourceVersesCovered": 2188,
+    "sourceVersesCovered": 2221,
     "booksCovered": 66,
     "chaptersCovered": 1185,
     "status": "reviewed samples only",
@@ -255,64 +255,56 @@
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 4,
-        "rows": 7
+        "versesCovered": 9,
+        "rows": 12
       },
       {
         "book": "Nahum",
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 4,
-        "rows": 10
-      },
-      {
-        "book": "2 Timothy",
-        "chaptersCovered": 4,
-        "totalChapters": 4,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 6,
-        "rows": 10
+        "versesCovered": 8,
+        "rows": 14
       },
       {
         "book": "Titus",
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 3,
-        "rows": 10
+        "versesCovered": 7,
+        "rows": 14
       },
       {
         "book": "Jonah",
         "chaptersCovered": 4,
         "totalChapters": 4,
         "chapterCoveragePercent": 100,
-        "versesCovered": 5,
-        "rows": 11
+        "versesCovered": 9,
+        "rows": 15
+      },
+      {
+        "book": "2 Timothy",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 10,
+        "rows": 15
       },
       {
         "book": "Ruth",
         "chaptersCovered": 4,
         "totalChapters": 4,
         "chapterCoveragePercent": 100,
-        "versesCovered": 5,
-        "rows": 13
+        "versesCovered": 8,
+        "rows": 17
       },
       {
         "book": "1 John",
         "chaptersCovered": 5,
         "totalChapters": 5,
         "chapterCoveragePercent": 100,
-        "versesCovered": 6,
-        "rows": 16
-      },
-      {
-        "book": "1 Timothy",
-        "chaptersCovered": 6,
-        "totalChapters": 6,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 7,
-        "rows": 19
+        "versesCovered": 10,
+        "rows": 21
       },
       {
         "book": "Micah",
@@ -321,6 +313,14 @@
         "chapterCoveragePercent": 100,
         "versesCovered": 8,
         "rows": 22
+      },
+      {
+        "book": "Jude",
+        "chaptersCovered": 1,
+        "totalChapters": 1,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 12,
+        "rows": 23
       }
     ]
   },
