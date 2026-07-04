@@ -21,7 +21,7 @@ Do not send this batch automatically. Do not mark any target as contacted until 
 | 2 | Dr. S. M. Davis | `https://solvefamilyproblems.org/` | Official site contact route / phone-confirmed email | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
 | 3 | Dr. Bo Wagner | `https://wordofhismouth.com/contact-us/` | Contact form | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
 | 4 | Douglas Hammett | `https://purposedcoaching.com/Contact.html` | Contact page | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
-| 5 | Dr. David H. Sorenson | `https://northstarministries.com/` | Verified ministry email/contact route | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
+| 5 | Dr. David H. Sorenson | `https://northstarministries.com/` | Verified ministry email/contact route | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Sent manually by Stephen on 2026-07-04 |
 
 ## After Sending Each Email
 
