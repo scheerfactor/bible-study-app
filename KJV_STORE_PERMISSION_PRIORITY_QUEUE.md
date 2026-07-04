@@ -59,6 +59,11 @@ Hold these as drafts only until Stephen approves:
 4. Vance Publications / selected KJV resources.
 5. Trinitarian Bible Society / KJV Daily Light or official-link permissions.
 
+Draft file:
+
+- KJV_STORE_PERMISSION_EMAIL_DRAFTS.md
+- data/library/acquisition/kjv-store-permission-email-drafts.csv
+
 ## Permission Questions To Ask
 
 - May the app list selected titles with official purchase links?
