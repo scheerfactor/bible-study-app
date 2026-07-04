@@ -83,3 +83,65 @@ The app is currently in beta. Future paid access or subscription inclusion would
 - Keep the request narrow.
 - Save screenshots or confirmation numbers.
 - Record the submission date in `data/library/acquisition/permission-email-send-log.csv` or a dedicated form log.
+
+## Next Prepared Contact: Dr. Bo Wagner / Word of His Mouth
+
+Status: Ready for Stephen review only. Do not send or submit automatically.
+
+Official route:
+
+- Ministry site: `https://wordofhismouth.com/`
+- Contact page: `https://wordofhismouth.com/contact-us/`
+- Listed email: `2knowhim@cbc-web.org`
+
+Evidence note:
+
+- The Word of His Mouth homepage identifies the site as Dr. Bo Wagner's online ministry and lists contact details.
+- The Cornerstone Baptist Church site identifies Dr. Bo Wagner as pastor and author.
+
+Suggested subject:
+
+```text
+Permission question for selected Bible teaching resources
+```
+
+Suggested first request:
+
+```text
+Hello Dr. Wagner,
+
+My name is Stephen Scheer, and I am building the Father's Business Bible Study platform through Father's Business Mastery Resources for Bible readers, Sunday School teachers, pastors, missionaries, evangelists, and Bible students.
+
+I am writing to ask whether we may receive limited permission to list, link to, or excerpt selected Dr. Bo Wagner resources inside the platform.
+
+One goal of the platform is to introduce users to trusted Bible teachers and direct them to purchase resources through the author's or publisher's official website whenever possible.
+
+At this stage, I am not asking for broad catalog rights. I am asking about a narrow permission path for specific approved titles, excerpts, official links, or audio/video where allowed.
+
+Possible uses:
+
+- listing selected resources with links directing users to your official ministry website
+- displaying short excerpts only with your prior written approval
+- connecting approved resources to preaching, Baptist doctrine, and Christian living study paths
+- embedding or linking approved audio/video if allowed
+
+No copyrighted content would be reproduced, distributed, or hosted without your prior written permission.
+
+Could you let me know:
+
+1. Which resources may be linked to
+2. Whether cover images or promotional graphics may be displayed with permission
+3. Whether short excerpts are permitted
+4. Whether audio/video embedding is permitted
+5. Whether written permission or licensing is required
+6. The best contact person for future permissions
+
+I appreciate your ministry and the many people it has helped over the years.
+
+Thank you for your time.
+
+Stephen Scheer
+Father's Business Mastery Resources
+fathersbusinessmasteryresources.com
+hello@fathersbusinessmasteryresources.com
+```
