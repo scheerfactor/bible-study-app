@@ -498,7 +498,26 @@ const md = [
 ].join("\n");
 
 await mkdir(path.dirname(reportJsonPath), { recursive: true });
-await writeFile(reportJsonPath, `${JSON.stringify({ summary, dictionaryRows, strongsBookCoverage, tskBookCoverage, naveExactRows }, null, 2)}\n`);
+await writeFile(
+  reportJsonPath,
+  `${JSON.stringify(
+    {
+      summary,
+      strongsBookCoverage,
+      tskBookCoverage,
+      samples: {
+        topDictionaryMissing,
+        topDictionaryDirty,
+        topMissingAnyStudyLookup,
+        topStrongsMissingWords,
+        topNaveMissingTopics,
+        naveSuspiciousTopics: naveSuspiciousTopics.slice(0, 80),
+      },
+    },
+    null,
+    2,
+  )}\n`,
+);
 await writeFile(reportMdPath, `${md}\n`);
 
 console.log("Bible tool coverage audit complete");

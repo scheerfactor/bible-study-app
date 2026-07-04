@@ -55,6 +55,7 @@
     "storage:upload:wrangler": "node scripts/upload-public-content-with-wrangler.mjs",
     "build:strongs-mapping-index": "node scripts/build-kjv-strongs-mapping-index.mjs",
     "build:strongs-chapter-shards": "node scripts/build-strongs-chapter-shards.mjs",
+    "plan:strongs-mapping": "node scripts/plan-strongs-mapping-completion.mjs",
     "storage:upload:strongs-shards": "node scripts/upload-strongs-chapter-shards-with-wrangler.mjs"
   },
   "dependencies": {
