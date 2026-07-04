@@ -60896,5 +60896,51 @@
     "checksum_sha256": "58ab59fc957032e1ddde33e2a17859560bc65545104eac1060207eeb341b9a9e",
     "file_size_bytes": 167253,
     "word_count": 29821
+  },
+  {
+    "title": "A Commentary on the Song of Solomon",
+    "author": "George Burrowes",
+    "year": 1867,
+    "category": "Commentaries",
+    "collection": "Song of Solomon Study",
+    "source_url": "https://archive.org/download/commentaryonsong1867burr/commentaryonsong1867burr_djvu.txt",
+    "download_url": "https://archive.org/download/commentaryonsong1867burr/commentaryonsong1867burr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-commentary-on-the-song-of-solomon-george-burrowes.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Published in 1867 with an 1853 copyright notice, before the current U.S. public-domain cutoff for 2026. Direct Internet Archive OCR text imported from item commentaryonsong1867burr; source edition and OCR quality require spot-check before quotation or public teaching use.",
+    "notes": "Standalone public-domain commentary on Song of Solomon. Useful for filling a weak Bible-book ecosystem while Pulpit/Biblical Illustrator/Poole chapter splitting remains under review. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Song of Solomon commentary and teaching background, best used after reading the KJV text and comparing with other reviewed commentaries.",
+    "resource_labels": [
+      "Commentary",
+      "Song of Solomon",
+      "Historical value"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Commentary on the Song of Solomon",
+      "author": "George Burrowes",
+      "category": "Commentaries",
+      "collection": "Song of Solomon Study",
+      "badge": "Commentary",
+      "palette": {
+        "from": "#5b4636",
+        "to": "#7b6a52"
+      }
+    },
+    "reading_time_minutes": 661,
+    "text_processing": "internet_archive_ocr_unmodified_spot_check_needed",
+    "checksum_sha256": "152fb23c6b30ba7a771674c7d1c00dd4eaf23c2e595db0db978c6c610e130ea6",
+    "file_size_bytes": 992180,
+    "word_count": 148740
   }
 ]

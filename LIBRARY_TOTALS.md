@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,380
+- Verified public Library resources: 1,381
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
@@ -14,11 +14,11 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Latest Public-Domain Book Import
 
-Added 1 verified public-domain Library resource from Project Gutenberg:
+Added 1 verified public-domain Library resource from Internet Archive:
 
-- `Why I Preach the Second Coming` - Isaac Massey Haldeman, 1919
+- `A Commentary on the Song of Solomon` - George Burrowes, 1867
 
-The import is filed under `Bible study helps` and `Prophecy and Second Coming`, with historical/use-with-discernment labels, source URL and rights notes preserved, 29,821 words, and an estimated 133 minutes of reading time.
+The import is filed under `Commentaries` and `Song of Solomon Study`, with use-with-discernment and OCR spot-check labels, source URL and rights notes preserved, 148,740 words, and an estimated 661 minutes of reading time.
 
 ## Latest Wesley Parser Recovery Sprint
 

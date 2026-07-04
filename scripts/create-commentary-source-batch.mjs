@@ -286,6 +286,7 @@ function splitChapterReference(reference) {
 }
 
 function studyLightBookSlug(book) {
+  if (book === "Solomon's Song") return "song-of-solomon";
   return book.toLowerCase().replace(/^\d /, (value) => value.trim()).replace(/\s+/g, "-");
 }
 
