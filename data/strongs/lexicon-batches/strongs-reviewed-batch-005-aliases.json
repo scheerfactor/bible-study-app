@@ -62,5 +62,21 @@
     "source_url": "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=StrongsGreek",
     "rights_status": "CrossWire lists Strong's Greek Bible Dictionary as Public Domain; this entry is a reviewed supplement for a mapped form missing from the compact Greek import.",
     "review_status": "Verified"
+  },
+  {
+    "strongs_number": "H8338",
+    "language": "Hebrew",
+    "original_word": "שָׁשָׁא",
+    "transliteration": "shasha",
+    "pronunciation": "shaw-shaw'",
+    "english_words": ["leave", "sixth", "sixth part", "annihilate"],
+    "related_numbers": ["H8341"],
+    "plain_definition": "Strong's definition: a primitive root; apparently, to annihilate. In Ezekiel 39:2 the KJV renders the phrase as leave but the sixth part, with Strong's noting confusion with H8341.",
+    "first_occurrence": "Ezekiel 39:2",
+    "key_verses": ["Ezekiel 39:2"],
+    "source_title": "Strong's Hebrew Bible Dictionary",
+    "source_url": "https://kingjamesbibledictionary.com/StrongsNo/H8338/part",
+    "rights_status": "Strong's Hebrew Bible Dictionary is public domain; this reviewed supplement fills the rare Ezekiel 39:2 mapping missing from the compact local import.",
+    "review_status": "Verified"
   }
 ]

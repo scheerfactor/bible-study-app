@@ -1,22 +1,21 @@
 # Strong's Mapping Completion Plan
 
-Generated: 2026-07-04T21:13:41.261Z
+Generated: 2026-07-04T21:41:54.574Z
 
 This plan tracks the reviewed KJV-to-Strong's word mapping gap. The lexicons are broad, but a Bible reader only feels complete when each chapter has clean word-level mapping attached to the KJV text.
 
 ## Current State
 
-- Reviewed mapping batch files: 18
-- Reviewed mapping rows: 277,709
-- Chapter coverage: 460/1189 chapters (38.7%).
-- Complete Bible books: 33/66.
-- Generated chapter shards: 460 chapters, 277,709 rows.
+- Reviewed mapping batch files: 19
+- Reviewed mapping rows: 314,346
+- Chapter coverage: 508/1189 chapters (42.7%).
+- Complete Bible books: 34/66.
+- Generated chapter shards: 508 chapters, 314,346 rows.
 
 ## Recommended Next Books
 
 | Book | Missing Chapters | Reason |
 | --- | ---: | --- |
-| Ezekiel | 48 | No reviewed Strong's mapping chapters yet. |
 | 2 Chronicles | 36 | No reviewed Strong's mapping chapters yet. |
 | Numbers | 36 | No reviewed Strong's mapping chapters yet. |
 | Deuteronomy | 34 | No reviewed Strong's mapping chapters yet. |
@@ -28,6 +27,7 @@ This plan tracks the reviewed KJV-to-Strong's word mapping gap. The lexicons are
 | Joshua | 24 | No reviewed Strong's mapping chapters yet. |
 | 1 Kings | 22 | No reviewed Strong's mapping chapters yet. |
 | Judges | 21 | No reviewed Strong's mapping chapters yet. |
+| Zechariah | 14 | No reviewed Strong's mapping chapters yet. |
 
 ## Completion Phases
 
@@ -84,11 +84,10 @@ Missing chapters in this phase: 193
 
 ### Prophets
 
-Missing chapters in this phase: 157
+Missing chapters in this phase: 109
 
 | Book | Mapped | Total | Missing Chapters | Coverage |
 | --- | ---: | ---: | --- | ---: |
-| Ezekiel | 0 | 48 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48 | 0% |
 | Zechariah | 0 | 14 | 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 | 0% |
 | Micah | 0 | 7 | 1, 2, 3, 4, 5, 6, 7 | 0% |
 | Lamentations | 0 | 5 | 1, 2, 3, 4, 5 | 0% |
