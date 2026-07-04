@@ -14,8 +14,8 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Website | https://www.ravenhill.org/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
@@ -65,10 +65,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
-| Permission status | Needs Review |
-| Requested use | TBD |
+| Known contact | VoiceOfLifeMinistries@gmail.com (bounced - no such user); alternate to verify: sermonindex@gmail.com |
+| Website | https://www.ravenhill.org/ |
+| Permission status | Bounced - Alternate Contact Needed |
+| Requested use | Limited listing/link/excerpt/audio-video inquiry |
 | Follow-up needed | Yes |
 
 Notes:
@@ -102,7 +102,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works require permission.
+> Modern copyrighted works require permission. Contact route identified from Ravenhill.org ordering/media page on 2026-07-04, but Gmail reported the account does not exist. OnePlace lists SermonIndex as contact for SermonIndex Classics - Leonard Ravenhill; verify whether they can answer listing/embed/audio questions and whether separate estate/publisher permission is needed. No permission granted yet.
 
 ## Final Recommendation
 

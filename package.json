@@ -17,6 +17,7 @@
     "create:tsk-metav-uncovered-batch": "node scripts/create-tsk-metav-uncovered-chapter-batch.mjs",
     "prepare:tsk-openbible": "node scripts/prepare-openbible-tsk-cross-references.mjs",
     "library:validate": "node scripts/validate-library-manifests.mjs",
+    "library:validate:licensed": "node scripts/validate-licensed-resource-links.mjs",
     "library:download": "node scripts/download-library-resources.mjs",
     "library:import": "node scripts/import-library-resources.mjs",
     "library:bulk-import": "node scripts/bulk-import-library-resources.mjs",

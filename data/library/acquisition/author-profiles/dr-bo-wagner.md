@@ -14,8 +14,8 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | 2knowhim@cbc-web.org |
+| Website | https://wordofhismouth.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
@@ -65,10 +65,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
-| Permission status | Needs Review |
-| Requested use | TBD |
+| Known contact | 2knowhim@cbc-web.org |
+| Website | https://wordofhismouth.com/ |
+| Permission status | Permission Requested |
+| Requested use | Limited listing/link/excerpt/audio-video inquiry |
 | Follow-up needed | Yes |
 
 Notes:
@@ -76,6 +76,7 @@ Notes:
 - Do not approve broad catalog use.
 - Ask about specific titles, excerpts, links, audio, video, transcript use, and future paid-access terms separately.
 - Record written permission before any copyrighted material becomes public in the app.
+- Initial permission email sent manually by Stephen on 2026-07-04. No permission granted yet.
 
 ## Review Score
 

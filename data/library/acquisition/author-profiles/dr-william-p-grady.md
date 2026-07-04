@@ -14,8 +14,8 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | Phone/contact route: 865-216-3483 |
+| Website | https://gradypublications.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
@@ -65,10 +65,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
+| Known contact | Phone/contact route: 865-216-3483 |
+| Website | https://gradypublications.com/ |
 | Permission status | Needs Review |
-| Requested use | TBD |
+| Requested use | Manual contact needed |
 | Follow-up needed | Yes |
 
 Notes:
@@ -101,7 +101,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works likely require permission; review title by title.
+> Modern copyrighted works likely require permission; review title by title. Official Grady Publications site lists phone/contact route but no clean permissions email found yet. No permission granted.
 
 ## Final Recommendation
 

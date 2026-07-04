@@ -78,6 +78,7 @@ import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/ma
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
 import audiobookPilotSeedData from "../../data/media/manifests/audiobook-pilots.json";
 import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candidates.json";
+import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
@@ -879,6 +880,23 @@ type LibraryResource = {
     };
   } | null;
   added_at: string;
+};
+
+type LicensedResourceLink = {
+  id: string;
+  title: string;
+  author: string;
+  publisherMinistry: string;
+  category: string;
+  collection: string;
+  sourceUrl: string;
+  permissionStatus: string;
+  reviewStatus: string;
+  approvedPublicUse: string[];
+  notApprovedWithoutFollowup: string[];
+  rightsEvidence: string;
+  recommendedUse: string;
+  notes: string;
 };
 
 type OcrCleanupQueueItem = {
@@ -1985,6 +2003,7 @@ const MEDIA_INTAKE_STATUSES: MediaIntakeStatus[] = [
 const EMPTY_LICENSED_RIGHTS_RECORDS: LicensedResourceRightsRecord[] = [];
 const DEFAULT_MEDIA_INTAKE_RECORDS = mediaIntakeSeedData as MediaIntakeRecord[];
 const DEFAULT_AUDIOBOOK_PILOTS = audiobookPilotSeedData as AudiobookPilot[];
+const LICENSED_RESOURCE_LINKS = licensedResourceLinksData as LicensedResourceLink[];
 
 const PERMISSION_REQUEST_TEMPLATES: PermissionRequestTemplate[] = [
   {
@@ -20445,6 +20464,7 @@ export default function Home() {
                 canUseAdminDrafts={canOpenAdminArea}
                 resources={libraryResources}
                 allResources={allLibraryResources}
+                licensedResourceLinks={LICENSED_RESOURCE_LINKS}
                 filteredResources={filteredLibraryResources}
                 categories={libraryCategories}
                 activeCategory={libraryCategory}
@@ -32449,6 +32469,7 @@ function LibraryScreen({
   canUseAdminDrafts,
   resources,
   allResources,
+  licensedResourceLinks,
   filteredResources,
   categories,
   activeCategory,
@@ -32542,6 +32563,7 @@ function LibraryScreen({
   canUseAdminDrafts: boolean;
   resources: LibraryResource[];
   allResources: LibraryResource[];
+  licensedResourceLinks: LicensedResourceLink[];
   filteredResources: LibraryResource[];
   categories: string[];
   activeCategory: string;
@@ -33186,6 +33208,14 @@ function LibraryScreen({
           </div>
         </div>
       </section>
+
+      {licensedResourceLinks.length > 0 && (
+        <LibraryShelf title="Permission-Granted Resource Links">
+          {licensedResourceLinks.map((resource) => (
+            <LicensedResourceLinkCard key={resource.id} resource={resource} />
+          ))}
+        </LibraryShelf>
+      )}
 
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
 
@@ -40123,6 +40153,48 @@ function LibraryMetricCard({ label, value, detail }: { label: string; value: str
       <p className="mt-2 text-2xl font-semibold tracking-tight text-[var(--green)]">{value}</p>
       <p className="mt-1 text-sm font-semibold text-[var(--muted)]">{detail}</p>
     </div>
+  );
+}
+
+function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
+  return (
+    <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Licensed link resource</p>
+          <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
+          <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
+        </div>
+        <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+          Scoped permission
+        </span>
+      </div>
+      <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{resource.recommendedUse}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {resource.approvedPublicUse.map((item) => (
+          <span key={`${resource.id}-approved-${item}`} className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+            {item}
+          </span>
+        ))}
+      </div>
+      <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2">
+        <p className="text-xs font-semibold text-[var(--ink)]">No full text or audio hosted</p>
+        <p className="mt-1 text-xs leading-5 text-[var(--muted)]">
+          {resource.reviewStatus}. Use the official page until title review and any broader license is complete.
+        </p>
+      </div>
+      <div className="mt-auto pt-4">
+        <a
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+          href={resource.sourceUrl}
+          rel="noreferrer"
+          target="_blank"
+        >
+          <Link size={15} />
+          Open official page
+        </a>
+      </div>
+    </article>
   );
 }
 

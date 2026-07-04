@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { readLibraryManifest, validateLibraryEntry } from "./library-utils.mjs";
+import { spawnSync } from "node:child_process";
 
 const manifestPath = process.argv[2] || "data/library/manifests/curated-public-domain-resources.json";
 const entries = await readLibraryManifest(manifestPath);
@@ -24,3 +25,10 @@ if (errors.length) {
 }
 
 console.log(`Library manifest validation OK: ${entries.length} verified resources in ${manifestPath}.`);
+
+if (manifestPath === "data/library/manifests/curated-public-domain-resources.json") {
+  const licensedValidation = spawnSync(process.execPath, ["scripts/validate-licensed-resource-links.mjs"], {
+    stdio: "inherit",
+  });
+  if (licensedValidation.status !== 0) process.exit(licensedValidation.status ?? 1);
+}

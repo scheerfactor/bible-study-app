@@ -14,8 +14,8 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource approval status | Needs Review |
 | Copyright status | Unknown - verify |
 | Permission needed | Yes |
-| Permission/contact info | TBD |
-| Website | TBD |
+| Permission/contact info | john.goetsch@wcbc.edu (blocked/bounced); info@strivingtogether.com (blocked/bounced) |
+| Website | https://wcbc.edu/academics/faculty/dr-john-goetsch |
 | Collection label | Needs Review |
 | Review score | Not scored |
 | License obtained | No |
@@ -65,10 +65,10 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | TBD |
-| Website | TBD |
-| Permission status | Needs Review |
-| Requested use | TBD |
+| Known contact | john.goetsch@wcbc.edu (blocked/bounced); info@strivingtogether.com (blocked/bounced) |
+| Website | https://wcbc.edu/academics/faculty/dr-john-goetsch |
+| Permission status | Bounced - Manual Contact Needed |
+| Requested use | Limited listing/link/excerpt/audio-video inquiry |
 | Follow-up needed | Yes |
 
 Notes:
@@ -102,7 +102,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works require permission.
+> Initial permission email to john.goetsch@wcbc.edu bounced/blocked on 2026-07-04. Alternate email to info@strivingtogether.com also bounced/blocked on 2026-07-04. No permission granted yet. Use contact form, phone, postal mail, or a different sender/domain after email deliverability review.
 
 ## Final Recommendation
 

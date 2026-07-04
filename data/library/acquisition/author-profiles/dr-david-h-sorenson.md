@@ -10,15 +10,15 @@ This author/profile is for acquisition review only. No content may be imported, 
 | --- | --- |
 | Author / ministry | Dr. David H. Sorenson |
 | Resource category | KJV doctrine commentary and preaching |
-| Profile status | Needs Review |
-| Resource approval status | Needs Review |
-| Copyright status | Unknown - verify |
-| Permission needed | Yes |
-| Permission/contact info | dhs.northstar@charter.net (verify before sending) |
+| Profile status | Permission Granted - Theological Review Needed |
+| Resource approval status | Approved With Permission Pending Review |
+| Copyright status | Permission Granted - scoped |
+| Permission needed | No for links/excerpts/cover graphics; yes for any broader use |
+| Permission/contact info | dhs.northstar@charter.net |
 | Website | https://northstarministries.com/ |
 | Collection label | Needs Review |
 | Review score | Not scored |
-| License obtained | No |
+| License obtained | Yes - scoped permission |
 
 ## Biography
 
@@ -52,7 +52,16 @@ Review:
 
 | Title | Type | Year | Rights status | Review status | Notes |
 | --- | --- | --- | --- | --- | --- |
-| TBD | KJV doctrine commentary and preaching | TBD | Unknown - verify | Needs Review | Add title-level review before import. |
+| Understanding the Bible | Whole-Bible commentary | TBD | Permission Granted - Scoped | Needs title-level review | Highest priority. Link, cover graphic, and excerpts permitted. Do not host full text without separate confirmation. |
+| The Majesty of the Psalms | Psalms commentary / devotional exposition | TBD | Permission Granted - Scoped | Needs title-level review | Strong Psalms ecosystem candidate. |
+| When He Shall Come | Prophecy / doctrine | TBD | Permission Granted - Scoped | Needs title-level review | Strong Daniel/Revelation/prophecy candidate. |
+| The Faithful Word | KJV / English Bible history | TBD | Permission Granted - Scoped | Needs title-level review | Strong KJV study resource candidate. |
+| God's Perfect Book | KJV / Bible preservation | TBD | Permission Granted - Scoped | Needs title-level review | Strong KJV doctrine/resource candidate. |
+| Neither Oldest Nor Best | KJV / textual issues | TBD | Permission Granted - Scoped | Needs title-level review | Review carefully before excerpts. |
+| Winning People to Christ | Evangelism / soulwinning | TBD | Permission Granted - Scoped | Needs title-level review | Strong evangelism path candidate. |
+| The Art of Pastoring | Pastoral ministry | TBD | Permission Granted - Scoped | Needs title-level review | Strong pastor/preaching shelf candidate. |
+| The Proverbs | Proverbs commentary / wisdom | TBD | Permission Granted - Scoped | Needs title-level review | Strong Proverbs/Daily Growth candidate. |
+| Moral Failure | Christian living / pastoral warning | TBD | Permission Granted - Scoped | Needs title-level review | Sensitive topic; review excerpts and wording carefully. |
 
 ## Audio / Video Availability
 
@@ -65,17 +74,17 @@ Review:
 
 | Field | Value |
 | --- | --- |
-| Known contact | dhs.northstar@charter.net (verify before sending) |
+| Known contact | dhs.northstar@charter.net |
 | Website | https://northstarministries.com/ |
-| Permission status | Needs Review |
-| Requested use | TBD |
+| Permission status | Permission Granted - Scoped |
+| Requested use | Links to official resources, excerpts, and cover graphics |
 | Follow-up needed | Yes |
 
 Notes:
 
-- Do not approve broad catalog use.
-- Ask about specific titles, excerpts, links, audio, video, transcript use, image/chart use, and future paid-access terms separately.
-- Record written permission before any copyrighted material becomes public in the app.
+- Permission granted for linking to Northstar Ministries resources, use of excerpts, and display of cover graphics.
+- Do not treat this as permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content unless separately confirmed.
+- Title-level review and theological/resource review are still required before public recommendation.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
 
 ## Review Score
@@ -102,8 +111,8 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern copyrighted works require permission. Contact route researched 2026-07-03; no permission granted.
+> Permission reply received 2026-07-04 from Dr. David Sorenson / Northstar Ministries. Links to Northstar resources, excerpts, and cover graphics are permitted; no licensing required for that scoped use. Broader rights still require separate confirmation.
 
 ## Final Recommendation
 
-Needs Review. No author, ministry, publisher, book, sermon, audio, video, quote, chart, transcript, or excerpt is approved by this stub.
+Approved With Permission Pending Review. Links, excerpts, and cover graphics may be prepared after title-level review. Full copyrighted books, audio, video, transcripts, AI/TTS narration, and paid access still require separate permission or confirmation.
