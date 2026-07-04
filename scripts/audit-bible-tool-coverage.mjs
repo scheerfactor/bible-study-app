@@ -330,6 +330,12 @@ const publicTskRows = tskRows.filter((row) => !String(row.file).includes("needs-
 const tskByBook = new Map();
 for (const row of publicTskRows) addChapterCoverage(tskByBook, row.verse_ref);
 const tskBookCoverage = makeBookCoverage(tskByBook, chaptersByBook);
+const tskMissingChapters = [];
+for (const [book, chapters] of chaptersByBook) {
+  for (const chapter of [...chapters].sort((a, b) => a - b)) {
+    if (!tskByBook.get(book)?.chapters.has(chapter)) tskMissingChapters.push(`${book} ${chapter}`);
+  }
+}
 
 const naveExactRows = meaningfulBibleWords.map((item) => ({
   word: item.word,
@@ -395,6 +401,7 @@ const summary = {
     coveredChapters: [...tskByBook.values()].reduce((sum, item) => sum + item.chapters.size, 0),
     coveredSourceVerses: [...tskByBook.values()].reduce((sum, item) => sum + item.verses.size, 0),
     chapterCoveragePercent: percent([...tskByBook.values()].reduce((sum, item) => sum + item.chapters.size, 0), totalChapters),
+    missingChapters: tskMissingChapters,
     weakestBooks: [...tskBookCoverage].sort((a, b) => a.chapterCoveragePercent - b.chapterCoveragePercent || a.rows - b.rows).slice(0, 20),
   },
   nave: {
@@ -423,21 +430,22 @@ const md = [
   `- Strong's lexicon: ${summary.strongs.lexiconEntries.toLocaleString()} entries available; reviewed KJV mappings cover ${summary.strongs.mappedChapters}/${summary.bible.chapters} chapters and ${summary.strongs.mappedVerses.toLocaleString()} source verses.`,
   `- Strong's KJV word mapping: ${summary.strongs.meaningfulWordsWithMapping.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words appear in reviewed mapping batches (${summary.strongs.meaningfulWordMappingCoveragePercent}%).`,
   `- TSK: ${summary.tsk.publicRows.toLocaleString()} public rows cover ${summary.tsk.coveredChapters}/${summary.bible.chapters} chapters (${summary.tsk.chapterCoveragePercent}%).`,
+  `- TSK remaining chapter gaps: ${summary.tsk.missingChapters.length ? summary.tsk.missingChapters.join(", ") : "None"}.`,
   `- Nave: ${summary.nave.topics.toLocaleString()} cleaned topic records, ${summary.nave.topicsWithReferences.toLocaleString()} with extracted Scripture references.`,
   "",
   "## What This Means",
   "",
   "- Webster is broad enough for most Bible-word lookup, but some high-use entries still need OCR cleanup before the reader feels polished.",
-  "- Strong's dictionaries are broad, but full word-by-word KJV mapping is not complete across every Bible verse yet.",
-  "- TSK is reviewed and clean where present, but still needs expansion by weakest Bible books and source verses.",
+  "- Strong's is chapter-complete; remaining work is rare lexicon edge cases and display polish.",
+  "- TSK is nearly chapter-complete; finish the four remaining chapter gaps, then deepen strongest references by verse.",
   "- Nave is useful for topic discovery now, with records still marked for spot review before quoting.",
   "",
   "## Fast Clean Completion Path",
   "",
   "1. Finish coverage audits first, then import by weakest gaps instead of guessing.",
   "2. For Webster, add reviewed overrides for the most-used missing or messy KJV words first.",
-  "3. For Strong's, continue importing reviewed CrossWire KJV mapping batches by whole Bible books, while keeping rights and attribution notes attached.",
-  "4. For TSK, generate reviewed batches from books with the lowest chapter coverage.",
+  "3. For Strong's, review the few rare unmapped words and missing lexicon cards instead of another broad import.",
+  "4. For TSK, finish Genesis 18, Genesis 50, Exodus 34, and Numbers 23, then deepen verse-level coverage.",
   "5. For Nave, expose only cleaned topic records with references; keep rough OCR hidden until reviewed.",
   "",
   "## Top Webster Words Needing Definition Review",
@@ -511,6 +519,7 @@ await writeFile(
         topMissingAnyStudyLookup,
         topStrongsMissingWords,
         topNaveMissingTopics,
+        tskMissingChapters,
         naveSuspiciousTopics: naveSuspiciousTopics.slice(0, 80),
       },
     },

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-04T22:47:50.407Z",
+    "generated_at": "2026-07-04T23:26:58.858Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5925,6 +5925,12 @@
       "coveredChapters": 1185,
       "coveredSourceVerses": 2221,
       "chapterCoveragePercent": 99.7,
+      "missingChapters": [
+        "Genesis 18",
+        "Genesis 50",
+        "Exodus 34",
+        "Numbers 23"
+      ],
       "weakestBooks": [
         {
           "book": "Genesis",
@@ -14641,6 +14647,12 @@
           "Genesis 13:10"
         ]
       }
+    ],
+    "tskMissingChapters": [
+      "Genesis 18",
+      "Genesis 50",
+      "Exodus 34",
+      "Numbers 23"
     ],
     "naveSuspiciousTopics": [
       {

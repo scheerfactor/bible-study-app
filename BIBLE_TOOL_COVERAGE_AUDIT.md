@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-04T22:47:50.407Z
+Generated: 2026-07-04T23:26:58.858Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -13,21 +13,22 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Strong's lexicon: 14,289 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
 - Strong's KJV word mapping: 12,218/12,376 meaningful KJV words appear in reviewed mapping batches (98.7%).
 - TSK: 6,110 public rows cover 1185/1189 chapters (99.7%).
+- TSK remaining chapter gaps: Genesis 18, Genesis 50, Exodus 34, Numbers 23.
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
 
 ## What This Means
 
 - Webster is broad enough for most Bible-word lookup, but some high-use entries still need OCR cleanup before the reader feels polished.
-- Strong's dictionaries are broad, but full word-by-word KJV mapping is not complete across every Bible verse yet.
-- TSK is reviewed and clean where present, but still needs expansion by weakest Bible books and source verses.
+- Strong's is chapter-complete; remaining work is rare lexicon edge cases and display polish.
+- TSK is nearly chapter-complete; finish the four remaining chapter gaps, then deepen strongest references by verse.
 - Nave is useful for topic discovery now, with records still marked for spot review before quoting.
 
 ## Fast Clean Completion Path
 
 1. Finish coverage audits first, then import by weakest gaps instead of guessing.
 2. For Webster, add reviewed overrides for the most-used missing or messy KJV words first.
-3. For Strong's, continue importing reviewed CrossWire KJV mapping batches by whole Bible books, while keeping rights and attribution notes attached.
-4. For TSK, generate reviewed batches from books with the lowest chapter coverage.
+3. For Strong's, review the few rare unmapped words and missing lexicon cards instead of another broad import.
+4. For TSK, finish Genesis 18, Genesis 50, Exodus 34, and Numbers 23, then deepen verse-level coverage.
 5. For Nave, expose only cleaned topic records with references; keep rough OCR hidden until reviewed.
 
 ## Top Webster Words Needing Definition Review
