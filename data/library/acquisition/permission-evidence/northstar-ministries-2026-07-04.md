@@ -38,3 +38,7 @@ Dr. David Sorenson granted permission to link to Northstar Ministries resources,
 ## Evidence Location
 
 Original reply is in Stephen Scheer's email account. Preserve the message for records before adding public resources.
+
+## Relationship Follow-Up
+
+Stephen sent a thank-you note on 2026-07-04, thanking Dr. Sorenson for the prompt and gracious reply, confirming that the app will honor the permissions granted, and confirming that users will continue to be directed to the official Northstar Ministries website.
