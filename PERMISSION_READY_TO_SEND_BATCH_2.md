@@ -18,7 +18,7 @@ Do not send this batch automatically. Do not mark any target as contacted until 
 | Priority | Target | Best Current Route | Send Method | Draft Location | Status |
 | --- | --- | --- | --- | --- | --- |
 | 1 | Mark Cahill | `https://markcahill.org/contact-us/` | Contact form or verified official email | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
-| 2 | Dr. S. M. Davis | `https://solvefamilyproblems.org/` | Official site contact route / phone-confirmed email | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
+| 2 | Dr. S. M. Davis | `https://solvefamilyproblems.org/pages/contact` / `administrator@solvefamilyproblems.org` | Official contact route | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
 | 3 | Dr. Bo Wagner | `https://wordofhismouth.com/contact-us/` / `2knowhim@cbc-web.org` | Contact form or listed ministry email | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
 | 4 | Douglas Hammett | `https://www.purposedcoachingblog.com/contact-doug/` | Contact form | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Ready for Stephen review |
 | 5 | Dr. David H. Sorenson | `https://northstarministries.com/` | Verified ministry email/contact route | `PERMISSION_EMAIL_DRAFTS_NEXT_BATCH.md` | Sent manually by Stephen on 2026-07-04 |
