@@ -33210,7 +33210,7 @@ function LibraryScreen({
       </section>
 
       {licensedResourceLinks.length > 0 && (
-        <LibraryShelf title="Permission-Granted Resource Links">
+        <LibraryShelf title="Permission-Granted Resource Links" horizontal>
           {licensedResourceLinks.map((resource) => (
             <LicensedResourceLinkCard key={resource.id} resource={resource} />
           ))}

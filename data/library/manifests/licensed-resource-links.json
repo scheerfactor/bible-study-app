@@ -8,15 +8,25 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/understanding-the-bible/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Commentary import", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "commentary import",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "Commentary Explorer, Bible book/chapter recommendations, and official purchase link.",
-    "notes": "Treat as metadata/link/excerpt only until broader rights are confirmed."
+    "recommendedUse": "Commentary Explorer; Bible book/chapter recommendations; official purchase link",
+    "notes": "Northstar shop says this is an 11-volume commentary set. Treat as metadata/link/excerpt only until broader rights are confirmed. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   },
   {
-    "id": "licensed-northstar-majesty-of-the-psalms",
+    "id": "licensed-northstar-the-majesty-of-the-psalms-ebook",
     "title": "The Majesty of the Psalms",
     "author": "Dr. David H. Sorenson",
     "publisherMinistry": "Northstar Ministries",
@@ -24,15 +34,24 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/the-majesty-of-the-psalms-ebook/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "Psalms ecosystem, devotional commentary, and recommended resources.",
-    "notes": "Strong Psalms resource candidate; keep link/excerpt only."
+    "recommendedUse": "Psalms ecosystem; devotional commentary; recommended resources",
+    "notes": "Official product listing identifies this as an ebook on Psalms. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   },
   {
-    "id": "licensed-northstar-when-he-shall-come",
+    "id": "licensed-northstar-when-he-shall-come-christ-s-second-coming-and-associated-events",
     "title": "When He Shall Come: Christ's Second Coming and Associated Events",
     "author": "Dr. David H. Sorenson",
     "publisherMinistry": "Northstar Ministries",
@@ -40,15 +59,74 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/when-he-shall-come-christs-second-coming-and-associated-events/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "Prophecy study, Daniel/Revelation ecosystem, and eschatology resources.",
-    "notes": "Review doctrinal notes before public recommendation."
+    "recommendedUse": "Prophecy study; Daniel/Revelation ecosystem; eschatology resources",
+    "notes": "Useful for prophecy and dispensational study; review doctrinal notes before public recommendation. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   },
   {
-    "id": "licensed-northstar-gods-perfect-book",
+    "id": "licensed-northstar-empowered-by-the-devil",
+    "title": "Empowered by the Devil",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Bible Study",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/empowered-by-the-devil/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Doctrine/discernment shelf; sermon resource",
+    "notes": "Review tone and doctrinal fit before recommending. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-neither-oldest-nor-best",
+    "title": "Neither Oldest Nor Best",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "KJV / Textual Issues",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/neither-oldest-nor-best/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "KJV / English Bible history shelf; textual issue study",
+    "notes": "Official listing presents arguments about Sinaiticus/Vaticanus; review carefully for citation/excerpt quality. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-god-s-perfect-book",
     "title": "God's Perfect Book",
     "author": "Dr. David H. Sorenson",
     "publisherMinistry": "Northstar Ministries",
@@ -56,15 +134,99 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/perfect-book/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "KJV study shelf and Bible doctrine resource.",
-    "notes": "Good candidate for KJV defense after title-level review."
+    "recommendedUse": "KJV study shelf; Bible doctrine resource",
+    "notes": "Good candidate for KJV defense/recommendation after review. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   },
   {
-    "id": "licensed-northstar-faithful-word",
+    "id": "licensed-northstar-touch-not-the-unclean-thing",
+    "title": "Touch Not the Unclean Thing",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "KJV / Textual Issues",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/touch-not-the-unclean-thing/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "KJV/textual issue shelf; pastoral discernment",
+    "notes": "Review title and topic carefully before public recommendation. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-the-proverbs",
+    "title": "The Proverbs",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Commentaries",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/the-proverbs/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Proverbs study; daily growth; wisdom resources",
+    "notes": "Strong fit for Proverbs of the day and Bible book ecosystem. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-moral-failure-ebook",
+    "title": "Moral Failure (Ebook)",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Christian Living",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/moral-failure-ebook/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Pastor/preacher resources; Christian living; purity safeguards",
+    "notes": "Sensitive topic; use pastoral wording and review excerpts carefully. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-the-faithful-word-the-making-of-the-king-james-bible",
     "title": "The Faithful Word: The Making of the King James Bible",
     "author": "Dr. David H. Sorenson",
     "publisherMinistry": "Northstar Ministries",
@@ -72,12 +234,21 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/the-faithful-word/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "KJV and English Bible history shelf.",
-    "notes": "Strong Bible history path candidate."
+    "recommendedUse": "KJV / English Bible history shelf; Bible history path",
+    "notes": "Official listing describes KJV history and translation debate focus. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   },
   {
     "id": "licensed-northstar-winning-people-to-christ",
@@ -88,11 +259,120 @@
     "collection": "Northstar Ministries",
     "sourceUrl": "https://northstarministries.com/product/winning-people-to-christ/",
     "permissionStatus": "Permission Granted - Scoped",
-    "reviewStatus": "Needs title-level review",
-    "approvedPublicUse": ["Official link", "Cover graphic", "Excerpts"],
-    "notApprovedWithoutFollowup": ["Full-text hosting", "Audio/video hosting", "AI/TTS narration", "Paid subscription inclusion"],
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
     "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
-    "recommendedUse": "Evangelism path and sermon/teaching applications.",
-    "notes": "Review excerpts and topic notes before public display."
+    "recommendedUse": "Evangelism path; sermon/teaching applications",
+    "notes": "Strong practical ministry candidate; review wording around Calvinism before public excerpts. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-broad-is-the-way",
+    "title": "Broad Is the Way",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Christian Living",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/broad-is-the-way/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Christian living; evangelism; sermon resource",
+    "notes": "Needs title-level description review. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-the-art-of-pastoring",
+    "title": "The Art of Pastoring",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Pastoral Ministry",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/the-art-of-pastoring/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Pastor shelf; ministry leadership; sermon builder support",
+    "notes": "Strong pastoral library candidate. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-training-your-children-to-turn-out-right",
+    "title": "Training Your Children to Turn Out Right",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Family",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/training-your-children-to-turn-out-right/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Family path; parenting; Christian living",
+    "notes": "Review pastoral tone and family-category placement. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
+  },
+  {
+    "id": "licensed-northstar-have-a-heavenly-marriage",
+    "title": "Have a Heavenly Marriage",
+    "author": "Dr. David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "category": "Family",
+    "collection": "Northstar Ministries",
+    "sourceUrl": "https://northstarministries.com/product/have-a-heavenly-marriage/",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Approved for official link listing; excerpt review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Cover graphic",
+      "Excerpts"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "audio/video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md",
+    "recommendedUse": "Family path; marriage; Christian living",
+    "notes": "Review pastoral tone and category placement. No full text, audio/video, AI/TTS narration, or paid subscription use is approved without separate confirmation."
   }
 ]
