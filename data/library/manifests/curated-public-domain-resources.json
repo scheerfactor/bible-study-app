@@ -64728,5 +64728,1205 @@
     "checksum_sha256": "2cf38397bb608b4ca194159e75373fa7d611945ed9333dd412b02483cfb8cd4a",
     "file_size_bytes": 4043916,
     "word_count": 616270
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 14",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 14; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 14; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 14",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1968,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6ffa6bb9f2465a144f0878cd0e58506399bd428e8d7c893d16693b88c98dbc39",
+    "file_size_bytes": 2885357,
+    "word_count": 442815
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 15",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 1736,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101104986/cu31924101104986_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101104986/cu31924101104986_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-15-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101104986/cu31924101104986_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 15; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 15; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 15",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2704,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d0b7c86561e176c79bf7e65efdf3b8d4b443cb7621dc9ea6c74035e0315f45fd",
+    "file_size_bytes": 3939869,
+    "word_count": 608349
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 16",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101104630/cu31924101104630_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101104630/cu31924101104630_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-16-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101104630/cu31924101104630_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 16; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 16; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 16",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2064,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4ce6d6ee7a00afab0e583705736ba7514594820f9c00cab6b7e1a90991084dbd",
+    "file_size_bytes": 3010733,
+    "word_count": 464384
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 17",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101104762/cu31924101104762_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101104762/cu31924101104762_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-17-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101104762/cu31924101104762_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 17; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 17; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 17",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2184,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ef62c6b3288960f4f0f3331316a0ab8d1e3f3005c995ddf4b967802457c6a4e4",
+    "file_size_bytes": 3191680,
+    "word_count": 491424
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 18",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101105009/cu31924101105009_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101105009/cu31924101105009_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-18-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101105009/cu31924101105009_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 18; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 18; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 18",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1824,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "260fba52efba00e280c2eae1135e929b8ba3f9c02129fde2f939e888382e6cba",
+    "file_size_bytes": 2306214,
+    "word_count": 410326
+  },
+  {
+    "title": "Pulpit Commentary - Archive Volume 19",
+    "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+    "year": 1871,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/cu31924101104671/cu31924101104671_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924101104671/cu31924101104671_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/pulpit-commentary-archive-volume-19-h-d-m-spence-jones-and-pulpit-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924101104671/cu31924101104671_djvu.txt.",
+    "notes": "Public-domain Pulpit Commentary archive volume 19; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Pulpit Commentary archive volume 19; useful for sermon preparation, chapter study, and historical exposition. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Pulpit Commentary - Archive Volume 19",
+      "author": "H. D. M. Spence-Jones and Pulpit Commentary Editors",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1880,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a59ca5e5ffe44e97ded8aa5af1681af29fa5b25d146f593a5f368737ff0e8c4c",
+    "file_size_bytes": 2779822,
+    "word_count": 423061
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 9",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet08newy/preacherscomplet08newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet08newy/preacherscomplet08newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-9-preacher-s-complete-homiletical-commentary-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet08newy/preacherscomplet08newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 9; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 9; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 9",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2060,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9c689dcf176283479ac767482ff23e022b64c676e88712b875f5f8c81e2a569c",
+    "file_size_bytes": 3071100,
+    "word_count": 463487
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 10",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet26newy/preacherscomplet26newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet26newy/preacherscomplet26newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-10-preacher-s-complete-homiletical-commentary-editor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet26newy/preacherscomplet26newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 10; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 10; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 10",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1958,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "28d5faea4d555398db202b276d8002fee99940008284b41e9b3397e29c35a2f2",
+    "file_size_bytes": 2940314,
+    "word_count": 440476
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 11",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet24newy/preacherscomplet24newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet24newy/preacherscomplet24newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-11-preacher-s-complete-homiletical-commentary-editor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet24newy/preacherscomplet24newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 11; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 11; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 11",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2033,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "589d521b32ccf0e8e3a75402e8c88a57864b2618f7e031262de1aeaf273b13e5",
+    "file_size_bytes": 2957176,
+    "word_count": 457508
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 12",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet27newy/preacherscomplet27newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet27newy/preacherscomplet27newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-12-preacher-s-complete-homiletical-commentary-editor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet27newy/preacherscomplet27newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 12; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 12; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 12",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1939,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7a3cf690b16867e219f3a88817be2eaa3052f4191e3466358563b7ced9ce9277",
+    "file_size_bytes": 2837303,
+    "word_count": 436325
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 13",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet23newy/preacherscomplet23newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet23newy/preacherscomplet23newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-13-preacher-s-complete-homiletical-commentary-editor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet23newy/preacherscomplet23newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 13; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 13; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 13",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2261,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "03a4bb49604ba26b3eef8cff8e936d046f59046a3c57cdf4fe857d93d3ba6f0b",
+    "file_size_bytes": 3299895,
+    "word_count": 508818
+  },
+  {
+    "title": "Preacher's Complete Homiletical Commentary - Archive Volume 14",
+    "author": "Preacher's Complete Homiletical Commentary Editors",
+    "year": 1834,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher's Complete Homiletical Commentary",
+    "source_url": "https://archive.org/download/preacherscomplet25newy/preacherscomplet25newy_djvu.txt",
+    "download_url": "https://archive.org/download/preacherscomplet25newy/preacherscomplet25newy_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/preacher-s-complete-homiletical-commentary-archive-volume-14-preacher-s-complete-homiletical-commentary-editor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preacherscomplet25newy/preacherscomplet25newy_djvu.txt.",
+    "notes": "Public-domain Preacher's Complete Homiletical Commentary archive volume 14; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Preacher's Complete Homiletical Commentary archive volume 14; useful for lesson outlines, applications, and sermon preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher's Complete Homiletical Commentary",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Preacher's Complete Homiletical Commentary - Archive Volume 14",
+      "author": "Preacher's Complete Homiletical Commentary Editors",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher's Complete Homiletical Commentary",
+      "badge": "Preacher's Complete Homiletical Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2141,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0dc30040016a23602b376c993030c52e9f7c7c5ce8031426c1b64dde68c2278c",
+    "file_size_bytes": 3095855,
+    "word_count": 481720
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 17",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra02exel/biblicalillustra02exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra02exel/biblicalillustra02exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-17-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra02exel/biblicalillustra02exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 17; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 17; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 17",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2614,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "47e81c0f1389fb0cb5fe233ebd789b4c1b08271c7f22f26b316b4629f09fd254",
+    "file_size_bytes": 3783077,
+    "word_count": 588177
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 18",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra461exel/biblicalillustra461exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra461exel/biblicalillustra461exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-18-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra461exel/biblicalillustra461exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 18; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 18; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 18",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2524,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f32a2854837ce7c4b7a8f444d0545fcda5904083eb1caeecc31872264ec12fde",
+    "file_size_bytes": 3676847,
+    "word_count": 567838
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 19",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra442exel/biblicalillustra442exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra442exel/biblicalillustra442exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-19-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra442exel/biblicalillustra442exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 19; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 19; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 19",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2703,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e0245fc8208e737b23df314e2387a50ad718524e1903be80c1c6acc854590add",
+    "file_size_bytes": 3907069,
+    "word_count": 608273
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 20",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra452exel/biblicalillustra452exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra452exel/biblicalillustra452exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-20-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra452exel/biblicalillustra452exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 20; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 20; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 20",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 3340,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b20a841f67194987d3ca040224099a70d9cc0cb5222e7b5a45712a0db191eb10",
+    "file_size_bytes": 4798427,
+    "word_count": 751595
+  },
+  {
+    "title": "Scofield Reference Bible Notes and Helps",
+    "author": "C. I. Scofield and editors",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Scofield Reference Bible",
+    "source_url": "https://archive.org/download/scofieldreferenc0000revc/scofieldreferenc0000revc_djvu.txt",
+    "download_url": "https://archive.org/download/scofieldreferenc0000revc/scofieldreferenc0000revc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/scofield-reference-bible-notes-and-helps-c-i-scofield-and-editors.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/scofieldreferenc0000revc/scofieldreferenc0000revc_djvu.txt.",
+    "notes": "Public-domain study Bible notes and helps for cross references, outlines, dispensational study, and teaching preparation. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; dispensational study notes; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain study Bible notes and helps for cross references, outlines, dispensational study, and teaching preparation. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Scofield Reference Bible",
+      "Use with discernment",
+      "dispensational study notes",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "dispensational study notes",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Scofield Reference Bible Notes and Helps",
+      "author": "C. I. Scofield and editors",
+      "category": "Commentaries",
+      "collection": "Scofield Reference Bible",
+      "badge": "Scofield Reference Bible",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 4758,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2a1a18e7958b2c7e180f214c0c46a5e4f9fe3e775f78d3f0a9e67774bdffa1f9",
+    "file_size_bytes": 5910224,
+    "word_count": 1070499
+  },
+  {
+    "title": "The Bible Student's Guide to Hebrew Words in the Authorized Version",
+    "author": "William Wilson",
+    "year": 2026,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/biblestudentsgu00wilsgoog/biblestudentsgu00wilsgoog_djvu.txt",
+    "download_url": "https://archive.org/download/biblestudentsgu00wilsgoog/biblestudentsgu00wilsgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-student-s-guide-to-hebrew-words-in-the-authorized-version-william-wilson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblestudentsgu00wilsgoog/biblestudentsgu00wilsgoog_djvu.txt.",
+    "notes": "Public-domain Authorized Version word-study reference for comparing English words with Hebrew originals. Use for study support and spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical word-study reference.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Authorized Version word-study reference for comparing English words with Hebrew originals. Use for study support and spot-check OCR before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical word-study reference"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical word-study reference"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible Student's Guide to Hebrew Words in the Authorized Version",
+      "author": "William Wilson",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2892,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "114649d065bf2004bf947aea4e060356b6204387d04e106fa87282c01b783a1d",
+    "file_size_bytes": 3953162,
+    "word_count": 650593
+  },
+  {
+    "title": "A Guide to the Textual Criticism of the New Testament",
+    "author": "Edward Miller",
+    "year": 1546,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/guidetotextualcr00mill/guidetotextualcr00mill_djvu.txt",
+    "download_url": "https://archive.org/download/guidetotextualcr00mill/guidetotextualcr00mill_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-guide-to-the-textual-criticism-of-the-new-testament-edward-miller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/guidetotextualcr00mill/guidetotextualcr00mill_djvu.txt.",
+    "notes": "Public-domain textual criticism guide for English Bible history and KJV study context. Use with discernment and spot-check OCR before quotation. Labels/warnings: Use with discernment; textual criticism; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain textual criticism guide for English Bible history and KJV study context. Use with discernment and spot-check OCR before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "textual criticism",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "textual criticism",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Guide to the Textual Criticism of the New Testament",
+      "author": "Edward Miller",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 218,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1ddc8dc5ea99a0726fd3544c6dad683533ac3d83b95741ac7f84ceaaa4b917af",
+    "file_size_bytes": 336096,
+    "word_count": 49092
+  },
+  {
+    "title": "History of Baptist Indian Missions",
+    "author": "Isaac McCoy",
+    "year": 1827,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/baptistindianmiss00mccorich/baptistindianmiss00mccorich_djvu.txt",
+    "download_url": "https://archive.org/download/baptistindianmiss00mccorich/baptistindianmiss00mccorich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-baptist-indian-missions-isaac-mccoy.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/baptistindianmiss00mccorich/baptistindianmiss00mccorich_djvu.txt.",
+    "notes": "Public-domain Baptist missions history for missionary biography, church history, and teaching context. Spot-check OCR before quotation. Labels/warnings: Use with discernment; missions history; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist missions history for missionary biography, church history, and teaching context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "missions history",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "missions history",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of Baptist Indian Missions",
+      "author": "Isaac McCoy",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1244,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c69d0c8f66545ef0f1aad920b043f8c66ed45ee2b7c8a8ef15641d2a9ac0138d",
+    "file_size_bytes": 1870581,
+    "word_count": 279848
+  },
+  {
+    "title": "The Lone Star: History of the Telugu Mission",
+    "author": "David Downie",
+    "year": 2026,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/lonestarhistoryo00down/lonestarhistoryo00down_djvu.txt",
+    "download_url": "https://archive.org/download/lonestarhistoryo00down/lonestarhistoryo00down_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-lone-star-history-of-the-telugu-mission-david-downie.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lonestarhistoryo00down/lonestarhistoryo00down_djvu.txt.",
+    "notes": "Public-domain Baptist missions history for missions study, biography, and teaching context. Spot-check OCR before quotation. Labels/warnings: Use with discernment; missions history; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist missions history for missions study, biography, and teaching context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "missions history",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "missions history",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Lone Star: History of the Telugu Mission",
+      "author": "David Downie",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 291,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d90f287762e1b5fa182fd395b73da39ed50be83167adb6d6d64f4161279081c3",
+    "file_size_bytes": 439128,
+    "word_count": 65544
+  },
+  {
+    "title": "The Baptist Catechism Commonly Called Keach's Catechism",
+    "author": "Benjamin Keach",
+    "year": 2026,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/MN40248ucmf_4/MN40248ucmf_4_djvu.txt",
+    "download_url": "https://archive.org/download/MN40248ucmf_4/MN40248ucmf_4_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-baptist-catechism-commonly-called-keach-s-catechism-benjamin-keach.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/MN40248ucmf_4/MN40248ucmf_4_djvu.txt.",
+    "notes": "Public-domain historical Baptist catechism for Baptist history and doctrine comparison. Use with the app doctrinal basis and spot-check OCR before quotation. Labels/warnings: Historical Baptist resource; use with doctrinal context; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical Baptist catechism for Baptist history and doctrine comparison. Use with the app doctrinal basis and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Historical Baptist resource",
+      "use with doctrinal context",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Historical Baptist resource",
+      "use with doctrinal context",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Baptist Catechism Commonly Called Keach's Catechism",
+      "author": "Benjamin Keach",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 28,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "deec0feaa919f6963a319b072e9007b420f6b4942530c6e93cf43dcc39967662",
+    "file_size_bytes": 35121,
+    "word_count": 6307
+  },
+  {
+    "title": "History of the Swedish Baptists in Sweden and America",
+    "author": "Gustavus Wilhelm Schroeder",
+    "year": 1889,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofswedish00schr/historyofswedish00schr_djvu.txt",
+    "download_url": "https://archive.org/download/historyofswedish00schr/historyofswedish00schr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-swedish-baptists-in-sweden-and-america-gustavus-wilhelm-schroeder.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofswedish00schr/historyofswedish00schr_djvu.txt.",
+    "notes": "Public-domain Baptist history resource for missions, immigration, and church history study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; Baptist history; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist history resource for missions, immigration, and church history study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "Baptist history",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Baptist history",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the Swedish Baptists in Sweden and America",
+      "author": "Gustavus Wilhelm Schroeder",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 381,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "43dcdb95c1d0a4e3e0bfb2b45e23e8adf9d0086644627db2382f2238da1ece81",
+    "file_size_bytes": 587408,
+    "word_count": 85672
+  },
+  {
+    "title": "The Authorized Edition of the English Bible: Reprints and Modern Representatives",
+    "author": "F. H. A. Scrivener",
+    "year": 1678,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/authorizededitio00scri/authorizededitio00scri_djvu.txt",
+    "download_url": "https://archive.org/download/authorizededitio00scri/authorizededitio00scri_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-authorized-edition-of-the-english-bible-reprints-and-modern-representatives-f-h-a-scrivener.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/authorizededitio00scri/authorizededitio00scri_djvu.txt.",
+    "notes": "Public-domain English Bible history resource on the Authorized Version and its later reprints. Useful for KJV study context; spot-check OCR before quotation. Labels/warnings: Use with discernment; English Bible history; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history resource on the Authorized Version and its later reprints. Useful for KJV study context; spot-check OCR before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "English Bible history",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "English Bible history",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Authorized Edition of the English Bible: Reprints and Modern Representatives",
+      "author": "F. H. A. Scrivener",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 535,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "975d83c22c88aaa66c193ad4f3aad1d3215498bf33feb015df57171bfbb8e82a",
+    "file_size_bytes": 802493,
+    "word_count": 120323
+  },
+  {
+    "title": "William Tyndale: Translator of the English Bible",
+    "author": "R. Demaus",
+    "year": 2026,
+    "category": "Biographies",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/williamtyndaletr00dall/williamtyndaletr00dall_djvu.txt",
+    "download_url": "https://archive.org/download/williamtyndaletr00dall/williamtyndaletr00dall_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/william-tyndale-translator-of-the-english-bible-r-demaus.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/williamtyndaletr00dall/williamtyndaletr00dall_djvu.txt.",
+    "notes": "Public-domain biography for English Bible history, Reformation background, and KJV study context. Spot-check OCR before quotation. Labels/warnings: Use with discernment; English Bible history; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography for English Bible history, Reformation background, and KJV study context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "English Bible history",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "English Bible history",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "William Tyndale: Translator of the English Bible",
+      "author": "R. Demaus",
+      "category": "Biographies",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 48,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "04c476156b166b9c325143108749557eb4b41633c49dfb856b1739646f578320",
+    "file_size_bytes": 74524,
+    "word_count": 10805
   }
 ]

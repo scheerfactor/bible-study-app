@@ -4,15 +4,36 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,462
+- Verified public Library resources: 1,487
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 534
+- Library authors represented: 543
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Resource Import
+
+Added 25 verified public-domain resources from Internet Archive:
+
+- 6 `Pulpit Commentary` archive volumes for additional historical exposition and sermon preparation
+- 6 `Preacher's Complete Homiletical Commentary` archive volumes for lesson outlines and teaching applications
+- 4 additional `Biblical Illustrator` archive volumes for verse-level illustrations and homiletical helps
+- 5 KJV / English Bible reference resources:
+  - `Scofield Reference Bible Notes and Helps`
+  - `The Bible Student's Guide to Hebrew Words in the Authorized Version`
+  - `A Guide to the Textual Criticism of the New Testament`
+  - `The Authorized Edition of the English Bible: Reprints and Modern Representatives`
+  - `William Tyndale: Translator of the English Bible`
+- 4 Baptist history / missions resources:
+  - `History of Baptist Indian Missions`
+  - `The Lone Star: History of the Telugu Mission`
+  - `The Baptist Catechism Commonly Called Keach's Catechism`
+  - `History of the Swedish Baptists in Sweden and America`
+
+Two dead Archive.org source URLs were rejected during import and replaced with working reviewed sources. The remaining verified public-domain queue now contains 206 staged resources for future waves.
+
+## Previous Public-Domain Resource Import
 
 Added 25 verified public-domain resources from Internet Archive:
 
@@ -846,8 +867,8 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,462 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,462 verified resources.
+- `npm run library:qa`: 1,487 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,487 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
 - `npm run validate:strongs`: 14,289 entries checked across 8 files.
 
