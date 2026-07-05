@@ -894,5 +894,785 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
     "recommendedUse": "Apologetics and false religions",
     "notes": "Quick-reference apologetics candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-17-reasons-why-i-left-the-tongues-movement",
+    "title": "17 Reasons Why I Left the Tongues Movement",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/17_reasons.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Doctrine and testimony",
+    "notes": "Review for testimony placement and doctrinal clarity before prominent recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-answering-the-myths-of-the-bible-version-debate",
+    "title": "Answering the Myths of the Bible Version Debate",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "KJV Defense / Textual Issues",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/answering-the-myths-of-the-bible-version-debate.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "KJV and English Bible history",
+    "notes": "KJV defense candidate; review source handling before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-bible-version-question-answer-database",
+    "title": "Bible Version Question and Answer Database",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "KJV Defense / Textual Issues",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/bible_version_question_answer_database.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "KJV and textual issue study",
+    "notes": "Useful Q&A candidate for KJV study workflows; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-faith-vs-modern-bible-versions",
+    "title": "Faith vs. Modern Bible Versions",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "KJV Defense / Textual Issues",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/faith-vs-modern-bible-versions.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "KJV and textual issue study",
+    "notes": "Review tone and citation quality before public recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-modern-bible-version-hall-of-shame",
+    "title": "Modern Bible Version Hall of Shame",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "KJV Defense / Textual Issues",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/modern_bible_version_hall_of_shame.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "KJV and textual issue study",
+    "notes": "Use carefully with clear title-level review notes. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-what-about-ruckman",
+    "title": "What about Ruckman?",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "KJV Defense / Textual Issues",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/what_about_ruckman.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "KJV and discernment",
+    "notes": "Use with careful context and charity; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-roman-catholicism-past-and-present",
+    "title": "Roman Catholicism: Past and Present",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/roman_catholicism_past_present.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Apologetics and church history",
+    "notes": "Review tone and category before prominent placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-rome-and-the-bible",
+    "title": "Rome and the Bible",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/rome_and_the_bible.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Apologetics and Bible history",
+    "notes": "Good church-history comparison candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-is-the-catholic-church-changing",
+    "title": "Is the Catholic Church Changing?",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/is_catholic_church_changing.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Apologetics and church history",
+    "notes": "Review alongside other Catholicism resources. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-mormonism",
+    "title": "Mormonism",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/mormonism.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Apologetics and false religions",
+    "notes": "Quick-reference apologetics candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-charismatic-confusion",
+    "title": "Charismatic Confusion",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/charismatic_confusion.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Doctrine and discernment",
+    "notes": "Review for doctrinal notes and pastoral tone. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-tongues-speaking",
+    "title": "Tongues Speaking",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/tongues_speaking.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Doctrine and discernment",
+    "notes": "Potential doctrine comparison resource. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-is-healing-in-the-atonement",
+    "title": "Is Healing in the Atonement?",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/is_healing_in_atonement.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Doctrine and discernment",
+    "notes": "Review doctrine and Scripture handling before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-evangelicals-and-contemplative-prayer",
+    "title": "Evangelicals and Contemplative Prayer",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Prayer",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/evangelicals_and_contemplative_prayer.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Prayer and discernment",
+    "notes": "Review for prayer-path placement and pastoral wording. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-contemplative-mysticism",
+    "title": "Contemplative Mysticism",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Discernment",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/contemplative_mysticism.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Discernment and church issues",
+    "notes": "Discernment candidate; official-link-only listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-new-evangelicalism-history-characteristics-and-fruit",
+    "title": "New Evangelicalism: Its History Characteristics and Fruit",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Church History",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/new-evangelicalism-history-fruit.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Church history and discernment",
+    "notes": "High-value background candidate after title review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-purpose-driven-or-scripture-driven",
+    "title": "Purpose Driven or Scripture Driven",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Church Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/purpose_driven.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Church and ministry discernment",
+    "notes": "Review currentness and tone before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-dangers-in-christian-bookstores",
+    "title": "Dangers in Christian Bookstores",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Discernment",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/dangers_in_bookstores.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Resource vetting and discernment",
+    "notes": "Useful for resource-vetting philosophy after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-scientists-who-believe-the-bible",
+    "title": "Scientists Who Believe the Bible",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/scientists_who_believe_the_bible.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Creation and apologetics",
+    "notes": "Could support apologetics path. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-the-ape-men",
+    "title": "The Ape Men",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/ape_men.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Creation and apologetics",
+    "notes": "Creation/apologetics candidate; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-archaeological-dating-methods",
+    "title": "Archaeological Dating Methods",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/archaeological_dating_methods.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Archaeology and apologetics",
+    "notes": "Useful for apologetics shelf if reviewed. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-darwins-social-influence",
+    "title": "Darwin's Social Influence",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/darwins_social_influence.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Creation and worldview",
+    "notes": "Review history/source quality. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-lying-evolutionary-art",
+    "title": "Lying Evolutionary Art",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Apologetics",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/lying_evolutionary_art.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Creation and apologetics",
+    "notes": "Review for image/chart rights if any. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-child-discipline",
+    "title": "Child Discipline",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Family",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/child_discipline.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Family and parenting",
+    "notes": "Sensitive family topic; review before placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-television-and-the-christian-home",
+    "title": "Television and the Christian Home",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Family",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/television_and_the_christian_home.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Family and Christian living",
+    "notes": "Good family/discernment candidate after review. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-do-we-have-the-right-to-die",
+    "title": "Do We Have the Right to Die?",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Christian Living",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/do_we_have_the_right_to_die.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Ethics and Christian living",
+    "notes": "Sensitive ethics topic; review before public listing. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-cremation-what-does-god-think",
+    "title": "Cremation: What Does God Think?",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Christian Living",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/cremation.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Ethics and Christian living",
+    "notes": "Sensitive pastoral topic; review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-baptist-music-wars",
+    "title": "Baptist Music Wars",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Church Doctrine",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/baptist_music_wars.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Music and church life",
+    "notes": "Use with clear category and doctrinal notes. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-a-baptist-church-on-the-slippery-slope",
+    "title": "A Baptist Church on a Slippery Slope",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Baptist History",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/baptist_church_on_slippery_slope.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Baptist church issues",
+    "notes": "Needs careful title-level review before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-way-of-life-why-most-independent-baptists-will-be-emerging-within-20-years",
+    "title": "Why Most Independent Baptists Will Be Emerging within 20 Years",
+    "author": "David Cloud",
+    "publisherMinistry": "Way of Life Literature",
+    "category": "Baptist History",
+    "collection": "Way of Life Literature Shareable Resources",
+    "sourceUrl": "https://www.wayoflife.org/free_ebooks/why_most_ibcs_emerging.php",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Official-link listing approved by public sharing policy; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Citation",
+      "Shareable/free resource listing"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "ebook file hosting",
+      "audio hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
+    "recommendedUse": "Baptist church issues",
+    "notes": "Review currentness and usefulness before recommendation. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
   }
 ]
