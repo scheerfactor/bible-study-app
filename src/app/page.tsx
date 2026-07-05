@@ -89,6 +89,7 @@ import audiobookPilotSeedData from "../../data/media/manifests/audiobook-pilots.
 import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candidates.json";
 import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
+import teachingVisualFoundationData from "../../data/study-tools/teaching-visual-foundation-phase-1.json";
 import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
@@ -121,6 +122,7 @@ type StoragePlanningRow = {
 
 const bibleMapAssetPack = bibleMapAssetsData as BibleMapAssetPack;
 const BIBLE_MAP_ASSETS = bibleMapAssetPack.assets;
+const teachingVisualFoundation = teachingVisualFoundationData as TeachingVisualFoundation;
 
 const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#today": "today",
@@ -1734,6 +1736,44 @@ type BibleMapAssetPack = {
     rights_status: string;
   };
   assets: BibleMapAsset[];
+};
+
+type TeachingTimelineTrack = {
+  id: string;
+  label: string;
+  books: string[];
+  people: string[];
+  teaching_use: string;
+};
+
+type TeachingChristConnection = {
+  id: string;
+  title: string;
+  old_testament_references: string[];
+  new_testament_references: string[];
+  teaching_value: string;
+};
+
+type TeachingSpiritualBeing = {
+  id: string;
+  label: string;
+  key_references: string[];
+  related_strongs: string[];
+  recommended_resources: string[];
+  teaching_note: string;
+};
+
+type TeachingChristPerson = {
+  person: string;
+  references: string[];
+  connection: string;
+};
+
+type TeachingVisualFoundation = {
+  timeline_tracks: TeachingTimelineTrack[];
+  christ_connections: TeachingChristConnection[];
+  spiritual_beings: TeachingSpiritualBeing[];
+  people_pointing_to_christ: TeachingChristPerson[];
 };
 
 type PassageGuideConnectionKind = "Gospel Parallel" | "Acts Connection" | "Prophecy Fulfillment";
@@ -20493,6 +20533,7 @@ export default function Home() {
               id="global-quick-jump"
               className="min-h-11 flex-1 rounded-full border border-[var(--line)] bg-white px-4 text-base text-[var(--ink)] shadow-sm outline-none focus:border-[var(--gold)]"
               placeholder="Jump to John 3:16, Romans 8, Amos 5, Rev 13"
+              suppressHydrationWarning
               value={globalQuickJumpText}
               onChange={(event) => setGlobalQuickJumpText(event.target.value)}
             />
@@ -25058,6 +25099,11 @@ function AtAGlanceStudyPanel({
   const primaryRelatedBook = relatedBooks.find((resource) => resource.slug);
   const recommendedCommentary = commentaryAuthors[0] ?? "No reviewed commentary yet";
   const workspaceMaps = bibleMapsForBook(backgroundInfo.book, 2);
+  const workspaceTimelineTracks = teachingTimelineTracksForBook(backgroundInfo.book, 2);
+  const workspaceChristConnections = christConnectionsForBook(backgroundInfo.book, 3);
+  const workspaceSpiritualCharts = spiritualBeingChartsForBook(backgroundInfo.book, 2);
+  const workspacePeopleChrist = peoplePointingToChristForBook(backgroundInfo.book, 3);
+  const workspaceTeachingChartsCount = workspaceTimelineTracks.length + workspaceChristConnections.length + workspaceSpiritualCharts.length + workspacePeopleChrist.length;
   const { entries: chapterTopicEntries, status: chapterTopicStatus } = useNaveTopicResults([
     mainTheme,
     ...chapterThemes.map((theme) => theme.title),
@@ -25158,6 +25204,7 @@ function AtAGlanceStudyPanel({
         <MiniStat label="Dictionary" value={String(dictionaryEntries.length)} />
         <MiniStat label="Themes" value={String(chapterThemes.length)} />
         <MiniStat label="Topical" value={String(chapterTopicEntries.length)} />
+        <MiniStat label="Charts" value={String(workspaceTeachingChartsCount)} />
       </div>
 
       <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
@@ -25260,6 +25307,45 @@ function AtAGlanceStudyPanel({
           <p className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{backgroundInfo.historicalSetting}</p>
           {backgroundInfo.majorEvents.slice(0, 3).map((event) => (
             <p key={`workspace-event-${event}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{event}</p>
+          ))}
+        </StudyWorkspaceCard>
+
+        <StudyWorkspaceCard title="Teaching Charts" emptyText="No reviewed teaching charts are attached to this book yet.">
+          {workspaceTimelineTracks.map((track) => (
+            <TeachingChartMiniCard
+              key={`workspace-chart-timeline-${track.id}`}
+              label="Timeline"
+              title={track.label}
+              body={track.teaching_use}
+              references={track.people}
+            />
+          ))}
+          {workspaceChristConnections.map((connection) => (
+            <TeachingChartMiniCard
+              key={`workspace-chart-christ-${connection.id}`}
+              label="Christ connection"
+              title={connection.title}
+              body={connection.teaching_value}
+              references={[...connection.old_testament_references, ...connection.new_testament_references]}
+            />
+          ))}
+          {workspacePeopleChrist.map((person) => (
+            <TeachingChartMiniCard
+              key={`workspace-chart-person-${person.person}`}
+              label="Person"
+              title={`${person.person} and Christ`}
+              body={person.connection}
+              references={person.references}
+            />
+          ))}
+          {workspaceSpiritualCharts.map((item) => (
+            <TeachingChartMiniCard
+              key={`workspace-chart-spiritual-${item.id}`}
+              label="Spiritual beings"
+              title={item.label}
+              body={item.teaching_note}
+              references={item.key_references}
+            />
           ))}
         </StudyWorkspaceCard>
 
@@ -30414,6 +30500,91 @@ function bibleMapsForBook(book: string, limit = 3) {
     .slice(0, limit);
 }
 
+function teachingReferenceMatchesBook(reference: string, book: string) {
+  const normalizedReference = reference.toLowerCase();
+  const normalizedBook = book.toLowerCase();
+  if (normalizedReference.startsWith(`${normalizedBook} `)) return true;
+  if (normalizedBook === "psalms" && normalizedReference.startsWith("psalm ")) return true;
+  if (normalizedBook === "song of solomon" && normalizedReference.startsWith("song ")) return true;
+  return false;
+}
+
+function teachingTimelineTracksForBook(book: string, limit = 2) {
+  return teachingVisualFoundation.timeline_tracks
+    .filter((track) => track.books.includes(book))
+    .slice(0, limit);
+}
+
+function christConnectionsForBook(book: string, limit = 3) {
+  const exactMatches = teachingVisualFoundation.christ_connections.filter((connection) => (
+    [...connection.old_testament_references, ...connection.new_testament_references]
+      .some((reference) => teachingReferenceMatchesBook(reference, book))
+  ));
+  if (exactMatches.length) return exactMatches.slice(0, limit);
+
+  const broadGospelBooks = ["Matthew", "Mark", "Luke", "John", "Romans", "1 Corinthians", "Hebrews"];
+  if (broadGospelBooks.includes(book)) {
+    return teachingVisualFoundation.christ_connections.slice(0, limit);
+  }
+
+  return [];
+}
+
+function spiritualBeingChartsForBook(book: string, limit = 2) {
+  const booksWithSpiritualBeingEmphasis = new Set([
+    "Genesis",
+    "Job",
+    "Daniel",
+    "Matthew",
+    "Mark",
+    "Luke",
+    "Acts",
+    "Ephesians",
+    "1 Timothy",
+    "James",
+    "Hebrews",
+    "Revelation",
+  ]);
+  return booksWithSpiritualBeingEmphasis.has(book)
+    ? teachingVisualFoundation.spiritual_beings.slice(0, limit)
+    : [];
+}
+
+function peoplePointingToChristForBook(book: string, limit = 3) {
+  return teachingVisualFoundation.people_pointing_to_christ
+    .filter((person) => person.references.some((reference) => teachingReferenceMatchesBook(reference, book)))
+    .slice(0, limit);
+}
+
+function TeachingChartMiniCard({
+  label,
+  title,
+  body,
+  references,
+}: {
+  label: string;
+  title: string;
+  body: string;
+  references?: string[];
+}) {
+  return (
+    <article className="rounded-xl bg-white px-3 py-2">
+      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{label}</p>
+      <p className="mt-1 text-sm font-semibold text-[var(--green)]">{title}</p>
+      <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{body}</p>
+      {references?.length ? (
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {references.slice(0, 4).map((reference) => (
+            <span key={`${title}-${reference}`} className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.65rem] font-semibold text-[var(--muted)]">
+              {reference}
+            </span>
+          ))}
+        </div>
+      ) : null}
+    </article>
+  );
+}
+
 function BibleBackgroundCenter({
   background,
   compact = false,
@@ -30438,6 +30609,16 @@ function BibleBackgroundCenter({
   const placesPreview = background.places.slice(0, compact ? 4 : 8);
   const timelinePreview = background.timelineEntries.slice(0, compact ? 3 : 6);
   const mapPreview = bibleMapsForBook(background.book, compact ? 1 : 3);
+  const teachingTimelinePreview = teachingTimelineTracksForBook(background.book, compact ? 1 : 2);
+  const christConnectionPreview = christConnectionsForBook(background.book, compact ? 1 : 2);
+  const spiritualBeingPreview = spiritualBeingChartsForBook(background.book, compact ? 1 : 2);
+  const peopleChristPreview = peoplePointingToChristForBook(background.book, compact ? 1 : 2);
+  const hasTeachingCharts = Boolean(
+    teachingTimelinePreview.length ||
+    christConnectionPreview.length ||
+    spiritualBeingPreview.length ||
+    peopleChristPreview.length
+  );
 
   return (
     <article className={`rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 ${compact ? "" : "shadow-sm"}`}>
@@ -30497,6 +30678,56 @@ function BibleBackgroundCenter({
               </figcaption>
             </figure>
           ))}
+        </div>
+      ) : null}
+
+      {hasTeachingCharts ? (
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-white p-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Teaching Charts</p>
+              <p className="mt-1 text-sm font-semibold text-[var(--green)]">Fast visual aids for teaching {background.book}</p>
+            </div>
+            <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">Internal review</span>
+          </div>
+          <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+            {teachingTimelinePreview.map((track) => (
+              <TeachingChartMiniCard
+                key={`background-teaching-timeline-${track.id}`}
+                label="Timeline"
+                title={track.label}
+                body={track.teaching_use}
+                references={track.people}
+              />
+            ))}
+            {christConnectionPreview.map((connection) => (
+              <TeachingChartMiniCard
+                key={`background-christ-connection-${connection.id}`}
+                label="Christ connection"
+                title={connection.title}
+                body={connection.teaching_value}
+                references={[...connection.old_testament_references, ...connection.new_testament_references]}
+              />
+            ))}
+            {peopleChristPreview.map((person) => (
+              <TeachingChartMiniCard
+                key={`background-person-christ-${person.person}`}
+                label="Person"
+                title={`${person.person} and Christ`}
+                body={person.connection}
+                references={person.references}
+              />
+            ))}
+            {spiritualBeingPreview.map((item) => (
+              <TeachingChartMiniCard
+                key={`background-spiritual-${item.id}`}
+                label="Spiritual beings"
+                title={item.label}
+                body={item.teaching_note}
+                references={item.key_references}
+              />
+            ))}
+          </div>
         </div>
       ) : null}
 
