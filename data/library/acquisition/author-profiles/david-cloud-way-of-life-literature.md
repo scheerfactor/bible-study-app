@@ -76,6 +76,7 @@ Notes:
 - Do not approve broad catalog use.
 - Public sharing policy was documented 2026-07-04 at `https://www.wayoflife.org/reports/lonnie_frisbee_and_the_jesus_.php`.
 - Shareable categories named by the policy include audio sermons, O Timothy magazine, FBIS articles, free eVideos, free eBooks, and reports with proper credit/citation and preferably an original source link.
+- First title-level intake queue: `data/library/acquisition/way-of-life-shareable-resource-intake-2026-07-04.csv`.
 - Store items, the Fundamental Baptist Digital Library, print books, paid ebooks, and paid videos are not shareable and remain permission-needed.
 - Ask about specific titles, excerpts, links, audio, video, transcript use, image/chart use, and future paid-access terms separately.
 - Record written permission before any copyrighted material becomes public in the app.
