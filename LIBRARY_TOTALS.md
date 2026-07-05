@@ -4,15 +4,32 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,437
+- Verified public Library resources: 1,462
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 528
+- Library authors represented: 534
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Resource Import
+
+Added 25 verified public-domain resources from Internet Archive:
+
+- 8 `Pulpit Commentary` archive volumes, cleaned into readable volume titles and labeled for OCR spot-check before quotation
+- 8 `Preacher's Complete Homiletical Commentary` archive volumes for lesson outlines, applications, and sermon preparation
+- 4 additional `Biblical Illustrator` archive volumes for verse-level homiletical helps and illustrations
+- 4 KJV / English Bible and word-study helps:
+  - `Authorized Version 1611 Facsimile`
+  - `The Newberry Bible: Authorized Version Study Edition`
+  - `Young's Analytical Concordance to the Bible`
+  - `The Englishman's Greek New Testament`
+- 1 Spurgeon resource:
+  - `The Sword and the Trowel - Spurgeon Magazine Volume`
+
+One Archive.org source returned a server error during import and was replaced with a working reviewed source. The remaining verified public-domain queue now contains 233 staged resources for future waves.
+
+## Previous Public-Domain Resource Import
 
 Added 25 verified public-domain resources from Internet Archive and Project Gutenberg:
 
@@ -829,8 +846,8 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,412 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,412 verified resources.
+- `npm run library:qa`: 1,462 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,462 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
 - `npm run validate:strongs`: 14,289 entries checked across 8 files.
 
