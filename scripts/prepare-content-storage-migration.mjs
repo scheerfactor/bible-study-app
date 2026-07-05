@@ -39,12 +39,22 @@ const bibleMapMediaFiles = [
   "public/media/bible-maps/hurlbut/division-solomons-empire.jpg",
   "public/media/bible-maps/hurlbut/empire-david-solomon.jpg",
   "public/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg",
+  "public/media/bible-maps/hurlbut/herods-temple-sacred-enclosure.jpg",
   "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
   "public/media/bible-maps/hurlbut/map-assets.json",
   "public/media/bible-maps/hurlbut/palestine-among-tribes.jpg",
   "public/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+  "public/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
   "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+  "public/media/bible-maps/hurlbut/pauls-second-missionary-journey.jpg",
+  "public/media/bible-maps/hurlbut/pauls-third-missionary-journey.jpg",
+  "public/media/bible-maps/hurlbut/pauls-voyage-to-rome.jpg",
+  "public/media/bible-maps/hurlbut/persian-empire.jpg",
   "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
+  "public/media/bible-maps/hurlbut/roman-empire-new-testament.jpg",
+  "public/media/bible-maps/hurlbut/seven-churches-asia.jpg",
+  "public/media/bible-maps/hurlbut/table-of-nations.jpg",
+  "public/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
 ];
 
 function relativePath(...parts) {

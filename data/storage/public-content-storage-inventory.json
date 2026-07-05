@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T12:05:25.778Z",
+  "generated_at": "2026-07-05T18:14:40.159Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
@@ -47,11 +47,11 @@
       "total_size": "180.93 KB"
     },
     "bible_map_media": {
-      "files": 11,
-      "present": 11,
+      "files": 21,
+      "present": 21,
       "missing": 0,
-      "total_bytes": 6878568,
-      "total_size": "6.56 MB"
+      "total_bytes": 12774094,
+      "total_size": "12.18 MB"
     },
     "tsk_cross_reference_batch": {
       "files": 27,
@@ -61,11 +61,11 @@
       "total_size": "4.44 MB"
     },
     "all_public_content": {
-      "files": 1719,
-      "present": 1719,
+      "files": 1729,
+      "present": 1729,
       "missing": 0,
-      "total_bytes": 1343810868,
-      "total_size": "1.25 GB"
+      "total_bytes": 1349706394,
+      "total_size": "1.26 GB"
     }
   },
   "items": [
@@ -19719,6 +19719,14 @@
     },
     {
       "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/herods-temple-sacred-enclosure.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/herods-temple-sacred-enclosure.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 588565,
+      "checksum_sha256": "5b27a50c7da1fd0c8e516e51782c61545ee01deb2be77eec051969d289273458"
+    },
+    {
+      "kind": "bible_map_media",
       "source_path": "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
       "storage_path": "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
       "content_type": "image/jpeg",
@@ -19730,8 +19738,8 @@
       "source_path": "public/media/bible-maps/hurlbut/map-assets.json",
       "storage_path": "public/media/bible-maps/hurlbut/map-assets.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 6679,
-      "checksum_sha256": "b847fe327dea6c7f7731421e81a1653a603cc919b0b2a5a13f0ed866004f0bd4"
+      "size_bytes": 12400,
+      "checksum_sha256": "fb0a010167e0bafd5407fc07185ea4eea52d380ac138ed52c18442875c3d9dc9"
     },
     {
       "kind": "bible_map_media",
@@ -19751,6 +19759,14 @@
     },
     {
       "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 547939,
+      "checksum_sha256": "95668b3937de95bf45deb4e63d1282037775c28eb52d397c146f67b014259d74"
+    },
+    {
+      "kind": "bible_map_media",
       "source_path": "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
       "storage_path": "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
       "content_type": "image/jpeg",
@@ -19759,11 +19775,75 @@
     },
     {
       "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/pauls-second-missionary-journey.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/pauls-second-missionary-journey.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 733675,
+      "checksum_sha256": "90da14c302730d044d0cac7c6f2e5321b8cf4670c6b3e605c6b672bd804c6512"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/pauls-third-missionary-journey.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/pauls-third-missionary-journey.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 683269,
+      "checksum_sha256": "c8d68010f8cb6f1e2ad7c6c2c32cc2f5c31980db4b33179887738fc87d60fb43"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/pauls-voyage-to-rome.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/pauls-voyage-to-rome.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 536938,
+      "checksum_sha256": "9f1da3e717744d96d3895e9afc7cf2195a27a311bb78075611c97a57f74591f2"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/persian-empire.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/persian-empire.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 628036,
+      "checksum_sha256": "f26a890cc2adae0179c52394fb6d405c9b762eb6b350dfca0c8381e404e4cd31"
+    },
+    {
+      "kind": "bible_map_media",
       "source_path": "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
       "storage_path": "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
       "content_type": "image/jpeg",
       "size_bytes": 719367,
       "checksum_sha256": "04414fa90e78700ab901733387578008d70e3538475f57b0702a2525917ebfdf"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/roman-empire-new-testament.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/roman-empire-new-testament.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 705898,
+      "checksum_sha256": "6078bcd8305cd64bdc50359350461e85fc61dbf2ecbf599602d0130300b2cd61"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/seven-churches-asia.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/seven-churches-asia.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 805526,
+      "checksum_sha256": "4b921a5963a5103f45ada748f30b0989b5df4d178c0fa80cfb74e78b494427fb"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/table-of-nations.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/table-of-nations.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 143596,
+      "checksum_sha256": "db3f8f78eadd7040ee594002893aff9f49ddba657fdc106696e6eed192569bfe"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 516363,
+      "checksum_sha256": "638977d2e4932fd904ad1925a53da4f3cb4471e95d42f00c70f8ad832524f93e"
     },
     {
       "kind": "tsk_cross_reference_batch",

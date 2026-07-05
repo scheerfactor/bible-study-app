@@ -20,17 +20,25 @@ Rights note: The Project Gutenberg record states the work is public domain in th
 | `babylonian-empire.jpg` | Prophets and Nations | `i-064b-big.jpg` | Public domain in USA via Project Gutenberg | Babylon, exile, Jeremiah, Ezekiel, Daniel |
 | `palestine-ministry-of-jesus.jpg` | Life of Christ | `i-074a-big.jpg` | Public domain in USA via Project Gutenberg | Gospels, Life of Christ, Galilee/Judea |
 | `pauls-first-missionary-journey.jpg` | Acts and Missions | `i-088-big.jpg` | Public domain in USA via Project Gutenberg | Acts 13-14, missions, church planting |
+| `persian-empire.jpg` | Empires and Exile | `i-066a-big.jpg` | Public domain in USA via Project Gutenberg | Ezra, Nehemiah, Esther, Daniel, return from exile |
+| `roman-empire-new-testament.jpg` | New Testament World | `i-070-big.jpg` | Public domain in USA via Project Gutenberg | Gospels, Acts, Romans, Revelation |
+| `passion-week-life-of-christ.jpg` | Life of Christ | `i-081b-big.jpg` | Public domain in USA via Project Gutenberg | Passion Week, crucifixion, resurrection |
+| `pauls-second-missionary-journey.jpg` | Acts and Missions | `i-092-big.jpg` | Public domain in USA via Project Gutenberg | Acts 15-18, Macedonia, Philippi, Thessalonica |
+| `pauls-third-missionary-journey.jpg` | Acts and Missions | `i-096-big.jpg` | Public domain in USA via Project Gutenberg | Acts 18-21, Ephesus, Corinth, epistle background |
+| `pauls-voyage-to-rome.jpg` | Acts and Missions | `i-098-big.jpg` | Public domain in USA via Project Gutenberg | Acts 27-28, shipwreck, Rome |
+| `seven-churches-asia.jpg` | Revelation and Asia Minor | `i-102-big.jpg` | Public domain in USA via Project Gutenberg | Revelation 1-3, Asia Minor, Ephesus |
+| `temple-time-of-christ.jpg` | Temple and Worship | `i-108-big.jpg` | Public domain in USA via Project Gutenberg | Temple background, Gospels, Acts, Hebrews |
+| `herods-temple-sacred-enclosure.jpg` | Temple and Worship | `i-111-big.jpg` | Public domain in USA via Project Gutenberg | Temple layout, Gospel and Acts setting |
+| `table-of-nations.jpg` | Genesis and Nations | `nations-big.png` | Public domain in USA via Project Gutenberg | Genesis 10, nations, prophecy, missions |
 
 ## Storage Notes
 
-- Optimized local JPG total: approximately 6.6 MB.
+- Optimized local JPG total: approximately 12 MB.
 - These are suitable for local static serving now and later migration to Cloudflare R2 if presentation media grows quickly.
 - Do not add modern copyrighted Bible atlas images unless written permission is recorded.
 
 ## Next Candidates
 
-- Paul's second and third missionary journeys.
-- Paul's voyage to Rome.
-- Passion Week map.
-- Herod's temple plan.
-- Table of Nations chart.
+- Paul in Rome and later church history maps.
+- Additional place cards for Jerusalem, Babylon, Ephesus, Corinth, and Rome.
+- Teaching charts for kings/prophets, Christ connections, and spiritual beings.

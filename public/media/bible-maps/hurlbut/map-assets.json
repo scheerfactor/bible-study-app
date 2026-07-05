@@ -1,5 +1,5 @@
 {
-  "pack_id": "hurlbut-bible-atlas-maps-phase-1",
+  "pack_id": "hurlbut-bible-atlas-maps-phase-1-and-2",
   "last_reviewed": "2026-07-05",
   "source": {
     "title": "Bible Atlas: A Manual of Biblical Geography and History",
@@ -114,6 +114,106 @@
       "local_path": "/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
       "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-088-big.jpg",
       "recommended_use": "Acts 13-14, missions, church planting, Paul, Barnabas, and epistle background.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "persian-empire",
+      "title": "The Persian Empire",
+      "category": "Empires and Exile",
+      "books": ["Ezra", "Nehemiah", "Esther", "Daniel", "Haggai", "Zechariah", "Malachi"],
+      "local_path": "/media/bible-maps/hurlbut/persian-empire.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-066a-big.jpg",
+      "recommended_use": "Return from exile, Persian period, Esther, Ezra, Nehemiah, Daniel, and post-exilic prophets.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "roman-empire-new-testament",
+      "title": "The Roman Empire in the New Testament Period",
+      "category": "New Testament World",
+      "books": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "Philippians", "2 Timothy", "Revelation"],
+      "local_path": "/media/bible-maps/hurlbut/roman-empire-new-testament.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-070-big.jpg",
+      "recommended_use": "Gospels, Acts, Roman background, Paul's imprisonment, and New Testament world overview.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "passion-week-life-of-christ",
+      "title": "The Life of Christ: Passion Week to Resurrection",
+      "category": "Life of Christ",
+      "books": ["Matthew", "Mark", "Luke", "John"],
+      "local_path": "/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-081b-big.jpg",
+      "recommended_use": "Passion Week, crucifixion, burial, resurrection, and Gospel harmony teaching.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "pauls-second-missionary-journey",
+      "title": "Paul's Second Missionary Journey",
+      "category": "Acts and Missions",
+      "books": ["Acts", "1 Thessalonians", "2 Thessalonians", "Philippians"],
+      "local_path": "/media/bible-maps/hurlbut/pauls-second-missionary-journey.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-092-big.jpg",
+      "recommended_use": "Acts 15-18, Macedonia, Philippi, Thessalonica, Corinth, and missions teaching.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "pauls-third-missionary-journey",
+      "title": "Paul's Third Missionary Journey",
+      "category": "Acts and Missions",
+      "books": ["Acts", "1 Corinthians", "2 Corinthians", "Romans", "Ephesians"],
+      "local_path": "/media/bible-maps/hurlbut/pauls-third-missionary-journey.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-096-big.jpg",
+      "recommended_use": "Acts 18-21, Ephesus, Corinth, Macedonia, and epistle background.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "pauls-voyage-to-rome",
+      "title": "Paul's Voyage to Rome",
+      "category": "Acts and Missions",
+      "books": ["Acts", "Romans", "Philemon", "Philippians", "Colossians", "Ephesians"],
+      "local_path": "/media/bible-maps/hurlbut/pauls-voyage-to-rome.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-098-big.jpg",
+      "recommended_use": "Acts 27-28, shipwreck, Rome, prison epistles, and providence in missionary travel.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "seven-churches-asia",
+      "title": "The Isles of Greece and the Seven Churches",
+      "category": "Revelation and Asia Minor",
+      "books": ["Acts", "Ephesians", "Colossians", "1 Timothy", "2 Timothy", "Revelation"],
+      "local_path": "/media/bible-maps/hurlbut/seven-churches-asia.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-102-big.jpg",
+      "recommended_use": "Revelation 1-3, Asia Minor, Ephesus, Colosse, and New Testament church geography.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "temple-time-of-christ",
+      "title": "The Temple in the Time of Christ",
+      "category": "Temple and Worship",
+      "books": ["Matthew", "Mark", "Luke", "John", "Acts", "Hebrews"],
+      "local_path": "/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-108-big.jpg",
+      "recommended_use": "Temple background, Gospel teaching, Acts worship setting, and Hebrews connections.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "herods-temple-sacred-enclosure",
+      "title": "Plan of the Sacred Enclosure: Herod's Temple",
+      "category": "Temple and Worship",
+      "books": ["Matthew", "Mark", "Luke", "John", "Acts", "Hebrews"],
+      "local_path": "/media/bible-maps/hurlbut/herods-temple-sacred-enclosure.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-111-big.jpg",
+      "recommended_use": "Temple layout, courts, Gospel narratives, Acts setting, and teaching visual aids.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "table-of-nations",
+      "title": "Table of Nations",
+      "category": "Genesis and Nations",
+      "books": ["Genesis", "1 Chronicles", "Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Acts"],
+      "local_path": "/media/bible-maps/hurlbut/table-of-nations.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/nations-big.png",
+      "recommended_use": "Genesis 10, nations, Bible history overview, prophecy background, and missions lessons.",
       "review_status": "Approved public-domain local asset"
     }
   ]

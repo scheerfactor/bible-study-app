@@ -64,7 +64,8 @@
       "books": ["Genesis", "Job"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
       "presentation_use": "Genesis overview, creation/fall/patriarch lessons, and Old Testament timeline openings.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 2 local chart asset created",
+      "local_asset": "/media/bible-maps/hurlbut/table-of-nations.jpg"
     },
     {
       "id": "abraham-journeys",
@@ -123,8 +124,13 @@
       "books": ["Matthew", "Mark", "Luke", "John"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
       "presentation_use": "Gospel teaching, miracles, travel routes, Galilee, Judea, Samaria, Jerusalem, and Passion Week.",
-      "status": "Phase 1 local asset created",
-      "local_asset": "/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg"
+      "status": "Phase 2 local assets created",
+      "local_assets": [
+        "/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+        "/media/bible-maps/hurlbut/passion-week-life-of-christ.jpg",
+        "/media/bible-maps/hurlbut/temple-time-of-christ.jpg",
+        "/media/bible-maps/hurlbut/herods-temple-sacred-enclosure.jpg"
+      ]
     },
     {
       "id": "pauls-missionary-journeys",
@@ -132,8 +138,15 @@
       "books": ["Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
       "presentation_use": "Missions, church planting, Acts studies, and epistle introductions.",
-      "status": "Phase 1 local asset created",
-      "local_asset": "/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg"
+      "status": "Phase 2 local assets created",
+      "local_assets": [
+        "/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+        "/media/bible-maps/hurlbut/pauls-second-missionary-journey.jpg",
+        "/media/bible-maps/hurlbut/pauls-third-missionary-journey.jpg",
+        "/media/bible-maps/hurlbut/pauls-voyage-to-rome.jpg",
+        "/media/bible-maps/hurlbut/seven-churches-asia.jpg",
+        "/media/bible-maps/hurlbut/roman-empire-new-testament.jpg"
+      ]
     }
   ],
   "chart_candidates": [
