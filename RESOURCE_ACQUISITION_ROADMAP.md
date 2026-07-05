@@ -11,12 +11,23 @@ Use these documents together:
 - `DOCTRINAL_BASIS.md` states the doctrinal reference point for resource review.
 - `RESOURCE_REVIEW.md` defines the review board workflow and scoring rubric.
 - `AUTHOR_PROFILE.md` provides the template for author and ministry pages.
+- `AUTHOR_CURATION_FRAMEWORK.md` defines how author pages explain biography, theology, strengths, cautions, and reading paths.
 - `RESOURCE_VETTING_GUIDELINES.md` defines resource labels, caution rules, and review criteria.
 - `STUDY_WORKSPACE_ROADMAP.md` describes the long-term passage-level study environment.
 
 ## Guiding Principle
 
 Do not label authors broadly as "safe" or "unsafe." Classify each resource according to how it fits the app's doctrinal basis, audience, rights status, and use case.
+
+The library should emphasize better curation over raw volume. Each major collection should eventually answer:
+
+- Who was this author?
+- What was his theological perspective?
+- What are the author's strengths?
+- Where should readers use discernment?
+- Which books should a new reader start with?
+- Which resources are best for pastors, Sunday School teachers, new believers, or historical study?
+- Which works are public-domain, permission-granted, permission-needed, or still under review?
 
 Recommended public-facing collection labels:
 
@@ -26,6 +37,13 @@ Recommended public-facing collection labels:
 - Comparative Study
 - Needs Review
 - Do Not Include
+
+## High-Value Historical And Reference Additions
+
+Add these as reviewed acquisition targets, not automatic imports:
+
+- King James I: useful for KJV history and English Bible background. Candidate works include `Daemonologie`, `Basilikon Doron`, `A Counter-Blaste to Tobacco`, and collected works. These should be historical context only, not normal doctrinal recommendations.
+- Noah Webster: high-value dictionary and KJV word-study candidate. The 1828 dictionary should support English word lookup, while Webster's Bible revision belongs only in comparative or historical context and should not replace the KJV text.
 
 ## Tier 1: Highest Priority
 

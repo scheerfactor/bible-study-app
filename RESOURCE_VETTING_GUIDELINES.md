@@ -144,6 +144,34 @@ Only `Core Library` resources should appear as default recommendations for new b
 
 `Do Not Include` resources should not appear publicly.
 
+## Author Curation Rules
+
+Author pages should educate readers without pretending every author fits every use case. Do not try to win by having the most books. Win by explaining why each resource is present and how it should be used.
+
+For every major author or ministry, track:
+
+- biography
+- years lived
+- denominational background
+- theological perspective
+- strengths
+- areas to explain to readers
+- recommended starting books
+- suggested reading order
+- similar authors
+- rights and permission status
+
+Perspective notes and ratings are orientation aids, not judgments of an author's sincerity or salvation. Use calm language such as:
+
+- "Historical value"
+- "Use with discernment"
+- "Not all doctrine endorsed"
+- "Strong devotional value"
+- "Useful for comparative study"
+- "KJV history candidate"
+
+Do not display final author ratings publicly until a human reviewer has completed resource-level review.
+
 ## Labels For User-Facing Notes
 
 Use short, plain labels:
