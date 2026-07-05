@@ -33,6 +33,20 @@ const strongsFiles = [
   "data/strongs/lexicon-batches/index.json",
 ];
 
+const bibleMapMediaFiles = [
+  "public/media/bible-maps/hurlbut/assyrian-empire.jpg",
+  "public/media/bible-maps/hurlbut/babylonian-empire.jpg",
+  "public/media/bible-maps/hurlbut/division-solomons-empire.jpg",
+  "public/media/bible-maps/hurlbut/empire-david-solomon.jpg",
+  "public/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg",
+  "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
+  "public/media/bible-maps/hurlbut/map-assets.json",
+  "public/media/bible-maps/hurlbut/palestine-among-tribes.jpg",
+  "public/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+  "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+  "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
+];
+
 function relativePath(...parts) {
   return parts.join("/").replace(/^\/+/, "");
 }
@@ -154,6 +168,9 @@ async function main() {
   );
   const studyToolItems = await Promise.all(studyToolFiles.map((filePath) => existingInventoryFile("study_tool", filePath)));
   const strongsItems = await Promise.all(strongsFiles.map((filePath) => existingInventoryFile("strongs_index", filePath)));
+  const bibleMapMediaItems = await Promise.all(
+    bibleMapMediaFiles.map((filePath) => existingInventoryFile("bible_map_media", filePath)),
+  );
   const tskPaths = await tskFiles();
   const tskItems = await Promise.all(tskPaths.map((filePath) => existingInventoryFile("tsk_cross_reference_batch", filePath)));
 
@@ -164,6 +181,7 @@ async function main() {
     ...libraryManifestItems,
     ...studyToolItems,
     ...strongsItems,
+    ...bibleMapMediaItems,
     ...tskItems,
   ];
   const summaries = {
@@ -173,6 +191,7 @@ async function main() {
     library_manifest: summarize(libraryManifestItems),
     study_tool: summarize(studyToolItems),
     strongs_index: summarize(strongsItems),
+    bible_map_media: summarize(bibleMapMediaItems),
     tsk_cross_reference_batch: summarize(tskItems),
     all_public_content: summarize(items),
   };
@@ -208,6 +227,7 @@ ${tableRow("Dictionary files", summaries.dictionary)}
 ${tableRow("Library manifests", summaries.library_manifest)}
 ${tableRow("Study tool files", summaries.study_tool)}
 ${tableRow("Strong's indexes", summaries.strongs_index)}
+${tableRow("Bible map media", summaries.bible_map_media)}
 ${tableRow("TSK/cross-reference batches", summaries.tsk_cross_reference_batch)}
 ${tableRow("Total public content", summaries.all_public_content)}
 

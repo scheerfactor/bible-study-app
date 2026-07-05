@@ -43,6 +43,7 @@ import {
   MapPin,
 } from "lucide-react";
 import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -88,6 +89,7 @@ import audiobookPilotSeedData from "../../data/media/manifests/audiobook-pilots.
 import mediaIntakeSeedData from "../../data/media/manifests/media-intake-candidates.json";
 import licensedResourceLinksData from "../../data/library/manifests/licensed-resource-links.json";
 import uploadedPublicDomainAudioPilots from "../../data/media/manifests/uploaded-public-domain-audio-pilots.json";
+import bibleMapAssetsData from "../../public/media/bible-maps/hurlbut/map-assets.json";
 
 type Tab = "today" | "bible" | "search" | "themes" | "commentaryExplorer" | "notes" | "library" | "prayer" | "journal" | "sermons" | "presentations" | "settings" | "fullStudy" | "personStudy" | "bookIntro" | "passageGuide" | "amosStudyPath" | "proverbsStudyPath" | "hoseaStudyPath";
 type StudyDrawerTab = "study" | "actions" | "dictionary" | "occurrences" | "crossReferences" | "notes" | "audio" | "commentary" | "memory";
@@ -116,6 +118,9 @@ type StoragePlanningRow = {
   monthlyCost: number;
   note: string;
 };
+
+const bibleMapAssetPack = bibleMapAssetsData as BibleMapAssetPack;
+const BIBLE_MAP_ASSETS = bibleMapAssetPack.assets;
 
 const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
   "#today": "today",
@@ -1709,6 +1714,26 @@ type ActiveBibleBackground = BibleBackgroundChapter & {
   people: StudyPerson[];
   places: StudyPlace[];
   timelineEntries: StudyTimelineEntry[];
+};
+
+type BibleMapAsset = {
+  id: string;
+  title: string;
+  category: string;
+  books: string[];
+  local_path: string;
+  source_image_url: string;
+  recommended_use: string;
+  review_status: string;
+};
+
+type BibleMapAssetPack = {
+  source: {
+    title: string;
+    source_url: string;
+    rights_status: string;
+  };
+  assets: BibleMapAsset[];
 };
 
 type PassageGuideConnectionKind = "Gospel Parallel" | "Acts Connection" | "Prophecy Fulfillment";
@@ -25032,6 +25057,7 @@ function AtAGlanceStudyPanel({
   ];
   const primaryRelatedBook = relatedBooks.find((resource) => resource.slug);
   const recommendedCommentary = commentaryAuthors[0] ?? "No reviewed commentary yet";
+  const workspaceMaps = bibleMapsForBook(backgroundInfo.book, 2);
   const { entries: chapterTopicEntries, status: chapterTopicStatus } = useNaveTopicResults([
     mainTheme,
     ...chapterThemes.map((theme) => theme.title),
@@ -25222,6 +25248,15 @@ function AtAGlanceStudyPanel({
         </StudyWorkspaceCard>
 
         <StudyWorkspaceCard title="8. Background Information" emptyText="No reviewed background entry yet.">
+          {workspaceMaps.map((asset) => (
+            <figure key={`workspace-map-${asset.id}`} className="overflow-hidden rounded-xl bg-white">
+              <Image alt={asset.title} className="h-32 w-full bg-[var(--paper)] object-contain" height={320} loading="lazy" sizes="(min-width: 768px) 33vw, 100vw" src={asset.local_path} width={520} />
+              <figcaption className="px-3 py-2">
+                <p className="text-xs font-semibold text-[var(--green)]">{asset.title}</p>
+                <p className="mt-1 line-clamp-2 text-[11px] leading-4 text-[var(--muted)]">{asset.category}</p>
+              </figcaption>
+            </figure>
+          ))}
           <p className="rounded-xl bg-white px-3 py-2 text-xs leading-5 text-[var(--muted)]">{backgroundInfo.historicalSetting}</p>
           {backgroundInfo.majorEvents.slice(0, 3).map((event) => (
             <p key={`workspace-event-${event}`} className="rounded-xl bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">{event}</p>
@@ -30373,6 +30408,12 @@ function BackgroundList({
   );
 }
 
+function bibleMapsForBook(book: string, limit = 3) {
+  return BIBLE_MAP_ASSETS
+    .filter((asset) => asset.books.includes(book))
+    .slice(0, limit);
+}
+
 function BibleBackgroundCenter({
   background,
   compact = false,
@@ -30396,6 +30437,7 @@ function BibleBackgroundCenter({
   const peoplePreview = background.people.slice(0, compact ? 4 : 8);
   const placesPreview = background.places.slice(0, compact ? 4 : 8);
   const timelinePreview = background.timelineEntries.slice(0, compact ? 3 : 6);
+  const mapPreview = bibleMapsForBook(background.book, compact ? 1 : 3);
 
   return (
     <article className={`rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4 ${compact ? "" : "shadow-sm"}`}>
@@ -30434,6 +30476,29 @@ function BibleBackgroundCenter({
           )}
         </div>
       )}
+
+      {mapPreview.length ? (
+        <div className="mt-4 grid gap-3 lg:grid-cols-3">
+          {mapPreview.map((asset) => (
+            <figure key={`background-map-${asset.id}`} className="overflow-hidden rounded-2xl border border-[var(--line)] bg-white">
+              <Image
+                alt={asset.title}
+                className="h-44 w-full bg-[var(--paper)] object-contain"
+                height={420}
+                loading="lazy"
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                src={asset.local_path}
+                width={640}
+              />
+              <figcaption className="space-y-1 px-3 py-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{asset.category}</p>
+                <p className="text-sm font-semibold text-[var(--green)]">{asset.title}</p>
+                <p className="text-xs leading-5 text-[var(--muted)]">{asset.recommended_use}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      ) : null}
 
       <div className="mt-4 grid gap-3 xl:grid-cols-3">
         <BackgroundList title="Geography" items={background.geography.slice(0, compact ? 4 : 8)} empty="No reviewed geography notes are attached yet." />

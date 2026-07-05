@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T04:42:35.664Z",
+  "generated_at": "2026-07-05T12:05:25.778Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
@@ -46,6 +46,13 @@
       "total_bytes": 185274,
       "total_size": "180.93 KB"
     },
+    "bible_map_media": {
+      "files": 11,
+      "present": 11,
+      "missing": 0,
+      "total_bytes": 6878568,
+      "total_size": "6.56 MB"
+    },
     "tsk_cross_reference_batch": {
       "files": 27,
       "present": 27,
@@ -54,10 +61,10 @@
       "total_size": "4.44 MB"
     },
     "all_public_content": {
-      "files": 1708,
-      "present": 1708,
+      "files": 1719,
+      "present": 1719,
       "missing": 0,
-      "total_bytes": 1336932300,
+      "total_bytes": 1343810868,
       "total_size": "1.25 GB"
     }
   },
@@ -19669,6 +19676,94 @@
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 511,
       "checksum_sha256": "f30552847c1856ba7e7cdb4ca13dcf04bf507c1c03dc87c65bfe24619a9342c7"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/assyrian-empire.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/assyrian-empire.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 534434,
+      "checksum_sha256": "a303db06938f0bdd474caa70ed4c4459f65480b5b1457e5db9b85da0a6c14832"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/babylonian-empire.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/babylonian-empire.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 539692,
+      "checksum_sha256": "aab7545aa32b882bdbfcb511d86b0c8e8bf06f4a74c8bba88155ede478d421a6"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/division-solomons-empire.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/division-solomons-empire.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 651646,
+      "checksum_sha256": "d3ba4c0437601a8effe61e08cb889032d08436a0f73b8052b28fa35db1645038"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/empire-david-solomon.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/empire-david-solomon.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 649372,
+      "checksum_sha256": "8629a63eda6be675a228edf7dd5c93f4f3e23fb2ca3441d9fb9fe16adccc806f"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 758819,
+      "checksum_sha256": "054481e64290d125ebd446359f0da02ae93e226b8c8ef48a53ee021893dda8d4"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 861023,
+      "checksum_sha256": "d3aad82ce67a97d912d991214e8c8aa8f692c6b30f42706743f2f0b1ab7c308c"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/map-assets.json",
+      "storage_path": "public/media/bible-maps/hurlbut/map-assets.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 6679,
+      "checksum_sha256": "b847fe327dea6c7f7731421e81a1653a603cc919b0b2a5a13f0ed866004f0bd4"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/palestine-among-tribes.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/palestine-among-tribes.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 755968,
+      "checksum_sha256": "490b3cf87c967a645bb0f00b5395bde7a4fdcb82d73a31c5207171ec4c5a955e"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 618876,
+      "checksum_sha256": "734a65ee3eb056a008e341e3bfdb9f5faa2387832be6ec99e39084ded2c63cb4"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 782692,
+      "checksum_sha256": "c9b19eb5dee1bd67409af7a3688c4f36c94d35be857f303187c075e9d6836f92"
+    },
+    {
+      "kind": "bible_map_media",
+      "source_path": "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
+      "storage_path": "public/media/bible-maps/hurlbut/physical-map-palestine.jpg",
+      "content_type": "image/jpeg",
+      "size_bytes": 719367,
+      "checksum_sha256": "04414fa90e78700ab901733387578008d70e3538475f57b0702a2525917ebfdf"
     },
     {
       "kind": "tsk_cross_reference_batch",

@@ -1,0 +1,120 @@
+{
+  "pack_id": "hurlbut-bible-atlas-maps-phase-1",
+  "last_reviewed": "2026-07-05",
+  "source": {
+    "title": "Bible Atlas: A Manual of Biblical Geography and History",
+    "alternate_title": "The Rand-McNally Bible Atlas: Historical and Descriptive; Illustrated",
+    "author": "Jesse Lyman Hurlbut",
+    "introduction_author": "John Heyl Vincent",
+    "source_url": "https://www.gutenberg.org/ebooks/41140",
+    "rights_status": "Project Gutenberg record states public domain in the USA.",
+    "recommended_citation": "Jesse Lyman Hurlbut, Bible Atlas: A Manual of Biblical Geography and History, Project Gutenberg eBook 41140."
+  },
+  "use_policy": [
+    "Use as public-domain Bible geography visuals in Study Workspace, Passage Guide, and presentation slides.",
+    "Keep source and rights metadata with every public image record.",
+    "Do not mix these records with modern copyrighted atlas art or study Bible graphics."
+  ],
+  "assets": [
+    {
+      "id": "physical-map-palestine",
+      "title": "Physical Map of Palestine",
+      "category": "Bible Geography",
+      "books": ["Genesis", "Joshua", "Judges", "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "Matthew", "Mark", "Luke", "John"],
+      "local_path": "/media/bible-maps/hurlbut/physical-map-palestine.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-015-big.jpg",
+      "recommended_use": "General Bible geography, place lookup, Old and New Testament overview lessons.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "journeys-of-the-patriarchs",
+      "title": "Palestine Before the Conquest and Journeys of the Patriarchs",
+      "category": "Patriarchs",
+      "books": ["Genesis", "Job"],
+      "local_path": "/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-022-big.jpg",
+      "recommended_use": "Genesis 12-50, covenant lessons, Abraham, Isaac, Jacob, Joseph, and early Bible geography.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "exodus-wilderness-sinai",
+      "title": "Lands of the Sojourn and Wandering and Vicinity of Mount Sinai",
+      "category": "Exodus",
+      "books": ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+      "local_path": "/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-028-big.jpg",
+      "recommended_use": "Exodus route, wilderness journey, Mount Sinai, Passover, tabernacle, and wilderness lessons.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "palestine-among-tribes",
+      "title": "Palestine Among the Tribes",
+      "category": "Tribal Allotments",
+      "books": ["Joshua", "Judges", "1 Samuel", "1 Chronicles"],
+      "local_path": "/media/bible-maps/hurlbut/palestine-among-tribes.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-039-big.jpg",
+      "recommended_use": "Joshua and Judges teaching, tribal allotments, land promises, and Bible place orientation.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "empire-david-solomon",
+      "title": "The Empire of David and Solomon",
+      "category": "United Kingdom",
+      "books": ["1 Samuel", "2 Samuel", "1 Kings", "1 Chronicles", "2 Chronicles", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"],
+      "local_path": "/media/bible-maps/hurlbut/empire-david-solomon.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-045-big.jpg",
+      "recommended_use": "David, Solomon, kingdom, temple, Psalms, Proverbs, and Old Testament background teaching.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "division-solomons-empire",
+      "title": "The Division of Solomon's Empire",
+      "category": "Divided Kingdom",
+      "books": ["1 Kings", "2 Kings", "2 Chronicles", "Hosea", "Amos", "Isaiah", "Jeremiah", "Micah"],
+      "local_path": "/media/bible-maps/hurlbut/division-solomons-empire.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-058-big.jpg",
+      "recommended_use": "Divided kingdom, Hosea, Amos, Isaiah, Jeremiah, kings and prophets lessons.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "assyrian-empire",
+      "title": "The Assyrian Empire",
+      "category": "Prophets and Nations",
+      "books": ["2 Kings", "Isaiah", "Hosea", "Amos", "Jonah", "Micah", "Nahum"],
+      "local_path": "/media/bible-maps/hurlbut/assyrian-empire.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-064a-big.jpg",
+      "recommended_use": "Assyria, Nineveh, northern kingdom judgment, prophetic background, and missions/judgment themes.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "babylonian-empire",
+      "title": "The Babylonian Empire and Its Surroundings",
+      "category": "Prophets and Nations",
+      "books": ["2 Kings", "2 Chronicles", "Jeremiah", "Lamentations", "Ezekiel", "Daniel", "Habakkuk"],
+      "local_path": "/media/bible-maps/hurlbut/babylonian-empire.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-064b-big.jpg",
+      "recommended_use": "Babylon, exile, Daniel, Ezekiel, Jeremiah, Habakkuk, and prophecy teaching.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "palestine-ministry-of-jesus",
+      "title": "Palestine During the Ministry of Jesus",
+      "category": "Life of Christ",
+      "books": ["Matthew", "Mark", "Luke", "John"],
+      "local_path": "/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-074a-big.jpg",
+      "recommended_use": "Gospel lessons, Galilee, Judea, Samaria, Jerusalem, miracles, and Life of Christ studies.",
+      "review_status": "Approved public-domain local asset"
+    },
+    {
+      "id": "pauls-first-missionary-journey",
+      "title": "Paul's First Missionary Journey",
+      "category": "Acts and Missions",
+      "books": ["Acts", "Galatians"],
+      "local_path": "/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg",
+      "source_image_url": "https://www.gutenberg.org/files/41140/41140-h/images/i-088-big.jpg",
+      "recommended_use": "Acts 13-14, missions, church planting, Paul, Barnabas, and epistle background.",
+      "review_status": "Approved public-domain local asset"
+    }
+  ]
+}

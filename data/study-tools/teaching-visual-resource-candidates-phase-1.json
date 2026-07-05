@@ -72,7 +72,8 @@
       "books": ["Genesis"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
       "presentation_use": "Faith, covenant, promise, and geography of Genesis 12-25.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 1 local asset created",
+      "local_asset": "/media/bible-maps/hurlbut/journeys-of-the-patriarchs.jpg"
     },
     {
       "id": "exodus-wilderness",
@@ -80,7 +81,8 @@
       "books": ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
       "presentation_use": "Redemption, Passover, tabernacle, wilderness testing, and Sunday School sequence teaching.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 1 local asset created",
+      "local_asset": "/media/bible-maps/hurlbut/exodus-wilderness-sinai.jpg"
     },
     {
       "id": "conquest-and-tribes",
@@ -88,7 +90,8 @@
       "books": ["Joshua", "Judges"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History"],
       "presentation_use": "Joshua/Judges teaching, land promises, and repeated cycle of departure and deliverance.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 1 local asset created",
+      "local_asset": "/media/bible-maps/hurlbut/palestine-among-tribes.jpg"
     },
     {
       "id": "united-and-divided-kingdom",
@@ -96,7 +99,11 @@
       "books": ["1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
       "presentation_use": "Kings, prophets, worship, temple, and Amos/Hosea historical background.",
-      "status": "Needs internally created chart plus public-domain map base"
+      "status": "Phase 1 local assets created",
+      "local_assets": [
+        "/media/bible-maps/hurlbut/empire-david-solomon.jpg",
+        "/media/bible-maps/hurlbut/division-solomons-empire.jpg"
+      ]
     },
     {
       "id": "prophets-and-nations",
@@ -104,7 +111,11 @@
       "books": ["Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
       "presentation_use": "Prophecy lessons, judgment themes, Assyria, Babylon, Edom, Moab, Ammon, Philistia, Syria, and Egypt.",
-      "status": "Needs internally created teaching map"
+      "status": "Phase 1 local assets created",
+      "local_assets": [
+        "/media/bible-maps/hurlbut/assyrian-empire.jpg",
+        "/media/bible-maps/hurlbut/babylonian-empire.jpg"
+      ]
     },
     {
       "id": "life-of-christ-palestine",
@@ -112,7 +123,8 @@
       "books": ["Matthew", "Mark", "Luke", "John"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
       "presentation_use": "Gospel teaching, miracles, travel routes, Galilee, Judea, Samaria, Jerusalem, and Passion Week.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 1 local asset created",
+      "local_asset": "/media/bible-maps/hurlbut/palestine-ministry-of-jesus.jpg"
     },
     {
       "id": "pauls-missionary-journeys",
@@ -120,7 +132,8 @@
       "books": ["Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
       "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
       "presentation_use": "Missions, church planting, Acts studies, and epistle introductions.",
-      "status": "Needs public-domain map plate extraction"
+      "status": "Phase 1 local asset created",
+      "local_asset": "/media/bible-maps/hurlbut/pauls-first-missionary-journey.jpg"
     }
   ],
   "chart_candidates": [
