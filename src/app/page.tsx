@@ -42,7 +42,7 @@ import {
   X,
   MapPin,
 } from "lucide-react";
-import { Children, type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Children, type ReactNode, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { LIBRARY_CATEGORIES } from "@/lib/library-curation";
 import tskPhase1Sample from "../../data/imports/tsk-phase-1-reviewed-sample.json";
@@ -116,6 +116,39 @@ type StoragePlanningRow = {
   monthlyCost: number;
   note: string;
 };
+
+const HASH_TAB_MAP: Partial<Record<string, Tab>> = {
+  "#today": "today",
+  "#bible": "bible",
+  "#search": "search",
+  "#themes": "themes",
+  "#commentary": "commentaryExplorer",
+  "#commentary-explorer": "commentaryExplorer",
+  "#commentaryexplorer": "commentaryExplorer",
+  "#library": "library",
+  "#notes": "notes",
+  "#prayer": "prayer",
+  "#journal": "journal",
+  "#sermons": "sermons",
+  "#presentations": "presentations",
+  "#settings": "settings",
+  "#full-study": "fullStudy",
+  "#fullstudy": "fullStudy",
+  "#passage-guide": "passageGuide",
+  "#passageguide": "passageGuide",
+  "#amos": "amosStudyPath",
+  "#amos-study": "amosStudyPath",
+  "#proverbs": "proverbsStudyPath",
+  "#proverbs-study": "proverbsStudyPath",
+  "#hosea": "hoseaStudyPath",
+  "#hosea-study": "hoseaStudyPath",
+};
+
+function normalizedLocationHash() {
+  if (typeof window === "undefined") return "";
+  return window.location.hash.split("?")[0].toLowerCase();
+}
+
 type ContentHealthSourceResult = {
   ok: boolean;
   status: number;
@@ -15468,7 +15501,7 @@ export default function Home() {
     });
   }, [tab]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!supabase) return;
 
     supabase
@@ -15483,35 +15516,8 @@ export default function Home() {
   }, [supabase]);
 
   useEffect(() => {
-    const hashTabMap: Partial<Record<string, Tab>> = {
-      "#today": "today",
-      "#bible": "bible",
-      "#search": "search",
-      "#themes": "themes",
-      "#commentary": "commentaryExplorer",
-      "#commentary-explorer": "commentaryExplorer",
-      "#commentaryexplorer": "commentaryExplorer",
-      "#library": "library",
-      "#notes": "notes",
-      "#prayer": "prayer",
-      "#journal": "journal",
-      "#sermons": "sermons",
-      "#presentations": "presentations",
-      "#settings": "settings",
-      "#full-study": "fullStudy",
-      "#fullstudy": "fullStudy",
-      "#passage-guide": "passageGuide",
-      "#passageguide": "passageGuide",
-      "#amos": "amosStudyPath",
-      "#amos-study": "amosStudyPath",
-      "#proverbs": "proverbsStudyPath",
-      "#proverbs-study": "proverbsStudyPath",
-      "#hosea": "hoseaStudyPath",
-      "#hosea-study": "hoseaStudyPath",
-    };
-
     function openHiddenAdminAreas() {
-      const normalizedHash = window.location.hash.toLowerCase();
+      const normalizedHash = normalizedLocationHash();
       const params = new URLSearchParams(window.location.search);
       const shouldShowLibraryAcquisition =
         ["#admin-import", "#library-acquisition"].includes(normalizedHash) ||
@@ -15531,7 +15537,7 @@ export default function Home() {
         return;
       }
 
-      const hashTab = hashTabMap[normalizedHash];
+      const hashTab = HASH_TAB_MAP[normalizedHash];
       if (hashTab) {
         if (hashTab === "library") {
           setLibraryView("home");
