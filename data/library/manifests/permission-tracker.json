@@ -30,24 +30,44 @@
     "notes": "Modern copyrighted works. Do not import or expose text without written permission or a license agreement."
   },
   {
+    "id": "permission-kregel-publications",
+    "author": "Multiple Kregel authors",
+    "publisherMinistry": "Kregel Publications",
+    "contactInfo": "kregelbooks@kregel.com",
+    "resourceTitle": "Kregel Bible study, commentary, ministry, and reprint resources",
+    "requestedRights": "Permission process for metadata, official links, approved excerpts, private beta use, and future digital licensing for selected titles.",
+    "status": "Permission requested 2026-07-03",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Keep all Kregel-controlled titles permission-needed until written permission or a licensing agreement is documented."
+  },
+  {
+    "id": "permission-christian-focus-publications",
+    "author": "Multiple Christian Focus authors",
+    "publisherMinistry": "Christian Focus Publications",
+    "contactInfo": "info@christianfocus.com",
+    "resourceTitle": "Christian Focus biographies, theology, missions, and Christian living resources",
+    "requestedRights": "Permission process for metadata, official links, approved excerpts, private beta use, and future digital licensing for selected titles.",
+    "status": "Permission requested 2026-07-03",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Keep all Christian Focus-controlled titles permission-needed until written permission or a licensing agreement is documented."
+  },
+  {
     "id": "permission-j-vernon-mcgee",
     "author": "J. Vernon McGee",
     "publisherMinistry": "Thru the Bible / rights holder to verify",
-    "contactInfo": "Permissions contact to research from official ministry/publisher channels.",
+    "contactInfo": "info@ttb.org",
     "resourceTitle": "Thru the Bible commentary and study resources",
-    "requestedRights": "Licensed/premium access for reading, search, study recommendations, and possible listening workflow.",
-    "status": "Not contacted",
-    "notes": "Treat as premium/licensed only. Do not import transcripts, audio, or commentary text without permission."
+    "requestedRights": "Limited listing, official links, approved excerpts, transcripts/audio/embed permission, and future licensed/premium access for reading, search, study recommendations, and possible listening workflow.",
+    "status": "Permission requested 2026-07-03",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Treat as premium/licensed only. Do not import transcripts, audio, or commentary text without written permission."
   },
   {
     "id": "permission-mark-cahill",
     "author": "Mark Cahill",
     "publisherMinistry": "Mark Cahill Ministries / rights holder to verify",
-    "contactInfo": "Official ministry contact to verify before request.",
+    "contactInfo": "contactus@markcahill.org",
     "resourceTitle": "Evangelism books and training resources",
-    "requestedRights": "Digital library listing, searchable metadata, in-app reading, and possible premium access for evangelism resources.",
-    "status": "Not contacted",
-    "notes": "Modern copyrighted evangelism resources. Permission required before public import."
+    "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and possible future licensing for evangelism resources.",
+    "status": "Permission requested 2026-07-04",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Modern copyrighted evangelism resources require written permission before public import."
   },
   {
     "id": "permission-way-of-life",
@@ -62,12 +82,52 @@
   {
     "id": "permission-sm-davis",
     "author": "S. M. Davis",
-    "publisherMinistry": "Solve Family Problems / rights holder to verify",
-    "contactInfo": "Official ministry/publisher contact to research before outreach.",
+    "publisherMinistry": "Solve Family Problems",
+    "contactInfo": "administrator@solvefamilyproblems.org",
     "resourceTitle": "Family, preaching, and teaching resources",
-    "requestedRights": "Licensed/premium access for reading, listening, and teaching-prep recommendations.",
-    "status": "Not contacted",
-    "notes": "Modern ministry content. Do not publish audio, video, transcripts, or book text without permission."
+    "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and future licensed/premium access for reading, listening, and teaching-prep recommendations.",
+    "status": "Permission requested 2026-07-04",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Modern ministry content. Do not publish audio, video, transcripts, or book text without written permission."
+  },
+  {
+    "id": "permission-bo-wagner",
+    "author": "Bo Wagner",
+    "publisherMinistry": "Word of His Mouth / Cornerstone Baptist Church",
+    "contactInfo": "2knowhim@cbc-web.org",
+    "resourceTitle": "Bible teaching, preaching, and ministry resources",
+    "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and future licensing for specific titles if appropriate.",
+    "status": "Permission requested 2026-07-04",
+    "notes": "Initial permission email sent manually by Stephen. No permission granted yet. Review exact title rights, audio/video ownership, and theological fit before any public recommendation."
+  },
+  {
+    "id": "permission-john-goetsch-striving-together",
+    "author": "John Goetsch / Striving Together",
+    "publisherMinistry": "West Coast Baptist College / Striving Together",
+    "contactInfo": "john.goetsch@wcbc.edu bounced blocked; info@strivingtogether.com bounced blocked",
+    "resourceTitle": "Christian living, youth, ministry, and discipleship resources",
+    "requestedRights": "Limited listing, official links, approved excerpts, cover/promotional graphics, audio/video embed permission, and future licensing for specific titles if appropriate.",
+    "status": "Contact failed 2026-07-04 - alternate route needed",
+    "notes": "Email delivery failed with permanent block for both attempted contacts. No permission granted. Use an official contact form, phone, postal mail, or a different sender route after email deliverability review."
+  },
+  {
+    "id": "permission-david-sorenson-northstar",
+    "author": "David H. Sorenson",
+    "publisherMinistry": "Northstar Ministries",
+    "contactInfo": "dhs.northstar@charter.net",
+    "resourceTitle": "Northstar Ministries Bible study, KJV, preaching, and commentary resources",
+    "requestedRights": "Official links, excerpts, cover graphics, and future title-level review for study integration.",
+    "status": "Permission granted scoped 2026-07-04",
+    "notes": "Dr. David Sorenson granted permission to link to Northstar Ministries resources, use excerpts as desired, and display cover graphics. No licensing is required for that scoped use. Do not assume permission to host full copyrighted books, audio/video files, transcripts, AI/TTS narration, or paid subscription content without separate confirmation. Evidence: data/library/acquisition/permission-evidence/northstar-ministries-2026-07-04.md."
+  },
+  {
+    "id": "permission-leonard-ravenhill-voice-of-life",
+    "author": "Leonard Ravenhill",
+    "publisherMinistry": "Voice of Life Ministries / rights holder to verify",
+    "contactInfo": "VoiceOfLifeMinistries@gmail.com bounced no such user; alternate official contact needed",
+    "resourceTitle": "Revival, prayer, preaching, audio, and sermon resources",
+    "requestedRights": "Limited listing, official links, approved excerpts, audio/video embed permission, and future licensing for specific titles if appropriate.",
+    "status": "Contact failed 2026-07-04 - alternate contact needed",
+    "notes": "Email delivery failed because the Gmail account does not exist. No permission granted. Verify an official ministry, estate, publisher, or SermonIndex contact before sending again. Do not import text, audio, video, transcripts, or excerpts without documented permission or public-domain proof."
   },
   {
     "id": "permission-halley",
