@@ -1,0 +1,195 @@
+{
+  "last_reviewed": "2026-07-05",
+  "purpose": "Rights-safe candidate list for maps, charts, places, people timelines, Christ connections, and sermon-presentation visuals. This is a review manifest, not a public image import.",
+  "rights_policy": [
+    "Use only public-domain source scans, internally created charts, or locally owned images.",
+    "Do not copy modern study Bible charts, modern Bible software maps, modern atlas artwork, or copyrighted ministry graphics.",
+    "Every public visual must keep source URL, rights note, recommended use, and review status.",
+    "Scripture references should use KJV references and KJV wording only when quoting Scripture."
+  ],
+  "source_books_already_in_library": [
+    {
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "author": "Jesse Lyman Hurlbut and John Heyl Vincent",
+      "source_url": "https://www.gutenberg.org/ebooks/41140",
+      "rights_status": "Verified public domain via Project Gutenberg",
+      "best_use": "Primary public-domain Bible atlas source for map extraction and geography cards.",
+      "review_status": "Approved source, image extraction pending"
+    },
+    {
+      "title": "Biblical Geography and History",
+      "author": "Charles Foster Kent",
+      "source_url": "https://www.gutenberg.org/ebooks/40747",
+      "rights_status": "Verified public domain via Project Gutenberg",
+      "best_use": "Background notes for Bible places, regions, travel routes, and historical setting.",
+      "review_status": "Approved source, visual conversion pending"
+    },
+    {
+      "title": "A Class-Book of Biblical History and Geography with numerous maps",
+      "author": "H. S. Osborn",
+      "source_url": "https://www.gutenberg.org/ebooks/56019",
+      "rights_status": "Verified public domain via Project Gutenberg",
+      "best_use": "Public-domain map and geography reference for lessons and teaching cards.",
+      "review_status": "Approved source, image extraction pending"
+    },
+    {
+      "title": "Story of the Bible Animals",
+      "author": "J. G. Wood",
+      "source_url": "https://www.gutenberg.org/ebooks/44685",
+      "rights_status": "Verified public domain via Project Gutenberg",
+      "best_use": "Bible animal images and background notes for children, family lessons, and object lessons.",
+      "review_status": "Approved source, image extraction pending"
+    },
+    {
+      "title": "Bible animals",
+      "author": "J. G. Wood",
+      "source_url": "https://www.gutenberg.org/ebooks/42964",
+      "rights_status": "Verified public domain via Project Gutenberg",
+      "best_use": "Illustrated Bible animals reference; useful for dictionary-style picture cards.",
+      "review_status": "Approved source, image extraction pending"
+    },
+    {
+      "title": "Easton's Bible Dictionary",
+      "author": "M. G. Easton",
+      "source_url": "https://www.ccel.org/ccel/easton/ebd2.html",
+      "rights_status": "Public-domain dictionary source in existing Bible tools workflow",
+      "best_use": "Place, person, object, and doctrine lookup cards.",
+      "review_status": "Approved text source; image use not applicable"
+    }
+  ],
+  "map_candidates": [
+    {
+      "id": "eden-and-patriarchal-world",
+      "label": "Eden and Patriarchal World",
+      "books": ["Genesis", "Job"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
+      "presentation_use": "Genesis overview, creation/fall/patriarch lessons, and Old Testament timeline openings.",
+      "status": "Needs public-domain map plate extraction"
+    },
+    {
+      "id": "abraham-journeys",
+      "label": "Journeys of Abraham",
+      "books": ["Genesis"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
+      "presentation_use": "Faith, covenant, promise, and geography of Genesis 12-25.",
+      "status": "Needs public-domain map plate extraction"
+    },
+    {
+      "id": "exodus-wilderness",
+      "label": "Exodus and Wilderness Journey",
+      "books": ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
+      "presentation_use": "Redemption, Passover, tabernacle, wilderness testing, and Sunday School sequence teaching.",
+      "status": "Needs public-domain map plate extraction"
+    },
+    {
+      "id": "conquest-and-tribes",
+      "label": "Canaan Conquest and Tribal Allotments",
+      "books": ["Joshua", "Judges"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History"],
+      "presentation_use": "Joshua/Judges teaching, land promises, and repeated cycle of departure and deliverance.",
+      "status": "Needs public-domain map plate extraction"
+    },
+    {
+      "id": "united-and-divided-kingdom",
+      "label": "United and Divided Kingdom",
+      "books": ["1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
+      "presentation_use": "Kings, prophets, worship, temple, and Amos/Hosea historical background.",
+      "status": "Needs internally created chart plus public-domain map base"
+    },
+    {
+      "id": "prophets-and-nations",
+      "label": "Prophets and Surrounding Nations",
+      "books": ["Isaiah", "Jeremiah", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
+      "presentation_use": "Prophecy lessons, judgment themes, Assyria, Babylon, Edom, Moab, Ammon, Philistia, Syria, and Egypt.",
+      "status": "Needs internally created teaching map"
+    },
+    {
+      "id": "life-of-christ-palestine",
+      "label": "Life of Christ in Palestine",
+      "books": ["Matthew", "Mark", "Luke", "John"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "Biblical Geography and History"],
+      "presentation_use": "Gospel teaching, miracles, travel routes, Galilee, Judea, Samaria, Jerusalem, and Passion Week.",
+      "status": "Needs public-domain map plate extraction"
+    },
+    {
+      "id": "pauls-missionary-journeys",
+      "label": "Paul's Missionary Journeys",
+      "books": ["Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
+      "source_priority": ["Bible Atlas: A Manual of Biblical Geography and History", "A Class-Book of Biblical History and Geography with numerous maps"],
+      "presentation_use": "Missions, church planting, Acts studies, and epistle introductions.",
+      "status": "Needs public-domain map plate extraction"
+    }
+  ],
+  "chart_candidates": [
+    {
+      "id": "old-testament-timeline",
+      "label": "Old Testament Timeline",
+      "segments": ["Patriarchs", "Exodus", "Judges", "United Kingdom", "Divided Kingdom", "Exile", "Return"],
+      "status": "Ready for internally created chart",
+      "recommended_use": "Bible overview, Sunday School opening, and Study Workspace orientation."
+    },
+    {
+      "id": "kings-and-prophets",
+      "label": "Kings and Prophets Comparison",
+      "segments": ["Israel", "Judah", "Assyria", "Babylon", "Major Prophets", "Minor Prophets"],
+      "status": "Ready for internally created chart",
+      "recommended_use": "Hosea, Amos, Isaiah, Jeremiah, Kings, Chronicles, and prophecy teaching."
+    },
+    {
+      "id": "christ-in-all-scripture",
+      "label": "Christ Connections Across Scripture",
+      "segments": ["Promise", "Passover", "Tabernacle", "Prophet", "Priest", "King", "Suffering Servant", "Resurrection"],
+      "status": "Ready for internally created chart",
+      "recommended_use": "Gospel-centered Bible teaching while keeping Scripture central."
+    },
+    {
+      "id": "spiritual-beings-bible-study",
+      "label": "Satan, Angels, and Demons Study Chart",
+      "segments": ["Satan", "Angels", "Devils/Demons", "Unclean Spirits", "Spiritual Warfare", "Final Judgment"],
+      "status": "Ready for internally created chart",
+      "recommended_use": "Doctrine, youth lessons, apologetics, and Revelation/Daniel studies."
+    },
+    {
+      "id": "people-to-christ-comparison",
+      "label": "People Who Point to Christ",
+      "segments": ["Adam", "Melchizedek", "Joseph", "Moses", "Boaz", "David", "Jonah"],
+      "status": "Ready for internally created chart",
+      "recommended_use": "Typology teaching with restraint and clear Bible references."
+    }
+  ],
+  "picture_card_candidates": [
+    {
+      "id": "tabernacle-items",
+      "label": "Tabernacle Items",
+      "books": ["Exodus", "Leviticus", "Hebrews"],
+      "needed_cards": ["Ark", "Mercy Seat", "Altar", "Laver", "Candlestick", "Table of Shewbread", "Veil", "Priestly Garments"],
+      "status": "Needs public-domain image source review",
+      "recommended_use": "Bible dictionary, Passage Guide, and presentation visuals."
+    },
+    {
+      "id": "bible-animals",
+      "label": "Bible Animals",
+      "books": ["Genesis", "Job", "Psalms", "Proverbs", "Isaiah", "Matthew", "John", "Revelation"],
+      "needed_cards": ["Lamb", "Serpent", "Lion", "Dove", "Eagle", "Sheep", "Goat", "Ox"],
+      "status": "Needs extraction from J. G. Wood sources",
+      "recommended_use": "Family study, children, object lessons, and Bible word lookup."
+    },
+    {
+      "id": "bible-places",
+      "label": "Bible Places",
+      "books": ["Genesis", "Exodus", "Joshua", "1 Kings", "Daniel", "Matthew", "Luke", "John", "Acts", "Revelation"],
+      "needed_cards": ["Jerusalem", "Bethlehem", "Nazareth", "Babylon", "Egypt", "Corinth", "Ephesus", "Damascus", "Rome"],
+      "status": "Needs map/photo source review",
+      "recommended_use": "Place Explorer, Passage Guide, and sermon slides."
+    }
+  ],
+  "next_actions": [
+    "Extract 10 public-domain map plates from Hurlbut/Osborn with exact source page references.",
+    "Create compressed local JPG/WebP versions with source metadata before public display.",
+    "Add one app UI surface first: a Study Workspace visual strip for maps, timelines, people, and Christ connections.",
+    "After visual QA, add presentation slide templates for map slide, timeline slide, Christ-connection slide, and author quote slide."
+  ]
+}
