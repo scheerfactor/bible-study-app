@@ -1,0 +1,105 @@
+{
+  "source_csv": "data/library/import-batches/hymn-stories-baptist-heritage-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 10,
+  "total_attempted": 4,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 3,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 3,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Hymns in Human Experience",
+      "file": "hymns-in-human-experience-william-j-hart.txt",
+      "bytes": 240413,
+      "words": 40090,
+      "reading_time_minutes": 178
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Hymns in Human Experience",
+      "author": "William J. Hart",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hymns-in-human-experience-william-j-hart.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Christian Hymn Book: A Compilation of Psalms Hymns and Spiritual Songs",
+      "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+      "status": "Needs Review",
+      "issues": [
+        "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "Hymns for Christian Devotion: Especially Adapted to the Universalist Denomination",
+      "author": "J. G. Adams; E. H. Chapin",
+      "status": "Needs Review",
+      "issues": [
+        "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "Handbook to the Mennonite Hymnary",
+      "author": "Lester Hostetler",
+      "status": "Needs Review",
+      "issues": [
+        "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [
+      {
+        "title": "The Christian Hymn Book: A Compilation of Psalms Hymns and Spiritual Songs",
+        "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+        "source_url": "https://www.gutenberg.org/ebooks/46041",
+        "category": "Christian Living",
+        "collection": "Hymns and Worship",
+        "rights_status": "verified public domain",
+        "doctrinal_status": "approved with discernment",
+        "warning_label": "Historical hymnal; use with doctrinal discernment",
+        "recommended_use": "Use as a public-domain hymn text and worship-history reference. Not a Baptist doctrinal source; review individual hymns before recommendation.",
+        "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      },
+      {
+        "title": "Hymns for Christian Devotion: Especially Adapted to the Universalist Denomination",
+        "author": "J. G. Adams; E. H. Chapin",
+        "source_url": "https://www.gutenberg.org/ebooks/20476",
+        "category": "Classics",
+        "collection": "Hymns and Worship",
+        "rights_status": "verified public domain",
+        "doctrinal_status": "approved with discernment",
+        "warning_label": "Historical hymnal; not core doctrine",
+        "recommended_use": "Use only for historical hymn research and comparison. Not a core doctrinal recommendation; review individual hymns carefully before quotation or use.",
+        "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      },
+      {
+        "title": "Handbook to the Mennonite Hymnary",
+        "author": "Lester Hostetler",
+        "source_url": "https://www.gutenberg.org/ebooks/54966",
+        "category": "Preaching & Teaching",
+        "collection": "Hymns and Worship",
+        "rights_status": "verified public domain",
+        "doctrinal_status": "approved with discernment",
+        "warning_label": "Historical hymn background; not Baptist-specific",
+        "recommended_use": "Use for hymn background, author notes, worship history, and sermon illustration research. Not a Baptist doctrinal source; review individual notes before recommendation.",
+        "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+      }
+    ],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

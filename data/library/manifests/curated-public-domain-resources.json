@@ -61954,5 +61954,93 @@
     "checksum_sha256": "7a37ed709bcedf4eb4f8e10ea6f80a07b3c528204157462446cfeae4e9540c72",
     "file_size_bytes": 6534908,
     "word_count": 1325342
+  },
+  {
+    "title": "Hymns in Human Experience",
+    "author": "William J. Hart",
+    "year": 2018,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/56480",
+    "download_url": "https://www.gutenberg.org/ebooks/56480.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/hymns-in-human-experience-william-j-hart.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/56480.",
+    "notes": "Use for hymn stories, sermon illustrations, worship background, and devotional applications. Includes material connected with John Fawcett and other classic hymn writers. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn stories, sermon illustrations, worship background, and devotional applications. Includes material connected with John Fawcett and other classic hymn writers.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hymns in Human Experience",
+      "author": "William J. Hart",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 178,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7f6ed74eb385687c2ba2d96662d18db939e3bd2667f61a1394817970254a74dc",
+    "file_size_bytes": 240413,
+    "word_count": 40090
+  },
+  {
+    "title": "Hymn Stories of the Twentieth Century",
+    "author": "William J. Hart",
+    "year": 2018,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/56479",
+    "download_url": "https://www.gutenberg.org/ebooks/56479.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/hymn-stories-of-the-twentieth-century-william-j-hart.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/56479.",
+    "notes": "Use for sermon illustrations, hymn stories, worship background, and devotional applications. Helpful for quotes and stories connected to classic hymn writers without centering Calvinistic doctrinal disputes. Labels/warnings: Historical hymn background.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for sermon illustrations, hymn stories, worship background, and devotional applications. Helpful for quotes and stories connected to classic hymn writers without centering Calvinistic doctrinal disputes.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background"
+    ],
+    "resource_warnings": [
+      "Historical hymn background"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hymn Stories of the Twentieth Century",
+      "author": "William J. Hart",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 141,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "97c6e6321173a93dbbd39922efae092aafb8f802dc1a7a5fbed43437687ec9de",
+    "file_size_bytes": 196680,
+    "word_count": 31803
   }
 ]

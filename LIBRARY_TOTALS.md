@@ -4,15 +4,24 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,403
+- Verified public Library resources: 1,405
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 515
+- Library authors represented: 516
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Resource Import
+
+Added 2 verified public-domain Project Gutenberg hymn-story resources:
+
+- `Hymns in Human Experience` - William J. Hart
+- `Hymn Stories of the Twentieth Century` - William J. Hart
+
+These strengthen sermon illustrations, hymn stories, devotional applications, and worship background without adding questionable hymnals to the public Library. Three broader hymn resources were kept in needs-review because they are not core Baptist/KJV study recommendations and need individual review before public display.
+
+## Previous Public-Domain Resource Import
 
 Added 22 verified public-domain Library resources from Internet Archive:
 
@@ -795,10 +804,10 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,380 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,380 verified resources.
+- `npm run library:qa`: 1,405 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,405 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
-- `npm run validate:strongs`: 14,288 entries checked across 8 files.
+- `npm run validate:strongs`: 14,289 entries checked across 8 files.
 
 ## Next Growth Rule
 

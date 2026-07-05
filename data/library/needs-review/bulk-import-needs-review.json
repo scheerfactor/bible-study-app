@@ -1,0 +1,38 @@
+[
+  {
+    "title": "The Christian Hymn Book: A Compilation of Psalms Hymns and Spiritual Songs",
+    "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+    "source_url": "https://www.gutenberg.org/ebooks/46041",
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "rights_status": "verified public domain",
+    "doctrinal_status": "approved with discernment",
+    "warning_label": "Historical hymnal; use with doctrinal discernment",
+    "recommended_use": "Use as a public-domain hymn text and worship-history reference. Not a Baptist doctrinal source; review individual hymns before recommendation.",
+    "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+  },
+  {
+    "title": "Hymns for Christian Devotion: Especially Adapted to the Universalist Denomination",
+    "author": "J. G. Adams; E. H. Chapin",
+    "source_url": "https://www.gutenberg.org/ebooks/20476",
+    "category": "Classics",
+    "collection": "Hymns and Worship",
+    "rights_status": "verified public domain",
+    "doctrinal_status": "approved with discernment",
+    "warning_label": "Historical hymnal; not core doctrine",
+    "recommended_use": "Use only for historical hymn research and comparison. Not a core doctrinal recommendation; review individual hymns carefully before quotation or use.",
+    "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+  },
+  {
+    "title": "Handbook to the Mennonite Hymnary",
+    "author": "Lester Hostetler",
+    "source_url": "https://www.gutenberg.org/ebooks/54966",
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "rights_status": "verified public domain",
+    "doctrinal_status": "approved with discernment",
+    "warning_label": "Historical hymn background; not Baptist-specific",
+    "recommended_use": "Use for hymn background, author notes, worship history, and sermon illustration research. Not a Baptist doctrinal source; review individual notes before recommendation.",
+    "reason": "Not public-import ready: rights=verified public domain; doctrine=approved with discernment"
+  }
+]
