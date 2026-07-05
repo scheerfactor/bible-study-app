@@ -1046,6 +1046,11 @@ type LibraryAuthorProfile = {
   name: string;
   years: string;
   shortLabel: string;
+  curationLabel?: string;
+  theologicalPerspective?: string;
+  strengths?: string[];
+  readerCautions?: string[];
+  recommendedAudience?: string[];
   biography: string;
   timeline: Array<{ year: string; event: string }>;
   commentary: string;
@@ -39175,6 +39180,7 @@ function LibraryAuthorScreen({
   const expositoryWorks = expositoryWorksForAuthor(resources, 8);
   const devotionalWorks = devotionalWorksForAuthor(resources, 8);
   const preachingTeachingWorks = preachingTeachingWorksForAuthor(resources, 8);
+  const curation = authorCurationFor(profile);
 
   return (
     <div className="space-y-4 p-4 pb-36 md:p-8 md:pb-10">
@@ -39211,6 +39217,51 @@ function LibraryAuthorScreen({
               {subject}
             </span>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
+        <div className="flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Curated Perspective</p>
+            <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">{curation.label}</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--scripture-ink)]">{curation.perspective}</p>
+          </div>
+          <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+            Review by Scripture
+          </span>
+        </div>
+        <div className="mt-4 grid gap-3 lg:grid-cols-3">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Strengths</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {curation.strengths.map((strength) => (
+                <span key={`${profile.id}-strength-${strength}`} className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">
+                  {strength}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Best For</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {curation.audience.map((audience) => (
+                <span key={`${profile.id}-audience-${audience}`} className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--green)]">
+                  {audience}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Use With Discernment</p>
+            <ul className="mt-3 space-y-2">
+              {curation.cautions.map((caution) => (
+                <li key={`${profile.id}-caution-${caution}`} className="text-sm leading-6 text-[var(--scripture-ink)]">
+                  {caution}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -41437,6 +41488,126 @@ function authorCollectionCaution(profile: LibraryAuthorProfile) {
 
 function authorCollectionStrengths(profile: LibraryAuthorProfile) {
   return profile.subjects.slice(0, 3).join(", ");
+}
+
+function authorCurationFor(profile: LibraryAuthorProfile) {
+  const fallback = {
+    label: profile.curationLabel ?? "Curated classic resource",
+    perspective: profile.theologicalPerspective ?? `${profile.commentary} Use this author as a study helper while keeping the Bible text primary.`,
+    strengths: profile.strengths ?? profile.subjects.slice(0, 3),
+    audience: profile.recommendedAudience ?? ["Pastors", "Teachers", "Bible students"],
+    cautions: profile.readerCautions ?? [authorCollectionCaution(profile)],
+  };
+
+  const curated: Record<string, typeof fallback> = {
+    spurgeon: {
+      label: "Baptist preaching and devotional strength",
+      perspective: "Spurgeon is especially valuable for sermon warmth, evangelistic appeal, illustration, and pastoral application. He is best used after careful study of the passage itself.",
+      strengths: ["Evangelism", "Illustrations", "Pastoral application"],
+      audience: ["Preachers", "Sunday School teachers", "Devotional readers"],
+      cautions: ["Some doctrinal emphases reflect his Calvinistic Baptist setting; compare conclusions with Scripture and the app's doctrinal basis."],
+    },
+    ironside: {
+      label: "Clear dispensational exposition",
+      perspective: "Ironside is a strong fit for plain expository teaching, gospel clarity, and dispensational Bible study where verified editions are available.",
+      strengths: ["Exposition", "Dispensational study", "Gospel clarity"],
+      audience: ["Pastors", "Bible teachers", "Sermon preparation"],
+      cautions: ["Keep edition, source, and permissions review visible for later or uncertain works."],
+    },
+    "john-gill": {
+      label: "Historic Baptist scholarship",
+      perspective: "Gill is useful for historical Baptist interpretation and detailed comment, especially when readers want to see older Baptist handling of a passage.",
+      strengths: ["Baptist history", "Verse study", "Original language helps"],
+      audience: ["Pastors", "Advanced students", "Commentary comparison"],
+      cautions: ["Often strongly Calvinistic and sometimes dense; use with comparison and clear teaching context."],
+    },
+    "john-wesley": {
+      label: "Historic Methodist notes and hymns",
+      perspective: "Wesley is helpful for concise devotional notes, holiness emphasis, and Methodist history, especially in comparison with Baptist and dispensational voices.",
+      strengths: ["Concise notes", "Christian living", "Hymn history"],
+      audience: ["Teachers", "Historical comparison", "Devotional readers"],
+      cautions: ["Not Baptist or dispensational; label theological differences clearly when used in core recommendations."],
+    },
+    "charles-wesley": {
+      label: "Classic hymn writing",
+      perspective: "Charles Wesley is most valuable for hymnody, worship history, and devotional language connected to evangelical revival.",
+      strengths: ["Hymns", "Worship", "Devotional language"],
+      audience: ["Worship study", "Teachers", "Historical collections"],
+      cautions: ["Use primarily as hymn and devotional history rather than a doctrinal anchor for Baptist teaching."],
+    },
+    whitefield: {
+      label: "Great Awakening preaching",
+      perspective: "Whitefield is valuable for revival preaching, evangelistic urgency, and Great Awakening history.",
+      strengths: ["Revival", "Evangelism", "Preaching history"],
+      audience: ["Preachers", "Evangelists", "Church history readers"],
+      cautions: ["His theology differs from some Baptist and dispensational readers; present him as historical preaching help."],
+    },
+    kelly: {
+      label: "Detailed dispensational exposition",
+      perspective: "Kelly is useful for careful expository notes, prophecy, and Bible-book study, especially for readers who want more technical commentary.",
+      strengths: ["Detailed exposition", "Prophecy", "Doctrinal comparison"],
+      audience: ["Pastors", "Advanced students", "Commentary comparison"],
+      cautions: ["Dense Brethren-style exposition; keep Scripture primary and label secondary doctrinal debates clearly."],
+    },
+    darby: {
+      label: "Early dispensational and Brethren source",
+      perspective: "Darby is historically important for dispensational study and Brethren interpretation. He is best used as a historical and comparative voice.",
+      strengths: ["Dispensational history", "Bible synopsis", "Prophecy"],
+      audience: ["Advanced students", "Historical theology", "Prophecy comparison"],
+      cautions: ["Not a simple first-read author; avoid using him without context for new believers."],
+    },
+    grant: {
+      label: "Prophecy and Revelation study",
+      perspective: "Grant can help with prophecy, Revelation, and dispensational comparison where verified texts are available.",
+      strengths: ["Prophecy", "Revelation", "Doctrinal structure"],
+      audience: ["Teachers", "Advanced students", "Prophecy study"],
+      cautions: ["Use carefully and avoid letting prophetic systems outrun the plain Bible text."],
+    },
+    gaebelein: {
+      label: "Dispensational Bible conference voice",
+      perspective: "Gaebelein is useful for prophecy, Israel, Bible conference teaching, and dispensational study.",
+      strengths: ["Prophecy", "Israel and the Church", "Bible survey"],
+      audience: ["Pastors", "Bible teachers", "Prophecy study"],
+      cautions: ["Document editions carefully and present prophetic conclusions with appropriate humility."],
+    },
+    larkin: {
+      label: "Charts and dispensational teaching",
+      perspective: "Larkin is especially useful for visual charts, dispensational structure, and prophecy teaching.",
+      strengths: ["Charts", "Dispensations", "Prophecy"],
+      audience: ["Teachers", "Presentation prep", "Visual learners"],
+      cautions: ["Charts are teaching aids, not inspired text; avoid letting diagrams replace careful exegesis."],
+    },
+    "adam-clarke": {
+      label: "Historic Methodist commentary",
+      perspective: "Clarke is useful for historical commentary comparison, language observations, and broad biblical notes.",
+      strengths: ["Language notes", "Historical commentary", "Whole-Bible coverage"],
+      audience: ["Commentary comparison", "Teachers", "Advanced readers"],
+      cautions: ["Not Baptist or dispensational; use as a comparative historical commentary rather than a core doctrinal guide."],
+    },
+    murray: {
+      label: "Devotional prayer and holiness writer",
+      perspective: "Murray is valuable for prayer, surrender, humility, and devotional Christian living.",
+      strengths: ["Prayer", "Humility", "Devotional reading"],
+      audience: ["Devotional readers", "Prayer study", "Small groups"],
+      cautions: ["Some devotional emphases should be read with clear gospel categories and tested by Scripture."],
+    },
+    ryle: {
+      label: "Plain evangelical and practical exposition",
+      perspective: "Ryle is strong for clear doctrine, Christian living, and accessible exposition of the Gospels.",
+      strengths: ["Plain doctrine", "Gospel exposition", "Christian living"],
+      audience: ["New believers", "Teachers", "Family reading"],
+      cautions: ["Anglican background should be noted when discussing church and ordinance questions."],
+    },
+    chafer: {
+      label: "Classic dispensational theology",
+      perspective: "Chafer is valuable for dispensational theology, salvation, grace, and Bible doctrine where public-domain or permission-cleared editions are verified.",
+      strengths: ["Grace", "Dispensational doctrine", "Systematic study"],
+      audience: ["Pastors", "Theology students", "Advanced Bible students"],
+      cautions: ["Do not import modern editions or copyrighted material without permission; clearly distinguish doctrine from Scripture itself."],
+    },
+  };
+
+  return curated[profile.id] ?? fallback;
 }
 
 function AuthorCompletionDashboard({
