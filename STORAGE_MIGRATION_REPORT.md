@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-06-27T02:04:38.339Z
+Generated: 2026-07-05T04:17:41.698Z
 
 ## Path Strategy
 
@@ -10,16 +10,16 @@ Mirror current repository-relative paths in object storage during the transition
 
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
-| Library text | 1,313 | 1,313 | 0 | 706.38 MB |
-| Commentary batches | 136 | 136 | 0 | 341.10 MB |
+| Library text | 1,405 | 1,405 | 0 | 793.12 MB |
+| Commentary batches | 256 | 256 | 0 | 412.38 MB |
 | Dictionary files | 1 | 1 | 0 | 34.28 MB |
-| Library manifests | 1 | 1 | 0 | 2.57 MB |
+| Library manifests | 1 | 1 | 0 | 2.76 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 180.93 KB |
-| TSK/cross-reference batches | 10 | 10 | 0 | 1.72 MB |
-| Total public content | 1,472 | 1,472 | 0 | 1.09 GB |
+| TSK/cross-reference batches | 27 | 27 | 0 | 4.44 MB |
+| Total public content | 1,701 | 1,701 | 0 | 1.24 GB |
 
-Commentary entries represented in public batch files: 7,625
+Commentary entries represented in public batch files: 11,404
 
 ## Next Commands
 

@@ -1,22 +1,22 @@
 {
-  "generated_at": "2026-06-27T02:04:38.339Z",
+  "generated_at": "2026-07-05T04:17:41.698Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
-  "commentary_entries": 7625,
+  "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1313,
-      "present": 1313,
+      "files": 1405,
+      "present": 1405,
       "missing": 0,
-      "total_bytes": 740693814,
-      "total_size": "706.38 MB"
+      "total_bytes": 831642549,
+      "total_size": "793.12 MB"
     },
     "commentary_batch": {
-      "files": 136,
-      "present": 136,
+      "files": 256,
+      "present": 256,
       "missing": 0,
-      "total_bytes": 357667260,
-      "total_size": "341.10 MB"
+      "total_bytes": 432413889,
+      "total_size": "412.38 MB"
     },
     "dictionary": {
       "files": 1,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 2695791,
-      "total_size": "2.57 MB"
+      "total_bytes": 2896210,
+      "total_size": "2.76 MB"
     },
     "study_tool": {
       "files": 9,
@@ -47,18 +47,18 @@
       "total_size": "180.93 KB"
     },
     "tsk_cross_reference_batch": {
-      "files": 10,
-      "present": 10,
+      "files": 27,
+      "present": 27,
       "missing": 0,
-      "total_bytes": 1807321,
-      "total_size": "1.72 MB"
+      "total_bytes": 4660499,
+      "total_size": "4.44 MB"
     },
     "all_public_content": {
-      "files": 1472,
-      "present": 1472,
+      "files": 1701,
+      "present": 1701,
       "missing": 0,
-      "total_bytes": 1166690372,
-      "total_size": "1.09 GB"
+      "total_bytes": 1335439333,
+      "total_size": "1.24 GB"
     }
   },
   "items": [
@@ -15819,6 +15819,1110 @@
       "source_url": "https://archive.org/download/cihm_38948/cihm_38948_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-story-of-the-hymns-and-tunes-hezekiah-butterworth-theron-brown.txt",
+      "storage_path": "data/library/verified/the-story-of-the-hymns-and-tunes-hezekiah-butterworth-theron-brown.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 784036,
+      "checksum_sha256": "7e0cfc15cedaa64f0bf4be9d1532619ad734ec59a3640bb03f1af61344339fb8",
+      "title": "The Story of the Hymns and Tunes",
+      "author": "Hezekiah Butterworth; Theron Brown",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/18444"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-hymn-book-of-the-modern-church-brief-studies-of-hymns-and-hymn-writers-arthur-e-gregory.txt",
+      "storage_path": "data/library/verified/the-hymn-book-of-the-modern-church-brief-studies-of-hymns-and-hymn-writers-arthur-e-gregory.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 507301,
+      "checksum_sha256": "848a29d38194071fdf5a8f20472de87c9e984bd7c094c0e7787743c788e5cee6",
+      "title": "The Hymn-Book of the Modern Church: Brief Studies of Hymns and Hymn-Writers",
+      "author": "Arthur E. Gregory",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/58619"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-singing-church-the-hymns-it-wrote-and-sang-edmund-s-lorenz.txt",
+      "storage_path": "data/library/verified/the-singing-church-the-hymns-it-wrote-and-sang-edmund-s-lorenz.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 572581,
+      "checksum_sha256": "7eafb7b50e81dd1948d609a46c86f39d65b8a60cef26bafcaec87eb652637faf",
+      "title": "The Singing Church: The Hymns It Wrote and Sang",
+      "author": "Edmund S. Lorenz",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/61393"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-story-of-our-hymns-ernest-edwin-ryden.txt",
+      "storage_path": "data/library/verified/the-story-of-our-hymns-ernest-edwin-ryden.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 726792,
+      "checksum_sha256": "a910a0af3027309d87abec2fc3817f3f013367a4858f697cea252b4a2132d436",
+      "title": "The Story of Our Hymns",
+      "author": "Ernest Edwin Ryden",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/33998"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+      "storage_path": "data/library/verified/feathers-for-arrows-illustrations-for-preachers-and-teachers-from-my-note-book-c-h-spurgeon.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 590513,
+      "checksum_sha256": "85d89943315929485864cd68a29c89a30d76e65d9c351cd5c6754cc9a6c4b45f",
+      "title": "Feathers for Arrows: Illustrations for Preachers and Teachers from My Note Book",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/feathersforarro00spurgoog/feathersforarro00spurgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/twelve-sermons-on-conversion-c-h-spurgeon.txt",
+      "storage_path": "data/library/verified/twelve-sermons-on-conversion-c-h-spurgeon.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 486464,
+      "checksum_sha256": "96abadcec31040ec2e24d1a26a8f8925d2d0636af146b982b25333f3cae99bab",
+      "title": "Twelve Sermons on Conversion",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/twelvesermonsonc0000spur/twelvesermonsonc0000spur_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-1-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-1-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 502440,
+      "checksum_sha256": "5f286436329730931f421bfedc278ca286cd25842c7ffcd4b809cf8ed93f1717",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 1",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj01wesl/poeticalworksofj01wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-2-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-2-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 449835,
+      "checksum_sha256": "cf2c22866de2dc53bc0bc760701d2c5a0c465b5a5006377da2ee7702eb50a41e",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 2",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj02wesl/poeticalworksofj02wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-3-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-3-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 466839,
+      "checksum_sha256": "5e8ff9596a2a3411d57ec2e09c3bd7519f896b342920d530aafa23532e7cdcf0",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 3",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj03wesl/poeticalworksofj03wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-4-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-4-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 559503,
+      "checksum_sha256": "f1f471b639716d2df1e653f92bd7d0306cc57eeae4ee662695bd4ba0242e9a76",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 4",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj04wesl/poeticalworksofj04wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-5-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-5-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 594858,
+      "checksum_sha256": "48fc47db47103ac273aa427a51d2475f2ee3d1ff6d5314518cca8171b92ed0f3",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 5",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj05wesluoft/poeticalworksofj05wesluoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-6-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-6-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 542485,
+      "checksum_sha256": "dbf1729ba0286a46e57a0a97d209ad6f91541251f3230443e1eda404c558ad9b",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 6",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj06wesl/poeticalworksofj06wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-7-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-7-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 509576,
+      "checksum_sha256": "1626be942dd7ccf713f083448545629eca315712941f3668b7ab818cf1979663",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 7",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj07wesl/poeticalworksofj07wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-8-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-8-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 593589,
+      "checksum_sha256": "c932b96fc8e20fae11b03fc0a6af82e01a9ec84fa818fbae53911ca632864e00",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 8",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj08wesl/poeticalworksofj08wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-9-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-9-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 626584,
+      "checksum_sha256": "cd6c1e8dd609ec560c2a646fb765563632dd4cadca101c3421329c2d322e1d0e",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 9",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj09wesl/poeticalworksofj09wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-10-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-10-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 644913,
+      "checksum_sha256": "96cfe60ddbcbab785da8a80e77d2b8bc563c31962f9f85ed66788796e63a2b7c",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 10",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj10wesl/poeticalworksofj10wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-11-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-11-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 661447,
+      "checksum_sha256": "aba85bfb1dd6d7d6a30908d9b93b945856db546210c01de9042fc7b52cd25a47",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 11",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj11wesl/poeticalworksofj11wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-12-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-12-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 587889,
+      "checksum_sha256": "64fe2d9ad6445f301e03825f0a1afe297ed9c8088424a8454a79d3d28add80f2",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 12",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj12wesl/poeticalworksofj12wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-13-john-wesley-charles-wesley.txt",
+      "storage_path": "data/library/verified/the-poetical-works-of-john-and-charles-wesley-vol-13-john-wesley-charles-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1090068,
+      "checksum_sha256": "dfd62fb07b0da6258b55917762595d75bded3057f505b2292f00f136823a4953",
+      "title": "The Poetical Works of John and Charles Wesley, Vol. 13",
+      "author": "John Wesley; Charles Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/poeticalworksofj0013wesl/poeticalworksofj0013wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-16-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-16-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 578132,
+      "checksum_sha256": "29492e8df0a1a0e2a6e7f6cbeeede2d2fe1e8ef0910fc01b0f4235cdb14333c0",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 16",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe16wesl/worksofrevjohnwe16wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-17-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-17-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 616369,
+      "checksum_sha256": "55b9f7f09ff975b3e674745caef0aa18482950b2b6c7233abb30c3d1cfb0e1d7",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 17",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe17wesl/worksofrevjohnwe17wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-18-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-18-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 605725,
+      "checksum_sha256": "fa0e549c2dc5e48a19ced897b93987e2a1329111e1e8860e63525ac7fb8ef2a7",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 18",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe18wesl/worksofrevjohnwe18wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-19-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-19-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 512799,
+      "checksum_sha256": "bb8fa9090a3c0867c87d1de6f7d9edbf8b0025fa45b8183aa92848fc66b1cb22",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 19",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe19wesl/worksofrevjohnwe19wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-20-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-20-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 506687,
+      "checksum_sha256": "986a2519d774513f0897a8a3acf02477e7329536f4202a1d37449a1595245779",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 20",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe20wesl/worksofrevjohnwe20wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-21-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-21-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 773006,
+      "checksum_sha256": "3810002da153b9beb94bdfa913d0edce85c3e6c36ce3bf2a7ceb2e5b7b5bef70",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 21",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe21wesl/worksofrevjohnwe21wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-22-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-22-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 588173,
+      "checksum_sha256": "f2696c0fc49e4d4445e6b3cd587e6d2c11d687a35c16d6980174d9380ca8b95f",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 22",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe22wesl/worksofrevjohnwe22wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-23-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-23-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 562784,
+      "checksum_sha256": "7fd4b0c72194bc406d3727d7446452506d93ae0f2462f879d77d509ae691a623",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 23",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe23wesl/worksofrevjohnwe23wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-24-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-24-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 573676,
+      "checksum_sha256": "588b072362f1aa4b791ee9056f044256755346f0ce90caddce4fce9255107b55",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 24",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe24wesl/worksofrevjohnwe24wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-25-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-25-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 664261,
+      "checksum_sha256": "6da1e21e5276f53da40647781737f49a4593c252f773f474a05bae46ab5051d4",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 25",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe25wesl/worksofrevjohnwe25wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-26-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-26-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 515812,
+      "checksum_sha256": "e36ab75c6c53f5bc46b6c796436a68eddd86cceba0b6aea777ddc740f86a0cc1",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 26",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe26wesl/worksofrevjohnwe26wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-27-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-27-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 511249,
+      "checksum_sha256": "a994c2d2fd3f2d14509562edea617ff72fd06e5f2d2a0a8ebe9fc9d15b8329bc",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 27",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe27wesl/worksofrevjohnwe27wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-28-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-28-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 644884,
+      "checksum_sha256": "4919be5c157c2f581a9ece1543d3286ad0caa6862e3f3770dee5ab5dc21cf619",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 28",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe28wesl/worksofrevjohnwe28wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-29-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-29-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 492296,
+      "checksum_sha256": "56e887d73f95f29cefebbfb8e44472e510db53c93bdb8f62745c6fd4fea78254",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 29",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe29wesl/worksofrevjohnwe29wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-30-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-30-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 599074,
+      "checksum_sha256": "d32376790d2ab79b6926caba19e44f1d0cd5c0d4f0fb01d1df9ae1fc183cf82e",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 30",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe30wesl/worksofrevjohnwe30wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-31-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-31-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 602168,
+      "checksum_sha256": "7c2e7b37612e640c46ec7ee5fd758e7e0479a52b7c8d795de4377f87ea54c94f",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 31",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe31wesl/worksofrevjohnwe31wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-32-john-wesley.txt",
+      "storage_path": "data/library/verified/the-works-of-the-rev-john-wesley-1771-edition-vol-32-john-wesley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 565281,
+      "checksum_sha256": "529f96e6327a0c7e14a30681a8f7d72796575c8650b96e73003f45741b0acfb6",
+      "title": "The Works of the Rev. John Wesley, 1771 Edition, Vol. 32",
+      "author": "John Wesley",
+      "category": "Classics",
+      "source_url": "https://archive.org/download/worksofrevjohnwe32wesl/worksofrevjohnwe32wesl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-the-epistle-to-the-romans-h-a-ironside.txt",
+      "storage_path": "data/library/verified/lectures-on-the-epistle-to-the-romans-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 239622,
+      "checksum_sha256": "79a858b1f6ec8c4ca9a18ef91c035199471f9a5d80afb63b4b37c997dc00b4a4",
+      "title": "Lectures on the Epistle to the Romans",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/lecturesonepistl0000hair_u7v0/lecturesonepistl0000hair_u7v0_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/notes-on-the-prophecy-and-lamentations-of-jeremiah-h-a-ironside.txt",
+      "storage_path": "data/library/verified/notes-on-the-prophecy-and-lamentations-of-jeremiah-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 552346,
+      "checksum_sha256": "ee749e6932d0ec1d3b309604248ca37a50e4e8ddc39768494892a015d12a4c3a",
+      "title": "Notes on the Prophecy and Lamentations of Jeremiah",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/notesonprophecyl0000hair/notesonprophecyl0000hair_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-daniel-the-prophet-h-a-ironside.txt",
+      "storage_path": "data/library/verified/lectures-on-daniel-the-prophet-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 350999,
+      "checksum_sha256": "19e692155cb9134941f472ae66c8291daba5e03351ed3683f716f5c7f9a70f9e",
+      "title": "Lectures on Daniel the Prophet",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/lecturesondaniel0000hair_d9x0/lecturesondaniel0000hair_d9x0_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/notes-on-the-books-of-ezra-nehemiah-and-esther-h-a-ironside.txt",
+      "storage_path": "data/library/verified/notes-on-the-books-of-ezra-nehemiah-and-esther-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 468072,
+      "checksum_sha256": "3467a9dfecf52a7dc351ae7c8283ae0faf7b0bb48503560aed3f1104bf43f00e",
+      "title": "Notes on the Books of Ezra Nehemiah and Esther",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/notesonbooksofez0000hair_p4l9/notesonbooksofez0000hair_p4l9_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-lamp-of-prophecy-h-a-ironside.txt",
+      "storage_path": "data/library/verified/the-lamp-of-prophecy-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 261908,
+      "checksum_sha256": "91cf82090bed1ddc29e290d8002d623854503cd566b630cfcce6cc9bae9d812f",
+      "title": "The Lamp of Prophecy",
+      "author": "H. A. Ironside",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/bwb_T5-CWR-083/bwb_T5-CWR-083_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/notes-on-the-book-of-proverbs-h-a-ironside.txt",
+      "storage_path": "data/library/verified/notes-on-the-book-of-proverbs-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 615213,
+      "checksum_sha256": "d898ed8c73cd6506d8884cb7f57c094c69380e1943baaeb0f1003318dae49773",
+      "title": "Notes on the Book of Proverbs",
+      "author": "H. A. Ironside",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/bwb_S0-ATB-471_d0e9/bwb_S0-ATB-471_d0e9_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/satan-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/satan-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 246473,
+      "checksum_sha256": "062574f083a941a41e7d42bfbc91380b286cf675ecd358f5741309ac13227a40",
+      "title": "Satan",
+      "author": "Lewis Sperry Chafer",
+      "category": "Bible study helps",
+      "source_url": "https://www.gutenberg.org/ebooks/12586"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/he-that-is-spiritual-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/he-that-is-spiritual-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 252100,
+      "checksum_sha256": "7636cacc8ce382084fd2595bb917b5af33014a383c49a75cf88934e94873bdbe",
+      "title": "He That Is Spiritual",
+      "author": "Lewis Sperry Chafer",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/hethatisspiritua00chaf_0/hethatisspiritua00chaf_0_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/true-evangelism-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/true-evangelism-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 207741,
+      "checksum_sha256": "7a8624ec76c0581228b7331031d148064aa9a3427c24e36495eee474961a3787",
+      "title": "True Evangelism",
+      "author": "Lewis Sperry Chafer",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/trueevangelism00chaf/trueevangelism00chaf_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/salvation-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/salvation-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 265978,
+      "checksum_sha256": "0a52562a7f96e6e653bf4b67885cd819f405b68cf9913854afe71930b9c7dfb4",
+      "title": "Salvation",
+      "author": "Lewis Sperry Chafer",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/salvation00chafiala/salvation00chafiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/grace-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/grace-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 650170,
+      "checksum_sha256": "0b95ca53d53821a0b05c1343e78603cc158cf5f8afa771461fc3c41b610b0420",
+      "title": "Grace",
+      "author": "Lewis Sperry Chafer",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/bwb_T2-CSF-074/bwb_T2-CSF-074_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-kingdom-in-history-and-prophecy-lewis-sperry-chafer.txt",
+      "storage_path": "data/library/verified/the-kingdom-in-history-and-prophecy-lewis-sperry-chafer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 233803,
+      "checksum_sha256": "5e9a3ed165b5a8bde2805cf5b0dd981896a5443356ec8642d6053c32da8892ff",
+      "title": "The Kingdom in History and Prophecy",
+      "author": "Lewis Sperry Chafer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/kingdominhistory00chaf/kingdominhistory00chaf_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-training-of-the-twelve-alexander-balmain-bruce.txt",
+      "storage_path": "data/library/verified/the-training-of-the-twelve-alexander-balmain-bruce.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1436437,
+      "checksum_sha256": "7066da3f7da9f4caa24c75700963cd3bd706a0f5948c25a55111689c6c83d938",
+      "title": "The Training of the Twelve",
+      "author": "Alexander Balmain Bruce",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/trainingtwelveo00brucgoog/trainingtwelveo00brucgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/number-in-scripture-e-w-bullinger.txt",
+      "storage_path": "data/library/verified/number-in-scripture-e-w-bullinger.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 560482,
+      "checksum_sha256": "965b3dbcb77eecb79956368c9021b85fd1f7a24e8fd6ba4d47f6b2d2d0625d3f",
+      "title": "Number in Scripture",
+      "author": "E. W. Bullinger",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/number-in-scripture/Number%20in%20Scripture_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-wonders-of-prophecy-john-urquhart.txt",
+      "storage_path": "data/library/verified/the-wonders-of-prophecy-john-urquhart.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 536677,
+      "checksum_sha256": "9a2ff2ffcf8477530f18bd20e793a51d5094e2014ad396b8d65dc01dbf67d0ae",
+      "title": "The Wonders of Prophecy",
+      "author": "John Urquhart",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/wondersofprophec00urqu/wondersofprophec00urqu_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-existence-and-attributes-of-god-stephen-charnock.txt",
+      "storage_path": "data/library/verified/the-existence-and-attributes-of-god-stephen-charnock.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3929833,
+      "checksum_sha256": "a99b2d91c7bb69a95637258056993f4f05207064bf4954d9ab5d560285e014c3",
+      "title": "The Existence and Attributes of God",
+      "author": "Stephen Charnock",
+      "category": "Bible study helps",
+      "source_url": "https://www.gutenberg.org/cache/epub/53527/pg53527.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/human-nature-in-its-fourfold-state-thomas-boston.txt",
+      "storage_path": "data/library/verified/human-nature-in-its-fourfold-state-thomas-boston.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 738202,
+      "checksum_sha256": "b04d91fea7fe1cbb12b6dd3642340c7ab86781085cd155fba278f58521c3b552",
+      "title": "Human Nature in Its Fourfold State",
+      "author": "Thomas Boston",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/humannatureinit00bostgoog/humannatureinit00bostgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-method-of-grace-john-flavel.txt",
+      "storage_path": "data/library/verified/the-method-of-grace-john-flavel.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1297807,
+      "checksum_sha256": "adf13c1217666f2c548e82e105877c4cc0e6f151f7cb7b6ca306df282eb7b306",
+      "title": "The Method of Grace",
+      "author": "John Flavel",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/methodofgraceinh00flavrich/methodofgraceinh00flavrich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-gospel-worthy-of-all-acceptation-andrew-fuller.txt",
+      "storage_path": "data/library/verified/the-gospel-worthy-of-all-acceptation-andrew-fuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 172640,
+      "checksum_sha256": "14756e28ed0e7d2eedc23940cf258444b957d59499d6422c1bd3f56b62f292ad",
+      "title": "The Gospel Worthy of All Acceptation",
+      "author": "Andrew Fuller",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/gospelworthyall02fullgoog/gospelworthyall02fullgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-gospel-its-own-witness-andrew-fuller.txt",
+      "storage_path": "data/library/verified/the-gospel-its-own-witness-andrew-fuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 541267,
+      "checksum_sha256": "c02d6b3cd5c8270e008586cb894eff511417a9f3cf4feb5237bb52f7a3a484e2",
+      "title": "The Gospel Its Own Witness",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/gospelitsownwit00fullgoog/gospelitsownwit00fullgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/dialogues-letters-and-essays-on-various-subjects-andrew-fuller.txt",
+      "storage_path": "data/library/verified/dialogues-letters-and-essays-on-various-subjects-andrew-fuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 451359,
+      "checksum_sha256": "20f685cab764600de0a8c62c26b0c5cac1b21995e3cb537c936fbde06dc91c4a",
+      "title": "Dialogues Letters and Essays on Various Subjects",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/dialoguesletter00fullgoog/dialoguesletter00fullgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/memoir-of-rev-samuel-pearce-a-m-andrew-fuller.txt",
+      "storage_path": "data/library/verified/memoir-of-rev-samuel-pearce-a-m-andrew-fuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 685726,
+      "checksum_sha256": "be7f3983e1a1a687455c0dbbb4e973548a0a53e10dc4505f84df579254e2dace",
+      "title": "Memoir of Rev. Samuel Pearce A.M.",
+      "author": "Andrew Fuller",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/memoirofrevsamue0000reva/memoirofrevsamue0000reva_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-atonement-of-christ-andrew-fuller.txt",
+      "storage_path": "data/library/verified/the-atonement-of-christ-andrew-fuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 749733,
+      "checksum_sha256": "335114d4fa6a7133bdd8ea6a9266a9f3a565e660baf4b319e416e59c04a90bce",
+      "title": "The Atonement of Christ",
+      "author": "Andrew Fuller",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/atonementofchris00revarich/atonementofchris00revarich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-the-history-of-preaching-john-a-broadus.txt",
+      "storage_path": "data/library/verified/lectures-on-the-history-of-preaching-john-a-broadus.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 302015,
+      "checksum_sha256": "beaa4b157daeb81791e5d183d34eeb5ad59efc1484b9ed59e3c784139b71b60c",
+      "title": "Lectures on the History of Preaching",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/lecturesonhisto00broagoog/lecturesonhisto00broagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "storage_path": "data/library/verified/a-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1006721,
+      "checksum_sha256": "e414ad1b5cba6b717a339241ee8a764690801ba1d8f439e2f550f0a9ecb90af6",
+      "title": "A Treatise on the Preparation and Delivery of Sermons",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/atreatiseonprep00broagoog/atreatiseonprep00broagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sermons-and-addresses-john-a-broadus.txt",
+      "storage_path": "data/library/verified/sermons-and-addresses-john-a-broadus.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 755119,
+      "checksum_sha256": "ce0054a05a964015a3f2ce1b0ffd0393cbd7b94fe78b6cade5592977d59756bb",
+      "title": "Sermons and Addresses",
+      "author": "John A. Broadus",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sermonsandaddre00broagoog/sermonsandaddre00broagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/memoir-of-james-petigru-boyce-d-d-ll-d-john-a-broadus.txt",
+      "storage_path": "data/library/verified/memoir-of-james-petigru-boyce-d-d-ll-d-john-a-broadus.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 779248,
+      "checksum_sha256": "82254a9467e1dc5c8b9e2ff300a59a46bfb114b89f587624ddf121ece92892bb",
+      "title": "Memoir of James Petigru Boyce D.D. LL.D.",
+      "author": "John A. Broadus",
+      "category": "Baptist history",
+      "source_url": "https://archive.org/download/memoirjamespeti00broagoog/memoirjamespeti00broagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-preaching-phillips-brooks.txt",
+      "storage_path": "data/library/verified/lectures-on-preaching-phillips-brooks.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 415714,
+      "checksum_sha256": "0fa1380be80abeacc2242804e4ad57747c2c1449192b6cdd5df5000899096681",
+      "title": "Lectures on Preaching",
+      "author": "Phillips Brooks",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/lecturesonpreac00broogoog/lecturesonpreac00broogoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-english-bible-history-of-the-translation-of-the-holy-scriptures-hannah-o-brien-chaplin-conant.txt",
+      "storage_path": "data/library/verified/the-english-bible-history-of-the-translation-of-the-holy-scriptures-hannah-o-brien-chaplin-conant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 859442,
+      "checksum_sha256": "82038613ff3ed1725fa6fd7d778a712727fc0bc362e41980048ee01a7fa93d24",
+      "title": "The English Bible History of the Translation of the Holy Scriptures",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "category": "KJV / Textual Issues",
+      "source_url": "https://archive.org/download/englishbiblehis03conagoog/englishbiblehis03conagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-earnest-man-a-memoir-of-adoniram-judson-hannah-o-brien-chaplin-conant.txt",
+      "storage_path": "data/library/verified/the-earnest-man-a-memoir-of-adoniram-judson-hannah-o-brien-chaplin-conant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 812049,
+      "checksum_sha256": "58eb16b9896de06a65a29ddeffee6b72af5dde580cfab346e0a1a25c479143e9",
+      "title": "The Earnest Man A Memoir of Adoniram Judson",
+      "author": "Hannah O'Brien Chaplin Conant",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/earnestmanamemo00conagoog/earnestmanamemo00conagoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/why-i-preach-the-second-coming-isaac-massey-haldeman.txt",
+      "storage_path": "data/library/verified/why-i-preach-the-second-coming-isaac-massey-haldeman.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 167253,
+      "checksum_sha256": "58ab59fc957032e1ddde33e2a17859560bc65545104eac1060207eeb341b9a9e",
+      "title": "Why I Preach the Second Coming",
+      "author": "Isaac Massey Haldeman",
+      "category": "Bible study helps",
+      "source_url": "https://www.gutenberg.org/ebooks/30573"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-commentary-on-the-song-of-solomon-george-burrowes.txt",
+      "storage_path": "data/library/verified/a-commentary-on-the-song-of-solomon-george-burrowes.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 992180,
+      "checksum_sha256": "152fb23c6b30ba7a771674c7d1c00dd4eaf23c2e595db0db978c6c610e130ea6",
+      "title": "A Commentary on the Song of Solomon",
+      "author": "George Burrowes",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/commentaryonsong1867burr/commentaryonsong1867burr_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-hebrew-monarchy-an-interpretation-of-the-english-bible-b-h-carroll.txt",
+      "storage_path": "data/library/verified/the-hebrew-monarchy-an-interpretation-of-the-english-bible-b-h-carroll.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 608071,
+      "checksum_sha256": "108c4d6f8ad8bda5de4d86f671b586b611896e6ae123b0980ea906e78633ddf1",
+      "title": "The Hebrew Monarchy (An Interpretation of the English Bible)",
+      "author": "B. H. Carroll",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/hebrewmonarchyan0000bhca/hebrewmonarchyan0000bhca_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/baptists-and-their-doctrines-b-h-carroll.txt",
+      "storage_path": "data/library/verified/baptists-and-their-doctrines-b-h-carroll.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 295570,
+      "checksum_sha256": "b5f75d2624721081ce2e2237efde853b369c2d003442341631c7d4d4fa5d91cc",
+      "title": "Baptists And Their Doctrines",
+      "author": "B. H. Carroll",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/bwb_Y0-BNY-032/bwb_Y0-BNY-032_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-genesis-of-american-anti-missionism-b-h-carroll-jr.txt",
+      "storage_path": "data/library/verified/the-genesis-of-american-anti-missionism-b-h-carroll-jr.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 373603,
+      "checksum_sha256": "b18f284e5f466611906454f0af81de72c4dac41d64488e88e5621cace33bfe48",
+      "title": "The Genesis of American Anti-Missionism",
+      "author": "B. H. Carroll, Jr.",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/genesisofamerica0000bhca/genesisofamerica0000bhca_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor.txt",
+      "storage_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3241896,
+      "checksum_sha256": "18b844fa7fcd3a3db9a28be0ca1b961488efe217569cac6d08fbb237bf67df20",
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra191exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/biblicalillustra191exel/biblicalillustra191exel_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-2.txt",
+      "storage_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-2.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 4465453,
+      "checksum_sha256": "92ac32614a2ec4039875b116d8ed3332ae92be3a3383df0ae41f8367384d5968",
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra451exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/biblicalillustra451exel/biblicalillustra451exel_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-3.txt",
+      "storage_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-3.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3509243,
+      "checksum_sha256": "4bcbd93a2e7a5970748ded3deed11674510851c237790aa071d9b41c61f989b5",
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra282exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/biblicalillustra282exel/biblicalillustra282exel_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-4.txt",
+      "storage_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-4.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2979481,
+      "checksum_sha256": "c590fc9d36a8bb97d3939a9a65d840ed0f173ff7d83428b4af87c05342cc68b0",
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra233exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/biblicalillustra233exel/biblicalillustra233exel_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104564-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104564-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3420099,
+      "checksum_sha256": "3df225f0cf95f0eec51c9c5deeda7fea27281bb74f6e310626587656d78ea788",
+      "title": "The pulpit commentary (cu31924101104564)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104564/cu31924101104564_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-thepulpitcomment09spenuoft-spence-jones-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-thepulpitcomment09spenuoft-spence-jones-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3290818,
+      "checksum_sha256": "071cf8c0245cc0546359bcc647332182c2a0cbba68c45f5afcb4ec5c27252f72",
+      "title": "The pulpit commentary (thepulpitcomment09spenuoft)",
+      "author": "Spence-Jones, Henry Donald Maurice, 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/thepulpitcomment09spenuoft/thepulpitcomment09spenuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104952-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104952-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3574862,
+      "checksum_sha256": "dbb7187b1781af221e32160ac19d44e26572e8e5bb94166ad264029d4400dbba",
+      "title": "The pulpit commentary (cu31924101104952)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104952/cu31924101104952_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104895-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104895-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3582608,
+      "checksum_sha256": "b85a331ae2083e2513dcb2f11221919309242368c3b5afd23589ad126d803f98",
+      "title": "The pulpit commentary (cu31924101104895)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104895/cu31924101104895_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet32newy-various.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet32newy-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1072895,
+      "checksum_sha256": "07299f0ceb1d298aaea67f28563b384e0dafed9d048fffd96503e46bad96bd3b",
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet32newy)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomplet32newy/preacherscomplet32newy_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet22newy-various.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet22newy-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3201703,
+      "checksum_sha256": "44a8a2d1266c6ccd0e5c452a6f0e4969b8ecbf7bbc1f9f720034bc245eebf8fa",
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet22newy)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomplet22newy/preacherscomplet22newy_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3013174,
+      "checksum_sha256": "29693ab735efbbaef4e5d20dfcccb881fe5cf75d7c8ad2a033282f9f7921a08f",
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet02newy)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomplet02newy/preacherscomplet02newy_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/christian-baptism-illustrated-microform-its-proper-subjects-and-proper-act-with-a-brief-history-of-baptist-pri.txt",
+      "storage_path": "data/library/verified/christian-baptism-illustrated-microform-its-proper-subjects-and-proper-act-with-a-brief-history-of-baptist-pri.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 319399,
+      "checksum_sha256": "f9f79c7f72bd732ae0d200b02d2b77130c9b7c70b87b766ff1fbf1bb86b4d66c",
+      "title": "Christian baptism (illustrated) [microform] : its proper subjects and proper act, with a brief history of Baptist principles and practices, from the planting of the Apostolic Church to the present time; also a biographical sketch of the life and labors of Rev. Charles Haddon Spurgeon, Pastor of the Metropolitan Tabernacle, London, England",
+      "author": "Carey, T. H",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/cihm_00478/cihm_00478_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/charles-h-spurgeon-wayland-h-l-heman-lincoln-1830-1898-american-baptist-publication-society.txt",
+      "storage_path": "data/library/verified/charles-h-spurgeon-wayland-h-l-heman-lincoln-1830-1898-american-baptist-publication-society.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 585460,
+      "checksum_sha256": "3d498e6f709888f159ed6b0915754e7c2848e776e90d5a0438fe13926f6437db",
+      "title": "Charles H. Spurgeon",
+      "author": "Wayland, H. L. (Heman Lincoln), 1830-1898; American Baptist Publication Society",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/charleshspurgeon01wayl_0/charleshspurgeon01wayl_0_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-history-of-american-baptist-missions-merriam-edmund-franklin-1847-1930.txt",
+      "storage_path": "data/library/verified/a-history-of-american-baptist-missions-merriam-edmund-franklin-1847-1930.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 481173,
+      "checksum_sha256": "357a01ad3ded7fc87de5c3578e327353adea24710e74f0beaa6f101f10e4dfda",
+      "title": "A history of American Baptist missions",
+      "author": "Merriam, Edmund Franklin, 1847-1930",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/historyofamerica1900merr/historyofamerica1900merr_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-short-history-of-baptist-missions-microform-vedder-henry-c-henry-clay-1853-1935.txt",
+      "storage_path": "data/library/verified/a-short-history-of-baptist-missions-microform-vedder-henry-c-henry-clay-1853-1935.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1052784,
+      "checksum_sha256": "a3b6242edf3edfb3f9327f11e8c197f2fabf0d0563b844d05dc0b3d4d0ec9aec",
+      "title": "A short history of Baptist missions [microform]",
+      "author": "Vedder, Henry C. (Henry Clay), 1853-1935",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/MN41448ucmf_5/MN41448ucmf_5_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/notes-on-philippians-h-a-ironside.txt",
+      "storage_path": "data/library/verified/notes-on-philippians-h-a-ironside.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 168134,
+      "checksum_sha256": "dcfa018804b6ee27bc5337d65c3694b96569cde4882375a5d561b7a735acaa50",
+      "title": "notes on philippians",
+      "author": "h. a. ironside",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/notesonphilippia0000hair_j9a5/notesonphilippia0000hair_j9a5_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-prophet-joel-a-c-gaebelein.txt",
+      "storage_path": "data/library/verified/the-prophet-joel-a-c-gaebelein.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 244534,
+      "checksum_sha256": "ae0e4602f75d4b75dd160d52a2b3217acca29d42f9df91edbd5d17050b3e4255",
+      "title": "THE PROPHET JOEL",
+      "author": "A. C. GAEBELEIN",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/bwb_S0-ATJ-742/bwb_S0-ATJ-742_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-bible-word-book-a-glossary-of-archaic-words-and-phrases-in-the-authorized-version-of-the-bible-and-the-boo.txt",
+      "storage_path": "data/library/verified/the-bible-word-book-a-glossary-of-archaic-words-and-phrases-in-the-authorized-version-of-the-bible-and-the-boo.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1551356,
+      "checksum_sha256": "1e60716b66cc00f48d6f09bb7f5e44dc49724aac25f3eded311c0b5c0d367c4a",
+      "title": "The Bible word-book : a glossary of archaic words and phrases in the authorized version of the Bible and the Book of Common Prayer",
+      "author": "Wright, William Aldis, 1831-1914",
+      "category": "KJV / Textual Issues",
+      "source_url": "https://archive.org/download/biblewordbookglo00wrig/biblewordbookglo00wrig_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/annotations-upon-the-holy-bible-vol-1-pool-matthew.txt",
+      "storage_path": "data/library/verified/annotations-upon-the-holy-bible-vol-1-pool-matthew.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 6534908,
+      "checksum_sha256": "7a37ed709bcedf4eb4f8e10ea6f80a07b3c528204157462446cfeae4e9540c72",
+      "title": "Annotations Upon The Holy Bible Vol. 1",
+      "author": "Pool, Matthew",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/in.ernet.dli.2015.96153/2015.96153.Annotations-Upon-The-Holy-Bible--Vol-1_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hymns-in-human-experience-william-j-hart.txt",
+      "storage_path": "data/library/verified/hymns-in-human-experience-william-j-hart.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 240413,
+      "checksum_sha256": "7f6ed74eb385687c2ba2d96662d18db939e3bd2667f61a1394817970254a74dc",
+      "title": "Hymns in Human Experience",
+      "author": "William J. Hart",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/56480"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hymn-stories-of-the-twentieth-century-william-j-hart.txt",
+      "storage_path": "data/library/verified/hymn-stories-of-the-twentieth-century-william-j-hart.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 196680,
+      "checksum_sha256": "97c6e6321173a93dbbd39922efae092aafb8f802dc1a7a5fbed43437687ec9de",
+      "title": "Hymn Stories of the Twentieth Century",
+      "author": "William J. Hart",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/56479"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -15860,6 +16964,16 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/adam-clarke-reviewed-ecclesiastes-commentary.json",
+      "storage_path": "data/imports/adam-clarke-reviewed-ecclesiastes-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 161094,
+      "checksum_sha256": "1a634e4e15afa724de353696913aa884f6d7b8f40f23f82d3b72b0f37713d51a",
+      "batch_name": "adam-clarke-reviewed-ecclesiastes-commentary.json",
+      "entries": 12
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-epistles-depth-phase-1-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-epistles-depth-phase-1-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -15877,6 +16991,26 @@
       "checksum_sha256": "98580069737326abac0f38bbc85f2ef020ec86c982f05bdac11e4e3fdc6ae083",
       "batch_name": "adam-clarke-reviewed-historical-books-phase-1-commentary.json",
       "entries": 123
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/adam-clarke-reviewed-job-1-10-commentary.json",
+      "storage_path": "data/imports/adam-clarke-reviewed-job-1-10-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 15834,
+      "checksum_sha256": "802e56ffbf5871381613d1ce2bfd41069bda71f5c2533b8d02a60118dd8c909e",
+      "batch_name": "adam-clarke-reviewed-job-1-10-commentary.json",
+      "entries": 10
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/adam-clarke-reviewed-job-11-42-commentary.json",
+      "storage_path": "data/imports/adam-clarke-reviewed-job-11-42-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 48705,
+      "checksum_sha256": "844a9f359e24cd9dd6db8cedbf252eac46e2a61592395a8237b1e8d6e121cc85",
+      "batch_name": "adam-clarke-reviewed-job-11-42-commentary.json",
+      "entries": 32
     },
     {
       "kind": "commentary_batch",
@@ -16010,6 +17144,16 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/barnes-reviewed-ecclesiastes-commentary.json",
+      "storage_path": "data/imports/barnes-reviewed-ecclesiastes-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 73871,
+      "checksum_sha256": "177d1f2bcc6017d19e3ee4688041a2d385d4c3e52ba2a694d4c16b25791b9e5b",
+      "batch_name": "barnes-reviewed-ecclesiastes-commentary.json",
+      "entries": 12
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/barnes-reviewed-epistles-depth-phase-1-commentary.json",
       "storage_path": "data/imports/barnes-reviewed-epistles-depth-phase-1-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16020,6 +17164,16 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/barnes-reviewed-historical-books-completion-commentary.json",
+      "storage_path": "data/imports/barnes-reviewed-historical-books-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 392229,
+      "checksum_sha256": "1627182ee9a81b3e784523392e5bbe92d8f3657709dab730f7a165dc89760f6f",
+      "batch_name": "barnes-reviewed-historical-books-completion-commentary.json",
+      "entries": 98
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/barnes-reviewed-historical-books-phase-1-commentary.json",
       "storage_path": "data/imports/barnes-reviewed-historical-books-phase-1-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16027,6 +17181,26 @@
       "checksum_sha256": "b1771ad71433061427e6f442af5df8326786fdd43aa4d87271d8ff4e66d95d72",
       "batch_name": "barnes-reviewed-historical-books-phase-1-commentary.json",
       "entries": 123
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/barnes-reviewed-job-1-10-commentary.json",
+      "storage_path": "data/imports/barnes-reviewed-job-1-10-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 407801,
+      "checksum_sha256": "e55791e5372e723e1b0c7a5dd47174417bcce1dca96f8a2a3cd1956fd9007986",
+      "batch_name": "barnes-reviewed-job-1-10-commentary.json",
+      "entries": 10
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/barnes-reviewed-job-11-42-commentary.json",
+      "storage_path": "data/imports/barnes-reviewed-job-11-42-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1377423,
+      "checksum_sha256": "57b8deae5f6fe05d1851095a0e9ed4002677fd150774f6b0114d14fc9ab82607",
+      "batch_name": "barnes-reviewed-job-11-42-commentary.json",
+      "entries": 32
     },
     {
       "kind": "commentary_batch",
@@ -16110,6 +17284,36 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-1-chronicles-11-29-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-1-chronicles-11-29-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 516305,
+      "checksum_sha256": "5dad3477fc02672f0f340932352481889e6857d7c8e5f17f996dc42e2bfa57d1",
+      "batch_name": "biblical-illustrator-reviewed-1-chronicles-11-29-commentary.json",
+      "entries": 19
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-1-corinthians-6-16-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-1-corinthians-6-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1983606,
+      "checksum_sha256": "90ad55b58a40ebf278ded1a85364e1e21173580b8cf3a6284d5d3e8cd9ec253e",
+      "batch_name": "biblical-illustrator-reviewed-1-corinthians-6-16-commentary.json",
+      "entries": 11
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-2-chronicles-11-36-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-2-chronicles-11-36-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 636516,
+      "checksum_sha256": "62840963340bcfec53b58d15eee9cf44675ddb3be4f6b174e261c0c993768b36",
+      "batch_name": "biblical-illustrator-reviewed-2-chronicles-11-36-commentary.json",
+      "entries": 26
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/biblical-illustrator-reviewed-acts-completion-commentary.json",
       "storage_path": "data/imports/biblical-illustrator-reviewed-acts-completion-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16137,6 +17341,16 @@
       "checksum_sha256": "8890c87befa17eddcc3ed53794d405253c0a5ceeddb398d48f290df62a57a0db",
       "batch_name": "biblical-illustrator-reviewed-exodus-commentary.json",
       "entries": 40
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-ezekiel-13-48-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-ezekiel-13-48-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2031365,
+      "checksum_sha256": "8ddb47fdb76e2cd3604e090edc102594fe9de1a1abdcf38f4ca9f4ada5f3de0d",
+      "batch_name": "biblical-illustrator-reviewed-ezekiel-13-48-commentary.json",
+      "entries": 36
     },
     {
       "kind": "commentary_batch",
@@ -16180,6 +17394,46 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-isaiah-36-66-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-isaiah-36-66-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 4122179,
+      "checksum_sha256": "fe5c231578ab61eccf4e892794770518859a146379cff675b98230dd81d4442d",
+      "batch_name": "biblical-illustrator-reviewed-isaiah-36-66-commentary.json",
+      "entries": 31
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-isaiah-6-35-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-isaiah-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2660985,
+      "checksum_sha256": "5c5478687fabd581de3e60de1fa681b2f9be57d8976e375ac8ba6aa2d54ea2e1",
+      "batch_name": "biblical-illustrator-reviewed-isaiah-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-jeremiah-11-52-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-jeremiah-11-52-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2150967,
+      "checksum_sha256": "08ddd61a5bf31d98f68f8cc6ac1b8eb2b091961ec0976af76359d1692b161f3b",
+      "batch_name": "biblical-illustrator-reviewed-jeremiah-11-52-commentary.json",
+      "entries": 42
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-job-13-42-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-job-13-42-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1947021,
+      "checksum_sha256": "829cf80d7861e24ff7f66df4cd6089d3f91b610a51ff3f2c341d33c99790cbfc",
+      "batch_name": "biblical-illustrator-reviewed-job-13-42-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/biblical-illustrator-reviewed-john-completion-commentary.json",
       "storage_path": "data/imports/biblical-illustrator-reviewed-john-completion-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16220,6 +17474,76 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-psalms-126-150-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-psalms-126-150-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1201035,
+      "checksum_sha256": "a957918bda6c2b23b597217eb066d21ad9dfc5e14df684463155acf2c71647cd",
+      "batch_name": "biblical-illustrator-reviewed-psalms-126-150-commentary.json",
+      "entries": 25
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-psalms-36-65-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-psalms-36-65-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2489100,
+      "checksum_sha256": "4856956d24378400d023d8bded14071fdb23e0a39d34f1bd677df47531c27934",
+      "batch_name": "biblical-illustrator-reviewed-psalms-36-65-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-psalms-6-35-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-psalms-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2879306,
+      "checksum_sha256": "a9cfa70df218f1293f379e0e9be79df2e8bebaf69fc362b247088cf28299a341",
+      "batch_name": "biblical-illustrator-reviewed-psalms-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-psalms-66-95-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-psalms-66-95-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2284745,
+      "checksum_sha256": "1c1b83102d99e22622034637ecede588648e120cd83bff08ee9d78b653cdfab7",
+      "batch_name": "biblical-illustrator-reviewed-psalms-66-95-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-psalms-96-125-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-psalms-96-125-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2769783,
+      "checksum_sha256": "0d11af02369c4d1a2d3ba944f91b61e172be3b03eb47e99cadade1ffa3fa363c",
+      "batch_name": "biblical-illustrator-reviewed-psalms-96-125-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-revelation-14-22-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-revelation-14-22-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1235044,
+      "checksum_sha256": "493bd989700a50e7862b1aa04d5acf2a0174cc25047536db40ce843663130c14",
+      "batch_name": "biblical-illustrator-reviewed-revelation-14-22-commentary.json",
+      "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/biblical-illustrator-reviewed-romans-9-16-commentary.json",
+      "storage_path": "data/imports/biblical-illustrator-reviewed-romans-9-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1997749,
+      "checksum_sha256": "38b6c4a636d56273b8c9590287cd8136f571771e433fce2a91d0d4d90d36e402",
+      "batch_name": "biblical-illustrator-reviewed-romans-9-16-commentary.json",
+      "entries": 8
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/biblical-illustrator-reviewed-weak-books-commentary.json",
       "storage_path": "data/imports/biblical-illustrator-reviewed-weak-books-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16237,6 +17561,16 @@
       "checksum_sha256": "f4ff26cea542c44581828ad835ab151d58280537c4f7d4a992ec118d2b996f69",
       "batch_name": "biblical-illustrator-reviewed-weak-books-phase-2-commentary.json",
       "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/clarke-reviewed-historical-books-completion-commentary.json",
+      "storage_path": "data/imports/clarke-reviewed-historical-books-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 704171,
+      "checksum_sha256": "ab2276b11879ba6d97a87afac5022915435c7df56f52140fc5e5650a9c7f95de",
+      "batch_name": "clarke-reviewed-historical-books-completion-commentary.json",
+      "entries": 98
     },
     {
       "kind": "commentary_batch",
@@ -16300,6 +17634,296 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-1-corinthians-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-1-corinthians-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 45894,
+      "checksum_sha256": "08025472a5ec7ec6871b390c158ec4e577e400405ae24ea10a42691e3a633b6c",
+      "batch_name": "g-campbell-morgan-reviewed-1-corinthians-commentary.json",
+      "entries": 16
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-2-corinthians-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-2-corinthians-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 37293,
+      "checksum_sha256": "875d9d199c05a6c98325de36cda88566e176dd9731288ba1ecfe50df7fb98f6b",
+      "batch_name": "g-campbell-morgan-reviewed-2-corinthians-commentary.json",
+      "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-amos-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-amos-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 23066,
+      "checksum_sha256": "4a9881b9153cd95639ed50eee4fac052e37608fb051d1c8e3bc29bec1650abbb",
+      "batch_name": "g-campbell-morgan-reviewed-amos-commentary.json",
+      "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-chronicles-restoration-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-chronicles-restoration-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 256624,
+      "checksum_sha256": "56236b813237bf7c6143c247e6bd99aa9b01d578f5ce1c938102d4af42a5e4f8",
+      "batch_name": "g-campbell-morgan-reviewed-chronicles-restoration-commentary.json",
+      "entries": 98
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-deuteronomy-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-deuteronomy-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 89055,
+      "checksum_sha256": "3ec69992fa98d3ae38dca384e96e277a77c36c8fdaf485e70a867cd9c0639aeb",
+      "batch_name": "g-campbell-morgan-reviewed-deuteronomy-commentary.json",
+      "entries": 34
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-ecclesiastes-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-ecclesiastes-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 34983,
+      "checksum_sha256": "123eda8e94bdc456e682f56de0dc075205b3cca9ed0645b19e83137502571345",
+      "batch_name": "g-campbell-morgan-reviewed-ecclesiastes-commentary.json",
+      "entries": 12
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-exodus-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-exodus-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 104733,
+      "checksum_sha256": "7ddbdbd5840482a52dcadb5a35a41f08967abc9b2cb67dca854db7c7c2f04806",
+      "batch_name": "g-campbell-morgan-reviewed-exodus-commentary.json",
+      "entries": 40
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-ezekiel-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-ezekiel-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 129176,
+      "checksum_sha256": "799aa0e35ef2ca6ec60c7a0b12d43ad6935d2a477d6387bf9e3a1291713b0112",
+      "batch_name": "g-campbell-morgan-reviewed-ezekiel-commentary.json",
+      "entries": 48
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-galatians-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-galatians-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 16835,
+      "checksum_sha256": "65c204aed266183a5d0dc78b23b2d515f164991a0f0eb06040f3c9788d120fde",
+      "batch_name": "g-campbell-morgan-reviewed-galatians-commentary.json",
+      "entries": 6
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-genesis-completion-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-genesis-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 67147,
+      "checksum_sha256": "553cee22f947cbb996235f5eadde7b95daf8baba5fb7d85dbc5cbd9d11f82daf",
+      "batch_name": "g-campbell-morgan-reviewed-genesis-completion-commentary.json",
+      "entries": 25
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-isaiah-1-33-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-isaiah-1-33-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 76703,
+      "checksum_sha256": "3e5eadbb72f0514a7cf03b88029f33543b81235a63f73f24ea6760e21994afa8",
+      "batch_name": "g-campbell-morgan-reviewed-isaiah-1-33-commentary.json",
+      "entries": 33
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-isaiah-34-66-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-isaiah-34-66-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 77532,
+      "checksum_sha256": "722df27c1b5cb01742fab6b5f8d90926f1e2e7fb5f54ba602e8429d223b88a8f",
+      "batch_name": "g-campbell-morgan-reviewed-isaiah-34-66-commentary.json",
+      "entries": 33
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-jeremiah-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-jeremiah-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 128587,
+      "checksum_sha256": "b8a0598324a216ef357db779c3f9e240feec59851e1539a6b67a302419b8bac5",
+      "batch_name": "g-campbell-morgan-reviewed-jeremiah-commentary.json",
+      "entries": 52
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-job-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-job-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 115136,
+      "checksum_sha256": "2ffdec852447e0dc8cb010b9579e040153babd73d89a9b46240370f6e45eba45",
+      "batch_name": "g-campbell-morgan-reviewed-job-commentary.json",
+      "entries": 42
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-joshua-judges-ruth-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-joshua-judges-ruth-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 128718,
+      "checksum_sha256": "ad8af92f3ec4f33f03b4eb79c9d51c4b0b3dbf8e3c5e357612455f1d4ae2715e",
+      "batch_name": "g-campbell-morgan-reviewed-joshua-judges-ruth-commentary.json",
+      "entries": 49
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-lamentations-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-lamentations-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 13136,
+      "checksum_sha256": "bf0c897c16f15a71b23a91e033166e51e5792e458ed80aef6f6d07d56d0ae770",
+      "batch_name": "g-campbell-morgan-reviewed-lamentations-commentary.json",
+      "entries": 5
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-leviticus-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-leviticus-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 66426,
+      "checksum_sha256": "9ea2b97249c6b7386499435c9889927d040eb05aaa7069ede95a2e3c1c482be4",
+      "batch_name": "g-campbell-morgan-reviewed-leviticus-commentary.json",
+      "entries": 27
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-luke-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-luke-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 59268,
+      "checksum_sha256": "9cae6a08e77e6fd692b2926ede3d7537724b6bc86c47a54acf843227a13d864c",
+      "batch_name": "g-campbell-morgan-reviewed-luke-commentary.json",
+      "entries": 24
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-mark-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-mark-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 43619,
+      "checksum_sha256": "e84a35d03b9c3c579d95025bf70f81c622ccbf6d1b1f5cf0834ed697d795593e",
+      "batch_name": "g-campbell-morgan-reviewed-mark-commentary.json",
+      "entries": 16
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-matthew-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-matthew-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 80508,
+      "checksum_sha256": "da80b32200e7dba36455ca4fa5f87014a06375330dbaf1de47b6dcb71f222039",
+      "batch_name": "g-campbell-morgan-reviewed-matthew-commentary.json",
+      "entries": 28
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-numbers-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-numbers-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 90162,
+      "checksum_sha256": "1cd8ddebb5cbf1738ab15b8b9b042bc26acaee2fb92f5e618b399c7058525dae",
+      "batch_name": "g-campbell-morgan-reviewed-numbers-commentary.json",
+      "entries": 36
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-obadiah-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-obadiah-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2440,
+      "checksum_sha256": "7aa85ee50f10c773514e1f2e09b82f289a9a66cec39ae92e2c39d193dcdffcdb",
+      "batch_name": "g-campbell-morgan-reviewed-obadiah-commentary.json",
+      "entries": 1
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-pastoral-general-epistles-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-pastoral-general-epistles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 134333,
+      "checksum_sha256": "caf20f2820ea0b2acca52b4ab9c4f6d1d74898e81513c15b93c6eba48118fc99",
+      "batch_name": "g-campbell-morgan-reviewed-pastoral-general-epistles-commentary.json",
+      "entries": 48
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-prison-thessalonian-epistles-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-prison-thessalonian-epistles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 65013,
+      "checksum_sha256": "46507dce4155807aba5a0dd68577609abc69a98d067d2deeaed2bf22483e0fce",
+      "batch_name": "g-campbell-morgan-reviewed-prison-thessalonian-epistles-commentary.json",
+      "entries": 22
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-proverbs-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-proverbs-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 74085,
+      "checksum_sha256": "df605304573da0beee39580748df8104b649c59d779a30ef969a5b7a62b60953",
+      "batch_name": "g-campbell-morgan-reviewed-proverbs-commentary.json",
+      "entries": 31
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-psalms-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-psalms-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 379329,
+      "checksum_sha256": "4d933b1b762eca3214da735e8d7f2382b0ee919af65239033748fb47e5c4986e",
+      "batch_name": "g-campbell-morgan-reviewed-psalms-commentary.json",
+      "entries": 150
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-samuel-kings-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-samuel-kings-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 264309,
+      "checksum_sha256": "3a2b55df44bb9d4205db2fcc9f2c5efc3fae45c949486131853bc12c545eafd3",
+      "batch_name": "g-campbell-morgan-reviewed-samuel-kings-commentary.json",
+      "entries": 102
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/g-campbell-morgan-reviewed-solomons-song-commentary.json",
+      "storage_path": "data/imports/g-campbell-morgan-reviewed-solomons-song-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 23511,
+      "checksum_sha256": "968f4c152e32ca3787d444f30cadc58b9d578c2348327dd694bd2ffcc6ddcd6e",
+      "batch_name": "g-campbell-morgan-reviewed-solomons-song-commentary.json",
+      "entries": 8
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-exposition-phase-2-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-exposition-phase-2-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1706235,
+      "checksum_sha256": "1519bd2da8df0d20c5d1ec89e6305d81e4027e1af071be72265a03d789ba96d9",
+      "batch_name": "h-a-ironside-exposition-phase-2-commentary.json",
+      "entries": 92
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/h-a-ironside-hosea-commentary.json",
       "storage_path": "data/imports/h-a-ironside-hosea-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16337,6 +17961,56 @@
       "checksum_sha256": "0bd42ddab2e190399be45f297d515a547f3802c91731c595b37260787c2ebe72",
       "batch_name": "h-a-ironside-phase-2-commentary.json",
       "entries": 3
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-ezekiel-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-ezekiel-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 638607,
+      "checksum_sha256": "1752dc4d198904a32868e2effdffa1ac2ab9f1e35c496d18e7338f030ae180dd",
+      "batch_name": "h-a-ironside-reviewed-ezekiel-commentary.json",
+      "entries": 48
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-isaiah-1-33-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-isaiah-1-33-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 67065,
+      "checksum_sha256": "d30cf37a40e15e2674fb4733c76d2cb969de7d9ea7ba37fae113c39bfe7b06df",
+      "batch_name": "h-a-ironside-reviewed-isaiah-1-33-commentary.json",
+      "entries": 33
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-isaiah-34-66-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-isaiah-34-66-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 51569,
+      "checksum_sha256": "24314fad3e990927e21c01b939a10369abec9420b14f8292daa00b795860aedc",
+      "batch_name": "h-a-ironside-reviewed-isaiah-34-66-commentary.json",
+      "entries": 33
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-obadiah-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-obadiah-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 10437,
+      "checksum_sha256": "1ce8cd250562ffc4f8a28a8fc95bede8efe2cccfba68fb1905e02cf6b290e13b",
+      "batch_name": "h-a-ironside-reviewed-obadiah-commentary.json",
+      "entries": 1
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/h-a-ironside-reviewed-solomons-song-commentary.json",
+      "storage_path": "data/imports/h-a-ironside-reviewed-solomons-song-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 10115,
+      "checksum_sha256": "83cfb7842ea5cb0b0ebd9d73ffa11330183a175a06d5aef060c8fb2787edb755",
+      "batch_name": "h-a-ironside-reviewed-solomons-song-commentary.json",
+      "entries": 8
     },
     {
       "kind": "commentary_batch",
@@ -16960,6 +18634,26 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/matthew-poole-reviewed-revelation-14-22-commentary.json",
+      "storage_path": "data/imports/matthew-poole-reviewed-revelation-14-22-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 147823,
+      "checksum_sha256": "d123d48a2fa22c443b74f5bb7f01b2606fa9c69f7cdf96558d0da26bbbd40edd",
+      "batch_name": "matthew-poole-reviewed-revelation-14-22-commentary.json",
+      "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/matthew-poole-reviewed-romans-9-16-commentary.json",
+      "storage_path": "data/imports/matthew-poole-reviewed-romans-9-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 230011,
+      "checksum_sha256": "c5bd4d2064813cf428c17d7e7f4305ec0416b31b1a21d7064c3a7c76d6aa49c8",
+      "batch_name": "matthew-poole-reviewed-romans-9-16-commentary.json",
+      "entries": 8
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/matthew-poole-reviewed-weak-books-commentary.json",
       "storage_path": "data/imports/matthew-poole-reviewed-weak-books-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -16977,6 +18671,166 @@
       "checksum_sha256": "bbfd279367dff63fc2f3debe5cb20232f96b1be5a7048f33bbf3efe3e60543fd",
       "batch_name": "matthew-poole-reviewed-weak-books-phase-2-commentary.json",
       "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-1-chronicles-11-29-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-1-chronicles-11-29-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 132182,
+      "checksum_sha256": "9c4ceb45daa618ab896e3a8b35f40140d69b3e4c8d78acc34a8f3e93631ebb49",
+      "batch_name": "poole-reviewed-1-chronicles-11-29-commentary.json",
+      "entries": 19
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-1-corinthians-6-16-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-1-corinthians-6-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 358152,
+      "checksum_sha256": "55c843dc576c76fcd88cab11cce32f7696488e05917c0a673c0f35a54a9f6b69",
+      "batch_name": "poole-reviewed-1-corinthians-6-16-commentary.json",
+      "entries": 11
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-2-chronicles-11-36-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-2-chronicles-11-36-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 165343,
+      "checksum_sha256": "e8b79cda67c447fa81a01224d3412dc82d0fae5baab814a4a0f07fd20b8ba4ab",
+      "batch_name": "poole-reviewed-2-chronicles-11-36-commentary.json",
+      "entries": 26
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-ezekiel-13-48-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-ezekiel-13-48-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 708635,
+      "checksum_sha256": "55b2798afdddb64f1c3d9810abb99816ebce43ead95b8ded3304b3821dd37615",
+      "batch_name": "poole-reviewed-ezekiel-13-48-commentary.json",
+      "entries": 36
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-isaiah-36-66-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-isaiah-36-66-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 582447,
+      "checksum_sha256": "054c5c16f8f53c42521a53db33cd0123f94c44b046d4154b7c427dfe6f080a26",
+      "batch_name": "poole-reviewed-isaiah-36-66-commentary.json",
+      "entries": 31
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-isaiah-6-35-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-isaiah-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 511456,
+      "checksum_sha256": "bba11cdc3e11ea9b0023d356993011132b2f3ad071f8b15bfe112697cd55731f",
+      "batch_name": "poole-reviewed-isaiah-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-jeremiah-11-52-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-jeremiah-11-52-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 695529,
+      "checksum_sha256": "efb41346a52a59bb04e861d2c7e3b7e4a40c5508b1b935cd3cc499218fce00ae",
+      "batch_name": "poole-reviewed-jeremiah-11-52-commentary.json",
+      "entries": 42
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-job-13-42-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-job-13-42-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 582658,
+      "checksum_sha256": "0568f7fb01baae2afcf75164d52b3a8bbced7d11180eee5873d6f647b88ee22f",
+      "batch_name": "poole-reviewed-job-13-42-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-psalms-126-150-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-psalms-126-150-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 125213,
+      "checksum_sha256": "6ca62975d987dda7d4d4d9954c37c836630ded699ceb7b2eaba59608c0810804",
+      "batch_name": "poole-reviewed-psalms-126-150-commentary.json",
+      "entries": 25
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-psalms-36-65-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-psalms-36-65-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 319963,
+      "checksum_sha256": "613f027d2f0985404073783a59f928cd731aab8b291a4de0103eff0d41608449",
+      "batch_name": "poole-reviewed-psalms-36-65-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-psalms-6-35-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-psalms-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 352236,
+      "checksum_sha256": "206b8df2471c32d1191bcf43f7b0a98bc45b7ce2cb1c3ddabce824c720b5bedf",
+      "batch_name": "poole-reviewed-psalms-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-psalms-66-95-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-psalms-66-95-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 342781,
+      "checksum_sha256": "a833da6036466ee8c59a2bb072ca9b1d80035d033d3f45048b86ef72908ab797",
+      "batch_name": "poole-reviewed-psalms-66-95-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/poole-reviewed-psalms-96-125-commentary.json",
+      "storage_path": "data/imports/poole-reviewed-psalms-96-125-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 285320,
+      "checksum_sha256": "7543d598912ee6afddfdeafc6123623d9796d4346c770d85bd501108ef81203b",
+      "batch_name": "poole-reviewed-psalms-96-125-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-1-chronicles-11-29-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-1-chronicles-11-29-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1472208,
+      "checksum_sha256": "8a5c5c08eaf1c85911a30457862a3dd316cc603fb829c1602fd96bd277253248",
+      "batch_name": "pulpit-commentary-reviewed-1-chronicles-11-29-commentary.json",
+      "entries": 19
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-1-corinthians-6-16-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-1-corinthians-6-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1824439,
+      "checksum_sha256": "65188614c4dbb346f204ef8ae1fc4650d1a76b9216994da2217788d4db1b1e03",
+      "batch_name": "pulpit-commentary-reviewed-1-corinthians-6-16-commentary.json",
+      "entries": 11
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-2-chronicles-11-36-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-2-chronicles-11-36-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1511455,
+      "checksum_sha256": "58ee433d635d8619fb6d14a117337cb388513c729c0222b4eed4680e94443b1b",
+      "batch_name": "pulpit-commentary-reviewed-2-chronicles-11-36-commentary.json",
+      "entries": 26
     },
     {
       "kind": "commentary_batch",
@@ -17007,6 +18861,16 @@
       "checksum_sha256": "95ca2f531c5a17d11722a4bfc629aa774662bae1cc05717604d2abed1725a9de",
       "batch_name": "pulpit-commentary-reviewed-exodus-commentary.json",
       "entries": 40
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-ezekiel-13-48-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-ezekiel-13-48-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 3112169,
+      "checksum_sha256": "4428599a0e5b9d1311b5835042a358401094d3975eac37591ade54f7663c0025",
+      "batch_name": "pulpit-commentary-reviewed-ezekiel-13-48-commentary.json",
+      "entries": 36
     },
     {
       "kind": "commentary_batch",
@@ -17050,6 +18914,46 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-isaiah-36-66-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-isaiah-36-66-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2403319,
+      "checksum_sha256": "82ac1ff66cda8d52501171b72fc21cd0f2dff3b93e1d3d71db896b4eee414de3",
+      "batch_name": "pulpit-commentary-reviewed-isaiah-36-66-commentary.json",
+      "entries": 31
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-isaiah-6-35-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-isaiah-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2276834,
+      "checksum_sha256": "de280610d99c2449656368596fa5b1010660e9df0ead9dd7894f194990e767ee",
+      "batch_name": "pulpit-commentary-reviewed-isaiah-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-jeremiah-11-52-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-jeremiah-11-52-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 2931178,
+      "checksum_sha256": "69fe9c361211f4fa3e49729174cf5137898f518baf9e71bab8ea6a25c706a279",
+      "batch_name": "pulpit-commentary-reviewed-jeremiah-11-52-commentary.json",
+      "entries": 42
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-job-13-42-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-job-13-42-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 181063,
+      "checksum_sha256": "446bf3aef7bbe7968dcd2f408ef0817aa39e46a5d15f84c3eea7bedcba8109fb",
+      "batch_name": "pulpit-commentary-reviewed-job-13-42-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/pulpit-commentary-reviewed-john-completion-commentary.json",
       "storage_path": "data/imports/pulpit-commentary-reviewed-john-completion-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -17090,6 +18994,56 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-psalms-126-150-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-psalms-126-150-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 946977,
+      "checksum_sha256": "1ba009f291cceb6a6e569dfeed81e4bcb511ed1972e5454c60b4801aea4def1f",
+      "batch_name": "pulpit-commentary-reviewed-psalms-126-150-commentary.json",
+      "entries": 25
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-psalms-36-65-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-psalms-36-65-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 875070,
+      "checksum_sha256": "e403417d0443bb67bc43188b6380920e5da473dd673dc39d71127ec3376453f2",
+      "batch_name": "pulpit-commentary-reviewed-psalms-36-65-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-psalms-6-35-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-psalms-6-35-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1139683,
+      "checksum_sha256": "6faf51ef3f4ab2521165684b5f6ac18d474ccb2932b16d1ea59edbf81de3a6a8",
+      "batch_name": "pulpit-commentary-reviewed-psalms-6-35-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-psalms-66-95-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-psalms-66-95-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1356714,
+      "checksum_sha256": "c8b7a3700aa482f082dc525d6ad35209650c97e81ee710ac086542f3c1644616",
+      "batch_name": "pulpit-commentary-reviewed-psalms-66-95-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-commentary-reviewed-psalms-96-125-commentary.json",
+      "storage_path": "data/imports/pulpit-commentary-reviewed-psalms-96-125-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1597914,
+      "checksum_sha256": "01427e245a88faae798d6db07ba188315155e83573eda2c50f88b0786d5aac25",
+      "batch_name": "pulpit-commentary-reviewed-psalms-96-125-commentary.json",
+      "entries": 30
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/pulpit-commentary-reviewed-weak-books-commentary.json",
       "storage_path": "data/imports/pulpit-commentary-reviewed-weak-books-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -17107,6 +19061,26 @@
       "checksum_sha256": "00c037f043bc6a77f4aa114bab8d2e8c42d1da4d330c824b27832fde85517385",
       "batch_name": "pulpit-commentary-reviewed-weak-books-phase-2-commentary.json",
       "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-reviewed-revelation-14-22-commentary.json",
+      "storage_path": "data/imports/pulpit-reviewed-revelation-14-22-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1162064,
+      "checksum_sha256": "9704785ca907b3592c6e9dd7a3f9217962d8fb14690ab9a7f70faa4a766e1c59",
+      "batch_name": "pulpit-reviewed-revelation-14-22-commentary.json",
+      "entries": 9
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/pulpit-reviewed-romans-9-16-commentary.json",
+      "storage_path": "data/imports/pulpit-reviewed-romans-9-16-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 1035080,
+      "checksum_sha256": "c2ec8aeea80273ecca0d91c65a9b4ab7d40fcdbad13df4e8e8d3f67095c55c08",
+      "batch_name": "pulpit-reviewed-romans-9-16-commentary.json",
+      "entries": 8
     },
     {
       "kind": "commentary_batch",
@@ -17150,6 +19124,46 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-1-corinthians-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-1-corinthians-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 125790,
+      "checksum_sha256": "65b365e4b9e9f4335f086d3f15246ad8ec9edb9d1f25c5c8909101916dda41f0",
+      "batch_name": "wesley-reviewed-1-corinthians-commentary.json",
+      "entries": 16
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-acts-completion-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-acts-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 23061,
+      "checksum_sha256": "9a91c70220f8634ec9a300003a3cc518c62d401ccee51b9b38dfe9cc2134f55a",
+      "batch_name": "wesley-reviewed-acts-completion-commentary.json",
+      "entries": 3
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-amos-completion-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-amos-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 32558,
+      "checksum_sha256": "34f05949cfb1afdeaa9f5b8cfb1cf151667db65044d2443913cece9e4821e31e",
+      "batch_name": "wesley-reviewed-amos-completion-commentary.json",
+      "entries": 8
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-chronicles-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-chronicles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 228900,
+      "checksum_sha256": "0be5cd9e06ae6698e50b1caace672835872e68a0887f6a107f3f13a62857da08",
+      "batch_name": "wesley-reviewed-chronicles-commentary.json",
+      "entries": 65
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json",
       "storage_path": "data/imports/wesley-reviewed-coverage-sprint-acts-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -17157,6 +19171,156 @@
       "checksum_sha256": "bbf6e6ab15e71c95fb2c01c9024c47163f653dd07440534b471539a2f2eb11e4",
       "batch_name": "wesley-reviewed-coverage-sprint-acts-commentary.json",
       "entries": 25
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-deuteronomy-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-deuteronomy-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 217470,
+      "checksum_sha256": "f1de908f73a12e6ec13776df53d4440afc7796eceecd2e4b429e8a3b0e3d8956",
+      "batch_name": "wesley-reviewed-deuteronomy-commentary.json",
+      "entries": 34
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-ecclesiastes-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-ecclesiastes-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 78422,
+      "checksum_sha256": "605143f45d0657e696c317fcd5fed9bc24745b56a44d0cb2c817d758f0527c3d",
+      "batch_name": "wesley-reviewed-ecclesiastes-commentary.json",
+      "entries": 12
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-exodus-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-exodus-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 304205,
+      "checksum_sha256": "3db58bbdd7e5fc2c92e4f4c40e17867d3ed1f1ee18e123dce5fd5ec30f585888",
+      "batch_name": "wesley-reviewed-exodus-commentary.json",
+      "entries": 40
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-ezekiel-daniel-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-ezekiel-daniel-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 284265,
+      "checksum_sha256": "b00c00eecd0701e5d689d5ac11cef5124611f449607ca50ccc7a748694a7d521",
+      "batch_name": "wesley-reviewed-ezekiel-daniel-commentary.json",
+      "entries": 60
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-final-gap-completion-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-final-gap-completion-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 125639,
+      "checksum_sha256": "ac22638f1125095bfd06dfe99fb472a09b6e67d7d6314599316a3c1a207eb7e1",
+      "batch_name": "wesley-reviewed-final-gap-completion-commentary.json",
+      "entries": 22
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-final-gap-completion-part-2-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-final-gap-completion-part-2-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 59345,
+      "checksum_sha256": "6c9e915257413904ce7db6aa0c65e87304a70c204d607fe2fe7d67462e464c3b",
+      "batch_name": "wesley-reviewed-final-gap-completion-part-2-commentary.json",
+      "entries": 11
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-general-epistles-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-general-epistles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 143903,
+      "checksum_sha256": "f9e00b13a31b1ec7ae6bfbbb366b65d2d39fa06ce83dacabf03e03dae8284f54",
+      "batch_name": "wesley-reviewed-general-epistles-commentary.json",
+      "entries": 18
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-genesis-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-genesis-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 451328,
+      "checksum_sha256": "04d4b490f97032e5697db83dec8f1806a7fca201e1bbac7c5370052e0670ccec",
+      "batch_name": "wesley-reviewed-genesis-commentary.json",
+      "entries": 50
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-hebrews-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-hebrews-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 106250,
+      "checksum_sha256": "b66e0aff8a7f0d0c1f582bb3bdbc2bc279a12e22b870fb6d24f4c2b2b9551210",
+      "batch_name": "wesley-reviewed-hebrews-commentary.json",
+      "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-isaiah-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-isaiah-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 366694,
+      "checksum_sha256": "fc8778c0530a2dc98d257f61c8f54f35c868d92f20201bf69f9903732bf82b37",
+      "batch_name": "wesley-reviewed-isaiah-commentary.json",
+      "entries": 66
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-jeremiah-lamentations-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-jeremiah-lamentations-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 218977,
+      "checksum_sha256": "dd8d0c4adc223fc18e2b0de2a52291fa62bdc71d188d16f351fe51809421a0a9",
+      "batch_name": "wesley-reviewed-jeremiah-lamentations-commentary.json",
+      "entries": 57
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-job-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-job-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 260705,
+      "checksum_sha256": "35ba49e7f539f96a81d2c7080e28e43a84eaab92bf3900979ef78ba6693ad9c5",
+      "batch_name": "wesley-reviewed-job-commentary.json",
+      "entries": 42
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-joshua-judges-ruth-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-joshua-judges-ruth-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 380373,
+      "checksum_sha256": "515a0fee98b7c1511f5b3c8ced84f8ea479a04e9e8181399bfc1a17529df4dfb",
+      "batch_name": "wesley-reviewed-joshua-judges-ruth-commentary.json",
+      "entries": 49
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-kings-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-kings-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 343909,
+      "checksum_sha256": "31d73ec6beaeccd32065137386a9d51ef605e89f6e1c1847e3d52d38207d76ec",
+      "batch_name": "wesley-reviewed-kings-commentary.json",
+      "entries": 47
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-leviticus-partial-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-leviticus-partial-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 201055,
+      "checksum_sha256": "9251870e506ef136799e6c87e279457e2ce49087eff81ed2c73c3742e357b43e",
+      "batch_name": "wesley-reviewed-leviticus-partial-commentary.json",
+      "entries": 26
     },
     {
       "kind": "commentary_batch",
@@ -17170,6 +19334,76 @@
     },
     {
       "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-mark-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-mark-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 77063,
+      "checksum_sha256": "d61758bde7bb09781455de0e162638d37531c97e1a55ec5f398c8b47bc2fbd31",
+      "batch_name": "wesley-reviewed-mark-commentary.json",
+      "entries": 16
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-matthew-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-matthew-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 242489,
+      "checksum_sha256": "de3bb07bd8f59ee4ee0c79593b566a986e4f55d3f5ad9eea72aeb9e5deb75519",
+      "batch_name": "wesley-reviewed-matthew-commentary.json",
+      "entries": 28
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-minor-prophets-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-minor-prophets-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 261360,
+      "checksum_sha256": "f2f9a7cff7b923a2503333cef3f0665f7320190dacd1dc6f99ad307cbcc25079",
+      "batch_name": "wesley-reviewed-minor-prophets-commentary.json",
+      "entries": 57
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-nt-single-chapter-books-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-nt-single-chapter-books-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 23871,
+      "checksum_sha256": "8e7cb29b0214b8fc27dd0a4cba27ac3c4bd051712f389d39196dda27038368dd",
+      "batch_name": "wesley-reviewed-nt-single-chapter-books-commentary.json",
+      "entries": 4
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-numbers-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-numbers-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 229494,
+      "checksum_sha256": "1a33429170377a7874055b7e2bdf332c3635a837374b4b761e4fa0e5b4039216",
+      "batch_name": "wesley-reviewed-numbers-commentary.json",
+      "entries": 36
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-pastoral-epistles-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-pastoral-epistles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 72936,
+      "checksum_sha256": "58f4dab6c48a9f989ccc8c570c81208c69d95da4b275ee88430240a96f667327",
+      "batch_name": "wesley-reviewed-pastoral-epistles-commentary.json",
+      "entries": 13
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-pauline-epistles-2-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-pauline-epistles-2-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 106048,
+      "checksum_sha256": "2bde90dbb90df179a0c322f09e67133c7d499a389b113a7a41f288d290c67f42",
+      "batch_name": "wesley-reviewed-pauline-epistles-2-commentary.json",
+      "entries": 21
+    },
+    {
+      "kind": "commentary_batch",
       "source_path": "data/imports/wesley-reviewed-phase-3-commentary.json",
       "storage_path": "data/imports/wesley-reviewed-phase-3-commentary.json",
       "content_type": "application/json; charset=utf-8",
@@ -17177,6 +19411,76 @@
       "checksum_sha256": "2eab73c09588e8022428e892a3a92d064dccac4ce6be1a5cf0eb054fa4009564",
       "batch_name": "wesley-reviewed-phase-3-commentary.json",
       "entries": 59
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-prison-epistles-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-prison-epistles-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 160891,
+      "checksum_sha256": "8fee7aab77b67b091abd666c5c612721fb6d28f9e94a10b0a805c54c33e6b15e",
+      "batch_name": "wesley-reviewed-prison-epistles-commentary.json",
+      "entries": 20
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-proverbs-partial-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-proverbs-partial-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 83538,
+      "checksum_sha256": "1b1e842c38e022dc8f43e10c7b9b9fb0ddd7065e9f8a4755f0434280b26568cf",
+      "batch_name": "wesley-reviewed-proverbs-partial-commentary.json",
+      "entries": 10
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-psalms-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-psalms-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 436159,
+      "checksum_sha256": "0fbea3a642d01cdd62e69038eaefe46566032ed9036f1d6866ed70a392e7e10d",
+      "batch_name": "wesley-reviewed-psalms-commentary.json",
+      "entries": 150
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-recovered-gap-chapters-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-recovered-gap-chapters-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 11488,
+      "checksum_sha256": "78ee74b3dabe87dae31a59973f19f39d5e8db88a19c90d052b341f8821657057",
+      "batch_name": "wesley-reviewed-recovered-gap-chapters-commentary.json",
+      "entries": 2
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-restoration-books-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-restoration-books-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 131415,
+      "checksum_sha256": "a16c8a3cce99b03c3ac3567077b991c29d9ec93c5023d77a27dfe92e6fb59e83",
+      "batch_name": "wesley-reviewed-restoration-books-commentary.json",
+      "entries": 33
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-samuel-partial-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-samuel-partial-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 334067,
+      "checksum_sha256": "70fcbe8d2ed2f0281849c48094ee19431705817ce9daf03ef0ba49b84f5aa273",
+      "batch_name": "wesley-reviewed-samuel-partial-commentary.json",
+      "entries": 54
+    },
+    {
+      "kind": "commentary_batch",
+      "source_path": "data/imports/wesley-reviewed-solomons-song-commentary.json",
+      "storage_path": "data/imports/wesley-reviewed-solomons-song-commentary.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 58562,
+      "checksum_sha256": "42aa4319a05bc13baec5fb5a539f7d79d1baac15b4a5f30ba8618d63b80c2930",
+      "batch_name": "wesley-reviewed-solomons-song-commentary.json",
+      "entries": 8
     },
     {
       "kind": "dictionary",
@@ -17191,8 +19495,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 2695791,
-      "checksum_sha256": "316a15aabbbbd4bfe15cbd76455d63bfdb246216f0cbf36c01fd1094cda05230"
+      "size_bytes": 2896210,
+      "checksum_sha256": "e66af5724c6a4edb0ef60b240ba08c4a799e3c752ecaed3cde38536e12801eed"
     },
     {
       "kind": "study_tool",
@@ -17308,11 +19612,99 @@
     },
     {
       "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-psalms-phase-19.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-psalms-phase-19.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 40278,
+      "checksum_sha256": "069cc7f82c466083ccfe00e9ad02fa9623b4beb89d8fe4f43c2401863ee0a1b3"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-psalms-phase-20.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-psalms-phase-20.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 38677,
+      "checksum_sha256": "aea4173b09874c873b550fd8bb49aa64b82aa44f9f9d35969b502795c0f76aa1"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
       "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-1.json",
       "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-1.json",
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 212349,
       "checksum_sha256": "f8dbacbca35cdd3e9d7e76459458ca3ea779b8fe7b6dcbea643f36bdce8d8cc8"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-10.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-10.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 233164,
+      "checksum_sha256": "efd82410eba5a15cc86c26a7dd2ab7193d9c4708edbe26a35cf6aefca2b3af2f"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-11.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-11.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 156404,
+      "checksum_sha256": "6babf4ef1b3f03a06f86f55a95a5097c0789428db85ebfda0bfbf5979f65b4cb"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-12.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-12.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 211980,
+      "checksum_sha256": "e689a1e25832252c69f15c1a2846d6789c031f46c9abe129a4f636a60cc5d6d0"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-13.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-13.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 184522,
+      "checksum_sha256": "0d5ad089ac83a5a2fe3fc8abe2aaa55052c211458f938e402b6c389acab0086b"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-14.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-14.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 84570,
+      "checksum_sha256": "16ea03948039f1be4f9c6e9211cadf968db94aa92f8565e924ea4b756c917781"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-15.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-15.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 66580,
+      "checksum_sha256": "c03b628d389def76e0ce518dbe12154c37d33e7bfeaf35eb358f016d0bd82361"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-16.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-16.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 71800,
+      "checksum_sha256": "e11525e2af0d8456844cc6ff6237fd09f53cc26eaf5b527374abf05bbe126466"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-17.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-17.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 70109,
+      "checksum_sha256": "59c0ebc63d7f9d1930a4ec43e94fa5450388380590d9a725cbbb1a517be53a20"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-18.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-18.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 41861,
+      "checksum_sha256": "a442dfbdff613adb1dcf4ceeba153b2cb7365d9c53f9ab41b8e57018d568f501"
     },
     {
       "kind": "tsk_cross_reference_batch",
@@ -17329,6 +19721,46 @@
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 348364,
       "checksum_sha256": "555c916bf560b5aaf746f5d4c994bffffe947e094c359580c088e242588f85e0"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-5.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-5.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 317550,
+      "checksum_sha256": "5cd71f5b8e13fcbb71da5fc79d5b8565f08b24b756afe0fdd28dfcc9dd9cda0d"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-6.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-6.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 394388,
+      "checksum_sha256": "36ce8bbfb5f5d28ff025e6321c0f6ab8bf564f06fee479a4bc37320b42711ddd"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-7.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-7.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 380431,
+      "checksum_sha256": "5901791a4d53155acd0c41d095e9fbe06292b4d47323383af910170574f10cf9"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-8.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-8.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 334535,
+      "checksum_sha256": "4306222c90a5204762544f68287088399d6742cbbfdf78ff59b96965a8194da0"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-metav-reviewed-weak-books-phase-9.json",
+      "storage_path": "data/imports/tsk-metav-reviewed-weak-books-phase-9.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 206934,
+      "checksum_sha256": "32ab2622d711b4060aa47eeea622962ca4799a68abaa59cc75dbda86a444da01"
     },
     {
       "kind": "tsk_cross_reference_batch",
@@ -17361,6 +19793,14 @@
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 5794,
       "checksum_sha256": "7bea94f7ea1788cfbe79f570f69331cef9dd049b6eb53973a52bde7faa694f55"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-reviewed-thin-books-phase-14.json",
+      "storage_path": "data/imports/tsk-reviewed-thin-books-phase-14.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 19395,
+      "checksum_sha256": "d04ab829be2314340f3f4857845784fa042340004472d1f2f4ca87cb9889b5ad"
     }
   ]
 }
