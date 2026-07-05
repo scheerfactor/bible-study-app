@@ -62042,5 +62042,313 @@
     "checksum_sha256": "97c6e6321173a93dbbd39922efae092aafb8f802dc1a7a5fbed43437687ec9de",
     "file_size_bytes": 196680,
     "word_count": 31803
+  },
+  {
+    "title": "Hymns and Spiritual Songs",
+    "author": "Isaac Watts",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/13341",
+    "download_url": "https://www.gutenberg.org/ebooks/13341.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/13341.",
+    "notes": "Use for hymn background, devotional poetry, sermon quotes, worship history, and family reading. Historical Congregational source; review individual hymns before recommending as core Baptist doctrine. Labels/warnings: Historical hymn source.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn background, devotional poetry, sermon quotes, worship history, and family reading. Historical Congregational source; review individual hymns before recommending as core Baptist doctrine.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn source"
+    ],
+    "resource_warnings": [
+      "Historical hymn source"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hymns and Spiritual Songs",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 271,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+    "file_size_bytes": 346971,
+    "word_count": 60873
+  },
+  {
+    "title": "The Psalms of David",
+    "author": "Isaac Watts",
+    "year": 2004,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/13166",
+    "download_url": "https://www.gutenberg.org/ebooks/13166.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-psalms-of-david-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/13166.",
+    "notes": "Use for hymn history, psalmody background, devotional reading, and sermon illustration. These are Christian poetic paraphrases rather than KJV Bible text; keep separate from Scripture display. Labels/warnings: Historical psalm paraphrase.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn history, psalmody background, devotional reading, and sermon illustration. These are Christian poetic paraphrases rather than KJV Bible text; keep separate from Scripture display.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical psalm paraphrase"
+    ],
+    "resource_warnings": [
+      "Historical psalm paraphrase"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Psalms of David",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 288,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "c22c767265b005bc3cfb029b4ab0b5a9ade43184dfe452ddb4866174573ae642",
+    "file_size_bytes": 363412,
+    "word_count": 64728
+  },
+  {
+    "title": "Divine Songs",
+    "author": "Isaac Watts",
+    "year": 2004,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/13439",
+    "download_url": "https://www.gutenberg.org/ebooks/13439.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/divine-songs-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/13439.",
+    "notes": "Use for family discipleship, children's devotional poetry, moral instruction, and quote capture. Historical source; review individual selections before public recommendation. Labels/warnings: Historical children's verse.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for family discipleship, children's devotional poetry, moral instruction, and quote capture. Historical source; review individual selections before public recommendation.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical children's verse"
+    ],
+    "resource_warnings": [
+      "Historical children's verse"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Divine Songs",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 37,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7b50cc4da61ec21084ee8c98670ccc1af2ee895a51d4229d697b700bfd3926d3",
+    "file_size_bytes": 45697,
+    "word_count": 8290
+  },
+  {
+    "title": "A Short Essay Toward the Improvement of Psalmody",
+    "author": "Isaac Watts",
+    "year": 2009,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/30409",
+    "download_url": "https://www.gutenberg.org/ebooks/30409.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-short-essay-toward-the-improvement-of-psalmody-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/30409.",
+    "notes": "Use for worship history, hymn-writing background, and teacher notes on psalmody. Historical non-Baptist source; avoid treating as final authority on church music practice. Labels/warnings: Historical worship discussion.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for worship history, hymn-writing background, and teacher notes on psalmody. Historical non-Baptist source; avoid treating as final authority on church music practice.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical worship discussion"
+    ],
+    "resource_warnings": [
+      "Historical worship discussion"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Short Essay Toward the Improvement of Psalmody",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 56,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "8b8a7827ea617284d34efafdc493bc20a89c0830d4cf1fc2d30b49fe9cfbfaf8",
+    "file_size_bytes": 71766,
+    "word_count": 12687
+  },
+  {
+    "title": "Watt's Songs Against Faults",
+    "author": "Isaac Watts",
+    "year": 2011,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/37543",
+    "download_url": "https://www.gutenberg.org/ebooks/37543.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/watt-s-songs-against-faults-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/37543.",
+    "notes": "Use for family reading, children's lessons, short moral poems, and sermon illustrations. Historical language should be reviewed before quoting in modern lessons. Labels/warnings: Historical moral verse.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for family reading, children's lessons, short moral poems, and sermon illustrations. Historical language should be reviewed before quoting in modern lessons.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical moral verse"
+    ],
+    "resource_warnings": [
+      "Historical moral verse"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Watt's Songs Against Faults",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 5,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7fe51a61ef8cb33474267be47f9498b81a982c69a7b5291a53b9aacebbe7ad94",
+    "file_size_bytes": 7822,
+    "word_count": 1191
+  },
+  {
+    "title": "Watt's Songs Against Evil",
+    "author": "Isaac Watts",
+    "year": 2011,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/37542",
+    "download_url": "https://www.gutenberg.org/ebooks/37542.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/watt-s-songs-against-evil-isaac-watts.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/37542.",
+    "notes": "Use for family reading, children's lessons, short moral poems, and sermon illustrations. Historical language should be reviewed before quoting in modern lessons. Labels/warnings: Historical moral verse.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for family reading, children's lessons, short moral poems, and sermon illustrations. Historical language should be reviewed before quoting in modern lessons.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical moral verse"
+    ],
+    "resource_warnings": [
+      "Historical moral verse"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Watt's Songs Against Evil",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 6,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "de05db134b4e8a80db63a8149cab982c9900447e96605b8601faeba0df389aff",
+    "file_size_bytes": 9441,
+    "word_count": 1461
+  },
+  {
+    "title": "Isaac Watts; his life and writings, his homes and friends",
+    "author": "Edwin Paxton Hood",
+    "year": 2023,
+    "category": "Biographies",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/69963",
+    "download_url": "https://www.gutenberg.org/ebooks/69963.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/isaac-watts-his-life-and-writings-his-homes-and-friends-edwin-paxton-hood.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/69963.",
+    "notes": "Use for hymn-writer biography, devotional background, quotes, and author timeline notes. Historical biography; verify quotations against the source before public quotation cards. Labels/warnings: Historical biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn-writer biography, devotional background, quotes, and author timeline notes. Historical biography; verify quotations against the source before public quotation cards.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical biography"
+    ],
+    "resource_warnings": [
+      "Historical biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Isaac Watts; his life and writings, his homes and friends",
+      "author": "Edwin Paxton Hood",
+      "category": "Biographies",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 466,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "153367e8ae11d65a3783d9b89a049201b51539f30f5bed4df1193a6379db3fc7",
+    "file_size_bytes": 633521,
+    "word_count": 104904
   }
 ]

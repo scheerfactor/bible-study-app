@@ -1,0 +1,131 @@
+{
+  "source_csv": "data/library/import-batches/watts-hymns-poems-phase-1.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 7,
+  "imported": 7,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Hymns and Spiritual Songs",
+      "file": "hymns-and-spiritual-songs-isaac-watts.txt",
+      "bytes": 346971,
+      "words": 60873,
+      "reading_time_minutes": 271
+    },
+    {
+      "title": "The Psalms of David",
+      "file": "the-psalms-of-david-isaac-watts.txt",
+      "bytes": 363412,
+      "words": 64728,
+      "reading_time_minutes": 288
+    },
+    {
+      "title": "Divine Songs",
+      "file": "divine-songs-isaac-watts.txt",
+      "bytes": 45697,
+      "words": 8290,
+      "reading_time_minutes": 37
+    },
+    {
+      "title": "A Short Essay Toward the Improvement of Psalmody",
+      "file": "a-short-essay-toward-the-improvement-of-psalmody-isaac-watts.txt",
+      "bytes": 71766,
+      "words": 12687,
+      "reading_time_minutes": 56
+    },
+    {
+      "title": "Watt's Songs Against Faults",
+      "file": "watt-s-songs-against-faults-isaac-watts.txt",
+      "bytes": 7822,
+      "words": 1191,
+      "reading_time_minutes": 5
+    },
+    {
+      "title": "Watt's Songs Against Evil",
+      "file": "watt-s-songs-against-evil-isaac-watts.txt",
+      "bytes": 9441,
+      "words": 1461,
+      "reading_time_minutes": 6
+    },
+    {
+      "title": "Isaac Watts; his life and writings, his homes and friends",
+      "file": "isaac-watts-his-life-and-writings-his-homes-and-friends-edwin-paxton-hood.txt",
+      "bytes": 633521,
+      "words": 104904,
+      "reading_time_minutes": 466
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Hymns and Spiritual Songs",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Psalms of David",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-psalms-of-david-isaac-watts.txt"
+    },
+    {
+      "row": 4,
+      "title": "Divine Songs",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/divine-songs-isaac-watts.txt"
+    },
+    {
+      "row": 5,
+      "title": "A Short Essay Toward the Improvement of Psalmody",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-short-essay-toward-the-improvement-of-psalmody-isaac-watts.txt"
+    },
+    {
+      "row": 6,
+      "title": "Watt's Songs Against Faults",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/watt-s-songs-against-faults-isaac-watts.txt"
+    },
+    {
+      "row": 7,
+      "title": "Watt's Songs Against Evil",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/watt-s-songs-against-evil-isaac-watts.txt"
+    },
+    {
+      "row": 8,
+      "title": "Isaac Watts; his life and writings, his homes and friends",
+      "author": "Edwin Paxton Hood",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/isaac-watts-his-life-and-writings-his-homes-and-friends-edwin-paxton-hood.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

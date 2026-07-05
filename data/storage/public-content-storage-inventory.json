@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-05T04:17:41.698Z",
+  "generated_at": "2026-07-05T04:42:35.664Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1405,
-      "present": 1405,
+      "files": 1412,
+      "present": 1412,
       "missing": 0,
-      "total_bytes": 831642549,
-      "total_size": "793.12 MB"
+      "total_bytes": 833121179,
+      "total_size": "794.53 MB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 2896210,
-      "total_size": "2.76 MB"
+      "total_bytes": 2910547,
+      "total_size": "2.78 MB"
     },
     "study_tool": {
       "files": 9,
@@ -54,11 +54,11 @@
       "total_size": "4.44 MB"
     },
     "all_public_content": {
-      "files": 1701,
-      "present": 1701,
+      "files": 1708,
+      "present": 1708,
       "missing": 0,
-      "total_bytes": 1335439333,
-      "total_size": "1.24 GB"
+      "total_bytes": 1336932300,
+      "total_size": "1.25 GB"
     }
   },
   "items": [
@@ -16923,6 +16923,90 @@
       "source_url": "https://www.gutenberg.org/ebooks/56479"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+      "storage_path": "data/library/verified/hymns-and-spiritual-songs-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 346971,
+      "checksum_sha256": "9536712b57d4a814c3c9de2afd7651ffd71948cb475c2dca14929a91ca90c6a1",
+      "title": "Hymns and Spiritual Songs",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/13341"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-psalms-of-david-isaac-watts.txt",
+      "storage_path": "data/library/verified/the-psalms-of-david-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 363412,
+      "checksum_sha256": "c22c767265b005bc3cfb029b4ab0b5a9ade43184dfe452ddb4866174573ae642",
+      "title": "The Psalms of David",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/13166"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/divine-songs-isaac-watts.txt",
+      "storage_path": "data/library/verified/divine-songs-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 45697,
+      "checksum_sha256": "7b50cc4da61ec21084ee8c98670ccc1af2ee895a51d4229d697b700bfd3926d3",
+      "title": "Divine Songs",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/13439"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-short-essay-toward-the-improvement-of-psalmody-isaac-watts.txt",
+      "storage_path": "data/library/verified/a-short-essay-toward-the-improvement-of-psalmody-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 71766,
+      "checksum_sha256": "8b8a7827ea617284d34efafdc493bc20a89c0830d4cf1fc2d30b49fe9cfbfaf8",
+      "title": "A Short Essay Toward the Improvement of Psalmody",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "source_url": "https://www.gutenberg.org/ebooks/30409"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/watt-s-songs-against-faults-isaac-watts.txt",
+      "storage_path": "data/library/verified/watt-s-songs-against-faults-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 7822,
+      "checksum_sha256": "7fe51a61ef8cb33474267be47f9498b81a982c69a7b5291a53b9aacebbe7ad94",
+      "title": "Watt's Songs Against Faults",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/37543"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/watt-s-songs-against-evil-isaac-watts.txt",
+      "storage_path": "data/library/verified/watt-s-songs-against-evil-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 9441,
+      "checksum_sha256": "de05db134b4e8a80db63a8149cab982c9900447e96605b8601faeba0df389aff",
+      "title": "Watt's Songs Against Evil",
+      "author": "Isaac Watts",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/37542"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/isaac-watts-his-life-and-writings-his-homes-and-friends-edwin-paxton-hood.txt",
+      "storage_path": "data/library/verified/isaac-watts-his-life-and-writings-his-homes-and-friends-edwin-paxton-hood.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 633521,
+      "checksum_sha256": "153367e8ae11d65a3783d9b89a049201b51539f30f5bed4df1193a6379db3fc7",
+      "title": "Isaac Watts; his life and writings, his homes and friends",
+      "author": "Edwin Paxton Hood",
+      "category": "Biographies",
+      "source_url": "https://www.gutenberg.org/ebooks/69963"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -19495,8 +19579,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 2896210,
-      "checksum_sha256": "e66af5724c6a4edb0ef60b240ba08c4a799e3c752ecaed3cde38536e12801eed"
+      "size_bytes": 2910547,
+      "checksum_sha256": "9e31ef833c55a585051022db356cab73493733cd55a49de4a4fe8aa2eeed9fad"
     },
     {
       "kind": "study_tool",

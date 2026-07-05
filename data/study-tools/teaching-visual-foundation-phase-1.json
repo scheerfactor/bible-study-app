@@ -1,0 +1,251 @@
+{
+  "last_reviewed": "2026-07-05",
+  "purpose": "Starter structure for maps, charts, timelines, Christ connections, spiritual-being studies, and presentation-ready teaching visuals. This file records public-domain or locally-owned source paths first; it does not import copyrighted map art or modern chart content.",
+  "rights_policy": "Use KJV references and internally created summaries. Do not copy modern study Bible charts, copyrighted maps, copyrighted images, or copyrighted sermon outlines. Public-domain images still require source and rights metadata before being shown publicly.",
+  "source_resources": [
+    {
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "author": "J. L. Hurlbut",
+      "source_url": "https://www.gutenberg.org/ebooks/41140",
+      "current_app_use": "Public-domain geography and map reference already in the Library.",
+      "recommended_next_action": "Create lightweight map cards from verified public-domain plate/image metadata before displaying image assets."
+    },
+    {
+      "title": "Biblical Geography and History",
+      "author": "Charles Foster Kent",
+      "source_url": "https://www.gutenberg.org/ebooks/40747",
+      "current_app_use": "Public-domain geography/background reference already in the Library.",
+      "recommended_next_action": "Connect places and regions to the Bible Background Center and Passage Guide."
+    },
+    {
+      "title": "The Angels of God",
+      "author": "A. C. Gaebelein",
+      "source_url": "https://archive.org/",
+      "current_app_use": "Public-domain angelology study already in the Library.",
+      "recommended_next_action": "Link from the Angels study card after exact source record is selected."
+    },
+    {
+      "title": "Satan: His Personality, Power and Overthrow",
+      "author": "E. M. Bounds",
+      "source_url": "https://archive.org/",
+      "current_app_use": "Public-domain Satan study already in the Library.",
+      "recommended_next_action": "Link from the Satan study card after exact source record is selected."
+    },
+    {
+      "title": "Satan",
+      "author": "Lewis Sperry Chafer",
+      "source_url": "https://archive.org/",
+      "current_app_use": "Public-domain doctrinal study already in the Library.",
+      "recommended_next_action": "Use as a recommended resource with dispensational note."
+    }
+  ],
+  "presentation_media_slots": [
+    {
+      "id": "holy-land-map-overview",
+      "label": "Holy Land Map Overview",
+      "category": "Maps",
+      "status": "Needs image extraction review",
+      "safe_fallback": "/media/sermon-slides/photos/open-bible.jpg",
+      "recommended_use": "Book introductions, geography lessons, and Bible Background Center."
+    },
+    {
+      "id": "exodus-route-chart",
+      "label": "Exodus Route Chart",
+      "category": "Maps",
+      "status": "Needs public-domain chart creation",
+      "safe_fallback": "/media/sermon-slides/photos/missions.jpg",
+      "recommended_use": "Exodus lessons, wilderness journey, and timeline teaching."
+    },
+    {
+      "id": "divided-kingdom-map",
+      "label": "Divided Kingdom Map",
+      "category": "Maps",
+      "status": "Needs public-domain chart creation",
+      "safe_fallback": "/media/sermon-slides/photos/judgment.jpg",
+      "recommended_use": "Kings, prophets, Amos, Hosea, Isaiah, Jeremiah, and Chronicles."
+    },
+    {
+      "id": "pauls-journeys-map",
+      "label": "Paul's Journeys Map",
+      "category": "Maps",
+      "status": "Needs public-domain chart creation",
+      "safe_fallback": "/media/sermon-slides/photos/missions.jpg",
+      "recommended_use": "Acts, Pauline epistles, missions, and evangelism lessons."
+    },
+    {
+      "id": "old-testament-christ-connections",
+      "label": "Christ in the Old Testament",
+      "category": "Charts",
+      "status": "Ready for internally-created slide/chart",
+      "safe_fallback": "/media/sermon-slides/photos/cross.jpg",
+      "recommended_use": "Teaching Christ connections without copying modern chart material."
+    },
+    {
+      "id": "spiritual-beings-overview",
+      "label": "Satan, Angels, and Demons Overview",
+      "category": "Charts",
+      "status": "Ready for internally-created slide/chart",
+      "safe_fallback": "/media/sermon-slides/photos/light-window.jpg",
+      "recommended_use": "Doctrinal studies, youth lessons, apologetics, and Bible Background Center."
+    }
+  ],
+  "timeline_tracks": [
+    {
+      "id": "patriarchs",
+      "label": "Patriarchs",
+      "books": ["Genesis"],
+      "people": ["Abraham", "Isaac", "Jacob", "Joseph"],
+      "teaching_use": "Promises, covenant, faith, family, providence, and Joseph as a Christ-connection study."
+    },
+    {
+      "id": "exodus-and-wilderness",
+      "label": "Exodus and Wilderness",
+      "books": ["Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+      "people": ["Moses", "Aaron", "Joshua", "Caleb"],
+      "teaching_use": "Redemption, Passover, tabernacle, law, wilderness testing, and Christ connections."
+    },
+    {
+      "id": "united-kingdom",
+      "label": "United Kingdom",
+      "books": ["1 Samuel", "2 Samuel", "1 Kings", "1 Chronicles", "2 Chronicles", "Psalms"],
+      "people": ["Samuel", "Saul", "David", "Solomon"],
+      "teaching_use": "Kingship, worship, Davidic promise, wisdom, temple, and Messianic kingdom."
+    },
+    {
+      "id": "divided-kingdom-prophets",
+      "label": "Divided Kingdom and Prophets",
+      "books": ["1 Kings", "2 Kings", "2 Chronicles", "Isaiah", "Jeremiah", "Hosea", "Amos", "Micah"],
+      "people": ["Elijah", "Elisha", "Isaiah", "Jeremiah", "Hosea", "Amos"],
+      "teaching_use": "Judgment, repentance, revival, false worship, and covenant accountability."
+    },
+    {
+      "id": "exile-and-return",
+      "label": "Exile and Return",
+      "books": ["Daniel", "Ezekiel", "Ezra", "Nehemiah", "Esther", "Haggai", "Zechariah", "Malachi"],
+      "people": ["Daniel", "Ezekiel", "Ezra", "Nehemiah", "Esther", "Mordecai"],
+      "teaching_use": "Providence, faithfulness in captivity, restoration, temple, and prophetic hope."
+    },
+    {
+      "id": "life-of-christ",
+      "label": "Life of Christ",
+      "books": ["Matthew", "Mark", "Luke", "John"],
+      "people": ["John the Baptist", "Mary", "Peter", "John", "Judas"],
+      "teaching_use": "Gospel harmony, miracles, parables, cross, resurrection, and discipleship."
+    },
+    {
+      "id": "acts-and-paul",
+      "label": "Acts and Paul's Journeys",
+      "books": ["Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians"],
+      "people": ["Peter", "Stephen", "Paul", "Barnabas", "Silas", "Timothy"],
+      "teaching_use": "Church planting, missions, persecution, doctrine, and Christian service."
+    }
+  ],
+  "christ_connections": [
+    {
+      "id": "seed-of-the-woman",
+      "title": "Seed of the Woman",
+      "old_testament_references": ["Genesis 3:15"],
+      "new_testament_references": ["Galatians 4:4", "Hebrews 2:14"],
+      "teaching_value": "Introduces the first promise of victory over the serpent and points forward to Christ's incarnation and triumph."
+    },
+    {
+      "id": "passover-lamb",
+      "title": "Passover Lamb",
+      "old_testament_references": ["Exodus 12"],
+      "new_testament_references": ["John 1:29", "1 Corinthians 5:7"],
+      "teaching_value": "Connects redemption by blood with Christ as the Lamb of God."
+    },
+    {
+      "id": "manna-and-bread",
+      "title": "Manna and Bread of Life",
+      "old_testament_references": ["Exodus 16"],
+      "new_testament_references": ["John 6:31-35"],
+      "teaching_value": "Shows God's provision and Christ as the true bread from heaven."
+    },
+    {
+      "id": "brazen-serpent",
+      "title": "Brazen Serpent",
+      "old_testament_references": ["Numbers 21:4-9"],
+      "new_testament_references": ["John 3:14-15"],
+      "teaching_value": "Useful for salvation lessons and clear gospel preaching."
+    },
+    {
+      "id": "davidic-king",
+      "title": "Davidic King",
+      "old_testament_references": ["2 Samuel 7:12-16", "Psalm 89"],
+      "new_testament_references": ["Luke 1:32-33", "Acts 13:22-23"],
+      "teaching_value": "Connects the kingdom promise to Christ's rightful kingship."
+    },
+    {
+      "id": "suffering-servant",
+      "title": "Suffering Servant",
+      "old_testament_references": ["Isaiah 53"],
+      "new_testament_references": ["Acts 8:32-35", "1 Peter 2:24"],
+      "teaching_value": "Centers substitution, rejection, suffering, and gospel proclamation."
+    }
+  ],
+  "spiritual_beings": [
+    {
+      "id": "satan",
+      "label": "Satan",
+      "key_references": ["Genesis 3", "Job 1", "Job 2", "Matthew 4", "Luke 10:18", "Ephesians 6:11", "Revelation 12", "Revelation 20"],
+      "related_strongs": ["H7854", "G4567", "G1228"],
+      "recommended_resources": ["Satan: His Personality, Power and Overthrow", "Satan"],
+      "teaching_note": "Keep the study anchored in Scripture and avoid speculative demonology."
+    },
+    {
+      "id": "angels",
+      "label": "Angels",
+      "key_references": ["Genesis 19", "Daniel 10", "Luke 1", "Luke 2", "Hebrews 1", "Revelation 5"],
+      "related_strongs": ["H4397", "G32"],
+      "recommended_resources": ["The Angels of God"],
+      "teaching_note": "Useful for doctrine, Christmas lessons, prophecy, and worship scenes."
+    },
+    {
+      "id": "devils-demons",
+      "label": "Devils and Demons",
+      "key_references": ["Matthew 8", "Matthew 12", "Mark 5", "Luke 8", "Acts 16", "1 Timothy 4:1", "James 2:19"],
+      "related_strongs": ["G1140", "G1142"],
+      "recommended_resources": ["Satan: His Personality, Power and Overthrow", "Satan"],
+      "teaching_note": "Use KJV terms carefully. Build later dictionary links to devil, devils, unclean spirit, and familiar spirit."
+    }
+  ],
+  "people_pointing_to_christ": [
+    {
+      "person": "Adam",
+      "references": ["Genesis 2", "Genesis 3", "Romans 5:12-21", "1 Corinthians 15:45"],
+      "connection": "First Adam and last Adam comparison."
+    },
+    {
+      "person": "Joseph",
+      "references": ["Genesis 37-50"],
+      "connection": "Rejected by brethren, exalted, and used to preserve life. Use as a typological teaching aid with restraint."
+    },
+    {
+      "person": "Moses",
+      "references": ["Exodus 3", "Deuteronomy 18:15", "Acts 3:22"],
+      "connection": "Deliverer and prophet pointing to Christ."
+    },
+    {
+      "person": "Boaz",
+      "references": ["Ruth 2-4"],
+      "connection": "Kinsman-redeemer theme for redemption teaching."
+    },
+    {
+      "person": "David",
+      "references": ["1 Samuel 16", "2 Samuel 7", "Psalm 22", "Acts 13:22-23"],
+      "connection": "Anointed king, shepherd, sufferer, and Messianic line."
+    },
+    {
+      "person": "Jonah",
+      "references": ["Jonah 1-4", "Matthew 12:39-41"],
+      "connection": "Sign connected by Christ to His burial and resurrection."
+    }
+  ],
+  "next_actions": [
+    "Extract verified public-domain map image candidates from Hurlbut with exact file/source metadata.",
+    "Create Study Workspace cards that surface these map, timeline, Christ-connection, and spiritual-being records by Bible chapter.",
+    "Add presentation slide templates for maps, author quotes, hymn stories, and Christ-connection charts.",
+    "Review public-domain hymn/poem imports for quote-safe excerpts before creating public quote cards."
+  ]
+}

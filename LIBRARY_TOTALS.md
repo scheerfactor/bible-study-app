@@ -804,8 +804,8 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,405 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,405 verified resources.
+- `npm run library:qa`: 1,412 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,412 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
 - `npm run validate:strongs`: 14,289 entries checked across 8 files.
 
