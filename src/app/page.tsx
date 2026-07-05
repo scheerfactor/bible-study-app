@@ -5254,12 +5254,12 @@ const LIBRARY_IMPORT_CANDIDATES: LibraryImportCandidate[] = [
     title: "Way of Life / David Cloud resources",
     author: "David Cloud",
     category: "KJV Defense",
-    source: "Publisher permission required",
-    status: "Permission Needed",
-    rightsNotes: "Do not import or publish globally without written permission.",
+    source: "Public sharing policy documented; review each item",
+    status: "Needs Review",
+    rightsNotes: "Shareable/free categories may be reviewed with citation and official links. Store items, paid books, paid videos, and the Fundamental Baptist Digital Library remain permission-needed.",
     doctrinalNotes: "Review for recommended use and audience before any user-facing import.",
-    warningLabels: ["Permission needed"],
-    recommendedUse: "Permission-request placeholder only; personal-use upload path may support a user's private copy later.",
+    warningLabels: ["Item-level review", "Citation required"],
+    recommendedUse: "Start with clearly shareable audio sermons, FBIS/O Timothy articles, free eBooks, free eVideos, and reports linked back to Way of Life.",
   },
   {
     id: "review-william-kelly",
@@ -37269,7 +37269,7 @@ function LibraryImportDashboard({ signedIn, onClose }: { signedIn: boolean; onCl
     { title: "Import Queue", statuses: ["Draft", "Needs Review", "Verified", "Permission Needed", "Personal Use Only", "Do Not Import"], note: "Everything uploaded stays here first. Nothing is published automatically." },
     { title: "Review Needed", statuses: ["Draft", "Needs Review"], note: "Draft and review items need rights, doctrine, metadata, and routing checks." },
     { title: "Approved Resources", statuses: ["Verified"], note: "Verified items are publish-ready only when visibility is public and rights are documented." },
-    { title: "Permission Needed", statuses: ["Permission Needed"], note: "Keep David Cloud / Way of Life and unclear modern works here unless written permission exists." },
+    { title: "Permission Needed", statuses: ["Permission Needed"], note: "Keep unclear modern works and Way of Life Store/paid items here unless written permission exists." },
     { title: "Personal Use Only", statuses: ["Personal Use Only"], note: "Future member uploads stay private and never become public resources." },
   ];
   const permissionStatusCounts = (["Not contacted", "Contacted", "Permission granted", "Denied", "Needs follow-up"] as PermissionTrackerStatus[]).map((status) => ({

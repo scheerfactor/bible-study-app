@@ -116,7 +116,7 @@ All audio and video must remain permission-needed until explicit linking, embedd
 | Douglas Hammett | Baptist doctrine, discipleship, church planting | Metadata, excerpts, selected title permission | Needs theological and rights review. |
 | John Goetsch | Youth, Christian living, ministry helps | Metadata, excerpts, selected title permission | Modern copyrighted material; permission required. |
 | Dr. David H. Sorenson | KJV, doctrine, commentary, preaching | Metadata, excerpts, selected title permission | Modern copyrighted material; permission required. |
-| David Cloud / Way of Life Literature | KJV, Baptist doctrine, apologetics, church issues | Metadata, official links, excerpts, selected title permission | Strong target-audience fit; do not import without written permission. |
+| David Cloud / Way of Life Literature | KJV, Baptist doctrine, apologetics, church issues | Review shareable categories first; metadata, official links, citations, and excerpts where policy allows | Public sharing policy documented 2026-07-04. Shareable/free categories may be reviewed item by item with citation and source links. Store items, paid books, paid videos, and the Fundamental Baptist Digital Library remain permission-needed. |
 
 ### Baptist Publishers And Ministries
 

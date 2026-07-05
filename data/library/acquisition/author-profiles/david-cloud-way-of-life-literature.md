@@ -12,11 +12,11 @@ This author/profile is for acquisition review only. No content may be imported, 
 | Resource category | KJV Baptist doctrine apologetics and church issues |
 | Profile status | Needs Review |
 | Resource approval status | Needs Review |
-| Copyright status | Unknown - verify |
-| Permission needed | Yes |
-| Permission/contact info | fbns@wayoflife.org |
+| Copyright status | Shareable policy documented - title/category review required |
+| Permission needed | Yes for Store/paid items; review shareable categories item by item |
+| Permission/contact info | fbns@wayoflife.org; support@wayoflife.org |
 | Website | https://www.wayoflife.org/ |
-| Collection label | Needs Review |
+| Collection label | Shareable With Citation - Needs Review |
 | Review score | Not scored |
 | License obtained | No |
 
@@ -58,8 +58,8 @@ Review:
 
 | Media type | Availability | Rights / permission status | Notes |
 | --- | --- | --- | --- |
-| Audio | Unknown | Needs Review | Do not host, transcribe, summarize, or generate narration without permission. |
-| Video | Unknown | Needs Review | Official links or embeds require documented permission. |
+| Audio | Shareable audio sermons named in public policy | Needs item-level review | Do not treat paid audio or Store media as approved. |
+| Video | Free eVideos named in public policy | Needs item-level review | Paid videos remain permission-needed. Embedding still needs item-level review. |
 
 ## Permission And Contact Notes
 
@@ -67,13 +67,16 @@ Review:
 | --- | --- |
 | Known contact | fbns@wayoflife.org |
 | Website | https://www.wayoflife.org/ |
-| Permission status | Permission Requested |
+| Permission status | Sharing Policy Documented - Review Per Item |
 | Requested use | Limited listing/link/excerpt/audio-video inquiry |
 | Follow-up needed | Yes |
 
 Notes:
 
 - Do not approve broad catalog use.
+- Public sharing policy was documented 2026-07-04 at `https://www.wayoflife.org/reports/lonnie_frisbee_and_the_jesus_.php`.
+- Shareable categories named by the policy include audio sermons, O Timothy magazine, FBIS articles, free eVideos, free eBooks, and reports with proper credit/citation and preferably an original source link.
+- Store items, the Fundamental Baptist Digital Library, print books, paid ebooks, and paid videos are not shareable and remain permission-needed.
 - Ask about specific titles, excerpts, links, audio, video, transcript use, image/chart use, and future paid-access terms separately.
 - Record written permission before any copyrighted material becomes public in the app.
 - Public-domain candidates still require source, edition, and OCR/text-quality review.
@@ -102,7 +105,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Initial permission email sent manually by Stephen. No permission granted yet.
+> Public sharing policy documented 2026-07-04. Initial permission email also sent manually by Stephen; no direct reply yet. This is not a private permission grant or broad catalog license.
 
 ## Final Recommendation
 

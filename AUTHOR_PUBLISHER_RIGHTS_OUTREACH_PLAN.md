@@ -64,7 +64,7 @@ Start with reachable, ministry-aligned contacts before approaching large publish
 
 Good early candidates:
 
-- Way of Life Literature / David Cloud: permission-needed only until written approval exists.
+- Way of Life Literature / David Cloud: public sharing policy documented 2026-07-04 for named free/shareable categories with citation and source links; Store/paid items remain permission-needed until written approval exists.
 - Thru the Bible / J. Vernon McGee: strong teaching and audio fit, likely formal permissions.
 - Kregel: Bible study and commentary titles, title-specific permission likely.
 - Moody Publishers / Moody Bible Institute: important for legacy and modern titles, permission likely title-specific.
@@ -85,7 +85,7 @@ Keep these as permission-needed until written approval:
 
 | Priority | Rights holder | Why contact | Initial request |
 | --- | --- | --- | --- |
-| 1 | Way of Life Literature / David Cloud | Strong target audience fit; KJV, Baptist, doctrine, Bible study, apologetics, church issues. | Metadata/linking, selected excerpts, beta inclusion for a small number of resources. |
+| 1 | Way of Life Literature / David Cloud | Strong target audience fit; KJV, Baptist, doctrine, Bible study, apologetics, church issues. Public sharing policy documented for named free/shareable categories. | Review shareable categories item by item with citation/source links; keep Store/paid items blocked while broader permission request remains open. |
 | 2 | Thru the Bible / J. Vernon McGee | Highly useful Bible teaching, audio workflow fit, strong public recognition. | Metadata/linking, app deep links, written/audio licensing conversation. |
 | 3 | Kregel Publications | Publishes Bible study, commentary, ministry, and reprint material; has explicit rights/permissions contact path. | Permission inquiry for selected titles or excerpts. |
 | 4 | Moody Publishers / Moody Bible Institute | Important for Ironside, Moody legacy, Tozer, and modern Christian living titles; permissions likely title-specific. | Ask which team handles app/library permissions for selected titles. |
@@ -110,7 +110,7 @@ Send permission requests from `hello@fathersbusinessmasteryresources.com` so pub
 | Priority | Contact target | Suggested first title/type | Why it fits | Ask first |
 | --- | --- | --- | --- | --- |
 | 1 | Local or known Bible-believing pastors/teachers | Sermon outlines, lesson notes, short booklets | Warmest relationship path and easiest trust-building. | Permission for one sample sermon/lesson, excerpt, and official link. |
-| 2 | Way of Life Literature / David Cloud | KJV, Baptist doctrine, church issues, Bible encyclopedia resources | Strong target audience fit but must remain permission-needed until approved. | Metadata/linking plus one approved excerpt or sample chapter. |
+| 2 | Way of Life Literature / David Cloud | KJV, Baptist doctrine, church issues, Bible encyclopedia resources | Strong target audience fit. Public sharing policy allows named free/shareable categories with citation/source links; Store/paid items remain blocked. | Review shareable categories item by item, link to official sources, and keep broader permissions request open. |
 | 3 | Thru the Bible / J. Vernon McGee | Bible teaching notes and audio pathways | Strong listening and Bible-book workflow fit. | Ask who handles app, text, and audio licensing separately. |
 | 4 | Moody Publishers / Moody Bible Institute | Legacy evangelism, biography, Bible study, Ironside-adjacent questions | Important catalog and name recognition. | Ask for the correct permissions contact and one title-specific path. |
 | 5 | Kregel Publications | Bible study and commentary resources | Likely formal rights workflow. | Ask for excerpt or beta inclusion for one selected resource. |
