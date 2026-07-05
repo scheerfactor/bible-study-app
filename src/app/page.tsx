@@ -33782,14 +33782,7 @@ function LibraryScreen({
       </section>
 
       {licensedResourceLinks.length > 0 && (
-        <>
-          <LicensedMinistrySpotlight resources={licensedResourceLinks} />
-          <LibraryShelf title="Permission-Granted Resource Links" horizontal>
-            {licensedResourceLinks.map((resource) => (
-              <LicensedResourceLinkCard key={resource.id} resource={resource} />
-            ))}
-          </LibraryShelf>
-        </>
+        <LicensedResourceExplorer resources={licensedResourceLinks} />
       )}
 
       <AuthorCompletionDashboard resources={resources} onOpenAuthor={onOpenAuthor} />
@@ -40773,47 +40766,148 @@ function LibraryMetricCard({ label, value, detail }: { label: string; value: str
   );
 }
 
-function LicensedMinistrySpotlight({ resources }: { resources: LicensedResourceLink[] }) {
-  const commentaryCount = resources.filter((resource) => resource.category === "Commentaries").length;
-  const kjvCount = resources.filter((resource) => resource.category === "KJV / Textual Issues").length;
-  const familyCount = resources.filter((resource) => resource.category === "Family").length;
-  const ministryCount = resources.filter((resource) => resource.category === "Pastoral Ministry" || resource.category === "Evangelism").length;
+function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLink[] }) {
+  const [activeMinistry, setActiveMinistry] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [linkSearch, setLinkSearch] = useState("");
+  const ministries = useMemo(() => ["All", ...Array.from(new Set(resources.map((resource) => resource.publisherMinistry))).sort()], [resources]);
+  const categories = useMemo(() => ["All", ...Array.from(new Set(resources.map((resource) => resource.category))).sort()], [resources]);
+  const ministryCounts = useMemo(
+    () =>
+      ministries.map((ministry) => ({
+        ministry,
+        count: ministry === "All" ? resources.length : resources.filter((resource) => resource.publisherMinistry === ministry).length,
+      })),
+    [ministries, resources],
+  );
+  const categoryCounts = useMemo(
+    () =>
+      categories.map((category) => ({
+        category,
+        count: category === "All" ? resources.length : resources.filter((resource) => resource.category === category).length,
+      })),
+    [categories, resources],
+  );
+  const searchTerms = linkSearch.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const filteredResources = resources.filter((resource) => {
+    if (activeMinistry !== "All" && resource.publisherMinistry !== activeMinistry) return false;
+    if (activeCategory !== "All" && resource.category !== activeCategory) return false;
+    return searchTerms.length ? licensedResourceLinkMatchesAllTerms(resource, searchTerms) : true;
+  });
+  const displayedResources = filteredResources.slice(0, 36);
+  const wayOfLifeCount = resources.filter((resource) => resource.publisherMinistry === "Way of Life Literature").length;
+  const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
-      <div className="grid gap-5 xl:grid-cols-[1.15fr_0.85fr]">
+      <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Permissioned Ministry Resource</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Northstar Ministries · Dr. David H. Sorenson</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Permissioned Ministry Links</p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--ink)]">Trusted resources with clear boundaries</h2>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-            Northstar Ministries has granted permission to link to their resources, use excerpts, and display cover graphics. At this stage, users purchase or view resources through Northstar directly while the app builds title-level review and future licensing records.
+            These records point users to official ministry pages while rights review continues. Public-domain books stay separate from scoped ministry links.
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Official links allowed</span>
-            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Excerpts allowed after review</span>
-            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Cover graphics allowed</span>
-          </div>
-          <div className="mt-5 grid gap-3 md:grid-cols-4">
-            <MiniStat label="Resources" value={String(resources.length)} />
-            <MiniStat label="Commentary" value={String(commentaryCount)} />
-            <MiniStat label="KJV Study" value={String(kjvCount)} />
-            <MiniStat label="Family/Ministry" value={String(familyCount + ministryCount)} />
+          <div className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-4">
+            <MiniStat label="Total links" value={String(resources.length)} />
+            <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
+            <MiniStat label="Northstar" value={String(northstarCount)} />
+            <MiniStat label="Categories" value={String(categories.length - 1)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
-          <p className="text-sm font-semibold text-[var(--ink)]">Current rights boundary</p>
+          <p className="text-sm font-semibold text-[var(--ink)]">Rights boundary</p>
           <div className="mt-3 space-y-2 text-sm leading-6 text-[var(--muted)]">
-            <p>Users can open official Northstar pages from the Library.</p>
-            <p>No full copyrighted book text, audio, video, transcript, AI narration, or paid in-app access is hosted unless broader permission is granted later.</p>
-            <p>This is the right first step toward publisher-style relationships: start with trust, links, and reviewed excerpts.</p>
+            <p>Official links and citation-backed listings are allowed where documented.</p>
+            <p>No full copyrighted book text, ebook files, hosted audio, hosted video, AI narration, or paid in-app access is included without broader permission.</p>
           </div>
         </div>
       </div>
+
+      <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+        <div className="flex flex-wrap items-end gap-3">
+          <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]" htmlFor="licensed-resource-search">
+            Search ministry links
+            <div className="mt-2 flex h-11 items-center gap-3 rounded-2xl border border-[var(--line)] bg-white px-4">
+              <Search size={17} className="shrink-0 text-[var(--green)]" />
+              <input
+                id="licensed-resource-search"
+                type="search"
+                className="w-full bg-transparent text-sm outline-none placeholder:text-stone-400"
+                placeholder="Try KJV, family, prophecy, evangelism..."
+                value={linkSearch}
+                onChange={(event) => setLinkSearch(event.target.value)}
+              />
+              {linkSearch && (
+                <button className="rounded-full bg-[var(--paper)] px-3 py-1 text-xs font-semibold text-[var(--muted)]" onClick={() => setLinkSearch("")} type="button">
+                  Clear
+                </button>
+              )}
+            </div>
+          </label>
+          <span className="rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)]">
+            {filteredResources.length} shown
+          </span>
+        </div>
+        <div className="mt-4 space-y-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Ministry</p>
+            <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+              {ministryCounts.map((item) => (
+                <button
+                  key={`licensed-ministry-filter-${item.ministry}`}
+                  className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                    activeMinistry === item.ministry ? "bg-[var(--green)] text-white" : "border border-[var(--line)] bg-white text-[var(--green)]"
+                  }`}
+                  onClick={() => setActiveMinistry(item.ministry)}
+                  type="button"
+                >
+                  {item.ministry} · {item.count}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Category</p>
+            <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
+              {categoryCounts.map((item) => (
+                <button
+                  key={`licensed-category-filter-${item.category}`}
+                  className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-semibold ${
+                    activeCategory === item.category ? "bg-[var(--ink)] text-white" : "border border-[var(--line)] bg-white text-[var(--green)]"
+                  }`}
+                  onClick={() => setActiveCategory(item.category)}
+                  type="button"
+                >
+                  {item.category} · {item.count}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+        {displayedResources.map((resource) => (
+          <LicensedResourceLinkCard key={resource.id} resource={resource} />
+        ))}
+      </div>
+      {filteredResources.length > displayedResources.length && (
+        <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--muted)]">
+          Showing the first {displayedResources.length} matches. Use search or filters to narrow the list.
+        </p>
+      )}
+      {!filteredResources.length && (
+        <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-sm font-semibold text-[var(--muted)]">
+          No ministry links matched those filters.
+        </p>
+      )}
     </section>
   );
 }
 
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
+  const linkLabel = resource.publisherMinistry === "Northstar Ministries" ? "View / buy official page" : "Open official page";
+
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
@@ -40848,7 +40942,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           target="_blank"
         >
           <Link size={15} />
-          View / buy at Northstar
+          {linkLabel}
         </a>
       </div>
     </article>
