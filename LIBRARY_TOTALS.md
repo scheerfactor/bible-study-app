@@ -4,15 +4,40 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,405
+- Verified public Library resources: 1,437
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 516
+- Library authors represented: 528
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Resource Import
+
+Added 25 verified public-domain resources from Internet Archive and Project Gutenberg:
+
+- 12 `Biblical Illustrator` archive volumes, cleaned into readable volume titles and labeled for OCR spot-check before quotation
+- 4 KJV / English Bible helps:
+  - `How to master the English Bible`
+  - `The traditional text of the Holy Gospels vindicated and established`
+  - `The authorized edition of the English Bible (1611)`
+  - `The Bible word-book`
+- 4 Spurgeon / classic preaching resources:
+  - `Charles H. Spurgeon: His Faith and Works`
+  - `Life and Works of Charles H. Spurgeon`
+  - `Gems of truth and beauty`
+  - `Sermons of C. H. Spurgeon of London, Seventh Series`
+- 3 Baptist history / missions resources:
+  - `History of the Baptist Missionary Society`
+  - `Memoir of Mrs. Ann H. Judson`
+  - `Missionary sketches`
+- 2 Samuel M. Zwemer missions/geography resources:
+  - `Topsy-Turvy Land`
+  - `Zigzag Journeys in the Camel Country`
+
+Also created a 259-row remaining verified public-domain import queue for the next waves. The queue stays reviewed/staged so future imports can be measured instead of dumping hundreds of books into the app bundle at once.
+
+## Previous Public-Domain Resource Import
 
 Added 2 verified public-domain Project Gutenberg hymn-story resources:
 

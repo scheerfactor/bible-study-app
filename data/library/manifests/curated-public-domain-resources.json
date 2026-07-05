@@ -62350,5 +62350,1183 @@
     "checksum_sha256": "153367e8ae11d65a3783d9b89a049201b51539f30f5bed4df1193a6379db3fc7",
     "file_size_bytes": 633521,
     "word_count": 104904
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 1",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra47exel/biblicalillustra47exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra47exel/biblicalillustra47exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-1-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra47exel/biblicalillustra47exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 1; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 1; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 1",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2339,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a1719c1bbf6444af4cd51c53a1c4d446bf189a3e8f6a322bc858542aae1e3d61",
+    "file_size_bytes": 3373507,
+    "word_count": 526354
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 2",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra232exel/biblicalillustra232exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra232exel/biblicalillustra232exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-2-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra232exel/biblicalillustra232exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 2; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 2; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 2",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2265,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6f7988839bb9d23cf12d991e9fd6b9d966e6c05c5951f40c6bbb6b96947a0e5e",
+    "file_size_bytes": 3283706,
+    "word_count": 509651
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 3",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra06exel/biblicalillustra06exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra06exel/biblicalillustra06exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-3-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra06exel/biblicalillustra06exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 3; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 3; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 3",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2696,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b59597d44d501c234142a2bcec439afc6f3d5c267511b56ae8c5a8c92f4affd9",
+    "file_size_bytes": 3875789,
+    "word_count": 606509
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 4",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra441exel/biblicalillustra441exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra441exel/biblicalillustra441exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-4-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra441exel/biblicalillustra441exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 4; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 4; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 4",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 3081,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c47571e8373e26a7422c8ef18390c4fd2a71977c43724e9dbd7c9aa7cd14c05f",
+    "file_size_bytes": 4477365,
+    "word_count": 693253
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 5",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra40exel/biblicalillustra40exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra40exel/biblicalillustra40exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-5-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra40exel/biblicalillustra40exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 5; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 5; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 5",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2941,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "596f2db02e5071e8b046529eea180f3a34801575b8a9730f76685312cbad5dae",
+    "file_size_bytes": 4256915,
+    "word_count": 661700
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 6",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra13exel/biblicalillustra13exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra13exel/biblicalillustra13exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-6-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra13exel/biblicalillustra13exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 6; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 6; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 6",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2562,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "389dbc61640b17442582873256bbb98df0a5bbfe6e5be304bb7464b8210cff43",
+    "file_size_bytes": 3733052,
+    "word_count": 576448
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 7",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra281exel/biblicalillustra281exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra281exel/biblicalillustra281exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-7-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra281exel/biblicalillustra281exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 7; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 7; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 7",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2835,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "27d2ddb3c2db0ff9410f83675634376bec5be5d4d4cefe20e686e985305ae6da",
+    "file_size_bytes": 4145571,
+    "word_count": 637858
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 8",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra50exel/biblicalillustra50exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra50exel/biblicalillustra50exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-8-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra50exel/biblicalillustra50exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 8; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 8; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 8",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2982,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "99b8f699be2591c7f05ba88546438a9d6f16638d9e955a7da87a614690fe255d",
+    "file_size_bytes": 4314512,
+    "word_count": 670910
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 9",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra231exel/biblicalillustra231exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra231exel/biblicalillustra231exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-9-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra231exel/biblicalillustra231exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 9; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 9; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 9",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2576,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "246ec939ed43c7990ebfb3ffa3bf355ff55fb96dfe667bf9bfc142b9f61b1bbc",
+    "file_size_bytes": 3726719,
+    "word_count": 579634
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 10",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra423exel/biblicalillustra423exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra423exel/biblicalillustra423exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-10-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra423exel/biblicalillustra423exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 10; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 10; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 10",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2921,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1c71eab9f7b19afd5b2671c39ac1d909eac4e38fb35d0c4fce7779b863630a45",
+    "file_size_bytes": 4190789,
+    "word_count": 657143
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 11",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra421exel/biblicalillustra421exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra421exel/biblicalillustra421exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-11-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra421exel/biblicalillustra421exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 11; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 11; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 11",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 3155,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "793d1d3469f5ce5311ad1e1e2ddcf24715c1ba1de88a68c1782bc5f1e02dda6a",
+    "file_size_bytes": 4526064,
+    "word_count": 709984
+  },
+  {
+    "title": "The Biblical Illustrator - Archive Volume 12",
+    "author": "Joseph S. Exell and T. F. Peachey",
+    "year": 2026,
+    "category": "Commentaries",
+    "collection": "Biblical Illustrator",
+    "source_url": "https://archive.org/download/biblicalillustra20exel/biblicalillustra20exel_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalillustra20exel/biblicalillustra20exel_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-illustrator-archive-volume-12-joseph-s-exell-and-t-f-peachey.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalillustra20exel/biblicalillustra20exel_djvu.txt.",
+    "notes": "Public-domain Biblical Illustrator archive volume 12; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical homiletical commentary.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical Illustrator archive volume 12; use for verse-level sermon illustrations, homiletical notes, and teaching preparation after Scripture study. OCR should be spot-checked before quotation.",
+    "resource_labels": [
+      "Biblical Illustrator",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical homiletical commentary"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Illustrator - Archive Volume 12",
+      "author": "Joseph S. Exell and T. F. Peachey",
+      "category": "Commentaries",
+      "collection": "Biblical Illustrator",
+      "badge": "Biblical Illustrator",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2852,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "39a12383ce62302c2acecbee83f9e5e98e65e2c5147e42302c5877b254270c56",
+    "file_size_bytes": 4202293,
+    "word_count": 641675
+  },
+  {
+    "title": "How to master the English Bible : an experience, a method, a result, an illustration",
+    "author": "Gray, James M. (James Martin), 1851-1935",
+    "year": 1904,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/howtomasterengli01gray/howtomasterengli01gray_djvu.txt",
+    "download_url": "https://archive.org/download/howtomasterengli01gray/howtomasterengli01gray_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/how-to-master-the-english-bible-an-experience-a-method-a-result-an-illustration-gray-james-m-james-martin-1851.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/howtomasterengli01gray/howtomasterengli01gray_djvu.txt.",
+    "notes": "Public-domain English Bible history or textual study resource. Use with discernment and document source context. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history or textual study resource. Use with discernment and document source context.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to master the English Bible : an experience, a method, a result, an illustration",
+      "author": "Gray, James M. (James Martin), 1851-1935",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 60,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7625478a5ae359c5e35718582802b8189ac927b0e4962c8e13ec6b30628896c7",
+    "file_size_bytes": 88391,
+    "word_count": 13526
+  },
+  {
+    "title": "The traditional text of the Holy Gospels vindicated and established",
+    "author": "Burgon, John William, 1813-1888; Miller, Edward, 1825-1901",
+    "year": 1871,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/traditionaltexto00burgrich/traditionaltexto00burgrich_djvu.txt",
+    "download_url": "https://archive.org/download/traditionaltexto00burgrich/traditionaltexto00burgrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-traditional-text-of-the-holy-gospels-vindicated-and-established-burgon-john-william-1813-1888-miller-edwar.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/traditionaltexto00burgrich/traditionaltexto00burgrich_djvu.txt.",
+    "notes": "Public-domain English Bible history or textual study resource. Use with discernment and document source context. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history or textual study resource. Use with discernment and document source context.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The traditional text of the Holy Gospels vindicated and established",
+      "author": "Burgon, John William, 1813-1888; Miller, Edward, 1825-1901",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 513,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2eb76eaf904d8f1e9254f21f06872e08a4237597f7f0ccee0237530b972ed4bd",
+    "file_size_bytes": 769638,
+    "word_count": 115437
+  },
+  {
+    "title": "The authorized edition of the English Bible (1611)",
+    "author": "Scrivener, Frederick Henry Ambrose, 1813-1891",
+    "year": 1611,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/cu31924029268708/cu31924029268708_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029268708/cu31924029268708_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-authorized-edition-of-the-english-bible-1611-scrivener-frederick-henry-ambrose-1813-1891.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029268708/cu31924029268708_djvu.txt.",
+    "notes": "Public-domain English Bible history or textual study resource. Use with discernment and document source context. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history or textual study resource. Use with discernment and document source context.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The authorized edition of the English Bible (1611)",
+      "author": "Scrivener, Frederick Henry Ambrose, 1813-1891",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 483,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f8f1461f905e0301e4bd07e68eeb4ab6f8745f76767a6acf4dec82e15137b643",
+    "file_size_bytes": 627670,
+    "word_count": 108615
+  },
+  {
+    "title": "The Bible word-book : a glossary of old English Bible words",
+    "author": "Eastwood, J. (Jonathan), 1824-1864; Wright, William Aldis, 1831-1914, ed",
+    "year": 2026,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/biblewordbookag01wriggoog/biblewordbookag01wriggoog_djvu.txt",
+    "download_url": "https://archive.org/download/biblewordbookag01wriggoog/biblewordbookag01wriggoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-word-book-a-glossary-of-old-english-bible-words-eastwood-j-jonathan-1824-1864-wright-william-aldis-1.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblewordbookag01wriggoog/biblewordbookag01wriggoog_djvu.txt.",
+    "notes": "Public-domain English Bible history or textual study resource. Use with discernment and document source context. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history or textual study resource. Use with discernment and document source context.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible word-book : a glossary of old English Bible words",
+      "author": "Eastwood, J. (Jonathan), 1824-1864; Wright, William Aldis, 1831-1914, ed",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 746,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cdd1109afa181cca14806003eb1e32c3d18754424d45afc37e6875f29635a379",
+    "file_size_bytes": 1105284,
+    "word_count": 167912
+  },
+  {
+    "title": "Charles H. Spurgeon: His Faith and Works",
+    "author": "Wayland, H. L. (Heman Lincoln), 1830-1898; American Baptist Publication Society",
+    "year": 1864,
+    "category": "Baptist History",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/charleshspurgeon01wayl/charleshspurgeon01wayl_djvu.txt",
+    "download_url": "https://archive.org/download/charleshspurgeon01wayl/charleshspurgeon01wayl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-h-spurgeon-his-faith-and-works-wayland-h-l-heman-lincoln-1830-1898-american-baptist-publication-societ.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshspurgeon01wayl/charleshspurgeon01wayl_djvu.txt.",
+    "notes": "Baptist history and Spurgeon background for author profiles, preacher study, and historical context. Spot-check OCR before quotation. Labels/warnings: Baptist history; use with discernment; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Baptist history and Spurgeon background for author profiles, preacher study, and historical context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Baptist history",
+      "use with discernment",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Baptist history",
+      "use with discernment",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles H. Spurgeon: His Faith and Works",
+      "author": "Wayland, H. L. (Heman Lincoln), 1830-1898; American Baptist Publication Society",
+      "category": "Baptist History",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 396,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4f4349c8a30cba9e28703b807bd6970be4dcd1285a0f8a8fb8c81e8789c68e74",
+    "file_size_bytes": 575525,
+    "word_count": 89015
+  },
+  {
+    "title": "Life and Works of Charles H. Spurgeon",
+    "author": "Northrop, Henry Davenport, 1836-1909",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/lifeworksofrevc00nort/lifeworksofrevc00nort_djvu.txt",
+    "download_url": "https://archive.org/download/lifeworksofrevc00nort/lifeworksofrevc00nort_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/life-and-works-of-charles-h-spurgeon-northrop-henry-davenport-1836-1909.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifeworksofrevc00nort/lifeworksofrevc00nort_djvu.txt.",
+    "notes": "Spurgeon biography and selected writings for preacher formation, illustrations, and author background. Spot-check OCR before quotation. Labels/warnings: Use with discernment; biography and sermon selections; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon biography and selected writings for preacher formation, illustrations, and author background. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "biography and sermon selections",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "biography and sermon selections",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life and Works of Charles H. Spurgeon",
+      "author": "Northrop, Henry Davenport, 1836-1909",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 732,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "41d7ac13efc59e263f65967067c88f6b3a061f03f9fdea575fbad1830ac3ae83",
+    "file_size_bytes": 1046933,
+    "word_count": 164744
+  },
+  {
+    "title": "Gems of truth and beauty : selected from the sermons and addresses of Talmage, Beecher, Moody, Spurgeon, Guthrie, and Parker",
+    "author": "Albertson, Charles Carroll, 1865-1959",
+    "year": 1888,
+    "category": "Preaching & Teaching",
+    "collection": "Classic Sermon Illustrations",
+    "source_url": "https://archive.org/download/gemsoftruthbeaut00albeiala/gemsoftruthbeaut00albeiala_djvu.txt",
+    "download_url": "https://archive.org/download/gemsoftruthbeaut00albeiala/gemsoftruthbeaut00albeiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/gems-of-truth-and-beauty-selected-from-the-sermons-and-addresses-of-talmage-beecher-moody-spurgeon-guthrie-and.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/gemsoftruthbeaut00albeiala/gemsoftruthbeaut00albeiala_djvu.txt.",
+    "notes": "Public-domain sermon and illustration anthology for preaching helps, quote discovery, and historical preaching examples. Review individual selections before quotation. Labels/warnings: Use with discernment; anthology; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon and illustration anthology for preaching helps, quote discovery, and historical preaching examples. Review individual selections before quotation.",
+    "resource_labels": [
+      "Classic Sermon Illustrations",
+      "Use with discernment",
+      "anthology",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "anthology",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Gems of truth and beauty : selected from the sermons and addresses of Talmage, Beecher, Moody, Spurgeon, Guthrie, and Parker",
+      "author": "Albertson, Charles Carroll, 1865-1959",
+      "category": "Preaching & Teaching",
+      "collection": "Classic Sermon Illustrations",
+      "badge": "Classic Sermon Illustrations",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 354,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "90d8aace8a16ae8d9cce7c191a84588cc62cea52b6caf3efe72a2403bf76ab72",
+    "file_size_bytes": 508303,
+    "word_count": 79753
+  },
+  {
+    "title": "History of the Baptist Missionary Society, from 1792 to 1842 : to which is added a sketch of the General Baptist Mission, in two volumes",
+    "author": "Cox, F. A. (Francis Augustus), 1783-1853; Peggs, James, 1793-1850",
+    "year": 2026,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofbaptist01coxf/historyofbaptist01coxf_djvu.txt",
+    "download_url": "https://archive.org/download/historyofbaptist01coxf/historyofbaptist01coxf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-baptist-missionary-society-from-1792-to-1842-to-which-is-added-a-sketch-of-the-general-baptist-.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofbaptist01coxf/historyofbaptist01coxf_djvu.txt.",
+    "notes": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the Baptist Missionary Society, from 1792 to 1842 : to which is added a sketch of the General Baptist Mission, in two volumes",
+      "author": "Cox, F. A. (Francis Augustus), 1783-1853; Peggs, James, 1793-1850",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 563,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "11c32524fb9365581177057bbe207765706ccee5a2bc3adf8483c3f613523c0a",
+    "file_size_bytes": 864875,
+    "word_count": 126703
+  },
+  {
+    "title": "Memoir of Mrs. Ann H. Judson : wife of the Rev. Adoniram Judson, missionary to Burmah, including a history of the American Baptist mission in the Burman empire",
+    "author": "Judson, Ann Hasseltine, 1789-1826; Knowles, James D. (James Davis), 1798-1838",
+    "year": 1827,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/memoirofmrsannhj00judsuoft/memoirofmrsannhj00judsuoft_djvu.txt",
+    "download_url": "https://archive.org/download/memoirofmrsannhj00judsuoft/memoirofmrsannhj00judsuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/memoir-of-mrs-ann-h-judson-wife-of-the-rev-adoniram-judson-missionary-to-burmah-including-a-history-of-the-ame.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/memoirofmrsannhj00judsuoft/memoirofmrsannhj00judsuoft_djvu.txt.",
+    "notes": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memoir of Mrs. Ann H. Judson : wife of the Rev. Adoniram Judson, missionary to Burmah, including a history of the American Baptist mission in the Burman empire",
+      "author": "Judson, Ann Hasseltine, 1789-1826; Knowles, James D. (James Davis), 1798-1838",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 622,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "99d3b2dfe9560117db3867282a5df93269d331f0d63bd8d0bbb8a6e0578a131c",
+    "file_size_bytes": 911068,
+    "word_count": 139998
+  },
+  {
+    "title": "Missionary sketches : a concise history of the work of the American Baptist Missionary Union",
+    "author": "Smith, Samuel Francis, 1808-1895; Merriam, Edmund F. (Edmund Franklin), 1847-1930",
+    "year": 1879,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/missionarysketch01smit/missionarysketch01smit_djvu.txt",
+    "download_url": "https://archive.org/download/missionarysketch01smit/missionarysketch01smit_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/missionary-sketches-a-concise-history-of-the-work-of-the-american-baptist-missionary-union-smith-samuel-franci.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/missionarysketch01smit/missionarysketch01smit_djvu.txt.",
+    "notes": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist/history resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Missionary sketches : a concise history of the work of the American Baptist Missionary Union",
+      "author": "Smith, Samuel Francis, 1808-1895; Merriam, Edmund F. (Edmund Franklin), 1847-1930",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 487,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "198f07c2d371a87025422da925c613225ecbc22a72ead6265d4dd2dcb3a481a6",
+    "file_size_bytes": 735798,
+    "word_count": 109527
+  },
+  {
+    "title": "Topsy-Turvy Land: Arabia Pictured for Children",
+    "author": "Zwemer, Samuel Marinus; Zwemer, Amy E.",
+    "year": 2005,
+    "category": "Missions",
+    "collection": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/15658",
+    "download_url": "https://www.gutenberg.org/ebooks/15658.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/topsy-turvy-land-arabia-pictured-for-children-zwemer-samuel-marinus-zwemer-amy-e.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/15658.",
+    "notes": "Project Gutenberg public-domain Christian classic or ministry resource for reading, study, and teaching preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Project Gutenberg public-domain Christian classic or ministry resource for reading, study, and teaching preparation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Topsy-Turvy Land: Arabia Pictured for Children",
+      "author": "Zwemer, Samuel Marinus; Zwemer, Amy E.",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 107,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "abe317d90c1970b208dfef3e89f8edc538494ad992aacac806d72c1ed85ce846",
+    "file_size_bytes": 134972,
+    "word_count": 24155
+  },
+  {
+    "title": "Zigzag Journeys in the Camel Country: Arabia in Picture and Story",
+    "author": "Zwemer, Samuel Marinus; Zwemer, Amy E.",
+    "year": 2018,
+    "category": "Missions",
+    "collection": "Missions",
+    "source_url": "https://www.gutenberg.org/ebooks/56314",
+    "download_url": "https://www.gutenberg.org/ebooks/56314.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/zigzag-journeys-in-the-camel-country-arabia-in-picture-and-story-zwemer-samuel-marinus-zwemer-amy-e.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/56314.",
+    "notes": "Project Gutenberg public-domain Christian classic or ministry resource for reading, study, and teaching preparation. Labels/warnings: Use with discernment.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Project Gutenberg public-domain Christian classic or ministry resource for reading, study, and teaching preparation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment"
+    ],
+    "resource_warnings": [
+      "Use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Zigzag Journeys in the Camel Country: Arabia in Picture and Story",
+      "author": "Zwemer, Samuel Marinus; Zwemer, Amy E.",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 123,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "55fde067e67e89b7fbecaac5c0ac2ac9c534e8c5c3859cb840661be1758b5a0f",
+    "file_size_bytes": 156603,
+    "word_count": 27615
+  },
+  {
+    "title": "Sermons of C. H. Spurgeon of London, Seventh Series",
+    "author": "C. H. Spurgeon",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Sermons",
+    "source_url": "https://archive.org/download/sermonsrevchspu00spurgoog/sermonsrevchspu00spurgoog_djvu.txt",
+    "download_url": "https://archive.org/download/sermonsrevchspu00spurgoog/sermonsrevchspu00spurgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-of-c-h-spurgeon-of-london-seventh-series-c-h-spurgeon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sermonsrevchspu00spurgoog/sermonsrevchspu00spurgoog_djvu.txt.",
+    "notes": "Spurgeon sermon volume for preaching study, sermon illustrations, quotes, and devotional reading. Spot-check OCR before quotation. Labels/warnings: Use with discernment; Baptist preaching; OCR spot-check needed.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Spurgeon sermon volume for preaching study, sermon illustrations, quotes, and devotional reading. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Spurgeon Sermons",
+      "Use with discernment",
+      "Baptist preaching",
+      "OCR spot-check needed"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Baptist preaching",
+      "OCR spot-check needed"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons of C. H. Spurgeon of London, Seventh Series",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Sermons",
+      "badge": "Spurgeon Sermons",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1024,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1f04e231a1225362422be7758c2c52893d2139c814d0e88a3f25790fdcbcac37",
+    "file_size_bytes": 1418758,
+    "word_count": 230296
   }
 ]
