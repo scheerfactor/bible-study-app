@@ -67,8 +67,8 @@ Review:
 | --- | --- |
 | Known contact | 2knowhim@cbc-web.org |
 | Website | https://wordofhismouth.com/ |
-| Permission status | Permission Requested |
-| Requested use | Limited listing/link/excerpt/audio-video inquiry |
+| Permission status | Pending Follow-Up / Positive Response |
+| Requested use | Limited listing/link/excerpt/audio-video inquiry; follow-up information requested |
 | Follow-up needed | Yes |
 
 Notes:
@@ -76,7 +76,10 @@ Notes:
 - Do not approve broad catalog use.
 - Ask about specific titles, excerpts, links, audio, video, transcript use, and future paid-access terms separately.
 - Record written permission before any copyrighted material becomes public in the app.
-- Initial permission email sent manually by Stephen on 2026-07-04. No permission granted yet.
+- Initial permission email sent manually by Stephen on 2026-07-04.
+- Pastor Bo Wagner replied that permission will likely be fine and that they may be glad to grant it, but he asked for more information about Stephen and what is being built before granting final permission.
+- Do not treat the reply as final permission.
+- Send a follow-up explaining the platform, purpose, attribution, links back to ministries, and willingness to answer questions or schedule a call.
 
 ## Review Score
 
@@ -102,7 +105,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Review theology fit and exact resource rights before inclusion.
+> Positive reply received, but final permission has not been granted. Review theology fit and exact resource rights before inclusion.
 
 ## Final Recommendation
 

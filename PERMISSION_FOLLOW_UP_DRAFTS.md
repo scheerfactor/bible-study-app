@@ -15,6 +15,40 @@ Recommended send date: July 10, 2026.
 - Ask for the correct permissions contact or process.
 - If they already replied, do not use these drafts; classify the reply with `PERMISSION_REPLY_REVIEW_WORKFLOW.md`.
 
+## Pastor Bo Wagner / CBC Resources
+
+Status: Draft for reply requested by recipient.
+
+Subject:
+
+```text
+Re: Permission Question for Selected Bible Teaching and Publishing Resources
+```
+
+Body:
+
+```text
+Pastor Wagner,
+
+Thank you so much for your kind response. I completely understand and appreciate your desire to do due diligence.
+
+By God’s grace, I am building Father’s Business Mastery Resources to help Christians, pastors, Sunday school teachers, and churches study God’s Word. The centerpiece is a Bible study platform centered on the King James Bible that brings together carefully curated resources, Bible study tools, maps, dictionaries, commentaries, and trusted Christian literature in one place.
+
+My goal is not simply to sell books, but to encourage believers in sound biblical study while also helping ministries like yours make their materials more accessible to people who may never discover them otherwise.
+
+Every ministry or publisher whose materials are included will be clearly credited, linked to their ministry, and represented respectfully. I would like the platform to help send readers back to the original ministries for more resources, support, and continued study.
+
+I would be happy to answer any questions or schedule a phone call if that would be helpful.
+
+Thank you again for considering my request.
+
+In Christ,
+Stephen Scheer
+Father’s Business Mastery Resources
+fathersbusinessmasteryresources.com
+hello@fathersbusinessmasteryresources.com
+```
+
 ## Kregel Publications
 
 Subject:
@@ -118,4 +152,3 @@ Stephen Scheer
 Father's Business Bible Study
 hello@fathersbusinessmasteryresources.com
 ```
-

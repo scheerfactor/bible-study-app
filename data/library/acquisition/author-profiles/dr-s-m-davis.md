@@ -67,16 +67,18 @@ Review:
 | --- | --- |
 | Known contact | administrator@solvefamilyproblems.org |
 | Website | https://solvefamilyproblems.org/ |
-| Permission status | Permission Requested |
-| Requested use | Limited listing/link/excerpt/audio-video inquiry |
-| Follow-up needed | Yes |
+| Permission status | Permission Granted - Website Metadata Only |
+| Requested use | Website-available titles, graphics, and descriptions only |
+| Follow-up needed | Yes - only if requesting full content, audio, video, excerpts, or PDFs |
 
 Notes:
 
 - Do not approve broad catalog use.
-- Ask about specific titles, excerpts, links, audio, video, transcript use, and future paid-access terms separately.
-- Record written permission before any copyrighted material becomes public in the app.
-- Initial permission email sent manually by Stephen on 2026-07-04. No permission granted yet.
+- Permission currently covers only website-available titles, graphics, and descriptions.
+- Full books, PDFs, audio, video, transcripts, excerpts beyond website descriptions, and copyrighted full content are not approved.
+- Add attribution and link back to the official Solve Family Problems website for metadata-only listings.
+- Ask about specific titles, excerpts, links, audio, video, transcript use, and future paid-access terms separately if needed.
+- Initial permission email sent manually by Stephen on 2026-07-04. Metadata-only permission recorded on 2026-07-06.
 
 ## Review Score
 
@@ -102,7 +104,7 @@ Placeholder. Add notes after review.
 
 Current intake note:
 
-> Modern sermon/video/book ministry; text, audio, and video rights must be reviewed separately.
+> Metadata-only permission has been granted for website titles, graphics, and descriptions. Text, PDFs, audio, video, and full copyrighted content must be reviewed and requested separately.
 
 ## Final Recommendation
 
