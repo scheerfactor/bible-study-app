@@ -34311,6 +34311,7 @@ function LibraryScreen({
 	            { label: "Spurgeon", value: "Spurgeon" },
 	            { label: "Northstar", value: "Northstar" },
 	            { label: "Sorenson", value: "Sorenson" },
+	            { label: "S. M. Davis", value: "Solve Family Problems" },
 	            { label: "Prayer", value: "Prayer" },
 	            { label: "Commentaries", value: "Commentary" },
 	            { label: "Baptist history", value: "Baptist History" },
@@ -41587,6 +41588,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const displayedResources = filteredResources.slice(0, 36);
   const wayOfLifeCount = resources.filter((resource) => resource.publisherMinistry === "Way of Life Literature").length;
   const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
+  const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
@@ -41601,7 +41603,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
             <MiniStat label="Total links" value={String(resources.length)} />
             <MiniStat label="Way of Life" value={String(wayOfLifeCount)} />
             <MiniStat label="Northstar" value={String(northstarCount)} />
-            <MiniStat label="Categories" value={String(categories.length - 1)} />
+            <MiniStat label="S. M. Davis" value={String(solveFamilyProblemsCount)} />
           </div>
         </div>
         <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
@@ -41696,7 +41698,8 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
 }
 
 function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink }) {
-  const linkLabel = resource.publisherMinistry === "Northstar Ministries" ? "View / buy official page" : "Open official page";
+  const linkLabel = resource.publisherMinistry === "Northstar Ministries" || resource.publisherMinistry === "Solve Family Problems" ? "View / buy official page" : "Open official page";
+  const scopeLabel = resource.publisherMinistry === "Solve Family Problems" ? "Metadata only" : "Scoped permission";
 
   return (
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
@@ -41707,7 +41710,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
         </div>
         <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
-          Scoped permission
+          {scopeLabel}
         </span>
       </div>
       <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{resource.recommendedUse}</p>

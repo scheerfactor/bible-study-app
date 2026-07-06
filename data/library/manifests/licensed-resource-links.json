@@ -3026,5 +3026,201 @@
     "rightsEvidence": "data/library/acquisition/permission-evidence/way-of-life-sharing-policy-2026-07-04.md",
     "recommendedUse": "Church history and discernment",
     "notes": "Review for historical currentness and app placement. Source must remain linked to Way of Life. Store items, paid editions, the Fundamental Baptist Digital Library, audio hosting, AI/TTS narration, and paid subscription inclusion require separate permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-10-reasons-why-pastors-lose-their-families",
+    "title": "10 Reasons Why Pastors Lose their Families",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/10-reasons-why-pastors-lose-their-families",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Pastor family health; ministry home-life caution; official purchase/listing link",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed the MP3/audio, transcript, PDF, full text, video, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-10-steps-to-victory-over-lust",
+    "title": "10 Steps to Victory Over Lust",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Christian Living",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/lust",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Christian living; purity; counseling and discipleship resource discovery",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed the MP4/video, audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-10-timeless-bible-teachings-about-the-bride-price",
+    "title": "10 Timeless Bible Teachings About the Bride Price",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/10-timeless-bible-teachings-about-the-bride-price",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Marriage preparation; family teaching; official purchase/listing link",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed the DVD/MP4/video, transcript, PDF, full text, audio, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-12-reasons-why-i-am-for-the-permanence-of-marriage",
+    "title": "12 Reasons Why I Am for the Permanence of Marriage",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/12-reasons-why-i-am-for-the-permanence-of-marriage",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Marriage doctrine; family counseling; sermon and teaching resource discovery",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed the DVD/MP4/video, CD/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-anger-the-destroyer",
+    "title": "Anger the Destroyer",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/anger?variant=53630132420974",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Family conflict; anger counseling; preaching and discipleship resource discovery",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed MP4/video, MP3/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-pride-the-hidden-sin-that-feeds-other-sins",
+    "title": "Pride The Hidden Sin That Feeds Other Sins",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Christian Living",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/pride?variant=53630159749486",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Christian living; humility; sermon and counseling resource discovery",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed CD/audio, DVD/video, MP4/MP3 files, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
+  },
+  {
+    "id": "licensed-solve-family-problems-freedom-from-the-spirit-of-anger",
+    "title": "Freedom From the Spirit of Anger",
+    "author": "Dr. S. M. Davis",
+    "publisherMinistry": "Solve Family Problems",
+    "category": "Family",
+    "collection": "Solve Family Problems Metadata-Only Listings",
+    "sourceUrl": "https://solvefamilyproblems.org/products/spirit-of-anger?variant=53630167548270",
+    "permissionStatus": "Permission Granted - Scoped",
+    "reviewStatus": "Metadata-only listing approved; title-level review still required",
+    "approvedPublicUse": [
+      "Official link",
+      "Website title",
+      "Website graphic",
+      "Website description"
+    ],
+    "notApprovedWithoutFollowup": [
+      "Full-text hosting",
+      "PDF hosting",
+      "audio hosting",
+      "video hosting",
+      "AI/TTS narration",
+      "paid subscription inclusion"
+    ],
+    "rightsEvidence": "data/library/acquisition/permission-evidence/solve-family-problems-metadata-only-2026-07-06.md",
+    "recommendedUse": "Anger counseling; family discipleship; official purchase/listing link",
+    "notes": "Metadata-only permission covers website titles, graphics, and descriptions. Do not host or embed MP4/video, MP3/audio, transcript, PDF, full text, AI/TTS narration, or paid in-app access without separate written permission."
   }
 ]
