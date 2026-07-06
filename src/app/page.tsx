@@ -24948,11 +24948,15 @@ function BibleStudyDeskResourceCard({
   resource: ChapterResourceRecommendation;
   onOpen: (resource: ChapterResourceRecommendation) => void;
 }) {
-  const actionLabel = resource.resourceSlug
-    ? "Open resource"
-    : resource.kind === "Commentary"
-      ? "Open commentary"
-      : "Open guide";
+  const actionLabel = (() => {
+    if (resource.resourceSlug) return "Open resource";
+    if (resource.kind === "Commentary") return "Open commentary";
+    if (resource.kind === "Dictionary") return "Open word";
+    if (resource.kind === "Cross References") return "Open references";
+    if (resource.kind === "Bible Tool") return "Open tool";
+    if (resource.kind === "Bible Handbook" || resource.kind === "Bible Survey" || resource.kind === "Bible Introduction") return "Open overview";
+    return "Open guide";
+  })();
 
   return (
     <button
@@ -26127,6 +26131,34 @@ function BibleReader({
 
     if (resource.kind === "Commentary") {
       onOpenCommentaryCenter();
+      return;
+    }
+
+    if (resource.kind === "Dictionary") {
+      onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref);
+      return;
+    }
+
+    if (resource.kind === "Cross References") {
+      if (chapterCrossReferences[0]) {
+        onOpenReference(chapterCrossReferences[0].target_ref);
+      } else {
+        onOpenPassageGuide();
+      }
+      return;
+    }
+
+    if (resource.kind === "Bible Tool") {
+      onOpenStudyToolSearch(studyLaunchWord || book, "strongs");
+      return;
+    }
+
+    if (resource.kind === "Bible Handbook" || resource.kind === "Bible Survey" || resource.kind === "Bible Introduction") {
+      if (bookIntroduction) {
+        onOpenBookIntroduction();
+      } else {
+        onOpenPassageGuide();
+      }
       return;
     }
 
