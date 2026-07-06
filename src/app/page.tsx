@@ -553,6 +553,13 @@ type DictionaryEntry = {
   definition: string;
   found: boolean;
   sourceTitle?: string;
+  lookupStatus?: "checking" | "found" | "missing";
+  sourceEntries?: {
+    headword: string;
+    sourceTitle: string;
+    definition: string;
+    reviewStatus?: string;
+  }[];
 };
 
 type DictionarySearchResult = {
@@ -20365,7 +20372,36 @@ export default function Home() {
 
   async function lookupWord(word: string) {
     const fallbackEntry = findDictionaryEntry(word);
-    setActiveDictionaryEntry(fallbackEntry);
+    const checkingEntry: DictionaryEntry = fallbackEntry.found
+      ? {
+          ...fallbackEntry,
+          lookupStatus: "found",
+          sourceTitle: fallbackEntry.sourceTitle ?? "Webster's 1828 starter",
+          sourceEntries: [
+            {
+              headword: fallbackEntry.word,
+              sourceTitle: fallbackEntry.sourceTitle ?? "Webster's 1828 starter",
+              definition: fallbackEntry.definition,
+            },
+          ],
+        }
+      : {
+          ...fallbackEntry,
+          lookupStatus: "checking",
+          sourceTitle: "Checking Bible dictionaries",
+          definition: "Checking Webster's 1828, Easton's Bible Dictionary, and Nave's Topical Bible for this word.",
+        };
+    const markDictionaryMissing = () => {
+      setActiveDictionaryEntry({
+        ...fallbackEntry,
+        lookupStatus: "missing",
+        sourceTitle: "Dictionary lookup",
+        definition:
+          "No reviewed dictionary entry matched this word yet. Try the Bible Tools search for related people, places, topics, and Strong's entries.",
+        found: false,
+      });
+    };
+    setActiveDictionaryEntry(checkingEntry);
     setStudyTab("dictionary");
 
     try {
@@ -20379,15 +20415,20 @@ export default function Home() {
         };
         const definitions = data.entries ?? [];
         if (data.found && definitions.length) {
+          const sourceEntries = definitions.slice(0, 4).map((entry) => ({
+            headword: entry.headword,
+            sourceTitle: entry.source_title,
+            definition: entry.definition,
+            reviewStatus: entry.review_status,
+          }));
           setActiveDictionaryEntry({
             word: data.word,
             lookupWord: data.lookupWord,
-            definition: definitions
-              .slice(0, 3)
-              .map((entry) => `${entry.source_title}: ${entry.definition}`)
-              .join("\n\n"),
+            definition: sourceEntries.map((entry) => `${entry.sourceTitle}: ${entry.definition}`).join("\n\n"),
             found: true,
-            sourceTitle: definitions.length > 1 ? "Dictionary Matches" : definitions[0]?.source_title,
+            lookupStatus: "found",
+            sourceTitle: definitions.length > 1 ? `${definitions.length} dictionary matches` : definitions[0]?.source_title,
+            sourceEntries,
           });
           return;
         }
@@ -20396,7 +20437,10 @@ export default function Home() {
       // Keep the local starter definition visible and try Supabase next.
     }
 
-    if (!supabase) return;
+    if (!supabase) {
+      if (!fallbackEntry.found) markDictionaryMissing();
+      return;
+    }
 
     const { data, error } = await supabase
       .from("dictionary_entries")
@@ -20410,13 +20454,25 @@ export default function Home() {
     }
 
     const bestEntry = data?.sort((a, b) => b.definition.length - a.definition.length)[0];
-    if (!bestEntry) return;
+    if (!bestEntry) {
+      if (!fallbackEntry.found) markDictionaryMissing();
+      return;
+    }
 
     setActiveDictionaryEntry({
       word: cleanWord(word) || bestEntry.headword,
       lookupWord: bestEntry.normalized_headword,
       definition: bestEntry.definition,
       found: true,
+      lookupStatus: "found",
+      sourceTitle: "Supabase dictionary",
+      sourceEntries: [
+        {
+          headword: bestEntry.headword,
+          sourceTitle: "Supabase dictionary",
+          definition: bestEntry.definition,
+        },
+      ],
     });
   }
 
@@ -20966,7 +21022,16 @@ export default function Home() {
                     lookupWord: entry.normalized_headword,
                     definition: entry.definition,
                     found: true,
+                    lookupStatus: "found",
                     sourceTitle: entry.source_title,
+                    sourceEntries: [
+                      {
+                        headword: entry.headword,
+                        sourceTitle: entry.source_title,
+                        definition: entry.definition,
+                        reviewStatus: entry.review_status,
+                      },
+                    ],
                   });
                   setStudyTab("dictionary");
                   if (selectedRef) setStudyRef(selectedRef);
@@ -44725,14 +44790,46 @@ function StudyDrawer({
 
               {dictionaryEntry ? (
                 <section className="rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">
-                    {dictionaryEntry.sourceTitle ?? "Bible Dictionary"}
-                  </p>
-                  <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{dictionaryEntry.word}</h3>
+                  <div className="flex flex-wrap items-start justify-between gap-2">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--green)]">
+                        {dictionaryEntry.sourceTitle ?? "Bible Dictionary"}
+                      </p>
+                      <h3 className="mt-2 text-3xl font-semibold capitalize text-[var(--ink)]">{dictionaryEntry.word}</h3>
+                    </div>
+                    <span className={`rounded-full px-3 py-1.5 text-xs font-semibold ${
+                      dictionaryEntry.lookupStatus === "checking"
+                        ? "bg-[var(--warm)] text-[var(--muted)]"
+                        : dictionaryEntry.found
+                          ? "bg-[var(--green)] text-white"
+                          : "bg-amber-50 text-amber-800"
+                    }`}>
+                      {dictionaryEntry.lookupStatus === "checking" ? "Checking" : dictionaryEntry.found ? "Found" : "Needs review"}
+                    </span>
+                  </div>
                   {dictionaryEntry.lookupWord && dictionaryEntry.lookupWord !== dictionaryEntry.word && (
                     <p className="mt-1 text-sm text-[var(--muted)]">Normalized to: {dictionaryEntry.lookupWord}</p>
                   )}
-                  <p className="mt-4 whitespace-pre-line text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
+                  {dictionaryEntry.sourceEntries?.length ? (
+                    <div className="mt-4 space-y-3">
+                      {dictionaryEntry.sourceEntries.map((entry, index) => (
+                        <article key={`dictionary-source-${entry.sourceTitle}-${entry.headword}-${index}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <p className="text-sm font-semibold capitalize text-[var(--ink)]">{entry.headword}</p>
+                            <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{entry.sourceTitle}</span>
+                          </div>
+                          <p className="mt-3 whitespace-pre-line text-sm leading-7 text-[var(--scripture-ink)]">{entry.definition}</p>
+                          {entry.reviewStatus && (
+                            <p className="mt-3 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
+                              {entry.reviewStatus.replace(/_/g, " ")}
+                            </p>
+                          )}
+                        </article>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-4 whitespace-pre-line text-base leading-7 text-[var(--scripture-ink)]">{dictionaryEntry.definition}</p>
+                  )}
                   <div className="mt-4 grid grid-cols-3 gap-2">
                     <MiniStat label="Chapter" value={String(drawerWordExplorer.chapterOccurrences.length)} />
                     <MiniStat label="Book" value={String(drawerWordExplorer.bookOccurrences.length)} />
