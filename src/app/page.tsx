@@ -72,6 +72,7 @@ import tskWeakBooksPhase17 from "../../data/imports/tsk-metav-reviewed-weak-book
 import tskWeakBooksPhase18 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-18.json";
 import tskPsalmsPhase19 from "../../data/imports/tsk-metav-reviewed-psalms-phase-19.json";
 import tskPsalmsPhase20 from "../../data/imports/tsk-metav-reviewed-psalms-phase-20.json";
+import tskReviewedFinalChapterGaps from "../../data/imports/tsk-reviewed-final-chapter-gaps.json";
 import tskThinBooksPhase14 from "../../data/imports/tsk-reviewed-thin-books-phase-14.json";
 import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
 import hoseaBarnesCommentary from "../../data/imports/barnes-reviewed-completion-prophets-commentary.json";
@@ -9963,6 +9964,7 @@ const additionalReviewedTskRows: TskCrossReferenceImportRow[] = [
   ...(tskWeakBooksPhase18 as TskCrossReferenceImportRow[]),
   ...(tskPsalmsPhase19 as TskCrossReferenceImportRow[]),
   ...(tskPsalmsPhase20 as TskCrossReferenceImportRow[]),
+  ...(tskReviewedFinalChapterGaps as TskCrossReferenceImportRow[]),
 ];
 
 const localCrossReferences: CrossReference[] = [
@@ -26002,6 +26004,52 @@ function BibleReader({
     .filter((entry): entry is StrongMvpEntry => Boolean(entry))
     .slice(0, 6);
   const workspaceTopCrossReferences = rankedCrossReferences(chapterCrossReferences, 8);
+  const studyCoverageItems = [
+    {
+      label: "Commentary",
+      value: `${chapterCommentaryEntries.length}`,
+      detail: commentaryAuthors.slice(0, 2).join(", ") || "Needs review",
+      ready: chapterCommentaryEntries.length > 0,
+      action: onOpenCommentaryCenter,
+    },
+    {
+      label: "TSK",
+      value: `${chapterCrossReferences.length}`,
+      detail: workspaceTopCrossReferences[0] ? `Best: ${workspaceTopCrossReferences[0].target_ref}` : "Needs review",
+      ready: chapterCrossReferences.length > 0,
+      action: () => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide(),
+    },
+    {
+      label: "Strong's",
+      value: showStrongNumbers ? `${currentChapterStrongMappingCount}` : `${workspaceStrongEntries.length}`,
+      detail: showStrongNumbers ? strongMappingDisplayStatus : "Starter word studies",
+      ready: currentChapterStrongMappingCount > 0 || workspaceStrongEntries.length > 0,
+      action: () => onOpenStudyToolSearch(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || book, "strongs"),
+    },
+    {
+      label: "Webster",
+      value: `${chapterDictionaryEntries.length}`,
+      detail: chapterDictionaryEntries.slice(0, 2).map((entry) => entry.lookupWord).join(", ") || "Needs review",
+      ready: chapterDictionaryEntries.length > 0,
+      action: () => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref),
+    },
+    {
+      label: "Background",
+      value: `${chapterConnectionsData.people.length + chapterConnectionsData.places.length + chapterConnectionsData.timeline.length}`,
+      detail: `${chapterConnectionsData.people.length} people, ${chapterConnectionsData.places.length} places`,
+      ready: Boolean(bibleBackground.historicalSetting) || chapterConnectionsData.people.length > 0 || chapterConnectionsData.places.length > 0 || chapterConnectionsData.timeline.length > 0,
+      action: onOpenPassageGuide,
+    },
+    {
+      label: "Books",
+      value: `${atAGlanceRelatedBooks.length}`,
+      detail: atAGlanceRelatedBooks[0]?.title ?? "Needs review",
+      ready: atAGlanceRelatedBooks.length > 0,
+      action: () => atAGlanceRelatedBooks[0]?.slug ? onOpenLibraryResource(atAGlanceRelatedBooks[0].slug) : onOpenPassageGuide(),
+    },
+  ];
+  const studyCoverageReadyCount = studyCoverageItems.filter((item) => item.ready).length;
+  const studyCoveragePercent = Math.round((studyCoverageReadyCount / studyCoverageItems.length) * 100);
   const workspaceSermonIdeas = uniqueStrings([
     ...(amosWorkspaceStudy?.sermonOutline ?? []),
     ...(bookEcosystem?.sermonIdeas ?? []),
@@ -26360,6 +26408,39 @@ function BibleReader({
               detail={chapterAnalysis.repeatedWords.slice(0, 4).map((item) => item.word).join(", ") || studyLaunchWord || "Open word study"}
               onClick={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
             />
+          </div>
+
+          <div className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Study data ready for this chapter</p>
+                <p className="mt-1 text-sm leading-6 text-[var(--muted)]">
+                  {studyCoverageReadyCount} of {studyCoverageItems.length} study helps are connected to {book} {chapter}.
+                </p>
+              </div>
+              <span className="rounded-full bg-white px-3 py-1.5 text-sm font-bold text-[var(--green)]">
+                {studyCoveragePercent}%
+              </span>
+            </div>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-6">
+              {studyCoverageItems.map((item) => (
+                <button
+                  key={`study-coverage-${item.label}`}
+                  className="min-h-20 rounded-2xl border border-[var(--line)] bg-white px-3 py-2 text-left shadow-sm transition hover:-translate-y-0.5"
+                  onClick={item.action}
+                  type="button"
+                >
+                  <span className="flex items-center justify-between gap-2">
+                    <span className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{item.label}</span>
+                    <span className={`rounded-full px-2 py-0.5 text-[0.62rem] font-bold ${item.ready ? "bg-[var(--highlight)] text-[var(--green)]" : "bg-stone-100 text-[var(--muted)]"}`}>
+                      {item.ready ? "Ready" : "Gap"}
+                    </span>
+                  </span>
+                  <span className="mt-1 block text-lg font-bold text-[var(--green)]">{item.value}</span>
+                  <span className="line-clamp-2 block text-xs leading-5 text-[var(--muted)]">{item.detail}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
           {bibleStudyDeskResources.length ? (
@@ -42580,6 +42661,18 @@ function PassageGuideScreen({
     ...connections.themes,
     ...topWords.slice(0, 3).map((item) => item.word),
   ], 8);
+  const guideCoverageItems = [
+    { label: "Commentary", value: commentaryEntries.length, ready: commentaryEntries.length > 0 },
+    { label: "TSK", value: crossReferences.length, ready: crossReferences.length > 0 },
+    { label: "Strong's", value: guideStrongEntries.length, ready: guideStrongEntries.length > 0 },
+    { label: "Webster", value: guideDictionaryEntries.length, ready: guideDictionaryEntries.length > 0 },
+    { label: "People", value: connections.people.length, ready: connections.people.length > 0 },
+    { label: "Places", value: connections.places.length, ready: connections.places.length > 0 },
+    { label: "Timeline", value: connections.timeline.length, ready: connections.timeline.length > 0 },
+    { label: "Resources", value: recommendedResources.length, ready: recommendedResources.length > 0 },
+  ];
+  const guideCoverageReadyCount = guideCoverageItems.filter((item) => item.ready).length;
+  const guideCoveragePercent = Math.round((guideCoverageReadyCount / guideCoverageItems.length) * 100);
   const summaryBody = bookIntroduction
     ? `${bookIntroduction.overview.theme} ${bookIntroduction.overview.purpose}`
     : connections.themes.length
@@ -42714,20 +42807,24 @@ function PassageGuideScreen({
             </div>
           </div>
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reviewed coverage</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {[
-                commentaryEntries.length ? "Commentary ready" : "Commentary pending",
-                crossReferences.length ? "Cross references ready" : "Cross references pending",
-                connections.people.length ? "People reviewed" : "People pending",
-                connections.places.length ? "Places reviewed" : "Places pending",
-                passageConnections.length ? "Parallel links ready" : "Parallel links pending",
-              ].map((label) => (
-                <span key={`scorecard-coverage-${label}`} className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
-                  {label}
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Reviewed coverage</p>
+              <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-[var(--green)]">{guideCoveragePercent}% ready</span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {guideCoverageItems.map((item) => (
+                <span key={`scorecard-coverage-${item.label}`} className="rounded-2xl bg-white px-3 py-2 text-xs font-semibold text-[var(--muted)]">
+                  <span className="flex items-center justify-between gap-2">
+                    <span>{item.label}</span>
+                    <span className={item.ready ? "text-[var(--green)]" : "text-stone-400"}>{item.ready ? "Ready" : "Gap"}</span>
+                  </span>
+                  <span className="mt-1 block text-sm font-bold text-[var(--green)]">{item.value}</span>
                 </span>
               ))}
             </div>
+            <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+              {guideCoverageReadyCount} of {guideCoverageItems.length} reviewed study areas are connected to this passage.
+            </p>
           </div>
         </div>
       </StudySection>
