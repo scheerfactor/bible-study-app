@@ -1893,6 +1893,21 @@ type BestChapterResources = {
   nextResource: ChapterResourceRecommendation | null;
 };
 
+const TTB_BRIEFING_RESOURCE_SLUG = "briefing-the-bible-j-vernon-mcgee-thru-the-bible";
+
+function ttbBriefingBibleRecommendation(key: string): ChapterResourceRecommendation {
+  return {
+    id: `${key}-ttb-briefing-the-bible`,
+    kind: "Library Resource",
+    title: "Briefing the Bible",
+    author: "Dr. J. Vernon McGee / Thru the Bible",
+    status: "available",
+    note: "Free Thru the Bible whole-Bible survey PDF. Use as an overview companion after reading the KJV chapter; no fee may be charged for this copied TTB material.",
+    resourceSlug: TTB_BRIEFING_RESOURCE_SLUG,
+    warning: "Free resource - attribute TTB",
+  };
+}
+
 type BookIntroduction = {
   book: string;
   overview: {
@@ -6391,6 +6406,7 @@ function chapterEssentials({
       status: "available",
       note: "Survey coverage gives every Bible book a consistent study entry for teaching and overview work.",
     },
+    ttbBriefingBibleRecommendation(key),
     {
       id: `${key}-halley`,
       kind: "Bible Handbook",
@@ -6456,6 +6472,7 @@ const DEFAULT_CHAPTER_RESOURCE_RECOMMENDATIONS: ChapterResourceRecommendation[] 
     status: "planned",
     note: "Reserved for a verified public-domain handbook after rights review.",
   },
+  ttbBriefingBibleRecommendation("default"),
 ];
 
 const CHAPTER_RESOURCE_RECOMMENDATIONS: Array<{
@@ -6914,6 +6931,7 @@ function surveyResourcesForBook(book: string): ChapterResourceRecommendation[] {
       note: `Trace key themes and related passages while studying ${book}.`,
       resourceSlug: "naves-topical-bible",
     },
+    ttbBriefingBibleRecommendation(`${book.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-survey`),
     {
       id: `${book.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-survey-mh`,
       kind: "Commentary",
