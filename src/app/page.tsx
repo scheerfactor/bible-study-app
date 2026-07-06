@@ -24939,6 +24939,46 @@ function BibleStudyDeskMetric({
   );
 }
 
+function BibleStudyDeskResourceCard({
+  label,
+  resource,
+  onOpen,
+}: {
+  label: string;
+  resource: ChapterResourceRecommendation;
+  onOpen: (resource: ChapterResourceRecommendation) => void;
+}) {
+  const actionLabel = resource.resourceSlug
+    ? "Open resource"
+    : resource.kind === "Commentary"
+      ? "Open commentary"
+      : "Open guide";
+
+  return (
+    <button
+      className="min-h-28 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+      onClick={() => onOpen(resource)}
+      type="button"
+    >
+      <span className="flex items-start justify-between gap-2">
+        <span className="min-w-0">
+          <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</span>
+          <span className="mt-1 line-clamp-2 block text-sm font-bold leading-5 text-[var(--green)]">{resource.title}</span>
+        </span>
+        <span className="shrink-0 rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+          {chapterResourceStatusLabel(resource.status)}
+        </span>
+      </span>
+      {resource.author && <span className="mt-1 block truncate text-xs font-semibold text-[var(--muted)]">{resource.author}</span>}
+      <span className="mt-2 line-clamp-2 block text-xs leading-5 text-[var(--muted)]">{resource.note}</span>
+      <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--green)]">
+        {resource.kind === "Commentary" ? <BookOpen size={13} /> : <Library size={13} />}
+        {actionLabel}
+      </span>
+    </button>
+  );
+}
+
 function StudyWorkspaceCard({
   title,
   emptyText,
@@ -26068,6 +26108,31 @@ function BibleReader({
       disabled: !playlistLibraryOptions.length,
     },
   ];
+  const bibleStudyDeskResources = ([
+    ["Best Commentary", workspaceBestResources.commentary],
+    ["Study Book", workspaceBestResources.studyBook],
+    ["Devotional", workspaceBestResources.devotional],
+    ["Preaching Help", workspaceBestResources.preaching],
+    ["Next Resource", workspaceBestResources.nextResource],
+  ] as Array<[string, ChapterResourceRecommendation | null]>)
+    .filter((item): item is [string, ChapterResourceRecommendation] => Boolean(item[1]))
+    .filter(([, resource], index, list) => list.findIndex(([, candidate]) => candidate.id === resource.id) === index)
+    .slice(0, 4);
+
+  function openBibleStudyDeskResource(resource: ChapterResourceRecommendation) {
+    if (resource.resourceSlug) {
+      onOpenLibraryResource(resource.resourceSlug);
+      return;
+    }
+
+    if (resource.kind === "Commentary") {
+      onOpenCommentaryCenter();
+      return;
+    }
+
+    onOpenPassageGuide();
+  }
+
   return (
     <div className="space-y-4 p-3 md:p-6">
       <section className="rounded-2xl border border-[var(--line)] bg-white/95 p-3 shadow-sm backdrop-blur md:rounded-3xl md:p-4">
@@ -26264,6 +26329,25 @@ function BibleReader({
               onClick={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
             />
           </div>
+
+          {bibleStudyDeskResources.length ? (
+            <div className="mt-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Curated next resources</p>
+                <p className="text-xs font-semibold text-[var(--muted)]">Reviewed helps connected to {book} {chapter}</p>
+              </div>
+              <div className="mt-2 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+                {bibleStudyDeskResources.map(([label, resource]) => (
+                  <BibleStudyDeskResourceCard
+                    key={`study-desk-resource-${label}-${resource.id}`}
+                    label={label}
+                    resource={resource}
+                    onOpen={openBibleStudyDeskResource}
+                  />
+                ))}
+              </div>
+            </div>
+          ) : null}
 
           <div className="mt-3 grid gap-2 md:grid-cols-3">
             <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
