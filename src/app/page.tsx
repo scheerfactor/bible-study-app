@@ -41589,6 +41589,26 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
   const wayOfLifeCount = resources.filter((resource) => resource.publisherMinistry === "Way of Life Literature").length;
   const northstarCount = resources.filter((resource) => resource.publisherMinistry === "Northstar Ministries").length;
   const solveFamilyProblemsCount = resources.filter((resource) => resource.publisherMinistry === "Solve Family Problems").length;
+  const ministrySourceSummaries = [
+    {
+      ministry: "Way of Life Literature",
+      count: wayOfLifeCount,
+      focus: "KJV, Baptist, church issues, and discernment resources",
+      scope: "Shareable/free items are listed with source links; paid Store items stay permission-needed.",
+    },
+    {
+      ministry: "Northstar Ministries",
+      count: northstarCount,
+      focus: "KJV study, commentary, prophecy, and Bible doctrine resources",
+      scope: "Links, excerpts, and cover graphics are scoped; full text and media are not hosted.",
+    },
+    {
+      ministry: "Solve Family Problems",
+      count: solveFamilyProblemsCount,
+      focus: "Family, marriage, anger, purity, and Christian living resources",
+      scope: "Metadata-only listings use website titles, graphics, and descriptions with official links.",
+    },
+  ].filter((item) => item.count > 0);
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
@@ -41613,6 +41633,29 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
             <p>No full copyrighted book text, ebook files, hosted audio, hosted video, AI narration, or paid in-app access is included without broader permission.</p>
           </div>
         </div>
+      </div>
+
+      <div className="mt-5 grid gap-3 md:grid-cols-3">
+        {ministrySourceSummaries.map((item) => (
+          <button
+            key={`licensed-source-summary-${item.ministry}`}
+            className={`rounded-2xl border p-4 text-left shadow-sm transition ${
+              activeMinistry === item.ministry ? "border-[var(--green)] bg-[var(--warm)]" : "border-[var(--line)] bg-white"
+            }`}
+            onClick={() => setActiveMinistry(item.ministry)}
+            type="button"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official source</p>
+                <h3 className="mt-2 text-base font-semibold text-[var(--ink)]">{item.ministry}</h3>
+              </div>
+              <span className="rounded-full bg-[var(--paper)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">{item.count} links</span>
+            </div>
+            <p className="mt-3 text-sm leading-6 text-[var(--muted)]">{item.focus}</p>
+            <p className="mt-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">{item.scope}</p>
+          </button>
+        ))}
       </div>
 
       <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
