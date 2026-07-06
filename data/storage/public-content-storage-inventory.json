@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-06T00:10:37.541Z",
+  "generated_at": "2026-07-06T01:00:42.432Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1512,
-      "present": 1512,
+      "files": 1537,
+      "present": 1537,
       "missing": 0,
-      "total_bytes": 1130513343,
-      "total_size": "1.05 GB"
+      "total_bytes": 1177646859,
+      "total_size": "1.10 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3157211,
-      "total_size": "3.01 MB"
+      "total_bytes": 3213022,
+      "total_size": "3.06 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,11 +61,11 @@
       "total_size": "4.44 MB"
     },
     "all_public_content": {
-      "files": 1829,
-      "present": 1829,
+      "files": 1854,
+      "present": 1854,
       "missing": 0,
-      "total_bytes": 1647345222,
-      "total_size": "1.53 GB"
+      "total_bytes": 1694534549,
+      "total_size": "1.58 GB"
     }
   },
   "items": [
@@ -18214,6 +18214,306 @@
       "source_url": "https://archive.org/download/charleshspurgeon00need/charleshspurgeon00need_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104515-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104515-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2276371,
+      "checksum_sha256": "83140a2570a12d65a97c261ddd2a35e45289eca94b0f504a29ea3256cc5722fc",
+      "title": "The pulpit commentary (cu31924101104515)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104515/cu31924101104515_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105082-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105082-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3111511,
+      "checksum_sha256": "ee7d0045c7e9fb0df8f9e3f487831ac929994354b71ce205363d5de57b583c86",
+      "title": "The pulpit commentary (cu31924101105082)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105082/cu31924101105082_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104960-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104960-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3113894,
+      "checksum_sha256": "3245c2804a8a04f5b6d50c7990814f8b27513330f3898e47dcdb9814174d8684",
+      "title": "The pulpit commentary (cu31924101104960)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104960/cu31924101104960_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3127656,
+      "checksum_sha256": "ebfcb52268f286ebc5f5bfbc93542846437d7a398ee01b472a52263b722376cc",
+      "title": "The pulpit commentary (cu31924101104739)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105017-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105017-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1722349,
+      "checksum_sha256": "0af41726fd4ef4c86f41bde49f4903731edf097c3fc81641f4fc420392185c33",
+      "title": "The pulpit commentary (cu31924101105017)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105017/cu31924101105017_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104812-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104812-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3278140,
+      "checksum_sha256": "ac89b9f75fae0ebc13e4910d1a39d2a3bbda8118e859f38f940355a0e67b658b",
+      "title": "The pulpit commentary (cu31924101104812)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104812/cu31924101104812_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104614-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104614-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2070470,
+      "checksum_sha256": "d3bf7460a1edab31a692cedc91d75f9b03b235dc8a7a2bde1fa2ca795bb1206a",
+      "title": "The pulpit commentary (cu31924101104614)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104614/cu31924101104614_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105066-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105066-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1513307,
+      "checksum_sha256": "b70115ab68b46416f8402c07f10c53c067125e3207d6edb5200a425b72f2e2f4",
+      "title": "The pulpit commentary (cu31924101105066)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105066/cu31924101105066_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105090-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105090-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1851269,
+      "checksum_sha256": "d18aa47593971419359a850aec4221c3b329d91a6bec07c4e8a2fbbbaac38e43",
+      "title": "The pulpit commentary (cu31924101105090)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105090/cu31924101105090_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101104622-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101104622-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1285923,
+      "checksum_sha256": "21d098fc99059d0370964373d01a381084375b6fe842c594ababde7674b0096d",
+      "title": "The pulpit commentary (cu31924101104622)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101104622/cu31924101104622_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105033-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105033-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1864368,
+      "checksum_sha256": "15c1e20509bd8c8a29cfa02877d7c82398c820a610eb77aa841a1c4d7cf3e14f",
+      "title": "The pulpit commentary (cu31924101105033)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105033/cu31924101105033_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-pulpitcommentar02unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-pulpitcommentar02unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2754150,
+      "checksum_sha256": "18c84fcf300ddce7d4ff0e97ba4bf368910ea6dfc31a1f968252e5bddc123a9a",
+      "title": "The pulpit commentary (pulpitcommentar02unkngoog)",
+      "author": "Spence-Jones, Henry Donald Maurice, Dean of Gloucester, formerly Spence",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/pulpitcommentar02unkngoog/pulpitcommentar02unkngoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet06newy-various.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet06newy-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2782551,
+      "checksum_sha256": "507ffe3cfc388a7e3e2541d659e0badbfa67afa3e279c2d54e02e07950e56c66",
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet06newy)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomplet06newy/preacherscomplet06newy_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-pulpit-commentary-cu31924101105058-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "storage_path": "data/library/verified/the-pulpit-commentary-cu31924101105058-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2748243,
+      "checksum_sha256": "f2410125d646333cbcc9c399c308b696dbb07bbb26e43d0cfb91d96199118804",
+      "title": "The pulpit commentary (cu31924101105058)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924101105058/cu31924101105058_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet11newy-various.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet11newy-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2492391,
+      "checksum_sha256": "f02cd5886bb3c378a1badae6cf96440da104b523a4007f53d6d67da30c96e6fa",
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet11newy)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomplet11newy/preacherscomplet11newy_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple01unkng.txt",
+      "storage_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple01unkng.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3008493,
+      "checksum_sha256": "ba55ff168adfdf3c5cfd91d1ed745ebd55e64415a0334a91989d8d0261257202",
+      "title": "The Preacher's complete homiletical commentary on the Old Testament : (on an original plan) (preacherscomple01unkngoog)",
+      "author": "Various",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/preacherscomple01unkngoog/preacherscomple01unkngoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-christian-directory-part-1-christian-ethics-baxter-richard.txt",
+      "storage_path": "data/library/verified/a-christian-directory-part-1-christian-ethics-baxter-richard.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3013964,
+      "checksum_sha256": "608a68b388f754d44ab6b798ae5d8d3c4e8f495a693a0f4b514870623e8d7b63",
+      "title": "A Christian Directory, Part 1: Christian Ethics",
+      "author": "Baxter, Richard",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/41633"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-christian-directory-part-2-christian-economics-baxter-richard.txt",
+      "storage_path": "data/library/verified/a-christian-directory-part-2-christian-economics-baxter-richard.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1131611,
+      "checksum_sha256": "5932d60533f323864de08db8db021e2f7091d101475a5789ee584c4c5764a16d",
+      "title": "A Christian Directory, Part 2: Christian Economics",
+      "author": "Baxter, Richard",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/43800"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-christian-directory-part-3-christian-ecclesiastics-baxter-richard.txt",
+      "storage_path": "data/library/verified/a-christian-directory-part-3-christian-ecclesiastics-baxter-richard.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1376001,
+      "checksum_sha256": "3097acf562b914a9e65f79275267f32630414584b2dc4ce3590733bcf3a7a7d8",
+      "title": "A Christian Directory, Part 3: Christian Ecclesiastics",
+      "author": "Baxter, Richard",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/44655"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-saint-s-everlasting-rest-a-treatise-of-the-blessed-state-of-the-saints-in-their-enjoyment-of-god-in-heaven.txt",
+      "storage_path": "data/library/verified/the-saint-s-everlasting-rest-a-treatise-of-the-blessed-state-of-the-saints-in-their-enjoyment-of-god-in-heaven.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 687406,
+      "checksum_sha256": "3cb252879c5ad98706f493c32087e0858bc9ef4f03a0382b594734d971873414",
+      "title": "The Saint's Everlasting Rest: A Treatise of the Blessed State of the Saints in Their Enjoyment of God in Heaven",
+      "author": "Baxter, Richard",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/58135"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-divine-and-moral-songs-of-isaac-watts-an-essay-thereon-and-a-tentative-list-of-editions-stone-wilbur-macey.txt",
+      "storage_path": "data/library/verified/the-divine-and-moral-songs-of-isaac-watts-an-essay-thereon-and-a-tentative-list-of-editions-stone-wilbur-macey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 127367,
+      "checksum_sha256": "a6640cef1692fade4efaa26ea4ea94647cde59ec04e8f2c118afdc9b6c247674",
+      "title": "The divine and moral songs of Isaac Watts: An essay thereon and a tentative list of editions",
+      "author": "Stone, Wilbur Macey",
+      "category": "Christian Living",
+      "source_url": "https://www.gutenberg.org/ebooks/78872"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-moslem-seeker-after-god-showing-islam-at-its-best-in-the-life-and-teaching-of-al-ghazali-mystic-and-theologi.txt",
+      "storage_path": "data/library/verified/a-moslem-seeker-after-god-showing-islam-at-its-best-in-the-life-and-teaching-of-al-ghazali-mystic-and-theologi.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 402260,
+      "checksum_sha256": "8d72aac93bec90196add62e2e5f9b66f87f826ed6238219a13b6d9b8bb04bc95",
+      "title": "A Moslem seeker after God: showing Islam at its best in the life and teaching of al-Ghazali, mystic and theologian of the eleventh century",
+      "author": "Zwemer, Samuel Marinus",
+      "category": "Missions",
+      "source_url": "https://www.gutenberg.org/ebooks/74846"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/forty-years-among-the-telugus-a-history-of-the-mission-of-the-baptists-of-ontario-and-quebec-canada-to-the-tel.txt",
+      "storage_path": "data/library/verified/forty-years-among-the-telugus-a-history-of-the-mission-of-the-baptists-of-ontario-and-quebec-canada-to-the-tel.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 687526,
+      "checksum_sha256": "6a85b32567b2d7eef3c9337f5964539590e9eb1b4c962c49b2c9eefe6e163ce4",
+      "title": "Forty years among the Telugus : a history of the mission of the Baptists of Ontario and Quebec, Canada, to the Telugus, South India, 1867-1907",
+      "author": "Craig, John, 1852-1923",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/fortyyearsamongt00craiuoft/fortyyearsamongt00craiuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-story-of-a-100-years-1820-1920-being-the-history-of-the-baptist-church-in-south-africa-batts-h-j-henry-jam.txt",
+      "storage_path": "data/library/verified/the-story-of-a-100-years-1820-1920-being-the-history-of-the-baptist-church-in-south-africa-batts-h-j-henry-jam.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 324803,
+      "checksum_sha256": "63a9024a8f1e3826ed6448c20cbca81116fea3321b3311d1139204c2ee969982",
+      "title": "The story of a 100 years, 1820-1920 : being the history of the Baptist Church in South Africa",
+      "author": "Batts, H. J. (Henry James), 1856-1937",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/thestoryofa100ye00battuoft/thestoryofa100ye00battuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-lone-star-the-history-of-the-telugu-mission-of-the-american-baptist-missionary-union-downie-david-1838-192.txt",
+      "storage_path": "data/library/verified/the-lone-star-the-history-of-the-telugu-mission-of-the-american-baptist-missionary-union-downie-david-1838-192.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 381492,
+      "checksum_sha256": "42c45919c8aff0405efeb360cec9b47b7313ab5e06b891be3f201bc63aa12a5a",
+      "title": "The lone star. The history of the Telugu mission of the American Baptist missionary union",
+      "author": "Downie, David, 1838-1927",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/cu31924050034267/cu31924050034267_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -20786,8 +21086,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3157211,
-      "checksum_sha256": "df0ad0f1f74d12f43a733f38942b9ee8993a4b86cb94f0edc30a13866a8f84fa"
+      "size_bytes": 3213022,
+      "checksum_sha256": "f45a376707606c2afb152f4c6157e2114c1e911984c58ef24c16dd2e2d9bbeb6"
     },
     {
       "kind": "study_tool",

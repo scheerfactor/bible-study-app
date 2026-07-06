@@ -4,31 +4,35 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,512
+- Verified public Library resources: 1,537
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 549
+- Library authors represented: 556
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Resource Import
 
-Added 25 verified public-domain resources from Internet Archive:
+Added 25 verified public-domain resources from Internet Archive and Project Gutenberg:
 
-- 9 `Biblical Illustrator` archive volumes for verse-level illustrations, homiletical helps, and preaching/teaching preparation
-- 5 `Pulpit Commentary` archive volumes for additional historical exposition
-- 5 `Preacher's Complete Homiletical Commentary` archive volumes for outlines, applications, and lesson preparation
-- 2 Baptist history / missions resources:
-  - `George Grenfell and the Congo`
-  - one additional Baptist missions/history volume from the reviewed queue
-- 4 distinct Spurgeon resources:
-  - `Thomas Spurgeon; a Biography`
-  - `C. H. Spurgeon; a Biography`
-  - `The Wit and Wisdom of Rev. Charles H. Spurgeon`
-  - `Charles H. Spurgeon, His Life and Labors`
+- 13 `Pulpit Commentary` archive volumes for additional historical exposition and sermon preparation
+- 3 `Preacher's Complete Homiletical Commentary` archive volumes for outlines, applications, and lesson preparation
+- 4 Richard Baxter public-domain devotional / Christian living works from Project Gutenberg:
+  - `A Christian Directory, Part 1: Christian Ethics`
+  - `A Christian Directory, Part 2: Christian Economics`
+  - `A Christian Directory, Part 3: Christian Ecclesiastics`
+  - `The Saint's Everlasting Rest`
+- 1 Isaac Watts hymn-study resource:
+  - `The divine and moral songs of Isaac Watts`
+- 1 Samuel M. Zwemer missions / comparative religion resource:
+  - `A Moslem seeker after God`
+- 3 Baptist history / missions resources:
+  - `Forty years among the Telugus`
+  - `The story of a 100 years, 1820-1920`
+  - `The Lone Star: The history of the Telugu mission`
 
-Four Archive.org source URLs returned server errors during import and were excluded from the forward queue. Two duplicate-style Spurgeon microform editions were removed before commit because a cleaner `Life and Works of Rev. Charles H. Spurgeon` entry was already present. The remaining verified public-domain queue now contains 177 staged resources for future waves.
+Ten Archive.org source URLs returned server errors during import and were excluded from the forward queue. The remaining verified public-domain queue now contains 138 staged resources for future waves.
 
 ## Previous Public-Domain Resource Import
 
