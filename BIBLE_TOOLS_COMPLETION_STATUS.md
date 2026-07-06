@@ -6,7 +6,7 @@ Generated from the latest study-data and Strong's coverage audits on 2026-07-06.
 
 | Tool | Current status | Current count | User-facing rule |
 | --- | --- | ---: | --- |
-| Webster's 1828 | Broadly useful, cleanup still needed | 57,561 base entries, 58 reviewed overrides, 50,292 normalized headwords | Show as available; prefer reviewed overrides and keep messy OCR definitions marked for cleanup. |
+| Webster's 1828 | Broadly useful, cleanup still needed | 57,561 base entries, 72 reviewed overrides, 50,292 normalized headwords | Show as available; prefer reviewed overrides and keep messy OCR definitions marked for cleanup. |
 | Strong's lexicon | Full mapped-number coverage | 14,289 entries checked; 0 missing mapped lexicon numbers | Show as available where KJV Strong's mapping exists; continue display polish and source notes. |
 | Strong's KJV word mapping | Full Bible chapter coverage | 724,963 reviewed rows across 1,189/1,189 chapters and 66/66 books | Safe to describe as reviewed full-Bible chapter coverage, while still noting that KJV-to-original-language alignment is a reviewed study aid. |
 | TSK / cross references | Chapter-complete | 6,118 public rows covering 1,189/1,189 chapters | Show as reviewed cross references; next work is deeper verse-level coverage and ranking strongest references first. |
@@ -24,7 +24,7 @@ Generated from the latest study-data and Strong's coverage audits on 2026-07-06.
 ## What Is Not Complete Yet
 
 - TSK display priority still needs better ranking when large batches are promoted.
-- Webster has broad coverage, but 4,246 entries have high or medium cleanup flags and the most-used messy entries need reviewed overrides.
+- Webster has broad coverage, but 4,246 entries have high or medium cleanup flags and lower-use messy entries still need reviewed overrides.
 - Some public-domain dictionary/reference imports are text resources but are not yet fully structured lookup databases.
 - Nave is useful for topic discovery, but rough OCR records should remain hidden or marked for review before quotation.
 
@@ -76,8 +76,8 @@ If a tool is incomplete for that chapter, say "starter coverage" or "reviewed en
 
 ## Next Best Work
 
-1. Add reviewed Webster overrides for the highest-use messy theology and Bible-study words: atonement, faith, grace, judgment, repentance, justification, righteousness, mercy, and prophecy.
-2. Improve the Study Data Coverage badge in the Bible Reader and Passage Guide so users see what is complete without hunting.
+1. Improve the Study Data Coverage badge in the Bible Reader and Passage Guide so users see what is complete without hunting.
+2. Add the next reviewed Webster override batch for hell, gospel, love, forgiveness, redemption, sacrifice, sanctify, temple, priest, and altar.
 3. Deepen TSK verse-level coverage and ranking now that every chapter has coverage.
 4. Continue commentary completion with Biblical Illustrator, Pulpit Commentary, Matthew Poole, and Ironside only where source and rights are clean.
 5. Keep large commentary scans out of the app bundle when they threaten Vercel size; prefer indexed records, R2 storage, and structured excerpts.

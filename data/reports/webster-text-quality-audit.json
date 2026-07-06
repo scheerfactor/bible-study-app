@@ -1,8 +1,8 @@
 {
   "summary": {
-    "generated_at": "2026-07-04T23:26:57.101Z",
+    "generated_at": "2026-07-06T12:28:05.394Z",
     "base_entries": 57561,
-    "reviewed_overrides": 58,
+    "reviewed_overrides": 72,
     "entries_with_quality_flags": 22331,
     "entries_with_high_or_medium_flags": 4246,
     "pattern_counts": {
@@ -51,7 +51,7 @@
       "word": "atonement",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "split_the",
         "split_wh_words",
@@ -63,7 +63,7 @@
       "word": "baptism",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -86,7 +86,7 @@
       "word": "charity",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "replacement_marks",
         "hyphenated_scan_breaks"
@@ -97,7 +97,7 @@
       "word": "church",
       "entries": 2,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -107,7 +107,7 @@
       "word": "covenant",
       "entries": 3,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -117,7 +117,7 @@
       "word": "faith",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "split_the",
         "split_wh_words",
@@ -129,7 +129,7 @@
       "word": "grace",
       "entries": 2,
       "flagged_entries": 2,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks",
         "split_the"
@@ -158,7 +158,7 @@
       "word": "judgment",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "split_the",
         "replacement_marks",
@@ -170,7 +170,7 @@
       "word": "justification",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -180,7 +180,7 @@
       "word": "mercy",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -198,7 +198,7 @@
       "word": "prophecy",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -208,7 +208,7 @@
       "word": "repentance",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -218,7 +218,7 @@
       "word": "righteousness",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
@@ -244,7 +244,7 @@
       "word": "sin",
       "entries": 3,
       "flagged_entries": 3,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks",
         "split_the",

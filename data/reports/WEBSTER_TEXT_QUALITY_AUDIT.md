@@ -1,13 +1,13 @@
 # Webster 1828 Text Quality Audit
 
-Generated: 2026-07-04T23:26:57.101Z
+Generated: 2026-07-06T12:28:05.394Z
 
 This audit looks for scan/OCR patterns in the structured Webster 1828 data. It does not change Webster's wording. It helps us decide which entries need reviewed overlays or safe display-time cleanup before users rely on them for Bible study.
 
 ## Summary
 
 - Webster base entries: 57,561
-- Reviewed overlays: 58
+- Reviewed overlays: 72
 - Entries with any quality flag: 22,331
 - Entries with high/medium quality flags: 4,246
 
@@ -26,26 +26,26 @@ This audit looks for scan/OCR patterns in the structured Webster 1828 data. It d
 
 | Word | Entries | Flagged | Reviewed overlay | Flags |
 | --- | ---: | ---: | --- | --- |
-| atonement | 1 | 1 | no | split_the, split_wh_words, hyphenated_scan_breaks |
-| baptism | 1 | 1 | no | hyphenated_scan_breaks |
+| atonement | 1 | 1 | yes | split_the, split_wh_words, hyphenated_scan_breaks |
+| baptism | 1 | 1 | yes | hyphenated_scan_breaks |
 | believe | 2 | 2 | yes | split_the, split_wh_words, hyphenated_scan_breaks, known_common_ocr |
-| charity | 1 | 1 | no | replacement_marks, hyphenated_scan_breaks |
-| church | 2 | 1 | no | hyphenated_scan_breaks |
-| covenant | 3 | 1 | no | hyphenated_scan_breaks |
-| faith | 1 | 1 | no | split_the, split_wh_words, hyphenated_scan_breaks |
-| grace | 2 | 2 | no | hyphenated_scan_breaks, split_the |
+| charity | 1 | 1 | yes | replacement_marks, hyphenated_scan_breaks |
+| church | 2 | 1 | yes | hyphenated_scan_breaks |
+| covenant | 3 | 1 | yes | hyphenated_scan_breaks |
+| faith | 1 | 1 | yes | split_the, split_wh_words, hyphenated_scan_breaks |
+| grace | 2 | 2 | yes | hyphenated_scan_breaks, split_the |
 | hell | 1 | 1 | no | hyphenated_scan_breaks |
 | holy | 0 | 0 | yes | - |
-| judgment | 1 | 1 | no | split_the, replacement_marks, hyphenated_scan_breaks |
-| justification | 1 | 1 | no | hyphenated_scan_breaks |
-| mercy | 1 | 1 | no | hyphenated_scan_breaks |
+| judgment | 1 | 1 | yes | split_the, replacement_marks, hyphenated_scan_breaks |
+| justification | 1 | 1 | yes | hyphenated_scan_breaks |
+| mercy | 1 | 1 | yes | hyphenated_scan_breaks |
 | prayer | 0 | 0 | yes | - |
-| prophecy | 1 | 1 | no | hyphenated_scan_breaks |
-| repentance | 1 | 1 | no | hyphenated_scan_breaks |
-| righteousness | 1 | 1 | no | hyphenated_scan_breaks |
+| prophecy | 1 | 1 | yes | hyphenated_scan_breaks |
+| repentance | 1 | 1 | yes | hyphenated_scan_breaks |
+| righteousness | 1 | 1 | yes | hyphenated_scan_breaks |
 | salvation | 0 | 0 | yes | - |
 | sanctification | 0 | 0 | yes | - |
-| sin | 3 | 3 | no | hyphenated_scan_breaks, split_the, replacement_marks |
+| sin | 3 | 3 | yes | hyphenated_scan_breaks, split_the, replacement_marks |
 | truth | 0 | 0 | yes | - |
 
 ## Top Cleanup Queue

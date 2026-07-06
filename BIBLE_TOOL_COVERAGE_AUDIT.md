@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-06T09:58:54.248Z
+Generated: 2026-07-06T12:29:13.985Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -262,3 +262,4 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Do not mark Strong's verse mapping complete until every book has reviewed mapping rows.
 - Do not import broad TSK or Strong's dumps without source, license, attribution, and parser validation.
 - Keep Nave topic records as discovery/search aids until topic text has been spot-reviewed.
+
