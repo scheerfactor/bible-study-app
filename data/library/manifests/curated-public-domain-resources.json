@@ -68273,5 +68273,1061 @@
     "word_count": 165,
     "pdf_file_path": "public/library/ttb/briefing-the-bible.pdf",
     "pdf_file_size_bytes": 3833083
+  },
+  {
+    "title": "History of the English Baptist Missionary Society",
+    "author": "F. A. Cox",
+    "year": 2026,
+    "category": "Missions",
+    "collection": "Baptist Missions",
+    "source_url": "https://archive.org/download/historyofenglish00coxf/historyofenglish00coxf_djvu.txt",
+    "download_url": "https://archive.org/download/historyofenglish00coxf/historyofenglish00coxf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-english-baptist-missionary-society-f-a-cox.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofenglish00coxf/historyofenglish00coxf_djvu.txt.",
+    "notes": "Public-domain Baptist missions history for missions teaching, Baptist history, and missionary biography context. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical missions history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist missions history for missions teaching, Baptist history, and missionary biography context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical missions history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical missions history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the English Baptist Missionary Society",
+      "author": "F. A. Cox",
+      "category": "Missions",
+      "collection": "Baptist Missions",
+      "badge": "Baptist Missions",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1121,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bf968a6a90b5f9d5145cfd153351fe8847ace7a997f1dfac87393f30af3e4fc9",
+    "file_size_bytes": 1522684,
+    "word_count": 252293
+  },
+  {
+    "title": "The Early Baptist History of Portsmouth and the Formation of the Churches in the Town",
+    "author": "Frederick Ridoutt",
+    "year": 2026,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/earlybaptisthis00unkngoog/earlybaptisthis00unkngoog_djvu.txt",
+    "download_url": "https://archive.org/download/earlybaptisthis00unkngoog/earlybaptisthis00unkngoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-early-baptist-history-of-portsmouth-and-the-formation-of-the-churches-in-the-town-frederick-ridoutt.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/earlybaptisthis00unkngoog/earlybaptisthis00unkngoog_djvu.txt.",
+    "notes": "Public-domain Baptist history resource for church heritage, Baptist identity, and historical study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; local church history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist history resource for church heritage, Baptist identity, and historical study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "local church history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "local church history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Early Baptist History of Portsmouth and the Formation of the Churches in the Town",
+      "author": "Frederick Ridoutt",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 152,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0998f8b9d1787390c77d016bde5b0e4f2e8c785d1713045c82f52c88e9777c5a",
+    "file_size_bytes": 198401,
+    "word_count": 34225
+  },
+  {
+    "title": "History of the Miami Baptist Association",
+    "author": "A. H. Dunlevy",
+    "year": 1801,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofmiamiba00dunl/historyofmiamiba00dunl_djvu.txt",
+    "download_url": "https://archive.org/download/historyofmiamiba00dunl/historyofmiamiba00dunl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-the-miami-baptist-association-a-h-dunlevy.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofmiamiba00dunl/historyofmiamiba00dunl_djvu.txt.",
+    "notes": "Public-domain Baptist association history for Baptist heritage, pastors, and church history study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; association history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist association history for Baptist heritage, pastors, and church history study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "association history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "association history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the Miami Baptist Association",
+      "author": "A. H. Dunlevy",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 196,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cd40d116d16afa6b5669f3258965d71073f7a80501db3178e7d5b8f2c9721c5d",
+    "file_size_bytes": 301524,
+    "word_count": 44030
+  },
+  {
+    "title": "A General History of the Baptist Denomination in America Volume 2",
+    "author": "David Benedict",
+    "year": 1689,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/generalhistoryof0002davi/generalhistoryof0002davi_djvu.txt",
+    "download_url": "https://archive.org/download/generalhistoryof0002davi/generalhistoryof0002davi_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-general-history-of-the-baptist-denomination-in-america-volume-2-david-benedict.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/generalhistoryof0002davi/generalhistoryof0002davi_djvu.txt.",
+    "notes": "Public-domain Baptist history classic for pastors, teachers, and Baptist history readers. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical Baptist source.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist history classic for pastors, teachers, and Baptist history readers. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical Baptist source"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical Baptist source"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A General History of the Baptist Denomination in America Volume 2",
+      "author": "David Benedict",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1053,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0fce2a0dee11595519a7dec2f28b7eac1e4a360f22e73887d900afb3dad60054",
+    "file_size_bytes": 1422829,
+    "word_count": 236966
+  },
+  {
+    "title": "The Gospel in Central America",
+    "author": "Frederick Crowe",
+    "year": 1850,
+    "category": "Missions",
+    "collection": "Missions",
+    "source_url": "https://archive.org/download/gospelincentral00crowgoog/gospelincentral00crowgoog_djvu.txt",
+    "download_url": "https://archive.org/download/gospelincentral00crowgoog/gospelincentral00crowgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-in-central-america-frederick-crowe.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/gospelincentral00crowgoog/gospelincentral00crowgoog_djvu.txt.",
+    "notes": "Public-domain missions and Bible-distribution history for missions lessons, geography, and evangelism context. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missions history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions and Bible-distribution history for missions lessons, geography, and evangelism context. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missions history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missions history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel in Central America",
+      "author": "Frederick Crowe",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1121,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0ecf337bc21bcae7421c2bf0850d898c3aca3d25c2f6ba28c30652c36e6fbd99",
+    "file_size_bytes": 1736271,
+    "word_count": 252115
+  },
+  {
+    "title": "Brief Narrative of the Baptist Mission in India",
+    "author": "Baptist Missionary Society",
+    "year": 2026,
+    "category": "Missions",
+    "collection": "Baptist Missions",
+    "source_url": "https://archive.org/download/briefnarrativeof00bapt/briefnarrativeof00bapt_djvu.txt",
+    "download_url": "https://archive.org/download/briefnarrativeof00bapt/briefnarrativeof00bapt_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/brief-narrative-of-the-baptist-mission-in-india-baptist-missionary-society.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/briefnarrativeof00bapt/briefnarrativeof00bapt_djvu.txt.",
+    "notes": "Public-domain Baptist missions report covering India and Scripture translation work. Useful for missions study and historical illustrations. Labels/warnings: Use with discernment; OCR spot-check needed; missions history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist missions report covering India and Scripture translation work. Useful for missions study and historical illustrations.",
+    "resource_labels": [
+      "Baptist Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missions history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missions history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Brief Narrative of the Baptist Mission in India",
+      "author": "Baptist Missionary Society",
+      "category": "Missions",
+      "collection": "Baptist Missions",
+      "badge": "Baptist Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 136,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "671678ed294391f8f88e3851b4be7871dedb7171d25604041474c922d57a0868",
+    "file_size_bytes": 180679,
+    "word_count": 30560
+  },
+  {
+    "title": "An Account of the American Baptist Mission to the Burman Empire",
+    "author": "Ann Hasseltine Judson",
+    "year": 2026,
+    "category": "Missions",
+    "collection": "Missions",
+    "source_url": "https://archive.org/download/accountofamerica00juds/accountofamerica00juds_djvu.txt",
+    "download_url": "https://archive.org/download/accountofamerica00juds/accountofamerica00juds_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-account-of-the-american-baptist-mission-to-the-burman-empire-ann-hasseltine-judson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/accountofamerica00juds/accountofamerica00juds_djvu.txt.",
+    "notes": "Public-domain missionary history connected to Adoniram and Ann Judson. Useful for missions biography, courage, suffering, and prayer lessons. Labels/warnings: Use with discernment; OCR spot-check needed; missionary letters.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary history connected to Adoniram and Ann Judson. Useful for missions biography, courage, suffering, and prayer lessons.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary letters"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary letters"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Account of the American Baptist Mission to the Burman Empire",
+      "author": "Ann Hasseltine Judson",
+      "category": "Missions",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 383,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "49574371827309c7fdccadb8e6bd9e5879c7becd548c699a9ff206d404189092",
+    "file_size_bytes": 561112,
+    "word_count": 86136
+  },
+  {
+    "title": "Alfred Saker Missionary to Africa",
+    "author": "Edward Bean Underhill",
+    "year": 2026,
+    "category": "Biographies",
+    "collection": "Missions",
+    "source_url": "https://archive.org/download/alfredsakermissi00unde/alfredsakermissi00unde_djvu.txt",
+    "download_url": "https://archive.org/download/alfredsakermissi00unde/alfredsakermissi00unde_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/alfred-saker-missionary-to-africa-edward-bean-underhill.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/alfredsakermissi00unde/alfredsakermissi00unde_djvu.txt.",
+    "notes": "Public-domain missionary biography for missions teaching, sermon illustrations, and perseverance studies. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for missions teaching, sermon illustrations, and perseverance studies. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Alfred Saker Missionary to Africa",
+      "author": "Edward Bean Underhill",
+      "category": "Biographies",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 236,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2685c50c9b5eed7cc3a7f61d2e4ebce5b2b08028f066365121ae3ab19befdc9f",
+    "file_size_bytes": 351213,
+    "word_count": 53181
+  },
+  {
+    "title": "The Life and Explorations of Frederick Stanley Arnot",
+    "author": "Ernest Baker",
+    "year": 1889,
+    "category": "Biographies",
+    "collection": "Missions",
+    "source_url": "https://archive.org/download/lifeexploration00bake/lifeexploration00bake_djvu.txt",
+    "download_url": "https://archive.org/download/lifeexploration00bake/lifeexploration00bake_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-and-explorations-of-frederick-stanley-arnot-ernest-baker.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifeexploration00bake/lifeexploration00bake_djvu.txt.",
+    "notes": "Public-domain missionary biography for Africa missions, geography, courage, and faithfulness themes. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for Africa missions, geography, courage, and faithfulness themes. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life and Explorations of Frederick Stanley Arnot",
+      "author": "Ernest Baker",
+      "category": "Biographies",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 622,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9499d72548f2d4356b0905e4c15cb147c3f129128796c706506e066ea54fbbd5",
+    "file_size_bytes": 879772,
+    "word_count": 140000
+  },
+  {
+    "title": "Studies of Great Bible Characters",
+    "author": "Henry T. Sell",
+    "year": 1923,
+    "category": "Bible study helps",
+    "collection": "Bible Characters",
+    "source_url": "https://archive.org/download/studiesofgreatbi00sell_0/studiesofgreatbi00sell_0_djvu.txt",
+    "download_url": "https://archive.org/download/studiesofgreatbi00sell_0/studiesofgreatbi00sell_0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/studies-of-great-bible-characters-henry-t-sell.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/studiesofgreatbi00sell_0/studiesofgreatbi00sell_0_djvu.txt.",
+    "notes": "Public-domain Bible character study resource for Sunday School, sermon preparation, and Study Workspace people profiles. Labels/warnings: Use with discernment; OCR spot-check needed; character studies.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible character study resource for Sunday School, sermon preparation, and Study Workspace people profiles.",
+    "resource_labels": [
+      "Bible Characters",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "character studies"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "character studies"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Studies of Great Bible Characters",
+      "author": "Henry T. Sell",
+      "category": "Bible study helps",
+      "collection": "Bible Characters",
+      "badge": "Bible Characters",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 187,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "493231cae6db3ff0e49f70d6f1e0247755e56ffed14f0a6ca8ff8ac089b3c8a6",
+    "file_size_bytes": 267589,
+    "word_count": 42128
+  },
+  {
+    "title": "Who's Who in the Bible",
+    "author": "Edgar Fletcher-Allen",
+    "year": 1925,
+    "category": "Bible study helps",
+    "collection": "Bible Characters",
+    "source_url": "https://archive.org/download/whoswhoinbibledi00flet/whoswhoinbibledi00flet_djvu.txt",
+    "download_url": "https://archive.org/download/whoswhoinbibledi00flet/whoswhoinbibledi00flet_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/who-s-who-in-the-bible-edgar-fletcher-allen.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/whoswhoinbibledi00flet/whoswhoinbibledi00flet_djvu.txt.",
+    "notes": "Public-domain directory of Bible people for People Explorer, Passage Guide, and Bible Background Center. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; reference work.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain directory of Bible people for People Explorer, Passage Guide, and Bible Background Center. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Characters",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "reference work"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "reference work"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Who's Who in the Bible",
+      "author": "Edgar Fletcher-Allen",
+      "category": "Bible study helps",
+      "collection": "Bible Characters",
+      "badge": "Bible Characters",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 211,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "909dda14874e65c8b87d3284dce34d71568853d082031380a7cf87e1018b66df",
+    "file_size_bytes": 287542,
+    "word_count": 47579
+  },
+  {
+    "title": "Heroes of the Bible",
+    "author": "William Spencer Edwards",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Bible Characters",
+    "source_url": "https://archive.org/download/heroesbibleorsk00edwagoog/heroesbibleorsk00edwagoog_djvu.txt",
+    "download_url": "https://archive.org/download/heroesbibleorsk00edwagoog/heroesbibleorsk00edwagoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/heroes-of-the-bible-william-spencer-edwards.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/heroesbibleorsk00edwagoog/heroesbibleorsk00edwagoog_djvu.txt.",
+    "notes": "Public-domain Scripture character sketches for teaching, family lessons, and sermon illustrations. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; character studies.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Scripture character sketches for teaching, family lessons, and sermon illustrations. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Characters",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "character studies"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "character studies"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Heroes of the Bible",
+      "author": "William Spencer Edwards",
+      "category": "Bible study helps",
+      "collection": "Bible Characters",
+      "badge": "Bible Characters",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 634,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3ba338071be09681b04d5e20c93ac86470130397deaa4125a0f2d6ff352f8334",
+    "file_size_bytes": 789747,
+    "word_count": 142654
+  },
+  {
+    "title": "Elements of Religious Pedagogy",
+    "author": "Fred Lewis Pattee",
+    "year": 1909,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://archive.org/download/elementsofreligi00patt/elementsofreligi00patt_djvu.txt",
+    "download_url": "https://archive.org/download/elementsofreligi00patt/elementsofreligi00patt_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/elements-of-religious-pedagogy-fred-lewis-pattee.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/elementsofreligi00patt/elementsofreligi00patt_djvu.txt.",
+    "notes": "Public-domain teaching-method resource for Sunday School teachers and lesson preparation. Use as historical pedagogy, not as Scripture authority. Labels/warnings: Use with discernment; OCR spot-check needed; teacher training.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain teaching-method resource for Sunday School teachers and lesson preparation. Use as historical pedagogy, not as Scripture authority.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "teacher training"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "teacher training"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Elements of Religious Pedagogy",
+      "author": "Fred Lewis Pattee",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 357,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5826912710191b456472d5244b7528bb21a7a1e811f2b682da9df91979c5d104",
+    "file_size_bytes": 535968,
+    "word_count": 80421
+  },
+  {
+    "title": "Methods with Beginners",
+    "author": "Frances Weld Danielson",
+    "year": 1921,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://archive.org/download/methodswithbegin01dani/methodswithbegin01dani_djvu.txt",
+    "download_url": "https://archive.org/download/methodswithbegin01dani/methodswithbegin01dani_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/methods-with-beginners-frances-weld-danielson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/methodswithbegin01dani/methodswithbegin01dani_djvu.txt.",
+    "notes": "Public-domain Sunday School teacher-training resource for children's ministry and beginner classes. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; teacher training.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday School teacher-training resource for children's ministry and beginner classes. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "teacher training"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "teacher training"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Methods with Beginners",
+      "author": "Frances Weld Danielson",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 164,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "99aa461ba0524251e4e9490bd9bd11f253197edb3b460da9616d8577a096f83c",
+    "file_size_bytes": 251093,
+    "word_count": 36975
+  },
+  {
+    "title": "Bible Lands Illustrated",
+    "author": "H. C. Fish",
+    "year": 1876,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography",
+    "source_url": "https://archive.org/download/bible_lands_illustrated_1876-henry_c_fish/bible_lands_illustrated_1876-henry_c_fish_djvu.txt",
+    "download_url": "https://archive.org/download/bible_lands_illustrated_1876-henry_c_fish/bible_lands_illustrated_1876-henry_c_fish_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-lands-illustrated-h-c-fish.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bible_lands_illustrated_1876-henry_c_fish/bible_lands_illustrated_1876-henry_c_fish_djvu.txt.",
+    "notes": "Public-domain Bible lands handbook for geography, places, maps, and presentation visuals. Extract images only after rights/source metadata review. Labels/warnings: Use with discernment; OCR spot-check needed; image extraction pending.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible lands handbook for geography, places, maps, and presentation visuals. Extract images only after rights/source metadata review.",
+    "resource_labels": [
+      "Bible Geography",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "image extraction pending"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "image extraction pending"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Lands Illustrated",
+      "author": "H. C. Fish",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography",
+      "badge": "Bible Geography",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 970,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6b47593b62d04b5ff79810494214123812c75dedae9acef40e213099b4b34be9",
+    "file_size_bytes": 1280641,
+    "word_count": 218201
+  },
+  {
+    "title": "Palestine and the Bible",
+    "author": "Samuel Schor",
+    "year": 2026,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/palestinebibleil00schoiala/palestinebibleil00schoiala_djvu.txt",
+    "download_url": "https://archive.org/download/palestinebibleil00schoiala/palestinebibleil00schoiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/palestine-and-the-bible-samuel-schor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/palestinebibleil00schoiala/palestinebibleil00schoiala_djvu.txt.",
+    "notes": "Public-domain Bible lands manners and customs resource for Bible Background Center and Passage Guide. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical customs.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible lands manners and customs resource for Bible Background Center and Passage Guide. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical customs"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical customs"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Palestine and the Bible",
+      "author": "Samuel Schor",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 104,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "356b6f2e51e5b094a353ba93dabb0012accc7344fc588b74fc376ea8865a695f",
+    "file_size_bytes": 152501,
+    "word_count": 23374
+  },
+  {
+    "title": "Bible Lands: Their Modern Customs and Manners Illustrative of Scripture",
+    "author": "Henry J. Van-Lennep",
+    "year": 1705,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/biblelandstheirm0032vanl/biblelandstheirm0032vanl_djvu.txt",
+    "download_url": "https://archive.org/download/biblelandstheirm0032vanl/biblelandstheirm0032vanl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-lands-their-modern-customs-and-manners-illustrative-of-scripture-henry-j-van-lennep.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblelandstheirm0032vanl/biblelandstheirm0032vanl_djvu.txt.",
+    "notes": "Public-domain Bible customs and geography resource for teaching background and place profiles. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical customs.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible customs and geography resource for teaching background and place profiles. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical customs"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical customs"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Lands: Their Modern Customs and Manners Illustrative of Scripture",
+      "author": "Henry J. Van-Lennep",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1331,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0fba9f60ca178a0dfd23905779b652dbed07f18ebdb3b5824dae65561fc596c5",
+    "file_size_bytes": 1985344,
+    "word_count": 299407
+  },
+  {
+    "title": "Hand-Book of Bible Manners and Customs",
+    "author": "James M. Freeman",
+    "year": 1617,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/handbookofbiblem0000revj_l5d1/handbookofbiblem0000revj_l5d1_djvu.txt",
+    "download_url": "https://archive.org/download/handbookofbiblem0000revj_l5d1/handbookofbiblem0000revj_l5d1_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hand-book-of-bible-manners-and-customs-james-m-freeman.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/handbookofbiblem0000revj_l5d1/handbookofbiblem0000revj_l5d1_djvu.txt.",
+    "notes": "Public-domain Bible manners and customs reference for Passage Guide, Study Workspace, and sermon background notes. Labels/warnings: Use with discernment; OCR spot-check needed; customs reference.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible manners and customs reference for Passage Guide, Study Workspace, and sermon background notes.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "customs reference"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "customs reference"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hand-Book of Bible Manners and Customs",
+      "author": "James M. Freeman",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 954,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6db021fd759428459fd83c666f1d571f451f187966b6abcf3b8ec988d43cd551",
+    "file_size_bytes": 1238103,
+    "word_count": 214648
+  },
+  {
+    "title": "A Treasure of Hymns",
+    "author": "Amos R. Wells",
+    "year": 1524,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Poems",
+    "source_url": "https://archive.org/download/treasurehy00well/treasurehy00well_djvu.txt",
+    "download_url": "https://archive.org/download/treasurehy00well/treasurehy00well_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-treasure-of-hymns-amos-r-wells.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/treasurehy00well/treasurehy00well_djvu.txt.",
+    "notes": "Public-domain hymn-writer and hymn-history resource for worship, sermon illustrations, author profiles, and devotional reading. Labels/warnings: Use with discernment; OCR spot-check needed; hymn history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn-writer and hymn-history resource for worship, sermon illustrations, author profiles, and devotional reading.",
+    "resource_labels": [
+      "Hymns and Poems",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Treasure of Hymns",
+      "author": "Amos R. Wells",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Poems",
+      "badge": "Hymns and Poems",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 342,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2108a591f2f6cfcb7762b4276396e6c6140135ffc9afe0377bad64b43e6bf08d",
+    "file_size_bytes": 492720,
+    "word_count": 76889
+  },
+  {
+    "title": "Hymn-Writers and Their Hymns",
+    "author": "S. W. Christophers",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Poems",
+    "source_url": "https://archive.org/download/hytheir00chri/hytheir00chri_djvu.txt",
+    "download_url": "https://archive.org/download/hytheir00chri/hytheir00chri_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hymn-writers-and-their-hymns-s-w-christophers.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/hytheir00chri/hytheir00chri_djvu.txt.",
+    "notes": "Public-domain hymn history and hymn-writer reference for quotes, stories, worship background, and teaching. Labels/warnings: Use with discernment; OCR spot-check needed; hymn history.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn history and hymn-writer reference for quotes, stories, worship background, and teaching.",
+    "resource_labels": [
+      "Hymns and Poems",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn history"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn history"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hymn-Writers and Their Hymns",
+      "author": "S. W. Christophers",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Poems",
+      "badge": "Hymns and Poems",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 576,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a85e384a2b5762a180fd519808f273d2069f0ee007d8595e966738ac1f9f2563",
+    "file_size_bytes": 838467,
+    "word_count": 129660
+  },
+  {
+    "title": "Sermon Illustrations from the Bible",
+    "author": "Keith L. Brooks",
+    "year": 1920,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations",
+    "source_url": "https://archive.org/download/sermonillustrati00broorich/sermonillustrati00broorich_djvu.txt",
+    "download_url": "https://archive.org/download/sermonillustrati00broorich/sermonillustrati00broorich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermon-illustrations-from-the-bible-keith-l-brooks.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sermonillustrati00broorich/sermonillustrati00broorich_djvu.txt.",
+    "notes": "Public-domain sermon illustration source arranged from the Bible. Useful for Sermon Builder and preaching helps after OCR spot-check. Labels/warnings: Use with discernment; OCR spot-check needed; illustration source.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon illustration source arranged from the Bible. Useful for Sermon Builder and preaching helps after OCR spot-check.",
+    "resource_labels": [
+      "Sermon Illustrations",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "illustration source"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "illustration source"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermon Illustrations from the Bible",
+      "author": "Keith L. Brooks",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations",
+      "badge": "Sermon Illustrations",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 118,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b5017379c51fd9b479238cceaaad594e9ecb5a27e1f50e45f7bce6eef60c976a",
+    "file_size_bytes": 174466,
+    "word_count": 26571
+  },
+  {
+    "title": "Biography of Elder Lott Cary Late Missionary to Africa",
+    "author": "James B. Taylor",
+    "year": 2026,
+    "category": "Biographies",
+    "collection": "Missions",
+    "source_url": "https://archive.org/download/biographyofelder00tayl/biographyofelder00tayl_djvu.txt",
+    "download_url": "https://archive.org/download/biographyofelder00tayl/biographyofelder00tayl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/biography-of-elder-lott-cary-late-missionary-to-africa-james-b-taylor.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biographyofelder00tayl/biographyofelder00tayl_djvu.txt.",
+    "notes": "Public-domain biography of Lott Cary for missions, Baptist history, and African mission studies. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography of Lott Cary for missions, Baptist history, and African mission studies. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missions",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Biography of Elder Lott Cary Late Missionary to Africa",
+      "author": "James B. Taylor",
+      "category": "Biographies",
+      "collection": "Missions",
+      "badge": "Missions",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 99,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d398e736c7795df0b4b533cd7cb7ff1c4a95aee9bcf52287493bc82b66e355d5",
+    "file_size_bytes": 147479,
+    "word_count": 22279
   }
 ]

@@ -1,0 +1,368 @@
+{
+  "source_csv": "data/library/bulk-import-phase-29-great-content-everything.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 30,
+  "total_attempted": 24,
+  "imported": 21,
+  "would_import": 0,
+  "skipped": 2,
+  "failed": 1,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 2,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "History of the English Baptist Missionary Society",
+      "file": "history-of-the-english-baptist-missionary-society-f-a-cox.txt",
+      "bytes": 1522684,
+      "words": 252293,
+      "reading_time_minutes": 1121
+    },
+    {
+      "title": "The Early Baptist History of Portsmouth and the Formation of the Churches in the Town",
+      "file": "the-early-baptist-history-of-portsmouth-and-the-formation-of-the-churches-in-the-town-frederick-ridoutt.txt",
+      "bytes": 198401,
+      "words": 34225,
+      "reading_time_minutes": 152
+    },
+    {
+      "title": "History of the Miami Baptist Association",
+      "file": "history-of-the-miami-baptist-association-a-h-dunlevy.txt",
+      "bytes": 301524,
+      "words": 44030,
+      "reading_time_minutes": 196
+    },
+    {
+      "title": "A General History of the Baptist Denomination in America Volume 2",
+      "file": "a-general-history-of-the-baptist-denomination-in-america-volume-2-david-benedict.txt",
+      "bytes": 1422829,
+      "words": 236966,
+      "reading_time_minutes": 1053
+    },
+    {
+      "title": "The Gospel in Central America",
+      "file": "the-gospel-in-central-america-frederick-crowe.txt",
+      "bytes": 1736271,
+      "words": 252115,
+      "reading_time_minutes": 1121
+    },
+    {
+      "title": "Brief Narrative of the Baptist Mission in India",
+      "file": "brief-narrative-of-the-baptist-mission-in-india-baptist-missionary-society.txt",
+      "bytes": 180679,
+      "words": 30560,
+      "reading_time_minutes": 136
+    },
+    {
+      "title": "An Account of the American Baptist Mission to the Burman Empire",
+      "file": "an-account-of-the-american-baptist-mission-to-the-burman-empire-ann-hasseltine-judson.txt",
+      "bytes": 561112,
+      "words": 86136,
+      "reading_time_minutes": 383
+    },
+    {
+      "title": "Alfred Saker Missionary to Africa",
+      "file": "alfred-saker-missionary-to-africa-edward-bean-underhill.txt",
+      "bytes": 351213,
+      "words": 53181,
+      "reading_time_minutes": 236
+    },
+    {
+      "title": "The Life and Explorations of Frederick Stanley Arnot",
+      "file": "the-life-and-explorations-of-frederick-stanley-arnot-ernest-baker.txt",
+      "bytes": 879772,
+      "words": 140000,
+      "reading_time_minutes": 622
+    },
+    {
+      "title": "Studies of Great Bible Characters",
+      "file": "studies-of-great-bible-characters-henry-t-sell.txt",
+      "bytes": 267589,
+      "words": 42128,
+      "reading_time_minutes": 187
+    },
+    {
+      "title": "Who's Who in the Bible",
+      "file": "who-s-who-in-the-bible-edgar-fletcher-allen.txt",
+      "bytes": 287542,
+      "words": 47579,
+      "reading_time_minutes": 211
+    },
+    {
+      "title": "Heroes of the Bible",
+      "file": "heroes-of-the-bible-william-spencer-edwards.txt",
+      "bytes": 789747,
+      "words": 142654,
+      "reading_time_minutes": 634
+    },
+    {
+      "title": "Elements of Religious Pedagogy",
+      "file": "elements-of-religious-pedagogy-fred-lewis-pattee.txt",
+      "bytes": 535968,
+      "words": 80421,
+      "reading_time_minutes": 357
+    },
+    {
+      "title": "Methods with Beginners",
+      "file": "methods-with-beginners-frances-weld-danielson.txt",
+      "bytes": 251093,
+      "words": 36975,
+      "reading_time_minutes": 164
+    },
+    {
+      "title": "Bible Lands Illustrated",
+      "file": "bible-lands-illustrated-h-c-fish.txt",
+      "bytes": 1280641,
+      "words": 218201,
+      "reading_time_minutes": 970
+    },
+    {
+      "title": "Palestine and the Bible",
+      "file": "palestine-and-the-bible-samuel-schor.txt",
+      "bytes": 152501,
+      "words": 23374,
+      "reading_time_minutes": 104
+    },
+    {
+      "title": "Bible Lands: Their Modern Customs and Manners Illustrative of Scripture",
+      "file": "bible-lands-their-modern-customs-and-manners-illustrative-of-scripture-henry-j-van-lennep.txt",
+      "bytes": 1985344,
+      "words": 299407,
+      "reading_time_minutes": 1331
+    },
+    {
+      "title": "Hand-Book of Bible Manners and Customs",
+      "file": "hand-book-of-bible-manners-and-customs-james-m-freeman.txt",
+      "bytes": 1238103,
+      "words": 214648,
+      "reading_time_minutes": 954
+    },
+    {
+      "title": "A Treasure of Hymns",
+      "file": "a-treasure-of-hymns-amos-r-wells.txt",
+      "bytes": 492720,
+      "words": 76889,
+      "reading_time_minutes": 342
+    },
+    {
+      "title": "Hymn-Writers and Their Hymns",
+      "file": "hymn-writers-and-their-hymns-s-w-christophers.txt",
+      "bytes": 838467,
+      "words": 129660,
+      "reading_time_minutes": 576
+    },
+    {
+      "title": "Sermon Illustrations from the Bible",
+      "file": "sermon-illustrations-from-the-bible-keith-l-brooks.txt",
+      "bytes": 174466,
+      "words": 26571,
+      "reading_time_minutes": 118
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "History of the English Baptist Missionary Society",
+      "author": "F. A. Cox",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-english-baptist-missionary-society-f-a-cox.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Early Baptist History of Portsmouth and the Formation of the Churches in the Town",
+      "author": "Frederick Ridoutt",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-early-baptist-history-of-portsmouth-and-the-formation-of-the-churches-in-the-town-frederick-ridoutt.txt"
+    },
+    {
+      "row": 4,
+      "title": "History of the Miami Baptist Association",
+      "author": "A. H. Dunlevy",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/history-of-the-miami-baptist-association-a-h-dunlevy.txt"
+    },
+    {
+      "row": 5,
+      "title": "A General History of the Baptist Denomination in America Volume 2",
+      "author": "David Benedict",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-general-history-of-the-baptist-denomination-in-america-volume-2-david-benedict.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Gospel in Central America",
+      "author": "Frederick Crowe",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-in-central-america-frederick-crowe.txt"
+    },
+    {
+      "row": 7,
+      "title": "Brief Narrative of the Baptist Mission in India",
+      "author": "Baptist Missionary Society",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/brief-narrative-of-the-baptist-mission-in-india-baptist-missionary-society.txt"
+    },
+    {
+      "row": 8,
+      "title": "An Account of the American Baptist Mission to the Burman Empire",
+      "author": "Ann Hasseltine Judson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-account-of-the-american-baptist-mission-to-the-burman-empire-ann-hasseltine-judson.txt"
+    },
+    {
+      "row": 9,
+      "title": "Biography of Elder Lott Cary Late Missionary to Africa",
+      "author": "James B. Taylor",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/biographyofelder00tayl/biographyofelder00tayl_djvu.txt"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "Alfred Saker Missionary to Africa",
+      "author": "Edward Bean Underhill",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/alfred-saker-missionary-to-africa-edward-bean-underhill.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Life and Explorations of Frederick Stanley Arnot",
+      "author": "Ernest Baker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-and-explorations-of-frederick-stanley-arnot-ernest-baker.txt"
+    },
+    {
+      "row": 12,
+      "title": "Studies of Great Bible Characters",
+      "author": "Henry T. Sell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/studies-of-great-bible-characters-henry-t-sell.txt"
+    },
+    {
+      "row": 13,
+      "title": "Who's Who in the Bible",
+      "author": "Edgar Fletcher-Allen",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/who-s-who-in-the-bible-edgar-fletcher-allen.txt"
+    },
+    {
+      "row": 14,
+      "title": "Heroes of the Bible",
+      "author": "William Spencer Edwards",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/heroes-of-the-bible-william-spencer-edwards.txt"
+    },
+    {
+      "row": 15,
+      "title": "Elements of Religious Pedagogy",
+      "author": "Fred Lewis Pattee",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/elements-of-religious-pedagogy-fred-lewis-pattee.txt"
+    },
+    {
+      "row": 16,
+      "title": "Methods with Beginners",
+      "author": "Frances Weld Danielson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/methods-with-beginners-frances-weld-danielson.txt"
+    },
+    {
+      "row": 17,
+      "title": "A Brief Bible History: A Survey of the Old and New Testaments",
+      "author": "James Oscar Boyd and J. Gresham Machen",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "Bible Lands Illustrated",
+      "author": "H. C. Fish",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bible-lands-illustrated-h-c-fish.txt"
+    },
+    {
+      "row": 19,
+      "title": "Palestine and the Bible",
+      "author": "Samuel Schor",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/palestine-and-the-bible-samuel-schor.txt"
+    },
+    {
+      "row": 20,
+      "title": "Bible Lands: Their Modern Customs and Manners Illustrative of Scripture",
+      "author": "Henry J. Van-Lennep",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/bible-lands-their-modern-customs-and-manners-illustrative-of-scripture-henry-j-van-lennep.txt"
+    },
+    {
+      "row": 21,
+      "title": "Hand-Book of Bible Manners and Customs",
+      "author": "James M. Freeman",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hand-book-of-bible-manners-and-customs-james-m-freeman.txt"
+    },
+    {
+      "row": 22,
+      "title": "A Treasure of Hymns",
+      "author": "Amos R. Wells",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-treasure-of-hymns-amos-r-wells.txt"
+    },
+    {
+      "row": 23,
+      "title": "Hymn-Writers and Their Hymns",
+      "author": "S. W. Christophers",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hymn-writers-and-their-hymns-s-w-christophers.txt"
+    },
+    {
+      "row": 24,
+      "title": "Sermon Illustrations from the Bible",
+      "author": "Keith L. Brooks",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermon-illustrations-from-the-bible-keith-l-brooks.txt"
+    },
+    {
+      "row": 25,
+      "title": "My Sermon Notes: Matthew to Acts",
+      "author": "C. H. Spurgeon",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

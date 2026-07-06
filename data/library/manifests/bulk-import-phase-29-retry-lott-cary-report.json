@@ -1,0 +1,41 @@
+{
+  "source_csv": "data/library/bulk-import-phase-29-retry-lott-cary.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Biography of Elder Lott Cary Late Missionary to Africa",
+      "file": "biography-of-elder-lott-cary-late-missionary-to-africa-james-b-taylor.txt",
+      "bytes": 147479,
+      "words": 22279,
+      "reading_time_minutes": 99
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Biography of Elder Lott Cary Late Missionary to Africa",
+      "author": "James B. Taylor",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biography-of-elder-lott-cary-late-missionary-to-africa-james-b-taylor.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

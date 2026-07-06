@@ -4,13 +4,27 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,538
+- Verified public/free Library resources: 1,560
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 557
+- Library authors represented: 576
 - Public Library duplicate title/author groups: 0
+
+## Latest Public-Domain Content Expansion
+
+Added 22 verified public-domain Library resources from Internet Archive:
+
+- 4 Baptist history resources
+- 6 missions / missionary biography resources
+- 3 Bible character and people-reference resources
+- 2 Sunday School / teacher-training resources
+- 4 Bible geography, lands, manners, and customs resources
+- 2 hymn and hymn-writer resources
+- 1 sermon illustration resource
+
+These strengthen the Library beyond raw book count by filling practical study areas: Baptist history, missions, people profiles, Bible background, teaching preparation, hymns, and sermon illustrations. Two rows in the source batch were skipped as existing duplicates, and one Archive.org source was retried successfully from the same reviewed source after a temporary download error.
 
 ## Latest Free Permissioned Resource
 
