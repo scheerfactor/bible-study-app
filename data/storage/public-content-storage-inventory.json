@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-06T01:00:42.432Z",
+  "generated_at": "2026-07-06T17:28:43.861Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1537,
-      "present": 1537,
+      "files": 1538,
+      "present": 1538,
       "missing": 0,
-      "total_bytes": 1177646859,
+      "total_bytes": 1177647833,
       "total_size": "1.10 GB"
     },
     "commentary_batch": {
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3213022,
-      "total_size": "3.06 MB"
+      "total_bytes": 3216191,
+      "total_size": "3.07 MB"
     },
     "study_tool": {
       "files": 9,
@@ -54,17 +54,17 @@
       "total_size": "12.18 MB"
     },
     "tsk_cross_reference_batch": {
-      "files": 27,
-      "present": 27,
+      "files": 28,
+      "present": 28,
       "missing": 0,
-      "total_bytes": 4660499,
-      "total_size": "4.44 MB"
+      "total_bytes": 4665497,
+      "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 1854,
-      "present": 1854,
+      "files": 1856,
+      "present": 1856,
       "missing": 0,
-      "total_bytes": 1694534549,
+      "total_bytes": 1694543690,
       "total_size": "1.58 GB"
     }
   },
@@ -18514,6 +18514,18 @@
       "source_url": "https://archive.org/download/cu31924050034267/cu31924050034267_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/briefing-the-bible-j-vernon-mcgee-thru-the-bible.txt",
+      "storage_path": "data/library/verified/briefing-the-bible-j-vernon-mcgee-thru-the-bible.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 974,
+      "checksum_sha256": "d3caa29d12243eae98e7e26923a28730e4d7ec25f45b9e0e191f822f00cb7a2a",
+      "title": "Briefing the Bible",
+      "author": "Dr. J. Vernon McGee",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "source_url": "https://www.ttb.org"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -21086,8 +21098,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3213022,
-      "checksum_sha256": "f45a376707606c2afb152f4c6157e2114c1e911984c58ef24c16dd2e2d9bbeb6"
+      "size_bytes": 3216191,
+      "checksum_sha256": "63f9f05e3684344347ef37105417b7e929ceb2db3a8017350e1ec11231bee9bc"
     },
     {
       "kind": "study_tool",
@@ -21552,6 +21564,14 @@
       "content_type": "application/json; charset=utf-8",
       "size_bytes": 5794,
       "checksum_sha256": "7bea94f7ea1788cfbe79f570f69331cef9dd049b6eb53973a52bde7faa694f55"
+    },
+    {
+      "kind": "tsk_cross_reference_batch",
+      "source_path": "data/imports/tsk-reviewed-final-chapter-gaps.json",
+      "storage_path": "data/imports/tsk-reviewed-final-chapter-gaps.json",
+      "content_type": "application/json; charset=utf-8",
+      "size_bytes": 4998,
+      "checksum_sha256": "e65845c889e567bccd306b0dffe1d484a0258ecc500bd45c9213c198cbd4887d"
     },
     {
       "kind": "tsk_cross_reference_batch",
