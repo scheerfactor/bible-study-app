@@ -56,11 +56,12 @@ for (const [index, entry] of entries.entries()) {
   increment(categoryCounts, entry.category);
   increment(authorCounts, entry.author);
 
-  if (entry.public_domain_status !== "verified") {
-    errors.push(`entry ${index + 1}: public resources must be verified`);
+  if (entry.public_domain_status !== "verified" && entry.public_domain_status !== "permissioned_free_resource") {
+    errors.push(`entry ${index + 1}: public resources must be verified or permission-cleared free resources`);
   }
 
-  if (String(entry.rights_status ?? entry.commercial_use_status).toLowerCase().includes("permission")) {
+  const rightsStatus = String(entry.rights_status ?? entry.commercial_use_status).toLowerCase();
+  if (rightsStatus.includes("permission needed") || rightsStatus.includes("permission-needed")) {
     errors.push(`entry ${index + 1}: permission-needed resource is in the public manifest`);
   }
 

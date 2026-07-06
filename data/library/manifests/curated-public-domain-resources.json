@@ -68216,5 +68216,62 @@
     "checksum_sha256": "42c45919c8aff0405efeb360cec9b47b7313ab5e06b891be3f201bc63aa12a5a",
     "file_size_bytes": 381492,
     "word_count": 65555
+  },
+  {
+    "title": "Briefing the Bible",
+    "author": "Dr. J. Vernon McGee",
+    "year": 2025,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Bible Survey / Whole Bible / Commentary Helps",
+    "source_url": "https://www.ttb.org",
+    "download_url": "/library/ttb/briefing-the-bible.pdf",
+    "source_license_url": "https://www.ttb.org",
+    "file_path": "data/library/verified/briefing-the-bible-j-vernon-mcgee-thru-the-bible.txt",
+    "public_domain_status": "permissioned_free_resource",
+    "commercial_use_status": "verified_allowed_free_distribution_no_fee",
+    "attribution_required": true,
+    "rights_basis": "Copyright page reviewed from the attached 4th Edition, 2025 PDF. Thru the Bible permits and encourages reproduction/distribution of print or audio TTB material if wording is not altered, excerpts are marked, no fee is charged for copied material, and Dr. J. Vernon McGee / Thru the Bible are clearly attributed. Required statement: \"By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.\" Web posting should link to https://www.ttb.org.",
+    "notes": "Free whole-Bible survey and Bible-study orientation resource from Thru the Bible. Added as a PDF-only Library resource so the wording remains unchanged. Not included behind any paid subscription/paywall.",
+    "import_status": "imported_file",
+    "rights_status": "verified_free_distribution_no_fee",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Whole-Bible orientation, Bible survey, Sunday school preparation, and chapter-by-chapter study helps after reading the KJV text.",
+    "resource_labels": [
+      "Bible Survey",
+      "Whole Bible",
+      "Commentary Helps",
+      "Free PDF",
+      "KJV-friendly"
+    ],
+    "resource_warnings": [
+      "Do not charge for copied material",
+      "Do not alter wording",
+      "Mark excerpts clearly"
+    ],
+    "publisher": "Thru the Bible",
+    "edition_note": "4th Edition, 2025",
+    "file_format": "pdf",
+    "free_access_notice": "Free resource from Thru the Bible. Do not place this copied material behind a paid subscription or paywall.",
+    "rights_notice": "No fee may be charged for copied TTB material. Do not alter wording. If excerpts are used, clearly mark them as excerpts. Clearly attribute Dr. J. Vernon McGee and Thru the Bible and link to https://www.ttb.org.",
+    "attribution_statement": "By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org.",
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Briefing the Bible",
+      "author": "Dr. J. Vernon McGee",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Bible Survey / Whole Bible / Commentary Helps",
+      "badge": "Free PDF",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1,
+    "text_processing": "pdf_linked_wording_preserved",
+    "checksum_sha256": "d3caa29d12243eae98e7e26923a28730e4d7ec25f45b9e0e191f822f00cb7a2a",
+    "file_size_bytes": 974,
+    "word_count": 165,
+    "pdf_file_path": "public/library/ttb/briefing-the-bible.pdf",
+    "pdf_file_size_bytes": 3833083
   }
 ]

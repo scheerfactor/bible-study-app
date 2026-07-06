@@ -5,8 +5,15 @@ export type LibraryManifestEntry = {
   category: string;
   collection?: string;
   source_url: string;
+  download_url?: string;
   source_license_url: string;
   file_path: string;
+  file_format?: string;
+  publisher?: string;
+  edition_note?: string;
+  free_access_notice?: string;
+  rights_notice?: string;
+  attribution_statement?: string;
   public_domain_status: string;
   commercial_use_status: string;
   rights_basis: string;
@@ -63,6 +70,7 @@ export const LIBRARY_CATEGORIES = [
   "Encyclopedias",
   "Cross References",
   "Bible Handbooks",
+  "Bible Survey / Whole Bible / Commentary Helps",
   "Surveys",
   "Commentaries",
   "Baptist History",
@@ -189,7 +197,14 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     resource_labels: resourceLabels(entry, category),
     resource_warnings: warnings,
     source_url: entry.source_url,
+    download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
+    file_format: entry.file_format ?? null,
+    publisher: entry.publisher ?? null,
+    edition_note: entry.edition_note ?? null,
+    free_access_notice: entry.free_access_notice ?? null,
+    rights_notice: entry.rights_notice ?? null,
+    attribution_statement: entry.attribution_statement ?? null,
     rights_basis: entry.rights_basis,
     word_count: entry.word_count ?? null,
     file_size_bytes: entry.file_size_bytes ?? null,

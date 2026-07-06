@@ -8,6 +8,7 @@ export const allowedCategories = new Set([
   "Topical Bible",
   "Cross References",
   "Bible Handbooks",
+  "Bible Survey / Whole Bible / Commentary Helps",
   "Surveys",
   "Commentaries",
   "Biographies",
@@ -31,6 +32,7 @@ const trustedDownloadHosts = new Set([
   "www.gutenberg.org",
   "archive.org",
   "www.ccel.org",
+  "www.ttb.org",
 ]);
 
 export const trustedLibrarySourceHosts = trustedDownloadHosts;
@@ -41,6 +43,12 @@ export const verifiedRightsStatuses = new Set([
   "public-domain",
   "public_domain",
   "verified public domain",
+  "permissioned_free_resource",
+]);
+
+export const publicLibraryAccessStatuses = new Set([
+  ...verifiedRightsStatuses,
+  "permissioned_free_resource",
 ]);
 
 export const reviewedDoctrinalStatuses = new Set([
@@ -176,8 +184,8 @@ export function validateLibraryEntry(entry, index) {
     errors.push(`entry ${index + 1}: unsupported category "${entry.category}"`);
   }
 
-  if (entry.public_domain_status !== "verified") {
-    errors.push(`entry ${index + 1}: public_domain_status must be verified for import`);
+  if (!publicLibraryAccessStatuses.has(entry.public_domain_status)) {
+    errors.push(`entry ${index + 1}: public_domain_status must be verified or permissioned_free_resource for import`);
   }
 
   if (!String(entry.commercial_use_status).startsWith("verified_allowed")) {
@@ -194,9 +202,15 @@ export function validateLibraryEntry(entry, index) {
 
   if (entry.download_url) {
     try {
-      const host = new URL(entry.download_url).host;
-      if (!trustedDownloadHosts.has(host)) {
-        errors.push(`entry ${index + 1}: download_url must use a trusted source host`);
+      if (String(entry.download_url).startsWith("/")) {
+        if (!String(entry.download_url).startsWith("/library/")) {
+          errors.push(`entry ${index + 1}: local download_url must be under /library`);
+        }
+      } else {
+        const host = new URL(entry.download_url).host;
+        if (!trustedDownloadHosts.has(host)) {
+          errors.push(`entry ${index + 1}: download_url must use a trusted source host`);
+        }
       }
     } catch {
       errors.push(`entry ${index + 1}: download_url must be a valid URL`);

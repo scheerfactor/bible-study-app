@@ -4,15 +4,23 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public Library resources: 1,537
+- Verified public/free Library resources: 1,538
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 556
+- Library authors represented: 557
 - Public Library duplicate title/author groups: 0
 
-## Latest Public-Domain Resource Import
+## Latest Free Permissioned Resource
+
+Added 1 permission-cleared free Library resource:
+
+- `Briefing the Bible` by Dr. J. Vernon McGee / Thru the Bible
+
+This resource is added as a free PDF-only Library item with the required attribution statement: "By Dr. J. Vernon McGee © Thru the Bible, www.ttb.org." It is not to be placed behind a paid subscription/paywall, and no fee may be charged for copied TTB material.
+
+## Previous Public-Domain Resource Import
 
 Added 25 verified public-domain resources from Internet Archive and Project Gutenberg:
 
@@ -34,7 +42,7 @@ Added 25 verified public-domain resources from Internet Archive and Project Gute
 
 Ten Archive.org source URLs returned server errors during import and were excluded from the forward queue. The remaining verified public-domain queue now contains 138 staged resources for future waves.
 
-## Previous Public-Domain Resource Import
+## Earlier Public-Domain Resource Import
 
 Added 25 verified public-domain resources from Internet Archive:
 

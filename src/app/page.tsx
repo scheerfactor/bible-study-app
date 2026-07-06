@@ -903,7 +903,14 @@ type LibraryResource = {
   resource_labels: string[];
   resource_warnings: string[];
   source_url: string;
+  download_url?: string | null;
   source_license_url: string;
+  file_format?: string | null;
+  publisher?: string | null;
+  edition_note?: string | null;
+  free_access_notice?: string | null;
+  rights_notice?: string | null;
+  attribution_statement?: string | null;
   rights_basis: string;
   word_count: number | null;
   file_size_bytes: number | null;
@@ -34156,7 +34163,7 @@ function LibraryScreen({
     .slice(0, 8);
   const libraryAuthorCount = new Set(resources.map((resource) => libraryAuthorIdFromName(resource.author))).size;
   const dictionaryCount = resources.filter((resource) => libraryResourceMatches(resource, ["dictionary", "dictionaries", "topical bible"])).length;
-  const verifiedResourceCount = allResources.filter((resource) => resource.public_domain_status === "verified").length;
+  const verifiedResourceCount = allResources.filter((resource) => resource.public_domain_status === "verified" || resource.public_domain_status === "permissioned_free_resource").length;
   const groupedWorkCount = resources.length;
   const totalLibraryWords = allResources.reduce((total, resource) => total + (resource.word_count ?? 0), 0);
   const totalLibraryReadingMinutes = totalResourceReadingMinutes(resources);
@@ -34226,7 +34233,7 @@ function LibraryScreen({
               Curated study resources
             </h1>
             <p className="mt-3 max-w-2xl text-base leading-7 text-[var(--muted)]">
-              Browse polished public-domain resources by title, author, subject, and collection before you read or listen.
+              Browse polished public-domain and permission-cleared free resources by title, author, subject, and collection before you read or listen.
             </p>
             <a
               className="mt-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]"
@@ -34248,7 +34255,7 @@ function LibraryScreen({
         <LibraryStat label="Grouped works" value={String(groupedWorkCount)} />
         <LibraryStat label="Total commentaries" value={String(commentaryCoverage.totalEntries)} />
         <LibraryStat label="Total dictionaries" value={String(dictionaryCount)} />
-        <LibraryStat label="Verified files" value={String(verifiedResourceCount)} />
+        <LibraryStat label="Verified/free files" value={String(verifiedResourceCount)} />
         <LibraryStat label="Completed books" value={String(stats.booksCompleted)} />
       </section>
 
@@ -34383,7 +34390,7 @@ function LibraryScreen({
                 </p>
               </div>
               <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
-                {verifiedResourceCount} verified public-domain
+                {verifiedResourceCount} verified public/free
               </span>
             </div>
 
@@ -40154,6 +40161,7 @@ function LibraryDetail({
   const coverSeed = resource.category.length + resource.title.length;
   const coverClass = coverSeed % 3 === 0 ? "from-[#334d41] to-[#9a7b3f]" : coverSeed % 3 === 1 ? "from-[#4f3d2d] to-[#476455]" : "from-[#263f5f] to-[#8a6d3b]";
   const quoteSafety = resource.safe_for_quotation === false ? "Spot-check before quoting" : resource.safe_for_quotation === true ? "Ready for careful quotation" : "Quote safety not reviewed";
+  const isPdfResource = resource.file_format === "pdf" || Boolean(resource.download_url?.toLowerCase().endsWith(".pdf"));
   const displayTitle = resource.work_title ?? resource.title;
   const preferredEdition = editions[0] ?? resource;
 
@@ -40229,6 +40237,39 @@ function LibraryDetail({
                 <RotateCcw size={16} />
                 Restart
               </button>
+            )}
+            {isPdfResource && resource.download_url && (
+              <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Free PDF resource</p>
+                    <h2 className="mt-1 text-lg font-semibold text-[var(--ink)]">{resource.free_access_notice ?? "Open the free PDF without a paid subscription."}</h2>
+                    <p className="mt-2 max-w-2xl text-sm leading-6 text-[var(--scripture-ink)]">
+                      {resource.attribution_statement ?? resource.rights_basis}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <a
+                      className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2 text-sm font-semibold text-white"
+                      href={resource.download_url}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <FileText size={16} />
+                      View Free PDF
+                    </a>
+                    <a
+                      className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm font-semibold text-[var(--green)]"
+                      href={resource.source_url}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Link size={16} />
+                      Source
+                    </a>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>
@@ -40475,7 +40516,7 @@ function LibraryDetail({
           <StatusCard label="Category" status={libraryCategoryLabel(resource.category)} good />
           <StatusCard label="Author" status={resource.author} good />
           <StatusCard label="Year" status={resource.year ? String(resource.year) : "Unknown"} good={Boolean(resource.year)} />
-          <StatusCard label="Public domain status" status={resource.public_domain_status} good={resource.public_domain_status === "verified"} />
+          <StatusCard label="Access status" status={resource.public_domain_status.replaceAll("_", " ")} good={resource.public_domain_status === "verified" || resource.public_domain_status === "permissioned_free_resource"} />
           <StatusCard label="Rights status" status={resource.rights_status.replaceAll("_", " ")} good={resource.rights_status.startsWith("verified")} />
           <StatusCard label="Doctrinal review" status={resource.doctrinal_review_status} good={!resource.doctrinal_review_status.toLowerCase().includes("rejected")} />
         </div>
@@ -40520,7 +40561,7 @@ function LibraryDetail({
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
         <h2 className="text-lg font-semibold">Rights Details</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
-          <StatusCard label="Public domain" status={resource.public_domain_status} good={resource.public_domain_status === "verified"} />
+          <StatusCard label="Resource status" status={resource.public_domain_status.replaceAll("_", " ")} good={resource.public_domain_status === "verified" || resource.public_domain_status === "permissioned_free_resource"} />
           <StatusCard label="Commercial use" status={resource.commercial_use_status.replaceAll("_", " ")} good={resource.commercial_use_status.startsWith("verified")} />
           <StatusCard label="Words" status={resource.word_count ? resource.word_count.toLocaleString() : "Unknown"} good={Boolean(resource.word_count)} />
           <StatusCard label="OCR quality" status={ocrQualityScore(resource)} good={(resource.ocr_quality_score ?? 100) >= 75 && resource.safe_for_quotation !== false} />
@@ -40534,6 +40575,15 @@ function LibraryDetail({
             {resource.ocr_cleanup_notes ? `: ${resource.ocr_cleanup_notes}` : ". Public-domain OCR scans remain readable, but rough scans should be spot-checked before quoting in sermons, lessons, or printed material."}
           </p>
         </div>
+        {resource.rights_notice && (
+          <div className="mt-4 rounded-2xl border border-[var(--line)] bg-amber-50 p-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-amber-900">Rights / Permission</p>
+            <p className="mt-2 text-sm leading-6 text-amber-950">{resource.rights_notice}</p>
+          </div>
+        )}
+        {resource.edition_note && (
+          <p className="mt-4 text-sm font-semibold text-[var(--green)]">{resource.edition_note}</p>
+        )}
         <p className="mt-4 break-words text-sm leading-6 text-[var(--muted)]">{resource.rights_basis}</p>
       </section>
 
@@ -42310,7 +42360,7 @@ function LibraryResourceCard({
 
   return (
     <article className="group flex h-full w-full flex-col overflow-hidden rounded-[1.35rem] border border-[var(--line)] bg-white text-left shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
-      <button className="block w-full text-left" onClick={onOpenReader ?? onOpen} type="button">
+      <button className="block w-full text-left" onClick={onOpen} type="button">
         <div className={`relative aspect-[3/4] min-h-[220px] overflow-hidden bg-gradient-to-br ${coverClass} p-5 text-white shadow-inner`}>
         {showCoverImage && (
           // eslint-disable-next-line @next/next/no-img-element
