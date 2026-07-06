@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-04T23:26:58.858Z
+Generated: 2026-07-06T09:58:54.248Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -12,15 +12,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Combined word/topic lookup: 10,368/12,376 meaningful KJV words have Webster, Easton, or Nave help (83.8%).
 - Strong's lexicon: 14,289 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
 - Strong's KJV word mapping: 12,218/12,376 meaningful KJV words appear in reviewed mapping batches (98.7%).
-- TSK: 6,110 public rows cover 1185/1189 chapters (99.7%).
-- TSK remaining chapter gaps: Genesis 18, Genesis 50, Exodus 34, Numbers 23.
+- TSK: 6,118 public rows cover 1189/1189 chapters (100%).
+- TSK remaining chapter gaps: None.
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
 
 ## What This Means
 
 - Webster is broad enough for most Bible-word lookup, but some high-use entries still need OCR cleanup before the reader feels polished.
 - Strong's is chapter-complete; remaining work is rare lexicon edge cases and display polish.
-- TSK is nearly chapter-complete; finish the four remaining chapter gaps, then deepen strongest references by verse.
+- TSK is chapter-complete; the next work is deepening verse-level coverage and ranking the strongest references first.
 - Nave is useful for topic discovery now, with records still marked for spot review before quoting.
 
 ## Fast Clean Completion Path
@@ -28,7 +28,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 1. Finish coverage audits first, then import by weakest gaps instead of guessing.
 2. For Webster, add reviewed overrides for the most-used missing or messy KJV words first.
 3. For Strong's, review the few rare unmapped words and missing lexicon cards instead of another broad import.
-4. For TSK, finish Genesis 18, Genesis 50, Exodus 34, and Numbers 23, then deepen verse-level coverage.
+4. For TSK, deepen verse-level coverage and rank the strongest references first now that every Bible chapter has at least one reviewed reference.
 5. For Nave, expose only cleaned topic records with references; keep rough OCR hidden until reviewed.
 
 ## Top Webster Words Needing Definition Review
@@ -165,9 +165,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Book | Chapters With TSK | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Genesis | 48 | 50 | 96% | 65 | 193 |
-| Numbers | 35 | 36 | 97.2% | 68 | 142 |
-| Exodus | 39 | 40 | 97.5% | 49 | 119 |
 | Habakkuk | 3 | 3 | 100% | 9 | 12 |
 | Nahum | 3 | 3 | 100% | 8 | 14 |
 | Titus | 3 | 3 | 100% | 7 | 14 |
@@ -185,6 +182,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Haggai | 2 | 2 | 100% | 13 | 25 |
 | Esther | 10 | 10 | 100% | 11 | 28 |
 | Ezra | 10 | 10 | 100% | 11 | 31 |
+| Zephaniah | 3 | 3 | 100% | 14 | 32 |
+| 2 Thessalonians | 3 | 3 | 100% | 14 | 32 |
+| 2 Peter | 3 | 3 | 100% | 14 | 33 |
 
 ## Top KJV Words Without Reviewed Strong's Mapping Yet
 
@@ -262,4 +262,3 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Do not mark Strong's verse mapping complete until every book has reviewed mapping rows.
 - Do not import broad TSK or Strong's dumps without source, license, attribution, and parser validation.
 - Keep Nave topic records as discovery/search aids until topic text has been spot-reviewed.
-

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-04T23:26:58.858Z",
+    "generated_at": "2026-07-06T09:58:54.248Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5919,43 +5919,14 @@
       ]
     },
     "tsk": {
-      "files": 28,
-      "publicRows": 6110,
+      "files": 29,
+      "publicRows": 6118,
       "coveredBooks": 66,
-      "coveredChapters": 1185,
-      "coveredSourceVerses": 2221,
-      "chapterCoveragePercent": 99.7,
-      "missingChapters": [
-        "Genesis 18",
-        "Genesis 50",
-        "Exodus 34",
-        "Numbers 23"
-      ],
+      "coveredChapters": 1189,
+      "coveredSourceVerses": 2226,
+      "chapterCoveragePercent": 100,
+      "missingChapters": [],
       "weakestBooks": [
-        {
-          "book": "Genesis",
-          "chaptersCovered": 48,
-          "totalChapters": 50,
-          "chapterCoveragePercent": 96,
-          "versesCovered": 65,
-          "rows": 193
-        },
-        {
-          "book": "Numbers",
-          "chaptersCovered": 35,
-          "totalChapters": 36,
-          "chapterCoveragePercent": 97.2,
-          "versesCovered": 68,
-          "rows": 142
-        },
-        {
-          "book": "Exodus",
-          "chaptersCovered": 39,
-          "totalChapters": 40,
-          "chapterCoveragePercent": 97.5,
-          "versesCovered": 49,
-          "rows": 119
-        },
         {
           "book": "Habakkuk",
           "chaptersCovered": 3,
@@ -6091,6 +6062,30 @@
           "chapterCoveragePercent": 100,
           "versesCovered": 11,
           "rows": 31
+        },
+        {
+          "book": "Zephaniah",
+          "chaptersCovered": 3,
+          "totalChapters": 3,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 14,
+          "rows": 32
+        },
+        {
+          "book": "2 Thessalonians",
+          "chaptersCovered": 3,
+          "totalChapters": 3,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 14,
+          "rows": 32
+        },
+        {
+          "book": "2 Peter",
+          "chaptersCovered": 3,
+          "totalChapters": 3,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 14,
+          "rows": 33
         }
       ]
     },
@@ -7517,19 +7512,19 @@
   "tskBookCoverage": [
     {
       "book": "Genesis",
-      "chaptersCovered": 48,
+      "chaptersCovered": 50,
       "totalChapters": 50,
-      "chapterCoveragePercent": 96,
-      "versesCovered": 65,
-      "rows": 193
+      "chapterCoveragePercent": 100,
+      "versesCovered": 68,
+      "rows": 197
     },
     {
       "book": "Exodus",
-      "chaptersCovered": 39,
+      "chaptersCovered": 40,
       "totalChapters": 40,
-      "chapterCoveragePercent": 97.5,
-      "versesCovered": 49,
-      "rows": 119
+      "chapterCoveragePercent": 100,
+      "versesCovered": 50,
+      "rows": 121
     },
     {
       "book": "Leviticus",
@@ -7541,11 +7536,11 @@
     },
     {
       "book": "Numbers",
-      "chaptersCovered": 35,
+      "chaptersCovered": 36,
       "totalChapters": 36,
-      "chapterCoveragePercent": 97.2,
-      "versesCovered": 68,
-      "rows": 142
+      "chapterCoveragePercent": 100,
+      "versesCovered": 69,
+      "rows": 144
     },
     {
       "book": "Deuteronomy",
@@ -14648,12 +14643,7 @@
         ]
       }
     ],
-    "tskMissingChapters": [
-      "Genesis 18",
-      "Genesis 50",
-      "Exodus 34",
-      "Numbers 23"
-    ],
+    "tskMissingChapters": [],
     "naveSuspiciousTopics": [
       {
         "topic": "ABAPH",
