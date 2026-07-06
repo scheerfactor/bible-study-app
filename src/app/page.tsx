@@ -24915,6 +24915,30 @@ function ProgressLine({ label, value }: { label: string; value: number }) {
   );
 }
 
+function BibleStudyDeskMetric({
+  label,
+  value,
+  detail,
+  onClick,
+}: {
+  label: string;
+  value: string;
+  detail: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className="min-h-24 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-left shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+      onClick={onClick}
+      type="button"
+    >
+      <span className="block text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[var(--muted)]">{label}</span>
+      <span className="mt-1 block truncate text-lg font-bold text-[var(--green)]">{value}</span>
+      <span className="mt-1 line-clamp-2 block text-xs leading-5 text-[var(--muted)]">{detail}</span>
+    </button>
+  );
+}
+
 function StudyWorkspaceCard({
   title,
   emptyText,
@@ -26192,6 +26216,89 @@ function BibleReader({
             <div className="h-full rounded-full bg-[var(--green)] transition-[width]" style={{ width: `${progressPercent}%` }} />
           </div>
         </div>
+
+        <section className="mt-3 rounded-2xl border border-[var(--line)] bg-white p-3 shadow-sm">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Bible Study Desk</p>
+              <h2 className="mt-1 text-lg font-semibold text-[var(--ink)]">{book} {chapter} at a glance</h2>
+              <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
+                Start with the KJV text, then move into the strongest study helps already connected to this chapter.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={onOpenPassageGuide} type="button">
+                <FileText size={15} />
+                Study chapter
+              </button>
+              <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onBuildSermonFromStudy} type="button">
+                <Clipboard size={15} />
+                Sermon notes
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+            <BibleStudyDeskMetric
+              label="Key Verse"
+              value={workspaceKeyVerse}
+              detail={workspaceKeyVerseText}
+              onClick={() => onOpenReference(workspaceKeyVerse)}
+            />
+            <BibleStudyDeskMetric
+              label="Commentary"
+              value={`${chapterCommentaryEntries.length}`}
+              detail={commentaryAuthors.slice(0, 3).join(", ") || "No reviewed entries yet"}
+              onClick={onOpenCommentaryCenter}
+            />
+            <BibleStudyDeskMetric
+              label="Cross References"
+              value={`${chapterCrossReferences.length}`}
+              detail={workspaceTopCrossReferences[0] ? `${workspaceTopCrossReferences[0].verse_ref} to ${workspaceTopCrossReferences[0].target_ref}` : "Open the passage guide"}
+              onClick={() => chapterCrossReferences[0] ? onOpenReference(chapterCrossReferences[0].target_ref) : onOpenPassageGuide()}
+            />
+            <BibleStudyDeskMetric
+              label="Words"
+              value={`${chapterAnalysis.repeatedWords.length}`}
+              detail={chapterAnalysis.repeatedWords.slice(0, 4).map((item) => item.word).join(", ") || studyLaunchWord || "Open word study"}
+              onClick={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)}
+            />
+          </div>
+
+          <div className="mt-3 grid gap-2 md:grid-cols-3">
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Background</p>
+              <p className="mt-1 line-clamp-3 text-sm leading-6 text-[var(--ink)]">{workspaceSummary}</p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{chapterConnectionsData.people.length} people</span>
+                <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{chapterConnectionsData.places.length} places</span>
+                <span className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">{chapterConnectionsData.timeline.length} timeline</span>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Study Tools</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--ink)]">
+                {workspaceStrongEntries.length} Strong&apos;s helps · {chapterDictionaryEntries.length} Webster entries · {activeThemes.length} themes
+              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onOpenStudyToolSearch(studyLaunchWord || book, "strongs")} type="button">Strong&apos;s</button>
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={() => onWordClick(studyLaunchWord || selectedVerse.plainText.split(/\s+/)[0] || "", selectedVerse.ref)} type="button">Dictionary</button>
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={onOpenThemeExplorer} type="button">Themes</button>
+              </div>
+            </div>
+            <div className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">Next Actions</p>
+              <p className="mt-1 text-sm leading-6 text-[var(--ink)]">
+                {atAGlanceRelatedBooks.length} related books · {workspaceSermonIdeas.length} sermon ideas · {workspaceApplications.length} applications
+              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={onSendStudyToJournal} type="button">Journal</button>
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={saveCurrentStudySession} type="button">Save session</button>
+                <button className="rounded-full bg-white px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]" onClick={onCreateSlidesFromStudy} type="button">Slides</button>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div className="mt-3 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
           <button
