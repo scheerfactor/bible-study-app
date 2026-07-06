@@ -4,15 +4,29 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,560
+- Verified public/free Library resources: 1,579
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 576
+- Library authors represented: 587
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Content Expansion
+
+Added 19 verified public-domain Library resources from Internet Archive and Project Gutenberg:
+
+- 5 missions / missionary biography resources
+- 3 prayer, faith, and hymn-writer biography resources
+- 4 Life of Christ / discipleship resources
+- 2 Bible lands and geography resources
+- 2 Baptist church practice resources
+- 2 devotional Christian living resources
+- 1 pastoral ministry resource
+
+These strengthen the study desk experience with better missions, Baptist church practice, Bible geography, Christ-centered study, pastoral ministry, and devotional reading. Two attempted rows were not imported in this wave: one was already represented in the Library by the same source, and one source continued returning a temporary download error and should be retried later.
+
+## Previous Public-Domain Content Expansion
 
 Added 22 verified public-domain Library resources from Internet Archive:
 

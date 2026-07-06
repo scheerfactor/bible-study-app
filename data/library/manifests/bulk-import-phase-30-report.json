@@ -1,0 +1,311 @@
+{
+  "source_csv": "data/library/bulk-import-phase-30-study-desk-growth.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 30,
+  "total_attempted": 21,
+  "imported": 16,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 5,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "James Gilmour of Mongolia",
+      "file": "james-gilmour-of-mongolia-richard-lovett.txt",
+      "bytes": 547094,
+      "words": 93134,
+      "reading_time_minutes": 414
+    },
+    {
+      "title": "Memoir of the Rev. Henry Martyn",
+      "file": "memoir-of-the-rev-henry-martyn-john-sargent.txt",
+      "bytes": 861360,
+      "words": 131618,
+      "reading_time_minutes": 585
+    },
+    {
+      "title": "The Parables of Our Lord",
+      "file": "the-parables-of-our-lord-william-arnot.txt",
+      "bytes": 1134719,
+      "words": 174110,
+      "reading_time_minutes": 774
+    },
+    {
+      "title": "The Trial and Death of Jesus Christ",
+      "file": "the-trial-and-death-of-jesus-christ-james-stalker.txt",
+      "bytes": 492342,
+      "words": 76207,
+      "reading_time_minutes": 339
+    },
+    {
+      "title": "Imago Christi",
+      "file": "imago-christi-james-stalker.txt",
+      "bytes": 451470,
+      "words": 70134,
+      "reading_time_minutes": 312
+    },
+    {
+      "title": "The Children for Christ",
+      "file": "the-children-for-christ-andrew-murray.txt",
+      "bytes": 593739,
+      "words": 107177,
+      "reading_time_minutes": 476
+    },
+    {
+      "title": "The Land and the Book Volume 3",
+      "file": "the-land-and-the-book-volume-3-william-m-thomson.txt",
+      "bytes": 1915081,
+      "words": 287284,
+      "reading_time_minutes": 1277
+    },
+    {
+      "title": "Sinai and Palestine",
+      "file": "sinai-and-palestine-arthur-penrhyn-stanley.txt",
+      "bytes": 1750360,
+      "words": 266472,
+      "reading_time_minutes": 1184
+    },
+    {
+      "title": "The New Directory for Baptist Churches",
+      "file": "the-new-directory-for-baptist-churches-edward-t-hiscox.txt",
+      "bytes": 1097167,
+      "words": 162382,
+      "reading_time_minutes": 722
+    },
+    {
+      "title": "Quiet Talks on Service",
+      "file": "quiet-talks-on-service-s-d-gordon.txt",
+      "bytes": 288301,
+      "words": 45367,
+      "reading_time_minutes": 202
+    },
+    {
+      "title": "Quiet Talks about Jesus",
+      "file": "quiet-talks-about-jesus-s-d-gordon.txt",
+      "bytes": 414498,
+      "words": 73602,
+      "reading_time_minutes": 327
+    },
+    {
+      "title": "Quiet Talks on Following the Christ",
+      "file": "quiet-talks-on-following-the-christ-s-d-gordon.txt",
+      "bytes": 332983,
+      "words": 60860,
+      "reading_time_minutes": 270
+    },
+    {
+      "title": "The Life of William Carey",
+      "file": "the-life-of-william-carey-george-smith.txt",
+      "bytes": 1136416,
+      "words": 170474,
+      "reading_time_minutes": 758
+    },
+    {
+      "title": "The Life of John Newton",
+      "file": "the-life-of-john-newton-richard-cecil.txt",
+      "bytes": 279765,
+      "words": 51336,
+      "reading_time_minutes": 228
+    },
+    {
+      "title": "An Earnest Ministry",
+      "file": "an-earnest-ministry-john-angell-james.txt",
+      "bytes": 575857,
+      "words": 100629,
+      "reading_time_minutes": 447
+    },
+    {
+      "title": "Christian Fellowship or The Church Member's Guide",
+      "file": "christian-fellowship-or-the-church-member-s-guide-john-angell-james.txt",
+      "bytes": 383441,
+      "words": 57996,
+      "reading_time_minutes": 258
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "George Muller of Bristol",
+      "author": "Arthur T. Pierson",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/in.ernet.dli.2015.123646/in.ernet.dli.2015.123646_djvu.txt"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "A Narrative of Some of the Lord's Dealings with George Muller First Part",
+      "author": "George Muller",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://www.gutenberg.org/files/37277/37277-0.txt"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "James Gilmour of Mongolia",
+      "author": "Richard Lovett",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/james-gilmour-of-mongolia-richard-lovett.txt"
+    },
+    {
+      "row": 5,
+      "title": "Memoir of the Rev. Henry Martyn",
+      "author": "John Sargent",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memoir-of-the-rev-henry-martyn-john-sargent.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Parables of Our Lord",
+      "author": "William Arnot",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-parables-of-our-lord-william-arnot.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Trial and Death of Jesus Christ",
+      "author": "James Stalker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-trial-and-death-of-jesus-christ-james-stalker.txt"
+    },
+    {
+      "row": 8,
+      "title": "Imago Christi",
+      "author": "James Stalker",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/imago-christi-james-stalker.txt"
+    },
+    {
+      "row": 9,
+      "title": "The Spirit of Christ",
+      "author": "Andrew Murray",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/TheSpiritOfChrist/TheSpiritOfChrist_djvu.txt"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "The Children for Christ",
+      "author": "Andrew Murray",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-children-for-christ-andrew-murray.txt"
+    },
+    {
+      "row": 11,
+      "title": "The Land and the Book Volume 3",
+      "author": "William M. Thomson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-land-and-the-book-volume-3-william-m-thomson.txt"
+    },
+    {
+      "row": 12,
+      "title": "Sinai and Palestine",
+      "author": "Arthur Penrhyn Stanley",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sinai-and-palestine-arthur-penrhyn-stanley.txt"
+    },
+    {
+      "row": 13,
+      "title": "The New Directory for Baptist Churches",
+      "author": "Edward T. Hiscox",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-new-directory-for-baptist-churches-edward-t-hiscox.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Baptist Church Directory",
+      "author": "Edward T. Hiscox",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/baptistchurchdir00hisc_0/baptistchurchdir00hisc_0_djvu.txt"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "Quiet Talks on Service",
+      "author": "S. D. Gordon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/quiet-talks-on-service-s-d-gordon.txt"
+    },
+    {
+      "row": 16,
+      "title": "Quiet Talks about Jesus",
+      "author": "S. D. Gordon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/quiet-talks-about-jesus-s-d-gordon.txt"
+    },
+    {
+      "row": 17,
+      "title": "Quiet Talks on Power",
+      "author": "S. D. Gordon",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/quiettalksonpow02gordgoog/quiettalksonpow02gordgoog_djvu.txt"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "Quiet Talks on Following the Christ",
+      "author": "S. D. Gordon",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/quiet-talks-on-following-the-christ-s-d-gordon.txt"
+    },
+    {
+      "row": 19,
+      "title": "The Life of William Carey",
+      "author": "George Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-william-carey-george-smith.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Life of John Newton",
+      "author": "Richard Cecil",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-john-newton-richard-cecil.txt"
+    },
+    {
+      "row": 21,
+      "title": "An Earnest Ministry",
+      "author": "John Angell James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-earnest-ministry-john-angell-james.txt"
+    },
+    {
+      "row": 22,
+      "title": "Christian Fellowship or The Church Member's Guide",
+      "author": "John Angell James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/christian-fellowship-or-the-church-member-s-guide-john-angell-james.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

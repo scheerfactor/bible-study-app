@@ -1,0 +1,89 @@
+{
+  "source_csv": "data/library/bulk-import-phase-30-retry.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 10,
+  "total_attempted": 5,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 1,
+  "failed": 1,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 1,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "George Muller of Bristol",
+      "file": "george-muller-of-bristol-arthur-t-pierson.txt",
+      "bytes": 787174,
+      "words": 136857,
+      "reading_time_minutes": 608
+    },
+    {
+      "title": "A Narrative of Some of the Lord's Dealings with George Muller First Part",
+      "file": "a-narrative-of-some-of-the-lord-s-dealings-with-george-muller-first-part-george-muller.txt",
+      "bytes": 628865,
+      "words": 105271,
+      "reading_time_minutes": 468
+    },
+    {
+      "title": "The Baptist Church Directory",
+      "file": "the-baptist-church-directory-edward-t-hiscox.txt",
+      "bytes": 433890,
+      "words": 64270,
+      "reading_time_minutes": 286
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "George Muller of Bristol",
+      "author": "Arthur T. Pierson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/george-muller-of-bristol-arthur-t-pierson.txt"
+    },
+    {
+      "row": 3,
+      "title": "A Narrative of Some of the Lord's Dealings with George Muller First Part",
+      "author": "George Muller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-muller-first-part-george-muller.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Spirit of Christ",
+      "author": "Andrew Murray",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "The Baptist Church Directory",
+      "author": "Edward T. Hiscox",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-baptist-church-directory-edward-t-hiscox.txt"
+    },
+    {
+      "row": 6,
+      "title": "Quiet Talks on Power",
+      "author": "S. D. Gordon",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/quiettalksonpowe0000sdgo_k1g4/quiettalksonpowe0000sdgo_k1g4_djvu.txt"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

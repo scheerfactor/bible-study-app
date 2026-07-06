@@ -69329,5 +69329,917 @@
     "checksum_sha256": "d398e736c7795df0b4b533cd7cb7ff1c4a95aee9bcf52287493bc82b66e355d5",
     "file_size_bytes": 147479,
     "word_count": 22279
+  },
+  {
+    "title": "James Gilmour of Mongolia",
+    "author": "Richard Lovett",
+    "year": 2010,
+    "category": "Missions",
+    "collection": "Missionary Biography",
+    "source_url": "https://www.gutenberg.org/files/31525/31525-0.txt",
+    "download_url": "https://www.gutenberg.org/files/31525/31525-0.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/james-gilmour-of-mongolia-richard-lovett.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/files/31525/31525-0.txt.",
+    "notes": "Public-domain missionary biography for missions teaching, sacrifice, and evangelism study. Preserve wording and cite source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for missions teaching, sacrifice, and evangelism study. Preserve wording and cite source when quoted.",
+    "resource_labels": [
+      "Missionary Biography",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "James Gilmour of Mongolia",
+      "author": "Richard Lovett",
+      "category": "Missions",
+      "collection": "Missionary Biography",
+      "badge": "Missionary Biography",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 414,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d83d68a879b1d6209b467224762ed7c487dd67bbe952b58d463cee424c5313b3",
+    "file_size_bytes": 547094,
+    "word_count": 93134
+  },
+  {
+    "title": "Memoir of the Rev. Henry Martyn",
+    "author": "John Sargent",
+    "year": 2026,
+    "category": "Missions",
+    "collection": "Missionary Biography",
+    "source_url": "https://archive.org/download/bub_gb_msEEAAAAYAAJ/bub_gb_msEEAAAAYAAJ_djvu.txt",
+    "download_url": "https://archive.org/download/bub_gb_msEEAAAAYAAJ/bub_gb_msEEAAAAYAAJ_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/memoir-of-the-rev-henry-martyn-john-sargent.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bub_gb_msEEAAAAYAAJ/bub_gb_msEEAAAAYAAJ_djvu.txt.",
+    "notes": "Public-domain missionary biography for missions, devotion, and Christian service study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for missions, devotion, and Christian service study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missionary Biography",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memoir of the Rev. Henry Martyn",
+      "author": "John Sargent",
+      "category": "Missions",
+      "collection": "Missionary Biography",
+      "badge": "Missionary Biography",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 585,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "31a88c953a69d5dcfbc235f892959635ea74081e7af5137863ad3844930db87f",
+    "file_size_bytes": 861360,
+    "word_count": 131618
+  },
+  {
+    "title": "The Parables of Our Lord",
+    "author": "William Arnot",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://archive.org/download/parablesofourlor1893arno/parablesofourlor1893arno_djvu.txt",
+    "download_url": "https://archive.org/download/parablesofourlor1893arno/parablesofourlor1893arno_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-parables-of-our-lord-william-arnot.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/parablesofourlor1893arno/parablesofourlor1893arno_djvu.txt.",
+    "notes": "Public-domain Bible study help for the parables of Christ, Sunday School teaching, and sermon preparation. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; parables study.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study help for the parables of Christ, Sunday School teaching, and sermon preparation. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "parables study"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "parables study"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Parables of Our Lord",
+      "author": "William Arnot",
+      "category": "Bible study helps",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 774,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "81d888e99042032eb274d37dd8233076795264d1f724416e9589d32dcbaadf39",
+    "file_size_bytes": 1134719,
+    "word_count": 174110
+  },
+  {
+    "title": "The Trial and Death of Jesus Christ",
+    "author": "James Stalker",
+    "year": 2026,
+    "category": "Bible study helps",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://archive.org/download/trialanddeathjc00staluoft/trialanddeathjc00staluoft_djvu.txt",
+    "download_url": "https://archive.org/download/trialanddeathjc00staluoft/trialanddeathjc00staluoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-trial-and-death-of-jesus-christ-james-stalker.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/trialanddeathjc00staluoft/trialanddeathjc00staluoft_djvu.txt.",
+    "notes": "Public-domain devotional study on the passion of Christ for teaching, preaching, and personal devotion. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; devotional passion study.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional study on the passion of Christ for teaching, preaching, and personal devotion. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "devotional passion study"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "devotional passion study"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Trial and Death of Jesus Christ",
+      "author": "James Stalker",
+      "category": "Bible study helps",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 339,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "639d23ab96ffde5230a1eafe6c99321f8779933009cc18df331e12c2e58adeb8",
+    "file_size_bytes": 492342,
+    "word_count": 76207
+  },
+  {
+    "title": "Imago Christi",
+    "author": "James Stalker",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://archive.org/download/imagochristiexam00stal/imagochristiexam00stal_djvu.txt",
+    "download_url": "https://archive.org/download/imagochristiexam00stal/imagochristiexam00stal_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/imago-christi-james-stalker.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/imagochristiexam00stal/imagochristiexam00stal_djvu.txt.",
+    "notes": "Public-domain Christian living study on the example of Christ for discipleship and devotional reading. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; discipleship study.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian living study on the example of Christ for discipleship and devotional reading. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "discipleship study"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "discipleship study"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Imago Christi",
+      "author": "James Stalker",
+      "category": "Christian Living",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 312,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "65b9b5414b18c916f12918dbde57f0e2f31cb2277f53a47edd5bc5139a501739",
+    "file_size_bytes": 451470,
+    "word_count": 70134
+  },
+  {
+    "title": "The Children for Christ",
+    "author": "Andrew Murray",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Family and Children",
+    "source_url": "https://archive.org/download/bwb_S0-EBU-331/bwb_S0-EBU-331_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_S0-EBU-331/bwb_S0-EBU-331_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-children-for-christ-andrew-murray.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bwb_S0-EBU-331/bwb_S0-EBU-331_djvu.txt.",
+    "notes": "Public-domain family and child discipleship resource for parents, teachers, and church workers. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; family discipleship.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain family and child discipleship resource for parents, teachers, and church workers. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Family and Children",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "family discipleship"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "family discipleship"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Children for Christ",
+      "author": "Andrew Murray",
+      "category": "Christian Living",
+      "collection": "Family and Children",
+      "badge": "Family and Children",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 476,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2bf599693555899555499201f4feaddac8d654a5e71832ff9feaa318ee947202",
+    "file_size_bytes": 593739,
+    "word_count": 107177
+  },
+  {
+    "title": "The Land and the Book Volume 3",
+    "author": "William M. Thomson",
+    "year": 2026,
+    "category": "Bible Handbooks",
+    "collection": "Bible Lands and Geography",
+    "source_url": "https://archive.org/download/landbook0003unse/landbook0003unse_djvu.txt",
+    "download_url": "https://archive.org/download/landbook0003unse/landbook0003unse_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-land-and-the-book-volume-3-william-m-thomson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/landbook0003unse/landbook0003unse_djvu.txt.",
+    "notes": "Public-domain Bible lands and geography resource for Bible background, maps, places, and customs study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; geography and customs.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible lands and geography resource for Bible background, maps, places, and customs study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Lands and Geography",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "geography and customs"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "geography and customs"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Land and the Book Volume 3",
+      "author": "William M. Thomson",
+      "category": "Bible Handbooks",
+      "collection": "Bible Lands and Geography",
+      "badge": "Bible Lands and Geography",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1277,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "970e56e3da0ec6739c73faec04cbf26d105019f48f982bd15751fb2bdf8cc5b2",
+    "file_size_bytes": 1915081,
+    "word_count": 287284
+  },
+  {
+    "title": "Sinai and Palestine",
+    "author": "Arthur Penrhyn Stanley",
+    "year": 1820,
+    "category": "Bible Handbooks",
+    "collection": "Bible Lands and Geography",
+    "source_url": "https://archive.org/download/sinaipalestinein00stan_2/sinaipalestinein00stan_2_djvu.txt",
+    "download_url": "https://archive.org/download/sinaipalestinein00stan_2/sinaipalestinein00stan_2_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sinai-and-palestine-arthur-penrhyn-stanley.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sinaipalestinein00stan_2/sinaipalestinein00stan_2_djvu.txt.",
+    "notes": "Public-domain historical geography resource for Bible background, places, journeys, and teaching support. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; historical geography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical geography resource for Bible background, places, journeys, and teaching support. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Lands and Geography",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical geography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "historical geography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sinai and Palestine",
+      "author": "Arthur Penrhyn Stanley",
+      "category": "Bible Handbooks",
+      "collection": "Bible Lands and Geography",
+      "badge": "Bible Lands and Geography",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1184,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "09633299f37222e7edab2b5ab22277cd2552cd40867017e1a1440c3c5bbefd7c",
+    "file_size_bytes": 1750360,
+    "word_count": 266472
+  },
+  {
+    "title": "The New Directory for Baptist Churches",
+    "author": "Edward T. Hiscox",
+    "year": 1894,
+    "category": "Baptist History",
+    "collection": "Baptist Church Practice",
+    "source_url": "https://archive.org/download/newdirectoryfor00hiscgoog/newdirectoryfor00hiscgoog_djvu.txt",
+    "download_url": "https://archive.org/download/newdirectoryfor00hiscgoog/newdirectoryfor00hiscgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-new-directory-for-baptist-churches-edward-t-hiscox.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/newdirectoryfor00hiscgoog/newdirectoryfor00hiscgoog_djvu.txt.",
+    "notes": "Public-domain Baptist church practice resource for pastors, teachers, and Baptist history study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; Baptist polity and practice.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist church practice resource for pastors, teachers, and Baptist history study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist Church Practice",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Baptist polity and practice"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Baptist polity and practice"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The New Directory for Baptist Churches",
+      "author": "Edward T. Hiscox",
+      "category": "Baptist History",
+      "collection": "Baptist Church Practice",
+      "badge": "Baptist Church Practice",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 722,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0530f3528ccaa051b2249227aa1b1c220a667e479138b938e02ad79dae03b2d3",
+    "file_size_bytes": 1097167,
+    "word_count": 162382
+  },
+  {
+    "title": "Quiet Talks on Service",
+    "author": "S. D. Gordon",
+    "year": 1906,
+    "category": "Christian Living",
+    "collection": "Quiet Talks",
+    "source_url": "https://archive.org/download/quiettalksonserv00gorduoft/quiettalksonserv00gorduoft_djvu.txt",
+    "download_url": "https://archive.org/download/quiettalksonserv00gorduoft/quiettalksonserv00gorduoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/quiet-talks-on-service-s-d-gordon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/quiettalksonserv00gorduoft/quiettalksonserv00gorduoft_djvu.txt.",
+    "notes": "Public-domain devotional resource for Christian service, discipleship, and ministry encouragement. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; devotional service.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional resource for Christian service, discipleship, and ministry encouragement. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Quiet Talks",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "devotional service"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "devotional service"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Quiet Talks on Service",
+      "author": "S. D. Gordon",
+      "category": "Christian Living",
+      "collection": "Quiet Talks",
+      "badge": "Quiet Talks",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 202,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "256df4401037568938ec14dad4a69c60779bc3f59f86a75cdf87913c4dd55050",
+    "file_size_bytes": 288301,
+    "word_count": 45367
+  },
+  {
+    "title": "Quiet Talks about Jesus",
+    "author": "S. D. Gordon",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Quiet Talks",
+    "source_url": "https://archive.org/download/quiettalksabout00gordgoog/quiettalksabout00gordgoog_djvu.txt",
+    "download_url": "https://archive.org/download/quiettalksabout00gordgoog/quiettalksabout00gordgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/quiet-talks-about-jesus-s-d-gordon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/quiettalksabout00gordgoog/quiettalksabout00gordgoog_djvu.txt.",
+    "notes": "Public-domain devotional resource focused on Christ for personal study, teaching, and devotional reading. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; Christ-centered devotional.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional resource focused on Christ for personal study, teaching, and devotional reading. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Quiet Talks",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Christ-centered devotional"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Christ-centered devotional"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Quiet Talks about Jesus",
+      "author": "S. D. Gordon",
+      "category": "Christian Living",
+      "collection": "Quiet Talks",
+      "badge": "Quiet Talks",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 327,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "22b8c40ac2081e60cdbcd58f5923e268ce1f75d750898a35f5582f9d4ba2a830",
+    "file_size_bytes": 414498,
+    "word_count": 73602
+  },
+  {
+    "title": "Quiet Talks on Following the Christ",
+    "author": "S. D. Gordon",
+    "year": 1913,
+    "category": "Christian Living",
+    "collection": "Quiet Talks",
+    "source_url": "https://archive.org/download/quiettalksonfol00gordgoog/quiettalksonfol00gordgoog_djvu.txt",
+    "download_url": "https://archive.org/download/quiettalksonfol00gordgoog/quiettalksonfol00gordgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/quiet-talks-on-following-the-christ-s-d-gordon.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/quiettalksonfol00gordgoog/quiettalksonfol00gordgoog_djvu.txt.",
+    "notes": "Public-domain devotional discipleship resource for following Christ, Christian living, and teaching use. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; discipleship devotional.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional discipleship resource for following Christ, Christian living, and teaching use. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Quiet Talks",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "discipleship devotional"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "discipleship devotional"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Quiet Talks on Following the Christ",
+      "author": "S. D. Gordon",
+      "category": "Christian Living",
+      "collection": "Quiet Talks",
+      "badge": "Quiet Talks",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 270,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3d774c8df9bb124983ac923f587b62c6e3d3f699eba10c5069c796053c9628aa",
+    "file_size_bytes": 332983,
+    "word_count": 60860
+  },
+  {
+    "title": "The Life of William Carey",
+    "author": "George Smith",
+    "year": 1850,
+    "category": "Missions",
+    "collection": "Missionary Biography",
+    "source_url": "https://archive.org/download/lifeofwilliamcar00smitrich/lifeofwilliamcar00smitrich_djvu.txt",
+    "download_url": "https://archive.org/download/lifeofwilliamcar00smitrich/lifeofwilliamcar00smitrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-of-william-carey-george-smith.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifeofwilliamcar00smitrich/lifeofwilliamcar00smitrich_djvu.txt.",
+    "notes": "Public-domain missionary biography for missions, Baptist history, and Great Commission teaching. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; missionary biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for missions, Baptist history, and Great Commission teaching. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Missionary Biography",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "missionary biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of William Carey",
+      "author": "George Smith",
+      "category": "Missions",
+      "collection": "Missionary Biography",
+      "badge": "Missionary Biography",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 758,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6d41717e62953915992e769ff230ff084484102f8e6d9cf6f7a1f3b13107ecd4",
+    "file_size_bytes": 1136416,
+    "word_count": 170474
+  },
+  {
+    "title": "The Life of John Newton",
+    "author": "Richard Cecil",
+    "year": 1764,
+    "category": "Biographies",
+    "collection": "Hymn Writers and Testimonies",
+    "source_url": "https://archive.org/download/bub_gb_eLo7AAAAYAAJ/bub_gb_eLo7AAAAYAAJ_djvu.txt",
+    "download_url": "https://archive.org/download/bub_gb_eLo7AAAAYAAJ/bub_gb_eLo7AAAAYAAJ_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-of-john-newton-richard-cecil.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bub_gb_eLo7AAAAYAAJ/bub_gb_eLo7AAAAYAAJ_djvu.txt.",
+    "notes": "Public-domain biography of John Newton for grace, testimony, hymn background, and Christian living study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; hymn writer biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography of John Newton for grace, testimony, hymn background, and Christian living study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Hymn Writers and Testimonies",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn writer biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "hymn writer biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of John Newton",
+      "author": "Richard Cecil",
+      "category": "Biographies",
+      "collection": "Hymn Writers and Testimonies",
+      "badge": "Hymn Writers and Testimonies",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 228,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "00c07aaf04424443bb4f56824aa1de09a7f16cb87d9c818d2fc363e33c5cd89d",
+    "file_size_bytes": 279765,
+    "word_count": 51336
+  },
+  {
+    "title": "An Earnest Ministry",
+    "author": "John Angell James",
+    "year": 2026,
+    "category": "Preaching & Teaching",
+    "collection": "Pastoral Ministry",
+    "source_url": "https://archive.org/download/anearnestminist00jamegoog/anearnestminist00jamegoog_djvu.txt",
+    "download_url": "https://archive.org/download/anearnestminist00jamegoog/anearnestminist00jamegoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-earnest-ministry-john-angell-james.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/anearnestminist00jamegoog/anearnestminist00jamegoog_djvu.txt.",
+    "notes": "Public-domain pastoral ministry resource for preachers, teachers, and church workers. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; ministry counsel.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain pastoral ministry resource for preachers, teachers, and church workers. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Pastoral Ministry",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "ministry counsel"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "ministry counsel"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Earnest Ministry",
+      "author": "John Angell James",
+      "category": "Preaching & Teaching",
+      "collection": "Pastoral Ministry",
+      "badge": "Pastoral Ministry",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 447,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3433d57e67d106508626388333a702ff542b3dd57dc06c69e5f5ffc6458b0c3b",
+    "file_size_bytes": 575857,
+    "word_count": 100629
+  },
+  {
+    "title": "Christian Fellowship or The Church Member's Guide",
+    "author": "John Angell James",
+    "year": 2026,
+    "category": "Christian Living",
+    "collection": "Church Life",
+    "source_url": "https://archive.org/download/christianfellows00jame/christianfellows00jame_djvu.txt",
+    "download_url": "https://archive.org/download/christianfellows00jame/christianfellows00jame_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/christian-fellowship-or-the-church-member-s-guide-john-angell-james.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/christianfellows00jame/christianfellows00jame_djvu.txt.",
+    "notes": "Public-domain church life and fellowship resource for Christian living, membership, and discipleship study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; church membership.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain church life and fellowship resource for Christian living, membership, and discipleship study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Church Life",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "church membership"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "church membership"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christian Fellowship or The Church Member's Guide",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "collection": "Church Life",
+      "badge": "Church Life",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 258,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "abfeef922ba827c22a4634efec25da593e49c7c6cfcc1cb6cb8269fcd8795329",
+    "file_size_bytes": 383441,
+    "word_count": 57996
+  },
+  {
+    "title": "George Muller of Bristol",
+    "author": "Arthur T. Pierson",
+    "year": 2008,
+    "category": "Biographies",
+    "collection": "Prayer and Faith Biographies",
+    "source_url": "https://www.gutenberg.org/files/26522/26522.txt",
+    "download_url": "https://www.gutenberg.org/files/26522/26522.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/george-muller-of-bristol-arthur-t-pierson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/files/26522/26522.txt.",
+    "notes": "Public-domain missionary and prayer biography for faith, prayer, providence, and Christian living study. Preserve wording and cite source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; prayer biography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary and prayer biography for faith, prayer, providence, and Christian living study. Preserve wording and cite source when quoted.",
+    "resource_labels": [
+      "Prayer and Faith Biographies",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "prayer biography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "prayer biography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "George Muller of Bristol",
+      "author": "Arthur T. Pierson",
+      "category": "Biographies",
+      "collection": "Prayer and Faith Biographies",
+      "badge": "Prayer and Faith Biographies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 608,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "08bbe178d3b09e90a947284f8e18f569d20e7e66085df3deb5b47a2ad1eaa354",
+    "file_size_bytes": 787174,
+    "word_count": 136857
+  },
+  {
+    "title": "A Narrative of Some of the Lord's Dealings with George Muller First Part",
+    "author": "George Muller",
+    "year": 2011,
+    "category": "Biographies",
+    "collection": "Prayer and Faith Biographies",
+    "source_url": "https://www.gutenberg.org/files/37277/37277.txt",
+    "download_url": "https://www.gutenberg.org/files/37277/37277.txt",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-narrative-of-some-of-the-lord-s-dealings-with-george-muller-first-part-george-muller.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/files/37277/37277.txt.",
+    "notes": "Public-domain autobiographical testimony for prayer, faith, and providence study. Preserve wording and cite source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; autobiographical testimony.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain autobiographical testimony for prayer, faith, and providence study. Preserve wording and cite source when quoted.",
+    "resource_labels": [
+      "Prayer and Faith Biographies",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "autobiographical testimony"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "autobiographical testimony"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Narrative of Some of the Lord's Dealings with George Muller First Part",
+      "author": "George Muller",
+      "category": "Biographies",
+      "collection": "Prayer and Faith Biographies",
+      "badge": "Prayer and Faith Biographies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 468,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b768a476cd1d6043c8ec7fd830034a14cbcccf88d7d6c0b3cd1bee2fe7a152d2",
+    "file_size_bytes": 628865,
+    "word_count": 105271
+  },
+  {
+    "title": "The Baptist Church Directory",
+    "author": "Edward T. Hiscox",
+    "year": 1890,
+    "category": "Baptist History",
+    "collection": "Baptist Church Practice",
+    "source_url": "https://archive.org/download/baptistchurchdir01hisc/baptistchurchdir01hisc_djvu.txt",
+    "download_url": "https://archive.org/download/baptistchurchdir01hisc/baptistchurchdir01hisc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-baptist-church-directory-edward-t-hiscox.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/baptistchurchdir01hisc/baptistchurchdir01hisc_djvu.txt.",
+    "notes": "Public-domain Baptist church practice resource for church polity, ordinances, and Baptist identity study. Spot-check OCR before quotation. Labels/warnings: Use with discernment; OCR spot-check needed; Baptist polity and practice.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist church practice resource for church polity, ordinances, and Baptist identity study. Spot-check OCR before quotation.",
+    "resource_labels": [
+      "Baptist Church Practice",
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Baptist polity and practice"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check needed",
+      "Baptist polity and practice"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Baptist Church Directory",
+      "author": "Edward T. Hiscox",
+      "category": "Baptist History",
+      "collection": "Baptist Church Practice",
+      "badge": "Baptist Church Practice",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 286,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c8cd994b8981c181fb442425c45473ffd092ab7dda4795bf0f3e3b311e06a02b",
+    "file_size_bytes": 433890,
+    "word_count": 64270
   }
 ]
