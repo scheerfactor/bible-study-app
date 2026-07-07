@@ -41609,6 +41609,7 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       scope: "Metadata-only listings use website titles, graphics, and descriptions with official links.",
     },
   ].filter((item) => item.count > 0);
+  const activeMinistrySummary = ministrySourceSummaries.find((item) => item.ministry === activeMinistry);
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-6">
@@ -41659,6 +41660,24 @@ function LicensedResourceExplorer({ resources }: { resources: LicensedResourceLi
       </div>
 
       <div className="mt-5 rounded-2xl border border-[var(--line)] bg-[var(--warm)] p-4">
+        <div className="mb-4 flex flex-wrap items-start justify-between gap-3 rounded-2xl border border-[var(--line)] bg-white px-4 py-3">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Now browsing</p>
+            <h3 className="mt-1 text-lg font-semibold text-[var(--ink)]">{activeMinistrySummary?.ministry ?? "All official source links"}</h3>
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+              {activeMinistrySummary?.scope ?? "These cards open official ministry pages. Hosted books, audio, video, and paid app access stay separate unless broader written permission is documented."}
+            </p>
+          </div>
+          {activeMinistry !== "All" && (
+            <button
+              className="rounded-full border border-[var(--line)] bg-[var(--paper)] px-3 py-2 text-xs font-semibold text-[var(--green)]"
+              onClick={() => setActiveMinistry("All")}
+              type="button"
+            >
+              Show all sources
+            </button>
+          )}
+        </div>
         <div className="flex flex-wrap items-end gap-3">
           <label className="min-w-0 flex-1 text-sm font-semibold text-[var(--muted)]" htmlFor="licensed-resource-search">
             Search ministry links
@@ -41748,7 +41767,7 @@ function LicensedResourceLinkCard({ resource }: { resource: LicensedResourceLink
     <article className="flex h-full flex-col rounded-2xl border border-[var(--line)] bg-white p-4 shadow-sm">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Licensed link resource</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Official ministry link</p>
           <h3 className="mt-2 text-lg font-semibold leading-6 text-[var(--ink)]">{resource.title}</h3>
           <p className="mt-1 text-sm font-semibold text-[var(--green)]">{resource.author}</p>
         </div>
