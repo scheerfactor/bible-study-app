@@ -1,0 +1,422 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-content-phase-33.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "import_model": "storage_first_r2_manifest_metadata",
+  "generated_at": "2026-07-08T20:02:39.688Z",
+  "total_reviewed_rows": 26,
+  "imported_storage_entries": 26,
+  "missing_or_not_imported": 0,
+  "total_words": 3891916,
+  "total_file_size_bytes": 24186579,
+  "collections_added": {
+    "Spurgeon Collection": 9,
+    "Pulpit Commentary": 1,
+    "Baptist History": 3,
+    "Hymns and Worship": 2,
+    "Gaebelein Collection": 2,
+    "B. H. Carroll Collection": 1,
+    "KJV / English Bible History": 8
+  },
+  "entries": [
+    {
+      "title": "Spurgeon's Sermons - Vol. 7 - Metropolitan Tabernacle Pulpit",
+      "author": "Charles H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/SpurgeonMetropolitanPt07/Spurgeon-Metropolitan-pt07_djvu.txt",
+      "content_storage_path": "data/library/verified/spurgeon-s-sermons-vol-7-metropolitan-tabernacle-pulpit-charles-h-spurgeon.txt",
+      "word_count": 572632,
+      "file_size_bytes": 3157088,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/SpurgeonMetropolitanPt07/Spurgeon-Metropolitan-pt07_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.1256)",
+      "author": "H. D. M. Spence",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "source_url": "https://archive.org/download/in.ernet.dli.2015.1256/2015.1256.The-Pulpit-Commentary-1897_djvu.txt",
+      "content_storage_path": "data/library/verified/the-pulpit-commentary-1897-in-ernet-dli-2015-1256-h-d-m-spence.txt",
+      "word_count": 462281,
+      "file_size_bytes": 2608846,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/in.ernet.dli.2015.1256/2015.1256.The-Pulpit-Commentary-1897_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Meditations from the Pen of Mrs. Maria W. Stewart",
+      "author": "Maria W. Stewart",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "source_url": "https://archive.org/download/meditationsfromp00stew/meditationsfromp00stew_djvu.txt",
+      "content_storage_path": "data/library/verified/meditations-from-the-pen-of-mrs-maria-w-stewart-maria-w-stewart.txt",
+      "word_count": 33245,
+      "file_size_bytes": 209797,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/meditationsfromp00stew/meditationsfromp00stew_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The History of Negro Baptists in Mississippi",
+      "author": "Patrick H. Thompson",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "source_url": "https://archive.org/download/12642935.22778.emory.edu/12642935.22778.emory.edu_djvu.txt",
+      "content_storage_path": "data/library/verified/the-history-of-negro-baptists-in-mississippi-patrick-h-thompson.txt",
+      "word_count": 200781,
+      "file_size_bytes": 1354217,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/12642935.22778.emory.edu/12642935.22778.emory.edu_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "History of Coffee Creek Baptist Association",
+      "author": "Joshua C. Tibbets",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "source_url": "https://archive.org/download/historyofcoffeec00tibb/historyofcoffeec00tibb_djvu.txt",
+      "content_storage_path": "data/library/verified/history-of-coffee-creek-baptist-association-joshua-c-tibbets.txt",
+      "word_count": 41956,
+      "file_size_bytes": 289628,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofcoffeec00tibb/historyofcoffeec00tibb_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "author": "George Carter Needham and A. J. Gordon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/lifelaborsofchar00need/lifelaborsofchar00need_djvu.txt",
+      "content_storage_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham-and-a-j-gordon.txt",
+      "word_count": 229097,
+      "file_size_bytes": 1466762,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifelaborsofchar00need/lifelaborsofchar00need_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Charles Haddon Spurgeon",
+      "author": "James J. Ellis",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/charleshaddonspu00elli/charleshaddonspu00elli_djvu.txt",
+      "content_storage_path": "data/library/verified/charles-haddon-spurgeon-james-j-ellis.txt",
+      "word_count": 64794,
+      "file_size_bytes": 418066,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00elli/charleshaddonspu00elli_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Charles Haddon Spurgeon, Preacher, Author, Philanthropist",
+      "author": "G. Holden Pike",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/charleshaddonspu00pike/charleshaddonspu00pike_djvu.txt",
+      "content_storage_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-philanthropist-g-holden-pike.txt",
+      "word_count": 101411,
+      "file_size_bytes": 662680,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00pike/charleshaddonspu00pike_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Spurgeon's Gold",
+      "author": "C. H. Spurgeon and Edmond Hez Swem",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/spurgeonsgoldnew00spur/spurgeonsgoldnew00spur_djvu.txt",
+      "content_storage_path": "data/library/verified/spurgeon-s-gold-c-h-spurgeon-and-edmond-hez-swem.txt",
+      "word_count": 72128,
+      "file_size_bytes": 451077,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/spurgeonsgoldnew00spur/spurgeonsgoldnew00spur_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Letters of Charles Haddon Spurgeon",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/lettersofcharles00spur/lettersofcharles00spur_djvu.txt",
+      "content_storage_path": "data/library/verified/the-letters-of-charles-haddon-spurgeon-c-h-spurgeon.txt",
+      "word_count": 62383,
+      "file_size_bytes": 384779,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lettersofcharles00spur/lettersofcharles00spur_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Christian Hymn Book: A Compilation of Psalms, Hymns, and Spiritual Songs",
+      "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "source_url": "https://www.gutenberg.org/ebooks/46041",
+      "content_storage_path": "data/library/verified/the-christian-hymn-book-a-compilation-of-psalms-hymns-and-spiritual-songs-alexander-campbell-walter-scott-bart.txt",
+      "word_count": 180197,
+      "file_size_bytes": 1269511,
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/46041.",
+      "resource_warnings": [
+        "Historical hymnal",
+        "use with doctrinal discernment",
+        "Project Gutenberg terms"
+      ]
+    },
+    {
+      "title": "Handbook to the Mennonite Hymnary",
+      "author": "Lester Hostetler",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "source_url": "https://www.gutenberg.org/ebooks/54966",
+      "content_storage_path": "data/library/verified/handbook-to-the-mennonite-hymnary-lester-hostetler.txt",
+      "word_count": 175785,
+      "file_size_bytes": 1241570,
+      "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/54966.",
+      "resource_warnings": [
+        "Historical hymn background",
+        "not Baptist-specific",
+        "Project Gutenberg terms"
+      ]
+    },
+    {
+      "title": "Charles Haddon Spurgeon",
+      "author": "A. Cunningham Burley",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/charleshaddonspu00burl/charleshaddonspu00burl_djvu.txt",
+      "content_storage_path": "data/library/verified/charles-haddon-spurgeon-a-cunningham-burley.txt",
+      "word_count": 3970,
+      "file_size_bytes": 27714,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00burl/charleshaddonspu00burl_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Essex Lad Who Became England's Greatest Preacher",
+      "author": "Joseph Manton Smith",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/essexladwhobecam00smit/essexladwhobecam00smit_djvu.txt",
+      "content_storage_path": "data/library/verified/the-essex-lad-who-became-england-s-greatest-preacher-joseph-manton-smith.txt",
+      "word_count": 41458,
+      "file_size_bytes": 264046,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/essexladwhobecam00smit/essexladwhobecam00smit_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Poems and Prose with Anecdotes of C. H. Spurgeon",
+      "author": "Joseph A. Gwyer",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "source_url": "https://archive.org/download/poemsprosewithsh00gwye/poemsprosewithsh00gwye_djvu.txt",
+      "content_storage_path": "data/library/verified/poems-and-prose-with-anecdotes-of-c-h-spurgeon-joseph-a-gwyer.txt",
+      "word_count": 87955,
+      "file_size_bytes": 582207,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poemsprosewithsh00gwye/poemsprosewithsh00gwye_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Gospel of Matthew: An Exposition, Volume I",
+      "author": "A. C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "source_url": "https://archive.org/download/bwb_P9-BVJ-779_1/bwb_P9-BVJ-779_1_djvu.txt",
+      "content_storage_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-i-a-c-gaebelein.txt",
+      "word_count": 203960,
+      "file_size_bytes": 1124300,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bwb_P9-BVJ-779_1/bwb_P9-BVJ-779_1_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Jewish Question",
+      "author": "A. C. Gaebelein",
+      "category": "Preaching & Teaching",
+      "collection": "Gaebelein Collection",
+      "source_url": "https://archive.org/download/jewishquestion0000acga_r5c8/jewishquestion0000acga_r5c8_djvu.txt",
+      "content_storage_path": "data/library/verified/the-jewish-question-a-c-gaebelein.txt",
+      "word_count": 29357,
+      "file_size_bytes": 167253,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/jewishquestion0000acga_r5c8/jewishquestion0000acga_r5c8_djvu.txt.",
+      "resource_warnings": [
+        "Historical",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Book of Exodus and Leviticus",
+      "author": "B. H. Carroll",
+      "category": "Commentaries",
+      "collection": "B. H. Carroll Collection",
+      "source_url": "https://archive.org/download/bookofexoduslevi0000bhca/bookofexoduslevi0000bhca_djvu.txt",
+      "content_storage_path": "data/library/verified/the-book-of-exodus-and-leviticus-b-h-carroll.txt",
+      "word_count": 141721,
+      "file_size_bytes": 792308,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bookofexoduslevi0000bhca/bookofexoduslevi0000bhca_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Revision Revised",
+      "author": "John William Burgon",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/a549037300burguoft/a549037300burguoft.txt",
+      "content_storage_path": "data/library/verified/the-revision-revised-john-william-burgon.txt",
+      "word_count": 205582,
+      "file_size_bytes": 1272484,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/a549037300burguoft/a549037300burguoft.txt.",
+      "resource_warnings": [
+        "Historical textual criticism",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Causes of the Corruption of the Traditional Text of the Holy Gospels",
+      "author": "John William Burgon and Edward Miller",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/a549022500burguoft/a549022500burguoft.txt",
+      "content_storage_path": "data/library/verified/the-causes-of-the-corruption-of-the-traditional-text-of-the-holy-gospels-john-william-burgon-and-edward-miller.txt",
+      "word_count": 101909,
+      "file_size_bytes": 616067,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/a549022500burguoft/a549022500burguoft.txt.",
+      "resource_warnings": [
+        "Historical textual criticism",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "William Tyndale: A Biography",
+      "author": "R. Demaus",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/williamtyndalebi00dema/williamtyndalebi00dema_djvu.txt",
+      "content_storage_path": "data/library/verified/william-tyndale-a-biography-r-demaus.txt",
+      "word_count": 186464,
+      "file_size_bytes": 1248353,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/williamtyndalebi00dema/williamtyndalebi00dema_djvu.txt.",
+      "resource_warnings": [
+        "Use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Authorized Edition of the English Bible (1611)",
+      "author": "F. H. A. Scrivener",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/authorizedbible00scriuoft/authorizedbible00scriuoft_djvu.txt",
+      "content_storage_path": "data/library/verified/the-authorized-edition-of-the-english-bible-1611-f-h-a-scrivener.txt",
+      "word_count": 114792,
+      "file_size_bytes": 767341,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/authorizedbible00scriuoft/authorizedbible00scriuoft_djvu.txt.",
+      "resource_warnings": [
+        "Historical textual study",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The English Bible, Volume 1",
+      "author": "John Eadie",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/englishbibleexte01eadi/englishbibleexte01eadi_djvu.txt",
+      "content_storage_path": "data/library/verified/the-english-bible-volume-1-john-eadie.txt",
+      "word_count": 170572,
+      "file_size_bytes": 1135519,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/englishbibleexte01eadi/englishbibleexte01eadi_djvu.txt.",
+      "resource_warnings": [
+        "Historical",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The Bible Word-Book",
+      "author": "J. Eastwood and W. Aldis Wright",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/biblewordbookag00wriggoog/biblewordbookag00wriggoog_djvu.txt",
+      "content_storage_path": "data/library/verified/the-bible-word-book-j-eastwood-and-w-aldis-wright.txt",
+      "word_count": 165989,
+      "file_size_bytes": 1090118,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblewordbookag00wriggoog/biblewordbookag00wriggoog_djvu.txt.",
+      "resource_warnings": [
+        "Historical glossary",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "The History of the English Bible",
+      "author": "Blackford Condit",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/cu31924029271919/cu31924029271919_djvu.txt",
+      "content_storage_path": "data/library/verified/the-history-of-the-english-bible-blackford-condit.txt",
+      "word_count": 177131,
+      "file_size_bytes": 1186342,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029271919/cu31924029271919_djvu.txt.",
+      "resource_warnings": [
+        "Historical",
+        "use with discernment",
+        "OCR spot-check"
+      ]
+    },
+    {
+      "title": "Hebraisms in the Authorized Version of the Bible",
+      "author": "William Rosenau",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "source_url": "https://archive.org/download/hebraismsinautho00roserich/hebraismsinautho00roserich_djvu.txt",
+      "content_storage_path": "data/library/verified/hebraisms-in-the-authorized-version-of-the-bible-william-rosenau.txt",
+      "word_count": 64366,
+      "file_size_bytes": 398506,
+      "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/hebraismsinautho00roserich/hebraismsinautho00roserich_djvu.txt.",
+      "resource_warnings": [
+        "Historical language study",
+        "OCR spot-check"
+      ]
+    }
+  ],
+  "missing_rows": []
+}

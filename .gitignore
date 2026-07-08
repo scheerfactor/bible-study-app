@@ -28,6 +28,7 @@ data/commentary/**/source/*.ZIP
 data/commentary/**/source/*.zip
 data/sources/tsk/metav/
 data/staging/
+.storage-import-work/
 data/strongs/source/
 data/strongs/mapping-staging/*.json
 data/strongs/kjv-strongs-mappings.reviewed.json

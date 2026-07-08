@@ -74851,5 +74851,1269 @@
     "checksum_sha256": "ba376f5d93d178f03fdd822275238b8ab27376f9d0f99e14c52cc30c3ee87e23",
     "file_size_bytes": 1815,
     "word_count": 256
+  },
+  {
+    "title": "Meditations from the Pen of Mrs. Maria W. Stewart",
+    "author": "Maria W. Stewart",
+    "year": 1879,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/meditationsfromp00stew/meditationsfromp00stew_djvu.txt",
+    "download_url": "https://archive.org/download/meditationsfromp00stew/meditationsfromp00stew_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/meditations-from-the-pen-of-mrs-maria-w-stewart-maria-w-stewart.txt",
+    "content_storage_path": "data/library/verified/meditations-from-the-pen-of-mrs-maria-w-stewart-maria-w-stewart.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/meditationsfromp00stew/meditationsfromp00stew_djvu.txt.",
+    "notes": "Public-domain Baptist-history and devotional-historical resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist-history and devotional-historical resource for research, teaching context, and historical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Meditations from the Pen of Mrs. Maria W. Stewart",
+      "author": "Maria W. Stewart",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 148,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1b37514d439f8e1177118b5c5fe6f36a124d414fc9594fdb570ee8d07ab79db9",
+    "file_size_bytes": 209797,
+    "word_count": 33245
+  },
+  {
+    "title": "The History of Negro Baptists in Mississippi",
+    "author": "Patrick H. Thompson",
+    "year": 1898,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/12642935.22778.emory.edu/12642935.22778.emory.edu_djvu.txt",
+    "download_url": "https://archive.org/download/12642935.22778.emory.edu/12642935.22778.emory.edu_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-history-of-negro-baptists-in-mississippi-patrick-h-thompson.txt",
+    "content_storage_path": "data/library/verified/the-history-of-negro-baptists-in-mississippi-patrick-h-thompson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/12642935.22778.emory.edu/12642935.22778.emory.edu_djvu.txt.",
+    "notes": "Public-domain Baptist-history resource for research, teaching context, missions history, and historical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist-history resource for research, teaching context, missions history, and historical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of Negro Baptists in Mississippi",
+      "author": "Patrick H. Thompson",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 892,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "134cf1a26e52dbf1d41fab55897fc87ff5ebc0fce23452352b2bf836562505d5",
+    "file_size_bytes": 1354217,
+    "word_count": 200781
+  },
+  {
+    "title": "History of Coffee Creek Baptist Association",
+    "author": "Joshua C. Tibbets",
+    "year": 1883,
+    "category": "Baptist History",
+    "collection": "Baptist History",
+    "source_url": "https://archive.org/download/historyofcoffeec00tibb/historyofcoffeec00tibb_djvu.txt",
+    "download_url": "https://archive.org/download/historyofcoffeec00tibb/historyofcoffeec00tibb_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/history-of-coffee-creek-baptist-association-joshua-c-tibbets.txt",
+    "content_storage_path": "data/library/verified/history-of-coffee-creek-baptist-association-joshua-c-tibbets.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofcoffeec00tibb/historyofcoffeec00tibb_djvu.txt.",
+    "notes": "Public-domain Baptist-history resource for local church history, biographical sketches, and teaching context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist-history resource for local church history, biographical sketches, and teaching context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of Coffee Creek Baptist Association",
+      "author": "Joshua C. Tibbets",
+      "category": "Baptist History",
+      "collection": "Baptist History",
+      "badge": "Baptist History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 186,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d5e4d466a33da12d631306cabdaaa7b1ca4104432b6af954b55c2b88a8f928f7",
+    "file_size_bytes": 289628,
+    "word_count": 41956
+  },
+  {
+    "title": "The Life and Labors of Charles H. Spurgeon",
+    "author": "George Carter Needham and A. J. Gordon",
+    "year": 1887,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/lifelaborsofchar00need/lifelaborsofchar00need_djvu.txt",
+    "download_url": "https://archive.org/download/lifelaborsofchar00need/lifelaborsofchar00need_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham-and-a-j-gordon.txt",
+    "content_storage_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham-and-a-j-gordon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifelaborsofchar00need/lifelaborsofchar00need_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "author": "George Carter Needham and A. J. Gordon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1018,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c026a8e0b18c199b10aa3dd6a7539b4756896c4426b88aec8f3e5bfb1567068e",
+    "file_size_bytes": 1466762,
+    "word_count": 229097
+  },
+  {
+    "title": "Charles Haddon Spurgeon",
+    "author": "James J. Ellis",
+    "year": 1890,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/charleshaddonspu00elli/charleshaddonspu00elli_djvu.txt",
+    "download_url": "https://archive.org/download/charleshaddonspu00elli/charleshaddonspu00elli_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-haddon-spurgeon-james-j-ellis.txt",
+    "content_storage_path": "data/library/verified/charles-haddon-spurgeon-james-j-ellis.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00elli/charleshaddonspu00elli_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles Haddon Spurgeon",
+      "author": "James J. Ellis",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 288,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ca039e72d95ddc02a1e3e01590180cc4036a963831ea3a28000f9e5be86f0dc5",
+    "file_size_bytes": 418066,
+    "word_count": 64794
+  },
+  {
+    "title": "Charles Haddon Spurgeon, Preacher, Author, Philanthropist",
+    "author": "G. Holden Pike",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/charleshaddonspu00pike/charleshaddonspu00pike_djvu.txt",
+    "download_url": "https://archive.org/download/charleshaddonspu00pike/charleshaddonspu00pike_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-philanthropist-g-holden-pike.txt",
+    "content_storage_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-philanthropist-g-holden-pike.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00pike/charleshaddonspu00pike_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography and anecdotal resource for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography and anecdotal resource for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles Haddon Spurgeon, Preacher, Author, Philanthropist",
+      "author": "G. Holden Pike",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 451,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "63dc98b03c4532352f304bc794258d7d75d7aa6c3ad3f31a6c28046a05e236ac",
+    "file_size_bytes": 662680,
+    "word_count": 101411
+  },
+  {
+    "title": "Spurgeon's Gold",
+    "author": "C. H. Spurgeon and Edmond Hez Swem",
+    "year": 1888,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/spurgeonsgoldnew00spur/spurgeonsgoldnew00spur_djvu.txt",
+    "download_url": "https://archive.org/download/spurgeonsgoldnew00spur/spurgeonsgoldnew00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/spurgeon-s-gold-c-h-spurgeon-and-edmond-hez-swem.txt",
+    "content_storage_path": "data/library/verified/spurgeon-s-gold-c-h-spurgeon-and-edmond-hez-swem.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/spurgeonsgoldnew00spur/spurgeonsgoldnew00spur_djvu.txt.",
+    "notes": "Public-domain selections from Spurgeon for preaching, devotion, and quote research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain selections from Spurgeon for preaching, devotion, and quote research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Spurgeon's Gold",
+      "author": "C. H. Spurgeon and Edmond Hez Swem",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 321,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "efbc03f477076d5999704f85707c1f88fad584ddbdc44ff1ac4620f9bcad2a75",
+    "file_size_bytes": 451077,
+    "word_count": 72128
+  },
+  {
+    "title": "The Letters of Charles Haddon Spurgeon",
+    "author": "C. H. Spurgeon",
+    "year": 1898,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/lettersofcharles00spur/lettersofcharles00spur_djvu.txt",
+    "download_url": "https://archive.org/download/lettersofcharles00spur/lettersofcharles00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-letters-of-charles-haddon-spurgeon-c-h-spurgeon.txt",
+    "content_storage_path": "data/library/verified/the-letters-of-charles-haddon-spurgeon-c-h-spurgeon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lettersofcharles00spur/lettersofcharles00spur_djvu.txt.",
+    "notes": "Public-domain Spurgeon letters for biography, pastoral tone, quote research, and ministry history. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon letters for biography, pastoral tone, quote research, and ministry history. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Letters of Charles Haddon Spurgeon",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 277,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "df85e58fb8fad314e8edfb93e22eb7c42deb56b43d1354794ae7475fc523e748",
+    "file_size_bytes": 384779,
+    "word_count": 62383
+  },
+  {
+    "title": "The Christian Hymn Book: A Compilation of Psalms, Hymns, and Spiritual Songs",
+    "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+    "year": 1865,
+    "category": "Christian Living",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/46041",
+    "download_url": "https://www.gutenberg.org/ebooks/46041.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-christian-hymn-book-a-compilation-of-psalms-hymns-and-spiritual-songs-alexander-campbell-walter-scott-bart.txt",
+    "content_storage_path": "data/library/verified/the-christian-hymn-book-a-compilation-of-psalms-hymns-and-spiritual-songs-alexander-campbell-walter-scott-bart.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/46041.",
+    "notes": "Use as a public-domain hymn text and worship-history reference. Not a Baptist doctrinal source; review individual hymns before recommendation. Labels/warnings: Historical hymnal; use with doctrinal discernment;Project Gutenberg terms.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use as a public-domain hymn text and worship-history reference. Not a Baptist doctrinal source; review individual hymns before recommendation.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymnal",
+      "use with doctrinal discernment",
+      "Project Gutenberg terms"
+    ],
+    "resource_warnings": [
+      "Historical hymnal",
+      "use with doctrinal discernment",
+      "Project Gutenberg terms"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Christian Hymn Book: A Compilation of Psalms, Hymns, and Spiritual Songs",
+      "author": "Alexander Campbell; Walter Scott; Barton W. Stone; J. T. Johnson",
+      "category": "Christian Living",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 801,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "dbea853cc7e6c722e52d57f07872907489a0f1504d1637030d48b0e846d1d2a5",
+    "file_size_bytes": 1269511,
+    "word_count": 180197
+  },
+  {
+    "title": "Handbook to the Mennonite Hymnary",
+    "author": "Lester Hostetler",
+    "year": 1949,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/54966",
+    "download_url": "https://www.gutenberg.org/ebooks/54966.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/handbook-to-the-mennonite-hymnary-lester-hostetler.txt",
+    "content_storage_path": "data/library/verified/handbook-to-the-mennonite-hymnary-lester-hostetler.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/54966.",
+    "notes": "Use for hymn background, author notes, worship history, and sermon illustration research. Not a Baptist doctrinal source; review individual notes before recommendation. Labels/warnings: Historical hymn background; not Baptist-specific;Project Gutenberg terms.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Use for hymn background, author notes, worship history, and sermon illustration research. Not a Baptist doctrinal source; review individual notes before recommendation.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical hymn background",
+      "not Baptist-specific",
+      "Project Gutenberg terms"
+    ],
+    "resource_warnings": [
+      "Historical hymn background",
+      "not Baptist-specific",
+      "Project Gutenberg terms"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Handbook to the Mennonite Hymnary",
+      "author": "Lester Hostetler",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 781,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f8c42f30e7e418b38e8c0a3baa8379b3aee8457595731b152779a0dad501fbcc",
+    "file_size_bytes": 1241570,
+    "word_count": 175785
+  },
+  {
+    "title": "Charles Haddon Spurgeon",
+    "author": "A. Cunningham Burley",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/charleshaddonspu00burl/charleshaddonspu00burl_djvu.txt",
+    "download_url": "https://archive.org/download/charleshaddonspu00burl/charleshaddonspu00burl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-haddon-spurgeon-a-cunningham-burley.txt",
+    "content_storage_path": "data/library/verified/charles-haddon-spurgeon-a-cunningham-burley.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu00burl/charleshaddonspu00burl_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography for preacher biography, illustrations, and sermon context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles Haddon Spurgeon",
+      "author": "A. Cunningham Burley",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 18,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d40697edbbd29f7165af0892e281294e69c20b6e5a7415618af606267e59a0e5",
+    "file_size_bytes": 27714,
+    "word_count": 3970
+  },
+  {
+    "title": "The Essex Lad Who Became England's Greatest Preacher",
+    "author": "Joseph Manton Smith",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/essexladwhobecam00smit/essexladwhobecam00smit_djvu.txt",
+    "download_url": "https://archive.org/download/essexladwhobecam00smit/essexladwhobecam00smit_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-essex-lad-who-became-england-s-greatest-preacher-joseph-manton-smith.txt",
+    "content_storage_path": "data/library/verified/the-essex-lad-who-became-england-s-greatest-preacher-joseph-manton-smith.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/essexladwhobecam00smit/essexladwhobecam00smit_djvu.txt.",
+    "notes": "Public-domain young-reader Spurgeon biography for illustrations, biography, and devotional teaching. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain young-reader Spurgeon biography for illustrations, biography, and devotional teaching. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Essex Lad Who Became England's Greatest Preacher",
+      "author": "Joseph Manton Smith",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 184,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1d1686df94653ab209c77d8e6860035ce27aab9be9b8cde550f18e5679e81add",
+    "file_size_bytes": 264046,
+    "word_count": 41458
+  },
+  {
+    "title": "Poems and Prose with Anecdotes of C. H. Spurgeon",
+    "author": "Joseph A. Gwyer",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/poemsprosewithsh00gwye/poemsprosewithsh00gwye_djvu.txt",
+    "download_url": "https://archive.org/download/poemsprosewithsh00gwye/poemsprosewithsh00gwye_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/poems-and-prose-with-anecdotes-of-c-h-spurgeon-joseph-a-gwyer.txt",
+    "content_storage_path": "data/library/verified/poems-and-prose-with-anecdotes-of-c-h-spurgeon-joseph-a-gwyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poemsprosewithsh00gwye/poemsprosewithsh00gwye_djvu.txt.",
+    "notes": "Public-domain poetry, prose, and Spurgeon anecdote resource for sermon illustrations and historical reading. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain poetry, prose, and Spurgeon anecdote resource for sermon illustrations and historical reading. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Poems and Prose with Anecdotes of C. H. Spurgeon",
+      "author": "Joseph A. Gwyer",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 391,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "193d6cef199827c2ccff9697085acc1f138e3706eaea2b5338f91cdba369cf29",
+    "file_size_bytes": 582207,
+    "word_count": 87955
+  },
+  {
+    "title": "The Gospel of Matthew: An Exposition, Volume I",
+    "author": "A. C. Gaebelein",
+    "year": 1910,
+    "category": "Commentaries",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/bwb_P9-BVJ-779_1/bwb_P9-BVJ-779_1_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_P9-BVJ-779_1/bwb_P9-BVJ-779_1_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-i-a-c-gaebelein.txt",
+    "content_storage_path": "data/library/verified/the-gospel-of-matthew-an-exposition-volume-i-a-c-gaebelein.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bwb_P9-BVJ-779_1/bwb_P9-BVJ-779_1_djvu.txt.",
+    "notes": "Public-domain Matthew commentary for Gospel study, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Matthew commentary for Gospel study, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel of Matthew: An Exposition, Volume I",
+      "author": "A. C. Gaebelein",
+      "category": "Commentaries",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 906,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dd67779a6e95e5556fef5ef0375b852e3213bf03da9731489e80ca585b55a3d8",
+    "file_size_bytes": 1124300,
+    "word_count": 203960
+  },
+  {
+    "title": "The Jewish Question",
+    "author": "A. C. Gaebelein",
+    "year": 1912,
+    "category": "Preaching & Teaching",
+    "collection": "Gaebelein Collection",
+    "source_url": "https://archive.org/download/jewishquestion0000acga_r5c8/jewishquestion0000acga_r5c8_djvu.txt",
+    "download_url": "https://archive.org/download/jewishquestion0000acga_r5c8/jewishquestion0000acga_r5c8_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-jewish-question-a-c-gaebelein.txt",
+    "content_storage_path": "data/library/verified/the-jewish-question-a-c-gaebelein.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/jewishquestion0000acga_r5c8/jewishquestion0000acga_r5c8_djvu.txt.",
+    "notes": "Public-domain historical and prophetic study resource. Use with context and compare with Scripture. OCR text should be spot-checked before quotation. Labels/warnings: Historical; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical and prophetic study resource. Use with context and compare with Scripture. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Gaebelein Collection",
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Jewish Question",
+      "author": "A. C. Gaebelein",
+      "category": "Preaching & Teaching",
+      "collection": "Gaebelein Collection",
+      "badge": "Gaebelein Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 130,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "96bf20e0055532cabf4744f183b7828c69c76353e737e228b8a6d265c5775eef",
+    "file_size_bytes": 167253,
+    "word_count": 29357
+  },
+  {
+    "title": "The Book of Exodus and Leviticus",
+    "author": "B. H. Carroll",
+    "year": 1913,
+    "category": "Commentaries",
+    "collection": "B. H. Carroll Collection",
+    "source_url": "https://archive.org/download/bookofexoduslevi0000bhca/bookofexoduslevi0000bhca_djvu.txt",
+    "download_url": "https://archive.org/download/bookofexoduslevi0000bhca/bookofexoduslevi0000bhca_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-book-of-exodus-and-leviticus-b-h-carroll.txt",
+    "content_storage_path": "data/library/verified/the-book-of-exodus-and-leviticus-b-h-carroll.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bookofexoduslevi0000bhca/bookofexoduslevi0000bhca_djvu.txt.",
+    "notes": "Public-domain Baptist commentary resource for Pentateuch study, teaching preparation, and sermon background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary resource for Pentateuch study, teaching preparation, and sermon background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "B. H. Carroll Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Book of Exodus and Leviticus",
+      "author": "B. H. Carroll",
+      "category": "Commentaries",
+      "collection": "B. H. Carroll Collection",
+      "badge": "B. H. Carroll Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 630,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "13f5ededa7d35344f147f78b31fc716a43af51709861e2d02932b83c779fe6bf",
+    "file_size_bytes": 792308,
+    "word_count": 141721
+  },
+  {
+    "title": "William Tyndale: A Biography",
+    "author": "R. Demaus",
+    "year": 1886,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/williamtyndalebi00dema/williamtyndalebi00dema_djvu.txt",
+    "download_url": "https://archive.org/download/williamtyndalebi00dema/williamtyndalebi00dema_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/william-tyndale-a-biography-r-demaus.txt",
+    "content_storage_path": "data/library/verified/william-tyndale-a-biography-r-demaus.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/williamtyndalebi00dema/williamtyndalebi00dema_djvu.txt.",
+    "notes": "Public-domain English Bible history and biography resource for Bible translation history, teaching, and KJV background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history and biography resource for Bible translation history, teaching, and KJV background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "William Tyndale: A Biography",
+      "author": "R. Demaus",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 829,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bb5ba85aa193f299bd1f7a03806291e22606a5889037c040a95521633a55c286",
+    "file_size_bytes": 1248353,
+    "word_count": 186464
+  },
+  {
+    "title": "The Authorized Edition of the English Bible (1611)",
+    "author": "F. H. A. Scrivener",
+    "year": 1884,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/authorizedbible00scriuoft/authorizedbible00scriuoft_djvu.txt",
+    "download_url": "https://archive.org/download/authorizedbible00scriuoft/authorizedbible00scriuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-authorized-edition-of-the-english-bible-1611-f-h-a-scrivener.txt",
+    "content_storage_path": "data/library/verified/the-authorized-edition-of-the-english-bible-1611-f-h-a-scrivener.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/authorizedbible00scriuoft/authorizedbible00scriuoft_djvu.txt.",
+    "notes": "Public-domain KJV history resource for Authorized Version printing history, English Bible study, and textual background. OCR text should be spot-checked before quotation. Labels/warnings: Historical textual study; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain KJV history resource for Authorized Version printing history, English Bible study, and textual background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical textual study",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical textual study",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Authorized Edition of the English Bible (1611)",
+      "author": "F. H. A. Scrivener",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 510,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c1126b7bb4f13eeaa6b58e478dd109ee8865f7467d653b45de049fda19e23a0b",
+    "file_size_bytes": 767341,
+    "word_count": 114792
+  },
+  {
+    "title": "The English Bible, Volume 1",
+    "author": "John Eadie",
+    "year": 1876,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/englishbibleexte01eadi/englishbibleexte01eadi_djvu.txt",
+    "download_url": "https://archive.org/download/englishbibleexte01eadi/englishbibleexte01eadi_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-english-bible-volume-1-john-eadie.txt",
+    "content_storage_path": "data/library/verified/the-english-bible-volume-1-john-eadie.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/englishbibleexte01eadi/englishbibleexte01eadi_djvu.txt.",
+    "notes": "Public-domain English Bible history resource for translation history and KJV background. OCR text should be spot-checked before quotation. Labels/warnings: Historical; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history resource for translation history and KJV background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The English Bible, Volume 1",
+      "author": "John Eadie",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 758,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6877bf5cd665a248ac1094f8323e7635f46000fd5f5b5f45ebd19c390843c5db",
+    "file_size_bytes": 1135519,
+    "word_count": 170572
+  },
+  {
+    "title": "The Bible Word-Book",
+    "author": "J. Eastwood and W. Aldis Wright",
+    "year": 1884,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/biblewordbookag00wriggoog/biblewordbookag00wriggoog_djvu.txt",
+    "download_url": "https://archive.org/download/biblewordbookag00wriggoog/biblewordbookag00wriggoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-word-book-j-eastwood-and-w-aldis-wright.txt",
+    "content_storage_path": "data/library/verified/the-bible-word-book-j-eastwood-and-w-aldis-wright.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblewordbookag00wriggoog/biblewordbookag00wriggoog_djvu.txt.",
+    "notes": "Public-domain glossary of old English Bible words for KJV reading help, Bible word study, and teaching context. OCR text should be spot-checked before quotation. Labels/warnings: Historical glossary; OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain glossary of old English Bible words for KJV reading help, Bible word study, and teaching context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical glossary",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical glossary",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible Word-Book",
+      "author": "J. Eastwood and W. Aldis Wright",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 738,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "80dfcdacb7fb599addd04e0eaa22de734cde2075a9dde1ab0e0ce5f4e3b5e70b",
+    "file_size_bytes": 1090118,
+    "word_count": 165989
+  },
+  {
+    "title": "The History of the English Bible",
+    "author": "Blackford Condit",
+    "year": 1882,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/cu31924029271919/cu31924029271919_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029271919/cu31924029271919_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-history-of-the-english-bible-blackford-condit.txt",
+    "content_storage_path": "data/library/verified/the-history-of-the-english-bible-blackford-condit.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029271919/cu31924029271919_djvu.txt.",
+    "notes": "Public-domain English Bible history resource for Bible translation history, Protestant background, and KJV study. OCR text should be spot-checked before quotation. Labels/warnings: Historical; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history resource for Bible translation history, Protestant background, and KJV study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The History of the English Bible",
+      "author": "Blackford Condit",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 787,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "65dc023945d5b90890172dcab1bf69bce890c723ab8783d2ef63256e82bb7c4a",
+    "file_size_bytes": 1186342,
+    "word_count": 177131
+  },
+  {
+    "title": "Hebraisms in the Authorized Version of the Bible",
+    "author": "William Rosenau",
+    "year": 1902,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/hebraismsinautho00roserich/hebraismsinautho00roserich_djvu.txt",
+    "download_url": "https://archive.org/download/hebraismsinautho00roserich/hebraismsinautho00roserich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hebraisms-in-the-authorized-version-of-the-bible-william-rosenau.txt",
+    "content_storage_path": "data/library/verified/hebraisms-in-the-authorized-version-of-the-bible-william-rosenau.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/hebraismsinautho00roserich/hebraismsinautho00roserich_djvu.txt.",
+    "notes": "Public-domain KJV language resource for understanding Hebrew idioms in the Authorized Version. OCR text should be spot-checked before quotation. Labels/warnings: Historical language study; OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain KJV language resource for understanding Hebrew idioms in the Authorized Version. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical language study",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical language study",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hebraisms in the Authorized Version of the Bible",
+      "author": "William Rosenau",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 286,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2598cc9c4dc09cafd05e1919ac79df6f74524b14925b048802e75d10b7cf8fb1",
+    "file_size_bytes": 398506,
+    "word_count": 64366
+  },
+  {
+    "title": "Spurgeon's Sermons - Vol. 7 - Metropolitan Tabernacle Pulpit",
+    "author": "Charles H. Spurgeon",
+    "year": 1861,
+    "category": "Commentaries",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/SpurgeonMetropolitanPt07/Spurgeon-Metropolitan-pt07_djvu.txt",
+    "download_url": "https://archive.org/download/SpurgeonMetropolitanPt07/Spurgeon-Metropolitan-pt07_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/spurgeon-s-sermons-vol-7-metropolitan-tabernacle-pulpit-charles-h-spurgeon.txt",
+    "content_storage_path": "data/library/verified/spurgeon-s-sermons-vol-7-metropolitan-tabernacle-pulpit-charles-h-spurgeon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/SpurgeonMetropolitanPt07/Spurgeon-Metropolitan-pt07_djvu.txt.",
+    "notes": "Public-domain sermon and homiletical resource for preaching preparation, illustration research, devotional reading, and sermon comparison. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon and homiletical resource for preaching preparation, illustration research, devotional reading, and sermon comparison. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Spurgeon's Sermons - Vol. 7 - Metropolitan Tabernacle Pulpit",
+      "author": "Charles H. Spurgeon",
+      "category": "Commentaries",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2545,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d983bc4ed1b81d5ed921cac064581d055ce604aa1c2c4aabfd3a2405d1694512",
+    "file_size_bytes": 3157088,
+    "word_count": 572632
+  },
+  {
+    "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.1256)",
+    "author": "H. D. M. Spence",
+    "year": 1897,
+    "category": "Commentaries",
+    "collection": "Pulpit Commentary",
+    "source_url": "https://archive.org/download/in.ernet.dli.2015.1256/2015.1256.The-Pulpit-Commentary-1897_djvu.txt",
+    "download_url": "https://archive.org/download/in.ernet.dli.2015.1256/2015.1256.The-Pulpit-Commentary-1897_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-pulpit-commentary-1897-in-ernet-dli-2015-1256-h-d-m-spence.txt",
+    "content_storage_path": "data/library/verified/the-pulpit-commentary-1897-in-ernet-dli-2015-1256-h-d-m-spence.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/in.ernet.dli.2015.1256/2015.1256.The-Pulpit-Commentary-1897_djvu.txt.",
+    "notes": "Public-domain commentary and homiletical reference for Bible study and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain commentary and homiletical reference for Bible study and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Pulpit Commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.1256)",
+      "author": "H. D. M. Spence",
+      "category": "Commentaries",
+      "collection": "Pulpit Commentary",
+      "badge": "Pulpit Commentary",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2055,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "cedb663b54e17c306c329386776550db71254682e7d9b1c2334511bc05379e25",
+    "file_size_bytes": 2608846,
+    "word_count": 462281
+  },
+  {
+    "title": "The Revision Revised",
+    "author": "John William Burgon",
+    "year": 1883,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/a549037300burguoft/a549037300burguoft.txt",
+    "download_url": "https://archive.org/download/a549037300burguoft/a549037300burguoft.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-revision-revised-john-william-burgon.txt",
+    "content_storage_path": "data/library/verified/the-revision-revised-john-william-burgon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/a549037300burguoft/a549037300burguoft.txt.",
+    "notes": "Public-domain English Bible and textual-history resource for KJV/textual issue research. OCR text should be spot-checked before quotation. Labels/warnings: Historical textual criticism; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible and textual-history resource for KJV/textual issue research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical textual criticism",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical textual criticism",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Revision Revised",
+      "author": "John William Burgon",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 914,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "32fa54db88f454ef6557653afc278556940781f4e783a8d6f2056d394481ca4a",
+    "file_size_bytes": 1272484,
+    "word_count": 205582
+  },
+  {
+    "title": "The Causes of the Corruption of the Traditional Text of the Holy Gospels",
+    "author": "John William Burgon and Edward Miller",
+    "year": 1896,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/a549022500burguoft/a549022500burguoft.txt",
+    "download_url": "https://archive.org/download/a549022500burguoft/a549022500burguoft.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-causes-of-the-corruption-of-the-traditional-text-of-the-holy-gospels-john-william-burgon-and-edward-miller.txt",
+    "content_storage_path": "data/library/verified/the-causes-of-the-corruption-of-the-traditional-text-of-the-holy-gospels-john-william-burgon-and-edward-miller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/a549022500burguoft/a549022500burguoft.txt.",
+    "notes": "Public-domain textual-history resource for KJV/textual issue research. OCR text should be spot-checked before quotation. Labels/warnings: Historical textual criticism; use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain textual-history resource for KJV/textual issue research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Historical textual criticism",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical textual criticism",
+      "use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Causes of the Corruption of the Traditional Text of the Holy Gospels",
+      "author": "John William Burgon and Edward Miller",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 453,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e07af5fc407e63114664885badd6dedf7441f551a3be8c7f25667b8362b51ce8",
+    "file_size_bytes": 616067,
+    "word_count": 101909
   }
 ]

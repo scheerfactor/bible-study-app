@@ -21,6 +21,7 @@
     "library:download": "node scripts/download-library-resources.mjs",
     "library:import": "node scripts/import-library-resources.mjs",
     "library:bulk-import": "node scripts/bulk-import-library-resources.mjs",
+    "library:storage-import": "node scripts/import-library-storage-first.mjs",
     "library:qa": "node scripts/qa-library.mjs",
     "library:rank-high-value": "node scripts/rank-high-value-public-domain-resources.mjs",
     "prepare:webster": "node scripts/prepare-websters-1828-data.mjs",

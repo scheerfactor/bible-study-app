@@ -116,6 +116,20 @@ async function existingInventoryFile(kind, sourcePath, extra = {}) {
   }
 }
 
+function storageBackedInventoryFile(kind, entry, extra = {}) {
+  const storagePath = libraryContentPath(entry);
+  return {
+    kind,
+    source_path: entry.content_local_path ?? entry.file_path,
+    storage_path: storagePath,
+    content_type: contentTypeFor(storagePath),
+    size_bytes: Number(entry.file_size_bytes ?? 0),
+    checksum_sha256: entry.checksum_sha256,
+    storage_backed: true,
+    ...extra,
+  };
+}
+
 async function commentaryFiles() {
   const importsDir = join(repoRoot, "data", "imports");
   const fileNames = (await readdir(importsDir)).filter((fileName) => fileName.endsWith("commentary.json")).sort();
@@ -162,15 +176,19 @@ function topLargestRows(items, limit = 25) {
 async function main() {
   const libraryManifest = await readLibraryManifest(defaultLibraryManifest);
   const libraryItems = await Promise.all(
-    libraryManifest.map((entry) =>
-      existingInventoryFile("library_text", entry.content_local_path ?? entry.file_path, {
+    libraryManifest.map((entry) => {
+      const extra = {
         storage_path: libraryContentPath(entry),
         title: entry.title,
         author: entry.author,
         category: entry.category,
         source_url: entry.source_url,
-      }),
-    ),
+      };
+      if (entry.content_storage_status === "uploaded" && entry.import_status === "imported_storage" && !entry.content_local_path) {
+        return storageBackedInventoryFile("library_text", entry, extra);
+      }
+      return existingInventoryFile("library_text", entry.content_local_path ?? entry.file_path, extra);
+    }),
   );
 
   const commentaryPaths = await commentaryFiles();
@@ -223,6 +241,7 @@ async function main() {
   const largeLibraryTextItems = libraryItems
     .filter((item) => !item.missing && item.size_bytes >= 1024 * 1024)
     .sort((a, b) => b.size_bytes - a.size_bytes);
+  const storageBackedLibraryItems = libraryItems.filter((item) => item.storage_backed);
   const largePublicContentItems = items
     .filter((item) => !item.missing && item.size_bytes >= 1024 * 1024)
     .sort((a, b) => b.size_bytes - a.size_bytes);
@@ -237,6 +256,8 @@ async function main() {
       library_text_bytes_over_1mb: largeLibraryTextItems.reduce((sum, item) => sum + item.size_bytes, 0),
       public_content_files_over_1mb: largePublicContentItems.length,
       public_content_bytes_over_1mb: largePublicContentItems.reduce((sum, item) => sum + item.size_bytes, 0),
+      storage_backed_library_files: storageBackedLibraryItems.length,
+      storage_backed_library_bytes: storageBackedLibraryItems.reduce((sum, item) => sum + item.size_bytes, 0),
     },
     items,
   };
@@ -267,6 +288,8 @@ ${tableRow("TSK/cross-reference batches", summaries.tsk_cross_reference_batch)}
 ${tableRow("Total public content", summaries.all_public_content)}
 
 Commentary entries represented in public batch files: ${commentaryEntries.toLocaleString()}
+
+Storage-backed library text already uploaded to object storage: ${storageBackedLibraryItems.length.toLocaleString()} files (${humanBytes(inventory.large_file_summary.storage_backed_library_bytes)}).
 
 ## Biggest Storage Pressure
 
