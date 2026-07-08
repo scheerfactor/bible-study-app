@@ -33,7 +33,7 @@ function repositoryContentUrl(relativePath: string) {
 }
 
 function publicContentUrl(relativePath: string) {
-  const baseUrl = process.env.CONTENT_PUBLIC_BASE_URL?.replace(/\/+$/, "");
+  const baseUrl = (process.env.CONTENT_PUBLIC_BASE_URL ?? process.env.NEXT_PUBLIC_CONTENT_BASE_URL)?.replace(/\/+$/, "");
   if (!baseUrl) return null;
   return `${baseUrl}/${encodedPath(relativePath)}`;
 }
@@ -80,8 +80,8 @@ export async function GET() {
     {
       checkedAt: new Date().toISOString(),
       commitSha: process.env.VERCEL_GIT_COMMIT_SHA ?? "main",
-      publicBaseConfigured: Boolean(process.env.CONTENT_PUBLIC_BASE_URL),
-      commentaryImportsPreferRepository: true,
+      publicBaseConfigured: Boolean(process.env.CONTENT_PUBLIC_BASE_URL ?? process.env.NEXT_PUBLIC_CONTENT_BASE_URL),
+      commentaryImportsPreferRepository: false,
       results,
     },
     {

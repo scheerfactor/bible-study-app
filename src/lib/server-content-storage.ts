@@ -30,7 +30,7 @@ function withContentVersion(url: string) {
 }
 
 function publicContentUrl(relativePath: string) {
-  const baseUrl = process.env.CONTENT_PUBLIC_BASE_URL?.replace(/\/+$/, "");
+  const baseUrl = (process.env.CONTENT_PUBLIC_BASE_URL ?? process.env.NEXT_PUBLIC_CONTENT_BASE_URL)?.replace(/\/+$/, "");
 
   if (baseUrl) {
     return withContentVersion(`${baseUrl}/${encodedPath(relativePath)}`);
