@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-08T20:04:05.479Z",
+  "generated_at": "2026-07-08T23:27:38.446Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1705,
-      "present": 1705,
+      "files": 1720,
+      "present": 1720,
       "missing": 0,
-      "total_bytes": 1464980868,
-      "total_size": "1.36 GB"
+      "total_bytes": 1478448992,
+      "total_size": "1.38 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3602696,
-      "total_size": "3.44 MB"
+      "total_bytes": 3639040,
+      "total_size": "3.47 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2023,
-      "present": 2023,
+      "files": 2038,
+      "present": 2038,
       "missing": 0,
-      "total_bytes": 1982263313,
-      "total_size": "1.85 GB"
+      "total_bytes": 1995767781,
+      "total_size": "1.86 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 382,
-    "library_text_bytes_over_1mb": 952153883,
-    "public_content_files_over_1mb": 479,
-    "public_content_bytes_over_1mb": 1400117207,
-    "storage_backed_library_files": 26,
-    "storage_backed_library_bytes": 24186579
+    "library_text_files_over_1mb": 389,
+    "library_text_bytes_over_1mb": 961455925,
+    "public_content_files_over_1mb": 486,
+    "public_content_bytes_over_1mb": 1409455593,
+    "storage_backed_library_files": 41,
+    "storage_backed_library_bytes": 37654703
   },
   "items": [
     {
@@ -20564,6 +20564,201 @@
       "source_url": "https://archive.org/download/a549022500burguoft/a549022500burguoft.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt",
+      "storage_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1374984,
+      "checksum_sha256": "6bcf4e3b0e2a7b1931f5b66207ce1569742bfdd7f3bcba40624c79773c18b79b",
+      "storage_backed": true,
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "author": "George Carter Needham",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/thelifeandlabors00needuoft/thelifeandlabors00needuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt",
+      "storage_path": "data/library/verified/from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 487095,
+      "checksum_sha256": "c77881267c6d5a18dba9ec3b39da335fc8a30152e171cf8b2594c9ee5757072f",
+      "storage_backed": true,
+      "title": "From the Usher's Desk to the Tabernacle Pulpit",
+      "author": "Robert Shindler",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/fromushersdeskto00shin/fromushersdeskto00shin_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/charles-h-spurgeon-our-ally-justin-d-fulton.txt",
+      "storage_path": "data/library/verified/charles-h-spurgeon-our-ally-justin-d-fulton.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 715619,
+      "checksum_sha256": "1d12a75451ff8d5b1e78fa8a1026a7ae9480762d80036961a1e4beb574e17bb6",
+      "storage_backed": true,
+      "title": "Charles H. Spurgeon, Our Ally",
+      "author": "Justin D. Fulton",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/cihm_13153/cihm_13153_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/women-who-have-worked-and-won-jennie-chappell.txt",
+      "storage_path": "data/library/verified/women-who-have-worked-and-won-jennie-chappell.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 390394,
+      "checksum_sha256": "ab041d30e7c3e38c001abdff27f206bacdc4d5e1ac28f227b2a7c0e6c77313a6",
+      "storage_backed": true,
+      "title": "Women Who Have Worked and Won",
+      "author": "Jennie Chappell",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/womenwhohavework00chap/womenwhohavework00chap_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "storage_path": "data/library/verified/the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1068122,
+      "checksum_sha256": "9bac5c652be6f41b2204b9c78caecbd98d603165dbd28a30eea3802411701dc9",
+      "storage_backed": true,
+      "title": "The Autobiography of Charles H. Spurgeon",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/autobiographyspu00unknuoft/autobiographyspu00unknuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt",
+      "storage_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 949520,
+      "checksum_sha256": "5f172da23eef98ec5fe3c8a81bf65ae766c35027085c4dca8568648ed21c16bc",
+      "storage_backed": true,
+      "title": "Life of Charles Haddon Spurgeon: The World's Great Preacher",
+      "author": "Russell H. Conwell",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/lifecharleshadd00conwgoog/lifecharleshadd00conwgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "storage_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1444623,
+      "checksum_sha256": "6c0da6db00628b0867bdee84cf67e4e1f8c67933b7089045b29c14a7cd5db40e",
+      "storage_backed": true,
+      "title": "C. H. Spurgeon Autobiography, Volume 2",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/chspurgeonautobi02spur/chspurgeonautobi02spur_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt",
+      "storage_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 472639,
+      "checksum_sha256": "9ba5b1f70784f5dc4cbc7be13523bc9ceeecddfd26f1d61961b3a46b52c2eb69",
+      "storage_backed": true,
+      "title": "Charles Haddon Spurgeon: Preacher, Author, and Philanthropist",
+      "author": "G. Holden Pike",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/charleshaddonspu1886pike/charleshaddonspu1886pike_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt",
+      "storage_path": "data/library/verified/sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 268110,
+      "checksum_sha256": "c434a3b8d60202d61bbfc0dfe744e07c8055bd39ad23b668c32a5907ce233948",
+      "storage_backed": true,
+      "title": "Sketch of the Life and Ministry of the Rev. C. H. Spurgeon",
+      "author": "George J. Stevenson",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sketchoflifemini00stev/sketchoflifemini00stev_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt",
+      "storage_path": "data/library/verified/the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 241941,
+      "checksum_sha256": "52d128aef7120e9e0bd71090a7d77053df585b8c45e77f10d0e6cfb34ade2949",
+      "storage_backed": true,
+      "title": "The Way of Life",
+      "author": "C. H. Spurgeon; John McNeill; J. Wilbur Chapman; D. L. Moody; T. De Witt Talmage",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/wayoflifemarkedo00spur/wayoflifemarkedo00spur_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt",
+      "storage_path": "data/library/verified/a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1780670,
+      "checksum_sha256": "0116ca091b2aafd783232ca8c4f0ee3bec53a914523d79912eae9de5d70f25fe",
+      "storage_backed": true,
+      "title": "A Synopsis of Criticisms upon the Old Testament",
+      "author": "Richard A. F. Barrett",
+      "category": "KJV / Textual Issues",
+      "source_url": "https://archive.org/download/synopsisofcritic0101barr/synopsisofcritic0101barr_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt",
+      "storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1091030,
+      "checksum_sha256": "e07fe159b5b932b659acc04d0563881aef074f0336e4c7e8fa521e01acbf21d8",
+      "storage_backed": true,
+      "title": "Original Notes on the Book of Proverbs, Volume 1",
+      "author": "Solomon Caesar Malan",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/originalnotesonb01malauoft/originalnotesonb01malauoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt",
+      "storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1210971,
+      "checksum_sha256": "eaf6a45f23a76f4d54942c6d0387f0a0edaee754a5c26e195fd9fd3d6fcef727",
+      "storage_backed": true,
+      "title": "Original Notes on the Book of Proverbs",
+      "author": "Solomon Caesar Malan",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/cu31924096046333/cu31924096046333_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-english-bible-volume-2-john-eadie.txt",
+      "storage_path": "data/library/verified/the-english-bible-volume-2-john-eadie.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1331642,
+      "checksum_sha256": "479c5cc97f2328a93690b0933f8ccec1a5803d0914b26dc7cd9581e914ab0e38",
+      "storage_backed": true,
+      "title": "The English Bible, Volume 2",
+      "author": "John Eadie",
+      "category": "KJV / Textual Issues",
+      "source_url": "https://archive.org/download/theenglishbiblea02eadiuoft/theenglishbiblea02eadiuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/c-h-spurgeon-a-biography-w-y-fullerton.txt",
+      "storage_path": "data/library/verified/c-h-spurgeon-a-biography-w-y-fullerton.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 640764,
+      "checksum_sha256": "b9f0492b23f3c7cc52f5318255b0d303fdcb6e6a9e80e590ff5374be118afb56",
+      "storage_backed": true,
+      "title": "C. H. Spurgeon: A Biography",
+      "author": "W. Y. Fullerton",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/in.ernet.dli.2015.168833/2015.168833.C-H-Spurgeon-A-Biography_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -23136,8 +23331,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3602696,
-      "checksum_sha256": "fadee36a7699aa08e1a0e1973c8cb1064566c2e16c2162173b4ebd52584f49e1"
+      "size_bytes": 3639040,
+      "checksum_sha256": "17f54bd9bc274e9638ddac01b10b663e508859343def5f775d5df3059592c777"
     },
     {
       "kind": "study_tool",

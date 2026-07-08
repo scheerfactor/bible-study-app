@@ -4,15 +4,27 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,679
+- Verified public/free Library resources: 1,720
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 606
+- Library authors represented: 635
 - Public Library duplicate title/author groups: 0
 
-## Latest Public-Domain Content Expansion
+## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 15 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 9 C. H. Spurgeon biography, autobiography, and ministry-history resources
+- 2 Proverbs study-note resources from Solomon Caesar Malan
+- 2 KJV / English Bible history and textual-study resources
+- 1 evangelistic preaching resource featuring Spurgeon, Moody, Chapman, McNeill, and Talmage
+- 1 Christian biography collection featuring Mrs. Spurgeon, F. R. Havergal, and Ramabai
+
+These strengthen preacher biography, sermon illustration research, Proverbs study, KJV / English Bible history, and public-domain author depth without increasing the Vercel bundle. All imported OCR texts are labeled for spot-checking before quotation. Duplicate or already represented candidates were skipped rather than re-added as separate public Library cards.
+
+## Previous Public-Domain Content Expansion
 
 Added 100 verified public-domain Library resources in the latest high-value commentary and study-reference wave:
 
@@ -956,8 +968,8 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,679 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,679 verified resources.
+- `npm run library:qa`: 1,720 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,720 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
 - `npm run validate:strongs`: 14,296 entries checked across 9 files.
 - `npm run validate:strongs-mapping`: 724,963 KJV-with-Strong's rows checked with 0 missing lexicon numbers.

@@ -76115,5 +76115,725 @@
     "checksum_sha256": "e07af5fc407e63114664885badd6dedf7441f551a3be8c7f25667b8362b51ce8",
     "file_size_bytes": 616067,
     "word_count": 101909
+  },
+  {
+    "title": "The Life and Labors of Charles H. Spurgeon",
+    "author": "George Carter Needham",
+    "year": 1882,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/thelifeandlabors00needuoft/thelifeandlabors00needuoft_djvu.txt",
+    "download_url": "https://archive.org/download/thelifeandlabors00needuoft/thelifeandlabors00needuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt",
+    "content_storage_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/thelifeandlabors00needuoft/thelifeandlabors00needuoft_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, sermon illustrations, and author study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, sermon illustrations, and author study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "author": "George Carter Needham",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 958,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6bcf4e3b0e2a7b1931f5b66207ce1569742bfdd7f3bcba40624c79773c18b79b",
+    "file_size_bytes": 1374984,
+    "word_count": 215595
+  },
+  {
+    "title": "From the Usher's Desk to the Tabernacle Pulpit",
+    "author": "Robert Shindler",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/fromushersdeskto00shin/fromushersdeskto00shin_djvu.txt",
+    "download_url": "https://archive.org/download/fromushersdeskto00shin/fromushersdeskto00shin_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt",
+    "content_storage_path": "data/library/verified/from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/fromushersdeskto00shin/fromushersdeskto00shin_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, sermon illustrations, and author study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography and ministry-history resource for preacher biography, sermon illustrations, and author study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "From the Usher's Desk to the Tabernacle Pulpit",
+      "author": "Robert Shindler",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 335,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c77881267c6d5a18dba9ec3b39da335fc8a30152e171cf8b2594c9ee5757072f",
+    "file_size_bytes": 487095,
+    "word_count": 75471
+  },
+  {
+    "title": "Charles H. Spurgeon, Our Ally",
+    "author": "Justin D. Fulton",
+    "year": 1886,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/cihm_13153/cihm_13153_djvu.txt",
+    "download_url": "https://archive.org/download/cihm_13153/cihm_13153_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-h-spurgeon-our-ally-justin-d-fulton.txt",
+    "content_storage_path": "data/library/verified/charles-h-spurgeon-our-ally-justin-d-fulton.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cihm_13153/cihm_13153_djvu.txt.",
+    "notes": "Public-domain Spurgeon-related resource for preaching history, Baptist history, and sermon background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon-related resource for preaching history, Baptist history, and sermon background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles H. Spurgeon, Our Ally",
+      "author": "Justin D. Fulton",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 560,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1d12a75451ff8d5b1e78fa8a1026a7ae9480762d80036961a1e4beb574e17bb6",
+    "file_size_bytes": 715619,
+    "word_count": 126096
+  },
+  {
+    "title": "Women Who Have Worked and Won",
+    "author": "Jennie Chappell",
+    "year": 1898,
+    "category": "Biographies",
+    "collection": "Christian Biography Collection",
+    "source_url": "https://archive.org/download/womenwhohavework00chap/womenwhohavework00chap_djvu.txt",
+    "download_url": "https://archive.org/download/womenwhohavework00chap/womenwhohavework00chap_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/women-who-have-worked-and-won-jennie-chappell.txt",
+    "content_storage_path": "data/library/verified/women-who-have-worked-and-won-jennie-chappell.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/womenwhohavework00chap/womenwhohavework00chap_djvu.txt.",
+    "notes": "Public-domain biography collection including Mrs. Spurgeon, F. R. Havergal, and Ramabai for missions, devotion, and illustration research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography collection including Mrs. Spurgeon, F. R. Havergal, and Ramabai for missions, devotion, and illustration research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Christian Biography Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Women Who Have Worked and Won",
+      "author": "Jennie Chappell",
+      "category": "Biographies",
+      "collection": "Christian Biography Collection",
+      "badge": "Christian Biography Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 258,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ab041d30e7c3e38c001abdff27f206bacdc4d5e1ac28f227b2a7c0e6c77313a6",
+    "file_size_bytes": 390394,
+    "word_count": 58020
+  },
+  {
+    "title": "The Autobiography of Charles H. Spurgeon",
+    "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+    "year": 1897,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/autobiographyspu00unknuoft/autobiographyspu00unknuoft_djvu.txt",
+    "download_url": "https://archive.org/download/autobiographyspu00unknuoft/autobiographyspu00unknuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+    "content_storage_path": "data/library/verified/the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/autobiographyspu00unknuoft/autobiographyspu00unknuoft_djvu.txt.",
+    "notes": "Public-domain Spurgeon autobiography for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon autobiography for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Autobiography of Charles H. Spurgeon",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 733,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9bac5c652be6f41b2204b9c78caecbd98d603165dbd28a30eea3802411701dc9",
+    "file_size_bytes": 1068122,
+    "word_count": 165024
+  },
+  {
+    "title": "Life of Charles Haddon Spurgeon: The World's Great Preacher",
+    "author": "Russell H. Conwell",
+    "year": 1892,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/lifecharleshadd00conwgoog/lifecharleshadd00conwgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lifecharleshadd00conwgoog/lifecharleshadd00conwgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt",
+    "content_storage_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifecharleshadd00conwgoog/lifecharleshadd00conwgoog_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography for preacher biography, ministry history, sermon illustrations, and author study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography for preacher biography, ministry history, sermon illustrations, and author study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life of Charles Haddon Spurgeon: The World's Great Preacher",
+      "author": "Russell H. Conwell",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 657,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5f172da23eef98ec5fe3c8a81bf65ae766c35027085c4dca8568648ed21c16bc",
+    "file_size_bytes": 949520,
+    "word_count": 147795
+  },
+  {
+    "title": "C. H. Spurgeon Autobiography, Volume 2",
+    "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+    "year": 1900,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/chspurgeonautobi02spur/chspurgeonautobi02spur_djvu.txt",
+    "download_url": "https://archive.org/download/chspurgeonautobi02spur/chspurgeonautobi02spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+    "content_storage_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/chspurgeonautobi02spur/chspurgeonautobi02spur_djvu.txt.",
+    "notes": "Public-domain Spurgeon autobiography volume for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon autobiography volume for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon Autobiography, Volume 2",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 984,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6c0da6db00628b0867bdee84cf67e4e1f8c67933b7089045b29c14a7cd5db40e",
+    "file_size_bytes": 1444623,
+    "word_count": 221449
+  },
+  {
+    "title": "Charles Haddon Spurgeon: Preacher, Author, and Philanthropist",
+    "author": "G. Holden Pike",
+    "year": 1886,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/charleshaddonspu1886pike/charleshaddonspu1886pike_djvu.txt",
+    "download_url": "https://archive.org/download/charleshaddonspu1886pike/charleshaddonspu1886pike_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt",
+    "content_storage_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/charleshaddonspu1886pike/charleshaddonspu1886pike_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography for author study, preaching history, and sermon illustration research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Charles Haddon Spurgeon: Preacher, Author, and Philanthropist",
+      "author": "G. Holden Pike",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 318,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9ba5b1f70784f5dc4cbc7be13523bc9ceeecddfd26f1d61961b3a46b52c2eb69",
+    "file_size_bytes": 472639,
+    "word_count": 71468
+  },
+  {
+    "title": "Sketch of the Life and Ministry of the Rev. C. H. Spurgeon",
+    "author": "George J. Stevenson",
+    "year": 1857,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/sketchoflifemini00stev/sketchoflifemini00stev_djvu.txt",
+    "download_url": "https://archive.org/download/sketchoflifemini00stev/sketchoflifemini00stev_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt",
+    "content_storage_path": "data/library/verified/sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sketchoflifemini00stev/sketchoflifemini00stev_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography and ministry sketch for preaching history, Baptist history, and sermon background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography and ministry sketch for preaching history, Baptist history, and sermon background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sketch of the Life and Ministry of the Rev. C. H. Spurgeon",
+      "author": "George J. Stevenson",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 180,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c434a3b8d60202d61bbfc0dfe744e07c8055bd39ad23b668c32a5907ce233948",
+    "file_size_bytes": 268110,
+    "word_count": 40583
+  },
+  {
+    "title": "The Way of Life",
+    "author": "C. H. Spurgeon; John McNeill; J. Wilbur Chapman; D. L. Moody; T. De Witt Talmage",
+    "year": 1895,
+    "category": "Evangelism",
+    "collection": "Evangelism and Gospel Classics",
+    "source_url": "https://archive.org/download/wayoflifemarkedo00spur/wayoflifemarkedo00spur_djvu.txt",
+    "download_url": "https://archive.org/download/wayoflifemarkedo00spur/wayoflifemarkedo00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt",
+    "content_storage_path": "data/library/verified/the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/wayoflifemarkedo00spur/wayoflifemarkedo00spur_djvu.txt.",
+    "notes": "Public-domain evangelistic and devotional preaching resource with material from Spurgeon, Moody, Chapman, and others. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain evangelistic and devotional preaching resource with material from Spurgeon, Moody, Chapman, and others. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Evangelism and Gospel Classics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Way of Life",
+      "author": "C. H. Spurgeon; John McNeill; J. Wilbur Chapman; D. L. Moody; T. De Witt Talmage",
+      "category": "Evangelism",
+      "collection": "Evangelism and Gospel Classics",
+      "badge": "Evangelism and Gospel Classics",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 173,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "52d128aef7120e9e0bd71090a7d77053df585b8c45e77f10d0e6cfb34ade2949",
+    "file_size_bytes": 241941,
+    "word_count": 38823
+  },
+  {
+    "title": "A Synopsis of Criticisms upon the Old Testament",
+    "author": "Richard A. F. Barrett",
+    "year": 1847,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/synopsisofcritic0101barr/synopsisofcritic0101barr_djvu.txt",
+    "download_url": "https://archive.org/download/synopsisofcritic0101barr/synopsisofcritic0101barr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt",
+    "content_storage_path": "data/library/verified/a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/synopsisofcritic0101barr/synopsisofcritic0101barr_djvu.txt.",
+    "notes": "Public-domain textual and translation-history resource comparing disputed Old Testament passages and Authorized Version renderings. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain textual and translation-history resource comparing disputed Old Testament passages and Authorized Version renderings. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Synopsis of Criticisms upon the Old Testament",
+      "author": "Richard A. F. Barrett",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1334,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0116ca091b2aafd783232ca8c4f0ee3bec53a914523d79912eae9de5d70f25fe",
+    "file_size_bytes": 1780670,
+    "word_count": 300258
+  },
+  {
+    "title": "Original Notes on the Book of Proverbs, Volume 1",
+    "author": "Solomon Caesar Malan",
+    "year": 1889,
+    "category": "Commentaries",
+    "collection": "Proverbs Study Helps",
+    "source_url": "https://archive.org/download/originalnotesonb01malauoft/originalnotesonb01malauoft_djvu.txt",
+    "download_url": "https://archive.org/download/originalnotesonb01malauoft/originalnotesonb01malauoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt",
+    "content_storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/originalnotesonb01malauoft/originalnotesonb01malauoft_djvu.txt.",
+    "notes": "Public-domain Proverbs study notes for wisdom literature, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Proverbs study notes for wisdom literature, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Proverbs Study Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Original Notes on the Book of Proverbs, Volume 1",
+      "author": "Solomon Caesar Malan",
+      "category": "Commentaries",
+      "collection": "Proverbs Study Helps",
+      "badge": "Proverbs Study Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 828,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e07fe159b5b932b659acc04d0563881aef074f0336e4c7e8fa521e01acbf21d8",
+    "file_size_bytes": 1091030,
+    "word_count": 186396
+  },
+  {
+    "title": "Original Notes on the Book of Proverbs",
+    "author": "Solomon Caesar Malan",
+    "year": 1889,
+    "category": "Commentaries",
+    "collection": "Proverbs Study Helps",
+    "source_url": "https://archive.org/download/cu31924096046333/cu31924096046333_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924096046333/cu31924096046333_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt",
+    "content_storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924096046333/cu31924096046333_djvu.txt.",
+    "notes": "Public-domain Proverbs study notes for wisdom literature, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Proverbs study notes for wisdom literature, teaching preparation, and commentary comparison. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Proverbs Study Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Original Notes on the Book of Proverbs",
+      "author": "Solomon Caesar Malan",
+      "category": "Commentaries",
+      "collection": "Proverbs Study Helps",
+      "badge": "Proverbs Study Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 845,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "eaf6a45f23a76f4d54942c6d0387f0a0edaee754a5c26e195fd9fd3d6fcef727",
+    "file_size_bytes": 1210971,
+    "word_count": 190119
+  },
+  {
+    "title": "The English Bible, Volume 2",
+    "author": "John Eadie",
+    "year": 1876,
+    "category": "KJV / Textual Issues",
+    "collection": "KJV / English Bible History",
+    "source_url": "https://archive.org/download/theenglishbiblea02eadiuoft/theenglishbiblea02eadiuoft_djvu.txt",
+    "download_url": "https://archive.org/download/theenglishbiblea02eadiuoft/theenglishbiblea02eadiuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-english-bible-volume-2-john-eadie.txt",
+    "content_storage_path": "data/library/verified/the-english-bible-volume-2-john-eadie.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/theenglishbiblea02eadiuoft/theenglishbiblea02eadiuoft_djvu.txt.",
+    "notes": "Public-domain English Bible history resource for Bible translation history, KJV study, and teaching background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain English Bible history resource for Bible translation history, KJV study, and teaching background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "KJV / English Bible History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The English Bible, Volume 2",
+      "author": "John Eadie",
+      "category": "KJV / Textual Issues",
+      "collection": "KJV / English Bible History",
+      "badge": "KJV / English Bible History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 904,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "479c5cc97f2328a93690b0933f8ccec1a5803d0914b26dc7cd9581e914ab0e38",
+    "file_size_bytes": 1331642,
+    "word_count": 203438
+  },
+  {
+    "title": "C. H. Spurgeon: A Biography",
+    "author": "W. Y. Fullerton",
+    "year": 1920,
+    "category": "Preaching & Teaching",
+    "collection": "Spurgeon Collection",
+    "source_url": "https://archive.org/download/in.ernet.dli.2015.168833/2015.168833.C-H-Spurgeon-A-Biography_djvu.txt",
+    "download_url": "https://archive.org/download/in.ernet.dli.2015.168833/2015.168833.C-H-Spurgeon-A-Biography_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/c-h-spurgeon-a-biography-w-y-fullerton.txt",
+    "content_storage_path": "data/library/verified/c-h-spurgeon-a-biography-w-y-fullerton.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/in.ernet.dli.2015.168833/2015.168833.C-H-Spurgeon-A-Biography_djvu.txt.",
+    "notes": "Public-domain Spurgeon biography for preacher biography, ministry history, sermon illustrations, and author study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon biography for preacher biography, ministry history, sermon illustrations, and author study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Spurgeon Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "C. H. Spurgeon: A Biography",
+      "author": "W. Y. Fullerton",
+      "category": "Preaching & Teaching",
+      "collection": "Spurgeon Collection",
+      "badge": "Spurgeon Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 502,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b9f0492b23f3c7cc52f5318255b0d303fdcb6e6a9e80e590ff5374be118afb56",
+    "file_size_bytes": 640764,
+    "word_count": 112939
   }
 ]
