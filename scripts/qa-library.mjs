@@ -2,6 +2,8 @@
 import { stat } from "node:fs/promises";
 import {
   defaultLibraryManifest,
+  isStorageBackedLibraryEntry,
+  libraryContentPath,
   normalizeComparisonValue,
   readLibraryManifest,
   validateLibraryEntry,
@@ -43,6 +45,35 @@ function resourceText(entry) {
   ].join(" ").toLowerCase();
 }
 
+function publicStorageUrl(relativePath) {
+  const baseUrl = (process.env.CONTENT_PUBLIC_BASE_URL ?? process.env.NEXT_PUBLIC_CONTENT_BASE_URL)?.replace(/\/+$/, "");
+  if (!baseUrl) return "";
+  const encodedPath = String(relativePath)
+    .split("/")
+    .filter(Boolean)
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+  return `${baseUrl}/${encodedPath}`;
+}
+
+async function storageObjectExists(entry) {
+  const url = publicStorageUrl(libraryContentPath(entry));
+  if (!url) {
+    warnings.push(`storage-backed entry could not be checked because CONTENT_PUBLIC_BASE_URL is not set: ${entry.title}`);
+    return true;
+  }
+
+  try {
+    const response = await fetch(url, { method: "HEAD" });
+    if (response.ok) return true;
+    errors.push(`storage-backed entry is not reachable (${response.status}): ${entry.title} -> ${libraryContentPath(entry)}`);
+    return false;
+  } catch (error) {
+    errors.push(`storage-backed entry check failed: ${entry.title} -> ${error.message}`);
+    return false;
+  }
+}
+
 function matchesShelf(entry, words) {
   const text = resourceText(entry);
   return words.some((word) => text.includes(word));
@@ -69,10 +100,14 @@ for (const [index, entry] of entries.entries()) {
     errors.push(`entry ${index + 1}: personal-use resource is in the public manifest`);
   }
 
-  try {
-    await stat(entry.file_path);
-  } catch {
-    errors.push(`entry ${index + 1}: file does not exist: ${entry.file_path}`);
+  if (isStorageBackedLibraryEntry(entry)) {
+    await storageObjectExists(entry);
+  } else {
+    try {
+      await stat(entry.file_path);
+    } catch {
+      errors.push(`entry ${index + 1}: file does not exist: ${entry.file_path}`);
+    }
   }
 
   if (matchesShelf(entry, ["commentary", "commentaries", "exposition"])) increment(subjectShelfCounts, "Commentary");

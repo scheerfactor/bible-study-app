@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { defaultLibraryManifest, readLibraryManifest } from "./library-utils.mjs";
+import { defaultLibraryManifest, libraryContentPath, readLibraryManifest } from "./library-utils.mjs";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outputJsonPath = join(repoRoot, "data", "storage", "public-content-storage-inventory.json");
@@ -93,7 +93,7 @@ async function inventoryFile(kind, sourcePath, extra = {}) {
   return {
     kind,
     source_path: sourcePath,
-    storage_path: sourcePath,
+    storage_path: extra.storage_path ?? sourcePath,
     content_type: contentTypeFor(sourcePath),
     size_bytes: stats.size,
     checksum_sha256: checksum(buffer),
@@ -147,11 +147,24 @@ function tableRow(label, summary) {
   return `| ${label} | ${summary.files.toLocaleString()} | ${summary.present.toLocaleString()} | ${summary.missing.toLocaleString()} | ${summary.total_size} |`;
 }
 
+function topLargestRows(items, limit = 25) {
+  return items
+    .filter((item) => !item.missing)
+    .sort((a, b) => b.size_bytes - a.size_bytes)
+    .slice(0, limit)
+    .map((item) => {
+      const label = item.title ?? item.batch_name ?? item.source_path;
+      return `| ${humanBytes(item.size_bytes)} | ${item.kind} | ${label.replaceAll("|", "\\|")} | \`${item.source_path}\` |`;
+    })
+    .join("\n");
+}
+
 async function main() {
   const libraryManifest = await readLibraryManifest(defaultLibraryManifest);
   const libraryItems = await Promise.all(
     libraryManifest.map((entry) =>
-      existingInventoryFile("library_text", entry.file_path, {
+      existingInventoryFile("library_text", entry.content_local_path ?? entry.file_path, {
+        storage_path: libraryContentPath(entry),
         title: entry.title,
         author: entry.author,
         category: entry.category,
@@ -207,12 +220,24 @@ async function main() {
   };
 
   const commentaryEntries = commentaryItems.reduce((sum, item) => sum + Number(item.entries ?? 0), 0);
+  const largeLibraryTextItems = libraryItems
+    .filter((item) => !item.missing && item.size_bytes >= 1024 * 1024)
+    .sort((a, b) => b.size_bytes - a.size_bytes);
+  const largePublicContentItems = items
+    .filter((item) => !item.missing && item.size_bytes >= 1024 * 1024)
+    .sort((a, b) => b.size_bytes - a.size_bytes);
   const inventory = {
     generated_at: new Date().toISOString(),
     storage_base_env: "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
     path_strategy: "Mirror current repository-relative paths in object storage during the transition.",
     commentary_entries: commentaryEntries,
     summaries,
+    large_file_summary: {
+      library_text_files_over_1mb: largeLibraryTextItems.length,
+      library_text_bytes_over_1mb: largeLibraryTextItems.reduce((sum, item) => sum + item.size_bytes, 0),
+      public_content_files_over_1mb: largePublicContentItems.length,
+      public_content_bytes_over_1mb: largePublicContentItems.reduce((sum, item) => sum + item.size_bytes, 0),
+    },
     items,
   };
 
@@ -242,6 +267,26 @@ ${tableRow("TSK/cross-reference batches", summaries.tsk_cross_reference_batch)}
 ${tableRow("Total public content", summaries.all_public_content)}
 
 Commentary entries represented in public batch files: ${commentaryEntries.toLocaleString()}
+
+## Biggest Storage Pressure
+
+Large library text files over 1 MB: ${largeLibraryTextItems.length.toLocaleString()} files (${humanBytes(inventory.large_file_summary.library_text_bytes_over_1mb)}).
+
+Large public content files over 1 MB: ${largePublicContentItems.length.toLocaleString()} files (${humanBytes(inventory.large_file_summary.public_content_bytes_over_1mb)}).
+
+These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
+
+| Size | Kind | Resource | Path |
+| ---: | --- | --- | --- |
+${topLargestRows(largePublicContentItems, 25)}
+
+## Recommended Migration Order
+
+1. Upload all \`library_text\` objects to R2 first. This removes the biggest pressure while preserving Library metadata in Git.
+2. Upload \`commentary_batch\` objects next, especially Pulpit Commentary, Biblical Illustrator, Poole, and other large set files.
+3. Upload dictionaries and study tools after the reader is confirmed to load external text quickly.
+4. Keep manifests, rights metadata, import reports, author profiles, and validation scripts in Git.
+5. After production is verified against R2, stop committing new full-text files to \`data/library/verified\`; commit metadata plus storage paths instead.
 
 ## Next Commands
 

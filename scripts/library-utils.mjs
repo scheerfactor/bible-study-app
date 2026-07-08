@@ -58,6 +58,14 @@ export const reviewedDoctrinalStatuses = new Set([
   "approved",
 ]);
 
+export function libraryContentPath(entry) {
+  return String(entry.content_storage_path || entry.file_path || "");
+}
+
+export function isStorageBackedLibraryEntry(entry) {
+  return Boolean(entry.content_storage_path || entry.content_storage_status === "uploaded");
+}
+
 export async function readLibraryManifest(filePath = defaultLibraryManifest) {
   const raw = await readFile(filePath, "utf8");
   const parsed = JSON.parse(raw);
@@ -192,12 +200,30 @@ export function validateLibraryEntry(entry, index) {
     errors.push(`entry ${index + 1}: commercial_use_status must be verified_allowed* for import`);
   }
 
-  if (entry.import_status !== "ready_for_import" && entry.import_status !== "imported_file") {
-    errors.push(`entry ${index + 1}: import_status must be ready_for_import or imported_file`);
+  if (!["ready_for_import", "imported_file", "imported_storage"].includes(entry.import_status)) {
+    errors.push(`entry ${index + 1}: import_status must be ready_for_import, imported_file, or imported_storage`);
   }
 
   if (!String(entry.file_path).startsWith("data/library/verified/")) {
     errors.push(`entry ${index + 1}: file_path must be under data/library/verified`);
+  }
+
+  if (entry.content_storage_path) {
+    if (!String(entry.content_storage_path).startsWith("data/library/verified/")) {
+      errors.push(`entry ${index + 1}: content_storage_path must be under data/library/verified`);
+    }
+    if (String(entry.content_storage_path).includes("..") || String(entry.content_storage_path).includes("\\")) {
+      errors.push(`entry ${index + 1}: content_storage_path contains unsafe path characters`);
+    }
+  }
+
+  if (entry.import_status === "imported_storage") {
+    if (entry.content_storage_status !== "uploaded") {
+      errors.push(`entry ${index + 1}: imported_storage entries must set content_storage_status to uploaded`);
+    }
+    for (const field of ["checksum_sha256", "file_size_bytes", "word_count"]) {
+      if (!entry[field]) errors.push(`entry ${index + 1}: imported_storage entries must include ${field}`);
+    }
   }
 
   if (entry.download_url) {

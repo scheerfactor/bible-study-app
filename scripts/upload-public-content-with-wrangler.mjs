@@ -1,13 +1,15 @@
 import { spawn } from "node:child_process";
-import { readFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const inventoryPath = join(repoRoot, "data", "storage", "public-content-storage-inventory.json");
+const checkpointPath = join(repoRoot, "data", "storage", "wrangler-upload-checkpoint.json");
 const execute = process.argv.includes("--execute");
 const local = process.argv.includes("--local");
 const startAtArg = process.argv.find((arg) => arg.startsWith("--start-at="));
+const limitArg = process.argv.find((arg) => arg.startsWith("--limit="));
 const bucketArg = process.argv.find((arg) => arg.startsWith("--bucket="));
 const kindArg = process.argv.find((arg) => arg.startsWith("--kind="));
 const pathPrefixArg = process.argv.find((arg) => arg.startsWith("--path-prefix="));
@@ -43,35 +45,65 @@ async function main() {
   const inventory = JSON.parse(await readFile(inventoryPath, "utf8"));
   const kindFilter = kindArg?.split("=").slice(1).join("=");
   const pathPrefixFilter = pathPrefixArg?.split("=").slice(1).join("=");
-  let items = inventory.items
+  const limit = limitArg ? Number(limitArg.split("=").slice(1).join("=")) : 0;
+  if (limitArg && (!Number.isInteger(limit) || limit < 1)) {
+    throw new Error("--limit must be a positive integer.");
+  }
+
+  const allItems = inventory.items
     .filter((item) => !item.missing)
     .filter((item) => !kindFilter || item.kind === kindFilter)
     .filter((item) => !pathPrefixFilter || String(item.storage_path ?? "").startsWith(pathPrefixFilter));
+  let startIndex = 0;
+  let items = allItems;
   if (startAtArg) {
     const startAt = startAtArg.split("=").slice(1).join("=");
-    const startIndex = items.findIndex((item) => item.storage_path === startAt);
+    startIndex = allItems.findIndex((item) => item.storage_path === startAt);
     if (startIndex === -1) {
       throw new Error(`Could not find --start-at path in inventory: ${startAt}`);
     }
-    items = items.slice(startIndex);
-    console.log(`Resuming at ${startAt} (${startIndex + 1}/${inventory.items.filter((item) => !item.missing).length}).`);
+    items = allItems.slice(startIndex);
+    console.log(`Resuming at ${startAt} (${startIndex + 1}/${allItems.length}).`);
+  }
+  if (limit) {
+    items = items.slice(0, limit);
   }
 
   if (!execute) {
     console.log(`Dry run only. ${items.length} files would be uploaded to R2 bucket "${bucket}".`);
     if (kindFilter) console.log(`Kind filter: ${kindFilter}`);
     if (pathPrefixFilter) console.log(`Path prefix filter: ${pathPrefixFilter}`);
+    if (limit) console.log(`Limit: ${limit}`);
     console.table(inventory.summaries);
     console.log(`Run: npm run storage:upload:wrangler -- --bucket=${bucket} --execute`);
     return;
   }
 
   let uploaded = 0;
-  for (const item of items) {
+  let lastUploadedPath = "";
+  for (const [index, item] of items.entries()) {
     const args = ["wrangler", "r2", "object", "put", `${bucket}/${item.storage_path}`, "--file", item.source_path, "--content-type", item.content_type];
     if (!local) args.push("--remote");
     await run("npx", args);
     uploaded += 1;
+    lastUploadedPath = item.storage_path;
+    const nextItem = allItems[startIndex + index + 1] ?? null;
+    const checkpoint = {
+      updated_at: new Date().toISOString(),
+      bucket,
+      kind: kindFilter || "all",
+      path_prefix: pathPrefixFilter || "",
+      uploaded_this_run: uploaded,
+      absolute_uploaded_through: startIndex + index + 1,
+      total_matching_items: allItems.length,
+      last_uploaded_path: lastUploadedPath,
+      next_start_at: nextItem?.storage_path ?? null,
+      next_command: nextItem
+        ? `npm run storage:upload:wrangler -- --bucket=${bucket}${kindFilter ? ` --kind=${kindFilter}` : ""}${pathPrefixFilter ? ` --path-prefix=${pathPrefixFilter}` : ""} --start-at=${nextItem.storage_path}${limit ? ` --limit=${limit}` : ""} --execute`
+        : null,
+    };
+    await mkdir(dirname(checkpointPath), { recursive: true });
+    await writeFile(checkpointPath, `${JSON.stringify(checkpoint, null, 2)}\n`);
     if (uploaded % 50 === 0 || uploaded === items.length) {
       console.log(`Uploaded ${uploaded}/${items.length}`);
     }

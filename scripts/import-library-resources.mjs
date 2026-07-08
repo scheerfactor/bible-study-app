@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createAdminClient } from "./import-utils.mjs";
-import { fileMetadata, readLibraryManifest, validateLibraryEntry } from "./library-utils.mjs";
+import { fileMetadata, isStorageBackedLibraryEntry, readLibraryManifest, validateLibraryEntry } from "./library-utils.mjs";
 
 const dryRun = process.argv.includes("--dry-run");
 const manifestPath =
@@ -19,7 +19,13 @@ if (errors.length) {
 const rows = [];
 
 for (const entry of entries) {
-  const metadata = await fileMetadata(entry.file_path);
+  const metadata = isStorageBackedLibraryEntry(entry)
+    ? {
+        checksum_sha256: entry.checksum_sha256,
+        file_size_bytes: entry.file_size_bytes,
+        word_count: entry.word_count,
+      }
+    : await fileMetadata(entry.file_path);
   rows.push({
     ...entry,
     ...metadata,

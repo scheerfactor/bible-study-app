@@ -8,6 +8,8 @@ export type LibraryManifestEntry = {
   download_url?: string;
   source_license_url: string;
   file_path: string;
+  content_storage_path?: string;
+  content_storage_status?: string;
   file_format?: string;
   publisher?: string;
   edition_note?: string;
@@ -199,6 +201,8 @@ export function curateLibraryEntry(entry: LibraryManifestEntry) {
     source_url: entry.source_url,
     download_url: entry.download_url ?? null,
     source_license_url: entry.source_license_url,
+    content_storage_path: entry.content_storage_path ?? null,
+    content_storage_status: entry.content_storage_status ?? null,
     file_format: entry.file_format ?? null,
     publisher: entry.publisher ?? null,
     edition_note: entry.edition_note ?? null,

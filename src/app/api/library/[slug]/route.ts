@@ -9,7 +9,7 @@ function slugFromPath(filePath: string) {
 }
 
 async function fetchResourceText(entry: LibraryManifestEntry) {
-  return readTextContent(entry.file_path, { errorLabel: "Library text" });
+  return readTextContent(entry.content_storage_path ?? entry.file_path, { errorLabel: "Library text" });
 }
 
 export async function GET(_request: Request, context: { params: Promise<{ slug: string }> }) {

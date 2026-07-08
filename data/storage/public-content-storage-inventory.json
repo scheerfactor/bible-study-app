@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T16:56:36.183Z",
+  "generated_at": "2026-07-08T17:29:31.696Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
