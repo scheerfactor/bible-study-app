@@ -1,0 +1,986 @@
+{
+  "source_csv": "data/library/import-batches/high-value-gap-fill-phase-31.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 80,
+  "total_attempted": 80,
+  "imported": 40,
+  "would_import": 0,
+  "skipped": 37,
+  "failed": 3,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 37,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-various.txt",
+      "bytes": 2571953,
+      "words": 439086,
+      "reading_time_minutes": 1951
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0017unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0017unse-various.txt",
+      "bytes": 2852797,
+      "words": 477504,
+      "reading_time_minutes": 2122
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_p8e6)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-p8e6-various.txt",
+      "bytes": 2689572,
+      "words": 460823,
+      "reading_time_minutes": 2048
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_d2p5)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-d2p5-various.txt",
+      "bytes": 517677,
+      "words": 90106,
+      "reading_time_minutes": 400
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0007unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0007unse-various.txt",
+      "bytes": 2693405,
+      "words": 465696,
+      "reading_time_minutes": 2070
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0028unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0028unse-various.txt",
+      "bytes": 2806507,
+      "words": 475206,
+      "reading_time_minutes": 2112
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0025unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0025unse-various.txt",
+      "bytes": 2698287,
+      "words": 471059,
+      "reading_time_minutes": 2094
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_n6o2)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-n6o2-various.txt",
+      "bytes": 2851131,
+      "words": 493432,
+      "reading_time_minutes": 2193
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_m6k7)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-m6k7-various.txt",
+      "bytes": 915942,
+      "words": 162712,
+      "reading_time_minutes": 723
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-various.txt",
+      "bytes": 2175695,
+      "words": 374889,
+      "reading_time_minutes": 1666
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0003unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0003unse-various.txt",
+      "bytes": 2653741,
+      "words": 453935,
+      "reading_time_minutes": 2017
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_f2q2)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-f2q2-various.txt",
+      "bytes": 1407612,
+      "words": 239539,
+      "reading_time_minutes": 1065
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0002unse_k5l1)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0002unse-k5l1-various.txt",
+      "bytes": 2646789,
+      "words": 455307,
+      "reading_time_minutes": 2024
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0030unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0030unse-various.txt",
+      "bytes": 2658703,
+      "words": 451750,
+      "reading_time_minutes": 2008
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse_a6f3)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-a6f3-various.txt",
+      "bytes": 2596492,
+      "words": 456152,
+      "reading_time_minutes": 2027
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_b9a0)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-b9a0-various.txt",
+      "bytes": 3039660,
+      "words": 517651,
+      "reading_time_minutes": 2301
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0004unse_g8o8)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0004unse-g8o8-various.txt",
+      "bytes": 3172480,
+      "words": 540825,
+      "reading_time_minutes": 2404
+    },
+    {
+      "title": "THE PULPIT COMMENTARY: JEREMIAH & LAMENTATIONS (pulpitcommentary0011jose)",
+      "file": "the-pulpit-commentary-jeremiah-and-lamentations-pulpitcommentary0011jose-joseph-s-editors-spence-h-d-m-and-exc.txt",
+      "bytes": 5044241,
+      "words": 878776,
+      "reading_time_minutes": 3906
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse_j9h0)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-j9h0-various.txt",
+      "bytes": 3099887,
+      "words": 534740,
+      "reading_time_minutes": 2377
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0014unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0014unse-various.txt",
+      "bytes": 1623210,
+      "words": 277448,
+      "reading_time_minutes": 1233
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0002unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0002unse-various.txt",
+      "bytes": 2865620,
+      "words": 497738,
+      "reading_time_minutes": 2212
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0013unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0013unse-various.txt",
+      "bytes": 3158718,
+      "words": 554608,
+      "reading_time_minutes": 2465
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0026unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0026unse-various.txt",
+      "bytes": 2560865,
+      "words": 426392,
+      "reading_time_minutes": 1895
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0005unse_c6m2)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0005unse-c6m2-various.txt",
+      "bytes": 1790109,
+      "words": 313950,
+      "reading_time_minutes": 1395
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_s2b1)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-s2b1-various.txt",
+      "bytes": 2637004,
+      "words": 452733,
+      "reading_time_minutes": 2012
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0012unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0012unse-various.txt",
+      "bytes": 1986329,
+      "words": 341530,
+      "reading_time_minutes": 1518
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0009unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0009unse-various.txt",
+      "bytes": 2879960,
+      "words": 486688,
+      "reading_time_minutes": 2163
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0031unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0031unse-various.txt",
+      "bytes": 2412878,
+      "words": 412385,
+      "reading_time_minutes": 1833
+    },
+    {
+      "title": "The Pulpit Commentary 36, St. Mark Vol. II (The Pulpit Commentary) (pulpitcommentary0002revh)",
+      "file": "the-pulpit-commentary-36-st-mark-vol-ii-the-pulpit-commentary-pulpitcommentary0002revh-rev-h-d-m-spence-d-d-re.txt",
+      "bytes": 1858370,
+      "words": 320860,
+      "reading_time_minutes": 1426
+    },
+    {
+      "title": "St John Volume Vol.II Biblical Illustrator",
+      "file": "st-john-volume-vol-ii-biblical-illustrator-joseph-s-exell.txt",
+      "bytes": 3646535,
+      "words": 642571,
+      "reading_time_minutes": 2856
+    },
+    {
+      "title": "The Preacher's Complete Homiletical Commentary on the Old Testament With Critical and Explanatory Notes, Indices: Chronicles, Ez (preacherscomplet0000jame)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-old-testament-with-critical-and-explanatory-notes-indice.txt",
+      "bytes": 2445640,
+      "words": 418859,
+      "reading_time_minutes": 1862
+    },
+    {
+      "title": "The Pulpit Commentary, Isaiah, Volume I (pulpitcommentary0001edit)",
+      "file": "the-pulpit-commentary-isaiah-volume-i-pulpitcommentary0001edit-edited-by-the-very-rev-h-d-m-spence-and-by-the-.txt",
+      "bytes": 2962492,
+      "words": 509879,
+      "reading_time_minutes": 2266
+    },
+    {
+      "title": "AN INDEX TO THE PREACHER'S COMPLETE HOMILETICAL COMMENTARY ON THE NEW TESTAMENT",
+      "file": "an-index-to-the-preacher-s-complete-homiletical-commentary-on-the-new-testament-various.txt",
+      "bytes": 886601,
+      "words": 154788,
+      "reading_time_minutes": 688
+    },
+    {
+      "title": "The Pulpit Commentary 38, St. Luke Vol. II (The Pulpit Commentary) (pulpitcommentary0000revh_y2l7)",
+      "file": "the-pulpit-commentary-38-st-luke-vol-ii-the-pulpit-commentary-pulpitcommentary0000revh-y2l7-rev-h-d-m-spence-d.txt",
+      "bytes": 1514541,
+      "words": 263878,
+      "reading_time_minutes": 1173
+    },
+    {
+      "title": "The Pulpit Commentary: Ecclesiastes (pulpitcommentary0000jose)",
+      "file": "the-pulpit-commentary-ecclesiastes-pulpitcommentary0000jose-joseph-s-exell-h-d-m-spence.txt",
+      "bytes": 1734113,
+      "words": 296416,
+      "reading_time_minutes": 1317
+    },
+    {
+      "title": "Life and labors of Charles H. Spurgeon: the faithful preacher, the devoted pastor, the noble philanthropist, the beloved college president, and the voluminous writer, author, etc., etc.",
+      "file": "life-and-labors-of-charles-h-spurgeon-the-faithful-preacher-the-devoted-pastor-the-noble-philanthropist-the-be.txt",
+      "bytes": 1444965,
+      "words": 226293,
+      "reading_time_minutes": 1006
+    },
+    {
+      "title": "Spurgeon family; being an account of the descent and family of Charles Haddon Spurgeon, with notes on the family in general, particularly the Essex branch, from 1465 (5 Edward IV) to 1905 (4 Edward VII)",
+      "file": "spurgeon-family-being-an-account-of-the-descent-and-family-of-charles-haddon-spurgeon-with-notes-on-the-family.txt",
+      "bytes": 89447,
+      "words": 14026,
+      "reading_time_minutes": 62
+    },
+    {
+      "title": "Life of Charles Haddon Spurgeon, the world's great preacher",
+      "file": "life-of-charles-haddon-spurgeon-the-world-s-great-preacher-conwell-russell-herman-1843-1925.txt",
+      "bytes": 952263,
+      "words": 148080,
+      "reading_time_minutes": 658
+    },
+    {
+      "title": "The life of Charles Haddon Spurgeon",
+      "file": "the-life-of-charles-haddon-spurgeon-ray-charles.txt",
+      "bytes": 892330,
+      "words": 135723,
+      "reading_time_minutes": 603
+    },
+    {
+      "title": "Women who have worked and won : the life-story of Mrs. Spurgeon, Mrs. Booth-Tucker, F.R. Havergal, and Ramabai",
+      "file": "women-who-have-worked-and-won-the-life-story-of-mrs-spurgeon-mrs-booth-tucker-f-r-havergal-and-ramabai-chappel.txt",
+      "bytes": 386938,
+      "words": 57687,
+      "reading_time_minutes": 256
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra55exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "Spurgeon's Sermons - Vol. 7 - Metropolitan Tabernacle Pulpit",
+      "author": "Charles H. Spurgeon",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/SpurgeonMetropolitanPt07/SpurgeonMetropolitanPt07_djvu.txt"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "Life and works of Rev. Charles H. Spurgeon [microform] : being a graphic account of the greatest preacher of modern times : his boyhood and early life, wonderful success in London, preaching to vast audiences at the Crystal Palace, Surrey Music Hall and in the open air, famous Metropolitan Tabernacle, Pastor's College, orphanage, etc., etc. : containing personal anecdotes, vivid descriptions of his appearance ... : to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "author": "Northrop, Henry Davenport, 1836-1909",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "Life and works of Rev. Charles H. Spurgeon being a graphic account of the greatest preacher of modern time [microform] : his boyhood and early life, wonderful successes in London ... containing personal anecdotes, vivid descriptions of his appearance ... to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "author": "Northrop, Henry Davenport, 1836-1909",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "Sermons preached and revised by te Rev. C. H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "Indiana Baptist history, 1798-1908",
+      "author": "Stott, William Taylor, 1836-1918",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "The missionary gazetteer, comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies etc., with their progress in evangelization and civilization",
+      "author": "Williams, Charles, 1796-1866",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "The lone star, the history of the Telugu mission of the American Baptist Missionary Union [microform]",
+      "author": "Downie, David, 1838-1927",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "The missionary gazetteer [microform] : comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies, &c. & c. &c. with their progress in evangelization and civilization",
+      "author": "Williams, Charles, 1796-1866",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "The story of a 100 years, 1820-1920 : being the history of the Baptist Church in South Africa",
+      "author": "Batts, H. J",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "The pulpit commentary (cu31924101104994)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 13,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet07newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "The pulpit commentary (cu31924098499514)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "The pulpit commentary (cu31924101104820)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "The pulpit commentary (cu31924101104861)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "The pulpit commentary (cu31924101105074)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "The pulpit commentary (cu31924101104754)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "The pulpit commentary (cu31924101104796)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 20,
+      "title": "The pulpit commentary (cu31924101104689)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 21,
+      "title": "The pulpit commentary (cu31924098499506)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 22,
+      "title": "The pulpit commentary (cu31924101104887)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 23,
+      "title": "The pulpit commentary (cu31924101105116)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 24,
+      "title": "The pulpit commentary (cu31924101104481)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 25,
+      "title": "The pulpit commentary (cu31924101104879)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 26,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet20newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 27,
+      "title": "The pulpit commentary (cu31924101104978)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 28,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet16newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 29,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet19newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 30,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet05newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 31,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet04newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 32,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet17newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 33,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet21newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 34,
+      "title": "The pulpit commentary (cu31924101105041)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 35,
+      "title": "The Preacher's complete homiletical commentary on the Old Testament : (on an original plan) (preacherscomple00unkngoog)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 36,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet18newy)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 37,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0027unse)",
+      "author": "Various",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 38,
+      "title": "The pulpit commentary (pulpitcommentar00unkngoog)",
+      "author": "Spence-Jones, Henry Donald Maurice, Dean of Gloucester, formerly Spence",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 39,
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.1256)",
+      "author": "Spence Very Rev. H. D. M.",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/in.ernet.dli.2015.1256/in.ernet.dli.2015.1256_djvu.txt"
+      ]
+    },
+    {
+      "row": 40,
+      "title": "The pulpit commentary (pulpitcommentar03unkngoog)",
+      "author": "Spence-Jones, Henry Donald Maurice, Dean of Gloucester, formerly Spence",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 41,
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.236846)",
+      "author": "Spence Very Rev. H. D. M.",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/in.ernet.dli.2015.236846/in.ernet.dli.2015.236846_djvu.txt"
+      ]
+    },
+    {
+      "row": 42,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-various.txt"
+    },
+    {
+      "row": 43,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0017unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0017unse-various.txt"
+    },
+    {
+      "row": 44,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_p8e6)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-p8e6-various.txt"
+    },
+    {
+      "row": 45,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_d2p5)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-d2p5-various.txt"
+    },
+    {
+      "row": 46,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0007unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0007unse-various.txt"
+    },
+    {
+      "row": 47,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0028unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0028unse-various.txt"
+    },
+    {
+      "row": 48,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0025unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0025unse-various.txt"
+    },
+    {
+      "row": 49,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_n6o2)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-n6o2-various.txt"
+    },
+    {
+      "row": 50,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_m6k7)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-m6k7-various.txt"
+    },
+    {
+      "row": 51,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-various.txt"
+    },
+    {
+      "row": 52,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0003unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0003unse-various.txt"
+    },
+    {
+      "row": 53,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_f2q2)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-f2q2-various.txt"
+    },
+    {
+      "row": 54,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0002unse_k5l1)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0002unse-k5l1-various.txt"
+    },
+    {
+      "row": 55,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0030unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0030unse-various.txt"
+    },
+    {
+      "row": 56,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse_a6f3)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-a6f3-various.txt"
+    },
+    {
+      "row": 57,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_b9a0)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-b9a0-various.txt"
+    },
+    {
+      "row": 58,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0004unse_g8o8)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0004unse-g8o8-various.txt"
+    },
+    {
+      "row": 59,
+      "title": "THE PULPIT COMMENTARY: JEREMIAH & LAMENTATIONS (pulpitcommentary0011jose)",
+      "author": "Joseph S (editors) Spence H D M & Excell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-jeremiah-and-lamentations-pulpitcommentary0011jose-joseph-s-editors-spence-h-d-m-and-exc.txt"
+    },
+    {
+      "row": 60,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0001unse_j9h0)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0001unse-j9h0-various.txt"
+    },
+    {
+      "row": 61,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0014unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0014unse-various.txt"
+    },
+    {
+      "row": 62,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0002unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0002unse-various.txt"
+    },
+    {
+      "row": 63,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0013unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0013unse-various.txt"
+    },
+    {
+      "row": 64,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0026unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0026unse-various.txt"
+    },
+    {
+      "row": 65,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0005unse_c6m2)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0005unse-c6m2-various.txt"
+    },
+    {
+      "row": 66,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0000unse_s2b1)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0000unse-s2b1-various.txt"
+    },
+    {
+      "row": 67,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0012unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0012unse-various.txt"
+    },
+    {
+      "row": 68,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0009unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0009unse-various.txt"
+    },
+    {
+      "row": 69,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0031unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0031unse-various.txt"
+    },
+    {
+      "row": 70,
+      "title": "The Pulpit Commentary 36, St. Mark Vol. II (The Pulpit Commentary) (pulpitcommentary0002revh)",
+      "author": "Rev. H. D. M. Spence, D.D., Rev. Joseph S. Exell, M.A.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-36-st-mark-vol-ii-the-pulpit-commentary-pulpitcommentary0002revh-rev-h-d-m-spence-d-d-re.txt"
+    },
+    {
+      "row": 71,
+      "title": "St John Volume Vol.II Biblical Illustrator",
+      "author": "Joseph S. Exell",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/st-john-volume-vol-ii-biblical-illustrator-joseph-s-exell.txt"
+    },
+    {
+      "row": 72,
+      "title": "The Preacher's Complete Homiletical Commentary on the Old Testament With Critical and Explanatory Notes, Indices: Chronicles, Ez (preacherscomplet0000jame)",
+      "author": "James Wolfendale, William Jones, W. H. Booth, J. H. Goodman, S. Gregory",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-old-testament-with-critical-and-explanatory-notes-indice.txt"
+    },
+    {
+      "row": 73,
+      "title": "The Pulpit Commentary, Isaiah, Volume I (pulpitcommentary0001edit)",
+      "author": "Edited By the Very Rev. H.D.M. Spence & By the Rev",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-isaiah-volume-i-pulpitcommentary0001edit-edited-by-the-very-rev-h-d-m-spence-and-by-the-.txt"
+    },
+    {
+      "row": 74,
+      "title": "AN INDEX TO THE PREACHER'S COMPLETE HOMILETICAL COMMENTARY ON THE NEW TESTAMENT",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-index-to-the-preacher-s-complete-homiletical-commentary-on-the-new-testament-various.txt"
+    },
+    {
+      "row": 75,
+      "title": "The Pulpit Commentary 38, St. Luke Vol. II (The Pulpit Commentary) (pulpitcommentary0000revh_y2l7)",
+      "author": "Rev. H. D. M. Spence, D.D., Rev. Joseph S. Exell, M.A.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-38-st-luke-vol-ii-the-pulpit-commentary-pulpitcommentary0000revh-y2l7-rev-h-d-m-spence-d.txt"
+    },
+    {
+      "row": 76,
+      "title": "The Pulpit Commentary: Ecclesiastes (pulpitcommentary0000jose)",
+      "author": "Joseph S. Exell H. D. M. Spence",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-ecclesiastes-pulpitcommentary0000jose-joseph-s-exell-h-d-m-spence.txt"
+    },
+    {
+      "row": 77,
+      "title": "Life and labors of Charles H. Spurgeon: the faithful preacher, the devoted pastor, the noble philanthropist, the beloved college president, and the voluminous writer, author, etc., etc.",
+      "author": "Needham, Geo. C. (George Carter)",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-and-labors-of-charles-h-spurgeon-the-faithful-preacher-the-devoted-pastor-the-noble-philanthropist-the-be.txt"
+    },
+    {
+      "row": 78,
+      "title": "Spurgeon family; being an account of the descent and family of Charles Haddon Spurgeon, with notes on the family in general, particularly the Essex branch, from 1465 (5 Edward IV) to 1905 (4 Edward VII)",
+      "author": "Higgs, William Miller",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/spurgeon-family-being-an-account-of-the-descent-and-family-of-charles-haddon-spurgeon-with-notes-on-the-family.txt"
+    },
+    {
+      "row": 79,
+      "title": "Life of Charles Haddon Spurgeon, the world's great preacher",
+      "author": "Conwell, Russell Herman, 1843-1925",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-conwell-russell-herman-1843-1925.txt"
+    },
+    {
+      "row": 80,
+      "title": "The life of Charles Haddon Spurgeon",
+      "author": "Ray, Charles",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-charles-haddon-spurgeon-ray-charles.txt"
+    },
+    {
+      "row": 81,
+      "title": "Women who have worked and won : the life-story of Mrs. Spurgeon, Mrs. Booth-Tucker, F.R. Havergal, and Ramabai",
+      "author": "Chappell, Jennie; Spurgeon, Susannah, d. 1903; Havergal, Frances Ridley, 1836-1879; Ramabai Sarasvati, Pundita, 1858-1922; Booth-Tucker, Emma Moss, 1860-1903",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/women-who-have-worked-and-won-the-life-story-of-mrs-spurgeon-mrs-booth-tucker-f-r-havergal-and-ramabai-chappel.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

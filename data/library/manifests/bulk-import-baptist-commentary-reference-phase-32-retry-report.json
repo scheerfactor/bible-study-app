@@ -1,0 +1,116 @@
+{
+  "source_csv": "data/library/import-batches/baptist-commentary-reference-phase-32-retry.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 8,
+  "total_attempted": 8,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 5,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Hastings Dictionary of the Bible, Volume 1",
+      "file": "hastings-dictionary-of-the-bible-volume-1-james-hastings.txt",
+      "bytes": 12075919,
+      "words": 1316547,
+      "reading_time_minutes": 5851
+    },
+    {
+      "title": "Hastings Dictionary of the Bible, Volume 2",
+      "file": "hastings-dictionary-of-the-bible-volume-2-james-hastings.txt",
+      "bytes": 12303312,
+      "words": 1337789,
+      "reading_time_minutes": 5946
+    },
+    {
+      "title": "Hastings Dictionary of the Bible, Volume 5",
+      "file": "hastings-dictionary-of-the-bible-volume-5-james-hastings.txt",
+      "bytes": 6831928,
+      "words": 1130153,
+      "reading_time_minutes": 5023
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Hastings Dictionary of the Bible, Volume 1",
+      "author": "James Hastings",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hastings-dictionary-of-the-bible-volume-1-james-hastings.txt"
+    },
+    {
+      "row": 3,
+      "title": "Hastings Dictionary of the Bible, Volume 2",
+      "author": "James Hastings",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hastings-dictionary-of-the-bible-volume-2-james-hastings.txt"
+    },
+    {
+      "row": 4,
+      "title": "Hastings Dictionary of the Bible, Volume 5",
+      "author": "James Hastings",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/hastings-dictionary-of-the-bible-volume-5-james-hastings.txt"
+    },
+    {
+      "row": 5,
+      "title": "An Enquiry into the Obligations of Christians to Use Means for the Conversion of the Heathens",
+      "author": "William Carey",
+      "status": "failed",
+      "issues": [
+        "fetch failed"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "The Life of William Carey, Shoemaker and Missionary",
+      "author": "George Smith",
+      "status": "failed",
+      "issues": [
+        "fetch failed"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "The Psalms of David Imitated in the Language of the New Testament",
+      "author": "Isaac Watts",
+      "status": "failed",
+      "issues": [
+        "fetch failed"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "Thoughts upon the African Slave Trade",
+      "author": "John Newton",
+      "status": "failed",
+      "issues": [
+        "fetch failed"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "Rock of Ages",
+      "author": "Augustus Toplady",
+      "status": "failed",
+      "issues": [
+        "fetch failed"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "source_csv": "data/library/import-batches/baptist-commentary-reference-phase-32.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 80,
+  "total_attempted": 38,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 32,
+  "failed": 3,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 29,
+  "duplicate_sources": 3,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "An Enquiry into the Obligations of Christians to Use Means for the Conversion of the Heathens",
+      "file": "an-enquiry-into-the-obligations-of-christians-to-use-means-for-the-conversion-of-the-heathens-william-carey.txt",
+      "bytes": 97549,
+      "words": 14914,
+      "reading_time_minutes": 66
+    },
+    {
+      "title": "The Psalms of David Imitated in the Language of the New Testament",
+      "file": "the-psalms-of-david-imitated-in-the-language-of-the-new-testament-isaac-watts.txt",
+      "bytes": 363497,
+      "words": 64742,
+      "reading_time_minutes": 288
+    },
+    {
+      "title": "Thoughts upon the African Slave Trade",
+      "file": "thoughts-upon-the-african-slave-trade-john-newton.txt",
+      "bytes": 51675,
+      "words": 8580,
+      "reading_time_minutes": 38
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "A Treatise on the Preparation and Delivery of Sermons",
+      "author": "John A. Broadus",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "Jesus of Nazareth",
+      "author": "John A. Broadus",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "A Harmony of the Gospels",
+      "author": "John A. Broadus and A. T. Robertson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "Lectures on the History of Preaching",
+      "author": "John A. Broadus",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "The Evidences of Christianity",
+      "author": "John Leadley Dagg",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "The Elements of Moral Science",
+      "author": "John Leadley Dagg",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "Daniel and the Inter-Biblical Period",
+      "author": "B. H. Carroll",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "The Book of Revelation",
+      "author": "B. H. Carroll",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "Galatians, Romans, Philippians, Philemon",
+      "author": "B. H. Carroll",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "Colossians",
+      "author": "B. H. Carroll",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "Great Epochs of Sacred History",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 13,
+      "title": "A Text-Book on Prophecy",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "The Antidote to Christian Science",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "Lectures Introductory to the Study of the Acts, Catholic Epistles, and Revelation",
+      "author": "William Kelly",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Notes on the Book of Job",
+      "author": "William Kelly",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "The Prophet Ezekiel: An Analytical Exposition",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "The Acts of the Apostles",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "The Annotated Bible",
+      "author": "Arno C. Gaebelein",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    },
+    {
+      "row": 20,
+      "title": "The Work of Christ: Past, Present, and Future",
+      "author": "Arno C. Gaebelein",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/TheWorkOfChristPastPresentAndFuture/TheWorkOfChristPastPresentAndFuture_djvu.txt"
+      ]
+    },
+    {
+      "row": 21,
+      "title": "Notes on the Book of Genesis",
+      "author": "C. H. Mackintosh",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 22,
+      "title": "Notes on the Book of Exodus",
+      "author": "C. H. Mackintosh",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 23,
+      "title": "Notes on the Book of Leviticus",
+      "author": "C. H. Mackintosh",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 24,
+      "title": "Genesis: Or, The First Book of Moses",
+      "author": "John Peter Lange",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 25,
+      "title": "Numbers: Or, The Fourth Book of Moses",
+      "author": "John Peter Lange",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 26,
+      "title": "Hastings Dictionary of the Bible, Volume 1",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 27,
+      "title": "Hastings Dictionary of the Bible, Volume 2",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 28,
+      "title": "Hastings Dictionary of the Bible, Volume 4",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 29,
+      "title": "Hastings Dictionary of the Bible, Volume 5",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 30,
+      "title": "An Enquiry into the Obligations of Christians to Use Means for the Conversion of the Heathens",
+      "author": "William Carey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-enquiry-into-the-obligations-of-christians-to-use-means-for-the-conversion-of-the-heathens-william-carey.txt"
+    },
+    {
+      "row": 31,
+      "title": "The Life of William Carey, Shoemaker and Missionary",
+      "author": "George Smith",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://www.gutenberg.org/files/2056/2056-0.txt"
+      ]
+    },
+    {
+      "row": 32,
+      "title": "The Life of Adoniram Judson",
+      "author": "Edward Judson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 33,
+      "title": "The Ministry of the Spirit",
+      "author": "A. J. Gordon",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 34,
+      "title": "The Psalms of David Imitated in the Language of the New Testament",
+      "author": "Isaac Watts",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-psalms-of-david-imitated-in-the-language-of-the-new-testament-isaac-watts.txt"
+    },
+    {
+      "row": 35,
+      "title": "Hymns and Spiritual Songs",
+      "author": "Isaac Watts",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 36,
+      "title": "Divine Songs",
+      "author": "Isaac Watts",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 37,
+      "title": "A Short Essay Toward the Improvement of Psalmody",
+      "author": "Isaac Watts",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 38,
+      "title": "Thoughts upon the African Slave Trade",
+      "author": "John Newton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/thoughts-upon-the-african-slave-trade-john-newton.txt"
+    },
+    {
+      "row": 39,
+      "title": "Rock of Ages",
+      "author": "Augustus Toplady",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://www.gutenberg.org/files/26874/26874-0.txt"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

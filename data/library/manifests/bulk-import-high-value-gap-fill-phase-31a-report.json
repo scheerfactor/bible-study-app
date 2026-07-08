@@ -1,0 +1,608 @@
+{
+  "source_csv": "data/library/import-batches/high-value-gap-fill-phase-31a.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 40,
+  "total_attempted": 40,
+  "imported": 37,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 3,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra55exel)",
+      "file": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-13.txt",
+      "bytes": 4180144,
+      "words": 651211,
+      "reading_time_minutes": 2894
+    },
+    {
+      "title": "Life and works of Rev. Charles H. Spurgeon [microform] : being a graphic account of the greatest preacher of modern times : his boyhood and early life, wonderful success in London, preaching to vast audiences at the Crystal Palace, Surrey Music Hall and in the open air, famous Metropolitan Tabernacle, Pastor's College, orphanage, etc., etc. : containing personal anecdotes, vivid descriptions of his appearance ... : to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "file": "life-and-works-of-rev-charles-h-spurgeon-microform-being-a-graphic-account-of-the-greatest-preacher-of-modern-.txt",
+      "bytes": 789318,
+      "words": 141993,
+      "reading_time_minutes": 631
+    },
+    {
+      "title": "Life and works of Rev. Charles H. Spurgeon being a graphic account of the greatest preacher of modern time [microform] : his boyhood and early life, wonderful successes in London ... containing personal anecdotes, vivid descriptions of his appearance ... to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "file": "life-and-works-of-rev-charles-h-spurgeon-being-a-graphic-account-of-the-greatest-preacher-of-modern-time-micro.txt",
+      "bytes": 955894,
+      "words": 171552,
+      "reading_time_minutes": 762
+    },
+    {
+      "title": "Sermons preached and revised by te Rev. C. H. Spurgeon",
+      "file": "sermons-preached-and-revised-by-te-rev-c-h-spurgeon-spurgeon-c-h-charles-haddon-1834-1892.txt",
+      "bytes": 1033077,
+      "words": 197394,
+      "reading_time_minutes": 877
+    },
+    {
+      "title": "Indiana Baptist history, 1798-1908",
+      "file": "indiana-baptist-history-1798-1908-stott-william-taylor-1836-1918.txt",
+      "bytes": 697231,
+      "words": 103443,
+      "reading_time_minutes": 460
+    },
+    {
+      "title": "The missionary gazetteer, comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies etc., with their progress in evangelization and civilization",
+      "file": "the-missionary-gazetteer-comprising-a-geographical-and-statistical-account-of-the-various-stations-of-the-chur.txt",
+      "bytes": 2601052,
+      "words": 386517,
+      "reading_time_minutes": 1718
+    },
+    {
+      "title": "The lone star, the history of the Telugu mission of the American Baptist Missionary Union [microform]",
+      "file": "the-lone-star-the-history-of-the-telugu-mission-of-the-american-baptist-missionary-union-microform-downie-davi.txt",
+      "bytes": 401866,
+      "words": 68436,
+      "reading_time_minutes": 304
+    },
+    {
+      "title": "The missionary gazetteer [microform] : comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies, &c. & c. &c. with their progress in evangelization and civilization",
+      "file": "the-missionary-gazetteer-microform-comprising-a-geographical-and-statistical-account-of-the-various-stations-o.txt",
+      "bytes": 1999782,
+      "words": 333764,
+      "reading_time_minutes": 1483
+    },
+    {
+      "title": "The story of a 100 years, 1820-1920 : being the history of the Baptist Church in South Africa",
+      "file": "the-story-of-a-100-years-1820-1920-being-the-history-of-the-baptist-church-in-south-africa-batts-h-j.txt",
+      "bytes": 377025,
+      "words": 56552,
+      "reading_time_minutes": 251
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104994)",
+      "file": "the-pulpit-commentary-cu31924101104994-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3378514,
+      "words": 520481,
+      "reading_time_minutes": 2313
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet07newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet07newy-various.txt",
+      "bytes": 3102260,
+      "words": 472942,
+      "reading_time_minutes": 2102
+    },
+    {
+      "title": "The pulpit commentary (cu31924098499514)",
+      "file": "the-pulpit-commentary-cu31924098499514-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2000157,
+      "words": 359180,
+      "reading_time_minutes": 1596
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104820)",
+      "file": "the-pulpit-commentary-cu31924101104820-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2689172,
+      "words": 416376,
+      "reading_time_minutes": 1851
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104861)",
+      "file": "the-pulpit-commentary-cu31924101104861-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2074456,
+      "words": 377753,
+      "reading_time_minutes": 1679
+    },
+    {
+      "title": "The pulpit commentary (cu31924101105074)",
+      "file": "the-pulpit-commentary-cu31924101105074-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3321135,
+      "words": 505347,
+      "reading_time_minutes": 2246
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104754)",
+      "file": "the-pulpit-commentary-cu31924101104754-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3639148,
+      "words": 555762,
+      "reading_time_minutes": 2470
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104796)",
+      "file": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2810455,
+      "words": 430868,
+      "reading_time_minutes": 1915
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104689)",
+      "file": "the-pulpit-commentary-cu31924101104689-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 1726227,
+      "words": 304483,
+      "reading_time_minutes": 1353
+    },
+    {
+      "title": "The pulpit commentary (cu31924098499506)",
+      "file": "the-pulpit-commentary-cu31924098499506-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 1816195,
+      "words": 324013,
+      "reading_time_minutes": 1440
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104887)",
+      "file": "the-pulpit-commentary-cu31924101104887-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 1648024,
+      "words": 294474,
+      "reading_time_minutes": 1309
+    },
+    {
+      "title": "The pulpit commentary (cu31924101105116)",
+      "file": "the-pulpit-commentary-cu31924101105116-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2700017,
+      "words": 415224,
+      "reading_time_minutes": 1845
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104481)",
+      "file": "the-pulpit-commentary-cu31924101104481-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 1877103,
+      "words": 337554,
+      "reading_time_minutes": 1500
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104879)",
+      "file": "the-pulpit-commentary-cu31924101104879-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2170632,
+      "words": 383674,
+      "reading_time_minutes": 1705
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet20newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet20newy-various.txt",
+      "bytes": 3497217,
+      "words": 529704,
+      "reading_time_minutes": 2354
+    },
+    {
+      "title": "The pulpit commentary (cu31924101104978)",
+      "file": "the-pulpit-commentary-cu31924101104978-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 3922539,
+      "words": 602353,
+      "reading_time_minutes": 2677
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet16newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet16newy-various.txt",
+      "bytes": 3295902,
+      "words": 509076,
+      "reading_time_minutes": 2263
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet19newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet19newy-various.txt",
+      "bytes": 1613709,
+      "words": 242792,
+      "reading_time_minutes": 1079
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet05newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet05newy-various.txt",
+      "bytes": 2062683,
+      "words": 315883,
+      "reading_time_minutes": 1404
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet04newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet04newy-various.txt",
+      "bytes": 3636979,
+      "words": 552794,
+      "reading_time_minutes": 2457
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet17newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet17newy-various.txt",
+      "bytes": 3227298,
+      "words": 489384,
+      "reading_time_minutes": 2175
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet21newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet21newy-various.txt",
+      "bytes": 599304,
+      "words": 81387,
+      "reading_time_minutes": 362
+    },
+    {
+      "title": "The pulpit commentary (cu31924101105041)",
+      "file": "the-pulpit-commentary-cu31924101105041-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt",
+      "bytes": 2815335,
+      "words": 430943,
+      "reading_time_minutes": 1915
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Old Testament : (on an original plan) (preacherscomple00unkngoog)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple00unkng.txt",
+      "bytes": 3094605,
+      "words": 469146,
+      "reading_time_minutes": 2085
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet18newy)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet18newy-various.txt",
+      "bytes": 3008230,
+      "words": 457771,
+      "reading_time_minutes": 2035
+    },
+    {
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0027unse)",
+      "file": "the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0027unse-various.txt",
+      "bytes": 2478679,
+      "words": 427152,
+      "reading_time_minutes": 1898
+    },
+    {
+      "title": "The pulpit commentary (pulpitcommentar00unkngoog)",
+      "file": "the-pulpit-commentary-pulpitcommentar00unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt",
+      "bytes": 3228479,
+      "words": 496291,
+      "reading_time_minutes": 2206
+    },
+    {
+      "title": "The pulpit commentary (pulpitcommentar03unkngoog)",
+      "file": "the-pulpit-commentary-pulpitcommentar03unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt",
+      "bytes": 3486275,
+      "words": 537652,
+      "reading_time_minutes": 2390
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Biblical illustrator; or, Anecdotes, similes, emblems, illustrations : expository, scientific, georgraphical, historical, and homiletic, gathered from a wide range of home and foreign literature, on the verses of the Bible (biblicalillustra55exel)",
+      "author": "Exell, Joseph S. (Joseph Samuel), 1849-; Peachey, T. F",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-13.txt"
+    },
+    {
+      "row": 3,
+      "title": "Spurgeon's Sermons - Vol. 7 - Metropolitan Tabernacle Pulpit",
+      "author": "Charles H. Spurgeon",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/SpurgeonMetropolitanPt07/SpurgeonMetropolitanPt07_djvu.txt"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "Life and works of Rev. Charles H. Spurgeon [microform] : being a graphic account of the greatest preacher of modern times : his boyhood and early life, wonderful success in London, preaching to vast audiences at the Crystal Palace, Surrey Music Hall and in the open air, famous Metropolitan Tabernacle, Pastor's College, orphanage, etc., etc. : containing personal anecdotes, vivid descriptions of his appearance ... : to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "author": "Northrop, Henry Davenport, 1836-1909",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-and-works-of-rev-charles-h-spurgeon-microform-being-a-graphic-account-of-the-greatest-preacher-of-modern-.txt"
+    },
+    {
+      "row": 5,
+      "title": "Life and works of Rev. Charles H. Spurgeon being a graphic account of the greatest preacher of modern time [microform] : his boyhood and early life, wonderful successes in London ... containing personal anecdotes, vivid descriptions of his appearance ... to which is added a vast collection of his eloquent sermons, brilliant writings, and witty sayings",
+      "author": "Northrop, Henry Davenport, 1836-1909",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/life-and-works-of-rev-charles-h-spurgeon-being-a-graphic-account-of-the-greatest-preacher-of-modern-time-micro.txt"
+    },
+    {
+      "row": 6,
+      "title": "Sermons preached and revised by te Rev. C. H. Spurgeon",
+      "author": "Spurgeon, C. H. (Charles Haddon), 1834-1892",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/sermons-preached-and-revised-by-te-rev-c-h-spurgeon-spurgeon-c-h-charles-haddon-1834-1892.txt"
+    },
+    {
+      "row": 7,
+      "title": "Indiana Baptist history, 1798-1908",
+      "author": "Stott, William Taylor, 1836-1918",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/indiana-baptist-history-1798-1908-stott-william-taylor-1836-1918.txt"
+    },
+    {
+      "row": 8,
+      "title": "The missionary gazetteer, comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies etc., with their progress in evangelization and civilization",
+      "author": "Williams, Charles, 1796-1866",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-missionary-gazetteer-comprising-a-geographical-and-statistical-account-of-the-various-stations-of-the-chur.txt"
+    },
+    {
+      "row": 9,
+      "title": "The lone star, the history of the Telugu mission of the American Baptist Missionary Union [microform]",
+      "author": "Downie, David, 1838-1927",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-lone-star-the-history-of-the-telugu-mission-of-the-american-baptist-missionary-union-microform-downie-davi.txt"
+    },
+    {
+      "row": 10,
+      "title": "The missionary gazetteer [microform] : comprising a geographical and statistical account of the various stations of the church, London, Moravian, Wesleyan, Baptist, and American, missionary societies, &c. & c. &c. with their progress in evangelization and civilization",
+      "author": "Williams, Charles, 1796-1866",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-missionary-gazetteer-microform-comprising-a-geographical-and-statistical-account-of-the-various-stations-o.txt"
+    },
+    {
+      "row": 11,
+      "title": "The story of a 100 years, 1820-1920 : being the history of the Baptist Church in South Africa",
+      "author": "Batts, H. J",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-story-of-a-100-years-1820-1920-being-the-history-of-the-baptist-church-in-south-africa-batts-h-j.txt"
+    },
+    {
+      "row": 12,
+      "title": "The pulpit commentary (cu31924101104994)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104994-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet07newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet07newy-various.txt"
+    },
+    {
+      "row": 14,
+      "title": "The pulpit commentary (cu31924098499514)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924098499514-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 15,
+      "title": "The pulpit commentary (cu31924101104820)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104820-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 16,
+      "title": "The pulpit commentary (cu31924101104861)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104861-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 17,
+      "title": "The pulpit commentary (cu31924101105074)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101105074-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 18,
+      "title": "The pulpit commentary (cu31924101104754)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104754-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 19,
+      "title": "The pulpit commentary (cu31924101104796)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 20,
+      "title": "The pulpit commentary (cu31924101104689)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104689-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 21,
+      "title": "The pulpit commentary (cu31924098499506)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924098499506-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 22,
+      "title": "The pulpit commentary (cu31924101104887)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104887-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 23,
+      "title": "The pulpit commentary (cu31924101105116)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101105116-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 24,
+      "title": "The pulpit commentary (cu31924101104481)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104481-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 25,
+      "title": "The pulpit commentary (cu31924101104879)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104879-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 26,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet20newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet20newy-various.txt"
+    },
+    {
+      "row": 27,
+      "title": "The pulpit commentary (cu31924101104978)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101104978-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 28,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet16newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet16newy-various.txt"
+    },
+    {
+      "row": 29,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet19newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet19newy-various.txt"
+    },
+    {
+      "row": 30,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet05newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet05newy-various.txt"
+    },
+    {
+      "row": 31,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet04newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet04newy-various.txt"
+    },
+    {
+      "row": 32,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet17newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet17newy-various.txt"
+    },
+    {
+      "row": 33,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet21newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet21newy-various.txt"
+    },
+    {
+      "row": 34,
+      "title": "The pulpit commentary (cu31924101105041)",
+      "author": "Spence-Jones, H. D. M. (Henry Donald Maurice), 1836-1917",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-cu31924101105041-spence-jones-h-d-m-henry-donald-maurice-1836-1917.txt"
+    },
+    {
+      "row": 35,
+      "title": "The Preacher's complete homiletical commentary on the Old Testament : (on an original plan) (preacherscomple00unkngoog)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple00unkng.txt"
+    },
+    {
+      "row": 36,
+      "title": "The Preacher's complete homiletical commentary : (on an original plan). (preacherscomplet18newy)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet18newy-various.txt"
+    },
+    {
+      "row": 37,
+      "title": "The Preacher's complete homiletical commentary on the Bible (preacherscomplet0027unse)",
+      "author": "Various",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-preacher-s-complete-homiletical-commentary-on-the-bible-preacherscomplet0027unse-various.txt"
+    },
+    {
+      "row": 38,
+      "title": "The pulpit commentary (pulpitcommentar00unkngoog)",
+      "author": "Spence-Jones, Henry Donald Maurice, Dean of Gloucester, formerly Spence",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-pulpitcommentar00unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt"
+    },
+    {
+      "row": 39,
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.1256)",
+      "author": "Spence Very Rev. H. D. M.",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/in.ernet.dli.2015.1256/in.ernet.dli.2015.1256_djvu.txt"
+      ]
+    },
+    {
+      "row": 40,
+      "title": "The pulpit commentary (pulpitcommentar03unkngoog)",
+      "author": "Spence-Jones, Henry Donald Maurice, Dean of Gloucester, formerly Spence",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-pulpit-commentary-pulpitcommentar03unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-.txt"
+    },
+    {
+      "row": 41,
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.236846)",
+      "author": "Spence Very Rev. H. D. M.",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/in.ernet.dli.2015.236846/in.ernet.dli.2015.236846_djvu.txt"
+      ]
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

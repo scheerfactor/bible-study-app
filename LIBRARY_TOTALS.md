@@ -4,15 +4,46 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,579
+- Verified public/free Library resources: 1,679
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 587
+- Library authors represented: 606
 - Public Library duplicate title/author groups: 0
 
 ## Latest Public-Domain Content Expansion
+
+Added 100 verified public-domain Library resources in the latest high-value commentary and study-reference wave:
+
+- 71 commentary and homiletical resources, including Pulpit Commentary, Biblical Illustrator, Preacher's Complete Homiletical Commentary, Lange, B. H. Carroll, and William Kelly volumes
+- 7 preaching and teaching resources, including additional C. H. Spurgeon life, sermon, and ministry materials
+- 5 Baptist history resources and 3 missions resources
+- 5 Bible study helps, including Broadus, Dagg, and James M. Gray resources
+- 4 Hastings Dictionary of the Bible volumes
+- 3 prayer and hymn resources, including Isaac Watts, John Newton, and Augustus Toplady
+- 1 Bible handbook and 1 Christian living resource
+
+These strengthen sermon preparation, whole-book Bible study, Baptist history, missions, dictionary/reference coverage, prophecy study, Gospel harmony work, and commentary depth for Daniel, Revelation, Genesis, Numbers, Ecclesiastes, Isaiah, Jeremiah, Lamentations, Mark, Luke, John, Pauline epistles, and other Bible books. Failed or duplicate candidate rows were not added as public Library records.
+
+## Previous Public-Domain Content Expansion
+
+Added 37 verified public-domain Library resources from Internet Archive in the high-value gap-fill batch:
+
+- 17 Pulpit Commentary / Pulpit-related archive volumes
+- 10 Preacher's Complete Homiletical Commentary volumes
+- 1 Biblical Illustrator volume
+- 3 C. H. Spurgeon sermon / life-and-works resources
+- 5 Baptist history, missions, and missionary geography resources
+- 1 Baptist church history resource
+
+These strengthen commentary depth, sermon preparation, Baptist history, missions, and preaching helps without adding broad or noisy literature. Three candidate rows were not imported because their source downloads returned 404 errors and should be repaired before retrying.
+
+## Strong's Final Gap Fill
+
+Added 7 reviewed Strong's lexicon cards for the last missing KJV-with-Strong's mapping numbers. The Strong's mapping audit now covers 724,963 of 724,963 mapped Bible-word rows with 0 missing lexicon numbers.
+
+## Previous Public-Domain Content Expansion
 
 Added 19 verified public-domain Library resources from Internet Archive and Project Gutenberg:
 
@@ -925,10 +956,12 @@ These strengthen daily Proverbs study, book-by-book Bible survey work, and Sunda
 
 ## Latest QA Snapshot
 
-- `npm run library:qa`: 1,512 public resources verified, complete, and file-backed.
-- `npm run library:validate`: manifest validation passed for 1,512 verified resources.
+- `npm run library:qa`: 1,679 public resources verified, complete, and file-backed.
+- `npm run library:validate`: manifest validation passed for 1,679 verified resources.
 - `npm run validate:commentary`: 260 commentary/review files validated, 13,789 rows checked.
-- `npm run validate:strongs`: 14,289 entries checked across 8 files.
+- `npm run validate:strongs`: 14,296 entries checked across 9 files.
+- `npm run validate:strongs-mapping`: 724,963 KJV-with-Strong's rows checked with 0 missing lexicon numbers.
+- `npm run validate:tsk:all`: 6,168 TSK rows checked with 0 duplicate references.
 
 ## Next Growth Rule
 

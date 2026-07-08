@@ -1,0 +1,56 @@
+{
+  "source_csv": "data/library/import-batches/baptist-commentary-reference-phase-32-url-fixes.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 10,
+  "total_attempted": 2,
+  "imported": 2,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Life of William Carey, Shoemaker and Missionary",
+      "file": "the-life-of-william-carey-shoemaker-and-missionary-george-smith.txt",
+      "bytes": 849507,
+      "words": 143033,
+      "reading_time_minutes": 636
+    },
+    {
+      "title": "Rock of Ages",
+      "file": "rock-of-ages-augustus-toplady.txt",
+      "bytes": 1815,
+      "words": 256,
+      "reading_time_minutes": 1
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Life of William Carey, Shoemaker and Missionary",
+      "author": "George Smith",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-life-of-william-carey-shoemaker-and-missionary-george-smith.txt"
+    },
+    {
+      "row": 3,
+      "title": "Rock of Ages",
+      "author": "Augustus Toplady",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/rock-of-ages-augustus-toplady.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
