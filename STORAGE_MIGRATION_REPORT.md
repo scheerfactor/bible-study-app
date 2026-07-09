@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-07-09T15:31:21.117Z
+Generated: 2026-07-09T16:22:47.602Z
 
 ## Path Strategy
 
@@ -10,25 +10,25 @@ Mirror current repository-relative paths in object storage during the transition
 
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
-| Library text | 1,798 | 1,798 | 0 | 1.46 GB |
+| Library text | 1,816 | 1,816 | 0 | 1.48 GB |
 | Commentary batches | 256 | 256 | 0 | 412.38 MB |
 | Dictionary files | 1 | 1 | 0 | 34.28 MB |
-| Library manifests | 1 | 1 | 0 | 3.65 MB |
+| Library manifests | 1 | 1 | 0 | 3.69 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
 | TSK/cross-reference batches | 28 | 28 | 0 | 4.45 MB |
-| Total public content | 2,116 | 2,116 | 0 | 1.94 GB |
+| Total public content | 2,134 | 2,134 | 0 | 1.96 GB |
 
 Commentary entries represented in public batch files: 11,404
 
-Storage-backed library text already uploaded to object storage: 119 files (116.36 MB).
+Storage-backed library text already uploaded to object storage: 137 files (136.40 MB).
 
 ## Biggest Storage Pressure
 
-Large library text files over 1 MB: 415 files (975.24 MB).
+Large library text files over 1 MB: 421 files (988.52 MB).
 
-Large public content files over 1 MB: 512 files (1.37 GB).
+Large public content files over 1 MB: 518 files (1.38 GB).
 
 These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
 

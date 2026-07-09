@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,798
+- Verified public/free Library resources: 1,816
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
@@ -13,6 +13,20 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 - Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 6 Bible geography, map, atlas, and Scripture gazetteer resources
+- 3 Bible manners and customs resources
+- 2 Bible natural-history resources for animals, plants, stones, and created things mentioned in Scripture
+- 1 tabernacle study resource with teaching and presentation value
+- 1 Bible dictionary / background reference
+- 3 Bible chronology resources for timeline comparison and teaching background
+- 2 Bible archaeology / Bible literature background resources, labeled as historical-reference material for careful use
+
+These strengthen Bible places, maps, chronology, customs, natural history, tabernacle/temple study, Study Workspace background, preaching preparation, and presentation research. All imported OCR texts are labeled for spot-checking before quotation, and the dry run found zero duplicate titles, zero duplicate sources, and zero rights flags before import.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 22 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

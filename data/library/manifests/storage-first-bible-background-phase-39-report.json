@@ -1,0 +1,309 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-bible-background-phase-39.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 18,
+  "imported": 18,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The Bible Atlas of Maps and Plans",
+      "file": "the-bible-atlas-of-maps-and-plans-samuel-clark.txt",
+      "bytes": 773710,
+      "words": 121209,
+      "reading_time_minutes": 539,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Manual of Biblical Geography: A Text-Book on Bible History",
+      "file": "manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt",
+      "bytes": 520998,
+      "words": 87689,
+      "reading_time_minutes": 390,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An Historical Text Book and Atlas of Biblical Geography",
+      "file": "an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt",
+      "bytes": 851180,
+      "words": 148745,
+      "reading_time_minutes": 661,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Maps; or, A Historical and Descriptive Atlas of Scripture Geography",
+      "file": "bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt",
+      "bytes": 210922,
+      "words": 31345,
+      "reading_time_minutes": 139,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The New Biblical Atlas and Scripture Gazetteer",
+      "file": "the-new-biblical-atlas-and-scripture-gazetteer-various.txt",
+      "bytes": 467464,
+      "words": 69263,
+      "reading_time_minutes": 308,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Biblical Geography of Central Asia",
+      "file": "the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt",
+      "bytes": 651963,
+      "words": 97725,
+      "reading_time_minutes": 434,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Manners and Customs",
+      "file": "bible-manners-and-customs-g-m-mackie.txt",
+      "bytes": 358038,
+      "words": 54149,
+      "reading_time_minutes": 241,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Oriental Customs; or, An Illustration of the Sacred Scriptures",
+      "file": "oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt",
+      "bytes": 1665149,
+      "words": 255913,
+      "reading_time_minutes": 1137,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Eastern Customs in Bible Lands",
+      "file": "eastern-customs-in-bible-lands-h-b-tristram.txt",
+      "bytes": 328702,
+      "words": 56591,
+      "reading_time_minutes": 252,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Dictionary of the Natural History of the Bible",
+      "file": "a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "bytes": 1581357,
+      "words": 242000,
+      "reading_time_minutes": 1076,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Natural History of the Bible",
+      "file": "the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "bytes": 1530067,
+      "words": 231817,
+      "reading_time_minutes": 1030,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Tabernacle of Israel in the Desert",
+      "file": "the-tabernacle-of-israel-in-the-desert-james-strong.txt",
+      "bytes": 467028,
+      "words": 69941,
+      "reading_time_minutes": 311,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Temple Dictionary of the Bible",
+      "file": "the-temple-dictionary-of-the-bible-william-ewing.txt",
+      "bytes": 6512309,
+      "words": 998075,
+      "reading_time_minutes": 4436,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Romance of Bible Chronology, Volume 1",
+      "file": "the-romance-of-bible-chronology-volume-1-martin-anstey.txt",
+      "bytes": 969493,
+      "words": 147827,
+      "reading_time_minutes": 657,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Chronology Carefully Unfolded",
+      "file": "bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt",
+      "bytes": 1236402,
+      "words": 191139,
+      "reading_time_minutes": 850,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sacred Chronology",
+      "file": "sacred-chronology-godfrey-faussett.txt",
+      "bytes": 536742,
+      "words": 80779,
+      "reading_time_minutes": 359,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Old Testament in the Light of the Ancient East, Volume 1",
+      "file": "the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt",
+      "bytes": 970933,
+      "words": 145104,
+      "reading_time_minutes": 645,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Practical Handbook for the Study of the Bible and Bible Literature",
+      "file": "practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt",
+      "bytes": 1389646,
+      "words": 205185,
+      "reading_time_minutes": 912,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Bible Atlas of Maps and Plans",
+      "author": "Samuel Clark",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-bible-atlas-of-maps-and-plans-samuel-clark.txt"
+    },
+    {
+      "row": 3,
+      "title": "Manual of Biblical Geography: A Text-Book on Bible History",
+      "author": "Jesse Lyman Hurlbut",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt"
+    },
+    {
+      "row": 4,
+      "title": "An Historical Text Book and Atlas of Biblical Geography",
+      "author": "Lyman Coleman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt"
+    },
+    {
+      "row": 5,
+      "title": "Bible Maps; or, A Historical and Descriptive Atlas of Scripture Geography",
+      "author": "William Hughes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt"
+    },
+    {
+      "row": 6,
+      "title": "The New Biblical Atlas and Scripture Gazetteer",
+      "author": "Various",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-new-biblical-atlas-and-scripture-gazetteer-various.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Biblical Geography of Central Asia",
+      "author": "Ernst Friedrich Karl Rosenmuller",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt"
+    },
+    {
+      "row": 8,
+      "title": "Bible Manners and Customs",
+      "author": "G. M. Mackie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-manners-and-customs-g-m-mackie.txt"
+    },
+    {
+      "row": 9,
+      "title": "Oriental Customs; or, An Illustration of the Sacred Scriptures",
+      "author": "Samuel Burder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt"
+    },
+    {
+      "row": 10,
+      "title": "Eastern Customs in Bible Lands",
+      "author": "H. B. Tristram",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/eastern-customs-in-bible-lands-h-b-tristram.txt"
+    },
+    {
+      "row": 11,
+      "title": "A Dictionary of the Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt"
+    },
+    {
+      "row": 12,
+      "title": "The Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-natural-history-of-the-bible-thaddeus-mason-harris.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Tabernacle of Israel in the Desert",
+      "author": "James Strong",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-tabernacle-of-israel-in-the-desert-james-strong.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Temple Dictionary of the Bible",
+      "author": "William Ewing",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-temple-dictionary-of-the-bible-william-ewing.txt"
+    },
+    {
+      "row": 15,
+      "title": "The Romance of Bible Chronology, Volume 1",
+      "author": "Martin Anstey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-romance-of-bible-chronology-volume-1-martin-anstey.txt"
+    },
+    {
+      "row": 16,
+      "title": "Bible Chronology Carefully Unfolded",
+      "author": "Smith Bartlett Goodenow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt"
+    },
+    {
+      "row": 17,
+      "title": "Sacred Chronology",
+      "author": "Godfrey Faussett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sacred-chronology-godfrey-faussett.txt"
+    },
+    {
+      "row": 18,
+      "title": "The Old Testament in the Light of the Ancient East, Volume 1",
+      "author": "Alfred Jeremias",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt"
+    },
+    {
+      "row": 19,
+      "title": "Practical Handbook for the Study of the Bible and Bible Literature",
+      "author": "Michael Seisenberger",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt"
+    }
+  ]
+}

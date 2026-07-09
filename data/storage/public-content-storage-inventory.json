@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T15:31:21.117Z",
+  "generated_at": "2026-07-09T16:22:47.602Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1798,
-      "present": 1798,
+      "files": 1816,
+      "present": 1816,
       "missing": 0,
-      "total_bytes": 1562803150,
-      "total_size": "1.46 GB"
+      "total_bytes": 1583825253,
+      "total_size": "1.48 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3826290,
-      "total_size": "3.65 MB"
+      "total_bytes": 3870441,
+      "total_size": "3.69 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2116,
-      "present": 2116,
+      "files": 2134,
+      "present": 2134,
       "missing": 0,
-      "total_bytes": 2080309189,
-      "total_size": "1.94 GB"
+      "total_bytes": 2101375443,
+      "total_size": "1.96 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 415,
-    "library_text_bytes_over_1mb": 1022618475,
-    "public_content_files_over_1mb": 512,
-    "public_content_bytes_over_1mb": 1470805393,
-    "storage_backed_library_files": 119,
-    "storage_backed_library_bytes": 122008861
+    "library_text_files_over_1mb": 421,
+    "library_text_bytes_over_1mb": 1036533405,
+    "public_content_files_over_1mb": 518,
+    "public_content_bytes_over_1mb": 1484764474,
+    "storage_backed_library_files": 137,
+    "storage_backed_library_bytes": 143030964
   },
   "items": [
     {
@@ -21773,6 +21773,240 @@
       "source_url": "https://archive.org/download/sofvictoryco00bell/sofvictoryco00bell_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-bible-atlas-of-maps-and-plans-samuel-clark.txt",
+      "storage_path": "data/library/verified/the-bible-atlas-of-maps-and-plans-samuel-clark.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 773710,
+      "checksum_sha256": "6d5bff7f1f57131163893e62b5f8407f1caa09f4b4a90a4bec18b77990a1a178",
+      "storage_backed": true,
+      "title": "The Bible Atlas of Maps and Plans",
+      "author": "Samuel Clark",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/bibleatlasofmaps00claruoft/bibleatlasofmaps00claruoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt",
+      "storage_path": "data/library/verified/manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 520998,
+      "checksum_sha256": "e01f25b5beab8cef67478a51ba459e058699d9f42f711c4ddc31688d16838fd4",
+      "storage_backed": true,
+      "title": "Manual of Biblical Geography: A Text-Book on Bible History",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/cu31924029283839/cu31924029283839_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt",
+      "storage_path": "data/library/verified/an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 851180,
+      "checksum_sha256": "6412f3deff60fb91f7cba43c985be27a7ec194fe2ae3f89e41b444edd5348e29",
+      "storage_backed": true,
+      "title": "An Historical Text Book and Atlas of Biblical Geography",
+      "author": "Lyman Coleman",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/anhistoricaltex00colegoog/anhistoricaltex00colegoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt",
+      "storage_path": "data/library/verified/bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 210922,
+      "checksum_sha256": "deda50aa5975a616126f050e8dc9060d32f9a0f2d3b2c42879f38ecb238a4220",
+      "storage_backed": true,
+      "title": "Bible Maps; or, A Historical and Descriptive Atlas of Scripture Geography",
+      "author": "William Hughes",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblemapsorhisto00hugh/biblemapsorhisto00hugh_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-new-biblical-atlas-and-scripture-gazetteer-various.txt",
+      "storage_path": "data/library/verified/the-new-biblical-atlas-and-scripture-gazetteer-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 467464,
+      "checksum_sha256": "99417e566e1a8db0c3ad42e7f884993ed509e38de26579131c62d506670d6a23",
+      "storage_backed": true,
+      "title": "The New Biblical Atlas and Scripture Gazetteer",
+      "author": "Various",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/newbiblicalatlas00phil/newbiblicalatlas00phil_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt",
+      "storage_path": "data/library/verified/the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 651963,
+      "checksum_sha256": "e2d887e79cef9128d99da94670b4d5ec7762c91aaff942de98c5662870e10a56",
+      "storage_backed": true,
+      "title": "The Biblical Geography of Central Asia",
+      "author": "Ernst Friedrich Karl Rosenmuller",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblicalgeograph11rose/biblicalgeograph11rose_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-manners-and-customs-g-m-mackie.txt",
+      "storage_path": "data/library/verified/bible-manners-and-customs-g-m-mackie.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 358038,
+      "checksum_sha256": "ec38cce97805e4aae62c2ed8bb7ca049d4f535e7f2396f4ab93651ad0f600c87",
+      "storage_backed": true,
+      "title": "Bible Manners and Customs",
+      "author": "G. M. Mackie",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblemannerscust00mack/biblemannerscust00mack_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt",
+      "storage_path": "data/library/verified/oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1665149,
+      "checksum_sha256": "ab3bbc4dd181e9aef235d571c9d17d10e0c3e4cea3f756fa472d8c8f6b8499ab",
+      "storage_backed": true,
+      "title": "Oriental Customs; or, An Illustration of the Sacred Scriptures",
+      "author": "Samuel Burder",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/cu31924029274077/cu31924029274077_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/eastern-customs-in-bible-lands-h-b-tristram.txt",
+      "storage_path": "data/library/verified/eastern-customs-in-bible-lands-h-b-tristram.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 328702,
+      "checksum_sha256": "22534c272ef7051885755276f319d316a3428d4752e747d8713605c4868b8a64",
+      "storage_backed": true,
+      "title": "Eastern Customs in Bible Lands",
+      "author": "H. B. Tristram",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/easterncustomsin00tris/easterncustomsin00tris_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "storage_path": "data/library/verified/a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1581357,
+      "checksum_sha256": "0ab8d06237f654de60700e070505d7786650a35534131e74cd3e2fa27042abe9",
+      "storage_backed": true,
+      "title": "A Dictionary of the Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "category": "Dictionaries",
+      "source_url": "https://archive.org/download/dictionaryofnatu00harrrich/dictionaryofnatu00harrrich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "storage_path": "data/library/verified/the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1530067,
+      "checksum_sha256": "c3c5b6d10a47ff45e857f927e5fd37f9ee3eb1dbe314d1a30454d52941974727",
+      "storage_backed": true,
+      "title": "The Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/naturalhistoryof00harriala/naturalhistoryof00harriala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-tabernacle-of-israel-in-the-desert-james-strong.txt",
+      "storage_path": "data/library/verified/the-tabernacle-of-israel-in-the-desert-james-strong.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 467028,
+      "checksum_sha256": "ed7fed5957296ff4472c820f1d1a8f3af679c5b4df8bfa11b5cc58c3a40e3791",
+      "storage_backed": true,
+      "title": "The Tabernacle of Israel in the Desert",
+      "author": "James Strong",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/tabernacleofisra00strorich/tabernacleofisra00strorich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-temple-dictionary-of-the-bible-william-ewing.txt",
+      "storage_path": "data/library/verified/the-temple-dictionary-of-the-bible-william-ewing.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 6512309,
+      "checksum_sha256": "68f1b8ef95c2c6cc984894458a7bcbdf79f9c7a33c92008f422eaf89ef234f2e",
+      "storage_backed": true,
+      "title": "The Temple Dictionary of the Bible",
+      "author": "William Ewing",
+      "category": "Dictionaries",
+      "source_url": "https://archive.org/download/templedictionary00ewin/templedictionary00ewin_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-romance-of-bible-chronology-volume-1-martin-anstey.txt",
+      "storage_path": "data/library/verified/the-romance-of-bible-chronology-volume-1-martin-anstey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 969493,
+      "checksum_sha256": "2b69d34146bd4d427638cdab567acc1ee253dff7166f2f5b901f72b23a0eecc3",
+      "storage_backed": true,
+      "title": "The Romance of Bible Chronology, Volume 1",
+      "author": "Martin Anstey",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/romanceofbiblech01anst/romanceofbiblech01anst_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt",
+      "storage_path": "data/library/verified/bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1236402,
+      "checksum_sha256": "0913faddf92449796cf0baed7c20b66600d3f7a4cc2b0fb5be7d471a383201b8",
+      "storage_backed": true,
+      "title": "Bible Chronology Carefully Unfolded",
+      "author": "Smith Bartlett Goodenow",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblechronologyc00goodrich/biblechronologyc00goodrich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sacred-chronology-godfrey-faussett.txt",
+      "storage_path": "data/library/verified/sacred-chronology-godfrey-faussett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 536742,
+      "checksum_sha256": "399399f0641a206e49e95f866f905157ef9289e28f110fa13da6c8305d5a5abb",
+      "storage_backed": true,
+      "title": "Sacred Chronology",
+      "author": "Godfrey Faussett",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/sacredchronology00fausuoft/sacredchronology00fausuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt",
+      "storage_path": "data/library/verified/the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 970933,
+      "checksum_sha256": "2a6ddec8b890f348701f3d9e76007f31438959eb18977dd820bae75a67b6008b",
+      "storage_backed": true,
+      "title": "The Old Testament in the Light of the Ancient East, Volume 1",
+      "author": "Alfred Jeremias",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblicalarchaeol01jereuoft/biblicalarchaeol01jereuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt",
+      "storage_path": "data/library/verified/practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1389646,
+      "checksum_sha256": "b43aeab5d62018b1bd149ebf52a42c100aee56e6a095fdb9b4001d3a650665e0",
+      "storage_backed": true,
+      "title": "Practical Handbook for the Study of the Bible and Bible Literature",
+      "author": "Michael Seisenberger",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/practicalhandboo00seisuoft/practicalhandboo00seisuoft_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -24345,8 +24579,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3826290,
-      "checksum_sha256": "3809d57059d034b63063ba00726d9588e94cd8b15086525264e75798e39dd2a4"
+      "size_bytes": 3870441,
+      "checksum_sha256": "e15d59bc8c9a880acb374ba998b687e01db04284cbbc9259c47107beebc38834"
     },
     {
       "kind": "study_tool",

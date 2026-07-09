@@ -80579,5 +80579,887 @@
     "checksum_sha256": "b631452b87805790a14b1be80526ea7320e15a5891ac48cd1f059c1d8788405b",
     "file_size_bytes": 997397,
     "word_count": 155139
+  },
+  {
+    "title": "The Bible Atlas of Maps and Plans",
+    "author": "Samuel Clark",
+    "year": 1900,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/bibleatlasofmaps00claruoft/bibleatlasofmaps00claruoft_djvu.txt",
+    "download_url": "https://archive.org/download/bibleatlasofmaps00claruoft/bibleatlasofmaps00claruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-atlas-of-maps-and-plans-samuel-clark.txt",
+    "content_storage_path": "data/library/verified/the-bible-atlas-of-maps-and-plans-samuel-clark.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleatlasofmaps00claruoft/bibleatlasofmaps00claruoft_djvu.txt.",
+    "notes": "Public-domain Bible atlas with maps, plans, explanatory notes, and geographical index for Bible places, presentations, and teaching background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible atlas with maps, plans, explanatory notes, and geographical index for Bible places, presentations, and teaching background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible Atlas of Maps and Plans",
+      "author": "Samuel Clark",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 539,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6d5bff7f1f57131163893e62b5f8407f1caa09f4b4a90a4bec18b77990a1a178",
+    "file_size_bytes": 773710,
+    "word_count": 121209
+  },
+  {
+    "title": "Manual of Biblical Geography: A Text-Book on Bible History",
+    "author": "Jesse Lyman Hurlbut",
+    "year": 1887,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/cu31924029283839/cu31924029283839_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029283839/cu31924029283839_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt",
+    "content_storage_path": "data/library/verified/manual-of-biblical-geography-a-text-book-on-bible-history-jesse-lyman-hurlbut.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029283839/cu31924029283839_djvu.txt.",
+    "notes": "Public-domain Biblical geography and history manual for teachers, students, maps, and Bible background study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Biblical geography and history manual for teachers, students, maps, and Bible background study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Manual of Biblical Geography: A Text-Book on Bible History",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 390,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e01f25b5beab8cef67478a51ba459e058699d9f42f711c4ddc31688d16838fd4",
+    "file_size_bytes": 520998,
+    "word_count": 87689
+  },
+  {
+    "title": "An Historical Text Book and Atlas of Biblical Geography",
+    "author": "Lyman Coleman",
+    "year": 1854,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/anhistoricaltex00colegoog/anhistoricaltex00colegoog_djvu.txt",
+    "download_url": "https://archive.org/download/anhistoricaltex00colegoog/anhistoricaltex00colegoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt",
+    "content_storage_path": "data/library/verified/an-historical-text-book-and-atlas-of-biblical-geography-lyman-coleman.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/anhistoricaltex00colegoog/anhistoricaltex00colegoog_djvu.txt.",
+    "notes": "Public-domain atlas and historical Bible geography resource for places, regions, and classroom study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain atlas and historical Bible geography resource for places, regions, and classroom study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Historical Text Book and Atlas of Biblical Geography",
+      "author": "Lyman Coleman",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 661,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6412f3deff60fb91f7cba43c985be27a7ec194fe2ae3f89e41b444edd5348e29",
+    "file_size_bytes": 851180,
+    "word_count": 148745
+  },
+  {
+    "title": "Bible Maps; or, A Historical and Descriptive Atlas of Scripture Geography",
+    "author": "William Hughes",
+    "year": 1854,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/biblemapsorhisto00hugh/biblemapsorhisto00hugh_djvu.txt",
+    "download_url": "https://archive.org/download/biblemapsorhisto00hugh/biblemapsorhisto00hugh_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt",
+    "content_storage_path": "data/library/verified/bible-maps-or-a-historical-and-descriptive-atlas-of-scripture-geography-william-hughes.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblemapsorhisto00hugh/biblemapsorhisto00hugh_djvu.txt.",
+    "notes": "Public-domain Scripture geography atlas for maps, places, and descriptive Bible background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Scripture geography atlas for maps, places, and descriptive Bible background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Maps; or, A Historical and Descriptive Atlas of Scripture Geography",
+      "author": "William Hughes",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 139,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "deda50aa5975a616126f050e8dc9060d32f9a0f2d3b2c42879f38ecb238a4220",
+    "file_size_bytes": 210922,
+    "word_count": 31345
+  },
+  {
+    "title": "The New Biblical Atlas and Scripture Gazetteer",
+    "author": "Various",
+    "year": 1880,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/newbiblicalatlas00phil/newbiblicalatlas00phil_djvu.txt",
+    "download_url": "https://archive.org/download/newbiblicalatlas00phil/newbiblicalatlas00phil_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-new-biblical-atlas-and-scripture-gazetteer-various.txt",
+    "content_storage_path": "data/library/verified/the-new-biblical-atlas-and-scripture-gazetteer-various.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/newbiblicalatlas00phil/newbiblicalatlas00phil_djvu.txt.",
+    "notes": "Public-domain Bible atlas and Scripture gazetteer with notices of the tabernacle and temple for map study and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible atlas and Scripture gazetteer with notices of the tabernacle and temple for map study and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The New Biblical Atlas and Scripture Gazetteer",
+      "author": "Various",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 308,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "99417e566e1a8db0c3ad42e7f884993ed509e38de26579131c62d506670d6a23",
+    "file_size_bytes": 467464,
+    "word_count": 69263
+  },
+  {
+    "title": "The Biblical Geography of Central Asia",
+    "author": "Ernst Friedrich Karl Rosenmuller",
+    "year": 1836,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/biblicalgeograph11rose/biblicalgeograph11rose_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalgeograph11rose/biblicalgeograph11rose_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt",
+    "content_storage_path": "data/library/verified/the-biblical-geography-of-central-asia-ernst-friedrich-karl-rosenmuller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalgeograph11rose/biblicalgeograph11rose_djvu.txt.",
+    "notes": "Public-domain sacred geography resource for Central Asia and early biblical geography questions. Use as historical reference and spot-check OCR before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sacred geography resource for Central Asia and early biblical geography questions. Use as historical reference and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Biblical Geography of Central Asia",
+      "author": "Ernst Friedrich Karl Rosenmuller",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 434,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e2d887e79cef9128d99da94670b4d5ec7762c91aaff942de98c5662870e10a56",
+    "file_size_bytes": 651963,
+    "word_count": 97725
+  },
+  {
+    "title": "Bible Manners and Customs",
+    "author": "G. M. Mackie",
+    "year": 1898,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/biblemannerscust00mack/biblemannerscust00mack_djvu.txt",
+    "download_url": "https://archive.org/download/biblemannerscust00mack/biblemannerscust00mack_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-manners-and-customs-g-m-mackie.txt",
+    "content_storage_path": "data/library/verified/bible-manners-and-customs-g-m-mackie.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblemannerscust00mack/biblemannerscust00mack_djvu.txt.",
+    "notes": "Public-domain Bible manners and customs resource for culture, background notes, sermon illustrations, and Passage Guide support. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible manners and customs resource for culture, background notes, sermon illustrations, and Passage Guide support. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Manners and Customs",
+      "author": "G. M. Mackie",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 241,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ec38cce97805e4aae62c2ed8bb7ca049d4f535e7f2396f4ab93651ad0f600c87",
+    "file_size_bytes": 358038,
+    "word_count": 54149
+  },
+  {
+    "title": "Oriental Customs; or, An Illustration of the Sacred Scriptures",
+    "author": "Samuel Burder",
+    "year": 1840,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/cu31924029274077/cu31924029274077_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029274077/cu31924029274077_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt",
+    "content_storage_path": "data/library/verified/oriental-customs-or-an-illustration-of-the-sacred-scriptures-samuel-burder.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029274077/cu31924029274077_djvu.txt.",
+    "notes": "Public-domain Eastern customs reference used to explain difficult Bible passages. Use as historical background and spot-check OCR before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Eastern customs reference used to explain difficult Bible passages. Use as historical background and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Oriental Customs; or, An Illustration of the Sacred Scriptures",
+      "author": "Samuel Burder",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1137,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ab3bbc4dd181e9aef235d571c9d17d10e0c3e4cea3f756fa472d8c8f6b8499ab",
+    "file_size_bytes": 1665149,
+    "word_count": 255913
+  },
+  {
+    "title": "Eastern Customs in Bible Lands",
+    "author": "H. B. Tristram",
+    "year": 1894,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/easterncustomsin00tris/easterncustomsin00tris_djvu.txt",
+    "download_url": "https://archive.org/download/easterncustomsin00tris/easterncustomsin00tris_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/eastern-customs-in-bible-lands-h-b-tristram.txt",
+    "content_storage_path": "data/library/verified/eastern-customs-in-bible-lands-h-b-tristram.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/easterncustomsin00tris/easterncustomsin00tris_djvu.txt.",
+    "notes": "Public-domain Bible lands and customs resource for explaining Eastern manners, places, and Scripture background in teaching and preaching. OCR text should be spot-checked before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible lands and customs resource for explaining Eastern manners, places, and Scripture background in teaching and preaching. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Eastern Customs in Bible Lands",
+      "author": "H. B. Tristram",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 252,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "22534c272ef7051885755276f319d316a3428d4752e747d8713605c4868b8a64",
+    "file_size_bytes": 328702,
+    "word_count": 56591
+  },
+  {
+    "title": "A Dictionary of the Natural History of the Bible",
+    "author": "Thaddeus Mason Harris",
+    "year": 1833,
+    "category": "Dictionaries",
+    "collection": "Bible Natural History",
+    "source_url": "https://archive.org/download/dictionaryofnatu00harrrich/dictionaryofnatu00harrrich_djvu.txt",
+    "download_url": "https://archive.org/download/dictionaryofnatu00harrrich/dictionaryofnatu00harrrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+    "content_storage_path": "data/library/verified/a-dictionary-of-the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/dictionaryofnatu00harrrich/dictionaryofnatu00harrrich_djvu.txt.",
+    "notes": "Public-domain natural history dictionary for Bible animals, plants, stones, and creation-related references. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain natural history dictionary for Bible animals, plants, stones, and creation-related references. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Natural History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Dictionary of the Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "category": "Dictionaries",
+      "collection": "Bible Natural History",
+      "badge": "Bible Natural History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1076,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0ab8d06237f654de60700e070505d7786650a35534131e74cd3e2fa27042abe9",
+    "file_size_bytes": 1581357,
+    "word_count": 242000
+  },
+  {
+    "title": "The Natural History of the Bible",
+    "author": "Thaddeus Mason Harris",
+    "year": 1824,
+    "category": "Bible Handbooks",
+    "collection": "Bible Natural History",
+    "source_url": "https://archive.org/download/naturalhistoryof00harriala/naturalhistoryof00harriala_djvu.txt",
+    "download_url": "https://archive.org/download/naturalhistoryof00harriala/naturalhistoryof00harriala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+    "content_storage_path": "data/library/verified/the-natural-history-of-the-bible-thaddeus-mason-harris.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/naturalhistoryof00harriala/naturalhistoryof00harriala_djvu.txt.",
+    "notes": "Public-domain natural history resource on animals, plants, precious stones, and other created things mentioned in Scripture. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain natural history resource on animals, plants, precious stones, and other created things mentioned in Scripture. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Natural History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Natural History of the Bible",
+      "author": "Thaddeus Mason Harris",
+      "category": "Bible Handbooks",
+      "collection": "Bible Natural History",
+      "badge": "Bible Natural History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1030,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c3c5b6d10a47ff45e857f927e5fd37f9ee3eb1dbe314d1a30454d52941974727",
+    "file_size_bytes": 1530067,
+    "word_count": 231817
+  },
+  {
+    "title": "The Tabernacle of Israel in the Desert",
+    "author": "James Strong",
+    "year": 1888,
+    "category": "Bible Handbooks",
+    "collection": "Tabernacle and Temple",
+    "source_url": "https://archive.org/download/tabernacleofisra00strorich/tabernacleofisra00strorich_djvu.txt",
+    "download_url": "https://archive.org/download/tabernacleofisra00strorich/tabernacleofisra00strorich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-tabernacle-of-israel-in-the-desert-james-strong.txt",
+    "content_storage_path": "data/library/verified/the-tabernacle-of-israel-in-the-desert-james-strong.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/tabernacleofisra00strorich/tabernacleofisra00strorich_djvu.txt.",
+    "notes": "Public-domain tabernacle study with plans, drawings, and explanatory descriptions for teaching, preaching, and presentation preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain tabernacle study with plans, drawings, and explanatory descriptions for teaching, preaching, and presentation preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Tabernacle and Temple",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Tabernacle of Israel in the Desert",
+      "author": "James Strong",
+      "category": "Bible Handbooks",
+      "collection": "Tabernacle and Temple",
+      "badge": "Tabernacle and Temple",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 311,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ed7fed5957296ff4472c820f1d1a8f3af679c5b4df8bfa11b5cc58c3a40e3791",
+    "file_size_bytes": 467028,
+    "word_count": 69941
+  },
+  {
+    "title": "The Temple Dictionary of the Bible",
+    "author": "William Ewing",
+    "year": 1910,
+    "category": "Dictionaries",
+    "collection": "Bible Dictionary and Background",
+    "source_url": "https://archive.org/download/templedictionary00ewin/templedictionary00ewin_djvu.txt",
+    "download_url": "https://archive.org/download/templedictionary00ewin/templedictionary00ewin_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-temple-dictionary-of-the-bible-william-ewing.txt",
+    "content_storage_path": "data/library/verified/the-temple-dictionary-of-the-bible-william-ewing.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/templedictionary00ewin/templedictionary00ewin_djvu.txt.",
+    "notes": "Public-domain Bible dictionary and background reference for places, customs, temple study, and Bible terms. Use as historical reference and spot-check OCR before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible dictionary and background reference for places, customs, temple study, and Bible terms. Use as historical reference and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Dictionary and Background",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Temple Dictionary of the Bible",
+      "author": "William Ewing",
+      "category": "Dictionaries",
+      "collection": "Bible Dictionary and Background",
+      "badge": "Bible Dictionary and Background",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 4436,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "68f1b8ef95c2c6cc984894458a7bcbdf79f9c7a33c92008f422eaf89ef234f2e",
+    "file_size_bytes": 6512309,
+    "word_count": 998075
+  },
+  {
+    "title": "The Romance of Bible Chronology, Volume 1",
+    "author": "Martin Anstey",
+    "year": 1913,
+    "category": "Bible Handbooks",
+    "collection": "Bible Chronology",
+    "source_url": "https://archive.org/download/romanceofbiblech01anst/romanceofbiblech01anst_djvu.txt",
+    "download_url": "https://archive.org/download/romanceofbiblech01anst/romanceofbiblech01anst_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-romance-of-bible-chronology-volume-1-martin-anstey.txt",
+    "content_storage_path": "data/library/verified/the-romance-of-bible-chronology-volume-1-martin-anstey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/romanceofbiblech01anst/romanceofbiblech01anst_djvu.txt.",
+    "notes": "Public-domain Bible chronology resource for timeline study, Old Testament dating, and teaching background. Use with discernment and spot-check OCR before quotation. Labels/warnings: Historical chronology;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible chronology resource for timeline study, Old Testament dating, and teaching background. Use with discernment and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Chronology",
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Romance of Bible Chronology, Volume 1",
+      "author": "Martin Anstey",
+      "category": "Bible Handbooks",
+      "collection": "Bible Chronology",
+      "badge": "Bible Chronology",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 657,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2b69d34146bd4d427638cdab567acc1ee253dff7166f2f5b901f72b23a0eecc3",
+    "file_size_bytes": 969493,
+    "word_count": 147827
+  },
+  {
+    "title": "Bible Chronology Carefully Unfolded",
+    "author": "Smith Bartlett Goodenow",
+    "year": 1896,
+    "category": "Bible Handbooks",
+    "collection": "Bible Chronology",
+    "source_url": "https://archive.org/download/biblechronologyc00goodrich/biblechronologyc00goodrich_djvu.txt",
+    "download_url": "https://archive.org/download/biblechronologyc00goodrich/biblechronologyc00goodrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt",
+    "content_storage_path": "data/library/verified/bible-chronology-carefully-unfolded-smith-bartlett-goodenow.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblechronologyc00goodrich/biblechronologyc00goodrich_djvu.txt.",
+    "notes": "Public-domain Bible chronology resource for timeline comparison and teaching background. Use with discernment and spot-check OCR before quotation. Labels/warnings: Historical chronology;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible chronology resource for timeline comparison and teaching background. Use with discernment and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Chronology",
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Chronology Carefully Unfolded",
+      "author": "Smith Bartlett Goodenow",
+      "category": "Bible Handbooks",
+      "collection": "Bible Chronology",
+      "badge": "Bible Chronology",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 850,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0913faddf92449796cf0baed7c20b66600d3f7a4cc2b0fb5be7d471a383201b8",
+    "file_size_bytes": 1236402,
+    "word_count": 191139
+  },
+  {
+    "title": "Sacred Chronology",
+    "author": "Godfrey Faussett",
+    "year": 1855,
+    "category": "Bible Handbooks",
+    "collection": "Bible Chronology",
+    "source_url": "https://archive.org/download/sacredchronology00fausuoft/sacredchronology00fausuoft_djvu.txt",
+    "download_url": "https://archive.org/download/sacredchronology00fausuoft/sacredchronology00fausuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sacred-chronology-godfrey-faussett.txt",
+    "content_storage_path": "data/library/verified/sacred-chronology-godfrey-faussett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sacredchronology00fausuoft/sacredchronology00fausuoft_djvu.txt.",
+    "notes": "Public-domain sacred chronology resource for Bible timeline study and historical comparison. Use with discernment and spot-check OCR before quotation. Labels/warnings: Historical chronology;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sacred chronology resource for Bible timeline study and historical comparison. Use with discernment and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Chronology",
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical chronology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sacred Chronology",
+      "author": "Godfrey Faussett",
+      "category": "Bible Handbooks",
+      "collection": "Bible Chronology",
+      "badge": "Bible Chronology",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 359,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "399399f0641a206e49e95f866f905157ef9289e28f110fa13da6c8305d5a5abb",
+    "file_size_bytes": 536742,
+    "word_count": 80779
+  },
+  {
+    "title": "The Old Testament in the Light of the Ancient East, Volume 1",
+    "author": "Alfred Jeremias",
+    "year": 1911,
+    "category": "Bible Handbooks",
+    "collection": "Bible Archaeology and Background",
+    "source_url": "https://archive.org/download/biblicalarchaeol01jereuoft/biblicalarchaeol01jereuoft_djvu.txt",
+    "download_url": "https://archive.org/download/biblicalarchaeol01jereuoft/biblicalarchaeol01jereuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt",
+    "content_storage_path": "data/library/verified/the-old-testament-in-the-light-of-the-ancient-east-volume-1-alfred-jeremias.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblicalarchaeol01jereuoft/biblicalarchaeol01jereuoft_djvu.txt.",
+    "notes": "Public-domain archaeology and ancient Near East background reference. Include for historical comparison only; not a core doctrinal recommendation. OCR text should be spot-checked before quotation. Labels/warnings: Historical-critical reference;Use carefully;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain archaeology and ancient Near East background reference. Include for historical comparison only; not a core doctrinal recommendation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Archaeology and Background",
+      "Historical-critical reference",
+      "Use carefully",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical-critical reference",
+      "Use carefully",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Old Testament in the Light of the Ancient East, Volume 1",
+      "author": "Alfred Jeremias",
+      "category": "Bible Handbooks",
+      "collection": "Bible Archaeology and Background",
+      "badge": "Bible Archaeology and Background",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 645,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2a6ddec8b890f348701f3d9e76007f31438959eb18977dd820bae75a67b6008b",
+    "file_size_bytes": 970933,
+    "word_count": 145104
+  },
+  {
+    "title": "Practical Handbook for the Study of the Bible and Bible Literature",
+    "author": "Michael Seisenberger",
+    "year": 1911,
+    "category": "Bible study helps",
+    "collection": "Bible Study Background",
+    "source_url": "https://archive.org/download/practicalhandboo00seisuoft/practicalhandboo00seisuoft_djvu.txt",
+    "download_url": "https://archive.org/download/practicalhandboo00seisuoft/practicalhandboo00seisuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt",
+    "content_storage_path": "data/library/verified/practical-handbook-for-the-study-of-the-bible-and-bible-literature-michael-seisenberger.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/practicalhandboo00seisuoft/practicalhandboo00seisuoft_djvu.txt.",
+    "notes": "Public-domain Bible literature handbook including geography, antiquities, introductions, and hermeneutics. Use as historical reference and spot-check OCR before quotation. Labels/warnings: Historical reference;Use carefully;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible literature handbook including geography, antiquities, introductions, and hermeneutics. Use as historical reference and spot-check OCR before quotation.",
+    "resource_labels": [
+      "Bible Study Background",
+      "Historical reference",
+      "Use carefully",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use carefully",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Practical Handbook for the Study of the Bible and Bible Literature",
+      "author": "Michael Seisenberger",
+      "category": "Bible study helps",
+      "collection": "Bible Study Background",
+      "badge": "Bible Study Background",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 912,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b43aeab5d62018b1bd149ebf52a42c100aee56e6a095fdb9b4001d3a650665e0",
+    "file_size_bytes": 1389646,
+    "word_count": 205185
   }
 ]
