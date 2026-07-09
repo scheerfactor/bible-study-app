@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T10:20:04.065Z",
+  "generated_at": "2026-07-09T13:28:49.642Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1738,
-      "present": 1738,
+      "files": 1758,
+      "present": 1758,
       "missing": 0,
-      "total_bytes": 1492298405,
-      "total_size": "1.39 GB"
+      "total_bytes": 1518555045,
+      "total_size": "1.41 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3681061,
-      "total_size": "3.51 MB"
+      "total_bytes": 3729477,
+      "total_size": "3.56 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2056,
-      "present": 2056,
+      "files": 2076,
+      "present": 2076,
       "missing": 0,
-      "total_bytes": 2009659215,
-      "total_size": "1.87 GB"
+      "total_bytes": 2035964271,
+      "total_size": "1.90 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 391,
-    "library_text_bytes_over_1mb": 968624123,
-    "public_content_files_over_1mb": 488,
-    "public_content_bytes_over_1mb": 1416665812,
-    "storage_backed_library_files": 59,
-    "storage_backed_library_bytes": 51504116
+    "library_text_files_over_1mb": 398,
+    "library_text_bytes_over_1mb": 990116424,
+    "public_content_files_over_1mb": 495,
+    "public_content_bytes_over_1mb": 1438206529,
+    "storage_backed_library_files": 79,
+    "storage_backed_library_bytes": 77760756
   },
   "items": [
     {
@@ -20993,6 +20993,266 @@
       "source_url": "https://archive.org/download/autobiography-of-george-muller/autobiography-of-george-muller_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/knowing-the-scriptures-rules-and-methods-of-bible-study-arthur-t-pierson.txt",
+      "storage_path": "data/library/verified/knowing-the-scriptures-rules-and-methods-of-bible-study-arthur-t-pierson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 832415,
+      "checksum_sha256": "9749636b9ba2c3f4055e7ceb45fc2c07beeafc67ae6a3f394660b7536bee7254",
+      "storage_backed": true,
+      "title": "Knowing the Scriptures: Rules and Methods of Bible Study",
+      "author": "Arthur T. Pierson",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/knowingscripture00pier/knowingscripture00pier_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/helps-to-bible-study-with-practical-notes-on-the-books-of-scripture-a-sims.txt",
+      "storage_path": "data/library/verified/helps-to-bible-study-with-practical-notes-on-the-books-of-scripture-a-sims.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 705612,
+      "checksum_sha256": "0b02c6694154ed8550b12866eeec0ec8a090da3bee839f13ce7666ecc08fa5e7",
+      "storage_backed": true,
+      "title": "Helps to Bible Study, with Practical Notes on the Books of Scripture",
+      "author": "A. Sims",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/helpstobiblestud00simsuoft/helpstobiblestud00simsuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-guide-to-bible-study-j-w-mcgarvey-and-h-l-willett.txt",
+      "storage_path": "data/library/verified/a-guide-to-bible-study-j-w-mcgarvey-and-h-l-willett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 229739,
+      "checksum_sha256": "f63e067a5bba939eb963fcc544b55a8ee5751e5d22fb750a55758a9001072577",
+      "storage_backed": true,
+      "title": "A Guide to Bible Study",
+      "author": "J. W. McGarvey and H. L. Willett",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/aguidetobiblestu00mcgauoft/aguidetobiblestu00mcgauoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt",
+      "storage_path": "data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 13281227,
+      "checksum_sha256": "3893e08583bdb6817eb3fd272be9b695a8a9e28f2bbcebbe9a5690b28db01013",
+      "storage_backed": true,
+      "title": "The Bible Interpreter; or, Improved Helps to Bible Study",
+      "author": "Roswell D. Hitchcock and contributors",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/bibleinterpreter00hitc/bibleinterpreter00hitc_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-wonders-and-aids-to-bible-study-stephen-van-rensselaer-ford.txt",
+      "storage_path": "data/library/verified/bible-wonders-and-aids-to-bible-study-stephen-van-rensselaer-ford.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 288834,
+      "checksum_sha256": "8f7597b6173bfdd65365f22b3338f7a844aec9a60c73dd02296d2a873782d136",
+      "storage_backed": true,
+      "title": "Bible Wonders and Aids to Bible Study",
+      "author": "Stephen Van Rensselaer Ford",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/biblewondersaids00ford/biblewondersaids00ford_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-sunday-school-teacher-s-manual-william-mansfield-groton.txt",
+      "storage_path": "data/library/verified/the-sunday-school-teacher-s-manual-william-mansfield-groton.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 798890,
+      "checksum_sha256": "186dbbd42d7aa2ca6443e38e0ff5812a7ef171a385c17feba202b840273de566",
+      "storage_backed": true,
+      "title": "The Sunday-school Teacher's Manual",
+      "author": "William Mansfield Groton",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sundayschoolteac00grot/sundayschoolteac00grot_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-first-fifty-years-of-the-sunday-school-william-henry-watson.txt",
+      "storage_path": "data/library/verified/the-first-fifty-years-of-the-sunday-school-william-henry-watson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 317449,
+      "checksum_sha256": "0905520bde6354b64df16df6d800dbff56209ae5dee74f20af98199438e6f142",
+      "storage_backed": true,
+      "title": "The First Fifty Years of the Sunday School",
+      "author": "William Henry Watson",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/thefirstfiftyyea00watsuoft/thefirstfiftyyea00watsuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lessons-in-the-school-of-prayer-arthur-t-pierson.txt",
+      "storage_path": "data/library/verified/lessons-in-the-school-of-prayer-arthur-t-pierson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 169890,
+      "checksum_sha256": "f83af636bc9d13488160f033efb32514e64c8227be44dc14b71e7726ca2d9729",
+      "storage_backed": true,
+      "title": "Lessons in the School of Prayer",
+      "author": "Arthur T. Pierson",
+      "category": "Prayer",
+      "source_url": "https://archive.org/download/lessonsinschoolo00pier/lessonsinschoolo00pier_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/elementary-homiletics-or-rules-and-principles-in-the-preparation-and-preaching-of-sermons-jacob-fry.txt",
+      "storage_path": "data/library/verified/elementary-homiletics-or-rules-and-principles-in-the-preparation-and-preaching-of-sermons-jacob-fry.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 294382,
+      "checksum_sha256": "ace9ec2a9b78dcf9ddba8a806c4c8638b77993dcbefa2dac3dddfd89fdc8c667",
+      "storage_backed": true,
+      "title": "Elementary Homiletics; or, Rules and Principles in the Preparation and Preaching of Sermons",
+      "author": "Jacob Fry",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/elementaryhomile00fryj/elementaryhomile00fryj_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-history-of-preaching-edwin-charles-dargan.txt",
+      "storage_path": "data/library/verified/a-history-of-preaching-edwin-charles-dargan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1554321,
+      "checksum_sha256": "d65e35f3940851c55f5acf0b760f2484ef680368b01f4f9b187d77132c842594",
+      "storage_backed": true,
+      "title": "A History of Preaching",
+      "author": "Edwin Charles Dargan",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/ahistoryofpreach01darguoft/ahistoryofpreach01darguoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/john-jasper-the-unmatched-negro-philosopher-and-preacher-william-e-hatcher.txt",
+      "storage_path": "data/library/verified/john-jasper-the-unmatched-negro-philosopher-and-preacher-william-e-hatcher.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 281152,
+      "checksum_sha256": "ee603c6a72a720b327e78782607cbbe57e2902e0d0c3f8613e58f8f3916a1410",
+      "storage_backed": true,
+      "title": "John Jasper, the Unmatched Negro Philosopher and Preacher",
+      "author": "William E. Hatcher",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/johnjasperunmatc00hatciala/johnjasperunmatc00hatciala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-missionary-history-of-sierra-leone-henry-seddall.txt",
+      "storage_path": "data/library/verified/the-missionary-history-of-sierra-leone-henry-seddall.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 409836,
+      "checksum_sha256": "dfdbca66bb62924e6bba2eeea9ccfda662bdb387c67ab80bc7860a9a04bcc9b0",
+      "storage_backed": true,
+      "title": "The Missionary History of Sierra Leone",
+      "author": "Henry Seddall",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/missionaryhistor00sedd/missionaryhistor00sedd_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-history-of-moravian-missions-j-e-hutton.txt",
+      "storage_path": "data/library/verified/a-history-of-moravian-missions-j-e-hutton.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1109918,
+      "checksum_sha256": "c628b23b87af636e4de47ef41b0ed6f0072376839fadd38a5ad2b9bd75485bf3",
+      "storage_backed": true,
+      "title": "A History of Moravian Missions",
+      "author": "J. E. Hutton",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/historyofmoravia00huttuoft/historyofmoravia00huttuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/journals-of-the-rev-messrs-isenberg-and-krapf-missionaries-of-the-church-missionary-society-charles-william-is.txt",
+      "storage_path": "data/library/verified/journals-of-the-rev-messrs-isenberg-and-krapf-missionaries-of-the-church-missionary-society-charles-william-is.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1193967,
+      "checksum_sha256": "6bc893e1723641c24693f0b9e6b581f8e59f07c245ebb35ba551a989ab3eb2d0",
+      "storage_backed": true,
+      "title": "Journals of the Rev. Messrs. Isenberg and Krapf, Missionaries of the Church Missionary Society",
+      "author": "Charles William Isenberg and Johann Ludwig Krapf",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/journalsofrevmes00isen/journalsofrevmes00isen_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hand-book-of-bible-geography-george-henry-whitney.txt",
+      "storage_path": "data/library/verified/hand-book-of-bible-geography-george-henry-whitney.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1457361,
+      "checksum_sha256": "166b05619860c19506eeae3867d91a7ae9090b6c7c76da00f860d03b6ab62b80",
+      "storage_backed": true,
+      "title": "Hand-book of Bible Geography",
+      "author": "George Henry Whitney",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/cu31924029282120/cu31924029282120_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt",
+      "storage_path": "data/library/verified/hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1461000,
+      "checksum_sha256": "407c02a9a337c8634e4fce7d8cdfa58a1bfc31e21b09f00439b33304e1327e08",
+      "storage_backed": true,
+      "title": "Hand-book of Bible Geography: Names, Pronunciation, and Meaning",
+      "author": "George Henry Whitney",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/handbookofbibleg01whit/handbookofbibleg01whit_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt",
+      "storage_path": "data/library/verified/the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1434507,
+      "checksum_sha256": "c30f5a446833ae7ffc300abd13a67198429e3735dd601ea93b990488c0b13d4d",
+      "storage_backed": true,
+      "title": "The Explanatory Bible Atlas and Scripture Gazetteer",
+      "author": "William Jenks",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/explanatorybible1849jenk/explanatorybible1849jenk_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt",
+      "storage_path": "data/library/verified/bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 154773,
+      "checksum_sha256": "05745fa0b4e930afee85e9e813d2eba1262c15742ef5f757142b91f56b4752b2",
+      "storage_backed": true,
+      "title": "Bible Geography: A Series of Lessons on the Old and New Testament Worlds",
+      "author": "Ely Vaughan Zollars",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/biblegeographya00zollgoog/biblegeographya00zollgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt",
+      "storage_path": "data/library/verified/outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 255071,
+      "checksum_sha256": "97efb7dc4f93f6d186d344768053f6c9b81d0c5ccf29f9bea03e48628dc5fd86",
+      "storage_backed": true,
+      "title": "Outlines of Bible Geography, Physical and Political",
+      "author": "William Garden Blaikie",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/outlinesbiblege00blaigoog/outlinesbiblege00blaigoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt",
+      "storage_path": "data/library/verified/bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 26296,
+      "checksum_sha256": "c605f68a66f1681830769b7b35c825f6a35f9430e0477eca0452c718c613bb88",
+      "storage_backed": true,
+      "title": "Bible Atlas (Non-Sectarian): Physical-Historical",
+      "author": "Townsend MacCoun",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/bibleatlasnonsec00macc/bibleatlasnonsec00macc_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -23565,8 +23825,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3681061,
-      "checksum_sha256": "ab8cba0582a4ab50f0f81f108f37e4c3ec165f16360100fbcd5190053d2e4c07"
+      "size_bytes": 3729477,
+      "checksum_sha256": "179ef29df98cf6a0d8c1eb8899f678417e2905ce31a66490d2e8707285585180"
     },
     {
       "kind": "study_tool",

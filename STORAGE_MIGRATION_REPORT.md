@@ -1,6 +1,6 @@
 # Storage Migration Report
 
-Generated: 2026-07-09T10:20:04.065Z
+Generated: 2026-07-09T13:28:49.642Z
 
 ## Path Strategy
 
@@ -10,25 +10,25 @@ Mirror current repository-relative paths in object storage during the transition
 
 | Area | Files | Present | Missing | Size |
 | --- | ---: | ---: | ---: | ---: |
-| Library text | 1,738 | 1,738 | 0 | 1.39 GB |
+| Library text | 1,758 | 1,758 | 0 | 1.41 GB |
 | Commentary batches | 256 | 256 | 0 | 412.38 MB |
 | Dictionary files | 1 | 1 | 0 | 34.28 MB |
-| Library manifests | 1 | 1 | 0 | 3.51 MB |
+| Library manifests | 1 | 1 | 0 | 3.56 MB |
 | Study tool files | 9 | 9 | 0 | 26.41 MB |
 | Strong's indexes | 2 | 2 | 0 | 181.01 KB |
 | Bible map media | 21 | 21 | 0 | 12.18 MB |
 | TSK/cross-reference batches | 28 | 28 | 0 | 4.45 MB |
-| Total public content | 2,056 | 2,056 | 0 | 1.87 GB |
+| Total public content | 2,076 | 2,076 | 0 | 1.90 GB |
 
 Commentary entries represented in public batch files: 11,404
 
-Storage-backed library text already uploaded to object storage: 59 files (49.12 MB).
+Storage-backed library text already uploaded to object storage: 79 files (74.16 MB).
 
 ## Biggest Storage Pressure
 
-Large library text files over 1 MB: 391 files (923.75 MB).
+Large library text files over 1 MB: 398 files (944.25 MB).
 
-Large public content files over 1 MB: 488 files (1.32 GB).
+Large public content files over 1 MB: 495 files (1.34 GB).
 
 These are the best first candidates for R2 because moving them out of the deploy bundle gives the largest size relief while keeping metadata, rights notes, and indexes in Git.
 
@@ -43,6 +43,7 @@ These are the best first candidates for R2 because moving them out of the deploy
 | 14.53 MB | commentary_batch | biblical-illustrator-reviewed-weak-books-commentary.json | `data/imports/biblical-illustrator-reviewed-weak-books-commentary.json` |
 | 13.95 MB | commentary_batch | pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json | `data/imports/pulpit-commentary-reviewed-epistles-depth-phase-1-commentary.json` |
 | 13.52 MB | library_text | Hastings Dictionary of the Bible, Volume 4 | `data/library/verified/hastings-dictionary-of-the-bible-volume-4-james-hastings.txt` |
+| 12.67 MB | library_text | The Bible Interpreter; or, Improved Helps to Bible Study | `data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt` |
 | 11.68 MB | library_text | Works of John Bunyan — Complete | `data/library/verified/works-of-john-bunyan-complete-bunyan-john-and-offor-george.txt` |
 | 11.60 MB | library_text | Hastings Dictionary of the Bible, Volume 2 | `data/library/verified/hastings-dictionary-of-the-bible-volume-2-james-hastings.txt` |
 | 11.52 MB | commentary_batch | matthew-henry-reviewed-batch-2-commentary.json | `data/imports/matthew-henry-reviewed-batch-2-commentary.json` |
@@ -58,7 +59,6 @@ These are the best first candidates for R2 because moving them out of the deploy
 | 7.82 MB | library_text | Smith's Comprehensive Dictionary of the Bible | `data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt` |
 | 7.82 MB | study_tool | data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt | `data/library/verified/smiths-comprehensive-dictionary-of-the-bible.txt` |
 | 7.55 MB | commentary_batch | barnes-reviewed-phase-3-commentary.json | `data/imports/barnes-reviewed-phase-3-commentary.json` |
-| 7.43 MB | library_text | Authorized Version 1611 Facsimile | `data/library/verified/authorized-version-1611-facsimile-pollard-alfred-w-alfred-william-1859-1944.txt` |
 
 ## Recommended Migration Order
 

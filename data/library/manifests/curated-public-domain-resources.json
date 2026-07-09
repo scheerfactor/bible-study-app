@@ -77699,5 +77699,965 @@
     "checksum_sha256": "db8a7cb4dd99804a8dde40c1219b237893a2cb853d08cafd5a9ded880b111643",
     "file_size_bytes": 2146196,
     "word_count": 385291
+  },
+  {
+    "title": "Knowing the Scriptures: Rules and Methods of Bible Study",
+    "author": "Arthur T. Pierson",
+    "year": 1910,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/knowingscripture00pier/knowingscripture00pier_djvu.txt",
+    "download_url": "https://archive.org/download/knowingscripture00pier/knowingscripture00pier_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/knowing-the-scriptures-rules-and-methods-of-bible-study-arthur-t-pierson.txt",
+    "content_storage_path": "data/library/verified/knowing-the-scriptures-rules-and-methods-of-bible-study-arthur-t-pierson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/knowingscripture00pier/knowingscripture00pier_djvu.txt.",
+    "notes": "Public-domain Bible study methods resource for personal study, Sunday School preparation, and teacher training. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study methods resource for personal study, Sunday School preparation, and teacher training. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Knowing the Scriptures: Rules and Methods of Bible Study",
+      "author": "Arthur T. Pierson",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 544,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9749636b9ba2c3f4055e7ceb45fc2c07beeafc67ae6a3f394660b7536bee7254",
+    "file_size_bytes": 832415,
+    "word_count": 122496
+  },
+  {
+    "title": "Helps to Bible Study, with Practical Notes on the Books of Scripture",
+    "author": "A. Sims",
+    "year": 1890,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/helpstobiblestud00simsuoft/helpstobiblestud00simsuoft_djvu.txt",
+    "download_url": "https://archive.org/download/helpstobiblestud00simsuoft/helpstobiblestud00simsuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/helps-to-bible-study-with-practical-notes-on-the-books-of-scripture-a-sims.txt",
+    "content_storage_path": "data/library/verified/helps-to-bible-study-with-practical-notes-on-the-books-of-scripture-a-sims.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/helpstobiblestud00simsuoft/helpstobiblestud00simsuoft_djvu.txt.",
+    "notes": "Public-domain Bible study help with practical notes for book overview, classroom preparation, and sermon planning. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study help with practical notes for book overview, classroom preparation, and sermon planning. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Helps to Bible Study, with Practical Notes on the Books of Scripture",
+      "author": "A. Sims",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 487,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0b02c6694154ed8550b12866eeec0ec8a090da3bee839f13ce7666ecc08fa5e7",
+    "file_size_bytes": 705612,
+    "word_count": 109610
+  },
+  {
+    "title": "A Guide to Bible Study",
+    "author": "J. W. McGarvey and H. L. Willett",
+    "year": 1897,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/aguidetobiblestu00mcgauoft/aguidetobiblestu00mcgauoft_djvu.txt",
+    "download_url": "https://archive.org/download/aguidetobiblestu00mcgauoft/aguidetobiblestu00mcgauoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-guide-to-bible-study-j-w-mcgarvey-and-h-l-willett.txt",
+    "content_storage_path": "data/library/verified/a-guide-to-bible-study-j-w-mcgarvey-and-h-l-willett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/aguidetobiblestu00mcgauoft/aguidetobiblestu00mcgauoft_djvu.txt.",
+    "notes": "Public-domain Bible study guide for structured study habits and class preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study guide for structured study habits and class preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Guide to Bible Study",
+      "author": "J. W. McGarvey and H. L. Willett",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 156,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f63e067a5bba939eb963fcc544b55a8ee5751e5d22fb750a55758a9001072577",
+    "file_size_bytes": 229739,
+    "word_count": 35049
+  },
+  {
+    "title": "The Bible Interpreter; or, Improved Helps to Bible Study",
+    "author": "Roswell D. Hitchcock and contributors",
+    "year": 1895,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/bibleinterpreter00hitc/bibleinterpreter00hitc_djvu.txt",
+    "download_url": "https://archive.org/download/bibleinterpreter00hitc/bibleinterpreter00hitc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt",
+    "content_storage_path": "data/library/verified/the-bible-interpreter-or-improved-helps-to-bible-study-roswell-d-hitchcock-and-contributors.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleinterpreter00hitc/bibleinterpreter00hitc_djvu.txt.",
+    "notes": "Public-domain Bible study reference with analytical and topical helps for serious Bible students and teachers. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study reference with analytical and topical helps for serious Bible students and teachers. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible Interpreter; or, Improved Helps to Bible Study",
+      "author": "Roswell D. Hitchcock and contributors",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 9870,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3893e08583bdb6817eb3fd272be9b695a8a9e28f2bbcebbe9a5690b28db01013",
+    "file_size_bytes": 13281227,
+    "word_count": 2220762
+  },
+  {
+    "title": "Bible Wonders and Aids to Bible Study",
+    "author": "Stephen Van Rensselaer Ford",
+    "year": 1900,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/biblewondersaids00ford/biblewondersaids00ford_djvu.txt",
+    "download_url": "https://archive.org/download/biblewondersaids00ford/biblewondersaids00ford_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-wonders-and-aids-to-bible-study-stephen-van-rensselaer-ford.txt",
+    "content_storage_path": "data/library/verified/bible-wonders-and-aids-to-bible-study-stephen-van-rensselaer-ford.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblewondersaids00ford/biblewondersaids00ford_djvu.txt.",
+    "notes": "Public-domain Bible study aid for teaching, devotional study, and background enrichment. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study aid for teaching, devotional study, and background enrichment. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Wonders and Aids to Bible Study",
+      "author": "Stephen Van Rensselaer Ford",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 181,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8f7597b6173bfdd65365f22b3338f7a844aec9a60c73dd02296d2a873782d136",
+    "file_size_bytes": 288834,
+    "word_count": 40752
+  },
+  {
+    "title": "The Sunday-school Teacher's Manual",
+    "author": "William Mansfield Groton",
+    "year": 1909,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Helps",
+    "source_url": "https://archive.org/download/sundayschoolteac00grot/sundayschoolteac00grot_djvu.txt",
+    "download_url": "https://archive.org/download/sundayschoolteac00grot/sundayschoolteac00grot_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-sunday-school-teacher-s-manual-william-mansfield-groton.txt",
+    "content_storage_path": "data/library/verified/the-sunday-school-teacher-s-manual-william-mansfield-groton.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sundayschoolteac00grot/sundayschoolteac00grot_djvu.txt.",
+    "notes": "Public-domain Sunday School teacher manual for lesson preparation, classroom method, and teacher training. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday School teacher manual for lesson preparation, classroom method, and teacher training. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sunday School Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Sunday-school Teacher's Manual",
+      "author": "William Mansfield Groton",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Helps",
+      "badge": "Sunday School Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 538,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "186dbbd42d7aa2ca6443e38e0ff5812a7ef171a385c17feba202b840273de566",
+    "file_size_bytes": 798890,
+    "word_count": 120973
+  },
+  {
+    "title": "The First Fifty Years of the Sunday School",
+    "author": "William Henry Watson",
+    "year": 1862,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Helps",
+    "source_url": "https://archive.org/download/thefirstfiftyyea00watsuoft/thefirstfiftyyea00watsuoft_djvu.txt",
+    "download_url": "https://archive.org/download/thefirstfiftyyea00watsuoft/thefirstfiftyyea00watsuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-first-fifty-years-of-the-sunday-school-william-henry-watson.txt",
+    "content_storage_path": "data/library/verified/the-first-fifty-years-of-the-sunday-school-william-henry-watson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/thefirstfiftyyea00watsuoft/thefirstfiftyyea00watsuoft_djvu.txt.",
+    "notes": "Public-domain Sunday School history resource for ministry context, teacher training, and Christian education background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday School history resource for ministry context, teacher training, and Christian education background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sunday School Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The First Fifty Years of the Sunday School",
+      "author": "William Henry Watson",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Helps",
+      "badge": "Sunday School Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 207,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0905520bde6354b64df16df6d800dbff56209ae5dee74f20af98199438e6f142",
+    "file_size_bytes": 317449,
+    "word_count": 46474
+  },
+  {
+    "title": "Lessons in the School of Prayer",
+    "author": "Arthur T. Pierson",
+    "year": 1895,
+    "category": "Prayer",
+    "collection": "Prayer Classics",
+    "source_url": "https://archive.org/download/lessonsinschoolo00pier/lessonsinschoolo00pier_djvu.txt",
+    "download_url": "https://archive.org/download/lessonsinschoolo00pier/lessonsinschoolo00pier_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lessons-in-the-school-of-prayer-arthur-t-pierson.txt",
+    "content_storage_path": "data/library/verified/lessons-in-the-school-of-prayer-arthur-t-pierson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lessonsinschoolo00pier/lessonsinschoolo00pier_djvu.txt.",
+    "notes": "Public-domain prayer resource arranged from the teaching of the Lord Jesus Christ for devotion, class preparation, and sermon study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prayer resource arranged from the teaching of the Lord Jesus Christ for devotion, class preparation, and sermon study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Prayer Classics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lessons in the School of Prayer",
+      "author": "Arthur T. Pierson",
+      "category": "Prayer",
+      "collection": "Prayer Classics",
+      "badge": "Prayer Classics",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 116,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f83af636bc9d13488160f033efb32514e64c8227be44dc14b71e7726ca2d9729",
+    "file_size_bytes": 169890,
+    "word_count": 26033
+  },
+  {
+    "title": "Elementary Homiletics; or, Rules and Principles in the Preparation and Preaching of Sermons",
+    "author": "Jacob Fry",
+    "year": 1901,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching and Homiletics",
+    "source_url": "https://archive.org/download/elementaryhomile00fryj/elementaryhomile00fryj_djvu.txt",
+    "download_url": "https://archive.org/download/elementaryhomile00fryj/elementaryhomile00fryj_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/elementary-homiletics-or-rules-and-principles-in-the-preparation-and-preaching-of-sermons-jacob-fry.txt",
+    "content_storage_path": "data/library/verified/elementary-homiletics-or-rules-and-principles-in-the-preparation-and-preaching-of-sermons-jacob-fry.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/elementaryhomile00fryj/elementaryhomile00fryj_djvu.txt.",
+    "notes": "Public-domain homiletics manual for sermon preparation, preaching method, and teacher training. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain homiletics manual for sermon preparation, preaching method, and teacher training. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preaching and Homiletics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Elementary Homiletics; or, Rules and Principles in the Preparation and Preaching of Sermons",
+      "author": "Jacob Fry",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching and Homiletics",
+      "badge": "Preaching and Homiletics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 197,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ace9ec2a9b78dcf9ddba8a806c4c8638b77993dcbefa2dac3dddfd89fdc8c667",
+    "file_size_bytes": 294382,
+    "word_count": 44352
+  },
+  {
+    "title": "A History of Preaching",
+    "author": "Edwin Charles Dargan",
+    "year": 1905,
+    "category": "Preaching & Teaching",
+    "collection": "Preaching and Homiletics",
+    "source_url": "https://archive.org/download/ahistoryofpreach01darguoft/ahistoryofpreach01darguoft_djvu.txt",
+    "download_url": "https://archive.org/download/ahistoryofpreach01darguoft/ahistoryofpreach01darguoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-history-of-preaching-edwin-charles-dargan.txt",
+    "content_storage_path": "data/library/verified/a-history-of-preaching-edwin-charles-dargan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/ahistoryofpreach01darguoft/ahistoryofpreach01darguoft_djvu.txt.",
+    "notes": "Public-domain history of preaching resource for preacher biography, sermon history, and teaching context. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain history of preaching resource for preacher biography, sermon history, and teaching context. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preaching and Homiletics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A History of Preaching",
+      "author": "Edwin Charles Dargan",
+      "category": "Preaching & Teaching",
+      "collection": "Preaching and Homiletics",
+      "badge": "Preaching and Homiletics",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1023,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d65e35f3940851c55f5acf0b760f2484ef680368b01f4f9b187d77132c842594",
+    "file_size_bytes": 1554321,
+    "word_count": 230213
+  },
+  {
+    "title": "John Jasper, the Unmatched Negro Philosopher and Preacher",
+    "author": "William E. Hatcher",
+    "year": 1908,
+    "category": "Preaching & Teaching",
+    "collection": "Preacher Biography",
+    "source_url": "https://archive.org/download/johnjasperunmatc00hatciala/johnjasperunmatc00hatciala_djvu.txt",
+    "download_url": "https://archive.org/download/johnjasperunmatc00hatciala/johnjasperunmatc00hatciala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/john-jasper-the-unmatched-negro-philosopher-and-preacher-william-e-hatcher.txt",
+    "content_storage_path": "data/library/verified/john-jasper-the-unmatched-negro-philosopher-and-preacher-william-e-hatcher.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/johnjasperunmatc00hatciala/johnjasperunmatc00hatciala_djvu.txt.",
+    "notes": "Public-domain preacher biography for sermon illustrations, preaching history, and biographical study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain preacher biography for sermon illustrations, preaching history, and biographical study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Preacher Biography",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "John Jasper, the Unmatched Negro Philosopher and Preacher",
+      "author": "William E. Hatcher",
+      "category": "Preaching & Teaching",
+      "collection": "Preacher Biography",
+      "badge": "Preacher Biography",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 204,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ee603c6a72a720b327e78782607cbbe57e2902e0d0c3f8613e58f8f3916a1410",
+    "file_size_bytes": 281152,
+    "word_count": 45974
+  },
+  {
+    "title": "The Missionary History of Sierra Leone",
+    "author": "Henry Seddall",
+    "year": 1874,
+    "category": "Missions",
+    "collection": "Missionary History",
+    "source_url": "https://archive.org/download/missionaryhistor00sedd/missionaryhistor00sedd_djvu.txt",
+    "download_url": "https://archive.org/download/missionaryhistor00sedd/missionaryhistor00sedd_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-missionary-history-of-sierra-leone-henry-seddall.txt",
+    "content_storage_path": "data/library/verified/the-missionary-history-of-sierra-leone-henry-seddall.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/missionaryhistor00sedd/missionaryhistor00sedd_djvu.txt.",
+    "notes": "Public-domain missions history resource for missionary context, church history, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions history resource for missionary context, church history, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Missionary History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Missionary History of Sierra Leone",
+      "author": "Henry Seddall",
+      "category": "Missions",
+      "collection": "Missionary History",
+      "badge": "Missionary History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 270,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dfdbca66bb62924e6bba2eeea9ccfda662bdb387c67ab80bc7860a9a04bcc9b0",
+    "file_size_bytes": 409836,
+    "word_count": 60681
+  },
+  {
+    "title": "A History of Moravian Missions",
+    "author": "J. E. Hutton",
+    "year": 1922,
+    "category": "Missions",
+    "collection": "Missionary History",
+    "source_url": "https://archive.org/download/historyofmoravia00huttuoft/historyofmoravia00huttuoft_djvu.txt",
+    "download_url": "https://archive.org/download/historyofmoravia00huttuoft/historyofmoravia00huttuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-history-of-moravian-missions-j-e-hutton.txt",
+    "content_storage_path": "data/library/verified/a-history-of-moravian-missions-j-e-hutton.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/historyofmoravia00huttuoft/historyofmoravia00huttuoft_djvu.txt.",
+    "notes": "Public-domain missions history resource for missionary study, church history, and illustration research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions history resource for missionary study, church history, and illustration research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Missionary History",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A History of Moravian Missions",
+      "author": "J. E. Hutton",
+      "category": "Missions",
+      "collection": "Missionary History",
+      "badge": "Missionary History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 721,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c628b23b87af636e4de47ef41b0ed6f0072376839fadd38a5ad2b9bd75485bf3",
+    "file_size_bytes": 1109918,
+    "word_count": 162298
+  },
+  {
+    "title": "Journals of the Rev. Messrs. Isenberg and Krapf, Missionaries of the Church Missionary Society",
+    "author": "Charles William Isenberg and Johann Ludwig Krapf",
+    "year": 1843,
+    "category": "Missions",
+    "collection": "Missionary Biography",
+    "source_url": "https://archive.org/download/journalsofrevmes00isen/journalsofrevmes00isen_djvu.txt",
+    "download_url": "https://archive.org/download/journalsofrevmes00isen/journalsofrevmes00isen_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/journals-of-the-rev-messrs-isenberg-and-krapf-missionaries-of-the-church-missionary-society-charles-william-is.txt",
+    "content_storage_path": "data/library/verified/journals-of-the-rev-messrs-isenberg-and-krapf-missionaries-of-the-church-missionary-society-charles-william-is.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/journalsofrevmes00isen/journalsofrevmes00isen_djvu.txt.",
+    "notes": "Public-domain missionary journal resource for missions history, biography, and teaching illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary journal resource for missions history, biography, and teaching illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Missionary Biography",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Journals of the Rev. Messrs. Isenberg and Krapf, Missionaries of the Church Missionary Society",
+      "author": "Charles William Isenberg and Johann Ludwig Krapf",
+      "category": "Missions",
+      "collection": "Missionary Biography",
+      "badge": "Missionary Biography",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 812,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6bc893e1723641c24693f0b9e6b581f8e59f07c245ebb35ba551a989ab3eb2d0",
+    "file_size_bytes": 1193967,
+    "word_count": 182711
+  },
+  {
+    "title": "Hand-book of Bible Geography",
+    "author": "George Henry Whitney",
+    "year": 1875,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/cu31924029282120/cu31924029282120_djvu.txt",
+    "download_url": "https://archive.org/download/cu31924029282120/cu31924029282120_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hand-book-of-bible-geography-george-henry-whitney.txt",
+    "content_storage_path": "data/library/verified/hand-book-of-bible-geography-george-henry-whitney.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cu31924029282120/cu31924029282120_djvu.txt.",
+    "notes": "Public-domain Bible geography reference for places, nations, tribes, teaching context, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible geography reference for places, nations, tribes, teaching context, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hand-book of Bible Geography",
+      "author": "George Henry Whitney",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 974,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "166b05619860c19506eeae3867d91a7ae9090b6c7c76da00f860d03b6ab62b80",
+    "file_size_bytes": 1457361,
+    "word_count": 219189
+  },
+  {
+    "title": "Hand-book of Bible Geography: Names, Pronunciation, and Meaning",
+    "author": "George Henry Whitney",
+    "year": 1871,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/handbookofbibleg01whit/handbookofbibleg01whit_djvu.txt",
+    "download_url": "https://archive.org/download/handbookofbibleg01whit/handbookofbibleg01whit_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt",
+    "content_storage_path": "data/library/verified/hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/handbookofbibleg01whit/handbookofbibleg01whit_djvu.txt.",
+    "notes": "Public-domain Bible geography reference with place-name helps for Bible Reader lookup, Passage Guide background, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible geography reference with place-name helps for Bible Reader lookup, Passage Guide background, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hand-book of Bible Geography: Names, Pronunciation, and Meaning",
+      "author": "George Henry Whitney",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 979,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "407c02a9a337c8634e4fce7d8cdfa58a1bfc31e21b09f00439b33304e1327e08",
+    "file_size_bytes": 1461000,
+    "word_count": 220384
+  },
+  {
+    "title": "The Explanatory Bible Atlas and Scripture Gazetteer",
+    "author": "William Jenks",
+    "year": 1849,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/explanatorybible1849jenk/explanatorybible1849jenk_djvu.txt",
+    "download_url": "https://archive.org/download/explanatorybible1849jenk/explanatorybible1849jenk_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt",
+    "content_storage_path": "data/library/verified/the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/explanatorybible1849jenk/explanatorybible1849jenk_djvu.txt.",
+    "notes": "Public-domain Bible atlas and gazetteer resource for places, maps, natural history, weights, measures, and teaching background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible atlas and gazetteer resource for places, maps, natural history, weights, measures, and teaching background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Explanatory Bible Atlas and Scripture Gazetteer",
+      "author": "William Jenks",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 945,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c30f5a446833ae7ffc300abd13a67198429e3735dd601ea93b990488c0b13d4d",
+    "file_size_bytes": 1434507,
+    "word_count": 212709
+  },
+  {
+    "title": "Bible Geography: A Series of Lessons on the Old and New Testament Worlds",
+    "author": "Ely Vaughan Zollars",
+    "year": 1895,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/biblegeographya00zollgoog/biblegeographya00zollgoog_djvu.txt",
+    "download_url": "https://archive.org/download/biblegeographya00zollgoog/biblegeographya00zollgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt",
+    "content_storage_path": "data/library/verified/bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biblegeographya00zollgoog/biblegeographya00zollgoog_djvu.txt.",
+    "notes": "Public-domain Bible geography lesson resource for teachers, Sunday School classes, and Bible background study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible geography lesson resource for teachers, Sunday School classes, and Bible background study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Geography: A Series of Lessons on the Old and New Testament Worlds",
+      "author": "Ely Vaughan Zollars",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 117,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "05745fa0b4e930afee85e9e813d2eba1262c15742ef5f757142b91f56b4752b2",
+    "file_size_bytes": 154773,
+    "word_count": 26430
+  },
+  {
+    "title": "Outlines of Bible Geography, Physical and Political",
+    "author": "William Garden Blaikie",
+    "year": 1861,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/outlinesbiblege00blaigoog/outlinesbiblege00blaigoog_djvu.txt",
+    "download_url": "https://archive.org/download/outlinesbiblege00blaigoog/outlinesbiblege00blaigoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt",
+    "content_storage_path": "data/library/verified/outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/outlinesbiblege00blaigoog/outlinesbiblege00blaigoog_djvu.txt.",
+    "notes": "Public-domain Bible geography overview for background study, Bible places, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible geography overview for background study, Bible places, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Outlines of Bible Geography, Physical and Political",
+      "author": "William Garden Blaikie",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 194,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "97efb7dc4f93f6d186d344768053f6c9b81d0c5ccf29f9bea03e48628dc5fd86",
+    "file_size_bytes": 255071,
+    "word_count": 43613
+  },
+  {
+    "title": "Bible Atlas (Non-Sectarian): Physical-Historical",
+    "author": "Townsend MacCoun",
+    "year": 1912,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/bibleatlasnonsec00macc/bibleatlasnonsec00macc_djvu.txt",
+    "download_url": "https://archive.org/download/bibleatlasnonsec00macc/bibleatlasnonsec00macc_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt",
+    "content_storage_path": "data/library/verified/bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleatlasnonsec00macc/bibleatlasnonsec00macc_djvu.txt.",
+    "notes": "Public-domain physical-historical Bible atlas resource for map study, geography, and class preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain physical-historical Bible atlas resource for map study, geography, and class preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Atlas (Non-Sectarian): Physical-Historical",
+      "author": "Townsend MacCoun",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 17,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c605f68a66f1681830769b7b35c825f6a35f9430e0477eca0452c718c613bb88",
+    "file_size_bytes": 26296,
+    "word_count": 3752
   }
 ]

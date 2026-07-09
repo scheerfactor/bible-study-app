@@ -4,15 +4,28 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,738
+- Verified public/free Library resources: 1,758
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 637
-- Public Library duplicate title/author groups: 0
+- Library authors represented: 654
+- Public Library duplicate title/author groups: 25
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 20 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 6 Bible geography, atlas, and Scripture gazetteer resources for maps, places, and classroom background
+- 5 Bible study methods and study-help resources for personal study, Passage Guide support, and teacher preparation
+- 2 Sunday School / Christian education resources for teacher training and lesson preparation
+- 1 prayer resource from A. T. Pierson
+- 3 preaching, homiletics, and preacher-biography resources
+- 3 missions history / missionary journal resources
+
+These strengthen Bible places and maps, structured Bible study, Sunday School preparation, preaching helps, prayer, missionary history, and classroom teaching support. All imported OCR texts are labeled for spot-checking before quotation. Two otherwise useful candidate rows were deferred because Archive.org text downloads returned server errors, and older duplicate edition groups remain a separate cleanup task.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

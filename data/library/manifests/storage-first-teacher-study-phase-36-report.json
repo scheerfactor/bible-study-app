@@ -1,0 +1,243 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-teacher-study-phase-36.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 20,
+  "imported": 6,
+  "would_import": 0,
+  "skipped": 14,
+  "failed": 0,
+  "duplicate_titles": 14,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "Hand-book of Bible Geography",
+      "file": "hand-book-of-bible-geography-george-henry-whitney.txt",
+      "bytes": 1457361,
+      "words": 219189,
+      "reading_time_minutes": 974,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hand-book of Bible Geography: Names, Pronunciation, and Meaning",
+      "file": "hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt",
+      "bytes": 1461000,
+      "words": 220384,
+      "reading_time_minutes": 979,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Explanatory Bible Atlas and Scripture Gazetteer",
+      "file": "the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt",
+      "bytes": 1434507,
+      "words": 212709,
+      "reading_time_minutes": 945,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Geography: A Series of Lessons on the Old and New Testament Worlds",
+      "file": "bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt",
+      "bytes": 154773,
+      "words": 26430,
+      "reading_time_minutes": 117,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Outlines of Bible Geography, Physical and Political",
+      "file": "outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt",
+      "bytes": 255071,
+      "words": 43613,
+      "reading_time_minutes": 194,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Atlas (Non-Sectarian): Physical-Historical",
+      "file": "bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt",
+      "bytes": 26296,
+      "words": 3752,
+      "reading_time_minutes": 17,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Hand-book of Bible Geography",
+      "author": "George Henry Whitney",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hand-book-of-bible-geography-george-henry-whitney.txt"
+    },
+    {
+      "row": 3,
+      "title": "Hand-book of Bible Geography: Names, Pronunciation, and Meaning",
+      "author": "George Henry Whitney",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hand-book-of-bible-geography-names-pronunciation-and-meaning-george-henry-whitney.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Explanatory Bible Atlas and Scripture Gazetteer",
+      "author": "William Jenks",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-explanatory-bible-atlas-and-scripture-gazetteer-william-jenks.txt"
+    },
+    {
+      "row": 5,
+      "title": "Bible Geography: A Series of Lessons on the Old and New Testament Worlds",
+      "author": "Ely Vaughan Zollars",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-geography-a-series-of-lessons-on-the-old-and-new-testament-worlds-ely-vaughan-zollars.txt"
+    },
+    {
+      "row": 6,
+      "title": "Outlines of Bible Geography, Physical and Political",
+      "author": "William Garden Blaikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/outlines-of-bible-geography-physical-and-political-william-garden-blaikie.txt"
+    },
+    {
+      "row": 7,
+      "title": "Bible Atlas (Non-Sectarian): Physical-Historical",
+      "author": "Townsend MacCoun",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-atlas-non-sectarian-physical-historical-townsend-maccoun.txt"
+    },
+    {
+      "row": 8,
+      "title": "Knowing the Scriptures: Rules and Methods of Bible Study",
+      "author": "Arthur T. Pierson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "Helps to Bible Study, with Practical Notes on the Books of Scripture",
+      "author": "A. Sims",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "A Guide to Bible Study",
+      "author": "J. W. McGarvey and H. L. Willett",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "The Bible Interpreter; or, Improved Helps to Bible Study",
+      "author": "Roswell D. Hitchcock and contributors",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "Bible Wonders and Aids to Bible Study",
+      "author": "Stephen Van Rensselaer Ford",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 13,
+      "title": "The Sunday-school Teacher's Manual",
+      "author": "William Mansfield Groton",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "The First Fifty Years of the Sunday School",
+      "author": "William Henry Watson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "Lessons in the School of Prayer",
+      "author": "Arthur T. Pierson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Elementary Homiletics; or, Rules and Principles in the Preparation and Preaching of Sermons",
+      "author": "Jacob Fry",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "A History of Preaching",
+      "author": "Edwin Charles Dargan",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "John Jasper, the Unmatched Negro Philosopher and Preacher",
+      "author": "William E. Hatcher",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "The Missionary History of Sierra Leone",
+      "author": "Henry Seddall",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 20,
+      "title": "A History of Moravian Missions",
+      "author": "J. E. Hutton",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 21,
+      "title": "Journals of the Rev. Messrs. Isenberg and Krapf, Missionaries of the Church Missionary Society",
+      "author": "Charles William Isenberg and Johann Ludwig Krapf",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ]
+}
