@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,847
+- Verified public/free Library resources: 1,855
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
@@ -13,6 +13,14 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 - Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 8 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 8 `American Commentary on the New Testament` resources from the American Baptist Publication Society, covering Matthew, Mark and Luke, John, Acts, Ephesians, Philippians, the Pastoral Epistles and Philemon, the Epistles of John, Jude, and Revelation
+
+These strengthen Baptist commentary coverage, Gospel study, Acts, church doctrine, pastoral epistles, Johannine epistles, Jude, Revelation, and preacher/teacher preparation without increasing the Vercel bundle. The resources are labeled for discernment because some volumes include textual-critical notes and should be compared carefully in a KJV-centered study workflow. All imported OCR texts are labeled for spot-checking before quotation. The dry run found zero duplicate titles, zero duplicate sources, and zero rights flags before import.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 11 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

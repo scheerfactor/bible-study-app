@@ -1,0 +1,149 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-american-commentary-phase-42.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "American Commentary on the New Testament: Matthew",
+      "file": "american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt",
+      "bytes": 3589908,
+      "words": 551633,
+      "reading_time_minutes": 2452,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Mark and Luke",
+      "file": "american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt",
+      "bytes": 3486922,
+      "words": 544919,
+      "reading_time_minutes": 2422,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: John",
+      "file": "american-commentary-on-the-new-testament-john-alvah-hovey.txt",
+      "bytes": 2277365,
+      "words": 356970,
+      "reading_time_minutes": 1587,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Acts",
+      "file": "american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt",
+      "bytes": 3716737,
+      "words": 576267,
+      "reading_time_minutes": 2561,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Ephesians",
+      "file": "american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt",
+      "bytes": 527659,
+      "words": 79715,
+      "reading_time_minutes": 354,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Philippians",
+      "file": "american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt",
+      "bytes": 320723,
+      "words": 48754,
+      "reading_time_minutes": 217,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Pastoral Epistles and Philemon",
+      "file": "american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt",
+      "bytes": 2860921,
+      "words": 430642,
+      "reading_time_minutes": 1914,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Epistles of John, Jude, and Revelation",
+      "file": "american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt",
+      "bytes": 2239540,
+      "words": 344592,
+      "reading_time_minutes": 1532,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "American Commentary on the New Testament: Matthew",
+      "author": "John A. Broadus; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 3,
+      "title": "American Commentary on the New Testament: Mark and Luke",
+      "author": "W. N. Clarke and others; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 4,
+      "title": "American Commentary on the New Testament: John",
+      "author": "Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-john-alvah-hovey.txt"
+    },
+    {
+      "row": 5,
+      "title": "American Commentary on the New Testament: Acts",
+      "author": "Horatio B. Hackett; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 6,
+      "title": "American Commentary on the New Testament: Ephesians",
+      "author": "Justin A. Smith; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 7,
+      "title": "American Commentary on the New Testament: Philippians",
+      "author": "J. B. Gough Pidge; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 8,
+      "title": "American Commentary on the New Testament: Pastoral Epistles and Philemon",
+      "author": "H. Harvey; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 9,
+      "title": "American Commentary on the New Testament: Epistles of John, Jude, and Revelation",
+      "author": "Henry A. Sawtelle; Nathaniel M. Williams; Justin A. Smith; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt"
+    }
+  ]
+}

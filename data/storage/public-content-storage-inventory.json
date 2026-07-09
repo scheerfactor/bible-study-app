@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T20:39:03.860Z",
+  "generated_at": "2026-07-09T22:01:15.273Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1847,
-      "present": 1847,
+      "files": 1855,
+      "present": 1855,
       "missing": 0,
-      "total_bytes": 1611193685,
-      "total_size": "1.50 GB"
+      "total_bytes": 1630213460,
+      "total_size": "1.52 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3949128,
-      "total_size": "3.77 MB"
+      "total_bytes": 3972520,
+      "total_size": "3.79 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2165,
-      "present": 2165,
+      "files": 2173,
+      "present": 2173,
       "missing": 0,
-      "total_bytes": 2128822562,
-      "total_size": "1.98 GB"
+      "total_bytes": 2147865729,
+      "total_size": "2.00 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 429,
-    "library_text_bytes_over_1mb": 1055176921,
-    "public_content_files_over_1mb": 526,
-    "public_content_bytes_over_1mb": 1503486677,
-    "storage_backed_library_files": 168,
-    "storage_backed_library_bytes": 170399396
+    "library_text_files_over_1mb": 435,
+    "library_text_bytes_over_1mb": 1073348314,
+    "public_content_files_over_1mb": 532,
+    "public_content_bytes_over_1mb": 1521681462,
+    "storage_backed_library_files": 176,
+    "storage_backed_library_bytes": 189419171
   },
   "items": [
     {
@@ -22410,6 +22410,110 @@
       "source_url": "https://archive.org/download/bwb_Y0-BSQ-501/bwb_Y0-BSQ-501_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3589908,
+      "checksum_sha256": "612b9684c9fad0be00ae7f80a77c1bd23022445ca7ff7f9e20beb3ce25a21893",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Matthew",
+      "author": "John A. Broadus; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta01hoveiala/americancommenta01hoveiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3486922,
+      "checksum_sha256": "d805779c3e0f027a86630b683fe40509fe7a4614d6fb00a66ff71a86c7fa02d8",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Mark and Luke",
+      "author": "W. N. Clarke and others; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta02hoveiala/americancommenta02hoveiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-john-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-john-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2277365,
+      "checksum_sha256": "a59ab0f1bd1165e05e4c7bedc629dcb40fd1f51653688c34a31f2592477f6d20",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: John",
+      "author": "Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta03hoveiala/americancommenta03hoveiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3716737,
+      "checksum_sha256": "8f247b13f32e72674657cdd22bcc0ff4e6a6e422452dbde01980dea51f7d3803",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Acts",
+      "author": "Horatio B. Hackett; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta04hoveiala/americancommenta04hoveiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 527659,
+      "checksum_sha256": "1635f8cf58b3a91f832a1a351b563607c0dd89c0430774b63f257ec58f27e6a4",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Ephesians",
+      "author": "Justin A. Smith; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/commentaryonepis0503smit/commentaryonepis0503smit_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 320723,
+      "checksum_sha256": "d3b294cc79e45d33403da2fe3367e47118c958265a9dfcca52b009d2ab41c007",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Philippians",
+      "author": "J. B. Gough Pidge; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/commentaryonepis0504pidg/commentaryonepis0504pidg_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2860921,
+      "checksum_sha256": "dde22eff80ee786ca60d846a7fa2b5de51f0c0c11dbf8f8745f59639cf99c549",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Pastoral Epistles and Philemon",
+      "author": "H. Harvey; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta06hoveiala/americancommenta06hoveiala_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt",
+      "storage_path": "data/library/verified/american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2239540,
+      "checksum_sha256": "84584dccefcda524cede10fb3b4e5703459a09d012ba633378bf88e7b58aab4e",
+      "storage_backed": true,
+      "title": "American Commentary on the New Testament: Epistles of John, Jude, and Revelation",
+      "author": "Henry A. Sawtelle; Nathaniel M. Williams; Justin A. Smith; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/americancommenta07hoveiala/americancommenta07hoveiala_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -24982,8 +25086,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3949128,
-      "checksum_sha256": "dbcfe27d3628f3872e67c4a422f52e9c161c0a118edb6dc7b8be39927e031b61"
+      "size_bytes": 3972520,
+      "checksum_sha256": "88097a6e6da1fedee54118ab13bb750645c01dbc4118b2cb03c5a45c0c8f86ec"
     },
     {
       "kind": "study_tool",

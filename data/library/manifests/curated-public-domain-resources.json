@@ -82971,5 +82971,405 @@
     "checksum_sha256": "204f5c6230f4b470a70dc51a0f86c0df0d3267d38b5fb44487a616d396792322",
     "file_size_bytes": 402798,
     "word_count": 74563
+  },
+  {
+    "title": "American Commentary on the New Testament: Matthew",
+    "author": "John A. Broadus; edited by Alvah Hovey",
+    "year": 1886,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta01hoveiala/americancommenta01hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta01hoveiala/americancommenta01hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta01hoveiala/americancommenta01hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on Matthew from the American Baptist Publication Society. Strong for Gospel study, Sunday School teaching, sermon preparation, and comparison with other Matthew resources; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on Matthew from the American Baptist Publication Society. Strong for Gospel study, Sunday School teaching, sermon preparation, and comparison with other Matthew resources; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Matthew",
+      "author": "John A. Broadus; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2452,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "612b9684c9fad0be00ae7f80a77c1bd23022445ca7ff7f9e20beb3ce25a21893",
+    "file_size_bytes": 3589908,
+    "word_count": 551633
+  },
+  {
+    "title": "American Commentary on the New Testament: Mark and Luke",
+    "author": "W. N. Clarke and others; edited by Alvah Hovey",
+    "year": 1881,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta02hoveiala/americancommenta02hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta02hoveiala/americancommenta02hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta02hoveiala/americancommenta02hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary volume covering Mark and Luke from the American Baptist Publication Society. Useful for Gospel comparison, Bible class preparation, and sermon study; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary volume covering Mark and Luke from the American Baptist Publication Society. Useful for Gospel comparison, Bible class preparation, and sermon study; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Mark and Luke",
+      "author": "W. N. Clarke and others; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2422,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d805779c3e0f027a86630b683fe40509fe7a4614d6fb00a66ff71a86c7fa02d8",
+    "file_size_bytes": 3486922,
+    "word_count": 544919
+  },
+  {
+    "title": "American Commentary on the New Testament: John",
+    "author": "Alvah Hovey",
+    "year": 1885,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta03hoveiala/americancommenta03hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta03hoveiala/americancommenta03hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-john-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-john-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta03hoveiala/americancommenta03hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on the Gospel of John from the American Baptist Publication Society. Useful for John study, Christology, evangelism, and verse-by-verse teaching; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on the Gospel of John from the American Baptist Publication Society. Useful for John study, Christology, evangelism, and verse-by-verse teaching; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: John",
+      "author": "Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1587,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a59ab0f1bd1165e05e4c7bedc629dcb40fd1f51653688c34a31f2592477f6d20",
+    "file_size_bytes": 2277365,
+    "word_count": 356970
+  },
+  {
+    "title": "American Commentary on the New Testament: Acts",
+    "author": "Horatio B. Hackett; edited by Alvah Hovey",
+    "year": 1882,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta04hoveiala/americancommenta04hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta04hoveiala/americancommenta04hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta04hoveiala/americancommenta04hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on Acts from the American Baptist Publication Society. Useful for church, missions, apostolic history, sermon preparation, and Acts study; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on Acts from the American Baptist Publication Society. Useful for church, missions, apostolic history, sermon preparation, and Acts study; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Acts",
+      "author": "Horatio B. Hackett; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2561,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8f247b13f32e72674657cdd22bcc0ff4e6a6e422452dbde01980dea51f7d3803",
+    "file_size_bytes": 3716737,
+    "word_count": 576267
+  },
+  {
+    "title": "American Commentary on the New Testament: Ephesians",
+    "author": "Justin A. Smith; edited by Alvah Hovey",
+    "year": 1890,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/commentaryonepis0503smit/commentaryonepis0503smit_djvu.txt",
+    "download_url": "https://archive.org/download/commentaryonepis0503smit/commentaryonepis0503smit_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-ephesians-justin-a-smith-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/commentaryonepis0503smit/commentaryonepis0503smit_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on Ephesians from the American Baptist Publication Society. Useful for doctrine, church study, Christian walk, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on Ephesians from the American Baptist Publication Society. Useful for doctrine, church study, Christian walk, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Ephesians",
+      "author": "Justin A. Smith; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 354,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1635f8cf58b3a91f832a1a351b563607c0dd89c0430774b63f257ec58f27e6a4",
+    "file_size_bytes": 527659,
+    "word_count": 79715
+  },
+  {
+    "title": "American Commentary on the New Testament: Philippians",
+    "author": "J. B. Gough Pidge; edited by Alvah Hovey",
+    "year": 1890,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/commentaryonepis0504pidg/commentaryonepis0504pidg_djvu.txt",
+    "download_url": "https://archive.org/download/commentaryonepis0504pidg/commentaryonepis0504pidg_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-philippians-j-b-gough-pidge-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/commentaryonepis0504pidg/commentaryonepis0504pidg_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on Philippians from the American Baptist Publication Society. Useful for joy, Christian service, humility, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on Philippians from the American Baptist Publication Society. Useful for joy, Christian service, humility, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Philippians",
+      "author": "J. B. Gough Pidge; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 217,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "d3b294cc79e45d33403da2fe3367e47118c958265a9dfcca52b009d2ab41c007",
+    "file_size_bytes": 320723,
+    "word_count": 48754
+  },
+  {
+    "title": "American Commentary on the New Testament: Pastoral Epistles and Philemon",
+    "author": "H. Harvey; edited by Alvah Hovey",
+    "year": 1890,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta06hoveiala/americancommenta06hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta06hoveiala/americancommenta06hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-pastoral-epistles-and-philemon-h-harvey-edited-by-alvah-hovey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta06hoveiala/americancommenta06hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary on First and Second Timothy, Titus, and Philemon from the American Baptist Publication Society. Useful for pastoral ministry, church order, teacher training, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary on First and Second Timothy, Titus, and Philemon from the American Baptist Publication Society. Useful for pastoral ministry, church order, teacher training, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Pastoral Epistles and Philemon",
+      "author": "H. Harvey; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1914,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dde22eff80ee786ca60d846a7fa2b5de51f0c0c11dbf8f8745f59639cf99c549",
+    "file_size_bytes": 2860921,
+    "word_count": 430642
+  },
+  {
+    "title": "American Commentary on the New Testament: Epistles of John, Jude, and Revelation",
+    "author": "Henry A. Sawtelle; Nathaniel M. Williams; Justin A. Smith; edited by Alvah Hovey",
+    "year": 1888,
+    "category": "Commentaries",
+    "collection": "American Commentary on the New Testament",
+    "source_url": "https://archive.org/download/americancommenta07hoveiala/americancommenta07hoveiala_djvu.txt",
+    "download_url": "https://archive.org/download/americancommenta07hoveiala/americancommenta07hoveiala_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt",
+    "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/americancommenta07hoveiala/americancommenta07hoveiala_djvu.txt.",
+    "notes": "Public-domain Baptist commentary volume covering the Epistles of John, Jude, and Revelation from the American Baptist Publication Society. Useful for doctrinal testing, assurance, prophecy comparison, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;Textual criticism notes;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist commentary volume covering the Epistles of John, Jude, and Revelation from the American Baptist Publication Society. Useful for doctrinal testing, assurance, prophecy comparison, and sermon preparation; includes textual-critical notes and OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "American Commentary on the New Testament",
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Textual criticism notes",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "American Commentary on the New Testament: Epistles of John, Jude, and Revelation",
+      "author": "Henry A. Sawtelle; Nathaniel M. Williams; Justin A. Smith; edited by Alvah Hovey",
+      "category": "Commentaries",
+      "collection": "American Commentary on the New Testament",
+      "badge": "American Commentary on the New Testament",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1532,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "84584dccefcda524cede10fb3b4e5703459a09d012ba633378bf88e7b58aab4e",
+    "file_size_bytes": 2239540,
+    "word_count": 344592
   }
 ]
