@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-08T23:27:38.446Z",
+  "generated_at": "2026-07-09T10:20:04.065Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1720,
-      "present": 1720,
+      "files": 1738,
+      "present": 1738,
       "missing": 0,
-      "total_bytes": 1478448992,
-      "total_size": "1.38 GB"
+      "total_bytes": 1492298405,
+      "total_size": "1.39 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3639040,
-      "total_size": "3.47 MB"
+      "total_bytes": 3681061,
+      "total_size": "3.51 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2038,
-      "present": 2038,
+      "files": 2056,
+      "present": 2056,
       "missing": 0,
-      "total_bytes": 1995767781,
-      "total_size": "1.86 GB"
+      "total_bytes": 2009659215,
+      "total_size": "1.87 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 389,
-    "library_text_bytes_over_1mb": 961455925,
-    "public_content_files_over_1mb": 486,
-    "public_content_bytes_over_1mb": 1409455593,
-    "storage_backed_library_files": 41,
-    "storage_backed_library_bytes": 37654703
+    "library_text_files_over_1mb": 391,
+    "library_text_bytes_over_1mb": 968624123,
+    "public_content_files_over_1mb": 488,
+    "public_content_bytes_over_1mb": 1416665812,
+    "storage_backed_library_files": 59,
+    "storage_backed_library_bytes": 51504116
   },
   "items": [
     {
@@ -20759,6 +20759,240 @@
       "source_url": "https://archive.org/download/in.ernet.dli.2015.168833/2015.168833.C-H-Spurgeon-A-Biography_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-church-in-earnest-john-angell-james.txt",
+      "storage_path": "data/library/verified/the-church-in-earnest-john-angell-james.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 714373,
+      "checksum_sha256": "befc4206e3644af34df18eb9b16bfa01c736d23879d2635ecac5025d750a16ea",
+      "storage_backed": true,
+      "title": "The Church in Earnest",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/churchinearnest00jamegoog/churchinearnest00jamegoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-family-monitor-or-a-help-to-domestic-happiness-john-angell-james.txt",
+      "storage_path": "data/library/verified/the-family-monitor-or-a-help-to-domestic-happiness-john-angell-james.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 491942,
+      "checksum_sha256": "df1526d1751524c1ea00b05444631296d3e08c9281ee0d3231b1da4e35dd0942",
+      "storage_backed": true,
+      "title": "The Family Monitor; or, A Help to Domestic Happiness",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/familymonitoror02jamegoog/familymonitoror02jamegoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-travels-of-true-godliness-benjamin-keach.txt",
+      "storage_path": "data/library/verified/the-travels-of-true-godliness-benjamin-keach.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 262027,
+      "checksum_sha256": "370a8781b5e96036236096d55ee85c439e2bf9d42d01a56e08144e6fbd9fe681",
+      "storage_backed": true,
+      "title": "The Travels of True Godliness",
+      "author": "Benjamin Keach",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/travelstruegodl00keacgoog/travelstruegodl00keacgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/tropologia-a-key-to-open-scripture-metaphors-benjamin-keach.txt",
+      "storage_path": "data/library/verified/tropologia-a-key-to-open-scripture-metaphors-benjamin-keach.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 5022002,
+      "checksum_sha256": "16f6ff3e43daed1a6d490bf7c488c8edf22e27a5e835fe6d73143c64fe7663bd",
+      "storage_backed": true,
+      "title": "Tropologia: A Key to Open Scripture Metaphors",
+      "author": "Benjamin Keach",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/gtropologaakeyt00keacgoog/gtropologaakeyt00keacgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-life-of-jesus-christ-james-stalker.txt",
+      "storage_path": "data/library/verified/the-life-of-jesus-christ-james-stalker.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 304453,
+      "checksum_sha256": "5446fafd72bbc27953ea9016b0c0736c67dce5408a873f08598b370aea743a4c",
+      "storage_backed": true,
+      "title": "The Life of Jesus Christ",
+      "author": "James Stalker",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/lifejesuschrist00stalgoog/lifejesuschrist00stalgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-life-of-st-paul-james-stalker.txt",
+      "storage_path": "data/library/verified/the-life-of-st-paul-james-stalker.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 271611,
+      "checksum_sha256": "6ebdcc5b6cf42128469a31ece8dd95da2adaa20bf6f42e48f312331cd757bced",
+      "storage_backed": true,
+      "title": "The Life of St. Paul",
+      "author": "James Stalker",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/lifestpaul00stalgoog/lifestpaul00stalgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-psalm-of-psalms-being-an-exposition-of-the-twenty-third-psalm-james-stalker.txt",
+      "storage_path": "data/library/verified/the-psalm-of-psalms-being-an-exposition-of-the-twenty-third-psalm-james-stalker.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 122413,
+      "checksum_sha256": "856141a97948b8508fb3b2b30b3933a6a4ef452f541117b83d01a9feddabfd39",
+      "storage_backed": true,
+      "title": "The Psalm of Psalms: Being an Exposition of the Twenty-third Psalm",
+      "author": "James Stalker",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/psalmpsalmsbein00stalgoog/psalmpsalmsbein00stalgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/keys-to-the-word-help-to-bible-study-a-t-pierson.txt",
+      "storage_path": "data/library/verified/keys-to-the-word-help-to-bible-study-a-t-pierson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 166497,
+      "checksum_sha256": "9a3e3949df8cc06092250df26a5619c2feb211e2e59016691a60bb9462647c77",
+      "storage_backed": true,
+      "title": "Keys to the Word: Help to Bible Study",
+      "author": "A. T. Pierson",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/keystowordhelpto0000atpi/keystowordhelpto0000atpi_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/how-god-answers-prayer-george-muller.txt",
+      "storage_path": "data/library/verified/how-god-answers-prayer-george-muller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 171235,
+      "checksum_sha256": "3202336ce599d22be10aefad2f84657621baf9a9abb74ba8847e8a6dcea3688d",
+      "storage_backed": true,
+      "title": "How God Answers Prayer",
+      "author": "George Muller",
+      "category": "Prayer",
+      "source_url": "https://archive.org/download/howgodanswerspra0000mlle/howgodanswerspra0000mlle_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-wonders-of-prayer-daniel-w-whittle-and-george-muller.txt",
+      "storage_path": "data/library/verified/the-wonders-of-prayer-daniel-w-whittle-and-george-muller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 735014,
+      "checksum_sha256": "90f7f1e7686cd52726f18aa1a9740a143d4dc0ed9754c848a3645c2edb1034c3",
+      "storage_backed": true,
+      "title": "The Wonders of Prayer",
+      "author": "Daniel W. Whittle and George Müller",
+      "category": "Prayer",
+      "source_url": "https://archive.org/download/wondersprayerar00mlgoog/wondersprayerar00mlgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-preaching-tours-and-missionary-labours-of-george-muller-george-muller.txt",
+      "storage_path": "data/library/verified/the-preaching-tours-and-missionary-labours-of-george-muller-george-muller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 512713,
+      "checksum_sha256": "f3e3a4636d89886f4dc18403f4bcd339255dc5f9297c90dc694b92130d47f28e",
+      "storage_backed": true,
+      "title": "The Preaching Tours and Missionary Labours of George Müller",
+      "author": "George Müller",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/preachingtoursa00mlgoog/preachingtoursa00mlgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/an-essay-on-anger-john-fawcett.txt",
+      "storage_path": "data/library/verified/an-essay-on-anger-john-fawcett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 275279,
+      "checksum_sha256": "a47c5c1f806d1adac41a94867eec5157d33a1204e2574c3224ccf11dea315879",
+      "storage_backed": true,
+      "title": "An Essay on Anger",
+      "author": "John Fawcett",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/anessayonanger00fawcgoog/anessayonanger00fawcgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/christ-precious-to-those-that-believe-john-fawcett.txt",
+      "storage_path": "data/library/verified/christ-precious-to-those-that-believe-john-fawcett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 420720,
+      "checksum_sha256": "9b9f3220f333d5dc2240fea7f72ba22798c6dd8a3070a58eb0fae4f344c429b9",
+      "storage_backed": true,
+      "title": "Christ Precious to Those That Believe",
+      "author": "John Fawcett",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/christpreciousto0000john/christpreciousto0000john_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/hymns-adapted-to-public-worship-and-private-devotion-john-fawcett.txt",
+      "storage_path": "data/library/verified/hymns-adapted-to-public-worship-and-private-devotion-john-fawcett.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 208302,
+      "checksum_sha256": "0d19e759e8c9c9188feea7a47eceb0761815fc109d87591c0f5c17bd79df0fcf",
+      "storage_backed": true,
+      "title": "Hymns Adapted to Public Worship and Private Devotion",
+      "author": "John Fawcett",
+      "category": "Prayer",
+      "source_url": "https://archive.org/download/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-short-view-of-the-whole-scripture-history-isaac-watts.txt",
+      "storage_path": "data/library/verified/a-short-view-of-the-whole-scripture-history-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 704545,
+      "checksum_sha256": "1346d11515189e09bf1fbb99213611c6097bdc3de82dd63dc24af45cd76e5e52",
+      "storage_backed": true,
+      "title": "A Short View of the Whole Scripture History",
+      "author": "Isaac Watts",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/ashortviewwhole01wattgoog/ashortviewwhole01wattgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sermons-on-various-subjects-divine-and-moral-isaac-watts.txt",
+      "storage_path": "data/library/verified/sermons-on-various-subjects-divine-and-moral-isaac-watts.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 950534,
+      "checksum_sha256": "880750bf262236ab1ae9aec77293b41942ed67664eb2d9918438aa05c6853dc2",
+      "storage_backed": true,
+      "title": "Sermons on Various Subjects, Divine and Moral",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sermonsonvariou01wattgoog/sermonsonvariou01wattgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/christian-fellowship-or-the-church-members-guide-john-angell-james.txt",
+      "storage_path": "data/library/verified/christian-fellowship-or-the-church-members-guide-john-angell-james.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 369557,
+      "checksum_sha256": "f87e132a9581b6f4e899e58082f72e2ac329b9fe307af31dcb8407f836e23c2d",
+      "storage_backed": true,
+      "title": "Christian Fellowship; or, The Church Members' Guide",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/bub_gb_1HX1UXh7-UEC/bub_gb_1HX1UXh7-UEC_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/autobiography-of-george-muller-george-muller.txt",
+      "storage_path": "data/library/verified/autobiography-of-george-muller-george-muller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2146196,
+      "checksum_sha256": "db8a7cb4dd99804a8dde40c1219b237893a2cb853d08cafd5a9ded880b111643",
+      "storage_backed": true,
+      "title": "Autobiography of George Müller",
+      "author": "George Müller",
+      "category": "Missions",
+      "source_url": "https://archive.org/download/autobiography-of-george-muller/autobiography-of-george-muller_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -23331,8 +23565,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3639040,
-      "checksum_sha256": "17f54bd9bc274e9638ddac01b10b663e508859343def5f775d5df3059592c777"
+      "size_bytes": 3681061,
+      "checksum_sha256": "ab8cba0582a4ab50f0f81f108f37e4c3ec165f16360100fbcd5190053d2e4c07"
     },
     {
       "kind": "study_tool",

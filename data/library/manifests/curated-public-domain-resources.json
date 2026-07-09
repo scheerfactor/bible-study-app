@@ -76835,5 +76835,869 @@
     "checksum_sha256": "b9f0492b23f3c7cc52f5318255b0d303fdcb6e6a9e80e590ff5374be118afb56",
     "file_size_bytes": 640764,
     "word_count": 112939
+  },
+  {
+    "title": "The Church in Earnest",
+    "author": "John Angell James",
+    "year": 1850,
+    "category": "Christian Living",
+    "collection": "John Angell James Collection",
+    "source_url": "https://archive.org/download/churchinearnest00jamegoog/churchinearnest00jamegoog_djvu.txt",
+    "download_url": "https://archive.org/download/churchinearnest00jamegoog/churchinearnest00jamegoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-church-in-earnest-john-angell-james.txt",
+    "content_storage_path": "data/library/verified/the-church-in-earnest-john-angell-james.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/churchinearnest00jamegoog/churchinearnest00jamegoog_djvu.txt.",
+    "notes": "Practical public-domain Christian living and church life resource for believers, teachers, and ministry workers. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Practical public-domain Christian living and church life resource for believers, teachers, and ministry workers. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "John Angell James Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Church in Earnest",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "collection": "John Angell James Collection",
+      "badge": "John Angell James Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 554,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "befc4206e3644af34df18eb9b16bfa01c736d23879d2635ecac5025d750a16ea",
+    "file_size_bytes": 714373,
+    "word_count": 124670
+  },
+  {
+    "title": "The Family Monitor; or, A Help to Domestic Happiness",
+    "author": "John Angell James",
+    "year": 1830,
+    "category": "Christian Living",
+    "collection": "Family and Home",
+    "source_url": "https://archive.org/download/familymonitoror02jamegoog/familymonitoror02jamegoog_djvu.txt",
+    "download_url": "https://archive.org/download/familymonitoror02jamegoog/familymonitoror02jamegoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-family-monitor-or-a-help-to-domestic-happiness-john-angell-james.txt",
+    "content_storage_path": "data/library/verified/the-family-monitor-or-a-help-to-domestic-happiness-john-angell-james.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/familymonitoror02jamegoog/familymonitoror02jamegoog_djvu.txt.",
+    "notes": "Public-domain family and Christian home resource for practical discipleship and pastoral helps. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain family and Christian home resource for practical discipleship and pastoral helps. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Family and Home",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Family Monitor; or, A Help to Domestic Happiness",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "collection": "Family and Home",
+      "badge": "Family and Home",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 386,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "df1526d1751524c1ea00b05444631296d3e08c9281ee0d3231b1da4e35dd0942",
+    "file_size_bytes": 491942,
+    "word_count": 86875
+  },
+  {
+    "title": "The Travels of True Godliness",
+    "author": "Benjamin Keach",
+    "year": 1845,
+    "category": "Christian Living",
+    "collection": "Early Baptist Writers",
+    "source_url": "https://archive.org/download/travelstruegodl00keacgoog/travelstruegodl00keacgoog_djvu.txt",
+    "download_url": "https://archive.org/download/travelstruegodl00keacgoog/travelstruegodl00keacgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-travels-of-true-godliness-benjamin-keach.txt",
+    "content_storage_path": "data/library/verified/the-travels-of-true-godliness-benjamin-keach.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/travelstruegodl00keacgoog/travelstruegodl00keacgoog_djvu.txt.",
+    "notes": "Public-domain Baptist allegorical and devotional resource for Christian living. Use with historical context and OCR spot-check before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist allegorical and devotional resource for Christian living. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Early Baptist Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Travels of True Godliness",
+      "author": "Benjamin Keach",
+      "category": "Christian Living",
+      "collection": "Early Baptist Writers",
+      "badge": "Early Baptist Writers",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 209,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "370a8781b5e96036236096d55ee85c439e2bf9d42d01a56e08144e6fbd9fe681",
+    "file_size_bytes": 262027,
+    "word_count": 47041
+  },
+  {
+    "title": "Tropologia: A Key to Open Scripture Metaphors",
+    "author": "Benjamin Keach",
+    "year": 1858,
+    "category": "Bible study helps",
+    "collection": "Early Baptist Writers",
+    "source_url": "https://archive.org/download/gtropologaakeyt00keacgoog/gtropologaakeyt00keacgoog_djvu.txt",
+    "download_url": "https://archive.org/download/gtropologaakeyt00keacgoog/gtropologaakeyt00keacgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/tropologia-a-key-to-open-scripture-metaphors-benjamin-keach.txt",
+    "content_storage_path": "data/library/verified/tropologia-a-key-to-open-scripture-metaphors-benjamin-keach.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/gtropologaakeyt00keacgoog/gtropologaakeyt00keacgoog_djvu.txt.",
+    "notes": "Public-domain Bible interpretation and Scripture metaphor resource for teachers and serious Bible students. Use with historical context and OCR spot-check before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible interpretation and Scripture metaphor resource for teachers and serious Bible students. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Early Baptist Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Tropologia: A Key to Open Scripture Metaphors",
+      "author": "Benjamin Keach",
+      "category": "Bible study helps",
+      "collection": "Early Baptist Writers",
+      "badge": "Early Baptist Writers",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 3528,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "16f6ff3e43daed1a6d490bf7c488c8edf22e27a5e835fe6d73143c64fe7663bd",
+    "file_size_bytes": 5022002,
+    "word_count": 793746
+  },
+  {
+    "title": "The Life of Jesus Christ",
+    "author": "James Stalker",
+    "year": 1880,
+    "category": "Bible study helps",
+    "collection": "Life of Christ",
+    "source_url": "https://archive.org/download/lifejesuschrist00stalgoog/lifejesuschrist00stalgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lifejesuschrist00stalgoog/lifejesuschrist00stalgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-of-jesus-christ-james-stalker.txt",
+    "content_storage_path": "data/library/verified/the-life-of-jesus-christ-james-stalker.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifejesuschrist00stalgoog/lifejesuschrist00stalgoog_djvu.txt.",
+    "notes": "Public-domain Life of Christ resource for Gospel study, teaching, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Life of Christ resource for Gospel study, teaching, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Life of Christ",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of Jesus Christ",
+      "author": "James Stalker",
+      "category": "Bible study helps",
+      "collection": "Life of Christ",
+      "badge": "Life of Christ",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 236,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5446fafd72bbc27953ea9016b0c0736c67dce5408a873f08598b370aea743a4c",
+    "file_size_bytes": 304453,
+    "word_count": 53124
+  },
+  {
+    "title": "The Life of St. Paul",
+    "author": "James Stalker",
+    "year": 1912,
+    "category": "Bible study helps",
+    "collection": "Bible Biography",
+    "source_url": "https://archive.org/download/lifestpaul00stalgoog/lifestpaul00stalgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lifestpaul00stalgoog/lifestpaul00stalgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-life-of-st-paul-james-stalker.txt",
+    "content_storage_path": "data/library/verified/the-life-of-st-paul-james-stalker.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lifestpaul00stalgoog/lifestpaul00stalgoog_djvu.txt.",
+    "notes": "Public-domain Bible biography resource for Acts, Pauline epistles, missions, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible biography resource for Acts, Pauline epistles, missions, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Biography",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of St. Paul",
+      "author": "James Stalker",
+      "category": "Bible study helps",
+      "collection": "Bible Biography",
+      "badge": "Bible Biography",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 212,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6ebdcc5b6cf42128469a31ece8dd95da2adaa20bf6f42e48f312331cd757bced",
+    "file_size_bytes": 271611,
+    "word_count": 47714
+  },
+  {
+    "title": "The Psalm of Psalms: Being an Exposition of the Twenty-third Psalm",
+    "author": "James Stalker",
+    "year": 1913,
+    "category": "Commentaries",
+    "collection": "Psalm 23 Study",
+    "source_url": "https://archive.org/download/psalmpsalmsbein00stalgoog/psalmpsalmsbein00stalgoog_djvu.txt",
+    "download_url": "https://archive.org/download/psalmpsalmsbein00stalgoog/psalmpsalmsbein00stalgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-psalm-of-psalms-being-an-exposition-of-the-twenty-third-psalm-james-stalker.txt",
+    "content_storage_path": "data/library/verified/the-psalm-of-psalms-being-an-exposition-of-the-twenty-third-psalm-james-stalker.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/psalmpsalmsbein00stalgoog/psalmpsalmsbein00stalgoog_djvu.txt.",
+    "notes": "Public-domain Psalm 23 exposition for devotional study, teaching, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Psalm 23 exposition for devotional study, teaching, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Psalm 23 Study",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Psalm of Psalms: Being an Exposition of the Twenty-third Psalm",
+      "author": "James Stalker",
+      "category": "Commentaries",
+      "collection": "Psalm 23 Study",
+      "badge": "Psalm 23 Study",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 98,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "856141a97948b8508fb3b2b30b3933a6a4ef452f541117b83d01a9feddabfd39",
+    "file_size_bytes": 122413,
+    "word_count": 22062
+  },
+  {
+    "title": "Keys to the Word: Help to Bible Study",
+    "author": "A. T. Pierson",
+    "year": 1887,
+    "category": "Bible study helps",
+    "collection": "Bible Study Methods",
+    "source_url": "https://archive.org/download/keystowordhelpto0000atpi/keystowordhelpto0000atpi_djvu.txt",
+    "download_url": "https://archive.org/download/keystowordhelpto0000atpi/keystowordhelpto0000atpi_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/keys-to-the-word-help-to-bible-study-a-t-pierson.txt",
+    "content_storage_path": "data/library/verified/keys-to-the-word-help-to-bible-study-a-t-pierson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/keystowordhelpto0000atpi/keystowordhelpto0000atpi_djvu.txt.",
+    "notes": "Public-domain Bible study methods resource for helping readers study Scripture more fruitfully. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible study methods resource for helping readers study Scripture more fruitfully. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Methods",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Keys to the Word: Help to Bible Study",
+      "author": "A. T. Pierson",
+      "category": "Bible study helps",
+      "collection": "Bible Study Methods",
+      "badge": "Bible Study Methods",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 122,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9a3e3949df8cc06092250df26a5619c2feb211e2e59016691a60bb9462647c77",
+    "file_size_bytes": 166497,
+    "word_count": 27484
+  },
+  {
+    "title": "How God Answers Prayer",
+    "author": "George Muller",
+    "year": 1900,
+    "category": "Prayer",
+    "collection": "George Müller Collection",
+    "source_url": "https://archive.org/download/howgodanswerspra0000mlle/howgodanswerspra0000mlle_djvu.txt",
+    "download_url": "https://archive.org/download/howgodanswerspra0000mlle/howgodanswerspra0000mlle_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/how-god-answers-prayer-george-muller.txt",
+    "content_storage_path": "data/library/verified/how-god-answers-prayer-george-muller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/howgodanswerspra0000mlle/howgodanswerspra0000mlle_djvu.txt.",
+    "notes": "Public-domain prayer and faith resource drawn from George Müller’s testimony. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prayer and faith resource drawn from George Müller’s testimony. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "George Müller Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How God Answers Prayer",
+      "author": "George Muller",
+      "category": "Prayer",
+      "collection": "George Müller Collection",
+      "badge": "George Müller Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 136,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3202336ce599d22be10aefad2f84657621baf9a9abb74ba8847e8a6dcea3688d",
+    "file_size_bytes": 171235,
+    "word_count": 30538
+  },
+  {
+    "title": "The Wonders of Prayer",
+    "author": "Daniel W. Whittle and George Müller",
+    "year": 1885,
+    "category": "Prayer",
+    "collection": "Prayer Classics",
+    "source_url": "https://archive.org/download/wondersprayerar00mlgoog/wondersprayerar00mlgoog_djvu.txt",
+    "download_url": "https://archive.org/download/wondersprayerar00mlgoog/wondersprayerar00mlgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-wonders-of-prayer-daniel-w-whittle-and-george-muller.txt",
+    "content_storage_path": "data/library/verified/the-wonders-of-prayer-daniel-w-whittle-and-george-muller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/wondersprayerar00mlgoog/wondersprayerar00mlgoog_djvu.txt.",
+    "notes": "Public-domain collection of answered prayer accounts for devotional reading and sermon illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain collection of answered prayer accounts for devotional reading and sermon illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Prayer Classics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Wonders of Prayer",
+      "author": "Daniel W. Whittle and George Müller",
+      "category": "Prayer",
+      "collection": "Prayer Classics",
+      "badge": "Prayer Classics",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 603,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "90f7f1e7686cd52726f18aa1a9740a143d4dc0ed9754c848a3645c2edb1034c3",
+    "file_size_bytes": 735014,
+    "word_count": 135601
+  },
+  {
+    "title": "The Preaching Tours and Missionary Labours of George Müller",
+    "author": "George Müller",
+    "year": 1889,
+    "category": "Missions",
+    "collection": "George Müller Collection",
+    "source_url": "https://archive.org/download/preachingtoursa00mlgoog/preachingtoursa00mlgoog_djvu.txt",
+    "download_url": "https://archive.org/download/preachingtoursa00mlgoog/preachingtoursa00mlgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-preaching-tours-and-missionary-labours-of-george-muller-george-muller.txt",
+    "content_storage_path": "data/library/verified/the-preaching-tours-and-missionary-labours-of-george-muller-george-muller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/preachingtoursa00mlgoog/preachingtoursa00mlgoog_djvu.txt.",
+    "notes": "Public-domain missions and ministry biography resource for prayer, faith, and missionary burden. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions and ministry biography resource for prayer, faith, and missionary burden. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "George Müller Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Preaching Tours and Missionary Labours of George Müller",
+      "author": "George Müller",
+      "category": "Missions",
+      "collection": "George Müller Collection",
+      "badge": "George Müller Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 391,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f3e3a4636d89886f4dc18403f4bcd339255dc5f9297c90dc694b92130d47f28e",
+    "file_size_bytes": 512713,
+    "word_count": 88054
+  },
+  {
+    "title": "An Essay on Anger",
+    "author": "John Fawcett",
+    "year": 1824,
+    "category": "Christian Living",
+    "collection": "Baptist Practical Theology",
+    "source_url": "https://archive.org/download/anessayonanger00fawcgoog/anessayonanger00fawcgoog_djvu.txt",
+    "download_url": "https://archive.org/download/anessayonanger00fawcgoog/anessayonanger00fawcgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/an-essay-on-anger-john-fawcett.txt",
+    "content_storage_path": "data/library/verified/an-essay-on-anger-john-fawcett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/anessayonanger00fawcgoog/anessayonanger00fawcgoog_djvu.txt.",
+    "notes": "Public-domain practical Christian living resource dealing with anger and self-control. Use with historical context and OCR spot-check before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain practical Christian living resource dealing with anger and self-control. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Baptist Practical Theology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Essay on Anger",
+      "author": "John Fawcett",
+      "category": "Christian Living",
+      "collection": "Baptist Practical Theology",
+      "badge": "Baptist Practical Theology",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 215,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a47c5c1f806d1adac41a94867eec5157d33a1204e2574c3224ccf11dea315879",
+    "file_size_bytes": 275279,
+    "word_count": 48337
+  },
+  {
+    "title": "Christ Precious to Those That Believe",
+    "author": "John Fawcett",
+    "year": 1839,
+    "category": "Christian Living",
+    "collection": "Baptist Practical Theology",
+    "source_url": "https://archive.org/download/christpreciousto0000john/christpreciousto0000john_djvu.txt",
+    "download_url": "https://archive.org/download/christpreciousto0000john/christpreciousto0000john_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/christ-precious-to-those-that-believe-john-fawcett.txt",
+    "content_storage_path": "data/library/verified/christ-precious-to-those-that-believe-john-fawcett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/christpreciousto0000john/christpreciousto0000john_djvu.txt.",
+    "notes": "Public-domain Baptist devotional resource on faith and love to Christ. Use with historical context and OCR spot-check before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist devotional resource on faith and love to Christ. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Baptist Practical Theology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christ Precious to Those That Believe",
+      "author": "John Fawcett",
+      "category": "Christian Living",
+      "collection": "Baptist Practical Theology",
+      "badge": "Baptist Practical Theology",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 331,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "9b9f3220f333d5dc2240fea7f72ba22798c6dd8a3070a58eb0fae4f344c429b9",
+    "file_size_bytes": 420720,
+    "word_count": 74569
+  },
+  {
+    "title": "Hymns Adapted to Public Worship and Private Devotion",
+    "author": "John Fawcett",
+    "year": 1817,
+    "category": "Prayer",
+    "collection": "Baptist Hymn Writers",
+    "source_url": "https://archive.org/download/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817_djvu.txt",
+    "download_url": "https://archive.org/download/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/hymns-adapted-to-public-worship-and-private-devotion-john-fawcett.txt",
+    "content_storage_path": "data/library/verified/hymns-adapted-to-public-worship-and-private-devotion-john-fawcett.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817/per_early-baptist_hymns-adapted-to-the-ci_john-fawcett_1817_djvu.txt.",
+    "notes": "Public-domain Baptist hymn resource for worship history, quotes, and devotional reading. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist hymn resource for worship history, quotes, and devotional reading. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Hymns Adapted to Public Worship and Private Devotion",
+      "author": "John Fawcett",
+      "category": "Prayer",
+      "collection": "Baptist Hymn Writers",
+      "badge": "Baptist Hymn Writers",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 174,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0d19e759e8c9c9188feea7a47eceb0761815fc109d87591c0f5c17bd79df0fcf",
+    "file_size_bytes": 208302,
+    "word_count": 39138
+  },
+  {
+    "title": "A Short View of the Whole Scripture History",
+    "author": "Isaac Watts",
+    "year": 1767,
+    "category": "Bible Handbooks",
+    "collection": "Bible Survey",
+    "source_url": "https://archive.org/download/ashortviewwhole01wattgoog/ashortviewwhole01wattgoog_djvu.txt",
+    "download_url": "https://archive.org/download/ashortviewwhole01wattgoog/ashortviewwhole01wattgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-short-view-of-the-whole-scripture-history-isaac-watts.txt",
+    "content_storage_path": "data/library/verified/a-short-view-of-the-whole-scripture-history-isaac-watts.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/ashortviewwhole01wattgoog/ashortviewwhole01wattgoog_djvu.txt.",
+    "notes": "Public-domain Bible survey and Scripture history resource for Bible overview study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible survey and Scripture history resource for Bible overview study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Survey",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Short View of the Whole Scripture History",
+      "author": "Isaac Watts",
+      "category": "Bible Handbooks",
+      "collection": "Bible Survey",
+      "badge": "Bible Survey",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 485,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1346d11515189e09bf1fbb99213611c6097bdc3de82dd63dc24af45cd76e5e52",
+    "file_size_bytes": 704545,
+    "word_count": 109221
+  },
+  {
+    "title": "Sermons on Various Subjects, Divine and Moral",
+    "author": "Isaac Watts",
+    "year": 1811,
+    "category": "Preaching & Teaching",
+    "collection": "Watts Sermons and Hymns",
+    "source_url": "https://archive.org/download/sermonsonvariou01wattgoog/sermonsonvariou01wattgoog_djvu.txt",
+    "download_url": "https://archive.org/download/sermonsonvariou01wattgoog/sermonsonvariou01wattgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-on-various-subjects-divine-and-moral-isaac-watts.txt",
+    "content_storage_path": "data/library/verified/sermons-on-various-subjects-divine-and-moral-isaac-watts.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sermonsonvariou01wattgoog/sermonsonvariou01wattgoog_djvu.txt.",
+    "notes": "Public-domain sermon and hymn resource for preaching history and devotional reading. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon and hymn resource for preaching history and devotional reading. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Watts Sermons and Hymns",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons on Various Subjects, Divine and Moral",
+      "author": "Isaac Watts",
+      "category": "Preaching & Teaching",
+      "collection": "Watts Sermons and Hymns",
+      "badge": "Watts Sermons and Hymns",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 761,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "880750bf262236ab1ae9aec77293b41942ed67664eb2d9918438aa05c6853dc2",
+    "file_size_bytes": 950534,
+    "word_count": 171159
+  },
+  {
+    "title": "Christian Fellowship; or, The Church Members' Guide",
+    "author": "John Angell James",
+    "year": 1830,
+    "category": "Christian Living",
+    "collection": "Church Life and Discipleship",
+    "source_url": "https://archive.org/download/bub_gb_1HX1UXh7-UEC/bub_gb_1HX1UXh7-UEC_djvu.txt",
+    "download_url": "https://archive.org/download/bub_gb_1HX1UXh7-UEC/bub_gb_1HX1UXh7-UEC_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/christian-fellowship-or-the-church-members-guide-john-angell-james.txt",
+    "content_storage_path": "data/library/verified/christian-fellowship-or-the-church-members-guide-john-angell-james.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bub_gb_1HX1UXh7-UEC/bub_gb_1HX1UXh7-UEC_djvu.txt.",
+    "notes": "Public-domain church membership and fellowship resource for local church discipleship. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain church membership and fellowship resource for local church discipleship. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Church Life and Discipleship",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christian Fellowship; or, The Church Members' Guide",
+      "author": "John Angell James",
+      "category": "Christian Living",
+      "collection": "Church Life and Discipleship",
+      "badge": "Church Life and Discipleship",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 282,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f87e132a9581b6f4e899e58082f72e2ac329b9fe307af31dcb8407f836e23c2d",
+    "file_size_bytes": 369557,
+    "word_count": 63543
+  },
+  {
+    "title": "Autobiography of George Müller",
+    "author": "George Müller",
+    "year": 1905,
+    "category": "Missions",
+    "collection": "George Müller Collection",
+    "source_url": "https://archive.org/download/autobiography-of-george-muller/autobiography-of-george-muller_djvu.txt",
+    "download_url": "https://archive.org/download/autobiography-of-george-muller/autobiography-of-george-muller_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/autobiography-of-george-muller-george-muller.txt",
+    "content_storage_path": "data/library/verified/autobiography-of-george-muller-george-muller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/autobiography-of-george-muller/autobiography-of-george-muller_djvu.txt.",
+    "notes": "Public-domain prayer, faith, and missions biography resource. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prayer, faith, and missions biography resource. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "George Müller Collection",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Autobiography of George Müller",
+      "author": "George Müller",
+      "category": "Missions",
+      "collection": "George Müller Collection",
+      "badge": "George Müller Collection",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1712,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "db8a7cb4dd99804a8dde40c1219b237893a2cb853d08cafd5a9ded880b111643",
+    "file_size_bytes": 2146196,
+    "word_count": 385291
   }
 ]

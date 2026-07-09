@@ -4,15 +4,29 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,720
+- Verified public/free Library resources: 1,738
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 635
+- Library authors represented: 637
 - Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 5 John Angell James practical Christian living, church life, and family discipleship resources
+- 2 Benjamin Keach early Baptist resources, including Scripture metaphor study and devotional allegory
+- 4 James Stalker Life of Christ, Paul, and Psalm 23 study resources
+- 1 A. T. Pierson Bible study methods resource
+- 4 George Müller / prayer and missions resources
+- 2 John Fawcett Baptist practical theology and hymn resources
+- 2 Isaac Watts Bible survey, sermon, and hymn-study resources
+
+These strengthen practical discipleship, prayer, Baptist hymn history, Life of Christ study, Bible biography, Bible survey, and preaching/teaching support. All imported OCR texts are labeled for spot-checking before quotation. One John Angell James candidate was deferred because the source text download continued returning a temporary Archive.org server error.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 15 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 
