@@ -78659,5 +78659,869 @@
     "checksum_sha256": "c605f68a66f1681830769b7b35c825f6a35f9430e0477eca0452c718c613bb88",
     "file_size_bytes": 26296,
     "word_count": 3752
+  },
+  {
+    "title": "The Greater Men and Women of the Bible, Volume 2",
+    "author": "James Hastings",
+    "year": 1913,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/greatermenandwom02hastuoft/greatermenandwom02hastuoft_djvu.txt",
+    "download_url": "https://archive.org/download/greatermenandwom02hastuoft/greatermenandwom02hastuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-2-james-hastings.txt",
+    "content_storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-2-james-hastings.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/greatermenandwom02hastuoft/greatermenandwom02hastuoft_djvu.txt.",
+    "notes": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Greater Men and Women of the Bible, Volume 2",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 865,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e7a9352576a546601c53d70242ec4cc9d3f4d4aed980606eff22232cb82462ef",
+    "file_size_bytes": 1266907,
+    "word_count": 194664
+  },
+  {
+    "title": "The Greater Men and Women of the Bible, Volume 3",
+    "author": "James Hastings",
+    "year": 1913,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/greatermenandwom03hastuoft/greatermenandwom03hastuoft_djvu.txt",
+    "download_url": "https://archive.org/download/greatermenandwom03hastuoft/greatermenandwom03hastuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-3-james-hastings.txt",
+    "content_storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-3-james-hastings.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/greatermenandwom03hastuoft/greatermenandwom03hastuoft_djvu.txt.",
+    "notes": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Greater Men and Women of the Bible, Volume 3",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 811,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c72b97c6ff424142d9578fe2cb7d4cc96ab7140173223abc6d872cdc2e45a84a",
+    "file_size_bytes": 1190697,
+    "word_count": 182534
+  },
+  {
+    "title": "The Greater Men and Women of the Bible, Volume 4",
+    "author": "James Hastings",
+    "year": 1913,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/greatermenandwom04hastuoft/greatermenandwom04hastuoft_djvu.txt",
+    "download_url": "https://archive.org/download/greatermenandwom04hastuoft/greatermenandwom04hastuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-4-james-hastings.txt",
+    "content_storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-4-james-hastings.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/greatermenandwom04hastuoft/greatermenandwom04hastuoft_djvu.txt.",
+    "notes": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Greater Men and Women of the Bible, Volume 4",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 980,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "19a6e869d4d5f360f952ee99d721da06bd7768231760a0d2d3e3ad823ec4bdd4",
+    "file_size_bytes": 1449453,
+    "word_count": 220393
+  },
+  {
+    "title": "The Greater Men and Women of the Bible, Volume 5",
+    "author": "James Hastings",
+    "year": 1913,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/greatermenandwom05hastuoft/greatermenandwom05hastuoft_djvu.txt",
+    "download_url": "https://archive.org/download/greatermenandwom05hastuoft/greatermenandwom05hastuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-5-james-hastings.txt",
+    "content_storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-5-james-hastings.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/greatermenandwom05hastuoft/greatermenandwom05hastuoft_djvu.txt.",
+    "notes": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible character reference for people profiles, Passage Guide background, sermon illustrations, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Greater Men and Women of the Bible, Volume 5",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 725,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "32c90a02fce4c19e7a72c596d7c3e2840165f51b33e7c396243d03dc9a4ab871",
+    "file_size_bytes": 1050370,
+    "word_count": 163233
+  },
+  {
+    "title": "Portraits of Women of the Bible: Old Testament Series",
+    "author": "Thomas E. Miller",
+    "year": 1910,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/portraitsofwomen00milluoft/portraitsofwomen00milluoft_djvu.txt",
+    "download_url": "https://archive.org/download/portraitsofwomen00milluoft/portraitsofwomen00milluoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/portraits-of-women-of-the-bible-old-testament-series-thomas-e-miller.txt",
+    "content_storage_path": "data/library/verified/portraits-of-women-of-the-bible-old-testament-series-thomas-e-miller.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/portraitsofwomen00milluoft/portraitsofwomen00milluoft_djvu.txt.",
+    "notes": "Public-domain Bible women character study for teaching, people profiles, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible women character study for teaching, people profiles, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Portraits of Women of the Bible: Old Testament Series",
+      "author": "Thomas E. Miller",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 389,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0ed820622c53eea4f043f27bba4c4cd81e883927e9d73394ba5880449a1712de",
+    "file_size_bytes": 574723,
+    "word_count": 87589
+  },
+  {
+    "title": "Women of the Bible",
+    "author": "Henry Adams Thompson",
+    "year": 1914,
+    "category": "Biographies",
+    "collection": "Bible Characters and People",
+    "source_url": "https://archive.org/download/womenofbible00thomuoft/womenofbible00thomuoft_djvu.txt",
+    "download_url": "https://archive.org/download/womenofbible00thomuoft/womenofbible00thomuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/women-of-the-bible-henry-adams-thompson.txt",
+    "content_storage_path": "data/library/verified/women-of-the-bible-henry-adams-thompson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/womenofbible00thomuoft/womenofbible00thomuoft_djvu.txt.",
+    "notes": "Public-domain biographical sketches of Bible women for people profiles, teaching preparation, and sermon illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biographical sketches of Bible women for people profiles, teaching preparation, and sermon illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Characters and People",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Women of the Bible",
+      "author": "Henry Adams Thompson",
+      "category": "Biographies",
+      "collection": "Bible Characters and People",
+      "badge": "Bible Characters and People",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 910,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "244b2b51259d00b9f0861d66e116f8f2de0a1943134dcd5860cbd68f99f1b931",
+    "file_size_bytes": 1328309,
+    "word_count": 204733
+  },
+  {
+    "title": "Handbook of Bible Manners and Customs",
+    "author": "James M. Freeman",
+    "year": 1875,
+    "category": "Bible Handbooks",
+    "collection": "Bible Manners and Customs",
+    "source_url": "https://archive.org/download/handbookofbiblem00freeuoft/handbookofbiblem00freeuoft_djvu.txt",
+    "download_url": "https://archive.org/download/handbookofbiblem00freeuoft/handbookofbiblem00freeuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/handbook-of-bible-manners-and-customs-james-m-freeman.txt",
+    "content_storage_path": "data/library/verified/handbook-of-bible-manners-and-customs-james-m-freeman.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/handbookofbiblem00freeuoft/handbookofbiblem00freeuoft_djvu.txt.",
+    "notes": "Public-domain manners and customs reference for Bible background, cultural notes, Passage Guide support, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain manners and customs reference for Bible background, cultural notes, Passage Guide support, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Manners and Customs",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Handbook of Bible Manners and Customs",
+      "author": "James M. Freeman",
+      "category": "Bible Handbooks",
+      "collection": "Bible Manners and Customs",
+      "badge": "Bible Manners and Customs",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 952,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "65e08e513abaf70488935aabb3c52b84b283ecdc8e2f5ddf2d2562b9219fdf50",
+    "file_size_bytes": 1406352,
+    "word_count": 214203
+  },
+  {
+    "title": "The Land and the Book, Volume 1",
+    "author": "William McClure Thomson",
+    "year": 1880,
+    "category": "Bible Handbooks",
+    "collection": "Bible Lands and Customs",
+    "source_url": "https://archive.org/download/landbookorbiblic01thomuoft/landbookorbiblic01thomuoft_djvu.txt",
+    "download_url": "https://archive.org/download/landbookorbiblic01thomuoft/landbookorbiblic01thomuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-land-and-the-book-volume-1-william-mcclure-thomson.txt",
+    "content_storage_path": "data/library/verified/the-land-and-the-book-volume-1-william-mcclure-thomson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/landbookorbiblic01thomuoft/landbookorbiblic01thomuoft_djvu.txt.",
+    "notes": "Public-domain Bible lands and customs resource for geography, places, cultural background, and teaching illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible lands and customs resource for geography, places, cultural background, and teaching illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Lands and Customs",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Land and the Book, Volume 1",
+      "author": "William McClure Thomson",
+      "category": "Bible Handbooks",
+      "collection": "Bible Lands and Customs",
+      "badge": "Bible Lands and Customs",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 1016,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a203e692359fc2da110a13eb555cf90ffcd6a28e4b9f3bff13855b22441abb9b",
+    "file_size_bytes": 1498604,
+    "word_count": 228594
+  },
+  {
+    "title": "Biography of Gospel Song and Hymn Writers",
+    "author": "J. H. Hall",
+    "year": 1914,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Hymn Writers",
+    "source_url": "https://archive.org/download/biographyofgospe00hall/biographyofgospe00hall_djvu.txt",
+    "download_url": "https://archive.org/download/biographyofgospe00hall/biographyofgospe00hall_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/biography-of-gospel-song-and-hymn-writers-j-h-hall.txt",
+    "content_storage_path": "data/library/verified/biography-of-gospel-song-and-hymn-writers-j-h-hall.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/biographyofgospe00hall/biographyofgospe00hall_djvu.txt.",
+    "notes": "Public-domain hymn-writer biography resource for hymn history, sermon illustrations, worship notes, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn-writer biography resource for hymn history, sermon illustrations, worship notes, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Hymns and Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Biography of Gospel Song and Hymn Writers",
+      "author": "J. H. Hall",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Hymn Writers",
+      "badge": "Hymns and Hymn Writers",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 338,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "408d1039f04d830c2a774ffa91b1e2aab7a998d1851ac1745c0d5016b1c39fa4",
+    "file_size_bytes": 501455,
+    "word_count": 75969
+  },
+  {
+    "title": "Baptist Hymn Writers and Their Hymns",
+    "author": "Henry S. Burrage",
+    "year": 1888,
+    "category": "Baptist History",
+    "collection": "Baptist Hymn Writers",
+    "source_url": "https://archive.org/download/baptisthymnwrite00burr/baptisthymnwrite00burr_djvu.txt",
+    "download_url": "https://archive.org/download/baptisthymnwrite00burr/baptisthymnwrite00burr_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/baptist-hymn-writers-and-their-hymns-henry-s-burrage.txt",
+    "content_storage_path": "data/library/verified/baptist-hymn-writers-and-their-hymns-henry-s-burrage.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/baptisthymnwrite00burr/baptisthymnwrite00burr_djvu.txt.",
+    "notes": "Public-domain Baptist hymn history resource for Baptist heritage, hymn stories, worship teaching, and sermon illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Baptist hymn history resource for Baptist heritage, hymn stories, worship teaching, and sermon illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Baptist Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Baptist Hymn Writers and Their Hymns",
+      "author": "Henry S. Burrage",
+      "category": "Baptist History",
+      "collection": "Baptist Hymn Writers",
+      "badge": "Baptist Hymn Writers",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 875,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "963a745d723dd3cb91df8335c60a4357301e8370045965aaa7a5a79d15d3fd77",
+    "file_size_bytes": 1318852,
+    "word_count": 196981
+  },
+  {
+    "title": "Illustrated History of Hymns and Their Authors",
+    "author": "Edwin McKean Long",
+    "year": 1875,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Hymn Writers",
+    "source_url": "https://archive.org/download/illustratedhist00long/illustratedhist00long_djvu.txt",
+    "download_url": "https://archive.org/download/illustratedhist00long/illustratedhist00long_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/illustrated-history-of-hymns-and-their-authors-edwin-mckean-long.txt",
+    "content_storage_path": "data/library/verified/illustrated-history-of-hymns-and-their-authors-edwin-mckean-long.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/illustratedhist00long/illustratedhist00long_djvu.txt.",
+    "notes": "Public-domain hymn history and hymn-writer reference for sermon illustrations, worship study, and teaching notes. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn history and hymn-writer reference for sermon illustrations, worship study, and teaching notes. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Hymns and Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Illustrated History of Hymns and Their Authors",
+      "author": "Edwin McKean Long",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Hymn Writers",
+      "badge": "Hymns and Hymn Writers",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 608,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dd65a3f8a40c737bfd4f78a413f4b5470571c862a5499bf2b4dc82af5110881a",
+    "file_size_bytes": 883407,
+    "word_count": 136755
+  },
+  {
+    "title": "The Poets of the Church",
+    "author": "Edwin F. Hatfield",
+    "year": 1884,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Hymn Writers",
+    "source_url": "https://archive.org/download/poetsofchurchser00hatf/poetsofchurchser00hatf_djvu.txt",
+    "download_url": "https://archive.org/download/poetsofchurchser00hatf/poetsofchurchser00hatf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-poets-of-the-church-edwin-f-hatfield.txt",
+    "content_storage_path": "data/library/verified/the-poets-of-the-church-edwin-f-hatfield.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/poetsofchurchser00hatf/poetsofchurchser00hatf_djvu.txt.",
+    "notes": "Public-domain hymn-writer biography resource with notes on hymns for preaching, teaching, and worship background. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn-writer biography resource with notes on hymns for preaching, teaching, and worship background. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Hymns and Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Poets of the Church",
+      "author": "Edwin F. Hatfield",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Hymn Writers",
+      "badge": "Hymns and Hymn Writers",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1101,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8a15265b317b39fe0a0360faf091fde9ae86afd66d196dca58b2fc60808a6a00",
+    "file_size_bytes": 1647577,
+    "word_count": 247731
+  },
+  {
+    "title": "A Year of Hymn Stories",
+    "author": "Carl F. Price",
+    "year": 1914,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Hymn Writers",
+    "source_url": "https://archive.org/download/ayearofhymnstori00pricuoft/ayearofhymnstori00pricuoft_djvu.txt",
+    "download_url": "https://archive.org/download/ayearofhymnstori00pricuoft/ayearofhymnstori00pricuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-year-of-hymn-stories-carl-f-price.txt",
+    "content_storage_path": "data/library/verified/a-year-of-hymn-stories-carl-f-price.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/ayearofhymnstori00pricuoft/ayearofhymnstori00pricuoft_djvu.txt.",
+    "notes": "Public-domain hymn story primer for sermon illustrations, devotional reading, and worship teaching. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn story primer for sermon illustrations, devotional reading, and worship teaching. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Hymns and Hymn Writers",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Year of Hymn Stories",
+      "author": "Carl F. Price",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Hymn Writers",
+      "badge": "Hymns and Hymn Writers",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 75,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0a7c59e9911976dc19f38e663cfba4ba82ea059e23a65839869604483db053f3",
+    "file_size_bytes": 110879,
+    "word_count": 16851
+  },
+  {
+    "title": "Many Infallible Proofs",
+    "author": "Arthur T. Pierson",
+    "year": 1886,
+    "category": "Bible study helps",
+    "collection": "Christian Evidences and Apologetics",
+    "source_url": "https://archive.org/download/manyinfalliblepr00pieruoft/manyinfalliblepr00pieruoft_djvu.txt",
+    "download_url": "https://archive.org/download/manyinfalliblepr00pieruoft/manyinfalliblepr00pieruoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/many-infallible-proofs-arthur-t-pierson.txt",
+    "content_storage_path": "data/library/verified/many-infallible-proofs-arthur-t-pierson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/manyinfalliblepr00pieruoft/manyinfalliblepr00pieruoft_djvu.txt.",
+    "notes": "Public-domain evidences of Christianity resource for apologetics, Scripture confidence, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain evidences of Christianity resource for apologetics, Scripture confidence, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Christian Evidences and Apologetics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Many Infallible Proofs",
+      "author": "Arthur T. Pierson",
+      "category": "Bible study helps",
+      "collection": "Christian Evidences and Apologetics",
+      "badge": "Christian Evidences and Apologetics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 397,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e807b1c236fde2ceb92db905671faee74c14ef7255991f43d27ba599baca3755",
+    "file_size_bytes": 590437,
+    "word_count": 89371
+  },
+  {
+    "title": "Why Is Christianity True? Christian Evidences",
+    "author": "Edgar Young Mullins",
+    "year": 1905,
+    "category": "Bible study helps",
+    "collection": "Christian Evidences and Apologetics",
+    "source_url": "https://archive.org/download/whyischristianit00mull/whyischristianit00mull_djvu.txt",
+    "download_url": "https://archive.org/download/whyischristianit00mull/whyischristianit00mull_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/why-is-christianity-true-christian-evidences-edgar-young-mullins.txt",
+    "content_storage_path": "data/library/verified/why-is-christianity-true-christian-evidences-edgar-young-mullins.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/whyischristianit00mull/whyischristianit00mull_djvu.txt.",
+    "notes": "Public-domain Christian evidences resource for apologetics, Sunday School preparation, and thoughtful Bible study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian evidences resource for apologetics, Sunday School preparation, and thoughtful Bible study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Christian Evidences and Apologetics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Why Is Christianity True? Christian Evidences",
+      "author": "Edgar Young Mullins",
+      "category": "Bible study helps",
+      "collection": "Christian Evidences and Apologetics",
+      "badge": "Christian Evidences and Apologetics",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 518,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a2aca1f1af88894e9b156e697ed722d3f9569e6ec34d99b9e4ca157a36402c9d",
+    "file_size_bytes": 785684,
+    "word_count": 116554
+  },
+  {
+    "title": "A View of the Evidences of Christianity",
+    "author": "William Paley",
+    "year": 1865,
+    "category": "Bible study helps",
+    "collection": "Christian Evidences and Apologetics",
+    "source_url": "https://archive.org/download/viewofevidenceso00pale/viewofevidenceso00pale_djvu.txt",
+    "download_url": "https://archive.org/download/viewofevidenceso00pale/viewofevidenceso00pale_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-view-of-the-evidences-of-christianity-william-paley.txt",
+    "content_storage_path": "data/library/verified/a-view-of-the-evidences-of-christianity-william-paley.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/viewofevidenceso00pale/viewofevidenceso00pale_djvu.txt.",
+    "notes": "Classic public-domain evidences resource for historical apologetics study. Use with historical context and OCR spot-check before quotation. Labels/warnings: Historical / use carefully;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Classic public-domain evidences resource for historical apologetics study. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Christian Evidences and Apologetics",
+      "Historical / use carefully",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical / use carefully",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A View of the Evidences of Christianity",
+      "author": "William Paley",
+      "category": "Bible study helps",
+      "collection": "Christian Evidences and Apologetics",
+      "badge": "Christian Evidences and Apologetics",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 743,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5d2efa465d320ddf11c0809bd586077a62f4158fd15ca88b503725fc1548df0a",
+    "file_size_bytes": 1121218,
+    "word_count": 167164
+  },
+  {
+    "title": "Mistakes of Modern Infidels",
+    "author": "George R. Northgraves",
+    "year": 1885,
+    "category": "Bible study helps",
+    "collection": "Christian Evidences and Apologetics",
+    "source_url": "https://archive.org/download/moderninfidels00nortuoft/moderninfidels00nortuoft_djvu.txt",
+    "download_url": "https://archive.org/download/moderninfidels00nortuoft/moderninfidels00nortuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/mistakes-of-modern-infidels-george-r-northgraves.txt",
+    "content_storage_path": "data/library/verified/mistakes-of-modern-infidels-george-r-northgraves.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/moderninfidels00nortuoft/moderninfidels00nortuoft_djvu.txt.",
+    "notes": "Public-domain apologetics resource responding to objections against Scripture and Christianity. Use with historical context and OCR spot-check before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain apologetics resource responding to objections against Scripture and Christianity. Use with historical context and OCR spot-check before quotation.",
+    "resource_labels": [
+      "Christian Evidences and Apologetics",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Mistakes of Modern Infidels",
+      "author": "George R. Northgraves",
+      "category": "Bible study helps",
+      "collection": "Christian Evidences and Apologetics",
+      "badge": "Christian Evidences and Apologetics",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 541,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a4fb98dcc9038ed11e9b1f4d361c98befbfc36c14bf6de8fd25c210aa3e0a760",
+    "file_size_bytes": 698806,
+    "word_count": 121628
+  },
+  {
+    "title": "Synonyms of the Old Testament: Their Bearing on Christian Doctrine",
+    "author": "Robert Baker Girdlestone",
+    "year": 1871,
+    "category": "Bible study helps",
+    "collection": "Bible Word Study Helps",
+    "source_url": "https://archive.org/download/SynonymsOfTheOldTestament/SynonymsOfTheOldTestament_djvu.txt",
+    "download_url": "https://archive.org/download/SynonymsOfTheOldTestament/SynonymsOfTheOldTestament_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/synonyms-of-the-old-testament-their-bearing-on-christian-doctrine-robert-baker-girdlestone.txt",
+    "content_storage_path": "data/library/verified/synonyms-of-the-old-testament-their-bearing-on-christian-doctrine-robert-baker-girdlestone.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/SynonymsOfTheOldTestament/SynonymsOfTheOldTestament_djvu.txt.",
+    "notes": "Public-domain Old Testament word-study resource for doctrine, Bible terms, and teaching preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Old Testament word-study resource for doctrine, Bible terms, and teaching preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Word Study Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Synonyms of the Old Testament: Their Bearing on Christian Doctrine",
+      "author": "Robert Baker Girdlestone",
+      "category": "Bible study helps",
+      "collection": "Bible Word Study Helps",
+      "badge": "Bible Word Study Helps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 916,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "be5d49281ab0700204e8ce4534d8fde7c5bb9277432a7e1b43f662a95b79fe23",
+    "file_size_bytes": 1290979,
+    "word_count": 206159
   }
 ]

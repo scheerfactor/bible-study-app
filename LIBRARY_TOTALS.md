@@ -4,15 +4,27 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,758
+- Verified public/free Library resources: 1,776
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 654
+- Library authors represented: 665
 - Public Library duplicate title/author groups: 25
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 6 Bible character / people-profile resources, including Hastings volumes and Bible women studies
+- 2 Bible manners, customs, lands, and background resources
+- 5 hymn, hymn-writer, and Baptist hymn history resources
+- 4 Christian evidences / apologetics resources
+- 1 Old Testament word-study and doctrine resource
+
+These strengthen people profiles, Bible background, sermon illustrations, hymn stories, Baptist hymn history, apologetics, and Old Testament word-study support. All imported OCR texts are labeled for spot-checking before quotation. One otherwise useful Hastings volume was deferred because Archive.org returned a server error, and one dictionary candidate was skipped because it is already represented in the Library.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 20 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

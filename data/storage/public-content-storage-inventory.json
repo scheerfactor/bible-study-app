@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T13:28:49.642Z",
+  "generated_at": "2026-07-09T13:44:14.820Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1758,
-      "present": 1758,
+      "files": 1776,
+      "present": 1776,
       "missing": 0,
-      "total_bytes": 1518555045,
-      "total_size": "1.41 GB"
+      "total_bytes": 1537269754,
+      "total_size": "1.43 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3729477,
-      "total_size": "3.56 MB"
+      "total_bytes": 3772919,
+      "total_size": "3.60 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2076,
-      "present": 2076,
+      "files": 2094,
+      "present": 2094,
       "missing": 0,
-      "total_bytes": 2035964271,
-      "total_size": "1.90 GB"
+      "total_bytes": 2054722422,
+      "total_size": "1.91 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 398,
-    "library_text_bytes_over_1mb": 990116424,
-    "public_content_files_over_1mb": 495,
-    "public_content_bytes_over_1mb": 1438206529,
-    "storage_backed_library_files": 79,
-    "storage_backed_library_bytes": 77760756
+    "library_text_files_over_1mb": 409,
+    "library_text_bytes_over_1mb": 1004685742,
+    "public_content_files_over_1mb": 506,
+    "public_content_bytes_over_1mb": 1452819289,
+    "storage_backed_library_files": 97,
+    "storage_backed_library_bytes": 96475465
   },
   "items": [
     {
@@ -21253,6 +21253,240 @@
       "source_url": "https://archive.org/download/bibleatlasnonsec00macc/bibleatlasnonsec00macc_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-2-james-hastings.txt",
+      "storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-2-james-hastings.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1266907,
+      "checksum_sha256": "e7a9352576a546601c53d70242ec4cc9d3f4d4aed980606eff22232cb82462ef",
+      "storage_backed": true,
+      "title": "The Greater Men and Women of the Bible, Volume 2",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/greatermenandwom02hastuoft/greatermenandwom02hastuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-3-james-hastings.txt",
+      "storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-3-james-hastings.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1190697,
+      "checksum_sha256": "c72b97c6ff424142d9578fe2cb7d4cc96ab7140173223abc6d872cdc2e45a84a",
+      "storage_backed": true,
+      "title": "The Greater Men and Women of the Bible, Volume 3",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/greatermenandwom03hastuoft/greatermenandwom03hastuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-4-james-hastings.txt",
+      "storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-4-james-hastings.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1449453,
+      "checksum_sha256": "19a6e869d4d5f360f952ee99d721da06bd7768231760a0d2d3e3ad823ec4bdd4",
+      "storage_backed": true,
+      "title": "The Greater Men and Women of the Bible, Volume 4",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/greatermenandwom04hastuoft/greatermenandwom04hastuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-5-james-hastings.txt",
+      "storage_path": "data/library/verified/the-greater-men-and-women-of-the-bible-volume-5-james-hastings.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1050370,
+      "checksum_sha256": "32c90a02fce4c19e7a72c596d7c3e2840165f51b33e7c396243d03dc9a4ab871",
+      "storage_backed": true,
+      "title": "The Greater Men and Women of the Bible, Volume 5",
+      "author": "James Hastings",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/greatermenandwom05hastuoft/greatermenandwom05hastuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/portraits-of-women-of-the-bible-old-testament-series-thomas-e-miller.txt",
+      "storage_path": "data/library/verified/portraits-of-women-of-the-bible-old-testament-series-thomas-e-miller.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 574723,
+      "checksum_sha256": "0ed820622c53eea4f043f27bba4c4cd81e883927e9d73394ba5880449a1712de",
+      "storage_backed": true,
+      "title": "Portraits of Women of the Bible: Old Testament Series",
+      "author": "Thomas E. Miller",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/portraitsofwomen00milluoft/portraitsofwomen00milluoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/women-of-the-bible-henry-adams-thompson.txt",
+      "storage_path": "data/library/verified/women-of-the-bible-henry-adams-thompson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1328309,
+      "checksum_sha256": "244b2b51259d00b9f0861d66e116f8f2de0a1943134dcd5860cbd68f99f1b931",
+      "storage_backed": true,
+      "title": "Women of the Bible",
+      "author": "Henry Adams Thompson",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/womenofbible00thomuoft/womenofbible00thomuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/handbook-of-bible-manners-and-customs-james-m-freeman.txt",
+      "storage_path": "data/library/verified/handbook-of-bible-manners-and-customs-james-m-freeman.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1406352,
+      "checksum_sha256": "65e08e513abaf70488935aabb3c52b84b283ecdc8e2f5ddf2d2562b9219fdf50",
+      "storage_backed": true,
+      "title": "Handbook of Bible Manners and Customs",
+      "author": "James M. Freeman",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/handbookofbiblem00freeuoft/handbookofbiblem00freeuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-land-and-the-book-volume-1-william-mcclure-thomson.txt",
+      "storage_path": "data/library/verified/the-land-and-the-book-volume-1-william-mcclure-thomson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1498604,
+      "checksum_sha256": "a203e692359fc2da110a13eb555cf90ffcd6a28e4b9f3bff13855b22441abb9b",
+      "storage_backed": true,
+      "title": "The Land and the Book, Volume 1",
+      "author": "William McClure Thomson",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/landbookorbiblic01thomuoft/landbookorbiblic01thomuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/biography-of-gospel-song-and-hymn-writers-j-h-hall.txt",
+      "storage_path": "data/library/verified/biography-of-gospel-song-and-hymn-writers-j-h-hall.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 501455,
+      "checksum_sha256": "408d1039f04d830c2a774ffa91b1e2aab7a998d1851ac1745c0d5016b1c39fa4",
+      "storage_backed": true,
+      "title": "Biography of Gospel Song and Hymn Writers",
+      "author": "J. H. Hall",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/biographyofgospe00hall/biographyofgospe00hall_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/baptist-hymn-writers-and-their-hymns-henry-s-burrage.txt",
+      "storage_path": "data/library/verified/baptist-hymn-writers-and-their-hymns-henry-s-burrage.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1318852,
+      "checksum_sha256": "963a745d723dd3cb91df8335c60a4357301e8370045965aaa7a5a79d15d3fd77",
+      "storage_backed": true,
+      "title": "Baptist Hymn Writers and Their Hymns",
+      "author": "Henry S. Burrage",
+      "category": "Baptist History",
+      "source_url": "https://archive.org/download/baptisthymnwrite00burr/baptisthymnwrite00burr_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/illustrated-history-of-hymns-and-their-authors-edwin-mckean-long.txt",
+      "storage_path": "data/library/verified/illustrated-history-of-hymns-and-their-authors-edwin-mckean-long.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 883407,
+      "checksum_sha256": "dd65a3f8a40c737bfd4f78a413f4b5470571c862a5499bf2b4dc82af5110881a",
+      "storage_backed": true,
+      "title": "Illustrated History of Hymns and Their Authors",
+      "author": "Edwin McKean Long",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/illustratedhist00long/illustratedhist00long_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-poets-of-the-church-edwin-f-hatfield.txt",
+      "storage_path": "data/library/verified/the-poets-of-the-church-edwin-f-hatfield.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1647577,
+      "checksum_sha256": "8a15265b317b39fe0a0360faf091fde9ae86afd66d196dca58b2fc60808a6a00",
+      "storage_backed": true,
+      "title": "The Poets of the Church",
+      "author": "Edwin F. Hatfield",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/poetsofchurchser00hatf/poetsofchurchser00hatf_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-year-of-hymn-stories-carl-f-price.txt",
+      "storage_path": "data/library/verified/a-year-of-hymn-stories-carl-f-price.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 110879,
+      "checksum_sha256": "0a7c59e9911976dc19f38e663cfba4ba82ea059e23a65839869604483db053f3",
+      "storage_backed": true,
+      "title": "A Year of Hymn Stories",
+      "author": "Carl F. Price",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/ayearofhymnstori00pricuoft/ayearofhymnstori00pricuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/many-infallible-proofs-arthur-t-pierson.txt",
+      "storage_path": "data/library/verified/many-infallible-proofs-arthur-t-pierson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 590437,
+      "checksum_sha256": "e807b1c236fde2ceb92db905671faee74c14ef7255991f43d27ba599baca3755",
+      "storage_backed": true,
+      "title": "Many Infallible Proofs",
+      "author": "Arthur T. Pierson",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/manyinfalliblepr00pieruoft/manyinfalliblepr00pieruoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/why-is-christianity-true-christian-evidences-edgar-young-mullins.txt",
+      "storage_path": "data/library/verified/why-is-christianity-true-christian-evidences-edgar-young-mullins.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 785684,
+      "checksum_sha256": "a2aca1f1af88894e9b156e697ed722d3f9569e6ec34d99b9e4ca157a36402c9d",
+      "storage_backed": true,
+      "title": "Why Is Christianity True? Christian Evidences",
+      "author": "Edgar Young Mullins",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/whyischristianit00mull/whyischristianit00mull_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-view-of-the-evidences-of-christianity-william-paley.txt",
+      "storage_path": "data/library/verified/a-view-of-the-evidences-of-christianity-william-paley.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1121218,
+      "checksum_sha256": "5d2efa465d320ddf11c0809bd586077a62f4158fd15ca88b503725fc1548df0a",
+      "storage_backed": true,
+      "title": "A View of the Evidences of Christianity",
+      "author": "William Paley",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/viewofevidenceso00pale/viewofevidenceso00pale_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/mistakes-of-modern-infidels-george-r-northgraves.txt",
+      "storage_path": "data/library/verified/mistakes-of-modern-infidels-george-r-northgraves.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 698806,
+      "checksum_sha256": "a4fb98dcc9038ed11e9b1f4d361c98befbfc36c14bf6de8fd25c210aa3e0a760",
+      "storage_backed": true,
+      "title": "Mistakes of Modern Infidels",
+      "author": "George R. Northgraves",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/moderninfidels00nortuoft/moderninfidels00nortuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/synonyms-of-the-old-testament-their-bearing-on-christian-doctrine-robert-baker-girdlestone.txt",
+      "storage_path": "data/library/verified/synonyms-of-the-old-testament-their-bearing-on-christian-doctrine-robert-baker-girdlestone.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1290979,
+      "checksum_sha256": "be5d49281ab0700204e8ce4534d8fde7c5bb9277432a7e1b43f662a95b79fe23",
+      "storage_backed": true,
+      "title": "Synonyms of the Old Testament: Their Bearing on Christian Doctrine",
+      "author": "Robert Baker Girdlestone",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/SynonymsOfTheOldTestament/SynonymsOfTheOldTestament_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -23825,8 +24059,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3729477,
-      "checksum_sha256": "179ef29df98cf6a0d8c1eb8899f678417e2905ce31a66490d2e8707285585180"
+      "size_bytes": 3772919,
+      "checksum_sha256": "56d7a2aa307fa5defc8c6b188c948cdb1e577902622dbcee44ab4e72830355be"
     },
     {
       "kind": "study_tool",
