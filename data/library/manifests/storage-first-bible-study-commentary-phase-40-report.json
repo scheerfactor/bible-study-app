@@ -1,0 +1,208 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-bible-study-commentary-phase-40.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 20,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 19,
+  "failed": 0,
+  "duplicate_titles": 19,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The Divine Library of the Old Testament",
+      "file": "the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt",
+      "bytes": 346150,
+      "words": 51108,
+      "reading_time_minutes": 227,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Synthetic Bible Studies",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "Christian Workers' Commentary on the Old and New Testaments",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "Bible Problems Explained",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "Salvation from Start to Finish",
+      "author": "James M. Gray",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "The Bible and Its Christ",
+      "author": "R. A. Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "Is the Bible the Inerrant Word of God and Was the Body of Jesus Raised from the Dead?",
+      "author": "R. A. Torrey",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "Through the Bible Day by Day, Volume 1: Genesis to Joshua",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "Through the Bible Day by Day, Volume 2: Judges to 2 Chronicles",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "Through the Bible Day by Day, Volume 4: Ezra to Malachi",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "Through the Bible Day by Day, Volume 6: Acts to Ephesians",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "Through the Bible Day by Day, Volume 7: Philippians to Revelation",
+      "author": "F. B. Meyer",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 13,
+      "title": "Chapter by Chapter Through the Bible, Volume 1",
+      "author": "J. Stuart Holden",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "Chapter by Chapter Through the Bible, Volume 2",
+      "author": "J. Stuart Holden",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "Chapter by Chapter Through the Bible, Volume 3",
+      "author": "J. Stuart Holden",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Chapter by Chapter Through the Bible, Volume 4",
+      "author": "J. Stuart Holden",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 1",
+      "author": "G. Campbell Morgan",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 2",
+      "author": "G. Campbell Morgan",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "The Gospel According to John (The Analyzed Bible)",
+      "author": "G. Campbell Morgan",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 20,
+      "title": "The Divine Library of the Old Testament",
+      "author": "A. F. Kirkpatrick",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt"
+    },
+    {
+      "row": 21,
+      "title": "The New Testament and Its Writers",
+      "author": "J. A. McClymont",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ]
+}

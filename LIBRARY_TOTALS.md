@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,816
+- Verified public/free Library resources: 1,836
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
@@ -13,6 +13,19 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 - Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 20 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 4 James M. Gray study resources, including `Synthetic Bible Studies`, `Bible Problems Explained`, `Salvation from Start to Finish`, and `Christian Workers' Commentary on the Old and New Testaments`
+- 2 R. A. Torrey Bible-defense / Christ-centered study resources
+- 5 F. B. Meyer `Through the Bible Day by Day` devotional commentary volumes
+- 4 J. Stuart Holden `Chapter by Chapter Through the Bible` volumes
+- 3 G. Campbell Morgan `Analyzed Bible` commentary resources for Isaiah and John
+- 2 Bible introduction / survey resources for Old Testament and New Testament study
+
+These strengthen book-by-book Bible study, concise whole-Bible commentary, devotional reading, Bible-defense helps, Isaiah and John study, Sunday School preparation, and Study Workspace related-resource recommendations. All imported OCR texts are labeled for spot-checking before quotation. The initial dry run found zero duplicate titles, zero duplicate sources, and zero rights flags; one temporary Archive.org server error was repaired with an alternate public-domain scan before final import.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

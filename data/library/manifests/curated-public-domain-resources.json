@@ -81461,5 +81461,987 @@
     "checksum_sha256": "b43aeab5d62018b1bd149ebf52a42c100aee56e6a095fdb9b4001d3a650665e0",
     "file_size_bytes": 1389646,
     "word_count": 205185
+  },
+  {
+    "title": "Synthetic Bible Studies",
+    "author": "James M. Gray",
+    "year": 1923,
+    "category": "Bible study helps",
+    "collection": "Book-by-Book Bible Study",
+    "source_url": "https://archive.org/download/syntheticbiblest028560mbp/syntheticbiblest028560mbp_djvu.txt",
+    "download_url": "https://archive.org/download/syntheticbiblest028560mbp/syntheticbiblest028560mbp_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/synthetic-bible-studies-james-m-gray.txt",
+    "content_storage_path": "data/library/verified/synthetic-bible-studies-james-m-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/syntheticbiblest028560mbp/syntheticbiblest028560mbp_djvu.txt.",
+    "notes": "Public-domain whole-Bible outline study with suggestions for sermons, addresses, and Bible expositions. Strong for pastors, teachers, and Sunday School preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain whole-Bible outline study with suggestions for sermons, addresses, and Bible expositions. Strong for pastors, teachers, and Sunday School preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Book-by-Book Bible Study",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Synthetic Bible Studies",
+      "author": "James M. Gray",
+      "category": "Bible study helps",
+      "collection": "Book-by-Book Bible Study",
+      "badge": "Book-by-Book Bible Study",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 669,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "e536bf440cc7415e1fa27b7e45ec198420bf5395aa96410ecba93848401fc4c2",
+    "file_size_bytes": 852691,
+    "word_count": 150633
+  },
+  {
+    "title": "Christian Workers' Commentary on the Old and New Testaments",
+    "author": "James M. Gray",
+    "year": 1915,
+    "category": "Commentaries",
+    "collection": "Whole Bible Commentary Helps",
+    "source_url": "https://archive.org/download/christianworkers0000unse_n8w7/christianworkers0000unse_n8w7_djvu.txt",
+    "download_url": "https://archive.org/download/christianworkers0000unse_n8w7/christianworkers0000unse_n8w7_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/christian-workers-commentary-on-the-old-and-new-testaments-james-m-gray.txt",
+    "content_storage_path": "data/library/verified/christian-workers-commentary-on-the-old-and-new-testaments-james-m-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/christianworkers0000unse_n8w7/christianworkers0000unse_n8w7_djvu.txt.",
+    "notes": "Public-domain whole-Bible commentary help for preachers, teachers, and Bible students. Useful as a concise conservative study aid; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain whole-Bible commentary help for preachers, teachers, and Bible students. Useful as a concise conservative study aid; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Whole Bible Commentary Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Christian Workers' Commentary on the Old and New Testaments",
+      "author": "James M. Gray",
+      "category": "Commentaries",
+      "collection": "Whole Bible Commentary Helps",
+      "badge": "Whole Bible Commentary Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1578,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "7c5c49ce686135c99d6cf9399147dbba8ff8e32c5d9a2217c4bf7426f000d730",
+    "file_size_bytes": 2054409,
+    "word_count": 355113
+  },
+  {
+    "title": "Bible Problems Explained",
+    "author": "James M. Gray",
+    "year": 1913,
+    "category": "Bible study helps",
+    "collection": "Bible Questions and Difficulties",
+    "source_url": "https://archive.org/download/bibleproblemsexp0000jame/bibleproblemsexp0000jame_djvu.txt",
+    "download_url": "https://archive.org/download/bibleproblemsexp0000jame/bibleproblemsexp0000jame_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-problems-explained-james-m-gray.txt",
+    "content_storage_path": "data/library/verified/bible-problems-explained-james-m-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleproblemsexp0000jame/bibleproblemsexp0000jame_djvu.txt.",
+    "notes": "Public-domain answers to Bible questions and difficult passages from a Moody Bible Institute president. Useful for apologetics, teacher preparation, and Q&A study; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain answers to Bible questions and difficult passages from a Moody Bible Institute president. Useful for apologetics, teacher preparation, and Q&A study; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Questions and Difficulties",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Problems Explained",
+      "author": "James M. Gray",
+      "category": "Bible study helps",
+      "collection": "Bible Questions and Difficulties",
+      "badge": "Bible Questions and Difficulties",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 184,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6a7be62957d035c8848678e9a1c3bd1cd43eed93b04cb12ec1c9cf2fef87e073",
+    "file_size_bytes": 237598,
+    "word_count": 41403
+  },
+  {
+    "title": "Salvation from Start to Finish",
+    "author": "James M. Gray",
+    "year": 1911,
+    "category": "Christian Living",
+    "collection": "Salvation and Doctrine",
+    "source_url": "https://archive.org/download/MN41635ucmf_6/MN41635ucmf_6_djvu.txt",
+    "download_url": "https://archive.org/download/MN41635ucmf_6/MN41635ucmf_6_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/salvation-from-start-to-finish-james-m-gray.txt",
+    "content_storage_path": "data/library/verified/salvation-from-start-to-finish-james-m-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/MN41635ucmf_6/MN41635ucmf_6_djvu.txt.",
+    "notes": "Public-domain Bible expositions on the believer's new life from faith to glory. Useful for discipleship, assurance, and salvation doctrine; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible expositions on the believer's new life from faith to glory. Useful for discipleship, assurance, and salvation doctrine; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Salvation and Doctrine",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Salvation from Start to Finish",
+      "author": "James M. Gray",
+      "category": "Christian Living",
+      "collection": "Salvation and Doctrine",
+      "badge": "Salvation and Doctrine",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 129,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "872d99b60ef7a097d4dae431c833e9aa45afc8358c8104a697ed80211faa06e1",
+    "file_size_bytes": 156153,
+    "word_count": 29007
+  },
+  {
+    "title": "The Bible and Its Christ",
+    "author": "R. A. Torrey",
+    "year": 1906,
+    "category": "Bible study helps",
+    "collection": "Christ in Scripture",
+    "source_url": "https://archive.org/download/bibleitschrist0000rato/bibleitschrist0000rato_djvu.txt",
+    "download_url": "https://archive.org/download/bibleitschrist0000rato/bibleitschrist0000rato_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-bible-and-its-christ-r-a-torrey.txt",
+    "content_storage_path": "data/library/verified/the-bible-and-its-christ-r-a-torrey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleitschrist0000rato/bibleitschrist0000rato_djvu.txt.",
+    "notes": "Public-domain Christ-centered Bible study resource by R. A. Torrey. Useful for doctrine, apologetics, and Bible-reader connections to Christ; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christ-centered Bible study resource by R. A. Torrey. Useful for doctrine, apologetics, and Bible-reader connections to Christ; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Christ in Scripture",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Bible and Its Christ",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "collection": "Christ in Scripture",
+      "badge": "Christ in Scripture",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 174,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f9535fb1b013352191838ab0c2f874812b4ff498f5c9d7f26141b476587f2003",
+    "file_size_bytes": 219593,
+    "word_count": 39091
+  },
+  {
+    "title": "Is the Bible the Inerrant Word of God and Was the Body of Jesus Raised from the Dead?",
+    "author": "R. A. Torrey",
+    "year": 1922,
+    "category": "Bible study helps",
+    "collection": "Bible Defense",
+    "source_url": "https://archive.org/download/isbibleinerrantw0000rato/isbibleinerrantw0000rato_djvu.txt",
+    "download_url": "https://archive.org/download/isbibleinerrantw0000rato/isbibleinerrantw0000rato_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/is-the-bible-the-inerrant-word-of-god-and-was-the-body-of-jesus-raised-from-the-dead-r-a-torrey.txt",
+    "content_storage_path": "data/library/verified/is-the-bible-the-inerrant-word-of-god-and-was-the-body-of-jesus-raised-from-the-dead-r-a-torrey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/isbibleinerrantw0000rato/isbibleinerrantw0000rato_djvu.txt.",
+    "notes": "Public-domain Bible-defense and resurrection resource. Useful for apologetics, Bible inspiration, and teaching confidence in Scripture; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible-defense and resurrection resource. Useful for apologetics, Bible inspiration, and teaching confidence in Scripture; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Defense",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Is the Bible the Inerrant Word of God and Was the Body of Jesus Raised from the Dead?",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "collection": "Bible Defense",
+      "badge": "Bible Defense",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 228,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ef344a0a1a0e70af98ccc3da14267d43644bfbd8b563f3dccc05850e1fc5648c",
+    "file_size_bytes": 289916,
+    "word_count": 51267
+  },
+  {
+    "title": "Through the Bible Day by Day, Volume 1: Genesis to Joshua",
+    "author": "F. B. Meyer",
+    "year": 1914,
+    "category": "Bible study helps",
+    "collection": "Through the Bible Day by Day",
+    "source_url": "https://archive.org/download/throughbibledayb0000revf/throughbibledayb0000revf_djvu.txt",
+    "download_url": "https://archive.org/download/throughbibledayb0000revf/throughbibledayb0000revf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/through-the-bible-day-by-day-volume-1-genesis-to-joshua-f-b-meyer.txt",
+    "content_storage_path": "data/library/verified/through-the-bible-day-by-day-volume-1-genesis-to-joshua-f-b-meyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/throughbibledayb0000revf/throughbibledayb0000revf_djvu.txt.",
+    "notes": "Public-domain devotional commentary arranged for daily reading with book introductions, outlines, and review questions. Useful for reading plans, devotionals, and teacher preparation; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional commentary arranged for daily reading with book introductions, outlines, and review questions. Useful for reading plans, devotionals, and teacher preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Through the Bible Day by Day",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Through the Bible Day by Day, Volume 1: Genesis to Joshua",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "Through the Bible Day by Day",
+      "badge": "Through the Bible Day by Day",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 285,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6c56c50f1b36dc3795fd072dd46c19790caac04cca37ce2662ca124bfe878816",
+    "file_size_bytes": 369232,
+    "word_count": 64035
+  },
+  {
+    "title": "Through the Bible Day by Day, Volume 2: Judges to 2 Chronicles",
+    "author": "F. B. Meyer",
+    "year": 1916,
+    "category": "Bible study helps",
+    "collection": "Through the Bible Day by Day",
+    "source_url": "https://archive.org/download/throughbibledayb0000unse/throughbibledayb0000unse_djvu.txt",
+    "download_url": "https://archive.org/download/throughbibledayb0000unse/throughbibledayb0000unse_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/through-the-bible-day-by-day-volume-2-judges-to-2-chronicles-f-b-meyer.txt",
+    "content_storage_path": "data/library/verified/through-the-bible-day-by-day-volume-2-judges-to-2-chronicles-f-b-meyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/throughbibledayb0000unse/throughbibledayb0000unse_djvu.txt.",
+    "notes": "Public-domain devotional commentary for Judges through 2 Chronicles with daily readings and teaching helps. Useful for reading plans and Study Workspace related resources; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional commentary for Judges through 2 Chronicles with daily readings and teaching helps. Useful for reading plans and Study Workspace related resources; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Through the Bible Day by Day",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Through the Bible Day by Day, Volume 2: Judges to 2 Chronicles",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "Through the Bible Day by Day",
+      "badge": "Through the Bible Day by Day",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 326,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5679fda6177ff83292648915c3f4ef9c00575b6b9276b117c717eb5a14b8ff0a",
+    "file_size_bytes": 419595,
+    "word_count": 73446
+  },
+  {
+    "title": "Through the Bible Day by Day, Volume 4: Ezra to Malachi",
+    "author": "F. B. Meyer",
+    "year": 1918,
+    "category": "Bible study helps",
+    "collection": "Through the Bible Day by Day",
+    "source_url": "https://archive.org/download/throughbibledayb0004unse/throughbibledayb0004unse_djvu.txt",
+    "download_url": "https://archive.org/download/throughbibledayb0004unse/throughbibledayb0004unse_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/through-the-bible-day-by-day-volume-4-ezra-to-malachi-f-b-meyer.txt",
+    "content_storage_path": "data/library/verified/through-the-bible-day-by-day-volume-4-ezra-to-malachi-f-b-meyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/throughbibledayb0004unse/throughbibledayb0004unse_djvu.txt.",
+    "notes": "Public-domain devotional commentary for Ezra through Malachi with daily readings, introductions, outlines, and questions. Useful for Old Testament prophets and teaching preparation; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional commentary for Ezra through Malachi with daily readings, introductions, outlines, and questions. Useful for Old Testament prophets and teaching preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Through the Bible Day by Day",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Through the Bible Day by Day, Volume 4: Ezra to Malachi",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "Through the Bible Day by Day",
+      "badge": "Through the Bible Day by Day",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 266,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3a4cda3c2c0aed5c5d950a3b88db64dd7ac4a220edf06b3b254d8de178dcf5f7",
+    "file_size_bytes": 344710,
+    "word_count": 59856
+  },
+  {
+    "title": "Through the Bible Day by Day, Volume 6: Acts to Ephesians",
+    "author": "F. B. Meyer",
+    "year": 1918,
+    "category": "Bible study helps",
+    "collection": "Through the Bible Day by Day",
+    "source_url": "https://archive.org/download/throughbibledayb0006unse/throughbibledayb0006unse_djvu.txt",
+    "download_url": "https://archive.org/download/throughbibledayb0006unse/throughbibledayb0006unse_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/through-the-bible-day-by-day-volume-6-acts-to-ephesians-f-b-meyer.txt",
+    "content_storage_path": "data/library/verified/through-the-bible-day-by-day-volume-6-acts-to-ephesians-f-b-meyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/throughbibledayb0006unse/throughbibledayb0006unse_djvu.txt.",
+    "notes": "Public-domain devotional commentary for Acts through Ephesians. Useful for church-history passages, Pauline epistles, daily reading, and lesson preparation; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional commentary for Acts through Ephesians. Useful for church-history passages, Pauline epistles, daily reading, and lesson preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Through the Bible Day by Day",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Through the Bible Day by Day, Volume 6: Acts to Ephesians",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "Through the Bible Day by Day",
+      "badge": "Through the Bible Day by Day",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 239,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "dc333710b367b6e831e5e248f609f932463d19d03c8bda2df0165b794b9b0bd9",
+    "file_size_bytes": 309249,
+    "word_count": 53764
+  },
+  {
+    "title": "Through the Bible Day by Day, Volume 7: Philippians to Revelation",
+    "author": "F. B. Meyer",
+    "year": 1918,
+    "category": "Bible study helps",
+    "collection": "Through the Bible Day by Day",
+    "source_url": "https://archive.org/download/throughbibledayb0007revf/throughbibledayb0007revf_djvu.txt",
+    "download_url": "https://archive.org/download/throughbibledayb0007revf/throughbibledayb0007revf_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/through-the-bible-day-by-day-volume-7-philippians-to-revelation-f-b-meyer.txt",
+    "content_storage_path": "data/library/verified/through-the-bible-day-by-day-volume-7-philippians-to-revelation-f-b-meyer.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/throughbibledayb0007revf/throughbibledayb0007revf_djvu.txt.",
+    "notes": "Public-domain devotional commentary for Philippians through Revelation. Useful for daily reading, end-of-New-Testament study, and related book recommendations; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional commentary for Philippians through Revelation. Useful for daily reading, end-of-New-Testament study, and related book recommendations; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Through the Bible Day by Day",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Through the Bible Day by Day, Volume 7: Philippians to Revelation",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "collection": "Through the Bible Day by Day",
+      "badge": "Through the Bible Day by Day",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 208,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "4d2cab1f7e2e98bfee8eef50642eeecb1c9147329c2518cafa96e89fb781d660",
+    "file_size_bytes": 268065,
+    "word_count": 46845
+  },
+  {
+    "title": "Chapter by Chapter Through the Bible, Volume 1",
+    "author": "J. Stuart Holden",
+    "year": 1920,
+    "category": "Bible study helps",
+    "collection": "Chapter by Chapter Through the Bible",
+    "source_url": "https://archive.org/download/chapterbychapter01hold/chapterbychapter01hold_djvu.txt",
+    "download_url": "https://archive.org/download/chapterbychapter01hold/chapterbychapter01hold_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-1-j-stuart-holden.txt",
+    "content_storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-1-j-stuart-holden.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/chapterbychapter01hold/chapterbychapter01hold_djvu.txt.",
+    "notes": "Public-domain chapter-by-chapter expository and devotional comments for busy readers and teachers. Useful for reading prompts, quick study notes, and sermon preparation; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain chapter-by-chapter expository and devotional comments for busy readers and teachers. Useful for reading prompts, quick study notes, and sermon preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Chapter by Chapter Through the Bible",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Chapter by Chapter Through the Bible, Volume 1",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "collection": "Chapter by Chapter Through the Bible",
+      "badge": "Chapter by Chapter Through the Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 385,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "fc4bba098010092fb84d266ef010f67dfae93228056598e26c991d9d4c8e2d9d",
+    "file_size_bytes": 571292,
+    "word_count": 86560
+  },
+  {
+    "title": "Chapter by Chapter Through the Bible, Volume 2",
+    "author": "J. Stuart Holden",
+    "year": 1920,
+    "category": "Bible study helps",
+    "collection": "Chapter by Chapter Through the Bible",
+    "source_url": "https://archive.org/download/chapterbychapter02hold/chapterbychapter02hold_djvu.txt",
+    "download_url": "https://archive.org/download/chapterbychapter02hold/chapterbychapter02hold_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-2-j-stuart-holden.txt",
+    "content_storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-2-j-stuart-holden.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/chapterbychapter02hold/chapterbychapter02hold_djvu.txt.",
+    "notes": "Public-domain chapter-by-chapter expository and devotional comments. Useful for daily study, teaching outlines, and related chapter resources; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain chapter-by-chapter expository and devotional comments. Useful for daily study, teaching outlines, and related chapter resources; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Chapter by Chapter Through the Bible",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Chapter by Chapter Through the Bible, Volume 2",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "collection": "Chapter by Chapter Through the Bible",
+      "badge": "Chapter by Chapter Through the Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 390,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8ca5bdf1d00c0e73e84feac02235019e46fa25df7c527895fb80f91d00b07b9a",
+    "file_size_bytes": 571146,
+    "word_count": 87834
+  },
+  {
+    "title": "Chapter by Chapter Through the Bible, Volume 3",
+    "author": "J. Stuart Holden",
+    "year": 1920,
+    "category": "Bible study helps",
+    "collection": "Chapter by Chapter Through the Bible",
+    "source_url": "https://archive.org/download/chapterbychapter03hold/chapterbychapter03hold_djvu.txt",
+    "download_url": "https://archive.org/download/chapterbychapter03hold/chapterbychapter03hold_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-3-j-stuart-holden.txt",
+    "content_storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-3-j-stuart-holden.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/chapterbychapter03hold/chapterbychapter03hold_djvu.txt.",
+    "notes": "Public-domain chapter-by-chapter expository and devotional comments. Useful for Scripture reading support, Study Workspace recommendations, and lesson preparation; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain chapter-by-chapter expository and devotional comments. Useful for Scripture reading support, Study Workspace recommendations, and lesson preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Chapter by Chapter Through the Bible",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Chapter by Chapter Through the Bible, Volume 3",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "collection": "Chapter by Chapter Through the Bible",
+      "badge": "Chapter by Chapter Through the Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 388,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f73d618a015c167c5c8fe6dd7d715f819a53efdf1ab51c7c97b02d623eec41da",
+    "file_size_bytes": 567844,
+    "word_count": 87290
+  },
+  {
+    "title": "Chapter by Chapter Through the Bible, Volume 4",
+    "author": "J. Stuart Holden",
+    "year": 1920,
+    "category": "Bible study helps",
+    "collection": "Chapter by Chapter Through the Bible",
+    "source_url": "https://archive.org/download/chapterbychapter04hold/chapterbychapter04hold_djvu.txt",
+    "download_url": "https://archive.org/download/chapterbychapter04hold/chapterbychapter04hold_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-4-j-stuart-holden.txt",
+    "content_storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-4-j-stuart-holden.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/chapterbychapter04hold/chapterbychapter04hold_djvu.txt.",
+    "notes": "Public-domain chapter-by-chapter expository and devotional comments. Useful for prophets, New Testament study, daily reading, and quick teaching notes; OCR text should be spot-checked before quotation. Labels/warnings: Devotional commentary;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain chapter-by-chapter expository and devotional comments. Useful for prophets, New Testament study, daily reading, and quick teaching notes; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Chapter by Chapter Through the Bible",
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Devotional commentary",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Chapter by Chapter Through the Bible, Volume 4",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "collection": "Chapter by Chapter Through the Bible",
+      "badge": "Chapter by Chapter Through the Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 396,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1307913180923af9b859cf6bb210007a74751dbaf3af05b6938c36e55215d85f",
+    "file_size_bytes": 581487,
+    "word_count": 89005
+  },
+  {
+    "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 1",
+    "author": "G. Campbell Morgan",
+    "year": 1910,
+    "category": "Commentaries",
+    "collection": "G. Campbell Morgan Analyzed Bible",
+    "source_url": "https://archive.org/download/analyzedbible0001gcam/analyzedbible0001gcam_djvu.txt",
+    "download_url": "https://archive.org/download/analyzedbible0001gcam/analyzedbible0001gcam_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-1-g-campbell-morgan.txt",
+    "content_storage_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-1-g-campbell-morgan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/analyzedbible0001gcam/analyzedbible0001gcam_djvu.txt.",
+    "notes": "Public-domain analytical commentary on Isaiah by G. Campbell Morgan. Useful for prophecy study, chapter outlines, and commentary recommendations; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain analytical commentary on Isaiah by G. Campbell Morgan. Useful for prophecy study, chapter outlines, and commentary recommendations; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "G. Campbell Morgan Analyzed Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 1",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "collection": "G. Campbell Morgan Analyzed Bible",
+      "badge": "G. Campbell Morgan Analyzed Bible",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 156,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6e8ee11965473f08896a7572b6a5d56d1e24c477a55b0cb67d9cbc9691efde5c",
+    "file_size_bytes": 206351,
+    "word_count": 35037
+  },
+  {
+    "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 2",
+    "author": "G. Campbell Morgan",
+    "year": 1910,
+    "category": "Commentaries",
+    "collection": "G. Campbell Morgan Analyzed Bible",
+    "source_url": "https://archive.org/download/analyzedbible0002gcam/analyzedbible0002gcam_djvu.txt",
+    "download_url": "https://archive.org/download/analyzedbible0002gcam/analyzedbible0002gcam_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-2-g-campbell-morgan.txt",
+    "content_storage_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-2-g-campbell-morgan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/analyzedbible0002gcam/analyzedbible0002gcam_djvu.txt.",
+    "notes": "Public-domain analytical commentary on Isaiah by G. Campbell Morgan. Useful for prophecy study, teaching outlines, and commentary comparison; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain analytical commentary on Isaiah by G. Campbell Morgan. Useful for prophecy study, teaching outlines, and commentary comparison; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "G. Campbell Morgan Analyzed Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 2",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "collection": "G. Campbell Morgan Analyzed Bible",
+      "badge": "G. Campbell Morgan Analyzed Bible",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 172,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a377267fb2eddec66cc3d110cbf39bcf985abb1abe3e0bce420f090df02dd4f8",
+    "file_size_bytes": 225965,
+    "word_count": 38742
+  },
+  {
+    "title": "The Gospel According to John (The Analyzed Bible)",
+    "author": "G. Campbell Morgan",
+    "year": 1909,
+    "category": "Commentaries",
+    "collection": "G. Campbell Morgan Analyzed Bible",
+    "source_url": "https://archive.org/download/gospelaccordingt0000gcam_b5e3/gospelaccordingt0000gcam_b5e3_djvu.txt",
+    "download_url": "https://archive.org/download/gospelaccordingt0000gcam_b5e3/gospelaccordingt0000gcam_b5e3_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-according-to-john-the-analyzed-bible-g-campbell-morgan.txt",
+    "content_storage_path": "data/library/verified/the-gospel-according-to-john-the-analyzed-bible-g-campbell-morgan.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/gospelaccordingt0000gcam_b5e3/gospelaccordingt0000gcam_b5e3_djvu.txt.",
+    "notes": "Public-domain analytical commentary on the Gospel of John by G. Campbell Morgan. Useful for John study, commentary comparison, and teacher preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain analytical commentary on the Gospel of John by G. Campbell Morgan. Useful for John study, commentary comparison, and teacher preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "G. Campbell Morgan Analyzed Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel According to John (The Analyzed Bible)",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "collection": "G. Campbell Morgan Analyzed Bible",
+      "badge": "G. Campbell Morgan Analyzed Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 205,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "658643cbc22d2325169d2ca6a26243e301dc9a2b2d90bd4fdd4433d1204c1931",
+    "file_size_bytes": 264877,
+    "word_count": 46022
+  },
+  {
+    "title": "The New Testament and Its Writers",
+    "author": "J. A. McClymont",
+    "year": 1897,
+    "category": "Bible study helps",
+    "collection": "New Testament Introduction",
+    "source_url": "https://archive.org/download/newtestamentitsw00mcly/newtestamentitsw00mcly_djvu.txt",
+    "download_url": "https://archive.org/download/newtestamentitsw00mcly/newtestamentitsw00mcly_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-new-testament-and-its-writers-j-a-mcclymont.txt",
+    "content_storage_path": "data/library/verified/the-new-testament-and-its-writers-j-a-mcclymont.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/newtestamentitsw00mcly/newtestamentitsw00mcly_djvu.txt.",
+    "notes": "Public-domain introduction to the books and writers of the New Testament. Useful for background, authorship study, and teacher preparation; OCR text should be spot-checked before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain introduction to the books and writers of the New Testament. Useful for background, authorship study, and teacher preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "New Testament Introduction",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The New Testament and Its Writers",
+      "author": "J. A. McClymont",
+      "category": "Bible study helps",
+      "collection": "New Testament Introduction",
+      "badge": "New Testament Introduction",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 242,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c903d3c802aa508787ef6b043949fd5eea0214d00fa45de72aa636215e46bd4d",
+    "file_size_bytes": 359166,
+    "word_count": 54480
+  },
+  {
+    "title": "The Divine Library of the Old Testament",
+    "author": "A. F. Kirkpatrick",
+    "year": 1892,
+    "category": "Bible study helps",
+    "collection": "Old Testament Introduction",
+    "source_url": "https://archive.org/download/divinelibraryofo00kirk/divinelibraryofo00kirk_djvu.txt",
+    "download_url": "https://archive.org/download/divinelibraryofo00kirk/divinelibraryofo00kirk_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt",
+    "content_storage_path": "data/library/verified/the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/divinelibraryofo00kirk/divinelibraryofo00kirk_djvu.txt.",
+    "notes": "Public-domain lectures on the origin, preservation, inspiration, and permanent value of the Old Testament. Use as historical reference and compare with the app's doctrinal basis; OCR text should be spot-checked before quotation. Labels/warnings: Historical reference;Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain lectures on the origin, preservation, inspiration, and permanent value of the Old Testament. Use as historical reference and compare with the app's doctrinal basis; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Old Testament Introduction",
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Historical reference",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Divine Library of the Old Testament",
+      "author": "A. F. Kirkpatrick",
+      "category": "Bible study helps",
+      "collection": "Old Testament Introduction",
+      "badge": "Old Testament Introduction",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 227,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "32a7aa8b511c8f5462a33fda501deec1f4debfe22a3aead1e1a1ed3d2863e158",
+    "file_size_bytes": 346150,
+    "word_count": 51108
   }
 ]

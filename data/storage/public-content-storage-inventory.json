@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-09T16:22:47.602Z",
+  "generated_at": "2026-07-09T16:50:24.490Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1816,
-      "present": 1816,
+      "files": 1836,
+      "present": 1836,
       "missing": 0,
-      "total_bytes": 1583825253,
+      "total_bytes": 1593040742,
       "total_size": "1.48 GB"
     },
     "commentary_batch": {
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3870441,
-      "total_size": "3.69 MB"
+      "total_bytes": 3921597,
+      "total_size": "3.74 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2134,
-      "present": 2134,
+      "files": 2154,
+      "present": 2154,
       "missing": 0,
-      "total_bytes": 2101375443,
-      "total_size": "1.96 GB"
+      "total_bytes": 2110642088,
+      "total_size": "1.97 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 421,
-    "library_text_bytes_over_1mb": 1036533405,
-    "public_content_files_over_1mb": 518,
-    "public_content_bytes_over_1mb": 1484764474,
-    "storage_backed_library_files": 137,
-    "storage_backed_library_bytes": 143030964
+    "library_text_files_over_1mb": 422,
+    "library_text_bytes_over_1mb": 1038587814,
+    "public_content_files_over_1mb": 519,
+    "public_content_bytes_over_1mb": 1486870039,
+    "storage_backed_library_files": 157,
+    "storage_backed_library_bytes": 152246453
   },
   "items": [
     {
@@ -22007,6 +22007,266 @@
       "source_url": "https://archive.org/download/practicalhandboo00seisuoft/practicalhandboo00seisuoft_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/synthetic-bible-studies-james-m-gray.txt",
+      "storage_path": "data/library/verified/synthetic-bible-studies-james-m-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 852691,
+      "checksum_sha256": "e536bf440cc7415e1fa27b7e45ec198420bf5395aa96410ecba93848401fc4c2",
+      "storage_backed": true,
+      "title": "Synthetic Bible Studies",
+      "author": "James M. Gray",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/syntheticbiblest028560mbp/syntheticbiblest028560mbp_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/christian-workers-commentary-on-the-old-and-new-testaments-james-m-gray.txt",
+      "storage_path": "data/library/verified/christian-workers-commentary-on-the-old-and-new-testaments-james-m-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2054409,
+      "checksum_sha256": "7c5c49ce686135c99d6cf9399147dbba8ff8e32c5d9a2217c4bf7426f000d730",
+      "storage_backed": true,
+      "title": "Christian Workers' Commentary on the Old and New Testaments",
+      "author": "James M. Gray",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/christianworkers0000unse_n8w7/christianworkers0000unse_n8w7_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-problems-explained-james-m-gray.txt",
+      "storage_path": "data/library/verified/bible-problems-explained-james-m-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 237598,
+      "checksum_sha256": "6a7be62957d035c8848678e9a1c3bd1cd43eed93b04cb12ec1c9cf2fef87e073",
+      "storage_backed": true,
+      "title": "Bible Problems Explained",
+      "author": "James M. Gray",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/bibleproblemsexp0000jame/bibleproblemsexp0000jame_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/salvation-from-start-to-finish-james-m-gray.txt",
+      "storage_path": "data/library/verified/salvation-from-start-to-finish-james-m-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 156153,
+      "checksum_sha256": "872d99b60ef7a097d4dae431c833e9aa45afc8358c8104a697ed80211faa06e1",
+      "storage_backed": true,
+      "title": "Salvation from Start to Finish",
+      "author": "James M. Gray",
+      "category": "Christian Living",
+      "source_url": "https://archive.org/download/MN41635ucmf_6/MN41635ucmf_6_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-bible-and-its-christ-r-a-torrey.txt",
+      "storage_path": "data/library/verified/the-bible-and-its-christ-r-a-torrey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 219593,
+      "checksum_sha256": "f9535fb1b013352191838ab0c2f874812b4ff498f5c9d7f26141b476587f2003",
+      "storage_backed": true,
+      "title": "The Bible and Its Christ",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/bibleitschrist0000rato/bibleitschrist0000rato_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/is-the-bible-the-inerrant-word-of-god-and-was-the-body-of-jesus-raised-from-the-dead-r-a-torrey.txt",
+      "storage_path": "data/library/verified/is-the-bible-the-inerrant-word-of-god-and-was-the-body-of-jesus-raised-from-the-dead-r-a-torrey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 289916,
+      "checksum_sha256": "ef344a0a1a0e70af98ccc3da14267d43644bfbd8b563f3dccc05850e1fc5648c",
+      "storage_backed": true,
+      "title": "Is the Bible the Inerrant Word of God and Was the Body of Jesus Raised from the Dead?",
+      "author": "R. A. Torrey",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/isbibleinerrantw0000rato/isbibleinerrantw0000rato_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/through-the-bible-day-by-day-volume-1-genesis-to-joshua-f-b-meyer.txt",
+      "storage_path": "data/library/verified/through-the-bible-day-by-day-volume-1-genesis-to-joshua-f-b-meyer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 369232,
+      "checksum_sha256": "6c56c50f1b36dc3795fd072dd46c19790caac04cca37ce2662ca124bfe878816",
+      "storage_backed": true,
+      "title": "Through the Bible Day by Day, Volume 1: Genesis to Joshua",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/throughbibledayb0000revf/throughbibledayb0000revf_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/through-the-bible-day-by-day-volume-2-judges-to-2-chronicles-f-b-meyer.txt",
+      "storage_path": "data/library/verified/through-the-bible-day-by-day-volume-2-judges-to-2-chronicles-f-b-meyer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 419595,
+      "checksum_sha256": "5679fda6177ff83292648915c3f4ef9c00575b6b9276b117c717eb5a14b8ff0a",
+      "storage_backed": true,
+      "title": "Through the Bible Day by Day, Volume 2: Judges to 2 Chronicles",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/throughbibledayb0000unse/throughbibledayb0000unse_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/through-the-bible-day-by-day-volume-4-ezra-to-malachi-f-b-meyer.txt",
+      "storage_path": "data/library/verified/through-the-bible-day-by-day-volume-4-ezra-to-malachi-f-b-meyer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 344710,
+      "checksum_sha256": "3a4cda3c2c0aed5c5d950a3b88db64dd7ac4a220edf06b3b254d8de178dcf5f7",
+      "storage_backed": true,
+      "title": "Through the Bible Day by Day, Volume 4: Ezra to Malachi",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/throughbibledayb0004unse/throughbibledayb0004unse_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/through-the-bible-day-by-day-volume-6-acts-to-ephesians-f-b-meyer.txt",
+      "storage_path": "data/library/verified/through-the-bible-day-by-day-volume-6-acts-to-ephesians-f-b-meyer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 309249,
+      "checksum_sha256": "dc333710b367b6e831e5e248f609f932463d19d03c8bda2df0165b794b9b0bd9",
+      "storage_backed": true,
+      "title": "Through the Bible Day by Day, Volume 6: Acts to Ephesians",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/throughbibledayb0006unse/throughbibledayb0006unse_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/through-the-bible-day-by-day-volume-7-philippians-to-revelation-f-b-meyer.txt",
+      "storage_path": "data/library/verified/through-the-bible-day-by-day-volume-7-philippians-to-revelation-f-b-meyer.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 268065,
+      "checksum_sha256": "4d2cab1f7e2e98bfee8eef50642eeecb1c9147329c2518cafa96e89fb781d660",
+      "storage_backed": true,
+      "title": "Through the Bible Day by Day, Volume 7: Philippians to Revelation",
+      "author": "F. B. Meyer",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/throughbibledayb0007revf/throughbibledayb0007revf_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-1-j-stuart-holden.txt",
+      "storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-1-j-stuart-holden.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 571292,
+      "checksum_sha256": "fc4bba098010092fb84d266ef010f67dfae93228056598e26c991d9d4c8e2d9d",
+      "storage_backed": true,
+      "title": "Chapter by Chapter Through the Bible, Volume 1",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/chapterbychapter01hold/chapterbychapter01hold_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-2-j-stuart-holden.txt",
+      "storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-2-j-stuart-holden.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 571146,
+      "checksum_sha256": "8ca5bdf1d00c0e73e84feac02235019e46fa25df7c527895fb80f91d00b07b9a",
+      "storage_backed": true,
+      "title": "Chapter by Chapter Through the Bible, Volume 2",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/chapterbychapter02hold/chapterbychapter02hold_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-3-j-stuart-holden.txt",
+      "storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-3-j-stuart-holden.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 567844,
+      "checksum_sha256": "f73d618a015c167c5c8fe6dd7d715f819a53efdf1ab51c7c97b02d623eec41da",
+      "storage_backed": true,
+      "title": "Chapter by Chapter Through the Bible, Volume 3",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/chapterbychapter03hold/chapterbychapter03hold_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-4-j-stuart-holden.txt",
+      "storage_path": "data/library/verified/chapter-by-chapter-through-the-bible-volume-4-j-stuart-holden.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 581487,
+      "checksum_sha256": "1307913180923af9b859cf6bb210007a74751dbaf3af05b6938c36e55215d85f",
+      "storage_backed": true,
+      "title": "Chapter by Chapter Through the Bible, Volume 4",
+      "author": "J. Stuart Holden",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/chapterbychapter04hold/chapterbychapter04hold_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-1-g-campbell-morgan.txt",
+      "storage_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-1-g-campbell-morgan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 206351,
+      "checksum_sha256": "6e8ee11965473f08896a7572b6a5d56d1e24c477a55b0cb67d9cbc9691efde5c",
+      "storage_backed": true,
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 1",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/analyzedbible0001gcam/analyzedbible0001gcam_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-2-g-campbell-morgan.txt",
+      "storage_path": "data/library/verified/the-analyzed-bible-the-prophecy-of-isaiah-volume-2-g-campbell-morgan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 225965,
+      "checksum_sha256": "a377267fb2eddec66cc3d110cbf39bcf985abb1abe3e0bce420f090df02dd4f8",
+      "storage_backed": true,
+      "title": "The Analyzed Bible: The Prophecy of Isaiah, Volume 2",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/analyzedbible0002gcam/analyzedbible0002gcam_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-gospel-according-to-john-the-analyzed-bible-g-campbell-morgan.txt",
+      "storage_path": "data/library/verified/the-gospel-according-to-john-the-analyzed-bible-g-campbell-morgan.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 264877,
+      "checksum_sha256": "658643cbc22d2325169d2ca6a26243e301dc9a2b2d90bd4fdd4433d1204c1931",
+      "storage_backed": true,
+      "title": "The Gospel According to John (The Analyzed Bible)",
+      "author": "G. Campbell Morgan",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/gospelaccordingt0000gcam_b5e3/gospelaccordingt0000gcam_b5e3_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-new-testament-and-its-writers-j-a-mcclymont.txt",
+      "storage_path": "data/library/verified/the-new-testament-and-its-writers-j-a-mcclymont.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 359166,
+      "checksum_sha256": "c903d3c802aa508787ef6b043949fd5eea0214d00fa45de72aa636215e46bd4d",
+      "storage_backed": true,
+      "title": "The New Testament and Its Writers",
+      "author": "J. A. McClymont",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/newtestamentitsw00mcly/newtestamentitsw00mcly_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt",
+      "storage_path": "data/library/verified/the-divine-library-of-the-old-testament-a-f-kirkpatrick.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 346150,
+      "checksum_sha256": "32a7aa8b511c8f5462a33fda501deec1f4debfe22a3aead1e1a1ed3d2863e158",
+      "storage_backed": true,
+      "title": "The Divine Library of the Old Testament",
+      "author": "A. F. Kirkpatrick",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/divinelibraryofo00kirk/divinelibraryofo00kirk_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -24579,8 +24839,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3870441,
-      "checksum_sha256": "e15d59bc8c9a880acb374ba998b687e01db04284cbbc9259c47107beebc38834"
+      "size_bytes": 3921597,
+      "checksum_sha256": "58360bc72fa0e76e3860b9f01a3a88a6e1ef603ab371f245c82ee7d9e624eae0"
     },
     {
       "kind": "study_tool",
