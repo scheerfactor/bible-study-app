@@ -4,15 +4,31 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,776
+- Verified public/free Library resources: 1,798
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 665
-- Public Library duplicate title/author groups: 25
+- Library authors represented: 672
+- Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 22 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 7 sermon illustration / preaching illustration resources, including Spurgeon, Moody, Robert Scott, John Bate, and G. B. F. Hallock
+- 4 Bible object-lesson and children’s sermon resources for Sunday School, family worship, and junior-church teaching
+- 3 Sunday School teacher-training resources
+- 2 evangelism / soul-winning resources
+- 2 evangelistic hymn collections
+- 1 Bible atlas / geography manual
+- 1 Moody Bible-study notes resource
+- 1 George Muller prayer biography
+- 1 Moody and Sankey revival-meeting resource with sermons, addresses, prayer-meeting talks, and Bible readings
+
+These strengthen sermon illustrations, object lessons, Sunday School preparation, evangelism, hymn selection, Bible geography, prayer biography, and practical teaching helps. All imported OCR texts are labeled for spot-checking before quotation, and the dry run found zero duplicate titles, zero duplicate sources, and zero rights flags before import.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 18 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

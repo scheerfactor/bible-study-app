@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T13:44:14.820Z",
+  "generated_at": "2026-07-09T15:31:21.117Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1776,
-      "present": 1776,
+      "files": 1798,
+      "present": 1798,
       "missing": 0,
-      "total_bytes": 1537269754,
-      "total_size": "1.43 GB"
+      "total_bytes": 1562803150,
+      "total_size": "1.46 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3772919,
-      "total_size": "3.60 MB"
+      "total_bytes": 3826290,
+      "total_size": "3.65 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2094,
-      "present": 2094,
+      "files": 2116,
+      "present": 2116,
       "missing": 0,
-      "total_bytes": 2054722422,
-      "total_size": "1.91 GB"
+      "total_bytes": 2080309189,
+      "total_size": "1.94 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 409,
-    "library_text_bytes_over_1mb": 1004685742,
-    "public_content_files_over_1mb": 506,
-    "public_content_bytes_over_1mb": 1452819289,
-    "storage_backed_library_files": 97,
-    "storage_backed_library_bytes": 96475465
+    "library_text_files_over_1mb": 415,
+    "library_text_bytes_over_1mb": 1022618475,
+    "public_content_files_over_1mb": 512,
+    "public_content_bytes_over_1mb": 1470805393,
+    "storage_backed_library_files": 119,
+    "storage_backed_library_bytes": 122008861
   },
   "items": [
     {
@@ -21487,6 +21487,292 @@
       "source_url": "https://archive.org/download/SynonymsOfTheOldTestament/SynonymsOfTheOldTestament_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-object-lessons-addresses-to-the-young-james-wells.txt",
+      "storage_path": "data/library/verified/bible-object-lessons-addresses-to-the-young-james-wells.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 397937,
+      "checksum_sha256": "6d0ed579741af868982ffbc5d7d8e7476972e84d5438866f261847422ba39dd0",
+      "storage_backed": true,
+      "title": "Bible Object-Lessons: Addresses to the Young",
+      "author": "James Wells",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/bibleobjectless00wellgoog/bibleobjectless00wellgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt",
+      "storage_path": "data/library/verified/anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 465870,
+      "checksum_sha256": "2c806e0455082f42d8d1debb46f493f2560c68f923785db349855f934c204f9a",
+      "storage_backed": true,
+      "title": "Anecdotes and Illustrations of D. L. Moody",
+      "author": "D. L. Moody",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/anecdotesillustr00mooduoft/anecdotesillustr00mooduoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt",
+      "storage_path": "data/library/verified/moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 215306,
+      "checksum_sha256": "0948d6c39968e06469e20a297e2533a6e9aec71deed3ef646b3c6e4be1a9ed98",
+      "storage_backed": true,
+      "title": "Moody's Stories: Anecdotes, Incidents, and Illustrations",
+      "author": "D. L. Moody",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/moodysstoriesbei00mood/moodysstoriesbei00mood_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt",
+      "storage_path": "data/library/verified/feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 521691,
+      "checksum_sha256": "2aa5b4a5c8fddf3928be1eea06fff97cc295ee7ee70912f289f17a3f6a4b48a2",
+      "storage_backed": true,
+      "title": "Feathers for Arrows: Illustrations from My Note Book",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/feathersforarro01spurgoog/feathersforarro01spurgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sermons-in-candles-c-h-spurgeon.txt",
+      "storage_path": "data/library/verified/sermons-in-candles-c-h-spurgeon.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 216591,
+      "checksum_sha256": "26e62fab407349f1f18f6c1c664024fa5143b7ce57533c175a6aafab1d1a90c9",
+      "storage_backed": true,
+      "title": "Sermons in Candles",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sermonsincandles00spur/sermonsincandles00spur_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/object-sermons-in-outline-c-h-tyndall.txt",
+      "storage_path": "data/library/verified/object-sermons-in-outline-c-h-tyndall.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 328031,
+      "checksum_sha256": "8a795c8fc98e920b644f03688a82c54e9a5e717ddf128a2c3d007af820c8b068",
+      "storage_backed": true,
+      "title": "Object Sermons in Outline",
+      "author": "C. H. Tyndall",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/objectsermonsino00tynd/objectsermonsino00tynd_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt",
+      "storage_path": "data/library/verified/cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 4073096,
+      "checksum_sha256": "5fb333e6927f2462dd38115de0c9118d1c14e457185ad7703db60e530b35e45c",
+      "storage_backed": true,
+      "title": "Cyclopedia of Illustrations for Public Speakers",
+      "author": "Robert Scott",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/cyclopediaofillu00scotrich/cyclopediaofillu00scotrich_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt",
+      "storage_path": "data/library/verified/a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 5274428,
+      "checksum_sha256": "77ac751fe069c9b757526a86cbf880dc0b9338b7534d2646da50e2632960c443",
+      "storage_backed": true,
+      "title": "A Cyclopedia of Illustrations of Moral and Religious Truths",
+      "author": "John Bate",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/cyclopediaofill00bate/cyclopediaofill00bate_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt",
+      "storage_path": "data/library/verified/a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1809976,
+      "checksum_sha256": "923912fb85d1eb0c524f4e652c851a4f6a4842f5a4a16ecec1851122539b08e7",
+      "storage_backed": true,
+      "title": "A Modern Cyclopedia of Illustrations for All Occasions",
+      "author": "G. B. F. Hallock",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/moderncyclopedia00hall/moderncyclopedia00hall_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/five-minute-object-sermons-to-children-sylvanus-stall.txt",
+      "storage_path": "data/library/verified/five-minute-object-sermons-to-children-sylvanus-stall.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 352322,
+      "checksum_sha256": "0529ad623d9804a174295aa1bd735615c404952297d24c4bfa7f846336dd1858",
+      "storage_backed": true,
+      "title": "Five Minute Object Sermons to Children",
+      "author": "Sylvanus Stall",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/fiveminuteobje00stal/fiveminuteobje00stal_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt",
+      "storage_path": "data/library/verified/notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 318566,
+      "checksum_sha256": "67d254e0ec60a403d7caef4d65970da8a43bb6bb9760a632dd3ad6462fe79c17",
+      "storage_backed": true,
+      "title": "Notes from My Bible: From Genesis to Revelation",
+      "author": "D. L. Moody",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/notesfromthebibl00mooduoft/notesfromthebibl00mooduoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/sunday-school-teacher-training-h-m-hamill.txt",
+      "storage_path": "data/library/verified/sunday-school-teacher-training-h-m-hamill.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 154563,
+      "checksum_sha256": "5299c3544c231390f75354666804666c908300b6be8b1898fa29eeafcf7b2e05",
+      "storage_backed": true,
+      "title": "Sunday-School Teacher-Training",
+      "author": "H. M. Hamill",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/sundayschoolteac00hami/sundayschoolteac00hami_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt",
+      "storage_path": "data/library/verified/the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1182155,
+      "checksum_sha256": "de6c03c2ff0436fd3c67f56a033a0f56cc6bc429b2f1dc35f07e229dda34462f",
+      "storage_backed": true,
+      "title": "The Class and the Desk: A Manual for the Sunday School Teacher",
+      "author": "James Comper Gray",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/classdeskmanualf00gray/classdeskmanualf00gray_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt",
+      "storage_path": "data/library/verified/teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 677245,
+      "checksum_sha256": "01254b2989f4255f8ec1c520acdee39c1ed43bb87d2d3165c33e6a1ce0ee0f07",
+      "storage_backed": true,
+      "title": "Teaching and Teachers; or, The Sunday-School Teacher's Teaching Work",
+      "author": "H. Clay Trumbull",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/teachingteachers00trumuoft/teachingteachers00trumuoft_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt",
+      "storage_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 600965,
+      "checksum_sha256": "904f344d740b700a0a40e5983e903bdb5c05b4f1bcd7d568dc4553a67a62a4df",
+      "storage_backed": true,
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Bible Handbooks",
+      "source_url": "https://archive.org/download/bibleatlasmanual00hurl/bibleatlasmanual00hurl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/personal-soul-winning-william-evans.txt",
+      "storage_path": "data/library/verified/personal-soul-winning-william-evans.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 297237,
+      "checksum_sha256": "fd32ef60f100df0db474995d54cec09b0e04d9b643bf25d102ec5ac9876bbd27",
+      "storage_backed": true,
+      "title": "Personal Soul-Winning",
+      "author": "William Evans",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/personalsoulwinn00evan/personalsoulwinn00evan_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt",
+      "storage_path": "data/library/verified/prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 925945,
+      "checksum_sha256": "3b060c3e8d0f332accc1b73e8b79fc9300bf727f2ce8e0a2b7c9408399411ff3",
+      "storage_backed": true,
+      "title": "Prevailing Prayer; or, The Secret of Soul Winning",
+      "author": "Eli Wigle",
+      "category": "Prayer",
+      "source_url": "https://archive.org/download/prevailingprayer00wigl/prevailingprayer00wigl_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt",
+      "storage_path": "data/library/verified/experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 197235,
+      "checksum_sha256": "0e3712196ec07019a183579722ad616d5b34c87e563c1962acda2ad0f71a23f7",
+      "storage_backed": true,
+      "title": "Experimental Object Lessons: Bible Truths Simply Taught",
+      "author": "Charlotte E. Gray",
+      "category": "Preaching & Teaching",
+      "source_url": "https://archive.org/download/experimentalobje00gray/experimentalobje00gray_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt",
+      "storage_path": "data/library/verified/george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 933762,
+      "checksum_sha256": "bbf2092954e07c837145718176b3cddbad2d69df98439246bd8c0c2654d58e64",
+      "storage_backed": true,
+      "title": "George Muller of Bristol and His Witness to a Prayer-Hearing God",
+      "author": "Arthur T. Pierson",
+      "category": "Biographies",
+      "source_url": "https://archive.org/download/georgemllerofb00pier/georgemllerofb00pier_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt",
+      "storage_path": "data/library/verified/the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 3323418,
+      "checksum_sha256": "3922a04e3524e1f34fe08aecc931465b2f49bdbbaeceb020b644bca297df277f",
+      "storage_backed": true,
+      "title": "The Gospel Awakening: Sermons, Addresses, Prayer-Meeting Talks, and Bible Readings",
+      "author": "D. L. Moody and I. D. Sankey",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/gospelawakening00remlgoog/gospelawakening00remlgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt",
+      "storage_path": "data/library/verified/redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2269660,
+      "checksum_sha256": "1eb7bf122984aa034e844a0e620a8b1c7f1da72813db9b521b1bf5098c116c97",
+      "storage_backed": true,
+      "title": "Redemption Songs: A Choice Collection of Hymns and Choruses",
+      "author": "Various",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/redempsc00lond/redempsc00lond_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt",
+      "storage_path": "data/library/verified/songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 997397,
+      "checksum_sha256": "b631452b87805790a14b1be80526ea7320e15a5891ac48cd1f059c1d8788405b",
+      "storage_backed": true,
+      "title": "Songs of Victory: Hymns for Evangelistic Meetings, Worship, Conferences, and the Home Circle",
+      "author": "Andrew W. Bell",
+      "category": "Evangelism",
+      "source_url": "https://archive.org/download/sofvictoryco00bell/sofvictoryco00bell_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -24059,8 +24345,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3772919,
-      "checksum_sha256": "56d7a2aa307fa5defc8c6b188c948cdb1e577902622dbcee44ab4e72830355be"
+      "size_bytes": 3826290,
+      "checksum_sha256": "3809d57059d034b63063ba00726d9588e94cd8b15086525264e75798e39dd2a4"
     },
     {
       "kind": "study_tool",

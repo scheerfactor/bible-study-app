@@ -1,0 +1,373 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-preaching-helps-phase-38.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 22,
+  "imported": 22,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "Bible Object-Lessons: Addresses to the Young",
+      "file": "bible-object-lessons-addresses-to-the-young-james-wells.txt",
+      "bytes": 397937,
+      "words": 72285,
+      "reading_time_minutes": 321,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Anecdotes and Illustrations of D. L. Moody",
+      "file": "anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt",
+      "bytes": 465870,
+      "words": 76631,
+      "reading_time_minutes": 341,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Moody's Stories: Anecdotes, Incidents, and Illustrations",
+      "file": "moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt",
+      "bytes": 215306,
+      "words": 34833,
+      "reading_time_minutes": 155,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Feathers for Arrows: Illustrations from My Note Book",
+      "file": "feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt",
+      "bytes": 521691,
+      "words": 93541,
+      "reading_time_minutes": 416,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sermons in Candles",
+      "file": "sermons-in-candles-c-h-spurgeon.txt",
+      "bytes": 216591,
+      "words": 34420,
+      "reading_time_minutes": 153,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Object Sermons in Outline",
+      "file": "object-sermons-in-outline-c-h-tyndall.txt",
+      "bytes": 328031,
+      "words": 52940,
+      "reading_time_minutes": 235,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Cyclopedia of Illustrations for Public Speakers",
+      "file": "cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt",
+      "bytes": 4073096,
+      "words": 618671,
+      "reading_time_minutes": 2750,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Cyclopedia of Illustrations of Moral and Religious Truths",
+      "file": "a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt",
+      "bytes": 5274428,
+      "words": 816609,
+      "reading_time_minutes": 3629,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Modern Cyclopedia of Illustrations for All Occasions",
+      "file": "a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt",
+      "bytes": 1809976,
+      "words": 278715,
+      "reading_time_minutes": 1239,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Five Minute Object Sermons to Children",
+      "file": "five-minute-object-sermons-to-children-sylvanus-stall.txt",
+      "bytes": 352322,
+      "words": 56237,
+      "reading_time_minutes": 250,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes from My Bible: From Genesis to Revelation",
+      "file": "notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt",
+      "bytes": 318566,
+      "words": 50228,
+      "reading_time_minutes": 223,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sunday-School Teacher-Training",
+      "file": "sunday-school-teacher-training-h-m-hamill.txt",
+      "bytes": 154563,
+      "words": 22969,
+      "reading_time_minutes": 102,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Class and the Desk: A Manual for the Sunday School Teacher",
+      "file": "the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt",
+      "bytes": 1182155,
+      "words": 187847,
+      "reading_time_minutes": 835,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Teaching and Teachers; or, The Sunday-School Teacher's Teaching Work",
+      "file": "teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt",
+      "bytes": 677245,
+      "words": 104031,
+      "reading_time_minutes": 462,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "file": "bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt",
+      "bytes": 600965,
+      "words": 88307,
+      "reading_time_minutes": 392,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Personal Soul-Winning",
+      "file": "personal-soul-winning-william-evans.txt",
+      "bytes": 297237,
+      "words": 46675,
+      "reading_time_minutes": 207,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Prevailing Prayer; or, The Secret of Soul Winning",
+      "file": "prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt",
+      "bytes": 925945,
+      "words": 142749,
+      "reading_time_minutes": 634,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Experimental Object Lessons: Bible Truths Simply Taught",
+      "file": "experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt",
+      "bytes": 197235,
+      "words": 31667,
+      "reading_time_minutes": 141,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "George Muller of Bristol and His Witness to a Prayer-Hearing God",
+      "file": "george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt",
+      "bytes": 933762,
+      "words": 143106,
+      "reading_time_minutes": 636,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Gospel Awakening: Sermons, Addresses, Prayer-Meeting Talks, and Bible Readings",
+      "file": "the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt",
+      "bytes": 3323418,
+      "words": 539204,
+      "reading_time_minutes": 2396,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Redemption Songs: A Choice Collection of Hymns and Choruses",
+      "file": "redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt",
+      "bytes": 2269660,
+      "words": 362326,
+      "reading_time_minutes": 1610,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Songs of Victory: Hymns for Evangelistic Meetings, Worship, Conferences, and the Home Circle",
+      "file": "songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt",
+      "bytes": 997397,
+      "words": 155139,
+      "reading_time_minutes": 690,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Bible Object-Lessons: Addresses to the Young",
+      "author": "James Wells",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-object-lessons-addresses-to-the-young-james-wells.txt"
+    },
+    {
+      "row": 3,
+      "title": "Anecdotes and Illustrations of D. L. Moody",
+      "author": "D. L. Moody",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt"
+    },
+    {
+      "row": 4,
+      "title": "Moody's Stories: Anecdotes, Incidents, and Illustrations",
+      "author": "D. L. Moody",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt"
+    },
+    {
+      "row": 5,
+      "title": "Feathers for Arrows: Illustrations from My Note Book",
+      "author": "C. H. Spurgeon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt"
+    },
+    {
+      "row": 6,
+      "title": "Sermons in Candles",
+      "author": "C. H. Spurgeon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sermons-in-candles-c-h-spurgeon.txt"
+    },
+    {
+      "row": 7,
+      "title": "Object Sermons in Outline",
+      "author": "C. H. Tyndall",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/object-sermons-in-outline-c-h-tyndall.txt"
+    },
+    {
+      "row": 8,
+      "title": "Cyclopedia of Illustrations for Public Speakers",
+      "author": "Robert Scott",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt"
+    },
+    {
+      "row": 9,
+      "title": "A Cyclopedia of Illustrations of Moral and Religious Truths",
+      "author": "John Bate",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt"
+    },
+    {
+      "row": 10,
+      "title": "A Modern Cyclopedia of Illustrations for All Occasions",
+      "author": "G. B. F. Hallock",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt"
+    },
+    {
+      "row": 11,
+      "title": "Five Minute Object Sermons to Children",
+      "author": "Sylvanus Stall",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/five-minute-object-sermons-to-children-sylvanus-stall.txt"
+    },
+    {
+      "row": 12,
+      "title": "Notes from My Bible: From Genesis to Revelation",
+      "author": "D. L. Moody",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt"
+    },
+    {
+      "row": 13,
+      "title": "Sunday-School Teacher-Training",
+      "author": "H. M. Hamill",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sunday-school-teacher-training-h-m-hamill.txt"
+    },
+    {
+      "row": 14,
+      "title": "The Class and the Desk: A Manual for the Sunday School Teacher",
+      "author": "James Comper Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt"
+    },
+    {
+      "row": 15,
+      "title": "Teaching and Teachers; or, The Sunday-School Teacher's Teaching Work",
+      "author": "H. Clay Trumbull",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt"
+    },
+    {
+      "row": 16,
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "author": "Jesse Lyman Hurlbut",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt"
+    },
+    {
+      "row": 17,
+      "title": "Personal Soul-Winning",
+      "author": "William Evans",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/personal-soul-winning-william-evans.txt"
+    },
+    {
+      "row": 18,
+      "title": "Prevailing Prayer; or, The Secret of Soul Winning",
+      "author": "Eli Wigle",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt"
+    },
+    {
+      "row": 19,
+      "title": "Experimental Object Lessons: Bible Truths Simply Taught",
+      "author": "Charlotte E. Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt"
+    },
+    {
+      "row": 20,
+      "title": "George Muller of Bristol and His Witness to a Prayer-Hearing God",
+      "author": "Arthur T. Pierson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt"
+    },
+    {
+      "row": 21,
+      "title": "The Gospel Awakening: Sermons, Addresses, Prayer-Meeting Talks, and Bible Readings",
+      "author": "D. L. Moody and I. D. Sankey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt"
+    },
+    {
+      "row": 22,
+      "title": "Redemption Songs: A Choice Collection of Hymns and Choruses",
+      "author": "Various",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt"
+    },
+    {
+      "row": 23,
+      "title": "Songs of Victory: Hymns for Evangelistic Meetings, Worship, Conferences, and the Home Circle",
+      "author": "Andrew W. Bell",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt"
+    }
+  ]
+}

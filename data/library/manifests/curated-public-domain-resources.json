@@ -79523,5 +79523,1061 @@
     "checksum_sha256": "be5d49281ab0700204e8ce4534d8fde7c5bb9277432a7e1b43f662a95b79fe23",
     "file_size_bytes": 1290979,
     "word_count": 206159
+  },
+  {
+    "title": "Bible Object-Lessons: Addresses to the Young",
+    "author": "James Wells",
+    "year": 1891,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons and Illustrations",
+    "source_url": "https://archive.org/download/bibleobjectless00wellgoog/bibleobjectless00wellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/bibleobjectless00wellgoog/bibleobjectless00wellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-object-lessons-addresses-to-the-young-james-wells.txt",
+    "content_storage_path": "data/library/verified/bible-object-lessons-addresses-to-the-young-james-wells.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleobjectless00wellgoog/bibleobjectless00wellgoog_djvu.txt.",
+    "notes": "Public-domain Bible object-lesson addresses for children, Sunday School, family worship, and simple teaching illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible object-lesson addresses for children, Sunday School, family worship, and simple teaching illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Object Lessons and Illustrations",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Object-Lessons: Addresses to the Young",
+      "author": "James Wells",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons and Illustrations",
+      "badge": "Object Lessons and Illustrations",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 321,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "6d0ed579741af868982ffbc5d7d8e7476972e84d5438866f261847422ba39dd0",
+    "file_size_bytes": 397937,
+    "word_count": 72285
+  },
+  {
+    "title": "Anecdotes and Illustrations of D. L. Moody",
+    "author": "D. L. Moody",
+    "year": 1878,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/anecdotesillustr00mooduoft/anecdotesillustr00mooduoft_djvu.txt",
+    "download_url": "https://archive.org/download/anecdotesillustr00mooduoft/anecdotesillustr00mooduoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt",
+    "content_storage_path": "data/library/verified/anecdotes-and-illustrations-of-d-l-moody-d-l-moody.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/anecdotesillustr00mooduoft/anecdotesillustr00mooduoft_djvu.txt.",
+    "notes": "Public-domain Moody anecdote and illustration collection for evangelistic sermons, Sunday School lessons, and devotional applications. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Moody anecdote and illustration collection for evangelistic sermons, Sunday School lessons, and devotional applications. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Anecdotes and Illustrations of D. L. Moody",
+      "author": "D. L. Moody",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 341,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2c806e0455082f42d8d1debb46f493f2560c68f923785db349855f934c204f9a",
+    "file_size_bytes": 465870,
+    "word_count": 76631
+  },
+  {
+    "title": "Moody's Stories: Anecdotes, Incidents, and Illustrations",
+    "author": "D. L. Moody",
+    "year": 1899,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/moodysstoriesbei00mood/moodysstoriesbei00mood_djvu.txt",
+    "download_url": "https://archive.org/download/moodysstoriesbei00mood/moodysstoriesbei00mood_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt",
+    "content_storage_path": "data/library/verified/moody-s-stories-anecdotes-incidents-and-illustrations-d-l-moody.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/moodysstoriesbei00mood/moodysstoriesbei00mood_djvu.txt.",
+    "notes": "Public-domain Moody story and illustration collection for preaching, evangelism, and teaching applications. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Moody story and illustration collection for preaching, evangelism, and teaching applications. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Moody's Stories: Anecdotes, Incidents, and Illustrations",
+      "author": "D. L. Moody",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 155,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0948d6c39968e06469e20a297e2533a6e9aec71deed3ef646b3c6e4be1a9ed98",
+    "file_size_bytes": 215306,
+    "word_count": 34833
+  },
+  {
+    "title": "Feathers for Arrows: Illustrations from My Note Book",
+    "author": "C. H. Spurgeon",
+    "year": 1870,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/feathersforarro01spurgoog/feathersforarro01spurgoog_djvu.txt",
+    "download_url": "https://archive.org/download/feathersforarro01spurgoog/feathersforarro01spurgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt",
+    "content_storage_path": "data/library/verified/feathers-for-arrows-illustrations-from-my-note-book-c-h-spurgeon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/feathersforarro01spurgoog/feathersforarro01spurgoog_djvu.txt.",
+    "notes": "Public-domain Spurgeon illustration collection for preachers and teachers. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon illustration collection for preachers and teachers. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Feathers for Arrows: Illustrations from My Note Book",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 416,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "2aa5b4a5c8fddf3928be1eea06fff97cc295ee7ee70912f289f17a3f6a4b48a2",
+    "file_size_bytes": 521691,
+    "word_count": 93541
+  },
+  {
+    "title": "Sermons in Candles",
+    "author": "C. H. Spurgeon",
+    "year": 1891,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons and Illustrations",
+    "source_url": "https://archive.org/download/sermonsincandles00spur/sermonsincandles00spur_djvu.txt",
+    "download_url": "https://archive.org/download/sermonsincandles00spur/sermonsincandles00spur_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sermons-in-candles-c-h-spurgeon.txt",
+    "content_storage_path": "data/library/verified/sermons-in-candles-c-h-spurgeon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sermonsincandles00spur/sermonsincandles00spur_djvu.txt.",
+    "notes": "Public-domain Spurgeon object-lesson lectures using common candles as sermon illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Spurgeon object-lesson lectures using common candles as sermon illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Object Lessons and Illustrations",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sermons in Candles",
+      "author": "C. H. Spurgeon",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons and Illustrations",
+      "badge": "Object Lessons and Illustrations",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 153,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "26e62fab407349f1f18f6c1c664024fa5143b7ce57533c175a6aafab1d1a90c9",
+    "file_size_bytes": 216591,
+    "word_count": 34420
+  },
+  {
+    "title": "Object Sermons in Outline",
+    "author": "C. H. Tyndall",
+    "year": 1891,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons and Illustrations",
+    "source_url": "https://archive.org/download/objectsermonsino00tynd/objectsermonsino00tynd_djvu.txt",
+    "download_url": "https://archive.org/download/objectsermonsino00tynd/objectsermonsino00tynd_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/object-sermons-in-outline-c-h-tyndall.txt",
+    "content_storage_path": "data/library/verified/object-sermons-in-outline-c-h-tyndall.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/objectsermonsino00tynd/objectsermonsino00tynd_djvu.txt.",
+    "notes": "Public-domain object-sermon outline resource with illustrations for children, Sunday School, and practical Bible teaching. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain object-sermon outline resource with illustrations for children, Sunday School, and practical Bible teaching. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Object Lessons and Illustrations",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Object Sermons in Outline",
+      "author": "C. H. Tyndall",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons and Illustrations",
+      "badge": "Object Lessons and Illustrations",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 235,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8a795c8fc98e920b644f03688a82c54e9a5e717ddf128a2c3d007af820c8b068",
+    "file_size_bytes": 328031,
+    "word_count": 52940
+  },
+  {
+    "title": "Cyclopedia of Illustrations for Public Speakers",
+    "author": "Robert Scott",
+    "year": 1911,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/cyclopediaofillu00scotrich/cyclopediaofillu00scotrich_djvu.txt",
+    "download_url": "https://archive.org/download/cyclopediaofillu00scotrich/cyclopediaofillu00scotrich_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt",
+    "content_storage_path": "data/library/verified/cyclopedia-of-illustrations-for-public-speakers-robert-scott.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cyclopediaofillu00scotrich/cyclopediaofillu00scotrich_djvu.txt.",
+    "notes": "Public-domain illustration reference for speakers, teachers, and preachers; useful for story and application research. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain illustration reference for speakers, teachers, and preachers; useful for story and application research. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Cyclopedia of Illustrations for Public Speakers",
+      "author": "Robert Scott",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 2750,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5fb333e6927f2462dd38115de0c9118d1c14e457185ad7703db60e530b35e45c",
+    "file_size_bytes": 4073096,
+    "word_count": 618671
+  },
+  {
+    "title": "A Cyclopedia of Illustrations of Moral and Religious Truths",
+    "author": "John Bate",
+    "year": 1871,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/cyclopediaofill00bate/cyclopediaofill00bate_djvu.txt",
+    "download_url": "https://archive.org/download/cyclopediaofill00bate/cyclopediaofill00bate_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt",
+    "content_storage_path": "data/library/verified/a-cyclopedia-of-illustrations-of-moral-and-religious-truths-john-bate.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cyclopediaofill00bate/cyclopediaofill00bate_djvu.txt.",
+    "notes": "Public-domain moral and religious illustration reference for sermon applications, teaching examples, and devotional study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain moral and religious illustration reference for sermon applications, teaching examples, and devotional study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Cyclopedia of Illustrations of Moral and Religious Truths",
+      "author": "John Bate",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 3629,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "77ac751fe069c9b757526a86cbf880dc0b9338b7534d2646da50e2632960c443",
+    "file_size_bytes": 5274428,
+    "word_count": 816609
+  },
+  {
+    "title": "A Modern Cyclopedia of Illustrations for All Occasions",
+    "author": "G. B. F. Hallock",
+    "year": 1922,
+    "category": "Preaching & Teaching",
+    "collection": "Sermon Illustrations and Stories",
+    "source_url": "https://archive.org/download/moderncyclopedia00hall/moderncyclopedia00hall_djvu.txt",
+    "download_url": "https://archive.org/download/moderncyclopedia00hall/moderncyclopedia00hall_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt",
+    "content_storage_path": "data/library/verified/a-modern-cyclopedia-of-illustrations-for-all-occasions-g-b-f-hallock.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/moderncyclopedia00hall/moderncyclopedia00hall_djvu.txt.",
+    "notes": "Public-domain illustration reference arranged for preaching, public speaking, and lesson application. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain illustration reference arranged for preaching, public speaking, and lesson application. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sermon Illustrations and Stories",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Modern Cyclopedia of Illustrations for All Occasions",
+      "author": "G. B. F. Hallock",
+      "category": "Preaching & Teaching",
+      "collection": "Sermon Illustrations and Stories",
+      "badge": "Sermon Illustrations and Stories",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1239,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "923912fb85d1eb0c524f4e652c851a4f6a4842f5a4a16ecec1851122539b08e7",
+    "file_size_bytes": 1809976,
+    "word_count": 278715
+  },
+  {
+    "title": "Five Minute Object Sermons to Children",
+    "author": "Sylvanus Stall",
+    "year": 1894,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons and Illustrations",
+    "source_url": "https://archive.org/download/fiveminuteobje00stal/fiveminuteobje00stal_djvu.txt",
+    "download_url": "https://archive.org/download/fiveminuteobje00stal/fiveminuteobje00stal_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/five-minute-object-sermons-to-children-sylvanus-stall.txt",
+    "content_storage_path": "data/library/verified/five-minute-object-sermons-to-children-sylvanus-stall.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/fiveminuteobje00stal/fiveminuteobje00stal_djvu.txt.",
+    "notes": "Public-domain five-minute object-sermon resource for children, junior church, and Sunday School teaching. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain five-minute object-sermon resource for children, junior church, and Sunday School teaching. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Object Lessons and Illustrations",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Five Minute Object Sermons to Children",
+      "author": "Sylvanus Stall",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons and Illustrations",
+      "badge": "Object Lessons and Illustrations",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 250,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0529ad623d9804a174295aa1bd735615c404952297d24c4bfa7f846336dd1858",
+    "file_size_bytes": 352322,
+    "word_count": 56237
+  },
+  {
+    "title": "Notes from My Bible: From Genesis to Revelation",
+    "author": "D. L. Moody",
+    "year": 1895,
+    "category": "Bible study helps",
+    "collection": "Bible Study Notes",
+    "source_url": "https://archive.org/download/notesfromthebibl00mooduoft/notesfromthebibl00mooduoft_djvu.txt",
+    "download_url": "https://archive.org/download/notesfromthebibl00mooduoft/notesfromthebibl00mooduoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt",
+    "content_storage_path": "data/library/verified/notes-from-my-bible-from-genesis-to-revelation-d-l-moody.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/notesfromthebibl00mooduoft/notesfromthebibl00mooduoft_djvu.txt.",
+    "notes": "Public-domain Moody Bible notes for devotional study, teaching prompts, and sermon preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Moody Bible notes for devotional study, teaching prompts, and sermon preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Study Notes",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Notes from My Bible: From Genesis to Revelation",
+      "author": "D. L. Moody",
+      "category": "Bible study helps",
+      "collection": "Bible Study Notes",
+      "badge": "Bible Study Notes",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 223,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "67d254e0ec60a403d7caef4d65970da8a43bb6bb9760a632dd3ad6462fe79c17",
+    "file_size_bytes": 318566,
+    "word_count": 50228
+  },
+  {
+    "title": "Sunday-School Teacher-Training",
+    "author": "H. M. Hamill",
+    "year": 1904,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Helps",
+    "source_url": "https://archive.org/download/sundayschoolteac00hami/sundayschoolteac00hami_djvu.txt",
+    "download_url": "https://archive.org/download/sundayschoolteac00hami/sundayschoolteac00hami_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/sunday-school-teacher-training-h-m-hamill.txt",
+    "content_storage_path": "data/library/verified/sunday-school-teacher-training-h-m-hamill.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sundayschoolteac00hami/sundayschoolteac00hami_djvu.txt.",
+    "notes": "Public-domain Sunday School teacher-training resource for class preparation, teacher development, and church education. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday School teacher-training resource for class preparation, teacher development, and church education. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sunday School Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Sunday-School Teacher-Training",
+      "author": "H. M. Hamill",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Helps",
+      "badge": "Sunday School Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 102,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5299c3544c231390f75354666804666c908300b6be8b1898fa29eeafcf7b2e05",
+    "file_size_bytes": 154563,
+    "word_count": 22969
+  },
+  {
+    "title": "The Class and the Desk: A Manual for the Sunday School Teacher",
+    "author": "James Comper Gray",
+    "year": 1867,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Helps",
+    "source_url": "https://archive.org/download/classdeskmanualf00gray/classdeskmanualf00gray_djvu.txt",
+    "download_url": "https://archive.org/download/classdeskmanualf00gray/classdeskmanualf00gray_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt",
+    "content_storage_path": "data/library/verified/the-class-and-the-desk-a-manual-for-the-sunday-school-teacher-james-comper-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/classdeskmanualf00gray/classdeskmanualf00gray_djvu.txt.",
+    "notes": "Public-domain Sunday School teacher manual for lesson method, classroom order, and teacher preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday School teacher manual for lesson method, classroom order, and teacher preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sunday School Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Class and the Desk: A Manual for the Sunday School Teacher",
+      "author": "James Comper Gray",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Helps",
+      "badge": "Sunday School Helps",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 835,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "de6c03c2ff0436fd3c67f56a033a0f56cc6bc429b2f1dc35f07e229dda34462f",
+    "file_size_bytes": 1182155,
+    "word_count": 187847
+  },
+  {
+    "title": "Teaching and Teachers; or, The Sunday-School Teacher's Teaching Work",
+    "author": "H. Clay Trumbull",
+    "year": 1901,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Helps",
+    "source_url": "https://archive.org/download/teachingteachers00trumuoft/teachingteachers00trumuoft_djvu.txt",
+    "download_url": "https://archive.org/download/teachingteachers00trumuoft/teachingteachers00trumuoft_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt",
+    "content_storage_path": "data/library/verified/teaching-and-teachers-or-the-sunday-school-teacher-s-teaching-work-h-clay-trumbull.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/teachingteachers00trumuoft/teachingteachers00trumuoft_djvu.txt.",
+    "notes": "Public-domain teacher-training resource for Sunday School instruction, lesson care, and practical Christian education. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain teacher-training resource for Sunday School instruction, lesson care, and practical Christian education. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Sunday School Helps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Teaching and Teachers; or, The Sunday-School Teacher's Teaching Work",
+      "author": "H. Clay Trumbull",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Helps",
+      "badge": "Sunday School Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 462,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "01254b2989f4255f8ec1c520acdee39c1ed43bb87d2d3165c33e6a1ce0ee0f07",
+    "file_size_bytes": 677245,
+    "word_count": 104031
+  },
+  {
+    "title": "Bible Atlas: A Manual of Biblical Geography and History",
+    "author": "Jesse Lyman Hurlbut",
+    "year": 1910,
+    "category": "Bible Handbooks",
+    "collection": "Bible Geography and Maps",
+    "source_url": "https://archive.org/download/bibleatlasmanual00hurl/bibleatlasmanual00hurl_djvu.txt",
+    "download_url": "https://archive.org/download/bibleatlasmanual00hurl/bibleatlasmanual00hurl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt",
+    "content_storage_path": "data/library/verified/bible-atlas-a-manual-of-biblical-geography-and-history-jesse-lyman-hurlbut.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bibleatlasmanual00hurl/bibleatlasmanual00hurl_djvu.txt.",
+    "notes": "Public-domain Bible atlas manual prepared for teachers, students, and Sunday School instruction. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Bible atlas manual prepared for teachers, students, and Sunday School instruction. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Bible Geography and Maps",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Bible Atlas: A Manual of Biblical Geography and History",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Bible Handbooks",
+      "collection": "Bible Geography and Maps",
+      "badge": "Bible Geography and Maps",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 392,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "904f344d740b700a0a40e5983e903bdb5c05b4f1bcd7d568dc4553a67a62a4df",
+    "file_size_bytes": 600965,
+    "word_count": 88307
+  },
+  {
+    "title": "Personal Soul-Winning",
+    "author": "William Evans",
+    "year": 1910,
+    "category": "Evangelism",
+    "collection": "Soul Winning and Personal Work",
+    "source_url": "https://archive.org/download/personalsoulwinn00evan/personalsoulwinn00evan_djvu.txt",
+    "download_url": "https://archive.org/download/personalsoulwinn00evan/personalsoulwinn00evan_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/personal-soul-winning-william-evans.txt",
+    "content_storage_path": "data/library/verified/personal-soul-winning-william-evans.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/personalsoulwinn00evan/personalsoulwinn00evan_djvu.txt.",
+    "notes": "Public-domain personal evangelism resource for soul-winning instruction, outreach training, and practical ministry preparation. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain personal evangelism resource for soul-winning instruction, outreach training, and practical ministry preparation. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Soul Winning and Personal Work",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Personal Soul-Winning",
+      "author": "William Evans",
+      "category": "Evangelism",
+      "collection": "Soul Winning and Personal Work",
+      "badge": "Soul Winning and Personal Work",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 207,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "fd32ef60f100df0db474995d54cec09b0e04d9b643bf25d102ec5ac9876bbd27",
+    "file_size_bytes": 297237,
+    "word_count": 46675
+  },
+  {
+    "title": "Prevailing Prayer; or, The Secret of Soul Winning",
+    "author": "Eli Wigle",
+    "year": 1893,
+    "category": "Prayer",
+    "collection": "Prayer and Soul Winning",
+    "source_url": "https://archive.org/download/prevailingprayer00wigl/prevailingprayer00wigl_djvu.txt",
+    "download_url": "https://archive.org/download/prevailingprayer00wigl/prevailingprayer00wigl_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt",
+    "content_storage_path": "data/library/verified/prevailing-prayer-or-the-secret-of-soul-winning-eli-wigle.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/prevailingprayer00wigl/prevailingprayer00wigl_djvu.txt.",
+    "notes": "Public-domain prayer and soul-winning resource for evangelism, revival emphasis, and devotional study. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prayer and soul-winning resource for evangelism, revival emphasis, and devotional study. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Prayer and Soul Winning",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Prevailing Prayer; or, The Secret of Soul Winning",
+      "author": "Eli Wigle",
+      "category": "Prayer",
+      "collection": "Prayer and Soul Winning",
+      "badge": "Prayer and Soul Winning",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 634,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3b060c3e8d0f332accc1b73e8b79fc9300bf727f2ce8e0a2b7c9408399411ff3",
+    "file_size_bytes": 925945,
+    "word_count": 142749
+  },
+  {
+    "title": "Experimental Object Lessons: Bible Truths Simply Taught",
+    "author": "Charlotte E. Gray",
+    "year": 1910,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons and Illustrations",
+    "source_url": "https://archive.org/download/experimentalobje00gray/experimentalobje00gray_djvu.txt",
+    "download_url": "https://archive.org/download/experimentalobje00gray/experimentalobje00gray_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt",
+    "content_storage_path": "data/library/verified/experimental-object-lessons-bible-truths-simply-taught-charlotte-e-gray.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/experimentalobje00gray/experimentalobje00gray_djvu.txt.",
+    "notes": "Public-domain object-lesson resource for children, Sunday School teaching, and simple Bible truth illustrations. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain object-lesson resource for children, Sunday School teaching, and simple Bible truth illustrations. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Object Lessons and Illustrations",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Experimental Object Lessons: Bible Truths Simply Taught",
+      "author": "Charlotte E. Gray",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons and Illustrations",
+      "badge": "Object Lessons and Illustrations",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 141,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0e3712196ec07019a183579722ad616d5b34c87e563c1962acda2ad0f71a23f7",
+    "file_size_bytes": 197235,
+    "word_count": 31667
+  },
+  {
+    "title": "George Muller of Bristol and His Witness to a Prayer-Hearing God",
+    "author": "Arthur T. Pierson",
+    "year": 1899,
+    "category": "Biographies",
+    "collection": "Prayer Biography",
+    "source_url": "https://archive.org/download/georgemllerofb00pier/georgemllerofb00pier_djvu.txt",
+    "download_url": "https://archive.org/download/georgemllerofb00pier/georgemllerofb00pier_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt",
+    "content_storage_path": "data/library/verified/george-muller-of-bristol-and-his-witness-to-a-prayer-hearing-god-arthur-t-pierson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/georgemllerofb00pier/georgemllerofb00pier_djvu.txt.",
+    "notes": "Public-domain biography of George Muller emphasizing prayer, faith, missions, and practical trust in God. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography of George Muller emphasizing prayer, faith, missions, and practical trust in God. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Prayer Biography",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "George Muller of Bristol and His Witness to a Prayer-Hearing God",
+      "author": "Arthur T. Pierson",
+      "category": "Biographies",
+      "collection": "Prayer Biography",
+      "badge": "Prayer Biography",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 636,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bbf2092954e07c837145718176b3cddbad2d69df98439246bd8c0c2654d58e64",
+    "file_size_bytes": 933762,
+    "word_count": 143106
+  },
+  {
+    "title": "The Gospel Awakening: Sermons, Addresses, Prayer-Meeting Talks, and Bible Readings",
+    "author": "D. L. Moody and I. D. Sankey",
+    "year": 1883,
+    "category": "Evangelism",
+    "collection": "Revival and Evangelistic Meetings",
+    "source_url": "https://archive.org/download/gospelawakening00remlgoog/gospelawakening00remlgoog_djvu.txt",
+    "download_url": "https://archive.org/download/gospelawakening00remlgoog/gospelawakening00remlgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt",
+    "content_storage_path": "data/library/verified/the-gospel-awakening-sermons-addresses-prayer-meeting-talks-and-bible-readings-d-l-moody-and-i-d-sankey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/gospelawakening00remlgoog/gospelawakening00remlgoog_djvu.txt.",
+    "notes": "Public-domain Moody and Sankey revival-meeting collection with sermons, addresses, prayer-meeting talks, and Bible readings. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Moody and Sankey revival-meeting collection with sermons, addresses, prayer-meeting talks, and Bible readings. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Revival and Evangelistic Meetings",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel Awakening: Sermons, Addresses, Prayer-Meeting Talks, and Bible Readings",
+      "author": "D. L. Moody and I. D. Sankey",
+      "category": "Evangelism",
+      "collection": "Revival and Evangelistic Meetings",
+      "badge": "Revival and Evangelistic Meetings",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 2396,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "3922a04e3524e1f34fe08aecc931465b2f49bdbbaeceb020b644bca297df277f",
+    "file_size_bytes": 3323418,
+    "word_count": 539204
+  },
+  {
+    "title": "Redemption Songs: A Choice Collection of Hymns and Choruses",
+    "author": "Various",
+    "year": 1900,
+    "category": "Evangelism",
+    "collection": "Evangelistic Hymns and Songs",
+    "source_url": "https://archive.org/download/redempsc00lond/redempsc00lond_djvu.txt",
+    "download_url": "https://archive.org/download/redempsc00lond/redempsc00lond_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt",
+    "content_storage_path": "data/library/verified/redemption-songs-a-choice-collection-of-hymns-and-choruses-various.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/redempsc00lond/redempsc00lond_djvu.txt.",
+    "notes": "Public-domain hymn and chorus collection for evangelistic meetings, choirs, and home use. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn and chorus collection for evangelistic meetings, choirs, and home use. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Evangelistic Hymns and Songs",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Redemption Songs: A Choice Collection of Hymns and Choruses",
+      "author": "Various",
+      "category": "Evangelism",
+      "collection": "Evangelistic Hymns and Songs",
+      "badge": "Evangelistic Hymns and Songs",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1610,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1eb7bf122984aa034e844a0e620a8b1c7f1da72813db9b521b1bf5098c116c97",
+    "file_size_bytes": 2269660,
+    "word_count": 362326
+  },
+  {
+    "title": "Songs of Victory: Hymns for Evangelistic Meetings, Worship, Conferences, and the Home Circle",
+    "author": "Andrew W. Bell",
+    "year": 1890,
+    "category": "Evangelism",
+    "collection": "Evangelistic Hymns and Songs",
+    "source_url": "https://archive.org/download/sofvictoryco00bell/sofvictoryco00bell_djvu.txt",
+    "download_url": "https://archive.org/download/sofvictoryco00bell/sofvictoryco00bell_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt",
+    "content_storage_path": "data/library/verified/songs-of-victory-hymns-for-evangelistic-meetings-worship-conferences-and-the-home-circle-andrew-w-bell.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/sofvictoryco00bell/sofvictoryco00bell_djvu.txt.",
+    "notes": "Public-domain evangelistic hymn collection for meetings, worship, conferences, and home use. OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain evangelistic hymn collection for meetings, worship, conferences, and home use. OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Evangelistic Hymns and Songs",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Songs of Victory: Hymns for Evangelistic Meetings, Worship, Conferences, and the Home Circle",
+      "author": "Andrew W. Bell",
+      "category": "Evangelism",
+      "collection": "Evangelistic Hymns and Songs",
+      "badge": "Evangelistic Hymns and Songs",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 690,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "b631452b87805790a14b1be80526ea7320e15a5891ac48cd1f059c1d8788405b",
+    "file_size_bytes": 997397,
+    "word_count": 155139
   }
 ]
