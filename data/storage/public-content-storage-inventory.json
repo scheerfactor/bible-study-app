@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-09T16:50:24.490Z",
+  "generated_at": "2026-07-09T20:39:03.860Z",
   "storage_base_env": "CONTENT_PUBLIC_BASE_URL / NEXT_PUBLIC_CONTENT_BASE_URL",
   "path_strategy": "Mirror current repository-relative paths in object storage during the transition.",
   "commentary_entries": 11404,
   "summaries": {
     "library_text": {
-      "files": 1836,
-      "present": 1836,
+      "files": 1847,
+      "present": 1847,
       "missing": 0,
-      "total_bytes": 1593040742,
-      "total_size": "1.48 GB"
+      "total_bytes": 1611193685,
+      "total_size": "1.50 GB"
     },
     "commentary_batch": {
       "files": 256,
@@ -29,8 +29,8 @@
       "files": 1,
       "present": 1,
       "missing": 0,
-      "total_bytes": 3921597,
-      "total_size": "3.74 MB"
+      "total_bytes": 3949128,
+      "total_size": "3.77 MB"
     },
     "study_tool": {
       "files": 9,
@@ -61,20 +61,20 @@
       "total_size": "4.45 MB"
     },
     "all_public_content": {
-      "files": 2154,
-      "present": 2154,
+      "files": 2165,
+      "present": 2165,
       "missing": 0,
-      "total_bytes": 2110642088,
-      "total_size": "1.97 GB"
+      "total_bytes": 2128822562,
+      "total_size": "1.98 GB"
     }
   },
   "large_file_summary": {
-    "library_text_files_over_1mb": 422,
-    "library_text_bytes_over_1mb": 1038587814,
-    "public_content_files_over_1mb": 519,
-    "public_content_bytes_over_1mb": 1486870039,
-    "storage_backed_library_files": 157,
-    "storage_backed_library_bytes": 152246453
+    "library_text_files_over_1mb": 429,
+    "library_text_bytes_over_1mb": 1055176921,
+    "public_content_files_over_1mb": 526,
+    "public_content_bytes_over_1mb": 1503486677,
+    "storage_backed_library_files": 168,
+    "storage_backed_library_bytes": 170399396
   },
   "items": [
     {
@@ -22267,6 +22267,149 @@
       "source_url": "https://archive.org/download/divinelibraryofo00kirk/divinelibraryofo00kirk_djvu.txt"
     },
     {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2658588,
+      "checksum_sha256": "0a16ffb594a1399061a11362779d3ebaeee5fd6adb6be0684cf230e2b380ae27",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 1: The Pentateuch",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe01gran/numericalbiblebe01gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2154863,
+      "checksum_sha256": "932a558683432679c9f737471d189bdd3daaa63bb48a8b91e070e4f78040340c",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 2: The Covenant History, Joshua to 2 Samuel",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe02gran/numericalbiblebe02gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-3-the-psalms-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-3-the-psalms-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2447814,
+      "checksum_sha256": "37294f82d4521025484c6948ddb163f795075b6947ebb59c80f4eae9b5b869cc",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 3: The Psalms",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe03gran/numericalbiblebe03gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 1349316,
+      "checksum_sha256": "18167407258b937909253f3cc740a96dd3331112adf7a6085c5ec7684b1b41b3",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 4: Ezekiel",
+      "author": "F. W. Grant and J. Bloore",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe04gran/numericalbiblebe04gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-5-the-gospels-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-5-the-gospels-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2901047,
+      "checksum_sha256": "05a442d3f0f7f13610b677fbf1af2f111a7696c93363dbf74f74905c6d4e92e3",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 5: The Gospels",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe05gran/numericalbiblebe05gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2691183,
+      "checksum_sha256": "19c917b5089663ef91ad00e8959f6358d3c6cc7d2063b8756ba365da4594db07",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 6: Acts to 2 Corinthians",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe06gran/numericalbiblebe06gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt",
+      "storage_path": "data/library/verified/the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 2386296,
+      "checksum_sha256": "f4effd574b8c976104f961d88a24455093baf25d559a0770a7f3e5d93fdfca93",
+      "storage_backed": true,
+      "title": "The Numerical Bible, Volume 7: Hebrews to Revelation",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/numericalbiblebe07gran/numericalbiblebe07gran_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt",
+      "storage_path": "data/library/verified/lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 618238,
+      "checksum_sha256": "5156db54c606707a0c9eaa406c37addca6b4c9139381cc6eb98753b76fdbe40e",
+      "storage_backed": true,
+      "title": "Lectures on the Second Coming and Kingdom of the Lord and Saviour Jesus Christ",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "source_url": "https://archive.org/download/lecturesonsecon01kellgoog/lecturesonsecon01kellgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/abram-lectures-on-genesis-12-25-william-kelly.txt",
+      "storage_path": "data/library/verified/abram-lectures-on-genesis-12-25-william-kelly.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 252935,
+      "checksum_sha256": "1397116fa554b5c0d546863050f692f132a1616efeff9a7e0e1cf2c627011c0b",
+      "storage_backed": true,
+      "title": "Abram: Lectures on Genesis 12-25",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/abramlectureson00kellgoog/abramlectureson00kellgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt",
+      "storage_path": "data/library/verified/lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 289865,
+      "checksum_sha256": "ff3dd6d4f90d23ddf1fc18ea37b0bdd0e17416de56b498ac4845678e40973dbe",
+      "storage_backed": true,
+      "title": "Lectures on the Day of Atonement: Leviticus XVI",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/lecturesondayat00kellgoog/lecturesondayat00kellgoog_djvu.txt"
+    },
+    {
+      "kind": "library_text",
+      "source_path": "data/library/verified/eleven-lectures-on-the-book-of-job-william-kelly.txt",
+      "storage_path": "data/library/verified/eleven-lectures-on-the-book-of-job-william-kelly.txt",
+      "content_type": "text/plain; charset=utf-8",
+      "size_bytes": 402798,
+      "checksum_sha256": "204f5c6230f4b470a70dc51a0f86c0df0d3267d38b5fb44487a616d396792322",
+      "storage_backed": true,
+      "title": "Eleven Lectures on the Book of Job",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "source_url": "https://archive.org/download/bwb_Y0-BSQ-501/bwb_Y0-BSQ-501_djvu.txt"
+    },
+    {
       "kind": "commentary_batch",
       "source_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
       "storage_path": "data/imports/adam-clarke-reviewed-completion-joshua-starter-commentary.json",
@@ -24839,8 +24982,8 @@
       "source_path": "data/library/manifests/curated-public-domain-resources.json",
       "storage_path": "data/library/manifests/curated-public-domain-resources.json",
       "content_type": "application/json; charset=utf-8",
-      "size_bytes": 3921597,
-      "checksum_sha256": "58360bc72fa0e76e3860b9f01a3a88a6e1ef603ab371f245c82ee7d9e624eae0"
+      "size_bytes": 3949128,
+      "checksum_sha256": "dbcfe27d3628f3872e67c4a422f52e9c161c0a118edb6dc7b8be39927e031b61"
     },
     {
       "kind": "study_tool",

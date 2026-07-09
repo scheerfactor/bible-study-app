@@ -82443,5 +82443,533 @@
     "checksum_sha256": "32a7aa8b511c8f5462a33fda501deec1f4debfe22a3aead1e1a1ed3d2863e158",
     "file_size_bytes": 346150,
     "word_count": 51108
+  },
+  {
+    "title": "The Numerical Bible, Volume 1: The Pentateuch",
+    "author": "F. W. Grant",
+    "year": 1903,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe01gran/numericalbiblebe01gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe01gran/numericalbiblebe01gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe01gran/numericalbiblebe01gran_djvu.txt.",
+    "notes": "Public-domain expository notes on Genesis through Deuteronomy from F. W. Grant's Numerical Bible. Useful for pastors, teachers, dispensational study, and book-by-book Bible exposition; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on Genesis through Deuteronomy from F. W. Grant's Numerical Bible. Useful for pastors, teachers, dispensational study, and book-by-book Bible exposition; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 1: The Pentateuch",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1890,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "0a16ffb594a1399061a11362779d3ebaeee5fd6adb6be0684cf230e2b380ae27",
+    "file_size_bytes": 2658588,
+    "word_count": 425323
+  },
+  {
+    "title": "The Numerical Bible, Volume 2: The Covenant History, Joshua to 2 Samuel",
+    "author": "F. W. Grant",
+    "year": 1901,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe02gran/numericalbiblebe02gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe02gran/numericalbiblebe02gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe02gran/numericalbiblebe02gran_djvu.txt.",
+    "notes": "Public-domain expository notes on Joshua through 2 Samuel from F. W. Grant's Numerical Bible. Useful for Old Testament narrative study, Sunday School preparation, and sermon background; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on Joshua through 2 Samuel from F. W. Grant's Numerical Bible. Useful for Old Testament narrative study, Sunday School preparation, and sermon background; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 2: The Covenant History, Joshua to 2 Samuel",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 1513,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "932a558683432679c9f737471d189bdd3daaa63bb48a8b91e070e4f78040340c",
+    "file_size_bytes": 2154863,
+    "word_count": 340386
+  },
+  {
+    "title": "The Numerical Bible, Volume 3: The Psalms",
+    "author": "F. W. Grant",
+    "year": 1901,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe03gran/numericalbiblebe03gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe03gran/numericalbiblebe03gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-3-the-psalms-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-3-the-psalms-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe03gran/numericalbiblebe03gran_djvu.txt.",
+    "notes": "Public-domain expository notes on the Psalms from F. W. Grant's Numerical Bible. Useful for devotional study, preaching preparation, and comparison with Treasury of David; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on the Psalms from F. W. Grant's Numerical Bible. Useful for devotional study, preaching preparation, and comparison with Treasury of David; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 3: The Psalms",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 1715,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "37294f82d4521025484c6948ddb163f795075b6947ebb59c80f4eae9b5b869cc",
+    "file_size_bytes": 2447814,
+    "word_count": 385967
+  },
+  {
+    "title": "The Numerical Bible, Volume 4: Ezekiel",
+    "author": "F. W. Grant and J. Bloore",
+    "year": 1901,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe04gran/numericalbiblebe04gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe04gran/numericalbiblebe04gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe04gran/numericalbiblebe04gran_djvu.txt.",
+    "notes": "Public-domain expository notes on Ezekiel from F. W. Grant's Numerical Bible, with later notes by J. Bloore. Useful for prophecy study, Bible coverage depth, and sermon preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on Ezekiel from F. W. Grant's Numerical Bible, with later notes by J. Bloore. Useful for prophecy study, Bible coverage depth, and sermon preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 4: Ezekiel",
+      "author": "F. W. Grant and J. Bloore",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 946,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "18167407258b937909253f3cc740a96dd3331112adf7a6085c5ec7684b1b41b3",
+    "file_size_bytes": 1349316,
+    "word_count": 212751
+  },
+  {
+    "title": "The Numerical Bible, Volume 5: The Gospels",
+    "author": "F. W. Grant",
+    "year": 1901,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe05gran/numericalbiblebe05gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe05gran/numericalbiblebe05gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-5-the-gospels-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-5-the-gospels-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe05gran/numericalbiblebe05gran_djvu.txt.",
+    "notes": "Public-domain expository notes on the Gospels from F. W. Grant's Numerical Bible. Useful for Gospel comparison, teaching preparation, and Christ-centered study; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on the Gospels from F. W. Grant's Numerical Bible. Useful for Gospel comparison, teaching preparation, and Christ-centered study; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 5: The Gospels",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 2050,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "05a442d3f0f7f13610b677fbf1af2f111a7696c93363dbf74f74905c6d4e92e3",
+    "file_size_bytes": 2901047,
+    "word_count": 461153
+  },
+  {
+    "title": "The Numerical Bible, Volume 6: Acts to 2 Corinthians",
+    "author": "F. W. Grant",
+    "year": 1901,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe06gran/numericalbiblebe06gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe06gran/numericalbiblebe06gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe06gran/numericalbiblebe06gran_djvu.txt.",
+    "notes": "Public-domain expository notes on Acts through 2 Corinthians from F. W. Grant's Numerical Bible. Useful for church, missions, Pauline epistles, and sermon preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on Acts through 2 Corinthians from F. W. Grant's Numerical Bible. Useful for church, missions, Pauline epistles, and sermon preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 6: Acts to 2 Corinthians",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1894,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "19c917b5089663ef91ad00e8959f6358d3c6cc7d2063b8756ba365da4594db07",
+    "file_size_bytes": 2691183,
+    "word_count": 426050
+  },
+  {
+    "title": "The Numerical Bible, Volume 7: Hebrews to Revelation",
+    "author": "F. W. Grant",
+    "year": 1903,
+    "category": "Commentaries",
+    "collection": "F. W. Grant Numerical Bible",
+    "source_url": "https://archive.org/download/numericalbiblebe07gran/numericalbiblebe07gran_djvu.txt",
+    "download_url": "https://archive.org/download/numericalbiblebe07gran/numericalbiblebe07gran_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt",
+    "content_storage_path": "data/library/verified/the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/numericalbiblebe07gran/numericalbiblebe07gran_djvu.txt.",
+    "notes": "Public-domain expository notes on Hebrews through Revelation from F. W. Grant's Numerical Bible. Useful for epistle study, prophecy study, and comparison with other dispensational commentators; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain expository notes on Hebrews through Revelation from F. W. Grant's Numerical Bible. Useful for epistle study, prophecy study, and comparison with other dispensational commentators; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "F. W. Grant Numerical Bible",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Numerical Bible, Volume 7: Hebrews to Revelation",
+      "author": "F. W. Grant",
+      "category": "Commentaries",
+      "collection": "F. W. Grant Numerical Bible",
+      "badge": "F. W. Grant Numerical Bible",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 1684,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f4effd574b8c976104f961d88a24455093baf25d559a0770a7f3e5d93fdfca93",
+    "file_size_bytes": 2386296,
+    "word_count": 378858
+  },
+  {
+    "title": "Lectures on the Second Coming and Kingdom of the Lord and Saviour Jesus Christ",
+    "author": "William Kelly",
+    "year": 1865,
+    "category": "Bible study helps",
+    "collection": "Prophecy and Second Coming",
+    "source_url": "https://archive.org/download/lecturesonsecon01kellgoog/lecturesonsecon01kellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesonsecon01kellgoog/lecturesonsecon01kellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt",
+    "content_storage_path": "data/library/verified/lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lecturesonsecon01kellgoog/lecturesonsecon01kellgoog_djvu.txt.",
+    "notes": "Public-domain lectures on the second coming and kingdom by William Kelly. Useful for prophecy study, doctrinal comparison, and sermon preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain lectures on the second coming and kingdom by William Kelly. Useful for prophecy study, doctrinal comparison, and sermon preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Prophecy and Second Coming",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Second Coming and Kingdom of the Lord and Saviour Jesus Christ",
+      "author": "William Kelly",
+      "category": "Bible study helps",
+      "collection": "Prophecy and Second Coming",
+      "badge": "Prophecy and Second Coming",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 500,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5156db54c606707a0c9eaa406c37addca6b4c9139381cc6eb98753b76fdbe40e",
+    "file_size_bytes": 618238,
+    "word_count": 112527
+  },
+  {
+    "title": "Abram: Lectures on Genesis 12-25",
+    "author": "William Kelly",
+    "year": 1875,
+    "category": "Commentaries",
+    "collection": "Genesis Exposition",
+    "source_url": "https://archive.org/download/abramlectureson00kellgoog/abramlectureson00kellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/abramlectureson00kellgoog/abramlectureson00kellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/abram-lectures-on-genesis-12-25-william-kelly.txt",
+    "content_storage_path": "data/library/verified/abram-lectures-on-genesis-12-25-william-kelly.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/abramlectureson00kellgoog/abramlectureson00kellgoog_djvu.txt.",
+    "notes": "Public-domain lectures on Abraham's life in Genesis 12-25 by William Kelly. Useful for Genesis study, faith themes, and Sunday School preparation; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain lectures on Abraham's life in Genesis 12-25 by William Kelly. Useful for Genesis study, faith themes, and Sunday School preparation; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Genesis Exposition",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Abram: Lectures on Genesis 12-25",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "Genesis Exposition",
+      "badge": "Genesis Exposition",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 212,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "1397116fa554b5c0d546863050f692f132a1616efeff9a7e0e1cf2c627011c0b",
+    "file_size_bytes": 252935,
+    "word_count": 47595
+  },
+  {
+    "title": "Lectures on the Day of Atonement: Leviticus XVI",
+    "author": "William Kelly",
+    "year": 1889,
+    "category": "Commentaries",
+    "collection": "Leviticus and Typology",
+    "source_url": "https://archive.org/download/lecturesondayat00kellgoog/lecturesondayat00kellgoog_djvu.txt",
+    "download_url": "https://archive.org/download/lecturesondayat00kellgoog/lecturesondayat00kellgoog_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt",
+    "content_storage_path": "data/library/verified/lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/lecturesondayat00kellgoog/lecturesondayat00kellgoog_djvu.txt.",
+    "notes": "Public-domain exposition of Leviticus 16 by William Kelly. Useful for tabernacle, atonement, typology, and Christ-centered Old Testament teaching; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain exposition of Leviticus 16 by William Kelly. Useful for tabernacle, atonement, typology, and Christ-centered Old Testament teaching; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Leviticus and Typology",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lectures on the Day of Atonement: Leviticus XVI",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "Leviticus and Typology",
+      "badge": "Leviticus and Typology",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 233,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ff3dd6d4f90d23ddf1fc18ea37b0bdd0e17416de56b498ac4845678e40973dbe",
+    "file_size_bytes": 289865,
+    "word_count": 52535
+  },
+  {
+    "title": "Eleven Lectures on the Book of Job",
+    "author": "William Kelly",
+    "year": 1903,
+    "category": "Commentaries",
+    "collection": "Job Exposition",
+    "source_url": "https://archive.org/download/bwb_Y0-BSQ-501/bwb_Y0-BSQ-501_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_Y0-BSQ-501/bwb_Y0-BSQ-501_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/eleven-lectures-on-the-book-of-job-william-kelly.txt",
+    "content_storage_path": "data/library/verified/eleven-lectures-on-the-book-of-job-william-kelly.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/bwb_Y0-BSQ-501/bwb_Y0-BSQ-501_djvu.txt.",
+    "notes": "Public-domain lectures on the book of Job by William Kelly. Useful for wisdom literature, suffering, sovereignty, and pastoral teaching; OCR text should be spot-checked before quotation. Labels/warnings: Use with discernment;OCR spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain lectures on the book of Job by William Kelly. Useful for wisdom literature, suffering, sovereignty, and pastoral teaching; OCR text should be spot-checked before quotation.",
+    "resource_labels": [
+      "Job Exposition",
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "OCR spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Eleven Lectures on the Book of Job",
+      "author": "William Kelly",
+      "category": "Commentaries",
+      "collection": "Job Exposition",
+      "badge": "Job Exposition",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 331,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "204f5c6230f4b470a70dc51a0f86c0df0d3267d38b5fb44487a616d396792322",
+    "file_size_bytes": 402798,
+    "word_count": 74563
   }
 ]

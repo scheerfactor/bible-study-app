@@ -1,0 +1,197 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-classic-exposition-phase-41.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 11,
+  "imported": 11,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The Numerical Bible, Volume 1: The Pentateuch",
+      "file": "the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt",
+      "bytes": 2658588,
+      "words": 425323,
+      "reading_time_minutes": 1890,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 2: The Covenant History, Joshua to 2 Samuel",
+      "file": "the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt",
+      "bytes": 2154863,
+      "words": 340386,
+      "reading_time_minutes": 1513,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 3: The Psalms",
+      "file": "the-numerical-bible-volume-3-the-psalms-f-w-grant.txt",
+      "bytes": 2447814,
+      "words": 385967,
+      "reading_time_minutes": 1715,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 4: Ezekiel",
+      "file": "the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt",
+      "bytes": 1349316,
+      "words": 212751,
+      "reading_time_minutes": 946,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 5: The Gospels",
+      "file": "the-numerical-bible-volume-5-the-gospels-f-w-grant.txt",
+      "bytes": 2901047,
+      "words": 461153,
+      "reading_time_minutes": 2050,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 6: Acts to 2 Corinthians",
+      "file": "the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt",
+      "bytes": 2691183,
+      "words": 426050,
+      "reading_time_minutes": 1894,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Numerical Bible, Volume 7: Hebrews to Revelation",
+      "file": "the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt",
+      "bytes": 2386296,
+      "words": 378858,
+      "reading_time_minutes": 1684,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Lectures on the Second Coming and Kingdom of the Lord and Saviour Jesus Christ",
+      "file": "lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt",
+      "bytes": 618238,
+      "words": 112527,
+      "reading_time_minutes": 500,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Abram: Lectures on Genesis 12-25",
+      "file": "abram-lectures-on-genesis-12-25-william-kelly.txt",
+      "bytes": 252935,
+      "words": 47595,
+      "reading_time_minutes": 212,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Lectures on the Day of Atonement: Leviticus XVI",
+      "file": "lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt",
+      "bytes": 289865,
+      "words": 52535,
+      "reading_time_minutes": 233,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Eleven Lectures on the Book of Job",
+      "file": "eleven-lectures-on-the-book-of-job-william-kelly.txt",
+      "bytes": 402798,
+      "words": 74563,
+      "reading_time_minutes": 331,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Numerical Bible, Volume 1: The Pentateuch",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-1-the-pentateuch-f-w-grant.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Numerical Bible, Volume 2: The Covenant History, Joshua to 2 Samuel",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Numerical Bible, Volume 3: The Psalms",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-3-the-psalms-f-w-grant.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Numerical Bible, Volume 4: Ezekiel",
+      "author": "F. W. Grant and J. Bloore",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Numerical Bible, Volume 5: The Gospels",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-5-the-gospels-f-w-grant.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Numerical Bible, Volume 6: Acts to 2 Corinthians",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Numerical Bible, Volume 7: Hebrews to Revelation",
+      "author": "F. W. Grant",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant.txt"
+    },
+    {
+      "row": 9,
+      "title": "Lectures on the Second Coming and Kingdom of the Lord and Saviour Jesus Christ",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lectures-on-the-second-coming-and-kingdom-of-the-lord-and-saviour-jesus-christ-william-kelly.txt"
+    },
+    {
+      "row": 10,
+      "title": "Abram: Lectures on Genesis 12-25",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/abram-lectures-on-genesis-12-25-william-kelly.txt"
+    },
+    {
+      "row": 11,
+      "title": "Lectures on the Day of Atonement: Leviticus XVI",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lectures-on-the-day-of-atonement-leviticus-xvi-william-kelly.txt"
+    },
+    {
+      "row": 12,
+      "title": "Eleven Lectures on the Book of Job",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/eleven-lectures-on-the-book-of-job-william-kelly.txt"
+    }
+  ]
+}

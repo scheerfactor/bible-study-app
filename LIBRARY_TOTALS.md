@@ -4,7 +4,7 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,836
+- Verified public/free Library resources: 1,847
 - Active public commentary entries shown in the app: 8,697
 - Reviewed public commentary import rows: 10,922
 - Commentary validation rows checked, including staging/review files: 13,789
@@ -13,6 +13,15 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 - Public Library duplicate title/author groups: 0
 
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 11 verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 7 F. W. Grant `Numerical Bible` volumes, covering the Pentateuch, Joshua to 2 Samuel, Psalms, Ezekiel, the Gospels, Acts to 2 Corinthians, and Hebrews to Revelation
+- 4 William Kelly exposition / Bible-study resources on the Second Coming, Genesis 12-25, Leviticus 16, and Job
+
+These strengthen commentary depth, Genesis, Job, Psalms, Ezekiel, Gospel study, Acts, Pauline epistles, Hebrews, Revelation, prophecy study, typology, and preacher/teacher preparation without increasing the Vercel bundle. All imported OCR texts are labeled for spot-checking before quotation. The dry run found zero duplicate titles, zero duplicate sources, and zero rights flags before import.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 20 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 
