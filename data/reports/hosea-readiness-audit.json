@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:17:12.293Z",
+  "generated_at": "2026-07-13T19:46:14.181Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -15,9 +15,9 @@
     "meaningfulUniqueWords": 906
   },
   "webster1828": {
-    "wordsWithDefinition": 830,
-    "coveragePercent": 91.6,
-    "reviewedOverlayWords": 547,
+    "wordsWithDefinition": 836,
+    "coveragePercent": 92.3,
+    "reviewedOverlayWords": 554,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -26,18 +26,6 @@
         "sampleRefs": [
           "Hosea 5:13",
           "Hosea 11:5"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "accepteth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:13"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -70,18 +58,6 @@
         "sourceHeadword": null
       },
       {
-        "word": "committing",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:2"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "compasseth",
         "count": 1,
         "sampleRefs": [
@@ -94,58 +70,10 @@
         "sourceHeadword": null
       },
       {
-        "word": "craftsmen",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:2"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "firstripe",
         "count": 1,
         "sampleRefs": [
           "Hosea 9:10"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "forgat",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:13"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "fruitful",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:15"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "imagine",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:15"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,

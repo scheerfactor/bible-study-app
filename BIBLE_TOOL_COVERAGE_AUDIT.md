@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T19:17:16.753Z
+Generated: 2026-07-13T19:46:18.702Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,761/12,454 meaningful KJV words have a lookup candidate (62.3%).
-- Combined word/topic lookup: 10,748/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.3%).
+- Webster 1828: 7,768/12,454 meaningful KJV words have a lookup candidate (62.4%).
+- Combined word/topic lookup: 10,755/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.4%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
 - Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -82,7 +82,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fourscore | 36 | Genesis 16:16; Genesis 35:28; Exodus 7:7; Exodus 7:7; Numbers 2:9 |
 | notwithstanding | 36 | Exodus 16:20; Exodus 21:21; Leviticus 25:32; Leviticus 27:28; Numbers 26:11 |
 | seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
-| fruitful | 35 | Genesis 1:22; Genesis 1:28; Genesis 8:17; Genesis 9:1; Genesis 9:7 |
 | whereas | 33 | Genesis 31:37; Deuteronomy 19:6; Deuteronomy 28:62; 1 Samuel 24:17; 2 Samuel 7:6 |
 | members | 32 | Job 17:7; Psalms 139:16; Matthew 5:29; Matthew 5:30; Romans 6:13 |
 | hungry | 30 | 1 Samuel 2:5; 2 Samuel 17:29; 2 Kings 7:12; Job 5:5; Job 22:7 |
@@ -96,11 +95,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | whereunto | 27 | Numbers 36:3; Numbers 36:4; Deuteronomy 4:26; 2 Chronicles 8:11; Esther 10:2 |
 | accomplished | 26 | 2 Chronicles 36:22; Esther 2:12; Job 15:32; Proverbs 13:19; Isaiah 40:2 |
 | hittite | 26 | Genesis 23:10; Genesis 25:9; Genesis 26:34; Genesis 26:34; Genesis 36:2 |
-| accept | 25 | Genesis 32:20; Exodus 22:11; Leviticus 26:41; Leviticus 26:43; Deuteronomy 33:11 |
 | gotten | 25 | Genesis 4:1; Genesis 12:5; Genesis 31:1; Genesis 31:18; Genesis 31:18 |
 | somewhat | 25 | Leviticus 4:13; Leviticus 4:22; Leviticus 4:27; Leviticus 13:6; Leviticus 13:19 |
 | forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
+| marvellous | 24 | 1 Chronicles 16:12; 1 Chronicles 16:24; Job 5:9; Job 10:16; Psalms 9:1 |
+| alway | 23 | Exodus 25:30; Numbers 9:16; Deuteronomy 11:1; Deuteronomy 28:33; 2 Samuel 9:10 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

@@ -1,6 +1,6 @@
 # Dictionary Coverage Audit
 
-Generated: 2026-07-13T19:17:13.540Z
+Generated: 2026-07-13T19:46:15.421Z
 
 This report checks the app's common study words against the structured Webster 1828 data and text-searchable Easton, Smith, and Nave resources. Easton/Smith/Nave are not yet parsed into normalized dictionary entries, so their matches are text-presence checks.
 

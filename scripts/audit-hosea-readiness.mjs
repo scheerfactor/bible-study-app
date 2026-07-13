@@ -16,9 +16,9 @@ const stopWords = new Set(
 const aliases = {
   hath: "have", hast: "have", hadst: "have", saith: "say", saidst: "say", saying: "say",
   shalt: "shall", spake: "speak", speaketh: "speak", speakest: "speak", spoken: "speak",
-  branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", committest: "commit", dealt: "deal",
+  branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", committing: "commit", committest: "commit", craftsmen: "craftsman", dealt: "deal",
   did: "do", didst: "do", died: "die", doth: "do", drew: "draw", dwelt: "dwell",
-  dwelleth: "dwell", fishes: "fish", fortresses: "fortress", goeth: "go", horsemen: "horseman", known: "know",
+  dwelleth: "dwell", fishes: "fish", forgat: "forget", fortresses: "fortress", goeth: "go", horsemen: "horseman", known: "know",
   mercies: "mercy", merciful: "mercy", oxen: "ox", prevailed: "prevail", rebelled: "rebel",
   rebuker: "rebuke", saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
   surely: "sure", sware: "swear", sworn: "swear", taken: "take", thyself: "self", took: "take", transgressed: "transgress", transgressions: "transgression",
