@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T21:16:47.008Z
+Generated: 2026-07-13T21:51:28.536Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,772/12,454 meaningful KJV words have a lookup candidate (62.4%).
-- Combined word/topic lookup: 10,759/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.4%).
+- Webster 1828: 7,788/12,454 meaningful KJV words have a lookup candidate (62.5%).
+- Combined word/topic lookup: 10,775/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.5%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,017 source verses.
 - Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -71,14 +71,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| compassed | 44 | Genesis 19:4; Deuteronomy 2:1; Deuteronomy 2:3; Joshua 6:11; Joshua 6:14 |
 | forasmuch | 43 | Genesis 41:39; Numbers 10:31; Deuteronomy 12:12; Deuteronomy 17:16; Joshua 17:14 |
 | straightway | 42 | 1 Samuel 9:13; 1 Samuel 28:20; Proverbs 7:22; Daniel 10:17; Matthew 3:16 |
 | either | 41 | Genesis 31:24; Genesis 31:29; Leviticus 10:1; Leviticus 13:49; Leviticus 13:51 |
 | eastward | 40 | Genesis 2:8; Genesis 13:14; Genesis 25:6; Exodus 27:13; Exodus 38:13 |
-| compass | 39 | Exodus 27:5; Exodus 38:4; Numbers 21:4; Numbers 34:5; Joshua 6:3 |
 | defile | 39 | Leviticus 11:44; Leviticus 15:31; Leviticus 18:20; Leviticus 18:23; Leviticus 18:24 |
-| prevailed | 37 | Genesis 7:18; Genesis 7:19; Genesis 7:24; Genesis 30:8; Genesis 32:25 |
 | fourscore | 36 | Genesis 16:16; Genesis 35:28; Exodus 7:7; Exodus 7:7; Numbers 2:9 |
 | notwithstanding | 36 | Exodus 16:20; Exodus 21:21; Leviticus 25:32; Leviticus 27:28; Numbers 26:11 |
 | seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
@@ -87,9 +84,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hungry | 30 | 1 Samuel 2:5; 2 Samuel 17:29; 2 Kings 7:12; Job 5:5; Job 22:7 |
 | putteth | 30 | Exodus 30:33; Numbers 22:38; Deuteronomy 25:11; Deuteronomy 27:15; 1 Kings 20:11 |
 | continued | 29 | Genesis 40:4; Judges 5:17; Ruth 1:2; Ruth 2:7; 1 Samuel 1:12 |
-| prevail | 29 | Genesis 7:20; Numbers 22:6; Judges 16:5; 1 Samuel 2:9; 1 Samuel 17:9 |
 | drawn | 28 | Numbers 22:23; Numbers 22:31; Deuteronomy 21:3; Deuteronomy 30:17; Joshua 5:13 |
-| thief | 28 | Exodus 22:2; Exodus 22:7; Exodus 22:8; Deuteronomy 24:7; Job 24:14 |
 | egyptian | 27 | Genesis 16:1; Genesis 16:3; Genesis 21:9; Genesis 25:12; Genesis 39:1 |
 | fishes | 27 | Genesis 9:2; 1 Kings 4:33; Job 12:8; Ecclesiastes 9:12; Ezekiel 38:20 |
 | whereunto | 27 | Numbers 36:3; Numbers 36:4; Deuteronomy 4:26; 2 Chronicles 8:11; Esther 10:2 |
@@ -101,6 +96,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
 | marvellous | 24 | 1 Chronicles 16:12; 1 Chronicles 16:24; Job 5:9; Job 10:16; Psalms 9:1 |
 | alway | 23 | Exodus 25:30; Numbers 9:16; Deuteronomy 11:1; Deuteronomy 28:33; 2 Samuel 9:10 |
+| besieged | 23 | 2 Samuel 11:1; 2 Samuel 20:15; 1 Kings 16:17; 1 Kings 20:1; 2 Kings 6:24 |
+| blew | 23 | Joshua 6:8; Joshua 6:9; Joshua 6:13; Joshua 6:16; Joshua 6:20 |
+| marvelled | 23 | Genesis 43:33; Psalms 48:5; Matthew 8:10; Matthew 8:27; Matthew 9:8 |
+| mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
+| proclaim | 23 | Exodus 33:19; Leviticus 23:2; Leviticus 23:4; Leviticus 23:21; Leviticus 23:37 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

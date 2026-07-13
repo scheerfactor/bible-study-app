@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T21:15:56.629Z",
+  "generated_at": "2026-07-13T21:51:25.587Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -15,9 +15,9 @@
     "meaningfulUniqueWords": 906
   },
   "webster1828": {
-    "wordsWithDefinition": 840,
-    "coveragePercent": 92.7,
-    "reviewedOverlayWords": 559,
+    "wordsWithDefinition": 847,
+    "coveragePercent": 93.5,
+    "reviewedOverlayWords": 567,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -46,94 +46,10 @@
         "sourceHeadword": null
       },
       {
-        "word": "avenge",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 1:4"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "compasseth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:12"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "firstripe",
         "count": 1,
         "sampleRefs": [
           "Hosea 9:10"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "prevailed",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:4"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "reject",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:6"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "silly",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:11"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "testifieth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:10"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "thief",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:1"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
