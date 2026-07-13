@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T20:17:31.884Z",
+    "generated_at": "2026-07-13T20:53:19.697Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5463,11 +5463,11 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 51,
-      "mappingRows": 724963,
+      "mappingFiles": 52,
+      "mappingRows": 724975,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31013,
+      "mappedVerses": 31015,
       "mappedUniqueKjvWords": 12423,
       "meaningfulWordsWithMapping": 12053,
       "meaningfulWordMappingCoveragePercent": 96.8,
@@ -5501,8 +5501,8 @@
           "chaptersCovered": 14,
           "totalChapters": 14,
           "chapterCoveragePercent": 100,
-          "versesCovered": 159,
-          "rows": 481
+          "versesCovered": 161,
+          "rows": 493
         },
         {
           "book": "Jude",
@@ -7705,8 +7705,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 159,
-      "rows": 481
+      "versesCovered": 161,
+      "rows": 493
     },
     {
       "book": "Joel",

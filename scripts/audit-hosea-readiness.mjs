@@ -36,6 +36,11 @@ function normalize(value) {
   return String(value ?? "").toLowerCase().replace(/[^a-z]/g, "");
 }
 
+function normalizeStrongNumber(value) {
+  const match = String(value ?? "").match(/^([GH])0*(\d+)$/);
+  return match ? `${match[1]}${Number(match[2])}` : String(value ?? "");
+}
+
 function percent(value, total) {
   return total ? Math.round((value / total) * 1000) / 10 : 0;
 }
@@ -121,15 +126,17 @@ for (const file of strongsFiles) {
 }
 const strongsChapters = new Set(strongsRows.map((row) => parseReference(row.verse_ref)?.chapter).filter(Boolean));
 const strongsVerses = new Set(strongsRows.map((row) => row.verse_ref));
-const mappedStrongsNumbers = new Set(strongsRows.map((row) => row.strongs_number).filter(Boolean));
+const mappedStrongsNumbers = new Set(strongsRows.map((row) => normalizeStrongNumber(row.strongs_number)).filter(Boolean));
 
 const lexiconIndex = await readJson("data/strongs/lexicon-batches/index.json", { files: [] });
 const lexiconNumbers = new Set();
 for (const file of lexiconIndex.files ?? []) {
-  for (const entry of await readJson(file, [])) if (entry.strongs_number) lexiconNumbers.add(entry.strongs_number);
+  for (const entry of await readJson(file, [])) {
+    if (entry.strongs_number) lexiconNumbers.add(normalizeStrongNumber(entry.strongs_number));
+  }
 }
 for (const entry of await readJson("data/strongs/sample-verified-strongs.json", [])) {
-  if (entry.strongs_number) lexiconNumbers.add(entry.strongs_number);
+  if (entry.strongs_number) lexiconNumbers.add(normalizeStrongNumber(entry.strongs_number));
 }
 const missingLexiconNumbers = [...mappedStrongsNumbers].filter((number) => !lexiconNumbers.has(number)).sort();
 

@@ -42,6 +42,18 @@
       "review_status": "Verified"
     }
   ],
+  "approved_general_public_license_sources": [
+    {
+      "title": "CrossWire KJV 1769 with Strong's Numbers and Morphology",
+      "publisher": "CrossWire Bible Society",
+      "source_url": "https://gitlab.com/crosswire-bible-society/kjv",
+      "rights_url": "https://wiki.crosswire.org/CrossWire_KJV#Copyright",
+      "rights_status": "CrossWire general public license for any purpose",
+      "commercial_use_notes": "CrossWire states that any copyright in its maintained KJV effort is held by CrossWire Bible Society and grants a general public license to use the text for any purpose. Preserve CrossWire attribution and source links.",
+      "attribution_notes": "The Old Testament Strong's numbers derive from The Bible Foundation; the OSIS XML markup is maintained by CrossWire Bible Society.",
+      "review_status": "Verified"
+    }
+  ],
   "candidate_sources_needing_review": [
     {
       "title": "Original Strong's Exhaustive Concordance scan",
