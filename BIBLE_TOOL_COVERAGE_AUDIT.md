@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T01:07:16.449Z
+Generated: 2026-07-13T10:36:04.081Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -112,36 +112,36 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| war | WAR | 225 | ocr_full_import_needs_spot_review |
-| above | ABOVE' | 223 | ocr_full_import_needs_spot_review |
-| bear | BEAR | 215 | ocr_full_import_needs_spot_review |
-| thyself | SELF | 215 | ocr_full_import_needs_spot_review |
-| long | LONG | 211 | ocr_full_import_needs_spot_review |
-| near | NEAR | 211 | ocr_full_import_needs_spot_review |
-| fruit | FRUIT | 208 | ocr_full_import_needs_spot_review |
-| child | CHILD | 205 | ocr_full_import_needs_spot_review |
-| poor | POOR | 205 | ocr_full_import_needs_spot_review |
-| inhabitants | INHAB'ITANT | 202 | ocr_full_import_needs_spot_review |
-| slew | SLAY | 196 | ocr_full_import_needs_spot_review |
-| afraid | AFRA'ID | 193 | ocr_full_import_needs_spot_review |
-| having | HAVING | 193 | ocr_full_import_needs_spot_review |
-| ground | GROUND | 192 | ocr_full_import_needs_spot_review |
-| rejoice | REJOICE | 192 | ocr_full_import_needs_spot_review |
-| judge | JUDGE | 191 | ocr_full_import_needs_spot_review |
-| yourselves | SELF | 191 | ocr_full_import_needs_spot_review |
-| door | DOOR | 189 | ocr_full_import_needs_spot_review |
-| bare | BARE | 186 | ocr_full_import_needs_spot_review |
-| broken | BRO'KEN | 186 | ocr_full_import_needs_spot_review |
-| slain | SLAIN | 183 | ocr_full_import_needs_spot_review |
-| beast | BEAST | 181 | ocr_full_import_needs_spot_review |
-| cry | CRY | 181 | ocr_full_import_needs_spot_review |
-| began | BEGIN' | 179 | ocr_full_import_needs_spot_review |
-| wall | WALL | 179 | ocr_full_import_needs_spot_review |
-| receive | RECE'IVE | 176 | ocr_full_import_needs_spot_review |
-| reigned | REIGN | 176 | ocr_full_import_needs_spot_review |
-| families | FAM'ILY | 174 | ocr_full_import_needs_spot_review |
-| far | F'AR | 173 | ocr_full_import_needs_spot_review |
-| moreover | MOREO'VER | 171 | ocr_full_import_needs_spot_review |
+| lamb | LAMB | 107 | ocr_full_import_needs_spot_review |
+| lambs | LAMB | 81 | ocr_full_import_needs_spot_review |
+| plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
+| dan | DAN | 72 | ocr_full_import_needs_spot_review |
+| arm | ARM | 67 | ocr_full_import_needs_spot_review |
+| endureth | ENDU'RE | 59 | ocr_full_import_needs_spot_review |
+| officers | OF'FICER | 58 | ocr_full_import_needs_spot_review |
+| fowls | FOWL | 55 | ocr_full_import_needs_spot_review |
+| wonders | WONDER | 55 | ocr_full_import_needs_spot_review |
+| sockets | SOCK'ET | 54 | ocr_full_import_needs_spot_review |
+| guard | GUARD | 51 | ocr_full_import_needs_spot_review |
+| instruments | IN'STRUMENT | 51 | ocr_full_import_needs_spot_review |
+| knowing | KNOWING | 51 | ocr_full_import_needs_spot_review |
+| moon | MOON | 51 | ocr_full_import_needs_spot_review |
+| ourselves | OURSELVES | 51 | ocr_full_import_needs_spot_review |
+| camels | CAM'EL | 50 | ocr_full_import_needs_spot_review |
+| confounded | CONFOUND'ED | 50 | ocr_full_import_needs_spot_review |
+| desired | DESIRED | 50 | ocr_full_import_needs_spot_review |
+| glorified | GLO'RIFIED | 50 | ocr_full_import_needs_spot_review |
+| stretch | STRETCH | 50 | ocr_full_import_needs_spot_review |
+| substance | SUB'STANCE | 50 | ocr_full_import_needs_spot_review |
+| thorns | THORN | 50 | ocr_full_import_needs_spot_review |
+| thrust | THRUST | 50 | ocr_full_import_needs_spot_review |
+| decree | DECREE' | 49 | ocr_full_import_needs_spot_review |
+| driven | DRIVEN | 49 | ocr_full_import_needs_spot_review |
+| fill | FILL | 49 | ocr_full_import_needs_spot_review |
+| need | NEED | 49 | ocr_full_import_needs_spot_review |
+| prosper | PROS'PER | 49 | ocr_full_import_needs_spot_review |
+| speech | SPEECH | 49 | ocr_full_import_needs_spot_review |
+| weep | WEEP | 49 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

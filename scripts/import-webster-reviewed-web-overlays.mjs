@@ -30,24 +30,32 @@ const imported = [];
 try {
   for (const word of requestedWords) {
     const sourceUrl = `https://webstersdictionary1828.com/Dictionary/${encodeURIComponent(word)}`;
-    const response = await page.goto(sourceUrl, { waitUntil: "domcontentloaded", timeout: 30_000 });
-    if (!response?.ok()) throw new Error(`Failed ${response?.status() ?? "unknown"}: ${sourceUrl}`);
+    console.log(`Checking ${word}: ${sourceUrl}`);
+    const response = await fetch(sourceUrl);
+    if (!response.ok) throw new Error(`Failed ${response.status}: ${sourceUrl}`);
+    await page.setContent(await response.text(), { waitUntil: "domcontentloaded", timeout: 30_000 });
 
-    const source = await page.locator("h3.dictionaryhead + hr + div").first().evaluate((element) => ({
-      heading: element.querySelector("strong")?.textContent?.trim() ?? "",
-      paragraphs: Array.from(element.querySelectorAll(":scope > p"))
-        .map((paragraph) => paragraph.textContent?.replace(/\s+/g, " ").trim() ?? "")
-        .filter(Boolean),
-    }));
+    const source = await page.locator("h3.dictionaryhead + hr + div").first().evaluate((element) => {
+      const pageHeading = document.querySelector("h3.dictionaryhead")?.textContent?.trim() ?? "";
+      const entryHeading = element.querySelector(":scope > p:first-child > strong")?.textContent?.trim() ?? pageHeading;
+      return {
+        pageHeading,
+        entryHeading,
+        paragraphs: Array.from(element.querySelectorAll(":scope > p"))
+          .map((paragraph) => paragraph.textContent?.replace(/\s+/g, " ").trim() ?? "")
+          .filter(Boolean),
+      };
+    });
 
     if (!source.paragraphs.length) throw new Error(`No Webster definition paragraphs found: ${sourceUrl}`);
-    const primaryHeading = source.heading.split(",", 1)[0]?.trim() ?? "";
-    if (normalize(primaryHeading) !== normalize(word)) {
-      throw new Error(`Headword mismatch for ${word}: found ${source.heading || "none"}`);
+    if (normalize(source.pageHeading) !== normalize(word) || normalize(source.entryHeading) !== normalize(word)) {
+      throw new Error(
+        `Headword mismatch for ${word}: page ${source.pageHeading || "none"}, entry ${source.entryHeading || "none"}`,
+      );
     }
 
     imported.push({
-      headword: source.heading,
+      headword: source.entryHeading,
       normalized_headword: normalize(word),
       definition: source.paragraphs.join(" "),
       source_title: "American Dictionary of the English Language",

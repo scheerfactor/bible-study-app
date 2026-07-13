@@ -1,5 +1,5 @@
 {
-  "audited_at": "2026-07-13T01:07:07.842Z",
+  "audited_at": "2026-07-13T10:35:57.917Z",
   "review_status": "public_verified_coverage_audit_complete",
   "method": "Compared rows accepted by the commentary importer against the 1,189 KJV chapters. Staged, quarantined, and needs-review rows do not count as reader coverage; legacy reviewed rows without a review_status remain importable by design.",
   "duplicate_safety_note": "Duplicate checks are scoped to the same displayed resource title and chapter. Distinct named editions such as standard and unabridged JFB are not treated as duplicates. Do not add chapter rows merely to increase counts; restore a gap only from the exact verified public-domain work with chapter-level provenance.",
