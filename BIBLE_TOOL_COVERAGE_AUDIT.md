@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T16:22:15.604Z
+Generated: 2026-07-13T16:38:59.017Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,740/12,454 meaningful KJV words have a lookup candidate (62.1%).
-- Combined word/topic lookup: 10,738/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.2%).
+- Webster 1828: 7,758/12,454 meaningful KJV words have a lookup candidate (62.3%).
+- Combined word/topic lookup: 10,745/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.3%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
 - Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -48,24 +48,24 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | saul | 420 | Genesis 36:37; Genesis 36:38; 1 Samuel 9:2; 1 Samuel 9:3; 1 Samuel 9:3 |
 | jacob | 377 | Genesis 25:26; Genesis 25:27; Genesis 25:28; Genesis 25:29; Genesis 25:30 |
 | year | 369 | Genesis 7:11; Genesis 8:13; Genesis 14:4; Genesis 14:5; Genesis 17:21 |
-| woman | 367 | Genesis 2:22; Genesis 2:23; Genesis 3:1; Genesis 3:2; Genesis 3:4 |
 | aaron | 350 | Exodus 4:14; Exodus 4:27; Exodus 4:28; Exodus 4:29; Exodus 4:30 |
 | solomon | 304 | 2 Samuel 5:14; 2 Samuel 12:24; 1 Kings 1:10; 1 Kings 1:11; 1 Kings 1:12 |
 | babylon | 294 | 2 Kings 17:24; 2 Kings 17:30; 2 Kings 20:12; 2 Kings 20:14; 2 Kings 20:17 |
 | pharaoh | 273 | Genesis 12:15; Genesis 12:15; Genesis 12:15; Genesis 12:17; Genesis 12:18 |
-| power | 272 | Genesis 31:6; Genesis 31:29; Genesis 32:28; Genesis 49:3; Exodus 9:16 |
 | philistines | 254 | Genesis 21:32; Genesis 21:34; Genesis 26:1; Genesis 26:8; Genesis 26:14 |
 | abraham | 250 | Genesis 17:5; Genesis 17:9; Genesis 17:15; Genesis 17:17; Genesis 17:18 |
 | joseph | 250 | Genesis 30:24; Genesis 30:25; Genesis 33:2; Genesis 33:7; Genesis 35:24 |
-| wine | 231 | Genesis 9:21; Genesis 9:24; Genesis 14:18; Genesis 19:32; Genesis 19:33 |
 | joshua | 216 | Exodus 17:9; Exodus 17:10; Exodus 17:13; Exodus 17:14; Exodus 24:13 |
-| tree | 201 | Genesis 1:11; Genesis 1:12; Genesis 1:29; Genesis 1:29; Genesis 2:9 |
 | jordan | 197 | Genesis 13:10; Genesis 13:11; Genesis 32:10; Genesis 50:10; Genesis 50:11 |
 | book | 188 | Genesis 5:1; Exodus 17:14; Exodus 24:7; Exodus 32:32; Exodus 32:33 |
 | ephraim | 176 | Genesis 41:52; Genesis 46:20; Genesis 48:1; Genesis 48:5; Genesis 48:13 |
 | moab | 168 | Genesis 19:37; Genesis 36:35; Exodus 15:15; Numbers 21:11; Numbers 21:13 |
 | darkness | 162 | Genesis 1:2; Genesis 1:4; Genesis 1:5; Genesis 1:18; Genesis 15:12 |
 | paul | 162 | Acts 13:9; Acts 13:13; Acts 13:16; Acts 13:43; Acts 13:45 |
+| peter | 162 | Matthew 4:18; Matthew 8:14; Matthew 10:2; Matthew 14:28; Matthew 14:29 |
+| jeremiah | 147 | 2 Kings 23:31; 2 Kings 24:18; 1 Chronicles 5:24; 1 Chronicles 12:4; 1 Chronicles 12:10 |
+| manasseh | 147 | Genesis 41:51; Genesis 46:20; Genesis 48:1; Genesis 48:5; Genesis 48:13 |
+| joab | 145 | 1 Samuel 26:6; 2 Samuel 2:13; 2 Samuel 2:14; 2 Samuel 2:14; 2 Samuel 2:18 |
 
 ## Top KJV Words Still Without Any Study Lookup
 

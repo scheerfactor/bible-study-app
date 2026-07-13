@@ -1,0 +1,1412 @@
+{
+  "generated_at": "2026-07-13T16:39:42.721Z",
+  "status": "ready_with_documented_depth_gaps",
+  "assertions": {
+    "kjvChapters": true,
+    "kjvVerses": true,
+    "strongsEveryChapter": true,
+    "strongsLexiconCards": true,
+    "tskEveryChapter": true,
+    "tenImmediateFullBookCommentaries": true
+  },
+  "kjv": {
+    "chapters": 14,
+    "verses": 197,
+    "meaningfulUniqueWords": 906
+  },
+  "webster1828": {
+    "wordsWithDefinition": 823,
+    "coveragePercent": 90.8,
+    "reviewedOverlayWords": 520,
+    "wordsWithBibleDictionaryFallback": 53,
+    "unresolvedWords": [
+      {
+        "word": "assyrian",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 5:13",
+          "Hosea 11:5"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "jareb",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 5:13",
+          "Hosea 10:6"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "accepteth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:13"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "assyrians",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:1"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "avenge",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 1:4"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "chimney",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:3"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "committest",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:3"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "committing",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:2"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "compasseth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:12"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "craftsmen",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:2"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "firstripe",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:10"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "forgat",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:13"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "fruitful",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:15"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "horsemen",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 1:7"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "imagine",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:15"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "miscarrying",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:14"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "oppress",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:7"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "prevailed",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:4"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "rebuker",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:2"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "recompence",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:7"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "reject",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:6"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "shamefully",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:5"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "silly",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:11"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "taken",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:3"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "testifieth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:10"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "thief",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:1"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "thyself",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:9"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "tyrus",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:13"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "wanderers",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:17"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      },
+      {
+        "word": "yourselves",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:12"
+        ],
+        "hasWebster": false,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": false,
+        "sourceHeadword": null
+      }
+    ],
+    "dirtyBaseEntries": [
+      {
+        "word": "calves",
+        "count": 3,
+        "sampleRefs": [
+          "Hosea 10:5",
+          "Hosea 13:2",
+          "Hosea 14:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "C'ALVE"
+      },
+      {
+        "word": "fowls",
+        "count": 3,
+        "sampleRefs": [
+          "Hosea 2:18",
+          "Hosea 4:3",
+          "Hosea 7:12"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FOWL"
+      },
+      {
+        "word": "punish",
+        "count": 3,
+        "sampleRefs": [
+          "Hosea 4:9",
+          "Hosea 4:14",
+          "Hosea 12:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PUNISH"
+      },
+      {
+        "word": "solemn",
+        "count": 3,
+        "sampleRefs": [
+          "Hosea 2:11",
+          "Hosea 9:5",
+          "Hosea 12:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SOLEMN"
+      },
+      {
+        "word": "transgressed",
+        "count": 3,
+        "sampleRefs": [
+          "Hosea 6:7",
+          "Hosea 7:13",
+          "Hosea 8:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TRANSGRESSED"
+      },
+      {
+        "word": "arms",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 7:15",
+          "Hosea 11:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "ARM"
+      },
+      {
+        "word": "bird",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 9:11",
+          "Hosea 11:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "BIRD"
+      },
+      {
+        "word": "dove",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 7:11",
+          "Hosea 11:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "DOVE"
+      },
+      {
+        "word": "flax",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 2:5",
+          "Hosea 2:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "FLAX"
+      },
+      {
+        "word": "floor",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 9:2",
+          "Hosea 13:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FLOOR"
+      },
+      {
+        "word": "hired",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 8:9",
+          "Hosea 8:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "HIRE"
+      },
+      {
+        "word": "lewdness",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 2:10",
+          "Hosea 6:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "LEWD'NESS"
+      },
+      {
+        "word": "play",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 3:3",
+          "Hosea 4:15"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PLAY"
+      },
+      {
+        "word": "reap",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 8:7",
+          "Hosea 10:12"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REAP"
+      },
+      {
+        "word": "revive",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 6:2",
+          "Hosea 14:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REVIVE"
+      },
+      {
+        "word": "ride",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 10:11",
+          "Hosea 14:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "RIDE"
+      },
+      {
+        "word": "robbers",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 6:9",
+          "Hosea 7:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "ROB'BER"
+      },
+      {
+        "word": "separated",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 4:14",
+          "Hosea 9:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SEP'ARATED"
+      },
+      {
+        "word": "spouses",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 4:13",
+          "Hosea 4:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SPOUSE"
+      },
+      {
+        "word": "strive",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 4:4",
+          "Hosea 4:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "STRIVE"
+      },
+      {
+        "word": "tear",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 5:14",
+          "Hosea 13:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TEAR"
+      },
+      {
+        "word": "thorns",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 2:6",
+          "Hosea 9:6"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "THORN"
+      },
+      {
+        "word": "treacherously",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 5:7",
+          "Hosea 6:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TREACHEROUSLY"
+      },
+      {
+        "word": "tremble",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 11:10",
+          "Hosea 11:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TREM'BLE"
+      },
+      {
+        "word": "whoring",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 4:12",
+          "Hosea 9:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "WHORE"
+      },
+      {
+        "word": "yield",
+        "count": 2,
+        "sampleRefs": [
+          "Hosea 8:7",
+          "Hosea 8:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "YIELD"
+      },
+      {
+        "word": "adulterers",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ADUL'TERER"
+      },
+      {
+        "word": "allure",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ALLU'RE"
+      },
+      {
+        "word": "assemble",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ASSEM'BLE"
+      },
+      {
+        "word": "attain",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ATTA'IN"
+      },
+      {
+        "word": "aven",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "AV'EN"
+      },
+      {
+        "word": "balances",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "BAL'ANCE"
+      },
+      {
+        "word": "bands",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "BAND"
+      },
+      {
+        "word": "birth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "BIRTH"
+      },
+      {
+        "word": "bitterly",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "BIT'TERLY"
+      },
+      {
+        "word": "bottles",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "BOTTLE"
+      },
+      {
+        "word": "bud",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "BUD"
+      },
+      {
+        "word": "cake",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "CAKE"
+      },
+      {
+        "word": "consent",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 6:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "CONSENT'"
+      },
+      {
+        "word": "cords",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "CORD"
+      },
+      {
+        "word": "corrupted",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "CORRUPT'"
+      },
+      {
+        "word": "cure",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "CURE"
+      },
+      {
+        "word": "deceitful",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "DECE'ITFUL"
+      },
+      {
+        "word": "deeply",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "DEE'PLY"
+      },
+      {
+        "word": "discover",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "DISCOVER"
+      },
+      {
+        "word": "dough",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "DOUGH"
+      },
+      {
+        "word": "elms",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "ELM"
+      },
+      {
+        "word": "enough",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ENOUGH'"
+      },
+      {
+        "word": "ere",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ERE"
+      },
+      {
+        "word": "err",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:12"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ERR"
+      },
+      {
+        "word": "exalt",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "EXALT'"
+      },
+      {
+        "word": "execute",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "EX'ECUTE"
+      },
+      {
+        "word": "fallow",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:12"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FAL'LOW"
+      },
+      {
+        "word": "falsehood",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "FALSEHOOD"
+      },
+      {
+        "word": "falsely",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FALSELY"
+      },
+      {
+        "word": "faulty",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FAULTY"
+      },
+      {
+        "word": "fierceness",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FIERCENESS"
+      },
+      {
+        "word": "fly",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "FLY"
+      },
+      {
+        "word": "fortresses",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "FOR'TRESS"
+      },
+      {
+        "word": "fountain",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:15"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "FOUNT' AIN"
+      }
+    ]
+  },
+  "strongs": {
+    "chapters": 14,
+    "verses": 159,
+    "rows": 481,
+    "mappedNumbers": 79,
+    "missingLexiconNumbers": []
+  },
+  "tsk": {
+    "chapters": 14,
+    "sourceVerses": 73,
+    "rows": 145
+  },
+  "commentary": {
+    "sets": 13,
+    "fullBookSets": 11,
+    "immediateFullBookSets": 11,
+    "immediate": [
+      {
+        "file": "adam-clarke-reviewed-completion-prophets-commentary.json",
+        "author": "Adam Clarke",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "barnes-reviewed-completion-prophets-commentary.json",
+        "author": "Albert Barnes",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "biblical-illustrator-reviewed-weak-books-commentary.json",
+        "author": "Joseph S. Exell",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "g-campbell-morgan-hosea-commentary.json",
+        "author": "G. Campbell Morgan",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "h-a-ironside-hosea-commentary.json",
+        "author": "H. A. Ironside",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json",
+        "author": "Jamieson-Fausset-Brown",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "matthew-henry-reviewed-completion-batch-09-commentary.json",
+        "author": "Matthew Henry",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "matthew-poole-reviewed-weak-books-commentary.json",
+        "author": "Matthew Poole",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "preachers-homiletical-reviewed-hosea-commentary.json",
+        "author": "James Wolfendale",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "pulpit-commentary-reviewed-weak-books-commentary.json",
+        "author": "Joseph S. Exell and H. D. M. Spence-Jones",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
+      {
+        "file": "wesley-reviewed-minor-prophets-commentary.json",
+        "author": "John Wesley",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      }
+    ]
+  }
+}

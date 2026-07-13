@@ -82,7 +82,9 @@ import hoseaIronsideCommentary from "../../data/imports/h-a-ironside-hosea-comme
 import hoseaJfbCommentary from "../../data/imports/jfb-reviewed-phase-7-daniel-minor-prophets-start-commentary.json";
 import hoseaMatthewHenryCommentary from "../../data/imports/matthew-henry-reviewed-completion-batch-09-commentary.json";
 import hoseaMatthewPooleCommentary from "../../data/imports/matthew-poole-reviewed-weak-books-commentary.json";
+import hoseaPreachersHomileticalCommentary from "../../data/imports/preachers-homiletical-reviewed-hosea-commentary.json";
 import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
+import hoseaWesleyCommentary from "../../data/imports/wesley-reviewed-minor-prophets-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -3108,8 +3110,8 @@ const READING_PLAN_FOUNDATION: ReadingPlanFoundation[] = [
     id: "hosea-study",
     category: "Hosea Study",
     title: "Hosea Study",
-    description: "A focused Sunday school path for Hosea 4-9 with judgment, mercy, covenant unfaithfulness, and the call to return.",
-    startHere: "Begin with Hosea 4-9 and compare the reviewed commentary voices after reading the KJV text.",
+    description: "A whole-book path for Hosea 1-14 with KJV reading, word study, cross references, commentary, and a detailed Hosea 4-9 teaching unit.",
+    startHere: "Begin with Hosea 1 and compare the reviewed commentary voices only after reading each KJV chapter.",
     status: "Ready",
   },
   {
@@ -4680,9 +4682,9 @@ const BIBLE_STUDY_COLLECTIONS: BibleStudyCollection[] = [
     id: "hosea-study-collection",
     book: "Hosea",
     title: "Hosea Study Collection",
-    description: "Covenant unfaithfulness, rejected knowledge, mercy, judgment, and the call to return in Hosea 4-9.",
-    featuredChapters: ["Hosea 4", "Hosea 5", "Hosea 6", "Hosea 8", "Hosea 9"],
-    playlistTitle: "Hosea 4-9 Sunday School Prep",
+    description: "Whole-book study of covenant unfaithfulness, judgment, mercy, and the LORD's final call to return in Hosea 1-14.",
+    featuredChapters: ["Hosea 1", "Hosea 3", "Hosea 4", "Hosea 6", "Hosea 11", "Hosea 14"],
+    playlistTitle: "Hosea 1-14 Whole-Book Prep",
     relatedResourceTerms: ["hosea", "minor prophets", "repentance", "judgment", "mercy", "covenant", "commentary"],
   },
   {
@@ -4747,15 +4749,15 @@ const STUDY_PLAYLIST_TEMPLATES: StudyPlaylistTemplate[] = [
   },
   {
     id: "hosea-4-9-prep",
-    title: "Hosea 4-9 Sunday School Prep",
-    description: "A focused study playlist for Hosea 4-9 with KJV reading, commentary comparison, and teacher notes.",
+    title: "Hosea 1-14 Whole-Book Prep",
+    description: "A whole-book study playlist with KJV reading, commentary comparison, and focused teacher notes for Hosea 4-9.",
     items: [
-      { kind: "Bible", label: "Hosea 4-9 KJV", minutes: 28 },
-      { kind: "Commentary", label: "Hosea 4-9 commentary comparison", minutes: 45 },
+      { kind: "Bible", label: "Hosea 1-14 KJV", minutes: 42 },
+      { kind: "Commentary", label: "Hosea whole-book commentary comparison", minutes: 70 },
       { kind: "Notes", label: "Hosea teacher notes and applications", minutes: 8 },
       { kind: "Book", label: "Minor prophets background reading", minutes: 15 },
     ],
-    repeatOptions: ["Repeat Hosea 4-9", "Stop after chapter range", "Loop for teaching prep"],
+    repeatOptions: ["Repeat Hosea 1-14", "Stop after chapter range", "Loop for teaching prep"],
   },
   {
     id: "proverbs-daily-wisdom",
@@ -6218,6 +6220,8 @@ const PROVERBS_CHAPTER_GUIDES: ProverbsChapterGuide[] = [
   { chapter: 30, title: "The Words of Agur", theme: "Agur shows humility, God's pure word, contentment, and creation's lessons.", keyVerse: "Proverbs 30:5", journalPrompt: "Where do I need contentment and confidence in God's pure word?", prayerPrompt: "Pray for humility and simple trust in Scripture.", teachingUse: "Good for Bible confidence and humility." },
   { chapter: 31, title: "Virtue and Faithfulness", theme: "Wisdom praises righteous leadership, warning against excess, and virtuous womanhood.", keyVerse: "Proverbs 31:30", journalPrompt: "What does fearing the LORD look like in ordinary faithfulness?", prayerPrompt: "Pray for homes and lives shaped by the fear of the LORD.", teachingUse: "Teach as a chapter of faithful character, not performance pressure." },
 ];
+
+const HOSEA_CHAPTER_NUMBERS = Array.from({ length: 14 }, (_, index) => index + 1);
 
 const HOSEA_CHAPTER_STUDIES: AmosChapterStudy[] = [
   {
@@ -10374,7 +10378,9 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hoseaJfbCommentary as CommentaryEntry[]),
   ...(hoseaMatthewHenryCommentary as CommentaryEntry[]),
   ...(hoseaMatthewPooleCommentary as CommentaryEntry[]),
+  ...(hoseaPreachersHomileticalCommentary as CommentaryEntry[]),
   ...(hoseaPulpitCommentary as CommentaryEntry[]),
+  ...(hoseaWesleyCommentary as CommentaryEntry[]),
 ]
   .filter((entry) => entry.book === "Hosea")
   .map(normalizeCommentaryEntry);
@@ -18348,7 +18354,7 @@ export default function Home() {
     }
     return buildHoseaTeachingNotesMarkdown({
       bookIntroduction: bookIntroductionsByBook.get("Hosea") ?? null,
-      commentaryEntries: commentaryEntries.filter((entry) => entry.book === "Hosea" && entry.chapter >= 4 && entry.chapter <= 9),
+      commentaryEntries: commentaryEntries.filter((entry) => entry.book === "Hosea"),
       teacherNotesByChapter,
       versesByRef,
     });
@@ -18359,24 +18365,24 @@ export default function Home() {
     setSermonDraft((draft) => ({
       ...draft,
       kind: "Lesson",
-      passage: draft.passage || "Hosea 4-9",
-      title: draft.title || "Hosea 4-9 Lesson",
+      passage: draft.passage || "Hosea 1-14",
+      title: draft.title || "Hosea Whole-Book Lesson",
       theme: draft.theme || "The LORD calls His unfaithful people to know Him, return, and hear His warnings",
-      importedStudyNotes: [draft.importedStudyNotes, "## Hosea 4-9 Teaching Dashboard", content].filter(Boolean).join("\n\n"),
+      importedStudyNotes: [draft.importedStudyNotes, "## Hosea 1-14 Teaching Dashboard", content].filter(Boolean).join("\n\n"),
       updatedAt: new Date().toISOString(),
     }));
-    setSyncMessage("Hosea 4-9 teaching dashboard added to sermon prep notes.");
+    setSyncMessage("Hosea 1-14 teaching dashboard added to sermon prep notes.");
     openSermonWorkspace("builder");
   }
 
   function sendHoseaToJournal() {
     startJournalDraft("Passage Guide", {
-      sourceLabel: "Hosea 4-9 Teaching Dashboard",
-      bibleReadingPassage: "Hosea 4-9",
+      sourceLabel: "Hosea 1-14 Teaching Dashboard",
+      bibleReadingPassage: "Hosea 1-14",
       selectedVerseRefs: "Hosea 4:6, Hosea 5:15, Hosea 6:6, Hosea 8:7",
       versePassage: ["Hosea 4:6", "Hosea 5:15", "Hosea 6:6", "Hosea 8:7"].map(verseWorkflowText).join("\n"),
       wordsToDefine: "knowledge, mercy, sacrifice, pride, covenant, repentance",
-      verseSays: "Hosea 4-9 exposes rejected knowledge, false refuge, shallow return, mixture, idolatry, and coming recompence.",
+      verseSays: "Hosea exposes covenant unfaithfulness and judgment while repeatedly calling Israel to return to the LORD and ending with restoring mercy.",
       verseMeans: "The LORD wants mercy and the knowledge of God, not empty ceremony or political self-rescue.",
       verseApplies: "Read the KJV first, then use commentary and questions to prepare a clear Sunday school lesson.",
       teachingThought: hoseaTeachingWorkflowText().slice(0, 1800),
@@ -18384,7 +18390,7 @@ export default function Home() {
   }
 
   function addHoseaToStudyPlaylist() {
-    createCommentaryCompanionPlaylist("Hosea", [4, 5, 6, 7, 8, 9]);
+    createCommentaryCompanionPlaylist("Hosea", HOSEA_CHAPTER_NUMBERS);
   }
 
   function bulletSermonDraft() {
@@ -22532,11 +22538,11 @@ export default function Home() {
             {tab === "hoseaStudyPath" && (
               <HoseaStudyPathScreen
                 versesByRef={versesByRef}
-                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Hosea" && entry.chapter >= 4 && entry.chapter <= 9)}
+                commentaryEntries={commentaryEntries.filter((entry) => entry.book === "Hosea")}
                 bookIntroduction={bookIntroductionsByBook.get("Hosea") ?? null}
                 onBack={() => setTab("bible")}
                 onOpenReference={openReference}
-                onListenHosea={() => listenChapterRange("Hosea", 4, 9)}
+                onListenHosea={() => listenChapterRange("Hosea", 1, 14)}
                 onPlayCommentaryChapter={(chapterNumber) => playCommentaryChapter("Hosea", chapterNumber)}
                 onStopListening={() => stopSpeech()}
                 onSendToSermon={sendHoseaToSermonBuilder}
@@ -22891,7 +22897,7 @@ function TodayScreen({
           </div>
           <div className="flex flex-wrap gap-2">
             <QuickStartButton label="Study Amos" detail="Teaching prep" onClick={onStudyAmos} primary />
-            <QuickStartButton label="Hosea 4-9" detail="Sunday prep" onClick={onStudyHosea} />
+            <QuickStartButton label="Hosea 1-14" detail="Whole-book prep" onClick={onStudyHosea} />
             <QuickStartButton label="Proverbs Daily" detail="Wisdom path" onClick={onStudyProverbs} />
             <QuickStartButton label="Study John" detail="John 3 guide" onClick={onStudyJohn} />
             <QuickStartButton label="Study Romans" detail="Romans 8 guide" onClick={onStudyRomans} />
@@ -22921,7 +22927,7 @@ function TodayScreen({
           {
             title: "Pastor or teacher",
             body: "Start with the passage, open the study guide, then send notes into Sermons when the lesson direction is clear.",
-            primary: "Study Hosea 4-9",
+            primary: "Study Hosea 1-14",
             secondary: "Open Sermons",
             onPrimary: onStudyHosea,
             onSecondary: onOpenSermonResume,
@@ -28797,7 +28803,7 @@ function buildHoseaTeachingNotesMarkdown({
 }) {
   const hoseaIntro = bookIntroduction?.book === "Hosea" ? bookIntroduction : bookIntroductions.find((intro) => intro.book === "Hosea") ?? null;
   const lines: string[] = [
-    "# Hosea 4-9 Teaching Notes",
+    "# Hosea 1-14 Teaching Notes",
     "",
     "Prepared from existing reviewed/stored study data. No doctrine was generated automatically.",
     "",
@@ -28898,8 +28904,8 @@ function buildHoseaTeachingNotesMarkdown({
   });
 
   lines.push(
-    "## Hosea 4-9 Commentary Sources",
-    ...(commentaryEntries.length ? commentaryEntries.map((entry) => `- ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`} - ${entry.author}, ${entry.resource_title}. Source: ${entry.source_url}. Rights: ${entry.public_domain_status}.`) : ["- No reviewed Hosea 4-9 commentary entries have been imported yet."]),
+    "## Hosea 1-14 Commentary Sources",
+    ...(commentaryEntries.length ? commentaryEntries.map((entry) => `- ${entry.reference ?? `${entry.book} ${entry.chapter}:${entry.verse_start}-${entry.verse_end}`} - ${entry.author}, ${entry.resource_title}. Source: ${entry.source_url}. Rights: ${entry.public_domain_status}.`) : ["- No reviewed Hosea commentary entries have been imported yet."]),
     "",
   );
 
@@ -29399,7 +29405,7 @@ function HoseaStudyPathScreen({
       teacherNotesByChapter = {};
     }
     const markdown = buildHoseaTeachingNotesMarkdown({ bookIntroduction, commentaryEntries, teacherNotesByChapter, versesByRef });
-    downloadTextFile("hosea-4-9-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
+    downloadTextFile("hosea-1-14-teaching-notes.md", markdown, "text/markdown;charset=utf-8");
   }
 
   return (
@@ -29412,19 +29418,19 @@ function HoseaStudyPathScreen({
       </div>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm md:p-7">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Hosea 4-9 Study Path</p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare Hosea 4-9</h1>
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Hosea 1-14 Study Path</p>
+        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--ink)] md:text-4xl">Prepare the Book of Hosea</h1>
         <p className="mt-3 max-w-3xl text-base leading-7 text-[var(--scripture-ink)]">
-          A Sunday school prep path for rejected knowledge, shallow return, false refuge, mercy, judgment, and the call to know the LORD.
+          Read and listen to all 14 KJV chapters, compare reviewed public-domain commentary, and use the detailed Hosea 4-9 teaching unit for lesson preparation.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
-          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference("Hosea 4:1")} type="button">
+          <button className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-4 py-2.5 text-sm font-semibold text-white" onClick={() => onOpenReference("Hosea 1:1")} type="button">
             <BookOpen size={16} />
-            Read Hosea 4-9
+            Read Hosea 1-14
           </button>
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--paper)] px-4 py-2.5 text-sm font-semibold text-[var(--green)]" onClick={onListenHosea} type="button">
             <Headphones size={16} />
-            Listen to Hosea 4-9
+            Listen to Hosea 1-14
           </button>
           <button className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--muted)]" onClick={onStopListening} type="button">
             <Square size={15} />
@@ -29461,7 +29467,7 @@ function HoseaStudyPathScreen({
           <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">Sunday school ready</span>
         </div>
         <div className="mt-4 grid gap-3 md:grid-cols-3 xl:grid-cols-6">
-          <MiniStat label="Chapters" value={String(HOSEA_CHAPTER_STUDIES.length)} />
+          <MiniStat label="KJV chapters" value={String(HOSEA_CHAPTER_NUMBERS.length)} />
           <MiniStat label="Questions" value={String(questionCount)} />
           <MiniStat label="Applications" value={String(applicationCount)} />
           <MiniStat label="Outline points" value={String(outlineCount)} />
@@ -29490,7 +29496,7 @@ function HoseaStudyPathScreen({
         </article>
 
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold">Available Hosea 4-9 Commentary Authors</h2>
+          <h2 className="text-lg font-semibold">Available Hosea 1-14 Commentary Authors</h2>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">These are pulled from the existing public-domain commentary data and stay hidden if not verified.</p>
           <div className="mt-4 flex flex-wrap gap-2">
             {commentaryAuthors.map((author) => (
@@ -29499,13 +29505,13 @@ function HoseaStudyPathScreen({
             {!commentaryAuthors.length && <span className="rounded-full bg-[var(--paper)] px-3 py-1.5 text-xs font-semibold text-[var(--muted)]">No reviewed Hosea entries yet</span>}
           </div>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {HOSEA_CHAPTER_STUDIES.map((study) => {
-              const entries = commentaryByChapter.get(study.chapter) ?? [];
+            {HOSEA_CHAPTER_NUMBERS.map((chapterNumber) => {
+              const entries = commentaryByChapter.get(chapterNumber) ?? [];
               return (
-                <div key={`hosea-commentary-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
-                  <p className="text-sm font-semibold text-[var(--green)]">Hosea {study.chapter}</p>
+                <div key={`hosea-commentary-${chapterNumber}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-3">
+                  <p className="text-sm font-semibold text-[var(--green)]">Hosea {chapterNumber}</p>
                   <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{entries.length ? `${entries.length} reviewed commentary entries` : "No reviewed entry yet"}</p>
-                  <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!entries.length} onClick={() => onPlayCommentaryChapter(study.chapter)} type="button">
+                  <button className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-3 py-2 text-xs font-semibold text-[var(--green)] disabled:opacity-50" disabled={!entries.length} onClick={() => onPlayCommentaryChapter(chapterNumber)} type="button">
                     <Play size={14} />
                     Play Commentary
                   </button>
@@ -29526,7 +29532,7 @@ function HoseaStudyPathScreen({
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm xl:col-span-2">
           <h2 className="text-lg font-semibold">Word Study Starters</h2>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            All reviewed starter words for Hosea 4-9 are shown here so the lesson does not hide useful word studies.
+            The reviewed deep-dive starters for Hosea 4-9 are shown here; every chapter also retains tap-to-open Webster and Strong&apos;s tools in the Bible reader.
           </p>
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {wordStudyStarters.map((starter) => (
@@ -29544,7 +29550,7 @@ function HoseaStudyPathScreen({
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm xl:col-span-3">
           <h2 className="text-lg font-semibold">Key Cross References</h2>
           <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
-            Complete reviewed Hosea 4-9 teaching references. Tap any target reference to jump back to the Bible.
+            Reviewed teaching references for the Hosea 4-9 deep-dive unit. TSK links remain available throughout all 14 chapters in the Bible reader.
           </p>
           <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
             {keyCrossReferences.map((reference) => (
@@ -29568,7 +29574,7 @@ function HoseaStudyPathScreen({
       </section>
 
       <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
-        <h2 className="text-lg font-semibold">Chapter Prep</h2>
+        <h2 className="text-lg font-semibold">Detailed Hosea 4-9 Chapter Prep</h2>
         <div className="mt-4 grid gap-3 lg:grid-cols-2">
           {HOSEA_CHAPTER_STUDIES.map((study) => (
             <article key={`hosea-study-path-${study.chapter}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
