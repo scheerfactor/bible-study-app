@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T23:46:01.020Z",
+    "generated_at": "2026-07-13T23:56:19.321Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59852,
+      "entries": 59859,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7788,
       "meaningfulWordsWithoutDefinition": 4666,
@@ -2662,28 +2662,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "corrupt",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 6:11",
-            "Genesis 6:12",
-            "Deuteronomy 4:16",
-            "Deuteronomy 4:25",
-            "Deuteronomy 31:29"
-          ],
-          "lookupCandidates": [
-            "corrupt"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CORRUPT'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "cunning",
           "count": 33,
           "sampleRefs": [
@@ -3636,6 +3614,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LINE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "quiet",
+          "count": 31,
+          "sampleRefs": [
+            "Judges 16:2",
+            "Judges 18:7",
+            "Judges 18:27",
+            "2 Kings 11:20",
+            "1 Chronicles 4:40"
+          ],
+          "lookupCandidates": [
+            "quiet"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "QUI'ET",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11187,28 +11187,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "corrupt",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 6:11",
-          "Genesis 6:12",
-          "Deuteronomy 4:16",
-          "Deuteronomy 4:25",
-          "Deuteronomy 31:29"
-        ],
-        "lookupCandidates": [
-          "corrupt"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CORRUPT'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "cunning",
         "count": 33,
         "sampleRefs": [
@@ -12161,6 +12139,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LINE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "quiet",
+        "count": 31,
+        "sampleRefs": [
+          "Judges 16:2",
+          "Judges 18:7",
+          "Judges 18:27",
+          "2 Kings 11:20",
+          "1 Chronicles 4:40"
+        ],
+        "lookupCandidates": [
+          "quiet"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "QUI'ET",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

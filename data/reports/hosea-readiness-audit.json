@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T23:45:57.848Z",
+  "generated_at": "2026-07-13T23:56:15.849Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 588,
+    "reviewedOverlayWords": 595,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -82,90 +82,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
-      },
-      {
-        "word": "cords",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "CORD"
-      },
-      {
-        "word": "corrupted",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "CORRUPT'"
-      },
-      {
-        "word": "cure",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "CURE"
-      },
-      {
-        "word": "deceitful",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "DECE'ITFUL"
-      },
-      {
-        "word": "deeply",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "DEE'PLY"
-      },
-      {
-        "word": "discover",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "DISCOVER"
-      },
-      {
-        "word": "dough",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "DOUGH"
       },
       {
         "word": "elms",
@@ -790,6 +706,90 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "RECOVER"
+      },
+      {
+        "word": "refused",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REFU'SED"
+      },
+      {
+        "word": "rend",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REND"
+      },
+      {
+        "word": "render",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 14:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "RENDER"
+      },
+      {
+        "word": "rescue",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "RESCUE"
+      },
+      {
+        "word": "rottenness",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:12"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "ROT'TENNESS"
+      },
+      {
+        "word": "sacrificed",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SACRIFICED"
+      },
+      {
+        "word": "safely",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:18"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SAFELY"
       }
     ]
   },
