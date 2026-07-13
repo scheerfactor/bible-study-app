@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T16:46:38.257Z",
+    "generated_at": "2026-07-13T17:18:18.803Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59802,
+      "entries": 59807,
       "normalizedHeadwords": 50989,
       "meaningfulWordsWithDefinition": 7761,
       "meaningfulWordsWithoutDefinition": 4693,
@@ -2573,30 +2573,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "hired",
-          "count": 34,
-          "sampleRefs": [
-            "Genesis 30:16",
-            "Exodus 12:45",
-            "Exodus 22:15",
-            "Leviticus 19:13",
-            "Leviticus 22:10"
-          ],
-          "lookupCandidates": [
-            "hired",
-            "hir",
-            "hire"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HIRE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "likeness",
           "count": 34,
           "sampleRefs": [
@@ -3444,28 +3420,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "reap",
-          "count": 32,
-          "sampleRefs": [
-            "Leviticus 19:9",
-            "Leviticus 19:9",
-            "Leviticus 23:10",
-            "Leviticus 23:22",
-            "Leviticus 25:5"
-          ],
-          "lookupCandidates": [
-            "reap"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REAP",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "room",
           "count": 32,
           "sampleRefs": [
@@ -3641,6 +3595,52 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CRY'ING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "curtains",
+          "count": 31,
+          "sampleRefs": [
+            "Exodus 26:1",
+            "Exodus 26:2",
+            "Exodus 26:3",
+            "Exodus 26:3",
+            "Exodus 26:6"
+          ],
+          "lookupCandidates": [
+            "curtains",
+            "curtain",
+            "curtaine"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CUR'TAIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "due",
+          "count": 31,
+          "sampleRefs": [
+            "Leviticus 10:13",
+            "Leviticus 10:13",
+            "Leviticus 10:14",
+            "Leviticus 10:14",
+            "Leviticus 26:4"
+          ],
+          "lookupCandidates": [
+            "due"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DUE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11107,30 +11107,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "hired",
-        "count": 34,
-        "sampleRefs": [
-          "Genesis 30:16",
-          "Exodus 12:45",
-          "Exodus 22:15",
-          "Leviticus 19:13",
-          "Leviticus 22:10"
-        ],
-        "lookupCandidates": [
-          "hired",
-          "hir",
-          "hire"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HIRE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "likeness",
         "count": 34,
         "sampleRefs": [
@@ -11978,28 +11954,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "reap",
-        "count": 32,
-        "sampleRefs": [
-          "Leviticus 19:9",
-          "Leviticus 19:9",
-          "Leviticus 23:10",
-          "Leviticus 23:22",
-          "Leviticus 25:5"
-        ],
-        "lookupCandidates": [
-          "reap"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REAP",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "room",
         "count": 32,
         "sampleRefs": [
@@ -12175,6 +12129,52 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CRY'ING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "curtains",
+        "count": 31,
+        "sampleRefs": [
+          "Exodus 26:1",
+          "Exodus 26:2",
+          "Exodus 26:3",
+          "Exodus 26:3",
+          "Exodus 26:6"
+        ],
+        "lookupCandidates": [
+          "curtains",
+          "curtain",
+          "curtaine"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CUR'TAIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "due",
+        "count": 31,
+        "sampleRefs": [
+          "Leviticus 10:13",
+          "Leviticus 10:13",
+          "Leviticus 10:14",
+          "Leviticus 10:14",
+          "Leviticus 26:4"
+        ],
+        "lookupCandidates": [
+          "due"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DUE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

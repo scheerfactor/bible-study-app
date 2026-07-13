@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T16:46:33.803Z",
+  "generated_at": "2026-07-13T17:18:14.191Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 823,
     "coveragePercent": 90.8,
-    "reviewedOverlayWords": 522,
+    "reviewedOverlayWords": 527,
     "wordsWithBibleDictionaryFallback": 53,
     "unresolvedWords": [
       {
@@ -453,32 +453,6 @@
         "sourceHeadword": "BIRD"
       },
       {
-        "word": "dove",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 7:11",
-          "Hosea 11:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "DOVE"
-      },
-      {
-        "word": "flax",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 2:5",
-          "Hosea 2:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "FLAX"
-      },
-      {
         "word": "floor",
         "count": 2,
         "sampleRefs": [
@@ -492,32 +466,6 @@
         "sourceHeadword": "FLOOR"
       },
       {
-        "word": "hired",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 8:9",
-          "Hosea 8:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "HIRE"
-      },
-      {
-        "word": "lewdness",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 2:10",
-          "Hosea 6:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "LEWD'NESS"
-      },
-      {
         "word": "play",
         "count": 2,
         "sampleRefs": [
@@ -529,19 +477,6 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "PLAY"
-      },
-      {
-        "word": "reap",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 8:7",
-          "Hosea 10:12"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REAP"
       },
       {
         "word": "revive",
@@ -1130,6 +1065,66 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "FREE'LY"
+      },
+      {
+        "word": "grapes",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "GRAPE"
+      },
+      {
+        "word": "gray",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "GRAY"
+      },
+      {
+        "word": "heated",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "HE'ATED"
+      },
+      {
+        "word": "heel",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "HEEL"
+      },
+      {
+        "word": "hemlock",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "HEM'LOCK"
       }
     ]
   },
