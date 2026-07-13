@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T17:46:11.194Z",
+    "generated_at": "2026-07-13T18:15:38.323Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59812,
+      "entries": 59816,
       "normalizedHeadwords": 50989,
       "meaningfulWordsWithDefinition": 7761,
       "meaningfulWordsWithoutDefinition": 4693,
@@ -2056,30 +2056,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "thorns",
-          "count": 50,
-          "sampleRefs": [
-            "Genesis 3:18",
-            "Exodus 22:6",
-            "Numbers 33:55",
-            "Joshua 23:13",
-            "Judges 2:3"
-          ],
-          "lookupCandidates": [
-            "thorns",
-            "thorn",
-            "thorne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THORN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "sinners",
           "count": 48,
           "sampleRefs": [
@@ -3639,6 +3615,29 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FETCH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "gracious",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 43:29",
+            "Exodus 22:27",
+            "Exodus 33:19",
+            "Exodus 33:19",
+            "Exodus 34:6"
+          ],
+          "lookupCandidates": [
+            "gracious",
+            "graciou"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GRACIOUS",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10588,30 +10587,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "thorns",
-        "count": 50,
-        "sampleRefs": [
-          "Genesis 3:18",
-          "Exodus 22:6",
-          "Numbers 33:55",
-          "Joshua 23:13",
-          "Judges 2:3"
-        ],
-        "lookupCandidates": [
-          "thorns",
-          "thorn",
-          "thorne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THORN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "sinners",
         "count": 48,
         "sampleRefs": [
@@ -12171,6 +12146,29 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FETCH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "gracious",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 43:29",
+          "Exodus 22:27",
+          "Exodus 33:19",
+          "Exodus 33:19",
+          "Exodus 34:6"
+        ],
+        "lookupCandidates": [
+          "gracious",
+          "graciou"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GRACIOUS",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

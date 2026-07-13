@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T17:46:07.016Z",
+  "generated_at": "2026-07-13T18:15:33.818Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 823,
     "coveragePercent": 90.8,
-    "reviewedOverlayWords": 533,
+    "reviewedOverlayWords": 538,
     "wordsWithBibleDictionaryFallback": 53,
     "unresolvedWords": [
       {
@@ -479,19 +479,6 @@
         "sourceHeadword": "PLAY"
       },
       {
-        "word": "robbers",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 6:9",
-          "Hosea 7:1"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "ROB'BER"
-      },
-      {
         "word": "separated",
         "count": 2,
         "sampleRefs": [
@@ -531,32 +518,6 @@
         "sourceHeadword": "STRIVE"
       },
       {
-        "word": "thorns",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 2:6",
-          "Hosea 9:6"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "THORN"
-      },
-      {
-        "word": "treacherously",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 5:7",
-          "Hosea 6:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TREACHEROUSLY"
-      },
-      {
         "word": "whoring",
         "count": 2,
         "sampleRefs": [
@@ -568,18 +529,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "WHORE"
-      },
-      {
-        "word": "adulterers",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ADUL'TERER"
       },
       {
         "word": "allure",
@@ -1120,6 +1069,54 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "JAW"
+      },
+      {
+        "word": "jewels",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "JEWEL"
+      },
+      {
+        "word": "killing",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "KILL'ING"
+      },
+      {
+        "word": "lack",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:6"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "LACK"
+      },
+      {
+        "word": "lamb",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "LAMB"
       }
     ]
   },
