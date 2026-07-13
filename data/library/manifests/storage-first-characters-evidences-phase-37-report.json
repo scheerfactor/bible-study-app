@@ -1,0 +1,182 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-characters-evidences-phase-37.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 18,
+  "imported": 0,
+  "would_import": 0,
+  "skipped": 18,
+  "failed": 0,
+  "duplicate_titles": 18,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Greater Men and Women of the Bible, Volume 2",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "The Greater Men and Women of the Bible, Volume 3",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 4,
+      "title": "The Greater Men and Women of the Bible, Volume 4",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 5,
+      "title": "The Greater Men and Women of the Bible, Volume 5",
+      "author": "James Hastings",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 6,
+      "title": "Portraits of Women of the Bible: Old Testament Series",
+      "author": "Thomas E. Miller",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 7,
+      "title": "Women of the Bible",
+      "author": "Henry Adams Thompson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "Handbook of Bible Manners and Customs",
+      "author": "James M. Freeman",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 9,
+      "title": "The Land and the Book, Volume 1",
+      "author": "William McClure Thomson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 10,
+      "title": "Biography of Gospel Song and Hymn Writers",
+      "author": "J. H. Hall",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 11,
+      "title": "Baptist Hymn Writers and Their Hymns",
+      "author": "Henry S. Burrage",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 12,
+      "title": "Illustrated History of Hymns and Their Authors",
+      "author": "Edwin McKean Long",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 13,
+      "title": "The Poets of the Church",
+      "author": "Edwin F. Hatfield",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 14,
+      "title": "A Year of Hymn Stories",
+      "author": "Carl F. Price",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 15,
+      "title": "Many Infallible Proofs",
+      "author": "Arthur T. Pierson",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Why Is Christianity True? Christian Evidences",
+      "author": "Edgar Young Mullins",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 17,
+      "title": "A View of the Evidences of Christianity",
+      "author": "William Paley",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 18,
+      "title": "Mistakes of Modern Infidels",
+      "author": "George R. Northgraves",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    },
+    {
+      "row": 19,
+      "title": "Synonyms of the Old Testament: Their Bearing on Christian Doctrine",
+      "author": "Robert Baker Girdlestone",
+      "status": "duplicate_title_author",
+      "issues": [
+        "Duplicate title + author"
+      ]
+    }
+  ]
+}

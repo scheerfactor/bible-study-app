@@ -1,0 +1,67 @@
+{
+  "reviewed_at": "2026-07-11",
+  "review_status": "source_title_verified",
+  "rights_basis": "Existing Library manifest records each source as verified public domain. This report verifies Bible-book scope only and does not alter source text.",
+  "volumes": [
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105082-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105082/cu31924101105082_djvu.txt",
+      "books": ["John"],
+      "scope_evidence": "Title text: THE GOSPEL OF ST. JOHN; GOSPEL ACCORDING TO ST. JOHN."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104960-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104960/cu31924101104960_djvu.txt",
+      "books": ["Hebrews"],
+      "scope_evidence": "Title text: HEBREWS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt",
+      "books": ["Hosea"],
+      "scope_evidence": "Title text: HOSEA; THE BOOK OF HOSEA."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105017-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105017/cu31924101105017_djvu.txt",
+      "books": ["Acts"],
+      "scope_evidence": "Title text: THE ACTS OF THE APOSTLES."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104812-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104812/cu31924101104812_djvu.txt",
+      "books": ["1 Samuel"],
+      "scope_evidence": "Title text: I. SAMUEL; BOOKS OF SAMUEL."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104614-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104614/cu31924101104614_djvu.txt",
+      "books": ["Ezekiel"],
+      "scope_evidence": "Introduction title: EZEKIEL - THE PROPHET."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105066-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105066/cu31924101105066_djvu.txt",
+      "books": ["Luke"],
+      "scope_evidence": "Title text: ST. LUKE; GOSPEL ACCORDING TO ST. LUKE."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105090-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105090/cu31924101105090_djvu.txt",
+      "books": ["Mark"],
+      "scope_evidence": "Running title: THE GOSPEL ACCORDING TO ST. MARK; begins with chapter 9 material."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104622-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104622/cu31924101104622_djvu.txt",
+      "books": ["Song of Solomon"],
+      "scope_evidence": "Title text: SONG OF SOLOMON; THE SONG OF SOLOMON."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105033-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105033/cu31924101105033_djvu.txt",
+      "books": ["Mark"],
+      "scope_evidence": "Title and introduction text: THE GOSPEL ACCORDING TO ST. MARK; Life of St. Mark the Evangelist."
+    }
+  ]
+}

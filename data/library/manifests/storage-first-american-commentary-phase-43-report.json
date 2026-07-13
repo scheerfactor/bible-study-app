@@ -1,0 +1,69 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-american-commentary-phase-43.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 3,
+  "imported": 3,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "American Commentary on the New Testament: Romans",
+      "file": "american-commentary-on-the-new-testament-romans-albert-n-arnold-and-d-b-ford-edited-by-alvah-hovey.txt",
+      "bytes": 1790653,
+      "words": 272178,
+      "reading_time_minutes": 1210,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Corinthians to Thessalonians",
+      "file": "american-commentary-on-the-new-testament-corinthians-to-thessalonians-e-p-gould-alvah-hovey-justin-a-smith-j-b.txt",
+      "bytes": 2872299,
+      "words": 491939,
+      "reading_time_minutes": 2186,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "American Commentary on the New Testament: Timothy to Peter",
+      "file": "american-commentary-on-the-new-testament-timothy-to-peter-h-harvey-a-c-kendrick-e-t-winkler-n-m-williams-edite.txt",
+      "bytes": 2526379,
+      "words": 425099,
+      "reading_time_minutes": 1889,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "American Commentary on the New Testament: Romans",
+      "author": "Albert N. Arnold and D. B. Ford; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-romans-albert-n-arnold-and-d-b-ford-edited-by-alvah-hovey.txt"
+    },
+    {
+      "row": 3,
+      "title": "American Commentary on the New Testament: Corinthians to Thessalonians",
+      "author": "E. P. Gould; Alvah Hovey; Justin A. Smith; J. B. Gough Pidge; Edwin C. Dargan; William A. Stevens",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-corinthians-to-thessalonians-e-p-gould-alvah-hovey-justin-a-smith-j-b.txt"
+    },
+    {
+      "row": 4,
+      "title": "American Commentary on the New Testament: Timothy to Peter",
+      "author": "H. Harvey; A. C. Kendrick; E. T. Winkler; N. M. Williams; edited by Alvah Hovey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/american-commentary-on-the-new-testament-timothy-to-peter-h-harvey-a-c-kendrick-e-t-winkler-n-m-williams-edite.txt"
+    }
+  ]
+}

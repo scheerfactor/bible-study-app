@@ -1,0 +1,37 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-45-retry.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "Lectures on Preaching, and the Several Branches of the Ministerial Office",
+      "file": "lectures-on-preaching-and-the-several-branches-of-the-ministerial-office-philip-doddridge.txt",
+      "bytes": 243078,
+      "words": 36660,
+      "reading_time_minutes": 163,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Lectures on Preaching, and the Several Branches of the Ministerial Office",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lectures-on-preaching-and-the-several-branches-of-the-ministerial-office-philip-doddridge.txt"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
 import { normalizeHeadword } from "./import-utils.mjs";
 
@@ -11,13 +11,39 @@ const defaultSources = [
 const outputPath = process.argv[2] || "data/generated/websters-1828.entries.json";
 const sourceFiles = process.argv.slice(3).length ? process.argv.slice(3) : defaultSources;
 
+const missingSourceFiles = [];
+for (const sourceFile of sourceFiles) {
+  try {
+    await access(sourceFile);
+  } catch {
+    missingSourceFiles.push(sourceFile);
+  }
+}
+
+if (missingSourceFiles.length) {
+  const existingEntries = JSON.parse(await readFile(outputPath, "utf8"));
+  if (!Array.isArray(existingEntries) || !existingEntries.length) {
+    throw new Error(`Webster source files are unavailable and ${outputPath} has no reusable structured data.`);
+  }
+
+  console.log("Webster source scans are not present in this storage-first worktree.");
+  console.log("Preserving the existing structured base; reviewed overlays remain separate and are merged by the app at read time.");
+  console.table({
+    output: outputPath,
+    existing_entries: existingEntries.length,
+    missing_sources: missingSourceFiles.length,
+  });
+  for (const sourceFile of missingSourceFiles) console.log(`- ${sourceFile}`);
+  process.exit(0);
+}
+
 function normalizedText(line) {
   return line.replace(/\s+/g, " ").trim();
 }
 
 function isEntryStart(line) {
   const cleaned = normalizedText(line);
-  const match = cleaned.match(/^([A-Z][A-Z'\- ]{1,45}),\s+(.{1,70})/);
+  const match = cleaned.match(/^([A-Z][A-Z'\- ]{1,45})[,.]\s+(.{1,70})/);
   if (!match) return null;
 
   const headword = match[1].trim();

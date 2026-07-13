@@ -666,7 +666,35 @@ function cleanCommentaryEntryText(entry: CommentaryEntry) {
     }
   }
 
-  return text.replace(/\n{3,}/g, "\n\n").trim();
+  text = text
+    .replace(/\bP\s+a\s+u\s+l\b/g, "Paul")
+    .replace(/\bJ\s+e\s+s\s+u\s+s\b/g, "Jesus")
+    .replace(/\bC\s+h\s+r\s+i\s+s\s+t\b/g, "Christ")
+    .replace(/\bM\s+o\s+s\s+e\s+s\b/g, "Moses")
+    .replace(/\bD\s+a\s+v\s+i\s+d\b/g, "David")
+    .replace(/\bA\s+b\s+r\s+a\s+h\s+a\s+m\b/g, "Abraham")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+  if (!text.includes("\n\n") && text.length > 900) {
+    const sentences = text.match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)/g)?.map((sentence) => sentence.trim()).filter(Boolean) ?? [];
+    const paragraphs: string[] = [];
+    let paragraph = "";
+
+    for (const sentence of sentences) {
+      if (paragraph && `${paragraph} ${sentence}`.length > 700) {
+        paragraphs.push(paragraph);
+        paragraph = sentence;
+      } else {
+        paragraph = `${paragraph} ${sentence}`.trim();
+      }
+    }
+
+    if (paragraph) paragraphs.push(paragraph);
+    if (paragraphs.length > 1) text = paragraphs.join("\n\n");
+  }
+
+  return text;
 }
 
 function normalizeCommentaryEntry(entry: CommentaryEntry): CommentaryEntry {
@@ -729,6 +757,13 @@ type CommentaryCoverage = {
   authorCoverage: CommentaryCoverageAuthor[];
   stagingSummaries: CommentaryStagingSummary[];
   candidateAuthors: CommentaryExpansionCandidate[];
+};
+
+type DeferredCommentaryLoadStatus = {
+  loadedFiles: number;
+  totalFiles: number;
+  loading: boolean;
+  mode: "starter" | "complete";
 };
 
 type BibleCoverageBook = {
@@ -802,6 +837,9 @@ type CommentaryGuideProfile = {
   timePeriod: string;
   biography: string;
   writingStyle: string;
+  coverageScope?: string;
+  coverageSummary?: string;
+  coverageUseNote?: string;
   strengths: string[];
   weaknesses: string[];
   bestUse: string;
@@ -810,6 +848,8 @@ type CommentaryGuideProfile = {
   bestFor: string[];
   priority: number;
 };
+
+type CommentaryExplorerGuideId = "recommended" | "teaching" | "preaching" | "devotional" | "word-study" | "all";
 
 type StrongMvpEntry = {
   strongsNumber: string;
@@ -951,6 +991,11 @@ type CommentaryVolumeReferenceHint = {
   label: string;
   priority: "Open now" | "Teaching focus" | "Index next";
   note: string;
+  chapterIndex?: {
+    book: string;
+    sourceUrl: string;
+    sourceLineStarts: Record<number, number>;
+  };
 };
 
 type LicensedResourceLink = {
@@ -3102,6 +3147,7 @@ const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the W
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
 const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
 const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edition)";
+const AMERICAN_COMMENTARY_NT_COLLECTION = "American Commentary on the New Testament";
 const COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS = [
   "Barnes' Notes on the Bible",
   "Commentary Critical and Explanatory on the Whole Bible",
@@ -3125,6 +3171,7 @@ const ACTIVE_COMMENTARY_COLLECTIONS = [
   H_A_IRONSIDE_COMMENTARY_COLLECTION,
   TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
   SCOFIELD_REFERENCE_NOTES_COLLECTION,
+  AMERICAN_COMMENTARY_NT_COLLECTION,
   ...COMMENTARY_ACQUISITION_SAMPLE_COLLECTIONS,
   ...AMOS_VERIFIED_COMMENTARY_COLLECTIONS,
 ];
@@ -3220,26 +3267,26 @@ const COMMENTARY_EXPANSION_CANDIDATES: CommentaryExpansionCandidate[] = [
   {
     author: "Matthew Poole",
     resourceTitle: "Matthew Poole's English Annotations / Commentary",
-    status: "Needs Review",
-    sourcePlan: "Identify an original public-domain source, document edition details, and stage one small reviewed sample before any import.",
-    rightsNotes: "Do not import modern edited web copies or unclear source text. Exact source and reuse terms are required first.",
-    recommendedUse: "Potential Puritan-era comparison voice for teachers and preachers after source review.",
+    status: "Verified",
+    sourcePlan: "Whole-Bible chapter coverage is now public through reviewed StudyLight/BibleSupport source pages with public-domain reuse notes preserved.",
+    rightsNotes: "Use only the reviewed chapter records with source URLs and public-domain/BibleSupport notes. Do not mix with modern edited editions.",
+    recommendedUse: "Concise Puritan-era explanatory comparison for teachers and preachers after reading the KJV text.",
   },
   {
     author: "The Pulpit Commentary",
     resourceTitle: "The Pulpit Commentary",
-    status: "Needs Review",
-    sourcePlan: "Choose one original public-domain volume, validate chapter splits, then stage a small sample.",
-    rightsNotes: "Older volumes are likely public-domain, but exact scanned/source edition and reuse terms must be documented.",
-    recommendedUse: "Future preaching and teaching comparison, collapsed by default.",
+    status: "Verified",
+    sourcePlan: "Whole-Bible chapter coverage is now public through reviewed StudyLight/BibleSupport source pages with public-domain reuse notes preserved.",
+    rightsNotes: "Use only the reviewed chapter records with source URLs and public-domain/BibleSupport notes. Keep long entries collapsed by default.",
+    recommendedUse: "Preaching and teaching comparison, homiletic helps, and application prompts.",
   },
   {
     author: "The Biblical Illustrator",
     resourceTitle: "The Biblical Illustrator",
-    status: "Needs Review",
-    sourcePlan: "Choose one verified older volume and stage sample entries only after source review.",
-    rightsNotes: "Likely public-domain in older volumes; exact volume/source verification required.",
-    recommendedUse: "Future illustration and preaching help with strong discernment labels.",
+    status: "Verified",
+    sourcePlan: "Whole-Bible chapter coverage is now public through reviewed StudyLight/BibleSupport source pages with public-domain reuse notes preserved.",
+    rightsNotes: "Use only the reviewed chapter records with source URLs and public-domain/BibleSupport notes. Spot-check quotations before slides or print.",
+    recommendedUse: "Sermon illustrations, teaching applications, and homiletic observations with discernment labels.",
   },
 ];
 
@@ -3327,6 +3374,9 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     timePeriod: "1863-1945",
     biography: "British pastor, Bible teacher, and expositor known for clear chapter-level Bible surveys and preaching-oriented exposition.",
     writingStyle: "Concise, expository, pastoral, and chapter-flow oriented.",
+    coverageScope: "Whole Bible",
+    coverageSummary: "1,189 chapters reviewed",
+    coverageUseNote: "Fast chapter orientation before opening larger sets.",
     strengths: ["Chapter overview", "Preaching preparation", "Teaching flow", "Concise exposition"],
     weaknesses: ["Less detailed than larger technical commentaries", "Use as a supporting voice after the Bible text and core cross references"],
     bestUse: "Use for quick chapter orientation and sermon or lesson flow before moving into larger commentary sets.",
@@ -3403,13 +3453,16 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
   {
     author: "Matthew Poole",
     timePeriod: "1624-1679",
-    biography: "English Puritan commentator whose English Annotations may become a helpful historical comparison voice after source review.",
+    biography: "English Puritan commentator whose English Annotations now provide reviewed whole-Bible chapter coverage in the Commentary section.",
     writingStyle: "Concise, explanatory, and Puritan-era.",
+    coverageScope: "Whole Bible",
+    coverageSummary: "1,189 chapters reviewed",
+    coverageUseNote: "Concise historical comparison across every Bible book.",
     strengths: ["Historical commentary", "Concise explanation", "Teacher comparison"],
-    weaknesses: ["No public imports until an exact source and edition are verified", "Older language and doctrinal context need labels"],
-    bestUse: "Candidate for future comparison after a clean source is staged and reviewed.",
-    doctrinalNotes: "Do not import modern edited copies or unclear web text. Exact source and reuse terms are required.",
-    sampleQuote: "Future use only after source, edition, and rights review.",
+    weaknesses: ["Older language and doctrinal context need labels", "Best used after Scripture and primary study tools"],
+    bestUse: "Use as a concise historical comparison voice for every Bible chapter after reading the KJV text.",
+    doctrinalNotes: "Reviewed public entries use StudyLight/BibleSupport public-domain source pages. Do not mix with modern edited copies.",
+    sampleQuote: "Best used as a concise historical explanation after Scripture remains primary.",
     bestFor: ["Teaching", "Historical background"],
     priority: 12,
   },
@@ -3429,26 +3482,32 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
   {
     author: "The Pulpit Commentary",
     timePeriod: "19th century",
-    biography: "Large multi-author commentary set designed for preaching and teaching support. Volume-by-volume verification is required.",
+    biography: "Large multi-author commentary set designed for preaching and teaching support, now available as reviewed whole-Bible chapter coverage.",
     writingStyle: "Preaching-oriented, sectional, and often practical.",
+    coverageScope: "Whole Bible",
+    coverageSummary: "1,189 chapters reviewed",
+    coverageUseNote: "Best opened collapsed by default for sermon and lesson support.",
     strengths: ["Preaching support", "Teaching outlines", "Application prompts", "Historical comparison"],
-    weaknesses: ["Multi-author quality varies", "Large volumes need careful source and OCR review", "Doctrinal perspective can vary by contributor"],
-    bestUse: "Future collapsed comparison resource for preaching and teaching after exact volume review.",
-    doctrinalNotes: "Do not expose unreviewed volume text publicly. Each volume needs source, edition, rights, and quality review.",
-    sampleQuote: "Useful only after volume-level review because it is a large multi-author set.",
+    weaknesses: ["Multi-author quality varies", "Entries can be long", "Doctrinal perspective can vary by contributor"],
+    bestUse: "Use as a collapsed-by-default preaching and teaching comparison for every Bible chapter.",
+    doctrinalNotes: "Reviewed public entries use StudyLight/BibleSupport public-domain source pages. Use with discernment and keep Scripture first.",
+    sampleQuote: "Useful for sermon structure, applications, and homiletic comparison after direct Bible study.",
     bestFor: ["Preaching", "Teaching"],
     priority: 14,
   },
   {
     author: "The Biblical Illustrator",
     timePeriod: "19th century",
-    biography: "Large compilation of sermon illustrations, observations, and homiletic helps requiring careful volume-level review.",
+    biography: "Large compilation of sermon illustrations, observations, and homiletic helps, now available as reviewed whole-Bible chapter coverage.",
     writingStyle: "Illustrative, homiletic, and quote-heavy.",
+    coverageScope: "Whole Bible",
+    coverageSummary: "1,189 chapters reviewed",
+    coverageUseNote: "Use for sermon illustrations, applications, and teaching prompts.",
     strengths: ["Illustrations", "Preaching helps", "Application ideas", "Historical quotations"],
-    weaknesses: ["Compilation rights and source quality need review", "Not all excerpts will be doctrinally recommended", "Can overwhelm the Bible text"],
-    bestUse: "Future sermon illustration and teaching support after source, doctrine, and quality review.",
-    doctrinalNotes: "Needs strong discernment labels and careful excerpt review before public import.",
-    sampleQuote: "Use as a future illustration source only after volume-by-volume review.",
+    weaknesses: ["Not all excerpts will be equally useful", "Can overwhelm the Bible text", "Quotations should be spot-checked before slides or print"],
+    bestUse: "Use as a whole-Bible illustration and application source for sermon and Sunday school preparation.",
+    doctrinalNotes: "Reviewed public entries use StudyLight/BibleSupport public-domain source pages. Keep strong discernment labels visible.",
+    sampleQuote: "Best used for illustrations and applications, not as the controlling interpretation.",
     bestFor: ["Preaching", "Teaching"],
     priority: 15,
   },
@@ -3464,6 +3523,78 @@ const COMMENTARY_GUIDE_PROFILES: CommentaryGuideProfile[] = [
     sampleQuote: "Helpful for prophecy and Old Testament exposition when source and perspective notes are clear.",
     bestFor: ["Teaching", "Historical background"],
     priority: 16,
+  },
+  {
+    author: "American Commentary on the New Testament",
+    timePeriod: "1881-1890",
+    biography: "Multi-author American Baptist Publication Society commentary series edited by Alvah Hovey, with major Baptist teachers contributing chapter-level New Testament exposition.",
+    writingStyle: "Historical Baptist, explanatory, verse-aware, and teacher-oriented.",
+    coverageScope: "Complete New Testament",
+    coverageSummary: "260 chapters reviewed",
+    coverageUseNote: "Baptist historical comparison for New Testament teaching.",
+    strengths: ["New Testament coverage", "Baptist historical perspective", "Teaching preparation", "Chapter comparison"],
+    weaknesses: ["OCR should be spot-checked before quotation", "Textual-critical notes require discernment", "Some chapters remain safer as full-volume links until OCR boundaries are fully reviewed"],
+    bestUse: "Use as a Baptist historical comparison voice in the Commentary section, then open the full volume for deeper lesson or sermon preparation.",
+    doctrinalNotes: "Public-domain American Baptist resource. Includes textual-critical discussion and should remain secondary to the KJV text.",
+    sampleQuote: "Best used as a chapter comparison and teaching aid with OCR spot-checking before public quotation.",
+    bestFor: ["Teaching", "Preaching", "Historical background"],
+    priority: 17,
+  },
+];
+const COMMENTARY_GUIDE_PROFILE_ALIASES: Record<string, string> = {
+  "Jamieson, Fausset, and Brown": "Jamieson-Fausset-Brown",
+  "Joseph S. Exell": "The Biblical Illustrator",
+  "Joseph S. Exell and H. D. M. Spence-Jones": "The Pulpit Commentary",
+  "John A. Broadus": "American Commentary on the New Testament",
+  "W. N. Clarke": "American Commentary on the New Testament",
+  "George R. Bliss": "American Commentary on the New Testament",
+  "Alvah Hovey": "American Commentary on the New Testament",
+  "Horatio B. Hackett": "American Commentary on the New Testament",
+  "Albert N. Arnold and D. B. Ford": "American Commentary on the New Testament",
+  "E. P. Gould": "American Commentary on the New Testament",
+  "Justin A. Smith": "American Commentary on the New Testament",
+  "H. Harvey": "American Commentary on the New Testament",
+  "A. C. Kendrick": "American Commentary on the New Testament",
+  "E. T. Winkler": "American Commentary on the New Testament",
+  "N. M. Williams": "American Commentary on the New Testament",
+  "Henry A. Sawtelle": "American Commentary on the New Testament",
+  "Justin A. Smith with James R. Boise": "American Commentary on the New Testament",
+};
+
+const COMMENTARY_EXPLORER_GUIDES: Array<{
+  id: CommentaryExplorerGuideId;
+  label: string;
+  description: string;
+}> = [
+  {
+    id: "recommended",
+    label: "Recommended",
+    description: "Best reviewed voices for a first pass.",
+  },
+  {
+    id: "teaching",
+    label: "Teaching",
+    description: "Clear explanation for lesson preparation.",
+  },
+  {
+    id: "preaching",
+    label: "Preaching",
+    description: "Sermon, application, and pulpit helps.",
+  },
+  {
+    id: "devotional",
+    label: "Devotional",
+    description: "Warm application and heart-focused study.",
+  },
+  {
+    id: "word-study",
+    label: "Word Study",
+    description: "Language, history, and detailed notes.",
+  },
+  {
+    id: "all",
+    label: "All",
+    description: "Show every reviewed entry for the chapter.",
   },
 ];
 
@@ -10248,7 +10379,73 @@ const localCommentaryEntries: CommentaryEntry[] = [
   .filter((entry) => entry.book === "Hosea")
   .map(normalizeCommentaryEntry);
 
+const newTestamentCanonBooks = [
+  "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians",
+  "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon",
+  "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
+];
+
+const WHOLE_BIBLE_VOLUME_BOOKS = [
+  "Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth",
+  "1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah",
+  "Esther", "Job", "Psalms", "Proverbs", "Ecclesiastes", "Song of Solomon", "Isaiah", "Jeremiah",
+  "Lamentations", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum",
+  "Habakkuk", "Zephaniah", "Haggai", "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", "Acts",
+  "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians",
+  "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James",
+  "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation",
+];
+
 const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
+  {
+    resourceSlug: "john-gill-s-commentary-on-the-whole-bible-john-gill",
+    books: WHOLE_BIBLE_VOLUME_BOOKS,
+    label: "John Gill's Commentary on the Whole Bible",
+    priority: "Open now",
+    note: "Complete public-domain whole-Bible commentary. Historic Baptist and strongly Calvinistic; compare doctrinal conclusions with Scripture and other commentary voices. Spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "matthew-henry-s-concise-commentary-on-the-bible-matthew-henry",
+    books: WHOLE_BIBLE_VOLUME_BOOKS,
+    label: "Matthew Henry's Concise Commentary",
+    priority: "Open now",
+    note: "Complete public-domain concise whole-Bible commentary for devotional overview, teaching preparation, and application. Spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "an-exposition-of-the-old-and-new-testament-with-practical-remarks-and-observations-matthew-henry",
+    books: WHOLE_BIBLE_VOLUME_BOOKS,
+    label: "Matthew Henry's Full Exposition",
+    priority: "Open now",
+    note: "Complete public-domain exposition volume for extended devotional and practical study. Use the existing chapter-linked Henry entries first, then open this volume for fuller context.",
+  },
+  {
+    resourceSlug: "barnes-notes-psalms-vol-1-albert-barnes",
+    books: ["Psalms"],
+    label: "Barnes' Notes on Psalms, Volume 1",
+    priority: "Open now",
+    note: "Public-domain Psalms commentary volume for historical explanation and verse comparison. Spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-psalms-vol-iii-psalms-xc-cl-alexander-maclaren",
+    books: ["Psalms"],
+    label: "Maclaren on Psalms 90-150",
+    priority: "Teaching focus",
+    note: "Public-domain exposition and sermon material for Psalms 90-150, useful for lesson flow and devotional application.",
+  },
+  {
+    resourceSlug: "christ-and-the-seven-churches-or-remarks-on-the-first-three-chapters-of-the-book-of-revelation-william-kelly",
+    books: ["Revelation"],
+    label: "William Kelly on the Seven Churches",
+    priority: "Teaching focus",
+    note: "Public-domain exposition of Revelation 1-3 from a dispensational writer. Compare prophetic conclusions carefully with the KJV text.",
+  },
+  {
+    resourceSlug: "the-lord-s-prophecy-on-olivet-in-matthew-24-25-william-kelly",
+    books: ["Matthew"],
+    label: "William Kelly on the Olivet Discourse",
+    priority: "Teaching focus",
+    note: "Public-domain exposition of Matthew 24-25 for prophecy study and sermon preparation. Compare interpretive conclusions with Scripture and other trusted voices.",
+  },
   {
     resourceSlug: "notes-on-philippians-h-a-ironside",
     books: ["Philippians"],
@@ -10269,6 +10466,104 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     label: "Matthew Poole full annotation volume",
     priority: "Index next",
     note: "Large public-domain scan. Best opened as a full volume until individual chapters are promoted into the Bible-linked commentary index.",
+  },
+  {
+    resourceSlug: "the-hebrew-monarchy-an-interpretation-of-the-english-bible-b-h-carroll",
+    books: ["1 Samuel", "2 Samuel", "1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles"],
+    label: "B. H. Carroll on the Hebrew Monarchy",
+    priority: "Open now",
+    note: "Open this public-domain Baptist exposition for historical-book teaching and preaching; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletic-commentary-on-proverbs-rev-w-harris",
+    books: ["Proverbs"],
+    label: "Preacher's Homiletical Commentary on Proverbs",
+    priority: "Open now",
+    note: "Open the full public-domain volume for sermon divisions, teaching applications, and practical themes in Proverbs.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletic-commentary-on-isaiah-volume-1-robert-aitkin-bertram-and-alfred-tucker",
+    books: ["Isaiah"],
+    label: "Preacher's Homiletical Commentary on Isaiah",
+    priority: "Open now",
+    note: "Open the full public-domain volume for Isaiah lesson structure, applications, and preaching helps.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletic-commentary-on-galatians-through-thessalonians-george-barlow",
+    books: ["Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
+    label: "Preacher's Homiletical Commentary on the Epistles",
+    priority: "Open now",
+    note: "Open the full public-domain volume for teaching outlines and application material across Galatians through Thessalonians.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-1-the-pentateuch-f-w-grant",
+    books: ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"],
+    label: "F. W. Grant's Numerical Bible: Pentateuch",
+    priority: "Open now",
+    note: "Public-domain exposition organized around the structure and divisions of the Pentateuch; compare conclusions carefully with the KJV text.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-2-the-covenant-history-joshua-to-2-samuel-f-w-grant",
+    books: ["Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel"],
+    label: "F. W. Grant's Numerical Bible: Covenant History",
+    priority: "Open now",
+    note: "Public-domain exposition for tracing historical movement, spiritual themes, and teaching divisions from Joshua through 2 Samuel.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-3-the-psalms-f-w-grant",
+    books: ["Psalms"],
+    label: "F. W. Grant's Numerical Bible: Psalms",
+    priority: "Open now",
+    note: "Public-domain structural and expository study of the Psalms for comparison, teaching, and sermon preparation.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-4-ezekiel-f-w-grant-and-j-bloore",
+    books: ["Ezekiel"],
+    label: "Numerical Bible: Ezekiel",
+    priority: "Open now",
+    note: "Public-domain exposition for Ezekiel's structure, prophetic sections, and teaching flow; use with doctrinal discernment.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-5-the-gospels-f-w-grant",
+    books: ["Matthew", "Mark", "Luke", "John"],
+    label: "F. W. Grant's Numerical Bible: Gospels",
+    priority: "Open now",
+    note: "Public-domain Gospel exposition for comparing each evangelist's presentation and tracing chapter structure.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-6-acts-to-2-corinthians-f-w-grant",
+    books: ["Acts", "Romans", "1 Corinthians", "2 Corinthians"],
+    label: "F. W. Grant's Numerical Bible: Acts to Corinthians",
+    priority: "Open now",
+    note: "Public-domain exposition for early church history and the foundational Pauline epistles.",
+  },
+  {
+    resourceSlug: "the-numerical-bible-volume-7-hebrews-to-revelation-f-w-grant",
+    books: ["Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
+    label: "F. W. Grant's Numerical Bible: Hebrews to Revelation",
+    priority: "Open now",
+    note: "Public-domain exposition covering the general epistles and Revelation; compare prophetic conclusions with Scripture.",
+  },
+  {
+    resourceSlug: "the-analyzed-bible-the-prophecy-of-isaiah-volume-1-g-campbell-morgan",
+    books: ["Isaiah"],
+    label: "G. Campbell Morgan's Analyzed Bible: Isaiah I",
+    priority: "Open now",
+    note: "Public-domain analytical outline and exposition for the opening portion of Isaiah.",
+  },
+  {
+    resourceSlug: "the-analyzed-bible-the-prophecy-of-isaiah-volume-2-g-campbell-morgan",
+    books: ["Isaiah"],
+    label: "G. Campbell Morgan's Analyzed Bible: Isaiah II",
+    priority: "Open now",
+    note: "Public-domain analytical outline and exposition continuing Isaiah's prophetic message.",
+  },
+  {
+    resourceSlug: "the-gospel-according-to-john-the-analyzed-bible-g-campbell-morgan",
+    books: ["John"],
+    label: "G. Campbell Morgan's Analyzed Bible: John",
+    priority: "Open now",
+    note: "Public-domain analytical exposition for following John's signs, discourses, and presentation of Christ.",
   },
   {
     resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet02newy-various",
@@ -10326,10 +10621,547 @@ const commentaryVolumeReferenceHints: CommentaryVolumeReferenceHint[] = [
     priority: "Index next",
     note: "Open the whole epistle volume for exposition and homiletic material while the chapter index is reviewed.",
   },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-matthew-john-a-broadus-edited-by-alvah-hovey",
+    books: ["Matthew"],
+    label: "American Commentary full Matthew volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-mark-and-luke-w-n-clarke-and-others-edited-by-alvah-hovey",
+    books: ["Mark", "Luke"],
+    label: "American Commentary full Mark and Luke volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-john-alvah-hovey",
+    books: ["John"],
+    label: "American Commentary full John volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-acts-horatio-b-hackett-edited-by-alvah-hovey",
+    books: ["Acts"],
+    label: "American Commentary full Acts volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-romans-albert-n-arnold-and-d-b-ford-edited-by-alvah-hovey",
+    books: ["Romans"],
+    label: "American Commentary full Romans volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-corinthians-to-thessalonians-e-p-gould-alvah-hovey-justin-a-smith-j-b",
+    books: ["1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"],
+    label: "American Commentary full Corinthians to Thessalonians volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-timothy-to-peter-h-harvey-a-c-kendrick-e-t-winkler-n-m-williams-edite",
+    books: ["1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter"],
+    label: "American Commentary full Timothy to Peter volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "american-commentary-on-the-new-testament-epistles-of-john-jude-and-revelation-henry-a-sawtelle-nathaniel-m-wil",
+    books: ["1 John", "2 John", "3 John", "Jude", "Revelation"],
+    label: "American Commentary full Johannine Epistles, Jude, and Revelation volume",
+    priority: "Open now",
+    note: "Open the full public-domain American Baptist commentary volume; OCR should be spot-checked before quotation.",
+  },
+  {
+    resourceSlug: "daniel-and-the-inter-biblical-period-b-h-carroll",
+    books: ["Daniel"],
+    label: "B. H. Carroll on Daniel",
+    priority: "Open now",
+    note: "Open this public-domain Baptist exposition for Daniel's historical setting, prophetic structure, and teaching preparation; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-book-of-revelation-b-h-carroll",
+    books: ["Revelation"],
+    label: "B. H. Carroll on Revelation",
+    priority: "Open now",
+    note: "Open this public-domain Baptist exposition for chapter flow, teaching comparison, and sermon preparation; compare prophetic conclusions carefully with Scripture.",
+  },
+  {
+    resourceSlug: "galatians-romans-philippians-philemon-b-h-carroll",
+    books: ["Romans", "Galatians", "Philippians", "Philemon"],
+    label: "B. H. Carroll on four Pauline epistles",
+    priority: "Open now",
+    note: "Open the full public-domain Baptist exposition for doctrinal study and lesson preparation across Romans, Galatians, Philippians, and Philemon.",
+  },
+  {
+    resourceSlug: "colossians-b-h-carroll",
+    books: ["Colossians"],
+    label: "B. H. Carroll on Colossians",
+    priority: "Open now",
+    note: "Open this public-domain Baptist exposition for Christ-centered teaching, doctrinal comparison, and sermon preparation in Colossians.",
+  },
+  {
+    resourceSlug: "lectures-introductory-to-the-study-of-the-acts-catholic-epistles-and-revelation-william-kelly",
+    books: ["Acts", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
+    label: "William Kelly introductory lectures",
+    priority: "Open now",
+    note: "Open these public-domain lectures for book introductions and structural study from Acts through the General Epistles and Revelation; use with doctrinal discernment.",
+  },
+  {
+    resourceSlug: "genesis-or-the-first-book-of-moses-john-peter-lange",
+    books: ["Genesis"],
+    label: "Lange commentary on Genesis",
+    priority: "Open now",
+    note: "Open the full public-domain volume for historical, doctrinal, and homiletical study of Genesis; spot-check OCR and textual-critical notes before quotation.",
+  },
+  {
+    resourceSlug: "exodus-or-the-second-book-of-moses-john-peter-lange",
+    books: ["Exodus"],
+    label: "Lange commentary on Exodus",
+    priority: "Open now",
+    note: "Open the full public-domain volume for historical, doctrinal, and homiletical study of Exodus; spot-check OCR and textual-critical notes before quotation.",
+  },
+  {
+    resourceSlug: "numbers-or-the-fourth-book-of-moses-john-peter-lange",
+    books: ["Numbers"],
+    label: "Lange commentary on Numbers",
+    priority: "Open now",
+    note: "Open the full public-domain volume for historical, doctrinal, and homiletical study of Numbers; spot-check OCR and textual-critical notes before quotation.",
+  },
+  {
+    resourceSlug: "the-gospel-according-to-john-john-peter-lange",
+    books: ["John"],
+    label: "Lange commentary on John",
+    priority: "Open now",
+    note: "Open the full public-domain volume for doctrinal, exegetical, and homiletical comparison in John's Gospel; spot-check OCR and textual-critical notes before quotation.",
+  },
+  {
+    resourceSlug: "notes-critical-illustrative-and-practical-on-the-book-of-daniel-with-an-albert-barnes",
+    books: ["Daniel"],
+    label: "Albert Barnes on Daniel",
+    priority: "Open now",
+    note: "Open the public-domain Daniel volume for extended historical and explanatory notes; compare prophetic and textual conclusions carefully with Scripture.",
+  },
+  {
+    resourceSlug: "commentary-on-the-gospel-of-mark-john-a-broadus",
+    books: ["Mark"],
+    label: "John A. Broadus commentary on Mark",
+    priority: "Open now",
+    note: "Open this public-domain Baptist commentary for Gospel exposition, teaching preparation, and sermon development in Mark; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "notes-critical-explanatory-and-practical-on-the-book-of-psalms-albert-barnes",
+    books: ["Psalms"],
+    label: "Albert Barnes on Psalms",
+    priority: "Open now",
+    note: "Open the public-domain Psalms volume for extended explanatory notes and devotional comparison; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "notes-critical-explanatory-and-practical-on-the-book-of-the-prophet-isaiah-albert-barnes",
+    books: ["Isaiah"],
+    label: "Albert Barnes on Isaiah",
+    priority: "Open now",
+    note: "Open the public-domain Isaiah volume for historical and explanatory study; compare prophetic and textual conclusions carefully with Scripture.",
+  },
+  {
+    resourceSlug: "notes-explanatory-and-practical-on-the-epistle-to-the-romans-albert-barnes",
+    books: ["Romans"],
+    label: "Albert Barnes on Romans",
+    priority: "Open now",
+    note: "Open the public-domain Romans volume for extended explanatory notes and doctrinal comparison; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "notes-explanatory-and-practical-on-the-acts-of-the-apostles-designed-for-bible-classes-and-albert-barnes",
+    books: ["Acts"],
+    label: "Albert Barnes on Acts",
+    priority: "Open now",
+    note: "Open the public-domain Acts volume for historical explanation, Bible-class preparation, and sermon study; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "notes-explanatory-and-practical-on-the-gospels-designed-for-sunday-school-albert-barnes",
+    books: ["Matthew", "Mark", "Luke", "John"],
+    label: "Albert Barnes notes on the Gospels",
+    priority: "Open now",
+    note: "Open the public-domain Gospel volume for Sunday School and teaching preparation; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "notes-explanatory-and-practical-on-the-new-testament-albert-barnes",
+    books: newTestamentCanonBooks,
+    label: "Albert Barnes New Testament volume",
+    priority: "Open now",
+    note: "Open this public-domain New Testament volume for extended comparison when the shorter book-specific notes are not enough; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "trapp-s-commentary-on-the-new-testament-john-trapp",
+    books: newTestamentCanonBooks,
+    label: "John Trapp New Testament commentary",
+    priority: "Open now",
+    note: "Open this public-domain New Testament commentary for concise historical observations and preaching material; archaic wording and OCR require careful review before quotation.",
+  },
+  {
+    resourceSlug: "expository-notes-with-practical-observations-on-the-new-testament-of-our-lord-and-saviour-jesus-christ-by-will",
+    books: newTestamentCanonBooks,
+    label: "William Burkitt New Testament notes",
+    priority: "Open now",
+    note: "Open this public-domain New Testament exposition for practical observations and sermon preparation; spot-check OCR and compare conclusions with Scripture.",
+  },
+  {
+    resourceSlug: "commentary-on-the-holy-scriptures-critical-doctrinal-and-homiletical-corinthians-john-peter-lange",
+    books: ["1 Corinthians", "2 Corinthians"],
+    label: "Lange commentary on Corinthians",
+    priority: "Open now",
+    note: "Open the public-domain Corinthians volume for exegetical, doctrinal, and homiletical comparison; spot-check OCR and textual-critical notes before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105082-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["John"],
+    label: "Pulpit Commentary on John",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for exposition, homiletic structure, and teaching application in John; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104960-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Hebrews"],
+    label: "Pulpit Commentary on Hebrews",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for exposition and homiletic study in Hebrews; spot-check OCR and compare doctrinal conclusions with Scripture.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Hosea"],
+    label: "Pulpit Commentary on Hosea",
+    priority: "Teaching focus",
+    note: "Source-title-verified public-domain Hosea volume for lesson preparation, historical context, exposition, and application; spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Hosea",
+      sourceUrl: "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt",
+      sourceLineStarts: { 1: 739, 2: 4081, 3: 7760, 4: 8908, 5: 12235, 6: 14740, 7: 17391, 8: 20540, 9: 23348, 10: 25661, 11: 28539, 12: 31193, 13: 34301, 14: 37339 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Joel"],
+    label: "Pulpit Commentary on Joel",
+    priority: "Teaching focus",
+    note: "Source-section-verified public-domain Joel exposition in the Hosea-Joel volume; useful for prophecy context, exposition, and lesson preparation. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Joel",
+      sourceUrl: "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt",
+      sourceLineStarts: { 1: 41180, 2: 42883, 3: 45656 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105017-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Acts"],
+    label: "Pulpit Commentary on Acts",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Acts volume for historical exposition, preaching structure, and application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104812-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["1 Samuel"],
+    label: "Pulpit Commentary on 1 Samuel",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for historical background, character study, exposition, and sermon preparation in 1 Samuel.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104614-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Ezekiel"],
+    label: "Pulpit Commentary on Ezekiel",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Ezekiel volume for prophetic structure, exposition, and homiletic study; compare conclusions carefully with Scripture.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105066-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Luke"],
+    label: "Pulpit Commentary on Luke",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Luke volume for Gospel exposition, lesson structure, and application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105090-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Mark"],
+    label: "Pulpit Commentary on Mark, later chapters",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Mark volume beginning with later Gospel material; use beside the companion Mark volume and spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104622-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Song of Solomon"],
+    label: "Pulpit Commentary on Song of Solomon",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for literary, expository, and homiletic study; compare interpretive approaches carefully with Scripture.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105033-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Mark"],
+    label: "Pulpit Commentary on Mark, opening chapters",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Mark volume with the Gospel introduction and opening material; use beside the companion Mark volume.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-pulpitcommentar02unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-",
+    books: ["1 Chronicles"],
+    label: "Pulpit Commentary on 1 Chronicles",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for historical exposition, background, and homiletic study in 1 Chronicles; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet06newy-various",
+    books: ["Judges"],
+    label: "Preacher's Homiletical Commentary on Judges",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Judges volume for lesson structure, sermon divisions, and application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105058-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Numbers"],
+    label: "Pulpit Commentary on Numbers",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Numbers volume for Pentateuch background, exposition, and homiletic study; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet11newy-various",
+    books: ["Psalms"],
+    label: "Preacher's Homiletical Commentary on Psalms",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Psalms volume for teaching outlines, sermon divisions, and devotional application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple01unkng",
+    books: ["Lamentations"],
+    label: "Preacher's Homiletical Commentary on Lamentations",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Lamentations volume for historical setting, lesson flow, and homiletic application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-13",
+    books: ["2 Timothy", "Titus", "Philemon"],
+    label: "Biblical Illustrator on 2 Timothy, Titus, and Philemon",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for illustrations, quotations, exposition, and applications; use with discernment and verify quotations against the scan.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104994-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Deuteronomy"],
+    label: "Pulpit Commentary on Deuteronomy",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Deuteronomy volume for Pentateuch background, exposition, and homiletic study; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet07newy-various",
+    books: ["Ruth"],
+    label: "Preacher's Homiletical Commentary on Ruth",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Ruth volume for narrative teaching, lesson structure, and application; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924098499514-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Exodus"],
+    label: "Pulpit Commentary on Exodus",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Exodus volume for historical background, exposition, and homiletic study; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104820-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Philippians"],
+    label: "Pulpit Commentary on Philippians",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Philippians volume for exegetical, doctrinal, and homiletic comparison; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104861-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Psalms"],
+    label: "Pulpit Commentary on Psalms",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Psalms volume for exposition, devotional teaching, and homiletic study; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105074-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["John"],
+    label: "Pulpit Commentary on John, companion volume",
+    priority: "Open now",
+    note: "Source-title-verified public-domain John volume for extended Gospel exposition; use beside the companion John scan and spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104754-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["2 Samuel"],
+    label: "Pulpit Commentary on 2 Samuel",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for historical background, character study, exposition, and sermon preparation in 2 Samuel.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Amos"],
+    label: "Pulpit Commentary on Amos",
+    priority: "Teaching focus",
+    note: "Source-title-verified public-domain Amos volume for historical context, exposition, applications, and lesson preparation; spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Amos",
+      sourceUrl: "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      sourceLineStarts: { 1: 443, 2: 2329, 3: 3667, 4: 5327, 5: 7063, 6: 9489, 7: 11445, 8: 13047, 9: 14487 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Obadiah"],
+    label: "Pulpit Commentary on Obadiah",
+    priority: "Open now",
+    note: "Source-section-verified public-domain Obadiah exposition in the Amos-Obadiah-Jonah-Micah volume; useful for Edom background, prophetic judgment, kingdom hope, and teaching application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Obadiah",
+      sourceUrl: "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      sourceLineStarts: { 1: 17164 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Jonah"],
+    label: "Pulpit Commentary on Jonah",
+    priority: "Open now",
+    note: "Source-section-verified public-domain Jonah exposition in the Amos-Jonah-Micah volume; useful for narrative flow, missions themes, exposition, and application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Jonah",
+      sourceUrl: "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      sourceLineStarts: { 1: 21134, 2: 24322, 3: 25524, 4: 27077 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Micah"],
+    label: "Pulpit Commentary on Micah",
+    priority: "Teaching focus",
+    note: "Source-section-verified public-domain Micah exposition in the Amos-Jonah-Micah volume; useful for messianic prophecy, historical context, exposition, and teaching application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Micah",
+      sourceUrl: "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      sourceLineStarts: { 1: 29628, 2: 31065, 3: 32671, 4: 33724, 5: 35200, 6: 36785, 7: 38439 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Nahum"],
+    label: "Pulpit Commentary on Nahum",
+    priority: "Open now",
+    note: "Source-section-verified public-domain Nahum exposition for Nineveh background, prophetic judgment, teaching structure, and application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Nahum",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 420, 2: 2261, 3: 3627 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Habakkuk"],
+    label: "Pulpit Commentary on Habakkuk",
+    priority: "Teaching focus",
+    note: "Source-section-verified public-domain Habakkuk exposition for prophecy, faith, the problem of evil, prayer, and lesson preparation. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Habakkuk",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 5375, 2: 7083, 3: 9472 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Zephaniah"],
+    label: "Pulpit Commentary on Zephaniah",
+    priority: "Open now",
+    note: "Source-section-verified public-domain Zephaniah exposition for the day of the Lord, judgment, restoration, and teaching application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Zephaniah",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 12023, 2: 13925, 3: 15891 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Haggai"],
+    label: "Pulpit Commentary on Haggai",
+    priority: "Open now",
+    note: "Source-section-verified public-domain Haggai exposition for temple background, spiritual priorities, encouragement, and lesson preparation. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Haggai",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 18344, 2: 19768 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Zechariah"],
+    label: "Pulpit Commentary on Zechariah",
+    priority: "Teaching focus",
+    note: "Source-section-verified public-domain Zechariah exposition for visions, messianic prophecy, historical context, and teaching preparation. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Zechariah",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 22741, 2: 24115, 3: 25046, 4: 26118, 5: 27040, 6: 27772, 7: 28694, 8: 29482, 9: 30631, 10: 32224, 11: 33241, 12: 34769, 13: 35835, 14: 36681 },
+    },
+  },
+  {
+    resourceSlug: "pulpit-commentary-archive-volume-14-h-d-m-spence-jones-and-pulpit-commentary-editors",
+    books: ["Malachi"],
+    label: "Pulpit Commentary on Malachi",
+    priority: "Teaching focus",
+    note: "Source-section-verified public-domain Malachi exposition for covenant faithfulness, worship, messianic expectation, and lesson application. Spot-check OCR before quotation.",
+    chapterIndex: {
+      book: "Malachi",
+      sourceUrl: "https://archive.org/download/cu31924101104853/cu31924101104853_djvu.txt",
+      sourceLineStarts: { 1: 39057, 2: 40560, 3: 42252, 4: 43988 },
+    },
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104689-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Ecclesiastes"],
+    label: "Pulpit Commentary on Ecclesiastes",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Ecclesiastes volume for literary, expository, and homiletic study; compare interpretive conclusions with Scripture.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924098499506-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Exodus"],
+    label: "Pulpit Commentary on Exodus, companion scan",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Exodus scan for extended Pentateuch study; use beside the companion Exodus volume and spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104887-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["2 Corinthians"],
+    label: "Pulpit Commentary on 2 Corinthians",
+    priority: "Open now",
+    note: "Source-title-verified public-domain volume for exegetical, doctrinal, and homiletic comparison in 2 Corinthians; spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101105116-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Leviticus"],
+    label: "Pulpit Commentary on Leviticus",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Leviticus volume for law, sacrifice, priesthood, exposition, and homiletic study; compare conclusions with Scripture.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104481-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Luke"],
+    label: "Pulpit Commentary on Luke, companion volume",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Luke volume for extended Gospel exposition; use beside the companion Luke scan and spot-check OCR before quotation.",
+  },
+  {
+    resourceSlug: "the-pulpit-commentary-cu31924101104879-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+    books: ["Joshua"],
+    label: "Pulpit Commentary on Joshua",
+    priority: "Open now",
+    note: "Source-title-verified public-domain Joshua volume for historical background, exposition, character study, and lesson preparation; spot-check OCR before quotation.",
+  },
 ];
 
 const deferredCommentaryImportFiles = [
   "matthew-henry-phase-1-commentary.json",
+  "american-commentary-reviewed-new-testament-commentary.json",
   "matthew-henry-reviewed-batch-2-commentary.json",
   "h-a-ironside-phase-2-commentary.json",
   "h-a-ironside-hosea-commentary.json",
@@ -10341,8 +11173,6 @@ const deferredCommentaryImportFiles = [
   "g-campbell-morgan-gospels-acts-romans-commentary.json",
   "g-campbell-morgan-genesis-starter-commentary.json",
   "treasury-of-david-reviewed-psalms-1-87-commentary.json",
-  "commentary-acquisition-phase-1-samples.json",
-  "commentary-acquisition-phase-2-reviewed-batch.json",
   "jfb-reviewed-batch-1-commentary.json",
   "jfb-reviewed-phase-4-batch-2-commentary.json",
   "jfb-reviewed-coverage-sprint-batch-3-commentary.json",
@@ -10391,6 +11221,7 @@ const deferredCommentaryImportFiles = [
   "matthew-henry-reviewed-completion-batch-09-commentary.json",
   "matthew-henry-reviewed-completion-batch-10-commentary.json",
   "matthew-henry-reviewed-completion-batch-11-commentary.json",
+  "matthew-henry-reviewed-habakkuk-1-commentary.json",
   "barnes-reviewed-phase-3-commentary.json",
   "barnes-reviewed-coverage-sprint-genesis-commentary.json",
   "barnes-reviewed-library-expansion-gospels-acts-commentary.json",
@@ -10449,9 +11280,231 @@ const deferredCommentaryImportFiles = [
   "pulpit-commentary-reviewed-foundation-books-phase-1-commentary.json",
   "pulpit-commentary-reviewed-historical-books-phase-1-commentary.json",
   "pulpit-commentary-reviewed-weak-books-phase-2-commentary.json",
+  "g-campbell-morgan-reviewed-obadiah-commentary.json",
+  "g-campbell-morgan-reviewed-lamentations-commentary.json",
+  "g-campbell-morgan-reviewed-amos-commentary.json",
+  "g-campbell-morgan-reviewed-solomons-song-commentary.json",
+  "g-campbell-morgan-reviewed-ecclesiastes-commentary.json",
+  "g-campbell-morgan-reviewed-galatians-commentary.json",
+  "g-campbell-morgan-reviewed-1-corinthians-commentary.json",
+  "g-campbell-morgan-reviewed-2-corinthians-commentary.json",
+  "g-campbell-morgan-reviewed-mark-commentary.json",
+  "g-campbell-morgan-reviewed-luke-commentary.json",
+  "g-campbell-morgan-reviewed-prison-thessalonian-epistles-commentary.json",
+  "g-campbell-morgan-reviewed-pastoral-general-epistles-commentary.json",
+  "g-campbell-morgan-reviewed-genesis-completion-commentary.json",
+  "g-campbell-morgan-reviewed-exodus-commentary.json",
+  "g-campbell-morgan-reviewed-leviticus-commentary.json",
+  "g-campbell-morgan-reviewed-numbers-commentary.json",
+  "g-campbell-morgan-reviewed-deuteronomy-commentary.json",
+  "g-campbell-morgan-reviewed-joshua-judges-ruth-commentary.json",
+  "g-campbell-morgan-reviewed-samuel-kings-commentary.json",
+  "g-campbell-morgan-reviewed-chronicles-restoration-commentary.json",
+  "g-campbell-morgan-reviewed-job-commentary.json",
+  "g-campbell-morgan-reviewed-psalms-commentary.json",
+  "g-campbell-morgan-reviewed-proverbs-commentary.json",
+  "g-campbell-morgan-reviewed-isaiah-1-33-commentary.json",
+  "g-campbell-morgan-reviewed-isaiah-34-66-commentary.json",
+  "g-campbell-morgan-reviewed-jeremiah-commentary.json",
+  "g-campbell-morgan-reviewed-ezekiel-commentary.json",
+  "h-a-ironside-luke-complete-commentary.json",
+  "h-a-ironside-reviewed-isaiah-1-33-commentary.json",
+  "h-a-ironside-reviewed-isaiah-34-66-commentary.json",
+  "h-a-ironside-reviewed-ezekiel-commentary.json",
+  "h-a-ironside-reviewed-obadiah-commentary.json",
+  "h-a-ironside-reviewed-solomons-song-commentary.json",
+  "h-a-ironside-exposition-phase-2-commentary.json",
+  "wesley-reviewed-genesis-commentary.json",
+  "wesley-reviewed-exodus-commentary.json",
+  "wesley-reviewed-leviticus-partial-commentary.json",
+  "wesley-reviewed-numbers-commentary.json",
+  "wesley-reviewed-deuteronomy-commentary.json",
+  "wesley-reviewed-joshua-judges-ruth-commentary.json",
+  "wesley-reviewed-samuel-partial-commentary.json",
+  "wesley-reviewed-kings-commentary.json",
+  "wesley-reviewed-chronicles-commentary.json",
+  "wesley-reviewed-restoration-books-commentary.json",
+  "wesley-reviewed-job-commentary.json",
+  "wesley-reviewed-psalms-commentary.json",
+  "wesley-reviewed-isaiah-commentary.json",
+  "wesley-reviewed-jeremiah-lamentations-commentary.json",
+  "wesley-reviewed-ezekiel-daniel-commentary.json",
+  "wesley-reviewed-minor-prophets-commentary.json",
+  "wesley-reviewed-matthew-commentary.json",
+  "wesley-reviewed-mark-commentary.json",
+  "wesley-reviewed-luke-complete-commentary.json",
+  "wesley-reviewed-1-corinthians-commentary.json",
+  "wesley-reviewed-pauline-epistles-2-commentary.json",
+  "wesley-reviewed-prison-epistles-commentary.json",
+  "wesley-reviewed-pastoral-epistles-commentary.json",
+  "wesley-reviewed-general-epistles-commentary.json",
+  "wesley-reviewed-hebrews-commentary.json",
+  "wesley-reviewed-nt-single-chapter-books-commentary.json",
+  "wesley-reviewed-amos-completion-commentary.json",
+  "wesley-reviewed-solomons-song-commentary.json",
+  "wesley-reviewed-final-gap-completion-commentary.json",
+  "wesley-reviewed-final-gap-completion-part-2-commentary.json",
+  "wesley-reviewed-recovered-gap-chapters-commentary.json",
+  "matthew-poole-reviewed-acts-completion-commentary.json",
+  "matthew-poole-reviewed-genesis-completion-commentary.json",
+  "matthew-poole-reviewed-john-completion-commentary.json",
+  "matthew-poole-reviewed-luke-complete-commentary.json",
+  "matthew-poole-reviewed-romans-9-16-commentary.json",
+  "matthew-poole-reviewed-revelation-14-22-commentary.json",
+  "poole-reviewed-isaiah-6-35-commentary.json",
+  "poole-reviewed-isaiah-36-66-commentary.json",
+  "poole-reviewed-jeremiah-11-52-commentary.json",
+  "poole-reviewed-ezekiel-13-48-commentary.json",
+  "poole-reviewed-job-13-42-commentary.json",
+  "poole-reviewed-psalms-6-35-commentary.json",
+  "poole-reviewed-psalms-36-65-commentary.json",
+  "poole-reviewed-psalms-66-95-commentary.json",
+  "poole-reviewed-psalms-96-125-commentary.json",
+  "poole-reviewed-psalms-126-150-commentary.json",
+  "pulpit-reviewed-romans-9-16-commentary.json",
+  "pulpit-reviewed-revelation-14-22-commentary.json",
+  "pulpit-commentary-reviewed-john-completion-commentary.json",
+  "pulpit-commentary-reviewed-acts-completion-commentary.json",
+  "pulpit-commentary-reviewed-job-13-42-commentary.json",
+  "pulpit-commentary-reviewed-psalms-6-35-commentary.json",
+  "pulpit-commentary-reviewed-psalms-36-65-commentary.json",
+  "pulpit-commentary-reviewed-psalms-66-95-commentary.json",
+  "pulpit-commentary-reviewed-psalms-96-125-commentary.json",
+  "pulpit-commentary-reviewed-psalms-126-150-commentary.json",
+  "biblical-illustrator-reviewed-romans-9-16-commentary.json",
+  "biblical-illustrator-reviewed-revelation-14-22-commentary.json",
+  "biblical-illustrator-reviewed-john-completion-commentary.json",
+  "biblical-illustrator-reviewed-acts-completion-commentary.json",
+  "biblical-illustrator-reviewed-job-13-42-commentary.json",
+  "adam-clarke-reviewed-ecclesiastes-commentary.json",
+  "adam-clarke-reviewed-job-1-10-commentary.json",
+  "adam-clarke-reviewed-job-11-42-commentary.json",
+  "adam-clarke-reviewed-luke-complete-commentary.json",
+  "barnes-reviewed-ecclesiastes-commentary.json",
+  "barnes-reviewed-historical-books-completion-commentary.json",
+  "barnes-reviewed-job-1-10-commentary.json",
+  "barnes-reviewed-job-11-42-commentary.json",
+  "barnes-reviewed-luke-complete-commentary.json",
+  "biblical-illustrator-reviewed-1-chronicles-11-29-commentary.json",
+  "biblical-illustrator-reviewed-1-corinthians-6-16-commentary.json",
+  "biblical-illustrator-reviewed-2-chronicles-11-36-commentary.json",
+  "biblical-illustrator-reviewed-ezekiel-13-48-commentary.json",
+  "biblical-illustrator-reviewed-genesis-completion-commentary.json",
+  "biblical-illustrator-reviewed-isaiah-36-66-commentary.json",
+  "biblical-illustrator-reviewed-isaiah-6-35-commentary.json",
+  "biblical-illustrator-reviewed-jeremiah-11-52-commentary.json",
+  "biblical-illustrator-reviewed-luke-complete-commentary.json",
+  "biblical-illustrator-reviewed-psalms-126-150-commentary.json",
+  "biblical-illustrator-reviewed-psalms-36-65-commentary.json",
+  "biblical-illustrator-reviewed-psalms-6-35-commentary.json",
+  "biblical-illustrator-reviewed-psalms-66-95-commentary.json",
+  "biblical-illustrator-reviewed-psalms-96-125-commentary.json",
+  "clarke-reviewed-historical-books-completion-commentary.json",
+  "g-campbell-morgan-reviewed-matthew-commentary.json",
+  "poole-reviewed-1-chronicles-11-29-commentary.json",
+  "poole-reviewed-1-corinthians-6-16-commentary.json",
+  "poole-reviewed-2-chronicles-11-36-commentary.json",
+  "pulpit-commentary-reviewed-1-chronicles-11-29-commentary.json",
+  "pulpit-commentary-reviewed-1-corinthians-6-16-commentary.json",
+  "pulpit-commentary-reviewed-2-chronicles-11-36-commentary.json",
+  "pulpit-commentary-reviewed-ezekiel-13-48-commentary.json",
+  "pulpit-commentary-reviewed-genesis-completion-commentary.json",
+  "pulpit-commentary-reviewed-isaiah-36-66-commentary.json",
+  "pulpit-commentary-reviewed-isaiah-6-35-commentary.json",
+  "pulpit-commentary-reviewed-jeremiah-11-52-commentary.json",
+  "pulpit-commentary-reviewed-luke-complete-commentary.json",
+  "wesley-reviewed-acts-completion-commentary.json",
+  "wesley-reviewed-ecclesiastes-commentary.json",
+  "wesley-reviewed-proverbs-partial-commentary.json",
+  "preachers-homiletical-reviewed-1-corinthians-commentary.json",
+  "preachers-homiletical-reviewed-1-john-commentary.json",
+  "preachers-homiletical-reviewed-1-peter-commentary.json",
+  "preachers-homiletical-reviewed-1-thessalonians-commentary.json",
+  "preachers-homiletical-reviewed-1-timothy-commentary.json",
+  "preachers-homiletical-reviewed-2-corinthians-commentary.json",
+  "preachers-homiletical-reviewed-2-john-commentary.json",
+  "preachers-homiletical-reviewed-2-peter-commentary.json",
+  "preachers-homiletical-reviewed-2-thessalonians-commentary.json",
+  "preachers-homiletical-reviewed-2-timothy-commentary.json",
+  "preachers-homiletical-reviewed-3-john-commentary.json",
+  "preachers-homiletical-reviewed-acts-commentary.json",
+  "preachers-homiletical-reviewed-amos-commentary.json",
+  "preachers-homiletical-reviewed-chronicles-commentary.json",
+  "preachers-homiletical-reviewed-colossians-commentary.json",
+  "preachers-homiletical-reviewed-daniel-commentary.json",
+  "preachers-homiletical-reviewed-deuteronomy-commentary.json",
+  "preachers-homiletical-reviewed-ecclesiastes-commentary.json",
+  "preachers-homiletical-reviewed-ephesians-commentary.json",
+  "preachers-homiletical-reviewed-esther-commentary.json",
+  "preachers-homiletical-reviewed-ezekiel-1-11-commentary.json",
+  "preachers-homiletical-reviewed-ezekiel-12-29-commentary.json",
+  "preachers-homiletical-reviewed-ezekiel-30-48-commentary.json",
+  "preachers-homiletical-reviewed-ezra-commentary.json",
+  "preachers-homiletical-reviewed-exodus-commentary.json",
+  "preachers-homiletical-reviewed-galatians-commentary.json",
+  "preachers-homiletical-reviewed-genesis-1-8-commentary.json",
+  "preachers-homiletical-reviewed-genesis-9-50-commentary.json",
+  "preachers-homiletical-reviewed-haggai-obadiah-joel-malachi-commentary.json",
+  "preachers-homiletical-reviewed-hebrews-commentary.json",
+  "preachers-homiletical-reviewed-hosea-commentary.json",
+  "preachers-homiletical-reviewed-james-commentary.json",
+  "preachers-homiletical-reviewed-jeremiah-commentary.json",
+  "preachers-homiletical-reviewed-job-1-10-commentary.json",
+  "preachers-homiletical-reviewed-job-11-20-commentary.json",
+  "preachers-homiletical-reviewed-job-21-30-commentary.json",
+  "preachers-homiletical-reviewed-job-31-42-commentary.json",
+  "preachers-homiletical-reviewed-john-commentary.json",
+  "preachers-homiletical-reviewed-jonah-nahum-habakkuk-commentary.json",
+  "preachers-homiletical-reviewed-joshua-commentary.json",
+  "preachers-homiletical-reviewed-jude-commentary.json",
+  "preachers-homiletical-reviewed-judges-commentary.json",
+  "preachers-homiletical-reviewed-kings-commentary.json",
+  "preachers-homiletical-reviewed-lamentations-commentary.json",
+  "preachers-homiletical-reviewed-leviticus-commentary.json",
+  "preachers-homiletical-reviewed-luke-commentary.json",
+  "preachers-homiletical-reviewed-mark-commentary.json",
+  "preachers-homiletical-reviewed-matthew-commentary.json",
+  "preachers-homiletical-reviewed-micah-zephaniah-commentary.json",
+  "preachers-homiletical-reviewed-numbers-commentary.json",
+  "preachers-homiletical-reviewed-nehemiah-commentary.json",
+  "preachers-homiletical-reviewed-philemon-commentary.json",
+  "preachers-homiletical-reviewed-philippians-commentary.json",
+  "preachers-homiletical-reviewed-proverbs-commentary.json",
+  "preachers-homiletical-reviewed-psalms-1-25-commentary.json",
+  "preachers-homiletical-reviewed-psalms-26-35-commentary.json",
+  "preachers-homiletical-reviewed-psalms-36-38-commentary.json",
+  "preachers-homiletical-reviewed-psalms-39-50-commentary.json",
+  "preachers-homiletical-reviewed-psalms-51-65-commentary.json",
+  "preachers-homiletical-reviewed-psalms-66-75-commentary.json",
+  "preachers-homiletical-reviewed-psalms-76-87-commentary.json",
+  "preachers-homiletical-reviewed-psalms-88-99-commentary.json",
+  "preachers-homiletical-reviewed-psalms-100-109-commentary.json",
+  "preachers-homiletical-reviewed-psalms-110-120-commentary.json",
+  "preachers-homiletical-reviewed-psalms-121-130-commentary.json",
+  "preachers-homiletical-reviewed-psalms-131-150-commentary.json",
+  "preachers-homiletical-reviewed-revelation-commentary.json",
+  "preachers-homiletical-reviewed-romans-commentary.json",
+  "preachers-homiletical-reviewed-ruth-commentary.json",
+  "preachers-homiletical-reviewed-samuel-commentary.json",
+  "preachers-homiletical-reviewed-song-of-solomon-commentary.json",
+  "preachers-homiletical-reviewed-titus-commentary.json",
+  "preachers-homiletical-reviewed-zechariah-commentary.json",
   "scofield-1917-study-notes-reviewed-sample-commentary.json",
   "scofield-1917-book-introductions-commentary.json",
 ];
+
+const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filter((fileName) =>
+  fileName.startsWith("matthew-henry") ||
+  fileName.startsWith("american-commentary") ||
+  fileName.startsWith("jfb") ||
+  fileName.startsWith("treasury-of-david") ||
+  fileName === "amos-expanded-public-domain-commentary.json" ||
+  fileName.startsWith("h-a-ironside-hosea") ||
+  fileName.startsWith("h-a-ironside-minor-prophets") ||
+  fileName.startsWith("scofield-1917"),
+);
+const VALIDATED_COMMENTARY_CATALOG_BOOKS = 66;
+const VALIDATED_COMMENTARY_CATALOG_CHAPTERS = 1189;
 
 function rawDeferredCommentaryUrl(fileName: string) {
   return `/api/commentary/import/${encodeURIComponent(fileName)}`;
@@ -10460,13 +11513,15 @@ function rawDeferredCommentaryUrl(fileName: string) {
 async function fetchDeferredCommentaryEntries(
   signal: AbortSignal,
   onEntriesLoaded: (entries: CommentaryEntry[]) => void,
+  fileNames: string[] = deferredCommentaryImportFiles,
+  onFilesLoaded?: (fileNames: string[]) => void,
 ) {
   const batchSize = 6;
 
-  for (let index = 0; index < deferredCommentaryImportFiles.length; index += batchSize) {
+  for (let index = 0; index < fileNames.length; index += batchSize) {
     if (signal.aborted) return;
 
-    const fileBatch = deferredCommentaryImportFiles.slice(index, index + batchSize);
+    const fileBatch = fileNames.slice(index, index + batchSize);
     const groups = await Promise.all(
       fileBatch.map(async (fileName) => {
         const response = await fetch(rawDeferredCommentaryUrl(fileName), { signal });
@@ -10477,6 +11532,7 @@ async function fetchDeferredCommentaryEntries(
     const entries = groups.flat().map(normalizeCommentaryEntry);
 
     if (entries.length) onEntriesLoaded(entries);
+    onFilesLoaded?.(fileBatch);
   }
 }
 
@@ -15457,6 +16513,12 @@ export default function Home() {
   const [syncMessage, setSyncMessage] = useState("");
   const [crossReferences, setCrossReferences] = useState<CrossReference[]>(localCrossReferences);
   const [commentaryEntries, setCommentaryEntries] = useState<CommentaryEntry[]>(localCommentaryEntries);
+  const [deferredCommentaryLoadStatus, setDeferredCommentaryLoadStatus] = useState<DeferredCommentaryLoadStatus>({
+    loadedFiles: 0,
+    totalFiles: deferredCommentaryImportFiles.length,
+    loading: false,
+    mode: "starter",
+  });
   const [searchTerm, setSearchTerm] = useState("");
   const [searchFilter, setSearchFilter] = useState<TestamentFilter>("all");
   const [dictionarySearchTerm, setDictionarySearchTerm] = useState("");
@@ -15573,7 +16635,8 @@ export default function Home() {
   const flashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const accountSyncHydratingRef = useRef(false);
-  const deferredCommentaryLoadStartedRef = useRef(false);
+  const deferredCommentaryLoadedFilesRef = useRef<Set<string>>(new Set());
+  const deferredCommentaryLoadingFilesRef = useRef<Set<string>>(new Set());
   const speechVoices = useMemo(
     () => sortSpeechVoices(visibleSpeechVoices(allSpeechVoices, voiceSettings), voiceSettings),
     [allSpeechVoices, voiceSettings],
@@ -15581,27 +16644,78 @@ export default function Home() {
   const canOpenAdminArea = hasAdminRole || isLocalAdminPreviewHost;
 
   useEffect(() => {
-    const shouldLoadCommentary =
+    const shouldLoadStarterCommentary =
       tab === "bible" ||
       tab === "themes" ||
+      tab === "bookIntro" ||
+      tab === "sermons";
+    const shouldLoadCompleteCommentary =
       tab === "commentaryExplorer" ||
       tab === "fullStudy" ||
-      tab === "bookIntro" ||
       tab === "passageGuide" ||
       tab === "amosStudyPath" ||
       tab === "proverbsStudyPath" ||
-      tab === "hoseaStudyPath" ||
-      tab === "sermons";
+      tab === "hoseaStudyPath";
 
-    if (!shouldLoadCommentary || deferredCommentaryLoadStartedRef.current) return;
-    deferredCommentaryLoadStartedRef.current = true;
+    if (!shouldLoadStarterCommentary && !shouldLoadCompleteCommentary) return;
+
+    const targetFiles = shouldLoadCompleteCommentary
+      ? deferredCommentaryImportFiles
+      : starterDeferredCommentaryImportFiles;
+    const filesToLoad = targetFiles.filter(
+      (fileName) =>
+        !deferredCommentaryLoadedFilesRef.current.has(fileName) &&
+        !deferredCommentaryLoadingFilesRef.current.has(fileName),
+    );
+
+    if (!filesToLoad.length) {
+      setDeferredCommentaryLoadStatus({
+        loadedFiles: targetFiles.filter((fileName) => deferredCommentaryLoadedFilesRef.current.has(fileName)).length,
+        totalFiles: targetFiles.length,
+        loading: false,
+        mode: shouldLoadCompleteCommentary ? "complete" : "starter",
+      });
+      return;
+    }
+
+    filesToLoad.forEach((fileName) => deferredCommentaryLoadingFilesRef.current.add(fileName));
+    setDeferredCommentaryLoadStatus({
+      loadedFiles: targetFiles.filter((fileName) => deferredCommentaryLoadedFilesRef.current.has(fileName)).length,
+      totalFiles: targetFiles.length,
+      loading: true,
+      mode: shouldLoadCompleteCommentary ? "complete" : "starter",
+    });
 
     const controller = new AbortController();
 
-    void fetchDeferredCommentaryEntries(controller.signal, (deferredEntries) => {
-      setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, deferredEntries));
-    }).catch((error: unknown) => {
+    void fetchDeferredCommentaryEntries(
+      controller.signal,
+      (deferredEntries) => {
+        setCommentaryEntries((currentEntries) => mergeCommentaryEntries(currentEntries, deferredEntries));
+      },
+      filesToLoad,
+      (loadedFiles) => {
+        loadedFiles.forEach((fileName) => {
+          deferredCommentaryLoadingFilesRef.current.delete(fileName);
+          deferredCommentaryLoadedFilesRef.current.add(fileName);
+        });
+        setDeferredCommentaryLoadStatus({
+          loadedFiles: targetFiles.filter((fileName) => deferredCommentaryLoadedFilesRef.current.has(fileName)).length,
+          totalFiles: targetFiles.length,
+          loading: targetFiles.some((fileName) => deferredCommentaryLoadingFilesRef.current.has(fileName)),
+          mode: shouldLoadCompleteCommentary ? "complete" : "starter",
+        });
+      },
+    ).catch((error: unknown) => {
       if (error instanceof DOMException && error.name === "AbortError") return;
+    }).finally(() => {
+      filesToLoad.forEach((fileName) => deferredCommentaryLoadingFilesRef.current.delete(fileName));
+      setDeferredCommentaryLoadStatus({
+        loadedFiles: targetFiles.filter((fileName) => deferredCommentaryLoadedFilesRef.current.has(fileName)).length,
+        totalFiles: targetFiles.length,
+        loading: targetFiles.some((fileName) => deferredCommentaryLoadingFilesRef.current.has(fileName)),
+        mode: shouldLoadCompleteCommentary ? "complete" : "starter",
+      });
     });
   }, [tab]);
 
@@ -20620,7 +21734,7 @@ export default function Home() {
             <input
               id="global-quick-jump"
               className="min-h-11 flex-1 rounded-full border border-[var(--line)] bg-white px-4 text-base text-[var(--ink)] shadow-sm outline-none focus:border-[var(--gold)]"
-              placeholder="Jump to John 3:16, Romans 8, Amos 5, Rev 13"
+              placeholder="Jump to passage"
               suppressHydrationWarning
               value={globalQuickJumpText}
               onChange={(event) => setGlobalQuickJumpText(event.target.value)}
@@ -21094,6 +22208,7 @@ export default function Home() {
                 themes={STUDY_THEMES}
                 libraryResources={libraryResources}
                 coverage={commentaryCoverage}
+                loadStatus={deferredCommentaryLoadStatus}
                 onBack={() => setTab("bible")}
                 onOpenReference={openReference}
                 onOpenAuthor={openLibraryAuthor}
@@ -28512,7 +29627,8 @@ function commentaryStudyLabel(entry: CommentaryEntry) {
 }
 
 function commentaryGuideProfileFor(author: string) {
-  return COMMENTARY_GUIDE_PROFILES.find((profile) => profile.author === author);
+  const profileAuthor = COMMENTARY_GUIDE_PROFILE_ALIASES[author] ?? author;
+  return COMMENTARY_GUIDE_PROFILES.find((profile) => profile.author === profileAuthor);
 }
 
 function commentaryProfilesForEntries(entries: CommentaryEntry[]) {
@@ -32570,6 +33686,16 @@ const KNOWN_LIBRARY_WORK_TITLES = [
   "works of john bunyan",
   "letters of john calvin",
   "the works of john knox",
+  "preparation and delivery of sermons",
+  "commentary on the holy scriptures critical doctrinal and homiletical",
+  "general history of the baptist denomination in america",
+  "islam a challenge to faith",
+  "wonderful jesus and other songs",
+  "light and truth",
+  "life and times of jesus the messiah",
+  "the life of st paul",
+  "book of martyrs",
+  "rise and progress of religion in the soul",
   "the expositor s bible the gospel of st john",
   "the expositor s bible the acts of the apostles",
   "the expositor s bible the book of isaiah",
@@ -32642,6 +33768,8 @@ function canonicalLibraryTitle(title: string) {
 
 function canonicalLibraryAuthor(author: string) {
   const authorId = libraryAuthorIdFromName(author);
+  if (normalizedLibraryText(author).startsWith("gipsy smith")) return "gipsy smith";
+  if (normalizedLibraryText(author).includes("zwemer")) return "samuel zwemer";
   if (["spurgeon", "ironside", "kelly", "darby", "grant", "gaebelein", "ryle", "meyer", "torrey", "moody", "bounds", "murray", "bunyan", "taylor"].includes(authorId)) {
     return authorId;
   }
@@ -36749,7 +37877,7 @@ function ContentHealthDashboard() {
             <p className="text-sm font-semibold text-[var(--green)]">Content Health</p>
             <h3 className="mt-1 text-xl font-semibold text-[var(--ink)]">Confirm live content matches the current app</h3>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
-              Commentary imports now read from the repository version for the deployed commit. This check catches stale public storage copies before they confuse future imports.
+              Commentary imports now read from public storage first, with the repository version available as a backup. This check catches stale public storage copies before they confuse future imports.
             </p>
           </div>
           <button
@@ -38581,6 +39709,7 @@ function CommentaryExplorerScreen({
   themes,
   libraryResources,
   coverage,
+  loadStatus,
   onBack,
   onOpenReference,
   onOpenAuthor,
@@ -38593,6 +39722,7 @@ function CommentaryExplorerScreen({
   themes: StudyTheme[];
   libraryResources: LibraryResource[];
   coverage: CommentaryCoverage;
+  loadStatus: DeferredCommentaryLoadStatus;
   onBack: () => void;
   onOpenReference: (reference: string) => void;
   onOpenAuthor: (authorOrId: string) => void;
@@ -38609,6 +39739,7 @@ function CommentaryExplorerScreen({
   const [selectedAuthor, setSelectedAuthor] = useState("All");
   const [selectedThemeId, setSelectedThemeId] = useState("All");
   const [selectedUse, setSelectedUse] = useState("All");
+  const [selectedGuideId, setSelectedGuideId] = useState<CommentaryExplorerGuideId>("recommended");
   const [searchTerm, setSearchTerm] = useState("");
   const safeBook = books.includes(selectedBook) ? selectedBook : books[0] ?? currentBook;
   const chapters = useMemo(
@@ -38625,10 +39756,45 @@ function CommentaryExplorerScreen({
     "Devotional": ["devotional", "practical", "application", "heart"],
     "Word studies": ["word", "historical", "language", "lexical"],
   };
+  const chapterEntries = entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
+  const guideMatchesEntry = (entry: CommentaryEntry) => {
+    if (selectedGuideId === "all") return true;
+    const profile = commentaryGuideProfileFor(entry.author);
+    if (!profile) return false;
+    if (selectedGuideId === "recommended") return profile.priority <= 8;
+    if (selectedGuideId === "teaching") return profile.bestFor.includes("Teaching");
+    if (selectedGuideId === "preaching") return profile.bestFor.includes("Preaching");
+    if (selectedGuideId === "devotional") return profile.bestFor.includes("Devotions");
+    if (selectedGuideId === "word-study") return profile.bestFor.includes("Word studies") || /word|language|lexical|historical/i.test(profile.writingStyle);
+    return true;
+  };
+  const guideCounts = COMMENTARY_EXPLORER_GUIDES.reduce<Record<CommentaryExplorerGuideId, number>>((counts, guide) => {
+    counts[guide.id] = chapterEntries.filter((entry) => {
+      if (guide.id === "all") return true;
+      const profile = commentaryGuideProfileFor(entry.author);
+      if (!profile) return false;
+      if (guide.id === "recommended") return profile.priority <= 8;
+      if (guide.id === "teaching") return profile.bestFor.includes("Teaching");
+      if (guide.id === "preaching") return profile.bestFor.includes("Preaching");
+      if (guide.id === "devotional") return profile.bestFor.includes("Devotions");
+      if (guide.id === "word-study") return profile.bestFor.includes("Word studies") || /word|language|lexical|historical/i.test(profile.writingStyle);
+      return true;
+    }).length;
+    return counts;
+  }, {
+    recommended: 0,
+    teaching: 0,
+    preaching: 0,
+    devotional: 0,
+    "word-study": 0,
+    all: 0,
+  });
+  const activeGuide = COMMENTARY_EXPLORER_GUIDES.find((guide) => guide.id === selectedGuideId) ?? COMMENTARY_EXPLORER_GUIDES[0];
   const searchTerms = searchTerm.trim().toLowerCase().split(/\s+/).filter(Boolean);
   const filteredEntries = entries.filter((entry) => {
     if (entry.book !== safeBook || entry.chapter !== safeChapter) return false;
     if (selectedAuthor !== "All" && entry.author !== selectedAuthor) return false;
+    if (selectedAuthor === "All" && guideCounts[selectedGuideId] > 0 && !guideMatchesEntry(entry)) return false;
     const profile = commentaryGuideProfileFor(entry.author);
     const haystack = [
       entry.author,
@@ -38647,8 +39813,14 @@ function CommentaryExplorerScreen({
     const searchMatch = !searchTerms.length || searchTerms.every((term) => haystack.includes(term) || `${entry.book} ${entry.chapter}`.toLowerCase().includes(term));
     return themeMatch && useMatch && searchMatch;
   });
-  const chapterEntries = entries.filter((entry) => entry.book === safeBook && entry.chapter === safeChapter);
   const comparisonEntries = Array.from(new Map(chapterEntries.map((entry) => [entry.author, entry])).values()).slice(0, 6);
+  const recommendedChapterEntries = commentaryProfilesForEntries(chapterEntries)
+    .map((profile) => {
+      const entry = chapterEntries.find((candidate) => commentaryGuideProfileFor(candidate.author)?.author === profile.author);
+      return entry ? { profile, entry } : null;
+    })
+    .filter((item): item is { profile: CommentaryGuideProfile; entry: CommentaryEntry } => Boolean(item))
+    .slice(0, 6);
   const relatedBooks = libraryResources
     .filter((resource) => {
       const haystack = [resource.title, resource.author, resource.category, resource.collection, resource.description, resource.recommended_use].join(" ").toLowerCase();
@@ -38661,8 +39833,10 @@ function CommentaryExplorerScreen({
     .map((hint) => ({
       hint,
       resource: libraryResources.find((resource) => resource.slug === hint.resourceSlug),
+      chapterIndexed: hint.chapterIndex?.book === safeBook && Boolean(hint.chapterIndex.sourceLineStarts[safeChapter]),
     }))
-    .filter((item): item is { hint: CommentaryVolumeReferenceHint; resource: LibraryResource } => Boolean(item.resource))
+    .filter((item): item is { hint: CommentaryVolumeReferenceHint; resource: LibraryResource; chapterIndexed: boolean } => Boolean(item.resource))
+    .sort((left, right) => Number(right.chapterIndexed) - Number(left.chapterIndexed))
     .slice(0, 6);
   const bookCoverage = coverage.bookCoverage.find((item) => item.book === safeBook);
 
@@ -38690,6 +39864,14 @@ function CommentaryExplorerScreen({
             {coverage.totalEntries.toLocaleString()} public entries
           </span>
         </div>
+        <p className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-xs font-semibold leading-5 text-[var(--muted)]">
+          {loadStatus.loading
+            ? `Loading reviewed commentary catalog: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files ready.`
+            : loadStatus.mode === "complete"
+              ? `Full reviewed commentary catalog ready: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} files.`
+              : `Starter commentary ready for fast study: ${loadStatus.loadedFiles} of ${loadStatus.totalFiles} core files.`}
+          {" "}Validated full-catalog goal: {VALIDATED_COMMENTARY_CATALOG_BOOKS} Bible books and {VALIDATED_COMMENTARY_CATALOG_CHAPTERS.toLocaleString()} chapters.
+        </p>
 
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
           <label className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
@@ -38726,6 +39908,52 @@ function CommentaryExplorerScreen({
           </label>
         </div>
 
+        <div className="mt-4 rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Commentary Guide</p>
+              <p className="mt-1 text-sm font-semibold text-[var(--ink)]">{activeGuide.label}: {activeGuide.description}</p>
+            </div>
+            {selectedAuthor !== "All" ? (
+              <button
+                className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                onClick={() => setSelectedAuthor("All")}
+                type="button"
+              >
+                Clear author
+              </button>
+            ) : null}
+          </div>
+          <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+            {COMMENTARY_EXPLORER_GUIDES.map((guide) => {
+              const isActive = selectedGuideId === guide.id;
+              return (
+                <button
+                  key={`commentary-explorer-guide-${guide.id}`}
+                  className={`min-w-[8.5rem] rounded-2xl border px-3 py-2 text-left transition ${
+                    isActive
+                      ? "border-[var(--green)] bg-[var(--green)] text-white shadow-sm"
+                      : "border-[var(--line)] bg-white text-[var(--ink)]"
+                  }`}
+                  onClick={() => {
+                    setSelectedGuideId(guide.id);
+                    setSelectedAuthor("All");
+                  }}
+                  type="button"
+                >
+                  <span className="block text-sm font-semibold">{guide.label}</span>
+                  <span className={`mt-1 block text-xs ${isActive ? "text-white/80" : "text-[var(--muted)]"}`}>
+                    {guideCounts[guide.id]} entr{guideCounts[guide.id] === 1 ? "y" : "ies"}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+          <p className="mt-2 text-xs leading-5 text-[var(--muted)]">
+            Choose a guide first, then narrow by author, theme, or keyword. Use All when you want every reviewed entry for the chapter.
+          </p>
+        </div>
+
         <label className="mt-4 block text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">
           Keyword or phrase
           <div className="mt-2 flex h-12 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--paper)] px-4">
@@ -38740,13 +39968,58 @@ function CommentaryExplorerScreen({
           </div>
         </label>
 
-        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
           <LibraryStat label="Book coverage" value={bookCoverage ? `${bookCoverage.coveragePercentage}%` : "0%"} />
+          <LibraryStat label="Catalog files" value={`${loadStatus.loadedFiles}/${loadStatus.totalFiles}`} />
           <LibraryStat label="Authors here" value={String(new Set(chapterEntries.map((entry) => entry.author)).size)} />
           <LibraryStat label="Chapter entries" value={String(chapterEntries.length)} />
           <LibraryStat label="Filtered results" value={String(filteredEntries.length)} />
         </div>
+        {coverage.missingChapters === 0 && coverage.missingBooks.length === 0 ? (
+          <p className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-xs font-semibold leading-5 text-emerald-900">
+            Complete chapter coverage is connected: every Bible book and every KJV chapter has at least one reviewed commentary entry. Keep using filters to choose the best author for teaching, preaching, or devotional study.
+          </p>
+        ) : null}
       </section>
+
+      {recommendedChapterEntries.length ? (
+        <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--muted)]">Recommended order</p>
+              <h2 className="mt-2 text-xl font-semibold text-[var(--ink)]">Start with the best voices for {safeBook} {safeChapter}</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--muted)]">
+                Read the KJV text first, then use this order to compare commentary without getting buried in every available entry.
+              </p>
+            </div>
+            <span className="rounded-full bg-[var(--warm)] px-3 py-1.5 text-xs font-semibold text-[var(--green)]">
+              {recommendedChapterEntries.length} ready
+            </span>
+          </div>
+          <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {recommendedChapterEntries.map(({ profile, entry }, index) => (
+              <article key={`commentary-recommended-order-${entry.id}`} className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--green)] text-sm font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <button
+                    className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-[var(--green)]"
+                    onClick={() => setSelectedAuthor(entry.author)}
+                    type="button"
+                  >
+                    Filter
+                  </button>
+                </div>
+                <p className="mt-3 text-base font-semibold text-[var(--green)]">{profile.author}</p>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{profile.writingStyle}</p>
+                <p className="mt-2 text-sm leading-6 text-[var(--scripture-ink)]">{profile.bestUse}</p>
+                <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{profile.doctrinalNotes}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
         <article className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -38839,7 +40112,7 @@ function CommentaryExplorerScreen({
               </span>
             </div>
             <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-              {relatedFullCommentaryVolumes.map(({ hint, resource }) => (
+              {relatedFullCommentaryVolumes.map(({ hint, resource, chapterIndexed }) => (
                 <button
                   key={`commentary-volume-link-${safeBook}-${resource.slug}`}
                   className="rounded-2xl border border-[var(--line)] bg-white p-4 text-left transition hover:border-[var(--green)] hover:shadow-sm"
@@ -38851,6 +40124,11 @@ function CommentaryExplorerScreen({
                     <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-[var(--green)]">{hint.priority}</span>
                   </div>
                   <p className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--muted)]">{resource.author}</p>
+                  {chapterIndexed && (
+                    <p className="mt-2 inline-flex rounded-full bg-[var(--green-soft)] px-2.5 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+                      {safeBook} {safeChapter} located in source scan
+                    </p>
+                  )}
                   <p className="mt-2 text-xs leading-5 text-[var(--scripture-ink)]">{hint.note}</p>
                   <p className="mt-3 text-xs font-semibold text-[var(--green)]">Read full volume</p>
                 </button>
@@ -39239,6 +40517,15 @@ function CommentaryCoverageDashboard({
   const missingBooksPreview = coverage.missingBooks.slice(0, 18);
   const matrixBooks = coverage.bookCoverage.slice(0, 18);
   const matrixAuthors = coverage.authorCoverage.slice(0, 10);
+  const wholeBibleVoices = coverage.authorCoverage
+    .filter((author) => author.entries > 0 && author.coveragePercentage >= 99)
+    .slice(0, 10);
+  const specializedVoices = coverage.authorCoverage
+    .filter((author) => author.entries > 0 && author.coveragePercentage < 99)
+    .slice(0, 8);
+  const nextDepthTargets = coverage.candidateAuthors
+    .filter((candidate) => candidate.status !== "Verified")
+    .slice(0, 6);
 
   return (
     <section className="rounded-3xl border border-[var(--line)] bg-white p-5 shadow-sm">
@@ -39262,6 +40549,95 @@ function CommentaryCoverageDashboard({
         <LibraryStat label="Missing chapters" value={String(coverage.missingChapters)} />
         <LibraryStat label="Coverage" value={`${coverage.coveragePercentage}%`} />
         <LibraryStat label="Authors" value={String(coverage.authorCoverage.length)} />
+      </div>
+
+      {coverage.missingChapters === 0 && coverage.missingBooks.length === 0 ? (
+        <article className="mt-4 rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-900">Coverage milestone</p>
+              <h3 className="mt-1 text-lg font-semibold text-emerald-950">Every Bible book and chapter has reviewed commentary coverage.</h3>
+              <p className="mt-2 max-w-4xl text-sm leading-6 text-emerald-900/80">
+                The next commentary work is quality depth: more verse-level entries, stronger author comparison, and completing additional public-domain sets where source, edition, rights, and parser quality are clean.
+              </p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-emerald-900">
+              {coverage.chaptersCovered}/{coverage.totalChapters} chapters
+            </span>
+          </div>
+        </article>
+      ) : null}
+
+      <div className="mt-4 grid gap-3 xl:grid-cols-3">
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Whole-Bible voices</p>
+          <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Best first comparison set</h3>
+          <div className="mt-3 space-y-2">
+            {wholeBibleVoices.map((author) => (
+              <button
+                key={`whole-bible-commentary-voice-${author.author}`}
+                className="flex w-full items-center justify-between gap-3 rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenAuthor(author.author)}
+                type="button"
+              >
+                <span>
+                  <span className="block text-sm font-semibold text-[var(--green)]">{author.author}</span>
+                  <span className="block text-xs leading-5 text-[var(--muted)]">{author.booksCovered} books · {author.entries} entries</span>
+                </span>
+                <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  {author.coveragePercentage}%
+                </span>
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Specialized voices</p>
+          <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Use where they are strongest</h3>
+          <div className="mt-3 space-y-2">
+            {specializedVoices.map((author) => (
+              <button
+                key={`specialized-commentary-voice-${author.author}`}
+                className="flex w-full items-center justify-between gap-3 rounded-xl bg-white px-3 py-2 text-left"
+                onClick={() => onOpenAuthor(author.author)}
+                type="button"
+              >
+                <span>
+                  <span className="block text-sm font-semibold text-[var(--green)]">{author.author}</span>
+                  <span className="block text-xs leading-5 text-[var(--muted)]">{author.booksCovered} books · {author.chaptersCovered} chapters</span>
+                </span>
+                <span className="rounded-full bg-[var(--warm)] px-2.5 py-1 text-xs font-semibold text-[var(--green)]">
+                  {author.coveragePercentage}%
+                </span>
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="rounded-2xl border border-[var(--line)] bg-[var(--paper)] p-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--muted)]">Next depth targets</p>
+          <h3 className="mt-1 text-base font-semibold text-[var(--ink)]">Review before public expansion</h3>
+          <div className="mt-3 space-y-2">
+            {nextDepthTargets.length ? nextDepthTargets.map((candidate) => (
+              <div key={`next-commentary-depth-target-${candidate.author}`} className="rounded-xl bg-white px-3 py-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <button className="text-left text-sm font-semibold text-[var(--green)]" onClick={() => onOpenAuthor(candidate.author)} type="button">
+                    {candidate.author}
+                  </button>
+                  <span className={`rounded-full px-2.5 py-1 text-[0.68rem] font-semibold ${importStatusPill(candidate.status)}`}>
+                    {commentaryPublicStatusLabel(candidate.status)}
+                  </span>
+                </div>
+                <p className="mt-1 text-xs leading-5 text-[var(--muted)]">{candidate.resourceTitle}</p>
+              </div>
+            )) : (
+              <p className="rounded-xl bg-white px-3 py-2 text-sm leading-6 text-[var(--muted)]">
+                No pending author targets are listed. Add the next verified public-domain set when source and parser quality are ready.
+              </p>
+            )}
+          </div>
+        </article>
       </div>
 
       <div className="mt-4 grid gap-3 xl:grid-cols-[1.15fr_0.85fr]">
@@ -39508,18 +40884,37 @@ function CommentaryCoverageDashboard({
               <details key={`commentary-guide-profile-${profile.author}`} className="group rounded-xl bg-white px-3 py-2">
                 <summary className="cursor-pointer list-none">
                   <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <p className="text-sm font-semibold text-[var(--ink)]">{profile.author}</p>
-                      <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{profile.timePeriod} · {profile.writingStyle}</p>
-                    </div>
-                    <span className="rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:hidden">Guide</span>
-                    <span className="hidden rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:inline">Close</span>
-                  </div>
-                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{profile.bestUse}</p>
+	                    <div>
+	                      <p className="text-sm font-semibold text-[var(--ink)]">{profile.author}</p>
+	                      <p className="mt-1 text-xs font-semibold text-[var(--muted)]">{profile.timePeriod} · {profile.writingStyle}</p>
+	                      {profile.coverageScope || profile.coverageSummary ? (
+	                        <div className="mt-2 flex flex-wrap gap-1.5">
+	                          {profile.coverageScope ? (
+	                            <span className="rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)]">
+	                              {profile.coverageScope}
+	                            </span>
+	                          ) : null}
+	                          {profile.coverageSummary ? (
+	                            <span className="rounded-full bg-[var(--paper)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--muted)]">
+	                              {profile.coverageSummary}
+	                            </span>
+	                          ) : null}
+	                        </div>
+	                      ) : null}
+	                    </div>
+	                    <span className="rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:hidden">Guide</span>
+	                    <span className="hidden rounded-full bg-[var(--warm)] px-2 py-1 text-[0.68rem] font-semibold text-[var(--green)] group-open:inline">Close</span>
+	                  </div>
+	                  <p className="mt-2 text-xs leading-5 text-[var(--muted)]">{profile.bestUse}</p>
                 </summary>
                 <div className="mt-3 space-y-2 border-t border-[var(--line)] pt-3">
-                  <p className="text-xs leading-5 text-[var(--muted)]">{profile.biography}</p>
-                  <GuideList label="Strengths" values={profile.strengths} />
+	                  <p className="text-xs leading-5 text-[var(--muted)]">{profile.biography}</p>
+	                  {profile.coverageUseNote ? (
+	                    <p className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
+	                      <span className="font-semibold text-[var(--green)]">Coverage note:</span> {profile.coverageUseNote}
+	                    </p>
+	                  ) : null}
+	                  <GuideList label="Strengths" values={profile.strengths} />
                   <GuideList label="Watch" values={profile.weaknesses} />
                   <p className="rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
                     <span className="font-semibold text-[var(--green)]">Doctrinal notes:</span> {profile.doctrinalNotes}
@@ -44407,7 +45802,7 @@ function CommentaryDetails({ entry, compact = false }: { entry: CommentaryEntry;
       </summary>
 
       <div className="mt-3 border-t border-[var(--line)] pt-3">
-        <p className={`${compact ? "text-sm" : "text-base"} leading-7 text-[var(--ink)]`}>{entry.entry_text}</p>
+        <p className={`${compact ? "text-sm" : "text-base"} whitespace-pre-wrap break-words leading-7 text-[var(--ink)]`}>{entry.entry_text}</p>
         {entry.recommended_use && (
           <p className="mt-3 rounded-xl bg-[var(--paper)] px-3 py-2 text-xs leading-5 text-[var(--muted)]">
             Recommended use: {entry.recommended_use}
@@ -48524,7 +49919,7 @@ function MobileNav({ tab, onTab }: { tab: Tab; onTab: (tab: Tab) => void }) {
     { id: "prayer", label: "Prayer", shortLabel: "Prayer", icon: <MessageSquareText size={18} /> },
     { id: "journal", label: "Journal", shortLabel: "Jrnl", icon: <FileText size={18} /> },
     { id: "sermons", label: "Sermons", shortLabel: "Serm", icon: <Clipboard size={18} /> },
-    { id: "presentations", label: "Presentations", shortLabel: "Slides", icon: <MonitorPlay size={18} /> },
+    { id: "presentations", label: "Presentations", shortLabel: "Present", icon: <MonitorPlay size={18} /> },
     { id: "settings", label: "Settings", shortLabel: "Set", icon: <Settings size={18} /> },
   ];
 

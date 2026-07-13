@@ -1,17 +1,17 @@
 {
   "summary": {
-    "generated_at": "2026-07-06T12:28:05.394Z",
-    "base_entries": 57561,
-    "reviewed_overrides": 72,
-    "entries_with_quality_flags": 22331,
-    "entries_with_high_or_medium_flags": 4246,
+    "generated_at": "2026-07-13T01:07:11.842Z",
+    "base_entries": 58428,
+    "reviewed_overrides": 1020,
+    "entries_with_quality_flags": 22443,
+    "entries_with_high_or_medium_flags": 4255,
     "pattern_counts": {
-      "split_the": 2305,
+      "split_the": 2309,
       "split_wh_words": 731,
-      "replacement_marks": 1512,
+      "replacement_marks": 1515,
       "known_common_ocr": 46,
       "sacred_name_spacing": 1,
-      "hyphenated_scan_breaks": 20800
+      "hyphenated_scan_breaks": 20890
     }
   },
   "patterns": [
@@ -60,6 +60,38 @@
       "sample": "ATONEMENT, n. Agreement; concord; reconciliation, after enmity or controversy. Rom. V. He seeks to make atonement Between the Duke of Glo'ster and your brothers. Shak. 2. Expiation; satisfaction or reparation made by giving an equivalent for an inju- ry, or by doing or suffering that which is receiv"
     },
     {
+      "word": "adoption",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "split_the",
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "ADOP'TION, n. [L. adoptio.] 1. The act of adojrting, or the state of being adopted; the taking and treatuig of a stranger as one's o^vn cliild. ADO ADO A D U 2. Th« viiig as one's own, what is new iiatiiial. 3. God's taking the sinful children of men into his favor and protection. Eph. iv, Adoption "
+    },
+    {
+      "word": "adversary",
+      "entries": 2,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "AD'VERSARY, a. Opposed; opposite to; adverse. In law, having an opposing par- ty, as an adversaiy suit; in distinction from an appUcation, in law or equity, to which no opposition is made."
+    },
+    {
+      "word": "amen",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "AMEN'. This word, with slight differences of orthography, is in all the dialects of the Assyrian stock. As a verb, it signifi confirm, estabhsh, verify; to trust, or give confidence; as a noun, truth, f trust, confidence; as an adjective, firm, stable. In English, after the oriental manner, it is us"
+    },
+    {
       "word": "baptism",
       "entries": 1,
       "flagged_entries": 1,
@@ -68,6 +100,16 @@
         "hyphenated_scan_breaks"
       ],
       "sample": "BAP'TISM, n. [Gr. fiartT'Ki;ua, from fJartTcJw, from 3artTio, to baptize; Sp. bautizar; It. battezzare; Port, bautizar, or baptizar. These seem to be from the Greek, by con- traction. But the Arm. badeza, badein, may be from bath, bad, water] 1. The application of water to a person, as a sacrament o"
+    },
+    {
+      "word": "baptize",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "BAPTI'ZE, V. t. [See Baptism.] To ad- minister the sacrament of baptism to; to christen. By some denominations of christians, baptism is performed by plung- ing, or immersing the whole body in water, and this is done to none but adults. More generally the ceremony is performed by sprinkling water on"
     },
     {
       "word": "believe",
@@ -81,6 +123,16 @@
         "known_common_ocr"
       ],
       "sample": "BELIE'VE, j>. t. To credit upon tlje author- ity or testimony of another; to be per- suaded of the truth of something upon the declaration of another, or upon ev dence furnished by reason.'!, argument and deductions of the minil, or by other circumstances, than personal knowledge. When we believe uj"
+    },
+    {
+      "word": "blessing",
+      "entries": 2,
+      "flagged_entries": 2,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "BLESS'ING, ppr. Making happy; wishing happiness to; ])raising or extolling; con- secrating by praver."
     },
     {
       "word": "charity",
@@ -104,6 +156,46 @@
       "sample": "CHURCH, n. [Sax. circe, circ or cyric; Scots, kirk, which retains the Saxon pro-1 nunciation; D. kerk; G. kirche; Sw. kurck-\\ ia; Dan. kirke; Gr. xupiaxw, a temple of^ God, from xvfuaxos, pertaining to a Lord,! or to our Lord Jesus Christ, from xipioj, a| Lord; Russ. tzerkov.] 1 1. A house consecrat"
     },
     {
+      "word": "christ",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "CHRIST, n. [Gr. xp'^oi, anointed, from Arpi\", to anoint.] The A.Noi.NTED; an appellation given to the Savior of the world, and synonymous with the Hebrew Messiah, it was a custom of antiquity to consecrate persons to the sacerdotal and regal offices by anointing them with oil. €HR1S'TEN, f. «. kris'"
+    },
+    {
+      "word": "commentary",
+      "entries": 2,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "COM'MENTARY, n. A comment; expo- sition; ex|)lanation; illustration of diffi- cult and obscure passages in an author. 2. A book of comments or annotations. 3. A historical narrative; a memoir of partic- ular transactions; as the commentaries of Cesar."
+    },
+    {
+      "word": "conversion",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "CONVER'SION, 71. [L. conversio. See Convert.} 1. In a general sense, a turning or change from one state to another; with regard to substances, transmutation; as a conver- sion of water into ice, or of food into chyle or blood. '2. In military affairs, a change of front, as when a body of troops is a"
+    },
+    {
+      "word": "convert",
+      "entries": 3,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "CONVERT', V. t. [L. conveHo; con and ver- to, to turn J coinciding in elements and signification with barter, and probably from the root oi' vary, vario, veer, Sp. birar. Port. inVor, to turn. Class Br.] 1. To change or turn into another substance or form; as, to convert gases into wate water into i"
+    },
+    {
       "word": "covenant",
       "entries": 3,
       "flagged_entries": 1,
@@ -112,6 +204,37 @@
         "hyphenated_scan_breaks"
       ],
       "sample": "COVENANT, n. [Fr. convenant, the parti- ciple o^ convenir, to agree, L. convenio, con and venio, to come; Norm, conevence, a covenant; It. convenzione, from L. con- ventio. Literally, a coming together; meeting or agreement of minds.] 1. A mutual consent or agreement of two or more persons, to do or"
+    },
+    {
+      "word": "damnation",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "DAMNA'TION, n. [L. damnatio.] Sentence or condeumation to everlasting punish- ment in the future state; or the state of eternal torments. How can ye escape the damnation of hell. Matt, xxlii. 2. Condeumation. Taijloi:"
+    },
+    {
+      "word": "dispensation",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "DISPENSA'TION, n. [L. dispensatio. See Dispense.] 1. Distribution; the act of dealing out to different persons or places; as the dispen- sation of water indifferentlv to all parts of the earth. \" Ifoodward. 2. The deahng of God to his creatures; the distribution of good and evil, natural or moral, i"
+    },
+    {
+      "word": "eternal",
+      "entries": 2,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "ETER'NAL, o. [Fr. efeniel; L. wlernus, composed of cevum and temus, aimtenius. Varro. The origin of the last component part of the word is not oIjWoiis. It occurs in duUurnus, and seems to denote contin- 1. Without beginning or end of existence. The eternal God is thy refuse. Dent, xxxiii. 2. Withou"
     },
     {
       "word": "faith",
@@ -126,6 +249,17 @@
       "sample": "FAITH, n. [W. fyz; Arm, fei:; L. fdes; It. fede; Port, and Sp. fe; Fr. foi; Gr. rtifti; L. fido, to trust; Gr. «f iSu, to per- suade, to draw towards any thing, to conciliate; TdiSo/jai, to believe, to obey. In the Greek Lexicon of Hederic it is said, the primitive signification of the verb is to bi"
     },
     {
+      "word": "forgive",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "split_the",
+        "replacement_marks"
+      ],
+      "sample": "FORGIVE, v.t. forgiv'. pret. forgave; pp.' forgiven, [/or and give; Sa.x. forgifan; GoXh.fragiban; G. vergeben; D. vergeeven j Dan. forgiver; Sw. tilgifva. Tlie sense is to give from, that is, away, as we see by tlie Gothic fra, from. The English for, and G. and D. tier, are the same word, or from t"
+    },
+    {
       "word": "grace",
       "entries": 2,
       "flagged_entries": 2,
@@ -137,14 +271,32 @@
       "sample": "GRACE, n. [Fr. grace; It. grazia; Sp. gra- cia; Ir. grasa; from the L. gratia, which is formed on the Celtic; W. rhad, grace, a blessing, a gratuity. It coincides in ori- gin with Fr. gri, Eng. agree, congruous, and ready. The primary sense otgratus, is free, ready, quick, willing, prompt, from adva"
     },
     {
+      "word": "glorification",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "GLORIFICATION, n. [See Glorify.] The act of giving glory or of ascribing honors to. Taylor. 2. Exaltation to honor and dignity; eleva- tion to glory; as the glorification of Christ after his resurrection."
+    },
+    {
       "word": "hell",
       "entries": 1,
       "flagged_entries": 1,
-      "has_reviewed_override": false,
+      "has_reviewed_override": true,
       "flags": [
         "hyphenated_scan_breaks"
       ],
       "sample": "HELL, n. [Sax. hell, helle; G. hoik; D. hel, helle; Sw. helvete; Dan. helvede. Qu. hole, a deep place, or from Sax. helan, to cover.] a. [helix and sphere.] 1. The place or state of punishment for the wicked after death. Matt. x. Luke xii. Sin is hell begun, as religion is; heaven anti- cipated. J. "
+    },
+    {
+      "word": "high-priest",
+      "entries": 1,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": "HIGH-PRIEST, n. A chief priest. Sn-ipture."
     },
     {
       "word": "holy",
@@ -153,6 +305,16 @@
       "has_reviewed_override": true,
       "flags": [],
       "sample": ""
+    },
+    {
+      "word": "iniquity",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "INIQUITY, n. [Vr.iniquit6; L.inujuttas; in and aquitas, equity.] 1. Injustice; unrighteousness; a deviation from rectitude; as the iniquity of war; the iniquity of the slave trade. 2. Want of rectitude in principle; as a mali- cious prosecution originating in the ini- quity of the author. 3. A parti"
     },
     {
       "word": "judgment",
@@ -177,6 +339,34 @@
       "sample": "JUSTIFICA'TION, n. [Fr. from justifer, to justify.] 1. The act of justifying; a showing to be just or conformable to law, rectitude or propriety; vindication; defense. The court listened to the evidence and argu- ments in justif cation of the prisoner's con- duct. Our disobedience to God's com- mand"
     },
     {
+      "word": "intercessor",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "INTERCES'SOR, n. [L. See Intercede.] 1. A mediator; one who interposes between parties at variance, with a view to re< cile them; one who pleads in behalf of another. Milton. 2. A bishop who, during a vacancy of the see, administers the bishopric till a suc- cessor is elected. Encyc."
+    },
+    {
+      "word": "intercession",
+      "entries": 0,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": ""
+    },
+    {
+      "word": "mediator",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "MEDIA'TOR,?i. [Fr. mediateur.] One that interposes between parties at variance for' the purpose of reconciling them. I. Byway of eminence, Christ is the medi- ator, the divine intercessor through whom sinners may be reconciled to an of- fended God. Tiiii. 3. Christ is a mediator by nature, as partak"
+    },
+    {
       "word": "mercy",
       "entries": 1,
       "flagged_entries": 1,
@@ -187,12 +377,59 @@
       "sample": "MER'CY, n. [Fr. merci; Norm, merce, meer or mers; supposed to be a contraction of L. misericordia. But qu. Eth. \"^rh^ meher, to pity.] 1. That benevolence, mildness or tenderness of heart which disposes a person to over- look injuries, or to treat an offender better than he deserves; the disposition"
     },
     {
+      "word": "messiah",
+      "entries": 1,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": "MESSI'AH, n. [Ileb. n'WD, anointed.] Christ, the anointed; the Savior of the world. 1 know that when.Messiah coineth, who i.s called Christ, he will tell us all things. Jesus answered her, 1 that speak to thee am he. John iv."
+    },
+    {
+      "word": "offering",
+      "entries": 2,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "OF'FERING, n. That which is presented in divine service; an animal or a portion of bread or corn, or of gold and silver, or other valuable articles, presented to God as an atonement for sin, or as a return of thanks for his favors, or for other religious purpose; a sacrifice; an oblation. In the Mos"
+    },
+    {
+      "word": "ordinance",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "OR'DINANCE, n. [It. ordinanza; Fr. or- donnance.] 1. A rule established by authority; a per- manent rule of action. An ordinance may be a law or statute of sovereign power. In this sense it is often used in the Scrip- tures. Ex. XV. Num. X. Ezra iii. It may also signify a decree, edict or re script,"
+    },
+    {
       "word": "prayer",
       "entries": 0,
       "flagged_entries": 0,
       "has_reviewed_override": true,
       "flags": [],
       "sample": ""
+    },
+    {
+      "word": "preach",
+      "entries": 2,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": "PREACH, I', t. To proclaim; to publish in religious discourses. AVhat ye hear in thi^ car, that preach ye on the liouso-tops. M.ill. X. The I.or.l hath anointed me to preach good tidiiiijs to the meek. Is. Ixi. •i. To inculcate in public discourses. I have preached righteousness iu the great congreg"
+    },
+    {
+      "word": "preaching",
+      "entries": 2,
+      "flagged_entries": 2,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks",
+        "split_the"
+      ],
+      "sample": "PRE'ACHING, f/jr. Proclaiming; publish- ing in discourse: inculcating."
     },
     {
       "word": "prophecy",
@@ -203,6 +440,34 @@
         "hyphenated_scan_breaks"
       ],
       "sample": "PROPH'ECY, n. [Gr. rtpo^^f«a, from Xpo- ^r;ni, to foretell; «po, before, and fr^/u, to tell. This ought to be written prophesy.] 1. A foretelling; prediction; a declaration of something to come. As God only knows future events with certainty, no being but God or some person informed by him, can utte"
+    },
+    {
+      "word": "propitiation",
+      "entries": 1,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "PROPITIATION, n. propisia'shon. [Fr. from propitiate.] 1. The art of appeasing wrath and concilia ting the favor of an offended person; the act of making pro])itious. 2. In theology, the atonement or atoning sacrifice offered to God to assuage his wrath and render him propitious to sin- ners. Christ"
+    },
+    {
+      "word": "reconcile",
+      "entries": 0,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": ""
+    },
+    {
+      "word": "repent",
+      "entries": 3,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "REPENT', V. i. [Fr. repentir; It. pentire,, pentirsi; Sp. arrepentirse; L. re and /)ffin-| j(co, from pezna, pain, Gr. noivtj. See Pain.] 1. To feel pain, sorrow or regret for some- thing done or spoken; as, to repent that we have lost irmch time in idleness or sensual jileasurc; to repent that we h"
     },
     {
       "word": "repentance",
@@ -241,6 +506,16 @@
       "sample": ""
     },
     {
+      "word": "sermon",
+      "entries": 3,
+      "flagged_entries": 2,
+      "has_reviewed_override": true,
+      "flags": [
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "SER'MON,?i. [Fr. from L. sermo, from the root of scro, the primary sense of which is to throio or thrust. See Assert, Insert.] 1. A discourse delivered in public by a li- censed clergyman for the purpose of reli- gious instruction, and usually grounded on some text or passage of Scripture. Sermons a"
+    },
+    {
       "word": "sin",
       "entries": 3,
       "flagged_entries": 3,
@@ -253,12 +528,42 @@
       "sample": "SIN, n. [Sax. sin or syn; G. siinde; D. zonde; Sw. I):in. synd; Lapponir, Finnish, sin- din; allied perhaps to Ir.,?aun';K, to alter, to vary, to sunder. The primary sense is probably to depart, to wander.] 1. The vdluntary dejiaiture of a moral agent from a known rule of rectitude or duly, prescrib"
     },
     {
+      "word": "testimony",
+      "entries": 2,
+      "flagged_entries": 1,
+      "has_reviewed_override": true,
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "TEST'IMONY, n. [L. testimonium.] A sol- emn declaration or affirmation made for the purpose of establishing or provin\"- some fact. Such aftirmation in judicial proceedings, may be verbal or written, but unist be under oath. Testimony dif- fers from exndence; testimony is the decla- ration of a witne"
+    },
+    {
+      "word": "text",
+      "entries": 2,
+      "flagged_entries": 0,
+      "has_reviewed_override": true,
+      "flags": [],
+      "sample": "TEXT, n. [Fr. teile; L. leitus, woven; It. testo. See Texture.] 1. A discourse or composition on which a note or commentary is written. Thus we speak of the te.rt or original of the Scrip ture, in relation to the comments upon it. Infinite pains have been taken to ascertain and establish the genuine"
+    },
+    {
       "word": "truth",
       "entries": 0,
       "flagged_entries": 0,
       "has_reviewed_override": true,
       "flags": [],
       "sample": ""
+    },
+    {
+      "word": "witness",
+      "entries": 3,
+      "flagged_entries": 2,
+      "has_reviewed_override": true,
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "sample": "WIT'NESS, n. [Sax. u'itnesse, from witan, to know.] 1. Testimony; attestation of a fact or event. If 1 bear witness of myself, my ivitness is not true. Jolm V. 2. That which furnishes evidence or proof Laban said, this licap is a icilness between me and thee tliis day. Geu. xxxi. 3. A person who kno"
     }
   ],
   "high_priority_cleanup": [
@@ -273,45 +578,6 @@
       "sample": "A 'TRONIC, u. Tert&ining to Aaron, the ■Jrwish High P) icst, or to the priesthood of which he was the head. Doddridge.",
       "source_line_start": 20795,
       "source_line_end": 20798
-    },
-    {
-      "headword": "A'GENCY",
-      "normalized_headword": "agency",
-      "flags": [
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "A'GENCY, «. [h.agens. See Act] 1. The quality of moving or of exerting power; tlic state of being in action; ac- A G G A G G A G G ijon; operation; instrumentality; as, the agency ot'provitlence in thf; natural world. U. The office of an agent, or factor; busi- ness of an agent entrusted witli the c",
-      "source_line_start": 32573,
-      "source_line_end": 32604
-    },
-    {
-      "headword": "A'GENT",
-      "normalized_headword": "agent",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "A'GENT, >i. An actor; one that e.xerts pow- er, or has the power to act; as, a moral agent. 2. An active power or cause; tliat which has the power to produce an effect; as, heat is a powerful ag'cn^. 3. A substitute, deputy, or factor; one en- trusted with the business of another; an attorney; a min",
-      "source_line_start": 32605,
-      "source_line_end": 32616
-    },
-    {
-      "headword": "A'IMLESS",
-      "normalized_headword": "aimless",
-      "flags": [
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "A'IMLESS, a. Without aim. May. \\IR, n. [Fr mV; L. acr; Gr. aj?p; It. ana; S[). ayre; Port, ar; Arm. tar, eer; Ir. aer W. atcyr; Ch. TIN; Syr.; ] ]; Eth. ^ _£ /J Ar. lj<. This word, in the Shemitic languages, falls under the root iix Heb. and Ch., to sliine. The radical sense to open, expand; whence ",
-      "source_line_start": 33955,
-      "source_line_end": 34047
     },
     {
       "headword": "A'IR-SACS",
@@ -338,19 +604,6 @@
       "sample": "A'PHIS, n. In zoology, the puceron, vine fretter, or plant-louse; a genus of insects, belonging to the order of hemipters. The aphis is furnished with an inflected beak, and with feelers longer than the thorax. In tlie same species, some individuals have four erect wings, and others are entirely wit",
       "source_line_start": 46511,
       "source_line_end": 46532
-    },
-    {
-      "headword": "A'REA",
-      "normalized_headword": "area",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "A'REA, n. [L. I suspect this to be con- tracted from Ch. NJ'IX, an area or bed; Heb. njny; fi'om a root which signifies to reach, stretch, lay or spread.] 1. Any plain surface, as the floor of a room of a church or other building, or of tlie ground. 2. \"The space or site on which a building stands; ",
-      "source_line_start": 50855,
-      "source_line_end": 50878
     },
     {
       "headword": "AB'ACIST",
@@ -402,18 +655,6 @@
       "source_line_end": 22083
     },
     {
-      "headword": "AB'STINENTS",
-      "normalized_headword": "abstinents",
-      "flags": [
-        "split_the"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "AB'STINENTS, a sect which appeared France and Spain in the third century, who opposed marriage, condemned the use of flesh meat, and placed tlie Holy Spirit in the class of created beings.",
-      "source_line_start": 23198,
-      "source_line_end": 23203
-    },
-    {
       "headword": "AB'STRAGT",
       "normalized_headword": "abstragt",
       "flags": [
@@ -442,32 +683,6 @@
       "source_line_end": 20907
     },
     {
-      "headword": "ABASED",
-      "normalized_headword": "abased",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ABASED, pp. Reduced to a low state, humbled, degraded. In heraldry, it is used of tlie wings of eagles,, when the tops are turned downwards to- wards the point of the shield; or when the wings are shut, the natural way of bear- ing them being spread, with the top point- ing to the cJiief of the angl",
-      "source_line_start": 21055,
-      "source_line_end": 21066
-    },
-    {
-      "headword": "ABDICATE",
-      "normalized_headword": "abdicate",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ABDICATE, V. t. [L. abdico; ah and dico, to cieilioate, to bestow, but the literal jiri- iiiary sense (li dico is to send or thrust.] 1. In a g-ejiemi seijse, to relinquish, renounce, or abandon. Forster. 'J. To abandon an office or trust, without a formal resignation to those who confer- red it, or",
-      "source_line_start": 21422,
-      "source_line_end": 21471
-    },
-    {
       "headword": "ABINTEST'ATE",
       "normalized_headword": "abintestate",
       "flags": [
@@ -491,32 +706,6 @@
       "sample": "ABLAC'TATE, t-. t. [L. ablacto; from ab and lac, milk.] To wean from tlie breast. [LitUe used.]",
       "source_line_start": 21967,
       "source_line_end": 21971
-    },
-    {
-      "headword": "ABOUT'",
-      "normalized_headword": "about",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ABOUT', prep. [Sax. abutan, onbutan, em- butan, about, around; on or emb, coincid- ing with Or. a^$i, and butan, without, [see but,] Uterally, around, on the outside.] 1. Around; on the exterior part or surface. Bind them about thy neck. Prov. iii. 3. Isa. 1. Hence,. 2. Near to iti place, with the s",
-      "source_line_start": 22404,
-      "source_line_end": 22479
-    },
-    {
-      "headword": "ABOUT'",
-      "normalized_headword": "about",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ABOUT', ofrfi'. Near to in number or quantity There fill tliat day about three thousand men, Ex. xxxii. 2. Near to in quality or degree; as about as high, or as cold. 3. Here and there; around; in one place and another. Wandering about from house to house. 1. Tim. v. 4. Round, or the longest way, op",
-      "source_line_start": 22480,
-      "source_line_end": 22544
     },
     {
       "headword": "ABROACH",
@@ -557,32 +746,6 @@
       "source_line_end": 23364
     },
     {
-      "headword": "ABYSS'",
-      "normalized_headword": "abyss",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ABYSS', n. [Gr. ASvaaoi, bottomless, from a priv. and Svsio;, bottom. Ion. for 8v8os. See Bottojn.] A bottomless gulf; used also for a deep mass of waters, supposed by some to have encompassed the earth before the flood. Darkness was upon the face of the deep, oi abyss, as it is in the Septuagint. G",
-      "source_line_start": 23584,
-      "source_line_end": 23614
-    },
-    {
-      "headword": "ACADE'MIAN",
-      "normalized_headword": "academian",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACADE'MIAN, n. A member of an acad emy; a student in a university or col A€ADEM'le, > a. Belonging to ar A€ADEM'l€AL, \\ academy, or to a col lege or university — as academic studies; also noting what belongs to the school or philosophy of Plato — as the academic sect. A€ADEM'I€, n. One who belonged ",
-      "source_line_start": 23702,
-      "source_line_end": 23723
-    },
-    {
       "headword": "ACATALECTIC",
       "normalized_headword": "acatalectic",
       "flags": [
@@ -595,86 +758,6 @@
       "source_line_end": 23830
     },
     {
-      "headword": "ACCELERA'TION",
-      "normalized_headword": "acceleration",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCELERA'TION, n. The act ofincreas- ing velocity or progress; the state of being quickened in motion or action. Accelera- ted motion in mechanics and physics, is that which continually receives accessions of velocity; as, a falling body moves to- wards the earth with an acceleration of ve- locity. ",
-      "source_line_start": 23897,
-      "source_line_end": 23922
-    },
-    {
-      "headword": "ACCENT",
-      "normalized_headword": "accent",
-      "flags": [
-        "split_the",
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCENT, n. [L. accentus, tromad and fa- no, cantum, to sing; AV. canu; Corn, kann: h: canaim. Sec ikccend.] A C C A C C A C C I. Tlie modulation of the voice in reading or sjjealiiiig, as practiced by tlie ancient Greeks, wliich rendered tlieir rehearsal musical. More strictly, in English, '.'. A pa",
-      "source_line_start": 23952,
-      "source_line_end": 24036
-    },
-    {
-      "headword": "ACCENTUATE",
-      "normalized_headword": "accentuate",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCENTUATE, v. t. To mark or pro- nounce with an accent or \\vith accents. A€CENTUA'TION, n. The act of placuig accents in writing, or of pronouncing them in speaking..\\CCEPT', V. t. [L. accepto, from accipio, ad and capio, to take; Fr. accepter; Sj). aceptar; Port, aceiter; It. accettare. See Lat. c",
-      "source_line_start": 24045,
-      "source_line_end": 24100
-    },
-    {
-      "headword": "ACCESS'ION",
-      "normalized_headword": "accession",
-      "flags": [
-        "replacement_marks",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCESS'ION, n. [L. accessio.] A coming to; an acceding to and joining; as a king's accession to a confederacy. 2. Increase by something added; that which is added; augmentation; as an accession of wealth or territory. 3. Inlaw, a mode of acquiring property, by which the owner of a corporeal substanc",
-      "source_line_start": 24240,
-      "source_line_end": 24275
-    },
-    {
-      "headword": "ACCESSORY",
-      "normalized_headword": "accessory",
-      "flags": [
-        "split_the",
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCESSORY, n. [L. Accessorius, fi-om ac cessus, accedo. See Accede. This word i accented on the first syllable on accoinit of| the derivatives, which require a seconda ry accent on the third; but the natural accent of accessory is on the second sylla ble, and thus it is often pronounced b) good spea",
-      "source_line_start": 24294,
-      "source_line_end": 24341
-    },
-    {
-      "headword": "ACCIDENT'AL",
-      "normalized_headword": "accidental",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCIDENT'AL, a. Happerung by chance, or rather imexpectedly; casual\"; fortui- A C C tons; taking place not according to the usual course of tilings; opposed to that which is constant, regular, or intended; as an accidental visit. 2. Non-essential; not necessarily belonging to; as songs are accidenta",
-      "source_line_start": 24377,
-      "source_line_end": 24400
-    },
-    {
       "headword": "ACCLMULATION",
       "normalized_headword": "acclmulation",
       "flags": [
@@ -685,20 +768,6 @@
       "sample": "ACCLMULATION, n. Thekct ofaccunni latiiig; tlie state of being accumulated; ai amassing; a collecting together; as ai: nccumulation of earth or of evils. •2. In tat', the concun-ence of several titles to the same thing, or of several circum stances to the same proof. Encyc. 3. In Universities, an ac",
       "source_line_start": 25250,
       "source_line_end": 25266
-    },
-    {
-      "headword": "ACCOM'PANY",
-      "normalized_headword": "accompany",
-      "flags": [
-        "split_the",
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCOM'PANY, V. t. [Fr. accompagner; Sp, acompahar; Port, acompanhar. See Com- pany.] 1. To go with or attend as a companion or associate on a journey, walk, &c.; as a man accompanies his friend to church, or on a tour. 2. To be with as connected; to attend; as pain accompanies disease. A€€OM'PANY, V",
-      "source_line_start": 24642,
-      "source_line_end": 24740
     },
     {
       "headword": "ACCORP'ORATE",
@@ -723,45 +792,6 @@
       "sample": "ACCOURT, V. t. [See Court.] To entertain' witli courtesy. [Ao< used.] Spenser}",
       "source_line_start": 25076,
       "source_line_end": 25078
-    },
-    {
-      "headword": "ACCURACY",
-      "normalized_headword": "accuracy",
-      "flags": [
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCURACY, n. [L. accuratio, from accu- rare, to take care of; ad and curare, to take care; cxira, care. See Care.] 1. Exactness; exact conformity to truth; or to a rule or model; freedom from mistake; nicety; correctness; precision wliich re- sults from care. The accuracy of ideas or ophiions is con",
-      "source_line_start": 25270,
-      "source_line_end": 25285
-    },
-    {
-      "headword": "ACCURATELY",
-      "normalized_headword": "accurately",
-      "flags": [
-        "replacement_marks",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCURATELY, adv. Exactly; in an accu- rate manner; with precision; without er- ror or defect; as a writing accurately copied. 9. Closely; so ' • ■ ■ ^ J- vial AC ACE 2. The charge of an offense or criiiif the declaration containing the charge. They set over his head his accusation, ]",
-      "source_line_start": 25299,
-      "source_line_end": 25317
-    },
-    {
-      "headword": "ACCURS'ED",
-      "normalized_headword": "accursed",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACCURS'ED, pp. or a. Doomed to destruc tion or misery: The city shall be accursed. John vi. 2. Separated fi-om the faithful; cast out of the church; excommunicated. I could wish myself accursed from Christ. St. Paul, \\S. Worthy of the curse: detestable; exe- crable. Keep from tlie accursed tiling. J",
-      "source_line_start": 25353,
-      "source_line_end": 25368
     },
     {
       "headword": "ACCUS'TOMARILY",
@@ -851,44 +881,6 @@
       "source_line_end": 26010
     },
     {
-      "headword": "ACQUI'RE",
-      "normalized_headword": "acquire",
-      "flags": [
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACQUI'RE, V. t. [L. acquiro, ad and quwro, to seek, that is to follow, to press, to urge; ac- quiro signifies to jmrsue to the end or ob- ject; Fr.ac^uenr; Sp. arfgutnV; Ar. Sy'i, Heb. Ipn to seek, to make towards, to fol- low. The L. qucesivi, unless contracted, is jnobably from a difierent root. S",
-      "source_line_start": 26330,
-      "source_line_end": 26354
-    },
-    {
-      "headword": "ACQUI'REMENT",
-      "normalized_headword": "acquirement",
-      "flags": [
-        "split_wh_words"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACQUI'REMENT, n. The act of acquiring, or that wliich is acquired; attainment, is used ui opposition to natural gifts; as, eloquence, and skill in music and painting, are acquirements; genius, the gift of nature. It denotes especially personal attainments, in opposition to material or external thuig",
-      "source_line_start": 26362,
-      "source_line_end": 26372
-    },
-    {
-      "headword": "ACRE",
-      "normalized_headword": "acre",
-      "flags": [
-        "replacement_marks",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACRE, n. a'ker. [Sax. acer, acera, or acer; Ger. acker; D. akker; Sw. acker; Dan. ager; W. eg-; Ir. acra; Gr. oypof; Lat. ager. In these languages, the word re- tains its primitive sense, an open, plowed, (II- >.i\\\\i',l III 111. In Eng. it retained its ori- ^■iii.il -ii;iiii;r:iiiiin, that of any op",
-      "source_line_start": 26482,
-      "source_line_end": 26536
-    },
-    {
       "headword": "ACRO'MION",
       "normalized_headword": "acromion",
       "flags": [
@@ -900,20 +892,6 @@
       "sample": "ACRO'MION, n. [Gr. axpos, highest, and u/ios, shoulder.] In anatomy, tliat part of the spine of the scapula, whicli receives the extreme pan of the clavicle. Quj'ncT/. A€RON'I€, I a. [Gr. axpos, extreme, and A€RON'I€AL, S rul, night.] (n astronomy, a term applied to tlie rising of a star at sun set,",
       "source_line_start": 26598,
       "source_line_end": 26639
-    },
-    {
-      "headword": "ACT",
-      "normalized_headword": "act",
-      "flags": [
-        "split_wh_words",
-        "replacement_marks",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ACT, V. i. [Gr. ayu, Lat. ago, to urge, drive, lead, bring, do, perform, or in gen- eral, to move, to exert force; Cantabrian, eg-, force; W. eg'ni; Ir. cig-eon, force; Ir. aige, to act or carry on; eachdmn, to do or act; actaim, to ordain; eacht, acht, deed, act, condition; F. agir; It. agire, to d",
-      "source_line_start": 26737,
-      "source_line_end": 27023
     },
     {
       "headword": "ACTIE'AN",
@@ -929,16 +907,16 @@
       "source_line_end": 25572
     },
     {
-      "headword": "ACUTIA'TOR",
-      "normalized_headword": "acutiator",
+      "headword": "AD",
+      "normalized_headword": "ad",
       "flags": [
         "split_the",
         "hyphenated_scan_breaks"
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "ACUTIA'TOR, n. In the middle ages, a per- son whose office was to sharpen instru- ments. Before the invention of fire-arms, such officers attended armies, to sharpen their instruments. Encyc. AD. A Latin preposition, signifying to. It is probably from Heb. Ch. Syr. Sam. Eth. nn«, Ar. 4^;;^, to come ",
-      "source_line_start": 27309,
+      "sample": "AD. A Latin preposition, signifying to. It is probably from Heb. Ch. Syr. Sam. Eth. nn«, Ar. 4^;;^, to come near, to approach; from which root we may also deduce at. In composition, the last letter is usually changed into the first letter of the word to which it is prefixed. Thus for addamo, the Rom",
+      "source_line_start": 27315,
       "source_line_end": 27357
     },
     {
@@ -1005,19 +983,6 @@
       "source_line_end": 27444
     },
     {
-      "headword": "ADD",
-      "normalized_headword": "add",
-      "flags": [
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADD, V. t. [L. addo, from ad and do, to give.] 1. To set or put together, join, or unite, as, one thing or sum to another, in an aggre- gate; as, add three to four, the sum is 2. To unite in idea or consideration; to subjoin. To what has been alledged, let this argument be added. 3. To increase numb",
-      "source_line_start": 27548,
-      "source_line_end": 27589
-    },
-    {
       "headword": "ADDORS'ED",
       "normalized_headword": "addorsed",
       "flags": [
@@ -1028,32 +993,6 @@
       "sample": "ADDORS'ED, a. [L. ad and dorsum, tlie baclv.] Ill heraldry, having the backs turned to each other, as beasts.",
       "source_line_start": 27770,
       "source_line_end": 27775
-    },
-    {
-      "headword": "ADDRESS'",
-      "normalized_headword": "address",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADDRESS', v.t. [Fr. adresser; Sp. ende rezar; It. dirizzare, to direct, to make straiglit. Thi.s is suppo.sed to be from L, dirigo; it also coincides with Ch. Sin, Ai: |jo»j'j ^yr- id., to direct, to rectify to fir. See Dress.] 1. To prepare; to make suitable dispositions for. Tumus addressed his me",
-      "source_line_start": 27776,
-      "source_line_end": 27828
-    },
-    {
-      "headword": "ADDRESS'",
-      "normalized_headword": "address",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADDRESS', Ji. A speaking to; verbal ap- plication; a formal manner of speech; as, when introduced, tlie president made a short address. 2. A written or formal appUcation; a mes- sage of respect, congratulation, thanks, pe- tition, &c.; as, an address of thanks; an officer is removable upon the addre",
-      "source_line_start": 27829,
-      "source_line_end": 27860
     },
     {
       "headword": "ADENOGRAPHY",
@@ -1105,20 +1044,6 @@
       "source_line_end": 28407
     },
     {
-      "headword": "ADJUDICATION",
-      "normalized_headword": "adjudication",
-      "flags": [
-        "split_the",
-        "split_wh_words",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADJUDICATION, n. The act of ad- judging; the act or process of trying and determining judicially; as, a ship was ta- ken and sent into port for adjudication. 2. A judicial sentence; judgment or deci- sion of a court. Whose families were parUes to some of the former adjwlicalions. Blackstotie 3. In S",
-      "source_line_start": 28433,
-      "source_line_end": 28455
-    },
-    {
       "headword": "ADJUNCTIVE",
       "normalized_headword": "adjunctive",
       "flags": [
@@ -1143,32 +1068,6 @@
       "source_line_end": 29578
     },
     {
-      "headword": "ADMI'RE",
-      "normalized_headword": "admire",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADMI'RE, V. t. [L. admiror, ad and miror, to wonder; Sp. and Port, admirar; Fr. admirer; It. ammirare; Fr. mirer, to look, to take aim; Corn, miras, to look, see or face; Arm. miret, to stop, hold, keep; W. mir, visage; also fair, comely; and maer, one that looks after, keeps or guards, a mayor, or ",
-      "source_line_start": 28965,
-      "source_line_end": 28995
-    },
-    {
-      "headword": "ADMIN'ISTER",
-      "normalized_headword": "administer",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADMIN'ISTER, v. i. [L. administro, of ad and ministro, to serve or manage. See Minister.] 1. To act as minister or chief agent, in man- aging public affairs, under laws or a constitution of government, as a kin^, president, or other supreme officer. It is used also of absolute monarchs, who rule not",
-      "source_line_start": 28701,
-      "source_line_end": 28742
-    },
-    {
       "headword": "ADMINISTRATRIX",
       "normalized_headword": "administratrix",
       "flags": [
@@ -1179,32 +1078,6 @@
       "sample": "ADMINISTRATRIX, n. A female who Iniinisters upon the estate of an intestate; so a female wlio administers govern-",
       "source_line_start": 28832,
       "source_line_end": 28837
-    },
-    {
-      "headword": "ADMISSION",
-      "normalized_headword": "admission",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADMISSION, n. [L. admissio.^ 1. The act or practice of admitting, as the ADM admission of aliens into our country also tlie state of being admitted. 2. Admittance; power or permission to en ter; entrance; access; power to approach as, our laws give to foreigners easy admis- sion to the rights of cit",
-      "source_line_start": 29025,
-      "source_line_end": 29042
-    },
-    {
-      "headword": "ADMIT'",
-      "normalized_headword": "admit",
-      "flags": [
-        "split_the",
-        "hyphenated_scan_breaks"
-      ],
-      "highest_severity": "high",
-      "has_reviewed_override": false,
-      "sample": "ADMIT', V. t. [L. admitlo, from ad and init- io, to send, Fr. meltre.] 1. To suffer to enter; to grant entrance; wliether into a place, or an office, or into the mind, or consideration; as to admit a student into college; to admit a serious thought into the mind. 2. To give right of entrance; as, a ",
-      "source_line_start": 29043,
-      "source_line_end": 29062
     },
     {
       "headword": "ADMONTSH",
@@ -1232,8 +1105,173 @@
       "source_line_end": 29267
     },
     {
-      "headword": "ADOP'TION",
-      "normalized_headword": "adoption",
+      "headword": "ADV'ANCIVE",
+      "normalized_headword": "advancive",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ADV'ANCIVE, a. Tending to advance, or promote. ADV>ANTA6E, n. [Pr. avantage, from avaiit, before; It. vantaggio; Sp. ventaja.] 1. Any state, condition, or circumstance, favorable to success, prosperity, ijiterest, or reputation. TTie enemy had tlie advantage of elevated ground. 2. Benefit; gain; pro",
+      "source_line_start": 30002,
+      "source_line_end": 30050
+    },
+    {
+      "headword": "ADVERT'ED",
+      "normalized_headword": "adverted",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ADVERT'ED, pp. Attended to; regarded; with to. ■VDVERT'ENCE, ) n. A cUrection of the \\DVERT'ENCY, ^ mind to; attention; notice; regard; consideration; heedful- ness.",
+      "source_line_start": 30319,
+      "source_line_end": 30325
+    },
+    {
+      "headword": "AF'FLUX",
+      "normalized_headword": "afflux",
+      "flags": [
+        "split_the"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AF'FLUX, n. [L. affiuxum, from affiuo. See Flow.] The act of flowing to; a flowing to, or tliat which flows to; as, an afflux of blood to the head.",
+      "source_line_start": 31585,
+      "source_line_end": 31591
+    },
+    {
+      "headword": "AFFLUX'ION",
+      "normalized_headword": "affluxion",
+      "flags": [
+        "split_wh_words"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AFFLUX'ION, n. The act of flowing to; that whicli flows to. [Sec Afflux.]",
+      "source_line_start": 31592,
+      "source_line_end": 31594
+    },
+    {
+      "headword": "AFTER-HOPE",
+      "normalized_headword": "afterhope",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AFTER-HOPE, n. Future hope. Jonson. -AFTER-HOURS, n. Hours tliat follow; time following. Shak. 'AFTER-IGNORANCE, n. Subsequent ig- norance. • Stafford. 'AFTER-KING, n. A succeeding khig. Skuckftird. 'AFTER-LIFE, n. Future Ufe or the life after this. Dryden. Butler. 3. A later period of life; subsequ",
+      "source_line_start": 32108,
+      "source_line_end": 32150
+    },
+    {
+      "headword": "AG'ALLOCH",
+      "normalized_headword": "agalloch",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AG'ALLOCH, > r«/- • / 7 •■ AGAL'LO€HUM, T\" [Of oriental ongm Aloes-wood, the product of a tree growing in China, and some of the Indian isles There are three varieties, the calambac, the common hgnuni aloes, and the calam- bour. The first variety is light and porous, and so filled with a fragrant re",
+      "source_line_start": 32335,
+      "source_line_end": 32349
+    },
+    {
+      "headword": "AG'OLIN",
+      "normalized_headword": "agolin",
+      "flags": [
+        "split_wh_words",
+        "replacement_marks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AG'OLIN, n. A bird of the partridge kind in Cuba. Its breast and belly are white; its back and tail of a dusky yellow brown Diet. ofJVat. Hist A€OL'OTHIST,?,„, « i A€'OLYTE, I \"• [^■■- <\"\"'^»'\"-] In the ancient church, one of the subordinate officers, who hghted the lamps, prepared the elements of t",
+      "source_line_start": 26068,
+      "source_line_end": 26111
+    },
+    {
+      "headword": "AG'RIJIONY",
+      "normalized_headword": "agrijiony",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AG'RIJIONY, n. [L. argemonia, from the Gr. Thus it is written by Pliny. But in lower Latin it is written agrinionia. Said to be from Gr. apyt^a, the web or pearl of the eye, from opyof, white, which this plant was supposed to cure. See Theojih. 887.].\\ genus of pkints, of several specie?. Of A G U A",
+      "source_line_start": 33537,
+      "source_line_end": 33572
+    },
+    {
+      "headword": "AGALMAT'OLITE",
+      "normalized_headword": "agalmatolite",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AGALMAT'OLITE, n. [Gr. oyaTi^a, im- age, and TLtBof, stone.] A name given by Klaproth to two varieties of the pierre de lard, lard stone, of China. It contams no magnesia, but otherwise has the characters of talck. It is called in Ger- man, bildstein, figure-stone, and by Brong- niart, steatite pago",
+      "source_line_start": 32350,
+      "source_line_end": 32423
+    },
+    {
+      "headword": "AIZO'ON",
+      "normalized_headword": "aizoon",
+      "flags": [
+        "split_the"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AIZO'ON, n. [Sax. aizon, from L. aizoon It seems to be composed of Or. au, always. Sax. aa, Eng. aye, and |uor, livuig.] A genus of plants, called by Miller semper vine. Tlie name has, by some writers, been applied to the house leek and to the aloes, Encyc.",
+      "source_line_start": 34219,
+      "source_line_end": 34230
+    },
+    {
+      "headword": "AL'BATROS",
+      "normalized_headword": "albatros",
+      "flags": [
+        "split_the"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'BATROS, n. An aquatic fowl, belong' ing to the order of ansers. Tlie bill ii strait; the upper mandible crooked at the point, and the lower one truncated; the nostrils are oval, open and Uttle promi nent, and placed on the sides; the wings are pennated, and there are three webbed toes on each foo",
+      "source_line_start": 34510,
+      "source_line_end": 34526
+    },
+    {
+      "headword": "AL'BURN",
+      "normalized_headword": "alburn",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'BURN, n. [L. albumus, from albus, white.] A fish called the bleak. It belongs to the order of abdominals, and the genus Cypri- nus. It is five or six inches in length, and esteemed delicious food. Artificial pearls are made of its scales. Encyc. AL'€AHEST, or AL'KAHEST, n. [Arabic] A pretended un",
+      "source_line_start": 34666,
+      "source_line_end": 34720
+    },
+    {
+      "headword": "AL'CATRAZ",
+      "normalized_headword": "alcatraz",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'CATRAZ, n. The Spanish name of tlie Pelecanus Onocrotalus of Linne; a peU- can; also a fish taken on the coast of India. Span. Did.",
+      "source_line_start": 34721,
+      "source_line_end": 34725
+    },
+    {
+      "headword": "AL'KALI",
+      "normalized_headword": "alkali",
       "flags": [
         "split_the",
         "split_wh_words",
@@ -1241,47 +1279,302 @@
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "ADOP'TION, n. [L. adoptio.] 1. The act of adojrting, or the state of being adopted; the taking and treatuig of a stranger as one's o^vn cliild. ADO ADO A D U 2. Th« viiig as one's own, what is new iiatiiial. 3. God's taking the sinful children of men into his favor and protection. Eph. iv, Adoption ",
-      "source_line_start": 29339,
-      "source_line_end": 29405
+      "sample": "AL'KALI, n. plu. Alkahes. [Ar. ^jXi\" ka- li, with the common prefix, tlie plant call- ed glass wort, from its use in the manu- facture of glass; or the ashes of the plant, which seems to be its prunitive sense, for the verb signifies to fry.] In chimistry, a term applied to all bodies which possess ",
+      "source_line_start": 35668,
+      "source_line_end": 35704
     },
     {
-      "headword": "ADORA'TION",
-      "normalized_headword": "adoration",
+      "headword": "AL'KORAN",
+      "normalized_headword": "alkoran",
+      "flags": [
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'KORAN, n. [Arab, al, the, and koran, book. The book by way of eminence, as we say the Bible. See Koran. It is pro- nounced, I beUeve, by orientalists, alko- raivn.] The book wliich contains the Mohammedan doctrines of faith and practice. It was written by Mohammed, in the dialect of the Korcish, ",
+      "source_line_start": 35794,
+      "source_line_end": 35812
+    },
+    {
+      "headword": "AL'TERANT",
+      "normalized_headword": "alterant",
+      "flags": [
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'TERANT, a. Altering; gradually chang- uig. Ai'TERANT, n. A medicine whicli, with- out a sensible operation, gradually eonects the state of the body and changes it from a diseased to a healthy condition. An al terative. Enmic. Q\\dncy.",
+      "source_line_start": 38021,
+      "source_line_end": 38029
+    },
+    {
+      "headword": "AL'TERATIVE",
+      "normalized_headword": "alterative",
+      "flags": [
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'TERATIVE, n. A medicuie wliich, without sensible operation, gradually in- duces a change in the habit or constitu- tion and restores healthy functions. This word is more generally used than alterant.",
+      "source_line_start": 38043,
+      "source_line_end": 38048
+    },
+    {
+      "headword": "AL'TO-RIPIE'NO",
+      "normalized_headword": "altoripieno",
+      "flags": [
+        "split_wh_words"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'TO-RIPIE'NO. [It.] The tenor of the great chorus, whicli and plays only in particular places. Encyc.",
+      "source_line_start": 38341,
+      "source_line_end": 38345
+    },
+    {
+      "headword": "AL'UDEL",
+      "normalized_headword": "aludel",
       "flags": [
         "split_the",
         "hyphenated_scan_breaks"
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "ADORA'TION, n. The act of paying lionnrs to a divine being; the worship paid to (.'od; the;lc I of addressing as a God. Adm-iilion i-oii.^ists in external homage, ac- coiiipaiiifd willi the highest reverence. It is used for tlie act of praying, or prefer- ring requests or thanksgiving, to the Su- pr",
-      "source_line_start": 29423,
-      "source_line_end": 29458
+      "sample": "AL'UDEL, n. [a and lutum, without lute. Lunier.] In chimistry, aludcls are earthern pots with- out bottoms, tliat they may be e.\\actly fit- ted into each other, and used in subfima- tioiis. At the bottom of the furnace is a pot containing the matter to be sublimed, and at the top a head to receive t",
+      "source_line_start": 38363,
+      "source_line_end": 38373
     },
     {
-      "headword": "ADORN'ING",
-      "normalized_headword": "adorning",
+      "headword": "AL'VEOLITE",
+      "normalized_headword": "alveolite",
+      "flags": [
+        "replacement_marks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'VEOLITE, n. [L. alveolus, and Gr. ■KlOoi.] Ill natural history, a kind of stony polypiers, of a globular or hemi.spherical shape formed by umnerous concentric beds, each composed of a union of httle cells. Diet, of JSi'at. Hist.",
+      "source_line_start": 38492,
+      "source_line_end": 38502
+    },
+    {
+      "headword": "AL'VEOLUS",
+      "normalized_headword": "alveolus",
+      "flags": [
+        "replacement_marks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AL'VEOLUS, \\ \"■ [L- ''™- of '^»'^»«-] 1. A cell in a bee hive, or in a fossil. 2. The socket in the jaw, m which a tooth is fixed. 3. A sea fossil of a conic figure, composed of] a tunnlier of cells, like bee-hives, joined by a pipe of communication. Encyc.",
+      "source_line_start": 38481,
+      "source_line_end": 38491
+    },
+    {
+      "headword": "ALBIGEN'SES",
+      "normalized_headword": "albigenses",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALBIGEN'SES, ALBEgEOIS, n. A party of Reformers, who sejjarated from the church of Rome, in tlie 12th century; so called from the Albegeois, asmallterritoiy in France, where they resided. They are sometimes confounded with the fValdenses; but they were prior to them in time, differ- ed from them in ",
+      "source_line_start": 34556,
+      "source_line_end": 34570
+    },
+    {
+      "headword": "ALBU'MINOUS",
+      "normalized_headword": "albuminous",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALBU'MINOUS, a. Pertaining to, or hav- ing tlie properties of albumen.",
+      "source_line_start": 34653,
+      "source_line_end": 34655
+    },
+    {
+      "headword": "ALE",
+      "normalized_headword": "ale",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALE, n. [Sax. eala, tale, or aloth; G. al; Sw. Ol; Dan. til; Ir. ol. Q,u. Ir. olam, to drink.] 1. A liquor made from an infusion of malt by fermentation. It ditters from beer, in having a smaller proportion of hops. It is of different sorts, chiefly pale and broimi; the first made from malt slightly",
+      "source_line_start": 34883,
+      "source_line_end": 34918
+    },
+    {
+      "headword": "ALERT'NESS",
+      "normalized_headword": "alertness",
       "flags": [
         "split_the"
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "ADORN'ING, n. Ornament; decoration. 1 Pet. iii. ADOS€ULA'TION, n. [L. ad and osculatio, a kissing, from osculum, a kiss, or mouth.] The impregnation of plants by the falling of tlie farina on the pistils. Encyc. Adosculation is also defined to be the insi mg of one part of a plant into another, Crab",
-      "source_line_start": 29540,
-      "source_line_end": 29553
+      "sample": "ALERT'NESS, n. Briskness; nhnbleness; sprightUncss; levity. Addison- A L G A L I A L ALEUROiAI'ANCY, n. [Gr. a^vpor, meal, and liavriia, divination.] A kind of divination by meal, used by the ancients. Encyc. ALEU'TIAN, or ALEU'TI€, a. Designating certain isles in tlie Pacific ocean, eastward of Kam",
+      "source_line_start": 35123,
+      "source_line_end": 35155
     },
     {
-      "headword": "ADULT'",
-      "normalized_headword": "adult",
+      "headword": "ALIE'NE",
+      "normalized_headword": "aliene",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALIE'NE, \\ \"■ '• fL- \"heno.] 1. To transfer title or property to another: to sell. Nor could he aliene the estate, even willi the consent of the Lord. Blackstone. 2. To estrange; to make averse or indiffer- ent; to turn the affections from. The prhice was aliened from all thoughts of the marriage. C",
+      "source_line_start": 35372,
+      "source_line_end": 35394
+    },
+    {
+      "headword": "ALIENA'TION",
+      "normalized_headword": "alienation",
+      "flags": [
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALIENA'TION, n. [L. alienatio.^ 1. A transfer of title; or a legal conveyance of property to another. 2. The state of being alienated. 3. A withdiawing or estrangement, as of the heart or affections. 4. Delirium; derangement of mental facul- ties; insgnitv. Hooker, A L A L K A L K Alienation-office,",
+      "source_line_start": 35428,
+      "source_line_end": 35456
+    },
+    {
+      "headword": "ALKALIM'ETER",
+      "normalized_headword": "alkalimeter",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALKALIM'ETER, n. [Alkali and Gr. ^£- ■fpoi/, measure.] An instrument for ascertaining the strength of alkalies, or the quantity of alkah in pot- ash and soda. Ure.",
+      "source_line_start": 35715,
+      "source_line_end": 35721
+    },
+    {
+      "headword": "ALKER'VA",
+      "normalized_headword": "alkerva",
+      "flags": [
+        "split_the"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALKER'VA, n. An Arabic name of tlie Palma Cbristi. Quincy.",
+      "source_line_start": 35791,
+      "source_line_end": 35793
+    },
+    {
+      "headword": "ALLER'ION",
+      "normalized_headword": "allerion",
+      "flags": [
+        "replacement_marks",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALLER'ION, n. In heraldry, an eagle with- out beak or feet, with expanded wings denoting Imperialists vanquished and dis- armed. Encyc..■VLLEVEU'R, n. A small Swedish coin, value about a cent. Encyc.",
+      "source_line_start": 36618,
+      "source_line_end": 36625
+    },
+    {
+      "headword": "ALLIGA'TION",
+      "normalized_headword": "alligation",
       "flags": [
         "split_the",
         "hyphenated_scan_breaks"
       ],
       "highest_severity": "high",
       "has_reviewed_override": false,
-      "sample": "ADULT', n. A person grown to full size and strength, or to the years of manhood. It is also applied to full grown plants. Among civilians, a person between four- teen and twenty-five years of age. Enaic. ADl'LTERANT, n. The person or thing tliat adulterates.",
-      "source_line_start": 29672,
-      "source_line_end": 29680
+      "sample": "ALLIGA'TION, n. The act of tying to- gether; the state of being tied. [Little used.] 2. A rule of arithmetic, for finding the price or value of compounds consisting of ingre- dients of different values. Thus if a quan- tity of sugar, worth eight cents the pound, and another quantity worth ten cents,",
+      "source_line_start": 36743,
+      "source_line_end": 36765
+    },
+    {
+      "headword": "ALLIGA'TOR",
+      "normalized_headword": "alligator",
+      "flags": [
+        "split_wh_words",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALLIGA'TOR, n. [Properly allagarto, from the Spanish and Portuguese lagarto, lizard; L. lacerta. The Latin word seems to be connected with lacertus, the arm; and the animal may be named from the resemblance of his legs to arms.] The American crocodile. This animal is of the Uzard genus, having a lon",
+      "source_line_start": 36766,
+      "source_line_end": 36792
+    },
+    {
+      "headword": "ALLU'RER",
+      "normalized_headword": "allurer",
+      "flags": [
+        "split_wh_words"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALLU'RER,?i. He, or that, wliich allures.",
+      "source_line_start": 37147,
+      "source_line_end": 37148
+    },
+    {
+      "headword": "ALP",
+      "normalized_headword": "alp",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALP, ALPS, n. [Qu. Gr. ax^o;, white; L. albus. The Celts called all high moun- tains alpes or olbe. Cluver. Thucydides mentions a castle, In the territory of Argos, situated on a hill and called Olpas or Olp. Lib. 3. Ca. 105. Pelloutier, Hist, des Gel- tes, Liv. 1. 15. The derivation of th< word fi-",
+      "source_line_start": 37742,
+      "source_line_end": 37766
+    },
+    {
+      "headword": "ALTHE'A",
+      "normalized_headword": "althea",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "ALTHE'A, 71. [Or. aJ.9oia, from a%9a, or a7.6at.vu, to heal.] In botany, a genus of polyandrian mona- delphs, of several species; called in Eng- lish marsh-malloiD. Tlie common species has a perennial root. and an annual stalk rising four or five feet. It abounds with mucilage, and is used as an emo",
+      "source_line_start": 38205,
+      "source_line_end": 38218
+    },
+    {
+      "headword": "AM'ASS",
+      "normalized_headword": "amass",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AM'ASS, V. t. [Fr. amasser; It. anunassare L. massa, a heap or lump; Gr. ^uofo. See Mass.] 1. To collect into a heap; to gather a great quantity; to accumulate; as, to amass a treasure. 2. To collect in great numbers; to add many things together; as, to amass words or phrases. AlVrASS, re. An assemb",
+      "source_line_start": 38702,
+      "source_line_end": 38716
+    },
+    {
+      "headword": "AM'BER",
+      "normalized_headword": "amber",
+      "flags": [
+        "split_the",
+        "hyphenated_scan_breaks"
+      ],
+      "highest_severity": "high",
+      "has_reviewed_override": false,
+      "sample": "AM'BER, re. [Fr.ambre; Sp. ambar; Port. id; It. ambra; an oriental word; Pers. j^ic anbar or anabar; Ar. j^is anba- ron. In 1 ICings x. 2. 10, the Arabic is ren- dered spices. Tlie Arabic word is render- ed by Castle, amber, a marine fish, a shield made of skuis, crocus and finius. In Eth. OtII^ anb",
+      "source_line_start": 38888,
+      "source_line_end": 38930
     }
   ]
 }

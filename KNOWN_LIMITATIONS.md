@@ -23,20 +23,23 @@ This app is in private beta. These limitations should be visible, expected, and 
 - Webster definitions and Strong's data are useful but still expanding.
 - Commentary coverage is meaningful but not complete.
 - Matthew Henry and JFB coverage expanded for private beta, but not every commentary author is complete.
-- TSK cross references include reviewed starter/beta samples, not the full TSK dataset yet.
+- TSK cross references are expanding and should remain quality-reviewed before being treated as complete.
 - Bible geography and chronology are strongest for selected beta chapters and are still expanding chapter by chapter.
 - Staged or needs-review commentary is not public reviewed content.
 - Some library resources are metadata, planned, permission-needed, or review-only.
-- David Cloud / Way of Life and modern copyrighted works must remain Permission Needed unless written permission exists.
+- David Cloud / Way of Life shareable categories must follow their published sharing policy with source links and citation; Store/paid items remain Permission Needed unless written permission exists.
+- Modern copyrighted works must remain Permission Needed unless written permission exists.
 - Doctrinal labels such as Use with discernment and Not all doctrine endorsed are intentional.
 
 ## Features Still Limited
 
-- Paid plans, marketplace, subscriptions, and purchases.
+- Paid plans, marketplace, subscriptions, and purchases are not live public features yet.
+- Membership must not charge for copied public-domain or free-use-only resource material itself; future paid value should be app tools, sync, storage, workflows, original premium content, or explicitly licensed resources.
 - AI sermon tools, AI narration, and generated voiceovers.
 - Full Strong's scholar-level grammar tools.
 - Sermon slide builder is a beta MVP. It supports slide creation, preview, presenter mode, and PowerPoint export, but should still be tested carefully before Sunday use.
-- PDF, Keynote, Proclaim export, remote control, and full presentation replacement workflows are not ready yet.
+- Print/save-as-PDF fallback is available, but full PDF export, Keynote export, Proclaim-specific export, and full presentation replacement workflows are not complete.
+- Remote control should be tested on the actual church network before service.
 - Public personal uploads.
 - Church management, messaging, social features, and member directories.
 - Full licensed audiobook or Bible audio hosting.
@@ -51,7 +54,7 @@ This app is in private beta. These limitations should be visible, expected, and 
 ## Beta Expectations
 
 - The app should feel useful for Bible reading, study, prayer, journaling, and library reading.
-- Sermon and lesson preparation should be usable for a John 3 beta test, but exported slides and notes still need review before live preaching.
+- Sermon and lesson preparation should be usable for a John 3 beta test, but exported slides, presentation remote control, and notes still need review before live preaching.
 - Daniel 7, Revelation 13, Amos 1, Romans 8, and John 3 are the best current depth-test chapters.
 - It is not expected to replace every Logos-style feature yet.
 - The goal of beta feedback is stability, clarity, mobile usability, and Bible-centered usefulness.

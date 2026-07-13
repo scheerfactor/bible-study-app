@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-07-12",
+  "resource_title": "The Preacher's Complete Homiletical Commentary on Isaiah",
+  "authors": [
+    "R. A. Bertram",
+    "Alfred Tucker"
+  ],
+  "publication": {
+    "publisher": "Funk & Wagnalls Company",
+    "year": 1892
+  },
+  "source_overview_url": "https://www.studylight.org/commentaries/eng/phc/isaiah.html",
+  "rights_evidence_url": "https://www.studylight.org/commentaries/eng/phc/isaiah-1.html",
+  "rights_evidence": "The StudyLight chapter page states that the files are public domain and that the text is courtesy of BibleSupport.com, used by permission.",
+  "expected_chapters": 66,
+  "listed_chapters": [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+    16, 17, 19, 21, 22,
+    24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55,
+    56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66
+  ],
+  "listed_chapter_count": 62,
+  "missing_chapter_links": [15, 18, 20, 23],
+  "listed_coverage_percent": 93.94,
+  "local_verified_source": {
+    "path": "data/library/verified/the-preacher-s-complete-homiletic-commentary-on-isaiah-volume-1-robert-aitkin-bertram-and-alfred-tucker.txt",
+    "source_url": "https://www.gutenberg.org/ebooks/58062",
+    "documented_scope": "Isaiah 1-39",
+    "parser_note": "The Gutenberg text is organized as passage-based sermon outlines rather than one clean section per chapter. Do not split it into chapter commentary with heading guesses."
+  },
+  "review_status": "source_gap_review_required",
+  "import_decision": "Do not claim complete Isaiah coverage until the four omitted chapter pages are verified or another complete, rights-documented source is located.",
+  "next_action": "Retry the four direct StudyLight chapter URLs after the temporary source rate limit clears, then locate and verify a public-domain Volume II text before designing a source-aware parser."
+}

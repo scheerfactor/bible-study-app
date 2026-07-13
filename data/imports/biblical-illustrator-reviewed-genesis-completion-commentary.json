@@ -14,10 +14,11 @@
     "rights_basis": "Public-domain StudyLight chapter pages for The Biblical Illustrator. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a preaching and teaching illustration source, secondary to Scripture and doctrinally reviewed commentary.",
     "entry_text": "Verses 1-2\n\n Genesis 6:1-2\n\n The sons of God saw the daughters of men that they were fair; and they took them wives of all which they chose",
-    "review_status": "Verified",
-    "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_status": "Needs Review",
+    "import_status": "Staged",
+    "review_batch": "Biblical Illustrator Source Recovery Queue",
+    "review_notes": "Quarantined because the stored text contains only a verse heading and verse text, not substantive commentary. The original Genesis volume is public domain, but no openly accessible matching scan with verified Genesis 6 boundaries was confirmed in this review. Do not import or display publicly until the exact chapter text is recovered from a verified public-domain edition.",
+    "source_recovery_status": "Blocked - open matching Genesis volume needed"
   },
   {
     "id": "joseph-s-exell-genesis-7-phase-3-reviewed",

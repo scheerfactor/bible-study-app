@@ -14,6 +14,84 @@ const bookOrder = [
 ];
 
 const dictionaryAliases = {
+  sware: "swear",
+  sworn: "swear",
+  greater: "great",
+  branches: "branch",
+  moved: "move",
+  asses: "ass",
+  smitten: "smite",
+  ran: "run",
+  horsemen: "horseman",
+  lieth: "lie",
+  dealt: "deal",
+  dost: "do",
+  savour: "savor",
+  seeth: "see",
+  canst: "can",
+  slept: "sleep",
+  goest: "go",
+  doest: "do",
+  justified: "justify",
+  sitteth: "sit",
+  wouldest: "will",
+  churches: "church",
+  crucified: "crucify",
+  caught: "catch",
+  abram: "abraham",
+  syrians: "syria",
+  judaea: "judea",
+  philistine: "philistines",
+  circumcised: "circumcision",
+  prevailed: "prevail",
+  understood: "understand",
+  valour: "valor",
+  nought: "naught",
+  rebelled: "rebel",
+  tarried: "tarry",
+  dieth: "die",
+  honourable: "honorable",
+  bethlehemjudah: "bethlehem",
+  bethlehemite: "bethlehem",
+  kadeshbarnea: "kadesh",
+  galilaeans: "galilee",
+  pharaohnechoh: "pharaoh",
+  pharaohnecho: "pharaoh",
+  pharaohhophra: "pharaoh",
+  bethhoglah: "hoglah",
+  bethshemite: "bethshemesh",
+  dibongad: "dibon",
+  kirheres: "kirharaseth",
+  kirhareseth: "kirharaseth",
+  kirharesh: "kirharaseth",
+  kirjathbaal: "kirjath",
+  abelmaim: "abel",
+  atarothadar: "ataroth",
+  atarothaddar: "ataroth",
+  aznothtabor: "tabor",
+  chislothtabor: "tabor",
+  bathshua: "bathsheba",
+  bethjesimoth: "bethjeshimoth",
+  chaldaeans: "chaldeans",
+  committest: "commit",
+  deadness: "dead",
+  eleloheisrael: "israel",
+  forgivenesses: "forgiveness",
+  hazazontamar: "engedi",
+  immutability: "immutable",
+  irnahash: "nahash",
+  justifier: "justify",
+  kedeshnaphtali: "kedesh",
+  kirjatharim: "kirjathjearim",
+  meribahkadesh: "meribah",
+  nepthalim: "naphtali",
+  rebecca: "rebekah",
+  rebuker: "rebuke",
+  slanderously: "slander",
+  syriadamascus: "syria",
+  syriamaachah: "syria",
+  thereinto: "therein",
+  unweighed: "weigh",
   hath: "have",
   hast: "have",
   hadst: "have",
@@ -107,7 +185,7 @@ const stopWords = new Set([
 const dirtyDefinitionPatterns = [
   /[�■]/,
   /\b(?:tlje|tlie|tliat|tliis|wliich|whicli|witli|aiid|iiot|iiito|Ood)\b/i,
-  /\b[A-Z]\s+[a-z]{3,}\b/,
+  /\b(?:G od|L ord|J esus|C hrist)\b/,
   /[a-z]-\s+[a-z]/i,
 ];
 
@@ -216,7 +294,7 @@ for (const [ref, text] of allVerseEntries) {
     chaptersByBook.get(parsed.book).add(parsed.chapter);
   }
 
-  for (const rawWord of String(text).match(/[A-Za-z]+/g) ?? []) {
+  for (const rawWord of String(text).match(/[A-Za-z]+(?:-[A-Za-z]+)*/g) ?? []) {
     const word = normalizeWord(rawWord);
     if (!word) continue;
     totalWordTokens += 1;
@@ -257,6 +335,13 @@ for (const topic of naveTopics) {
   if (normalized && !naveByTopic.has(normalized)) naveByTopic.set(normalized, topic);
 }
 
+const rareTermEntries = await readJson("data/generated/kjv-rare-term-reviewed-overrides.json", []);
+const rareTermByHeadword = new Map();
+for (const entry of rareTermEntries) {
+  const key = normalizeWord(entry.normalized_headword || entry.headword);
+  if (key && !rareTermByHeadword.has(key)) rareTermByHeadword.set(key, entry);
+}
+
 function bestWebsterEntry(word) {
   for (const candidate of dictionaryLookupCandidates(word)) {
     const entries = websterByHeadword.get(candidate);
@@ -273,19 +358,29 @@ function hasNaveCandidate(word) {
   return dictionaryLookupCandidates(word).some((candidate) => naveByTopic.has(candidate));
 }
 
+function hasRareTermCandidate(word) {
+  return dictionaryLookupCandidates(word).some((candidate) => rareTermByHeadword.has(candidate));
+}
+
 const dictionaryRows = meaningfulBibleWords.map((item) => {
   const entry = bestWebsterEntry(item.word);
   const hasDefinition = Boolean(entry);
-  const dirtyDefinition = hasDefinition && dirtyDefinitionPatterns.some((pattern) => pattern.test(entry.definition ?? ""));
+  const isReviewedOverlay = entry?.review_status === "reviewed_overlay";
+  const dirtyDefinition =
+    hasDefinition &&
+    !isReviewedOverlay &&
+    dirtyDefinitionPatterns.some((pattern) => pattern.test(entry.definition ?? ""));
   const hasEaston = hasEastonCandidate(item.word);
   const hasNave = hasNaveCandidate(item.word);
+  const hasRareTerm = hasRareTermCandidate(item.word);
   return {
     ...item,
     lookupCandidates: dictionaryLookupCandidates(item.word),
     hasDefinition,
     hasEaston,
     hasNave,
-    hasAnyStudyLookup: hasDefinition || hasEaston || hasNave,
+    hasRareTerm,
+    hasAnyStudyLookup: hasDefinition || hasEaston || hasNave || hasRareTerm,
     dirtyDefinition,
     sourceHeadword: entry?.headword ?? null,
     reviewStatus: entry?.review_status ?? null,
@@ -352,6 +447,10 @@ const topDictionaryDirty = dictionaryDirty.slice(0, 80);
 const topStrongsMissingWords = meaningfulBibleWords.filter((item) => !strongsMappedWords.has(item.word)).slice(0, 80);
 const topNaveMissingTopics = meaningfulBibleWords.filter((item) => !hasNaveCandidate(item.word)).slice(0, 80);
 const topMissingAnyStudyLookup = dictionaryRows.filter((item) => !item.hasAnyStudyLookup).slice(0, 80);
+const wordsWithDictionaryOrStrongs = dictionaryRows.filter((item) => item.hasAnyStudyLookup || strongsMappedWords.has(item.word));
+const topWordsWithoutDictionaryOrStrongs = dictionaryRows
+  .filter((item) => !item.hasAnyStudyLookup && !strongsMappedWords.has(item.word))
+  .slice(0, 80);
 
 const summary = {
   generated_at: new Date().toISOString(),
@@ -375,11 +474,17 @@ const summary = {
   bibleDictionariesAndTopics: {
     eastonEntries: eastonEntries.length,
     naveTopics: naveTopics.length,
+    rareTermEntries: rareTermEntries.length,
     meaningfulWordsWithEastonEntry: dictionaryRows.filter((item) => item.hasEaston).length,
     meaningfulWordsWithNaveTopic: dictionaryRows.filter((item) => item.hasNave).length,
     meaningfulWordsWithAnyStudyLookup: dictionaryRows.filter((item) => item.hasAnyStudyLookup).length,
     combinedStudyLookupCoveragePercent: percent(dictionaryRows.filter((item) => item.hasAnyStudyLookup).length, dictionaryRows.length),
     topUsedWordsWithoutAnyStudyLookup: topMissingAnyStudyLookup,
+  },
+  combinedWordStudy: {
+    meaningfulWordsWithDictionaryOrStrongs: wordsWithDictionaryOrStrongs.length,
+    meaningfulWordCoveragePercent: percent(wordsWithDictionaryOrStrongs.length, meaningfulBibleWords.length),
+    topUsedWordsWithoutDictionaryOrStrongs: topWordsWithoutDictionaryOrStrongs,
   },
   strongs: {
     lexiconEntries: strongsNumbers.size,
@@ -429,6 +534,7 @@ const md = [
   `- Combined word/topic lookup: ${summary.bibleDictionariesAndTopics.meaningfulWordsWithAnyStudyLookup.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have Webster, Easton, or Nave help (${summary.bibleDictionariesAndTopics.combinedStudyLookupCoveragePercent}%).`,
   `- Strong's lexicon: ${summary.strongs.lexiconEntries.toLocaleString()} entries available; reviewed KJV mappings cover ${summary.strongs.mappedChapters}/${summary.bible.chapters} chapters and ${summary.strongs.mappedVerses.toLocaleString()} source verses.`,
   `- Strong's KJV word mapping: ${summary.strongs.meaningfulWordsWithMapping.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words appear in reviewed mapping batches (${summary.strongs.meaningfulWordMappingCoveragePercent}%).`,
+  `- Combined word-study help: ${summary.combinedWordStudy.meaningfulWordsWithDictionaryOrStrongs.toLocaleString()}/${summary.bible.meaningfulUniqueWords.toLocaleString()} meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (${summary.combinedWordStudy.meaningfulWordCoveragePercent}%).`,
   `- TSK: ${summary.tsk.publicRows.toLocaleString()} public rows cover ${summary.tsk.coveredChapters}/${summary.bible.chapters} chapters (${summary.tsk.chapterCoveragePercent}%).`,
   `- TSK remaining chapter gaps: ${summary.tsk.missingChapters.length ? summary.tsk.missingChapters.join(", ") : "None"}.`,
   `- Nave: ${summary.nave.topics.toLocaleString()} cleaned topic records, ${summary.nave.topicsWithReferences.toLocaleString()} with extracted Scripture references.`,
@@ -462,6 +568,14 @@ const md = [
   "| --- | ---: | --- |",
   ...(topMissingAnyStudyLookup.length
     ? topMissingAnyStudyLookup.slice(0, 30).map((item) => `| ${item.word} | ${item.count} | ${item.sampleRefs.join("; ")} |`)
+    : ["| None | 0 |  |"]),
+  "",
+  "## Final Words Without Dictionary Or Strong's Help",
+  "",
+  "| Word | Count | Sample References |",
+  "| --- | ---: | --- |",
+  ...(topWordsWithoutDictionaryOrStrongs.length
+    ? topWordsWithoutDictionaryOrStrongs.slice(0, 40).map((item) => `| ${item.word} | ${item.count} | ${item.sampleRefs.join("; ")} |`)
     : ["| None | 0 |  |"]),
   "",
   "## Top Webster Entries Needing OCR Cleanup",

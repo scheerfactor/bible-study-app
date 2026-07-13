@@ -1,0 +1,37 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-44-replacement.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 1,
+  "total_attempted": 1,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The First True Gentleman: A Study of the Human Nature of Our Lord",
+      "file": "the-first-true-gentleman-a-study-of-the-human-nature-of-our-lord-anonymous.txt",
+      "bytes": 13864,
+      "words": 2296,
+      "reading_time_minutes": 10,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The First True Gentleman: A Study of the Human Nature of Our Lord",
+      "author": "Anonymous",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-first-true-gentleman-a-study-of-the-human-nature-of-our-lord-anonymous.txt"
+    }
+  ]
+}

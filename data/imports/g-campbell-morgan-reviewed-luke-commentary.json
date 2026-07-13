@@ -13,11 +13,14 @@
     "public_domain_status": "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
     "rights_basis": "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
-    "entry_text": "Genesis Gen Intro Luke Luk Genesis Gen Intro\n\n Footnotes:",
+    "entry_text": "Luk 1:1-80\n\n Luke brings us face to face with the Son of Man and the Saviour of the world. The apostle first gives an account of how he did his work. He then tells of Gabriel's visit to Zacharias announcing the birth of the Herald of the Lord, following it immediately with the august account of the coming of this same Gabriel to Mary, and the great annunciation. Her reception of that announcement was in faith and submission to the divine will. Thus we see her co-operating in the purpose of God.\n\n Luke records the first two songs of the new dispensation, the first being a salutation by Elisabeth of Mary as the mother of the Lord, and the second the great Magnificat of Mary herself.\n\n The faith of Zacharias, which had trembled in the presence of the divine promise, was restored when he wrote on the slate the name of the babe. This was a return from the point of unbelief, and the exercise of will in the appointed way.\n\n This chapter ends with the third song of the new era, and it takes the form of a prophetic benediction from the lips of a priest of the chosen people. It was a song of salvation, and has within it truth -deeper than most likely the singer then understood.",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Morgan Shifted Chapter Boundary Repair",
+    "review_notes": "Recovered exact text that the source parser appended to Mark 16. Wording is unchanged; only the chapter boundary was corrected.",
+    "boundary_repair_source_file": "data/imports/g-campbell-morgan-reviewed-mark-commentary.json",
+    "boundary_repair_source_reference": "Mark 16",
+    "boundary_repair_sha256": "67353705dca939806f66432d0b78717b6f6ab073bbc8d3b4cfdbf17cae1591b1"
   },
   {
     "id": "g-campbell-morgan-luke-2-phase-3-reviewed",

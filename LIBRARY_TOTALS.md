@@ -4,15 +4,164 @@ Updated during the Bible Coverage + Commentary Depth sprint. Counts are generate
 
 ## Running Totals
 
-- Verified public/free Library resources: 1,855
+- Verified public/free Library resources: 2,121
 - Active public commentary entries shown in the app: 8,697
-- Reviewed public commentary import rows: 10,922
-- Commentary validation rows checked, including staging/review files: 13,789
+- Reviewed public commentary import rows: 12,046
+- Commentary validation rows checked, including staging/review files: 15,173
 - Commentary authors represented publicly: 14 active app authors, with 23 authors represented across public/reviewed commentary files
-- Library authors represented: 672
+- Library authors represented: 762
 - Public Library duplicate title/author groups: 0
 
+## Latest Bible-Linked Commentary Expansion
+
+Completed all 1,189 Bible chapters of Matthew Henry's *Commentary on the Whole Bible* by reviewing and promoting the public-domain CCEL Habakkuk 1 source row. The source wording remains unchanged, and its CCEL URL, authorship, chapter metadata, public-domain statement, and rights basis are preserved. The commentary quality audit reports zero wrapper flags across all 15,173 validated rows.
+
+Completed the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms* by adding Rev. William Jones's documented Psalms 131-150 section. The full Psalms 1-150 volume is now Bible-linked with its documented author ranges preserved. These final chapters include teaching on humility, covenant hope, unity, worship, remembrance, thanksgiving, God's omniscience, deliverance, prayer, righteous living, universal praise, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 121-130 from Rev. George Barlow's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on God's preservation, worship, peace, trust, deliverance, family blessing, labour, repentance, waiting on God, redemption, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 110-120 from Rev. J. W. Burn's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on the Messiah's priest-kingship, praise, providence, redemption, the blessed life, deliverance, worship, God's law, pilgrimage, prayer, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed Rev. William Jones's documented Psalms 88-109 section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms* by adding Psalms 100-109. These chapters now include Bible-linked teaching on joyful worship, thanksgiving, God's mercy, holy leadership, prayer in affliction, creation, providence, covenant faithfulness, praise, deliverance, imprecatory prayer, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 88-99 from Rev. William Jones's documented Psalms 88-109 section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on lament, covenant promises, God's eternity, life's brevity, protection, worship, God's kingship, praise, righteous judgment, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed Rev. William Jones's documented Psalms 39-87 section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms* by adding Psalms 76-87. These chapters now include Bible-linked teaching on God's judgment, remembrance, covenant history, spiritual leadership, restoration, worship, prayer, pilgrimage, the city of God, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 66-75 from Rev. William Jones's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on praise, God's mighty works, answered prayer, righteous judgment, blessing, worship, the afflicted, sanctuary perspective, God's sovereignty, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 51-65 from Rev. William Jones's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on confession, repentance, cleansing, forgiveness, trust, betrayal, prayer, justice, fear, praise, spiritual thirst, God's protection, worship, providence, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 39-50 from Rev. William Jones's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on life's brevity, prayer, hope, deliverance, spiritual longing, God's reign, refuge, worship, the city of God, providence, true riches, acceptable worship, repentance, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 36-38 from Rev. Joseph S. Exell's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on human sinfulness, God's mercy and faithfulness, delight in God, patient trust, repentance, suffering, prayer, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 26-35 from Rev. W. Forsyth's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on integrity, worship, prayer, confidence in God, consecration, forgiveness, guidance, praise, creation, providence, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Added Psalms 1-25 from Rev. W. L. Watkinson's documented section of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Psalms*. These chapters now include Bible-linked teaching on the blessed life, the Anointed King, prayer, repentance, creation, the law of the Lord, suffering, messianic prophecy, the Shepherd Psalm, the King of glory, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all forty-eight chapters of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Ezekiel* while preserving its documented split authorship: Rev. D. G. Watt for chapters 1-11, Rev. Thomas H. Leale for chapters 12-29, and Rev. George Barlow for chapters 30-48. Ezekiel now includes chapter-linked teaching on God's glory, prophetic calling, personal responsibility, judgment, the watchman, the true Shepherd, Israel's restoration, the dry bones, Gog, the restored temple, worship, the river of life, practical application, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed all fifty-two chapters of Rev. W. Harvey Jellie's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Jeremiah*. Jeremiah 1-52 now include chapter-linked teaching on prophetic calling, repentance, covenant unfaithfulness, judgment, pastoral sorrow, courage, the righteous Branch, the new covenant, restoration, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all thirty-one chapters of Rev. W. Harris's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Proverbs*. Proverbs 1-31 now include chapter-linked teaching on wisdom, the fear of the Lord, speech, diligence, family life, relationships, stewardship, purity, leadership, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twelve chapters of Rev. Thomas Robinson's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Daniel*. Daniel 1-12 now include chapter-linked teaching on faithfulness in exile, prayer, God's sovereignty over kingdoms, prophecy, the Messiah, resurrection, final judgment, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all ten chapters of Rev. W. Burrows's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Esther*. Esther 1-10 now include chapter-linked teaching on providence, courage, fasting, deliverance, reversal, faithful influence, the preservation of God's people, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed the verified 1892 public-domain *Preacher's Complete Homiletical Commentary* volumes on Ezra and Nehemiah while preserving their documented split authorship. William Jones's Ezra 1-10 and W. H. Booth, J. H. Goodman, and S. Gregory's Nehemiah 1-13 now include chapter-linked teaching on return from captivity, rebuilding, worship, opposition, prayer, leadership, Scripture reading, confession, covenant renewal, justice, reform, practical application, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed all sixty-five chapters of Rev. James Wolfendale's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on the First and Second Books of Chronicles*. First Chronicles 1-29 and Second Chronicles 1-36 now include chapter-linked teaching on biblical history, genealogies, Davidic worship, temple preparation, priestly service, the kings of Judah, revival, judgment, restoration, covenant faithfulness, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all forty-seven chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on the First and Second Books of Kings*. First Kings 1-22 and Second Kings 1-25 now include chapter-linked teaching on Solomon, the temple, the divided kingdom, Elijah, Elisha, prophetic ministry, revival, idolatry, judgment, covenant faithfulness, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all fifty-five chapters of Rev. W. Harris's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on the First and Second Books of Samuel*. First Samuel 1-31 and Second Samuel 1-24 now include chapter-linked teaching on prayer, prophetic ministry, spiritual leadership, kingship, obedience, failure, repentance, covenant faithfulness, David's preparation and reign, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-four chapters of Rev. F. G. Marchant's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Joshua*. Joshua 1-24 now include chapter-linked teaching on courage, obedience, conquest, covenant faithfulness, inheritance, leadership, memorials, worship, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all thirty-four chapters of Rev. James Wolfendale's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Deuteronomy*. Deuteronomy 1-34 now include chapter-linked teaching on covenant renewal, obedience, remembrance, worship, leadership, blessings and judgments, preparation for the land, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all thirty-six chapters of Rev. William Jones's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Numbers*. Numbers 1-36 now include chapter-linked teaching on wilderness testing, faith, rebellion, priestly service, God's guidance, covenant responsibility, preparation for the land, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-seven chapters of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Leviticus* by Rev. W. Harvey Jellie, with Rev. Frederick W. Brown's documented assistance in the homiletics preserved. Leviticus 1-27 now include chapter-linked teaching on holiness, sacrifice, priesthood, cleansing, worship, the feasts, covenant responsibility, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all forty chapters of Rev. Joseph S. Exell's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Exodus*. Exodus 1-40 now include chapter-linked teaching on redemption, the Passover, deliverance, the law, covenant responsibility, the tabernacle, worship, God's presence, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all fifty chapters of the verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Genesis* while preserving its documented split authorship: Rev. Joseph S. Exell for chapters 1-8 and Rev. Thomas H. Leale for chapters 9-50. Genesis now includes chapter-linked teaching on creation, the fall, redemption promise, the flood, the nations, Abrahamic promises, the patriarchs, providence, Joseph, and sermon structure. The guarded source imports found no duplicate or overlapping public rows.
+
+Completed all twenty-one chapters of Rev. W. Frank Scott's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on John*. John 1-21 now include chapter-linked teaching on Christ's deity, the new birth, belief, eternal life, the signs, the upper-room teaching, the cross, resurrection, pastoral application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-four chapters of Rev. J. Willcock's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Luke*. Luke 1-24 now include chapter-linked teaching on Christ's humanity and saving mission, prayer, compassion, parables, discipleship, the cross, resurrection, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all sixteen chapters of Rev. John Henry Burn's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Mark*. Mark 1-16 now include chapter-linked teaching on Christ's servant ministry, discipleship, miracles, opposition, the cross, resurrection, evangelism, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-eight chapters of Rev. W. Sunderland Lewis and Rev. Henry M. Booth's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Matthew*. Matthew 1-28 now include chapter-linked teaching on Christ's person and kingdom, discipleship, the Sermon on the Mount, parables, miracles, the cross, resurrection, practical application, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-eight chapters of Rev. Thomas Whitelaw's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Acts*. Acts 1-28 now include chapter-linked teaching on the early church, the Holy Spirit's ministry, evangelism, missions, persecution, conversion, apostolic preaching, church growth, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all twenty-nine chapters of Rev. Henry J. Foster's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on 1 and 2 Corinthians*. First Corinthians 1-16 and Second Corinthians 1-13 now include chapter-linked teaching on church unity, discipline, Christian liberty, spiritual gifts, love, worship, resurrection, comfort, ministry, reconciliation, giving, apostolic service, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed all sixteen chapters of Rev. W. Burrows's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Romans*. Romans 1-16 now include chapter-linked teaching on the gospel, sin, justification by faith, sanctification, Israel, Christian service, church unity, practical conduct, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed Rev. Robert Tuck's verified 1892 public-domain *Preacher's Complete Homiletical Commentary* coverage for First John, Second John, Third John, Jude, and Revelation. All 30 chapters now include chapter-linked teaching on fellowship, assurance, love, doctrinal discernment, faithful service, contending for the faith, Christ's glory, the churches, judgment, prophecy, final victory, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary* coverage for the Pastoral Epistles and Philemon. First Timothy 1-6, Second Timothy 1-4, Titus 1-3, and Philemon 1 now include chapter-linked teaching on pastoral leadership, sound doctrine, Scripture, faithful ministry, grace, good works, forgiveness, reconciliation, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed all eight chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on 1 and 2 Thessalonians*. First Thessalonians 1-5 and Second Thessalonians 1-3 now include chapter-linked teaching on Christian testimony, sanctification, pastoral care, Christ's return, perseverance, doctrinal stability, Christian work, and sermon structure. The guarded source imports found no duplicate public rows.
+
+Completed all six chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Galatians*. Galatians 1-6 now include chapter-linked teaching on justification by faith, Christian liberty, the law and grace, spiritual fruit, practical conduct, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all six chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Ephesians*. Ephesians 1-6 now include chapter-linked teaching on salvation by grace, the church, Christian unity, practical conduct, family relationships, spiritual warfare, and sermon structure. The guarded source import found no duplicate public rows.
+
+Completed all four chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Colossians*. Colossians 1-4 now include chapter-linked teaching on Christ's preeminence, spiritual fullness, Christian conduct, family relationships, sermon structure, and practical application. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,242 validated rows.
+
+Completed all three chapters of Rev. Robert Tuck's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on 2 Peter*. Second Peter 1-3 now include chapter-linked teaching on Christian growth, false teaching, prophecy, Christ's return, sermon structure, and practical conduct. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,238 validated rows.
+
+Completed all four chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Philippians*. Philippians 1-4 now include chapter-linked teaching on Christian joy, humility, service, perseverance, contentment, sermon structure, and practical conduct. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,235 validated rows.
+
+Completed all five chapters of Rev. Robert Tuck's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on 1 Peter*. First Peter 1-5 now include chapter-linked teaching on Christian hope, holiness, suffering, pastoral care, sermon structure, and practical conduct. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,231 validated rows.
+
+Completed all five chapters of Rev. Robert Tuck's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on James*. James 1-5 now include chapter-linked practical teaching on trials, faith and works, speech, prayer, sermon structure, and Christian conduct. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,226 validated rows.
+
+Completed all 13 chapters of Rev. Robert Tuck's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Hebrews*. Hebrews 1-13 now include chapter-linked teaching on Christ's priesthood, covenant themes, faith, endurance, sermon structure, and pastoral application. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,221 validated rows.
+
+Completed all five chapters of Rev. George Barlow's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Lamentations*. Lamentations 1-5 now include chapter-linked teaching on lament, judgment, hope, prayer, sermon structure, and pastoral application. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,208 validated rows.
+
+Completed all 21 chapters of Rev. J. P. Millar's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Judges*. Judges 1-21 now include chapter-linked teaching structure, sermon outlines, practical applications, and historical homiletical notes. The guarded source import found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,203 validated rows.
+
+Completed all 42 chapters of Thomas Robinson's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Job*. Job 1-42 now include its preaching structure, pastoral applications, and historical homiletical notes with direct chapter links and preserved source and rights evidence. The guarded source imports found no duplicate public rows, and the commentary quality audit reports zero wrapper flags across all 14,182 validated rows.
+
+Added four chapter-linked entries from Walter Baxendale's 1892 public-domain volume of *The Preacher's Complete Homiletical Commentary on Ruth*. Ruth 1-4 now have direct access to its sermon outlines, teaching structure, applications, and historical homiletical notes. The guarded StudyLight importer was improved to remove the site's commentary-navigation wrapper before text is saved; the commentary quality audit reports zero wrapper flags after import.
+
+Added twelve chapter-linked entries from Thomas H. Leale's 1892 public-domain volume of *The Preacher's Complete Homiletical Commentary on Ecclesiastes*. Ecclesiastes 1-12 now have direct access to its homiletical structure and practical teaching material. The importer retries temporary source-server failures but still stops on permanent errors, missing public-domain evidence, extraction failures, or duplicate chapter conflicts.
+
+Added eight chapter-linked entries from Thomas Robinson's 1892 public-domain volume of *The Preacher's Complete Homiletical Commentary on the Song of Solomon*. Solomon's Song 1-8 now have direct access to its sermon structure, devotional applications, and historical allegorical interpretation, with a visible recommendation to compare its conclusions carefully with Scripture.
+
+Added ten chapter-linked entries from James Wolfendale's 1892 public-domain *Preacher's Complete Homiletical Commentary on the Minor Prophets*, covering Micah 1-7 and Zephaniah 1-3. These chapters now include prophecy-focused teaching structure, sermon outlines, applications, and historical homiletical comparison with direct source and rights evidence.
+
+Added ten more chapter-linked entries from the same verified James Wolfendale volume, covering Jonah 1-4, Nahum 1-3, and Habakkuk 1-3. The entries preserve direct chapter sources, public-domain evidence, and prophecy-focused teaching and sermon-preparation guidance.
+
+Added ten further chapter-linked entries from the same verified Minor Prophets volume, covering Haggai 1-2, Obadiah 1, Joel 1-3, and Malachi 1-4. Each entry includes its direct source page, public-domain basis, and homiletical teaching guidance without website-navigation wrappers.
+
+Added nine chapter-linked entries from James Wolfendale's verified 1892 homiletical commentary on Amos. Amos 1-9 now have another direct preaching and teaching resource with outlines, applications, historical homiletical observations, direct chapter sources, and public-domain evidence.
+
+Added fourteen chapter-linked entries from James Wolfendale's verified 1892 homiletical commentary on Hosea. Hosea 1-14 now have another complete preaching and teaching comparison source with direct chapter links, rights evidence, outlines, and practical applications.
+
+Added fourteen chapter-linked entries from James Wolfendale's verified 1892 homiletical commentary on Zechariah. A completion audit now confirms all 67 chapters across the twelve Minor Prophets are represented from this public-domain volume, with no missing chapters, duplicate references, or commentary-wrapper flags.
+
+Added the first ten chapter-linked entries from Thomas Robinson's verified 1892 public-domain *Preacher's Complete Homiletical Commentary on Job*. Job 1-10 now include another pastoral and preaching-focused comparison source with direct chapter links, rights evidence, sermon structure, and practical applications.
+
 ## Latest Storage-Backed Public-Domain Content Expansion
+
+Added 63 newly reviewed, source-accessible public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 23 Bible study helps
+- 16 Christian-living and devotional works
+- 13 preaching and teaching resources
+- 5 missions resources
+- 3 commentary volumes
+- 2 prayer resources
+- 1 Baptist-history resource
+
+The batch strengthens Moody, Meyer, Murray, Maclaren, Bunyan, Gill, Whitefield, Wesley, Watts, Kelly, Morgan, Henry, Barnes, Clarke, Vedder, Livingstone, Zwemer, Bonar, Edersheim, Foxe, Doddridge, Talmage, Stalker, Geikie, and Chafer. A stricter author/title review rejected 48 alternate editions, OCR-title variants, excerpts, and non-book records before import. The initially unavailable Philip Doddridge preaching volume was recovered from a separately verified 1807 scan. Seven newly available commentary and exposition volumes are connected to Bible-book Commentary discovery, with scope and OCR cautions shown to users.
+
+## Previous Storage-Backed Public-Domain Content Expansion
+
+Added 200 source-verified public-domain Library resources as storage-backed text in Cloudflare R2:
+
+- 50 Bible study helps, including classic commentary volumes, Bible exposition, survey, and historical Bible-study works
+- 84 Christian-living and devotional works
+- 19 missionary works and biographies
+- 16 Baptist-history resources
+- 15 preaching and teaching works
+- 10 commentary resources
+- 4 prayer works
+- 2 evangelism works
+
+The batch strengthens Broadus, Barnes, Morgan, Meyer, Bonar, Griffith Thomas, Baptist history, missions, preaching, devotional reading, and classic Bible exposition. One unavailable Internet Archive source was replaced with a separately verified Project Gutenberg title, leaving exactly 200 successful additions. Alternate scans and abridged editions are grouped under one public work card, and OCR-derived resources remain labeled for spot-checking before quotation.
+
+## Previous Storage-Backed Public-Domain Content Expansion
 
 Added 8 verified public-domain Library resources as storage-backed text in Cloudflare R2:
 

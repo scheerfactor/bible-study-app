@@ -42,6 +42,111 @@ Do not start with broad new commentary sets until the existing review backlog is
 3. Continue Matthew Poole only where source/edition quality is documented.
 4. Keep modern or unclear sources in review only.
 
+## Next 300+ Resource Strategy
+
+The next large expansion should be broken into reviewable batches so the Library remains curated and useful.
+
+### Batch A: Commentary And Bible Study Helps
+
+Target size: 40-75 resources.
+
+Priority:
+
+- Pulpit Commentary volumes not yet represented as Library works
+- Biblical Illustrator volumes not yet represented as Library works
+- Preacher's Complete Homiletical Commentary volumes
+- Lange commentary volumes
+- B. H. Carroll English Bible interpretation volumes
+- Broadus Gospel and preaching helps
+- James M. Gray Bible survey and prophecy helps
+- Kelly, Mackintosh, Gaebelein, Ironside, and Scofield only where source and edition are clean
+
+Goal: every Bible book should surface at least a useful commentary shelf, a preaching-help shelf, and a best-next-resource suggestion.
+
+### Batch B: Baptist History And Baptist Authors
+
+Target size: 40-60 resources.
+
+Priority:
+
+- Benjamin Keach
+- Thomas Crosby
+- Hanserd Knollys
+- John Gill
+- John Rippon
+- John Sutcliff
+- Andrew Fuller
+- Adoniram Judson
+- William Carey
+- B. H. Carroll
+- John A. Broadus
+- John Leadley Dagg
+- Baptist histories already identified in the acquisition lists
+
+Goal: make Baptist History a distinctive collection instead of a small shelf.
+
+### Batch C: Prayer, Revival, Evangelism, And Christian Life
+
+Target size: 50-80 resources.
+
+Priority:
+
+- E. M. Bounds
+- R. A. Torrey
+- Andrew Murray
+- D. L. Moody
+- George Whitefield public-domain sermons
+- Spurgeon evangelistic works
+- J. C. Ryle practical Christian living works
+- public-domain revival histories and sermon collections
+
+Goal: strengthen daily devotion, prayer meetings, evangelism, and sermon illustration use.
+
+### Batch D: Missions, Biography, And Church History
+
+Target size: 50-80 resources.
+
+Priority:
+
+- William Carey biographies and writings
+- Adoniram Judson biographies
+- Hudson Taylor and missionary biographies
+- missionary gazetteers and mission histories
+- Foxe, Wylie, Miller, and other public-domain church history works
+- biographies useful for Sunday School and missions emphasis
+
+Goal: give pastors and teachers trustworthy stories, timelines, and applications for missions and church history lessons.
+
+### Batch E: KJV, English Bible History, Dictionaries, And Reference
+
+Target size: 30-60 resources.
+
+Priority:
+
+- public-domain English Bible history
+- public-domain KJV and Authorized Version history
+- Noah Webster works beyond the 1828 dictionary where useful
+- Bible word books
+- pronunciation helps
+- Bible names and place reference works
+- map and chart sources with public-domain status documented
+
+Goal: strengthen KJV study without importing modern copyrighted KJV defense works unless permission is granted.
+
+### Batch F: Audio And Sermon Candidates
+
+Target size: 25-50 metadata records first.
+
+Priority:
+
+- LibriVox audiobooks matched to existing Library cards
+- Spurgeon sermon audio series from LibriVox
+- Ryle, Torrey, Murray, Bounds, Moody, and missions audiobooks
+- public-domain Bible audio pilots only when recording rights are clear
+- modern sermon/audio ministries only with written permission
+
+Goal: build listening depth without duplicating books or hosting unclear audio.
+
 ## Next Practical Batch
 
 Recommended first batch:
@@ -53,3 +158,12 @@ Recommended first batch:
 5. Continue one small verified book import at a time after duplicate and source checks.
 
 This gives one book, three audiobooks, and one sermon-series pilot without bloating the app or duplicating visible resource cards.
+
+## What Not To Add Yet
+
+- Modern copyrighted study Bibles without written permission.
+- Modern KJV defense books without written permission.
+- Dramatized Bible audio/video unless production rights are clear.
+- SermonAudio, YouTube, or Internet Archive mirrors of modern preachers unless rights are documented.
+- Store/paid Way of Life resources unless permission is granted.
+- Any audio, video, transcript, or cover image whose rights are unclear.

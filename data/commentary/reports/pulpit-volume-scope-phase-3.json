@@ -1,0 +1,67 @@
+{
+  "reviewed_at": "2026-07-11",
+  "review_status": "source_title_verified",
+  "rights_basis": "Existing Library manifest records each source as verified public domain. This report verifies Bible-book scope only and does not alter source text.",
+  "volumes": [
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104861-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104861/cu31924101104861_djvu.txt",
+      "books": ["Psalms"],
+      "scope_evidence": "Title text: PSALMS; THE BOOK OF PSALMS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105074-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105074/cu31924101105074_djvu.txt",
+      "books": ["John"],
+      "scope_evidence": "Introduction and running title identify the Gospel according to St. John."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104754-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104754/cu31924101104754_djvu.txt",
+      "books": ["2 Samuel"],
+      "scope_evidence": "Title text: II. SAMUEL; BOOK OF SAMUEL."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      "books": ["Amos"],
+      "scope_evidence": "Title text: AMOS; THE BOOK OF AMOS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104689-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104689/cu31924101104689_djvu.txt",
+      "books": ["Ecclesiastes"],
+      "scope_evidence": "Title text: ECCLESIASTES; ECCLESIASTES, OR THE PREACHER."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924098499506-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924098499506/cu31924098499506_djvu.txt",
+      "books": ["Exodus"],
+      "scope_evidence": "Title text: EXODUS; BOOK OF EXODUS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104887-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104887/cu31924101104887_djvu.txt",
+      "books": ["2 Corinthians"],
+      "scope_evidence": "Title text: II. CORINTHIANS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105116-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105116/cu31924101105116_djvu.txt",
+      "books": ["Leviticus"],
+      "scope_evidence": "Title text: LEVITICUS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104481-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104481/cu31924101104481_djvu.txt",
+      "books": ["Luke"],
+      "scope_evidence": "Title text: ST. LUKE; Gospel according to St. Luke."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104879-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104879/cu31924101104879_djvu.txt",
+      "books": ["Joshua"],
+      "scope_evidence": "Title and running text: JOSHUA; Historical Books: Joshua to Nehemiah."
+    }
+  ]
+}

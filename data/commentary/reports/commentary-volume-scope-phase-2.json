@@ -1,0 +1,67 @@
+{
+  "reviewed_at": "2026-07-11",
+  "review_status": "source_title_verified",
+  "rights_basis": "Existing Library manifest records each source as verified public domain. This report verifies Bible-book scope only and does not alter source text.",
+  "volumes": [
+    {
+      "resource_slug": "the-pulpit-commentary-pulpitcommentar02unkngoog-spence-jones-henry-donald-maurice-dean-of-gloucester-formerly-",
+      "source_url": "https://archive.org/download/pulpitcommentar02unkngoog/pulpitcommentar02unkngoog_djvu.txt",
+      "books": ["1 Chronicles"],
+      "scope_evidence": "Title text: FIRST BOOK OF THE CHRONICLES."
+    },
+    {
+      "resource_slug": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet06newy-various",
+      "source_url": "https://archive.org/download/preacherscomplet06newy/preacherscomplet06newy_djvu.txt",
+      "books": ["Judges"],
+      "scope_evidence": "Title text: BOOK OF JUDGES; COMMENTARY JUDGES."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101105058-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101105058/cu31924101105058_djvu.txt",
+      "books": ["Numbers"],
+      "scope_evidence": "Title text: NUMBERS; Book of Numbers."
+    },
+    {
+      "resource_slug": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet11newy-various",
+      "source_url": "https://archive.org/download/preacherscomplet11newy/preacherscomplet11newy_djvu.txt",
+      "books": ["Psalms"],
+      "scope_evidence": "Title text: BOOK OF PSALMS; PREACHER'S COMMENTARY PSALMS."
+    },
+    {
+      "resource_slug": "the-preacher-s-complete-homiletical-commentary-on-the-old-testament-on-an-original-plan-preacherscomple01unkng",
+      "source_url": "https://archive.org/download/preacherscomple01unkngoog/preacherscomple01unkngoog_djvu.txt",
+      "books": ["Lamentations"],
+      "scope_evidence": "Title text: BOOK OF LAMENTATIONS; HOMILETIC COMMENTARY BOOK OF LAMENTATIONS."
+    },
+    {
+      "resource_slug": "the-biblical-illustrator-or-anecdotes-similes-emblems-illustrations-expository-scientific-georgraphical-histor-13",
+      "source_url": "https://archive.org/download/biblicalillustra55exel/biblicalillustra55exel_djvu.txt",
+      "books": ["2 Timothy", "Titus", "Philemon"],
+      "scope_evidence": "Volume title text: SECOND TIMOTHY - TITUS - PHILEMON."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104994-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104994/cu31924101104994_djvu.txt",
+      "books": ["Deuteronomy"],
+      "scope_evidence": "Title text: DEUTERONOMY."
+    },
+    {
+      "resource_slug": "the-preacher-s-complete-homiletical-commentary-on-an-original-plan-preacherscomplet07newy-various",
+      "source_url": "https://archive.org/download/preacherscomplet07newy/preacherscomplet07newy_djvu.txt",
+      "books": ["Ruth"],
+      "scope_evidence": "Title text: BOOK OF RUTH; PREACHER'S COMMENTARY RUTH."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924098499514-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924098499514/cu31924098499514_djvu.txt",
+      "books": ["Exodus"],
+      "scope_evidence": "Title text: EXODUS; THE BOOK OF EXODUS."
+    },
+    {
+      "resource_slug": "the-pulpit-commentary-cu31924101104820-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104820/cu31924101104820_djvu.txt",
+      "books": ["Philippians"],
+      "scope_evidence": "Title text: PAUL TO THE PHILIPPIANS; introduction to the Epistle to the Philippians."
+    }
+  ]
+}

@@ -716,8 +716,10 @@
     "entry_text": "Verse 1\n See the notes to Exodus 26:0 .",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Barnes Thin-Source Audit 2026-07-12",
+    "review_notes": "Independent public-domain witness confirms this is a genuine brief cross-reference note; no missing commentary body was found.",
+    "source_verification_url": "https://sacred-texts.com/bib/cmt/barnes/exo036.htm",
+    "source_thin_verified": true
   },
   {
     "id": "albert-barnes-exodus-37-phase-3-reviewed",
@@ -734,10 +736,12 @@
     "rights_basis": "Public-domain StudyLight chapter pages for Barnes' Notes on the Whole Bible. Preserve chapter URL and do not mix with modern edited editions.",
     "recommended_use": "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
     "entry_text": "Verse 1\n See the notes to Exodus 25:0 .",
-    "review_status": "Verified",
-    "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_status": "Needs Review",
+    "import_status": "Staged",
+    "review_batch": "Barnes Thin-Source Audit 2026-07-12",
+    "review_notes": "Removed from public import because the stored cross-reference belongs to a neighboring source page and no chapter-specific Barnes note was verified.",
+    "source_verification_url": "https://sacred-texts.com/bib/cmt/barnes/exo037.htm",
+    "source_recovery_status": "Parser-shifted neighboring note; no chapter-specific Barnes note verified."
   },
   {
     "id": "albert-barnes-exodus-38-phase-3-reviewed",
@@ -776,8 +780,10 @@
     "entry_text": "Verse 1\n See the notes to Exodus 28:0 .",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Barnes Thin-Source Audit 2026-07-12",
+    "review_notes": "Independent public-domain witness confirms this is a genuine brief cross-reference note; no missing commentary body was found.",
+    "source_verification_url": "https://sacred-texts.com/bib/cmt/barnes/exo039.htm",
+    "source_thin_verified": true
   },
   {
     "id": "albert-barnes-exodus-40-phase-3-reviewed",

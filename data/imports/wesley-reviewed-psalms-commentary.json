@@ -1996,8 +1996,9 @@
     "entry_text": "100\n\n An exhortation to praise God and to rejoice in him, ver.\n1- 5 A psalm of praise",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Poole and Wesley Thin-Source Audit 2026-07-12",
+    "review_notes": "CCEL public-domain source confirms this is a genuine brief chapter summary rather than truncated commentary.",
+    "source_thin_verified": true
   },
   {
     "id": "john-wesley-psalms-101-phase-3-reviewed",
@@ -2336,8 +2337,9 @@
     "entry_text": "117\n\n An exhortation to all nations to praise God for his mercy\nand truth, ver. 1, 2.",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Poole and Wesley Thin-Source Audit 2026-07-12",
+    "review_notes": "CCEL public-domain source confirms this is a genuine brief chapter summary rather than truncated commentary.",
+    "source_thin_verified": true
   },
   {
     "id": "john-wesley-psalms-118-phase-3-reviewed",

@@ -1,0 +1,3214 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-44.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 200,
+  "total_attempted": 200,
+  "imported": 199,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 1,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The Salt-cellars: Being a Collection of Proverbs, Together with Homely Notes Theron",
+      "file": "the-salt-cellars-being-a-collection-of-proverbs-together-with-homely-notes-theron-charles-haddon-spurgeon.txt",
+      "bytes": 836530,
+      "words": 132442,
+      "reading_time_minutes": 589,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Peter Fisherman Disciple Apostle",
+      "file": "peter-fisherman-disciple-apostle-f-b-meyer.txt",
+      "bytes": 474904,
+      "words": 72936,
+      "reading_time_minutes": 324,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Five \" Musts\" of the Christian Life and other semons",
+      "file": "five-musts-of-the-christian-life-and-other-semons-f-b-meyer.txt",
+      "bytes": 156824,
+      "words": 27605,
+      "reading_time_minutes": 123,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Steps into the blessed life",
+      "file": "steps-into-the-blessed-life-f-b-meyer.txt",
+      "bytes": 360708,
+      "words": 64358,
+      "reading_time_minutes": 286,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Five Musts Of The Christian Life, Or, 5 Things Christians Must Do",
+      "file": "five-musts-of-the-christian-life-or-5-things-christians-must-do-f-b-meyer.txt",
+      "bytes": 149782,
+      "words": 26300,
+      "reading_time_minutes": 117,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Paul a servant of Jesus Christ",
+      "file": "paul-a-servant-of-jesus-christ-f-b-meyer.txt",
+      "bytes": 364006,
+      "words": 62868,
+      "reading_time_minutes": 279,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The book of Genesis",
+      "file": "the-book-of-genesis-alexander-maclaren.txt",
+      "bytes": 638005,
+      "words": 115776,
+      "reading_time_minutes": 515,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sermons Preached in Manchester ...",
+      "file": "sermons-preached-in-manchester-alexander-maclaren.txt",
+      "bytes": 544347,
+      "words": 98570,
+      "reading_time_minutes": 438,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A year's ministry",
+      "file": "a-year-s-ministry-alexander-maclaren.txt",
+      "bytes": 537909,
+      "words": 100228,
+      "reading_time_minutes": 445,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "COMMENTARY ON THE GOSPEL OF MARK",
+      "file": "commentary-on-the-gospel-of-mark-john-a-broadus.txt",
+      "bytes": 752118,
+      "words": 133849,
+      "reading_time_minutes": 595,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "a harmony of the gospels",
+      "file": "a-harmony-of-the-gospels-john-a-broadus.txt",
+      "bytes": 748230,
+      "words": 134763,
+      "reading_time_minutes": 599,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Treatise On The Preparation and Delivery Of Sermons",
+      "file": "the-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "bytes": 1023022,
+      "words": 170708,
+      "reading_time_minutes": 759,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "On the preparation and delivery of sermons",
+      "file": "on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "bytes": 1010195,
+      "words": 168082,
+      "reading_time_minutes": 747,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Lectures of the History of Preaching",
+      "file": "lectures-of-the-history-of-preaching-john-a-broadus.txt",
+      "bytes": 303240,
+      "words": 50210,
+      "reading_time_minutes": 223,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the preparation and delivery of sermons",
+      "file": "the-preparation-and-delivery-of-sermons-john-a-broadus.txt",
+      "bytes": 1008269,
+      "words": 167525,
+      "reading_time_minutes": 745,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Cause of God and Truth ...",
+      "file": "the-cause-of-god-and-truth-john-gill.txt",
+      "bytes": 494362,
+      "words": 90364,
+      "reading_time_minutes": 402,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Complete Body of Doctrinal and Practical Divinity: Or, A System of Evangelical Truths, Deduced ...",
+      "file": "a-complete-body-of-doctrinal-and-practical-divinity-or-a-system-of-evangelical-truths-deduced-john-gill.txt",
+      "bytes": 1569572,
+      "words": 290858,
+      "reading_time_minutes": 1293,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Works of the Reverend George Whitefield, M.A...: Containing All His Sermons and Tracts which ...",
+      "file": "the-works-of-the-reverend-george-whitefield-m-a-containing-all-his-sermons-and-tracts-which-george-whitefield.txt",
+      "bytes": 935168,
+      "words": 173827,
+      "reading_time_minutes": 773,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Christian's companion: or, Sermons on several subjects",
+      "file": "the-christian-s-companion-or-sermons-on-several-subjects-george-whitefield.txt",
+      "bytes": 418625,
+      "words": 76730,
+      "reading_time_minutes": 341,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Collection of Hymns for Social Worship: More Particularly Designed for the ...",
+      "file": "a-collection-of-hymns-for-social-worship-more-particularly-designed-for-the-george-whitefield.txt",
+      "bytes": 259157,
+      "words": 46953,
+      "reading_time_minutes": 209,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns and Spiritual Songs: In Three Books. ... By I. Watts, D.D.",
+      "file": "hymns-and-spiritual-songs-in-three-books-by-i-watts-d-d-isaac-watts.txt",
+      "bytes": 245147,
+      "words": 43158,
+      "reading_time_minutes": 192,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "preacher and prayer",
+      "file": "preacher-and-prayer-e-m-bounds.txt",
+      "bytes": 131100,
+      "words": 22721,
+      "reading_time_minutes": 101,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Purpose in Prayer",
+      "file": "purpose-in-prayer-e-m-bounds.txt",
+      "bytes": 210731,
+      "words": 37004,
+      "reading_time_minutes": 164,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "POWER THROUGH PRAYER",
+      "file": "power-through-prayer-e-m-bounds.txt",
+      "bytes": 122425,
+      "words": 21261,
+      "reading_time_minutes": 94,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the annotated bible; the holy scriptures annalysed and annotated",
+      "file": "the-annotated-bible-the-holy-scriptures-annalysed-and-annotated-a-c-gaebelein.txt",
+      "bytes": 592337,
+      "words": 103295,
+      "reading_time_minutes": 459,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes on the Epistle of Paul to the Romans, with a new transl",
+      "file": "notes-on-the-epistle-of-paul-to-the-romans-with-a-new-transl-william-kelly.txt",
+      "bytes": 689180,
+      "words": 124149,
+      "reading_time_minutes": 552,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Spiritual songs",
+      "file": "spiritual-songs-j-n-darby.txt",
+      "bytes": 67824,
+      "words": 11650,
+      "reading_time_minutes": 52,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes and comments on scripture",
+      "file": "notes-and-comments-on-scripture-j-n-darby.txt",
+      "bytes": 938482,
+      "words": 169135,
+      "reading_time_minutes": 752,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Spiritism and the Fallen Angels in the Light of the Old and New Testaments",
+      "file": "spiritism-and-the-fallen-angels-in-the-light-of-the-old-and-new-testaments-james-m-gray.txt",
+      "bytes": 190179,
+      "words": 32655,
+      "reading_time_minutes": 145,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Prophecy And The Lord's Return",
+      "file": "prophecy-and-the-lord-s-return-james-m-gray.txt",
+      "bytes": 172362,
+      "words": 30263,
+      "reading_time_minutes": 135,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Bulwarks of the faith",
+      "file": "the-bulwarks-of-the-faith-james-m-gray.txt",
+      "bytes": 156111,
+      "words": 26893,
+      "reading_time_minutes": 120,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Primers of the FAith",
+      "file": "primers-of-the-faith-james-m-gray.txt",
+      "bytes": 433735,
+      "words": 74054,
+      "reading_time_minutes": 329,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Lessons Of The Welsh Revival",
+      "file": "lessons-of-the-welsh-revival-g-campbell-morgan.txt",
+      "bytes": 36678,
+      "words": 6726,
+      "reading_time_minutes": 30,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the acts pf the apostles",
+      "file": "the-acts-pf-the-apostles-g-campbell-morgan.txt",
+      "bytes": 1115491,
+      "words": 196674,
+      "reading_time_minutes": 874,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Living Messages of the Books of the Bible: Old and New Testaments",
+      "file": "living-messages-of-the-books-of-the-bible-old-and-new-testaments-g-campbell-morgan.txt",
+      "bytes": 1249997,
+      "words": 220433,
+      "reading_time_minutes": 980,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "God's Methods with Man",
+      "file": "god-s-methods-with-man-g-campbell-morgan.txt",
+      "bytes": 231132,
+      "words": 40859,
+      "reading_time_minutes": 182,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Living Messages of the Books of the Bible; Genesis to Revelation, Matthew to Revelation, Complete in Two Double Volumes.",
+      "file": "living-messages-of-the-books-of-the-bible-genesis-to-revelation-matthew-to-revelation-complete-in-two-double-v.txt",
+      "bytes": 733248,
+      "words": 128256,
+      "reading_time_minutes": 570,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A First Century Message to Twentieth Century Christians",
+      "file": "a-first-century-message-to-twentieth-century-christians-g-campbell-morgan.txt",
+      "bytes": 251481,
+      "words": 44473,
+      "reading_time_minutes": 198,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "God Our Contemporary",
+      "file": "god-our-contemporary-j-h-jowett.txt",
+      "bytes": 299186,
+      "words": 53881,
+      "reading_time_minutes": 239,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Preacher His Life and Work",
+      "file": "the-preacher-his-life-and-work-j-h-jowett.txt",
+      "bytes": 231011,
+      "words": 40469,
+      "reading_time_minutes": 180,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the preacher his life and work yale lectures",
+      "file": "the-preacher-his-life-and-work-yale-lectures-j-h-jowett.txt",
+      "bytes": 232128,
+      "words": 40715,
+      "reading_time_minutes": 181,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Passion for Souls",
+      "file": "the-passion-for-souls-j-h-jowett.txt",
+      "bytes": 130915,
+      "words": 22757,
+      "reading_time_minutes": 101,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Redeemed Family of God: The Epistles of St. Peter",
+      "file": "the-redeemed-family-of-god-the-epistles-of-st-peter-j-h-jowett.txt",
+      "bytes": 454613,
+      "words": 77982,
+      "reading_time_minutes": 347,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Revelation [Library Binding]",
+      "file": "revelation-library-binding-clarence-larkin.txt",
+      "bytes": 583871,
+      "words": 101726,
+      "reading_time_minutes": 452,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Book of Revelation a Study of the Last P",
+      "file": "book-of-revelation-a-study-of-the-last-p-clarence-larkin.txt",
+      "bytes": 595254,
+      "words": 103509,
+      "reading_time_minutes": 460,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Book of GRevelation",
+      "file": "the-book-of-grevelation-clarence-larkin.txt",
+      "bytes": 576714,
+      "words": 100526,
+      "reading_time_minutes": 447,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Dispensational Truth or God's Plan and Purpose",
+      "file": "dispensational-truth-or-god-s-plan-and-purpose-clarence-larkin.txt",
+      "bytes": 1206214,
+      "words": 208927,
+      "reading_time_minutes": 929,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Method for Prayer,: With Scripture-expressions, Proper to be Used Under ...",
+      "file": "a-method-for-prayer-with-scripture-expressions-proper-to-be-used-under-matthew-henry.txt",
+      "bytes": 424127,
+      "words": 80921,
+      "reading_time_minutes": 360,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, Critical, Illustrative, and Practical, on the Book of Daniel, with an ...",
+      "file": "notes-critical-illustrative-and-practical-on-the-book-of-daniel-with-an-albert-barnes.txt",
+      "bytes": 1868814,
+      "words": 328863,
+      "reading_time_minutes": 1462,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, Explanatory & Practical, on the Gospels: Designed for Sunday School ...",
+      "file": "notes-explanatory-and-practical-on-the-gospels-designed-for-sunday-school-albert-barnes.txt",
+      "bytes": 1504263,
+      "words": 275248,
+      "reading_time_minutes": 1223,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, Critical, Explanatory, and Practical, on the Book of Psalms",
+      "file": "notes-critical-explanatory-and-practical-on-the-book-of-psalms-albert-barnes.txt",
+      "bytes": 1574901,
+      "words": 290985,
+      "reading_time_minutes": 1293,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, critical, explanatory, and practical on the book of the prophet Isaiah",
+      "file": "notes-critical-explanatory-and-practical-on-the-book-of-the-prophet-isaiah-albert-barnes.txt",
+      "bytes": 2314926,
+      "words": 361951,
+      "reading_time_minutes": 1609,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, Explanatory and Practical, on the Epistle to the Romans;.",
+      "file": "notes-explanatory-and-practical-on-the-epistle-to-the-romans-albert-barnes.txt",
+      "bytes": 1242506,
+      "words": 225728,
+      "reading_time_minutes": 1003,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes Explanatory and Practical on the Acts of the Apostles: Designed for Bible Classes and ...",
+      "file": "notes-explanatory-and-practical-on-the-acts-of-the-apostles-designed-for-bible-classes-and-albert-barnes.txt",
+      "bytes": 1668350,
+      "words": 301807,
+      "reading_time_minutes": 1341,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Way of Salvation Illustrated in a Series of Discourses",
+      "file": "the-way-of-salvation-illustrated-in-a-series-of-discourses-albert-barnes.txt",
+      "bytes": 1229191,
+      "words": 235546,
+      "reading_time_minutes": 1047,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes, Explanatory and Practical, on the New Testament",
+      "file": "notes-explanatory-and-practical-on-the-new-testament-albert-barnes.txt",
+      "bytes": 1685783,
+      "words": 308723,
+      "reading_time_minutes": 1372,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Atonement, in Its Relations to Law and Moral Government",
+      "file": "the-atonement-in-its-relations-to-law-and-moral-government-albert-barnes.txt",
+      "bytes": 598060,
+      "words": 107923,
+      "reading_time_minutes": 480,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Notes on the Gospels, condensed from the Amer. ed",
+      "file": "notes-on-the-gospels-condensed-from-the-amer-ed-albert-barnes.txt",
+      "bytes": 1059375,
+      "words": 190039,
+      "reading_time_minutes": 845,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Way of Salvation: A Sermon, Delivered at Morristown, New Jersey, February 8, 1829",
+      "file": "the-way-of-salvation-a-sermon-delivered-at-morristown-new-jersey-february-8-1829-albert-barnes.txt",
+      "bytes": 477730,
+      "words": 85871,
+      "reading_time_minutes": 382,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Barnes' Notes - Daniel Vol. 2",
+      "file": "barnes-notes-daniel-vol-2-albert-barnes.txt",
+      "bytes": 1274245,
+      "words": 223092,
+      "reading_time_minutes": 992,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Holy Bible, containing the Old and New Testaments. The text carefully printed from the most correct copies of the present Authorized translation, including the marginal readings and parallel texts: with a commentary and critical notes; designed as a help to a better understanding of the sacred writings",
+      "file": "the-holy-bible-containing-the-old-and-new-testaments-the-text-carefully-printed-from-the-most-correct-copies-o.txt",
+      "bytes": 5194765,
+      "words": 810124,
+      "reading_time_minutes": 3601,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The holy Bible, from the authorized tr., with a comm. and critical notes by A. Clarke",
+      "file": "the-holy-bible-from-the-authorized-tr-with-a-comm-and-critical-notes-by-a-clarke-adam-clarke.txt",
+      "bytes": 4338176,
+      "words": 667360,
+      "reading_time_minutes": 2966,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Holy Bible Containing The Old And New Testaments Vol 2",
+      "file": "the-holy-bible-containing-the-old-and-new-testaments-vol-2-adam-clarke.txt",
+      "bytes": 5165829,
+      "words": 975941,
+      "reading_time_minutes": 4338,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Discourses on Various Subjects Relative to the Being and Attributes of God ...",
+      "file": "discourses-on-various-subjects-relative-to-the-being-and-attributes-of-god-adam-clarke.txt",
+      "bytes": 746229,
+      "words": 134265,
+      "reading_time_minutes": 597,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The nullity of the Romish faith, or A blow at the root of the Romish Church",
+      "file": "the-nullity-of-the-romish-faith-or-a-blow-at-the-root-of-the-romish-church-matthew-poole.txt",
+      "bytes": 688479,
+      "words": 113854,
+      "reading_time_minutes": 506,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Trapp's Commentary On The New Testament",
+      "file": "trapp-s-commentary-on-the-new-testament-john-trapp.txt",
+      "bytes": 4693006,
+      "words": 830155,
+      "reading_time_minutes": 3690,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Expository notes, with practical observations, on the New Testament : of our Lord and Saviour Jesus Christ. ... By William Burkitt ..",
+      "file": "expository-notes-with-practical-observations-on-the-new-testament-of-our-lord-and-saviour-jesus-christ-by-will.txt",
+      "bytes": 4109058,
+      "words": 632763,
+      "reading_time_minutes": 2812,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A commentary on the Holy Scriptures: critical, doctrinal and homiletical",
+      "file": "a-commentary-on-the-holy-scriptures-critical-doctrinal-and-homiletical-john-peter-lange.txt",
+      "bytes": 3834408,
+      "words": 647848,
+      "reading_time_minutes": 2879,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Commentary on the Holy Scriptures Critical, Doctrinal and Homiletical: Corinthians",
+      "file": "commentary-on-the-holy-scriptures-critical-doctrinal-and-homiletical-corinthians-john-peter-lange.txt",
+      "bytes": 3873589,
+      "words": 660863,
+      "reading_time_minutes": 2937,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Exodus; or, The Second Book of Moses",
+      "file": "exodus-or-the-second-book-of-moses-john-peter-lange.txt",
+      "bytes": 2476896,
+      "words": 428158,
+      "reading_time_minutes": 1903,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Gospel According to John",
+      "file": "the-gospel-according-to-john-john-peter-lange.txt",
+      "bytes": 4294961,
+      "words": 725760,
+      "reading_time_minutes": 3226,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "jesus and jonah",
+      "file": "jesus-and-jonah-john-william-mcgarvey.txt",
+      "bytes": 132793,
+      "words": 23631,
+      "reading_time_minutes": 105,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "History of the Baptists",
+      "file": "history-of-the-baptists-thomas-armitage.txt",
+      "bytes": 3232248,
+      "words": 546399,
+      "reading_time_minutes": 2428,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Fifty years among the Baptists",
+      "file": "fifty-years-among-the-baptists-david-benedict.txt",
+      "bytes": 582141,
+      "words": 100017,
+      "reading_time_minutes": 445,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A General History of the Baptist Denomination in America and Othe Parts of the World",
+      "file": "a-general-history-of-the-baptist-denomination-in-america-and-othe-parts-of-the-world-david-benedict.txt",
+      "bytes": 4190310,
+      "words": 706010,
+      "reading_time_minutes": 3138,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An Abridgement Of The General History Of The Baptist Denomination In America",
+      "file": "an-abridgement-of-the-general-history-of-the-baptist-denomination-in-america-david-benedict.txt",
+      "bytes": 1102824,
+      "words": 184916,
+      "reading_time_minutes": 822,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "GENERAL HISTORY OF THE BAPTIST DENOMINATION IN AMERICA AMD OTHER PARTS OF THE WORLD",
+      "file": "general-history-of-the-baptist-denomination-in-america-amd-other-parts-of-the-world-david-benedict.txt",
+      "bytes": 1422706,
+      "words": 236465,
+      "reading_time_minutes": 1051,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Reformation In Germany",
+      "file": "the-reformation-in-germany-henry-c-vedder.txt",
+      "bytes": 1507561,
+      "words": 256236,
+      "reading_time_minutes": 1139,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Baptists",
+      "file": "the-baptists-henry-clay-vedder.txt",
+      "bytes": 253116,
+      "words": 41218,
+      "reading_time_minutes": 183,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Church history handbooks, Volume 1",
+      "file": "church-history-handbooks-volume-1-henry-clay-vedder.txt",
+      "bytes": 160055,
+      "words": 26105,
+      "reading_time_minutes": 116,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A short history of Baptist missions,",
+      "file": "a-short-history-of-baptist-missions-henry-c-vedder.txt",
+      "bytes": 1055102,
+      "words": 172683,
+      "reading_time_minutes": 767,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "modern church history",
+      "file": "modern-church-history-henry-c-vedder.txt",
+      "bytes": 249206,
+      "words": 40298,
+      "reading_time_minutes": 179,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The period of the reformation (Church history handbooks)",
+      "file": "the-period-of-the-reformation-church-history-handbooks-henry-c-vedder.txt",
+      "bytes": 219789,
+      "words": 36027,
+      "reading_time_minutes": 160,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A History of the Baptists in the Middle States",
+      "file": "a-history-of-the-baptists-in-the-middle-states-henry-c-vedder.txt",
+      "bytes": 545437,
+      "words": 89746,
+      "reading_time_minutes": 399,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Period of the Reformation",
+      "file": "the-period-of-the-reformation-henry-c-vedder.txt",
+      "bytes": 221246,
+      "words": 36254,
+      "reading_time_minutes": 161,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Baptists and Liberty of Consience",
+      "file": "baptists-and-liberty-of-consience-henry-c-vedder.txt",
+      "bytes": 171855,
+      "words": 28719,
+      "reading_time_minutes": 128,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Fundamentals Of Christianity",
+      "file": "the-fundamentals-of-christianity-henry-c-vedder.txt",
+      "bytes": 504935,
+      "words": 86613,
+      "reading_time_minutes": 385,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Short History Of The Baptists",
+      "file": "a-short-history-of-the-baptists-henry-c-vedder.txt",
+      "bytes": 841356,
+      "words": 139066,
+      "reading_time_minutes": 618,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The fundamentals of christianity: A study of the teaching of jesus and paul",
+      "file": "the-fundamentals-of-christianity-a-study-of-the-teaching-of-jesus-and-paul-henry-c-vedder.txt",
+      "bytes": 505684,
+      "words": 86562,
+      "reading_time_minutes": 385,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "baptist history vindicated",
+      "file": "baptist-history-vindicated-john-t-christian.txt",
+      "bytes": 414319,
+      "words": 69208,
+      "reading_time_minutes": 308,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A History of the Baptists of the United States",
+      "file": "a-history-of-the-baptists-of-the-united-states-john-t-christian.txt",
+      "bytes": 1199996,
+      "words": 194621,
+      "reading_time_minutes": 865,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The form of baptism in sculpture and art",
+      "file": "the-form-of-baptism-in-sculpture-and-art-john-t-christian.txt",
+      "bytes": 260102,
+      "words": 43843,
+      "reading_time_minutes": 195,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Immersion, the act of christian baptism",
+      "file": "immersion-the-act-of-christian-baptism-john-t-christian.txt",
+      "bytes": 320448,
+      "words": 54343,
+      "reading_time_minutes": 242,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Utter Extinction of Slavery an Object of Scripture Prophecy: A Lecture the Substance of ...",
+      "file": "the-utter-extinction-of-slavery-an-object-of-scripture-prophecy-a-lecture-the-substance-of-joseph-ivimey.txt",
+      "bytes": 129263,
+      "words": 22462,
+      "reading_time_minutes": 100,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Letters on the Serampore controversy, addressed to the rev. Christopher Anderson",
+      "file": "letters-on-the-serampore-controversy-addressed-to-the-rev-christopher-anderson-joseph-ivimey.txt",
+      "bytes": 545631,
+      "words": 92973,
+      "reading_time_minutes": 413,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the life of trust",
+      "file": "the-life-of-trust-george-muller.txt",
+      "bytes": 1041611,
+      "words": 188826,
+      "reading_time_minutes": 839,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A RETROSPECT hudson Taylor's Story of His Early Life and the Forming of the China Inland Mission",
+      "file": "a-retrospect-hudson-taylor-s-story-of-his-early-life-and-the-forming-of-the-china-inland-mission-j-hudson-tayl.txt",
+      "bytes": 215485,
+      "words": 39126,
+      "reading_time_minutes": 174,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Life and explorations of David Livingstone : the great missionary explorer in the interior of Africa ; comprising all his extensive travels and discoveries as detailed in his diary, reports and letters, and including his famous last journals ; together with the explorations of Barth, Baker, Speke, Du Craillu, and others, and a full account of the Herald-Stanley expedition",
+      "file": "life-and-explorations-of-david-livingstone-the-great-missionary-explorer-in-the-interior-of-africa-comprising-.txt",
+      "bytes": 1096398,
+      "words": 165345,
+      "reading_time_minutes": 735,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Last Journals of David Livingstone in Central Africa from 1865 to His Death: Continued by a ...",
+      "file": "the-last-journals-of-david-livingstone-in-central-africa-from-1865-to-his-death-continued-by-a-david-livingsto.txt",
+      "bytes": 717528,
+      "words": 129673,
+      "reading_time_minutes": 576,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Last journals of David Livingstone v.2",
+      "file": "the-last-journals-of-david-livingstone-v-2-david-livingstone.txt",
+      "bytes": 710898,
+      "words": 126533,
+      "reading_time_minutes": 562,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Missionary Travels and Researches In South Africa",
+      "file": "missionary-travels-and-researches-in-south-africa-david-livingstone.txt",
+      "bytes": 1990826,
+      "words": 306585,
+      "reading_time_minutes": 1363,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Missionary labours and scenes in southern Africa",
+      "file": "missionary-labours-and-scenes-in-southern-africa-robert-moffat.txt",
+      "bytes": 1328142,
+      "words": 199292,
+      "reading_time_minutes": 886,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Influence of Animism on Islam: An Account of Popular Superstitions",
+      "file": "influence-of-animism-on-islam-an-account-of-popular-superstitions-samuel-m-zwemer.txt",
+      "bytes": 475482,
+      "words": 85057,
+      "reading_time_minutes": 378,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Across The World Of Islam",
+      "file": "across-the-world-of-islam-samuel-m-zwemer.txt",
+      "bytes": 662310,
+      "words": 110563,
+      "reading_time_minutes": 491,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Moslim Doctrine",
+      "file": "the-moslim-doctrine-samuel-m-zwemer.txt",
+      "bytes": 169364,
+      "words": 29536,
+      "reading_time_minutes": 131,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Islam",
+      "file": "islam-samuel-m-zwemer.txt",
+      "bytes": 529621,
+      "words": 87807,
+      "reading_time_minutes": 390,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Islam A Challenge To Faith",
+      "file": "islam-a-challenge-to-faith-samuel-m-zwemer.txt",
+      "bytes": 546488,
+      "words": 90707,
+      "reading_time_minutes": 403,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Raymond Lull: First Missionary to the Moslems",
+      "file": "raymond-lull-first-missionary-to-the-moslems-samuel-marinus-zwemer.txt",
+      "bytes": 180321,
+      "words": 30539,
+      "reading_time_minutes": 136,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Disintegration of Islam",
+      "file": "the-disintegration-of-islam-samuel-marinus-zwemer.txt",
+      "bytes": 311256,
+      "words": 52663,
+      "reading_time_minutes": 234,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Influence Of Animism On Islam",
+      "file": "the-influence-of-animism-on-islam-samuel-m-zwemer.txt",
+      "bytes": 470745,
+      "words": 84263,
+      "reading_time_minutes": 375,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Islam, a Challenge to Faith: Studies on the Mohammedan Religion and the ...",
+      "file": "islam-a-challenge-to-faith-studies-on-the-mohammedan-religion-and-the-samuel-marinus-zwemer.txt",
+      "bytes": 546870,
+      "words": 91083,
+      "reading_time_minutes": 405,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Islam A Challenge To Faith Samuel",
+      "file": "islam-a-challenge-to-faith-samuel-samuel-m-zwemer.txt",
+      "bytes": 550299,
+      "words": 92212,
+      "reading_time_minutes": 410,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Keys to the Word: or, Help to Bible Study",
+      "file": "keys-to-the-word-or-help-to-bible-study-a-t-pierson.txt",
+      "bytes": 167092,
+      "words": 27753,
+      "reading_time_minutes": 123,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Coronation Hymnal A Selection of Hymns and Songs",
+      "file": "the-coronation-hymnal-a-selection-of-hymns-and-songs-a-j-gordon.txt",
+      "bytes": 667071,
+      "words": 130085,
+      "reading_time_minutes": 578,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "How Christ came to church : The pastor's dream: a spiritual autobiography",
+      "file": "how-christ-came-to-church-the-pastor-s-dream-a-spiritual-autobiography-a-j-gordon.txt",
+      "bytes": 184786,
+      "words": 32258,
+      "reading_time_minutes": 143,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "How Christ Came to Church",
+      "file": "how-christ-came-to-church-a-j-gordon.txt",
+      "bytes": 187702,
+      "words": 32537,
+      "reading_time_minutes": 145,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "In Christ; or, the Believer's Union with His Lord",
+      "file": "in-christ-or-the-believer-s-union-with-his-lord-a-j-gordon.txt",
+      "bytes": 226786,
+      "words": 40586,
+      "reading_time_minutes": 180,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "And Judas Iscariot with Other Evangelistic Sermons",
+      "file": "and-judas-iscariot-with-other-evangelistic-sermons-j-wilbur-chapman.txt",
+      "bytes": 385695,
+      "words": 71889,
+      "reading_time_minutes": 320,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Bird's-Eye Bible Study",
+      "file": "bird-s-eye-bible-study-j-wilbur-chapman.txt",
+      "bytes": 137298,
+      "words": 23203,
+      "reading_time_minutes": 103,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "present-day evangelism",
+      "file": "present-day-evangelism-j-wilbur-chapman.txt",
+      "bytes": 279597,
+      "words": 49409,
+      "reading_time_minutes": 220,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "WINONA HYMNS",
+      "file": "winona-hymns-j-wilbur-chapman.txt",
+      "bytes": 251446,
+      "words": 53736,
+      "reading_time_minutes": 239,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "awakening sermons",
+      "file": "awakening-sermons-j-wilbur-chapman.txt",
+      "bytes": 258353,
+      "words": 48603,
+      "reading_time_minutes": 216,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Pastor His Own Evangelist",
+      "file": "the-pastor-his-own-evangelist-j-wilbur-chapman-and-charles-l-goodell.txt",
+      "bytes": 926614,
+      "words": 164217,
+      "reading_time_minutes": 730,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Humanity and God",
+      "file": "humanity-and-god-samuel-chadwick.txt",
+      "bytes": 444035,
+      "words": 78178,
+      "reading_time_minutes": 347,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "forty years an evangelist",
+      "file": "forty-years-an-evangelist-gipsy-smith.txt",
+      "bytes": 438137,
+      "words": 79227,
+      "reading_time_minutes": 352,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Real Religion",
+      "file": "real-religion-gipsy-smith.txt",
+      "bytes": 214241,
+      "words": 39491,
+      "reading_time_minutes": 176,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "As Jesus Passed By and Other Addresses",
+      "file": "as-jesus-passed-by-and-other-addresses-gipsy-smith.txt",
+      "bytes": 237987,
+      "words": 44716,
+      "reading_time_minutes": 199,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "wonderful jesus and other songs",
+      "file": "wonderful-jesus-and-other-songs-gipsy-smith-and-e-edwin-young.txt",
+      "bytes": 277115,
+      "words": 54596,
+      "reading_time_minutes": 243,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Evangelistic Talks",
+      "file": "evangelistic-talks-gipsy-smith.txt",
+      "bytes": 236923,
+      "words": 44597,
+      "reading_time_minutes": 198,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Wonderful Jesus and Other Songs",
+      "file": "wonderful-jesus-and-other-songs-gipsy-smith.txt",
+      "bytes": 290816,
+      "words": 58505,
+      "reading_time_minutes": 260,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Light and Truth: Or, Bible Thoughts and Themes",
+      "file": "light-and-truth-or-bible-thoughts-and-themes-horatius-bonar.txt",
+      "bytes": 392413,
+      "words": 72640,
+      "reading_time_minutes": 323,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Light and Truth: Or, Bible Thoughts and Themes. The Lesser Epistles",
+      "file": "light-and-truth-or-bible-thoughts-and-themes-the-lesser-epistles-horatius-bonar.txt",
+      "bytes": 693396,
+      "words": 129163,
+      "reading_time_minutes": 574,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The everlasting righteousness; or, How shall man be just with God?.",
+      "file": "the-everlasting-righteousness-or-how-shall-man-be-just-with-god-horatius-bonar.txt",
+      "bytes": 306458,
+      "words": 55801,
+      "reading_time_minutes": 248,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Prophetical Landmarks: Containing Data for Helping to Determine the Question of Christ's Pre ...",
+      "file": "prophetical-landmarks-containing-data-for-helping-to-determine-the-question-of-christ-s-pre-horatius-bonar.txt",
+      "bytes": 576909,
+      "words": 102629,
+      "reading_time_minutes": 456,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Night of Weeping, Or Words for the Suffering Family of God by Horatius Bonar",
+      "file": "the-night-of-weeping-or-words-for-the-suffering-family-of-god-by-horatius-bonar-horatius-bonar.txt",
+      "bytes": 217480,
+      "words": 39814,
+      "reading_time_minutes": 177,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Days and nights in the East; or, Illustrations of Bible scenes",
+      "file": "days-and-nights-in-the-east-or-illustrations-of-bible-scenes-horatius-bonar.txt",
+      "bytes": 615763,
+      "words": 112043,
+      "reading_time_minutes": 498,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns",
+      "file": "hymns-horatius-bonar.txt",
+      "bytes": 257607,
+      "words": 46045,
+      "reading_time_minutes": 205,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Bible Hymn-book",
+      "file": "the-bible-hymn-book-horatius-bonar.txt",
+      "bytes": 281606,
+      "words": 52345,
+      "reading_time_minutes": 233,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "God's Way of Peace: A Book for the Anxious",
+      "file": "god-s-way-of-peace-a-book-for-the-anxious-horatius-bonar.txt",
+      "bytes": 209583,
+      "words": 38948,
+      "reading_time_minutes": 173,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns of faith and hope",
+      "file": "hymns-of-faith-and-hope-horatius-bonar.txt",
+      "bytes": 171219,
+      "words": 30829,
+      "reading_time_minutes": 137,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "\"Until the Day Break\": And Other Hymns and Poems Left Behind",
+      "file": "until-the-day-break-and-other-hymns-and-poems-left-behind-horatius-bonar.txt",
+      "bytes": 139262,
+      "words": 24832,
+      "reading_time_minutes": 110,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Communion hymns",
+      "file": "communion-hymns-horatius-bonar.txt",
+      "bytes": 49129,
+      "words": 9067,
+      "reading_time_minutes": 40,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns of Faith and Hope. [First Series]",
+      "file": "hymns-of-faith-and-hope-first-series-horatius-bonar.txt",
+      "bytes": 175842,
+      "words": 31919,
+      "reading_time_minutes": 142,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Song of the New Creation: And Other Pieces",
+      "file": "the-song-of-the-new-creation-and-other-pieces-horatius-bonar.txt",
+      "bytes": 198885,
+      "words": 35518,
+      "reading_time_minutes": 158,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Memoir and remains of the Rev. Robert Murray McCheyne, minister of St. Peter's Church, Dundee 1844 [Leather Bound]",
+      "file": "memoir-and-remains-of-the-rev-robert-murray-mccheyne-minister-of-st-peter-s-church-dundee-1844-leather-bound-a.txt",
+      "bytes": 813376,
+      "words": 145719,
+      "reading_time_minutes": 648,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Letters of Samuel Rutherford",
+      "file": "letters-of-samuel-rutherford-andrew-a-bonar.txt",
+      "bytes": 1944798,
+      "words": 352254,
+      "reading_time_minutes": 1566,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An Authentic Narrative of Some Remarkable and Interesting Particulars in the Life of ...",
+      "file": "an-authentic-narrative-of-some-remarkable-and-interesting-particulars-in-the-life-of-john-newton.txt",
+      "bytes": 216803,
+      "words": 39367,
+      "reading_time_minutes": 175,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the life and times of jesus the messiah",
+      "file": "the-life-and-times-of-jesus-the-messiah-alfred-edersheim.txt",
+      "bytes": 2100893,
+      "words": 355025,
+      "reading_time_minutes": 1578,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Jesus The Messiah being An Abridged Edition of The Life and Times of Jesus The Messiah",
+      "file": "jesus-the-messiah-being-an-abridged-edition-of-the-life-and-times-of-jesus-the-messiah-alfred-edersheim.txt",
+      "bytes": 1419905,
+      "words": 242764,
+      "reading_time_minutes": 1079,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Temple: Its Ministry and Services As They Were at the Time of Jesus Christ",
+      "file": "the-temple-its-ministry-and-services-as-they-were-at-the-time-of-jesus-christ-alfred-edersheim.txt",
+      "bytes": 628157,
+      "words": 107120,
+      "reading_time_minutes": 476,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Foxe's Book of Martyrs",
+      "file": "foxe-s-book-of-martyrs-john-foxe.txt",
+      "bytes": 1044488,
+      "words": 181444,
+      "reading_time_minutes": 806,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Narrative of the Days of the Reformation: Chiefly from the Manuscripts of John Foxe the ...",
+      "file": "narrative-of-the-days-of-the-reformation-chiefly-from-the-manuscripts-of-john-foxe-the-john-foxe.txt",
+      "bytes": 994061,
+      "words": 172851,
+      "reading_time_minutes": 768,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "FOXES Book Of Martyrs ~ 704.pages ~ English Language ~ Authomatic Scrolling",
+      "file": "foxes-book-of-martyrs-704-pages-english-language-authomatic-scrolling-john-foxe.txt",
+      "bytes": 1206512,
+      "words": 177477,
+      "reading_time_minutes": 789,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Foxe's book of martyrs. With notes by rev. J. Milner. With an essay on ...",
+      "file": "foxe-s-book-of-martyrs-with-notes-by-rev-j-milner-with-an-essay-on-john-foxe.txt",
+      "bytes": 2922954,
+      "words": 444376,
+      "reading_time_minutes": 1975,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Book Of Martyrs",
+      "file": "the-book-of-martyrs-john-foxe.txt",
+      "bytes": 1504282,
+      "words": 233932,
+      "reading_time_minutes": 1040,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Fox's Book Of Martyrs",
+      "file": "fox-s-book-of-martyrs-john-foxe.txt",
+      "bytes": 1086354,
+      "words": 183003,
+      "reading_time_minutes": 813,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Martyrs omitted by Foxe: records of religious persecutions in the 16th and 17th centuries ...",
+      "file": "martyrs-omitted-by-foxe-records-of-religious-persecutions-in-the-16th-and-17th-centuries-john-foxe.txt",
+      "bytes": 352433,
+      "words": 62371,
+      "reading_time_minutes": 277,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An appeal to the public for religious liberty against the oppressions of the present day",
+      "file": "an-appeal-to-the-public-for-religious-liberty-against-the-oppressions-of-the-present-day-isaac-backus.txt",
+      "bytes": 103666,
+      "words": 18498,
+      "reading_time_minutes": 82,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Abstract of Systemic Theology",
+      "file": "abstract-of-systemic-theology-james-p-boyce.txt",
+      "bytes": 1266307,
+      "words": 222907,
+      "reading_time_minutes": 991,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Life in Jesus: a memoir of Mrs. Mary Winslow, arranged from her ...",
+      "file": "life-in-jesus-a-memoir-of-mrs-mary-winslow-arranged-from-her-octavius-winslow.txt",
+      "bytes": 1044056,
+      "words": 194392,
+      "reading_time_minutes": 864,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The ministry of home; or, Brief expository lectures on divine truth",
+      "file": "the-ministry-of-home-or-brief-expository-lectures-on-divine-truth-octavius-winslow.txt",
+      "bytes": 571104,
+      "words": 101950,
+      "reading_time_minutes": 453,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Personal Declension and Revival of Religion in the Soul. ...",
+      "file": "personal-declension-and-revival-of-religion-in-the-soul-octavius-winslow.txt",
+      "bytes": 435871,
+      "words": 78490,
+      "reading_time_minutes": 349,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Experimental and Practical Views of the Atonement",
+      "file": "experimental-and-practical-views-of-the-atonement-octavius-winslow.txt",
+      "bytes": 296165,
+      "words": 53121,
+      "reading_time_minutes": 236,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Go and Tell Jesus",
+      "file": "go-and-tell-jesus-octavius-winslow.txt",
+      "bytes": 59204,
+      "words": 10509,
+      "reading_time_minutes": 47,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The inquirer directed to an experimental and practical view of the Atonement",
+      "file": "the-inquirer-directed-to-an-experimental-and-practical-view-of-the-atonement-octavius-winslow.txt",
+      "bytes": 307502,
+      "words": 53105,
+      "reading_time_minutes": 236,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The silver trumpet; or, The Church guided and warned in perilous times",
+      "file": "the-silver-trumpet-or-the-church-guided-and-warned-in-perilous-times-octavius-winslow.txt",
+      "bytes": 125604,
+      "words": 22073,
+      "reading_time_minutes": 98,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "None Like Christ ...",
+      "file": "none-like-christ-octavius-winslow.txt",
+      "bytes": 59136,
+      "words": 10228,
+      "reading_time_minutes": 45,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A pastoral letter, addressed to the church and congregation assembling in the Warwick-street ...",
+      "file": "a-pastoral-letter-addressed-to-the-church-and-congregation-assembling-in-the-warwick-street-octavius-winslow.txt",
+      "bytes": 6594,
+      "words": 1138,
+      "reading_time_minutes": 5,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Christian in Complete Armour: A Treatise of the Saints' Preservation from Apostasy",
+      "file": "the-christian-in-complete-armour-a-treatise-of-the-saints-preservation-from-apostasy-william-gurnall.txt",
+      "bytes": 3974396,
+      "words": 727974,
+      "reading_time_minutes": 3235,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Husbandry Spiritualized: Or, The Heavenly Use of Earthly Things, in which Husbandmen are ...",
+      "file": "husbandry-spiritualized-or-the-heavenly-use-of-earthly-things-in-which-husbandmen-are-john-flavel.txt",
+      "bytes": 637195,
+      "words": 116433,
+      "reading_time_minutes": 517,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Practical Discourses, on Regeneration: In Ten Sermons ... To which are Added Two Sermons, on the ...",
+      "file": "practical-discourses-on-regeneration-in-ten-sermons-to-which-are-added-two-sermons-on-the-philip-doddridge.txt",
+      "bytes": 546785,
+      "words": 96264,
+      "reading_time_minutes": 428,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Rise and Progress of Religion in the Soul",
+      "file": "rise-and-progress-of-religion-in-the-soul-philip-doddridge.txt",
+      "bytes": 648644,
+      "words": 117899,
+      "reading_time_minutes": 524,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The rise and progress of religion in the soul: addresses. Repr",
+      "file": "the-rise-and-progress-of-religion-in-the-soul-addresses-repr-philip-doddridge.txt",
+      "bytes": 447347,
+      "words": 81196,
+      "reading_time_minutes": 361,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Some Remarkable Passages in the Life of the Honourable Col. James Gardiner ...",
+      "file": "some-remarkable-passages-in-the-life-of-the-honourable-col-james-gardiner-philip-doddridge.txt",
+      "bytes": 382533,
+      "words": 66410,
+      "reading_time_minutes": 295,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Letters to and from the Rev. Philip Doddridge, D.D. Late of Northampton: Published from the ...",
+      "file": "letters-to-and-from-the-rev-philip-doddridge-d-d-late-of-northampton-published-from-the-philip-doddridge.txt",
+      "bytes": 664458,
+      "words": 120071,
+      "reading_time_minutes": 534,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Epistle of Paul the Apostle to the Romans: with introduction and notes.",
+      "file": "the-epistle-of-paul-the-apostle-to-the-romans-with-introduction-and-notes-handley-c-g-moule.txt",
+      "bytes": 951500,
+      "words": 166607,
+      "reading_time_minutes": 740,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christ Is All",
+      "file": "christ-is-all-handley-c-g-moule.txt",
+      "bytes": 354073,
+      "words": 63210,
+      "reading_time_minutes": 281,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Fifty Short Sermons",
+      "file": "fifty-short-sermons-t-de-witt-talmage.txt",
+      "bytes": 502944,
+      "words": 89924,
+      "reading_time_minutes": 400,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Trial and Death of Jesus Christ: A Devotional History of Our Lord's Passion",
+      "file": "the-trial-and-death-of-jesus-christ-a-devotional-history-of-our-lord-s-passion-james-stalker.txt",
+      "bytes": 435921,
+      "words": 79701,
+      "reading_time_minutes": 354,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The life of st. Paul: 70th Thousand",
+      "file": "the-life-of-st-paul-70th-thousand-james-stalker.txt",
+      "bytes": 266825,
+      "words": 46716,
+      "reading_time_minutes": 208,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Imago Christi: the example of Jesus Christ",
+      "file": "imago-christi-the-example-of-jesus-christ-james-stalker.txt",
+      "bytes": 411333,
+      "words": 73271,
+      "reading_time_minutes": 326,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The preacher and his models",
+      "file": "the-preacher-and-his-models-james-stalker.txt",
+      "bytes": 388185,
+      "words": 69820,
+      "reading_time_minutes": 310,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hours with the Bible, Or, The Scriptures in the Light of Modern Knowledge",
+      "file": "hours-with-the-bible-or-the-scriptures-in-the-light-of-modern-knowledge-cunningham-geikie.txt",
+      "bytes": 985191,
+      "words": 175729,
+      "reading_time_minutes": 781,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Life And Words Of Christ Vol 1",
+      "file": "life-and-words-of-christ-vol-1-cunningham-geikie.txt",
+      "bytes": 1487883,
+      "words": 256037,
+      "reading_time_minutes": 1138,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Old Testament portraits",
+      "file": "old-testament-portraits-john-cunningham-geikie.txt",
+      "bytes": 694335,
+      "words": 123282,
+      "reading_time_minutes": 548,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Stronghold of truth;: Five lectures delivered at Montrose Bible conference in the summer of 1915",
+      "file": "stronghold-of-truth-five-lectures-delivered-at-montrose-bible-conference-in-the-summer-of-1915-w-h-griffith-th.txt",
+      "bytes": 123043,
+      "words": 21747,
+      "reading_time_minutes": 97,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Methods of Bible study",
+      "file": "methods-of-bible-study-w-h-griffith-thomas.txt",
+      "bytes": 195606,
+      "words": 33120,
+      "reading_time_minutes": 147,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christianity is Christ",
+      "file": "christianity-is-christ-w-h-griffith-thomas.txt",
+      "bytes": 289886,
+      "words": 49759,
+      "reading_time_minutes": 221,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christ Pre-Eminent",
+      "file": "christ-pre-eminent-w-h-griffith-thomas.txt",
+      "bytes": 209283,
+      "words": 35516,
+      "reading_time_minutes": 158,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Apostle Peter",
+      "file": "the-apostle-peter-w-h-griffith-thomas.txt",
+      "bytes": 378240,
+      "words": 62858,
+      "reading_time_minutes": 279,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Christian life and how to live it,",
+      "file": "the-christian-life-and-how-to-live-it-w-h-griffith-thomas.txt",
+      "bytes": 167126,
+      "words": 29590,
+      "reading_time_minutes": 132,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "How We Got Our Bible",
+      "file": "how-we-got-our-bible-w-h-griffith-thomas.txt",
+      "bytes": 152115,
+      "words": 25992,
+      "reading_time_minutes": 116,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Quiet Talks on the Crowned Christ of Revelation",
+      "file": "quiet-talks-on-the-crowned-christ-of-revelation-s-d-gordon.txt",
+      "bytes": 336906,
+      "words": 58973,
+      "reading_time_minutes": 262,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Quiet Talks on Power",
+      "file": "quiet-talks-on-power-s-d-gordon.txt",
+      "bytes": 280107,
+      "words": 48855,
+      "reading_time_minutes": 217,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "My Daily Meditation for the Circling Year",
+      "file": "my-daily-meditation-for-the-circling-year-john-henry-jowett.txt",
+      "bytes": 457820,
+      "words": 80239,
+      "reading_time_minutes": 357,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Whole Armour of God",
+      "file": "the-whole-armour-of-god-john-henry-jowett.txt",
+      "bytes": 281663,
+      "words": 49100,
+      "reading_time_minutes": 218,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Heart's-ease",
+      "file": "heart-s-ease-phillips-brooks.txt",
+      "bytes": 10795,
+      "words": 1860,
+      "reading_time_minutes": 8,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Personal Touch",
+      "file": "the-personal-touch-j-wilbur-chapman.txt",
+      "bytes": 134363,
+      "words": 25630,
+      "reading_time_minutes": 114,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Art of Soul-Winning",
+      "file": "the-art-of-soul-winning-j-w-mahood.txt",
+      "bytes": 74768,
+      "words": 13030,
+      "reading_time_minutes": 58,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Salt-cellars: Being a Collection of Proverbs, Together with Homely Notes Theron",
+      "author": "Charles Haddon Spurgeon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-salt-cellars-being-a-collection-of-proverbs-together-with-homely-notes-theron-charles-haddon-spurgeon.txt"
+    },
+    {
+      "row": 3,
+      "title": "Peter Fisherman Disciple Apostle",
+      "author": "F. B. Meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/peter-fisherman-disciple-apostle-f-b-meyer.txt"
+    },
+    {
+      "row": 4,
+      "title": "Five \" Musts\" of the Christian Life and other semons",
+      "author": "F. B. meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/five-musts-of-the-christian-life-and-other-semons-f-b-meyer.txt"
+    },
+    {
+      "row": 5,
+      "title": "Steps into the blessed life",
+      "author": "F. B. Meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/steps-into-the-blessed-life-f-b-meyer.txt"
+    },
+    {
+      "row": 6,
+      "title": "Five Musts Of The Christian Life, Or, 5 Things Christians Must Do",
+      "author": "F. B. Meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/five-musts-of-the-christian-life-or-5-things-christians-must-do-f-b-meyer.txt"
+    },
+    {
+      "row": 7,
+      "title": "Paul a servant of Jesus Christ",
+      "author": "F. B. Meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/paul-a-servant-of-jesus-christ-f-b-meyer.txt"
+    },
+    {
+      "row": 8,
+      "title": "The book of Genesis",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-book-of-genesis-alexander-maclaren.txt"
+    },
+    {
+      "row": 9,
+      "title": "Sermons Preached in Manchester ...",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sermons-preached-in-manchester-alexander-maclaren.txt"
+    },
+    {
+      "row": 10,
+      "title": "A year's ministry",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-year-s-ministry-alexander-maclaren.txt"
+    },
+    {
+      "row": 11,
+      "title": "COMMENTARY ON THE GOSPEL OF MARK",
+      "author": "John A. Broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/commentary-on-the-gospel-of-mark-john-a-broadus.txt"
+    },
+    {
+      "row": 12,
+      "title": "a harmony of the gospels",
+      "author": "John A. Broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-harmony-of-the-gospels-john-a-broadus.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Treatise On The Preparation and Delivery Of Sermons",
+      "author": "John A. Broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-treatise-on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt"
+    },
+    {
+      "row": 14,
+      "title": "On the preparation and delivery of sermons",
+      "author": "John A. Broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/on-the-preparation-and-delivery-of-sermons-john-a-broadus.txt"
+    },
+    {
+      "row": 15,
+      "title": "Lectures of the History of Preaching",
+      "author": "John A. Broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lectures-of-the-history-of-preaching-john-a-broadus.txt"
+    },
+    {
+      "row": 16,
+      "title": "the preparation and delivery of sermons",
+      "author": "john a. broadus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-preparation-and-delivery-of-sermons-john-a-broadus.txt"
+    },
+    {
+      "row": 17,
+      "title": "The Cause of God and Truth ...",
+      "author": "John Gill",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-cause-of-god-and-truth-john-gill.txt"
+    },
+    {
+      "row": 18,
+      "title": "A Complete Body of Doctrinal and Practical Divinity: Or, A System of Evangelical Truths, Deduced ...",
+      "author": "John Gill",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-complete-body-of-doctrinal-and-practical-divinity-or-a-system-of-evangelical-truths-deduced-john-gill.txt"
+    },
+    {
+      "row": 19,
+      "title": "The Works of the Reverend George Whitefield, M.A...: Containing All His Sermons and Tracts which ...",
+      "author": "George Whitefield",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-works-of-the-reverend-george-whitefield-m-a-containing-all-his-sermons-and-tracts-which-george-whitefield.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Christian's companion: or, Sermons on several subjects",
+      "author": "George Whitefield",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-christian-s-companion-or-sermons-on-several-subjects-george-whitefield.txt"
+    },
+    {
+      "row": 21,
+      "title": "A Collection of Hymns for Social Worship: More Particularly Designed for the ...",
+      "author": "George Whitefield",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-collection-of-hymns-for-social-worship-more-particularly-designed-for-the-george-whitefield.txt"
+    },
+    {
+      "row": 22,
+      "title": "Hymns and Spiritual Songs: In Three Books. ... By I. Watts, D.D.",
+      "author": "Isaac Watts",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-and-spiritual-songs-in-three-books-by-i-watts-d-d-isaac-watts.txt"
+    },
+    {
+      "row": 23,
+      "title": "preacher and prayer",
+      "author": "e. m. bounds",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/preacher-and-prayer-e-m-bounds.txt"
+    },
+    {
+      "row": 24,
+      "title": "Purpose in Prayer",
+      "author": "E. M. Bounds",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/purpose-in-prayer-e-m-bounds.txt"
+    },
+    {
+      "row": 25,
+      "title": "POWER THROUGH PRAYER",
+      "author": "E. M. BOUNDS",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/power-through-prayer-e-m-bounds.txt"
+    },
+    {
+      "row": 26,
+      "title": "the annotated bible; the holy scriptures annalysed and annotated",
+      "author": "a. c. gaebelein",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-annotated-bible-the-holy-scriptures-annalysed-and-annotated-a-c-gaebelein.txt"
+    },
+    {
+      "row": 27,
+      "title": "Notes on the Epistle of Paul to the Romans, with a new transl",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-on-the-epistle-of-paul-to-the-romans-with-a-new-transl-william-kelly.txt"
+    },
+    {
+      "row": 28,
+      "title": "Spiritual songs",
+      "author": "J. N. Darby",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/spiritual-songs-j-n-darby.txt"
+    },
+    {
+      "row": 29,
+      "title": "Notes and comments on scripture",
+      "author": "J. N. Darby",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-and-comments-on-scripture-j-n-darby.txt"
+    },
+    {
+      "row": 30,
+      "title": "Spiritism and the Fallen Angels in the Light of the Old and New Testaments",
+      "author": "James M. Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/spiritism-and-the-fallen-angels-in-the-light-of-the-old-and-new-testaments-james-m-gray.txt"
+    },
+    {
+      "row": 31,
+      "title": "Prophecy And The Lord's Return",
+      "author": "James M. Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/prophecy-and-the-lord-s-return-james-m-gray.txt"
+    },
+    {
+      "row": 32,
+      "title": "The Bulwarks of the faith",
+      "author": "James M. Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-bulwarks-of-the-faith-james-m-gray.txt"
+    },
+    {
+      "row": 33,
+      "title": "Primers of the FAith",
+      "author": "James M. Gray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/primers-of-the-faith-james-m-gray.txt"
+    },
+    {
+      "row": 34,
+      "title": "Lessons Of The Welsh Revival",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lessons-of-the-welsh-revival-g-campbell-morgan.txt"
+    },
+    {
+      "row": 35,
+      "title": "the acts pf the apostles",
+      "author": "g. campbell morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-acts-pf-the-apostles-g-campbell-morgan.txt"
+    },
+    {
+      "row": 36,
+      "title": "Living Messages of the Books of the Bible: Old and New Testaments",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/living-messages-of-the-books-of-the-bible-old-and-new-testaments-g-campbell-morgan.txt"
+    },
+    {
+      "row": 37,
+      "title": "God's Methods with Man",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/god-s-methods-with-man-g-campbell-morgan.txt"
+    },
+    {
+      "row": 38,
+      "title": "Living Messages of the Books of the Bible; Genesis to Revelation, Matthew to Revelation, Complete in Two Double Volumes.",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/living-messages-of-the-books-of-the-bible-genesis-to-revelation-matthew-to-revelation-complete-in-two-double-v.txt"
+    },
+    {
+      "row": 39,
+      "title": "A First Century Message to Twentieth Century Christians",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-first-century-message-to-twentieth-century-christians-g-campbell-morgan.txt"
+    },
+    {
+      "row": 40,
+      "title": "God Our Contemporary",
+      "author": "J H Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/god-our-contemporary-j-h-jowett.txt"
+    },
+    {
+      "row": 41,
+      "title": "The Preacher His Life and Work",
+      "author": "J. H. Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-preacher-his-life-and-work-j-h-jowett.txt"
+    },
+    {
+      "row": 42,
+      "title": "the preacher his life and work yale lectures",
+      "author": "j. h. jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-preacher-his-life-and-work-yale-lectures-j-h-jowett.txt"
+    },
+    {
+      "row": 43,
+      "title": "The Passion for Souls",
+      "author": "J. H. Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-passion-for-souls-j-h-jowett.txt"
+    },
+    {
+      "row": 44,
+      "title": "The Redeemed Family of God: The Epistles of St. Peter",
+      "author": "J. H. Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-redeemed-family-of-god-the-epistles-of-st-peter-j-h-jowett.txt"
+    },
+    {
+      "row": 45,
+      "title": "Revelation [Library Binding]",
+      "author": "clarence larkin",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/revelation-library-binding-clarence-larkin.txt"
+    },
+    {
+      "row": 46,
+      "title": "Book of Revelation a Study of the Last P",
+      "author": "Clarence Larkin",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/book-of-revelation-a-study-of-the-last-p-clarence-larkin.txt"
+    },
+    {
+      "row": 47,
+      "title": "The Book of GRevelation",
+      "author": "Clarence Larkin",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-book-of-grevelation-clarence-larkin.txt"
+    },
+    {
+      "row": 48,
+      "title": "Dispensational Truth or God's Plan and Purpose",
+      "author": "Clarence Larkin",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/dispensational-truth-or-god-s-plan-and-purpose-clarence-larkin.txt"
+    },
+    {
+      "row": 49,
+      "title": "A Method for Prayer,: With Scripture-expressions, Proper to be Used Under ...",
+      "author": "Matthew Henry",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-method-for-prayer-with-scripture-expressions-proper-to-be-used-under-matthew-henry.txt"
+    },
+    {
+      "row": 50,
+      "title": "Notes, Critical, Illustrative, and Practical, on the Book of Daniel, with an ...",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-critical-illustrative-and-practical-on-the-book-of-daniel-with-an-albert-barnes.txt"
+    },
+    {
+      "row": 51,
+      "title": "Notes, Explanatory & Practical, on the Gospels: Designed for Sunday School ...",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-explanatory-and-practical-on-the-gospels-designed-for-sunday-school-albert-barnes.txt"
+    },
+    {
+      "row": 52,
+      "title": "Notes, Critical, Explanatory, and Practical, on the Book of Psalms",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-critical-explanatory-and-practical-on-the-book-of-psalms-albert-barnes.txt"
+    },
+    {
+      "row": 53,
+      "title": "Notes, critical, explanatory, and practical on the book of the prophet Isaiah",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-critical-explanatory-and-practical-on-the-book-of-the-prophet-isaiah-albert-barnes.txt"
+    },
+    {
+      "row": 54,
+      "title": "Notes, Explanatory and Practical, on the Gospels: Designed for Sunday School ...",
+      "author": "Albert Barnes",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/notesexplanator27barngoog/notesexplanator27barngoog_djvu.txt"
+      ]
+    },
+    {
+      "row": 55,
+      "title": "Notes, Explanatory and Practical, on the Epistle to the Romans;.",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-explanatory-and-practical-on-the-epistle-to-the-romans-albert-barnes.txt"
+    },
+    {
+      "row": 56,
+      "title": "Notes Explanatory and Practical on the Acts of the Apostles: Designed for Bible Classes and ...",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-explanatory-and-practical-on-the-acts-of-the-apostles-designed-for-bible-classes-and-albert-barnes.txt"
+    },
+    {
+      "row": 57,
+      "title": "The Way of Salvation Illustrated in a Series of Discourses",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-way-of-salvation-illustrated-in-a-series-of-discourses-albert-barnes.txt"
+    },
+    {
+      "row": 58,
+      "title": "Notes, Explanatory and Practical, on the New Testament",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-explanatory-and-practical-on-the-new-testament-albert-barnes.txt"
+    },
+    {
+      "row": 59,
+      "title": "The Atonement, in Its Relations to Law and Moral Government",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-atonement-in-its-relations-to-law-and-moral-government-albert-barnes.txt"
+    },
+    {
+      "row": 60,
+      "title": "Notes on the Gospels, condensed from the Amer. ed",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/notes-on-the-gospels-condensed-from-the-amer-ed-albert-barnes.txt"
+    },
+    {
+      "row": 61,
+      "title": "The Way of Salvation: A Sermon, Delivered at Morristown, New Jersey, February 8, 1829",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-way-of-salvation-a-sermon-delivered-at-morristown-new-jersey-february-8-1829-albert-barnes.txt"
+    },
+    {
+      "row": 62,
+      "title": "Barnes' Notes - Daniel Vol. 2",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/barnes-notes-daniel-vol-2-albert-barnes.txt"
+    },
+    {
+      "row": 63,
+      "title": "The Holy Bible, containing the Old and New Testaments. The text carefully printed from the most correct copies of the present Authorized translation, including the marginal readings and parallel texts: with a commentary and critical notes; designed as a help to a better understanding of the sacred writings",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-holy-bible-containing-the-old-and-new-testaments-the-text-carefully-printed-from-the-most-correct-copies-o.txt"
+    },
+    {
+      "row": 64,
+      "title": "The holy Bible, from the authorized tr., with a comm. and critical notes by A. Clarke",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-holy-bible-from-the-authorized-tr-with-a-comm-and-critical-notes-by-a-clarke-adam-clarke.txt"
+    },
+    {
+      "row": 65,
+      "title": "The Holy Bible Containing The Old And New Testaments Vol 2",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-holy-bible-containing-the-old-and-new-testaments-vol-2-adam-clarke.txt"
+    },
+    {
+      "row": 66,
+      "title": "Discourses on Various Subjects Relative to the Being and Attributes of God ...",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/discourses-on-various-subjects-relative-to-the-being-and-attributes-of-god-adam-clarke.txt"
+    },
+    {
+      "row": 67,
+      "title": "The nullity of the Romish faith, or A blow at the root of the Romish Church",
+      "author": "Matthew Poole",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-nullity-of-the-romish-faith-or-a-blow-at-the-root-of-the-romish-church-matthew-poole.txt"
+    },
+    {
+      "row": 68,
+      "title": "Trapp's Commentary On The New Testament",
+      "author": "John Trapp",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/trapp-s-commentary-on-the-new-testament-john-trapp.txt"
+    },
+    {
+      "row": 69,
+      "title": "Expository notes, with practical observations, on the New Testament : of our Lord and Saviour Jesus Christ. ... By William Burkitt ..",
+      "author": "William Burkitt",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/expository-notes-with-practical-observations-on-the-new-testament-of-our-lord-and-saviour-jesus-christ-by-will.txt"
+    },
+    {
+      "row": 70,
+      "title": "A commentary on the Holy Scriptures: critical, doctrinal and homiletical",
+      "author": "John Peter Lange",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-commentary-on-the-holy-scriptures-critical-doctrinal-and-homiletical-john-peter-lange.txt"
+    },
+    {
+      "row": 71,
+      "title": "Commentary on the Holy Scriptures Critical, Doctrinal and Homiletical: Corinthians",
+      "author": "John Peter Lange",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/commentary-on-the-holy-scriptures-critical-doctrinal-and-homiletical-corinthians-john-peter-lange.txt"
+    },
+    {
+      "row": 72,
+      "title": "Exodus; or, The Second Book of Moses",
+      "author": "John Peter Lange",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/exodus-or-the-second-book-of-moses-john-peter-lange.txt"
+    },
+    {
+      "row": 73,
+      "title": "The Gospel According to John",
+      "author": "John Peter Lange",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-gospel-according-to-john-john-peter-lange.txt"
+    },
+    {
+      "row": 74,
+      "title": "jesus and jonah",
+      "author": "john william mcgarvey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/jesus-and-jonah-john-william-mcgarvey.txt"
+    },
+    {
+      "row": 75,
+      "title": "History of the Baptists",
+      "author": "Thomas Armitage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/history-of-the-baptists-thomas-armitage.txt"
+    },
+    {
+      "row": 76,
+      "title": "Fifty years among the Baptists",
+      "author": "David Benedict",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/fifty-years-among-the-baptists-david-benedict.txt"
+    },
+    {
+      "row": 77,
+      "title": "A General History of the Baptist Denomination in America and Othe Parts of the World",
+      "author": "David Benedict",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-general-history-of-the-baptist-denomination-in-america-and-othe-parts-of-the-world-david-benedict.txt"
+    },
+    {
+      "row": 78,
+      "title": "An Abridgement Of The General History Of The Baptist Denomination In America",
+      "author": "David Benedict",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-abridgement-of-the-general-history-of-the-baptist-denomination-in-america-david-benedict.txt"
+    },
+    {
+      "row": 79,
+      "title": "GENERAL HISTORY OF THE BAPTIST DENOMINATION IN AMERICA AMD OTHER PARTS OF THE WORLD",
+      "author": "DAVID BENEDICT",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/general-history-of-the-baptist-denomination-in-america-amd-other-parts-of-the-world-david-benedict.txt"
+    },
+    {
+      "row": 80,
+      "title": "The Reformation In Germany",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-reformation-in-germany-henry-c-vedder.txt"
+    },
+    {
+      "row": 81,
+      "title": "The Baptists",
+      "author": "Henry Clay Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-baptists-henry-clay-vedder.txt"
+    },
+    {
+      "row": 82,
+      "title": "Church history handbooks, Volume 1",
+      "author": "Henry Clay Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/church-history-handbooks-volume-1-henry-clay-vedder.txt"
+    },
+    {
+      "row": 83,
+      "title": "A short history of Baptist missions,",
+      "author": "Henry C Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-short-history-of-baptist-missions-henry-c-vedder.txt"
+    },
+    {
+      "row": 84,
+      "title": "modern church history",
+      "author": "henry c. vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/modern-church-history-henry-c-vedder.txt"
+    },
+    {
+      "row": 85,
+      "title": "The period of the reformation (Church history handbooks)",
+      "author": "Henry C Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-period-of-the-reformation-church-history-handbooks-henry-c-vedder.txt"
+    },
+    {
+      "row": 86,
+      "title": "A History of the Baptists in the Middle States",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-history-of-the-baptists-in-the-middle-states-henry-c-vedder.txt"
+    },
+    {
+      "row": 87,
+      "title": "The Period of the Reformation",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-period-of-the-reformation-henry-c-vedder.txt"
+    },
+    {
+      "row": 88,
+      "title": "Baptists and Liberty of Consience",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/baptists-and-liberty-of-consience-henry-c-vedder.txt"
+    },
+    {
+      "row": 89,
+      "title": "The Fundamentals Of Christianity",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-fundamentals-of-christianity-henry-c-vedder.txt"
+    },
+    {
+      "row": 90,
+      "title": "A Short History Of The Baptists",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-short-history-of-the-baptists-henry-c-vedder.txt"
+    },
+    {
+      "row": 91,
+      "title": "The fundamentals of christianity: A study of the teaching of jesus and paul",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-fundamentals-of-christianity-a-study-of-the-teaching-of-jesus-and-paul-henry-c-vedder.txt"
+    },
+    {
+      "row": 92,
+      "title": "baptist history vindicated",
+      "author": "john t. christian",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/baptist-history-vindicated-john-t-christian.txt"
+    },
+    {
+      "row": 93,
+      "title": "A History of the Baptists of the United States",
+      "author": "John T. Christian",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-history-of-the-baptists-of-the-united-states-john-t-christian.txt"
+    },
+    {
+      "row": 94,
+      "title": "The form of baptism in sculpture and art",
+      "author": "John T. Christian",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-form-of-baptism-in-sculpture-and-art-john-t-christian.txt"
+    },
+    {
+      "row": 95,
+      "title": "Immersion, the act of christian baptism",
+      "author": "John T. Christian",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/immersion-the-act-of-christian-baptism-john-t-christian.txt"
+    },
+    {
+      "row": 96,
+      "title": "The Utter Extinction of Slavery an Object of Scripture Prophecy: A Lecture the Substance of ...",
+      "author": "Joseph Ivimey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-utter-extinction-of-slavery-an-object-of-scripture-prophecy-a-lecture-the-substance-of-joseph-ivimey.txt"
+    },
+    {
+      "row": 97,
+      "title": "Letters on the Serampore controversy, addressed to the rev. Christopher Anderson",
+      "author": "Joseph Ivimey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/letters-on-the-serampore-controversy-addressed-to-the-rev-christopher-anderson-joseph-ivimey.txt"
+    },
+    {
+      "row": 98,
+      "title": "the life of trust",
+      "author": "george muller",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-of-trust-george-muller.txt"
+    },
+    {
+      "row": 99,
+      "title": "A RETROSPECT hudson Taylor's Story of His Early Life and the Forming of the China Inland Mission",
+      "author": "J. HUDSON TAYLOR",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-retrospect-hudson-taylor-s-story-of-his-early-life-and-the-forming-of-the-china-inland-mission-j-hudson-tayl.txt"
+    },
+    {
+      "row": 100,
+      "title": "Life and explorations of David Livingstone : the great missionary explorer in the interior of Africa ; comprising all his extensive travels and discoveries as detailed in his diary, reports and letters, and including his famous last journals ; together with the explorations of Barth, Baker, Speke, Du Craillu, and others, and a full account of the Herald-Stanley expedition",
+      "author": "David Livingstone",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/life-and-explorations-of-david-livingstone-the-great-missionary-explorer-in-the-interior-of-africa-comprising-.txt"
+    },
+    {
+      "row": 101,
+      "title": "The Last Journals of David Livingstone in Central Africa from 1865 to His Death: Continued by a ...",
+      "author": "David Livingstone",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-last-journals-of-david-livingstone-in-central-africa-from-1865-to-his-death-continued-by-a-david-livingsto.txt"
+    },
+    {
+      "row": 102,
+      "title": "The Last journals of David Livingstone v.2",
+      "author": "David Livingstone",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-last-journals-of-david-livingstone-v-2-david-livingstone.txt"
+    },
+    {
+      "row": 103,
+      "title": "Missionary Travels and Researches In South Africa",
+      "author": "David Livingstone",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/missionary-travels-and-researches-in-south-africa-david-livingstone.txt"
+    },
+    {
+      "row": 104,
+      "title": "Missionary labours and scenes in southern Africa",
+      "author": "Robert Moffat",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/missionary-labours-and-scenes-in-southern-africa-robert-moffat.txt"
+    },
+    {
+      "row": 105,
+      "title": "Influence of Animism on Islam: An Account of Popular Superstitions",
+      "author": "Samuel M Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/influence-of-animism-on-islam-an-account-of-popular-superstitions-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 106,
+      "title": "Across The World Of Islam",
+      "author": "Samuel M Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/across-the-world-of-islam-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 107,
+      "title": "The Moslim Doctrine",
+      "author": "Samuel M Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-moslim-doctrine-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 108,
+      "title": "Islam",
+      "author": "Samuel M. Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/islam-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 109,
+      "title": "Islam A Challenge To Faith",
+      "author": "Samuel M. Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/islam-a-challenge-to-faith-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 110,
+      "title": "Raymond Lull: First Missionary to the Moslems",
+      "author": "Samuel Marinus Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/raymond-lull-first-missionary-to-the-moslems-samuel-marinus-zwemer.txt"
+    },
+    {
+      "row": 111,
+      "title": "The Disintegration of Islam",
+      "author": "Samuel Marinus Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-disintegration-of-islam-samuel-marinus-zwemer.txt"
+    },
+    {
+      "row": 112,
+      "title": "The Influence Of Animism On Islam",
+      "author": "Samuel M. Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-influence-of-animism-on-islam-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 113,
+      "title": "Islam, a Challenge to Faith: Studies on the Mohammedan Religion and the ...",
+      "author": "Samuel Marinus Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/islam-a-challenge-to-faith-studies-on-the-mohammedan-religion-and-the-samuel-marinus-zwemer.txt"
+    },
+    {
+      "row": 114,
+      "title": "Islam A Challenge To Faith Samuel",
+      "author": "Samuel M Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/islam-a-challenge-to-faith-samuel-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 115,
+      "title": "Keys to the Word: or, Help to Bible Study",
+      "author": "A. T. Pierson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/keys-to-the-word-or-help-to-bible-study-a-t-pierson.txt"
+    },
+    {
+      "row": 116,
+      "title": "The Coronation Hymnal A Selection of Hymns and Songs",
+      "author": "A. J. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-coronation-hymnal-a-selection-of-hymns-and-songs-a-j-gordon.txt"
+    },
+    {
+      "row": 117,
+      "title": "How Christ came to church : The pastor's dream: a spiritual autobiography",
+      "author": "A. J Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/how-christ-came-to-church-the-pastor-s-dream-a-spiritual-autobiography-a-j-gordon.txt"
+    },
+    {
+      "row": 118,
+      "title": "How Christ Came to Church",
+      "author": "A. J. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/how-christ-came-to-church-a-j-gordon.txt"
+    },
+    {
+      "row": 119,
+      "title": "In Christ; or, the Believer's Union with His Lord",
+      "author": "A. J. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/in-christ-or-the-believer-s-union-with-his-lord-a-j-gordon.txt"
+    },
+    {
+      "row": 120,
+      "title": "And Judas Iscariot with Other Evangelistic Sermons",
+      "author": "J. Wilbur Chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/and-judas-iscariot-with-other-evangelistic-sermons-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 121,
+      "title": "Bird's-Eye Bible Study",
+      "author": "J. Wilbur Chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/bird-s-eye-bible-study-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 122,
+      "title": "present-day evangelism",
+      "author": "j. wilbur chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/present-day-evangelism-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 123,
+      "title": "WINONA HYMNS",
+      "author": "J. WILBUR CHAPMAN",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/winona-hymns-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 124,
+      "title": "awakening sermons",
+      "author": "j. wilbur chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/awakening-sermons-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 125,
+      "title": "The Pastor His Own Evangelist",
+      "author": "J. Wilbur Chapman and Charles L. Goodell",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-pastor-his-own-evangelist-j-wilbur-chapman-and-charles-l-goodell.txt"
+    },
+    {
+      "row": 126,
+      "title": "Humanity and God",
+      "author": "Samuel Chadwick",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/humanity-and-god-samuel-chadwick.txt"
+    },
+    {
+      "row": 127,
+      "title": "forty years an evangelist",
+      "author": "gipsy smith",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/forty-years-an-evangelist-gipsy-smith.txt"
+    },
+    {
+      "row": 128,
+      "title": "Real Religion",
+      "author": "Gipsy Smith",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/real-religion-gipsy-smith.txt"
+    },
+    {
+      "row": 129,
+      "title": "As Jesus Passed By and Other Addresses",
+      "author": "Gipsy Smith",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/as-jesus-passed-by-and-other-addresses-gipsy-smith.txt"
+    },
+    {
+      "row": 130,
+      "title": "wonderful jesus and other songs",
+      "author": "gipsy smith and e. edwin young",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/wonderful-jesus-and-other-songs-gipsy-smith-and-e-edwin-young.txt"
+    },
+    {
+      "row": 131,
+      "title": "Evangelistic Talks",
+      "author": "Gipsy Smith",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/evangelistic-talks-gipsy-smith.txt"
+    },
+    {
+      "row": 132,
+      "title": "Wonderful Jesus and Other Songs",
+      "author": "Gipsy Smith",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/wonderful-jesus-and-other-songs-gipsy-smith.txt"
+    },
+    {
+      "row": 133,
+      "title": "Light and Truth: Or, Bible Thoughts and Themes",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/light-and-truth-or-bible-thoughts-and-themes-horatius-bonar.txt"
+    },
+    {
+      "row": 134,
+      "title": "Light and Truth: Or, Bible Thoughts and Themes. The Lesser Epistles",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/light-and-truth-or-bible-thoughts-and-themes-the-lesser-epistles-horatius-bonar.txt"
+    },
+    {
+      "row": 135,
+      "title": "The everlasting righteousness; or, How shall man be just with God?.",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-everlasting-righteousness-or-how-shall-man-be-just-with-god-horatius-bonar.txt"
+    },
+    {
+      "row": 136,
+      "title": "Prophetical Landmarks: Containing Data for Helping to Determine the Question of Christ's Pre ...",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/prophetical-landmarks-containing-data-for-helping-to-determine-the-question-of-christ-s-pre-horatius-bonar.txt"
+    },
+    {
+      "row": 137,
+      "title": "The Night of Weeping, Or Words for the Suffering Family of God by Horatius Bonar",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-night-of-weeping-or-words-for-the-suffering-family-of-god-by-horatius-bonar-horatius-bonar.txt"
+    },
+    {
+      "row": 138,
+      "title": "Days and nights in the East; or, Illustrations of Bible scenes",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/days-and-nights-in-the-east-or-illustrations-of-bible-scenes-horatius-bonar.txt"
+    },
+    {
+      "row": 139,
+      "title": "Hymns",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-horatius-bonar.txt"
+    },
+    {
+      "row": 140,
+      "title": "The Bible Hymn-book",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-bible-hymn-book-horatius-bonar.txt"
+    },
+    {
+      "row": 141,
+      "title": "God's Way of Peace: A Book for the Anxious",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/god-s-way-of-peace-a-book-for-the-anxious-horatius-bonar.txt"
+    },
+    {
+      "row": 142,
+      "title": "Hymns of faith and hope",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-of-faith-and-hope-horatius-bonar.txt"
+    },
+    {
+      "row": 143,
+      "title": "\"Until the Day Break\": And Other Hymns and Poems Left Behind",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/until-the-day-break-and-other-hymns-and-poems-left-behind-horatius-bonar.txt"
+    },
+    {
+      "row": 144,
+      "title": "Communion hymns",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/communion-hymns-horatius-bonar.txt"
+    },
+    {
+      "row": 145,
+      "title": "Hymns of Faith and Hope. [First Series]",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-of-faith-and-hope-first-series-horatius-bonar.txt"
+    },
+    {
+      "row": 146,
+      "title": "The Song of the New Creation: And Other Pieces",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-song-of-the-new-creation-and-other-pieces-horatius-bonar.txt"
+    },
+    {
+      "row": 147,
+      "title": "Memoir and remains of the Rev. Robert Murray McCheyne, minister of St. Peter's Church, Dundee 1844 [Leather Bound]",
+      "author": "Andrew A. Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/memoir-and-remains-of-the-rev-robert-murray-mccheyne-minister-of-st-peter-s-church-dundee-1844-leather-bound-a.txt"
+    },
+    {
+      "row": 148,
+      "title": "Letters of Samuel Rutherford",
+      "author": "Andrew A. Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/letters-of-samuel-rutherford-andrew-a-bonar.txt"
+    },
+    {
+      "row": 149,
+      "title": "An Authentic Narrative of Some Remarkable and Interesting Particulars in the Life of ...",
+      "author": "John Newton",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-authentic-narrative-of-some-remarkable-and-interesting-particulars-in-the-life-of-john-newton.txt"
+    },
+    {
+      "row": 150,
+      "title": "the life and times of jesus the messiah",
+      "author": "alfred edersheim",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-and-times-of-jesus-the-messiah-alfred-edersheim.txt"
+    },
+    {
+      "row": 151,
+      "title": "Jesus The Messiah being An Abridged Edition of The Life and Times of Jesus The Messiah",
+      "author": "Alfred Edersheim",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/jesus-the-messiah-being-an-abridged-edition-of-the-life-and-times-of-jesus-the-messiah-alfred-edersheim.txt"
+    },
+    {
+      "row": 152,
+      "title": "The Temple: Its Ministry and Services As They Were at the Time of Jesus Christ",
+      "author": "Alfred Edersheim",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-temple-its-ministry-and-services-as-they-were-at-the-time-of-jesus-christ-alfred-edersheim.txt"
+    },
+    {
+      "row": 153,
+      "title": "Foxe's Book of Martyrs",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/foxe-s-book-of-martyrs-john-foxe.txt"
+    },
+    {
+      "row": 154,
+      "title": "Narrative of the Days of the Reformation: Chiefly from the Manuscripts of John Foxe the ...",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/narrative-of-the-days-of-the-reformation-chiefly-from-the-manuscripts-of-john-foxe-the-john-foxe.txt"
+    },
+    {
+      "row": 155,
+      "title": "FOXES Book Of Martyrs ~ 704.pages ~ English Language ~ Authomatic Scrolling",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/foxes-book-of-martyrs-704-pages-english-language-authomatic-scrolling-john-foxe.txt"
+    },
+    {
+      "row": 156,
+      "title": "Foxe's book of martyrs. With notes by rev. J. Milner. With an essay on ...",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/foxe-s-book-of-martyrs-with-notes-by-rev-j-milner-with-an-essay-on-john-foxe.txt"
+    },
+    {
+      "row": 157,
+      "title": "The Book Of Martyrs",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-book-of-martyrs-john-foxe.txt"
+    },
+    {
+      "row": 158,
+      "title": "Fox's Book Of Martyrs",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/fox-s-book-of-martyrs-john-foxe.txt"
+    },
+    {
+      "row": 159,
+      "title": "Martyrs omitted by Foxe: records of religious persecutions in the 16th and 17th centuries ...",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/martyrs-omitted-by-foxe-records-of-religious-persecutions-in-the-16th-and-17th-centuries-john-foxe.txt"
+    },
+    {
+      "row": 160,
+      "title": "An appeal to the public for religious liberty against the oppressions of the present day",
+      "author": "Isaac Backus",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-appeal-to-the-public-for-religious-liberty-against-the-oppressions-of-the-present-day-isaac-backus.txt"
+    },
+    {
+      "row": 161,
+      "title": "Abstract of Systemic Theology",
+      "author": "James P. Boyce",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/abstract-of-systemic-theology-james-p-boyce.txt"
+    },
+    {
+      "row": 162,
+      "title": "Life in Jesus: a memoir of Mrs. Mary Winslow, arranged from her ...",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/life-in-jesus-a-memoir-of-mrs-mary-winslow-arranged-from-her-octavius-winslow.txt"
+    },
+    {
+      "row": 163,
+      "title": "The ministry of home; or, Brief expository lectures on divine truth",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-ministry-of-home-or-brief-expository-lectures-on-divine-truth-octavius-winslow.txt"
+    },
+    {
+      "row": 164,
+      "title": "Personal Declension and Revival of Religion in the Soul. ...",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/personal-declension-and-revival-of-religion-in-the-soul-octavius-winslow.txt"
+    },
+    {
+      "row": 165,
+      "title": "Experimental and Practical Views of the Atonement",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/experimental-and-practical-views-of-the-atonement-octavius-winslow.txt"
+    },
+    {
+      "row": 166,
+      "title": "Go and Tell Jesus",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/go-and-tell-jesus-octavius-winslow.txt"
+    },
+    {
+      "row": 167,
+      "title": "The inquirer directed to an experimental and practical view of the Atonement",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-inquirer-directed-to-an-experimental-and-practical-view-of-the-atonement-octavius-winslow.txt"
+    },
+    {
+      "row": 168,
+      "title": "The silver trumpet; or, The Church guided and warned in perilous times",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-silver-trumpet-or-the-church-guided-and-warned-in-perilous-times-octavius-winslow.txt"
+    },
+    {
+      "row": 169,
+      "title": "None Like Christ ...",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/none-like-christ-octavius-winslow.txt"
+    },
+    {
+      "row": 170,
+      "title": "A pastoral letter, addressed to the church and congregation assembling in the Warwick-street ...",
+      "author": "Octavius Winslow",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-pastoral-letter-addressed-to-the-church-and-congregation-assembling-in-the-warwick-street-octavius-winslow.txt"
+    },
+    {
+      "row": 171,
+      "title": "The Christian in Complete Armour: A Treatise of the Saints' Preservation from Apostasy",
+      "author": "William Gurnall",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-christian-in-complete-armour-a-treatise-of-the-saints-preservation-from-apostasy-william-gurnall.txt"
+    },
+    {
+      "row": 172,
+      "title": "Husbandry Spiritualized: Or, The Heavenly Use of Earthly Things, in which Husbandmen are ...",
+      "author": "John Flavel",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/husbandry-spiritualized-or-the-heavenly-use-of-earthly-things-in-which-husbandmen-are-john-flavel.txt"
+    },
+    {
+      "row": 173,
+      "title": "Practical Discourses, on Regeneration: In Ten Sermons ... To which are Added Two Sermons, on the ...",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/practical-discourses-on-regeneration-in-ten-sermons-to-which-are-added-two-sermons-on-the-philip-doddridge.txt"
+    },
+    {
+      "row": 174,
+      "title": "Rise and Progress of Religion in the Soul",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/rise-and-progress-of-religion-in-the-soul-philip-doddridge.txt"
+    },
+    {
+      "row": 175,
+      "title": "The rise and progress of religion in the soul: addresses. Repr",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-rise-and-progress-of-religion-in-the-soul-addresses-repr-philip-doddridge.txt"
+    },
+    {
+      "row": 176,
+      "title": "Some Remarkable Passages in the Life of the Honourable Col. James Gardiner ...",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/some-remarkable-passages-in-the-life-of-the-honourable-col-james-gardiner-philip-doddridge.txt"
+    },
+    {
+      "row": 177,
+      "title": "Letters to and from the Rev. Philip Doddridge, D.D. Late of Northampton: Published from the ...",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/letters-to-and-from-the-rev-philip-doddridge-d-d-late-of-northampton-published-from-the-philip-doddridge.txt"
+    },
+    {
+      "row": 178,
+      "title": "The Epistle of Paul the Apostle to the Romans: with introduction and notes.",
+      "author": "Handley C. G. Moule",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-epistle-of-paul-the-apostle-to-the-romans-with-introduction-and-notes-handley-c-g-moule.txt"
+    },
+    {
+      "row": 179,
+      "title": "Christ Is All",
+      "author": "Handley C. G. Moule",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christ-is-all-handley-c-g-moule.txt"
+    },
+    {
+      "row": 180,
+      "title": "Fifty Short Sermons",
+      "author": "T. De Witt Talmage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/fifty-short-sermons-t-de-witt-talmage.txt"
+    },
+    {
+      "row": 181,
+      "title": "The Trial and Death of Jesus Christ: A Devotional History of Our Lord's Passion",
+      "author": "James Stalker",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-trial-and-death-of-jesus-christ-a-devotional-history-of-our-lord-s-passion-james-stalker.txt"
+    },
+    {
+      "row": 182,
+      "title": "The life of st. Paul: 70th Thousand",
+      "author": "James Stalker",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-of-st-paul-70th-thousand-james-stalker.txt"
+    },
+    {
+      "row": 183,
+      "title": "Imago Christi: the example of Jesus Christ",
+      "author": "James Stalker",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/imago-christi-the-example-of-jesus-christ-james-stalker.txt"
+    },
+    {
+      "row": 184,
+      "title": "The preacher and his models",
+      "author": "James Stalker",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-preacher-and-his-models-james-stalker.txt"
+    },
+    {
+      "row": 185,
+      "title": "Hours with the Bible, Or, The Scriptures in the Light of Modern Knowledge",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hours-with-the-bible-or-the-scriptures-in-the-light-of-modern-knowledge-cunningham-geikie.txt"
+    },
+    {
+      "row": 186,
+      "title": "Life And Words Of Christ Vol 1",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/life-and-words-of-christ-vol-1-cunningham-geikie.txt"
+    },
+    {
+      "row": 187,
+      "title": "Old Testament portraits",
+      "author": "John Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/old-testament-portraits-john-cunningham-geikie.txt"
+    },
+    {
+      "row": 188,
+      "title": "Stronghold of truth;: Five lectures delivered at Montrose Bible conference in the summer of 1915",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/stronghold-of-truth-five-lectures-delivered-at-montrose-bible-conference-in-the-summer-of-1915-w-h-griffith-th.txt"
+    },
+    {
+      "row": 189,
+      "title": "Methods of Bible study",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/methods-of-bible-study-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 190,
+      "title": "Christianity is Christ",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christianity-is-christ-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 191,
+      "title": "Christ Pre-Eminent",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christ-pre-eminent-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 192,
+      "title": "The Apostle Peter",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-apostle-peter-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 193,
+      "title": "The Christian life and how to live it,",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-christian-life-and-how-to-live-it-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 194,
+      "title": "How We Got Our Bible",
+      "author": "W. H. Griffith Thomas",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/how-we-got-our-bible-w-h-griffith-thomas.txt"
+    },
+    {
+      "row": 195,
+      "title": "Quiet Talks on the Crowned Christ of Revelation",
+      "author": "S. D. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/quiet-talks-on-the-crowned-christ-of-revelation-s-d-gordon.txt"
+    },
+    {
+      "row": 196,
+      "title": "Quiet Talks on Power",
+      "author": "S. D. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/quiet-talks-on-power-s-d-gordon.txt"
+    },
+    {
+      "row": 197,
+      "title": "My Daily Meditation for the Circling Year",
+      "author": "John Henry Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/my-daily-meditation-for-the-circling-year-john-henry-jowett.txt"
+    },
+    {
+      "row": 198,
+      "title": "The Whole Armour of God",
+      "author": "John Henry Jowett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-whole-armour-of-god-john-henry-jowett.txt"
+    },
+    {
+      "row": 199,
+      "title": "Heart's-ease",
+      "author": "Phillips Brooks",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/heart-s-ease-phillips-brooks.txt"
+    },
+    {
+      "row": 200,
+      "title": "The Personal Touch",
+      "author": "J. Wilbur Chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-personal-touch-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 201,
+      "title": "The Art of Soul-Winning",
+      "author": "J. W. Mahood",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-art-of-soul-winning-j-w-mahood.txt"
+    }
+  ]
+}

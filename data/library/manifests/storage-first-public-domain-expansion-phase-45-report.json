@@ -1,0 +1,1022 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-45-reviewed.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 63,
+  "total_attempted": 63,
+  "imported": 62,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 1,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "Glad Tidings: Comprising Sermons and Prayer-meeting Talks Delivered at the N.Y. Hippodrome, from ...",
+      "file": "glad-tidings-comprising-sermons-and-prayer-meeting-talks-delivered-at-the-n-y-hippodrome-from-dwight-lyman-moo.txt",
+      "bytes": 873078,
+      "words": 172613,
+      "reading_time_minutes": 767,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the christ-life for the self-life",
+      "file": "the-christ-life-for-the-self-life-f-b-meyer.txt",
+      "bytes": 198395,
+      "words": 37042,
+      "reading_time_minutes": 165,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Lord's Table: A Help to the Right Observance of the Holy Supper",
+      "file": "the-lord-s-table-a-help-to-the-right-observance-of-the-holy-supper-andrew-murray.txt",
+      "bytes": 129642,
+      "words": 24486,
+      "reading_time_minutes": 109,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Last sheaves, sermons",
+      "file": "last-sheaves-sermons-alexander-maclaren.txt",
+      "bytes": 456301,
+      "words": 83361,
+      "reading_time_minutes": 370,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Psalms, vol. III: Psalms XC-CL",
+      "file": "the-psalms-vol-iii-psalms-xc-cl-alexander-maclaren.txt",
+      "bytes": 765822,
+      "words": 131903,
+      "reading_time_minutes": 586,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Paul's prayers and other sermons",
+      "file": "paul-s-prayers-and-other-sermons-alexander-maclaren.txt",
+      "bytes": 499975,
+      "words": 89098,
+      "reading_time_minutes": 396,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The victor's crowns and other sermons",
+      "file": "the-victor-s-crowns-and-other-sermons-alexander-maclaren.txt",
+      "bytes": 521367,
+      "words": 93018,
+      "reading_time_minutes": 413,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the god of the amen and other sermons",
+      "file": "the-god-of-the-amen-and-other-sermons-alexander-maclaren.txt",
+      "bytes": 553768,
+      "words": 98790,
+      "reading_time_minutes": 439,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Triumphant Certainties and Other Sermons",
+      "file": "triumphant-certainties-and-other-sermons-alexander-maclaren.txt",
+      "bytes": 521965,
+      "words": 93711,
+      "reading_time_minutes": 416,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Come, & welcome, to Jesus Christ, or, A plain and profitable discourse upon the sixth of John ...",
+      "file": "come-and-welcome-to-jesus-christ-or-a-plain-and-profitable-discourse-upon-the-sixth-of-john-john-bunyan.txt",
+      "bytes": 383155,
+      "words": 70428,
+      "reading_time_minutes": 313,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Doctrine of the Law and Grace Unfolded: Or, a Discourse Touching the Law and Grace. ... By ...",
+      "file": "the-doctrine-of-the-law-and-grace-unfolded-or-a-discourse-touching-the-law-and-grace-by-john-bunyan.txt",
+      "bytes": 450790,
+      "words": 84090,
+      "reading_time_minutes": 374,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Collection of Sermons and Tracts ...: To which are Prefixed, Memoirs of the Life, Writing, and ...",
+      "file": "a-collection-of-sermons-and-tracts-to-which-are-prefixed-memoirs-of-the-life-writing-and-john-gill.txt",
+      "bytes": 655103,
+      "words": 122687,
+      "reading_time_minutes": 545,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "John Gill's Commentary On The Whole Bible",
+      "file": "john-gill-s-commentary-on-the-whole-bible-john-gill.txt",
+      "bytes": 49188464,
+      "words": 8855192,
+      "reading_time_minutes": 39356,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Eighteen Sermons",
+      "file": "eighteen-sermons-george-whitefield.txt",
+      "bytes": 573771,
+      "words": 108958,
+      "reading_time_minutes": 484,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A collection of hymns, for the use of the people called Methodists. With a new suppl. Ed. with tunes",
+      "file": "a-collection-of-hymns-for-the-use-of-the-people-called-methodists-with-a-new-suppl-ed-with-tunes-john-wesley.txt",
+      "bytes": 1158539,
+      "words": 214687,
+      "reading_time_minutes": 954,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Logic: With a Variety of Rules to Guard Against Error, in the Affairs of Religion and Human Life ...",
+      "file": "logic-with-a-variety-of-rules-to-guard-against-error-in-the-affairs-of-religion-and-human-life-isaac-watts.txt",
+      "bytes": 572149,
+      "words": 100427,
+      "reading_time_minutes": 446,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Second Advent of Christ Premillennial: A Reply to the Rev. D. Brown",
+      "file": "the-second-advent-of-christ-premillennial-a-reply-to-the-rev-d-brown-william-kelly.txt",
+      "bytes": 215191,
+      "words": 37929,
+      "reading_time_minutes": 169,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christ & the seven Churches; or, Remarks on the first three chapters of the book of Revelation",
+      "file": "christ-and-the-seven-churches-or-remarks-on-the-first-three-chapters-of-the-book-of-revelation-william-kelly.txt",
+      "bytes": 203030,
+      "words": 37249,
+      "reading_time_minutes": 166,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Lord's prophecy on Olivet in Matthew 24,25",
+      "file": "the-lord-s-prophecy-on-olivet-in-matthew-24-25-william-kelly.txt",
+      "bytes": 158578,
+      "words": 28541,
+      "reading_time_minutes": 127,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Day of War—The Day of God, The Westminster Pulpit, A Sermon by Dr. G. Campbell Morgan, Vol. 9, No. 32, August 7th, 1914",
+      "file": "the-day-of-war-the-day-of-god-the-westminster-pulpit-a-sermon-by-dr-g-campbell-morgan-vol-9-no-32-august-7th-1.txt",
+      "bytes": 24244,
+      "words": 4305,
+      "reading_time_minutes": 19,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christian principles,",
+      "file": "christian-principles-g-campbell-morgan.txt",
+      "bytes": 155819,
+      "words": 27193,
+      "reading_time_minutes": 121,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Matthew Henry's Concise Commentary on the Bible",
+      "file": "matthew-henry-s-concise-commentary-on-the-bible-matthew-henry.txt",
+      "bytes": 3600225,
+      "words": 641529,
+      "reading_time_minutes": 2851,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An Account of the Life and Death of Mr. Philip Henry, Minister of the Gospel, Near Whitchurch in ...",
+      "file": "an-account-of-the-life-and-death-of-mr-philip-henry-minister-of-the-gospel-near-whitchurch-in-matthew-henry.txt",
+      "bytes": 564002,
+      "words": 104360,
+      "reading_time_minutes": 464,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "An exposition of the Old and New Testament : with practical remarks and observations",
+      "file": "an-exposition-of-the-old-and-new-testament-with-practical-remarks-and-observations-matthew-henry.txt",
+      "bytes": 8635645,
+      "words": 1622549,
+      "reading_time_minutes": 7211,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Questions on the four Gospels",
+      "file": "questions-on-the-four-gospels-albert-barnes.txt",
+      "bytes": 230230,
+      "words": 37851,
+      "reading_time_minutes": 168,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Barnes' Notes - Psalms Vol. 1",
+      "file": "barnes-notes-psalms-vol-1-albert-barnes.txt",
+      "bytes": 1917484,
+      "words": 344544,
+      "reading_time_minutes": 1531,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Questions on the Historical Books of the New Testament",
+      "file": "questions-on-the-historical-books-of-the-new-testament-albert-barnes.txt",
+      "bytes": 284696,
+      "words": 55407,
+      "reading_time_minutes": 246,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Practical sermons: designed for congregations and families",
+      "file": "practical-sermons-designed-for-congregations-and-families-albert-barnes.txt",
+      "bytes": 925162,
+      "words": 170311,
+      "reading_time_minutes": 757,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A letter to a preacher on his entrance into the work of the ministry, also ...",
+      "file": "a-letter-to-a-preacher-on-his-entrance-into-the-work-of-the-ministry-also-adam-clarke.txt",
+      "bytes": 373074,
+      "words": 65821,
+      "reading_time_minutes": 293,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Holy Bible containing the Old and New Testaments according to the authorised version...the parallel passages of Scott, Canne, Brown, Adam Clarke and the English version of Bagster's polyglot Bible...philological and explanatory notes",
+      "file": "holy-bible-containing-the-old-and-new-testaments-according-to-the-authorised-version-the-parallel-passages-of-.txt",
+      "bytes": 4367712,
+      "words": 781949,
+      "reading_time_minutes": 3475,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The New Testament of Our Lord and Saviour Jesus Christ",
+      "file": "the-new-testament-of-our-lord-and-saviour-jesus-christ-adam-clarke.txt",
+      "bytes": 6283379,
+      "words": 1114307,
+      "reading_time_minutes": 4952,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the comprehensive bible concordance",
+      "file": "the-comprehensive-bible-concordance-adam-clarke.txt",
+      "bytes": 4156998,
+      "words": 831471,
+      "reading_time_minutes": 3695,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "OUR NEW TESTAMENT",
+      "file": "our-new-testament-henry-c-vedder.txt",
+      "bytes": 487199,
+      "words": 82797,
+      "reading_time_minutes": 368,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Church History Handbooks: Baptist History",
+      "file": "church-history-handbooks-baptist-history-henry-c-vedder.txt",
+      "bytes": 163716,
+      "words": 26396,
+      "reading_time_minutes": 117,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christian Epoch-MAkers",
+      "file": "christian-epoch-makers-henry-c-vedder.txt",
+      "bytes": 673964,
+      "words": 113369,
+      "reading_time_minutes": 504,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Missionary Travels",
+      "file": "missionary-travels-david-livingstone.txt",
+      "bytes": 1739920,
+      "words": 306755,
+      "reading_time_minutes": 1363,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "the moslem doctrine of god",
+      "file": "the-moslem-doctrine-of-god-samuel-m-zwemer.txt",
+      "bytes": 173170,
+      "words": 29260,
+      "reading_time_minutes": 130,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "THE UNOCCUPIED MISSION FIELDS OFAFRICA AND ASIA",
+      "file": "the-unoccupied-mission-fields-ofafrica-and-asia-samuel-m-zwemer.txt",
+      "bytes": 511474,
+      "words": 82571,
+      "reading_time_minutes": 367,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Call to prayer,",
+      "file": "call-to-prayer-samuel-marinus-zwemer.txt",
+      "bytes": 94226,
+      "words": 16154,
+      "reading_time_minutes": 72,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Christianity The Final Religion",
+      "file": "christianity-the-final-religion-samuel-m-zwemer.txt",
+      "bytes": 143333,
+      "words": 24740,
+      "reading_time_minutes": 110,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns of the Nativity, and other pieces",
+      "file": "hymns-of-the-nativity-and-other-pieces-horatius-bonar.txt",
+      "bytes": 88848,
+      "words": 16131,
+      "reading_time_minutes": 72,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The New Jerusalem: A Hymn of the Olden Time",
+      "file": "the-new-jerusalem-a-hymn-of-the-olden-time-horatius-bonar.txt",
+      "bytes": 160249,
+      "words": 27975,
+      "reading_time_minutes": 124,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Light And Truth The Old Testament, Bible Thoughts And Themes, By Horatius Bonar",
+      "file": "light-and-truth-the-old-testament-bible-thoughts-and-themes-by-horatius-bonar-horatius-bonar.txt",
+      "bytes": 574362,
+      "words": 103897,
+      "reading_time_minutes": 462,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "God's Way Of Holiness",
+      "file": "god-s-way-of-holiness-horatius-bonar.txt",
+      "bytes": 220068,
+      "words": 38839,
+      "reading_time_minutes": 173,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Two Religions of Israel: With a Re-Examination of Sacred Law and Worship",
+      "file": "the-two-religions-of-israel-with-a-re-examination-of-sacred-law-and-worship-alfred-edersheim.txt",
+      "bytes": 1000940,
+      "words": 173474,
+      "reading_time_minutes": 771,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The life, martyrdom, and letters of Laurence Saunders, extr. from Foxe's Book of martyrs by T. Hill",
+      "file": "the-life-martyrdom-and-letters-of-laurence-saunders-extr-from-foxe-s-book-of-martyrs-by-t-hill-john-foxe.txt",
+      "bytes": 95517,
+      "words": 17400,
+      "reading_time_minutes": 77,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Martyrologia; or, records of religious persecution : being a new and comprehensive book of Martyrs, Volume 3",
+      "file": "martyrologia-or-records-of-religious-persecution-being-a-new-and-comprehensive-book-of-martyrs-volume-3-john-f.txt",
+      "bytes": 2297942,
+      "words": 383017,
+      "reading_time_minutes": 1702,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Hymns Founded on Various Texts in the Holy Scriptures: By the Late Reverend P. Doddridge ...",
+      "file": "hymns-founded-on-various-texts-in-the-holy-scriptures-by-the-late-reverend-p-doddridge-philip-doddridge.txt",
+      "bytes": 376869,
+      "words": 67411,
+      "reading_time_minutes": 300,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Practical Discourses on Regeneration, and on the Scripture Doctrine of Salvation by Faith",
+      "file": "practical-discourses-on-regeneration-and-on-the-scripture-doctrine-of-salvation-by-faith-philip-doddridge.txt",
+      "bytes": 578077,
+      "words": 103321,
+      "reading_time_minutes": 459,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The evidences of Christianity briefly stated",
+      "file": "the-evidences-of-christianity-briefly-stated-philip-doddridge.txt",
+      "bytes": 245539,
+      "words": 42691,
+      "reading_time_minutes": 190,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sermons",
+      "file": "sermons-t-de-witt-talmage.txt",
+      "bytes": 758453,
+      "words": 136567,
+      "reading_time_minutes": 607,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "500 selected sermons",
+      "file": "500-selected-sermons-t-de-witt-talmage.txt",
+      "bytes": 602418,
+      "words": 105682,
+      "reading_time_minutes": 470,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Old Wells Dug Out: Being a Third Series of Sermons",
+      "file": "old-wells-dug-out-being-a-third-series-of-sermons-t-de-witt-talmage.txt",
+      "bytes": 733184,
+      "words": 132750,
+      "reading_time_minutes": 590,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "THE ETHIC OF JESUS",
+      "file": "the-ethic-of-jesus-james-stalker.txt",
+      "bytes": 580645,
+      "words": 101594,
+      "reading_time_minutes": 452,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Light from beyond to cheer the pilgrim",
+      "file": "light-from-beyond-to-cheer-the-pilgrim-john-cunningham-geikie.txt",
+      "bytes": 284412,
+      "words": 52436,
+      "reading_time_minutes": 233,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Life and Words of Christ (two volumes in one)",
+      "file": "the-life-and-words-of-christ-two-volumes-in-one-cunningham-geikie.txt",
+      "bytes": 3152807,
+      "words": 550400,
+      "reading_time_minutes": 2446,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The holy land and the bible",
+      "file": "the-holy-land-and-the-bible-cunningham-geikie.txt",
+      "bytes": 1066867,
+      "words": 188104,
+      "reading_time_minutes": 836,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Apostles Their Lives and Letters",
+      "file": "the-apostles-their-lives-and-letters-cunningham-geikie.txt",
+      "bytes": 935695,
+      "words": 160501,
+      "reading_time_minutes": 713,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The English Reformation",
+      "file": "the-english-reformation-cunningham-geikie.txt",
+      "bytes": 1109516,
+      "words": 187666,
+      "reading_time_minutes": 834,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "New Testament Hours",
+      "file": "new-testament-hours-cunningham-geikie.txt",
+      "bytes": 833710,
+      "words": 146718,
+      "reading_time_minutes": 652,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Grace: The Glorious Theme",
+      "file": "grace-the-glorious-theme-lewis-sperry-chafer.txt",
+      "bytes": 638016,
+      "words": 110957,
+      "reading_time_minutes": 493,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Major Bible Themes",
+      "file": "major-bible-themes-lewis-sperry-chafer.txt",
+      "bytes": 539721,
+      "words": 94734,
+      "reading_time_minutes": 421,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Glad Tidings: Comprising Sermons and Prayer-meeting Talks Delivered at the N.Y. Hippodrome, from ...",
+      "author": "Dwight Lyman Moody",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/glad-tidings-comprising-sermons-and-prayer-meeting-talks-delivered-at-the-n-y-hippodrome-from-dwight-lyman-moo.txt"
+    },
+    {
+      "row": 3,
+      "title": "the christ-life for the self-life",
+      "author": "f. b. meyer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-christ-life-for-the-self-life-f-b-meyer.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Lord's Table: A Help to the Right Observance of the Holy Supper",
+      "author": "Andrew Murray",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-lord-s-table-a-help-to-the-right-observance-of-the-holy-supper-andrew-murray.txt"
+    },
+    {
+      "row": 5,
+      "title": "Last sheaves, sermons",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/last-sheaves-sermons-alexander-maclaren.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Psalms, vol. III: Psalms XC-CL",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-psalms-vol-iii-psalms-xc-cl-alexander-maclaren.txt"
+    },
+    {
+      "row": 7,
+      "title": "Paul's prayers and other sermons",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/paul-s-prayers-and-other-sermons-alexander-maclaren.txt"
+    },
+    {
+      "row": 8,
+      "title": "The victor's crowns and other sermons",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-victor-s-crowns-and-other-sermons-alexander-maclaren.txt"
+    },
+    {
+      "row": 9,
+      "title": "the god of the amen and other sermons",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-god-of-the-amen-and-other-sermons-alexander-maclaren.txt"
+    },
+    {
+      "row": 10,
+      "title": "Triumphant Certainties and Other Sermons",
+      "author": "Alexander Maclaren",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/triumphant-certainties-and-other-sermons-alexander-maclaren.txt"
+    },
+    {
+      "row": 11,
+      "title": "Come, & welcome, to Jesus Christ, or, A plain and profitable discourse upon the sixth of John ...",
+      "author": "John Bunyan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/come-and-welcome-to-jesus-christ-or-a-plain-and-profitable-discourse-upon-the-sixth-of-john-john-bunyan.txt"
+    },
+    {
+      "row": 12,
+      "title": "The Doctrine of the Law and Grace Unfolded: Or, a Discourse Touching the Law and Grace. ... By ...",
+      "author": "John Bunyan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-doctrine-of-the-law-and-grace-unfolded-or-a-discourse-touching-the-law-and-grace-by-john-bunyan.txt"
+    },
+    {
+      "row": 13,
+      "title": "A Collection of Sermons and Tracts ...: To which are Prefixed, Memoirs of the Life, Writing, and ...",
+      "author": "John Gill",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-collection-of-sermons-and-tracts-to-which-are-prefixed-memoirs-of-the-life-writing-and-john-gill.txt"
+    },
+    {
+      "row": 14,
+      "title": "John Gill's Commentary On The Whole Bible",
+      "author": "John Gill",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/john-gill-s-commentary-on-the-whole-bible-john-gill.txt"
+    },
+    {
+      "row": 15,
+      "title": "Eighteen Sermons",
+      "author": "George Whitefield",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/eighteen-sermons-george-whitefield.txt"
+    },
+    {
+      "row": 16,
+      "title": "A collection of hymns, for the use of the people called Methodists. With a new suppl. Ed. with tunes",
+      "author": "John Wesley",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-collection-of-hymns-for-the-use-of-the-people-called-methodists-with-a-new-suppl-ed-with-tunes-john-wesley.txt"
+    },
+    {
+      "row": 17,
+      "title": "Logic: With a Variety of Rules to Guard Against Error, in the Affairs of Religion and Human Life ...",
+      "author": "Isaac Watts",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/logic-with-a-variety-of-rules-to-guard-against-error-in-the-affairs-of-religion-and-human-life-isaac-watts.txt"
+    },
+    {
+      "row": 18,
+      "title": "The Second Advent of Christ Premillennial: A Reply to the Rev. D. Brown",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-second-advent-of-christ-premillennial-a-reply-to-the-rev-d-brown-william-kelly.txt"
+    },
+    {
+      "row": 19,
+      "title": "Christ & the seven Churches; or, Remarks on the first three chapters of the book of Revelation",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christ-and-the-seven-churches-or-remarks-on-the-first-three-chapters-of-the-book-of-revelation-william-kelly.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Lord's prophecy on Olivet in Matthew 24,25",
+      "author": "William Kelly",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-lord-s-prophecy-on-olivet-in-matthew-24-25-william-kelly.txt"
+    },
+    {
+      "row": 21,
+      "title": "The Day of War—The Day of God, The Westminster Pulpit, A Sermon by Dr. G. Campbell Morgan, Vol. 9, No. 32, August 7th, 1914",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-day-of-war-the-day-of-god-the-westminster-pulpit-a-sermon-by-dr-g-campbell-morgan-vol-9-no-32-august-7th-1.txt"
+    },
+    {
+      "row": 22,
+      "title": "Christian principles,",
+      "author": "G. Campbell Morgan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christian-principles-g-campbell-morgan.txt"
+    },
+    {
+      "row": 23,
+      "title": "Matthew Henry's Concise Commentary on the Bible",
+      "author": "Matthew Henry",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/matthew-henry-s-concise-commentary-on-the-bible-matthew-henry.txt"
+    },
+    {
+      "row": 24,
+      "title": "An Account of the Life and Death of Mr. Philip Henry, Minister of the Gospel, Near Whitchurch in ...",
+      "author": "Matthew Henry",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-account-of-the-life-and-death-of-mr-philip-henry-minister-of-the-gospel-near-whitchurch-in-matthew-henry.txt"
+    },
+    {
+      "row": 25,
+      "title": "An exposition of the Old and New Testament : with practical remarks and observations",
+      "author": "Matthew Henry",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-exposition-of-the-old-and-new-testament-with-practical-remarks-and-observations-matthew-henry.txt"
+    },
+    {
+      "row": 26,
+      "title": "Questions on the four Gospels",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/questions-on-the-four-gospels-albert-barnes.txt"
+    },
+    {
+      "row": 27,
+      "title": "Barnes' Notes - Psalms Vol. 1",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/barnes-notes-psalms-vol-1-albert-barnes.txt"
+    },
+    {
+      "row": 28,
+      "title": "Questions on the Historical Books of the New Testament",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/questions-on-the-historical-books-of-the-new-testament-albert-barnes.txt"
+    },
+    {
+      "row": 29,
+      "title": "Practical sermons: designed for congregations and families",
+      "author": "Albert Barnes",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/practical-sermons-designed-for-congregations-and-families-albert-barnes.txt"
+    },
+    {
+      "row": 30,
+      "title": "A letter to a preacher on his entrance into the work of the ministry, also ...",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-letter-to-a-preacher-on-his-entrance-into-the-work-of-the-ministry-also-adam-clarke.txt"
+    },
+    {
+      "row": 31,
+      "title": "Holy Bible containing the Old and New Testaments according to the authorised version...the parallel passages of Scott, Canne, Brown, Adam Clarke and the English version of Bagster's polyglot Bible...philological and explanatory notes",
+      "author": "adam clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/holy-bible-containing-the-old-and-new-testaments-according-to-the-authorised-version-the-parallel-passages-of-.txt"
+    },
+    {
+      "row": 32,
+      "title": "The New Testament of Our Lord and Saviour Jesus Christ",
+      "author": "Adam Clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-new-testament-of-our-lord-and-saviour-jesus-christ-adam-clarke.txt"
+    },
+    {
+      "row": 33,
+      "title": "the comprehensive bible concordance",
+      "author": "adam clarke",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-comprehensive-bible-concordance-adam-clarke.txt"
+    },
+    {
+      "row": 34,
+      "title": "OUR NEW TESTAMENT",
+      "author": "HENRY C. VEDDER",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/our-new-testament-henry-c-vedder.txt"
+    },
+    {
+      "row": 35,
+      "title": "Church History Handbooks: Baptist History",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/church-history-handbooks-baptist-history-henry-c-vedder.txt"
+    },
+    {
+      "row": 36,
+      "title": "Christian Epoch-MAkers",
+      "author": "Henry C. Vedder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christian-epoch-makers-henry-c-vedder.txt"
+    },
+    {
+      "row": 37,
+      "title": "Missionary Travels",
+      "author": "David Livingstone",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/missionary-travels-david-livingstone.txt"
+    },
+    {
+      "row": 38,
+      "title": "the moslem doctrine of god",
+      "author": "samuel m. zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-moslem-doctrine-of-god-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 39,
+      "title": "THE UNOCCUPIED MISSION FIELDS OFAFRICA AND ASIA",
+      "author": "SAMUEL M. ZWEMER",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-unoccupied-mission-fields-ofafrica-and-asia-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 40,
+      "title": "Call to prayer,",
+      "author": "Samuel Marinus Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/call-to-prayer-samuel-marinus-zwemer.txt"
+    },
+    {
+      "row": 41,
+      "title": "Christianity The Final Religion",
+      "author": "Samuel M. Zwemer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/christianity-the-final-religion-samuel-m-zwemer.txt"
+    },
+    {
+      "row": 42,
+      "title": "Hymns of the Nativity, and other pieces",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-of-the-nativity-and-other-pieces-horatius-bonar.txt"
+    },
+    {
+      "row": 43,
+      "title": "The New Jerusalem: A Hymn of the Olden Time",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-new-jerusalem-a-hymn-of-the-olden-time-horatius-bonar.txt"
+    },
+    {
+      "row": 44,
+      "title": "Light And Truth The Old Testament, Bible Thoughts And Themes, By Horatius Bonar",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/light-and-truth-the-old-testament-bible-thoughts-and-themes-by-horatius-bonar-horatius-bonar.txt"
+    },
+    {
+      "row": 45,
+      "title": "God's Way Of Holiness",
+      "author": "Horatius Bonar",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/god-s-way-of-holiness-horatius-bonar.txt"
+    },
+    {
+      "row": 46,
+      "title": "The Two Religions of Israel: With a Re-Examination of Sacred Law and Worship",
+      "author": "Alfred Edersheim",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-two-religions-of-israel-with-a-re-examination-of-sacred-law-and-worship-alfred-edersheim.txt"
+    },
+    {
+      "row": 47,
+      "title": "The life, martyrdom, and letters of Laurence Saunders, extr. from Foxe's Book of martyrs by T. Hill",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-martyrdom-and-letters-of-laurence-saunders-extr-from-foxe-s-book-of-martyrs-by-t-hill-john-foxe.txt"
+    },
+    {
+      "row": 48,
+      "title": "Martyrologia; or, records of religious persecution : being a new and comprehensive book of Martyrs, Volume 3",
+      "author": "John Foxe",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/martyrologia-or-records-of-religious-persecution-being-a-new-and-comprehensive-book-of-martyrs-volume-3-john-f.txt"
+    },
+    {
+      "row": 49,
+      "title": "Hymns Founded on Various Texts in the Holy Scriptures: By the Late Reverend P. Doddridge ...",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/hymns-founded-on-various-texts-in-the-holy-scriptures-by-the-late-reverend-p-doddridge-philip-doddridge.txt"
+    },
+    {
+      "row": 50,
+      "title": "Practical Discourses on Regeneration, and on the Scripture Doctrine of Salvation by Faith",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/practical-discourses-on-regeneration-and-on-the-scripture-doctrine-of-salvation-by-faith-philip-doddridge.txt"
+    },
+    {
+      "row": 51,
+      "title": "The evidences of Christianity briefly stated",
+      "author": "Philip Doddridge",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-evidences-of-christianity-briefly-stated-philip-doddridge.txt"
+    },
+    {
+      "row": 52,
+      "title": "Lectures on Preaching, and the Several Branches of the Ministerial Office ...",
+      "author": "Philip Doddridge",
+      "status": "failed",
+      "issues": [
+        "Download failed 500: https://archive.org/download/lecturesonpreac00doddgoog/lecturesonpreac00doddgoog_djvu.txt"
+      ]
+    },
+    {
+      "row": 53,
+      "title": "Sermons",
+      "author": "T. De Witt Talmage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sermons-t-de-witt-talmage.txt"
+    },
+    {
+      "row": 54,
+      "title": "500 selected sermons",
+      "author": "T. de Witt Talmage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/500-selected-sermons-t-de-witt-talmage.txt"
+    },
+    {
+      "row": 55,
+      "title": "Old Wells Dug Out: Being a Third Series of Sermons",
+      "author": "T. DE Witt Talmage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/old-wells-dug-out-being-a-third-series-of-sermons-t-de-witt-talmage.txt"
+    },
+    {
+      "row": 56,
+      "title": "THE ETHIC OF JESUS",
+      "author": "JAMES STALKER",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-ethic-of-jesus-james-stalker.txt"
+    },
+    {
+      "row": 57,
+      "title": "Light from beyond to cheer the pilgrim",
+      "author": "John Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/light-from-beyond-to-cheer-the-pilgrim-john-cunningham-geikie.txt"
+    },
+    {
+      "row": 58,
+      "title": "The Life and Words of Christ (two volumes in one)",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-and-words-of-christ-two-volumes-in-one-cunningham-geikie.txt"
+    },
+    {
+      "row": 59,
+      "title": "The holy land and the bible",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-holy-land-and-the-bible-cunningham-geikie.txt"
+    },
+    {
+      "row": 60,
+      "title": "The Apostles Their Lives and Letters",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-apostles-their-lives-and-letters-cunningham-geikie.txt"
+    },
+    {
+      "row": 61,
+      "title": "The English Reformation",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-english-reformation-cunningham-geikie.txt"
+    },
+    {
+      "row": 62,
+      "title": "New Testament Hours",
+      "author": "Cunningham Geikie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/new-testament-hours-cunningham-geikie.txt"
+    },
+    {
+      "row": 63,
+      "title": "Grace: The Glorious Theme",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/grace-the-glorious-theme-lewis-sperry-chafer.txt"
+    },
+    {
+      "row": 64,
+      "title": "Major Bible Themes",
+      "author": "Lewis Sperry Chafer",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/major-bible-themes-lewis-sperry-chafer.txt"
+    }
+  ]
+}

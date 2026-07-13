@@ -774,10 +774,11 @@
     "rights_basis": "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
     "entry_text": "Genesis Gen Intro Exodus Exo Genesis Gen Intro\n\n Footnotes:",
-    "review_status": "Verified",
-    "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_status": "Needs Review",
+    "import_status": "Staged",
+    "review_batch": "Morgan Exposition Source Recovery Queue",
+    "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+    "source_recovery_status": "Blocked - matching Morgan source text needed"
   },
   {
     "id": "g-campbell-morgan-exodus-40-phase-3-reviewed",

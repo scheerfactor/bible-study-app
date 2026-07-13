@@ -893,11 +893,12 @@
     "public_domain_status": "StudyLight chapter pages state: These files are public domain. Barnes died in 1870; source pages cite the work as 1870.",
     "rights_basis": "Public-domain StudyLight chapter pages for Barnes' Notes on the Whole Bible. Preserve chapter URL and do not mix with modern edited editions.",
     "recommended_use": "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
-    "entry_text": "Verse 1\n This passage runs parallel with Kings (see the marginal reference).\n\n Verse 3",
+    "entry_text": "Verse 1\nThis passage runs parallel with Kings (see the marginal reference).\n\nVerse 3\nCompare the 1 Kings 15:19 note.\n\nVerse 4\nAbel-maim - or, \"Abel-beth-maachah\" 1 Kings 15:20. It was one of the towns most exposed to attack when an invader entered Israel from the north, and was taken from Pekah by Tiglath-pileser 2 Kings 15:29.\n\nStore cities - See 1 Kings 9:19 note.\n\nVerse 7\nThe rebuke of Hanani and his imprisonment by Asa, omitted by the writer of Kings, are among the most important of the additions to Asa's history for which we are indebted to the author of Chronicles.\n\nEscaped out of thine hand - Hanani means, \"Hadst thou been faithful, and opposed in arms the joint host of Israel and Syria, instead of bribing the Syrian king to desert to thy side, the entire host would have been delivered into thy hand, as was Zerah's. But now it is escaped from thee. Thou hast lost a glorious opportunity.\"\n\nVerse 9\nFrom henceforth thou shalt have wars - As peace had been the reward of Asa's earlier faith 2 Chronicles 14:5; 2 Chronicles 15:5, so his want of faith was now to be punished by a period of war and disturbance.\n\nVerse 10\nIn a prison house - Or, \"in the stocks.\" Compare 1 Kings 22:26-27.\n\nVerse 12\nYet in his disease he sought not ... - Rather, \"and also in his disease he sought not.\" Not only in his war with Baasha, but also when attacked by illness, Asa placed undue reliance upon the aid of man.\n\nVerse 14\nThe explanation of the plural - \"sepulchres\" - will be seen in 1 Kings 13:30 note.\n\nThe burning of spices in honor of a king at his funeral was customary (compare the marginal references).",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Barnes Thin-Source Audit 2026-07-12",
+    "review_notes": "Recovered omitted public-domain commentary notes from an independent scan-derived witness; source wording and verse labels preserved without modernization.",
+    "source_verification_url": "https://sacred-texts.com/bib/cmt/barnes/ch2016.htm"
   },
   {
     "id": "albert-barnes-2-chronicles-17-phase-3-reviewed",
@@ -1673,11 +1674,12 @@
     "public_domain_status": "StudyLight chapter pages state: These files are public domain. Barnes died in 1870; source pages cite the work as 1870.",
     "rights_basis": "Public-domain StudyLight chapter pages for Barnes' Notes on the Whole Bible. Preserve chapter URL and do not mix with modern edited editions.",
     "recommended_use": "Use as a concise explanatory comparison after reading the KJV text and primary study helps.",
-    "entry_text": "Verse 1",
+    "entry_text": "Verse 1\nThe festival lasted from the 15th day of the 7th month to the first. The 22nd day was a day of solemn observance Nehemiah 8:18. One day seems to have been allowed the people for rest; and then the work of repentance, for which they had shown themselves ready Nehemiah 8:9, was taken in hand, and a general fast was proclaimed.\n\nVerse 4\nThe Septuagint and the Vulgate remove the comma after \"stairs.\" By the \"stairs (or scaffold) of the Levites\" is to be understood as an elevated platform from which they could the better address and lead the people (compare Nehemiah 8:4).\n\nVerse 5\nStand up - The people had knelt to confess and to worship God Nehemiah 9:3. They were now to take the proper attitude for praise. Compare throughout the margin reference.\n\nVerse 6\nThe host of heaven worshippeth thee - i. e the angels. See 1 Kings 22:19; Psalm 103:21.\n\nVerse 17\nIn their rebellion - The Septuagint and several maunscripts have \"in Egypt\" (the words in the original differing by one letter only), and translate - \"And appointed a captain to return to their bondage in Egypt.\" Compare the margin reference. The appointment of a leader is regarded here as made, whereas we are only told in the Book of Numbers that it was proposed.\n\nVerse 22\nThou didst divide them into corners - i. e., parts of the holy land; or as some prefer \"thou didst distribute them on all sides.\"\n\nVerse 25\nBecame fat. - i. e., \"grew proud,\" or \"wanton\" - a phrase only occurring here, in the margin reference, and in Jeremiah 5:28.\n\nDelighted themselves - Rather, \"luxuriated.\" The word in the original does not occur elsewhere; but cognate terms make the sense clear.\n\nVerse 26\nSlew thy prophets - Compare 1 Kings 18:4; 1 Kings 19:10; 2 Chronicles 24:21. Jewish tradition further affirms that more than one of the great prophets (e. g., Isaiah, Jeremiah, and Ezekiel) were martyred by their countrymen.\n\nVerse 27\nThou gavest them saviours - See Judges 3:15 etc.\n\nVerse 38\nSeal unto it - The exact force of the phrase used is doubtful; but its general sense must be that the classes named took part in the sealing. It was usual in the East to authenticate covenants by appending the seals of those who were parties to them (see Jeremiah 32:10).",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Barnes Thin-Source Audit 2026-07-12",
+    "review_notes": "Recovered omitted public-domain commentary notes from an independent scan-derived witness; source wording and verse labels preserved without modernization.",
+    "source_verification_url": "https://sacred-texts.com/bib/cmt/barnes/neh009.htm"
   },
   {
     "id": "albert-barnes-nehemiah-10-phase-3-reviewed",

@@ -18,5 +18,6 @@
     "candidate_license": "Creative Commons Attribution-ShareAlike 3.0 according to the repository readme.",
     "rights_notes": "The repository readme says CrossRefIndex is compiled from R. A. Torrey's public-domain Treasury of Scripture Knowledge, but the repository files themselves are published under CC BY-SA 3.0. Treat this as a source candidate, not unrestricted public-domain app data, until the share-alike implications are accepted or a purely public-domain source file is chosen."
   },
-  "import_notes": "Use scripts/prepare-tsk-metav-cross-references.mjs to convert MetaV Verses.csv and CrossRefIndex.csv into the app's JSON import shape. Then run scripts/import-tsk-cross-references.mjs after rights approval."
+  "import_notes": "Use scripts/prepare-tsk-metav-cross-references.mjs to convert MetaV Verses.csv and CrossRefIndex.csv into the app's JSON import shape. Then run scripts/import-tsk-cross-references.mjs after rights approval.",
+  "current_checkout_note": "As of 2026-07-07, this repository checkout includes the TSK source manifest but not the MetaV source CSV files. Do not generate additional TSK rows until source files are restored or a public-domain TSK source file is selected and documented."
 }

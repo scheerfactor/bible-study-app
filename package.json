@@ -32,6 +32,8 @@
     "commentary:source-batch": "node scripts/create-commentary-source-batch.mjs",
     "validate:commentary": "node scripts/validate-commentary-entries.mjs",
     "audit:commentary-quality": "node scripts/audit-commentary-text-quality.mjs",
+    "audit:commentary-thin": "node scripts/audit-major-commentary-thin-sources.mjs",
+    "audit:commentary-coverage": "node scripts/audit-major-commentary-coverage.mjs",
     "audit:dictionary": "node scripts/audit-dictionary-coverage.mjs",
     "audit:webster-quality": "node scripts/audit-webster-text-quality.mjs",
     "build:dictionary-indexes": "node scripts/build-dictionary-resource-indexes.mjs",

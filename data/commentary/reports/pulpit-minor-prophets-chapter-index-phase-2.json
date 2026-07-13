@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-07-11",
+  "purpose": "Source-traceable chapter headings for additional Minor Prophets contained in already verified Pulpit Commentary volumes. The index changes navigation metadata only and does not alter source text.",
+  "resources": [
+    {
+      "book": "Joel",
+      "resource_slug": "the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 41180,
+        "2": 42883,
+        "3": 45656
+      }
+    },
+    {
+      "book": "Obadiah",
+      "resource_slug": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 17164
+      }
+    },
+    {
+      "book": "Jonah",
+      "resource_slug": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 21134,
+        "2": 24322,
+        "3": 25524,
+        "4": 27077
+      }
+    },
+    {
+      "book": "Micah",
+      "resource_slug": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 29628,
+        "2": 31065,
+        "3": 32671,
+        "4": 33724,
+        "5": 35200,
+        "6": 36785,
+        "7": 38439
+      }
+    }
+  ]
+}

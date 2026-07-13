@@ -41,10 +41,12 @@ const dictionaryRelativePath = ["data", "generated", "websters-1828.entries.json
 const dictionaryOverrideRelativePath = ["data", "generated", "websters-1828-reviewed-overrides.json"];
 const eastonDictionaryRelativePath = ["data", "generated", "eastons-bible-dictionary.entries.json"];
 const naveTopicalRelativePath = ["data", "generated", "naves-topical-bible.topics.json"];
+const rareTermRelativePath = ["data", "generated", "kjv-rare-term-reviewed-overrides.json"];
 let dictionaryPromise: Promise<WebsterEntry[]> | null = null;
 let eastonDictionaryPromise: Promise<WebsterEntry[]> | null = null;
 let naveTopicalPromise: Promise<WebsterEntry[]> | null = null;
 let allDictionaryPromise: Promise<WebsterEntry[]> | null = null;
+let rareTermPromise: Promise<WebsterEntry[]> | null = null;
 
 const reviewedDictionaryOverlays: WebsterEntry[] = [
   {
@@ -61,6 +63,84 @@ const reviewedDictionaryOverlays: WebsterEntry[] = [
 ];
 
 const dictionaryAliases: Record<string, string> = {
+  sware: "swear",
+  sworn: "swear",
+  greater: "great",
+  branches: "branch",
+  moved: "move",
+  asses: "ass",
+  smitten: "smite",
+  ran: "run",
+  horsemen: "horseman",
+  lieth: "lie",
+  dealt: "deal",
+  dost: "do",
+  savour: "savor",
+  seeth: "see",
+  canst: "can",
+  slept: "sleep",
+  goest: "go",
+  doest: "do",
+  justified: "justify",
+  sitteth: "sit",
+  wouldest: "will",
+  churches: "church",
+  crucified: "crucify",
+  caught: "catch",
+  abram: "abraham",
+  syrians: "syria",
+  judaea: "judea",
+  philistine: "philistines",
+  circumcised: "circumcision",
+  prevailed: "prevail",
+  understood: "understand",
+  valour: "valor",
+  nought: "naught",
+  rebelled: "rebel",
+  tarried: "tarry",
+  dieth: "die",
+  honourable: "honorable",
+  bethlehemjudah: "bethlehem",
+  bethlehemite: "bethlehem",
+  kadeshbarnea: "kadesh",
+  galilaeans: "galilee",
+  pharaohnechoh: "pharaoh",
+  pharaohnecho: "pharaoh",
+  pharaohhophra: "pharaoh",
+  bethhoglah: "hoglah",
+  bethshemite: "bethshemesh",
+  dibongad: "dibon",
+  kirheres: "kirharaseth",
+  kirhareseth: "kirharaseth",
+  kirharesh: "kirharaseth",
+  kirjathbaal: "kirjath",
+  abelmaim: "abel",
+  atarothadar: "ataroth",
+  atarothaddar: "ataroth",
+  aznothtabor: "tabor",
+  chislothtabor: "tabor",
+  bathshua: "bathsheba",
+  bethjesimoth: "bethjeshimoth",
+  chaldaeans: "chaldeans",
+  committest: "commit",
+  deadness: "dead",
+  eleloheisrael: "israel",
+  forgivenesses: "forgiveness",
+  hazazontamar: "engedi",
+  immutability: "immutable",
+  irnahash: "nahash",
+  justifier: "justify",
+  kedeshnaphtali: "kedesh",
+  kirjatharim: "kirjathjearim",
+  meribahkadesh: "meribah",
+  nepthalim: "naphtali",
+  rebecca: "rebekah",
+  rebuker: "rebuke",
+  slanderously: "slander",
+  syriadamascus: "syria",
+  syriamaachah: "syria",
+  thereinto: "therein",
+  unweighed: "weigh",
   hath: "have",
   hast: "have",
   hadst: "have",
@@ -353,10 +433,18 @@ export async function getNaveTopicalEntries() {
   return naveTopicalPromise;
 }
 
+export async function getRareTermEntries() {
+  rareTermPromise ??= readTextContent(rareTermRelativePath, { errorLabel: "KJV rare-term guide" })
+    .then((raw) => JSON.parse(raw) as WebsterEntry[])
+    .then((entries) => entries.map(cleanDictionaryEntry));
+  return rareTermPromise;
+}
+
 export async function getAllDictionaryEntries() {
-  allDictionaryPromise ??= Promise.all([getDictionaryEntries(), getEastonDictionaryEntries(), getNaveTopicalEntries()]).then(([websterEntries, eastonEntries, naveEntries]) => [
+  allDictionaryPromise ??= Promise.all([getDictionaryEntries(), getEastonDictionaryEntries(), getRareTermEntries(), getNaveTopicalEntries()]).then(([websterEntries, eastonEntries, rareTermEntries, naveEntries]) => [
     ...websterEntries,
     ...eastonEntries,
+    ...rareTermEntries,
     ...naveEntries,
   ]);
   return allDictionaryPromise;
@@ -365,8 +453,16 @@ export async function getAllDictionaryEntries() {
 function dictionarySourcePriority(entry: WebsterEntry) {
   if (/american dictionary|webster/i.test(entry.source_title)) return 0;
   if (/easton/i.test(entry.source_title)) return 1;
-  if (/nave/i.test(entry.source_title)) return 2;
-  return 3;
+  if (/kjv bible|kjv english/i.test(entry.source_title)) return 2;
+  if (/nave/i.test(entry.source_title)) return 3;
+  return 4;
+}
+
+function dictionaryReviewPriority(entry: WebsterEntry) {
+  if (entry.review_status === "reviewed_overlay") return 0;
+  if (/reviewed|clean/i.test(entry.review_status)) return 1;
+  if (/spot_review|ocr/i.test(entry.review_status)) return 3;
+  return 2;
 }
 
 export async function lookupDictionaryWord(word: string) {
@@ -377,6 +473,8 @@ export async function lookupDictionaryWord(word: string) {
     .sort((a, b) => {
       const candidatePriority = candidates.indexOf(a.normalized_headword) - candidates.indexOf(b.normalized_headword);
       if (candidatePriority !== 0) return candidatePriority;
+      const reviewPriority = dictionaryReviewPriority(a) - dictionaryReviewPriority(b);
+      if (reviewPriority !== 0) return reviewPriority;
       const priority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
       if (priority !== 0) return priority;
       return b.definition.length - a.definition.length;
@@ -410,6 +508,8 @@ export async function searchDictionary(query: string, limit = 25) {
       if (aPrefix !== bPrefix) return aPrefix - bPrefix;
       const sourcePriority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
       if (sourcePriority !== 0) return sourcePriority;
+      const reviewPriority = dictionaryReviewPriority(a) - dictionaryReviewPriority(b);
+      if (reviewPriority !== 0) return reviewPriority;
       return a.normalized_headword.localeCompare(b.normalized_headword);
     })
     .slice(0, limit);

@@ -1,16 +1,26 @@
 # Next Resource Gap and Permission Sprint
 
-Updated: 2026-07-04
+Updated: 2026-07-07
 
 ## Current Position
 
 The app is strong enough to stop chasing raw count and start filling the gaps that users will actually feel.
 
-- Verified public Library resources: 1,380
-- Public commentary entries shown in the app: 8,697
-- Library authors represented: 501
+- Verified public Library resources: 1,634
+- Public commentary entries shown in the app: 13,789
+- Library authors represented: 594
 - Public Library duplicate title/author groups: 0
 - Licensed/scoped permissioned resource links: 15
+
+## Overnight Checkpoint: 2026-07-07
+
+The next content push should focus on finishing and connecting what is already staged before starting another broad acquisition wave.
+
+- Commentary depth is strong, but Pulpit Commentary, Biblical Illustrator, Matthew Poole, Lange, and Ellicott still need title-by-title source and parser review before more public promotion.
+- Strong's mapped Bible-word coverage is complete for the current KJV-with-Strong's dataset, but glossary mismatch warnings still need cleanup for better display quality.
+- Webster coverage is usable for the checked high-value words, but messy OCR-style definitions remain the highest-value dictionary cleanup lane.
+- TSK has verified rows and should be expanded carefully by book/chapter rather than by unreviewed bulk import.
+- Audio should start with public-domain LibriVox metadata attached to existing book cards; modern sermons/audio remain permission-only.
 
 ## Biggest Gaps To Fill Next
 
@@ -56,7 +66,7 @@ Priority sets:
 
 Next action:
 
-Continue chapter-by-chapter promotion only from clean, documented sources. Do not import StudyLight wrappers directly unless text cleanup and source verification pass.
+Continue chapter-by-chapter promotion only from clean, documented sources. Do not import StudyLight wrappers or Internet Archive scans directly unless text cleanup, source verification, and duplicate checks pass.
 
 ### 3. Underrepresented Author Collections
 
@@ -90,7 +100,7 @@ Best public-domain audio lane:
 
 Next action:
 
-Use a small pilot batch first: one Spurgeon, one Bounds/Torrey prayer work, one missionary biography, and one sermon-series candidate.
+Use a small pilot batch first: one Spurgeon, one Bounds/Torrey prayer work, one missionary biography, and one sermon-series candidate. Prefer metadata/link records until audio file rights and storage paths are fully documented.
 
 ### 5. Permissioned Ministry Pages
 
@@ -113,7 +123,7 @@ Not yet assumed:
 
 Next action:
 
-Make Northstar the model permissioned ministry page before seeking broader permissions.
+Make Northstar the model permissioned ministry page before seeking broader permissions. Keep Bo Wagner / CBC pending follow-up and S. M. Davis metadata-only until their scopes are expanded in writing.
 
 ## Next Outreach Targets
 

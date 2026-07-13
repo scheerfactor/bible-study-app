@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-07-11",
+  "purpose": "Source-traceable chapter boundaries for full-volume Pulpit Commentary links. Line numbers identify each OCR chapter heading; they do not alter or excerpt source text.",
+  "resources": [
+    {
+      "book": "Hosea",
+      "resource_slug": "the-pulpit-commentary-cu31924101104739-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104739/cu31924101104739_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 739,
+        "2": 4081,
+        "3": 7760,
+        "4": 8908,
+        "5": 12235,
+        "6": 14740,
+        "7": 17391,
+        "8": 20540,
+        "9": 23348,
+        "10": 25661,
+        "11": 28539,
+        "12": 31193,
+        "13": 34301,
+        "14": 37339
+      }
+    },
+    {
+      "book": "Amos",
+      "resource_slug": "the-pulpit-commentary-cu31924101104796-spence-jones-h-d-m-henry-donald-maurice-1836-1917",
+      "source_url": "https://archive.org/download/cu31924101104796/cu31924101104796_djvu.txt",
+      "rights_status": "verified public domain",
+      "text_handling": "source text preserved; OCR must be spot-checked before quotation",
+      "chapter_line_starts": {
+        "1": 443,
+        "2": 2329,
+        "3": 3667,
+        "4": 5327,
+        "5": 7063,
+        "6": 9489,
+        "7": 11445,
+        "8": 13047,
+        "9": 14487
+      }
+    }
+  ]
+}

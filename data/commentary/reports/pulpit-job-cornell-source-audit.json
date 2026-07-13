@@ -1,0 +1,77 @@
+{
+  "audit_date": "2026-07-12",
+  "resource_title": "The Pulpit Commentary",
+  "bible_book": "Job",
+  "archive_identifier": "cu31924101104986",
+  "archive_details_url": "https://archive.org/details/cu31924101104986",
+  "ocr_source_url": "https://archive.org/download/cu31924101104986/cu31924101104986_djvu.txt",
+  "source_title_page": {
+    "volume_title": "The Book of Job",
+    "editors": [
+      "H. D. M. Spence",
+      "Joseph S. Exell"
+    ],
+    "publisher": "Funk & Wagnalls Company",
+    "publication_date": "[189-?]"
+  },
+  "archive_volume_mapping": "Volume XVI: Job",
+  "rights_evidence": {
+    "notice": "There are no known copyright restrictions in the United States on the use of the text.",
+    "notice_location": "The notice appears in the Cornell scan before the title page.",
+    "archive_collections": [
+      "cornell",
+      "americana"
+    ]
+  },
+  "ocr_quality_observations": {
+    "downloaded_bytes": 3939869,
+    "chapter_range_present": "Job 1-42",
+    "verified_heading_pattern": "EXPOSITION followed by CHAPTER <Roman numeral>",
+    "spot_checked_chapters": [
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "known_ocr_character": "Readable historical OCR with occasional character substitutions and spacing artifacts; source wording must not be silently rewritten."
+  },
+  "current_gap": {
+    "thin_pulpit_job_chapters": [
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      25,
+      27,
+      28,
+      29,
+      30,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42
+    ],
+    "reason": "Existing chapter imports contain heading-only or very short fallback text for these chapters."
+  },
+  "import_decision": "Source verified; replacement import not yet approved.",
+  "release_gate": [
+    "Parse all 42 chapter boundaries and prove each chapter appears exactly once.",
+    "Reject empty, overlapping, or out-of-order chapter ranges.",
+    "Preserve OCR wording and record any mechanical whitespace normalization.",
+    "Replace thin rows rather than adding duplicate Pulpit Commentary rows.",
+    "Run commentary quality, duplicate, validation, lint, and build checks before release."
+  ]
+}

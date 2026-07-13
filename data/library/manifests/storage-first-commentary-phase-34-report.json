@@ -1,0 +1,272 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-commentary-phase-34.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 40,
+  "total_attempted": 17,
+  "imported": 14,
+  "would_import": 0,
+  "skipped": 1,
+  "failed": 2,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 1,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "file": "the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt",
+      "bytes": 1374984,
+      "words": 215595,
+      "reading_time_minutes": 958,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "From the Usher's Desk to the Tabernacle Pulpit",
+      "file": "from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt",
+      "bytes": 487095,
+      "words": 75471,
+      "reading_time_minutes": 335,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Charles H. Spurgeon, Our Ally",
+      "file": "charles-h-spurgeon-our-ally-justin-d-fulton.txt",
+      "bytes": 715619,
+      "words": 126096,
+      "reading_time_minutes": 560,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Women Who Have Worked and Won",
+      "file": "women-who-have-worked-and-won-jennie-chappell.txt",
+      "bytes": 390394,
+      "words": 58020,
+      "reading_time_minutes": 258,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Autobiography of Charles H. Spurgeon",
+      "file": "the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "bytes": 1068122,
+      "words": 165024,
+      "reading_time_minutes": 733,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Life of Charles Haddon Spurgeon: The World's Great Preacher",
+      "file": "life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt",
+      "bytes": 949520,
+      "words": 147795,
+      "reading_time_minutes": 657,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "C. H. Spurgeon Autobiography, Volume 2",
+      "file": "c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt",
+      "bytes": 1444623,
+      "words": 221449,
+      "reading_time_minutes": 984,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Charles Haddon Spurgeon: Preacher, Author, and Philanthropist",
+      "file": "charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt",
+      "bytes": 472639,
+      "words": 71468,
+      "reading_time_minutes": 318,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Sketch of the Life and Ministry of the Rev. C. H. Spurgeon",
+      "file": "sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt",
+      "bytes": 268110,
+      "words": 40583,
+      "reading_time_minutes": 180,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Way of Life",
+      "file": "the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt",
+      "bytes": 241941,
+      "words": 38823,
+      "reading_time_minutes": 173,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Synopsis of Criticisms upon the Old Testament",
+      "file": "a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt",
+      "bytes": 1780670,
+      "words": 300258,
+      "reading_time_minutes": 1334,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Original Notes on the Book of Proverbs, Volume 1",
+      "file": "original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt",
+      "bytes": 1091030,
+      "words": 186396,
+      "reading_time_minutes": 828,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Original Notes on the Book of Proverbs",
+      "file": "original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt",
+      "bytes": 1210971,
+      "words": 190119,
+      "reading_time_minutes": 845,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The English Bible, Volume 2",
+      "file": "the-english-bible-volume-2-john-eadie.txt",
+      "bytes": 1331642,
+      "words": 203438,
+      "reading_time_minutes": 904,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Pulpit Commentary (1897) (in.ernet.dli.2015.236846)",
+      "author": "H. D. M. Spence",
+      "status": "duplicate_checksum",
+      "issues": [
+        "Downloaded text checksum already exists in the library"
+      ]
+    },
+    {
+      "row": 3,
+      "title": "The Life and Labors of Charles H. Spurgeon",
+      "author": "George Carter Needham",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-and-labors-of-charles-h-spurgeon-george-carter-needham.txt"
+    },
+    {
+      "row": 4,
+      "title": "From the Usher's Desk to the Tabernacle Pulpit",
+      "author": "Robert Shindler",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/from-the-usher-s-desk-to-the-tabernacle-pulpit-robert-shindler.txt"
+    },
+    {
+      "row": 5,
+      "title": "Charles H. Spurgeon, Our Ally",
+      "author": "Justin D. Fulton",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/charles-h-spurgeon-our-ally-justin-d-fulton.txt"
+    },
+    {
+      "row": 6,
+      "title": "Women Who Have Worked and Won",
+      "author": "Jennie Chappell",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/women-who-have-worked-and-won-jennie-chappell.txt"
+    },
+    {
+      "row": 7,
+      "title": "C. H. Spurgeon: A Biography",
+      "author": "W. Y. Fullerton",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/in.ernet.dli.2015.168833/in.ernet.dli.2015.168833_djvu.txt"
+      ]
+    },
+    {
+      "row": 8,
+      "title": "The Autobiography of Charles H. Spurgeon",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-autobiography-of-charles-h-spurgeon-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt"
+    },
+    {
+      "row": 9,
+      "title": "Life of Charles Haddon Spurgeon: The World's Great Preacher",
+      "author": "Russell H. Conwell",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/life-of-charles-haddon-spurgeon-the-world-s-great-preacher-russell-h-conwell.txt"
+    },
+    {
+      "row": 10,
+      "title": "C. H. Spurgeon Autobiography, Volume 2",
+      "author": "C. H. Spurgeon; Susannah Spurgeon; W. J. Harrald",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/c-h-spurgeon-autobiography-volume-2-c-h-spurgeon-susannah-spurgeon-w-j-harrald.txt"
+    },
+    {
+      "row": 11,
+      "title": "Charles Haddon Spurgeon: Preacher, Author, and Philanthropist",
+      "author": "G. Holden Pike",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/charles-haddon-spurgeon-preacher-author-and-philanthropist-g-holden-pike.txt"
+    },
+    {
+      "row": 12,
+      "title": "Sketch of the Life and Ministry of the Rev. C. H. Spurgeon",
+      "author": "George J. Stevenson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/sketch-of-the-life-and-ministry-of-the-rev-c-h-spurgeon-george-j-stevenson.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Way of Life",
+      "author": "C. H. Spurgeon; John McNeill; J. Wilbur Chapman; D. L. Moody; T. De Witt Talmage",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-way-of-life-c-h-spurgeon-john-mcneill-j-wilbur-chapman-d-l-moody-t-de-witt-talmage.txt"
+    },
+    {
+      "row": 14,
+      "title": "A Synopsis of Criticisms upon the Old Testament",
+      "author": "Richard A. F. Barrett",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-synopsis-of-criticisms-upon-the-old-testament-richard-a-f-barrett.txt"
+    },
+    {
+      "row": 15,
+      "title": "The Causes of the Corruption of the Traditional Text of the Holy Gospels",
+      "author": "John William Burgon; Edward Miller",
+      "status": "failed",
+      "issues": [
+        "Download failed 404: https://archive.org/download/a549022500burguoft/a549022500burguoft_djvu.txt"
+      ]
+    },
+    {
+      "row": 16,
+      "title": "Original Notes on the Book of Proverbs, Volume 1",
+      "author": "Solomon Caesar Malan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-volume-1-solomon-caesar-malan.txt"
+    },
+    {
+      "row": 17,
+      "title": "Original Notes on the Book of Proverbs",
+      "author": "Solomon Caesar Malan",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/original-notes-on-the-book-of-proverbs-solomon-caesar-malan.txt"
+    },
+    {
+      "row": 18,
+      "title": "The English Bible, Volume 2",
+      "author": "John Eadie",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-english-bible-volume-2-john-eadie.txt"
+    }
+  ]
+}

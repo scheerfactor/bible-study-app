@@ -1,0 +1,250 @@
+{
+  "generated_at": "2026-07-11T12:41:54.350Z",
+  "input": "data/library/import-batches/storage-first-public-domain-expansion-phase-45.csv",
+  "output": "data/library/import-batches/storage-first-public-domain-expansion-phase-45-reviewed.csv",
+  "input_rows": 111,
+  "accepted_rows": 63,
+  "rejected_rows": 48,
+  "rejected": [
+    {
+      "title": "Sermons Preached and Revised by C. H. Spurgeon",
+      "author": "Charles Haddon Spurgeon",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Hymns for the Church on Earth: Being Three Hundred Hymns and Spiritual Songs (for the Most Part ...",
+      "author": "John Charles Ryle",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Present Tense of The Blessed Life",
+      "author": "F. B. Meyer",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Journal of the Society of Arts, Vol. 3, no. 115",
+      "author": "P. LE NEVE FOSTER; Andrew Murray; John Roberts; WILLIAM LONGMAID; Samuel Collett Homersham",
+      "reason": "multiple contributors; not a clearly authored ministry work"
+    },
+    {
+      "title": "Life of David as Reflected in his Psalms",
+      "author": "Alexander Maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Sermons Preached in Manchester (Second Series)",
+      "author": "alexander maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "the wearied christ and other sermons",
+      "author": "ALEXANDER MACLAREN",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "A Year's Ministry First Series",
+      "author": "Alexander Maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Books of Isaiah and Jeremiah",
+      "author": "Alexander Maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Gospel of St. Mark",
+      "author": "Alexander Maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Christ in the Heart",
+      "author": "Alexander Maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "sermons preaached in manchester",
+      "author": "alexander maclaren",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Triumphant certaintles and other sermons",
+      "author": "Alexander Maclaren",
+      "reason": "same work already selected in this batch under another title or edition"
+    },
+    {
+      "title": "The holy war, made by Shaddai upon Diabolus",
+      "author": "John Bunyan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Holy War Made by King Shaddai Upon Diabolus, for the Regaining of the ...",
+      "author": "John Bunyan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Collection of Hymns for Social Worship,: More Particularly Design'd for the Use of the ...",
+      "author": "George Whitefield",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Preaching to the Spirits in Prison, I Peter, 3",
+      "author": "William Kelly",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Notes of the Book of Daniel",
+      "author": "William Kelly",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Prophecy of Isaiah",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "God's Methos with Man",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Life of Faith in the Day of Calamity, The Westminster Pulpit, A Sermon by Dr. G. Campbell Morgan, Vol. 9, No. 33, August 14th, 1914",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already selected in this batch under another title or edition"
+    },
+    {
+      "title": "the gospel according to mark",
+      "author": "g. campbell morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Analysed Bible : Job to Malachi",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Gospel Acccording To Mark",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Gospel Acording to Mark",
+      "author": "G. Campbell Morgan",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Matthew Henry's Concise Bible Commentary",
+      "author": "Matthew Henry",
+      "reason": "same work already selected in this batch under another title or edition"
+    },
+    {
+      "title": "Notes, Explanatory and Practical, on the Gospels: Designed for Sunday School ...",
+      "author": "Albert Barnes",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Notes, Explanatory and Practical on the Gospels",
+      "author": "Albert Barnes",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Notes on the Gospels, condensed from the Amer. ed. revised by S. Green",
+      "author": "Albert Barnes",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Holy Bible containing The Old and New Testament",
+      "author": "Adam Clarke",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "Asiatic Proverbs From Clarke's Commentary Old Testamant, Vol. 3 Job Song Of Solomon",
+      "author": "Adam Clarke",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "The Words of Lockman (Lukmanthe Wise) To His Son From Clarke's Commentary Old Testament, Vol. 3 Job Song Of Solomon",
+      "author": "Adam Clarke",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "A Short History Baptist Missions",
+      "author": "Henry C. Vedder",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Baptist History",
+      "author": "Henry C. Vedder",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "The Unoccupied Mission Fields of Africa and Asia",
+      "author": "Samuel M. Zwemer",
+      "reason": "same work already selected in this batch under another title or edition"
+    },
+    {
+      "title": "the unoccupied mission fields of african and asia",
+      "author": "samuel m. zwemer",
+      "reason": "same work already selected in this batch under another title or edition"
+    },
+    {
+      "title": "Raymund Lull First Missionary to the Moslems",
+      "author": "Samuel M. Zwemer",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "A Moslem Seeker After God:",
+      "author": "Samuel M. Zwemer",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Life and Times of Jesus the Messian Vol 1",
+      "author": "alfred edersheim",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Book of Martyrs: A History of the Persecution of the Protestants",
+      "author": "John Foxe",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Some remarkable passages in the life of ... col. James Gardiner. With an appendix relating to ...",
+      "author": "Philip Doddridge",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Rise and Progress of Religion in the Soul: Illustrated in a Course of Serious and Practical ...",
+      "author": "Philip Doddridge",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Some remarkable passages in the life of the Honourable Colonel James ...",
+      "author": "Philip Doddridge",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "Selected Sermons",
+      "author": "T. De Witt Talmage",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "Hours with the bible",
+      "author": "Cunningham Geikie",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "The Life and Words of Christ",
+      "author": "Cunningham Geikie",
+      "reason": "same work already exists in Library under another title or edition"
+    },
+    {
+      "title": "old testament characters",
+      "author": "cunningham geikie",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    },
+    {
+      "title": "Old Testament Characters",
+      "author": "John Cunningham Geikie",
+      "reason": "manual review identified an excerpt, redundant edition, or resource already represented more usefully"
+    }
+  ]
+}

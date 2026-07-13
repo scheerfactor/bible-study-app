@@ -1,17 +1,18 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-06T12:29:13.985Z
+Generated: 2026-07-13T01:07:16.449Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
 ## Current Coverage
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- KJV words measured: 792,215 tokens, 12,449 unique words, 12,376 meaningful unique words after common-word filtering.
-- Webster 1828: 7,520/12,376 meaningful KJV words have a lookup candidate (60.8%).
-- Combined word/topic lookup: 10,368/12,376 meaningful KJV words have Webster, Easton, or Nave help (83.8%).
-- Strong's lexicon: 14,289 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
-- Strong's KJV word mapping: 12,218/12,376 meaningful KJV words appear in reviewed mapping batches (98.7%).
+- KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
+- Webster 1828: 7,740/12,454 meaningful KJV words have a lookup candidate (62.1%).
+- Combined word/topic lookup: 10,738/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.2%).
+- Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
+- Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
+- Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
 - TSK: 6,118 public rows cover 1189/1189 chapters (100%).
 - TSK remaining chapter gaps: None.
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
@@ -35,106 +36,112 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| israel | 2576 | Genesis 32:28; Genesis 32:32; Genesis 33:20; Genesis 34:7; Genesis 35:10 |
+| israel | 2575 | Genesis 32:28; Genesis 32:32; Genesis 34:7; Genesis 35:10; Genesis 35:10 |
 | david | 1064 | Ruth 4:17; Ruth 4:22; 1 Samuel 16:13; 1 Samuel 16:19; 1 Samuel 16:20 |
-| jesus | 984 | Matthew 1:1; Matthew 1:16; Matthew 1:18; Matthew 1:21; Matthew 1:25 |
+| jesus | 983 | Matthew 1:1; Matthew 1:16; Matthew 1:18; Matthew 1:21; Matthew 1:25 |
 | moses | 847 | Exodus 2:10; Exodus 2:11; Exodus 2:14; Exodus 2:15; Exodus 2:15 |
-| judah | 826 | Genesis 29:35; Genesis 35:23; Genesis 37:26; Genesis 38:1; Genesis 38:2 |
+| judah | 816 | Genesis 29:35; Genesis 35:23; Genesis 37:26; Genesis 38:1; Genesis 38:2 |
 | jerusalem | 814 | Joshua 10:1; Joshua 10:3; Joshua 10:5; Joshua 10:23; Joshua 12:10 |
 | egypt | 611 | Genesis 12:10; Genesis 12:11; Genesis 12:14; Genesis 13:1; Genesis 13:10 |
 | how | 543 | Genesis 26:9; Genesis 27:20; Genesis 28:17; Genesis 30:29; Genesis 30:29 |
 | years | 539 | Genesis 1:14; Genesis 5:3; Genesis 5:4; Genesis 5:5; Genesis 5:6 |
 | saul | 420 | Genesis 36:37; Genesis 36:38; 1 Samuel 9:2; 1 Samuel 9:3; 1 Samuel 9:3 |
-| altar | 378 | Genesis 8:20; Genesis 8:20; Genesis 12:7; Genesis 12:8; Genesis 13:4 |
 | jacob | 377 | Genesis 25:26; Genesis 25:27; Genesis 25:28; Genesis 25:29; Genesis 25:30 |
 | year | 369 | Genesis 7:11; Genesis 8:13; Genesis 14:4; Genesis 14:5; Genesis 17:21 |
 | woman | 367 | Genesis 2:22; Genesis 2:23; Genesis 3:1; Genesis 3:2; Genesis 3:4 |
-| congregation | 364 | Exodus 12:3; Exodus 12:6; Exodus 12:19; Exodus 12:47; Exodus 16:1 |
 | aaron | 350 | Exodus 4:14; Exodus 4:27; Exodus 4:28; Exodus 4:29; Exodus 4:30 |
 | solomon | 304 | 2 Samuel 5:14; 2 Samuel 12:24; 1 Kings 1:10; 1 Kings 1:11; 1 Kings 1:12 |
 | babylon | 294 | 2 Kings 17:24; 2 Kings 17:30; 2 Kings 20:12; 2 Kings 20:14; 2 Kings 20:17 |
-| pharaoh | 279 | Genesis 12:15; Genesis 12:15; Genesis 12:15; Genesis 12:17; Genesis 12:18 |
+| pharaoh | 273 | Genesis 12:15; Genesis 12:15; Genesis 12:15; Genesis 12:17; Genesis 12:18 |
 | power | 272 | Genesis 31:6; Genesis 31:29; Genesis 32:28; Genesis 49:3; Exodus 9:16 |
 | philistines | 254 | Genesis 21:32; Genesis 21:34; Genesis 26:1; Genesis 26:8; Genesis 26:14 |
 | abraham | 250 | Genesis 17:5; Genesis 17:9; Genesis 17:15; Genesis 17:17; Genesis 17:18 |
 | joseph | 250 | Genesis 30:24; Genesis 30:25; Genesis 33:2; Genesis 33:7; Genesis 35:24 |
-| inheritance | 239 | Genesis 31:14; Genesis 48:6; Exodus 15:17; Exodus 34:9; Leviticus 25:46 |
 | wine | 231 | Genesis 9:21; Genesis 9:24; Genesis 14:18; Genesis 19:32; Genesis 19:33 |
-| ark | 230 | Genesis 6:14; Genesis 6:14; Genesis 6:15; Genesis 6:16; Genesis 6:16 |
-| beth | 225 | Genesis 12:8; Genesis 12:8; Genesis 13:3; Genesis 13:3; Genesis 28:19 |
 | joshua | 216 | Exodus 17:9; Exodus 17:10; Exodus 17:13; Exodus 17:14; Exodus 24:13 |
 | tree | 201 | Genesis 1:11; Genesis 1:12; Genesis 1:29; Genesis 1:29; Genesis 2:9 |
 | jordan | 197 | Genesis 13:10; Genesis 13:11; Genesis 32:10; Genesis 50:10; Genesis 50:11 |
+| book | 188 | Genesis 5:1; Exodus 17:14; Exodus 24:7; Exodus 32:32; Exodus 32:33 |
+| ephraim | 176 | Genesis 41:52; Genesis 46:20; Genesis 48:1; Genesis 48:5; Genesis 48:13 |
+| moab | 168 | Genesis 19:37; Genesis 36:35; Exodus 15:15; Numbers 21:11; Numbers 21:13 |
+| darkness | 162 | Genesis 1:2; Genesis 1:4; Genesis 1:5; Genesis 1:18; Genesis 15:12 |
+| paul | 162 | Acts 13:9; Acts 13:13; Acts 13:16; Acts 13:43; Acts 13:45 |
 
 ## Top KJV Words Still Without Any Study Lookup
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
-| true | 81 | Genesis 42:11; Genesis 42:19; Genesis 42:31; Genesis 42:33; Genesis 42:34 |
-| sware | 78 | Genesis 21:31; Genesis 24:7; Genesis 24:9; Genesis 25:33; Genesis 26:3 |
-| greater | 77 | Genesis 1:16; Genesis 4:13; Genesis 39:9; Genesis 41:40; Genesis 48:19 |
-| precious | 76 | Genesis 24:53; Deuteronomy 33:13; Deuteronomy 33:14; Deuteronomy 33:14; Deuteronomy 33:15 |
-| branches | 75 | Genesis 40:10; Genesis 40:12; Genesis 49:22; Exodus 25:31; Exodus 25:32 |
-| moved | 75 | Genesis 1:2; Genesis 7:21; Deuteronomy 32:21; Joshua 10:21; Joshua 15:18 |
-| womb | 71 | Genesis 25:23; Genesis 25:24; Genesis 29:31; Genesis 30:2; Genesis 30:22 |
-| favour | 70 | Genesis 18:3; Genesis 30:27; Genesis 39:21; Exodus 3:21; Exodus 11:3 |
-| since | 70 | Genesis 30:30; Genesis 44:28; Genesis 46:30; Exodus 4:10; Exodus 5:23 |
-| worshipped | 70 | Genesis 24:26; Genesis 24:48; Genesis 24:52; Exodus 4:31; Exodus 12:27 |
-| abundance | 68 | Deuteronomy 28:47; Deuteronomy 33:19; 1 Samuel 1:16; 2 Samuel 12:30; 1 Kings 1:19 |
-| afterward | 66 | Genesis 10:18; Genesis 15:14; Genesis 32:20; Genesis 38:30; Exodus 5:1 |
-| thereon | 66 | Genesis 35:14; Genesis 35:14; Exodus 17:12; Exodus 20:24; Exodus 20:26 |
-| soon | 65 | Genesis 18:33; Genesis 27:30; Genesis 44:3; Exodus 2:18; Exodus 9:29 |
-| asses | 64 | Genesis 12:16; Genesis 12:16; Genesis 24:35; Genesis 30:43; Genesis 32:5 |
-| howbeit | 64 | Judges 4:17; Judges 11:28; Judges 16:22; Judges 18:29; Judges 21:18 |
-| smitten | 63 | Exodus 7:25; Exodus 9:31; Exodus 9:32; Exodus 22:2; Numbers 14:42 |
-| always | 62 | Genesis 6:3; Exodus 27:20; Exodus 28:38; Deuteronomy 5:29; Deuteronomy 6:24 |
-| abram | 61 | Genesis 11:26; Genesis 11:27; Genesis 11:29; Genesis 11:29; Genesis 11:31 |
-| ran | 61 | Genesis 18:2; Genesis 18:7; Genesis 24:17; Genesis 24:20; Genesis 24:28 |
-| syrians | 61 | 2 Samuel 8:5; 2 Samuel 8:5; 2 Samuel 8:6; 2 Samuel 8:13; 2 Samuel 10:6 |
-| horsemen | 59 | Genesis 50:9; Exodus 14:9; Exodus 14:17; Exodus 14:18; Exodus 14:23 |
-| lieth | 59 | Genesis 4:7; Genesis 49:25; Exodus 22:19; Leviticus 6:3; Leviticus 14:47 |
-| raise | 59 | Genesis 38:8; Exodus 23:1; Deuteronomy 18:15; Deuteronomy 18:18; Deuteronomy 25:7 |
-| weight | 58 | Genesis 24:22; Genesis 24:22; Genesis 43:21; Exodus 30:34; Leviticus 19:35 |
-| dealt | 57 | Genesis 16:6; Genesis 33:11; Genesis 43:6; Exodus 1:20; Exodus 14:11 |
-| raiment | 57 | Genesis 24:53; Genesis 27:15; Genesis 27:27; Genesis 28:20; Genesis 41:14 |
-| dost | 56 | Genesis 32:29; Genesis 44:4; Deuteronomy 9:5; Deuteronomy 24:10; Deuteronomy 24:11 |
-| redeem | 56 | Exodus 6:6; Exodus 13:13; Exodus 13:13; Exodus 13:13; Exodus 13:15 |
-| graven | 55 | Exodus 20:4; Exodus 32:16; Exodus 39:6; Exodus 39:6; Leviticus 26:1 |
+| compassed | 44 | Genesis 19:4; Deuteronomy 2:1; Deuteronomy 2:3; Joshua 6:11; Joshua 6:14 |
+| forasmuch | 43 | Genesis 41:39; Numbers 10:31; Deuteronomy 12:12; Deuteronomy 17:16; Joshua 17:14 |
+| straightway | 42 | 1 Samuel 9:13; 1 Samuel 28:20; Proverbs 7:22; Daniel 10:17; Matthew 3:16 |
+| either | 41 | Genesis 31:24; Genesis 31:29; Leviticus 10:1; Leviticus 13:49; Leviticus 13:51 |
+| eastward | 40 | Genesis 2:8; Genesis 13:14; Genesis 25:6; Exodus 27:13; Exodus 38:13 |
+| compass | 39 | Exodus 27:5; Exodus 38:4; Numbers 21:4; Numbers 34:5; Joshua 6:3 |
+| defile | 39 | Leviticus 11:44; Leviticus 15:31; Leviticus 18:20; Leviticus 18:23; Leviticus 18:24 |
+| prevailed | 37 | Genesis 7:18; Genesis 7:19; Genesis 7:24; Genesis 30:8; Genesis 32:25 |
+| fourscore | 36 | Genesis 16:16; Genesis 35:28; Exodus 7:7; Exodus 7:7; Numbers 2:9 |
+| notwithstanding | 36 | Exodus 16:20; Exodus 21:21; Leviticus 25:32; Leviticus 27:28; Numbers 26:11 |
+| seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
+| fruitful | 35 | Genesis 1:22; Genesis 1:28; Genesis 8:17; Genesis 9:1; Genesis 9:7 |
+| whereas | 33 | Genesis 31:37; Deuteronomy 19:6; Deuteronomy 28:62; 1 Samuel 24:17; 2 Samuel 7:6 |
+| members | 32 | Job 17:7; Psalms 139:16; Matthew 5:29; Matthew 5:30; Romans 6:13 |
+| hungry | 30 | 1 Samuel 2:5; 2 Samuel 17:29; 2 Kings 7:12; Job 5:5; Job 22:7 |
+| putteth | 30 | Exodus 30:33; Numbers 22:38; Deuteronomy 25:11; Deuteronomy 27:15; 1 Kings 20:11 |
+| continued | 29 | Genesis 40:4; Judges 5:17; Ruth 1:2; Ruth 2:7; 1 Samuel 1:12 |
+| prevail | 29 | Genesis 7:20; Numbers 22:6; Judges 16:5; 1 Samuel 2:9; 1 Samuel 17:9 |
+| drawn | 28 | Numbers 22:23; Numbers 22:31; Deuteronomy 21:3; Deuteronomy 30:17; Joshua 5:13 |
+| thief | 28 | Exodus 22:2; Exodus 22:7; Exodus 22:8; Deuteronomy 24:7; Job 24:14 |
+| egyptian | 27 | Genesis 16:1; Genesis 16:3; Genesis 21:9; Genesis 25:12; Genesis 39:1 |
+| fishes | 27 | Genesis 9:2; 1 Kings 4:33; Job 12:8; Ecclesiastes 9:12; Ezekiel 38:20 |
+| whereunto | 27 | Numbers 36:3; Numbers 36:4; Deuteronomy 4:26; 2 Chronicles 8:11; Esther 10:2 |
+| accomplished | 26 | 2 Chronicles 36:22; Esther 2:12; Job 15:32; Proverbs 13:19; Isaiah 40:2 |
+| hittite | 26 | Genesis 23:10; Genesis 25:9; Genesis 26:34; Genesis 26:34; Genesis 36:2 |
+| accept | 25 | Genesis 32:20; Exodus 22:11; Leviticus 26:41; Leviticus 26:43; Deuteronomy 33:11 |
+| gotten | 25 | Genesis 4:1; Genesis 12:5; Genesis 31:1; Genesis 31:18; Genesis 31:18 |
+| somewhat | 25 | Leviticus 4:13; Leviticus 4:22; Leviticus 4:27; Leviticus 13:6; Leviticus 13:19 |
+| forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
+| fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
+
+## Final Words Without Dictionary Or Strong's Help
+
+| Word | Count | Sample References |
+| --- | ---: | --- |
+| None | 0 |  |
 
 ## Top Webster Entries Needing OCR Cleanup
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| lord | LORD | 7964 | ocr_full_import_needs_spot_review |
-| all | ALL | 5620 | ocr_full_import_needs_spot_review |
-| god | GOD | 4472 | ocr_full_import_needs_spot_review |
-| which | WHICH | 4413 | ocr_full_import_needs_spot_review |
-| will | WILL | 3837 | ocr_full_import_needs_spot_review |
-| when | WHEN | 2834 | ocr_full_import_needs_spot_review |
-| this | THI'S | 2785 | ocr_full_import_needs_spot_review |
-| out | OUT | 2775 | ocr_full_import_needs_spot_review |
-| man | MAN | 2736 | ocr_full_import_needs_spot_review |
-| king | KING | 2540 | ocr_full_import_needs_spot_review |
-| son | SON | 2392 | ocr_full_import_needs_spot_review |
-| then | THEN | 2168 | ocr_full_import_needs_spot_review |
-| people | PEOPLE | 2143 | ocr_full_import_needs_spot_review |
-| came | CAME | 2093 | ocr_full_import_needs_spot_review |
-| house | HOUSE | 2023 | ocr_full_import_needs_spot_review |
-| into | IN'TO | 2015 | ocr_full_import_needs_spot_review |
-| come | COME | 1971 | ocr_full_import_needs_spot_review |
-| children | CHIL'DREN | 1822 | ocr_full_import_needs_spot_review |
-| before | BEFO'RE | 1796 | ocr_full_import_needs_spot_review |
-| day | DAY | 1739 | ocr_full_import_needs_spot_review |
-| land | LAND | 1717 | ocr_full_import_needs_spot_review |
-| men | MEN | 1677 | ocr_full_import_needs_spot_review |
-| against | AGAINST | 1667 | ocr_full_import_needs_spot_review |
-| let | LET | 1511 | ocr_full_import_needs_spot_review |
-| hand | HAND | 1468 | ocr_full_import_needs_spot_review |
-| made | MADE | 1406 | ocr_full_import_needs_spot_review |
-| went | WENT | 1400 | ocr_full_import_needs_spot_review |
-| even | E'VEN | 1393 | ocr_full_import_needs_spot_review |
-| now | NOW | 1356 | ocr_full_import_needs_spot_review |
-| behold | BEHO'LD | 1326 | ocr_full_import_needs_spot_review |
+| war | WAR | 225 | ocr_full_import_needs_spot_review |
+| above | ABOVE' | 223 | ocr_full_import_needs_spot_review |
+| bear | BEAR | 215 | ocr_full_import_needs_spot_review |
+| thyself | SELF | 215 | ocr_full_import_needs_spot_review |
+| long | LONG | 211 | ocr_full_import_needs_spot_review |
+| near | NEAR | 211 | ocr_full_import_needs_spot_review |
+| fruit | FRUIT | 208 | ocr_full_import_needs_spot_review |
+| child | CHILD | 205 | ocr_full_import_needs_spot_review |
+| poor | POOR | 205 | ocr_full_import_needs_spot_review |
+| inhabitants | INHAB'ITANT | 202 | ocr_full_import_needs_spot_review |
+| slew | SLAY | 196 | ocr_full_import_needs_spot_review |
+| afraid | AFRA'ID | 193 | ocr_full_import_needs_spot_review |
+| having | HAVING | 193 | ocr_full_import_needs_spot_review |
+| ground | GROUND | 192 | ocr_full_import_needs_spot_review |
+| rejoice | REJOICE | 192 | ocr_full_import_needs_spot_review |
+| judge | JUDGE | 191 | ocr_full_import_needs_spot_review |
+| yourselves | SELF | 191 | ocr_full_import_needs_spot_review |
+| door | DOOR | 189 | ocr_full_import_needs_spot_review |
+| bare | BARE | 186 | ocr_full_import_needs_spot_review |
+| broken | BRO'KEN | 186 | ocr_full_import_needs_spot_review |
+| slain | SLAIN | 183 | ocr_full_import_needs_spot_review |
+| beast | BEAST | 181 | ocr_full_import_needs_spot_review |
+| cry | CRY | 181 | ocr_full_import_needs_spot_review |
+| began | BEGIN' | 179 | ocr_full_import_needs_spot_review |
+| wall | WALL | 179 | ocr_full_import_needs_spot_review |
+| receive | RECE'IVE | 176 | ocr_full_import_needs_spot_review |
+| reigned | REIGN | 176 | ocr_full_import_needs_spot_review |
+| families | FAM'ILY | 174 | ocr_full_import_needs_spot_review |
+| far | F'AR | 173 | ocr_full_import_needs_spot_review |
+| moreover | MOREO'VER | 171 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
@@ -190,36 +197,36 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Count | Sample References |
 | --- | ---: | --- |
+| bethel | 66 | Genesis 12:8; Genesis 12:8; Genesis 13:3; Genesis 13:3; Genesis 28:19 |
+| beersheba | 34 | Genesis 21:14; Genesis 21:31; Genesis 21:32; Genesis 21:33; Genesis 22:19 |
+| benhadad | 27 | 1 Kings 15:18; 1 Kings 15:20; 1 Kings 20:1; 1 Kings 20:2; 1 Kings 20:5 |
 | namely | 23 | Leviticus 1:10; Numbers 1:32; Numbers 9:15; Numbers 13:11; Numbers 31:8 |
+| bethshemesh | 21 | Joshua 15:10; Joshua 19:22; Joshua 19:38; Joshua 21:16; Judges 1:33 |
+| obededom | 20 | 2 Samuel 6:10; 2 Samuel 6:11; 2 Samuel 6:11; 2 Samuel 6:12; 2 Samuel 6:12 |
+| ramothgilead | 19 | 1 Kings 4:13; 1 Kings 22:4; 1 Kings 22:6; 1 Kings 22:12; 1 Kings 22:15 |
+| kirjathjearim | 18 | Joshua 9:17; Joshua 15:9; Joshua 15:60; Joshua 18:14; Joshua 18:15 |
+| abednego | 15 | Daniel 1:7; Daniel 2:49; Daniel 3:12; Daniel 3:13; Daniel 3:14 |
+| nebuzaradan | 15 | 2 Kings 25:8; 2 Kings 25:11; 2 Kings 25:20; Jeremiah 39:9; Jeremiah 39:10 |
+| bethhoron | 14 | Joshua 10:10; Joshua 10:11; Joshua 16:3; Joshua 16:5; Joshua 18:13 |
+| ishbosheth | 12 | 2 Samuel 2:8; 2 Samuel 2:10; 2 Samuel 2:12; 2 Samuel 2:15; 2 Samuel 3:7 |
+| jabeshgilead | 12 | Judges 21:8; Judges 21:9; Judges 21:10; Judges 21:12; Judges 21:14 |
+| bathsheba | 10 | 2 Samuel 11:3; 2 Samuel 12:24; 1 Kings 1:11; 1 Kings 1:15; 1 Kings 1:16 |
+| bethlehemjudah | 10 | Judges 17:7; Judges 17:8; Judges 17:9; Judges 19:1; Judges 19:2 |
+| kadeshbarnea | 10 | Numbers 32:8; Numbers 34:4; Deuteronomy 1:2; Deuteronomy 1:19; Deuteronomy 2:14 |
+| padanaram | 10 | Genesis 25:20; Genesis 28:2; Genesis 28:5; Genesis 28:6; Genesis 28:7 |
+| bethaven | 7 | Joshua 7:2; Joshua 18:12; 1 Samuel 13:5; 1 Samuel 14:23; Hosea 4:15 |
+| baalpeor | 6 | Numbers 25:3; Numbers 25:5; Deuteronomy 4:3; Deuteronomy 4:3; Psalms 106:28 |
+| bethshean | 6 | Joshua 17:11; Joshua 17:16; Judges 1:27; 1 Kings 4:12; 1 Kings 4:12 |
+| ebedmelech | 6 | Jeremiah 38:7; Jeremiah 38:8; Jeremiah 38:10; Jeremiah 38:11; Jeremiah 38:12 |
+| engedi | 6 | Joshua 15:62; 1 Samuel 23:29; 1 Samuel 24:1; 2 Chronicles 20:2; Solomon's Song 1:14 |
+| kirjatharba | 6 | Genesis 23:2; Joshua 14:15; Joshua 15:54; Joshua 20:7; Judges 1:10 |
+| pahathmoab | 6 | Ezra 2:6; Ezra 8:4; Ezra 10:30; Nehemiah 3:11; Nehemiah 7:11 |
+| baalhanan | 5 | Genesis 36:38; Genesis 36:39; 1 Chronicles 1:49; 1 Chronicles 1:50; 1 Chronicles 27:28 |
 | galilaeans | 5 | Luke 13:1; Luke 13:2; Luke 13:2; John 4:45; Acts 2:7 |
+| kibrothhattaavah | 5 | Numbers 11:34; Numbers 11:35; Numbers 33:16; Numbers 33:17; Deuteronomy 9:22 |
 | tendeth | 5 | Proverbs 10:16; Proverbs 11:19; Proverbs 11:24; Proverbs 14:23; Proverbs 19:23 |
-| tatnai | 4 | Ezra 5:3; Ezra 5:6; Ezra 6:6; Ezra 6:13 |
-| appertained | 3 | Numbers 16:32; Numbers 16:33; Nehemiah 2:8 |
-| hosea | 3 | Hosea 1:1; Hosea 1:2; Hosea 1:2 |
-| ruhamah | 3 | Hosea 1:6; Hosea 1:8; Hosea 2:1 |
-| therefrom | 3 | Joshua 23:6; 2 Kings 3:3; 2 Kings 13:2 |
-| zacchaeus | 3 | Luke 19:2; Luke 19:5; Luke 19:8 |
-| aeneas | 2 | Acts 9:33; Acts 9:34 |
-| battering | 2 | Ezekiel 4:2; Ezekiel 21:22 |
-| exploits | 2 | Daniel 11:28; Daniel 11:32 |
-| guilt | 2 | Deuteronomy 19:13; Deuteronomy 21:9 |
-| heated | 2 | Daniel 3:19; Hosea 7:4 |
-| hemlock | 2 | Hosea 10:4; Amos 6:12 |
-| hiddekel | 2 | Genesis 2:14; Daniel 10:4 |
-| jareb | 2 | Hosea 5:13; Hosea 10:6 |
-| peril | 2 | Lamentations 5:9; Romans 8:35 |
-| predestinated | 2 | Ephesians 1:5; Ephesians 1:11 |
-| servest | 2 | Daniel 6:16; Daniel 6:20 |
-| spouses | 2 | Hosea 4:13; Hosea 4:14 |
-| ulai | 2 | Daniel 8:2; Daniel 8:16 |
-| weighing | 2 | Numbers 7:85; Numbers 7:86 |
-| abaddon | 1 | Revelation 9:11 |
-| abilene | 1 | Luke 3:1 |
-| accounts | 1 | Daniel 6:2 |
-| accuseth | 1 | John 5:45 |
-| accusing | 1 | Romans 2:15 |
-| aenon | 1 | John 3:23 |
-| affectioned | 1 | Romans 12:10 |
+| baalperazim | 4 | 2 Samuel 5:20; 2 Samuel 5:20; 1 Chronicles 14:11; 1 Chronicles 14:11 |
+| baalzebub | 4 | 2 Kings 1:2; 2 Kings 1:3; 2 Kings 1:6; 2 Kings 1:16 |
 
 ## Top KJV Words Without Exact Nave Topic Yet
 
@@ -228,7 +235,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | all | 5620 | Genesis 1:26; Genesis 1:29; Genesis 2:1; Genesis 2:2; Genesis 2:3 |
 | which | 4413 | Genesis 1:7; Genesis 1:7; Genesis 1:21; Genesis 1:29; Genesis 1:29 |
 | said | 3999 | Genesis 1:3; Genesis 1:6; Genesis 1:9; Genesis 1:11; Genesis 1:14 |
-| thee | 3827 | Genesis 3:11; Genesis 3:11; Genesis 3:15; Genesis 3:16; Genesis 3:17 |
+| thee | 3826 | Genesis 3:11; Genesis 3:11; Genesis 3:15; Genesis 3:16; Genesis 3:17 |
 | when | 2834 | Genesis 2:4; Genesis 3:6; Genesis 4:8; Genesis 4:12; Genesis 5:2 |
 | this | 2785 | Genesis 2:23; Genesis 3:13; Genesis 3:14; Genesis 4:14; Genesis 5:1 |
 | out | 2775 | Genesis 2:9; Genesis 2:10; Genesis 2:19; Genesis 2:23; Genesis 3:19 |

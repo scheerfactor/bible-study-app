@@ -14,10 +14,12 @@
     "rights_basis": "Public-domain StudyLight chapter pages for Wesley's Explanatory Notes. Preserve chapter URL and CCEL derivative note; do not mix with modern edited editions.",
     "recommended_use": "Use as compact Methodist historical notes after the KJV text, with doctrinal discernment labels visible.",
     "entry_text": "Genesis Gen Intro 2 Samuel 2Sa Genesis Gen Intro\n\n Footnotes:",
-    "review_status": "Verified",
-    "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_status": "Needs Review",
+    "import_status": "Staged",
+    "review_batch": "Poole and Wesley Thin-Source Audit 2026-07-12",
+    "review_notes": "Removed from public import because the independent source contains no Wesley notes for this chapter and the stored text is not commentary.",
+    "source_recovery_status": "No chapter-specific Wesley note verified; stored text was navigation debris.",
+    "source_verification_url": "https://biblehub.com/commentaries/wes/2_samuel/24.htm"
   },
   {
     "id": "john-wesley-proverbs-21-phase-3-reviewed",

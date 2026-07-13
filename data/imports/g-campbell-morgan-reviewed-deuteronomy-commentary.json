@@ -33,11 +33,11 @@
     "public_domain_status": "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
     "rights_basis": "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
-    "entry_text": "Verses 1-37\n\n Continuing his discourse, Moses reviewed the second movement from Kadesh-barnea to Heshbon. The notes which characterized the description of the first period are found also in this review of the second period. All that Moses told them they knew as to the actual facts of the long and tedious road they had traveled in the weary years which were now drawing to a close. The great burden of his message to them was emphasizing the fact of how even amidst such sorrowful and severe discipline they had still been thought of and guided by God. The turning back to the wilderness was under the divine command, and therefore through all the tiresome way God was still with them and they had lacked nothing (verses Deuteronomy 2:3-7 ; Deuteronomy 2:3-7 ).\n\n Now once more at His command they were approaching the land. With this ending of the discipline God gave them the first manifestation of the power which they had called in question forty years before, in that He placed the fear of them and the dread of them on the peoples of the land.\n\n This great truth that God never forsakes His people, even when they are bearing the chastisements He imposes as the result of their unbelief, is full of comfort for the hearts of His people for all time.\n\n Deu 3:1-29\n\n Still continuing his review, Moses dealt with the third movement from Heshbon to Beth-peor. In doing so he continued to emphasize the fact that the power of God had been clearly manifest throughout. He reminded them that they had taken all the cities against which they had been commissioned to go. In doing so and in referring to these cities he used the words which declared that they were \"fenced with high walls, gates, and bars.\"\n\n It is interesting to remember that when the majority report of the spies was given long before, they had declared that the cities were \"fenced and very great\" ( Num 13:28 ). The report, therefore, was so far correct. Moses now showed them how through their first victorious movement against such cities, the mistake of the fear which had characterized them in the past was made manifest.\n\n There is a touch of pathos in the way which Moses referred to his own emotion at this manifestation of power and his desire to go over and possess the land. Whereas this was denied him, the punishment was mingled with a tender mercy in that he was permitted to know that his successor would actually lead the people in. There can be no doubt that the supreme desire of Moses was a desire for the accomplishment of the divine purpose.",
+    "entry_text": "Verses 1-37\n\n Continuing his discourse, Moses reviewed the second movement from Kadesh-barnea to Heshbon. The notes which characterized the description of the first period are found also in this review of the second period. All that Moses told them they knew as to the actual facts of the long and tedious road they had traveled in the weary years which were now drawing to a close. The great burden of his message to them was emphasizing the fact of how even amidst such sorrowful and severe discipline they had still been thought of and guided by God. The turning back to the wilderness was under the divine command, and therefore through all the tiresome way God was still with them and they had lacked nothing (verses Deuteronomy 2:3-7 ; Deuteronomy 2:3-7 ).\n\n Now once more at His command they were approaching the land. With this ending of the discipline God gave them the first manifestation of the power which they had called in question forty years before, in that He placed the fear of them and the dread of them on the peoples of the land.\n\n This great truth that God never forsakes His people, even when they are bearing the chastisements He imposes as the result of their unbelief, is full of comfort for the hearts of His people for all time.",
     "review_status": "Verified",
     "import_status": "Public Verified",
     "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch. Removed a parser-shifted Deuteronomy 3 section and restored it to its correct chapter row."
   },
   {
     "id": "g-campbell-morgan-deuteronomy-3-phase-3-reviewed",
@@ -53,11 +53,14 @@
     "public_domain_status": "StudyLight chapter pages state: These files are public domain. Text Courtesy of BibleSupport.com. Used by Permission.",
     "rights_basis": "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
-    "entry_text": "Genesis Gen Intro Deuteronomy Deu Genesis Gen Intro\n\n Footnotes:",
+    "entry_text": "Deu 3:1-29\n\n Still continuing his review, Moses dealt with the third movement from Heshbon to Beth-peor. In doing so he continued to emphasize the fact that the power of God had been clearly manifest throughout. He reminded them that they had taken all the cities against which they had been commissioned to go. In doing so and in referring to these cities he used the words which declared that they were \"fenced with high walls, gates, and bars.\"\n\n It is interesting to remember that when the majority report of the spies was given long before, they had declared that the cities were \"fenced and very great\" ( Num 13:28 ). The report, therefore, was so far correct. Moses now showed them how through their first victorious movement against such cities, the mistake of the fear which had characterized them in the past was made manifest.\n\n There is a touch of pathos in the way which Moses referred to his own emotion at this manifestation of power and his desire to go over and possess the land. Whereas this was denied him, the punishment was mingled with a tender mercy in that he was permitted to know that his successor would actually lead the people in. There can be no doubt that the supreme desire of Moses was a desire for the accomplishment of the divine purpose.",
     "review_status": "Verified",
     "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_batch": "Morgan Shifted Chapter Boundary Repair",
+    "review_notes": "Recovered exact text that the source parser appended to Deuteronomy 2. Wording is unchanged; only the chapter boundary was corrected.",
+    "boundary_repair_source_file": "data/imports/g-campbell-morgan-reviewed-deuteronomy-commentary.json",
+    "boundary_repair_source_reference": "Deuteronomy 2",
+    "boundary_repair_sha256": "320402a542b87aabdd92547483bcaf9c9555910d641b5e87c491586b8dcf21c1"
   },
   {
     "id": "g-campbell-morgan-deuteronomy-4-phase-3-reviewed",
@@ -474,10 +477,11 @@
     "rights_basis": "Public-domain StudyLight chapter pages for Morgan's Exposition on the Bible. Preserve chapter URL and BibleSupport permission note; do not mix with modern edited editions.",
     "recommended_use": "Use as a concise expository overview for pastors and teachers, especially for tracing the chapter's flow before consulting larger homiletic works.",
     "entry_text": "Genesis Gen Intro Deuteronomy Deu Genesis Gen Intro\n\n Footnotes:",
-    "review_status": "Verified",
-    "import_status": "Public Verified",
-    "review_batch": "Commentary Expansion Phase 3",
-    "review_notes": "Chapter source, public-domain statement, and reference metadata reviewed for this expansion batch."
+    "review_status": "Needs Review",
+    "import_status": "Staged",
+    "review_batch": "Morgan Exposition Source Recovery Queue",
+    "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+    "source_recovery_status": "Blocked - matching Morgan source text needed"
   },
   {
     "id": "g-campbell-morgan-deuteronomy-25-phase-3-reviewed",

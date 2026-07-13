@@ -6,6 +6,7 @@
     "data/strongs/lexicon-batches/strongs-reviewed-batch-004.json",
     "data/strongs/lexicon-batches/strongs-crosswire-hebrew-complete.json",
     "data/strongs/lexicon-batches/strongs-cc0-greek-complete.json",
-    "data/strongs/lexicon-batches/strongs-reviewed-batch-005-aliases.json"
+    "data/strongs/lexicon-batches/strongs-reviewed-batch-005-aliases.json",
+    "data/strongs/lexicon-batches/strongs-reviewed-batch-006-final-gap-fill.json"
   ]
 }

@@ -1,0 +1,46 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-commentary-phase-34-fixes.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 5,
+  "total_attempted": 2,
+  "imported": 1,
+  "would_import": 0,
+  "skipped": 1,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 1,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "C. H. Spurgeon: A Biography",
+      "file": "c-h-spurgeon-a-biography-w-y-fullerton.txt",
+      "bytes": 640764,
+      "words": 112939,
+      "reading_time_minutes": 502,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "C. H. Spurgeon: A Biography",
+      "author": "W. Y. Fullerton",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/c-h-spurgeon-a-biography-w-y-fullerton.txt"
+    },
+    {
+      "row": 3,
+      "title": "The Causes of the Corruption of the Traditional Text of the Holy Gospels",
+      "author": "John William Burgon; Edward Miller",
+      "status": "duplicate_source_url",
+      "issues": [
+        "Duplicate source URL"
+      ]
+    }
+  ]
+}

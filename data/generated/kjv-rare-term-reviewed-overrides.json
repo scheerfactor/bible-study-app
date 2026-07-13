@@ -1,0 +1,252 @@
+[
+  {
+    "headword": "THEREFROM",
+    "normalized_headword": "therefrom",
+    "definition": "THEREFROM, adverb. From this or that.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona02websrich_djvu.txt",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "US-WARD",
+    "normalized_headword": "usward",
+    "definition": "US-WARD, adverb. Toward us; in our direction or with reference to us.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Psalm 40:5; Ephesians 1:19; 2 Peter 3:9",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "YOU-WARD",
+    "normalized_headword": "youward",
+    "definition": "YOU-WARD, adverb. Toward you; in your direction or with reference to you.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: 2 Corinthians 1:12; 13:3; Ephesians 3:2",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "THEE-WARD",
+    "normalized_headword": "theeward",
+    "definition": "THEE-WARD, adverb. Toward thee; in thy direction or with reference to thee.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: 1 Samuel 19:4",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "ALLOWETH",
+    "normalized_headword": "alloweth",
+    "definition": "ALLOWETH, third-person singular form of ALLOW. Permits, admits, approves, or acknowledges. See ALLOW.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "APPROVEST",
+    "normalized_headword": "approvest",
+    "definition": "APPROVEST, second-person singular form of APPROVE. Thou dost approve: to like, admit as right, commend, prove, or show to be worthy. See APPROVE.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "CHIMNEY",
+    "normalized_headword": "chimney",
+    "definition": "CHIMNEY, noun. A passage or flue through which smoke and heated air ascend from a fire.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "CONDITION",
+    "normalized_headword": "condition",
+    "definition": "CONDITION, noun. State or particular mode of being; quality; circumstance; rank; or the terms and stipulations of an agreement.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "data/sources/websters-1828/americandictiona01websrich_djvu.txt",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "COSTLINESS",
+    "normalized_headword": "costliness",
+    "definition": "COSTLINESS, noun. Expensiveness; great cost or value; the quality of being costly.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Revelation 18:19",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "DELICACIES",
+    "normalized_headword": "delicacies",
+    "definition": "DELICACIES, plural of DELICACY. Choice or pleasing foods, luxuries, or refined enjoyments.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Revelation 18:3",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "EXCLUDED",
+    "normalized_headword": "excluded",
+    "definition": "EXCLUDED, participle passive. Shut out; debarred; excepted; prevented from entering or sharing.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Romans 3:27",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "EXCUSING",
+    "normalized_headword": "excusing",
+    "definition": "EXCUSING, participle present. Freeing or seeking to free from blame; offering a reason in defense; serving as an excuse.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Romans 2:15",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "HERDMAN",
+    "normalized_headword": "herdman",
+    "definition": "HERDMAN, noun. One who tends or keeps a herd; a herdsman.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Amos 7:14",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "INSTRUCTORS",
+    "normalized_headword": "instructors",
+    "definition": "INSTRUCTORS, plural of INSTRUCTOR. Teachers; those who communicate knowledge, direction, or discipline.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: 1 Corinthians 4:15",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "LINEAGE",
+    "normalized_headword": "lineage",
+    "definition": "LINEAGE, noun. Descent in a line from a common ancestor; race; family line; progeny.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Luke 2:4",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "MISCARRYING",
+    "normalized_headword": "miscarrying",
+    "definition": "MISCARRYING, participle present. Failing to carry safely or successfully; in Hosea 9:14, failing to bring a child to a living birth.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Hosea 9:14",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "RARE",
+    "normalized_headword": "rare",
+    "definition": "RARE, adjective. Uncommon; scarce; seldom found. In Daniel 2:11, exceptionally difficult or beyond ordinary ability.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Daniel 2:11",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "AENEAS",
+    "normalized_headword": "aeneas",
+    "definition": "A man at Lydda who had kept his bed eight years with palsy and was healed when Peter said, 'Jesus Christ maketh thee whole.'",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Acts 9:33-34",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ALMON-DIBLATHAIM",
+    "normalized_headword": "almondiblathaim",
+    "definition": "An encampment of Israel in the wilderness journey, named after Dibon-gad and before the mountains of Abarim.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Numbers 33:46-47",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "JAREB",
+    "normalized_headword": "jareb",
+    "definition": "A name or title connected with a king to whom Israel looked for help in Hosea. The passages show that this foreign help could not heal or deliver them.",
+    "source_title": "KJV Bible Name Guide",
+    "source_file": "KJV: Hosea 5:13; 10:6",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "BENE-BERAK",
+    "normalized_headword": "beneberak",
+    "definition": "A town named within the inheritance of the tribe of Dan.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 19:45",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "CHEPHAR-HAAMMONAI",
+    "normalized_headword": "chepharhaammonai",
+    "definition": "A town named within the inheritance of the tribe of Benjamin.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 18:24",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "EN-HADDAH",
+    "normalized_headword": "enhaddah",
+    "definition": "A town named within the inheritance of the tribe of Issachar.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 19:21",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "HAZAR-SUSIM",
+    "normalized_headword": "hazarsusim",
+    "definition": "A town associated with the settlements of Simeon.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: 1 Chronicles 4:31",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ITTAH-KAZIN",
+    "normalized_headword": "ittahkazin",
+    "definition": "A boundary location named in the description of the inheritance of Zebulun.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Joshua 19:13",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
+  }
+]

@@ -1,0 +1,253 @@
+{
+  "audited_at": "2026-07-13T01:07:07.842Z",
+  "review_status": "public_verified_coverage_audit_complete",
+  "method": "Compared rows accepted by the commentary importer against the 1,189 KJV chapters. Staged, quarantined, and needs-review rows do not count as reader coverage; legacy reviewed rows without a review_status remain importable by design.",
+  "duplicate_safety_note": "Duplicate checks are scoped to the same displayed resource title and chapter. Distinct named editions such as standard and unabridged JFB are not treated as duplicates. Do not add chapter rows merely to increase counts; restore a gap only from the exact verified public-domain work with chapter-level provenance.",
+  "duplicate_public_chapter_keys": 0,
+  "complete_families": [
+    {
+      "resource_title": "The Pulpit Commentary",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 28
+    },
+    {
+      "resource_title": "Poole's English Annotations on the Holy Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 28
+    },
+    {
+      "resource_title": "Adam Clarke's Commentary on the Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 18
+    },
+    {
+      "resource_title": "Commentary Critical and Explanatory on the Whole Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 30
+    },
+    {
+      "resource_title": "Matthew Henry's Commentary on the Whole Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 21
+    },
+    {
+      "resource_title": "American Commentary on the New Testament",
+      "scope": "New Testament",
+      "covered_chapters": 260,
+      "expected_chapters": 260,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 1
+    }
+  ],
+  "incomplete_families": [
+    {
+      "resource_title": "The Biblical Illustrator",
+      "scope": "Whole Bible",
+      "covered_chapters": 1183,
+      "expected_chapters": 1189,
+      "coverage_percent": 99.5,
+      "missing_chapters": [
+        "Genesis 6",
+        "Jeremiah 10",
+        "Jeremiah 19",
+        "Lamentations 3",
+        "Lamentations 4",
+        "Ezekiel 30"
+      ],
+      "missing_details": [
+        {
+          "reference": "Genesis 6",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open matching Genesis volume needed",
+          "review_notes": "Quarantined because the stored text contains only a verse heading and verse text, not substantive commentary. The original Genesis volume is public domain, but no openly accessible matching scan with verified Genesis 6 boundaries was confirmed in this review. Do not import or display publicly until the exact chapter text is recovered from a verified public-domain edition.",
+          "source_file": "biblical-illustrator-reviewed-genesis-completion-commentary.json"
+        },
+        {
+          "reference": "Jeremiah 10",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open public-domain scan needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 24, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
+          "source_file": "biblical-illustrator-reviewed-weak-books-commentary.json"
+        },
+        {
+          "reference": "Jeremiah 19",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open public-domain scan needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 24, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
+          "source_file": "biblical-illustrator-reviewed-jeremiah-11-52-commentary.json"
+        },
+        {
+          "reference": "Lamentations 3",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open public-domain scan needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 24, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
+          "source_file": "biblical-illustrator-reviewed-weak-books-phase-2-commentary.json"
+        },
+        {
+          "reference": "Lamentations 4",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open public-domain scan needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 24, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
+          "source_file": "biblical-illustrator-reviewed-weak-books-phase-2-commentary.json"
+        },
+        {
+          "reference": "Ezekiel 30",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - open public-domain scan needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 26, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
+          "source_file": "biblical-illustrator-reviewed-ezekiel-13-48-commentary.json"
+        }
+      ],
+      "staged_chapters": [
+        "Ezekiel 30",
+        "Genesis 6",
+        "Jeremiah 10",
+        "Jeremiah 19",
+        "Lamentations 3",
+        "Lamentations 4"
+      ],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 28
+    },
+    {
+      "resource_title": "Barnes' Notes on the Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1188,
+      "expected_chapters": 1189,
+      "coverage_percent": 99.9,
+      "missing_chapters": [
+        "Exodus 37"
+      ],
+      "missing_details": [
+        {
+          "reference": "Exodus 37",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Parser-shifted neighboring note; no chapter-specific Barnes note verified.",
+          "review_notes": "Removed from public import because the stored cross-reference belongs to a neighboring source page and no chapter-specific Barnes note was verified.",
+          "source_file": "barnes-reviewed-phase-5-exodus-commentary.json"
+        }
+      ],
+      "staged_chapters": [
+        "Exodus 37"
+      ],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 18
+    },
+    {
+      "resource_title": "Morgan's Exposition on the Whole Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1186,
+      "expected_chapters": 1189,
+      "coverage_percent": 99.7,
+      "missing_chapters": [
+        "Exodus 39",
+        "Deuteronomy 24",
+        "Psalms 48"
+      ],
+      "missing_details": [
+        {
+          "reference": "Exodus 39",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - matching Morgan source text needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_file": "g-campbell-morgan-reviewed-exodus-commentary.json"
+        },
+        {
+          "reference": "Deuteronomy 24",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - matching Morgan source text needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_file": "g-campbell-morgan-reviewed-deuteronomy-commentary.json"
+        },
+        {
+          "reference": "Psalms 48",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "Blocked - matching Morgan source text needed",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_file": "g-campbell-morgan-reviewed-psalms-commentary.json"
+        }
+      ],
+      "staged_chapters": [
+        "Deuteronomy 24",
+        "Exodus 39",
+        "Psalms 48"
+      ],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 34
+    },
+    {
+      "resource_title": "Wesley's Notes on the Bible / Wesley's Explanatory Notes on the Whole Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1188,
+      "expected_chapters": 1189,
+      "coverage_percent": 99.9,
+      "missing_chapters": [
+        "2 Samuel 24"
+      ],
+      "missing_details": [
+        {
+          "reference": "2 Samuel 24",
+          "review_status": "Needs Review",
+          "import_status": "Staged",
+          "source_recovery_status": "No chapter-specific Wesley note verified; stored text was navigation debris.",
+          "review_notes": "Removed from public import because the independent source contains no Wesley notes for this chapter and the stored text is not commentary.",
+          "source_file": "wesley-reviewed-final-gap-completion-part-2-commentary.json"
+        }
+      ],
+      "staged_chapters": [
+        "2 Samuel 24"
+      ],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 36
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "audit_date": "2026-07-12",
+  "resource_title": "The Pulpit Commentary",
+  "bible_book": "Job",
+  "archive_identifier": "cu31924101104986",
+  "source_url": "https://archive.org/download/cu31924101104986/cu31924101104986_djvu.txt",
+  "local_source_path": "/tmp/pulpit-job-cornell.txt",
+  "source_bytes": 3939869,
+  "source_sha256": "d0b7c86561e176c79bf7e65efdf3b8d4b443cb7621dc9ea6c74035e0315f45fd",
+  "index_line": 58497,
+  "chapter_count": 42,
+  "all_chapters_substantial": true,
+  "ranges_overlap": false,
+  "parser_status": "Verified for staged replacement preparation; no commentary rows written.",
+  "normalization_policy": "The audit preserves source text exactly. Only line ending boundaries and heading whitespace are normalized in report metadata.",
+  "chapters": [
+    {
+      "chapter": 1,
+      "raw_heading": "CHAPTER L",
+      "source_line_start": 1264,
+      "source_line_end": 3917,
+      "characters": 182415,
+      "sha256": "c1d76fc3e633ed40d91f3381c08e239975f58ea8a2161ae5ce8988d68a479d60"
+    },
+    {
+      "chapter": 2,
+      "raw_heading": "CHAPTER n.",
+      "source_line_start": 3918,
+      "source_line_end": 5216,
+      "characters": 86350,
+      "sha256": "1efb6dc1663effae3c9eb37e59ddbe82fbe5ba73e503315b4faf1e2d860c7d4d"
+    },
+    {
+      "chapter": 3,
+      "raw_heading": "CHAPTER III.",
+      "source_line_start": 5217,
+      "source_line_end": 6765,
+      "characters": 100699,
+      "sha256": "5adc35688e52010a34b94bb72f8b1b8b76b6e2f4eceb72502614b390aa559614"
+    },
+    {
+      "chapter": 4,
+      "raw_heading": "CHAPTER rv.",
+      "source_line_start": 6766,
+      "source_line_end": 8213,
+      "characters": 99318,
+      "sha256": "faf8f7bd31b7dd739bc29bd5ac1d922842494c789ea61ecc0c6bd09f4d6fc0dd"
+    },
+    {
+      "chapter": 5,
+      "raw_heading": "CHAPTER V.",
+      "source_line_start": 8214,
+      "source_line_end": 9794,
+      "characters": 103009,
+      "sha256": "127556a8c9a43c16e54728c4d9c55200a8ce2cba7f76f1c312554f536be1d54b"
+    },
+    {
+      "chapter": 6,
+      "raw_heading": "CHAPTER VL",
+      "source_line_start": 9795,
+      "source_line_end": 11307,
+      "characters": 99735,
+      "sha256": "33a011bab788a53827128d4c252d819d91097e81eeeed550febe731dbe250c82"
+    },
+    {
+      "chapter": 7,
+      "raw_heading": "CHAPTBB Vir.",
+      "source_line_start": 11308,
+      "source_line_end": 12841,
+      "characters": 104309,
+      "sha256": "007dcbfd0ccb972a29fc244cd443093d2ae868dd5f608018a69e6c7bba4ce0c1"
+    },
+    {
+      "chapter": 8,
+      "raw_heading": "CHAPTER VUI.",
+      "source_line_start": 12842,
+      "source_line_end": 14108,
+      "characters": 83530,
+      "sha256": "248fbdfef9e2b1f95616afd9c3405a90638da15d2028cbe71cfb0d025efb715e"
+    },
+    {
+      "chapter": 9,
+      "raw_heading": "CHAPTER IX.",
+      "source_line_start": 14109,
+      "source_line_end": 16020,
+      "characters": 126176,
+      "sha256": "18b1098a56303dc1f2c43b1acfd1fe18af568bd26bd1c4943aa6cba1a2f186fc"
+    },
+    {
+      "chapter": 10,
+      "raw_heading": "CHAPTER X.",
+      "source_line_start": 16021,
+      "source_line_end": 17373,
+      "characters": 91545,
+      "sha256": "d040d327240ef67a17f863c8714d7a7cbfb57f76e89376ae41542b3cc3d5c540"
+    },
+    {
+      "chapter": 11,
+      "raw_heading": "OHAPTEE XL",
+      "source_line_start": 17374,
+      "source_line_end": 18699,
+      "characters": 90302,
+      "sha256": "8ab3b4cecaf6c066d69bfca36bd31cf5b58549bab78a3635d80ddbdf8e98519f"
+    },
+    {
+      "chapter": 12,
+      "raw_heading": "OHAPTEK Xn.",
+      "source_line_start": 18700,
+      "source_line_end": 20085,
+      "characters": 92029,
+      "sha256": "5752772c66ab89ac4213188e3316a0100afbded8a341f5ecc0bbb07e4658b131"
+    },
+    {
+      "chapter": 13,
+      "raw_heading": "CHAPTER XIII.",
+      "source_line_start": 20086,
+      "source_line_end": 21563,
+      "characters": 99036,
+      "sha256": "30c749ac4ce7ab06d777e3eaf5af0c79e3b332b2eaab91dced1d6fc78681d2c3"
+    },
+    {
+      "chapter": 14,
+      "raw_heading": "CHAPTER XTV.",
+      "source_line_start": 21564,
+      "source_line_end": 23055,
+      "characters": 99741,
+      "sha256": "ca42959a53d309a11df67aa75ccce4c0b9c0cda7c54175d931f3a17a90d14fa2"
+    },
+    {
+      "chapter": 15,
+      "raw_heading": "CHAPTEE XV.",
+      "source_line_start": 23056,
+      "source_line_end": 24688,
+      "characters": 108008,
+      "sha256": "1a2b81301c24fb66aba07db611910de05b56d7135a79f701f2b227ef32c5be91"
+    },
+    {
+      "chapter": 16,
+      "raw_heading": "CHAPTER XVL",
+      "source_line_start": 24689,
+      "source_line_end": 25928,
+      "characters": 83346,
+      "sha256": "c81a2490d8bec5622ee161b1b05c7c53240b97cb2a6db29438af8b3dbc9b5c57"
+    },
+    {
+      "chapter": 17,
+      "raw_heading": "CHAPTER XVn.",
+      "source_line_start": 25929,
+      "source_line_end": 27003,
+      "characters": 73953,
+      "sha256": "3e965f9284e270cd75a7ddf9e0f14ee24df848583171701608898da7204519f7"
+    },
+    {
+      "chapter": 18,
+      "raw_heading": "CHAPTER XVIII.",
+      "source_line_start": 27004,
+      "source_line_end": 28030,
+      "characters": 68641,
+      "sha256": "b11fe2ae94c997b126a0b5279a286b690be7978964b9d8560b00a2ce9d72747e"
+    },
+    {
+      "chapter": 19,
+      "raw_heading": "OHAPTEB XIX.",
+      "source_line_start": 28031,
+      "source_line_end": 29620,
+      "characters": 109532,
+      "sha256": "de4dce7b3b32aedece22b11dff268cd4ad36f4f9632d7ac6a1b62157ccae58ac"
+    },
+    {
+      "chapter": 20,
+      "raw_heading": "OHAPTEB XX.",
+      "source_line_start": 29621,
+      "source_line_end": 30874,
+      "characters": 83733,
+      "sha256": "f4ae08bacd38bf28b886702e45a5cac7209e85d7ecf22f683e86934d5cd8c20d"
+    },
+    {
+      "chapter": 21,
+      "raw_heading": "CHAPTER XXL",
+      "source_line_start": 30875,
+      "source_line_end": 32279,
+      "characters": 89199,
+      "sha256": "4f62ba3368630f7e155a42a9790a684e186d1fc4f523c283ce3e0e3e5498c2dd"
+    },
+    {
+      "chapter": 22,
+      "raw_heading": "CHAPTER XXII.",
+      "source_line_start": 32280,
+      "source_line_end": 34053,
+      "characters": 124377,
+      "sha256": "d5bcb21bd4a767a0104181599e530a8a48cf38c986e7260211db8e58720c917c"
+    },
+    {
+      "chapter": 23,
+      "raw_heading": "CHAPTEE XXIIL",
+      "source_line_start": 34054,
+      "source_line_end": 35316,
+      "characters": 91197,
+      "sha256": "996e337f95aa27dd12237ad6229426e6cd4ca169378c495d3c2f09e7a7b687ea"
+    },
+    {
+      "chapter": 24,
+      "raw_heading": "CHAPTEB XXrV.",
+      "source_line_start": 35317,
+      "source_line_end": 36618,
+      "characters": 87394,
+      "sha256": "6c210309135c7d701e8ce1672b14981b7d2840ab93aba01c3748611f28d5e09c"
+    },
+    {
+      "chapter": 25,
+      "raw_heading": "CHAPTER XXV.",
+      "source_line_start": 36619,
+      "source_line_end": 37083,
+      "characters": 34131,
+      "sha256": "67aac0a6a932d6b6fd9df381d32cf368c5f4520c3607191c381d3a8cf547704b"
+    },
+    {
+      "chapter": 26,
+      "raw_heading": "r APTBH XXVL",
+      "source_line_start": 37084,
+      "source_line_end": 38007,
+      "characters": 62848,
+      "sha256": "a9452aab577d59b22acc2e6be269176627f372f1a7f6d37c0e205be62b339d09"
+    },
+    {
+      "chapter": 27,
+      "raw_heading": "CHAPTER XXVII.",
+      "source_line_start": 38008,
+      "source_line_end": 39322,
+      "characters": 87354,
+      "sha256": "3036dd0b66f8ae25505120ec06881802b2ee530feefc9d6a8f7a14786a94dc08"
+    },
+    {
+      "chapter": 28,
+      "raw_heading": "CHAPTER XXVin.",
+      "source_line_start": 39323,
+      "source_line_end": 40712,
+      "characters": 87066,
+      "sha256": "7ac1a0cb97e62ca233a5d3bf5643963543ae5ee4afd79f84b55a92987d58b169"
+    },
+    {
+      "chapter": 29,
+      "raw_heading": "CHAPTER XXIX.",
+      "source_line_start": 40713,
+      "source_line_end": 41809,
+      "characters": 73847,
+      "sha256": "d73c84a6a7527ab82932a287dd64618629dd453836de360ab024c0abc765ca3e"
+    },
+    {
+      "chapter": 30,
+      "raw_heading": "CHAPTER XXX.",
+      "source_line_start": 41810,
+      "source_line_end": 43140,
+      "characters": 85345,
+      "sha256": "78ba487d495009d73de50be58767760c5f93f53d676902d5e3672718cffb0c19"
+    },
+    {
+      "chapter": 31,
+      "raw_heading": "CHAPTER XXXL",
+      "source_line_start": 43141,
+      "source_line_end": 44935,
+      "characters": 119470,
+      "sha256": "1926d0b8a71803ca12ee609a6e9107a4583fe999f37e798c3f130734ff0a69f0"
+    },
+    {
+      "chapter": 32,
+      "raw_heading": "CHAPTEK XXXII.",
+      "source_line_start": 44936,
+      "source_line_end": 46110,
+      "characters": 81113,
+      "sha256": "10d102f04712a47f0b3014b8b5daf3b322d382b3d8e8e36e73434830ec34af95"
+    },
+    {
+      "chapter": 33,
+      "raw_heading": "OHAPTBE XXXIII.",
+      "source_line_start": 46111,
+      "source_line_end": 47432,
+      "characters": 86319,
+      "sha256": "d82a93e5b0de33a071052e23517d495f065328f75d868465fe1710a22365a84d"
+    },
+    {
+      "chapter": 34,
+      "raw_heading": "CHAPTEK XXXIV.",
+      "source_line_start": 47433,
+      "source_line_end": 48806,
+      "characters": 86199,
+      "sha256": "cee39c6416ce2bd5431194d95f1a5b70cb1e95a01f6f70ec2ba605dfed0c47f7"
+    },
+    {
+      "chapter": 35,
+      "raw_heading": "CHAPTER XXXV.",
+      "source_line_start": 48807,
+      "source_line_end": 49705,
+      "characters": 62611,
+      "sha256": "25b0ffe7e0c131e34ebabf6fffdbd37400b34c49348bec47b60ca5091f20552b"
+    },
+    {
+      "chapter": 36,
+      "raw_heading": "CHAPTER XXXVL",
+      "source_line_start": 49706,
+      "source_line_end": 51423,
+      "characters": 121294,
+      "sha256": "1d6ac70ae66d95dbdf53a617c05cd0c150e63d492fe0f3c6540a2928b95fa220"
+    },
+    {
+      "chapter": 37,
+      "raw_heading": "CHAPTER XXXVII.",
+      "source_line_start": 51424,
+      "source_line_end": 52391,
+      "characters": 61163,
+      "sha256": "deeb5be2127fd952ed6ed009180a950509e7b043ce7333e3d899c17e58c65305"
+    },
+    {
+      "chapter": 38,
+      "raw_heading": "CHAPTER XXXVni.",
+      "source_line_start": 52392,
+      "source_line_end": 54363,
+      "characters": 128834,
+      "sha256": "4c660024a6ad01d3f710f5d5a85909abc1cf3fba5b70affa86e6367ee4bd374f"
+    },
+    {
+      "chapter": 39,
+      "raw_heading": "CHAPTER XXXIX.",
+      "source_line_start": 54364,
+      "source_line_end": 55342,
+      "characters": 57399,
+      "sha256": "b7ec4e75777ed5e5d0e6d4863280960bcc62732d08bec9780d3f74b843fae4b9"
+    },
+    {
+      "chapter": 40,
+      "raw_heading": "CHAPTER XL.",
+      "source_line_start": 55343,
+      "source_line_end": 56483,
+      "characters": 74029,
+      "sha256": "a99d1f14fc672f81eaf98c58f02d33edf1ee0081b8f1872187648ae38672fcbf"
+    },
+    {
+      "chapter": 41,
+      "raw_heading": "CHAPTER XLl.",
+      "source_line_start": 56484,
+      "source_line_end": 57345,
+      "characters": 46865,
+      "sha256": "9c01760e7b2fa157d202e5dbba512749f4b20bd41811b031fd7393f0154e7620"
+    },
+    {
+      "chapter": 42,
+      "raw_heading": "OHAPTBK XLn.",
+      "source_line_start": 57346,
+      "source_line_end": 58496,
+      "characters": 78645,
+      "sha256": "7848330daba1ed9de608c369c742f6995c1a358332bda266a9933d509f5f4148"
+    }
+  ]
+}
