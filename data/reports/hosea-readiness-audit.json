@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T18:15:33.818Z",
+  "generated_at": "2026-07-13T18:45:47.458Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 823,
     "coveragePercent": 90.8,
-    "reviewedOverlayWords": 538,
+    "reviewedOverlayWords": 541,
     "wordsWithBibleDictionaryFallback": 53,
     "unresolvedWords": [
       {
@@ -385,20 +385,6 @@
     ],
     "dirtyBaseEntries": [
       {
-        "word": "calves",
-        "count": 3,
-        "sampleRefs": [
-          "Hosea 10:5",
-          "Hosea 13:2",
-          "Hosea 14:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "C'ALVE"
-      },
-      {
         "word": "solemn",
         "count": 3,
         "sampleRefs": [
@@ -411,20 +397,6 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "SOLEMN"
-      },
-      {
-        "word": "transgressed",
-        "count": 3,
-        "sampleRefs": [
-          "Hosea 6:7",
-          "Hosea 7:13",
-          "Hosea 8:1"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TRANSGRESSED"
       },
       {
         "word": "arms",
@@ -1117,6 +1089,30 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
+      },
+      {
+        "word": "languish",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "LAN'GUISH"
+      },
+      {
+        "word": "lily",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 14:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "LIL'Y"
       }
     ]
   },

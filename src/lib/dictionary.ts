@@ -67,6 +67,7 @@ const dictionaryAliases: Record<string, string> = {
   sworn: "swear",
   greater: "great",
   branches: "branch",
+  calves: "calf",
   moved: "move",
   asses: "ass",
   smitten: "smite",
@@ -213,6 +214,7 @@ const dictionaryAliases: Record<string, string> = {
   prophecies: "prophecy",
   prophets: "prophecy",
   prophesied: "prophecy",
+  transgressed: "transgress",
   transgressions: "transgression",
   visions: "vision",
   prayed: "pray",
@@ -246,7 +248,7 @@ function dictionaryLookupCandidates(value: string) {
   const cleaned = cleanDictionaryWord(value);
   if (!cleaned) return [];
 
-  const candidates = [cleaned, normalizeDictionaryWord(cleaned)];
+  const candidates = [normalizeDictionaryWord(cleaned), cleaned];
   const suffixRules: Array<[RegExp, string]> = [
     [/eth$/, ""],
     [/est$/, ""],

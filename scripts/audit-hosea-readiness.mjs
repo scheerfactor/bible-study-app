@@ -16,12 +16,12 @@ const stopWords = new Set(
 const aliases = {
   hath: "have", hast: "have", hadst: "have", saith: "say", saidst: "say", saying: "say",
   shalt: "shall", spake: "speak", speaketh: "speak", speakest: "speak", spoken: "speak",
-  branches: "branch", brethren: "brother", carried: "carry", committed: "commit", dealt: "deal",
+  branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", dealt: "deal",
   did: "do", didst: "do", died: "die", doth: "do", drew: "draw", dwelt: "dwell",
   dwelleth: "dwell", fishes: "fish", fortresses: "fortress", goeth: "go", known: "know",
   mercies: "mercy", merciful: "mercy", oxen: "ox", prevailed: "prevail", rebelled: "rebel",
   saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
-  surely: "sure", sware: "swear", sworn: "swear", took: "take", transgressions: "transgression",
+  surely: "sure", sware: "swear", sworn: "swear", took: "take", transgressed: "transgress", transgressions: "transgression",
   would: "will", wouldest: "will", begotten: "beget",
 };
 
@@ -43,8 +43,7 @@ function percent(value, total) {
 function lookupCandidates(value) {
   const word = normalize(value);
   if (!word) return [];
-  const candidates = [word];
-  if (aliases[word]) candidates.push(aliases[word]);
+  const candidates = aliases[word] ? [aliases[word], word] : [word];
   for (const [pattern, replacement] of [[/eth$/, ""], [/est$/, ""], [/ies$/, "y"], [/ing$/, ""], [/ed$/, ""], [/s$/, ""]]) {
     if (!pattern.test(word)) continue;
     const candidate = word.replace(pattern, replacement);
