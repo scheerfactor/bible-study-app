@@ -1,14 +1,14 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-13T18:45:47.458Z
+Generated: 2026-07-13T19:17:12.293Z
 
 Status: **ready_with_documented_depth_gaps**
 
 ## Verified Coverage
 
 - KJV: 14/14 chapters and 197/197 verses.
-- Webster 1828: 823/906 meaningful unique words have a lookup (90.8%).
-- Bible-dictionary fallback: 53 additional Webster gaps have Easton or Nave help, chiefly names and places.
+- Webster 1828: 830/906 meaningful unique words have a lookup (91.6%).
+- Supplemental fallback: 55 additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.
 - Strong's: 14/14 chapters, 159/197 verses, 481 reviewed word mappings, and 0 missing lexicon cards.
 - TSK: 14/14 chapters, 73/197 source verses, and 145 public cross-reference rows.
 - Commentary: 11 full-book sets load immediately in the app; 11 verified full-book sets exist locally.
@@ -36,35 +36,26 @@ These are retained as review work, not filled with invented definitions.
 | Word | Uses | Sample references |
 | --- | ---: | --- |
 | assyrian | 2 | Hosea 5:13; Hosea 11:5 |
-| jareb | 2 | Hosea 5:13; Hosea 10:6 |
 | accepteth | 1 | Hosea 8:13 |
 | assyrians | 1 | Hosea 12:1 |
 | avenge | 1 | Hosea 1:4 |
-| chimney | 1 | Hosea 13:3 |
-| committest | 1 | Hosea 5:3 |
 | committing | 1 | Hosea 4:2 |
 | compasseth | 1 | Hosea 11:12 |
 | craftsmen | 1 | Hosea 13:2 |
 | firstripe | 1 | Hosea 9:10 |
 | forgat | 1 | Hosea 2:13 |
 | fruitful | 1 | Hosea 13:15 |
-| horsemen | 1 | Hosea 1:7 |
 | imagine | 1 | Hosea 7:15 |
-| miscarrying | 1 | Hosea 9:14 |
 | oppress | 1 | Hosea 12:7 |
 | prevailed | 1 | Hosea 12:4 |
-| rebuker | 1 | Hosea 5:2 |
 | recompence | 1 | Hosea 9:7 |
 | reject | 1 | Hosea 4:6 |
 | shamefully | 1 | Hosea 2:5 |
 | silly | 1 | Hosea 7:11 |
-| taken | 1 | Hosea 4:3 |
 | testifieth | 1 | Hosea 7:10 |
 | thief | 1 | Hosea 7:1 |
-| thyself | 1 | Hosea 13:9 |
 | tyrus | 1 | Hosea 9:13 |
 | wanderers | 1 | Hosea 9:17 |
-| yourselves | 1 | Hosea 10:12 |
 
 ## Remaining Depth Work
 

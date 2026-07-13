@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T18:45:47.458Z",
+  "generated_at": "2026-07-13T19:17:12.293Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -15,10 +15,10 @@
     "meaningfulUniqueWords": 906
   },
   "webster1828": {
-    "wordsWithDefinition": 823,
-    "coveragePercent": 90.8,
-    "reviewedOverlayWords": 541,
-    "wordsWithBibleDictionaryFallback": 53,
+    "wordsWithDefinition": 830,
+    "coveragePercent": 91.6,
+    "reviewedOverlayWords": 547,
+    "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
         "word": "assyrian",
@@ -26,19 +26,6 @@
         "sampleRefs": [
           "Hosea 5:13",
           "Hosea 11:5"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "jareb",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 5:13",
-          "Hosea 10:6"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -75,30 +62,6 @@
         "count": 1,
         "sampleRefs": [
           "Hosea 1:4"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "chimney",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:3"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "committest",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:3"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -179,34 +142,10 @@
         "sourceHeadword": null
       },
       {
-        "word": "horsemen",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 1:7"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "imagine",
         "count": 1,
         "sampleRefs": [
           "Hosea 7:15"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "miscarrying",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:14"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -231,18 +170,6 @@
         "count": 1,
         "sampleRefs": [
           "Hosea 12:4"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "rebuker",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:2"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -299,18 +226,6 @@
         "sourceHeadword": null
       },
       {
-        "word": "taken",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:3"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "testifieth",
         "count": 1,
         "sampleRefs": [
@@ -335,18 +250,6 @@
         "sourceHeadword": null
       },
       {
-        "word": "thyself",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:9"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "tyrus",
         "count": 1,
         "sampleRefs": [
@@ -363,18 +266,6 @@
         "count": 1,
         "sampleRefs": [
           "Hosea 9:17"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "yourselves",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:12"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,

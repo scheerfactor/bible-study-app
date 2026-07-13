@@ -16,13 +16,13 @@ const stopWords = new Set(
 const aliases = {
   hath: "have", hast: "have", hadst: "have", saith: "say", saidst: "say", saying: "say",
   shalt: "shall", spake: "speak", speaketh: "speak", speakest: "speak", spoken: "speak",
-  branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", dealt: "deal",
+  branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", committest: "commit", dealt: "deal",
   did: "do", didst: "do", died: "die", doth: "do", drew: "draw", dwelt: "dwell",
-  dwelleth: "dwell", fishes: "fish", fortresses: "fortress", goeth: "go", known: "know",
+  dwelleth: "dwell", fishes: "fish", fortresses: "fortress", goeth: "go", horsemen: "horseman", known: "know",
   mercies: "mercy", merciful: "mercy", oxen: "ox", prevailed: "prevail", rebelled: "rebel",
-  saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
-  surely: "sure", sware: "swear", sworn: "swear", took: "take", transgressed: "transgress", transgressions: "transgression",
-  would: "will", wouldest: "will", begotten: "beget",
+  rebuker: "rebuke", saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
+  surely: "sure", sware: "swear", sworn: "swear", taken: "take", thyself: "self", took: "take", transgressed: "transgress", transgressions: "transgression",
+  would: "will", wouldest: "will", yourselves: "self", begotten: "beget",
 };
 
 const dirtyPatterns = [
@@ -90,8 +90,10 @@ for (const [reference, text] of hoseaVerses) {
 const meaningfulWords = [...wordStats.values()].sort((a, b) => b.count - a.count || a.word.localeCompare(b.word));
 const reviewedWebster = await readJson("data/generated/websters-1828-reviewed-overrides.json", []);
 const baseWebster = await readJson("data/generated/websters-1828.entries.json", []);
+const rareTermEntries = await readJson("data/generated/kjv-rare-term-reviewed-overrides.json", []);
+const rareWebsterEntries = rareTermEntries.filter((entry) => /american dictionary|webster/i.test(entry.source_title ?? ""));
 const websterByHeadword = new Map();
-for (const entry of [...reviewedWebster, ...baseWebster]) {
+for (const entry of [...reviewedWebster, ...rareWebsterEntries, ...baseWebster]) {
   const key = normalize(entry.normalized_headword || entry.headword);
   if (key && !websterByHeadword.has(key)) websterByHeadword.set(key, entry);
 }
@@ -100,11 +102,12 @@ const eastonEntries = await readJson("data/generated/eastons-bible-dictionary.en
 const eastonHeadwords = new Set(eastonEntries.map((entry) => normalize(entry.normalized_headword || entry.headword)).filter(Boolean));
 const naveTopics = await readJson("data/generated/naves-topical-bible.topics.json", []);
 const naveHeadwords = new Set(naveTopics.map((entry) => normalize(entry.normalized_topic || entry.topic)).filter(Boolean));
+const rareTermHeadwords = new Set(rareTermEntries.map((entry) => normalize(entry.normalized_headword || entry.headword)).filter(Boolean));
 
 const dictionaryRows = meaningfulWords.map((stat) => {
   const candidates = lookupCandidates(stat.word);
   const entry = candidates.map((candidate) => websterByHeadword.get(candidate)).find(Boolean) ?? null;
-  const hasBibleDictionaryHelp = candidates.some((candidate) => eastonHeadwords.has(candidate) || naveHeadwords.has(candidate));
+  const hasBibleDictionaryHelp = candidates.some((candidate) => eastonHeadwords.has(candidate) || naveHeadwords.has(candidate) || rareTermHeadwords.has(candidate));
   const dirty = Boolean(entry && entry.review_status !== "reviewed_overlay" && dirtyPatterns.some((pattern) => pattern.test(entry.definition ?? "")));
   return { ...stat, hasWebster: Boolean(entry), reviewedOverlay: entry?.review_status === "reviewed_overlay", hasBibleDictionaryHelp, dirty, sourceHeadword: entry?.headword ?? null };
 });
@@ -198,7 +201,7 @@ const markdown = [
   "",
   `- KJV: ${report.kjv.chapters}/14 chapters and ${report.kjv.verses}/${expectedVerseCount} verses.`,
   `- Webster 1828: ${report.webster1828.wordsWithDefinition}/${report.kjv.meaningfulUniqueWords} meaningful unique words have a lookup (${report.webster1828.coveragePercent}%).`,
-  `- Bible-dictionary fallback: ${report.webster1828.wordsWithBibleDictionaryFallback} additional Webster gaps have Easton or Nave help, chiefly names and places.`,
+  `- Supplemental fallback: ${report.webster1828.wordsWithBibleDictionaryFallback} additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.`,
   `- Strong's: ${report.strongs.chapters}/14 chapters, ${report.strongs.verses}/${expectedVerseCount} verses, ${report.strongs.rows} reviewed word mappings, and ${report.strongs.missingLexiconNumbers.length} missing lexicon cards.`,
   `- TSK: ${report.tsk.chapters}/14 chapters, ${report.tsk.sourceVerses}/${expectedVerseCount} source verses, and ${report.tsk.rows} public cross-reference rows.`,
   `- Commentary: ${report.commentary.immediateFullBookSets} full-book sets load immediately in the app; ${report.commentary.fullBookSets} verified full-book sets exist locally.`,
