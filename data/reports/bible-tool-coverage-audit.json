@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T23:23:36.432Z",
+    "generated_at": "2026-07-13T23:32:24.046Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59840,
+      "entries": 59841,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7788,
       "meaningfulWordsWithoutDefinition": 4666,
@@ -1890,28 +1890,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "arm",
-          "count": 67,
-          "sampleRefs": [
-            "Exodus 6:6",
-            "Exodus 15:16",
-            "Numbers 31:3",
-            "Deuteronomy 4:34",
-            "Deuteronomy 5:15"
-          ],
-          "lookupCandidates": [
-            "arm"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ARM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "endureth",
           "count": 59,
           "sampleRefs": [
@@ -3638,6 +3616,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HAT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hot",
+          "count": 31,
+          "sampleRefs": [
+            "Exodus 16:21",
+            "Exodus 22:24",
+            "Exodus 32:10",
+            "Exodus 32:11",
+            "Exodus 32:19"
+          ],
+          "lookupCandidates": [
+            "hot"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HOT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10417,28 +10417,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "arm",
-        "count": 67,
-        "sampleRefs": [
-          "Exodus 6:6",
-          "Exodus 15:16",
-          "Numbers 31:3",
-          "Deuteronomy 4:34",
-          "Deuteronomy 5:15"
-        ],
-        "lookupCandidates": [
-          "arm"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ARM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "endureth",
         "count": 59,
         "sampleRefs": [
@@ -12165,6 +12143,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HAT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hot",
+        "count": 31,
+        "sampleRefs": [
+          "Exodus 16:21",
+          "Exodus 22:24",
+          "Exodus 32:10",
+          "Exodus 32:11",
+          "Exodus 32:19"
+        ],
+        "lookupCandidates": [
+          "hot"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HOT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

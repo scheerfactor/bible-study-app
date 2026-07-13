@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T23:23:33.303Z",
+  "generated_at": "2026-07-13T23:32:20.860Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 576,
+    "reviewedOverlayWords": 577,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -71,19 +71,6 @@
       }
     ],
     "dirtyBaseEntries": [
-      {
-        "word": "arms",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 7:15",
-          "Hosea 11:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "ARM"
-      },
       {
         "word": "allure",
         "count": 1,
@@ -791,6 +778,18 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "OAK"
+      },
+      {
+        "word": "obtained",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:23"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "OBTA'INED"
       }
     ]
   },
