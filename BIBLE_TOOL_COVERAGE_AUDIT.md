@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T16:38:59.017Z
+Generated: 2026-07-13T16:46:38.257Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,758/12,454 meaningful KJV words have a lookup candidate (62.3%).
-- Combined word/topic lookup: 10,745/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.3%).
+- Webster 1828: 7,761/12,454 meaningful KJV words have a lookup candidate (62.3%).
+- Combined word/topic lookup: 10,748/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.3%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,013 source verses.
 - Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -119,7 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | arm | ARM | 67 | ocr_full_import_needs_spot_review |
 | endureth | ENDU'RE | 59 | ocr_full_import_needs_spot_review |
 | officers | OF'FICER | 58 | ocr_full_import_needs_spot_review |
-| fowls | FOWL | 55 | ocr_full_import_needs_spot_review |
 | wonders | WONDER | 55 | ocr_full_import_needs_spot_review |
 | sockets | SOCK'ET | 54 | ocr_full_import_needs_spot_review |
 | instruments | IN'STRUMENT | 51 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | tears | TEAR | 36 | ocr_full_import_needs_spot_review |
 | means | MEAN | 35 | ocr_full_import_needs_spot_review |
 | overlaid | OVERLA'ID | 35 | ocr_full_import_needs_spot_review |
+| use | USE | 35 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

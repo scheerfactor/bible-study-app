@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T16:38:59.017Z",
+    "generated_at": "2026-07-13T16:46:38.257Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,10 +10,10 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59799,
-      "normalizedHeadwords": 50988,
-      "meaningfulWordsWithDefinition": 7758,
-      "meaningfulWordsWithoutDefinition": 4696,
+      "entries": 59802,
+      "normalizedHeadwords": 50989,
+      "meaningfulWordsWithDefinition": 7761,
+      "meaningfulWordsWithoutDefinition": 4693,
       "meaningfulDefinitionCoveragePercent": 62.3,
       "topUsedWordsNeedingDefinition": [
         {
@@ -1960,30 +1960,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "fowls",
-          "count": 55,
-          "sampleRefs": [
-            "Genesis 6:7",
-            "Genesis 6:20",
-            "Genesis 7:3",
-            "Genesis 7:8",
-            "Genesis 15:11"
-          ],
-          "lookupCandidates": [
-            "fowls",
-            "fowl",
-            "fowle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOWL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wonders",
           "count": 55,
           "sampleRefs": [
@@ -3468,28 +3444,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "punish",
-          "count": 32,
-          "sampleRefs": [
-            "Leviticus 26:18",
-            "Leviticus 26:24",
-            "Proverbs 17:26",
-            "Isaiah 10:12",
-            "Isaiah 13:11"
-          ],
-          "lookupCandidates": [
-            "punish"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PUNISH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "reap",
           "count": 32,
           "sampleRefs": [
@@ -3642,6 +3596,52 @@
           "dirtyDefinition": true,
           "sourceHeadword": "AD'AM",
           "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "certainly",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 18:10",
+            "Genesis 26:28",
+            "Genesis 43:7",
+            "Genesis 44:15",
+            "Genesis 50:15"
+          ],
+          "lookupCandidates": [
+            "certainly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CER'TAINLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "crying",
+          "count": 31,
+          "sampleRefs": [
+            "1 Samuel 4:14",
+            "2 Samuel 13:19",
+            "Job 39:7",
+            "Psalms 69:3",
+            "Proverbs 19:18"
+          ],
+          "lookupCandidates": [
+            "crying",
+            "cry",
+            "crye"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CRY'ING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
     },
@@ -3651,7 +3651,7 @@
       "rareTermEntries": 25,
       "meaningfulWordsWithEastonEntry": 4051,
       "meaningfulWordsWithNaveTopic": 3938,
-      "meaningfulWordsWithAnyStudyLookup": 10745,
+      "meaningfulWordsWithAnyStudyLookup": 10748,
       "combinedStudyLookupCoveragePercent": 86.3,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
@@ -10494,30 +10494,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "fowls",
-        "count": 55,
-        "sampleRefs": [
-          "Genesis 6:7",
-          "Genesis 6:20",
-          "Genesis 7:3",
-          "Genesis 7:8",
-          "Genesis 15:11"
-        ],
-        "lookupCandidates": [
-          "fowls",
-          "fowl",
-          "fowle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOWL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wonders",
         "count": 55,
         "sampleRefs": [
@@ -12002,28 +11978,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "punish",
-        "count": 32,
-        "sampleRefs": [
-          "Leviticus 26:18",
-          "Leviticus 26:24",
-          "Proverbs 17:26",
-          "Isaiah 10:12",
-          "Isaiah 13:11"
-        ],
-        "lookupCandidates": [
-          "punish"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PUNISH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "reap",
         "count": 32,
         "sampleRefs": [
@@ -12175,6 +12129,52 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "AD'AM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "certainly",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 18:10",
+          "Genesis 26:28",
+          "Genesis 43:7",
+          "Genesis 44:15",
+          "Genesis 50:15"
+        ],
+        "lookupCandidates": [
+          "certainly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CER'TAINLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "crying",
+        "count": 31,
+        "sampleRefs": [
+          "1 Samuel 4:14",
+          "2 Samuel 13:19",
+          "Job 39:7",
+          "Psalms 69:3",
+          "Proverbs 19:18"
+        ],
+        "lookupCandidates": [
+          "crying",
+          "cry",
+          "crye"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CRY'ING",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
