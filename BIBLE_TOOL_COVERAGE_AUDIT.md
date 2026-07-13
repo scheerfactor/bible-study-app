@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T23:32:24.046Z
+Generated: 2026-07-13T23:37:38.241Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -123,7 +123,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | instruments | IN'STRUMENT | 51 | ocr_full_import_needs_spot_review |
 | camels | CAM'EL | 50 | ocr_full_import_needs_spot_review |
 | sinners | SIN'NER | 48 | ocr_full_import_needs_spot_review |
-| bands | BAND | 46 | ocr_full_import_needs_spot_review |
 | towns | TOWN | 45 | ocr_full_import_needs_spot_review |
 | rings | RING | 44 | ocr_full_import_needs_spot_review |
 | justified | JUST'IFY | 43 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | array | ARRA'Y | 34 | ocr_full_import_needs_spot_review |
 | deceived | DECE'IVE | 34 | ocr_full_import_needs_spot_review |
 | flame | FLAME | 34 | ocr_full_import_needs_spot_review |
+| likeness | LI'KENESS | 34 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

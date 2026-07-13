@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T23:32:20.860Z",
+  "generated_at": "2026-07-13T23:37:35.133Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 577,
+    "reviewedOverlayWords": 583,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -72,42 +72,6 @@
     ],
     "dirtyBaseEntries": [
       {
-        "word": "allure",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ALLU'RE"
-      },
-      {
-        "word": "assemble",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ASSEM'BLE"
-      },
-      {
-        "word": "attain",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ATTA'IN"
-      },
-      {
         "word": "aven",
         "count": 1,
         "sampleRefs": [
@@ -118,42 +82,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
-      },
-      {
-        "word": "balances",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "BAL'ANCE"
-      },
-      {
-        "word": "bands",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "BAND"
-      },
-      {
-        "word": "birth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "BIRTH"
       },
       {
         "word": "bitterly",
@@ -790,6 +718,78 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "OBTA'INED"
+      },
+      {
+        "word": "offend",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:15"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "OFFEND'"
+      },
+      {
+        "word": "plow",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "PLOW"
+      },
+      {
+        "word": "poplars",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "POPLAR"
+      },
+      {
+        "word": "preserved",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PRESERVED"
+      },
+      {
+        "word": "profound",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PROFOUND'"
+      },
+      {
+        "word": "prudent",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 14:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PRU'DENT"
       }
     ]
   },

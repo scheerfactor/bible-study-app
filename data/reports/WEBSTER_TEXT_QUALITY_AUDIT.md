@@ -1,13 +1,13 @@
 # Webster 1828 Text Quality Audit
 
-Generated: 2026-07-13T23:32:21.932Z
+Generated: 2026-07-13T23:37:36.177Z
 
 This audit looks for scan/OCR patterns in the structured Webster 1828 data. It does not change Webster's wording. It helps us decide which entries need reviewed overlays or safe display-time cleanup before users rely on them for Bible study.
 
 ## Summary
 
 - Webster base entries: 58,428
-- Reviewed overlays: 1,413
+- Reviewed overlays: 1,419
 - Entries with any quality flag: 22,443
 - Entries with high/medium quality flags: 4,255
 

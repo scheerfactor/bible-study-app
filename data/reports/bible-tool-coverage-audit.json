@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T23:32:24.046Z",
+    "generated_at": "2026-07-13T23:37:38.241Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59841,
+      "entries": 59847,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7788,
       "meaningfulWordsWithoutDefinition": 4666,
@@ -2058,30 +2058,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "bands",
-          "count": 46,
-          "sampleRefs": [
-            "Genesis 32:7",
-            "Genesis 32:10",
-            "Leviticus 26:13",
-            "Judges 15:14",
-            "2 Samuel 4:2"
-          ],
-          "lookupCandidates": [
-            "bands",
-            "band",
-            "bande"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BAND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "towns",
           "count": 45,
           "sampleRefs": [
@@ -3638,6 +3614,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HOT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "line",
+          "count": 31,
+          "sampleRefs": [
+            "Joshua 2:18",
+            "Joshua 2:21",
+            "2 Samuel 8:2",
+            "2 Samuel 8:2",
+            "1 Kings 7:15"
+          ],
+          "lookupCandidates": [
+            "line"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LINE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10585,30 +10583,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "bands",
-        "count": 46,
-        "sampleRefs": [
-          "Genesis 32:7",
-          "Genesis 32:10",
-          "Leviticus 26:13",
-          "Judges 15:14",
-          "2 Samuel 4:2"
-        ],
-        "lookupCandidates": [
-          "bands",
-          "band",
-          "bande"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BAND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "towns",
         "count": 45,
         "sampleRefs": [
@@ -12165,6 +12139,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HOT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "line",
+        "count": 31,
+        "sampleRefs": [
+          "Joshua 2:18",
+          "Joshua 2:21",
+          "2 Samuel 8:2",
+          "2 Samuel 8:2",
+          "1 Kings 7:15"
+        ],
+        "lookupCandidates": [
+          "line"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LINE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
