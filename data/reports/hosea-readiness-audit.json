@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T22:55:24.113Z",
+  "generated_at": "2026-07-13T23:23:33.303Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 572,
+    "reviewedOverlayWords": 576,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -83,45 +83,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "ARM"
-      },
-      {
-        "word": "spouses",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 4:13",
-          "Hosea 4:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SPOUSE"
-      },
-      {
-        "word": "strive",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 4:4",
-          "Hosea 4:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "STRIVE"
-      },
-      {
-        "word": "whoring",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 4:12",
-          "Hosea 9:1"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "WHORE"
       },
       {
         "word": "allure",
@@ -794,6 +755,42 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "MIX'ED"
+      },
+      {
+        "word": "murder",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 6:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "MUR'DER"
+      },
+      {
+        "word": "murderer",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MUR'DERER"
+      },
+      {
+        "word": "oaks",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "OAK"
       }
     ]
   },
