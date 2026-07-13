@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T21:51:28.536Z
+Generated: 2026-07-13T22:03:27.799Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -10,7 +10,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 7,788/12,454 meaningful KJV words have a lookup candidate (62.5%).
 - Combined word/topic lookup: 10,775/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.5%).
-- Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,017 source verses.
+- Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,019 source verses.
 - Strong's KJV word mapping: 12,053/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
 - TSK: 6,118 public rows cover 1189/1189 chapters (100%).
@@ -150,7 +150,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | 3 John | 1 | 1 | 100% | 14 | 281 |
 | 2 John | 1 | 1 | 100% | 13 | 294 |
 | Philemon | 1 | 1 | 100% | 25 | 419 |
-| Hosea | 14 | 14 | 100% | 163 | 512 |
+| Hosea | 14 | 14 | 100% | 165 | 527 |
 | Jude | 1 | 1 | 100% | 25 | 597 |
 | Obadiah | 1 | 1 | 100% | 21 | 612 |
 | Titus | 3 | 3 | 100% | 46 | 874 |
