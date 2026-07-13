@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T17:18:18.803Z",
+    "generated_at": "2026-07-13T17:46:11.194Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59807,
+      "entries": 59812,
       "normalizedHeadwords": 50989,
       "meaningfulWordsWithDefinition": 7761,
       "meaningfulWordsWithoutDefinition": 4693,
@@ -2413,30 +2413,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "tears",
-          "count": 36,
-          "sampleRefs": [
-            "2 Kings 20:5",
-            "Esther 8:3",
-            "Job 16:20",
-            "Psalms 6:6",
-            "Psalms 39:12"
-          ],
-          "lookupCandidates": [
-            "tears",
-            "tear",
-            "teare"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TEAR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "means",
           "count": 35,
           "sampleRefs": [
@@ -3641,6 +3617,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DUE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fetch",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 18:5",
+            "Genesis 27:9",
+            "Genesis 27:13",
+            "Genesis 27:45",
+            "Genesis 42:16"
+          ],
+          "lookupCandidates": [
+            "fetch"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FETCH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10947,30 +10945,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "tears",
-        "count": 36,
-        "sampleRefs": [
-          "2 Kings 20:5",
-          "Esther 8:3",
-          "Job 16:20",
-          "Psalms 6:6",
-          "Psalms 39:12"
-        ],
-        "lookupCandidates": [
-          "tears",
-          "tear",
-          "teare"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TEAR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "means",
         "count": 35,
         "sampleRefs": [
@@ -12175,6 +12149,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DUE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fetch",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 18:5",
+          "Genesis 27:9",
+          "Genesis 27:13",
+          "Genesis 27:45",
+          "Genesis 42:16"
+        ],
+        "lookupCandidates": [
+          "fetch"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FETCH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

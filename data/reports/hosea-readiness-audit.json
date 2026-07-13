@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T17:18:14.191Z",
+  "generated_at": "2026-07-13T17:46:07.016Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 823,
     "coveragePercent": 90.8,
-    "reviewedOverlayWords": 527,
+    "reviewedOverlayWords": 533,
     "wordsWithBibleDictionaryFallback": 53,
     "unresolvedWords": [
       {
@@ -479,32 +479,6 @@
         "sourceHeadword": "PLAY"
       },
       {
-        "word": "revive",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 6:2",
-          "Hosea 14:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REVIVE"
-      },
-      {
-        "word": "ride",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 10:11",
-          "Hosea 14:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "RIDE"
-      },
-      {
         "word": "robbers",
         "count": 2,
         "sampleRefs": [
@@ -557,19 +531,6 @@
         "sourceHeadword": "STRIVE"
       },
       {
-        "word": "tear",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 5:14",
-          "Hosea 13:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TEAR"
-      },
-      {
         "word": "thorns",
         "count": 2,
         "sampleRefs": [
@@ -596,19 +557,6 @@
         "sourceHeadword": "TREACHEROUSLY"
       },
       {
-        "word": "tremble",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 11:10",
-          "Hosea 11:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TREM'BLE"
-      },
-      {
         "word": "whoring",
         "count": 2,
         "sampleRefs": [
@@ -620,19 +568,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "WHORE"
-      },
-      {
-        "word": "yield",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 8:7",
-          "Hosea 8:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "YIELD"
       },
       {
         "word": "adulterers",
@@ -1125,6 +1060,66 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "HEM'LOCK"
+      },
+      {
+        "word": "herds",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:6"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "HERD"
+      },
+      {
+        "word": "hot",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "HOT"
+      },
+      {
+        "word": "infants",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "IN' F ANT"
+      },
+      {
+        "word": "innocency",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "IN'NOCENCY"
+      },
+      {
+        "word": "jaws",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 11:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "JAW"
       }
     ]
   },
