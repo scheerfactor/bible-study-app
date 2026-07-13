@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-13T10:36:04.081Z
+Generated: 2026-07-13T16:22:15.604Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,26 +122,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fowls | FOWL | 55 | ocr_full_import_needs_spot_review |
 | wonders | WONDER | 55 | ocr_full_import_needs_spot_review |
 | sockets | SOCK'ET | 54 | ocr_full_import_needs_spot_review |
-| guard | GUARD | 51 | ocr_full_import_needs_spot_review |
 | instruments | IN'STRUMENT | 51 | ocr_full_import_needs_spot_review |
-| knowing | KNOWING | 51 | ocr_full_import_needs_spot_review |
-| moon | MOON | 51 | ocr_full_import_needs_spot_review |
-| ourselves | OURSELVES | 51 | ocr_full_import_needs_spot_review |
 | camels | CAM'EL | 50 | ocr_full_import_needs_spot_review |
-| confounded | CONFOUND'ED | 50 | ocr_full_import_needs_spot_review |
-| desired | DESIRED | 50 | ocr_full_import_needs_spot_review |
-| glorified | GLO'RIFIED | 50 | ocr_full_import_needs_spot_review |
-| stretch | STRETCH | 50 | ocr_full_import_needs_spot_review |
-| substance | SUB'STANCE | 50 | ocr_full_import_needs_spot_review |
 | thorns | THORN | 50 | ocr_full_import_needs_spot_review |
-| thrust | THRUST | 50 | ocr_full_import_needs_spot_review |
-| decree | DECREE' | 49 | ocr_full_import_needs_spot_review |
-| driven | DRIVEN | 49 | ocr_full_import_needs_spot_review |
-| fill | FILL | 49 | ocr_full_import_needs_spot_review |
-| need | NEED | 49 | ocr_full_import_needs_spot_review |
-| prosper | PROS'PER | 49 | ocr_full_import_needs_spot_review |
-| speech | SPEECH | 49 | ocr_full_import_needs_spot_review |
-| weep | WEEP | 49 | ocr_full_import_needs_spot_review |
+| sinners | SIN'NER | 48 | ocr_full_import_needs_spot_review |
+| bands | BAND | 46 | ocr_full_import_needs_spot_review |
+| towns | TOWN | 45 | ocr_full_import_needs_spot_review |
+| rings | RING | 44 | ocr_full_import_needs_spot_review |
+| justified | JUST'IFY | 43 | ocr_full_import_needs_spot_review |
+| talked | TALK | 42 | ocr_full_import_needs_spot_review |
+| boards | BOARD | 41 | ocr_full_import_needs_spot_review |
+| candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
+| bars | B'AR | 38 | ocr_full_import_needs_spot_review |
+| singers | SING'ER | 38 | ocr_full_import_needs_spot_review |
+| steps | STEP | 38 | ocr_full_import_needs_spot_review |
+| chains | CHAIN | 37 | ocr_full_import_needs_spot_review |
+| crucified | CRU'CIFY | 37 | ocr_full_import_needs_spot_review |
+| grapes | GRAPE | 37 | ocr_full_import_needs_spot_review |
+| tears | TEAR | 36 | ocr_full_import_needs_spot_review |
+| means | MEAN | 35 | ocr_full_import_needs_spot_review |
+| overlaid | OVERLA'ID | 35 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
