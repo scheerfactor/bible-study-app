@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T23:37:35.133Z",
+  "generated_at": "2026-07-13T23:45:57.848Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 583,
+    "reviewedOverlayWords": 588,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -82,66 +82,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
-      },
-      {
-        "word": "bitterly",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "BIT'TERLY"
-      },
-      {
-        "word": "bottles",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "BOTTLE"
-      },
-      {
-        "word": "bud",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "BUD"
-      },
-      {
-        "word": "cake",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "CAKE"
-      },
-      {
-        "word": "consent",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 6:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "CONSENT'"
       },
       {
         "word": "cords",
@@ -790,6 +730,66 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "PRU'DENT"
+      },
+      {
+        "word": "pursue",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "PURSUE"
+      },
+      {
+        "word": "rage",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "RAGE"
+      },
+      {
+        "word": "rebel",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:14"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REB'EL"
+      },
+      {
+        "word": "rebelled",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "REB'EL"
+      },
+      {
+        "word": "recover",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "RECOVER"
       }
     ]
   },
