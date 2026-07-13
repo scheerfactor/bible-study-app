@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T19:46:14.181Z",
+  "generated_at": "2026-07-13T20:17:26.907Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -15,9 +15,9 @@
     "meaningfulUniqueWords": 906
   },
   "webster1828": {
-    "wordsWithDefinition": 836,
-    "coveragePercent": 92.3,
-    "reviewedOverlayWords": 554,
+    "wordsWithDefinition": 840,
+    "coveragePercent": 92.7,
+    "reviewedOverlayWords": 559,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -82,18 +82,6 @@
         "sourceHeadword": null
       },
       {
-        "word": "oppress",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:7"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "prevailed",
         "count": 1,
         "sampleRefs": [
@@ -106,34 +94,10 @@
         "sourceHeadword": null
       },
       {
-        "word": "recompence",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:7"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
         "word": "reject",
         "count": 1,
         "sampleRefs": [
           "Hosea 4:6"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "shamefully",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:5"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,
@@ -182,18 +146,6 @@
         "count": 1,
         "sampleRefs": [
           "Hosea 9:13"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "wanderers",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:17"
         ],
         "hasWebster": false,
         "reviewedOverlay": false,

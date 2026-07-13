@@ -20,9 +20,9 @@ const aliases = {
   did: "do", didst: "do", died: "die", doth: "do", drew: "draw", dwelt: "dwell",
   dwelleth: "dwell", fishes: "fish", forgat: "forget", fortresses: "fortress", goeth: "go", horsemen: "horseman", known: "know",
   mercies: "mercy", merciful: "mercy", oxen: "ox", prevailed: "prevail", rebelled: "rebel",
-  rebuker: "rebuke", saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
+  recompence: "recompense", rebuker: "rebuke", saviour: "savior", shewed: "shew", sheweth: "shew", sinned: "sin", smitten: "smite",
   surely: "sure", sware: "swear", sworn: "swear", taken: "take", thyself: "self", took: "take", transgressed: "transgress", transgressions: "transgression",
-  would: "will", wouldest: "will", yourselves: "self", begotten: "beget",
+  wanderers: "wanderer", would: "will", wouldest: "will", yourselves: "self", begotten: "beget",
 };
 
 const dirtyPatterns = [

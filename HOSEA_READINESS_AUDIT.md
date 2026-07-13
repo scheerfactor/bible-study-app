@@ -1,13 +1,13 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-13T19:46:14.181Z
+Generated: 2026-07-13T20:17:26.907Z
 
 Status: **ready_with_documented_depth_gaps**
 
 ## Verified Coverage
 
 - KJV: 14/14 chapters and 197/197 verses.
-- Webster 1828: 836/906 meaningful unique words have a lookup (92.3%).
+- Webster 1828: 840/906 meaningful unique words have a lookup (92.7%).
 - Supplemental fallback: 55 additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.
 - Strong's: 14/14 chapters, 159/197 verses, 481 reviewed word mappings, and 0 missing lexicon cards.
 - TSK: 14/14 chapters, 73/197 source verses, and 145 public cross-reference rows.
@@ -40,16 +40,12 @@ These are retained as review work, not filled with invented definitions.
 | avenge | 1 | Hosea 1:4 |
 | compasseth | 1 | Hosea 11:12 |
 | firstripe | 1 | Hosea 9:10 |
-| oppress | 1 | Hosea 12:7 |
 | prevailed | 1 | Hosea 12:4 |
-| recompence | 1 | Hosea 9:7 |
 | reject | 1 | Hosea 4:6 |
-| shamefully | 1 | Hosea 2:5 |
 | silly | 1 | Hosea 7:11 |
 | testifieth | 1 | Hosea 7:10 |
 | thief | 1 | Hosea 7:1 |
 | tyrus | 1 | Hosea 9:13 |
-| wanderers | 1 | Hosea 9:17 |
 
 ## Remaining Depth Work
 

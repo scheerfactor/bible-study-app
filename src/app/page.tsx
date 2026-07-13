@@ -9250,6 +9250,8 @@ const dictionaryAliases: Record<string, string> = {
   craftsmen: "craftsman",
   drew: "draw",
   forgat: "forget",
+  recompence: "recompense",
+  wanderers: "wanderer",
   believest: "believe",
   believeth: "believe",
   believed: "believe",

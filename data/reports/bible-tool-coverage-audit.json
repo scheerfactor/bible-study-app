@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T19:46:18.702Z",
+    "generated_at": "2026-07-13T20:17:31.884Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,10 +10,10 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59821,
-      "normalizedHeadwords": 50992,
-      "meaningfulWordsWithDefinition": 7768,
-      "meaningfulWordsWithoutDefinition": 4686,
+      "entries": 59825,
+      "normalizedHeadwords": 50995,
+      "meaningfulWordsWithDefinition": 7772,
+      "meaningfulWordsWithoutDefinition": 4682,
       "meaningfulDefinitionCoveragePercent": 62.4,
       "topUsedWordsNeedingDefinition": [
         {
@@ -3648,7 +3648,7 @@
       "rareTermEntries": 25,
       "meaningfulWordsWithEastonEntry": 4051,
       "meaningfulWordsWithNaveTopic": 3938,
-      "meaningfulWordsWithAnyStudyLookup": 10755,
+      "meaningfulWordsWithAnyStudyLookup": 10759,
       "combinedStudyLookupCoveragePercent": 86.4,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
@@ -4411,30 +4411,6 @@
           ],
           "lookupCandidates": [
             "mizpeh"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "oppress",
-          "count": 23,
-          "sampleRefs": [
-            "Exodus 3:9",
-            "Exodus 22:21",
-            "Exodus 23:9",
-            "Leviticus 25:14",
-            "Leviticus 25:17"
-          ],
-          "lookupCandidates": [
-            "oppress",
-            "oppres",
-            "opprese"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5446,6 +5422,28 @@
           ],
           "lookupCandidates": [
             "musick"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "overthrown",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 15:7",
+            "Judges 9:40",
+            "2 Samuel 17:9",
+            "2 Chronicles 14:13",
+            "Job 19:6"
+          ],
+          "lookupCandidates": [
+            "overthrown"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -12944,30 +12942,6 @@
         "reviewStatus": null
       },
       {
-        "word": "oppress",
-        "count": 23,
-        "sampleRefs": [
-          "Exodus 3:9",
-          "Exodus 22:21",
-          "Exodus 23:9",
-          "Leviticus 25:14",
-          "Leviticus 25:17"
-        ],
-        "lookupCandidates": [
-          "oppress",
-          "oppres",
-          "opprese"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "proclaim",
         "count": 23,
         "sampleRefs": [
@@ -13968,6 +13942,28 @@
         ],
         "lookupCandidates": [
           "musick"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "overthrown",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 15:7",
+          "Judges 9:40",
+          "2 Samuel 17:9",
+          "2 Chronicles 14:13",
+          "Job 19:6"
+        ],
+        "lookupCandidates": [
+          "overthrown"
         ],
         "hasDefinition": false,
         "hasEaston": false,
