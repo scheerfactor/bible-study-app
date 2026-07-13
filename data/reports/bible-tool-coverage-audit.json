@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T22:47:42.620Z",
+    "generated_at": "2026-07-13T22:55:37.122Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59832,
+      "entries": 59837,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7788,
       "meaningfulWordsWithoutDefinition": 4666,
@@ -3076,30 +3076,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "separated",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 13:11",
-            "Genesis 13:14",
-            "Genesis 25:23",
-            "Exodus 33:16",
-            "Leviticus 20:24"
-          ],
-          "lookupCandidates": [
-            "separated",
-            "separat",
-            "separate"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEP'ARATED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "sojourn",
           "count": 33,
           "sampleRefs": [
@@ -3638,6 +3614,30 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "GRACIOUS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hateth",
+          "count": 31,
+          "sampleRefs": [
+            "Exodus 23:5",
+            "Deuteronomy 7:10",
+            "Deuteronomy 12:31",
+            "Deuteronomy 16:22",
+            "Deuteronomy 22:16"
+          ],
+          "lookupCandidates": [
+            "hateth",
+            "hat",
+            "hate"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HAT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11603,30 +11603,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "separated",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 13:11",
-          "Genesis 13:14",
-          "Genesis 25:23",
-          "Exodus 33:16",
-          "Leviticus 20:24"
-        ],
-        "lookupCandidates": [
-          "separated",
-          "separat",
-          "separate"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEP'ARATED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "sojourn",
         "count": 33,
         "sampleRefs": [
@@ -12165,6 +12141,30 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "GRACIOUS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hateth",
+        "count": 31,
+        "sampleRefs": [
+          "Exodus 23:5",
+          "Deuteronomy 7:10",
+          "Deuteronomy 12:31",
+          "Deuteronomy 16:22",
+          "Deuteronomy 22:16"
+        ],
+        "lookupCandidates": [
+          "hateth",
+          "hat",
+          "hate"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HAT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

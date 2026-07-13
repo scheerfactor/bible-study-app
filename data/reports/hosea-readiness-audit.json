@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T22:47:40.210Z",
+  "generated_at": "2026-07-13T22:55:24.113Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 567,
+    "reviewedOverlayWords": 572,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -72,20 +72,6 @@
     ],
     "dirtyBaseEntries": [
       {
-        "word": "solemn",
-        "count": 3,
-        "sampleRefs": [
-          "Hosea 2:11",
-          "Hosea 9:5",
-          "Hosea 12:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SOLEMN"
-      },
-      {
         "word": "arms",
         "count": 2,
         "sampleRefs": [
@@ -97,58 +83,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "ARM"
-      },
-      {
-        "word": "bird",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 9:11",
-          "Hosea 11:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "BIRD"
-      },
-      {
-        "word": "floor",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 9:2",
-          "Hosea 13:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FLOOR"
-      },
-      {
-        "word": "play",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 3:3",
-          "Hosea 4:15"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "PLAY"
-      },
-      {
-        "word": "separated",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 4:14",
-          "Hosea 9:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SEP'ARATED"
       },
       {
         "word": "spouses",
@@ -800,6 +734,66 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LIL'Y"
+      },
+      {
+        "word": "mad",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MAD"
+      },
+      {
+        "word": "making",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MA'KING"
+      },
+      {
+        "word": "meal",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MEAL"
+      },
+      {
+        "word": "mirth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MIRTH"
+      },
+      {
+        "word": "mixed",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "MIX'ED"
       }
     ]
   },
