@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T19:36:54.575Z
+Generated: 2026-07-14T20:03:15.915Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,12 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| report | REPORT | 30 | ocr_full_import_needs_spot_review |
-| soldiers | SOLDIER | 30 | ocr_full_import_needs_spot_review |
-| touching | TOUCHING | 30 | ocr_full_import_needs_spot_review |
-| windows | WIND'OW | 30 | ocr_full_import_needs_spot_review |
-| accepted | ACCEPT'ED | 29 | ocr_full_import_needs_spot_review |
-| altogether | ALTOGETH'ER | 29 | ocr_full_import_needs_spot_review |
 | bright | BRIGHT | 29 | ocr_full_import_needs_spot_review |
 | business | BUSINESS | 29 | ocr_full_import_needs_spot_review |
 | chose | CHOSE | 29 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | cross | CROSS | 28 | ocr_full_import_needs_spot_review |
 | fellow | FEL'LOW | 28 | ocr_full_import_needs_spot_review |
 | happy | HAP'PY | 28 | ocr_full_import_needs_spot_review |
+| humbled | HUM'BLE | 28 | ocr_full_import_needs_spot_review |
+| merry | MER'RY | 28 | ocr_full_import_needs_spot_review |
+| perpetual | PERPETUAL | 28 | ocr_full_import_needs_spot_review |
+| rejoicing | REJOICING | 28 | ocr_full_import_needs_spot_review |
+| roll | ROLL | 28 | ocr_full_import_needs_spot_review |
+| seemeth | SEEM | 28 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

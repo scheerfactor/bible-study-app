@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T19:36:54.575Z",
+    "generated_at": "2026-07-14T20:03:15.915Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60022,
+      "entries": 60028,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,146 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "report",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 37:2",
-            "Exodus 23:1",
-            "Numbers 13:32",
-            "Numbers 14:37",
-            "Deuteronomy 2:25"
-          ],
-          "lookupCandidates": [
-            "report"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REPORT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "soldiers",
-          "count": 30,
-          "sampleRefs": [
-            "1 Chronicles 7:4",
-            "1 Chronicles 7:11",
-            "2 Chronicles 25:13",
-            "Ezra 8:22",
-            "Isaiah 15:4"
-          ],
-          "lookupCandidates": [
-            "soldiers",
-            "soldier",
-            "soldiere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SOLDIER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "touching",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 27:42",
-            "Leviticus 5:13",
-            "Numbers 8:26",
-            "1 Samuel 20:23",
-            "2 Kings 22:18"
-          ],
-          "lookupCandidates": [
-            "touching",
-            "touch",
-            "touche"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TOUCHING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "windows",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 7:11",
-            "Genesis 8:2",
-            "1 Kings 6:4",
-            "1 Kings 7:4",
-            "1 Kings 7:5"
-          ],
-          "lookupCandidates": [
-            "windows",
-            "window",
-            "windowe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WIND'OW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "accepted",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 4:7",
-            "Genesis 19:21",
-            "Exodus 28:38",
-            "Leviticus 1:4",
-            "Leviticus 7:18"
-          ],
-          "lookupCandidates": [
-            "accepted",
-            "accept",
-            "accepte"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ACCEPT'ED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "altogether",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 18:21",
-            "Exodus 11:1",
-            "Exodus 19:18",
-            "Numbers 16:13",
-            "Numbers 23:11"
-          ],
-          "lookupCandidates": [
-            "altogether"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ALTOGETH'ER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "bright",
           "count": 29,
           "sampleRefs": [
@@ -3600,6 +3460,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STORE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "upper",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 12:7",
+            "Leviticus 13:45",
+            "Deuteronomy 24:6",
+            "Joshua 15:19",
+            "Joshua 16:5"
+          ],
+          "lookupCandidates": [
+            "upper"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UP'PER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "condemn",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 22:9",
+            "Deuteronomy 25:1",
+            "Job 9:20",
+            "Job 10:2",
+            "Job 34:17"
+          ],
+          "lookupCandidates": [
+            "condemn"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CONDEMN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "contrary",
+          "count": 24,
+          "sampleRefs": [
+            "Leviticus 26:21",
+            "Leviticus 26:23",
+            "Leviticus 26:24",
+            "Leviticus 26:27",
+            "Leviticus 26:28"
+          ],
+          "lookupCandidates": [
+            "contrary"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CON'TRARY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "deny",
+          "count": 24,
+          "sampleRefs": [
+            "Joshua 24:27",
+            "1 Kings 2:16",
+            "Job 8:18",
+            "Proverbs 30:7",
+            "Proverbs 30:9"
+          ],
+          "lookupCandidates": [
+            "deny"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DENY'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dogs",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 22:31",
+            "1 Kings 14:11",
+            "1 Kings 16:4",
+            "1 Kings 21:19",
+            "1 Kings 21:19"
+          ],
+          "lookupCandidates": [
+            "dogs",
+            "dog",
+            "doge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DOG",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "eleven",
+          "count": 24,
+          "sampleRefs": [
+            "Genesis 32:22",
+            "Genesis 37:9",
+            "Exodus 26:7",
+            "Exodus 26:8",
+            "Exodus 36:14"
+          ],
+          "lookupCandidates": [
+            "eleven"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ELEV'EN",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10447,146 +10441,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "report",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 37:2",
-          "Exodus 23:1",
-          "Numbers 13:32",
-          "Numbers 14:37",
-          "Deuteronomy 2:25"
-        ],
-        "lookupCandidates": [
-          "report"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REPORT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "soldiers",
-        "count": 30,
-        "sampleRefs": [
-          "1 Chronicles 7:4",
-          "1 Chronicles 7:11",
-          "2 Chronicles 25:13",
-          "Ezra 8:22",
-          "Isaiah 15:4"
-        ],
-        "lookupCandidates": [
-          "soldiers",
-          "soldier",
-          "soldiere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SOLDIER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "touching",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 27:42",
-          "Leviticus 5:13",
-          "Numbers 8:26",
-          "1 Samuel 20:23",
-          "2 Kings 22:18"
-        ],
-        "lookupCandidates": [
-          "touching",
-          "touch",
-          "touche"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TOUCHING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "windows",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 7:11",
-          "Genesis 8:2",
-          "1 Kings 6:4",
-          "1 Kings 7:4",
-          "1 Kings 7:5"
-        ],
-        "lookupCandidates": [
-          "windows",
-          "window",
-          "windowe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WIND'OW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "accepted",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 4:7",
-          "Genesis 19:21",
-          "Exodus 28:38",
-          "Leviticus 1:4",
-          "Leviticus 7:18"
-        ],
-        "lookupCandidates": [
-          "accepted",
-          "accept",
-          "accepte"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ACCEPT'ED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "altogether",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 18:21",
-          "Exodus 11:1",
-          "Exodus 19:18",
-          "Numbers 16:13",
-          "Numbers 23:11"
-        ],
-        "lookupCandidates": [
-          "altogether"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ALTOGETH'ER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "bright",
         "count": 29,
         "sampleRefs": [
@@ -12086,6 +11940,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STORE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "upper",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 12:7",
+          "Leviticus 13:45",
+          "Deuteronomy 24:6",
+          "Joshua 15:19",
+          "Joshua 16:5"
+        ],
+        "lookupCandidates": [
+          "upper"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UP'PER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "condemn",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 22:9",
+          "Deuteronomy 25:1",
+          "Job 9:20",
+          "Job 10:2",
+          "Job 34:17"
+        ],
+        "lookupCandidates": [
+          "condemn"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CONDEMN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "contrary",
+        "count": 24,
+        "sampleRefs": [
+          "Leviticus 26:21",
+          "Leviticus 26:23",
+          "Leviticus 26:24",
+          "Leviticus 26:27",
+          "Leviticus 26:28"
+        ],
+        "lookupCandidates": [
+          "contrary"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CON'TRARY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "deny",
+        "count": 24,
+        "sampleRefs": [
+          "Joshua 24:27",
+          "1 Kings 2:16",
+          "Job 8:18",
+          "Proverbs 30:7",
+          "Proverbs 30:9"
+        ],
+        "lookupCandidates": [
+          "deny"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DENY'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dogs",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 22:31",
+          "1 Kings 14:11",
+          "1 Kings 16:4",
+          "1 Kings 21:19",
+          "1 Kings 21:19"
+        ],
+        "lookupCandidates": [
+          "dogs",
+          "dog",
+          "doge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DOG",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "eleven",
+        "count": 24,
+        "sampleRefs": [
+          "Genesis 32:22",
+          "Genesis 37:9",
+          "Exodus 26:7",
+          "Exodus 26:8",
+          "Exodus 36:14"
+        ],
+        "lookupCandidates": [
+          "eleven"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ELEV'EN",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
