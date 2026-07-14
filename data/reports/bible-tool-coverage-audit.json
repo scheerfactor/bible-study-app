@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T01:15:27.702Z",
+    "generated_at": "2026-07-14T01:30:22.153Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59920,
+      "entries": 59928,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2889,28 +2889,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "stay",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 19:17",
-            "Exodus 9:28",
-            "Leviticus 13:5",
-            "Leviticus 13:23",
-            "Leviticus 13:28"
-          ],
-          "lookupCandidates": [
-            "stay"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STAY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "tread",
           "count": 33,
           "sampleRefs": [
@@ -3632,6 +3610,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FUR'NACE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "gain",
+          "count": 30,
+          "sampleRefs": [
+            "Judges 5:19",
+            "Job 22:3",
+            "Proverbs 1:19",
+            "Proverbs 3:14",
+            "Proverbs 15:27"
+          ],
+          "lookupCandidates": [
+            "gain"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GAIN",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11407,28 +11407,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "stay",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 19:17",
-          "Exodus 9:28",
-          "Leviticus 13:5",
-          "Leviticus 13:23",
-          "Leviticus 13:28"
-        ],
-        "lookupCandidates": [
-          "stay"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STAY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "tread",
         "count": 33,
         "sampleRefs": [
@@ -12150,6 +12128,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FUR'NACE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "gain",
+        "count": 30,
+        "sampleRefs": [
+          "Judges 5:19",
+          "Job 22:3",
+          "Proverbs 1:19",
+          "Proverbs 3:14",
+          "Proverbs 15:27"
+        ],
+        "lookupCandidates": [
+          "gain"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GAIN",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

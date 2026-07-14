@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T01:15:24.580Z",
+  "generated_at": "2026-07-14T01:30:19.090Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 656,
+    "reviewedOverlayWords": 665,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -118,114 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "sour",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:18"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SOUR"
-      },
-      {
-        "word": "spiritual",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SPIR'ITUAL"
-      },
-      {
-        "word": "spring",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:15"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SPRING"
-      },
-      {
-        "word": "springeth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SPRING"
-      },
-      {
-        "word": "stalk",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "STALK"
-      },
-      {
-        "word": "stay",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "STAY"
-      },
-      {
-        "word": "stealing",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "STE'ALING"
-      },
-      {
-        "word": "strip",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "STRIP"
-      },
-      {
-        "word": "swallowed",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SWALLOWED"
       },
       {
         "word": "tabor",
