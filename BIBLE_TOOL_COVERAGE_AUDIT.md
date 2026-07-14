@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T16:34:17.918Z
+Generated: 2026-07-14T16:38:47.646Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -116,13 +116,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lambs | LAMB | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
 | candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
-| deeds | DEED | 33 | ocr_full_import_needs_spot_review |
-| drunken | DRUNK'EN | 33 | ocr_full_import_needs_spot_review |
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
-| hardened | H'ARDENED | 33 | ocr_full_import_needs_spot_review |
-| lost | LOST | 33 | ocr_full_import_needs_spot_review |
-| porters | PORTER | 33 | ocr_full_import_needs_spot_review |
-| price | PRICE | 33 | ocr_full_import_needs_spot_review |
 | profane | PROFA'NE | 33 | ocr_full_import_needs_spot_review |
 | reed | REED | 33 | ocr_full_import_needs_spot_review |
 | sojourn | SOJOURN | 33 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | curtains | CUR'TAIN | 31 | ocr_full_import_needs_spot_review |
 | due | DUE | 31 | ocr_full_import_needs_spot_review |
 | fetch | FETCH | 31 | ocr_full_import_needs_spot_review |
+| gracious | GRACIOUS | 31 | ocr_full_import_needs_spot_review |
+| hateth | HAT | 31 | ocr_full_import_needs_spot_review |
+| line | LINE | 31 | ocr_full_import_needs_spot_review |
+| quiet | QUI'ET | 31 | ocr_full_import_needs_spot_review |
+| spices | SPICE | 31 | ocr_full_import_needs_spot_review |
+| stayed | STA'YED | 31 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
