@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T18:03:53.638Z
+Generated: 2026-07-14T18:33:55.358Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -118,13 +118,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
-| gracious | GRACIOUS | 31 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| line | LINE | 31 | ocr_full_import_needs_spot_review |
-| quiet | QUI'ET | 31 | ocr_full_import_needs_spot_review |
-| spices | SPICE | 31 | ocr_full_import_needs_spot_review |
-| stayed | STA'YED | 31 | ocr_full_import_needs_spot_review |
-| travail | TRAVAIL | 31 | ocr_full_import_needs_spot_review |
 | younger | YOUNGER | 31 | ocr_full_import_needs_spot_review |
 | cleave | CLEAVE | 30 | ocr_full_import_needs_spot_review |
 | determined | DETERMINED | 30 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | preserve | PRESERVE | 30 | ocr_full_import_needs_spot_review |
 | provinces | PROVINCE | 30 | ocr_full_import_needs_spot_review |
 | record | RECORD' | 30 | ocr_full_import_needs_spot_review |
+| regard | REGARD | 30 | ocr_full_import_needs_spot_review |
+| report | REPORT | 30 | ocr_full_import_needs_spot_review |
+| soldiers | SOLDIER | 30 | ocr_full_import_needs_spot_review |
+| touching | TOUCHING | 30 | ocr_full_import_needs_spot_review |
+| windows | WIND'OW | 30 | ocr_full_import_needs_spot_review |
+| accepted | ACCEPT'ED | 29 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
