@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T21:35:52.586Z",
+    "generated_at": "2026-07-14T22:06:05.332Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60064,
+      "entries": 60070,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,28 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "evermore",
-          "count": 26,
-          "sampleRefs": [
-            "Deuteronomy 28:29",
-            "2 Samuel 22:51",
-            "2 Kings 17:37",
-            "1 Chronicles 17:14",
-            "Psalms 16:11"
-          ],
-          "lookupCandidates": [
-            "evermore"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "EVERMO'RE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "excellency",
           "count": 26,
           "sampleRefs": [
@@ -2002,116 +1980,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "EX'CELLENCY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "finger",
-          "count": 26,
-          "sampleRefs": [
-            "Exodus 8:19",
-            "Exodus 29:12",
-            "Exodus 31:18",
-            "Leviticus 4:6",
-            "Leviticus 4:17"
-          ],
-          "lookupCandidates": [
-            "finger"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FIN'GER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "fourteen",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 31:41",
-            "Genesis 46:22",
-            "Numbers 1:27",
-            "Numbers 2:4",
-            "Numbers 16:49"
-          ],
-          "lookupCandidates": [
-            "fourteen"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOURTEEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "guilty",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 42:21",
-            "Exodus 34:7",
-            "Leviticus 4:13",
-            "Leviticus 4:22",
-            "Leviticus 4:27"
-          ],
-          "lookupCandidates": [
-            "guilty"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GUILT'Y",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hebrew",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 14:13",
-            "Genesis 39:14",
-            "Genesis 39:17",
-            "Genesis 41:12",
-            "Exodus 1:15"
-          ],
-          "lookupCandidates": [
-            "hebrew"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HE'BREW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "refuse",
-          "count": 26,
-          "sampleRefs": [
-            "Exodus 4:23",
-            "Exodus 8:2",
-            "Exodus 9:2",
-            "Exodus 10:3",
-            "Exodus 10:4"
-          ],
-          "lookupCandidates": [
-            "refuse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REFU'SE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3589,6 +3457,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PLEDGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pool",
+          "count": 22,
+          "sampleRefs": [
+            "2 Samuel 2:13",
+            "2 Samuel 2:13",
+            "2 Samuel 2:13",
+            "2 Samuel 4:12",
+            "1 Kings 22:38"
+          ],
+          "lookupCandidates": [
+            "pool"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "POOL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "reckoned",
+          "count": 22,
+          "sampleRefs": [
+            "Numbers 18:27",
+            "Numbers 23:9",
+            "2 Samuel 4:2",
+            "2 Kings 12:15",
+            "1 Chronicles 5:1"
+          ],
+          "lookupCandidates": [
+            "reckoned",
+            "reckon",
+            "reckone"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RECKONED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "shaken",
+          "count": 22,
+          "sampleRefs": [
+            "Leviticus 26:36",
+            "1 Kings 14:15",
+            "2 Kings 19:21",
+            "Nehemiah 5:13",
+            "Job 16:12"
+          ],
+          "lookupCandidates": [
+            "shaken"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SHAKEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "steal",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 31:27",
+            "Genesis 44:8",
+            "Exodus 20:15",
+            "Exodus 22:1",
+            "Leviticus 19:11"
+          ],
+          "lookupCandidates": [
+            "steal"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STEAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "taste",
+          "count": 22,
+          "sampleRefs": [
+            "Exodus 16:31",
+            "Numbers 11:8",
+            "Numbers 11:8",
+            "1 Samuel 14:43",
+            "2 Samuel 3:35"
+          ],
+          "lookupCandidates": [
+            "taste"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TASTE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ward",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 40:3",
+            "Genesis 40:4",
+            "Genesis 40:7",
+            "Genesis 41:10",
+            "Genesis 42:17"
+          ],
+          "lookupCandidates": [
+            "ward"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WARD",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10436,28 +10438,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "evermore",
-        "count": 26,
-        "sampleRefs": [
-          "Deuteronomy 28:29",
-          "2 Samuel 22:51",
-          "2 Kings 17:37",
-          "1 Chronicles 17:14",
-          "Psalms 16:11"
-        ],
-        "lookupCandidates": [
-          "evermore"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "EVERMO'RE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "excellency",
         "count": 26,
         "sampleRefs": [
@@ -10477,116 +10457,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "EX'CELLENCY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "finger",
-        "count": 26,
-        "sampleRefs": [
-          "Exodus 8:19",
-          "Exodus 29:12",
-          "Exodus 31:18",
-          "Leviticus 4:6",
-          "Leviticus 4:17"
-        ],
-        "lookupCandidates": [
-          "finger"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FIN'GER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "fourteen",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 31:41",
-          "Genesis 46:22",
-          "Numbers 1:27",
-          "Numbers 2:4",
-          "Numbers 16:49"
-        ],
-        "lookupCandidates": [
-          "fourteen"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOURTEEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "guilty",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 42:21",
-          "Exodus 34:7",
-          "Leviticus 4:13",
-          "Leviticus 4:22",
-          "Leviticus 4:27"
-        ],
-        "lookupCandidates": [
-          "guilty"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GUILT'Y",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hebrew",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 14:13",
-          "Genesis 39:14",
-          "Genesis 39:17",
-          "Genesis 41:12",
-          "Exodus 1:15"
-        ],
-        "lookupCandidates": [
-          "hebrew"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HE'BREW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "refuse",
-        "count": 26,
-        "sampleRefs": [
-          "Exodus 4:23",
-          "Exodus 8:2",
-          "Exodus 9:2",
-          "Exodus 10:3",
-          "Exodus 10:4"
-        ],
-        "lookupCandidates": [
-          "refuse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REFU'SE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12064,6 +11934,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PLEDGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pool",
+        "count": 22,
+        "sampleRefs": [
+          "2 Samuel 2:13",
+          "2 Samuel 2:13",
+          "2 Samuel 2:13",
+          "2 Samuel 4:12",
+          "1 Kings 22:38"
+        ],
+        "lookupCandidates": [
+          "pool"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "POOL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "reckoned",
+        "count": 22,
+        "sampleRefs": [
+          "Numbers 18:27",
+          "Numbers 23:9",
+          "2 Samuel 4:2",
+          "2 Kings 12:15",
+          "1 Chronicles 5:1"
+        ],
+        "lookupCandidates": [
+          "reckoned",
+          "reckon",
+          "reckone"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RECKONED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "shaken",
+        "count": 22,
+        "sampleRefs": [
+          "Leviticus 26:36",
+          "1 Kings 14:15",
+          "2 Kings 19:21",
+          "Nehemiah 5:13",
+          "Job 16:12"
+        ],
+        "lookupCandidates": [
+          "shaken"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SHAKEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "steal",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 31:27",
+          "Genesis 44:8",
+          "Exodus 20:15",
+          "Exodus 22:1",
+          "Leviticus 19:11"
+        ],
+        "lookupCandidates": [
+          "steal"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STEAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "taste",
+        "count": 22,
+        "sampleRefs": [
+          "Exodus 16:31",
+          "Numbers 11:8",
+          "Numbers 11:8",
+          "1 Samuel 14:43",
+          "2 Samuel 3:35"
+        ],
+        "lookupCandidates": [
+          "taste"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TASTE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ward",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 40:3",
+          "Genesis 40:4",
+          "Genesis 40:7",
+          "Genesis 41:10",
+          "Genesis 42:17"
+        ],
+        "lookupCandidates": [
+          "ward"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WARD",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
