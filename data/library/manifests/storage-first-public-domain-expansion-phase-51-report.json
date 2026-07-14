@@ -1,0 +1,485 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-51.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 40,
+  "total_attempted": 29,
+  "imported": 29,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume I",
+      "file": "history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-i-rufus-anderson.txt",
+      "bytes": 600619,
+      "words": 99120,
+      "reading_time_minutes": 441,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
+      "file": "history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-ii-rufus-anderson.txt",
+      "bytes": 757002,
+      "words": 120274,
+      "reading_time_minutes": 535,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Story of One Short Life 1783 to 1818",
+      "file": "a-story-of-one-short-life-1783-to-1818-elisabeth-g-stryker.txt",
+      "bytes": 55079,
+      "words": 9232,
+      "reading_time_minutes": 41,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Life on the Congo",
+      "file": "life-on-the-congo-william-holman-bentley.txt",
+      "bytes": 131560,
+      "words": 22518,
+      "reading_time_minutes": 100,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Story of Chalmers of New Guinea",
+      "file": "the-story-of-chalmers-of-new-guinea-janet-harvey-kelman.txt",
+      "bytes": 108335,
+      "words": 20065,
+      "reading_time_minutes": 89,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Thirty Years in Madagascar",
+      "file": "thirty-years-in-madagascar-thomas-t-matthews.txt",
+      "bytes": 671176,
+      "words": 114301,
+      "reading_time_minutes": 508,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Story of Dr. Duff",
+      "file": "the-story-of-dr-duff-a-l-o-e.txt",
+      "bytes": 104650,
+      "words": 18388,
+      "reading_time_minutes": 82,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Adventures in New Guinea",
+      "file": "adventures-in-new-guinea-james-chalmers.txt",
+      "bytes": 255996,
+      "words": 45662,
+      "reading_time_minutes": 203,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Everlasting Pearl: One of China's Women",
+      "file": "everlasting-pearl-one-of-china-s-women-anna-magdalena-johannsen.txt",
+      "bytes": 153441,
+      "words": 27761,
+      "reading_time_minutes": 123,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Papuan Pictures",
+      "file": "papuan-pictures-h-m-dauncey.txt",
+      "bytes": 255829,
+      "words": 46583,
+      "reading_time_minutes": 207,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Journal of Residence in the New Hebrides S.W. Pacific Ocean",
+      "file": "journal-of-residence-in-the-new-hebrides-s-w-pacific-ocean-charles-bice-and-arthur-brittain.txt",
+      "bytes": 325818,
+      "words": 58462,
+      "reading_time_minutes": 260,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Life of John Eliot",
+      "file": "the-life-of-john-eliot-nehemiah-adams.txt",
+      "bytes": 391785,
+      "words": 67408,
+      "reading_time_minutes": 300,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Some Jewish Witnesses for Christ",
+      "file": "some-jewish-witnesses-for-christ-aaron-bernstein.txt",
+      "bytes": 823904,
+      "words": 138544,
+      "reading_time_minutes": 616,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Fifty-Two Story Talks to Boys and Girls",
+      "file": "fifty-two-story-talks-to-boys-and-girls-howard-j-chidley.txt",
+      "bytes": 117803,
+      "words": 21771,
+      "reading_time_minutes": 97,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Children's Six Minutes",
+      "file": "the-children-s-six-minutes-bruce-s-wright.txt",
+      "bytes": 104643,
+      "words": 18895,
+      "reading_time_minutes": 84,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "With the Children on Sundays",
+      "file": "with-the-children-on-sundays-sylvanus-stall.txt",
+      "bytes": 503713,
+      "words": 89059,
+      "reading_time_minutes": 396,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Gospel Object Book",
+      "file": "the-gospel-object-book-clarence-herbert-woolston.txt",
+      "bytes": 133628,
+      "words": 24103,
+      "reading_time_minutes": 107,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Sabbath-School Index",
+      "file": "the-sabbath-school-index-richard-gay-pardee.txt",
+      "bytes": 358425,
+      "words": 59162,
+      "reading_time_minutes": 263,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Boy and the Sunday School",
+      "file": "the-boy-and-the-sunday-school-john-l-alexander.txt",
+      "bytes": 261810,
+      "words": 41986,
+      "reading_time_minutes": 187,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "The Village Sunday School",
+      "file": "the-village-sunday-school-john-c-symons.txt",
+      "bytes": 60512,
+      "words": 10489,
+      "reading_time_minutes": 47,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Stories from the Olden Time Teacher's Text Book Course IV Part I",
+      "file": "stories-from-the-olden-time-teacher-s-text-book-course-iv-part-i-josephine-l-baldwin.txt",
+      "bytes": 214710,
+      "words": 36819,
+      "reading_time_minutes": 164,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Leaves of Life for Daily Inspiration",
+      "file": "leaves-of-life-for-daily-inspiration-margaret-bird-steinmetz.txt",
+      "bytes": 424717,
+      "words": 68809,
+      "reading_time_minutes": 306,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Parables of the Christ-Life",
+      "file": "parables-of-the-christ-life-i-lilias-trotter.txt",
+      "bytes": 58943,
+      "words": 10613,
+      "reading_time_minutes": 47,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Parables of the Cross",
+      "file": "parables-of-the-cross-i-lilias-trotter.txt",
+      "bytes": 39896,
+      "words": 7292,
+      "reading_time_minutes": 32,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Food for the Lambs or Helps for Young Christians",
+      "file": "food-for-the-lambs-or-helps-for-young-christians-charles-ebert-orr.txt",
+      "bytes": 166483,
+      "words": 30113,
+      "reading_time_minutes": 134,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Lead Kindly Light: Its Origin and Its Romance",
+      "file": "lead-kindly-light-its-origin-and-its-romance-allan-sutherland.txt",
+      "bytes": 22693,
+      "words": 3632,
+      "reading_time_minutes": 16,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Spiritual Folk-Songs of Early America",
+      "file": "spiritual-folk-songs-of-early-america-george-pullen-jackson.txt",
+      "bytes": 460010,
+      "words": 69683,
+      "reading_time_minutes": 310,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "How to Live a Holy Life",
+      "file": "how-to-live-a-holy-life-charles-ebert-orr.txt",
+      "bytes": 238371,
+      "words": 43720,
+      "reading_time_minutes": 194,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Heart Talks",
+      "file": "heart-talks-charles-wesley-naylor.txt",
+      "bytes": 401215,
+      "words": 73389,
+      "reading_time_minutes": 326,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume I",
+      "author": "Rufus Anderson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-i-rufus-anderson.txt"
+    },
+    {
+      "row": 3,
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
+      "author": "Rufus Anderson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-ii-rufus-anderson.txt"
+    },
+    {
+      "row": 4,
+      "title": "A Story of One Short Life 1783 to 1818",
+      "author": "Elisabeth G. Stryker",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-story-of-one-short-life-1783-to-1818-elisabeth-g-stryker.txt"
+    },
+    {
+      "row": 5,
+      "title": "Life on the Congo",
+      "author": "William Holman Bentley",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/life-on-the-congo-william-holman-bentley.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Story of Chalmers of New Guinea",
+      "author": "Janet Harvey Kelman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-story-of-chalmers-of-new-guinea-janet-harvey-kelman.txt"
+    },
+    {
+      "row": 7,
+      "title": "Thirty Years in Madagascar",
+      "author": "Thomas T. Matthews",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/thirty-years-in-madagascar-thomas-t-matthews.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Story of Dr. Duff",
+      "author": "A. L. O. E.",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-story-of-dr-duff-a-l-o-e.txt"
+    },
+    {
+      "row": 9,
+      "title": "Adventures in New Guinea",
+      "author": "James Chalmers",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/adventures-in-new-guinea-james-chalmers.txt"
+    },
+    {
+      "row": 10,
+      "title": "Everlasting Pearl: One of China's Women",
+      "author": "Anna Magdalena Johannsen",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/everlasting-pearl-one-of-china-s-women-anna-magdalena-johannsen.txt"
+    },
+    {
+      "row": 11,
+      "title": "Papuan Pictures",
+      "author": "H. M. Dauncey",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/papuan-pictures-h-m-dauncey.txt"
+    },
+    {
+      "row": 12,
+      "title": "Journal of Residence in the New Hebrides S.W. Pacific Ocean",
+      "author": "Charles Bice and Arthur Brittain",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/journal-of-residence-in-the-new-hebrides-s-w-pacific-ocean-charles-bice-and-arthur-brittain.txt"
+    },
+    {
+      "row": 13,
+      "title": "The Life of John Eliot",
+      "author": "Nehemiah Adams",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-life-of-john-eliot-nehemiah-adams.txt"
+    },
+    {
+      "row": 14,
+      "title": "Some Jewish Witnesses for Christ",
+      "author": "Aaron Bernstein",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/some-jewish-witnesses-for-christ-aaron-bernstein.txt"
+    },
+    {
+      "row": 15,
+      "title": "Fifty-Two Story Talks to Boys and Girls",
+      "author": "Howard J. Chidley",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/fifty-two-story-talks-to-boys-and-girls-howard-j-chidley.txt"
+    },
+    {
+      "row": 16,
+      "title": "The Children's Six Minutes",
+      "author": "Bruce S. Wright",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-children-s-six-minutes-bruce-s-wright.txt"
+    },
+    {
+      "row": 17,
+      "title": "With the Children on Sundays",
+      "author": "Sylvanus Stall",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/with-the-children-on-sundays-sylvanus-stall.txt"
+    },
+    {
+      "row": 18,
+      "title": "The Gospel Object Book",
+      "author": "Clarence Herbert Woolston",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-gospel-object-book-clarence-herbert-woolston.txt"
+    },
+    {
+      "row": 19,
+      "title": "The Sabbath-School Index",
+      "author": "Richard Gay Pardee",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-sabbath-school-index-richard-gay-pardee.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Boy and the Sunday School",
+      "author": "John L. Alexander",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-boy-and-the-sunday-school-john-l-alexander.txt"
+    },
+    {
+      "row": 21,
+      "title": "The Village Sunday School",
+      "author": "John C. Symons",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/the-village-sunday-school-john-c-symons.txt"
+    },
+    {
+      "row": 22,
+      "title": "Stories from the Olden Time Teacher's Text Book Course IV Part I",
+      "author": "Josephine L. Baldwin",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/stories-from-the-olden-time-teacher-s-text-book-course-iv-part-i-josephine-l-baldwin.txt"
+    },
+    {
+      "row": 23,
+      "title": "Leaves of Life for Daily Inspiration",
+      "author": "Margaret Bird Steinmetz",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/leaves-of-life-for-daily-inspiration-margaret-bird-steinmetz.txt"
+    },
+    {
+      "row": 24,
+      "title": "Parables of the Christ-Life",
+      "author": "I. Lilias Trotter",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/parables-of-the-christ-life-i-lilias-trotter.txt"
+    },
+    {
+      "row": 25,
+      "title": "Parables of the Cross",
+      "author": "I. Lilias Trotter",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/parables-of-the-cross-i-lilias-trotter.txt"
+    },
+    {
+      "row": 26,
+      "title": "Food for the Lambs or Helps for Young Christians",
+      "author": "Charles Ebert Orr",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/food-for-the-lambs-or-helps-for-young-christians-charles-ebert-orr.txt"
+    },
+    {
+      "row": 27,
+      "title": "Lead Kindly Light: Its Origin and Its Romance",
+      "author": "Allan Sutherland",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/lead-kindly-light-its-origin-and-its-romance-allan-sutherland.txt"
+    },
+    {
+      "row": 28,
+      "title": "Spiritual Folk-Songs of Early America",
+      "author": "George Pullen Jackson",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/spiritual-folk-songs-of-early-america-george-pullen-jackson.txt"
+    },
+    {
+      "row": 29,
+      "title": "How to Live a Holy Life",
+      "author": "Charles Ebert Orr",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/how-to-live-a-holy-life-charles-ebert-orr.txt"
+    },
+    {
+      "row": 30,
+      "title": "Heart Talks",
+      "author": "Charles Wesley Naylor",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/heart-talks-charles-wesley-naylor.txt"
+    }
+  ]
+}

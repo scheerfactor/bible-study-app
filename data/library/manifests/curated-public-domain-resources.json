@@ -96131,5 +96131,2215 @@
     "checksum_sha256": "168ed83e525bd57531f3edc8bdfc6a48f378a07f9959ca2cdc34c9d53a6607ae",
     "file_size_bytes": 243078,
     "word_count": 36660
+  },
+  {
+    "title": "An Open Letter on Translating",
+    "author": "Martin Luther",
+    "year": 1530,
+    "category": "KJV/Textual Issues",
+    "collection": "Bible Translation History",
+    "source_url": "https://www.gutenberg.org/ebooks/272",
+    "download_url": "https://www.gutenberg.org/ebooks/272.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/an-open-letter-on-translating-martin-luther.txt",
+    "content_storage_path": "data/library/verified/an-open-letter-on-translating-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/272.",
+    "notes": "Primary-source Reformation discussion of Bible translation. Use for translation history and compare all conclusions with Scripture. Labels/warnings: Historical Lutheran source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Primary-source Reformation discussion of Bible translation. Use for translation history and compare all conclusions with Scripture.",
+    "resource_labels": [
+      "Bible Translation History",
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "An Open Letter on Translating",
+      "author": "Martin Luther",
+      "category": "KJV/Textual Issues",
+      "collection": "Bible Translation History",
+      "badge": "Bible Translation History",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 30,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a9954f6ff141889eec2c3e9d4d52a3abdeb4051f08baffe061c3f893f30b31df",
+    "file_size_bytes": 37363,
+    "word_count": 6719
+  },
+  {
+    "title": "Disputation of Doctor Martin Luther on the Power and Efficacy of Indulgences",
+    "author": "Martin Luther",
+    "year": 1517,
+    "category": "Classics",
+    "collection": "Reformation Primary Sources",
+    "source_url": "https://www.gutenberg.org/ebooks/274",
+    "download_url": "https://www.gutenberg.org/ebooks/274.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/disputation-of-doctor-martin-luther-on-the-power-and-efficacy-of-indulgences-martin-luther.txt",
+    "content_storage_path": "data/library/verified/disputation-of-doctor-martin-luther-on-the-power-and-efficacy-of-indulgences-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/274.",
+    "notes": "Primary-source Reformation document for church-history study and teaching preparation. Labels/warnings: Historical Lutheran source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Primary-source Reformation document for church-history study and teaching preparation.",
+    "resource_labels": [
+      "Reformation Primary Sources",
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Disputation of Doctor Martin Luther on the Power and Efficacy of Indulgences",
+      "author": "Martin Luther",
+      "category": "Classics",
+      "collection": "Reformation Primary Sources",
+      "badge": "Reformation Primary Sources",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 21,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "3d4e00d70a39dec1ea65356e0f1ce97067a77f66ed7e511dfce7a95aa4ae4656",
+    "file_size_bytes": 30098,
+    "word_count": 4754
+  },
+  {
+    "title": "Concerning Christian Liberty",
+    "author": "Martin Luther",
+    "year": 1520,
+    "category": "Classics",
+    "collection": "Reformation Primary Sources",
+    "source_url": "https://www.gutenberg.org/ebooks/1911",
+    "download_url": "https://www.gutenberg.org/ebooks/1911.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/concerning-christian-liberty-martin-luther.txt",
+    "content_storage_path": "data/library/verified/concerning-christian-liberty-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/1911.",
+    "notes": "Historical Reformation work on Christian liberty. Compare doctrinal conclusions with Scripture. Labels/warnings: Historical Lutheran source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical Reformation work on Christian liberty. Compare doctrinal conclusions with Scripture.",
+    "resource_labels": [
+      "Reformation Primary Sources",
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Concerning Christian Liberty",
+      "author": "Martin Luther",
+      "category": "Classics",
+      "collection": "Reformation Primary Sources",
+      "badge": "Reformation Primary Sources",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 82,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "cbe86b6d139b6023c65d9d48cbdd7d913957db8cd24db78f7d2a139a93ffb9f0",
+    "file_size_bytes": 101426,
+    "word_count": 18525
+  },
+  {
+    "title": "Selections from the Table Talk of Martin Luther",
+    "author": "Martin Luther",
+    "year": 1857,
+    "category": "Classics",
+    "collection": "Reformation Primary Sources",
+    "source_url": "https://www.gutenberg.org/ebooks/9841",
+    "download_url": "https://www.gutenberg.org/ebooks/9841.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/selections-from-the-table-talk-of-martin-luther-martin-luther.txt",
+    "content_storage_path": "data/library/verified/selections-from-the-table-talk-of-martin-luther-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/9841.",
+    "notes": "Historical selections for Reformation study quotations and sermon-background research. Verify quotations in context. Labels/warnings: Historical Lutheran source; edited collection; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical selections for Reformation study quotations and sermon-background research. Verify quotations in context.",
+    "resource_labels": [
+      "Reformation Primary Sources",
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Selections from the Table Talk of Martin Luther",
+      "author": "Martin Luther",
+      "category": "Classics",
+      "collection": "Reformation Primary Sources",
+      "badge": "Reformation Primary Sources",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 148,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "810c00d941b7305a7061d5f6bbe2b559c362b13d3df4bfd3b8a253e2d0e0b9f6",
+    "file_size_bytes": 194436,
+    "word_count": 33372
+  },
+  {
+    "title": "Works of Martin Luther with Introductions and Notes Volume I",
+    "author": "Martin Luther",
+    "year": 1915,
+    "category": "Classics",
+    "collection": "Reformation Primary Sources",
+    "source_url": "https://www.gutenberg.org/ebooks/31604",
+    "download_url": "https://www.gutenberg.org/ebooks/31604.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-i-martin-luther.txt",
+    "content_storage_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-i-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/31604.",
+    "notes": "Collected primary and historical Reformation writings for church-history research. Labels/warnings: Historical Lutheran source; edited collection; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Collected primary and historical Reformation writings for church-history research.",
+    "resource_labels": [
+      "Reformation Primary Sources",
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Works of Martin Luther with Introductions and Notes Volume I",
+      "author": "Martin Luther",
+      "category": "Classics",
+      "collection": "Reformation Primary Sources",
+      "badge": "Reformation Primary Sources",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 629,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5148becb0851fd3ea650aac34f9256b7fdeb9a85b18a649e188af8586c919e14",
+    "file_size_bytes": 813073,
+    "word_count": 141584
+  },
+  {
+    "title": "Works of Martin Luther with Introductions and Notes Volume II",
+    "author": "Martin Luther",
+    "year": 1916,
+    "category": "Classics",
+    "collection": "Reformation Primary Sources",
+    "source_url": "https://www.gutenberg.org/ebooks/34904",
+    "download_url": "https://www.gutenberg.org/ebooks/34904.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-ii-martin-luther.txt",
+    "content_storage_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-ii-martin-luther.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/34904.",
+    "notes": "Collected primary and historical Reformation writings for church-history research. Labels/warnings: Historical Lutheran source; edited collection; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Collected primary and historical Reformation writings for church-history research.",
+    "resource_labels": [
+      "Reformation Primary Sources",
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Lutheran source",
+      "edited collection",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Works of Martin Luther with Introductions and Notes Volume II",
+      "author": "Martin Luther",
+      "category": "Classics",
+      "collection": "Reformation Primary Sources",
+      "badge": "Reformation Primary Sources",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 745,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a6a60c33f441eff92b2b2b269bc1c231dd9f9d7af8b151468a2ad3f14b04d5e5",
+    "file_size_bytes": 954516,
+    "word_count": 167677
+  },
+  {
+    "title": "Coming to the King",
+    "author": "Frances Ridley Havergal",
+    "year": 1886,
+    "category": "Prayer",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/10630",
+    "download_url": "https://www.gutenberg.org/ebooks/10630.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/coming-to-the-king-frances-ridley-havergal.txt",
+    "content_storage_path": "data/library/verified/coming-to-the-king-frances-ridley-havergal.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/10630.",
+    "notes": "Public-domain devotional poems on prayer and approaching God for personal reading family worship and teaching illustrations. Labels/warnings: Historical devotional poetry; Project Gutenberg terms; quote spot-check.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional poems on prayer and approaching God for personal reading family worship and teaching illustrations.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical devotional poetry",
+      "Project Gutenberg terms",
+      "quote spot-check"
+    ],
+    "resource_warnings": [
+      "Historical devotional poetry",
+      "Project Gutenberg terms",
+      "quote spot-check"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Coming to the King",
+      "author": "Frances Ridley Havergal",
+      "category": "Prayer",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 8,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "9e8439a11975a49e0037ea89a0831cff25540e820db36d01fa04945bd9f48d59",
+    "file_size_bytes": 10974,
+    "word_count": 1773
+  },
+  {
+    "title": "Morning Bells or Waking Thoughts for Little Ones",
+    "author": "Frances Ridley Havergal",
+    "year": 1880,
+    "category": "Christian Living",
+    "collection": "Family Devotionals",
+    "source_url": "https://www.gutenberg.org/ebooks/11563",
+    "download_url": "https://www.gutenberg.org/ebooks/11563.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/morning-bells-or-waking-thoughts-for-little-ones-frances-ridley-havergal.txt",
+    "content_storage_path": "data/library/verified/morning-bells-or-waking-thoughts-for-little-ones-frances-ridley-havergal.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/11563.",
+    "notes": "Short public-domain devotional readings for family worship children's lessons and spiritual formation. Labels/warnings: Historical children's devotional; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Short public-domain devotional readings for family worship children's lessons and spiritual formation.",
+    "resource_labels": [
+      "Family Devotionals",
+      "Historical children's devotional",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical children's devotional",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Morning Bells or Waking Thoughts for Little Ones",
+      "author": "Frances Ridley Havergal",
+      "category": "Christian Living",
+      "collection": "Family Devotionals",
+      "badge": "Family Devotionals",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 57,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "5b8222513bb702b7ee3e951492d76c059b2243588cd700d177384d8a844a2136",
+    "file_size_bytes": 68939,
+    "word_count": 12815
+  },
+  {
+    "title": "Kept for the Master's Use",
+    "author": "Frances Ridley Havergal",
+    "year": 1879,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/31647",
+    "download_url": "https://www.gutenberg.org/ebooks/31647.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/kept-for-the-master-s-use-frances-ridley-havergal.txt",
+    "content_storage_path": "data/library/verified/kept-for-the-master-s-use-frances-ridley-havergal.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/31647.",
+    "notes": "Public-domain Christian-life devotional on consecration and service for personal reading and teaching preparation. Labels/warnings: Historical devotional; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian-life devotional on consecration and service for personal reading and teaching preparation.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical devotional",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical devotional",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Kept for the Master's Use",
+      "author": "Frances Ridley Havergal",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 174,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "d0449b9d818864ec5ac2d348c04dd7d42bbd864f82e0aa10b3074a2bb227d821",
+    "file_size_bytes": 222818,
+    "word_count": 39108
+  },
+  {
+    "title": "Quiet Talks with World Winners",
+    "author": "S. D. Gordon",
+    "year": 1908,
+    "category": "Missions",
+    "collection": "Quiet Talks Collection",
+    "source_url": "https://www.gutenberg.org/ebooks/12799",
+    "download_url": "https://www.gutenberg.org/ebooks/12799.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/quiet-talks-with-world-winners-s-d-gordon.txt",
+    "content_storage_path": "data/library/verified/quiet-talks-with-world-winners-s-d-gordon.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/12799.",
+    "notes": "Public-domain missions and prayer study for missionary emphasis ministry training and teaching preparation. Labels/warnings: Historical missions teaching; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions and prayer study for missionary emphasis ministry training and teaching preparation.",
+    "resource_labels": [
+      "Quiet Talks Collection",
+      "Historical missions teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missions teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Quiet Talks with World Winners",
+      "author": "S. D. Gordon",
+      "category": "Missions",
+      "collection": "Quiet Talks Collection",
+      "badge": "Quiet Talks Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 266,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "446ce636e230a7f78f01c3af5d68ac7352f77b5e817bf27ce2d12e84900eb7f6",
+    "file_size_bytes": 341878,
+    "word_count": 59917
+  },
+  {
+    "title": "And Judas Iscariot Together with Other Evangelistic Addresses",
+    "author": "J. Wilbur Chapman",
+    "year": 1906,
+    "category": "Evangelism",
+    "collection": "Evangelistic Sermons",
+    "source_url": "https://www.gutenberg.org/ebooks/23096",
+    "download_url": "https://www.gutenberg.org/ebooks/23096.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/and-judas-iscariot-together-with-other-evangelistic-addresses-j-wilbur-chapman.txt",
+    "content_storage_path": "data/library/verified/and-judas-iscariot-together-with-other-evangelistic-addresses-j-wilbur-chapman.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/23096.",
+    "notes": "Public-domain evangelistic addresses for sermon research illustration discovery and evangelism training. Labels/warnings: Historical Presbyterian sermons; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain evangelistic addresses for sermon research illustration discovery and evangelism training.",
+    "resource_labels": [
+      "Evangelistic Sermons",
+      "Historical Presbyterian sermons",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Presbyterian sermons",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "And Judas Iscariot Together with Other Evangelistic Addresses",
+      "author": "J. Wilbur Chapman",
+      "category": "Evangelism",
+      "collection": "Evangelistic Sermons",
+      "badge": "Evangelistic Sermons",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 303,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "1a97c0a4a755ffaf6d1d6ebdd68c81b617f46b1f8895649e2068660d277a59d0",
+    "file_size_bytes": 368683,
+    "word_count": 68086
+  },
+  {
+    "title": "A Bird's-Eye View of the Bible Second Edition",
+    "author": "Frank Nelson Palmer and J. Wilbur Chapman",
+    "year": 1914,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Whole Bible Survey",
+    "source_url": "https://www.gutenberg.org/ebooks/16461",
+    "download_url": "https://www.gutenberg.org/ebooks/16461.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-bird-s-eye-view-of-the-bible-second-edition-frank-nelson-palmer-and-j-wilbur-chapman.txt",
+    "content_storage_path": "data/library/verified/a-bird-s-eye-view-of-the-bible-second-edition-frank-nelson-palmer-and-j-wilbur-chapman.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/16461.",
+    "notes": "Public-domain whole-Bible survey for book overviews lesson preparation and Bible-study orientation. Labels/warnings: Historical survey; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain whole-Bible survey for book overviews lesson preparation and Bible-study orientation.",
+    "resource_labels": [
+      "Whole Bible Survey",
+      "Historical survey",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical survey",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Bird's-Eye View of the Bible Second Edition",
+      "author": "Frank Nelson Palmer and J. Wilbur Chapman",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Whole Bible Survey",
+      "badge": "Whole Bible Survey",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 69,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "31fa090eb38ff1f8166a7bd35743d1d4e0570259900149022f7eebfb2225bd5a",
+    "file_size_bytes": 106175,
+    "word_count": 15574
+  },
+  {
+    "title": "Seven Graded Sunday Schools: A Series of Practical Papers",
+    "author": "Jesse Lyman Hurlbut",
+    "year": 1911,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/32278",
+    "download_url": "https://www.gutenberg.org/ebooks/32278.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/seven-graded-sunday-schools-a-series-of-practical-papers-jesse-lyman-hurlbut.txt",
+    "content_storage_path": "data/library/verified/seven-graded-sunday-schools-a-series-of-practical-papers-jesse-lyman-hurlbut.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/32278.",
+    "notes": "Public-domain Sunday school organization and teacher-training resource for historical ideas and ministry planning. Labels/warnings: Historical teaching methods; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday school organization and teacher-training resource for historical ideas and ministry planning.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Historical teaching methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical teaching methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Seven Graded Sunday Schools: A Series of Practical Papers",
+      "author": "Jesse Lyman Hurlbut",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 92,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7b3c6343a72eb478020d13a48e2a1c10fb4d0f39db0127961d908e4be95ec035",
+    "file_size_bytes": 124188,
+    "word_count": 20732
+  },
+  {
+    "title": "Female Scripture Biography Volume I",
+    "author": "Francis Augustus Cox",
+    "year": 1817,
+    "category": "Biographies",
+    "collection": "Bible Character Studies",
+    "source_url": "https://www.gutenberg.org/ebooks/9782",
+    "download_url": "https://www.gutenberg.org/ebooks/9782.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/female-scripture-biography-volume-i-francis-augustus-cox.txt",
+    "content_storage_path": "data/library/verified/female-scripture-biography-volume-i-francis-augustus-cox.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/9782.",
+    "notes": "Public-domain studies of women in Scripture for character study teaching preparation and devotional reading. Labels/warnings: Historical Baptist author; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain studies of women in Scripture for character study teaching preparation and devotional reading.",
+    "resource_labels": [
+      "Bible Character Studies",
+      "Historical Baptist author",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Baptist author",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Female Scripture Biography Volume I",
+      "author": "Francis Augustus Cox",
+      "category": "Biographies",
+      "collection": "Bible Character Studies",
+      "badge": "Bible Character Studies",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 504,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b2e493a8f2b78856353f1b9f0d6084271d22a39ab672d76542333f7ba94091d9",
+    "file_size_bytes": 693843,
+    "word_count": 113458
+  },
+  {
+    "title": "Dr. Scudder's Tales for Little Readers About the Heathen",
+    "author": "John Scudder",
+    "year": 1849,
+    "category": "Missions",
+    "collection": "Missionary Stories",
+    "source_url": "https://www.gutenberg.org/ebooks/13539",
+    "download_url": "https://www.gutenberg.org/ebooks/13539.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/dr-scudder-s-tales-for-little-readers-about-the-heathen-john-scudder.txt",
+    "content_storage_path": "data/library/verified/dr-scudder-s-tales-for-little-readers-about-the-heathen-john-scudder.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/13539.",
+    "notes": "Historical missionary stories for missions research and carefully adapted teaching illustrations. Review dated language before use. Labels/warnings: Historical missionary language; children's material; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical missionary stories for missions research and carefully adapted teaching illustrations. Review dated language before use.",
+    "resource_labels": [
+      "Missionary Stories",
+      "Historical missionary language",
+      "children's material",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language",
+      "children's material",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Dr. Scudder's Tales for Little Readers About the Heathen",
+      "author": "John Scudder",
+      "category": "Missions",
+      "collection": "Missionary Stories",
+      "badge": "Missionary Stories",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 169,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "6a004cd4deb9e309e720cc753756ea46143738796fe7a503a36bc5d8d8a21f4c",
+    "file_size_bytes": 211139,
+    "word_count": 37965
+  },
+  {
+    "title": "History of the Missions of the American Board to the Oriental Churches Volume I",
+    "author": "Rufus Anderson",
+    "year": 1872,
+    "category": "Missions",
+    "collection": "Missions History",
+    "source_url": "https://www.gutenberg.org/ebooks/18930",
+    "download_url": "https://www.gutenberg.org/ebooks/18930.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-i-rufus-anderson.txt",
+    "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-i-rufus-anderson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/18930.",
+    "notes": "Public-domain missions history for research timelines biographies and teaching preparation. Labels/warnings: Historical Congregational missions source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions history for research timelines biographies and teaching preparation.",
+    "resource_labels": [
+      "Missions History",
+      "Historical Congregational missions source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Congregational missions source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume I",
+      "author": "Rufus Anderson",
+      "category": "Missions",
+      "collection": "Missions History",
+      "badge": "Missions History",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 441,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "be4356504544682e0cfcce37aa9bfd828d7e673646dd33816a9bf2874fe5e173",
+    "file_size_bytes": 600619,
+    "word_count": 99120
+  },
+  {
+    "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
+    "author": "Rufus Anderson",
+    "year": 1872,
+    "category": "Missions",
+    "collection": "Missions History",
+    "source_url": "https://www.gutenberg.org/ebooks/19939",
+    "download_url": "https://www.gutenberg.org/ebooks/19939.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-ii-rufus-anderson.txt",
+    "content_storage_path": "data/library/verified/history-of-the-missions-of-the-american-board-to-the-oriental-churches-volume-ii-rufus-anderson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/19939.",
+    "notes": "Public-domain missions history for research timelines biographies and teaching preparation. Labels/warnings: Historical Congregational missions source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missions history for research timelines biographies and teaching preparation.",
+    "resource_labels": [
+      "Missions History",
+      "Historical Congregational missions source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Congregational missions source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "History of the Missions of the American Board to the Oriental Churches Volume II",
+      "author": "Rufus Anderson",
+      "category": "Missions",
+      "collection": "Missions History",
+      "badge": "Missions History",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 535,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a37477ac4a5824ab6e7c2df338e5fc3d75710d823d24776f8040a455031d0397",
+    "file_size_bytes": 757002,
+    "word_count": 120274
+  },
+  {
+    "title": "A Story of One Short Life 1783 to 1818",
+    "author": "Elisabeth G. Stryker",
+    "year": 1897,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/30026",
+    "download_url": "https://www.gutenberg.org/ebooks/30026.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/a-story-of-one-short-life-1783-to-1818-elisabeth-g-stryker.txt",
+    "content_storage_path": "data/library/verified/a-story-of-one-short-life-1783-to-1818-elisabeth-g-stryker.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/30026.",
+    "notes": "Biography of Samuel John Mills for missionary history illustrations and teaching preparation. Labels/warnings: Historical missionary biography; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Biography of Samuel John Mills for missionary history illustrations and teaching preparation.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical missionary biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "A Story of One Short Life 1783 to 1818",
+      "author": "Elisabeth G. Stryker",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 41,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "380d19e4820d286173e9ecc99d5bcec6541f48320d25151358ec1e2278a05e2e",
+    "file_size_bytes": 55079,
+    "word_count": 9232
+  },
+  {
+    "title": "Life on the Congo",
+    "author": "William Holman Bentley",
+    "year": 1887,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/59348",
+    "download_url": "https://www.gutenberg.org/ebooks/59348.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/life-on-the-congo-william-holman-bentley.txt",
+    "content_storage_path": "data/library/verified/life-on-the-congo-william-holman-bentley.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/59348.",
+    "notes": "Public-domain account of Baptist mission work and life in Central Africa for missions history and teaching. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain account of Baptist mission work and life in Central Africa for missions history and teaching.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Life on the Congo",
+      "author": "William Holman Bentley",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 100,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "53622a8113276a3d73cd3c19836934e0fb41e05a681f2a3934ac921d126edf8b",
+    "file_size_bytes": 131560,
+    "word_count": 22518
+  },
+  {
+    "title": "The Story of Chalmers of New Guinea",
+    "author": "Janet Harvey Kelman",
+    "year": 1906,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/67613",
+    "download_url": "https://www.gutenberg.org/ebooks/67613.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-story-of-chalmers-of-new-guinea-janet-harvey-kelman.txt",
+    "content_storage_path": "data/library/verified/the-story-of-chalmers-of-new-guinea-janet-harvey-kelman.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/67613.",
+    "notes": "Public-domain missionary biography for family reading missions lessons and illustration research. Labels/warnings: Historical children's biography; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary biography for family reading missions lessons and illustration research.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical children's biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical children's biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Story of Chalmers of New Guinea",
+      "author": "Janet Harvey Kelman",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 89,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "798731b2ae3d332971612cbd2b78c860ea0fd36de37ef3aad04cce9d290b88cf",
+    "file_size_bytes": 108335,
+    "word_count": 20065
+  },
+  {
+    "title": "Thirty Years in Madagascar",
+    "author": "Thomas T. Matthews",
+    "year": 1904,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/70113",
+    "download_url": "https://www.gutenberg.org/ebooks/70113.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/thirty-years-in-madagascar-thomas-t-matthews.txt",
+    "content_storage_path": "data/library/verified/thirty-years-in-madagascar-thomas-t-matthews.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/70113.",
+    "notes": "Public-domain missionary account for missions history biography timelines and teaching preparation. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain missionary account for missions history biography timelines and teaching preparation.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Thirty Years in Madagascar",
+      "author": "Thomas T. Matthews",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 508,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "063267c6bd486321fd395beb7e4d44c3ff21c29f28ddebb69006dd6e284326c7",
+    "file_size_bytes": 671176,
+    "word_count": 114301
+  },
+  {
+    "title": "The Story of Dr. Duff",
+    "author": "A. L. O. E.",
+    "year": 1899,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/76355",
+    "download_url": "https://www.gutenberg.org/ebooks/76355.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-story-of-dr-duff-a-l-o-e.txt",
+    "content_storage_path": "data/library/verified/the-story-of-dr-duff-a-l-o-e.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/76355.",
+    "notes": "Public-domain biography of Alexander Duff for missions history family reading and teaching illustrations. Labels/warnings: Historical Presbyterian missionary biography; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography of Alexander Duff for missions history family reading and teaching illustrations.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical Presbyterian missionary biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Presbyterian missionary biography",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Story of Dr. Duff",
+      "author": "A. L. O. E.",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 82,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f52551e6b17be38cea59a43ae47498b2350669688c5c4882ec24c1539e448261",
+    "file_size_bytes": 104650,
+    "word_count": 18388
+  },
+  {
+    "title": "Adventures in New Guinea",
+    "author": "James Chalmers",
+    "year": 1886,
+    "category": "Missions",
+    "collection": "Missionary Accounts",
+    "source_url": "https://www.gutenberg.org/ebooks/17694",
+    "download_url": "https://www.gutenberg.org/ebooks/17694.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/adventures-in-new-guinea-james-chalmers.txt",
+    "content_storage_path": "data/library/verified/adventures-in-new-guinea-james-chalmers.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/17694.",
+    "notes": "First-person public-domain missionary account for missions history geography and teaching illustrations. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "First-person public-domain missionary account for missions history geography and teaching illustrations.",
+    "resource_labels": [
+      "Missionary Accounts",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Adventures in New Guinea",
+      "author": "James Chalmers",
+      "category": "Missions",
+      "collection": "Missionary Accounts",
+      "badge": "Missionary Accounts",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 203,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "a28a42892b1b11e55f1730090422ea201be72a6bedd7fbb53d6dd9ff45f444ce",
+    "file_size_bytes": 255996,
+    "word_count": 45662
+  },
+  {
+    "title": "Everlasting Pearl: One of China's Women",
+    "author": "Anna Magdalena Johannsen",
+    "year": 1913,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/19365",
+    "download_url": "https://www.gutenberg.org/ebooks/19365.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/everlasting-pearl-one-of-china-s-women-anna-magdalena-johannsen.txt",
+    "content_storage_path": "data/library/verified/everlasting-pearl-one-of-china-s-women-anna-magdalena-johannsen.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/19365.",
+    "notes": "Public-domain Christian biography from China for missions study and carefully contextualized teaching illustrations. Labels/warnings: Historical missionary context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian biography from China for missions study and carefully contextualized teaching illustrations.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical missionary context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Everlasting Pearl: One of China's Women",
+      "author": "Anna Magdalena Johannsen",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 123,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "adf8a51da68b1258a48450ad711294cbad51cf92e5866eaaa43aeb2d3daf8022",
+    "file_size_bytes": 153441,
+    "word_count": 27761
+  },
+  {
+    "title": "Papuan Pictures",
+    "author": "H. M. Dauncey",
+    "year": 1913,
+    "category": "Missions",
+    "collection": "Missionary Accounts",
+    "source_url": "https://www.gutenberg.org/ebooks/57739",
+    "download_url": "https://www.gutenberg.org/ebooks/57739.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/papuan-pictures-h-m-dauncey.txt",
+    "content_storage_path": "data/library/verified/papuan-pictures-h-m-dauncey.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/57739.",
+    "notes": "Public-domain Papua New Guinea missions account for geography culture history and lesson preparation. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Papua New Guinea missions account for geography culture history and lesson preparation.",
+    "resource_labels": [
+      "Missionary Accounts",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Papuan Pictures",
+      "author": "H. M. Dauncey",
+      "category": "Missions",
+      "collection": "Missionary Accounts",
+      "badge": "Missionary Accounts",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 207,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "27cdacf59c56f3220abb4fb5b5089d2386aa7e3df42e7c54478c3ec85f32f9cd",
+    "file_size_bytes": 255829,
+    "word_count": 46583
+  },
+  {
+    "title": "Journal of Residence in the New Hebrides S.W. Pacific Ocean",
+    "author": "Charles Bice and Arthur Brittain",
+    "year": 1905,
+    "category": "Missions",
+    "collection": "Missionary Accounts",
+    "source_url": "https://www.gutenberg.org/ebooks/58060",
+    "download_url": "https://www.gutenberg.org/ebooks/58060.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/journal-of-residence-in-the-new-hebrides-s-w-pacific-ocean-charles-bice-and-arthur-brittain.txt",
+    "content_storage_path": "data/library/verified/journal-of-residence-in-the-new-hebrides-s-w-pacific-ocean-charles-bice-and-arthur-brittain.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/58060.",
+    "notes": "Public-domain Vanuatu missions journal for history geography timelines and teaching preparation. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Vanuatu missions journal for history geography timelines and teaching preparation.",
+    "resource_labels": [
+      "Missionary Accounts",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Journal of Residence in the New Hebrides S.W. Pacific Ocean",
+      "author": "Charles Bice and Arthur Brittain",
+      "category": "Missions",
+      "collection": "Missionary Accounts",
+      "badge": "Missionary Accounts",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 260,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "56ee8d553c703766755214fcebdae2e436adec86cd3bd9debdf3a1d4e9674ef5",
+    "file_size_bytes": 325818,
+    "word_count": 58462
+  },
+  {
+    "title": "The Life of John Eliot",
+    "author": "Nehemiah Adams",
+    "year": 1847,
+    "category": "Missions",
+    "collection": "Missionary Biographies",
+    "source_url": "https://www.gutenberg.org/ebooks/79004",
+    "download_url": "https://www.gutenberg.org/ebooks/79004.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-life-of-john-eliot-nehemiah-adams.txt",
+    "content_storage_path": "data/library/verified/the-life-of-john-eliot-nehemiah-adams.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/79004.",
+    "notes": "Public-domain biography of early missionary John Eliot for missions and American church-history study. Labels/warnings: Historical missionary language and context; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain biography of early missionary John Eliot for missions and American church-history study.",
+    "resource_labels": [
+      "Missionary Biographies",
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missionary language and context",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Life of John Eliot",
+      "author": "Nehemiah Adams",
+      "category": "Missions",
+      "collection": "Missionary Biographies",
+      "badge": "Missionary Biographies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 300,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b0b96affc286874fc5f73011ef9bebb3b79589a25cace91d833b3296f4c5ad65",
+    "file_size_bytes": 391785,
+    "word_count": 67408
+  },
+  {
+    "title": "Some Jewish Witnesses for Christ",
+    "author": "Aaron Bernstein",
+    "year": 1909,
+    "category": "Missions",
+    "collection": "Missions History",
+    "source_url": "https://www.gutenberg.org/ebooks/37734",
+    "download_url": "https://www.gutenberg.org/ebooks/37734.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/some-jewish-witnesses-for-christ-aaron-bernstein.txt",
+    "content_storage_path": "data/library/verified/some-jewish-witnesses-for-christ-aaron-bernstein.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/37734.",
+    "notes": "Historical biographical reference for missions research and carefully contextualized teaching preparation. Labels/warnings: Historical missions-to-Jewish-people source; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical biographical reference for missions research and carefully contextualized teaching preparation.",
+    "resource_labels": [
+      "Missions History",
+      "Historical missions-to-Jewish-people source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical missions-to-Jewish-people source",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Some Jewish Witnesses for Christ",
+      "author": "Aaron Bernstein",
+      "category": "Missions",
+      "collection": "Missions History",
+      "badge": "Missions History",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 616,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "af4eb186371d830753187baf9220f29b7a9b7bff588ddd99f9ee9314d0dda295",
+    "file_size_bytes": 823904,
+    "word_count": 138544
+  },
+  {
+    "title": "Fifty-Two Story Talks to Boys and Girls",
+    "author": "Howard J. Chidley",
+    "year": 1914,
+    "category": "Preaching & Teaching",
+    "collection": "Children's Sermon Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/14188",
+    "download_url": "https://www.gutenberg.org/ebooks/14188.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/fifty-two-story-talks-to-boys-and-girls-howard-j-chidley.txt",
+    "content_storage_path": "data/library/verified/fifty-two-story-talks-to-boys-and-girls-howard-j-chidley.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/14188.",
+    "notes": "Public-domain story talks for children's lessons family devotionals and sermon-illustration research. Labels/warnings: Historical children's sermons; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain story talks for children's lessons family devotionals and sermon-illustration research.",
+    "resource_labels": [
+      "Children's Sermon Helps",
+      "Historical children's sermons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical children's sermons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Fifty-Two Story Talks to Boys and Girls",
+      "author": "Howard J. Chidley",
+      "category": "Preaching & Teaching",
+      "collection": "Children's Sermon Helps",
+      "badge": "Children's Sermon Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 97,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "4ba53bf17b1578f9d2131db6bb76ab5248a68c35d225f8037e330695866c7915",
+    "file_size_bytes": 117803,
+    "word_count": 21771
+  },
+  {
+    "title": "The Children's Six Minutes",
+    "author": "Bruce S. Wright",
+    "year": 1922,
+    "category": "Preaching & Teaching",
+    "collection": "Children's Sermon Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/14411",
+    "download_url": "https://www.gutenberg.org/ebooks/14411.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-children-s-six-minutes-bruce-s-wright.txt",
+    "content_storage_path": "data/library/verified/the-children-s-six-minutes-bruce-s-wright.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/14411.",
+    "notes": "Short public-domain children's messages for lesson ideas family worship and illustration research. Labels/warnings: Historical children's sermons; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Short public-domain children's messages for lesson ideas family worship and illustration research.",
+    "resource_labels": [
+      "Children's Sermon Helps",
+      "Historical children's sermons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical children's sermons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Children's Six Minutes",
+      "author": "Bruce S. Wright",
+      "category": "Preaching & Teaching",
+      "collection": "Children's Sermon Helps",
+      "badge": "Children's Sermon Helps",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 84,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "af46f4e2cf377c1acee427db86f90ed8055e38580655d7746a9036e73f4dd951",
+    "file_size_bytes": 104643,
+    "word_count": 18895
+  },
+  {
+    "title": "With the Children on Sundays",
+    "author": "Sylvanus Stall",
+    "year": 1911,
+    "category": "Preaching & Teaching",
+    "collection": "Children's Sermon Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/32355",
+    "download_url": "https://www.gutenberg.org/ebooks/32355.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/with-the-children-on-sundays-sylvanus-stall.txt",
+    "content_storage_path": "data/library/verified/with-the-children-on-sundays-sylvanus-stall.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/32355.",
+    "notes": "Public-domain object lessons and children's messages for teachers and family worship planning. Labels/warnings: Historical children's sermons and object lessons; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain object lessons and children's messages for teachers and family worship planning.",
+    "resource_labels": [
+      "Children's Sermon Helps",
+      "Historical children's sermons and object lessons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical children's sermons and object lessons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "With the Children on Sundays",
+      "author": "Sylvanus Stall",
+      "category": "Preaching & Teaching",
+      "collection": "Children's Sermon Helps",
+      "badge": "Children's Sermon Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 396,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "821bf3f87fc8c05037b4e954c05b27a819e39b777d8e13dde9c332e4ec969084",
+    "file_size_bytes": 503713,
+    "word_count": 89059
+  },
+  {
+    "title": "The Gospel Object Book",
+    "author": "Clarence Herbert Woolston",
+    "year": 1920,
+    "category": "Preaching & Teaching",
+    "collection": "Object Lessons",
+    "source_url": "https://www.gutenberg.org/ebooks/73388",
+    "download_url": "https://www.gutenberg.org/ebooks/73388.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-gospel-object-book-clarence-herbert-woolston.txt",
+    "content_storage_path": "data/library/verified/the-gospel-object-book-clarence-herbert-woolston.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/73388.",
+    "notes": "Public-domain gospel object lessons for children's ministry family teaching and presentation ideas. Labels/warnings: Historical children's object lessons; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain gospel object lessons for children's ministry family teaching and presentation ideas.",
+    "resource_labels": [
+      "Object Lessons",
+      "Historical children's object lessons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical children's object lessons",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel Object Book",
+      "author": "Clarence Herbert Woolston",
+      "category": "Preaching & Teaching",
+      "collection": "Object Lessons",
+      "badge": "Object Lessons",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 107,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "f63ec666998f1fe538d7bca5f24410584964334659199b4b5da510009d786043",
+    "file_size_bytes": 133628,
+    "word_count": 24103
+  },
+  {
+    "title": "The Sabbath-School Index",
+    "author": "Richard Gay Pardee",
+    "year": 1868,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/48100",
+    "download_url": "https://www.gutenberg.org/ebooks/48100.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-sabbath-school-index-richard-gay-pardee.txt",
+    "content_storage_path": "data/library/verified/the-sabbath-school-index-richard-gay-pardee.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/48100.",
+    "notes": "Historical teaching methods and Sunday school organization ideas for ministry research. Labels/warnings: Historical Sunday school methods; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Historical teaching methods and Sunday school organization ideas for ministry research.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Historical Sunday school methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical Sunday school methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Sabbath-School Index",
+      "author": "Richard Gay Pardee",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 263,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "43d98e78b2f46246acfde045d39dbd63ffd019ffed7801a08677c71968de001f",
+    "file_size_bytes": 358425,
+    "word_count": 59162
+  },
+  {
+    "title": "The Boy and the Sunday School",
+    "author": "John L. Alexander",
+    "year": 1913,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/15923",
+    "download_url": "https://www.gutenberg.org/ebooks/15923.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-boy-and-the-sunday-school-john-l-alexander.txt",
+    "content_storage_path": "data/library/verified/the-boy-and-the-sunday-school-john-l-alexander.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/15923.",
+    "notes": "Public-domain teacher-training resource for historical youth and Sunday school ministry ideas. Labels/warnings: Historical youth ministry methods; Project Gutenberg terms; adapt carefully.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain teacher-training resource for historical youth and Sunday school ministry ideas.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Historical youth ministry methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "resource_warnings": [
+      "Historical youth ministry methods",
+      "Project Gutenberg terms",
+      "adapt carefully"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Boy and the Sunday School",
+      "author": "John L. Alexander",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 187,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b0b3d572cd1d23018e166667287a65bf7e2a803ff19f397ca0279736df7102e8",
+    "file_size_bytes": 261810,
+    "word_count": 41986
+  },
+  {
+    "title": "The Village Sunday School",
+    "author": "John C. Symons",
+    "year": 1850,
+    "category": "Preaching & Teaching",
+    "collection": "Sunday School Teaching",
+    "source_url": "https://www.gutenberg.org/ebooks/11966",
+    "download_url": "https://www.gutenberg.org/ebooks/11966.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-village-sunday-school-john-c-symons.txt",
+    "content_storage_path": "data/library/verified/the-village-sunday-school-john-c-symons.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/11966.",
+    "notes": "Public-domain Sunday school history and teaching sketches for ministry background and illustrations. Labels/warnings: Historical Sunday school sketches; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Sunday school history and teaching sketches for ministry background and illustrations.",
+    "resource_labels": [
+      "Sunday School Teaching",
+      "Historical Sunday school sketches",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical Sunday school sketches",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Village Sunday School",
+      "author": "John C. Symons",
+      "category": "Preaching & Teaching",
+      "collection": "Sunday School Teaching",
+      "badge": "Sunday School Teaching",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 47,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "7e3ddffa9cc6de11f63b70217e33eee250b7478f426f81dbd6ec9d28fa459c4f",
+    "file_size_bytes": 60512,
+    "word_count": 10489
+  },
+  {
+    "title": "Stories from the Olden Time Teacher's Text Book Course IV Part I",
+    "author": "Josephine L. Baldwin",
+    "year": 1917,
+    "category": "Preaching & Teaching",
+    "collection": "Bible Teaching Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/69457",
+    "download_url": "https://www.gutenberg.org/ebooks/69457.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/stories-from-the-olden-time-teacher-s-text-book-course-iv-part-i-josephine-l-baldwin.txt",
+    "content_storage_path": "data/library/verified/stories-from-the-olden-time-teacher-s-text-book-course-iv-part-i-josephine-l-baldwin.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/69457.",
+    "notes": "Public-domain teacher lessons based on Bible narratives for lesson-planning ideas and historical comparison. Labels/warnings: Historical children's Bible lessons; Project Gutenberg terms; compare all teaching with KJV Scripture.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain teacher lessons based on Bible narratives for lesson-planning ideas and historical comparison.",
+    "resource_labels": [
+      "Bible Teaching Helps",
+      "Historical children's Bible lessons",
+      "Project Gutenberg terms",
+      "compare all teaching with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical children's Bible lessons",
+      "Project Gutenberg terms",
+      "compare all teaching with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Stories from the Olden Time Teacher's Text Book Course IV Part I",
+      "author": "Josephine L. Baldwin",
+      "category": "Preaching & Teaching",
+      "collection": "Bible Teaching Helps",
+      "badge": "Bible Teaching Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 164,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "68dcadf1ee782c092de3b498bd201e43df129a9fab40e11cc2c84dcd1d371cb7",
+    "file_size_bytes": 214710,
+    "word_count": 36819
+  },
+  {
+    "title": "Leaves of Life for Daily Inspiration",
+    "author": "Margaret Bird Steinmetz",
+    "year": 1914,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/14849",
+    "download_url": "https://www.gutenberg.org/ebooks/14849.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/leaves-of-life-for-daily-inspiration-margaret-bird-steinmetz.txt",
+    "content_storage_path": "data/library/verified/leaves-of-life-for-daily-inspiration-margaret-bird-steinmetz.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/14849.",
+    "notes": "Public-domain daily readings and quotations for devotional use and sermon-illustration research. Labels/warnings: Historical quotation devotional; Project Gutenberg terms; verify quotations.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain daily readings and quotations for devotional use and sermon-illustration research.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical quotation devotional",
+      "Project Gutenberg terms",
+      "verify quotations"
+    ],
+    "resource_warnings": [
+      "Historical quotation devotional",
+      "Project Gutenberg terms",
+      "verify quotations"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Leaves of Life for Daily Inspiration",
+      "author": "Margaret Bird Steinmetz",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 306,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "73b1e9f4994b5e3a8db57ee4bf5aca66af9076eba9fadf8e90f0bec0292e8809",
+    "file_size_bytes": 424717,
+    "word_count": 68809
+  },
+  {
+    "title": "Parables of the Christ-Life",
+    "author": "I. Lilias Trotter",
+    "year": 1903,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/22432",
+    "download_url": "https://www.gutenberg.org/ebooks/22432.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/parables-of-the-christ-life-i-lilias-trotter.txt",
+    "content_storage_path": "data/library/verified/parables-of-the-christ-life-i-lilias-trotter.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/22432.",
+    "notes": "Public-domain devotional parables for personal reading lesson illustrations and teaching preparation. Labels/warnings: Historical devotional teaching; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional parables for personal reading lesson illustrations and teaching preparation.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical devotional teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical devotional teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Parables of the Christ-Life",
+      "author": "I. Lilias Trotter",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 47,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "60bfe2476607be845a8025fbe64e46fea30ce3e7a97a1d5585e499cf6fc52625",
+    "file_size_bytes": 58943,
+    "word_count": 10613
+  },
+  {
+    "title": "Parables of the Cross",
+    "author": "I. Lilias Trotter",
+    "year": 1890,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/22189",
+    "download_url": "https://www.gutenberg.org/ebooks/22189.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/parables-of-the-cross-i-lilias-trotter.txt",
+    "content_storage_path": "data/library/verified/parables-of-the-cross-i-lilias-trotter.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/22189.",
+    "notes": "Public-domain devotional parables for personal reading lesson illustrations and teaching preparation. Labels/warnings: Historical devotional teaching; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional parables for personal reading lesson illustrations and teaching preparation.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical devotional teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical devotional teaching",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Parables of the Cross",
+      "author": "I. Lilias Trotter",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 32,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "001710729700007d35ea33fdd2e50fbd94f41f9f7fca24cd53baf4853be37d9b",
+    "file_size_bytes": 39896,
+    "word_count": 7292
+  },
+  {
+    "title": "Food for the Lambs or Helps for Young Christians",
+    "author": "Charles Ebert Orr",
+    "year": 1914,
+    "category": "Christian Living",
+    "collection": "Discipleship Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/13294",
+    "download_url": "https://www.gutenberg.org/ebooks/13294.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/food-for-the-lambs-or-helps-for-young-christians-charles-ebert-orr.txt",
+    "content_storage_path": "data/library/verified/food-for-the-lambs-or-helps-for-young-christians-charles-ebert-orr.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/13294.",
+    "notes": "Public-domain practical Christian-life lessons for new-believer and discipleship study with doctrinal discernment. Labels/warnings: Historical holiness source; Project Gutenberg terms; compare all conclusions with Scripture.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain practical Christian-life lessons for new-believer and discipleship study with doctrinal discernment.",
+    "resource_labels": [
+      "Discipleship Helps",
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "resource_warnings": [
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Food for the Lambs or Helps for Young Christians",
+      "author": "Charles Ebert Orr",
+      "category": "Christian Living",
+      "collection": "Discipleship Helps",
+      "badge": "Discipleship Helps",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 134,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "b8fdbb517e3b11200aebcca5441fe97473ba2fc6b3de904b8ed64618dda90464",
+    "file_size_bytes": 166483,
+    "word_count": 30113
+  },
+  {
+    "title": "Lead Kindly Light: Its Origin and Its Romance",
+    "author": "Allan Sutherland",
+    "year": 1905,
+    "category": "Preaching & Teaching",
+    "collection": "Hymn Stories",
+    "source_url": "https://www.gutenberg.org/ebooks/63053",
+    "download_url": "https://www.gutenberg.org/ebooks/63053.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/lead-kindly-light-its-origin-and-its-romance-allan-sutherland.txt",
+    "content_storage_path": "data/library/verified/lead-kindly-light-its-origin-and-its-romance-allan-sutherland.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/63053.",
+    "notes": "Public-domain hymn-history study for worship background quotations and sermon illustrations. Labels/warnings: Historical hymn background; Project Gutenberg terms; use with discernment.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain hymn-history study for worship background quotations and sermon illustrations.",
+    "resource_labels": [
+      "Hymn Stories",
+      "Historical hymn background",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "resource_warnings": [
+      "Historical hymn background",
+      "Project Gutenberg terms",
+      "use with discernment"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Lead Kindly Light: Its Origin and Its Romance",
+      "author": "Allan Sutherland",
+      "category": "Preaching & Teaching",
+      "collection": "Hymn Stories",
+      "badge": "Hymn Stories",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 16,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0181b133c2e3d9f1a46d410c009d869813933380945453ebf2cc07687d224ec2",
+    "file_size_bytes": 22693,
+    "word_count": 3632
+  },
+  {
+    "title": "Spiritual Folk-Songs of Early America",
+    "author": "George Pullen Jackson",
+    "year": 1937,
+    "category": "Preaching & Teaching",
+    "collection": "Hymns and Worship",
+    "source_url": "https://www.gutenberg.org/ebooks/59884",
+    "download_url": "https://www.gutenberg.org/ebooks/59884.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/spiritual-folk-songs-of-early-america-george-pullen-jackson.txt",
+    "content_storage_path": "data/library/verified/spiritual-folk-songs-of-early-america-george-pullen-jackson.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/59884.",
+    "notes": "Public-domain collection of early American spiritual songs with historical notes for hymn research and presentations. Labels/warnings: Historical music collection; varied traditions; Project Gutenberg terms; review individual texts.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain collection of early American spiritual songs with historical notes for hymn research and presentations.",
+    "resource_labels": [
+      "Hymns and Worship",
+      "Historical music collection",
+      "varied traditions",
+      "Project Gutenberg terms",
+      "review individual texts"
+    ],
+    "resource_warnings": [
+      "Historical music collection",
+      "varied traditions",
+      "Project Gutenberg terms",
+      "review individual texts"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Spiritual Folk-Songs of Early America",
+      "author": "George Pullen Jackson",
+      "category": "Preaching & Teaching",
+      "collection": "Hymns and Worship",
+      "badge": "Hymns and Worship",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 310,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "1e9130d7428b36af63a69b83ff23b077a6511a5d4e5209ac5c0018c86d6e1201",
+    "file_size_bytes": 460010,
+    "word_count": 69683
+  },
+  {
+    "title": "How to Live a Holy Life",
+    "author": "Charles Ebert Orr",
+    "year": 1902,
+    "category": "Christian Living",
+    "collection": "Discipleship Helps",
+    "source_url": "https://www.gutenberg.org/ebooks/6999",
+    "download_url": "https://www.gutenberg.org/ebooks/6999.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/how-to-live-a-holy-life-charles-ebert-orr.txt",
+    "content_storage_path": "data/library/verified/how-to-live-a-holy-life-charles-ebert-orr.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/6999.",
+    "notes": "Public-domain practical Christian-living study for discipleship and teaching preparation with doctrinal discernment. Labels/warnings: Historical holiness source; Project Gutenberg terms; compare all conclusions with Scripture.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain practical Christian-living study for discipleship and teaching preparation with doctrinal discernment.",
+    "resource_labels": [
+      "Discipleship Helps",
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "resource_warnings": [
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "How to Live a Holy Life",
+      "author": "Charles Ebert Orr",
+      "category": "Christian Living",
+      "collection": "Discipleship Helps",
+      "badge": "Discipleship Helps",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 194,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "6fe861d4c5ffe2a02d4f208ca120c98f125e40200ffecbdc31b7077cdeeec58c",
+    "file_size_bytes": 238371,
+    "word_count": 43720
+  },
+  {
+    "title": "Heart Talks",
+    "author": "Charles Wesley Naylor",
+    "year": 1922,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/28736",
+    "download_url": "https://www.gutenberg.org/ebooks/28736.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/heart-talks-charles-wesley-naylor.txt",
+    "content_storage_path": "data/library/verified/heart-talks-charles-wesley-naylor.txt",
+    "content_storage_status": "uploaded",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/28736.",
+    "notes": "Public-domain devotional readings on practical Christian life for personal study and teaching preparation. Labels/warnings: Historical holiness source; Project Gutenberg terms; compare all conclusions with Scripture.",
+    "import_status": "imported_storage",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional readings on practical Christian life for personal study and teaching preparation.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "resource_warnings": [
+      "Historical holiness source",
+      "Project Gutenberg terms",
+      "compare all conclusions with Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Heart Talks",
+      "author": "Charles Wesley Naylor",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 326,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "dff02de78ec4505d68b3152f49ba50a427dea09cf594596d7478bca1155605e2",
+    "file_size_bytes": 401215,
+    "word_count": 73389
   }
 ]

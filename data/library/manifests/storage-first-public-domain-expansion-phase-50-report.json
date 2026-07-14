@@ -1,0 +1,261 @@
+{
+  "source_csv": "data/library/import-batches/storage-first-public-domain-expansion-phase-50.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "bucket": "fathers-business-bible-study-public",
+  "dry_run": false,
+  "upload": true,
+  "batch_size": 25,
+  "total_attempted": 15,
+  "imported": 15,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "possible_rights_issues": 0,
+  "file_sizes": [
+    {
+      "title": "An Open Letter on Translating",
+      "file": "an-open-letter-on-translating-martin-luther.txt",
+      "bytes": 37363,
+      "words": 6719,
+      "reading_time_minutes": 30,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Disputation of Doctor Martin Luther on the Power and Efficacy of Indulgences",
+      "file": "disputation-of-doctor-martin-luther-on-the-power-and-efficacy-of-indulgences-martin-luther.txt",
+      "bytes": 30098,
+      "words": 4754,
+      "reading_time_minutes": 21,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Concerning Christian Liberty",
+      "file": "concerning-christian-liberty-martin-luther.txt",
+      "bytes": 101426,
+      "words": 18525,
+      "reading_time_minutes": 82,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Selections from the Table Talk of Martin Luther",
+      "file": "selections-from-the-table-talk-of-martin-luther-martin-luther.txt",
+      "bytes": 194436,
+      "words": 33372,
+      "reading_time_minutes": 148,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Works of Martin Luther with Introductions and Notes Volume I",
+      "file": "works-of-martin-luther-with-introductions-and-notes-volume-i-martin-luther.txt",
+      "bytes": 813073,
+      "words": 141584,
+      "reading_time_minutes": 629,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Works of Martin Luther with Introductions and Notes Volume II",
+      "file": "works-of-martin-luther-with-introductions-and-notes-volume-ii-martin-luther.txt",
+      "bytes": 954516,
+      "words": 167677,
+      "reading_time_minutes": 745,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Coming to the King",
+      "file": "coming-to-the-king-frances-ridley-havergal.txt",
+      "bytes": 10974,
+      "words": 1773,
+      "reading_time_minutes": 8,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Morning Bells or Waking Thoughts for Little Ones",
+      "file": "morning-bells-or-waking-thoughts-for-little-ones-frances-ridley-havergal.txt",
+      "bytes": 68939,
+      "words": 12815,
+      "reading_time_minutes": 57,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Kept for the Master's Use",
+      "file": "kept-for-the-master-s-use-frances-ridley-havergal.txt",
+      "bytes": 222818,
+      "words": 39108,
+      "reading_time_minutes": 174,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Quiet Talks with World Winners",
+      "file": "quiet-talks-with-world-winners-s-d-gordon.txt",
+      "bytes": 341878,
+      "words": 59917,
+      "reading_time_minutes": 266,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "And Judas Iscariot Together with Other Evangelistic Addresses",
+      "file": "and-judas-iscariot-together-with-other-evangelistic-addresses-j-wilbur-chapman.txt",
+      "bytes": 368683,
+      "words": 68086,
+      "reading_time_minutes": 303,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "A Bird's-Eye View of the Bible Second Edition",
+      "file": "a-bird-s-eye-view-of-the-bible-second-edition-frank-nelson-palmer-and-j-wilbur-chapman.txt",
+      "bytes": 106175,
+      "words": 15574,
+      "reading_time_minutes": 69,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Seven Graded Sunday Schools: A Series of Practical Papers",
+      "file": "seven-graded-sunday-schools-a-series-of-practical-papers-jesse-lyman-hurlbut.txt",
+      "bytes": 124188,
+      "words": 20732,
+      "reading_time_minutes": 92,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Female Scripture Biography Volume I",
+      "file": "female-scripture-biography-volume-i-francis-augustus-cox.txt",
+      "bytes": 693843,
+      "words": 113458,
+      "reading_time_minutes": 504,
+      "storage_status": "uploaded"
+    },
+    {
+      "title": "Dr. Scudder's Tales for Little Readers About the Heathen",
+      "file": "dr-scudder-s-tales-for-little-readers-about-the-heathen-john-scudder.txt",
+      "bytes": 211139,
+      "words": 37965,
+      "reading_time_minutes": 169,
+      "storage_status": "uploaded"
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "An Open Letter on Translating",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/an-open-letter-on-translating-martin-luther.txt"
+    },
+    {
+      "row": 3,
+      "title": "Disputation of Doctor Martin Luther on the Power and Efficacy of Indulgences",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/disputation-of-doctor-martin-luther-on-the-power-and-efficacy-of-indulgences-martin-luther.txt"
+    },
+    {
+      "row": 4,
+      "title": "Concerning Christian Liberty",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/concerning-christian-liberty-martin-luther.txt"
+    },
+    {
+      "row": 5,
+      "title": "Selections from the Table Talk of Martin Luther",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/selections-from-the-table-talk-of-martin-luther-martin-luther.txt"
+    },
+    {
+      "row": 6,
+      "title": "Works of Martin Luther with Introductions and Notes Volume I",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-i-martin-luther.txt"
+    },
+    {
+      "row": 7,
+      "title": "Works of Martin Luther with Introductions and Notes Volume II",
+      "author": "Martin Luther",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/works-of-martin-luther-with-introductions-and-notes-volume-ii-martin-luther.txt"
+    },
+    {
+      "row": 8,
+      "title": "Coming to the King",
+      "author": "Frances Ridley Havergal",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/coming-to-the-king-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 9,
+      "title": "Morning Bells or Waking Thoughts for Little Ones",
+      "author": "Frances Ridley Havergal",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/morning-bells-or-waking-thoughts-for-little-ones-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 10,
+      "title": "Kept for the Master's Use",
+      "author": "Frances Ridley Havergal",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/kept-for-the-master-s-use-frances-ridley-havergal.txt"
+    },
+    {
+      "row": 11,
+      "title": "Quiet Talks with World Winners",
+      "author": "S. D. Gordon",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/quiet-talks-with-world-winners-s-d-gordon.txt"
+    },
+    {
+      "row": 12,
+      "title": "And Judas Iscariot Together with Other Evangelistic Addresses",
+      "author": "J. Wilbur Chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/and-judas-iscariot-together-with-other-evangelistic-addresses-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 13,
+      "title": "A Bird's-Eye View of the Bible Second Edition",
+      "author": "Frank Nelson Palmer and J. Wilbur Chapman",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/a-bird-s-eye-view-of-the-bible-second-edition-frank-nelson-palmer-and-j-wilbur-chapman.txt"
+    },
+    {
+      "row": 14,
+      "title": "Seven Graded Sunday Schools: A Series of Practical Papers",
+      "author": "Jesse Lyman Hurlbut",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/seven-graded-sunday-schools-a-series-of-practical-papers-jesse-lyman-hurlbut.txt"
+    },
+    {
+      "row": 15,
+      "title": "Female Scripture Biography Volume I",
+      "author": "Francis Augustus Cox",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/female-scripture-biography-volume-i-francis-augustus-cox.txt"
+    },
+    {
+      "row": 16,
+      "title": "Dr. Scudder's Tales for Little Readers About the Heathen",
+      "author": "John Scudder",
+      "status": "imported_storage",
+      "issues": [],
+      "content_storage_path": "data/library/verified/dr-scudder-s-tales-for-little-readers-about-the-heathen-john-scudder.txt"
+    }
+  ]
+}
