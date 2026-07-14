@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:23:45.342Z",
+  "generated_at": "2026-07-14T00:29:25.617Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 624,
+    "reviewedOverlayWords": 632,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -118,102 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "mad",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MAD"
-      },
-      {
-        "word": "making",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MA'KING"
-      },
-      {
-        "word": "meal",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MEAL"
-      },
-      {
-        "word": "mirth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MIRTH"
-      },
-      {
-        "word": "mixed",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MIX'ED"
-      },
-      {
-        "word": "murder",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 6:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "MUR'DER"
-      },
-      {
-        "word": "murderer",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "MUR'DERER"
-      },
-      {
-        "word": "oaks",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "OAK"
       },
       {
         "word": "obtained",
