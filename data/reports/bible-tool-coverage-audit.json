@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T22:06:05.332Z",
+    "generated_at": "2026-07-14T22:36:00.231Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60070,
+      "entries": 60076,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2005,140 +2005,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "running",
-          "count": 26,
-          "sampleRefs": [
-            "Leviticus 14:5",
-            "Leviticus 14:6",
-            "Leviticus 14:50",
-            "Leviticus 14:51",
-            "Leviticus 14:52"
-          ],
-          "lookupCandidates": [
-            "running",
-            "runn",
-            "runne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RUN'NING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "seal",
-          "count": 26,
-          "sampleRefs": [
-            "1 Kings 21:8",
-            "Nehemiah 9:38",
-            "Esther 8:8",
-            "Job 38:14",
-            "Job 41:15"
-          ],
-          "lookupCandidates": [
-            "seal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "separation",
-          "count": 26,
-          "sampleRefs": [
-            "Leviticus 12:2",
-            "Leviticus 12:5",
-            "Leviticus 15:20",
-            "Leviticus 15:25",
-            "Leviticus 15:25"
-          ],
-          "lookupCandidates": [
-            "separation"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEPARA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "uncover",
-          "count": 26,
-          "sampleRefs": [
-            "Leviticus 10:6",
-            "Leviticus 18:6",
-            "Leviticus 18:7",
-            "Leviticus 18:7",
-            "Leviticus 18:8"
-          ],
-          "lookupCandidates": [
-            "uncover"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UNCOVER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "westward",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 13:14",
-            "Exodus 26:22",
-            "Exodus 26:27",
-            "Exodus 36:27",
-            "Exodus 36:32"
-          ],
-          "lookupCandidates": [
-            "westward"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WESTWARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "worse",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 19:9",
-            "2 Samuel 19:7",
-            "1 Kings 16:25",
-            "2 Kings 14:12",
-            "1 Chronicles 19:16"
-          ],
-          "lookupCandidates": [
-            "worse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WORSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wrong",
           "count": 26,
           "sampleRefs": [
@@ -3591,6 +3457,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "WARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "centurion",
+          "count": 21,
+          "sampleRefs": [
+            "Matthew 8:5",
+            "Matthew 8:8",
+            "Matthew 8:13",
+            "Matthew 27:54",
+            "Mark 15:39"
+          ],
+          "lookupCandidates": [
+            "centurion"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CENTU'RION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "choice",
+          "count": 21,
+          "sampleRefs": [
+            "Genesis 23:6",
+            "Genesis 49:11",
+            "Deuteronomy 12:11",
+            "1 Samuel 9:2",
+            "2 Samuel 10:9"
+          ],
+          "lookupCandidates": [
+            "choice"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CHOICE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "common",
+          "count": 21,
+          "sampleRefs": [
+            "Leviticus 4:27",
+            "Numbers 16:29",
+            "1 Samuel 21:4",
+            "1 Samuel 21:5",
+            "Ecclesiastes 6:1"
+          ],
+          "lookupCandidates": [
+            "common"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COMMON",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "condemned",
+          "count": 21,
+          "sampleRefs": [
+            "2 Chronicles 36:3",
+            "Job 32:3",
+            "Psalms 109:7",
+            "Amos 2:8",
+            "Matthew 12:7"
+          ],
+          "lookupCandidates": [
+            "condemned",
+            "condemn",
+            "condemne"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CONDEMNED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "corruption",
+          "count": 21,
+          "sampleRefs": [
+            "Leviticus 22:25",
+            "2 Kings 23:13",
+            "Job 17:14",
+            "Psalms 16:10",
+            "Psalms 49:9"
+          ],
+          "lookupCandidates": [
+            "corruption"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CORRUP'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "equal",
+          "count": 21,
+          "sampleRefs": [
+            "Job 28:17",
+            "Job 28:19",
+            "Psalms 17:2",
+            "Psalms 55:13",
+            "Proverbs 26:7"
+          ],
+          "lookupCandidates": [
+            "equal"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "E'QUAL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10482,140 +10482,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "running",
-        "count": 26,
-        "sampleRefs": [
-          "Leviticus 14:5",
-          "Leviticus 14:6",
-          "Leviticus 14:50",
-          "Leviticus 14:51",
-          "Leviticus 14:52"
-        ],
-        "lookupCandidates": [
-          "running",
-          "runn",
-          "runne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RUN'NING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "seal",
-        "count": 26,
-        "sampleRefs": [
-          "1 Kings 21:8",
-          "Nehemiah 9:38",
-          "Esther 8:8",
-          "Job 38:14",
-          "Job 41:15"
-        ],
-        "lookupCandidates": [
-          "seal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "separation",
-        "count": 26,
-        "sampleRefs": [
-          "Leviticus 12:2",
-          "Leviticus 12:5",
-          "Leviticus 15:20",
-          "Leviticus 15:25",
-          "Leviticus 15:25"
-        ],
-        "lookupCandidates": [
-          "separation"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEPARA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "uncover",
-        "count": 26,
-        "sampleRefs": [
-          "Leviticus 10:6",
-          "Leviticus 18:6",
-          "Leviticus 18:7",
-          "Leviticus 18:7",
-          "Leviticus 18:8"
-        ],
-        "lookupCandidates": [
-          "uncover"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UNCOVER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "westward",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 13:14",
-          "Exodus 26:22",
-          "Exodus 26:27",
-          "Exodus 36:27",
-          "Exodus 36:32"
-        ],
-        "lookupCandidates": [
-          "westward"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WESTWARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "worse",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 19:9",
-          "2 Samuel 19:7",
-          "1 Kings 16:25",
-          "2 Kings 14:12",
-          "1 Chronicles 19:16"
-        ],
-        "lookupCandidates": [
-          "worse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WORSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wrong",
         "count": 26,
         "sampleRefs": [
@@ -12068,6 +11934,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "WARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "centurion",
+        "count": 21,
+        "sampleRefs": [
+          "Matthew 8:5",
+          "Matthew 8:8",
+          "Matthew 8:13",
+          "Matthew 27:54",
+          "Mark 15:39"
+        ],
+        "lookupCandidates": [
+          "centurion"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CENTU'RION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "choice",
+        "count": 21,
+        "sampleRefs": [
+          "Genesis 23:6",
+          "Genesis 49:11",
+          "Deuteronomy 12:11",
+          "1 Samuel 9:2",
+          "2 Samuel 10:9"
+        ],
+        "lookupCandidates": [
+          "choice"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CHOICE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "common",
+        "count": 21,
+        "sampleRefs": [
+          "Leviticus 4:27",
+          "Numbers 16:29",
+          "1 Samuel 21:4",
+          "1 Samuel 21:5",
+          "Ecclesiastes 6:1"
+        ],
+        "lookupCandidates": [
+          "common"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COMMON",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "condemned",
+        "count": 21,
+        "sampleRefs": [
+          "2 Chronicles 36:3",
+          "Job 32:3",
+          "Psalms 109:7",
+          "Amos 2:8",
+          "Matthew 12:7"
+        ],
+        "lookupCandidates": [
+          "condemned",
+          "condemn",
+          "condemne"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CONDEMNED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "corruption",
+        "count": 21,
+        "sampleRefs": [
+          "Leviticus 22:25",
+          "2 Kings 23:13",
+          "Job 17:14",
+          "Psalms 16:10",
+          "Psalms 49:9"
+        ],
+        "lookupCandidates": [
+          "corruption"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CORRUP'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "equal",
+        "count": 21,
+        "sampleRefs": [
+          "Job 28:17",
+          "Job 28:19",
+          "Psalms 17:2",
+          "Psalms 55:13",
+          "Proverbs 26:7"
+        ],
+        "lookupCandidates": [
+          "equal"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "E'QUAL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

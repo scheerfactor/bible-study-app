@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T22:06:05.332Z
+Generated: 2026-07-14T22:36:00.231Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -121,12 +121,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
-| running | RUN'NING | 26 | ocr_full_import_needs_spot_review |
-| seal | SEAL | 26 | ocr_full_import_needs_spot_review |
-| separation | SEPARA'TION | 26 | ocr_full_import_needs_spot_review |
-| uncover | UNCOVER | 26 | ocr_full_import_needs_spot_review |
-| westward | WESTWARD | 26 | ocr_full_import_needs_spot_review |
-| worse | WORSE | 26 | ocr_full_import_needs_spot_review |
 | wrong | WRONG | 26 | ocr_full_import_needs_spot_review |
 | best | BEST | 25 | ocr_full_import_needs_spot_review |
 | coat | COAT | 25 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | rebuked | REBU'KED | 25 | ocr_full_import_needs_spot_review |
 | spot | SPOT | 25 | ocr_full_import_needs_spot_review |
 | sprinkled | SPRINK'LED | 25 | ocr_full_import_needs_spot_review |
+| store | STORE | 25 | ocr_full_import_needs_spot_review |
+| upper | UP'PER | 25 | ocr_full_import_needs_spot_review |
+| condemn | CONDEMN | 24 | ocr_full_import_needs_spot_review |
+| contrary | CON'TRARY | 24 | ocr_full_import_needs_spot_review |
+| deny | DENY' | 24 | ocr_full_import_needs_spot_review |
+| dogs | DOG | 24 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
