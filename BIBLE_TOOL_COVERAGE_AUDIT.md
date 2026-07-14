@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T10:58:47.872Z
+Generated: 2026-07-14T11:28:46.144Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -13,7 +13,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,059/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
-- TSK: 6,264 public rows cover 1189/1189 chapters (100%).
+- TSK: 6,274 public rows cover 1189/1189 chapters (100%).
 - TSK remaining chapter gaps: None.
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
 
