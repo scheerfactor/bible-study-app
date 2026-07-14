@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T04:28:31.356Z",
+    "generated_at": "2026-07-14T04:58:33.423Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5454,11 +5454,11 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 61,
-      "mappingRows": 725399,
+      "mappingFiles": 62,
+      "mappingRows": 725473,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31038,
+      "mappedVerses": 31041,
       "mappedUniqueKjvWords": 12428,
       "meaningfulWordsWithMapping": 12058,
       "meaningfulWordMappingCoveragePercent": 96.8,
@@ -5516,8 +5516,8 @@
           "chaptersCovered": 14,
           "totalChapters": 14,
           "chapterCoveragePercent": 100,
-          "versesCovered": 184,
-          "rows": 917
+          "versesCovered": 187,
+          "rows": 991
         },
         {
           "book": "2 Thessalonians",
@@ -7696,8 +7696,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 184,
-      "rows": 917
+      "versesCovered": 187,
+      "rows": 991
     },
     {
       "book": "Joel",
