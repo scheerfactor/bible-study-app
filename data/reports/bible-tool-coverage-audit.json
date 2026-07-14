@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T21:13:04.878Z",
+    "generated_at": "2026-07-14T21:35:52.586Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60058,
+      "entries": 60064,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,142 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "wealth",
-          "count": 27,
-          "sampleRefs": [
-            "Genesis 34:29",
-            "Deuteronomy 8:17",
-            "Deuteronomy 8:18",
-            "Ruth 2:1",
-            "1 Samuel 2:32"
-          ],
-          "lookupCandidates": [
-            "wealth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WEALTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ancient",
-          "count": 26,
-          "sampleRefs": [
-            "Deuteronomy 33:15",
-            "Judges 5:21",
-            "2 Kings 19:25",
-            "1 Chronicles 4:22",
-            "Ezra 3:12"
-          ],
-          "lookupCandidates": [
-            "ancient"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "AN'CIENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bonds",
-          "count": 26,
-          "sampleRefs": [
-            "Numbers 30:5",
-            "Numbers 30:7",
-            "Numbers 30:14",
-            "Psalms 116:16",
-            "Jeremiah 5:5"
-          ],
-          "lookupCandidates": [
-            "bonds",
-            "bond",
-            "bonde"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BOND",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "coals",
-          "count": 26,
-          "sampleRefs": [
-            "Leviticus 16:12",
-            "2 Samuel 22:9",
-            "2 Samuel 22:13",
-            "1 Kings 19:6",
-            "Job 41:21"
-          ],
-          "lookupCandidates": [
-            "coals",
-            "coal",
-            "coale"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "confusion",
-          "count": 26,
-          "sampleRefs": [
-            "Leviticus 18:23",
-            "Leviticus 20:12",
-            "1 Samuel 20:30",
-            "1 Samuel 20:30",
-            "Ezra 9:7"
-          ],
-          "lookupCandidates": [
-            "confusion"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONFU'SION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "count",
-          "count": 26,
-          "sampleRefs": [
-            "Exodus 12:4",
-            "Leviticus 19:23",
-            "Leviticus 23:15",
-            "Leviticus 25:27",
-            "Leviticus 25:52"
-          ],
-          "lookupCandidates": [
-            "count"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COUNT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "evermore",
           "count": 26,
           "sampleRefs": [
@@ -3591,6 +3455,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "MAR'RY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "merchandise",
+          "count": 22,
+          "sampleRefs": [
+            "Deuteronomy 21:14",
+            "Deuteronomy 24:7",
+            "Proverbs 3:14",
+            "Proverbs 3:14",
+            "Proverbs 31:18"
+          ],
+          "lookupCandidates": [
+            "merchandise"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MER'CHANDISE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "moment",
+          "count": 22,
+          "sampleRefs": [
+            "Exodus 33:5",
+            "Numbers 16:21",
+            "Numbers 16:45",
+            "Job 7:18",
+            "Job 20:5"
+          ],
+          "lookupCandidates": [
+            "moment"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MO'MENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "mystery",
+          "count": 22,
+          "sampleRefs": [
+            "Mark 4:11",
+            "Romans 11:25",
+            "Romans 16:25",
+            "1 Corinthians 2:7",
+            "1 Corinthians 15:51"
+          ],
+          "lookupCandidates": [
+            "mystery"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MYS'TERY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "overcome",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 49:19",
+            "Genesis 49:19",
+            "Exodus 32:18",
+            "Numbers 13:30",
+            "Numbers 22:11"
+          ],
+          "lookupCandidates": [
+            "overcome"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OVERCOME",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "partakers",
+          "count": 22,
+          "sampleRefs": [
+            "Matthew 23:30",
+            "Romans 15:27",
+            "1 Corinthians 9:12",
+            "1 Corinthians 9:13",
+            "1 Corinthians 10:17"
+          ],
+          "lookupCandidates": [
+            "partakers",
+            "partaker",
+            "partakere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PARTA'KER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pledge",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 38:17",
+            "Genesis 38:18",
+            "Genesis 38:20",
+            "Exodus 22:26",
+            "Deuteronomy 24:6"
+          ],
+          "lookupCandidates": [
+            "pledge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PLEDGE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10438,142 +10436,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "wealth",
-        "count": 27,
-        "sampleRefs": [
-          "Genesis 34:29",
-          "Deuteronomy 8:17",
-          "Deuteronomy 8:18",
-          "Ruth 2:1",
-          "1 Samuel 2:32"
-        ],
-        "lookupCandidates": [
-          "wealth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WEALTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ancient",
-        "count": 26,
-        "sampleRefs": [
-          "Deuteronomy 33:15",
-          "Judges 5:21",
-          "2 Kings 19:25",
-          "1 Chronicles 4:22",
-          "Ezra 3:12"
-        ],
-        "lookupCandidates": [
-          "ancient"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "AN'CIENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bonds",
-        "count": 26,
-        "sampleRefs": [
-          "Numbers 30:5",
-          "Numbers 30:7",
-          "Numbers 30:14",
-          "Psalms 116:16",
-          "Jeremiah 5:5"
-        ],
-        "lookupCandidates": [
-          "bonds",
-          "bond",
-          "bonde"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BOND",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "coals",
-        "count": 26,
-        "sampleRefs": [
-          "Leviticus 16:12",
-          "2 Samuel 22:9",
-          "2 Samuel 22:13",
-          "1 Kings 19:6",
-          "Job 41:21"
-        ],
-        "lookupCandidates": [
-          "coals",
-          "coal",
-          "coale"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "confusion",
-        "count": 26,
-        "sampleRefs": [
-          "Leviticus 18:23",
-          "Leviticus 20:12",
-          "1 Samuel 20:30",
-          "1 Samuel 20:30",
-          "Ezra 9:7"
-        ],
-        "lookupCandidates": [
-          "confusion"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONFU'SION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "count",
-        "count": 26,
-        "sampleRefs": [
-          "Exodus 12:4",
-          "Leviticus 19:23",
-          "Leviticus 23:15",
-          "Leviticus 25:27",
-          "Leviticus 25:52"
-        ],
-        "lookupCandidates": [
-          "count"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COUNT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "evermore",
         "count": 26,
         "sampleRefs": [
@@ -12068,6 +11930,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "MAR'RY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "merchandise",
+        "count": 22,
+        "sampleRefs": [
+          "Deuteronomy 21:14",
+          "Deuteronomy 24:7",
+          "Proverbs 3:14",
+          "Proverbs 3:14",
+          "Proverbs 31:18"
+        ],
+        "lookupCandidates": [
+          "merchandise"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MER'CHANDISE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "moment",
+        "count": 22,
+        "sampleRefs": [
+          "Exodus 33:5",
+          "Numbers 16:21",
+          "Numbers 16:45",
+          "Job 7:18",
+          "Job 20:5"
+        ],
+        "lookupCandidates": [
+          "moment"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MO'MENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "mystery",
+        "count": 22,
+        "sampleRefs": [
+          "Mark 4:11",
+          "Romans 11:25",
+          "Romans 16:25",
+          "1 Corinthians 2:7",
+          "1 Corinthians 15:51"
+        ],
+        "lookupCandidates": [
+          "mystery"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MYS'TERY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "overcome",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 49:19",
+          "Genesis 49:19",
+          "Exodus 32:18",
+          "Numbers 13:30",
+          "Numbers 22:11"
+        ],
+        "lookupCandidates": [
+          "overcome"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OVERCOME",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "partakers",
+        "count": 22,
+        "sampleRefs": [
+          "Matthew 23:30",
+          "Romans 15:27",
+          "1 Corinthians 9:12",
+          "1 Corinthians 9:13",
+          "1 Corinthians 10:17"
+        ],
+        "lookupCandidates": [
+          "partakers",
+          "partaker",
+          "partakere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PARTA'KER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pledge",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 38:17",
+          "Genesis 38:18",
+          "Genesis 38:20",
+          "Exodus 22:26",
+          "Deuteronomy 24:6"
+        ],
+        "lookupCandidates": [
+          "pledge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PLEDGE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

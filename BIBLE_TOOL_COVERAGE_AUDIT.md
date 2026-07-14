@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T21:13:04.878Z
+Generated: 2026-07-14T21:35:52.586Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,12 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| wealth | WEALTH | 27 | ocr_full_import_needs_spot_review |
-| ancient | AN'CIENT | 26 | ocr_full_import_needs_spot_review |
-| bonds | BOND | 26 | ocr_full_import_needs_spot_review |
-| coals | COAL | 26 | ocr_full_import_needs_spot_review |
-| confusion | CONFU'SION | 26 | ocr_full_import_needs_spot_review |
-| count | COUNT | 26 | ocr_full_import_needs_spot_review |
 | evermore | EVERMO'RE | 26 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | finger | FIN'GER | 26 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | wrong | WRONG | 26 | ocr_full_import_needs_spot_review |
 | best | BEST | 25 | ocr_full_import_needs_spot_review |
 | coat | COAT | 25 | ocr_full_import_needs_spot_review |
+| fourteenth | FOURTEENTH | 25 | ocr_full_import_needs_spot_review |
+| glorify | GLO'RIFY | 25 | ocr_full_import_needs_spot_review |
+| inward | IN' WARD | 25 | ocr_full_import_needs_spot_review |
+| joyful | JOY'FUL | 25 | ocr_full_import_needs_spot_review |
+| pain | PAIN | 25 | ocr_full_import_needs_spot_review |
+| perceive | PERCEIVE | 25 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
