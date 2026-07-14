@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T15:34:09.433Z",
+    "generated_at": "2026-07-14T16:04:00.745Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59962,
+      "entries": 59968,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1891,144 +1891,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "means",
-          "count": 35,
-          "sampleRefs": [
-            "Exodus 34:7",
-            "Numbers 14:18",
-            "Judges 5:22",
-            "Judges 16:5",
-            "2 Samuel 14:14"
-          ],
-          "lookupCandidates": [
-            "means",
-            "mean",
-            "meane"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MEAN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "overlaid",
-          "count": 35,
-          "sampleRefs": [
-            "Exodus 26:32",
-            "Exodus 36:34",
-            "Exodus 36:34",
-            "Exodus 36:36",
-            "Exodus 36:38"
-          ],
-          "lookupCandidates": [
-            "overlaid"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OVERLA'ID",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "use",
-          "count": 35,
-          "sampleRefs": [
-            "Leviticus 7:24",
-            "Leviticus 19:26",
-            "Numbers 10:2",
-            "Numbers 15:39",
-            "Deuteronomy 26:14"
-          ],
-          "lookupCandidates": [
-            "use"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "USE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "deceived",
-          "count": 34,
-          "sampleRefs": [
-            "Genesis 31:7",
-            "Leviticus 6:2",
-            "Deuteronomy 11:16",
-            "1 Samuel 19:17",
-            "1 Samuel 28:12"
-          ],
-          "lookupCandidates": [
-            "deceived",
-            "deceiv",
-            "deceive"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DECE'IVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "flame",
-          "count": 34,
-          "sampleRefs": [
-            "Exodus 3:2",
-            "Numbers 21:28",
-            "Judges 13:20",
-            "Judges 13:20",
-            "Judges 20:38"
-          ],
-          "lookupCandidates": [
-            "flame"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FLAME",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "likeness",
-          "count": 34,
-          "sampleRefs": [
-            "Genesis 1:26",
-            "Genesis 5:1",
-            "Genesis 5:3",
-            "Exodus 20:4",
-            "Deuteronomy 4:16"
-          ],
-          "lookupCandidates": [
-            "likeness",
-            "likenes",
-            "likenese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LI'KENESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "residue",
           "count": 34,
           "sampleRefs": [
@@ -3612,6 +3474,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ROY'AL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "terror",
+          "count": 29,
+          "sampleRefs": [
+            "Genesis 35:5",
+            "Leviticus 26:16",
+            "Deuteronomy 32:25",
+            "Deuteronomy 34:12",
+            "Joshua 2:9"
+          ],
+          "lookupCandidates": [
+            "terror"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TER'ROR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "trusted",
+          "count": 29,
+          "sampleRefs": [
+            "Deuteronomy 32:37",
+            "Judges 11:20",
+            "Judges 20:36",
+            "2 Kings 18:5",
+            "Psalms 13:5"
+          ],
+          "lookupCandidates": [
+            "trusted",
+            "trust",
+            "truste"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TRUST'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wholly",
+          "count": 29,
+          "sampleRefs": [
+            "Leviticus 6:22",
+            "Leviticus 6:23",
+            "Leviticus 19:9",
+            "Numbers 3:9",
+            "Numbers 4:6"
+          ],
+          "lookupCandidates": [
+            "wholly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WHOLLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "anointing",
+          "count": 28,
+          "sampleRefs": [
+            "Exodus 25:6",
+            "Exodus 29:7",
+            "Exodus 29:21",
+            "Exodus 30:25",
+            "Exodus 30:31"
+          ],
+          "lookupCandidates": [
+            "anointing",
+            "anoint",
+            "anointe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ANOINT'ING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "apparel",
+          "count": 28,
+          "sampleRefs": [
+            "Judges 17:10",
+            "1 Samuel 27:9",
+            "2 Samuel 1:24",
+            "2 Samuel 12:20",
+            "2 Samuel 14:2"
+          ],
+          "lookupCandidates": [
+            "apparel"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "APPAREL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "beware",
+          "count": 28,
+          "sampleRefs": [
+            "Genesis 24:6",
+            "Exodus 23:21",
+            "Deuteronomy 6:12",
+            "Deuteronomy 8:11",
+            "Deuteronomy 15:9"
+          ],
+          "lookupCandidates": [
+            "beware"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BEWA'RE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10389,144 +10387,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "means",
-        "count": 35,
-        "sampleRefs": [
-          "Exodus 34:7",
-          "Numbers 14:18",
-          "Judges 5:22",
-          "Judges 16:5",
-          "2 Samuel 14:14"
-        ],
-        "lookupCandidates": [
-          "means",
-          "mean",
-          "meane"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MEAN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "overlaid",
-        "count": 35,
-        "sampleRefs": [
-          "Exodus 26:32",
-          "Exodus 36:34",
-          "Exodus 36:34",
-          "Exodus 36:36",
-          "Exodus 36:38"
-        ],
-        "lookupCandidates": [
-          "overlaid"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OVERLA'ID",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "use",
-        "count": 35,
-        "sampleRefs": [
-          "Leviticus 7:24",
-          "Leviticus 19:26",
-          "Numbers 10:2",
-          "Numbers 15:39",
-          "Deuteronomy 26:14"
-        ],
-        "lookupCandidates": [
-          "use"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "USE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "deceived",
-        "count": 34,
-        "sampleRefs": [
-          "Genesis 31:7",
-          "Leviticus 6:2",
-          "Deuteronomy 11:16",
-          "1 Samuel 19:17",
-          "1 Samuel 28:12"
-        ],
-        "lookupCandidates": [
-          "deceived",
-          "deceiv",
-          "deceive"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DECE'IVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "flame",
-        "count": 34,
-        "sampleRefs": [
-          "Exodus 3:2",
-          "Numbers 21:28",
-          "Judges 13:20",
-          "Judges 13:20",
-          "Judges 20:38"
-        ],
-        "lookupCandidates": [
-          "flame"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FLAME",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "likeness",
-        "count": 34,
-        "sampleRefs": [
-          "Genesis 1:26",
-          "Genesis 5:1",
-          "Genesis 5:3",
-          "Exodus 20:4",
-          "Deuteronomy 4:16"
-        ],
-        "lookupCandidates": [
-          "likeness",
-          "likenes",
-          "likenese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LI'KENESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "residue",
         "count": 34,
         "sampleRefs": [
@@ -12110,6 +11970,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ROY'AL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "terror",
+        "count": 29,
+        "sampleRefs": [
+          "Genesis 35:5",
+          "Leviticus 26:16",
+          "Deuteronomy 32:25",
+          "Deuteronomy 34:12",
+          "Joshua 2:9"
+        ],
+        "lookupCandidates": [
+          "terror"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TER'ROR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "trusted",
+        "count": 29,
+        "sampleRefs": [
+          "Deuteronomy 32:37",
+          "Judges 11:20",
+          "Judges 20:36",
+          "2 Kings 18:5",
+          "Psalms 13:5"
+        ],
+        "lookupCandidates": [
+          "trusted",
+          "trust",
+          "truste"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TRUST'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wholly",
+        "count": 29,
+        "sampleRefs": [
+          "Leviticus 6:22",
+          "Leviticus 6:23",
+          "Leviticus 19:9",
+          "Numbers 3:9",
+          "Numbers 4:6"
+        ],
+        "lookupCandidates": [
+          "wholly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WHOLLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "anointing",
+        "count": 28,
+        "sampleRefs": [
+          "Exodus 25:6",
+          "Exodus 29:7",
+          "Exodus 29:21",
+          "Exodus 30:25",
+          "Exodus 30:31"
+        ],
+        "lookupCandidates": [
+          "anointing",
+          "anoint",
+          "anointe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ANOINT'ING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "apparel",
+        "count": 28,
+        "sampleRefs": [
+          "Judges 17:10",
+          "1 Samuel 27:9",
+          "2 Samuel 1:24",
+          "2 Samuel 12:20",
+          "2 Samuel 14:2"
+        ],
+        "lookupCandidates": [
+          "apparel"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "APPAREL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "beware",
+        "count": 28,
+        "sampleRefs": [
+          "Genesis 24:6",
+          "Exodus 23:21",
+          "Deuteronomy 6:12",
+          "Deuteronomy 8:11",
+          "Deuteronomy 15:9"
+        ],
+        "lookupCandidates": [
+          "beware"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BEWA'RE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
