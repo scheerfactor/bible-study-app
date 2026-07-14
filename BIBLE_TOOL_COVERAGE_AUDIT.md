@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T05:29:55.765Z
+Generated: 2026-07-14T05:59:56.562Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -10,8 +10,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 7,827/12,454 meaningful KJV words have a lookup candidate (62.8%).
 - Combined word/topic lookup: 10,810/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.8%).
-- Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,044 source verses.
-- Strong's KJV word mapping: 12,058/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
+- Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,047 source verses.
+- Strong's KJV word mapping: 12,059/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
 - TSK: 6,118 public rows cover 1189/1189 chapters (100%).
 - TSK remaining chapter gaps: None.
@@ -155,7 +155,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Titus | 3 | 3 | 100% | 46 | 874 |
 | 2 Thessalonians | 3 | 3 | 100% | 47 | 994 |
 | Haggai | 2 | 2 | 100% | 38 | 1045 |
-| Hosea | 14 | 14 | 100% | 190 | 1051 |
+| Hosea | 14 | 14 | 100% | 193 | 1138 |
 | Nahum | 3 | 3 | 100% | 47 | 1174 |
 | Jonah | 4 | 4 | 100% | 48 | 1252 |
 | Habakkuk | 3 | 3 | 100% | 56 | 1352 |

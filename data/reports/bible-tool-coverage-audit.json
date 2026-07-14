@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T05:29:55.765Z",
+    "generated_at": "2026-07-14T05:59:56.562Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5454,13 +5454,13 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 63,
-      "mappingRows": 725533,
+      "mappingFiles": 64,
+      "mappingRows": 725620,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31044,
-      "mappedUniqueKjvWords": 12428,
-      "meaningfulWordsWithMapping": 12058,
+      "mappedVerses": 31047,
+      "mappedUniqueKjvWords": 12429,
+      "meaningfulWordsWithMapping": 12059,
       "meaningfulWordMappingCoveragePercent": 96.8,
       "weakestBooks": [
         {
@@ -5532,8 +5532,8 @@
           "chaptersCovered": 14,
           "totalChapters": 14,
           "chapterCoveragePercent": 100,
-          "versesCovered": 190,
-          "rows": 1051
+          "versesCovered": 193,
+          "rows": 1138
         },
         {
           "book": "Nahum",
@@ -7696,8 +7696,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 190,
-      "rows": 1051
+      "versesCovered": 193,
+      "rows": 1138
     },
     {
       "book": "Joel",

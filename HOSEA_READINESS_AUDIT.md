@@ -1,6 +1,6 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-14T05:28:13.768Z
+Generated: 2026-07-14T05:59:38.015Z
 
 Status: **ready_with_documented_depth_gaps**
 
@@ -10,7 +10,7 @@ Status: **ready_with_documented_depth_gaps**
 - Webster 1828: 847/906 meaningful unique words have a lookup (93.5%).
 - Supplemental fallback: 59 additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.
 - Contextual fallback: 4 ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.
-- Strong's: 14/14 chapters, 190/197 verses, 1051 reviewed word mappings, and 0 missing lexicon cards.
+- Strong's: 14/14 chapters, 193/197 verses, 1138 reviewed word mappings, and 0 missing lexicon cards.
 - TSK: 14/14 chapters, 73/197 source verses, and 145 public cross-reference rows.
 - Commentary: 11 full-book sets load immediately in the app; 11 verified full-book sets exist locally.
 
@@ -43,7 +43,7 @@ These are retained as review work, not filled with invented definitions.
 
 ## Remaining Depth Work
 
-- Strong's is chapter-complete, but 7 verses currently have no reviewed mapped word row.
+- Strong's is chapter-complete, but 4 verses currently have no reviewed mapped word row.
 - TSK is chapter-complete, but 124 verses currently have no public source-reference row.
 - 0 actionable Hosea lookup candidates remain without a cleaner Bible-dictionary fallback.
 - Detailed original teaching notes currently concentrate on Hosea 4-9; all chapters still have KJV reading, Strong's where mapped, TSK where available, and full-book commentary comparison.
