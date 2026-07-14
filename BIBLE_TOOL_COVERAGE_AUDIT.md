@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T15:03:56.525Z
+Generated: 2026-07-14T15:34:09.433Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -115,13 +115,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lamb | LAMB | 107 | ocr_full_import_needs_spot_review |
 | lambs | LAMB | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
-| boards | BOARD | 41 | ocr_full_import_needs_spot_review |
 | candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
-| bars | B'AR | 38 | ocr_full_import_needs_spot_review |
-| singers | SING'ER | 38 | ocr_full_import_needs_spot_review |
-| steps | STEP | 38 | ocr_full_import_needs_spot_review |
-| chains | CHAIN | 37 | ocr_full_import_needs_spot_review |
-| crucified | CRU'CIFY | 37 | ocr_full_import_needs_spot_review |
 | means | MEAN | 35 | ocr_full_import_needs_spot_review |
 | overlaid | OVERLA'ID | 35 | ocr_full_import_needs_spot_review |
 | use | USE | 35 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | porters | PORTER | 33 | ocr_full_import_needs_spot_review |
 | price | PRICE | 33 | ocr_full_import_needs_spot_review |
 | profane | PROFA'NE | 33 | ocr_full_import_needs_spot_review |
+| reed | REED | 33 | ocr_full_import_needs_spot_review |
+| sojourn | SOJOURN | 33 | ocr_full_import_needs_spot_review |
+| wheels | WHEEL | 33 | ocr_full_import_needs_spot_review |
+| withal | WITHAL | 33 | ocr_full_import_needs_spot_review |
+| firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
+| greatness | GREATNESS | 32 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
