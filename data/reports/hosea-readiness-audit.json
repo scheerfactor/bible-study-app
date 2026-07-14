@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:29:25.617Z",
+  "generated_at": "2026-07-14T00:41:42.581Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 632,
+    "reviewedOverlayWords": 640,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -118,102 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "obtained",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:23"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "OBTA'INED"
-      },
-      {
-        "word": "offend",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:15"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "OFFEND'"
-      },
-      {
-        "word": "plow",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "PLOW"
-      },
-      {
-        "word": "poplars",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "POPLAR"
-      },
-      {
-        "word": "preserved",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "PRESERVED"
-      },
-      {
-        "word": "profound",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "PROFOUND'"
-      },
-      {
-        "word": "prudent",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "PRU'DENT"
-      },
-      {
-        "word": "pursue",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "PURSUE"
       },
       {
         "word": "rage",
