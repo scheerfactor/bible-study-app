@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T20:03:15.915Z",
+    "generated_at": "2026-07-14T20:05:53.751Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60028,
+      "entries": 60034,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,140 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "bright",
-          "count": 29,
-          "sampleRefs": [
-            "Leviticus 13:2",
-            "Leviticus 13:4",
-            "Leviticus 13:19",
-            "Leviticus 13:23",
-            "Leviticus 13:24"
-          ],
-          "lookupCandidates": [
-            "bright"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BRIGHT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "business",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 39:11",
-            "Deuteronomy 24:5",
-            "Joshua 2:14",
-            "Joshua 2:20",
-            "Judges 18:7"
-          ],
-          "lookupCandidates": [
-            "business",
-            "busines",
-            "businese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BUSINESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "chose",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 6:2",
-            "Genesis 13:11",
-            "Exodus 18:25",
-            "Deuteronomy 4:37",
-            "Deuteronomy 10:15"
-          ],
-          "lookupCandidates": [
-            "chose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CHOSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "loose",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 49:21",
-            "Leviticus 14:7",
-            "Deuteronomy 25:9",
-            "Joshua 5:15",
-            "Job 6:9"
-          ],
-          "lookupCandidates": [
-            "loose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LOOSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "majesty",
-          "count": 29,
-          "sampleRefs": [
-            "1 Chronicles 29:11",
-            "1 Chronicles 29:25",
-            "Esther 1:4",
-            "Job 37:22",
-            "Job 40:10"
-          ],
-          "lookupCandidates": [
-            "majesty"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MAJ'ESTY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "require",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 9:5",
-            "Genesis 9:5",
-            "Genesis 9:5",
-            "Genesis 31:39",
-            "Genesis 43:9"
-          ],
-          "lookupCandidates": [
-            "require"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REQUI'RE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "royal",
           "count": 29,
           "sampleRefs": [
@@ -3594,6 +3460,141 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ELEV'EN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "form",
+          "count": 24,
+          "sampleRefs": [
+            "Genesis 1:2",
+            "1 Samuel 28:14",
+            "2 Samuel 14:20",
+            "2 Chronicles 4:7",
+            "Job 4:16"
+          ],
+          "lookupCandidates": [
+            "form"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FORM",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "further",
+          "count": 24,
+          "sampleRefs": [
+            "Numbers 22:26",
+            "Deuteronomy 20:8",
+            "1 Samuel 10:22",
+            "Esther 9:12",
+            "Job 38:11"
+          ],
+          "lookupCandidates": [
+            "further"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FUR'THER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "groves",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 34:13",
+            "Deuteronomy 7:5",
+            "Deuteronomy 12:3",
+            "Judges 3:7",
+            "1 Kings 14:15"
+          ],
+          "lookupCandidates": [
+            "groves",
+            "grove"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GROVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hunger",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 16:3",
+            "Deuteronomy 8:3",
+            "Deuteronomy 28:48",
+            "Deuteronomy 32:24",
+            "Nehemiah 9:15"
+          ],
+          "lookupCandidates": [
+            "hunger"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HUNGER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lose",
+          "count": 24,
+          "sampleRefs": [
+            "Judges 18:25",
+            "1 Kings 18:5",
+            "Job 31:39",
+            "Proverbs 23:8",
+            "Ecclesiastes 3:6"
+          ],
+          "lookupCandidates": [
+            "lose"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LOSE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lusts",
+          "count": 24,
+          "sampleRefs": [
+            "Mark 4:19",
+            "John 8:44",
+            "Romans 1:24",
+            "Romans 6:12",
+            "Romans 13:14"
+          ],
+          "lookupCandidates": [
+            "lusts",
+            "lust",
+            "luste"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LUST",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10441,140 +10442,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "bright",
-        "count": 29,
-        "sampleRefs": [
-          "Leviticus 13:2",
-          "Leviticus 13:4",
-          "Leviticus 13:19",
-          "Leviticus 13:23",
-          "Leviticus 13:24"
-        ],
-        "lookupCandidates": [
-          "bright"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BRIGHT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "business",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 39:11",
-          "Deuteronomy 24:5",
-          "Joshua 2:14",
-          "Joshua 2:20",
-          "Judges 18:7"
-        ],
-        "lookupCandidates": [
-          "business",
-          "busines",
-          "businese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BUSINESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "chose",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 6:2",
-          "Genesis 13:11",
-          "Exodus 18:25",
-          "Deuteronomy 4:37",
-          "Deuteronomy 10:15"
-        ],
-        "lookupCandidates": [
-          "chose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CHOSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "loose",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 49:21",
-          "Leviticus 14:7",
-          "Deuteronomy 25:9",
-          "Joshua 5:15",
-          "Job 6:9"
-        ],
-        "lookupCandidates": [
-          "loose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LOOSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "majesty",
-        "count": 29,
-        "sampleRefs": [
-          "1 Chronicles 29:11",
-          "1 Chronicles 29:25",
-          "Esther 1:4",
-          "Job 37:22",
-          "Job 40:10"
-        ],
-        "lookupCandidates": [
-          "majesty"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MAJ'ESTY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "require",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 9:5",
-          "Genesis 9:5",
-          "Genesis 9:5",
-          "Genesis 31:39",
-          "Genesis 43:9"
-        ],
-        "lookupCandidates": [
-          "require"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REQUI'RE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "royal",
         "count": 29,
         "sampleRefs": [
@@ -12074,6 +11941,141 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ELEV'EN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "form",
+        "count": 24,
+        "sampleRefs": [
+          "Genesis 1:2",
+          "1 Samuel 28:14",
+          "2 Samuel 14:20",
+          "2 Chronicles 4:7",
+          "Job 4:16"
+        ],
+        "lookupCandidates": [
+          "form"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FORM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "further",
+        "count": 24,
+        "sampleRefs": [
+          "Numbers 22:26",
+          "Deuteronomy 20:8",
+          "1 Samuel 10:22",
+          "Esther 9:12",
+          "Job 38:11"
+        ],
+        "lookupCandidates": [
+          "further"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FUR'THER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "groves",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 34:13",
+          "Deuteronomy 7:5",
+          "Deuteronomy 12:3",
+          "Judges 3:7",
+          "1 Kings 14:15"
+        ],
+        "lookupCandidates": [
+          "groves",
+          "grove"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GROVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hunger",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 16:3",
+          "Deuteronomy 8:3",
+          "Deuteronomy 28:48",
+          "Deuteronomy 32:24",
+          "Nehemiah 9:15"
+        ],
+        "lookupCandidates": [
+          "hunger"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HUNGER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lose",
+        "count": 24,
+        "sampleRefs": [
+          "Judges 18:25",
+          "1 Kings 18:5",
+          "Job 31:39",
+          "Proverbs 23:8",
+          "Ecclesiastes 3:6"
+        ],
+        "lookupCandidates": [
+          "lose"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LOSE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lusts",
+        "count": 24,
+        "sampleRefs": [
+          "Mark 4:19",
+          "John 8:44",
+          "Romans 1:24",
+          "Romans 6:12",
+          "Romans 13:14"
+        ],
+        "lookupCandidates": [
+          "lusts",
+          "lust",
+          "luste"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LUST",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
