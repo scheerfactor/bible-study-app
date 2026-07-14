@@ -10,6 +10,15 @@
     "public_domain_status": "Public-domain source tradition; Phase 1 reviewed sample from archive/source comparison.",
     "rights_notes": "Use this small reviewed sample for Genesis 1-5, Exodus 1-5, John 1-5, Romans 1-8, and Luke 24. Do not treat it as a full TSK import."
   },
+  "crosswire_public_domain_source": {
+    "title": "Treasury of Scripture Knowledge / CrossWire TSK Module",
+    "module_name": "TSK",
+    "module_version": "1.5",
+    "module_info_url": "https://www2.crosswire.org/sword/modules/ModInfo.jsp?beta=true&modName=TSK",
+    "download_url": "https://www2.crosswire.org/ftpmirror/pub/sword/betapackages/rawzip/TSK.zip",
+    "distribution_license": "Public Domain",
+    "rights_notes": "CrossWire's official module information and tsk.conf both identify the TSK module as Public Domain. Import reviewed reference pairs and short source headings only; do not import Bible quotation text."
+  },
   "candidate_download_source": {
     "title": "KJV Bible Database with Metadata / MetaV CrossRefIndex",
     "url": "https://github.com/theonize/KJV-bible-database-with-metadata-MetaV-",
@@ -19,5 +28,5 @@
     "rights_notes": "The repository readme says CrossRefIndex is compiled from R. A. Torrey's public-domain Treasury of Scripture Knowledge, but the repository files themselves are published under CC BY-SA 3.0. Treat this as a source candidate, not unrestricted public-domain app data, until the share-alike implications are accepted or a purely public-domain source file is chosen."
   },
   "import_notes": "Use scripts/prepare-tsk-metav-cross-references.mjs to convert MetaV Verses.csv and CrossRefIndex.csv into the app's JSON import shape. Then run scripts/import-tsk-cross-references.mjs after rights approval.",
-  "current_checkout_note": "As of 2026-07-07, this repository checkout includes the TSK source manifest but not the MetaV source CSV files. Do not generate additional TSK rows until source files are restored or a public-domain TSK source file is selected and documented."
+  "current_checkout_note": "The MetaV source CSV files are not present and must not be used for new rows. The official CrossWire TSK module is the selected public-domain source for new manually reviewed reference-pair batches."
 }
