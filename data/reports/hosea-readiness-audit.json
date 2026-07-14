@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:15:42.373Z",
+  "generated_at": "2026-07-14T00:23:45.342Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 618,
+    "reviewedOverlayWords": 624,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -108,54 +108,6 @@
         "sourceHeadword": "IN'NOCENCY"
       },
       {
-        "word": "jaws",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "JAW"
-      },
-      {
-        "word": "jewels",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "JEWEL"
-      },
-      {
-        "word": "killing",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "KILL'ING"
-      },
-      {
-        "word": "lack",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:6"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "LACK"
-      },
-      {
         "word": "lamb",
         "count": 1,
         "sampleRefs": [
@@ -166,30 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "languish",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "LAN'GUISH"
-      },
-      {
-        "word": "lily",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "LIL'Y"
       },
       {
         "word": "mad",
@@ -790,6 +718,30 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "VISITATION"
+      },
+      {
+        "word": "whelps",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "WH ELP"
+      },
+      {
+        "word": "willingly",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "WILLINGLY"
       }
     ]
   },

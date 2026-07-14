@@ -1,6 +1,6 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-14T00:15:42.373Z
+Generated: 2026-07-14T00:23:45.342Z
 
 Status: **ready_with_documented_depth_gaps**
 
@@ -44,6 +44,6 @@ These are retained as review work, not filled with invented definitions.
 
 - Strong's is chapter-complete, but 28 verses currently have no reviewed mapped word row.
 - TSK is chapter-complete, but 124 verses currently have no public source-reference row.
-- 60 high-priority Hosea lookup candidates remain in the current OCR cleanup sample.
+- 56 high-priority Hosea lookup candidates remain in the current OCR cleanup sample.
 - Detailed original teaching notes currently concentrate on Hosea 4-9; all chapters still have KJV reading, Strong's where mapped, TSK where available, and full-book commentary comparison.
 

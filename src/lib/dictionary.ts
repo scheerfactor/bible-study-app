@@ -481,10 +481,10 @@ export async function lookupDictionaryWord(word: string) {
   const matches = entries
     .filter((entry) => candidates.includes(entry.normalized_headword))
     .sort((a, b) => {
-      const candidatePriority = candidates.indexOf(a.normalized_headword) - candidates.indexOf(b.normalized_headword);
-      if (candidatePriority !== 0) return candidatePriority;
       const reviewPriority = dictionaryReviewPriority(a) - dictionaryReviewPriority(b);
       if (reviewPriority !== 0) return reviewPriority;
+      const candidatePriority = candidates.indexOf(a.normalized_headword) - candidates.indexOf(b.normalized_headword);
+      if (candidatePriority !== 0) return candidatePriority;
       const priority = dictionarySourcePriority(a) - dictionarySourcePriority(b);
       if (priority !== 0) return priority;
       return b.definition.length - a.definition.length;
