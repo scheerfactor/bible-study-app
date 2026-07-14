@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T19:33:58.051Z",
+    "generated_at": "2026-07-14T19:36:54.575Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60016,
+      "entries": 60022,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,139 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "pity",
-          "count": 30,
-          "sampleRefs": [
-            "Deuteronomy 7:16",
-            "Deuteronomy 13:8",
-            "Deuteronomy 19:13",
-            "Deuteronomy 19:21",
-            "Deuteronomy 25:12"
-          ],
-          "lookupCandidates": [
-            "pity"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PIT'Y",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pluck",
-          "count": 30,
-          "sampleRefs": [
-            "Leviticus 1:16",
-            "Numbers 33:52",
-            "Deuteronomy 23:25",
-            "2 Chronicles 7:20",
-            "Job 24:9"
-          ],
-          "lookupCandidates": [
-            "pluck"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PLUCK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "preserve",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 19:32",
-            "Genesis 19:34",
-            "Genesis 45:5",
-            "Genesis 45:7",
-            "Deuteronomy 6:24"
-          ],
-          "lookupCandidates": [
-            "preserve"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PRESERVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "provinces",
-          "count": 30,
-          "sampleRefs": [
-            "1 Kings 20:14",
-            "1 Kings 20:15",
-            "1 Kings 20:17",
-            "1 Kings 20:19",
-            "Ezra 4:15"
-          ],
-          "lookupCandidates": [
-            "provinces",
-            "province"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PROVINCE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "record",
-          "count": 30,
-          "sampleRefs": [
-            "Exodus 20:24",
-            "Deuteronomy 30:19",
-            "Deuteronomy 31:28",
-            "1 Chronicles 16:4",
-            "Ezra 6:2"
-          ],
-          "lookupCandidates": [
-            "record"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RECORD'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "regard",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 45:20",
-            "Exodus 5:9",
-            "Leviticus 19:31",
-            "Deuteronomy 28:50",
-            "1 Samuel 4:20"
-          ],
-          "lookupCandidates": [
-            "regard"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REGARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "report",
           "count": 30,
           "sampleRefs": [
@@ -2819,28 +2686,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "OINT'MENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "province",
-          "count": 27,
-          "sampleRefs": [
-            "Ezra 2:1",
-            "Ezra 5:8",
-            "Ezra 6:2",
-            "Ezra 7:16",
-            "Nehemiah 1:3"
-          ],
-          "lookupCandidates": [
-            "province"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PROVINCE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3595,6 +3440,166 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PERCEIVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "persecute",
+          "count": 25,
+          "sampleRefs": [
+            "Job 19:22",
+            "Job 19:28",
+            "Psalms 7:1",
+            "Psalms 7:5",
+            "Psalms 10:2"
+          ],
+          "lookupCandidates": [
+            "persecute"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PERSECUTE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "plains",
+          "count": 25,
+          "sampleRefs": [
+            "Genesis 18:1",
+            "Numbers 22:1",
+            "Numbers 26:3",
+            "Numbers 26:63",
+            "Numbers 31:12"
+          ],
+          "lookupCandidates": [
+            "plains",
+            "plain",
+            "plaine"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PLAIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "prove",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 16:4",
+            "Exodus 20:20",
+            "Deuteronomy 8:2",
+            "Deuteronomy 8:16",
+            "Deuteronomy 33:8"
+          ],
+          "lookupCandidates": [
+            "prove"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "rebuked",
+          "count": 25,
+          "sampleRefs": [
+            "Genesis 31:42",
+            "Genesis 37:10",
+            "Nehemiah 5:7",
+            "Psalms 9:5",
+            "Psalms 106:9"
+          ],
+          "lookupCandidates": [
+            "rebuked",
+            "rebuk",
+            "rebuke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REBU'KED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "spot",
+          "count": 25,
+          "sampleRefs": [
+            "Leviticus 13:2",
+            "Leviticus 13:4",
+            "Leviticus 13:19",
+            "Leviticus 13:23",
+            "Leviticus 13:24"
+          ],
+          "lookupCandidates": [
+            "spot"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SPOT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "sprinkled",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 9:10",
+            "Exodus 24:6",
+            "Exodus 24:8",
+            "Leviticus 6:27",
+            "Leviticus 6:27"
+          ],
+          "lookupCandidates": [
+            "sprinkled",
+            "sprinkl",
+            "sprinkle"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SPRINK'LED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "store",
+          "count": 25,
+          "sampleRefs": [
+            "Genesis 26:14",
+            "Genesis 41:36",
+            "Leviticus 25:22",
+            "Leviticus 26:10",
+            "Deuteronomy 28:5"
+          ],
+          "lookupCandidates": [
+            "store"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STORE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10442,139 +10447,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "pity",
-        "count": 30,
-        "sampleRefs": [
-          "Deuteronomy 7:16",
-          "Deuteronomy 13:8",
-          "Deuteronomy 19:13",
-          "Deuteronomy 19:21",
-          "Deuteronomy 25:12"
-        ],
-        "lookupCandidates": [
-          "pity"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PIT'Y",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pluck",
-        "count": 30,
-        "sampleRefs": [
-          "Leviticus 1:16",
-          "Numbers 33:52",
-          "Deuteronomy 23:25",
-          "2 Chronicles 7:20",
-          "Job 24:9"
-        ],
-        "lookupCandidates": [
-          "pluck"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PLUCK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "preserve",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 19:32",
-          "Genesis 19:34",
-          "Genesis 45:5",
-          "Genesis 45:7",
-          "Deuteronomy 6:24"
-        ],
-        "lookupCandidates": [
-          "preserve"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PRESERVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "provinces",
-        "count": 30,
-        "sampleRefs": [
-          "1 Kings 20:14",
-          "1 Kings 20:15",
-          "1 Kings 20:17",
-          "1 Kings 20:19",
-          "Ezra 4:15"
-        ],
-        "lookupCandidates": [
-          "provinces",
-          "province"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PROVINCE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "record",
-        "count": 30,
-        "sampleRefs": [
-          "Exodus 20:24",
-          "Deuteronomy 30:19",
-          "Deuteronomy 31:28",
-          "1 Chronicles 16:4",
-          "Ezra 6:2"
-        ],
-        "lookupCandidates": [
-          "record"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RECORD'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "regard",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 45:20",
-          "Exodus 5:9",
-          "Leviticus 19:31",
-          "Deuteronomy 28:50",
-          "1 Samuel 4:20"
-        ],
-        "lookupCandidates": [
-          "regard"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REGARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "report",
         "count": 30,
         "sampleRefs": [
@@ -11300,28 +11172,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "OINT'MENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "province",
-        "count": 27,
-        "sampleRefs": [
-          "Ezra 2:1",
-          "Ezra 5:8",
-          "Ezra 6:2",
-          "Ezra 7:16",
-          "Nehemiah 1:3"
-        ],
-        "lookupCandidates": [
-          "province"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PROVINCE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12076,6 +11926,166 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PERCEIVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "persecute",
+        "count": 25,
+        "sampleRefs": [
+          "Job 19:22",
+          "Job 19:28",
+          "Psalms 7:1",
+          "Psalms 7:5",
+          "Psalms 10:2"
+        ],
+        "lookupCandidates": [
+          "persecute"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PERSECUTE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "plains",
+        "count": 25,
+        "sampleRefs": [
+          "Genesis 18:1",
+          "Numbers 22:1",
+          "Numbers 26:3",
+          "Numbers 26:63",
+          "Numbers 31:12"
+        ],
+        "lookupCandidates": [
+          "plains",
+          "plain",
+          "plaine"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PLAIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "prove",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 16:4",
+          "Exodus 20:20",
+          "Deuteronomy 8:2",
+          "Deuteronomy 8:16",
+          "Deuteronomy 33:8"
+        ],
+        "lookupCandidates": [
+          "prove"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "rebuked",
+        "count": 25,
+        "sampleRefs": [
+          "Genesis 31:42",
+          "Genesis 37:10",
+          "Nehemiah 5:7",
+          "Psalms 9:5",
+          "Psalms 106:9"
+        ],
+        "lookupCandidates": [
+          "rebuked",
+          "rebuk",
+          "rebuke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REBU'KED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "spot",
+        "count": 25,
+        "sampleRefs": [
+          "Leviticus 13:2",
+          "Leviticus 13:4",
+          "Leviticus 13:19",
+          "Leviticus 13:23",
+          "Leviticus 13:24"
+        ],
+        "lookupCandidates": [
+          "spot"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SPOT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "sprinkled",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 9:10",
+          "Exodus 24:6",
+          "Exodus 24:8",
+          "Leviticus 6:27",
+          "Leviticus 6:27"
+        ],
+        "lookupCandidates": [
+          "sprinkled",
+          "sprinkl",
+          "sprinkle"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SPRINK'LED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "store",
+        "count": 25,
+        "sampleRefs": [
+          "Genesis 26:14",
+          "Genesis 41:36",
+          "Leviticus 25:22",
+          "Leviticus 26:10",
+          "Deuteronomy 28:5"
+        ],
+        "lookupCandidates": [
+          "store"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STORE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
