@@ -211,6 +211,7 @@ function dictionaryLookupCandidates(value) {
     [/ies$/, "y"],
     [/ing$/, ""],
     [/ed$/, ""],
+    [/([sxz]|ch|sh)es$/, "$1"],
     [/s$/, ""],
   ];
 

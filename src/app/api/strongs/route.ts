@@ -174,6 +174,7 @@ function strongSearchCandidates(value: string) {
     [/ies$/, "y"],
     [/ing$/, ""],
     [/ed$/, ""],
+    [/([sxz]|ch|sh)es$/, "$1"],
     [/s$/, ""],
   ];
 

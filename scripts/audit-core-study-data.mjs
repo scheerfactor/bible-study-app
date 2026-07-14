@@ -99,6 +99,7 @@ function normalizeDictionaryWord(value) {
     [/ies$/, "y"],
     [/ing$/, ""],
     [/ed$/, ""],
+    [/([sxz]|ch|sh)es$/, "$1"],
     [/s$/, ""],
   ];
 

@@ -49,7 +49,7 @@ function lookupCandidates(value) {
   const word = normalize(value);
   if (!word) return [];
   const candidates = aliases[word] ? [aliases[word], word] : [word];
-  for (const [pattern, replacement] of [[/eth$/, ""], [/est$/, ""], [/ies$/, "y"], [/ing$/, ""], [/ed$/, ""], [/s$/, ""]]) {
+  for (const [pattern, replacement] of [[/eth$/, ""], [/est$/, ""], [/ies$/, "y"], [/ing$/, ""], [/ed$/, ""], [/([sxz]|ch|sh)es$/, "$1"], [/s$/, ""]]) {
     if (!pattern.test(word)) continue;
     const candidate = word.replace(pattern, replacement);
     if (candidate.length < 3) continue;

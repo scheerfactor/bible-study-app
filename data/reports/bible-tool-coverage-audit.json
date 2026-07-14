@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T00:00:51.702Z",
+    "generated_at": "2026-07-14T00:10:20.221Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,11 +10,11 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59866,
+      "entries": 59874,
       "normalizedHeadwords": 51001,
-      "meaningfulWordsWithDefinition": 7788,
-      "meaningfulWordsWithoutDefinition": 4666,
-      "meaningfulDefinitionCoveragePercent": 62.5,
+      "meaningfulWordsWithDefinition": 7827,
+      "meaningfulWordsWithoutDefinition": 4627,
+      "meaningfulDefinitionCoveragePercent": 62.8,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -95,6 +95,7 @@
           ],
           "lookupCandidates": [
             "moses",
+            "mos",
             "mose"
           ],
           "hasDefinition": false,
@@ -3647,10 +3648,10 @@
       "eastonEntries": 3883,
       "naveTopics": 4674,
       "rareTermEntries": 25,
-      "meaningfulWordsWithEastonEntry": 4051,
-      "meaningfulWordsWithNaveTopic": 3938,
-      "meaningfulWordsWithAnyStudyLookup": 10775,
-      "combinedStudyLookupCoveragePercent": 86.5,
+      "meaningfulWordsWithEastonEntry": 4070,
+      "meaningfulWordsWithNaveTopic": 3957,
+      "meaningfulWordsWithAnyStudyLookup": 10810,
+      "combinedStudyLookupCoveragePercent": 86.8,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "forasmuch",
@@ -3980,29 +3981,6 @@
           ],
           "lookupCandidates": [
             "egyptian"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "fishes",
-          "count": 27,
-          "sampleRefs": [
-            "Genesis 9:2",
-            "1 Kings 4:33",
-            "Job 12:8",
-            "Ecclesiastes 9:12",
-            "Ezekiel 38:20"
-          ],
-          "lookupCandidates": [
-            "fishes",
-            "fishe"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5340,52 +5318,6 @@
           "reviewStatus": null
         },
         {
-          "word": "arches",
-          "count": 15,
-          "sampleRefs": [
-            "Ezekiel 40:16",
-            "Ezekiel 40:21",
-            "Ezekiel 40:22",
-            "Ezekiel 40:22",
-            "Ezekiel 40:24"
-          ],
-          "lookupCandidates": [
-            "arches",
-            "arche"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "breaches",
-          "count": 15,
-          "sampleRefs": [
-            "Judges 5:17",
-            "1 Kings 11:27",
-            "2 Kings 12:5",
-            "2 Kings 12:6",
-            "2 Kings 12:7"
-          ],
-          "lookupCandidates": [
-            "breaches",
-            "breache"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "diligent",
           "count": 15,
           "sampleRefs": [
@@ -5443,6 +5375,72 @@
             "pots",
             "pot",
             "pote"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "region",
+          "count": 15,
+          "sampleRefs": [
+            "Deuteronomy 3:4",
+            "Deuteronomy 3:13",
+            "1 Kings 4:11",
+            "1 Kings 4:13",
+            "1 Kings 4:24"
+          ],
+          "lookupCandidates": [
+            "region"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "shortly",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 41:32",
+            "Jeremiah 27:16",
+            "Ezekiel 7:8",
+            "Acts 25:4",
+            "Romans 16:20"
+          ],
+          "lookupCandidates": [
+            "shortly"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "sixty",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 5:15",
+            "Genesis 5:18",
+            "Genesis 5:20",
+            "Genesis 5:21",
+            "Genesis 5:23"
+          ],
+          "lookupCandidates": [
+            "sixty"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -6595,8 +6593,8 @@
     "nave": {
       "topics": 4674,
       "topicsWithReferences": 3862,
-      "exactMeaningfulBibleWordTopics": 3938,
-      "exactMeaningfulBibleWordTopicPercent": 31.6,
+      "exactMeaningfulBibleWordTopics": 3957,
+      "exactMeaningfulBibleWordTopicPercent": 31.8,
       "suspiciousTopicCount": 814,
       "topUsedWordsWithoutExactTopic": [
         {
@@ -8623,6 +8621,7 @@
         ],
         "lookupCandidates": [
           "moses",
+          "mos",
           "mose"
         ],
         "hasDefinition": false,
@@ -12510,29 +12509,6 @@
         "reviewStatus": null
       },
       {
-        "word": "fishes",
-        "count": 27,
-        "sampleRefs": [
-          "Genesis 9:2",
-          "1 Kings 4:33",
-          "Job 12:8",
-          "Ecclesiastes 9:12",
-          "Ezekiel 38:20"
-        ],
-        "lookupCandidates": [
-          "fishes",
-          "fishe"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "whereunto",
         "count": 27,
         "sampleRefs": [
@@ -13859,52 +13835,6 @@
         "reviewStatus": null
       },
       {
-        "word": "arches",
-        "count": 15,
-        "sampleRefs": [
-          "Ezekiel 40:16",
-          "Ezekiel 40:21",
-          "Ezekiel 40:22",
-          "Ezekiel 40:22",
-          "Ezekiel 40:24"
-        ],
-        "lookupCandidates": [
-          "arches",
-          "arche"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "breaches",
-        "count": 15,
-        "sampleRefs": [
-          "Judges 5:17",
-          "1 Kings 11:27",
-          "2 Kings 12:5",
-          "2 Kings 12:6",
-          "2 Kings 12:7"
-        ],
-        "lookupCandidates": [
-          "breaches",
-          "breache"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "diligent",
         "count": 15,
         "sampleRefs": [
@@ -13962,6 +13892,72 @@
           "pots",
           "pot",
           "pote"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "region",
+        "count": 15,
+        "sampleRefs": [
+          "Deuteronomy 3:4",
+          "Deuteronomy 3:13",
+          "1 Kings 4:11",
+          "1 Kings 4:13",
+          "1 Kings 4:24"
+        ],
+        "lookupCandidates": [
+          "region"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "shortly",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 41:32",
+          "Jeremiah 27:16",
+          "Ezekiel 7:8",
+          "Acts 25:4",
+          "Romans 16:20"
+        ],
+        "lookupCandidates": [
+          "shortly"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "sixty",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 5:15",
+          "Genesis 5:18",
+          "Genesis 5:20",
+          "Genesis 5:21",
+          "Genesis 5:23"
+        ],
+        "lookupCandidates": [
+          "sixty"
         ],
         "hasDefinition": false,
         "hasEaston": false,

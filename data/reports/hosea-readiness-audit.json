@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:00:47.909Z",
+  "generated_at": "2026-07-14T00:10:16.831Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 602,
+    "reviewedOverlayWords": 610,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -84,78 +84,6 @@
         "sourceHeadword": "AV'EN"
       },
       {
-        "word": "falsehood",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:1"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "FALSEHOOD"
-      },
-      {
-        "word": "falsely",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FALSELY"
-      },
-      {
-        "word": "faulty",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FAULTY"
-      },
-      {
-        "word": "fierceness",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FIERCENESS"
-      },
-      {
-        "word": "fly",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "FLY"
-      },
-      {
-        "word": "fortresses",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FOR'TRESS"
-      },
-      {
         "word": "fountain",
         "count": 1,
         "sampleRefs": [
@@ -166,30 +94,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "FOUNT' AIN"
-      },
-      {
-        "word": "frame",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FRAME"
-      },
-      {
-        "word": "freely",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FREE'LY"
       },
       {
         "word": "grapes",
@@ -790,6 +694,102 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "SPIR'ITUAL"
+      },
+      {
+        "word": "spring",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:15"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SPRING"
+      },
+      {
+        "word": "springeth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:4"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SPRING"
+      },
+      {
+        "word": "stalk",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "STALK"
+      },
+      {
+        "word": "stay",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "STAY"
+      },
+      {
+        "word": "stealing",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:2"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "STE'ALING"
+      },
+      {
+        "word": "strip",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "STRIP"
+      },
+      {
+        "word": "swallowed",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SWALLOWED"
+      },
+      {
+        "word": "tabor",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 5:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "TA'BOR"
       }
     ]
   },

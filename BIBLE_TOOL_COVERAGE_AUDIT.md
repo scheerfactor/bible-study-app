@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T00:00:51.702Z
+Generated: 2026-07-14T00:10:20.221Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,788/12,454 meaningful KJV words have a lookup candidate (62.5%).
-- Combined word/topic lookup: 10,775/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.5%).
+- Webster 1828: 7,827/12,454 meaningful KJV words have a lookup candidate (62.8%).
+- Combined word/topic lookup: 10,810/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.8%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,023 source verses.
 - Strong's KJV word mapping: 12,054/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -86,7 +86,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | continued | 29 | Genesis 40:4; Judges 5:17; Ruth 1:2; Ruth 2:7; 1 Samuel 1:12 |
 | drawn | 28 | Numbers 22:23; Numbers 22:31; Deuteronomy 21:3; Deuteronomy 30:17; Joshua 5:13 |
 | egyptian | 27 | Genesis 16:1; Genesis 16:3; Genesis 21:9; Genesis 25:12; Genesis 39:1 |
-| fishes | 27 | Genesis 9:2; 1 Kings 4:33; Job 12:8; Ecclesiastes 9:12; Ezekiel 38:20 |
 | whereunto | 27 | Numbers 36:3; Numbers 36:4; Deuteronomy 4:26; 2 Chronicles 8:11; Esther 10:2 |
 | accomplished | 26 | 2 Chronicles 36:22; Esther 2:12; Job 15:32; Proverbs 13:19; Isaiah 40:2 |
 | hittite | 26 | Genesis 23:10; Genesis 25:9; Genesis 26:34; Genesis 26:34; Genesis 36:2 |
@@ -101,6 +100,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | marvelled | 23 | Genesis 43:33; Psalms 48:5; Matthew 8:10; Matthew 8:27; Matthew 9:8 |
 | mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
 | proclaim | 23 | Exodus 33:19; Leviticus 23:2; Leviticus 23:4; Leviticus 23:21; Leviticus 23:37 |
+| defence | 22 | Numbers 14:9; 2 Chronicles 11:5; Job 22:25; Psalms 7:10; Psalms 31:2 |
 
 ## Final Words Without Dictionary Or Strong's Help
 

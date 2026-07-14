@@ -13431,6 +13431,7 @@ function normalizeLookupWord(word: string) {
     [/est$/, ""],
     [/ing$/, ""],
     [/ed$/, ""],
+    [/([sxz]|ch|sh)es$/, "$1"],
     [/s$/, ""],
   ];
 
