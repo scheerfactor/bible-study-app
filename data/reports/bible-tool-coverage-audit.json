@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T13:29:10.694Z",
+    "generated_at": "2026-07-14T13:59:50.896Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -6415,11 +6415,11 @@
       ]
     },
     "tsk": {
-      "files": 43,
-      "publicRows": 6332,
+      "files": 44,
+      "publicRows": 6354,
       "coveredBooks": 66,
       "coveredChapters": 1189,
-      "coveredSourceVerses": 2327,
+      "coveredSourceVerses": 2338,
       "chapterCoveragePercent": 100,
       "missingChapters": [],
       "weakestBooks": [
@@ -8227,8 +8227,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 174,
-      "rows": 359
+      "versesCovered": 185,
+      "rows": 381
     },
     {
       "book": "Joel",
