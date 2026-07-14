@@ -1,6 +1,6 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-14T22:36:03.046Z
+Generated: 2026-07-14T23:27:18.372Z
 
 Status: **ready_with_documented_depth_gaps**
 

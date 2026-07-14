@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T22:36:00.231Z",
+    "generated_at": "2026-07-14T23:27:15.570Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60076,
+      "entries": 60080,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2027,28 +2027,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "best",
-          "count": 25,
-          "sampleRefs": [
-            "Genesis 43:11",
-            "Genesis 47:6",
-            "Genesis 47:11",
-            "Exodus 22:5",
-            "Exodus 22:5"
-          ],
-          "lookupCandidates": [
-            "best"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "coat",
           "count": 25,
           "sampleRefs": [
@@ -2292,28 +2270,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "REBU'KED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "spot",
-          "count": 25,
-          "sampleRefs": [
-            "Leviticus 13:2",
-            "Leviticus 13:4",
-            "Leviticus 13:19",
-            "Leviticus 13:23",
-            "Leviticus 13:24"
-          ],
-          "lookupCandidates": [
-            "spot"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SPOT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2583,28 +2539,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HUNGER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lose",
-          "count": 24,
-          "sampleRefs": [
-            "Judges 18:25",
-            "1 Kings 18:5",
-            "Job 31:39",
-            "Proverbs 23:8",
-            "Ecclesiastes 3:6"
-          ],
-          "lookupCandidates": [
-            "lose"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LOSE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3438,28 +3372,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "ward",
-          "count": 22,
-          "sampleRefs": [
-            "Genesis 40:3",
-            "Genesis 40:4",
-            "Genesis 40:7",
-            "Genesis 41:10",
-            "Genesis 42:17"
-          ],
-          "lookupCandidates": [
-            "ward"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "centurion",
           "count": 21,
           "sampleRefs": [
@@ -3591,6 +3503,98 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "E'QUAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "keeper",
+          "count": 21,
+          "sampleRefs": [
+            "Genesis 4:2",
+            "Genesis 4:9",
+            "Genesis 39:21",
+            "Genesis 39:22",
+            "Genesis 39:23"
+          ],
+          "lookupCandidates": [
+            "keeper"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KEEPER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "keepers",
+          "count": 21,
+          "sampleRefs": [
+            "2 Kings 11:5",
+            "2 Kings 22:4",
+            "2 Kings 23:4",
+            "2 Kings 25:18",
+            "1 Chronicles 9:19"
+          ],
+          "lookupCandidates": [
+            "keepers",
+            "keeper",
+            "keepere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KEEPER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "parents",
+          "count": 21,
+          "sampleRefs": [
+            "Matthew 10:21",
+            "Mark 13:12",
+            "Luke 2:27",
+            "Luke 2:41",
+            "Luke 8:56"
+          ],
+          "lookupCandidates": [
+            "parents",
+            "parent",
+            "parente"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PA 'RENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "release",
+          "count": 21,
+          "sampleRefs": [
+            "Deuteronomy 15:1",
+            "Deuteronomy 15:2",
+            "Deuteronomy 15:2",
+            "Deuteronomy 15:2",
+            "Deuteronomy 15:3"
+          ],
+          "lookupCandidates": [
+            "release"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RELE'ASE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10504,28 +10508,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "best",
-        "count": 25,
-        "sampleRefs": [
-          "Genesis 43:11",
-          "Genesis 47:6",
-          "Genesis 47:11",
-          "Exodus 22:5",
-          "Exodus 22:5"
-        ],
-        "lookupCandidates": [
-          "best"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "coat",
         "count": 25,
         "sampleRefs": [
@@ -10769,28 +10751,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "REBU'KED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "spot",
-        "count": 25,
-        "sampleRefs": [
-          "Leviticus 13:2",
-          "Leviticus 13:4",
-          "Leviticus 13:19",
-          "Leviticus 13:23",
-          "Leviticus 13:24"
-        ],
-        "lookupCandidates": [
-          "spot"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SPOT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11060,28 +11020,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HUNGER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lose",
-        "count": 24,
-        "sampleRefs": [
-          "Judges 18:25",
-          "1 Kings 18:5",
-          "Job 31:39",
-          "Proverbs 23:8",
-          "Ecclesiastes 3:6"
-        ],
-        "lookupCandidates": [
-          "lose"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LOSE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11915,28 +11853,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "ward",
-        "count": 22,
-        "sampleRefs": [
-          "Genesis 40:3",
-          "Genesis 40:4",
-          "Genesis 40:7",
-          "Genesis 41:10",
-          "Genesis 42:17"
-        ],
-        "lookupCandidates": [
-          "ward"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "centurion",
         "count": 21,
         "sampleRefs": [
@@ -12068,6 +11984,98 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "E'QUAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "keeper",
+        "count": 21,
+        "sampleRefs": [
+          "Genesis 4:2",
+          "Genesis 4:9",
+          "Genesis 39:21",
+          "Genesis 39:22",
+          "Genesis 39:23"
+        ],
+        "lookupCandidates": [
+          "keeper"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KEEPER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "keepers",
+        "count": 21,
+        "sampleRefs": [
+          "2 Kings 11:5",
+          "2 Kings 22:4",
+          "2 Kings 23:4",
+          "2 Kings 25:18",
+          "1 Chronicles 9:19"
+        ],
+        "lookupCandidates": [
+          "keepers",
+          "keeper",
+          "keepere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KEEPER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "parents",
+        "count": 21,
+        "sampleRefs": [
+          "Matthew 10:21",
+          "Mark 13:12",
+          "Luke 2:27",
+          "Luke 2:41",
+          "Luke 8:56"
+        ],
+        "lookupCandidates": [
+          "parents",
+          "parent",
+          "parente"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PA 'RENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "release",
+        "count": 21,
+        "sampleRefs": [
+          "Deuteronomy 15:1",
+          "Deuteronomy 15:2",
+          "Deuteronomy 15:2",
+          "Deuteronomy 15:2",
+          "Deuteronomy 15:3"
+        ],
+        "lookupCandidates": [
+          "release"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RELE'ASE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
