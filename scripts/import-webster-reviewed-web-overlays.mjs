@@ -29,30 +29,46 @@ const imported = [];
 
 try {
   for (const word of requestedWords) {
-    const sourceUrl = `https://webstersdictionary1828.com/Dictionary/${encodeURIComponent(word)}`;
-    console.log(`Checking ${word}: ${sourceUrl}`);
-    const response = await fetch(sourceUrl);
-    if (!response.ok) throw new Error(`Failed ${response.status}: ${sourceUrl}`);
-    await page.setContent(await response.text(), { waitUntil: "domcontentloaded", timeout: 30_000 });
+    const sourceUrls = [
+      `https://webstersdictionary1828.com/Dictionary/${encodeURIComponent(word)}`,
+      `https://webstersdictionary1828.com/Dictionary/${encodeURIComponent(word[0].toUpperCase() + word.slice(1))}`,
+    ];
+    let sourceUrl = "";
+    let source = null;
 
-    const source = await page.locator("h3.dictionaryhead + hr + div").first().evaluate((element) => {
-      const pageHeading = document.querySelector("h3.dictionaryhead")?.textContent?.trim() ?? "";
-      const entryHeading = element.querySelector(":scope > p:first-child > strong")?.textContent?.trim() ?? pageHeading;
-      return {
-        pageHeading,
-        entryHeading,
-        paragraphs: Array.from(element.querySelectorAll(":scope > p"))
-          .map((paragraph) => paragraph.textContent?.replace(/\s+/g, " ").trim() ?? "")
-          .filter(Boolean),
-      };
-    });
+    for (const candidateUrl of [...new Set(sourceUrls)]) {
+      console.log(`Checking ${word}: ${candidateUrl}`);
+      const response = await fetch(candidateUrl);
+      if (!response.ok) continue;
+      await page.setContent(await response.text(), { waitUntil: "domcontentloaded", timeout: 30_000 });
+
+      const entry = page.locator("h3.dictionaryhead + hr + div").first();
+      if (!(await entry.count())) continue;
+
+      const candidateSource = await entry.evaluate((element) => {
+        const pageHeading = document.querySelector("h3.dictionaryhead")?.textContent?.trim() ?? "";
+        const entryHeading = element.querySelector(":scope > p:first-child > strong")?.textContent?.trim() ?? pageHeading;
+        return {
+          pageHeading,
+          entryHeading,
+          paragraphs: Array.from(element.querySelectorAll(":scope > p"))
+            .map((paragraph) => paragraph.textContent?.replace(/\s+/g, " ").trim() ?? "")
+            .filter(Boolean),
+        };
+      });
+
+      if (normalize(candidateSource.pageHeading) !== normalize(word) || normalize(candidateSource.entryHeading) !== normalize(word)) {
+        continue;
+      }
+
+      sourceUrl = candidateUrl;
+      source = candidateSource;
+      break;
+    }
+
+    if (!source) throw new Error(`No exact Webster entry found for ${word}.`);
 
     if (!source.paragraphs.length) throw new Error(`No Webster definition paragraphs found: ${sourceUrl}`);
-    if (normalize(source.pageHeading) !== normalize(word) || normalize(source.entryHeading) !== normalize(word)) {
-      throw new Error(
-        `Headword mismatch for ${word}: page ${source.pageHeading || "none"}, entry ${source.entryHeading || "none"}`,
-      );
-    }
 
     imported.push({
       headword: source.entryHeading,

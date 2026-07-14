@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T14:29:39.395Z",
+    "generated_at": "2026-07-14T15:00:30.225Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59944,
+      "entries": 59950,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1869,148 +1869,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "dan",
-          "count": 72,
-          "sampleRefs": [
-            "Genesis 14:14",
-            "Genesis 30:6",
-            "Genesis 35:25",
-            "Genesis 46:23",
-            "Genesis 49:16"
-          ],
-          "lookupCandidates": [
-            "dan"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DAN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "endureth",
-          "count": 59,
-          "sampleRefs": [
-            "1 Chronicles 16:34",
-            "1 Chronicles 16:41",
-            "2 Chronicles 5:13",
-            "2 Chronicles 7:3",
-            "2 Chronicles 7:6"
-          ],
-          "lookupCandidates": [
-            "endureth",
-            "endur",
-            "endure"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ENDU'RE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "officers",
-          "count": 58,
-          "sampleRefs": [
-            "Genesis 40:2",
-            "Genesis 40:7",
-            "Genesis 41:34",
-            "Exodus 5:6",
-            "Exodus 5:10"
-          ],
-          "lookupCandidates": [
-            "officers",
-            "officer",
-            "officere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OF'FICER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "wonders",
-          "count": 55,
-          "sampleRefs": [
-            "Exodus 3:20",
-            "Exodus 4:21",
-            "Exodus 7:3",
-            "Exodus 11:9",
-            "Exodus 11:10"
-          ],
-          "lookupCandidates": [
-            "wonders",
-            "wonder",
-            "wondere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WONDER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sockets",
-          "count": 54,
-          "sampleRefs": [
-            "Exodus 26:19",
-            "Exodus 26:19",
-            "Exodus 26:19",
-            "Exodus 26:21",
-            "Exodus 26:21"
-          ],
-          "lookupCandidates": [
-            "sockets",
-            "socket",
-            "sockete"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SOCK'ET",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "instruments",
-          "count": 51,
-          "sampleRefs": [
-            "Genesis 49:5",
-            "Exodus 25:9",
-            "Numbers 3:8",
-            "Numbers 4:12",
-            "Numbers 4:26"
-          ],
-          "lookupCandidates": [
-            "instruments",
-            "instrument",
-            "instrumente"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "IN'STRUMENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "camels",
           "count": 50,
           "sampleRefs": [
@@ -3635,6 +3493,139 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PIT'Y",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pluck",
+          "count": 30,
+          "sampleRefs": [
+            "Leviticus 1:16",
+            "Numbers 33:52",
+            "Deuteronomy 23:25",
+            "2 Chronicles 7:20",
+            "Job 24:9"
+          ],
+          "lookupCandidates": [
+            "pluck"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PLUCK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "preserve",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 19:32",
+            "Genesis 19:34",
+            "Genesis 45:5",
+            "Genesis 45:7",
+            "Deuteronomy 6:24"
+          ],
+          "lookupCandidates": [
+            "preserve"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PRESERVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "provinces",
+          "count": 30,
+          "sampleRefs": [
+            "1 Kings 20:14",
+            "1 Kings 20:15",
+            "1 Kings 20:17",
+            "1 Kings 20:19",
+            "Ezra 4:15"
+          ],
+          "lookupCandidates": [
+            "provinces",
+            "province"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROVINCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "record",
+          "count": 30,
+          "sampleRefs": [
+            "Exodus 20:24",
+            "Deuteronomy 30:19",
+            "Deuteronomy 31:28",
+            "1 Chronicles 16:4",
+            "Ezra 6:2"
+          ],
+          "lookupCandidates": [
+            "record"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "RECORD'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "regard",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 45:20",
+            "Exodus 5:9",
+            "Leviticus 19:31",
+            "Deuteronomy 28:50",
+            "1 Samuel 4:20"
+          ],
+          "lookupCandidates": [
+            "regard"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REGARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "report",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 37:2",
+            "Exodus 23:1",
+            "Numbers 13:32",
+            "Numbers 14:37",
+            "Deuteronomy 2:25"
+          ],
+          "lookupCandidates": [
+            "report"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REPORT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10390,148 +10381,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "dan",
-        "count": 72,
-        "sampleRefs": [
-          "Genesis 14:14",
-          "Genesis 30:6",
-          "Genesis 35:25",
-          "Genesis 46:23",
-          "Genesis 49:16"
-        ],
-        "lookupCandidates": [
-          "dan"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DAN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "endureth",
-        "count": 59,
-        "sampleRefs": [
-          "1 Chronicles 16:34",
-          "1 Chronicles 16:41",
-          "2 Chronicles 5:13",
-          "2 Chronicles 7:3",
-          "2 Chronicles 7:6"
-        ],
-        "lookupCandidates": [
-          "endureth",
-          "endur",
-          "endure"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ENDU'RE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "officers",
-        "count": 58,
-        "sampleRefs": [
-          "Genesis 40:2",
-          "Genesis 40:7",
-          "Genesis 41:34",
-          "Exodus 5:6",
-          "Exodus 5:10"
-        ],
-        "lookupCandidates": [
-          "officers",
-          "officer",
-          "officere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OF'FICER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "wonders",
-        "count": 55,
-        "sampleRefs": [
-          "Exodus 3:20",
-          "Exodus 4:21",
-          "Exodus 7:3",
-          "Exodus 11:9",
-          "Exodus 11:10"
-        ],
-        "lookupCandidates": [
-          "wonders",
-          "wonder",
-          "wondere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WONDER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sockets",
-        "count": 54,
-        "sampleRefs": [
-          "Exodus 26:19",
-          "Exodus 26:19",
-          "Exodus 26:19",
-          "Exodus 26:21",
-          "Exodus 26:21"
-        ],
-        "lookupCandidates": [
-          "sockets",
-          "socket",
-          "sockete"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SOCK'ET",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "instruments",
-        "count": 51,
-        "sampleRefs": [
-          "Genesis 49:5",
-          "Exodus 25:9",
-          "Numbers 3:8",
-          "Numbers 4:12",
-          "Numbers 4:26"
-        ],
-        "lookupCandidates": [
-          "instruments",
-          "instrument",
-          "instrumente"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "IN'STRUMENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "camels",
         "count": 50,
         "sampleRefs": [
@@ -12156,6 +12005,139 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PIT'Y",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pluck",
+        "count": 30,
+        "sampleRefs": [
+          "Leviticus 1:16",
+          "Numbers 33:52",
+          "Deuteronomy 23:25",
+          "2 Chronicles 7:20",
+          "Job 24:9"
+        ],
+        "lookupCandidates": [
+          "pluck"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PLUCK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "preserve",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 19:32",
+          "Genesis 19:34",
+          "Genesis 45:5",
+          "Genesis 45:7",
+          "Deuteronomy 6:24"
+        ],
+        "lookupCandidates": [
+          "preserve"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PRESERVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "provinces",
+        "count": 30,
+        "sampleRefs": [
+          "1 Kings 20:14",
+          "1 Kings 20:15",
+          "1 Kings 20:17",
+          "1 Kings 20:19",
+          "Ezra 4:15"
+        ],
+        "lookupCandidates": [
+          "provinces",
+          "province"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROVINCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "record",
+        "count": 30,
+        "sampleRefs": [
+          "Exodus 20:24",
+          "Deuteronomy 30:19",
+          "Deuteronomy 31:28",
+          "1 Chronicles 16:4",
+          "Ezra 6:2"
+        ],
+        "lookupCandidates": [
+          "record"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "RECORD'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "regard",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 45:20",
+          "Exodus 5:9",
+          "Leviticus 19:31",
+          "Deuteronomy 28:50",
+          "1 Samuel 4:20"
+        ],
+        "lookupCandidates": [
+          "regard"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REGARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "report",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 37:2",
+          "Exodus 23:1",
+          "Numbers 13:32",
+          "Numbers 14:37",
+          "Deuteronomy 2:25"
+        ],
+        "lookupCandidates": [
+          "report"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REPORT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
