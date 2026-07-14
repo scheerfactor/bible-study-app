@@ -58,6 +58,7 @@ import tskCrossWireHosea11To12Phase4 from "../../data/imports/tsk-crosswire-revi
 import tskCrossWireHosea11CompletionPhase5 from "../../data/imports/tsk-crosswire-reviewed-hosea-11-completion-phase-5.json";
 import tskCrossWireHosea10Phase6 from "../../data/imports/tsk-crosswire-reviewed-hosea-10-1-7-phase-6.json";
 import tskCrossWireHosea10CompletionPhase7 from "../../data/imports/tsk-crosswire-reviewed-hosea-10-completion-phase-7.json";
+import tskCrossWireHosea3CompletionPhase8 from "../../data/imports/tsk-crosswire-reviewed-hosea-3-completion-phase-8.json";
 import tskWeakBooksPhase1 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-1.json";
 import tskWeakBooksPhase2 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-2.json";
 import tskWeakBooksPhase3 from "../../data/imports/tsk-openbible-reviewed-weak-books-phase-3.json";
@@ -10147,6 +10148,7 @@ const additionalReviewedTskRows: TskCrossReferenceImportRow[] = [
   ...(tskCrossWireHosea11CompletionPhase5 as TskCrossReferenceImportRow[]),
   ...(tskCrossWireHosea10Phase6 as TskCrossReferenceImportRow[]),
   ...(tskCrossWireHosea10CompletionPhase7 as TskCrossReferenceImportRow[]),
+  ...(tskCrossWireHosea3CompletionPhase8 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase14 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase15 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase16 as TskCrossReferenceImportRow[]),
