@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T21:05:51.826Z",
+    "generated_at": "2026-07-14T21:10:36.874Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60046,
+      "entries": 60052,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,142 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "merry",
-          "count": 28,
-          "sampleRefs": [
-            "Genesis 43:34",
-            "Judges 9:27",
-            "Judges 16:25",
-            "Judges 19:6",
-            "Judges 19:9"
-          ],
-          "lookupCandidates": [
-            "merry"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MER'RY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "perpetual",
-          "count": 28,
-          "sampleRefs": [
-            "Genesis 9:12",
-            "Exodus 29:9",
-            "Exodus 30:8",
-            "Exodus 31:16",
-            "Leviticus 3:17"
-          ],
-          "lookupCandidates": [
-            "perpetual"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PERPETUAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "rejoicing",
-          "count": 28,
-          "sampleRefs": [
-            "1 Kings 1:45",
-            "2 Chronicles 23:18",
-            "Job 8:21",
-            "Psalms 19:8",
-            "Psalms 45:15"
-          ],
-          "lookupCandidates": [
-            "rejoicing",
-            "rejoic",
-            "rejoice"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REJOICING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "roll",
-          "count": 28,
-          "sampleRefs": [
-            "Genesis 29:8",
-            "Joshua 10:18",
-            "1 Samuel 14:33",
-            "Ezra 6:2",
-            "Isaiah 8:1"
-          ],
-          "lookupCandidates": [
-            "roll"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROLL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "seemeth",
-          "count": 28,
-          "sampleRefs": [
-            "Leviticus 14:35",
-            "Numbers 16:9",
-            "Joshua 9:25",
-            "Judges 10:15",
-            "Judges 19:24"
-          ],
-          "lookupCandidates": [
-            "seemeth",
-            "seem",
-            "seeme"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SEEM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "uttermost",
-          "count": 28,
-          "sampleRefs": [
-            "Exodus 26:4",
-            "Exodus 36:11",
-            "Exodus 36:17",
-            "Numbers 11:1",
-            "Numbers 20:16"
-          ],
-          "lookupCandidates": [
-            "uttermost"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UT'TERMOST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "gird",
           "count": 27,
           "sampleRefs": [
@@ -3586,6 +3450,143 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LEAVEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "mention",
+          "count": 23,
+          "sampleRefs": [
+            "Genesis 40:14",
+            "Exodus 23:13",
+            "Joshua 23:7",
+            "1 Samuel 4:18",
+            "Job 28:18"
+          ],
+          "lookupCandidates": [
+            "mention"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MEN'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "namely",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 1:10",
+            "Numbers 1:32",
+            "Numbers 9:15",
+            "Numbers 13:11",
+            "Numbers 31:8"
+          ],
+          "lookupCandidates": [
+            "namely"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NA'MELY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pomegranates",
+          "count": 23,
+          "sampleRefs": [
+            "Exodus 28:33",
+            "Exodus 39:24",
+            "Exodus 39:25",
+            "Exodus 39:25",
+            "Numbers 13:23"
+          ],
+          "lookupCandidates": [
+            "pomegranates",
+            "pomegranate"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "POMEGRAN'ATE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pronounce",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 5:4",
+            "Leviticus 13:3",
+            "Leviticus 13:6",
+            "Leviticus 13:8",
+            "Leviticus 13:11"
+          ],
+          "lookupCandidates": [
+            "pronounce"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PRONOUNCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bearing",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 1:29",
+            "Genesis 16:2",
+            "Genesis 29:35",
+            "Genesis 30:9",
+            "Genesis 37:25"
+          ],
+          "lookupCandidates": [
+            "bearing",
+            "bear",
+            "beare"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BEARING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bitterness",
+          "count": 22,
+          "sampleRefs": [
+            "1 Samuel 1:10",
+            "1 Samuel 15:32",
+            "2 Samuel 2:26",
+            "Job 7:11",
+            "Job 9:18"
+          ],
+          "lookupCandidates": [
+            "bitterness",
+            "bitternes",
+            "bitternese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BIT'TERNESS",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10433,142 +10434,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "merry",
-        "count": 28,
-        "sampleRefs": [
-          "Genesis 43:34",
-          "Judges 9:27",
-          "Judges 16:25",
-          "Judges 19:6",
-          "Judges 19:9"
-        ],
-        "lookupCandidates": [
-          "merry"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MER'RY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "perpetual",
-        "count": 28,
-        "sampleRefs": [
-          "Genesis 9:12",
-          "Exodus 29:9",
-          "Exodus 30:8",
-          "Exodus 31:16",
-          "Leviticus 3:17"
-        ],
-        "lookupCandidates": [
-          "perpetual"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PERPETUAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "rejoicing",
-        "count": 28,
-        "sampleRefs": [
-          "1 Kings 1:45",
-          "2 Chronicles 23:18",
-          "Job 8:21",
-          "Psalms 19:8",
-          "Psalms 45:15"
-        ],
-        "lookupCandidates": [
-          "rejoicing",
-          "rejoic",
-          "rejoice"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REJOICING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "roll",
-        "count": 28,
-        "sampleRefs": [
-          "Genesis 29:8",
-          "Joshua 10:18",
-          "1 Samuel 14:33",
-          "Ezra 6:2",
-          "Isaiah 8:1"
-        ],
-        "lookupCandidates": [
-          "roll"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROLL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "seemeth",
-        "count": 28,
-        "sampleRefs": [
-          "Leviticus 14:35",
-          "Numbers 16:9",
-          "Joshua 9:25",
-          "Judges 10:15",
-          "Judges 19:24"
-        ],
-        "lookupCandidates": [
-          "seemeth",
-          "seem",
-          "seeme"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SEEM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "uttermost",
-        "count": 28,
-        "sampleRefs": [
-          "Exodus 26:4",
-          "Exodus 36:11",
-          "Exodus 36:17",
-          "Numbers 11:1",
-          "Numbers 20:16"
-        ],
-        "lookupCandidates": [
-          "uttermost"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UT'TERMOST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "gird",
         "count": 27,
         "sampleRefs": [
@@ -12058,6 +11923,143 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LEAVEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "mention",
+        "count": 23,
+        "sampleRefs": [
+          "Genesis 40:14",
+          "Exodus 23:13",
+          "Joshua 23:7",
+          "1 Samuel 4:18",
+          "Job 28:18"
+        ],
+        "lookupCandidates": [
+          "mention"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MEN'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "namely",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 1:10",
+          "Numbers 1:32",
+          "Numbers 9:15",
+          "Numbers 13:11",
+          "Numbers 31:8"
+        ],
+        "lookupCandidates": [
+          "namely"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NA'MELY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pomegranates",
+        "count": 23,
+        "sampleRefs": [
+          "Exodus 28:33",
+          "Exodus 39:24",
+          "Exodus 39:25",
+          "Exodus 39:25",
+          "Numbers 13:23"
+        ],
+        "lookupCandidates": [
+          "pomegranates",
+          "pomegranate"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "POMEGRAN'ATE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pronounce",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 5:4",
+          "Leviticus 13:3",
+          "Leviticus 13:6",
+          "Leviticus 13:8",
+          "Leviticus 13:11"
+        ],
+        "lookupCandidates": [
+          "pronounce"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PRONOUNCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bearing",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 1:29",
+          "Genesis 16:2",
+          "Genesis 29:35",
+          "Genesis 30:9",
+          "Genesis 37:25"
+        ],
+        "lookupCandidates": [
+          "bearing",
+          "bear",
+          "beare"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BEARING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bitterness",
+        "count": 22,
+        "sampleRefs": [
+          "1 Samuel 1:10",
+          "1 Samuel 15:32",
+          "2 Samuel 2:26",
+          "Job 7:11",
+          "Job 9:18"
+        ],
+        "lookupCandidates": [
+          "bitterness",
+          "bitternes",
+          "bitternese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BIT'TERNESS",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
