@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T20:35:45.569Z
+Generated: 2026-07-14T21:05:51.826Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,12 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| beware | BEWA'RE | 28 | ocr_full_import_needs_spot_review |
-| confess | CONFESS' | 28 | ocr_full_import_needs_spot_review |
-| cross | CROSS | 28 | ocr_full_import_needs_spot_review |
-| fellow | FEL'LOW | 28 | ocr_full_import_needs_spot_review |
-| happy | HAP'PY | 28 | ocr_full_import_needs_spot_review |
-| humbled | HUM'BLE | 28 | ocr_full_import_needs_spot_review |
 | merry | MER'RY | 28 | ocr_full_import_needs_spot_review |
 | perpetual | PERPETUAL | 28 | ocr_full_import_needs_spot_review |
 | rejoicing | REJOICING | 28 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bonds | BOND | 26 | ocr_full_import_needs_spot_review |
 | coals | COAL | 26 | ocr_full_import_needs_spot_review |
 | confusion | CONFU'SION | 26 | ocr_full_import_needs_spot_review |
+| count | COUNT | 26 | ocr_full_import_needs_spot_review |
+| evermore | EVERMO'RE | 26 | ocr_full_import_needs_spot_review |
+| excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
+| finger | FIN'GER | 26 | ocr_full_import_needs_spot_review |
+| fourteen | FOURTEEN | 26 | ocr_full_import_needs_spot_review |
+| guilty | GUILT'Y | 26 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
