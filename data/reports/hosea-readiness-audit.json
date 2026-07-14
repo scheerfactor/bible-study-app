@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:41:42.581Z",
+  "generated_at": "2026-07-14T01:00:54.121Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 640,
+    "reviewedOverlayWords": 648,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -118,102 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "rage",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "RAGE"
-      },
-      {
-        "word": "rebel",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REB'EL"
-      },
-      {
-        "word": "rebelled",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REB'EL"
-      },
-      {
-        "word": "recover",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "RECOVER"
-      },
-      {
-        "word": "refused",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REFU'SED"
-      },
-      {
-        "word": "rend",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "REND"
-      },
-      {
-        "word": "render",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "RENDER"
-      },
-      {
-        "word": "rescue",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:14"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "RESCUE"
       },
       {
         "word": "rottenness",

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T00:41:45.657Z",
+    "generated_at": "2026-07-14T01:00:57.688Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,8 +10,8 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59904,
-      "normalizedHeadwords": 51001,
+      "entries": 59912,
+      "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
       "meaningfulDefinitionCoveragePercent": 62.8,
@@ -2481,31 +2481,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "rebelled",
-          "count": 34,
-          "sampleRefs": [
-            "Genesis 14:4",
-            "Numbers 20:24",
-            "Numbers 27:14",
-            "Deuteronomy 1:26",
-            "Deuteronomy 1:43"
-          ],
-          "lookupCandidates": [
-            "rebelled",
-            "rebel",
-            "rebell",
-            "rebelle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REB'EL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "residue",
           "count": 34,
           "sampleRefs": [
@@ -2889,52 +2864,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "REED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "refused",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 37:35",
-            "Genesis 39:8",
-            "Genesis 48:19",
-            "Numbers 20:21",
-            "1 Samuel 8:19"
-          ],
-          "lookupCandidates": [
-            "refused",
-            "refus",
-            "refuse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REFU'SED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "render",
-          "count": 33,
-          "sampleRefs": [
-            "Numbers 18:9",
-            "Deuteronomy 32:41",
-            "Deuteronomy 32:43",
-            "Judges 9:57",
-            "1 Samuel 26:23"
-          ],
-          "lookupCandidates": [
-            "render"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RENDER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3637,6 +3566,74 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "YOUNGER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "cleave",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 2:24",
+            "Leviticus 1:17",
+            "Deuteronomy 4:4",
+            "Deuteronomy 10:20",
+            "Deuteronomy 11:22"
+          ],
+          "lookupCandidates": [
+            "cleave"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLEAVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "determined",
+          "count": 30,
+          "sampleRefs": [
+            "1 Samuel 20:7",
+            "1 Samuel 20:9",
+            "1 Samuel 20:33",
+            "1 Samuel 25:17",
+            "2 Samuel 13:32"
+          ],
+          "lookupCandidates": [
+            "determined",
+            "determin",
+            "determine"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DETERMINED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "drunk",
+          "count": 30,
+          "sampleRefs": [
+            "Leviticus 11:34",
+            "Deuteronomy 29:6",
+            "Deuteronomy 32:42",
+            "Judges 15:19",
+            "Ruth 3:7"
+          ],
+          "lookupCandidates": [
+            "drunk"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DRUNK",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11004,31 +11001,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "rebelled",
-        "count": 34,
-        "sampleRefs": [
-          "Genesis 14:4",
-          "Numbers 20:24",
-          "Numbers 27:14",
-          "Deuteronomy 1:26",
-          "Deuteronomy 1:43"
-        ],
-        "lookupCandidates": [
-          "rebelled",
-          "rebel",
-          "rebell",
-          "rebelle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REB'EL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "residue",
         "count": 34,
         "sampleRefs": [
@@ -11412,52 +11384,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "REED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "refused",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 37:35",
-          "Genesis 39:8",
-          "Genesis 48:19",
-          "Numbers 20:21",
-          "1 Samuel 8:19"
-        ],
-        "lookupCandidates": [
-          "refused",
-          "refus",
-          "refuse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REFU'SED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "render",
-        "count": 33,
-        "sampleRefs": [
-          "Numbers 18:9",
-          "Deuteronomy 32:41",
-          "Deuteronomy 32:43",
-          "Judges 9:57",
-          "1 Samuel 26:23"
-        ],
-        "lookupCandidates": [
-          "render"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RENDER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12160,6 +12086,74 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "YOUNGER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "cleave",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 2:24",
+          "Leviticus 1:17",
+          "Deuteronomy 4:4",
+          "Deuteronomy 10:20",
+          "Deuteronomy 11:22"
+        ],
+        "lookupCandidates": [
+          "cleave"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLEAVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "determined",
+        "count": 30,
+        "sampleRefs": [
+          "1 Samuel 20:7",
+          "1 Samuel 20:9",
+          "1 Samuel 20:33",
+          "1 Samuel 25:17",
+          "2 Samuel 13:32"
+        ],
+        "lookupCandidates": [
+          "determined",
+          "determin",
+          "determine"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DETERMINED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "drunk",
+        "count": 30,
+        "sampleRefs": [
+          "Leviticus 11:34",
+          "Deuteronomy 29:6",
+          "Deuteronomy 32:42",
+          "Judges 15:19",
+          "Ruth 3:7"
+        ],
+        "lookupCandidates": [
+          "drunk"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DRUNK",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
