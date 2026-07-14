@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T01:30:19.090Z",
+  "generated_at": "2026-07-14T01:43:23.345Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 665,
+    "reviewedOverlayWords": 674,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -130,114 +130,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "TA'BOR"
-      },
-      {
-        "word": "thirst",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "THIRST"
-      },
-      {
-        "word": "thistle",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "THISTLE"
-      },
-      {
-        "word": "transgressors",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TRANSGRESS'OR"
-      },
-      {
-        "word": "tread",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TREAD"
-      },
-      {
-        "word": "troop",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:1"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TROOP"
-      },
-      {
-        "word": "troops",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 6:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "TROOP"
-      },
-      {
-        "word": "unwise",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "UNWISE"
-      },
-      {
-        "word": "visitation",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "VISITATION"
-      },
-      {
-        "word": "whelps",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:8"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "WH ELP"
       },
       {
         "word": "willingly",

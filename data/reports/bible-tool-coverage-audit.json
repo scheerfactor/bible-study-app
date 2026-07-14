@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T01:30:22.153Z",
+    "generated_at": "2026-07-14T01:43:26.404Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59928,
+      "entries": 59936,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2889,28 +2889,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "tread",
-          "count": 33,
-          "sampleRefs": [
-            "Deuteronomy 11:24",
-            "Deuteronomy 11:25",
-            "Deuteronomy 33:29",
-            "Joshua 1:3",
-            "1 Samuel 5:5"
-          ],
-          "lookupCandidates": [
-            "tread"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TREAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wheels",
           "count": 33,
           "sampleRefs": [
@@ -3457,28 +3435,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "thirst",
-          "count": 31,
-          "sampleRefs": [
-            "Exodus 17:3",
-            "Deuteronomy 28:48",
-            "Deuteronomy 29:19",
-            "Judges 15:18",
-            "2 Chronicles 32:11"
-          ],
-          "lookupCandidates": [
-            "thirst"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THIRST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "travail",
           "count": 31,
           "sampleRefs": [
@@ -3632,6 +3588,52 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "GAIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hanged",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 40:22",
+            "Genesis 41:13",
+            "Deuteronomy 21:23",
+            "Joshua 8:29",
+            "Joshua 10:26"
+          ],
+          "lookupCandidates": [
+            "hanged",
+            "hang",
+            "hange"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HANG",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hence",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 37:17",
+            "Genesis 42:15",
+            "Genesis 50:25",
+            "Exodus 11:1",
+            "Exodus 11:1"
+          ],
+          "lookupCandidates": [
+            "hence"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HENCE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11407,28 +11409,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "tread",
-        "count": 33,
-        "sampleRefs": [
-          "Deuteronomy 11:24",
-          "Deuteronomy 11:25",
-          "Deuteronomy 33:29",
-          "Joshua 1:3",
-          "1 Samuel 5:5"
-        ],
-        "lookupCandidates": [
-          "tread"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TREAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wheels",
         "count": 33,
         "sampleRefs": [
@@ -11975,28 +11955,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "thirst",
-        "count": 31,
-        "sampleRefs": [
-          "Exodus 17:3",
-          "Deuteronomy 28:48",
-          "Deuteronomy 29:19",
-          "Judges 15:18",
-          "2 Chronicles 32:11"
-        ],
-        "lookupCandidates": [
-          "thirst"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THIRST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "travail",
         "count": 31,
         "sampleRefs": [
@@ -12150,6 +12108,52 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "GAIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hanged",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 40:22",
+          "Genesis 41:13",
+          "Deuteronomy 21:23",
+          "Joshua 8:29",
+          "Joshua 10:26"
+        ],
+        "lookupCandidates": [
+          "hanged",
+          "hang",
+          "hange"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HANG",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hence",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 37:17",
+          "Genesis 42:15",
+          "Genesis 50:25",
+          "Exodus 11:1",
+          "Exodus 11:1"
+        ],
+        "lookupCandidates": [
+          "hence"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HENCE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
