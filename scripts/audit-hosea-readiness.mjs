@@ -113,8 +113,9 @@ const dictionaryRows = meaningfulWords.map((stat) => {
   const candidates = lookupCandidates(stat.word);
   const entry = candidates.map((candidate) => websterByHeadword.get(candidate)).find(Boolean) ?? null;
   const hasBibleDictionaryHelp = candidates.some((candidate) => eastonHeadwords.has(candidate) || naveHeadwords.has(candidate) || rareTermHeadwords.has(candidate));
+  const hasReviewedBibleDictionaryHelp = candidates.some((candidate) => eastonHeadwords.has(candidate) || rareTermHeadwords.has(candidate));
   const dirty = Boolean(entry && entry.review_status !== "reviewed_overlay" && dirtyPatterns.some((pattern) => pattern.test(entry.definition ?? "")));
-  return { ...stat, hasWebster: Boolean(entry), reviewedOverlay: entry?.review_status === "reviewed_overlay", hasBibleDictionaryHelp, dirty, sourceHeadword: entry?.headword ?? null };
+  return { ...stat, hasWebster: Boolean(entry), reviewedOverlay: entry?.review_status === "reviewed_overlay", hasBibleDictionaryHelp, hasReviewedBibleDictionaryHelp, dirty, sourceHeadword: entry?.headword ?? null };
 });
 
 const strongsFiles = await jsonFiles("data/strongs/mapping-batches");
@@ -188,9 +189,10 @@ const report = {
     wordsWithDefinition: dictionaryRows.filter((row) => row.hasWebster).length,
     coveragePercent: percent(dictionaryRows.filter((row) => row.hasWebster).length, dictionaryRows.length),
     reviewedOverlayWords: dictionaryRows.filter((row) => row.reviewedOverlay).length,
-    wordsWithBibleDictionaryFallback: dictionaryRows.filter((row) => !row.hasWebster && row.hasBibleDictionaryHelp).length,
+    wordsWithBibleDictionaryFallback: dictionaryRows.filter((row) => (!row.hasWebster || row.dirty) && row.hasBibleDictionaryHelp).length,
     unresolvedWords: dictionaryRows.filter((row) => !row.hasWebster && !row.hasBibleDictionaryHelp).slice(0, 60),
-    dirtyBaseEntries: dictionaryRows.filter((row) => row.dirty).slice(0, 60),
+    dirtyBaseEntries: dictionaryRows.filter((row) => row.dirty && !row.hasReviewedBibleDictionaryHelp).slice(0, 60),
+    contextualFallbackEntries: dictionaryRows.filter((row) => row.dirty && row.hasReviewedBibleDictionaryHelp).slice(0, 60),
   },
   strongs: { chapters: strongsChapters.size, verses: strongsVerses.size, rows: strongsRows.length, mappedNumbers: mappedStrongsNumbers.size, missingLexiconNumbers },
   tsk: { chapters: tskChapters.size, sourceVerses: tskVerses.size, rows: tskRows.length },
@@ -209,6 +211,7 @@ const markdown = [
   `- KJV: ${report.kjv.chapters}/14 chapters and ${report.kjv.verses}/${expectedVerseCount} verses.`,
   `- Webster 1828: ${report.webster1828.wordsWithDefinition}/${report.kjv.meaningfulUniqueWords} meaningful unique words have a lookup (${report.webster1828.coveragePercent}%).`,
   `- Supplemental fallback: ${report.webster1828.wordsWithBibleDictionaryFallback} additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.`,
+  `- Contextual fallback: ${report.webster1828.contextualFallbackEntries.length} ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.`,
   `- Strong's: ${report.strongs.chapters}/14 chapters, ${report.strongs.verses}/${expectedVerseCount} verses, ${report.strongs.rows} reviewed word mappings, and ${report.strongs.missingLexiconNumbers.length} missing lexicon cards.`,
   `- TSK: ${report.tsk.chapters}/14 chapters, ${report.tsk.sourceVerses}/${expectedVerseCount} source verses, and ${report.tsk.rows} public cross-reference rows.`,
   `- Commentary: ${report.commentary.immediateFullBookSets} full-book sets load immediately in the app; ${report.commentary.fullBookSets} verified full-book sets exist locally.`,
@@ -231,7 +234,7 @@ const markdown = [
   "",
   `- Strong's is chapter-complete, but ${expectedVerseCount - report.strongs.verses} verses currently have no reviewed mapped word row.`,
   `- TSK is chapter-complete, but ${expectedVerseCount - report.tsk.sourceVerses} verses currently have no public source-reference row.`,
-  `- ${report.webster1828.dirtyBaseEntries.length} high-priority Hosea lookup candidates remain in the current OCR cleanup sample.`,
+  `- ${report.webster1828.dirtyBaseEntries.length} actionable Hosea lookup candidates remain without a cleaner Bible-dictionary fallback.`,
   "- Detailed original teaching notes currently concentrate on Hosea 4-9; all chapters still have KJV reading, Strong's where mapped, TSK where available, and full-book commentary comparison.",
   "",
 ].join("\n");

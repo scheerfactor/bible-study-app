@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T01:43:23.345Z",
+  "generated_at": "2026-07-14T02:00:53.241Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,8 +17,8 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 674,
-    "wordsWithBibleDictionaryFallback": 55,
+    "reviewedOverlayWords": 675,
+    "wordsWithBibleDictionaryFallback": 60,
     "unresolvedWords": [
       {
         "word": "assyrian",
@@ -30,6 +30,7 @@
         "hasWebster": false,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": false,
+        "hasReviewedBibleDictionaryHelp": false,
         "dirty": false,
         "sourceHeadword": null
       },
@@ -42,6 +43,7 @@
         "hasWebster": false,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": false,
+        "hasReviewedBibleDictionaryHelp": false,
         "dirty": false,
         "sourceHeadword": null
       },
@@ -54,6 +56,7 @@
         "hasWebster": false,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": false,
+        "hasReviewedBibleDictionaryHelp": false,
         "dirty": false,
         "sourceHeadword": null
       },
@@ -66,11 +69,27 @@
         "hasWebster": false,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": false,
+        "hasReviewedBibleDictionaryHelp": false,
         "dirty": false,
         "sourceHeadword": null
       }
     ],
     "dirtyBaseEntries": [
+      {
+        "word": "innocency",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 8:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "hasReviewedBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "IN'NOCENCY"
+      }
+    ],
+    "contextualFallbackEntries": [
       {
         "word": "aven",
         "count": 1,
@@ -80,6 +99,7 @@
         "hasWebster": true,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": true,
+        "hasReviewedBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
       },
@@ -92,20 +112,9 @@
         "hasWebster": true,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": true,
+        "hasReviewedBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "FOUNT' AIN"
-      },
-      {
-        "word": "innocency",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "IN'NOCENCY"
       },
       {
         "word": "lamb",
@@ -116,6 +125,7 @@
         "hasWebster": true,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": true,
+        "hasReviewedBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
       },
@@ -128,20 +138,9 @@
         "hasWebster": true,
         "reviewedOverlay": false,
         "hasBibleDictionaryHelp": true,
+        "hasReviewedBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "TA'BOR"
-      },
-      {
-        "word": "willingly",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:11"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "WILLINGLY"
       }
     ]
   },
