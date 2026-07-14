@@ -14,6 +14,7 @@ const stopWords = new Set(
 );
 
 const aliases = {
+  innocency: "innocence",
   hath: "have", hast: "have", hadst: "have", saith: "say", saidst: "say", saying: "say",
   shalt: "shall", spake: "speak", speaketh: "speak", speakest: "speak", spoken: "speak",
   branches: "branch", brethren: "brother", calves: "calf", carried: "carry", committed: "commit", committing: "commit", committest: "commit", craftsmen: "craftsman", dealt: "deal",

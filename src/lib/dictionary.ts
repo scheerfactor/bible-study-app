@@ -63,6 +63,7 @@ const reviewedDictionaryOverlays: WebsterEntry[] = [
 ];
 
 const dictionaryAliases: Record<string, string> = {
+  innocency: "innocence",
   sware: "swear",
   sworn: "swear",
   greater: "great",

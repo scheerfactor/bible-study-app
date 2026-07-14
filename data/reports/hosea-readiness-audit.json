@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T02:00:53.241Z",
+  "generated_at": "2026-07-14T02:07:12.729Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,8 +17,8 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 675,
-    "wordsWithBibleDictionaryFallback": 60,
+    "reviewedOverlayWords": 676,
+    "wordsWithBibleDictionaryFallback": 59,
     "unresolvedWords": [
       {
         "word": "assyrian",
@@ -74,21 +74,7 @@
         "sourceHeadword": null
       }
     ],
-    "dirtyBaseEntries": [
-      {
-        "word": "innocency",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "hasReviewedBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "IN'NOCENCY"
-      }
-    ],
+    "dirtyBaseEntries": [],
     "contextualFallbackEntries": [
       {
         "word": "aven",
