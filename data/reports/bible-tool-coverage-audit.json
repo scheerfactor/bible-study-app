@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T21:10:36.874Z",
+    "generated_at": "2026-07-14T21:13:04.878Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60052,
+      "entries": 60058,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,138 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "gird",
-          "count": 27,
-          "sampleRefs": [
-            "Exodus 29:5",
-            "Exodus 29:9",
-            "Judges 3:16",
-            "1 Samuel 25:13",
-            "2 Samuel 3:31"
-          ],
-          "lookupCandidates": [
-            "gird"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GIRD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ointment",
-          "count": 27,
-          "sampleRefs": [
-            "Exodus 30:25",
-            "Exodus 30:25",
-            "2 Kings 20:13",
-            "1 Chronicles 9:30",
-            "Job 41:31"
-          ],
-          "lookupCandidates": [
-            "ointment"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OINT'MENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "space",
-          "count": 27,
-          "sampleRefs": [
-            "Genesis 29:14",
-            "Genesis 32:16",
-            "Leviticus 25:8",
-            "Leviticus 25:30",
-            "Deuteronomy 2:14"
-          ],
-          "lookupCandidates": [
-            "space"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SPACE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "summer",
-          "count": 27,
-          "sampleRefs": [
-            "Genesis 8:22",
-            "Judges 3:20",
-            "Judges 3:24",
-            "2 Samuel 16:1",
-            "2 Samuel 16:2"
-          ],
-          "lookupCandidates": [
-            "summer"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SUM'MER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "thank",
-          "count": 27,
-          "sampleRefs": [
-            "1 Chronicles 16:4",
-            "1 Chronicles 16:7",
-            "1 Chronicles 23:30",
-            "1 Chronicles 29:13",
-            "2 Chronicles 29:31"
-          ],
-          "lookupCandidates": [
-            "thank"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "THANK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "trodden",
-          "count": 27,
-          "sampleRefs": [
-            "Deuteronomy 1:36",
-            "Joshua 14:9",
-            "Judges 5:21",
-            "Job 22:15",
-            "Job 28:8"
-          ],
-          "lookupCandidates": [
-            "trodden"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TRODDEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wealth",
           "count": 27,
           "sampleRefs": [
@@ -3587,6 +3455,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BIT'TERNESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "breach",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 38:29",
+            "Leviticus 24:20",
+            "Leviticus 24:20",
+            "Numbers 14:34",
+            "Judges 21:15"
+          ],
+          "lookupCandidates": [
+            "breach"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BREACH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "brightness",
+          "count": 22,
+          "sampleRefs": [
+            "2 Samuel 22:13",
+            "Job 31:26",
+            "Psalms 18:12",
+            "Isaiah 59:9",
+            "Isaiah 60:3"
+          ],
+          "lookupCandidates": [
+            "brightness",
+            "brightnes",
+            "brightnese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BRIGHTNESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "companions",
+          "count": 22,
+          "sampleRefs": [
+            "Judges 11:38",
+            "Judges 14:11",
+            "Ezra 4:7",
+            "Ezra 4:9",
+            "Ezra 4:17"
+          ],
+          "lookupCandidates": [
+            "companions",
+            "companion",
+            "companione"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COMPANION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "forbear",
+          "count": 22,
+          "sampleRefs": [
+            "Exodus 23:5",
+            "Deuteronomy 23:22",
+            "1 Kings 22:6",
+            "1 Kings 22:15",
+            "2 Chronicles 18:5"
+          ],
+          "lookupCandidates": [
+            "forbear"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FORBEAR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hin",
+          "count": 22,
+          "sampleRefs": [
+            "Exodus 29:40",
+            "Exodus 29:40",
+            "Exodus 30:24",
+            "Leviticus 19:36",
+            "Leviticus 23:13"
+          ],
+          "lookupCandidates": [
+            "hin"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "marry",
+          "count": 22,
+          "sampleRefs": [
+            "Genesis 38:8",
+            "Numbers 36:6",
+            "Numbers 36:6",
+            "Deuteronomy 25:5",
+            "Isaiah 62:5"
+          ],
+          "lookupCandidates": [
+            "marry"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MAR'RY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10434,138 +10438,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "gird",
-        "count": 27,
-        "sampleRefs": [
-          "Exodus 29:5",
-          "Exodus 29:9",
-          "Judges 3:16",
-          "1 Samuel 25:13",
-          "2 Samuel 3:31"
-        ],
-        "lookupCandidates": [
-          "gird"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GIRD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ointment",
-        "count": 27,
-        "sampleRefs": [
-          "Exodus 30:25",
-          "Exodus 30:25",
-          "2 Kings 20:13",
-          "1 Chronicles 9:30",
-          "Job 41:31"
-        ],
-        "lookupCandidates": [
-          "ointment"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OINT'MENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "space",
-        "count": 27,
-        "sampleRefs": [
-          "Genesis 29:14",
-          "Genesis 32:16",
-          "Leviticus 25:8",
-          "Leviticus 25:30",
-          "Deuteronomy 2:14"
-        ],
-        "lookupCandidates": [
-          "space"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SPACE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "summer",
-        "count": 27,
-        "sampleRefs": [
-          "Genesis 8:22",
-          "Judges 3:20",
-          "Judges 3:24",
-          "2 Samuel 16:1",
-          "2 Samuel 16:2"
-        ],
-        "lookupCandidates": [
-          "summer"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SUM'MER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "thank",
-        "count": 27,
-        "sampleRefs": [
-          "1 Chronicles 16:4",
-          "1 Chronicles 16:7",
-          "1 Chronicles 23:30",
-          "1 Chronicles 29:13",
-          "2 Chronicles 29:31"
-        ],
-        "lookupCandidates": [
-          "thank"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "THANK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "trodden",
-        "count": 27,
-        "sampleRefs": [
-          "Deuteronomy 1:36",
-          "Joshua 14:9",
-          "Judges 5:21",
-          "Job 22:15",
-          "Job 28:8"
-        ],
-        "lookupCandidates": [
-          "trodden"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TRODDEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wealth",
         "count": 27,
         "sampleRefs": [
@@ -12060,6 +11932,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BIT'TERNESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "breach",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 38:29",
+          "Leviticus 24:20",
+          "Leviticus 24:20",
+          "Numbers 14:34",
+          "Judges 21:15"
+        ],
+        "lookupCandidates": [
+          "breach"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BREACH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "brightness",
+        "count": 22,
+        "sampleRefs": [
+          "2 Samuel 22:13",
+          "Job 31:26",
+          "Psalms 18:12",
+          "Isaiah 59:9",
+          "Isaiah 60:3"
+        ],
+        "lookupCandidates": [
+          "brightness",
+          "brightnes",
+          "brightnese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BRIGHTNESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "companions",
+        "count": 22,
+        "sampleRefs": [
+          "Judges 11:38",
+          "Judges 14:11",
+          "Ezra 4:7",
+          "Ezra 4:9",
+          "Ezra 4:17"
+        ],
+        "lookupCandidates": [
+          "companions",
+          "companion",
+          "companione"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COMPANION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "forbear",
+        "count": 22,
+        "sampleRefs": [
+          "Exodus 23:5",
+          "Deuteronomy 23:22",
+          "1 Kings 22:6",
+          "1 Kings 22:15",
+          "2 Chronicles 18:5"
+        ],
+        "lookupCandidates": [
+          "forbear"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FORBEAR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hin",
+        "count": 22,
+        "sampleRefs": [
+          "Exodus 29:40",
+          "Exodus 29:40",
+          "Exodus 30:24",
+          "Leviticus 19:36",
+          "Leviticus 23:13"
+        ],
+        "lookupCandidates": [
+          "hin"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "marry",
+        "count": 22,
+        "sampleRefs": [
+          "Genesis 38:8",
+          "Numbers 36:6",
+          "Numbers 36:6",
+          "Deuteronomy 25:5",
+          "Isaiah 62:5"
+        ],
+        "lookupCandidates": [
+          "marry"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MAR'RY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
