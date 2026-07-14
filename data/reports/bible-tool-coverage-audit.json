@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T15:00:30.225Z",
+    "generated_at": "2026-07-14T15:03:56.525Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59950,
+      "entries": 59956,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1869,150 +1869,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "camels",
-          "count": 50,
-          "sampleRefs": [
-            "Genesis 12:16",
-            "Genesis 24:10",
-            "Genesis 24:10",
-            "Genesis 24:11",
-            "Genesis 24:14"
-          ],
-          "lookupCandidates": [
-            "camels",
-            "camel",
-            "camele"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CAM'EL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sinners",
-          "count": 48,
-          "sampleRefs": [
-            "Genesis 13:13",
-            "Numbers 16:38",
-            "1 Samuel 15:18",
-            "Psalms 1:1",
-            "Psalms 1:5"
-          ],
-          "lookupCandidates": [
-            "sinners",
-            "sinner",
-            "sinnere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SIN'NER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "towns",
-          "count": 45,
-          "sampleRefs": [
-            "Genesis 25:16",
-            "Numbers 32:41",
-            "Deuteronomy 3:5",
-            "Joshua 13:30",
-            "Joshua 15:45"
-          ],
-          "lookupCandidates": [
-            "towns",
-            "town",
-            "towne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TOWN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "rings",
-          "count": 44,
-          "sampleRefs": [
-            "Exodus 25:12",
-            "Exodus 25:12",
-            "Exodus 25:12",
-            "Exodus 25:14",
-            "Exodus 25:15"
-          ],
-          "lookupCandidates": [
-            "rings",
-            "ring",
-            "ringe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "justified",
-          "count": 43,
-          "sampleRefs": [
-            "Job 11:2",
-            "Job 13:18",
-            "Job 25:4",
-            "Job 32:2",
-            "Psalms 51:4"
-          ],
-          "lookupCandidates": [
-            "justified",
-            "justify",
-            "justifi"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "JUST'IFY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "talked",
-          "count": 42,
-          "sampleRefs": [
-            "Genesis 4:8",
-            "Genesis 17:3",
-            "Genesis 35:13",
-            "Genesis 35:14",
-            "Genesis 45:15"
-          ],
-          "lookupCandidates": [
-            "talked",
-            "talk",
-            "talke"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TALK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "boards",
           "count": 41,
           "sampleRefs": [
@@ -3626,6 +3482,146 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "REPORT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "soldiers",
+          "count": 30,
+          "sampleRefs": [
+            "1 Chronicles 7:4",
+            "1 Chronicles 7:11",
+            "2 Chronicles 25:13",
+            "Ezra 8:22",
+            "Isaiah 15:4"
+          ],
+          "lookupCandidates": [
+            "soldiers",
+            "soldier",
+            "soldiere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SOLDIER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "touching",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 27:42",
+            "Leviticus 5:13",
+            "Numbers 8:26",
+            "1 Samuel 20:23",
+            "2 Kings 22:18"
+          ],
+          "lookupCandidates": [
+            "touching",
+            "touch",
+            "touche"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TOUCHING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "windows",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 7:11",
+            "Genesis 8:2",
+            "1 Kings 6:4",
+            "1 Kings 7:4",
+            "1 Kings 7:5"
+          ],
+          "lookupCandidates": [
+            "windows",
+            "window",
+            "windowe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WIND'OW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "accepted",
+          "count": 29,
+          "sampleRefs": [
+            "Genesis 4:7",
+            "Genesis 19:21",
+            "Exodus 28:38",
+            "Leviticus 1:4",
+            "Leviticus 7:18"
+          ],
+          "lookupCandidates": [
+            "accepted",
+            "accept",
+            "accepte"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ACCEPT'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "altogether",
+          "count": 29,
+          "sampleRefs": [
+            "Genesis 18:21",
+            "Exodus 11:1",
+            "Exodus 19:18",
+            "Numbers 16:13",
+            "Numbers 23:11"
+          ],
+          "lookupCandidates": [
+            "altogether"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ALTOGETH'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bright",
+          "count": 29,
+          "sampleRefs": [
+            "Leviticus 13:2",
+            "Leviticus 13:4",
+            "Leviticus 13:19",
+            "Leviticus 13:23",
+            "Leviticus 13:24"
+          ],
+          "lookupCandidates": [
+            "bright"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BRIGHT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10381,150 +10377,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "camels",
-        "count": 50,
-        "sampleRefs": [
-          "Genesis 12:16",
-          "Genesis 24:10",
-          "Genesis 24:10",
-          "Genesis 24:11",
-          "Genesis 24:14"
-        ],
-        "lookupCandidates": [
-          "camels",
-          "camel",
-          "camele"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CAM'EL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sinners",
-        "count": 48,
-        "sampleRefs": [
-          "Genesis 13:13",
-          "Numbers 16:38",
-          "1 Samuel 15:18",
-          "Psalms 1:1",
-          "Psalms 1:5"
-        ],
-        "lookupCandidates": [
-          "sinners",
-          "sinner",
-          "sinnere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SIN'NER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "towns",
-        "count": 45,
-        "sampleRefs": [
-          "Genesis 25:16",
-          "Numbers 32:41",
-          "Deuteronomy 3:5",
-          "Joshua 13:30",
-          "Joshua 15:45"
-        ],
-        "lookupCandidates": [
-          "towns",
-          "town",
-          "towne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TOWN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "rings",
-        "count": 44,
-        "sampleRefs": [
-          "Exodus 25:12",
-          "Exodus 25:12",
-          "Exodus 25:12",
-          "Exodus 25:14",
-          "Exodus 25:15"
-        ],
-        "lookupCandidates": [
-          "rings",
-          "ring",
-          "ringe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "justified",
-        "count": 43,
-        "sampleRefs": [
-          "Job 11:2",
-          "Job 13:18",
-          "Job 25:4",
-          "Job 32:2",
-          "Psalms 51:4"
-        ],
-        "lookupCandidates": [
-          "justified",
-          "justify",
-          "justifi"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "JUST'IFY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "talked",
-        "count": 42,
-        "sampleRefs": [
-          "Genesis 4:8",
-          "Genesis 17:3",
-          "Genesis 35:13",
-          "Genesis 35:14",
-          "Genesis 45:15"
-        ],
-        "lookupCandidates": [
-          "talked",
-          "talk",
-          "talke"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TALK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "boards",
         "count": 41,
         "sampleRefs": [
@@ -12138,6 +11990,146 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "REPORT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "soldiers",
+        "count": 30,
+        "sampleRefs": [
+          "1 Chronicles 7:4",
+          "1 Chronicles 7:11",
+          "2 Chronicles 25:13",
+          "Ezra 8:22",
+          "Isaiah 15:4"
+        ],
+        "lookupCandidates": [
+          "soldiers",
+          "soldier",
+          "soldiere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SOLDIER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "touching",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 27:42",
+          "Leviticus 5:13",
+          "Numbers 8:26",
+          "1 Samuel 20:23",
+          "2 Kings 22:18"
+        ],
+        "lookupCandidates": [
+          "touching",
+          "touch",
+          "touche"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TOUCHING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "windows",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 7:11",
+          "Genesis 8:2",
+          "1 Kings 6:4",
+          "1 Kings 7:4",
+          "1 Kings 7:5"
+        ],
+        "lookupCandidates": [
+          "windows",
+          "window",
+          "windowe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WIND'OW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "accepted",
+        "count": 29,
+        "sampleRefs": [
+          "Genesis 4:7",
+          "Genesis 19:21",
+          "Exodus 28:38",
+          "Leviticus 1:4",
+          "Leviticus 7:18"
+        ],
+        "lookupCandidates": [
+          "accepted",
+          "accept",
+          "accepte"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ACCEPT'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "altogether",
+        "count": 29,
+        "sampleRefs": [
+          "Genesis 18:21",
+          "Exodus 11:1",
+          "Exodus 19:18",
+          "Numbers 16:13",
+          "Numbers 23:11"
+        ],
+        "lookupCandidates": [
+          "altogether"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ALTOGETH'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bright",
+        "count": 29,
+        "sampleRefs": [
+          "Leviticus 13:2",
+          "Leviticus 13:4",
+          "Leviticus 13:19",
+          "Leviticus 13:23",
+          "Leviticus 13:24"
+        ],
+        "lookupCandidates": [
+          "bright"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BRIGHT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
