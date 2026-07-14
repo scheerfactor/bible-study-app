@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T04:58:33.423Z",
+    "generated_at": "2026-07-14T05:29:55.765Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5454,11 +5454,11 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 62,
-      "mappingRows": 725473,
+      "mappingFiles": 63,
+      "mappingRows": 725533,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31041,
+      "mappedVerses": 31044,
       "mappedUniqueKjvWords": 12428,
       "meaningfulWordsWithMapping": 12058,
       "meaningfulWordMappingCoveragePercent": 96.8,
@@ -5512,14 +5512,6 @@
           "rows": 874
         },
         {
-          "book": "Hosea",
-          "chaptersCovered": 14,
-          "totalChapters": 14,
-          "chapterCoveragePercent": 100,
-          "versesCovered": 187,
-          "rows": 991
-        },
-        {
           "book": "2 Thessalonians",
           "chaptersCovered": 3,
           "totalChapters": 3,
@@ -5534,6 +5526,14 @@
           "chapterCoveragePercent": 100,
           "versesCovered": 38,
           "rows": 1045
+        },
+        {
+          "book": "Hosea",
+          "chaptersCovered": 14,
+          "totalChapters": 14,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 190,
+          "rows": 1051
         },
         {
           "book": "Nahum",
@@ -7696,8 +7696,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 187,
-      "rows": 991
+      "versesCovered": 190,
+      "rows": 1051
     },
     {
       "book": "Joel",
