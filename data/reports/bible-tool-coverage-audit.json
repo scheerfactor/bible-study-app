@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T19:04:10.823Z",
+    "generated_at": "2026-07-14T19:33:58.051Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60010,
+      "entries": 60016,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,143 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "hanged",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 40:22",
-            "Genesis 41:13",
-            "Deuteronomy 21:23",
-            "Joshua 8:29",
-            "Joshua 10:26"
-          ],
-          "lookupCandidates": [
-            "hanged",
-            "hang",
-            "hange"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HANG",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hence",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 37:17",
-            "Genesis 42:15",
-            "Genesis 50:25",
-            "Exodus 11:1",
-            "Exodus 11:1"
-          ],
-          "lookupCandidates": [
-            "hence"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HENCE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "heritage",
-          "count": 30,
-          "sampleRefs": [
-            "Exodus 6:8",
-            "Job 20:29",
-            "Job 27:13",
-            "Psalms 16:6",
-            "Psalms 61:5"
-          ],
-          "lookupCandidates": [
-            "heritage"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HERITAGE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "honourable",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 34:19",
-            "Numbers 22:15",
-            "1 Samuel 9:6",
-            "1 Samuel 22:14",
-            "2 Samuel 23:19"
-          ],
-          "lookupCandidates": [
-            "honourable",
-            "honorable"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HONORABLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "knees",
-          "count": 30,
-          "sampleRefs": [
-            "Genesis 30:3",
-            "Genesis 48:12",
-            "Genesis 50:23",
-            "Deuteronomy 28:35",
-            "Judges 7:5"
-          ],
-          "lookupCandidates": [
-            "knees",
-            "knee"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KNEE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "nobles",
-          "count": 30,
-          "sampleRefs": [
-            "Exodus 24:11",
-            "Numbers 21:18",
-            "Judges 5:13",
-            "1 Kings 21:8",
-            "1 Kings 21:11"
-          ],
-          "lookupCandidates": [
-            "nobles",
-            "noble"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "NO'BLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "pity",
           "count": 30,
           "sampleRefs": [
@@ -3600,6 +3463,138 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FOURTEENTH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "glorify",
+          "count": 25,
+          "sampleRefs": [
+            "Psalms 22:23",
+            "Psalms 50:15",
+            "Psalms 86:9",
+            "Psalms 86:12",
+            "Isaiah 24:15"
+          ],
+          "lookupCandidates": [
+            "glorify"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GLO'RIFY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "humble",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 10:3",
+            "Deuteronomy 8:2",
+            "Deuteronomy 8:16",
+            "Judges 19:24",
+            "2 Chronicles 7:14"
+          ],
+          "lookupCandidates": [
+            "humble"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HUM'BLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "inward",
+          "count": 25,
+          "sampleRefs": [
+            "Exodus 28:26",
+            "Exodus 39:19",
+            "Leviticus 13:55",
+            "2 Samuel 5:9",
+            "1 Kings 7:25"
+          ],
+          "lookupCandidates": [
+            "inward"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "IN' WARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "joyful",
+          "count": 25,
+          "sampleRefs": [
+            "1 Kings 8:66",
+            "Ezra 6:22",
+            "Esther 5:9",
+            "Job 3:7",
+            "Psalms 5:11"
+          ],
+          "lookupCandidates": [
+            "joyful"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "JOY'FUL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pain",
+          "count": 25,
+          "sampleRefs": [
+            "Job 14:22",
+            "Job 15:20",
+            "Job 33:19",
+            "Job 33:19",
+            "Psalms 25:18"
+          ],
+          "lookupCandidates": [
+            "pain"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PAIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "perceive",
+          "count": 25,
+          "sampleRefs": [
+            "Deuteronomy 29:4",
+            "Joshua 22:31",
+            "1 Samuel 12:17",
+            "2 Samuel 19:6",
+            "2 Kings 4:9"
+          ],
+          "lookupCandidates": [
+            "perceive"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PERCEIVE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10447,143 +10442,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "hanged",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 40:22",
-          "Genesis 41:13",
-          "Deuteronomy 21:23",
-          "Joshua 8:29",
-          "Joshua 10:26"
-        ],
-        "lookupCandidates": [
-          "hanged",
-          "hang",
-          "hange"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HANG",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hence",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 37:17",
-          "Genesis 42:15",
-          "Genesis 50:25",
-          "Exodus 11:1",
-          "Exodus 11:1"
-        ],
-        "lookupCandidates": [
-          "hence"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HENCE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "heritage",
-        "count": 30,
-        "sampleRefs": [
-          "Exodus 6:8",
-          "Job 20:29",
-          "Job 27:13",
-          "Psalms 16:6",
-          "Psalms 61:5"
-        ],
-        "lookupCandidates": [
-          "heritage"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HERITAGE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "honourable",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 34:19",
-          "Numbers 22:15",
-          "1 Samuel 9:6",
-          "1 Samuel 22:14",
-          "2 Samuel 23:19"
-        ],
-        "lookupCandidates": [
-          "honourable",
-          "honorable"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HONORABLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "knees",
-        "count": 30,
-        "sampleRefs": [
-          "Genesis 30:3",
-          "Genesis 48:12",
-          "Genesis 50:23",
-          "Deuteronomy 28:35",
-          "Judges 7:5"
-        ],
-        "lookupCandidates": [
-          "knees",
-          "knee"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KNEE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "nobles",
-        "count": 30,
-        "sampleRefs": [
-          "Exodus 24:11",
-          "Numbers 21:18",
-          "Judges 5:13",
-          "1 Kings 21:8",
-          "1 Kings 21:11"
-        ],
-        "lookupCandidates": [
-          "nobles",
-          "noble"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "NO'BLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "pity",
         "count": 30,
         "sampleRefs": [
@@ -12086,6 +11944,138 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FOURTEENTH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "glorify",
+        "count": 25,
+        "sampleRefs": [
+          "Psalms 22:23",
+          "Psalms 50:15",
+          "Psalms 86:9",
+          "Psalms 86:12",
+          "Isaiah 24:15"
+        ],
+        "lookupCandidates": [
+          "glorify"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GLO'RIFY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "humble",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 10:3",
+          "Deuteronomy 8:2",
+          "Deuteronomy 8:16",
+          "Judges 19:24",
+          "2 Chronicles 7:14"
+        ],
+        "lookupCandidates": [
+          "humble"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HUM'BLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "inward",
+        "count": 25,
+        "sampleRefs": [
+          "Exodus 28:26",
+          "Exodus 39:19",
+          "Leviticus 13:55",
+          "2 Samuel 5:9",
+          "1 Kings 7:25"
+        ],
+        "lookupCandidates": [
+          "inward"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "IN' WARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "joyful",
+        "count": 25,
+        "sampleRefs": [
+          "1 Kings 8:66",
+          "Ezra 6:22",
+          "Esther 5:9",
+          "Job 3:7",
+          "Psalms 5:11"
+        ],
+        "lookupCandidates": [
+          "joyful"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "JOY'FUL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pain",
+        "count": 25,
+        "sampleRefs": [
+          "Job 14:22",
+          "Job 15:20",
+          "Job 33:19",
+          "Job 33:19",
+          "Psalms 25:18"
+        ],
+        "lookupCandidates": [
+          "pain"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PAIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "perceive",
+        "count": 25,
+        "sampleRefs": [
+          "Deuteronomy 29:4",
+          "Joshua 22:31",
+          "1 Samuel 12:17",
+          "2 Samuel 19:6",
+          "2 Kings 4:9"
+        ],
+        "lookupCandidates": [
+          "perceive"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PERCEIVE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
