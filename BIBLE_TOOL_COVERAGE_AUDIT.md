@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T18:33:55.358Z
+Generated: 2026-07-14T19:04:10.823Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,12 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| younger | YOUNGER | 31 | ocr_full_import_needs_spot_review |
-| cleave | CLEAVE | 30 | ocr_full_import_needs_spot_review |
-| determined | DETERMINED | 30 | ocr_full_import_needs_spot_review |
-| drunk | DRUNK | 30 | ocr_full_import_needs_spot_review |
-| furnace | FUR'NACE | 30 | ocr_full_import_needs_spot_review |
-| gain | GAIN | 30 | ocr_full_import_needs_spot_review |
 | hanged | HANG | 30 | ocr_full_import_needs_spot_review |
 | hence | HENCE | 30 | ocr_full_import_needs_spot_review |
 | heritage | HERITAGE | 30 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | touching | TOUCHING | 30 | ocr_full_import_needs_spot_review |
 | windows | WIND'OW | 30 | ocr_full_import_needs_spot_review |
 | accepted | ACCEPT'ED | 29 | ocr_full_import_needs_spot_review |
+| altogether | ALTOGETH'ER | 29 | ocr_full_import_needs_spot_review |
+| bright | BRIGHT | 29 | ocr_full_import_needs_spot_review |
+| business | BUSINESS | 29 | ocr_full_import_needs_spot_review |
+| chose | CHOSE | 29 | ocr_full_import_needs_spot_review |
+| loose | LOOSE | 29 | ocr_full_import_needs_spot_review |
+| majesty | MAJ'ESTY | 29 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
