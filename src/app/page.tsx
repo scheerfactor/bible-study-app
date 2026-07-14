@@ -53,6 +53,7 @@ import tskHoseaSundaySchoolSample from "../../data/imports/tsk-hosea-4-9-reviewe
 import tskHoseaSundaySchoolExpansion from "../../data/imports/tsk-hosea-4-9-reviewed-expansion.json";
 import tskCrossWireHosea13Phase1 from "../../data/imports/tsk-crosswire-reviewed-hosea-13-phase-1.json";
 import tskCrossWireHosea13To14Phase2 from "../../data/imports/tsk-crosswire-reviewed-hosea-13-14-phase-2.json";
+import tskCrossWireHosea12To14Phase3 from "../../data/imports/tsk-crosswire-reviewed-hosea-12-14-phase-3.json";
 import tskWeakBooksPhase1 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-1.json";
 import tskWeakBooksPhase2 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-2.json";
 import tskWeakBooksPhase3 from "../../data/imports/tsk-openbible-reviewed-weak-books-phase-3.json";
@@ -10137,6 +10138,7 @@ const amosTeachingCrossReferences: CrossReference[] = AMOS_CHAPTER_STUDIES.flatM
 const additionalReviewedTskRows: TskCrossReferenceImportRow[] = [
   ...(tskCrossWireHosea13Phase1 as TskCrossReferenceImportRow[]),
   ...(tskCrossWireHosea13To14Phase2 as TskCrossReferenceImportRow[]),
+  ...(tskCrossWireHosea12To14Phase3 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase14 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase15 as TskCrossReferenceImportRow[]),
   ...(tskWeakBooksPhase16 as TskCrossReferenceImportRow[]),
