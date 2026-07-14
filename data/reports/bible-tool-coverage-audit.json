@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T01:00:57.688Z",
+    "generated_at": "2026-07-14T01:15:27.702Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59912,
+      "entries": 59920,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2867,30 +2867,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "sacrificed",
-          "count": 33,
-          "sampleRefs": [
-            "Exodus 24:5",
-            "Exodus 32:8",
-            "Deuteronomy 32:17",
-            "Joshua 8:31",
-            "Judges 2:5"
-          ],
-          "lookupCandidates": [
-            "sacrificed",
-            "sacrific",
-            "sacrifice"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SACRIFICED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "sojourn",
           "count": 33,
           "sampleRefs": [
@@ -3634,6 +3610,28 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DRUNK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "furnace",
+          "count": 30,
+          "sampleRefs": [
+            "Genesis 15:17",
+            "Genesis 19:28",
+            "Exodus 9:8",
+            "Exodus 9:10",
+            "Exodus 19:18"
+          ],
+          "lookupCandidates": [
+            "furnace"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FUR'NACE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11387,30 +11385,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "sacrificed",
-        "count": 33,
-        "sampleRefs": [
-          "Exodus 24:5",
-          "Exodus 32:8",
-          "Deuteronomy 32:17",
-          "Joshua 8:31",
-          "Judges 2:5"
-        ],
-        "lookupCandidates": [
-          "sacrificed",
-          "sacrific",
-          "sacrifice"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SACRIFICED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "sojourn",
         "count": 33,
         "sampleRefs": [
@@ -12154,6 +12128,28 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DRUNK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "furnace",
+        "count": 30,
+        "sampleRefs": [
+          "Genesis 15:17",
+          "Genesis 19:28",
+          "Exodus 9:8",
+          "Exodus 9:10",
+          "Exodus 19:18"
+        ],
+        "lookupCandidates": [
+          "furnace"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FUR'NACE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T01:00:54.121Z",
+  "generated_at": "2026-07-14T01:15:24.580Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 648,
+    "reviewedOverlayWords": 656,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -118,102 +118,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "LAMB"
-      },
-      {
-        "word": "rottenness",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:12"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ROT'TENNESS"
-      },
-      {
-        "word": "sacrificed",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:2"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SACRIFICED"
-      },
-      {
-        "word": "safely",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 2:18"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SAFELY"
-      },
-      {
-        "word": "sand",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 1:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SAND"
-      },
-      {
-        "word": "scent",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 14:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SCENT"
-      },
-      {
-        "word": "scorners",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SCORN'ER"
-      },
-      {
-        "word": "similitudes",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "SIMIL'ITUDE"
-      },
-      {
-        "word": "slideth",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "SLIDE"
       },
       {
         "word": "sour",

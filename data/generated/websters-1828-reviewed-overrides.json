@@ -11170,6 +11170,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "ROT'TENNESS",
+    "normalized_headword": "rottenness",
+    "definition": "ROT'TENNESS, noun State of being decayed or putrid; cariousness; putrefaction; unsoundness.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/rottenness",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "ROUND",
     "normalized_headword": "round",
     "definition": "ROUND, adjective 1. Cylindrical; circular; spherical or globular. round is applicable to a cylinder as well as to a globe or sphere. We say, the barrel of a musket is round; a ball is round; a circle is round 2. Full; large; as a round sum or price. 3. Full; smooth; flowing; not defective or abrupt. In his satires, Horace is quick, round and pleasant. His style, though round and comprehensive - 4. Plain; open; candid; fair. ROUND dealing is the honor of man's nature. Let her be round with him. 5. Full; quick; brisk; as a round trot. 6. Full; plump; bold; positive; as a round assertion. A round number, is a number that ends with a cipher, and may be divided by 10 without a remainder; a complete or full number. It is remarkable that the W. cant, a hundred, the Latin centum, and Sax. hund, signify properly a circle, and this use of round may have originated in a like idea. ROUND, noun 1. A circle; a circular thing, or a circle in motion. With rounds of waxen tapers on their heads. Knit your hands, and beat the ground in a light fantastic round 2. Action or performance in a circle, or passing through a series of hands or things and coming to the point of beginning; or the time of such action. Women to cards may be compared; we play a round or two; when used, we throw away. The feast was serv'd; the bowl was crown'd; to the king's pleasure went the mirthful round So we say, a round of labors or duties. We run the daily round 3. Rotation in office; succession in vicissitude. 4. A rundle; the step of a ladder. All the rounds like Jacob's ladder rise. 5. A walk performed by a guard or an officer round the rampart of a garrison, or among sentinels, to see that the sentinels are faithful and all things safe. Hence the officer and men who perform this duty are called the rounds. 6. A dance; a song; a roundelay, or a species of fugue. 7. A general discharge of fire-arms by a body of troops, in which each soldier fires once. In volleys, it is usual for a company or regiment to fire three rounds. A round of cartridges and balls, one cartridge to each man; as, to supply a regiment with a single round or with twelve rounds of cartridges. ROUND, adverb 1. On all sides. Thine enemies shall cast a trench about thee, and compass thee round Luke 19:43. 2. Circularly; in a circular form; as, a wheel turns round 3. From one side or party to another; as, to come or turn round Hence these expressions signify to change sides or opinions. 4. Not in a direct line; by a course longer than the direct course. The shortest course is not the best; let us go round All round in common speech, denotes over the whole place, or in every direction. ROUND about is tautological. ROUND, preposition 1. On every side of; as, the people stood round him; the sun sheds light round the earth. In this sense, around is much used, and all is often used to modify the word. They stood all round or around him. 2. About; in a circular course, or in all parts; as, to go round the city. He led his guest round his fields and garden. he wanders round the world. 3. Circularly; about; as, to wind a cable round the windlass. To come or get round one, in popular language, is to gain advantage over one by flattery or deception; to circumvent. ROUND, verb transitive 1. To make circular, spherical or cylindrical; as, to round a silver coin; to round the edges of any thing. Worms with many feet, that round themselves into balls, are bred chiefly under logs of timber. 2. To surround; to encircle; to encompass. Th' inclusive verge of golden metal that must round my brow. Our little life is rounded with a sleep. 3. To form to the arch or figure of the section of a circle. The figures on our modern medals are raised and rounded to very great perfection. 4. To move about any thing; as, the sun, in polar regions, rounds the horizon. 5. To make full, smooth and flowing; as, to round periods in writing. To round in, among seamen, to pull upon a slack rope, which passes through one or more blocks in a direction nearly horizontal. ROUND, verb intransitive 1. To grow or become round The queen, your mother, rounds space. 2. To go round as a guard. - They nightly rounding walk. To round to, in sailing, is to turn the head of the ship towards the wind. ROUND, verb intransitive To whisper; as, to round in the ear. obsolete",
@@ -11247,6 +11257,26 @@
     "source_file": "data/generated/websters-1828.entries.json",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SAC'RIFICED",
+    "normalized_headword": "sacrificed",
+    "definition": "SAC'RIFICED, participle passive Offered to God upon an altar; destroyed, surrendered, or suffered to be lost.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sacrificed",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SA'FELY",
+    "normalized_headword": "safely",
+    "definition": "SA'FELY, adverb 1. In a safe manner; without incurring danger or hazard of evil consequences. We may safely proceed, or safely conclude. 2. Without injury. We passed the river safely. 3. Without escape; in close custody; as, to keep a prisoner safely.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/safely",
+    "source_line_start": 1,
+    "source_line_end": 4,
     "review_status": "reviewed_overlay"
   },
   {
@@ -11337,6 +11367,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/sanctuary",
     "source_line_start": 1,
     "source_line_end": 10,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SAND",
+    "normalized_headword": "sand",
+    "definition": "SAND, noun 1. Any mass or collection of fine particles of stone, particularly of fine particles of silicious stone, but not strictly reduced to powder or dust. That finer matter called sand is no other than very small pebbles. 2. Sands, in the plural, tracts of land consisting of sand like the deserts of Arabia and Africa; as the Lybian sands. SAND, verb transitive 1. To sprinkle with sand. It is customary among the common people in America, to sand their floors with white sand. 2. To drive upon the sand.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sand",
+    "source_line_start": 1,
+    "source_line_end": 7,
     "review_status": "reviewed_overlay"
   },
   {
@@ -11450,6 +11490,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "SCENT",
+    "normalized_headword": "scent",
+    "definition": "SCENT, noun [Latin sentio, to perceive.] 1. Odor; smell; that substance which issuing from a body, affects the olfactory organs of animals; as the scent of an orange or an apple; the scent of musk. The word is applicable to any odor, agreeable or offensive. 2. The power of smelling; the smell; as a hound of nice scent. 3. A chase followed by the scent; course of pursuit; track. He travelled upon the same scent into Ethiopia. SCENT, verb transitive 1. To smell; to perceive by the olfactory organs; as, to scent game, as a hound. 2. To perfume; to imbue or fill with odor, good or bad. Aromatic plants scent the room. Some persons scent garments with musk; others scent their snuff.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/scent",
+    "source_line_start": 1,
+    "source_line_end": 8,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "SCHISM",
     "normalized_headword": "schism",
     "definition": "SCHISM, noun sizm. [Latin schisma; Gr. to divide, Latin scindo.] 1. In a general sense, division or separation; but appropriately, a division or separation in a church or denomination of christians, occasioned by diversity of opinions; breach of unity among people of the same religious faith. - Set bounds to our passions by reason, to our errors by truth, and to our schisms by charity. In Scripture, the word seems to denote a breach of charity, rather than a difference of doctrine. 2. Separation; division among tribes or classes of people.",
@@ -11457,6 +11507,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/schism",
     "source_line_start": 1,
     "source_line_end": 5,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SCORN'ER",
+    "normalized_headword": "scorner",
+    "definition": "SCORN'ER, noun 1. One that scorns; a contemner; a despiser. They are great scorners of death. 2. A scoffer; a derider; in Scripture, one who scoffs at religion, its ordinances and teachers, and who makes a mock of sin and the judgments and threatenings of God against sinners. Proverbs 1. Proverbs 19.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/scorner",
+    "source_line_start": 1,
+    "source_line_end": 4,
     "review_status": "reviewed_overlay"
   },
   {
@@ -11990,6 +12050,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "SIMIL'ITUDE",
+    "normalized_headword": "similitude",
+    "definition": "SIMIL'ITUDE, noun [Latin similitudo.] 1. Likeness; resemblance; likeness in nature, qualities or appearance; as similitude of substance. Let us make man in our image, man in our similitude. Fate some future bard shall join in sad similitude of griefs to mine. 2. Comparison; simile. Tasso, in his similitudes, never departed from the woods. [See Simile.]",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/similitude",
+    "source_line_start": 1,
+    "source_line_end": 3,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "SIN",
     "normalized_headword": "sin",
     "definition": "SIN, noun. The voluntary departure of a moral agent from a known rule of rectitude or duty prescribed by God; any voluntary transgression of the divine law, or neglect of known duty.",
@@ -12087,6 +12157,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/sleep",
     "source_line_start": 1,
     "source_line_end": 9,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "SLIDE",
+    "normalized_headword": "slide",
+    "definition": "SLIDE, verb intransitive preterit tense slid; participle passive slid, slidden. 1. To move along the surface of any body by slipping, or without bounding or rolling; to slip; to glide; as, a sled slides on snow or ice; a snow-slip slides down the mountain's side. 2. To move along the surface without stepping; as, a man slides on ice. 3. To pass inadvertently. Make a door and a bar for thy mouth; beware thou slide not by it. 4. To pass smoothly along without jerks or agitation; as, a ship or boat slides through the water. 5. To pass in silent unobserved progression. Ages shall slide away without perceiving. 6. To pass silently and gradually from one state to another; as, to slide insensibly into vicious practices, or into the customs of others. 7. To pass without difficulty or obstruction. Parts answ'ring parts shall slide into a whole. 8. To practice sliding or moving on ice. They bathe in summer and in winter slide. 9. To slip; to fall. 10. To pass with an easy, smooth, uninterrupted course or flow. SLIDE, verb transitive 1. To slip; to pass or put in imperceptibly; as, to slide in a word to vary the sense of a question. 2. To thrust along; or to thrust by slipping; as, to slide along a piece of timber. SLIDE, noun 1. A smooth and easy passage; also, a slider. 2. Flow; even course.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/slide",
+    "source_line_start": 1,
+    "source_line_end": 17,
     "review_status": "reviewed_overlay"
   },
   {
