@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T03:59:06.114Z",
+    "generated_at": "2026-07-14T04:28:31.356Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5454,13 +5454,13 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 60,
-      "mappingRows": 725333,
+      "mappingFiles": 61,
+      "mappingRows": 725399,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31035,
-      "mappedUniqueKjvWords": 12427,
-      "meaningfulWordsWithMapping": 12057,
+      "mappedVerses": 31038,
+      "mappedUniqueKjvWords": 12428,
+      "meaningfulWordsWithMapping": 12058,
       "meaningfulWordMappingCoveragePercent": 96.8,
       "weakestBooks": [
         {
@@ -5504,20 +5504,20 @@
           "rows": 612
         },
         {
-          "book": "Hosea",
-          "chaptersCovered": 14,
-          "totalChapters": 14,
-          "chapterCoveragePercent": 100,
-          "versesCovered": 181,
-          "rows": 851
-        },
-        {
           "book": "Titus",
           "chaptersCovered": 3,
           "totalChapters": 3,
           "chapterCoveragePercent": 100,
           "versesCovered": 46,
           "rows": 874
+        },
+        {
+          "book": "Hosea",
+          "chaptersCovered": 14,
+          "totalChapters": 14,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 184,
+          "rows": 917
         },
         {
           "book": "2 Thessalonians",
@@ -7696,8 +7696,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 181,
-      "rows": 851
+      "versesCovered": 184,
+      "rows": 917
     },
     {
       "book": "Joel",

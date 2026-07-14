@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T03:58:15.162Z",
+  "generated_at": "2026-07-14T04:28:10.794Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -132,9 +132,9 @@
   },
   "strongs": {
     "chapters": 14,
-    "verses": 181,
-    "rows": 851,
-    "mappedNumbers": 203,
+    "verses": 184,
+    "rows": 917,
+    "mappedNumbers": 219,
     "missingLexiconNumbers": []
   },
   "tsk": {
