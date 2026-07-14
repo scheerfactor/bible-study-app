@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T16:04:00.745Z
+Generated: 2026-07-14T16:34:17.918Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -116,12 +116,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lambs | LAMB | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
 | candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
-| residue | RES'IDUE | 34 | ocr_full_import_needs_spot_review |
-| transgressed | TRANSGRESSED | 34 | ocr_full_import_needs_spot_review |
-| clay | CLAY | 33 | ocr_full_import_needs_spot_review |
-| cleanse | CLEANSE | 33 | ocr_full_import_needs_spot_review |
-| continual | CONTINUAL | 33 | ocr_full_import_needs_spot_review |
-| cunning | CUN'NING | 33 | ocr_full_import_needs_spot_review |
 | deeds | DEED | 33 | ocr_full_import_needs_spot_review |
 | drunken | DRUNK'EN | 33 | ocr_full_import_needs_spot_review |
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | strengthen | STRENGTHEN | 32 | ocr_full_import_needs_spot_review |
 | valiant | VALIANT | 32 | ocr_full_import_needs_spot_review |
 | wave | WAVE | 32 | ocr_full_import_needs_spot_review |
+| adam | AD'AM | 31 | ocr_full_import_needs_spot_review |
+| certainly | CER'TAINLY | 31 | ocr_full_import_needs_spot_review |
+| crying | CRY'ING | 31 | ocr_full_import_needs_spot_review |
+| curtains | CUR'TAIN | 31 | ocr_full_import_needs_spot_review |
+| due | DUE | 31 | ocr_full_import_needs_spot_review |
+| fetch | FETCH | 31 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

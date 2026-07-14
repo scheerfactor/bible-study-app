@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T16:04:00.745Z",
+    "generated_at": "2026-07-14T16:34:17.918Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59968,
+      "entries": 59974,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1891,142 +1891,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "residue",
-          "count": 34,
-          "sampleRefs": [
-            "Exodus 10:5",
-            "1 Chronicles 6:66",
-            "Nehemiah 11:20",
-            "Isaiah 21:17",
-            "Isaiah 28:5"
-          ],
-          "lookupCandidates": [
-            "residue"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RES'IDUE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "transgressed",
-          "count": 34,
-          "sampleRefs": [
-            "Deuteronomy 26:13",
-            "Joshua 7:11",
-            "Joshua 7:15",
-            "Joshua 23:16",
-            "Judges 2:20"
-          ],
-          "lookupCandidates": [
-            "transgressed",
-            "transgress",
-            "transgresse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TRANSGRESSED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "clay",
-          "count": 33,
-          "sampleRefs": [
-            "1 Kings 7:46",
-            "2 Chronicles 4:17",
-            "Job 4:19",
-            "Job 10:9",
-            "Job 13:12"
-          ],
-          "lookupCandidates": [
-            "clay"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CLAY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "cleanse",
-          "count": 33,
-          "sampleRefs": [
-            "Exodus 29:36",
-            "Leviticus 14:49",
-            "Leviticus 14:52",
-            "Leviticus 16:19",
-            "Leviticus 16:30"
-          ],
-          "lookupCandidates": [
-            "cleanse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CLEANSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "continual",
-          "count": 33,
-          "sampleRefs": [
-            "Exodus 29:42",
-            "Numbers 4:7",
-            "Numbers 28:3",
-            "Numbers 28:6",
-            "Numbers 28:10"
-          ],
-          "lookupCandidates": [
-            "continual"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONTINUAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "cunning",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 25:27",
-            "Exodus 26:1",
-            "Exodus 26:31",
-            "Exodus 28:6",
-            "Exodus 28:15"
-          ],
-          "lookupCandidates": [
-            "cunning",
-            "cunn",
-            "cunne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CUN'NING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "deeds",
           "count": 33,
           "sampleRefs": [
@@ -3610,6 +3474,144 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BEWA'RE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "confess",
+          "count": 28,
+          "sampleRefs": [
+            "Leviticus 5:5",
+            "Leviticus 16:21",
+            "Leviticus 26:40",
+            "Numbers 5:7",
+            "1 Kings 8:33"
+          ],
+          "lookupCandidates": [
+            "confess",
+            "confes",
+            "confese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CONFESS'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "cross",
+          "count": 28,
+          "sampleRefs": [
+            "Matthew 10:38",
+            "Matthew 16:24",
+            "Matthew 27:32",
+            "Matthew 27:40",
+            "Matthew 27:42"
+          ],
+          "lookupCandidates": [
+            "cross",
+            "cros",
+            "crose"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CROSS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fellow",
+          "count": 28,
+          "sampleRefs": [
+            "Genesis 19:9",
+            "Exodus 2:13",
+            "Judges 7:13",
+            "Judges 7:14",
+            "Judges 7:22"
+          ],
+          "lookupCandidates": [
+            "fellow"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FEL'LOW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "happy",
+          "count": 28,
+          "sampleRefs": [
+            "Genesis 30:13",
+            "Deuteronomy 33:29",
+            "1 Kings 10:8",
+            "1 Kings 10:8",
+            "2 Chronicles 9:7"
+          ],
+          "lookupCandidates": [
+            "happy"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HAP'PY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "humbled",
+          "count": 28,
+          "sampleRefs": [
+            "Leviticus 26:41",
+            "Deuteronomy 8:3",
+            "Deuteronomy 21:14",
+            "Deuteronomy 22:24",
+            "Deuteronomy 22:29"
+          ],
+          "lookupCandidates": [
+            "humbled",
+            "humbl",
+            "humble"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HUM'BLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "merry",
+          "count": 28,
+          "sampleRefs": [
+            "Genesis 43:34",
+            "Judges 9:27",
+            "Judges 16:25",
+            "Judges 19:6",
+            "Judges 19:9"
+          ],
+          "lookupCandidates": [
+            "merry"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MER'RY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10387,142 +10389,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "residue",
-        "count": 34,
-        "sampleRefs": [
-          "Exodus 10:5",
-          "1 Chronicles 6:66",
-          "Nehemiah 11:20",
-          "Isaiah 21:17",
-          "Isaiah 28:5"
-        ],
-        "lookupCandidates": [
-          "residue"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RES'IDUE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "transgressed",
-        "count": 34,
-        "sampleRefs": [
-          "Deuteronomy 26:13",
-          "Joshua 7:11",
-          "Joshua 7:15",
-          "Joshua 23:16",
-          "Judges 2:20"
-        ],
-        "lookupCandidates": [
-          "transgressed",
-          "transgress",
-          "transgresse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TRANSGRESSED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "clay",
-        "count": 33,
-        "sampleRefs": [
-          "1 Kings 7:46",
-          "2 Chronicles 4:17",
-          "Job 4:19",
-          "Job 10:9",
-          "Job 13:12"
-        ],
-        "lookupCandidates": [
-          "clay"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CLAY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "cleanse",
-        "count": 33,
-        "sampleRefs": [
-          "Exodus 29:36",
-          "Leviticus 14:49",
-          "Leviticus 14:52",
-          "Leviticus 16:19",
-          "Leviticus 16:30"
-        ],
-        "lookupCandidates": [
-          "cleanse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CLEANSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "continual",
-        "count": 33,
-        "sampleRefs": [
-          "Exodus 29:42",
-          "Numbers 4:7",
-          "Numbers 28:3",
-          "Numbers 28:6",
-          "Numbers 28:10"
-        ],
-        "lookupCandidates": [
-          "continual"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONTINUAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "cunning",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 25:27",
-          "Exodus 26:1",
-          "Exodus 26:31",
-          "Exodus 28:6",
-          "Exodus 28:15"
-        ],
-        "lookupCandidates": [
-          "cunning",
-          "cunn",
-          "cunne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CUN'NING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "deeds",
         "count": 33,
         "sampleRefs": [
@@ -12106,6 +11972,144 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BEWA'RE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "confess",
+        "count": 28,
+        "sampleRefs": [
+          "Leviticus 5:5",
+          "Leviticus 16:21",
+          "Leviticus 26:40",
+          "Numbers 5:7",
+          "1 Kings 8:33"
+        ],
+        "lookupCandidates": [
+          "confess",
+          "confes",
+          "confese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CONFESS'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "cross",
+        "count": 28,
+        "sampleRefs": [
+          "Matthew 10:38",
+          "Matthew 16:24",
+          "Matthew 27:32",
+          "Matthew 27:40",
+          "Matthew 27:42"
+        ],
+        "lookupCandidates": [
+          "cross",
+          "cros",
+          "crose"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CROSS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fellow",
+        "count": 28,
+        "sampleRefs": [
+          "Genesis 19:9",
+          "Exodus 2:13",
+          "Judges 7:13",
+          "Judges 7:14",
+          "Judges 7:22"
+        ],
+        "lookupCandidates": [
+          "fellow"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FEL'LOW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "happy",
+        "count": 28,
+        "sampleRefs": [
+          "Genesis 30:13",
+          "Deuteronomy 33:29",
+          "1 Kings 10:8",
+          "1 Kings 10:8",
+          "2 Chronicles 9:7"
+        ],
+        "lookupCandidates": [
+          "happy"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HAP'PY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "humbled",
+        "count": 28,
+        "sampleRefs": [
+          "Leviticus 26:41",
+          "Deuteronomy 8:3",
+          "Deuteronomy 21:14",
+          "Deuteronomy 22:24",
+          "Deuteronomy 22:29"
+        ],
+        "lookupCandidates": [
+          "humbled",
+          "humbl",
+          "humble"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HUM'BLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "merry",
+        "count": 28,
+        "sampleRefs": [
+          "Genesis 43:34",
+          "Judges 9:27",
+          "Judges 16:25",
+          "Judges 19:6",
+          "Judges 19:9"
+        ],
+        "lookupCandidates": [
+          "merry"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MER'RY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
