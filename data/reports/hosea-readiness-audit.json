@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T11:28:43.780Z",
+  "generated_at": "2026-07-14T11:58:56.106Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -139,8 +139,8 @@
   },
   "tsk": {
     "chapters": 14,
-    "sourceVerses": 145,
-    "rows": 301
+    "sourceVerses": 151,
+    "rows": 313
   },
   "commentary": {
     "sets": 13,
