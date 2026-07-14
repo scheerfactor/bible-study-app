@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T20:05:53.751Z
+Generated: 2026-07-14T20:35:45.569Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,12 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
-| royal | ROY'AL | 29 | ocr_full_import_needs_spot_review |
-| terror | TER'ROR | 29 | ocr_full_import_needs_spot_review |
-| trusted | TRUST'ED | 29 | ocr_full_import_needs_spot_review |
-| wholly | WHOLLY | 29 | ocr_full_import_needs_spot_review |
-| anointing | ANOINT'ING | 28 | ocr_full_import_needs_spot_review |
-| apparel | APPAREL | 28 | ocr_full_import_needs_spot_review |
 | beware | BEWA'RE | 28 | ocr_full_import_needs_spot_review |
 | confess | CONFESS' | 28 | ocr_full_import_needs_spot_review |
 | cross | CROSS | 28 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | space | SPACE | 27 | ocr_full_import_needs_spot_review |
 | summer | SUM'MER | 27 | ocr_full_import_needs_spot_review |
 | thank | THANK | 27 | ocr_full_import_needs_spot_review |
+| trodden | TRODDEN | 27 | ocr_full_import_needs_spot_review |
+| wealth | WEALTH | 27 | ocr_full_import_needs_spot_review |
+| ancient | AN'CIENT | 26 | ocr_full_import_needs_spot_review |
+| bonds | BOND | 26 | ocr_full_import_needs_spot_review |
+| coals | COAL | 26 | ocr_full_import_needs_spot_review |
+| confusion | CONFU'SION | 26 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

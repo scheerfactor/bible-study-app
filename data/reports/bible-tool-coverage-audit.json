@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T20:05:53.751Z",
+    "generated_at": "2026-07-14T20:35:45.569Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60034,
+      "entries": 60040,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1961,142 +1961,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "royal",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 49:20",
-            "Joshua 10:2",
-            "1 Samuel 27:5",
-            "2 Samuel 12:26",
-            "1 Kings 10:13"
-          ],
-          "lookupCandidates": [
-            "royal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROY'AL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "terror",
-          "count": 29,
-          "sampleRefs": [
-            "Genesis 35:5",
-            "Leviticus 26:16",
-            "Deuteronomy 32:25",
-            "Deuteronomy 34:12",
-            "Joshua 2:9"
-          ],
-          "lookupCandidates": [
-            "terror"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TER'ROR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "trusted",
-          "count": 29,
-          "sampleRefs": [
-            "Deuteronomy 32:37",
-            "Judges 11:20",
-            "Judges 20:36",
-            "2 Kings 18:5",
-            "Psalms 13:5"
-          ],
-          "lookupCandidates": [
-            "trusted",
-            "trust",
-            "truste"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TRUST'ED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "wholly",
-          "count": 29,
-          "sampleRefs": [
-            "Leviticus 6:22",
-            "Leviticus 6:23",
-            "Leviticus 19:9",
-            "Numbers 3:9",
-            "Numbers 4:6"
-          ],
-          "lookupCandidates": [
-            "wholly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WHOLLY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "anointing",
-          "count": 28,
-          "sampleRefs": [
-            "Exodus 25:6",
-            "Exodus 29:7",
-            "Exodus 29:21",
-            "Exodus 30:25",
-            "Exodus 30:31"
-          ],
-          "lookupCandidates": [
-            "anointing",
-            "anoint",
-            "anointe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ANOINT'ING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "apparel",
-          "count": 28,
-          "sampleRefs": [
-            "Judges 17:10",
-            "1 Samuel 27:9",
-            "2 Samuel 1:24",
-            "2 Samuel 12:20",
-            "2 Samuel 14:2"
-          ],
-          "lookupCandidates": [
-            "apparel"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "APPAREL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "beware",
           "count": 28,
           "sampleRefs": [
@@ -3595,6 +3459,139 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LUST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "snow",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 4:6",
+            "Numbers 12:10",
+            "2 Samuel 23:20",
+            "2 Kings 5:27",
+            "Job 6:16"
+          ],
+          "lookupCandidates": [
+            "snow"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SNOW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "void",
+          "count": 24,
+          "sampleRefs": [
+            "Genesis 1:2",
+            "Numbers 30:12",
+            "Numbers 30:12",
+            "Numbers 30:13",
+            "Numbers 30:15"
+          ],
+          "lookupCandidates": [
+            "void"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "VOID",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wax",
+          "count": 24,
+          "sampleRefs": [
+            "Exodus 22:24",
+            "Exodus 32:10",
+            "Exodus 32:11",
+            "Exodus 32:22",
+            "Leviticus 25:47"
+          ],
+          "lookupCandidates": [
+            "wax"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WAX",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "abominable",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 7:21",
+            "Leviticus 11:43",
+            "Leviticus 18:30",
+            "Leviticus 19:7",
+            "Leviticus 20:25"
+          ],
+          "lookupCandidates": [
+            "abominable"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ABOM'INABLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "acceptable",
+          "count": 23,
+          "sampleRefs": [
+            "Leviticus 22:20",
+            "Deuteronomy 33:24",
+            "Psalms 19:14",
+            "Psalms 69:13",
+            "Proverbs 10:32"
+          ],
+          "lookupCandidates": [
+            "acceptable"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ACCEPT'ABLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ammonites",
+          "count": 23,
+          "sampleRefs": [
+            "Deuteronomy 2:20",
+            "1 Samuel 11:11",
+            "1 Kings 11:1",
+            "1 Kings 11:5",
+            "2 Chronicles 20:1"
+          ],
+          "lookupCandidates": [
+            "ammonites",
+            "ammonite"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "AM'MONITE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10442,142 +10439,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "royal",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 49:20",
-          "Joshua 10:2",
-          "1 Samuel 27:5",
-          "2 Samuel 12:26",
-          "1 Kings 10:13"
-        ],
-        "lookupCandidates": [
-          "royal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROY'AL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "terror",
-        "count": 29,
-        "sampleRefs": [
-          "Genesis 35:5",
-          "Leviticus 26:16",
-          "Deuteronomy 32:25",
-          "Deuteronomy 34:12",
-          "Joshua 2:9"
-        ],
-        "lookupCandidates": [
-          "terror"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TER'ROR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "trusted",
-        "count": 29,
-        "sampleRefs": [
-          "Deuteronomy 32:37",
-          "Judges 11:20",
-          "Judges 20:36",
-          "2 Kings 18:5",
-          "Psalms 13:5"
-        ],
-        "lookupCandidates": [
-          "trusted",
-          "trust",
-          "truste"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TRUST'ED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "wholly",
-        "count": 29,
-        "sampleRefs": [
-          "Leviticus 6:22",
-          "Leviticus 6:23",
-          "Leviticus 19:9",
-          "Numbers 3:9",
-          "Numbers 4:6"
-        ],
-        "lookupCandidates": [
-          "wholly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WHOLLY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "anointing",
-        "count": 28,
-        "sampleRefs": [
-          "Exodus 25:6",
-          "Exodus 29:7",
-          "Exodus 29:21",
-          "Exodus 30:25",
-          "Exodus 30:31"
-        ],
-        "lookupCandidates": [
-          "anointing",
-          "anoint",
-          "anointe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ANOINT'ING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "apparel",
-        "count": 28,
-        "sampleRefs": [
-          "Judges 17:10",
-          "1 Samuel 27:9",
-          "2 Samuel 1:24",
-          "2 Samuel 12:20",
-          "2 Samuel 14:2"
-        ],
-        "lookupCandidates": [
-          "apparel"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "APPAREL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "beware",
         "count": 28,
         "sampleRefs": [
@@ -12076,6 +11937,139 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LUST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "snow",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 4:6",
+          "Numbers 12:10",
+          "2 Samuel 23:20",
+          "2 Kings 5:27",
+          "Job 6:16"
+        ],
+        "lookupCandidates": [
+          "snow"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SNOW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "void",
+        "count": 24,
+        "sampleRefs": [
+          "Genesis 1:2",
+          "Numbers 30:12",
+          "Numbers 30:12",
+          "Numbers 30:13",
+          "Numbers 30:15"
+        ],
+        "lookupCandidates": [
+          "void"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "VOID",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wax",
+        "count": 24,
+        "sampleRefs": [
+          "Exodus 22:24",
+          "Exodus 32:10",
+          "Exodus 32:11",
+          "Exodus 32:22",
+          "Leviticus 25:47"
+        ],
+        "lookupCandidates": [
+          "wax"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WAX",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "abominable",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 7:21",
+          "Leviticus 11:43",
+          "Leviticus 18:30",
+          "Leviticus 19:7",
+          "Leviticus 20:25"
+        ],
+        "lookupCandidates": [
+          "abominable"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ABOM'INABLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "acceptable",
+        "count": 23,
+        "sampleRefs": [
+          "Leviticus 22:20",
+          "Deuteronomy 33:24",
+          "Psalms 19:14",
+          "Psalms 69:13",
+          "Proverbs 10:32"
+        ],
+        "lookupCandidates": [
+          "acceptable"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ACCEPT'ABLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ammonites",
+        "count": 23,
+        "sampleRefs": [
+          "Deuteronomy 2:20",
+          "1 Samuel 11:11",
+          "1 Kings 11:1",
+          "1 Kings 11:5",
+          "2 Chronicles 20:1"
+        ],
+        "lookupCandidates": [
+          "ammonites",
+          "ammonite"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "AM'MONITE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
