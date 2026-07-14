@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T02:58:31.985Z",
+    "generated_at": "2026-07-14T03:28:54.143Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -5454,11 +5454,11 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 58,
-      "mappingRows": 725162,
+      "mappingFiles": 59,
+      "mappingRows": 725237,
       "mappedBooks": 66,
       "mappedChapters": 1189,
-      "mappedVerses": 31029,
+      "mappedVerses": 31032,
       "mappedUniqueKjvWords": 12426,
       "meaningfulWordsWithMapping": 12056,
       "meaningfulWordMappingCoveragePercent": 96.8,
@@ -5508,8 +5508,8 @@
           "chaptersCovered": 14,
           "totalChapters": 14,
           "chapterCoveragePercent": 100,
-          "versesCovered": 175,
-          "rows": 680
+          "versesCovered": 178,
+          "rows": 755
         },
         {
           "book": "Titus",
@@ -7696,8 +7696,8 @@
       "chaptersCovered": 14,
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
-      "versesCovered": 175,
-      "rows": 680
+      "versesCovered": 178,
+      "rows": 755
     },
     {
       "book": "Joel",
