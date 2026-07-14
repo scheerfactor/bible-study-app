@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T23:56:15.849Z",
+  "generated_at": "2026-07-14T00:00:47.909Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 595,
+    "reviewedOverlayWords": 602,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -82,90 +82,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
-      },
-      {
-        "word": "elms",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:13"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "ELM"
-      },
-      {
-        "word": "enough",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ENOUGH'"
-      },
-      {
-        "word": "ere",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 8:5"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ERE"
-      },
-      {
-        "word": "err",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:12"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "ERR"
-      },
-      {
-        "word": "exalt",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "EXALT'"
-      },
-      {
-        "word": "execute",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 11:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "EX'ECUTE"
-      },
-      {
-        "word": "fallow",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:12"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "FAL'LOW"
       },
       {
         "word": "falsehood",
@@ -790,6 +706,90 @@
         "hasBibleDictionaryHelp": false,
         "dirty": true,
         "sourceHeadword": "SAFELY"
+      },
+      {
+        "word": "sand",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 1:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SAND"
+      },
+      {
+        "word": "scent",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 14:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SCENT"
+      },
+      {
+        "word": "scorners",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:5"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SCORN'ER"
+      },
+      {
+        "word": "similitudes",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 12:10"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SIMIL'ITUDE"
+      },
+      {
+        "word": "slideth",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:16"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SLIDE"
+      },
+      {
+        "word": "sour",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 4:18"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "SOUR"
+      },
+      {
+        "word": "spiritual",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "SPIR'ITUAL"
       }
     ]
   },

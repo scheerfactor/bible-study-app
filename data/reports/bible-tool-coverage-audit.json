@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-13T23:56:19.321Z",
+    "generated_at": "2026-07-14T00:00:51.702Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59859,
+      "entries": 59866,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7788,
       "meaningfulWordsWithoutDefinition": 4666,
@@ -3142,50 +3142,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "enough",
-          "count": 32,
-          "sampleRefs": [
-            "Genesis 24:25",
-            "Genesis 33:9",
-            "Genesis 33:11",
-            "Genesis 34:21",
-            "Genesis 45:28"
-          ],
-          "lookupCandidates": [
-            "enough"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ENOUGH'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "execute",
-          "count": 32,
-          "sampleRefs": [
-            "Exodus 12:12",
-            "Numbers 5:30",
-            "Numbers 8:11",
-            "Deuteronomy 10:18",
-            "1 Kings 6:12"
-          ],
-          "lookupCandidates": [
-            "execute"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "EX'ECUTE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "firstfruits",
           "count": 32,
           "sampleRefs": [
@@ -3636,6 +3592,53 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "QUI'ET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "spices",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 43:11",
+            "Exodus 25:6",
+            "Exodus 30:23",
+            "Exodus 30:34",
+            "Exodus 30:34"
+          ],
+          "lookupCandidates": [
+            "spices",
+            "spice"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SPICE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stayed",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 8:10",
+            "Genesis 8:12",
+            "Genesis 32:4",
+            "Exodus 10:24",
+            "Exodus 17:12"
+          ],
+          "lookupCandidates": [
+            "stayed",
+            "stay",
+            "staye"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STA'YED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -11667,50 +11670,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "enough",
-        "count": 32,
-        "sampleRefs": [
-          "Genesis 24:25",
-          "Genesis 33:9",
-          "Genesis 33:11",
-          "Genesis 34:21",
-          "Genesis 45:28"
-        ],
-        "lookupCandidates": [
-          "enough"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ENOUGH'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "execute",
-        "count": 32,
-        "sampleRefs": [
-          "Exodus 12:12",
-          "Numbers 5:30",
-          "Numbers 8:11",
-          "Deuteronomy 10:18",
-          "1 Kings 6:12"
-        ],
-        "lookupCandidates": [
-          "execute"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "EX'ECUTE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "firstfruits",
         "count": 32,
         "sampleRefs": [
@@ -12161,6 +12120,53 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "QUI'ET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "spices",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 43:11",
+          "Exodus 25:6",
+          "Exodus 30:23",
+          "Exodus 30:34",
+          "Exodus 30:34"
+        ],
+        "lookupCandidates": [
+          "spices",
+          "spice"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SPICE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stayed",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 8:10",
+          "Genesis 8:12",
+          "Genesis 32:4",
+          "Exodus 10:24",
+          "Exodus 17:12"
+        ],
+        "lookupCandidates": [
+          "stayed",
+          "stay",
+          "staye"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STA'YED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
