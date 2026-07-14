@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14T00:10:16.831Z",
+  "generated_at": "2026-07-14T00:15:42.373Z",
   "status": "ready_with_documented_depth_gaps",
   "assertions": {
     "kjvChapters": true,
@@ -17,7 +17,7 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 610,
+    "reviewedOverlayWords": 618,
     "wordsWithBibleDictionaryFallback": 55,
     "unresolvedWords": [
       {
@@ -94,102 +94,6 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "FOUNT' AIN"
-      },
-      {
-        "word": "grapes",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:10"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "GRAPE"
-      },
-      {
-        "word": "gray",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:9"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "GRAY"
-      },
-      {
-        "word": "heated",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "HE'ATED"
-      },
-      {
-        "word": "heel",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:3"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "HEEL"
-      },
-      {
-        "word": "hemlock",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 10:4"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "HEM'LOCK"
-      },
-      {
-        "word": "herds",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 5:6"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "HERD"
-      },
-      {
-        "word": "hot",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 7:7"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "HOT"
-      },
-      {
-        "word": "infants",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "dirty": true,
-        "sourceHeadword": "IN' F ANT"
       },
       {
         "word": "innocency",
@@ -790,6 +694,102 @@
         "hasBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "TA'BOR"
+      },
+      {
+        "word": "thirst",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 2:3"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "THIRST"
+      },
+      {
+        "word": "thistle",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:8"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": true,
+        "dirty": true,
+        "sourceHeadword": "THISTLE"
+      },
+      {
+        "word": "transgressors",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 14:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TRANSGRESS'OR"
+      },
+      {
+        "word": "tread",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 10:11"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TREAD"
+      },
+      {
+        "word": "troop",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 7:1"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TROOP"
+      },
+      {
+        "word": "troops",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 6:9"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "TROOP"
+      },
+      {
+        "word": "unwise",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 13:13"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "UNWISE"
+      },
+      {
+        "word": "visitation",
+        "count": 1,
+        "sampleRefs": [
+          "Hosea 9:7"
+        ],
+        "hasWebster": true,
+        "reviewedOverlay": false,
+        "hasBibleDictionaryHelp": false,
+        "dirty": true,
+        "sourceHeadword": "VISITATION"
       }
     ]
   },

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T00:10:20.221Z
+Generated: 2026-07-14T00:15:45.524Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -134,7 +134,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | steps | STEP | 38 | ocr_full_import_needs_spot_review |
 | chains | CHAIN | 37 | ocr_full_import_needs_spot_review |
 | crucified | CRU'CIFY | 37 | ocr_full_import_needs_spot_review |
-| grapes | GRAPE | 37 | ocr_full_import_needs_spot_review |
 | means | MEAN | 35 | ocr_full_import_needs_spot_review |
 | overlaid | OVERLA'ID | 35 | ocr_full_import_needs_spot_review |
 | use | USE | 35 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | deceived | DECE'IVE | 34 | ocr_full_import_needs_spot_review |
 | flame | FLAME | 34 | ocr_full_import_needs_spot_review |
 | likeness | LI'KENESS | 34 | ocr_full_import_needs_spot_review |
+| rebelled | REB'EL | 34 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

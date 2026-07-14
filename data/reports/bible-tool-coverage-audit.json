@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T00:10:20.221Z",
+    "generated_at": "2026-07-14T00:15:45.524Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 59874,
+      "entries": 59882,
       "normalizedHeadwords": 51001,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2321,29 +2321,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "grapes",
-          "count": 37,
-          "sampleRefs": [
-            "Genesis 40:10",
-            "Genesis 40:11",
-            "Genesis 49:11",
-            "Leviticus 25:5",
-            "Leviticus 25:11"
-          ],
-          "lookupCandidates": [
-            "grapes",
-            "grape"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GRAPE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "means",
           "count": 35,
           "sampleRefs": [
@@ -2800,30 +2777,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "H'ARDENED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "herds",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 13:5",
-            "Genesis 24:35",
-            "Genesis 26:14",
-            "Genesis 32:7",
-            "Genesis 33:13"
-          ],
-          "lookupCandidates": [
-            "herds",
-            "herd",
-            "herde"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HERD",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3530,28 +3483,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "hot",
-          "count": 31,
-          "sampleRefs": [
-            "Exodus 16:21",
-            "Exodus 22:24",
-            "Exodus 32:10",
-            "Exodus 32:11",
-            "Exodus 32:19"
-          ],
-          "lookupCandidates": [
-            "hot"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HOT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "line",
           "count": 31,
           "sampleRefs": [
@@ -3640,6 +3571,72 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STA'YED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "thirst",
+          "count": 31,
+          "sampleRefs": [
+            "Exodus 17:3",
+            "Deuteronomy 28:48",
+            "Deuteronomy 29:19",
+            "Judges 15:18",
+            "2 Chronicles 32:11"
+          ],
+          "lookupCandidates": [
+            "thirst"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "THIRST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "travail",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 38:27",
+            "Exodus 18:8",
+            "Numbers 20:14",
+            "Psalms 48:6",
+            "Ecclesiastes 1:13"
+          ],
+          "lookupCandidates": [
+            "travail"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TRAVAIL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "younger",
+          "count": 31,
+          "sampleRefs": [
+            "Genesis 9:24",
+            "Genesis 19:31",
+            "Genesis 19:34",
+            "Genesis 19:35",
+            "Genesis 19:38"
+          ],
+          "lookupCandidates": [
+            "younger"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "YOUNGER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10847,29 +10844,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "grapes",
-        "count": 37,
-        "sampleRefs": [
-          "Genesis 40:10",
-          "Genesis 40:11",
-          "Genesis 49:11",
-          "Leviticus 25:5",
-          "Leviticus 25:11"
-        ],
-        "lookupCandidates": [
-          "grapes",
-          "grape"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GRAPE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "means",
         "count": 35,
         "sampleRefs": [
@@ -11326,30 +11300,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "H'ARDENED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "herds",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 13:5",
-          "Genesis 24:35",
-          "Genesis 26:14",
-          "Genesis 32:7",
-          "Genesis 33:13"
-        ],
-        "lookupCandidates": [
-          "herds",
-          "herd",
-          "herde"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HERD",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12056,28 +12006,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "hot",
-        "count": 31,
-        "sampleRefs": [
-          "Exodus 16:21",
-          "Exodus 22:24",
-          "Exodus 32:10",
-          "Exodus 32:11",
-          "Exodus 32:19"
-        ],
-        "lookupCandidates": [
-          "hot"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HOT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "line",
         "count": 31,
         "sampleRefs": [
@@ -12166,6 +12094,72 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STA'YED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "thirst",
+        "count": 31,
+        "sampleRefs": [
+          "Exodus 17:3",
+          "Deuteronomy 28:48",
+          "Deuteronomy 29:19",
+          "Judges 15:18",
+          "2 Chronicles 32:11"
+        ],
+        "lookupCandidates": [
+          "thirst"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "THIRST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "travail",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 38:27",
+          "Exodus 18:8",
+          "Numbers 20:14",
+          "Psalms 48:6",
+          "Ecclesiastes 1:13"
+        ],
+        "lookupCandidates": [
+          "travail"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TRAVAIL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "younger",
+        "count": 31,
+        "sampleRefs": [
+          "Genesis 9:24",
+          "Genesis 19:31",
+          "Genesis 19:34",
+          "Genesis 19:35",
+          "Genesis 19:38"
+        ],
+        "lookupCandidates": [
+          "younger"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "YOUNGER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
