@@ -404,7 +404,8 @@ export async function getEastonDictionaryEntries() {
         source_line_end: entry.line_end,
         review_status: entry.review_status,
       })).map(cleanDictionaryEntry),
-    );
+    )
+    .catch(() => []);
 
   return eastonDictionaryPromise;
 }
@@ -439,7 +440,8 @@ export async function getNaveTopicalEntries() {
           review_status: entry.review_status,
         }))
         .map(cleanDictionaryEntry),
-    );
+    )
+    .catch(() => []);
 
   return naveTopicalPromise;
 }
