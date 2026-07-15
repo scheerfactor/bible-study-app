@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T11:52:22.541Z",
+    "generated_at": "2026-07-15T12:22:16.143Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60241,
+      "entries": 60246,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1913,126 +1913,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "belongeth",
-          "count": 20,
-          "sampleRefs": [
-            "Numbers 8:24",
-            "Deuteronomy 32:35",
-            "Judges 19:14",
-            "Judges 20:4",
-            "1 Samuel 17:1"
-          ],
-          "lookupCandidates": [
-            "belongeth",
-            "belong",
-            "belonge"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BELONG'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ascended",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 19:18",
-            "Numbers 13:22",
-            "Joshua 8:20",
-            "Joshua 8:21",
-            "Joshua 10:7"
-          ],
-          "lookupCandidates": [
-            "ascended",
-            "ascend",
-            "ascende"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ASCEND'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "conspired",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 37:18",
-            "1 Samuel 22:8",
-            "1 Samuel 22:13",
-            "1 Kings 15:27",
-            "1 Kings 16:9"
-          ],
-          "lookupCandidates": [
-            "conspired",
-            "conspir",
-            "conspire"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONSPI'RE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "descended",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 19:18",
-            "Exodus 33:9",
-            "Exodus 34:5",
-            "Deuteronomy 9:21",
-            "Joshua 2:23"
-          ],
-          "lookupCandidates": [
-            "descended",
-            "descend",
-            "descende"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DESCEND'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "instructed",
-          "count": 19,
-          "sampleRefs": [
-            "Deuteronomy 32:10",
-            "2 Kings 12:2",
-            "1 Chronicles 15:22",
-            "1 Chronicles 25:7",
-            "2 Chronicles 3:3"
-          ],
-          "lookupCandidates": [
-            "instructed",
-            "instruct",
-            "instructe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "INSTRUCT'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "murmured",
           "count": 19,
           "sampleRefs": [
@@ -3599,6 +3479,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CLEAR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "colt",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 49:11",
+            "Job 11:12",
+            "Zechariah 9:9",
+            "Matthew 21:2",
+            "Matthew 21:5"
+          ],
+          "lookupCandidates": [
+            "colt"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COLT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "drop",
+          "count": 15,
+          "sampleRefs": [
+            "Deuteronomy 32:2",
+            "Deuteronomy 33:28",
+            "Job 36:28",
+            "Psalms 65:11",
+            "Psalms 65:12"
+          ],
+          "lookupCandidates": [
+            "drop"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DROP",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "godliness",
+          "count": 15,
+          "sampleRefs": [
+            "1 Timothy 2:2",
+            "1 Timothy 2:10",
+            "1 Timothy 3:16",
+            "1 Timothy 4:7",
+            "1 Timothy 4:8"
+          ],
+          "lookupCandidates": [
+            "godliness",
+            "godlines",
+            "godlinese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GOD'LINESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "godly",
+          "count": 15,
+          "sampleRefs": [
+            "Psalms 4:3",
+            "Psalms 12:1",
+            "Psalms 32:6",
+            "Malachi 2:15",
+            "2 Corinthians 1:12"
+          ],
+          "lookupCandidates": [
+            "godly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GOD'LY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hallow",
+          "count": 15,
+          "sampleRefs": [
+            "Exodus 28:38",
+            "Exodus 29:1",
+            "Exodus 40:9",
+            "Leviticus 16:19",
+            "Leviticus 22:2"
+          ],
+          "lookupCandidates": [
+            "hallow"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HAL'LOW",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10396,126 +10388,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "belongeth",
-        "count": 20,
-        "sampleRefs": [
-          "Numbers 8:24",
-          "Deuteronomy 32:35",
-          "Judges 19:14",
-          "Judges 20:4",
-          "1 Samuel 17:1"
-        ],
-        "lookupCandidates": [
-          "belongeth",
-          "belong",
-          "belonge"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BELONG'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ascended",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 19:18",
-          "Numbers 13:22",
-          "Joshua 8:20",
-          "Joshua 8:21",
-          "Joshua 10:7"
-        ],
-        "lookupCandidates": [
-          "ascended",
-          "ascend",
-          "ascende"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ASCEND'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "conspired",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 37:18",
-          "1 Samuel 22:8",
-          "1 Samuel 22:13",
-          "1 Kings 15:27",
-          "1 Kings 16:9"
-        ],
-        "lookupCandidates": [
-          "conspired",
-          "conspir",
-          "conspire"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONSPI'RE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "descended",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 19:18",
-          "Exodus 33:9",
-          "Exodus 34:5",
-          "Deuteronomy 9:21",
-          "Joshua 2:23"
-        ],
-        "lookupCandidates": [
-          "descended",
-          "descend",
-          "descende"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DESCEND'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "instructed",
-        "count": 19,
-        "sampleRefs": [
-          "Deuteronomy 32:10",
-          "2 Kings 12:2",
-          "1 Chronicles 15:22",
-          "1 Chronicles 25:7",
-          "2 Chronicles 3:3"
-        ],
-        "lookupCandidates": [
-          "instructed",
-          "instruct",
-          "instructe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "INSTRUCT'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "murmured",
         "count": 19,
         "sampleRefs": [
@@ -12082,6 +11954,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CLEAR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "colt",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 49:11",
+          "Job 11:12",
+          "Zechariah 9:9",
+          "Matthew 21:2",
+          "Matthew 21:5"
+        ],
+        "lookupCandidates": [
+          "colt"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COLT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "drop",
+        "count": 15,
+        "sampleRefs": [
+          "Deuteronomy 32:2",
+          "Deuteronomy 33:28",
+          "Job 36:28",
+          "Psalms 65:11",
+          "Psalms 65:12"
+        ],
+        "lookupCandidates": [
+          "drop"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DROP",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "godliness",
+        "count": 15,
+        "sampleRefs": [
+          "1 Timothy 2:2",
+          "1 Timothy 2:10",
+          "1 Timothy 3:16",
+          "1 Timothy 4:7",
+          "1 Timothy 4:8"
+        ],
+        "lookupCandidates": [
+          "godliness",
+          "godlines",
+          "godlinese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GOD'LINESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "godly",
+        "count": 15,
+        "sampleRefs": [
+          "Psalms 4:3",
+          "Psalms 12:1",
+          "Psalms 32:6",
+          "Malachi 2:15",
+          "2 Corinthians 1:12"
+        ],
+        "lookupCandidates": [
+          "godly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GOD'LY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hallow",
+        "count": 15,
+        "sampleRefs": [
+          "Exodus 28:38",
+          "Exodus 29:1",
+          "Exodus 40:9",
+          "Leviticus 16:19",
+          "Leviticus 22:2"
+        ],
+        "lookupCandidates": [
+          "hallow"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HAL'LOW",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
