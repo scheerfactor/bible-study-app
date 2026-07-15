@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T03:22:07.573Z
+Generated: 2026-07-15T03:51:55.316Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,12 +122,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | wax | WAX | 24 | ocr_full_import_needs_spot_review |
 | ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
 | jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
-| mention | MEN'TION | 23 | ocr_full_import_needs_spot_review |
-| namely | NA'MELY | 23 | ocr_full_import_needs_spot_review |
 | pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
-| pronounce | PRONOUNCE | 23 | ocr_full_import_needs_spot_review |
-| bearing | BEARING | 22 | ocr_full_import_needs_spot_review |
-| bitterness | BIT'TERNESS | 22 | ocr_full_import_needs_spot_review |
 | breach | BREACH | 22 | ocr_full_import_needs_spot_review |
 | brightness | BRIGHTNESS | 22 | ocr_full_import_needs_spot_review |
 | companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | pool | POOL | 22 | ocr_full_import_needs_spot_review |
 | reckoned | RECKONED | 22 | ocr_full_import_needs_spot_review |
 | shaken | SHAKEN | 22 | ocr_full_import_needs_spot_review |
+| steal | STEAL | 22 | ocr_full_import_needs_spot_review |
+| taste | TASTE | 22 | ocr_full_import_needs_spot_review |
+| centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
+| choice | CHOICE | 21 | ocr_full_import_needs_spot_review |
+| condemned | CONDEMNED | 21 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
