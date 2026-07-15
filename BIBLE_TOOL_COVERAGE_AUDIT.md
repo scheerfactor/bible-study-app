@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T22:27:31.397Z
+Generated: 2026-07-15T22:57:34.063Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -120,17 +120,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
-| creepeth | CREEP | 14 | ocr_full_import_needs_spot_review |
-| ornaments | OR'NAMENT | 14 | ocr_full_import_needs_spot_review |
-| outward | OUT'WARD | 14 | ocr_full_import_needs_spot_review |
-| prolong | PROLONG' | 14 | ocr_full_import_needs_spot_review |
-| repair | REPA'IR | 14 | ocr_full_import_needs_spot_review |
-| shave | SHAVE | 14 | ocr_full_import_needs_spot_review |
-| sorry | SOR'RY | 14 | ocr_full_import_needs_spot_review |
 | spies | SPY | 14 | ocr_full_import_needs_spot_review |
-| stick | STICK | 14 | ocr_full_import_needs_spot_review |
-| subjection | SUBJECTION | 14 | ocr_full_import_needs_spot_review |
-| surety | SU'RETY | 14 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | wander | WAN'DER | 14 | ocr_full_import_needs_spot_review |
 | winter | WINTER | 14 | ocr_full_import_needs_spot_review |
@@ -142,6 +132,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | blot | BLOT | 13 | ocr_full_import_needs_spot_review |
 | boldly | BOLDLY | 13 | ocr_full_import_needs_spot_review |
 | dig | DIG | 13 | ocr_full_import_needs_spot_review |
+| disobedient | DISOBE'DIENT | 13 | ocr_full_import_needs_spot_review |
+| doubt | DOUBT | 13 | ocr_full_import_needs_spot_review |
+| dungeon | DUN'GEON | 13 | ocr_full_import_needs_spot_review |
+| fashion | FASH'ION | 13 | ocr_full_import_needs_spot_review |
+| flourish | FLOURISH | 13 | ocr_full_import_needs_spot_review |
+| flow | FLOW | 13 | ocr_full_import_needs_spot_review |
+| fully | FUL'LY | 13 | ocr_full_import_needs_spot_review |
+| garrison | GARRISON | 13 | ocr_full_import_needs_spot_review |
+| hereby | HEREBY' | 13 | ocr_full_import_needs_spot_review |
+| hole | HOLE | 13 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
