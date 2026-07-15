@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T06:52:06.680Z",
+    "generated_at": "2026-07-15T07:22:10.602Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60166,
+      "entries": 60171,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2171,98 +2171,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "fiery",
-          "count": 20,
-          "sampleRefs": [
-            "Numbers 21:6",
-            "Numbers 21:8",
-            "Deuteronomy 8:15",
-            "Deuteronomy 33:2",
-            "Psalms 21:9"
-          ],
-          "lookupCandidates": [
-            "fiery"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FI'ERY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "flower",
-          "count": 20,
-          "sampleRefs": [
-            "Exodus 25:33",
-            "Exodus 25:33",
-            "Exodus 37:19",
-            "Exodus 37:19",
-            "1 Samuel 2:33"
-          ],
-          "lookupCandidates": [
-            "flower"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FLOWER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "foolishness",
-          "count": 20,
-          "sampleRefs": [
-            "2 Samuel 15:31",
-            "Psalms 38:5",
-            "Psalms 69:5",
-            "Proverbs 12:23",
-            "Proverbs 14:24"
-          ],
-          "lookupCandidates": [
-            "foolishness",
-            "foolishnes",
-            "foolishnese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOOL'ISHNESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "persecuted",
-          "count": 20,
-          "sampleRefs": [
-            "Deuteronomy 30:7",
-            "Psalms 109:16",
-            "Psalms 119:161",
-            "Psalms 143:3",
-            "Isaiah 14:6"
-          ],
-          "lookupCandidates": [
-            "persecuted",
-            "persecut",
-            "persecute"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PER'SECUTED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "persuaded",
           "count": 20,
           "sampleRefs": [
@@ -2284,28 +2192,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PERSUA'DE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "roof",
-          "count": 20,
-          "sampleRefs": [
-            "Genesis 19:8",
-            "Deuteronomy 22:8",
-            "Joshua 2:6",
-            "Joshua 2:6",
-            "Joshua 2:8"
-          ],
-          "lookupCandidates": [
-            "roof"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ROOF",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3487,30 +3373,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "flowers",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 25:31",
-            "Exodus 25:34",
-            "Exodus 37:17",
-            "Exodus 37:20",
-            "Leviticus 15:24"
-          ],
-          "lookupCandidates": [
-            "flowers",
-            "flower",
-            "flowere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FLOWER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "frankincense",
           "count": 17,
           "sampleRefs": [
@@ -3618,6 +3480,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "MELT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "myrrh",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 37:25",
+            "Genesis 43:11",
+            "Exodus 30:23",
+            "Esther 2:12",
+            "Psalms 45:8"
+          ],
+          "lookupCandidates": [
+            "myrrh"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MYRRH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pertained",
+          "count": 17,
+          "sampleRefs": [
+            "Numbers 31:43",
+            "Joshua 24:33",
+            "Judges 6:11",
+            "1 Samuel 25:21",
+            "2 Samuel 2:15"
+          ],
+          "lookupCandidates": [
+            "pertained",
+            "pertain",
+            "pertaine"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PERTA'IN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "principal",
+          "count": 17,
+          "sampleRefs": [
+            "Exodus 30:23",
+            "Leviticus 6:5",
+            "Numbers 5:7",
+            "1 Kings 4:5",
+            "2 Kings 25:19"
+          ],
+          "lookupCandidates": [
+            "principal"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PRIN'CIPAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "prosperity",
+          "count": 17,
+          "sampleRefs": [
+            "Deuteronomy 23:6",
+            "1 Samuel 25:6",
+            "1 Kings 10:7",
+            "Job 15:21",
+            "Job 36:11"
+          ],
+          "lookupCandidates": [
+            "prosperity"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PROSPER'ITY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "publish",
+          "count": 17,
+          "sampleRefs": [
+            "Deuteronomy 32:3",
+            "1 Samuel 31:9",
+            "2 Samuel 1:20",
+            "Nehemiah 8:15",
+            "Psalms 26:7"
+          ],
+          "lookupCandidates": [
+            "publish"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PUB'LISH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "punished",
+          "count": 17,
+          "sampleRefs": [
+            "Exodus 21:20",
+            "Exodus 21:21",
+            "Exodus 21:22",
+            "Ezra 9:13",
+            "Job 31:11"
+          ],
+          "lookupCandidates": [
+            "punished",
+            "punish",
+            "punishe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PUNISHED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10673,98 +10671,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "fiery",
-        "count": 20,
-        "sampleRefs": [
-          "Numbers 21:6",
-          "Numbers 21:8",
-          "Deuteronomy 8:15",
-          "Deuteronomy 33:2",
-          "Psalms 21:9"
-        ],
-        "lookupCandidates": [
-          "fiery"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FI'ERY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "flower",
-        "count": 20,
-        "sampleRefs": [
-          "Exodus 25:33",
-          "Exodus 25:33",
-          "Exodus 37:19",
-          "Exodus 37:19",
-          "1 Samuel 2:33"
-        ],
-        "lookupCandidates": [
-          "flower"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FLOWER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "foolishness",
-        "count": 20,
-        "sampleRefs": [
-          "2 Samuel 15:31",
-          "Psalms 38:5",
-          "Psalms 69:5",
-          "Proverbs 12:23",
-          "Proverbs 14:24"
-        ],
-        "lookupCandidates": [
-          "foolishness",
-          "foolishnes",
-          "foolishnese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOOL'ISHNESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "persecuted",
-        "count": 20,
-        "sampleRefs": [
-          "Deuteronomy 30:7",
-          "Psalms 109:16",
-          "Psalms 119:161",
-          "Psalms 143:3",
-          "Isaiah 14:6"
-        ],
-        "lookupCandidates": [
-          "persecuted",
-          "persecut",
-          "persecute"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PER'SECUTED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "persuaded",
         "count": 20,
         "sampleRefs": [
@@ -10786,28 +10692,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PERSUA'DE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "roof",
-        "count": 20,
-        "sampleRefs": [
-          "Genesis 19:8",
-          "Deuteronomy 22:8",
-          "Joshua 2:6",
-          "Joshua 2:6",
-          "Joshua 2:8"
-        ],
-        "lookupCandidates": [
-          "roof"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ROOF",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11989,30 +11873,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "flowers",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 25:31",
-          "Exodus 25:34",
-          "Exodus 37:17",
-          "Exodus 37:20",
-          "Leviticus 15:24"
-        ],
-        "lookupCandidates": [
-          "flowers",
-          "flower",
-          "flowere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FLOWER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "frankincense",
         "count": 17,
         "sampleRefs": [
@@ -12120,6 +11980,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "MELT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "myrrh",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 37:25",
+          "Genesis 43:11",
+          "Exodus 30:23",
+          "Esther 2:12",
+          "Psalms 45:8"
+        ],
+        "lookupCandidates": [
+          "myrrh"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MYRRH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pertained",
+        "count": 17,
+        "sampleRefs": [
+          "Numbers 31:43",
+          "Joshua 24:33",
+          "Judges 6:11",
+          "1 Samuel 25:21",
+          "2 Samuel 2:15"
+        ],
+        "lookupCandidates": [
+          "pertained",
+          "pertain",
+          "pertaine"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PERTA'IN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "principal",
+        "count": 17,
+        "sampleRefs": [
+          "Exodus 30:23",
+          "Leviticus 6:5",
+          "Numbers 5:7",
+          "1 Kings 4:5",
+          "2 Kings 25:19"
+        ],
+        "lookupCandidates": [
+          "principal"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PRIN'CIPAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "prosperity",
+        "count": 17,
+        "sampleRefs": [
+          "Deuteronomy 23:6",
+          "1 Samuel 25:6",
+          "1 Kings 10:7",
+          "Job 15:21",
+          "Job 36:11"
+        ],
+        "lookupCandidates": [
+          "prosperity"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PROSPER'ITY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "publish",
+        "count": 17,
+        "sampleRefs": [
+          "Deuteronomy 32:3",
+          "1 Samuel 31:9",
+          "2 Samuel 1:20",
+          "Nehemiah 8:15",
+          "Psalms 26:7"
+        ],
+        "lookupCandidates": [
+          "publish"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PUB'LISH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "punished",
+        "count": 17,
+        "sampleRefs": [
+          "Exodus 21:20",
+          "Exodus 21:21",
+          "Exodus 21:22",
+          "Ezra 9:13",
+          "Job 31:11"
+        ],
+        "lookupCandidates": [
+          "punished",
+          "punish",
+          "punishe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PUNISHED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
