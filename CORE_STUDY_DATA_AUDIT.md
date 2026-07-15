@@ -1,17 +1,17 @@
 # Core Study Data Audit
 
-Generated: 2026-07-14T00:10:24.074Z
+Generated: 2026-07-15T16:36:07.974Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
-- Library: 2121 verified resources.
-- Public commentary rows: 12795.
+- Library: 2235 verified resources.
+- Public commentary rows: 12822.
 - Public commentary chapter coverage: 1189/1189 (100%).
-- Commentary authors represented in public imports: 65.
-- Webster 1828 entries: 59874 (51185 normalized headwords; 1446 reviewed overlay).
-- Strong's lexicon entries: 14296; reviewed KJV word mappings: 725038 rows from 56 batch files across 66 books and 1189 chapters (broad import).
-- Public TSK rows: 6118; staged TSK rows: 50; source verses covered: 2226; chapters covered: 1189; books covered: 66 (reviewed samples only).
+- Commentary authors represented in public imports: 66.
+- Webster 1828 entries: 60314 (51209 normalized headwords; 1886 reviewed overlay).
+- Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
+- Public TSK rows: 6376; staged TSK rows: 50; source verses covered: 2349; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -47,7 +47,6 @@ Generated: 2026-07-14T00:10:24.074Z
 | 3 John | 1 | 1 | 100% | 14 | 281 |
 | 2 John | 1 | 1 | 100% | 13 | 294 |
 | Philemon | 1 | 1 | 100% | 25 | 419 |
-| Hosea | 14 | 14 | 100% | 169 | 556 |
 | Jude | 1 | 1 | 100% | 25 | 597 |
 | Obadiah | 1 | 1 | 100% | 21 | 612 |
 | Titus | 3 | 3 | 100% | 46 | 874 |
@@ -56,6 +55,7 @@ Generated: 2026-07-14T00:10:24.074Z
 | Nahum | 3 | 3 | 100% | 47 | 1174 |
 | Jonah | 4 | 4 | 100% | 48 | 1252 |
 | Habakkuk | 3 | 3 | 100% | 56 | 1352 |
+| 2 Peter | 3 | 3 | 100% | 61 | 1505 |
 
 ## TSK Focus Reference Checks
 

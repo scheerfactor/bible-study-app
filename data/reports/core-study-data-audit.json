@@ -5,20 +5,20 @@
     "verses": 31102
   },
   "library": {
-    "verifiedResources": 2121
+    "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12795,
+    "publicRows": 12822,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 65
+    "authors": 66
   },
   "webster1828": {
-    "entries": 59874,
+    "entries": 60314,
     "baseEntries": 58428,
-    "reviewedOverrides": 1446,
-    "uniqueNormalizedHeadwords": 51185,
-    "suspiciousOcrEntries": 1894,
+    "reviewedOverrides": 1886,
+    "uniqueNormalizedHeadwords": 51209,
+    "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
       {
         "word": "believeth",
@@ -54,8 +54,8 @@
   },
   "strongs": {
     "verifiedEntries": 14296,
-    "reviewedMappingFiles": 56,
-    "reviewedMappingRows": 725038,
+    "reviewedMappingFiles": 66,
+    "reviewedMappingRows": 729289,
     "reviewedMappedBooks": 66,
     "reviewedMappedChapters": 1189,
     "status": "broad import",
@@ -123,14 +123,6 @@
         "rows": 419
       },
       {
-        "book": "Hosea",
-        "chaptersCovered": 14,
-        "totalChapters": 14,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 169,
-        "rows": 556
-      },
-      {
         "book": "Jude",
         "chaptersCovered": 1,
         "totalChapters": 1,
@@ -193,13 +185,21 @@
         "chapterCoveragePercent": 100,
         "versesCovered": 56,
         "rows": 1352
+      },
+      {
+        "book": "2 Peter",
+        "chaptersCovered": 3,
+        "totalChapters": 3,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 61,
+        "rows": 1505
       }
     ]
   },
   "tsk": {
-    "rows": 6118,
+    "rows": 6376,
     "stagedRows": 50,
-    "sourceVersesCovered": 2226,
+    "sourceVersesCovered": 2349,
     "booksCovered": 66,
     "chaptersCovered": 1189,
     "status": "reviewed samples only",

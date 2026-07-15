@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T16:28:03.574Z
+Generated: 2026-07-15T16:35:51.843Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,827/12,454 meaningful KJV words have a lookup candidate (62.8%).
-- Combined word/topic lookup: 10,814/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.8%).
+- Webster 1828: 7,846/12,454 meaningful KJV words have a lookup candidate (63%).
+- Combined word/topic lookup: 10,833/12,454 meaningful KJV words have Webster, Easton, or Nave help (87%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -72,35 +72,35 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Count | Sample References |
 | --- | ---: | --- |
 | forasmuch | 43 | Genesis 41:39; Numbers 10:31; Deuteronomy 12:12; Deuteronomy 17:16; Joshua 17:14 |
-| straightway | 42 | 1 Samuel 9:13; 1 Samuel 28:20; Proverbs 7:22; Daniel 10:17; Matthew 3:16 |
-| either | 41 | Genesis 31:24; Genesis 31:29; Leviticus 10:1; Leviticus 13:49; Leviticus 13:51 |
-| eastward | 40 | Genesis 2:8; Genesis 13:14; Genesis 25:6; Exodus 27:13; Exodus 38:13 |
-| defile | 39 | Leviticus 11:44; Leviticus 15:31; Leviticus 18:20; Leviticus 18:23; Leviticus 18:24 |
-| fourscore | 36 | Genesis 16:16; Genesis 35:28; Exodus 7:7; Exodus 7:7; Numbers 2:9 |
 | notwithstanding | 36 | Exodus 16:20; Exodus 21:21; Leviticus 25:32; Leviticus 27:28; Numbers 26:11 |
 | seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
-| whereas | 33 | Genesis 31:37; Deuteronomy 19:6; Deuteronomy 28:62; 1 Samuel 24:17; 2 Samuel 7:6 |
 | members | 32 | Job 17:7; Psalms 139:16; Matthew 5:29; Matthew 5:30; Romans 6:13 |
-| hungry | 30 | 1 Samuel 2:5; 2 Samuel 17:29; 2 Kings 7:12; Job 5:5; Job 22:7 |
 | putteth | 30 | Exodus 30:33; Numbers 22:38; Deuteronomy 25:11; Deuteronomy 27:15; 1 Kings 20:11 |
-| continued | 29 | Genesis 40:4; Judges 5:17; Ruth 1:2; Ruth 2:7; 1 Samuel 1:12 |
-| drawn | 28 | Numbers 22:23; Numbers 22:31; Deuteronomy 21:3; Deuteronomy 30:17; Joshua 5:13 |
 | egyptian | 27 | Genesis 16:1; Genesis 16:3; Genesis 21:9; Genesis 25:12; Genesis 39:1 |
-| whereunto | 27 | Numbers 36:3; Numbers 36:4; Deuteronomy 4:26; 2 Chronicles 8:11; Esther 10:2 |
-| accomplished | 26 | 2 Chronicles 36:22; Esther 2:12; Job 15:32; Proverbs 13:19; Isaiah 40:2 |
 | hittite | 26 | Genesis 23:10; Genesis 25:9; Genesis 26:34; Genesis 26:34; Genesis 36:2 |
-| gotten | 25 | Genesis 4:1; Genesis 12:5; Genesis 31:1; Genesis 31:18; Genesis 31:18 |
-| somewhat | 25 | Leviticus 4:13; Leviticus 4:22; Leviticus 4:27; Leviticus 13:6; Leviticus 13:19 |
 | forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
 | marvellous | 24 | 1 Chronicles 16:12; 1 Chronicles 16:24; Job 5:9; Job 10:16; Psalms 9:1 |
 | alway | 23 | Exodus 25:30; Numbers 9:16; Deuteronomy 11:1; Deuteronomy 28:33; 2 Samuel 9:10 |
-| besieged | 23 | 2 Samuel 11:1; 2 Samuel 20:15; 1 Kings 16:17; 1 Kings 20:1; 2 Kings 6:24 |
-| blew | 23 | Joshua 6:8; Joshua 6:9; Joshua 6:13; Joshua 6:16; Joshua 6:20 |
 | marvelled | 23 | Genesis 43:33; Psalms 48:5; Matthew 8:10; Matthew 8:27; Matthew 9:8 |
 | mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
-| proclaim | 23 | Exodus 33:19; Leviticus 23:2; Leviticus 23:4; Leviticus 23:21; Leviticus 23:37 |
 | defence | 22 | Numbers 14:9; 2 Chronicles 11:5; Job 22:25; Psalms 7:10; Psalms 31:2 |
+| jubile | 22 | Leviticus 25:9; Leviticus 25:10; Leviticus 25:11; Leviticus 25:12; Leviticus 25:13 |
+| pot | 22 | Exodus 16:33; Leviticus 6:28; Judges 6:19; 1 Samuel 2:14; 2 Kings 4:2 |
+| setteth | 22 | Numbers 1:51; Numbers 4:5; Deuteronomy 24:15; Deuteronomy 27:16; 2 Samuel 22:34 |
+| sinneth | 22 | Numbers 15:28; Numbers 15:28; Numbers 15:29; Deuteronomy 19:15; 1 Kings 8:46 |
+| astonishment | 21 | Deuteronomy 28:28; Deuteronomy 28:37; 2 Chronicles 7:21; 2 Chronicles 29:8; Psalms 60:3 |
+| higher | 21 | Numbers 24:7; 1 Samuel 9:2; 1 Samuel 10:23; 2 Kings 15:35; Nehemiah 4:13 |
+| husbandmen | 21 | 2 Kings 25:12; 2 Chronicles 26:10; Jeremiah 31:24; Jeremiah 52:16; Joel 1:11 |
+| magnified | 21 | Genesis 19:19; Joshua 4:14; 2 Samuel 7:26; 1 Chronicles 17:24; 1 Chronicles 29:25 |
+| occasion | 21 | Genesis 43:18; Judges 9:33; Judges 14:4; 1 Samuel 10:7; 2 Samuel 12:14 |
+| thereby | 21 | Genesis 24:14; Leviticus 11:43; Job 22:21; Proverbs 20:1; Ecclesiastes 10:9 |
+| alas | 20 | Numbers 12:11; Numbers 24:23; Joshua 7:7; Judges 6:22; Judges 11:35 |
+| recompence | 20 | Deuteronomy 32:35; Job 15:31; Proverbs 12:14; Isaiah 35:4; Isaiah 59:18 |
+| secretly | 20 | Genesis 31:27; Deuteronomy 13:6; Deuteronomy 27:24; Deuteronomy 28:57; Joshua 2:1 |
+| whomsoever | 20 | Genesis 31:32; Genesis 44:9; Leviticus 15:11; Judges 7:4; Judges 11:24 |
+| committeth | 19 | Leviticus 20:10; Leviticus 20:10; Psalms 10:14; Proverbs 6:32; Ezekiel 8:6 |
+| denied | 19 | Genesis 18:15; 1 Kings 20:7; Job 31:28; Matthew 26:70; Matthew 26:72 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -119,7 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| wages | WAGE | 18 | ocr_full_import_needs_spot_review |
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
 | putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | clear | CLEAR | 15 | ocr_full_import_needs_spot_review |
 | colt | COLT | 15 | ocr_full_import_needs_spot_review |
 | drop | DROP | 15 | ocr_full_import_needs_spot_review |
+| godliness | GOD'LINESS | 15 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
