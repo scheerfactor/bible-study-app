@@ -3165,6 +3165,7 @@ const FAVORITE_PASSAGE_LIMIT = 24;
 const BIBLE_MARKER_IDS: BibleMarkerId[] = ["A", "B", "C", "D"];
 const MATTHEW_HENRY_COMMENTARY_COLLECTION = "Matthew Henry's Commentary on the Whole Bible";
 const H_A_IRONSIDE_COMMENTARY_COLLECTION = "H. A. Ironside Commentary Samples";
+const H_A_IRONSIDE_COLOSSIANS_COLLECTION = "Lectures on the Epistle to the Colossians";
 const TREASURY_OF_DAVID_COMMENTARY_COLLECTION = "The Treasury of David";
 const SCOFIELD_REFERENCE_NOTES_COLLECTION = "Scofield Reference Notes (1917 Edition)";
 const AMERICAN_COMMENTARY_NT_COLLECTION = "American Commentary on the New Testament";
@@ -3189,6 +3190,7 @@ const AMOS_VERIFIED_COMMENTARY_COLLECTIONS = [
 const ACTIVE_COMMENTARY_COLLECTIONS = [
   MATTHEW_HENRY_COMMENTARY_COLLECTION,
   H_A_IRONSIDE_COMMENTARY_COLLECTION,
+  H_A_IRONSIDE_COLOSSIANS_COLLECTION,
   TREASURY_OF_DAVID_COMMENTARY_COLLECTION,
   SCOFIELD_REFERENCE_NOTES_COLLECTION,
   AMERICAN_COMMENTARY_NT_COLLECTION,
@@ -11215,6 +11217,7 @@ const deferredCommentaryImportFiles = [
   "american-commentary-reviewed-new-testament-commentary.json",
   "matthew-henry-reviewed-batch-2-commentary.json",
   "h-a-ironside-phase-2-commentary.json",
+  "h-a-ironside-reviewed-colossians-commentary.json",
   "h-a-ironside-hosea-commentary.json",
   "h-a-ironside-minor-prophets-commentary.json",
   "g-campbell-morgan-hosea-commentary.json",
@@ -11550,6 +11553,7 @@ const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filte
   fileName.startsWith("jfb") ||
   fileName.startsWith("treasury-of-david") ||
   fileName === "amos-expanded-public-domain-commentary.json" ||
+  fileName === "h-a-ironside-reviewed-colossians-commentary.json" ||
   fileName.startsWith("h-a-ironside-hosea") ||
   fileName.startsWith("h-a-ironside-minor-prophets") ||
   fileName.startsWith("scofield-1917"),
