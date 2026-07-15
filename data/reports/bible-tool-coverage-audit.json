@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T10:52:27.055Z",
+    "generated_at": "2026-07-15T11:04:38.937Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60221,
+      "entries": 60226,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1823,140 +1823,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "letter",
-          "count": 37,
-          "sampleRefs": [
-            "2 Samuel 11:14",
-            "2 Samuel 11:15",
-            "2 Kings 5:5",
-            "2 Kings 5:6",
-            "2 Kings 5:6"
-          ],
-          "lookupCandidates": [
-            "letter"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LET'TER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sow",
-          "count": 37,
-          "sampleRefs": [
-            "Genesis 47:23",
-            "Exodus 23:10",
-            "Leviticus 19:19",
-            "Leviticus 25:3",
-            "Leviticus 25:4"
-          ],
-          "lookupCandidates": [
-            "sow"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SOW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "letters",
-          "count": 34,
-          "sampleRefs": [
-            "1 Kings 21:8",
-            "1 Kings 21:8",
-            "1 Kings 21:9",
-            "1 Kings 21:11",
-            "2 Kings 10:1"
-          ],
-          "lookupCandidates": [
-            "letters",
-            "letter",
-            "lettere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LET'TER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "goodly",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 27:15",
-            "Genesis 39:6",
-            "Genesis 49:21",
-            "Exodus 2:2",
-            "Exodus 39:28"
-          ],
-          "lookupCandidates": [
-            "goodly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GOOD'LY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "want",
-          "count": 31,
-          "sampleRefs": [
-            "Deuteronomy 28:48",
-            "Deuteronomy 28:57",
-            "Judges 18:10",
-            "Judges 19:19",
-            "Job 24:8"
-          ],
-          "lookupCandidates": [
-            "want"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WANT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "howl",
-          "count": 29,
-          "sampleRefs": [
-            "Isaiah 13:6",
-            "Isaiah 14:31",
-            "Isaiah 15:2",
-            "Isaiah 15:3",
-            "Isaiah 16:7"
-          ],
-          "lookupCandidates": [
-            "howl"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HOWL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "change",
           "count": 26,
           "sampleRefs": [
@@ -3607,6 +3473,138 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "EARTH'QUAKE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "exhort",
+          "count": 16,
+          "sampleRefs": [
+            "Acts 2:40",
+            "Acts 27:22",
+            "2 Corinthians 9:5",
+            "1 Thessalonians 4:1",
+            "1 Thessalonians 5:14"
+          ],
+          "lookupCandidates": [
+            "exhort"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EXHORT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "footstool",
+          "count": 16,
+          "sampleRefs": [
+            "1 Chronicles 28:2",
+            "2 Chronicles 9:18",
+            "Psalms 99:5",
+            "Psalms 110:1",
+            "Psalms 132:7"
+          ],
+          "lookupCandidates": [
+            "footstool"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOOT' STOOL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "greet",
+          "count": 16,
+          "sampleRefs": [
+            "1 Samuel 25:5",
+            "Romans 16:3",
+            "Romans 16:5",
+            "Romans 16:6",
+            "Romans 16:8"
+          ],
+          "lookupCandidates": [
+            "greet"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GREET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "highway",
+          "count": 16,
+          "sampleRefs": [
+            "Judges 21:19",
+            "1 Samuel 6:12",
+            "2 Samuel 20:12",
+            "2 Samuel 20:12",
+            "2 Samuel 20:13"
+          ],
+          "lookupCandidates": [
+            "highway"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HIGHWA'Y",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hinder",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 24:56",
+            "Numbers 22:16",
+            "2 Samuel 2:23",
+            "1 Kings 7:25",
+            "2 Chronicles 4:4"
+          ],
+          "lookupCandidates": [
+            "hinder"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HINDER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lend",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 22:25",
+            "Leviticus 25:37",
+            "Deuteronomy 15:6",
+            "Deuteronomy 15:8",
+            "Deuteronomy 23:19"
+          ],
+          "lookupCandidates": [
+            "lend"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LEND",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10314,140 +10312,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "letter",
-        "count": 37,
-        "sampleRefs": [
-          "2 Samuel 11:14",
-          "2 Samuel 11:15",
-          "2 Kings 5:5",
-          "2 Kings 5:6",
-          "2 Kings 5:6"
-        ],
-        "lookupCandidates": [
-          "letter"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LET'TER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sow",
-        "count": 37,
-        "sampleRefs": [
-          "Genesis 47:23",
-          "Exodus 23:10",
-          "Leviticus 19:19",
-          "Leviticus 25:3",
-          "Leviticus 25:4"
-        ],
-        "lookupCandidates": [
-          "sow"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SOW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "letters",
-        "count": 34,
-        "sampleRefs": [
-          "1 Kings 21:8",
-          "1 Kings 21:8",
-          "1 Kings 21:9",
-          "1 Kings 21:11",
-          "2 Kings 10:1"
-        ],
-        "lookupCandidates": [
-          "letters",
-          "letter",
-          "lettere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LET'TER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "goodly",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 27:15",
-          "Genesis 39:6",
-          "Genesis 49:21",
-          "Exodus 2:2",
-          "Exodus 39:28"
-        ],
-        "lookupCandidates": [
-          "goodly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GOOD'LY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "want",
-        "count": 31,
-        "sampleRefs": [
-          "Deuteronomy 28:48",
-          "Deuteronomy 28:57",
-          "Judges 18:10",
-          "Judges 19:19",
-          "Job 24:8"
-        ],
-        "lookupCandidates": [
-          "want"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WANT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "howl",
-        "count": 29,
-        "sampleRefs": [
-          "Isaiah 13:6",
-          "Isaiah 14:31",
-          "Isaiah 15:2",
-          "Isaiah 15:3",
-          "Isaiah 16:7"
-        ],
-        "lookupCandidates": [
-          "howl"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HOWL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "change",
         "count": 26,
         "sampleRefs": [
@@ -12098,6 +11962,138 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "EARTH'QUAKE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "exhort",
+        "count": 16,
+        "sampleRefs": [
+          "Acts 2:40",
+          "Acts 27:22",
+          "2 Corinthians 9:5",
+          "1 Thessalonians 4:1",
+          "1 Thessalonians 5:14"
+        ],
+        "lookupCandidates": [
+          "exhort"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EXHORT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "footstool",
+        "count": 16,
+        "sampleRefs": [
+          "1 Chronicles 28:2",
+          "2 Chronicles 9:18",
+          "Psalms 99:5",
+          "Psalms 110:1",
+          "Psalms 132:7"
+        ],
+        "lookupCandidates": [
+          "footstool"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOOT' STOOL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "greet",
+        "count": 16,
+        "sampleRefs": [
+          "1 Samuel 25:5",
+          "Romans 16:3",
+          "Romans 16:5",
+          "Romans 16:6",
+          "Romans 16:8"
+        ],
+        "lookupCandidates": [
+          "greet"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GREET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "highway",
+        "count": 16,
+        "sampleRefs": [
+          "Judges 21:19",
+          "1 Samuel 6:12",
+          "2 Samuel 20:12",
+          "2 Samuel 20:12",
+          "2 Samuel 20:13"
+        ],
+        "lookupCandidates": [
+          "highway"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HIGHWA'Y",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hinder",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 24:56",
+          "Numbers 22:16",
+          "2 Samuel 2:23",
+          "1 Kings 7:25",
+          "2 Chronicles 4:4"
+        ],
+        "lookupCandidates": [
+          "hinder"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HINDER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lend",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 22:25",
+          "Leviticus 25:37",
+          "Deuteronomy 15:6",
+          "Deuteronomy 15:8",
+          "Deuteronomy 23:19"
+        ],
+        "lookupCandidates": [
+          "lend"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LEND",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

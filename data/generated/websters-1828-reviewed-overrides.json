@@ -6890,6 +6890,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "GOOD'LY",
+    "normalized_headword": "goodly",
+    "definition": "GOOD'LY, adverb Excellently. GOOD'LY, adjective Being of a handsome form; beautiful; graceful; as a goodly person; goodly raiment; goodly houses. 1. Pleasant; agreeable; desirable; as goodly days. 2. Bulky; swelling; affectedly turgid.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/goodly",
+    "source_line_start": 1,
+    "source_line_end": 4,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "GOOD'NESS",
     "normalized_headword": "goodness",
     "definition": "GOOD'NESS, noun The state of being good; the physical qualities which constitute value, excellence or perfection; as the goodness of timber; the goodness of a soil. 1. The moral qualities which constitute christian excellence; moral virtue; religion. The fruit of the Spirit is love, joy, peace, long-suffering, gentleness, goodness faith. Galatians 5:22. 2. Kindness; benevolence; benignity of heart; but more generally, acts of kindness; charity; humanity exercised. I shall remember his goodness to me with gratitude. 3. Kindness; benevolence of nature; mercy. The Lord God--abundant in goodness and truth. Exodus 34:6. 4. Kindness; favor shown; acts of benevolence, compassion or mercy. Jethro rejoiced for all the goodness which Jehovah had done to Israel. Exodus 18:9.",
@@ -7827,6 +7837,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/howbeit",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "HOWL",
+    "normalized_headword": "howl",
+    "definition": "HOWL, verb intransitive [Latin ululo.] 1. To cry as a dog or wolf; to utter a particular kind of loud, protracted and mournful sound. We say, the dog howls; the wolf howls. Hence, 2. To utter a loud, mournful sound, expressive of distress; to wail. HOWL lye, for the day of the Lord is at hand. Isaiah 13:6. Ye rich men, weep and howl James 5:1. 3. To roar; as a tempest. HOWL, verb transitive To utter or speak with outcry. Go--howl it out in deserts. HOWL, noun The cry of a dog or wolf, or other like sound. 1. The cry of a human being in horror or anguish.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/howl",
+    "source_line_start": 1,
+    "source_line_end": 10,
     "review_status": "reviewed_overlay"
   },
   {
@@ -8947,6 +8967,16 @@
     "source_file": "data/sources/websters-1828/americandictiona02websrich_djvu.txt",
     "source_line_start": 15111,
     "source_line_end": 15231,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "LET'TER",
+    "normalized_headword": "letter",
+    "definition": "LET'TER, noun [from let.] 1. One who permits. 2. One who retards or hinders. 3. One who gives vent; as a blood-letter. LET'TER, noun [Latin litera.] 1. A mark or character, written, printed, engraved or painted; used as the representative of a sound, or of an articulation of the human organs of speech. By sounds, and articulations or closures of the organs, are formed syllables and words. Hence a letter is the first element of written language, as a simple sound is the first element of spoken language or speech. As sounds are audible and communicate ideas to others by the ear, so letters are visible representatives of sounds, and communicate the thoughts of others by means of the eye. 2. A written or printed message; an epistle; a communication made by visible characters from one person to another at a distance. The style of letters ought to be free, easy and natural. 3. The verbal expression; the literal meaning. We must observe the letter of the law, without doing violence to the reason of the law, and the intentions of the lawgiver. 4. Type; a charter formed of metal or wood, usually of metal, and used in printing books. 5. Letters, in the plural, learning; erudition; as a man of letters. Dead letter a writing or precept, which is without authority or force. The best law may become a dead letter Letter of attorney, a writing by which one person authorizes another to act in his stead. Letter of marque, a private ship commissioned or authorized by a government to make reprisals on the ships of another state. [See Marque.] Letters patent, or overt, open, a writing executed and sealed, by which power and authority are granted to a person to do some act, or enjoy some right; as letters patent under the seal of England. LET'TER, verb transitive To impress or form letters on; as, to letter a book; a book gilt and lettered.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/letter",
+    "source_line_start": 1,
+    "source_line_end": 17,
     "review_status": "reviewed_overlay"
   },
   {
@@ -14640,6 +14670,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "SOW",
+    "normalized_headword": "sow",
+    "definition": "SOW, noun 1. The female of the hog kind or of swine. 2. An oblong piece of lead. 3. An insect; a milleped. SOW'-BREAD, noun A plant of the genus Cyclamen. SOW'-BUG, noun An insect; a milleped.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/sow",
+    "source_line_start": 1,
+    "source_line_end": 6,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "SPACE",
     "normalized_headword": "space",
     "definition": "SPACE, noun [Latin spatium, space; spatior, to wander. This word is probably formed on the root of pateo.] 1. Room; extension. space in the abstract, is mere extension. Pure space is capable neither of resistance nor motion. 2. Any quantity of extension. In relation to bodies, space is the interval between any two or more object' as the space between two stars or two hills The quantity of space or extent between bodies, constitutes their distance form each other. 3. The distance or interval between lines; as in books. The space in music are named as well as the lines. 4. Quantity of time; also, the interval between two points of time. Nine times the space that measures day and God may defer his judgment for a time, and give a people a longer space for repentance. 5. A short time; a while. To stay your deadly strife a space [This sense is nearly obsolete.] SPACE, verb intransitive To rove. [Not in use.] SPACE, verb transitive Among printers, to make space or wider intervals between lines.",
@@ -16937,6 +16977,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/wanderer",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WANT",
+    "normalized_headword": "want",
+    "definition": "WANT, noun 1. Deficiency; defect; the absence of that which is necessary or useful; as a want of power or knowledge fro any purpose; want of food and clothing. The want of money is a common want 2 Corinthians 8:14, 9. From having wishes in consequence of our wants, we often feel wants in consequence of our wishes. 2. Need; necessity; the effect of deficiency. Pride is as loud a beggar as want and more saucy. 3. Poverty; penury; indigence. Nothing is so hard for those who abound in riches as to conceive how others can be in want 4. The state of not having. I cannot write a letter at present for want of time. 5. That which is not possessed, but is desired or necessary for use or pleasure. Habitual superfluities become actual wants. 6. A mole. WANT, verb transitive waunt. 1. To be destitute; to be deficient in; not to have; a word of general application; as, to want knowledge; to want judgment; to want learning; to want food and clothing; to want money. 2. To be defective or deficient in. Timber may want strength or solidity to answer its purpose. 3. To fall short; not to contain or have. The sum want a dollar of the amount of debt. Nor think, though men were none, that heaven would want spectators, God want praise. 4. To be without. The unhappy never want enemies. 5. To need; to have occasion for, as useful, proper or requisite. Our manners want correction. In winter we want a fire; in summer we want cooling breezes. We all want more public spirit and more virtue. 6. To wish for; to desire. Every man wants a little pre-eminence over his neighbor. Many want that which they cannot obtain, and which if they could obtain, would certainly ruin them. What wants my son? WANT, verb intransitive waunt. 1. To be deficient; not to be sufficient. As in bodies, thus in souls, we find what wants in blood and spirits, swelld with wind. 2. To fail; to be deficient; to be lacking. No time shall find me wanting to my truth. 3. To be missed; not to be present. The jury was full, wanting one. 4. To fall short; to be lacking. Twelve, wanting one, he slew.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/want",
+    "source_line_start": 1,
+    "source_line_end": 29,
     "review_status": "reviewed_overlay"
   },
   {

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T10:52:27.055Z
+Generated: 2026-07-15T11:04:38.937Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -113,12 +113,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
-| letter | LET'TER | 37 | ocr_full_import_needs_spot_review |
-| sow | SOW | 37 | ocr_full_import_needs_spot_review |
-| letters | LET'TER | 34 | ocr_full_import_needs_spot_review |
-| goodly | GOOD'LY | 33 | ocr_full_import_needs_spot_review |
-| want | WANT | 31 | ocr_full_import_needs_spot_review |
-| howl | HOWL | 29 | ocr_full_import_needs_spot_review |
 | change | CHANGE | 26 | ocr_full_import_needs_spot_review |
 | double | DOUB'LE | 26 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
 | conspired | CONSPI'RE | 19 | ocr_full_import_needs_spot_review |
 | descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
+| instructed | INSTRUCT' | 19 | ocr_full_import_needs_spot_review |
+| murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
+| calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
+| communed | COMMU'NE | 18 | ocr_full_import_needs_spot_review |
+| kidneys | KIDNEY | 18 | ocr_full_import_needs_spot_review |
+| maidens | MA'IDEN | 18 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

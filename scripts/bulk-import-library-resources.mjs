@@ -373,7 +373,8 @@ for (const [index, row] of sourceRows.entries()) {
       public_domain_status: "verified",
       commercial_use_status: commercialUseStatus(sourceUrl),
       attribution_required: sourceHost(sourceUrl) === "www.gutenberg.org",
-      rights_basis: `${row.rights_status}. Source reviewed from ${sourceUrl}.`,
+      rights_basis:
+        normalizeTextValue(row.rights_basis) || `${row.rights_status}. Source reviewed from ${sourceUrl}.`,
       notes: candidateDescription(row),
       import_status: "imported_file",
       rights_status: row.rights_status,

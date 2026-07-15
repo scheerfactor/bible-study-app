@@ -1,0 +1,116 @@
+{
+  "source_csv": "data/library/import-batches/robert-anderson-study-library-phase-54.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 6,
+  "total_attempted": 6,
+  "imported": 6,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The Coming Prince: The Seventy Weeks of Daniel",
+      "file": "the-coming-prince-the-seventy-weeks-of-daniel-sir-robert-anderson.txt",
+      "bytes": 554679,
+      "words": 95083,
+      "reading_time_minutes": 423
+    },
+    {
+      "title": "Daniel in the Critics' Den",
+      "file": "daniel-in-the-critics-den-sir-robert-anderson.txt",
+      "bytes": 247647,
+      "words": 41612,
+      "reading_time_minutes": 185
+    },
+    {
+      "title": "The Gospel and Its Ministry",
+      "file": "the-gospel-and-its-ministry-sir-robert-anderson.txt",
+      "bytes": 350798,
+      "words": 62283,
+      "reading_time_minutes": 277
+    },
+    {
+      "title": "Forgotten Truths",
+      "file": "forgotten-truths-sir-robert-anderson.txt",
+      "bytes": 222022,
+      "words": 38104,
+      "reading_time_minutes": 169
+    },
+    {
+      "title": "The Lord from Heaven",
+      "file": "the-lord-from-heaven-sir-robert-anderson.txt",
+      "bytes": 207872,
+      "words": 35769,
+      "reading_time_minutes": 159
+    },
+    {
+      "title": "Human Destiny: After Death - What?",
+      "file": "human-destiny-after-death-what-sir-robert-anderson.txt",
+      "bytes": 235034,
+      "words": 40329,
+      "reading_time_minutes": 179
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The Coming Prince: The Seventy Weeks of Daniel",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-coming-prince-the-seventy-weeks-of-daniel-sir-robert-anderson.txt"
+    },
+    {
+      "row": 3,
+      "title": "Daniel in the Critics' Den",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/daniel-in-the-critics-den-sir-robert-anderson.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Gospel and Its Ministry",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-and-its-ministry-sir-robert-anderson.txt"
+    },
+    {
+      "row": 5,
+      "title": "Forgotten Truths",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/forgotten-truths-sir-robert-anderson.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Lord from Heaven",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-lord-from-heaven-sir-robert-anderson.txt"
+    },
+    {
+      "row": 7,
+      "title": "Human Destiny: After Death - What?",
+      "author": "Sir Robert Anderson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/human-destiny-after-death-what-sir-robert-anderson.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

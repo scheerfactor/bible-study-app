@@ -101503,5 +101503,293 @@
     "checksum_sha256": "f1e9a74df9136acabaed4a10af81dba98fa6c4e2fc2a35ded000ea4b82bc7c8e",
     "file_size_bytes": 1453687,
     "word_count": 249551
+  },
+  {
+    "title": "The Coming Prince: The Seventy Weeks of Daniel",
+    "author": "Sir Robert Anderson",
+    "year": 1898,
+    "category": "Commentaries",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/bwb_KT-266-804/bwb_KT-266-804_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_KT-266-804/bwb_KT-266-804_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-coming-prince-the-seventy-weeks-of-daniel-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1898. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/bwb_KT-266-804.",
+    "notes": "Public-domain exposition of Daniel 9 and biblical prophecy for secondary study and teaching preparation. Labels/warnings: Historical dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain exposition of Daniel 9 and biblical prophecy for secondary study and teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Coming Prince: The Seventy Weeks of Daniel",
+      "author": "Sir Robert Anderson",
+      "category": "Commentaries",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 423,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "62fad6217605603ca05db05503b1b0ec26c2970e1b8480af6d7c752234e582ab",
+    "file_size_bytes": 554679,
+    "word_count": 95083
+  },
+  {
+    "title": "Daniel in the Critics' Den",
+    "author": "Sir Robert Anderson",
+    "year": 1895,
+    "category": "Commentaries",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/danielincriticsd0000robe_s0u0/danielincriticsd0000robe_s0u0_djvu.txt",
+    "download_url": "https://archive.org/download/danielincriticsd0000robe_s0u0/danielincriticsd0000robe_s0u0_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/daniel-in-the-critics-den-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1895. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/danielincriticsd0000robe_s0u0.",
+    "notes": "Public-domain defense and exposition of Daniel for secondary Bible study and teaching preparation. Labels/warnings: Historical apologetic and dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain defense and exposition of Daniel for secondary Bible study and teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical apologetic and dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical apologetic and dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Daniel in the Critics' Den",
+      "author": "Sir Robert Anderson",
+      "category": "Commentaries",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 185,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "c3f5c43f8661680cb13ada6adbdd3c2e3bb122501bdad0e7651b2c0a6a32c147",
+    "file_size_bytes": 247647,
+    "word_count": 41612
+  },
+  {
+    "title": "The Gospel and Its Ministry",
+    "author": "Sir Robert Anderson",
+    "year": 1890,
+    "category": "Evangelism",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/gospelitsministr0000robe/gospelitsministr0000robe_djvu.txt",
+    "download_url": "https://archive.org/download/gospelitsministr0000robe/gospelitsministr0000robe_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-gospel-and-its-ministry-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1890. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/gospelitsministr0000robe.",
+    "notes": "Public-domain gospel and ministry study for evangelism and teaching preparation. Labels/warnings: Historical dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain gospel and ministry study for evangelism and teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Gospel and Its Ministry",
+      "author": "Sir Robert Anderson",
+      "category": "Evangelism",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 277,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "5dfde056a9219294d7129991ce418f05fe6159385c48842e368fdc9dfc8569e2",
+    "file_size_bytes": 350798,
+    "word_count": 62283
+  },
+  {
+    "title": "Forgotten Truths",
+    "author": "Sir Robert Anderson",
+    "year": 1913,
+    "category": "Bible study helps",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/forgottentruths0000sirr_u9c4/forgottentruths0000sirr_u9c4_djvu.txt",
+    "download_url": "https://archive.org/download/forgottentruths0000sirr_u9c4/forgottentruths0000sirr_u9c4_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/forgotten-truths-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1913. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/forgottentruths0000sirr_u9c4.",
+    "notes": "Public-domain doctrinal and Bible-study resource for comparison and teaching preparation. Labels/warnings: Historical dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain doctrinal and Bible-study resource for comparison and teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Forgotten Truths",
+      "author": "Sir Robert Anderson",
+      "category": "Bible study helps",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 169,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "93ad97834fd6f0af5f190a61d76716007256d2ab124d60f774f798d52c26d79a",
+    "file_size_bytes": 222022,
+    "word_count": 38104
+  },
+  {
+    "title": "The Lord from Heaven",
+    "author": "Sir Robert Anderson",
+    "year": 1918,
+    "category": "Bible study helps",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/bwb_T3-BNU-007/bwb_T3-BNU-007_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_T3-BNU-007/bwb_T3-BNU-007_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-lord-from-heaven-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1918. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/bwb_T3-BNU-007.",
+    "notes": "Public-domain study of the deity and person of the Lord Jesus Christ for teaching preparation. Labels/warnings: Historical dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain study of the deity and person of the Lord Jesus Christ for teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Lord from Heaven",
+      "author": "Sir Robert Anderson",
+      "category": "Bible study helps",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 159,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "8d160315a5cab52c576dc981b4c560b3fab1c37dd84c72e00d3b7ba12acd45c8",
+    "file_size_bytes": 207872,
+    "word_count": 35769
+  },
+  {
+    "title": "Human Destiny: After Death - What?",
+    "author": "Sir Robert Anderson",
+    "year": 1886,
+    "category": "Bible study helps",
+    "collection": "Sir Robert Anderson Collection",
+    "source_url": "https://archive.org/download/bwb_C0-CDH-527/bwb_C0-CDH-527_djvu.txt",
+    "download_url": "https://archive.org/download/bwb_C0-CDH-527/bwb_C0-CDH-527_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/human-destiny-after-death-what-sir-robert-anderson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "Public domain in the United States because this reviewed edition was published in 1886. Direct OCR source and Internet Archive item metadata verified at https://archive.org/metadata/bwb_C0-CDH-527.",
+    "notes": "Public-domain doctrinal study for comparison and teaching preparation. Labels/warnings: Historical dispensational perspective; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain doctrinal study for comparison and teaching preparation.",
+    "resource_labels": [
+      "Sir Robert Anderson Collection",
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational perspective",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Human Destiny: After Death - What?",
+      "author": "Sir Robert Anderson",
+      "category": "Bible study helps",
+      "collection": "Sir Robert Anderson Collection",
+      "badge": "Sir Robert Anderson Collection",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 179,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "38c04ff6420cfdc4fd167822476d2da1e07611a280dd355e92b7e6c646394497",
+    "file_size_bytes": 235034,
+    "word_count": 40329
   }
 ]
