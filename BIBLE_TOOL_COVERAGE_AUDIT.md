@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T09:52:10.687Z
+Generated: 2026-07-15T10:08:03.010Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -135,13 +135,13 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | communed | COMMU'NE | 18 | ocr_full_import_needs_spot_review |
-| familiar | FAMIL'IAR | 18 | ocr_full_import_needs_spot_review |
-| fifteenth | FIFTEE'NTH | 18 | ocr_full_import_needs_spot_review |
-| ignorance | IG'NORANCE | 18 | ocr_full_import_needs_spot_review |
 | kidneys | KIDNEY | 18 | ocr_full_import_needs_spot_review |
-| laugh | LAUGH | 18 | ocr_full_import_needs_spot_review |
-| lower | LOWER | 18 | ocr_full_import_needs_spot_review |
 | maidens | MA'IDEN | 18 | ocr_full_import_needs_spot_review |
+| middle | MIDDLE | 18 | ocr_full_import_needs_spot_review |
+| presented | PRESENT'ED | 18 | ocr_full_import_needs_spot_review |
+| standard | STAND'ARD | 18 | ocr_full_import_needs_spot_review |
+| tempest | TEM'PEST | 18 | ocr_full_import_needs_spot_review |
+| wages | WAGE | 18 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

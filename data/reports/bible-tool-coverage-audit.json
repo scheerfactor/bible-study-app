@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T09:52:10.687Z",
+    "generated_at": "2026-07-15T10:08:03.010Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60196,
+      "entries": 60201,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2338,72 +2338,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "familiar",
-          "count": 18,
-          "sampleRefs": [
-            "Leviticus 19:31",
-            "Leviticus 20:6",
-            "Leviticus 20:27",
-            "Deuteronomy 18:11",
-            "1 Samuel 28:3"
-          ],
-          "lookupCandidates": [
-            "familiar"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FAMIL'IAR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "fifteenth",
-          "count": 18,
-          "sampleRefs": [
-            "Exodus 16:1",
-            "Leviticus 23:6",
-            "Leviticus 23:34",
-            "Leviticus 23:39",
-            "Numbers 28:17"
-          ],
-          "lookupCandidates": [
-            "fifteenth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FIFTEE'NTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ignorance",
-          "count": 18,
-          "sampleRefs": [
-            "Leviticus 4:2",
-            "Leviticus 4:13",
-            "Leviticus 4:22",
-            "Leviticus 4:27",
-            "Leviticus 5:15"
-          ],
-          "lookupCandidates": [
-            "ignorance"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "IG'NORANCE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "kidneys",
           "count": 18,
           "sampleRefs": [
@@ -2425,50 +2359,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "KIDNEY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "laugh",
-          "count": 18,
-          "sampleRefs": [
-            "Genesis 18:13",
-            "Genesis 18:15",
-            "Genesis 21:6",
-            "Genesis 21:6",
-            "Job 5:22"
-          ],
-          "lookupCandidates": [
-            "laugh"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LAUGH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lower",
-          "count": 18,
-          "sampleRefs": [
-            "Genesis 6:16",
-            "Leviticus 13:20",
-            "Leviticus 13:21",
-            "Leviticus 13:26",
-            "Leviticus 14:37"
-          ],
-          "lookupCandidates": [
-            "lower"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LOWER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3617,6 +3507,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "GREET",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "highway",
+          "count": 16,
+          "sampleRefs": [
+            "Judges 21:19",
+            "1 Samuel 6:12",
+            "2 Samuel 20:12",
+            "2 Samuel 20:12",
+            "2 Samuel 20:13"
+          ],
+          "lookupCandidates": [
+            "highway"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HIGHWA'Y",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "hinder",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 24:56",
+            "Numbers 22:16",
+            "2 Samuel 2:23",
+            "1 Kings 7:25",
+            "2 Chronicles 4:4"
+          ],
+          "lookupCandidates": [
+            "hinder"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HINDER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lend",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 22:25",
+            "Leviticus 25:37",
+            "Deuteronomy 15:6",
+            "Deuteronomy 15:8",
+            "Deuteronomy 23:19"
+          ],
+          "lookupCandidates": [
+            "lend"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LEND",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "needs",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 17:13",
+            "Genesis 19:9",
+            "Genesis 24:5",
+            "Genesis 31:30",
+            "2 Samuel 14:14"
+          ],
+          "lookupCandidates": [
+            "needs",
+            "need",
+            "neede"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NEEDS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "obedient",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 24:7",
+            "Numbers 27:20",
+            "Deuteronomy 4:30",
+            "Deuteronomy 8:20",
+            "2 Samuel 22:45"
+          ],
+          "lookupCandidates": [
+            "obedient"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OBE'DIENT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10839,72 +10841,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "familiar",
-        "count": 18,
-        "sampleRefs": [
-          "Leviticus 19:31",
-          "Leviticus 20:6",
-          "Leviticus 20:27",
-          "Deuteronomy 18:11",
-          "1 Samuel 28:3"
-        ],
-        "lookupCandidates": [
-          "familiar"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FAMIL'IAR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "fifteenth",
-        "count": 18,
-        "sampleRefs": [
-          "Exodus 16:1",
-          "Leviticus 23:6",
-          "Leviticus 23:34",
-          "Leviticus 23:39",
-          "Numbers 28:17"
-        ],
-        "lookupCandidates": [
-          "fifteenth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FIFTEE'NTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ignorance",
-        "count": 18,
-        "sampleRefs": [
-          "Leviticus 4:2",
-          "Leviticus 4:13",
-          "Leviticus 4:22",
-          "Leviticus 4:27",
-          "Leviticus 5:15"
-        ],
-        "lookupCandidates": [
-          "ignorance"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "IG'NORANCE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "kidneys",
         "count": 18,
         "sampleRefs": [
@@ -10926,50 +10862,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "KIDNEY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "laugh",
-        "count": 18,
-        "sampleRefs": [
-          "Genesis 18:13",
-          "Genesis 18:15",
-          "Genesis 21:6",
-          "Genesis 21:6",
-          "Job 5:22"
-        ],
-        "lookupCandidates": [
-          "laugh"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LAUGH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lower",
-        "count": 18,
-        "sampleRefs": [
-          "Genesis 6:16",
-          "Leviticus 13:20",
-          "Leviticus 13:21",
-          "Leviticus 13:26",
-          "Leviticus 14:37"
-        ],
-        "lookupCandidates": [
-          "lower"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LOWER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12118,6 +12010,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "GREET",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "highway",
+        "count": 16,
+        "sampleRefs": [
+          "Judges 21:19",
+          "1 Samuel 6:12",
+          "2 Samuel 20:12",
+          "2 Samuel 20:12",
+          "2 Samuel 20:13"
+        ],
+        "lookupCandidates": [
+          "highway"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HIGHWA'Y",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "hinder",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 24:56",
+          "Numbers 22:16",
+          "2 Samuel 2:23",
+          "1 Kings 7:25",
+          "2 Chronicles 4:4"
+        ],
+        "lookupCandidates": [
+          "hinder"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HINDER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lend",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 22:25",
+          "Leviticus 25:37",
+          "Deuteronomy 15:6",
+          "Deuteronomy 15:8",
+          "Deuteronomy 23:19"
+        ],
+        "lookupCandidates": [
+          "lend"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LEND",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "needs",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 17:13",
+          "Genesis 19:9",
+          "Genesis 24:5",
+          "Genesis 31:30",
+          "2 Samuel 14:14"
+        ],
+        "lookupCandidates": [
+          "needs",
+          "need",
+          "neede"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NEEDS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "obedient",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 24:7",
+          "Numbers 27:20",
+          "Deuteronomy 4:30",
+          "Deuteronomy 8:20",
+          "2 Samuel 22:45"
+        ],
+        "lookupCandidates": [
+          "obedient"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OBE'DIENT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
