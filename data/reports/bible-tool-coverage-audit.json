@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T13:52:31.583Z",
+    "generated_at": "2026-07-15T14:22:21.938Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60261,
+      "entries": 60266,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2025,118 +2025,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "ignorant",
-          "count": 17,
-          "sampleRefs": [
-            "Psalms 73:22",
-            "Isaiah 56:10",
-            "Isaiah 63:16",
-            "Acts 4:13",
-            "Romans 1:13"
-          ],
-          "lookupCandidates": [
-            "ignorant"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "IG'NORANT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "melt",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 15:15",
-            "Joshua 2:11",
-            "Joshua 14:8",
-            "2 Samuel 17:10",
-            "Psalms 58:7"
-          ],
-          "lookupCandidates": [
-            "melt"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MELT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "myrrh",
-          "count": 17,
-          "sampleRefs": [
-            "Genesis 37:25",
-            "Genesis 43:11",
-            "Exodus 30:23",
-            "Esther 2:12",
-            "Psalms 45:8"
-          ],
-          "lookupCandidates": [
-            "myrrh"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MYRRH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pertained",
-          "count": 17,
-          "sampleRefs": [
-            "Numbers 31:43",
-            "Joshua 24:33",
-            "Judges 6:11",
-            "1 Samuel 25:21",
-            "2 Samuel 2:15"
-          ],
-          "lookupCandidates": [
-            "pertained",
-            "pertain",
-            "pertaine"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PERTA'IN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "principal",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 30:23",
-            "Leviticus 6:5",
-            "Numbers 5:7",
-            "1 Kings 4:5",
-            "2 Kings 25:19"
-          ],
-          "lookupCandidates": [
-            "principal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PRIN'CIPAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "prosperity",
           "count": 17,
           "sampleRefs": [
@@ -3585,6 +3473,120 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "REACH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "sailed",
+          "count": 15,
+          "sampleRefs": [
+            "Luke 8:23",
+            "Acts 13:4",
+            "Acts 14:26",
+            "Acts 15:39",
+            "Acts 18:18"
+          ],
+          "lookupCandidates": [
+            "sailed",
+            "sail",
+            "saile"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SA'ILED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "selfsame",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 7:13",
+            "Genesis 17:23",
+            "Genesis 17:26",
+            "Exodus 12:17",
+            "Exodus 12:41"
+          ],
+          "lookupCandidates": [
+            "selfsame"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SELF'-SAME",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "slow",
+          "count": 15,
+          "sampleRefs": [
+            "Exodus 4:10",
+            "Exodus 4:10",
+            "Nehemiah 9:17",
+            "Psalms 103:8",
+            "Psalms 145:8"
+          ],
+          "lookupCandidates": [
+            "slow"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SLOW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stopped",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 8:2",
+            "Genesis 26:15",
+            "Genesis 26:18",
+            "Leviticus 15:3",
+            "2 Kings 3:25"
+          ],
+          "lookupCandidates": [
+            "stopped",
+            "stopp",
+            "stoppe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STOP'PED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "vex",
+          "count": 15,
+          "sampleRefs": [
+            "Exodus 22:21",
+            "Leviticus 18:18",
+            "Leviticus 19:33",
+            "Numbers 25:17",
+            "Numbers 25:18"
+          ],
+          "lookupCandidates": [
+            "vex"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "VEX",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10494,118 +10496,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "ignorant",
-        "count": 17,
-        "sampleRefs": [
-          "Psalms 73:22",
-          "Isaiah 56:10",
-          "Isaiah 63:16",
-          "Acts 4:13",
-          "Romans 1:13"
-        ],
-        "lookupCandidates": [
-          "ignorant"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "IG'NORANT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "melt",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 15:15",
-          "Joshua 2:11",
-          "Joshua 14:8",
-          "2 Samuel 17:10",
-          "Psalms 58:7"
-        ],
-        "lookupCandidates": [
-          "melt"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MELT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "myrrh",
-        "count": 17,
-        "sampleRefs": [
-          "Genesis 37:25",
-          "Genesis 43:11",
-          "Exodus 30:23",
-          "Esther 2:12",
-          "Psalms 45:8"
-        ],
-        "lookupCandidates": [
-          "myrrh"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MYRRH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pertained",
-        "count": 17,
-        "sampleRefs": [
-          "Numbers 31:43",
-          "Joshua 24:33",
-          "Judges 6:11",
-          "1 Samuel 25:21",
-          "2 Samuel 2:15"
-        ],
-        "lookupCandidates": [
-          "pertained",
-          "pertain",
-          "pertaine"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PERTA'IN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "principal",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 30:23",
-          "Leviticus 6:5",
-          "Numbers 5:7",
-          "1 Kings 4:5",
-          "2 Kings 25:19"
-        ],
-        "lookupCandidates": [
-          "principal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PRIN'CIPAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "prosperity",
         "count": 17,
         "sampleRefs": [
@@ -12054,6 +11944,120 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "REACH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "sailed",
+        "count": 15,
+        "sampleRefs": [
+          "Luke 8:23",
+          "Acts 13:4",
+          "Acts 14:26",
+          "Acts 15:39",
+          "Acts 18:18"
+        ],
+        "lookupCandidates": [
+          "sailed",
+          "sail",
+          "saile"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SA'ILED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "selfsame",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 7:13",
+          "Genesis 17:23",
+          "Genesis 17:26",
+          "Exodus 12:17",
+          "Exodus 12:41"
+        ],
+        "lookupCandidates": [
+          "selfsame"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SELF'-SAME",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "slow",
+        "count": 15,
+        "sampleRefs": [
+          "Exodus 4:10",
+          "Exodus 4:10",
+          "Nehemiah 9:17",
+          "Psalms 103:8",
+          "Psalms 145:8"
+        ],
+        "lookupCandidates": [
+          "slow"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SLOW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stopped",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 8:2",
+          "Genesis 26:15",
+          "Genesis 26:18",
+          "Leviticus 15:3",
+          "2 Kings 3:25"
+        ],
+        "lookupCandidates": [
+          "stopped",
+          "stopp",
+          "stoppe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STOP'PED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "vex",
+        "count": 15,
+        "sampleRefs": [
+          "Exodus 22:21",
+          "Leviticus 18:18",
+          "Leviticus 19:33",
+          "Numbers 25:17",
+          "Numbers 25:18"
+        ],
+        "lookupCandidates": [
+          "vex"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "VEX",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T13:52:31.583Z
+Generated: 2026-07-15T14:22:21.938Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,11 +122,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | wages | WAGE | 18 | ocr_full_import_needs_spot_review |
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
-| ignorant | IG'NORANT | 17 | ocr_full_import_needs_spot_review |
-| melt | MELT | 17 | ocr_full_import_needs_spot_review |
-| myrrh | MYRRH | 17 | ocr_full_import_needs_spot_review |
-| pertained | PERTA'IN | 17 | ocr_full_import_needs_spot_review |
-| principal | PRIN'CIPAL | 17 | ocr_full_import_needs_spot_review |
 | prosperity | PROSPER'ITY | 17 | ocr_full_import_needs_spot_review |
 | publish | PUB'LISH | 17 | ocr_full_import_needs_spot_review |
 | putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bald | BALD | 16 | ocr_full_import_needs_spot_review |
 | beard | BEARD | 16 | ocr_full_import_needs_spot_review |
 | bloody | BLOOD'Y | 16 | ocr_full_import_needs_spot_review |
+| boil | BOIL | 16 | ocr_full_import_needs_spot_review |
+| clothe | CLOTHE | 16 | ocr_full_import_needs_spot_review |
+| comely | COMELY | 16 | ocr_full_import_needs_spot_review |
+| content | CONTENT' | 16 | ocr_full_import_needs_spot_review |
+| cymbals | CYM'BAL | 16 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
