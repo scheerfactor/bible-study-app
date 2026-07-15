@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T04:21:58.431Z",
+    "generated_at": "2026-07-15T04:52:09.677Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60141,
+      "entries": 60146,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2077,72 +2077,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "merchandise",
-          "count": 22,
-          "sampleRefs": [
-            "Deuteronomy 21:14",
-            "Deuteronomy 24:7",
-            "Proverbs 3:14",
-            "Proverbs 3:14",
-            "Proverbs 31:18"
-          ],
-          "lookupCandidates": [
-            "merchandise"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MER'CHANDISE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "moment",
-          "count": 22,
-          "sampleRefs": [
-            "Exodus 33:5",
-            "Numbers 16:21",
-            "Numbers 16:45",
-            "Job 7:18",
-            "Job 20:5"
-          ],
-          "lookupCandidates": [
-            "moment"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MO'MENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "overcome",
-          "count": 22,
-          "sampleRefs": [
-            "Genesis 49:19",
-            "Genesis 49:19",
-            "Exodus 32:18",
-            "Numbers 13:30",
-            "Numbers 22:11"
-          ],
-          "lookupCandidates": [
-            "overcome"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OVERCOME",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "partakers",
           "count": 22,
           "sampleRefs": [
@@ -2164,50 +2098,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PARTA'KER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pledge",
-          "count": 22,
-          "sampleRefs": [
-            "Genesis 38:17",
-            "Genesis 38:18",
-            "Genesis 38:20",
-            "Exodus 22:26",
-            "Deuteronomy 24:6"
-          ],
-          "lookupCandidates": [
-            "pledge"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PLEDGE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pool",
-          "count": 22,
-          "sampleRefs": [
-            "2 Samuel 2:13",
-            "2 Samuel 2:13",
-            "2 Samuel 2:13",
-            "2 Samuel 4:12",
-            "1 Kings 22:38"
-          ],
-          "lookupCandidates": [
-            "pool"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "POOL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3611,6 +3501,120 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "COMMU'NE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "familiar",
+          "count": 18,
+          "sampleRefs": [
+            "Leviticus 19:31",
+            "Leviticus 20:6",
+            "Leviticus 20:27",
+            "Deuteronomy 18:11",
+            "1 Samuel 28:3"
+          ],
+          "lookupCandidates": [
+            "familiar"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FAMIL'IAR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fifteenth",
+          "count": 18,
+          "sampleRefs": [
+            "Exodus 16:1",
+            "Leviticus 23:6",
+            "Leviticus 23:34",
+            "Leviticus 23:39",
+            "Numbers 28:17"
+          ],
+          "lookupCandidates": [
+            "fifteenth"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIFTEE'NTH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "herbs",
+          "count": 18,
+          "sampleRefs": [
+            "Exodus 10:15",
+            "Exodus 12:8",
+            "Numbers 9:11",
+            "Deuteronomy 11:10",
+            "1 Kings 21:2"
+          ],
+          "lookupCandidates": [
+            "herbs",
+            "herb",
+            "herbe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HERB",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ignorance",
+          "count": 18,
+          "sampleRefs": [
+            "Leviticus 4:2",
+            "Leviticus 4:13",
+            "Leviticus 4:22",
+            "Leviticus 4:27",
+            "Leviticus 5:15"
+          ],
+          "lookupCandidates": [
+            "ignorance"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "IG'NORANCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "kidneys",
+          "count": 18,
+          "sampleRefs": [
+            "Exodus 29:13",
+            "Exodus 29:22",
+            "Leviticus 3:4",
+            "Leviticus 3:4",
+            "Leviticus 3:10"
+          ],
+          "lookupCandidates": [
+            "kidneys",
+            "kidney",
+            "kidneye"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KIDNEY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10572,72 +10576,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "merchandise",
-        "count": 22,
-        "sampleRefs": [
-          "Deuteronomy 21:14",
-          "Deuteronomy 24:7",
-          "Proverbs 3:14",
-          "Proverbs 3:14",
-          "Proverbs 31:18"
-        ],
-        "lookupCandidates": [
-          "merchandise"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MER'CHANDISE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "moment",
-        "count": 22,
-        "sampleRefs": [
-          "Exodus 33:5",
-          "Numbers 16:21",
-          "Numbers 16:45",
-          "Job 7:18",
-          "Job 20:5"
-        ],
-        "lookupCandidates": [
-          "moment"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MO'MENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "overcome",
-        "count": 22,
-        "sampleRefs": [
-          "Genesis 49:19",
-          "Genesis 49:19",
-          "Exodus 32:18",
-          "Numbers 13:30",
-          "Numbers 22:11"
-        ],
-        "lookupCandidates": [
-          "overcome"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OVERCOME",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "partakers",
         "count": 22,
         "sampleRefs": [
@@ -10659,50 +10597,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PARTA'KER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pledge",
-        "count": 22,
-        "sampleRefs": [
-          "Genesis 38:17",
-          "Genesis 38:18",
-          "Genesis 38:20",
-          "Exodus 22:26",
-          "Deuteronomy 24:6"
-        ],
-        "lookupCandidates": [
-          "pledge"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PLEDGE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pool",
-        "count": 22,
-        "sampleRefs": [
-          "2 Samuel 2:13",
-          "2 Samuel 2:13",
-          "2 Samuel 2:13",
-          "2 Samuel 4:12",
-          "1 Kings 22:38"
-        ],
-        "lookupCandidates": [
-          "pool"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "POOL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12106,6 +12000,120 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "COMMU'NE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "familiar",
+        "count": 18,
+        "sampleRefs": [
+          "Leviticus 19:31",
+          "Leviticus 20:6",
+          "Leviticus 20:27",
+          "Deuteronomy 18:11",
+          "1 Samuel 28:3"
+        ],
+        "lookupCandidates": [
+          "familiar"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FAMIL'IAR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fifteenth",
+        "count": 18,
+        "sampleRefs": [
+          "Exodus 16:1",
+          "Leviticus 23:6",
+          "Leviticus 23:34",
+          "Leviticus 23:39",
+          "Numbers 28:17"
+        ],
+        "lookupCandidates": [
+          "fifteenth"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIFTEE'NTH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "herbs",
+        "count": 18,
+        "sampleRefs": [
+          "Exodus 10:15",
+          "Exodus 12:8",
+          "Numbers 9:11",
+          "Deuteronomy 11:10",
+          "1 Kings 21:2"
+        ],
+        "lookupCandidates": [
+          "herbs",
+          "herb",
+          "herbe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HERB",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ignorance",
+        "count": 18,
+        "sampleRefs": [
+          "Leviticus 4:2",
+          "Leviticus 4:13",
+          "Leviticus 4:22",
+          "Leviticus 4:27",
+          "Leviticus 5:15"
+        ],
+        "lookupCandidates": [
+          "ignorance"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "IG'NORANCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "kidneys",
+        "count": 18,
+        "sampleRefs": [
+          "Exodus 29:13",
+          "Exodus 29:22",
+          "Leviticus 3:4",
+          "Leviticus 3:4",
+          "Leviticus 3:10"
+        ],
+        "lookupCandidates": [
+          "kidneys",
+          "kidney",
+          "kidneye"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KIDNEY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
