@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T01:50:55.116Z",
+    "generated_at": "2026-07-15T02:01:10.994Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60111,
+      "entries": 60116,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1823,28 +1823,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "candlestick",
-          "count": 41,
-          "sampleRefs": [
-            "Exodus 25:31",
-            "Exodus 25:31",
-            "Exodus 25:32",
-            "Exodus 25:32",
-            "Exodus 25:33"
-          ],
-          "lookupCandidates": [
-            "candlestick"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CAN'DLE-STICK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "firstfruits",
           "count": 32,
           "sampleRefs": [
@@ -1937,50 +1915,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "wrong",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 16:5",
-            "Exodus 2:13",
-            "Deuteronomy 19:16",
-            "Judges 11:27",
-            "1 Chronicles 12:17"
-          ],
-          "lookupCandidates": [
-            "wrong"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WRONG",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "inward",
-          "count": 25,
-          "sampleRefs": [
-            "Exodus 28:26",
-            "Exodus 39:19",
-            "Leviticus 13:55",
-            "2 Samuel 5:9",
-            "1 Kings 7:25"
-          ],
-          "lookupCandidates": [
-            "inward"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "IN' WARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "pain",
           "count": 25,
           "sampleRefs": [
@@ -2068,50 +2002,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STORE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "upper",
-          "count": 25,
-          "sampleRefs": [
-            "Exodus 12:7",
-            "Leviticus 13:45",
-            "Deuteronomy 24:6",
-            "Joshua 15:19",
-            "Joshua 16:5"
-          ],
-          "lookupCandidates": [
-            "upper"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UP'PER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "contrary",
-          "count": 24,
-          "sampleRefs": [
-            "Leviticus 26:21",
-            "Leviticus 26:23",
-            "Leviticus 26:24",
-            "Leviticus 26:27",
-            "Leviticus 26:28"
-          ],
-          "lookupCandidates": [
-            "contrary"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CON'TRARY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3598,6 +3488,120 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STIR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "swift",
+          "count": 20,
+          "sampleRefs": [
+            "Deuteronomy 28:49",
+            "1 Chronicles 12:8",
+            "Job 9:26",
+            "Job 24:18",
+            "Proverbs 6:18"
+          ],
+          "lookupCandidates": [
+            "swift"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SWIFT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "working",
+          "count": 20,
+          "sampleRefs": [
+            "Psalms 52:2",
+            "Psalms 74:12",
+            "Isaiah 28:29",
+            "Ezekiel 46:1",
+            "Mark 16:20"
+          ],
+          "lookupCandidates": [
+            "working",
+            "work",
+            "worke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WORKING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "abound",
+          "count": 19,
+          "sampleRefs": [
+            "Proverbs 28:20",
+            "Matthew 24:12",
+            "Romans 5:20",
+            "Romans 5:20",
+            "Romans 6:1"
+          ],
+          "lookupCandidates": [
+            "abound"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ABOUND'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "approach",
+          "count": 19,
+          "sampleRefs": [
+            "Leviticus 18:6",
+            "Leviticus 18:14",
+            "Leviticus 18:19",
+            "Leviticus 20:16",
+            "Leviticus 21:17"
+          ],
+          "lookupCandidates": [
+            "approach"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "APPROACH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ascended",
+          "count": 19,
+          "sampleRefs": [
+            "Exodus 19:18",
+            "Numbers 13:22",
+            "Joshua 8:20",
+            "Joshua 8:21",
+            "Joshua 10:7"
+          ],
+          "lookupCandidates": [
+            "ascended",
+            "ascend",
+            "ascende"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ASCEND'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10305,28 +10309,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "candlestick",
-        "count": 41,
-        "sampleRefs": [
-          "Exodus 25:31",
-          "Exodus 25:31",
-          "Exodus 25:32",
-          "Exodus 25:32",
-          "Exodus 25:33"
-        ],
-        "lookupCandidates": [
-          "candlestick"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CAN'DLE-STICK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "firstfruits",
         "count": 32,
         "sampleRefs": [
@@ -10419,50 +10401,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "wrong",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 16:5",
-          "Exodus 2:13",
-          "Deuteronomy 19:16",
-          "Judges 11:27",
-          "1 Chronicles 12:17"
-        ],
-        "lookupCandidates": [
-          "wrong"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WRONG",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "inward",
-        "count": 25,
-        "sampleRefs": [
-          "Exodus 28:26",
-          "Exodus 39:19",
-          "Leviticus 13:55",
-          "2 Samuel 5:9",
-          "1 Kings 7:25"
-        ],
-        "lookupCandidates": [
-          "inward"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "IN' WARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "pain",
         "count": 25,
         "sampleRefs": [
@@ -10550,50 +10488,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STORE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "upper",
-        "count": 25,
-        "sampleRefs": [
-          "Exodus 12:7",
-          "Leviticus 13:45",
-          "Deuteronomy 24:6",
-          "Joshua 15:19",
-          "Joshua 16:5"
-        ],
-        "lookupCandidates": [
-          "upper"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UP'PER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "contrary",
-        "count": 24,
-        "sampleRefs": [
-          "Leviticus 26:21",
-          "Leviticus 26:23",
-          "Leviticus 26:24",
-          "Leviticus 26:27",
-          "Leviticus 26:28"
-        ],
-        "lookupCandidates": [
-          "contrary"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CON'TRARY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12080,6 +11974,120 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STIR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "swift",
+        "count": 20,
+        "sampleRefs": [
+          "Deuteronomy 28:49",
+          "1 Chronicles 12:8",
+          "Job 9:26",
+          "Job 24:18",
+          "Proverbs 6:18"
+        ],
+        "lookupCandidates": [
+          "swift"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SWIFT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "working",
+        "count": 20,
+        "sampleRefs": [
+          "Psalms 52:2",
+          "Psalms 74:12",
+          "Isaiah 28:29",
+          "Ezekiel 46:1",
+          "Mark 16:20"
+        ],
+        "lookupCandidates": [
+          "working",
+          "work",
+          "worke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WORKING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "abound",
+        "count": 19,
+        "sampleRefs": [
+          "Proverbs 28:20",
+          "Matthew 24:12",
+          "Romans 5:20",
+          "Romans 5:20",
+          "Romans 6:1"
+        ],
+        "lookupCandidates": [
+          "abound"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ABOUND'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "approach",
+        "count": 19,
+        "sampleRefs": [
+          "Leviticus 18:6",
+          "Leviticus 18:14",
+          "Leviticus 18:19",
+          "Leviticus 20:16",
+          "Leviticus 21:17"
+        ],
+        "lookupCandidates": [
+          "approach"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "APPROACH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ascended",
+        "count": 19,
+        "sampleRefs": [
+          "Exodus 19:18",
+          "Numbers 13:22",
+          "Joshua 8:20",
+          "Joshua 8:21",
+          "Joshua 10:7"
+        ],
+        "lookupCandidates": [
+          "ascended",
+          "ascend",
+          "ascende"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ASCEND'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
