@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-14T23:55:04.998Z
+Generated: 2026-07-15T00:23:45.321Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,26 +122,26 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | wrong | WRONG | 26 | ocr_full_import_needs_spot_review |
-| fourteenth | FOURTEENTH | 25 | ocr_full_import_needs_spot_review |
 | inward | IN' WARD | 25 | ocr_full_import_needs_spot_review |
 | pain | PAIN | 25 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
 | prove | PROVE | 25 | ocr_full_import_needs_spot_review |
-| rebuked | REBU'KED | 25 | ocr_full_import_needs_spot_review |
-| sprinkled | SPRINK'LED | 25 | ocr_full_import_needs_spot_review |
 | store | STORE | 25 | ocr_full_import_needs_spot_review |
 | upper | UP'PER | 25 | ocr_full_import_needs_spot_review |
 | contrary | CON'TRARY | 24 | ocr_full_import_needs_spot_review |
 | deny | DENY' | 24 | ocr_full_import_needs_spot_review |
 | dogs | DOG | 24 | ocr_full_import_needs_spot_review |
-| eleven | ELEV'EN | 24 | ocr_full_import_needs_spot_review |
 | form | FORM | 24 | ocr_full_import_needs_spot_review |
 | further | FUR'THER | 24 | ocr_full_import_needs_spot_review |
-| groves | GROVE | 24 | ocr_full_import_needs_spot_review |
-| hunger | HUNGER | 24 | ocr_full_import_needs_spot_review |
 | lusts | LUST | 24 | ocr_full_import_needs_spot_review |
-| snow | SNOW | 24 | ocr_full_import_needs_spot_review |
 | void | VOID | 24 | ocr_full_import_needs_spot_review |
+| wax | WAX | 24 | ocr_full_import_needs_spot_review |
+| abominable | ABOM'INABLE | 23 | ocr_full_import_needs_spot_review |
+| acceptable | ACCEPT'ABLE | 23 | ocr_full_import_needs_spot_review |
+| ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
+| barren | BAR'REN | 23 | ocr_full_import_needs_spot_review |
+| basket | B'ASKET | 23 | ocr_full_import_needs_spot_review |
+| beautiful | BEAU'TIFUL | 23 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

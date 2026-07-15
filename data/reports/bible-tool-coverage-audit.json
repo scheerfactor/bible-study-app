@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-14T23:55:04.998Z",
+    "generated_at": "2026-07-15T00:23:45.321Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60086,
+      "entries": 60093,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2027,28 +2027,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "fourteenth",
-          "count": 25,
-          "sampleRefs": [
-            "Genesis 14:5",
-            "Exodus 12:6",
-            "Exodus 12:18",
-            "Leviticus 23:5",
-            "Numbers 9:3"
-          ],
-          "lookupCandidates": [
-            "fourteenth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOURTEENTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "inward",
           "count": 25,
           "sampleRefs": [
@@ -2136,54 +2114,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PROVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "rebuked",
-          "count": 25,
-          "sampleRefs": [
-            "Genesis 31:42",
-            "Genesis 37:10",
-            "Nehemiah 5:7",
-            "Psalms 9:5",
-            "Psalms 106:9"
-          ],
-          "lookupCandidates": [
-            "rebuked",
-            "rebuk",
-            "rebuke"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "REBU'KED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "sprinkled",
-          "count": 25,
-          "sampleRefs": [
-            "Exodus 9:10",
-            "Exodus 24:6",
-            "Exodus 24:8",
-            "Leviticus 6:27",
-            "Leviticus 6:27"
-          ],
-          "lookupCandidates": [
-            "sprinkled",
-            "sprinkl",
-            "sprinkle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SPRINK'LED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2299,28 +2229,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "eleven",
-          "count": 24,
-          "sampleRefs": [
-            "Genesis 32:22",
-            "Genesis 37:9",
-            "Exodus 26:7",
-            "Exodus 26:8",
-            "Exodus 36:14"
-          ],
-          "lookupCandidates": [
-            "eleven"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ELEV'EN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "form",
           "count": 24,
           "sampleRefs": [
@@ -2365,51 +2273,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "groves",
-          "count": 24,
-          "sampleRefs": [
-            "Exodus 34:13",
-            "Deuteronomy 7:5",
-            "Deuteronomy 12:3",
-            "Judges 3:7",
-            "1 Kings 14:15"
-          ],
-          "lookupCandidates": [
-            "groves",
-            "grove"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GROVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hunger",
-          "count": 24,
-          "sampleRefs": [
-            "Exodus 16:3",
-            "Deuteronomy 8:3",
-            "Deuteronomy 28:48",
-            "Deuteronomy 32:24",
-            "Nehemiah 9:15"
-          ],
-          "lookupCandidates": [
-            "hunger"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HUNGER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "lusts",
           "count": 24,
           "sampleRefs": [
@@ -2431,28 +2294,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LUST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "snow",
-          "count": 24,
-          "sampleRefs": [
-            "Exodus 4:6",
-            "Numbers 12:10",
-            "2 Samuel 23:20",
-            "2 Kings 5:27",
-            "Job 6:16"
-          ],
-          "lookupCandidates": [
-            "snow"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SNOW",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3597,6 +3438,162 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "WONDERFUL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "belongeth",
+          "count": 20,
+          "sampleRefs": [
+            "Numbers 8:24",
+            "Deuteronomy 32:35",
+            "Judges 19:14",
+            "Judges 20:4",
+            "1 Samuel 17:1"
+          ],
+          "lookupCandidates": [
+            "belongeth",
+            "belong",
+            "belonge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BELONG'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bottom",
+          "count": 20,
+          "sampleRefs": [
+            "Exodus 15:5",
+            "Exodus 29:12",
+            "Leviticus 4:7",
+            "Leviticus 4:18",
+            "Leviticus 4:25"
+          ],
+          "lookupCandidates": [
+            "bottom"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BOT'TOM",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "care",
+          "count": 20,
+          "sampleRefs": [
+            "1 Samuel 10:2",
+            "2 Samuel 18:3",
+            "2 Samuel 18:3",
+            "2 Kings 4:13",
+            "Jeremiah 49:31"
+          ],
+          "lookupCandidates": [
+            "care"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CARE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "eden",
+          "count": 20,
+          "sampleRefs": [
+            "Genesis 2:8",
+            "Genesis 2:10",
+            "Genesis 2:15",
+            "Genesis 3:23",
+            "Genesis 3:24"
+          ],
+          "lookupCandidates": [
+            "eden"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "E'DEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "elect",
+          "count": 20,
+          "sampleRefs": [
+            "Isaiah 42:1",
+            "Isaiah 45:4",
+            "Isaiah 65:9",
+            "Isaiah 65:22",
+            "Matthew 24:22"
+          ],
+          "lookupCandidates": [
+            "elect"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ELECT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fiery",
+          "count": 20,
+          "sampleRefs": [
+            "Numbers 21:6",
+            "Numbers 21:8",
+            "Deuteronomy 8:15",
+            "Deuteronomy 33:2",
+            "Psalms 21:9"
+          ],
+          "lookupCandidates": [
+            "fiery"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FI'ERY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "flower",
+          "count": 20,
+          "sampleRefs": [
+            "Exodus 25:33",
+            "Exodus 25:33",
+            "Exodus 37:19",
+            "Exodus 37:19",
+            "1 Samuel 2:33"
+          ],
+          "lookupCandidates": [
+            "flower"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FLOWER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10510,28 +10507,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "fourteenth",
-        "count": 25,
-        "sampleRefs": [
-          "Genesis 14:5",
-          "Exodus 12:6",
-          "Exodus 12:18",
-          "Leviticus 23:5",
-          "Numbers 9:3"
-        ],
-        "lookupCandidates": [
-          "fourteenth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOURTEENTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "inward",
         "count": 25,
         "sampleRefs": [
@@ -10619,54 +10594,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PROVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "rebuked",
-        "count": 25,
-        "sampleRefs": [
-          "Genesis 31:42",
-          "Genesis 37:10",
-          "Nehemiah 5:7",
-          "Psalms 9:5",
-          "Psalms 106:9"
-        ],
-        "lookupCandidates": [
-          "rebuked",
-          "rebuk",
-          "rebuke"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "REBU'KED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "sprinkled",
-        "count": 25,
-        "sampleRefs": [
-          "Exodus 9:10",
-          "Exodus 24:6",
-          "Exodus 24:8",
-          "Leviticus 6:27",
-          "Leviticus 6:27"
-        ],
-        "lookupCandidates": [
-          "sprinkled",
-          "sprinkl",
-          "sprinkle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SPRINK'LED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10782,28 +10709,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "eleven",
-        "count": 24,
-        "sampleRefs": [
-          "Genesis 32:22",
-          "Genesis 37:9",
-          "Exodus 26:7",
-          "Exodus 26:8",
-          "Exodus 36:14"
-        ],
-        "lookupCandidates": [
-          "eleven"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ELEV'EN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "form",
         "count": 24,
         "sampleRefs": [
@@ -10848,51 +10753,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "groves",
-        "count": 24,
-        "sampleRefs": [
-          "Exodus 34:13",
-          "Deuteronomy 7:5",
-          "Deuteronomy 12:3",
-          "Judges 3:7",
-          "1 Kings 14:15"
-        ],
-        "lookupCandidates": [
-          "groves",
-          "grove"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GROVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hunger",
-        "count": 24,
-        "sampleRefs": [
-          "Exodus 16:3",
-          "Deuteronomy 8:3",
-          "Deuteronomy 28:48",
-          "Deuteronomy 32:24",
-          "Nehemiah 9:15"
-        ],
-        "lookupCandidates": [
-          "hunger"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HUNGER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "lusts",
         "count": 24,
         "sampleRefs": [
@@ -10914,28 +10774,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LUST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "snow",
-        "count": 24,
-        "sampleRefs": [
-          "Exodus 4:6",
-          "Numbers 12:10",
-          "2 Samuel 23:20",
-          "2 Kings 5:27",
-          "Job 6:16"
-        ],
-        "lookupCandidates": [
-          "snow"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SNOW",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12080,6 +11918,162 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "WONDERFUL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "belongeth",
+        "count": 20,
+        "sampleRefs": [
+          "Numbers 8:24",
+          "Deuteronomy 32:35",
+          "Judges 19:14",
+          "Judges 20:4",
+          "1 Samuel 17:1"
+        ],
+        "lookupCandidates": [
+          "belongeth",
+          "belong",
+          "belonge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BELONG'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bottom",
+        "count": 20,
+        "sampleRefs": [
+          "Exodus 15:5",
+          "Exodus 29:12",
+          "Leviticus 4:7",
+          "Leviticus 4:18",
+          "Leviticus 4:25"
+        ],
+        "lookupCandidates": [
+          "bottom"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BOT'TOM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "care",
+        "count": 20,
+        "sampleRefs": [
+          "1 Samuel 10:2",
+          "2 Samuel 18:3",
+          "2 Samuel 18:3",
+          "2 Kings 4:13",
+          "Jeremiah 49:31"
+        ],
+        "lookupCandidates": [
+          "care"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CARE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "eden",
+        "count": 20,
+        "sampleRefs": [
+          "Genesis 2:8",
+          "Genesis 2:10",
+          "Genesis 2:15",
+          "Genesis 3:23",
+          "Genesis 3:24"
+        ],
+        "lookupCandidates": [
+          "eden"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "E'DEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "elect",
+        "count": 20,
+        "sampleRefs": [
+          "Isaiah 42:1",
+          "Isaiah 45:4",
+          "Isaiah 65:9",
+          "Isaiah 65:22",
+          "Matthew 24:22"
+        ],
+        "lookupCandidates": [
+          "elect"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ELECT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fiery",
+        "count": 20,
+        "sampleRefs": [
+          "Numbers 21:6",
+          "Numbers 21:8",
+          "Deuteronomy 8:15",
+          "Deuteronomy 33:2",
+          "Psalms 21:9"
+        ],
+        "lookupCandidates": [
+          "fiery"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FI'ERY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "flower",
+        "count": 20,
+        "sampleRefs": [
+          "Exodus 25:33",
+          "Exodus 25:33",
+          "Exodus 37:19",
+          "Exodus 37:19",
+          "1 Samuel 2:33"
+        ],
+        "lookupCandidates": [
+          "flower"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FLOWER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
