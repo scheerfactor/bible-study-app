@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T16:59:23.487Z
+Generated: 2026-07-15T17:20:36.140Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,854/12,454 meaningful KJV words have a lookup candidate (63.1%).
-- Combined word/topic lookup: 10,840/12,454 meaningful KJV words have Webster, Easton, or Nave help (87%).
+- Webster 1828: 7,858/12,454 meaningful KJV words have a lookup candidate (63.1%).
+- Combined word/topic lookup: 10,844/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -92,15 +92,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | magnified | 21 | Genesis 19:19; Joshua 4:14; 2 Samuel 7:26; 1 Chronicles 17:24; 1 Chronicles 29:25 |
 | occasion | 21 | Genesis 43:18; Judges 9:33; Judges 14:4; 1 Samuel 10:7; 2 Samuel 12:14 |
 | recompence | 20 | Deuteronomy 32:35; Job 15:31; Proverbs 12:14; Isaiah 35:4; Isaiah 59:18 |
-| whomsoever | 20 | Genesis 31:32; Genesis 44:9; Leviticus 15:11; Judges 7:4; Judges 11:24 |
 | committeth | 19 | Leviticus 20:10; Leviticus 20:10; Psalms 10:14; Proverbs 6:32; Ezekiel 8:6 |
 | denied | 19 | Genesis 18:15; 1 Kings 20:7; Job 31:28; Matthew 26:70; Matthew 26:72 |
-| jealous | 19 | Exodus 20:5; Exodus 34:14; Exodus 34:14; Numbers 5:14; Numbers 5:14 |
-| speedily | 19 | Genesis 44:11; 1 Samuel 27:1; 2 Samuel 17:16; 2 Chronicles 35:13; Ezra 6:13 |
 | spent | 19 | Genesis 21:15; Genesis 47:18; Leviticus 26:20; Judges 19:11; 1 Samuel 9:7 |
-| subdued | 19 | Numbers 32:22; Numbers 32:29; Deuteronomy 20:20; Joshua 18:1; Judges 3:30 |
 | vile | 19 | Deuteronomy 25:3; Judges 19:24; 1 Samuel 3:13; 1 Samuel 15:9; 2 Samuel 6:22 |
 | bade | 18 | Genesis 43:17; Exodus 16:24; Numbers 14:10; Joshua 11:9; Ruth 3:6 |
+| basons | 18 | Exodus 24:6; Exodus 27:3; Exodus 38:3; Numbers 4:14; 2 Samuel 17:28 |
+| betray | 18 | 1 Chronicles 12:17; Matthew 24:10; Matthew 26:16; Matthew 26:21; Matthew 26:23 |
+| cold | 18 | Genesis 8:22; Job 24:7; Job 37:9; Psalms 147:17; Proverbs 20:4 |
+| intreated | 18 | Genesis 25:21; Genesis 25:21; Exodus 8:30; Exodus 10:18; Judges 13:8 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -121,7 +121,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
-| putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
 | shore | SHORE | 17 | ocr_full_import_needs_spot_review |
 | subject | SUBJECT | 17 | ocr_full_import_needs_spot_review |
 | accord | ACCORD' | 16 | ocr_full_import_needs_spot_review |
@@ -142,6 +141,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | colt | COLT | 15 | ocr_full_import_needs_spot_review |
 | drop | DROP | 15 | ocr_full_import_needs_spot_review |
 | godliness | GOD'LINESS | 15 | ocr_full_import_needs_spot_review |
+| godly | GOD'LY | 15 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
