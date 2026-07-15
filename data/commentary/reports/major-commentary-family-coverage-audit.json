@@ -1,5 +1,5 @@
 {
-  "audited_at": "2026-07-15T18:28:55.822Z",
+  "audited_at": "2026-07-15T18:43:33.425Z",
   "review_status": "public_verified_coverage_audit_complete",
   "method": "Compared rows accepted by the commentary importer against the 1,189 KJV chapters. Staged, quarantined, and needs-review rows do not count as reader coverage; legacy reviewed rows without a review_status remain importable by design.",
   "duplicate_safety_note": "Duplicate checks are scoped to the same displayed resource title and chapter. Distinct named editions such as standard and unabridged JFB are not treated as duplicates. Do not add chapter rows merely to increase counts; restore a gap only from the exact verified public-domain work with chapter-level provenance.",
@@ -94,11 +94,10 @@
     {
       "resource_title": "The Biblical Illustrator",
       "scope": "Whole Bible",
-      "covered_chapters": 1183,
+      "covered_chapters": 1184,
       "expected_chapters": 1189,
-      "coverage_percent": 99.5,
+      "coverage_percent": 99.6,
       "missing_chapters": [
-        "Genesis 6",
         "Jeremiah 10",
         "Jeremiah 19",
         "Lamentations 3",
@@ -106,14 +105,6 @@
         "Ezekiel 30"
       ],
       "missing_details": [
-        {
-          "reference": "Genesis 6",
-          "review_status": "Needs Review",
-          "import_status": "Staged",
-          "source_recovery_status": "Blocked - open matching Genesis volume needed",
-          "review_notes": "Quarantined because the stored text contains only a verse heading and verse text, not substantive commentary. The original Genesis volume is public domain, but no openly accessible matching scan with verified Genesis 6 boundaries was confirmed in this review. Do not import or display publicly until the exact chapter text is recovered from a verified public-domain edition.",
-          "source_file": "biblical-illustrator-reviewed-genesis-completion-commentary.json"
-        },
         {
           "reference": "Jeremiah 10",
           "review_status": "Needs Review",
@@ -157,7 +148,6 @@
       ],
       "staged_chapters": [
         "Ezekiel 30",
-        "Genesis 6",
         "Jeremiah 10",
         "Jeremiah 19",
         "Lamentations 3",

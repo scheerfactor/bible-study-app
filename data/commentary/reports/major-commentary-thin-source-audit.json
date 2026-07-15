@@ -1,13 +1,13 @@
 {
-  "audited_at": "2026-07-15T16:20:08.752Z",
+  "audited_at": "2026-07-15T18:43:31.387Z",
   "threshold_characters": 200,
   "review_status": "current_public_and_staged_rows_classified",
   "method": "Scanned all commentary import files for major commentary-family rows below the threshold and separated public verified rows from staged or quarantined rows.",
   "safety_rule": "A short row is not automatically defective. Keep genuine brief notes and cross-references when source-verified; stage headings, navigation wrappers, and verse-only placeholders until matching public-domain text is recovered.",
   "summary": {
     "files_scanned": 382,
-    "active_thin_rows": 13,
-    "staged_thin_rows": 11
+    "active_thin_rows": 14,
+    "staged_thin_rows": 9
   },
   "active_thin_rows": [
     {
@@ -48,6 +48,16 @@
       "review_status": "Verified",
       "import_status": "Public Verified",
       "review_notes": "Independent public-domain witness confirms this is a genuine brief cross-reference note; no missing commentary body was found.",
+      "source_recovery_status": null
+    },
+    {
+      "resource_title": "Barnes' Notes on the Bible",
+      "reference": "Exodus 37",
+      "characters": 38,
+      "file": "barnes-reviewed-phase-5-exodus-commentary.json",
+      "review_status": "Verified",
+      "import_status": "Public Verified",
+      "review_notes": "An independent public-domain Exodus volume confirms this exact chapter-specific cross-reference note; no additional commentary body was present.",
       "source_recovery_status": null
     },
     {
@@ -149,6 +159,7 @@
         "2 Chronicles 10",
         "2 Chronicles 13",
         "Exodus 36",
+        "Exodus 37",
         "Exodus 39"
       ]
     },
@@ -188,16 +199,6 @@
   ],
   "staged_thin_rows": [
     {
-      "resource_title": "Barnes' Notes on the Bible",
-      "reference": "Exodus 37",
-      "characters": 39,
-      "file": "barnes-reviewed-phase-5-exodus-commentary.json",
-      "review_status": "Needs Review",
-      "import_status": "Staged",
-      "review_notes": "Removed from public import because the stored cross-reference belongs to a neighboring source page and no chapter-specific Barnes note was verified.",
-      "source_recovery_status": "Parser-shifted neighboring note; no chapter-specific Barnes note verified."
-    },
-    {
       "resource_title": "The Biblical Illustrator",
       "reference": "Ezekiel 30",
       "characters": 60,
@@ -206,16 +207,6 @@
       "import_status": "Staged",
       "review_notes": "Quarantined because the stored text is a failed navigation wrapper, not commentary. The canonical public-domain source is volume 26, but the indexed Internet Archive copy is print-disabled. Do not import or display publicly until an openly accessible scan is verified and exact chapter boundaries are recorded.",
       "source_recovery_status": "Blocked - open public-domain scan needed"
-    },
-    {
-      "resource_title": "The Biblical Illustrator",
-      "reference": "Genesis 6",
-      "characters": 139,
-      "file": "biblical-illustrator-reviewed-genesis-completion-commentary.json",
-      "review_status": "Needs Review",
-      "import_status": "Staged",
-      "review_notes": "Quarantined because the stored text contains only a verse heading and verse text, not substantive commentary. The original Genesis volume is public domain, but no openly accessible matching scan with verified Genesis 6 boundaries was confirmed in this review. Do not import or display publicly until the exact chapter text is recovered from a verified public-domain edition.",
-      "source_recovery_status": "Blocked - open matching Genesis volume needed"
     },
     {
       "resource_title": "The Biblical Illustrator",
@@ -300,12 +291,6 @@
   ],
   "staged_by_resource": [
     {
-      "resource_title": "Barnes' Notes on the Bible",
-      "references": [
-        "Exodus 37"
-      ]
-    },
-    {
       "resource_title": "Morgan's Exposition on the Whole Bible",
       "references": [
         "Deuteronomy 24",
@@ -317,7 +302,6 @@
       "resource_title": "The Biblical Illustrator",
       "references": [
         "Ezekiel 30",
-        "Genesis 6",
         "Jeremiah 19",
         "Jeremiah 10",
         "Lamentations 3",

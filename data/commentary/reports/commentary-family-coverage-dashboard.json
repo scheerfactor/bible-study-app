@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T18:28:55.822Z",
+  "generated_at": "2026-07-15T18:43:33.425Z",
   "canon_chapters": 1189,
   "counting_rule": "Public Verified rows only; staged rows are shown as gaps.",
   "families": {
@@ -18,11 +18,10 @@
     "The Biblical Illustrator": {
       "resource_title": "The Biblical Illustrator",
       "scope": "Whole Bible",
-      "covered_chapters": 1183,
+      "covered_chapters": 1184,
       "expected_chapters": 1189,
-      "coverage_percent": 99.5,
+      "coverage_percent": 99.6,
       "missing_chapters": [
-        "Genesis 6",
         "Jeremiah 10",
         "Jeremiah 19",
         "Lamentations 3",
@@ -30,14 +29,6 @@
         "Ezekiel 30"
       ],
       "missing_details": [
-        {
-          "reference": "Genesis 6",
-          "review_status": "Needs Review",
-          "import_status": "Staged",
-          "source_recovery_status": "Blocked - open matching Genesis volume needed",
-          "review_notes": "Quarantined because the stored text contains only a verse heading and verse text, not substantive commentary. The original Genesis volume is public domain, but no openly accessible matching scan with verified Genesis 6 boundaries was confirmed in this review. Do not import or display publicly until the exact chapter text is recovered from a verified public-domain edition.",
-          "source_file": "biblical-illustrator-reviewed-genesis-completion-commentary.json"
-        },
         {
           "reference": "Jeremiah 10",
           "review_status": "Needs Review",
@@ -81,7 +72,6 @@
       ],
       "staged_chapters": [
         "Ezekiel 30",
-        "Genesis 6",
         "Jeremiah 10",
         "Jeremiah 19",
         "Lamentations 3",

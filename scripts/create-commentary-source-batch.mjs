@@ -753,15 +753,28 @@ async function buildStudyLightRows(sourceConfig, references) {
     const [book, chapterRaw] = splitChapterReference(reference);
     const chapter = Number(chapterRaw);
     const sourceUrl = `https://www.studylight.org/commentaries/eng/${sourceConfig.abbr}/${studyLightBookSlug(book)}-${chapter}.html`;
+    const entryText = await fetchCompleteStudyLightCommentary(sourceConfig, sourceUrl);
+    rows.push(buildRow({ sourceConfig, book, chapter, sourceUrl, entryText }));
+  }
+  return rows;
+}
+
+async function fetchCompleteStudyLightCommentary(sourceConfig, sourceUrl, attempts = 3) {
+  const minimumLength = sourceConfig.abbr === "tbi" ? 1000 : 120;
+  let lastLength = 0;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
     const response = await fetchWithTransientRetry(sourceUrl);
     if (!response.ok) throw new Error(`Failed ${response.status}: ${sourceUrl}`);
     const html = await response.text();
     if (!/These files are public domain/i.test(html)) throw new Error(`Missing public-domain statement: ${sourceUrl}`);
     const entryText = normalizeText(cleanStudyLightText(htmlToText(extractStudyLightCommentary(html))));
-    if (!entryText) throw new Error(`No commentary text extracted: ${sourceUrl}`);
-    rows.push(buildRow({ sourceConfig, book, chapter, sourceUrl, entryText }));
+    lastLength = entryText.length;
+    if (lastLength >= minimumLength) return entryText;
+    if (attempt < attempts) await new Promise((resolve) => setTimeout(resolve, attempt * 750));
   }
-  return rows;
+
+  throw new Error(`Incomplete commentary text extracted (${lastLength} characters): ${sourceUrl}`);
 }
 
 async function fetchWithTransientRetry(url, attempts = 3) {
@@ -802,7 +815,10 @@ function extractStudyLightCommentary(html) {
   const commentaryArea = html.slice(start, end);
   const firstEntry = commentaryArea.indexOf("<div class=\"commentaries-entry-div\">");
   const entriesOnly = firstEntry >= 0 ? commentaryArea.slice(firstEntry) : commentaryArea;
-  return entriesOnly
+  const navigationIndex = entriesOnly.search(/<div class="nav-links\b/i);
+  const commentaryOnly = navigationIndex >= 0 ? entriesOnly.slice(0, navigationIndex) : entriesOnly;
+  return commentaryOnly
+    .replace(/<div class="return-to-top-div">[\s\S]*?<\/div>/gi, " ")
     .replace(/<div class="floating-resources">[\s\S]*?<\/div>\s*<\/div>/i, " ")
     .replace(/<div id="navigation"[\s\S]*?<\/div>\s*<\/div>/i, " ");
 }
@@ -1022,8 +1038,8 @@ function cleanStudyLightText(value) {
     .replace(/\bCopyright\b/gi, " ")
     .replace(/\bBibliography\b/gi, " ")
     .replace(/\bAdditional Authors\b/gi, " ")
-    .replace(/return to ['"‘’]? Top of Page ['"‘’]?/gi, " ")
-    .replace(/\n\s*[1-3]?\s?[A-Z][A-Za-z' ]+\s+[A-Z][a-z]{2}\s+\d+[\s\S]*?\bFootnotes:\s*$/i, " ");
+    .replace(/return to ['"‘’]?\s*Top of Page\s*['"‘’]?/gi, " ")
+    .replace(/\n\s*Footnotes:\s*$/i, " ");
 }
 
 function slugify(value) {
