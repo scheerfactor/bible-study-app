@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T23:27:33.521Z
+Generated: 2026-07-15T23:57:35.991Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -123,16 +123,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | spies | SPY | 14 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
-| disobedient | DISOBE'DIENT | 13 | ocr_full_import_needs_spot_review |
-| doubt | DOUBT | 13 | ocr_full_import_needs_spot_review |
-| dungeon | DUN'GEON | 13 | ocr_full_import_needs_spot_review |
-| fashion | FASH'ION | 13 | ocr_full_import_needs_spot_review |
-| flourish | FLOURISH | 13 | ocr_full_import_needs_spot_review |
-| flow | FLOW | 13 | ocr_full_import_needs_spot_review |
-| fully | FUL'LY | 13 | ocr_full_import_needs_spot_review |
-| garrison | GARRISON | 13 | ocr_full_import_needs_spot_review |
-| hereby | HEREBY' | 13 | ocr_full_import_needs_spot_review |
-| hole | HOLE | 13 | ocr_full_import_needs_spot_review |
 | ivory | I'VORY | 13 | ocr_full_import_needs_spot_review |
 | liar | LIA'R | 13 | ocr_full_import_needs_spot_review |
 | natural | NAT'URAL | 13 | ocr_full_import_needs_spot_review |
@@ -142,6 +132,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | plenty | PLEN'TY | 13 | ocr_full_import_needs_spot_review |
 | profitable | PROFITABLE | 13 | ocr_full_import_needs_spot_review |
 | short | SHORT | 13 | ocr_full_import_needs_spot_review |
+| vinegar | VIN'EGAR | 13 | ocr_full_import_needs_spot_review |
+| audience | AUD'IENCE | 12 | ocr_full_import_needs_spot_review |
+| begun | BEGUN' | 12 | ocr_full_import_needs_spot_review |
+| difference | DIF'FERENCE | 12 | ocr_full_import_needs_spot_review |
+| divination | DIVINA'TION | 12 | ocr_full_import_needs_spot_review |
+| drove | DROVE | 12 | ocr_full_import_needs_spot_review |
+| foolishly | FOOL'ISHLY | 12 | ocr_full_import_needs_spot_review |
+| happened | HAP'PEN | 12 | ocr_full_import_needs_spot_review |
+| hunt | HUNT | 12 | ocr_full_import_needs_spot_review |
+| hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
