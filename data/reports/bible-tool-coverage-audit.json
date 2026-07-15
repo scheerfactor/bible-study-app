@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T13:23:36.327Z",
+    "generated_at": "2026-07-15T13:52:31.583Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60256,
+      "entries": 60261,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2025,116 +2025,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "filthy",
-          "count": 17,
-          "sampleRefs": [
-            "Job 15:16",
-            "Psalms 14:3",
-            "Psalms 53:3",
-            "Isaiah 64:6",
-            "Zephaniah 3:1"
-          ],
-          "lookupCandidates": [
-            "filthy"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FILTH'Y",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "frankincense",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 30:34",
-            "Leviticus 2:1",
-            "Leviticus 2:2",
-            "Leviticus 2:15",
-            "Leviticus 2:16"
-          ],
-          "lookupCandidates": [
-            "frankincense"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FRANKIN'CENSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "freewill",
-          "count": 17,
-          "sampleRefs": [
-            "Leviticus 22:18",
-            "Leviticus 22:21",
-            "Leviticus 22:23",
-            "Leviticus 23:38",
-            "Numbers 15:3"
-          ],
-          "lookupCandidates": [
-            "freewill"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FREEWILL'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ham",
-          "count": 17,
-          "sampleRefs": [
-            "Genesis 5:32",
-            "Genesis 6:10",
-            "Genesis 7:13",
-            "Genesis 9:18",
-            "Genesis 9:18"
-          ],
-          "lookupCandidates": [
-            "ham"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HAM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "health",
-          "count": 17,
-          "sampleRefs": [
-            "Genesis 43:28",
-            "2 Samuel 20:9",
-            "Psalms 42:11",
-            "Psalms 43:5",
-            "Psalms 67:2"
-          ],
-          "lookupCandidates": [
-            "health"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HEALTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "ignorant",
           "count": 17,
           "sampleRefs": [
@@ -3583,6 +3473,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "POS'SIBLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "poverty",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 45:11",
+            "Proverbs 6:11",
+            "Proverbs 10:15",
+            "Proverbs 11:24",
+            "Proverbs 13:18"
+          ],
+          "lookupCandidates": [
+            "poverty"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "POVERTY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pressed",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 19:3",
+            "Genesis 19:9",
+            "Genesis 40:11",
+            "Judges 16:16",
+            "2 Samuel 13:25"
+          ],
+          "lookupCandidates": [
+            "pressed",
+            "press",
+            "presse"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PRESS'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "pull",
+          "count": 15,
+          "sampleRefs": [
+            "1 Kings 13:4",
+            "Psalms 31:4",
+            "Isaiah 22:19",
+            "Jeremiah 1:10",
+            "Jeremiah 12:3"
+          ],
+          "lookupCandidates": [
+            "pull"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PULL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "purge",
+          "count": 15,
+          "sampleRefs": [
+            "2 Chronicles 34:3",
+            "Psalms 51:7",
+            "Psalms 65:3",
+            "Psalms 79:9",
+            "Isaiah 1:25"
+          ],
+          "lookupCandidates": [
+            "purge"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PURGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "reach",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 11:4",
+            "Exodus 26:28",
+            "Exodus 28:42",
+            "Leviticus 26:5",
+            "Leviticus 26:5"
+          ],
+          "lookupCandidates": [
+            "reach"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REACH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10492,116 +10494,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "filthy",
-        "count": 17,
-        "sampleRefs": [
-          "Job 15:16",
-          "Psalms 14:3",
-          "Psalms 53:3",
-          "Isaiah 64:6",
-          "Zephaniah 3:1"
-        ],
-        "lookupCandidates": [
-          "filthy"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FILTH'Y",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "frankincense",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 30:34",
-          "Leviticus 2:1",
-          "Leviticus 2:2",
-          "Leviticus 2:15",
-          "Leviticus 2:16"
-        ],
-        "lookupCandidates": [
-          "frankincense"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FRANKIN'CENSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "freewill",
-        "count": 17,
-        "sampleRefs": [
-          "Leviticus 22:18",
-          "Leviticus 22:21",
-          "Leviticus 22:23",
-          "Leviticus 23:38",
-          "Numbers 15:3"
-        ],
-        "lookupCandidates": [
-          "freewill"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FREEWILL'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ham",
-        "count": 17,
-        "sampleRefs": [
-          "Genesis 5:32",
-          "Genesis 6:10",
-          "Genesis 7:13",
-          "Genesis 9:18",
-          "Genesis 9:18"
-        ],
-        "lookupCandidates": [
-          "ham"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HAM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "health",
-        "count": 17,
-        "sampleRefs": [
-          "Genesis 43:28",
-          "2 Samuel 20:9",
-          "Psalms 42:11",
-          "Psalms 43:5",
-          "Psalms 67:2"
-        ],
-        "lookupCandidates": [
-          "health"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HEALTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "ignorant",
         "count": 17,
         "sampleRefs": [
@@ -12050,6 +11942,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "POS'SIBLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "poverty",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 45:11",
+          "Proverbs 6:11",
+          "Proverbs 10:15",
+          "Proverbs 11:24",
+          "Proverbs 13:18"
+        ],
+        "lookupCandidates": [
+          "poverty"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "POVERTY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pressed",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 19:3",
+          "Genesis 19:9",
+          "Genesis 40:11",
+          "Judges 16:16",
+          "2 Samuel 13:25"
+        ],
+        "lookupCandidates": [
+          "pressed",
+          "press",
+          "presse"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PRESS'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "pull",
+        "count": 15,
+        "sampleRefs": [
+          "1 Kings 13:4",
+          "Psalms 31:4",
+          "Isaiah 22:19",
+          "Jeremiah 1:10",
+          "Jeremiah 12:3"
+        ],
+        "lookupCandidates": [
+          "pull"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PULL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "purge",
+        "count": 15,
+        "sampleRefs": [
+          "2 Chronicles 34:3",
+          "Psalms 51:7",
+          "Psalms 65:3",
+          "Psalms 79:9",
+          "Isaiah 1:25"
+        ],
+        "lookupCandidates": [
+          "purge"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PURGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "reach",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 11:4",
+          "Exodus 26:28",
+          "Exodus 28:42",
+          "Leviticus 26:5",
+          "Leviticus 26:5"
+        ],
+        "lookupCandidates": [
+          "reach"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REACH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

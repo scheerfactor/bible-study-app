@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T13:23:36.327Z
+Generated: 2026-07-15T13:52:31.583Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,11 +122,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | wages | WAGE | 18 | ocr_full_import_needs_spot_review |
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
-| filthy | FILTH'Y | 17 | ocr_full_import_needs_spot_review |
-| frankincense | FRANKIN'CENSE | 17 | ocr_full_import_needs_spot_review |
-| freewill | FREEWILL' | 17 | ocr_full_import_needs_spot_review |
-| ham | HAM | 17 | ocr_full_import_needs_spot_review |
-| health | HEALTH | 17 | ocr_full_import_needs_spot_review |
 | ignorant | IG'NORANT | 17 | ocr_full_import_needs_spot_review |
 | melt | MELT | 17 | ocr_full_import_needs_spot_review |
 | myrrh | MYRRH | 17 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | twice | TWICE | 17 | ocr_full_import_needs_spot_review |
 | weighed | WEIGH | 17 | ocr_full_import_needs_spot_review |
 | accord | ACCORD' | 16 | ocr_full_import_needs_spot_review |
+| accuse | ACCU'SE | 16 | ocr_full_import_needs_spot_review |
+| although | ALTHO'UGH | 16 | ocr_full_import_needs_spot_review |
+| bald | BALD | 16 | ocr_full_import_needs_spot_review |
+| beard | BEARD | 16 | ocr_full_import_needs_spot_review |
+| bloody | BLOOD'Y | 16 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
