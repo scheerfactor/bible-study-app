@@ -447,7 +447,8 @@ export async function getNaveTopicalEntries() {
 export async function getRareTermEntries() {
   rareTermPromise ??= readTextContent(rareTermRelativePath, { errorLabel: "KJV rare-term guide" })
     .then((raw) => JSON.parse(raw) as WebsterEntry[])
-    .then((entries) => entries.map(cleanDictionaryEntry));
+    .then((entries) => entries.map(cleanDictionaryEntry))
+    .catch(() => []);
   return rareTermPromise;
 }
 
