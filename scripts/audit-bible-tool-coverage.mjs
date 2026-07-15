@@ -343,12 +343,25 @@ for (const entry of rareTermEntries) {
   if (key && !rareTermByHeadword.has(key)) rareTermByHeadword.set(key, entry);
 }
 
+function websterReviewPriority(entry) {
+  if (entry.review_status === "reviewed_overlay") return 0;
+  if (/reviewed|clean/i.test(entry.review_status ?? "")) return 1;
+  if (/spot_review|ocr/i.test(entry.review_status ?? "")) return 3;
+  return 2;
+}
+
 function bestWebsterEntry(word) {
-  for (const candidate of dictionaryLookupCandidates(word)) {
-    const entries = websterByHeadword.get(candidate);
-    if (entries?.length) return entries[0];
-  }
-  return null;
+  const candidates = dictionaryLookupCandidates(word);
+  return candidates
+    .flatMap((candidate, candidateIndex) =>
+      (websterByHeadword.get(candidate) ?? []).map((entry) => ({ entry, candidateIndex })),
+    )
+    .sort((a, b) => {
+      const reviewPriority = websterReviewPriority(a.entry) - websterReviewPriority(b.entry);
+      if (reviewPriority !== 0) return reviewPriority;
+      if (a.candidateIndex !== b.candidateIndex) return a.candidateIndex - b.candidateIndex;
+      return String(b.entry.definition ?? "").length - String(a.entry.definition ?? "").length;
+    })[0]?.entry ?? null;
 }
 
 function hasEastonCandidate(word) {

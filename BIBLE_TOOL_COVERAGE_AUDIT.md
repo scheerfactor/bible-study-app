@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T10:08:03.010Z
+Generated: 2026-07-15T10:14:54.697Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -112,36 +112,36 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
+| benjamin | BEN'JAMIN | 166 | ocr_full_import_needs_spot_review |
+| build | BUILD | 162 | ocr_full_import_needs_spot_review |
+| wood | WOOD | 140 | ocr_full_import_needs_spot_review |
+| foot | FOOT | 95 | ocr_full_import_needs_spot_review |
+| stead | STEAD | 94 | ocr_full_import_needs_spot_review |
+| prophesy | PROPH'ESY | 90 | ocr_full_import_needs_spot_review |
+| tenth | TENTH | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
-| hateth | HAT | 31 | ocr_full_import_needs_spot_review |
+| brake | BRAKE | 73 | ocr_full_import_needs_spot_review |
+| ship | SHIP | 71 | ocr_full_import_needs_spot_review |
+| read | READ | 70 | ocr_full_import_needs_spot_review |
+| abode | ABO'DE | 69 | ocr_full_import_needs_spot_review |
+| builded | BUILD | 50 | ocr_full_import_needs_spot_review |
+| former | FOR'MER | 50 | ocr_full_import_needs_spot_review |
+| utter | UT'TER | 45 | ocr_full_import_needs_spot_review |
+| posts | POST | 42 | ocr_full_import_needs_spot_review |
+| spare | SPARE | 40 | ocr_full_import_needs_spot_review |
+| ships | SHIP | 39 | ocr_full_import_needs_spot_review |
+| building | BUILD'ING | 37 | ocr_full_import_needs_spot_review |
+| letter | LET'TER | 37 | ocr_full_import_needs_spot_review |
+| sow | SOW | 37 | ocr_full_import_needs_spot_review |
+| letters | LET'TER | 34 | ocr_full_import_needs_spot_review |
+| goodly | GOOD'LY | 33 | ocr_full_import_needs_spot_review |
+| want | WANT | 31 | ocr_full_import_needs_spot_review |
+| howl | HOWL | 29 | ocr_full_import_needs_spot_review |
+| change | CHANGE | 26 | ocr_full_import_needs_spot_review |
+| double | DOUB'LE | 26 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
-| plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
-| dogs | DOG | 24 | ocr_full_import_needs_spot_review |
-| wax | WAX | 24 | ocr_full_import_needs_spot_review |
-| ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
-| jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
-| pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
-| companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
-| partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
-| centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
-| belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
-| persuaded | PERSUA'DE | 20 | ocr_full_import_needs_spot_review |
-| ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
-| conspired | CONSPI'RE | 19 | ocr_full_import_needs_spot_review |
-| descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
-| instructed | INSTRUCT' | 19 | ocr_full_import_needs_spot_review |
-| murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
-| calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
-| communed | COMMU'NE | 18 | ocr_full_import_needs_spot_review |
-| kidneys | KIDNEY | 18 | ocr_full_import_needs_spot_review |
-| maidens | MA'IDEN | 18 | ocr_full_import_needs_spot_review |
-| middle | MIDDLE | 18 | ocr_full_import_needs_spot_review |
-| presented | PRESENT'ED | 18 | ocr_full_import_needs_spot_review |
-| standard | STAND'ARD | 18 | ocr_full_import_needs_spot_review |
-| tempest | TEM'PEST | 18 | ocr_full_import_needs_spot_review |
-| wages | WAGE | 18 | ocr_full_import_needs_spot_review |
+| timber | TIM'BER | 26 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
