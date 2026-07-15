@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T10:17:40.103Z",
+    "generated_at": "2026-07-15T10:22:29.450Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60211,
+      "entries": 60216,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1801,50 +1801,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "prophesy",
-          "count": 90,
-          "sampleRefs": [
-            "Numbers 11:27",
-            "1 Samuel 10:5",
-            "1 Samuel 10:6",
-            "1 Kings 22:8",
-            "1 Kings 22:18"
-          ],
-          "lookupCandidates": [
-            "prophesy"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PROPH'ESY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "tenth",
-          "count": 81,
-          "sampleRefs": [
-            "Genesis 8:5",
-            "Genesis 8:5",
-            "Genesis 28:22",
-            "Exodus 12:3",
-            "Exodus 16:36"
-          ],
-          "lookupCandidates": [
-            "tenth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TENTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "plain",
           "count": 75,
           "sampleRefs": [
@@ -1864,72 +1820,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PLAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "brake",
-          "count": 73,
-          "sampleRefs": [
-            "Exodus 9:25",
-            "Exodus 32:3",
-            "Exodus 32:19",
-            "Deuteronomy 9:17",
-            "Judges 7:19"
-          ],
-          "lookupCandidates": [
-            "brake"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BRAKE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ship",
-          "count": 71,
-          "sampleRefs": [
-            "Proverbs 30:19",
-            "Isaiah 33:21",
-            "Ezekiel 27:5",
-            "Jonah 1:3",
-            "Jonah 1:4"
-          ],
-          "lookupCandidates": [
-            "ship"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SHIP",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "read",
-          "count": 70,
-          "sampleRefs": [
-            "Exodus 24:7",
-            "Deuteronomy 17:19",
-            "Deuteronomy 31:11",
-            "Joshua 8:34",
-            "Joshua 8:35"
-          ],
-          "lookupCandidates": [
-            "read"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "READ",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2042,30 +1932,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "SPARE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "ships",
-          "count": 39,
-          "sampleRefs": [
-            "Genesis 49:13",
-            "Numbers 24:24",
-            "Deuteronomy 28:68",
-            "Judges 5:17",
-            "1 Kings 9:26"
-          ],
-          "lookupCandidates": [
-            "ships",
-            "ship",
-            "shipe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SHIP",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3610,6 +3476,138 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ACCU'SE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "although",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 13:17",
+            "Joshua 22:17",
+            "2 Samuel 23:5",
+            "2 Samuel 23:5",
+            "1 Kings 20:5"
+          ],
+          "lookupCandidates": [
+            "although"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ALTHO'UGH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bald",
+          "count": 16,
+          "sampleRefs": [
+            "Leviticus 11:22",
+            "Leviticus 13:40",
+            "Leviticus 13:41",
+            "Leviticus 13:42",
+            "Leviticus 13:42"
+          ],
+          "lookupCandidates": [
+            "bald"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BALD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "beard",
+          "count": 16,
+          "sampleRefs": [
+            "Leviticus 13:29",
+            "Leviticus 13:30",
+            "Leviticus 14:9",
+            "Leviticus 19:27",
+            "Leviticus 21:5"
+          ],
+          "lookupCandidates": [
+            "beard"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BEARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bloody",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 4:25",
+            "Exodus 4:26",
+            "2 Samuel 16:7",
+            "2 Samuel 16:8",
+            "2 Samuel 21:1"
+          ],
+          "lookupCandidates": [
+            "bloody"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BLOOD'Y",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "boil",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 9:9",
+            "Exodus 9:10",
+            "Exodus 9:11",
+            "Leviticus 8:31",
+            "Leviticus 13:18"
+          ],
+          "lookupCandidates": [
+            "boil"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BOIL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "clothe",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 40:14",
+            "Esther 4:4",
+            "Psalms 132:16",
+            "Psalms 132:18",
+            "Proverbs 23:21"
+          ],
+          "lookupCandidates": [
+            "clothe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLOTHE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10295,50 +10293,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "prophesy",
-        "count": 90,
-        "sampleRefs": [
-          "Numbers 11:27",
-          "1 Samuel 10:5",
-          "1 Samuel 10:6",
-          "1 Kings 22:8",
-          "1 Kings 22:18"
-        ],
-        "lookupCandidates": [
-          "prophesy"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PROPH'ESY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "tenth",
-        "count": 81,
-        "sampleRefs": [
-          "Genesis 8:5",
-          "Genesis 8:5",
-          "Genesis 28:22",
-          "Exodus 12:3",
-          "Exodus 16:36"
-        ],
-        "lookupCandidates": [
-          "tenth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TENTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "plain",
         "count": 75,
         "sampleRefs": [
@@ -10358,72 +10312,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PLAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "brake",
-        "count": 73,
-        "sampleRefs": [
-          "Exodus 9:25",
-          "Exodus 32:3",
-          "Exodus 32:19",
-          "Deuteronomy 9:17",
-          "Judges 7:19"
-        ],
-        "lookupCandidates": [
-          "brake"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BRAKE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ship",
-        "count": 71,
-        "sampleRefs": [
-          "Proverbs 30:19",
-          "Isaiah 33:21",
-          "Ezekiel 27:5",
-          "Jonah 1:3",
-          "Jonah 1:4"
-        ],
-        "lookupCandidates": [
-          "ship"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SHIP",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "read",
-        "count": 70,
-        "sampleRefs": [
-          "Exodus 24:7",
-          "Deuteronomy 17:19",
-          "Deuteronomy 31:11",
-          "Joshua 8:34",
-          "Joshua 8:35"
-        ],
-        "lookupCandidates": [
-          "read"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "READ",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10536,30 +10424,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "SPARE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "ships",
-        "count": 39,
-        "sampleRefs": [
-          "Genesis 49:13",
-          "Numbers 24:24",
-          "Deuteronomy 28:68",
-          "Judges 5:17",
-          "1 Kings 9:26"
-        ],
-        "lookupCandidates": [
-          "ships",
-          "ship",
-          "shipe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SHIP",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12104,6 +11968,138 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ACCU'SE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "although",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 13:17",
+          "Joshua 22:17",
+          "2 Samuel 23:5",
+          "2 Samuel 23:5",
+          "1 Kings 20:5"
+        ],
+        "lookupCandidates": [
+          "although"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ALTHO'UGH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bald",
+        "count": 16,
+        "sampleRefs": [
+          "Leviticus 11:22",
+          "Leviticus 13:40",
+          "Leviticus 13:41",
+          "Leviticus 13:42",
+          "Leviticus 13:42"
+        ],
+        "lookupCandidates": [
+          "bald"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BALD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "beard",
+        "count": 16,
+        "sampleRefs": [
+          "Leviticus 13:29",
+          "Leviticus 13:30",
+          "Leviticus 14:9",
+          "Leviticus 19:27",
+          "Leviticus 21:5"
+        ],
+        "lookupCandidates": [
+          "beard"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BEARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bloody",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 4:25",
+          "Exodus 4:26",
+          "2 Samuel 16:7",
+          "2 Samuel 16:8",
+          "2 Samuel 21:1"
+        ],
+        "lookupCandidates": [
+          "bloody"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BLOOD'Y",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "boil",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 9:9",
+          "Exodus 9:10",
+          "Exodus 9:11",
+          "Leviticus 8:31",
+          "Leviticus 13:18"
+        ],
+        "lookupCandidates": [
+          "boil"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BOIL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "clothe",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 40:14",
+          "Esther 4:4",
+          "Psalms 132:16",
+          "Psalms 132:18",
+          "Proverbs 23:21"
+        ],
+        "lookupCandidates": [
+          "clothe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLOTHE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

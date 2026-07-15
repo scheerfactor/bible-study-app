@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T10:17:40.103Z
+Generated: 2026-07-15T10:22:29.450Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -112,18 +112,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| prophesy | PROPH'ESY | 90 | ocr_full_import_needs_spot_review |
-| tenth | TENTH | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
-| brake | BRAKE | 73 | ocr_full_import_needs_spot_review |
-| ship | SHIP | 71 | ocr_full_import_needs_spot_review |
-| read | READ | 70 | ocr_full_import_needs_spot_review |
 | abode | ABO'DE | 69 | ocr_full_import_needs_spot_review |
 | former | FOR'MER | 50 | ocr_full_import_needs_spot_review |
 | utter | UT'TER | 45 | ocr_full_import_needs_spot_review |
 | posts | POST | 42 | ocr_full_import_needs_spot_review |
 | spare | SPARE | 40 | ocr_full_import_needs_spot_review |
-| ships | SHIP | 39 | ocr_full_import_needs_spot_review |
 | letter | LET'TER | 37 | ocr_full_import_needs_spot_review |
 | sow | SOW | 37 | ocr_full_import_needs_spot_review |
 | letters | LET'TER | 34 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
 | pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
 | companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
+| grant | GR'ANT | 22 | ocr_full_import_needs_spot_review |
+| partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
+| centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
+| parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
+| belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
+| custom | CUS'TOM | 20 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
