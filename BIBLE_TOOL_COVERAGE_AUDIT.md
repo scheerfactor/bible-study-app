@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T14:36:50.050Z
+Generated: 2026-07-15T14:53:28.330Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -125,13 +125,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
 | shore | SHORE | 17 | ocr_full_import_needs_spot_review |
 | subject | SUBJECT | 17 | ocr_full_import_needs_spot_review |
-| weighed | WEIGH | 17 | ocr_full_import_needs_spot_review |
 | accord | ACCORD' | 16 | ocr_full_import_needs_spot_review |
-| accuse | ACCU'SE | 16 | ocr_full_import_needs_spot_review |
-| although | ALTHO'UGH | 16 | ocr_full_import_needs_spot_review |
-| bald | BALD | 16 | ocr_full_import_needs_spot_review |
 | beard | BEARD | 16 | ocr_full_import_needs_spot_review |
-| bloody | BLOOD'Y | 16 | ocr_full_import_needs_spot_review |
 | boil | BOIL | 16 | ocr_full_import_needs_spot_review |
 | clothe | CLOTHE | 16 | ocr_full_import_needs_spot_review |
 | comely | COMELY | 16 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | earthquake | EARTH'QUAKE | 16 | ocr_full_import_needs_spot_review |
 | exhort | EXHORT' | 16 | ocr_full_import_needs_spot_review |
 | footstool | FOOT' STOOL | 16 | ocr_full_import_needs_spot_review |
+| greet | GREET | 16 | ocr_full_import_needs_spot_review |
+| highway | HIGHWA'Y | 16 | ocr_full_import_needs_spot_review |
+| hinder | HINDER | 16 | ocr_full_import_needs_spot_review |
+| lend | LEND | 16 | ocr_full_import_needs_spot_review |
+| obedient | OBE'DIENT | 16 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

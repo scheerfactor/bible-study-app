@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T14:36:50.050Z",
+    "generated_at": "2026-07-15T14:53:28.330Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60271,
+      "entries": 60276,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2093,30 +2093,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "weighed",
-          "count": 17,
-          "sampleRefs": [
-            "Genesis 23:16",
-            "Numbers 7:85",
-            "1 Samuel 2:3",
-            "1 Samuel 17:7",
-            "2 Samuel 14:26"
-          ],
-          "lookupCandidates": [
-            "weighed",
-            "weigh",
-            "weighe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WEIGH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "accord",
           "count": 16,
           "sampleRefs": [
@@ -2139,72 +2115,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "accuse",
-          "count": 16,
-          "sampleRefs": [
-            "Proverbs 30:10",
-            "Matthew 12:10",
-            "Mark 3:2",
-            "Luke 3:14",
-            "Luke 11:54"
-          ],
-          "lookupCandidates": [
-            "accuse"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ACCU'SE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "although",
-          "count": 16,
-          "sampleRefs": [
-            "Exodus 13:17",
-            "Joshua 22:17",
-            "2 Samuel 23:5",
-            "2 Samuel 23:5",
-            "1 Kings 20:5"
-          ],
-          "lookupCandidates": [
-            "although"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ALTHO'UGH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bald",
-          "count": 16,
-          "sampleRefs": [
-            "Leviticus 11:22",
-            "Leviticus 13:40",
-            "Leviticus 13:41",
-            "Leviticus 13:42",
-            "Leviticus 13:42"
-          ],
-          "lookupCandidates": [
-            "bald"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BALD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "beard",
           "count": 16,
           "sampleRefs": [
@@ -2224,28 +2134,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BEARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bloody",
-          "count": 16,
-          "sampleRefs": [
-            "Exodus 4:25",
-            "Exodus 4:26",
-            "2 Samuel 16:7",
-            "2 Samuel 16:8",
-            "2 Samuel 21:1"
-          ],
-          "lookupCandidates": [
-            "bloody"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BLOOD'Y",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3588,6 +3476,122 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CONTEND'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "creepeth",
+          "count": 14,
+          "sampleRefs": [
+            "Genesis 1:25",
+            "Genesis 1:26",
+            "Genesis 1:30",
+            "Genesis 7:8",
+            "Genesis 7:14"
+          ],
+          "lookupCandidates": [
+            "creepeth",
+            "creep",
+            "creepe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CREEP",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "effect",
+          "count": 14,
+          "sampleRefs": [
+            "Numbers 30:8",
+            "2 Chronicles 34:22",
+            "Psalms 33:10",
+            "Isaiah 32:17",
+            "Jeremiah 48:30"
+          ],
+          "lookupCandidates": [
+            "effect"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EFFECT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "eldest",
+          "count": 14,
+          "sampleRefs": [
+            "Genesis 24:2",
+            "Genesis 27:1",
+            "Genesis 27:15",
+            "Genesis 44:12",
+            "Numbers 1:20"
+          ],
+          "lookupCandidates": [
+            "eldest",
+            "eld",
+            "elde"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ELD'EST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "enjoy",
+          "count": 14,
+          "sampleRefs": [
+            "Leviticus 26:34",
+            "Leviticus 26:34",
+            "Leviticus 26:43",
+            "Numbers 36:8",
+            "Deuteronomy 28:41"
+          ],
+          "lookupCandidates": [
+            "enjoy"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ENJOY'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "firstling",
+          "count": 14,
+          "sampleRefs": [
+            "Exodus 13:12",
+            "Exodus 13:13",
+            "Exodus 34:19",
+            "Exodus 34:20",
+            "Leviticus 27:26"
+          ],
+          "lookupCandidates": [
+            "firstling",
+            "firstl",
+            "firstle"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FIRST'LING",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10565,30 +10569,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "weighed",
-        "count": 17,
-        "sampleRefs": [
-          "Genesis 23:16",
-          "Numbers 7:85",
-          "1 Samuel 2:3",
-          "1 Samuel 17:7",
-          "2 Samuel 14:26"
-        ],
-        "lookupCandidates": [
-          "weighed",
-          "weigh",
-          "weighe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WEIGH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "accord",
         "count": 16,
         "sampleRefs": [
@@ -10611,72 +10591,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "accuse",
-        "count": 16,
-        "sampleRefs": [
-          "Proverbs 30:10",
-          "Matthew 12:10",
-          "Mark 3:2",
-          "Luke 3:14",
-          "Luke 11:54"
-        ],
-        "lookupCandidates": [
-          "accuse"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ACCU'SE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "although",
-        "count": 16,
-        "sampleRefs": [
-          "Exodus 13:17",
-          "Joshua 22:17",
-          "2 Samuel 23:5",
-          "2 Samuel 23:5",
-          "1 Kings 20:5"
-        ],
-        "lookupCandidates": [
-          "although"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ALTHO'UGH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bald",
-        "count": 16,
-        "sampleRefs": [
-          "Leviticus 11:22",
-          "Leviticus 13:40",
-          "Leviticus 13:41",
-          "Leviticus 13:42",
-          "Leviticus 13:42"
-        ],
-        "lookupCandidates": [
-          "bald"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BALD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "beard",
         "count": 16,
         "sampleRefs": [
@@ -10696,28 +10610,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BEARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bloody",
-        "count": 16,
-        "sampleRefs": [
-          "Exodus 4:25",
-          "Exodus 4:26",
-          "2 Samuel 16:7",
-          "2 Samuel 16:8",
-          "2 Samuel 21:1"
-        ],
-        "lookupCandidates": [
-          "bloody"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BLOOD'Y",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12060,6 +11952,122 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CONTEND'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "creepeth",
+        "count": 14,
+        "sampleRefs": [
+          "Genesis 1:25",
+          "Genesis 1:26",
+          "Genesis 1:30",
+          "Genesis 7:8",
+          "Genesis 7:14"
+        ],
+        "lookupCandidates": [
+          "creepeth",
+          "creep",
+          "creepe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CREEP",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "effect",
+        "count": 14,
+        "sampleRefs": [
+          "Numbers 30:8",
+          "2 Chronicles 34:22",
+          "Psalms 33:10",
+          "Isaiah 32:17",
+          "Jeremiah 48:30"
+        ],
+        "lookupCandidates": [
+          "effect"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EFFECT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "eldest",
+        "count": 14,
+        "sampleRefs": [
+          "Genesis 24:2",
+          "Genesis 27:1",
+          "Genesis 27:15",
+          "Genesis 44:12",
+          "Numbers 1:20"
+        ],
+        "lookupCandidates": [
+          "eldest",
+          "eld",
+          "elde"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ELD'EST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "enjoy",
+        "count": 14,
+        "sampleRefs": [
+          "Leviticus 26:34",
+          "Leviticus 26:34",
+          "Leviticus 26:43",
+          "Numbers 36:8",
+          "Deuteronomy 28:41"
+        ],
+        "lookupCandidates": [
+          "enjoy"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ENJOY'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "firstling",
+        "count": 14,
+        "sampleRefs": [
+          "Exodus 13:12",
+          "Exodus 13:13",
+          "Exodus 34:19",
+          "Exodus 34:20",
+          "Leviticus 27:26"
+        ],
+        "lookupCandidates": [
+          "firstling",
+          "firstl",
+          "firstle"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FIRST'LING",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
