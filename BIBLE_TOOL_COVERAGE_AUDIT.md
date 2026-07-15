@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T19:28:26.389Z
+Generated: 2026-07-15T19:58:07.929Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,21 +119,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| bid | BID | 17 | ocr_full_import_needs_spot_review |
-| estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
-| shore | SHORE | 17 | ocr_full_import_needs_spot_review |
-| subject | SUBJECT | 17 | ocr_full_import_needs_spot_review |
-| accord | ACCORD' | 16 | ocr_full_import_needs_spot_review |
-| clothe | CLOTHE | 16 | ocr_full_import_needs_spot_review |
 | cymbals | CYM'BAL | 16 | ocr_full_import_needs_spot_review |
 | devices | DEVI'CE | 16 | ocr_full_import_needs_spot_review |
-| greet | GREET | 16 | ocr_full_import_needs_spot_review |
-| lend | LEND | 16 | ocr_full_import_needs_spot_review |
-| scorn | SCORN | 16 | ocr_full_import_needs_spot_review |
-| shot | SHOT | 16 | ocr_full_import_needs_spot_review |
-| stuff | STUFF | 16 | ocr_full_import_needs_spot_review |
 | arches | ARCH' | 15 | ocr_full_import_needs_spot_review |
-| catch | CATCH | 15 | ocr_full_import_needs_spot_review |
 | clear | CLEAR | 15 | ocr_full_import_needs_spot_review |
 | colt | COLT | 15 | ocr_full_import_needs_spot_review |
 | drop | DROP | 15 | ocr_full_import_needs_spot_review |
@@ -142,6 +130,18 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | locks | LOCK | 15 | ocr_full_import_needs_spot_review |
 | nether | NETH'ER | 15 | ocr_full_import_needs_spot_review |
 | nostrils | NOS'TRIL | 15 | ocr_full_import_needs_spot_review |
+| obtain | OBTA'IN | 15 | ocr_full_import_needs_spot_review |
+| often | OFTEN | 15 | ocr_full_import_needs_spot_review |
+| openly | OPENLY | 15 | ocr_full_import_needs_spot_review |
+| otherwise | OTH'ERWISE | 15 | ocr_full_import_needs_spot_review |
+| possible | POS'SIBLE | 15 | ocr_full_import_needs_spot_review |
+| poverty | POVERTY | 15 | ocr_full_import_needs_spot_review |
+| pressed | PRESS'ED | 15 | ocr_full_import_needs_spot_review |
+| pull | PULL | 15 | ocr_full_import_needs_spot_review |
+| purge | PURGE | 15 | ocr_full_import_needs_spot_review |
+| reach | REACH | 15 | ocr_full_import_needs_spot_review |
+| sailed | SA'ILED | 15 | ocr_full_import_needs_spot_review |
+| selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
