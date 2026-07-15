@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T11:04:38.937Z",
+    "generated_at": "2026-07-15T11:23:10.081Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60226,
+      "entries": 60231,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1823,50 +1823,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "change",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 35:2",
-            "Leviticus 27:10",
-            "Leviticus 27:10",
-            "Leviticus 27:33",
-            "Leviticus 27:33"
-          ],
-          "lookupCandidates": [
-            "change"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CHANGE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "double",
-          "count": 26,
-          "sampleRefs": [
-            "Genesis 43:12",
-            "Genesis 43:15",
-            "Exodus 22:4",
-            "Exodus 22:7",
-            "Exodus 22:9"
-          ],
-          "lookupCandidates": [
-            "double"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DOUB'LE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "excellency",
           "count": 26,
           "sampleRefs": [
@@ -1911,28 +1867,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "timber",
-          "count": 26,
-          "sampleRefs": [
-            "Exodus 31:5",
-            "Leviticus 14:45",
-            "1 Kings 5:6",
-            "1 Kings 5:8",
-            "1 Kings 5:8"
-          ],
-          "lookupCandidates": [
-            "timber"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TIM'BER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "plains",
           "count": 25,
           "sampleRefs": [
@@ -1954,52 +1888,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PLAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "dogs",
-          "count": 24,
-          "sampleRefs": [
-            "Exodus 22:31",
-            "1 Kings 14:11",
-            "1 Kings 16:4",
-            "1 Kings 21:19",
-            "1 Kings 21:19"
-          ],
-          "lookupCandidates": [
-            "dogs",
-            "dog",
-            "doge"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DOG",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "female",
-          "count": 24,
-          "sampleRefs": [
-            "Genesis 1:27",
-            "Genesis 5:2",
-            "Genesis 6:19",
-            "Genesis 7:2",
-            "Genesis 7:2"
-          ],
-          "lookupCandidates": [
-            "female"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FE'MALE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2694,28 +2582,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DEPTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "dog",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 11:7",
-            "Deuteronomy 23:18",
-            "Judges 7:5",
-            "1 Samuel 17:43",
-            "1 Samuel 24:14"
-          ],
-          "lookupCandidates": [
-            "dog"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DOG",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3605,6 +3471,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LEND",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "obedient",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 24:7",
+            "Numbers 27:20",
+            "Deuteronomy 4:30",
+            "Deuteronomy 8:20",
+            "2 Samuel 22:45"
+          ],
+          "lookupCandidates": [
+            "obedient"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OBE'DIENT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "rows",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 28:17",
+            "Exodus 39:10",
+            "Leviticus 24:6",
+            "1 Kings 6:36",
+            "1 Kings 7:2"
+          ],
+          "lookupCandidates": [
+            "rows",
+            "row",
+            "rowe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ROW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "scorn",
+          "count": 16,
+          "sampleRefs": [
+            "2 Kings 19:21",
+            "2 Chronicles 30:10",
+            "Nehemiah 2:19",
+            "Esther 3:6",
+            "Job 12:4"
+          ],
+          "lookupCandidates": [
+            "scorn"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SCORN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "shot",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 40:10",
+            "Genesis 49:23",
+            "Exodus 19:13",
+            "Numbers 21:30",
+            "1 Samuel 20:20"
+          ],
+          "lookupCandidates": [
+            "shot"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SHOT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "straw",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 24:25",
+            "Genesis 24:32",
+            "Exodus 5:7",
+            "Exodus 5:7",
+            "Exodus 5:10"
+          ],
+          "lookupCandidates": [
+            "straw"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STRAW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stuff",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 31:37",
+            "Genesis 31:37",
+            "Genesis 45:20",
+            "Exodus 22:7",
+            "Exodus 36:7"
+          ],
+          "lookupCandidates": [
+            "stuff"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STUFF",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10312,50 +10312,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "change",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 35:2",
-          "Leviticus 27:10",
-          "Leviticus 27:10",
-          "Leviticus 27:33",
-          "Leviticus 27:33"
-        ],
-        "lookupCandidates": [
-          "change"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CHANGE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "double",
-        "count": 26,
-        "sampleRefs": [
-          "Genesis 43:12",
-          "Genesis 43:15",
-          "Exodus 22:4",
-          "Exodus 22:7",
-          "Exodus 22:9"
-        ],
-        "lookupCandidates": [
-          "double"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DOUB'LE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "excellency",
         "count": 26,
         "sampleRefs": [
@@ -10400,28 +10356,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "timber",
-        "count": 26,
-        "sampleRefs": [
-          "Exodus 31:5",
-          "Leviticus 14:45",
-          "1 Kings 5:6",
-          "1 Kings 5:8",
-          "1 Kings 5:8"
-        ],
-        "lookupCandidates": [
-          "timber"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TIM'BER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "plains",
         "count": 25,
         "sampleRefs": [
@@ -10443,52 +10377,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PLAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "dogs",
-        "count": 24,
-        "sampleRefs": [
-          "Exodus 22:31",
-          "1 Kings 14:11",
-          "1 Kings 16:4",
-          "1 Kings 21:19",
-          "1 Kings 21:19"
-        ],
-        "lookupCandidates": [
-          "dogs",
-          "dog",
-          "doge"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DOG",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "female",
-        "count": 24,
-        "sampleRefs": [
-          "Genesis 1:27",
-          "Genesis 5:2",
-          "Genesis 6:19",
-          "Genesis 7:2",
-          "Genesis 7:2"
-        ],
-        "lookupCandidates": [
-          "female"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FE'MALE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11183,28 +11071,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DEPTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "dog",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 11:7",
-          "Deuteronomy 23:18",
-          "Judges 7:5",
-          "1 Samuel 17:43",
-          "1 Samuel 24:14"
-        ],
-        "lookupCandidates": [
-          "dog"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DOG",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12094,6 +11960,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LEND",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "obedient",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 24:7",
+          "Numbers 27:20",
+          "Deuteronomy 4:30",
+          "Deuteronomy 8:20",
+          "2 Samuel 22:45"
+        ],
+        "lookupCandidates": [
+          "obedient"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OBE'DIENT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "rows",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 28:17",
+          "Exodus 39:10",
+          "Leviticus 24:6",
+          "1 Kings 6:36",
+          "1 Kings 7:2"
+        ],
+        "lookupCandidates": [
+          "rows",
+          "row",
+          "rowe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ROW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "scorn",
+        "count": 16,
+        "sampleRefs": [
+          "2 Kings 19:21",
+          "2 Chronicles 30:10",
+          "Nehemiah 2:19",
+          "Esther 3:6",
+          "Job 12:4"
+        ],
+        "lookupCandidates": [
+          "scorn"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SCORN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "shot",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 40:10",
+          "Genesis 49:23",
+          "Exodus 19:13",
+          "Numbers 21:30",
+          "1 Samuel 20:20"
+        ],
+        "lookupCandidates": [
+          "shot"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SHOT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "straw",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 24:25",
+          "Genesis 24:32",
+          "Exodus 5:7",
+          "Exodus 5:7",
+          "Exodus 5:10"
+        ],
+        "lookupCandidates": [
+          "straw"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STRAW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stuff",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 31:37",
+          "Genesis 31:37",
+          "Genesis 45:20",
+          "Exodus 22:7",
+          "Exodus 36:7"
+        ],
+        "lookupCandidates": [
+          "stuff"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STUFF",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
