@@ -98725,5 +98725,293 @@
     "checksum_sha256": "0518a28a79d3b84408d530c01b6ad5e3b41b5fd1d382b721e41f8b27352d5dd8",
     "file_size_bytes": 463586,
     "word_count": 80900
+  },
+  {
+    "title": "Till He Come",
+    "author": "James H. Brookes",
+    "year": 1891,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Second Coming and Prophecy",
+    "source_url": "https://archive.org/download/tillhecome00broo/tillhecome00broo_djvu.txt",
+    "download_url": "https://archive.org/download/tillhecome00broo/tillhecome00broo_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/till-he-come-james-h-brookes.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/tillhecome00broo/tillhecome00broo_djvu.txt.",
+    "notes": "Public-domain studies on the coming of Christ for prophecy study sermon preparation and historical dispensational research. Labels/warnings: Historical dispensational teaching; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain studies on the coming of Christ for prophecy study sermon preparation and historical dispensational research.",
+    "resource_labels": [
+      "Second Coming and Prophecy",
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Till He Come",
+      "author": "James H. Brookes",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Second Coming and Prophecy",
+      "badge": "Second Coming and Prophecy",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 206,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "f473d15278904497631ceb2b1b77e3a2bf9729039756a326919c14ad6a7e8739",
+    "file_size_bytes": 303492,
+    "word_count": 46268
+  },
+  {
+    "title": "The Way Made Plain",
+    "author": "James H. Brookes",
+    "year": 1871,
+    "category": "Evangelism",
+    "collection": "Gospel and Salvation",
+    "source_url": "https://archive.org/download/waymadeplain00broo/waymadeplain00broo_djvu.txt",
+    "download_url": "https://archive.org/download/waymadeplain00broo/waymadeplain00broo_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-way-made-plain-james-h-brookes.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/waymadeplain00broo/waymadeplain00broo_djvu.txt.",
+    "notes": "Public-domain gospel study for evangelism discipleship and sermon preparation. Labels/warnings: Historical evangelistic teaching; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain gospel study for evangelism discipleship and sermon preparation.",
+    "resource_labels": [
+      "Gospel and Salvation",
+      "Historical evangelistic teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical evangelistic teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Way Made Plain",
+      "author": "James H. Brookes",
+      "category": "Evangelism",
+      "collection": "Gospel and Salvation",
+      "badge": "Gospel and Salvation",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 394,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "a05fafe635e3f222e1985469360d8cb11963a3a070f1f0fbbf43a1522eaa9f15",
+    "file_size_bytes": 553043,
+    "word_count": 88658
+  },
+  {
+    "title": "Gold from Ophir",
+    "author": "J. E. Wolfe",
+    "year": 1889,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Bible Readings",
+    "source_url": "https://archive.org/download/cihm_26043/cihm_26043_djvu.txt",
+    "download_url": "https://archive.org/download/cihm_26043/cihm_26043_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/gold-from-ophir-j-e-wolfe.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/cihm_26043/cihm_26043_djvu.txt.",
+    "notes": "Public-domain collection of Bible readings with an introduction by James H. Brookes for personal study teaching outlines and sermon preparation. Labels/warnings: Historical Bible readings; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain collection of Bible readings with an introduction by James H. Brookes for personal study teaching outlines and sermon preparation.",
+    "resource_labels": [
+      "Bible Readings",
+      "Historical Bible readings",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical Bible readings",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Gold from Ophir",
+      "author": "J. E. Wolfe",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Bible Readings",
+      "badge": "Bible Readings",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 809,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "ecaf1a1fffd0bbacbb3eef49b5034f943c7aa79dd46dd0099bc36689ccbd004f",
+    "file_size_bytes": 1011452,
+    "word_count": 181940
+  },
+  {
+    "title": "In Many Pulpits",
+    "author": "C. I. Scofield",
+    "year": 1922,
+    "category": "Preaching & Teaching",
+    "collection": "Sermons and Addresses",
+    "source_url": "https://archive.org/download/inmanypulpits00scof/inmanypulpits00scof_djvu.txt",
+    "download_url": "https://archive.org/download/inmanypulpits00scof/inmanypulpits00scof_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/in-many-pulpits-c-i-scofield.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/inmanypulpits00scof/inmanypulpits00scof_djvu.txt.",
+    "notes": "Public-domain sermon collection for preaching research outlines illustrations and historical study. Labels/warnings: Historical dispensational sermons; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain sermon collection for preaching research outlines illustrations and historical study.",
+    "resource_labels": [
+      "Sermons and Addresses",
+      "Historical dispensational sermons",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational sermons",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "In Many Pulpits",
+      "author": "C. I. Scofield",
+      "category": "Preaching & Teaching",
+      "collection": "Sermons and Addresses",
+      "badge": "Sermons and Addresses",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 282,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "50ba292998007e051fdd6e013c709576fc9f495b5d795adbb95ec766d576b4a0",
+    "file_size_bytes": 406332,
+    "word_count": 63521
+  },
+  {
+    "title": "What Do the Prophets Say?",
+    "author": "C. I. Scofield",
+    "year": 1918,
+    "category": "Bible Survey / Whole Bible / Commentary Helps",
+    "collection": "Prophecy Studies",
+    "source_url": "https://archive.org/download/whatdoprophetssa00scof/whatdoprophetssa00scof_djvu.txt",
+    "download_url": "https://archive.org/download/whatdoprophetssa00scof/whatdoprophetssa00scof_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/what-do-the-prophets-say-c-i-scofield.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/whatdoprophetssa00scof/whatdoprophetssa00scof_djvu.txt.",
+    "notes": "Public-domain prophecy study for Bible teaching sermon preparation and comparison with Scripture. Labels/warnings: Historical dispensational teaching; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain prophecy study for Bible teaching sermon preparation and comparison with Scripture.",
+    "resource_labels": [
+      "Prophecy Studies",
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "What Do the Prophets Say?",
+      "author": "C. I. Scofield",
+      "category": "Bible Survey / Whole Bible / Commentary Helps",
+      "collection": "Prophecy Studies",
+      "badge": "Prophecy Studies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 395,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "332595479efd2e47dac896c4608c5b962150d68d921365d63c1152f3e14aa895",
+    "file_size_bytes": 562938,
+    "word_count": 88888
+  },
+  {
+    "title": "The New Life in Christ Jesus",
+    "author": "C. I. Scofield",
+    "year": 1915,
+    "category": "Christian Living",
+    "collection": "Discipleship Helps",
+    "source_url": "https://archive.org/download/newlifeinchristj00scof/newlifeinchristj00scof_djvu.txt",
+    "download_url": "https://archive.org/download/newlifeinchristj00scof/newlifeinchristj00scof_djvu.txt",
+    "source_license_url": "https://archive.org/about/terms.php",
+    "file_path": "data/library/verified/the-new-life-in-christ-jesus-c-i-scofield.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_public_domain",
+    "attribution_required": false,
+    "rights_basis": "verified public domain. Source reviewed from https://archive.org/download/newlifeinchristj00scof/newlifeinchristj00scof_djvu.txt.",
+    "notes": "Public-domain discipleship study for new believers personal reading and teaching preparation. Labels/warnings: Historical dispensational teaching; OCR spot-check; compare all conclusions with KJV Scripture.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain discipleship study for new believers personal reading and teaching preparation.",
+    "resource_labels": [
+      "Discipleship Helps",
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "resource_warnings": [
+      "Historical dispensational teaching",
+      "OCR spot-check",
+      "compare all conclusions with KJV Scripture"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The New Life in Christ Jesus",
+      "author": "C. I. Scofield",
+      "category": "Christian Living",
+      "collection": "Discipleship Helps",
+      "badge": "Discipleship Helps",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 92,
+    "text_processing": "source_text_preserved",
+    "checksum_sha256": "bbd978bac8fd579e9120d0b85df40749c1b8d8bf1cb7ef35616063cf37986992",
+    "file_size_bytes": 130451,
+    "word_count": 20606
   }
 ]

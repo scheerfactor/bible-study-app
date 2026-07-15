@@ -354,7 +354,12 @@ for (const [index, row] of sourceRows.entries()) {
     await writeFile(filePath, text, "utf8");
     const fileStats = await stat(filePath);
     const words = wordCount(text);
-    const year = inferYearFromText(downloadedText);
+    const explicitYear = Number.parseInt(normalizeTextValue(row.year), 10);
+    const currentYear = new Date().getFullYear();
+    const year =
+      Number.isInteger(explicitYear) && explicitYear >= 1000 && explicitYear <= currentYear
+        ? explicitYear
+        : inferYearFromText(downloadedText);
     const entry = {
       title,
       author,

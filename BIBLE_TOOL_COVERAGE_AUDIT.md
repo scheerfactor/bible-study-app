@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T02:01:10.994Z
+Generated: 2026-07-15T02:23:16.870Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -113,16 +113,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
-| firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
-| pain | PAIN | 25 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
-| prove | PROVE | 25 | ocr_full_import_needs_spot_review |
-| store | STORE | 25 | ocr_full_import_needs_spot_review |
 | dogs | DOG | 24 | ocr_full_import_needs_spot_review |
-| form | FORM | 24 | ocr_full_import_needs_spot_review |
 | further | FUR'THER | 24 | ocr_full_import_needs_spot_review |
 | lusts | LUST | 24 | ocr_full_import_needs_spot_review |
 | void | VOID | 24 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
 | pronounce | PRONOUNCE | 23 | ocr_full_import_needs_spot_review |
 | bearing | BEARING | 22 | ocr_full_import_needs_spot_review |
+| bitterness | BIT'TERNESS | 22 | ocr_full_import_needs_spot_review |
+| breach | BREACH | 22 | ocr_full_import_needs_spot_review |
+| brightness | BRIGHTNESS | 22 | ocr_full_import_needs_spot_review |
+| companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
+| forbear | FORBEAR | 22 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

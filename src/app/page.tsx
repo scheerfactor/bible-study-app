@@ -102,6 +102,7 @@ import hoseaPreachersHomileticalCommentary from "../../data/imports/preachers-ho
 import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
 import hoseaWesleyCommentary from "../../data/imports/wesley-reviewed-minor-prophets-commentary.json";
 import hoseaGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-hosea-commentary.json";
+import amosGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-amos-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -10424,8 +10425,9 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hoseaPulpitCommentary as CommentaryEntry[]),
   ...(hoseaWesleyCommentary as CommentaryEntry[]),
   ...(hoseaGaebeleinCommentary as CommentaryEntry[]),
+  ...(amosGaebeleinCommentary as CommentaryEntry[]),
 ]
-  .filter((entry) => entry.book === "Hosea")
+  .filter((entry) => entry.book === "Hosea" || entry.book === "Amos")
   .map(normalizeCommentaryEntry);
 
 const newTestamentCanonBooks = [

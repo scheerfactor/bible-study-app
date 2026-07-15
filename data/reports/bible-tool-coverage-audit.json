@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T02:01:10.994Z",
+    "generated_at": "2026-07-15T02:23:16.870Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60116,
+      "entries": 60121,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1823,30 +1823,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "firstfruits",
-          "count": 32,
-          "sampleRefs": [
-            "Exodus 23:16",
-            "Exodus 23:19",
-            "Exodus 34:22",
-            "Exodus 34:26",
-            "Leviticus 2:12"
-          ],
-          "lookupCandidates": [
-            "firstfruits",
-            "firstfruit",
-            "firstfruite"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FIRST-FRUITS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "hateth",
           "count": 31,
           "sampleRefs": [
@@ -1915,28 +1891,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "pain",
-          "count": 25,
-          "sampleRefs": [
-            "Job 14:22",
-            "Job 15:20",
-            "Job 33:19",
-            "Job 33:19",
-            "Psalms 25:18"
-          ],
-          "lookupCandidates": [
-            "pain"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PAIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "plains",
           "count": 25,
           "sampleRefs": [
@@ -1961,50 +1915,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "prove",
-          "count": 25,
-          "sampleRefs": [
-            "Exodus 16:4",
-            "Exodus 20:20",
-            "Deuteronomy 8:2",
-            "Deuteronomy 8:16",
-            "Deuteronomy 33:8"
-          ],
-          "lookupCandidates": [
-            "prove"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PROVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "store",
-          "count": 25,
-          "sampleRefs": [
-            "Genesis 26:14",
-            "Genesis 41:36",
-            "Leviticus 25:22",
-            "Leviticus 26:10",
-            "Deuteronomy 28:5"
-          ],
-          "lookupCandidates": [
-            "store"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STORE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "dogs",
           "count": 24,
           "sampleRefs": [
@@ -2026,28 +1936,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DOG",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "form",
-          "count": 24,
-          "sampleRefs": [
-            "Genesis 1:2",
-            "1 Samuel 28:14",
-            "2 Samuel 14:20",
-            "2 Chronicles 4:7",
-            "Job 4:16"
-          ],
-          "lookupCandidates": [
-            "form"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FORM",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3602,6 +3490,124 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ASCEND'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "clothing",
+          "count": 19,
+          "sampleRefs": [
+            "Job 22:6",
+            "Job 24:7",
+            "Job 24:10",
+            "Job 31:19",
+            "Psalms 35:13"
+          ],
+          "lookupCandidates": [
+            "clothing",
+            "cloth",
+            "clothe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLOTHING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "conspired",
+          "count": 19,
+          "sampleRefs": [
+            "Genesis 37:18",
+            "1 Samuel 22:8",
+            "1 Samuel 22:13",
+            "1 Kings 15:27",
+            "1 Kings 16:9"
+          ],
+          "lookupCandidates": [
+            "conspired",
+            "conspir",
+            "conspire"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CONSPI'RE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "cruel",
+          "count": 19,
+          "sampleRefs": [
+            "Genesis 49:7",
+            "Exodus 6:9",
+            "Deuteronomy 32:33",
+            "Job 30:21",
+            "Psalms 25:19"
+          ],
+          "lookupCandidates": [
+            "cruel"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CRU'EL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "darkened",
+          "count": 19,
+          "sampleRefs": [
+            "Exodus 10:15",
+            "Psalms 69:23",
+            "Ecclesiastes 12:2",
+            "Ecclesiastes 12:3",
+            "Isaiah 5:30"
+          ],
+          "lookupCandidates": [
+            "darkened",
+            "darken",
+            "darkene"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DARKENED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "descended",
+          "count": 19,
+          "sampleRefs": [
+            "Exodus 19:18",
+            "Exodus 33:9",
+            "Exodus 34:5",
+            "Deuteronomy 9:21",
+            "Joshua 2:23"
+          ],
+          "lookupCandidates": [
+            "descended",
+            "descend",
+            "descende"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DESCEND'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10309,30 +10315,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "firstfruits",
-        "count": 32,
-        "sampleRefs": [
-          "Exodus 23:16",
-          "Exodus 23:19",
-          "Exodus 34:22",
-          "Exodus 34:26",
-          "Leviticus 2:12"
-        ],
-        "lookupCandidates": [
-          "firstfruits",
-          "firstfruit",
-          "firstfruite"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FIRST-FRUITS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "hateth",
         "count": 31,
         "sampleRefs": [
@@ -10401,28 +10383,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "pain",
-        "count": 25,
-        "sampleRefs": [
-          "Job 14:22",
-          "Job 15:20",
-          "Job 33:19",
-          "Job 33:19",
-          "Psalms 25:18"
-        ],
-        "lookupCandidates": [
-          "pain"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PAIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "plains",
         "count": 25,
         "sampleRefs": [
@@ -10447,50 +10407,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "prove",
-        "count": 25,
-        "sampleRefs": [
-          "Exodus 16:4",
-          "Exodus 20:20",
-          "Deuteronomy 8:2",
-          "Deuteronomy 8:16",
-          "Deuteronomy 33:8"
-        ],
-        "lookupCandidates": [
-          "prove"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PROVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "store",
-        "count": 25,
-        "sampleRefs": [
-          "Genesis 26:14",
-          "Genesis 41:36",
-          "Leviticus 25:22",
-          "Leviticus 26:10",
-          "Deuteronomy 28:5"
-        ],
-        "lookupCandidates": [
-          "store"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STORE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "dogs",
         "count": 24,
         "sampleRefs": [
@@ -10512,28 +10428,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DOG",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "form",
-        "count": 24,
-        "sampleRefs": [
-          "Genesis 1:2",
-          "1 Samuel 28:14",
-          "2 Samuel 14:20",
-          "2 Chronicles 4:7",
-          "Job 4:16"
-        ],
-        "lookupCandidates": [
-          "form"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FORM",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12088,6 +11982,124 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ASCEND'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "clothing",
+        "count": 19,
+        "sampleRefs": [
+          "Job 22:6",
+          "Job 24:7",
+          "Job 24:10",
+          "Job 31:19",
+          "Psalms 35:13"
+        ],
+        "lookupCandidates": [
+          "clothing",
+          "cloth",
+          "clothe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLOTHING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "conspired",
+        "count": 19,
+        "sampleRefs": [
+          "Genesis 37:18",
+          "1 Samuel 22:8",
+          "1 Samuel 22:13",
+          "1 Kings 15:27",
+          "1 Kings 16:9"
+        ],
+        "lookupCandidates": [
+          "conspired",
+          "conspir",
+          "conspire"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CONSPI'RE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "cruel",
+        "count": 19,
+        "sampleRefs": [
+          "Genesis 49:7",
+          "Exodus 6:9",
+          "Deuteronomy 32:33",
+          "Job 30:21",
+          "Psalms 25:19"
+        ],
+        "lookupCandidates": [
+          "cruel"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CRU'EL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "darkened",
+        "count": 19,
+        "sampleRefs": [
+          "Exodus 10:15",
+          "Psalms 69:23",
+          "Ecclesiastes 12:2",
+          "Ecclesiastes 12:3",
+          "Isaiah 5:30"
+        ],
+        "lookupCandidates": [
+          "darkened",
+          "darken",
+          "darkene"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DARKENED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "descended",
+        "count": 19,
+        "sampleRefs": [
+          "Exodus 19:18",
+          "Exodus 33:9",
+          "Exodus 34:5",
+          "Deuteronomy 9:21",
+          "Joshua 2:23"
+        ],
+        "lookupCandidates": [
+          "descended",
+          "descend",
+          "descende"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DESCEND'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
