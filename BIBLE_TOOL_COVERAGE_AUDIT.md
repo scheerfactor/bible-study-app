@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T02:53:02.677Z
+Generated: 2026-07-15T03:22:07.573Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -121,12 +121,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lusts | LUST | 24 | ocr_full_import_needs_spot_review |
 | wax | WAX | 24 | ocr_full_import_needs_spot_review |
 | ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
-| basket | B'ASKET | 23 | ocr_full_import_needs_spot_review |
-| beautiful | BEAU'TIFUL | 23 | ocr_full_import_needs_spot_review |
-| estimation | ESTIMA'TION | 23 | ocr_full_import_needs_spot_review |
-| guide | GUIDE | 23 | ocr_full_import_needs_spot_review |
 | jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
-| leaven | LEAVEN | 23 | ocr_full_import_needs_spot_review |
 | mention | MEN'TION | 23 | ocr_full_import_needs_spot_review |
 | namely | NA'MELY | 23 | ocr_full_import_needs_spot_review |
 | pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | merchandise | MER'CHANDISE | 22 | ocr_full_import_needs_spot_review |
 | moment | MO'MENT | 22 | ocr_full_import_needs_spot_review |
 | overcome | OVERCOME | 22 | ocr_full_import_needs_spot_review |
+| partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
+| pledge | PLEDGE | 22 | ocr_full_import_needs_spot_review |
+| pool | POOL | 22 | ocr_full_import_needs_spot_review |
+| reckoned | RECKONED | 22 | ocr_full_import_needs_spot_review |
+| shaken | SHAKEN | 22 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
