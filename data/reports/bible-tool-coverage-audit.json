@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T07:22:10.602Z",
+    "generated_at": "2026-07-15T07:52:04.978Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60171,
+      "entries": 60176,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2195,118 +2195,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "simple",
-          "count": 20,
-          "sampleRefs": [
-            "Psalms 19:7",
-            "Psalms 116:6",
-            "Psalms 119:130",
-            "Proverbs 1:4",
-            "Proverbs 1:22"
-          ],
-          "lookupCandidates": [
-            "simple"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SIM'PLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "stir",
-          "count": 20,
-          "sampleRefs": [
-            "Numbers 24:9",
-            "Job 17:8",
-            "Job 41:10",
-            "Psalms 35:23",
-            "Psalms 78:38"
-          ],
-          "lookupCandidates": [
-            "stir"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STIR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "swift",
-          "count": 20,
-          "sampleRefs": [
-            "Deuteronomy 28:49",
-            "1 Chronicles 12:8",
-            "Job 9:26",
-            "Job 24:18",
-            "Proverbs 6:18"
-          ],
-          "lookupCandidates": [
-            "swift"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SWIFT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "working",
-          "count": 20,
-          "sampleRefs": [
-            "Psalms 52:2",
-            "Psalms 74:12",
-            "Isaiah 28:29",
-            "Ezekiel 46:1",
-            "Mark 16:20"
-          ],
-          "lookupCandidates": [
-            "working",
-            "work",
-            "worke"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WORKING",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "abound",
-          "count": 19,
-          "sampleRefs": [
-            "Proverbs 28:20",
-            "Matthew 24:12",
-            "Romans 5:20",
-            "Romans 5:20",
-            "Romans 6:1"
-          ],
-          "lookupCandidates": [
-            "abound"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ABOUND'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "approach",
           "count": 19,
           "sampleRefs": [
@@ -3616,6 +3504,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PUNISHED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "putting",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 21:14",
+            "Leviticus 16:21",
+            "Judges 7:6",
+            "Isaiah 58:9",
+            "Malachi 2:16"
+          ],
+          "lookupCandidates": [
+            "putting",
+            "putt",
+            "putte"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PUT'TING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "row",
+          "count": 17,
+          "sampleRefs": [
+            "Exodus 28:17",
+            "Exodus 28:17",
+            "Exodus 28:18",
+            "Exodus 28:19",
+            "Exodus 28:20"
+          ],
+          "lookupCandidates": [
+            "row"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ROW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "shore",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 22:17",
+            "Exodus 14:30",
+            "Joshua 11:4",
+            "Joshua 15:2",
+            "Judges 5:17"
+          ],
+          "lookupCandidates": [
+            "shore"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SHORE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "subject",
+          "count": 17,
+          "sampleRefs": [
+            "Luke 2:51",
+            "Luke 10:17",
+            "Luke 10:20",
+            "Romans 8:7",
+            "Romans 8:20"
+          ],
+          "lookupCandidates": [
+            "subject"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SUB'JECT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "try",
+          "count": 17,
+          "sampleRefs": [
+            "Judges 7:4",
+            "2 Chronicles 32:31",
+            "Job 7:18",
+            "Job 12:11",
+            "Psalms 11:4"
+          ],
+          "lookupCandidates": [
+            "try"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TRY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10695,118 +10695,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "simple",
-        "count": 20,
-        "sampleRefs": [
-          "Psalms 19:7",
-          "Psalms 116:6",
-          "Psalms 119:130",
-          "Proverbs 1:4",
-          "Proverbs 1:22"
-        ],
-        "lookupCandidates": [
-          "simple"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SIM'PLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "stir",
-        "count": 20,
-        "sampleRefs": [
-          "Numbers 24:9",
-          "Job 17:8",
-          "Job 41:10",
-          "Psalms 35:23",
-          "Psalms 78:38"
-        ],
-        "lookupCandidates": [
-          "stir"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STIR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "swift",
-        "count": 20,
-        "sampleRefs": [
-          "Deuteronomy 28:49",
-          "1 Chronicles 12:8",
-          "Job 9:26",
-          "Job 24:18",
-          "Proverbs 6:18"
-        ],
-        "lookupCandidates": [
-          "swift"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SWIFT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "working",
-        "count": 20,
-        "sampleRefs": [
-          "Psalms 52:2",
-          "Psalms 74:12",
-          "Isaiah 28:29",
-          "Ezekiel 46:1",
-          "Mark 16:20"
-        ],
-        "lookupCandidates": [
-          "working",
-          "work",
-          "worke"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WORKING",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "abound",
-        "count": 19,
-        "sampleRefs": [
-          "Proverbs 28:20",
-          "Matthew 24:12",
-          "Romans 5:20",
-          "Romans 5:20",
-          "Romans 6:1"
-        ],
-        "lookupCandidates": [
-          "abound"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ABOUND'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "approach",
         "count": 19,
         "sampleRefs": [
@@ -12116,6 +12004,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PUNISHED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "putting",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 21:14",
+          "Leviticus 16:21",
+          "Judges 7:6",
+          "Isaiah 58:9",
+          "Malachi 2:16"
+        ],
+        "lookupCandidates": [
+          "putting",
+          "putt",
+          "putte"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PUT'TING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "row",
+        "count": 17,
+        "sampleRefs": [
+          "Exodus 28:17",
+          "Exodus 28:17",
+          "Exodus 28:18",
+          "Exodus 28:19",
+          "Exodus 28:20"
+        ],
+        "lookupCandidates": [
+          "row"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ROW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "shore",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 22:17",
+          "Exodus 14:30",
+          "Joshua 11:4",
+          "Joshua 15:2",
+          "Judges 5:17"
+        ],
+        "lookupCandidates": [
+          "shore"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SHORE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "subject",
+        "count": 17,
+        "sampleRefs": [
+          "Luke 2:51",
+          "Luke 10:17",
+          "Luke 10:20",
+          "Romans 8:7",
+          "Romans 8:20"
+        ],
+        "lookupCandidates": [
+          "subject"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SUB'JECT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "try",
+        "count": 17,
+        "sampleRefs": [
+          "Judges 7:4",
+          "2 Chronicles 32:31",
+          "Job 7:18",
+          "Job 12:11",
+          "Psalms 11:4"
+        ],
+        "lookupCandidates": [
+          "try"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TRY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
