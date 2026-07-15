@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T03:51:55.316Z",
+    "generated_at": "2026-07-15T04:21:58.431Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60136,
+      "entries": 60141,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2053,52 +2053,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "breach",
-          "count": 22,
-          "sampleRefs": [
-            "Genesis 38:29",
-            "Leviticus 24:20",
-            "Leviticus 24:20",
-            "Numbers 14:34",
-            "Judges 21:15"
-          ],
-          "lookupCandidates": [
-            "breach"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BREACH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "brightness",
-          "count": 22,
-          "sampleRefs": [
-            "2 Samuel 22:13",
-            "Job 31:26",
-            "Psalms 18:12",
-            "Isaiah 59:9",
-            "Isaiah 60:3"
-          ],
-          "lookupCandidates": [
-            "brightness",
-            "brightnes",
-            "brightnese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BRIGHTNESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "companions",
           "count": 22,
           "sampleRefs": [
@@ -2120,72 +2074,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "COMPANION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "forbear",
-          "count": 22,
-          "sampleRefs": [
-            "Exodus 23:5",
-            "Deuteronomy 23:22",
-            "1 Kings 22:6",
-            "1 Kings 22:15",
-            "2 Chronicles 18:5"
-          ],
-          "lookupCandidates": [
-            "forbear"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FORBEAR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "hin",
-          "count": 22,
-          "sampleRefs": [
-            "Exodus 29:40",
-            "Exodus 29:40",
-            "Exodus 30:24",
-            "Leviticus 19:36",
-            "Leviticus 23:13"
-          ],
-          "lookupCandidates": [
-            "hin"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HIN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "marry",
-          "count": 22,
-          "sampleRefs": [
-            "Genesis 38:8",
-            "Numbers 36:6",
-            "Numbers 36:6",
-            "Deuteronomy 25:5",
-            "Isaiah 62:5"
-          ],
-          "lookupCandidates": [
-            "marry"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MAR'RY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3610,6 +3498,119 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BASE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bathe",
+          "count": 18,
+          "sampleRefs": [
+            "Leviticus 15:5",
+            "Leviticus 15:6",
+            "Leviticus 15:7",
+            "Leviticus 15:8",
+            "Leviticus 15:10"
+          ],
+          "lookupCandidates": [
+            "bathe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BATHE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "black",
+          "count": 18,
+          "sampleRefs": [
+            "Leviticus 13:31",
+            "Leviticus 13:37",
+            "1 Kings 18:45",
+            "Esther 1:6",
+            "Job 30:30"
+          ],
+          "lookupCandidates": [
+            "black"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BLACK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "calves",
+          "count": 18,
+          "sampleRefs": [
+            "1 Samuel 6:7",
+            "1 Samuel 6:10",
+            "1 Samuel 14:32",
+            "1 Kings 12:28",
+            "1 Kings 12:32"
+          ],
+          "lookupCandidates": [
+            "calves",
+            "calve"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "C'ALVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "cloth",
+          "count": 18,
+          "sampleRefs": [
+            "Numbers 4:6",
+            "Numbers 4:7",
+            "Numbers 4:8",
+            "Numbers 4:9",
+            "Numbers 4:11"
+          ],
+          "lookupCandidates": [
+            "cloth"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLOTH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "communed",
+          "count": 18,
+          "sampleRefs": [
+            "Genesis 23:8",
+            "Genesis 34:8",
+            "Genesis 34:20",
+            "Genesis 42:24",
+            "Genesis 43:19"
+          ],
+          "lookupCandidates": [
+            "communed",
+            "commun",
+            "commune"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COMMU'NE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10547,52 +10548,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "breach",
-        "count": 22,
-        "sampleRefs": [
-          "Genesis 38:29",
-          "Leviticus 24:20",
-          "Leviticus 24:20",
-          "Numbers 14:34",
-          "Judges 21:15"
-        ],
-        "lookupCandidates": [
-          "breach"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BREACH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "brightness",
-        "count": 22,
-        "sampleRefs": [
-          "2 Samuel 22:13",
-          "Job 31:26",
-          "Psalms 18:12",
-          "Isaiah 59:9",
-          "Isaiah 60:3"
-        ],
-        "lookupCandidates": [
-          "brightness",
-          "brightnes",
-          "brightnese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BRIGHTNESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "companions",
         "count": 22,
         "sampleRefs": [
@@ -10614,72 +10569,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "COMPANION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "forbear",
-        "count": 22,
-        "sampleRefs": [
-          "Exodus 23:5",
-          "Deuteronomy 23:22",
-          "1 Kings 22:6",
-          "1 Kings 22:15",
-          "2 Chronicles 18:5"
-        ],
-        "lookupCandidates": [
-          "forbear"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FORBEAR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "hin",
-        "count": 22,
-        "sampleRefs": [
-          "Exodus 29:40",
-          "Exodus 29:40",
-          "Exodus 30:24",
-          "Leviticus 19:36",
-          "Leviticus 23:13"
-        ],
-        "lookupCandidates": [
-          "hin"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HIN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "marry",
-        "count": 22,
-        "sampleRefs": [
-          "Genesis 38:8",
-          "Numbers 36:6",
-          "Numbers 36:6",
-          "Deuteronomy 25:5",
-          "Isaiah 62:5"
-        ],
-        "lookupCandidates": [
-          "marry"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MAR'RY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12104,6 +11993,119 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BASE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bathe",
+        "count": 18,
+        "sampleRefs": [
+          "Leviticus 15:5",
+          "Leviticus 15:6",
+          "Leviticus 15:7",
+          "Leviticus 15:8",
+          "Leviticus 15:10"
+        ],
+        "lookupCandidates": [
+          "bathe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BATHE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "black",
+        "count": 18,
+        "sampleRefs": [
+          "Leviticus 13:31",
+          "Leviticus 13:37",
+          "1 Kings 18:45",
+          "Esther 1:6",
+          "Job 30:30"
+        ],
+        "lookupCandidates": [
+          "black"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BLACK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "calves",
+        "count": 18,
+        "sampleRefs": [
+          "1 Samuel 6:7",
+          "1 Samuel 6:10",
+          "1 Samuel 14:32",
+          "1 Kings 12:28",
+          "1 Kings 12:32"
+        ],
+        "lookupCandidates": [
+          "calves",
+          "calve"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "C'ALVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "cloth",
+        "count": 18,
+        "sampleRefs": [
+          "Numbers 4:6",
+          "Numbers 4:7",
+          "Numbers 4:8",
+          "Numbers 4:9",
+          "Numbers 4:11"
+        ],
+        "lookupCandidates": [
+          "cloth"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLOTH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "communed",
+        "count": 18,
+        "sampleRefs": [
+          "Genesis 23:8",
+          "Genesis 34:8",
+          "Genesis 34:20",
+          "Genesis 42:24",
+          "Genesis 43:19"
+        ],
+        "lookupCandidates": [
+          "communed",
+          "commun",
+          "commune"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COMMU'NE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
