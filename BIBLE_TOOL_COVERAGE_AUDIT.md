@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T19:58:07.929Z
+Generated: 2026-07-15T20:27:43.342Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,19 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| cymbals | CYM'BAL | 16 | ocr_full_import_needs_spot_review |
-| devices | DEVI'CE | 16 | ocr_full_import_needs_spot_review |
-| arches | ARCH' | 15 | ocr_full_import_needs_spot_review |
-| clear | CLEAR | 15 | ocr_full_import_needs_spot_review |
-| colt | COLT | 15 | ocr_full_import_needs_spot_review |
-| drop | DROP | 15 | ocr_full_import_needs_spot_review |
-| godliness | GOD'LINESS | 15 | ocr_full_import_needs_spot_review |
-| ill | ILL | 15 | ocr_full_import_needs_spot_review |
-| locks | LOCK | 15 | ocr_full_import_needs_spot_review |
-| nether | NETH'ER | 15 | ocr_full_import_needs_spot_review |
-| nostrils | NOS'TRIL | 15 | ocr_full_import_needs_spot_review |
-| obtain | OBTA'IN | 15 | ocr_full_import_needs_spot_review |
-| often | OFTEN | 15 | ocr_full_import_needs_spot_review |
 | openly | OPENLY | 15 | ocr_full_import_needs_spot_review |
 | otherwise | OTH'ERWISE | 15 | ocr_full_import_needs_spot_review |
 | possible | POS'SIBLE | 15 | ocr_full_import_needs_spot_review |
@@ -142,6 +129,19 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | reach | REACH | 15 | ocr_full_import_needs_spot_review |
 | sailed | SA'ILED | 15 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
+| slow | SLOW | 15 | ocr_full_import_needs_spot_review |
+| stopped | STOP'PED | 15 | ocr_full_import_needs_spot_review |
+| vex | VEX | 15 | ocr_full_import_needs_spot_review |
+| wide | WIDE | 15 | ocr_full_import_needs_spot_review |
+| wondrous | WONDROUS | 15 | ocr_full_import_needs_spot_review |
+| bestowed | BESTOWED | 14 | ocr_full_import_needs_spot_review |
+| bride | BRIDE | 14 | ocr_full_import_needs_spot_review |
+| conceive | CONCE'IVE | 14 | ocr_full_import_needs_spot_review |
+| contend | CONTEND' | 14 | ocr_full_import_needs_spot_review |
+| creepeth | CREEP | 14 | ocr_full_import_needs_spot_review |
+| effect | EFFECT' | 14 | ocr_full_import_needs_spot_review |
+| eldest | ELD'EST | 14 | ocr_full_import_needs_spot_review |
+| enjoy | ENJOY' | 14 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
