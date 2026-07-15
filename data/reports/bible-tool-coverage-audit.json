@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T14:53:28.330Z",
+    "generated_at": "2026-07-15T15:23:25.744Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60276,
+      "entries": 60281,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2137,28 +2137,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "boil",
-          "count": 16,
-          "sampleRefs": [
-            "Exodus 9:9",
-            "Exodus 9:10",
-            "Exodus 9:11",
-            "Leviticus 8:31",
-            "Leviticus 13:18"
-          ],
-          "lookupCandidates": [
-            "boil"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BOIL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "clothe",
           "count": 16,
           "sampleRefs": [
@@ -2178,50 +2156,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CLOTHE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "comely",
-          "count": 16,
-          "sampleRefs": [
-            "1 Samuel 16:18",
-            "Job 41:12",
-            "Psalms 33:1",
-            "Psalms 147:1",
-            "Proverbs 30:29"
-          ],
-          "lookupCandidates": [
-            "comely"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COMELY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "content",
-          "count": 16,
-          "sampleRefs": [
-            "Genesis 37:27",
-            "Exodus 2:21",
-            "Leviticus 10:20",
-            "Joshua 7:7",
-            "Judges 17:11"
-          ],
-          "lookupCandidates": [
-            "content"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONTENT'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2269,50 +2203,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DEVI'CE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "devise",
-          "count": 16,
-          "sampleRefs": [
-            "Exodus 31:4",
-            "Exodus 35:32",
-            "Exodus 35:35",
-            "2 Samuel 14:14",
-            "Psalms 35:4"
-          ],
-          "lookupCandidates": [
-            "devise"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEVI'SE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "earthquake",
-          "count": 16,
-          "sampleRefs": [
-            "1 Kings 19:11",
-            "1 Kings 19:11",
-            "1 Kings 19:12",
-            "Isaiah 29:6",
-            "Amos 1:1"
-          ],
-          "lookupCandidates": [
-            "earthquake"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "EARTH'QUAKE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3592,6 +3482,116 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FIRST'LING",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "furthermore",
+          "count": 14,
+          "sampleRefs": [
+            "Exodus 4:6",
+            "Deuteronomy 4:21",
+            "Deuteronomy 9:13",
+            "1 Samuel 26:10",
+            "1 Chronicles 17:10"
+          ],
+          "lookupCandidates": [
+            "furthermore"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FURTHERMORE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "gall",
+          "count": 14,
+          "sampleRefs": [
+            "Deuteronomy 29:18",
+            "Deuteronomy 32:32",
+            "Job 16:13",
+            "Job 20:14",
+            "Job 20:25"
+          ],
+          "lookupCandidates": [
+            "gall"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GALL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "join",
+          "count": 14,
+          "sampleRefs": [
+            "Exodus 1:10",
+            "2 Chronicles 20:35",
+            "Ezra 9:14",
+            "Proverbs 11:21",
+            "Proverbs 16:5"
+          ],
+          "lookupCandidates": [
+            "join"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "JOIN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "liver",
+          "count": 14,
+          "sampleRefs": [
+            "Exodus 29:13",
+            "Exodus 29:22",
+            "Leviticus 3:4",
+            "Leviticus 3:10",
+            "Leviticus 3:15"
+          ],
+          "lookupCandidates": [
+            "liver"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LIV'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "midnight",
+          "count": 14,
+          "sampleRefs": [
+            "Exodus 11:4",
+            "Exodus 12:29",
+            "Judges 16:3",
+            "Judges 16:3",
+            "Ruth 3:8"
+          ],
+          "lookupCandidates": [
+            "midnight"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MID'NIGHT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10613,28 +10613,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "boil",
-        "count": 16,
-        "sampleRefs": [
-          "Exodus 9:9",
-          "Exodus 9:10",
-          "Exodus 9:11",
-          "Leviticus 8:31",
-          "Leviticus 13:18"
-        ],
-        "lookupCandidates": [
-          "boil"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BOIL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "clothe",
         "count": 16,
         "sampleRefs": [
@@ -10654,50 +10632,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CLOTHE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "comely",
-        "count": 16,
-        "sampleRefs": [
-          "1 Samuel 16:18",
-          "Job 41:12",
-          "Psalms 33:1",
-          "Psalms 147:1",
-          "Proverbs 30:29"
-        ],
-        "lookupCandidates": [
-          "comely"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COMELY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "content",
-        "count": 16,
-        "sampleRefs": [
-          "Genesis 37:27",
-          "Exodus 2:21",
-          "Leviticus 10:20",
-          "Joshua 7:7",
-          "Judges 17:11"
-        ],
-        "lookupCandidates": [
-          "content"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONTENT'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10745,50 +10679,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DEVI'CE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "devise",
-        "count": 16,
-        "sampleRefs": [
-          "Exodus 31:4",
-          "Exodus 35:32",
-          "Exodus 35:35",
-          "2 Samuel 14:14",
-          "Psalms 35:4"
-        ],
-        "lookupCandidates": [
-          "devise"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEVI'SE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "earthquake",
-        "count": 16,
-        "sampleRefs": [
-          "1 Kings 19:11",
-          "1 Kings 19:11",
-          "1 Kings 19:12",
-          "Isaiah 29:6",
-          "Amos 1:1"
-        ],
-        "lookupCandidates": [
-          "earthquake"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "EARTH'QUAKE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12068,6 +11958,116 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FIRST'LING",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "furthermore",
+        "count": 14,
+        "sampleRefs": [
+          "Exodus 4:6",
+          "Deuteronomy 4:21",
+          "Deuteronomy 9:13",
+          "1 Samuel 26:10",
+          "1 Chronicles 17:10"
+        ],
+        "lookupCandidates": [
+          "furthermore"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FURTHERMORE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "gall",
+        "count": 14,
+        "sampleRefs": [
+          "Deuteronomy 29:18",
+          "Deuteronomy 32:32",
+          "Job 16:13",
+          "Job 20:14",
+          "Job 20:25"
+        ],
+        "lookupCandidates": [
+          "gall"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GALL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "join",
+        "count": 14,
+        "sampleRefs": [
+          "Exodus 1:10",
+          "2 Chronicles 20:35",
+          "Ezra 9:14",
+          "Proverbs 11:21",
+          "Proverbs 16:5"
+        ],
+        "lookupCandidates": [
+          "join"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "JOIN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "liver",
+        "count": 14,
+        "sampleRefs": [
+          "Exodus 29:13",
+          "Exodus 29:22",
+          "Leviticus 3:4",
+          "Leviticus 3:10",
+          "Leviticus 3:15"
+        ],
+        "lookupCandidates": [
+          "liver"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LIV'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "midnight",
+        "count": 14,
+        "sampleRefs": [
+          "Exodus 11:4",
+          "Exodus 12:29",
+          "Judges 16:3",
+          "Judges 16:3",
+          "Ruth 3:8"
+        ],
+        "lookupCandidates": [
+          "midnight"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MID'NIGHT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
