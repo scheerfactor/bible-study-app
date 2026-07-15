@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T11:43:38.811Z",
+    "generated_at": "2026-07-15T11:52:22.541Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60236,
+      "entries": 60241,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1891,30 +1891,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "partakers",
-          "count": 22,
-          "sampleRefs": [
-            "Matthew 23:30",
-            "Romans 15:27",
-            "1 Corinthians 9:12",
-            "1 Corinthians 9:13",
-            "1 Corinthians 10:17"
-          ],
-          "lookupCandidates": [
-            "partakers",
-            "partaker",
-            "partakere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PARTA'KER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "centurion",
           "count": 21,
           "sampleRefs": [
@@ -1934,30 +1910,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CENTU'RION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "parents",
-          "count": 21,
-          "sampleRefs": [
-            "Matthew 10:21",
-            "Mark 13:12",
-            "Luke 2:27",
-            "Luke 2:41",
-            "Luke 8:56"
-          ],
-          "lookupCandidates": [
-            "parents",
-            "parent",
-            "parente"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PA 'RENT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -1982,74 +1934,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BELONG'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "custom",
-          "count": 20,
-          "sampleRefs": [
-            "Genesis 31:35",
-            "Judges 11:39",
-            "1 Samuel 2:13",
-            "Ezra 3:4",
-            "Ezra 4:13"
-          ],
-          "lookupCandidates": [
-            "custom"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CUS'TOM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "persuaded",
-          "count": 20,
-          "sampleRefs": [
-            "2 Chronicles 18:2",
-            "Proverbs 25:15",
-            "Matthew 27:20",
-            "Luke 16:31",
-            "Luke 20:6"
-          ],
-          "lookupCandidates": [
-            "persuaded",
-            "persuad",
-            "persuade"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PERSUA'DE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "smell",
-          "count": 20,
-          "sampleRefs": [
-            "Genesis 27:27",
-            "Genesis 27:27",
-            "Genesis 27:27",
-            "Exodus 30:38",
-            "Leviticus 26:31"
-          ],
-          "lookupCandidates": [
-            "smell"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SMELL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3603,6 +3487,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BAP'TIST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "beam",
+          "count": 15,
+          "sampleRefs": [
+            "Judges 16:14",
+            "1 Samuel 17:7",
+            "2 Samuel 21:19",
+            "1 Kings 7:6",
+            "2 Kings 6:2"
+          ],
+          "lookupCandidates": [
+            "beam"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BEAM",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "brimstone",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 19:24",
+            "Deuteronomy 29:23",
+            "Job 18:15",
+            "Psalms 11:6",
+            "Isaiah 30:33"
+          ],
+          "lookupCandidates": [
+            "brimstone"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BRIM'STONE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "builders",
+          "count": 15,
+          "sampleRefs": [
+            "1 Kings 5:18",
+            "1 Kings 5:18",
+            "2 Kings 12:11",
+            "2 Kings 22:6",
+            "2 Chronicles 34:11"
+          ],
+          "lookupCandidates": [
+            "builders",
+            "builder",
+            "buildere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BUILD'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "catch",
+          "count": 15,
+          "sampleRefs": [
+            "Exodus 22:6",
+            "Judges 21:21",
+            "1 Kings 20:33",
+            "2 Kings 7:12",
+            "Psalms 10:9"
+          ],
+          "lookupCandidates": [
+            "catch"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CATCH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "clear",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 24:8",
+            "Genesis 24:41",
+            "Genesis 24:41",
+            "Genesis 44:16",
+            "Exodus 34:7"
+          ],
+          "lookupCandidates": [
+            "clear"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLEAR",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10378,30 +10374,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "partakers",
-        "count": 22,
-        "sampleRefs": [
-          "Matthew 23:30",
-          "Romans 15:27",
-          "1 Corinthians 9:12",
-          "1 Corinthians 9:13",
-          "1 Corinthians 10:17"
-        ],
-        "lookupCandidates": [
-          "partakers",
-          "partaker",
-          "partakere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PARTA'KER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "centurion",
         "count": 21,
         "sampleRefs": [
@@ -10421,30 +10393,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CENTU'RION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "parents",
-        "count": 21,
-        "sampleRefs": [
-          "Matthew 10:21",
-          "Mark 13:12",
-          "Luke 2:27",
-          "Luke 2:41",
-          "Luke 8:56"
-        ],
-        "lookupCandidates": [
-          "parents",
-          "parent",
-          "parente"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PA 'RENT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10469,74 +10417,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BELONG'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "custom",
-        "count": 20,
-        "sampleRefs": [
-          "Genesis 31:35",
-          "Judges 11:39",
-          "1 Samuel 2:13",
-          "Ezra 3:4",
-          "Ezra 4:13"
-        ],
-        "lookupCandidates": [
-          "custom"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CUS'TOM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "persuaded",
-        "count": 20,
-        "sampleRefs": [
-          "2 Chronicles 18:2",
-          "Proverbs 25:15",
-          "Matthew 27:20",
-          "Luke 16:31",
-          "Luke 20:6"
-        ],
-        "lookupCandidates": [
-          "persuaded",
-          "persuad",
-          "persuade"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PERSUA'DE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "smell",
-        "count": 20,
-        "sampleRefs": [
-          "Genesis 27:27",
-          "Genesis 27:27",
-          "Genesis 27:27",
-          "Exodus 30:38",
-          "Leviticus 26:31"
-        ],
-        "lookupCandidates": [
-          "smell"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SMELL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12090,6 +11970,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BAP'TIST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "beam",
+        "count": 15,
+        "sampleRefs": [
+          "Judges 16:14",
+          "1 Samuel 17:7",
+          "2 Samuel 21:19",
+          "1 Kings 7:6",
+          "2 Kings 6:2"
+        ],
+        "lookupCandidates": [
+          "beam"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BEAM",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "brimstone",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 19:24",
+          "Deuteronomy 29:23",
+          "Job 18:15",
+          "Psalms 11:6",
+          "Isaiah 30:33"
+        ],
+        "lookupCandidates": [
+          "brimstone"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BRIM'STONE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "builders",
+        "count": 15,
+        "sampleRefs": [
+          "1 Kings 5:18",
+          "1 Kings 5:18",
+          "2 Kings 12:11",
+          "2 Kings 22:6",
+          "2 Chronicles 34:11"
+        ],
+        "lookupCandidates": [
+          "builders",
+          "builder",
+          "buildere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BUILD'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "catch",
+        "count": 15,
+        "sampleRefs": [
+          "Exodus 22:6",
+          "Judges 21:21",
+          "1 Kings 20:33",
+          "2 Kings 7:12",
+          "Psalms 10:9"
+        ],
+        "lookupCandidates": [
+          "catch"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CATCH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "clear",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 24:8",
+          "Genesis 24:41",
+          "Genesis 24:41",
+          "Genesis 44:16",
+          "Exodus 34:7"
+        ],
+        "lookupCandidates": [
+          "clear"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLEAR",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

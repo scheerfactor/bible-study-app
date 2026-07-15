@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T11:43:38.811Z
+Generated: 2026-07-15T11:52:22.541Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -116,13 +116,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
-| partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
 | belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
-| custom | CUS'TOM | 20 | ocr_full_import_needs_spot_review |
-| persuaded | PERSUA'DE | 20 | ocr_full_import_needs_spot_review |
-| smell | SMELL | 20 | ocr_full_import_needs_spot_review |
 | ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
 | conspired | CONSPI'RE | 19 | ocr_full_import_needs_spot_review |
 | descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | depths | DEPTH | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
+| filthy | FILTH'Y | 17 | ocr_full_import_needs_spot_review |
+| frankincense | FRANKIN'CENSE | 17 | ocr_full_import_needs_spot_review |
+| freewill | FREEWILL' | 17 | ocr_full_import_needs_spot_review |
+| ham | HAM | 17 | ocr_full_import_needs_spot_review |
+| health | HEALTH | 17 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
