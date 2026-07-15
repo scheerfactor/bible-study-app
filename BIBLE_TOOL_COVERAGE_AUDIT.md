@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T08:21:56.922Z
+Generated: 2026-07-15T08:52:12.945Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -118,7 +118,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
 | dogs | DOG | 24 | ocr_full_import_needs_spot_review |
-| lusts | LUST | 24 | ocr_full_import_needs_spot_review |
 | wax | WAX | 24 | ocr_full_import_needs_spot_review |
 | ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
 | jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
@@ -132,16 +131,17 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
 | conspired | CONSPI'RE | 19 | ocr_full_import_needs_spot_review |
 | descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
-| force | FORCE | 19 | ocr_full_import_needs_spot_review |
-| herb | HERB | 19 | ocr_full_import_needs_spot_review |
 | instructed | INSTRUCT' | 19 | ocr_full_import_needs_spot_review |
-| kindle | KIN'DLE | 19 | ocr_full_import_needs_spot_review |
-| league | LEAGUE | 19 | ocr_full_import_needs_spot_review |
-| lust | LUST | 19 | ocr_full_import_needs_spot_review |
 | magnify | MAGNIFY | 19 | ocr_full_import_needs_spot_review |
 | murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
 | overthrow | OVERTHROW | 19 | ocr_full_import_needs_spot_review |
 | pitch | PITCH | 19 | ocr_full_import_needs_spot_review |
+| suck | SUCK | 19 | ocr_full_import_needs_spot_review |
+| uprightness | UPRIGHTNESS | 19 | ocr_full_import_needs_spot_review |
+| bad | BAD | 18 | ocr_full_import_needs_spot_review |
+| base | BASE | 18 | ocr_full_import_needs_spot_review |
+| bathe | BATHE | 18 | ocr_full_import_needs_spot_review |
+| black | BLACK | 18 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

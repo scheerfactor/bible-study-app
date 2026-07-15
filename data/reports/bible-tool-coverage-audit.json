@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T08:21:56.922Z",
+    "generated_at": "2026-07-15T08:52:12.945Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60181,
+      "entries": 60186,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1939,30 +1939,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "lusts",
-          "count": 24,
-          "sampleRefs": [
-            "Mark 4:19",
-            "John 8:44",
-            "Romans 1:24",
-            "Romans 6:12",
-            "Romans 13:14"
-          ],
-          "lookupCandidates": [
-            "lusts",
-            "lust",
-            "luste"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LUST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wax",
           "count": 24,
           "sampleRefs": [
@@ -2267,50 +2243,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "force",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 31:31",
-            "Deuteronomy 22:25",
-            "Deuteronomy 34:7",
-            "1 Samuel 2:16",
-            "2 Samuel 13:12"
-          ],
-          "lookupCandidates": [
-            "force"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FORCE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "herb",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 1:11",
-            "Genesis 1:12",
-            "Genesis 1:29",
-            "Genesis 1:30",
-            "Genesis 2:5"
-          ],
-          "lookupCandidates": [
-            "herb"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HERB",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "instructed",
           "count": 19,
           "sampleRefs": [
@@ -2332,72 +2264,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "INSTRUCT'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "kindle",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 35:3",
-            "Proverbs 26:21",
-            "Isaiah 9:18",
-            "Isaiah 10:16",
-            "Isaiah 30:33"
-          ],
-          "lookupCandidates": [
-            "kindle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KIN'DLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "league",
-          "count": 19,
-          "sampleRefs": [
-            "Joshua 9:6",
-            "Joshua 9:7",
-            "Joshua 9:11",
-            "Joshua 9:15",
-            "Joshua 9:16"
-          ],
-          "lookupCandidates": [
-            "league"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LEAGUE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lust",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 15:9",
-            "Psalms 78:18",
-            "Psalms 78:30",
-            "Psalms 81:12",
-            "Proverbs 6:25"
-          ],
-          "lookupCandidates": [
-            "lust"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LUST",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2735,30 +2601,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FIFTEE'NTH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "herbs",
-          "count": 18,
-          "sampleRefs": [
-            "Exodus 10:15",
-            "Exodus 12:8",
-            "Numbers 9:11",
-            "Deuteronomy 11:10",
-            "1 Kings 21:2"
-          ],
-          "lookupCandidates": [
-            "herbs",
-            "herb",
-            "herbe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "HERB",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3618,6 +3460,162 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ACCORD'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "accuse",
+          "count": 16,
+          "sampleRefs": [
+            "Proverbs 30:10",
+            "Matthew 12:10",
+            "Mark 3:2",
+            "Luke 3:14",
+            "Luke 11:54"
+          ],
+          "lookupCandidates": [
+            "accuse"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ACCU'SE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "although",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 13:17",
+            "Joshua 22:17",
+            "2 Samuel 23:5",
+            "2 Samuel 23:5",
+            "1 Kings 20:5"
+          ],
+          "lookupCandidates": [
+            "although"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ALTHO'UGH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bald",
+          "count": 16,
+          "sampleRefs": [
+            "Leviticus 11:22",
+            "Leviticus 13:40",
+            "Leviticus 13:41",
+            "Leviticus 13:42",
+            "Leviticus 13:42"
+          ],
+          "lookupCandidates": [
+            "bald"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BALD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bases",
+          "count": 16,
+          "sampleRefs": [
+            "1 Kings 7:27",
+            "1 Kings 7:28",
+            "1 Kings 7:37",
+            "1 Kings 7:38",
+            "1 Kings 7:39"
+          ],
+          "lookupCandidates": [
+            "bases",
+            "bas",
+            "base"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BASE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "beard",
+          "count": 16,
+          "sampleRefs": [
+            "Leviticus 13:29",
+            "Leviticus 13:30",
+            "Leviticus 14:9",
+            "Leviticus 19:27",
+            "Leviticus 21:5"
+          ],
+          "lookupCandidates": [
+            "beard"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BEARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bloody",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 4:25",
+            "Exodus 4:26",
+            "2 Samuel 16:7",
+            "2 Samuel 16:8",
+            "2 Samuel 21:1"
+          ],
+          "lookupCandidates": [
+            "bloody"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BLOOD'Y",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "boil",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 9:9",
+            "Exodus 9:10",
+            "Exodus 9:11",
+            "Leviticus 8:31",
+            "Leviticus 13:18"
+          ],
+          "lookupCandidates": [
+            "boil"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BOIL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10441,30 +10439,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "lusts",
-        "count": 24,
-        "sampleRefs": [
-          "Mark 4:19",
-          "John 8:44",
-          "Romans 1:24",
-          "Romans 6:12",
-          "Romans 13:14"
-        ],
-        "lookupCandidates": [
-          "lusts",
-          "lust",
-          "luste"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LUST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wax",
         "count": 24,
         "sampleRefs": [
@@ -10769,50 +10743,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "force",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 31:31",
-          "Deuteronomy 22:25",
-          "Deuteronomy 34:7",
-          "1 Samuel 2:16",
-          "2 Samuel 13:12"
-        ],
-        "lookupCandidates": [
-          "force"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FORCE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "herb",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 1:11",
-          "Genesis 1:12",
-          "Genesis 1:29",
-          "Genesis 1:30",
-          "Genesis 2:5"
-        ],
-        "lookupCandidates": [
-          "herb"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HERB",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "instructed",
         "count": 19,
         "sampleRefs": [
@@ -10834,72 +10764,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "INSTRUCT'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "kindle",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 35:3",
-          "Proverbs 26:21",
-          "Isaiah 9:18",
-          "Isaiah 10:16",
-          "Isaiah 30:33"
-        ],
-        "lookupCandidates": [
-          "kindle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KIN'DLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "league",
-        "count": 19,
-        "sampleRefs": [
-          "Joshua 9:6",
-          "Joshua 9:7",
-          "Joshua 9:11",
-          "Joshua 9:15",
-          "Joshua 9:16"
-        ],
-        "lookupCandidates": [
-          "league"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LEAGUE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lust",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 15:9",
-          "Psalms 78:18",
-          "Psalms 78:30",
-          "Psalms 81:12",
-          "Proverbs 6:25"
-        ],
-        "lookupCandidates": [
-          "lust"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LUST",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11237,30 +11101,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FIFTEE'NTH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "herbs",
-        "count": 18,
-        "sampleRefs": [
-          "Exodus 10:15",
-          "Exodus 12:8",
-          "Numbers 9:11",
-          "Deuteronomy 11:10",
-          "1 Kings 21:2"
-        ],
-        "lookupCandidates": [
-          "herbs",
-          "herb",
-          "herbe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "HERB",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12120,6 +11960,162 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ACCORD'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "accuse",
+        "count": 16,
+        "sampleRefs": [
+          "Proverbs 30:10",
+          "Matthew 12:10",
+          "Mark 3:2",
+          "Luke 3:14",
+          "Luke 11:54"
+        ],
+        "lookupCandidates": [
+          "accuse"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ACCU'SE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "although",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 13:17",
+          "Joshua 22:17",
+          "2 Samuel 23:5",
+          "2 Samuel 23:5",
+          "1 Kings 20:5"
+        ],
+        "lookupCandidates": [
+          "although"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ALTHO'UGH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bald",
+        "count": 16,
+        "sampleRefs": [
+          "Leviticus 11:22",
+          "Leviticus 13:40",
+          "Leviticus 13:41",
+          "Leviticus 13:42",
+          "Leviticus 13:42"
+        ],
+        "lookupCandidates": [
+          "bald"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BALD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bases",
+        "count": 16,
+        "sampleRefs": [
+          "1 Kings 7:27",
+          "1 Kings 7:28",
+          "1 Kings 7:37",
+          "1 Kings 7:38",
+          "1 Kings 7:39"
+        ],
+        "lookupCandidates": [
+          "bases",
+          "bas",
+          "base"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BASE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "beard",
+        "count": 16,
+        "sampleRefs": [
+          "Leviticus 13:29",
+          "Leviticus 13:30",
+          "Leviticus 14:9",
+          "Leviticus 19:27",
+          "Leviticus 21:5"
+        ],
+        "lookupCandidates": [
+          "beard"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BEARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bloody",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 4:25",
+          "Exodus 4:26",
+          "2 Samuel 16:7",
+          "2 Samuel 16:8",
+          "2 Samuel 21:1"
+        ],
+        "lookupCandidates": [
+          "bloody"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BLOOD'Y",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "boil",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 9:9",
+          "Exodus 9:10",
+          "Exodus 9:11",
+          "Leviticus 8:31",
+          "Leviticus 13:18"
+        ],
+        "lookupCandidates": [
+          "boil"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BOIL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
