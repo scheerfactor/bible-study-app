@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T05:21:59.480Z",
+    "generated_at": "2026-07-15T05:52:11.612Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60151,
+      "entries": 60156,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2123,120 +2123,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "condemned",
-          "count": 21,
-          "sampleRefs": [
-            "2 Chronicles 36:3",
-            "Job 32:3",
-            "Psalms 109:7",
-            "Amos 2:8",
-            "Matthew 12:7"
-          ],
-          "lookupCandidates": [
-            "condemned",
-            "condemn",
-            "condemne"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CONDEMNED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "corruption",
-          "count": 21,
-          "sampleRefs": [
-            "Leviticus 22:25",
-            "2 Kings 23:13",
-            "Job 17:14",
-            "Psalms 16:10",
-            "Psalms 49:9"
-          ],
-          "lookupCandidates": [
-            "corruption"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CORRUP'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "equal",
-          "count": 21,
-          "sampleRefs": [
-            "Job 28:17",
-            "Job 28:19",
-            "Psalms 17:2",
-            "Psalms 55:13",
-            "Proverbs 26:7"
-          ],
-          "lookupCandidates": [
-            "equal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "E'QUAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "keeper",
-          "count": 21,
-          "sampleRefs": [
-            "Genesis 4:2",
-            "Genesis 4:9",
-            "Genesis 39:21",
-            "Genesis 39:22",
-            "Genesis 39:23"
-          ],
-          "lookupCandidates": [
-            "keeper"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KEEPER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "keepers",
-          "count": 21,
-          "sampleRefs": [
-            "2 Kings 11:5",
-            "2 Kings 22:4",
-            "2 Kings 23:4",
-            "2 Kings 25:18",
-            "1 Chronicles 9:19"
-          ],
-          "lookupCandidates": [
-            "keepers",
-            "keeper",
-            "keepere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KEEPER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "parents",
           "count": 21,
           "sampleRefs": [
@@ -2258,28 +2144,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PA 'RENT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "release",
-          "count": 21,
-          "sampleRefs": [
-            "Deuteronomy 15:1",
-            "Deuteronomy 15:2",
-            "Deuteronomy 15:2",
-            "Deuteronomy 15:2",
-            "Deuteronomy 15:3"
-          ],
-          "lookupCandidates": [
-            "release"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "RELE'ASE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3617,6 +3481,141 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PRESENT'ED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "standard",
+          "count": 18,
+          "sampleRefs": [
+            "Numbers 1:52",
+            "Numbers 2:2",
+            "Numbers 2:3",
+            "Numbers 2:10",
+            "Numbers 2:18"
+          ],
+          "lookupCandidates": [
+            "standard"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STAND'ARD",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "tempest",
+          "count": 18,
+          "sampleRefs": [
+            "Job 9:17",
+            "Job 27:20",
+            "Psalms 11:6",
+            "Psalms 55:8",
+            "Psalms 83:15"
+          ],
+          "lookupCandidates": [
+            "tempest",
+            "temp",
+            "tempe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TEM'PEST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wages",
+          "count": 18,
+          "sampleRefs": [
+            "Genesis 29:15",
+            "Genesis 30:28",
+            "Genesis 31:7",
+            "Genesis 31:8",
+            "Genesis 31:41"
+          ],
+          "lookupCandidates": [
+            "wages",
+            "wage"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WAGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "account",
+          "count": 17,
+          "sampleRefs": [
+            "2 Kings 12:4",
+            "1 Chronicles 27:24",
+            "2 Chronicles 26:11",
+            "Job 33:13",
+            "Psalms 144:3"
+          ],
+          "lookupCandidates": [
+            "account"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ACCOUNT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "belial",
+          "count": 17,
+          "sampleRefs": [
+            "Deuteronomy 13:13",
+            "Judges 19:22",
+            "Judges 20:13",
+            "1 Samuel 1:16",
+            "1 Samuel 2:12"
+          ],
+          "lookupCandidates": [
+            "belial"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BE'LIAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "bid",
+          "count": 17,
+          "sampleRefs": [
+            "Numbers 15:38",
+            "Joshua 6:10",
+            "1 Samuel 9:27",
+            "2 Samuel 2:26",
+            "2 Kings 4:24"
+          ],
+          "lookupCandidates": [
+            "bid"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BID",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10624,120 +10623,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "condemned",
-        "count": 21,
-        "sampleRefs": [
-          "2 Chronicles 36:3",
-          "Job 32:3",
-          "Psalms 109:7",
-          "Amos 2:8",
-          "Matthew 12:7"
-        ],
-        "lookupCandidates": [
-          "condemned",
-          "condemn",
-          "condemne"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CONDEMNED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "corruption",
-        "count": 21,
-        "sampleRefs": [
-          "Leviticus 22:25",
-          "2 Kings 23:13",
-          "Job 17:14",
-          "Psalms 16:10",
-          "Psalms 49:9"
-        ],
-        "lookupCandidates": [
-          "corruption"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CORRUP'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "equal",
-        "count": 21,
-        "sampleRefs": [
-          "Job 28:17",
-          "Job 28:19",
-          "Psalms 17:2",
-          "Psalms 55:13",
-          "Proverbs 26:7"
-        ],
-        "lookupCandidates": [
-          "equal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "E'QUAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "keeper",
-        "count": 21,
-        "sampleRefs": [
-          "Genesis 4:2",
-          "Genesis 4:9",
-          "Genesis 39:21",
-          "Genesis 39:22",
-          "Genesis 39:23"
-        ],
-        "lookupCandidates": [
-          "keeper"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KEEPER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "keepers",
-        "count": 21,
-        "sampleRefs": [
-          "2 Kings 11:5",
-          "2 Kings 22:4",
-          "2 Kings 23:4",
-          "2 Kings 25:18",
-          "1 Chronicles 9:19"
-        ],
-        "lookupCandidates": [
-          "keepers",
-          "keeper",
-          "keepere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KEEPER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "parents",
         "count": 21,
         "sampleRefs": [
@@ -10759,28 +10644,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PA 'RENT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "release",
-        "count": 21,
-        "sampleRefs": [
-          "Deuteronomy 15:1",
-          "Deuteronomy 15:2",
-          "Deuteronomy 15:2",
-          "Deuteronomy 15:2",
-          "Deuteronomy 15:3"
-        ],
-        "lookupCandidates": [
-          "release"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "RELE'ASE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12118,6 +11981,141 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PRESENT'ED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "standard",
+        "count": 18,
+        "sampleRefs": [
+          "Numbers 1:52",
+          "Numbers 2:2",
+          "Numbers 2:3",
+          "Numbers 2:10",
+          "Numbers 2:18"
+        ],
+        "lookupCandidates": [
+          "standard"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STAND'ARD",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "tempest",
+        "count": 18,
+        "sampleRefs": [
+          "Job 9:17",
+          "Job 27:20",
+          "Psalms 11:6",
+          "Psalms 55:8",
+          "Psalms 83:15"
+        ],
+        "lookupCandidates": [
+          "tempest",
+          "temp",
+          "tempe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TEM'PEST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wages",
+        "count": 18,
+        "sampleRefs": [
+          "Genesis 29:15",
+          "Genesis 30:28",
+          "Genesis 31:7",
+          "Genesis 31:8",
+          "Genesis 31:41"
+        ],
+        "lookupCandidates": [
+          "wages",
+          "wage"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WAGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "account",
+        "count": 17,
+        "sampleRefs": [
+          "2 Kings 12:4",
+          "1 Chronicles 27:24",
+          "2 Chronicles 26:11",
+          "Job 33:13",
+          "Psalms 144:3"
+        ],
+        "lookupCandidates": [
+          "account"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ACCOUNT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "belial",
+        "count": 17,
+        "sampleRefs": [
+          "Deuteronomy 13:13",
+          "Judges 19:22",
+          "Judges 20:13",
+          "1 Samuel 1:16",
+          "1 Samuel 2:12"
+        ],
+        "lookupCandidates": [
+          "belial"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BE'LIAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "bid",
+        "count": 17,
+        "sampleRefs": [
+          "Numbers 15:38",
+          "Joshua 6:10",
+          "1 Samuel 9:27",
+          "2 Samuel 2:26",
+          "2 Kings 4:24"
+        ],
+        "lookupCandidates": [
+          "bid"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BID",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

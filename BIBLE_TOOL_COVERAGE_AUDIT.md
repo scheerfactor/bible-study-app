@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T05:21:59.480Z
+Generated: 2026-07-15T05:52:11.612Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -126,13 +126,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
 | partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| condemned | CONDEMNED | 21 | ocr_full_import_needs_spot_review |
-| corruption | CORRUP'TION | 21 | ocr_full_import_needs_spot_review |
-| equal | E'QUAL | 21 | ocr_full_import_needs_spot_review |
-| keeper | KEEPER | 21 | ocr_full_import_needs_spot_review |
-| keepers | KEEPER | 21 | ocr_full_import_needs_spot_review |
 | parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
-| release | RELE'ASE | 21 | ocr_full_import_needs_spot_review |
 | shoot | SHOOT | 21 | ocr_full_import_needs_spot_review |
 | sort | SORT | 21 | ocr_full_import_needs_spot_review |
 | sum | SUM | 21 | ocr_full_import_needs_spot_review |
@@ -142,6 +136,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
 | bottom | BOT'TOM | 20 | ocr_full_import_needs_spot_review |
 | care | CARE | 20 | ocr_full_import_needs_spot_review |
+| eden | E'DEN | 20 | ocr_full_import_needs_spot_review |
+| elect | ELECT' | 20 | ocr_full_import_needs_spot_review |
+| fiery | FI'ERY | 20 | ocr_full_import_needs_spot_review |
+| flower | FLOWER | 20 | ocr_full_import_needs_spot_review |
+| foolishness | FOOL'ISHNESS | 20 | ocr_full_import_needs_spot_review |
+| persecuted | PER'SECUTED | 20 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
