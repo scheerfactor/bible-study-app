@@ -1,10 +1,14 @@
 {
-  "generated_at": "2026-07-15T01:29:48.133Z",
-  "status": "ready_with_documented_depth_gaps",
+  "generated_at": "2026-07-15T01:55:33.273Z",
+  "status": "ready",
   "assertions": {
     "kjvChapters": true,
     "kjvVerses": true,
+    "dictionaryHelpEveryWord": true,
+    "cleanDictionaryFallbacks": true,
     "strongsEveryChapter": true,
+    "strongsEveryVerse": true,
+    "crossWireStrongWordMappings": true,
     "strongsLexiconCards": true,
     "tskEveryChapter": true,
     "tenImmediateFullBookCommentaries": true
@@ -17,63 +21,11 @@
   "webster1828": {
     "wordsWithDefinition": 847,
     "coveragePercent": 93.5,
-    "reviewedOverlayWords": 676,
-    "wordsWithBibleDictionaryFallback": 59,
-    "unresolvedWords": [
-      {
-        "word": "assyrian",
-        "count": 2,
-        "sampleRefs": [
-          "Hosea 5:13",
-          "Hosea 11:5"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "hasReviewedBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "assyrians",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 12:1"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "hasReviewedBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "firstripe",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:10"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "hasReviewedBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      },
-      {
-        "word": "tyrus",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 9:13"
-        ],
-        "hasWebster": false,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": false,
-        "hasReviewedBibleDictionaryHelp": false,
-        "dirty": false,
-        "sourceHeadword": null
-      }
-    ],
+    "wordsWithDictionaryHelp": 906,
+    "combinedLookupCoveragePercent": 100,
+    "reviewedOverlayWords": 678,
+    "wordsWithBibleDictionaryFallback": 61,
+    "unresolvedWords": [],
     "dirtyBaseEntries": [],
     "contextualFallbackEntries": [
       {
@@ -88,32 +40,6 @@
         "hasReviewedBibleDictionaryHelp": true,
         "dirty": true,
         "sourceHeadword": "AV'EN"
-      },
-      {
-        "word": "fountain",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 13:15"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "hasReviewedBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "FOUNT' AIN"
-      },
-      {
-        "word": "lamb",
-        "count": 1,
-        "sampleRefs": [
-          "Hosea 4:16"
-        ],
-        "hasWebster": true,
-        "reviewedOverlay": false,
-        "hasBibleDictionaryHelp": true,
-        "hasReviewedBibleDictionaryHelp": true,
-        "dirty": true,
-        "sourceHeadword": "LAMB"
       },
       {
         "word": "tabor",
@@ -133,8 +59,11 @@
   "strongs": {
     "chapters": 14,
     "verses": 197,
-    "rows": 1251,
-    "mappedNumbers": 285,
+    "rows": 4807,
+    "uniqueMappingRows": 4807,
+    "mappedTokenPositions": 4807,
+    "expectedCrossWireStrongRows": 4807,
+    "mappedNumbers": 681,
     "missingLexiconNumbers": []
   },
   "tsk": {
@@ -143,10 +72,33 @@
     "rows": 403
   },
   "commentary": {
-    "sets": 13,
-    "fullBookSets": 11,
-    "immediateFullBookSets": 11,
+    "sets": 14,
+    "fullBookSets": 12,
+    "immediateFullBookSets": 12,
     "immediate": [
+      {
+        "file": "a-c-gaebelein-reviewed-hosea-commentary.json",
+        "author": "A. C. Gaebelein",
+        "entries": 14,
+        "coveredChapters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "fullBook": true,
+        "immediate": true
+      },
       {
         "file": "adam-clarke-reviewed-completion-prophets-commentary.json",
         "author": "Adam Clarke",

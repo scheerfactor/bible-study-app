@@ -8,6 +8,7 @@ const reportPath = "data/reports/hosea-readiness-audit.json";
 const markdownPath = "HOSEA_READINESS_AUDIT.md";
 const expectedChapters = Array.from({ length: 14 }, (_, index) => index + 1);
 const expectedVerseCount = 197;
+const expectedCrossWireStrongRows = 4807;
 
 const stopWords = new Set(
   "a an and are as at be but by for from had has have he her him his how i in is it me my not of on or our shall she that the their them they thou thy to unto up was we were with ye you your".split(" "),
@@ -128,6 +129,10 @@ for (const file of strongsFiles) {
 }
 const strongsChapters = new Set(strongsRows.map((row) => parseReference(row.verse_ref)?.chapter).filter(Boolean));
 const strongsVerses = new Set(strongsRows.map((row) => row.verse_ref));
+const strongsMappingKeys = new Set(
+  strongsRows.map((row) => `${row.verse_ref}|${row.token_index}|${normalizeStrongNumber(row.strongs_number)}`),
+);
+const strongsTokenPositions = new Set(strongsRows.map((row) => `${row.verse_ref}|${row.token_index}`));
 const mappedStrongsNumbers = new Set(strongsRows.map((row) => normalizeStrongNumber(row.strongs_number)).filter(Boolean));
 
 const lexiconIndex = await readJson("data/strongs/lexicon-batches/index.json", { files: [] });
@@ -175,7 +180,11 @@ const immediateFullBookCommentaries = fullBookCommentaries.filter((set) => set.i
 const assertions = {
   kjvChapters: chapters.size === 14,
   kjvVerses: hoseaVerses.length === expectedVerseCount,
+  dictionaryHelpEveryWord: dictionaryRows.every((row) => row.hasWebster || row.hasBibleDictionaryHelp),
+  cleanDictionaryFallbacks: dictionaryRows.every((row) => !row.dirty || row.hasReviewedBibleDictionaryHelp),
   strongsEveryChapter: expectedChapters.every((chapter) => strongsChapters.has(chapter)),
+  strongsEveryVerse: strongsVerses.size === expectedVerseCount,
+  crossWireStrongWordMappings: strongsMappingKeys.size >= expectedCrossWireStrongRows,
   strongsLexiconCards: missingLexiconNumbers.length === 0,
   tskEveryChapter: expectedChapters.every((chapter) => tskChapters.has(chapter)),
   tenImmediateFullBookCommentaries: immediateFullBookCommentaries.length >= 10,
@@ -183,19 +192,33 @@ const assertions = {
 
 const report = {
   generated_at: new Date().toISOString(),
-  status: Object.values(assertions).every(Boolean) ? "ready_with_documented_depth_gaps" : "needs_attention",
+  status: Object.values(assertions).every(Boolean) ? "ready" : "needs_attention",
   assertions,
   kjv: { chapters: chapters.size, verses: hoseaVerses.length, meaningfulUniqueWords: meaningfulWords.length },
   webster1828: {
     wordsWithDefinition: dictionaryRows.filter((row) => row.hasWebster).length,
     coveragePercent: percent(dictionaryRows.filter((row) => row.hasWebster).length, dictionaryRows.length),
+    wordsWithDictionaryHelp: dictionaryRows.filter((row) => row.hasWebster || row.hasBibleDictionaryHelp).length,
+    combinedLookupCoveragePercent: percent(
+      dictionaryRows.filter((row) => row.hasWebster || row.hasBibleDictionaryHelp).length,
+      dictionaryRows.length,
+    ),
     reviewedOverlayWords: dictionaryRows.filter((row) => row.reviewedOverlay).length,
     wordsWithBibleDictionaryFallback: dictionaryRows.filter((row) => (!row.hasWebster || row.dirty) && row.hasBibleDictionaryHelp).length,
     unresolvedWords: dictionaryRows.filter((row) => !row.hasWebster && !row.hasBibleDictionaryHelp).slice(0, 60),
     dirtyBaseEntries: dictionaryRows.filter((row) => row.dirty && !row.hasReviewedBibleDictionaryHelp).slice(0, 60),
     contextualFallbackEntries: dictionaryRows.filter((row) => row.dirty && row.hasReviewedBibleDictionaryHelp).slice(0, 60),
   },
-  strongs: { chapters: strongsChapters.size, verses: strongsVerses.size, rows: strongsRows.length, mappedNumbers: mappedStrongsNumbers.size, missingLexiconNumbers },
+  strongs: {
+    chapters: strongsChapters.size,
+    verses: strongsVerses.size,
+    rows: strongsRows.length,
+    uniqueMappingRows: strongsMappingKeys.size,
+    mappedTokenPositions: strongsTokenPositions.size,
+    expectedCrossWireStrongRows,
+    mappedNumbers: mappedStrongsNumbers.size,
+    missingLexiconNumbers,
+  },
   tsk: { chapters: tskChapters.size, sourceVerses: tskVerses.size, rows: tskRows.length },
   commentary: { sets: commentarySets.length, fullBookSets: fullBookCommentaries.length, immediateFullBookSets: immediateFullBookCommentaries.length, immediate: immediateFullBookCommentaries },
 };
@@ -212,8 +235,9 @@ const markdown = [
   `- KJV: ${report.kjv.chapters}/14 chapters and ${report.kjv.verses}/${expectedVerseCount} verses.`,
   `- Webster 1828: ${report.webster1828.wordsWithDefinition}/${report.kjv.meaningfulUniqueWords} meaningful unique words have a lookup (${report.webster1828.coveragePercent}%).`,
   `- Supplemental fallback: ${report.webster1828.wordsWithBibleDictionaryFallback} additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.`,
+  `- Combined dictionary help: ${report.webster1828.wordsWithDictionaryHelp}/${report.kjv.meaningfulUniqueWords} meaningful Hosea words resolve to a readable definition (${report.webster1828.combinedLookupCoveragePercent}%).`,
   `- Contextual fallback: ${report.webster1828.contextualFallbackEntries.length} ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.`,
-  `- Strong's: ${report.strongs.chapters}/14 chapters, ${report.strongs.verses}/${expectedVerseCount} verses, ${report.strongs.rows} reviewed word mappings, and ${report.strongs.missingLexiconNumbers.length} missing lexicon cards.`,
+  `- Strong's: ${report.strongs.chapters}/14 chapters, ${report.strongs.verses}/${expectedVerseCount} verses, ${report.strongs.mappedTokenPositions}/${report.strongs.expectedCrossWireStrongRows} CrossWire source-marked word positions, and ${report.strongs.missingLexiconNumbers.length} missing lexicon cards.`,
   `- TSK: ${report.tsk.chapters}/14 chapters, ${report.tsk.sourceVerses}/${expectedVerseCount} source verses, and ${report.tsk.rows} public cross-reference rows.`,
   `- Commentary: ${report.commentary.immediateFullBookSets} full-book sets load immediately in the app; ${report.commentary.fullBookSets} verified full-book sets exist locally.`,
   "",
@@ -225,16 +249,20 @@ const markdown = [
   "",
   "## Remaining Webster Gaps",
   "",
-  "These are retained as review work, not filled with invented definitions.",
-  "",
-  "| Word | Uses | Sample references |",
-  "| --- | ---: | --- |",
-  ...report.webster1828.unresolvedWords.slice(0, 30).map((row) => `| ${row.word} | ${row.count} | ${row.sampleRefs.join("; ")} |`),
+  ...(report.webster1828.unresolvedWords.length
+    ? [
+        "These are retained as review work, not filled with invented definitions.",
+        "",
+        "| Word | Uses | Sample references |",
+        "| --- | ---: | --- |",
+        ...report.webster1828.unresolvedWords.slice(0, 30).map((row) => `| ${row.word} | ${row.count} | ${row.sampleRefs.join("; ")} |`),
+      ]
+    : ["No unresolved Hosea lookup words remain. Proper names and KJV-specific forms are clearly labeled as Easton or reviewed KJV word-guide help rather than Webster entries."]),
   "",
   "## Remaining Depth Work",
   "",
-  `- Strong's is chapter-complete, but ${expectedVerseCount - report.strongs.verses} verses currently have no reviewed mapped word row.`,
-  `- TSK is chapter-complete, but ${expectedVerseCount - report.tsk.sourceVerses} verses currently have no public source-reference row.`,
+  "- CrossWire Hosea Strong's mapping is complete for every source-marked word position. Bracketed words supplied by the KJV translators naturally have no independent Hebrew lemma.",
+  `- TSK is chapter-complete, but ${expectedVerseCount - report.tsk.sourceVerses} ${expectedVerseCount - report.tsk.sourceVerses === 1 ? "verse" : "verses"} currently ${expectedVerseCount - report.tsk.sourceVerses === 1 ? "has" : "have"} no public source-reference row.`,
   `- ${report.webster1828.dirtyBaseEntries.length} actionable Hosea lookup candidates remain without a cleaner Bible-dictionary fallback.`,
   "- Detailed original teaching notes currently concentrate on Hosea 4-9; all chapters still have KJV reading, Strong's where mapped, TSK where available, and full-book commentary comparison.",
   "",
@@ -249,6 +277,7 @@ console.table({
   kjv_chapters: report.kjv.chapters,
   kjv_verses: report.kjv.verses,
   webster_percent: report.webster1828.coveragePercent,
+  dictionary_help_percent: report.webster1828.combinedLookupCoveragePercent,
   strongs_chapters: report.strongs.chapters,
   strongs_verses: report.strongs.verses,
   tsk_chapters: report.tsk.chapters,

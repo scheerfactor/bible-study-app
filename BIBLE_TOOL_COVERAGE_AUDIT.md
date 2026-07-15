@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T01:29:47.020Z
+Generated: 2026-07-15T01:50:55.116Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -9,9 +9,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
 - Webster 1828: 7,827/12,454 meaningful KJV words have a lookup candidate (62.8%).
-- Combined word/topic lookup: 10,810/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.8%).
+- Combined word/topic lookup: 10,814/12,454 meaningful KJV words have Webster, Easton, or Nave help (86.8%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
-- Strong's KJV word mapping: 12,059/12,454 meaningful KJV words appear in reviewed mapping batches (96.8%).
+- Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
 - TSK: 6,376 public rows cover 1189/1189 chapters (100%).
 - TSK remaining chapter gaps: None.
@@ -112,11 +112,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Word | Webster Headword | Count | Review Status |
 | --- | --- | ---: | --- |
-| lamb | LAMB | 107 | ocr_full_import_needs_spot_review |
-| lambs | LAMB | 81 | ocr_full_import_needs_spot_review |
 | plain | PLAIN | 75 | ocr_full_import_needs_spot_review |
 | candlestick | CAN'DLE-STICK | 41 | ocr_full_import_needs_spot_review |
-| fountain | FOUNT' AIN | 33 | ocr_full_import_needs_spot_review |
 | firstfruits | FIRST-FRUITS | 32 | ocr_full_import_needs_spot_review |
 | hateth | HAT | 31 | ocr_full_import_needs_spot_review |
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
@@ -142,6 +139,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | basket | B'ASKET | 23 | ocr_full_import_needs_spot_review |
 | beautiful | BEAU'TIFUL | 23 | ocr_full_import_needs_spot_review |
 | estimation | ESTIMA'TION | 23 | ocr_full_import_needs_spot_review |
+| guide | GUIDE | 23 | ocr_full_import_needs_spot_review |
+| jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
+| leaven | LEAVEN | 23 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
@@ -156,7 +156,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | 2 Thessalonians | 3 | 3 | 100% | 47 | 994 |
 | Haggai | 2 | 2 | 100% | 38 | 1045 |
 | Nahum | 3 | 3 | 100% | 47 | 1174 |
-| Hosea | 14 | 14 | 100% | 197 | 1251 |
 | Jonah | 4 | 4 | 100% | 48 | 1252 |
 | Habakkuk | 3 | 3 | 100% | 56 | 1352 |
 | 2 Peter | 3 | 3 | 100% | 61 | 1505 |
@@ -167,6 +166,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Colossians | 4 | 4 | 100% | 95 | 1840 |
 | Joel | 3 | 3 | 100% | 73 | 1953 |
 | Philippians | 4 | 4 | 100% | 104 | 2053 |
+| 1 Timothy | 6 | 6 | 100% | 112 | 2132 |
 
 ## Weakest TSK Books
 

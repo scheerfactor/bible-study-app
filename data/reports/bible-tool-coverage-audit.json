@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T01:29:47.020Z",
+    "generated_at": "2026-07-15T01:50:55.116Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60109,
+      "entries": 60111,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1801,52 +1801,6 @@
       ],
       "topUsedWordsNeedingCleanup": [
         {
-          "word": "lamb",
-          "count": 107,
-          "sampleRefs": [
-            "Genesis 22:7",
-            "Genesis 22:8",
-            "Exodus 12:3",
-            "Exodus 12:3",
-            "Exodus 12:4"
-          ],
-          "lookupCandidates": [
-            "lamb"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LAMB",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "lambs",
-          "count": 81,
-          "sampleRefs": [
-            "Genesis 21:28",
-            "Genesis 21:29",
-            "Genesis 21:30",
-            "Genesis 30:40",
-            "Exodus 29:38"
-          ],
-          "lookupCandidates": [
-            "lambs",
-            "lamb",
-            "lambe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "LAMB",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "plain",
           "count": 75,
           "sampleRefs": [
@@ -1888,28 +1842,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CAN'DLE-STICK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "fountain",
-          "count": 33,
-          "sampleRefs": [
-            "Genesis 16:7",
-            "Genesis 16:7",
-            "Leviticus 11:36",
-            "Leviticus 20:18",
-            "Leviticus 20:18"
-          ],
-          "lookupCandidates": [
-            "fountain"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FOUNT' AIN",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3601,16 +3533,82 @@
           "dirtyDefinition": true,
           "sourceHeadword": "PERSUA'DE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "roof",
+          "count": 20,
+          "sampleRefs": [
+            "Genesis 19:8",
+            "Deuteronomy 22:8",
+            "Joshua 2:6",
+            "Joshua 2:6",
+            "Joshua 2:8"
+          ],
+          "lookupCandidates": [
+            "roof"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ROOF",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "simple",
+          "count": 20,
+          "sampleRefs": [
+            "Psalms 19:7",
+            "Psalms 116:6",
+            "Psalms 119:130",
+            "Proverbs 1:4",
+            "Proverbs 1:22"
+          ],
+          "lookupCandidates": [
+            "simple"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SIM'PLE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stir",
+          "count": 20,
+          "sampleRefs": [
+            "Numbers 24:9",
+            "Job 17:8",
+            "Job 41:10",
+            "Psalms 35:23",
+            "Psalms 78:38"
+          ],
+          "lookupCandidates": [
+            "stir"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STIR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
     },
     "bibleDictionariesAndTopics": {
       "eastonEntries": 3883,
       "naveTopics": 4674,
-      "rareTermEntries": 25,
+      "rareTermEntries": 28,
       "meaningfulWordsWithEastonEntry": 4070,
       "meaningfulWordsWithNaveTopic": 3957,
-      "meaningfulWordsWithAnyStudyLookup": 10810,
+      "meaningfulWordsWithAnyStudyLookup": 10814,
       "combinedStudyLookupCoveragePercent": 86.8,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
@@ -4370,29 +4368,6 @@
             "sinneth",
             "sinn",
             "sinne"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "tyrus",
-          "count": 22,
-          "sampleRefs": [
-            "Jeremiah 25:22",
-            "Jeremiah 27:3",
-            "Jeremiah 47:4",
-            "Ezekiel 26:2",
-            "Ezekiel 26:3"
-          ],
-          "lookupCandidates": [
-            "tyrus",
-            "tyru"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -5410,6 +5385,28 @@
           "dirtyDefinition": false,
           "sourceHeadword": null,
           "reviewStatus": null
+        },
+        {
+          "word": "amorite",
+          "count": 14,
+          "sampleRefs": [
+            "Genesis 10:16",
+            "Genesis 14:13",
+            "Genesis 48:22",
+            "Exodus 33:2",
+            "Exodus 34:11"
+          ],
+          "lookupCandidates": [
+            "amorite"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
         }
       ]
     },
@@ -5420,14 +5417,14 @@
     },
     "strongs": {
       "lexiconEntries": 14296,
-      "mappingFiles": 65,
-      "mappingRows": 725733,
+      "mappingFiles": 66,
+      "mappingRows": 729289,
       "mappedBooks": 66,
       "mappedChapters": 1189,
       "mappedVerses": 31051,
-      "mappedUniqueKjvWords": 12429,
-      "meaningfulWordsWithMapping": 12059,
-      "meaningfulWordMappingCoveragePercent": 96.8,
+      "mappedUniqueKjvWords": 12447,
+      "meaningfulWordsWithMapping": 12076,
+      "meaningfulWordMappingCoveragePercent": 97,
       "weakestBooks": [
         {
           "book": "3 John",
@@ -5500,14 +5497,6 @@
           "chapterCoveragePercent": 100,
           "versesCovered": 47,
           "rows": 1174
-        },
-        {
-          "book": "Hosea",
-          "chaptersCovered": 14,
-          "totalChapters": 14,
-          "chapterCoveragePercent": 100,
-          "versesCovered": 197,
-          "rows": 1251
         },
         {
           "book": "Jonah",
@@ -5588,6 +5577,14 @@
           "chapterCoveragePercent": 100,
           "versesCovered": 104,
           "rows": 2053
+        },
+        {
+          "book": "1 Timothy",
+          "chaptersCovered": 6,
+          "totalChapters": 6,
+          "chapterCoveragePercent": 100,
+          "versesCovered": 112,
+          "rows": 2132
         }
       ],
       "topUsedWordsWithoutMapping": [
@@ -6224,15 +6221,6 @@
           ]
         },
         {
-          "word": "hosea",
-          "count": 3,
-          "sampleRefs": [
-            "Hosea 1:1",
-            "Hosea 1:2",
-            "Hosea 1:2"
-          ]
-        },
-        {
           "word": "lodebar",
           "count": 3,
           "sampleRefs": [
@@ -6375,6 +6363,14 @@
           "sampleRefs": [
             "Numbers 33:31",
             "Numbers 33:32"
+          ]
+        },
+        {
+          "word": "bethbarah",
+          "count": 2,
+          "sampleRefs": [
+            "Judges 7:24",
+            "Judges 7:24"
           ]
         }
       ]
@@ -7663,7 +7659,7 @@
       "totalChapters": 14,
       "chapterCoveragePercent": 100,
       "versesCovered": 197,
-      "rows": 1251
+      "rows": 4807
     },
     {
       "book": "Joel",
@@ -10287,52 +10283,6 @@
     ],
     "topDictionaryDirty": [
       {
-        "word": "lamb",
-        "count": 107,
-        "sampleRefs": [
-          "Genesis 22:7",
-          "Genesis 22:8",
-          "Exodus 12:3",
-          "Exodus 12:3",
-          "Exodus 12:4"
-        ],
-        "lookupCandidates": [
-          "lamb"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LAMB",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "lambs",
-        "count": 81,
-        "sampleRefs": [
-          "Genesis 21:28",
-          "Genesis 21:29",
-          "Genesis 21:30",
-          "Genesis 30:40",
-          "Exodus 29:38"
-        ],
-        "lookupCandidates": [
-          "lambs",
-          "lamb",
-          "lambe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "LAMB",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "plain",
         "count": 75,
         "sampleRefs": [
@@ -10374,28 +10324,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CAN'DLE-STICK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "fountain",
-        "count": 33,
-        "sampleRefs": [
-          "Genesis 16:7",
-          "Genesis 16:7",
-          "Leviticus 11:36",
-          "Leviticus 20:18",
-          "Leviticus 20:18"
-        ],
-        "lookupCandidates": [
-          "fountain"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FOUNT' AIN",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12087,6 +12015,72 @@
         "dirtyDefinition": true,
         "sourceHeadword": "PERSUA'DE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "roof",
+        "count": 20,
+        "sampleRefs": [
+          "Genesis 19:8",
+          "Deuteronomy 22:8",
+          "Joshua 2:6",
+          "Joshua 2:6",
+          "Joshua 2:8"
+        ],
+        "lookupCandidates": [
+          "roof"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ROOF",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "simple",
+        "count": 20,
+        "sampleRefs": [
+          "Psalms 19:7",
+          "Psalms 116:6",
+          "Psalms 119:130",
+          "Proverbs 1:4",
+          "Proverbs 1:22"
+        ],
+        "lookupCandidates": [
+          "simple"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SIM'PLE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stir",
+        "count": 20,
+        "sampleRefs": [
+          "Numbers 24:9",
+          "Job 17:8",
+          "Job 41:10",
+          "Psalms 35:23",
+          "Psalms 78:38"
+        ],
+        "lookupCandidates": [
+          "stir"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STIR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
     "topMissingAnyStudyLookup": [
@@ -12847,29 +12841,6 @@
           "sinneth",
           "sinn",
           "sinne"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "tyrus",
-        "count": 22,
-        "sampleRefs": [
-          "Jeremiah 25:22",
-          "Jeremiah 27:3",
-          "Jeremiah 47:4",
-          "Ezekiel 26:2",
-          "Ezekiel 26:3"
-        ],
-        "lookupCandidates": [
-          "tyrus",
-          "tyru"
         ],
         "hasDefinition": false,
         "hasEaston": false,
@@ -13887,6 +13858,28 @@
         "dirtyDefinition": false,
         "sourceHeadword": null,
         "reviewStatus": null
+      },
+      {
+        "word": "amorite",
+        "count": 14,
+        "sampleRefs": [
+          "Genesis 10:16",
+          "Genesis 14:13",
+          "Genesis 48:22",
+          "Exodus 33:2",
+          "Exodus 34:11"
+        ],
+        "lookupCandidates": [
+          "amorite"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
       }
     ],
     "topStrongsMissingWords": [
@@ -14523,15 +14516,6 @@
         ]
       },
       {
-        "word": "hosea",
-        "count": 3,
-        "sampleRefs": [
-          "Hosea 1:1",
-          "Hosea 1:2",
-          "Hosea 1:2"
-        ]
-      },
-      {
         "word": "lodebar",
         "count": 3,
         "sampleRefs": [
@@ -14674,6 +14658,14 @@
         "sampleRefs": [
           "Numbers 33:31",
           "Numbers 33:32"
+        ]
+      },
+      {
+        "word": "bethbarah",
+        "count": 2,
+        "sampleRefs": [
+          "Judges 7:24",
+          "Judges 7:24"
         ]
       }
     ],

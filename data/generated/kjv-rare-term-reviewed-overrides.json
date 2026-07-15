@@ -248,5 +248,35 @@
     "source_line_start": 1,
     "source_line_end": 1,
     "review_status": "reviewed_scripture_profile"
+  },
+  {
+    "headword": "ASSYRIAN",
+    "normalized_headword": "assyrian",
+    "definition": "ASSYRIAN, noun or adjective. An inhabitant or representative of Assyria; of or belonging to Assyria. See ASSYRIA.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Hosea 5:13; 11:5; 12:1; Easton's Bible Dictionary: Assyria",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "FIRSTRIPE",
+    "normalized_headword": "firstripe",
+    "definition": "FIRSTRIPE, noun. The first-ripe or earliest fruit; in Hosea 9:10, the first ripe fruit of the fig tree. See Strong's H1063.",
+    "source_title": "KJV English Word Guide",
+    "source_file": "KJV: Hosea 9:10; Strong's H1063",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_kjv_form"
+  },
+  {
+    "headword": "TYRUS",
+    "normalized_headword": "tyrus",
+    "definition": "TYRUS, noun. The KJV form of Tyre, the ancient Phoenician city. See TYRE.",
+    "source_title": "KJV Bible Place Guide",
+    "source_file": "KJV: Hosea 9:13; Easton's Bible Dictionary: Tyre",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_scripture_profile"
   }
 ]

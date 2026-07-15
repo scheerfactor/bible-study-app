@@ -101,6 +101,7 @@ import hoseaMatthewPooleCommentary from "../../data/imports/matthew-poole-review
 import hoseaPreachersHomileticalCommentary from "../../data/imports/preachers-homiletical-reviewed-hosea-commentary.json";
 import hoseaPulpitCommentary from "../../data/imports/pulpit-commentary-reviewed-weak-books-commentary.json";
 import hoseaWesleyCommentary from "../../data/imports/wesley-reviewed-minor-prophets-commentary.json";
+import hoseaGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-hosea-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -10422,6 +10423,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(hoseaPreachersHomileticalCommentary as CommentaryEntry[]),
   ...(hoseaPulpitCommentary as CommentaryEntry[]),
   ...(hoseaWesleyCommentary as CommentaryEntry[]),
+  ...(hoseaGaebeleinCommentary as CommentaryEntry[]),
 ]
   .filter((entry) => entry.book === "Hosea")
   .map(normalizeCommentaryEntry);

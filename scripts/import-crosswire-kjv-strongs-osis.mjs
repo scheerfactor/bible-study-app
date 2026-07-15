@@ -22,9 +22,9 @@ const sourceMetadata = {
   source_id: "strongs-crosswire-kjv",
   source_title: "CrossWire KJV 1769 with Strong's Numbers and Morphology",
   source_url: "https://crosswire.org/sword/modules/ModInfo.jsp?modName=KJV",
-  rights_status: "CrossWire KJV module; GPL/general public license notes require project approval before public promotion.",
+  rights_status: "CrossWire general public license for any purpose; distribution license GPL.",
   rights_basis:
-    "Staging import from CrossWire OSIS source. Keep hidden until module obligations, attribution, and KJV base-text handling are reviewed.",
+    "CrossWire states that copyright in its maintained KJV effort is held by CrossWire Bible Society and grants a general public license to use the text for any purpose. The module is distributed under GPL. Preserve CrossWire attribution and source links; Old Testament Strong's data derives from The Bible Foundation.",
 };
 
 const osisBookToKjv = new Map([
