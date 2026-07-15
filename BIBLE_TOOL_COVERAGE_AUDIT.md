@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T16:35:51.843Z
+Generated: 2026-07-15T16:59:23.487Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,846/12,454 meaningful KJV words have a lookup candidate (63%).
-- Combined word/topic lookup: 10,833/12,454 meaningful KJV words have Webster, Easton, or Nave help (87%).
+- Webster 1828: 7,854/12,454 meaningful KJV words have a lookup candidate (63.1%).
+- Combined word/topic lookup: 10,840/12,454 meaningful KJV words have Webster, Easton, or Nave help (87%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -76,7 +76,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
 | members | 32 | Job 17:7; Psalms 139:16; Matthew 5:29; Matthew 5:30; Romans 6:13 |
 | putteth | 30 | Exodus 30:33; Numbers 22:38; Deuteronomy 25:11; Deuteronomy 27:15; 1 Kings 20:11 |
-| egyptian | 27 | Genesis 16:1; Genesis 16:3; Genesis 21:9; Genesis 25:12; Genesis 39:1 |
 | hittite | 26 | Genesis 23:10; Genesis 25:9; Genesis 26:34; Genesis 26:34; Genesis 36:2 |
 | forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
@@ -86,21 +85,22 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
 | defence | 22 | Numbers 14:9; 2 Chronicles 11:5; Job 22:25; Psalms 7:10; Psalms 31:2 |
 | jubile | 22 | Leviticus 25:9; Leviticus 25:10; Leviticus 25:11; Leviticus 25:12; Leviticus 25:13 |
-| pot | 22 | Exodus 16:33; Leviticus 6:28; Judges 6:19; 1 Samuel 2:14; 2 Kings 4:2 |
 | setteth | 22 | Numbers 1:51; Numbers 4:5; Deuteronomy 24:15; Deuteronomy 27:16; 2 Samuel 22:34 |
 | sinneth | 22 | Numbers 15:28; Numbers 15:28; Numbers 15:29; Deuteronomy 19:15; 1 Kings 8:46 |
-| astonishment | 21 | Deuteronomy 28:28; Deuteronomy 28:37; 2 Chronicles 7:21; 2 Chronicles 29:8; Psalms 60:3 |
 | higher | 21 | Numbers 24:7; 1 Samuel 9:2; 1 Samuel 10:23; 2 Kings 15:35; Nehemiah 4:13 |
 | husbandmen | 21 | 2 Kings 25:12; 2 Chronicles 26:10; Jeremiah 31:24; Jeremiah 52:16; Joel 1:11 |
 | magnified | 21 | Genesis 19:19; Joshua 4:14; 2 Samuel 7:26; 1 Chronicles 17:24; 1 Chronicles 29:25 |
 | occasion | 21 | Genesis 43:18; Judges 9:33; Judges 14:4; 1 Samuel 10:7; 2 Samuel 12:14 |
-| thereby | 21 | Genesis 24:14; Leviticus 11:43; Job 22:21; Proverbs 20:1; Ecclesiastes 10:9 |
-| alas | 20 | Numbers 12:11; Numbers 24:23; Joshua 7:7; Judges 6:22; Judges 11:35 |
 | recompence | 20 | Deuteronomy 32:35; Job 15:31; Proverbs 12:14; Isaiah 35:4; Isaiah 59:18 |
-| secretly | 20 | Genesis 31:27; Deuteronomy 13:6; Deuteronomy 27:24; Deuteronomy 28:57; Joshua 2:1 |
 | whomsoever | 20 | Genesis 31:32; Genesis 44:9; Leviticus 15:11; Judges 7:4; Judges 11:24 |
 | committeth | 19 | Leviticus 20:10; Leviticus 20:10; Psalms 10:14; Proverbs 6:32; Ezekiel 8:6 |
 | denied | 19 | Genesis 18:15; 1 Kings 20:7; Job 31:28; Matthew 26:70; Matthew 26:72 |
+| jealous | 19 | Exodus 20:5; Exodus 34:14; Exodus 34:14; Numbers 5:14; Numbers 5:14 |
+| speedily | 19 | Genesis 44:11; 1 Samuel 27:1; 2 Samuel 17:16; 2 Chronicles 35:13; Ezra 6:13 |
+| spent | 19 | Genesis 21:15; Genesis 47:18; Leviticus 26:20; Judges 19:11; 1 Samuel 9:7 |
+| subdued | 19 | Numbers 32:22; Numbers 32:29; Deuteronomy 20:20; Joshua 18:1; Judges 3:30 |
+| vile | 19 | Deuteronomy 25:3; Judges 19:24; 1 Samuel 3:13; 1 Samuel 15:9; 2 Samuel 6:22 |
+| bade | 18 | Genesis 43:17; Exodus 16:24; Numbers 14:10; Joshua 11:9; Ruth 3:6 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
