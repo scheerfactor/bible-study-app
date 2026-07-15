@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T12:22:16.143Z
+Generated: 2026-07-15T12:53:02.915Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -117,12 +117,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
-| communed | COMMU'NE | 18 | ocr_full_import_needs_spot_review |
-| kidneys | KIDNEY | 18 | ocr_full_import_needs_spot_review |
-| maidens | MA'IDEN | 18 | ocr_full_import_needs_spot_review |
-| middle | MIDDLE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | standard | STAND'ARD | 18 | ocr_full_import_needs_spot_review |
 | tempest | TEM'PEST | 18 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | myrrh | MYRRH | 17 | ocr_full_import_needs_spot_review |
 | pertained | PERTA'IN | 17 | ocr_full_import_needs_spot_review |
 | principal | PRIN'CIPAL | 17 | ocr_full_import_needs_spot_review |
+| prosperity | PROSPER'ITY | 17 | ocr_full_import_needs_spot_review |
+| publish | PUB'LISH | 17 | ocr_full_import_needs_spot_review |
+| putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
+| row | ROW | 17 | ocr_full_import_needs_spot_review |
+| shore | SHORE | 17 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T12:22:16.143Z",
+    "generated_at": "2026-07-15T12:53:02.915Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60246,
+      "entries": 60251,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1913,30 +1913,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "murmured",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 15:24",
-            "Exodus 16:2",
-            "Exodus 17:3",
-            "Numbers 14:2",
-            "Numbers 14:29"
-          ],
-          "lookupCandidates": [
-            "murmured",
-            "murmur",
-            "murmure"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MUR'MUR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "calves",
           "count": 18,
           "sampleRefs": [
@@ -1957,100 +1933,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "C'ALVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "communed",
-          "count": 18,
-          "sampleRefs": [
-            "Genesis 23:8",
-            "Genesis 34:8",
-            "Genesis 34:20",
-            "Genesis 42:24",
-            "Genesis 43:19"
-          ],
-          "lookupCandidates": [
-            "communed",
-            "commun",
-            "commune"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COMMU'NE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "kidneys",
-          "count": 18,
-          "sampleRefs": [
-            "Exodus 29:13",
-            "Exodus 29:22",
-            "Leviticus 3:4",
-            "Leviticus 3:4",
-            "Leviticus 3:10"
-          ],
-          "lookupCandidates": [
-            "kidneys",
-            "kidney",
-            "kidneye"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "KIDNEY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "maidens",
-          "count": 18,
-          "sampleRefs": [
-            "Exodus 2:5",
-            "Ruth 2:8",
-            "Ruth 2:22",
-            "Ruth 2:23",
-            "Ruth 3:2"
-          ],
-          "lookupCandidates": [
-            "maidens",
-            "maiden",
-            "maidene"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MA'IDEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "middle",
-          "count": 18,
-          "sampleRefs": [
-            "Exodus 26:28",
-            "Exodus 36:33",
-            "Joshua 12:2",
-            "Judges 7:19",
-            "Judges 9:37"
-          ],
-          "lookupCandidates": [
-            "middle"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MIDDLE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3591,6 +3473,120 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "HAL'LOW",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ill",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 41:3",
+            "Genesis 41:4",
+            "Genesis 41:19",
+            "Genesis 41:20",
+            "Genesis 41:21"
+          ],
+          "lookupCandidates": [
+            "ill"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ILL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "locks",
+          "count": 15,
+          "sampleRefs": [
+            "Numbers 6:5",
+            "Judges 16:13",
+            "Judges 16:19",
+            "Nehemiah 3:3",
+            "Nehemiah 3:6"
+          ],
+          "lookupCandidates": [
+            "locks",
+            "lock",
+            "locke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LOCK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "nest",
+          "count": 15,
+          "sampleRefs": [
+            "Numbers 24:21",
+            "Deuteronomy 22:6",
+            "Deuteronomy 32:11",
+            "Job 29:18",
+            "Job 39:27"
+          ],
+          "lookupCandidates": [
+            "nest"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NEST",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "nether",
+          "count": 15,
+          "sampleRefs": [
+            "Exodus 19:17",
+            "Deuteronomy 24:6",
+            "Joshua 15:19",
+            "Joshua 16:3",
+            "Joshua 18:13"
+          ],
+          "lookupCandidates": [
+            "nether"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NETH'ER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "nostrils",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 2:7",
+            "Genesis 7:22",
+            "Exodus 15:8",
+            "Numbers 11:20",
+            "2 Samuel 22:9"
+          ],
+          "lookupCandidates": [
+            "nostrils",
+            "nostril",
+            "nostrile"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "NOS'TRIL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10388,30 +10384,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "murmured",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 15:24",
-          "Exodus 16:2",
-          "Exodus 17:3",
-          "Numbers 14:2",
-          "Numbers 14:29"
-        ],
-        "lookupCandidates": [
-          "murmured",
-          "murmur",
-          "murmure"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MUR'MUR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "calves",
         "count": 18,
         "sampleRefs": [
@@ -10432,100 +10404,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "C'ALVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "communed",
-        "count": 18,
-        "sampleRefs": [
-          "Genesis 23:8",
-          "Genesis 34:8",
-          "Genesis 34:20",
-          "Genesis 42:24",
-          "Genesis 43:19"
-        ],
-        "lookupCandidates": [
-          "communed",
-          "commun",
-          "commune"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COMMU'NE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "kidneys",
-        "count": 18,
-        "sampleRefs": [
-          "Exodus 29:13",
-          "Exodus 29:22",
-          "Leviticus 3:4",
-          "Leviticus 3:4",
-          "Leviticus 3:10"
-        ],
-        "lookupCandidates": [
-          "kidneys",
-          "kidney",
-          "kidneye"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "KIDNEY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "maidens",
-        "count": 18,
-        "sampleRefs": [
-          "Exodus 2:5",
-          "Ruth 2:8",
-          "Ruth 2:22",
-          "Ruth 2:23",
-          "Ruth 3:2"
-        ],
-        "lookupCandidates": [
-          "maidens",
-          "maiden",
-          "maidene"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MA'IDEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "middle",
-        "count": 18,
-        "sampleRefs": [
-          "Exodus 26:28",
-          "Exodus 36:33",
-          "Joshua 12:2",
-          "Judges 7:19",
-          "Judges 9:37"
-        ],
-        "lookupCandidates": [
-          "middle"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MIDDLE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12066,6 +11944,120 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "HAL'LOW",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ill",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 41:3",
+          "Genesis 41:4",
+          "Genesis 41:19",
+          "Genesis 41:20",
+          "Genesis 41:21"
+        ],
+        "lookupCandidates": [
+          "ill"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ILL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "locks",
+        "count": 15,
+        "sampleRefs": [
+          "Numbers 6:5",
+          "Judges 16:13",
+          "Judges 16:19",
+          "Nehemiah 3:3",
+          "Nehemiah 3:6"
+        ],
+        "lookupCandidates": [
+          "locks",
+          "lock",
+          "locke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LOCK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "nest",
+        "count": 15,
+        "sampleRefs": [
+          "Numbers 24:21",
+          "Deuteronomy 22:6",
+          "Deuteronomy 32:11",
+          "Job 29:18",
+          "Job 39:27"
+        ],
+        "lookupCandidates": [
+          "nest"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NEST",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "nether",
+        "count": 15,
+        "sampleRefs": [
+          "Exodus 19:17",
+          "Deuteronomy 24:6",
+          "Joshua 15:19",
+          "Joshua 16:3",
+          "Joshua 18:13"
+        ],
+        "lookupCandidates": [
+          "nether"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NETH'ER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "nostrils",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 2:7",
+          "Genesis 7:22",
+          "Exodus 15:8",
+          "Numbers 11:20",
+          "2 Samuel 22:9"
+        ],
+        "lookupCandidates": [
+          "nostrils",
+          "nostril",
+          "nostrile"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "NOS'TRIL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
