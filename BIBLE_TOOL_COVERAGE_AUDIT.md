@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T22:57:34.063Z
+Generated: 2026-07-15T23:27:33.521Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,16 +122,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 | spies | SPY | 14 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
-| wander | WAN'DER | 14 | ocr_full_import_needs_spot_review |
-| winter | WINTER | 14 | ocr_full_import_needs_spot_review |
-| worm | WORM | 14 | ocr_full_import_needs_spot_review |
 | wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
-| abundant | ABUND'ANT | 13 | ocr_full_import_needs_spot_review |
-| ago | AGO' | 13 | ocr_full_import_needs_spot_review |
-| behalf | BEHALF | 13 | ocr_full_import_needs_spot_review |
-| blot | BLOT | 13 | ocr_full_import_needs_spot_review |
-| boldly | BOLDLY | 13 | ocr_full_import_needs_spot_review |
-| dig | DIG | 13 | ocr_full_import_needs_spot_review |
 | disobedient | DISOBE'DIENT | 13 | ocr_full_import_needs_spot_review |
 | doubt | DOUBT | 13 | ocr_full_import_needs_spot_review |
 | dungeon | DUN'GEON | 13 | ocr_full_import_needs_spot_review |
@@ -142,6 +133,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | garrison | GARRISON | 13 | ocr_full_import_needs_spot_review |
 | hereby | HEREBY' | 13 | ocr_full_import_needs_spot_review |
 | hole | HOLE | 13 | ocr_full_import_needs_spot_review |
+| ivory | I'VORY | 13 | ocr_full_import_needs_spot_review |
+| liar | LIA'R | 13 | ocr_full_import_needs_spot_review |
+| natural | NAT'URAL | 13 | ocr_full_import_needs_spot_review |
+| noon | NOON | 13 | ocr_full_import_needs_spot_review |
+| overflow | OVERFLOW | 13 | ocr_full_import_needs_spot_review |
+| passing | P'ASSING | 13 | ocr_full_import_needs_spot_review |
+| plenty | PLEN'TY | 13 | ocr_full_import_needs_spot_review |
+| profitable | PROFITABLE | 13 | ocr_full_import_needs_spot_review |
+| short | SHORT | 13 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
