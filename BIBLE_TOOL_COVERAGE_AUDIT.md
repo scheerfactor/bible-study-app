@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T21:57:36.005Z
+Generated: 2026-07-15T22:27:31.397Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -121,20 +121,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 | creepeth | CREEP | 14 | ocr_full_import_needs_spot_review |
-| eldest | ELD'EST | 14 | ocr_full_import_needs_spot_review |
-| enjoy | ENJOY' | 14 | ocr_full_import_needs_spot_review |
-| firstling | FIRST'LING | 14 | ocr_full_import_needs_spot_review |
-| furthermore | FURTHERMORE | 14 | ocr_full_import_needs_spot_review |
-| gall | GALL | 14 | ocr_full_import_needs_spot_review |
-| join | JOIN | 14 | ocr_full_import_needs_spot_review |
-| liver | LIV'ER | 14 | ocr_full_import_needs_spot_review |
-| midnight | MID'NIGHT | 14 | ocr_full_import_needs_spot_review |
-| oppressor | OPPRESS'OR | 14 | ocr_full_import_needs_spot_review |
 | ornaments | OR'NAMENT | 14 | ocr_full_import_needs_spot_review |
 | outward | OUT'WARD | 14 | ocr_full_import_needs_spot_review |
 | prolong | PROLONG' | 14 | ocr_full_import_needs_spot_review |
-| question | QUES'TION | 14 | ocr_full_import_needs_spot_review |
-| questions | QUES'TION | 14 | ocr_full_import_needs_spot_review |
 | repair | REPA'IR | 14 | ocr_full_import_needs_spot_review |
 | shave | SHAVE | 14 | ocr_full_import_needs_spot_review |
 | sorry | SOR'RY | 14 | ocr_full_import_needs_spot_review |
@@ -142,6 +131,17 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | stick | STICK | 14 | ocr_full_import_needs_spot_review |
 | subjection | SUBJECTION | 14 | ocr_full_import_needs_spot_review |
 | surety | SU'RETY | 14 | ocr_full_import_needs_spot_review |
+| vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
+| wander | WAN'DER | 14 | ocr_full_import_needs_spot_review |
+| winter | WINTER | 14 | ocr_full_import_needs_spot_review |
+| worm | WORM | 14 | ocr_full_import_needs_spot_review |
+| wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
+| abundant | ABUND'ANT | 13 | ocr_full_import_needs_spot_review |
+| ago | AGO' | 13 | ocr_full_import_needs_spot_review |
+| behalf | BEHALF | 13 | ocr_full_import_needs_spot_review |
+| blot | BLOT | 13 | ocr_full_import_needs_spot_review |
+| boldly | BOLDLY | 13 | ocr_full_import_needs_spot_review |
+| dig | DIG | 13 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
