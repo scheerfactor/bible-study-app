@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T00:23:45.321Z",
+    "generated_at": "2026-07-15T01:26:35.185Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60093,
+      "entries": 60102,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2183,28 +2183,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "deny",
-          "count": 24,
-          "sampleRefs": [
-            "Joshua 24:27",
-            "1 Kings 2:16",
-            "Job 8:18",
-            "Proverbs 30:7",
-            "Proverbs 30:9"
-          ],
-          "lookupCandidates": [
-            "deny"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DENY'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "dogs",
           "count": 24,
           "sampleRefs": [
@@ -2879,28 +2857,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "mystery",
-          "count": 22,
-          "sampleRefs": [
-            "Mark 4:11",
-            "Romans 11:25",
-            "Romans 16:25",
-            "1 Corinthians 2:7",
-            "1 Corinthians 15:51"
-          ],
-          "lookupCandidates": [
-            "mystery"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MYS'TERY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "overcome",
           "count": 22,
           "sampleRefs": [
@@ -3122,28 +3078,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "CHOICE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "common",
-          "count": 21,
-          "sampleRefs": [
-            "Leviticus 4:27",
-            "Numbers 16:29",
-            "1 Samuel 21:4",
-            "1 Samuel 21:5",
-            "Ecclesiastes 6:1"
-          ],
-          "lookupCandidates": [
-            "common"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COMMON",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3594,6 +3528,78 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FLOWER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "foolishness",
+          "count": 20,
+          "sampleRefs": [
+            "2 Samuel 15:31",
+            "Psalms 38:5",
+            "Psalms 69:5",
+            "Proverbs 12:23",
+            "Proverbs 14:24"
+          ],
+          "lookupCandidates": [
+            "foolishness",
+            "foolishnes",
+            "foolishnese"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOOL'ISHNESS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "persecuted",
+          "count": 20,
+          "sampleRefs": [
+            "Deuteronomy 30:7",
+            "Psalms 109:16",
+            "Psalms 119:161",
+            "Psalms 143:3",
+            "Isaiah 14:6"
+          ],
+          "lookupCandidates": [
+            "persecuted",
+            "persecut",
+            "persecute"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PER'SECUTED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "persuaded",
+          "count": 20,
+          "sampleRefs": [
+            "2 Chronicles 18:2",
+            "Proverbs 25:15",
+            "Matthew 27:20",
+            "Luke 16:31",
+            "Luke 20:6"
+          ],
+          "lookupCandidates": [
+            "persuaded",
+            "persuad",
+            "persuade"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "PERSUA'DE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10663,28 +10669,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "deny",
-        "count": 24,
-        "sampleRefs": [
-          "Joshua 24:27",
-          "1 Kings 2:16",
-          "Job 8:18",
-          "Proverbs 30:7",
-          "Proverbs 30:9"
-        ],
-        "lookupCandidates": [
-          "deny"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DENY'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "dogs",
         "count": 24,
         "sampleRefs": [
@@ -11359,28 +11343,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "mystery",
-        "count": 22,
-        "sampleRefs": [
-          "Mark 4:11",
-          "Romans 11:25",
-          "Romans 16:25",
-          "1 Corinthians 2:7",
-          "1 Corinthians 15:51"
-        ],
-        "lookupCandidates": [
-          "mystery"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MYS'TERY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "overcome",
         "count": 22,
         "sampleRefs": [
@@ -11602,28 +11564,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "CHOICE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "common",
-        "count": 21,
-        "sampleRefs": [
-          "Leviticus 4:27",
-          "Numbers 16:29",
-          "1 Samuel 21:4",
-          "1 Samuel 21:5",
-          "Ecclesiastes 6:1"
-        ],
-        "lookupCandidates": [
-          "common"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COMMON",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12074,6 +12014,78 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FLOWER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "foolishness",
+        "count": 20,
+        "sampleRefs": [
+          "2 Samuel 15:31",
+          "Psalms 38:5",
+          "Psalms 69:5",
+          "Proverbs 12:23",
+          "Proverbs 14:24"
+        ],
+        "lookupCandidates": [
+          "foolishness",
+          "foolishnes",
+          "foolishnese"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOOL'ISHNESS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "persecuted",
+        "count": 20,
+        "sampleRefs": [
+          "Deuteronomy 30:7",
+          "Psalms 109:16",
+          "Psalms 119:161",
+          "Psalms 143:3",
+          "Isaiah 14:6"
+        ],
+        "lookupCandidates": [
+          "persecuted",
+          "persecut",
+          "persecute"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PER'SECUTED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "persuaded",
+        "count": 20,
+        "sampleRefs": [
+          "2 Chronicles 18:2",
+          "Proverbs 25:15",
+          "Matthew 27:20",
+          "Luke 16:31",
+          "Luke 20:6"
+        ],
+        "lookupCandidates": [
+          "persuaded",
+          "persuad",
+          "persuade"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "PERSUA'DE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
