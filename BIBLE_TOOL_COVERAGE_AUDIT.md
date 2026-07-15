@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T14:22:21.938Z
+Generated: 2026-07-15T14:36:50.050Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -122,14 +122,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | wages | WAGE | 18 | ocr_full_import_needs_spot_review |
 | bid | BID | 17 | ocr_full_import_needs_spot_review |
 | estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
-| prosperity | PROSPER'ITY | 17 | ocr_full_import_needs_spot_review |
-| publish | PUB'LISH | 17 | ocr_full_import_needs_spot_review |
 | putting | PUT'TING | 17 | ocr_full_import_needs_spot_review |
-| row | ROW | 17 | ocr_full_import_needs_spot_review |
 | shore | SHORE | 17 | ocr_full_import_needs_spot_review |
 | subject | SUBJECT | 17 | ocr_full_import_needs_spot_review |
-| try | TRY | 17 | ocr_full_import_needs_spot_review |
-| twice | TWICE | 17 | ocr_full_import_needs_spot_review |
 | weighed | WEIGH | 17 | ocr_full_import_needs_spot_review |
 | accord | ACCORD' | 16 | ocr_full_import_needs_spot_review |
 | accuse | ACCU'SE | 16 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | comely | COMELY | 16 | ocr_full_import_needs_spot_review |
 | content | CONTENT' | 16 | ocr_full_import_needs_spot_review |
 | cymbals | CYM'BAL | 16 | ocr_full_import_needs_spot_review |
+| devices | DEVI'CE | 16 | ocr_full_import_needs_spot_review |
+| devise | DEVI'SE | 16 | ocr_full_import_needs_spot_review |
+| earthquake | EARTH'QUAKE | 16 | ocr_full_import_needs_spot_review |
+| exhort | EXHORT' | 16 | ocr_full_import_needs_spot_review |
+| footstool | FOOT' STOOL | 16 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
