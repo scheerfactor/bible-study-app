@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T02:23:16.870Z",
+    "generated_at": "2026-07-15T02:53:02.677Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60121,
+      "entries": 60126,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1939,28 +1939,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "further",
-          "count": 24,
-          "sampleRefs": [
-            "Numbers 22:26",
-            "Deuteronomy 20:8",
-            "1 Samuel 10:22",
-            "Esther 9:12",
-            "Job 38:11"
-          ],
-          "lookupCandidates": [
-            "further"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FUR'THER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "lusts",
           "count": 24,
           "sampleRefs": [
@@ -1982,28 +1960,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "LUST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "void",
-          "count": 24,
-          "sampleRefs": [
-            "Genesis 1:2",
-            "Numbers 30:12",
-            "Numbers 30:12",
-            "Numbers 30:13",
-            "Numbers 30:15"
-          ],
-          "lookupCandidates": [
-            "void"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "VOID",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2029,50 +1985,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "abominable",
-          "count": 23,
-          "sampleRefs": [
-            "Leviticus 7:21",
-            "Leviticus 11:43",
-            "Leviticus 18:30",
-            "Leviticus 19:7",
-            "Leviticus 20:25"
-          ],
-          "lookupCandidates": [
-            "abominable"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ABOM'INABLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "acceptable",
-          "count": 23,
-          "sampleRefs": [
-            "Leviticus 22:20",
-            "Deuteronomy 33:24",
-            "Psalms 19:14",
-            "Psalms 69:13",
-            "Proverbs 10:32"
-          ],
-          "lookupCandidates": [
-            "acceptable"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ACCEPT'ABLE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "ammonites",
           "count": 23,
           "sampleRefs": [
@@ -2093,28 +2005,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "AM'MONITE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "barren",
-          "count": 23,
-          "sampleRefs": [
-            "Genesis 11:30",
-            "Genesis 25:21",
-            "Genesis 29:31",
-            "Exodus 23:26",
-            "Deuteronomy 7:14"
-          ],
-          "lookupCandidates": [
-            "barren"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BAR'REN",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3608,6 +3498,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DESCEND'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "fault",
+          "count": 19,
+          "sampleRefs": [
+            "Exodus 5:16",
+            "Deuteronomy 25:2",
+            "1 Samuel 29:3",
+            "2 Samuel 3:8",
+            "Psalms 59:4"
+          ],
+          "lookupCandidates": [
+            "fault"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FAULT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "force",
+          "count": 19,
+          "sampleRefs": [
+            "Genesis 31:31",
+            "Deuteronomy 22:25",
+            "Deuteronomy 34:7",
+            "1 Samuel 2:16",
+            "2 Samuel 13:12"
+          ],
+          "lookupCandidates": [
+            "force"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FORCE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "herb",
+          "count": 19,
+          "sampleRefs": [
+            "Genesis 1:11",
+            "Genesis 1:12",
+            "Genesis 1:29",
+            "Genesis 1:30",
+            "Genesis 2:5"
+          ],
+          "lookupCandidates": [
+            "herb"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HERB",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "instructed",
+          "count": 19,
+          "sampleRefs": [
+            "Deuteronomy 32:10",
+            "2 Kings 12:2",
+            "1 Chronicles 15:22",
+            "1 Chronicles 25:7",
+            "2 Chronicles 3:3"
+          ],
+          "lookupCandidates": [
+            "instructed",
+            "instruct",
+            "instructe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "INSTRUCT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "kindle",
+          "count": 19,
+          "sampleRefs": [
+            "Exodus 35:3",
+            "Proverbs 26:21",
+            "Isaiah 9:18",
+            "Isaiah 10:16",
+            "Isaiah 30:33"
+          ],
+          "lookupCandidates": [
+            "kindle"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KIN'DLE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10431,28 +10433,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "further",
-        "count": 24,
-        "sampleRefs": [
-          "Numbers 22:26",
-          "Deuteronomy 20:8",
-          "1 Samuel 10:22",
-          "Esther 9:12",
-          "Job 38:11"
-        ],
-        "lookupCandidates": [
-          "further"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FUR'THER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "lusts",
         "count": 24,
         "sampleRefs": [
@@ -10474,28 +10454,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "LUST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "void",
-        "count": 24,
-        "sampleRefs": [
-          "Genesis 1:2",
-          "Numbers 30:12",
-          "Numbers 30:12",
-          "Numbers 30:13",
-          "Numbers 30:15"
-        ],
-        "lookupCandidates": [
-          "void"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "VOID",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10521,50 +10479,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "abominable",
-        "count": 23,
-        "sampleRefs": [
-          "Leviticus 7:21",
-          "Leviticus 11:43",
-          "Leviticus 18:30",
-          "Leviticus 19:7",
-          "Leviticus 20:25"
-        ],
-        "lookupCandidates": [
-          "abominable"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ABOM'INABLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "acceptable",
-        "count": 23,
-        "sampleRefs": [
-          "Leviticus 22:20",
-          "Deuteronomy 33:24",
-          "Psalms 19:14",
-          "Psalms 69:13",
-          "Proverbs 10:32"
-        ],
-        "lookupCandidates": [
-          "acceptable"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ACCEPT'ABLE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "ammonites",
         "count": 23,
         "sampleRefs": [
@@ -10585,28 +10499,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "AM'MONITE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "barren",
-        "count": 23,
-        "sampleRefs": [
-          "Genesis 11:30",
-          "Genesis 25:21",
-          "Genesis 29:31",
-          "Exodus 23:26",
-          "Deuteronomy 7:14"
-        ],
-        "lookupCandidates": [
-          "barren"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BAR'REN",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12100,6 +11992,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DESCEND'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "fault",
+        "count": 19,
+        "sampleRefs": [
+          "Exodus 5:16",
+          "Deuteronomy 25:2",
+          "1 Samuel 29:3",
+          "2 Samuel 3:8",
+          "Psalms 59:4"
+        ],
+        "lookupCandidates": [
+          "fault"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FAULT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "force",
+        "count": 19,
+        "sampleRefs": [
+          "Genesis 31:31",
+          "Deuteronomy 22:25",
+          "Deuteronomy 34:7",
+          "1 Samuel 2:16",
+          "2 Samuel 13:12"
+        ],
+        "lookupCandidates": [
+          "force"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FORCE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "herb",
+        "count": 19,
+        "sampleRefs": [
+          "Genesis 1:11",
+          "Genesis 1:12",
+          "Genesis 1:29",
+          "Genesis 1:30",
+          "Genesis 2:5"
+        ],
+        "lookupCandidates": [
+          "herb"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HERB",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "instructed",
+        "count": 19,
+        "sampleRefs": [
+          "Deuteronomy 32:10",
+          "2 Kings 12:2",
+          "1 Chronicles 15:22",
+          "1 Chronicles 25:7",
+          "2 Chronicles 3:3"
+        ],
+        "lookupCandidates": [
+          "instructed",
+          "instruct",
+          "instructe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "INSTRUCT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "kindle",
+        "count": 19,
+        "sampleRefs": [
+          "Exodus 35:3",
+          "Proverbs 26:21",
+          "Isaiah 9:18",
+          "Isaiah 10:16",
+          "Isaiah 30:33"
+        ],
+        "lookupCandidates": [
+          "kindle"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KIN'DLE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
