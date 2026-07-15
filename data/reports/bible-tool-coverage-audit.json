@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T15:53:42.829Z",
+    "generated_at": "2026-07-15T16:05:38.338Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60286,
+      "entries": 60292,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2294,28 +2294,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "straw",
-          "count": 16,
-          "sampleRefs": [
-            "Genesis 24:25",
-            "Genesis 24:32",
-            "Exodus 5:7",
-            "Exodus 5:7",
-            "Exodus 5:10"
-          ],
-          "lookupCandidates": [
-            "straw"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STRAW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "stuff",
           "count": 16,
           "sampleRefs": [
@@ -2335,72 +2313,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STUFF",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "unbelief",
-          "count": 16,
-          "sampleRefs": [
-            "Matthew 13:58",
-            "Matthew 17:20",
-            "Mark 6:6",
-            "Mark 9:24",
-            "Mark 16:14"
-          ],
-          "lookupCandidates": [
-            "unbelief"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UNBELIE'F",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "uncircumcision",
-          "count": 16,
-          "sampleRefs": [
-            "Romans 2:25",
-            "Romans 2:26",
-            "Romans 2:26",
-            "Romans 2:27",
-            "Romans 3:30"
-          ],
-          "lookupCandidates": [
-            "uncircumcision"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UNCIRCUMCI'SION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "zeal",
-          "count": 16,
-          "sampleRefs": [
-            "2 Samuel 21:2",
-            "2 Kings 10:16",
-            "2 Kings 19:31",
-            "Psalms 69:9",
-            "Psalms 119:139"
-          ],
-          "lookupCandidates": [
-            "zeal"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ZEAL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2428,28 +2340,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "baptist",
-          "count": 15,
-          "sampleRefs": [
-            "Matthew 3:1",
-            "Matthew 11:11",
-            "Matthew 11:12",
-            "Matthew 14:2",
-            "Matthew 14:8"
-          ],
-          "lookupCandidates": [
-            "baptist"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BAP'TIST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "beam",
           "count": 15,
           "sampleRefs": [
@@ -2469,28 +2359,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BEAM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "brimstone",
-          "count": 15,
-          "sampleRefs": [
-            "Genesis 19:24",
-            "Deuteronomy 29:23",
-            "Job 18:15",
-            "Psalms 11:6",
-            "Isaiah 30:33"
-          ],
-          "lookupCandidates": [
-            "brimstone"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BRIM'STONE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3596,6 +3464,142 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "PURGE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "question",
+          "count": 14,
+          "sampleRefs": [
+            "Matthew 22:35",
+            "Mark 8:11",
+            "Mark 9:16",
+            "Mark 11:29",
+            "Mark 12:34"
+          ],
+          "lookupCandidates": [
+            "question"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "QUES'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "questions",
+          "count": 14,
+          "sampleRefs": [
+            "1 Kings 10:1",
+            "1 Kings 10:3",
+            "2 Chronicles 9:1",
+            "2 Chronicles 9:2",
+            "Matthew 22:46"
+          ],
+          "lookupCandidates": [
+            "questions",
+            "question",
+            "questione"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "QUES'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "reacheth",
+          "count": 14,
+          "sampleRefs": [
+            "Numbers 21:30",
+            "Joshua 19:22",
+            "Joshua 19:26",
+            "Joshua 19:27",
+            "Joshua 19:34"
+          ],
+          "lookupCandidates": [
+            "reacheth",
+            "reach",
+            "reache"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REACH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "repair",
+          "count": 14,
+          "sampleRefs": [
+            "2 Kings 12:5",
+            "2 Kings 12:7",
+            "2 Kings 12:8",
+            "2 Kings 12:12",
+            "2 Kings 12:12"
+          ],
+          "lookupCandidates": [
+            "repair"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "REPA'IR",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "shave",
+          "count": 14,
+          "sampleRefs": [
+            "Leviticus 13:33",
+            "Leviticus 14:8",
+            "Leviticus 14:9",
+            "Leviticus 14:9",
+            "Leviticus 21:5"
+          ],
+          "lookupCandidates": [
+            "shave"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SHAVE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "sorry",
+          "count": 14,
+          "sampleRefs": [
+            "1 Samuel 22:8",
+            "Nehemiah 8:10",
+            "Psalms 38:18",
+            "Isaiah 51:19",
+            "Matthew 14:9"
+          ],
+          "lookupCandidates": [
+            "sorry"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SOR'RY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10774,28 +10778,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "straw",
-        "count": 16,
-        "sampleRefs": [
-          "Genesis 24:25",
-          "Genesis 24:32",
-          "Exodus 5:7",
-          "Exodus 5:7",
-          "Exodus 5:10"
-        ],
-        "lookupCandidates": [
-          "straw"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STRAW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "stuff",
         "count": 16,
         "sampleRefs": [
@@ -10815,72 +10797,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STUFF",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "unbelief",
-        "count": 16,
-        "sampleRefs": [
-          "Matthew 13:58",
-          "Matthew 17:20",
-          "Mark 6:6",
-          "Mark 9:24",
-          "Mark 16:14"
-        ],
-        "lookupCandidates": [
-          "unbelief"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UNBELIE'F",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "uncircumcision",
-        "count": 16,
-        "sampleRefs": [
-          "Romans 2:25",
-          "Romans 2:26",
-          "Romans 2:26",
-          "Romans 2:27",
-          "Romans 3:30"
-        ],
-        "lookupCandidates": [
-          "uncircumcision"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UNCIRCUMCI'SION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "zeal",
-        "count": 16,
-        "sampleRefs": [
-          "2 Samuel 21:2",
-          "2 Kings 10:16",
-          "2 Kings 19:31",
-          "Psalms 69:9",
-          "Psalms 119:139"
-        ],
-        "lookupCandidates": [
-          "zeal"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ZEAL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10908,28 +10824,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "baptist",
-        "count": 15,
-        "sampleRefs": [
-          "Matthew 3:1",
-          "Matthew 11:11",
-          "Matthew 11:12",
-          "Matthew 14:2",
-          "Matthew 14:8"
-        ],
-        "lookupCandidates": [
-          "baptist"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BAP'TIST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "beam",
         "count": 15,
         "sampleRefs": [
@@ -10949,28 +10843,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BEAM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "brimstone",
-        "count": 15,
-        "sampleRefs": [
-          "Genesis 19:24",
-          "Deuteronomy 29:23",
-          "Job 18:15",
-          "Psalms 11:6",
-          "Isaiah 30:33"
-        ],
-        "lookupCandidates": [
-          "brimstone"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BRIM'STONE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12076,6 +11948,142 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "PURGE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "question",
+        "count": 14,
+        "sampleRefs": [
+          "Matthew 22:35",
+          "Mark 8:11",
+          "Mark 9:16",
+          "Mark 11:29",
+          "Mark 12:34"
+        ],
+        "lookupCandidates": [
+          "question"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "QUES'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "questions",
+        "count": 14,
+        "sampleRefs": [
+          "1 Kings 10:1",
+          "1 Kings 10:3",
+          "2 Chronicles 9:1",
+          "2 Chronicles 9:2",
+          "Matthew 22:46"
+        ],
+        "lookupCandidates": [
+          "questions",
+          "question",
+          "questione"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "QUES'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "reacheth",
+        "count": 14,
+        "sampleRefs": [
+          "Numbers 21:30",
+          "Joshua 19:22",
+          "Joshua 19:26",
+          "Joshua 19:27",
+          "Joshua 19:34"
+        ],
+        "lookupCandidates": [
+          "reacheth",
+          "reach",
+          "reache"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REACH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "repair",
+        "count": 14,
+        "sampleRefs": [
+          "2 Kings 12:5",
+          "2 Kings 12:7",
+          "2 Kings 12:8",
+          "2 Kings 12:12",
+          "2 Kings 12:12"
+        ],
+        "lookupCandidates": [
+          "repair"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "REPA'IR",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "shave",
+        "count": 14,
+        "sampleRefs": [
+          "Leviticus 13:33",
+          "Leviticus 14:8",
+          "Leviticus 14:9",
+          "Leviticus 14:9",
+          "Leviticus 21:5"
+        ],
+        "lookupCandidates": [
+          "shave"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SHAVE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "sorry",
+        "count": 14,
+        "sampleRefs": [
+          "1 Samuel 22:8",
+          "Nehemiah 8:10",
+          "Psalms 38:18",
+          "Isaiah 51:19",
+          "Matthew 14:9"
+        ],
+        "lookupCandidates": [
+          "sorry"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SOR'RY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

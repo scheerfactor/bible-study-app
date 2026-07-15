@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T15:53:42.829Z
+Generated: 2026-07-15T16:05:38.338Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -134,14 +134,14 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | lend | LEND | 16 | ocr_full_import_needs_spot_review |
 | scorn | SCORN | 16 | ocr_full_import_needs_spot_review |
 | shot | SHOT | 16 | ocr_full_import_needs_spot_review |
-| straw | STRAW | 16 | ocr_full_import_needs_spot_review |
 | stuff | STUFF | 16 | ocr_full_import_needs_spot_review |
-| unbelief | UNBELIE'F | 16 | ocr_full_import_needs_spot_review |
-| uncircumcision | UNCIRCUMCI'SION | 16 | ocr_full_import_needs_spot_review |
-| zeal | ZEAL | 16 | ocr_full_import_needs_spot_review |
 | arches | ARCH' | 15 | ocr_full_import_needs_spot_review |
-| baptist | BAP'TIST | 15 | ocr_full_import_needs_spot_review |
 | beam | BEAM | 15 | ocr_full_import_needs_spot_review |
+| builders | BUILD'ER | 15 | ocr_full_import_needs_spot_review |
+| catch | CATCH | 15 | ocr_full_import_needs_spot_review |
+| clear | CLEAR | 15 | ocr_full_import_needs_spot_review |
+| colt | COLT | 15 | ocr_full_import_needs_spot_review |
+| drop | DROP | 15 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
