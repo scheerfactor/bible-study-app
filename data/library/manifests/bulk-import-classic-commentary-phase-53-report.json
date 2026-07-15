@@ -1,0 +1,776 @@
+{
+  "source_csv": "data/library/import-batches/classic-commentary-phase-53.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 50,
+  "total_attempted": 50,
+  "imported": 50,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "The creation, fall, and flood : an exposition of Genesis I-XI",
+      "file": "the-creation-fall-and-flood-an-exposition-of-genesis-i-xi-owen-joseph-1814-1870.txt",
+      "bytes": 863095,
+      "words": 141798,
+      "reading_time_minutes": 630
+    },
+    {
+      "title": "Commentary on Psalms",
+      "file": "commentary-on-psalms-alexander-joseph-addison-1809-1860.txt",
+      "bytes": 2466503,
+      "words": 378865,
+      "reading_time_minutes": 1684
+    },
+    {
+      "title": "The book of Genesis, and part of the book of Exodus : a revised version with marginal references and an explanatory commentary",
+      "file": "the-book-of-genesis-and-part-of-the-book-of-exodus-a-revised-version-with-marginal-references-and-an-explanato.txt",
+      "bytes": 1506516,
+      "words": 237038,
+      "reading_time_minutes": 1054
+    },
+    {
+      "title": "A critical and exegetical commentary on the book of Daniel",
+      "file": "a-critical-and-exegetical-commentary-on-the-book-of-daniel-montgomery-james-a-james-alan-1866-1949.txt",
+      "bytes": 1565737,
+      "words": 236069,
+      "reading_time_minutes": 1049
+    },
+    {
+      "title": "A critical and exegetical commentary on Amos and Hosea",
+      "file": "a-critical-and-exegetical-commentary-on-amos-and-hosea-harper-william-rainey-1856-1906.txt",
+      "bytes": 1853769,
+      "words": 285980,
+      "reading_time_minutes": 1271
+    },
+    {
+      "title": "Biblical commentary on the Book of Job;",
+      "file": "biblical-commentary-on-the-book-of-job-delitzsch-franz-1813-1890.txt",
+      "bytes": 939191,
+      "words": 164423,
+      "reading_time_minutes": 731
+    },
+    {
+      "title": "A critical and exegetical commentary on the Gospel according to St. Luke",
+      "file": "a-critical-and-exegetical-commentary-on-the-gospel-according-to-st-luke-plummer-alfred-1841-1926.txt",
+      "bytes": 2208786,
+      "words": 357640,
+      "reading_time_minutes": 1590
+    },
+    {
+      "title": "Genesis : a devotional commentary",
+      "file": "genesis-a-devotional-commentary-thomas-w-h-griffith-william-henry-griffith-1861-1924.txt",
+      "bytes": 566102,
+      "words": 86525,
+      "reading_time_minutes": 385
+    },
+    {
+      "title": "A critical and exegetical commentary on the first epistle of St. Paul to the Corinthians",
+      "file": "a-critical-and-exegetical-commentary-on-the-first-epistle-of-st-paul-to-the-corinthians-robertson-archibald-18.txt",
+      "bytes": 1446840,
+      "words": 236812,
+      "reading_time_minutes": 1052
+    },
+    {
+      "title": "A critical and exegetical commentary on the Epistle of St. James",
+      "file": "a-critical-and-exegetical-commentary-on-the-epistle-of-st-james-ropes-james-hardy-1866-1933.txt",
+      "bytes": 890107,
+      "words": 129972,
+      "reading_time_minutes": 578
+    },
+    {
+      "title": "A critical and exegetical commentary on the gospel according to S. Matthew",
+      "file": "a-critical-and-exegetical-commentary-on-the-gospel-according-to-s-matthew-allen-willoughby-charles-1867-1953.txt",
+      "bytes": 1217845,
+      "words": 210651,
+      "reading_time_minutes": 936
+    },
+    {
+      "title": "A critical and exegetical commentary on Micah, Zephaniah, Nahum, Habakkuk, Obadiah and Joel",
+      "file": "a-critical-and-exegetical-commentary-on-micah-zephaniah-nahum-habakkuk-obadiah-and-joel-smith-j-m-powis-john-m.txt",
+      "bytes": 1580388,
+      "words": 243056,
+      "reading_time_minutes": 1080
+    },
+    {
+      "title": "A critical and exegetical commentary on Deuteronomy",
+      "file": "a-critical-and-exegetical-commentary-on-deuteronomy-driver-s-r-samuel-rolles-1846-1914.txt",
+      "bytes": 1705830,
+      "words": 262748,
+      "reading_time_minutes": 1168
+    },
+    {
+      "title": "An exposition of the Book of Proverbs",
+      "file": "an-exposition-of-the-book-of-proverbs-bridges-charles-1794-1869.txt",
+      "bytes": 2103987,
+      "words": 330648,
+      "reading_time_minutes": 1470
+    },
+    {
+      "title": "A critical and exegetical commentary on the book of Isaiah 1-39. 40-66",
+      "file": "a-critical-and-exegetical-commentary-on-the-book-of-isaiah-1-39-40-66-gray-george-buchanan-1865-1922.txt",
+      "bytes": 1743205,
+      "words": 269496,
+      "reading_time_minutes": 1198
+    },
+    {
+      "title": "A critical and exegetical commentary on the Pastoral epistles (I & II Timothy and Titus)",
+      "file": "a-critical-and-exegetical-commentary-on-the-pastoral-epistles-i-and-ii-timothy-and-titus-lock-walter-1846-1933.txt",
+      "bytes": 545721,
+      "words": 93261,
+      "reading_time_minutes": 414
+    },
+    {
+      "title": "A critical and exegetical commentary on the Epistles to the Ephesians and to the Colossians",
+      "file": "a-critical-and-exegetical-commentary-on-the-epistles-to-the-ephesians-and-to-the-colossians-abbott-thomas-king.txt",
+      "bytes": 1115949,
+      "words": 188650,
+      "reading_time_minutes": 838
+    },
+    {
+      "title": "A new commentary on Genesis",
+      "file": "a-new-commentary-on-genesis-delitzsch-franz-1813-1890.txt",
+      "bytes": 1100091,
+      "words": 165682,
+      "reading_time_minutes": 736
+    },
+    {
+      "title": "The Gospel of John : a popular commentary upon a critical basis, especialy designed for pastors and Sunday schools",
+      "file": "the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt",
+      "bytes": 1607847,
+      "words": 256816,
+      "reading_time_minutes": 1141
+    },
+    {
+      "title": "Rabbi David Kimchi's Commentary upon the prophecies of Zechariah",
+      "file": "rabbi-david-kimchi-s-commentary-upon-the-prophecies-of-zechariah-kimchi-david-1160-1235-mccaul-alexander-1799-.txt",
+      "bytes": 432002,
+      "words": 68051,
+      "reading_time_minutes": 302
+    },
+    {
+      "title": "Studies in the book of Psalms : being a critical and expository commentary : with doctrinal and practical remarks on the entire Psalter",
+      "file": "studies-in-the-book-of-psalms-being-a-critical-and-expository-commentary-with-doctrinal-and-practical-remarks-.txt",
+      "bytes": 5668355,
+      "words": 881947,
+      "reading_time_minutes": 3920
+    },
+    {
+      "title": "Biblical commentary on the Proverbs of Solomon",
+      "file": "biblical-commentary-on-the-proverbs-of-solomon-delitzsch-franz-1813-1890.txt",
+      "bytes": 1143275,
+      "words": 173915,
+      "reading_time_minutes": 773
+    },
+    {
+      "title": "The book of the prophet Ezekiel : translated from the original Hebrew : with a commentary, critical, philological, and exegetical",
+      "file": "the-book-of-the-prophet-ezekiel-translated-from-the-original-hebrew-with-a-commentary-critical-philological-an.txt",
+      "bytes": 906966,
+      "words": 137073,
+      "reading_time_minutes": 609
+    },
+    {
+      "title": "A critical and exegetical commentary on Numbers",
+      "file": "a-critical-and-exegetical-commentary-on-numbers-gray-george-buchanan-1865-1922.txt",
+      "bytes": 1536809,
+      "words": 237111,
+      "reading_time_minutes": 1054
+    },
+    {
+      "title": "A critical and exegetical commentary on the Gospel according to St. Mark",
+      "file": "a-critical-and-exegetical-commentary-on-the-gospel-according-to-st-mark-gould-ezra-palmer-1841-1900.txt",
+      "bytes": 1035323,
+      "words": 169991,
+      "reading_time_minutes": 756
+    },
+    {
+      "title": "A critical and exegetical commentary on the book of Job,",
+      "file": "a-critical-and-exegetical-commentary-on-the-book-of-job-driver-s-r-samuel-rolles-1846-1914-cn-gray-george-buch.txt",
+      "bytes": 1180513,
+      "words": 184945,
+      "reading_time_minutes": 822
+    },
+    {
+      "title": "Commentary on Genesis",
+      "file": "commentary-on-genesis-luther-martin-1483-1546-lenker-john-nicholas-1858-1929-tr.txt",
+      "bytes": 893158,
+      "words": 136168,
+      "reading_time_minutes": 605
+    },
+    {
+      "title": "A commentary on the Apocalypse",
+      "file": "a-commentary-on-the-apocalypse-stuart-moses-1780-1852.txt",
+      "bytes": 1814357,
+      "words": 281194,
+      "reading_time_minutes": 1250
+    },
+    {
+      "title": "A critical and exegetical commentary on the Books of Ezra and Nehemiah",
+      "file": "a-critical-and-exegetical-commentary-on-the-books-of-ezra-and-nehemiah-batten-loring-w.txt",
+      "bytes": 1223319,
+      "words": 188675,
+      "reading_time_minutes": 839
+    },
+    {
+      "title": "A critical and exegetical commentary on Judges",
+      "file": "a-critical-and-exegetical-commentary-on-judges-moore-george-foot-1851-1931.txt",
+      "bytes": 1613507,
+      "words": 246933,
+      "reading_time_minutes": 1097
+    },
+    {
+      "title": "Commentary on the Gospel of Mark ..",
+      "file": "commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt",
+      "bytes": 1653336,
+      "words": 248644,
+      "reading_time_minutes": 1105
+    },
+    {
+      "title": "A critical and exegetical commentary on the book of Ecclesiastes",
+      "file": "a-critical-and-exegetical-commentary-on-the-book-of-ecclesiastes-barton-george-a-george-aaron-1859-1942.txt",
+      "bytes": 640674,
+      "words": 98470,
+      "reading_time_minutes": 438
+    },
+    {
+      "title": "Ezekiel and the book of his prophecy : an exposition",
+      "file": "ezekiel-and-the-book-of-his-prophecy-an-exposition-fairbairn-patrick-1805-1874.txt",
+      "bytes": 1680508,
+      "words": 255994,
+      "reading_time_minutes": 1138
+    },
+    {
+      "title": "A critical and exegetical commentary on the Epistles to the Philippians and to Philemon",
+      "file": "a-critical-and-exegetical-commentary-on-the-epistles-to-the-philippians-and-to-philemon-vincent-marvin-richard.txt",
+      "bytes": 693357,
+      "words": 111536,
+      "reading_time_minutes": 496
+    },
+    {
+      "title": "A critical and exegetical commentary on the Acts of the Apostles",
+      "file": "a-critical-and-exegetical-commentary-on-the-acts-of-the-apostles-gloag-paton-j-paton-james-1823-1906.txt",
+      "bytes": 1040559,
+      "words": 171955,
+      "reading_time_minutes": 764
+    },
+    {
+      "title": "A critical and exegetical commentary on Haggai, Zechariah, Malachi and Jonah",
+      "file": "a-critical-and-exegetical-commentary-on-haggai-zechariah-malachi-and-jonah-mitchell-hinckley-gilbert-thomas-18.txt",
+      "bytes": 1472933,
+      "words": 226011,
+      "reading_time_minutes": 1004
+    },
+    {
+      "title": "A critical and exegetical commentary on the books of Chronicles",
+      "file": "a-critical-and-exegetical-commentary-on-the-books-of-chronicles-curtis-edward-lewis-1853-1911-madsen-albert-al.txt",
+      "bytes": 1624683,
+      "words": 251935,
+      "reading_time_minutes": 1120
+    },
+    {
+      "title": "Biblical commentary on the prophecies of Isaiah - Volume 1",
+      "file": "biblical-commentary-on-the-prophecies-of-isaiah-volume-1-delitzsch-franz-1813-1890-martin-james.txt",
+      "bytes": 1374964,
+      "words": 209297,
+      "reading_time_minutes": 930
+    },
+    {
+      "title": "Biblical commentary on the prophecies of Isaiah - Volume 2",
+      "file": "biblical-commentary-on-the-prophecies-of-isaiah-volume-2-delitzsch-franz-1813-1890-martin-james.txt",
+      "bytes": 1610711,
+      "words": 247640,
+      "reading_time_minutes": 1101
+    },
+    {
+      "title": "A critical and exegetical commentary on the books of Samuel",
+      "file": "a-critical-and-exegetical-commentary-on-the-books-of-samuel-smith-henry-preserved-1847-1927.txt",
+      "bytes": 1406037,
+      "words": 218992,
+      "reading_time_minutes": 973
+    },
+    {
+      "title": "A critical and exegetical commentary on the Epistles of St. Peter and St. Jude",
+      "file": "a-critical-and-exegetical-commentary-on-the-epistles-of-st-peter-and-st-jude-bigg-charles-1840-1908.txt",
+      "bytes": 1061089,
+      "words": 183518,
+      "reading_time_minutes": 816
+    },
+    {
+      "title": "An exposition of the Book of Ecclesiastes",
+      "file": "an-exposition-of-the-book-of-ecclesiastes-bridges-charles-1794-1869.txt",
+      "bytes": 759152,
+      "words": 119905,
+      "reading_time_minutes": 533
+    },
+    {
+      "title": "The book of Joshua : a critical and expository commentary of the Hebrew text",
+      "file": "the-book-of-joshua-a-critical-and-expository-commentary-of-the-hebrew-text-lloyd-john.txt",
+      "bytes": 755815,
+      "words": 118206,
+      "reading_time_minutes": 525
+    },
+    {
+      "title": "A commentary on the Greek text of the Epistle of Paul to the Ephesians",
+      "file": "a-commentary-on-the-greek-text-of-the-epistle-of-paul-to-the-ephesians-eadie-john-1810-1876.txt",
+      "bytes": 1359749,
+      "words": 225864,
+      "reading_time_minutes": 1004
+    },
+    {
+      "title": "A critical and exegetical commentary on the Epistles of St. Paul to the Thessalonians",
+      "file": "a-critical-and-exegetical-commentary-on-the-epistles-of-st-paul-to-the-thessalonians-frame-james-everett-1868.txt",
+      "bytes": 935746,
+      "words": 148182,
+      "reading_time_minutes": 659
+    },
+    {
+      "title": "New Commentary on Acts of Apostles",
+      "file": "new-commentary-on-acts-of-apostles-j-w-mcgarvey.txt",
+      "bytes": 632007,
+      "words": 97627,
+      "reading_time_minutes": 434
+    },
+    {
+      "title": "Thessalonians, Corinthians, Galatians, and Romans",
+      "file": "thessalonians-corinthians-galatians-and-romans-j-w-mcgarvey-philip-y-pendleton.txt",
+      "bytes": 1386194,
+      "words": 211784,
+      "reading_time_minutes": 941
+    },
+    {
+      "title": "The People's New Testament with Explanatory Notes - Volume I",
+      "file": "the-people-s-new-testament-with-explanatory-notes-volume-i-b-w-johnson.txt",
+      "bytes": 2447841,
+      "words": 444884,
+      "reading_time_minutes": 1977
+    },
+    {
+      "title": "The People's New Testament with Explanatory Notes - Volume II",
+      "file": "the-people-s-new-testament-with-explanatory-notes-volume-ii-b-w-johnson.txt",
+      "bytes": 2278282,
+      "words": 409085,
+      "reading_time_minutes": 1818
+    },
+    {
+      "title": "The Acts of the Apostles, with Commentary",
+      "file": "the-acts-of-the-apostles-with-commentary-e-h-plumptre.txt",
+      "bytes": 1453687,
+      "words": 249551,
+      "reading_time_minutes": 1109
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "The creation, fall, and flood : an exposition of Genesis I-XI",
+      "author": "Owen, Joseph, 1814-1870",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-creation-fall-and-flood-an-exposition-of-genesis-i-xi-owen-joseph-1814-1870.txt"
+    },
+    {
+      "row": 3,
+      "title": "Commentary on Psalms",
+      "author": "Alexander, Joseph Addison, 1809-1860",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/commentary-on-psalms-alexander-joseph-addison-1809-1860.txt"
+    },
+    {
+      "row": 4,
+      "title": "The book of Genesis, and part of the book of Exodus : a revised version with marginal references and an explanatory commentary",
+      "author": "Alford, Henry, 1810-1871",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-genesis-and-part-of-the-book-of-exodus-a-revised-version-with-marginal-references-and-an-explanato.txt"
+    },
+    {
+      "row": 5,
+      "title": "A critical and exegetical commentary on the book of Daniel",
+      "author": "Montgomery, James A. (James Alan), 1866-1949",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-book-of-daniel-montgomery-james-a-james-alan-1866-1949.txt"
+    },
+    {
+      "row": 6,
+      "title": "A critical and exegetical commentary on Amos and Hosea",
+      "author": "Harper, William Rainey, 1856-1906",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-amos-and-hosea-harper-william-rainey-1856-1906.txt"
+    },
+    {
+      "row": 7,
+      "title": "Biblical commentary on the Book of Job;",
+      "author": "Delitzsch, Franz, 1813-1890",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biblical-commentary-on-the-book-of-job-delitzsch-franz-1813-1890.txt"
+    },
+    {
+      "row": 8,
+      "title": "A critical and exegetical commentary on the Gospel according to St. Luke",
+      "author": "Plummer, Alfred, 1841-1926",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-gospel-according-to-st-luke-plummer-alfred-1841-1926.txt"
+    },
+    {
+      "row": 9,
+      "title": "Genesis : a devotional commentary",
+      "author": "Thomas, W. H. Griffith (William Henry Griffith), 1861-1924",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/genesis-a-devotional-commentary-thomas-w-h-griffith-william-henry-griffith-1861-1924.txt"
+    },
+    {
+      "row": 10,
+      "title": "A critical and exegetical commentary on the first epistle of St. Paul to the Corinthians",
+      "author": "Robertson, Archibald, 1853-1931; Plummer, Alfred, 1841-1926",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-first-epistle-of-st-paul-to-the-corinthians-robertson-archibald-18.txt"
+    },
+    {
+      "row": 11,
+      "title": "A critical and exegetical commentary on the Epistle of St. James",
+      "author": "Ropes, James Hardy, 1866-1933",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-epistle-of-st-james-ropes-james-hardy-1866-1933.txt"
+    },
+    {
+      "row": 12,
+      "title": "A critical and exegetical commentary on the gospel according to S. Matthew",
+      "author": "Allen, Willoughby Charles, 1867-1953",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-gospel-according-to-s-matthew-allen-willoughby-charles-1867-1953.txt"
+    },
+    {
+      "row": 13,
+      "title": "A critical and exegetical commentary on Micah, Zephaniah, Nahum, Habakkuk, Obadiah and Joel",
+      "author": "Smith, J. M. Powis (John Merlin Powis), 1866-1932; Ward, William Hayes, 1835-1916; Bewer, Julius A. (Julius August), 1877-1953",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-micah-zephaniah-nahum-habakkuk-obadiah-and-joel-smith-j-m-powis-john-m.txt"
+    },
+    {
+      "row": 14,
+      "title": "A critical and exegetical commentary on Deuteronomy",
+      "author": "Driver, S. R. (Samuel Rolles), 1846-1914",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-deuteronomy-driver-s-r-samuel-rolles-1846-1914.txt"
+    },
+    {
+      "row": 15,
+      "title": "An exposition of the Book of Proverbs",
+      "author": "Bridges, Charles, 1794-1869",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-exposition-of-the-book-of-proverbs-bridges-charles-1794-1869.txt"
+    },
+    {
+      "row": 16,
+      "title": "A critical and exegetical commentary on the book of Isaiah 1-39. 40-66",
+      "author": "Gray, George Buchanan, 1865-1922",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-book-of-isaiah-1-39-40-66-gray-george-buchanan-1865-1922.txt"
+    },
+    {
+      "row": 17,
+      "title": "A critical and exegetical commentary on the Pastoral epistles (I & II Timothy and Titus)",
+      "author": "Lock, Walter, 1846-1933",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-pastoral-epistles-i-and-ii-timothy-and-titus-lock-walter-1846-1933.txt"
+    },
+    {
+      "row": 18,
+      "title": "A critical and exegetical commentary on the Epistles to the Ephesians and to the Colossians",
+      "author": "Abbott, Thomas Kingsmill, 1829-1913",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-epistles-to-the-ephesians-and-to-the-colossians-abbott-thomas-king.txt"
+    },
+    {
+      "row": 19,
+      "title": "A new commentary on Genesis",
+      "author": "Delitzsch, Franz, 1813-1890",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-new-commentary-on-genesis-delitzsch-franz-1813-1890.txt"
+    },
+    {
+      "row": 20,
+      "title": "The Gospel of John : a popular commentary upon a critical basis, especialy designed for pastors and Sunday schools",
+      "author": "Clark, Geo. W.",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-gospel-of-john-a-popular-commentary-upon-a-critical-basis-especialy-designed-for-pastors-and-sunday-school.txt"
+    },
+    {
+      "row": 21,
+      "title": "Rabbi David Kimchi's Commentary upon the prophecies of Zechariah",
+      "author": "Kimchi, David, 1160-1235?; McCaul, Alexander, 1799-1863",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/rabbi-david-kimchi-s-commentary-upon-the-prophecies-of-zechariah-kimchi-david-1160-1235-mccaul-alexander-1799-.txt"
+    },
+    {
+      "row": 22,
+      "title": "Studies in the book of Psalms : being a critical and expository commentary : with doctrinal and practical remarks on the entire Psalter",
+      "author": "Plumer, William S. (William Swan), 1802-1880",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/studies-in-the-book-of-psalms-being-a-critical-and-expository-commentary-with-doctrinal-and-practical-remarks-.txt"
+    },
+    {
+      "row": 23,
+      "title": "Biblical commentary on the Proverbs of Solomon",
+      "author": "Delitzsch, Franz, 1813-1890",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biblical-commentary-on-the-proverbs-of-solomon-delitzsch-franz-1813-1890.txt"
+    },
+    {
+      "row": 24,
+      "title": "The book of the prophet Ezekiel : translated from the original Hebrew : with a commentary, critical, philological, and exegetical",
+      "author": "Henderson, E. (Ebenezer), 1784-1858",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-the-prophet-ezekiel-translated-from-the-original-hebrew-with-a-commentary-critical-philological-an.txt"
+    },
+    {
+      "row": 25,
+      "title": "A critical and exegetical commentary on Numbers",
+      "author": "Gray, George Buchanan, 1865-1922",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-numbers-gray-george-buchanan-1865-1922.txt"
+    },
+    {
+      "row": 26,
+      "title": "A critical and exegetical commentary on the Gospel according to St. Mark",
+      "author": "Gould, Ezra Palmer, 1841-1900",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-gospel-according-to-st-mark-gould-ezra-palmer-1841-1900.txt"
+    },
+    {
+      "row": 27,
+      "title": "A critical and exegetical commentary on the book of Job,",
+      "author": "Driver, S. R. (Samuel Rolles), 1846-1914. cn; Gray, George Buchanan, 1865-1922",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-book-of-job-driver-s-r-samuel-rolles-1846-1914-cn-gray-george-buch.txt"
+    },
+    {
+      "row": 28,
+      "title": "Commentary on Genesis",
+      "author": "Luther, Martin, 1483-1546; Lenker, John Nicholas, 1858-1929, tr",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/commentary-on-genesis-luther-martin-1483-1546-lenker-john-nicholas-1858-1929-tr.txt"
+    },
+    {
+      "row": 29,
+      "title": "A commentary on the Apocalypse",
+      "author": "Stuart, Moses, 1780-1852",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-commentary-on-the-apocalypse-stuart-moses-1780-1852.txt"
+    },
+    {
+      "row": 30,
+      "title": "A critical and exegetical commentary on the Books of Ezra and Nehemiah",
+      "author": "Batten, Loring W",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-books-of-ezra-and-nehemiah-batten-loring-w.txt"
+    },
+    {
+      "row": 31,
+      "title": "A critical and exegetical commentary on Judges",
+      "author": "Moore, George Foot, 1851-1931",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-judges-moore-george-foot-1851-1931.txt"
+    },
+    {
+      "row": 32,
+      "title": "Commentary on the Gospel of Mark ..",
+      "author": "Alexander, Joseph Addison, 1809-1860",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/commentary-on-the-gospel-of-mark-alexander-joseph-addison-1809-1860.txt"
+    },
+    {
+      "row": 33,
+      "title": "A critical and exegetical commentary on the book of Ecclesiastes",
+      "author": "Barton, George A. (George Aaron), 1859-1942",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-book-of-ecclesiastes-barton-george-a-george-aaron-1859-1942.txt"
+    },
+    {
+      "row": 34,
+      "title": "Ezekiel and the book of his prophecy : an exposition",
+      "author": "Fairbairn, Patrick, 1805-1874",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/ezekiel-and-the-book-of-his-prophecy-an-exposition-fairbairn-patrick-1805-1874.txt"
+    },
+    {
+      "row": 35,
+      "title": "A critical and exegetical commentary on the Epistles to the Philippians and to Philemon",
+      "author": "Vincent, Marvin Richardson, 1834-1922",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-epistles-to-the-philippians-and-to-philemon-vincent-marvin-richard.txt"
+    },
+    {
+      "row": 36,
+      "title": "A critical and exegetical commentary on the Acts of the Apostles",
+      "author": "Gloag, Paton J. (Paton James), 1823-1906",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-acts-of-the-apostles-gloag-paton-j-paton-james-1823-1906.txt"
+    },
+    {
+      "row": 37,
+      "title": "A critical and exegetical commentary on Haggai, Zechariah, Malachi and Jonah",
+      "author": "Mitchell, Hinckley Gilbert Thomas, 1846-1920",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-haggai-zechariah-malachi-and-jonah-mitchell-hinckley-gilbert-thomas-18.txt"
+    },
+    {
+      "row": 38,
+      "title": "A critical and exegetical commentary on the books of Chronicles",
+      "author": "Curtis, Edward Lewis, 1853-1911; Madsen, Albert Alonzo, 1876-",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-books-of-chronicles-curtis-edward-lewis-1853-1911-madsen-albert-al.txt"
+    },
+    {
+      "row": 39,
+      "title": "Biblical commentary on the prophecies of Isaiah - Volume 1",
+      "author": "Delitzsch, Franz, 1813-1890; Martin, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biblical-commentary-on-the-prophecies-of-isaiah-volume-1-delitzsch-franz-1813-1890-martin-james.txt"
+    },
+    {
+      "row": 40,
+      "title": "Biblical commentary on the prophecies of Isaiah - Volume 2",
+      "author": "Delitzsch, Franz, 1813-1890; Martin, James",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/biblical-commentary-on-the-prophecies-of-isaiah-volume-2-delitzsch-franz-1813-1890-martin-james.txt"
+    },
+    {
+      "row": 41,
+      "title": "A critical and exegetical commentary on the books of Samuel",
+      "author": "Smith, Henry Preserved, 1847-1927",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-books-of-samuel-smith-henry-preserved-1847-1927.txt"
+    },
+    {
+      "row": 42,
+      "title": "A critical and exegetical commentary on the Epistles of St. Peter and St. Jude",
+      "author": "Bigg, Charles, 1840-1908",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-epistles-of-st-peter-and-st-jude-bigg-charles-1840-1908.txt"
+    },
+    {
+      "row": 43,
+      "title": "An exposition of the Book of Ecclesiastes",
+      "author": "Bridges, Charles, 1794-1869",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/an-exposition-of-the-book-of-ecclesiastes-bridges-charles-1794-1869.txt"
+    },
+    {
+      "row": 44,
+      "title": "The book of Joshua : a critical and expository commentary of the Hebrew text",
+      "author": "Lloyd, John",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-book-of-joshua-a-critical-and-expository-commentary-of-the-hebrew-text-lloyd-john.txt"
+    },
+    {
+      "row": 45,
+      "title": "A commentary on the Greek text of the Epistle of Paul to the Ephesians",
+      "author": "Eadie, John, 1810-1876",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-commentary-on-the-greek-text-of-the-epistle-of-paul-to-the-ephesians-eadie-john-1810-1876.txt"
+    },
+    {
+      "row": 46,
+      "title": "A critical and exegetical commentary on the Epistles of St. Paul to the Thessalonians",
+      "author": "Frame, James Everett, 1868-",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/a-critical-and-exegetical-commentary-on-the-epistles-of-st-paul-to-the-thessalonians-frame-james-everett-1868.txt"
+    },
+    {
+      "row": 47,
+      "title": "New Commentary on Acts of Apostles",
+      "author": "J. W. McGarvey",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/new-commentary-on-acts-of-apostles-j-w-mcgarvey.txt"
+    },
+    {
+      "row": 48,
+      "title": "Thessalonians, Corinthians, Galatians, and Romans",
+      "author": "J. W. McGarvey; Philip Y. Pendleton",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/thessalonians-corinthians-galatians-and-romans-j-w-mcgarvey-philip-y-pendleton.txt"
+    },
+    {
+      "row": 49,
+      "title": "The People's New Testament with Explanatory Notes - Volume I",
+      "author": "B. W. Johnson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-people-s-new-testament-with-explanatory-notes-volume-i-b-w-johnson.txt"
+    },
+    {
+      "row": 50,
+      "title": "The People's New Testament with Explanatory Notes - Volume II",
+      "author": "B. W. Johnson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-people-s-new-testament-with-explanatory-notes-volume-ii-b-w-johnson.txt"
+    },
+    {
+      "row": 51,
+      "title": "The Acts of the Apostles, with Commentary",
+      "author": "E. H. Plumptre",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-acts-of-the-apostles-with-commentary-e-h-plumptre.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}
