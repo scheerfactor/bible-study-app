@@ -1,0 +1,146 @@
+{
+  "source_csv": "data/library/bulk-import-phase-31-verified-devotional-missions.csv",
+  "manifest": "data/library/manifests/curated-public-domain-resources.json",
+  "dry_run": false,
+  "batch_size": 20,
+  "total_attempted": 8,
+  "imported": 8,
+  "would_import": 0,
+  "skipped": 0,
+  "failed": 0,
+  "missing_metadata": 0,
+  "possible_rights_issues": 0,
+  "duplicate_titles": 0,
+  "duplicate_sources": 0,
+  "duplicate_checksums": 0,
+  "file_sizes": [
+    {
+      "title": "Days of Heaven Upon Earth",
+      "file": "days-of-heaven-upon-earth-a-b-simpson.txt",
+      "bytes": 417380,
+      "words": 76896,
+      "reading_time_minutes": 342
+    },
+    {
+      "title": "Memories of Bethany",
+      "file": "memories-of-bethany-john-r-macduff.txt",
+      "bytes": 302497,
+      "words": 51700,
+      "reading_time_minutes": 230
+    },
+    {
+      "title": "The Faithful Promiser",
+      "file": "the-faithful-promiser-john-r-macduff.txt",
+      "bytes": 51954,
+      "words": 8802,
+      "reading_time_minutes": 39
+    },
+    {
+      "title": "The Mind of Jesus",
+      "file": "the-mind-of-jesus-john-r-macduff.txt",
+      "bytes": 109909,
+      "words": 18489,
+      "reading_time_minutes": 82
+    },
+    {
+      "title": "The Words of Jesus",
+      "file": "the-words-of-jesus-john-r-macduff.txt",
+      "bytes": 104094,
+      "words": 17843,
+      "reading_time_minutes": 79
+    },
+    {
+      "title": "The Golden Shoemaker or 'Cobbler' Horn",
+      "file": "the-golden-shoemaker-or-cobbler-horn-j-w-keyworth.txt",
+      "bytes": 443805,
+      "words": 78742,
+      "reading_time_minutes": 350
+    },
+    {
+      "title": "The Child in the Midst",
+      "file": "the-child-in-the-midst-mary-schauffler-platt.txt",
+      "bytes": 412002,
+      "words": 68859,
+      "reading_time_minutes": 306
+    },
+    {
+      "title": "Recollections of a Long Life: An Autobiography",
+      "file": "recollections-of-a-long-life-an-autobiography-theodore-l-cuyler.txt",
+      "bytes": 463586,
+      "words": 80900,
+      "reading_time_minutes": 360
+    }
+  ],
+  "rows": [
+    {
+      "row": 2,
+      "title": "Days of Heaven Upon Earth",
+      "author": "A. B. Simpson",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/days-of-heaven-upon-earth-a-b-simpson.txt"
+    },
+    {
+      "row": 3,
+      "title": "Memories of Bethany",
+      "author": "John R. Macduff",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/memories-of-bethany-john-r-macduff.txt"
+    },
+    {
+      "row": 4,
+      "title": "The Faithful Promiser",
+      "author": "John R. Macduff",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-faithful-promiser-john-r-macduff.txt"
+    },
+    {
+      "row": 5,
+      "title": "The Mind of Jesus",
+      "author": "John R. Macduff",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-mind-of-jesus-john-r-macduff.txt"
+    },
+    {
+      "row": 6,
+      "title": "The Words of Jesus",
+      "author": "John R. Macduff",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-words-of-jesus-john-r-macduff.txt"
+    },
+    {
+      "row": 7,
+      "title": "The Golden Shoemaker or 'Cobbler' Horn",
+      "author": "J. W. Keyworth",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-golden-shoemaker-or-cobbler-horn-j-w-keyworth.txt"
+    },
+    {
+      "row": 8,
+      "title": "The Child in the Midst",
+      "author": "Mary Schauffler Platt",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/the-child-in-the-midst-mary-schauffler-platt.txt"
+    },
+    {
+      "row": 9,
+      "title": "Recollections of a Long Life: An Autobiography",
+      "author": "Theodore L. Cuyler",
+      "status": "imported",
+      "issues": [],
+      "file_path": "data/library/verified/recollections-of-a-long-life-an-autobiography-theodore-l-cuyler.txt"
+    }
+  ],
+  "review_queues": {
+    "Needs Review": [],
+    "Permission Needed": [],
+    "Personal Use Only": [],
+    "Do Not Import": []
+  }
+}

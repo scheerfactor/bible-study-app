@@ -98341,5 +98341,389 @@
     "checksum_sha256": "dff02de78ec4505d68b3152f49ba50a427dea09cf594596d7478bca1155605e2",
     "file_size_bytes": 401215,
     "word_count": 73389
+  },
+  {
+    "title": "Days of Heaven Upon Earth",
+    "author": "A. B. Simpson",
+    "year": 2009,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/28416",
+    "download_url": "https://www.gutenberg.org/ebooks/28416.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/days-of-heaven-upon-earth-a-b-simpson.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/28416.",
+    "notes": "Public-domain full-year devotional for personal reading, family worship, and sermon application. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; devotional readings.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain full-year devotional for personal reading, family worship, and sermon application. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "devotional readings"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "devotional readings"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Days of Heaven Upon Earth",
+      "author": "A. B. Simpson",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#29435f",
+        "to": "#8a7241"
+      }
+    },
+    "reading_time_minutes": 342,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "df12f78c7053f4a9542267a6c9eac2c48a0f1c439be414f2134ba838179feaaf",
+    "file_size_bytes": 417380,
+    "word_count": 76896
+  },
+  {
+    "title": "Memories of Bethany",
+    "author": "John R. Macduff",
+    "year": 2008,
+    "category": "Bible study helps",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://www.gutenberg.org/ebooks/26760",
+    "download_url": "https://www.gutenberg.org/ebooks/26760.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/memories-of-bethany-john-r-macduff.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/26760.",
+    "notes": "Public-domain devotional study of Bethany and related Gospel passages for Bible study, teaching, and sermon preparation. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; devotional exposition.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional study of Bethany and related Gospel passages for Bible study, teaching, and sermon preparation. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "devotional exposition"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "devotional exposition"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Memories of Bethany",
+      "author": "John R. Macduff",
+      "category": "Bible study helps",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 230,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "2e16a6fed35297df5a16196a6c5aa4309db74f68db7def4ff7d13c13d233b2e5",
+    "file_size_bytes": 302497,
+    "word_count": 51700
+  },
+  {
+    "title": "The Faithful Promiser",
+    "author": "John R. Macduff",
+    "year": 2008,
+    "category": "Christian Living",
+    "collection": "Devotional Classics",
+    "source_url": "https://www.gutenberg.org/ebooks/27344",
+    "download_url": "https://www.gutenberg.org/ebooks/27344.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-faithful-promiser-john-r-macduff.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/27344.",
+    "notes": "Public-domain Scripture-promise devotional for personal study, encouragement, and teaching support. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; promise devotional.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Scripture-promise devotional for personal study, encouragement, and teaching support. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Devotional Classics",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "promise devotional"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "promise devotional"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Faithful Promiser",
+      "author": "John R. Macduff",
+      "category": "Christian Living",
+      "collection": "Devotional Classics",
+      "badge": "Devotional Classics",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 39,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "784dd7cdc0b12482f0e6f8d378343b2ce2ec74b7d652de790539edc7a800b815",
+    "file_size_bytes": 51954,
+    "word_count": 8802
+  },
+  {
+    "title": "The Mind of Jesus",
+    "author": "John R. Macduff",
+    "year": 2009,
+    "category": "Christian Living",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://www.gutenberg.org/ebooks/28507",
+    "download_url": "https://www.gutenberg.org/ebooks/28507.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-mind-of-jesus-john-r-macduff.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/28507.",
+    "notes": "Public-domain Christ-centered devotional for discipleship, personal study, and teaching application. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; Christ-centered devotional.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christ-centered devotional for discipleship, personal study, and teaching application. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "Christ-centered devotional"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "Christ-centered devotional"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Mind of Jesus",
+      "author": "John R. Macduff",
+      "category": "Christian Living",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 82,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "53fab5d4cec8a163566510b1e1a382fea86664dec68425ba51805e4d6866125b",
+    "file_size_bytes": 109909,
+    "word_count": 18489
+  },
+  {
+    "title": "The Words of Jesus",
+    "author": "John R. Macduff",
+    "year": 2009,
+    "category": "Christian Living",
+    "collection": "Life of Christ Studies",
+    "source_url": "https://www.gutenberg.org/ebooks/28547",
+    "download_url": "https://www.gutenberg.org/ebooks/28547.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-words-of-jesus-john-r-macduff.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/28547.",
+    "notes": "Public-domain devotional readings centered on the words of Christ for personal study, family worship, and teaching application. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; Christ-centered devotional.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain devotional readings centered on the words of Christ for personal study, family worship, and teaching application. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Life of Christ Studies",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "Christ-centered devotional"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "Christ-centered devotional"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Words of Jesus",
+      "author": "John R. Macduff",
+      "category": "Christian Living",
+      "collection": "Life of Christ Studies",
+      "badge": "Life of Christ Studies",
+      "palette": {
+        "from": "#583f32",
+        "to": "#55705f"
+      }
+    },
+    "reading_time_minutes": 79,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "eec600f1f212160e3dd68bf1e6273b805a9c00af21066d6b4b4e8bae34b0854c",
+    "file_size_bytes": 104094,
+    "word_count": 17843
+  },
+  {
+    "title": "The Golden Shoemaker or 'Cobbler' Horn",
+    "author": "J. W. Keyworth",
+    "year": 2007,
+    "category": "Missions",
+    "collection": "Missionary Stories",
+    "source_url": "https://www.gutenberg.org/ebooks/22124",
+    "download_url": "https://www.gutenberg.org/ebooks/22124.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-golden-shoemaker-or-cobbler-horn-j-w-keyworth.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/22124.",
+    "notes": "Public-domain Christian missionary story for missions teaching, family reading, and sermon illustrations. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; missionary story.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain Christian missionary story for missions teaching, family reading, and sermon illustrations. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Missionary Stories",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "missionary story"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "missionary story"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Golden Shoemaker or 'Cobbler' Horn",
+      "author": "J. W. Keyworth",
+      "category": "Missions",
+      "collection": "Missionary Stories",
+      "badge": "Missionary Stories",
+      "palette": {
+        "from": "#314c43",
+        "to": "#a67d3d"
+      }
+    },
+    "reading_time_minutes": 350,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "102a61f69bd4ed9d7d43ae3d019f49d9c21dab4bba79bb8e56d2366d8301bcac",
+    "file_size_bytes": 443805,
+    "word_count": 78742
+  },
+  {
+    "title": "The Child in the Midst",
+    "author": "Mary Schauffler Platt",
+    "year": 2014,
+    "category": "Missions",
+    "collection": "Missions and Children",
+    "source_url": "https://www.gutenberg.org/ebooks/46148",
+    "download_url": "https://www.gutenberg.org/ebooks/46148.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/the-child-in-the-midst-mary-schauffler-platt.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/46148.",
+    "notes": "Public-domain historical study of children and Christian missions for teachers, families, and missions research. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; historical missions study.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain historical study of children and Christian missions for teachers, families, and missions research. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Missions and Children",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "historical missions study"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "historical missions study"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "The Child in the Midst",
+      "author": "Mary Schauffler Platt",
+      "category": "Missions",
+      "collection": "Missions and Children",
+      "badge": "Missions and Children",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 306,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "acbdf2cf763a7bade0cefadca26ff348af4370ee696b4dad19fbaa03ce1b8102",
+    "file_size_bytes": 412002,
+    "word_count": 68859
+  },
+  {
+    "title": "Recollections of a Long Life: An Autobiography",
+    "author": "Theodore L. Cuyler",
+    "year": 2004,
+    "category": "Biographies",
+    "collection": "Preachers and Ministry",
+    "source_url": "https://www.gutenberg.org/ebooks/12549",
+    "download_url": "https://www.gutenberg.org/ebooks/12549.txt.utf-8",
+    "source_license_url": "https://www.gutenberg.org/policy/license.html",
+    "file_path": "data/library/verified/recollections-of-a-long-life-an-autobiography-theodore-l-cuyler.txt",
+    "public_domain_status": "verified",
+    "commercial_use_status": "verified_allowed_with_project_gutenberg_terms",
+    "attribution_required": true,
+    "rights_basis": "verified public domain. Source reviewed from https://www.gutenberg.org/ebooks/12549.",
+    "notes": "Public-domain ministry autobiography for preacher formation, church history, and sermon illustration research. Preserve source wording and cite the source when quoted. Labels/warnings: Use with discernment; Project Gutenberg terms; ministry autobiography.",
+    "import_status": "imported_file",
+    "rights_status": "verified public domain",
+    "doctrinal_review_status": "reviewed",
+    "recommended_use": "Public-domain ministry autobiography for preacher formation, church history, and sermon illustration research. Preserve source wording and cite the source when quoted.",
+    "resource_labels": [
+      "Preachers and Ministry",
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "ministry autobiography"
+    ],
+    "resource_warnings": [
+      "Use with discernment",
+      "Project Gutenberg terms",
+      "ministry autobiography"
+    ],
+    "cover_metadata": {
+      "type": "generated-fallback",
+      "title": "Recollections of a Long Life: An Autobiography",
+      "author": "Theodore L. Cuyler",
+      "category": "Biographies",
+      "collection": "Preachers and Ministry",
+      "badge": "Preachers and Ministry",
+      "palette": {
+        "from": "#3f4a34",
+        "to": "#7b5641"
+      }
+    },
+    "reading_time_minutes": 360,
+    "text_processing": "project_gutenberg_boilerplate_removed",
+    "checksum_sha256": "0518a28a79d3b84408d530c01b6ad5e3b41b5fd1d382b721e41f8b27352d5dd8",
+    "file_size_bytes": 463586,
+    "word_count": 80900
   }
 ]
