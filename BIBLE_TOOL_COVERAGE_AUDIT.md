@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T20:27:43.342Z
+Generated: 2026-07-15T21:28:30.256Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -119,15 +119,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
-| openly | OPENLY | 15 | ocr_full_import_needs_spot_review |
-| otherwise | OTH'ERWISE | 15 | ocr_full_import_needs_spot_review |
-| possible | POS'SIBLE | 15 | ocr_full_import_needs_spot_review |
-| poverty | POVERTY | 15 | ocr_full_import_needs_spot_review |
-| pressed | PRESS'ED | 15 | ocr_full_import_needs_spot_review |
-| pull | PULL | 15 | ocr_full_import_needs_spot_review |
-| purge | PURGE | 15 | ocr_full_import_needs_spot_review |
-| reach | REACH | 15 | ocr_full_import_needs_spot_review |
-| sailed | SA'ILED | 15 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 | slow | SLOW | 15 | ocr_full_import_needs_spot_review |
 | stopped | STOP'PED | 15 | ocr_full_import_needs_spot_review |
@@ -142,6 +133,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | effect | EFFECT' | 14 | ocr_full_import_needs_spot_review |
 | eldest | ELD'EST | 14 | ocr_full_import_needs_spot_review |
 | enjoy | ENJOY' | 14 | ocr_full_import_needs_spot_review |
+| firstling | FIRST'LING | 14 | ocr_full_import_needs_spot_review |
+| furthermore | FURTHERMORE | 14 | ocr_full_import_needs_spot_review |
+| gall | GALL | 14 | ocr_full_import_needs_spot_review |
+| join | JOIN | 14 | ocr_full_import_needs_spot_review |
+| liver | LIV'ER | 14 | ocr_full_import_needs_spot_review |
+| midnight | MID'NIGHT | 14 | ocr_full_import_needs_spot_review |
+| oppressor | OPPRESS'OR | 14 | ocr_full_import_needs_spot_review |
+| ornaments | OR'NAMENT | 14 | ocr_full_import_needs_spot_review |
+| outward | OUT'WARD | 14 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
