@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T12:53:02.915Z",
+    "generated_at": "2026-07-15T13:23:36.327Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60251,
+      "entries": 60256,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1958,52 +1958,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "standard",
-          "count": 18,
-          "sampleRefs": [
-            "Numbers 1:52",
-            "Numbers 2:2",
-            "Numbers 2:3",
-            "Numbers 2:10",
-            "Numbers 2:18"
-          ],
-          "lookupCandidates": [
-            "standard"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "STAND'ARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "tempest",
-          "count": 18,
-          "sampleRefs": [
-            "Job 9:17",
-            "Job 27:20",
-            "Psalms 11:6",
-            "Psalms 55:8",
-            "Psalms 83:15"
-          ],
-          "lookupCandidates": [
-            "tempest",
-            "temp",
-            "tempe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "TEM'PEST",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "wages",
           "count": 18,
           "sampleRefs": [
@@ -2027,50 +1981,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "account",
-          "count": 17,
-          "sampleRefs": [
-            "2 Kings 12:4",
-            "1 Chronicles 27:24",
-            "2 Chronicles 26:11",
-            "Job 33:13",
-            "Psalms 144:3"
-          ],
-          "lookupCandidates": [
-            "account"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ACCOUNT'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "belial",
-          "count": 17,
-          "sampleRefs": [
-            "Deuteronomy 13:13",
-            "Judges 19:22",
-            "Judges 20:13",
-            "1 Samuel 1:16",
-            "1 Samuel 2:12"
-          ],
-          "lookupCandidates": [
-            "belial"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BE'LIAL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "bid",
           "count": 17,
           "sampleRefs": [
@@ -2090,30 +2000,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BID",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "depths",
-          "count": 17,
-          "sampleRefs": [
-            "Exodus 15:5",
-            "Exodus 15:8",
-            "Deuteronomy 8:7",
-            "Psalms 68:22",
-            "Psalms 71:20"
-          ],
-          "lookupCandidates": [
-            "depths",
-            "depth",
-            "depthe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DEPTH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3587,6 +3473,116 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "NOS'TRIL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "obtain",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 16:2",
+            "Proverbs 8:35",
+            "Isaiah 35:10",
+            "Isaiah 51:11",
+            "Daniel 11:21"
+          ],
+          "lookupCandidates": [
+            "obtain"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OBTA'IN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "often",
+          "count": 15,
+          "sampleRefs": [
+            "Proverbs 29:1",
+            "Malachi 3:16",
+            "Matthew 23:37",
+            "Mark 5:4",
+            "Luke 5:33"
+          ],
+          "lookupCandidates": [
+            "often"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OFTEN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "openly",
+          "count": 15,
+          "sampleRefs": [
+            "Genesis 38:21",
+            "Psalms 98:2",
+            "Matthew 6:4",
+            "Matthew 6:6",
+            "Matthew 6:18"
+          ],
+          "lookupCandidates": [
+            "openly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OPENLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "otherwise",
+          "count": 15,
+          "sampleRefs": [
+            "2 Samuel 18:13",
+            "1 Kings 1:21",
+            "2 Chronicles 30:18",
+            "Psalms 38:16",
+            "Matthew 6:1"
+          ],
+          "lookupCandidates": [
+            "otherwise"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "OTH'ERWISE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "possible",
+          "count": 15,
+          "sampleRefs": [
+            "Matthew 19:26",
+            "Matthew 24:24",
+            "Matthew 26:39",
+            "Mark 9:23",
+            "Mark 10:27"
+          ],
+          "lookupCandidates": [
+            "possible"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "POS'SIBLE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10429,52 +10425,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "standard",
-        "count": 18,
-        "sampleRefs": [
-          "Numbers 1:52",
-          "Numbers 2:2",
-          "Numbers 2:3",
-          "Numbers 2:10",
-          "Numbers 2:18"
-        ],
-        "lookupCandidates": [
-          "standard"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "STAND'ARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "tempest",
-        "count": 18,
-        "sampleRefs": [
-          "Job 9:17",
-          "Job 27:20",
-          "Psalms 11:6",
-          "Psalms 55:8",
-          "Psalms 83:15"
-        ],
-        "lookupCandidates": [
-          "tempest",
-          "temp",
-          "tempe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "TEM'PEST",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "wages",
         "count": 18,
         "sampleRefs": [
@@ -10498,50 +10448,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "account",
-        "count": 17,
-        "sampleRefs": [
-          "2 Kings 12:4",
-          "1 Chronicles 27:24",
-          "2 Chronicles 26:11",
-          "Job 33:13",
-          "Psalms 144:3"
-        ],
-        "lookupCandidates": [
-          "account"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ACCOUNT'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "belial",
-        "count": 17,
-        "sampleRefs": [
-          "Deuteronomy 13:13",
-          "Judges 19:22",
-          "Judges 20:13",
-          "1 Samuel 1:16",
-          "1 Samuel 2:12"
-        ],
-        "lookupCandidates": [
-          "belial"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BE'LIAL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "bid",
         "count": 17,
         "sampleRefs": [
@@ -10561,30 +10467,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BID",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "depths",
-        "count": 17,
-        "sampleRefs": [
-          "Exodus 15:5",
-          "Exodus 15:8",
-          "Deuteronomy 8:7",
-          "Psalms 68:22",
-          "Psalms 71:20"
-        ],
-        "lookupCandidates": [
-          "depths",
-          "depth",
-          "depthe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DEPTH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12058,6 +11940,116 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "NOS'TRIL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "obtain",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 16:2",
+          "Proverbs 8:35",
+          "Isaiah 35:10",
+          "Isaiah 51:11",
+          "Daniel 11:21"
+        ],
+        "lookupCandidates": [
+          "obtain"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OBTA'IN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "often",
+        "count": 15,
+        "sampleRefs": [
+          "Proverbs 29:1",
+          "Malachi 3:16",
+          "Matthew 23:37",
+          "Mark 5:4",
+          "Luke 5:33"
+        ],
+        "lookupCandidates": [
+          "often"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OFTEN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "openly",
+        "count": 15,
+        "sampleRefs": [
+          "Genesis 38:21",
+          "Psalms 98:2",
+          "Matthew 6:4",
+          "Matthew 6:6",
+          "Matthew 6:18"
+        ],
+        "lookupCandidates": [
+          "openly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OPENLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "otherwise",
+        "count": 15,
+        "sampleRefs": [
+          "2 Samuel 18:13",
+          "1 Kings 1:21",
+          "2 Chronicles 30:18",
+          "Psalms 38:16",
+          "Matthew 6:1"
+        ],
+        "lookupCandidates": [
+          "otherwise"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "OTH'ERWISE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "possible",
+        "count": 15,
+        "sampleRefs": [
+          "Matthew 19:26",
+          "Matthew 24:24",
+          "Matthew 26:39",
+          "Mark 9:23",
+          "Mark 10:27"
+        ],
+        "lookupCandidates": [
+          "possible"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "POS'SIBLE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
