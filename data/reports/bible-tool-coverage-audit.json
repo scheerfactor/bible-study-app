@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T17:57:34.872Z",
+    "generated_at": "2026-07-15T19:00:59.366Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,11 +10,11 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60331,
-      "normalizedHeadwords": 51029,
-      "meaningfulWordsWithDefinition": 7858,
-      "meaningfulWordsWithoutDefinition": 4596,
-      "meaningfulDefinitionCoveragePercent": 63.1,
+      "entries": 60338,
+      "normalizedHeadwords": 51036,
+      "meaningfulWordsWithDefinition": 7868,
+      "meaningfulWordsWithoutDefinition": 4586,
+      "meaningfulDefinitionCoveragePercent": 63.2,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -174,52 +174,6 @@
           "reviewStatus": null
         },
         {
-          "word": "how",
-          "count": 543,
-          "sampleRefs": [
-            "Genesis 26:9",
-            "Genesis 27:20",
-            "Genesis 28:17",
-            "Genesis 30:29",
-            "Genesis 30:29"
-          ],
-          "lookupCandidates": [
-            "how"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "years",
-          "count": 539,
-          "sampleRefs": [
-            "Genesis 1:14",
-            "Genesis 5:3",
-            "Genesis 5:4",
-            "Genesis 5:5",
-            "Genesis 5:6"
-          ],
-          "lookupCandidates": [
-            "years",
-            "year",
-            "yeare"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "saul",
           "count": 420,
           "sampleRefs": [
@@ -253,28 +207,6 @@
           ],
           "lookupCandidates": [
             "jacob"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "year",
-          "count": 369,
-          "sampleRefs": [
-            "Genesis 7:11",
-            "Genesis 8:13",
-            "Genesis 14:4",
-            "Genesis 14:5",
-            "Genesis 17:21"
-          ],
-          "lookupCandidates": [
-            "year"
           ],
           "hasDefinition": false,
           "hasEaston": true,
@@ -485,28 +417,6 @@
           "reviewStatus": null
         },
         {
-          "word": "book",
-          "count": 188,
-          "sampleRefs": [
-            "Genesis 5:1",
-            "Exodus 17:14",
-            "Exodus 24:7",
-            "Exodus 32:32",
-            "Exodus 32:33"
-          ],
-          "lookupCandidates": [
-            "book"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "ephraim",
           "count": 176,
           "sampleRefs": [
@@ -544,30 +454,6 @@
           "hasDefinition": false,
           "hasEaston": true,
           "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "darkness",
-          "count": 162,
-          "sampleRefs": [
-            "Genesis 1:2",
-            "Genesis 1:4",
-            "Genesis 1:5",
-            "Genesis 1:18",
-            "Genesis 15:12"
-          ],
-          "lookupCandidates": [
-            "darkness",
-            "darknes",
-            "darknese"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": true,
           "hasRareTerm": false,
           "hasAnyStudyLookup": true,
           "dirtyDefinition": false,
@@ -795,28 +681,6 @@
           "reviewStatus": null
         },
         {
-          "word": "chosen",
-          "count": 123,
-          "sampleRefs": [
-            "Exodus 14:7",
-            "Exodus 15:4",
-            "Numbers 16:5",
-            "Deuteronomy 7:6",
-            "Deuteronomy 12:21"
-          ],
-          "lookupCandidates": [
-            "chosen"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "jonathan",
           "count": 121,
           "sampleRefs": [
@@ -861,54 +725,6 @@
           "reviewStatus": null
         },
         {
-          "word": "generations",
-          "count": 118,
-          "sampleRefs": [
-            "Genesis 2:4",
-            "Genesis 5:1",
-            "Genesis 6:9",
-            "Genesis 6:9",
-            "Genesis 9:12"
-          ],
-          "lookupCandidates": [
-            "generations",
-            "generation",
-            "generatione"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "suburbs",
-          "count": 115,
-          "sampleRefs": [
-            "Leviticus 25:34",
-            "Numbers 35:2",
-            "Numbers 35:3",
-            "Numbers 35:4",
-            "Numbers 35:5"
-          ],
-          "lookupCandidates": [
-            "suburbs",
-            "suburb",
-            "suburbe"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "absalom",
           "count": 108,
           "sampleRefs": [
@@ -920,28 +736,6 @@
           ],
           "lookupCandidates": [
             "absalom"
-          ],
-          "hasDefinition": false,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "generation",
-          "count": 107,
-          "sampleRefs": [
-            "Genesis 7:1",
-            "Genesis 15:16",
-            "Genesis 50:23",
-            "Exodus 1:6",
-            "Exodus 17:16"
-          ],
-          "lookupCandidates": [
-            "generation"
           ],
           "hasDefinition": false,
           "hasEaston": true,
@@ -1787,6 +1581,208 @@
           "lookupCandidates": [
             "abram",
             "abraham"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "syrians",
+          "count": 61,
+          "sampleRefs": [
+            "2 Samuel 8:5",
+            "2 Samuel 8:5",
+            "2 Samuel 8:6",
+            "2 Samuel 8:13",
+            "2 Samuel 10:6"
+          ],
+          "lookupCandidates": [
+            "syrians",
+            "syria",
+            "syrian",
+            "syriane"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "watch",
+          "count": 61,
+          "sampleRefs": [
+            "Genesis 31:49",
+            "Exodus 14:24",
+            "Judges 7:19",
+            "Judges 7:19",
+            "1 Samuel 11:11"
+          ],
+          "lookupCandidates": [
+            "watch"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "damascus",
+          "count": 60,
+          "sampleRefs": [
+            "Genesis 14:15",
+            "Genesis 15:2",
+            "2 Samuel 8:5",
+            "2 Samuel 8:6",
+            "1 Kings 11:24"
+          ],
+          "lookupCandidates": [
+            "damascus",
+            "damascu"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "mordecai",
+          "count": 60,
+          "sampleRefs": [
+            "Ezra 2:2",
+            "Nehemiah 7:7",
+            "Esther 2:5",
+            "Esther 2:7",
+            "Esther 2:10"
+          ],
+          "lookupCandidates": [
+            "mordecai"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "nebuchadnezzar",
+          "count": 60,
+          "sampleRefs": [
+            "2 Kings 24:1",
+            "2 Kings 24:10",
+            "2 Kings 24:11",
+            "2 Kings 25:1",
+            "2 Kings 25:8"
+          ],
+          "lookupCandidates": [
+            "nebuchadnezzar"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "bashan",
+          "count": 59,
+          "sampleRefs": [
+            "Numbers 21:33",
+            "Numbers 21:33",
+            "Numbers 32:33",
+            "Deuteronomy 1:4",
+            "Deuteronomy 3:1"
+          ],
+          "lookupCandidates": [
+            "bashan"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "jehu",
+          "count": 59,
+          "sampleRefs": [
+            "1 Kings 16:1",
+            "1 Kings 16:7",
+            "1 Kings 16:12",
+            "1 Kings 19:16",
+            "1 Kings 19:17"
+          ],
+          "lookupCandidates": [
+            "jehu"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "elisha",
+          "count": 58,
+          "sampleRefs": [
+            "1 Kings 19:16",
+            "1 Kings 19:17",
+            "1 Kings 19:19",
+            "2 Kings 2:1",
+            "2 Kings 2:2"
+          ],
+          "lookupCandidates": [
+            "elisha"
+          ],
+          "hasDefinition": false,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "esther",
+          "count": 56,
+          "sampleRefs": [
+            "Esther 2:7",
+            "Esther 2:8",
+            "Esther 2:10",
+            "Esther 2:11",
+            "Esther 2:15"
+          ],
+          "lookupCandidates": [
+            "esther"
           ],
           "hasDefinition": false,
           "hasEaston": true,
@@ -8651,52 +8647,6 @@
         "reviewStatus": null
       },
       {
-        "word": "how",
-        "count": 543,
-        "sampleRefs": [
-          "Genesis 26:9",
-          "Genesis 27:20",
-          "Genesis 28:17",
-          "Genesis 30:29",
-          "Genesis 30:29"
-        ],
-        "lookupCandidates": [
-          "how"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "years",
-        "count": 539,
-        "sampleRefs": [
-          "Genesis 1:14",
-          "Genesis 5:3",
-          "Genesis 5:4",
-          "Genesis 5:5",
-          "Genesis 5:6"
-        ],
-        "lookupCandidates": [
-          "years",
-          "year",
-          "yeare"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "saul",
         "count": 420,
         "sampleRefs": [
@@ -8730,28 +8680,6 @@
         ],
         "lookupCandidates": [
           "jacob"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "year",
-        "count": 369,
-        "sampleRefs": [
-          "Genesis 7:11",
-          "Genesis 8:13",
-          "Genesis 14:4",
-          "Genesis 14:5",
-          "Genesis 17:21"
-        ],
-        "lookupCandidates": [
-          "year"
         ],
         "hasDefinition": false,
         "hasEaston": true,
@@ -8962,28 +8890,6 @@
         "reviewStatus": null
       },
       {
-        "word": "book",
-        "count": 188,
-        "sampleRefs": [
-          "Genesis 5:1",
-          "Exodus 17:14",
-          "Exodus 24:7",
-          "Exodus 32:32",
-          "Exodus 32:33"
-        ],
-        "lookupCandidates": [
-          "book"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "ephraim",
         "count": 176,
         "sampleRefs": [
@@ -9021,30 +8927,6 @@
         "hasDefinition": false,
         "hasEaston": true,
         "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "darkness",
-        "count": 162,
-        "sampleRefs": [
-          "Genesis 1:2",
-          "Genesis 1:4",
-          "Genesis 1:5",
-          "Genesis 1:18",
-          "Genesis 15:12"
-        ],
-        "lookupCandidates": [
-          "darkness",
-          "darknes",
-          "darknese"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": true,
         "hasRareTerm": false,
         "hasAnyStudyLookup": true,
         "dirtyDefinition": false,
@@ -9272,28 +9154,6 @@
         "reviewStatus": null
       },
       {
-        "word": "chosen",
-        "count": 123,
-        "sampleRefs": [
-          "Exodus 14:7",
-          "Exodus 15:4",
-          "Numbers 16:5",
-          "Deuteronomy 7:6",
-          "Deuteronomy 12:21"
-        ],
-        "lookupCandidates": [
-          "chosen"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "jonathan",
         "count": 121,
         "sampleRefs": [
@@ -9338,54 +9198,6 @@
         "reviewStatus": null
       },
       {
-        "word": "generations",
-        "count": 118,
-        "sampleRefs": [
-          "Genesis 2:4",
-          "Genesis 5:1",
-          "Genesis 6:9",
-          "Genesis 6:9",
-          "Genesis 9:12"
-        ],
-        "lookupCandidates": [
-          "generations",
-          "generation",
-          "generatione"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "suburbs",
-        "count": 115,
-        "sampleRefs": [
-          "Leviticus 25:34",
-          "Numbers 35:2",
-          "Numbers 35:3",
-          "Numbers 35:4",
-          "Numbers 35:5"
-        ],
-        "lookupCandidates": [
-          "suburbs",
-          "suburb",
-          "suburbe"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "absalom",
         "count": 108,
         "sampleRefs": [
@@ -9397,28 +9209,6 @@
         ],
         "lookupCandidates": [
           "absalom"
-        ],
-        "hasDefinition": false,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "generation",
-        "count": 107,
-        "sampleRefs": [
-          "Genesis 7:1",
-          "Genesis 15:16",
-          "Genesis 50:23",
-          "Exodus 1:6",
-          "Exodus 17:16"
-        ],
-        "lookupCandidates": [
-          "generation"
         ],
         "hasDefinition": false,
         "hasEaston": true,
@@ -10264,6 +10054,208 @@
         "lookupCandidates": [
           "abram",
           "abraham"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "syrians",
+        "count": 61,
+        "sampleRefs": [
+          "2 Samuel 8:5",
+          "2 Samuel 8:5",
+          "2 Samuel 8:6",
+          "2 Samuel 8:13",
+          "2 Samuel 10:6"
+        ],
+        "lookupCandidates": [
+          "syrians",
+          "syria",
+          "syrian",
+          "syriane"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "watch",
+        "count": 61,
+        "sampleRefs": [
+          "Genesis 31:49",
+          "Exodus 14:24",
+          "Judges 7:19",
+          "Judges 7:19",
+          "1 Samuel 11:11"
+        ],
+        "lookupCandidates": [
+          "watch"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "damascus",
+        "count": 60,
+        "sampleRefs": [
+          "Genesis 14:15",
+          "Genesis 15:2",
+          "2 Samuel 8:5",
+          "2 Samuel 8:6",
+          "1 Kings 11:24"
+        ],
+        "lookupCandidates": [
+          "damascus",
+          "damascu"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "mordecai",
+        "count": 60,
+        "sampleRefs": [
+          "Ezra 2:2",
+          "Nehemiah 7:7",
+          "Esther 2:5",
+          "Esther 2:7",
+          "Esther 2:10"
+        ],
+        "lookupCandidates": [
+          "mordecai"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "nebuchadnezzar",
+        "count": 60,
+        "sampleRefs": [
+          "2 Kings 24:1",
+          "2 Kings 24:10",
+          "2 Kings 24:11",
+          "2 Kings 25:1",
+          "2 Kings 25:8"
+        ],
+        "lookupCandidates": [
+          "nebuchadnezzar"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "bashan",
+        "count": 59,
+        "sampleRefs": [
+          "Numbers 21:33",
+          "Numbers 21:33",
+          "Numbers 32:33",
+          "Deuteronomy 1:4",
+          "Deuteronomy 3:1"
+        ],
+        "lookupCandidates": [
+          "bashan"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "jehu",
+        "count": 59,
+        "sampleRefs": [
+          "1 Kings 16:1",
+          "1 Kings 16:7",
+          "1 Kings 16:12",
+          "1 Kings 19:16",
+          "1 Kings 19:17"
+        ],
+        "lookupCandidates": [
+          "jehu"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "elisha",
+        "count": 58,
+        "sampleRefs": [
+          "1 Kings 19:16",
+          "1 Kings 19:17",
+          "1 Kings 19:19",
+          "2 Kings 2:1",
+          "2 Kings 2:2"
+        ],
+        "lookupCandidates": [
+          "elisha"
+        ],
+        "hasDefinition": false,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "esther",
+        "count": 56,
+        "sampleRefs": [
+          "Esther 2:7",
+          "Esther 2:8",
+          "Esther 2:10",
+          "Esther 2:11",
+          "Esther 2:15"
+        ],
+        "lookupCandidates": [
+          "esther"
         ],
         "hasDefinition": false,
         "hasEaston": true,
