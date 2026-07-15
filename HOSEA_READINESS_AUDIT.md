@@ -1,14 +1,14 @@
 # Hosea Readiness Audit
 
-Generated: 2026-07-15T19:01:03.131Z
+Generated: 2026-07-15T19:28:44.188Z
 
 Status: **ready**
 
 ## Verified Coverage
 
 - KJV: 14/14 chapters and 197/197 verses.
-- Webster 1828: 847/906 meaningful unique words have a lookup (93.5%).
-- Supplemental fallback: 61 additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.
+- Webster 1828: 848/906 meaningful unique words have a lookup (93.6%).
+- Supplemental fallback: 60 additional Webster gaps have Easton, Nave, or reviewed KJV term help, chiefly names, places, and rare forms.
 - Combined dictionary help: 906/906 meaningful Hosea words resolve to a readable definition (100%).
 - Contextual fallback: 2 ambiguous or dirty Webster matches have verified Easton or reviewed KJV-term help instead.
 - Strong's: 14/14 chapters, 197/197 verses, 4807/4807 CrossWire source-marked word positions, and 0 missing lexicon cards.

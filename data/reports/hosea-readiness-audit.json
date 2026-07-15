@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T19:01:03.131Z",
+  "generated_at": "2026-07-15T19:28:44.188Z",
   "status": "ready",
   "assertions": {
     "kjvChapters": true,
@@ -19,12 +19,12 @@
     "meaningfulUniqueWords": 906
   },
   "webster1828": {
-    "wordsWithDefinition": 847,
-    "coveragePercent": 93.5,
+    "wordsWithDefinition": 848,
+    "coveragePercent": 93.6,
     "wordsWithDictionaryHelp": 906,
     "combinedLookupCoveragePercent": 100,
-    "reviewedOverlayWords": 692,
-    "wordsWithBibleDictionaryFallback": 61,
+    "reviewedOverlayWords": 693,
+    "wordsWithBibleDictionaryFallback": 60,
     "unresolvedWords": [],
     "dirtyBaseEntries": [],
     "contextualFallbackEntries": [

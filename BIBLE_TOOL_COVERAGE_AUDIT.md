@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T19:00:59.366Z
+Generated: 2026-07-15T19:28:26.389Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,868/12,454 meaningful KJV words have a lookup candidate (63.2%).
-- Combined word/topic lookup: 10,844/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.1%).
+- Webster 1828: 7,889/12,454 meaningful KJV words have a lookup candidate (63.3%).
+- Combined word/topic lookup: 10,845/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.1%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
