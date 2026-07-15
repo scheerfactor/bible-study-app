@@ -10010,6 +10010,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "MEAT",
+    "normalized_headword": "meat",
+    "definition": "MEAT, noun 1. Food in general; any thing eaten for nourishment, either by man or beast. And God said, Behold, I have given you every herb--to you it shall be for meat Genesis 1:29. Every moving thing that liveth, shall be meat for you Genesis 9:3. Thy carcass shall be meat to all fowls of the air Deuteronomy 28:26. 2. The flesh of animals used as food. This is now the more usual sense of the word. The meat of carnivorous animals is tough, coarse and ill flavored. The meat of herbivorous animals is generally palatable. 3. In Scripture, spiritual food; that which sustains and nourishes spiritual life or holiness. My flesh is meat indeed. John 6:27. 4. Spiritual comfort; that which delights the soul. My meat is to do the will of him that sent me. John 4:8. 5. Products of the earth proper for food. Habakkuk 3:17. 6. The more abstruse doctrines of the gospel, or mysteries of religion. Hebrews 5:12. 7. Ceremonial ordinances. Hebrews 13:9. To sit at meat to sit or recline at the table.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/meat",
+    "source_line_start": 1,
+    "source_line_end": 14,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "MEDIATOR",
     "normalized_headword": "mediator",
     "definition": "MEDIA'TOR, noun. One that interposes between parties at variance for the purpose of reconciling them. 1. By way of eminence, Christ is the mediator, the divine intercessor through whom sinners may be reconciled to an offended God. Christ is a mediator by nature, as partaking of both natures divine and human; and mediator by office, as transacting matters between God and man.",
@@ -17280,6 +17290,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "UN'TO",
+    "normalized_headword": "unto",
+    "definition": "UN'TO, preposition a compound of un, [on, ] and to; of no use in the language, as it expresses no more than to. I do not find it in our mother tongue, nor is it ever used in popular discourse. It is found in writers of former times, but is entirely obsolete.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/unto",
+    "source_line_start": 1,
+    "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "UNWI'SE",
     "normalized_headword": "unwise",
     "definition": "UNWI'SE, adjective s as z. 1. Not wise; not choosing the best means for the end; defective in wisdom; as an unwise man; unwise kings. 2. Not dictated by wisdom; not adapted to the end; as unwise measures.",
@@ -17437,6 +17457,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/vengeance",
     "source_line_start": 1,
     "source_line_end": 7,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "VER'ILY",
+    "normalized_headword": "verily",
+    "definition": "VER'ILY, adverb [from very.] 1. In truth; in fact; certainly. 2. Really; truly; with great confidence. It was verily thought the enterprise would succeed.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/verily",
+    "source_line_start": 1,
+    "source_line_end": 3,
     "review_status": "reviewed_overlay"
   },
   {
@@ -17960,6 +17990,16 @@
     "review_status": "reviewed_overlay"
   },
   {
+    "headword": "WHEREFORE",
+    "normalized_headword": "wherefore",
+    "definition": "WHEREFORE, adverb [where and for.] 1. For which reason. WHEREFORE by their fruits ye shall know them. Matthew 7:20. 2. Why; for what reason. WHEREFORE didst thou doubt? Matthew 14:31.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/wherefore",
+    "source_line_start": 1,
+    "source_line_end": 5,
+    "review_status": "reviewed_overlay"
+  },
+  {
     "headword": "WHETHER",
     "normalized_headword": "whether",
     "definition": "WHETHER, pronoun or substitute. [Latin The sense seems to be what, or which of two, referring either to persons or to sentences.] 1. Which of two. WHETHER of them twain did the will of his father? Matthew 21:31/ Here whether is a substitute for one of two, and signifies which; which of the two; but in this sense it is obsolete. 2. Which of two alternatives, expressed by a sentence or the clause of a sentence, and followed by or. Resolve whether you will go or not; that is, you will go or not go; resolve which. [Note. IN the latter use, which is now most common, whether is called an adverb. This is a mistake. It is the same part of speech as in the former example. The only difference is that in the former example it represents or refers to a noun, and in the latter to a sentence or clause.]",
@@ -18107,6 +18147,16 @@
     "source_file": "https://webstersdictionary1828.com/Dictionary/whoso",
     "source_line_start": 1,
     "source_line_end": 1,
+    "review_status": "reviewed_overlay"
+  },
+  {
+    "headword": "WHOSOEVER",
+    "normalized_headword": "whosoever",
+    "definition": "WHOSOEVER, pronoun [who, so, and ever.] Any one; any person whatever. WHOSOEVER will, let him take of the water of life freely. Revelations 22.",
+    "source_title": "American Dictionary of the English Language",
+    "source_file": "https://webstersdictionary1828.com/Dictionary/whosoever",
+    "source_line_start": 1,
+    "source_line_end": 2,
     "review_status": "reviewed_overlay"
   },
   {

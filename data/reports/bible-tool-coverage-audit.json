@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T16:05:38.338Z",
+    "generated_at": "2026-07-15T16:28:03.574Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60292,
+      "entries": 60297,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
