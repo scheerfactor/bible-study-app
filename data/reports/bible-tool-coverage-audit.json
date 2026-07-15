@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T06:21:59.676Z",
+    "generated_at": "2026-07-15T06:52:06.680Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60161,
+      "entries": 60166,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2147,28 +2147,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "wonderful",
-          "count": 21,
-          "sampleRefs": [
-            "Deuteronomy 28:59",
-            "2 Samuel 1:26",
-            "2 Chronicles 2:9",
-            "Job 42:3",
-            "Psalms 40:5"
-          ],
-          "lookupCandidates": [
-            "wonderful"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WONDERFUL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "belongeth",
           "count": 20,
           "sampleRefs": [
@@ -2190,94 +2168,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BELONG'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bottom",
-          "count": 20,
-          "sampleRefs": [
-            "Exodus 15:5",
-            "Exodus 29:12",
-            "Leviticus 4:7",
-            "Leviticus 4:18",
-            "Leviticus 4:25"
-          ],
-          "lookupCandidates": [
-            "bottom"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BOT'TOM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "care",
-          "count": 20,
-          "sampleRefs": [
-            "1 Samuel 10:2",
-            "2 Samuel 18:3",
-            "2 Samuel 18:3",
-            "2 Kings 4:13",
-            "Jeremiah 49:31"
-          ],
-          "lookupCandidates": [
-            "care"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CARE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "eden",
-          "count": 20,
-          "sampleRefs": [
-            "Genesis 2:8",
-            "Genesis 2:10",
-            "Genesis 2:15",
-            "Genesis 3:23",
-            "Genesis 3:24"
-          ],
-          "lookupCandidates": [
-            "eden"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "E'DEN",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "elect",
-          "count": 20,
-          "sampleRefs": [
-            "Isaiah 42:1",
-            "Isaiah 45:4",
-            "Isaiah 65:9",
-            "Isaiah 65:22",
-            "Matthew 24:22"
-          ],
-          "lookupCandidates": [
-            "elect"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "ELECT'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3618,6 +3508,116 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "FLOWER",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "frankincense",
+          "count": 17,
+          "sampleRefs": [
+            "Exodus 30:34",
+            "Leviticus 2:1",
+            "Leviticus 2:2",
+            "Leviticus 2:15",
+            "Leviticus 2:16"
+          ],
+          "lookupCandidates": [
+            "frankincense"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FRANKIN'CENSE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "freewill",
+          "count": 17,
+          "sampleRefs": [
+            "Leviticus 22:18",
+            "Leviticus 22:21",
+            "Leviticus 22:23",
+            "Leviticus 23:38",
+            "Numbers 15:3"
+          ],
+          "lookupCandidates": [
+            "freewill"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FREEWILL'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "health",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 43:28",
+            "2 Samuel 20:9",
+            "Psalms 42:11",
+            "Psalms 43:5",
+            "Psalms 67:2"
+          ],
+          "lookupCandidates": [
+            "health"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "HEALTH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "ignorant",
+          "count": 17,
+          "sampleRefs": [
+            "Psalms 73:22",
+            "Isaiah 56:10",
+            "Isaiah 63:16",
+            "Acts 4:13",
+            "Romans 1:13"
+          ],
+          "lookupCandidates": [
+            "ignorant"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "IG'NORANT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "melt",
+          "count": 17,
+          "sampleRefs": [
+            "Exodus 15:15",
+            "Joshua 2:11",
+            "Joshua 14:8",
+            "2 Samuel 17:10",
+            "Psalms 58:7"
+          ],
+          "lookupCandidates": [
+            "melt"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MELT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10649,28 +10649,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "wonderful",
-        "count": 21,
-        "sampleRefs": [
-          "Deuteronomy 28:59",
-          "2 Samuel 1:26",
-          "2 Chronicles 2:9",
-          "Job 42:3",
-          "Psalms 40:5"
-        ],
-        "lookupCandidates": [
-          "wonderful"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WONDERFUL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "belongeth",
         "count": 20,
         "sampleRefs": [
@@ -10692,94 +10670,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BELONG'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bottom",
-        "count": 20,
-        "sampleRefs": [
-          "Exodus 15:5",
-          "Exodus 29:12",
-          "Leviticus 4:7",
-          "Leviticus 4:18",
-          "Leviticus 4:25"
-        ],
-        "lookupCandidates": [
-          "bottom"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BOT'TOM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "care",
-        "count": 20,
-        "sampleRefs": [
-          "1 Samuel 10:2",
-          "2 Samuel 18:3",
-          "2 Samuel 18:3",
-          "2 Kings 4:13",
-          "Jeremiah 49:31"
-        ],
-        "lookupCandidates": [
-          "care"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CARE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "eden",
-        "count": 20,
-        "sampleRefs": [
-          "Genesis 2:8",
-          "Genesis 2:10",
-          "Genesis 2:15",
-          "Genesis 3:23",
-          "Genesis 3:24"
-        ],
-        "lookupCandidates": [
-          "eden"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "E'DEN",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "elect",
-        "count": 20,
-        "sampleRefs": [
-          "Isaiah 42:1",
-          "Isaiah 45:4",
-          "Isaiah 65:9",
-          "Isaiah 65:22",
-          "Matthew 24:22"
-        ],
-        "lookupCandidates": [
-          "elect"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "ELECT'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12120,6 +12010,116 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "FLOWER",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "frankincense",
+        "count": 17,
+        "sampleRefs": [
+          "Exodus 30:34",
+          "Leviticus 2:1",
+          "Leviticus 2:2",
+          "Leviticus 2:15",
+          "Leviticus 2:16"
+        ],
+        "lookupCandidates": [
+          "frankincense"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FRANKIN'CENSE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "freewill",
+        "count": 17,
+        "sampleRefs": [
+          "Leviticus 22:18",
+          "Leviticus 22:21",
+          "Leviticus 22:23",
+          "Leviticus 23:38",
+          "Numbers 15:3"
+        ],
+        "lookupCandidates": [
+          "freewill"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FREEWILL'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "health",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 43:28",
+          "2 Samuel 20:9",
+          "Psalms 42:11",
+          "Psalms 43:5",
+          "Psalms 67:2"
+        ],
+        "lookupCandidates": [
+          "health"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "HEALTH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "ignorant",
+        "count": 17,
+        "sampleRefs": [
+          "Psalms 73:22",
+          "Isaiah 56:10",
+          "Isaiah 63:16",
+          "Acts 4:13",
+          "Romans 1:13"
+        ],
+        "lookupCandidates": [
+          "ignorant"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "IG'NORANT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "melt",
+        "count": 17,
+        "sampleRefs": [
+          "Exodus 15:15",
+          "Joshua 2:11",
+          "Joshua 14:8",
+          "2 Samuel 17:10",
+          "Psalms 58:7"
+        ],
+        "lookupCandidates": [
+          "melt"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MELT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T06:21:59.676Z
+Generated: 2026-07-15T06:52:06.680Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -127,12 +127,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
-| wonderful | WONDERFUL | 21 | ocr_full_import_needs_spot_review |
 | belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
-| bottom | BOT'TOM | 20 | ocr_full_import_needs_spot_review |
-| care | CARE | 20 | ocr_full_import_needs_spot_review |
-| eden | E'DEN | 20 | ocr_full_import_needs_spot_review |
-| elect | ELECT' | 20 | ocr_full_import_needs_spot_review |
 | fiery | FI'ERY | 20 | ocr_full_import_needs_spot_review |
 | flower | FLOWER | 20 | ocr_full_import_needs_spot_review |
 | foolishness | FOOL'ISHNESS | 20 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | simple | SIM'PLE | 20 | ocr_full_import_needs_spot_review |
 | stir | STIR | 20 | ocr_full_import_needs_spot_review |
 | swift | SWIFT | 20 | ocr_full_import_needs_spot_review |
+| working | WORKING | 20 | ocr_full_import_needs_spot_review |
+| abound | ABOUND' | 19 | ocr_full_import_needs_spot_review |
+| approach | APPROACH | 19 | ocr_full_import_needs_spot_review |
+| ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
+| clothing | CLOTHING | 19 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
