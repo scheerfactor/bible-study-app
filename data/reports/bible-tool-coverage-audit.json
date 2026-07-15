@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T08:52:12.945Z",
+    "generated_at": "2026-07-15T09:22:18.369Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60186,
+      "entries": 60191,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2267,28 +2267,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "magnify",
-          "count": 19,
-          "sampleRefs": [
-            "Joshua 3:7",
-            "Job 7:17",
-            "Job 19:5",
-            "Job 36:24",
-            "Psalms 34:3"
-          ],
-          "lookupCandidates": [
-            "magnify"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "MAGNIFY",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "murmured",
           "count": 19,
           "sampleRefs": [
@@ -2310,96 +2288,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "MUR'MUR",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "overthrow",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 19:21",
-            "Genesis 19:29",
-            "Exodus 23:24",
-            "Deuteronomy 12:3",
-            "Deuteronomy 29:23"
-          ],
-          "lookupCandidates": [
-            "overthrow"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "OVERTHROW",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pitch",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 6:14",
-            "Genesis 6:14",
-            "Exodus 2:3",
-            "Numbers 1:52",
-            "Numbers 1:53"
-          ],
-          "lookupCandidates": [
-            "pitch"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PITCH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "suck",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 21:7",
-            "Deuteronomy 32:13",
-            "Deuteronomy 33:19",
-            "1 Samuel 1:23",
-            "1 Kings 3:21"
-          ],
-          "lookupCandidates": [
-            "suck"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SUCK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "uprightness",
-          "count": 19,
-          "sampleRefs": [
-            "Deuteronomy 9:5",
-            "1 Kings 3:6",
-            "1 Kings 9:4",
-            "1 Chronicles 29:17",
-            "1 Chronicles 29:17"
-          ],
-          "lookupCandidates": [
-            "uprightness",
-            "uprightnes",
-            "uprightnese"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "UPRIGHTNESS",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3616,6 +3504,119 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "BOIL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "clothe",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 40:14",
+            "Esther 4:4",
+            "Psalms 132:16",
+            "Psalms 132:18",
+            "Proverbs 23:21"
+          ],
+          "lookupCandidates": [
+            "clothe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CLOTHE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "comely",
+          "count": 16,
+          "sampleRefs": [
+            "1 Samuel 16:18",
+            "Job 41:12",
+            "Psalms 33:1",
+            "Psalms 147:1",
+            "Proverbs 30:29"
+          ],
+          "lookupCandidates": [
+            "comely"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "COMELY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "content",
+          "count": 16,
+          "sampleRefs": [
+            "Genesis 37:27",
+            "Exodus 2:21",
+            "Leviticus 10:20",
+            "Joshua 7:7",
+            "Judges 17:11"
+          ],
+          "lookupCandidates": [
+            "content"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CONTENT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "cymbals",
+          "count": 16,
+          "sampleRefs": [
+            "2 Samuel 6:5",
+            "1 Chronicles 13:8",
+            "1 Chronicles 15:16",
+            "1 Chronicles 15:19",
+            "1 Chronicles 15:28"
+          ],
+          "lookupCandidates": [
+            "cymbals",
+            "cymbal",
+            "cymbale"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "CYM'BAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "devices",
+          "count": 16,
+          "sampleRefs": [
+            "Job 5:12",
+            "Job 21:27",
+            "Psalms 10:2",
+            "Psalms 33:10",
+            "Psalms 37:7"
+          ],
+          "lookupCandidates": [
+            "devices",
+            "device"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DEVI'CE",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10767,28 +10768,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "magnify",
-        "count": 19,
-        "sampleRefs": [
-          "Joshua 3:7",
-          "Job 7:17",
-          "Job 19:5",
-          "Job 36:24",
-          "Psalms 34:3"
-        ],
-        "lookupCandidates": [
-          "magnify"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "MAGNIFY",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "murmured",
         "count": 19,
         "sampleRefs": [
@@ -10810,96 +10789,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "MUR'MUR",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "overthrow",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 19:21",
-          "Genesis 19:29",
-          "Exodus 23:24",
-          "Deuteronomy 12:3",
-          "Deuteronomy 29:23"
-        ],
-        "lookupCandidates": [
-          "overthrow"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "OVERTHROW",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pitch",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 6:14",
-          "Genesis 6:14",
-          "Exodus 2:3",
-          "Numbers 1:52",
-          "Numbers 1:53"
-        ],
-        "lookupCandidates": [
-          "pitch"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PITCH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "suck",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 21:7",
-          "Deuteronomy 32:13",
-          "Deuteronomy 33:19",
-          "1 Samuel 1:23",
-          "1 Kings 3:21"
-        ],
-        "lookupCandidates": [
-          "suck"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SUCK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "uprightness",
-        "count": 19,
-        "sampleRefs": [
-          "Deuteronomy 9:5",
-          "1 Kings 3:6",
-          "1 Kings 9:4",
-          "1 Chronicles 29:17",
-          "1 Chronicles 29:17"
-        ],
-        "lookupCandidates": [
-          "uprightness",
-          "uprightnes",
-          "uprightnese"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "UPRIGHTNESS",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12116,6 +12005,119 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "BOIL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "clothe",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 40:14",
+          "Esther 4:4",
+          "Psalms 132:16",
+          "Psalms 132:18",
+          "Proverbs 23:21"
+        ],
+        "lookupCandidates": [
+          "clothe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CLOTHE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "comely",
+        "count": 16,
+        "sampleRefs": [
+          "1 Samuel 16:18",
+          "Job 41:12",
+          "Psalms 33:1",
+          "Psalms 147:1",
+          "Proverbs 30:29"
+        ],
+        "lookupCandidates": [
+          "comely"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "COMELY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "content",
+        "count": 16,
+        "sampleRefs": [
+          "Genesis 37:27",
+          "Exodus 2:21",
+          "Leviticus 10:20",
+          "Joshua 7:7",
+          "Judges 17:11"
+        ],
+        "lookupCandidates": [
+          "content"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CONTENT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "cymbals",
+        "count": 16,
+        "sampleRefs": [
+          "2 Samuel 6:5",
+          "1 Chronicles 13:8",
+          "1 Chronicles 15:16",
+          "1 Chronicles 15:19",
+          "1 Chronicles 15:28"
+        ],
+        "lookupCandidates": [
+          "cymbals",
+          "cymbal",
+          "cymbale"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "CYM'BAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "devices",
+        "count": 16,
+        "sampleRefs": [
+          "Job 5:12",
+          "Job 21:27",
+          "Psalms 10:2",
+          "Psalms 33:10",
+          "Psalms 37:7"
+        ],
+        "lookupCandidates": [
+          "devices",
+          "device"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DEVI'CE",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
