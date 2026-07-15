@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T11:23:10.081Z
+Generated: 2026-07-15T11:43:38.811Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -116,11 +116,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | excellency | EX'CELLENCY | 26 | ocr_full_import_needs_spot_review |
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
-| ammonites | AM'MONITE | 23 | ocr_full_import_needs_spot_review |
-| jezebel | JEZ'EBEL | 23 | ocr_full_import_needs_spot_review |
-| pomegranates | POMEGRAN'ATE | 23 | ocr_full_import_needs_spot_review |
-| companions | COMPANION | 22 | ocr_full_import_needs_spot_review |
-| grant | GR'ANT | 22 | ocr_full_import_needs_spot_review |
 | partakers | PARTA'KER | 22 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
 | parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
@@ -142,6 +137,11 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | standard | STAND'ARD | 18 | ocr_full_import_needs_spot_review |
 | tempest | TEM'PEST | 18 | ocr_full_import_needs_spot_review |
 | wages | WAGE | 18 | ocr_full_import_needs_spot_review |
+| account | ACCOUNT' | 17 | ocr_full_import_needs_spot_review |
+| belial | BE'LIAL | 17 | ocr_full_import_needs_spot_review |
+| bid | BID | 17 | ocr_full_import_needs_spot_review |
+| depths | DEPTH | 17 | ocr_full_import_needs_spot_review |
+| estate | ESTA'TE | 17 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

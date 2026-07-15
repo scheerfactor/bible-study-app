@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T11:23:10.081Z",
+    "generated_at": "2026-07-15T11:43:38.811Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60231,
+      "entries": 60236,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -1891,120 +1891,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "ammonites",
-          "count": 23,
-          "sampleRefs": [
-            "Deuteronomy 2:20",
-            "1 Samuel 11:11",
-            "1 Kings 11:1",
-            "1 Kings 11:5",
-            "2 Chronicles 20:1"
-          ],
-          "lookupCandidates": [
-            "ammonites",
-            "ammonite"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "AM'MONITE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "jezebel",
-          "count": 23,
-          "sampleRefs": [
-            "1 Kings 16:31",
-            "1 Kings 18:4",
-            "1 Kings 18:13",
-            "1 Kings 18:19",
-            "1 Kings 19:1"
-          ],
-          "lookupCandidates": [
-            "jezebel"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "JEZ'EBEL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "pomegranates",
-          "count": 23,
-          "sampleRefs": [
-            "Exodus 28:33",
-            "Exodus 39:24",
-            "Exodus 39:25",
-            "Exodus 39:25",
-            "Numbers 13:23"
-          ],
-          "lookupCandidates": [
-            "pomegranates",
-            "pomegranate"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "POMEGRAN'ATE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "companions",
-          "count": 22,
-          "sampleRefs": [
-            "Judges 11:38",
-            "Judges 14:11",
-            "Ezra 4:7",
-            "Ezra 4:9",
-            "Ezra 4:17"
-          ],
-          "lookupCandidates": [
-            "companions",
-            "companion",
-            "companione"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "COMPANION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "grant",
-          "count": 22,
-          "sampleRefs": [
-            "Leviticus 25:24",
-            "Ruth 1:9",
-            "1 Samuel 1:17",
-            "1 Chronicles 21:22",
-            "1 Chronicles 21:22"
-          ],
-          "lookupCandidates": [
-            "grant"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GR'ANT",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "partakers",
           "count": 22,
           "sampleRefs": [
@@ -3605,6 +3491,118 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STUFF",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "unbelief",
+          "count": 16,
+          "sampleRefs": [
+            "Matthew 13:58",
+            "Matthew 17:20",
+            "Mark 6:6",
+            "Mark 9:24",
+            "Mark 16:14"
+          ],
+          "lookupCandidates": [
+            "unbelief"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UNBELIE'F",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "uncircumcision",
+          "count": 16,
+          "sampleRefs": [
+            "Romans 2:25",
+            "Romans 2:26",
+            "Romans 2:26",
+            "Romans 2:27",
+            "Romans 3:30"
+          ],
+          "lookupCandidates": [
+            "uncircumcision"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UNCIRCUMCI'SION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "zeal",
+          "count": 16,
+          "sampleRefs": [
+            "2 Samuel 21:2",
+            "2 Kings 10:16",
+            "2 Kings 19:31",
+            "Psalms 69:9",
+            "Psalms 119:139"
+          ],
+          "lookupCandidates": [
+            "zeal"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ZEAL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "arches",
+          "count": 15,
+          "sampleRefs": [
+            "Ezekiel 40:16",
+            "Ezekiel 40:21",
+            "Ezekiel 40:22",
+            "Ezekiel 40:22",
+            "Ezekiel 40:24"
+          ],
+          "lookupCandidates": [
+            "arches",
+            "arch",
+            "arche"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ARCH'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "baptist",
+          "count": 15,
+          "sampleRefs": [
+            "Matthew 3:1",
+            "Matthew 11:11",
+            "Matthew 11:12",
+            "Matthew 14:2",
+            "Matthew 14:8"
+          ],
+          "lookupCandidates": [
+            "baptist"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "BAP'TIST",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10380,120 +10378,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "ammonites",
-        "count": 23,
-        "sampleRefs": [
-          "Deuteronomy 2:20",
-          "1 Samuel 11:11",
-          "1 Kings 11:1",
-          "1 Kings 11:5",
-          "2 Chronicles 20:1"
-        ],
-        "lookupCandidates": [
-          "ammonites",
-          "ammonite"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "AM'MONITE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "jezebel",
-        "count": 23,
-        "sampleRefs": [
-          "1 Kings 16:31",
-          "1 Kings 18:4",
-          "1 Kings 18:13",
-          "1 Kings 18:19",
-          "1 Kings 19:1"
-        ],
-        "lookupCandidates": [
-          "jezebel"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "JEZ'EBEL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "pomegranates",
-        "count": 23,
-        "sampleRefs": [
-          "Exodus 28:33",
-          "Exodus 39:24",
-          "Exodus 39:25",
-          "Exodus 39:25",
-          "Numbers 13:23"
-        ],
-        "lookupCandidates": [
-          "pomegranates",
-          "pomegranate"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "POMEGRAN'ATE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "companions",
-        "count": 22,
-        "sampleRefs": [
-          "Judges 11:38",
-          "Judges 14:11",
-          "Ezra 4:7",
-          "Ezra 4:9",
-          "Ezra 4:17"
-        ],
-        "lookupCandidates": [
-          "companions",
-          "companion",
-          "companione"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "COMPANION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "grant",
-        "count": 22,
-        "sampleRefs": [
-          "Leviticus 25:24",
-          "Ruth 1:9",
-          "1 Samuel 1:17",
-          "1 Chronicles 21:22",
-          "1 Chronicles 21:22"
-        ],
-        "lookupCandidates": [
-          "grant"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GR'ANT",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "partakers",
         "count": 22,
         "sampleRefs": [
@@ -12094,6 +11978,118 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STUFF",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "unbelief",
+        "count": 16,
+        "sampleRefs": [
+          "Matthew 13:58",
+          "Matthew 17:20",
+          "Mark 6:6",
+          "Mark 9:24",
+          "Mark 16:14"
+        ],
+        "lookupCandidates": [
+          "unbelief"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UNBELIE'F",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "uncircumcision",
+        "count": 16,
+        "sampleRefs": [
+          "Romans 2:25",
+          "Romans 2:26",
+          "Romans 2:26",
+          "Romans 2:27",
+          "Romans 3:30"
+        ],
+        "lookupCandidates": [
+          "uncircumcision"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UNCIRCUMCI'SION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "zeal",
+        "count": 16,
+        "sampleRefs": [
+          "2 Samuel 21:2",
+          "2 Kings 10:16",
+          "2 Kings 19:31",
+          "Psalms 69:9",
+          "Psalms 119:139"
+        ],
+        "lookupCandidates": [
+          "zeal"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ZEAL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "arches",
+        "count": 15,
+        "sampleRefs": [
+          "Ezekiel 40:16",
+          "Ezekiel 40:21",
+          "Ezekiel 40:22",
+          "Ezekiel 40:22",
+          "Ezekiel 40:24"
+        ],
+        "lookupCandidates": [
+          "arches",
+          "arch",
+          "arche"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ARCH'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "baptist",
+        "count": 15,
+        "sampleRefs": [
+          "Matthew 3:1",
+          "Matthew 11:11",
+          "Matthew 11:12",
+          "Matthew 14:2",
+          "Matthew 14:8"
+        ],
+        "lookupCandidates": [
+          "baptist"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "BAP'TIST",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
