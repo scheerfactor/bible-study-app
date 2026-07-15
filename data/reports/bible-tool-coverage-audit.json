@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T17:20:36.140Z",
+    "generated_at": "2026-07-15T17:28:33.648Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60325,
+      "entries": 60329,
       "normalizedHeadwords": 51029,
       "meaningfulWordsWithDefinition": 7858,
       "meaningfulWordsWithoutDefinition": 4596,
@@ -2067,28 +2067,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "beard",
-          "count": 16,
-          "sampleRefs": [
-            "Leviticus 13:29",
-            "Leviticus 13:30",
-            "Leviticus 14:9",
-            "Leviticus 19:27",
-            "Leviticus 21:5"
-          ],
-          "lookupCandidates": [
-            "beard"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEARD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "clothe",
           "count": 16,
           "sampleRefs": [
@@ -2292,52 +2270,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "beam",
-          "count": 15,
-          "sampleRefs": [
-            "Judges 16:14",
-            "1 Samuel 17:7",
-            "2 Samuel 21:19",
-            "1 Kings 7:6",
-            "2 Kings 6:2"
-          ],
-          "lookupCandidates": [
-            "beam"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BEAM",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "builders",
-          "count": 15,
-          "sampleRefs": [
-            "1 Kings 5:18",
-            "1 Kings 5:18",
-            "2 Kings 12:11",
-            "2 Kings 22:6",
-            "2 Chronicles 34:11"
-          ],
-          "lookupCandidates": [
-            "builders",
-            "builder",
-            "buildere"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BUILD'ER",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "catch",
           "count": 15,
           "sampleRefs": [
@@ -2447,28 +2379,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "GOD'LINESS",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "godly",
-          "count": 15,
-          "sampleRefs": [
-            "Psalms 4:3",
-            "Psalms 12:1",
-            "Psalms 32:6",
-            "Malachi 2:15",
-            "2 Corinthians 1:12"
-          ],
-          "lookupCandidates": [
-            "godly"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "GOD'LY",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3599,6 +3509,94 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "STICK",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "subjection",
+          "count": 14,
+          "sampleRefs": [
+            "Psalms 106:42",
+            "Jeremiah 34:11",
+            "Jeremiah 34:16",
+            "1 Corinthians 9:27",
+            "2 Corinthians 9:13"
+          ],
+          "lookupCandidates": [
+            "subjection"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SUBJECTION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "surety",
+          "count": 14,
+          "sampleRefs": [
+            "Genesis 15:13",
+            "Genesis 18:13",
+            "Genesis 26:9",
+            "Genesis 43:9",
+            "Genesis 44:32"
+          ],
+          "lookupCandidates": [
+            "surety"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "SU'RETY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "vexation",
+          "count": 14,
+          "sampleRefs": [
+            "Deuteronomy 28:20",
+            "Ecclesiastes 1:14",
+            "Ecclesiastes 1:17",
+            "Ecclesiastes 2:11",
+            "Ecclesiastes 2:17"
+          ],
+          "lookupCandidates": [
+            "vexation"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "VEXA'TION",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "wander",
+          "count": 14,
+          "sampleRefs": [
+            "Genesis 20:13",
+            "Numbers 14:33",
+            "Numbers 32:13",
+            "Deuteronomy 27:18",
+            "Job 12:24"
+          ],
+          "lookupCandidates": [
+            "wander"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WAN'DER",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10546,28 +10544,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "beard",
-        "count": 16,
-        "sampleRefs": [
-          "Leviticus 13:29",
-          "Leviticus 13:30",
-          "Leviticus 14:9",
-          "Leviticus 19:27",
-          "Leviticus 21:5"
-        ],
-        "lookupCandidates": [
-          "beard"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEARD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "clothe",
         "count": 16,
         "sampleRefs": [
@@ -10771,52 +10747,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "beam",
-        "count": 15,
-        "sampleRefs": [
-          "Judges 16:14",
-          "1 Samuel 17:7",
-          "2 Samuel 21:19",
-          "1 Kings 7:6",
-          "2 Kings 6:2"
-        ],
-        "lookupCandidates": [
-          "beam"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BEAM",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "builders",
-        "count": 15,
-        "sampleRefs": [
-          "1 Kings 5:18",
-          "1 Kings 5:18",
-          "2 Kings 12:11",
-          "2 Kings 22:6",
-          "2 Chronicles 34:11"
-        ],
-        "lookupCandidates": [
-          "builders",
-          "builder",
-          "buildere"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BUILD'ER",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "catch",
         "count": 15,
         "sampleRefs": [
@@ -10926,28 +10856,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "GOD'LINESS",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "godly",
-        "count": 15,
-        "sampleRefs": [
-          "Psalms 4:3",
-          "Psalms 12:1",
-          "Psalms 32:6",
-          "Malachi 2:15",
-          "2 Corinthians 1:12"
-        ],
-        "lookupCandidates": [
-          "godly"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "GOD'LY",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12078,6 +11986,94 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "STICK",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "subjection",
+        "count": 14,
+        "sampleRefs": [
+          "Psalms 106:42",
+          "Jeremiah 34:11",
+          "Jeremiah 34:16",
+          "1 Corinthians 9:27",
+          "2 Corinthians 9:13"
+        ],
+        "lookupCandidates": [
+          "subjection"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SUBJECTION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "surety",
+        "count": 14,
+        "sampleRefs": [
+          "Genesis 15:13",
+          "Genesis 18:13",
+          "Genesis 26:9",
+          "Genesis 43:9",
+          "Genesis 44:32"
+        ],
+        "lookupCandidates": [
+          "surety"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "SU'RETY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "vexation",
+        "count": 14,
+        "sampleRefs": [
+          "Deuteronomy 28:20",
+          "Ecclesiastes 1:14",
+          "Ecclesiastes 1:17",
+          "Ecclesiastes 2:11",
+          "Ecclesiastes 2:17"
+        ],
+        "lookupCandidates": [
+          "vexation"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "VEXA'TION",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "wander",
+        "count": 14,
+        "sampleRefs": [
+          "Genesis 20:13",
+          "Numbers 14:33",
+          "Numbers 32:13",
+          "Deuteronomy 27:18",
+          "Job 12:24"
+        ],
+        "lookupCandidates": [
+          "wander"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WAN'DER",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
