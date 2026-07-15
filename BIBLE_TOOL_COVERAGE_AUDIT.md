@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T07:52:04.978Z
+Generated: 2026-07-15T08:21:56.922Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -129,19 +129,19 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | parents | PA 'RENT | 21 | ocr_full_import_needs_spot_review |
 | belongeth | BELONG' | 20 | ocr_full_import_needs_spot_review |
 | persuaded | PERSUA'DE | 20 | ocr_full_import_needs_spot_review |
-| approach | APPROACH | 19 | ocr_full_import_needs_spot_review |
 | ascended | ASCEND' | 19 | ocr_full_import_needs_spot_review |
-| clothing | CLOTHING | 19 | ocr_full_import_needs_spot_review |
 | conspired | CONSPI'RE | 19 | ocr_full_import_needs_spot_review |
-| cruel | CRU'EL | 19 | ocr_full_import_needs_spot_review |
-| darkened | DARKENED | 19 | ocr_full_import_needs_spot_review |
 | descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
-| fault | FAULT | 19 | ocr_full_import_needs_spot_review |
 | force | FORCE | 19 | ocr_full_import_needs_spot_review |
 | herb | HERB | 19 | ocr_full_import_needs_spot_review |
 | instructed | INSTRUCT' | 19 | ocr_full_import_needs_spot_review |
 | kindle | KIN'DLE | 19 | ocr_full_import_needs_spot_review |
 | league | LEAGUE | 19 | ocr_full_import_needs_spot_review |
+| lust | LUST | 19 | ocr_full_import_needs_spot_review |
+| magnify | MAGNIFY | 19 | ocr_full_import_needs_spot_review |
+| murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
+| overthrow | OVERTHROW | 19 | ocr_full_import_needs_spot_review |
+| pitch | PITCH | 19 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T07:52:04.978Z",
+    "generated_at": "2026-07-15T08:21:56.922Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60176,
+      "entries": 60181,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2195,28 +2195,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "approach",
-          "count": 19,
-          "sampleRefs": [
-            "Leviticus 18:6",
-            "Leviticus 18:14",
-            "Leviticus 18:19",
-            "Leviticus 20:16",
-            "Leviticus 21:17"
-          ],
-          "lookupCandidates": [
-            "approach"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "APPROACH",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "ascended",
           "count": 19,
           "sampleRefs": [
@@ -2238,30 +2216,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "ASCEND'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "clothing",
-          "count": 19,
-          "sampleRefs": [
-            "Job 22:6",
-            "Job 24:7",
-            "Job 24:10",
-            "Job 31:19",
-            "Psalms 35:13"
-          ],
-          "lookupCandidates": [
-            "clothing",
-            "cloth",
-            "clothe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": true,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CLOTHING",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -2289,52 +2243,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "cruel",
-          "count": 19,
-          "sampleRefs": [
-            "Genesis 49:7",
-            "Exodus 6:9",
-            "Deuteronomy 32:33",
-            "Job 30:21",
-            "Psalms 25:19"
-          ],
-          "lookupCandidates": [
-            "cruel"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CRU'EL",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "darkened",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 10:15",
-            "Psalms 69:23",
-            "Ecclesiastes 12:2",
-            "Ecclesiastes 12:3",
-            "Isaiah 5:30"
-          ],
-          "lookupCandidates": [
-            "darkened",
-            "darken",
-            "darkene"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "DARKENED",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "descended",
           "count": 19,
           "sampleRefs": [
@@ -2356,28 +2264,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DESCEND'",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "fault",
-          "count": 19,
-          "sampleRefs": [
-            "Exodus 5:16",
-            "Deuteronomy 25:2",
-            "1 Samuel 29:3",
-            "2 Samuel 3:8",
-            "Psalms 59:4"
-          ],
-          "lookupCandidates": [
-            "fault"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "FAULT",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3616,6 +3502,122 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "TRY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "twice",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 41:32",
+            "Exodus 16:5",
+            "Exodus 16:22",
+            "Numbers 20:11",
+            "1 Samuel 18:11"
+          ],
+          "lookupCandidates": [
+            "twice"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TWICE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "uttered",
+          "count": 17,
+          "sampleRefs": [
+            "Numbers 30:6",
+            "Numbers 30:8",
+            "Judges 11:11",
+            "2 Samuel 22:14",
+            "Nehemiah 6:19"
+          ],
+          "lookupCandidates": [
+            "uttered",
+            "utter",
+            "uttere"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "UT'TERED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "victuals",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 14:11",
+            "Leviticus 25:37",
+            "Deuteronomy 23:19",
+            "Joshua 1:11",
+            "Joshua 9:11"
+          ],
+          "lookupCandidates": [
+            "victuals",
+            "victual",
+            "victuale"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "VICTUALS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "weighed",
+          "count": 17,
+          "sampleRefs": [
+            "Genesis 23:16",
+            "Numbers 7:85",
+            "1 Samuel 2:3",
+            "1 Samuel 17:7",
+            "2 Samuel 14:26"
+          ],
+          "lookupCandidates": [
+            "weighed",
+            "weigh",
+            "weighe"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "WEIGH",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "accord",
+          "count": 16,
+          "sampleRefs": [
+            "Leviticus 25:5",
+            "Joshua 9:2",
+            "Acts 1:14",
+            "Acts 2:1",
+            "Acts 2:46"
+          ],
+          "lookupCandidates": [
+            "accord"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "ACCORD'",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10695,28 +10697,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "approach",
-        "count": 19,
-        "sampleRefs": [
-          "Leviticus 18:6",
-          "Leviticus 18:14",
-          "Leviticus 18:19",
-          "Leviticus 20:16",
-          "Leviticus 21:17"
-        ],
-        "lookupCandidates": [
-          "approach"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "APPROACH",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "ascended",
         "count": 19,
         "sampleRefs": [
@@ -10738,30 +10718,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "ASCEND'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "clothing",
-        "count": 19,
-        "sampleRefs": [
-          "Job 22:6",
-          "Job 24:7",
-          "Job 24:10",
-          "Job 31:19",
-          "Psalms 35:13"
-        ],
-        "lookupCandidates": [
-          "clothing",
-          "cloth",
-          "clothe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": true,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CLOTHING",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -10789,52 +10745,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "cruel",
-        "count": 19,
-        "sampleRefs": [
-          "Genesis 49:7",
-          "Exodus 6:9",
-          "Deuteronomy 32:33",
-          "Job 30:21",
-          "Psalms 25:19"
-        ],
-        "lookupCandidates": [
-          "cruel"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CRU'EL",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "darkened",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 10:15",
-          "Psalms 69:23",
-          "Ecclesiastes 12:2",
-          "Ecclesiastes 12:3",
-          "Isaiah 5:30"
-        ],
-        "lookupCandidates": [
-          "darkened",
-          "darken",
-          "darkene"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "DARKENED",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "descended",
         "count": 19,
         "sampleRefs": [
@@ -10856,28 +10766,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DESCEND'",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "fault",
-        "count": 19,
-        "sampleRefs": [
-          "Exodus 5:16",
-          "Deuteronomy 25:2",
-          "1 Samuel 29:3",
-          "2 Samuel 3:8",
-          "Psalms 59:4"
-        ],
-        "lookupCandidates": [
-          "fault"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "FAULT",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12116,6 +12004,122 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "TRY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "twice",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 41:32",
+          "Exodus 16:5",
+          "Exodus 16:22",
+          "Numbers 20:11",
+          "1 Samuel 18:11"
+        ],
+        "lookupCandidates": [
+          "twice"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TWICE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "uttered",
+        "count": 17,
+        "sampleRefs": [
+          "Numbers 30:6",
+          "Numbers 30:8",
+          "Judges 11:11",
+          "2 Samuel 22:14",
+          "Nehemiah 6:19"
+        ],
+        "lookupCandidates": [
+          "uttered",
+          "utter",
+          "uttere"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "UT'TERED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "victuals",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 14:11",
+          "Leviticus 25:37",
+          "Deuteronomy 23:19",
+          "Joshua 1:11",
+          "Joshua 9:11"
+        ],
+        "lookupCandidates": [
+          "victuals",
+          "victual",
+          "victuale"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "VICTUALS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "weighed",
+        "count": 17,
+        "sampleRefs": [
+          "Genesis 23:16",
+          "Numbers 7:85",
+          "1 Samuel 2:3",
+          "1 Samuel 17:7",
+          "2 Samuel 14:26"
+        ],
+        "lookupCandidates": [
+          "weighed",
+          "weigh",
+          "weighe"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "WEIGH",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "accord",
+        "count": 16,
+        "sampleRefs": [
+          "Leviticus 25:5",
+          "Joshua 9:2",
+          "Acts 1:14",
+          "Acts 2:1",
+          "Acts 2:46"
+        ],
+        "lookupCandidates": [
+          "accord"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "ACCORD'",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
