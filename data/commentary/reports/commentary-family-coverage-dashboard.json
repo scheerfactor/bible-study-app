@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T18:43:33.425Z",
+  "generated_at": "2026-07-15T20:58:59.965Z",
   "canon_chapters": 1189,
   "counting_rule": "Public Verified rows only; staged rows are shown as gaps.",
   "families": {
@@ -144,24 +144,24 @@
           "reference": "Exodus 39",
           "review_status": "Needs Review",
           "import_status": "Staged",
-          "source_recovery_status": "Blocked - matching Morgan source text needed",
-          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_recovery_status": "Blocked - matching text located but redistribution permission not established",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
           "source_file": "g-campbell-morgan-reviewed-exodus-commentary.json"
         },
         {
           "reference": "Deuteronomy 24",
           "review_status": "Needs Review",
           "import_status": "Staged",
-          "source_recovery_status": "Blocked - matching Morgan source text needed",
-          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_recovery_status": "Blocked - matching text located but redistribution permission not established",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
           "source_file": "g-campbell-morgan-reviewed-deuteronomy-commentary.json"
         },
         {
           "reference": "Psalms 48",
           "review_status": "Needs Review",
           "import_status": "Staged",
-          "source_recovery_status": "Blocked - matching Morgan source text needed",
-          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
+          "source_recovery_status": "Blocked - matching text located but redistribution permission not established",
+          "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
           "source_file": "g-campbell-morgan-reviewed-psalms-commentary.json"
         }
       ],

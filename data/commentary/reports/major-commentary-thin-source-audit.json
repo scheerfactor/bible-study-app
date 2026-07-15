@@ -1,5 +1,5 @@
 {
-  "audited_at": "2026-07-15T18:43:31.387Z",
+  "audited_at": "2026-07-15T20:59:01.533Z",
   "threshold_characters": 200,
   "review_status": "current_public_and_staged_rows_classified",
   "method": "Scanned all commentary import files for major commentary-family rows below the threshold and separated public verified rows from staged or quarantined rows.",
@@ -255,8 +255,8 @@
       "file": "g-campbell-morgan-reviewed-deuteronomy-commentary.json",
       "review_status": "Needs Review",
       "import_status": "Staged",
-      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
-      "source_recovery_status": "Blocked - matching Morgan source text needed"
+      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
+      "source_recovery_status": "Blocked - matching text located but redistribution permission not established"
     },
     {
       "resource_title": "Morgan's Exposition on the Whole Bible",
@@ -265,8 +265,8 @@
       "file": "g-campbell-morgan-reviewed-exodus-commentary.json",
       "review_status": "Needs Review",
       "import_status": "Staged",
-      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
-      "source_recovery_status": "Blocked - matching Morgan source text needed"
+      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
+      "source_recovery_status": "Blocked - matching text located but redistribution permission not established"
     },
     {
       "resource_title": "Morgan's Exposition on the Whole Bible",
@@ -275,8 +275,8 @@
       "file": "g-campbell-morgan-reviewed-psalms-commentary.json",
       "review_status": "Needs Review",
       "import_status": "Staged",
-      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
-      "source_recovery_status": "Blocked - matching Morgan source text needed"
+      "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
+      "source_recovery_status": "Blocked - matching text located but redistribution permission not established"
     },
     {
       "resource_title": "Wesley's Explanatory Notes on the Whole Bible",

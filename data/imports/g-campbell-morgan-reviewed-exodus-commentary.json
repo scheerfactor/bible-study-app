@@ -777,8 +777,11 @@
     "review_status": "Needs Review",
     "import_status": "Staged",
     "review_batch": "Morgan Exposition Source Recovery Queue",
-    "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. Restore only from the matching public-domain Exposition/Analyzed Bible source with exact provenance.",
-    "source_recovery_status": "Blocked - matching Morgan source text needed"
+    "review_notes": "Quarantined because the stored text is a failed navigation wrapper or heading-only record, not substantive commentary. Do not substitute text from Morgan's distinct Searchlights from the Word or Gospel volumes. A matching alternate page was located during the 2026-07-15 rights review, but its current terms prohibit copying or redistribution without authorization. Keep this chapter staged until an open source or explicit permission is documented.",
+    "source_recovery_status": "Blocked - matching text located but redistribution permission not established",
+    "source_recovery_candidate_url": "https://www.bibliaplus.org/en/commentaries/126/g-campbell-morgans-exposition-on-the-whole-bible/exodus/39",
+    "source_recovery_rights_url": "https://www.bibliaplus.org/en/terms-of-use",
+    "source_recovery_rights_note": "Terms reviewed 2026-07-15: copying, reproduction, distribution, or commercial exploitation is prohibited without prior express authorization. Candidate is a locator only and must not be imported."
   },
   {
     "id": "g-campbell-morgan-exodus-40-phase-3-reviewed",
