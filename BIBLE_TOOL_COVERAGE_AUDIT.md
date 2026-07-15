@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T09:22:18.369Z
+Generated: 2026-07-15T09:52:10.687Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -133,15 +133,15 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | descended | DESCEND' | 19 | ocr_full_import_needs_spot_review |
 | instructed | INSTRUCT' | 19 | ocr_full_import_needs_spot_review |
 | murmured | MUR'MUR | 19 | ocr_full_import_needs_spot_review |
-| bad | BAD | 18 | ocr_full_import_needs_spot_review |
-| base | BASE | 18 | ocr_full_import_needs_spot_review |
-| bathe | BATHE | 18 | ocr_full_import_needs_spot_review |
-| black | BLACK | 18 | ocr_full_import_needs_spot_review |
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
-| cloth | CLOTH | 18 | ocr_full_import_needs_spot_review |
 | communed | COMMU'NE | 18 | ocr_full_import_needs_spot_review |
 | familiar | FAMIL'IAR | 18 | ocr_full_import_needs_spot_review |
 | fifteenth | FIFTEE'NTH | 18 | ocr_full_import_needs_spot_review |
+| ignorance | IG'NORANCE | 18 | ocr_full_import_needs_spot_review |
+| kidneys | KIDNEY | 18 | ocr_full_import_needs_spot_review |
+| laugh | LAUGH | 18 | ocr_full_import_needs_spot_review |
+| lower | LOWER | 18 | ocr_full_import_needs_spot_review |
+| maidens | MA'IDEN | 18 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

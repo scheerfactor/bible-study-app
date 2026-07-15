@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-15T09:22:18.369Z",
+    "generated_at": "2026-07-15T09:52:10.687Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60191,
+      "entries": 60196,
       "normalizedHeadwords": 51002,
       "meaningfulWordsWithDefinition": 7827,
       "meaningfulWordsWithoutDefinition": 4627,
@@ -2291,94 +2291,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "bad",
-          "count": 18,
-          "sampleRefs": [
-            "Genesis 24:50",
-            "Genesis 31:24",
-            "Genesis 31:29",
-            "Leviticus 27:10",
-            "Leviticus 27:10"
-          ],
-          "lookupCandidates": [
-            "bad"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "base",
-          "count": 18,
-          "sampleRefs": [
-            "2 Samuel 6:22",
-            "1 Kings 7:27",
-            "1 Kings 7:29",
-            "1 Kings 7:30",
-            "1 Kings 7:31"
-          ],
-          "lookupCandidates": [
-            "base"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BASE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "bathe",
-          "count": 18,
-          "sampleRefs": [
-            "Leviticus 15:5",
-            "Leviticus 15:6",
-            "Leviticus 15:7",
-            "Leviticus 15:8",
-            "Leviticus 15:10"
-          ],
-          "lookupCandidates": [
-            "bathe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BATHE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "black",
-          "count": 18,
-          "sampleRefs": [
-            "Leviticus 13:31",
-            "Leviticus 13:37",
-            "1 Kings 18:45",
-            "Esther 1:6",
-            "Job 30:30"
-          ],
-          "lookupCandidates": [
-            "black"
-          ],
-          "hasDefinition": true,
-          "hasEaston": true,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BLACK",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "calves",
           "count": 18,
           "sampleRefs": [
@@ -2399,28 +2311,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "C'ALVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "cloth",
-          "count": 18,
-          "sampleRefs": [
-            "Numbers 4:6",
-            "Numbers 4:7",
-            "Numbers 4:8",
-            "Numbers 4:9",
-            "Numbers 4:11"
-          ],
-          "lookupCandidates": [
-            "cloth"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CLOTH",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3417,30 +3307,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "bases",
-          "count": 16,
-          "sampleRefs": [
-            "1 Kings 7:27",
-            "1 Kings 7:28",
-            "1 Kings 7:37",
-            "1 Kings 7:38",
-            "1 Kings 7:39"
-          ],
-          "lookupCandidates": [
-            "bases",
-            "bas",
-            "base"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "BASE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "beard",
           "count": 16,
           "sampleRefs": [
@@ -3617,6 +3483,140 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "DEVI'CE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "devise",
+          "count": 16,
+          "sampleRefs": [
+            "Exodus 31:4",
+            "Exodus 35:32",
+            "Exodus 35:35",
+            "2 Samuel 14:14",
+            "Psalms 35:4"
+          ],
+          "lookupCandidates": [
+            "devise"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DEVI'SE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "dragons",
+          "count": 16,
+          "sampleRefs": [
+            "Deuteronomy 32:33",
+            "Job 30:29",
+            "Psalms 44:19",
+            "Psalms 74:13",
+            "Psalms 148:7"
+          ],
+          "lookupCandidates": [
+            "dragons",
+            "dragon",
+            "dragone"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "DRAGONS",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "earthquake",
+          "count": 16,
+          "sampleRefs": [
+            "1 Kings 19:11",
+            "1 Kings 19:11",
+            "1 Kings 19:12",
+            "Isaiah 29:6",
+            "Amos 1:1"
+          ],
+          "lookupCandidates": [
+            "earthquake"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EARTH'QUAKE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "exhort",
+          "count": 16,
+          "sampleRefs": [
+            "Acts 2:40",
+            "Acts 27:22",
+            "2 Corinthians 9:5",
+            "1 Thessalonians 4:1",
+            "1 Thessalonians 5:14"
+          ],
+          "lookupCandidates": [
+            "exhort"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "EXHORT'",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "footstool",
+          "count": 16,
+          "sampleRefs": [
+            "1 Chronicles 28:2",
+            "2 Chronicles 9:18",
+            "Psalms 99:5",
+            "Psalms 110:1",
+            "Psalms 132:7"
+          ],
+          "lookupCandidates": [
+            "footstool"
+          ],
+          "hasDefinition": true,
+          "hasEaston": true,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "FOOT' STOOL",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "greet",
+          "count": 16,
+          "sampleRefs": [
+            "1 Samuel 25:5",
+            "Romans 16:3",
+            "Romans 16:5",
+            "Romans 16:6",
+            "Romans 16:8"
+          ],
+          "lookupCandidates": [
+            "greet"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "GREET",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10792,94 +10792,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "bad",
-        "count": 18,
-        "sampleRefs": [
-          "Genesis 24:50",
-          "Genesis 31:24",
-          "Genesis 31:29",
-          "Leviticus 27:10",
-          "Leviticus 27:10"
-        ],
-        "lookupCandidates": [
-          "bad"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "base",
-        "count": 18,
-        "sampleRefs": [
-          "2 Samuel 6:22",
-          "1 Kings 7:27",
-          "1 Kings 7:29",
-          "1 Kings 7:30",
-          "1 Kings 7:31"
-        ],
-        "lookupCandidates": [
-          "base"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BASE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "bathe",
-        "count": 18,
-        "sampleRefs": [
-          "Leviticus 15:5",
-          "Leviticus 15:6",
-          "Leviticus 15:7",
-          "Leviticus 15:8",
-          "Leviticus 15:10"
-        ],
-        "lookupCandidates": [
-          "bathe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BATHE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "black",
-        "count": 18,
-        "sampleRefs": [
-          "Leviticus 13:31",
-          "Leviticus 13:37",
-          "1 Kings 18:45",
-          "Esther 1:6",
-          "Job 30:30"
-        ],
-        "lookupCandidates": [
-          "black"
-        ],
-        "hasDefinition": true,
-        "hasEaston": true,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BLACK",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "calves",
         "count": 18,
         "sampleRefs": [
@@ -10900,28 +10812,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "C'ALVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "cloth",
-        "count": 18,
-        "sampleRefs": [
-          "Numbers 4:6",
-          "Numbers 4:7",
-          "Numbers 4:8",
-          "Numbers 4:9",
-          "Numbers 4:11"
-        ],
-        "lookupCandidates": [
-          "cloth"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CLOTH",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -11918,30 +11808,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "bases",
-        "count": 16,
-        "sampleRefs": [
-          "1 Kings 7:27",
-          "1 Kings 7:28",
-          "1 Kings 7:37",
-          "1 Kings 7:38",
-          "1 Kings 7:39"
-        ],
-        "lookupCandidates": [
-          "bases",
-          "bas",
-          "base"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "BASE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "beard",
         "count": 16,
         "sampleRefs": [
@@ -12118,6 +11984,140 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "DEVI'CE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "devise",
+        "count": 16,
+        "sampleRefs": [
+          "Exodus 31:4",
+          "Exodus 35:32",
+          "Exodus 35:35",
+          "2 Samuel 14:14",
+          "Psalms 35:4"
+        ],
+        "lookupCandidates": [
+          "devise"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DEVI'SE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "dragons",
+        "count": 16,
+        "sampleRefs": [
+          "Deuteronomy 32:33",
+          "Job 30:29",
+          "Psalms 44:19",
+          "Psalms 74:13",
+          "Psalms 148:7"
+        ],
+        "lookupCandidates": [
+          "dragons",
+          "dragon",
+          "dragone"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "DRAGONS",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "earthquake",
+        "count": 16,
+        "sampleRefs": [
+          "1 Kings 19:11",
+          "1 Kings 19:11",
+          "1 Kings 19:12",
+          "Isaiah 29:6",
+          "Amos 1:1"
+        ],
+        "lookupCandidates": [
+          "earthquake"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EARTH'QUAKE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "exhort",
+        "count": 16,
+        "sampleRefs": [
+          "Acts 2:40",
+          "Acts 27:22",
+          "2 Corinthians 9:5",
+          "1 Thessalonians 4:1",
+          "1 Thessalonians 5:14"
+        ],
+        "lookupCandidates": [
+          "exhort"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "EXHORT'",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "footstool",
+        "count": 16,
+        "sampleRefs": [
+          "1 Chronicles 28:2",
+          "2 Chronicles 9:18",
+          "Psalms 99:5",
+          "Psalms 110:1",
+          "Psalms 132:7"
+        ],
+        "lookupCandidates": [
+          "footstool"
+        ],
+        "hasDefinition": true,
+        "hasEaston": true,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "FOOT' STOOL",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "greet",
+        "count": 16,
+        "sampleRefs": [
+          "1 Samuel 25:5",
+          "Romans 16:3",
+          "Romans 16:5",
+          "Romans 16:6",
+          "Romans 16:8"
+        ],
+        "lookupCandidates": [
+          "greet"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "GREET",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
