@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T15:23:25.744Z
+Generated: 2026-07-15T15:53:42.829Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -130,18 +130,18 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | clothe | CLOTHE | 16 | ocr_full_import_needs_spot_review |
 | cymbals | CYM'BAL | 16 | ocr_full_import_needs_spot_review |
 | devices | DEVI'CE | 16 | ocr_full_import_needs_spot_review |
-| exhort | EXHORT' | 16 | ocr_full_import_needs_spot_review |
-| footstool | FOOT' STOOL | 16 | ocr_full_import_needs_spot_review |
 | greet | GREET | 16 | ocr_full_import_needs_spot_review |
-| highway | HIGHWA'Y | 16 | ocr_full_import_needs_spot_review |
-| hinder | HINDER | 16 | ocr_full_import_needs_spot_review |
 | lend | LEND | 16 | ocr_full_import_needs_spot_review |
-| obedient | OBE'DIENT | 16 | ocr_full_import_needs_spot_review |
 | scorn | SCORN | 16 | ocr_full_import_needs_spot_review |
 | shot | SHOT | 16 | ocr_full_import_needs_spot_review |
 | straw | STRAW | 16 | ocr_full_import_needs_spot_review |
 | stuff | STUFF | 16 | ocr_full_import_needs_spot_review |
 | unbelief | UNBELIE'F | 16 | ocr_full_import_needs_spot_review |
+| uncircumcision | UNCIRCUMCI'SION | 16 | ocr_full_import_needs_spot_review |
+| zeal | ZEAL | 16 | ocr_full_import_needs_spot_review |
+| arches | ARCH' | 15 | ocr_full_import_needs_spot_review |
+| baptist | BAP'TIST | 15 | ocr_full_import_needs_spot_review |
+| beam | BEAM | 15 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
