@@ -1,5 +1,5 @@
 {
-  "audited_at": "2026-07-15T01:30:01.399Z",
+  "audited_at": "2026-07-15T18:28:55.822Z",
   "review_status": "public_verified_coverage_audit_complete",
   "method": "Compared rows accepted by the commentary importer against the 1,189 KJV chapters. Staged, quarantined, and needs-review rows do not count as reader coverage; legacy reviewed rows without a review_status remain importable by design.",
   "duplicate_safety_note": "Duplicate checks are scoped to the same displayed resource title and chapter. Distinct named editions such as standard and unabridged JFB are not treated as duplicates. Do not add chapter rows merely to increase counts; restore a gap only from the exact verified public-domain work with chapter-level provenance.",
@@ -31,6 +31,18 @@
     },
     {
       "resource_title": "Adam Clarke's Commentary on the Bible",
+      "scope": "Whole Bible",
+      "covered_chapters": 1189,
+      "expected_chapters": 1189,
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
+      "duplicate_public_chapters": [],
+      "public_source_file_count": 18
+    },
+    {
+      "resource_title": "Barnes' Notes on the Bible",
       "scope": "Whole Bible",
       "covered_chapters": 1189,
       "expected_chapters": 1189,
@@ -153,31 +165,6 @@
       ],
       "duplicate_public_chapters": [],
       "public_source_file_count": 28
-    },
-    {
-      "resource_title": "Barnes' Notes on the Bible",
-      "scope": "Whole Bible",
-      "covered_chapters": 1188,
-      "expected_chapters": 1189,
-      "coverage_percent": 99.9,
-      "missing_chapters": [
-        "Exodus 37"
-      ],
-      "missing_details": [
-        {
-          "reference": "Exodus 37",
-          "review_status": "Needs Review",
-          "import_status": "Staged",
-          "source_recovery_status": "Parser-shifted neighboring note; no chapter-specific Barnes note verified.",
-          "review_notes": "Removed from public import because the stored cross-reference belongs to a neighboring source page and no chapter-specific Barnes note was verified.",
-          "source_file": "barnes-reviewed-phase-5-exodus-commentary.json"
-        }
-      ],
-      "staged_chapters": [
-        "Exodus 37"
-      ],
-      "duplicate_public_chapters": [],
-      "public_source_file_count": 18
     },
     {
       "resource_title": "Morgan's Exposition on the Whole Bible",

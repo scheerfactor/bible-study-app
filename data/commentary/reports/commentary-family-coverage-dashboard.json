@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T01:30:01.399Z",
+  "generated_at": "2026-07-15T18:28:55.822Z",
   "canon_chapters": 1189,
   "counting_rule": "Public Verified rows only; staged rows are shown as gaps.",
   "families": {
@@ -117,25 +117,12 @@
     "Barnes' Notes on the Bible": {
       "resource_title": "Barnes' Notes on the Bible",
       "scope": "Whole Bible",
-      "covered_chapters": 1188,
+      "covered_chapters": 1189,
       "expected_chapters": 1189,
-      "coverage_percent": 99.9,
-      "missing_chapters": [
-        "Exodus 37"
-      ],
-      "missing_details": [
-        {
-          "reference": "Exodus 37",
-          "review_status": "Needs Review",
-          "import_status": "Staged",
-          "source_recovery_status": "Parser-shifted neighboring note; no chapter-specific Barnes note verified.",
-          "review_notes": "Removed from public import because the stored cross-reference belongs to a neighboring source page and no chapter-specific Barnes note was verified.",
-          "source_file": "barnes-reviewed-phase-5-exodus-commentary.json"
-        }
-      ],
-      "staged_chapters": [
-        "Exodus 37"
-      ],
+      "coverage_percent": 100,
+      "missing_chapters": [],
+      "missing_details": [],
+      "staged_chapters": [],
       "duplicate_public_chapters": [],
       "public_source_file_count": 18
     },
