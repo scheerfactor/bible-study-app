@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T03:00:06.186Z",
+    "generated_at": "2026-07-16T03:30:55.343Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -10,7 +10,7 @@
       "meaningfulUniqueWords": 12454
     },
     "webster1828": {
-      "entries": 60525,
+      "entries": 60545,
       "normalizedHeadwords": 51074,
       "meaningfulWordsWithDefinition": 7935,
       "meaningfulWordsWithoutDefinition": 4519,
@@ -2426,28 +2426,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "close",
-          "count": 11,
-          "sampleRefs": [
-            "Numbers 5:13",
-            "2 Samuel 22:46",
-            "1 Chronicles 12:1",
-            "Job 28:21",
-            "Job 41:15"
-          ],
-          "lookupCandidates": [
-            "close"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "CLOSE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "cud",
           "count": 11,
           "sampleRefs": [
@@ -2738,30 +2716,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "pins",
-          "count": 11,
-          "sampleRefs": [
-            "Exodus 27:19",
-            "Exodus 27:19",
-            "Exodus 35:18",
-            "Exodus 35:18",
-            "Exodus 38:20"
-          ],
-          "lookupCandidates": [
-            "pins",
-            "pin",
-            "pine"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "PINE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "plainly",
           "count": 11,
           "sampleRefs": [
@@ -2873,28 +2827,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "sad",
-          "count": 11,
-          "sampleRefs": [
-            "Genesis 40:6",
-            "1 Samuel 1:18",
-            "1 Kings 21:5",
-            "Nehemiah 2:1",
-            "Nehemiah 2:2"
-          ],
-          "lookupCandidates": [
-            "sad"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SAD",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "signet",
           "count": 11,
           "sampleRefs": [
@@ -2938,29 +2870,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "SPECK'LE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "speed",
-          "count": 11,
-          "sampleRefs": [
-            "Genesis 24:12",
-            "1 Samuel 20:38",
-            "2 Samuel 15:14",
-            "1 Kings 12:18",
-            "2 Chronicles 10:18"
-          ],
-          "lookupCandidates": [
-            "speed",
-            "spe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "SPEED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3589,6 +3498,94 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "INHAB'IT",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "kindly",
+          "count": 10,
+          "sampleRefs": [
+            "Genesis 24:49",
+            "Genesis 34:3",
+            "Genesis 47:29",
+            "Genesis 50:21",
+            "Joshua 2:14"
+          ],
+          "lookupCandidates": [
+            "kindly"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "KINDLY",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "lake",
+          "count": 10,
+          "sampleRefs": [
+            "Luke 5:1",
+            "Luke 5:2",
+            "Luke 8:22",
+            "Luke 8:23",
+            "Luke 8:33"
+          ],
+          "lookupCandidates": [
+            "lake"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "LAKE",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "maintain",
+          "count": 10,
+          "sampleRefs": [
+            "1 Kings 8:45",
+            "1 Kings 8:49",
+            "1 Kings 8:59",
+            "1 Chronicles 26:27",
+            "2 Chronicles 6:35"
+          ],
+          "lookupCandidates": [
+            "maintain"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MAINTA'IN",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "morsel",
+          "count": 10,
+          "sampleRefs": [
+            "Genesis 18:5",
+            "Judges 19:5",
+            "Ruth 2:14",
+            "1 Samuel 2:36",
+            "1 Samuel 28:22"
+          ],
+          "lookupCandidates": [
+            "morsel"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "MOR'SEL",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
@@ -10908,28 +10905,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "close",
-        "count": 11,
-        "sampleRefs": [
-          "Numbers 5:13",
-          "2 Samuel 22:46",
-          "1 Chronicles 12:1",
-          "Job 28:21",
-          "Job 41:15"
-        ],
-        "lookupCandidates": [
-          "close"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "CLOSE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "cud",
         "count": 11,
         "sampleRefs": [
@@ -11220,30 +11195,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "pins",
-        "count": 11,
-        "sampleRefs": [
-          "Exodus 27:19",
-          "Exodus 27:19",
-          "Exodus 35:18",
-          "Exodus 35:18",
-          "Exodus 38:20"
-        ],
-        "lookupCandidates": [
-          "pins",
-          "pin",
-          "pine"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "PINE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "plainly",
         "count": 11,
         "sampleRefs": [
@@ -11355,28 +11306,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "sad",
-        "count": 11,
-        "sampleRefs": [
-          "Genesis 40:6",
-          "1 Samuel 1:18",
-          "1 Kings 21:5",
-          "Nehemiah 2:1",
-          "Nehemiah 2:2"
-        ],
-        "lookupCandidates": [
-          "sad"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SAD",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "signet",
         "count": 11,
         "sampleRefs": [
@@ -11420,29 +11349,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "SPECK'LE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "speed",
-        "count": 11,
-        "sampleRefs": [
-          "Genesis 24:12",
-          "1 Samuel 20:38",
-          "2 Samuel 15:14",
-          "1 Kings 12:18",
-          "2 Chronicles 10:18"
-        ],
-        "lookupCandidates": [
-          "speed",
-          "spe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "SPEED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12071,6 +11977,94 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "INHAB'IT",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "kindly",
+        "count": 10,
+        "sampleRefs": [
+          "Genesis 24:49",
+          "Genesis 34:3",
+          "Genesis 47:29",
+          "Genesis 50:21",
+          "Joshua 2:14"
+        ],
+        "lookupCandidates": [
+          "kindly"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "KINDLY",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "lake",
+        "count": 10,
+        "sampleRefs": [
+          "Luke 5:1",
+          "Luke 5:2",
+          "Luke 8:22",
+          "Luke 8:23",
+          "Luke 8:33"
+        ],
+        "lookupCandidates": [
+          "lake"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "LAKE",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "maintain",
+        "count": 10,
+        "sampleRefs": [
+          "1 Kings 8:45",
+          "1 Kings 8:49",
+          "1 Kings 8:59",
+          "1 Chronicles 26:27",
+          "2 Chronicles 6:35"
+        ],
+        "lookupCandidates": [
+          "maintain"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MAINTA'IN",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "morsel",
+        "count": 10,
+        "sampleRefs": [
+          "Genesis 18:5",
+          "Judges 19:5",
+          "Ruth 2:14",
+          "1 Samuel 2:36",
+          "1 Samuel 28:22"
+        ],
+        "lookupCandidates": [
+          "morsel"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "MOR'SEL",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],

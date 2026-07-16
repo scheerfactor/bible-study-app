@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T03:00:06.186Z
+Generated: 2026-07-16T03:30:55.343Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -140,8 +140,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bold | BOLD | 11 | ocr_full_import_needs_spot_review |
 | bush | BUSH | 11 | ocr_full_import_needs_spot_review |
 | butter | BUT'TER | 11 | ocr_full_import_needs_spot_review |
-| close | CLOSE | 11 | ocr_full_import_needs_spot_review |
 | cud | CUD | 11 | ocr_full_import_needs_spot_review |
+| defend | DEFEND' | 11 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

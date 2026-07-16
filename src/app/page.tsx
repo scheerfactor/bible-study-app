@@ -11552,6 +11552,8 @@ const deferredCommentaryImportFiles = [
 const starterDeferredCommentaryImportFiles = deferredCommentaryImportFiles.filter((fileName) =>
   fileName.startsWith("matthew-henry") ||
   fileName.startsWith("american-commentary") ||
+  fileName.startsWith("adam-clarke") ||
+  fileName.startsWith("wesley") ||
   fileName.startsWith("jfb") ||
   fileName.startsWith("treasury-of-david") ||
   fileName === "amos-expanded-public-domain-commentary.json" ||
