@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T07:00:55.866Z
+Generated: 2026-07-16T07:31:58.355Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -126,22 +126,22 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
 | nails | NAIL | 10 | ocr_full_import_needs_spot_review |
-| resist | RESIST | 10 | ocr_full_import_needs_spot_review |
 | saddled | SAD'DLE | 10 | ocr_full_import_needs_spot_review |
-| satisfy | SATISFY | 10 | ocr_full_import_needs_spot_review |
 | scales | SCALE | 10 | ocr_full_import_needs_spot_review |
-| settle | SET'TLE | 10 | ocr_full_import_needs_spot_review |
-| slumber | SLUMBER | 10 | ocr_full_import_needs_spot_review |
 | stairs | STAIR | 10 | ocr_full_import_needs_spot_review |
-| tail | TAIL | 10 | ocr_full_import_needs_spot_review |
 | threshing | THRESH | 10 | ocr_full_import_needs_spot_review |
 | treasuries | TREASURY | 10 | ocr_full_import_needs_spot_review |
-| withstand | WITHSTAND' | 10 | ocr_full_import_needs_spot_review |
-| avenger | AVENG'ER | 9 | ocr_full_import_needs_spot_review |
 | babes | BABE | 9 | ocr_full_import_needs_spot_review |
-| behaved | BEHA'VE | 9 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
 | booths | BOOTH | 9 | ocr_full_import_needs_spot_review |
+| chamberlains | CHAMBERLAIN | 9 | ocr_full_import_needs_spot_review |
+| consecration | CONSECRA'TION | 9 | ocr_full_import_needs_spot_review |
+| convenient | CONVE'NIENT | 9 | ocr_full_import_needs_spot_review |
+| copy | COP'Y | 9 | ocr_full_import_needs_spot_review |
+| covetous | COV'ETOUS | 9 | ocr_full_import_needs_spot_review |
+| cruse | CRUSE | 9 | ocr_full_import_needs_spot_review |
+| degrees | DEGREE' | 9 | ocr_full_import_needs_spot_review |
+| devout | DEVOUT' | 9 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
