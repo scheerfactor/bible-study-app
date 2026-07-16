@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdir } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { readJsonOrCsv } from "./import-utils.mjs";
@@ -29,6 +29,14 @@ let totalRows = 0;
 let totalSourceVerses = 0;
 const fileSummaries = [];
 const errors = [];
+const appSource = await readFile(path.join(process.cwd(), "src", "app", "page.tsx"), "utf8");
+const publishableFiles = files.filter((file) => !/(?:needs-review|staging)/i.test(file));
+
+for (const file of publishableFiles) {
+  if (!appSource.includes(file)) {
+    errors.push(`${file}: reviewed TSK file is not connected to src/app/page.tsx.`);
+  }
+}
 
 for (const file of files) {
   const filePath = path.join(importsDir, file);
@@ -82,6 +90,7 @@ fileSummaries.forEach((summary) => {
   console.log(`- ${summary.file}: ${summary.rows} rows, ${summary.sourceVerses} source verses`);
 });
 console.log(`Files checked: ${fileSummaries.length}`);
+console.log(`Publishable files connected to the reader: ${publishableFiles.length}/${publishableFiles.length}`);
 console.log(`Rows checked: ${totalRows}`);
 console.log(`Per-file source verse total: ${totalSourceVerses}`);
 console.log("Duplicate references: 0");

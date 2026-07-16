@@ -1,6 +1,6 @@
 # Core Study Data Audit
 
-Generated: 2026-07-15T16:36:07.974Z
+Generated: 2026-07-16T02:19:32.806Z
 
 ## Summary
 
@@ -9,9 +9,9 @@ Generated: 2026-07-15T16:36:07.974Z
 - Public commentary rows: 12822.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 66.
-- Webster 1828 entries: 60314 (51209 normalized headwords; 1886 reviewed overlay).
+- Webster 1828 entries: 60488 (51264 normalized headwords; 2060 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
-- Public TSK rows: 6376; staged TSK rows: 50; source verses covered: 2349; chapters covered: 1189; books covered: 66 (reviewed samples only).
+- Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
 - Public-domain audio candidates: 50.
 
@@ -71,18 +71,18 @@ Generated: 2026-07-15T16:36:07.974Z
 
 | Book | Chapters With References | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Habakkuk | 3 | 3 | 100% | 9 | 12 |
-| Nahum | 3 | 3 | 100% | 8 | 14 |
-| Titus | 3 | 3 | 100% | 7 | 14 |
-| Jonah | 4 | 4 | 100% | 9 | 15 |
-| 2 Timothy | 4 | 4 | 100% | 10 | 15 |
-| Ruth | 4 | 4 | 100% | 8 | 17 |
-| 1 John | 5 | 5 | 100% | 10 | 21 |
-| Micah | 7 | 7 | 100% | 8 | 22 |
-| Jude | 1 | 1 | 100% | 12 | 23 |
-| Obadiah | 1 | 1 | 100% | 12 | 24 |
-| 1 Timothy | 6 | 6 | 100% | 12 | 24 |
-| Philemon | 1 | 1 | 100% | 12 | 24 |
+| 2 John | 1 | 1 | 100% | 12 | 24 |
+| 3 John | 1 | 1 | 100% | 12 | 24 |
+| Haggai | 2 | 2 | 100% | 13 | 25 |
+| Esther | 10 | 10 | 100% | 11 | 28 |
+| Ezra | 10 | 10 | 100% | 11 | 31 |
+| Zephaniah | 3 | 3 | 100% | 14 | 32 |
+| 2 Thessalonians | 3 | 3 | 100% | 14 | 32 |
+| 2 Peter | 3 | 3 | 100% | 14 | 33 |
+| 1 Thessalonians | 5 | 5 | 100% | 15 | 34 |
+| Philippians | 4 | 4 | 100% | 15 | 35 |
+| Ecclesiastes | 12 | 12 | 100% | 13 | 36 |
+| Colossians | 4 | 4 | 100% | 15 | 36 |
 
 ## Thinnest Commentary Books
 

@@ -68,13 +68,22 @@ function authorFingerprint(value) {
   const raw = String(value ?? "").split(/;|\band\b|\n/i)[0].trim();
   const surnameFirst = raw.match(/^([^,]+),\s*([^,(]+?)(?:\s*\(([^)]+)\))?(?:,|$)/);
   const reordered = surnameFirst ? `${surnameFirst[3] || surnameFirst[2]} ${surnameFirst[1]}` : raw;
-  const words = normalize(reordered).split(" ").filter((word) => word && !/^\d{4}$/.test(word));
+  const credentialWords = new Set([
+    "by", "digitized", "indexed", "edited", "editor", "rev", "reverend", "very",
+    "dr", "d", "dd", "ma", "litt", "littd", "jr", "sr", "ministry",
+  ]);
+  const words = normalize(reordered)
+    .split(" ")
+    .filter((word) => word && !/^\d{4}$/.test(word) && !credentialWords.has(word));
+  if (words.length > 1 && words[0].length > 1 && words.slice(1).every((word) => word.length === 1)) {
+    return `${words[0]}::${words.slice(1).join("")}`;
+  }
   return words.length ? `${words.at(-1)}::${words.slice(0, -1).map((word) => word[0]).join("")}` : "";
 }
 
 function titleTokens(value) {
   return normalize(value)
-    .replace(/\b(?:volume|vol|edition|ed|original scan)\b/g, " ")
+    .replace(/\b(?:microform|volume|vol|edition|ed|original scan)\b/g, " ")
     .split(" ")
     .filter(Boolean);
 }
@@ -92,15 +101,28 @@ function sameWork(left, right) {
   if (smaller >= 4 && intersection / smaller >= 0.8 && intersection / union >= 0.55) return true;
   const short = a.length <= b.length ? a : b;
   const long = a.length <= b.length ? b : a;
-  return short.length >= 3 && short.every((token, index) => long[index] === token);
+  if (short.length >= 3 && short.every((token, index) => long[index] === token)) return true;
+  return short.length === 2 && long.length >= 5 && short.every((token, index) => long[index] === token);
+}
+
+function distinctiveTitleMatch(left, right) {
+  const a = titleTokens(left);
+  const b = titleTokens(right);
+  if (a.length < 5 || b.length < 5) return false;
+  if (a.join(" ") === b.join(" ")) return true;
+  const short = a.length <= b.length ? a : b;
+  const long = a.length <= b.length ? b : a;
+  return short.length >= 5 && short.every((token, index) => long[index] === token);
 }
 
 const rows = parseCsv(await readFile(inputPath, "utf8"));
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 const existingByAuthor = new Map();
+const existingTitles = [];
 for (const item of manifest) {
   const author = authorFingerprint(item.author);
   existingByAuthor.set(author, [...(existingByAuthor.get(author) ?? []), item.title]);
+  existingTitles.push(item.title);
 }
 
 const accepted = [];
@@ -114,14 +136,37 @@ const manualRejectPatterns = [
   /^baptist history$/i,
   /^selected sermons$/i,
   /^old testament characters$/i,
+  /^the pulpit commentary\b/i,
+  /machine[ -]gun.*drill/i,
+  /^beowulf\b/i,
+  /^king james bible printable format/i,
+  /^kjv 1611\b/i,
+  /^1611 king james bible$/i,
+  /^the holy bible,? an exact reprint/i,
+  /^biblia cabalistica/i,
+  /^he kaine diatheke/i,
+  /^ko te paipera tapu/i,
+  /^the interlinear bible/i,
+  /^pilgerreise zur seligen ewigkeit/i,
+  /^de heilige oorlog/i,
+  /^kristityn vaellus/i,
+  /^lone pine: the story of a lost mine/i,
+  /^history of randolph county/i,
+  /^carroll, b\. h\. - historical collections of south carolina/i,
+  /treasury of david in one volume/i,
+  /^poems and prose.*spurgeon/i,
+  /^a synopsis of criticisms/i,
 ];
 
 for (const row of rows) {
   const author = authorFingerprint(row.author);
+  const unreliableAuthor = /^(?:various|unknown|digitized by|indexed by)/i.test(String(row.author).trim());
   let reason = "";
   if (String(row.author).includes(";")) reason = "multiple contributors; not a clearly authored ministry work";
   else if (nonBookPattern.test(row.title)) reason = "periodical, proceedings, or catalog rather than a selected book";
-  else if (manualRejectPatterns.some((pattern) => pattern.test(row.title.trim()))) reason = "manual review identified an excerpt, redundant edition, or resource already represented more usefully";
+  else if (manualRejectPatterns.some((pattern) => pattern.test(row.title.trim()))) reason = "manual review identified an excerpt, unrelated work, foreign-language duplicate, or resource already represented more usefully";
+  else if (existingTitles.some((title) => distinctiveTitleMatch(title, row.title))) reason = "same distinctive work title already exists in Library under another author form or edition";
+  else if (unreliableAuthor && existingTitles.some((title) => normalize(title) === normalize(row.title) || sameWork(title, row.title))) reason = "same work already exists in Library under another title, author form, or edition";
   else if ((existingByAuthor.get(author) ?? []).some((title) => sameWork(title, row.title))) reason = "same work already exists in Library under another title or edition";
   else if ((acceptedByAuthor.get(author) ?? []).some((title) => sameWork(title, row.title))) reason = "same work already selected in this batch under another title or edition";
 

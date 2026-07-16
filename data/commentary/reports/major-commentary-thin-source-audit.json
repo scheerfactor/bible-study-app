@@ -1,11 +1,11 @@
 {
-  "audited_at": "2026-07-15T20:59:01.533Z",
+  "audited_at": "2026-07-16T02:19:04.688Z",
   "threshold_characters": 200,
   "review_status": "current_public_and_staged_rows_classified",
   "method": "Scanned all commentary import files for major commentary-family rows below the threshold and separated public verified rows from staged or quarantined rows.",
   "safety_rule": "A short row is not automatically defective. Keep genuine brief notes and cross-references when source-verified; stage headings, navigation wrappers, and verse-only placeholders until matching public-domain text is recovered.",
   "summary": {
-    "files_scanned": 382,
+    "files_scanned": 383,
     "active_thin_rows": 14,
     "staged_thin_rows": 9
   },

@@ -14,10 +14,10 @@
     "authors": 66
   },
   "webster1828": {
-    "entries": 60314,
+    "entries": 60488,
     "baseEntries": 58428,
-    "reviewedOverrides": 1886,
-    "uniqueNormalizedHeadwords": 51209,
+    "reviewedOverrides": 2060,
+    "uniqueNormalizedHeadwords": 51264,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
       {
@@ -197,9 +197,9 @@
     ]
   },
   "tsk": {
-    "rows": 6376,
+    "rows": 6994,
     "stagedRows": 50,
-    "sourceVersesCovered": 2349,
+    "sourceVersesCovered": 2563,
     "booksCovered": 66,
     "chaptersCovered": 1189,
     "status": "reviewed samples only",
@@ -227,100 +227,100 @@
     ],
     "weakestBooks": [
       {
-        "book": "Habakkuk",
+        "book": "2 John",
+        "chaptersCovered": 1,
+        "totalChapters": 1,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 12,
+        "rows": 24
+      },
+      {
+        "book": "3 John",
+        "chaptersCovered": 1,
+        "totalChapters": 1,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 12,
+        "rows": 24
+      },
+      {
+        "book": "Haggai",
+        "chaptersCovered": 2,
+        "totalChapters": 2,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 13,
+        "rows": 25
+      },
+      {
+        "book": "Esther",
+        "chaptersCovered": 10,
+        "totalChapters": 10,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 11,
+        "rows": 28
+      },
+      {
+        "book": "Ezra",
+        "chaptersCovered": 10,
+        "totalChapters": 10,
+        "chapterCoveragePercent": 100,
+        "versesCovered": 11,
+        "rows": 31
+      },
+      {
+        "book": "Zephaniah",
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 9,
-        "rows": 12
+        "versesCovered": 14,
+        "rows": 32
       },
       {
-        "book": "Nahum",
+        "book": "2 Thessalonians",
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 8,
-        "rows": 14
+        "versesCovered": 14,
+        "rows": 32
       },
       {
-        "book": "Titus",
+        "book": "2 Peter",
         "chaptersCovered": 3,
         "totalChapters": 3,
         "chapterCoveragePercent": 100,
-        "versesCovered": 7,
-        "rows": 14
+        "versesCovered": 14,
+        "rows": 33
       },
       {
-        "book": "Jonah",
-        "chaptersCovered": 4,
-        "totalChapters": 4,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 9,
-        "rows": 15
-      },
-      {
-        "book": "2 Timothy",
-        "chaptersCovered": 4,
-        "totalChapters": 4,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 10,
-        "rows": 15
-      },
-      {
-        "book": "Ruth",
-        "chaptersCovered": 4,
-        "totalChapters": 4,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 8,
-        "rows": 17
-      },
-      {
-        "book": "1 John",
+        "book": "1 Thessalonians",
         "chaptersCovered": 5,
         "totalChapters": 5,
         "chapterCoveragePercent": 100,
-        "versesCovered": 10,
-        "rows": 21
+        "versesCovered": 15,
+        "rows": 34
       },
       {
-        "book": "Micah",
-        "chaptersCovered": 7,
-        "totalChapters": 7,
+        "book": "Philippians",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
         "chapterCoveragePercent": 100,
-        "versesCovered": 8,
-        "rows": 22
+        "versesCovered": 15,
+        "rows": 35
       },
       {
-        "book": "Jude",
-        "chaptersCovered": 1,
-        "totalChapters": 1,
+        "book": "Ecclesiastes",
+        "chaptersCovered": 12,
+        "totalChapters": 12,
         "chapterCoveragePercent": 100,
-        "versesCovered": 12,
-        "rows": 23
+        "versesCovered": 13,
+        "rows": 36
       },
       {
-        "book": "Obadiah",
-        "chaptersCovered": 1,
-        "totalChapters": 1,
+        "book": "Colossians",
+        "chaptersCovered": 4,
+        "totalChapters": 4,
         "chapterCoveragePercent": 100,
-        "versesCovered": 12,
-        "rows": 24
-      },
-      {
-        "book": "1 Timothy",
-        "chaptersCovered": 6,
-        "totalChapters": 6,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 12,
-        "rows": 24
-      },
-      {
-        "book": "Philemon",
-        "chaptersCovered": 1,
-        "totalChapters": 1,
-        "chapterCoveragePercent": 100,
-        "versesCovered": 12,
-        "rows": 24
+        "versesCovered": 15,
+        "rows": 36
       }
     ]
   },

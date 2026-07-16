@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T01:27:38.876Z
+Generated: 2026-07-16T02:19:25.506Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,12 +8,12 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,889/12,454 meaningful KJV words have a lookup candidate (63.3%).
-- Combined word/topic lookup: 10,845/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.1%).
+- Webster 1828: 7,935/12,454 meaningful KJV words have a lookup candidate (63.7%).
+- Combined word/topic lookup: 10,889/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.4%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
-- TSK: 6,376 public rows cover 1189/1189 chapters (100%).
+- TSK: 6,994 public rows cover 1189/1189 chapters (100%).
 - TSK remaining chapter gaps: None.
 - Nave: 4,674 cleaned topic records, 3,862 with extracted Scripture references.
 
@@ -72,7 +72,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Word | Count | Sample References |
 | --- | ---: | --- |
 | forasmuch | 43 | Genesis 41:39; Numbers 10:31; Deuteronomy 12:12; Deuteronomy 17:16; Joshua 17:14 |
-| notwithstanding | 36 | Exodus 16:20; Exodus 21:21; Leviticus 25:32; Leviticus 27:28; Numbers 26:11 |
 | seest | 36 | Genesis 13:15; Genesis 16:13; Genesis 31:43; Exodus 10:28; Deuteronomy 4:19 |
 | members | 32 | Job 17:7; Psalms 139:16; Matthew 5:29; Matthew 5:30; Romans 6:13 |
 | putteth | 30 | Exodus 30:33; Numbers 22:38; Deuteronomy 25:11; Deuteronomy 27:15; 1 Kings 20:11 |
@@ -80,7 +79,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
 | marvellous | 24 | 1 Chronicles 16:12; 1 Chronicles 16:24; Job 5:9; Job 10:16; Psalms 9:1 |
-| alway | 23 | Exodus 25:30; Numbers 9:16; Deuteronomy 11:1; Deuteronomy 28:33; 2 Samuel 9:10 |
 | marvelled | 23 | Genesis 43:33; Psalms 48:5; Matthew 8:10; Matthew 8:27; Matthew 9:8 |
 | mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
 | defence | 22 | Numbers 14:9; 2 Chronicles 11:5; Job 22:25; Psalms 7:10; Psalms 31:2 |
@@ -90,17 +88,19 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | higher | 21 | Numbers 24:7; 1 Samuel 9:2; 1 Samuel 10:23; 2 Kings 15:35; Nehemiah 4:13 |
 | husbandmen | 21 | 2 Kings 25:12; 2 Chronicles 26:10; Jeremiah 31:24; Jeremiah 52:16; Joel 1:11 |
 | magnified | 21 | Genesis 19:19; Joshua 4:14; 2 Samuel 7:26; 1 Chronicles 17:24; 1 Chronicles 29:25 |
-| occasion | 21 | Genesis 43:18; Judges 9:33; Judges 14:4; 1 Samuel 10:7; 2 Samuel 12:14 |
 | recompence | 20 | Deuteronomy 32:35; Job 15:31; Proverbs 12:14; Isaiah 35:4; Isaiah 59:18 |
 | committeth | 19 | Leviticus 20:10; Leviticus 20:10; Psalms 10:14; Proverbs 6:32; Ezekiel 8:6 |
 | denied | 19 | Genesis 18:15; 1 Kings 20:7; Job 31:28; Matthew 26:70; Matthew 26:72 |
 | spent | 19 | Genesis 21:15; Genesis 47:18; Leviticus 26:20; Judges 19:11; 1 Samuel 9:7 |
-| vile | 19 | Deuteronomy 25:3; Judges 19:24; 1 Samuel 3:13; 1 Samuel 15:9; 2 Samuel 6:22 |
 | bade | 18 | Genesis 43:17; Exodus 16:24; Numbers 14:10; Joshua 11:9; Ruth 3:6 |
 | basons | 18 | Exodus 24:6; Exodus 27:3; Exodus 38:3; Numbers 4:14; 2 Samuel 17:28 |
-| betray | 18 | 1 Chronicles 12:17; Matthew 24:10; Matthew 26:16; Matthew 26:21; Matthew 26:23 |
-| cold | 18 | Genesis 8:22; Job 24:7; Job 37:9; Psalms 147:17; Proverbs 20:4 |
 | intreated | 18 | Genesis 25:21; Genesis 25:21; Exodus 8:30; Exodus 10:18; Judges 13:8 |
+| bondmen | 17 | Genesis 43:18; Genesis 44:9; Leviticus 25:42; Leviticus 25:44; Leviticus 25:44 |
+| crieth | 17 | Genesis 4:10; Exodus 22:27; Job 24:12; Psalms 72:12; Psalms 84:2 |
+| divisions | 17 | Joshua 11:23; Joshua 12:7; Joshua 18:10; Judges 5:15; Judges 5:16 |
+| threshingfloor | 17 | Genesis 50:10; Numbers 15:20; Numbers 18:27; Numbers 18:30; Ruth 3:2 |
+| musick | 16 | 1 Samuel 18:6; 1 Chronicles 15:16; 2 Chronicles 5:13; 2 Chronicles 7:6; 2 Chronicles 23:13 |
+| overthrown | 16 | Exodus 15:7; Judges 9:40; 2 Samuel 17:9; 2 Chronicles 14:13; Job 19:6 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -172,18 +172,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 | Book | Chapters With TSK | Total Chapters | Chapter Coverage | Source Verses | Rows |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Habakkuk | 3 | 3 | 100% | 9 | 12 |
-| Nahum | 3 | 3 | 100% | 8 | 14 |
-| Titus | 3 | 3 | 100% | 7 | 14 |
-| Jonah | 4 | 4 | 100% | 9 | 15 |
-| 2 Timothy | 4 | 4 | 100% | 10 | 15 |
-| Ruth | 4 | 4 | 100% | 8 | 17 |
-| 1 John | 5 | 5 | 100% | 10 | 21 |
-| Micah | 7 | 7 | 100% | 8 | 22 |
-| Jude | 1 | 1 | 100% | 12 | 23 |
-| Obadiah | 1 | 1 | 100% | 12 | 24 |
-| 1 Timothy | 6 | 6 | 100% | 12 | 24 |
-| Philemon | 1 | 1 | 100% | 12 | 24 |
 | 2 John | 1 | 1 | 100% | 12 | 24 |
 | 3 John | 1 | 1 | 100% | 12 | 24 |
 | Haggai | 2 | 2 | 100% | 13 | 25 |
@@ -192,6 +180,18 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | Zephaniah | 3 | 3 | 100% | 14 | 32 |
 | 2 Thessalonians | 3 | 3 | 100% | 14 | 32 |
 | 2 Peter | 3 | 3 | 100% | 14 | 33 |
+| 1 Thessalonians | 5 | 5 | 100% | 15 | 34 |
+| Philippians | 4 | 4 | 100% | 15 | 35 |
+| Ecclesiastes | 12 | 12 | 100% | 13 | 36 |
+| Colossians | 4 | 4 | 100% | 15 | 36 |
+| 1 Peter | 5 | 5 | 100% | 16 | 38 |
+| Lamentations | 5 | 5 | 100% | 16 | 39 |
+| James | 5 | 5 | 100% | 16 | 39 |
+| Galatians | 6 | 6 | 100% | 17 | 42 |
+| Ephesians | 6 | 6 | 100% | 17 | 42 |
+| Joel | 3 | 3 | 100% | 27 | 47 |
+| Solomon's Song | 8 | 8 | 100% | 19 | 48 |
+| Obadiah | 1 | 1 | 100% | 21 | 51 |
 
 ## Top KJV Words Without Reviewed Strong's Mapping Yet
 

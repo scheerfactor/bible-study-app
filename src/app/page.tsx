@@ -88,6 +88,7 @@ import tskWeakBooksPhase17 from "../../data/imports/tsk-metav-reviewed-weak-book
 import tskWeakBooksPhase18 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-18.json";
 import tskPsalmsPhase19 from "../../data/imports/tsk-metav-reviewed-psalms-phase-19.json";
 import tskPsalmsPhase20 from "../../data/imports/tsk-metav-reviewed-psalms-phase-20.json";
+import tskWeakBooksPhase21 from "../../data/imports/tsk-metav-reviewed-weak-books-phase-21.json";
 import tskReviewedFinalChapterGaps from "../../data/imports/tsk-reviewed-final-chapter-gaps.json";
 import tskThinBooksPhase14 from "../../data/imports/tsk-reviewed-thin-books-phase-14.json";
 import hoseaAdamClarkeCommentary from "../../data/imports/adam-clarke-reviewed-completion-prophets-commentary.json";
@@ -10176,6 +10177,7 @@ const additionalReviewedTskRows: TskCrossReferenceImportRow[] = [
   ...(tskWeakBooksPhase18 as TskCrossReferenceImportRow[]),
   ...(tskPsalmsPhase19 as TskCrossReferenceImportRow[]),
   ...(tskPsalmsPhase20 as TskCrossReferenceImportRow[]),
+  ...(tskWeakBooksPhase21 as TskCrossReferenceImportRow[]),
   ...(tskReviewedFinalChapterGaps as TskCrossReferenceImportRow[]),
 ];
 

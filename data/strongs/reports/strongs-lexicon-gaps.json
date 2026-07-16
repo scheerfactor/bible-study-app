@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T16:35:54.465Z",
+  "generated_at": "2026-07-16T01:57:43.109Z",
   "source": "data/strongs/mapping-batches/*.json",
   "lexicon_source": "data/strongs/sample-verified-strongs.json + data/strongs/lexicon-batches/index.json",
   "totals": {
