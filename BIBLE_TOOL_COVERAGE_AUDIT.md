@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T10:00:37.392Z
+Generated: 2026-07-16T10:17:24.803Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -126,22 +126,22 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
-| pangs | PANG | 9 | ocr_full_import_needs_spot_review |
-| patient | PATIENT | 9 | ocr_full_import_needs_spot_review |
-| point | POINT | 9 | ocr_full_import_needs_spot_review |
-| poison | POIS'ON | 9 | ocr_full_import_needs_spot_review |
-| posterity | POSTER'ITY | 9 | ocr_full_import_needs_spot_review |
-| requite | REQUITE | 9 | ocr_full_import_needs_spot_review |
-| sapphire | SAP'PHIRE | 9 | ocr_full_import_needs_spot_review |
-| scorpions | SCORPION | 9 | ocr_full_import_needs_spot_review |
-| shined | SHIN | 9 | ocr_full_import_needs_spot_review |
-| shineth | SHIN | 9 | ocr_full_import_needs_spot_review |
-| shortened | SHORTEN | 9 | ocr_full_import_needs_spot_review |
-| showers | SHOW'ER | 9 | ocr_full_import_needs_spot_review |
-| stamped | STAMP | 9 | ocr_full_import_needs_spot_review |
 | stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
-| tip | TIP | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
+| vale | VALE | 9 | ocr_full_import_needs_spot_review |
+| virginity | VIRGIN'ITY | 9 | ocr_full_import_needs_spot_review |
+| wagons | WAG'ON | 9 | ocr_full_import_needs_spot_review |
+| warp | WARP | 9 | ocr_full_import_needs_spot_review |
+| wont | WONT | 9 | ocr_full_import_needs_spot_review |
+| wormwood | WORMWOOD | 9 | ocr_full_import_needs_spot_review |
+| worth | WORTH | 9 | ocr_full_import_needs_spot_review |
+| affairs | AFFA'IR | 8 | ocr_full_import_needs_spot_review |
+| ambassadors | AMBAS'SADOR | 8 | ocr_full_import_needs_spot_review |
+| apple | AP'PLE | 8 | ocr_full_import_needs_spot_review |
+| approved | APPROV'ED | 8 | ocr_full_import_needs_spot_review |
+| astrologers | ASTROLOGER | 8 | ocr_full_import_needs_spot_review |
+| bend | BEND | 8 | ocr_full_import_needs_spot_review |
+| beryl | BER'YL | 8 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
