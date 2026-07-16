@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-15T23:57:35.991Z
+Generated: 2026-07-16T00:27:40.512Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -123,17 +123,7 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | spies | SPY | 14 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
-| ivory | I'VORY | 13 | ocr_full_import_needs_spot_review |
-| liar | LIA'R | 13 | ocr_full_import_needs_spot_review |
-| natural | NAT'URAL | 13 | ocr_full_import_needs_spot_review |
-| noon | NOON | 13 | ocr_full_import_needs_spot_review |
-| overflow | OVERFLOW | 13 | ocr_full_import_needs_spot_review |
 | passing | P'ASSING | 13 | ocr_full_import_needs_spot_review |
-| plenty | PLEN'TY | 13 | ocr_full_import_needs_spot_review |
-| profitable | PROFITABLE | 13 | ocr_full_import_needs_spot_review |
-| short | SHORT | 13 | ocr_full_import_needs_spot_review |
-| vinegar | VIN'EGAR | 13 | ocr_full_import_needs_spot_review |
-| audience | AUD'IENCE | 12 | ocr_full_import_needs_spot_review |
 | begun | BEGUN' | 12 | ocr_full_import_needs_spot_review |
 | difference | DIF'FERENCE | 12 | ocr_full_import_needs_spot_review |
 | divination | DIVINA'TION | 12 | ocr_full_import_needs_spot_review |
@@ -142,6 +132,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | happened | HAP'PEN | 12 | ocr_full_import_needs_spot_review |
 | hunt | HUNT | 12 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
+| mock | MOCK | 12 | ocr_full_import_needs_spot_review |
+| mules | MULE | 12 | ocr_full_import_needs_spot_review |
+| nature | NA'TURE | 12 | ocr_full_import_needs_spot_review |
+| nose | NOSE | 12 | ocr_full_import_needs_spot_review |
+| peaceably | PE'ACEABLY | 12 | ocr_full_import_needs_spot_review |
+| pitcher | PITCH'ER | 12 | ocr_full_import_needs_spot_review |
+| plenteous | PLEN'TEOUS | 12 | ocr_full_import_needs_spot_review |
+| quench | QUENCH | 12 | ocr_full_import_needs_spot_review |
+| sack | SACK | 12 | ocr_full_import_needs_spot_review |
+| several | SEVERAL | 12 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
