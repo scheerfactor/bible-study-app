@@ -56,6 +56,12 @@ function lookupCandidates(value) {
     const candidate = word.replace(pattern, replacement);
     if (candidate.length < 3) continue;
     candidates.push(candidate);
+    if (
+      (word.endsWith("ing") || word.endsWith("ed")) &&
+      /([b-df-hj-np-tv-z])\1$/.test(candidate)
+    ) {
+      candidates.push(candidate.slice(0, -1));
+    }
     if (/[^aeiou]$/.test(candidate)) candidates.push(`${candidate}e`);
   }
   return [...new Set(candidates)];

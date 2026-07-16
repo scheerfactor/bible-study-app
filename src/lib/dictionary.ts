@@ -272,6 +272,12 @@ function dictionaryLookupCandidates(value: string) {
     const candidate = cleaned.replace(pattern, replacement);
     if (candidate.length >= 3) {
       candidates.push(candidate);
+      if (
+        (cleaned.endsWith("ing") || cleaned.endsWith("ed")) &&
+        /([b-df-hj-np-tv-z])\1$/.test(candidate)
+      ) {
+        candidates.push(candidate.slice(0, -1));
+      }
       if (/[^aeiou]$/.test(candidate)) candidates.push(`${candidate}e`);
     }
   }

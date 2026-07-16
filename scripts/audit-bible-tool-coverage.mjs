@@ -14,10 +14,12 @@ const bookOrder = [
 ];
 
 const dictionaryAliases = {
+  innocency: "innocence",
   sware: "swear",
   sworn: "swear",
   greater: "great",
   branches: "branch",
+  calves: "calf",
   moved: "move",
   asses: "ass",
   smitten: "smite",
@@ -44,6 +46,7 @@ const dictionaryAliases = {
   philistine: "philistines",
   circumcised: "circumcision",
   prevailed: "prevail",
+  recompence: "recompense",
   understood: "understand",
   valour: "valor",
   nought: "naught",
@@ -73,10 +76,14 @@ const dictionaryAliases = {
   bathshua: "bathsheba",
   bethjesimoth: "bethjeshimoth",
   chaldaeans: "chaldeans",
+  committing: "commit",
   committest: "commit",
+  compasseth: "compass",
+  craftsmen: "craftsman",
   deadness: "dead",
   eleloheisrael: "israel",
   forgivenesses: "forgiveness",
+  forgat: "forget",
   hazazontamar: "engedi",
   immutability: "immutable",
   irnahash: "nahash",
@@ -92,6 +99,7 @@ const dictionaryAliases = {
   syriamaachah: "syria",
   thereinto: "therein",
   unweighed: "weigh",
+  wanderers: "wanderer",
   hath: "have",
   hast: "have",
   hadst: "have",
@@ -165,6 +173,7 @@ const dictionaryAliases = {
   prophets: "prophecy",
   prophesied: "prophecy",
   transgressions: "transgression",
+  transgressed: "transgress",
   visions: "vision",
   prayed: "pray",
   prayest: "pray",
@@ -176,6 +185,7 @@ const dictionaryAliases = {
   doeth: "do",
   doth: "do",
   didst: "do",
+  testifieth: "testify",
 };
 
 const stopWords = new Set([
@@ -220,6 +230,12 @@ function dictionaryLookupCandidates(value) {
     const candidate = cleaned.replace(pattern, replacement);
     if (candidate.length >= 3) {
       candidates.push(candidate);
+      if (
+        (cleaned.endsWith("ing") || cleaned.endsWith("ed")) &&
+        /([b-df-hj-np-tv-z])\1$/.test(candidate)
+      ) {
+        candidates.push(candidate.slice(0, -1));
+      }
       if (/[^aeiou]$/.test(candidate)) candidates.push(`${candidate}e`);
     }
   }

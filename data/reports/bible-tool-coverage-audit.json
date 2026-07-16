@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generated_at": "2026-07-16T06:00:08.857Z",
+    "generated_at": "2026-07-16T06:31:39.561Z",
     "bible": {
       "books": 66,
       "chapters": 1189,
@@ -12,9 +12,9 @@
     "webster1828": {
       "entries": 60604,
       "normalizedHeadwords": 51075,
-      "meaningfulWordsWithDefinition": 7936,
-      "meaningfulWordsWithoutDefinition": 4518,
-      "meaningfulDefinitionCoveragePercent": 63.7,
+      "meaningfulWordsWithDefinition": 7968,
+      "meaningfulWordsWithoutDefinition": 4486,
+      "meaningfulDefinitionCoveragePercent": 64,
       "topUsedWordsNeedingDefinition": [
         {
           "word": "israel",
@@ -1906,29 +1906,6 @@
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
-          "word": "calves",
-          "count": 18,
-          "sampleRefs": [
-            "1 Samuel 6:7",
-            "1 Samuel 6:10",
-            "1 Samuel 14:32",
-            "1 Kings 12:28",
-            "1 Kings 12:32"
-          ],
-          "lookupCandidates": [
-            "calves",
-            "calve"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "C'ALVE",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
           "word": "shewbread",
           "count": 18,
           "sampleRefs": [
@@ -1992,30 +1969,6 @@
           "hasAnyStudyLookup": true,
           "dirtyDefinition": true,
           "sourceHeadword": "VEXA'TION",
-          "reviewStatus": "ocr_full_import_needs_spot_review"
-        },
-        {
-          "word": "wrapped",
-          "count": 14,
-          "sampleRefs": [
-            "Genesis 38:14",
-            "1 Samuel 21:9",
-            "1 Kings 19:13",
-            "2 Kings 2:8",
-            "Job 8:17"
-          ],
-          "lookupCandidates": [
-            "wrapped",
-            "wrapp",
-            "wrappe"
-          ],
-          "hasDefinition": true,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": true,
-          "dirtyDefinition": true,
-          "sourceHeadword": "WR APPED",
           "reviewStatus": "ocr_full_import_needs_spot_review"
         },
         {
@@ -3606,6 +3559,52 @@
           "dirtyDefinition": true,
           "sourceHeadword": "STAMP",
           "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "stiffnecked",
+          "count": 9,
+          "sampleRefs": [
+            "Exodus 32:9",
+            "Exodus 33:3",
+            "Exodus 33:5",
+            "Exodus 34:9",
+            "Deuteronomy 9:6"
+          ],
+          "lookupCandidates": [
+            "stiffnecked",
+            "stiffneck",
+            "stiffnecke"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": true,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "STIFF'-NECKED",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
+        },
+        {
+          "word": "tip",
+          "count": 9,
+          "sampleRefs": [
+            "Exodus 29:20",
+            "Exodus 29:20",
+            "Leviticus 8:23",
+            "Leviticus 8:24",
+            "Leviticus 14:14"
+          ],
+          "lookupCandidates": [
+            "tip"
+          ],
+          "hasDefinition": true,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": true,
+          "dirtyDefinition": true,
+          "sourceHeadword": "TIP",
+          "reviewStatus": "ocr_full_import_needs_spot_review"
         }
       ]
     },
@@ -3613,10 +3612,10 @@
       "eastonEntries": 3883,
       "naveTopics": 4674,
       "rareTermEntries": 28,
-      "meaningfulWordsWithEastonEntry": 4070,
-      "meaningfulWordsWithNaveTopic": 3957,
-      "meaningfulWordsWithAnyStudyLookup": 10890,
-      "combinedStudyLookupCoveragePercent": 87.4,
+      "meaningfulWordsWithEastonEntry": 4085,
+      "meaningfulWordsWithNaveTopic": 3972,
+      "meaningfulWordsWithAnyStudyLookup": 10922,
+      "combinedStudyLookupCoveragePercent": 87.7,
       "topUsedWordsWithoutAnyStudyLookup": [
         {
           "word": "forasmuch",
@@ -3800,30 +3799,6 @@
           "reviewStatus": null
         },
         {
-          "word": "marvelled",
-          "count": 23,
-          "sampleRefs": [
-            "Genesis 43:33",
-            "Psalms 48:5",
-            "Matthew 8:10",
-            "Matthew 8:27",
-            "Matthew 9:8"
-          ],
-          "lookupCandidates": [
-            "marvelled",
-            "marvell",
-            "marvelle"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "mizpeh",
           "count": 23,
           "sampleRefs": [
@@ -3994,28 +3969,6 @@
           "lookupCandidates": [
             "magnified",
             "magnifi"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
-          "word": "recompence",
-          "count": 20,
-          "sampleRefs": [
-            "Deuteronomy 32:35",
-            "Job 15:31",
-            "Proverbs 12:14",
-            "Isaiah 35:4",
-            "Isaiah 59:18"
-          ],
-          "lookupCandidates": [
-            "recompence"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -4748,30 +4701,6 @@
           "reviewStatus": null
         },
         {
-          "word": "stripped",
-          "count": 12,
-          "sampleRefs": [
-            "Exodus 33:6",
-            "Numbers 20:28",
-            "1 Samuel 18:4",
-            "1 Samuel 19:24",
-            "1 Samuel 31:9"
-          ],
-          "lookupCandidates": [
-            "stripped",
-            "stripp",
-            "strippe"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "stumblingblock",
           "count": 12,
           "sampleRefs": [
@@ -5241,30 +5170,6 @@
           "reviewStatus": null
         },
         {
-          "word": "dipped",
-          "count": 10,
-          "sampleRefs": [
-            "Genesis 37:31",
-            "Leviticus 9:9",
-            "Joshua 3:15",
-            "1 Samuel 14:27",
-            "2 Kings 5:14"
-          ],
-          "lookupCandidates": [
-            "dipped",
-            "dipp",
-            "dippe"
-          ],
-          "hasDefinition": false,
-          "hasEaston": false,
-          "hasNave": false,
-          "hasRareTerm": false,
-          "hasAnyStudyLookup": false,
-          "dirtyDefinition": false,
-          "sourceHeadword": null,
-          "reviewStatus": null
-        },
-        {
           "word": "enlarge",
           "count": 10,
           "sampleRefs": [
@@ -5414,6 +5319,96 @@
           ],
           "lookupCandidates": [
             "withholden"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "wreathen",
+          "count": 10,
+          "sampleRefs": [
+            "Exodus 28:14",
+            "Exodus 28:14",
+            "Exodus 28:22",
+            "Exodus 28:24",
+            "Exodus 28:25"
+          ],
+          "lookupCandidates": [
+            "wreathen"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "zidonians",
+          "count": 10,
+          "sampleRefs": [
+            "Judges 10:12",
+            "Judges 18:7",
+            "Judges 18:7",
+            "1 Kings 11:1",
+            "1 Kings 11:5"
+          ],
+          "lookupCandidates": [
+            "zidonians",
+            "zidonian",
+            "zidoniane"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "advice",
+          "count": 9,
+          "sampleRefs": [
+            "Judges 19:30",
+            "Judges 20:7",
+            "1 Samuel 25:33",
+            "2 Samuel 19:43",
+            "2 Chronicles 10:9"
+          ],
+          "lookupCandidates": [
+            "advice"
+          ],
+          "hasDefinition": false,
+          "hasEaston": false,
+          "hasNave": false,
+          "hasRareTerm": false,
+          "hasAnyStudyLookup": false,
+          "dirtyDefinition": false,
+          "sourceHeadword": null,
+          "reviewStatus": null
+        },
+        {
+          "word": "baken",
+          "count": 9,
+          "sampleRefs": [
+            "Leviticus 2:4",
+            "Leviticus 2:5",
+            "Leviticus 2:7",
+            "Leviticus 6:17",
+            "Leviticus 6:21"
+          ],
+          "lookupCandidates": [
+            "baken"
           ],
           "hasDefinition": false,
           "hasEaston": false,
@@ -6565,8 +6560,8 @@
     "nave": {
       "topics": 4674,
       "topicsWithReferences": 3862,
-      "exactMeaningfulBibleWordTopics": 3957,
-      "exactMeaningfulBibleWordTopicPercent": 31.8,
+      "exactMeaningfulBibleWordTopics": 3972,
+      "exactMeaningfulBibleWordTopicPercent": 31.9,
       "suspiciousTopicCount": 814,
       "topUsedWordsWithoutExactTopic": [
         {
@@ -10404,29 +10399,6 @@
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
-        "word": "calves",
-        "count": 18,
-        "sampleRefs": [
-          "1 Samuel 6:7",
-          "1 Samuel 6:10",
-          "1 Samuel 14:32",
-          "1 Kings 12:28",
-          "1 Kings 12:32"
-        ],
-        "lookupCandidates": [
-          "calves",
-          "calve"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "C'ALVE",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
         "word": "shewbread",
         "count": 18,
         "sampleRefs": [
@@ -10490,30 +10462,6 @@
         "hasAnyStudyLookup": true,
         "dirtyDefinition": true,
         "sourceHeadword": "VEXA'TION",
-        "reviewStatus": "ocr_full_import_needs_spot_review"
-      },
-      {
-        "word": "wrapped",
-        "count": 14,
-        "sampleRefs": [
-          "Genesis 38:14",
-          "1 Samuel 21:9",
-          "1 Kings 19:13",
-          "2 Kings 2:8",
-          "Job 8:17"
-        ],
-        "lookupCandidates": [
-          "wrapped",
-          "wrapp",
-          "wrappe"
-        ],
-        "hasDefinition": true,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": true,
-        "dirtyDefinition": true,
-        "sourceHeadword": "WR APPED",
         "reviewStatus": "ocr_full_import_needs_spot_review"
       },
       {
@@ -12104,6 +12052,52 @@
         "dirtyDefinition": true,
         "sourceHeadword": "STAMP",
         "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "stiffnecked",
+        "count": 9,
+        "sampleRefs": [
+          "Exodus 32:9",
+          "Exodus 33:3",
+          "Exodus 33:5",
+          "Exodus 34:9",
+          "Deuteronomy 9:6"
+        ],
+        "lookupCandidates": [
+          "stiffnecked",
+          "stiffneck",
+          "stiffnecke"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": true,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "STIFF'-NECKED",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
+      },
+      {
+        "word": "tip",
+        "count": 9,
+        "sampleRefs": [
+          "Exodus 29:20",
+          "Exodus 29:20",
+          "Leviticus 8:23",
+          "Leviticus 8:24",
+          "Leviticus 14:14"
+        ],
+        "lookupCandidates": [
+          "tip"
+        ],
+        "hasDefinition": true,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": true,
+        "dirtyDefinition": true,
+        "sourceHeadword": "TIP",
+        "reviewStatus": "ocr_full_import_needs_spot_review"
       }
     ],
     "topMissingAnyStudyLookup": [
@@ -12289,30 +12283,6 @@
         "reviewStatus": null
       },
       {
-        "word": "marvelled",
-        "count": 23,
-        "sampleRefs": [
-          "Genesis 43:33",
-          "Psalms 48:5",
-          "Matthew 8:10",
-          "Matthew 8:27",
-          "Matthew 9:8"
-        ],
-        "lookupCandidates": [
-          "marvelled",
-          "marvell",
-          "marvelle"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "mizpeh",
         "count": 23,
         "sampleRefs": [
@@ -12483,28 +12453,6 @@
         "lookupCandidates": [
           "magnified",
           "magnifi"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
-        "word": "recompence",
-        "count": 20,
-        "sampleRefs": [
-          "Deuteronomy 32:35",
-          "Job 15:31",
-          "Proverbs 12:14",
-          "Isaiah 35:4",
-          "Isaiah 59:18"
-        ],
-        "lookupCandidates": [
-          "recompence"
         ],
         "hasDefinition": false,
         "hasEaston": false,
@@ -13237,30 +13185,6 @@
         "reviewStatus": null
       },
       {
-        "word": "stripped",
-        "count": 12,
-        "sampleRefs": [
-          "Exodus 33:6",
-          "Numbers 20:28",
-          "1 Samuel 18:4",
-          "1 Samuel 19:24",
-          "1 Samuel 31:9"
-        ],
-        "lookupCandidates": [
-          "stripped",
-          "stripp",
-          "strippe"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "stumblingblock",
         "count": 12,
         "sampleRefs": [
@@ -13730,30 +13654,6 @@
         "reviewStatus": null
       },
       {
-        "word": "dipped",
-        "count": 10,
-        "sampleRefs": [
-          "Genesis 37:31",
-          "Leviticus 9:9",
-          "Joshua 3:15",
-          "1 Samuel 14:27",
-          "2 Kings 5:14"
-        ],
-        "lookupCandidates": [
-          "dipped",
-          "dipp",
-          "dippe"
-        ],
-        "hasDefinition": false,
-        "hasEaston": false,
-        "hasNave": false,
-        "hasRareTerm": false,
-        "hasAnyStudyLookup": false,
-        "dirtyDefinition": false,
-        "sourceHeadword": null,
-        "reviewStatus": null
-      },
-      {
         "word": "enlarge",
         "count": 10,
         "sampleRefs": [
@@ -13903,6 +13803,96 @@
         ],
         "lookupCandidates": [
           "withholden"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "wreathen",
+        "count": 10,
+        "sampleRefs": [
+          "Exodus 28:14",
+          "Exodus 28:14",
+          "Exodus 28:22",
+          "Exodus 28:24",
+          "Exodus 28:25"
+        ],
+        "lookupCandidates": [
+          "wreathen"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "zidonians",
+        "count": 10,
+        "sampleRefs": [
+          "Judges 10:12",
+          "Judges 18:7",
+          "Judges 18:7",
+          "1 Kings 11:1",
+          "1 Kings 11:5"
+        ],
+        "lookupCandidates": [
+          "zidonians",
+          "zidonian",
+          "zidoniane"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "advice",
+        "count": 9,
+        "sampleRefs": [
+          "Judges 19:30",
+          "Judges 20:7",
+          "1 Samuel 25:33",
+          "2 Samuel 19:43",
+          "2 Chronicles 10:9"
+        ],
+        "lookupCandidates": [
+          "advice"
+        ],
+        "hasDefinition": false,
+        "hasEaston": false,
+        "hasNave": false,
+        "hasRareTerm": false,
+        "hasAnyStudyLookup": false,
+        "dirtyDefinition": false,
+        "sourceHeadword": null,
+        "reviewStatus": null
+      },
+      {
+        "word": "baken",
+        "count": 9,
+        "sampleRefs": [
+          "Leviticus 2:4",
+          "Leviticus 2:5",
+          "Leviticus 2:7",
+          "Leviticus 6:17",
+          "Leviticus 6:21"
+        ],
+        "lookupCandidates": [
+          "baken"
         ],
         "hasDefinition": false,
         "hasEaston": false,

@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T06:00:08.857Z
+Generated: 2026-07-16T06:31:39.561Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,936/12,454 meaningful KJV words have a lookup candidate (63.7%).
-- Combined word/topic lookup: 10,890/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.4%).
+- Webster 1828: 7,968/12,454 meaningful KJV words have a lookup candidate (64%).
+- Combined word/topic lookup: 10,922/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.7%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -79,7 +79,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | forsook | 24 | Deuteronomy 32:15; Judges 2:12; Judges 2:13; Judges 10:6; 1 Samuel 31:7 |
 | fulfil | 24 | Genesis 29:27; Exodus 5:13; Exodus 23:26; 1 Kings 2:27; 1 Chronicles 22:13 |
 | marvellous | 24 | 1 Chronicles 16:12; 1 Chronicles 16:24; Job 5:9; Job 10:16; Psalms 9:1 |
-| marvelled | 23 | Genesis 43:33; Psalms 48:5; Matthew 8:10; Matthew 8:27; Matthew 9:8 |
 | mizpeh | 23 | Joshua 11:3; Joshua 11:8; Joshua 15:38; Joshua 18:26; Judges 10:17 |
 | defence | 22 | Numbers 14:9; 2 Chronicles 11:5; Job 22:25; Psalms 7:10; Psalms 31:2 |
 | jubile | 22 | Leviticus 25:9; Leviticus 25:10; Leviticus 25:11; Leviticus 25:12; Leviticus 25:13 |
@@ -88,7 +87,6 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | higher | 21 | Numbers 24:7; 1 Samuel 9:2; 1 Samuel 10:23; 2 Kings 15:35; Nehemiah 4:13 |
 | husbandmen | 21 | 2 Kings 25:12; 2 Chronicles 26:10; Jeremiah 31:24; Jeremiah 52:16; Joel 1:11 |
 | magnified | 21 | Genesis 19:19; Joshua 4:14; 2 Samuel 7:26; 1 Chronicles 17:24; 1 Chronicles 29:25 |
-| recompence | 20 | Deuteronomy 32:35; Job 15:31; Proverbs 12:14; Isaiah 35:4; Isaiah 59:18 |
 | committeth | 19 | Leviticus 20:10; Leviticus 20:10; Psalms 10:14; Proverbs 6:32; Ezekiel 8:6 |
 | denied | 19 | Genesis 18:15; 1 Kings 20:7; Job 31:28; Matthew 26:70; Matthew 26:72 |
 | spent | 19 | Genesis 21:15; Genesis 47:18; Leviticus 26:20; Judges 19:11; 1 Samuel 9:7 |
@@ -101,6 +99,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | threshingfloor | 17 | Genesis 50:10; Numbers 15:20; Numbers 18:27; Numbers 18:30; Ruth 3:2 |
 | musick | 16 | 1 Samuel 18:6; 1 Chronicles 15:16; 2 Chronicles 5:13; 2 Chronicles 7:6; 2 Chronicles 23:13 |
 | overthrown | 16 | Exodus 15:7; Judges 9:40; 2 Samuel 17:9; 2 Chronicles 14:13; Job 19:6 |
+| soever | 16 | Leviticus 15:9; Leviticus 17:3; Leviticus 22:4; Deuteronomy 12:32; 2 Samuel 15:35 |
+| intreat | 15 | Genesis 23:8; Exodus 8:8; Exodus 8:9; Exodus 8:28; Exodus 8:29 |
 
 ## Final Words Without Dictionary Or Strong's Help
 
@@ -117,11 +117,9 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | robe | ROBE | 26 | ocr_full_import_needs_spot_review |
 | plains | PLAIN | 25 | ocr_full_import_needs_spot_review |
 | centurion | CENTU'RION | 21 | ocr_full_import_needs_spot_review |
-| calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
-| wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
 | gog | GOG | 11 | ocr_full_import_needs_spot_review |
@@ -142,6 +140,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | saddled | SAD'DLE | 10 | ocr_full_import_needs_spot_review |
 | satisfy | SATISFY | 10 | ocr_full_import_needs_spot_review |
 | scales | SCALE | 10 | ocr_full_import_needs_spot_review |
+| settle | SET'TLE | 10 | ocr_full_import_needs_spot_review |
+| slumber | SLUMBER | 10 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

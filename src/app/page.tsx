@@ -13481,6 +13481,13 @@ function normalizeLookupWord(word: string) {
   for (const [pattern, replacement] of suffixRules) {
     const candidate = cleaned.replace(pattern, replacement);
     if (dictionaryEntries[candidate]) return candidate;
+    if (
+      (cleaned.endsWith("ing") || cleaned.endsWith("ed")) &&
+      /([b-df-hj-np-tv-z])\1$/.test(candidate)
+    ) {
+      const deduplicatedCandidate = candidate.slice(0, -1);
+      if (dictionaryEntries[deduplicatedCandidate]) return deduplicatedCandidate;
+    }
   }
 
   return cleaned;
