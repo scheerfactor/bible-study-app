@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T10:17:24.803Z
+Generated: 2026-07-16T10:29:37.561Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -128,20 +128,20 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
 | stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
-| vale | VALE | 9 | ocr_full_import_needs_spot_review |
-| virginity | VIRGIN'ITY | 9 | ocr_full_import_needs_spot_review |
-| wagons | WAG'ON | 9 | ocr_full_import_needs_spot_review |
-| warp | WARP | 9 | ocr_full_import_needs_spot_review |
-| wont | WONT | 9 | ocr_full_import_needs_spot_review |
-| wormwood | WORMWOOD | 9 | ocr_full_import_needs_spot_review |
-| worth | WORTH | 9 | ocr_full_import_needs_spot_review |
-| affairs | AFFA'IR | 8 | ocr_full_import_needs_spot_review |
-| ambassadors | AMBAS'SADOR | 8 | ocr_full_import_needs_spot_review |
-| apple | AP'PLE | 8 | ocr_full_import_needs_spot_review |
-| approved | APPROV'ED | 8 | ocr_full_import_needs_spot_review |
-| astrologers | ASTROLOGER | 8 | ocr_full_import_needs_spot_review |
-| bend | BEND | 8 | ocr_full_import_needs_spot_review |
-| beryl | BER'YL | 8 | ocr_full_import_needs_spot_review |
+| case | CASE | 8 | ocr_full_import_needs_spot_review |
+| covet | COVET | 8 | ocr_full_import_needs_spot_review |
+| dance | D'ANCE | 8 | ocr_full_import_needs_spot_review |
+| diminish | DIMIN'ISH | 8 | ocr_full_import_needs_spot_review |
+| dissolved | DISSOLVED | 8 | ocr_full_import_needs_spot_review |
+| diverse | DI'VERSE | 8 | ocr_full_import_needs_spot_review |
+| dross | DROSS | 8 | ocr_full_import_needs_spot_review |
+| duty | DU'TY | 8 | ocr_full_import_needs_spot_review |
+| embrace | EMBRA'CE | 8 | ocr_full_import_needs_spot_review |
+| entice | ENTI'CE | 8 | ocr_full_import_needs_spot_review |
+| fan | FAN | 8 | ocr_full_import_needs_spot_review |
+| fillets | FIL'LET | 8 | ocr_full_import_needs_spot_review |
+| flattering | FLATTER | 8 | ocr_full_import_needs_spot_review |
+| followers | FOL'LOWER | 8 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

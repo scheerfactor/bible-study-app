@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12833,
+    "publicRows": 12836,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 67
+    "authors": 68
   },
   "webster1828": {
-    "entries": 60669,
+    "entries": 60685,
     "baseEntries": 58428,
-    "reviewedOverrides": 2241,
+    "reviewedOverrides": 2257,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "2 Chronicles",
-      "coveredChapters": 36,
-      "totalChapters": 36,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.027777777777779
-    },
-    {
       "book": "Numbers",
       "coveredChapters": 36,
       "totalChapters": 36,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.06
+    },
+    {
+      "book": "Ecclesiastes",
+      "coveredChapters": 12,
+      "totalChapters": 12,
+      "coverage": 1,
+      "authors": 11,
+      "rowsPerChapter": 10.083333333333334
     }
   ]
 }

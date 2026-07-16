@@ -1,15 +1,15 @@
 # Core Study Data Audit
 
-Generated: 2026-07-16T10:17:30.995Z
+Generated: 2026-07-16T10:29:39.477Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 2235 verified resources.
-- Public commentary rows: 12833.
+- Public commentary rows: 12836.
 - Public commentary chapter coverage: 1189/1189 (100%).
-- Commentary authors represented in public imports: 67.
-- Webster 1828 entries: 60669 (51268 normalized headwords; 2241 reviewed overlay).
+- Commentary authors represented in public imports: 68.
+- Webster 1828 entries: 60685 (51268 normalized headwords; 2257 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
 - Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
@@ -88,7 +88,6 @@ Generated: 2026-07-16T10:17:30.995Z
 
 | Book | Chapters Covered | Total Chapters | Coverage | Authors | Rows/Chapter |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 2 Chronicles | 36 | 36 | 100% | 11 | 10.0 |
 | Numbers | 36 | 36 | 100% | 11 | 10.0 |
 | Deuteronomy | 34 | 34 | 100% | 11 | 10.0 |
 | 1 Samuel | 31 | 31 | 100% | 11 | 10.0 |
@@ -100,6 +99,7 @@ Generated: 2026-07-16T10:17:30.995Z
 | 1 Kings | 22 | 22 | 100% | 11 | 10.0 |
 | Judges | 21 | 21 | 100% | 11 | 10.0 |
 | Genesis | 50 | 50 | 100% | 11 | 10.1 |
+| Ecclesiastes | 12 | 12 | 100% | 11 | 10.1 |
 
 ## Recommendations
 
