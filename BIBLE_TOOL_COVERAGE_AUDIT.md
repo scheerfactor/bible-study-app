@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T00:57:43.378Z
+Generated: 2026-07-16T01:27:38.876Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -127,21 +127,21 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | happened | HAP'PEN | 12 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
 | mules | MULE | 12 | ocr_full_import_needs_spot_review |
-| peaceably | PE'ACEABLY | 12 | ocr_full_import_needs_spot_review |
-| pitcher | PITCH'ER | 12 | ocr_full_import_needs_spot_review |
-| plenteous | PLEN'TEOUS | 12 | ocr_full_import_needs_spot_review |
-| quench | QUENCH | 12 | ocr_full_import_needs_spot_review |
-| sack | SACK | 12 | ocr_full_import_needs_spot_review |
-| several | SEVERAL | 12 | ocr_full_import_needs_spot_review |
-| sickle | SICKLE | 12 | ocr_full_import_needs_spot_review |
-| sir | SIR | 12 | ocr_full_import_needs_spot_review |
-| skirt | SKIRT | 12 | ocr_full_import_needs_spot_review |
-| sole | SOLE | 12 | ocr_full_import_needs_spot_review |
 | spoon | SPOON | 12 | ocr_full_import_needs_spot_review |
 | spoons | SPOON | 12 | ocr_full_import_needs_spot_review |
 | spy | SPY | 12 | ocr_full_import_needs_spot_review |
 | stream | STREAM | 12 | ocr_full_import_needs_spot_review |
 | streams | STREAM | 12 | ocr_full_import_needs_spot_review |
+| strike | STRIKE | 12 | ocr_full_import_needs_spot_review |
+| submit | SUBMIT' | 12 | ocr_full_import_needs_spot_review |
+| tooth | TOOTH | 12 | ocr_full_import_needs_spot_review |
+| unawares | UNAWA'RES | 12 | ocr_full_import_needs_spot_review |
+| uprightly | UPRIGHTLY | 12 | ocr_full_import_needs_spot_review |
+| wear | WEAR | 12 | ocr_full_import_needs_spot_review |
+| absent | AB'SENT | 11 | ocr_full_import_needs_spot_review |
+| almost | ALMOST | 11 | ocr_full_import_needs_spot_review |
+| attend | ATTEND' | 11 | ocr_full_import_needs_spot_review |
+| bag | BAG | 11 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
