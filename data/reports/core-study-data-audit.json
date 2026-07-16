@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12836,
+    "publicRows": 12839,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 68
   },
   "webster1828": {
-    "entries": 60685,
+    "entries": 60699,
     "baseEntries": 58428,
-    "reviewedOverrides": 2257,
+    "reviewedOverrides": 2271,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "Numbers",
-      "coveredChapters": 36,
-      "totalChapters": 36,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.027777777777779
-    },
-    {
       "book": "Deuteronomy",
       "coveredChapters": 34,
       "totalChapters": 34,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.083333333333334
+    },
+    {
+      "book": "Exodus",
+      "coveredChapters": 40,
+      "totalChapters": 40,
+      "coverage": 1,
+      "authors": 11,
+      "rowsPerChapter": 10.1
     }
   ]
 }

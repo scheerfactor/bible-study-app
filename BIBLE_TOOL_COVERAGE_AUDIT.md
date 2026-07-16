@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T10:29:37.561Z
+Generated: 2026-07-16T10:35:14.557Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -128,20 +128,20 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | bestow | BESTOW | 9 | ocr_full_import_needs_spot_review |
 | stiffnecked | STIFF'-NECKED | 9 | ocr_full_import_needs_spot_review |
 | treacherous | TREACHEROUS | 9 | ocr_full_import_needs_spot_review |
-| case | CASE | 8 | ocr_full_import_needs_spot_review |
-| covet | COVET | 8 | ocr_full_import_needs_spot_review |
-| dance | D'ANCE | 8 | ocr_full_import_needs_spot_review |
-| diminish | DIMIN'ISH | 8 | ocr_full_import_needs_spot_review |
-| dissolved | DISSOLVED | 8 | ocr_full_import_needs_spot_review |
-| diverse | DI'VERSE | 8 | ocr_full_import_needs_spot_review |
-| dross | DROSS | 8 | ocr_full_import_needs_spot_review |
-| duty | DU'TY | 8 | ocr_full_import_needs_spot_review |
-| embrace | EMBRA'CE | 8 | ocr_full_import_needs_spot_review |
-| entice | ENTI'CE | 8 | ocr_full_import_needs_spot_review |
-| fan | FAN | 8 | ocr_full_import_needs_spot_review |
-| fillets | FIL'LET | 8 | ocr_full_import_needs_spot_review |
-| flattering | FLATTER | 8 | ocr_full_import_needs_spot_review |
-| followers | FOL'LOWER | 8 | ocr_full_import_needs_spot_review |
+| furniture | FUR'NITURE | 8 | ocr_full_import_needs_spot_review |
+| furrows | FUR'ROW | 8 | ocr_full_import_needs_spot_review |
+| gallows | GAL'LOWS | 8 | ocr_full_import_needs_spot_review |
+| gladly | GLAD'LY | 8 | ocr_full_import_needs_spot_review |
+| grain | GRAIN | 8 | ocr_full_import_needs_spot_review |
+| hall | HALL | 8 | ocr_full_import_needs_spot_review |
+| hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
+| hastily | HASTILY | 8 | ocr_full_import_needs_spot_review |
+| helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
+| hissing | HISS'ING | 8 | ocr_full_import_needs_spot_review |
+| inclosed | INCLO'SED | 8 | ocr_full_import_needs_spot_review |
+| kin | KIN | 8 | ocr_full_import_needs_spot_review |
+| kneeled | KNEEL | 8 | ocr_full_import_needs_spot_review |
+| lofty | LOFT'Y | 8 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

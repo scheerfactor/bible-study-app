@@ -108,6 +108,7 @@ import exodusGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed
 import isaiahGaebeleinCommentary from "../../data/imports/a-c-gaebelein-reviewed-isaiah-1-3-commentary.json";
 import jobWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-job-1-3-commentary.json";
 import secondChroniclesBennettCommentary from "../../data/imports/w-h-bennett-reviewed-2-chronicles-starter-commentary.json";
+import numbersWatsonCommentary from "../../data/imports/robert-a-watson-reviewed-numbers-1-5-commentary.json";
 import jfbCompleteCoverageReport from "../../data/commentary/reports/jamieson-fausset-brown-complete-commentary-coverage.json";
 import matthewHenryCompleteCoverageReport from "../../data/commentary/reports/matthew-henry-complete-commentary-coverage.json";
 import ocrCleanupQueueData from "../../data/library/needs-review/ocr-cleanup-queue.json";
@@ -10438,6 +10439,7 @@ const localCommentaryEntries: CommentaryEntry[] = [
   ...(isaiahGaebeleinCommentary as CommentaryEntry[]),
   ...(jobWatsonCommentary as CommentaryEntry[]),
   ...(secondChroniclesBennettCommentary as CommentaryEntry[]),
+  ...(numbersWatsonCommentary as CommentaryEntry[]),
 ]
   .filter(
     (entry) =>
@@ -10446,7 +10448,8 @@ const localCommentaryEntries: CommentaryEntry[] = [
       entry.book === "Exodus" ||
       entry.book === "Isaiah" ||
       entry.book === "Job" ||
-      entry.book === "2 Chronicles",
+      entry.book === "2 Chronicles" ||
+      entry.book === "Numbers",
   )
   .map(normalizeCommentaryEntry);
 
