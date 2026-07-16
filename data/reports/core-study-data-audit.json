@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12842,
+    "publicRows": 12845,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 69
+    "authors": 70
   },
   "webster1828": {
-    "entries": 60710,
+    "entries": 60721,
     "baseEntries": 58428,
-    "reviewedOverrides": 2282,
+    "reviewedOverrides": 2293,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "1 Samuel",
-      "coveredChapters": 31,
-      "totalChapters": 31,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.03225806451613
-    },
-    {
       "book": "1 Chronicles",
       "coveredChapters": 29,
       "totalChapters": 29,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.25
+    },
+    {
+      "book": "Isaiah",
+      "coveredChapters": 66,
+      "totalChapters": 66,
+      "coverage": 1,
+      "authors": 12,
+      "rowsPerChapter": 10.06060606060606
     }
   ]
 }

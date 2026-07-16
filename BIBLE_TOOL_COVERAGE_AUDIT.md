@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T11:04:32.774Z
+Generated: 2026-07-16T11:34:40.824Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -131,17 +131,17 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
-| magistrates | MAGISTRATE | 8 | ocr_full_import_needs_spot_review |
-| manifold | MAN'IFOLD | 8 | ocr_full_import_needs_spot_review |
-| ouches | OUCH | 8 | ocr_full_import_needs_spot_review |
-| peaceable | PE'ACEABLE | 8 | ocr_full_import_needs_spot_review |
-| pearls | PEARL | 8 | ocr_full_import_needs_spot_review |
-| perils | PER'IL | 8 | ocr_full_import_needs_spot_review |
-| pierced | PIERCED | 8 | ocr_full_import_needs_spot_review |
-| prosperous | PROS'PEROUS | 8 | ocr_full_import_needs_spot_review |
-| pursuing | PURSU'ING | 8 | ocr_full_import_needs_spot_review |
-| sail | SAIL | 8 | ocr_full_import_needs_spot_review |
-| sheath | SHEATH | 8 | ocr_full_import_needs_spot_review |
+| sinful | SIN'FUL | 8 | ocr_full_import_needs_spot_review |
+| soft | SOFT | 8 | ocr_full_import_needs_spot_review |
+| something | SOMETHING | 8 | ocr_full_import_needs_spot_review |
+| span | SPAN | 8 | ocr_full_import_needs_spot_review |
+| subdue | SUBDUE | 8 | ocr_full_import_needs_spot_review |
+| surnamed | SURNA'MED | 8 | ocr_full_import_needs_spot_review |
+| tares | TARE | 8 | ocr_full_import_needs_spot_review |
+| unless | UNLESS' | 8 | ocr_full_import_needs_spot_review |
+| uphold | UPHOLD | 8 | ocr_full_import_needs_spot_review |
+| venison | VENISON | 8 | ocr_full_import_needs_spot_review |
+| vomit | VOM'IT | 8 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
