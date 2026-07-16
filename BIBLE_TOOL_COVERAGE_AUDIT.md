@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T03:30:55.343Z
+Generated: 2026-07-16T04:30:43.216Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -8,8 +8,8 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - KJV words measured: 791,438 tokens, 12,524 unique words, 12,454 meaningful unique words after common-word filtering.
-- Webster 1828: 7,935/12,454 meaningful KJV words have a lookup candidate (63.7%).
-- Combined word/topic lookup: 10,889/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.4%).
+- Webster 1828: 7,936/12,454 meaningful KJV words have a lookup candidate (63.7%).
+- Combined word/topic lookup: 10,890/12,454 meaningful KJV words have Webster, Easton, or Nave help (87.4%).
 - Strong's lexicon: 14,296 entries available; reviewed KJV mappings cover 1189/1189 chapters and 31,051 source verses.
 - Strong's KJV word mapping: 12,076/12,454 meaningful KJV words appear in reviewed mapping batches (97%).
 - Combined word-study help: 12,454/12,454 meaningful KJV words have Webster, Easton, Nave, or reviewed Strong's help (100%).
@@ -120,28 +120,28 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | calves | C'ALVE | 18 | ocr_full_import_needs_spot_review |
 | shewbread | SHEW'-BREAD | 18 | ocr_full_import_needs_spot_review |
 | selfsame | SELF'-SAME | 15 | ocr_full_import_needs_spot_review |
-| spies | SPY | 14 | ocr_full_import_needs_spot_review |
 | vexation | VEXA'TION | 14 | ocr_full_import_needs_spot_review |
 | wrapped | WR APPED | 14 | ocr_full_import_needs_spot_review |
-| passing | P'ASSING | 13 | ocr_full_import_needs_spot_review |
-| happened | HAP'PEN | 12 | ocr_full_import_needs_spot_review |
 | hyssop | HYSSOP | 12 | ocr_full_import_needs_spot_review |
-| mules | MULE | 12 | ocr_full_import_needs_spot_review |
-| spoon | SPOON | 12 | ocr_full_import_needs_spot_review |
-| spoons | SPOON | 12 | ocr_full_import_needs_spot_review |
-| spy | SPY | 12 | ocr_full_import_needs_spot_review |
-| submit | SUBMIT' | 12 | ocr_full_import_needs_spot_review |
-| tooth | TOOTH | 12 | ocr_full_import_needs_spot_review |
-| unawares | UNAWA'RES | 12 | ocr_full_import_needs_spot_review |
-| uprightly | UPRIGHTLY | 12 | ocr_full_import_needs_spot_review |
-| absent | AB'SENT | 11 | ocr_full_import_needs_spot_review |
-| almost | ALMOST | 11 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
-| bold | BOLD | 11 | ocr_full_import_needs_spot_review |
-| bush | BUSH | 11 | ocr_full_import_needs_spot_review |
-| butter | BUT'TER | 11 | ocr_full_import_needs_spot_review |
-| cud | CUD | 11 | ocr_full_import_needs_spot_review |
-| defend | DEFEND' | 11 | ocr_full_import_needs_spot_review |
+| gog | GOG | 11 | ocr_full_import_needs_spot_review |
+| pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
+| provide | PROVIDE | 11 | ocr_full_import_needs_spot_review |
+| robes | ROBE | 11 | ocr_full_import_needs_spot_review |
+| signet | SIG'NET | 11 | ocr_full_import_needs_spot_review |
+| speckled | SPECK'LE | 11 | ocr_full_import_needs_spot_review |
+| stedfast | STED'FAST | 11 | ocr_full_import_needs_spot_review |
+| straitly | STRA'ITLY | 11 | ocr_full_import_needs_spot_review |
+| stroke | STROKE | 11 | ocr_full_import_needs_spot_review |
+| torment | TORMENT | 11 | ocr_full_import_needs_spot_review |
+| utmost | UT'MOST | 11 | ocr_full_import_needs_spot_review |
+| withdraw | WITHDRAW | 11 | ocr_full_import_needs_spot_review |
+| wither | WITHER | 11 | ocr_full_import_needs_spot_review |
+| accusation | ACCUSA'TION | 10 | ocr_full_import_needs_spot_review |
+| alarm | AL'ARM | 10 | ocr_full_import_needs_spot_review |
+| astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
+| birthright | BIRTH'RIGHT | 10 | ocr_full_import_needs_spot_review |
+| boldness | BOLDNESS | 10 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
