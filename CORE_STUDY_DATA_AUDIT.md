@@ -1,15 +1,15 @@
 # Core Study Data Audit
 
-Generated: 2026-07-16T11:34:42.295Z
+Generated: 2026-07-16T12:04:33.930Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 2235 verified resources.
-- Public commentary rows: 12845.
+- Public commentary rows: 12848.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 70.
-- Webster 1828 entries: 60721 (51268 normalized headwords; 2293 reviewed overlay).
+- Webster 1828 entries: 60732 (51268 normalized headwords; 2304 reviewed overlay).
 - Strong's lexicon entries: 14296; reviewed KJV word mappings: 729289 rows from 66 batch files across 66 books and 1189 chapters (broad import).
 - Public TSK rows: 6994; staged TSK rows: 50; source verses covered: 2563; chapters covered: 1189; books covered: 66 (reviewed samples only).
 - Study tool files present: 9/9.
@@ -88,7 +88,6 @@ Generated: 2026-07-16T11:34:42.295Z
 
 | Book | Chapters Covered | Total Chapters | Coverage | Authors | Rows/Chapter |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 1 Chronicles | 29 | 29 | 100% | 11 | 10.0 |
 | Leviticus | 27 | 27 | 100% | 11 | 10.0 |
 | 2 Kings | 25 | 25 | 100% | 11 | 10.0 |
 | 2 Samuel | 24 | 24 | 100% | 11 | 10.0 |
@@ -100,6 +99,7 @@ Generated: 2026-07-16T11:34:42.295Z
 | Exodus | 40 | 40 | 100% | 11 | 10.1 |
 | Ruth | 4 | 4 | 100% | 11 | 10.3 |
 | Isaiah | 66 | 66 | 100% | 12 | 10.1 |
+| 2 Chronicles | 36 | 36 | 100% | 12 | 10.1 |
 
 ## Recommendations
 
