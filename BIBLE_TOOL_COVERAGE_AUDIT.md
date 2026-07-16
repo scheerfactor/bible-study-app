@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T05:29:55.242Z
+Generated: 2026-07-16T06:00:08.857Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -128,20 +128,20 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | pollute | POLLU'TE | 11 | ocr_full_import_needs_spot_review |
 | robes | ROBE | 11 | ocr_full_import_needs_spot_review |
 | astonied | ASTO'NIED | 10 | ocr_full_import_needs_spot_review |
-| dip | DIP | 10 | ocr_full_import_needs_spot_review |
-| enchantments | ENCH'ANTMENT | 10 | ocr_full_import_needs_spot_review |
-| equity | EQ'UITY | 10 | ocr_full_import_needs_spot_review |
-| famous | FA'MOUS | 10 | ocr_full_import_needs_spot_review |
-| forthwith | FORTHWITH' | 10 | ocr_full_import_needs_spot_review |
-| guiltless | GUILT'LESS | 10 | ocr_full_import_needs_spot_review |
-| haughty | HAUGHTY | 10 | ocr_full_import_needs_spot_review |
-| hollow | HOL'LOW | 10 | ocr_full_import_needs_spot_review |
-| inhabit | INHAB'IT | 10 | ocr_full_import_needs_spot_review |
 | kindly | KINDLY | 10 | ocr_full_import_needs_spot_review |
 | lake | LAKE | 10 | ocr_full_import_needs_spot_review |
 | maintain | MAINTA'IN | 10 | ocr_full_import_needs_spot_review |
 | morsel | MOR'SEL | 10 | ocr_full_import_needs_spot_review |
 | nails | NAIL | 10 | ocr_full_import_needs_spot_review |
+| necessity | NECES'SITY | 10 | ocr_full_import_needs_spot_review |
+| nurse | NURSE | 10 | ocr_full_import_needs_spot_review |
+| owl | OWL | 10 | ocr_full_import_needs_spot_review |
+| pervert | PERVERT' | 10 | ocr_full_import_needs_spot_review |
+| reared | REAR | 10 | ocr_full_import_needs_spot_review |
+| resist | RESIST | 10 | ocr_full_import_needs_spot_review |
+| saddled | SAD'DLE | 10 | ocr_full_import_needs_spot_review |
+| satisfy | SATISFY | 10 | ocr_full_import_needs_spot_review |
+| scales | SCALE | 10 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 
