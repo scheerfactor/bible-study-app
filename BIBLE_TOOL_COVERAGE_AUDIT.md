@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T13:05:16.910Z
+Generated: 2026-07-16T13:35:15.660Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -132,16 +132,16 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
 | alienated | A'LIENATE | 7 | ocr_full_import_needs_spot_review |
-| debt | DEBT | 7 | ocr_full_import_needs_spot_review |
-| devoted | DEVO'TED | 7 | ocr_full_import_needs_spot_review |
-| diviners | DIVI'NER | 7 | ocr_full_import_needs_spot_review |
-| drunkenness | DRUNKENNESS | 7 | ocr_full_import_needs_spot_review |
-| eggs | EGG | 7 | ocr_full_import_needs_spot_review |
-| ewe | EWE | 7 | ocr_full_import_needs_spot_review |
-| expedient | EXPE'DIENT | 7 | ocr_full_import_needs_spot_review |
-| fadeth | FADE | 7 | ocr_full_import_needs_spot_review |
-| feathers | FEATHER | 7 | ocr_full_import_needs_spot_review |
-| feel | FEEL | 7 | ocr_full_import_needs_spot_review |
+| figure | FIG'URE | 7 | ocr_full_import_needs_spot_review |
+| firm | FIRM | 7 | ocr_full_import_needs_spot_review |
+| fishers | FISH'ER | 7 | ocr_full_import_needs_spot_review |
+| foes | FOE | 7 | ocr_full_import_needs_spot_review |
+| fragments | FRAG'MENT | 7 | ocr_full_import_needs_spot_review |
+| got | GOT | 7 | ocr_full_import_needs_spot_review |
+| grievously | GRIE'VOUSLY | 7 | ocr_full_import_needs_spot_review |
+| grind | GRIND | 7 | ocr_full_import_needs_spot_review |
+| hammer | HAM'MER | 7 | ocr_full_import_needs_spot_review |
+| honest | HON'EST | 7 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

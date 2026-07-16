@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12854,
+    "publicRows": 12857,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 72
   },
   "webster1828": {
-    "entries": 60752,
+    "entries": 60762,
     "baseEntries": 58428,
-    "reviewedOverrides": 2324,
+    "reviewedOverrides": 2334,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "2 Samuel",
-      "coveredChapters": 24,
-      "totalChapters": 24,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.041666666666666
-    },
-    {
       "book": "Joshua",
       "coveredChapters": 24,
       "totalChapters": 24,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 12,
       "rowsPerChapter": 10.117647058823529
+    },
+    {
+      "book": "1 Samuel",
+      "coveredChapters": 31,
+      "totalChapters": 31,
+      "coverage": 1,
+      "authors": 12,
+      "rowsPerChapter": 10.129032258064516
     }
   ]
 }
