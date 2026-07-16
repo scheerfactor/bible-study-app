@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T02:30:28.996Z
+Generated: 2026-07-16T03:00:06.186Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -130,18 +130,18 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | spoon | SPOON | 12 | ocr_full_import_needs_spot_review |
 | spoons | SPOON | 12 | ocr_full_import_needs_spot_review |
 | spy | SPY | 12 | ocr_full_import_needs_spot_review |
-| stream | STREAM | 12 | ocr_full_import_needs_spot_review |
-| streams | STREAM | 12 | ocr_full_import_needs_spot_review |
-| strike | STRIKE | 12 | ocr_full_import_needs_spot_review |
 | submit | SUBMIT' | 12 | ocr_full_import_needs_spot_review |
 | tooth | TOOTH | 12 | ocr_full_import_needs_spot_review |
 | unawares | UNAWA'RES | 12 | ocr_full_import_needs_spot_review |
 | uprightly | UPRIGHTLY | 12 | ocr_full_import_needs_spot_review |
-| wear | WEAR | 12 | ocr_full_import_needs_spot_review |
 | absent | AB'SENT | 11 | ocr_full_import_needs_spot_review |
 | almost | ALMOST | 11 | ocr_full_import_needs_spot_review |
-| attend | ATTEND' | 11 | ocr_full_import_needs_spot_review |
 | bag | BAG | 11 | ocr_full_import_needs_spot_review |
+| bold | BOLD | 11 | ocr_full_import_needs_spot_review |
+| bush | BUSH | 11 | ocr_full_import_needs_spot_review |
+| butter | BUT'TER | 11 | ocr_full_import_needs_spot_review |
+| close | CLOSE | 11 | ocr_full_import_needs_spot_review |
+| cud | CUD | 11 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

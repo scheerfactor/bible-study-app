@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdir } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import verses1769 from "es-kjv/json/verses-1769.js";
 import { readJsonOrCsv } from "./import-utils.mjs";
@@ -137,7 +137,19 @@ for (const filePath of filePaths) {
 }
 
 if (filePaths.length > 1) {
+  const appSource = await readFile("src/app/page.tsx", "utf8");
+  const publishableImportFiles = filePaths.filter(
+    (filePath) => filePath.startsWith("data/imports/") && !path.basename(filePath).startsWith("commentary-acquisition-"),
+  );
+  const disconnectedFiles = publishableImportFiles.filter((filePath) => !appSource.includes(path.basename(filePath)));
+
+  disconnectedFiles.forEach((filePath) => {
+    console.error(`Reviewed commentary file is not connected to the reader: ${filePath}`);
+    failed = true;
+  });
+
   console.log(`Validated ${filePaths.length} commentary files.`);
+  console.log(`Publishable commentary files connected to the reader: ${publishableImportFiles.length - disconnectedFiles.length}/${publishableImportFiles.length}`);
   console.log(`Total rows checked: ${totalRows}`);
 }
 
