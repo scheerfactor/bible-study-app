@@ -8,7 +8,7 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12822,
+    "publicRows": 12825,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
     "authors": 66
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "Exodus",
-      "coveredChapters": 40,
-      "totalChapters": 40,
-      "coverage": 1,
-      "authors": 10,
-      "rowsPerChapter": 10.025
-    },
-    {
       "book": "Isaiah",
       "coveredChapters": 66,
       "totalChapters": 66,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 11,
       "rowsPerChapter": 10.041666666666666
+    },
+    {
+      "book": "1 Kings",
+      "coveredChapters": 22,
+      "totalChapters": 22,
+      "coverage": 1,
+      "authors": 11,
+      "rowsPerChapter": 10.045454545454545
     }
   ]
 }

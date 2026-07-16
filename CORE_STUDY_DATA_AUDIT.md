@@ -1,12 +1,12 @@
 # Core Study Data Audit
 
-Generated: 2026-07-16T08:59:28.798Z
+Generated: 2026-07-16T09:35:01.809Z
 
 ## Summary
 
 - Bible text: 66 books, 1189 chapters, 31102 verses.
 - Library: 2235 verified resources.
-- Public commentary rows: 12822.
+- Public commentary rows: 12825.
 - Public commentary chapter coverage: 1189/1189 (100%).
 - Commentary authors represented in public imports: 66.
 - Webster 1828 entries: 60639 (51268 normalized headwords; 2211 reviewed overlay).
@@ -88,7 +88,6 @@ Generated: 2026-07-16T08:59:28.798Z
 
 | Book | Chapters Covered | Total Chapters | Coverage | Authors | Rows/Chapter |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Exodus | 40 | 40 | 100% | 10 | 10.0 |
 | Isaiah | 66 | 66 | 100% | 11 | 10.0 |
 | Job | 42 | 42 | 100% | 11 | 10.0 |
 | 2 Chronicles | 36 | 36 | 100% | 11 | 10.0 |
@@ -100,6 +99,7 @@ Generated: 2026-07-16T08:59:28.798Z
 | 2 Kings | 25 | 25 | 100% | 11 | 10.0 |
 | 2 Samuel | 24 | 24 | 100% | 11 | 10.0 |
 | Joshua | 24 | 24 | 100% | 11 | 10.0 |
+| 1 Kings | 22 | 22 | 100% | 11 | 10.0 |
 
 ## Recommendations
 
