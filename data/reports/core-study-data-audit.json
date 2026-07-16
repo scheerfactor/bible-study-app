@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12851,
+    "publicRows": 12854,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 71
+    "authors": 72
   },
   "webster1828": {
-    "entries": 60742,
+    "entries": 60752,
     "baseEntries": 58428,
-    "reviewedOverrides": 2314,
+    "reviewedOverrides": 2324,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "2 Kings",
-      "coveredChapters": 25,
-      "totalChapters": 25,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.04
-    },
-    {
       "book": "2 Samuel",
       "coveredChapters": 24,
       "totalChapters": 24,
@@ -428,6 +420,14 @@
       "coverage": 1,
       "authors": 12,
       "rowsPerChapter": 10.11111111111111
+    },
+    {
+      "book": "Deuteronomy",
+      "coveredChapters": 34,
+      "totalChapters": 34,
+      "coverage": 1,
+      "authors": 12,
+      "rowsPerChapter": 10.117647058823529
     }
   ]
 }
