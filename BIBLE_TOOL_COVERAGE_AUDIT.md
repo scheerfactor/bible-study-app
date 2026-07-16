@@ -1,6 +1,6 @@
 # Bible Tool Coverage Audit
 
-Generated: 2026-07-16T12:04:32.413Z
+Generated: 2026-07-16T12:34:38.758Z
 
 This audit measures Bible-wide readiness for the study tools: Webster 1828 lookup, Strong's KJV word mappings, TSK cross references, and Nave's Topical Bible. It is intentionally conservative: rough OCR or unreviewed data should stay visible as a review need, not as finished polish.
 
@@ -131,17 +131,17 @@ This audit measures Bible-wide readiness for the study tools: Webster 1828 looku
 | hasten | HASTEN | 8 | ocr_full_import_needs_spot_review |
 | helmet | HELM'ET | 8 | ocr_full_import_needs_spot_review |
 | kin | KIN | 8 | ocr_full_import_needs_spot_review |
-| warm | WARM | 8 | ocr_full_import_needs_spot_review |
-| wipe | WIPE | 8 | ocr_full_import_needs_spot_review |
-| ability | ABIL'ITY | 7 | ocr_full_import_needs_spot_review |
-| afore | AFO'RE | 7 | ocr_full_import_needs_spot_review |
-| aileth | AIL | 7 | ocr_full_import_needs_spot_review |
 | alienated | A'LIENATE | 7 | ocr_full_import_needs_spot_review |
-| ambush | AM'BUSH | 7 | ocr_full_import_needs_spot_review |
-| bill | BILL | 7 | ocr_full_import_needs_spot_review |
-| bite | BITE | 7 | ocr_full_import_needs_spot_review |
-| brick | BRICK | 7 | ocr_full_import_needs_spot_review |
-| certainty | CER'TAINTY | 7 | ocr_full_import_needs_spot_review |
+| cloke | CLOKE | 7 | ocr_full_import_needs_spot_review |
+| commend | COMMEND' | 7 | ocr_full_import_needs_spot_review |
+| correct | CORRECT' | 7 | ocr_full_import_needs_spot_review |
+| corruptible | CORRUPTIBLE | 7 | ocr_full_import_needs_spot_review |
+| crow | CROW | 7 | ocr_full_import_needs_spot_review |
+| danger | DANGER | 7 | ocr_full_import_needs_spot_review |
+| dash | DASH | 7 | ocr_full_import_needs_spot_review |
+| daubed | DAUB'ED | 7 | ocr_full_import_needs_spot_review |
+| deadly | DEAD'LY | 7 | ocr_full_import_needs_spot_review |
+| dear | DEAR | 7 | ocr_full_import_needs_spot_review |
 
 ## Weakest Strong's Mapping Books
 

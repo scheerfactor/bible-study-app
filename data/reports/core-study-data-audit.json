@@ -8,15 +8,15 @@
     "verifiedResources": 2235
   },
   "commentary": {
-    "publicRows": 12848,
+    "publicRows": 12851,
     "publicChapterCoverage": "1189/1189",
     "publicChapterCoveragePercent": "100%",
-    "authors": 70
+    "authors": 71
   },
   "webster1828": {
-    "entries": 60732,
+    "entries": 60742,
     "baseEntries": 58428,
-    "reviewedOverrides": 2304,
+    "reviewedOverrides": 2314,
     "uniqueNormalizedHeadwords": 51268,
     "suspiciousOcrEntries": 1895,
     "normalizationChecks": [
@@ -334,14 +334,6 @@
   },
   "weakestCommentaryBooks": [
     {
-      "book": "Leviticus",
-      "coveredChapters": 27,
-      "totalChapters": 27,
-      "coverage": 1,
-      "authors": 11,
-      "rowsPerChapter": 10.037037037037036
-    },
-    {
       "book": "2 Kings",
       "coveredChapters": 25,
       "totalChapters": 25,
@@ -423,6 +415,14 @@
     },
     {
       "book": "2 Chronicles",
+      "coveredChapters": 36,
+      "totalChapters": 36,
+      "coverage": 1,
+      "authors": 12,
+      "rowsPerChapter": 10.11111111111111
+    },
+    {
+      "book": "Numbers",
       "coveredChapters": 36,
       "totalChapters": 36,
       "coverage": 1,
