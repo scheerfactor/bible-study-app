@@ -22,7 +22,7 @@ function encodedPath(relativePath: string) {
 }
 
 function withContentVersion(url: string) {
-  const version = process.env.VERCEL_GIT_COMMIT_SHA;
+  const version = process.env.VERCEL_URL ?? process.env.VERCEL_GIT_COMMIT_SHA;
   if (!version) return url;
 
   const separator = url.includes("?") ? "&" : "?";
